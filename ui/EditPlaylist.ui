@@ -1,0 +1,146 @@
+<ui version="4.0" >
+ <class>EditPlaylistClass</class>
+ <widget class="QDialog" name="EditPlaylistClass" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Edit Channel List</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="images.qrc" >
+    <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <item>
+    <widget class="QToolBar" name="toolBar" >
+     <property name="iconSize" >
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="toolButtonStyle" >
+      <enum>Qt::ToolButtonTextUnderIcon</enum>
+     </property>
+     <addaction name="actionAddChannel" />
+     <addaction name="actionAddCategory" />
+     <addaction name="actionDelete" />
+     <addaction name="separator" />
+     <addaction name="actionSave" />
+     <addaction name="actionClose" />
+    </widget>
+   </item>
+   <item>
+    <widget class="QTreeWidget" name="playlist" >
+     <property name="dragEnabled" >
+      <bool>true</bool>
+     </property>
+     <property name="dragDropMode" >
+      <enum>QAbstractItemView::InternalMove</enum>
+     </property>
+     <property name="animated" >
+      <bool>true</bool>
+     </property>
+     <column>
+      <property name="text" >
+       <string>Channel</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Long name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>Language</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>EPG</string>
+      </property>
+     </column>
+     <column>
+      <property name="text" >
+       <string>URL</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+  <action name="actionAddChannel" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/video.png</normaloff>:/icons/images/video.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Add Channel</string>
+   </property>
+  </action>
+  <action name="actionAddCategory" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Add Category</string>
+   </property>
+  </action>
+  <action name="actionDelete" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/editdelete.png</normaloff>:/icons/images/editdelete.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Delete Item</string>
+   </property>
+  </action>
+  <action name="actionSave" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/filesave.png</normaloff>:/icons/images/filesave.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionClose" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/fileclose.png</normaloff>:/icons/images/fileclose.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Close</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <resources>
+  <include location="images.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionClose</sender>
+   <signal>triggered()</signal>
+   <receiver>EditPlaylistClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
