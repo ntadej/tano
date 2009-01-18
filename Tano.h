@@ -50,7 +50,7 @@ private:
     Ui::Tano ui;
 
     QString version;
-    QString date;
+    QString build;
 
     TanoHandler *handler;
     Channel *channel;

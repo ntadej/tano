@@ -19,10 +19,10 @@ QString Common::locateResource(QString fileN) {
 	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + fileN).exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + fileN).absoluteFilePath();
 
-//#ifdef DEFAULT_DATA_DIR
-//	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + fileN).exists())
-//		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + fileN).absoluteFilePath();
-//#endif
+#ifdef DEFAULT_DATA_DIR
+	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + fileN).exists())
+		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + fileN).absoluteFilePath();
+#endif
 
 	return path;
 }
@@ -41,12 +41,12 @@ QString Common::locateLang(QString fileL) {
 	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + fileL).exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + fileL).absoluteFilePath();
 
-//#ifdef DEFAULT_DATA_DIR
+#ifdef DEFAULT_DATA_DIR
 
-//	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + fileL).exists())
-//		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + fileL).absoluteFilePath();
+	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + fileL).exists())
+		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + fileL).absoluteFilePath();
 
-//#endif
+#endif
 
 	return path.replace(QString("/" + fileL), QString(""));
 }

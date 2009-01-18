@@ -246,7 +246,7 @@
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="259"/>
+        <location filename="../Tano.cpp" line="271"/>
         <source>Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
@@ -356,78 +356,73 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="93"/>
+        <location filename="../Tano.cpp" line="103"/>
         <source>About Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="96"/>
+        <location filename="../Tano.cpp" line="106"/>
         <source>Copyright &amp;copy; 2008-2009 Tadej Novak</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="97"/>
-        <source>TV content provided by Telekom Slovenije d. d.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../Tano.cpp" line="106"/>
+        <location filename="../Tano.cpp" line="118"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="116"/>
+        <location filename="../Tano.cpp" line="128"/>
         <source>Channel selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="129"/>
+        <location filename="../Tano.cpp" line="141"/>
         <source>Now playing:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="157"/>
+        <location filename="../Tano.cpp" line="169"/>
         <source>Open Channel list File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="159"/>
+        <location filename="../Tano.cpp" line="171"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="175"/>
+        <location filename="../Tano.cpp" line="187"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="181"/>
+        <location filename="../Tano.cpp" line="193"/>
         <source>File loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="187"/>
+        <location filename="../Tano.cpp" line="199"/>
         <source>Open File or URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="189"/>
+        <location filename="../Tano.cpp" line="201"/>
         <source>Multimedia files(*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="195"/>
+        <location filename="../Tano.cpp" line="207"/>
         <source>Playing file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="233"/>
+        <location filename="../Tano.cpp" line="245"/>
         <source>VLC executable can not be found.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="260"/>
+        <location filename="../Tano.cpp" line="272"/>
         <source>Could not start Qt Assistant from %1.</source>
         <translation type="unfinished"></translation>
     </message>

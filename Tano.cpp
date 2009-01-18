@@ -11,8 +11,18 @@
 Tano::Tano(QWidget *parent, QString defaultPlaylist)
     : QMainWindow(parent)
 {
-	version = "0.3.6";
-	date = "20090112";
+
+#ifdef TANO_VERSION
+	version = QString(TANO_VERSION);
+#else
+	version = "Unknown version";
+#endif
+
+#ifdef TANO_BUILD
+	build = QString(TANO_BUILD);
+#else
+	build = "Unknown build";
+#endif
 
 	ui.setupUi(this);
 	ui.videoControls->addWidget(ui.videoWidget->slider());
@@ -92,10 +102,12 @@ void Tano::aboutTano()
 {
 	QMessageBox::about(this, tr("About Tano Player"),
 						QString("<h2>Tano Player<br>") +
-						QString(version + " (" + date + ")</h2>") +
-						QString("<p>" + tr("Copyright &copy; 2008-2009 Tadej Novak")) +
-						QString("<p>" + tr("TV content provided by Telekom Slovenije d. d.")) +
-						QString("<br>Crystal Icons &copy; The Yellow Icon."));
+						QString(version + " (" + build + ")</h2>") +
+						QString("<p>" + tr("Copyright &copy; 2008-2009 Tadej Novak") + "<p>") +
+#ifdef Q_WS_WIN
+						QString("MPlayer Backend<br>") +
+#endif
+						QString("Crystal Icons &copy; The Yellow Icon."));
 }
 
 void Tano::playlist(QTreeWidgetItem* clickedChannel)

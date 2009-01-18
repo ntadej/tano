@@ -20,6 +20,13 @@ STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back 
 FILE(READ VERSION TANO_VERSION)
 STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
 
+#Tano Build
+IF(MINGW)
+	SET(TANO_BUILD "MinGW - Win32")
+ELSE(MINGW)
+	SET(TANO_BUILD "Linux i386")
+ENDIF(MINGW)
+
 # Set default install path:
 # In *nix environments this is /usr/local 
 # Under M$ Windows this is C:\Program files\Canorus 
@@ -29,14 +36,14 @@ IF(MINGW)
 	IF (NOT CMAKE_INSTALL_PREFIX)
 		SET(CMAKE_INSTALL_PREFIX "C:/Program files/Tano")
 	ENDIF (NOT CMAKE_INSTALL_PREFIX)
-	SET(CANORUS_INSTALL_DATA_DIR "")
-	SET(CANORUS_INSTALL_BIN_DIR "")
+	SET(TANO_INSTALL_DATA_DIR "")
+	SET(TANO_INSTALL_BIN_DIR "")
 ELSE(MINGW)
 	IF (NOT CMAKE_INSTALL_PREFIX)
 		SET(CMAKE_INSTALL_PREFIX "/usr/local")
 	ENDIF (NOT CMAKE_INSTALL_PREFIX)
-	SET(CANORUS_INSTALL_DATA_DIR "share/tano")
-	SET(CANORUS_INSTALL_BIN_DIR "bin")
+	SET(TANO_INSTALL_DATA_DIR "share/tano")
+	SET(TANO_INSTALL_BIN_DIR "bin")
 ENDIF(MINGW)
 
 #-----------------------------------------------------------------------------
@@ -124,8 +131,12 @@ SET ( Tano_Translation_Bins
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
 SET(QT_USE_QTWEBKIT True)
-SET(QT_USE_PHONON True)
 
+IF(MINGW)
+	SET(QT_USE_PHONON True)
+ELSE(MINGW)
+	#SET(QT_USE_QTPHONON True)
+ENDIF(MINGW)
 
 # Add all resources to Tano_Resrcs (icons, html files etc.)
 #SET(Tano_Resrcs ui/mainwin.qrc) # not needed, all resources are loaded on-the-fly
@@ -166,15 +177,17 @@ ENDIF(MINGW)
 # Define default data dir, if under POSIX systems.
 IF(NOT MINGW)
 	IF (NOT DEFAULT_DATA_DIR)
-		ADD_DEFINITIONS("-DDEFAULT_DATA_DIR=\\\"${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}\\\"")
+		ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
 	ELSE (NOT DEFAULT_DATA_DIR)
-		ADD_DEFINITIONS("-DDEFAULT_DATA_DIR=\\\"${DEFAULT_DATA_DIR}\\\"")
+		ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${DEFAULT_DATA_DIR}")
 	ENDIF (NOT DEFAULT_DATA_DIR)
 ENDIF(NOT MINGW)
 
 
 # Define Tano version
-ADD_DEFINITIONS("-DTANO_VERSION=\\\"${TANO_VERSION}\\\"")
+ADD_DEFINITIONS(-DTANO_VERSION="${TANO_VERSION}")
+# Define Tano build
+ADD_DEFINITIONS(-DTANO_BUILD="${TANO_BUILD}")
 
 ####################################
 # Include paths and set up targets #
