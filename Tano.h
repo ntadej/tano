@@ -3,7 +3,6 @@
 
 #include <QtGui/QMainWindow>
 #include <QCloseEvent>
-#include <QTimer>
 
 #include "ui_Tano.h"
 #include "xml/tanohandler.h"
@@ -13,6 +12,7 @@
 #include "ui/TrayIcon.h"
 #include "epg/Epg.h"
 #include "epg/EpgBrowser.h"
+#include "epg/EpgToday.h"
 
 class Tano : public QMainWindow
 {
@@ -36,9 +36,6 @@ private slots:
     void showBrowser();
     void browser(QString link);
 
-    void marque();
-    void updateMarque(int value);
-
     void showEpg(QString epgValue, bool full);
 
     void vlc();
@@ -58,9 +55,7 @@ private:
 	QString defaultP;
 	TrayIcon *trayIcon;
 	Epg *epg;
-	QTimer *mtimer;
-	int scroll;
-	int timer;
+	EpgToday *epgToday;
 	QString vlcStatus;
 
     void createActions();

@@ -27,14 +27,12 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 	ui.setupUi(this);
 	ui.videoControls->addWidget(ui.videoWidget->slider());
 	ui.buttonRefresh->hide();
-	ui.buttonRefreshToday->hide();
+	ui.buttonToday->hide();
 
 	handler = new TanoHandler(ui.playlistTree);
 	trayIcon = new TrayIcon();
 	epg = new Epg();
-    mtimer = new QTimer(this);
-    scroll = 1;
-    timer = 100;
+	epgToday = new EpgToday();
 
 	createActions();
 
@@ -78,7 +76,7 @@ void Tano::createActions()
 	connect(ui.buttonVlc, SIGNAL(clicked()), this, SLOT(vlc()));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
-	connect(ui.buttonRefreshToday, SIGNAL(clicked()), epg, SLOT(refreshT()));
+	connect(ui.buttonToday, SIGNAL(clicked()), epgToday, SLOT(showEpg()));
 
 	connect(ui.playlistTree, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 
@@ -91,9 +89,6 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
 
 	connect(epg, SIGNAL(epgDone(QString, bool)), this, SLOT(showEpg(QString, bool)));
-    connect(mtimer, SIGNAL(timeout()), this, SLOT(marque()));
-    connect(ui.scrollArea->horizontalScrollBar(), SIGNAL(sliderPressed()), mtimer, SLOT(stop()));
-    connect(ui.scrollArea->horizontalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(updateMarque(int)));
 
     connect(ui.labelNow, SIGNAL(linkActivated(QString)), this, SLOT(browser(QString)));
 }
@@ -119,10 +114,9 @@ void Tano::playlist(QTreeWidgetItem* clickedChannel)
 
 		epg->getEpg(channel->epg());
 
-		ui.labelTodayEpg->setText("");
 		ui.labelNow->setText("");
 		ui.buttonRefresh->hide();
-		ui.buttonRefreshToday->hide();
+		ui.buttonToday->hide();
 
 		ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
 		statusBar()->showMessage(tr("Channel selected"), 2000);
@@ -132,34 +126,13 @@ void Tano::playlist(QTreeWidgetItem* clickedChannel)
 void Tano::showEpg(QString epgValue, bool full)
 {
 	if (full) {
-		ui.labelTodayEpg->setText(epgValue);
-		mtimer->start(timer);
-		ui.scrollArea->horizontalScrollBar()->setValue(0);
-		ui.buttonRefreshToday->show();
+		epgToday->setEpg(epgValue);
 	}
 	else {
 		ui.labelNow->setText(tr("Now playing:") + " " + epgValue);
 		ui.buttonRefresh->show();
+		ui.buttonToday->show();
 	}
-}
-
-void Tano::marque()
-{
-	if (scroll <= ui.scrollArea->horizontalScrollBar()->maximum()) {
-		ui.scrollArea->horizontalScrollBar()->setValue(scroll);
-		scroll+=1;
-	} else {
-		ui.scrollArea->horizontalScrollBar()->setValue(0);
-		scroll = 1;
-	}
-
-	mtimer->start(timer);
-}
-
-void Tano::updateMarque(int value)
-{
-	scroll = value;
-	mtimer->start(timer);
 }
 
 void Tano::openPlaylist(bool start)

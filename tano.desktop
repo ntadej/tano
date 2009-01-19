@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tano Player
+GenericName=Tano IP TV Player
+GenericName[sl]=Tano IP TV Predvajalnik
+Comment=Internet TV player.
+Comment[sl]=Predvajalnik spletne televizije.
+Exec=tano
+Icon=tano
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;
+StartupNotify=true
