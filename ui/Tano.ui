@@ -214,6 +214,7 @@
      <string>&amp;File</string>
     </property>
     <addaction name="actionOpenFile" />
+    <addaction name="actionOpenUrl" />
     <addaction name="actionOpen" />
     <addaction name="separator" />
     <addaction name="actionBrowser" />
@@ -272,6 +273,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionOpenFile" />
+   <addaction name="actionOpenUrl" />
    <addaction name="actionOpen" />
    <addaction name="separator" />
    <addaction name="actionBrowser" />
@@ -473,6 +475,15 @@
    </property>
    <property name="text" >
     <string>Channel info / EPG</string>
+   </property>
+  </action>
+  <action name="actionOpenUrl" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Open URL</string>
    </property>
   </action>
  </widget>

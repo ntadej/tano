@@ -1,4 +1,5 @@
 #include <QFileDialog>
+#include <QInputDialog>
 #include <QMessageBox>
 #include <QDir>
 #include <QScrollBar>
@@ -28,6 +29,7 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 	ui.videoControls->addWidget(ui.videoWidget->slider());
 	ui.buttonRefresh->hide();
 	ui.buttonToday->hide();
+    ui.epgWidget->hide();
 
 	handler = new TanoHandler(ui.playlistTree);
 	trayIcon = new TrayIcon();
@@ -65,6 +67,7 @@ void Tano::createActions()
 
 	connect(ui.actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
 	connect(ui.actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
+	connect(ui.actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
 
 	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(settings()));
 	connect(ui.actionBrowser, SIGNAL(triggered()), this, SLOT(showBrowser()));
@@ -120,6 +123,8 @@ void Tano::playlist(QTreeWidgetItem* clickedChannel)
 
 		ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
 		statusBar()->showMessage(tr("Channel selected"), 2000);
+
+	    ui.epgWidget->show();
 	}
 }
 
@@ -178,6 +183,23 @@ void Tano::openFile()
 
     ui.videoWidget->playTv(fileName, fileName);
     statusBar()->showMessage(tr("Playing file"), 5000);
+
+    ui.epgWidget->hide();
+}
+
+void Tano::openUrl()
+{
+	bool ok;
+	fileName =
+		QInputDialog::getText(this, tr("Open URL or stream"),
+	                                          tr("Enter the URL of multimedia file or stream you want to play:"), QLineEdit::Normal,
+	                                          "", &ok);
+
+	if (ok && !fileName.isEmpty()) {
+		ui.videoWidget->playTv(fileName, fileName);
+		statusBar()->showMessage(tr("Playing file"), 5000);
+	    ui.epgWidget->hide();
+	}
 }
 
 void Tano::editPlaylist()

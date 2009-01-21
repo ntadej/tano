@@ -31,6 +31,7 @@ private slots:
 
     void openPlaylist(bool start = false);
     void openFile();
+    void openUrl();
     void editPlaylist();
     void settings();
     void showBrowser();
