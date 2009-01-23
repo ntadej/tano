@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>EPG Browser</string>
+   <string>Browser</string>
   </property>
   <property name="windowIcon" >
    <iconset resource="images.qrc" >
@@ -29,6 +29,7 @@
       <enum>Qt::ToolButtonTextUnderIcon</enum>
      </property>
      <addaction name="actionHome" />
+     <addaction name="actionHelp" />
      <addaction name="separator" />
      <addaction name="actionClose" />
     </widget>
@@ -138,6 +139,15 @@
     <string>Close</string>
    </property>
   </action>
+  <action name="actionHelp" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/help.png</normaloff>:/icons/images/help.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Help</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11" />
  <customwidgets>
@@ -174,8 +184,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>758</x>
-     <y>580</y>
+     <x>-1</x>
+     <y>-1</y>
     </hint>
     <hint type="destinationlabel" >
      <x>399</x>

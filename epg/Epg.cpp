@@ -1,14 +1,10 @@
 #include "Epg.h"
 
-#ifdef Q_WS_X11
-	#include <QtDebug>
-#endif
+#include <QtDebug>
 
 Epg::Epg() {
 
-#ifdef Q_WS_X11
 	qDebug() << "EPG Success!";
-#endif
 
 	step = 0;
 

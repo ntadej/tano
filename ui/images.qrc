@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons" >
+    <file>images/update.png</file>
     <file>images/help.png</file>
     <file>images/go.png</file>
     <file>images/home.png</file>

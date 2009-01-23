@@ -14,6 +14,9 @@ public:
 
     void setEpg(QString epg);
 
+signals:
+	void channelClicked(QString);
+
 public slots:
     void showEpg();
 

@@ -78,6 +78,7 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 # Define the MOC source files used by Tano
 SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
 	Tano.h
+	Updates.h
 	settings/EditSettings.h
 	video/Video.h
 	ui/TrayIcon.h
@@ -107,6 +108,7 @@ SET(Tano_Srcs
 	main.cpp
 	Tano.cpp
 	Common.cpp
+	Updates.cpp
 	
 	${Tano_Class_Srcs}
 )
@@ -248,22 +250,6 @@ ADD_CUSTOM_COMMAND(
 	ARGS ${Tano_Translation_Srcs}
 )
 
-########
-# Help #
-########
-ADD_CUSTOM_COMMAND(
-	TARGET tano
-	PRE_BUILD
-	COMMAND ${QT_BINARY_DIR}/qhelpgenerator
-	ARGS doc/doc.qhp -o doc/doc.qch
-)
-ADD_CUSTOM_COMMAND(
-	TARGET tano
-	PRE_BUILD
-	COMMAND ${QT_BINARY_DIR}/qcollectiongenerator
-	ARGS doc/tano.qhcp -o doc/tano.qhc
-)
-
 ################
 # Installation #
 ################
@@ -281,10 +267,10 @@ INSTALL(FILES ${Tano_Translation_Bins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TA
 
 IF(MINGW)
 	# Install Qt libs
-	INSTALL( FILES ${QT_BIN_DIR}/QtCore4.dll ${QT_BIN_DIR}/QtGui4.dll ${QT_BIN_DIR}/QtNetwork4.dll ${QT_BIN_DIR}/QtWebkit4.dll ${QT_BIN_DIR}/QtXml4.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${CANORUS_INSTALL_BIN_DIR} )
+	INSTALL( FILES ${QT_BIN_DIR}/QtCore4.dll ${QT_BIN_DIR}/QtGui4.dll ${QT_BIN_DIR}/QtNetwork4.dll ${QT_BIN_DIR}/QtWebkit4.dll ${QT_BIN_DIR}/QtXml4.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
 	
 	# Install mingwm10.dll
 	IF(MINGW)
-		INSTALL( FILES ${MINGW_BIN_DIR}/mingwm10.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${CANORUS_INSTALL_BIN_DIR} )
+		INSTALL( FILES ${MINGW_BIN_DIR}/mingwm10.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
 	ENDIF(MINGW)
 ENDIF(MINGW)

@@ -5,6 +5,7 @@
 #include <QCloseEvent>
 
 #include "ui_Tano.h"
+#include "Updates.h"
 #include "xml/tanohandler.h"
 #include "channels/Channel.h"
 #include "channels/EditPlaylist.h"
@@ -39,7 +40,8 @@ private slots:
 
     void showEpg(QString epgValue, bool full);
 
-    void vlc();
+    void updates();
+    void processUpdates(QString updates);
     void help();
 
     void tooltip(QString channelNow = "stop");
@@ -49,6 +51,8 @@ private:
 
     QString version;
     QString build;
+
+    Updates *update;
 
     TanoHandler *handler;
     Channel *channel;

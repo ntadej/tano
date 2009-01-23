@@ -31,6 +31,7 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 	ui.buttonToday->hide();
     ui.epgWidget->hide();
 
+	update = new Updates();
 	handler = new TanoHandler(ui.playlistTree);
 	trayIcon = new TrayIcon();
 	epg = new Epg();
@@ -59,6 +60,7 @@ void Tano::closeEvent(QCloseEvent *event)
 void Tano::createActions()
 {
 	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
+	connect(ui.actionUpdate, SIGNAL(triggered()), this, SLOT(updates()));
 	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
 	connect(ui.actionAbout_Qt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(ui.actionClose, SIGNAL(triggered()), qApp, SLOT(quit()));
@@ -76,7 +78,6 @@ void Tano::createActions()
 	connect(ui.buttonPlay, SIGNAL(clicked()), ui.videoWidget, SLOT(controlPlay()));
 	connect(ui.buttonStop, SIGNAL(clicked()), ui.videoWidget, SLOT(controlStop()));
 	connect(ui.buttonFull, SIGNAL(clicked()), ui.videoWidget, SLOT(controlFull()));
-	connect(ui.buttonVlc, SIGNAL(clicked()), this, SLOT(vlc()));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 	connect(ui.buttonToday, SIGNAL(clicked()), epgToday, SLOT(showEpg()));
@@ -92,6 +93,7 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
 
 	connect(epg, SIGNAL(epgDone(QString, bool)), this, SLOT(showEpg(QString, bool)));
+	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
 
     connect(ui.labelNow, SIGNAL(linkActivated(QString)), this, SLOT(browser(QString)));
 }
@@ -225,24 +227,6 @@ void Tano::settings()
     s.exec();
 }
 
-void Tano::vlc()
-{
-	vlcStatus = Common::vlcStatus();
-	QStringList vlcArguments;
-
-	qDebug() << "Tano Debug: Current media: "<< ui.videoWidget->currentMedia();
-
-	if (ui.videoWidget->currentMedia() == "") return;
-
-	vlcArguments << ui.videoWidget->currentMedia();
-	if (vlcStatus == "") {
-		QMessageBox::warning(this, tr("Tano Player"),
-							tr("VLC executable can not be found."));
-	} else {
-		QProcess::startDetached(vlcStatus, vlcArguments);
-	}
-}
-
 void Tano::tooltip(QString channelNow)
 {
 	if (channelNow != "stop")
@@ -253,23 +237,22 @@ void Tano::tooltip(QString channelNow)
 
 void Tano::help()
 {
-	QStringList helpArguments;
-	helpArguments << QLatin1String("-collectionFile")
-				  << QLatin1String("doc/tano.qhc")
-				  << QLatin1String("-enableRemoteControl");
-    QProcess *process = new QProcess(this);
-    QString app = QLibraryInfo::location(QLibraryInfo::BinariesPath)
-        + QLatin1String("/assistant");
 
-    process->start(app, helpArguments);
-    if (!process->waitForStarted()) {
-        QMessageBox::critical(this, tr("Tano Player"),
-            tr("Could not start Qt Assistant from %1.").arg(app));
-        return;
-    }
+}
 
-    // show index page
-    QTextStream str(process);
-		str << QLatin1String("SetSource qthelp://tano-player.0_3/doc/index.html")
-			<< QLatin1Char('\0') << endl;
+void Tano::updates()
+{
+	update->getUpdates();
+}
+
+void Tano::processUpdates(QString updates)
+{
+	qDebug() << version;
+	if(version != updates) {
+		if (trayIcon->isVisible())
+	        trayIcon->message(updates);
+	} else {
+		if (trayIcon->isVisible())
+			trayIcon->message("latest");
+	}
 }

@@ -151,35 +151,6 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="buttonVlc" >
-            <property name="minimumSize" >
-             <size>
-              <width>46</width>
-              <height>46</height>
-             </size>
-            </property>
-            <property name="maximumSize" >
-             <size>
-              <width>46</width>
-              <height>46</height>
-             </size>
-            </property>
-            <property name="toolTip" >
-             <string>Play with VLC</string>
-            </property>
-            <property name="icon" >
-             <iconset resource="images.qrc" >
-              <normaloff>:/icons/images/vlc.png</normaloff>:/icons/images/vlc.png</iconset>
-            </property>
-            <property name="iconSize" >
-             <size>
-              <width>32</width>
-              <height>32</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
            <spacer name="horizontalSpacer" >
             <property name="orientation" >
              <enum>Qt::Horizontal</enum>
@@ -226,6 +197,7 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="actionHelp" />
+    <addaction name="actionUpdate" />
     <addaction name="separator" />
     <addaction name="actionAbout" />
     <addaction name="actionAbout_Qt" />
@@ -432,7 +404,7 @@
      <normaloff>:/icons/images/browser.png</normaloff>:/icons/images/browser.png</iconset>
    </property>
    <property name="text" >
-    <string>EPG Browser</string>
+    <string>Browser</string>
    </property>
   </action>
   <action name="actionEditPlaylist" >
@@ -484,6 +456,15 @@
    </property>
    <property name="text" >
     <string>Open URL</string>
+   </property>
+  </action>
+  <action name="actionUpdate" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/update.png</normaloff>:/icons/images/update.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Check for updates</string>
    </property>
   </action>
  </widget>

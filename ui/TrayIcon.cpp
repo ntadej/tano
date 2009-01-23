@@ -59,6 +59,10 @@ void TrayIcon::message(QString type)
 {
 	if (type == "close")
 		this->showMessage(tr("Still running"), tr("Tano Player is still running.\nRight click to exit."), QSystemTrayIcon::Information, 10000);
+	else if (type == "latest")
+			this->showMessage(tr("Latest version"), tr("You are using the latest version of Tano Player."), QSystemTrayIcon::Information, 10000);
+	else
+		this->showMessage(tr("Update available"), tr("A new version of Tano Player is available!")+"\n" + tr("Version:") + " " + type, QSystemTrayIcon::Information, 10000);
 }
 
 void TrayIcon::changeToolTip(QString text)
