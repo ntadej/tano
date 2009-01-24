@@ -277,6 +277,22 @@ INSTALL(FILES ${Tano_Translation_Bins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TA
 IF(MINGW)
 	# Install Qt libs
 	INSTALL( FILES ${QT_BIN_DIR}/QtCore4.dll ${QT_BIN_DIR}/QtGui4.dll ${QT_BIN_DIR}/QtNetwork4.dll ${QT_BIN_DIR}/QtWebkit4.dll ${QT_BIN_DIR}/QtXml4.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
+	INSTALL( FILES ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qicod4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qmng4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qsvgd4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qgifd4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qmngd4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qtiff4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qico4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qjpegd4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qsvg4.dll
+	    ${QT_PLUGINS_DIR}/imageformats/qtiffd4.dll
+	  DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/imageformats)
+	
+	# Install OpenSSL
+	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/libeay32.dll ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/ssleay32.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
 	
 	# Install Backend
 	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/phonon-backend/build/3rdparty/phonon/libphonon.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
