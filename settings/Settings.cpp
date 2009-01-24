@@ -1,10 +1,7 @@
 #include <QTextStream>
 #include <QMessageBox>
 #include <QLocale>
-
-#ifdef Q_WS_X11
-	#include <QDebug>
-#endif
+#include <QDebug>
 
 #include "Settings.h"
 
@@ -66,10 +63,8 @@ QString Settings::locale()
 	   	else if (settingsL[1] == "1") locale = "sl";
 	}
 	else locale = QString(QLocale::system().name()).replace(2, 3, "");
-	
-#ifdef Q_WS_X11
+
 	qDebug() << "Tano Debug: Locale: " << locale;
-#endif
 
 	return locale;
 }
@@ -79,10 +74,8 @@ QString Settings::defaultPlaylist()
 	QStringList settingsL = read();
 	QString defaultP;
 
-#ifdef Q_WS_X11
 	qDebug() << "Tano Debug: Settings size: " << settingsL.size();
 	qDebug() << "Tano Debug: Default playlist: " << settingsL[2];
-#endif
 
 	if (settingsL.size() > 2 && settingsL[2] != "") defaultP = settingsL[2];
 	else defaultP = "siol.xml";

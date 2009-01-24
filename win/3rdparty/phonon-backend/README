@@ -1,0 +1,9 @@
+QuarkPlayer, a Phonon media player
+
+http://quarkplayer.googlecode.com
+
+QuarkPlayer is a multimedia application that plays your music and videos.
+QuarkPlayer can use different backends (DirectShow, MPlayer, Xine,
+GStreamer, VLC...) thanks to Qt and the Phonon library.
+It also relies on an advanced plugin system and is available under Windows,
+Linux and soon Mac OS X.

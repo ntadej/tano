@@ -1,0 +1,226 @@
+Index: CMakeLists.txt
+===================================================================
+--- CMakeLists.txt	(revision 604)
++++ CMakeLists.txt	(working copy)
+@@ -34,7 +34,8 @@
+    mediacontroller.cpp
+    videowidget.cpp
+    videoplayer.cpp
+-   seekslider.cpp
++   seekslider.cpp
++   swiftslider.cpp
+    volumeslider.cpp
+    effectwidget.cpp
+    iodevicestream.cpp
+Index: seekslider_p.h
+===================================================================
+--- seekslider_p.h	(revision 604)
++++ seekslider_p.h	(working copy)
+@@ -24,8 +24,8 @@
+ #define SEEKSLIDER_P_H
+ 
+ #include "seekslider.h"
++#include "swiftslider.h"
+ #include <QtGui/QBoxLayout>
+-#include <QtGui/QSlider>
+ #include <QtGui/QLabel>
+ #include <QtGui/QPixmap>
+ #include <QtGui/QIcon>
+@@ -84,7 +84,7 @@
+         void _k_currentSourceChanged();
+ 
+         QBoxLayout layout;
+-        QSlider slider;
++        SwiftSlider slider;
+         QLabel iconLabel;
+         QPointer<MediaObject> media;
+         bool ticking;
+Index: swiftslider.cpp
+===================================================================
+--- swiftslider.cpp	(revision 0)
++++ swiftslider.cpp	(revision 0)
+@@ -0,0 +1,99 @@
++/*  smplayer, GUI front-end for mplayer.
++    Copyright (C) 2006-2008 Ricardo Villalba <rvm@escomposlinux.org>
++
++    This program is free software; you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++    the Free Software Foundation; either version 2 of the License, or
++    (at your option) any later version.
++
++    This program is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++    GNU General Public License for more details.
++
++    You should have received a copy of the GNU General Public License
++    along with this program; if not, write to the Free Software
++    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++*/
++
++#include "swiftslider.h"
++
++#include <QtGui/QMouseEvent>
++#include <QtGui/QStyle>
++#include <QtGui/QStyleOption>
++
++QT_BEGIN_NAMESPACE
++
++#if !defined(QT_NO_PHONON_SEEKSLIDER) && !defined(QT_NO_PHONON_VOLUMESLIDER)
++
++namespace Phonon
++{
++
++SwiftSlider::SwiftSlider(Qt::Orientation orientation, QWidget * parent)
++	: QSlider(orientation, parent)
++{
++}
++
++SwiftSlider::~SwiftSlider()
++{
++}
++
++// Function copied from qslider.cpp
++inline int SwiftSlider::pick(const QPoint &pt) const
++{
++    return orientation() == Qt::Horizontal ? pt.x() : pt.y();
++}
++
++// Function copied from qslider.cpp and modified to make it compile
++int SwiftSlider::pixelPosToRangeValue(int pos) const
++{
++    QStyleOptionSlider opt;
++    initStyleOption(&opt);
++    QRect gr = style()->subControlRect(QStyle::CC_Slider, &opt, QStyle::SC_SliderGroove, this);
++    QRect sr = style()->subControlRect(QStyle::CC_Slider, &opt, QStyle::SC_SliderHandle, this);
++    int sliderMin, sliderMax, sliderLength;
++
++    if (orientation() == Qt::Horizontal) {
++        sliderLength = sr.width();
++        sliderMin = gr.x();
++        sliderMax = gr.right() - sliderLength + 1;
++    } else {
++        sliderLength = sr.height();
++        sliderMin = gr.y();
++        sliderMax = gr.bottom() - sliderLength + 1;
++    }
++    return QStyle::sliderValueFromPosition(minimum(), maximum(), pos - sliderMin,
++                                           sliderMax - sliderMin, opt.upsideDown);
++}
++
++// Based on code from qslider.cpp
++void SwiftSlider::mousePressEvent(QMouseEvent *event)
++{
++    if (event->button() == Qt::LeftButton) {
++        QStyleOptionSlider opt;
++        initStyleOption(&opt);
++        const QRect sliderRect = style()->subControlRect(QStyle::CC_Slider, &opt, QStyle::SC_SliderHandle, this);
++        const QPoint center = sliderRect.center() - sliderRect.topLeft();
++        // to take half of the slider off for the setSliderPosition call we use the center - topLeft
++
++        if (!sliderRect.contains(event->pos())) {
++            event->accept();
++
++            setSliderPosition(pixelPosToRangeValue(pick(event->pos() - center)));
++            triggerAction(SliderMove);
++            setRepeatAction(SliderNoAction);
++        } else {
++            QSlider::mousePressEvent(event);
++        }
++    } else {
++        QSlider::mousePressEvent(event);
++    }
++}
++
++} // namespace Phonon
++
++#endif //QT_NO_PHONON_VOLUMESLIDER && QT_NO_PHONON_VOLUMESLIDER
++
++QT_END_NAMESPACE
++
++#include "moc_swiftslider.cpp"
+Index: swiftslider.h
+===================================================================
+--- swiftslider.h	(revision 0)
++++ swiftslider.h	(revision 0)
+@@ -0,0 +1,57 @@
++/*  smplayer, GUI front-end for mplayer.
++    Copyright (C) 2006-2008 Ricardo Villalba <rvm@escomposlinux.org>
++
++    This program is free software; you can redistribute it and/or modify
++    it under the terms of the GNU General Public License as published by
++    the Free Software Foundation; either version 2 of the License, or
++    (at your option) any later version.
++
++    This program is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++    GNU General Public License for more details.
++
++    You should have received a copy of the GNU General Public License
++    along with this program; if not, write to the Free Software
++    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++*/
++
++#ifndef SWIFTSLIDER_H
++#define SWIFTSLIDER_H
++
++#include <QtGui/QSlider>
++
++QT_BEGIN_NAMESPACE
++
++#if !defined(QT_NO_PHONON_SEEKSLIDER) && !defined(QT_NO_PHONON_VOLUMESLIDER)
++
++namespace Phonon
++{
++
++/** \class SwiftSlider swiftslider.h Phonon/SwiftSlider
++ * \short Modified QSlider that allows sudden/quick moves instead of stepped moves.
++ *
++ * This is an internal class used by SeekSlider and VolumeSlider.
++ *
++ * \ingroup PhononWidgets
++ */
++class SwiftSlider : public QSlider
++{
++	Q_OBJECT
++public:
++	SwiftSlider(Qt::Orientation orientation, QWidget * parent);
++	~SwiftSlider();
++
++private:
++	void mousePressEvent(QMouseEvent *event);
++	inline int pick(const QPoint &pt) const;
++	int pixelPosToRangeValue(int pos) const;
++};
++
++} // namespace Phonon
++
++#endif //QT_NO_PHONON_VOLUMESLIDER && QT_NO_PHONON_VOLUMESLIDER
++
++QT_END_NAMESPACE
++
++#endif //SWIFTSLIDER_H
+Index: volumeslider_p.h
+===================================================================
+--- volumeslider_p.h	(revision 604)
++++ volumeslider_p.h	(working copy)
+@@ -24,8 +24,8 @@
+ #define VOLUMESLIDER_P_H
+ 
+ #include "volumeslider.h"
++#include "swiftslider.h"
+ #include <QtGui/QBoxLayout>
+-#include <QtGui/QSlider>
+ #include <QtGui/QLabel>
+ #include <QtGui/QPixmap>
+ #include <QtGui/QToolButton>
+@@ -85,7 +85,7 @@
+ 
+     private:
+         QBoxLayout layout;
+-        QSlider slider;
++        SwiftSlider slider;
+         QToolButton muteButton;
+         QIcon volumeIcon;
+         QIcon mutedIcon;

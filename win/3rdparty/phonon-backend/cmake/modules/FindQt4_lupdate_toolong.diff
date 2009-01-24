@@ -1,0 +1,30 @@
+Index: FindQt4.cmake
+===================================================================
+--- FindQt4.cmake	(revision 327)
++++ FindQt4.cmake	(working copy)
+@@ -1270,10 +1270,24 @@
+            LIST(APPEND _my_sources ${_abs_FILE})
+          ENDIF(_ext MATCHES "ts")
+       ENDFOREACH(_file)
++
++      # Constructs a temporary .pro file which contains all sources to translate
++      # This allows us to fix a bug: sometimes the lupdate command line is too long
++      # Typical error message under MinGW is: The input line is too long
++      SET(_pro_sources "")
++      FOREACH(_my_source ${_my_sources})
++        FILE(RELATIVE_PATH relative ${CMAKE_CURRENT_BINARY_DIR} ${_my_source})
++        SET(_pro_sources
++           "${_pro_sources} \\ \n      \"${_my_source}\""
++        )
++      ENDFOREACH(_my_source)
++      SET(_pro_file ${CMAKE_CURRENT_BINARY_DIR}/translations.pro)
++      FILE(WRITE ${_pro_file} "SOURCES =${_pro_sources}")
++
+       FOREACH(_ts_file ${_my_tsfiles})
+         ADD_CUSTOM_COMMAND(OUTPUT ${_ts_file}
+            COMMAND ${QT_LUPDATE_EXECUTABLE}
+-           ARGS ${_my_sources} -ts ${_ts_file}
++           ARGS ${_pro_file} -ts ${_ts_file}
+            DEPENDS ${_my_sources})
+       ENDFOREACH(_ts_file)
+       QT4_ADD_TRANSLATION(${_qm_files} ${_my_tsfiles})

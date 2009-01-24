@@ -1,0 +1,41 @@
+Stripped version of OWBuild (only utility macros) + modifications + some more macros.
+
+Here is the original README from OWBuild:
+
+
+OWBuild is a build system based on CMake.
+OWBuild is not a fork of CMake, it is simply a set of macros for CMake
+that simplifies CMake scripts writing
+
+OWBuild is under BSD license, check COPYING file
+
+Check OWBuild website here:
+http://dev.openwengo.org/trac/openwengo/trac.cgi/wiki/OWBuild
+
+Coding Recommendations
+----------------------
+
+* Be very careful about the API and the design: goal is not to
+create an ugly hack above CMake but a complete/simple/powerful build system
+
+* Do not use spaces, use tabs
+
+* 1 function/macro = 1 file
+
+* Documentation always follows this shape:
+
+# - name_of_the_function()
+# One line explanation
+#
+# Full explanation from a user point of vue
+#
+# Example:
+#
+# Output Generated:
+#
+# Explanation about the internal way it works
+#
+# Copyright (C) 2007  Your Firstname and Lastname <your@email>
+#
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING file.

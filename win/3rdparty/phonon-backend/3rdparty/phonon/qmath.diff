@@ -1,0 +1,13 @@
+Index: audiooutput.cpp
+===================================================================
+--- audiooutput.cpp	(revision 419)
++++ audiooutput.cpp	(working copy)
+@@ -29,7 +29,7 @@
+ #include "phononnamespace_p.h"
+ #include "platform_p.h"
+ 
+-#include <qmath.h>
++#include <QtCore/qmath.h>
+ 
+ #define PHONON_CLASSNAME AudioOutput
+ #define IFACES2 AudioOutputInterface42

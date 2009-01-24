@@ -11,6 +11,10 @@ IF(MINGW)
 	STRING(REGEX REPLACE "\\\\" "/" MINGW_BIN_DIR "${MINGW_BIN_DIR_TMP}") # Replace back slashes to slashes
 ENDIF(MINGW)
 
+IF(MINGW)
+	SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
+ENDIF(MINGW)
+
 # Set Qt4 bin dir to find QtCore4.dll and other libs to install
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
 STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back slashes to slashes
@@ -119,6 +123,10 @@ SET ( Tano_Files
 	ui/images/tano-small.png
 )
 
+SET ( Tano_MPlayer
+	"win/3rdparty/mplayer"
+)
+
 # Set translation files
 SET(Tano_Translation_Srcs 
 	lang/tano_sl.ts
@@ -138,7 +146,8 @@ SET(QT_USE_QTNETWORK True)
 SET(QT_USE_QTWEBKIT True)
 
 IF(MINGW)
-	SET(QT_USE_PHONON True)
+	include_directories(${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/phonon-backend/3rdparty)
+	set(QT_PHONON_LIBRARY ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/phonon-backend/build/3rdparty/phonon/libphonon.dll.a)
 ELSE(MINGW)
 	#SET(QT_USE_QTPHONON True)
 ENDIF(MINGW)
@@ -212,13 +221,13 @@ IF(MINGW)
 		"[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MinGW;InstallLocation]/bin"
 		c:/MinGW/bin /MinGW/bin
 	)
-	#ADD_CUSTOM_COMMAND(
-	#	OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/tano.obj
-	#	COMMAND ${WINDRES_PROGRAM}
-	#	-i tano.rc
-	#	-o tano.obj
-	#)
-	#SET(Tano_Srcs ${Tano_Srcs} tano.obj)
+	ADD_CUSTOM_COMMAND(
+		OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/tano.obj
+		COMMAND ${WINDRES_PROGRAM}
+		-i tano.rc
+		-o tano.obj
+	)
+	SET(Tano_Srcs ${Tano_Srcs} tano.obj)
 ENDIF(MINGW)
 
 
@@ -268,6 +277,11 @@ INSTALL(FILES ${Tano_Translation_Bins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TA
 IF(MINGW)
 	# Install Qt libs
 	INSTALL( FILES ${QT_BIN_DIR}/QtCore4.dll ${QT_BIN_DIR}/QtGui4.dll ${QT_BIN_DIR}/QtNetwork4.dll ${QT_BIN_DIR}/QtWebkit4.dll ${QT_BIN_DIR}/QtXml4.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
+	
+	# Install Backend
+	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/phonon-backend/build/3rdparty/phonon/libphonon.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
+	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/phonon-backend/build/phonon-mplayer/libphonon_mplayer.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/phonon_backend )
+	INSTALL( DIRECTORY ${Tano_MPlayer} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}" PATTERN ".svn" EXCLUDE )
 	
 	# Install mingwm10.dll
 	IF(MINGW)
