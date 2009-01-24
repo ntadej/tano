@@ -36,6 +36,7 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 	trayIcon = new TrayIcon();
 	epg = new Epg();
 	epgToday = new EpgToday();
+	browser = new EpgBrowser();
 
 	createActions();
 
@@ -93,9 +94,10 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
 
 	connect(epg, SIGNAL(epgDone(QString, bool)), this, SLOT(showEpg(QString, bool)));
+	connect(epgToday, SIGNAL(urlClicked(QString)), browser, SLOT(open(QString)));
 	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
 
-    connect(ui.labelNow, SIGNAL(linkActivated(QString)), this, SLOT(browser(QString)));
+    connect(ui.labelNow, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
 }
 
 void Tano::aboutTano()
@@ -212,13 +214,7 @@ void Tano::editPlaylist()
 
 void Tano::showBrowser()
 {
-	browser("http://siol-tv.pfusion.co.cc");
-}
-
-void Tano::browser(QString link)
-{
-	EpgBrowser b(this, link);
-	b.exec();
+	browser->open("http://siol-tv.pfusion.co.cc");
 }
 
 void Tano::settings()
@@ -237,7 +233,7 @@ void Tano::tooltip(QString channelNow)
 
 void Tano::help()
 {
-
+	browser->help();
 }
 
 void Tano::updates()

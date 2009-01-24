@@ -1,16 +1,20 @@
 #ifndef EPGBROWSER_H
 #define EPGBROWSER_H
 
-#include <QtGui/QDialog>
+#include <QtGui/QWidget>
 #include "../ui_EpgBrowser.h"
 
-class EpgBrowser : public QDialog
+class EpgBrowser : public QWidget
 {
     Q_OBJECT
 
 public:
-    EpgBrowser(QWidget *parent = 0, QString link = "http://siol-tv.pfusion.co.cc");
+    EpgBrowser(QWidget *parent = 0);
     ~EpgBrowser();
+
+public slots:
+	void open(QString link);
+	void help();
 
 private slots:
 	void go();

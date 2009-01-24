@@ -36,7 +36,6 @@ private slots:
     void editPlaylist();
     void settings();
     void showBrowser();
-    void browser(QString link);
 
     void showEpg(QString epgValue, bool full);
 
@@ -61,6 +60,7 @@ private:
 	TrayIcon *trayIcon;
 	Epg *epg;
 	EpgToday *epgToday;
+	EpgBrowser *browser;
 	QString vlcStatus;
 
     void createActions();

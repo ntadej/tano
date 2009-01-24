@@ -29,8 +29,7 @@ ENDIF(MINGW)
 
 # Set default install path:
 # In *nix environments this is /usr/local 
-# Under M$ Windows this is C:\Program files\Canorus 
-# On Mac OS X it is /Applications for the .app and /Library/Fonts for the fonts, but see note below
+# Under M$ Windows this is C:\Program files\Tano
 # WARNING: Leading slash should be added - this is for easier concatenation of the strings due to slash/backslash issues
 IF(MINGW)
 	IF (NOT CMAKE_INSTALL_PREFIX)
@@ -92,6 +91,7 @@ SET(Tano_Resrcs ui/images.qrc)
 
 SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	channels/Channel.cpp
+	channels/ChannelEpg.cpp
 	channels/EditPlaylist.cpp
 	settings/Settings.cpp
 	settings/EditSettings.cpp
