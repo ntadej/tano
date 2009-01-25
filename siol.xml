@@ -168,14 +168,14 @@
                 </channel>
                 <channel>
                 	<title>Explorer</title>
-                	<name>Explorer</name>
+                	<name>Viasat Explorer</name>
                 	<epg>EXPLORER</epg>
                 	<language>angleški - podnaslovljen</language>
                 	<url>udp://@239.255.0.33:5002</url>
                 </channel>
 				<channel>
                     <title>History</title>
-                    <name>History Channel</name>
+                    <name>Viasat History</name>
                     <epg>HISTORY</epg>
                     <language>angleški - podnaslovljen</language>
                     <url>udp://@239.255.0.104:5002</url>
@@ -309,6 +309,20 @@
                     <language>hrvaški</language>
                     <url>udp://@239.255.0.160:5002</url>
                 </channel>
+                <channel>
+                	<title>Golica</title>
+                	<name>Golica TV</name>
+                	<epg>NI</epg>
+                	<language>slovenski</language>
+                	<url>udp://@239.255.0.60:5002</url>
+                </channel>
+				<channel>
+					<title>TV Petelin</title>
+					<name>TV Petelin</name>
+					<epg>NI</epg>
+					<language>slovenski</language>
+					<url>udp://@239.255.0.93:5002</url>
+				</channel>
         </category>
         <category expanded="false">
         	<title>Dokumentarni</title>
@@ -342,14 +356,14 @@
                 </channel>
                 <channel>
                     <title>History</title>
-                    <name>History</name>
+                    <name>Viasat History</name>
                     <epg>HISTORY</epg>
                     <language>angleški - podnaslovljen</language>
                     <url>udp://@239.255.0.104:5002</url>
                 </channel>
                 <channel>
                     <title>Explorer</title>
-                    <name>Explorer</name>
+                    <name>Viasat Explorer</name>
                     <epg>EXPLORER</epg>
                     <language>angleški - podnaslovljen</language>
                     <url>udp://@239.255.0.33:5002</url>
@@ -471,7 +485,7 @@
                 </channel>
                 <channel>
                     <title>ESPN</title>
-                    <name>ESPN </name>
+                    <name>ESPN Classic</name>
                     <epg>ESPN</epg>
                     <language>angleški</language>
                     <url>udp://@239.255.0.161:5002</url>
@@ -1006,6 +1020,48 @@
                     <language>slovenski</language>
                     <url>udp://@239.255.0.56:5002</url>
                 </channel>
+                <channel>
+                	<title>TV Primorka</title>
+                	<name>TV Primorka</name>
+                	<epg>NI</epg>
+                	<language>slovenski</language>
+                	<url>udp://@239.255.0.67:5002</url>
+                </channel>
+				<channel>
+					<title>Vitel</title>
+					<name>Vitel</name>
+					<epg>NI</epg>
+					<language>slovenski</language>
+					<url>udp://@239.255.4.83:5002</url>
+				</channel>
+				<channel>
+					<title>Tele M</title>
+					<name>Tele M</name>
+					<epg>NI</epg>
+					<language>slovenski</language>
+					<url>udp://@239.255.4.126:5002</url>
+				</channel>
+				<channel>
+					<title>SIP TV</title>
+					<name>SIP TV</name>
+					<epg>NI</epg>
+					<language>slovenski</language>
+					<url>udp://@239.255.4.127:5002</url>
+				</channel>
+				<channel>
+					<title>TV AS</title>
+					<name>TV AS</name>
+					<epg>NI</epg>
+					<language>slovenski</language>
+					<url>udp://@239.255.4.129:5002</url>
+				</channel>
+				<channel>
+					<title>Kanal 10</title>
+					<name>Kanal 10</name>
+					<epg>NI</epg>
+					<language>slovenski</language>
+					<url>udp://@239.255.4.128:5002</url>
+				</channel>
        	</category>
        	<category expanded="false">
         	<title>Za odrasle</title>
@@ -1069,6 +1125,13 @@
 				<language>angleški</language>
 				<url>udp://@239.255.0.201:5002</url>
 			</channel>
+			<channel>
+				<title>Testni HD 2</title>
+				<name>Testni HD program 2</name>
+				<epg>NI</epg>
+				<language>angleški</language>
+				<url>udp://@239.255.0.203:5002</url>
+			</channel>
     </category>
     <category expanded="false">
         <title>SiOL Radio</title>
@@ -1122,8 +1185,8 @@
 				<url>udp://@239.255.2.7:5002</url>
 			</channel>
 			<channel>
-				<title>Radio Salomon</title>
-				<name>Radio Salomon</name>
+				<title>Radio 1</title>
+				<name>Radio 1</name>
 				<epg>NI</epg>
 				<language>slovenski</language>
 				<url>udp://@239.255.2.8:5002</url>
