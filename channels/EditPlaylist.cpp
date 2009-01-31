@@ -66,6 +66,7 @@ void EditPlaylist::addItemCategory()
 	defaults << tr("Category");
 	QTreeWidgetItem *item = new QTreeWidgetItem(defaults);
 	item->setIcon(0,categoryIcon);
+	item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsDragEnabled | Qt::ItemIsEditable);
 	item->setData(0, Qt::UserRole, "category");
 	ui.playlist->addTopLevelItem(item);
 }
@@ -79,6 +80,7 @@ void EditPlaylist::addItemChannel()
 	if(ui.playlist->currentItem()->text(1) == "") {
 		QTreeWidgetItem *item = new QTreeWidgetItem(ui.playlist->currentItem(), defaults);
 		item->setIcon(0,channelIcon);
+		item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsDragEnabled | Qt::ItemIsEditable);
 		item->setData(0, Qt::UserRole, "channel");
 	}
 	else

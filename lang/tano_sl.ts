@@ -15,44 +15,44 @@
         <translation>Kategorija</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="77"/>
+        <location filename="../channels/EditPlaylist.cpp" line="78"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="77"/>
+        <location filename="../channels/EditPlaylist.cpp" line="78"/>
         <source>New channel</source>
         <translation>Nov program</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="77"/>
+        <location filename="../channels/EditPlaylist.cpp" line="78"/>
         <source>language</source>
         <translation>jezik</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="86"/>
+        <location filename="../channels/EditPlaylist.cpp" line="88"/>
         <source>Please, add channel to a category.</source>
         <translation>Prosim, dodaj program kategoriji.</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="92"/>
+        <location filename="../channels/EditPlaylist.cpp" line="94"/>
         <source>Save Channel list</source>
         <translation>Shrani Seznam programov</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="102"/>
+        <location filename="../channels/EditPlaylist.cpp" line="104"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="100"/>
+        <location filename="../channels/EditPlaylist.cpp" line="102"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="94"/>
+        <location filename="../channels/EditPlaylist.cpp" line="96"/>
         <source>Tano TV Channel list Files (*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
