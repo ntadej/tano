@@ -20,6 +20,9 @@ public:
 	Phonon::VolumeSlider *slider();
 	QString currentMedia();
 
+protected:
+	void mouseDoubleClickEvent(QMouseEvent * event);
+
 public slots:
 	void controlPlay();
 	void controlStop();

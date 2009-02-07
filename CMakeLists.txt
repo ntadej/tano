@@ -74,7 +74,6 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/Tano.ui
 	ui/EditSettings.ui
 	ui/EpgBrowser.ui
-	ui/EpgToday.ui
 	ui/EditPlaylist.ui
 )
 

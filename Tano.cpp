@@ -28,20 +28,21 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 	ui.setupUi(this);
 	ui.videoControls->addWidget(ui.videoWidget->slider());
 	ui.buttonRefresh->hide();
-	ui.buttonToday->hide();
-    ui.epgWidget->hide();
+	ui.labelNow->hide();
+	ui.labelLanguage->hide();
 
 	update = new Updates();
 	handler = new TanoHandler(ui.playlistTree);
 	trayIcon = new TrayIcon();
 	epg = new Epg();
-	epgToday = new EpgToday();
 	browser = new EpgBrowser();
-
-	createActions();
 
 	defaultP = defaultPlaylist;
 	openPlaylist(true);
+
+	editor = new EditPlaylist(parent, fileName);
+
+	createActions();
 }
 
 Tano::~Tano()
@@ -60,8 +61,8 @@ void Tano::closeEvent(QCloseEvent *event)
 
 void Tano::createActions()
 {
-	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
-	connect(ui.actionUpdate, SIGNAL(triggered()), this, SLOT(updates()));
+	connect(ui.actionHelp, SIGNAL(triggered()), browser, SLOT(help()));
+	connect(ui.actionUpdate, SIGNAL(triggered()), update, SLOT(getUpdates()));
 	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
 	connect(ui.actionAbout_Qt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(ui.actionClose, SIGNAL(triggered()), qApp, SLOT(quit()));
@@ -74,14 +75,14 @@ void Tano::createActions()
 
 	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(settings()));
 	connect(ui.actionBrowser, SIGNAL(triggered()), this, SLOT(showBrowser()));
-	connect(ui.actionEditPlaylist, SIGNAL(triggered()), this, SLOT(editPlaylist()));
+	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
 	connect(ui.buttonPlay, SIGNAL(clicked()), ui.videoWidget, SLOT(controlPlay()));
 	connect(ui.buttonStop, SIGNAL(clicked()), ui.videoWidget, SLOT(controlStop()));
+	connect(ui.buttonStop, SIGNAL(clicked()), this, SLOT(stop()));
 	connect(ui.buttonFull, SIGNAL(clicked()), ui.videoWidget, SLOT(controlFull()));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
-	connect(ui.buttonToday, SIGNAL(clicked()), epgToday, SLOT(showEpg()));
 
 	connect(ui.playlistTree, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 
@@ -94,10 +95,12 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
 
 	connect(epg, SIGNAL(epgDone(QString, bool)), this, SLOT(showEpg(QString, bool)));
-	connect(epgToday, SIGNAL(urlClicked(QString)), browser, SLOT(open(QString)));
+	connect(ui.epgToday, SIGNAL(urlClicked(QString)), browser, SLOT(open(QString)));
 	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
 
-    connect(ui.labelNow, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
+	connect(ui.labelNow, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
+
+	connect(ui.playlistWidget, SIGNAL(visibilityChanged(bool)), this, SLOT(actionShow(bool)));
 }
 
 void Tano::aboutTano()
@@ -116,32 +119,40 @@ void Tano::playlist(QTreeWidgetItem* clickedChannel)
 {
 	channel = handler->channelRead(clickedChannel);
 	if (channel->isCategory() != true) {
-		ui.epgWidget->setWindowTitle(channel->longName() + " (" + channel->name() + ")");
+		ui.playlistWidget->setWindowTitle(channel->longName() + " (" + channel->name() + ")");
 		ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
+		ui.labelLanguage->show();
 
 		epg->getEpg(channel->epg());
 
-		ui.labelNow->setText("");
+		ui.labelNow->hide();
 		ui.buttonRefresh->hide();
-		ui.buttonToday->hide();
+		ui.epgToday->epgClear();
 
 		ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
 		statusBar()->showMessage(tr("Channel selected"), 2000);
-
-	    ui.epgWidget->show();
 	}
 }
 
 void Tano::showEpg(QString epgValue, bool full)
 {
 	if (full) {
-		epgToday->setEpg(epgValue);
+		ui.epgToday->setEpg(epgValue);
 	}
 	else {
-		ui.labelNow->setText(tr("Now playing:") + " " + epgValue);
+		ui.labelNow->setText(tr("Now:") + " " + epgValue);
+		ui.labelNow->show();
 		ui.buttonRefresh->show();
-		ui.buttonToday->show();
 	}
+}
+
+void Tano::stop()
+{
+	ui.playlistWidget->setWindowTitle(tr("Channel info"));
+	ui.labelLanguage->hide();
+	ui.labelNow->hide();
+	ui.buttonRefresh->hide();
+	ui.epgToday->epgClear();
 }
 
 void Tano::openPlaylist(bool start)
@@ -188,7 +199,7 @@ void Tano::openFile()
     ui.videoWidget->playTv(fileName, fileName);
     statusBar()->showMessage(tr("Playing file"), 5000);
 
-    ui.epgWidget->hide();
+    ui.playlistWidget->hide();
 }
 
 void Tano::openUrl()
@@ -202,14 +213,8 @@ void Tano::openUrl()
 	if (ok && !fileName.isEmpty()) {
 		ui.videoWidget->playTv(fileName, fileName);
 		statusBar()->showMessage(tr("Playing file"), 5000);
-	    ui.epgWidget->hide();
+	    ui.playlistWidget->hide();
 	}
-}
-
-void Tano::editPlaylist()
-{
-	EditPlaylist p(this, fileName);
-	p.exec();
 }
 
 void Tano::showBrowser()
@@ -231,16 +236,6 @@ void Tano::tooltip(QString channelNow)
 		setWindowTitle(tr("Tano Player"));
 }
 
-void Tano::help()
-{
-	browser->help();
-}
-
-void Tano::updates()
-{
-	update->getUpdates();
-}
-
 void Tano::processUpdates(QString updates)
 {
 	qDebug() << version;
@@ -251,4 +246,12 @@ void Tano::processUpdates(QString updates)
 		if (trayIcon->isVisible())
 			trayIcon->message("latest");
 	}
+}
+
+void Tano::actionShow(bool status)
+{
+    if(status != true)
+    	ui.actionChannel_info->setEnabled(true);
+    else
+    	ui.actionChannel_info->setDisabled(true);
 }

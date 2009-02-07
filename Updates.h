@@ -11,6 +11,7 @@ public:
 	Updates();
 	virtual ~Updates();
 
+public slots:
 	void getUpdates();
 
 signals:

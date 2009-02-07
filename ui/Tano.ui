@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>918</width>
-    <height>756</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -176,7 +176,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>918</width>
+     <width>800</width>
      <height>24</height>
     </rect>
    </property>
@@ -214,8 +214,7 @@
       <iconset resource="images.qrc" >
        <normaloff>:/icons/images/win.png</normaloff>:/icons/images/win.png</iconset>
      </property>
-     <addaction name="actionChannel_list" />
-     <addaction name="actionChannel_info_EPG" />
+     <addaction name="actionChannel_info" />
     </widget>
     <addaction name="actionFullscreen" />
     <addaction name="menuShow" />
@@ -229,6 +228,9 @@
   </widget>
   <widget class="QStatusBar" name="statusbar" />
   <widget class="QToolBar" name="toolBar" >
+   <property name="windowTitle" >
+    <string>Main toolbar</string>
+   </property>
    <property name="iconSize" >
     <size>
      <width>32</width>
@@ -249,11 +251,16 @@
    <addaction name="actionOpen" />
    <addaction name="separator" />
    <addaction name="actionBrowser" />
+   <addaction name="actionChannel_info" />
    <addaction name="separator" />
    <addaction name="actionEditPlaylist" />
    <addaction name="actionSettings" />
   </widget>
   <widget class="QDockWidget" name="playlistWidget" >
+   <property name="windowIcon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
+   </property>
    <property name="floating" >
     <bool>false</bool>
    </property>
@@ -261,40 +268,13 @@
     <set>QDockWidget::AllDockWidgetFeatures</set>
    </property>
    <property name="windowTitle" >
-    <string>Channel list</string>
+    <string>Channel info</string>
    </property>
    <attribute name="dockWidgetArea" >
     <number>2</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents" >
     <layout class="QVBoxLayout" name="verticalLayout_4" >
-     <item>
-      <widget class="QTreeWidget" name="playlistTree" >
-       <property name="editTriggers" >
-        <set>QAbstractItemView::NoEditTriggers</set>
-       </property>
-       <property name="columnCount" >
-        <number>1</number>
-       </property>
-       <column>
-        <property name="text" >
-         <string>Channel</string>
-        </property>
-       </column>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QDockWidget" name="epgWidget" >
-   <property name="floating" >
-    <bool>false</bool>
-   </property>
-   <attribute name="dockWidgetArea" >
-    <number>8</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_2" >
-    <layout class="QVBoxLayout" name="verticalLayout" >
      <item>
       <widget class="QLabel" name="labelLanguage" >
        <property name="text" >
@@ -310,17 +290,49 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonToday" >
+      <widget class="QPushButton" name="buttonRefresh" >
        <property name="text" >
-        <string>Show Today's Schedule</string>
+        <string>Refresh EPG</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonRefresh" >
-       <property name="text" >
-        <string>Refresh Currently playing</string>
+      <widget class="QTabWidget" name="channelTabWidget" >
+       <property name="currentIndex" >
+        <number>0</number>
        </property>
+       <widget class="QWidget" name="tabList" >
+        <attribute name="title" >
+         <string>Channel list</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_3" >
+         <item>
+          <widget class="QTreeWidget" name="playlistTree" >
+           <property name="editTriggers" >
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="columnCount" >
+            <number>1</number>
+           </property>
+           <column>
+            <property name="text" >
+             <string>Channel</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabEpg" >
+        <attribute name="title" >
+         <string>Today's Schedule</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_5" >
+         <item>
+          <widget class="EpgToday" native="1" name="epgToday" />
+         </item>
+        </layout>
+       </widget>
       </widget>
      </item>
     </layout>
@@ -428,22 +440,16 @@
     <enum>Qt::ApplicationShortcut</enum>
    </property>
   </action>
-  <action name="actionChannel_list" >
+  <action name="actionChannel_info" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="icon" >
     <iconset resource="images.qrc" >
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
    </property>
    <property name="text" >
-    <string>Channel list</string>
-   </property>
-  </action>
-  <action name="actionChannel_info_EPG" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
-     <normaloff>:/icons/images/browser.png</normaloff>:/icons/images/browser.png</iconset>
-   </property>
-   <property name="text" >
-    <string>Channel info / EPG</string>
+    <string>Channel info</string>
    </property>
   </action>
   <action name="actionOpenUrl" >
@@ -472,13 +478,19 @@
    <header location="global" >video/Video.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>EpgToday</class>
+   <extends>QWidget</extends>
+   <header location="global" >epg/EpgToday.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <resources>
   <include location="images.qrc" />
  </resources>
  <connections>
   <connection>
-   <sender>actionChannel_list</sender>
+   <sender>actionChannel_info</sender>
    <signal>triggered()</signal>
    <receiver>playlistWidget</receiver>
    <slot>show()</slot>
@@ -490,22 +502,6 @@
     <hint type="destinationlabel" >
      <x>785</x>
      <y>407</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionChannel_info_EPG</sender>
-   <signal>triggered()</signal>
-   <receiver>epgWidget</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>458</x>
-     <y>643</y>
     </hint>
    </hints>
   </connection>

@@ -13,7 +13,6 @@
 #include "ui/TrayIcon.h"
 #include "epg/Epg.h"
 #include "epg/EpgBrowser.h"
-#include "epg/EpgToday.h"
 
 class Tano : public QMainWindow
 {
@@ -30,20 +29,21 @@ private slots:
     void aboutTano();
     void playlist(QTreeWidgetItem* clickedChannel);
 
+    void stop();
+
     void openPlaylist(bool start = false);
     void openFile();
     void openUrl();
-    void editPlaylist();
     void settings();
     void showBrowser();
 
     void showEpg(QString epgValue, bool full);
 
-    void updates();
     void processUpdates(QString updates);
-    void help();
 
     void tooltip(QString channelNow = "stop");
+
+    void actionShow(bool status);
 
 private:
     Ui::Tano ui;
@@ -59,9 +59,8 @@ private:
 	QString defaultP;
 	TrayIcon *trayIcon;
 	Epg *epg;
-	EpgToday *epgToday;
 	EpgBrowser *browser;
-	QString vlcStatus;
+	EditPlaylist *editor;
 
     void createActions();
 };

@@ -86,7 +86,7 @@ void Epg::epgPrintToday()
 
 	QString string = codec->toUnicode(httpResponse);
 	epgValue = string.replace(0, 2, "");
-	epgValue = epgValue.replace("2009: ", "2009:;");
+	epgValue = epgValue.replace(".2009: ", ".2009:;");
 	epgValue = epgValue.replace(" //  ", ";");
 	epgValue = epgValue.replace(" // ", ";");
 

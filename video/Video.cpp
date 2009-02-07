@@ -1,3 +1,5 @@
+#include <QMouseEvent>
+
 #include "Video.h"
 
 Video::Video(QWidget *parent)
@@ -13,13 +15,18 @@ Video::Video(QWidget *parent)
 
 	shortcutFull = new QShortcut(QKeySequence(tr("Esc")),
 	                          this);
-	connect(shortcutFull, SIGNAL(activated()), this, SLOT(controlFull()));
 }
 
 
 Video::~Video()
 {
 
+}
+
+void Video::mouseDoubleClickEvent(QMouseEvent * event)
+{
+	controlFull();
+	event->ignore();
 }
 
 void Video::playTv(QString fileName, QString channelName)
@@ -47,9 +54,11 @@ void Video::controlFull()
 {
 	if (this->isFullScreen() == false) {
 		this->enterFullScreen();
+		connect(shortcutFull, SIGNAL(activated()), this, SLOT(controlFull()));
 	}
 	else {
 		this->exitFullScreen();
+		disconnect(shortcutFull, SIGNAL(activated()), this, SLOT(controlFull()));
 	}
 }
 

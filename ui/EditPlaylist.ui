@@ -1,6 +1,6 @@
 <ui version="4.0" >
  <class>EditPlaylistClass</class>
- <widget class="QDialog" name="EditPlaylistClass" >
+ <widget class="QWidget" name="EditPlaylistClass" >
   <property name="geometry" >
    <rect>
     <x>0</x>
