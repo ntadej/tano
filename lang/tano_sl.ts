@@ -3,116 +3,131 @@
 <context>
     <name>EditPlaylist</name>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="32"/>
+        <location filename="../channels/EditPlaylist.cpp" line="131"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="66"/>
+        <location filename="../channels/EditPlaylist.cpp" line="68"/>
         <source>Category</source>
         <translation>Kategorija</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="78"/>
+        <location filename="../channels/EditPlaylist.cpp" line="84"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="78"/>
+        <location filename="../channels/EditPlaylist.cpp" line="84"/>
         <source>New channel</source>
         <translation>Nov program</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="78"/>
+        <location filename="../channels/EditPlaylist.cpp" line="84"/>
         <source>language</source>
         <translation>jezik</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="88"/>
+        <location filename="../channels/EditPlaylist.cpp" line="94"/>
         <source>Please, add channel to a category.</source>
         <translation>Prosim, dodaj program kategoriji.</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="94"/>
+        <location filename="../channels/EditPlaylist.cpp" line="100"/>
         <source>Save Channel list</source>
         <translation>Shrani Seznam programov</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="104"/>
+        <location filename="../channels/EditPlaylist.cpp" line="110"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="102"/>
+        <location filename="../channels/EditPlaylist.cpp" line="129"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="96"/>
+        <location filename="../channels/EditPlaylist.cpp" line="102"/>
         <source>Tano TV Channel list Files (*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
+    </message>
+    <message>
+        <location filename="../channels/EditPlaylist.cpp" line="78"/>
+        <source>Please, add subcategory to a category.</source>
+        <translation>Prosim, dodaj podkategorijo kategoriji.</translation>
     </message>
 </context>
 <context>
     <name>EditPlaylistClass</name>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="109"/>
+        <location filename="../ui_EditPlaylist.h" line="123"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="110"/>
+        <location filename="../ui_EditPlaylist.h" line="124"/>
         <source>Long name</source>
         <translation>Dolgo ime</translation>
     </message>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="111"/>
+        <location filename="../ui_EditPlaylist.h" line="125"/>
         <source>Language</source>
         <translation>Jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="112"/>
+        <location filename="../ui_EditPlaylist.h" line="126"/>
         <source>EPG</source>
         <translation>EPG</translation>
     </message>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="113"/>
+        <location filename="../ui_EditPlaylist.h" line="127"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="107"/>
+        <location filename="../ui_EditPlaylist.h" line="119"/>
         <source>Save</source>
         <translation>Shrani</translation>
     </message>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="108"/>
+        <location filename="../ui_EditPlaylist.h" line="120"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="105"/>
-        <source>Add Category</source>
-        <translation>Dodaj kategorijo</translation>
-    </message>
-    <message>
-        <location filename="../ui_EditPlaylist.h" line="104"/>
+        <location filename="../ui_EditPlaylist.h" line="116"/>
         <source>Add Channel</source>
         <translation>Dodaj program</translation>
     </message>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="103"/>
+        <location filename="../ui_EditPlaylist.h" line="115"/>
         <source>Edit Channel List</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui_EditPlaylist.h" line="106"/>
+        <location filename="../ui_EditPlaylist.h" line="118"/>
         <source>Delete Item</source>
         <translation>Izbriši element</translation>
+    </message>
+    <message>
+        <location filename="../ui_EditPlaylist.h" line="121"/>
+        <source>Reload</source>
+        <translation>Obnovi</translation>
+    </message>
+    <message>
+        <location filename="../ui_EditPlaylist.h" line="117"/>
+        <source>Add Main Category</source>
+        <translation>Dodaj glavno kategorijo</translation>
+    </message>
+    <message>
+        <location filename="../ui_EditPlaylist.h" line="122"/>
+        <source>Add Subcategory</source>
+        <translation>Dodaj podkategorijo</translation>
     </message>
 </context>
 <context>
@@ -196,30 +211,55 @@
 <context>
     <name>EpgBrowserClass</name>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="151"/>
+        <location filename="../ui_EpgBrowser.h" line="191"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="150"/>
-        <source>EPG Home</source>
-        <translation>EPG Domov</translation>
-    </message>
-    <message>
-        <location filename="../ui_EpgBrowser.h" line="149"/>
+        <location filename="../ui_EpgBrowser.h" line="189"/>
         <source>Browser</source>
         <translation>Brskalnik</translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="152"/>
+        <location filename="../ui_EpgBrowser.h" line="192"/>
         <source>Help</source>
         <translation>Pomoč</translation>
+    </message>
+    <message>
+        <location filename="../ui_EpgBrowser.h" line="190"/>
+        <source>Home</source>
+        <translation>Domov</translation>
+    </message>
+    <message>
+        <location filename="../ui_EpgBrowser.h" line="193"/>
+        <source>SiOL TV EPG</source>
+        <translation>SiOL TV EPG</translation>
+    </message>
+    <message>
+        <location filename="../ui_EpgBrowser.h" line="194"/>
+        <source>Reload</source>
+        <translation>Osveži</translation>
+    </message>
+    <message>
+        <location filename="../ui_EpgBrowser.h" line="195"/>
+        <source>Back</source>
+        <translation>Nazaj</translation>
+    </message>
+    <message>
+        <location filename="../ui_EpgBrowser.h" line="196"/>
+        <source>Forward</source>
+        <translation>Naprej</translation>
+    </message>
+    <message>
+        <location filename="../ui_EpgBrowser.h" line="197"/>
+        <source>Stop</source>
+        <translation>Ustavi</translation>
     </message>
 </context>
 <context>
     <name>EpgToday</name>
     <message>
-        <location filename="../epg/EpgToday.cpp" line="35"/>
+        <location filename="../epg/EpgToday.cpp" line="36"/>
         <source>No EPG</source>
         <translation>Ni EPG vsebin</translation>
     </message>
@@ -262,206 +302,216 @@
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="236"/>
+        <location filename="../Tano.cpp" line="243"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="346"/>
+        <location filename="../ui_Tano.h" line="351"/>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="347"/>
+        <location filename="../ui_Tano.h" line="352"/>
         <source>&amp;Exit</source>
         <translation>&amp;Izhod</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="348"/>
+        <location filename="../ui_Tano.h" line="353"/>
         <source>&amp;Settings</source>
         <translation>&amp;Nastavitve</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="373"/>
+        <location filename="../ui_Tano.h" line="379"/>
         <source>Fullscreen</source>
         <translation>Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="376"/>
+        <location filename="../ui_Tano.h" line="382"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="351"/>
+        <location filename="../ui_Tano.h" line="356"/>
         <source>&amp;Open Channel list</source>
         <translation>&amp;Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="352"/>
+        <location filename="../ui_Tano.h" line="357"/>
         <source>Open</source>
         <translation>Odpri</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="354"/>
+        <location filename="../ui_Tano.h" line="359"/>
         <source>Edit Channel list</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="378"/>
+        <location filename="../ui_Tano.h" line="384"/>
         <source>&amp;Help</source>
         <translation>&amp;Pomoč</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="356"/>
+        <location filename="../ui_Tano.h" line="361"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="360"/>
+        <location filename="../ui_Tano.h" line="366"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="363"/>
+        <location filename="../ui_Tano.h" line="369"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="368"/>
+        <location filename="../ui_Tano.h" line="374"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="377"/>
+        <location filename="../ui_Tano.h" line="383"/>
         <source>&amp;File</source>
         <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="379"/>
+        <location filename="../ui_Tano.h" line="385"/>
         <source>&amp;Tools</source>
         <translation>&amp;Orodja</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="387"/>
+        <location filename="../ui_Tano.h" line="393"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="386"/>
+        <location filename="../ui_Tano.h" line="392"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="108"/>
+        <location filename="../Tano.cpp" line="109"/>
         <source>About Tano Player</source>
         <translation>O Tano Predvajalniku</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="111"/>
+        <location filename="../Tano.cpp" line="112"/>
         <source>Copyright &amp;copy; 2008-2009 Tadej Novak</source>
         <translation>&amp;copy; 2008-2009 Tadej Novak</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="123"/>
+        <location filename="../Tano.cpp" line="124"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="133"/>
+        <location filename="../Tano.cpp" line="134"/>
         <source>Channel selected</source>
         <translation>Program izbran</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="162"/>
+        <location filename="../Tano.cpp" line="163"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="164"/>
+        <location filename="../Tano.cpp" line="165"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="180"/>
+        <location filename="../Tano.cpp" line="182"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="186"/>
+        <location filename="../Tano.cpp" line="188"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="192"/>
+        <location filename="../Tano.cpp" line="194"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="194"/>
+        <location filename="../Tano.cpp" line="196"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="215"/>
+        <location filename="../Tano.cpp" line="217"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="380"/>
+        <location filename="../ui_Tano.h" line="386"/>
         <source>Show</source>
         <translation>Pokaži</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="358"/>
+        <location filename="../ui_Tano.h" line="363"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="209"/>
+        <location filename="../Tano.cpp" line="211"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="210"/>
+        <location filename="../Tano.cpp" line="212"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="353"/>
-        <source>Browser</source>
-        <translation>Brskalnik</translation>
-    </message>
-    <message>
-        <location filename="../ui_Tano.h" line="359"/>
+        <location filename="../ui_Tano.h" line="364"/>
         <source>Check for updates</source>
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="151"/>
+        <location filename="../Tano.cpp" line="152"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="388"/>
+        <location filename="../ui_Tano.h" line="394"/>
         <source>Today&apos;s Schedule</source>
         <translation>Današnji spored</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="143"/>
+        <location filename="../Tano.cpp" line="144"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="385"/>
+        <location filename="../ui_Tano.h" line="391"/>
         <source>Refresh EPG</source>
         <translation>Osveži EPG</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="381"/>
+        <location filename="../ui_Tano.h" line="387"/>
         <source>Main toolbar</source>
         <translation>Glavna orodna vrstica</translation>
+    </message>
+    <message>
+        <location filename="../ui_Tano.h" line="354"/>
+        <source>&amp;Fullscreen</source>
+        <translation>&amp;Celoten zaslon</translation>
+    </message>
+    <message>
+        <location filename="../ui_Tano.h" line="358"/>
+        <source>&amp;Browser</source>
+        <translation>&amp;Brskalnik</translation>
+    </message>
+    <message>
+        <location filename="../ui_Tano.h" line="365"/>
+        <source>SiOL TV EPG</source>
+        <translation>SiOL TV EPG</translation>
     </message>
 </context>
 <context>
@@ -477,7 +527,7 @@
         <translation>Še vedno teče</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="71"/>
+        <location filename="../ui/TrayIcon.cpp" line="75"/>
         <source>Currently playing:</source>
         <translation>Trenutno predvajam:</translation>
     </message>
@@ -487,7 +537,7 @@
         <translation>Zapri Tano Predvajalnik</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="73"/>
+        <location filename="../ui/TrayIcon.cpp" line="77"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
@@ -499,12 +549,12 @@ Right click to exit.</source>
 Desno klikni za izhod.</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="65"/>
+        <location filename="../ui/TrayIcon.cpp" line="69"/>
         <source>A new version of Tano Player is available!</source>
         <translation>Nova različica Tano Predvajalnika je na voljo!</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="65"/>
+        <location filename="../ui/TrayIcon.cpp" line="69"/>
         <source>Version:</source>
         <translation>Različica:</translation>
     </message>
@@ -519,9 +569,24 @@ Desno klikni za izhod.</translation>
         <translation>Uporabljaš zadnjo različico Tano Predvajalnika.</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="65"/>
+        <location filename="../ui/TrayIcon.cpp" line="69"/>
         <source>Update available</source>
         <translation>Posodobitev je na voljo</translation>
+    </message>
+    <message>
+        <location filename="../ui/TrayIcon.cpp" line="67"/>
+        <source>SVN</source>
+        <translation>SVN</translation>
+    </message>
+    <message>
+        <location filename="../ui/TrayIcon.cpp" line="67"/>
+        <source>You are using SVN version:</source>
+        <translation>Uporaljaš nestabilno SVN različico:</translation>
+    </message>
+    <message>
+        <location filename="../ui/TrayIcon.cpp" line="67"/>
+        <source>Stable version:</source>
+        <translation>Stabilna različica:</translation>
     </message>
 </context>
 <context>
