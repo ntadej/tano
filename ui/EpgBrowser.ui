@@ -29,7 +29,13 @@
       <enum>Qt::ToolButtonTextUnderIcon</enum>
      </property>
      <addaction name="actionHome" />
+     <addaction name="actionEpg" />
      <addaction name="actionHelp" />
+     <addaction name="separator" />
+     <addaction name="actionBack" />
+     <addaction name="actionForward" />
+     <addaction name="actionReload" />
+     <addaction name="actionStop" />
      <addaction name="separator" />
      <addaction name="actionClose" />
     </widget>
@@ -127,7 +133,7 @@
      <normaloff>:/icons/images/home.png</normaloff>:/icons/images/home.png</iconset>
    </property>
    <property name="text" >
-    <string>EPG Home</string>
+    <string>Home</string>
    </property>
   </action>
   <action name="actionClose" >
@@ -146,6 +152,51 @@
    </property>
    <property name="text" >
     <string>Help</string>
+   </property>
+  </action>
+  <action name="actionEpg" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/siol.gif</normaloff>:/icons/images/siol.gif</iconset>
+   </property>
+   <property name="text" >
+    <string>SiOL TV EPG</string>
+   </property>
+  </action>
+  <action name="actionReload" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/reload.png</normaloff>:/icons/images/reload.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Reload</string>
+   </property>
+  </action>
+  <action name="actionBack" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/back.png</normaloff>:/icons/images/back.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Back</string>
+   </property>
+  </action>
+  <action name="actionForward" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/forward.png</normaloff>:/icons/images/forward.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Forward</string>
+   </property>
+  </action>
+  <action name="actionStop" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/stop.png</normaloff>:/icons/images/stop.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Stop</string>
    </property>
   </action>
  </widget>
@@ -222,6 +273,70 @@
     <hint type="destinationlabel" >
      <x>399</x>
      <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionBack</sender>
+   <signal>activated()</signal>
+   <receiver>epgView</receiver>
+   <slot>back()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>399</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionForward</sender>
+   <signal>activated()</signal>
+   <receiver>epgView</receiver>
+   <slot>forward()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>399</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionReload</sender>
+   <signal>activated()</signal>
+   <receiver>epgView</receiver>
+   <slot>reload()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>399</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStop</sender>
+   <signal>activated()</signal>
+   <receiver>epgView</receiver>
+   <slot>stop()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>399</x>
+     <y>331</y>
     </hint>
    </hints>
   </connection>

@@ -75,6 +75,7 @@ void Tano::createActions()
 
 	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(settings()));
 	connect(ui.actionBrowser, SIGNAL(triggered()), this, SLOT(showBrowser()));
+	connect(ui.actionEpg, SIGNAL(triggered()), this, SLOT(showSiolEpg()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
 	connect(ui.buttonPlay, SIGNAL(clicked()), ui.videoWidget, SLOT(controlPlay()));
@@ -162,6 +163,7 @@ void Tano::openPlaylist(bool start)
             QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
                                          QDir::homePath(),
                                          tr("Tano TV Channel list Files(*.tano *.xml)"));
+    	editor->setFile(fileName);
 	}
 	else fileName = Common::locateResource(defaultP);
     if (fileName.isEmpty())
@@ -219,7 +221,12 @@ void Tano::openUrl()
 
 void Tano::showBrowser()
 {
-	browser->open("http://siol-tv.pfusion.co.cc");
+	browser->open("http://tano.pfusion.co.cc");
+}
+
+void Tano::showSiolEpg()
+{
+	browser->open("http://tano.pfusion.co.cc/siol/");
 }
 
 void Tano::settings()
@@ -240,8 +247,13 @@ void Tano::processUpdates(QString updates)
 {
 	qDebug() << version;
 	if(version != updates) {
-		if (trayIcon->isVisible())
-	        trayIcon->message(updates);
+		if(version.contains("svn")) {
+			if (trayIcon->isVisible())
+				trayIcon->message(updates+","+version);
+		} else{
+			if (trayIcon->isVisible())
+				trayIcon->message(updates);
+		}
 	} else {
 		if (trayIcon->isVisible())
 			trayIcon->message("latest");

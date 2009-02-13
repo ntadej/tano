@@ -8,7 +8,7 @@ Epg::Epg() {
 
 	step = 0;
 
-	setHost("siol-tv.pfusion.co.cc");
+	setHost("tano.pfusion.co.cc");
 
     timer = new QTimer(this);
 	codec = QTextCodec::codecForName("UTF-8");
@@ -26,9 +26,9 @@ void Epg::getEpg(QString epgP)
 	if (epgP == "NI")
 		return;
 
-	epgSource = QString("/on-air.php?id=" + epgP);
-	epgUrl = QString("/on-air.php?id=" + epgP + "&url=true");
-	epgFull = QString("/on-air-full.php?id=" + epgP);
+	epgSource = QString("/siol/on-air.php?id=" + epgP);
+	epgUrl = QString("/siol/on-air.php?id=" + epgP + "&url=true");
+	epgFull = QString("/siol/on-air-full.php?id=" + epgP);
 	epgToday();
 }
 
@@ -59,7 +59,7 @@ void Epg::epgPrint()
 {
 	QByteArray httpResponse = readAll();
 
-	QString host = "http://siol-tv.pfusion.co.cc/";
+	QString host = "http://tano.pfusion.co.cc/siol/";
 
 	QString string = codec->toUnicode(httpResponse);
 	if (step == 1)

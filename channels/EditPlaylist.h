@@ -15,11 +15,15 @@ public:
     EditPlaylist(QWidget *parent = 0, QString fileName = "");
     ~EditPlaylist();
 
+    void setFile(QString file);
+
 private slots:
 	void deleteItem();
 	void addItemCategory();
+	void addItemSubCategory();
 	void addItemChannel();
 
+	void open();
 	void save();
 
 private:
@@ -33,6 +37,7 @@ private:
     QIcon categoryIcon;
     QIcon channelIcon;
 
+    QString fileN;
     QString fileName;
 };
 

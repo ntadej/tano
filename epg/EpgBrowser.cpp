@@ -8,10 +8,17 @@ EpgBrowser::EpgBrowser(QWidget *parent)
 {
 	ui.setupUi(this);
 
+	ui.actionStop->setDisabled(true);
+
 	connect(ui.buttonGo, SIGNAL(clicked()), this, SLOT(go()));
 	connect(ui.actionHome, SIGNAL(triggered()), this, SLOT(home()));
+	connect(ui.actionEpg, SIGNAL(triggered()), this, SLOT(epg()));
 	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
 	connect(ui.epgView, SIGNAL(urlChanged(QUrl)), this, SLOT(changeText(QUrl)));
+
+	connect(ui.epgView, SIGNAL(loadStarted()), this, SLOT(stopStatus()));
+	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stopStatus()));
+	connect(ui.epgView, SIGNAL(loadFinished(bool)), this, SLOT(stopStatusT(bool)));
 }
 
 EpgBrowser::~EpgBrowser()
@@ -37,13 +44,19 @@ void EpgBrowser::open(QString link) {
 
 void EpgBrowser::home()
 {
-	ui.addressLine->setText("siol-tv.pfusion.co.cc");
+	ui.addressLine->setText("http://tano.pfusion.co.cc");
+	go();
+}
+
+void EpgBrowser::epg()
+{
+	ui.addressLine->setText("http://tano.pfusion.co.cc/siol/");
 	go();
 }
 
 void EpgBrowser::help()
 {
-	ui.addressLine->setText("http://apps.sourceforge.net/mediawiki/tano/index.php?title=Help:Contents");
+	ui.addressLine->setText("http://tano.pfusion.co.cc/wiki/Help:Contents");
 	go();
 	this->show();
 }
@@ -51,4 +64,23 @@ void EpgBrowser::help()
 void EpgBrowser::changeText(QUrl url)
 {
 	ui.addressLine->setText(url.toString());
+}
+
+void EpgBrowser::stopStatusT(bool status)
+{
+    if(status == true)
+    	stopStatus();
+}
+
+void EpgBrowser::stopStatus()
+{
+    if(ui.actionStop->isEnabled() != true)
+    	ui.actionStop->setEnabled(true);
+    else
+    	ui.actionStop->setDisabled(true);
+
+    if(ui.actionReload->isEnabled() != true)
+    	ui.actionReload->setEnabled(true);
+    else
+    	ui.actionReload->setDisabled(true);
 }

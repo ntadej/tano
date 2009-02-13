@@ -61,7 +61,11 @@ void TrayIcon::message(QString type)
 		this->showMessage(tr("Still running"), tr("Tano Player is still running.\nRight click to exit."), QSystemTrayIcon::Information, 10000);
 	else if (type == "latest")
 			this->showMessage(tr("Latest version"), tr("You are using the latest version of Tano Player."), QSystemTrayIcon::Information, 10000);
-	else
+	else if (type.contains("svn")) {
+		QStringList update;
+		update = type.split(",");
+		this->showMessage(tr("SVN"), tr("You are using SVN version:")+" "+update[1]+"\n" + tr("Stable version:") + " " + update[0], QSystemTrayIcon::Information, 10000);
+	} else
 		this->showMessage(tr("Update available"), tr("A new version of Tano Player is available!")+"\n" + tr("Version:") + " " + type, QSystemTrayIcon::Information, 10000);
 }
 

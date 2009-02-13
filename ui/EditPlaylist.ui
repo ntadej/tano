@@ -30,8 +30,10 @@
      </property>
      <addaction name="actionAddChannel" />
      <addaction name="actionAddCategory" />
+     <addaction name="actionAddSubCategory" />
      <addaction name="actionDelete" />
      <addaction name="separator" />
+     <addaction name="actionReload" />
      <addaction name="actionSave" />
      <addaction name="actionClose" />
     </widget>
@@ -87,7 +89,7 @@
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
    </property>
    <property name="text" >
-    <string>Add Category</string>
+    <string>Add Main Category</string>
    </property>
   </action>
   <action name="actionDelete" >
@@ -115,6 +117,24 @@
    </property>
    <property name="text" >
     <string>Close</string>
+   </property>
+  </action>
+  <action name="actionReload" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/refresh.png</normaloff>:/icons/images/refresh.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Reload</string>
+   </property>
+  </action>
+  <action name="actionAddSubCategory" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Add Subcategory</string>
    </property>
   </action>
  </widget>

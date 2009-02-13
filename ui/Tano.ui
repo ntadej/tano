@@ -189,6 +189,7 @@
     <addaction name="actionOpen" />
     <addaction name="separator" />
     <addaction name="actionBrowser" />
+    <addaction name="actionEpg" />
     <addaction name="separator" />
     <addaction name="actionClose" />
    </widget>
@@ -251,10 +252,8 @@
    <addaction name="actionOpen" />
    <addaction name="separator" />
    <addaction name="actionBrowser" />
+   <addaction name="actionEpg" />
    <addaction name="actionChannel_info" />
-   <addaction name="separator" />
-   <addaction name="actionEditPlaylist" />
-   <addaction name="actionSettings" />
   </widget>
   <widget class="QDockWidget" name="playlistWidget" >
    <property name="windowIcon" >
@@ -380,7 +379,7 @@
      <normaloff>:/icons/images/player_fullscreen.png</normaloff>:/icons/images/player_fullscreen.png</iconset>
    </property>
    <property name="text" >
-    <string>Fullscreen</string>
+    <string>&amp;Fullscreen</string>
    </property>
    <property name="shortcut" >
     <string>Ctrl+F</string>
@@ -413,7 +412,7 @@
      <normaloff>:/icons/images/browser.png</normaloff>:/icons/images/browser.png</iconset>
    </property>
    <property name="text" >
-    <string>Browser</string>
+    <string>&amp;Browser</string>
    </property>
   </action>
   <action name="actionEditPlaylist" >
@@ -470,18 +469,27 @@
     <string>Check for updates</string>
    </property>
   </action>
+  <action name="actionEpg" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/siol.gif</normaloff>:/icons/images/siol.gif</iconset>
+   </property>
+   <property name="text" >
+    <string>SiOL TV EPG</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
    <class>Video</class>
    <extends>QWidget</extends>
-   <header location="global" >video/Video.h</header>
+   <header>video/Video.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>EpgToday</class>
    <extends>QWidget</extends>
-   <header location="global" >epg/EpgToday.h</header>
+   <header>epg/EpgToday.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

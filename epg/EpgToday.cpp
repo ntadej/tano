@@ -9,6 +9,7 @@ EpgToday::EpgToday(QWidget *parent)
 {
 	this->setColumnCount(1);
 	this->horizontalHeader()->setStretchLastSection(true);
+	this->verticalHeader()->hide();
 
 	epgClear();
 

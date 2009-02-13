@@ -36,6 +36,7 @@ private slots:
     void openUrl();
     void settings();
     void showBrowser();
+    void showSiolEpg();
 
     void showEpg(QString epgValue, bool full);
 
