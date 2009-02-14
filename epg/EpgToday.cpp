@@ -13,7 +13,7 @@ EpgToday::EpgToday(QWidget *parent)
 
 	epgClear();
 
-	connect(this, SIGNAL(itemActivated(QTableWidgetItem*)), this, SLOT(epgClicked(QTableWidgetItem*)));
+	connect(this, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(epgClicked(QTableWidgetItem*)));
 }
 
 EpgToday::~EpgToday()
@@ -49,6 +49,7 @@ void EpgToday::processEpg() {
 	for (int i = 1; i < epgList.size(); i+=3) {
 		newEpg = new ChannelEpg(epgList.at(i),epgList.at(i+1),epgList.at(i+2));
 		newItem = new QTableWidgetItem(QString(epgList.at(i) + " - " + epgList.at(i+2)));
+		newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
 		map.insert(newItem, newEpg);
 		this->setItem(r, 0, newItem);
 		r++;
