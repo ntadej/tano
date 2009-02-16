@@ -118,6 +118,7 @@ void EditPlaylist::save()
 
 void EditPlaylist::open()
 {
+	load->clear();
 	ui.playlist->clear();
 
 	QXmlSimpleReader reader;

@@ -46,6 +46,10 @@ public:
     QString errorString() const;
 
     Channel *channelRead(QTreeWidgetItem *clickedItem);
+    Channel *channelReadNum(int clickedItem);
+
+    QList<int> limit();
+    void clear();
 
 private:
 	int num;
@@ -67,6 +71,7 @@ private:
 
     QMap<QTreeWidgetItem*, Channel*> map;
     QMap<int, Channel*> nmap;
+    QList<int> limits;
 
     QIcon categoryIcon;
     QIcon channelIcon;

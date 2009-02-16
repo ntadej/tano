@@ -34,6 +34,14 @@ TanoHandler::TanoHandler(QTreeWidget *treeWidget, bool editable)
     treeStyle();
 }
 
+void TanoHandler::clear()
+{
+	num = 0;
+	cat = 0;
+    item = 0;
+    limits.clear();
+}
+
 void TanoHandler::treeStyle()
 {
 	categoryIcon.addPixmap(QPixmap(":/icons/images/folder.png"),
@@ -178,14 +186,30 @@ Channel *TanoHandler::channelRead(QTreeWidgetItem *clickedItem)
 	return newChannel;
 }
 
+Channel *TanoHandler::channelReadNum(int clickedItem)
+{
+	Channel *newChannel = nmap[clickedItem];
+
+	return newChannel;
+}
+
 int TanoHandler::channelNumSync(int c)
 {
 	if(c>1) {
+		limits.append(num+1);
 		int i=c*100;
 		while(i<num)
 			i+=100;
+		limits.append(i);
 		return i-1;
 	} else {
+		limits.append(num+1);
 		return 0;
 	}
+}
+
+QList<int> TanoHandler::limit()
+{
+	limits.append(num+1);
+	return limits;
 }

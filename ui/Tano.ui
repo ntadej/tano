@@ -62,9 +62,15 @@
           </property>
           <item>
            <widget class="QLCDNumber" name="channelNumber" >
+            <property name="minimumSize" >
+             <size>
+              <width>75</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximumSize" >
              <size>
-              <width>16777215</width>
+              <width>75</width>
               <height>46</height>
              </size>
             </property>
@@ -81,22 +87,6 @@
              <double>1.000000000000000</double>
             </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_2" >
-            <property name="orientation" >
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType" >
-             <enum>QSizePolicy::Minimum</enum>
-            </property>
-            <property name="sizeHint" stdset="0" >
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="buttonPlay" >
@@ -193,6 +183,9 @@
             <property name="orientation" >
              <enum>Qt::Horizontal</enum>
             </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Minimum</enum>
+            </property>
             <property name="sizeHint" stdset="0" >
              <size>
               <width>40</width>
@@ -243,18 +236,15 @@
    </widget>
    <widget class="QMenu" name="menuOptions" >
     <property name="title" >
-     <string>&amp;Tools</string>
+     <string>Options</string>
     </property>
     <widget class="QMenu" name="menuShow" >
      <property name="title" >
       <string>Show</string>
      </property>
-     <property name="icon" >
-      <iconset resource="images.qrc" >
-       <normaloff>:/icons/images/win.png</normaloff>:/icons/images/win.png</iconset>
-     </property>
      <addaction name="actionChannel_info" />
     </widget>
+    <addaction name="actionTop" />
     <addaction name="actionFullscreen" />
     <addaction name="menuShow" />
     <addaction name="separator" />
@@ -615,6 +605,14 @@
    </property>
    <property name="text" >
     <string>Fit screen</string>
+   </property>
+  </action>
+  <action name="actionTop" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Allways on top</string>
    </property>
   </action>
  </widget>

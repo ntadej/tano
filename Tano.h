@@ -11,6 +11,7 @@
 #include "channels/EditPlaylist.h"
 #include "settings/EditSettings.h"
 #include "ui/TrayIcon.h"
+#include "ui/KeyboardSelect.h"
 #include "epg/Epg.h"
 #include "epg/EpgBrowser.h"
 
@@ -28,7 +29,9 @@ protected:
 private slots:
     void aboutTano();
     void playlist(QTreeWidgetItem* clickedChannel);
+    void key(int clickedChannel);
 
+    void play();
     void stop();
 
     void openPlaylist(bool start = false);
@@ -48,9 +51,11 @@ private slots:
 
     void rightMenu(QPoint pos);
     void menuOpen();
+    void top();
 
 private:
     Ui::Tano ui;
+    Qt::WindowFlags flags;
 
     QString version;
     QString build;
@@ -65,6 +70,7 @@ private:
 	Epg *epg;
 	EpgBrowser *browser;
 	EditPlaylist *editor;
+	KeyboardSelect *keyboard;
 
 	QMenu *right;
 	QMenu *open;

@@ -31,6 +31,8 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 	ui.labelNow->hide();
 	ui.labelLanguage->hide();
 
+	flags = this->windowFlags();
+
 	update = new Updates();
 	handler = new TanoHandler(ui.playlistTree);
 	trayIcon = new TrayIcon();
@@ -68,6 +70,8 @@ void Tano::createActions()
 	connect(ui.actionAbout_Qt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(ui.actionClose, SIGNAL(triggered()), qApp, SLOT(quit()));
 
+	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
+
 	connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
 
 	connect(ui.actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
@@ -91,6 +95,8 @@ void Tano::createActions()
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 
 	connect(ui.playlistTree, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
+	connect(keyboard, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
+	connect(keyboard, SIGNAL(error(QString, int)), this->statusBar(), SLOT(showMessage(QString, int)));
 
 	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(showNormal()));
 	connect(trayIcon, SIGNAL(quitClick()), qApp, SLOT(quit()));
@@ -132,6 +138,7 @@ void Tano::createMenus()
 	right = new QMenu();
 	right->addAction(ui.actionPlay);
 	right->addAction(ui.actionStop);
+	right->addAction(ui.actionTop);
 	right->addAction(ui.actionFullscreen);
 	right->addMenu(ui.menuRatio);
 	right->addMenu(ui.menuCrop);
@@ -158,21 +165,34 @@ void Tano::playlist(QTreeWidgetItem* clickedChannel)
 {
 	channel = handler->channelRead(clickedChannel);
 	if (channel->isCategory() != true) {
-		ui.playlistWidget->setWindowTitle(channel->longName() + " (" + channel->name() + ")");
-		ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
-		ui.labelLanguage->show();
-
-		epg->getEpg(channel->epg());
-
-		ui.labelNow->hide();
-		ui.buttonRefresh->hide();
-		ui.epgToday->epgClear();
-
-		ui.channelNumber->display(channel->num());
-
-		ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
-		statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
+		play();
 	}
+}
+
+void Tano::key(int clickedChannel)
+{
+	channel = handler->channelReadNum(clickedChannel);
+	if (channel->isCategory() != true) {
+		play();
+	}
+}
+
+void Tano::play()
+{
+	ui.playlistWidget->setWindowTitle(channel->longName() + " (" + channel->name() + ")");
+	ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
+	ui.labelLanguage->show();
+
+	epg->getEpg(channel->epg());
+
+	ui.labelNow->hide();
+	ui.buttonRefresh->hide();
+	ui.epgToday->epgClear();
+
+	ui.channelNumber->display(channel->num());
+
+	ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
+	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 }
 
 void Tano::showEpg(QString epgValue, bool full)
@@ -199,6 +219,8 @@ void Tano::stop()
 
 void Tano::openPlaylist(bool start)
 {
+	handler->clear();
+
 	if (start != true) {
     	fileName =
             QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
@@ -228,6 +250,8 @@ void Tano::openPlaylist(bool start)
     QXmlInputSource xmlInputSource(&file);
     if (reader.parse(xmlInputSource))
         statusBar()->showMessage(tr("File loaded"), 2000);
+
+    keyboard = new KeyboardSelect(this, ui.channelNumber, handler->limit());
 }
 
 void Tano::openFile()
@@ -318,4 +342,16 @@ void Tano::rightMenu(QPoint pos)
 void Tano::menuOpen()
 {
 	open->exec(QCursor::pos());
+}
+
+void Tano::top()
+{
+	Qt::WindowFlags top = flags;
+	top |= Qt::WindowStaysOnTopHint;
+	if(ui.actionTop->isChecked())
+		this->setWindowFlags(top);
+	else
+		this->setWindowFlags(flags);
+
+	this->show();
 }
