@@ -29,6 +29,14 @@ void Video::mouseDoubleClickEvent(QMouseEvent * event)
 	event->ignore();
 }
 
+void Video::mousePressEvent(QMouseEvent * event)
+{
+	if(event->button() == Qt::RightButton)
+		emit rightClick(event->globalPos());
+
+	event->ignore();
+}
+
 void Video::playTv(QString fileName, QString channelName)
 {
 	channel->setCurrentSource(fileName);
@@ -70,4 +78,38 @@ Phonon::VolumeSlider *Video::slider()
 QString Video::currentMedia()
 {
 	return channel->currentSource().fileName();
+}
+
+
+//Ratio
+void Video::ratioOriginal()
+{
+	this->setAspectRatio(Phonon::VideoWidget::AspectRatioAuto);
+}
+
+void Video::ratio43()
+{
+	this->setAspectRatio(Phonon::VideoWidget::AspectRatio4_3);
+}
+
+void Video::ratio169()
+{
+	this->setAspectRatio(Phonon::VideoWidget::AspectRatio16_9);
+}
+
+void Video::ratioDinamic()
+{
+	this->setAspectRatio(Phonon::VideoWidget::AspectRatioWidget);
+}
+
+
+//Crop
+void Video::cropOriginal()
+{
+	this->setScaleMode(Phonon::VideoWidget::FitInView);
+}
+
+void Video::cropFit()
+{
+	this->setScaleMode(Phonon::VideoWidget::ScaleAndCrop);
 }

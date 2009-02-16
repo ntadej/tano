@@ -42,9 +42,6 @@ void EpgToday::processEpg() {
 	epgHeader << epgList.at(0);
 	this->setHorizontalHeaderLabels(epgHeader);
 
-	qDebug() << "Epg Debug: Header: done";
-	qDebug() << "Epg Debug: Size:" << epgList.size();
-
 	int r = 0;
 	for (int i = 1; i < epgList.size(); i+=3) {
 		newEpg = new ChannelEpg(epgList.at(i),epgList.at(i+1),epgList.at(i+2));
@@ -54,7 +51,6 @@ void EpgToday::processEpg() {
 		this->setItem(r, 0, newItem);
 		r++;
 	}
-	qDebug() << "Epg Debug: done";
 }
 
 void EpgToday::epgClicked(QTableWidgetItem *item) {

@@ -48,11 +48,15 @@ public:
     Channel *channelRead(QTreeWidgetItem *clickedItem);
 
 private:
+	int num;
+	int cat;
+
 	bool edit;
 
     QTreeWidgetItem *createChildItem(const QString &tagName);
-    Channel *createChannel(QString name, bool cat);
+    Channel *createChannel(QString name, int num, bool cat);
     void treeStyle();
+    int channelNumSync(int c);
 
     QTreeWidget *treeWidget;
     QTreeWidgetItem *item;
@@ -62,6 +66,7 @@ private:
     bool metTanoTag;
 
     QMap<QTreeWidgetItem*, Channel*> map;
+    QMap<int, Channel*> nmap;
 
     QIcon categoryIcon;
     QIcon channelIcon;

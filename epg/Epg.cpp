@@ -97,3 +97,8 @@ void Epg::epgPrintToday()
 	step = 1;
 	epg();
 }
+
+void Epg::stop()
+{
+    timer->stop();
+}

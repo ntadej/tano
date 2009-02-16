@@ -43,6 +43,7 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 	editor = new EditPlaylist(parent, fileName);
 
 	createActions();
+	createMenus();
 }
 
 Tano::~Tano()
@@ -69,6 +70,7 @@ void Tano::createActions()
 
 	connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
 
+	connect(ui.actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
 	connect(ui.actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
 	connect(ui.actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
 	connect(ui.actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
@@ -82,6 +84,9 @@ void Tano::createActions()
 	connect(ui.buttonStop, SIGNAL(clicked()), ui.videoWidget, SLOT(controlStop()));
 	connect(ui.buttonStop, SIGNAL(clicked()), this, SLOT(stop()));
 	connect(ui.buttonFull, SIGNAL(clicked()), ui.videoWidget, SLOT(controlFull()));
+	connect(ui.actionPlay, SIGNAL(triggered()), ui.videoWidget, SLOT(controlPlay()));
+	connect(ui.actionStop, SIGNAL(triggered()), ui.videoWidget, SLOT(controlStop()));
+	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 
@@ -94,6 +99,7 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(stopped()), trayIcon, SLOT(changeToolTip()));
 	connect(ui.videoWidget, SIGNAL(playing(QString)), this, SLOT(tooltip(QString)));
 	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
+	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
 
 	connect(epg, SIGNAL(epgDone(QString, bool)), this, SLOT(showEpg(QString, bool)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), browser, SLOT(open(QString)));
@@ -102,6 +108,38 @@ void Tano::createActions()
 	connect(ui.labelNow, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
 
 	connect(ui.playlistWidget, SIGNAL(visibilityChanged(bool)), this, SLOT(actionShow(bool)));
+
+	connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioOriginal()));
+	connect(ui.actionRatio43, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio43()));
+	connect(ui.actionRatio169, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio169()));
+	connect(ui.actionRatioDinamic, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioDinamic()));
+	connect(ui.actionCropOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(cropOriginal()));
+	connect(ui.actionCropFit, SIGNAL(triggered()), ui.videoWidget, SLOT(cropFit()));
+}
+
+void Tano::createMenus()
+{
+	ratioGroup = new QActionGroup(this);
+	ratioGroup->addAction(ui.actionRatioOriginal);
+	ratioGroup->addAction(ui.actionRatio43);
+	ratioGroup->addAction(ui.actionRatio169);
+	ratioGroup->addAction(ui.actionRatioDinamic);
+
+	cropGroup = new QActionGroup(this);
+	cropGroup->addAction(ui.actionCropOriginal);
+	cropGroup->addAction(ui.actionCropFit);
+
+	right = new QMenu();
+	right->addAction(ui.actionPlay);
+	right->addAction(ui.actionStop);
+	right->addAction(ui.actionFullscreen);
+	right->addMenu(ui.menuRatio);
+	right->addMenu(ui.menuCrop);
+
+	open = new QMenu();
+	open->addAction(ui.actionOpenFile);
+	open->addAction(ui.actionOpenUrl);
+	open->addAction(ui.actionOpen);
 }
 
 void Tano::aboutTano()
@@ -130,8 +168,10 @@ void Tano::playlist(QTreeWidgetItem* clickedChannel)
 		ui.buttonRefresh->hide();
 		ui.epgToday->epgClear();
 
+		ui.channelNumber->display(channel->num());
+
 		ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
-		statusBar()->showMessage(tr("Channel selected"), 2000);
+		statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 	}
 }
 
@@ -154,6 +194,7 @@ void Tano::stop()
 	ui.labelNow->hide();
 	ui.buttonRefresh->hide();
 	ui.epgToday->epgClear();
+	epg->stop();
 }
 
 void Tano::openPlaylist(bool start)
@@ -163,7 +204,8 @@ void Tano::openPlaylist(bool start)
             QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
                                          QDir::homePath(),
                                          tr("Tano TV Channel list Files(*.tano *.xml)"));
-    	editor->setFile(fileName);
+    	if (!fileName.isEmpty())
+    		editor->setFile(fileName);
 	}
 	else fileName = Common::locateResource(defaultP);
     if (fileName.isEmpty())
@@ -266,4 +308,14 @@ void Tano::actionShow(bool status)
     	ui.actionChannel_info->setEnabled(true);
     else
     	ui.actionChannel_info->setDisabled(true);
+}
+
+void Tano::rightMenu(QPoint pos)
+{
+	right->exec(pos);
+}
+
+void Tano::menuOpen()
+{
+	open->exec(QCursor::pos());
 }

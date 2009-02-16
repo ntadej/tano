@@ -61,6 +61,44 @@
            <number>2</number>
           </property>
           <item>
+           <widget class="QLCDNumber" name="channelNumber" >
+            <property name="maximumSize" >
+             <size>
+              <width>16777215</width>
+              <height>46</height>
+             </size>
+            </property>
+            <property name="frameShape" >
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="numDigits" >
+             <number>3</number>
+            </property>
+            <property name="segmentStyle" >
+             <enum>QLCDNumber::Filled</enum>
+            </property>
+            <property name="value" stdset="0" >
+             <double>1.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2" >
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Minimum</enum>
+            </property>
+            <property name="sizeHint" stdset="0" >
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QPushButton" name="buttonPlay" >
             <property name="minimumSize" >
              <size>
@@ -223,8 +261,32 @@
     <addaction name="actionEditPlaylist" />
     <addaction name="actionSettings" />
    </widget>
+   <widget class="QMenu" name="menuMedia" >
+    <property name="title" >
+     <string>Media</string>
+    </property>
+    <widget class="QMenu" name="menuRatio" >
+     <property name="title" >
+      <string>Aspect ratio</string>
+     </property>
+     <addaction name="actionRatioOriginal" />
+     <addaction name="actionRatio43" />
+     <addaction name="actionRatio169" />
+     <addaction name="actionRatioDinamic" />
+    </widget>
+    <widget class="QMenu" name="menuCrop" >
+     <property name="title" >
+      <string>Crop</string>
+     </property>
+     <addaction name="actionCropOriginal" />
+     <addaction name="actionCropFit" />
+    </widget>
+    <addaction name="menuRatio" />
+    <addaction name="menuCrop" />
+   </widget>
    <addaction name="menuFile" />
    <addaction name="menuOptions" />
+   <addaction name="menuMedia" />
    <addaction name="menuAbout" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
@@ -247,10 +309,9 @@
    <attribute name="toolBarBreak" >
     <bool>false</bool>
    </attribute>
-   <addaction name="actionOpenFile" />
-   <addaction name="actionOpenUrl" />
-   <addaction name="actionOpen" />
+   <addaction name="actionOpenToolbar" />
    <addaction name="separator" />
+   <addaction name="actionEditPlaylist" />
    <addaction name="actionBrowser" />
    <addaction name="actionEpg" />
    <addaction name="actionChannel_info" />
@@ -363,6 +424,9 @@
    <property name="text" >
     <string>&amp;Exit</string>
    </property>
+   <property name="shortcut" >
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="actionSettings" >
    <property name="icon" >
@@ -381,12 +445,6 @@
    <property name="text" >
     <string>&amp;Fullscreen</string>
    </property>
-   <property name="shortcut" >
-    <string>Ctrl+F</string>
-   </property>
-   <property name="shortcutContext" >
-    <enum>Qt::ApplicationShortcut</enum>
-   </property>
   </action>
   <action name="actionOpen" >
    <property name="icon" >
@@ -403,7 +461,7 @@
      <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
    </property>
    <property name="text" >
-    <string>Open</string>
+    <string>Open &amp;File</string>
    </property>
   </action>
   <action name="actionBrowser" >
@@ -476,6 +534,87 @@
    </property>
    <property name="text" >
     <string>SiOL TV EPG</string>
+   </property>
+  </action>
+  <action name="actionRatioOriginal" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Original</string>
+   </property>
+  </action>
+  <action name="actionRatio43" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>4:3</string>
+   </property>
+  </action>
+  <action name="actionRatio169" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>16:9</string>
+   </property>
+  </action>
+  <action name="actionRatioDinamic" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Dinamicaly changing</string>
+   </property>
+  </action>
+  <action name="actionOpenToolbar" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionPlay" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Play</string>
+   </property>
+  </action>
+  <action name="actionStop" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionCropOriginal" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Original</string>
+   </property>
+  </action>
+  <action name="actionCropFit" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Fit screen</string>
    </property>
   </action>
  </widget>

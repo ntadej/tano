@@ -46,6 +46,9 @@ private slots:
 
     void actionShow(bool status);
 
+    void rightMenu(QPoint pos);
+    void menuOpen();
+
 private:
     Ui::Tano ui;
 
@@ -63,7 +66,13 @@ private:
 	EpgBrowser *browser;
 	EditPlaylist *editor;
 
+	QMenu *right;
+	QMenu *open;
+	QActionGroup *ratioGroup;
+	QActionGroup *cropGroup;
+
     void createActions();
+    void createMenus();
 };
 
 #endif // TANO_H

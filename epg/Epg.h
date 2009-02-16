@@ -16,6 +16,7 @@ public:
 
 public slots:
 	void refresh();
+	void stop();
 
 signals:
 	void epgDone(QString, bool);

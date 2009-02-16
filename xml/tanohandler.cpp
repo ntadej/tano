@@ -26,6 +26,8 @@
 TanoHandler::TanoHandler(QTreeWidget *treeWidget, bool editable)
     : treeWidget(treeWidget)
 {
+	num = 0;
+	cat = 0;
 	edit = editable;
     item = 0;
     metTanoTag = false;
@@ -53,12 +55,16 @@ bool TanoHandler::startElement(const QString & /* namespaceURI */,
 
     if (qName == "tano") {
         QString version = attributes.value("version");
-        if (!version.isEmpty() && version != "1.0") {
+        if (!version.isEmpty() && version != "1.1") {
             errorStr = QObject::tr("The file is not a Tano TV channel list 1.0 file.");
             return false;
         }
         metTanoTag = true;
     } else if (qName == "category") {
+    	if (attributes.value("type") == "main") {
+    		cat++;
+    		num = channelNumSync(cat);
+    	}
         item = createChildItem(qName);
         item->setFlags(item->flags() | Qt::ItemIsEditable);
         item->setIcon(0, categoryIcon);
@@ -67,13 +73,15 @@ bool TanoHandler::startElement(const QString & /* namespaceURI */,
         	treeWidget->setItemExpanded(item, true);
         else
         	treeWidget->setItemExpanded(item, false);
-        channel = createChannel(QObject::tr("Unknown title"), true);
+        channel = createChannel(QObject::tr("Unknown title"), cat, true);
     } else if (qName == "channel") {
+    	num++;
         item = createChildItem(qName);
         item->setFlags(item->flags() | Qt::ItemIsEditable);
         item->setIcon(0, channelIcon);
         item->setText(0, QObject::tr("Unknown title"));
-        channel = createChannel(QObject::tr("Unknown title"), false);
+        channel = createChannel(QObject::tr("Unknown title"), num, false);
+        nmap.insert(num, channel);
     } else if (qName == "separator") {
         item = createChildItem(qName);
         item->setFlags(item->flags() & ~Qt::ItemIsSelectable);
@@ -90,7 +98,10 @@ bool TanoHandler::endElement(const QString & /* namespaceURI */,
 {
     if (qName == "title") {
         if (item && channel) {
-            item->setText(0, currentText);
+        	if(!edit && !channel->isCategory())
+        		item->setText(0, channel->numToString() + ". " + currentText);
+        	else
+        		item->setText(0, currentText);
             channel->setName(currentText);
             map.insert(item, channel);
         }
@@ -154,9 +165,9 @@ QTreeWidgetItem *TanoHandler::createChildItem(const QString &tagName)
     return childItem;
 }
 
-Channel *TanoHandler::createChannel(QString name, bool cat)
+Channel *TanoHandler::createChannel(QString name, int num, bool cat)
 {
-    Channel *childChannel = new Channel(name, cat);
+    Channel *childChannel = new Channel(name,num, cat);
     return childChannel;
 }
 
@@ -165,4 +176,16 @@ Channel *TanoHandler::channelRead(QTreeWidgetItem *clickedItem)
 	Channel *newChannel = map[clickedItem];
 
 	return newChannel;
+}
+
+int TanoHandler::channelNumSync(int c)
+{
+	if(c>1) {
+		int i=c*100;
+		while(i<num)
+			i+=100;
+		return i-1;
+	} else {
+		return 0;
+	}
 }

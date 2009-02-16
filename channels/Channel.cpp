@@ -1,8 +1,9 @@
 #include "Channel.h"
 
-Channel::Channel(QString name, bool cat)
+Channel::Channel(QString name, int num, bool cat)
 {
 	_name = name;
+	_num = num;
 	category = cat;
 }
 
@@ -10,6 +11,9 @@ Channel::~Channel() {
 
 }
 
+void Channel::setNum(int num) {
+	_num = num;
+}
 void Channel::setName(QString xmlName) {
 	_name = xmlName;
 }
@@ -26,6 +30,16 @@ void Channel::setUrl(QString xmlUrl) {
 	_url = xmlUrl;
 }
 
+int Channel::num()
+{
+	return _num;
+}
+QString Channel::numToString()
+{
+	QString num;
+	num.setNum(_num);
+	return num;
+}
 QString Channel::name() {
 	return _name;
 }

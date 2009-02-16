@@ -13,7 +13,7 @@ bool TanoGenerator::write(QIODevice *device)
     out.setCodec("UTF-8");
     out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         << "<!DOCTYPE tano>\n"
-        << "<tano version=\"1.0\">\n";
+        << "<tano version=\"1.1\">\n";
     for (int i = 0; i < treeWidget->topLevelItemCount(); ++i)
         generateItem(treeWidget->topLevelItem(i), 1);
     out << "</tano>\n";
@@ -49,7 +49,15 @@ void TanoGenerator::generateItem(QTreeWidgetItem *item, int depth)
     QString tagName = item->data(0, Qt::UserRole).toString();
     if (tagName == "category") {
         bool expanded = !treeWidget->isItemExpanded(item);
-        out << indent(depth) << "<category expanded=\"" << (expanded ? "false" : "true")
+        bool type;
+        if(treeWidget->indexOfTopLevelItem(item) == -1)
+        	type = false;
+        else
+        	type = true;
+
+        out << indent(depth) << "<category "
+							 << "expanded=\"" << (expanded ? "false" : "true") << "\""
+							 << "type=\"" << (type ? "main" : "sub")
                              << "\">\n"
             << indent(depth + 1) << "<title>" << escapedText(item->text(0))
                                  << "</title>\n";
