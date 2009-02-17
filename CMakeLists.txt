@@ -3,7 +3,7 @@
 # and to the root binary directory of the project as ${TANO_BINARY_DIR}.
 PROJECT(Tano)
 
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.4)
 
 # Set MingW bin dir, if MingW present
 IF(MINGW)
@@ -51,7 +51,7 @@ ENDIF(MINGW)
 
 #-----------------------------------------------------------------------------
 # Search for Qt4. We need the latest version of Qt
-SET(QT_MIN_VERSION "4.4.0")
+SET(QT_MIN_VERSION "4.3.0")
 
 # this line includes FindQt4.cmake, which searches the Qt library and headers
 FIND_PACKAGE(Qt4 REQUIRED)

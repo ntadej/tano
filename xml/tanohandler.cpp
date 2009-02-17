@@ -196,7 +196,7 @@ Channel *TanoHandler::channelReadNum(int clickedItem)
 int TanoHandler::channelNumSync(int c)
 {
 	if(c>1) {
-		limits.append(num+1);
+		limits.append(num);
 		int i=c*100;
 		while(i<num)
 			i+=100;
@@ -210,6 +210,6 @@ int TanoHandler::channelNumSync(int c)
 
 QList<int> TanoHandler::limit()
 {
-	limits.append(num+1);
+	limits.append(num);
 	return limits;
 }

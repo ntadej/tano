@@ -2,21 +2,11 @@
 
 #include "TrayIcon.h"
 
-TrayIcon::TrayIcon()
+TrayIcon::TrayIcon(QMenu *menu)
 {
 	QResource::registerResource("images.qrc");
 
-	actionRestore = new QAction(QIcon(":/icons/images/win.png"), tr("Restore"), this);
-	actionQuit = new QAction(QIcon(":/icons/images/exit.png"), tr("Exit Tano Player"), this);
-	connect(actionRestore, SIGNAL(triggered()), this, SLOT(eRestore()));
-	connect(actionQuit, SIGNAL(triggered()), this, SLOT(eQuit()));
-
-	trayIconMenu = new QMenu();
-	trayIconMenu->addAction(actionRestore);
-	trayIconMenu->addSeparator();
-	trayIconMenu->addAction(actionQuit);
-
-	this->setContextMenu(trayIconMenu);
+	this->setContextMenu(menu);
 	this->setIcon(QIcon(":/icons/images/tano.png"));
 	this->setToolTip(tr("Tano Player"));
 
@@ -48,11 +38,6 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason)
 void TrayIcon::eRestore()
 {
 	emit restoreClick();
-}
-
-void TrayIcon::eQuit()
-{
-	emit quitClick();
 }
 
 void TrayIcon::message(QString type)

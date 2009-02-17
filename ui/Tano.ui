@@ -27,24 +27,24 @@
        </sizepolicy>
       </property>
       <property name="title" >
-       <string>Video</string>
+       <string/>
       </property>
       <layout class="QVBoxLayout" name="_2" >
        <item>
         <widget class="Video" native="1" name="videoWidget" />
        </item>
        <item>
-        <widget class="QFrame" name="frame" >
+        <widget class="QFrame" name="videoControlsFrame" >
          <property name="minimumSize" >
           <size>
            <width>0</width>
-           <height>64</height>
+           <height>56</height>
           </size>
          </property>
          <property name="maximumSize" >
           <size>
            <width>16777215</width>
-           <height>64</height>
+           <height>56</height>
           </size>
          </property>
          <property name="frameShape" >
@@ -54,24 +54,18 @@
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="videoControls" >
-          <property name="topMargin" >
-           <number>2</number>
-          </property>
-          <property name="bottomMargin" >
-           <number>2</number>
-          </property>
           <item>
            <widget class="QLCDNumber" name="channelNumber" >
             <property name="minimumSize" >
              <size>
-              <width>75</width>
+              <width>70</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize" >
              <size>
-              <width>75</width>
-              <height>46</height>
+              <width>70</width>
+              <height>40</height>
              </size>
             </property>
             <property name="frameShape" >
@@ -92,17 +86,20 @@
            <widget class="QPushButton" name="buttonPlay" >
             <property name="minimumSize" >
              <size>
-              <width>46</width>
-              <height>46</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="maximumSize" >
              <size>
-              <width>46</width>
-              <height>46</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="toolTip" >
+             <string>Play</string>
+            </property>
+            <property name="statusTip" >
              <string>Play</string>
             </property>
             <property name="icon" >
@@ -121,17 +118,20 @@
            <widget class="QPushButton" name="buttonStop" >
             <property name="minimumSize" >
              <size>
-              <width>46</width>
-              <height>46</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="maximumSize" >
              <size>
-              <width>46</width>
-              <height>46</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="toolTip" >
+             <string>Stop</string>
+            </property>
+            <property name="statusTip" >
              <string>Stop</string>
             </property>
             <property name="icon" >
@@ -147,25 +147,28 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="buttonFull" >
+           <widget class="QPushButton" name="buttonBack" >
             <property name="minimumSize" >
              <size>
-              <width>46</width>
-              <height>46</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="maximumSize" >
              <size>
-              <width>46</width>
-              <height>46</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
             <property name="toolTip" >
-             <string>Fullscreen</string>
+             <string>Back</string>
+            </property>
+            <property name="statusTip" >
+             <string>Back</string>
             </property>
             <property name="icon" >
              <iconset resource="images.qrc" >
-              <normaloff>:/icons/images/player_fullscreen.png</normaloff>:/icons/images/player_fullscreen.png</iconset>
+              <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
             </property>
             <property name="iconSize" >
              <size>
@@ -173,8 +176,37 @@
               <height>32</height>
              </size>
             </property>
-            <property name="shortcut" >
-             <string>Ctrl+F</string>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="buttonNext" >
+            <property name="minimumSize" >
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize" >
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="toolTip" >
+             <string>Next</string>
+            </property>
+            <property name="statusTip" >
+             <string>Next</string>
+            </property>
+            <property name="icon" >
+             <iconset resource="images.qrc" >
+              <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
+            </property>
+            <property name="iconSize" >
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -240,11 +272,13 @@
     </property>
     <widget class="QMenu" name="menuShow" >
      <property name="title" >
-      <string>Show</string>
+      <string>Show / Hide</string>
      </property>
+     <addaction name="actionToolbar" />
      <addaction name="actionChannel_info" />
     </widget>
     <addaction name="actionTop" />
+    <addaction name="actionLite" />
     <addaction name="actionFullscreen" />
     <addaction name="menuShow" />
     <addaction name="separator" />
@@ -302,9 +336,9 @@
    <addaction name="actionOpenToolbar" />
    <addaction name="separator" />
    <addaction name="actionEditPlaylist" />
+   <addaction name="separator" />
    <addaction name="actionBrowser" />
    <addaction name="actionEpg" />
-   <addaction name="actionChannel_info" />
   </widget>
   <widget class="QDockWidget" name="playlistWidget" >
    <property name="windowIcon" >
@@ -488,9 +522,6 @@
    </property>
   </action>
   <action name="actionChannel_info" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
    <property name="icon" >
     <iconset resource="images.qrc" >
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
@@ -615,6 +646,50 @@
     <string>Allways on top</string>
    </property>
   </action>
+  <action name="actionRestore" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/win.png</normaloff>:/icons/images/win.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Restore</string>
+   </property>
+  </action>
+  <action name="actionLite" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Lite Mode</string>
+   </property>
+  </action>
+  <action name="actionToolbar" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/toolbar.png</normaloff>:/icons/images/toolbar.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Main Toolbar</string>
+   </property>
+  </action>
+  <action name="actionNext" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Next</string>
+   </property>
+  </action>
+  <action name="actionBack" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Back</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -633,22 +708,5 @@
  <resources>
   <include location="images.qrc" />
  </resources>
- <connections>
-  <connection>
-   <sender>actionChannel_info</sender>
-   <signal>triggered()</signal>
-   <receiver>playlistWidget</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>785</x>
-     <y>407</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

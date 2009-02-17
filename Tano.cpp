@@ -25,6 +25,8 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 	build = "Unknown build";
 #endif
 
+	isLite = false;
+
 	ui.setupUi(this);
 	ui.videoControls->addWidget(ui.videoWidget->slider());
 	ui.buttonRefresh->hide();
@@ -35,7 +37,6 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 
 	update = new Updates();
 	handler = new TanoHandler(ui.playlistTree);
-	trayIcon = new TrayIcon();
 	epg = new Epg();
 	browser = new EpgBrowser();
 
@@ -44,8 +45,8 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 
 	editor = new EditPlaylist(parent, fileName);
 
-	createActions();
 	createMenus();
+	createActions();
 }
 
 Tano::~Tano()
@@ -71,6 +72,7 @@ void Tano::createActions()
 	connect(ui.actionClose, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
+	connect(ui.actionLite, SIGNAL(triggered()), this, SLOT(lite()));
 
 	connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
 
@@ -87,10 +89,13 @@ void Tano::createActions()
 	connect(ui.buttonPlay, SIGNAL(clicked()), ui.videoWidget, SLOT(controlPlay()));
 	connect(ui.buttonStop, SIGNAL(clicked()), ui.videoWidget, SLOT(controlStop()));
 	connect(ui.buttonStop, SIGNAL(clicked()), this, SLOT(stop()));
-	connect(ui.buttonFull, SIGNAL(clicked()), ui.videoWidget, SLOT(controlFull()));
+	connect(ui.buttonBack, SIGNAL(clicked()), keyboard, SLOT(back()));
+	connect(ui.buttonNext, SIGNAL(clicked()), keyboard, SLOT(next()));
 	connect(ui.actionPlay, SIGNAL(triggered()), ui.videoWidget, SLOT(controlPlay()));
 	connect(ui.actionStop, SIGNAL(triggered()), ui.videoWidget, SLOT(controlStop()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
+	connect(ui.actionBack, SIGNAL(triggered()), keyboard, SLOT(back()));
+	connect(ui.actionNext, SIGNAL(triggered()), keyboard, SLOT(next()));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 
@@ -99,13 +104,14 @@ void Tano::createActions()
 	connect(keyboard, SIGNAL(error(QString, int)), this->statusBar(), SLOT(showMessage(QString, int)));
 
 	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(showNormal()));
-	connect(trayIcon, SIGNAL(quitClick()), qApp, SLOT(quit()));
+	connect(ui.actionRestore, SIGNAL(triggered()), this, SLOT(showNormal()));
 
 	connect(ui.videoWidget, SIGNAL(playing(QString)), trayIcon, SLOT(changeToolTip(QString)));
 	connect(ui.videoWidget, SIGNAL(stopped()), trayIcon, SLOT(changeToolTip()));
 	connect(ui.videoWidget, SIGNAL(playing(QString)), this, SLOT(tooltip(QString)));
 	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
+	connect(ui.videoWidget, SIGNAL(wheel(bool)), keyboard, SLOT(channel(bool)));
 
 	connect(epg, SIGNAL(epgDone(QString, bool)), this, SLOT(showEpg(QString, bool)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), browser, SLOT(open(QString)));
@@ -113,7 +119,8 @@ void Tano::createActions()
 
 	connect(ui.labelNow, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
 
-	connect(ui.playlistWidget, SIGNAL(visibilityChanged(bool)), this, SLOT(actionShow(bool)));
+	connect(ui.actionChannel_info, SIGNAL(triggered()), this, SLOT(actionChannelShow()));
+	connect(ui.actionToolbar, SIGNAL(triggered()), this, SLOT(actionToolbarShow()));
 
 	connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioOriginal()));
 	connect(ui.actionRatio43, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio43()));
@@ -139,6 +146,7 @@ void Tano::createMenus()
 	right->addAction(ui.actionPlay);
 	right->addAction(ui.actionStop);
 	right->addAction(ui.actionTop);
+	right->addAction(ui.actionLite);
 	right->addAction(ui.actionFullscreen);
 	right->addMenu(ui.menuRatio);
 	right->addMenu(ui.menuCrop);
@@ -147,6 +155,16 @@ void Tano::createMenus()
 	open->addAction(ui.actionOpenFile);
 	open->addAction(ui.actionOpenUrl);
 	open->addAction(ui.actionOpen);
+
+	tray = new QMenu();
+	tray->addAction(ui.actionTop);
+	tray->addAction(ui.actionLite);
+	tray->addSeparator();
+	tray->addAction(ui.actionRestore);
+	tray->addSeparator();
+	tray->addAction(ui.actionClose);
+
+	trayIcon = new TrayIcon(tray);
 }
 
 void Tano::aboutTano()
@@ -156,11 +174,12 @@ void Tano::aboutTano()
 						QString(version + " (" + build + ")</h2>") +
 						QString("<p>" + tr("Copyright &copy; 2008-2009 Tadej Novak") + "<p>") +
 #ifdef Q_WS_WIN
-						QString("MPlayer Backend<br>") +
+						QString("Videolan VLC Backend<br>") +
 #endif
 						QString("Crystal Icons &copy; The Yellow Icon."));
 }
 
+//Media controls
 void Tano::playlist(QTreeWidgetItem* clickedChannel)
 {
 	channel = handler->channelRead(clickedChannel);
@@ -285,6 +304,8 @@ void Tano::openUrl()
 	}
 }
 
+
+//GUI
 void Tano::showBrowser()
 {
 	browser->open("http://tano.pfusion.co.cc");
@@ -326,12 +347,20 @@ void Tano::processUpdates(QString updates)
 	}
 }
 
-void Tano::actionShow(bool status)
+void Tano::actionChannelShow()
 {
-    if(status != true)
-    	ui.actionChannel_info->setEnabled(true);
+    if(ui.playlistWidget->isVisible())
+    	ui.playlistWidget->hide();
     else
-    	ui.actionChannel_info->setDisabled(true);
+    	ui.playlistWidget->show();
+}
+
+void Tano::actionToolbarShow()
+{
+    if(ui.toolBar->isVisible())
+    	ui.toolBar->hide();
+    else
+    	ui.toolBar->show();
 }
 
 void Tano::rightMenu(QPoint pos)
@@ -354,4 +383,19 @@ void Tano::top()
 		this->setWindowFlags(flags);
 
 	this->show();
+}
+
+void Tano::lite()
+{
+	if(isLite) {
+		ui.playlistWidget->show();
+		ui.toolBar->show();
+		ui.menubar->show();
+		isLite = false;
+	} else {
+		ui.playlistWidget->hide();
+		ui.toolBar->hide();
+		ui.menubar->hide();
+		isLite = true;
+	}
 }

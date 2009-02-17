@@ -11,6 +11,11 @@ public:
 	KeyboardSelect(QWidget *parent, QLCDNumber *number, QList<int> l);
 	virtual ~KeyboardSelect();
 
+public slots:
+	void back();
+	void next();
+	void channel(bool direction);
+
 private slots:
     void keyPressed_0();
     void keyPressed_1();

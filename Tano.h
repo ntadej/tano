@@ -47,11 +47,13 @@ private slots:
 
     void tooltip(QString channelNow = "stop");
 
-    void actionShow(bool status);
+    void actionChannelShow();
+    void actionToolbarShow();
 
     void rightMenu(QPoint pos);
     void menuOpen();
     void top();
+    void lite();
 
 private:
     Ui::Tano ui;
@@ -74,8 +76,11 @@ private:
 
 	QMenu *right;
 	QMenu *open;
+	QMenu *tray;
 	QActionGroup *ratioGroup;
 	QActionGroup *cropGroup;
+
+	bool isLite;
 
     void createActions();
     void createMenus();

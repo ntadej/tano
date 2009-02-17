@@ -23,16 +23,26 @@ Video::~Video()
 
 }
 
-void Video::mouseDoubleClickEvent(QMouseEvent * event)
+void Video::mouseDoubleClickEvent(QMouseEvent *event)
 {
 	controlFull();
 	event->ignore();
 }
 
-void Video::mousePressEvent(QMouseEvent * event)
+void Video::mousePressEvent(QMouseEvent *event)
 {
 	if(event->button() == Qt::RightButton)
 		emit rightClick(event->globalPos());
+
+	event->ignore();
+}
+
+void Video::wheelEvent(QWheelEvent *event)
+{
+	if(event->delta()>0)
+		emit wheel(true);
+	else
+		emit wheel(false);
 
 	event->ignore();
 }

@@ -21,8 +21,9 @@ public:
 	QString currentMedia();
 
 protected:
-	void mouseDoubleClickEvent(QMouseEvent * event);
-	void mousePressEvent(QMouseEvent * event);
+	void mouseDoubleClickEvent(QMouseEvent *event);
+	void mousePressEvent(QMouseEvent *event);
+	void wheelEvent(QWheelEvent *event);
 
 public slots:
 	void controlPlay();
@@ -41,6 +42,7 @@ signals:
 	void stopped();
 
 	void rightClick(QPoint);
+	void wheel(bool);
 
 private:
 	Phonon::AudioOutput *audio;

@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="icons" >
+    <file>images/player_rew.png</file>
+    <file>images/player_fwd.png</file>
+    <file>images/toolbar.png</file>
     <file>images/stop.png</file>
     <file>images/back.png</file>
     <file>images/forward.png</file>

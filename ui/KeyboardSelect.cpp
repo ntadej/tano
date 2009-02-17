@@ -100,6 +100,59 @@ void KeyboardSelect::display()
 	timer->stop();
 }
 
+void KeyboardSelect::channel(bool direction)
+{
+	bool signal = false;
+	int i = 0;
+
+	old = lcd->intValue();
+	if(direction)
+		full = old + 1;
+	else
+		full = old - 1;
+
+	while(i < lim.size() && signal == false) {
+		if(full>=lim.at(i) && full<=lim.at(i+1)) {
+			signal = true;
+			emit channelSelect(full);
+		}
+		i+=2;
+	}
+
+	i = 0;
+	if(!signal) {
+		if(direction) {
+			int k = lim.size() - 1;
+			if(full < lim.at(k)) {
+				while(k > 0 && signal == false) {
+					k-=2;
+					if(full > lim.at(k)) {
+						emit channelSelect(lim.at(k+1));
+						signal = true;
+					}
+				}
+			}
+		} else {
+			while(i < lim.size() && signal == false) {
+				if(full < lim.at(i) && full > 0) {
+					emit channelSelect(lim.at(i-1));
+					signal = true;
+				}
+				i+=2;
+			}
+		}
+	}
+}
+
+void KeyboardSelect::back()
+{
+	channel(false);
+}
+
+void KeyboardSelect::next()
+{
+	channel(true);
+}
 
 //Process link
 void KeyboardSelect::keyPressed_0()
