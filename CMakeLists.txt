@@ -3,7 +3,17 @@
 # and to the root binary directory of the project as ${TANO_BINARY_DIR}.
 PROJECT(Tano)
 
-cmake_minimum_required(VERSION 2.4)
+cmake_minimum_required(VERSION 2.4.7)
+
+if(COMMAND cmake_policy)
+# Works around warnings libraries linked against that don't
+# have absolute paths (e.g. -lpthreads)
+cmake_policy(SET CMP0003 NEW)
+
+# Works around warnings about escaped quotes in ADD_DEFINITIONS
+# statements.
+cmake_policy(SET CMP0005 NEW)
+endif(COMMAND cmake_policy)
 
 # Set MingW bin dir, if MingW present
 IF(MINGW)
@@ -147,8 +157,8 @@ SET(QT_USE_QTNETWORK True)
 SET(QT_USE_QTWEBKIT True)
 
 IF(MINGW)
-	include_directories(${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/phonon-backend/3rdparty)
-	set(QT_PHONON_LIBRARY ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/phonon-backend/build/3rdparty/phonon/libphonon.dll.a)
+	include_directories(${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/3rdparty)
+	set(QT_PHONON_LIBRARY ${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/build/3rdparty/phonon/libphonon.dll.a)
 ELSE(MINGW)
 	#SET(QT_USE_QTPHONON True)
 ENDIF(MINGW)

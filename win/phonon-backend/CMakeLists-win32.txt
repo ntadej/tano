@@ -1,0 +1,120 @@
+#Default paths
+set(INCLUDE_INSTALL_DIR include)
+set(BIN_INSTALL_DIR ".")
+set(LIB_INSTALL_DIR lib)
+set(PLUGIN_INSTALL_DIR ${BIN_INSTALL_DIR}/phonon_backend)
+set(INSTALL_TARGETS_DEFAULT_ARGS
+	RUNTIME DESTINATION ${BIN_INSTALL_DIR}
+	LIBRARY DESTINATION ${BIN_INSTALL_DIR}
+#	ARCHIVE DESTINATION ${BIN_INSTALL_DIR}
+)
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/AUTHORS DESTINATION ${BIN_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/README DESTINATION ${BIN_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/THANKS DESTINATION ${BIN_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/COPYING DESTINATION ${BIN_INSTALL_DIR})
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/COPYING.LESSER DESTINATION ${BIN_INSTALL_DIR})
+
+
+
+#Copy Qt toolkit dll
+if (CMAKE_BUILD_TYPE STREQUAL Debug)
+	install(FILES ${QT_BINARY_DIR}/QtCored4.dll DESTINATION ${BIN_INSTALL_DIR})
+	install(FILES ${QT_BINARY_DIR}/QtGuid4.dll DESTINATION ${BIN_INSTALL_DIR})
+	install(FILES ${QT_BINARY_DIR}/QtNetworkd4.dll DESTINATION ${BIN_INSTALL_DIR})
+	#For phonon_ds9.dll (the DirectShow backend)
+	install(FILES ${QT_BINARY_DIR}/QtOpenGLd4.dll DESTINATION ${BIN_INSTALL_DIR})
+	install(FILES ${QT_BINARY_DIR}/../plugins/imageformats/qjpegd4.dll DESTINATION ${BIN_INSTALL_DIR}/imageformats)
+	install(FILES ${QT_BINARY_DIR}/../plugins/imageformats/qgifd4.dll DESTINATION ${BIN_INSTALL_DIR}/imageformats)
+else (CMAKE_BUILD_TYPE STREQUAL Debug)
+	install(FILES ${QT_BINARY_DIR}/QtCore4.dll DESTINATION ${BIN_INSTALL_DIR})
+	install(FILES ${QT_BINARY_DIR}/QtGui4.dll DESTINATION ${BIN_INSTALL_DIR})
+	install(FILES ${QT_BINARY_DIR}/QtNetwork4.dll DESTINATION ${BIN_INSTALL_DIR})
+	install(FILES ${QT_BINARY_DIR}/QtOpenGL4.dll DESTINATION ${BIN_INSTALL_DIR})
+	install(FILES ${QT_BINARY_DIR}/../plugins/imageformats/qjpeg4.dll DESTINATION ${BIN_INSTALL_DIR}/imageformats)
+	install(FILES ${QT_BINARY_DIR}/../plugins/imageformats/qgif4.dll DESTINATION ${BIN_INSTALL_DIR}/imageformats)
+endif (CMAKE_BUILD_TYPE STREQUAL Debug)
+
+#Copy Qt toolkit translations
+install(FILES ${QT_BINARY_DIR}/../translations/qt_fr.qm DESTINATION ${BIN_INSTALL_DIR}/translations)
+install(FILES ${QT_BINARY_DIR}/../translations/qt_de.qm DESTINATION ${BIN_INSTALL_DIR}/translations)
+install(FILES ${QT_BINARY_DIR}/../translations/qt_es.qm DESTINATION ${BIN_INSTALL_DIR}/translations)
+install(FILES ${QT_BINARY_DIR}/../translations/qt_uk.qm DESTINATION ${BIN_INSTALL_DIR}/translations)
+
+#Copy MPlayer build from SMPlayer
+#Used by MPlayer Phonon backend
+#SMPlayer' MPlayer build can be found at:
+#http://smplayer.sourceforge.net/
+#just install SMPlayer inside C:/Program Files/SMPlayer
+set(MPLAYER_INSTALL_DIR "C:/Program Files/SMPlayer/mplayer")
+if (EXISTS ${MPLAYER_INSTALL_DIR})
+	install(DIRECTORY ${MPLAYER_INSTALL_DIR} DESTINATION ${BIN_INSTALL_DIR})
+else (EXISTS ${MPLAYER_INSTALL_DIR})
+	message(STATUS "SMPlayer was not found, the MPlayer backend won't run (no MPlayer build)")
+endif (EXISTS ${MPLAYER_INSTALL_DIR})
+
+if (MINGW)
+	#When compiled with MinGW, we need mingwm10.dll
+	install(FILES "C:/mingw/bin/mingwm10.dll" DESTINATION ${BIN_INSTALL_DIR})
+else (MINGW)
+	if (MSVC_VERSION GREATER 1399)
+		#If MSVC >= MSVC80
+		#No manifest for QuarkPlayer plugins,
+		#see http://lists.trolltech.com/qt-interest/2007-09/msg00790.html for good explanations
+		set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /MANIFEST:NO")
+		set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} /MANIFEST:NO")
+	endif (MSVC_VERSION GREATER 1399)
+
+	#This can be probably replaced by Modules/InstallRequiredSystemLibraries.cmake that comes with CMake
+
+	if (MSVC71)
+		if (CMAKE_BUILD_TYPE STREQUAL Debug)
+			set(msvcrtDir "C:/WINDOWS/System32")
+			set(msvcrDll "${msvcrtDir}/msvcr71d.dll")
+			set(msvcpDll "${msvcrtDir}/msvcp71d.dll")
+		else (CMAKE_BUILD_TYPE STREQUAL Debug)
+			set(msvcrtDir "C:/WINDOWS/System32")
+			set(msvcrDll "${msvcrtDir}/msvcr71.dll")
+			set(msvcpDll "${msvcrtDir}/msvcp71.dll")
+		endif (CMAKE_BUILD_TYPE STREQUAL Debug)
+	endif (MSVC71)
+
+	if (MSVC80)
+		if (CMAKE_BUILD_TYPE STREQUAL Debug)
+			set(msvcrtDir "C:/WINDOWS/WinSxS/x86_Microsoft.VC80.DebugCRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_5490cd9f")
+			set(msvcrDll "${msvcrtDir}/msvcr80d.dll")
+			set(msvcpDll "${msvcrtDir}/msvcp80d.dll")
+			set(msvcrtManifest "${CMAKE_CURRENT_SOURCE_DIR}/msvc80/Microsoft.VC80.DebugCRT.manifest")
+		else (CMAKE_BUILD_TYPE STREQUAL Debug)
+			set(msvcrtDir "C:/WINDOWS/WinSxS/x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_6b128700")
+			set(msvcrDll "${msvcrtDir}/msvcr80.dll")
+			set(msvcpDll "${msvcrtDir}/msvcp80.dll")
+			set(msvcrtManifest "${CMAKE_CURRENT_SOURCE_DIR}/msvc80/Microsoft.VC80.CRT.manifest")
+		endif (CMAKE_BUILD_TYPE STREQUAL Debug)
+	endif (MSVC80)
+
+	if (MSVC90)
+		if (CMAKE_BUILD_TYPE STREQUAL Debug)
+			set(msvcrtDir "C:/WINDOWS/WinSxS/x86_microsoft.vc90.debugcrt_1fc8b3b9a1e18e3b_9.0.21022.8_none_96748342450f6aa2")
+			set(msvcrDll "${msvcrtDir}/msvcr90d.dll")
+			set(msvcpDll "${msvcrtDir}/msvcp90d.dll")
+			set(msvcrtManifest "${CMAKE_CURRENT_SOURCE_DIR}/msvc90/Microsoft.VC90.DebugCRT.manifest")
+		else (CMAKE_BUILD_TYPE STREQUAL Debug)
+			set(msvcrtDir "C:/WINDOWS/WinSxS/x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.21022.8_none_bcb86ed6ac711f91")
+			set(msvcrDll "${msvcrtDir}/msvcr90.dll")
+			set(msvcpDll "${msvcrtDir}/msvcp90.dll")
+			set(msvcrtManifest "${CMAKE_CURRENT_SOURCE_DIR}/msvc90/Microsoft.VC90.CRT.manifest")
+		endif (CMAKE_BUILD_TYPE STREQUAL Debug)
+	endif (MSVC90)
+
+	#Copy Microsoft Visual C++ runtime
+	if (EXISTS ${msvcrDll})
+		install(FILES ${msvcrDll} DESTINATION ${BIN_INSTALL_DIR})
+	endif (EXISTS ${msvcrDll})
+	if (EXISTS ${msvcpDll})
+		install(FILES ${msvcpDll} DESTINATION ${BIN_INSTALL_DIR})
+	endif (EXISTS ${msvcpDll})
+	if (EXISTS ${msvcrtManifest})
+		install(FILES ${msvcrtManifest} DESTINATION ${BIN_INSTALL_DIR})
+	endif (EXISTS ${msvcrtManifest})
+endif (MINGW)

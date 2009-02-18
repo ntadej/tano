@@ -174,7 +174,7 @@ void Tano::aboutTano()
 						QString(version + " (" + build + ")</h2>") +
 						QString("<p>" + tr("Copyright &copy; 2008-2009 Tadej Novak") + "<p>") +
 #ifdef Q_WS_WIN
-						QString("Videolan VLC Backend<br>") +
+						QString("VLC Backend<br>") +
 #endif
 						QString("Crystal Icons &copy; The Yellow Icon."));
 }
@@ -388,11 +388,13 @@ void Tano::top()
 void Tano::lite()
 {
 	if(isLite) {
+		ui.centralLayout-> setContentsMargins(4,4,4,4);
 		ui.playlistWidget->show();
 		ui.toolBar->show();
 		ui.menubar->show();
 		isLite = false;
 	} else {
+		ui.centralLayout-> setContentsMargins(0,0,0,0);
 		ui.playlistWidget->hide();
 		ui.toolBar->hide();
 		ui.menubar->hide();

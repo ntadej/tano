@@ -1,0 +1,8 @@
+VLC and MPlayer backends for the Phonon library
+http://phonon-vlc-mplayer.googlecode.com/
+
+The VLC backend needs a recent VLC-0.9 installed (http://nightlies.videolan.org/)
+The MPlayer backend needs a recent MPlayer-1.0 installed
+
+--
+Tanguy Krotoff <tkrotoff@gmail.com>
