@@ -1,4 +1,4 @@
-project(phonon-vlc-mplayer)
+project(phonon-vlc)
 
 #Copy config.h to the current source directory
 #since build dir in not inside the include path
@@ -33,4 +33,3 @@ set(phonon_commom_MOCS
 ##
 
 add_subdirectory(vlc)
-add_subdirectory(mplayer)

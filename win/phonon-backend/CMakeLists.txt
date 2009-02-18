@@ -1,11 +1,7 @@
 #Mininum required CMake version
 cmake_minimum_required(VERSION 2.6)
 
-project(phonon-vlc)
-
-set(QUARKPLAYER_MAJOR_VERSION 0)
-set(QUARKPLAYER_MINOR_VERSION 2)
-set(QUARKPLAYER_PATCH_VERSION 3)
+project(phonon-backend)
 
 #OWBuild
 include(CMakeLists-owbuild.txt)
@@ -31,9 +27,6 @@ find_package(Qt4 REQUIRED)
 
 #Includes all wanted definitions for Qt
 include(${QT_USE_FILE})
-
-#Ok, we can set NEW_TITLE_CHAPTER_HANDLING as we have a patched Phonon library
-#set(NEW_TITLE_CHAPTER_HANDLING 1)
 
 #Optimization: remove all Qt modules from include path
 reduce_qt_include_dirs()

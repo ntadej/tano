@@ -306,9 +306,8 @@ IF(MINGW)
 	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/libeay32.dll ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/ssleay32.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
 	
 	# Install Backend
-	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/phonon-backend/build/3rdparty/phonon/libphonon.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
-	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/phonon-backend/build/phonon-mplayer/libphonon_mplayer.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/phonon_backend )
-	INSTALL( DIRECTORY ${Tano_MPlayer} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}" PATTERN ".svn" EXCLUDE )
+	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/build/3rdparty/phonon/libphonon.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
+	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/build/vlc/vlc/libphonon_vlc.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/phonon_backend )
 	
 	# Install mingwm10.dll
 	IF(MINGW)
