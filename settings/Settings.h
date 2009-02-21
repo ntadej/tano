@@ -7,18 +7,19 @@
 
 class Settings {
 public:
-	Settings(QString settingsFile);
+	Settings(QString settingsFile, QStringList defaultL);
 	virtual ~Settings();
 
 	QStringList read();
-	QString locale();
-	QString defaultPlaylist();
 	bool write(QStringList settingsList);
+	QString settingsAt(int i);
+	int size();
 
 private:
 	QFile file;
 	QString fileName;
 	QStringList settings;
+	QStringList defaultList;
 };
 
 #endif /* SETTINGS_H_ */

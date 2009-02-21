@@ -47,6 +47,7 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 
 	createMenus();
 	createActions();
+	createShortcuts();
 }
 
 Tano::~Tano()
@@ -158,6 +159,20 @@ void Tano::createMenus()
 	tray->addAction(ui.actionClose);
 
 	trayIcon = new TrayIcon(tray);
+}
+
+void Tano::createShortcuts()
+{
+	actions << ui.actionPlay
+			<< ui.actionStop
+			<< ui.actionBack
+			<< ui.actionNext
+			<< ui.actionFullscreen;
+
+	shortcuts = new Shortcuts(actions);
+
+	/* right->addAction(ui.actionTop);
+	right->addAction(ui.actionLite); */
 }
 
 void Tano::aboutTano()
@@ -311,7 +326,7 @@ void Tano::showSiolEpg()
 
 void Tano::settings()
 {
-    EditSettings s(this, Common::settingsFile());
+    EditSettings s(this, Common::settingsMainFile(), Common::settingsMainDefault());
     s.exec();
 }
 

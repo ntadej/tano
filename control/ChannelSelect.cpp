@@ -19,16 +19,16 @@ ChannelSelect::ChannelSelect(QWidget *parent, QLCDNumber *number, QList<int> l) 
 	}
 	qDebug() << "Limit" << lim.size();
 
-	key_0 = new QShortcut(QKeySequence("0"), parent);
-	key_1 = new QShortcut(QKeySequence("1"), parent);
-	key_2 = new QShortcut(QKeySequence("2"), parent);
-	key_3 = new QShortcut(QKeySequence("3"), parent);
-	key_4 = new QShortcut(QKeySequence("4"), parent);
-	key_5 = new QShortcut(QKeySequence("5"), parent);
-	key_6 = new QShortcut(QKeySequence("6"), parent);
-	key_7 = new QShortcut(QKeySequence("7"), parent);
-	key_8 = new QShortcut(QKeySequence("8"), parent);
-	key_9 = new QShortcut(QKeySequence("9"), parent);
+	key_0 = new QShortcut(QKeySequence("0"), parent, 0, 0, Qt::ApplicationShortcut);
+	key_1 = new QShortcut(QKeySequence("1"), parent, 0, 0, Qt::ApplicationShortcut);
+	key_2 = new QShortcut(QKeySequence("2"), parent, 0, 0, Qt::ApplicationShortcut);
+	key_3 = new QShortcut(QKeySequence("3"), parent, 0, 0, Qt::ApplicationShortcut);
+	key_4 = new QShortcut(QKeySequence("4"), parent, 0, 0, Qt::ApplicationShortcut);
+	key_5 = new QShortcut(QKeySequence("5"), parent, 0, 0, Qt::ApplicationShortcut);
+	key_6 = new QShortcut(QKeySequence("6"), parent, 0, 0, Qt::ApplicationShortcut);
+	key_7 = new QShortcut(QKeySequence("7"), parent, 0, 0, Qt::ApplicationShortcut);
+	key_8 = new QShortcut(QKeySequence("8"), parent, 0, 0, Qt::ApplicationShortcut);
+	key_9 = new QShortcut(QKeySequence("9"), parent, 0, 0, Qt::ApplicationShortcut);
 
 	connect(key_0, SIGNAL(activated()), this, SLOT(keyPressed_0()));
 	connect(key_1, SIGNAL(activated()), this, SLOT(keyPressed_1()));

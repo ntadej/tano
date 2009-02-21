@@ -12,6 +12,7 @@
 #include "settings/EditSettings.h"
 #include "ui/TrayIcon.h"
 #include "control/ChannelSelect.h"
+#include "control/Shortcuts.h"
 #include "epg/Epg.h"
 #include "epg/EpgBrowser.h"
 
@@ -72,6 +73,8 @@ private:
 	Epg *epg;
 	EpgBrowser *browser;
 	EditPlaylist *editor;
+
+	Shortcuts *shortcuts;
 	ChannelSelect *select;
 
 	QMenu *right;
@@ -79,11 +82,13 @@ private:
 	QMenu *tray;
 	QActionGroup *ratioGroup;
 	QActionGroup *cropGroup;
+	QList<QAction*> actions;
 
 	bool isLite;
 
     void createActions();
     void createMenus();
+    void createShortcuts();
 };
 
 #endif // TANO_H

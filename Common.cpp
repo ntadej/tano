@@ -51,12 +51,27 @@ QString Common::locateLang(QString fileL) {
 	return path.replace(QString("/" + fileL), QString(""));
 }
 
-QString Common::settingsFile()
+QString Common::settingsMainFile()
 {
 	QDir path(QDir::homePath());
 	if (!QDir(QDir::homePath() + "/.tano/").exists())
 		path.mkpath(QDir::homePath() + "/.tano/");
 	return QDir::homePath() + "/.tano/settings";
+}
+
+QStringList Common::settingsMainDefault()
+{
+	QStringList defaultList;
+	defaultList << "Default" << "" << "";
+	return defaultList;
+}
+
+QString Common::settingsShortcutsFile()
+{
+	QDir path(QDir::homePath());
+	if (!QDir(QDir::homePath() + "/.tano/").exists())
+		path.mkpath(QDir::homePath() + "/.tano/");
+	return QDir::homePath() + "/.tano/shortcuts";
 }
 
 QString Common::vlcStatus()

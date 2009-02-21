@@ -1,13 +1,12 @@
 #include <QTextStream>
-#include <QMessageBox>
-#include <QLocale>
 #include <QDebug>
 
 #include "Settings.h"
 
-Settings::Settings(QString settingsFile) {
+Settings::Settings(QString settingsFile, QStringList defaultL) {
 
 	fileName = settingsFile;
+	defaultList = defaultL;
 
 	read();
 }
@@ -20,20 +19,25 @@ QStringList Settings::read()
 {
 	QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        if (settings.size() > 0) return settings;
-        else return settings << "Default" << "" << "";
+    	qDebug() << "No file";
+        if (settings.size() > 0) {
+        	return settings;
+        } else {
+        	settings = defaultList;
+        	return settings;
+        }
     }
 
 	int i = 0;
     QTextStream in(&file);
-    while (!in.atEnd() && i < 3) {
+    while (!in.atEnd()) {
         QString line = in.readLine();
-        qDebug() << "Tano Debug: Settings size: " << settings.size();
         settings << line;
         i++;
     }
     file.close();
 
+    qDebug() << "Red";
     return settings;
 }
 
@@ -53,36 +57,12 @@ bool Settings::write(QStringList settingsList)
     return true;
 }
 
-QString Settings::locale()
+QString Settings::settingsAt(int i)
 {
-		QString locale;
-
-	if (settings[0] != "Default")
-	{
-	   	if (settings[1] == "0") locale = "en";
-	   	else if (settings[1] == "1") locale = "sl";
-	}
-	else locale = QString(QLocale::system().name()).replace(2, 3, "");
-
-	qDebug() << "Tano Debug: Locale: " << locale;
-
-	return locale;
+	return settings[i];
 }
 
-QString Settings::defaultPlaylist()
+int Settings::size()
 {
-	QString defaultP;
-
-	qDebug() << "Tano Debug: Settings size: " << settings.size();
-	if (settings.size() < 3)
-		return "siol.xml";
-
-	qDebug() << "Tano Debug: Default playlist: " << settings[2];
-
-	if (settings[2] != "") defaultP = settings[2];
-	else defaultP = "siol.xml";
-
-	return defaultP;
+	return settings.size();
 }
-
-

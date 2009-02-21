@@ -5,7 +5,7 @@
     <message>
         <location filename="../control/ChannelSelect.cpp" line="93"/>
         <source>No channel with this number</source>
-        <translation type="unfinished">Ni programa s to številko</translation>
+        <translation>Ni programa s to številko</translation>
     </message>
 </context>
 <context>
@@ -141,79 +141,119 @@
 <context>
     <name>EditSettings</name>
     <message>
-        <location filename="../ui_EditSettings.h" line="153"/>
+        <location filename="../ui_EditSettings.h" line="206"/>
         <source>Settings</source>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="154"/>
+        <location filename="../ui_EditSettings.h" line="207"/>
         <source>Language</source>
         <translation>Jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="155"/>
+        <location filename="../ui_EditSettings.h" line="208"/>
         <source>System default language</source>
         <translation>Sistemsko privzet jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="156"/>
+        <location filename="../ui_EditSettings.h" line="209"/>
         <source>Custom language</source>
         <translation>Poljuben jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="168"/>
-        <source>Save</source>
-        <translation>Shrani</translation>
-    </message>
-    <message>
-        <location filename="../ui_EditSettings.h" line="169"/>
-        <source>Close</source>
-        <translation>Zapri</translation>
-    </message>
-    <message>
-        <location filename="../ui_EditSettings.h" line="160"/>
+        <location filename="../ui_EditSettings.h" line="213"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="161"/>
+        <location filename="../ui_EditSettings.h" line="214"/>
         <source>Slovensko</source>
         <translation>Slovensko</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="164"/>
+        <location filename="../ui_EditSettings.h" line="217"/>
         <source>Browse:</source>
         <translation>Brskaj:</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="166"/>
+        <location filename="../ui_EditSettings.h" line="219"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="167"/>
+        <location filename="../ui_EditSettings.h" line="220"/>
         <source>Reset</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="163"/>
+        <location filename="../ui_EditSettings.h" line="216"/>
         <source>Default Channel list</source>
         <translation>Privzet Seznam programov</translation>
     </message>
     <message>
-        <location filename="../settings/EditSettings.cpp" line="88"/>
+        <location filename="../settings/EditSettings.cpp" line="114"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../settings/EditSettings.cpp" line="90"/>
+        <location filename="../settings/EditSettings.cpp" line="116"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="162"/>
+        <location filename="../ui_EditSettings.h" line="215"/>
         <source>&lt;i&gt;You need to restart Tano Player when changing language!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Pri spreminjanju jezika je potreben ponovni zagon Tano Predvajalnika!&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="221"/>
+        <source>Main</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="222"/>
+        <source>Action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="223"/>
+        <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="235"/>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="227"/>
+        <source>Play</source>
+        <translation type="unfinished">Predvajaj</translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="228"/>
+        <source>Stop</source>
+        <translation type="unfinished">Ustavi</translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="229"/>
+        <source>Next channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="230"/>
+        <source>Previous channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="231"/>
+        <source>Fullscreen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="234"/>
+        <source>Restore defaults</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -310,7 +350,7 @@
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="323"/>
+        <location filename="../Tano.cpp" line="338"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
@@ -375,59 +415,59 @@
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="207"/>
+        <location filename="../Tano.cpp" line="222"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="165"/>
+        <location filename="../Tano.cpp" line="180"/>
         <source>About Tano Player</source>
         <translation>O Tano Predvajalniku</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="168"/>
+        <location filename="../Tano.cpp" line="183"/>
         <source>Copyright &amp;copy; 2008-2009 Tadej Novak</source>
         <translation>&amp;copy; 2008-2009 Tadej Novak</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="195"/>
+        <location filename="../Tano.cpp" line="210"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="238"/>
+        <location filename="../Tano.cpp" line="253"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="240"/>
+        <location filename="../Tano.cpp" line="255"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="258"/>
+        <location filename="../Tano.cpp" line="273"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="264"/>
+        <location filename="../Tano.cpp" line="279"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="272"/>
+        <location filename="../Tano.cpp" line="287"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="274"/>
+        <location filename="../Tano.cpp" line="289"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="295"/>
+        <location filename="../Tano.cpp" line="310"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
@@ -437,12 +477,12 @@
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="289"/>
+        <location filename="../Tano.cpp" line="304"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="290"/>
+        <location filename="../Tano.cpp" line="305"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -452,7 +492,7 @@
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="224"/>
+        <location filename="../Tano.cpp" line="239"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
@@ -462,7 +502,7 @@
         <translation>Današnji spored</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="216"/>
+        <location filename="../Tano.cpp" line="231"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
@@ -522,7 +562,7 @@
         <translation>Odpri &amp;Datoteko</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="207"/>
+        <location filename="../Tano.cpp" line="222"/>
         <source>selected</source>
         <translation>je izbran</translation>
     </message>

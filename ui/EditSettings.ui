@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>250</height>
+    <width>700</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize" >
@@ -22,134 +22,214 @@
    <iconset resource="images.qrc" >
     <normaloff>:/icons/images/settings.png</normaloff>:/icons/images/settings.png</iconset>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2" >
+  <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
-    <layout class="QVBoxLayout" name="optionsLayout" >
-     <item>
-      <widget class="QGroupBox" name="langBox" >
-       <property name="title" >
-        <string>Language</string>
-       </property>
-       <layout class="QVBoxLayout" >
-        <item>
-         <widget class="QRadioButton" name="defaultRadio" >
-          <property name="text" >
-           <string>System default language</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="customRadio" >
-          <property name="text" >
-           <string>Custom language</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox" >
-          <property name="enabled" >
-           <bool>false</bool>
-          </property>
-          <property name="minimumSize" >
-           <size>
-            <width>0</width>
-            <height>25</height>
-           </size>
-          </property>
-          <item>
-           <property name="text" >
-            <string>English</string>
-           </property>
-          </item>
-          <item>
-           <property name="text" >
-            <string>Slovensko</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label" >
-          <property name="text" >
-           <string>&lt;i>You need to restart Tano Player when changing language!&lt;/i></string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QGroupBox" name="defaultBox" >
-     <property name="title" >
-      <string>Default Channel list</string>
+    <widget class="QTabWidget" name="settingsTabs" >
+     <property name="currentIndex" >
+      <number>0</number>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout" >
-      <item>
-       <widget class="QLabel" name="pLabel" >
-        <property name="text" >
-         <string>Browse:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="pEdit" >
-        <property name="text" >
-         <string/>
-        </property>
-        <property name="readOnly" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QToolButton" name="browseButton" >
-        <property name="text" >
-         <string>...</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="resetButton" >
-        <property name="text" >
-         <string>Reset</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <widget class="QWidget" name="tabMain" >
+      <attribute name="title" >
+       <string>Main</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2" >
+       <item>
+        <widget class="QGroupBox" name="langBox" >
+         <property name="title" >
+          <string>Language</string>
+         </property>
+         <layout class="QVBoxLayout" >
+          <item>
+           <widget class="QRadioButton" name="defaultRadio" >
+            <property name="text" >
+             <string>System default language</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="customRadio" >
+            <property name="text" >
+             <string>Custom language</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize" >
+             <size>
+              <width>0</width>
+              <height>25</height>
+             </size>
+            </property>
+            <item>
+             <property name="text" >
+              <string>English</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Slovensko</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label" >
+            <property name="text" >
+             <string>&lt;i>You need to restart Tano Player when changing language!&lt;/i></string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="defaultBox" >
+         <property name="title" >
+          <string>Default Channel list</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout" >
+          <item>
+           <widget class="QLabel" name="pLabel" >
+            <property name="text" >
+             <string>Browse:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="pEdit" >
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="readOnly" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="browseButton" >
+            <property name="text" >
+             <string>...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="resetButton" >
+            <property name="text" >
+             <string>Reset</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer" >
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabShortcuts" >
+      <attribute name="title" >
+       <string>Shortcuts</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3" >
+       <item>
+        <widget class="QTableWidget" name="shortcutsWidget" >
+         <property name="horizontalScrollBarPolicy" >
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="editTriggers" >
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <row/>
+         <column>
+          <property name="text" >
+           <string>Action</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Key</string>
+          </property>
+         </column>
+         <item row="0" column="0" >
+          <property name="text" >
+           <string>Play</string>
+          </property>
+         </item>
+         <item row="1" column="0" >
+          <property name="text" >
+           <string>Stop</string>
+          </property>
+         </item>
+         <item row="2" column="0" >
+          <property name="text" >
+           <string>Next channel</string>
+          </property>
+         </item>
+         <item row="3" column="0" >
+          <property name="text" >
+           <string>Previous channel</string>
+          </property>
+         </item>
+         <item row="4" column="0" >
+          <property name="text" >
+           <string>Fullscreen</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="restoreLayout" >
+         <item>
+          <spacer name="horizontalSpacer" >
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0" >
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonDefaults" >
+           <property name="text" >
+            <string>Restore defaults</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="buttonsLayout" >
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="settingsSaveButton" >
-       <property name="text" >
-        <string>Save</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="settingsCloseButton" >
-       <property name="text" >
-        <string>Close</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

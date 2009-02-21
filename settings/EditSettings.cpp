@@ -5,25 +5,46 @@
 #include <QFileDialog>
 #include "EditSettings.h"
 
-EditSettings::EditSettings(QWidget *parent, QString file)
+EditSettings::EditSettings(QWidget *parent, QString file, QStringList dl)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
 	createActions();
 
-	settings = new Settings(file);
+	ui.shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+	ui.shortcutsWidget->verticalHeader()->hide();
+
+	settings = new SettingsMain(file, dl);
 
 	read();
 }
 
 void EditSettings::createActions()
 {
-	connect(ui.settingsSaveButton, SIGNAL(clicked()), this, SLOT(ok()));
-	connect(ui.settingsCloseButton, SIGNAL(clicked()), this, SLOT(cancel()));
+	connect(ui.buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 	connect(ui.defaultRadio, SIGNAL(clicked()), this, SLOT(custom()));
 	connect(ui.customRadio, SIGNAL(clicked()), this, SLOT(custom()));
 	connect(ui.browseButton, SIGNAL(clicked()), this, SLOT(browse()));
 	connect(ui.resetButton, SIGNAL(clicked()), this, SLOT(reset()));
+}
+
+void EditSettings::action(QAbstractButton *button)
+{
+	switch(ui.buttonBox->standardButton(button)) {
+	case 0x00000800:
+		qDebug() << "Save";
+		ok();
+		break;
+	case 0x00400000:
+		qDebug() << "Cancel";
+		cancel();
+		break;
+	case 0x02000000:
+		qDebug() << "Apply";
+		break;
+	default:
+		break;
+	}
 }
 
 void EditSettings::custom()
@@ -76,6 +97,11 @@ void EditSettings::ok()
 
 	if (success == true)
 	hide();
+}
+
+void EditSettings::apply()
+{
+//TODO: Apply
 }
 
 void EditSettings::cancel()

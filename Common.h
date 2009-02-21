@@ -2,12 +2,15 @@
 #define COMMON_H_
 
 #include <QString>
+#include <QStringList>
 
 class Common {
 public:
 	static QString locateResource(QString fileN);
 	static QString locateLang(QString fileL);
-	static QString settingsFile();
+	static QString settingsMainFile();
+	static QStringList settingsMainDefault();
+	static QString settingsShortcutsFile();
 	static QString vlcStatus();
 };
 
