@@ -94,7 +94,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	settings/EditSettings.h
 	video/Video.h
 	ui/TrayIcon.h
-	ui/KeyboardSelect.h
+	control/ChannelSelect.h
 	epg/Epg.h
 	epg/EpgBrowser.h
 	epg/EpgToday.h
@@ -113,7 +113,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	xml/tanogenerator.cpp
 	xml/tanohandler.cpp
 	ui/TrayIcon.cpp
-	ui/KeyboardSelect.cpp
+	control/ChannelSelect.cpp
 	epg/Epg.cpp
 	epg/EpgBrowser.cpp
 	epg/EpgToday.cpp
@@ -310,7 +310,6 @@ IF(MINGW)
 	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/build/vlc/vlc/libphonon_vlc.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/phonon_backend )
 	
 	# Install mingwm10.dll
-	IF(MINGW)
-		INSTALL( FILES ${MINGW_BIN_DIR}/mingwm10.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
-	ENDIF(MINGW)
+	INSTALL( FILES ${MINGW_BIN_DIR}/mingwm10.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
+
 ENDIF(MINGW)

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="sl">
 <context>
+    <name>ChannelSelect</name>
+    <message>
+        <location filename="../control/ChannelSelect.cpp" line="93"/>
+        <source>No channel with this number</source>
+        <translation type="unfinished">Ni programa s to številko</translation>
+    </message>
+</context>
+<context>
     <name>EditPlaylist</name>
     <message>
         <location filename="../channels/EditPlaylist.cpp" line="132"/>
@@ -265,14 +273,6 @@
     </message>
 </context>
 <context>
-    <name>KeyboardSelect</name>
-    <message>
-        <location filename="../ui/KeyboardSelect.cpp" line="93"/>
-        <source>No channel with this number</source>
-        <translation>Ni programa s to številko</translation>
-    </message>
-</context>
-<context>
     <name>QObject</name>
     <message>
         <location filename="../xml/tanohandler.cpp" line="79"/>
@@ -310,279 +310,264 @@
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="330"/>
+        <location filename="../Tano.cpp" line="323"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="436"/>
+        <location filename="../ui_Tano.h" line="420"/>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="437"/>
+        <location filename="../ui_Tano.h" line="421"/>
         <source>&amp;Exit</source>
         <translation>&amp;Izhod</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="439"/>
+        <location filename="../ui_Tano.h" line="423"/>
         <source>&amp;Settings</source>
         <translation>&amp;Nastavitve</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="441"/>
+        <location filename="../ui_Tano.h" line="425"/>
         <source>&amp;Open Channel list</source>
         <translation>&amp;Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="455"/>
+        <location filename="../ui_Tano.h" line="438"/>
         <source>Open</source>
         <translation>Odpri</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="444"/>
+        <location filename="../ui_Tano.h" line="428"/>
         <source>Edit Channel list</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="507"/>
+        <location filename="../ui_Tano.h" line="488"/>
         <source>&amp;Help</source>
         <translation>&amp;Pomoč</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="446"/>
+        <location filename="../ui_Tano.h" line="430"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="473"/>
+        <location filename="../ui_Tano.h" line="454"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="483"/>
+        <location filename="../ui_Tano.h" line="464"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="506"/>
+        <location filename="../ui_Tano.h" line="487"/>
         <source>&amp;File</source>
         <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="519"/>
+        <location filename="../ui_Tano.h" line="499"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="214"/>
+        <location filename="../Tano.cpp" line="207"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="172"/>
+        <location filename="../Tano.cpp" line="165"/>
         <source>About Tano Player</source>
         <translation>O Tano Predvajalniku</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="175"/>
+        <location filename="../Tano.cpp" line="168"/>
         <source>Copyright &amp;copy; 2008-2009 Tadej Novak</source>
         <translation>&amp;copy; 2008-2009 Tadej Novak</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="202"/>
+        <location filename="../Tano.cpp" line="195"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="245"/>
+        <location filename="../Tano.cpp" line="238"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="247"/>
+        <location filename="../Tano.cpp" line="240"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="265"/>
+        <location filename="../Tano.cpp" line="258"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="271"/>
+        <location filename="../Tano.cpp" line="264"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="279"/>
+        <location filename="../Tano.cpp" line="272"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="281"/>
+        <location filename="../Tano.cpp" line="274"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="302"/>
+        <location filename="../Tano.cpp" line="295"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="448"/>
+        <location filename="../ui_Tano.h" line="432"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="296"/>
+        <location filename="../Tano.cpp" line="289"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="297"/>
+        <location filename="../Tano.cpp" line="290"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="449"/>
+        <location filename="../ui_Tano.h" line="433"/>
         <source>Check for updates</source>
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="231"/>
+        <location filename="../Tano.cpp" line="224"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="520"/>
+        <location filename="../ui_Tano.h" line="500"/>
         <source>Today&apos;s Schedule</source>
         <translation>Današnji spored</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="223"/>
+        <location filename="../Tano.cpp" line="216"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="517"/>
+        <location filename="../ui_Tano.h" line="497"/>
         <source>Refresh EPG</source>
         <translation>Osveži EPG</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="513"/>
+        <location filename="../ui_Tano.h" line="493"/>
         <source>Main toolbar</source>
         <translation>Glavna orodna vrstica</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="440"/>
+        <location filename="../ui_Tano.h" line="424"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="443"/>
+        <location filename="../ui_Tano.h" line="427"/>
         <source>&amp;Browser</source>
         <translation>&amp;Brskalnik</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="450"/>
+        <location filename="../ui_Tano.h" line="434"/>
         <source>SiOL TV EPG</source>
         <translation>SiOL TV EPG</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="458"/>
+        <location filename="../ui_Tano.h" line="435"/>
         <source>Original</source>
         <translation>Originalno</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="452"/>
+        <location filename="../ui_Tano.h" line="436"/>
         <source>4:3</source>
         <translation>4:3</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="453"/>
+        <location filename="../ui_Tano.h" line="437"/>
         <source>16:9</source>
         <translation>16:9</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="454"/>
-        <source>Dinamicaly changing</source>
-        <translation>Dinamično</translation>
-    </message>
-    <message>
-        <location filename="../ui_Tano.h" line="510"/>
+        <location filename="../ui_Tano.h" line="491"/>
         <source>Media</source>
         <translation>Medij</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="511"/>
+        <location filename="../ui_Tano.h" line="492"/>
         <source>Aspect ratio</source>
         <translation>Razmerje slike</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="442"/>
+        <location filename="../ui_Tano.h" line="426"/>
         <source>Open &amp;File</source>
         <translation>Odpri &amp;Datoteko</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="459"/>
-        <source>Fit screen</source>
-        <translation>Ujemanje z zaslonom</translation>
-    </message>
-    <message>
-        <location filename="../ui_Tano.h" line="512"/>
-        <source>Crop</source>
-        <translation>Obreži</translation>
-    </message>
-    <message>
-        <location filename="../Tano.cpp" line="214"/>
+        <location filename="../Tano.cpp" line="207"/>
         <source>selected</source>
         <translation>je izbran</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="438"/>
+        <location filename="../ui_Tano.h" line="422"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="460"/>
+        <location filename="../ui_Tano.h" line="441"/>
         <source>Allways on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="508"/>
+        <location filename="../ui_Tano.h" line="489"/>
         <source>Options</source>
         <translation>Možnosti</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="461"/>
+        <location filename="../ui_Tano.h" line="442"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="462"/>
+        <location filename="../ui_Tano.h" line="443"/>
         <source>Lite Mode</source>
         <translation>Mini različica</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="463"/>
+        <location filename="../ui_Tano.h" line="444"/>
         <source>Main Toolbar</source>
         <translation>Glavna orodna vrstica</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="509"/>
+        <location filename="../ui_Tano.h" line="490"/>
         <source>Show / Hide</source>
         <translation>Pokaži / Skrij</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="503"/>
+        <location filename="../ui_Tano.h" line="484"/>
         <source>Next</source>
         <translation>Naslednji</translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="493"/>
+        <location filename="../ui_Tano.h" line="474"/>
         <source>Back</source>
         <translation>Prejšnji</translation>
     </message>

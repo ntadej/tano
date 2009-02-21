@@ -1,8 +1,8 @@
-#include "KeyboardSelect.h"
+#include "ChannelSelect.h"
 
 #include <QDebug>
 
-KeyboardSelect::KeyboardSelect(QWidget *parent, QLCDNumber *number, QList<int> l) {
+ChannelSelect::ChannelSelect(QWidget *parent, QLCDNumber *number, QList<int> l) {
 	num = 1;
 	lcd = number;
 	timer = new QTimer(parent);
@@ -44,11 +44,11 @@ KeyboardSelect::KeyboardSelect(QWidget *parent, QLCDNumber *number, QList<int> l
 	connect(timer, SIGNAL(timeout()), this, SLOT(display()));
 }
 
-KeyboardSelect::~KeyboardSelect() {
+ChannelSelect::~ChannelSelect() {
 
 }
 
-void KeyboardSelect::process(int key)
+void ChannelSelect::process(int key)
 {
 	if(num == 1) {
 		old = lcd->intValue();
@@ -73,7 +73,7 @@ void KeyboardSelect::process(int key)
 	}
 }
 
-void KeyboardSelect::display()
+void ChannelSelect::display()
 {
 	bool signal = false;
 	full = number3*100 + number2*10 + number1;
@@ -100,7 +100,7 @@ void KeyboardSelect::display()
 	timer->stop();
 }
 
-void KeyboardSelect::channel(bool direction)
+void ChannelSelect::channel(bool direction)
 {
 	bool signal = false;
 	int i = 0;
@@ -144,54 +144,54 @@ void KeyboardSelect::channel(bool direction)
 	}
 }
 
-void KeyboardSelect::back()
+void ChannelSelect::back()
 {
 	channel(false);
 }
 
-void KeyboardSelect::next()
+void ChannelSelect::next()
 {
 	channel(true);
 }
 
 //Process link
-void KeyboardSelect::keyPressed_0()
+void ChannelSelect::keyPressed_0()
 {
 	process(0);
 }
-void KeyboardSelect::keyPressed_1()
+void ChannelSelect::keyPressed_1()
 {
 	process(1);
 }
-void KeyboardSelect::keyPressed_2()
+void ChannelSelect::keyPressed_2()
 {
 	process(2);
 }
-void KeyboardSelect::keyPressed_3()
+void ChannelSelect::keyPressed_3()
 {
 	process(3);
 }
-void KeyboardSelect::keyPressed_4()
+void ChannelSelect::keyPressed_4()
 {
 	process(4);
 }
-void KeyboardSelect::keyPressed_5()
+void ChannelSelect::keyPressed_5()
 {
 	process(5);
 }
-void KeyboardSelect::keyPressed_6()
+void ChannelSelect::keyPressed_6()
 {
 	process(6);
 }
-void KeyboardSelect::keyPressed_7()
+void ChannelSelect::keyPressed_7()
 {
 	process(7);
 }
-void KeyboardSelect::keyPressed_8()
+void ChannelSelect::keyPressed_8()
 {
 	process(8);
 }
-void KeyboardSelect::keyPressed_9()
+void ChannelSelect::keyPressed_9()
 {
 	process(9);
 }

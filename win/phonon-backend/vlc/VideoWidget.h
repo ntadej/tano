@@ -1,6 +1,7 @@
 /*
  * VLC and MPlayer backends for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -23,15 +24,8 @@
 
 #include <phonon/videowidgetinterface.h>
 
-#ifdef PHONON_VLC
-	#include "VLCVideoWidget.h"
-	typedef Phonon::VLC_MPlayer::VLCVideoWidget Widget;
-#endif	//PHONON_VLC
-
-#ifdef PHONON_MPLAYER
-	#include "MPlayerVideoWidget.h"
-	typedef Phonon::VLC_MPlayer::MPlayerVideoWidget Widget;
-#endif	//PHONON_MPLAYER
+#include "VLCVideoWidget.h"
+typedef Phonon::VLC_MPlayer::VLCVideoWidget Widget;
 
 namespace Phonon
 {
@@ -79,6 +73,7 @@ private slots:
 	 * @see MPlayerProcess::videoWidgetSizeChanged()
 	 */
 	void videoWidgetSizeChanged(int width, int height);
+	char* vlcAspectRatio() const;
 
 private:
 
@@ -95,6 +90,8 @@ private:
 	qreal _hue;
 
 	qreal _saturation;
+
+	char* _vlcAspectRatio;
 };
 
 }}	//Namespace Phonon::VLC_MPlayer

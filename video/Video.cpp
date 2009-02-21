@@ -25,26 +25,26 @@ Video::~Video()
 
 void Video::mouseDoubleClickEvent(QMouseEvent *event)
 {
-	controlFull();
 	event->ignore();
+	controlFull();
 }
 
 void Video::mousePressEvent(QMouseEvent *event)
 {
+	event->ignore();
+
 	if(event->button() == Qt::RightButton)
 		emit rightClick(event->globalPos());
-
-	event->ignore();
 }
 
 void Video::wheelEvent(QWheelEvent *event)
 {
+	event->ignore();
+
 	if(event->delta()>0)
 		emit wheel(true);
 	else
 		emit wheel(false);
-
-	event->ignore();
 }
 
 void Video::playTv(QString fileName, QString channelName)

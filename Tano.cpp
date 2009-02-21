@@ -89,19 +89,19 @@ void Tano::createActions()
 	connect(ui.buttonPlay, SIGNAL(clicked()), ui.videoWidget, SLOT(controlPlay()));
 	connect(ui.buttonStop, SIGNAL(clicked()), ui.videoWidget, SLOT(controlStop()));
 	connect(ui.buttonStop, SIGNAL(clicked()), this, SLOT(stop()));
-	connect(ui.buttonBack, SIGNAL(clicked()), keyboard, SLOT(back()));
-	connect(ui.buttonNext, SIGNAL(clicked()), keyboard, SLOT(next()));
+	connect(ui.buttonBack, SIGNAL(clicked()), select, SLOT(back()));
+	connect(ui.buttonNext, SIGNAL(clicked()), select, SLOT(next()));
 	connect(ui.actionPlay, SIGNAL(triggered()), ui.videoWidget, SLOT(controlPlay()));
 	connect(ui.actionStop, SIGNAL(triggered()), ui.videoWidget, SLOT(controlStop()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
-	connect(ui.actionBack, SIGNAL(triggered()), keyboard, SLOT(back()));
-	connect(ui.actionNext, SIGNAL(triggered()), keyboard, SLOT(next()));
+	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));
+	connect(ui.actionNext, SIGNAL(triggered()), select, SLOT(next()));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 
 	connect(ui.playlistTree, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
-	connect(keyboard, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
-	connect(keyboard, SIGNAL(error(QString, int)), this->statusBar(), SLOT(showMessage(QString, int)));
+	connect(select, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
+	connect(select, SIGNAL(error(QString, int)), this->statusBar(), SLOT(showMessage(QString, int)));
 
 	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(showNormal()));
 	connect(ui.actionRestore, SIGNAL(triggered()), this, SLOT(showNormal()));
@@ -111,7 +111,7 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(playing(QString)), this, SLOT(tooltip(QString)));
 	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
-	connect(ui.videoWidget, SIGNAL(wheel(bool)), keyboard, SLOT(channel(bool)));
+	connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
 
 	connect(epg, SIGNAL(epgDone(QString, bool)), this, SLOT(showEpg(QString, bool)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), browser, SLOT(open(QString)));
@@ -125,9 +125,6 @@ void Tano::createActions()
 	connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioOriginal()));
 	connect(ui.actionRatio43, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio43()));
 	connect(ui.actionRatio169, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio169()));
-	connect(ui.actionRatioDinamic, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioDinamic()));
-	connect(ui.actionCropOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(cropOriginal()));
-	connect(ui.actionCropFit, SIGNAL(triggered()), ui.videoWidget, SLOT(cropFit()));
 }
 
 void Tano::createMenus()
@@ -136,20 +133,16 @@ void Tano::createMenus()
 	ratioGroup->addAction(ui.actionRatioOriginal);
 	ratioGroup->addAction(ui.actionRatio43);
 	ratioGroup->addAction(ui.actionRatio169);
-	ratioGroup->addAction(ui.actionRatioDinamic);
-
-	cropGroup = new QActionGroup(this);
-	cropGroup->addAction(ui.actionCropOriginal);
-	cropGroup->addAction(ui.actionCropFit);
 
 	right = new QMenu();
 	right->addAction(ui.actionPlay);
 	right->addAction(ui.actionStop);
+	right->addAction(ui.actionBack);
+	right->addAction(ui.actionNext);
 	right->addAction(ui.actionTop);
 	right->addAction(ui.actionLite);
 	right->addAction(ui.actionFullscreen);
 	right->addMenu(ui.menuRatio);
-	right->addMenu(ui.menuCrop);
 
 	open = new QMenu();
 	open->addAction(ui.actionOpenFile);
@@ -270,7 +263,7 @@ void Tano::openPlaylist(bool start)
     if (reader.parse(xmlInputSource))
         statusBar()->showMessage(tr("File loaded"), 2000);
 
-    keyboard = new KeyboardSelect(this, ui.channelNumber, handler->limit());
+    select = new ChannelSelect(this, ui.channelNumber, handler->limit());
 }
 
 void Tano::openFile()
@@ -392,12 +385,16 @@ void Tano::lite()
 		ui.playlistWidget->show();
 		ui.toolBar->show();
 		ui.menubar->show();
+		ui.statusbar->show();
+		ui.videoControlsFrame->show();
 		isLite = false;
 	} else {
 		ui.centralLayout-> setContentsMargins(0,0,0,0);
 		ui.playlistWidget->hide();
 		ui.toolBar->hide();
 		ui.menubar->hide();
+		ui.statusbar->hide();
+		ui.videoControlsFrame->hide();
 		isLite = true;
 	}
 }

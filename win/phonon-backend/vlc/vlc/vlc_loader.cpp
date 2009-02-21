@@ -50,14 +50,14 @@ void initLibVLC() {
 	const char * vlcArgs[] = {
 		strdup(pluginPath.toUtf8().constData()),
 		//"-vvv",			//Debug messages level: maximum
-		//"--intf=dummy",			//Don't use any interface
-		//"--no-media-library",
-		//"--no-one-instance",
-		//"--reset-plugins-cache",
-		//"--no-stats",
-		//"--no-osd",
-		//"--no-video-title-show",
-		//"--ignore-config"		//Don't use VLC's config
+		"--intf=dummy",			//Don't use any interface
+		"--no-media-library",
+		"--no-one-instance",
+		"--reset-plugins-cache",
+		"--no-stats",
+		"--no-osd",
+		"--no-video-title-show",
+		"--ignore-config"		//Don't use VLC's config
 	};
 
 	p_libvlc_exception_init(_vlcException);

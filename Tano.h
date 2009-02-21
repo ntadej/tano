@@ -11,7 +11,7 @@
 #include "channels/EditPlaylist.h"
 #include "settings/EditSettings.h"
 #include "ui/TrayIcon.h"
-#include "ui/KeyboardSelect.h"
+#include "control/ChannelSelect.h"
 #include "epg/Epg.h"
 #include "epg/EpgBrowser.h"
 
@@ -72,7 +72,7 @@ private:
 	Epg *epg;
 	EpgBrowser *browser;
 	EditPlaylist *editor;
-	KeyboardSelect *keyboard;
+	ChannelSelect *select;
 
 	QMenu *right;
 	QMenu *open;

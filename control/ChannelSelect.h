@@ -1,15 +1,15 @@
-#ifndef KEYBOARDSELECT_H_
-#define KEYBOARDSELECT_H_
+#ifndef CHANNELSELECT_H_
+#define CHANNELSELECT_H_
 
 #include <QShortcut>
 #include <QLCDNumber>
 #include <QTimer>
 
-class KeyboardSelect : public QObject {
+class ChannelSelect : public QObject {
 Q_OBJECT
 public:
-	KeyboardSelect(QWidget *parent, QLCDNumber *number, QList<int> l);
-	virtual ~KeyboardSelect();
+	ChannelSelect(QWidget *parent, QLCDNumber *number, QList<int> l);
+	virtual ~ChannelSelect();
 
 public slots:
 	void back();
@@ -59,4 +59,4 @@ private:
 	int old;
 };
 
-#endif /* KEYBOARDSELECT_H_ */
+#endif /* CHANNELSELECT_H_ */

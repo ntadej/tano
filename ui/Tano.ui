@@ -265,17 +265,12 @@
      <addaction name="actionRatioOriginal" />
      <addaction name="actionRatio43" />
      <addaction name="actionRatio169" />
-     <addaction name="actionRatioDinamic" />
     </widget>
-    <widget class="QMenu" name="menuCrop" >
-     <property name="title" >
-      <string>Crop</string>
-     </property>
-     <addaction name="actionCropOriginal" />
-     <addaction name="actionCropFit" />
-    </widget>
+    <addaction name="actionPlay" />
+    <addaction name="actionStop" />
+    <addaction name="actionBack" />
+    <addaction name="actionNext" />
     <addaction name="menuRatio" />
-    <addaction name="menuCrop" />
    </widget>
    <addaction name="menuFile" />
    <addaction name="menuOptions" />
@@ -553,14 +548,6 @@
     <string>16:9</string>
    </property>
   </action>
-  <action name="actionRatioDinamic" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>Dinamicaly changing</string>
-   </property>
-  </action>
   <action name="actionOpenToolbar" >
    <property name="icon" >
     <iconset resource="images.qrc" >
@@ -586,25 +573,6 @@
    </property>
    <property name="text" >
     <string>Stop</string>
-   </property>
-  </action>
-  <action name="actionCropOriginal" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="checked" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>Original</string>
-   </property>
-  </action>
-  <action name="actionCropFit" >
-   <property name="checkable" >
-    <bool>true</bool>
-   </property>
-   <property name="text" >
-    <string>Fit screen</string>
    </property>
   </action>
   <action name="actionTop" >
