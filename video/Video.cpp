@@ -1,4 +1,5 @@
 #include <QMouseEvent>
+#include <QDebug>
 
 #include "Video.h"
 
@@ -12,6 +13,9 @@ Video::Video(QWidget *parent)
 	aslider->setAudioOutput(audio);
 	Phonon::createPath(channel, this);
 	Phonon::createPath(channel, audio);
+
+	audio->setVolume(0.5);
+	qDebug() << "Volume:" << audio->volume()*100;
 
 	shortcutFull = new QShortcut(QKeySequence(tr("Esc")),
 	                          this);
@@ -78,6 +82,26 @@ void Video::controlFull()
 		this->exitFullScreen();
 		disconnect(shortcutFull, SIGNAL(activated()), this, SLOT(controlFull()));
 	}
+}
+
+void Video::controlMute()
+{
+	if(audio->isMuted())
+		audio->setMuted(false);
+	else
+		audio->setMuted(true);
+}
+
+void Video::controlVUp()
+{
+	audio->setVolume(audio->volume()+0.1);
+	qDebug() << "Volume:" << audio->volume()*100;
+}
+
+void Video::controlVDown()
+{
+	audio->setVolume(audio->volume()-0.1);
+	qDebug() << "Volume:" << audio->volume()*100;
 }
 
 Phonon::VolumeSlider *Video::slider()

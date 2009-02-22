@@ -97,6 +97,9 @@ void Tano::createActions()
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));
 	connect(ui.actionNext, SIGNAL(triggered()), select, SLOT(next()));
+	connect(ui.actionMute, SIGNAL(triggered()), ui.videoWidget, SLOT(controlMute()));
+	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVUp()));
+	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVDown()));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 
@@ -140,10 +143,15 @@ void Tano::createMenus()
 	right->addAction(ui.actionStop);
 	right->addAction(ui.actionBack);
 	right->addAction(ui.actionNext);
+	right->addSeparator();
 	right->addAction(ui.actionTop);
 	right->addAction(ui.actionLite);
 	right->addAction(ui.actionFullscreen);
+	right->addSeparator();
+	right->addMenu(ui.menuVolume);
 	right->addMenu(ui.menuRatio);
+	right->addSeparator();
+	right->addAction(ui.actionClose);
 
 	open = new QMenu();
 	open->addAction(ui.actionOpenFile);
@@ -167,7 +175,10 @@ void Tano::createShortcuts()
 			<< ui.actionStop
 			<< ui.actionBack
 			<< ui.actionNext
-			<< ui.actionFullscreen;
+			<< ui.actionFullscreen
+			<< ui.actionMute
+			<< ui.actionVolumeUp
+			<< ui.actionVolumeDown;
 
 	shortcuts = new Shortcuts(actions);
 

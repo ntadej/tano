@@ -29,6 +29,9 @@ public slots:
 	void controlPlay();
 	void controlStop();
 	void controlFull();
+	void controlMute();
+	void controlVUp();
+	void controlVDown();
 
 	void ratioOriginal();
 	void ratio43();

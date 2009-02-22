@@ -262,14 +262,31 @@
      <property name="title" >
       <string>Aspect ratio</string>
      </property>
+     <property name="icon" >
+      <iconset resource="images.qrc" >
+       <normaloff>:/icons/images/video.png</normaloff>:/icons/images/video.png</iconset>
+     </property>
      <addaction name="actionRatioOriginal" />
      <addaction name="actionRatio43" />
      <addaction name="actionRatio169" />
+    </widget>
+    <widget class="QMenu" name="menuVolume" >
+     <property name="title" >
+      <string>Volume</string>
+     </property>
+     <property name="icon" >
+      <iconset resource="images.qrc" >
+       <normaloff>:/icons/images/player_volume.png</normaloff>:/icons/images/player_volume.png</iconset>
+     </property>
+     <addaction name="actionMute" />
+     <addaction name="actionVolumeUp" />
+     <addaction name="actionVolumeDown" />
     </widget>
     <addaction name="actionPlay" />
     <addaction name="actionStop" />
     <addaction name="actionBack" />
     <addaction name="actionNext" />
+    <addaction name="menuVolume" />
     <addaction name="menuRatio" />
    </widget>
    <addaction name="menuFile" />
@@ -303,6 +320,8 @@
    <addaction name="separator" />
    <addaction name="actionBrowser" />
    <addaction name="actionEpg" />
+   <addaction name="separator" />
+   <addaction name="actionSettings" />
   </widget>
   <widget class="QDockWidget" name="playlistWidget" >
    <property name="windowIcon" >
@@ -597,7 +616,7 @@
     <bool>true</bool>
    </property>
    <property name="text" >
-    <string>Lite Mode</string>
+    <string>Simple Mode</string>
    </property>
   </action>
   <action name="actionToolbar" >
@@ -625,6 +644,33 @@
    </property>
    <property name="text" >
     <string>Back</string>
+   </property>
+  </action>
+  <action name="actionMute" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Mute</string>
+   </property>
+  </action>
+  <action name="actionVolumeUp" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/up.png</normaloff>:/icons/images/up.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Volume up</string>
+   </property>
+  </action>
+  <action name="actionVolumeDown" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/down.png</normaloff>:/icons/images/down.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Volume down</string>
    </property>
   </action>
  </widget>

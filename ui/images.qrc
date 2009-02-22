@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icons" >
+    <file>images/down.png</file>
+    <file>images/up.png</file>
     <file>images/player_rew.png</file>
     <file>images/player_fwd.png</file>
     <file>images/toolbar.png</file>

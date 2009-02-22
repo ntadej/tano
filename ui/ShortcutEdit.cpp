@@ -38,7 +38,10 @@ void ShortcutEdit::keyPressEvent(QKeyEvent *event)
 
 	if(super == true) {
 		super = false;
-		key = new QKeySequence(e+"+"+event->text());
+		if(event->text() != "")
+			key = new QKeySequence(e+"+"+event->text());
+		else
+			key = new QKeySequence(e+"+"+QKeySequence(event->key()).toString());
 	} else {
 		key = new QKeySequence(event->key());
 	}
