@@ -73,8 +73,3 @@ QString Common::settingsShortcutsFile()
 		path.mkpath(QDir::homePath() + "/.tano/");
 	return QDir::homePath() + "/.tano/shortcuts";
 }
-
-QString Common::vlcStatus()
-{
-	return locateResource("/usr/bin/vlc");
-}

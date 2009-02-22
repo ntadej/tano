@@ -1,5 +1,4 @@
 #include <QTextStream>
-#include <QDebug>
 
 #include "Settings.h"
 
@@ -19,7 +18,6 @@ QStringList Settings::read()
 {
 	QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-    	qDebug() << "No file";
         if (settings.size() > 0) {
         	return settings;
         } else {
@@ -28,16 +26,14 @@ QStringList Settings::read()
         }
     }
 
-	int i = 0;
+    settings.clear();
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine();
         settings << line;
-        i++;
     }
     file.close();
 
-    qDebug() << "Red";
     return settings;
 }
 
@@ -49,7 +45,7 @@ bool Settings::write(QStringList settingsList)
         return false;
 
 	QTextStream out(&file);
-	for (int i = 0; i < 3; ++i) {
+	for (int i = 0; i < settingsList.size(); ++i) {
 		if (0 < i && settingsList[i] != "") out << "\n";
 		if (settingsList[i] != "") out << settingsList[i];
 	}

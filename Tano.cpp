@@ -326,7 +326,7 @@ void Tano::showSiolEpg()
 
 void Tano::settings()
 {
-    EditSettings s(this, Common::settingsMainFile(), Common::settingsMainDefault());
+    EditSettings s(this, shortcuts);
     s.exec();
 }
 

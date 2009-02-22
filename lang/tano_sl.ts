@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="sl">
+<defaultcodec></defaultcodec>
 <context>
     <name>ChannelSelect</name>
     <message>
@@ -141,119 +142,124 @@
 <context>
     <name>EditSettings</name>
     <message>
-        <location filename="../ui_EditSettings.h" line="206"/>
+        <location filename="../ui_EditSettings.h" line="235"/>
         <source>Settings</source>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="207"/>
+        <location filename="../ui_EditSettings.h" line="236"/>
         <source>Language</source>
         <translation>Jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="208"/>
+        <location filename="../ui_EditSettings.h" line="237"/>
         <source>System default language</source>
         <translation>Sistemsko privzet jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="209"/>
+        <location filename="../ui_EditSettings.h" line="238"/>
         <source>Custom language</source>
         <translation>Poljuben jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="213"/>
+        <location filename="../ui_EditSettings.h" line="242"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="214"/>
+        <location filename="../ui_EditSettings.h" line="243"/>
         <source>Slovensko</source>
         <translation>Slovensko</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="217"/>
+        <location filename="../ui_EditSettings.h" line="246"/>
         <source>Browse:</source>
         <translation>Brskaj:</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="219"/>
+        <location filename="../ui_EditSettings.h" line="248"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="220"/>
+        <location filename="../ui_EditSettings.h" line="249"/>
         <source>Reset</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="216"/>
+        <location filename="../ui_EditSettings.h" line="245"/>
         <source>Default Channel list</source>
         <translation>Privzet Seznam programov</translation>
     </message>
     <message>
-        <location filename="../settings/EditSettings.cpp" line="114"/>
+        <location filename="../settings/EditSettings.cpp" line="143"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../settings/EditSettings.cpp" line="116"/>
+        <location filename="../settings/EditSettings.cpp" line="145"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="215"/>
+        <location filename="../ui_EditSettings.h" line="244"/>
         <source>&lt;i&gt;You need to restart Tano Player when changing language!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Pri spreminjanju jezika je potreben ponovni zagon Tano Predvajalnika!&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="221"/>
+        <location filename="../ui_EditSettings.h" line="250"/>
         <source>Main</source>
-        <translation type="unfinished"></translation>
+        <translation>Glavno</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="222"/>
+        <location filename="../ui_EditSettings.h" line="251"/>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukaz</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="223"/>
+        <location filename="../ui_EditSettings.h" line="252"/>
         <source>Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipke</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="235"/>
+        <location filename="../ui_EditSettings.h" line="265"/>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Bližnjice</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="227"/>
+        <location filename="../ui_EditSettings.h" line="256"/>
         <source>Play</source>
-        <translation type="unfinished">Predvajaj</translation>
+        <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="228"/>
+        <location filename="../ui_EditSettings.h" line="257"/>
         <source>Stop</source>
-        <translation type="unfinished">Ustavi</translation>
+        <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="229"/>
+        <location filename="../ui_EditSettings.h" line="258"/>
         <source>Next channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Naslednii kanal</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="230"/>
+        <location filename="../ui_EditSettings.h" line="259"/>
         <source>Previous channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Prejšnji kanal</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="231"/>
+        <location filename="../ui_EditSettings.h" line="260"/>
         <source>Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="234"/>
+        <location filename="../ui_EditSettings.h" line="264"/>
         <source>Restore defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovi privzeto</translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="263"/>
+        <source>Set</source>
+        <translation>Nastavi</translation>
     </message>
 </context>
 <context>

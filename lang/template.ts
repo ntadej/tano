@@ -139,118 +139,123 @@
 <context>
     <name>EditSettings</name>
     <message>
-        <location filename="../ui_EditSettings.h" line="206"/>
+        <location filename="../ui_EditSettings.h" line="235"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="207"/>
+        <location filename="../ui_EditSettings.h" line="236"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="208"/>
+        <location filename="../ui_EditSettings.h" line="237"/>
         <source>System default language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="209"/>
+        <location filename="../ui_EditSettings.h" line="238"/>
         <source>Custom language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="213"/>
+        <location filename="../ui_EditSettings.h" line="242"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="214"/>
+        <location filename="../ui_EditSettings.h" line="243"/>
         <source>Slovensko</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="217"/>
+        <location filename="../ui_EditSettings.h" line="246"/>
         <source>Browse:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="219"/>
+        <location filename="../ui_EditSettings.h" line="248"/>
         <source>...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="220"/>
+        <location filename="../ui_EditSettings.h" line="249"/>
         <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="216"/>
+        <location filename="../ui_EditSettings.h" line="245"/>
         <source>Default Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings/EditSettings.cpp" line="114"/>
+        <location filename="../settings/EditSettings.cpp" line="143"/>
         <source>Open Channel list File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings/EditSettings.cpp" line="116"/>
+        <location filename="../settings/EditSettings.cpp" line="145"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="215"/>
+        <location filename="../ui_EditSettings.h" line="244"/>
         <source>&lt;i&gt;You need to restart Tano Player when changing language!&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="221"/>
+        <location filename="../ui_EditSettings.h" line="250"/>
         <source>Main</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="222"/>
+        <location filename="../ui_EditSettings.h" line="251"/>
         <source>Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="223"/>
+        <location filename="../ui_EditSettings.h" line="252"/>
         <source>Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="235"/>
+        <location filename="../ui_EditSettings.h" line="265"/>
         <source>Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="227"/>
+        <location filename="../ui_EditSettings.h" line="256"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="228"/>
+        <location filename="../ui_EditSettings.h" line="257"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="229"/>
+        <location filename="../ui_EditSettings.h" line="258"/>
         <source>Next channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="230"/>
+        <location filename="../ui_EditSettings.h" line="259"/>
         <source>Previous channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="231"/>
+        <location filename="../ui_EditSettings.h" line="260"/>
         <source>Fullscreen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="234"/>
+        <location filename="../ui_EditSettings.h" line="264"/>
         <source>Restore defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="263"/>
+        <source>Set</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

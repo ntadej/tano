@@ -3,6 +3,7 @@
 
 #include <QAction>
 #include <QList>
+#include <QStringList>
 
 #include "../settings/SettingsShortcuts.h"
 
@@ -11,8 +12,15 @@ public:
 	Shortcuts(QList<QAction*> list);
 	virtual ~Shortcuts();
 
+	void apply();
+	QStringList defaultKeys();
+
 private:
+	void read();
+
 	QList<QAction*> actions;
+	QStringList defaultList;
+	QStringList keys;
 
 	SettingsShortcuts *settings;
 };

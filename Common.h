@@ -11,7 +11,6 @@ public:
 	static QString settingsMainFile();
 	static QStringList settingsMainDefault();
 	static QString settingsShortcutsFile();
-	static QString vlcStatus();
 };
 
 #endif /* COMMON_H_ */
