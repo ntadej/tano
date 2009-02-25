@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	QApplication::setStyle(new QPlastiqueStyle);
 #endif
 
-    SettingsMain *settings = new SettingsMain(Common::settingsMainFile(), Common::settingsMainDefault());
+    SettingsMain *settings = new SettingsMain(Common::settingsFile(), Common::settingsDefault());
 
     QString locale = settings->locale();
 	QTranslator translator;

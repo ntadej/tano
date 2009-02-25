@@ -8,9 +8,8 @@ class Common {
 public:
 	static QString locateResource(QString fileN);
 	static QString locateLang(QString fileL);
-	static QString settingsMainFile();
-	static QStringList settingsMainDefault();
-	static QString settingsShortcutsFile();
+	static QString settingsFile(QString type = "main");
+	static QStringList settingsDefault(QString type = "main");
 };
 
 #endif /* COMMON_H_ */

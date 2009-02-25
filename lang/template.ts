@@ -367,7 +367,7 @@
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="349"/>
+        <location filename="../Tano.cpp" line="367"/>
         <source>Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
@@ -432,58 +432,58 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="233"/>
+        <location filename="../Tano.cpp" line="251"/>
         <source>Channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="191"/>
+        <location filename="../Tano.cpp" line="209"/>
         <source>About Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="194"/>
+        <location filename="../Tano.cpp" line="212"/>
         <source>Copyright &amp;copy; 2008-2009 Tadej Novak</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="221"/>
+        <location filename="../Tano.cpp" line="239"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="264"/>
+        <location filename="../Tano.cpp" line="282"/>
         <source>Open Channel list File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="266"/>
+        <location filename="../Tano.cpp" line="284"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="284"/>
+        <location filename="../Tano.cpp" line="302"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="290"/>
+        <location filename="../Tano.cpp" line="308"/>
         <source>File loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="298"/>
+        <location filename="../Tano.cpp" line="316"/>
         <source>Open File or URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="300"/>
+        <location filename="../Tano.cpp" line="318"/>
         <source>Multimedia files(*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="321"/>
+        <location filename="../Tano.cpp" line="339"/>
         <source>Playing file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -493,12 +493,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="315"/>
+        <location filename="../Tano.cpp" line="333"/>
         <source>Open URL or stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="316"/>
+        <location filename="../Tano.cpp" line="334"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -508,7 +508,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="250"/>
+        <location filename="../Tano.cpp" line="268"/>
         <source>Channel info</source>
         <translation type="unfinished"></translation>
     </message>
@@ -518,7 +518,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="242"/>
+        <location filename="../Tano.cpp" line="260"/>
         <source>Now:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -578,7 +578,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="233"/>
+        <location filename="../Tano.cpp" line="251"/>
         <source>selected</source>
         <translation type="unfinished"></translation>
     </message>

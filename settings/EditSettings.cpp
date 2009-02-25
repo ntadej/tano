@@ -20,8 +20,8 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *shortcuts)
 
 	keys = shortcuts;
 
-	settings = new SettingsMain(Common::settingsMainFile(), Common::settingsMainDefault());
-	sshortcuts = new SettingsShortcuts(Common::settingsShortcutsFile(), keys->defaultKeys());
+	settings = new SettingsMain(Common::settingsFile(), Common::settingsDefault());
+	sshortcuts = new SettingsShortcuts(Common::settingsFile("shortcuts"), keys->defaultKeys());
 
 	read();
 	readS();

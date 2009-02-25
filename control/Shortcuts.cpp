@@ -6,7 +6,7 @@ Shortcuts::Shortcuts(QList<QAction*> list) {
 
 	defaultList << "Space" << "S" << "N" << "P" << "F" << "M" << "Ctrl+Up" << "Ctrl+Down";
 
-	settings = new SettingsShortcuts(Common::settingsShortcutsFile(), defaultList);
+	settings = new SettingsShortcuts(Common::settingsFile("shortcuts"), defaultList);
 
 	apply();
 }

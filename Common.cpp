@@ -1,6 +1,7 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QString>
+#include <QMap>
 #include <QCoreApplication>
 
 #include "Common.h"
@@ -51,25 +52,52 @@ QString Common::locateLang(QString fileL) {
 	return path.replace(QString("/" + fileL), QString(""));
 }
 
-QString Common::settingsMainFile()
+QString Common::settingsFile(QString type)
 {
+	QMap<QString, int> map;
+	map.insert("main", 1);
+	map.insert("session", 2);
+	map.insert("shortcuts", 3);
+
 	QDir path(QDir::homePath());
 	if (!QDir(QDir::homePath() + "/.tano/").exists())
 		path.mkpath(QDir::homePath() + "/.tano/");
-	return QDir::homePath() + "/.tano/settings";
+
+	switch(map[type]){
+		case 1:
+			return QDir::homePath() + "/.tano/settings";
+			break;
+		case 2:
+			return QDir::homePath() + "/.tano/session";
+			break;
+		case 3:
+			return QDir::homePath() + "/.tano/shortcuts";
+			break;
+		default:
+			return QDir::homePath() + "/.tano/settings";
+			break;
+	}
 }
 
-QStringList Common::settingsMainDefault()
+QStringList Common::settingsDefault(QString type)
 {
 	QStringList defaultList;
-	defaultList << "Default" << "" << "";
-	return defaultList;
-}
+	QMap<QString, int> map;
+	map.insert("main", 1);
+	map.insert("session", 2);
+	map.insert("shortcuts", 3);
 
-QString Common::settingsShortcutsFile()
-{
-	QDir path(QDir::homePath());
-	if (!QDir(QDir::homePath() + "/.tano/").exists())
-		path.mkpath(QDir::homePath() + "/.tano/");
-	return QDir::homePath() + "/.tano/shortcuts";
+	switch(map[type]){
+		case 1:
+			defaultList << "Default" << "" << "";
+			break;
+		case 2:
+			defaultList << "-";
+			break;
+		default:
+			defaultList << "Default" << "" << "";
+			break;
+	}
+
+	return defaultList;
 }

@@ -370,7 +370,7 @@
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="349"/>
+        <location filename="../Tano.cpp" line="367"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
@@ -435,59 +435,59 @@
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="233"/>
+        <location filename="../Tano.cpp" line="251"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="191"/>
+        <location filename="../Tano.cpp" line="209"/>
         <source>About Tano Player</source>
         <translation>O Tano Predvajalniku</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="194"/>
+        <location filename="../Tano.cpp" line="212"/>
         <source>Copyright &amp;copy; 2008-2009 Tadej Novak</source>
         <translation>&amp;copy; 2008-2009 Tadej Novak</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="221"/>
+        <location filename="../Tano.cpp" line="239"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="264"/>
+        <location filename="../Tano.cpp" line="282"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="266"/>
+        <location filename="../Tano.cpp" line="284"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="284"/>
+        <location filename="../Tano.cpp" line="302"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="290"/>
+        <location filename="../Tano.cpp" line="308"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="298"/>
+        <location filename="../Tano.cpp" line="316"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="300"/>
+        <location filename="../Tano.cpp" line="318"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="321"/>
+        <location filename="../Tano.cpp" line="339"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
@@ -497,12 +497,12 @@
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="315"/>
+        <location filename="../Tano.cpp" line="333"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="316"/>
+        <location filename="../Tano.cpp" line="334"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -512,7 +512,7 @@
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="250"/>
+        <location filename="../Tano.cpp" line="268"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
@@ -522,7 +522,7 @@
         <translation>Današnji spored</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="242"/>
+        <location filename="../Tano.cpp" line="260"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
@@ -582,7 +582,7 @@
         <translation>Odpri &amp;Datoteko</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="233"/>
+        <location filename="../Tano.cpp" line="251"/>
         <source>selected</source>
         <translation>je izbran</translation>
     </message>

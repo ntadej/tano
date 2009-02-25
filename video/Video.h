@@ -16,9 +16,11 @@ public:
 	~Video();
 
 	void playTv(QString fileName, QString channelName);
+	void setVolume(qreal volume);
 
 	Phonon::VolumeSlider *slider();
 	QString currentMedia();
+	qreal volume();
 
 protected:
 	void mouseDoubleClickEvent(QMouseEvent *event);

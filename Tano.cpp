@@ -48,11 +48,20 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 	createMenus();
 	createActions();
 	createShortcuts();
+	createSession();
 }
 
 Tano::~Tano()
 {
+	QStringList sessionList;
+	QString vol;
+	QString ch;
 
+	vol.setNum(ui.videoWidget->volume());
+	ch.setNum(ui.channelNumber->value());
+
+	sessionList << vol << ch;
+	session->write(sessionList);
 }
 
 void Tano::closeEvent(QCloseEvent *event)
@@ -62,6 +71,15 @@ void Tano::closeEvent(QCloseEvent *event)
         hide();
         event->ignore();
     }
+}
+
+void Tano::createSession()
+{
+	session = new SettingsSession(Common::settingsFile("session"), Common::settingsDefault("session"));
+	if(session->ok()) {
+		ui.videoWidget->setVolume(session->volume());
+		key(session->channel());
+	}
 }
 
 void Tano::createActions()
