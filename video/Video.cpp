@@ -16,9 +16,6 @@ Video::Video(QWidget *parent)
 
 	audio->setVolume(0.5);
 	qDebug() << "Volume:" << audio->volume()*100;
-
-	shortcutFull = new QShortcut(QKeySequence(tr("Esc")),
-	                          this);
 }
 
 
@@ -31,7 +28,7 @@ Video::~Video()
 void Video::mouseDoubleClickEvent(QMouseEvent *event)
 {
 	event->ignore();
-	controlFull();
+	emit full();
 }
 void Video::mousePressEvent(QMouseEvent *event)
 {
@@ -91,11 +88,9 @@ void Video::controlFull()
 {
 	if (this->isFullScreen() == false) {
 		this->enterFullScreen();
-		connect(shortcutFull, SIGNAL(activated()), this, SLOT(controlFull()));
 	}
 	else {
 		this->exitFullScreen();
-		disconnect(shortcutFull, SIGNAL(activated()), this, SLOT(controlFull()));
 	}
 }
 void Video::controlMute()

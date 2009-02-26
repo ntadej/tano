@@ -3,6 +3,8 @@
 ** Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
 ** Contact: Qt Software Information (qt-info@nokia.com)
 **
+** Copyright (C) 2008-2009 Tadej Novak
+**
 ** This file is part of the example classes of the Qt Toolkit.
 **
 ** GNU General Public License Usage

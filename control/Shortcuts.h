@@ -1,13 +1,15 @@
 #ifndef SHORTCUTS_H_
 #define SHORTCUTS_H_
 
+#include <QObject>
 #include <QAction>
 #include <QList>
 #include <QStringList>
 
 #include "../settings/SettingsShortcuts.h"
 
-class Shortcuts {
+class Shortcuts : public QObject {
+	Q_OBJECT
 public:
 	Shortcuts(QList<QAction*> list);
 	virtual ~Shortcuts();

@@ -40,14 +40,14 @@
          </property>
          <layout class="QVBoxLayout" >
           <item>
-           <widget class="QRadioButton" name="defaultRadio" >
+           <widget class="QRadioButton" name="radioDefault" >
             <property name="text" >
              <string>System default language</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="customRadio" >
+           <widget class="QRadioButton" name="radioCustom" >
             <property name="text" >
              <string>Custom language</string>
             </property>
@@ -110,14 +110,14 @@
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="browseButton" >
+           <widget class="QToolButton" name="buttonBrowse" >
             <property name="text" >
              <string>...</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="resetButton" >
+           <widget class="QPushButton" name="buttonReset" >
             <property name="text" >
              <string>Reset</string>
             </property>
@@ -154,14 +154,96 @@
          <property name="editTriggers" >
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
-         <row/>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
          <column>
           <property name="text" >
            <string>Action</string>
@@ -252,30 +334,124 @@
            <string> </string>
           </property>
          </item>
+         <item row="8" column="0" >
+          <property name="text" >
+           <string>Open File</string>
+          </property>
+         </item>
+         <item row="8" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
+         <item row="9" column="0" >
+          <property name="text" >
+           <string>Open URL</string>
+          </property>
+         </item>
+         <item row="9" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
+         <item row="10" column="0" >
+          <property name="text" >
+           <string>Open Channel list</string>
+          </property>
+         </item>
+         <item row="10" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
+         <item row="11" column="0" >
+          <property name="text" >
+           <string>Browser</string>
+          </property>
+         </item>
+         <item row="11" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
+         <item row="12" column="0" >
+          <property name="text" >
+           <string>Edit Channel list</string>
+          </property>
+         </item>
+         <item row="12" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
+         <item row="13" column="0" >
+          <property name="text" >
+           <string>Settings</string>
+          </property>
+         </item>
+         <item row="13" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
+         <item row="14" column="0" >
+          <property name="text" >
+           <string>Always on top</string>
+          </property>
+         </item>
+         <item row="14" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
+         <item row="15" column="0" >
+          <property name="text" >
+           <string>Simple Mode</string>
+          </property>
+         </item>
+         <item row="15" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
+         <item row="16" column="0" >
+          <property name="text" >
+           <string>Help</string>
+          </property>
+         </item>
+         <item row="16" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
+         <item row="17" column="0" >
+          <property name="text" >
+           <string>About</string>
+          </property>
+         </item>
+         <item row="17" column="1" >
+          <property name="text" >
+           <string> </string>
+          </property>
+         </item>
         </widget>
        </item>
        <item>
         <layout class="QHBoxLayout" name="restoreLayout" >
          <item>
-          <widget class="ShortcutEdit" name="lineEdit" >
-           <property name="sizePolicy" >
-            <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="maximumSize" >
-            <size>
-             <width>100</width>
-             <height>16777215</height>
-            </size>
-           </property>
-          </widget>
+          <widget class="QtKeySequenceEdit" native="1" name="keyEditor" />
          </item>
          <item>
           <widget class="QPushButton" name="buttonSet" >
            <property name="text" >
             <string>Set</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonClear" >
+           <property name="text" >
+            <string>Clear Shortcut</string>
            </property>
           </widget>
          </item>
@@ -316,9 +492,10 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ShortcutEdit</class>
-   <extends>QLineEdit</extends>
-   <header>ui/ShortcutEdit.h</header>
+   <class>QtKeySequenceEdit</class>
+   <extends>QWidget</extends>
+   <header>lib/QtKeySequenceEdit.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>

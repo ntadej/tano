@@ -15,21 +15,26 @@ class EditSettings : public QDialog
 		EditSettings(QWidget *parent = 0, Shortcuts *shortcuts = 0);
 
 	private slots:
+		void action(QAbstractButton *button);
 		void ok();
 		void cancel();
-		void custom();
-		void browse();
-		void reset();
-		void restoreS();
-		void set();
 
-		void action(QAbstractButton *button);
-		void editShortcut(QTableWidgetItem *titem);
+		void toggleCustom();
+
+		void playlistBrowse();
+		void playlistReset();
+
+		void shortcutRestore();
+		void shortcutSequence(const QKeySequence &s);
+		void shortcutSet();
+		void shortcutClear();
+		void shortcutEdit(QTableWidgetItem *titem);
 
 	private:
 		void createActions();
 		void read();
-		void readS();
+		void shortcutRead();
+
 		Ui::EditSettings ui;
 
 		Shortcuts *keys;
@@ -37,6 +42,8 @@ class EditSettings : public QDialog
 		SettingsMain *settings;
 
 		QTableWidgetItem *item;
+
+		QKeySequence sequence;
 
 		QStringList settingsList;
 		QStringList keysList;

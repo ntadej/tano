@@ -93,13 +93,14 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	Updates.h
 	settings/EditSettings.h
 	video/Video.h
-	ui/ShortcutEdit.h
 	ui/TrayIcon.h
 	control/ChannelSelect.h
+	control/Shortcuts.h
 	epg/Epg.h
 	epg/EpgBrowser.h
 	epg/EpgToday.h
 	channels/EditPlaylist.h
+	lib/QtKeySequenceEdit.h
 )
 
 SET(Tano_Resrcs ui/images.qrc)
@@ -116,13 +117,13 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	video/Video.cpp
 	xml/tanogenerator.cpp
 	xml/tanohandler.cpp
-	ui/ShortcutEdit.cpp
 	ui/TrayIcon.cpp
 	control/ChannelSelect.cpp
 	control/Shortcuts.cpp
 	epg/Epg.cpp
 	epg/EpgBrowser.cpp
 	epg/EpgToday.cpp
+	lib/QtKeySequenceEdit.cpp
 )
 
 SET(Tano_Srcs

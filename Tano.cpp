@@ -134,6 +134,7 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
 	connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
+	connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
 
 	connect(epg, SIGNAL(epgDone(QString, bool)), this, SLOT(showEpg(QString, bool)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), browser, SLOT(open(QString)));
@@ -177,8 +178,10 @@ void Tano::createMenus()
 	open->addAction(ui.actionOpen);
 
 	tray = new QMenu();
-	tray->addAction(ui.actionTop);
-	tray->addAction(ui.actionLite);
+	tray->addAction(ui.actionPlay);
+	tray->addAction(ui.actionStop);
+	tray->addAction(ui.actionBack);
+	tray->addAction(ui.actionNext);
 	tray->addSeparator();
 	tray->addAction(ui.actionRestore);
 	tray->addSeparator();
@@ -196,12 +199,19 @@ void Tano::createShortcuts()
 			<< ui.actionFullscreen
 			<< ui.actionMute
 			<< ui.actionVolumeUp
-			<< ui.actionVolumeDown;
+			<< ui.actionVolumeDown
+			<< ui.actionOpenFile
+			<< ui.actionOpenUrl
+			<< ui.actionOpen
+			<< ui.actionBrowser
+			<< ui.actionEditPlaylist
+			<< ui.actionSettings
+			<< ui.actionTop
+			<< ui.actionLite
+			<< ui.actionHelp
+			<< ui.actionAbout;
 
 	shortcuts = new Shortcuts(actions);
-
-	/* right->addAction(ui.actionTop);
-	right->addAction(ui.actionLite); */
 }
 
 void Tano::aboutTano()
@@ -428,7 +438,7 @@ void Tano::lite()
 		ui.centralLayout-> setContentsMargins(4,4,4,4);
 		ui.playlistWidget->show();
 		ui.toolBar->show();
-		ui.menubar->show();
+		//ui.menubar->show();
 		ui.statusbar->show();
 		ui.videoControlsFrame->show();
 		isLite = false;
@@ -436,7 +446,7 @@ void Tano::lite()
 		ui.centralLayout-> setContentsMargins(0,0,0,0);
 		ui.playlistWidget->hide();
 		ui.toolBar->hide();
-		ui.menubar->hide();
+		//ui.menubar->hide(); Causes shortcuts not working
 		ui.statusbar->hide();
 		ui.videoControlsFrame->hide();
 		isLite = true;

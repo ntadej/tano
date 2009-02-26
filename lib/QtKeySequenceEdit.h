@@ -3,9 +3,9 @@
 ** Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
 ** Contact: Qt Software Information (qt-info@nokia.com)
 **
-** Copyright (C) 2008-2009 Tadej Novak
+** Copyright (C) 2009 Tadej Novak
 **
-** This file is part of the example classes of the Qt Toolkit.
+** This file is part of the tools applications of the Qt Toolkit.
 **
 ** GNU General Public License Usage
 ** Alternatively, this file may be used under the terms of the GNU
@@ -21,29 +21,38 @@
 **
 ****************************************************************************/
 
-#ifndef TANOGENERATOR_H
-#define TANOGENERATOR_H
+#include <QtGui/QWidget>
+#include <QLineEdit>
+#include <QHBoxLayout>
+#include <QMenu>
+#include <QAction>
+#include <QKeyEvent>
 
-#include <QTextStream>
-
-class QTreeWidget;
-class QTreeWidgetItem;
-
-class TanoGenerator
+class QtKeySequenceEdit : public QWidget
 {
+    Q_OBJECT
 public:
-    TanoGenerator(QTreeWidget *treeWidget);
+    QtKeySequenceEdit(QWidget *parent = 0);
 
-    bool write(QIODevice *device);
-
+    QKeySequence keySequence() const;
+    bool eventFilter(QObject *o, QEvent *e);
+public Q_SLOTS:
+    void setKeySequence(const QKeySequence &sequence);
+Q_SIGNALS:
+    void keySequenceChanged(const QKeySequence &sequence);
+protected:
+    void focusInEvent(QFocusEvent *e);
+    void focusOutEvent(QFocusEvent *e);
+    void keyPressEvent(QKeyEvent *e);
+    void keyReleaseEvent(QKeyEvent *e);
+    bool event(QEvent *e);
+private slots:
+    void slotClearShortcut();
 private:
-    static QString indent(int indentLevel);
-    static QString escapedText(const QString &str);
-    static QString escapedAttribute(const QString &str);
-    void generateItem(QTreeWidgetItem *item, int depth);
+    void handleKeyEvent(QKeyEvent *e);
+    int translateModifiers(Qt::KeyboardModifiers state, const QString &text) const;
 
-    QTreeWidget *treeWidget;
-    QTextStream out;
+    int m_num;
+    QKeySequence m_keySequence;
+    QLineEdit *m_lineEdit;
 };
-
-#endif

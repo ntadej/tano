@@ -5,7 +5,6 @@
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
 #include <phonon/volumeslider.h>
-#include <QShortcut>
 
 class Video : public Phonon::VideoWidget
 {
@@ -45,6 +44,7 @@ public slots:
 signals:
 	void playing(QString);
 	void stopped();
+	void full();
 
 	void rightClick(QPoint);
 	void wheel(bool);
@@ -54,7 +54,6 @@ private:
 	Phonon::MediaObject *channel;
 	Phonon::VolumeSlider *aslider;
 
-	QShortcut *shortcutFull;
 	QString currentChannel;
 };
 

@@ -445,9 +445,8 @@
    </property>
   </action>
   <action name="actionFullscreen" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
-     <normaloff>:/icons/images/player_fullscreen.png</normaloff>:/icons/images/player_fullscreen.png</iconset>
+   <property name="checkable" >
+    <bool>true</bool>
    </property>
    <property name="text" >
     <string>&amp;Fullscreen</string>
@@ -496,12 +495,6 @@
    </property>
    <property name="text" >
     <string>&amp;Help</string>
-   </property>
-   <property name="shortcut" >
-    <string>F1</string>
-   </property>
-   <property name="shortcutContext" >
-    <enum>Qt::ApplicationShortcut</enum>
    </property>
   </action>
   <action name="actionChannel_info" >
@@ -599,7 +592,7 @@
     <bool>true</bool>
    </property>
    <property name="text" >
-    <string>Allways on top</string>
+    <string>Always on top</string>
    </property>
   </action>
   <action name="actionRestore" >
