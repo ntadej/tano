@@ -3,17 +3,15 @@
 # and to the root binary directory of the project as ${TANO_BINARY_DIR}.
 PROJECT(Tano)
 
-cmake_minimum_required(VERSION 2.4.7)
+cmake_minimum_required(VERSION 2.6)
 
-if(COMMAND cmake_policy)
-# Works around warnings libraries linked against that don't
-# have absolute paths (e.g. -lpthreads)
-cmake_policy(SET CMP0003 NEW)
+CONFIGURE_FILE(
+  "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+  IMMEDIATE @ONLY)
 
-# Works around warnings about escaped quotes in ADD_DEFINITIONS
-# statements.
-cmake_policy(SET CMP0005 NEW)
-endif(COMMAND cmake_policy)
+ADD_CUSTOM_TARGET(uninstall
+  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
 # Set MingW bin dir, if MingW present
 IF(MINGW)
@@ -61,7 +59,7 @@ ENDIF(MINGW)
 
 #-----------------------------------------------------------------------------
 # Search for Qt4. We need the latest version of Qt
-SET(QT_MIN_VERSION "4.3.0")
+SET(QT_MIN_VERSION "4.4.0")
 
 # this line includes FindQt4.cmake, which searches the Qt library and headers
 FIND_PACKAGE(Qt4 REQUIRED)
