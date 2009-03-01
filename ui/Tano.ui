@@ -231,9 +231,7 @@
     </property>
     <addaction name="actionHelp" />
     <addaction name="actionUpdate" />
-    <addaction name="separator" />
     <addaction name="actionAbout" />
-    <addaction name="actionAbout_Qt" />
    </widget>
    <widget class="QMenu" name="menuOptions" >
     <property name="title" >
@@ -412,15 +410,6 @@
    </property>
    <property name="text" >
     <string>About Tano Player</string>
-   </property>
-  </action>
-  <action name="actionAbout_Qt" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
-     <normaloff>:/icons/images/qt.png</normaloff>:/icons/images/qt.png</iconset>
-   </property>
-   <property name="text" >
-    <string>About Qt</string>
    </property>
   </action>
   <action name="actionClose" >

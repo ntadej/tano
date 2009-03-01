@@ -706,278 +706,273 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="380"/>
+        <location filename="../Tano.cpp" line="379"/>
         <source>Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="450"/>
-        <source>About Qt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_Tano.h" line="451"/>
+        <location filename="../ui_Tano.h" line="442"/>
         <source>&amp;Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="453"/>
+        <location filename="../ui_Tano.h" line="444"/>
         <source>&amp;Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="455"/>
+        <location filename="../ui_Tano.h" line="446"/>
         <source>&amp;Open Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="467"/>
+        <location filename="../ui_Tano.h" line="458"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="458"/>
+        <location filename="../ui_Tano.h" line="449"/>
         <source>Edit Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="520"/>
+        <location filename="../ui_Tano.h" line="511"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="486"/>
+        <location filename="../ui_Tano.h" line="477"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="496"/>
+        <location filename="../ui_Tano.h" line="487"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="519"/>
+        <location filename="../ui_Tano.h" line="510"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="532"/>
+        <location filename="../ui_Tano.h" line="523"/>
         <source>Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="262"/>
+        <location filename="../Tano.cpp" line="261"/>
         <source>Channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="449"/>
+        <location filename="../ui_Tano.h" line="441"/>
         <source>About Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="250"/>
+        <location filename="../Tano.cpp" line="249"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="293"/>
+        <location filename="../Tano.cpp" line="292"/>
         <source>Open Channel list File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="295"/>
+        <location filename="../Tano.cpp" line="294"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="313"/>
+        <location filename="../Tano.cpp" line="312"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="319"/>
+        <location filename="../Tano.cpp" line="318"/>
         <source>File loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="328"/>
+        <location filename="../Tano.cpp" line="327"/>
         <source>Open File or URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="330"/>
+        <location filename="../Tano.cpp" line="329"/>
         <source>Multimedia files(*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="336"/>
+        <location filename="../Tano.cpp" line="335"/>
         <source>Playing file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="461"/>
+        <location filename="../ui_Tano.h" line="452"/>
         <source>Open URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="346"/>
+        <location filename="../Tano.cpp" line="345"/>
         <source>Open URL or stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="347"/>
+        <location filename="../Tano.cpp" line="346"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="462"/>
+        <location filename="../ui_Tano.h" line="453"/>
         <source>Check for updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="279"/>
+        <location filename="../Tano.cpp" line="278"/>
         <source>Channel info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="533"/>
+        <location filename="../ui_Tano.h" line="524"/>
         <source>Today&apos;s Schedule</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="271"/>
+        <location filename="../Tano.cpp" line="270"/>
         <source>Now:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="530"/>
+        <location filename="../ui_Tano.h" line="521"/>
         <source>Refresh EPG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="526"/>
+        <location filename="../ui_Tano.h" line="517"/>
         <source>Main toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="454"/>
+        <location filename="../ui_Tano.h" line="445"/>
         <source>&amp;Fullscreen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="457"/>
+        <location filename="../ui_Tano.h" line="448"/>
         <source>&amp;Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="463"/>
+        <location filename="../ui_Tano.h" line="454"/>
         <source>SiOL TV EPG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="464"/>
+        <location filename="../ui_Tano.h" line="455"/>
         <source>Original</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="465"/>
+        <location filename="../ui_Tano.h" line="456"/>
         <source>4:3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="466"/>
+        <location filename="../ui_Tano.h" line="457"/>
         <source>16:9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="523"/>
+        <location filename="../ui_Tano.h" line="514"/>
         <source>Media</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="524"/>
+        <location filename="../ui_Tano.h" line="515"/>
         <source>Aspect ratio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="456"/>
+        <location filename="../ui_Tano.h" line="447"/>
         <source>Open &amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="262"/>
+        <location filename="../Tano.cpp" line="261"/>
         <source>selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="452"/>
+        <location filename="../ui_Tano.h" line="443"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="521"/>
+        <location filename="../ui_Tano.h" line="512"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="471"/>
+        <location filename="../ui_Tano.h" line="462"/>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="473"/>
+        <location filename="../ui_Tano.h" line="464"/>
         <source>Main Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="522"/>
+        <location filename="../ui_Tano.h" line="513"/>
         <source>Show / Hide</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="516"/>
+        <location filename="../ui_Tano.h" line="507"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="506"/>
+        <location filename="../ui_Tano.h" line="497"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="472"/>
+        <location filename="../ui_Tano.h" line="463"/>
         <source>Simple Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="476"/>
+        <location filename="../ui_Tano.h" line="467"/>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="477"/>
+        <location filename="../ui_Tano.h" line="468"/>
         <source>Volume up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="478"/>
+        <location filename="../ui_Tano.h" line="469"/>
         <source>Volume down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="525"/>
+        <location filename="../ui_Tano.h" line="516"/>
         <source>Volume</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_Tano.h" line="470"/>
+        <location filename="../ui_Tano.h" line="461"/>
         <source>Always on top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="352"/>
+        <location filename="../Tano.cpp" line="351"/>
         <source>Playing URL</source>
         <translation type="unfinished"></translation>
     </message>

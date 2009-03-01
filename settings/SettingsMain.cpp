@@ -40,6 +40,9 @@ QString SettingsMain::defaultPlaylist()
 
 bool SettingsMain::session()
 {
+	if(size() < 3)
+		return true;
+
 	if (settingsAt(2) == "1")
 		return true;
 	else

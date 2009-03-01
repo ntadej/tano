@@ -93,7 +93,6 @@ void Tano::createActions()
 	connect(ui.actionHelp, SIGNAL(triggered()), browser, SLOT(help()));
 	connect(ui.actionUpdate, SIGNAL(triggered()), update, SLOT(getUpdates()));
 	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
-	connect(ui.actionAbout_Qt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(ui.actionClose, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
