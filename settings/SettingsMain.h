@@ -10,6 +10,7 @@ public:
 
 	QString locale();
 	QString defaultPlaylist();
+	bool session();
 };
 
 #endif /* SETTINGSMAIN_H_ */

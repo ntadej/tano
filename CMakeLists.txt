@@ -80,6 +80,7 @@ FIND_PACKAGE(Qt4 REQUIRED)
 # Define the UI source files used by Tano
 SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/Tano.ui
+	ui/About.ui
 	ui/EditSettings.ui
 	ui/EpgBrowser.ui
 	ui/EditPlaylist.ui
@@ -91,6 +92,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	Updates.h
 	settings/EditSettings.h
 	video/Video.h
+	ui/About.h
 	ui/TrayIcon.h
 	control/ChannelSelect.h
 	control/Shortcuts.h
@@ -115,6 +117,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	video/Video.cpp
 	xml/tanogenerator.cpp
 	xml/tanohandler.cpp
+	ui/About.cpp
 	ui/TrayIcon.cpp
 	control/ChannelSelect.cpp
 	control/Shortcuts.cpp
@@ -134,13 +137,10 @@ SET(Tano_Srcs
 )
 
 SET ( Tano_Files
+    LICENSE
 	siol.xml
 	ui/images/tano.png
 	ui/images/tano-small.png
-)
-
-SET ( Tano_MPlayer
-	"win/3rdparty/mplayer"
 )
 
 # Set translation files
@@ -164,8 +164,6 @@ SET(QT_USE_QTWEBKIT True)
 IF(MINGW)
 	include_directories(${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/3rdparty)
 	set(QT_PHONON_LIBRARY ${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/build/3rdparty/phonon/libphonon.dll.a)
-ELSE(MINGW)
-	#SET(QT_USE_QTPHONON True)
 ENDIF(MINGW)
 
 # Add all resources to Tano_Resrcs (icons, html files etc.)
@@ -218,6 +216,8 @@ ENDIF(NOT MINGW)
 ADD_DEFINITIONS(-DTANO_VERSION="${TANO_VERSION}")
 # Define Tano build
 ADD_DEFINITIONS(-DTANO_BUILD="${TANO_BUILD}")
+# Define Qt version
+ADD_DEFINITIONS(-DTANO_QT_VERSION="${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
 
 ####################################
 # Include paths and set up targets #

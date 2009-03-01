@@ -101,4 +101,6 @@ void Epg::epgPrintToday()
 void Epg::stop()
 {
     timer->stop();
+    disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrintToday()));
+    disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
 }

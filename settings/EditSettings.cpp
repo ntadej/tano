@@ -13,7 +13,9 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *shortcuts)
 	ui.setupUi(this);
 	createActions();
 
-	ui.buttonSet->setDisabled(true);
+	ui.buttonSet->setEnabled(false);
+	ui.buttonBrowse->setEnabled(false);
+	ui.buttonReset->setEnabled(false);
 
 	ui.shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 	ui.shortcutsWidget->verticalHeader()->hide();
@@ -33,6 +35,10 @@ void EditSettings::createActions()
 
 	connect(ui.radioDefault, SIGNAL(clicked()), this, SLOT(toggleCustom()));
 	connect(ui.radioCustom, SIGNAL(clicked()), this, SLOT(toggleCustom()));
+
+	connect(ui.radioSiol, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
+	connect(ui.radioT2, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
+	connect(ui.radioBrowse, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
 
 	connect(ui.buttonBrowse, SIGNAL(clicked()), this, SLOT(playlistBrowse()));
 	connect(ui.buttonReset, SIGNAL(clicked()), this, SLOT(playlistReset()));
@@ -60,18 +66,36 @@ void EditSettings::action(QAbstractButton *button)
 
 void EditSettings::ok()
 {
-	if (ui.radioDefault->isChecked() == true)
+	if (ui.radioDefault->isChecked())
 	{
 		settingsList[0] = QString("Default");
+		if (settingsList.size() < 2) settingsList << "-";
+		else settingsList[1] = "-";
 	} else
 	{
 		settingsList[0] = QString("Custom");
 		if (settingsList.size() < 2) settingsList << QString(ui.comboBox->currentIndex());
-			else settingsList[1].setNum(ui.comboBox->currentIndex());
+		else settingsList[1].setNum(ui.comboBox->currentIndex());
 	}
 
-	if (settingsList.size() < 3) settingsList << ui.pEdit->text();
-	else settingsList[2] = ui.pEdit->text();
+	if(ui.checkSession->isChecked()) {
+		if (settingsList.size() < 3) settingsList << "1";
+		else settingsList[2] = "1";
+	} else {
+		if (settingsList.size() < 3) settingsList << "0";
+		else settingsList[2] = "0";
+	}
+
+	if(ui.radioSiol->isChecked()) {
+		if (settingsList.size() < 4) settingsList << "0";
+		else settingsList[3] = "0";
+	} else if(ui.radioT2->isChecked()) {
+		if (settingsList.size() < 4) settingsList << "1";
+		else settingsList[3] = "1";
+	} else {
+		if (settingsList.size() < 4) settingsList << ui.pEdit->text();
+		else settingsList[3] = ui.pEdit->text();
+	}
 
 	success = settings->write(settingsList);
 
@@ -97,10 +121,7 @@ void EditSettings::read()
 {
 	settingsList = settings->read();
 
-	if (settingsList[0] == "Default")
-	{
-		ui.radioDefault->setChecked(true);
-	} else
+	if(settingsList[0] != "Default")
 	{
 		ui.radioCustom->setChecked(true);
 		ui.comboBox->setEnabled(true);
@@ -108,20 +129,44 @@ void EditSettings::read()
 		ui.comboBox->setCurrentIndex(settingsList[1].toInt(&okint,10));
 	}
 
-	if (settingsList.size() > 2) {
-		if (settingsList[2] != "Custom" && settingsList[2] != "Default") ui.pEdit->setText(settingsList[2]);
+	if(settingsList.size() > 2) {
+		if (settingsList[2] == "1") ui.checkSession->setChecked(true);
+		else ui.checkSession->setChecked(false);
+
+		if (settingsList[3] == "0")
+			ui.radioSiol->setChecked(true);
+		else if(settingsList[3] == "1")
+			ui.radioT2->setChecked(true);
+		else {
+			ui.radioBrowse->setChecked(true);
+			ui.buttonBrowse->setEnabled(true);
+			ui.buttonReset->setEnabled(true);
+			ui.pEdit->setText(settingsList[3]);
+		}
 	}
-	else ui.pEdit->setText("");
 }
 
 void EditSettings::toggleCustom()
 {
-	if (ui.radioCustom->isChecked() == true)
+	if (ui.radioCustom->isChecked())
 	{
 		ui.comboBox->setEnabled(true);
 	} else
 	{
 		ui.comboBox->setEnabled(false);
+	}
+}
+
+void EditSettings::togglePlaylist()
+{
+	if (ui.radioBrowse->isChecked())
+	{
+		ui.buttonBrowse->setEnabled(true);
+		ui.buttonReset->setEnabled(true);
+	} else
+	{
+		ui.buttonBrowse->setEnabled(false);
+		ui.buttonReset->setEnabled(false);
 	}
 }
 

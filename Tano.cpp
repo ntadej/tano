@@ -8,8 +8,9 @@
 
 #include "Tano.h"
 #include "Common.h"
+#include "ui/About.h"
 
-Tano::Tano(QWidget *parent, QString defaultPlaylist)
+Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
     : QMainWindow(parent)
 {
 
@@ -26,6 +27,7 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 #endif
 
 	isLite = false;
+	sessionEnabled = s;
 
 	ui.setupUi(this);
 	ui.videoControls->addWidget(ui.videoWidget->slider());
@@ -53,15 +55,17 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist)
 
 Tano::~Tano()
 {
-	QStringList sessionList;
-	QString vol;
-	QString ch;
+	if(sessionEnabled) {
+		QStringList sessionList;
+		QString vol;
+		QString ch;
 
-	vol.setNum(ui.videoWidget->volume());
-	ch.setNum(ui.channelNumber->value());
+		vol.setNum(ui.videoWidget->volume());
+		ch.setNum(ui.channelNumber->value());
 
-	sessionList << vol << ch;
-	session->write(sessionList);
+		sessionList << vol << ch;
+		session->write(sessionList);
+	}
 }
 
 void Tano::closeEvent(QCloseEvent *event)
@@ -75,10 +79,12 @@ void Tano::closeEvent(QCloseEvent *event)
 
 void Tano::createSession()
 {
-	session = new SettingsSession(Common::settingsFile("session"), Common::settingsDefault("session"));
-	if(session->ok()) {
-		ui.videoWidget->setVolume(session->volume());
-		key(session->channel());
+	if(sessionEnabled) {
+		session = new SettingsSession(Common::settingsFile("session"), Common::settingsDefault("session"));
+		if(session->ok()) {
+			ui.videoWidget->setVolume(session->volume());
+			key(session->channel());
+		}
 	}
 }
 
@@ -216,14 +222,8 @@ void Tano::createShortcuts()
 
 void Tano::aboutTano()
 {
-	QMessageBox::about(this, tr("About Tano Player"),
-						QString("<h2>Tano Player<br>") +
-						QString(version + " (" + build + ")</h2>") +
-						QString("<p>" + tr("Copyright &copy; 2008-2009 Tadej Novak") + "<p>") +
-#ifdef Q_WS_WIN
-						QString("VLC Backend<br>") +
-#endif
-						QString("Crystal Icons &copy; The Yellow Icon."));
+	About about(this, version, build);
+	about.exec();
 }
 
 //Media controls
@@ -245,6 +245,7 @@ void Tano::key(int clickedChannel)
 
 void Tano::play()
 {
+	epg->stop();
 	ui.playlistWidget->setWindowTitle(channel->longName() + " (" + channel->name() + ")");
 	ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
 	ui.labelLanguage->show();
@@ -322,6 +323,7 @@ void Tano::openPlaylist(bool start)
 
 void Tano::openFile()
 {
+	epg->stop();
 	fileName =
         QFileDialog::getOpenFileName(this, tr("Open File or URL"),
 									QDir::homePath(),
@@ -338,6 +340,7 @@ void Tano::openFile()
 
 void Tano::openUrl()
 {
+	epg->stop();
 	bool ok;
 	fileName =
 		QInputDialog::getText(this, tr("Open URL or stream"),
@@ -346,7 +349,7 @@ void Tano::openUrl()
 
 	if (ok && !fileName.isEmpty()) {
 		ui.videoWidget->playTv(fileName, fileName);
-		statusBar()->showMessage(tr("Playing file"), 5000);
+		statusBar()->showMessage(tr("Playing URL"), 5000);
 	    ui.playlistWidget->hide();
 	}
 }

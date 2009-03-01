@@ -33,5 +33,7 @@ void Updates::updatesPrint()
 
 	qDebug() << string;
 
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(updatesPrint()));
+
 	emit updatesDone(string);
 }

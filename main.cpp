@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
     QCoreApplication::setApplicationName("Tano Player");
 
 #ifdef Q_WS_WIN
@@ -25,9 +25,9 @@ int main(int argc, char *argv[])
 	QString langPath = Common::locateLang("tano_" + locale + ".qm");
 
 	translator.load(QString("tano_" + locale), langPath);
-	a.installTranslator(&translator);
+	app.installTranslator(&translator);
 
-    Tano w(0, settings->defaultPlaylist());
-    w.show();
-    return a.exec();
+    Tano mainWindow(0, settings->defaultPlaylist(), settings->session());
+    mainWindow.show();
+    return app.exec();
 }

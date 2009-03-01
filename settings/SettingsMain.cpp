@@ -29,13 +29,21 @@ QString SettingsMain::defaultPlaylist()
 {
 	QString defaultP;
 
-	if (size() < 3)
+	if (size() < 4)
 		return "siol.xml";
 
-	if (settingsAt(2) != "") defaultP = settingsAt(2);
+	if (settingsAt(3) != "" && settingsAt(3) != "0" && settingsAt(3) != "1") defaultP = settingsAt(3);
 	else defaultP = "siol.xml";
 
 	return defaultP;
+}
+
+bool SettingsMain::session()
+{
+	if (settingsAt(2) == "1")
+		return true;
+	else
+		return false;
 }
 
 

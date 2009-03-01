@@ -89,13 +89,13 @@ QStringList Common::settingsDefault(QString type)
 
 	switch(map[type]){
 		case 1:
-			defaultList << "Default" << "" << "";
+			defaultList << "Default";
 			break;
 		case 2:
 			defaultList << "-";
 			break;
 		default:
-			defaultList << "Default" << "" << "";
+			defaultList << "Default";
 			break;
 	}
 

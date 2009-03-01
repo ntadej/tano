@@ -22,7 +22,7 @@ class Tano : public QMainWindow
     Q_OBJECT
 
 public:
-    Tano(QWidget *parent = 0, QString defaultPlaylist = "siol.xml");
+    Tano(QWidget *parent = 0, QString defaultPlaylist = "siol.xml", bool s = true);
     ~Tano();
 
 protected:
@@ -88,6 +88,7 @@ private:
 	QList<QAction*> actions;
 
 	bool isLite;
+	bool sessionEnabled;
 
     void createActions();
     void createMenus();
