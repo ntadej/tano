@@ -2,6 +2,7 @@
 #define EDITSETTINGS_H
 #include <QDialog>
 #include <QStringList>
+#include <QSettings>
 
 #include "SettingsMain.h"
 #include "SettingsShortcuts.h"
@@ -12,7 +13,10 @@ class EditSettings : public QDialog
 {
 	Q_OBJECT
 	public:
-		EditSettings(QWidget *parent = 0, Shortcuts *shortcuts = 0);
+		EditSettings(QWidget *parent = 0, Shortcuts *s = 0);
+
+	signals:
+		void apply();
 
 	private slots:
 		void action(QAbstractButton *button);
@@ -38,15 +42,15 @@ class EditSettings : public QDialog
 
 		Ui::EditSettings ui;
 
-		Shortcuts *keys;
-		SettingsShortcuts *sshortcuts;
-		SettingsMain *settings;
+		QSettings *settings;
+
+		Shortcuts *shortcuts;
 
 		QTableWidgetItem *item;
 
 		QKeySequence sequence;
 
-		QStringList settingsList;
+		QStringList actionsList;
 		QStringList keysList;
 		bool success;
 };

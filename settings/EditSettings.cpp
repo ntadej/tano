@@ -7,7 +7,7 @@
 #include "EditSettings.h"
 #include "../Common.h"
 
-EditSettings::EditSettings(QWidget *parent, Shortcuts *shortcuts)
+EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	: QDialog(parent)
 {
 	ui.setupUi(this);
@@ -20,10 +20,12 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *shortcuts)
 	ui.shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 	ui.shortcutsWidget->verticalHeader()->hide();
 
-	keys = shortcuts;
+	shortcuts = s;
+	keysList = shortcuts->defaultKeys();
+	actionsList = shortcuts->actionsNames();
 
-	settings = new SettingsMain(Common::settingsFile(), Common::settingsDefault());
-	sshortcuts = new SettingsShortcuts(Common::settingsFile("shortcuts"), keys->defaultKeys());
+	settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+	settings->sync();
 
 	read();
 	shortcutRead();
@@ -66,50 +68,35 @@ void EditSettings::action(QAbstractButton *button)
 
 void EditSettings::ok()
 {
-	if (ui.radioDefault->isChecked())
-	{
-		settingsList[0] = QString("Default");
-		if (settingsList.size() < 2) settingsList << "-";
-		else settingsList[1] = "-";
-	} else
-	{
-		settingsList[0] = QString("Custom");
-		if (settingsList.size() < 2) settingsList << QString(ui.comboBox->currentIndex());
-		else settingsList[1].setNum(ui.comboBox->currentIndex());
+	if (ui.radioDefault->isChecked()) {
+		settings->remove("locale");
+	} else {
+		if(ui.comboBox->currentIndex() == 1)
+			settings->setValue("locale","sl");
+		else if(ui.comboBox->currentIndex() == 0)
+			settings->setValue("locale","en");
 	}
 
-	if(ui.checkSession->isChecked()) {
-		if (settingsList.size() < 3) settingsList << "1";
-		else settingsList[2] = "1";
-	} else {
-		if (settingsList.size() < 3) settingsList << "0";
-		else settingsList[2] = "0";
-	}
+	settings->setValue("session",ui.checkSession->isChecked());
 
 	if(ui.radioSiol->isChecked()) {
-		if (settingsList.size() < 4) settingsList << "0";
-		else settingsList[3] = "0";
+		settings->setValue("playlist","siol.xml");
 	} else if(ui.radioT2->isChecked()) {
-		if (settingsList.size() < 4) settingsList << "1";
-		else settingsList[3] = "1";
+		settings->setValue("playlist","t-2.xml");
 	} else {
-		if (settingsList.size() < 4) settingsList << ui.pEdit->text();
-		else settingsList[3] = ui.pEdit->text();
+		settings->setValue("playlist",ui.pEdit->text());
 	}
 
-	success = settings->write(settingsList);
+	settings->beginGroup("Shortcuts");
+	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++) {
+		item = ui.shortcutsWidget->item(i,1);
+		if(item->text() != keysList.at(i))
+			settings->setValue(actionsList.at(i),item->text());
+	}
+	settings->endGroup();
 
-	if (success == true) {
-		for(int i=0;i < ui.shortcutsWidget->rowCount();i++) {
-			item = ui.shortcutsWidget->item(i,1);
-			keysList[i] = item->text();
-		}
-		success = sshortcuts->write(keysList);
-	}
-	if(success == true) {
-		keys->apply();
-		hide();
-	}
+	shortcuts->apply();
+	hide();
 }
 
 void EditSettings::cancel()
@@ -119,30 +106,28 @@ void EditSettings::cancel()
 
 void EditSettings::read()
 {
-	settingsList = settings->read();
-
-	if(settingsList[0] != "Default")
+	if(settings->value("locale","Default").toString() != "Default")
 	{
 		ui.radioCustom->setChecked(true);
 		ui.comboBox->setEnabled(true);
 		bool okint;
-		ui.comboBox->setCurrentIndex(settingsList[1].toInt(&okint,10));
+		if(settings->value("locale").toString() == "sl")
+			ui.comboBox->setCurrentIndex(1);
+		else if(settings->value("locale").toString() == "en")
+			ui.comboBox->setCurrentIndex(0);
 	}
 
-	if(settingsList.size() > 2) {
-		if (settingsList[2] == "1") ui.checkSession->setChecked(true);
-		else ui.checkSession->setChecked(false);
+	ui.checkSession->setChecked(settings->value("session",true).toBool());
 
-		if (settingsList[3] == "0")
-			ui.radioSiol->setChecked(true);
-		else if(settingsList[3] == "1")
-			ui.radioT2->setChecked(true);
-		else {
-			ui.radioBrowse->setChecked(true);
-			ui.buttonBrowse->setEnabled(true);
-			ui.buttonReset->setEnabled(true);
-			ui.pEdit->setText(settingsList[3]);
-		}
+	if(settings->value("playlist","siol.xml").toString() == "siol.xml")
+		ui.radioSiol->setChecked(true);
+	else if(settings->value("playlist","siol.xml").toString() == "t-2.xml")
+		ui.radioT2->setChecked(true);
+	else {
+		ui.radioBrowse->setChecked(true);
+		ui.buttonBrowse->setEnabled(true);
+		ui.buttonReset->setEnabled(true);
+		ui.pEdit->setText(settings->value("playlist").toString());
 	}
 }
 
@@ -173,8 +158,8 @@ void EditSettings::togglePlaylist()
 void EditSettings::playlistBrowse()
 {
 	QString dfile = QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
-            QDir::homePath(),
-            tr("Tano TV Channel list Files(*.tano *.xml)"));
+												QDir::homePath(),
+												tr("Tano TV Channel list Files(*.tano *.xml)"));
 	ui.pEdit->setText(dfile);
 }
 
@@ -185,20 +170,23 @@ void EditSettings::playlistReset()
 
 void EditSettings::shortcutRead()
 {
-	keysList = sshortcuts->read();
-
+	settings->beginGroup("Shortcuts");
 	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++) {
 		item = ui.shortcutsWidget->item(i,1);
-		item->setText(keysList[i]);
+		item->setText(settings->value(actionsList.at(i),keysList.at(i)).toString());
 	}
+	settings->endGroup();
 }
 
 void EditSettings::shortcutRestore()
 {
-	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++) {
+	settings->beginGroup("Shortcuts");
+	for(int i=0; i < actionsList.size(); i++) {
+		settings->remove(actionsList.at(i));
 		item = ui.shortcutsWidget->item(i,1);
-		item->setText(keys->defaultKeys().at(i));
+		item->setText(keysList.at(i));
 	}
+	settings->endGroup();
 }
 
 void EditSettings::shortcutEdit(QTableWidgetItem *titem)

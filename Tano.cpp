@@ -2,9 +2,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QDir>
-#include <QScrollBar>
-#include <QProcess>
-#include <QLibraryInfo>
+#include <QSettings>
 
 #include "Tano.h"
 #include "Common.h"
@@ -56,15 +54,11 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
 Tano::~Tano()
 {
 	if(sessionEnabled) {
-		QStringList sessionList;
-		QString vol;
-		QString ch;
-
-		vol.setNum(ui.videoWidget->volume());
-		ch.setNum(ui.channelNumber->value());
-
-		sessionList << vol << ch;
-		session->write(sessionList);
+		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+		session.beginGroup("Session");
+		session.setValue("volume", ui.videoWidget->volume());
+		session.setValue("channel", ui.channelNumber->value());
+		session.endGroup();
 	}
 }
 
@@ -80,11 +74,11 @@ void Tano::closeEvent(QCloseEvent *event)
 void Tano::createSession()
 {
 	if(sessionEnabled) {
-		session = new SettingsSession(Common::settingsFile("session"), Common::settingsDefault("session"));
-		if(session->ok()) {
-			ui.videoWidget->setVolume(session->volume());
-			key(session->channel());
-		}
+		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+		session.beginGroup("Session");
+		ui.videoWidget->setVolume(session.value("volume",0.5).toString().toFloat());
+		key(session.value("channel",1).toInt());
+		session.endGroup();
 	}
 }
 
@@ -199,8 +193,8 @@ void Tano::createShortcuts()
 {
 	actions << ui.actionPlay
 			<< ui.actionStop
-			<< ui.actionBack
 			<< ui.actionNext
+			<< ui.actionBack
 			<< ui.actionFullscreen
 			<< ui.actionMute
 			<< ui.actionVolumeUp

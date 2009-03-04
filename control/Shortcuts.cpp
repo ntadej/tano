@@ -1,3 +1,5 @@
+#include <QSettings>
+
 #include "Shortcuts.h"
 #include "../Common.h"
 
@@ -23,7 +25,24 @@ Shortcuts::Shortcuts(QList<QAction*> list) {
 				<< "F1"
 				<< "Ctrl+F1";
 
-	settings = new SettingsShortcuts(Common::settingsFile("shortcuts"), defaultList);
+	actionsName << "Play"
+				<< "Stop"
+				<< "Next"
+				<< "Back"
+				<< "Fullscreen"
+				<< "Mute"
+				<< "VolumeUp"
+				<< "VolumeDown"
+				<< "OpenFile"
+				<< "OpenUrl"
+				<< "OpenPlaylist"
+				<< "Browser"
+				<< "EditPlaylist"
+				<< "Settings"
+				<< "Top"
+				<< "Lite"
+				<< "Help"
+				<< "About";
 
 	apply();
 }
@@ -34,19 +53,23 @@ Shortcuts::~Shortcuts() {
 
 void Shortcuts::apply()
 {
-	read();
+	QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+	settings.sync();
+
+	settings.beginGroup("Shortcuts");
 	for (int i=0; i < actions.size(); i++) {
-		actions.at(i)->setShortcut(QKeySequence(keys.at(i)));
+		actions.at(i)->setShortcut(QKeySequence(settings.value(actionsName.at(i),defaultList.at(i)).toString()));
 		actions.at(i)->setShortcutContext(Qt::ApplicationShortcut);
 	}
-}
-
-void Shortcuts::read()
-{
-	keys = settings->read();
+	settings.endGroup();
 }
 
 QStringList Shortcuts::defaultKeys()
 {
 	return defaultList;
+}
+
+QStringList Shortcuts::actionsNames()
+{
+	return actionsName;
 }

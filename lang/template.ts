@@ -430,12 +430,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings/EditSettings.cpp" line="175"/>
+        <location filename="../settings/EditSettings.cpp" line="160"/>
         <source>Open Channel list File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settings/EditSettings.cpp" line="177"/>
+        <location filename="../settings/EditSettings.cpp" line="162"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -706,7 +706,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="379"/>
+        <location filename="../Tano.cpp" line="373"/>
         <source>Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
@@ -761,7 +761,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="261"/>
+        <location filename="../Tano.cpp" line="255"/>
         <source>Channel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -771,43 +771,43 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="249"/>
+        <location filename="../Tano.cpp" line="243"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="292"/>
+        <location filename="../Tano.cpp" line="286"/>
         <source>Open Channel list File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="294"/>
+        <location filename="../Tano.cpp" line="288"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="312"/>
+        <location filename="../Tano.cpp" line="306"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="318"/>
+        <location filename="../Tano.cpp" line="312"/>
         <source>File loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="327"/>
+        <location filename="../Tano.cpp" line="321"/>
         <source>Open File or URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="329"/>
+        <location filename="../Tano.cpp" line="323"/>
         <source>Multimedia files(*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="335"/>
+        <location filename="../Tano.cpp" line="329"/>
         <source>Playing file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -817,12 +817,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="345"/>
+        <location filename="../Tano.cpp" line="339"/>
         <source>Open URL or stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="346"/>
+        <location filename="../Tano.cpp" line="340"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -832,7 +832,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="278"/>
+        <location filename="../Tano.cpp" line="272"/>
         <source>Channel info</source>
         <translation type="unfinished"></translation>
     </message>
@@ -842,7 +842,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="270"/>
+        <location filename="../Tano.cpp" line="264"/>
         <source>Now:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -902,7 +902,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="261"/>
+        <location filename="../Tano.cpp" line="255"/>
         <source>selected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -972,7 +972,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="351"/>
+        <location filename="../Tano.cpp" line="345"/>
         <source>Playing URL</source>
         <translation type="unfinished"></translation>
     </message>

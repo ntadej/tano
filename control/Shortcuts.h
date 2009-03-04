@@ -6,8 +6,6 @@
 #include <QList>
 #include <QStringList>
 
-#include "../settings/SettingsShortcuts.h"
-
 class Shortcuts : public QObject {
 	Q_OBJECT
 public:
@@ -16,15 +14,13 @@ public:
 
 	void apply();
 	QStringList defaultKeys();
+	QStringList actionsNames();
 
 private:
-	void read();
-
 	QList<QAction*> actions;
 	QStringList defaultList;
+	QStringList actionsName;
 	QStringList keys;
-
-	SettingsShortcuts *settings;
 };
 
 #endif /* SHORTCUTS_H_ */

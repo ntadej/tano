@@ -9,7 +9,6 @@
 #include "xml/tanohandler.h"
 #include "channels/Channel.h"
 #include "channels/EditPlaylist.h"
-#include "settings/SettingsSession.h"
 #include "settings/EditSettings.h"
 #include "ui/TrayIcon.h"
 #include "control/ChannelSelect.h"
@@ -65,7 +64,6 @@ private:
     QString build;
 
     Updates *update;
-    SettingsSession *session;
 
     TanoHandler *handler;
     Channel *channel;

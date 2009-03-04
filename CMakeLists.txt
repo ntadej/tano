@@ -109,10 +109,6 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	channels/Channel.cpp
 	channels/ChannelEpg.cpp
 	channels/EditPlaylist.cpp
-	settings/Settings.cpp
-	settings/SettingsMain.cpp
-	settings/SettingsSession.cpp
-	settings/SettingsShortcuts.cpp
 	settings/EditSettings.cpp
 	video/Video.cpp
 	xml/tanogenerator.cpp
