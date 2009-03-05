@@ -251,6 +251,7 @@ void Tano::play()
 
 	ui.channelNumber->display(channel->num());
 
+	ui.videoWidget->ratioOriginal();
 	ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
 	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 }
@@ -274,6 +275,7 @@ void Tano::stop()
 	ui.labelNow->hide();
 	ui.buttonRefresh->hide();
 	ui.epgToday->epgClear();
+	ui.videoWidget->ratioOriginal();
 	epg->stop();
 }
 

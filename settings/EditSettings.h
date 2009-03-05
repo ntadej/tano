@@ -4,8 +4,6 @@
 #include <QStringList>
 #include <QSettings>
 
-#include "SettingsMain.h"
-#include "SettingsShortcuts.h"
 #include "../control/Shortcuts.h"
 #include "ui_EditSettings.h"
 

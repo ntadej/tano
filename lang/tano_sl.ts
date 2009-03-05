@@ -710,7 +710,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="373"/>
+        <location filename="../Tano.cpp" line="375"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
@@ -765,7 +765,7 @@ p, li { white-space: pre-wrap; }
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="255"/>
+        <location filename="../Tano.cpp" line="256"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
@@ -780,39 +780,39 @@ p, li { white-space: pre-wrap; }
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="286"/>
+        <location filename="../Tano.cpp" line="288"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="288"/>
+        <location filename="../Tano.cpp" line="290"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="306"/>
+        <location filename="../Tano.cpp" line="308"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="312"/>
+        <location filename="../Tano.cpp" line="314"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="321"/>
+        <location filename="../Tano.cpp" line="323"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="323"/>
+        <location filename="../Tano.cpp" line="325"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="329"/>
+        <location filename="../Tano.cpp" line="331"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
@@ -822,12 +822,12 @@ p, li { white-space: pre-wrap; }
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="339"/>
+        <location filename="../Tano.cpp" line="341"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="340"/>
+        <location filename="../Tano.cpp" line="342"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -837,7 +837,7 @@ p, li { white-space: pre-wrap; }
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="272"/>
+        <location filename="../Tano.cpp" line="273"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
@@ -847,7 +847,7 @@ p, li { white-space: pre-wrap; }
         <translation>Današnji spored</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="264"/>
+        <location filename="../Tano.cpp" line="265"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
@@ -907,7 +907,7 @@ p, li { white-space: pre-wrap; }
         <translation>Odpri &amp;Datoteko</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="255"/>
+        <location filename="../Tano.cpp" line="256"/>
         <source>selected</source>
         <translation>je izbran</translation>
     </message>
@@ -977,7 +977,7 @@ p, li { white-space: pre-wrap; }
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="345"/>
+        <location filename="../Tano.cpp" line="347"/>
         <source>Playing URL</source>
         <translation>Predvajam URL</translation>
     </message>
