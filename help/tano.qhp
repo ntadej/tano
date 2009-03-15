@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+    <namespace>tano.0_5</namespace>
+    <virtualFolder>doc</virtualFolder>
+    <customFilter name="Tano Player 0.5">
+        <filterAttribute>tano</filterAttribute>
+        <filterAttribute>0.5</filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>tano</filterAttribute>
+        <filterAttribute>0.5</filterAttribute>
+        <toc>
+            <section title="Tano Player Manual (en)" ref="index.html">
+                <section title="Chapter 1" ref="doc.html#chapter1"/>
+            </section>
+            <section title="Tano Player Priročnik (sl)" ref="index.html">
+                <section title="Chapter 1" ref="doc.html#chapter1"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="foo" id="MyApplication::foo" ref="doc.html#foo"/>
+        </keywords>
+        <files>
+            <file>classic.css</file>
+            <file>index.html</file>
+            <file>doc.html</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

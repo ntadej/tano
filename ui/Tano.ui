@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>594</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -198,6 +198,38 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QPushButton" name="buttonRecord" >
+         <property name="minimumSize" >
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="toolTip" >
+          <string>Record Now</string>
+         </property>
+         <property name="statusTip" >
+          <string>Record Now</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="images.qrc" >
+           <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+         </property>
+         <property name="iconSize" >
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -221,6 +253,7 @@
     <addaction name="actionOpen" />
     <addaction name="separator" />
     <addaction name="actionBrowser" />
+    <addaction name="actionRecorder" />
     <addaction name="actionEpg" />
     <addaction name="separator" />
     <addaction name="actionClose" />
@@ -284,6 +317,7 @@
     <addaction name="actionStop" />
     <addaction name="actionBack" />
     <addaction name="actionNext" />
+    <addaction name="actionRecord" />
     <addaction name="menuVolume" />
     <addaction name="menuRatio" />
    </widget>
@@ -295,7 +329,7 @@
   <widget class="QStatusBar" name="statusbar" />
   <widget class="QToolBar" name="toolBar" >
    <property name="windowTitle" >
-    <string>Main toolbar</string>
+    <string>Main Toolbar</string>
    </property>
    <property name="iconSize" >
     <size>
@@ -320,6 +354,7 @@
    <addaction name="actionEpg" />
    <addaction name="separator" />
    <addaction name="actionSettings" />
+   <addaction name="actionRecorder" />
   </widget>
   <widget class="QDockWidget" name="playlistWidget" >
    <property name="windowIcon" >
@@ -331,6 +366,9 @@
    </property>
    <property name="features" >
     <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas" >
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
    <property name="windowTitle" >
     <string>Channel info</string>
@@ -653,6 +691,24 @@
    </property>
    <property name="text" >
     <string>Volume down</string>
+   </property>
+  </action>
+  <action name="actionRecorder" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/recorder.png</normaloff>:/icons/images/recorder.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Recorder</string>
+   </property>
+  </action>
+  <action name="actionRecord" >
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Record Now</string>
    </property>
   </action>
  </widget>

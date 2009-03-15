@@ -15,6 +15,7 @@
 #include "control/Shortcuts.h"
 #include "epg/Epg.h"
 #include "epg/EpgBrowser.h"
+#include "recorder/Recorder.h"
 
 class Tano : public QMainWindow
 {
@@ -56,14 +57,15 @@ private slots:
     void top();
     void lite();
 
+    void recorder();
+    void help();
+
 private:
     Ui::Tano ui;
     Qt::WindowFlags flags;
 
-    QString version;
-    QString build;
-
     Updates *update;
+    Recorder *record;
 
     TanoHandler *handler;
     Channel *channel;

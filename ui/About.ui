@@ -151,6 +151,13 @@ EPG uptime is not guarantied to be 24/7.</string>
           </widget>
          </item>
          <item>
+          <widget class="QLabel" name="labelAssistant" >
+           <property name="text" >
+            <string>Qt Assistant is part of the Qt library.</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QLabel" name="labelIcons" >
            <property name="text" >
             <string>Crystal Icons © The Yellow Icon.</string>

@@ -3,8 +3,13 @@
 #include <QString>
 #include <QMap>
 #include <QCoreApplication>
+#include <QProcess>
+#include <QLibraryInfo>
+#include <QMessageBox>
+#include <QTextStream>
 
 #include "Common.h"
+#include "ui/About.h"
 
 QString Common::locateResource(QString fileN) {
 	QString path;
@@ -52,52 +57,54 @@ QString Common::locateLang(QString fileL) {
 	return path.replace(QString("/" + fileL), QString(""));
 }
 
-QString Common::settingsFile(QString type)
+QString Common::version()
 {
-	QMap<QString, int> map;
-	map.insert("main", 1);
-	map.insert("session", 2);
-	map.insert("shortcuts", 3);
-
-	QDir path(QDir::homePath());
-	if (!QDir(QDir::homePath() + "/.tano/").exists())
-		path.mkpath(QDir::homePath() + "/.tano/");
-
-	switch(map[type]){
-		case 1:
-			return QDir::homePath() + "/.tano/settings";
-			break;
-		case 2:
-			return QDir::homePath() + "/.tano/session";
-			break;
-		case 3:
-			return QDir::homePath() + "/.tano/shortcuts";
-			break;
-		default:
-			return QDir::homePath() + "/.tano/settings";
-			break;
-	}
+#ifdef TANO_VERSION
+	return QString(TANO_VERSION);
+#else
+	return "Unknown version";
+#endif
 }
 
-QStringList Common::settingsDefault(QString type)
+void Common::about(QWidget *parent)
 {
-	QStringList defaultList;
-	QMap<QString, int> map;
-	map.insert("main", 1);
-	map.insert("session", 2);
-	map.insert("shortcuts", 3);
 
-	switch(map[type]){
-		case 1:
-			defaultList << "Default";
-			break;
-		case 2:
-			defaultList << "-";
-			break;
-		default:
-			defaultList << "Default";
-			break;
+#ifdef TANO_VERSION
+	QString version = QString(TANO_VERSION);
+#else
+	QString version = "Unknown version";
+#endif
+
+#ifdef TANO_BUILD
+	QString build = QString(TANO_BUILD);
+#else
+	QString build = "Unknown build";
+#endif
+
+	About about(parent, version, build);
+	about.exec();
+}
+
+void Common::help(QWidget *parent)
+{
+	QProcess *process = new QProcess(parent);
+	QString app = QLibraryInfo::location(QLibraryInfo::BinariesPath)
+				+ QLatin1String("/assistant");
+
+	process->start(app, QStringList() << QLatin1String("-collectionFile")
+									  << QLatin1String("help/tano.qhc")
+									  << QLatin1String("-enableRemoteControl"));
+
+	if (!process->waitForStarted()) {
+		QMessageBox::critical(parent, "Tano Player",
+							QString("Could not start Qt Assistant from %1.").arg(app));
+		return;
 	}
 
-	return defaultList;
+	// show index page
+	QTextStream str(process);
+	str << QLatin1String("SetSource qthelp://tano.0_5/doc/index.html")
+		<< QLatin1Char('\0') << endl;
 }
+
+

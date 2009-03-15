@@ -6,24 +6,10 @@
 
 #include "Tano.h"
 #include "Common.h"
-#include "ui/About.h"
 
 Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
     : QMainWindow(parent)
 {
-
-#ifdef TANO_VERSION
-	version = QString(TANO_VERSION);
-#else
-	version = "Unknown version";
-#endif
-
-#ifdef TANO_BUILD
-	build = QString(TANO_BUILD);
-#else
-	build = "Unknown build";
-#endif
-
 	isLite = false;
 	sessionEnabled = s;
 
@@ -39,6 +25,7 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
 	handler = new TanoHandler(ui.playlistTree);
 	epg = new Epg();
 	browser = new EpgBrowser();
+	record = new Recorder();
 
 	defaultP = defaultPlaylist;
 	openPlaylist(true);
@@ -84,13 +71,17 @@ void Tano::createSession()
 
 void Tano::createActions()
 {
-	connect(ui.actionHelp, SIGNAL(triggered()), browser, SLOT(help()));
+	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
 	connect(ui.actionUpdate, SIGNAL(triggered()), update, SLOT(getUpdates()));
 	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
 	connect(ui.actionClose, SIGNAL(triggered()), qApp, SLOT(quit()));
 
 	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
 	connect(ui.actionLite, SIGNAL(triggered()), this, SLOT(lite()));
+
+	connect(ui.actionRecorder, SIGNAL(triggered()), record, SLOT(showRecorder()));
+	connect(ui.actionRecord, SIGNAL(triggered()), this, SLOT(recorder()));
+	connect(ui.buttonRecord, SIGNAL(clicked()), this, SLOT(recorder()));
 
 	connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
 
@@ -215,8 +206,7 @@ void Tano::createShortcuts()
 
 void Tano::aboutTano()
 {
-	About about(this, version, build);
-	about.exec();
+	Common::about();
 }
 
 //Media controls
@@ -377,11 +367,11 @@ void Tano::tooltip(QString channelNow)
 
 void Tano::processUpdates(QString updates)
 {
-	qDebug() << version;
-	if(version != updates) {
-		if(version.contains("svn")) {
+	qDebug() << Common::version();
+	if(Common::version() != updates) {
+		if(Common::version().contains("svn")) {
 			if (trayIcon->isVisible())
-				trayIcon->message(updates+","+version);
+				trayIcon->message(updates+","+Common::version());
 		} else{
 			if (trayIcon->isVisible())
 				trayIcon->message(updates);
@@ -449,4 +439,17 @@ void Tano::lite()
 		ui.videoControlsFrame->hide();
 		isLite = true;
 	}
+}
+
+void Tano::recorder()
+{
+	//record->show();
+
+	QMessageBox::warning(this, tr("Tano Player"),
+	                     tr("Recorder is not working at the moment!"));
+}
+
+void Tano::help()
+{
+	Common::help();
 }

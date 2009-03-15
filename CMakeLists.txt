@@ -84,6 +84,7 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/EditSettings.ui
 	ui/EpgBrowser.ui
 	ui/EditPlaylist.ui
+	ui/Recorder.ui
 )
 
 # Define the MOC source files used by Tano
@@ -94,6 +95,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	video/Video.h
 	ui/About.h
 	ui/TrayIcon.h
+	ui/TrayRecorder.h
 	control/ChannelSelect.h
 	control/Shortcuts.h
 	epg/Epg.h
@@ -101,6 +103,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	epg/EpgToday.h
 	channels/EditPlaylist.h
 	lib/QtKeySequenceEdit.h
+	recorder/Recorder.h
 )
 
 SET(Tano_Resrcs ui/images.qrc)
@@ -115,12 +118,14 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	xml/tanohandler.cpp
 	ui/About.cpp
 	ui/TrayIcon.cpp
+	ui/TrayRecorder.cpp
 	control/ChannelSelect.cpp
 	control/Shortcuts.cpp
 	epg/Epg.cpp
 	epg/EpgBrowser.cpp
 	epg/EpgToday.cpp
 	lib/QtKeySequenceEdit.cpp
+	recorder/Recorder.cpp
 )
 
 SET(Tano_Srcs
@@ -135,6 +140,7 @@ SET(Tano_Srcs
 SET ( Tano_Files
     LICENSE
 	siol.xml
+	splash.png
 	ui/images/tano.png
 	ui/images/tano-small.png
 )
@@ -270,6 +276,24 @@ ADD_CUSTOM_COMMAND(
 	COMMAND ${QT_BINARY_DIR}/lrelease
 	ARGS ${Tano_Translation_Srcs}
 )
+
+
+########
+# Help #
+########
+ADD_CUSTOM_COMMAND(
+	TARGET tano
+	PRE_BUILD
+	COMMAND ${QT_BINARY_DIR}/qhelpgenerator
+	ARGS help/tano.qhp -o help/tano.qch
+)
+ADD_CUSTOM_COMMAND(
+	TARGET tano
+	PRE_BUILD
+	COMMAND ${QT_BINARY_DIR}/qcollectiongenerator
+	ARGS help/tano.qhcp -o help/tano.qhc
+)
+
 
 ################
 # Installation #
