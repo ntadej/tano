@@ -3,8 +3,10 @@
 
 #include <QHttp>
 #include <QString>
+#include <QStringList>
 #include <QTimer>
 #include <QTextCodec>
+#include <QTextEdit>
 
 class Epg : public QHttp {
 Q_OBJECT
@@ -19,22 +21,24 @@ public slots:
 	void stop();
 
 signals:
-	void epgDone(QString, bool);
+	void epgDone(QString);
+	void epgDoneFull(QStringList);
 
 private slots:
 	void epg();
-	void epgToday();
 	void epgPrint();
-	void epgPrintToday();
 
 private:
-	int step;
+	void epgNow();
+
 	QString epgValue;
-	QString epgSource;
-	QString epgUrl;
 	QString epgFull;
+	QString epgChannel;
+	QStringList epgList;
+
 	QTimer *timer;
 	QTextCodec *codec;
+	QTextEdit *edit;
 };
 
 #endif /* EPG_H_ */

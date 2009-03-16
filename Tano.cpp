@@ -126,7 +126,8 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
 	connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
 
-	connect(epg, SIGNAL(epgDone(QString, bool)), this, SLOT(showEpg(QString, bool)));
+	connect(epg, SIGNAL(epgDone(QString)), this, SLOT(showEpg(QString)));
+	connect(epg, SIGNAL(epgDoneFull(QStringList)), ui.epgToday, SLOT(setEpg(QStringList)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), browser, SLOT(open(QString)));
 	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
 
@@ -246,16 +247,11 @@ void Tano::play()
 	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 }
 
-void Tano::showEpg(QString epgValue, bool full)
+void Tano::showEpg(QString epgValue)
 {
-	if (full) {
-		ui.epgToday->setEpg(epgValue);
-	}
-	else {
-		ui.labelNow->setText(tr("Now:") + " " + epgValue);
-		ui.labelNow->show();
-		ui.buttonRefresh->show();
-	}
+	ui.labelNow->setText(tr("Now:") + " " + epgValue);
+	ui.labelNow->show();
+	ui.buttonRefresh->show();
 }
 
 void Tano::stop()

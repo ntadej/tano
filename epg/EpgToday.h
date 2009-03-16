@@ -13,8 +13,10 @@ public:
     EpgToday(QWidget *parent = 0);
     ~EpgToday();
 
-    void setEpg(QString epg);
     void epgClear();
+
+public slots:
+    void setEpg(QStringList epg);
 
 signals:
 	void urlClicked(QString);

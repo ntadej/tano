@@ -21,8 +21,9 @@ EpgToday::~EpgToday()
 
 }
 
-void EpgToday::setEpg(QString epg) {
-	epgList = epg.split(";");
+void EpgToday::setEpg(QStringList epg) {
+	epgList.empty();
+	epgList = epg;
 	this->clear();
 	this->setRowCount((epgList.size() - 1)/3 + 1);
 
