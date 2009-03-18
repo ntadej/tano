@@ -87,6 +87,7 @@ bool MediaController::hasInterface(Interface iface) const {
 }
 
 QVariant MediaController::interfaceCall(Interface iface, int command, const QList<QVariant> & arguments) {
+	QVariant def;
 	switch (iface) {
 
 	case AddonInterface::ChapterInterface:
@@ -240,7 +241,7 @@ QVariant MediaController::interfaceCall(Interface iface, int command, const QLis
 		qCritical() << __FUNCTION__ << "Error: unsupported AddonInterface::Interface:" << iface;
 	}
 
-	return new QVariant();
+	return ref;
 }
 
 }}	//Namespace Phonon::VLC_MPlayer
