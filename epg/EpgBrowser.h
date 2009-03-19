@@ -1,10 +1,11 @@
 #ifndef EPGBROWSER_H
 #define EPGBROWSER_H
 
-#include <QtGui/QWidget>
+#include <QtGui/QMainWindow>
+#include <QProgressBar>
 #include "../ui_EpgBrowser.h"
 
-class EpgBrowser : public QWidget
+class EpgBrowser : public QMainWindow
 {
     Q_OBJECT
 
@@ -14,7 +15,6 @@ public:
 
 public slots:
 	void open(QString link);
-	void help();
 
 private slots:
 	void go();
@@ -22,11 +22,15 @@ private slots:
 	void epg();
 	void changeText(QUrl url);
 
+	void done(int value);
+
 	void stopStatus();
 	void stopStatusT(bool status);
 
 private:
     Ui::EpgBrowserClass ui;
+
+    QProgressBar *bar;
 };
 
 #endif // EPGBROWSER_H

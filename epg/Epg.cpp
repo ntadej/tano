@@ -90,9 +90,12 @@ void Epg::epgPrint()
 
 void Epg::epgNow()
 {
+	epgListNow.clear();
 	for(int i = 1;i<epgList.size();i+=3) {
 		if(QTime::currentTime() > QTime::fromString(epgList.at(i), "hh:mm") && QTime::currentTime() < QTime::fromString(epgList.at(i+3), "hh:mm")) {
-			emit epgDone("<a href=\"" + epgList.at(i+1) + "\">" + epgList.at(i) + " - " + epgList.at(i+2));
+			epgListNow << "<a href=\"" + epgList.at(i+1) + "\">" + epgList.at(i) + " - " + epgList.at(i+2) + "</a>"
+					   << "<a href=\"" + epgList.at(i+4) + "\">" + epgList.at(i+3) + " - " + epgList.at(i+5) + "</a>";
+			emit epgDone(epgListNow);
 			return;
 		}
 	}

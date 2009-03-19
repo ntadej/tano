@@ -1,20 +1,30 @@
 #include <QUrl>
-#include <QDebug>
 
 #include "EpgBrowser.h"
 
 EpgBrowser::EpgBrowser(QWidget *parent)
-    : QWidget(parent)
+    : QMainWindow(parent)
 {
 	ui.setupUi(this);
 
 	ui.actionStop->setDisabled(true);
 
+	bar = new QProgressBar(this);
+	bar->setRange(0,100);
+	bar->setValue(0);
+	bar->setSizePolicy(QSizePolicy(QSizePolicy::Fixed,QSizePolicy::Preferred));
+	bar->setMaximumWidth(200);
+	bar->setMinimumWidth(200);
+
+	ui.statusbar->insertPermanentWidget(0,bar);
+
 	connect(ui.buttonGo, SIGNAL(clicked()), this, SLOT(go()));
 	connect(ui.actionHome, SIGNAL(triggered()), this, SLOT(home()));
 	connect(ui.actionEpg, SIGNAL(triggered()), this, SLOT(epg()));
-	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
 	connect(ui.epgView, SIGNAL(urlChanged(QUrl)), this, SLOT(changeText(QUrl)));
+
+	connect(ui.epgView, SIGNAL(loadProgress(int)), this, SLOT(done(int)));
+	connect(ui.epgView, SIGNAL(loadProgress(int)), bar, SLOT(setValue(int)));
 
 	connect(ui.epgView, SIGNAL(loadStarted()), this, SLOT(stopStatus()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stopStatus()));
@@ -54,13 +64,6 @@ void EpgBrowser::epg()
 	go();
 }
 
-void EpgBrowser::help()
-{
-	ui.addressLine->setText("http://tano.pfusion.co.cc/wiki/Help:Contents");
-	go();
-	this->show();
-}
-
 void EpgBrowser::changeText(QUrl url)
 {
 	ui.addressLine->setText(url.toString());
@@ -83,4 +86,18 @@ void EpgBrowser::stopStatus()
     	ui.actionReload->setEnabled(true);
     else
     	ui.actionReload->setDisabled(true);
+}
+
+void EpgBrowser::done(int value)
+{
+	switch (value) {
+	case 10:
+		ui.statusbar->showMessage(tr("Loading")+" "+ui.addressLine->text());
+		break;
+	case 100:
+		ui.statusbar->showMessage(tr("Done"),5000);
+		break;
+	default:
+		break;
+	}
 }

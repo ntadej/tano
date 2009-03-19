@@ -1,6 +1,6 @@
 <ui version="4.0" >
  <class>EpgBrowserClass</class>
- <widget class="QWidget" name="EpgBrowserClass" >
+ <widget class="QMainWindow" name="EpgBrowserClass" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -16,117 +16,89 @@
    <iconset resource="images.qrc" >
     <normaloff>:/icons/images/browser.png</normaloff>:/icons/images/browser.png</iconset>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" >
-   <item>
-    <widget class="QToolBar" name="toolBar" >
-     <property name="iconSize" >
-      <size>
-       <width>32</width>
-       <height>32</height>
-      </size>
-     </property>
-     <property name="toolButtonStyle" >
-      <enum>Qt::ToolButtonTextUnderIcon</enum>
-     </property>
-     <addaction name="actionHome" />
-     <addaction name="actionEpg" />
-     <addaction name="actionHelp" />
-     <addaction name="separator" />
-     <addaction name="actionBack" />
-     <addaction name="actionForward" />
-     <addaction name="actionReload" />
-     <addaction name="actionStop" />
-     <addaction name="separator" />
-     <addaction name="actionClose" />
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="headerLayout" >
-     <item>
-      <widget class="QLineEdit" name="addressLine" >
-       <property name="minimumSize" >
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="buttonGo" >
-       <property name="minimumSize" >
-        <size>
-         <width>26</width>
-         <height>26</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>26</width>
-         <height>26</height>
-        </size>
-       </property>
-       <property name="icon" >
-        <iconset resource="images.qrc" >
-         <normaloff>:/icons/images/go.png</normaloff>:/icons/images/go.png</iconset>
-       </property>
-       <property name="iconSize" >
-        <size>
-         <width>16</width>
-         <height>16</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QWebView" name="epgView" >
-     <property name="url" >
-      <url>
-       <string>about:blank</string>
-      </url>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" name="footerLayout" >
-     <item>
-      <widget class="QLabel" name="labelStatus" >
-       <property name="text" >
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer" >
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QProgressBar" name="progressBar" >
-       <property name="maximumSize" >
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="value" >
-        <number>0</number>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-  </layout>
+  <widget class="QWidget" name="centralwidget" >
+   <layout class="QVBoxLayout" name="verticalLayout" >
+    <item>
+     <layout class="QHBoxLayout" name="headerLayout" >
+      <item>
+       <widget class="QLineEdit" name="addressLine" >
+        <property name="minimumSize" >
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonGo" >
+        <property name="minimumSize" >
+         <size>
+          <width>26</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="maximumSize" >
+         <size>
+          <width>26</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="icon" >
+         <iconset resource="images.qrc" >
+          <normaloff>:/icons/images/go.png</normaloff>:/icons/images/go.png</iconset>
+        </property>
+        <property name="iconSize" >
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QWebView" name="epgView" >
+      <property name="url" >
+       <url>
+        <string>about:blank</string>
+       </url>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+  <widget class="QToolBar" name="toolBar" >
+   <property name="windowTitle" >
+    <string>Toolbar</string>
+   </property>
+   <property name="iconSize" >
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle" >
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionHome" />
+   <addaction name="actionEpg" />
+   <addaction name="separator" />
+   <addaction name="actionBack" />
+   <addaction name="actionForward" />
+   <addaction name="actionReload" />
+   <addaction name="actionStop" />
+   <addaction name="separator" />
+   <addaction name="actionClose" />
+  </widget>
   <action name="actionHome" >
    <property name="icon" >
     <iconset resource="images.qrc" >
@@ -143,15 +115,6 @@
    </property>
    <property name="text" >
     <string>Close</string>
-   </property>
-  </action>
-  <action name="actionHelp" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
-     <normaloff>:/icons/images/help.png</normaloff>:/icons/images/help.png</iconset>
-   </property>
-   <property name="text" >
-    <string>Help</string>
    </property>
   </action>
   <action name="actionEpg" >
@@ -200,7 +163,6 @@
    </property>
   </action>
  </widget>
- <layoutdefault spacing="6" margin="11" />
  <customwidgets>
   <customwidget>
    <class>QWebView</class>
@@ -212,22 +174,6 @@
   <include location="images.qrc" />
  </resources>
  <connections>
-  <connection>
-   <sender>epgView</sender>
-   <signal>loadProgress(int)</signal>
-   <receiver>progressBar</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>399</x>
-     <y>300</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>618</x>
-     <y>579</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>actionClose</sender>
    <signal>triggered()</signal>
@@ -241,22 +187,6 @@
     <hint type="destinationlabel" >
      <x>399</x>
      <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>epgView</sender>
-   <signal>statusBarMessage(QString)</signal>
-   <receiver>labelStatus</receiver>
-   <slot>setText(QString)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>399</x>
-     <y>300</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>4</x>
-     <y>580</y>
     </hint>
    </hints>
   </connection>

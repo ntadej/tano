@@ -21,7 +21,7 @@ public slots:
 	void stop();
 
 signals:
-	void epgDone(QString);
+	void epgDone(QStringList);
 	void epgDoneFull(QStringList);
 
 private slots:
@@ -35,6 +35,7 @@ private:
 	QString epgFull;
 	QString epgChannel;
 	QStringList epgList;
+	QStringList epgListNow;
 
 	QTimer *timer;
 	QTextCodec *codec;

@@ -308,6 +308,11 @@
            <string>0</string>
           </property>
          </row>
+         <row>
+          <property name="text" >
+           <string>0</string>
+          </property>
+         </row>
          <column>
           <property name="text" >
            <string>Action</string>
@@ -325,7 +330,7 @@
          </item>
          <item row="0" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="1" column="0" >
@@ -335,7 +340,7 @@
          </item>
          <item row="1" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="2" column="0" >
@@ -345,7 +350,7 @@
          </item>
          <item row="2" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="3" column="0" >
@@ -355,7 +360,7 @@
          </item>
          <item row="3" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="4" column="0" >
@@ -365,7 +370,7 @@
          </item>
          <item row="4" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="5" column="0" >
@@ -375,7 +380,7 @@
          </item>
          <item row="5" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="6" column="0" >
@@ -385,7 +390,7 @@
          </item>
          <item row="6" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="7" column="0" >
@@ -395,107 +400,117 @@
          </item>
          <item row="7" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="8" column="0" >
           <property name="text" >
-           <string>Open File</string>
+           <string>Record</string>
           </property>
          </item>
          <item row="8" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="9" column="0" >
           <property name="text" >
-           <string>Open URL</string>
+           <string>Open File</string>
           </property>
          </item>
          <item row="9" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="10" column="0" >
           <property name="text" >
-           <string>Open Channel list</string>
+           <string>Open URL</string>
           </property>
          </item>
          <item row="10" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="11" column="0" >
           <property name="text" >
-           <string>Browser</string>
+           <string>Open Channel list</string>
           </property>
          </item>
          <item row="11" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="12" column="0" >
           <property name="text" >
-           <string>Edit Channel list</string>
+           <string>Browser</string>
           </property>
          </item>
          <item row="12" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="13" column="0" >
           <property name="text" >
-           <string>Settings</string>
+           <string>Edit Channel list</string>
           </property>
          </item>
          <item row="13" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="14" column="0" >
           <property name="text" >
-           <string>Always on top</string>
+           <string>Settings</string>
           </property>
          </item>
          <item row="14" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="15" column="0" >
           <property name="text" >
-           <string>Simple Mode</string>
+           <string>Always on top</string>
           </property>
          </item>
          <item row="15" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="16" column="0" >
           <property name="text" >
-           <string>Help</string>
+           <string>Simple Mode</string>
           </property>
          </item>
          <item row="16" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
           </property>
          </item>
          <item row="17" column="0" >
           <property name="text" >
-           <string>About</string>
+           <string>Help</string>
           </property>
          </item>
          <item row="17" column="1" >
           <property name="text" >
-           <string/>
+           <string> </string>
+          </property>
+         </item>
+         <item row="18" column="0" >
+          <property name="text" >
+           <string>About</string>
+          </property>
+         </item>
+         <item row="18" column="1" >
+          <property name="text" >
+           <string> </string>
           </property>
          </item>
         </widget>

@@ -6,7 +6,7 @@
 #include "EditPlaylist.h"
 
 EditPlaylist::EditPlaylist(QWidget *parent, QString fileName)
-    : QWidget(parent)
+    : QMainWindow(parent)
 {
 	ui.setupUi(this);
 

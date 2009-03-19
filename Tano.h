@@ -43,7 +43,7 @@ private slots:
     void showBrowser();
     void showSiolEpg();
 
-    void showEpg(QString epgValue);
+    void showEpg(QStringList epgValue);
 
     void processUpdates(QString updates);
 

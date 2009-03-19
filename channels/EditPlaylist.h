@@ -1,13 +1,13 @@
 #ifndef EDITPLAYLIST_H
 #define EDITPLAYLIST_H
 
-#include <QtGui/QWidget>
+#include <QtGui/QMainWindow>
 #include "../ui_EditPlaylist.h"
 
 #include "../xml/tanohandler.h"
 #include "../xml/tanogenerator.h"
 
-class EditPlaylist : public QWidget
+class EditPlaylist : public QMainWindow
 {
     Q_OBJECT
 
