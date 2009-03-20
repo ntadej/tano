@@ -11,6 +11,8 @@ public:
 
 	static QString version();
 
+	static QString frip();
+
 	static void about(QWidget *parent = 0 );
 	static void help(QWidget *parent = 0 );
 };

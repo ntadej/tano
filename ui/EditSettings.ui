@@ -205,6 +205,70 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tabRecorder" >
+      <attribute name="title" >
+       <string>Recorder</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_7" >
+       <item>
+        <widget class="QGroupBox" name="defaultDirBox" >
+         <property name="title" >
+          <string>Default recording directory</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6" >
+          <item>
+           <layout class="QHBoxLayout" name="browseLayoutDir" >
+            <item>
+             <widget class="QLabel" name="pLabelDir" >
+              <property name="text" >
+               <string>Browse:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="pEditDir" >
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="readOnly" >
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="buttonBrowseDir" >
+              <property name="text" >
+               <string>...</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="buttonResetDir" >
+              <property name="text" >
+               <string>Reset</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2" >
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="tabShortcuts" >
       <attribute name="title" >
        <string>Shortcuts</string>
@@ -330,7 +394,7 @@
          </item>
          <item row="0" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="1" column="0" >
@@ -340,7 +404,7 @@
          </item>
          <item row="1" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="2" column="0" >
@@ -350,7 +414,7 @@
          </item>
          <item row="2" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="3" column="0" >
@@ -360,7 +424,7 @@
          </item>
          <item row="3" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="4" column="0" >
@@ -370,7 +434,7 @@
          </item>
          <item row="4" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="5" column="0" >
@@ -380,7 +444,7 @@
          </item>
          <item row="5" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="6" column="0" >
@@ -390,7 +454,7 @@
          </item>
          <item row="6" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="7" column="0" >
@@ -400,7 +464,7 @@
          </item>
          <item row="7" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="8" column="0" >
@@ -410,7 +474,7 @@
          </item>
          <item row="8" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="9" column="0" >
@@ -420,7 +484,7 @@
          </item>
          <item row="9" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="10" column="0" >
@@ -430,7 +494,7 @@
          </item>
          <item row="10" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="11" column="0" >
@@ -440,7 +504,7 @@
          </item>
          <item row="11" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="12" column="0" >
@@ -450,7 +514,7 @@
          </item>
          <item row="12" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="13" column="0" >
@@ -460,7 +524,7 @@
          </item>
          <item row="13" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="14" column="0" >
@@ -470,7 +534,7 @@
          </item>
          <item row="14" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="15" column="0" >
@@ -480,7 +544,7 @@
          </item>
          <item row="15" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="16" column="0" >
@@ -490,7 +554,7 @@
          </item>
          <item row="16" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="17" column="0" >
@@ -500,7 +564,7 @@
          </item>
          <item row="17" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
          <item row="18" column="0" >
@@ -510,7 +574,7 @@
          </item>
          <item row="18" column="1" >
           <property name="text" >
-           <string> </string>
+           <string/>
           </property>
          </item>
         </widget>

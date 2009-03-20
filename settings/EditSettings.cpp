@@ -45,6 +45,9 @@ void EditSettings::createActions()
 	connect(ui.buttonBrowse, SIGNAL(clicked()), this, SLOT(playlistBrowse()));
 	connect(ui.buttonReset, SIGNAL(clicked()), this, SLOT(playlistReset()));
 
+	connect(ui.buttonBrowseDir, SIGNAL(clicked()), this, SLOT(dirBrowse()));
+	connect(ui.buttonResetDir, SIGNAL(clicked()), this, SLOT(dirReset()));
+
 	connect(ui.shortcutsWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(shortcutEdit(QTableWidgetItem*)));
 	connect(ui.keyEditor, SIGNAL(keySequenceChanged(const QKeySequence)), this, SLOT(shortcutSequence(const QKeySequence)));
 	connect(ui.buttonDefaults, SIGNAL(clicked()), this, SLOT(shortcutRestore()));
@@ -86,6 +89,11 @@ void EditSettings::ok()
 	} else {
 		settings->setValue("playlist",ui.pEdit->text());
 	}
+
+	settings->beginGroup("Recorder");
+	if(ui.pEditDir->text() != "")
+		settings->setValue("dir",ui.pEditDir->text());
+	settings->endGroup();
 
 	settings->beginGroup("Shortcuts");
 	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++) {
@@ -129,6 +137,10 @@ void EditSettings::read()
 		ui.buttonReset->setEnabled(true);
 		ui.pEdit->setText(settings->value("playlist").toString());
 	}
+
+	settings->beginGroup("Recorder");
+	ui.pEditDir->setText(settings->value("dir","").toString());
+	settings->endGroup();
 }
 
 void EditSettings::toggleCustom()
@@ -161,6 +173,25 @@ void EditSettings::playlistBrowse()
 												QDir::homePath(),
 												tr("Tano TV Channel list Files(*.tano *.xml)"));
 	ui.pEdit->setText(dfile);
+}
+
+void EditSettings::dirReset()
+{
+	ui.pEditDir->setText("");
+}
+
+void EditSettings::dirBrowse()
+{
+	QString dir;
+	if(ui.pEditDir->text() == "")
+		dir = QDir::homePath();
+	else
+		dir = ui.pEditDir->text();
+	QString dfile = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+															dir,
+															QFileDialog::ShowDirsOnly
+															| QFileDialog::DontResolveSymlinks);
+	ui.pEditDir->setText(dfile);
 }
 
 void EditSettings::playlistReset()

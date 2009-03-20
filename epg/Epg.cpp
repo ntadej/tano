@@ -55,6 +55,11 @@ void Epg::epgPrint()
 	//epgValue = epgValue.replace(" //  ", ";");
 	//epgValue = epgValue.replace(" // ", ";");
 
+	if(!epgValue.contains("schedule_title")) {
+		disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
+		return;
+	}
+
 	//Main EPG
 	n = epgValue.indexOf("<dl class=\"listB\">");
 	epgValue.remove(0,n);

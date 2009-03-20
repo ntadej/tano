@@ -3,6 +3,9 @@
 
 #include <QtGui/QMainWindow>
 #include <QMenu>
+#include <QProcess>
+#include <QTime>
+#include <QTimer>
 
 #include "../channels/Channel.h"
 #include "../ui/TrayRecorder.h"
@@ -29,8 +32,13 @@ private slots:
 	void about();
 	void help();
 
+	void record(bool status);
+
+	void sec();
+
 	void openPlaylist();
 	void playlist(QTreeWidgetItem* clickedChannel);
+	void fileBrowse();
 
 private:
     Ui::RecorderClass ui;
@@ -43,6 +51,13 @@ private:
 
 	TanoHandler *handler;
 	QString fileName;
+
+	QProcess *frip;
+	QString fripPath;
+	QString slash;
+
+	QTimer *timer;
+	QTime time;
 };
 
 #endif // RECORDER_H

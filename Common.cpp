@@ -66,6 +66,15 @@ QString Common::version()
 #endif
 }
 
+QString Common::frip()
+{
+#ifdef Q_WS_X11
+	return "friptv";
+#else
+	return QCoreApplication::applicationDirPath() + "/friptv.exe";
+#endif
+}
+
 void Common::about(QWidget *parent)
 {
 

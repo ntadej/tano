@@ -82,6 +82,7 @@ void Video::controlPlay()
 void Video::controlStop()
 {
 	channel->stop();
+	channel->setCurrentSource(QString("udp://"));
 	emit stopped();
 }
 void Video::controlFull()

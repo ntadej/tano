@@ -26,6 +26,8 @@ class EditSettings : public QDialog
 
 		void playlistBrowse();
 		void playlistReset();
+		void dirBrowse();
+		void dirReset();
 
 		void shortcutRestore();
 		void shortcutSequence(const QKeySequence &s);

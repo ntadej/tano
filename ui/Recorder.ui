@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>400</height>
+    <height>415</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -19,27 +19,11 @@
   <widget class="QWidget" name="centralwidget" >
    <layout class="QVBoxLayout" name="verticalLayout" >
     <item>
-     <widget class="QLabel" name="label" >
-      <property name="sizePolicy" >
-       <sizepolicy vsizetype="Maximum" hsizetype="Preferred" >
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text" >
-       <string>Recorder is not working at the moment!</string>
-      </property>
-      <property name="alignment" >
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QGroupBox" name="recorderBox" >
       <property name="title" >
        <string>Recorder</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4" >
+      <layout class="QVBoxLayout" name="verticalLayout_3" >
        <item>
         <widget class="QLabel" name="labelSelected" >
          <property name="text" >
@@ -60,6 +44,27 @@
           <string>No timer</string>
          </property>
         </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout" >
+         <item>
+          <widget class="QLabel" name="labelBrowse" >
+           <property name="text" >
+            <string>Directory:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="fileEdit" />
+         </item>
+         <item>
+          <widget class="QToolButton" name="buttonBrowse" >
+           <property name="text" >
+            <string>...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <widget class="QPushButton" name="buttonRecord" >
@@ -99,7 +104,7 @@
       <property name="title" >
        <string>Status</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3" >
+      <layout class="QVBoxLayout" name="verticalLayout_4" >
        <item>
         <layout class="QHBoxLayout" name="currentLayout" >
          <item>
@@ -155,6 +160,20 @@
         </layout>
        </item>
        <item>
+        <widget class="QLabel" name="labelFile" >
+         <property name="text" >
+          <string>Recording to file:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="valueFile" >
+         <property name="text" >
+          <string>-</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer_2" >
          <property name="orientation" >
           <enum>Qt::Vertical</enum>
@@ -199,6 +218,7 @@
     <property name="title" >
      <string>Actions</string>
     </property>
+    <addaction name="actionTimer" />
     <addaction name="actionRecord" />
    </widget>
    <addaction name="menuFile" />
@@ -215,8 +235,8 @@
    </property>
    <property name="minimumSize" >
     <size>
-     <width>169</width>
-     <height>102</height>
+     <width>175</width>
+     <height>105</height>
     </size>
    </property>
    <property name="floating" >
@@ -265,6 +285,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionOpen" />
+   <addaction name="actionTimer" />
    <addaction name="actionRecord" />
   </widget>
   <action name="actionClose" >
@@ -304,8 +325,8 @@
    </property>
   </action>
   <action name="actionRecord" >
-   <property name="enabled" >
-    <bool>false</bool>
+   <property name="checkable" >
+    <bool>true</bool>
    </property>
    <property name="icon" >
     <iconset resource="images.qrc" >
@@ -324,9 +345,54 @@
     <string>Restore</string>
    </property>
   </action>
+  <action name="actionTimer" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+   <property name="icon" >
+    <iconset resource="images.qrc" >
+     <normaloff>:/icons/images/clock.png</normaloff>:/icons/images/clock.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Timer</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="images.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionRecord</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>buttonRecord</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>166</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonRecord</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>actionRecord</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>166</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
