@@ -196,8 +196,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
-     <height>24</height>
+     <width>0</width>
+     <height>0</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile" >
@@ -236,7 +236,7 @@
    <property name="minimumSize" >
     <size>
      <width>175</width>
-     <height>105</height>
+     <height>125</height>
     </size>
    </property>
    <property name="floating" >
@@ -255,6 +255,9 @@
     <layout class="QVBoxLayout" name="verticalLayout_2" >
      <item>
       <widget class="QTreeWidget" name="playlistWidget" >
+       <property name="animated" >
+        <bool>true</bool>
+       </property>
        <column>
         <property name="text" >
          <string>Channel</string>

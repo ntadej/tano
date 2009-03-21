@@ -1,5 +1,6 @@
 #include <QMouseEvent>
 #include <QDebug>
+#include <QApplication>
 
 #include "Video.h"
 
@@ -14,8 +15,15 @@ Video::Video(QWidget *parent)
 	Phonon::createPath(channel, this);
 	Phonon::createPath(channel, audio);
 
+	timer = new QTimer(this);
+	connect(timer, SIGNAL(timeout()), this, SLOT(hideMouse()));
+
 	audio->setVolume(0.5);
 	qDebug() << "Volume:" << audio->volume()*100;
+
+	pos = QPoint();
+
+	move = true;
 }
 
 
@@ -29,6 +37,17 @@ void Video::mouseDoubleClickEvent(QMouseEvent *event)
 {
 	event->ignore();
 	emit full();
+}
+void Video::mouseMoveEvent(QMouseEvent *event)
+{
+	event->ignore();
+
+	if(this->isFullScreen() && event->globalPos() != pos && move) {
+		qApp->setOverrideCursor(Qt::ArrowCursor);
+		timer->start(1000);
+		emit mouseMove();
+		pos = event->globalPos();
+	}
 }
 void Video::mousePressEvent(QMouseEvent *event)
 {
@@ -45,6 +64,14 @@ void Video::wheelEvent(QWheelEvent *event)
 		emit wheel(true);
 	else
 		emit wheel(false);
+}
+
+void Video::hideMouse()
+{
+	if(this->isFullScreen() && move) {
+		qApp->setOverrideCursor(Qt::BlankCursor);
+		timer->stop();
+	}
 }
 
 //Public functions:
@@ -91,6 +118,7 @@ void Video::controlFull()
 		this->enterFullScreen();
 	}
 	else {
+		qApp->setOverrideCursor(Qt::ArrowCursor);
 		this->exitFullScreen();
 	}
 }
@@ -139,4 +167,14 @@ void Video::cropOriginal()
 void Video::cropFit()
 {
 	this->setScaleMode(Phonon::VideoWidget::ScaleAndCrop);
+}
+
+//Move
+void Video::disableMove()
+{
+	move = false;
+}
+void Video::enableMove()
+{
+	move = true;
 }

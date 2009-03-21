@@ -156,7 +156,8 @@ void Recorder::fileBrowse()
 														dir,
 														QFileDialog::ShowDirsOnly
 														| QFileDialog::DontResolveSymlinks);
-	ui.fileEdit->setText(dfile);
+	if(dfile != "")
+		ui.fileEdit->setText(dfile);
 }
 
 void Recorder::record(bool status)
@@ -192,6 +193,9 @@ void Recorder::record(bool status)
 		ui.valueTime->setText(time.toString("hh:mm:ss"));
 		ui.valueRemaining->setText(tr("No timer - press button to stop."));
 		ui.valueFile->setText(fileName);
+
+		ui.buttonRecord->setText(tr("Stop recording"));
+		ui.actionRecord->setText(tr("Stop recording"));
 	} else {
 		frip->terminate();
 		timer->stop();
@@ -199,6 +203,9 @@ void Recorder::record(bool status)
 		ui.valueTime->setText("0");
 		ui.valueRemaining->setText(tr("0"));
 		ui.valueFile->setText("-");
+
+		ui.buttonRecord->setText(tr("Record"));
+		ui.actionRecord->setText(tr("Record"));
 	}
 }
 

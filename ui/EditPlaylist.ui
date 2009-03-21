@@ -26,6 +26,9 @@
       <property name="dragDropMode" >
        <enum>QAbstractItemView::InternalMove</enum>
       </property>
+      <property name="animated" >
+       <bool>true</bool>
+      </property>
       <column>
        <property name="text" >
         <string>Channel</string>

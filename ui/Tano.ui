@@ -63,7 +63,7 @@
           <number>3</number>
          </property>
          <property name="segmentStyle" >
-          <enum>QLCDNumber::Filled</enum>
+          <enum>QLCDNumber::Flat</enum>
          </property>
          <property name="value" stdset="0" >
           <double>1.000000000000000</double>
@@ -240,8 +240,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>24</height>
+     <width>0</width>
+     <height>0</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile" >
@@ -420,6 +420,9 @@
           <widget class="QTreeWidget" name="playlistTree" >
            <property name="editTriggers" >
             <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="animated" >
+            <bool>true</bool>
            </property>
            <property name="columnCount" >
             <number>1</number>

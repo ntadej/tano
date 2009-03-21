@@ -11,6 +11,7 @@
 #include "channels/EditPlaylist.h"
 #include "settings/EditSettings.h"
 #include "ui/TrayIcon.h"
+#include "ui/TanoOsd.h"
 #include "control/ChannelSelect.h"
 #include "control/Shortcuts.h"
 #include "epg/Epg.h"
@@ -60,12 +61,15 @@ private slots:
     void recorder();
     void help();
 
+    void osdSet();
+
 private:
     Ui::Tano ui;
     Qt::WindowFlags flags;
 
     Updates *update;
     Recorder *record;
+    TanoOsd *osd;
 
     TanoHandler *handler;
     Channel *channel;

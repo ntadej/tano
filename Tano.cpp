@@ -27,6 +27,7 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
 	epg = new Epg();
 	browser = new EpgBrowser();
 	record = new Recorder();
+	osd = new TanoOsd();
 
 	defaultP = defaultPlaylist;
 	openPlaylist(true);
@@ -37,6 +38,7 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
 	createActions();
 	createShortcuts();
 	createSession();
+	osdSet();
 }
 
 Tano::~Tano()
@@ -126,6 +128,8 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
 	connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
 	connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
+	connect(ui.videoWidget, SIGNAL(full()), osd, SLOT(hideOsd()));
+	connect(ui.videoWidget, SIGNAL(mouseMove()), osd, SLOT(showOsd()));
 
 	connect(epg, SIGNAL(epgDone(QStringList)), this, SLOT(showEpg(QStringList)));
 	connect(epg, SIGNAL(epgDoneFull(QStringList)), ui.epgToday, SLOT(setEpg(QStringList)));
@@ -140,6 +144,9 @@ void Tano::createActions()
 	connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioOriginal()));
 	connect(ui.actionRatio43, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio43()));
 	connect(ui.actionRatio169, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio169()));
+
+	connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
+	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 }
 
 void Tano::createMenus()
@@ -441,6 +448,11 @@ void Tano::lite()
 		ui.videoControlsFrame->hide();
 		isLite = true;
 	}
+}
+
+void Tano::osdSet()
+{
+
 }
 
 void Tano::recorder()
