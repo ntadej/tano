@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>594</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle" >
@@ -23,17 +23,11 @@
     </item>
     <item>
      <widget class="QFrame" name="videoControlsFrame" >
-      <property name="minimumSize" >
-       <size>
-        <width>0</width>
-        <height>56</height>
-       </size>
-      </property>
-      <property name="maximumSize" >
-       <size>
-        <width>16777215</width>
-        <height>56</height>
-       </size>
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Maximum" hsizetype="Preferred" >
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="frameShape" >
        <enum>QFrame::StyledPanel</enum>
@@ -41,194 +35,293 @@
       <property name="frameShadow" >
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" name="videoControls" >
+      <layout class="QVBoxLayout" name="verticalLayout" >
        <item>
-        <widget class="QLCDNumber" name="channelNumber" >
-         <property name="minimumSize" >
-          <size>
-           <width>70</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>70</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="frameShape" >
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="numDigits" >
-          <number>3</number>
-         </property>
-         <property name="segmentStyle" >
-          <enum>QLCDNumber::Flat</enum>
-         </property>
-         <property name="value" stdset="0" >
-          <double>1.000000000000000</double>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="layoutButtons" >
+         <item>
+          <widget class="QLCDNumber" name="channelNumber" >
+           <property name="minimumSize" >
+            <size>
+             <width>70</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>70</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="numDigits" >
+            <number>3</number>
+           </property>
+           <property name="segmentStyle" >
+            <enum>QLCDNumber::Flat</enum>
+           </property>
+           <property name="value" stdset="0" >
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonPlay" >
+           <property name="minimumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Play</string>
+           </property>
+           <property name="statusTip" >
+            <string>Play</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="images.qrc" >
+             <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
+           </property>
+           <property name="iconSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonStop" >
+           <property name="minimumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Stop</string>
+           </property>
+           <property name="statusTip" >
+            <string>Stop</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="images.qrc" >
+             <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
+           </property>
+           <property name="iconSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonBack" >
+           <property name="minimumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Back</string>
+           </property>
+           <property name="statusTip" >
+            <string>Back</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="images.qrc" >
+             <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
+           </property>
+           <property name="iconSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonNext" >
+           <property name="minimumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Next</string>
+           </property>
+           <property name="statusTip" >
+            <string>Next</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="images.qrc" >
+             <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
+           </property>
+           <property name="iconSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonRecord" >
+           <property name="minimumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Record Now</string>
+           </property>
+           <property name="statusTip" >
+            <string>Record Now</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="images.qrc" >
+             <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+           </property>
+           <property name="iconSize" >
+            <size>
+             <width>22</width>
+             <height>22</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonMute" >
+           <property name="maximumSize" >
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip" >
+            <string>Mute</string>
+           </property>
+           <property name="statusTip" >
+            <string>Mute</string>
+           </property>
+           <property name="icon" >
+            <iconset resource="images.qrc" >
+             <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
+           </property>
+           <property name="iconSize" >
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="checkable" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="volumeSlider" >
+           <property name="sizePolicy" >
+            <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximum" >
+            <number>200</number>
+           </property>
+           <property name="sliderPosition" >
+            <number>50</number>
+           </property>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelVolume" >
+           <property name="minimumSize" >
+            <size>
+             <width>20</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text" >
+            <string>50</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QPushButton" name="buttonPlay" >
-         <property name="minimumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip" >
-          <string>Play</string>
-         </property>
-         <property name="statusTip" >
-          <string>Play</string>
-         </property>
-         <property name="icon" >
-          <iconset resource="images.qrc" >
-           <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
-         </property>
-         <property name="iconSize" >
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonStop" >
-         <property name="minimumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip" >
-          <string>Stop</string>
-         </property>
-         <property name="statusTip" >
-          <string>Stop</string>
-         </property>
-         <property name="icon" >
-          <iconset resource="images.qrc" >
-           <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
-         </property>
-         <property name="iconSize" >
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonBack" >
-         <property name="minimumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip" >
-          <string>Back</string>
-         </property>
-         <property name="statusTip" >
-          <string>Back</string>
-         </property>
-         <property name="icon" >
-          <iconset resource="images.qrc" >
-           <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
-         </property>
-         <property name="iconSize" >
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonNext" >
-         <property name="minimumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip" >
-          <string>Next</string>
-         </property>
-         <property name="statusTip" >
-          <string>Next</string>
-         </property>
-         <property name="icon" >
-          <iconset resource="images.qrc" >
-           <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
-         </property>
-         <property name="iconSize" >
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonRecord" >
-         <property name="minimumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize" >
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip" >
-          <string>Record Now</string>
-         </property>
-         <property name="statusTip" >
-          <string>Record Now</string>
-         </property>
-         <property name="icon" >
-          <iconset resource="images.qrc" >
-           <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
-         </property>
-         <property name="iconSize" >
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="layoutDuration" >
+         <item>
+          <widget class="QLabel" name="labelDuration" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>00:00:00</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="durationSlider" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelLenght" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>00:00:00</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -677,6 +770,9 @@
    </property>
   </action>
   <action name="actionMute" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
    <property name="icon" >
     <iconset resource="images.qrc" >
      <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
@@ -739,5 +835,118 @@
  <resources>
   <include location="images.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>volumeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>labelVolume</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>413</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>486</x>
+     <y>511</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBack</sender>
+   <signal>clicked()</signal>
+   <receiver>actionBack</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>196</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonMute</sender>
+   <signal>clicked()</signal>
+   <receiver>actionMute</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>328</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonNext</sender>
+   <signal>clicked()</signal>
+   <receiver>actionNext</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>240</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonRecord</sender>
+   <signal>clicked()</signal>
+   <receiver>actionRecord</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>284</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonPlay</sender>
+   <signal>clicked()</signal>
+   <receiver>actionPlay</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>108</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonStop</sender>
+   <signal>clicked()</signal>
+   <receiver>actionStop</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>152</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

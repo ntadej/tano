@@ -4,7 +4,7 @@
 #include <phonon/videowidget.h>
 #include <phonon/mediaobject.h>
 #include <phonon/audiooutput.h>
-#include <phonon/volumeslider.h>
+#include <phonon/mediasource.h>
 
 #include <QTimer>
 #include <QPoint>
@@ -20,7 +20,6 @@ public:
 	void playTv(QString fileName, QString channelName);
 	void setVolume(qreal volume);
 
-	Phonon::VolumeSlider *slider();
 	QString currentMedia();
 	qreal volume();
 
@@ -34,9 +33,10 @@ public slots:
 	void controlPlay();
 	void controlStop();
 	void controlFull();
-	void controlMute();
+	void controlMute(bool mute);
 	void controlVUp();
 	void controlVDown();
+	void controlVolume(int vol);
 
 	void ratioOriginal();
 	void ratio43();
@@ -57,19 +57,22 @@ signals:
 	void wheel(bool);
 	void mouseMove();
 
+	void volumeChanged(int);
+
 private slots:
 	void hideMouse();
 
 private:
 	Phonon::AudioOutput *audio;
 	Phonon::MediaObject *channel;
-	Phonon::VolumeSlider *aslider;
+	Phonon::MediaSource source;
 
 	QString currentChannel;
 	QTimer *timer;
 	QPoint pos;
 
 	bool move;
+	int volumeOld;
 };
 
 #endif // VIDEO_H

@@ -9,9 +9,6 @@ Video::Video(QWidget *parent)
 {
 	channel = new Phonon::MediaObject(parent);
 	audio = new Phonon::AudioOutput(Phonon::VideoCategory, parent);
-	aslider = new Phonon::VolumeSlider;
-	aslider->setIconSize(QSize(32,32));
-	aslider->setAudioOutput(audio);
 	Phonon::createPath(channel, this);
 	Phonon::createPath(channel, audio);
 
@@ -19,10 +16,7 @@ Video::Video(QWidget *parent)
 	connect(timer, SIGNAL(timeout()), this, SLOT(hideMouse()));
 
 	audio->setVolume(0.5);
-	qDebug() << "Volume:" << audio->volume()*100;
-
 	pos = QPoint();
-
 	move = true;
 }
 
@@ -53,8 +47,10 @@ void Video::mousePressEvent(QMouseEvent *event)
 {
 	event->ignore();
 
-	if(event->button() == Qt::RightButton)
+	if(event->button() == Qt::RightButton) {
+		qApp->setOverrideCursor(Qt::ArrowCursor);
 		emit rightClick(event->globalPos());
+	}
 }
 void Video::wheelEvent(QWheelEvent *event)
 {
@@ -87,10 +83,6 @@ void Video::setVolume(qreal volume)
 {
 	audio->setVolume(volume);
 }
-Phonon::VolumeSlider *Video::slider()
-{
-	return aslider;
-}
 QString Video::currentMedia()
 {
 	return channel->currentSource().fileName();
@@ -103,12 +95,14 @@ qreal Video::volume()
 //Controls:
 void Video::controlPlay()
 {
+	channel->setCurrentSource(source);
 	channel->play();
 	emit playing(currentChannel);
 }
 void Video::controlStop()
 {
 	channel->stop();
+	source = channel->currentSource();
 	channel->setCurrentSource(QString("udp://"));
 	emit stopped();
 }
@@ -122,22 +116,43 @@ void Video::controlFull()
 		this->exitFullScreen();
 	}
 }
-void Video::controlMute()
+void Video::controlMute(bool mute)
 {
-	if(audio->isMuted())
+	if(!mute) {
 		audio->setMuted(false);
-	else
+		emit volumeChanged(volumeOld);
+	} else {
+		volumeOld = audio->volume()*100;
 		audio->setMuted(true);
+		emit volumeChanged(0);
+	}
 }
 void Video::controlVUp()
 {
-	audio->setVolume(audio->volume()+0.1);
-	qDebug() << "Volume:" << audio->volume()*100;
+	if(audio->volume()+0.1 <= 2)
+		audio->setVolume(audio->volume()+0.1);
+	else
+		audio->setVolume(1);
+	emit volumeChanged(audio->volume()*100);
 }
 void Video::controlVDown()
 {
-	audio->setVolume(audio->volume()-0.1);
-	qDebug() << "Volume:" << audio->volume()*100;
+	if(audio->volume()-0.1 >= 0)
+		audio->setVolume(audio->volume()-0.1);
+	else
+		audio->setVolume(0);
+	emit volumeChanged(audio->volume()*100);
+}
+void Video::controlVolume(int vol)
+{
+	qreal v = vol;
+	qreal n = v/100;
+	audio->setVolume(n);
+
+	if(this->isFullScreen()) {
+		timer->start(1000);
+		emit mouseMove();
+	}
 }
 
 //Ratio

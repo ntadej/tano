@@ -14,7 +14,6 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
 	sessionEnabled = s;
 
 	ui.setupUi(this);
-	ui.videoControls->addWidget(ui.videoWidget->slider());
 	ui.buttonRefresh->hide();
 	ui.labelNow->hide();
 	ui.labelNext->hide();
@@ -67,6 +66,7 @@ void Tano::createSession()
 		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 		session.beginGroup("Session");
 		ui.videoWidget->setVolume(session.value("volume",0.5).toString().toFloat());
+		ui.volumeSlider->setValue(session.value("volume",0.5).toString().toFloat()*100);
 		key(session.value("channel",1).toInt());
 		session.endGroup();
 	}
@@ -84,7 +84,6 @@ void Tano::createActions()
 
 	connect(ui.actionRecorder, SIGNAL(triggered()), record, SLOT(showRecorder()));
 	connect(ui.actionRecord, SIGNAL(triggered()), this, SLOT(recorder()));
-	connect(ui.buttonRecord, SIGNAL(clicked()), this, SLOT(recorder()));
 
 	connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
 
@@ -98,19 +97,21 @@ void Tano::createActions()
 	connect(ui.actionEpg, SIGNAL(triggered()), this, SLOT(showSiolEpg()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
-	connect(ui.buttonPlay, SIGNAL(clicked()), ui.videoWidget, SLOT(controlPlay()));
-	connect(ui.buttonStop, SIGNAL(clicked()), ui.videoWidget, SLOT(controlStop()));
-	connect(ui.buttonStop, SIGNAL(clicked()), this, SLOT(stop()));
-	connect(ui.buttonBack, SIGNAL(clicked()), select, SLOT(back()));
-	connect(ui.buttonNext, SIGNAL(clicked()), select, SLOT(next()));
 	connect(ui.actionPlay, SIGNAL(triggered()), ui.videoWidget, SLOT(controlPlay()));
 	connect(ui.actionStop, SIGNAL(triggered()), ui.videoWidget, SLOT(controlStop()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));
 	connect(ui.actionNext, SIGNAL(triggered()), select, SLOT(next()));
-	connect(ui.actionMute, SIGNAL(triggered()), ui.videoWidget, SLOT(controlMute()));
+	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.videoWidget, SLOT(controlMute(bool)));
+	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.buttonMute, SLOT(setChecked(bool)));
+	connect(ui.actionMute, SIGNAL(triggered(bool)), osd, SLOT(setMuted(bool)));
+	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.volumeSlider, SLOT(setDisabled(bool)));
 	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVUp()));
 	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVDown()));
+
+	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), ui.videoWidget, SLOT(controlVolume(int)));
+	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), osd, SLOT(setVolume(int)));
+	connect(ui.videoWidget, SIGNAL(volumeChanged(int)), ui.volumeSlider, SLOT(setValue(int)));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 
@@ -251,6 +252,7 @@ void Tano::play()
 	ui.epgToday->epgClear();
 
 	ui.channelNumber->display(channel->num());
+	osd->setNumber(channel->num());
 
 	ui.videoWidget->ratioOriginal();
 	ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
@@ -452,7 +454,13 @@ void Tano::lite()
 
 void Tano::osdSet()
 {
+	connect(osd, SIGNAL(play()), ui.actionPlay, SLOT(trigger()));
+	connect(osd, SIGNAL(stop()), ui.actionStop, SLOT(trigger()));
+	connect(osd, SIGNAL(back()), ui.actionBack, SLOT(trigger()));
+	connect(osd, SIGNAL(next()), ui.actionNext, SLOT(trigger()));
+	connect(osd, SIGNAL(mute()), ui.actionMute, SLOT(trigger()));
 
+	connect(osd, SIGNAL(volume(int)), ui.volumeSlider, SLOT(setValue(int)));
 }
 
 void Tano::recorder()
