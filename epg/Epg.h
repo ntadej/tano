@@ -27,13 +27,18 @@ signals:
 private slots:
 	void epg();
 	void epgPrint();
+	void epgInit();
+	void epgInitDone();
 
 private:
 	void epgNow();
 
+	bool init;
+
 	QString epgValue;
 	QString epgFull;
 	QString epgChannel;
+	QString epgFlag;
 	QStringList epgList;
 	QStringList epgListNow;
 

@@ -5,6 +5,8 @@
 
 Epg::Epg() {
 
+	init = false;
+
 	qDebug() << "EPG Success!";
 
 	setHost("www.siol.net");
@@ -14,20 +16,26 @@ Epg::Epg() {
 	edit = new QTextEdit();
 
     connect(timer, SIGNAL(timeout()), this, SLOT(epg()));
+
+    epgInit();
 }
 
 Epg::~Epg() {
 
 }
 
-
 void Epg::getEpg(QString epgP)
 {
-	if (epgP == "NI")
+	if (epgP == "NI") {
+		epgChannel = epgP;
 		return;
+	}
+
 	epgChannel = epgP;
-	epgFull = QString("/tv-spored.aspx?chn=" + epgChannel);
-	epg();
+	epgFull = QString("/tv-spored.aspx?chn=" + epgChannel + "&flag=" + epgFlag);
+
+	if(init)
+		epg();
 }
 
 void Epg::refresh()
@@ -35,6 +43,30 @@ void Epg::refresh()
     epg();
 }
 
+void Epg::epgInit()
+{
+	get("/tv-spored.aspx");
+
+	connect(this, SIGNAL(done(bool)), this, SLOT(epgInitDone()));
+}
+
+void Epg::epgInitDone()
+{
+	int n = 0;
+	QByteArray httpResponse = readAll();
+
+	epgValue = codec->toUnicode(httpResponse);
+
+	n = epgValue.indexOf("flag=",epgValue.indexOf("channels"));
+
+	for(int i=n+5;i<n+25;i++)
+		epgFlag.append(epgValue.at(i));
+
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgInitDone()));
+
+	init = true;
+	getEpg(epgChannel);
+}
 
 void Epg::epg()
 {
@@ -50,13 +82,9 @@ void Epg::epgPrint()
 
 	epgValue = codec->toUnicode(httpResponse);
 
-	//epgValue = string.replace(0, 2, "");
-	//epgValue = epgValue.replace(".2009: ", ".2009:;");
-	//epgValue = epgValue.replace(" //  ", ";");
-	//epgValue = epgValue.replace(" // ", ";");
-
 	if(!epgValue.contains("schedule_title")) {
 		disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
+		timer->start(100);
 		return;
 	}
 
@@ -91,6 +119,8 @@ void Epg::epgPrint()
 	emit epgDoneFull(epgList);
 
 	epgNow();
+
+	timer->start(60000);
 }
 
 void Epg::epgNow()
