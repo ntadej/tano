@@ -3,6 +3,7 @@
 
 #include <QtGui/QWidget>
 #include <QTimer>
+#include <QTime>
 #include <QMouseEvent>
 #include <QPoint>
 
@@ -24,6 +25,10 @@ public slots:
 	void setVolume(int v);
 	void setMuted(bool mute);
 
+	void setStatus(bool status);
+	void setLenght(qint64 l);
+	void setDuration(qint64 d);
+
 signals:
 	void play();
 	void stop();
@@ -31,12 +36,14 @@ signals:
 	void next();
 	void mute();
 	void volume(int);
+	void seek(int);
 
 private:
     Ui::TanoOsdClass ui;
 
     QTimer *timer;
-    bool moveEnabled;
+    QTime timeNow;
+    bool enabled;
 };
 
 #endif // TANOOSD_H

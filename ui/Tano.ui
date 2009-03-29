@@ -22,18 +22,12 @@
      <widget class="Video" native="1" name="videoWidget" />
     </item>
     <item>
-     <widget class="QFrame" name="videoControlsFrame" >
+     <widget class="QWidget" native="1" name="controlsWidget" >
       <property name="sizePolicy" >
        <sizepolicy vsizetype="Maximum" hsizetype="Preferred" >
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
-      </property>
-      <property name="frameShape" >
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow" >
-       <enum>QFrame::Raised</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout" >
        <item>
@@ -293,9 +287,6 @@
         <layout class="QHBoxLayout" name="layoutDuration" >
          <item>
           <widget class="QLabel" name="labelDuration" >
-           <property name="enabled" >
-            <bool>false</bool>
-           </property>
            <property name="text" >
             <string>00:00:00</string>
            </property>
@@ -303,9 +294,6 @@
          </item>
          <item>
           <widget class="QSlider" name="durationSlider" >
-           <property name="enabled" >
-            <bool>false</bool>
-           </property>
            <property name="orientation" >
             <enum>Qt::Horizontal</enum>
            </property>
@@ -313,9 +301,6 @@
          </item>
          <item>
           <widget class="QLabel" name="labelLenght" >
-           <property name="enabled" >
-            <bool>false</bool>
-           </property>
            <property name="text" >
             <string>00:00:00</string>
            </property>
@@ -543,6 +528,20 @@
      </item>
     </layout>
    </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBarOsd" >
+   <property name="windowTitle" >
+    <string>Controls Toolbar</string>
+   </property>
+   <property name="allowedAreas" >
+    <set>Qt::BottomToolBarArea|Qt::TopToolBarArea</set>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
   </widget>
   <action name="actionAbout" >
    <property name="icon" >
@@ -853,22 +852,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>buttonBack</sender>
-   <signal>clicked()</signal>
-   <receiver>actionBack</receiver>
-   <slot>trigger()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>196</x>
-     <y>511</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>buttonMute</sender>
    <signal>clicked()</signal>
    <receiver>actionMute</receiver>
@@ -876,22 +859,6 @@
    <hints>
     <hint type="sourcelabel" >
      <x>328</x>
-     <y>511</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonNext</sender>
-   <signal>clicked()</signal>
-   <receiver>actionNext</receiver>
-   <slot>trigger()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>240</x>
      <y>511</y>
     </hint>
     <hint type="destinationlabel" >
@@ -917,13 +884,29 @@
    </hints>
   </connection>
   <connection>
-   <sender>buttonPlay</sender>
+   <sender>buttonNext</sender>
    <signal>clicked()</signal>
-   <receiver>actionPlay</receiver>
+   <receiver>actionNext</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>108</x>
+     <x>240</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBack</sender>
+   <signal>clicked()</signal>
+   <receiver>actionBack</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>196</x>
      <y>511</y>
     </hint>
     <hint type="destinationlabel" >
@@ -940,6 +923,22 @@
    <hints>
     <hint type="sourcelabel" >
      <x>152</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonPlay</sender>
+   <signal>clicked()</signal>
+   <receiver>actionPlay</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>108</x>
      <y>511</y>
     </hint>
     <hint type="destinationlabel" >

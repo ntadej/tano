@@ -43,6 +43,7 @@ private slots:
 private:
     Ui::RecorderClass ui;
 
+    bool recording;
     bool start;
     Channel *channel;
 

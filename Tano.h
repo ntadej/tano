@@ -3,6 +3,7 @@
 
 #include <QtGui/QMainWindow>
 #include <QCloseEvent>
+#include <QTime>
 
 #include "ui_Tano.h"
 #include "Updates.h"
@@ -61,6 +62,9 @@ private slots:
     void recorder();
     void help();
 
+    void time(qint64 t);
+    void totalTime(qint64 t);
+
     void osdSet();
 
 private:
@@ -90,6 +94,8 @@ private:
 	QActionGroup *ratioGroup;
 	QActionGroup *cropGroup;
 	QList<QAction*> actions;
+
+	QTime timeNow;
 
 	bool isLite;
 	bool sessionEnabled;

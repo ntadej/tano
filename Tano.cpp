@@ -33,6 +33,8 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
 
 	editor = new EditPlaylist(parent, fileName);
 
+	ui.toolBarOsd->addWidget(ui.controlsWidget);
+
 	createMenus();
 	createActions();
 	createShortcuts();
@@ -104,7 +106,6 @@ void Tano::createActions()
 	connect(ui.actionNext, SIGNAL(triggered()), select, SLOT(next()));
 	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.videoWidget, SLOT(controlMute(bool)));
 	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.buttonMute, SLOT(setChecked(bool)));
-	connect(ui.actionMute, SIGNAL(triggered(bool)), osd, SLOT(setMuted(bool)));
 	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.volumeSlider, SLOT(setDisabled(bool)));
 	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVUp()));
 	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVDown()));
@@ -112,6 +113,7 @@ void Tano::createActions()
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), ui.videoWidget, SLOT(controlVolume(int)));
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), osd, SLOT(setVolume(int)));
 	connect(ui.videoWidget, SIGNAL(volumeChanged(int)), ui.volumeSlider, SLOT(setValue(int)));
+	connect(ui.durationSlider, SIGNAL(sliderMoved(int)), ui.videoWidget, SLOT(controlDuration(int)));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 
@@ -129,8 +131,8 @@ void Tano::createActions()
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
 	connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
 	connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
-	connect(ui.videoWidget, SIGNAL(full()), osd, SLOT(hideOsd()));
-	connect(ui.videoWidget, SIGNAL(mouseMove()), osd, SLOT(showOsd()));
+	connect(ui.videoWidget, SIGNAL(tick(qint64)), this, SLOT(time(qint64)));
+	connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), this, SLOT(totalTime(qint64)));
 
 	connect(epg, SIGNAL(epgDone(QStringList)), this, SLOT(showEpg(QStringList)));
 	connect(epg, SIGNAL(epgDoneFull(QStringList)), ui.epgToday, SLOT(setEpg(QStringList)));
@@ -439,7 +441,6 @@ void Tano::lite()
 		ui.toolBar->show();
 		//ui.menubar->show();
 		ui.statusbar->show();
-		ui.videoControlsFrame->show();
 		isLite = false;
 	} else {
 		ui.centralLayout-> setContentsMargins(0,0,0,0);
@@ -447,9 +448,24 @@ void Tano::lite()
 		ui.toolBar->hide();
 		//ui.menubar->hide(); Causes shortcuts not working
 		ui.statusbar->hide();
-		ui.videoControlsFrame->hide();
 		isLite = true;
 	}
+}
+
+void Tano::time(qint64 t) {
+	int tm = t*1;
+	timeNow = QTime();
+	timeNow = timeNow.addMSecs(tm);
+	ui.labelDuration->setText(timeNow.toString("hh:mm:ss"));
+	ui.durationSlider->setValue(tm);
+}
+
+void Tano::totalTime(qint64 t) {
+	int tm = t*1;
+	ui.durationSlider->setMaximum(tm);
+	timeNow = QTime();
+	timeNow = timeNow.addMSecs(tm);
+	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
 }
 
 void Tano::osdSet()
@@ -460,7 +476,17 @@ void Tano::osdSet()
 	connect(osd, SIGNAL(next()), ui.actionNext, SLOT(trigger()));
 	connect(osd, SIGNAL(mute()), ui.actionMute, SLOT(trigger()));
 
+	connect(ui.actionMute, SIGNAL(triggered(bool)), osd, SLOT(setMuted(bool)));
+
+	connect(ui.videoWidget, SIGNAL(full()), osd, SLOT(hideOsd()));
+	connect(ui.videoWidget, SIGNAL(mouseMove()), osd, SLOT(showOsd()));
+	connect(ui.videoWidget, SIGNAL(osd(bool)), osd, SLOT(setStatus(bool)));
+
 	connect(osd, SIGNAL(volume(int)), ui.volumeSlider, SLOT(setValue(int)));
+
+	connect(ui.videoWidget, SIGNAL(tick(qint64)), osd, SLOT(setDuration(qint64)));
+	connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), osd, SLOT(setLenght(qint64)));
+	connect(osd, SIGNAL(seek(int)), ui.videoWidget, SLOT(controlDuration(int)));
 }
 
 void Tano::recorder()

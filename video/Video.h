@@ -37,6 +37,7 @@ public slots:
 	void controlVUp();
 	void controlVDown();
 	void controlVolume(int vol);
+	void controlDuration(int d);
 
 	void ratioOriginal();
 	void ratio43();
@@ -58,6 +59,11 @@ signals:
 	void mouseMove();
 
 	void volumeChanged(int);
+
+	void osd(bool);
+
+	void tick(qint64);
+	void totalTimeChanged(qint64);
 
 private slots:
 	void hideMouse();

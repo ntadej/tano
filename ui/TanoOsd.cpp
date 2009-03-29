@@ -9,7 +9,7 @@ TanoOsd::TanoOsd(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	moveEnabled = true;
+	enabled = true;
 
 	this->setWindowFlags(Qt::ToolTip);
 
@@ -22,6 +22,7 @@ TanoOsd::TanoOsd(QWidget *parent)
 	connect(ui.buttonNext, SIGNAL(clicked()), this, SIGNAL(next()));
 	connect(ui.buttonMute, SIGNAL(clicked()), this, SIGNAL(mute()));
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), this, SIGNAL(volume(int)));
+	connect(ui.durationSlider, SIGNAL(sliderMoved(int)), this, SIGNAL(seek(int)));
 }
 
 TanoOsd::~TanoOsd()
@@ -34,14 +35,17 @@ void TanoOsd::showOsd()
 	int w = QApplication::desktop()->width();
 	int h = QApplication::desktop()->height();
 	timer->start(1000);
-	this->show();
+	this->resize(w*0.75,this->height());
 	this->move(w/2-this->width()/2,h-this->height());
+	this->show();
 }
 
 void TanoOsd::hideOsd()
 {
-	timer->stop();
-	this->hide();
+	if(enabled) {
+		timer->stop();
+		this->hide();
+	}
 }
 
 void TanoOsd::setNumber(int n)
@@ -58,4 +62,27 @@ void TanoOsd::setMuted(bool mute)
 {
 	ui.buttonMute->setChecked(mute);
 	ui.volumeSlider->setDisabled(mute);
+}
+
+void TanoOsd::setStatus(bool status)
+{
+	enabled = status;
+}
+
+void TanoOsd::setDuration(qint64 d)
+{
+	int tm = d*1;
+	timeNow = QTime();
+	timeNow = timeNow.addMSecs(tm);
+	ui.labelDuration->setText(timeNow.toString("hh:mm:ss"));
+	ui.durationSlider->setValue(tm);
+}
+
+void TanoOsd::setLenght(qint64 l)
+{
+	int tm = l*1;
+	ui.durationSlider->setMaximum(tm);
+	timeNow = QTime();
+	timeNow = timeNow.addMSecs(tm);
+	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
 }

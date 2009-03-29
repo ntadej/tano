@@ -63,7 +63,7 @@
             </channel>
             <channel>
                 <title>TV 1000</title>
-                <name>TV 1000 Balkan</name>
+                <name>Viasat TV 1000</name>
                 <epg>TV1000</epg>
                 <language>angleški - podnaslovljen</language>
                 <url>udp://@239.255.0.46:5002</url>
@@ -216,7 +216,7 @@
                 <url>udp://@239.255.0.84:5002</url>
             </channel>
             <channel>
-                <title>Boomerang </title>
+                <title>Boomerang</title>
                 <name>Boomerang TV</name>
                 <epg>BOOMERANG</epg>
                 <language>angleški</language>
@@ -233,8 +233,8 @@
         <category expanded="false"type="sub">
             <title>Glasbeni</title>
             <channel>
-                <title>Viva </title>
-                <name>Viva </name>
+                <title>Viva</title>
+                <name>Viva</name>
                 <epg>VIVA</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.53:5002</url>
@@ -256,7 +256,7 @@
             <channel>
                 <title>MTV Hits</title>
                 <name>Music Television Hits</name>
-                <epg>MTM2</epg>
+                <epg>MTVH</epg>
                 <language>angleški</language>
                 <url>udp://@239.255.0.184:5002</url>
             </channel>
@@ -294,6 +294,13 @@
                 <epg>MCM</epg>
                 <language>francoski</language>
                 <url>udp://@239.255.0.66:5002</url>
+            </channel>
+            <channel>
+                <title>Trace TV</title>
+                <name>Trace TV</name>
+                <epg>TRACE</epg>
+                <language>francoski</language>
+                <url>udp://@239.255.0.150:5002</url>
             </channel>
             <channel>
                 <title>Čarli TV</title>
@@ -411,13 +418,6 @@
                 <url>udp://@239.255.0.50:5002</url>
             </channel>
             <channel>
-                <title>Phoenix </title>
-                <name>Phoenix </name>
-                <epg>PHOENIX</epg>
-                <language>nemški</language>
-                <url>udp://@239.255.0.32:5002</url>
-            </channel>
-            <channel>
                 <title>Animaux</title>
                 <name>Animaux</name>
                 <epg>ANIMAUX</epg>
@@ -477,14 +477,14 @@
                 <url>udp://@239.255.0.49:5002</url>
             </channel>
             <channel>
-                <title>NASN</title>
-                <name>North American Sports Network </name>
+                <title>ESPN America</title>
+                <name>ESPN America</name>
                 <epg>NASN</epg>
                 <language>angleški</language>
                 <url>udp://@239.255.0.164:5002</url>
             </channel>
             <channel>
-                <title>ESPN</title>
+                <title>ESPN Classic</title>
                 <name>ESPN Classic</name>
                 <epg>ESPN</epg>
                 <language>angleški</language>
@@ -571,43 +571,36 @@
                 <url>udp://@239.255.0.89:5002</url>
             </channel>
             <channel>
-                <title>ZDF </title>
-                <name>Zweites Deutches Fernsehen</name>
-                <epg>ZDF</epg>
-                <language>nemški</language>
-                <url>udp://@239.255.0.5:5002</url>
-            </channel>
-            <channel>
-                <title>3SAT </title>
+                <title>3SAT</title>
                 <name>Drei Sat</name>
                 <epg>3SAT</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.6:5002</url>
             </channel>
             <channel>
-                <title>RTL </title>
-                <name>RTL </name>
+                <title>RTL</title>
+                <name>RTL</name>
                 <epg>RTL</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.14:5002</url>
             </channel>
             <channel>
-                <title>RTL II </title>
-                <name>RTL II </name>
+                <title>RTL II</title>
+                <name>RTL II</name>
                 <epg>RTL2</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.15:5002</url>
             </channel>
             <channel>
-                <title>Super RTL </title>
-                <name>Super RTL </name>
+                <title>Super RTL</title>
+                <name>Super RTL</name>
                 <epg>SUPERRTL</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.16:5002</url>
             </channel>
             <channel>
-                <title>VOX </title>
-                <name>VOX </name>
+                <title>VOX</title>
+                <name>VOX</name>
                 <epg>VOX</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.86:5002</url>
@@ -627,11 +620,18 @@
                 <url>udp://@239.255.0.17:5002</url>
             </channel>
             <channel>
-                <title>Kabel 1 </title>
+                <title>Kabel 1</title>
                 <name>Kabel Eins</name>
                 <epg>KABEL1</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.18:5002</url>
+            </channel>
+            <channel>
+                <title>SAT 1</title>
+                <name>SAT 1</name>
+                <epg>SAT1</epg>
+                <language>nemški</language>
+                <url>udp://@239.255.0.21:5002</url>
             </channel>
             <channel>
                 <title>Planet TV</title>
@@ -662,7 +662,7 @@
                 <url>udp://@239.255.0.7:5002</url>
             </channel>
             <channel>
-                <title>Boomerang </title>
+                <title>Boomerang</title>
                 <name>Boomerang TV</name>
                 <epg>BOOMERANG</epg>
                 <language>angleški</language>
@@ -688,13 +688,6 @@
                 <epg>ROMANTICA</epg>
                 <language>španski</language>
                 <url>udp://@239.255.0.145:5002</url>
-            </channel>
-            <channel>
-                <title>Trace TV</title>
-                <name>Trace TV</name>
-                <epg>TRACE</epg>
-                <language>francoski</language>
-                <url>udp://@239.255.0.150:5002</url>
             </channel>
             <channel>
                 <title>Arte</title>
@@ -763,19 +756,33 @@
                 <url>udp://@239.255.0.63:5002</url>
             </channel>
             <channel>
-                <title>ORF1 </title>
+                <title>ORF1</title>
                 <name>Österreichischer Rundfunk 1</name>
                 <epg>ORF1</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.79:5002</url>
             </channel>
             <channel>
-                <title>ORF2 </title>
+                <title>ORF2</title>
                 <name>Österreichischer Rundfunk 2</name>
                 <epg>ORF2</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.39:5002</url>
             </channel>
+            <channel>
+            	<title>ARD</title>
+            	<name>ARD - Das Erste</name>
+            	<epg>ARD</epg>
+            	<language>nemški</language>
+            	<url>udp://@239.255.0.32:5002</url>
+            </channel>
+			<channel>
+				<title>ZDF</title>
+				<name>Zweites Deutches Fernsehen</name>
+				<epg>ZDF</epg>
+				<language>nemški</language>
+				<url>udp://@239.255.0.5:5002</url>
+			</channel>
             <channel>
                 <title>RAI 1</title>
                 <name>RAI Uno</name>
@@ -847,14 +854,14 @@
                 <url>udp://@239.255.0.178:5002</url>
             </channel>
             <channel>
-                <title>WDR </title>
+                <title>WDR</title>
                 <name>Westdeutscher Rundfunk</name>
                 <epg>NI</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.29:5002</url>
             </channel>
             <channel>
-                <title>BW </title>
+                <title>BW</title>
                 <name>Baden-Württemberg</name>
                 <epg>NI</epg>
                 <language>nemški</language>
@@ -934,25 +941,18 @@
                 <url>udp://@239.255.0.58:5002</url>
             </channel>
             <channel>
-                <title>24 Horas </title>
+                <title>24 Horas</title>
                 <name>Canal 24 Horas</name>
                 <epg>24HORAS</epg>
                 <language>španski</language>
                 <url>udp://@239.255.0.59:5002</url>
             </channel>
             <channel>
-                <title>N-TV </title>
+                <title>N-TV</title>
                 <name>Nachrichtenfernsehen</name>
                 <epg>NI</epg>
                 <language>nemški</language>
                 <url>udp://@239.255.0.54:5002</url>
-            </channel>
-            <channel>
-                <title>SAT 1 </title>
-                <name>SAT 1</name>
-                <epg>SAT1</epg>
-                <language>nemški</language>
-                <url>udp://@239.255.0.21:5002</url>
             </channel>
             <channel>
                 <title>N24</title>
@@ -984,6 +984,13 @@
                 <epg>NET</epg>
                 <language>slovenski</language>
                 <url>udp://@239.255.0.100:5002</url>
+            </channel>
+            <channel>
+            	<title>Klik TV</title>
+            	<name>Klik TV</name>
+            	<epg>KLIK</epg>
+            	<language>slovenski</language>
+            	<url>udp://@239.255.4.74:5002</url>
             </channel>
             <channel>
                 <title>RTS Maribor</title>
@@ -1118,20 +1125,34 @@
             <language>angleški</language>
             <url>udp://@239.255.0.202:5002</url>
         </channel>
-        <channel>
-            <title>Testni HD</title>
-            <name>Testni HD program</name>
-            <epg>NI</epg>
-            <language>angleški</language>
-            <url>udp://@239.255.0.201:5002</url>
-        </channel>
-        <channel>
-            <title>Testni HD 2</title>
-            <name>Testni HD program 2</name>
-            <epg>NI</epg>
-            <language>angleški</language>
-            <url>udp://@239.255.0.203:5002</url>
-        </channel>
+		<channel>
+			<title>Testni HD 1</title>
+			<name>Testni HD program 1</name>
+			<epg>NI</epg>
+			<language>angleški</language>
+			<url>udp://@239.255.4.201:5002</url>
+		</channel>
+		<channel>
+			<title>Testni HD 2</title>
+			<name>Testni HD program 2</name>
+			<epg>NI</epg>
+			<language>angleški</language>
+			<url>Udp://@239.255.4.204:5002</url>
+		</channel>
+		<channel>
+			<title>Testni HD 3</title>
+			<name>Testni HD program 3</name>
+			<epg>NI</epg>
+			<language>angleški</language>
+			<url>Udp://@239.255.4.205:5002</url>
+		</channel>
+		<channel>
+			<title>Testni HD 4</title>
+			<name>Testni HD program 4</name>
+			<epg>NI</epg>
+			<language>angleški</language>
+			<url>Udp://@239.255.4.207:5002</url>
+		</channel>
     </category>
     <category expanded="false"type="main">
         <title>SiOL Radio</title>

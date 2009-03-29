@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>84</height>
+    <height>100</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" >
@@ -27,7 +27,7 @@
         </size>
        </property>
        <property name="frameShadow" >
-        <enum>QFrame::Raised</enum>
+        <enum>QFrame::Sunken</enum>
        </property>
        <property name="numDigits" >
         <number>3</number>
@@ -249,9 +249,6 @@
     <layout class="QHBoxLayout" name="durationLayout" >
      <item>
       <widget class="QLabel" name="labelDuration" >
-       <property name="enabled" >
-        <bool>false</bool>
-       </property>
        <property name="text" >
         <string>00:00:00</string>
        </property>
@@ -259,9 +256,6 @@
      </item>
      <item>
       <widget class="QSlider" name="durationSlider" >
-       <property name="enabled" >
-        <bool>false</bool>
-       </property>
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
@@ -269,9 +263,6 @@
      </item>
      <item>
       <widget class="QLabel" name="labelLenght" >
-       <property name="enabled" >
-        <bool>false</bool>
-       </property>
        <property name="text" >
         <string>00:00:00</string>
        </property>

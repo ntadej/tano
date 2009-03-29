@@ -32,6 +32,8 @@ Recorder::Recorder(QWidget *parent)
 	openPlaylist();
 	start = false;
 
+	recording = false;
+
 	tray = new QMenu();
 	tray->addAction(ui.actionRestore);
 	tray->addSeparator();
@@ -85,10 +87,15 @@ void Recorder::showRecorder()
 
 void Recorder::closeRecorder()
 {
-	int ret = QMessageBox::warning(this, tr("Tano Player"),
+	int ret;
+	if(recording) {
+		ret = QMessageBox::warning(this, tr("Tano Player"),
 								   tr("Do you want to close Recorder?\nThis will stop any recording in progress."),
 								   QMessageBox::Close | QMessageBox::Cancel,
 								   QMessageBox::Close);
+	} else {
+		ret = QMessageBox::Close;
+	}
 
 	switch (ret) {
 		case QMessageBox::Close:
@@ -196,6 +203,8 @@ void Recorder::record(bool status)
 
 		ui.buttonRecord->setText(tr("Stop recording"));
 		ui.actionRecord->setText(tr("Stop recording"));
+
+		recording = true;
 	} else {
 		frip->terminate();
 		timer->stop();
@@ -206,6 +215,10 @@ void Recorder::record(bool status)
 
 		ui.buttonRecord->setText(tr("Record"));
 		ui.actionRecord->setText(tr("Record"));
+
+		trayIcon->changeToolTip("stop");
+
+		recording = false;
 	}
 }
 

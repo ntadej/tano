@@ -1,6 +1,7 @@
 #include <QMouseEvent>
 #include <QDebug>
 #include <QApplication>
+#include <QDesktopWidget>
 
 #include "Video.h"
 
@@ -8,12 +9,16 @@ Video::Video(QWidget *parent)
     : VideoWidget(parent)
 {
 	channel = new Phonon::MediaObject(parent);
+	channel->setTickInterval(1000);
 	audio = new Phonon::AudioOutput(Phonon::VideoCategory, parent);
 	Phonon::createPath(channel, this);
 	Phonon::createPath(channel, audio);
 
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(hideMouse()));
+
+	connect(channel, SIGNAL(tick(qint64)), this, SIGNAL(tick(qint64)));
+	connect(channel, SIGNAL(totalTimeChanged(qint64)), this, SIGNAL(totalTimeChanged(qint64)));
 
 	audio->setVolume(0.5);
 	pos = QPoint();
@@ -36,11 +41,21 @@ void Video::mouseMoveEvent(QMouseEvent *event)
 {
 	event->ignore();
 
+	int w = QApplication::desktop()->width();
+	int h = QApplication::desktop()->height();
+
 	if(this->isFullScreen() && event->globalPos() != pos && move) {
 		qApp->setOverrideCursor(Qt::ArrowCursor);
-		timer->start(1000);
 		emit mouseMove();
 		pos = event->globalPos();
+
+		if(event->globalPos().x() > w/2-w*0.75/2 && event->globalPos().x() < w-(w/2-w*0.75/2) && event->globalPos().y() > h-100) {
+			emit osd(false);
+			timer->stop();
+		} else {
+			emit osd(true);
+			timer->start(1000);
+		}
 	}
 }
 void Video::mousePressEvent(QMouseEvent *event)
@@ -153,6 +168,11 @@ void Video::controlVolume(int vol)
 		timer->start(1000);
 		emit mouseMove();
 	}
+}
+void Video::controlDuration(int d)
+{
+	qint64 tm = d;
+	channel->seek(tm);
 }
 
 //Ratio
