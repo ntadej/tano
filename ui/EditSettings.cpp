@@ -90,9 +90,33 @@ void EditSettings::ok()
 		settings->setValue("playlist",ui.pEdit->text());
 	}
 
+	settings->beginGroup("GUI");
+	if(ui.checkLite->isChecked()) {
+		settings->setValue("lite",true);
+	} else {
+		settings->setValue("lite",false);
+	}
+	if(ui.checkTop->isChecked()) {
+		settings->setValue("ontop",true);
+	} else {
+		settings->setValue("ontop",false);
+	}
+	if(ui.checkOsd->isChecked()) {
+		settings->setValue("OSD",true);
+	} else {
+		settings->setValue("OSD",false);
+	}
+	settings->endGroup();
+
 	settings->beginGroup("Recorder");
-	if(ui.pEditDir->text() != "")
-		settings->setValue("dir",ui.pEditDir->text());
+	if(ui.checkRecorder->isChecked()) {
+		settings->setValue("enabled",true);
+		if(ui.pEditDir->text() != "")
+			settings->setValue("dir",ui.pEditDir->text());
+	} else {
+		settings->setValue("enabled",false);
+		settings->remove("dir");
+	}
 	settings->endGroup();
 
 	settings->beginGroup("Shortcuts");
@@ -138,8 +162,23 @@ void EditSettings::read()
 		ui.pEdit->setText(settings->value("playlist").toString());
 	}
 
+	settings->beginGroup("GUI");
+	if(settings->value("lite",false).toBool()) {
+		ui.checkLite->setChecked(true);
+	}
+	if(settings->value("ontop",false).toBool()) {
+		ui.checkTop->setChecked(true);
+	}
+	if(settings->value("OSD",true).toBool()) {
+		ui.checkOsd->setChecked(true);
+	}
+	settings->endGroup();
+
 	settings->beginGroup("Recorder");
-	ui.pEditDir->setText(settings->value("dir","").toString());
+	if(settings->value("enabled",true).toBool()) {
+		ui.checkRecorder->toggle();
+		ui.pEditDir->setText(settings->value("dir","").toString());
+	}
 	settings->endGroup();
 }
 

@@ -29,6 +29,8 @@ public slots:
 	void setLenght(qint64 l);
 	void setDuration(qint64 d);
 
+	void disableRecorder();
+
 signals:
 	void play();
 	void stop();

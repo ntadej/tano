@@ -86,3 +86,8 @@ void TanoOsd::setLenght(qint64 l)
 	timeNow = timeNow.addMSecs(tm);
 	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
 }
+
+void TanoOsd::disableRecorder()
+{
+	ui.buttonRecord->hide();
+}

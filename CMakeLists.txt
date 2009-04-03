@@ -92,9 +92,9 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
 	Tano.h
 	Updates.h
-	settings/EditSettings.h
 	video/Video.h
 	ui/About.h
+	ui/EditSettings.h
 	ui/TrayIcon.h
 	ui/TrayRecorder.h
 	ui/TanoOsd.h
@@ -114,11 +114,11 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	channels/Channel.cpp
 	channels/ChannelEpg.cpp
 	channels/EditPlaylist.cpp
-	settings/EditSettings.cpp
 	video/Video.cpp
 	xml/tanogenerator.cpp
 	xml/tanohandler.cpp
 	ui/About.cpp
+	ui/EditSettings.cpp
 	ui/TrayIcon.cpp
 	ui/TrayRecorder.cpp
 	ui/TanoOsd.cpp

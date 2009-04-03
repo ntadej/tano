@@ -18,6 +18,7 @@ public:
 
 public slots:
 	void refresh();
+	void reload();
 	void stop();
 
 signals:
@@ -27,12 +28,11 @@ signals:
 private slots:
 	void epg();
 	void epgPrint();
+	void epgNow();
 	void epgInit();
 	void epgInitDone();
 
 private:
-	void epgNow();
-
 	bool init;
 
 	QString epgValue;

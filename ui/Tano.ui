@@ -318,8 +318,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>0</width>
-     <height>0</height>
+     <width>800</width>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile" >
@@ -478,11 +478,22 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonRefresh" >
-       <property name="text" >
-        <string>Refresh EPG</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout" >
+       <item>
+        <widget class="QPushButton" name="buttonRefresh" >
+         <property name="text" >
+          <string>Refresh</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonReload" >
+         <property name="text" >
+          <string>Reload</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <widget class="QTabWidget" name="channelTabWidget" >
@@ -618,6 +629,9 @@
    </property>
   </action>
   <action name="actionHelp" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="icon" >
     <iconset resource="images.qrc" >
      <normaloff>:/icons/images/help.png</normaloff>:/icons/images/help.png</iconset>

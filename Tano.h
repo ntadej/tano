@@ -4,13 +4,14 @@
 #include <QtGui/QMainWindow>
 #include <QCloseEvent>
 #include <QTime>
+#include <QSettings>
 
 #include "ui_Tano.h"
 #include "Updates.h"
 #include "xml/tanohandler.h"
 #include "channels/Channel.h"
 #include "channels/EditPlaylist.h"
-#include "settings/EditSettings.h"
+#include "ui/EditSettings.h"
 #include "ui/TrayIcon.h"
 #include "ui/TanoOsd.h"
 #include "control/ChannelSelect.h"
@@ -24,7 +25,7 @@ class Tano : public QMainWindow
     Q_OBJECT
 
 public:
-    Tano(QWidget *parent = 0, QString defaultPlaylist = "siol.xml", bool s = true);
+    Tano(QWidget *parent = 0);
     ~Tano();
 
 protected:
@@ -41,7 +42,7 @@ private slots:
     void openPlaylist(bool start = false);
     void openFile();
     void openUrl();
-    void settings();
+    void showSettings();
     void showBrowser();
     void showSiolEpg();
 
@@ -65,8 +66,6 @@ private slots:
     void time(qint64 t);
     void totalTime(qint64 t);
 
-    void osdSet();
-
 private:
     Ui::Tano ui;
     Qt::WindowFlags flags;
@@ -74,6 +73,7 @@ private:
     Updates *update;
     Recorder *record;
     TanoOsd *osd;
+    QSettings *settings;
 
     TanoHandler *handler;
     Channel *channel;
@@ -98,12 +98,14 @@ private:
 	QTime timeNow;
 
 	bool isLite;
+	bool osdEnabled;
 	bool sessionEnabled;
 
-    void createActions();
+    void createConnections();
     void createMenus();
     void createShortcuts();
-    void createSession();
+    void createSettings();
+    void createOsd();
 };
 
 #endif // TANO_H

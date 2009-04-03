@@ -7,14 +7,13 @@
 #include "Tano.h"
 #include "Common.h"
 
-Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
+Tano::Tano(QWidget *parent)
     : QMainWindow(parent)
 {
-	isLite = false;
-	sessionEnabled = s;
-
 	ui.setupUi(this);
+	ui.toolBarOsd->addWidget(ui.controlsWidget);
 	ui.buttonRefresh->hide();
+	ui.buttonReload->hide();
 	ui.labelNow->hide();
 	ui.labelNext->hide();
 	ui.labelLanguage->hide();
@@ -25,31 +24,21 @@ Tano::Tano(QWidget *parent, QString defaultPlaylist, bool s)
 	handler = new TanoHandler(ui.playlistTree);
 	epg = new Epg();
 	browser = new EpgBrowser();
-	record = new Recorder();
-	osd = new TanoOsd();
 
-	defaultP = defaultPlaylist;
-	openPlaylist(true);
-
-	editor = new EditPlaylist(parent, fileName);
-
-	ui.toolBarOsd->addWidget(ui.controlsWidget);
+	createSettings();
 
 	createMenus();
-	createActions();
+	createConnections();
 	createShortcuts();
-	createSession();
-	osdSet();
 }
 
 Tano::~Tano()
 {
 	if(sessionEnabled) {
-		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-		session.beginGroup("Session");
-		session.setValue("volume", ui.videoWidget->volume());
-		session.setValue("channel", ui.channelNumber->value());
-		session.endGroup();
+		settings->beginGroup("Session");
+		settings->setValue("volume", ui.videoWidget->volume());
+		settings->setValue("channel", ui.channelNumber->value());
+		settings->endGroup();
 	}
 }
 
@@ -62,19 +51,60 @@ void Tano::closeEvent(QCloseEvent *event)
     }
 }
 
-void Tano::createSession()
+void Tano::createSettings()
 {
+	settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+
+	sessionEnabled = settings->value("session", true).toBool();
+	defaultP = settings->value("playlist","siol.xml").toString();
+
+	openPlaylist(true);
+	editor = new EditPlaylist(this, fileName);
+
+	settings->beginGroup("GUI");
+	if(settings->value("lite",false).toBool()) {
+		lite();
+	} else {
+		isLite = false;
+	}
+	if(settings->value("ontop",false).toBool()) {
+		ui.actionTop->trigger();
+		top();
+	}
+	if(settings->value("OSD",true).toBool()) {
+		osdEnabled = true;
+		osd = new TanoOsd();
+		createOsd();
+	} else {
+		osdEnabled = false;
+	}
+	settings->endGroup();
+
+	settings->beginGroup("Recorder");
+	if(settings->value("enabled",true).toBool()) {
+		record = new Recorder();
+		connect(ui.actionRecorder, SIGNAL(triggered()), record, SLOT(showRecorder()));
+		connect(ui.actionRecord, SIGNAL(triggered()), this, SLOT(recorder()));
+	} else {
+		ui.buttonRecord->hide();
+		ui.menuMedia->removeAction(ui.actionRecord);
+		ui.menuFile->removeAction(ui.actionRecorder);
+		ui.toolBar->removeAction(ui.actionRecorder);
+		if(osdEnabled)
+			osd->disableRecorder();
+	}
+	settings->endGroup();
+
 	if(sessionEnabled) {
-		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-		session.beginGroup("Session");
-		ui.videoWidget->setVolume(session.value("volume",0.5).toString().toFloat());
-		ui.volumeSlider->setValue(session.value("volume",0.5).toString().toFloat()*100);
-		key(session.value("channel",1).toInt());
-		session.endGroup();
+		settings->beginGroup("Session");
+		ui.videoWidget->setVolume(settings->value("volume",0.5).toString().toFloat());
+		ui.volumeSlider->setValue(settings->value("volume",0.5).toString().toFloat()*100);
+		key(settings->value("channel",1).toInt());
+		settings->endGroup();
 	}
 }
 
-void Tano::createActions()
+void Tano::createConnections()
 {
 	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
 	connect(ui.actionUpdate, SIGNAL(triggered()), update, SLOT(getUpdates()));
@@ -84,9 +114,6 @@ void Tano::createActions()
 	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
 	connect(ui.actionLite, SIGNAL(triggered()), this, SLOT(lite()));
 
-	connect(ui.actionRecorder, SIGNAL(triggered()), record, SLOT(showRecorder()));
-	connect(ui.actionRecord, SIGNAL(triggered()), this, SLOT(recorder()));
-
 	connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
 
 	connect(ui.actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
@@ -94,7 +121,7 @@ void Tano::createActions()
 	connect(ui.actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
 	connect(ui.actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
 
-	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(settings()));
+	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
 	connect(ui.actionBrowser, SIGNAL(triggered()), this, SLOT(showBrowser()));
 	connect(ui.actionEpg, SIGNAL(triggered()), this, SLOT(showSiolEpg()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
@@ -111,11 +138,12 @@ void Tano::createActions()
 	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVDown()));
 
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), ui.videoWidget, SLOT(controlVolume(int)));
-	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), osd, SLOT(setVolume(int)));
+
 	connect(ui.videoWidget, SIGNAL(volumeChanged(int)), ui.volumeSlider, SLOT(setValue(int)));
 	connect(ui.durationSlider, SIGNAL(sliderMoved(int)), ui.videoWidget, SLOT(controlDuration(int)));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
+	connect(ui.buttonReload, SIGNAL(clicked()), epg, SLOT(reload()));
 
 	connect(ui.playlistTree, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 	connect(select, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
@@ -140,6 +168,7 @@ void Tano::createActions()
 	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
 
 	connect(ui.labelNow, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
+	connect(ui.labelNext, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
 
 	connect(ui.actionChannel_info, SIGNAL(triggered()), this, SLOT(actionChannelShow()));
 	connect(ui.actionToolbar, SIGNAL(triggered()), this, SLOT(actionToolbarShow()));
@@ -251,10 +280,12 @@ void Tano::play()
 	ui.labelNow->hide();
 	ui.labelNext->hide();
 	ui.buttonRefresh->hide();
+	ui.buttonReload->hide();
 	ui.epgToday->epgClear();
 
 	ui.channelNumber->display(channel->num());
-	osd->setNumber(channel->num());
+	if(osdEnabled)
+		osd->setNumber(channel->num());
 
 	ui.videoWidget->ratioOriginal();
 	ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
@@ -268,6 +299,7 @@ void Tano::showEpg(QStringList epgValue)
 	ui.labelNext->setText(tr("Next:") + " " + epgValue.at(1));
 	ui.labelNext->show();
 	ui.buttonRefresh->show();
+	ui.buttonReload->show();
 }
 
 void Tano::stop()
@@ -277,6 +309,7 @@ void Tano::stop()
 	ui.labelNow->hide();
 	ui.labelNext->hide();
 	ui.buttonRefresh->hide();
+	ui.buttonReload->hide();
 	ui.epgToday->epgClear();
 	ui.videoWidget->ratioOriginal();
 	epg->stop();
@@ -364,7 +397,7 @@ void Tano::showSiolEpg()
 	browser->open("http://tano.pfusion.co.cc/siol/");
 }
 
-void Tano::settings()
+void Tano::showSettings()
 {
     EditSettings s(this, shortcuts);
     s.exec();
@@ -468,7 +501,7 @@ void Tano::totalTime(qint64 t) {
 	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
 }
 
-void Tano::osdSet()
+void Tano::createOsd()
 {
 	connect(osd, SIGNAL(play()), ui.actionPlay, SLOT(trigger()));
 	connect(osd, SIGNAL(stop()), ui.actionStop, SLOT(trigger()));
@@ -487,6 +520,8 @@ void Tano::osdSet()
 	connect(ui.videoWidget, SIGNAL(tick(qint64)), osd, SLOT(setDuration(qint64)));
 	connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), osd, SLOT(setLenght(qint64)));
 	connect(osd, SIGNAL(seek(int)), ui.videoWidget, SLOT(controlDuration(int)));
+
+	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), osd, SLOT(setVolume(int)));
 }
 
 void Tano::recorder()

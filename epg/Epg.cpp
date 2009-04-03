@@ -15,7 +15,7 @@ Epg::Epg() {
 	codec = QTextCodec::codecForName("UTF-8");
 	edit = new QTextEdit();
 
-    connect(timer, SIGNAL(timeout()), this, SLOT(epg()));
+    connect(timer, SIGNAL(timeout()), this, SLOT(epgNow()));
 
     epgInit();
 }
@@ -39,6 +39,11 @@ void Epg::getEpg(QString epgP)
 }
 
 void Epg::refresh()
+{
+    epgNow();
+}
+
+void Epg::reload()
 {
     epg();
 }
@@ -119,8 +124,6 @@ void Epg::epgPrint()
 	emit epgDoneFull(epgList);
 
 	epgNow();
-
-	timer->start(60000);
 }
 
 void Epg::epgNow()
@@ -134,6 +137,8 @@ void Epg::epgNow()
 			return;
 		}
 	}
+
+	timer->start(60000);
 }
 
 void Epg::stop()

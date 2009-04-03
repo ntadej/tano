@@ -25,6 +25,9 @@
   <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
     <widget class="QTabWidget" name="settingsTabs" >
+     <property name="tabPosition" >
+      <enum>QTabWidget::West</enum>
+     </property>
      <property name="currentIndex" >
       <number>0</number>
      </property>
@@ -80,7 +83,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label" >
+           <widget class="QLabel" name="labelLanguage" >
             <property name="text" >
              <string>&lt;i>You need to restart Tano Player when changing language!&lt;/i></string>
             </property>
@@ -106,7 +109,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_2" >
+           <widget class="QLabel" name="labelSession" >
             <property name="text" >
              <string>&lt;i>You need to restart Tano Player when changing session settings!&lt;/i></string>
             </property>
@@ -205,13 +208,83 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="tabGui" >
+      <attribute name="title" >
+       <string>User Interface</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_8" >
+       <item>
+        <widget class="QGroupBox" name="guiMainBox" >
+         <property name="title" >
+          <string>Default interface settings</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_9" >
+          <item>
+           <widget class="QCheckBox" name="checkLite" >
+            <property name="text" >
+             <string>Simple mode</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkTop" >
+            <property name="text" >
+             <string>Always on top</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkOsd" >
+            <property name="text" >
+             <string>Enable On Screen Display - OSD in Fullscreen mode</string>
+            </property>
+            <property name="checked" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_3" >
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="tabRecorder" >
       <attribute name="title" >
        <string>Recorder</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_7" >
        <item>
+        <widget class="QCheckBox" name="checkRecorder" >
+         <property name="text" >
+          <string>Enable Recorder</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelRecorder" >
+         <property name="text" >
+          <string>&lt;i>You need to restart Tano Player when enabling/disabling Recorder!&lt;/i></string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QGroupBox" name="defaultDirBox" >
+         <property name="enabled" >
+          <bool>false</bool>
+         </property>
          <property name="title" >
           <string>Default recording directory</string>
          </property>
@@ -644,5 +717,22 @@
  <resources>
   <include location="images.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>checkRecorder</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>defaultDirBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>361</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>361</x>
+     <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
