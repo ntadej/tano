@@ -35,10 +35,11 @@ Tano::Tano(QWidget *parent)
 Tano::~Tano()
 {
 	if(sessionEnabled) {
-		settings->beginGroup("Session");
-		settings->setValue("volume", ui.videoWidget->volume());
-		settings->setValue("channel", ui.channelNumber->value());
-		settings->endGroup();
+		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+		session.beginGroup("Session");
+		session.setValue("volume", ui.videoWidget->volume());
+		session.setValue("channel", ui.channelNumber->value());
+		session.endGroup();
 	}
 }
 

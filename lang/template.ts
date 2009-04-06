@@ -967,7 +967,7 @@ This will stop any recording in progress.</source>
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="531"/>
+        <location filename="../Tano.cpp" line="532"/>
         <source>Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1022,7 +1022,7 @@ This will stop any recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="292"/>
+        <location filename="../Tano.cpp" line="293"/>
         <source>Channel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1032,43 +1032,43 @@ This will stop any recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="275"/>
+        <location filename="../Tano.cpp" line="276"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="324"/>
+        <location filename="../Tano.cpp" line="325"/>
         <source>Open Channel list File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="326"/>
+        <location filename="../Tano.cpp" line="327"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="344"/>
+        <location filename="../Tano.cpp" line="345"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="350"/>
+        <location filename="../Tano.cpp" line="351"/>
         <source>File loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="359"/>
+        <location filename="../Tano.cpp" line="360"/>
         <source>Open File or URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="361"/>
+        <location filename="../Tano.cpp" line="362"/>
         <source>Multimedia files(*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="367"/>
+        <location filename="../Tano.cpp" line="368"/>
         <source>Playing file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1078,12 +1078,12 @@ This will stop any recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="377"/>
+        <location filename="../Tano.cpp" line="378"/>
         <source>Open URL or stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="378"/>
+        <location filename="../Tano.cpp" line="379"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1093,7 +1093,7 @@ This will stop any recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="307"/>
+        <location filename="../Tano.cpp" line="308"/>
         <source>Channel info</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1103,7 +1103,7 @@ This will stop any recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="297"/>
+        <location filename="../Tano.cpp" line="298"/>
         <source>Now:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1153,7 +1153,7 @@ This will stop any recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="292"/>
+        <location filename="../Tano.cpp" line="293"/>
         <source>selected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1223,7 +1223,7 @@ This will stop any recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="383"/>
+        <location filename="../Tano.cpp" line="384"/>
         <source>Playing URL</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1238,12 +1238,12 @@ This will stop any recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="532"/>
+        <location filename="../Tano.cpp" line="533"/>
         <source>Recorder is not working at the moment!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="299"/>
+        <location filename="../Tano.cpp" line="300"/>
         <source>Next:</source>
         <translation type="unfinished"></translation>
     </message>

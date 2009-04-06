@@ -145,4 +145,5 @@ void Epg::stop()
 {
     timer->stop();
     disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
+    epgList.clear();
 }

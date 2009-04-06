@@ -973,7 +973,7 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
 <context>
     <name>Tano</name>
     <message>
-        <location filename="../Tano.cpp" line="531"/>
+        <location filename="../Tano.cpp" line="532"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
@@ -1028,7 +1028,7 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="292"/>
+        <location filename="../Tano.cpp" line="293"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
@@ -1038,44 +1038,44 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>O Tano Predvajalniku</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="275"/>
+        <location filename="../Tano.cpp" line="276"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="324"/>
+        <location filename="../Tano.cpp" line="325"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="326"/>
+        <location filename="../Tano.cpp" line="327"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="344"/>
+        <location filename="../Tano.cpp" line="345"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="350"/>
+        <location filename="../Tano.cpp" line="351"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="359"/>
+        <location filename="../Tano.cpp" line="360"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="361"/>
+        <location filename="../Tano.cpp" line="362"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="367"/>
+        <location filename="../Tano.cpp" line="368"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
@@ -1085,12 +1085,12 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="377"/>
+        <location filename="../Tano.cpp" line="378"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="378"/>
+        <location filename="../Tano.cpp" line="379"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -1100,7 +1100,7 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="307"/>
+        <location filename="../Tano.cpp" line="308"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
@@ -1110,7 +1110,7 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Današnji spored</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="297"/>
+        <location filename="../Tano.cpp" line="298"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
@@ -1160,7 +1160,7 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Odpri &amp;Datoteko</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="292"/>
+        <location filename="../Tano.cpp" line="293"/>
         <source>selected</source>
         <translation>je izbran</translation>
     </message>
@@ -1230,7 +1230,7 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="383"/>
+        <location filename="../Tano.cpp" line="384"/>
         <source>Playing URL</source>
         <translation>Predvajam URL</translation>
     </message>
@@ -1245,12 +1245,12 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Snemaj takoj</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="532"/>
+        <location filename="../Tano.cpp" line="533"/>
         <source>Recorder is not working at the moment!</source>
         <translation>Snemalnik trenutno ne deluje!</translation>
     </message>
     <message>
-        <location filename="../Tano.cpp" line="299"/>
+        <location filename="../Tano.cpp" line="300"/>
         <source>Next:</source>
         <translation>Naslednje:</translation>
     </message>
