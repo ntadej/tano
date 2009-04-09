@@ -32,6 +32,8 @@ protected:
 	void closeEvent(QCloseEvent *event);
 
 private slots:
+	void exit();
+
     void aboutTano();
     void playlist(QTreeWidgetItem* clickedChannel);
     void key(int clickedChannel);
@@ -105,6 +107,7 @@ private:
     void createMenus();
     void createShortcuts();
     void createSettings();
+    void createSession();
     void createOsd();
 };
 

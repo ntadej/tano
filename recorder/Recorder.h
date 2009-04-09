@@ -21,12 +21,16 @@ public:
     Recorder(QWidget *parent = 0);
     ~Recorder();
 
+    bool isRecording();
+
 protected:
 	void closeEvent(QCloseEvent *event);
 
 public slots:
+	void stop();
 	void showRecorder();
 	void closeRecorder();
+	void recordNow(int nmb, QString url, QString name);
 
 private slots:
 	void about();

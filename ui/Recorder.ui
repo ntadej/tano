@@ -196,8 +196,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>0</width>
-     <height>0</height>
+     <width>600</width>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile" >
@@ -218,7 +218,7 @@
     <property name="title" >
      <string>Actions</string>
     </property>
-    <addaction name="actionTimer" />
+    <addaction name="actionTimers" />
     <addaction name="actionRecord" />
    </widget>
    <addaction name="menuFile" />
@@ -235,8 +235,8 @@
    </property>
    <property name="minimumSize" >
     <size>
-     <width>175</width>
-     <height>125</height>
+     <width>187</width>
+     <height>131</height>
     </size>
    </property>
    <property name="floating" >
@@ -288,7 +288,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionOpen" />
-   <addaction name="actionTimer" />
+   <addaction name="actionTimers" />
    <addaction name="actionRecord" />
   </widget>
   <action name="actionClose" >
@@ -301,6 +301,9 @@
    </property>
   </action>
   <action name="actionHelp" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="icon" >
     <iconset resource="images.qrc" >
      <normaloff>:/icons/images/help.png</normaloff>:/icons/images/help.png</iconset>
@@ -348,7 +351,7 @@
     <string>Restore</string>
    </property>
   </action>
-  <action name="actionTimer" >
+  <action name="actionTimers" >
    <property name="enabled" >
     <bool>false</bool>
    </property>
@@ -357,7 +360,7 @@
      <normaloff>:/icons/images/clock.png</normaloff>:/icons/images/clock.png</iconset>
    </property>
    <property name="text" >
-    <string>Timer</string>
+    <string>Timers</string>
    </property>
   </action>
  </widget>

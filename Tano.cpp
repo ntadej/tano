@@ -30,6 +30,7 @@ Tano::Tano(QWidget *parent)
 	createMenus();
 	createConnections();
 	createShortcuts();
+	createSession();
 }
 
 Tano::~Tano()
@@ -40,6 +41,30 @@ Tano::~Tano()
 		session.setValue("volume", ui.videoWidget->volume());
 		session.setValue("channel", ui.channelNumber->value());
 		session.endGroup();
+	}
+}
+
+void Tano::exit()
+{
+	int ret;
+	if(record->isRecording()) {
+		ret = QMessageBox::warning(this, tr("Tano Player"),
+								   tr("Do you want to exit Tano Player?\nThis will stop recording in progress."),
+								   QMessageBox::Close | QMessageBox::Cancel,
+								   QMessageBox::Close);
+	} else {
+		ret = QMessageBox::Close;
+	}
+
+	switch (ret) {
+		case QMessageBox::Close:
+			record->stop();
+			qApp->quit();
+			break;
+		case QMessageBox::Cancel:
+			break;
+		default:
+			break;
 	}
 }
 
@@ -95,14 +120,6 @@ void Tano::createSettings()
 			osd->disableRecorder();
 	}
 	settings->endGroup();
-
-	if(sessionEnabled) {
-		settings->beginGroup("Session");
-		ui.videoWidget->setVolume(settings->value("volume",0.5).toString().toFloat());
-		ui.volumeSlider->setValue(settings->value("volume",0.5).toString().toFloat()*100);
-		key(settings->value("channel",1).toInt());
-		settings->endGroup();
-	}
 }
 
 void Tano::createConnections()
@@ -110,7 +127,7 @@ void Tano::createConnections()
 	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
 	connect(ui.actionUpdate, SIGNAL(triggered()), update, SLOT(getUpdates()));
 	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
-	connect(ui.actionClose, SIGNAL(triggered()), qApp, SLOT(quit()));
+	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 
 	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
 	connect(ui.actionLite, SIGNAL(triggered()), this, SLOT(lite()));
@@ -245,6 +262,17 @@ void Tano::createShortcuts()
 			<< ui.actionAbout;
 
 	shortcuts = new Shortcuts(actions);
+}
+
+void Tano::createSession()
+{
+	if(sessionEnabled) {
+		settings->beginGroup("Session");
+		ui.videoWidget->setVolume(settings->value("volume",0.5).toString().toFloat());
+		ui.volumeSlider->setValue(settings->value("volume",0.5).toString().toFloat()*100);
+		key(settings->value("channel",1).toInt());
+		settings->endGroup();
+	}
 }
 
 void Tano::aboutTano()
@@ -527,10 +555,7 @@ void Tano::createOsd()
 
 void Tano::recorder()
 {
-	//record->show();
-
-	QMessageBox::warning(this, tr("Tano Player"),
-	                     tr("Recorder is not working at the moment!"));
+	record->recordNow(ui.channelNumber->value(), channel->url(), channel->name());
 }
 
 void Tano::help()

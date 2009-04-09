@@ -63,13 +63,20 @@ Recorder::Recorder(QWidget *parent)
 
 Recorder::~Recorder()
 {
-	frip->kill();
+
+}
+
+void Recorder::stop()
+{
+	frip->terminate();
 }
 
 void Recorder::closeEvent(QCloseEvent *event)
 {
+	QStringList arg;
+	arg << "close";
     if (trayIcon->isVisible()) {
-    	trayIcon->message("close");
+    	trayIcon->message(arg);
         hide();
         event->ignore();
     }
@@ -89,7 +96,7 @@ void Recorder::closeRecorder()
 {
 	int ret;
 	if(recording) {
-		ret = QMessageBox::warning(this, tr("Tano Player"),
+		ret = QMessageBox::warning(this, tr("Recorder"),
 								   tr("Do you want to close Recorder?\nThis will stop any recording in progress."),
 								   QMessageBox::Close | QMessageBox::Cancel,
 								   QMessageBox::Close);
@@ -132,7 +139,7 @@ void Recorder::openPlaylist()
 
     QFile file(fileName);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano Player"),
+        QMessageBox::warning(this, tr("Recorder"),
                              tr("Cannot read file %1:\n%2.")
                              .arg(fileName)
                              .arg(file.errorString()));
@@ -173,6 +180,17 @@ void Recorder::record(bool status)
 		if(ui.fileEdit->text() == "") {
 			ui.buttonRecord->setChecked(false);
 			return;
+		} else if(!QDir(ui.fileEdit->text()).exists()) {
+			ui.buttonRecord->setChecked(false);
+			QMessageBox::critical(this, tr("Recorder"),
+										tr("Cannot write to %1.")
+										.arg(ui.fileEdit->text()));
+			return;
+		} else if(ui.valueSelected->text() == "-") {
+			ui.buttonRecord->setChecked(false);
+			QMessageBox::critical(this, tr("Recorder"),
+										tr("Channel is not selected!"));
+			return;
 		}
 
 		QFile file(QDir::tempPath()+"/tano.txt");
@@ -204,6 +222,14 @@ void Recorder::record(bool status)
 		ui.buttonRecord->setText(tr("Stop recording"));
 		ui.actionRecord->setText(tr("Stop recording"));
 
+		tray->insertAction(ui.actionRestore, ui.actionRecord);
+
+		QStringList arg;
+		arg << "record" << channel->name() << fileName;
+	    if (trayIcon->isVisible()) {
+	    	trayIcon->message(arg);
+	    }
+
 		recording = true;
 	} else {
 		frip->terminate();
@@ -216,10 +242,35 @@ void Recorder::record(bool status)
 		ui.buttonRecord->setText(tr("Record"));
 		ui.actionRecord->setText(tr("Record"));
 
+		tray->removeAction(ui.actionRecord);
+
 		trayIcon->changeToolTip("stop");
 
 		recording = false;
 	}
+}
+
+void Recorder::recordNow(int nmb, QString url, QString name)
+{
+	QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+	settings.beginGroup("Recorder");
+	ui.fileEdit->setText(settings.value("dir",QDir::homePath()+"/Videos").toString());
+	settings.endGroup();
+	trayIcon->show();
+
+	channel = handler->channelReadNum(nmb);
+	if (channel->isCategory() != true) {
+		ui.valueSelected->setText(channel->name());
+		ui.actionRecord->setChecked(true);
+	} else {
+		QMessageBox::critical(this, tr("Recorder"),
+									tr("Channel is not selected!"));
+	}
+}
+
+bool Recorder::isRecording()
+{
+	return recording;
 }
 
 void Recorder::sec()

@@ -11,7 +11,7 @@ public:
 	TrayRecorder(QMenu *menu);
 	virtual ~TrayRecorder();
 
-	void message(QString type);
+	void message(QStringList arg);
 
 public slots:
 	void changeToolTip(QString text = "stop");

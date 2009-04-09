@@ -425,14 +425,11 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionOpenToolbar" />
-   <addaction name="separator" />
    <addaction name="actionEditPlaylist" />
-   <addaction name="separator" />
+   <addaction name="actionRecorder" />
    <addaction name="actionBrowser" />
    <addaction name="actionEpg" />
-   <addaction name="separator" />
    <addaction name="actionSettings" />
-   <addaction name="actionRecorder" />
   </widget>
   <widget class="QDockWidget" name="playlistWidget" >
    <property name="windowIcon" >
