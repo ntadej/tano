@@ -79,33 +79,33 @@ FIND_PACKAGE(Qt4 REQUIRED)
 
 # Define the UI source files used by Tano
 SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
-	ui/Tano.ui
 	ui/About.ui
+	ui/EditPlaylist.ui
 	ui/EditSettings.ui
 	ui/EpgBrowser.ui
-	ui/EditPlaylist.ui
+	ui/MainWindow.ui
+	ui/Osd.ui
 	ui/Recorder.ui
-	ui/TanoOsd.ui
 )
 
 # Define the MOC source files used by Tano
 SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
-	Tano.h
+	MainWindow.h
 	Updates.h
-	video/Video.h
-	ui/About.h
-	ui/EditSettings.h
-	ui/TrayIcon.h
-	ui/TrayRecorder.h
-	ui/TanoOsd.h
+	channels/EditPlaylist.h
 	control/ChannelSelect.h
 	control/Shortcuts.h
 	epg/Epg.h
 	epg/EpgBrowser.h
 	epg/EpgToday.h
-	channels/EditPlaylist.h
 	lib/QtKeySequenceEdit.h
 	recorder/Recorder.h
+	ui/About.h
+	ui/EditSettings.h
+	ui/Osd.h
+	ui/TrayIcon.h
+	ui/TrayRecorder.h
+	video/Video.h
 )
 
 SET(Tano_Resrcs ui/images.qrc)
@@ -114,14 +114,6 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	channels/Channel.cpp
 	channels/ChannelEpg.cpp
 	channels/EditPlaylist.cpp
-	video/Video.cpp
-	xml/tanogenerator.cpp
-	xml/tanohandler.cpp
-	ui/About.cpp
-	ui/EditSettings.cpp
-	ui/TrayIcon.cpp
-	ui/TrayRecorder.cpp
-	ui/TanoOsd.cpp
 	control/ChannelSelect.cpp
 	control/Shortcuts.cpp
 	epg/Epg.cpp
@@ -129,12 +121,20 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	epg/EpgToday.cpp
 	lib/QtKeySequenceEdit.cpp
 	recorder/Recorder.cpp
+	ui/About.cpp
+	ui/EditSettings.cpp
+	ui/Osd.cpp
+	ui/TrayIcon.cpp
+	ui/TrayRecorder.cpp
+	video/Video.cpp
+	xml/tanogenerator.cpp
+	xml/tanohandler.cpp
 )
 
 SET(Tano_Srcs
 	main.cpp
-	Tano.cpp
 	Common.cpp
+	MainWindow.cpp
 	Updates.cpp
 	
 	${Tano_Class_Srcs}

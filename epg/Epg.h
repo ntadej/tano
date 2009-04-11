@@ -1,5 +1,5 @@
-#ifndef EPG_H_
-#define EPG_H_
+#ifndef TANO_EPG_H_
+#define TANO_EPG_H_
 
 #include <QHttp>
 #include <QString>

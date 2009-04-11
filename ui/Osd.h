@@ -1,5 +1,5 @@
-#ifndef TANOOSD_H
-#define TANOOSD_H
+#ifndef TANO_OSD_H
+#define TANO_OSD_H
 
 #include <QtGui/QWidget>
 #include <QTimer>
@@ -7,15 +7,15 @@
 #include <QMouseEvent>
 #include <QPoint>
 
-#include "ui_TanoOsd.h"
+#include "ui_Osd.h"
 
-class TanoOsd : public QWidget
+class Osd : public QWidget
 {
     Q_OBJECT
 
 public:
-    TanoOsd(QWidget *parent = 0);
-    ~TanoOsd();
+    Osd(QWidget *parent = 0);
+    ~Osd();
 
 public slots:
 	void showOsd();
@@ -41,11 +41,11 @@ signals:
 	void seek(int);
 
 private:
-    Ui::TanoOsdClass ui;
+    Ui::Osd ui;
 
     QTimer *timer;
     QTime timeNow;
     bool enabled;
 };
 
-#endif // TANOOSD_H
+#endif // TANO_OSD_H

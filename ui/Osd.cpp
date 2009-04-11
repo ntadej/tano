@@ -2,9 +2,9 @@
 #include <QDesktopWidget>
 #include <QDebug>
 
-#include "TanoOsd.h"
+#include "Osd.h"
 
-TanoOsd::TanoOsd(QWidget *parent)
+Osd::Osd(QWidget *parent)
     : QWidget(parent)
 {
 	ui.setupUi(this);
@@ -25,12 +25,12 @@ TanoOsd::TanoOsd(QWidget *parent)
 	connect(ui.durationSlider, SIGNAL(sliderMoved(int)), this, SIGNAL(seek(int)));
 }
 
-TanoOsd::~TanoOsd()
+Osd::~Osd()
 {
 
 }
 
-void TanoOsd::showOsd()
+void Osd::showOsd()
 {
 	int w = QApplication::desktop()->width();
 	int h = QApplication::desktop()->height();
@@ -40,7 +40,7 @@ void TanoOsd::showOsd()
 	this->show();
 }
 
-void TanoOsd::hideOsd()
+void Osd::hideOsd()
 {
 	if(enabled) {
 		timer->stop();
@@ -48,28 +48,28 @@ void TanoOsd::hideOsd()
 	}
 }
 
-void TanoOsd::setNumber(int n)
+void Osd::setNumber(int n)
 {
 	ui.channelNumber->display(n);
 }
 
-void TanoOsd::setVolume(int v)
+void Osd::setVolume(int v)
 {
 	ui.volumeSlider->setValue(v);
 }
 
-void TanoOsd::setMuted(bool mute)
+void Osd::setMuted(bool mute)
 {
 	ui.buttonMute->setChecked(mute);
 	ui.volumeSlider->setDisabled(mute);
 }
 
-void TanoOsd::setStatus(bool status)
+void Osd::setStatus(bool status)
 {
 	enabled = status;
 }
 
-void TanoOsd::setDuration(qint64 d)
+void Osd::setDuration(qint64 d)
 {
 	int tm = d*1;
 	timeNow = QTime();
@@ -78,7 +78,7 @@ void TanoOsd::setDuration(qint64 d)
 	ui.durationSlider->setValue(tm);
 }
 
-void TanoOsd::setLenght(qint64 l)
+void Osd::setLenght(qint64 l)
 {
 	int tm = l*1;
 	ui.durationSlider->setMaximum(tm);
@@ -87,7 +87,7 @@ void TanoOsd::setLenght(qint64 l)
 	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
 }
 
-void TanoOsd::disableRecorder()
+void Osd::disableRecorder()
 {
 	ui.buttonRecord->hide();
 }

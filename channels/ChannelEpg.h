@@ -1,4 +1,4 @@
-#ifndef CHANNELEPG_H_
+#ifndef TANO_CHANNELEPG_H_
 #define CHANNELEPG_H_
 #include <QString>
 
@@ -16,4 +16,4 @@ private:
 	QString _title;
 };
 
-#endif /* CHANNELEPG_H_ */
+#endif // TANO_CHANNELEPG_H_

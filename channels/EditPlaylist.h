@@ -1,5 +1,5 @@
-#ifndef EDITPLAYLIST_H
-#define EDITPLAYLIST_H
+#ifndef TANO_EDITPLAYLIST_H
+#define TANO_EDITPLAYLIST_H
 
 #include <QtGui/QMainWindow>
 #include "../ui_EditPlaylist.h"
@@ -29,7 +29,7 @@ private slots:
 private:
 	void treeStyle();
 
-    Ui::EditPlaylistClass ui;
+    Ui::EditPlaylist ui;
 
     TanoHandler *load;
     TanoGenerator *generator;
@@ -41,4 +41,4 @@ private:
     QString fileName;
 };
 
-#endif // EDITPLAYLIST_H
+#endif // TANO_EDITPLAYLIST_H

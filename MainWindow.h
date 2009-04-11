@@ -1,32 +1,32 @@
-#ifndef TANO_H
-#define TANO_H
+#ifndef TANO_MAINWINDOW_H
+#define TANO_MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
 #include <QCloseEvent>
 #include <QTime>
 #include <QSettings>
 
-#include "ui_Tano.h"
+#include "ui_MainWindow.h"
 #include "Updates.h"
 #include "xml/tanohandler.h"
 #include "channels/Channel.h"
 #include "channels/EditPlaylist.h"
 #include "ui/EditSettings.h"
 #include "ui/TrayIcon.h"
-#include "ui/TanoOsd.h"
+#include "ui/Osd.h"
 #include "control/ChannelSelect.h"
 #include "control/Shortcuts.h"
 #include "epg/Epg.h"
 #include "epg/EpgBrowser.h"
 #include "recorder/Recorder.h"
 
-class Tano : public QMainWindow
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    Tano(QWidget *parent = 0);
-    ~Tano();
+    MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
 protected:
 	void closeEvent(QCloseEvent *event);
@@ -69,12 +69,12 @@ private slots:
     void totalTime(qint64 t);
 
 private:
-    Ui::Tano ui;
+    Ui::MainWindow ui;
     Qt::WindowFlags flags;
 
     Updates *update;
     Recorder *record;
-    TanoOsd *osd;
+    Osd *osd;
     QSettings *settings;
 
     TanoHandler *handler;
@@ -111,4 +111,4 @@ private:
     void createOsd();
 };
 
-#endif // TANO_H
+#endif // TANO_MAINWINDOW_H

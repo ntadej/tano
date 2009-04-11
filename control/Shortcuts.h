@@ -1,5 +1,5 @@
-#ifndef SHORTCUTS_H_
-#define SHORTCUTS_H_
+#ifndef TANO_SHORTCUTS_H_
+#define TANO_SHORTCUTS_H_
 
 #include <QObject>
 #include <QAction>
@@ -23,4 +23,4 @@ private:
 	QStringList keys;
 };
 
-#endif /* SHORTCUTS_H_ */
+#endif // TANO_SHORTCUTS_H_

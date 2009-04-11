@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>AboutClass</class>
- <widget class="QDialog" name="AboutClass" >
+ <class>About</class>
+ <widget class="QDialog" name="About" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -519,7 +519,7 @@ p, li { white-space: pre-wrap; }
   <connection>
    <sender>buttonClose</sender>
    <signal>clicked()</signal>
-   <receiver>AboutClass</receiver>
+   <receiver>About</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel" >

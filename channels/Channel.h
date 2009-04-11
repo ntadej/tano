@@ -1,5 +1,5 @@
-#ifndef CHANNEL_H_
-#define CHANNEL_H_
+#ifndef TANO_CHANNEL_H_
+#define TANO_CHANNEL_H_
 #include <QString>
 
 class Channel {
@@ -33,4 +33,4 @@ private:
 	bool category;
 };
 
-#endif
+#endif // TANO_CHANNEL_H_

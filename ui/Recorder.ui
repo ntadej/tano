@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>RecorderClass</class>
- <widget class="QMainWindow" name="RecorderClass" >
+ <class>Recorder</class>
+ <widget class="QMainWindow" name="Recorder" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -235,8 +235,8 @@
    </property>
    <property name="minimumSize" >
     <size>
-     <width>187</width>
-     <height>131</height>
+     <width>193</width>
+     <height>134</height>
     </size>
    </property>
    <property name="floating" >

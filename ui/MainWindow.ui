@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>Tano</class>
- <widget class="QMainWindow" name="Tano" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
   <property name="geometry" >
    <rect>
     <x>0</x>

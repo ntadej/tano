@@ -1,5 +1,5 @@
-#ifndef EPGBROWSER_H
-#define EPGBROWSER_H
+#ifndef TANO_EPGBROWSER_H
+#define TANO_EPGBROWSER_H
 
 #include <QtGui/QMainWindow>
 #include <QProgressBar>
@@ -28,9 +28,9 @@ private slots:
 	void stopStatusT(bool status);
 
 private:
-    Ui::EpgBrowserClass ui;
+    Ui::EpgBrowser ui;
 
     QProgressBar *bar;
 };
 
-#endif // EPGBROWSER_H
+#endif // TANO_EPGBROWSER_H

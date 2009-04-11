@@ -13,7 +13,7 @@ public:
     ~About();
 
 private:
-    Ui::AboutClass ui;
+    Ui::About ui;
 
     QString qt;
 };

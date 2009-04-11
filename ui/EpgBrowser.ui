@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>EpgBrowserClass</class>
- <widget class="QMainWindow" name="EpgBrowserClass" >
+ <class>EpgBrowser</class>
+ <widget class="QMainWindow" name="EpgBrowser" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -177,7 +177,7 @@
   <connection>
    <sender>actionClose</sender>
    <signal>triggered()</signal>
-   <receiver>EpgBrowserClass</receiver>
+   <receiver>EpgBrowser</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -193,7 +193,7 @@
   <connection>
    <sender>epgView</sender>
    <signal>titleChanged(QString)</signal>
-   <receiver>EpgBrowserClass</receiver>
+   <receiver>EpgBrowser</receiver>
    <slot>setWindowTitle(QString)</slot>
    <hints>
     <hint type="sourcelabel" >

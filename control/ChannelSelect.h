@@ -1,5 +1,5 @@
-#ifndef CHANNELSELECT_H_
-#define CHANNELSELECT_H_
+#ifndef TANO_CHANNELSELECT_H_
+#define TANO_CHANNELSELECT_H_
 
 #include <QShortcut>
 #include <QLCDNumber>
@@ -59,4 +59,4 @@ private:
 	int old;
 };
 
-#endif /* CHANNELSELECT_H_ */
+#endif // TANO_CHANNELSELECT_H_

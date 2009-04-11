@@ -4,10 +4,10 @@
 #include <QDir>
 #include <QSettings>
 
-#include "Tano.h"
+#include "MainWindow.h"
 #include "Common.h"
 
-Tano::Tano(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
 	ui.setupUi(this);
@@ -33,7 +33,7 @@ Tano::Tano(QWidget *parent)
 	createSession();
 }
 
-Tano::~Tano()
+MainWindow::~MainWindow()
 {
 	if(sessionEnabled) {
 		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
@@ -44,7 +44,7 @@ Tano::~Tano()
 	}
 }
 
-void Tano::exit()
+void MainWindow::exit()
 {
 	int ret;
 	if(record->isRecording()) {
@@ -68,7 +68,7 @@ void Tano::exit()
 	}
 }
 
-void Tano::closeEvent(QCloseEvent *event)
+void MainWindow::closeEvent(QCloseEvent *event)
 {
     if (trayIcon->isVisible()) {
         trayIcon->message("close");
@@ -77,7 +77,7 @@ void Tano::closeEvent(QCloseEvent *event)
     }
 }
 
-void Tano::createSettings()
+void MainWindow::createSettings()
 {
 	settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 
@@ -99,7 +99,7 @@ void Tano::createSettings()
 	}
 	if(settings->value("OSD",true).toBool()) {
 		osdEnabled = true;
-		osd = new TanoOsd();
+		osd = new Osd();
 		createOsd();
 	} else {
 		osdEnabled = false;
@@ -122,7 +122,7 @@ void Tano::createSettings()
 	settings->endGroup();
 }
 
-void Tano::createConnections()
+void MainWindow::createConnections()
 {
 	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
 	connect(ui.actionUpdate, SIGNAL(triggered()), update, SLOT(getUpdates()));
@@ -199,7 +199,7 @@ void Tano::createConnections()
 	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 }
 
-void Tano::createMenus()
+void MainWindow::createMenus()
 {
 	ratioGroup = new QActionGroup(this);
 	ratioGroup->addAction(ui.actionRatioOriginal);
@@ -239,7 +239,7 @@ void Tano::createMenus()
 	trayIcon = new TrayIcon(tray);
 }
 
-void Tano::createShortcuts()
+void MainWindow::createShortcuts()
 {
 	actions << ui.actionPlay
 			<< ui.actionStop
@@ -264,7 +264,7 @@ void Tano::createShortcuts()
 	shortcuts = new Shortcuts(actions);
 }
 
-void Tano::createSession()
+void MainWindow::createSession()
 {
 	if(sessionEnabled) {
 		settings->beginGroup("Session");
@@ -275,13 +275,13 @@ void Tano::createSession()
 	}
 }
 
-void Tano::aboutTano()
+void MainWindow::aboutTano()
 {
 	Common::about();
 }
 
 //Media controls
-void Tano::playlist(QTreeWidgetItem* clickedChannel)
+void MainWindow::playlist(QTreeWidgetItem* clickedChannel)
 {
 	channel = handler->channelRead(clickedChannel);
 	if (channel->isCategory() != true) {
@@ -289,7 +289,7 @@ void Tano::playlist(QTreeWidgetItem* clickedChannel)
 	}
 }
 
-void Tano::key(int clickedChannel)
+void MainWindow::key(int clickedChannel)
 {
 	channel = handler->channelReadNum(clickedChannel);
 	if (channel->isCategory() != true) {
@@ -297,7 +297,7 @@ void Tano::key(int clickedChannel)
 	}
 }
 
-void Tano::play()
+void MainWindow::play()
 {
 	epg->stop();
 	ui.playlistWidget->setWindowTitle(channel->longName() + " (" + channel->name() + ")");
@@ -321,7 +321,7 @@ void Tano::play()
 	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 }
 
-void Tano::showEpg(QStringList epgValue)
+void MainWindow::showEpg(QStringList epgValue)
 {
 	ui.labelNow->setText(tr("Now:") + " " + epgValue.at(0));
 	ui.labelNow->show();
@@ -331,7 +331,7 @@ void Tano::showEpg(QStringList epgValue)
 	ui.buttonReload->show();
 }
 
-void Tano::stop()
+void MainWindow::stop()
 {
 	ui.playlistWidget->setWindowTitle(tr("Channel info"));
 	ui.labelLanguage->hide();
@@ -344,7 +344,7 @@ void Tano::stop()
 	epg->stop();
 }
 
-void Tano::openPlaylist(bool start)
+void MainWindow::openPlaylist(bool start)
 {
 	handler->clear();
 
@@ -381,7 +381,7 @@ void Tano::openPlaylist(bool start)
     select = new ChannelSelect(this, ui.channelNumber, handler->limit());
 }
 
-void Tano::openFile()
+void MainWindow::openFile()
 {
 	epg->stop();
 	fileName =
@@ -398,7 +398,7 @@ void Tano::openFile()
     ui.playlistWidget->hide();
 }
 
-void Tano::openUrl()
+void MainWindow::openUrl()
 {
 	epg->stop();
 	bool ok;
@@ -416,23 +416,23 @@ void Tano::openUrl()
 
 
 //GUI
-void Tano::showBrowser()
+void MainWindow::showBrowser()
 {
 	browser->open("http://tano.pfusion.co.cc");
 }
 
-void Tano::showSiolEpg()
+void MainWindow::showSiolEpg()
 {
 	browser->open("http://tano.pfusion.co.cc/siol/");
 }
 
-void Tano::showSettings()
+void MainWindow::showSettings()
 {
     EditSettings s(this, shortcuts);
     s.exec();
 }
 
-void Tano::tooltip(QString channelNow)
+void MainWindow::tooltip(QString channelNow)
 {
 	if (channelNow != "stop")
 		setWindowTitle(channelNow + " - " + tr("Tano Player"));
@@ -440,7 +440,7 @@ void Tano::tooltip(QString channelNow)
 		setWindowTitle(tr("Tano Player"));
 }
 
-void Tano::processUpdates(QString updates)
+void MainWindow::processUpdates(QString updates)
 {
 	qDebug() << Common::version();
 	if(Common::version() != updates) {
@@ -457,7 +457,7 @@ void Tano::processUpdates(QString updates)
 	}
 }
 
-void Tano::actionChannelShow()
+void MainWindow::actionChannelShow()
 {
     if(ui.playlistWidget->isVisible())
     	ui.playlistWidget->hide();
@@ -465,7 +465,7 @@ void Tano::actionChannelShow()
     	ui.playlistWidget->show();
 }
 
-void Tano::actionToolbarShow()
+void MainWindow::actionToolbarShow()
 {
     if(ui.toolBar->isVisible())
     	ui.toolBar->hide();
@@ -473,17 +473,17 @@ void Tano::actionToolbarShow()
     	ui.toolBar->show();
 }
 
-void Tano::rightMenu(QPoint pos)
+void MainWindow::rightMenu(QPoint pos)
 {
 	right->exec(pos);
 }
 
-void Tano::menuOpen()
+void MainWindow::menuOpen()
 {
 	open->exec(QCursor::pos());
 }
 
-void Tano::top()
+void MainWindow::top()
 {
 	Qt::WindowFlags top = flags;
 	top |= Qt::WindowStaysOnTopHint;
@@ -495,7 +495,7 @@ void Tano::top()
 	this->show();
 }
 
-void Tano::lite()
+void MainWindow::lite()
 {
 	if(isLite) {
 		ui.centralLayout-> setContentsMargins(4,4,4,4);
@@ -514,7 +514,7 @@ void Tano::lite()
 	}
 }
 
-void Tano::time(qint64 t) {
+void MainWindow::time(qint64 t) {
 	int tm = t*1;
 	timeNow = QTime();
 	timeNow = timeNow.addMSecs(tm);
@@ -522,7 +522,7 @@ void Tano::time(qint64 t) {
 	ui.durationSlider->setValue(tm);
 }
 
-void Tano::totalTime(qint64 t) {
+void MainWindow::totalTime(qint64 t) {
 	int tm = t*1;
 	ui.durationSlider->setMaximum(tm);
 	timeNow = QTime();
@@ -530,7 +530,7 @@ void Tano::totalTime(qint64 t) {
 	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
 }
 
-void Tano::createOsd()
+void MainWindow::createOsd()
 {
 	connect(osd, SIGNAL(play()), ui.actionPlay, SLOT(trigger()));
 	connect(osd, SIGNAL(stop()), ui.actionStop, SLOT(trigger()));
@@ -553,12 +553,12 @@ void Tano::createOsd()
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), osd, SLOT(setVolume(int)));
 }
 
-void Tano::recorder()
+void MainWindow::recorder()
 {
 	record->recordNow(ui.channelNumber->value(), channel->url(), channel->name());
 }
 
-void Tano::help()
+void MainWindow::help()
 {
 	Common::help();
 }

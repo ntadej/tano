@@ -45,7 +45,7 @@ private slots:
 	void fileBrowse();
 
 private:
-    Ui::RecorderClass ui;
+    Ui::Recorder ui;
 
     bool recording;
     bool start;

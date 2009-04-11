@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>EditPlaylistClass</class>
- <widget class="QMainWindow" name="EditPlaylistClass" >
+ <class>EditPlaylist</class>
+ <widget class="QMainWindow" name="EditPlaylist" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -158,7 +158,7 @@
   <connection>
    <sender>actionClose</sender>
    <signal>triggered()</signal>
-   <receiver>EditPlaylistClass</receiver>
+   <receiver>EditPlaylist</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel" >

@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>TanoOsdClass</class>
- <widget class="QWidget" name="TanoOsdClass" >
+ <class>Osd</class>
+ <widget class="QWidget" name="Osd" >
   <property name="geometry" >
    <rect>
     <x>0</x>

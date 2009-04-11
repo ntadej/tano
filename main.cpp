@@ -6,7 +6,7 @@
 #include <QLocale>
 #include <QtDebug>
 
-#include "Tano.h"
+#include "MainWindow.h"
 #include "Common.h"
 
 
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	translator.load(QString("tano_" + locale), langPath);
 	app.installTranslator(&translator);
 
-    Tano mainWindow;
+    MainWindow mainWindow;
 
     mainWindow.show();
     splash->close();
