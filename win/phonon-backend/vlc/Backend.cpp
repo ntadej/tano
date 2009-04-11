@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -32,10 +33,6 @@
 	#include "VLCMediaObject.h"
 #endif	//PHONON_VLC
 
-#ifdef PHONON_MPLAYER
-	#include "MPlayerMediaObject.h"
-#endif	//PHONON_MPLAYER
-
 #include <QtCore/QByteArray>
 #include <QtCore/QSet>
 #include <QtCore/QVariant>
@@ -50,25 +47,16 @@
 
 #ifdef PHONON_VLC
 #ifdef KDE4_FOUND
-	K_PLUGIN_FACTORY(VLCBackendFactory, registerPlugin<Phonon::VLC_MPlayer::Backend>();)
+	K_PLUGIN_FACTORY(VLCBackendFactory, registerPlugin<Phonon::VLC_Backend::Backend>();)
 	K_EXPORT_PLUGIN(VLCBackendFactory("vlcbackend"))
 #else
-	Q_EXPORT_PLUGIN2(phonon_vlc, Phonon::VLC_MPlayer::Backend);
+	Q_EXPORT_PLUGIN2(phonon_vlc, Phonon::VLC_Backend::Backend);
 #endif	//KDE4_FOUND
 #endif	//PHONON_VLC
 
-#ifdef PHONON_MPLAYER
-#ifdef KDE4_FOUND
-	K_PLUGIN_FACTORY(MPlayerBackendFactory, registerPlugin<Phonon::VLC_MPlayer::Backend>();)
-	K_EXPORT_PLUGIN(MPlayerBackendFactory("mplayerbackend"))
-#else
-	Q_EXPORT_PLUGIN2(phonon_mplayer, Phonon::VLC_MPlayer::Backend);
-#endif	//KDE4_FOUND
-#endif	//PHONON_MPLAYER
-
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 Backend::Backend(QObject * parent, const QVariantList & args)
@@ -87,20 +75,10 @@ Backend::Backend(QObject * parent, const QVariantList & args)
 
 	//Before everything else
 	//QtConcurrent runs initLibVLC() in another thread
-	//Otherwise it takes too long to load all the VLC plugins
+	//Otherwise it takes too long to load all the VLC_Backend plugins
 	_initLibVLCFuture = QtConcurrent::run(initLibVLC);
 
 #endif	//PHONON_VLC
-
-#ifdef PHONON_MPLAYER
-	setProperty("identifier", QLatin1String("phonon_mplayer"));
-	setProperty("backendName", QLatin1String("MPlayer"));
-	setProperty("backendComment", QLatin1String("MPlayer plugin for Phonon"));
-	setProperty("backendVersion", QLatin1String("0.1"));
-	setProperty("backendWebsite", QLatin1String("http://multimedia.kde.org/"));
-
-	qDebug() << "Using MPlayer version:" << "not yet implemented";
-#endif	//PHONON_MPLAYER
 
 	_effectManager = new EffectManager(this);
 }
@@ -113,10 +91,6 @@ Backend::~Backend() {
 QObject * Backend::createObject(BackendInterface::Class c, QObject * parent, const QList<QVariant> & args) {
 	switch (c) {
 	case MediaObjectClass:
-
-#ifdef PHONON_MPLAYER
-		return new MPlayerMediaObject(parent);
-#endif	//PHONON_MPLAYER
 
 #ifdef PHONON_VLC
 		return new VLCMediaObject(parent);
@@ -279,16 +253,6 @@ QHash<QByteArray, QVariant> Backend::objectDescriptionProperties(ObjectDescripti
 
 	switch (type) {
 	case Phonon::AudioOutputDeviceType:
-		//For MPlayer:
-		//mplayer *.mp3
-		//mplayer -ao oss *.mp3
-		//mplayer -ao alsa *.mp3
-		//mplayer -ao oss:/dev/dsp *.mp3
-		//mplayer -ao alsa:device=hw=0.0 *.mp3
-		//mplayer -ao oss:/dev/dsp1 *.mp3
-		//mplayer -ao alsa:device=hw=1.0 *.mp3
-		//See http://linux.dsplabs.com.au/mplayer-multiple-sound-cards-select-audio-device-p77/
-		//mplayer -ao dsound:device=0
 		ret.insert("device", "0");
 		break;
 	/*case Phonon::AudioCaptureDeviceType:
@@ -341,22 +305,6 @@ bool Backend::startConnectionChange(QSet<QObject *> nodes) {
 bool Backend::connectNodes(QObject * source, QObject * sink) {
 	qDebug() << __FUNCTION__ << source->metaObject()->className() << sink->metaObject()->className();
 
-	//Example:
-	//source = Phonon::VLC_MPlayer::MediaObject
-	//sink = Phonon::VLC_MPlayer::VideoWidget
-
-	//Example:
-	//source = Phonon::VLC_MPlayer::MediaObject
-	//sink = Phonon::VLC_MPlayer::AudioOutput
-
-	//Example:
-	//source = Phonon::VLC_MPlayer::MediaObject
-	//sink = Phonon::VLC_MPlayer::Effect
-
-	//Example:
-	//source = Phonon::VLC_MPlayer::Effect
-	//sink = Phonon::VLC_MPlayer::AudioOutput
-
 	SinkNode * sinkNode = qobject_cast<SinkNode *>(sink);
 	if (sinkNode) {
 		PrivateMediaObject * mediaObject = qobject_cast<PrivateMediaObject *>(source);
@@ -365,9 +313,7 @@ bool Backend::connectNodes(QObject * source, QObject * sink) {
 			sinkNode->connectToMediaObject(mediaObject);
 			return true;
 		} else {
-			//FIXME try to find a better way...
 			Effect * effect = qobject_cast<Effect * >(source);
-			//Nothing todo, MPlayer does not support this kind of connection
 			return true;
 		}
 	}
@@ -387,9 +333,7 @@ bool Backend::disconnectNodes(QObject * source, QObject * sink) {
 			sinkNode->disconnectFromMediaObject(mediaObject);
 			return true;
 		} else {
-			//FIXME try to find a better way...
 			Effect * effect = qobject_cast<Effect * >(source);
-			//Nothing todo, MPlayer does not support this kind of connection
 			return true;
 		}
 
@@ -413,15 +357,12 @@ void Backend::freeSoundcardDevices() {
 
 QString Backend::toString() const {
 #ifdef PHONON_VLC
-	return "VLC Phonon Backend by Tanguy Krotoff <tkrotoff@gmail.com>\n";
+	return "VLC Phonon Backend by Tanguy Krotoff <tkrotoff@gmail.com> and Tadej Novak <tadej@pfusion.co.cc>\n";
 		/*"libvlc version=" + QString(p_libvlc_get_version()) + "\n"
 		"libvlc changeset=" + QString(p_libvlc_get_changeset()) + "\n"
 		"libvlc compiler=" + QString(p_libvlc_get_compiler());*/
 #endif	//PHONON_VLC
 
-#ifdef PHONON_MPLAYER
-	return "MPlayer Phonon Backend by Tanguy Krotoff <tkrotoff@gmail.com>";
-#endif	//PHONON_MPLAYER
 }
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend

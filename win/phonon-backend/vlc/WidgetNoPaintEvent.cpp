@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -22,7 +23,7 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 WidgetNoPaintEvent::WidgetNoPaintEvent(QWidget * parent)
@@ -31,7 +32,7 @@ WidgetNoPaintEvent::WidgetNoPaintEvent(QWidget * parent)
 	//When resizing fill with black (backgroundRole color) the rest is done by paintEvent
 	setAttribute(Qt::WA_OpaquePaintEvent);
 
-	//Disable Qt composition management as MPlayer draws onto the widget directly
+	//Disable Qt composition management
 	setAttribute(Qt::WA_PaintOnScreen);
 
 	//Indicates that the widget has no background, i.e. when the widget receives paint events,
@@ -55,4 +56,4 @@ void WidgetNoPaintEvent::setBackgroundColor(const QColor & color) {
 	setPalette(p);
 }
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend

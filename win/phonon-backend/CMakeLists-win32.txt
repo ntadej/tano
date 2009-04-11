@@ -41,18 +41,6 @@ install(FILES ${QT_BINARY_DIR}/../translations/qt_de.qm DESTINATION ${BIN_INSTAL
 install(FILES ${QT_BINARY_DIR}/../translations/qt_es.qm DESTINATION ${BIN_INSTALL_DIR}/translations)
 install(FILES ${QT_BINARY_DIR}/../translations/qt_uk.qm DESTINATION ${BIN_INSTALL_DIR}/translations)
 
-#Copy MPlayer build from SMPlayer
-#Used by MPlayer Phonon backend
-#SMPlayer' MPlayer build can be found at:
-#http://smplayer.sourceforge.net/
-#just install SMPlayer inside C:/Program Files/SMPlayer
-set(MPLAYER_INSTALL_DIR "C:/Program Files/SMPlayer/mplayer")
-if (EXISTS ${MPLAYER_INSTALL_DIR})
-	install(DIRECTORY ${MPLAYER_INSTALL_DIR} DESTINATION ${BIN_INSTALL_DIR})
-else (EXISTS ${MPLAYER_INSTALL_DIR})
-	message(STATUS "SMPlayer was not found, the MPlayer backend won't run (no MPlayer build)")
-endif (EXISTS ${MPLAYER_INSTALL_DIR})
-
 if (MINGW)
 	#When compiled with MinGW, we need mingwm10.dll
 	install(FILES "C:/mingw/bin/mingwm10.dll" DESTINATION ${BIN_INSTALL_DIR})

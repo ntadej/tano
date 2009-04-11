@@ -1,5 +1,5 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
  * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
@@ -21,10 +21,12 @@
 
 #include "MediaObject.h"
 
-#include "VLCMediaObject.h"
+#ifdef PHONON_VLC
+	#include "VLCMediaObject.h"
 
-#include "vlc_loader.h"
-#include "vlc_symbols.h"
+	#include "vlc_loader.h"
+	#include "vlc_symbols.h"
+#endif
 
 
 #include <QtGui/QWidget>
@@ -34,7 +36,7 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 VideoWidget::VideoWidget(QWidget * parent)
@@ -82,7 +84,7 @@ char* VideoWidget::vlcAspectRatio() const {
 void VideoWidget::setAspectRatio(Phonon::VideoWidget::AspectRatio aspectRatio) {
 	qDebug() << __FUNCTION__ << "aspectRatio:" << aspectRatio;
 
-	//For VLC:
+	//For VLC_Backend:
 	//Accepted formats are x:y (4:3, 16:9, etc.) expressing the global image aspect.
 
 	_aspectRatio = aspectRatio;
@@ -122,7 +124,6 @@ qreal VideoWidget::brightness() const {
 void VideoWidget::setBrightness(qreal brightness) {
 	_brightness = brightness;
 
-	sendMPlayerCommand("brightness " + QString::number(_brightness * 100) + " 1");
 }
 
 Phonon::VideoWidget::ScaleMode VideoWidget::scaleMode() const {
@@ -138,12 +139,12 @@ void VideoWidget::setScaleMode(Phonon::VideoWidget::ScaleMode scaleMode) {
 
 	//The video will be fitted to fill the view keeping aspect ratio
 	case Phonon::VideoWidget::FitInView:
-		//TODO: VLC Scale Fit
+		//TODO: VLC_Backend Scale Fit
 		break;
 
 	//The video is scaled
 	case Phonon::VideoWidget::ScaleAndCrop:
-		//TODO: VLC Scale and Crop
+		//TODO: VLC_Backend Scale and Crop
 		break;
 
 	default:
@@ -157,8 +158,6 @@ qreal VideoWidget::contrast() const {
 
 void VideoWidget::setContrast(qreal contrast) {
 	_contrast = contrast;
-
-	sendMPlayerCommand("contrast " + QString::number(_contrast * 100) + " 1");
 }
 
 qreal VideoWidget::hue() const {
@@ -172,9 +171,6 @@ void VideoWidget::setHue(qreal hue) {
 	if (_vlcCurrentMediaPlayer) {
 		p_libvlc_video_filter_set_hue(_vlcCurrentMediaPlayer, hue, _vlcException);
 	}
-
-
-	sendMPlayerCommand("hue " + QString::number(_hue * 100) + " 1");
 }
 
 qreal VideoWidget::saturation() const {
@@ -183,8 +179,6 @@ qreal VideoWidget::saturation() const {
 
 void VideoWidget::setSaturation(qreal saturation) {
 	_saturation = saturation;
-
-	sendMPlayerCommand("saturation " + QString::number(_saturation * 100) + " 1");
 }
 
 Widget * VideoWidget::widget() {
@@ -217,4 +211,4 @@ void VideoWidget::videoWidgetSizeChanged(int width, int height) {
 	///
 }
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend

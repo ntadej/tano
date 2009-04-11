@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -39,7 +40,7 @@ QString getVLCPath() {
 		return libvlc_path;
 	}
 
-	//Tries to autodetect the VLC path with a default list of path
+	//Tries to autodetect the VLC_Backend path with a default list of path
 
 	QStringList pathList;
 	pathList << QCoreApplication::libraryPaths();
@@ -58,8 +59,8 @@ QString getVLCPath() {
 	static const char * libvlc_version = "0.9";
 
 	//QSettings allows us to read the Windows registry
-	//Check if there is a standard VLC installation under Windows
-	//If there is a VLC Windows installation, check we get the good version i.e 0.9
+	//Check if there is a standard VLC_Backend installation under Windows
+	//If there is a VLC_Backend Windows installation, check we get the good version i.e 0.9
 	QSettings settings(QSettings::SystemScope, "VideoLAN", "VLC");
 	if (settings.value("Version").toString().contains(libvlc_version)) {
 		QString vlcInstallDir = settings.value("InstallDir").toString();

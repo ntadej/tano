@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -35,7 +36,7 @@ QFuture<void> _initLibVLCFuture;
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 void initLibVLC() {
@@ -45,7 +46,7 @@ void initLibVLC() {
 
 	QString pluginPath("--plugin-path=" + getVLCPluginPath());
 
-	//Complete list of VLC command line options:
+	//Complete list of VLC_Backend command line options:
 	//http://wiki.videolan.org/VLC_command-line_help
 	const char * vlcArgs[] = {
 		strdup(pluginPath.toUtf8().constData()),
@@ -57,12 +58,12 @@ void initLibVLC() {
 		"--no-stats",
 		"--no-osd",
 		"--no-video-title-show",
-		"--ignore-config"		//Don't use VLC's config
+		"--ignore-config"		//Don't use VLC_Backend's config
 	};
 
 	p_libvlc_exception_init(_vlcException);
 
-	//Init VLC modules, should be done only once
+	//Init VLC_Backend modules, should be done only once
 	_vlcInstance = p_libvlc_new(sizeof(vlcArgs) / sizeof(*vlcArgs), vlcArgs, _vlcException);
 	checkException();
 
@@ -82,4 +83,4 @@ void checkException() {
 	}
 }
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend

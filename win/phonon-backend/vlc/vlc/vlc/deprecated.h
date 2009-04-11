@@ -191,7 +191,7 @@ VLC_DEPRECATED_API void libvlc_playlist_clear( libvlc_instance_t *,
  * advanced options are required, \see libvlc_playlist_add_extended instead.
  *
  * \param p_instance the playlist instance
- * \param psz_uri the URI to open, using VLC format
+ * \param psz_uri the URI to open, using VLC_Backend format
  * \param psz_name a name that you might want to give or NULL
  * \param p_e an initialized exception pointer
  * \return the identifier of the new item
@@ -204,7 +204,7 @@ VLC_DEPRECATED_API int libvlc_playlist_add( libvlc_instance_t *, const char *,
  * additional input options.
  *
  * \param p_instance the playlist instance
- * \param psz_uri the URI to open, using VLC format
+ * \param psz_uri the URI to open, using VLC_Backend format
  * \param psz_name a name that you might want to give or NULL
  * \param i_options the number of options to add
  * \param ppsz_options strings representing the options to add

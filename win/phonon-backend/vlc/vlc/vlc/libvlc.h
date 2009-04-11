@@ -30,7 +30,7 @@
 
 /**
  * \defgroup libvlc libvlc
- * This is libvlc, the base library of the VLC program.
+ * This is libvlc, the base library of the VLC_Backend program.
  *
  * @{
  */
@@ -252,7 +252,7 @@ VLC_PUBLIC_API libvlc_media_t * libvlc_media_new_as_node(
  * Add an option to the media.
  *
  * This option will be used to determine how the media_player will
- * read the media. This allows to use VLC's advanced
+ * read the media. This allows to use VLC_Backend's advanced
  * reading/streaming options on a per-media basis.
  *
  * The options are detailed in vlc --long-help, for instance "--sout-all"
@@ -382,7 +382,7 @@ VLC_PUBLIC_API int
 
 /**
  * Sets media descriptor's user_data. user_data is specialized data 
- * accessed by the host application, VLC.framework uses it as a pointer to 
+ * accessed by the host application, VLC_Backend.framework uses it as a pointer to 
  * an native object that references a libvlc_media_t pointer
  *
  * \param p_md media descriptor object
@@ -396,7 +396,7 @@ VLC_PUBLIC_API void
 
 /**
  * Get media descriptor's user_data. user_data is specialized data 
- * accessed by the host application, VLC.framework uses it as a pointer to 
+ * accessed by the host application, VLC_Backend.framework uses it as a pointer to 
  * an native object that references a libvlc_media_t pointer
  *
  * \param p_md media descriptor object
@@ -1173,7 +1173,7 @@ VLC_PUBLIC_API int
  */
 
 /**
- * Return the VLC messaging verbosity level.
+ * Return the VLC_Backend messaging verbosity level.
  *
  * \param p_instance libvlc instance
  * \param p_e an initialized exception pointer
@@ -1183,7 +1183,7 @@ VLC_PUBLIC_API unsigned libvlc_get_log_verbosity( const libvlc_instance_t *p_ins
                                                   libvlc_exception_t *p_e );
 
 /**
- * Set the VLC messaging verbosity level.
+ * Set the VLC_Backend messaging verbosity level.
  *
  * \param p_instance libvlc log instance
  * \param level log level
@@ -1193,7 +1193,7 @@ VLC_PUBLIC_API void libvlc_set_log_verbosity( libvlc_instance_t *p_instance, uns
                                               libvlc_exception_t *p_e );
 
 /**
- * Open a VLC message log instance.
+ * Open a VLC_Backend message log instance.
  *
  * \param p_instance libvlc instance
  * \param p_e an initialized exception pointer
@@ -1202,7 +1202,7 @@ VLC_PUBLIC_API void libvlc_set_log_verbosity( libvlc_instance_t *p_instance, uns
 VLC_PUBLIC_API libvlc_log_t *libvlc_log_open( libvlc_instance_t *, libvlc_exception_t *);
 
 /**
- * Close a VLC message log instance.
+ * Close a VLC_Backend message log instance.
  *
  * \param p_log libvlc log instance
  * \param p_e an initialized exception pointer

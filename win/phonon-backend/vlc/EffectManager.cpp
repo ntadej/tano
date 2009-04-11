@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -20,48 +21,12 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 EffectManager::EffectManager(QObject * parent)
 	: QObject(parent) {
 
-#ifdef PHONON_MPLAYER
-	//Audio effects
-	_effectList.append(new EffectInfo("(Audio) Karaoke", "karaoke", EffectInfo::AudioEffect));
-	_effectList.append(new EffectInfo("(Audio) Extra stereo", "extrastereo", EffectInfo::AudioEffect));
-	_effectList.append(new EffectInfo("(Audio) Volume normalization", "volnorm=2", EffectInfo::AudioEffect));
-
-	//Deinterlace
-	_effectList.append(new EffectInfo("(Video) Deinterlace: Lowpass5", "pp=l5", EffectInfo::VideoEffect));
-	_effectList.append(new EffectInfo("(Video) Deinterlace: Yadif (normal)", "yadif", EffectInfo::VideoEffect));
-	_effectList.append(new EffectInfo("(Video) Deinterlace: Yadif (double framerate)", "yadif=1", EffectInfo::VideoEffect));
-	_effectList.append(new EffectInfo("(Video) Deinterlace: Linear Blend", "pp=lb", EffectInfo::VideoEffect));
-	_effectList.append(new EffectInfo("(Video) Deinterlace: Kerndeint", "kerndeint=5", EffectInfo::VideoEffect));
-
-	//Rotate
-	_effectList.append(new EffectInfo("(Video) Rotate: clockwise flip", "rotate=0", EffectInfo::VideoEffect));
-	_effectList.append(new EffectInfo("(Video) Rotate: clockwise", "rotate=1", EffectInfo::VideoEffect));
-	_effectList.append(new EffectInfo("(Video) Rotate: counter clockwise", "rotate=2", EffectInfo::VideoEffect));
-	_effectList.append(new EffectInfo("(Video) Rotate: counter clockwise flip", "rotate=3", EffectInfo::VideoEffect));
-
-	//Denoise
-	_effectList.append(new EffectInfo("(Video) Denoise: soft", "hqdn3d=2:1:2", EffectInfo::VideoEffect));
-	_effectList.append(new EffectInfo("(Video) Denoise: normal", "hqdn3d", EffectInfo::VideoEffect));
-
-	//Deblock
-	_effectList.append(new EffectInfo("(Video) Deblock", "pp=vb/hb", EffectInfo::VideoEffect));
-
-	//Dering
-	_effectList.append(new EffectInfo("(Video) Dering", "pp=dr", EffectInfo::VideoEffect));
-
-	//Addnoise
-	_effectList.append(new EffectInfo("(Video) Addnoise", "noise=9ah:5ah", EffectInfo::VideoEffect));
-
-	//Postprocessing
-	//FIXME does not work
-	//_effectList.append(new EffectInfo("(Video) Postprocessing", "pp -autoq 6", EffectInfo::VideoEffect));
-#endif	//PHONON_MPLAYER
 }
 
 EffectManager::~EffectManager() {
@@ -72,4 +37,4 @@ QList<EffectInfo *> EffectManager::getEffectList() const {
 	return _effectList;
 }
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend

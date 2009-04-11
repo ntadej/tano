@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -16,8 +17,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PHONON_VLC_MPLAYER_BACKEND_H
-#define PHONON_VLC_MPLAYER_BACKEND_H
+#ifndef PHONON_VLC_BACKEND_H
+#define PHONON_VLC_BACKEND_H
 
 #include <phonon/objectdescription.h>
 #include <phonon/backendinterface.h>
@@ -29,13 +30,13 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 class EffectManager;
 
 /**
- * VLC backend class.
+ * VLC_Backend backend class.
  *
  * @author Tanguy Krotoff
  */
@@ -87,6 +88,6 @@ private:
 	EffectManager * _effectManager;
 };
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend
 
-#endif	//PHONON_VLC_MPLAYER_BACKEND_H
+#endif	//PHONON_VLC_BACKEND_H

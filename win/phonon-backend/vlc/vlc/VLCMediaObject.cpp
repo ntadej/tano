@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -28,10 +29,10 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
-//VLC returns a strange position... have to multiply by VLC_POSITION_RESOLUTION
+//VLC_Backend returns a strange position... have to multiply by VLC_POSITION_RESOLUTION
 static const int VLC_POSITION_RESOLUTION = 1000;
 
 VLCMediaObject::VLCMediaObject(QObject * parent)
@@ -379,4 +380,4 @@ qint64 VLCMediaObject::currentTimeInternal() const {
 	return time;
 }
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend

@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -16,8 +17,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PHONON_VLC_MPLAYER_VLCMEDIAOBJECT_H
-#define PHONON_VLC_MPLAYER_VLCMEDIAOBJECT_H
+#ifndef PHONON_VLCMEDIAOBJECT_H
+#define PHONON_VLCMEDIAOBJECT_H
 
 #include "VLCMediaController.h"
 
@@ -31,17 +32,17 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 /**
- * VLC MediaObject.
+ * VLC_Backend MediaObject.
  *
- * This is the "brain" of the VLC backend.
+ * This is the "brain" of the VLC_Backend backend.
  * VLCMediaObject uses libvlc in order to send commands and receive
- * events from the VLC.
+ * events from the VLC_Backend.
  *
- * Encapsulates VLC specific code.
+ * Encapsulates VLC_Backend specific code.
  * Take care of libvlc events via libvlc_callback()
  *
  * @see MediaObject
@@ -83,9 +84,9 @@ signals:
 	void titleChanged(int titleNumber);
 
 	/**
-	 * New widget size computed by VLC.
+	 * New widget size computed by VLC_Backend.
 	 *
-	 * Should be applied to the widget that contains the VLC video.
+	 * Should be applied to the widget that contains the VLC_Backend video.
 	 */
 	void videoWidgetSizeChanged(int width, int height);
 
@@ -152,6 +153,6 @@ private:
 	bool _seekable;
 };
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend
 
-#endif	//PHONON_VLC_MPLAYER_VLCMEDIAOBJECT_H
+#endif	//PHONON_VLCMEDIAOBJECT_H

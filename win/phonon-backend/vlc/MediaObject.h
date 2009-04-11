@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -16,8 +17,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PHONON_VLC_MPLAYER_MEDIAOBJECT_H
-#define PHONON_VLC_MPLAYER_MEDIAOBJECT_H
+#ifndef PHONON_VLC_MEDIAOBJECT_H
+#define PHONON_VLC_MEDIAOBJECT_H
 
 #include <phonon/mediaobjectinterface.h>
 
@@ -25,10 +26,8 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
-
-static const int MPLAYER_DEFAULT_DVD_TITLE = 1;
 
 class SeekStack;
 
@@ -46,7 +45,7 @@ public:
 	virtual ~MediaObject();
 
 	/**
-	 * Widget Id where VLC or MPlayer will show the videos.
+	 * Widget Id where VLC_Backend will show the videos.
 	 */
 	void setVideoWidgetId(int videoWidgetId);
 
@@ -83,7 +82,7 @@ signals:
 	void tick(qint64 time);
 	void totalTimeChanged(qint64 newTotalTime);
 
-	//Signal from MPlayerMediaObject and VLCMediaObject
+	//Signal from VLCMediaObject
 	void stateChanged(Phonon::State newState);
 
 	void tickInternal(qint64 time);
@@ -122,6 +121,6 @@ private:
 	qint32 _tickInterval;
 };
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend
 
-#endif	//PHONON_VLC_MPLAYER_MEDIAOBJECT_H
+#endif	//PHONON_VLC_MEDIAOBJECT_H

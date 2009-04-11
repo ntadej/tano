@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -24,10 +25,10 @@
 #include <QtCore/QString>
 
 /**
- * Loads libvlc-control.(dll|so|dylib), determines and returns the VLC path.
+ * Loads libvlc-control.(dll|so|dylib), determines and returns the VLC_Backend path.
  *
  * Examples:
- * C:/Progam Files/VideoLAN/VLC
+ * C:/Progam Files/VideoLAN/VLC_Backend
  * /usr/local/lib
  *
  * Under Windows, in order to determine libvlc-control.dll,
@@ -39,13 +40,13 @@
 QString getVLCPath();
 
 /**
- * Gets the VLC plugin path.
+ * Gets the VLC_Backend plugin path.
  *
  * Examples:
- * C:/Program Files/VideoLAN/VLC/plugins
+ * C:/Program Files/VideoLAN/VLC_Backend/plugins
  * /usr/local/lib/vlc
  *
- * @return the VLC plugin path
+ * @return the VLC_Backend plugin path
  */
 QString getVLCPluginPath();
 

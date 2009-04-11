@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -20,15 +21,9 @@
 
 #include "MediaObject.h"
 
-#ifdef PHONON_MPLAYER
-	#include "MPlayerMediaObject.h"
-
-	#include <mplayer/MPlayerProcess.h>
-#endif	//PHONON_MPLAYER
-
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 SinkNode::SinkNode(QObject * parent)
@@ -54,13 +49,4 @@ void SinkNode::disconnectFromMediaObject(PrivateMediaObject * mediaObject) {
 	}
 }
 
-void SinkNode::sendMPlayerCommand(const QString & command) const {
-#ifdef PHONON_MPLAYER
-	if (_mediaObject) {
-		MPlayerProcess * process = _mediaObject->getMPlayerProcess();
-		process->sendCommand(command);
-	}
-#endif	//PHONON_MPLAYER
-}
-
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend

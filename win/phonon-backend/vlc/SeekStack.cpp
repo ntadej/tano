@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend and MPlayer backends for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -23,7 +24,7 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 SeekStack::SeekStack(MediaObject * mediaObject)
@@ -67,11 +68,6 @@ void SeekStack::popSeek() {
 
 	_mediaObject->seekInternal(milliseconds);
 
-#ifdef PHONON_MPLAYER
-	//MPlayer takes some time before to send back the proper current time
-	QTimer::singleShot(200, this, SLOT(reconnectTickSignal()));
-#endif	//PHONON_MPLAYER
-
 #ifdef PHONON_VLC
 	reconnectTickSignal();
 #endif	//PHONON_VLC
@@ -82,4 +78,4 @@ void SeekStack::reconnectTickSignal() {
 		_mediaObject, SLOT(tickInternalSlot(qint64)));
 }
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend

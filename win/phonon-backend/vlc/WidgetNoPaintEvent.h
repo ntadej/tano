@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -23,7 +24,7 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 /**
@@ -39,13 +40,6 @@ public:
 
 	WidgetNoPaintEvent(QWidget * parent);
 
-	/**
-	 * Sets the background color.
-	 *
-	 * This is compulsary otherwise MPlayerWindow won't display MPlayer video.
-	 *
-	 * I don't know which one is best: 0x020202 or Qt::black...
-	 */
 	void setBackgroundColor(const QColor & color);
 
 private:
@@ -53,6 +47,6 @@ private:
 	void paintEvent(QPaintEvent * event);
 };
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend
 
 #endif	//WIDGETNOPAINTEVENT_H

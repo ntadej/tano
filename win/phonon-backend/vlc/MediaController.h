@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -16,8 +17,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PHONON_VLC_MPLAYER_MEDIACONTROLLER_H
-#define PHONON_VLC_MPLAYER_MEDIACONTROLLER_H
+#ifndef PHONON_VLC_MEDIACONTROLLER_H
+#define PHONON_VLC_MEDIACONTROLLER_H
 
 #include "config.h"
 
@@ -26,28 +27,9 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
-/**
- * Interface for AddonInterface.
- *
- * This class exists only for code factorization between VLC and MPlayer backends.
- * Normally MediaObject inherits directly from AddonInterface, but wait, I don't want
- * 3000LOC classes...
- *
- * This class cannot inherit from QObject has MediaObject already inherit from QObject.
- * This is a Qt limitation: there is no possibility to inherit virtual Qobject :/
- * See http://doc.trolltech.com/qq/qq15-academic.html
- * Phonon implementation got the same problem.
- *
- * @see VLCMediaController
- * @see MPlayerMediaController
- * @see VLCMediaObject
- * @see MPlayerMediaObject
- * @see MediaObject
- * @author Tanguy Krotoff
- */
 class MediaController : public AddonInterface {
 public:
 
@@ -156,6 +138,6 @@ protected:
 private:
 };
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend
 
-#endif	//PHONON_VLC_MPLAYER_MEDIACONTROLLER_H
+#endif	//PHONON_VL_MEDIACONTROLLER_H

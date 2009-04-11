@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -29,7 +30,7 @@
 
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 AudioOutput::AudioOutput(QObject * parent)
@@ -61,8 +62,6 @@ void AudioOutput::setVolume(qreal volume) {
 		checkException();
 	}
 #endif	//PHONON_VLC
-
-	sendMPlayerCommand("volume " + QString::number(volume * 100) + " 1");
 }
 
 int AudioOutput::outputDevice() const {
@@ -77,4 +76,4 @@ bool AudioOutput::setOutputDevice(const Phonon::AudioOutputDevice & device) {
 	return true;
 }
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend

@@ -1,6 +1,7 @@
 /*
- * VLC and MPlayer backends for the Phonon library
+ * VLC_Backend backend for the Phonon library
  * Copyright (C) 2007-2008  Tanguy Krotoff <tkrotoff@gmail.com>
+ * 					2009	Tadej Novak <tadej@pfusion.co.cc>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -22,17 +23,9 @@
 
 #include "MediaObject.h"
 
-#ifdef PHONON_MPLAYER
-	#include "MPlayerMediaObject.h"
-
-	#include <mplayer/MPlayerLoader.h>
-	#include <mplayer/MediaSettings.h>
-	#include <mplayer/MPlayerProcess.h>
-#endif	//PHONON_MPLAYER
-
 namespace Phonon
 {
-namespace VLC_MPlayer
+namespace VLC_Backend
 {
 
 Effect::Effect(EffectManager * effectManager, int effectId, QObject * parent)
@@ -54,37 +47,11 @@ Effect::~Effect() {
 void Effect::connectToMediaObject(PrivateMediaObject * mediaObject) {
 	SinkNode::connectToMediaObject(mediaObject);
 
-#ifdef PHONON_MPLAYER
-	switch (_effectType) {
-	case EffectInfo::AudioEffect:
-		MPlayerLoader::settings.audioFilters.append(_effectCommand);
-		break;
-	case EffectInfo::VideoEffect:
-		MPlayerLoader::settings.videoFilters.append(_effectCommand);
-		break;
-	}
-
-	MPlayerProcess * process = _mediaObject->getMPlayerProcess();
-	MPlayerLoader::restart(process);
-#endif	//PHONON_MPLAYER
 }
 
 void Effect::disconnectFromMediaObject(PrivateMediaObject * mediaObject) {
 	SinkNode::disconnectFromMediaObject(mediaObject);
 
-#ifdef PHONON_MPLAYER
-	switch (_effectType) {
-	case EffectInfo::AudioEffect:
-		MPlayerLoader::settings.audioFilters.removeAll(_effectCommand);
-		break;
-	case EffectInfo::VideoEffect:
-		MPlayerLoader::settings.videoFilters.removeAll(_effectCommand);
-		break;
-	}
-
-	MPlayerProcess * process = _mediaObject->getMPlayerProcess();
-	MPlayerLoader::restart(process);
-#endif	//PHONON_MPLAYER
 }
 
 QList<EffectParameter> Effect::parameters() const {
@@ -100,4 +67,4 @@ QVariant Effect::parameterValue(const EffectParameter & param) const {
 void Effect::setParameterValue(const EffectParameter & param, const QVariant & newValue) {
 }
 
-}}	//Namespace Phonon::VLC_MPlayer
+}}	//Namespace Phonon::VLC_Backend
