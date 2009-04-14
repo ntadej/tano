@@ -5,9 +5,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
+    <width>499</width>
     <height>420</height>
    </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle" >
    <string>About Tano Player</string>
@@ -19,6 +25,9 @@
   <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
     <widget class="QTabWidget" name="tabWidget" >
+     <property name="tabPosition" >
+      <enum>QTabWidget::West</enum>
+     </property>
      <property name="currentIndex" >
       <number>0</number>
      </property>
@@ -82,14 +91,7 @@
          <item>
           <widget class="QLabel" name="labelCopy" >
            <property name="text" >
-            <string>Copyright © 2008-2009 Tadej Novak</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="labelLink" >
-           <property name="text" >
-            <string>http://tano.pfusion.co.cc</string>
+            <string>Copyright © 2008-2009 Tadej Novak&lt;br>http://tano.sourceforge.net&lt;br>ntadej@users.sourceforge.net</string>
            </property>
            <property name="openExternalLinks" >
             <bool>true</bool>
@@ -107,7 +109,33 @@
            <property name="sizeHint" stdset="0" >
             <size>
              <width>20</width>
-             <height>10</height>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelBackendInfo" >
+           <property name="text" >
+            <string>Backend&lt;br>Recorder is powered by friptv.&lt;br>Crystal Icons © The Yellow Icon.</string>
+           </property>
+           <property name="openExternalLinks" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_4" >
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType" >
+            <enum>QSizePolicy::Minimum</enum>
+           </property>
+           <property name="sizeHint" stdset="0" >
+            <size>
+             <width>20</width>
+             <height>20</height>
             </size>
            </property>
           </spacer>
@@ -123,44 +151,8 @@
           <widget class="QLabel" name="labelNotes" >
            <property name="text" >
             <string>This is a development version of Tano Player.
-EPG uptime is not guarantied to be 24/7.</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_4" >
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeType" >
-            <enum>QSizePolicy::Minimum</enum>
-           </property>
-           <property name="sizeHint" stdset="0" >
-            <size>
-             <width>20</width>
-             <height>10</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="labelBackend" >
-           <property name="text" >
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="labelAssistant" >
-           <property name="text" >
-            <string>Qt Assistant is part of the Qt library.</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="labelIcons" >
-           <property name="text" >
-            <string>Crystal Icons © The Yellow Icon.</string>
+EPG is not guarantied to work all the time.
+Full support is planned for version 0.6.</string>
            </property>
           </widget>
          </item>
@@ -406,7 +398,7 @@ p, li { white-space: pre-wrap; }
             <string>This program uses Qt Open Source Edition version 0.0.0.</string>
            </property>
            <property name="wordWrap" >
-            <bool>true</bool>
+            <bool>false</bool>
            </property>
           </widget>
          </item>

@@ -54,13 +54,13 @@ void EpgBrowser::open(QString link) {
 
 void EpgBrowser::home()
 {
-	ui.addressLine->setText("http://tano.pfusion.co.cc");
+	ui.addressLine->setText("http://tano.sf.net");
 	go();
 }
 
 void EpgBrowser::epg()
 {
-	ui.addressLine->setText("http://tano.pfusion.co.cc/siol/");
+	ui.addressLine->setText("http://www.siol.net/tv-spored.aspx");
 	go();
 }
 

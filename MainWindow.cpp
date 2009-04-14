@@ -106,9 +106,9 @@ void MainWindow::createSettings()
 	}
 	settings->endGroup();
 
+	record = new Recorder();
 	settings->beginGroup("Recorder");
-	if(settings->value("enabled",true).toBool()) {
-		record = new Recorder();
+	if(settings->value("enabled",true).toBool() && Common::fripExists()) {
 		connect(ui.actionRecorder, SIGNAL(triggered()), record, SLOT(showRecorder()));
 		connect(ui.actionRecord, SIGNAL(triggered()), this, SLOT(recorder()));
 	} else {

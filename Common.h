@@ -11,6 +11,7 @@ public:
 
 	static QString version();
 
+	static bool fripExists();
 	static QString frip();
 
 	static void about(QWidget *parent = 0 );

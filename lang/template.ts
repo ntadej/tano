@@ -3,58 +3,32 @@
 <context encoding="UTF-8">
     <name>About</name>
     <message>
-        <location filename="../ui_About.h" line="306"/>
+        <location filename="../ui_About.h" line="295"/>
         <source>About Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="307"/>
+        <location filename="../ui_About.h" line="296"/>
         <source>&lt;h1&gt;Tano Player&lt;/h1&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="308"/>
+        <location filename="../ui_About.h" line="297"/>
         <source>&lt;h2&gt;&lt;/h2&gt;</source>
         <translation type="unfinished"></translation>
     </message>
-    <message encoding="UTF-8">
-        <location filename="../ui_About.h" line="309"/>
-        <source>Copyright © 2008-2009 Tadej Novak</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
-        <location filename="../ui_About.h" line="310"/>
-        <source>http://tano.pfusion.co.cc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_About.h" line="311"/>
+        <location filename="../ui_About.h" line="300"/>
         <source>&lt;b&gt;Note:&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="313"/>
-        <source>This is a development version of Tano Player.
-EPG uptime is not guarantied to be 24/7.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_About.h" line="315"/>
-        <source>Qt Assistant is part of the Qt library.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message encoding="UTF-8">
-        <location filename="../ui_About.h" line="316"/>
-        <source>Crystal Icons © The Yellow Icon.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_About.h" line="317"/>
+        <location filename="../ui_About.h" line="304"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="../ui_About.h" line="516"/>
+        <location filename="../ui_About.h" line="503"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;GNU General Public License - GNU Project - Free Software Foundation (FSF)&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -201,53 +175,70 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="517"/>
+        <location filename="../ui_About.h" line="504"/>
         <source>Licence</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="518"/>
+        <location filename="../ui_About.h" line="505"/>
         <source>&lt;h1&gt;About Qt&lt;/h1&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="519"/>
+        <location filename="../ui_About.h" line="506"/>
         <source>This program uses Qt Open Source Edition version 0.0.0.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="520"/>
+        <location filename="../ui_About.h" line="507"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications. You need a commercial Qt license for development of proprietary (closed source) applications.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="521"/>
+        <location filename="../ui_About.h" line="508"/>
         <source>Please see www.qtsoftware.com/about/open-source-business-model for an overview of Qt licensing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="522"/>
+        <location filename="../ui_About.h" line="509"/>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="523"/>
+        <location filename="../ui_About.h" line="510"/>
         <source>Qt provides single-source portability across MS Windows, Mac OS X, Linux, and all major commercial Unix variants. Qt is also available for embedded devices as Qt for Embedded Linux and Qt for Windows CE.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="524"/>
+        <location filename="../ui_About.h" line="511"/>
         <source>Qt is a Nokia product. See www.qtsoftware.com/products/appdev for more information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="525"/>
+        <location filename="../ui_About.h" line="512"/>
         <source>Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_About.h" line="526"/>
+        <location filename="../ui_About.h" line="513"/>
         <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_About.h" line="303"/>
+        <source>This is a development version of Tano Player.
+EPG is not guarantied to work all the time.
+Full support is planned for version 0.6.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../ui_About.h" line="298"/>
+        <source>Copyright © 2008-2009 Tadej Novak&lt;br&gt;http://tano.sourceforge.net&lt;br&gt;ntadej@users.sourceforge.net</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="../ui_About.h" line="299"/>
+        <source>Backend&lt;br&gt;Recorder is powered by friptv.&lt;br&gt;Crystal Icons © The Yellow Icon.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -731,52 +722,52 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="560"/>
+        <location filename="../ui_MainWindow.h" line="592"/>
         <source>About Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="561"/>
+        <location filename="../ui_MainWindow.h" line="593"/>
         <source>&amp;Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="562"/>
+        <location filename="../ui_MainWindow.h" line="594"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="563"/>
+        <location filename="../ui_MainWindow.h" line="595"/>
         <source>&amp;Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="564"/>
+        <location filename="../ui_MainWindow.h" line="596"/>
         <source>&amp;Fullscreen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="565"/>
+        <location filename="../ui_MainWindow.h" line="597"/>
         <source>&amp;Open Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="566"/>
+        <location filename="../ui_MainWindow.h" line="598"/>
         <source>Open &amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="567"/>
+        <location filename="../ui_MainWindow.h" line="599"/>
         <source>&amp;Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="568"/>
+        <location filename="../ui_MainWindow.h" line="600"/>
         <source>Edit Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="655"/>
+        <location filename="../ui_MainWindow.h" line="687"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
@@ -786,152 +777,152 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="571"/>
+        <location filename="../ui_MainWindow.h" line="603"/>
         <source>Open URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="572"/>
+        <location filename="../ui_MainWindow.h" line="604"/>
         <source>Check for updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="573"/>
+        <location filename="../ui_MainWindow.h" line="605"/>
         <source>SiOL TV EPG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="574"/>
+        <location filename="../ui_MainWindow.h" line="606"/>
         <source>Original</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="575"/>
+        <location filename="../ui_MainWindow.h" line="607"/>
         <source>4:3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="576"/>
+        <location filename="../ui_MainWindow.h" line="608"/>
         <source>16:9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="577"/>
+        <location filename="../ui_MainWindow.h" line="609"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="598"/>
+        <location filename="../ui_MainWindow.h" line="630"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="608"/>
+        <location filename="../ui_MainWindow.h" line="640"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="580"/>
+        <location filename="../ui_MainWindow.h" line="612"/>
         <source>Always on top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="581"/>
+        <location filename="../ui_MainWindow.h" line="613"/>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="582"/>
+        <location filename="../ui_MainWindow.h" line="614"/>
         <source>Simple Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="661"/>
+        <location filename="../ui_MainWindow.h" line="693"/>
         <source>Main Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="628"/>
+        <location filename="../ui_MainWindow.h" line="660"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="618"/>
+        <location filename="../ui_MainWindow.h" line="650"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="648"/>
+        <location filename="../ui_MainWindow.h" line="680"/>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="587"/>
+        <location filename="../ui_MainWindow.h" line="619"/>
         <source>Volume up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="588"/>
+        <location filename="../ui_MainWindow.h" line="620"/>
         <source>Volume down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="589"/>
+        <location filename="../ui_MainWindow.h" line="621"/>
         <source>Recorder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="638"/>
+        <location filename="../ui_MainWindow.h" line="670"/>
         <source>Record Now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="651"/>
+        <location filename="../ui_MainWindow.h" line="683"/>
         <source>50</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="653"/>
+        <location filename="../ui_MainWindow.h" line="685"/>
         <source>00:00:00</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="654"/>
+        <location filename="../ui_MainWindow.h" line="686"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="656"/>
+        <location filename="../ui_MainWindow.h" line="688"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="657"/>
+        <location filename="../ui_MainWindow.h" line="689"/>
         <source>Show / Hide</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="658"/>
+        <location filename="../ui_MainWindow.h" line="690"/>
         <source>Media</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="659"/>
+        <location filename="../ui_MainWindow.h" line="691"/>
         <source>Aspect ratio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="660"/>
+        <location filename="../ui_MainWindow.h" line="692"/>
         <source>Volume</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="666"/>
+        <location filename="../ui_MainWindow.h" line="698"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="667"/>
+        <location filename="../ui_MainWindow.h" line="699"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
@@ -941,17 +932,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="669"/>
+        <location filename="../ui_MainWindow.h" line="701"/>
         <source>Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="670"/>
-        <source>Today&apos;s Schedule</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_MainWindow.h" line="671"/>
+        <location filename="../ui_MainWindow.h" line="706"/>
         <source>Controls Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1030,6 +1016,26 @@ This will stop recording in progress.</source>
     <message>
         <location filename="../MainWindow.cpp" line="412"/>
         <source>Playing URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_MainWindow.h" line="702"/>
+        <source>Today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_MainWindow.h" line="703"/>
+        <source>&lt;center&gt;Comming soon!&lt;/center&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_MainWindow.h" line="704"/>
+        <source>Tomorrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_MainWindow.h" line="705"/>
+        <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

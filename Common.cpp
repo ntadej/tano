@@ -25,6 +25,11 @@ QString Common::locateResource(QString fileN) {
 	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + fileN).exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + fileN).absoluteFilePath();
 
+#ifdef Q_WS_X11
+		else if (QFileInfo("/usr/bin/" + fileN).exists())
+			path = QFileInfo("/usr/bin/" + fileN).absoluteFilePath();
+#endif
+
 #ifdef DEFAULT_DATA_DIR
 	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + fileN).exists())
 		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + fileN).absoluteFilePath();
@@ -64,6 +69,21 @@ QString Common::version()
 #else
 	return "Unknown version";
 #endif
+}
+
+bool Common::fripExists()
+{
+	QString frip;
+#ifdef Q_WS_X11
+	frip = "friptv";
+#else
+	frip = QCoreApplication::applicationDirPath() + "/friptv.exe";
+#endif
+
+	if (!locateResource(frip).isEmpty())
+		return true;
+	else
+		return false;
 }
 
 QString Common::frip()

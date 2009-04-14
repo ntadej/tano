@@ -112,8 +112,7 @@ void Epg::epgPrint()
 
 	epgValue.replace("\n","");
 	epgValue.replace("\">",";");
-	epgValue.replace("tv-spored.aspx?val=", "http://tano.pfusion.co.cc/siol/epg/" + epgChannel + "/");
-	epgValue.replace("&flag=", "/");
+	epgValue.replace("tv-spored.aspx", "http://www.siol.net/tv-spored.aspx");
 	epgValue.replace(";: ",";");
 	epgValue.replace(".2009: ", ".2009:;");
 	epgValue.remove(epgValue.size()-1,1);
