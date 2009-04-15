@@ -77,7 +77,7 @@ bool Common::fripExists()
 #ifdef Q_WS_X11
 	frip = "friptv";
 #else
-	frip = QCoreApplication::applicationDirPath() + "/friptv.exe";
+	frip = QCoreApplication::applicationDirPath() + "/friptv/friptv.exe";
 #endif
 
 	if (!locateResource(frip).isEmpty())
@@ -91,7 +91,7 @@ QString Common::frip()
 #ifdef Q_WS_X11
 	return "friptv";
 #else
-	return QCoreApplication::applicationDirPath() + "/friptv.exe";
+	return QCoreApplication::applicationDirPath() + "/friptv/friptv.exe";
 #endif
 }
 

@@ -12,11 +12,7 @@
 Recorder::Recorder(QWidget *parent)
     : QMainWindow(parent)
 {
-#ifdef Q_WS_WIN
-	slash = "\\";
-#else
 	slash = "/";
-#endif
 
 	ui.setupUi(this);
 
@@ -42,6 +38,10 @@ Recorder::Recorder(QWidget *parent)
 	trayIcon = new TrayRecorder(tray);
 	frip = new QProcess(this);
 	fripPath = Common::frip();
+
+//#ifdef Q_WS_WIN
+	//fripPath.replace("/","\\");
+//#endif
 
     timer = new QTimer(this);
 
@@ -203,12 +203,25 @@ void Recorder::record(bool status)
 			<< channel->url();
 
 		QString fileName = ui.fileEdit->text()+slash+channel->name()+QDateTime::currentDateTime().toString("-dd_MM_yyyy-hh_mm_ss")+".avi";
+
+#ifdef Q_WS_WIN
+		fileName.replace("/","\\");
+#endif
+
 		QStringList arguments;
-		arguments << "-cl" << QDir::tempPath()+slash+"tano.txt"
-				  << "-s"
-				  << "-fi" << fileName;
+		arguments << "-cl";
+
+#ifdef Q_WS_WIN
+		arguments << QString(QDir::tempPath()+slash+"tano.txt").replace("/","\\");
+#else
+		arguments << QDir::tempPath()+slash+"tano.txt";
+#endif
+		arguments << "-s"
+				  << "-fi"
+				  << fileName;
 
 		frip->start(fripPath, arguments);
+
 		trayIcon->changeToolTip(channel->name());
 
 		timer->start(1000);
@@ -232,7 +245,7 @@ void Recorder::record(bool status)
 
 		recording = true;
 	} else {
-		frip->terminate();
+		frip->kill();
 		timer->stop();
 		ui.valueCurrent->setText("-");
 		ui.valueTime->setText("0");

@@ -1168,22 +1168,22 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="219"/>
+        <location filename="../recorder/Recorder.cpp" line="232"/>
         <source>No timer - press button to stop.</source>
         <translation>Ni timerja - pritisni gumb in ustavi.</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="239"/>
+        <location filename="../recorder/Recorder.cpp" line="252"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="223"/>
+        <location filename="../recorder/Recorder.cpp" line="236"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="243"/>
+        <location filename="../recorder/Recorder.cpp" line="256"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
@@ -1193,12 +1193,12 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Ne morem pisati v %1.</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="267"/>
+        <location filename="../recorder/Recorder.cpp" line="280"/>
         <source>Channel is not selected!</source>
         <translation>Program ni izbran!</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="266"/>
+        <location filename="../recorder/Recorder.cpp" line="279"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>

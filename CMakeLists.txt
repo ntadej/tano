@@ -280,24 +280,6 @@ ADD_CUSTOM_COMMAND(
 	ARGS ${Tano_Translation_Srcs}
 )
 
-
-########
-# Help #
-########
-ADD_CUSTOM_COMMAND(
-	TARGET tano
-	PRE_BUILD
-	COMMAND ${QT_BINARY_DIR}/qhelpgenerator
-	ARGS help/tano.qhp -o help/tano.qch
-)
-ADD_CUSTOM_COMMAND(
-	TARGET tano
-	PRE_BUILD
-	COMMAND ${QT_BINARY_DIR}/qcollectiongenerator
-	ARGS help/tano.qhcp -o help/tano.qhc
-)
-
-
 ################
 # Installation #
 ################
@@ -317,17 +299,11 @@ IF(MINGW)
 	# Install Qt libs
 	INSTALL( FILES ${QT_BIN_DIR}/QtCore4.dll ${QT_BIN_DIR}/QtGui4.dll ${QT_BIN_DIR}/QtNetwork4.dll ${QT_BIN_DIR}/QtWebkit4.dll ${QT_BIN_DIR}/QtXml4.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
 	INSTALL( FILES ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qicod4.dll
 	    ${QT_PLUGINS_DIR}/imageformats/qmng4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qsvgd4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qgifd4.dll
 	    ${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qmngd4.dll
 	    ${QT_PLUGINS_DIR}/imageformats/qtiff4.dll
 	    ${QT_PLUGINS_DIR}/imageformats/qico4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qjpegd4.dll
 	    ${QT_PLUGINS_DIR}/imageformats/qsvg4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qtiffd4.dll
 	  DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/imageformats)
 	
 	# Install OpenSSL
