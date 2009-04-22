@@ -31,7 +31,7 @@ void EpgLoader::reload()
     epg();
 }
 
-void Epg::stop()
+void EpgLoader::stop()
 {
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
 }

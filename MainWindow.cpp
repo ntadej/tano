@@ -308,6 +308,11 @@ void MainWindow::play()
 	ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
 	ui.labelLanguage->show();
 
+	if(osdEnabled) {
+		osd->setInfo(channel->longName() + " (" + channel->name() + ")", tr("Language:") + " " + channel->language());
+		osd->setEpg(false);
+	}
+
 	epg->getEpg(channel->epg());
 
 	ui.labelNow->hide();
@@ -333,6 +338,9 @@ void MainWindow::showEpg(QStringList epgValue)
 	ui.labelNext->show();
 	ui.buttonRefresh->show();
 	ui.buttonReload->show();
+
+	if(osdEnabled)
+		osd->setEpg(true, tr("Now:") + " " + epgValue.at(0), tr("Next:") + " " + epgValue.at(1));
 }
 
 void MainWindow::stop()
@@ -534,6 +542,9 @@ void MainWindow::createOsd()
 	connect(osd, SIGNAL(seek(int)), ui.videoWidget, SLOT(controlDuration(int)));
 
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), osd, SLOT(setVolume(int)));
+
+	connect(osd, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
+	connect(osd, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
 }
 
 void MainWindow::recorder()

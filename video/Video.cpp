@@ -49,7 +49,7 @@ void Video::mouseMoveEvent(QMouseEvent *event)
 		emit mouseMove();
 		pos = event->globalPos();
 
-		if(event->globalPos().x() > w/2-w*0.75/2 && event->globalPos().x() < w-(w/2-w*0.75/2) && event->globalPos().y() > h-100) {
+		if(event->globalPos().x() > w/2-w*0.75/2 && event->globalPos().x() < w-(w/2-w*0.75/2) && event->globalPos().y() > h-105) {
 			emit osd(false);
 			timer->stop();
 		} else {

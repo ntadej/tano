@@ -721,7 +721,7 @@ Polna podpora je načrtovana za različico 0.6.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../MainWindow.cpp" line="439"/>
+        <location filename="../MainWindow.cpp" line="447"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
@@ -776,7 +776,7 @@ Polna podpora je načrtovana za različico 0.6.</translation>
         <translation>&amp;Pomoč</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="340"/>
+        <location filename="../MainWindow.cpp" line="348"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
@@ -911,7 +911,7 @@ Polna podpora je načrtovana za različico 0.6.</translation>
         <translation>Ponovno naloži</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="325"/>
+        <location filename="../MainWindow.cpp" line="330"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
@@ -933,74 +933,74 @@ This will stop recording in progress.</source>
 To bo zaključilo snemanje, ki trenutno poteka.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="308"/>
+        <location filename="../MainWindow.cpp" line="312"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="325"/>
+        <location filename="../MainWindow.cpp" line="330"/>
         <source>selected</source>
         <translation>je izbran</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="330"/>
+        <location filename="../MainWindow.cpp" line="343"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="332"/>
+        <location filename="../MainWindow.cpp" line="343"/>
         <source>Next:</source>
         <translation>Naslednje:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="357"/>
+        <location filename="../MainWindow.cpp" line="365"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="359"/>
+        <location filename="../MainWindow.cpp" line="367"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="377"/>
+        <location filename="../MainWindow.cpp" line="385"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="383"/>
+        <location filename="../MainWindow.cpp" line="391"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="392"/>
+        <location filename="../MainWindow.cpp" line="400"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="394"/>
+        <location filename="../MainWindow.cpp" line="402"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="400"/>
+        <location filename="../MainWindow.cpp" line="408"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="410"/>
+        <location filename="../MainWindow.cpp" line="418"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="411"/>
+        <location filename="../MainWindow.cpp" line="419"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="416"/>
+        <location filename="../MainWindow.cpp" line="424"/>
         <source>Playing URL</source>
         <translation>Predvajam URL</translation>
     </message>
@@ -1043,44 +1043,49 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
 <context>
     <name>Osd</name>
     <message>
-        <location filename="../ui_Osd.h" line="198"/>
+        <location filename="../ui_Osd.h" line="269"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../ui_Osd.h" line="203"/>
+        <location filename="../ui_Osd.h" line="274"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../ui_Osd.h" line="208"/>
+        <location filename="../ui_Osd.h" line="279"/>
         <source>Back</source>
         <translation>Nazaj</translation>
     </message>
     <message>
-        <location filename="../ui_Osd.h" line="213"/>
+        <location filename="../ui_Osd.h" line="284"/>
         <source>Next</source>
         <translation>Naslednji</translation>
     </message>
     <message>
-        <location filename="../ui_Osd.h" line="218"/>
+        <location filename="../ui_Osd.h" line="289"/>
         <source>Record Now</source>
         <translation>Snemaj takoj</translation>
     </message>
     <message>
-        <location filename="../ui_Osd.h" line="223"/>
+        <location filename="../ui_Osd.h" line="294"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../ui_Osd.h" line="226"/>
+        <location filename="../ui_Osd.h" line="297"/>
         <source>50</source>
         <translation>50</translation>
     </message>
     <message>
-        <location filename="../ui_Osd.h" line="228"/>
+        <location filename="../ui_Osd.h" line="299"/>
         <source>00:00:00</source>
         <translation>00:00:00</translation>
+    </message>
+    <message>
+        <location filename="../ui_Osd.h" line="265"/>
+        <source> | </source>
+        <translation> | </translation>
     </message>
 </context>
 <context>

@@ -23,6 +23,9 @@ Osd::Osd(QWidget *parent)
 	connect(ui.buttonMute, SIGNAL(clicked()), this, SIGNAL(mute()));
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), this, SIGNAL(volume(int)));
 	connect(ui.durationSlider, SIGNAL(sliderMoved(int)), this, SIGNAL(seek(int)));
+
+	connect(ui.labelNow, SIGNAL(linkActivated(QString)), this, SIGNAL(linkActivated(QString)));
+	connect(ui.labelNext, SIGNAL(linkActivated(QString)), this, SIGNAL(linkActivated(QString)));
 }
 
 Osd::~Osd()
@@ -85,6 +88,29 @@ void Osd::setLenght(qint64 l)
 	timeNow = QTime();
 	timeNow = timeNow.addMSecs(tm);
 	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
+}
+
+void Osd::setInfo(QString channel, QString language)
+{
+	ui.labelChannel->setText(channel);
+	ui.labelLanguage->setText(language);
+}
+
+void Osd::setEpg(bool status, QString now, QString next)
+{
+	if(status) {
+		ui.labelNow->show();
+		ui.labelNext->show();
+		ui.labelS2->show();
+		ui.labelS3->show();
+		ui.labelNow->setText(now);
+		ui.labelNext->setText(next);
+	} else {
+		ui.labelNow->hide();
+		ui.labelNext->hide();
+		ui.labelS2->hide();
+		ui.labelS3->hide();
+	}
 }
 
 void Osd::disableRecorder()

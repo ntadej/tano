@@ -4,8 +4,6 @@
 #include <QtGui/QWidget>
 #include <QTimer>
 #include <QTime>
-#include <QMouseEvent>
-#include <QPoint>
 
 #include "ui_Osd.h"
 
@@ -31,7 +29,12 @@ public slots:
 
 	void disableRecorder();
 
+	void setInfo(QString channel, QString language = "");
+	void setEpg(bool status, QString now = "", QString next = "");
+
 signals:
+	void linkActivated(QString);
+
 	void play();
 	void stop();
 	void back();
