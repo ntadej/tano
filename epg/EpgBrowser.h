@@ -19,7 +19,6 @@ public slots:
 private slots:
 	void go();
 	void home();
-	void epg();
 	void changeText(QUrl url);
 
 	void done(int value);

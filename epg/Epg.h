@@ -1,14 +1,13 @@
 #ifndef TANO_EPG_H_
 #define TANO_EPG_H_
 
-#include <QHttp>
 #include <QString>
 #include <QStringList>
 #include <QTimer>
-#include <QTextCodec>
-#include <QTextEdit>
 
-class Epg : public QHttp {
+#include "EpgLoader.h"
+
+class Epg : public QObject {
 Q_OBJECT
 public:
 	Epg();
@@ -26,25 +25,20 @@ signals:
 	void epgDoneFull(QStringList);
 
 private slots:
-	void epg();
-	void epgPrint();
 	void epgNow();
-	void epgInit();
-	void epgInitDone();
+	void epgSet(QStringList list);
 
 private:
 	bool init;
 
-	QString epgValue;
+	EpgLoader *loader;
+
 	QString epgFull;
 	QString epgChannel;
-	QString epgFlag;
 	QStringList epgList;
 	QStringList epgListNow;
 
 	QTimer *timer;
-	QTextCodec *codec;
-	QTextEdit *edit;
 };
 
 #endif /* EPG_H_ */

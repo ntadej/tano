@@ -90,7 +90,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionHome" />
-   <addaction name="actionEpg" />
    <addaction name="separator" />
    <addaction name="actionBack" />
    <addaction name="actionForward" />
@@ -115,15 +114,6 @@
    </property>
    <property name="text" >
     <string>Close</string>
-   </property>
-  </action>
-  <action name="actionEpg" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
-     <normaloff>:/icons/images/siol.gif</normaloff>:/icons/images/siol.gif</iconset>
-   </property>
-   <property name="text" >
-    <string>SiOL TV EPG</string>
    </property>
   </action>
   <action name="actionReload" >

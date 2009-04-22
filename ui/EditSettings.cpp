@@ -106,6 +106,11 @@ void EditSettings::ok()
 	} else {
 		settings->setValue("OSD",false);
 	}
+	if(ui.checkInfo->isChecked()) {
+		settings->setValue("info",true);
+	} else {
+		settings->setValue("info",false);
+	}
 	settings->endGroup();
 
 	settings->beginGroup("Recorder");
@@ -163,15 +168,10 @@ void EditSettings::read()
 	}
 
 	settings->beginGroup("GUI");
-	if(settings->value("lite",false).toBool()) {
-		ui.checkLite->setChecked(true);
-	}
-	if(settings->value("ontop",false).toBool()) {
-		ui.checkTop->setChecked(true);
-	}
-	if(settings->value("OSD",true).toBool()) {
-		ui.checkOsd->setChecked(true);
-	}
+	ui.checkLite->setChecked(settings->value("lite",false).toBool());
+	ui.checkTop->setChecked(settings->value("ontop",false).toBool());
+	ui.checkOsd->setChecked(settings->value("OSD",true).toBool());
+	ui.checkInfo->setChecked(settings->value("info",true).toBool());
 	settings->endGroup();
 
 	settings->beginGroup("Recorder");

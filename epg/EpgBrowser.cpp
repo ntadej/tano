@@ -20,7 +20,6 @@ EpgBrowser::EpgBrowser(QWidget *parent)
 
 	connect(ui.buttonGo, SIGNAL(clicked()), this, SLOT(go()));
 	connect(ui.actionHome, SIGNAL(triggered()), this, SLOT(home()));
-	connect(ui.actionEpg, SIGNAL(triggered()), this, SLOT(epg()));
 	connect(ui.epgView, SIGNAL(urlChanged(QUrl)), this, SLOT(changeText(QUrl)));
 
 	connect(ui.epgView, SIGNAL(loadProgress(int)), this, SLOT(done(int)));
@@ -55,12 +54,6 @@ void EpgBrowser::open(QString link) {
 void EpgBrowser::home()
 {
 	ui.addressLine->setText("http://tano.sf.net");
-	go();
-}
-
-void EpgBrowser::epg()
-{
-	ui.addressLine->setText("http://www.siol.net/tv-spored.aspx");
 	go();
 }
 

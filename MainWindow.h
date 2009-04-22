@@ -46,16 +46,12 @@ private slots:
     void openUrl();
     void showSettings();
     void showBrowser();
-    void showSiolEpg();
 
     void showEpg(QStringList epgValue);
 
     void processUpdates(QString updates);
 
     void tooltip(QString channelNow = "stop");
-
-    void actionChannelShow();
-    void actionToolbarShow();
 
     void rightMenu(QPoint pos);
     void menuOpen();

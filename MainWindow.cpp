@@ -104,6 +104,11 @@ void MainWindow::createSettings()
 	} else {
 		osdEnabled = false;
 	}
+	if(!settings->value("info",true).toBool()) {
+		ui.playlistWidget->hide();
+		ui.actionChannel_info->setChecked(false);
+	}
+
 	settings->endGroup();
 
 	record = new Recorder();
@@ -141,7 +146,6 @@ void MainWindow::createConnections()
 
 	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
 	connect(ui.actionBrowser, SIGNAL(triggered()), this, SLOT(showBrowser()));
-	connect(ui.actionEpg, SIGNAL(triggered()), this, SLOT(showSiolEpg()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
 	connect(ui.actionPlay, SIGNAL(triggered()), ui.videoWidget, SLOT(controlPlay()));
@@ -188,8 +192,8 @@ void MainWindow::createConnections()
 	connect(ui.labelNow, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
 	connect(ui.labelNext, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
 
-	connect(ui.actionChannel_info, SIGNAL(triggered()), this, SLOT(actionChannelShow()));
-	connect(ui.actionToolbar, SIGNAL(triggered()), this, SLOT(actionToolbarShow()));
+	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.playlistWidget, SLOT(setVisible(bool)));
+	connect(ui.playlistWidget, SIGNAL(visibilityChanged(bool)), ui.actionChannel_info, SLOT(setChecked(bool)));
 
 	connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioOriginal()));
 	connect(ui.actionRatio43, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio43()));
@@ -421,11 +425,6 @@ void MainWindow::showBrowser()
 	browser->open("http://tano.pfusion.co.cc");
 }
 
-void MainWindow::showSiolEpg()
-{
-	browser->open("http://tano.pfusion.co.cc/siol/");
-}
-
 void MainWindow::showSettings()
 {
     EditSettings s(this, shortcuts);
@@ -457,22 +456,6 @@ void MainWindow::processUpdates(QString updates)
 	}
 }
 
-void MainWindow::actionChannelShow()
-{
-    if(ui.playlistWidget->isVisible())
-    	ui.playlistWidget->hide();
-    else
-    	ui.playlistWidget->show();
-}
-
-void MainWindow::actionToolbarShow()
-{
-    if(ui.toolBar->isVisible())
-    	ui.toolBar->hide();
-    else
-    	ui.toolBar->show();
-}
-
 void MainWindow::rightMenu(QPoint pos)
 {
 	right->exec(pos);
@@ -501,14 +484,14 @@ void MainWindow::lite()
 		ui.centralLayout-> setContentsMargins(4,4,4,4);
 		ui.playlistWidget->show();
 		ui.toolBar->show();
-		//ui.menubar->show();
+		ui.toolBarOsd->show();
 		ui.statusbar->show();
 		isLite = false;
 	} else {
 		ui.centralLayout-> setContentsMargins(0,0,0,0);
 		ui.playlistWidget->hide();
 		ui.toolBar->hide();
-		//ui.menubar->hide(); Causes shortcuts not working
+		ui.toolBarOsd->hide();
 		ui.statusbar->hide();
 		isLite = true;
 	}

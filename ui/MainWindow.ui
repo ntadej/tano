@@ -318,8 +318,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>0</width>
-     <height>0</height>
+     <width>800</width>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile" >
@@ -332,7 +332,6 @@
     <addaction name="separator" />
     <addaction name="actionBrowser" />
     <addaction name="actionRecorder" />
-    <addaction name="actionEpg" />
     <addaction name="separator" />
     <addaction name="actionClose" />
    </widget>
@@ -346,26 +345,14 @@
    </widget>
    <widget class="QMenu" name="menuOptions" >
     <property name="title" >
-     <string>Options</string>
+     <string>&amp;Options</string>
     </property>
-    <widget class="QMenu" name="menuShow" >
-     <property name="title" >
-      <string>Show / Hide</string>
-     </property>
-     <addaction name="actionToolbar" />
-     <addaction name="actionChannel_info" />
-    </widget>
-    <addaction name="actionTop" />
-    <addaction name="actionLite" />
-    <addaction name="actionFullscreen" />
-    <addaction name="menuShow" />
-    <addaction name="separator" />
     <addaction name="actionEditPlaylist" />
     <addaction name="actionSettings" />
    </widget>
    <widget class="QMenu" name="menuMedia" >
     <property name="title" >
-     <string>Media</string>
+     <string>&amp;Media</string>
     </property>
     <widget class="QMenu" name="menuRatio" >
      <property name="title" >
@@ -399,9 +386,20 @@
     <addaction name="menuVolume" />
     <addaction name="menuRatio" />
    </widget>
+   <widget class="QMenu" name="menuView" >
+    <property name="title" >
+     <string>&amp;View</string>
+    </property>
+    <addaction name="actionTop" />
+    <addaction name="actionLite" />
+    <addaction name="actionFullscreen" />
+    <addaction name="separator" />
+    <addaction name="actionChannel_info" />
+   </widget>
    <addaction name="menuFile" />
-   <addaction name="menuOptions" />
+   <addaction name="menuView" />
    <addaction name="menuMedia" />
+   <addaction name="menuOptions" />
    <addaction name="menuAbout" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
@@ -428,7 +426,6 @@
    <addaction name="actionEditPlaylist" />
    <addaction name="actionRecorder" />
    <addaction name="actionBrowser" />
-   <addaction name="actionEpg" />
    <addaction name="actionSettings" />
   </widget>
   <widget class="QDockWidget" name="playlistWidget" >
@@ -511,8 +508,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>275</width>
-          <height>337</height>
+          <width>265</width>
+          <height>299</height>
          </rect>
         </property>
         <attribute name="label" >
@@ -544,8 +541,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>275</width>
-          <height>337</height>
+          <width>139</width>
+          <height>66</height>
          </rect>
         </property>
         <attribute name="label" >
@@ -691,9 +688,11 @@
    </property>
   </action>
   <action name="actionChannel_info" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
-     <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
    </property>
    <property name="text" >
     <string>Channel info</string>
@@ -715,15 +714,6 @@
    </property>
    <property name="text" >
     <string>Check for updates</string>
-   </property>
-  </action>
-  <action name="actionEpg" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
-     <normaloff>:/icons/images/siol.gif</normaloff>:/icons/images/siol.gif</iconset>
-   </property>
-   <property name="text" >
-    <string>SiOL TV EPG</string>
    </property>
   </action>
   <action name="actionRatioOriginal" >
@@ -806,9 +796,11 @@
    </property>
   </action>
   <action name="actionToolbar" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
-     <normaloff>:/icons/images/toolbar.png</normaloff>:/icons/images/toolbar.png</iconset>
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
    </property>
    <property name="text" >
     <string>Main Toolbar</string>
@@ -878,6 +870,17 @@
    </property>
    <property name="text" >
     <string>Record Now</string>
+   </property>
+  </action>
+  <action name="actionCToolbar" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>Controls Toolbar</string>
    </property>
   </action>
  </widget>

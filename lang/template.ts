@@ -378,47 +378,47 @@ Full support is planned for version 0.6.</source>
 <context>
     <name>EditSettings</name>
     <message>
-        <location filename="../ui_EditSettings.h" line="565"/>
+        <location filename="../ui_EditSettings.h" line="573"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="493"/>
+        <location filename="../ui_EditSettings.h" line="500"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="494"/>
+        <location filename="../ui_EditSettings.h" line="501"/>
         <source>System default language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="495"/>
+        <location filename="../ui_EditSettings.h" line="502"/>
         <source>Custom language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="499"/>
+        <location filename="../ui_EditSettings.h" line="506"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="500"/>
+        <location filename="../ui_EditSettings.h" line="507"/>
         <source>Slovensko</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="522"/>
+        <location filename="../ui_EditSettings.h" line="530"/>
         <source>Browse:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="524"/>
+        <location filename="../ui_EditSettings.h" line="532"/>
         <source>...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="525"/>
+        <location filename="../ui_EditSettings.h" line="533"/>
         <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
@@ -433,182 +433,182 @@ Full support is planned for version 0.6.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="501"/>
+        <location filename="../ui_EditSettings.h" line="508"/>
         <source>&lt;i&gt;You need to restart Tano Player when changing language!&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="513"/>
+        <location filename="../ui_EditSettings.h" line="520"/>
         <source>Main</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="527"/>
+        <location filename="../ui_EditSettings.h" line="535"/>
         <source>Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="528"/>
+        <location filename="../ui_EditSettings.h" line="536"/>
         <source>Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="575"/>
+        <location filename="../ui_EditSettings.h" line="583"/>
         <source>Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="551"/>
+        <location filename="../ui_EditSettings.h" line="559"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="552"/>
+        <location filename="../ui_EditSettings.h" line="560"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="553"/>
+        <location filename="../ui_EditSettings.h" line="561"/>
         <source>Next channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="554"/>
+        <location filename="../ui_EditSettings.h" line="562"/>
         <source>Previous channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="555"/>
+        <location filename="../ui_EditSettings.h" line="563"/>
         <source>Fullscreen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="574"/>
+        <location filename="../ui_EditSettings.h" line="582"/>
         <source>Restore defaults</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="572"/>
+        <location filename="../ui_EditSettings.h" line="580"/>
         <source>Set</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="556"/>
+        <location filename="../ui_EditSettings.h" line="564"/>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="557"/>
+        <location filename="../ui_EditSettings.h" line="565"/>
         <source>Volume up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="558"/>
+        <location filename="../ui_EditSettings.h" line="566"/>
         <source>Volume down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="573"/>
+        <location filename="../ui_EditSettings.h" line="581"/>
         <source>Clear Shortcut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="547"/>
+        <location filename="../ui_EditSettings.h" line="555"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="560"/>
+        <location filename="../ui_EditSettings.h" line="568"/>
         <source>Open File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="561"/>
+        <location filename="../ui_EditSettings.h" line="569"/>
         <source>Open URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="562"/>
+        <location filename="../ui_EditSettings.h" line="570"/>
         <source>Open Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="563"/>
+        <location filename="../ui_EditSettings.h" line="571"/>
         <source>Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="564"/>
+        <location filename="../ui_EditSettings.h" line="572"/>
         <source>Edit Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="566"/>
+        <location filename="../ui_EditSettings.h" line="574"/>
         <source>Always on top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="567"/>
+        <location filename="../ui_EditSettings.h" line="575"/>
         <source>Simple Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="568"/>
+        <location filename="../ui_EditSettings.h" line="576"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="569"/>
+        <location filename="../ui_EditSettings.h" line="577"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="502"/>
+        <location filename="../ui_EditSettings.h" line="509"/>
         <source>Session store</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="503"/>
+        <location filename="../ui_EditSettings.h" line="510"/>
         <source>Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="506"/>
+        <location filename="../ui_EditSettings.h" line="513"/>
         <source>SiOL TV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="507"/>
+        <location filename="../ui_EditSettings.h" line="514"/>
         <source>T-2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="508"/>
+        <location filename="../ui_EditSettings.h" line="515"/>
         <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="504"/>
+        <location filename="../ui_EditSettings.h" line="511"/>
         <source>&lt;i&gt;You need to restart Tano Player when changing session settings!&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="505"/>
+        <location filename="../ui_EditSettings.h" line="512"/>
         <source>Default Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="559"/>
+        <location filename="../ui_EditSettings.h" line="567"/>
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="521"/>
+        <location filename="../ui_EditSettings.h" line="529"/>
         <source>Default recording directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="526"/>
+        <location filename="../ui_EditSettings.h" line="534"/>
         <source>Recorder</source>
         <translation type="unfinished"></translation>
     </message>
@@ -618,90 +618,90 @@ Full support is planned for version 0.6.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="514"/>
+        <location filename="../ui_EditSettings.h" line="521"/>
         <source>Default interface settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="517"/>
+        <location filename="../ui_EditSettings.h" line="524"/>
         <source>Enable On Screen Display - OSD in Fullscreen mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="518"/>
+        <location filename="../ui_EditSettings.h" line="526"/>
         <source>User Interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="519"/>
+        <location filename="../ui_EditSettings.h" line="527"/>
         <source>Enable Recorder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="520"/>
+        <location filename="../ui_EditSettings.h" line="528"/>
         <source>&lt;i&gt;You need to restart Tano Player when enabling/disabling Recorder!&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="515"/>
+        <location filename="../ui_EditSettings.h" line="522"/>
         <source>Simple mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="525"/>
+        <source>Start with Channel info enabled</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>EpgBrowser</name>
     <message>
-        <location filename="../epg/EpgBrowser.cpp" line="95"/>
+        <location filename="../epg/EpgBrowser.cpp" line="88"/>
         <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../epg/EpgBrowser.cpp" line="98"/>
+        <location filename="../epg/EpgBrowser.cpp" line="91"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="156"/>
+        <location filename="../ui_EpgBrowser.h" line="149"/>
         <source>Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="157"/>
+        <location filename="../ui_EpgBrowser.h" line="150"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="158"/>
+        <location filename="../ui_EpgBrowser.h" line="151"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="159"/>
-        <source>SiOL TV EPG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_EpgBrowser.h" line="160"/>
+        <location filename="../ui_EpgBrowser.h" line="152"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="161"/>
+        <location filename="../ui_EpgBrowser.h" line="153"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="162"/>
+        <location filename="../ui_EpgBrowser.h" line="154"/>
         <source>Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="163"/>
+        <location filename="../ui_EpgBrowser.h" line="155"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_EpgBrowser.h" line="164"/>
+        <location filename="../ui_EpgBrowser.h" line="156"/>
         <source>Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
@@ -717,227 +717,207 @@ Full support is planned for version 0.6.</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../MainWindow.cpp" line="440"/>
+        <location filename="../MainWindow.cpp" line="439"/>
         <source>Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="592"/>
+        <location filename="../ui_MainWindow.h" line="588"/>
         <source>About Tano Player</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="593"/>
+        <location filename="../ui_MainWindow.h" line="589"/>
         <source>&amp;Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="594"/>
+        <location filename="../ui_MainWindow.h" line="590"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="595"/>
+        <location filename="../ui_MainWindow.h" line="591"/>
         <source>&amp;Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="596"/>
+        <location filename="../ui_MainWindow.h" line="592"/>
         <source>&amp;Fullscreen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="597"/>
+        <location filename="../ui_MainWindow.h" line="593"/>
         <source>&amp;Open Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="598"/>
+        <location filename="../ui_MainWindow.h" line="594"/>
         <source>Open &amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="599"/>
+        <location filename="../ui_MainWindow.h" line="595"/>
         <source>&amp;Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="600"/>
+        <location filename="../ui_MainWindow.h" line="596"/>
         <source>Edit Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="687"/>
+        <location filename="../ui_MainWindow.h" line="683"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="336"/>
+        <location filename="../MainWindow.cpp" line="340"/>
         <source>Channel info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="603"/>
+        <location filename="../ui_MainWindow.h" line="599"/>
         <source>Open URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="604"/>
+        <location filename="../ui_MainWindow.h" line="600"/>
         <source>Check for updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="605"/>
-        <source>SiOL TV EPG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_MainWindow.h" line="606"/>
+        <location filename="../ui_MainWindow.h" line="601"/>
         <source>Original</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="607"/>
+        <location filename="../ui_MainWindow.h" line="602"/>
         <source>4:3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="608"/>
+        <location filename="../ui_MainWindow.h" line="603"/>
         <source>16:9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="609"/>
+        <location filename="../ui_MainWindow.h" line="604"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="630"/>
+        <location filename="../ui_MainWindow.h" line="626"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="640"/>
+        <location filename="../ui_MainWindow.h" line="636"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="612"/>
+        <location filename="../ui_MainWindow.h" line="607"/>
         <source>Always on top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="613"/>
+        <location filename="../ui_MainWindow.h" line="608"/>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="614"/>
+        <location filename="../ui_MainWindow.h" line="609"/>
         <source>Simple Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="693"/>
+        <location filename="../ui_MainWindow.h" line="689"/>
         <source>Main Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="660"/>
+        <location filename="../ui_MainWindow.h" line="656"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="650"/>
+        <location filename="../ui_MainWindow.h" line="646"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="680"/>
+        <location filename="../ui_MainWindow.h" line="676"/>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="619"/>
+        <location filename="../ui_MainWindow.h" line="614"/>
         <source>Volume up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="620"/>
+        <location filename="../ui_MainWindow.h" line="615"/>
         <source>Volume down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="621"/>
+        <location filename="../ui_MainWindow.h" line="616"/>
         <source>Recorder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="670"/>
+        <location filename="../ui_MainWindow.h" line="666"/>
         <source>Record Now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="683"/>
+        <location filename="../ui_MainWindow.h" line="679"/>
         <source>50</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="685"/>
+        <location filename="../ui_MainWindow.h" line="681"/>
         <source>00:00:00</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="686"/>
+        <location filename="../ui_MainWindow.h" line="682"/>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="688"/>
-        <source>Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_MainWindow.h" line="689"/>
-        <source>Show / Hide</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_MainWindow.h" line="690"/>
-        <source>Media</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../ui_MainWindow.h" line="691"/>
+        <location filename="../ui_MainWindow.h" line="686"/>
         <source>Aspect ratio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="692"/>
+        <location filename="../ui_MainWindow.h" line="687"/>
         <source>Volume</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="698"/>
+        <location filename="../ui_MainWindow.h" line="694"/>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="699"/>
+        <location filename="../ui_MainWindow.h" line="695"/>
         <source>Reload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="321"/>
+        <location filename="../MainWindow.cpp" line="325"/>
         <source>Channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="701"/>
+        <location filename="../ui_MainWindow.h" line="697"/>
         <source>Channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="706"/>
+        <location filename="../ui_MainWindow.h" line="702"/>
         <source>Controls Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
@@ -948,94 +928,109 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="304"/>
+        <location filename="../MainWindow.cpp" line="308"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="321"/>
+        <location filename="../MainWindow.cpp" line="325"/>
         <source>selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="326"/>
+        <location filename="../MainWindow.cpp" line="330"/>
         <source>Now:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="328"/>
+        <location filename="../MainWindow.cpp" line="332"/>
         <source>Next:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="353"/>
+        <location filename="../MainWindow.cpp" line="357"/>
         <source>Open Channel list File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="355"/>
+        <location filename="../MainWindow.cpp" line="359"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="373"/>
+        <location filename="../MainWindow.cpp" line="377"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="379"/>
+        <location filename="../MainWindow.cpp" line="383"/>
         <source>File loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="388"/>
+        <location filename="../MainWindow.cpp" line="392"/>
         <source>Open File or URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="390"/>
+        <location filename="../MainWindow.cpp" line="394"/>
         <source>Multimedia files(*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="396"/>
+        <location filename="../MainWindow.cpp" line="400"/>
         <source>Playing file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="406"/>
+        <location filename="../MainWindow.cpp" line="410"/>
         <source>Open URL or stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="407"/>
+        <location filename="../MainWindow.cpp" line="411"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="412"/>
+        <location filename="../MainWindow.cpp" line="416"/>
         <source>Playing URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="702"/>
+        <location filename="../ui_MainWindow.h" line="698"/>
         <source>Today</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="703"/>
+        <location filename="../ui_MainWindow.h" line="699"/>
         <source>&lt;center&gt;Comming soon!&lt;/center&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="704"/>
+        <location filename="../ui_MainWindow.h" line="700"/>
         <source>Tomorrow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../ui_MainWindow.h" line="705"/>
+        <location filename="../ui_MainWindow.h" line="701"/>
         <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_MainWindow.h" line="684"/>
+        <source>&amp;Options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_MainWindow.h" line="685"/>
+        <source>&amp;Media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../ui_MainWindow.h" line="688"/>
+        <source>&amp;View</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
