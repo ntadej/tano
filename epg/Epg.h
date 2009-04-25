@@ -4,6 +4,7 @@
 #include <QString>
 #include <QStringList>
 #include <QTimer>
+#include <QDateTime>
 
 #include "EpgLoader.h"
 
@@ -21,15 +22,16 @@ public slots:
 	void stop();
 
 signals:
-	void epgDone(QStringList);
-	void epgDoneFull(QStringList);
+	void epgDone(int, QStringList, QString);
 
 private slots:
 	void epgNow();
 	void epgSet(QStringList list);
+	void epgSetFull(QStringList list);
 
 private:
 	bool init;
+	int step;
 
 	EpgLoader *loader;
 
@@ -39,6 +41,7 @@ private:
 	QStringList epgListNow;
 
 	QTimer *timer;
+	QDateTime date;
 };
 
 #endif /* EPG_H_ */

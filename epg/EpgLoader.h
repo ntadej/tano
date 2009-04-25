@@ -13,8 +13,7 @@ public:
 	EpgLoader();
 	virtual ~EpgLoader();
 
-	void getEpg(QString epgP);
-	void reload();
+	void getEpg(bool f, QString epgP);
 	void stop();
 
 signals:
@@ -23,18 +22,20 @@ signals:
 private slots:
 	void epg();
 	void epgPrint();
+	void epgShow();
 	void epgInit();
 	void epgInitDone();
 
 private:
 	bool init;
+	bool full;
 
 	QString epgGet;
 	QString epgValue;
 	QString epgFull;
 	QString epgFlag;
 	QStringList epgList;
-	QStringList epgListNow;
+	QStringList epgListShow;
 
 	QTextCodec *codec;
 	QTextEdit *edit;

@@ -5,8 +5,10 @@
 
 Epg::Epg()
 {
+	step = 0;
 	loader = new EpgLoader();
     timer = new QTimer(this);
+    date = QDateTime::currentDateTime();
 
     connect(timer, SIGNAL(timeout()), this, SLOT(epgNow()));
     connect(loader, SIGNAL(epgDone(QStringList)), this, SLOT(epgSet(QStringList)));
@@ -25,9 +27,12 @@ void Epg::getEpg(QString epgP)
 	}
 
 	epgChannel = epgP;
-	epgFull = QString("/tv-spored.aspx?chn=" + epgChannel);
+	if(step==0)
+		epgFull = QString("/tv-spored.aspx?chn=" + epgChannel);
+	else
+		epgFull = QString("/tv-spored.aspx?day=" + QString::number(step+1) + "&chn=" + epgChannel);
 
-	loader->getEpg(epgFull);
+	loader->getEpg(true,epgFull);
 }
 
 void Epg::refresh()
@@ -37,15 +42,30 @@ void Epg::refresh()
 
 void Epg::reload()
 {
-    loader->reload();
+    step = 0;
+    getEpg(epgChannel);
+}
+
+void Epg::epgSetFull(QStringList list)
+{
+	emit epgDone(step+1, list, date.addDays(step).toString("d.M."));
 }
 
 void Epg::epgSet(QStringList list)
 {
-	epgList.clear();
-	epgList = list;
+	if(step == 0) {
+		epgList.clear();
+		epgList = list;
+		epgNow();
+	}
 
-	epgNow();
+	epgSetFull(list);
+
+	if(step < 4) {
+		step++;
+		getEpg(epgChannel);
+	} else
+		step = 0;
 }
 
 void Epg::epgNow()
@@ -55,7 +75,7 @@ void Epg::epgNow()
 		if(QTime::currentTime() > QTime::fromString(epgList.at(i), "hh:mm") && QTime::currentTime() < QTime::fromString(epgList.at(i+3), "hh:mm")) {
 			epgListNow << "<a href=\"" + epgList.at(i+1) + "\">" + epgList.at(i) + " - " + epgList.at(i+2) + "</a>"
 					   << "<a href=\"" + epgList.at(i+4) + "\">" + epgList.at(i+3) + " - " + epgList.at(i+5) + "</a>";
-			emit epgDone(epgListNow);
+			emit epgDone(0,epgListNow,"test");
 			return;
 		}
 	}

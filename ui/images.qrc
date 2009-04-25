@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons" >
+    <file>images/image.png</file>
     <file>images/clock.png</file>
     <file>images/record.png</file>
     <file>images/recorder.png</file>

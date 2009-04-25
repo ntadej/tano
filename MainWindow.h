@@ -18,6 +18,7 @@
 #include "control/Shortcuts.h"
 #include "epg/Epg.h"
 #include "epg/EpgBrowser.h"
+#include "epg/EpgShow.h"
 #include "recorder/Recorder.h"
 
 class MainWindow : public QMainWindow
@@ -47,7 +48,7 @@ private slots:
     void showSettings();
     void showBrowser();
 
-    void showEpg(QStringList epgValue);
+    void showEpg(int id, QStringList epgValue, QString date);
 
     void processUpdates(QString updates);
 
@@ -81,6 +82,7 @@ private:
 	TrayIcon *trayIcon;
 	Epg *epg;
 	EpgBrowser *browser;
+	EpgShow *epgShow;
 	EditPlaylist *editor;
 
 	Shortcuts *shortcuts;

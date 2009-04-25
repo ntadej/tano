@@ -17,23 +17,25 @@ EpgLoader::~EpgLoader()
 
 }
 
-void EpgLoader::getEpg(QString epgP)
+void EpgLoader::getEpg(bool f, QString epgP)
 {
 	epgGet = epgP;
-	epgFull = epgP  + "&flag=" + epgFlag;
+
+	if(f)
+		epgFull = epgP  + "&flag=" + epgFlag;
+	else
+		epgFull = epgP.remove("http://www.siol.net");
+
+	full = f;
 
 	if(init)
 		epg();
 }
 
-void EpgLoader::reload()
-{
-    epg();
-}
-
 void EpgLoader::stop()
 {
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgShow()));
 }
 
 void EpgLoader::epgInit()
@@ -44,27 +46,34 @@ void EpgLoader::epgInit()
 
 void EpgLoader::epgInitDone()
 {
+	int m = 0;
 	int n = 0;
 	QByteArray httpResponse = readAll();
 
 	epgValue = codec->toUnicode(httpResponse);
 
-	n = epgValue.indexOf("flag=",epgValue.indexOf("channels"));
+	m = epgValue.indexOf("flag=",epgValue.indexOf("channels"));
+	n = epgValue.indexOf("\" title",m);
 
-	for(int i=n+5;i<=n+25;i++)
+	for(int i=m+5;i<n;i++)
 		epgFlag.append(epgValue.at(i));
+
+	qDebug() << epgFlag;
 
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgInitDone()));
 
 	init = true;
-	getEpg(epgGet);
+	getEpg(true, epgGet);
 }
 
 void EpgLoader::epg()
 {
 	get(epgFull);
 
-	connect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
+	if(full)
+		connect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
+	else
+		connect(this, SIGNAL(done(bool)), this, SLOT(epgShow()));
 }
 
 void EpgLoader::epgPrint()
@@ -107,4 +116,97 @@ void EpgLoader::epgPrint()
 
 	epgList = epgValue.split(";");
 	emit epgDone(epgList);
+}
+
+void EpgLoader::epgShow()
+{
+	epgListShow.clear();
+	int n = 0;
+	QString tmp;
+	QByteArray httpResponse = readAll();
+
+	epgValue = codec->toUnicode(httpResponse);
+
+	if(!epgValue.contains("schedule_title")) {
+		disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
+		return;
+	}
+
+	//Title
+	tmp = epgValue;
+	n = tmp.indexOf("<div class=\"event\">");
+	tmp.remove(0,n);
+	n = tmp.indexOf("</h4>");
+	tmp.remove(n,tmp.size()-1-n);
+	edit->setHtml(tmp);
+	tmp = edit->toPlainText();
+	edit->setText("");
+	epgListShow << tmp;
+
+	//Time
+	tmp = epgValue;
+	n = tmp.indexOf("<div class=\"schedule_title\">");
+	tmp.remove(0,n);
+	n = tmp.indexOf("</div>");
+	tmp.remove(n,tmp.size()-1-n);
+	edit->setHtml(tmp);
+	tmp = edit->toPlainText();
+	edit->setText("");
+	tmp.replace(" ,",",");
+	epgListShow << tmp;
+
+	//Info
+	tmp = epgValue;
+	n = tmp.indexOf("<p class=\"sub\">");
+	tmp.remove(0,n);
+	n = tmp.indexOf("</p>");
+	tmp.remove(n,tmp.size()-1-n);
+	edit->setHtml(tmp);
+	tmp = edit->toPlainText();
+	edit->setText("");
+	epgListShow << tmp;
+
+	//Description
+	tmp = epgValue;
+	n = tmp.indexOf("<p class=\"desc\">");
+	tmp.remove(0,n);
+	n = tmp.indexOf("</p>");
+	tmp.remove(n,tmp.size()-1-n);
+	edit->setHtml(tmp);
+	tmp = edit->toPlainText();
+	edit->setText("");
+	epgListShow << tmp;
+
+	//Actor
+	tmp = epgValue;
+	n = tmp.indexOf("<p class=\"actor\">");
+	tmp.remove(0,n);
+	n = tmp.indexOf("</p>");
+	tmp.remove(n,tmp.size()-1-n);
+	edit->setHtml(tmp);
+	tmp = edit->toPlainText();
+	edit->setText("");
+	tmp.remove(tmp.size()-2,2);
+	epgListShow << tmp;
+
+	//Image
+	tmp = epgValue;
+	n = tmp.indexOf("<div class=\"event\">");
+	tmp.remove(0,n);
+	n = tmp.indexOf("</h4>");
+	tmp.remove(n,tmp.size()-1-n);
+	if(!tmp.contains("<img src")) {
+		tmp = "NI";
+	} else {
+		n = tmp.indexOf("<img src='");
+		tmp.remove(0,n+10);
+		n = tmp.indexOf("' alt=\"\"");
+		tmp.remove(n,tmp.size()-1-n);
+		tmp.remove(tmp.size()-1,1);
+	}
+	epgListShow << tmp;
+
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgShow()));
+
+	emit epgDone(epgListShow);
 }

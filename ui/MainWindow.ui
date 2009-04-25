@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,82 +10,82 @@
     <height>600</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Tano Player</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="images.qrc" >
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
     <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
   </property>
-  <widget class="QWidget" name="centralwidget" >
-   <layout class="QVBoxLayout" name="centralLayout" >
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="centralLayout">
     <item>
-     <widget class="Video" native="1" name="videoWidget" />
+     <widget class="Video" name="videoWidget" native="true"/>
     </item>
     <item>
-     <widget class="QWidget" native="1" name="controlsWidget" >
-      <property name="sizePolicy" >
-       <sizepolicy vsizetype="Maximum" hsizetype="Preferred" >
+     <widget class="QWidget" name="controlsWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout" >
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <layout class="QHBoxLayout" name="layoutButtons" >
+        <layout class="QHBoxLayout" name="layoutButtons">
          <item>
-          <widget class="QLCDNumber" name="channelNumber" >
-           <property name="minimumSize" >
+          <widget class="QLCDNumber" name="channelNumber">
+           <property name="minimumSize">
             <size>
              <width>70</width>
              <height>40</height>
             </size>
            </property>
-           <property name="maximumSize" >
+           <property name="maximumSize">
             <size>
              <width>70</width>
              <height>40</height>
             </size>
            </property>
-           <property name="frameShape" >
+           <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
-           <property name="numDigits" >
+           <property name="numDigits">
             <number>3</number>
            </property>
-           <property name="segmentStyle" >
+           <property name="segmentStyle">
             <enum>QLCDNumber::Flat</enum>
            </property>
-           <property name="value" stdset="0" >
+           <property name="value" stdset="0">
             <double>1.000000000000000</double>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="buttonPlay" >
-           <property name="minimumSize" >
+          <widget class="QPushButton" name="buttonPlay">
+           <property name="minimumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="maximumSize" >
+           <property name="maximumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="toolTip" >
+           <property name="toolTip">
             <string>Play</string>
            </property>
-           <property name="statusTip" >
+           <property name="statusTip">
             <string>Play</string>
            </property>
-           <property name="icon" >
-            <iconset resource="images.qrc" >
+           <property name="icon">
+            <iconset resource="images.qrc">
              <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
            </property>
-           <property name="iconSize" >
+           <property name="iconSize">
             <size>
              <width>32</width>
              <height>32</height>
@@ -93,30 +94,30 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="buttonStop" >
-           <property name="minimumSize" >
+          <widget class="QPushButton" name="buttonStop">
+           <property name="minimumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="maximumSize" >
+           <property name="maximumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="toolTip" >
+           <property name="toolTip">
             <string>Stop</string>
            </property>
-           <property name="statusTip" >
+           <property name="statusTip">
             <string>Stop</string>
            </property>
-           <property name="icon" >
-            <iconset resource="images.qrc" >
+           <property name="icon">
+            <iconset resource="images.qrc">
              <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
            </property>
-           <property name="iconSize" >
+           <property name="iconSize">
             <size>
              <width>32</width>
              <height>32</height>
@@ -125,30 +126,30 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="buttonBack" >
-           <property name="minimumSize" >
+          <widget class="QPushButton" name="buttonBack">
+           <property name="minimumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="maximumSize" >
+           <property name="maximumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="toolTip" >
+           <property name="toolTip">
             <string>Back</string>
            </property>
-           <property name="statusTip" >
+           <property name="statusTip">
             <string>Back</string>
            </property>
-           <property name="icon" >
-            <iconset resource="images.qrc" >
+           <property name="icon">
+            <iconset resource="images.qrc">
              <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
            </property>
-           <property name="iconSize" >
+           <property name="iconSize">
             <size>
              <width>32</width>
              <height>32</height>
@@ -157,30 +158,30 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="buttonNext" >
-           <property name="minimumSize" >
+          <widget class="QPushButton" name="buttonNext">
+           <property name="minimumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="maximumSize" >
+           <property name="maximumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="toolTip" >
+           <property name="toolTip">
             <string>Next</string>
            </property>
-           <property name="statusTip" >
+           <property name="statusTip">
             <string>Next</string>
            </property>
-           <property name="icon" >
-            <iconset resource="images.qrc" >
+           <property name="icon">
+            <iconset resource="images.qrc">
              <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
            </property>
-           <property name="iconSize" >
+           <property name="iconSize">
             <size>
              <width>32</width>
              <height>32</height>
@@ -189,30 +190,30 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="buttonRecord" >
-           <property name="minimumSize" >
+          <widget class="QPushButton" name="buttonRecord">
+           <property name="minimumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="maximumSize" >
+           <property name="maximumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="toolTip" >
+           <property name="toolTip">
             <string>Record Now</string>
            </property>
-           <property name="statusTip" >
+           <property name="statusTip">
             <string>Record Now</string>
            </property>
-           <property name="icon" >
-            <iconset resource="images.qrc" >
+           <property name="icon">
+            <iconset resource="images.qrc">
              <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
            </property>
-           <property name="iconSize" >
+           <property name="iconSize">
             <size>
              <width>22</width>
              <height>22</height>
@@ -221,62 +222,62 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="buttonMute" >
-           <property name="maximumSize" >
+          <widget class="QPushButton" name="buttonMute">
+           <property name="maximumSize">
             <size>
              <width>40</width>
              <height>40</height>
             </size>
            </property>
-           <property name="toolTip" >
+           <property name="toolTip">
             <string>Mute</string>
            </property>
-           <property name="statusTip" >
+           <property name="statusTip">
             <string>Mute</string>
            </property>
-           <property name="icon" >
-            <iconset resource="images.qrc" >
+           <property name="icon">
+            <iconset resource="images.qrc">
              <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
            </property>
-           <property name="iconSize" >
+           <property name="iconSize">
             <size>
              <width>32</width>
              <height>32</height>
             </size>
            </property>
-           <property name="checkable" >
+           <property name="checkable">
             <bool>true</bool>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSlider" name="volumeSlider" >
-           <property name="sizePolicy" >
-            <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
+          <widget class="QSlider" name="volumeSlider">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
-           <property name="maximum" >
+           <property name="maximum">
             <number>200</number>
            </property>
-           <property name="sliderPosition" >
+           <property name="sliderPosition">
             <number>50</number>
            </property>
-           <property name="orientation" >
+           <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="labelVolume" >
-           <property name="minimumSize" >
+          <widget class="QLabel" name="labelVolume">
+           <property name="minimumSize">
             <size>
              <width>20</width>
              <height>0</height>
             </size>
            </property>
-           <property name="text" >
+           <property name="text">
             <string>50</string>
            </property>
           </widget>
@@ -284,24 +285,24 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="layoutDuration" >
+        <layout class="QHBoxLayout" name="layoutDuration">
          <item>
-          <widget class="QLabel" name="labelDuration" >
-           <property name="text" >
+          <widget class="QLabel" name="labelDuration">
+           <property name="text">
             <string>00:00:00</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSlider" name="durationSlider" >
-           <property name="orientation" >
+          <widget class="QSlider" name="durationSlider">
+           <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="labelLenght" >
-           <property name="text" >
+          <widget class="QLabel" name="labelLenght">
+           <property name="text">
             <string>00:00:00</string>
            </property>
           </widget>
@@ -313,176 +314,177 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar" >
-   <property name="geometry" >
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFile" >
-    <property name="title" >
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
      <string>&amp;File</string>
     </property>
-    <addaction name="actionOpenFile" />
-    <addaction name="actionOpenUrl" />
-    <addaction name="actionOpen" />
-    <addaction name="separator" />
-    <addaction name="actionBrowser" />
-    <addaction name="actionRecorder" />
-    <addaction name="separator" />
-    <addaction name="actionClose" />
+    <addaction name="actionOpenFile"/>
+    <addaction name="actionOpenUrl"/>
+    <addaction name="actionOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actionBrowser"/>
+    <addaction name="actionRecorder"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
    </widget>
-   <widget class="QMenu" name="menuAbout" >
-    <property name="title" >
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
      <string>&amp;Help</string>
     </property>
-    <addaction name="actionHelp" />
-    <addaction name="actionUpdate" />
-    <addaction name="actionAbout" />
+    <addaction name="actionHelp"/>
+    <addaction name="actionUpdate"/>
+    <addaction name="actionAbout"/>
    </widget>
-   <widget class="QMenu" name="menuOptions" >
-    <property name="title" >
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
      <string>&amp;Options</string>
     </property>
-    <addaction name="actionEditPlaylist" />
-    <addaction name="actionSettings" />
+    <addaction name="actionEditPlaylist"/>
+    <addaction name="actionSettings"/>
    </widget>
-   <widget class="QMenu" name="menuMedia" >
-    <property name="title" >
+   <widget class="QMenu" name="menuMedia">
+    <property name="title">
      <string>&amp;Media</string>
     </property>
-    <widget class="QMenu" name="menuRatio" >
-     <property name="title" >
+    <widget class="QMenu" name="menuRatio">
+     <property name="title">
       <string>Aspect ratio</string>
      </property>
-     <property name="icon" >
-      <iconset resource="images.qrc" >
+     <property name="icon">
+      <iconset resource="images.qrc">
        <normaloff>:/icons/images/video.png</normaloff>:/icons/images/video.png</iconset>
      </property>
-     <addaction name="actionRatioOriginal" />
-     <addaction name="actionRatio43" />
-     <addaction name="actionRatio169" />
+     <addaction name="actionRatioOriginal"/>
+     <addaction name="actionRatio43"/>
+     <addaction name="actionRatio169"/>
     </widget>
-    <widget class="QMenu" name="menuVolume" >
-     <property name="title" >
+    <widget class="QMenu" name="menuVolume">
+     <property name="title">
       <string>Volume</string>
      </property>
-     <property name="icon" >
-      <iconset resource="images.qrc" >
+     <property name="icon">
+      <iconset resource="images.qrc">
        <normaloff>:/icons/images/player_volume.png</normaloff>:/icons/images/player_volume.png</iconset>
      </property>
-     <addaction name="actionMute" />
-     <addaction name="actionVolumeUp" />
-     <addaction name="actionVolumeDown" />
+     <addaction name="actionMute"/>
+     <addaction name="actionVolumeUp"/>
+     <addaction name="actionVolumeDown"/>
     </widget>
-    <addaction name="actionPlay" />
-    <addaction name="actionStop" />
-    <addaction name="actionBack" />
-    <addaction name="actionNext" />
-    <addaction name="actionRecord" />
-    <addaction name="menuVolume" />
-    <addaction name="menuRatio" />
+    <addaction name="actionPlay"/>
+    <addaction name="actionStop"/>
+    <addaction name="actionBack"/>
+    <addaction name="actionNext"/>
+    <addaction name="actionRecord"/>
+    <addaction name="menuVolume"/>
+    <addaction name="menuRatio"/>
    </widget>
-   <widget class="QMenu" name="menuView" >
-    <property name="title" >
+   <widget class="QMenu" name="menuView">
+    <property name="title">
      <string>&amp;View</string>
     </property>
-    <addaction name="actionTop" />
-    <addaction name="actionLite" />
-    <addaction name="actionFullscreen" />
-    <addaction name="separator" />
-    <addaction name="actionChannel_info" />
+    <addaction name="actionTop"/>
+    <addaction name="actionLite"/>
+    <addaction name="actionFullscreen"/>
+    <addaction name="separator"/>
+    <addaction name="actionChannel_info"/>
    </widget>
-   <addaction name="menuFile" />
-   <addaction name="menuView" />
-   <addaction name="menuMedia" />
-   <addaction name="menuOptions" />
-   <addaction name="menuAbout" />
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuMedia"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuAbout"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar" />
-  <widget class="QToolBar" name="toolBar" >
-   <property name="windowTitle" >
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
     <string>Main Toolbar</string>
    </property>
-   <property name="iconSize" >
+   <property name="iconSize">
     <size>
      <width>32</width>
      <height>32</height>
     </size>
    </property>
-   <property name="toolButtonStyle" >
+   <property name="toolButtonStyle">
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
-   <attribute name="toolBarArea" >
+   <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
-   <attribute name="toolBarBreak" >
+   <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionOpenToolbar" />
-   <addaction name="actionEditPlaylist" />
-   <addaction name="actionRecorder" />
-   <addaction name="actionBrowser" />
-   <addaction name="actionSettings" />
+   <addaction name="actionOpenToolbar"/>
+   <addaction name="actionEditPlaylist"/>
+   <addaction name="actionRecorder"/>
+   <addaction name="actionBrowser"/>
+   <addaction name="actionSettings"/>
+   <addaction name="actionClose"/>
   </widget>
-  <widget class="QDockWidget" name="playlistWidget" >
-   <property name="windowIcon" >
-    <iconset resource="images.qrc" >
+  <widget class="QDockWidget" name="playlistWidget">
+   <property name="windowIcon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
    </property>
-   <property name="floating" >
+   <property name="floating">
     <bool>false</bool>
    </property>
-   <property name="features" >
+   <property name="features">
     <set>QDockWidget::AllDockWidgetFeatures</set>
    </property>
-   <property name="allowedAreas" >
+   <property name="allowedAreas">
     <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
-   <property name="windowTitle" >
+   <property name="windowTitle">
     <string>Channel info</string>
    </property>
-   <attribute name="dockWidgetArea" >
+   <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents" >
-    <layout class="QVBoxLayout" name="verticalLayout_4" >
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
-      <widget class="QLabel" name="labelLanguage" >
-       <property name="text" >
+      <widget class="QLabel" name="labelLanguage">
+       <property name="text">
         <string/>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="labelNow" >
-       <property name="text" >
+      <widget class="QLabel" name="labelNow">
+       <property name="text">
         <string/>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="labelNext" >
-       <property name="text" >
+      <widget class="QLabel" name="labelNext">
+       <property name="text">
         <string/>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout" >
+      <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="buttonRefresh" >
-         <property name="text" >
+        <widget class="QPushButton" name="buttonRefresh">
+         <property name="text">
           <string>Refresh</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="buttonReload" >
-         <property name="text" >
+        <widget class="QPushButton" name="buttonReload">
+         <property name="text">
           <string>Reload</string>
          </property>
         </widget>
@@ -490,45 +492,45 @@
       </layout>
      </item>
      <item>
-      <widget class="QToolBox" name="channelToolBox" >
-       <property name="minimumSize" >
+      <widget class="QToolBox" name="channelToolBox">
+       <property name="minimumSize">
         <size>
          <width>275</width>
          <height>0</height>
         </size>
        </property>
-       <property name="frameShape" >
+       <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
-       <property name="currentIndex" >
+       <property name="currentIndex">
         <number>0</number>
        </property>
-       <widget class="QWidget" name="pageList" >
-        <property name="geometry" >
+       <widget class="QWidget" name="pageList">
+        <property name="geometry">
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>265</width>
-          <height>299</height>
+          <width>271</width>
+          <height>293</height>
          </rect>
         </property>
-        <attribute name="label" >
+        <attribute name="label">
          <string>Channel list</string>
         </attribute>
-        <layout class="QVBoxLayout" name="verticalLayout_7" >
+        <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
-          <widget class="QTreeWidget" name="playlistTree" >
-           <property name="editTriggers" >
+          <widget class="QTreeWidget" name="playlistTree">
+           <property name="editTriggers">
             <set>QAbstractItemView::NoEditTriggers</set>
            </property>
-           <property name="animated" >
+           <property name="animated">
             <bool>true</bool>
            </property>
-           <property name="columnCount" >
+           <property name="columnCount">
             <number>1</number>
            </property>
            <column>
-            <property name="text" >
+            <property name="text">
              <string>Channel</string>
             </property>
            </column>
@@ -536,45 +538,74 @@
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="pageEpg" >
-        <property name="geometry" >
+       <widget class="QWidget" name="pageEpg">
+        <property name="geometry">
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>139</width>
-          <height>66</height>
+          <width>271</width>
+          <height>293</height>
          </rect>
         </property>
-        <attribute name="label" >
+        <attribute name="label">
          <string>Schedule</string>
         </attribute>
-        <layout class="QVBoxLayout" name="verticalLayout_3" >
+        <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QTabWidget" name="epgTabWidget" >
-           <property name="currentIndex" >
+          <widget class="QTabWidget" name="epgTabWidget">
+           <property name="currentIndex">
             <number>0</number>
            </property>
-           <widget class="QWidget" name="tabToday" >
-            <attribute name="title" >
-             <string>Today</string>
+           <property name="usesScrollButtons">
+            <bool>false</bool>
+           </property>
+           <widget class="QWidget" name="tabToday">
+            <attribute name="title">
+             <string/>
             </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_2" >
+            <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
-              <widget class="EpgToday" native="1" name="epgToday" />
+              <widget class="EpgToday" name="epgToday" native="true"/>
              </item>
             </layout>
            </widget>
-           <widget class="QWidget" name="tabTomorrow" >
-            <attribute name="title" >
-             <string>Tomorrow</string>
+           <widget class="QWidget" name="tabDay2">
+            <attribute name="title">
+             <string/>
             </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_6" >
+            <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
-              <widget class="QLabel" name="label" >
-               <property name="text" >
-                <string>&lt;center>Comming soon!&lt;/center></string>
-               </property>
-              </widget>
+              <widget class="EpgToday" name="epgToday_2" native="true"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="tabDay3">
+            <attribute name="title">
+             <string/>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="EpgToday" name="epgToday_3" native="true"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="tabDay4">
+            <attribute name="title">
+             <string/>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout_8">
+             <item>
+              <widget class="EpgToday" name="epgToday_4" native="true"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="tabDay5">
+            <attribute name="title">
+             <string/>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <widget class="EpgToday" name="epgToday_5" native="true"/>
              </item>
             </layout>
            </widget>
@@ -587,299 +618,299 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QToolBar" name="toolBarOsd" >
-   <property name="windowTitle" >
+  <widget class="QToolBar" name="toolBarOsd">
+   <property name="windowTitle">
     <string>Controls Toolbar</string>
    </property>
-   <property name="allowedAreas" >
+   <property name="allowedAreas">
     <set>Qt::BottomToolBarArea|Qt::TopToolBarArea</set>
    </property>
-   <attribute name="toolBarArea" >
+   <attribute name="toolBarArea">
     <enum>BottomToolBarArea</enum>
    </attribute>
-   <attribute name="toolBarBreak" >
+   <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
   </widget>
-  <action name="actionAbout" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>About Tano Player</string>
    </property>
   </action>
-  <action name="actionClose" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionClose">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/exit.png</normaloff>:/icons/images/exit.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Exit</string>
    </property>
-   <property name="shortcut" >
+   <property name="shortcut">
     <string>Ctrl+Q</string>
    </property>
   </action>
-  <action name="actionSettings" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/settings.png</normaloff>:/icons/images/settings.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Settings</string>
    </property>
   </action>
-  <action name="actionFullscreen" >
-   <property name="checkable" >
+  <action name="actionFullscreen">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Fullscreen</string>
    </property>
   </action>
-  <action name="actionOpen" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Open Channel list</string>
    </property>
   </action>
-  <action name="actionOpenFile" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionOpenFile">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Open &amp;File</string>
    </property>
   </action>
-  <action name="actionBrowser" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionBrowser">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/browser.png</normaloff>:/icons/images/browser.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Browser</string>
    </property>
   </action>
-  <action name="actionEditPlaylist" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionEditPlaylist">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Edit Channel list</string>
    </property>
   </action>
-  <action name="actionHelp" >
-   <property name="enabled" >
+  <action name="actionHelp">
+   <property name="enabled">
     <bool>false</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/help.png</normaloff>:/icons/images/help.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>&amp;Help</string>
    </property>
   </action>
-  <action name="actionChannel_info" >
-   <property name="checkable" >
+  <action name="actionChannel_info">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Channel info</string>
    </property>
   </action>
-  <action name="actionOpenUrl" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionOpenUrl">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Open URL</string>
    </property>
   </action>
-  <action name="actionUpdate" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionUpdate">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/update.png</normaloff>:/icons/images/update.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Check for updates</string>
    </property>
   </action>
-  <action name="actionRatioOriginal" >
-   <property name="checkable" >
+  <action name="actionRatioOriginal">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Original</string>
    </property>
   </action>
-  <action name="actionRatio43" >
-   <property name="checkable" >
+  <action name="actionRatio43">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>4:3</string>
    </property>
   </action>
-  <action name="actionRatio169" >
-   <property name="checkable" >
+  <action name="actionRatio169">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>16:9</string>
    </property>
   </action>
-  <action name="actionOpenToolbar" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionOpenToolbar">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Open</string>
    </property>
   </action>
-  <action name="actionPlay" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionPlay">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Play</string>
    </property>
   </action>
-  <action name="actionStop" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionStop">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Stop</string>
    </property>
   </action>
-  <action name="actionTop" >
-   <property name="checkable" >
+  <action name="actionTop">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Always on top</string>
    </property>
   </action>
-  <action name="actionRestore" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionRestore">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/win.png</normaloff>:/icons/images/win.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Restore</string>
    </property>
   </action>
-  <action name="actionLite" >
-   <property name="checkable" >
+  <action name="actionLite">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Simple Mode</string>
    </property>
   </action>
-  <action name="actionToolbar" >
-   <property name="checkable" >
+  <action name="actionToolbar">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Main Toolbar</string>
    </property>
   </action>
-  <action name="actionNext" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionNext">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Next</string>
    </property>
   </action>
-  <action name="actionBack" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionBack">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Back</string>
    </property>
   </action>
-  <action name="actionMute" >
-   <property name="checkable" >
+  <action name="actionMute">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Mute</string>
    </property>
   </action>
-  <action name="actionVolumeUp" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionVolumeUp">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/up.png</normaloff>:/icons/images/up.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Volume up</string>
    </property>
   </action>
-  <action name="actionVolumeDown" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionVolumeDown">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/down.png</normaloff>:/icons/images/down.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Volume down</string>
    </property>
   </action>
-  <action name="actionRecorder" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionRecorder">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/recorder.png</normaloff>:/icons/images/recorder.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Recorder</string>
    </property>
   </action>
-  <action name="actionRecord" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionRecord">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Record Now</string>
    </property>
   </action>
-  <action name="actionCToolbar" >
-   <property name="checkable" >
+  <action name="actionCToolbar">
+   <property name="checkable">
     <bool>true</bool>
    </property>
-   <property name="checked" >
+   <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Controls Toolbar</string>
    </property>
   </action>
@@ -899,7 +930,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc" />
+  <include location="images.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -908,11 +939,11 @@
    <receiver>labelVolume</receiver>
    <slot>setNum(int)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>413</x>
      <y>511</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>486</x>
      <y>511</y>
     </hint>
@@ -924,11 +955,11 @@
    <receiver>actionMute</receiver>
    <slot>trigger()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>328</x>
      <y>511</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
@@ -940,11 +971,11 @@
    <receiver>actionRecord</receiver>
    <slot>trigger()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>284</x>
      <y>511</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
@@ -956,11 +987,11 @@
    <receiver>actionNext</receiver>
    <slot>trigger()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>240</x>
      <y>511</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
@@ -972,11 +1003,11 @@
    <receiver>actionBack</receiver>
    <slot>trigger()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>196</x>
      <y>511</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
@@ -988,11 +1019,11 @@
    <receiver>actionStop</receiver>
    <slot>trigger()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>152</x>
      <y>511</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
@@ -1004,11 +1035,11 @@
    <receiver>actionPlay</receiver>
    <slot>trigger()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>108</x>
      <y>511</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
     </hint>

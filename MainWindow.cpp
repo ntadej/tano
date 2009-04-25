@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
 	handler = new TanoHandler(ui.playlistTree);
 	epg = new Epg();
 	browser = new EpgBrowser();
+	epgShow = new EpgShow();
 
 	createSettings();
 
@@ -184,13 +185,16 @@ void MainWindow::createConnections()
 	connect(ui.videoWidget, SIGNAL(tick(qint64)), this, SLOT(time(qint64)));
 	connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), this, SLOT(totalTime(qint64)));
 
-	connect(epg, SIGNAL(epgDone(QStringList)), this, SLOT(showEpg(QStringList)));
-	connect(epg, SIGNAL(epgDoneFull(QStringList)), ui.epgToday, SLOT(setEpg(QStringList)));
-	connect(ui.epgToday, SIGNAL(urlClicked(QString)), browser, SLOT(open(QString)));
+	connect(epg, SIGNAL(epgDone(int,QStringList,QString)), this, SLOT(showEpg(int,QStringList,QString)));
+	connect(ui.epgToday, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
+	connect(ui.epgToday_2, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
+	connect(ui.epgToday_3, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
+	connect(ui.epgToday_4, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
+	connect(ui.epgToday_5, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
 
-	connect(ui.labelNow, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
-	connect(ui.labelNext, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
+	connect(ui.labelNow, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
+	connect(ui.labelNext, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
 
 	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.playlistWidget, SLOT(setVisible(bool)));
 	connect(ui.playlistWidget, SIGNAL(visibilityChanged(bool)), ui.actionChannel_info, SLOT(setChecked(bool)));
@@ -330,17 +334,44 @@ void MainWindow::play()
 	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 }
 
-void MainWindow::showEpg(QStringList epgValue)
+void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 {
-	ui.labelNow->setText(tr("Now:") + " " + epgValue.at(0));
-	ui.labelNow->show();
-	ui.labelNext->setText(tr("Next:") + " " + epgValue.at(1));
-	ui.labelNext->show();
-	ui.buttonRefresh->show();
-	ui.buttonReload->show();
+	switch (id) {
+		case 0:
+			ui.labelNow->setText(tr("Now:") + " " + epgValue.at(0));
+			ui.labelNow->show();
+			ui.labelNext->setText(tr("Next:") + " " + epgValue.at(1));
+			ui.labelNext->show();
+			ui.buttonRefresh->show();
+			ui.buttonReload->show();
 
-	if(osdEnabled)
-		osd->setEpg(true, tr("Now:") + " " + epgValue.at(0), tr("Next:") + " " + epgValue.at(1));
+			if(osdEnabled)
+				osd->setEpg(true, tr("Now:") + " " + epgValue.at(0), tr("Next:") + " " + epgValue.at(1));
+
+			break;
+		case 1:
+			ui.epgTabWidget->setTabText(0,date);
+			ui.epgToday->setEpg(epgValue);
+			break;
+		case 2:
+			ui.epgTabWidget->setTabText(1,date);
+			ui.epgToday_2->setEpg(epgValue);
+			break;
+		case 3:
+			ui.epgTabWidget->setTabText(2,date);
+			ui.epgToday_3->setEpg(epgValue);
+			break;
+		case 4:
+			ui.epgTabWidget->setTabText(3,date);
+			ui.epgToday_4->setEpg(epgValue);
+			break;
+		case 5:
+			ui.epgTabWidget->setTabText(4,date);
+			ui.epgToday_5->setEpg(epgValue);
+			break;
+		default:
+			break;
+	}
 }
 
 void MainWindow::stop()
@@ -430,7 +461,7 @@ void MainWindow::openUrl()
 //GUI
 void MainWindow::showBrowser()
 {
-	browser->open("http://tano.pfusion.co.cc");
+	browser->open("http://www.siol.net/tv-spored.aspx");
 }
 
 void MainWindow::showSettings()

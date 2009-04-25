@@ -83,6 +83,7 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/EditPlaylist.ui
 	ui/EditSettings.ui
 	ui/EpgBrowser.ui
+	ui/EpgShow.ui
 	ui/MainWindow.ui
 	ui/Osd.ui
 	ui/Recorder.ui
@@ -98,6 +99,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	epg/Epg.h
 	epg/EpgBrowser.h
 	epg/EpgLoader.h
+	epg/EpgShow.h
 	epg/EpgToday.h
 	lib/QtKeySequenceEdit.h
 	recorder/Recorder.h
@@ -120,6 +122,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	epg/Epg.cpp
 	epg/EpgBrowser.cpp
 	epg/EpgLoader.cpp
+	epg/EpgShow.cpp
 	epg/EpgToday.cpp
 	lib/QtKeySequenceEdit.cpp
 	recorder/Recorder.cpp
