@@ -100,6 +100,7 @@ private:
 	bool isLite;
 	bool osdEnabled;
 	bool sessionEnabled;
+	bool hasPlaylist;
 
     void createConnections();
     void createMenus();

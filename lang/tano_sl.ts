@@ -530,149 +530,155 @@ Polna podpora je načrtovana za različico 0.6.</translation>
 <context>
     <name>EditSettings</name>
     <message>
-        <location filename="../ui_EditSettings.h" line="500"/>
-        <location filename="../ui_EditSettings.h" line="610"/>
+        <location filename="../ui_EditSettings.h" line="507"/>
+        <location filename="../ui_EditSettings.h" line="618"/>
         <source>Settings</source>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="501"/>
+        <location filename="../ui_EditSettings.h" line="508"/>
         <source>Language</source>
         <translation>Jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="502"/>
+        <location filename="../ui_EditSettings.h" line="509"/>
         <source>System default language</source>
         <translation>Sistemsko privzet jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="503"/>
+        <location filename="../ui_EditSettings.h" line="510"/>
         <source>Custom language</source>
         <translation>Poljuben jezik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="506"/>
+        <location filename="../ui_EditSettings.h" line="513"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="507"/>
+        <location filename="../ui_EditSettings.h" line="514"/>
         <source>Slovensko</source>
         <translation>Slovensko</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="517"/>
-        <location filename="../ui_EditSettings.h" line="531"/>
+        <location filename="../ui_EditSettings.h" line="525"/>
+        <location filename="../ui_EditSettings.h" line="539"/>
         <source>Browse:</source>
         <translation>Brskaj:</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="519"/>
-        <location filename="../ui_EditSettings.h" line="533"/>
+        <location filename="../ui_EditSettings.h" line="527"/>
+        <location filename="../ui_EditSettings.h" line="541"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="520"/>
-        <location filename="../ui_EditSettings.h" line="534"/>
+        <location filename="../ui_EditSettings.h" line="528"/>
+        <location filename="../ui_EditSettings.h" line="542"/>
         <source>Reset</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="211"/>
+        <location filename="../ui/EditSettings.cpp" line="216"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="213"/>
+        <location filename="../ui/EditSettings.cpp" line="218"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="509"/>
+        <location filename="../ui_EditSettings.h" line="516"/>
         <source>&lt;i&gt;You need to restart Tano Player when changing language!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Pri spreminjanju jezika je potreben ponovni zagon Tano Predvajalnika!&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="521"/>
+        <location filename="../ui_EditSettings.h" line="529"/>
         <source>Main</source>
         <translation>Glavno</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="537"/>
+        <location filename="../ui_EditSettings.h" line="545"/>
         <source>Action</source>
         <translation>Ukaz</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="539"/>
+        <location filename="../ui_EditSettings.h" line="547"/>
         <source>Key</source>
         <translation>Tipke</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="624"/>
+        <location filename="../ui_EditSettings.h" line="632"/>
         <source>Shortcuts</source>
         <translation>Bližnjice</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="582"/>
+        <location filename="../ui_EditSettings.h" line="590"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="584"/>
+        <location filename="../ui_EditSettings.h" line="522"/>
+        <source>T-2 Categorised</source>
+        <translation>T-2 Kategorizirano</translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="523"/>
+        <source>T-2 Full</source>
+        <translation>T-2 Celotna shema</translation>
+    </message>
+    <message>
+        <location filename="../ui_EditSettings.h" line="592"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="586"/>
+        <location filename="../ui_EditSettings.h" line="594"/>
         <source>Next channel</source>
         <translation>Naslednii kanal</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="588"/>
+        <location filename="../ui_EditSettings.h" line="596"/>
         <source>Previous channel</source>
         <translation>Prejšnji kanal</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="590"/>
+        <location filename="../ui_EditSettings.h" line="598"/>
         <source>Fullscreen</source>
         <translation>Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="623"/>
+        <location filename="../ui_EditSettings.h" line="631"/>
         <source>Restore defaults</source>
         <translation>Obnovi privzeto</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="621"/>
+        <location filename="../ui_EditSettings.h" line="629"/>
         <source>Set</source>
         <translation>Nastavi</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="592"/>
+        <location filename="../ui_EditSettings.h" line="600"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="594"/>
+        <location filename="../ui_EditSettings.h" line="602"/>
         <source>Volume up</source>
         <translation>Povečaj glasnost</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="596"/>
+        <location filename="../ui_EditSettings.h" line="604"/>
         <source>Volume down</source>
         <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="622"/>
+        <location filename="../ui_EditSettings.h" line="630"/>
         <source>Clear Shortcut</source>
         <translation>Počisti bližnjico</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="541"/>
-        <location filename="../ui_EditSettings.h" line="543"/>
-        <location filename="../ui_EditSettings.h" line="545"/>
-        <location filename="../ui_EditSettings.h" line="547"/>
         <location filename="../ui_EditSettings.h" line="549"/>
         <location filename="../ui_EditSettings.h" line="551"/>
         <location filename="../ui_EditSettings.h" line="553"/>
@@ -688,142 +694,141 @@ Polna podpora je načrtovana za različico 0.6.</translation>
         <location filename="../ui_EditSettings.h" line="573"/>
         <location filename="../ui_EditSettings.h" line="575"/>
         <location filename="../ui_EditSettings.h" line="577"/>
+        <location filename="../ui_EditSettings.h" line="579"/>
+        <location filename="../ui_EditSettings.h" line="581"/>
+        <location filename="../ui_EditSettings.h" line="583"/>
+        <location filename="../ui_EditSettings.h" line="585"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="600"/>
+        <location filename="../ui_EditSettings.h" line="608"/>
         <source>Open File</source>
         <translation>Odpri Datoteko</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="602"/>
+        <location filename="../ui_EditSettings.h" line="610"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="604"/>
+        <location filename="../ui_EditSettings.h" line="612"/>
         <source>Open Channel list</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="606"/>
+        <location filename="../ui_EditSettings.h" line="614"/>
         <source>Browser</source>
         <translation>Brskalnik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="608"/>
+        <location filename="../ui_EditSettings.h" line="616"/>
         <source>Edit Channel list</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="524"/>
-        <location filename="../ui_EditSettings.h" line="612"/>
+        <location filename="../ui_EditSettings.h" line="532"/>
+        <location filename="../ui_EditSettings.h" line="620"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="614"/>
+        <location filename="../ui_EditSettings.h" line="622"/>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="616"/>
+        <location filename="../ui_EditSettings.h" line="624"/>
         <source>Help</source>
         <translation>Pomoč</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="618"/>
+        <location filename="../ui_EditSettings.h" line="626"/>
         <source>About</source>
         <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="510"/>
+        <location filename="../ui_EditSettings.h" line="517"/>
         <source>Session store</source>
         <translation>Shranjevanje sej</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="511"/>
+        <location filename="../ui_EditSettings.h" line="518"/>
         <source>Enable</source>
         <translation>Vključi</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="514"/>
+        <location filename="../ui_EditSettings.h" line="521"/>
         <source>SiOL TV</source>
         <translation>SiOL TV</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="515"/>
-        <source>T-2</source>
-        <translation>T-2</translation>
-    </message>
-    <message>
-        <location filename="../ui_EditSettings.h" line="516"/>
+        <location filename="../ui_EditSettings.h" line="524"/>
         <source>Custom</source>
         <translation>Drugo</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="512"/>
+        <location filename="../ui_EditSettings.h" line="519"/>
         <source>&lt;i&gt;You need to restart Tano Player when changing session settings!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Pri spreminjanju nastavitev sej je potreben ponovni zagon Tano Predvajalnika!&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="513"/>
+        <location filename="../ui_EditSettings.h" line="520"/>
         <source>Default Channel list</source>
         <translation>Privzet Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="598"/>
+        <location filename="../ui_EditSettings.h" line="606"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="530"/>
+        <location filename="../ui_EditSettings.h" line="538"/>
         <source>Default recording directory</source>
         <translation>Privzet imenik snemanja</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="535"/>
+        <location filename="../ui_EditSettings.h" line="543"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="229"/>
+        <location filename="../ui/EditSettings.cpp" line="234"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="522"/>
+        <location filename="../ui_EditSettings.h" line="530"/>
         <source>Default interface settings</source>
         <translation>Privzete nastavitve vmesnika</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="525"/>
+        <location filename="../ui_EditSettings.h" line="533"/>
         <source>Enable On Screen Display - OSD in Fullscreen mode</source>
         <translation>Vključi OSD v celozaslonskem načinu</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="527"/>
+        <location filename="../ui_EditSettings.h" line="535"/>
         <source>User Interface</source>
         <translation>Uporabniški vmesnik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="528"/>
+        <location filename="../ui_EditSettings.h" line="536"/>
         <source>Enable Recorder</source>
         <translation>Vključi Snemalnik</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="529"/>
+        <location filename="../ui_EditSettings.h" line="537"/>
         <source>&lt;i&gt;You need to restart Tano Player when enabling/disabling Recorder!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Pri vklopu/izklopu Snemalnika je potreben ponovni zagon Tano Predvajalnika!&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="523"/>
+        <location filename="../ui_EditSettings.h" line="531"/>
         <source>Simple mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../ui_EditSettings.h" line="526"/>
+        <location filename="../ui_EditSettings.h" line="534"/>
         <source>Start with Channel info enabled</source>
         <translation>Začni z vidno Informacijo o kanalu</translation>
     </message>
@@ -912,9 +917,9 @@ Polna podpora je načrtovana za različico 0.6.</translation>
     <message>
         <location filename="../ui_MainWindow.h" line="629"/>
         <location filename="../MainWindow.cpp" line="52"/>
-        <location filename="../MainWindow.cpp" line="414"/>
-        <location filename="../MainWindow.cpp" line="476"/>
-        <location filename="../MainWindow.cpp" line="478"/>
+        <location filename="../MainWindow.cpp" line="415"/>
+        <location filename="../MainWindow.cpp" line="480"/>
+        <location filename="../MainWindow.cpp" line="482"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
@@ -972,7 +977,7 @@ Polna podpora je načrtovana za različico 0.6.</translation>
     <message>
         <location filename="../ui_MainWindow.h" line="640"/>
         <location filename="../ui_MainWindow.h" line="708"/>
-        <location filename="../MainWindow.cpp" line="379"/>
+        <location filename="../MainWindow.cpp" line="380"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
@@ -1122,7 +1127,7 @@ Polna podpora je načrtovana za različico 0.6.</translation>
     </message>
     <message>
         <location filename="../ui_MainWindow.h" line="715"/>
-        <location filename="../MainWindow.cpp" line="334"/>
+        <location filename="../MainWindow.cpp" line="335"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
@@ -1145,77 +1150,77 @@ This will stop recording in progress.</source>
 To bo zaključilo snemanje, ki trenutno poteka.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="312"/>
-        <location filename="../MainWindow.cpp" line="316"/>
+        <location filename="../MainWindow.cpp" line="313"/>
+        <location filename="../MainWindow.cpp" line="317"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="334"/>
+        <location filename="../MainWindow.cpp" line="335"/>
         <source>selected</source>
         <translation>je izbran</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="341"/>
-        <location filename="../MainWindow.cpp" line="349"/>
+        <location filename="../MainWindow.cpp" line="342"/>
+        <location filename="../MainWindow.cpp" line="350"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="343"/>
-        <location filename="../MainWindow.cpp" line="349"/>
+        <location filename="../MainWindow.cpp" line="344"/>
+        <location filename="../MainWindow.cpp" line="350"/>
         <source>Next:</source>
         <translation>Naslednje:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="396"/>
+        <location filename="../MainWindow.cpp" line="397"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="398"/>
+        <location filename="../MainWindow.cpp" line="399"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="415"/>
+        <location filename="../MainWindow.cpp" line="416"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="422"/>
+        <location filename="../MainWindow.cpp" line="425"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="431"/>
+        <location filename="../MainWindow.cpp" line="435"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="433"/>
+        <location filename="../MainWindow.cpp" line="437"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="439"/>
+        <location filename="../MainWindow.cpp" line="443"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="449"/>
+        <location filename="../MainWindow.cpp" line="453"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="450"/>
+        <location filename="../MainWindow.cpp" line="454"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="455"/>
+        <location filename="../MainWindow.cpp" line="459"/>
         <source>Playing URL</source>
         <translation>Predvajam URL</translation>
     </message>
@@ -1339,84 +1344,84 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
 <context>
     <name>Recorder</name>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="126"/>
+        <location filename="../recorder/Recorder.cpp" line="122"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="128"/>
+        <location filename="../recorder/Recorder.cpp" line="124"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="143"/>
+        <location filename="../recorder/Recorder.cpp" line="139"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="150"/>
+        <location filename="../recorder/Recorder.cpp" line="146"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="100"/>
+        <location filename="../recorder/Recorder.cpp" line="96"/>
         <source>Do you want to close Recorder?
 This will stop any recording in progress.</source>
         <translation>Ali želiš zapreti Snemalnik?
 To bo zaključilo snemanje, ki trenutno poteka.</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="169"/>
+        <location filename="../recorder/Recorder.cpp" line="165"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="232"/>
+        <location filename="../recorder/Recorder.cpp" line="228"/>
         <source>No timer - press button to stop.</source>
         <translation>Ni timerja - pritisni gumb in ustavi.</translation>
     </message>
     <message>
         <location filename="../ui_Recorder.h" line="336"/>
         <location filename="../ui_Recorder.h" line="338"/>
-        <location filename="../recorder/Recorder.cpp" line="252"/>
+        <location filename="../recorder/Recorder.cpp" line="248"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="235"/>
-        <location filename="../recorder/Recorder.cpp" line="236"/>
+        <location filename="../recorder/Recorder.cpp" line="231"/>
+        <location filename="../recorder/Recorder.cpp" line="232"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
         <location filename="../ui_Recorder.h" line="322"/>
         <location filename="../ui_Recorder.h" line="331"/>
-        <location filename="../recorder/Recorder.cpp" line="255"/>
-        <location filename="../recorder/Recorder.cpp" line="256"/>
+        <location filename="../recorder/Recorder.cpp" line="251"/>
+        <location filename="../recorder/Recorder.cpp" line="252"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="186"/>
+        <location filename="../recorder/Recorder.cpp" line="182"/>
         <source>Cannot write to %1.</source>
         <translation>Ne morem pisati v %1.</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="192"/>
-        <location filename="../recorder/Recorder.cpp" line="280"/>
+        <location filename="../recorder/Recorder.cpp" line="188"/>
+        <location filename="../recorder/Recorder.cpp" line="276"/>
         <source>Channel is not selected!</source>
         <translation>Program ni izbran!</translation>
     </message>
     <message>
         <location filename="../ui_Recorder.h" line="317"/>
         <location filename="../ui_Recorder.h" line="325"/>
-        <location filename="../recorder/Recorder.cpp" line="99"/>
-        <location filename="../recorder/Recorder.cpp" line="142"/>
-        <location filename="../recorder/Recorder.cpp" line="185"/>
-        <location filename="../recorder/Recorder.cpp" line="191"/>
-        <location filename="../recorder/Recorder.cpp" line="279"/>
+        <location filename="../recorder/Recorder.cpp" line="95"/>
+        <location filename="../recorder/Recorder.cpp" line="138"/>
+        <location filename="../recorder/Recorder.cpp" line="181"/>
+        <location filename="../recorder/Recorder.cpp" line="187"/>
+        <location filename="../recorder/Recorder.cpp" line="275"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>

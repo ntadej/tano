@@ -83,7 +83,7 @@ void MainWindow::createSettings()
 	settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 
 	sessionEnabled = settings->value("session", true).toBool();
-	defaultP = settings->value("playlist","siol.xml").toString();
+	defaultP = settings->value("playlist","playlists/siol.xml").toString();
 
 	openPlaylist(true);
 	editor = new EditPlaylist(this, fileName);
@@ -278,7 +278,8 @@ void MainWindow::createSession()
 		settings->beginGroup("Session");
 		ui.videoWidget->setVolume(settings->value("volume",0.5).toString().toFloat());
 		ui.volumeSlider->setValue(settings->value("volume",0.5).toString().toFloat()*100);
-		key(settings->value("channel",1).toInt());
+		if(hasPlaylist)
+			key(settings->value("channel",1).toInt());
 		settings->endGroup();
 	}
 }
@@ -415,12 +416,15 @@ void MainWindow::openPlaylist(bool start)
                              tr("Cannot read file %1:\n%2.")
                              .arg(fileName)
                              .arg(file.errorString()));
+        hasPlaylist = false;
+        select = new ChannelSelect(this, ui.channelNumber, handler->limit());
         return;
     }
     QXmlInputSource xmlInputSource(&file);
     if (reader.parse(xmlInputSource))
         statusBar()->showMessage(tr("File loaded"), 2000);
 
+    hasPlaylist = true;
     select = new ChannelSelect(this, ui.channelNumber, handler->limit());
 }
 
@@ -574,8 +578,8 @@ void MainWindow::createOsd()
 
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), osd, SLOT(setVolume(int)));
 
-	connect(osd, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
-	connect(osd, SIGNAL(linkActivated(QString)), browser, SLOT(open(QString)));
+	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
+	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
 }
 
 void MainWindow::recorder()

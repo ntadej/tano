@@ -21,7 +21,7 @@ Recorder::Recorder(QWidget *parent)
 	//Init
 	start = true;
 	QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-	fileName = settings.value("playlist","siol.xml").toString();
+	fileName = settings.value("playlist","playlists/siol.xml").toString();
 	settings.beginGroup("Recorder");
 	ui.fileEdit->setText(settings.value("dir",QDir::homePath()+"/Videos").toString());
 	settings.endGroup();
@@ -38,10 +38,6 @@ Recorder::Recorder(QWidget *parent)
 	trayIcon = new TrayRecorder(tray);
 	frip = new QProcess(this);
 	fripPath = Common::frip();
-
-//#ifdef Q_WS_WIN
-	//fripPath.replace("/","\\");
-//#endif
 
     timer = new QTimer(this);
 

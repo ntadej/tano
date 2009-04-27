@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tano>
+<tano version="1.1">
+    <category expanded="true"type="main">
+        <title>T-2 TV</title>
+        <category expanded="false"type="sub">
+            <title>Top</title>
+            <channel>
+                <title>SLO 1</title>
+                <name>RTV Slovenija 1</name>
+                <epg>SLO1</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.115:5000</url>
+            </channel>
+            <channel>
+                <title>SLO 2</title>
+                <name>RTV Slovenija 2</name>
+                <epg>SLO2</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.116:5000</url>
+            </channel>
+            <channel>
+                <title>SLO 3</title>
+                <name>RTV Slovenija 3</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.11:5000</url>
+            </channel>
+            <channel>
+                <title>POP TV</title>
+                <name>POP TV</name>
+                <epg>POPTV</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.9:5000</url>
+            </channel>
+            <channel>
+                <title>Kanal A</title>
+                <name>Kanal A</name>
+                <epg>AKANAL</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.8:5000</url>
+            </channel>
+            <channel>
+                <title>TV3</title>
+                <name>TV3</name>
+                <epg>TV3</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.7:5000</url>
+            </channel>
+            <channel>
+                <title>HBO</title>
+                <name>Home Box Office</name>
+                <epg>HBO</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.151:5000</url>
+            </channel>
+            <channel>
+                <title>HBO Comedy</title>
+                <name>Home Box Office Comedy</name>
+                <epg>HBOC</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.154:5000</url>
+            </channel>
+            <channel>
+                <title>TV 1000</title>
+                <name>Viasat TV 1000</name>
+                <epg>TV1000</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.29:5000</url>
+            </channel>
+            <channel>
+                <title>Hallmark</title>
+                <name>Hallmark</name>
+                <epg>HALLMARK</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.104:5000</url>
+            </channel>
+            <channel>
+                <title>HRT1</title>
+                <name>Hrvatska televizija I.</name>
+                <epg>HRT1</epg>
+                <language>hrvaški</language>
+                <url>udp://@239.1.1.74:5000</url>
+            </channel>
+            <channel>
+                <title>HRT2</title>
+                <name>Hrvatska televizija II.</name>
+                <epg>HRT2</epg>
+                <language>hrvaški</language>
+                <url>udp://@239.1.1.75:5000</url>
+            </channel>
+            <channel>
+                <title>Eurosport</title>
+                <name>Eurosport</name>
+                <epg>EUROSPORT</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.63:5000</url>
+            </channel>
+            <channel>
+                <title>DSF</title>
+                <name>Deutsches Sportfernsehen</name>
+                <epg>DSF</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.57:5000</url>
+            </channel>
+            <channel>
+                <title>Šport TV 1</title>
+                <name>Šport TV 1</name>
+                <epg>SPORTKLUB</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.26:5000</url>
+            </channel>
+            <channel>
+                <title>Šport TV 2</title>
+                <name>Šport TV 2</name>
+                <epg>SPORTKLUB2</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.38:5000</url>
+            </channel>
+            <channel>
+                <title>Info TV</title>
+                <name>Info TV</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.10:5000</url>
+            </channel>
+            <channel>
+                <title>Nova Tv</title>
+                <name>Nova Tv</name>
+                <epg>NI</epg>
+                <language>hrvaški</language>
+                <url>udp://239.1.1.2:5000</url>
+            </channel>
+            <channel>
+                <title>CNN</title>
+                <name>CNN International</name>
+                <epg>CNN</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.50:5000</url>
+            </channel>
+            <channel>
+                <title>BBC World</title>
+                <name>BBC World</name>
+                <epg>BBCWORLD</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.40:5000</url>
+            </channel>
+            <channel>
+                <title>Discovery Channel</title>
+                <name>Discovery Channel</name>
+                <epg>DISCOVERY</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.53:5000</url>
+            </channel>
+            <channel>
+                <title>National Geographic</title>
+                <name>National Geographic</name>
+                <epg>NATGEO</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.85:5000</url>
+            </channel>
+            <channel>
+                <title>Explorer</title>
+                <name>Viasat Explorer</name>
+                <epg>EXPLORER</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://239.1.1.133:5000</url>
+            </channel>
+            <channel>
+                <title>History</title>
+                <name>Viasat History</name>
+                <epg>HISTORY</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://239.1.1.146:5000</url>
+            </channel>
+            <channel>
+                <title>Animal Planet</title>
+                <name>Animal Planet</name>
+                <epg>ANIMAL</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.34:5000</url>
+            </channel>
+            <channel>
+                <title>TiJi</title>
+                <name>TiJi TV</name>
+                <epg>TIJI</epg>
+                <language>francoski</language>
+                <url>udp://@239.1.1.122:5000</url>
+            </channel>
+            <channel>
+                <title>Jetix</title>
+                <name>Jetix</name>
+                <epg>JETIX</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.76:5000</url>
+            </channel>
+            <channel>
+                <title>Kika</title>
+                <name>Kinderkanal</name>
+                <epg>KIKA</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.78:5000</url>
+            </channel>
+            <channel>
+                <title>MTV Adria</title>
+                <name>Music Television Adria</name>
+                <epg>MTV</epg>
+                <language>slovenski, hrvaški, srbski, angleški</language>
+                <url>udp://@239.1.1.6:5000</url>
+            </channel>
+            <channel>
+                <title>Boomerang</title>
+                <name>Boomerang TV</name>
+                <epg>BOOMERANG</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.189:5000</url>
+            </channel>
+            <channel>
+                <title>Baby TV</title>
+                <name>Baby TV</name>
+                <epg>NI</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.37:5000</url>
+            </channel>
+            <channel>
+                <title>Rtl Hrvaška</title>
+                <name>RTL hrvaška</name>
+                <epg>NI</epg>
+                <language>hrvaški</language>
+                <url>udp://239.1.1.1:5000</url>
+            </channel>
+        </category>
+        <category expanded="false"type="sub">
+            <title>Glasbeni</title>
+            <channel>
+                <title>Viva</title>
+                <name>Viva</name>
+                <epg>VIVA</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.132:5000</url>
+            </channel>
+            <channel>
+                <title>MTV Adria</title>
+                <name>Music Television Adria</name>
+                <epg>MTV</epg>
+                <language>slovenski, hrvaški, srbski, angleški</language>
+                <url>udp://@239.1.1.6:5000</url>
+            </channel>
+            <channel>
+                <title>MTV2</title>
+                <name>Music Television Two</name>
+                <epg>MTV2</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.162:5000</url>
+            </channel>
+            <channel>
+                <title>MTV Hits</title>
+                <name>Music Television Hits</name>
+                <epg>MTVH</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.160:5000</url>
+            </channel>
+            <channel>
+                <title>MTV Dance</title>
+                <name>Music Television Dance</name>
+                <epg>MTVDANCE</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.159:5000</url>
+            </channel>
+            <channel>
+                <title>VH1</title>
+                <name>VH1</name>
+                <epg>VH1</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.129:5000</url>
+            </channel>
+            <channel>
+                <title>VH1 Classic</title>
+                <name>VH1 Classic</name>
+                <epg>VH1CLA</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.130:5000</url>
+            </channel>
+            <channel>
+                <title>Mezzo</title>
+                <name>Mezzo Clasic Jazz TV</name>
+                <epg>MEZZO</epg>
+                <language>francoski</language>
+                <url>udp://@239.1.1.81:5000</url>
+            </channel>
+            <channel>
+                <title>MCM TOP</title>
+                <name>MCM TOP</name>
+                <epg>MCM</epg>
+                <language>francoski</language>
+                <url>udp://239.1.1.91:5000</url>
+            </channel>
+            <channel>
+                <title>Trace TV</title>
+                <name>Trace TV</name>
+                <epg>TRACE</epg>
+                <language>francoski</language>
+                <url>udp://@239.1.1.124:5000</url>
+            </channel>
+            <channel>
+                <title>Čarli TV</title>
+                <name>Čarli TV</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.155:5000</url>
+            </channel>
+            <channel>
+                <title>CMC</title>
+                <name>Croatian music channel</name>
+                <epg>CMC</epg>
+                <language>hrvaški</language>
+                <url>udp://@239.255.0.160:5002</url>
+            </channel>
+            <channel>
+                <title>Golica</title>
+                <name>Golica TV</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.156:5000</url>
+            </channel>
+            <channel>
+                <title>TV Petelin</title>
+                <name>TV Petelin</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.157:5000</url>
+            </channel>
+        </category>
+        <category expanded="false"type="sub">
+            <title>Dokumentarni</title>
+            <channel>
+                <title>Discovery Channel</title>
+                <name>Discovery Channel</name>
+                <epg>DISCOVERY</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.53:5000</url>
+            </channel>
+            <channel>
+                <title>Discovery Science</title>
+                <name>Discovery Science</name>
+                <epg>DISCSCI</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.55:5000</url>
+            </channel>
+            <channel>
+                <title>Discovery World</title>
+                <name>Discovery World</name>
+                <epg>DISCCI</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.54:5000</url>
+            </channel>
+            <channel>
+                <title>Discovery T and L</title>
+                <name>Discovery Travel and Living</name>
+                <epg>DISCTL</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.56:5000</url>
+            </channel>
+            <channel>
+                <title>History</title>
+                <name>Viasat History</name>
+                <epg>HISTORY</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://239.1.1.146:5000</url>
+            </channel>
+            <channel>
+                <title>Explorer</title>
+                <name>Viasat Explorer</name>
+                <epg>EXPLORER</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://239.1.1.133:5000</url>
+            </channel>
+            <channel>
+                <title>National Geographic</title>
+                <name>National Geographic</name>
+                <epg>NATGEO</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.85:5000</url>
+            </channel>
+            <channel>
+                <title>NG Wild</title>
+                <name>National Geographic Wild</name>
+                <epg>NATGEOW</epg>
+                <language>angleški </language>
+                <url>udp://@239.1.1.31:5000</url>
+            </channel>
+            <channel>
+                <title>Animal Planet</title>
+                <name>Animal Planet</name>
+                <epg>ANIMAL</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.34:5000</url>
+            </channel>
+            <channel>
+                <title>Travel</title>
+                <name>Travel Channel</name>
+                <epg>TRAVEL</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.125:5000</url>
+            </channel>
+            <channel>
+                <title>Zone Reality</title>
+                <name>Zone Reality</name>
+                <epg>REALITY</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.100:5000</url>
+            </channel>
+            <channel>
+                <title>Chasse</title>
+                <name>Chasse et Peche</name>
+                <epg>NI</epg>
+                <language>francoski</language>
+                <url>udp://@239.1.1.47:5000</url>
+            </channel>
+            <channel>
+                <title>Animaux</title>
+                <name>Animaux</name>
+                <epg>ANIMAUX</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.35:5000</url>
+            </channel>
+        </category>
+        <category expanded="false"type="sub">
+            <title>Športni</title>
+            <channel>
+                <title>Šport TV 1</title>
+                <name>Šport TV 1</name>
+                <epg>SPORTKLUB</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.26:5000</url>
+            </channel>
+            <channel>
+                <title>Šport klub +</title>
+                <name>Šport klub +</name>
+                <epg>SPORTKLUB+</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.171:5000</url>
+            </channel>
+            <channel>
+                <title>Šport klub Slovenija</title>
+                <name>Šport klub Slovenija</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.172:5000</url>
+            </channel>
+            <channel>
+                <title>Eurosport</title>
+                <name>Eurosport</name>
+                <epg>EUROSPORT</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.63:5000</url>
+            </channel>
+            <channel>
+                <title>Eurosport 2</title>
+                <name>Eurosport 2</name>
+                <epg>EUROSPORT2</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.64:5000</url>
+            </channel>
+            <channel>
+                <title>DSF</title>
+                <name>Deutsches Sportfernsehen</name>
+                <epg>DSF</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.57:5000</url>
+            </channel>
+            <channel>
+                <title>Extreme</title>
+                <name>Extreme TV</name>
+                <epg>EXTREME</epg>
+                <language>angleški, francoski, nemški</language>
+                <url>udp://@239.1.1.67:5000</url>
+            </channel>
+            <channel>
+                <title>ESPN Classic</title>
+                <name>ESPN Classic</name>
+                <epg>ESPN</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.61:5000</url>
+            </channel>
+            <channel>
+                <title>Šport TV 2</title>
+                <name>Šport TV 2</name>
+                <epg>SPORTKLUB 2</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.38:5000</url>
+            </channel>
+        </category>
+        <category expanded="false"type="sub">
+            <title>Zabavni</title>
+            <channel>
+                <title>POP TV</title>
+                <name>POP TV</name>
+                <epg>POPTV</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.9:5000</url>
+            </channel>
+            <channel>
+                <title>Kanal A</title>
+                <name>Kanal A</name>
+                <epg>AKANAL</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.8:5000</url>
+            </channel>
+            <channel>
+                <title>TV3</title>
+                <name>TV3</name>
+                <epg>TV3</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.7:5000</url>
+            </channel>
+            <channel>
+                <title>HBO</title>
+                <name>Home Box Office</name>
+                <epg>HBO</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.151:5000</url>
+            </channel>
+            <channel>
+                <title>HBO Comedy</title>
+                <name>Home Box Office Comedy</name>
+                <epg>HBOC</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.154:5000</url>
+            </channel>
+            <channel>
+                <title>TV 1000</title>
+                <name>TV 1000 Balkan</name>
+                <epg>TV1000</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.29:5000</url>
+            </channel>
+            <channel>
+                <title>Hallmark</title>
+                <name>Hallmark</name>
+                <epg>HALLMARK</epg>
+                <language>angleški - podnaslovljen</language>
+                <url>udp://@239.1.1.104:5000</url>
+            </channel>
+            <channel>
+                <title>BBC Prime</title>
+                <name>BBC Prime</name>
+                <epg>BBCPRIME</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.39:5000</url>
+            </channel>
+            <channel>
+                <title>FOX Life</title>
+                <name>FOX Life</name>
+                <epg>FOXLIFE</epg>
+                <language>angleški - podnaslovljen </language>
+                <url>udp://239.1.1.138:5000</url>
+            </channel>
+            <channel>
+                <title>FOX Crime</title>
+                <name>FOX Crime</name>
+                <epg>FOXCRIME</epg>
+                <language>angleški - podnaslovljen </language>
+                <url>udp://239.1.1.139:5000</url>
+            </channel>
+            <channel>
+                <title>Cartoon / TCM</title>
+                <name>Cartoon Network / TCM</name>
+                <epg>CARTOON</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.60:5000</url>
+            </channel>
+            <channel>
+                <title>3SAT</title>
+                <name>Drei Sat</name>
+                <epg>3SAT</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.30:5000</url>
+            </channel>
+            <channel>
+                <title>RTL</title>
+                <name>RTL</name>
+                <epg>RTL</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.108:5000</url>
+            </channel>
+            <channel>
+                <title>RTL II</title>
+                <name>RTL II</name>
+                <epg>RTL2</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.109:5000</url>
+            </channel>
+            <channel>
+                <title>Super RTL</title>
+                <name>Super RTL</name>
+                <epg>SUPERRTL</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.118:5000</url>
+            </channel>
+            <channel>
+                <title>VOX</title>
+                <name>VOX</name>
+                <epg>VOX</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.134:5000</url>
+            </channel>
+            <channel>
+                <title>Pro 7</title>
+                <name>Pro Sieben</name>
+                <epg>PRO7</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.96:5000</url>
+            </channel>
+            <channel>
+                <title>Kabel 1</title>
+                <name>Kabel Eins</name>
+                <epg>KABEL1</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.77:5000</url>
+            </channel>
+            <channel>
+                <title>SAT 1</title>
+                <name>SAT 1</name>
+                <epg>SAT1</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.112:5000</url>
+            </channel>
+            <channel>
+                <title>Planeta TV</title>
+                <name>Planeta TV</name>
+                <epg>PLANETATV</epg>
+                <language>ruski</language>
+                <url>udp://@239.1.1.150:5000</url>
+            </channel>
+            <channel>
+                <title>TiJi</title>
+                <name>TiJi TV</name>
+                <epg>TIJI</epg>
+                <language>francoski</language>
+                <url>udp://@239.1.1.122:5000</url>
+            </channel>
+            <channel>
+                <title>Jetix</title>
+                <name>Jetix</name>
+                <epg>JETIX</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.76:5000</url>
+            </channel>
+            <channel>
+                <title>Kika</title>
+                <name>Kinderkanal</name>
+                <epg>KIKA</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.78:5000</url>
+            </channel>
+            <channel>
+                <title>Boomerang</title>
+                <name>Boomerang TV</name>
+                <epg>BOOMERANG</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.189:5000</url>
+            </channel>
+            <channel>
+                <title>Baby TV</title>
+                <name>Baby TV</name>
+                <epg>NI</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.37:5000</url>
+            </channel>
+            <channel>
+                <title>Pink Plus</title>
+                <name>Pink Plus</name>
+                <epg>PINK</epg>
+                <language>srbski</language>
+                <url>udp://@239.1.1.93:5000</url>
+            </channel>
+            <channel>
+                <title>Romantica</title>
+                <name>Romantica</name>
+                <epg>ROMANTICA</epg>
+                <language>španski</language>
+                <url>udp://@239.1.1.105:5000</url>
+            </channel>
+            <channel>
+                <title>Fashion TV</title>
+                <name>Fashion TV</name>
+                <epg>NI</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.68:5000</url>
+            </channel>
+            <channel>
+                <title>Club</title>
+                <name>Zone Club TV</name>
+                <epg>CLUB</epg>
+                <language>angleški, nemški</language>
+                <url>udp://@239.1.1.48:5000</url>
+            </channel>
+            <channel>
+                <title>Vesti</title>
+                <name>Vesti</name>
+                <epg>NI</epg>
+                <language>ruski</language>
+                <url>udp://@239.1.1.195:5000</url>
+            </channel>
+        </category>
+        <category expanded="false"type="sub">
+            <title>Nacionalni</title>
+            <channel>
+                <title>SLO 1</title>
+                <name>RTV Slovenija 1</name>
+                <epg>SLO1</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.115:5000</url>
+            </channel>
+            <channel>
+                <title>SLO 2</title>
+                <name>RTV Slovenija 2</name>
+                <epg>SLO2</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.116:5000</url>
+            </channel>
+            <channel>
+                <title>SLO 3</title>
+                <name>RTV Slovenija 3</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.11:5000</url>
+            </channel>
+            <channel>
+                <title>HRT1</title>
+                <name>Hrvatska televizija I.</name>
+                <epg>HRT1</epg>
+                <language>hrvaški</language>
+                <url>udp://@239.1.1.74:5000</url>
+            </channel>
+            <channel>
+                <title>HRT2</title>
+                <name>Hrvatska televizija II.</name>
+                <epg>HRT2</epg>
+                <language>hrvaški</language>
+                <url>udp://@239.1.1.75:5000</url>
+            </channel>
+            <channel>
+                <title>ORF1</title>
+                <name>Österreichischer Rundfunk 1</name>
+                <epg>ORF1</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.89:5000</url>
+            </channel>
+            <channel>
+                <title>ORF2</title>
+                <name>Österreichischer Rundfunk 2</name>
+                <epg>ORF2</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.90:5000</url>
+            </channel>
+            <channel>
+                <title>ARD</title>
+                <name>ARD - Das Erste</name>
+                <epg>ARD</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.52:5000</url>
+            </channel>
+            <channel>
+                <title>ZDF</title>
+                <name>Zweites Deutches Fernsehen</name>
+                <epg>ZDF</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.137:5000</url>
+            </channel>
+            <channel>
+                <title>RAI 1</title>
+                <name>RAI Uno</name>
+                <epg>RAI1</epg>
+                <language>italijanski</language>
+                <url>udp://@239.1.1.97:5000</url>
+            </channel>
+            <channel>
+                <title>RAI 2</title>
+                <name>RAI Due</name>
+                <epg>RAI2</epg>
+                <language>italijanski</language>
+                <url>udp://@239.1.1.98:5000</url>
+            </channel>
+            <channel>
+                <title>RAI 3</title>
+                <name>RAI Tre</name>
+                <epg>RAI3</epg>
+                <language>italijanski</language>
+                <url>udp://@239.1.1.99:5000</url>
+            </channel>
+            <channel>
+                <title>RTS</title>
+                <name>RTS Srbija</name>
+                <epg>RTS</epg>
+                <language>srbski</language>
+                <url>udp://@239.1.1.110:5000</url>
+            </channel>
+            <channel>
+                <title>RTCG</title>
+                <name>RT Črna Gora</name>
+                <epg>RTCG</epg>
+                <language>srbski</language>
+                <url>udp://@239.1.1.106:5000</url>
+            </channel>
+            <channel>
+                <title>RTK</title>
+                <name>RT Kosovo</name>
+                <epg>NI</epg>
+                <language>albanski</language>
+                <url>udp://@239.1.1.107:5000</url>
+            </channel>
+            <channel>
+                <title>Hayat</title>
+                <name>Hayat</name>
+                <epg>HAYAT</epg>
+                <language>bosanski</language>
+                <url>udp://@239.1.1.72:5000</url>
+            </channel>
+            <channel>
+                <title>MKTV</title>
+                <name>Makedonska TV</name>
+                <epg>NI</epg>
+                <language>makedonski</language>
+                <url>udp://@239.1.1.79:5000</url>
+            </channel>
+            <channel>
+                <title>TVE</title>
+                <name>TV Espania Internacional</name>
+                <epg>TVE</epg>
+                <language>španski</language>
+                <url>udp://@239.1.1.128:5000</url>
+            </channel>
+            <channel>
+                <title>N 24</title>
+                <name>Norddeutscher Rundfunk</name>
+                <epg>NI</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.141:5000</url>
+            </channel>
+        </category>
+        <category expanded="false"type="sub">
+            <title>Informativni</title>
+            <channel>
+                <title>Info TV</title>
+                <name>Info TV</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.10:5000</url>
+            </channel>
+            <channel>
+                <title>CNN</title>
+                <name>CNN International</name>
+                <epg>CNN</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.50:5000</url>
+            </channel>
+            <channel>
+                <title>BBC World</title>
+                <name>BBC World</name>
+                <epg>BBCWORLD</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.40:5000</url>
+            </channel>
+            <channel>
+                <title>Sky news</title>
+                <name>Sky news</name>
+                <epg>NI</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.165:5000</url>
+            </channel>
+            <channel>
+                <title>Euronews</title>
+                <name>Euronews</name>
+                <epg>NI</epg>
+                <language>angleški </language>
+                <url>udp://@239.1.1.62:5000</url>
+            </channel>
+            <channel>
+                <title>EWTN</title>
+                <name>Eternal Word Television Network</name>
+                <epg>EWTN</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.65:5000</url>
+            </channel>
+            <channel>
+                <title>TV5</title>
+                <name>TV5 Monde</name>
+                <epg>TV5</epg>
+                <language>francoski</language>
+                <url>udp://@239.1.1.126:5000</url>
+            </channel>
+            <channel>
+                <title>24 Horas</title>
+                <name>Canal 24 Horas</name>
+                <epg>24HORAS</epg>
+                <language>španski</language>
+                <url>udp://@239.1.1.45:5000</url>
+            </channel>
+            <channel>
+                <title>N24</title>
+                <name>Nachrichten 24h</name>
+                <epg>NI</epg>
+                <language>nemški</language>
+                <url>udp://@239.1.1.141:5000</url>
+            </channel>
+        </category>
+        <category expanded="false"type="sub">
+            <title>Lokalni</title>
+            <channel>
+                <title>TV Pika</title>
+                <name>TV Pika</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.127:5000</url>
+            </channel>
+            <channel>
+                <title>TV Paprika</title>
+                <name>TV Paprika</name>
+                <epg>PAPRIKA</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.12:5000</url>
+            </channel>
+            <channel>
+                <title>NET TV</title>
+                <name>NET TV</name>
+                <epg>NET</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.20:5000</url>
+            </channel>
+            <channel>
+                <title>RTS Maribor</title>
+                <name>RTS Maribor</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.23:5000</url>
+            </channel>
+            <channel>
+                <title>Sponka TV</title>
+                <name>Sponka TV</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.19:5000</url>
+            </channel>
+            <channel>
+                <title>VTV</title>
+                <name>VTV</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.15:5000</url>
+            </channel>
+            <channel>
+                <title>TV Koper Capodistria</title>
+                <name>TV Koper Capodistria</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.200:5000</url>
+            </channel>
+            <channel>
+                <title>Vaš kanal</title>
+                <name>Vaš kanal</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.32:5000</url>
+            </channel>
+            <channel>
+                <title>TV Primorka</title>
+                <name>TV Primorka</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.16:5000</url>
+            </channel>
+            <channel>
+                <title>Vitel</title>
+                <name>Vitel</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.3:5000</url>
+            </channel>
+            <channel>
+                <title>Tele M</title>
+                <name>Tele M</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.14:5000</url>
+            </channel>
+            <channel>
+                <title>SIP TV</title>
+                <name>SIP TV</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.24:5000</url>
+            </channel>
+            <channel>
+                <title>TV AS</title>
+                <name>TV AS</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.21:5000</url>
+            </channel>
+            <channel>
+                <title>Kanal 10</title>
+                <name>Kanal 10</name>
+                <epg>NI</epg>
+                <language>slovenski</language>
+                <url>udp://@239.1.1.17:5000</url>
+            </channel>
+        </category>
+        <category expanded="false"type="sub">
+            <title>Za odrasle</title>
+            <channel>
+                <title>Free X TV</title>
+                <name>Free X TV</name>
+                <epg>FREEX</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.167:5000</url>
+            </channel>
+            <channel>
+                <title>Free X TV2</title>
+                <name>Free X TV2</name>
+                <epg>FREEX2</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.169:5000</url>
+            </channel>
+            <channel>
+                <title>Spice</title>
+                <name>Spice Platinum</name>
+                <epg>SPICE</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.117:5000</url>
+            </channel>
+            <channel>
+                <title>Hustler TV</title>
+                <name>Hustler TV</name>
+                <epg>HUSTLER</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.95:5000</url>
+            </channel>
+            <channel>
+                <title>SCT</title>
+                <name>Satisfaction Channel</name>
+                <epg>NI</epg>
+                <language>italijanski</language>
+                <url>udp://@239.1.1.149:5000</url>
+            </channel>
+            <channel>
+                <title>X Dream TV</title>
+                <name>X Dream TV</name>
+                <epg>XDREAM</epg>
+                <language>angleški</language>
+                <url>udp://@239.1.1.168:5000</url>
+            </channel>
+        </category>
+    </category>
+    <category expanded="false"type="main">
+        <title>T-2 HD TV</title>
+        <channel>
+            <title>Melody Zen HD</title>
+            <name>Melody Zen HD</name>
+            <epg>NI</epg>
+            <language>angleški</language>
+            <url>udp://@239.1.1.152:5000</url>
+        </channel>
+        <channel>
+            <title>Discovery HD</title>
+            <name>Discovery HD</name>
+            <epg>NI</epg>
+            <language>angleški</language>
+            <url>udp://@239.1.1.142:5000</url>
+        </channel>
+        <channel>
+            <title>Play Tv HD</title>
+            <name>Play TV HD</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.1.147:5000</url>
+        </channel>
+        <channel>
+            <title>Luxe TV HD</title>
+            <name>Luxe TV HD</name>
+            <epg>NI</epg>
+            <language>angleški</language>
+            <url>udp://@239.1.1.185:5000</url>
+        </channel>
+        <channel>
+            <title>Testni HD 4</title>
+            <name>Testni HD program 4</name>
+            <epg>NI</epg>
+            <language>angleški</language>
+            <url>Udp://@239.255.4.207:5002</url>
+        </channel>
+    </category>
+    <category expanded="false"type="main">
+        <title>T-2 RADIO</title>
+        <channel>
+            <title>Radio SiOL</title>
+            <name>Radio SiOL</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.255.2.1:5002</url>
+        </channel>
+        <channel>
+            <title>Klub SiOL</title>
+            <name>Klub SiOL</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.255.2.2:5002</url>
+        </channel>
+        <channel>
+            <title>Radio HIT</title>
+            <name>Radio HIT</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.172:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Ekspres</title>
+            <name>Radio Ekspres</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.170:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Antena</title>
+            <name>Radio Antena</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.143:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Center</title>
+            <name>Radio Center</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.150:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Aktual</title>
+            <name>Radio Aktual</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.199:5000</url>
+        </channel>
+        <channel>
+            <title>Radio 1</title>
+            <name>Radio 1</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.157:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Zeleni val</title>
+            <name>Radio Zeleni val</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.186:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Kranj</title>
+            <name>Radio Kranj</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.174:5000</url>
+        </channel>
+        <channel>
+            <title>Radio City</title>
+            <name>Radio City</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.150:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Alpski val</title>
+            <name>Radio Alpski val</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.190:5000</url>
+        </channel>
+        <channel>
+            <title>Koroški radio</title>
+            <name>Koroški radio</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.179:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Belvi</title>
+            <name>Radio Belvi</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.197:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Capris</title>
+            <name>Radio Capris</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.140:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Celjski val</title>
+            <name>Radio Celjski val</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.142:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Fantasy</title>
+            <name>Radio Fantasy</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.195:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Goldy</title>
+            <name>Radio Goldy</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.156:5000</url>
+        </channel>
+        <channel>
+            <title>Radio Kum</title>
+            <name>Radio Kum</name>
+            <epg>NI</epg>
+            <language>slovenski</language>
+            <url>udp://@239.1.2.148:5000</url>
+        </channel>
+    </category>
+</tano>

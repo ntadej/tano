@@ -40,6 +40,7 @@ void EditSettings::createActions()
 
 	connect(ui.radioSiol, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
 	connect(ui.radioT2, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
+	connect(ui.radioT2full, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
 	connect(ui.radioBrowse, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
 
 	connect(ui.buttonBrowse, SIGNAL(clicked()), this, SLOT(playlistBrowse()));
@@ -83,9 +84,11 @@ void EditSettings::ok()
 	settings->setValue("session",ui.checkSession->isChecked());
 
 	if(ui.radioSiol->isChecked()) {
-		settings->setValue("playlist","siol.xml");
+		settings->setValue("playlist","playlists/siol.xml");
 	} else if(ui.radioT2->isChecked()) {
-		settings->setValue("playlist","t-2.xml");
+		settings->setValue("playlist","playlists/t-2-cat.xml");
+	} else if(ui.radioT2full->isChecked()) {
+			settings->setValue("playlist","playlists/t-2-full.xml");
 	} else {
 		settings->setValue("playlist",ui.pEdit->text());
 	}
@@ -156,10 +159,12 @@ void EditSettings::read()
 
 	ui.checkSession->setChecked(settings->value("session",true).toBool());
 
-	if(settings->value("playlist","siol.xml").toString() == "siol.xml")
+	if(settings->value("playlist","playlists/siol.xml").toString() == "playlists/siol.xml")
 		ui.radioSiol->setChecked(true);
-	else if(settings->value("playlist","siol.xml").toString() == "t-2.xml")
+	else if(settings->value("playlist","playlists/siol.xml").toString() == "playlists/t-2-cat.xml")
 		ui.radioT2->setChecked(true);
+	else if(settings->value("playlist","playlists/siol.xml").toString() == "playlists/t-2-full.xml")
+			ui.radioT2full->setChecked(true);
 	else {
 		ui.radioBrowse->setChecked(true);
 		ui.buttonBrowse->setEnabled(true);
