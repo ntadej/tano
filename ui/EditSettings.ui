@@ -38,6 +38,36 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
+        <widget class="QGroupBox" name="tanoBox">
+         <property name="title">
+          <string>Tano Player</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <widget class="QLabel" name="labelVersion">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkWizard">
+            <property name="text">
+             <string>Run First run wizard</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelWizard">
+            <property name="text">
+             <string>&lt;i&gt;Wizard will be run on next running.&lt;/i&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <widget class="QGroupBox" name="langBox">
          <property name="title">
           <string>Language</string>

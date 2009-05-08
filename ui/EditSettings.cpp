@@ -27,6 +27,8 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 	settings->sync();
 
+	ui.labelVersion->setText(tr("You are using Tano Player version:")+" "+Common::version());
+
 	read();
 	shortcutRead();
 }
@@ -81,6 +83,7 @@ void EditSettings::ok()
 			settings->setValue("locale","en");
 	}
 
+	settings->setValue("registered",!ui.checkWizard->isChecked());
 	settings->setValue("session",ui.checkSession->isChecked());
 
 	if(ui.radioSiol->isChecked()) {

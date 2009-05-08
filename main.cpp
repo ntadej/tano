@@ -8,6 +8,7 @@
 
 #include "MainWindow.h"
 #include "Common.h"
+#include "ui/FirstRun.h"
 
 
 int main(int argc, char *argv[])
@@ -28,6 +29,11 @@ int main(int argc, char *argv[])
 	QString langPath = Common::locateLang("tano_" + locale + ".qm");
 	translator.load(QString("tano_" + locale), langPath);
 	app.installTranslator(&translator);
+
+	if(!settings.value("registered",false).toBool()) {
+		FirstRun wizard;
+		wizard.exec();
+	}
 
     MainWindow mainWindow;
 

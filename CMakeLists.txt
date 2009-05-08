@@ -105,6 +105,8 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	recorder/Recorder.h
 	ui/About.h
 	ui/EditSettings.h
+	ui/FirstRun.h
+	ui/License.h
 	ui/Osd.h
 	ui/TrayIcon.h
 	ui/TrayRecorder.h
@@ -128,6 +130,8 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	recorder/Recorder.cpp
 	ui/About.cpp
 	ui/EditSettings.cpp
+	ui/FirstRun.cpp
+	ui/License.cpp
 	ui/Osd.cpp
 	ui/TrayIcon.cpp
 	ui/TrayRecorder.cpp
