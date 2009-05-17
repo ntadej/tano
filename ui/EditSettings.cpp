@@ -24,7 +24,7 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	keysList = shortcuts->defaultKeys();
 	actionsList = shortcuts->actionsNames();
 
-	settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+	settings = Common::settings();
 	settings->sync();
 
 	ui.labelVersion->setText(tr("You are using Tano Player version:")+" "+Common::version());
@@ -117,6 +117,11 @@ void EditSettings::ok()
 	} else {
 		settings->setValue("info",false);
 	}
+	if(ui.volumeRadio->isChecked()) {
+		settings->setValue("wheel",true);
+	} else {
+		settings->setValue("wheel",false);
+	}
 	settings->endGroup();
 
 	settings->beginGroup("Recorder");
@@ -180,6 +185,8 @@ void EditSettings::read()
 	ui.checkTop->setChecked(settings->value("ontop",false).toBool());
 	ui.checkOsd->setChecked(settings->value("OSD",true).toBool());
 	ui.checkInfo->setChecked(settings->value("info",true).toBool());
+	ui.channelRadio->setChecked(!settings->value("wheel",false).toBool());
+	ui.volumeRadio->setChecked(settings->value("wheel",false).toBool());
 	settings->endGroup();
 
 	settings->beginGroup("Recorder");

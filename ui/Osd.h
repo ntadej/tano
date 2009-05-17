@@ -2,7 +2,6 @@
 #define TANO_OSD_H
 
 #include <QtGui/QWidget>
-#include <QTimer>
 #include <QTime>
 
 #include "ui_Osd.h"
@@ -46,9 +45,7 @@ signals:
 private:
     Ui::Osd ui;
 
-    QTimer *timer;
     QTime timeNow;
-    bool enabled;
 };
 
 #endif // TANO_OSD_H

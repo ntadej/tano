@@ -41,15 +41,14 @@ void Video::mouseMoveEvent(QMouseEvent *event)
 {
 	event->ignore();
 
-	int w = QApplication::desktop()->width();
 	int h = QApplication::desktop()->height();
 
 	if(this->isFullScreen() && event->globalPos() != pos && move) {
 		qApp->setOverrideCursor(Qt::ArrowCursor);
-		emit mouseMove();
+		//emit mouseMove();
 		pos = event->globalPos();
 
-		if(event->globalPos().x() > w/2-w*0.75/2 && event->globalPos().x() < w-(w/2-w*0.75/2) && event->globalPos().y() > h-105) {
+		if(event->globalPos().y() > h-105) {
 			emit osd(false);
 			timer->stop();
 		} else {
@@ -147,7 +146,7 @@ void Video::controlVUp()
 	if(audio->volume()+0.1 <= 2)
 		audio->setVolume(audio->volume()+0.1);
 	else
-		audio->setVolume(1);
+		audio->setVolume(2);
 	emit volumeChanged(audio->volume()*100);
 }
 void Video::controlVDown()

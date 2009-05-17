@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QStringList>
+#include <QSettings>
 
 class Common {
 public:
@@ -16,6 +17,8 @@ public:
 
 	static void about(QWidget *parent = 0 );
 	static void help(QWidget *parent = 0 );
+
+	static QSettings* settings();
 };
 
 #endif /* COMMON_H_ */

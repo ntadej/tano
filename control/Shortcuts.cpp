@@ -1,5 +1,3 @@
-#include <QSettings>
-
 #include "Shortcuts.h"
 #include "../Common.h"
 
@@ -55,15 +53,15 @@ Shortcuts::~Shortcuts() {
 
 void Shortcuts::apply()
 {
-	QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-	settings.sync();
+	settings = Common::settings();
+	settings->sync();
 
-	settings.beginGroup("Shortcuts");
+	settings->beginGroup("Shortcuts");
 	for (int i=0; i < actions.size(); i++) {
-		actions.at(i)->setShortcut(QKeySequence(settings.value(actionsName.at(i),defaultList.at(i)).toString()));
+		actions.at(i)->setShortcut(QKeySequence(settings->value(actionsName.at(i),defaultList.at(i)).toString()));
 		actions.at(i)->setShortcutContext(Qt::ApplicationShortcut);
 	}
-	settings.endGroup();
+	settings->endGroup();
 }
 
 QStringList Shortcuts::defaultKeys()

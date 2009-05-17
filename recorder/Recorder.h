@@ -6,6 +6,7 @@
 #include <QProcess>
 #include <QTime>
 #include <QTimer>
+#include <QSettings>
 
 #include "../channels/Channel.h"
 #include "../ui/TrayRecorder.h"
@@ -63,6 +64,8 @@ private:
 
 	QTimer *timer;
 	QTime time;
+
+	QSettings *settings;
 };
 
 #endif // RECORDER_H

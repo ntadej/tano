@@ -2,7 +2,6 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QMessageBox>
-#include <QSettings>
 #include <QDateTime>
 #include <QDebug>
 
@@ -20,11 +19,12 @@ Recorder::Recorder(QWidget *parent)
 
 	//Init
 	start = true;
-	QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-	fileName = settings.value("playlist","playlists/siol.xml").toString();
-	settings.beginGroup("Recorder");
-	ui.fileEdit->setText(settings.value("dir",QDir::homePath()+"/Videos").toString());
-	settings.endGroup();
+	settings = Common::settings();
+
+	fileName = settings->value("playlist","playlists/siol.xml").toString();
+	settings->beginGroup("Recorder");
+	ui.fileEdit->setText(settings->value("dir",QDir::homePath()+"/Videos").toString());
+	settings->endGroup();
 	openPlaylist();
 	start = false;
 
@@ -80,10 +80,9 @@ void Recorder::closeEvent(QCloseEvent *event)
 
 void Recorder::showRecorder()
 {
-	QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-	settings.beginGroup("Recorder");
-	ui.fileEdit->setText(settings.value("dir",QDir::homePath()+"/Videos").toString());
-	settings.endGroup();
+	settings->beginGroup("Recorder");
+	ui.fileEdit->setText(settings->value("dir",QDir::homePath()+"/Videos").toString());
+	settings->endGroup();
 	this->show();
 	trayIcon->show();
 }
@@ -261,10 +260,9 @@ void Recorder::record(bool status)
 
 void Recorder::recordNow(int nmb, QString url, QString name)
 {
-	QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-	settings.beginGroup("Recorder");
-	ui.fileEdit->setText(settings.value("dir",QDir::homePath()+"/Videos").toString());
-	settings.endGroup();
+	settings->beginGroup("Recorder");
+	ui.fileEdit->setText(settings->value("dir",QDir::homePath()+"/Videos").toString());
+	settings->endGroup();
 	trayIcon->show();
 
 	channel = handler->channelReadNum(nmb);

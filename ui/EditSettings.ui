@@ -298,6 +298,39 @@
         </widget>
        </item>
        <item>
+        <widget class="QGroupBox" name="wheelBox">
+         <property name="title">
+          <string>Mouse wheel</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <widget class="QRadioButton" name="channelRadio">
+            <property name="text">
+             <string>Change channel</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="volumeRadio">
+            <property name="text">
+             <string>Change volume</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelGui">
+         <property name="text">
+          <string>&lt;i&gt;You need to restart Tano Player when changing interface settings!&lt;/i&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="verticalSpacer_3">
          <property name="orientation">
           <enum>Qt::Vertical</enum>

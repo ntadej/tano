@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QWizard>
+#include <QSettings>
 #include "License.h"
 
 class QCheckBox;
@@ -74,6 +75,7 @@ private:
     QLabel *topLabel;
     QCheckBox *agreeCheckBox;
     License *license;
+    QSettings *settings;
 };
 
 #endif

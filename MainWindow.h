@@ -64,6 +64,7 @@ private slots:
 
     void time(qint64 t);
     void totalTime(qint64 t);
+    void volumeControl(bool type);
 
 private:
     Ui::MainWindow ui;

@@ -80,7 +80,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::createSettings()
 {
-	settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+	settings = Common::settings();
 
 	sessionEnabled = settings->value("session", true).toBool();
 	defaultP = settings->value("playlist","playlists/siol.xml").toString();
@@ -109,7 +109,11 @@ void MainWindow::createSettings()
 		ui.playlistWidget->hide();
 		ui.actionChannel_info->setChecked(false);
 	}
-
+	if(settings->value("wheel",false).toBool()) {
+		connect(ui.videoWidget, SIGNAL(wheel(bool)), this, SLOT(volumeControl(bool)));
+	} else {
+		connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
+	}
 	settings->endGroup();
 
 	record = new Recorder();
@@ -180,7 +184,6 @@ void MainWindow::createConnections()
 	connect(ui.videoWidget, SIGNAL(playing(QString)), this, SLOT(tooltip(QString)));
 	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
-	connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
 	connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
 	connect(ui.videoWidget, SIGNAL(tick(qint64)), this, SLOT(time(qint64)));
 	connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), this, SLOT(totalTime(qint64)));
@@ -308,6 +311,8 @@ void MainWindow::key(int clickedChannel)
 
 void MainWindow::play()
 {
+	ui.actionRatioOriginal->trigger();
+
 	epg->stop();
 	ui.playlistWidget->setWindowTitle(channel->longName() + " (" + channel->name() + ")");
 	ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
@@ -540,7 +545,8 @@ void MainWindow::lite()
 	}
 }
 
-void MainWindow::time(qint64 t) {
+void MainWindow::time(qint64 t)
+{
 	int tm = t*1;
 	timeNow = QTime();
 	timeNow = timeNow.addMSecs(tm);
@@ -548,12 +554,21 @@ void MainWindow::time(qint64 t) {
 	ui.durationSlider->setValue(tm);
 }
 
-void MainWindow::totalTime(qint64 t) {
+void MainWindow::totalTime(qint64 t)
+{
 	int tm = t*1;
 	ui.durationSlider->setMaximum(tm);
 	timeNow = QTime();
 	timeNow = timeNow.addMSecs(tm);
 	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
+}
+
+void MainWindow::volumeControl(bool type)
+{
+	if(type)
+		ui.actionVolumeUp->trigger();
+	else
+		ui.actionVolumeDown->trigger();
 }
 
 void MainWindow::createOsd()

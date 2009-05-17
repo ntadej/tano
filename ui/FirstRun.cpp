@@ -1,9 +1,8 @@
-#include "FirstRun.h"
-#include "../Common.h"
-
 #include <QtGui>
 #include <QResource>
-#include <QSettings>
+
+#include "FirstRun.h"
+#include "../Common.h"
 
 FirstRun::FirstRun(QWidget *parent)
     : QWizard(parent)
@@ -22,13 +21,11 @@ FirstRun::FirstRun(QWidget *parent)
 
     setPixmap(QWizard::LogoPixmap, QPixmap(":/icons/images/tano-small.png"));
     setWindowTitle(tr("First Run Wizard"));
- }
+}
 
 IntroPage::IntroPage(QWidget *parent)
     : QWizardPage(parent)
 {
-	QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-
 	QString version = Common::version();
 
     setTitle(tr("Welcome"));
@@ -37,8 +34,8 @@ IntroPage::IntroPage(QWidget *parent)
     topLabel = new QLabel(tr("This wizard will help you set basic settings for your copy of <i>Tano Player</i>."));
     topLabel->setWordWrap(true);
 
-    if(settings.value("version", version).toString() != version) {
-    	versionLabel = new QLabel(tr("You previously used version %1 of <i>Tano Player</i>. Please re-set your settings.").arg(settings.value("version", version).toString()));
+    if(Common::settings()->value("version", version).toString() != version) {
+    	versionLabel = new QLabel(tr("You previously used version %1 of <i>Tano Player</i>. Please re-set your settings.").arg(Common::settings()->value("version", version).toString()));
     	versionLabel->setWordWrap(true);
     } else
     	versionLabel = new QLabel("");
@@ -117,6 +114,8 @@ ConclusionPage::ConclusionPage(QWidget *parent)
     setTitle(tr("Complete Wizard"));
     setPixmap(QWizard::WatermarkPixmap, QPixmap(":/icons/images/wizard.bmp"));
 
+    settings = Common::settings();
+
     topLabel = new QLabel(tr("Thank you for using <i>Tano Player</i>."));
     topLabel->setWordWrap(true);
 
@@ -136,11 +135,10 @@ ConclusionPage::ConclusionPage(QWidget *parent)
 
 int ConclusionPage::nextId() const
 {
-	QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-	settings.setValue("version",Common::version());
-	settings.setValue("registered",true);
-	settings.setValue("playlist",field("playlist").toString());
-	settings.setValue("session",field("session").toBool());
+	settings->setValue("version",Common::version());
+	settings->setValue("registered",true);
+	settings->setValue("playlist",field("playlist").toString());
+	settings->setValue("session",field("session").toBool());
 
     return -1;
 }

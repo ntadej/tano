@@ -5,6 +5,7 @@
 #include <QAction>
 #include <QList>
 #include <QStringList>
+#include <QSettings>
 
 class Shortcuts : public QObject {
 	Q_OBJECT
@@ -21,6 +22,8 @@ private:
 	QStringList defaultList;
 	QStringList actionsName;
 	QStringList keys;
+
+	QSettings *settings;
 };
 
 #endif // TANO_SHORTCUTS_H_

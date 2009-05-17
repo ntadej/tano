@@ -9,12 +9,7 @@ Osd::Osd(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	enabled = true;
-
 	this->setWindowFlags(Qt::ToolTip);
-
-	timer = new QTimer(this);
-	connect(timer, SIGNAL(timeout()), this, SLOT(hideOsd()));
 
 	connect(ui.buttonPlay, SIGNAL(clicked()), this, SIGNAL(play()));
 	connect(ui.buttonStop, SIGNAL(clicked()), this, SIGNAL(stop()));
@@ -37,7 +32,6 @@ void Osd::showOsd()
 {
 	int w = QApplication::desktop()->width();
 	int h = QApplication::desktop()->height();
-	timer->start(1000);
 	this->resize(w*0.75,this->height());
 	this->move(w/2-this->width()/2,h-this->height());
 	this->show();
@@ -45,10 +39,7 @@ void Osd::showOsd()
 
 void Osd::hideOsd()
 {
-	if(enabled) {
-		timer->stop();
-		this->hide();
-	}
+	this->hide();
 }
 
 void Osd::setNumber(int n)
@@ -69,7 +60,10 @@ void Osd::setMuted(bool mute)
 
 void Osd::setStatus(bool status)
 {
-	enabled = status;
+	if(status)
+		hideOsd();
+	else
+		showOsd();
 }
 
 void Osd::setDuration(qint64 d)

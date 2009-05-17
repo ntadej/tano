@@ -136,4 +136,8 @@ void Common::help(QWidget *parent)
 		<< QLatin1Char('\0') << endl;
 }
 
-
+QSettings* Common::settings()
+{
+	QSettings* settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
+	return settings;
+}
