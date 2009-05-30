@@ -156,11 +156,11 @@ SET (Tano_Playlists
 
 # Set translation files
 SET(Tano_Translation_Srcs 
-	lang/tano_sl.ts
+	${CMAKE_CURRENT_SOURCE_DIR}/lang/tano_sl.ts
 )
 # lang/*.ts -> Tano_Translation_Srcs
 SET ( Tano_Translation_Bins
-	lang/tano_sl.qm
+	${CMAKE_CURRENT_SOURCE_DIR}/lang/tano_sl.qm
 )	
 
 ################
@@ -234,7 +234,7 @@ ADD_DEFINITIONS(-DTANO_QT_VERSION="${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_
 # Include paths and set up targets #
 ####################################
 # This needs to be added in order for #include to work inside .cpp files - it adds src/ to include path
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 
 # This line adds the include path of the Qt
 # directory to the compiler include path
@@ -259,14 +259,11 @@ ENDIF(MINGW)
 
 
 # This line tells cmake to create the Tano program.
-# All dependent libraries like RtMidi must be added here.
 # Attention: In contrast to Makefiles don't add "\" to separate lines
-ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs_Srcs}
-)
+ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs_Srcs})
 
 # Here the needed Qt Libraries are added to the link
 # command. Never remove that line :-)
-# Add ${QT_QTTEST_LIBRARY} below to add the Qt Test library as well
 TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${QT_PHONON_LIBRARY})
 
 
@@ -275,15 +272,16 @@ TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${QT_PHONON_LIBRARY})
 ###############
 ADD_CUSTOM_COMMAND(
 	TARGET tano
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 	PRE_BUILD
-	COMMAND ${QT_BINARY_DIR}/lupdate
-	ARGS -noobsolete ${Tano_UIC_Srcs} ${Tano_Srcs} -ts ${Tano_Translation_Srcs} lang/template.ts
+	COMMAND ${QT_LUPDATE_EXECUTABLE}
+	ARGS -noobsolete ${Tano_UIC_Srcs} ${Tano_Srcs} -ts ${Tano_Translation_Srcs}
 )
 ADD_CUSTOM_COMMAND(
 	TARGET tano
 	PRE_BUILD
-	COMMAND ${QT_BINARY_DIR}/lrelease
-	ARGS ${Tano_Translation_Srcs}
+	COMMAND ${QT_LRELEASE_EXECUTABLE}
+	ARGS ${Tano_Translation_Srcs} -qm ${Tano_Translation_Bins}
 )
 
 ################

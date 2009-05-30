@@ -3,7 +3,7 @@
 
 #include <QtGui/QMainWindow>
 #include <QProgressBar>
-#include "../ui_EpgBrowser.h"
+#include "ui_EpgBrowser.h"
 
 class EpgBrowser : public QMainWindow
 {

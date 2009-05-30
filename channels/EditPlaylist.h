@@ -2,7 +2,7 @@
 #define TANO_EDITPLAYLIST_H
 
 #include <QtGui/QMainWindow>
-#include "../ui_EditPlaylist.h"
+#include "ui_EditPlaylist.h"
 
 #include "../xml/tanohandler.h"
 #include "../xml/tanogenerator.h"
