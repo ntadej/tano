@@ -1,11 +1,11 @@
 #include "About.h"
 
-About::About(QWidget *parent, QString version, QString build)
+About::About(QWidget *parent, QString version)
     : QDialog(parent)
 {
 	ui.setupUi(this);
 
-	ui.labelVersion->setText(ui.labelVersion->text().replace("><",">"+version+" ("+build+")<"));
+	ui.labelVersion->setText(ui.labelVersion->text().replace("><",">"+version+"<"));
 	ui.labelCopy->setText(ui.labelCopy->text().replace("http://tano.sourceforge.net","<a href='http://tano.sourceforge.net'>http://tano.sourceforge.net</a>"));
 	ui.labelCopy->setText(ui.labelCopy->text().replace("ntadej@users.sourceforge.net","<a href='mailto:ntadej@users.sourceforge.net'>ntadej@users.sourceforge.net</a>"));
 

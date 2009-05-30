@@ -32,13 +32,6 @@ STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back 
 FILE(READ VERSION TANO_VERSION)
 STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
 
-#Tano Build
-IF(MINGW)
-	SET(TANO_BUILD "MinGW - Win32")
-ELSE(MINGW)
-	SET(TANO_BUILD "Linux i386")
-ENDIF(MINGW)
-
 # Set default install path:
 # In *nix environments this is /usr/local 
 # Under M$ Windows this is C:\Program files\Tano

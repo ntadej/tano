@@ -104,13 +104,7 @@ void Common::about(QWidget *parent)
 	QString version = "Unknown version";
 #endif
 
-#ifdef TANO_BUILD
-	QString build = QString(TANO_BUILD);
-#else
-	QString build = "Unknown build";
-#endif
-
-	About about(parent, version, build);
+	About about(parent, version);
 	about.exec();
 }
 
