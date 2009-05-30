@@ -17,9 +17,7 @@ public slots:
 	void open(QString link);
 
 private slots:
-	void go();
 	void home();
-	void changeText(QUrl url);
 
 	void done(int value);
 
@@ -27,6 +25,9 @@ private slots:
 	void stopStatusT(bool status);
 
 private:
+	void epg();
+	QString evalJS(const QString &js);
+
     Ui::EpgBrowser ui;
 
     QProgressBar *bar;

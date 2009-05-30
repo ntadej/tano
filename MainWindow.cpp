@@ -150,7 +150,7 @@ void MainWindow::createConnections()
 	connect(ui.actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
 
 	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
-	connect(ui.actionBrowser, SIGNAL(triggered()), this, SLOT(showBrowser()));
+	connect(ui.actionSchedule, SIGNAL(triggered()), this, SLOT(showBrowser()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
 	connect(ui.actionPlay, SIGNAL(triggered()), ui.videoWidget, SLOT(controlPlay()));
@@ -264,7 +264,7 @@ void MainWindow::createShortcuts()
 			<< ui.actionOpenFile
 			<< ui.actionOpenUrl
 			<< ui.actionOpen
-			<< ui.actionBrowser
+			<< ui.actionSchedule
 			<< ui.actionEditPlaylist
 			<< ui.actionSettings
 			<< ui.actionTop

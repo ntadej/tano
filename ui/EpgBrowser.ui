@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>EpgBrowser</class>
- <widget class="QMainWindow" name="EpgBrowser" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="EpgBrowser">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,58 +10,18 @@
     <height>600</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string>Browser</string>
+  <property name="windowTitle">
+   <string>TV Schedule - Tano Player</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="images.qrc" >
-    <normaloff>:/icons/images/browser.png</normaloff>:/icons/images/browser.png</iconset>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/icons/images/schedule.png</normaloff>:/icons/images/schedule.png</iconset>
   </property>
-  <widget class="QWidget" name="centralwidget" >
-   <layout class="QVBoxLayout" name="verticalLayout" >
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="headerLayout" >
-      <item>
-       <widget class="QLineEdit" name="addressLine" >
-        <property name="minimumSize" >
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="buttonGo" >
-        <property name="minimumSize" >
-         <size>
-          <width>26</width>
-          <height>26</height>
-         </size>
-        </property>
-        <property name="maximumSize" >
-         <size>
-          <width>26</width>
-          <height>26</height>
-         </size>
-        </property>
-        <property name="icon" >
-         <iconset resource="images.qrc" >
-          <normaloff>:/icons/images/go.png</normaloff>:/icons/images/go.png</iconset>
-        </property>
-        <property name="iconSize" >
-         <size>
-          <width>16</width>
-          <height>16</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QWebView" name="epgView" >
-      <property name="url" >
+     <widget class="QWebView" name="epgView">
+      <property name="url">
        <url>
         <string>about:blank</string>
        </url>
@@ -69,86 +30,86 @@
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar" />
-  <widget class="QToolBar" name="toolBar" >
-   <property name="windowTitle" >
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
     <string>Toolbar</string>
    </property>
-   <property name="iconSize" >
+   <property name="iconSize">
     <size>
      <width>32</width>
      <height>32</height>
     </size>
    </property>
-   <property name="toolButtonStyle" >
+   <property name="toolButtonStyle">
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
-   <attribute name="toolBarArea" >
+   <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
-   <attribute name="toolBarBreak" >
+   <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionHome" />
-   <addaction name="separator" />
-   <addaction name="actionBack" />
-   <addaction name="actionForward" />
-   <addaction name="actionReload" />
-   <addaction name="actionStop" />
-   <addaction name="separator" />
-   <addaction name="actionClose" />
+   <addaction name="actionHome"/>
+   <addaction name="separator"/>
+   <addaction name="actionBack"/>
+   <addaction name="actionForward"/>
+   <addaction name="actionReload"/>
+   <addaction name="actionStop"/>
+   <addaction name="separator"/>
+   <addaction name="actionClose"/>
   </widget>
-  <action name="actionHome" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionHome">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/home.png</normaloff>:/icons/images/home.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Home</string>
    </property>
   </action>
-  <action name="actionClose" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionClose">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/fileclose.png</normaloff>:/icons/images/fileclose.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Close</string>
    </property>
   </action>
-  <action name="actionReload" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionReload">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/reload.png</normaloff>:/icons/images/reload.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Reload</string>
    </property>
   </action>
-  <action name="actionBack" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionBack">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/back.png</normaloff>:/icons/images/back.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Back</string>
    </property>
   </action>
-  <action name="actionForward" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionForward">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/forward.png</normaloff>:/icons/images/forward.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Forward</string>
    </property>
   </action>
-  <action name="actionStop" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionStop">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/stop.png</normaloff>:/icons/images/stop.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Stop</string>
    </property>
   </action>
@@ -161,7 +122,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc" />
+  <include location="images.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -170,27 +131,11 @@
    <receiver>EpgBrowser</receiver>
    <slot>close()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
-    <hint type="destinationlabel" >
-     <x>399</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>epgView</sender>
-   <signal>titleChanged(QString)</signal>
-   <receiver>EpgBrowser</receiver>
-   <slot>setWindowTitle(QString)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>399</x>
-     <y>300</y>
-    </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>399</x>
      <y>299</y>
     </hint>
@@ -202,11 +147,11 @@
    <receiver>epgView</receiver>
    <slot>back()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>399</x>
      <y>331</y>
     </hint>
@@ -218,11 +163,11 @@
    <receiver>epgView</receiver>
    <slot>forward()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>399</x>
      <y>331</y>
     </hint>
@@ -234,11 +179,11 @@
    <receiver>epgView</receiver>
    <slot>reload()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>399</x>
      <y>331</y>
     </hint>
@@ -250,11 +195,11 @@
    <receiver>epgView</receiver>
    <slot>stop()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>399</x>
      <y>331</y>
     </hint>

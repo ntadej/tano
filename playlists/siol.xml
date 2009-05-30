@@ -1071,6 +1071,16 @@
             </channel>
         </category>
         <category expanded="false"type="sub">
+            <title>Testni kanali</title>
+            <channel>
+                <title>Sportklub</title>
+                <name>Test 1</name>
+                <epg>NI</epg>
+                <language>test</language>
+                <url>udp://@239.255.0.199:5002</url>
+            </channel>
+        </category>
+        <category expanded="false"type="sub">
             <title>Za odrasle</title>
             <channel>
                 <title>Free X TV</title>

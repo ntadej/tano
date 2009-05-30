@@ -1,4 +1,5 @@
 #include <QUrl>
+#include <QWebFrame>
 
 #include "EpgBrowser.h"
 
@@ -18,13 +19,9 @@ EpgBrowser::EpgBrowser(QWidget *parent)
 
 	ui.statusbar->insertPermanentWidget(0,bar);
 
-	connect(ui.buttonGo, SIGNAL(clicked()), this, SLOT(go()));
 	connect(ui.actionHome, SIGNAL(triggered()), this, SLOT(home()));
-	connect(ui.epgView, SIGNAL(urlChanged(QUrl)), this, SLOT(changeText(QUrl)));
-
 	connect(ui.epgView, SIGNAL(loadProgress(int)), this, SLOT(done(int)));
 	connect(ui.epgView, SIGNAL(loadProgress(int)), bar, SLOT(setValue(int)));
-
 	connect(ui.epgView, SIGNAL(loadStarted()), this, SLOT(stopStatus()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stopStatus()));
 	connect(ui.epgView, SIGNAL(loadFinished(bool)), this, SLOT(stopStatusT(bool)));
@@ -35,31 +32,14 @@ EpgBrowser::~EpgBrowser()
 
 }
 
-void EpgBrowser::go()
-{
-	QString url = ui.addressLine->text();
-	if (!url.contains("http://", Qt::CaseInsensitive)) {
-		url.prepend("http://");
-		ui.addressLine->setText(url);
-	}
-	ui.epgView->load(QUrl(ui.addressLine->text()));
-}
-
 void EpgBrowser::open(QString link) {
-	ui.addressLine->setText(link);
-	go();
+	ui.epgView->load(QUrl(link));
 	this->show();
 }
 
 void EpgBrowser::home()
 {
-	ui.addressLine->setText("http://www.siol.net/tv-spored.aspx");
-	go();
-}
-
-void EpgBrowser::changeText(QUrl url)
-{
-	ui.addressLine->setText(url.toString());
+	ui.epgView->load(QUrl("http://www.siol.net/tv-spored.aspx"));
 }
 
 void EpgBrowser::stopStatusT(bool status)
@@ -85,12 +65,38 @@ void EpgBrowser::done(int value)
 {
 	switch (value) {
 	case 10:
-		ui.statusbar->showMessage(tr("Loading")+" "+ui.addressLine->text());
+		ui.statusbar->showMessage(tr("Loading"));
+		epg();
 		break;
 	case 100:
 		ui.statusbar->showMessage(tr("Done"),5000);
+		epg();
 		break;
 	default:
+		epg();
 		break;
 	}
+}
+
+QString EpgBrowser::evalJS(const QString &js)
+{
+	QWebFrame *frame = ui.epgView->page()->mainFrame();
+	return frame->evaluateJavaScript(js).toString();
+}
+
+void EpgBrowser::epg()
+{
+	evalJS("document.getElementById('header').style.background = 'transparent';");
+	evalJS("document.getElementsByClassName('holder')[0].style.background = 'transparent';");
+
+	evalJS("document.getElementsByClassName('nav_corpo')[0].parentNode.removeChild(document.getElementsByClassName('nav_corpo')[0]);");
+	evalJS("document.getElementsByClassName('nav_tools')[0].parentNode.removeChild(document.getElementsByClassName('nav_tools')[0]);");
+	evalJS("document.getElementsByClassName('qjump')[0].parentNode.removeChild(document.getElementsByClassName('qjump')[0]);");
+	evalJS("document.getElementById('nav_primary').parentNode.removeChild(document.getElementById('nav_primary'));");
+	evalJS("document.getElementById('f_search').parentNode.removeChild(document.getElementById('f_search'));");
+	evalJS("document.getElementById('footer').innerHTML = '<p>&copy 2008-2009 Tano Player</p>';");
+	evalJS("document.getElementsByClassName('gocorpo')[0].parentNode.removeChild(document.getElementsByClassName('gocorpo')[0]);");
+	evalJS("document.getElementsByClassName('tools')[0].parentNode.removeChild(document.getElementsByClassName('tools')[0]);");
+
+	evalJS("document.getElementsByClassName('container')[0].innerHTML = '<h1><a href=\"http://www.siol.net/tv-spored.aspx\"><img src=\"http://tano.sourceforge.net/schedule.png\" alt=\"Tano Player\"/></a><span style=font-size:40px>TV SPORED</span></h1>';");
 }

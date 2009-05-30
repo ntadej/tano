@@ -331,7 +331,7 @@
     <addaction name="actionOpenUrl"/>
     <addaction name="actionOpen"/>
     <addaction name="separator"/>
-    <addaction name="actionBrowser"/>
+    <addaction name="actionSchedule"/>
     <addaction name="actionRecorder"/>
     <addaction name="separator"/>
     <addaction name="actionClose"/>
@@ -426,7 +426,7 @@
    <addaction name="actionOpenToolbar"/>
    <addaction name="actionEditPlaylist"/>
    <addaction name="actionRecorder"/>
-   <addaction name="actionBrowser"/>
+   <addaction name="actionSchedule"/>
    <addaction name="actionSettings"/>
    <addaction name="actionClose"/>
   </widget>
@@ -688,13 +688,16 @@
     <string>Open &amp;File</string>
    </property>
   </action>
-  <action name="actionBrowser">
+  <action name="actionSchedule">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/icons/images/browser.png</normaloff>:/icons/images/browser.png</iconset>
+     <normaloff>:/icons/images/schedule.png</normaloff>:/icons/images/schedule.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Browser</string>
+    <string>TV Schedule</string>
+   </property>
+   <property name="toolTip">
+    <string>TV Schedule</string>
    </property>
   </action>
   <action name="actionEditPlaylist">
