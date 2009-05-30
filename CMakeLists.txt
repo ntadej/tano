@@ -149,12 +149,16 @@ SET(Tano_Srcs
 	${Tano_Class_Srcs}
 )
 
-SET ( Tano_Files
+SET (Tano_Files
     LICENSE
-	siol.xml
-	splash.png
 	ui/images/tano.png
 	ui/images/tano-small.png
+)
+
+SET (Tano_Playlists
+	playlists/siol.xml
+	playlists/t-2-cat.xml
+	playlists/t-2-full.xml
 )
 
 # Set translation files
@@ -301,6 +305,8 @@ INSTALL(TARGETS tano
 INSTALL( DIRECTORY ${Tano_Images} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}" PATTERN ".svn" EXCLUDE )
 # Install data
 INSTALL( FILES ${Tano_Files} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+# Install playlists
+INSTALL( FILES ${Tano_Playlists} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/playlists")
 # Install translations
 INSTALL(FILES ${Tano_Translation_Bins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/lang")
 
