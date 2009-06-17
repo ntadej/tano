@@ -17,9 +17,6 @@ void Channel::setNum(int num) {
 void Channel::setName(QString xmlName) {
 	_name = xmlName;
 }
-void Channel::setLongName(QString xmlLongName) {
-	_long = xmlLongName;
-}
 void Channel::setEpg(QString xmlEpg) {
 	_epg = xmlEpg;
 }
@@ -42,10 +39,6 @@ QString Channel::numToString()
 }
 QString Channel::name() {
 	return _name;
-}
-
-QString Channel::longName() {
-	return _long;
 }
 
 bool Channel::isCategory() {

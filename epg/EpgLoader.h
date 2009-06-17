@@ -39,6 +39,8 @@ private:
 
 	QTextCodec *codec;
 	QTextEdit *edit;
+
+	QHttpRequestHeader header;
 };
 
 #endif /* TANO_EPGLOADER_H_ */

@@ -140,7 +140,7 @@ Polna podpora je načrtovana za različico 0.6.</translation>
         <translation>Kategorija</translation>
     </message>
     <message>
-        <location filename="../build/ui_EditPlaylist.h" line="133"/>
+        <location filename="../build/ui_EditPlaylist.h" line="132"/>
         <location filename="../channels/EditPlaylist.cpp" line="84"/>
         <source>Channel</source>
         <translation>Program</translation>
@@ -231,11 +231,6 @@ Polna podpora je načrtovana za različico 0.6.</translation>
         <translation>Dodaj podkategorijo</translation>
     </message>
     <message>
-        <location filename="../build/ui_EditPlaylist.h" line="132"/>
-        <source>Long name</source>
-        <translation>Dolgo ime</translation>
-    </message>
-    <message>
         <location filename="../build/ui_EditPlaylist.h" line="131"/>
         <source>Language</source>
         <translation>Jezik</translation>
@@ -251,7 +246,7 @@ Polna podpora je načrtovana za različico 0.6.</translation>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../build/ui_EditPlaylist.h" line="134"/>
+        <location filename="../build/ui_EditPlaylist.h" line="133"/>
         <source>Toolbar</source>
         <translation>Orodna vrstica</translation>
     </message>
@@ -1095,6 +1090,11 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../xml/tanohandler.cpp" line="69"/>
+        <source>The file is not a Tano TV channel list 1.1 or later.</source>
+        <translation>Datoteka ni Tano TV Seznam programov 1.1 ali novejša.</translation>
+    </message>
+    <message>
         <location filename="../xml/tanohandler.cpp" line="81"/>
         <source>Category</source>
         <translation>Kategorija</translation>
@@ -1107,7 +1107,7 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Neznan naslov</translation>
     </message>
     <message>
-        <location filename="../xml/tanohandler.cpp" line="153"/>
+        <location filename="../xml/tanohandler.cpp" line="148"/>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation>Napaka branja na vrstici %1, stolpec %2:
@@ -1119,12 +1119,7 @@ To bo zaključilo snemanje, ki trenutno poteka.</translation>
         <translation>Datoteka ni Tano TV Seznam programov.</translation>
     </message>
     <message>
-        <location filename="../xml/tanohandler.cpp" line="69"/>
-        <source>The file is not a Tano TV channel list 1.0 file.</source>
-        <translation>Datoteka ni Tano TV Seznam programov 1.0.</translation>
-    </message>
-    <message>
-        <location filename="../xml/tanohandler.cpp" line="152"/>
+        <location filename="../xml/tanohandler.cpp" line="147"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>

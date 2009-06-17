@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>EditPlaylist</class>
- <widget class="QMainWindow" name="EditPlaylist" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="EditPlaylist">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,48 +10,43 @@
     <height>600</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Edit Channel List</string>
   </property>
-  <property name="windowIcon" >
-   <iconset resource="images.qrc" >
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
     <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
   </property>
-  <widget class="QWidget" name="centralwidget" >
-   <layout class="QVBoxLayout" name="verticalLayout" >
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTreeWidget" name="playlist" >
-      <property name="dragEnabled" >
+     <widget class="QTreeWidget" name="playlist">
+      <property name="dragEnabled">
        <bool>true</bool>
       </property>
-      <property name="dragDropMode" >
+      <property name="dragDropMode">
        <enum>QAbstractItemView::InternalMove</enum>
       </property>
-      <property name="animated" >
+      <property name="animated">
        <bool>true</bool>
       </property>
       <column>
-       <property name="text" >
+       <property name="text">
         <string>Channel</string>
        </property>
       </column>
       <column>
-       <property name="text" >
-        <string>Long name</string>
-       </property>
-      </column>
-      <column>
-       <property name="text" >
+       <property name="text">
         <string>Language</string>
        </property>
       </column>
       <column>
-       <property name="text" >
+       <property name="text">
         <string>EPG</string>
        </property>
       </column>
       <column>
-       <property name="text" >
+       <property name="text">
         <string>URL</string>
        </property>
       </column>
@@ -58,101 +54,101 @@
     </item>
    </layout>
   </widget>
-  <widget class="QToolBar" name="toolBar" >
-   <property name="windowTitle" >
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
     <string>Toolbar</string>
    </property>
-   <property name="iconSize" >
+   <property name="iconSize">
     <size>
      <width>32</width>
      <height>32</height>
     </size>
    </property>
-   <property name="toolButtonStyle" >
+   <property name="toolButtonStyle">
     <enum>Qt::ToolButtonTextUnderIcon</enum>
    </property>
-   <attribute name="toolBarArea" >
+   <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
-   <attribute name="toolBarBreak" >
+   <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionAddChannel" />
-   <addaction name="actionAddCategory" />
-   <addaction name="actionAddSubCategory" />
-   <addaction name="actionDelete" />
-   <addaction name="separator" />
-   <addaction name="actionReload" />
-   <addaction name="actionSave" />
-   <addaction name="actionClose" />
+   <addaction name="actionAddChannel"/>
+   <addaction name="actionAddCategory"/>
+   <addaction name="actionAddSubCategory"/>
+   <addaction name="actionDelete"/>
+   <addaction name="separator"/>
+   <addaction name="actionReload"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionClose"/>
   </widget>
-  <action name="actionAddChannel" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionAddChannel">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/video.png</normaloff>:/icons/images/video.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Add Channel</string>
    </property>
   </action>
-  <action name="actionAddCategory" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionAddCategory">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Add Main Category</string>
    </property>
   </action>
-  <action name="actionDelete" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/editdelete.png</normaloff>:/icons/images/editdelete.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Delete Item</string>
    </property>
   </action>
-  <action name="actionSave" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/filesave.png</normaloff>:/icons/images/filesave.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Save</string>
    </property>
   </action>
-  <action name="actionClose" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionClose">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/fileclose.png</normaloff>:/icons/images/fileclose.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Close</string>
    </property>
   </action>
-  <action name="actionReload" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionReload">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/refresh.png</normaloff>:/icons/images/refresh.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Reload</string>
    </property>
   </action>
-  <action name="actionAddSubCategory" >
-   <property name="icon" >
-    <iconset resource="images.qrc" >
+  <action name="actionAddSubCategory">
+   <property name="icon">
+    <iconset resource="images.qrc">
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
    </property>
-   <property name="text" >
+   <property name="text">
     <string>Add Subcategory</string>
    </property>
   </action>
  </widget>
- <layoutdefault spacing="6" margin="11" />
+ <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="images.qrc" />
+  <include location="images.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -161,11 +157,11 @@
    <receiver>EditPlaylist</receiver>
    <slot>close()</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>399</x>
      <y>299</y>
     </hint>

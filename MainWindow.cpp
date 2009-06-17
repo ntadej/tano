@@ -314,12 +314,12 @@ void MainWindow::play()
 	ui.actionRatioOriginal->trigger();
 
 	epg->stop();
-	ui.playlistWidget->setWindowTitle(channel->longName() + " (" + channel->name() + ")");
+	ui.playlistWidget->setWindowTitle(channel->name());
 	ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
 	ui.labelLanguage->show();
 
 	if(osdEnabled) {
-		osd->setInfo(channel->longName() + " (" + channel->name() + ")", tr("Language:") + " " + channel->language());
+		osd->setInfo(channel->name(), tr("Language:") + " " + channel->language());
 		osd->setEpg(false);
 	}
 
@@ -336,7 +336,7 @@ void MainWindow::play()
 		osd->setNumber(channel->num());
 
 	ui.videoWidget->ratioOriginal();
-	ui.videoWidget->playTv(channel->url(), QString(channel->longName() + " (" + channel->name() + ")"));
+	ui.videoWidget->playTv(channel->url(), channel->name());
 	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 }
 

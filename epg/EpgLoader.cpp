@@ -68,7 +68,11 @@ void EpgLoader::epgInitDone()
 
 void EpgLoader::epg()
 {
-	get(epgFull);
+	header = QHttpRequestHeader("GET",epgFull);
+	header.setValue("Referer","http://www.siol.net/tv-spored.aspx");
+	header.setValue("Host","www.siol.net");
+
+	request(header);
 
 	if(full)
 		connect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
@@ -96,6 +100,8 @@ void EpgLoader::epgPrint()
 
 	//Changes
 	epgValue.replace("<table class=\"schedule\">", ": ");
+	epgValue.replace("(<a href=", "(<p style=");
+	epgValue.replace("ogled</a>)","ogled</p>)");
 	epgValue.replace("<a", ";<a");
 	epgValue.replace("</a>", ";");
 	epgValue.replace("	","");
@@ -110,6 +116,8 @@ void EpgLoader::epgPrint()
 	epgValue.replace("tv-spored.aspx", "http://www.siol.net/tv-spored.aspx");
 	epgValue.replace(";: ",";");
 	epgValue.replace(".2009: ", ".2009:;");
+	epgValue.replace(" (ogled): ","");
+	epgValue.replace(" (ogled)","");
 	epgValue.remove(epgValue.size()-1,1);
 
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));

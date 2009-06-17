@@ -36,7 +36,7 @@ bool TanoGenerator::write(QIODevice *device)
     out.setCodec("UTF-8");
     out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         << "<!DOCTYPE tano>\n"
-        << "<tano version=\"1.1\">\n";
+        << "<tano version=\"1.2\">\n";
     for (int i = 0; i < treeWidget->topLevelItemCount(); ++i)
         generateItem(treeWidget->topLevelItem(i), 1);
     out << "</tano>\n";
@@ -91,13 +91,11 @@ void TanoGenerator::generateItem(QTreeWidgetItem *item, int depth)
         out << indent(depth) << "<channel>\n"
             << indent(depth + 1) << "<title>" << escapedText(item->text(0))
                                  << "</title>\n"
-            << indent(depth + 1) << "<name>" << escapedText(item->text(1))
-                                 << "</name>\n"
-            << indent(depth + 1) << "<epg>" << escapedText(item->text(3))
+            << indent(depth + 1) << "<epg>" << escapedText(item->text(2))
                                  << "</epg>\n"
-            << indent(depth + 1) << "<language>" << escapedText(item->text(2))
+            << indent(depth + 1) << "<language>" << escapedText(item->text(1))
                                  << "</language>\n"
-            << indent(depth + 1) << "<url>" << escapedText(item->text(4))
+            << indent(depth + 1) << "<url>" << escapedText(item->text(3))
                                  << "</url>\n"
             << indent(depth) << "</channel>\n";
     }

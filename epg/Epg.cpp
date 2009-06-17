@@ -21,7 +21,7 @@ Epg::~Epg()
 
 void Epg::getEpg(QString epgP)
 {
-	if (epgP == "NI") {
+	if (epgP == "") {
 		epgChannel = epgP;
 		return;
 	}

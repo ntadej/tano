@@ -65,8 +65,8 @@ bool TanoHandler::startElement(const QString & /* namespaceURI */,
 
     if (qName == "tano") {
         QString version = attributes.value("version");
-        if (!version.isEmpty() && version != "1.1") {
-            errorStr = QObject::tr("The file is not a Tano TV channel list 1.0 file.");
+        if (!version.isEmpty() && !(version == "1.1" || version == "1.2")) {
+            errorStr = QObject::tr("The file is not a Tano TV channel list 1.1 or later.");
             return false;
         }
         metTanoTag = true;
@@ -115,25 +115,20 @@ bool TanoHandler::endElement(const QString & /* namespaceURI */,
             channel->setName(currentText);
             map.insert(item, channel);
         }
-    } else if (qName == "name") {
-        if (item && channel) {
-            channel->setLongName(currentText);
-            if(edit) item->setText(1, currentText);
-        }
     } else if (qName == "epg") {
         if (item && channel) {
             channel->setEpg(currentText);
-            if(edit) item->setText(3, currentText);
+            if(edit) item->setText(2, currentText);
         }
     } else if (qName == "language") {
         if (item && channel) {
         	channel->setLanguage(currentText);
-        	if(edit) item->setText(2, currentText);
+        	if(edit) item->setText(1, currentText);
         }
     } else if (qName == "url") {
     	if (item && channel) {
     		channel->setUrl(currentText);
-    		if(edit) item->setText(4, currentText);
+    		if(edit) item->setText(3, currentText);
     	}
     } else if (qName == "category" || qName == "channel") {
         item = item->parent();
