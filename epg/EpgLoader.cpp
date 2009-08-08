@@ -143,12 +143,13 @@ void EpgLoader::epgShow()
 	//Title
 	tmp = epgValue;
 	n = tmp.indexOf("<div class=\"event\">");
-	tmp.remove(0,n);
+        tmp.remove(0,n);
 	n = tmp.indexOf("</h4>");
 	tmp.remove(n,tmp.size()-1-n);
 	edit->setHtml(tmp);
 	tmp = edit->toPlainText();
 	edit->setText("");
+        tmp.remove(0,1);
 	epgListShow << tmp;
 
 	//Time

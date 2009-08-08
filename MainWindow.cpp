@@ -39,7 +39,7 @@ MainWindow::~MainWindow()
 	if(sessionEnabled) {
 		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 		session.beginGroup("Session");
-		session.setValue("volume", ui.videoWidget->volume());
+                session.setValue("volume", ui.volumeSlider->value());
 		session.setValue("channel", ui.channelNumber->value());
 		session.endGroup();
 	}
@@ -165,6 +165,7 @@ void MainWindow::createConnections()
 	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVDown()));
 
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), ui.videoWidget, SLOT(controlVolume(int)));
+        connect(this, SIGNAL(setVolume(int)), ui.videoWidget, SLOT(controlVolume(int)));
 
 	connect(ui.videoWidget, SIGNAL(volumeChanged(int)), ui.volumeSlider, SLOT(setValue(int)));
 	connect(ui.durationSlider, SIGNAL(sliderMoved(int)), ui.videoWidget, SLOT(controlDuration(int)));
@@ -279,8 +280,9 @@ void MainWindow::createSession()
 {
 	if(sessionEnabled) {
 		settings->beginGroup("Session");
-		ui.videoWidget->setVolume(settings->value("volume",0.5).toString().toFloat());
-		ui.volumeSlider->setValue(settings->value("volume",0.5).toString().toFloat()*100);
+                //ui.videoWidget->controlVolume(settings->value("volume",50).toString().toInt());
+                ui.volumeSlider->setValue(settings->value("volume",50).toString().toInt());
+                //emit setVolume(settings->value("volume",50).toString().toInt());
 		if(hasPlaylist)
 			key(settings->value("channel",1).toInt());
 		settings->endGroup();
@@ -312,6 +314,9 @@ void MainWindow::key(int clickedChannel)
 void MainWindow::play()
 {
 	ui.actionRatioOriginal->trigger();
+
+        ui.volumeSlider->setValue(ui.volumeSlider->value()+1);
+        ui.volumeSlider->setValue(ui.volumeSlider->value()-1);
 
 	epg->stop();
 	ui.playlistWidget->setWindowTitle(channel->name());
@@ -444,6 +449,9 @@ void MainWindow::openFile()
     if (fileName.isEmpty())
         return;
 
+    ui.volumeSlider->setValue(ui.volumeSlider->value()+1);
+    ui.volumeSlider->setValue(ui.volumeSlider->value()-1);
+
     ui.videoWidget->playTv(fileName, fileName);
     statusBar()->showMessage(tr("Playing file"), 5000);
 
@@ -460,6 +468,9 @@ void MainWindow::openUrl()
 	                                          "", &ok);
 
 	if (ok && !fileName.isEmpty()) {
+                ui.volumeSlider->setValue(ui.volumeSlider->value()+1);
+                ui.volumeSlider->setValue(ui.volumeSlider->value()-1);
+
 		ui.videoWidget->playTv(fileName, fileName);
 		statusBar()->showMessage(tr("Playing URL"), 5000);
 	    ui.playlistWidget->hide();

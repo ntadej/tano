@@ -18,10 +18,7 @@ public:
 	~Video();
 
 	void playTv(QString fileName, QString channelName);
-	void setVolume(qreal volume);
-
 	QString currentMedia();
-	qreal volume();
 
 protected:
 	void mouseDoubleClickEvent(QMouseEvent *event);
@@ -79,6 +76,7 @@ private:
 
 	bool move;
 	int volumeOld;
+        int volume;
 };
 
 #endif // VIDEO_H

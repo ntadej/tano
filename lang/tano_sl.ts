@@ -707,9 +707,9 @@ Polna podpora je načrtovana za različico 0.6.</translation>
     <message>
         <location filename="../build/ui_MainWindow.h" line="629"/>
         <location filename="../MainWindow.cpp" line="52"/>
-        <location filename="../MainWindow.cpp" line="420"/>
-        <location filename="../MainWindow.cpp" line="485"/>
-        <location filename="../MainWindow.cpp" line="487"/>
+        <location filename="../MainWindow.cpp" line="425"/>
+        <location filename="../MainWindow.cpp" line="496"/>
+        <location filename="../MainWindow.cpp" line="498"/>
         <source>Tano Player</source>
         <translation>Tano Predvajalnik</translation>
     </message>
@@ -762,7 +762,7 @@ Polna podpora je načrtovana za različico 0.6.</translation>
     <message>
         <location filename="../build/ui_MainWindow.h" line="643"/>
         <location filename="../build/ui_MainWindow.h" line="711"/>
-        <location filename="../MainWindow.cpp" line="385"/>
+        <location filename="../MainWindow.cpp" line="390"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
@@ -912,7 +912,7 @@ Polna podpora je načrtovana za različico 0.6.</translation>
     </message>
     <message>
         <location filename="../build/ui_MainWindow.h" line="718"/>
-        <location filename="../MainWindow.cpp" line="340"/>
+        <location filename="../MainWindow.cpp" line="345"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
@@ -935,77 +935,77 @@ This will stop recording in progress.</source>
 To bo zaključilo snemanje, ki trenutno poteka.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="318"/>
-        <location filename="../MainWindow.cpp" line="322"/>
+        <location filename="../MainWindow.cpp" line="323"/>
+        <location filename="../MainWindow.cpp" line="327"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="340"/>
+        <location filename="../MainWindow.cpp" line="345"/>
         <source>selected</source>
         <translation>je izbran</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="347"/>
-        <location filename="../MainWindow.cpp" line="355"/>
+        <location filename="../MainWindow.cpp" line="352"/>
+        <location filename="../MainWindow.cpp" line="360"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="349"/>
-        <location filename="../MainWindow.cpp" line="355"/>
+        <location filename="../MainWindow.cpp" line="354"/>
+        <location filename="../MainWindow.cpp" line="360"/>
         <source>Next:</source>
         <translation>Naslednje:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="402"/>
+        <location filename="../MainWindow.cpp" line="407"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="404"/>
+        <location filename="../MainWindow.cpp" line="409"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="421"/>
+        <location filename="../MainWindow.cpp" line="426"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="430"/>
+        <location filename="../MainWindow.cpp" line="435"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="440"/>
+        <location filename="../MainWindow.cpp" line="445"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="442"/>
+        <location filename="../MainWindow.cpp" line="447"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="448"/>
+        <location filename="../MainWindow.cpp" line="456"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="458"/>
+        <location filename="../MainWindow.cpp" line="466"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="459"/>
+        <location filename="../MainWindow.cpp" line="467"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="464"/>
+        <location filename="../MainWindow.cpp" line="475"/>
         <source>Playing URL</source>
         <translation>Predvajam URL</translation>
     </message>

@@ -251,10 +251,10 @@ IF(MINGW)
 	ADD_CUSTOM_COMMAND(
 		OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/tano.obj
 		COMMAND ${WINDRES_PROGRAM}
-		-i tano.rc
-		-o tano.obj
+		-i ${CMAKE_CURRENT_SOURCE_DIR}/tano.rc
+		-o ${CMAKE_CURRENT_BINARY_DIR}/tano.obj
 	)
-	SET(Tano_Srcs ${Tano_Srcs} tano.obj)
+	SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_CURRENT_BINARY_DIR}/tano.obj)
 ENDIF(MINGW)
 
 

@@ -93,17 +93,9 @@ void Video::playTv(QString fileName, QString channelName)
 	currentChannel = channelName;
 	emit playing(currentChannel);
 }
-void Video::setVolume(qreal volume)
-{
-	audio->setVolume(volume);
-}
 QString Video::currentMedia()
 {
 	return channel->currentSource().fileName();
-}
-qreal Video::volume()
-{
-	return audio->volume();
 }
 
 //Controls:
@@ -136,30 +128,35 @@ void Video::controlMute(bool mute)
 		audio->setMuted(false);
 		emit volumeChanged(volumeOld);
 	} else {
-		volumeOld = audio->volume()*100;
+                volumeOld = volume;
 		audio->setMuted(true);
 		emit volumeChanged(0);
 	}
 }
 void Video::controlVUp()
 {
-	if(audio->volume()+0.1 <= 2)
-		audio->setVolume(audio->volume()+0.1);
-	else
-		audio->setVolume(2);
-	emit volumeChanged(audio->volume()*100);
+    if(volume+1 <= 200) {
+        volume++;
+        emit volumeChanged(volume);
+    } else {
+        volume = 200;
+        emit volumeChanged(volume);
+    }
 }
 void Video::controlVDown()
 {
-	if(audio->volume()-0.1 >= 0)
-		audio->setVolume(audio->volume()-0.1);
-	else
-		audio->setVolume(0);
-	emit volumeChanged(audio->volume()*100);
+    if(volume-1 >= 0) {
+        volume--;
+        emit volumeChanged(volume);
+    } else {
+        volume = 0;
+        emit volumeChanged(volume);
+    }
 }
 void Video::controlVolume(int vol)
 {
-	qreal v = vol;
+        volume = vol;
+        qreal v = vol;
 	qreal n = v/100;
 	audio->setVolume(n);
 

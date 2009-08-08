@@ -66,6 +66,9 @@ private slots:
     void totalTime(qint64 t);
     void volumeControl(bool type);
 
+signals:
+    void setVolume(int);
+
 private:
     Ui::MainWindow ui;
     Qt::WindowFlags flags;
