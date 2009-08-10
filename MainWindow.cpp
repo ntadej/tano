@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.labelNext->hide();
 	ui.labelLanguage->hide();
 
-	backend = new VlcInstance();
+	backend = new VlcInstance(ui.videoWidget->getWinId());
 	flags = this->windowFlags();
 
 	update = new Updates();
@@ -41,7 +41,7 @@ MainWindow::~MainWindow()
 	if(sessionEnabled) {
 		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 		session.beginGroup("Session");
-                session.setValue("volume", ui.volumeSlider->value());
+        session.setValue("volume", ui.volumeSlider->value());
 		session.setValue("channel", ui.channelNumber->value());
 		session.endGroup();
 	}
@@ -144,7 +144,7 @@ void MainWindow::createConnections()
 	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
 	connect(ui.actionLite, SIGNAL(triggered()), this, SLOT(lite()));
 
-	//connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
+	connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
 
 	connect(ui.actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
 	connect(ui.actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
@@ -166,12 +166,6 @@ void MainWindow::createConnections()
 	//connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVUp()));
 	//connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVDown()));
 
-	//connect(ui.volumeSlider, SIGNAL(valueChanged(int)), ui.videoWidget, SLOT(controlVolume(int)));
-    //connect(this, SIGNAL(setVolume(int)), ui.videoWidget, SLOT(controlVolume(int)));
-
-	//connect(ui.videoWidget, SIGNAL(volumeChanged(int)), ui.volumeSlider, SLOT(setValue(int)));
-	//connect(ui.durationSlider, SIGNAL(sliderMoved(int)), ui.videoWidget, SLOT(controlDuration(int)));
-
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 	connect(ui.buttonReload, SIGNAL(clicked()), epg, SLOT(reload()));
 
@@ -182,14 +176,8 @@ void MainWindow::createConnections()
 	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(showNormal()));
 	connect(ui.actionRestore, SIGNAL(triggered()), this, SLOT(showNormal()));
 
-	//connect(ui.videoWidget, SIGNAL(playing(QString)), trayIcon, SLOT(changeToolTip(QString)));
-	//connect(ui.videoWidget, SIGNAL(stopped()), trayIcon, SLOT(changeToolTip()));
-	//connect(ui.videoWidget, SIGNAL(playing(QString)), this, SLOT(tooltip(QString)));
-	//connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
-	//connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
-	//connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
-	//connect(ui.videoWidget, SIGNAL(tick(qint64)), this, SLOT(time(qint64)));
-	//connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), this, SLOT(totalTime(qint64)));
+	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
+	connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
 
 	connect(epg, SIGNAL(epgDone(int,QStringList,QString)), this, SLOT(showEpg(int,QStringList,QString)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
@@ -209,8 +197,8 @@ void MainWindow::createConnections()
 	//connect(ui.actionRatio43, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio43()));
 	//connect(ui.actionRatio169, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio169()));
 
-	//connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
-	//connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
+	connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
+	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 }
 
 void MainWindow::createMenus()
@@ -282,9 +270,7 @@ void MainWindow::createSession()
 {
 	if(sessionEnabled) {
 		settings->beginGroup("Session");
-                //ui.videoWidget->controlVolume(settings->value("volume",50).toString().toInt());
-                ui.volumeSlider->setValue(settings->value("volume",50).toString().toInt());
-                //emit setVolume(settings->value("volume",50).toString().toInt());
+        ui.volumeSlider->setValue(settings->value("volume",50).toString().toInt());
 		if(hasPlaylist)
 			key(settings->value("channel",1).toInt());
 		settings->endGroup();
@@ -316,9 +302,6 @@ void MainWindow::key(int clickedChannel)
 void MainWindow::play()
 {
 	ui.actionRatioOriginal->trigger();
-
-        ui.volumeSlider->setValue(ui.volumeSlider->value()+1);
-        ui.volumeSlider->setValue(ui.volumeSlider->value()-1);
 
 	epg->stop();
 	ui.playlistWidget->setWindowTitle(channel->name());
@@ -452,9 +435,6 @@ void MainWindow::openFile()
     if (fileName.isEmpty())
         return;
 
-    ui.volumeSlider->setValue(ui.volumeSlider->value()+1);
-    ui.volumeSlider->setValue(ui.volumeSlider->value()-1);
-
     backend->openMedia(fileName);
     statusBar()->showMessage(tr("Playing file"), 5000);
 
@@ -471,9 +451,6 @@ void MainWindow::openUrl()
 	                                          "", &ok);
 
 	if (ok && !fileName.isEmpty()) {
-                ui.volumeSlider->setValue(ui.volumeSlider->value()+1);
-                ui.volumeSlider->setValue(ui.volumeSlider->value()-1);
-
         backend->openMedia(fileName);
 		statusBar()->showMessage(tr("Playing URL"), 5000);
 	    ui.playlistWidget->hide();
@@ -593,17 +570,10 @@ void MainWindow::createOsd()
 
 	connect(ui.actionMute, SIGNAL(triggered(bool)), osd, SLOT(setMuted(bool)));
 
-	//connect(ui.videoWidget, SIGNAL(full()), osd, SLOT(hideOsd()));
-	//connect(ui.videoWidget, SIGNAL(mouseMove()), osd, SLOT(showOsd()));
-	//connect(ui.videoWidget, SIGNAL(osd(bool)), osd, SLOT(setStatus(bool)));
+	connect(ui.videoWidget, SIGNAL(full()), osd, SLOT(hideOsd()));
+	connect(ui.videoWidget, SIGNAL(mouseMove()), osd, SLOT(showOsd()));
+	connect(ui.videoWidget, SIGNAL(osd(bool)), osd, SLOT(setStatus(bool)));
 
-	connect(osd, SIGNAL(volume(int)), ui.volumeSlider, SLOT(setValue(int)));
-
-	//connect(ui.videoWidget, SIGNAL(tick(qint64)), osd, SLOT(setDuration(qint64)));
-	//connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), osd, SLOT(setLenght(qint64)));
-	//connect(osd, SIGNAL(seek(int)), ui.videoWidget, SLOT(controlDuration(int)));
-
-	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), osd, SLOT(setVolume(int)));
 
 	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
 	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));

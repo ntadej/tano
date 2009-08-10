@@ -18,19 +18,15 @@
     <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string>background-color: rgb(0, 0, 0);</string>
+   </property>
    <layout class="QVBoxLayout" name="centralLayout">
     <property name="margin">
      <number>0</number>
     </property>
     <item>
-     <widget class="QWidget" name="videoWidget" native="true">
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 0, 0);</string>
-      </property>
-     </widget>
+     <widget class="VlcVideoWidget" name="videoWidget" native="true"/>
     </item>
     <item>
      <widget class="QWidget" name="controlsWidget" native="true">
@@ -261,36 +257,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSlider" name="volumeSlider">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="maximum">
-            <number>200</number>
-           </property>
-           <property name="sliderPosition">
-            <number>50</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="labelVolume">
-           <property name="minimumSize">
-            <size>
-             <width>20</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>50</string>
-           </property>
-          </widget>
+          <widget class="VlcVolumeSlider" name="volumeSlider" native="true"/>
          </item>
         </layout>
        </item>
@@ -938,27 +905,23 @@
    <header>epg/EpgToday.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>VlcVolumeSlider</class>
+   <extends>QWidget</extends>
+   <header>libvlc/VlcVolumeSlider.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>VlcVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>libvlc/VlcVideoWidget.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <resources>
   <include location="images.qrc"/>
  </resources>
  <connections>
-  <connection>
-   <sender>volumeSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>labelVolume</receiver>
-   <slot>setNum(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>413</x>
-     <y>511</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>486</x>
-     <y>511</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>buttonMute</sender>
    <signal>clicked()</signal>

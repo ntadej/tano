@@ -16,8 +16,6 @@ Osd::Osd(QWidget *parent)
 	connect(ui.buttonBack, SIGNAL(clicked()), this, SIGNAL(back()));
 	connect(ui.buttonNext, SIGNAL(clicked()), this, SIGNAL(next()));
 	connect(ui.buttonMute, SIGNAL(clicked()), this, SIGNAL(mute()));
-	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), this, SIGNAL(volume(int)));
-	connect(ui.durationSlider, SIGNAL(sliderMoved(int)), this, SIGNAL(seek(int)));
 
 	connect(ui.labelNow, SIGNAL(linkActivated(QString)), this, SIGNAL(linkActivated(QString)));
 	connect(ui.labelNext, SIGNAL(linkActivated(QString)), this, SIGNAL(linkActivated(QString)));
@@ -47,10 +45,6 @@ void Osd::setNumber(int n)
 	ui.channelNumber->display(n);
 }
 
-void Osd::setVolume(int v)
-{
-	ui.volumeSlider->setValue(v);
-}
 
 void Osd::setMuted(bool mute)
 {
@@ -64,24 +58,6 @@ void Osd::setStatus(bool status)
 		hideOsd();
 	else
 		showOsd();
-}
-
-void Osd::setDuration(qint64 d)
-{
-	int tm = d*1;
-	timeNow = QTime();
-	timeNow = timeNow.addMSecs(tm);
-	ui.labelDuration->setText(timeNow.toString("hh:mm:ss"));
-	ui.durationSlider->setValue(tm);
-}
-
-void Osd::setLenght(qint64 l)
-{
-	int tm = l*1;
-	ui.durationSlider->setMaximum(tm);
-	timeNow = QTime();
-	timeNow = timeNow.addMSecs(tm);
-	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
 }
 
 void Osd::setInfo(QString channel, QString language)

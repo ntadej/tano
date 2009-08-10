@@ -19,12 +19,8 @@ public slots:
 	void hideOsd();
 
 	void setNumber(int n);
-	void setVolume(int v);
 	void setMuted(bool mute);
-
 	void setStatus(bool status);
-	void setLenght(qint64 l);
-	void setDuration(qint64 d);
 
 	void disableRecorder();
 
@@ -39,8 +35,6 @@ signals:
 	void back();
 	void next();
 	void mute();
-	void volume(int);
-	void seek(int);
 
 private:
     Ui::Osd ui;

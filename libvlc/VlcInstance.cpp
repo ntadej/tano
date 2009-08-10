@@ -6,13 +6,16 @@ libvlc_instance_t * _vlcInstance = NULL;
 libvlc_exception_t * _vlcException = new libvlc_exception_t();
 libvlc_media_player_t * _vlcCurrentMediaPlayer = NULL;
 
-VlcInstance::VlcInstance() {
+VlcInstance::VlcInstance(WId widget)
+{
 	//Global variables
 	_vlcInstance = NULL;
 	_vlcException = new libvlc_exception_t();
 
 	_vlcMediaPlayer = NULL;
 	_vlcMedia = NULL;
+
+	_widgetId = widget;
 
 	//QString pluginPath("--plugin-path=" + getVLCPluginPath());
 
@@ -28,6 +31,7 @@ VlcInstance::VlcInstance() {
 		"--no-stats",
 		"--no-osd",
 		"--no-video-title-show",
+		"-V", "x11",
 		"--vout-event", "3",
 		//"--x11-event", "3", // VLC 0.9.*
 		"--ignore-config"		//Don't use VLC_Backend's config
@@ -46,7 +50,8 @@ VlcInstance::VlcInstance() {
 
 }
 
-VlcInstance::~VlcInstance() {
+VlcInstance::~VlcInstance()
+{
 	libvlc_release(_vlcInstance);
 }
 
@@ -60,25 +65,21 @@ void VlcInstance::openMedia(QString media)
     _vlcMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia, _vlcException);
     checkException();
 
-    // /!\ Please note /!\
-    //
-    // passing the widget to the lib shows vlc at which position it should show up
-    // vlc automatically resizes the video to the �given size of the widget
-    // and it even resizes it, if the size changes at the playing
+	/* Get our media instance to use our window */
+	if (_vlcMediaPlayer) {
+#if defined(Q_OS_WIN)
+		libvlc_media_player_set_hwnd(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
+		//libvlc_media_player_set_drawable(_vlcMediaPlayer, reinterpret_cast<unsigned int>(_widgetId), _vlcException); // VLC 0.9.*
+#elif defined(Q_OS_MAC)
+		libvlc_media_player_set_agl (_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
+		//libvlc_media_player_set_drawable(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 0.9.*
+#else
+		libvlc_media_player_set_xwindow(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
+		//libvlc_media_player_set_drawable(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 0.9.*
+#endif
+		checkException();
+	}
 
-    /* Get our media instance to use our window
-    #if defined(Q_OS_WIN)
-        libvlc_media_player_set_hwnd(_mp, _videoWidget->winId(), &_vlcexcep); // VLC 1.0.*
-		//libvlc_media_player_set_drawable(_mp, reinterpret_cast<unsigned int>(_videoWidget->winId()), &_vlcexcep ); // VLC 0.9.*
-    #elif defined(Q_OS_MAC)
-        libvlc_media_player_set_agl (_mp, _videoWidget->winId(), &_vlcexcep); // VLC 1.0.*
-        //libvlc_media_player_set_drawable(_mp, _videoWidget->winId(), &_vlcexcep ); // VLC 0.9.*
-    #else
-        libvlc_media_player_set_xwindow(_mp, _videoWidget->winId(), &_vlcexcep); // VLC 1.0.*
-        //libvlc_media_player_set_drawable(_mp, this->winId(), &_vlcexcep ); // VLC 0.9.*
-    #endif
-    raise(&_vlcexcep);
-	*/
     playInternal();
 }
 
