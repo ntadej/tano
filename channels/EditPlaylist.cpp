@@ -74,7 +74,7 @@ void EditPlaylist::addItemSubCategory()
 		item->setData(0, Qt::UserRole, "category");
 	}
 	else
-		QMessageBox::warning(this, tr("Tano Player"),
+		QMessageBox::warning(this, tr("Tano"),
 									tr("Please, add subcategory to a category."));
 }
 
@@ -90,7 +90,7 @@ void EditPlaylist::addItemChannel()
 		item->setData(0, Qt::UserRole, "channel");
 	}
 	else
-		QMessageBox::warning(this, tr("Tano Player"),
+		QMessageBox::warning(this, tr("Tano"),
 									tr("Please, add channel to a category."));
 }
 
@@ -105,7 +105,7 @@ void EditPlaylist::save()
 
 	QFile file(fileName);
 	if (!file.open(QFile::WriteOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano Player"),
+		QMessageBox::warning(this, tr("Tano"),
 							tr("Cannot write file %1:\n%2.")
 							.arg(fileName)
 							.arg(file.errorString()));
@@ -127,7 +127,7 @@ void EditPlaylist::open()
 
 	QFile file(fileN);
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano Player"),
+		QMessageBox::warning(this, tr("Tano"),
 							tr("Cannot read file %1:\n%2.")
 							.arg(fileN)
 							.arg(file.errorString()));

@@ -119,7 +119,7 @@ void Common::help(QWidget *parent)
 									  << QLatin1String("-enableRemoteControl"));
 
 	if (!process->waitForStarted()) {
-		QMessageBox::critical(parent, "Tano Player",
+		QMessageBox::critical(parent, "Tano",
 							QString("Could not start Qt Assistant from %1.").arg(app));
 		return;
 	}

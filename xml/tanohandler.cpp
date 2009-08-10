@@ -144,7 +144,7 @@ bool TanoHandler::characters(const QString &str)
 
 bool TanoHandler::fatalError(const QXmlParseException &exception)
 {
-    QMessageBox::information(treeWidget->window(), QObject::tr("Tano Player"),
+    QMessageBox::information(treeWidget->window(), QObject::tr("Tano"),
                              QObject::tr("Parse error at line %1, column %2:\n"
                                          "%3")
                              .arg(exception.lineNumber())

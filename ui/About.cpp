@@ -9,12 +9,6 @@ About::About(QWidget *parent, QString version)
 	ui.labelCopy->setText(ui.labelCopy->text().replace("http://tano.sourceforge.net","<a href='http://tano.sourceforge.net'>http://tano.sourceforge.net</a>"));
 	ui.labelCopy->setText(ui.labelCopy->text().replace("ntadej@users.sourceforge.net","<a href='mailto:ntadej@users.sourceforge.net'>ntadej@users.sourceforge.net</a>"));
 
-#ifdef Q_WS_WIN
-	ui.labelBackendInfo->setText(ui.labelBackendInfo->text().replace("Backend","VLC Backend"));
-#else
-	ui.labelBackendInfo->setText(ui.labelBackendInfo->text().replace("Backend","Linux Backend"));
-#endif
-
 #ifdef TANO_QT_VERSION
 	qt = QString(TANO_QT_VERSION);
 #else

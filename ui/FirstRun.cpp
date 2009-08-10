@@ -31,11 +31,11 @@ IntroPage::IntroPage(QWidget *parent)
     setTitle(tr("Welcome"));
     setPixmap(QWizard::WatermarkPixmap, QPixmap(":/icons/images/wizard.bmp"));
 
-    topLabel = new QLabel(tr("This wizard will help you set basic settings for your copy of <i>Tano Player</i>."));
+    topLabel = new QLabel(tr("This wizard will help you set basic settings for your copy of <i>Tano</i>."));
     topLabel->setWordWrap(true);
 
     if(Common::settings()->value("version", version).toString() != version) {
-    	versionLabel = new QLabel(tr("You previously used version %1 of <i>Tano Player</i>. Please re-set your settings.").arg(Common::settings()->value("version", version).toString()));
+    	versionLabel = new QLabel(tr("You previously used version %1 of <i>Tano</i>. Please re-set your settings.").arg(Common::settings()->value("version", version).toString()));
     	versionLabel->setWordWrap(true);
     } else
     	versionLabel = new QLabel("");
@@ -54,7 +54,7 @@ int IntroPage::nextId() const
 SettingsPage::SettingsPage(QWidget *parent)
     : QWizardPage(parent)
 {
-     setTitle(tr("Set <i>Tano Player</i>"));
+     setTitle(tr("Set <i>Tano</i>"));
      setSubTitle(tr("Please select your IP TV provider with playlist and other settings."));
 
      playlist = new QLineEdit;
@@ -116,7 +116,7 @@ ConclusionPage::ConclusionPage(QWidget *parent)
 
     settings = Common::settings();
 
-    topLabel = new QLabel(tr("Thank you for using <i>Tano Player</i>."));
+    topLabel = new QLabel(tr("Thank you for using <i>Tano</i>."));
     topLabel->setWordWrap(true);
 
     license = new License(this);

@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <QDir>
 #include <QSettings>
+#include <QDebug>
 
 #include "MainWindow.h"
 #include "Common.h"
@@ -18,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.labelNext->hide();
 	ui.labelLanguage->hide();
 
+	backend = new VlcInstance();
 	flags = this->windowFlags();
 
 	update = new Updates();
@@ -49,8 +51,8 @@ void MainWindow::exit()
 {
 	int ret;
 	if(record->isRecording()) {
-		ret = QMessageBox::warning(this, tr("Tano Player"),
-								   tr("Do you want to exit Tano Player?\nThis will stop recording in progress."),
+		ret = QMessageBox::warning(this, tr("Tano"),
+								   tr("Do you want to exit Tano?\nThis will stop recording in progress."),
 								   QMessageBox::Close | QMessageBox::Cancel,
 								   QMessageBox::Close);
 	} else {
@@ -110,9 +112,9 @@ void MainWindow::createSettings()
 		ui.actionChannel_info->setChecked(false);
 	}
 	if(settings->value("wheel",false).toBool()) {
-		connect(ui.videoWidget, SIGNAL(wheel(bool)), this, SLOT(volumeControl(bool)));
+		//connect(ui.videoWidget, SIGNAL(wheel(bool)), this, SLOT(volumeControl(bool)));
 	} else {
-		connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
+		//connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
 	}
 	settings->endGroup();
 
@@ -142,7 +144,7 @@ void MainWindow::createConnections()
 	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
 	connect(ui.actionLite, SIGNAL(triggered()), this, SLOT(lite()));
 
-	connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
+	//connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
 
 	connect(ui.actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
 	connect(ui.actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
@@ -153,22 +155,22 @@ void MainWindow::createConnections()
 	connect(ui.actionSchedule, SIGNAL(triggered()), this, SLOT(showBrowser()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
-	connect(ui.actionPlay, SIGNAL(triggered()), ui.videoWidget, SLOT(controlPlay()));
-	connect(ui.actionStop, SIGNAL(triggered()), ui.videoWidget, SLOT(controlStop()));
+	//connect(ui.actionPlay, SIGNAL(triggered()), ui.videoWidget, SLOT(controlPlay()));
+	//connect(ui.actionStop, SIGNAL(triggered()), ui.videoWidget, SLOT(controlStop()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));
 	connect(ui.actionNext, SIGNAL(triggered()), select, SLOT(next()));
-	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.videoWidget, SLOT(controlMute(bool)));
+	//connect(ui.actionMute, SIGNAL(triggered(bool)), ui.videoWidget, SLOT(controlMute(bool)));
 	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.buttonMute, SLOT(setChecked(bool)));
 	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.volumeSlider, SLOT(setDisabled(bool)));
-	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVUp()));
-	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVDown()));
+	//connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVUp()));
+	//connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVDown()));
 
-	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), ui.videoWidget, SLOT(controlVolume(int)));
-        connect(this, SIGNAL(setVolume(int)), ui.videoWidget, SLOT(controlVolume(int)));
+	//connect(ui.volumeSlider, SIGNAL(valueChanged(int)), ui.videoWidget, SLOT(controlVolume(int)));
+    //connect(this, SIGNAL(setVolume(int)), ui.videoWidget, SLOT(controlVolume(int)));
 
-	connect(ui.videoWidget, SIGNAL(volumeChanged(int)), ui.volumeSlider, SLOT(setValue(int)));
-	connect(ui.durationSlider, SIGNAL(sliderMoved(int)), ui.videoWidget, SLOT(controlDuration(int)));
+	//connect(ui.videoWidget, SIGNAL(volumeChanged(int)), ui.volumeSlider, SLOT(setValue(int)));
+	//connect(ui.durationSlider, SIGNAL(sliderMoved(int)), ui.videoWidget, SLOT(controlDuration(int)));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 	connect(ui.buttonReload, SIGNAL(clicked()), epg, SLOT(reload()));
@@ -180,14 +182,14 @@ void MainWindow::createConnections()
 	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(showNormal()));
 	connect(ui.actionRestore, SIGNAL(triggered()), this, SLOT(showNormal()));
 
-	connect(ui.videoWidget, SIGNAL(playing(QString)), trayIcon, SLOT(changeToolTip(QString)));
-	connect(ui.videoWidget, SIGNAL(stopped()), trayIcon, SLOT(changeToolTip()));
-	connect(ui.videoWidget, SIGNAL(playing(QString)), this, SLOT(tooltip(QString)));
-	connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
-	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
-	connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
-	connect(ui.videoWidget, SIGNAL(tick(qint64)), this, SLOT(time(qint64)));
-	connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), this, SLOT(totalTime(qint64)));
+	//connect(ui.videoWidget, SIGNAL(playing(QString)), trayIcon, SLOT(changeToolTip(QString)));
+	//connect(ui.videoWidget, SIGNAL(stopped()), trayIcon, SLOT(changeToolTip()));
+	//connect(ui.videoWidget, SIGNAL(playing(QString)), this, SLOT(tooltip(QString)));
+	//connect(ui.videoWidget, SIGNAL(stopped()), this, SLOT(tooltip()));
+	//connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
+	//connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
+	//connect(ui.videoWidget, SIGNAL(tick(qint64)), this, SLOT(time(qint64)));
+	//connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), this, SLOT(totalTime(qint64)));
 
 	connect(epg, SIGNAL(epgDone(int,QStringList,QString)), this, SLOT(showEpg(int,QStringList,QString)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
@@ -203,12 +205,12 @@ void MainWindow::createConnections()
 	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.playlistWidget, SLOT(setVisible(bool)));
 	connect(ui.playlistWidget, SIGNAL(visibilityChanged(bool)), ui.actionChannel_info, SLOT(setChecked(bool)));
 
-	connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioOriginal()));
-	connect(ui.actionRatio43, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio43()));
-	connect(ui.actionRatio169, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio169()));
+	//connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioOriginal()));
+	//connect(ui.actionRatio43, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio43()));
+	//connect(ui.actionRatio169, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio169()));
 
-	connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
-	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
+	//connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
+	//connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 }
 
 void MainWindow::createMenus()
@@ -340,8 +342,9 @@ void MainWindow::play()
 	if(osdEnabled)
 		osd->setNumber(channel->num());
 
-	ui.videoWidget->ratioOriginal();
-	ui.videoWidget->playTv(channel->url(), channel->name());
+	//ui.videoWidget->ratioOriginal();
+
+	backend->openMedia(channel->url());
 	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 }
 
@@ -394,7 +397,7 @@ void MainWindow::stop()
 	ui.buttonRefresh->hide();
 	ui.buttonReload->hide();
 	ui.epgToday->epgClear();
-	ui.videoWidget->ratioOriginal();
+	//ui.videoWidget->ratioOriginal();
 	epg->stop();
 }
 
@@ -422,7 +425,7 @@ void MainWindow::openPlaylist(bool start)
 
     QFile file(fileName);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano Player"),
+        QMessageBox::warning(this, tr("Tano"),
                              tr("Cannot read file %1:\n%2.")
                              .arg(fileName)
                              .arg(file.errorString()));
@@ -452,7 +455,7 @@ void MainWindow::openFile()
     ui.volumeSlider->setValue(ui.volumeSlider->value()+1);
     ui.volumeSlider->setValue(ui.volumeSlider->value()-1);
 
-    ui.videoWidget->playTv(fileName, fileName);
+    backend->openMedia(fileName);
     statusBar()->showMessage(tr("Playing file"), 5000);
 
     ui.playlistWidget->hide();
@@ -471,7 +474,7 @@ void MainWindow::openUrl()
                 ui.volumeSlider->setValue(ui.volumeSlider->value()+1);
                 ui.volumeSlider->setValue(ui.volumeSlider->value()-1);
 
-		ui.videoWidget->playTv(fileName, fileName);
+        backend->openMedia(fileName);
 		statusBar()->showMessage(tr("Playing URL"), 5000);
 	    ui.playlistWidget->hide();
 	}
@@ -493,9 +496,9 @@ void MainWindow::showSettings()
 void MainWindow::tooltip(QString channelNow)
 {
 	if (channelNow != "stop")
-		setWindowTitle(channelNow + " - " + tr("Tano Player"));
+		setWindowTitle(channelNow + " - " + tr("Tano"));
 	else
-		setWindowTitle(tr("Tano Player"));
+		setWindowTitle(tr("Tano"));
 }
 
 void MainWindow::processUpdates(QString updates)
@@ -540,14 +543,12 @@ void MainWindow::top()
 void MainWindow::lite()
 {
 	if(isLite) {
-		ui.centralLayout-> setContentsMargins(4,4,4,4);
 		ui.playlistWidget->show();
 		ui.toolBar->show();
 		ui.toolBarOsd->show();
 		ui.statusbar->show();
 		isLite = false;
 	} else {
-		ui.centralLayout-> setContentsMargins(0,0,0,0);
 		ui.playlistWidget->hide();
 		ui.toolBar->hide();
 		ui.toolBarOsd->hide();
@@ -592,15 +593,15 @@ void MainWindow::createOsd()
 
 	connect(ui.actionMute, SIGNAL(triggered(bool)), osd, SLOT(setMuted(bool)));
 
-	connect(ui.videoWidget, SIGNAL(full()), osd, SLOT(hideOsd()));
-	connect(ui.videoWidget, SIGNAL(mouseMove()), osd, SLOT(showOsd()));
-	connect(ui.videoWidget, SIGNAL(osd(bool)), osd, SLOT(setStatus(bool)));
+	//connect(ui.videoWidget, SIGNAL(full()), osd, SLOT(hideOsd()));
+	//connect(ui.videoWidget, SIGNAL(mouseMove()), osd, SLOT(showOsd()));
+	//connect(ui.videoWidget, SIGNAL(osd(bool)), osd, SLOT(setStatus(bool)));
 
 	connect(osd, SIGNAL(volume(int)), ui.volumeSlider, SLOT(setValue(int)));
 
-	connect(ui.videoWidget, SIGNAL(tick(qint64)), osd, SLOT(setDuration(qint64)));
-	connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), osd, SLOT(setLenght(qint64)));
-	connect(osd, SIGNAL(seek(int)), ui.videoWidget, SLOT(controlDuration(int)));
+	//connect(ui.videoWidget, SIGNAL(tick(qint64)), osd, SLOT(setDuration(qint64)));
+	//connect(ui.videoWidget, SIGNAL(totalTimeChanged(qint64)), osd, SLOT(setLenght(qint64)));
+	//connect(osd, SIGNAL(seek(int)), ui.videoWidget, SLOT(controlDuration(int)));
 
 	connect(ui.volumeSlider, SIGNAL(valueChanged(int)), osd, SLOT(setVolume(int)));
 

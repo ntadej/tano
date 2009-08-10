@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>About Tano Player</string>
+   <string>About Tano</string>
   </property>
   <property name="windowIcon">
    <iconset resource="images.qrc">
@@ -78,7 +78,7 @@
          <item>
           <widget class="QLabel" name="labelTitle">
            <property name="text">
-            <string>&lt;h1&gt;Tano Player&lt;/h1&gt;</string>
+            <string>&lt;h1&gt;Tano&lt;/h1&gt;</string>
            </property>
           </widget>
          </item>
@@ -118,7 +118,9 @@
          <item>
           <widget class="QLabel" name="labelBackendInfo">
            <property name="text">
-            <string>Backend&lt;br&gt;Recorder is powered by friptv.&lt;br&gt;Crystal Icons &amp;copy; The Yellow Icon.</string>
+            <string>Videolan VLC Backend
+Recorder is powered by friptv.
+Crystal Icons © The Yellow Icon.</string>
            </property>
            <property name="openExternalLinks">
             <bool>true</bool>
@@ -151,9 +153,7 @@
          <item>
           <widget class="QLabel" name="labelNotes">
            <property name="text">
-            <string>This is a development version of Tano Player.
-EPG is not guarantied to work all the time.
-Full support is planned for version 0.6.</string>
+            <string>This is a development version of Tano.</string>
            </property>
           </widget>
          </item>

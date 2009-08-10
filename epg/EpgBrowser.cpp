@@ -94,9 +94,9 @@ void EpgBrowser::epg()
 	evalJS("document.getElementsByClassName('qjump')[0].parentNode.removeChild(document.getElementsByClassName('qjump')[0]);");
 	evalJS("document.getElementById('nav_primary').parentNode.removeChild(document.getElementById('nav_primary'));");
 	evalJS("document.getElementById('f_search').parentNode.removeChild(document.getElementById('f_search'));");
-	evalJS("document.getElementById('footer').innerHTML = '<p>&copy 2008-2009 Tano Player</p>';");
+	evalJS("document.getElementById('footer').innerHTML = '<p>&copy 2008-2009 Tano</p>';");
 	evalJS("document.getElementsByClassName('gocorpo')[0].parentNode.removeChild(document.getElementsByClassName('gocorpo')[0]);");
 	evalJS("document.getElementsByClassName('tools')[0].parentNode.removeChild(document.getElementsByClassName('tools')[0]);");
 
-	evalJS("document.getElementsByClassName('container')[0].innerHTML = '<h1><a href=\"http://www.siol.net/tv-spored.aspx\"><img src=\"http://tano.sourceforge.net/schedule.png\" alt=\"Tano Player\"/></a><span style=font-size:40px>TV SPORED</span></h1>';");
+	evalJS("document.getElementsByClassName('container')[0].innerHTML = '<h1><a href=\"http://www.siol.net/tv-spored.aspx\"><img src=\"http://tano.sourceforge.net/schedule.png\" alt=\"Tano\"/></a><span style=font-size:40px>TV SPORED</span></h1>';");
 }

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>TV Schedule - Tano Player</string>
+   <string>TV Schedule - Tano</string>
   </property>
   <property name="windowIcon">
    <iconset resource="images.qrc">

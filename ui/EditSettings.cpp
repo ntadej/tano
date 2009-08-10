@@ -27,7 +27,7 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	settings = Common::settings();
 	settings->sync();
 
-	ui.labelVersion->setText(tr("You are using Tano Player version:")+" "+Common::version());
+	ui.labelVersion->setText(tr("You are using Tano version:")+" "+Common::version());
 
 	read();
 	shortcutRead();

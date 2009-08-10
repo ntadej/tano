@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    QCoreApplication::setApplicationName("Tano Player");
+    QCoreApplication::setApplicationName("Tano");
 
     //Settings
     QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");

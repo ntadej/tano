@@ -13,6 +13,10 @@ CONFIGURE_FILE(
 ADD_CUSTOM_TARGET(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
+set(CMAKE_MODULE_PATH
+    ${CMAKE_SOURCE_DIR}/cmake
+)
+
 # Set MingW bin dir, if MingW present
 IF(MINGW)
 	STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" MINGW_BIN_DIR_TMP "${CMAKE_CXX_COMPILER}")
@@ -58,6 +62,11 @@ SET(QT_MIN_VERSION "4.4.0")
 FIND_PACKAGE(Qt4 REQUIRED)
 
 
+find_package(VLC REQUIRED)
+if (VLC_FOUND)
+	include_directories(${VLC_INCLUDE_DIRS})
+endif (VLC_FOUND)
+
 # This module is used to resolve the file dependencies
 # for QT files using an UI (User Unterface) Qt file
 # created with the Qt4 designer
@@ -95,6 +104,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	epg/EpgShow.h
 	epg/EpgToday.h
 	lib/QtKeySequenceEdit.h
+	libvlc/VlcInstance.h
 	recorder/Recorder.h
 	ui/About.h
 	ui/EditSettings.h
@@ -103,7 +113,6 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/Osd.h
 	ui/TrayIcon.h
 	ui/TrayRecorder.h
-	video/Video.h
 )
 
 SET(Tano_Resrcs ui/images.qrc)
@@ -120,6 +129,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	epg/EpgShow.cpp
 	epg/EpgToday.cpp
 	lib/QtKeySequenceEdit.cpp
+	libvlc/VlcInstance.cpp
 	recorder/Recorder.cpp
 	ui/About.cpp
 	ui/EditSettings.cpp
@@ -128,7 +138,6 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	ui/Osd.cpp
 	ui/TrayIcon.cpp
 	ui/TrayRecorder.cpp
-	video/Video.cpp
 	xml/tanogenerator.cpp
 	xml/tanohandler.cpp
 )
@@ -166,16 +175,11 @@ SET ( Tano_Translation_Bins
 ################
 # Qt4 settings #
 ###############
-# This line adds the QtXML, QtNETWORK, QtWEBKIT and Phonon libraries to the Qt libraries
+# This line adds the QtXML, QtNETWORK and QtWEBKIT libraries to the Qt libraries
 # loaded when linking Tano
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
 SET(QT_USE_QTWEBKIT True)
-
-IF(MINGW)
-	include_directories(${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/3rdparty)
-	set(QT_PHONON_LIBRARY ${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/build/3rdparty/phonon/libphonon.dll.a)
-ENDIF(MINGW)
 
 # Add all resources to Tano_Resrcs (icons, html files etc.)
 #SET(Tano_Resrcs ui/mainwin.qrc) # not needed, all resources are loaded on-the-fly
@@ -264,7 +268,7 @@ ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs
 
 # Here the needed Qt Libraries are added to the link
 # command. Never remove that line :-)
-TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${QT_PHONON_LIBRARY})
+TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${VLC_LIBRARIES})
 
 
 ###############
@@ -314,11 +318,7 @@ IF(MINGW)
 	
 	# Install OpenSSL
 	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/libeay32.dll ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/ssleay32.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
-	
-	# Install Backend
-	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/build/3rdparty/phonon/libphonon.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
-	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/phonon-backend/build/vlc/vlc/libphonon_vlc.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/phonon_backend )
-	
+		
 	# Install mingwm10.dll
 	INSTALL( FILES ${MINGW_BIN_DIR}/mingwm10.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
 

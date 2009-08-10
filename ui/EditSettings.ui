@@ -40,7 +40,7 @@
        <item>
         <widget class="QGroupBox" name="tanoBox">
          <property name="title">
-          <string>Tano Player</string>
+          <string>Tano</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_10">
           <item>
@@ -116,7 +116,7 @@
           <item>
            <widget class="QLabel" name="labelLanguage">
             <property name="text">
-             <string>&lt;i&gt;You need to restart Tano Player when changing language!&lt;/i&gt;</string>
+             <string>&lt;i&gt;You need to restart Tano when changing language!&lt;/i&gt;</string>
             </property>
            </widget>
           </item>
@@ -142,7 +142,7 @@
           <item>
            <widget class="QLabel" name="labelSession">
             <property name="text">
-             <string>&lt;i&gt;You need to restart Tano Player when changing session settings!&lt;/i&gt;</string>
+             <string>&lt;i&gt;You need to restart Tano when changing session settings!&lt;/i&gt;</string>
             </property>
            </widget>
           </item>
@@ -326,7 +326,7 @@
        <item>
         <widget class="QLabel" name="labelGui">
          <property name="text">
-          <string>&lt;i&gt;You need to restart Tano Player when changing interface settings!&lt;/i&gt;</string>
+          <string>&lt;i&gt;You need to restart Tano when changing interface settings!&lt;/i&gt;</string>
          </property>
         </widget>
        </item>
@@ -360,7 +360,7 @@
        <item>
         <widget class="QLabel" name="labelRecorder">
          <property name="text">
-          <string>&lt;i&gt;You need to restart Tano Player when enabling/disabling Recorder!&lt;/i&gt;</string>
+          <string>&lt;i&gt;You need to restart Tano when enabling/disabling Recorder!&lt;/i&gt;</string>
          </property>
         </widget>
        </item>

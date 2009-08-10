@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Tano Player</string>
+   <string>Tano</string>
   </property>
   <property name="windowIcon">
    <iconset resource="images.qrc">
@@ -19,8 +19,18 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="centralLayout">
+    <property name="margin">
+     <number>0</number>
+    </property>
     <item>
-     <widget class="Video" name="videoWidget" native="true"/>
+     <widget class="QWidget" name="videoWidget" native="true">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);</string>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QWidget" name="controlsWidget" native="true">
@@ -320,7 +330,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -410,12 +420,12 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>32</width>
-     <height>32</height>
+     <width>22</width>
+     <height>22</height>
     </size>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -510,8 +520,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>271</width>
-          <height>293</height>
+          <width>265</width>
+          <height>336</height>
          </rect>
         </property>
         <attribute name="label">
@@ -543,8 +553,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>271</width>
-          <height>293</height>
+          <width>265</width>
+          <height>336</height>
          </rect>
         </property>
         <attribute name="label">
@@ -638,7 +648,7 @@
      <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
    </property>
    <property name="text">
-    <string>About Tano Player</string>
+    <string>About Tano</string>
    </property>
   </action>
   <action name="actionClose">
@@ -706,7 +716,10 @@
      <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
    </property>
    <property name="text">
-    <string>Edit Channel list</string>
+    <string>Edit Channels</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit Channels</string>
    </property>
   </action>
   <action name="actionHelp">
@@ -919,12 +932,6 @@
   </action>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>Video</class>
-   <extends>QWidget</extends>
-   <header>video/Video.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>EpgToday</class>
    <extends>QWidget</extends>

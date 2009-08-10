@@ -6,6 +6,7 @@
 #include <QTime>
 #include <QSettings>
 
+#include "libvlc/VlcInstance.h"
 #include "ui_MainWindow.h"
 #include "Updates.h"
 #include "xml/tanohandler.h"
@@ -72,6 +73,8 @@ signals:
 private:
     Ui::MainWindow ui;
     Qt::WindowFlags flags;
+
+    VlcInstance *backend;
 
     Updates *update;
     Recorder *record;
