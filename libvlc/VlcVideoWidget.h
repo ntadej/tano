@@ -33,6 +33,26 @@ public slots:
 	void enableMove();
 	void controlFull();
 
+	void setRatioOriginal();
+	void setRatio1_1();
+	void setRatio4_3();
+	void setRatio16_9();
+	void setRatio16_10();
+	void setRatio2_21_1();
+	void setRatio5_4();
+
+	void setCropOriginal();
+	void setCrop16_9();
+	void setCrop16_10();
+	void setCrop1_85_1();
+	void setCrop2_21_1();
+	void setCrop2_35_1();
+	void setCrop2_39_1();
+	void setCrop5_4();
+	void setCrop5_3();
+	void setCrop4_3();
+	void setCrop1_1();
+
 private slots:
 	void hideMouse();
 

@@ -5,6 +5,7 @@
 #include <QDebug>
 
 #include "VlcVideoWidget.h"
+#include "VlcInstance.h"
 
 VlcVideoWidget::VlcVideoWidget(QWidget *parent)
     : QWidget(parent)
@@ -17,6 +18,7 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
 	move = true;
 
 	widget = new QWidget(this);
+	widget->setMouseTracking(true);
 
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(widget);
@@ -47,13 +49,11 @@ void VlcVideoWidget::mouseMoveEvent(QMouseEvent *event)
 
 	if(this->isFullScreen() && move) {
 		qApp->setOverrideCursor(Qt::ArrowCursor);
-		//emit mouseMove();
 		pos = event->globalPos();
 
 		if(event->globalPos().y() > h-105) {
 			emit osd(false);
 			timer->stop();
-			qDebug() << "false move";
 		} else {
 			emit osd(true);
 			timer->start(1000);
@@ -101,8 +101,6 @@ void VlcVideoWidget::controlFull()
 {
 	Qt::WindowFlags flags = windowFlags();
 	if (!isFullScreen()) {
-		//we only update that value if it is not already fullscreen
-		//this->setWindowFlags(flags & (Qt::Window | Qt::SubWindow));
 		flags |= Qt::Window;
 		flags ^= Qt::SubWindow;
 		setWindowFlags(flags);
@@ -111,17 +109,126 @@ void VlcVideoWidget::controlFull()
 		// as the window must be visible before we can set the state
 		show();
 		raise();
-		setWindowState( windowState() | Qt::WindowFullScreen ); // set
+		setWindowState( windowState() | Qt::WindowFullScreen );
 #else
-		setWindowState( windowState() | Qt::WindowFullScreen ); // set
+		setWindowState( windowState() | Qt::WindowFullScreen );
 		show();
 #endif
 	} else if (isFullScreen()) {
-		flags ^= (Qt::Window | Qt::SubWindow); //clear the flags...
-		//flags |= this->windowFlags(); //then we reset the flags (window and subwindow)
+		flags ^= (Qt::Window | Qt::SubWindow);
 		setWindowFlags(flags);
-		setWindowState( windowState()  ^ Qt::WindowFullScreen ); // reset
+		setWindowState( windowState()  ^ Qt::WindowFullScreen );
 		qApp->setOverrideCursor(Qt::ArrowCursor);
 		show();
+	}
+}
+
+void VlcVideoWidget::setRatioOriginal()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setRatio1_1()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("1:1").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setRatio4_3()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("4:3").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setRatio16_9()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("16:9").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setRatio16_10()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("16:10").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setRatio2_21_1()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("221:100").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setRatio5_4()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("5:4").toAscii().data(), _vlcException);
+	}
+}
+
+void VlcVideoWidget::setCropOriginal()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop16_9()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("16:9").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop16_10()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("16:10").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop1_85_1()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("185:100").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop2_21_1()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("221:100").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop2_35_1()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("235:100").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop2_39_1()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("239:100").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop5_4()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("5:4").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop5_3()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("5:3").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop4_3()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("4:3").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setCrop1_1()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("1:1").toAscii().data(), _vlcException);
 	}
 }

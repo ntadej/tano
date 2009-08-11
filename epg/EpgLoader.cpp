@@ -149,7 +149,6 @@ void EpgLoader::epgShow()
 	edit->setHtml(tmp);
 	tmp = edit->toPlainText();
 	edit->setText("");
-        tmp.remove(0,1);
 	epgListShow << tmp;
 
 	//Time

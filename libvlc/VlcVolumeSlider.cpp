@@ -68,3 +68,15 @@ int VlcVolumeSlider::value()
 {
 	return slider->value();
 }
+
+void VlcVolumeSlider::vup()
+{
+	if(slider->value() != 200)
+		changeVolume(slider->value()+1);
+}
+
+void VlcVolumeSlider::vdown()
+{
+	if(slider->value() != 0)
+		changeVolume(slider->value()-1);
+}

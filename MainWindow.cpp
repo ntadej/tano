@@ -112,9 +112,9 @@ void MainWindow::createSettings()
 		ui.actionChannel_info->setChecked(false);
 	}
 	if(settings->value("wheel",false).toBool()) {
-		//connect(ui.videoWidget, SIGNAL(wheel(bool)), this, SLOT(volumeControl(bool)));
+		connect(ui.videoWidget, SIGNAL(wheel(bool)), this, SLOT(volumeControl(bool)));
 	} else {
-		//connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
+		connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
 	}
 	settings->endGroup();
 
@@ -163,8 +163,8 @@ void MainWindow::createConnections()
 	//connect(ui.actionMute, SIGNAL(triggered(bool)), ui.videoWidget, SLOT(controlMute(bool)));
 	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.buttonMute, SLOT(setChecked(bool)));
 	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.volumeSlider, SLOT(setDisabled(bool)));
-	//connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVUp()));
-	//connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.videoWidget, SLOT(controlVDown()));
+	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.volumeSlider, SLOT(vup()));
+	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.volumeSlider, SLOT(vdown()));
 
 	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
 	connect(ui.buttonReload, SIGNAL(clicked()), epg, SLOT(reload()));
@@ -193,9 +193,25 @@ void MainWindow::createConnections()
 	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.playlistWidget, SLOT(setVisible(bool)));
 	connect(ui.playlistWidget, SIGNAL(visibilityChanged(bool)), ui.actionChannel_info, SLOT(setChecked(bool)));
 
-	//connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(ratioOriginal()));
-	//connect(ui.actionRatio43, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio43()));
-	//connect(ui.actionRatio169, SIGNAL(triggered()), ui.videoWidget, SLOT(ratio169()));
+	connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatioOriginal()));
+	connect(ui.actionRatio1_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio1_1()));
+	connect(ui.actionRatio4_3, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio4_3()));
+	connect(ui.actionRatio16_9, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio16_9()));
+	connect(ui.actionRatio16_10, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio16_10()));
+	connect(ui.actionRatio2_21_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio2_21_1()));
+	connect(ui.actionRatio5_4, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio5_4()));
+
+	connect(ui.actionCropOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(setCropOriginal()));
+	connect(ui.actionCrop1_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop1_1()));
+	connect(ui.actionCrop4_3, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop4_3()));
+	connect(ui.actionCrop16_9, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop16_9()));
+	connect(ui.actionCrop16_10, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop16_10()));
+	connect(ui.actionCrop1_85_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop1_85_1()));
+	connect(ui.actionCrop2_21_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop2_21_1()));
+	connect(ui.actionCrop2_35_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop2_35_1()));
+	connect(ui.actionCrop2_39_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop2_39_1()));
+	connect(ui.actionCrop5_4, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop5_4()));
+	connect(ui.actionCrop5_3, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop5_3()));
 
 	connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
 	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
@@ -205,8 +221,25 @@ void MainWindow::createMenus()
 {
 	ratioGroup = new QActionGroup(this);
 	ratioGroup->addAction(ui.actionRatioOriginal);
-	ratioGroup->addAction(ui.actionRatio43);
-	ratioGroup->addAction(ui.actionRatio169);
+	ratioGroup->addAction(ui.actionRatio1_1);
+	ratioGroup->addAction(ui.actionRatio4_3);
+	ratioGroup->addAction(ui.actionRatio16_9);
+	ratioGroup->addAction(ui.actionRatio16_10);
+	ratioGroup->addAction(ui.actionRatio2_21_1);
+	ratioGroup->addAction(ui.actionRatio5_4);
+
+	cropGroup = new QActionGroup(this);
+	cropGroup->addAction(ui.actionCropOriginal);
+	cropGroup->addAction(ui.actionCrop1_1);
+	cropGroup->addAction(ui.actionCrop4_3);
+	cropGroup->addAction(ui.actionCrop16_9);
+	cropGroup->addAction(ui.actionCrop16_10);
+	cropGroup->addAction(ui.actionCrop1_85_1);
+	cropGroup->addAction(ui.actionCrop2_21_1);
+	cropGroup->addAction(ui.actionCrop2_35_1);
+	cropGroup->addAction(ui.actionCrop2_39_1);
+	cropGroup->addAction(ui.actionCrop5_4);
+	cropGroup->addAction(ui.actionCrop5_3);
 
 	right = new QMenu();
 	right->addAction(ui.actionPlay);
@@ -219,7 +252,7 @@ void MainWindow::createMenus()
 	right->addAction(ui.actionFullscreen);
 	right->addSeparator();
 	right->addMenu(ui.menuVolume);
-	right->addMenu(ui.menuRatio);
+	right->addMenu(ui.menuVideo);
 	right->addSeparator();
 	right->addAction(ui.actionClose);
 

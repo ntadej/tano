@@ -15,6 +15,10 @@ public:
 	void setValue(int volume);
 	int value();
 
+public slots:
+	void vup();
+	void vdown();
+
 private slots:
 	void changeVolume(int newVolume);
 	void updateVolume();
