@@ -155,12 +155,13 @@ void MainWindow::createConnections()
 	connect(ui.actionSchedule, SIGNAL(triggered()), this, SLOT(showBrowser()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
-	//connect(ui.actionPlay, SIGNAL(triggered()), ui.videoWidget, SLOT(controlPlay()));
-	//connect(ui.actionStop, SIGNAL(triggered()), ui.videoWidget, SLOT(controlStop()));
+	//connect(ui.actionPlay, SIGNAL(triggered()), backend, SLOT(pause()));
+	connect(ui.actionPlay, SIGNAL(triggered()), this, SLOT(play()));
+	connect(ui.actionStop, SIGNAL(triggered()), backend, SLOT(stop()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));
 	connect(ui.actionNext, SIGNAL(triggered()), select, SLOT(next()));
-	//connect(ui.actionMute, SIGNAL(triggered(bool)), ui.videoWidget, SLOT(controlMute(bool)));
+	connect(ui.actionMute, SIGNAL(triggered()), backend, SLOT(mute()));
 	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.buttonMute, SLOT(setChecked(bool)));
 	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.volumeSlider, SLOT(setDisabled(bool)));
 	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.volumeSlider, SLOT(vup()));
@@ -358,9 +359,11 @@ void MainWindow::play()
 	if(osdEnabled)
 		osd->setNumber(channel->num());
 
-	//ui.videoWidget->ratioOriginal();
+	ui.videoWidget->setRatioOriginal();
 
 	backend->openMedia(channel->url());
+	tooltip(channel->name());
+	trayIcon->changeToolTip(channel->name());
 	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 }
 
@@ -413,8 +416,10 @@ void MainWindow::stop()
 	ui.buttonRefresh->hide();
 	ui.buttonReload->hide();
 	ui.epgToday->epgClear();
-	//ui.videoWidget->ratioOriginal();
+	ui.videoWidget->setRatioOriginal();
 	epg->stop();
+	tooltip();
+	trayIcon->changeToolTip();
 }
 
 void MainWindow::openPlaylist(bool start)
@@ -567,24 +572,6 @@ void MainWindow::lite()
 	}
 }
 
-void MainWindow::time(qint64 t)
-{
-	int tm = t*1;
-	timeNow = QTime();
-	timeNow = timeNow.addMSecs(tm);
-	ui.labelDuration->setText(timeNow.toString("hh:mm:ss"));
-	ui.durationSlider->setValue(tm);
-}
-
-void MainWindow::totalTime(qint64 t)
-{
-	int tm = t*1;
-	ui.durationSlider->setMaximum(tm);
-	timeNow = QTime();
-	timeNow = timeNow.addMSecs(tm);
-	ui.labelLenght->setText(timeNow.toString("hh:mm:ss"));
-}
-
 void MainWindow::volumeControl(bool type)
 {
 	if(type)
@@ -606,7 +593,6 @@ void MainWindow::createOsd()
 	connect(ui.videoWidget, SIGNAL(full()), osd, SLOT(hideOsd()));
 	connect(ui.videoWidget, SIGNAL(mouseMove()), osd, SLOT(showOsd()));
 	connect(ui.videoWidget, SIGNAL(osd(bool)), osd, SLOT(setStatus(bool)));
-
 
 	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
 	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));

@@ -63,8 +63,6 @@ private slots:
     void recorder();
     void help();
 
-    void time(qint64 t);
-    void totalTime(qint64 t);
     void volumeControl(bool type);
 
 signals:
@@ -85,6 +83,7 @@ private:
     Channel *channel;
 	QString fileName;
 	QString defaultP;
+	QString lastChannel;
 
 	TrayIcon *trayIcon;
 	Epg *epg;

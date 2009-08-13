@@ -21,6 +21,7 @@ public:
 public slots:
 	void pause();
 	void stop();
+	void mute();
 
 private:
 	void playInternal();

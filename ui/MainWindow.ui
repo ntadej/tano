@@ -262,29 +262,7 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="layoutDuration">
-         <item>
-          <widget class="QLabel" name="labelDuration">
-           <property name="text">
-            <string>00:00:00</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSlider" name="durationSlider">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="labelLenght">
-           <property name="text">
-            <string>00:00:00</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="VlcSeekWidget" name="seekWidget" native="true"/>
        </item>
       </layout>
      </widget>
@@ -1050,15 +1028,21 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>EpgToday</class>
-   <extends>QWidget</extends>
-   <header>epg/EpgToday.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>VlcVolumeSlider</class>
    <extends>QWidget</extends>
    <header>libvlc/VlcVolumeSlider.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>VlcSeekWidget</class>
+   <extends>QWidget</extends>
+   <header>libvlc/VlcSeekWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>EpgToday</class>
+   <extends>QWidget</extends>
+   <header>epg/EpgToday.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

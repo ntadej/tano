@@ -122,6 +122,11 @@ void VlcInstance::stop() {
 	checkException();
 }
 
+void VlcInstance::mute() {
+	libvlc_audio_toggle_mute(_vlcInstance, _vlcException);
+	checkException();
+}
+
 void VlcInstance::checkException() {
 	if (libvlc_exception_raised(_vlcException)) {
 		qDebug() << "libvlc exception:" << libvlc_exception_get_message(_vlcException);
