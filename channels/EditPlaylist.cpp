@@ -112,7 +112,7 @@ void EditPlaylist::save()
 		return;
 	}
 
-	generator = new TanoGenerator(ui.playlist);
+	generator = new TanoGenerator(ui.editName->text(), ui.playlist);
 	generator->write(&file);
 }
 
@@ -135,6 +135,8 @@ void EditPlaylist::open()
 	}
 	QXmlInputSource xmlInputSource(&file);
 	reader.parse(xmlInputSource);
+
+	ui.editName->setText(load->getName());
 }
 
 void EditPlaylist::setFile(QString file)

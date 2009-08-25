@@ -32,7 +32,7 @@ class QTreeWidgetItem;
 class TanoGenerator
 {
 public:
-    TanoGenerator(QTreeWidget *treeWidget);
+    TanoGenerator(QString n, QTreeWidget *treeWidget);
 
     bool write(QIODevice *device);
 
@@ -43,6 +43,7 @@ private:
     void generateItem(QTreeWidgetItem *item, int depth);
 
     QTreeWidget *treeWidget;
+    QString name;
     QTextStream out;
 };
 

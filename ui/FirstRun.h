@@ -54,7 +54,8 @@ private:
 	QLabel *siol;
 	QLabel *t2;
 	QCheckBox *sessionBox;
-    QRadioButton *siolRadio;
+    QRadioButton *siolRadio2;
+    QRadioButton *siolRadio4;
     QRadioButton *T2Radio;
     QRadioButton *T2RadioFull;
     QLineEdit *playlist;

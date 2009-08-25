@@ -85,7 +85,7 @@ void MainWindow::createSettings()
 	settings = Common::settings();
 
 	sessionEnabled = settings->value("session", true).toBool();
-	defaultP = settings->value("playlist","playlists/siol.xml").toString();
+	defaultP = settings->value("playlist","playlists/siol-mpeg2.xml").toString();
 
 	openPlaylist(true);
 	editor = new EditPlaylist(this, fileName);
@@ -354,6 +354,10 @@ void MainWindow::play()
 	ui.buttonRefresh->hide();
 	ui.buttonReload->hide();
 	ui.epgToday->epgClear();
+	ui.epgToday_2->epgClear();
+	ui.epgToday_3->epgClear();
+	ui.epgToday_4->epgClear();
+	ui.epgToday_5->epgClear();
 
 	ui.channelNumber->display(channel->num());
 	if(osdEnabled)
@@ -420,6 +424,9 @@ void MainWindow::stop()
 	epg->stop();
 	tooltip();
 	trayIcon->changeToolTip();
+	ui.channelToolBox->setCurrentIndex(1);
+	ui.channelToolBox->currentWidget()->hide();
+	ui.channelToolBox->setCurrentIndex(0);
 }
 
 void MainWindow::openPlaylist(bool start)
@@ -460,6 +467,8 @@ void MainWindow::openPlaylist(bool start)
 
     hasPlaylist = true;
     select = new ChannelSelect(this, ui.channelNumber, handler->limit());
+
+    ui.channelToolBox->setItemText(0,handler->getName());
 }
 
 void MainWindow::openFile()

@@ -21,7 +21,7 @@ Recorder::Recorder(QWidget *parent)
 	start = true;
 	settings = Common::settings();
 
-	fileName = settings->value("playlist","playlists/siol.xml").toString();
+	fileName = settings->value("playlist","playlists/siol-mpeg2.xml").toString();
 	settings->beginGroup("Recorder");
 	ui.fileEdit->setText(settings->value("dir",QDir::homePath()+"/Videos").toString());
 	settings->endGroup();

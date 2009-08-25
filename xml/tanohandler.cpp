@@ -33,6 +33,7 @@ TanoHandler::TanoHandler(QTreeWidget *treeWidget, bool editable)
 	edit = editable;
     item = 0;
     metTanoTag = false;
+    name = QObject::tr("Channel list");
     treeStyle();
 }
 
@@ -65,7 +66,7 @@ bool TanoHandler::startElement(const QString & /* namespaceURI */,
 
     if (qName == "tano") {
         QString version = attributes.value("version");
-        if (!version.isEmpty() && !(version == "1.1" || version == "1.2")) {
+        if (!version.isEmpty() && !(version == "1.1" || version == "1.2" || version == "1.3")) {
             errorStr = QObject::tr("The file is not a Tano TV channel list 1.1 or later.");
             return false;
         }
@@ -132,6 +133,8 @@ bool TanoHandler::endElement(const QString & /* namespaceURI */,
     	}
     } else if (qName == "category" || qName == "channel") {
         item = item->parent();
+    } else if (qName == "playlist") {
+    	name = currentText;
     }
     return true;
 }
@@ -209,4 +212,9 @@ QList<int> TanoHandler::limit()
 {
 	limits.append(num);
 	return limits;
+}
+
+QString TanoHandler::getName()
+{
+	return name;
 }

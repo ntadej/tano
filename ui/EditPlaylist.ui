@@ -20,6 +20,20 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="labelName">
+        <property name="text">
+         <string>Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="editName"/>
+      </item>
+     </layout>
+    </item>
+    <item>
      <widget class="QTreeWidget" name="playlist">
       <property name="dragEnabled">
        <bool>true</bool>

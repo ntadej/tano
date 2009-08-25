@@ -53,6 +53,8 @@ public:
     QList<int> limit();
     void clear();
 
+    QString getName();
+
 private:
 	int num;
 	int cat;
@@ -77,6 +79,8 @@ private:
 
     QIcon categoryIcon;
     QIcon channelIcon;
+
+    QString name;
 };
 
 #endif

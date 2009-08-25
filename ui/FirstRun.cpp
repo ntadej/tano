@@ -64,22 +64,25 @@ SettingsPage::SettingsPage(QWidget *parent)
      siol = new QLabel("SiOL");
      t2 = new QLabel("T-2");
 
-     siolRadio = new QRadioButton(tr("SiOL Full"));
+     siolRadio2 = new QRadioButton(tr("SiOL MPEG-2"));
+     siolRadio4 = new QRadioButton(tr("SiOL MPEG-4"));
      T2Radio = new QRadioButton(tr("T-2 Categorised"));
      T2RadioFull = new QRadioButton(tr("T-2 Full"));
      sessionBox = new QCheckBox(tr("Enable Session store"));
 
-     connect(siolRadio, SIGNAL(clicked()), this, SLOT(setPlaylist()));
+     connect(siolRadio2, SIGNAL(clicked()), this, SLOT(setPlaylist()));
+     connect(siolRadio4, SIGNAL(clicked()), this, SLOT(setPlaylist()));
      connect(T2Radio, SIGNAL(clicked()), this, SLOT(setPlaylist()));
      connect(T2RadioFull, SIGNAL(clicked()), this, SLOT(setPlaylist()));
 
      QVBoxLayout *layout = new QVBoxLayout;
      layout->addWidget(siol);
-     layout->addWidget(siolRadio);
+     layout->addWidget(siolRadio2);
+     layout->addWidget(siolRadio4);
      layout->addWidget(t2);
      layout->addWidget(T2Radio);
      layout->addWidget(T2RadioFull);
-     layout->insertSpacerItem(5,new QSpacerItem(10,10,QSizePolicy::Expanding,QSizePolicy::Expanding));
+     layout->insertSpacerItem(6,new QSpacerItem(10,10,QSizePolicy::Expanding,QSizePolicy::Expanding));
      layout->addWidget(sessionLabel);
      layout->addWidget(sessionBox);
      setLayout(layout);
@@ -96,9 +99,12 @@ int SettingsPage::nextId() const
 
 void SettingsPage::setPlaylist()
 {
-	if(siolRadio->isChecked()) {
-		playlist->setText("playlists/siol.xml");
-		type->setText(siolRadio->text());
+	if(siolRadio2->isChecked()) {
+		playlist->setText("playlists/siol-mpeg2.xml");
+		type->setText(siolRadio2->text());
+	} else if(siolRadio4->isChecked()) {
+		playlist->setText("playlists/siol-mpeg4.xml");
+		type->setText(siolRadio4->text());
 	} else if(T2Radio->isChecked()) {
 		playlist->setText("playlists/t-2-cat.xml");
 		type->setText(T2Radio->text());
