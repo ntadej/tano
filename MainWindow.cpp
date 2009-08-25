@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.labelLanguage->hide();
 
 	backend = new VlcInstance(ui.videoWidget->getWinId());
+	controller = new VlcControl();
 	flags = this->windowFlags();
 
 	update = new Updates();
@@ -216,6 +217,8 @@ void MainWindow::createConnections()
 
 	connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
 	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
+
+	connect(controller, SIGNAL(vlcAction(QString, QMenu*)), this, SLOT(processMenu(QString, QMenu*)));
 }
 
 void MainWindow::createMenus()
@@ -615,4 +618,9 @@ void MainWindow::recorder()
 void MainWindow::help()
 {
 	Common::help();
+}
+
+void MainWindow::processMenu(QString type, QMenu *menu)
+{
+	ui.menuMedia->addMenu(menu);
 }

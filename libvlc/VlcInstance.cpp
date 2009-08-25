@@ -51,10 +51,6 @@ VlcInstance::VlcInstance(WId widget)
 
 	qDebug() << "Using VLC version:" << libvlc_get_version();
 	qDebug() << "VLC loaded";
-
-	timer = new QTimer(this);
-	connect(timer, SIGNAL(timeout()), this, SLOT(updateActions()));
-	//timer->start(1000);
 }
 
 VlcInstance::~VlcInstance()
@@ -138,32 +134,4 @@ void VlcInstance::checkException() {
 		qDebug() << "libvlc exception:" << libvlc_exception_get_message(_vlcException);
 		libvlc_exception_clear(_vlcException);
 	}
-}
-
-void VlcInstance::updateActions() {
-    qDebug() << libvlc_audio_get_track_count(_vlcMediaPlayer, _vlcException);
-
-    if(libvlc_audio_get_track_count(_vlcMediaPlayer, _vlcException) != 0) {
-    	libvlc_track_description_t *desc = libvlc_audio_get_track_description(_vlcMediaPlayer, _vlcException);
-    	qDebug() << desc->i_id << desc->psz_name;
-    	if(libvlc_audio_get_track_count(_vlcMediaPlayer, _vlcException) > 1) {
-    		for(int i = libvlc_audio_get_track_count(_vlcMediaPlayer, _vlcException); i > 1; i--) {
-    			desc = desc->p_next;
-    			qDebug() << desc->i_id << desc->psz_name;
-    		}
-    	}
-    }
-
-    qDebug() << libvlc_video_get_spu_count(_vlcMediaPlayer, _vlcException);
-
-    if(libvlc_video_get_spu_count(_vlcMediaPlayer, _vlcException) != 0) {
-      	libvlc_track_description_t *descs = libvlc_video_get_spu_description(_vlcMediaPlayer, _vlcException);
-       	qDebug() << descs->i_id << descs->psz_name;
-       	if(libvlc_video_get_spu_count(_vlcMediaPlayer, _vlcException) > 1) {
-       		for(int i = libvlc_video_get_spu_count(_vlcMediaPlayer, _vlcException); i > 1; i--) {
-       			descs = descs->p_next;
-       			qDebug() << descs->i_id << descs->psz_name;
-       		}
-       	}
-    }
 }

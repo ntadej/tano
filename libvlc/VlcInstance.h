@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QWidget>
-#include <QTimer>
+
 #include <vlc/vlc.h>
 
 extern libvlc_exception_t *_vlcException;
@@ -24,9 +24,6 @@ public slots:
 	void stop();
 	void mute();
 
-private slots:
-	void updateActions();
-
 private:
 	void playInternal();
 	void unloadMedia();
@@ -36,8 +33,6 @@ private:
 	libvlc_media_player_t * _vlcMediaPlayer;
 	libvlc_media_t * _vlcMedia;
 	WId _widgetId;
-
-	QTimer *timer;
 };
 
 #endif /* VLCINSTANCE_H_ */

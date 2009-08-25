@@ -7,6 +7,7 @@
 #include <QSettings>
 
 #include "libvlc/VlcInstance.h"
+#include "libvlc/VlcControl.h"
 #include "ui_MainWindow.h"
 #include "Updates.h"
 #include "xml/tanohandler.h"
@@ -65,6 +66,8 @@ private slots:
 
     void volumeControl(bool type);
 
+    void processMenu(QString type, QMenu *menu);
+
 signals:
     void setVolume(int);
 
@@ -73,6 +76,7 @@ private:
     Qt::WindowFlags flags;
 
     VlcInstance *backend;
+    VlcControl *controller;
 
     Updates *update;
     Recorder *record;

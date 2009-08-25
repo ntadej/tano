@@ -778,7 +778,7 @@ Crystal Icons Â© The Yellow Icon.</translation>
     <message>
         <location filename="../build/ui_MainWindow.h" line="697"/>
         <location filename="../build/ui_MainWindow.h" line="780"/>
-        <location filename="../MainWindow.cpp" line="416"/>
+        <location filename="../MainWindow.cpp" line="419"/>
         <source>Channel info</source>
         <translation>Informacije o kanalu</translation>
     </message>
@@ -974,7 +974,7 @@ Crystal Icons Â© The Yellow Icon.</translation>
     </message>
     <message>
         <location filename="../build/ui_MainWindow.h" line="787"/>
-        <location filename="../MainWindow.cpp" line="371"/>
+        <location filename="../MainWindow.cpp" line="374"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
@@ -990,84 +990,84 @@ Crystal Icons Â© The Yellow Icon.</translation>
         <translation>Orodna vrstica predvajanja</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="55"/>
+        <location filename="../MainWindow.cpp" line="56"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Ali želiš zapreti Tano?
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="342"/>
-        <location filename="../MainWindow.cpp" line="346"/>
+        <location filename="../MainWindow.cpp" line="345"/>
+        <location filename="../MainWindow.cpp" line="349"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="371"/>
+        <location filename="../MainWindow.cpp" line="374"/>
         <source>selected</source>
         <translation>je izbran</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="378"/>
-        <location filename="../MainWindow.cpp" line="386"/>
+        <location filename="../MainWindow.cpp" line="381"/>
+        <location filename="../MainWindow.cpp" line="389"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="380"/>
-        <location filename="../MainWindow.cpp" line="386"/>
+        <location filename="../MainWindow.cpp" line="383"/>
+        <location filename="../MainWindow.cpp" line="389"/>
         <source>Next:</source>
         <translation>Naslednje:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="438"/>
+        <location filename="../MainWindow.cpp" line="441"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="440"/>
+        <location filename="../MainWindow.cpp" line="443"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="457"/>
+        <location filename="../MainWindow.cpp" line="460"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="466"/>
+        <location filename="../MainWindow.cpp" line="469"/>
         <source>File loaded</source>
         <translation>Datoteka uspešno prebrana</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="478"/>
+        <location filename="../MainWindow.cpp" line="481"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="480"/>
+        <location filename="../MainWindow.cpp" line="483"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="486"/>
+        <location filename="../MainWindow.cpp" line="489"/>
         <source>Playing file</source>
         <translation>Predvajam datoteko</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="496"/>
+        <location filename="../MainWindow.cpp" line="499"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="497"/>
+        <location filename="../MainWindow.cpp" line="500"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="502"/>
+        <location filename="../MainWindow.cpp" line="505"/>
         <source>Playing URL</source>
         <translation>Predvajam URL</translation>
     </message>
@@ -1083,10 +1083,10 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../build/ui_MainWindow.h" line="680"/>
-        <location filename="../MainWindow.cpp" line="54"/>
-        <location filename="../MainWindow.cpp" line="456"/>
-        <location filename="../MainWindow.cpp" line="523"/>
-        <location filename="../MainWindow.cpp" line="525"/>
+        <location filename="../MainWindow.cpp" line="55"/>
+        <location filename="../MainWindow.cpp" line="459"/>
+        <location filename="../MainWindow.cpp" line="526"/>
+        <location filename="../MainWindow.cpp" line="528"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1557,6 +1557,27 @@ Desno klikni za zaprtje.</translation>
 %2.</source>
         <translation>Tano Snemalnik sedaj snema %1 v
 %2.</translation>
+    </message>
+</context>
+<context>
+    <name>VlcControl</name>
+    <message>
+        <location filename="../libvlc/VlcControl.cpp" line="22"/>
+        <source>Audio channel</source>
+        <translation>Zvočna sled</translation>
+    </message>
+    <message>
+        <location filename="../libvlc/VlcControl.cpp" line="26"/>
+        <location filename="../libvlc/VlcControl.cpp" line="27"/>
+        <location filename="../libvlc/VlcControl.cpp" line="57"/>
+        <location filename="../libvlc/VlcControl.cpp" line="58"/>
+        <source>Disable</source>
+        <translation>Onemogoči</translation>
+    </message>
+    <message>
+        <location filename="../libvlc/VlcControl.cpp" line="53"/>
+        <source>Subtitle</source>
+        <translation>Podnapisi</translation>
     </message>
 </context>
 </TS>

@@ -104,6 +104,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	epg/EpgShow.h
 	epg/EpgToday.h
 	lib/QtKeySequenceEdit.h
+	libvlc/VlcControl.h	
 	libvlc/VlcInstance.h
 	libvlc/VlcSeekWidget.h
     libvlc/VlcVideoWidget.h
@@ -132,6 +133,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	epg/EpgShow.cpp
 	epg/EpgToday.cpp
 	lib/QtKeySequenceEdit.cpp
+	libvlc/VlcControl.cpp
 	libvlc/VlcInstance.cpp
 	libvlc/VlcSeekWidget.cpp
 	libvlc/VlcVideoWidget.cpp
