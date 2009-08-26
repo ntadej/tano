@@ -1,3 +1,4 @@
+#include <QResource>
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QMessageBox>
@@ -7,10 +8,13 @@
 
 #include "MainWindow.h"
 #include "Common.h"
+#include "ui/Locker.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+	QResource::registerResource("images.qrc");
+
 	ui.setupUi(this);
 	ui.toolBarOsd->addWidget(ui.controlsWidget);
 	ui.buttonRefresh->hide();
@@ -18,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.labelNow->hide();
 	ui.labelNext->hide();
 	ui.labelLanguage->hide();
+
+	isLocked == true;
 
 	backend = new VlcInstance(ui.videoWidget->getWinId());
 	controller = new VlcControl();
@@ -219,6 +225,7 @@ void MainWindow::createConnections()
 	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 
 	connect(controller, SIGNAL(vlcAction(QString, QMenu*)), this, SLOT(processMenu(QString, QMenu*)));
+	connect(ui.actionLock, SIGNAL(triggered()), this, SLOT(lock()));
 }
 
 void MainWindow::createMenus()
@@ -624,3 +631,30 @@ void MainWindow::processMenu(QString type, QMenu *menu)
 {
 	ui.menuMedia->addMenu(menu);
 }
+
+void MainWindow::lock()
+{
+	if(isLocked) {
+		Locker u;
+		u.exec();
+		if(!isLocked) {
+			ui.actionLock->setText(tr("Lock"));
+			ui.actionLock->setIcon(QIcon(":/icons/images/lock.png"));
+
+			ui.actionSettings->setEnabled(true);
+			ui.actionEditPlaylist->setEnabled(true);
+
+			trayIcon->message("unlocked");
+		}
+	} else {
+		isLocked = true;
+		ui.actionLock->setText(tr("Unlock"));
+		ui.actionLock->setIcon(QIcon(":/icons/images/unlock.png"));
+
+		ui.actionSettings->setEnabled(false);
+		ui.actionEditPlaylist->setEnabled(false);
+
+		trayIcon->message("locked");
+	}
+}
+

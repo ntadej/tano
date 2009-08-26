@@ -11,6 +11,8 @@
 #include "Common.h"
 #include "ui/About.h"
 
+bool isLocked = true;
+
 QString Common::locateResource(QString fileN) {
 	QString path;
 

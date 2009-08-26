@@ -5,6 +5,8 @@
 #include <QStringList>
 #include <QSettings>
 
+extern bool isLocked;
+
 class Common {
 public:
 	static QString locateResource(QString fileN);

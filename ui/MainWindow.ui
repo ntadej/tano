@@ -289,6 +289,8 @@
     <addaction name="actionSchedule"/>
     <addaction name="actionRecorder"/>
     <addaction name="separator"/>
+    <addaction name="actionLock"/>
+    <addaction name="separator"/>
     <addaction name="actionClose"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
@@ -406,10 +408,11 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionOpenToolbar"/>
-   <addaction name="actionEditPlaylist"/>
    <addaction name="actionRecorder"/>
    <addaction name="actionSchedule"/>
+   <addaction name="actionEditPlaylist"/>
    <addaction name="actionSettings"/>
+   <addaction name="actionLock"/>
    <addaction name="actionClose"/>
   </widget>
   <widget class="QDockWidget" name="playlistWidget">
@@ -636,6 +639,9 @@
    </property>
   </action>
   <action name="actionSettings">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="images.qrc">
      <normaloff>:/icons/images/settings.png</normaloff>:/icons/images/settings.png</iconset>
@@ -683,6 +689,9 @@
    </property>
   </action>
   <action name="actionEditPlaylist">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="images.qrc">
      <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
@@ -1023,6 +1032,15 @@
    </property>
    <property name="text">
     <string>1:1</string>
+   </property>
+  </action>
+  <action name="actionLock">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/icons/images/unlock.png</normaloff>:/icons/images/unlock.png</iconset>
+   </property>
+   <property name="text">
+    <string>Unlock</string>
    </property>
   </action>
  </widget>

@@ -63,6 +63,7 @@ private slots:
 
     void recorder();
     void help();
+    void lock();
 
     void volumeControl(bool type);
 

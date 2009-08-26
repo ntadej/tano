@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icons" >
+    <file>images/unlock.png</file>
+    <file>images/lock.png</file>
     <file>images/tano-small.png</file>
     <file>images/wizard.bmp</file>
     <file>images/image.png</file>
