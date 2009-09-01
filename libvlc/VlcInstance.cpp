@@ -22,15 +22,19 @@ VlcInstance::VlcInstance(WId widget)
 
 	//QString pluginPath("--plugin-path=" + getVLCPluginPath());
 
-	const char * vlcArgs[9];
+	const char * vlcArgs[11];
 
 #ifdef Q_WS_X11
 	if(_version == 1) {
 		vlcArgs[7] = "--vout-event";
 		vlcArgs[8] = "3";
+		vlcArgs[9] = "-V";
+		vlcArgs[10] = "x11";
 	} else {
 		vlcArgs[7] = "--x11-event"; // VLC 0.9.*
 		vlcArgs[8] = "3";
+		vlcArgs[9] = "-V";
+		vlcArgs[10] = "x11";
 	}
 #endif
 	vlcArgs[0] = "--intf=dummy";

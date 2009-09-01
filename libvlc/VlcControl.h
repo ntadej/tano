@@ -2,7 +2,6 @@
 #define VLCCONTROL_H_
 
 #include <QTimer>
-#include <QMenu>
 #include <QList>
 #include <QMap>
 #include <QAction>
@@ -14,25 +13,25 @@ public:
 	VlcControl();
 	virtual ~VlcControl();
 
+	void update();
+
 private slots:
 	void updateActions();
 	void updateAudio();
 	void updateSub();
 
 signals:
-	void vlcAction(QString, QMenu*);
+	void vlcAction(QString, QList<QAction*>);
 
 private:
 	QTimer *timer;
 
 	QList<QAction*> audioList;
-	QMap<int,QString> audioMap;
-	QMenu *audioMenu;
+	QMap<QString,int> audioMap;
 	QActionGroup *audioGroup;
 
     QList<QAction*> subList;
-	QMap<int,QString> subMap;
-	QMenu *subMenu;
+	QMap<QString,int> subMap;
 	QActionGroup *subGroup;
 };
 

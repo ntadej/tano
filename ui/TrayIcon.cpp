@@ -44,10 +44,6 @@ void TrayIcon::message(QString type)
 {
 	if (type == "close")
 		this->showMessage(tr("Still running"), tr("Tano is still running.\nRight click to exit."), QSystemTrayIcon::Information, 10000);
-	else if (type == "locked")
-			this->showMessage(tr("Locked"), tr("Tano is now locked."), QSystemTrayIcon::Information, 10000);
-	else if (type == "unlocked")
-			this->showMessage(tr("Unlocked"), tr("Tano is now unlocked."), QSystemTrayIcon::Information, 10000);
 	else if (type == "latest")
 			this->showMessage(tr("Latest version"), tr("You are using the latest version of Tano."), QSystemTrayIcon::Information, 10000);
 	else if (type.contains("svn")) {

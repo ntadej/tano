@@ -8,7 +8,6 @@
 
 #include "MainWindow.h"
 #include "Common.h"
-#include "ui/Locker.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -22,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.labelNow->hide();
 	ui.labelNext->hide();
 	ui.labelLanguage->hide();
-
-	isLocked == true;
+	ui.menuSubtitles->clear();
+	ui.menuAudio_channel->clear();
 
 	backend = new VlcInstance(ui.videoWidget->getWinId());
 	controller = new VlcControl();
@@ -224,8 +223,7 @@ void MainWindow::createConnections()
 	connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
 	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 
-	connect(controller, SIGNAL(vlcAction(QString, QMenu*)), this, SLOT(processMenu(QString, QMenu*)));
-	connect(ui.actionLock, SIGNAL(triggered()), this, SLOT(lock()));
+	connect(controller, SIGNAL(vlcAction(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
 }
 
 void MainWindow::createMenus()
@@ -376,6 +374,7 @@ void MainWindow::play()
 	ui.videoWidget->setRatioOriginal();
 
 	backend->openMedia(channel->url());
+	controller->update();
 	tooltip(channel->name());
 	trayIcon->changeToolTip(channel->name());
 	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
@@ -627,34 +626,17 @@ void MainWindow::help()
 	Common::help();
 }
 
-void MainWindow::processMenu(QString type, QMenu *menu)
+void MainWindow::processMenu(QString type, QList<QAction*> list)
 {
-	ui.menuMedia->addMenu(menu);
-}
+	if(type == "sub")
+		ui.menuSubtitles->clear();
+	else if(type == "audio")
+		ui.menuAudio_channel->clear();
 
-void MainWindow::lock()
-{
-	if(isLocked) {
-		Locker u;
-		u.exec();
-		if(!isLocked) {
-			ui.actionLock->setText(tr("Lock"));
-			ui.actionLock->setIcon(QIcon(":/icons/images/lock.png"));
-
-			ui.actionSettings->setEnabled(true);
-			ui.actionEditPlaylist->setEnabled(true);
-
-			trayIcon->message("unlocked");
-		}
-	} else {
-		isLocked = true;
-		ui.actionLock->setText(tr("Unlock"));
-		ui.actionLock->setIcon(QIcon(":/icons/images/unlock.png"));
-
-		ui.actionSettings->setEnabled(false);
-		ui.actionEditPlaylist->setEnabled(false);
-
-		trayIcon->message("locked");
+	for (int i = 0; i < list.size(); ++i) {
+		if(type == "sub")
+			ui.menuSubtitles->addAction(list.at(i));
+		else if(type == "audio")
+			ui.menuAudio_channel->addAction(list.at(i));
 	}
 }
-

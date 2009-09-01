@@ -63,11 +63,10 @@ private slots:
 
     void recorder();
     void help();
-    void lock();
 
     void volumeControl(bool type);
 
-    void processMenu(QString type, QMenu *menu);
+    void processMenu(QString type, QList<QAction*> list);
 
 signals:
     void setVolume(int);

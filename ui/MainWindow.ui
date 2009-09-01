@@ -289,7 +289,6 @@
     <addaction name="actionSchedule"/>
     <addaction name="actionRecorder"/>
     <addaction name="separator"/>
-    <addaction name="actionLock"/>
     <addaction name="separator"/>
     <addaction name="actionClose"/>
    </widget>
@@ -314,15 +313,22 @@
     </property>
     <widget class="QMenu" name="menuVolume">
      <property name="title">
-      <string>Volume</string>
+      <string>Audio</string>
      </property>
      <property name="icon">
       <iconset resource="images.qrc">
        <normaloff>:/icons/images/player_volume.png</normaloff>:/icons/images/player_volume.png</iconset>
      </property>
+     <widget class="QMenu" name="menuAudio_channel">
+      <property name="title">
+       <string>Audio channel</string>
+      </property>
+      <addaction name="action"/>
+     </widget>
      <addaction name="actionMute"/>
      <addaction name="actionVolumeUp"/>
      <addaction name="actionVolumeDown"/>
+     <addaction name="menuAudio_channel"/>
     </widget>
     <widget class="QMenu" name="menuVideo">
      <property name="title">
@@ -360,8 +366,15 @@
       <addaction name="actionCrop4_3"/>
       <addaction name="actionCrop1_1"/>
      </widget>
+     <widget class="QMenu" name="menuSubtitles">
+      <property name="title">
+       <string>Subtitles</string>
+      </property>
+      <addaction name="action"/>
+     </widget>
      <addaction name="menuAspect_ratio"/>
      <addaction name="menuCrop_video"/>
+     <addaction name="menuSubtitles"/>
     </widget>
     <addaction name="actionPlay"/>
     <addaction name="actionStop"/>
@@ -412,7 +425,6 @@
    <addaction name="actionSchedule"/>
    <addaction name="actionEditPlaylist"/>
    <addaction name="actionSettings"/>
-   <addaction name="actionLock"/>
    <addaction name="actionClose"/>
   </widget>
   <widget class="QDockWidget" name="playlistWidget">
@@ -639,9 +651,6 @@
    </property>
   </action>
   <action name="actionSettings">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
    <property name="icon">
     <iconset resource="images.qrc">
      <normaloff>:/icons/images/settings.png</normaloff>:/icons/images/settings.png</iconset>
@@ -689,9 +698,6 @@
    </property>
   </action>
   <action name="actionEditPlaylist">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
    <property name="icon">
     <iconset resource="images.qrc">
      <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
@@ -1034,13 +1040,12 @@
     <string>1:1</string>
    </property>
   </action>
-  <action name="actionLock">
-   <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/unlock.png</normaloff>:/icons/images/unlock.png</iconset>
-   </property>
+  <action name="action">
    <property name="text">
-    <string>Unlock</string>
+    <string> </string>
+   </property>
+   <property name="toolTip">
+    <string> </string>
    </property>
   </action>
  </widget>
