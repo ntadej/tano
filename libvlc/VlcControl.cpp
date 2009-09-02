@@ -22,8 +22,8 @@ void VlcControl::updateActions() {
 
     if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
     	libvlc_track_description_t *desc = libvlc_audio_get_track_description(_vlcCurrentMediaPlayer, _vlcException);
-    	audioMap.insert(tr("Disable"), 0);
-    	audioList << new QAction(tr("Disable"), this);
+    	audioMap.insert(tr("Disabled"), 0);
+    	audioList << new QAction(tr("Disabled"), this);
     	if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) > 1) {
     		for(int i = libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException); i > 1; i--) {
     			desc = desc->p_next;
@@ -43,12 +43,12 @@ void VlcControl::updateActions() {
     emit vlcAction("audio", audioList);
 
 
-	subGroup = new QActionGroup(this);
+    subGroup = new QActionGroup(this);
 
     if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
       	libvlc_track_description_t *descs = libvlc_video_get_spu_description(_vlcCurrentMediaPlayer, _vlcException);
-    	subMap.insert(tr("Disable"), 0);
-    	subList << new QAction(tr("Disable"), this);
+    	subMap.insert(tr("Disabled"), 0);
+    	subList << new QAction(tr("Disabled"), this);
        	if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException) > 1) {
        		for(int i = libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException); i > 1; i--) {
        			descs = descs->p_next;
@@ -56,13 +56,21 @@ void VlcControl::updateActions() {
     	    	subList << new QAction(descs->psz_name, this);
        		}
        	}
-    }
+	} else {
+		subList << new QAction(tr("Disabled"), this);
+		subList.at(0)->setCheckable(true);
+		subList.at(0)->setChecked(true);
+		subList.at(0)->setEnabled(false);
+		emit vlcAction("sub", subList);
+	    timer->stop();
+	    return;
+	}
 
     for (int i = 0; i < subList.size(); ++i) {
     	subList.at(i)->setCheckable(true);
     	subGroup->addAction(subList.at(i));
         connect(subList.at(i), SIGNAL(triggered()), this, SLOT(updateSub()));
-    }
+	}
     subList.at(libvlc_video_get_spu(_vlcCurrentMediaPlayer, _vlcException))->setChecked(true);
 
     emit vlcAction("sub", subList);

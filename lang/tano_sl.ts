@@ -1576,8 +1576,9 @@ Desno klikni za zaprtje.</translation>
         <location filename="../libvlc/VlcControl.cpp" line="26"/>
         <location filename="../libvlc/VlcControl.cpp" line="50"/>
         <location filename="../libvlc/VlcControl.cpp" line="51"/>
-        <source>Disable</source>
-        <translation>Onemogoči</translation>
+        <location filename="../libvlc/VlcControl.cpp" line="60"/>
+        <source>Disabled</source>
+        <translation>Onemogočeno</translation>
     </message>
 </context>
 </TS>
