@@ -16,7 +16,6 @@ public:
 	static QString frip();
 
 	static void about(QWidget *parent = 0 );
-	static void help(QWidget *parent = 0 );
 
 	static QSettings* settings();
 };

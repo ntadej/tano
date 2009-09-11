@@ -19,6 +19,23 @@ void VlcControl::updateActions() {
 	subList.clear();
 
 	audioGroup = new QActionGroup(this);
+    subGroup = new QActionGroup(this);
+
+
+	if(libvlc_media_player_is_playing(_vlcCurrentMediaPlayer, _vlcException) != 1) {
+		audioList << new QAction(tr("Disabled"), this);
+		audioList.at(0)->setCheckable(true);
+		audioList.at(0)->setChecked(true);
+		audioList.at(0)->setEnabled(false);
+		emit vlcAction("audio", audioList);
+		subList << new QAction(tr("Disabled"), this);
+		subList.at(0)->setCheckable(true);
+		subList.at(0)->setChecked(true);
+		subList.at(0)->setEnabled(false);
+		emit vlcAction("sub", subList);
+		timer->stop();
+		return;
+	}
 
     if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
     	libvlc_track_description_t *desc = libvlc_audio_get_track_description(_vlcCurrentMediaPlayer, _vlcException);
@@ -32,6 +49,7 @@ void VlcControl::updateActions() {
     		}
     	}
     }
+	VlcInstance::checkException();
 
     for (int i = 0; i < audioList.size(); ++i) {
     	audioList.at(i)->setCheckable(true);
@@ -39,11 +57,10 @@ void VlcControl::updateActions() {
         connect(audioList.at(i), SIGNAL(triggered()), this, SLOT(updateAudio()));
     }
     audioList.at(libvlc_audio_get_track(_vlcCurrentMediaPlayer, _vlcException))->setChecked(true);
+	VlcInstance::checkException();
 
     emit vlcAction("audio", audioList);
 
-
-    subGroup = new QActionGroup(this);
 
     if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
       	libvlc_track_description_t *descs = libvlc_video_get_spu_description(_vlcCurrentMediaPlayer, _vlcException);
@@ -65,6 +82,7 @@ void VlcControl::updateActions() {
 	    timer->stop();
 	    return;
 	}
+	VlcInstance::checkException();
 
     for (int i = 0; i < subList.size(); ++i) {
     	subList.at(i)->setCheckable(true);
@@ -72,6 +90,7 @@ void VlcControl::updateActions() {
         connect(subList.at(i), SIGNAL(triggered()), this, SLOT(updateSub()));
 	}
     subList.at(libvlc_video_get_spu(_vlcCurrentMediaPlayer, _vlcException))->setChecked(true);
+	VlcInstance::checkException();
 
     emit vlcAction("sub", subList);
 
@@ -82,12 +101,14 @@ void VlcControl::updateAudio()
 {
 	int id = audioMap.value(audioGroup->checkedAction()->text());
 	libvlc_audio_set_track(_vlcCurrentMediaPlayer, id ,_vlcException);
+	VlcInstance::checkException();
 }
 
 void VlcControl::updateSub()
 {
 	int id = subMap.value(subGroup->checkedAction()->text());
 	libvlc_video_set_spu(_vlcCurrentMediaPlayer, id ,_vlcException);
+	VlcInstance::checkException();
 }
 
 void VlcControl::update()

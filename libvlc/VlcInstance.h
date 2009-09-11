@@ -28,7 +28,6 @@ private:
 	void playInternal();
 	void unloadMedia();
 	bool _isPlaying;
-	int _version;
 
 	libvlc_media_player_t * _vlcMediaPlayer;
 	libvlc_media_t * _vlcMedia;

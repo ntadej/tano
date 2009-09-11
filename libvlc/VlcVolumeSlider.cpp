@@ -56,6 +56,8 @@ void VlcVolumeSlider::updateVolume()
     int volume = libvlc_audio_get_volume (_vlcInstance, _vlcException);
     slider->setValue(volume);
     label->setText(QString().number(volume));
+
+	VlcInstance::checkException();
 }
 
 void VlcVolumeSlider::setValue(int volume)

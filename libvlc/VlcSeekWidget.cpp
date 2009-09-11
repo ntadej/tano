@@ -64,6 +64,8 @@ void VlcSeekWidget::updateTime()
 		labelElapsed->setText("00:00:00");
 		seek->setValue(0);
 	}
+
+	VlcInstance::checkException();
 }
 
 void VlcSeekWidget::changeTime(int newTime)

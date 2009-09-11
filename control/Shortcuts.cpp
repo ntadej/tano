@@ -21,7 +21,6 @@ Shortcuts::Shortcuts(QList<QAction*> list) {
 				<< "Ctrl+S"
 				<< "Ctrl+T"
 				<< "Ctrl+L"
-				<< "F1"
 				<< "Ctrl+F1";
 
 	actionsName << "Play"
@@ -41,7 +40,6 @@ Shortcuts::Shortcuts(QList<QAction*> list) {
 				<< "Settings"
 				<< "Top"
 				<< "Lite"
-				<< "Help"
 				<< "About";
 
 	apply();

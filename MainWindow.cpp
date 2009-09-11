@@ -40,6 +40,8 @@ MainWindow::MainWindow(QWidget *parent)
 	createConnections();
 	createShortcuts();
 	createSession();
+
+	update->getUpdates();
 }
 
 MainWindow::~MainWindow()
@@ -142,7 +144,6 @@ void MainWindow::createSettings()
 
 void MainWindow::createConnections()
 {
-	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
 	connect(ui.actionUpdate, SIGNAL(triggered()), update, SLOT(getUpdates()));
 	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
 	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
@@ -302,7 +303,6 @@ void MainWindow::createShortcuts()
 			<< ui.actionSettings
 			<< ui.actionTop
 			<< ui.actionLite
-			<< ui.actionHelp
 			<< ui.actionAbout;
 
 	shortcuts = new Shortcuts(actions);
@@ -619,11 +619,6 @@ void MainWindow::createOsd()
 void MainWindow::recorder()
 {
 	record->recordNow(ui.channelNumber->value(), channel->url(), channel->name());
-}
-
-void MainWindow::help()
-{
-	Common::help();
 }
 
 void MainWindow::processMenu(QString type, QList<QAction*> list)

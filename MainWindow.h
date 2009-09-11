@@ -62,10 +62,7 @@ private slots:
     void lite();
 
     void recorder();
-    void help();
-
     void volumeControl(bool type);
-
     void processMenu(QString type, QList<QAction*> list);
 
 signals:

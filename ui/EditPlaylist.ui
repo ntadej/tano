@@ -74,12 +74,12 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>32</width>
-     <height>32</height>
+     <width>22</width>
+     <height>22</height>
     </size>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -87,14 +87,42 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionAddChannel"/>
-   <addaction name="actionAddCategory"/>
-   <addaction name="actionAddSubCategory"/>
+   <addaction name="actionAdd"/>
    <addaction name="actionDelete"/>
    <addaction name="separator"/>
    <addaction name="actionReload"/>
    <addaction name="actionSave"/>
    <addaction name="actionClose"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuChannel_List">
+    <property name="title">
+     <string>Channel List</string>
+    </property>
+    <addaction name="actionReload"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuAdd">
+    <property name="title">
+     <string>Add item</string>
+    </property>
+    <addaction name="actionAddChannel"/>
+    <addaction name="actionAddCategory"/>
+    <addaction name="actionAddSubCategory"/>
+    <addaction name="separator"/>
+    <addaction name="actionDelete"/>
+   </widget>
+   <addaction name="menuChannel_List"/>
+   <addaction name="menuAdd"/>
   </widget>
   <action name="actionAddChannel">
    <property name="icon">
@@ -102,7 +130,10 @@
      <normaloff>:/icons/images/video.png</normaloff>:/icons/images/video.png</iconset>
    </property>
    <property name="text">
-    <string>Add Channel</string>
+    <string>Channel</string>
+   </property>
+   <property name="toolTip">
+    <string>Channel</string>
    </property>
   </action>
   <action name="actionAddCategory">
@@ -111,7 +142,10 @@
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
    </property>
    <property name="text">
-    <string>Add Main Category</string>
+    <string>Main Category</string>
+   </property>
+   <property name="toolTip">
+    <string>Main Category</string>
    </property>
   </action>
   <action name="actionDelete">
@@ -120,7 +154,10 @@
      <normaloff>:/icons/images/editdelete.png</normaloff>:/icons/images/editdelete.png</iconset>
    </property>
    <property name="text">
-    <string>Delete Item</string>
+    <string>Delete item</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete item</string>
    </property>
   </action>
   <action name="actionSave">
@@ -156,7 +193,22 @@
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
    </property>
    <property name="text">
-    <string>Add Subcategory</string>
+    <string>Subcategory</string>
+   </property>
+   <property name="toolTip">
+    <string>Subcategory</string>
+   </property>
+  </action>
+  <action name="actionAdd">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add item</string>
+   </property>
+   <property name="toolTip">
+    <string>Add item</string>
    </property>
   </action>
  </widget>
@@ -166,18 +218,18 @@
  </resources>
  <connections>
   <connection>
-   <sender>actionClose</sender>
-   <signal>triggered()</signal>
+   <sender>editName</sender>
+   <signal>textChanged(QString)</signal>
    <receiver>EditPlaylist</receiver>
-   <slot>close()</slot>
+   <slot>setWindowTitle(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
+     <x>199</x>
+     <y>82</y>
     </hint>
     <hint type="destinationlabel">
-     <x>399</x>
-     <y>299</y>
+     <x>127</x>
+     <y>-15</y>
     </hint>
    </hints>
   </connection>

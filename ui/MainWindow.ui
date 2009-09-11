@@ -275,7 +275,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -296,7 +296,6 @@
     <property name="title">
      <string>&amp;Help</string>
     </property>
-    <addaction name="actionHelp"/>
     <addaction name="actionUpdate"/>
     <addaction name="actionAbout"/>
    </widget>
@@ -508,7 +507,7 @@
           <x>0</x>
           <y>0</y>
           <width>265</width>
-          <height>336</height>
+          <height>302</height>
          </rect>
         </property>
         <attribute name="label">
@@ -541,7 +540,7 @@
           <x>0</x>
           <y>0</y>
           <width>265</width>
-          <height>336</height>
+          <height>302</height>
          </rect>
         </property>
         <attribute name="label">
@@ -707,18 +706,6 @@
    </property>
    <property name="toolTip">
     <string>Edit Channels</string>
-   </property>
-  </action>
-  <action name="actionHelp">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/help.png</normaloff>:/icons/images/help.png</iconset>
-   </property>
-   <property name="text">
-    <string>&amp;Help</string>
    </property>
   </action>
   <action name="actionChannel_info">
@@ -1042,10 +1029,10 @@
   </action>
   <action name="action">
    <property name="text">
-    <string> </string>
+    <string/>
    </property>
    <property name="toolTip">
-    <string> </string>
+    <string/>
    </property>
   </action>
  </widget>

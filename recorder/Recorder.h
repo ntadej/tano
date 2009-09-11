@@ -34,9 +34,6 @@ public slots:
 	void recordNow(int nmb, QString url, QString name);
 
 private slots:
-	void about();
-	void help();
-
 	void record(bool status);
 
 	void sec();

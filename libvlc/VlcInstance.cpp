@@ -17,25 +17,15 @@ VlcInstance::VlcInstance(WId widget)
 
 	_widgetId = widget;
 
-	_version = QString(libvlc_get_version()).at(0).digitValue();
-	qDebug() << "Will use VLC version:" << _version;
-
 	//QString pluginPath("--plugin-path=" + getVLCPluginPath());
 
 	const char * vlcArgs[11];
 
 #ifdef Q_WS_X11
-	if(_version == 1) {
-		vlcArgs[7] = "--vout-event";
-		vlcArgs[8] = "3";
-		vlcArgs[9] = "-V";
-		vlcArgs[10] = "x11";
-	} else {
-		vlcArgs[7] = "--x11-event"; // VLC 0.9.*
-		vlcArgs[8] = "3";
-		vlcArgs[9] = "-V";
-		vlcArgs[10] = "x11";
-	}
+	vlcArgs[7] = "--vout-event";
+	vlcArgs[8] = "3";
+	vlcArgs[9] = "-V";
+	vlcArgs[10] = "x11";
 #endif
 	vlcArgs[0] = "--intf=dummy";
 	vlcArgs[1] = "--no-media-library";
@@ -75,20 +65,14 @@ void VlcInstance::openMedia(QString media)
 	/* Get our media instance to use our window */
 	if (_vlcMediaPlayer) {
 #if defined(Q_OS_WIN)
-		//if(_version == 1)
-		//	libvlc_media_player_set_hwnd(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
-		//else
-		libvlc_media_player_set_drawable(_vlcMediaPlayer, reinterpret_cast<unsigned int>(_widgetId), _vlcException); // VLC 0.9.*
+		libvlc_media_player_set_hwnd(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
+		//libvlc_media_player_set_drawable(_vlcMediaPlayer, reinterpret_cast<unsigned int>(_widgetId), _vlcException); // VLC 0.9.*
 #elif defined(Q_OS_MAC)
-		//if(_version == 1)
-		//	libvlc_media_player_set_agl (_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
-		//else
-		libvlc_media_player_set_drawable(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 0.9.*
+		libvlc_media_player_set_agl (_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
+		//libvlc_media_player_set_drawable(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 0.9.*
 #else
-		//if(_version == 1)
-		//	libvlc_media_player_set_xwindow(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
-		//else
-		libvlc_media_player_set_drawable(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 0.9.*
+		libvlc_media_player_set_xwindow(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
+		//libvlc_media_player_set_drawable(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 0.9.*
 #endif
 		checkException();
 	}

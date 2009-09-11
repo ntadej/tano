@@ -2,6 +2,7 @@
 #include <QHeaderView>
 #include <QDir>
 #include <QFileDialog>
+#include <QCloseEvent>
 
 #include "EditPlaylist.h"
 
@@ -10,12 +11,21 @@ EditPlaylist::EditPlaylist(QWidget *parent, QString fileName)
 {
 	ui.setupUi(this);
 
+	closeEnabled = false;
+
+	add = new QMenu();
+	add->addAction(ui.actionAddChannel);
+	add->addAction(ui.actionAddCategory);
+	add->addAction(ui.actionAddSubCategory);
+
 	connect(ui.actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
 	connect(ui.actionAddCategory, SIGNAL(triggered()), this, SLOT(addItemCategory()));
 	connect(ui.actionAddSubCategory, SIGNAL(triggered()), this, SLOT(addItemSubCategory()));
 	connect(ui.actionAddChannel, SIGNAL(triggered()), this, SLOT(addItemChannel()));
 	connect(ui.actionReload, SIGNAL(triggered()), this, SLOT(open()));
 	connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(save()));
+	connect(ui.actionAdd, SIGNAL(triggered()), this, SLOT(menuOpen()));
+	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 
 	ui.playlist->header()->setResizeMode(QHeaderView::Stretch);
 
@@ -31,6 +41,16 @@ EditPlaylist::EditPlaylist(QWidget *parent, QString fileName)
 EditPlaylist::~EditPlaylist()
 {
 
+}
+
+void EditPlaylist::closeEvent(QCloseEvent *event)
+{
+	if(!closeEnabled) {
+		event->ignore();
+		//ui.actionClose->trigger();
+	} else {
+		closeEnabled = false;
+	}
 }
 
 void EditPlaylist::treeStyle()
@@ -137,10 +157,41 @@ void EditPlaylist::open()
 	reader.parse(xmlInputSource);
 
 	ui.editName->setText(load->getName());
+	setWindowTitle(load->getName());
 }
 
 void EditPlaylist::setFile(QString file)
 {
 	fileN = file;
 	open();
+}
+
+void EditPlaylist::menuOpen()
+{
+	add->exec(QCursor::pos());
+}
+
+void EditPlaylist::exit()
+{
+	if(closeEnabled) {
+		close();
+		return;
+	}
+
+	int ret;
+	ret = QMessageBox::warning(this, ui.editName->text(),
+								   tr("Do you want close the editor?\nYou will lose any unsaved settings."),
+								   QMessageBox::Close | QMessageBox::Cancel,
+								   QMessageBox::Close);
+
+	switch (ret) {
+		case QMessageBox::Close:
+			closeEnabled = true;
+			ui.actionClose->trigger();
+			break;
+		case QMessageBox::Cancel:
+			break;
+		default:
+			break;
+	}
 }

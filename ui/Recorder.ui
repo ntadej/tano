@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>400</height>
+    <height>416</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -198,7 +198,7 @@
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -207,13 +207,6 @@
     </property>
     <addaction name="actionOpen"/>
     <addaction name="actionClose"/>
-   </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>&amp;Help</string>
-    </property>
-    <addaction name="actionHelp"/>
-    <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menuActions">
     <property name="title">
@@ -224,7 +217,6 @@
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuActions"/>
-   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QDockWidget" name="dockWidget">
@@ -299,27 +291,6 @@
    </property>
    <property name="text">
     <string>Close</string>
-   </property>
-  </action>
-  <action name="actionHelp">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/help.png</normaloff>:/icons/images/help.png</iconset>
-   </property>
-   <property name="text">
-    <string>Help</string>
-   </property>
-  </action>
-  <action name="actionAbout">
-   <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
-   </property>
-   <property name="text">
-    <string>About Tano</string>
    </property>
   </action>
   <action name="actionOpen">

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>494</width>
-    <height>407</height>
+    <width>544</width>
+    <height>455</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -116,10 +116,16 @@
           </spacer>
          </item>
          <item>
-          <widget class="QLabel" name="labelBackendInfo">
+          <widget class="QLabel" name="labelVlc">
            <property name="text">
-            <string>Videolan VLC Backend
-Recorder is powered by friptv.
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelCopyrights">
+           <property name="text">
+            <string>Recorder is powered by friptv.
 Crystal Icons © The Yellow Icon.</string>
            </property>
            <property name="openExternalLinks">

@@ -108,28 +108,6 @@ void Common::about(QWidget *parent)
 	about.exec();
 }
 
-void Common::help(QWidget *parent)
-{
-	QProcess *process = new QProcess(parent);
-	QString app = QLibraryInfo::location(QLibraryInfo::BinariesPath)
-				+ QLatin1String("/assistant");
-
-	process->start(app, QStringList() << QLatin1String("-collectionFile")
-									  << QLatin1String("help/tano.qhc")
-									  << QLatin1String("-enableRemoteControl"));
-
-	if (!process->waitForStarted()) {
-		QMessageBox::critical(parent, "Tano",
-							QString("Could not start Qt Assistant from %1.").arg(app));
-		return;
-	}
-
-	// show index page
-	QTextStream str(process);
-	str << QLatin1String("SetSource qthelp://tano.0_5/doc/index.html")
-		<< QLatin1Char('\0') << endl;
-}
-
 QSettings* Common::settings()
 {
 	QSettings* settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");

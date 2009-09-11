@@ -46,8 +46,6 @@ Recorder::Recorder(QWidget *parent)
 	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(showNormal()));
 	connect(ui.actionRestore, SIGNAL(triggered()), this, SLOT(showNormal()));
 
-	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(about()));
-	connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
 	connect(ui.actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
 	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(closeRecorder()));
 
@@ -284,14 +282,4 @@ void Recorder::sec()
 {
 	time = time.addSecs(1);
 	ui.valueTime->setText(time.toString("hh:mm:ss"));
-}
-
-void Recorder::about()
-{
-	Common::about();
-}
-
-void Recorder::help()
-{
-	Common::help();
 }

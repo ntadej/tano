@@ -1,7 +1,8 @@
 #ifndef TANO_EDITPLAYLIST_H
 #define TANO_EDITPLAYLIST_H
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
+#include <QMenu>
 #include "ui_EditPlaylist.h"
 
 #include "../xml/tanohandler.h"
@@ -17,6 +18,9 @@ public:
 
     void setFile(QString file);
 
+protected:
+	void closeEvent(QCloseEvent *event);
+
 private slots:
 	void deleteItem();
 	void addItemCategory();
@@ -26,8 +30,13 @@ private slots:
 	void open();
 	void save();
 
+	void menuOpen();
+	void exit();
+
 private:
 	void treeStyle();
+
+	bool closeEnabled;
 
     Ui::EditPlaylist ui;
 
@@ -39,6 +48,8 @@ private:
 
     QString fileN;
     QString fileName;
+
+    QMenu *add;
 };
 
 #endif // TANO_EDITPLAYLIST_H
