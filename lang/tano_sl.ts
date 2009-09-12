@@ -4,101 +4,99 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../build/ui_About.h" line="304"/>
+        <location filename="../build/ui_About.h" line="323"/>
         <source>&lt;h2&gt;&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;&lt;/h2&gt;</translation>
     </message>
-    <message utf8="true">
-        <location filename="../build/ui_About.h" line="307"/>
-        <source>Recorder is powered by friptv.
-Crystal Icons Â© The Yellow Icon.</source>
-        <translation>Snemalnik poganja friptv.
-Crystal Icons Â© The Yellow Icon.</translation>
-    </message>
     <message>
-        <location filename="../build/ui_About.h" line="309"/>
+        <location filename="../build/ui_About.h" line="327"/>
         <source>&lt;b&gt;Note:&lt;/b&gt;</source>
         <translation>&lt;b&gt;Opozorilo:&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="311"/>
+        <location filename="../build/ui_About.h" line="330"/>
         <source>About</source>
         <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="305"/>
+        <location filename="../build/ui_About.h" line="324"/>
         <source>Copyright &amp;copy; 2008-2009 Tadej Novak&lt;br&gt;http://tano.sourceforge.net&lt;br&gt;ntadej@users.sourceforge.net</source>
         <translation>Copyright &amp;copy; 2008-2009 Tadej Novak&lt;br&gt;http://tano.sourceforge.net&lt;br&gt;ntadej@users.sourceforge.net</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="302"/>
+        <location filename="../build/ui_About.h" line="321"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="303"/>
+        <location filename="../build/ui_About.h" line="322"/>
         <source>&lt;h1&gt;Tano&lt;/h1&gt;</source>
         <translation>&lt;h1&gt;Tano&lt;/h1&gt;</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="310"/>
+        <location filename="../build/ui_About.h" line="325"/>
+        <source>Recorder is powered by friptv.</source>
+        <translation>Snemalnik poganja friptv.</translation>
+    </message>
+    <message utf8="true">
+        <location filename="../build/ui_About.h" line="326"/>
+        <source>Crystal Icons Â© The Yellow Icon.</source>
+        <translation>Crystal Icons Â© The Yellow Icon.</translation>
+    </message>
+    <message>
+        <location filename="../build/ui_About.h" line="328"/>
         <source>This is a development version of Tano.</source>
         <translation>To je razvojna različica programa Tano.</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="312"/>
+        <location filename="../build/ui_About.h" line="331"/>
         <source>Licence</source>
         <translation>Licenca</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="313"/>
+        <location filename="../build/ui_About.h" line="332"/>
         <source>&lt;h1&gt;About Qt&lt;/h1&gt;</source>
         <translation>&lt;h1&gt;O Qt&lt;/h1&gt;</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="314"/>
+        <location filename="../build/ui_About.h" line="333"/>
         <source>This program uses Qt Open Source Edition version 0.0.0.</source>
         <translation>Ta program uporablja odprtokodno različico Qt 0.0.0.</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="315"/>
+        <location filename="../build/ui_About.h" line="334"/>
         <source>Qt Open Source Edition is intended for the development of Open Source applications. You need a commercial Qt license for development of proprietary (closed source) applications.</source>
         <translation>Odprtokodna različica Qt je namenjena razvoju odprtokodnih aplikacij. Za razvoj zaprtih aplikacij potrebuješ komercialno licenco.</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="316"/>
-        <source>Please see www.qtsoftware.com/about/open-source-business-model for an overview of Qt licensing.</source>
-        <translation>Oglej si www.qtsoftware.com/about/open-source-business-model za pregled licenciranja Qt.</translation>
+        <location filename="../build/ui_About.h" line="335"/>
+        <source>Please see http://qt.nokia.com/products/licensing for an overview of Qt licensing.</source>
+        <translation>Oglej si http://qt.nokia.com/products/licensing za pregled licenciranja knjižnice Qt.</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="317"/>
+        <location filename="../build/ui_About.h" line="338"/>
+        <source>Qt is a Nokia product. See http://qt.nokia.com/products/appdev for more information.</source>
+        <translation>Qt je izdelek Nokie. Pojdi na http://qt.nokia.com/products/appdev za več informacij.</translation>
+    </message>
+    <message>
+        <location filename="../build/ui_About.h" line="336"/>
         <source>Qt is a C++ toolkit for cross-platform application development.</source>
         <translation>Qt je C++ orodje za razvoj večplatformnih aplikacij.</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="318"/>
+        <location filename="../build/ui_About.h" line="337"/>
         <source>Qt provides single-source portability across MS Windows, Mac OS X, Linux, and all major commercial Unix variants. Qt is also available for embedded devices as Qt for Embedded Linux and Qt for Windows CE.</source>
         <translation>Qt zagotavlja prenosljivost preko MS Windows, Mac OS X, Linuxa in vseh večjih komercialnih Unix variant. Qt je na voljo tudi za prenosne naprave z Linuxom ali Windows CE.</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="319"/>
-        <source>Qt is a Nokia product. See www.qtsoftware.com/products/appdev for more information.</source>
-        <translation>Qt je izdelek Nokie. Oglej si www.qtsoftware.com/products/appdev za več informacij.</translation>
-    </message>
-    <message>
-        <location filename="../build/ui_About.h" line="320"/>
+        <location filename="../build/ui_About.h" line="339"/>
         <source>Qt</source>
         <translation>Qt</translation>
     </message>
     <message>
-        <location filename="../build/ui_About.h" line="321"/>
+        <location filename="../build/ui_About.h" line="340"/>
         <source>Close</source>
         <translation>Zapri</translation>
-    </message>
-    <message>
-        <location filename="../ui/About.cpp" line="20"/>
-        <source>Powered by Videolan VLC</source>
-        <translation>Poganja Videolan VLC</translation>
     </message>
 </context>
 <context>

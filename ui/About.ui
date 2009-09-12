@@ -71,6 +71,16 @@
            </property>
           </spacer>
          </item>
+         <item>
+          <widget class="QLabel" name="labelIconVlc">
+           <property name="pixmap">
+            <pixmap resource="images.qrc">:/icons/images/vlc.png</pixmap>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
@@ -116,20 +126,19 @@
           </spacer>
          </item>
          <item>
-          <widget class="QLabel" name="labelVlc">
+          <widget class="QLabel" name="labelRecorder">
            <property name="text">
-            <string/>
+            <string>Recorder is powered by friptv.</string>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="labelCopyrights">
+          <widget class="QLabel" name="labelIcons">
            <property name="text">
-            <string>Recorder is powered by friptv.
-Crystal Icons © The Yellow Icon.</string>
-           </property>
-           <property name="openExternalLinks">
-            <bool>true</bool>
+            <string>Crystal Icons © The Yellow Icon.</string>
            </property>
           </widget>
          </item>
@@ -172,6 +181,29 @@ Crystal Icons © The Yellow Icon.</string>
             <size>
              <width>20</width>
              <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelVlc">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Maximum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>15</height>
             </size>
            </property>
           </spacer>
@@ -276,7 +308,7 @@ Crystal Icons © The Yellow Icon.</string>
          <item>
           <widget class="QLabel" name="labelQtLicenceLink">
            <property name="text">
-            <string>Please see www.qtsoftware.com/about/open-source-business-model for an overview of Qt licensing.</string>
+            <string>Please see http://qt.nokia.com/products/licensing for an overview of Qt licensing.</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
@@ -309,7 +341,7 @@ Crystal Icons © The Yellow Icon.</string>
          <item>
           <widget class="QLabel" name="labelQtLink">
            <property name="text">
-            <string>Qt is a Nokia product. See www.qtsoftware.com/products/appdev for more information.</string>
+            <string>Qt is a Nokia product. See http://qt.nokia.com/products/appdev for more information.</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
