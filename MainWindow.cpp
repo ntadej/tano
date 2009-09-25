@@ -16,15 +16,14 @@ MainWindow::MainWindow(QWidget *parent)
 
 	ui.setupUi(this);
 	ui.toolBarOsd->addWidget(ui.controlsWidget);
-	ui.buttonRefresh->hide();
-	ui.buttonReload->hide();
-	ui.labelNow->hide();
-	ui.labelNext->hide();
-	ui.labelLanguage->hide();
+	ui.buttonRefresh->setEnabled(false);
+	ui.buttonReload->setEnabled(false);
 	ui.menuSubtitles->clear();
 	ui.menuAudio_channel->clear();
 
-	backend = new VlcInstance(ui.videoWidget->getWinId());
+	settings = Common::settings();
+
+	backend = new VlcInstance(ui.videoWidget->getWinId(), settings->value("network","").toString());
 	controller = new VlcControl();
 	flags = this->windowFlags();
 
@@ -41,7 +40,8 @@ MainWindow::MainWindow(QWidget *parent)
 	createShortcuts();
 	createSession();
 
-	update->getUpdates();
+	if(settings->value("updates",true).toBool())
+		update->getUpdates();
 }
 
 MainWindow::~MainWindow()
@@ -81,17 +81,17 @@ void MainWindow::exit()
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    if (trayIcon->isVisible()) {
-        trayIcon->message("close");
-        hide();
-        event->ignore();
-    }
+	if(settings->value("tray",false).toBool()) {
+		if (trayIcon->isVisible()) {
+			trayIcon->message("close");
+			hide();
+			event->ignore();
+		}
+	}
 }
 
 void MainWindow::createSettings()
 {
-	settings = Common::settings();
-
 	sessionEnabled = settings->value("session", true).toBool();
 	defaultP = settings->value("playlist","playlists/siol-mpeg2.xml").toString();
 
@@ -348,7 +348,6 @@ void MainWindow::play()
 	epg->stop();
 	ui.playlistWidget->setWindowTitle(channel->name());
 	ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
-	ui.labelLanguage->show();
 
 	if(osdEnabled) {
 		osd->setInfo(channel->name(), tr("Language:") + " " + channel->language());
@@ -357,10 +356,10 @@ void MainWindow::play()
 
 	epg->getEpg(channel->epg());
 
-	ui.labelNow->hide();
-	ui.labelNext->hide();
-	ui.buttonRefresh->hide();
-	ui.buttonReload->hide();
+	ui.labelNow->setText("");
+	ui.labelNext->setText("");
+	ui.buttonRefresh->setEnabled(false);
+	ui.buttonReload->setEnabled(false);
 	ui.epgToday->epgClear();
 	ui.epgToday_2->epgClear();
 	ui.epgToday_3->epgClear();
@@ -385,11 +384,9 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 	switch (id) {
 		case 0:
 			ui.labelNow->setText(tr("Now:") + " " + epgValue.at(0));
-			ui.labelNow->show();
 			ui.labelNext->setText(tr("Next:") + " " + epgValue.at(1));
-			ui.labelNext->show();
-			ui.buttonRefresh->show();
-			ui.buttonReload->show();
+			ui.buttonRefresh->setEnabled(true);
+			ui.buttonReload->setEnabled(true);
 
 			if(osdEnabled)
 				osd->setEpg(true, tr("Now:") + " " + epgValue.at(0), tr("Next:") + " " + epgValue.at(1));

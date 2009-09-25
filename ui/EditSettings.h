@@ -22,6 +22,7 @@ class EditSettings : public QDialog
 		void cancel();
 
 		void toggleCustom();
+		void toggleNetwork();
 		void togglePlaylist();
 
 		void playlistBrowse();

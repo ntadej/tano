@@ -13,7 +13,7 @@ extern libvlc_media_player_t *_vlcCurrentMediaPlayer;
 class VlcInstance : public QObject {
 Q_OBJECT
 public:
-	VlcInstance(WId widget = NULL);
+	VlcInstance(WId widget = NULL, QString iface = "");
 	virtual ~VlcInstance();
 
 	void openMedia(QString media);

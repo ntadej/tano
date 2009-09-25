@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>500</height>
+    <width>708</width>
+    <height>588</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -54,6 +54,16 @@
            <widget class="QCheckBox" name="checkWizard">
             <property name="text">
              <string>Run First run wizard</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkUpdates">
+            <property name="text">
+             <string>Check for updates on application start</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -143,6 +153,43 @@
            <widget class="QLabel" name="labelSession">
             <property name="text">
              <string>&lt;i&gt;You need to restart Tano when changing session settings!&lt;/i&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="networkBox">
+         <property name="title">
+          <string>Network Card</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_15">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QRadioButton" name="radioNDefault">
+              <property name="text">
+               <string>Use default settings</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioNCustom">
+              <property name="text">
+               <string>Use custom network card IP</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="editNetwork"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelNetwork">
+            <property name="text">
+             <string>&lt;i&gt;You need to restart Tano when changing network settings!&lt;/i&gt;</string>
             </property>
            </widget>
           </item>
@@ -374,6 +421,32 @@
            <widget class="QRadioButton" name="volumeRadio">
             <property name="text">
              <string>Change volume</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="exitBox">
+         <property name="title">
+          <string>Minimise to tray</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QRadioButton" name="radioTray">
+            <property name="text">
+             <string>Enable</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioExit">
+            <property name="text">
+             <string>Disable</string>
             </property>
            </widget>
           </item>

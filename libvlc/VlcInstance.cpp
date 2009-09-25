@@ -6,9 +6,10 @@ libvlc_instance_t * _vlcInstance = NULL;
 libvlc_exception_t * _vlcException = new libvlc_exception_t();
 libvlc_media_player_t * _vlcCurrentMediaPlayer = NULL;
 
-VlcInstance::VlcInstance(WId widget)
+VlcInstance::VlcInstance(WId widget, QString iface)
 {
-	//Global variables
+	int argsVlc;
+
 	_vlcInstance = NULL;
 	_vlcException = new libvlc_exception_t();
 
@@ -17,15 +18,16 @@ VlcInstance::VlcInstance(WId widget)
 
 	_widgetId = widget;
 
-	//QString pluginPath("--plugin-path=" + getVLCPluginPath());
-
-	const char * vlcArgs[11];
+	const char * vlcArgs[12];
 
 #ifdef Q_WS_X11
+	argsVlc = 11;
 	vlcArgs[7] = "--vout-event";
 	vlcArgs[8] = "3";
 	vlcArgs[9] = "-V";
 	vlcArgs[10] = "x11";
+#else
+	argsVlc = 7;
 #endif
 	vlcArgs[0] = "--intf=dummy";
 	vlcArgs[1] = "--no-media-library";
@@ -35,9 +37,11 @@ VlcInstance::VlcInstance(WId widget)
 	vlcArgs[5] = "--no-video-title-show";
 	vlcArgs[6] = "--ignore-config";
 
+	if(iface != "")
+		vlcArgs[argsVlc] = iface.toLocal8Bit().data();
+
 	libvlc_exception_init(_vlcException);
 
-	//Init VLC_Backend modules, should be done only once
 	_vlcInstance = libvlc_new(sizeof(vlcArgs) / sizeof(*vlcArgs), vlcArgs, _vlcException);
 	checkException();
 

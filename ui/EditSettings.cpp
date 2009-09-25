@@ -16,6 +16,7 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	ui.buttonSet->setEnabled(false);
 	ui.buttonBrowse->setEnabled(false);
 	ui.buttonReset->setEnabled(false);
+	ui.editNetwork->setEnabled(false);
 
 	ui.shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 	ui.shortcutsWidget->verticalHeader()->hide();
@@ -42,6 +43,9 @@ void EditSettings::createActions()
 
 	connect(ui.radioPreset, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
 	connect(ui.radioBrowse, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
+
+	connect(ui.radioNDefault, SIGNAL(clicked()), this, SLOT(toggleNetwork()));
+	connect(ui.radioNCustom, SIGNAL(clicked()), this, SLOT(toggleNetwork()));
 
 	connect(ui.buttonBrowse, SIGNAL(clicked()), this, SLOT(playlistBrowse()));
 	connect(ui.buttonReset, SIGNAL(clicked()), this, SLOT(playlistReset()));
@@ -82,6 +86,7 @@ void EditSettings::ok()
 	}
 
 	settings->setValue("registered",!ui.checkWizard->isChecked());
+	settings->setValue("updates",ui.checkUpdates->isChecked());
 	settings->setValue("session",ui.checkSession->isChecked());
 
 	if(ui.radioSiol2->isChecked()) {
@@ -94,6 +99,12 @@ void EditSettings::ok()
 			settings->setValue("playlist","playlists/t-2-full.xml");
 	} else {
 		settings->setValue("playlist",ui.pEdit->text());
+	}
+
+	if(ui.radioNCustom->isChecked()) {
+		settings->setValue("network", ui.editNetwork->text());
+	} else {
+		settings->remove("network");
 	}
 
 	settings->beginGroup("GUI");
@@ -121,6 +132,11 @@ void EditSettings::ok()
 		settings->setValue("wheel",true);
 	} else {
 		settings->setValue("wheel",false);
+	}
+	if(ui.radioTray->isChecked()) {
+		settings->setValue("tray",true);
+	} else {
+		settings->setValue("tray",false);
 	}
 	settings->endGroup();
 
@@ -165,6 +181,7 @@ void EditSettings::read()
 			ui.comboBox->setCurrentIndex(0);
 	}
 
+	ui.checkUpdates->setChecked(settings->value("updates",true).toBool());
 	ui.checkSession->setChecked(settings->value("session",true).toBool());
 
 	if(settings->value("playlist","playlists/siol-mpeg2.xml").toString() == "playlists/siol-mpeg2.xml")
@@ -183,6 +200,15 @@ void EditSettings::read()
 		ui.pEdit->setText(settings->value("playlist").toString());
 	}
 
+	if(settings->value("network","").toString() != "")
+	{
+		ui.radioNCustom->setChecked(true);
+		ui.editNetwork->setText(settings->value("network","").toString());
+		ui.editNetwork->setEnabled(true);
+	} else {
+		ui.radioNDefault->setChecked(true);
+	}
+
 	settings->beginGroup("GUI");
 	ui.checkLite->setChecked(settings->value("lite",false).toBool());
 	ui.checkTop->setChecked(settings->value("ontop",false).toBool());
@@ -190,6 +216,7 @@ void EditSettings::read()
 	ui.checkInfo->setChecked(settings->value("info",true).toBool());
 	ui.channelRadio->setChecked(!settings->value("wheel",false).toBool());
 	ui.volumeRadio->setChecked(settings->value("wheel",false).toBool());
+	ui.radioExit->setChecked(!settings->value("tray",false).toBool());
 	settings->endGroup();
 
 	settings->beginGroup("Recorder");
@@ -208,6 +235,17 @@ void EditSettings::toggleCustom()
 	} else
 	{
 		ui.comboBox->setEnabled(false);
+	}
+}
+
+void EditSettings::toggleNetwork()
+{
+	if (ui.radioNDefault->isChecked())
+	{
+		ui.editNetwork->setEnabled(false);
+	} else
+	{
+		ui.editNetwork->setEnabled(true);
 	}
 }
 
