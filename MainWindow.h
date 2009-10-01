@@ -41,7 +41,7 @@ private slots:
     void playlist(QTreeWidgetItem* clickedChannel);
     void key(int clickedChannel);
 
-    void play();
+    void play(QString itemFile = 0, QString itemType = 0);
     void stop();
 
     void openPlaylist(bool start = false);

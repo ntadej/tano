@@ -327,56 +327,58 @@ void MainWindow::aboutTano()
 //Media controls
 void MainWindow::playlist(QTreeWidgetItem* clickedChannel)
 {
-	channel = handler->channelRead(clickedChannel);
-	if (channel->isCategory() != true) {
+	Channel *tmp = handler->channelRead(clickedChannel);
+	if (tmp->isCategory() != true) {
+		channel = tmp;
 		play();
 	}
 }
 
 void MainWindow::key(int clickedChannel)
 {
-	channel = handler->channelReadNum(clickedChannel);
-	if (channel->isCategory() != true) {
+	Channel *tmp = handler->channelReadNum(clickedChannel);
+	if (tmp->isCategory() != true) {
+		channel = tmp;
 		play();
 	}
 }
 
-void MainWindow::play()
+void MainWindow::play(QString itemFile, QString itemType)
 {
-	ui.actionRatioOriginal->trigger();
+	this->stop();
 
-	epg->stop();
-	ui.playlistWidget->setWindowTitle(channel->name());
-	ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
+	if(itemFile.isNull()) {
+		ui.playlistWidget->setWindowTitle(channel->name());
+		ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
 
-	if(osdEnabled) {
-		osd->setInfo(channel->name(), tr("Language:") + " " + channel->language());
-		osd->setEpg(false);
+		if(osdEnabled) {
+			osd->setNumber(channel->num());
+			osd->setInfo(channel->name(), tr("Language:") + " " + channel->language());
+		}
+
+		epg->getEpg(channel->epg());
+
+		ui.channelNumber->display(channel->num());
+
+		backend->openMedia(channel->url());
+		controller->update();
+		tooltip(channel->name());
+		trayIcon->changeToolTip(channel->name());
+		statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
+	} else if(itemType == "file") {
+	    ui.playlistWidget->hide();
+	    backend->openMedia(fileName);
+		controller->update();
+		tooltip(fileName);
+		statusBar()->showMessage(tr("Playing file"), 5000);
+	} else {
+		ui.playlistWidget->hide();
+		backend->openMedia(fileName);
+    	controller->update();
+    	tooltip(fileName);
+		statusBar()->showMessage(tr("Playing URL"), 5000);
+
 	}
-
-	epg->getEpg(channel->epg());
-
-	ui.labelNow->setText("");
-	ui.labelNext->setText("");
-	ui.buttonRefresh->setEnabled(false);
-	ui.buttonReload->setEnabled(false);
-	ui.epgToday->epgClear();
-	ui.epgToday_2->epgClear();
-	ui.epgToday_3->epgClear();
-	ui.epgToday_4->epgClear();
-	ui.epgToday_5->epgClear();
-
-	ui.channelNumber->display(channel->num());
-	if(osdEnabled)
-		osd->setNumber(channel->num());
-
-	ui.videoWidget->setRatioOriginal();
-
-	backend->openMedia(channel->url());
-	controller->update();
-	tooltip(channel->name());
-	trayIcon->changeToolTip(channel->name());
-	statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 }
 
 void MainWindow::showEpg(int id, QStringList epgValue, QString date)
@@ -420,19 +422,24 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 void MainWindow::stop()
 {
 	ui.playlistWidget->setWindowTitle(tr("Channel info"));
-	ui.labelLanguage->hide();
-	ui.labelNow->hide();
-	ui.labelNext->hide();
-	ui.buttonRefresh->hide();
-	ui.buttonReload->hide();
+	ui.labelLanguage->setText("");
+	ui.labelNow->setText("");
+	ui.labelNext->setText("");
+	ui.buttonRefresh->setEnabled(false);
+	ui.buttonReload->setEnabled(false);
 	ui.epgToday->epgClear();
+	ui.epgToday_2->epgClear();
+	ui.epgToday_3->epgClear();
+	ui.epgToday_4->epgClear();
+	ui.epgToday_5->epgClear();
 	ui.videoWidget->setRatioOriginal();
+	if(osdEnabled) {
+		osd->setInfo();
+		osd->setEpg(false);
+	}
 	epg->stop();
 	tooltip();
 	trayIcon->changeToolTip();
-	ui.channelToolBox->setCurrentIndex(1);
-	ui.channelToolBox->currentWidget()->hide();
-	ui.channelToolBox->setCurrentIndex(0);
 }
 
 void MainWindow::openPlaylist(bool start)
@@ -479,7 +486,6 @@ void MainWindow::openPlaylist(bool start)
 
 void MainWindow::openFile()
 {
-	epg->stop();
 	fileName =
         QFileDialog::getOpenFileName(this, tr("Open File or URL"),
 									QDir::homePath(),
@@ -488,26 +494,21 @@ void MainWindow::openFile()
     if (fileName.isEmpty())
         return;
 
-    backend->openMedia(fileName);
-    statusBar()->showMessage(tr("Playing file"), 5000);
-
-    ui.playlistWidget->hide();
+    play(fileName, "file");
 }
 
 void MainWindow::openUrl()
 {
-	epg->stop();
 	bool ok;
 	fileName =
 		QInputDialog::getText(this, tr("Open URL or stream"),
-	                                          tr("Enter the URL of multimedia file or stream you want to play:"), QLineEdit::Normal,
-	                                          "", &ok);
+							 tr("Enter the URL of multimedia file or stream you want to play:"),
+							 QLineEdit::Normal, "", &ok);
 
-	if (ok && !fileName.isEmpty()) {
-        backend->openMedia(fileName);
-		statusBar()->showMessage(tr("Playing URL"), 5000);
-	    ui.playlistWidget->hide();
-	}
+	if (!ok && fileName.isEmpty())
+		return;
+
+	play(fileName,"url");
 }
 
 

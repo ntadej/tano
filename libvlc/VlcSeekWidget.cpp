@@ -27,9 +27,9 @@ VlcSeekWidget::VlcSeekWidget(QWidget *parent)
 	timer = new QTimer(this);
 
 	connect(timer, SIGNAL(timeout()), this, SLOT(updateTime()));
-	connect(seek, SIGNAL(valueChanged(int)), this, SLOT(changeTime(int)));
+	connect(seek, SIGNAL(sliderMoved(int)), this, SLOT(changeTime(int)));
 
-	timer->start(100);
+	timer->start(400);
 }
 
 VlcSeekWidget::~VlcSeekWidget() {

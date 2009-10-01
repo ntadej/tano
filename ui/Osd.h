@@ -24,7 +24,7 @@ public slots:
 
 	void disableRecorder();
 
-	void setInfo(QString channel, QString language = "");
+	void setInfo(QString channel = 0, QString language = "");
 	void setEpg(bool status, QString now = "", QString next = "");
 
 signals:
@@ -38,6 +38,9 @@ signals:
 
 private:
     Ui::Osd ui;
+
+    int dWidth;
+    int dHeight;
 
     QTime timeNow;
 };

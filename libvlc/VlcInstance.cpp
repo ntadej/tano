@@ -37,8 +37,10 @@ VlcInstance::VlcInstance(WId widget, QString iface)
 	vlcArgs[5] = "--no-video-title-show";
 	vlcArgs[6] = "--ignore-config";
 
-	if(iface != "")
-		vlcArgs[argsVlc] = iface.toLocal8Bit().data();
+	if(iface != "") {
+		vlcArgs[argsVlc] = "--iface-addr";
+		vlcArgs[argsVlc+1] = iface.toLocal8Bit().data();
+	}
 
 	libvlc_exception_init(_vlcException);
 

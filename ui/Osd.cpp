@@ -28,10 +28,10 @@ Osd::~Osd()
 
 void Osd::showOsd()
 {
-	int w = QApplication::desktop()->width();
-	int h = QApplication::desktop()->height();
-	this->resize(w*0.75,this->height());
-	this->move(w/2-this->width()/2,h-this->height());
+	dWidth = QApplication::desktop()->width();
+	dHeight = QApplication::desktop()->height();
+	this->resize(dWidth*0.75,75);
+	this->move(dWidth/2-this->width()/2,dHeight-this->height());
 	this->show();
 }
 
@@ -62,8 +62,13 @@ void Osd::setStatus(bool status)
 
 void Osd::setInfo(QString channel, QString language)
 {
-	ui.labelChannel->setText(channel);
-	ui.labelLanguage->setText(language);
+	if(!channel.isNull()) {
+		ui.widgetInfo->show();
+		ui.labelChannel->setText("<h3>"+channel+"</h3>");
+		ui.labelLanguage->setText("<h3>"+language+"</h3>");
+	} else {
+		ui.widgetInfo->hide();
+	}
 }
 
 void Osd::setEpg(bool status, QString now, QString next)
@@ -73,8 +78,8 @@ void Osd::setEpg(bool status, QString now, QString next)
 		ui.labelNext->show();
 		ui.labelS2->show();
 		ui.labelS3->show();
-		ui.labelNow->setText(now);
-		ui.labelNext->setText(next);
+		ui.labelNow->setText("<h3>"+now+"</h3>");
+		ui.labelNext->setText("<h3>"+next+"</h3>");
 	} else {
 		ui.labelNow->hide();
 		ui.labelNext->hide();
