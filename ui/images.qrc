@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons" >
+    <file>images/player_pause.png</file>
     <file>images/unlock.png</file>
     <file>images/lock.png</file>
     <file>images/tano-small.png</file>

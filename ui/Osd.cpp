@@ -92,3 +92,22 @@ void Osd::disableRecorder()
 {
 	ui.buttonRecord->hide();
 }
+
+void Osd::playingState(int status)
+{
+	if(status == 1) {
+		ui.buttonPlay->setEnabled(true);
+		ui.buttonPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
+		ui.buttonPlay->setToolTip(tr("Pause"));
+		ui.buttonPlay->setStatusTip(tr("Pause"));
+	} else if(status == 0) {
+		ui.buttonPlay->setEnabled(true);
+		ui.buttonPlay->setIcon(QIcon(":/icons/images/player_play.png"));
+		ui.buttonPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setStatusTip(tr("Play"));
+	} else if(status == -1) {
+		ui.buttonPlay->setEnabled(false);
+		ui.buttonPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setStatusTip(tr("Play"));
+	}
+}

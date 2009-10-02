@@ -27,6 +27,8 @@ public slots:
 	void setInfo(QString channel = 0, QString language = "");
 	void setEpg(bool status, QString now = "", QString next = "");
 
+	void playingState(int status);
+
 signals:
 	void linkActivated(QString);
 

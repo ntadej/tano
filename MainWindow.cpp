@@ -162,8 +162,8 @@ void MainWindow::createConnections()
 	connect(ui.actionSchedule, SIGNAL(triggered()), this, SLOT(showBrowser()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
-	//connect(ui.actionPlay, SIGNAL(triggered()), backend, SLOT(pause()));
-	connect(ui.actionPlay, SIGNAL(triggered()), this, SLOT(play()));
+	connect(ui.actionPlay, SIGNAL(triggered()), backend, SLOT(pause()));
+	//connect(ui.actionPlay, SIGNAL(triggered()), this, SLOT(play()));
 	connect(ui.actionStop, SIGNAL(triggered()), backend, SLOT(stop()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));
@@ -225,6 +225,7 @@ void MainWindow::createConnections()
 	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 
 	connect(controller, SIGNAL(vlcAction(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
+	connect(controller, SIGNAL(stateChanged(int)), this, SLOT(playingState(int)));
 }
 
 void MainWindow::createMenus()
@@ -343,6 +344,36 @@ void MainWindow::key(int clickedChannel)
 	}
 }
 
+void MainWindow::playingState(int status)
+{
+	if(status == 1) {
+		ui.actionPlay->setEnabled(true);
+		ui.buttonPlay->setEnabled(true);
+		ui.actionPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
+		ui.buttonPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
+		ui.actionPlay->setText(tr("Pause"));
+		ui.actionPlay->setToolTip(tr("Pause"));
+		ui.buttonPlay->setToolTip(tr("Pause"));
+		ui.buttonPlay->setStatusTip(tr("Pause"));
+	} else if(status == 0) {
+		ui.actionPlay->setEnabled(true);
+		ui.buttonPlay->setEnabled(true);
+		ui.actionPlay->setIcon(QIcon(":/icons/images/player_play.png"));
+		ui.buttonPlay->setIcon(QIcon(":/icons/images/player_play.png"));
+		ui.actionPlay->setText(tr("Play"));
+		ui.actionPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setStatusTip(tr("Play"));
+	} else if(status == -1) {
+		ui.actionPlay->setEnabled(false);
+		ui.buttonPlay->setEnabled(false);
+		ui.actionPlay->setText(tr("Play"));
+		ui.actionPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setStatusTip(tr("Play"));
+	}
+}
+
 void MainWindow::play(QString itemFile, QString itemType)
 {
 	this->stop();
@@ -417,6 +448,11 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 		default:
 			break;
 	}
+}
+
+void MainWindow::pause()
+{
+
 }
 
 void MainWindow::stop()
@@ -612,6 +648,8 @@ void MainWindow::createOsd()
 
 	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
 	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
+
+	connect(controller, SIGNAL(stateChanged(int)), osd, SLOT(playingState(int)));
 }
 
 void MainWindow::recorder()

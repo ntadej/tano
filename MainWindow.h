@@ -42,7 +42,10 @@ private slots:
     void key(int clickedChannel);
 
     void play(QString itemFile = 0, QString itemType = 0);
+    void pause();
     void stop();
+
+    void playingState(int status);
 
     void openPlaylist(bool start = false);
     void openFile();

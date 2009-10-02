@@ -20,11 +20,17 @@ private slots:
 	void updateAudio();
 	void updateSub();
 
+	void checkPlayingState();
+
 signals:
 	void vlcAction(QString, QList<QAction*>);
+	void stateChanged(int);
 
 private:
 	QTimer *timer;
+	QTimer *check;
+
+	int isPlaying;
 
 	QList<QAction*> audioList;
 	QMap<QString,int> audioMap;

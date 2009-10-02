@@ -109,7 +109,8 @@ void VlcInstance::playInternal() {
 }
 
 void VlcInstance::pause() {
-	libvlc_media_player_pause(_vlcMediaPlayer, _vlcException);
+	if(libvlc_media_player_can_pause(_vlcMediaPlayer, _vlcException) == 1)
+		libvlc_media_player_pause(_vlcMediaPlayer, _vlcException);
 	checkException();
 }
 

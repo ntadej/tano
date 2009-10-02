@@ -5,8 +5,15 @@
 
 VlcControl::VlcControl()
 {
+	isPlaying = false;
+
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(updateActions()));
+
+	check = new QTimer(this);
+	connect(check, SIGNAL(timeout()), this, SLOT(checkPlayingState()));
+
+	check->start(300);
 }
 
 VlcControl::~VlcControl()
@@ -114,4 +121,18 @@ void VlcControl::updateSub()
 void VlcControl::update()
 {
 	timer->start(500);
+}
+
+void VlcControl::checkPlayingState()
+{
+	int state;
+	state = libvlc_media_player_is_playing(_vlcCurrentMediaPlayer, _vlcException);
+
+	if(state == 1 && isPlaying == 0) {
+		isPlaying = 1;
+		emit stateChanged(1);
+	} else if(state == 0 && isPlaying == 1) {
+		isPlaying = 0;
+		emit stateChanged(0);
+	}
 }

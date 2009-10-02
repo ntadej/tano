@@ -424,7 +424,6 @@
    <addaction name="actionSchedule"/>
    <addaction name="actionEditPlaylist"/>
    <addaction name="actionSettings"/>
-   <addaction name="actionClose"/>
   </widget>
   <widget class="QDockWidget" name="playlistWidget">
    <property name="windowIcon">
