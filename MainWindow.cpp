@@ -163,7 +163,6 @@ void MainWindow::createConnections()
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
 	connect(ui.actionPlay, SIGNAL(triggered()), backend, SLOT(pause()));
-	//connect(ui.actionPlay, SIGNAL(triggered()), this, SLOT(play()));
 	connect(ui.actionStop, SIGNAL(triggered()), backend, SLOT(stop()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));

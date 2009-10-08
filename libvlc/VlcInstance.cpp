@@ -18,14 +18,12 @@ VlcInstance::VlcInstance(WId widget, QString iface)
 
 	_widgetId = widget;
 
-	const char * vlcArgs[12];
+	const char * vlcArgs[10];
 
 #ifdef Q_WS_X11
-	argsVlc = 11;
+	argsVlc = 9;
 	vlcArgs[7] = "--vout-event";
 	vlcArgs[8] = "3";
-	vlcArgs[9] = "-V";
-	vlcArgs[10] = "x11";
 #else
 	argsVlc = 7;
 #endif

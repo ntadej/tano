@@ -972,33 +972,39 @@
         <title>SiOL HD TV</title>
         <channel>
             <title>Melody Zen HD</title>
-            <epg>NI</epg>
+            <epg></epg>
             <language>angleški</language>
-            <url>udp://@239.255.0.202:5002</url>
+            <url>udp://@239.255.4.202:5002</url>
         </channel>
         <channel>
-            <title>Testni HD 1</title>
-            <epg>NI</epg>
+            <title>Discovery HD</title>
+            <epg>DISCOVERYHD</epg>
+            <language>angleški</language>
+            <url>udp://@239.255.4.207:5002</url>
+        </channel>
+        <channel>
+            <title>History Channel HD</title>
+            <epg>HISTORYHD</epg>
             <language>angleški</language>
             <url>udp://@239.255.4.201:5002</url>
         </channel>
         <channel>
-            <title>Testni HD 2</title>
-            <epg>NI</epg>
+            <title>National Geographic HD</title>
+            <epg>NATGEOHD</epg>
             <language>angleški</language>
-            <url>Udp://@239.255.4.204:5002</url>
+            <url>udp://@239.255.4.203:5002</url>
         </channel>
         <channel>
-            <title>Testni HD 3</title>
-            <epg>NI</epg>
+            <title>Eurosport HD</title>
+            <epg></epg>
             <language>angleški</language>
-            <url>Udp://@239.255.4.205:5002</url>
+            <url>udp://@239.255.4.204:5002</url>
         </channel>
         <channel>
-            <title>Testni HD 4</title>
-            <epg>NI</epg>
+            <title>Fashion HD</title>
+            <epg></epg>
             <language>angleški</language>
-            <url>Udp://@239.255.4.207:5002</url>
+            <url>udp://@239.255.4.205:5002</url>
         </channel>
     </category>
     <category expanded="false" type="main">
