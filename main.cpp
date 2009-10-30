@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	translator.load(QString("tano_" + locale), langPath);
 	app.installTranslator(&translator);
 
-	if(!settings.value("registered",false).toBool()) {
+	if(!settings.value("registered",false).toBool() || settings.value("version",Common::version()).toString() != Common::version()) {
 		FirstRun wizard;
 		wizard.exec();
 	}

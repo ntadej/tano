@@ -40,7 +40,12 @@ void EpgLoader::stop()
 
 void EpgLoader::epgInit()
 {
-	get("/tv-spored.aspx");
+	header = QHttpRequestHeader("GET","/tv-spored.aspx");
+	header.setValue("Referer","http://www.siol.net/tv-spored.aspx");
+	header.setValue("User-Agent","Firefox");
+	header.setValue("Host","www.siol.net");
+
+	request(header);
 	connect(this, SIGNAL(done(bool)), this, SLOT(epgInitDone()));
 }
 
@@ -52,8 +57,10 @@ void EpgLoader::epgInitDone()
 
 	epgValue = codec->toUnicode(httpResponse);
 
-	m = epgValue.indexOf("flag=",epgValue.indexOf("channels"));
-	n = epgValue.indexOf("\" title",m);
+	//qDebug() << epgValue;
+
+	m = epgValue.indexOf("flag=",epgValue.indexOf("whatson"));
+	n = epgValue.indexOf("\"",m);
 
 	for(int i=m+5;i<n;i++)
 		epgFlag.append(epgValue.at(i));
@@ -70,6 +77,7 @@ void EpgLoader::epg()
 {
 	header = QHttpRequestHeader("GET",epgFull);
 	header.setValue("Referer","http://www.siol.net/tv-spored.aspx");
+	header.setValue("User-Agent","Firefox");
 	header.setValue("Host","www.siol.net");
 
 	request(header);

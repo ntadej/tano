@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>544</width>
-    <height>455</height>
+    <height>490</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -102,7 +102,7 @@
          <item>
           <widget class="QLabel" name="labelCopy">
            <property name="text">
-            <string>Copyright &amp;copy; 2008-2009 Tadej Novak&lt;br&gt;http://tano.sourceforge.net&lt;br&gt;ntadej@users.sourceforge.net</string>
+            <string>Copyright &amp;copy; 2008-2009 Tadej Novak&lt;br&gt;http://tanoplayer.co.cc&lt;br&gt;ntadej@users.sourceforge.net</string>
            </property>
            <property name="openExternalLinks">
             <bool>true</bool>

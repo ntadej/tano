@@ -8,7 +8,7 @@ About::About(QWidget *parent, QString version)
 	ui.setupUi(this);
 
 	ui.labelVersion->setText(ui.labelVersion->text().replace("><",">"+version+"<"));
-	ui.labelCopy->setText(ui.labelCopy->text().replace("http://tano.sourceforge.net","<a href='http://tano.sourceforge.net'>http://tano.sourceforge.net</a>"));
+	ui.labelCopy->setText(ui.labelCopy->text().replace("http://tanoplayer.co.cc","<a href='http://tanoplayer.co.cc'>http://tanoplayer.co.cc</a>"));
 	ui.labelCopy->setText(ui.labelCopy->text().replace("ntadej@users.sourceforge.net","<a href='mailto:ntadej@users.sourceforge.net'>ntadej@users.sourceforge.net</a>"));
 
 #ifdef TANO_QT_VERSION
