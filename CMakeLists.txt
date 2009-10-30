@@ -166,7 +166,8 @@ SET (Tano_Files
 )
 
 SET (Tano_Playlists
-	playlists/siol.xml
+	playlists/siol-mpeg2.xml
+	playlists/siol-mpeg4.xml
 	playlists/t-2-cat.xml
 	playlists/t-2-full.xml
 )
