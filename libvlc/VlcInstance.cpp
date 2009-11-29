@@ -1,4 +1,5 @@
 #include <QDebug>
+#include <QMessageBox>
 
 #include "VlcInstance.h"
 
@@ -8,8 +9,6 @@ libvlc_media_player_t * _vlcCurrentMediaPlayer = NULL;
 
 VlcInstance::VlcInstance(WId widget, QString iface)
 {
-	int argsVlc;
-
 	_vlcInstance = NULL;
 	_vlcException = new libvlc_exception_t();
 
@@ -17,8 +16,19 @@ VlcInstance::VlcInstance(WId widget, QString iface)
 	_vlcMedia = NULL;
 
 	_widgetId = widget;
+	_isPlaying = false;
+	_networkInterface = iface;
+}
 
-	const char * vlcArgs[10];
+VlcInstance::~VlcInstance()
+{
+	libvlc_release(_vlcInstance);
+}
+
+void VlcInstance::init()
+{
+	const char * vlcArgs[11];
+	int argsVlc;
 
 #ifdef Q_WS_X11
 	argsVlc = 9;
@@ -35,9 +45,10 @@ VlcInstance::VlcInstance(WId widget, QString iface)
 	vlcArgs[5] = "--no-video-title-show";
 	vlcArgs[6] = "--ignore-config";
 
-	if(iface != "") {
-		vlcArgs[argsVlc] = "--iface-addr";
-		vlcArgs[argsVlc+1] = iface.toLocal8Bit().data();
+	if(_networkInterface != "") {
+		vlcArgs[argsVlc] = "--miface-addr";
+		vlcArgs[argsVlc+1] = _networkInterface.toUtf8().data();
+		qDebug() << "Using network interface:" << vlcArgs[argsVlc+1];
 	}
 
 	libvlc_exception_init(_vlcException);
@@ -45,15 +56,19 @@ VlcInstance::VlcInstance(WId widget, QString iface)
 	_vlcInstance = libvlc_new(sizeof(vlcArgs) / sizeof(*vlcArgs), vlcArgs, _vlcException);
 	checkException();
 
-	_isPlaying = false;
-
-	qDebug() << "Using VLC version:" << libvlc_get_version();
-	qDebug() << "VLC loaded";
-}
-
-VlcInstance::~VlcInstance()
-{
-	libvlc_release(_vlcInstance);
+	if(_vlcInstance) {
+		qDebug() << "Using VLC version:" << libvlc_get_version();
+		qDebug() << "VLC loaded";
+	} else {
+		qDebug() << "Error: VLC failed to load!!!";
+		switch(fatalError()) {
+		case QMessageBox::Ok:
+			exit(-100);
+			break;
+		default:
+			break;
+		};
+	}
 }
 
 void VlcInstance::openMedia(QString media)
@@ -129,4 +144,13 @@ void VlcInstance::checkException() {
 		qDebug() << "libvlc exception:" << libvlc_exception_get_message(_vlcException);
 		libvlc_exception_clear(_vlcException);
 	}
+}
+
+int VlcInstance::fatalError() {
+	 int ret = QMessageBox::critical(0, tr("VLC Initialization"),
+	                                tr("VLC could not be initialized successfully.\n"
+	                                   "Tano Player will now exit."),
+	                                QMessageBox::Ok | QMessageBox::Cancel,
+	                                QMessageBox::Ok);
+	 return ret;
 }

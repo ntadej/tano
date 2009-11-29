@@ -16,18 +16,21 @@ MainWindow::MainWindow(QWidget *parent)
 
 	ui.setupUi(this);
 	ui.toolBarOsd->addWidget(ui.controlsWidget);
-	ui.buttonRefresh->setEnabled(false);
-	ui.buttonReload->setEnabled(false);
 	ui.menuSubtitles->clear();
 	ui.menuAudio_channel->clear();
+	this->statusBar()->hide();
 
 #ifdef TANO_DEINTERLACING
 	ui.menuDeinterlacing->setEnabled(false);
 #endif
 
+	//errorHandler = QErrorMessage::qtHandler();
+
 	settings = Common::settings();
 
 	backend = new VlcInstance(ui.videoWidget->getWinId(), settings->value("network","").toString());
+	backend->init();
+
 	controller = new VlcControl();
 	flags = this->windowFlags();
 
@@ -177,8 +180,8 @@ void MainWindow::createConnections()
 	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.volumeSlider, SLOT(vup()));
 	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.volumeSlider, SLOT(vdown()));
 
-	connect(ui.buttonRefresh, SIGNAL(clicked()), epg, SLOT(refresh()));
-	connect(ui.buttonReload, SIGNAL(clicked()), epg, SLOT(reload()));
+	connect(ui.infoBarWidget, SIGNAL(refresh()), epg, SLOT(refresh()));
+	connect(ui.infoBarWidget, SIGNAL(open(QString)), epgShow, SLOT(open(QString)));
 
 	connect(ui.playlistTree, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 	connect(select, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
@@ -197,9 +200,6 @@ void MainWindow::createConnections()
 	connect(ui.epgToday_4, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_5, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
-
-	connect(ui.labelNow, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
-	connect(ui.labelNext, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
 
 	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.playlistWidget, SLOT(setVisible(bool)));
 	connect(ui.playlistWidget, SIGNAL(visibilityChanged(bool)), ui.actionChannel_info, SLOT(setChecked(bool)));
@@ -401,8 +401,7 @@ void MainWindow::play(QString itemFile, QString itemType)
 	this->stop();
 
 	if(itemFile.isNull()) {
-		ui.playlistWidget->setWindowTitle(channel->name());
-		ui.labelLanguage->setText(tr("Language:") + " " + channel->language());
+		ui.infoBarWidget->setInfo(channel->name(), channel->language());
 
 		if(osdEnabled) {
 			osd->setNumber(channel->num());
@@ -417,19 +416,19 @@ void MainWindow::play(QString itemFile, QString itemType)
 		controller->update();
 		tooltip(channel->name());
 		trayIcon->changeToolTip(channel->name());
-		statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
+		//statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 	} else if(itemType == "file") {
 	    ui.playlistWidget->hide();
 	    backend->openMedia(fileName);
 		controller->update();
 		tooltip(fileName);
-		statusBar()->showMessage(tr("Playing file"), 5000);
+		//statusBar()->showMessage(tr("Playing file"), 5000);
 	} else {
 		ui.playlistWidget->hide();
 		backend->openMedia(fileName);
     	controller->update();
     	tooltip(fileName);
-		statusBar()->showMessage(tr("Playing URL"), 5000);
+		//statusBar()->showMessage(tr("Playing URL"), 5000);
 
 	}
 }
@@ -438,10 +437,7 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 {
 	switch (id) {
 		case 0:
-			ui.labelNow->setText(tr("Now:") + " " + epgValue.at(0));
-			ui.labelNext->setText(tr("Next:") + " " + epgValue.at(1));
-			ui.buttonRefresh->setEnabled(true);
-			ui.buttonReload->setEnabled(true);
+			ui.infoBarWidget->setEpg(epgValue.at(0), epgValue.at(1));
 
 			if(osdEnabled)
 				osd->setEpg(true, tr("Now:") + " " + epgValue.at(0), tr("Next:") + " " + epgValue.at(1));
@@ -479,12 +475,6 @@ void MainWindow::pause()
 
 void MainWindow::stop()
 {
-	ui.playlistWidget->setWindowTitle(tr("Channel info"));
-	ui.labelLanguage->setText("");
-	ui.labelNow->setText("");
-	ui.labelNext->setText("");
-	ui.buttonRefresh->setEnabled(false);
-	ui.buttonReload->setEnabled(false);
 	ui.epgToday->epgClear();
 	ui.epgToday_2->epgClear();
 	ui.epgToday_3->epgClear();
@@ -533,8 +523,8 @@ void MainWindow::openPlaylist(bool start)
         return;
     }
     QXmlInputSource xmlInputSource(&file);
-    if (reader.parse(xmlInputSource))
-        statusBar()->showMessage(tr("File loaded"), 2000);
+    if (!reader.parse(xmlInputSource))
+    	return;
 
     hasPlaylist = true;
     select = new ChannelSelect(this, ui.channelNumber, handler->limit());
@@ -635,13 +625,11 @@ void MainWindow::lite()
 		ui.playlistWidget->show();
 		ui.toolBar->show();
 		ui.toolBarOsd->show();
-		ui.statusbar->show();
 		isLite = false;
 	} else {
 		ui.playlistWidget->hide();
 		ui.toolBar->hide();
 		ui.toolBarOsd->hide();
-		ui.statusbar->hide();
 		isLite = true;
 	}
 }

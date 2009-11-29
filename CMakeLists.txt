@@ -86,6 +86,7 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/EditSettings.ui
 	ui/EpgBrowser.ui
 	ui/EpgShow.ui
+	ui/InfoBar.ui
 	ui/MainWindow.ui
 	ui/Osd.ui
 	ui/Recorder.ui
@@ -113,6 +114,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/About.h
 	ui/EditSettings.h
 	ui/FirstRun.h
+	ui/InfoBar.h
 	ui/License.h
 	ui/Osd.h
 	ui/TrayIcon.h
@@ -142,6 +144,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	ui/About.cpp
 	ui/EditSettings.cpp
 	ui/FirstRun.cpp
+	ui/InfoBar.cpp
 	ui/License.cpp
 	ui/Osd.cpp
 	ui/TrayIcon.cpp
@@ -217,15 +220,6 @@ QT4_WRAP_CPP(Tano_MOC_Srcs ${Tano_MOCs})
 #########################
 # Compiler Define flags #
 #########################
-# RtMidi cross-platform definitions
-IF("${CMAKE_SYSTEM_NAME}" MATCHES "Linux") #IF(LINUX) isn't supported by CMake yet
-	ADD_DEFINITIONS(-D__LINUX_ALSASEQ__)
-ENDIF("${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
-
-IF(MINGW)
- 	ADD_DEFINITIONS(-D__WINDOWS_MM__)
-ENDIF(MINGW)
-
 # Define default data dir, if under POSIX systems.
 IF(NOT MINGW)
 	IF (NOT DEFAULT_DATA_DIR)
@@ -234,7 +228,6 @@ IF(NOT MINGW)
 		ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${DEFAULT_DATA_DIR}")
 	ENDIF (NOT DEFAULT_DATA_DIR)
 ENDIF(NOT MINGW)
-
 
 # Define Tano version
 ADD_DEFINITIONS(-DTANO_VERSION="${TANO_VERSION}")
@@ -248,7 +241,7 @@ ADD_DEFINITIONS(-DTANO_DEINTERLACING=0)
 ####################################
 # Include paths and set up targets #
 ####################################
-# This needs to be added in order for #include to work inside .cpp files - it adds src/ to include path
+# This needs to be added in order for #include to work inside .cpp files
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 
 # This line adds the include path of the Qt

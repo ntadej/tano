@@ -20,11 +20,13 @@ public:
 	static void checkException();
 
 public slots:
+	void init();
 	void pause();
 	void stop();
 	void mute();
 
 private:
+	int fatalError();
 	void playInternal();
 	void unloadMedia();
 	bool _isPlaying;
@@ -32,6 +34,7 @@ private:
 	libvlc_media_player_t * _vlcMediaPlayer;
 	libvlc_media_t * _vlcMedia;
 	WId _widgetId;
+	QString _networkInterface;
 };
 
 #endif /* VLCINSTANCE_H_ */

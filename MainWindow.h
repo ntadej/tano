@@ -5,6 +5,7 @@
 #include <QCloseEvent>
 #include <QTime>
 #include <QSettings>
+#include <QErrorMessage>
 
 #include "libvlc/VlcInstance.h"
 #include "libvlc/VlcControl.h"
@@ -107,6 +108,8 @@ private:
 	QList<QAction*> actions;
 
 	QTime timeNow;
+
+	QErrorMessage *errorHandler;
 
 	bool isLite;
 	bool osdEnabled;
