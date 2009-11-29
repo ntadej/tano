@@ -275,7 +275,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -371,9 +371,22 @@
       </property>
       <addaction name="action"/>
      </widget>
+     <widget class="QMenu" name="menuDeinterlacing">
+      <property name="title">
+       <string>Deinterlacing</string>
+      </property>
+      <addaction name="actionFilterDisabled"/>
+      <addaction name="actionFilterDiscard"/>
+      <addaction name="actionFilterBlend"/>
+      <addaction name="actionFilterMean"/>
+      <addaction name="actionFilterBob"/>
+      <addaction name="actionFilterLinear"/>
+      <addaction name="actionFilterX"/>
+     </widget>
      <addaction name="menuAspect_ratio"/>
      <addaction name="menuCrop_video"/>
      <addaction name="menuSubtitles"/>
+     <addaction name="menuDeinterlacing"/>
     </widget>
     <addaction name="actionPlay"/>
     <addaction name="actionStop"/>
@@ -506,7 +519,7 @@
           <x>0</x>
           <y>0</y>
           <width>265</width>
-          <height>302</height>
+          <height>276</height>
          </rect>
         </property>
         <attribute name="label">
@@ -539,7 +552,7 @@
           <x>0</x>
           <y>0</y>
           <width>265</width>
-          <height>302</height>
+          <height>276</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1032,6 +1045,65 @@
    </property>
    <property name="toolTip">
     <string/>
+   </property>
+  </action>
+  <action name="actionFilterDisabled">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Disabled</string>
+   </property>
+  </action>
+  <action name="actionFilterBlend">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Blend</string>
+   </property>
+  </action>
+  <action name="actionFilterMean">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Mean</string>
+   </property>
+  </action>
+  <action name="actionFilterBob">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Bob</string>
+   </property>
+  </action>
+  <action name="actionFilterLinear">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Linear</string>
+   </property>
+  </action>
+  <action name="actionFilterX">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>X</string>
+   </property>
+  </action>
+  <action name="actionFilterDiscard">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Discard</string>
    </property>
   </action>
  </widget>

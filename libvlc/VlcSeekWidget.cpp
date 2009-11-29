@@ -48,7 +48,8 @@ void VlcSeekWidget::updateTime()
 	if (curMedia == NULL)
 		return;
 
-	if(libvlc_media_player_is_playing(_vlcCurrentMediaPlayer, _vlcException) == 1) {
+	libvlc_state_t state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
+	if(state != 0 && state != 6 && state != 7) {
 		qint64 fullTime = libvlc_media_player_get_length(_vlcCurrentMediaPlayer, _vlcException);
 		qint64 currentTime = libvlc_media_player_get_time(_vlcCurrentMediaPlayer, _vlcException);
 

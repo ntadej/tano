@@ -103,6 +103,7 @@ private:
 	QMenu *tray;
 	QActionGroup *ratioGroup;
 	QActionGroup *cropGroup;
+	QActionGroup *filterGroup;
 	QList<QAction*> actions;
 
 	QTime timeNow;

@@ -21,6 +21,10 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.menuSubtitles->clear();
 	ui.menuAudio_channel->clear();
 
+#ifdef TANO_DEINTERLACING
+	ui.menuDeinterlacing->setEnabled(false);
+#endif
+
 	settings = Common::settings();
 
 	backend = new VlcInstance(ui.videoWidget->getWinId(), settings->value("network","").toString());
@@ -220,6 +224,16 @@ void MainWindow::createConnections()
 	connect(ui.actionCrop5_4, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop5_4()));
 	connect(ui.actionCrop5_3, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop5_3()));
 
+#ifndef TANO_DEINTERLACING
+	connect(ui.actionFilterDisabled, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterDisabled()));
+	connect(ui.actionFilterDiscard, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterDiscard()));
+	connect(ui.actionFilterBlend, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterBlend()));
+	connect(ui.actionFilterMean, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterMean()));
+	connect(ui.actionFilterBob, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterBob()));
+	connect(ui.actionFilterLinear, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterLinear()));
+	connect(ui.actionFilterX, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterX()));
+#endif
+
 	connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
 	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 
@@ -250,6 +264,15 @@ void MainWindow::createMenus()
 	cropGroup->addAction(ui.actionCrop2_39_1);
 	cropGroup->addAction(ui.actionCrop5_4);
 	cropGroup->addAction(ui.actionCrop5_3);
+
+	filterGroup = new QActionGroup(this);
+	filterGroup->addAction(ui.actionFilterDisabled);
+	filterGroup->addAction(ui.actionFilterDiscard);
+	filterGroup->addAction(ui.actionFilterBlend);
+	filterGroup->addAction(ui.actionFilterMean);
+	filterGroup->addAction(ui.actionFilterBob);
+	filterGroup->addAction(ui.actionFilterLinear);
+	filterGroup->addAction(ui.actionFilterX);
 
 	right = new QMenu();
 	right->addAction(ui.actionPlay);

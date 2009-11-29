@@ -53,6 +53,14 @@ public slots:
 	void setCrop4_3();
 	void setCrop1_1();
 
+	void setFilterDisabled();
+	void setFilterDiscard();
+	void setFilterBlend();
+	void setFilterMean();
+	void setFilterBob();
+	void setFilterLinear();
+	void setFilterX();
+
 private slots:
 	void hideMouse();
 

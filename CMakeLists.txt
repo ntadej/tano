@@ -242,6 +242,8 @@ ADD_DEFINITIONS(-DTANO_VERSION="${TANO_VERSION}")
 ADD_DEFINITIONS(-DTANO_BUILD="${TANO_BUILD}")
 # Define Qt version
 ADD_DEFINITIONS(-DTANO_QT_VERSION="${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
+# Disable deinterlacing until stable VLC release
+ADD_DEFINITIONS(-DTANO_DEINTERLACING=0)
 
 ####################################
 # Include paths and set up targets #

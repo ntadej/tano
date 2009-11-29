@@ -232,3 +232,94 @@ void VlcVideoWidget::setCrop1_1()
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("1:1").toAscii().data(), _vlcException);
 	}
 }
+
+#ifdef TANO_DEINTERLACING
+void VlcVideoWidget::setFilterDisabled()
+{
+
+}
+void VlcVideoWidget::setFilterDiscard()
+{
+
+}
+void VlcVideoWidget::setFilterBlend()
+{
+
+}
+void VlcVideoWidget::setFilterMean()
+{
+
+}
+void VlcVideoWidget::setFilterBob()
+{
+
+}
+void VlcVideoWidget::setFilterLinear()
+{
+
+}
+void VlcVideoWidget::setFilterX()
+{
+
+}
+#else
+void VlcVideoWidget::setFilterDisabled()
+{
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 0,	QString("discard").toAscii().data(), _vlcException);
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 0,	QString("blend").toAscii().data(), _vlcException);
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 0,	QString("mean").toAscii().data(), _vlcException);
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 0,	QString("bob").toAscii().data(), _vlcException);
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 0,	QString("linear").toAscii().data(), _vlcException);
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 0,	QString("x").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setFilterDiscard()
+{
+	setFilterDisabled();
+
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 1,	QString("discard").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setFilterBlend()
+{
+	setFilterDisabled();
+
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 1,	QString("blend").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setFilterMean()
+{
+	setFilterDisabled();
+
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 1,	QString("mean").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setFilterBob()
+{
+	setFilterDisabled();
+
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 1,	QString("bob").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setFilterLinear()
+{
+	setFilterDisabled();
+
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 1,	QString("linear").toAscii().data(), _vlcException);
+	}
+}
+void VlcVideoWidget::setFilterX()
+{
+	setFilterDisabled();
+
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, 1,	QString("x").toAscii().data(), _vlcException);
+	}
+}
+#endif

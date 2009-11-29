@@ -63,6 +63,8 @@ void VlcInstance::openMedia(QString media)
     _vlcMedia = libvlc_media_new (_vlcInstance, media.toAscii(), _vlcException);
     checkException();
 
+    qDebug() << "Media:" << media;
+
     _vlcMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia, _vlcException);
     checkException();
 

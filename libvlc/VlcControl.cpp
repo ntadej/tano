@@ -44,6 +44,8 @@ void VlcControl::updateActions() {
 		return;
 	}
 
+	qDebug() << "Audio, Subtitles";
+
     if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
     	libvlc_track_description_t *desc = libvlc_audio_get_track_description(_vlcCurrentMediaPlayer, _vlcException);
     	audioMap.insert(tr("Disabled"), 0);
@@ -51,10 +53,19 @@ void VlcControl::updateActions() {
     	if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) > 1) {
     		for(int i = libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException); i > 1; i--) {
     			desc = desc->p_next;
+       			qDebug() << "Audio Candidate:" << i-1 << desc->i_id;
     	    	audioMap.insert(desc->psz_name, i-1);
     	    	audioList << new QAction(desc->psz_name, this);
     		}
     	}
+    } else {
+		audioList << new QAction(tr("Disabled"), this);
+		audioList.at(0)->setCheckable(true);
+		audioList.at(0)->setChecked(true);
+		audioList.at(0)->setEnabled(false);
+		emit vlcAction("audio", audioList);
+    	timer->start(300);
+    	return;
     }
 	VlcInstance::checkException();
 
@@ -76,6 +87,7 @@ void VlcControl::updateActions() {
        	if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException) > 1) {
        		for(int i = libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException); i > 1; i--) {
        			descs = descs->p_next;
+       			qDebug() << "Subtitle Candidate:" << i-1 << descs->i_id;
     	    	subMap.insert(descs->psz_name, i-1);
     	    	subList << new QAction(descs->psz_name, this);
        		}
@@ -101,7 +113,7 @@ void VlcControl::updateActions() {
 
     emit vlcAction("sub", subList);
 
-    timer->stop();
+	timer->start(5000);
 }
 
 void VlcControl::updateAudio()
@@ -120,7 +132,7 @@ void VlcControl::updateSub()
 
 void VlcControl::update()
 {
-	timer->start(500);
+	timer->start(1000);
 }
 
 void VlcControl::checkPlayingState()
