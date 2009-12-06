@@ -738,7 +738,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>EpgShow</name>
     <message>
-        <location filename="../build/ui_EpgShow.h" line="145"/>
+        <location filename="../build/ui_EpgShow.h" line="147"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
@@ -762,28 +762,19 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>InfoBar</name>
     <message>
-        <location filename="../build/ui_InfoBar.h" line="94"/>
-        <location filename="../ui/InfoBar.cpp" line="27"/>
-        <source>Playing:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../build/ui_InfoBar.h" line="95"/>
-        <location filename="../ui/InfoBar.cpp" line="28"/>
+        <location filename="../ui/InfoBar.cpp" line="55"/>
         <source>Language:</source>
-        <translation type="unfinished">Jezik:</translation>
+        <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../build/ui_InfoBar.h" line="96"/>
-        <location filename="../ui/InfoBar.cpp" line="34"/>
+        <location filename="../ui/InfoBar.cpp" line="61"/>
         <source>Now:</source>
-        <translation type="unfinished">Trenutno:</translation>
+        <translation>Trenutno:</translation>
     </message>
     <message>
-        <location filename="../build/ui_InfoBar.h" line="97"/>
-        <location filename="../ui/InfoBar.cpp" line="35"/>
+        <location filename="../ui/InfoBar.cpp" line="62"/>
         <source>Next:</source>
-        <translation type="unfinished">Naslednje:</translation>
+        <translation>Naslednje:</translation>
     </message>
 </context>
 <context>
@@ -1112,54 +1103,39 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="408"/>
-        <source>Language:</source>
-        <translation>Jezik:</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.cpp" line="443"/>
-        <source>Now:</source>
-        <translation>Trenutno:</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.cpp" line="443"/>
-        <source>Next:</source>
-        <translation>Naslednje:</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.cpp" line="499"/>
+        <location filename="../MainWindow.cpp" line="500"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="501"/>
+        <location filename="../MainWindow.cpp" line="502"/>
         <source>Tano TV Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="518"/>
+        <location filename="../MainWindow.cpp" line="519"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="538"/>
+        <location filename="../MainWindow.cpp" line="539"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="540"/>
+        <location filename="../MainWindow.cpp" line="541"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="552"/>
+        <location filename="../MainWindow.cpp" line="553"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="553"/>
+        <location filename="../MainWindow.cpp" line="554"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -1176,9 +1152,9 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../build/ui_MainWindow.h" line="693"/>
         <location filename="../MainWindow.cpp" line="69"/>
-        <location filename="../MainWindow.cpp" line="517"/>
-        <location filename="../MainWindow.cpp" line="578"/>
-        <location filename="../MainWindow.cpp" line="580"/>
+        <location filename="../MainWindow.cpp" line="518"/>
+        <location filename="../MainWindow.cpp" line="579"/>
+        <location filename="../MainWindow.cpp" line="581"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1223,49 +1199,42 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>Osd</name>
     <message>
-        <location filename="../build/ui_Osd.h" line="245"/>
-        <location filename="../ui/Osd.cpp" line="106"/>
-        <location filename="../ui/Osd.cpp" line="107"/>
-        <location filename="../ui/Osd.cpp" line="110"/>
-        <location filename="../ui/Osd.cpp" line="111"/>
+        <location filename="../build/ui_Osd.h" line="169"/>
+        <location filename="../ui/Osd.cpp" line="93"/>
+        <location filename="../ui/Osd.cpp" line="94"/>
+        <location filename="../ui/Osd.cpp" line="97"/>
+        <location filename="../ui/Osd.cpp" line="98"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../build/ui_Osd.h" line="248"/>
+        <location filename="../build/ui_Osd.h" line="172"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../build/ui_Osd.h" line="251"/>
+        <location filename="../build/ui_Osd.h" line="175"/>
         <source>Back</source>
         <translation>Nazaj</translation>
     </message>
     <message>
-        <location filename="../build/ui_Osd.h" line="254"/>
+        <location filename="../build/ui_Osd.h" line="178"/>
         <source>Next</source>
         <translation>Naslednji</translation>
     </message>
     <message>
-        <location filename="../build/ui_Osd.h" line="257"/>
+        <location filename="../build/ui_Osd.h" line="181"/>
         <source>Record Now</source>
         <translation>Snemaj takoj</translation>
     </message>
     <message>
-        <location filename="../build/ui_Osd.h" line="260"/>
+        <location filename="../build/ui_Osd.h" line="184"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../build/ui_Osd.h" line="238"/>
-        <location filename="../build/ui_Osd.h" line="240"/>
-        <location filename="../build/ui_Osd.h" line="242"/>
-        <source> | </source>
-        <translation> | </translation>
-    </message>
-    <message>
-        <location filename="../ui/Osd.cpp" line="101"/>
-        <location filename="../ui/Osd.cpp" line="102"/>
+        <location filename="../ui/Osd.cpp" line="88"/>
+        <location filename="../ui/Osd.cpp" line="89"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
@@ -1671,13 +1640,14 @@ Desno klikni za zaprtje.</translation>
     <message>
         <location filename="../libvlc/VlcInstance.cpp" line="150"/>
         <source>VLC Initialization</source>
-        <translation type="unfinished"></translation>
+        <translation>VLC Inicializacija</translation>
     </message>
     <message>
         <location filename="../libvlc/VlcInstance.cpp" line="151"/>
         <source>VLC could not be initialized successfully.
 Tano Player will now exit.</source>
-        <translation type="unfinished"></translation>
+        <translation>VLC ne more biti uspešno zagnan.
+Tano se bo sedaj zaprl.</translation>
     </message>
 </context>
 </TS>

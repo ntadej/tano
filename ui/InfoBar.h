@@ -2,6 +2,7 @@
 #define INFOBAR_H
 
 #include <QtGui/QWidget>
+#include <QTimer>
 
 #include "ui_InfoBar.h"
 
@@ -22,9 +23,14 @@ signals:
 	void open(QString);
 	void refresh();
 
+private slots:
+	void scroll();
+
 private:
     Ui::InfoBar ui;
 
+    QTimer *timer;
+    bool direction;
 };
 
 #endif // INFOBAR_H

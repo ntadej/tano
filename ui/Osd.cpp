@@ -17,8 +17,7 @@ Osd::Osd(QWidget *parent)
 	connect(ui.buttonNext, SIGNAL(clicked()), this, SIGNAL(next()));
 	connect(ui.buttonMute, SIGNAL(clicked()), this, SIGNAL(mute()));
 
-	connect(ui.labelNow, SIGNAL(linkActivated(QString)), this, SIGNAL(linkActivated(QString)));
-	connect(ui.labelNext, SIGNAL(linkActivated(QString)), this, SIGNAL(linkActivated(QString)));
+	connect(ui.infoBarWidget, SIGNAL(open(QString)), this, SIGNAL(linkActivated(QString)));
 }
 
 Osd::~Osd()
@@ -62,30 +61,18 @@ void Osd::setStatus(bool status)
 
 void Osd::setInfo(QString channel, QString language)
 {
-	if(!channel.isNull()) {
-		ui.widgetInfo->show();
-		ui.labelChannel->setText("<h3>"+channel+"</h3>");
-		ui.labelLanguage->setText("<h3>"+language+"</h3>");
-	} else {
-		ui.widgetInfo->hide();
-	}
+	if(!channel.isNull())
+		ui.infoBarWidget->setInfo(channel,language);
+	else
+		ui.infoBarWidget->clear();
 }
 
 void Osd::setEpg(bool status, QString now, QString next)
 {
-	if(status) {
-		ui.labelNow->show();
-		ui.labelNext->show();
-		ui.labelS2->show();
-		ui.labelS3->show();
-		ui.labelNow->setText("<h3>"+now+"</h3>");
-		ui.labelNext->setText("<h3>"+next+"</h3>");
-	} else {
-		ui.labelNow->hide();
-		ui.labelNext->hide();
-		ui.labelS2->hide();
-		ui.labelS3->hide();
-	}
+	if(status)
+		ui.infoBarWidget->setEpg(now, next);
+	else
+		ui.infoBarWidget->clear();
 }
 
 void Osd::disableRecorder()

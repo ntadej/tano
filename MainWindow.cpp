@@ -405,7 +405,7 @@ void MainWindow::play(QString itemFile, QString itemType)
 
 		if(osdEnabled) {
 			osd->setNumber(channel->num());
-			osd->setInfo(channel->name(), tr("Language:") + " " + channel->language());
+			osd->setInfo(channel->name(), channel->language());
 		}
 
 		epg->getEpg(channel->epg());
@@ -440,7 +440,7 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 			ui.infoBarWidget->setEpg(epgValue.at(0), epgValue.at(1));
 
 			if(osdEnabled)
-				osd->setEpg(true, tr("Now:") + " " + epgValue.at(0), tr("Next:") + " " + epgValue.at(1));
+				osd->setEpg(true, epgValue.at(0), epgValue.at(1));
 
 			break;
 		case 1:
@@ -481,6 +481,7 @@ void MainWindow::stop()
 	ui.epgToday_4->epgClear();
 	ui.epgToday_5->epgClear();
 	ui.videoWidget->setRatioOriginal();
+	ui.infoBarWidget->clear();
 	if(osdEnabled) {
 		osd->setInfo();
 		osd->setEpg(false);
