@@ -84,7 +84,6 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/About.ui
 	ui/EditPlaylist.ui
 	ui/EditSettings.ui
-	ui/EpgBrowser.ui
 	ui/EpgShow.ui
 	ui/InfoBar.ui
 	ui/MainWindow.ui
@@ -100,7 +99,6 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	control/ChannelSelect.h
 	control/Shortcuts.h
 	epg/Epg.h
-	epg/EpgBrowser.h
 	epg/EpgLoader.h
 	epg/EpgShow.h
 	epg/EpgToday.h
@@ -130,7 +128,6 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	control/ChannelSelect.cpp
 	control/Shortcuts.cpp
 	epg/Epg.cpp
-	epg/EpgBrowser.cpp
 	epg/EpgLoader.cpp
 	epg/EpgShow.cpp
 	epg/EpgToday.cpp
@@ -187,11 +184,10 @@ SET ( Tano_Translation_Bins
 ################
 # Qt4 settings #
 ###############
-# This line adds the QtXML, QtNETWORK and QtWEBKIT libraries to the Qt libraries
+# This line adds the QtXML and QtNETWORK libraries to the Qt libraries
 # loaded when linking Tano
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
-SET(QT_USE_QTWEBKIT True)
 
 # Add all resources to Tano_Resrcs (icons, html files etc.)
 #SET(Tano_Resrcs ui/mainwin.qrc) # not needed, all resources are loaded on-the-fly
@@ -312,7 +308,7 @@ INSTALL(FILES ${Tano_Translation_Bins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TA
 
 IF(MINGW)
 	# Install Qt libs
-	INSTALL( FILES ${QT_BIN_DIR}/QtCore4.dll ${QT_BIN_DIR}/QtGui4.dll ${QT_BIN_DIR}/QtNetwork4.dll ${QT_BIN_DIR}/QtWebkit4.dll ${QT_BIN_DIR}/QtXml4.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
+	INSTALL( FILES ${QT_BIN_DIR}/QtCore4.dll ${QT_BIN_DIR}/QtGui4.dll ${QT_BIN_DIR}/QtNetwork4.dll ${QT_BIN_DIR}/QtSvg4.dll ${QT_BIN_DIR}/QtXml4.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
 	INSTALL( FILES ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
 	    ${QT_PLUGINS_DIR}/imageformats/qmng4.dll
 	    ${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll
@@ -325,6 +321,6 @@ IF(MINGW)
 	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/libeay32.dll ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/ssleay32.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
 		
 	# Install mingwm10.dll
-	INSTALL( FILES ${MINGW_BIN_DIR}/mingwm10.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
+	#INSTALL( FILES ${MINGW_BIN_DIR}/mingwm10.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
 
 ENDIF(MINGW)

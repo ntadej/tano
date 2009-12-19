@@ -20,7 +20,6 @@
 #include "control/ChannelSelect.h"
 #include "control/Shortcuts.h"
 #include "epg/Epg.h"
-#include "epg/EpgBrowser.h"
 #include "epg/EpgShow.h"
 #include "recorder/Recorder.h"
 
@@ -52,7 +51,6 @@ private slots:
     void openFile();
     void openUrl();
     void showSettings();
-    void showBrowser();
 
     void showEpg(int id, QStringList epgValue, QString date);
 
@@ -92,7 +90,6 @@ private:
 
 	TrayIcon *trayIcon;
 	Epg *epg;
-	EpgBrowser *browser;
 	EpgShow *epgShow;
 	EditPlaylist *editor;
 

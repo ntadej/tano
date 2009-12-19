@@ -37,7 +37,6 @@ MainWindow::MainWindow(QWidget *parent)
 	update = new Updates();
 	handler = new TanoHandler(ui.playlistTree);
 	epg = new Epg();
-	browser = new EpgBrowser();
 	epgShow = new EpgShow();
 
 	createSettings();
@@ -166,7 +165,6 @@ void MainWindow::createConnections()
 	connect(ui.actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
 
 	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
-	connect(ui.actionSchedule, SIGNAL(triggered()), this, SLOT(showBrowser()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
 
 	connect(ui.actionPlay, SIGNAL(triggered()), backend, SLOT(pause()));
@@ -321,7 +319,6 @@ void MainWindow::createShortcuts()
 			<< ui.actionOpenFile
 			<< ui.actionOpenUrl
 			<< ui.actionOpen
-			<< ui.actionSchedule
 			<< ui.actionEditPlaylist
 			<< ui.actionSettings
 			<< ui.actionTop
@@ -562,11 +559,6 @@ void MainWindow::openUrl()
 
 
 //GUI
-void MainWindow::showBrowser()
-{
-	browser->open("http://www.siol.net/tv-spored.aspx");
-}
-
 void MainWindow::showSettings()
 {
     EditSettings s(this, shortcuts);

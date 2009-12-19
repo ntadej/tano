@@ -280,8 +280,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>0</width>
-     <height>0</height>
+     <width>800</width>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -292,7 +292,6 @@
     <addaction name="actionOpenUrl"/>
     <addaction name="actionOpen"/>
     <addaction name="separator"/>
-    <addaction name="actionSchedule"/>
     <addaction name="actionRecorder"/>
     <addaction name="separator"/>
     <addaction name="separator"/>
@@ -439,7 +438,6 @@
    </attribute>
    <addaction name="actionOpenToolbar"/>
    <addaction name="actionRecorder"/>
-   <addaction name="actionSchedule"/>
    <addaction name="actionEditPlaylist"/>
    <addaction name="actionSettings"/>
   </widget>
@@ -490,8 +488,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>295</width>
-          <height>456</height>
+          <width>265</width>
+          <height>418</height>
          </rect>
         </property>
         <attribute name="label">
@@ -523,8 +521,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>295</width>
-          <height>456</height>
+          <width>112</width>
+          <height>65</height>
          </rect>
         </property>
         <attribute name="label">
@@ -666,18 +664,6 @@
    </property>
    <property name="text">
     <string>Open &amp;File</string>
-   </property>
-  </action>
-  <action name="actionSchedule">
-   <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/schedule.png</normaloff>:/icons/images/schedule.png</iconset>
-   </property>
-   <property name="text">
-    <string>TV Schedule</string>
-   </property>
-   <property name="toolTip">
-    <string>TV Schedule</string>
    </property>
   </action>
   <action name="actionEditPlaylist">
