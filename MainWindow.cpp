@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.toolBarOsd->addWidget(ui.controlsWidget);
 	ui.menuSubtitles->clear();
 	ui.menuAudio_channel->clear();
-	this->statusBar()->hide();
+	//this->statusBar()->hide();
 
 #ifdef TANO_DEINTERLACING
 	ui.menuDeinterlacing->setEnabled(false);
@@ -64,7 +64,7 @@ MainWindow::~MainWindow()
 void MainWindow::exit()
 {
 	int ret;
-	if(record->isRecording()) {
+	if(ui.recorder->isRecording()) {
 		ret = QMessageBox::warning(this, tr("Tano"),
 								   tr("Do you want to exit Tano?\nThis will stop recording in progress."),
 								   QMessageBox::Close | QMessageBox::Cancel,
@@ -75,7 +75,7 @@ void MainWindow::exit()
 
 	switch (ret) {
 		case QMessageBox::Close:
-			record->stop();
+			ui.recorder->stop();
 			qApp->quit();
 			break;
 		case QMessageBox::Cancel:
@@ -132,11 +132,10 @@ void MainWindow::createSettings()
 	}
 	settings->endGroup();
 
-	record = new Recorder();
 	settings->beginGroup("Recorder");
 	if(settings->value("enabled",true).toBool() && Common::fripExists()) {
-		connect(ui.actionRecorder, SIGNAL(triggered()), record, SLOT(showRecorder()));
-		connect(ui.actionRecord, SIGNAL(triggered()), this, SLOT(recorder()));
+		connect(ui.actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
+		connect(ui.actionRecord, SIGNAL(triggered()), this, SLOT(recordNow()));
 	} else {
 		ui.buttonRecord->hide();
 		ui.menuMedia->removeAction(ui.actionRecord);
@@ -183,7 +182,7 @@ void MainWindow::createConnections()
 
 	connect(ui.playlistTree, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 	connect(select, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
-	connect(select, SIGNAL(error(QString, int)), this->statusBar(), SLOT(showMessage(QString, int)));
+	//connect(select, SIGNAL(error(QString, int)), this->statusBar(), SLOT(showMessage(QString, int)));
 
 	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(showNormal()));
 	connect(ui.actionRestore, SIGNAL(triggered()), this, SLOT(showNormal()));
@@ -497,10 +496,14 @@ void MainWindow::openPlaylist(bool start)
             QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
                                          QDir::homePath(),
                                          tr("Tano TV Channel list Files(*.tano *.xml)"));
-    	if (!fileName.isEmpty())
+    	if (!fileName.isEmpty()) {
     		editor->setFile(fileName);
+    	    ui.recorder->openPlaylist(true,fileName);
+    	}
+	} else {
+		fileName = Common::locateResource(defaultP);
+	    ui.recorder->openPlaylist(false,fileName);
 	}
-	else fileName = Common::locateResource(defaultP);
     if (fileName.isEmpty())
         return;
 
@@ -655,9 +658,22 @@ void MainWindow::createOsd()
 	connect(controller, SIGNAL(stateChanged(int)), osd, SLOT(playingState(int)));
 }
 
-void MainWindow::recorder()
+void MainWindow::recordNow()
 {
-	record->recordNow(ui.channelNumber->value(), channel->url(), channel->name());
+	ui.recorder->recordNow(ui.channelNumber->value(), channel->url(), channel->name());
+}
+
+void MainWindow::recorder(bool enabled)
+{
+	if(enabled) {
+		ui.stackedWidget->setCurrentIndex(1);
+		ui.playlistWidget->setVisible(false);
+		ui.toolBarOsd->setVisible(false);
+	} else {
+		ui.stackedWidget->setCurrentIndex(0);
+		ui.playlistWidget->setVisible(true);
+		ui.toolBarOsd->setVisible(true);
+	}
 }
 
 void MainWindow::processMenu(QString type, QList<QAction*> list)

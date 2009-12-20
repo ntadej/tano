@@ -14,7 +14,7 @@
 
 #include "ui_Recorder.h"
 
-class Recorder : public QMainWindow
+class Recorder : public QWidget
 {
     Q_OBJECT
 
@@ -24,21 +24,16 @@ public:
 
     bool isRecording();
 
-protected:
-	void closeEvent(QCloseEvent *event);
-
 public slots:
 	void stop();
-	void showRecorder();
-	void closeRecorder();
 	void recordNow(int nmb, QString url, QString name);
+	void openPlaylist(bool open, QString file);
 
 private slots:
 	void record(bool status);
 
 	void sec();
 
-	void openPlaylist();
 	void playlist(QTreeWidgetItem* clickedChannel);
 	void fileBrowse();
 
@@ -46,7 +41,6 @@ private:
     Ui::Recorder ui;
 
     bool recording;
-    bool start;
     Channel *channel;
 
 	TrayRecorder *trayIcon;

@@ -9,7 +9,7 @@
 #include "Recorder.h"
 
 Recorder::Recorder(QWidget *parent)
-    : QMainWindow(parent)
+    : QWidget(parent)
 {
 	slash = "/";
 
@@ -18,36 +18,22 @@ Recorder::Recorder(QWidget *parent)
 	handler = new TanoHandler(ui.playlistWidget);
 
 	//Init
-	start = true;
 	settings = Common::settings();
-
-	fileName = settings->value("playlist","playlists/siol-mpeg2.xml").toString();
 	settings->beginGroup("Recorder");
 	ui.fileEdit->setText(settings->value("dir",QDir::homePath()+"/Videos").toString());
 	settings->endGroup();
-	openPlaylist();
-	start = false;
 
 	recording = false;
 
 	tray = new QMenu();
-	tray->addAction(ui.actionRestore);
-	tray->addSeparator();
-	tray->addAction(ui.actionClose);
-
 	trayIcon = new TrayRecorder(tray);
+
 	frip = new QProcess(this);
 	fripPath = Common::frip();
 
     timer = new QTimer(this);
 
     connect(timer, SIGNAL(timeout()), this, SLOT(sec()));
-
-	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(showNormal()));
-	connect(ui.actionRestore, SIGNAL(triggered()), this, SLOT(showNormal()));
-
-	connect(ui.actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
-	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(closeRecorder()));
 
 	connect(ui.buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
 	connect(ui.buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
@@ -65,62 +51,15 @@ void Recorder::stop()
 	frip->terminate();
 }
 
-void Recorder::closeEvent(QCloseEvent *event)
-{
-	QStringList arg;
-	arg << "close";
-    if (trayIcon->isVisible()) {
-    	trayIcon->message(arg);
-        hide();
-        event->ignore();
-    }
-}
-
-void Recorder::showRecorder()
-{
-	settings->beginGroup("Recorder");
-	ui.fileEdit->setText(settings->value("dir",QDir::homePath()+"/Videos").toString());
-	settings->endGroup();
-	this->show();
-	trayIcon->show();
-}
-
-void Recorder::closeRecorder()
-{
-	int ret;
-	if(recording) {
-		ret = QMessageBox::warning(this, tr("Recorder"),
-								   tr("Do you want to close Recorder?\nThis will stop any recording in progress."),
-								   QMessageBox::Close | QMessageBox::Cancel,
-								   QMessageBox::Close);
-	} else {
-		ret = QMessageBox::Close;
-	}
-
-	switch (ret) {
-		case QMessageBox::Close:
-			this->hide();
-			trayIcon->hide();
-			ui.buttonRecord->setChecked(false);
-			break;
-		case QMessageBox::Cancel:
-			break;
-		default:
-			break;
-	}
-}
-
-void Recorder::openPlaylist()
+void Recorder::openPlaylist(bool open, QString file)
 {
 	handler->clear();
 
-	if (start != true) {
-    	fileName =
-            QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
-                                         QDir::homePath(),
-                                         tr("Tano TV Channel list Files(*.tano *.xml)"));
-	}
-	else fileName = Common::locateResource(fileName);
+	if(!open)
+		fileName = Common::locateResource(file);
+	else
+		fileName = file;
+
     if (fileName.isEmpty())
         return;
 
@@ -130,18 +69,16 @@ void Recorder::openPlaylist()
     reader.setContentHandler(handler);
     reader.setErrorHandler(handler);
 
-    QFile file(fileName);
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+    QFile fileOpen(fileName);
+    if (!fileOpen.open(QFile::ReadOnly | QFile::Text)) {
         QMessageBox::warning(this, tr("Recorder"),
                              tr("Cannot read file %1:\n%2.")
                              .arg(fileName)
-                             .arg(file.errorString()));
+                             .arg(fileOpen.errorString()));
         return;
     }
-    QXmlInputSource xmlInputSource(&file);
-    if (reader.parse(xmlInputSource))
-        statusBar()->showMessage(tr("File loaded"), 2000);
-
+    QXmlInputSource xmlInputSource(&fileOpen);
+    reader.parse(xmlInputSource);
 }
 
 void Recorder::playlist(QTreeWidgetItem* clickedChannel)
@@ -215,6 +152,7 @@ void Recorder::record(bool status)
 
 		frip->start(fripPath, arguments);
 
+		trayIcon->show();
 		trayIcon->changeToolTip(channel->name());
 
 		timer->start(1000);
@@ -228,7 +166,7 @@ void Recorder::record(bool status)
 		ui.buttonRecord->setText(tr("Stop recording"));
 		ui.actionRecord->setText(tr("Stop recording"));
 
-		tray->insertAction(ui.actionRestore, ui.actionRecord);
+		//tray->insertAction(ui.actionRecord);
 
 		QStringList arg;
 		arg << "record" << channel->name() << fileName;
@@ -248,9 +186,8 @@ void Recorder::record(bool status)
 		ui.buttonRecord->setText(tr("Record"));
 		ui.actionRecord->setText(tr("Record"));
 
-		tray->removeAction(ui.actionRecord);
-
 		trayIcon->changeToolTip("stop");
+		trayIcon->hide();
 
 		recording = false;
 	}

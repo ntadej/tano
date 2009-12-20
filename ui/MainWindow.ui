@@ -18,15 +18,38 @@
     <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <property name="styleSheet">
-    <string>background-color: rgb(0, 0, 0);</string>
-   </property>
-   <layout class="QVBoxLayout" name="centralLayout">
-    <property name="margin">
-     <number>0</number>
-    </property>
+   <layout class="QVBoxLayout" name="verticalLayout_10">
     <item>
-     <widget class="VlcVideoWidget" name="videoWidget" native="true"/>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="pageMain">
+       <property name="styleSheet">
+        <string>background-color: rgb(0, 0, 0);</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_12">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="VlcVideoWidget" name="videoWidget" native="true"/>
+        </item>
+       </layout>
+       <zorder>videoWidget</zorder>
+       <zorder>videoWidget</zorder>
+      </widget>
+      <widget class="QWidget" name="pageRecorder">
+       <layout class="QVBoxLayout" name="verticalLayout_11">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="Recorder" name="recorder" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </item>
     <item>
      <widget class="QWidget" name="controlsWidget" native="true">
@@ -274,6 +297,9 @@
      </widget>
     </item>
    </layout>
+   <zorder>controlsWidget</zorder>
+   <zorder>stackedWidget</zorder>
+   <zorder>stackedWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -473,7 +499,7 @@
       <widget class="QToolBox" name="channelToolBox">
        <property name="minimumSize">
         <size>
-         <width>275</width>
+         <width>300</width>
          <height>0</height>
         </size>
        </property>
@@ -488,7 +514,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>265</width>
+          <width>290</width>
           <height>418</height>
          </rect>
         </property>
@@ -521,8 +547,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>112</width>
-          <height>65</height>
+          <width>290</width>
+          <height>418</height>
          </rect>
         </property>
         <attribute name="label">
@@ -846,6 +872,9 @@
    </property>
   </action>
   <action name="actionRecorder">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="images.qrc">
      <normaloff>:/icons/images/recorder.png</normaloff>:/icons/images/recorder.png</iconset>
@@ -1096,6 +1125,12 @@
    <header>ui/InfoBar.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>Recorder</class>
+   <extends>QWidget</extends>
+   <header>recorder/Recorder.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <resources>
   <include location="images.qrc"/>
@@ -1108,8 +1143,8 @@
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>328</x>
-     <y>511</y>
+     <x>342</x>
+     <y>561</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
@@ -1124,8 +1159,8 @@
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>284</x>
-     <y>511</y>
+     <x>298</x>
+     <y>561</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
@@ -1140,8 +1175,8 @@
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>240</x>
-     <y>511</y>
+     <x>254</x>
+     <y>561</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
@@ -1156,8 +1191,8 @@
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>196</x>
-     <y>511</y>
+     <x>210</x>
+     <y>561</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
@@ -1172,8 +1207,8 @@
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>152</x>
-     <y>511</y>
+     <x>166</x>
+     <y>561</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>
@@ -1188,8 +1223,8 @@
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>108</x>
-     <y>511</y>
+     <x>122</x>
+     <y>561</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>

@@ -21,7 +21,6 @@
 #include "control/Shortcuts.h"
 #include "epg/Epg.h"
 #include "epg/EpgShow.h"
-#include "recorder/Recorder.h"
 
 class MainWindow : public QMainWindow
 {
@@ -63,7 +62,8 @@ private slots:
     void top();
     void lite();
 
-    void recorder();
+    void recordNow();
+    void recorder(bool enabled);
     void volumeControl(bool type);
     void processMenu(QString type, QList<QAction*> list);
 
@@ -78,7 +78,6 @@ private:
     VlcControl *controller;
 
     Updates *update;
-    Recorder *record;
     Osd *osd;
     QSettings *settings;
 

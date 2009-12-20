@@ -6,7 +6,7 @@ TrayRecorder::TrayRecorder(QMenu *menu)
 {
 	QResource::registerResource("images.qrc");
 
-	this->setContextMenu(menu);
+	//this->setContextMenu(menu);
 	this->setIcon(QIcon(":/icons/images/record.png"));
 	this->setToolTip(tr("Tano Recorder"));
 
@@ -39,16 +39,14 @@ void TrayRecorder::eRestore()
 
 void TrayRecorder::message(QStringList arg)
 {
-	if (arg.at(0) == "close")
-		this->showMessage(tr("Still running"), tr("Tano Recorder is still running/recording.\nRight click to close."), QSystemTrayIcon::Information, 10000);
-	else if (arg.at(0) == "record")
+	if (arg.at(0) == "record")
 		this->showMessage(tr("Recording"), tr("Tano Recorder is recording %1 to\n%2.").arg(arg.at(1), arg.at(2)), QSystemTrayIcon::Information, 10000);
 }
 
 void TrayRecorder::changeToolTip(QString text)
 {
 	if (text != "stop")
-		this->setToolTip(tr("Tano Recorder") + " - " + tr("Currently recording:") + " " + text);
+		this->setToolTip(tr("Tano") + " - " + tr("Currently recording:") + " " + text);
 	else
-		this->setToolTip(tr("Tano Recorder"));
+		this->setToolTip(tr("Tano"));
 }
