@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1000</width>
     <height>600</height>
    </rect>
   </property>
@@ -36,8 +36,6 @@
          <widget class="VlcVideoWidget" name="videoWidget" native="true"/>
         </item>
        </layout>
-       <zorder>videoWidget</zorder>
-       <zorder>videoWidget</zorder>
       </widget>
       <widget class="QWidget" name="pageRecorder">
        <layout class="QVBoxLayout" name="verticalLayout_11">
@@ -299,14 +297,13 @@
    </layout>
    <zorder>controlsWidget</zorder>
    <zorder>stackedWidget</zorder>
-   <zorder>stackedWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1000</width>
      <height>27</height>
     </rect>
    </property>
@@ -317,9 +314,6 @@
     <addaction name="actionOpenFile"/>
     <addaction name="actionOpenUrl"/>
     <addaction name="actionOpen"/>
-    <addaction name="separator"/>
-    <addaction name="actionRecorder"/>
-    <addaction name="separator"/>
     <addaction name="separator"/>
     <addaction name="actionClose"/>
    </widget>
@@ -353,7 +347,6 @@
       <property name="title">
        <string>Audio channel</string>
       </property>
-      <addaction name="action"/>
      </widget>
      <addaction name="actionMute"/>
      <addaction name="actionVolumeUp"/>
@@ -400,7 +393,6 @@
       <property name="title">
        <string>Subtitles</string>
       </property>
-      <addaction name="action"/>
      </widget>
      <widget class="QMenu" name="menuDeinterlacing">
       <property name="title">
@@ -437,9 +429,17 @@
     <addaction name="separator"/>
     <addaction name="actionChannel_info"/>
    </widget>
+   <widget class="QMenu" name="menuRecorder">
+    <property name="title">
+     <string>Recorder</string>
+    </property>
+    <addaction name="actionRecorder"/>
+    <addaction name="actionTimers"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
    <addaction name="menuMedia"/>
+   <addaction name="menuRecorder"/>
    <addaction name="menuOptions"/>
    <addaction name="menuAbout"/>
   </widget>
@@ -464,6 +464,7 @@
    </attribute>
    <addaction name="actionOpenToolbar"/>
    <addaction name="actionRecorder"/>
+   <addaction name="actionTimers"/>
    <addaction name="actionEditPlaylist"/>
    <addaction name="actionSettings"/>
   </widget>
@@ -499,7 +500,7 @@
       <widget class="QToolBox" name="channelToolBox">
        <property name="minimumSize">
         <size>
-         <width>300</width>
+         <width>350</width>
          <height>0</height>
         </size>
        </property>
@@ -514,7 +515,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>290</width>
+          <width>340</width>
           <height>418</height>
          </rect>
         </property>
@@ -547,7 +548,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>290</width>
+          <width>340</width>
           <height>418</height>
          </rect>
         </property>
@@ -569,7 +570,7 @@
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
-              <widget class="EpgToday" name="epgToday" native="true"/>
+              <widget class="EpgList" name="epgToday" native="true"/>
              </item>
             </layout>
            </widget>
@@ -579,7 +580,7 @@
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
-              <widget class="EpgToday" name="epgToday_2" native="true"/>
+              <widget class="EpgList" name="epgToday_2" native="true"/>
              </item>
             </layout>
            </widget>
@@ -589,7 +590,7 @@
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <item>
-              <widget class="EpgToday" name="epgToday_3" native="true"/>
+              <widget class="EpgList" name="epgToday_3" native="true"/>
              </item>
             </layout>
            </widget>
@@ -599,7 +600,7 @@
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_8">
              <item>
-              <widget class="EpgToday" name="epgToday_4" native="true"/>
+              <widget class="EpgList" name="epgToday_4" native="true"/>
              </item>
             </layout>
            </widget>
@@ -609,7 +610,7 @@
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_9">
              <item>
-              <widget class="EpgToday" name="epgToday_5" native="true"/>
+              <widget class="EpgList" name="epgToday_5" native="true"/>
              </item>
             </layout>
            </widget>
@@ -1026,14 +1027,6 @@
     <string>1:1</string>
    </property>
   </action>
-  <action name="action">
-   <property name="text">
-    <string/>
-   </property>
-   <property name="toolTip">
-    <string/>
-   </property>
-  </action>
   <action name="actionFilterDisabled">
    <property name="checkable">
     <bool>true</bool>
@@ -1093,6 +1086,15 @@
     <string>Discard</string>
    </property>
   </action>
+  <action name="actionTimers">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/icons/images/clock.png</normaloff>:/icons/images/clock.png</iconset>
+   </property>
+   <property name="text">
+    <string>Timers</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -1105,12 +1107,6 @@
    <class>VlcSeekWidget</class>
    <extends>QWidget</extends>
    <header>libvlc/VlcSeekWidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>EpgToday</class>
-   <extends>QWidget</extends>
-   <header>epg/EpgToday.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -1129,6 +1125,12 @@
    <class>Recorder</class>
    <extends>QWidget</extends>
    <header>recorder/Recorder.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>EpgList</class>
+   <extends>QWidget</extends>
+   <header>epg/EpgList.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

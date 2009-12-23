@@ -11,8 +11,6 @@ EpgShow::EpgShow(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	QResource::registerResource("../ui/images.qrc");
-
 	loader = new EpgLoader();
 	http = new QHttp(this);
 

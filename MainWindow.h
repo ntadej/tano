@@ -21,6 +21,7 @@
 #include "control/Shortcuts.h"
 #include "epg/Epg.h"
 #include "epg/EpgShow.h"
+#include "recorder/Timers.h"
 
 class MainWindow : public QMainWindow
 {
@@ -106,6 +107,8 @@ private:
 	QTime timeNow;
 
 	QErrorMessage *errorHandler;
+
+	Timers *timers;
 
 	bool isLite;
 	bool osdEnabled;

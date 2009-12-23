@@ -1,17 +1,20 @@
-#ifndef EPGTODAY_H
-#define EPGTODAY_H
+#ifndef EPGLIST_H
+#define EPGLIST_H
 
 #include <QTableWidget>
 #include <QMap>
+#include <QMenu>
+#include <QAction>
+#include <QMouseEvent>
 #include "../channels/ChannelEpg.h"
 
-class EpgToday : public QTableWidget
+class EpgList : public QTableWidget
 {
     Q_OBJECT
 
 public:
-    EpgToday(QWidget *parent = 0);
-    ~EpgToday();
+    EpgList(QWidget *parent = 0);
+    ~EpgList();
 
     void epgClear();
 
@@ -20,6 +23,9 @@ public slots:
 
 signals:
 	void urlClicked(QString);
+
+protected:
+	void mouseReleaseEvent(QMouseEvent *event);
 
 private slots:
 	void processEpg();
@@ -30,6 +36,10 @@ private:
     ChannelEpg *newEpg;
     QTableWidgetItem *newItem;
     QMap<QTableWidgetItem*, ChannelEpg*> map;
+
+    QMenu *rightMenu;
+    QAction *info;
+    QAction *record;
 };
 
-#endif // EPGTODAY_H
+#endif // EPGLIST_H

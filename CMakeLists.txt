@@ -89,6 +89,7 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/MainWindow.ui
 	ui/Osd.ui
 	ui/Recorder.ui
+	ui/Timers.ui
 )
 
 # Define the MOC source files used by Tano
@@ -99,9 +100,9 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	control/ChannelSelect.h
 	control/Shortcuts.h
 	epg/Epg.h
+	epg/EpgList.h
 	epg/EpgLoader.h
 	epg/EpgShow.h
-	epg/EpgToday.h
 	lib/QtKeySequenceEdit.h
 	libvlc/VlcControl.h	
 	libvlc/VlcInstance.h
@@ -109,6 +110,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
     libvlc/VlcVideoWidget.h
 	libvlc/VlcVolumeSlider.h
 	recorder/Recorder.h
+	recorder/Timers.h
 	ui/About.h
 	ui/EditSettings.h
 	ui/FirstRun.h
@@ -128,9 +130,9 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	control/ChannelSelect.cpp
 	control/Shortcuts.cpp
 	epg/Epg.cpp
+	epg/EpgList.cpp
 	epg/EpgLoader.cpp
 	epg/EpgShow.cpp
-	epg/EpgToday.cpp
 	lib/QtKeySequenceEdit.cpp
 	libvlc/VlcControl.cpp
 	libvlc/VlcInstance.cpp
@@ -138,6 +140,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	libvlc/VlcVideoWidget.cpp
 	libvlc/VlcVolumeSlider.cpp
 	recorder/Recorder.cpp
+	recorder/Timers.cpp
 	ui/About.cpp
 	ui/EditSettings.cpp
 	ui/FirstRun.cpp

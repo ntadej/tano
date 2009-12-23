@@ -39,6 +39,8 @@ MainWindow::MainWindow(QWidget *parent)
 	epg = new Epg();
 	epgShow = new EpgShow();
 
+	timers = new Timers();
+
 	createSettings();
 
 	createMenus();
@@ -165,6 +167,7 @@ void MainWindow::createConnections()
 
 	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
 	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
+	connect(ui.actionTimers, SIGNAL(triggered()), timers, SLOT(show()));
 
 	connect(ui.actionPlay, SIGNAL(triggered()), backend, SLOT(pause()));
 	connect(ui.actionStop, SIGNAL(triggered()), backend, SLOT(stop()));

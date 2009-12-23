@@ -2,9 +2,9 @@
 #include <QTableWidget>
 #include <QDebug>
 
-#include "EpgToday.h"
+#include "EpgList.h"
 
-EpgToday::EpgToday(QWidget *parent)
+EpgList::EpgList(QWidget *parent)
     : QTableWidget(parent)
 {
 	this->setColumnCount(1);
@@ -13,15 +13,32 @@ EpgToday::EpgToday(QWidget *parent)
 
 	epgClear();
 
-	connect(this, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(epgClicked(QTableWidgetItem*)));
+	rightMenu = new QMenu();
+
+	info = new QAction(QIcon(":/icons/images/schedule.png"), tr("Show information"), this);
+	record = new QAction(QIcon(":/icons/images/record.png"), tr("Record"), this);
+	rightMenu->addAction(info);
+	rightMenu->addAction(record);
+
+//    connect(info, SIGNAL(triggered()), this, SLOT(open()));
 }
 
-EpgToday::~EpgToday()
+EpgList::~EpgList()
 {
 
 }
 
-void EpgToday::setEpg(QStringList epg) {
+void EpgList::mouseReleaseEvent(QMouseEvent *event)
+{
+	if(event->button() == Qt::RightButton) {
+		event->ignore();
+		rightMenu->exec(event->globalPos());
+	} else {
+		epgClicked(currentItem());
+	}
+}
+
+void EpgList::setEpg(QStringList epg) {
 	epgList.empty();
 	epgList = epg;
 	this->clear();
@@ -30,7 +47,7 @@ void EpgToday::setEpg(QStringList epg) {
 	processEpg();
 }
 
-void EpgToday::epgClear() {
+void EpgList::epgClear() {
 	this->clear();
 	this->setRowCount(0);
 	QStringList epgHeader;
@@ -38,7 +55,7 @@ void EpgToday::epgClear() {
 	this->setHorizontalHeaderLabels(epgHeader);
 }
 
-void EpgToday::processEpg() {
+void EpgList::processEpg() {
 	QStringList epgHeader;
 	epgHeader << epgList.at(0);
 	this->setHorizontalHeaderLabels(epgHeader);
@@ -54,7 +71,7 @@ void EpgToday::processEpg() {
 	}
 }
 
-void EpgToday::epgClicked(QTableWidgetItem *item) {
+void EpgList::epgClicked(QTableWidgetItem *item) {
 	ChannelEpg *newEpg = map[item];
 	emit urlClicked(newEpg->url());
 }
