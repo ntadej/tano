@@ -61,7 +61,7 @@ void Epg::epgSet(QStringList list)
 
 	epgSetFull(list);
 
-	if(step < 4) {
+	if(step < 3) {
 		step++;
 		getEpg(epgChannel);
 	} else

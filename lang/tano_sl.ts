@@ -681,17 +681,17 @@ Izgubil boš vse neshranjene spremembe.</translation>
     <message>
         <location filename="../epg/EpgList.cpp" line="18"/>
         <source>Show information</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaži podrobnosti</translation>
     </message>
     <message>
         <location filename="../epg/EpgList.cpp" line="19"/>
         <source>Record</source>
-        <translation type="unfinished">Snemaj</translation>
+        <translation>Snemaj</translation>
     </message>
     <message>
         <location filename="../epg/EpgList.cpp" line="54"/>
         <source>No EPG</source>
-        <translation type="unfinished">Ni EPG vsebin</translation>
+        <translation>Ni EPG vsebin</translation>
     </message>
 </context>
 <context>
@@ -991,7 +991,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
     <message>
         <location filename="../build/ui_MainWindow.h" line="778"/>
         <source>Timers</source>
-        <translation type="unfinished"></translation>
+        <translation>Timerji</translation>
     </message>
     <message>
         <location filename="../build/ui_MainWindow.h" line="779"/>
@@ -1407,42 +1407,42 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../build/ui_Timers.h" line="117"/>
         <source>Timers</source>
-        <translation type="unfinished"></translation>
+        <translation>Timerji</translation>
     </message>
     <message>
         <location filename="../build/ui_Timers.h" line="118"/>
         <source>New Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo opravilo</translation>
     </message>
     <message>
         <location filename="../build/ui_Timers.h" line="119"/>
         <source>Delete Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Izbriši opravilo</translation>
     </message>
     <message>
         <location filename="../build/ui_Timers.h" line="121"/>
         <source>Channel</source>
-        <translation type="unfinished">Program</translation>
+        <translation>Program</translation>
     </message>
     <message>
         <location filename="../build/ui_Timers.h" line="123"/>
         <source>Start time</source>
-        <translation type="unfinished"></translation>
+        <translation>Začetni čas</translation>
     </message>
     <message>
         <location filename="../build/ui_Timers.h" line="125"/>
         <source>End time</source>
-        <translation type="unfinished"></translation>
+        <translation>Končni čas</translation>
     </message>
     <message>
         <location filename="../build/ui_Timers.h" line="127"/>
         <source>From EPG?</source>
-        <translation type="unfinished"></translation>
+        <translation>Z EPG?</translation>
     </message>
     <message>
         <location filename="../build/ui_Timers.h" line="128"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1561,12 +1561,12 @@ Desno klikni za izhod.</translation>
 <context>
     <name>VlcInstance</name>
     <message>
-        <location filename="../libvlc/VlcInstance.cpp" line="150"/>
+        <location filename="../libvlc/VlcInstance.cpp" line="153"/>
         <source>VLC Initialization</source>
         <translation>VLC Inicializacija</translation>
     </message>
     <message>
-        <location filename="../libvlc/VlcInstance.cpp" line="151"/>
+        <location filename="../libvlc/VlcInstance.cpp" line="154"/>
         <source>VLC could not be initialized successfully.
 Tano Player will now exit.</source>
         <translation>VLC ne more biti uspešno zagnan.

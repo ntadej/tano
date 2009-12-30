@@ -458,10 +458,10 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 			ui.epgTabWidget->setTabText(3,date);
 			ui.epgToday_4->setEpg(epgValue);
 			break;
-		case 5:
+		/*case 5:
 			ui.epgTabWidget->setTabText(4,date);
 			ui.epgToday_5->setEpg(epgValue);
-			break;
+			break;*/
 		default:
 			break;
 	}

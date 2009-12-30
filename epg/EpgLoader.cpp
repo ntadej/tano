@@ -124,6 +124,8 @@ void EpgLoader::epgPrint()
 	epgValue.replace("tv-spored.aspx", "http://www.siol.net/tv-spored.aspx");
 	epgValue.replace(";: ",";");
 	epgValue.replace(".2009: ", ".2009:;");
+	epgValue.replace(".2010: ", ".2010:;");
+	epgValue.replace(".2011: ", ".2011:;");
 	epgValue.replace(" (ogled): ","");
 	epgValue.replace(" (ogled)","");
 	epgValue.remove(epgValue.size()-1,1);
@@ -131,6 +133,7 @@ void EpgLoader::epgPrint()
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
 
 	epgList = epgValue.split(";");
+
 	emit epgDone(epgList);
 }
 

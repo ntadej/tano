@@ -49,6 +49,9 @@ void VlcInstance::init()
 		vlcArgs[argsVlc] = "--miface-addr";
 		vlcArgs[argsVlc+1] = _networkInterface.toUtf8().data();
 		qDebug() << "Using network interface:" << vlcArgs[argsVlc+1];
+	} else {
+		vlcArgs[argsVlc] = "";
+		vlcArgs[argsVlc+1] = "";
 	}
 
 	libvlc_exception_init(_vlcException);
