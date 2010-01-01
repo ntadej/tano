@@ -1,0 +1,1035 @@
+#EXTM3U
+#EXTNAME:T-2 Polna shema
+
+#EXTINF:1,SLO 1
+#EXTTV:T-2 TV programi;slovenski;SLO1
+udp://@239.1.1.115:5000
+
+#EXTINF:2,SLO 2
+#EXTTV:T-2 TV programi;slovenski;SLO2
+udp://@239.1.1.116:5000
+
+#EXTINF:3,SLO 3
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.11:5000
+
+#EXTINF:4,POP TV
+#EXTTV:T-2 TV programi;slovenski;POPTV
+udp://@239.1.1.9:5000
+
+#EXTINF:5,KANAL A
+#EXTTV:T-2 TV programi;slovenski;AKANAL
+udp://@239.1.1.8:5000
+
+#EXTINF:6,TV3
+#EXTTV:T-2 TV programi;slovenski;TV3
+udp://@239.1.1.7:5000
+
+#EXTINF:7,HBO
+#EXTTV:T-2 TV programi;angleški - podnaslovljen;HBO
+udp://@239.1.1.151:5000
+
+#EXTINF:8,HBO COMEDY
+#EXTTV:T-2 TV programi;angleški - podnaslovljen;HBOC
+udp://@239.1.1.154:5000
+
+#EXTINF:9,TV 1000
+#EXTTV:T-2 TV programi;angleški - podnaslovljen;TV1000
+udp://@239.1.1.29:5000
+
+#EXTINF:10,HALLMARK
+#EXTTV:T-2 TV programi;angleški - podnaslovljen;HALLMARK
+udp://@239.1.1.104:5000
+
+#EXTINF:11,HRT1
+#EXTTV:T-2 TV programi;hrvaški;HRT1
+udp://@239.1.1.74:5000
+
+#EXTINF:12,HRT2
+#EXTTV:T-2 TV programi;hrvaški;HRT2
+udp://@239.1.1.75:5000
+
+#EXTINF:13,EUROSPORT
+#EXTTV:T-2 TV programi;angleški;EUROSPORT
+udp://@239.1.1.63:5000
+
+#EXTINF:14,DSF
+#EXTTV:T-2 TV programi;nemški;DSF
+udp://@239.1.1.57:5000
+
+#EXTINF:15,ŠPORT TV 1
+#EXTTV:T-2 TV programi;slovenski;SPORTKLUB
+udp://@239.1.1.26:5000
+
+#EXTINF:16,ŠPORT TV 2
+#EXTTV:T-2 TV programi;slovenski;SPORTKLUB2
+udp://@239.1.1.38:5000
+
+#EXTINF:17,INFO TV
+#EXTTV:T-2 TV programi;slovenski;INFO TV
+udp://@239.1.1.10:5000
+
+#EXTINF:18,RTL HRVAŠKA
+#EXTTV:T-2 TV programi;hrvaški;RTL
+udp://239.1.1.1:5000
+
+#EXTINF:19,NOVA TV
+#EXTTV:T-2 TV programi;hrvaški;NOVA TV
+udp://239.1.1.2:5000
+
+#EXTINF:20,CNN
+#EXTTV:T-2 TV programi;angleški;CNN
+udp://@239.1.1.50:5000
+
+#EXTINF:21,BBC WORLD
+#EXTTV:T-2 TV programi;angleški;BBCWORLD
+udp://@239.1.1.40:5000
+
+#EXTINF:22,DISCOVERY CHANNEL
+#EXTTV:T-2 TV programi;angleški - podnaslovljen;DISCOVERY
+udp://@239.1.1.53:5000
+
+#EXTINF:23,DISCOVERY SCIENCE
+#EXTTV:T-2 TV programi;angleški;DISCSCI
+udp://@239.1.1.55:5000
+
+#EXTINF:24,NATIONAL GEOGRAPHIC
+#EXTTV:T-2 TV programi;angleški - podnaslovljen;NATGEO
+udp://@239.1.1.85:5000
+
+#EXTINF:25,EXPLORER
+#EXTTV:T-2 TV programi;angleški - podnaslovljen;EXPLORER
+udp://239.1.1.133:5000
+
+#EXTINF:26,VIASAT HISTORY
+#EXTTV:T-2 TV programi;angleški - podnaslovljen;HISTORY
+udp://239.1.1.146:5000
+
+#EXTINF:27,ANIMAL PLANET
+#EXTTV:T-2 TV programi;angleški - podnaslovljen;ANIMAL
+udp://@239.1.1.34:5000
+
+#EXTINF:28,TIJI
+#EXTTV:T-2 TV programi;francoski;TIJI
+udp://@239.1.1.122:5000
+
+#EXTINF:29,JETIX
+#EXTTV:T-2 TV programi;angleški;JETIX
+udp://@239.1.1.76:5000
+
+#EXTINF:30,KIKA
+#EXTTV:T-2 TV programi;nemški;KIKA
+udp://@239.1.1.78:5000
+
+#EXTINF:31,MTV ADRIA
+#EXTTV:T-2 TV programi;slovenski, hrvaški, srbski, angleški;MTV
+udp://@239.1.1.6:5000
+
+#EXTINF:32,BOOMERANG
+#EXTTV:T-2 TV programi;angleški;BOOMERANG
+udp://@239.1.1.189:5000
+
+#EXTINF:33,BABY TV
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.37:5000
+
+#EXTINF:34,MTV2
+#EXTTV:T-2 TV programi;angleški;MTV2
+udp://@239.1.1.162:5000
+
+#EXTINF:35,VIVA
+#EXTTV:T-2 TV programi;nemški;VIVA
+udp://@239.1.1.132:5000
+
+#EXTINF:36,MTV HITS
+#EXTTV:T-2 TV programi;angleški;MTVH
+udp://@239.1.1.160:5000
+
+#EXTINF:37,VH1
+#EXTTV:T-2 TV programi;angleški;VH1
+udp://@239.1.1.129:5000
+
+#EXTINF:38,MTV DANCE
+#EXTTV:T-2 TV programi;angleški;MTVDANCE
+udp://@239.1.1.159:5000
+
+#EXTINF:39,VH1 CLASSIC
+#EXTTV:T-2 TV programi;angleški;VH1CLA
+udp://@239.1.1.130:5000
+
+#EXTINF:40,MCM TOP
+#EXTTV:T-2 TV programi;francoski;MCM
+udp://239.1.1.91:5000
+
+#EXTINF:41,MEZZO
+#EXTTV:T-2 TV programi;francoski;MEZZO
+udp://@239.1.1.81:5000
+
+#EXTINF:42,TRACE TV
+#EXTTV:T-2 TV programi;francoski;TRACE
+udp://@239.1.1.124:5000
+
+#EXTINF:43,ČARLI TV
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.155:5000
+
+#EXTINF:44,CMC
+#EXTTV:T-2 TV programi;hrvaški;CMC
+udp://@239.255.0.160:5002
+
+#EXTINF:45,TV PETELIN
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.157:5000
+
+#EXTINF:46,GOLICA TV
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.156:5000
+
+#EXTINF:47,DISCOVERY T & L
+#EXTTV:T-2 TV programi;angleški;DISCTL
+udp://@239.1.1.56:5000
+
+#EXTINF:48,DISCOVERY WORLD
+#EXTTV:T-2 TV programi;angleški;DISCCI
+udp://@239.1.1.54:5000
+
+#EXTINF:49,NATIONAL GEOGRAPHIC WILD
+#EXTTV:T-2 TV programi;angleški ;NATGEOW
+udp://@239.1.1.31:5000
+
+#EXTINF:50,ANIMAUX
+#EXTTV:T-2 TV programi;angleški;ANIMAUX
+udp://@239.1.1.35:5000
+
+#EXTINF:51,TRAVEL
+#EXTTV:T-2 TV programi;angleški;TRAVEL
+udp://@239.1.1.125:5000
+
+#EXTINF:52,CHASSE
+#EXTTV:T-2 TV programi;francoski;NI
+udp://@239.1.1.47:5000
+
+#EXTINF:53,ZONE REALITY
+#EXTTV:T-2 TV programi;angleški;REALITY
+udp://@239.1.1.100:5000
+
+#EXTINF:54,ŠPORT KLUB +
+#EXTTV:T-2 TV programi;slovenski;SPORTKLUB+
+udp://@239.1.1.171:5000
+
+#EXTINF:55,ŠPORT KLUB SLOVENIJA
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.172:5000
+
+#EXTINF:56,EUROSPORT 2
+#EXTTV:T-2 TV programi;angleški;EUROSPORT2
+udp://@239.1.1.64:5000
+
+#EXTINF:57,DSF
+#EXTTV:T-2 TV programi;nemški;DSF
+udp://@239.1.1.57:5000
+
+#EXTINF:58,EXTREME
+#EXTTV:T-2 TV programi;angleški, francoski, nemški;EXTREME
+udp://@239.1.1.67:5000
+
+#EXTINF:59,ESPN CLASSIC
+#EXTTV:T-2 TV programi;angleški;ESPN
+udp://@239.1.1.61:5000
+
+#EXTINF:60,BBC PRIME
+#EXTTV:T-2 TV programi;angleški;BBCPRIME
+udp://@239.1.1.39:5000
+
+#EXTINF:61,FOX LIFE
+#EXTTV:T-2 TV programi;angleški - podnaslovljen ;FOXLIFE
+udp://239.1.1.138:5000
+
+#EXTINF:62,FOX CRIME
+#EXTTV:T-2 TV programi;angleški - podnaslovljen ;FOXCRIME
+udp://239.1.1.139:5000
+
+#EXTINF:63,CARTOON NETWORK / TCM
+#EXTTV:T-2 TV programi;angleški;CARTOON
+udp://@239.1.1.60:5000
+
+#EXTINF:64,3SAT
+#EXTTV:T-2 TV programi;nemški;3SAT
+udp://@239.1.1.30:5000
+
+#EXTINF:65,RTL
+#EXTTV:T-2 TV programi;nemški;RTL
+udp://@239.1.1.108:5000
+
+#EXTINF:66,RTL II
+#EXTTV:T-2 TV programi;nemški;RTL2
+udp://@239.1.1.109:5000
+
+#EXTINF:67,SUPER RTL
+#EXTTV:T-2 TV programi;nemški;SUPERRTL
+udp://@239.1.1.118:5000
+
+#EXTINF:68,VOX
+#EXTTV:T-2 TV programi;nemški;VOX
+udp://@239.1.1.134:5000
+
+#EXTINF:69,PRO 7
+#EXTTV:T-2 TV programi;nemški;PRO7
+udp://@239.1.1.96:5000
+
+#EXTINF:70,KABEL 1
+#EXTTV:T-2 TV programi;nemški;KABEL1
+udp://@239.1.1.77:5000
+
+#EXTINF:71,SAT 1
+#EXTTV:T-2 TV programi;nemški;SAT1
+udp://@239.1.1.112:5000
+
+#EXTINF:72,PLANETA TV
+#EXTTV:T-2 TV programi;ruski;PLANETATV
+udp://@239.1.1.150:5000
+
+#EXTINF:73,KIKA
+#EXTTV:T-2 TV programi;nemški;KIKA
+udp://@239.1.1.78:5000
+
+#EXTINF:74,BOOMERANG
+#EXTTV:T-2 TV programi;angleški;BOOMERANG
+udp://@239.1.1.189:5000
+
+#EXTINF:75,BABY TV
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.37:5000
+
+#EXTINF:76,PINK PLUS
+#EXTTV:T-2 TV programi;srbski;PINK
+udp://@239.1.1.93:5000
+
+#EXTINF:77,ROMANTICA
+#EXTTV:T-2 TV programi;španski;ROMANTICA
+udp://@239.1.1.105:5000
+
+#EXTINF:78,FASHION TV
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.68:5000
+
+#EXTINF:79,ZONE CLUB
+#EXTTV:T-2 TV programi;angleški, nemški;CLUB
+udp://@239.1.1.48:5000
+
+#EXTINF:80,VESTI
+#EXTTV:T-2 TV programi;ruski;NI
+udp://@239.1.1.195:5000
+
+#EXTINF:81,ORF 1
+#EXTTV:T-2 TV programi;nemški;ORF1
+udp://@239.1.1.89:5000
+
+#EXTINF:82,ORF 2
+#EXTTV:T-2 TV programi;nemški;ORF2
+udp://@239.1.1.90:5000
+
+#EXTINF:83,ARD
+#EXTTV:T-2 TV programi;nemški;ARD
+udp://@239.1.1.52:5000
+
+#EXTINF:84,ZDF
+#EXTTV:T-2 TV programi;nemški;ZDF
+udp://@239.1.1.137:5000
+
+#EXTINF:85,RAI 1
+#EXTTV:T-2 TV programi;italijanski;RAI1
+udp://@239.1.1.97:5000
+
+#EXTINF:86,RAI 2
+#EXTTV:T-2 TV programi;italijanski;RAI2
+udp://@239.1.1.98:5000
+
+#EXTINF:87,RAI 3
+#EXTTV:T-2 TV programi;italijanski;RAI3
+udp://@239.1.1.99:5000
+
+#EXTINF:88,RTS
+#EXTTV:T-2 TV programi;srbski;RTS
+udp://@239.1.1.110:5000
+
+#EXTINF:89,RTCG
+#EXTTV:T-2 TV programi;srbski;RTCG
+udp://@239.1.1.106:5000
+
+#EXTINF:90,RTK
+#EXTTV:T-2 TV programi;albanski;NI
+udp://@239.1.1.107:5000
+
+#EXTINF:91,MKTV
+#EXTTV:T-2 TV programi;makedonski;NI
+udp://@239.1.1.79:5000
+
+#EXTINF:92,TVE
+#EXTTV:T-2 TV programi;španski;TVE
+udp://@239.1.1.128:5000
+
+#EXTINF:93,N 24
+#EXTTV:T-2 TV programi;nemški;NI
+udp://@239.1.1.141:5000
+
+#EXTINF:94,HAYAT
+#EXTTV:T-2 TV programi;bosanski;HAYAT
+udp://@239.1.1.72:5000
+
+#EXTINF:95,INFO TV
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.10:5000
+
+#EXTINF:96,SKY NEWS
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.165:5000
+
+#EXTINF:97,EWTN
+#EXTTV:T-2 TV programi;angleški;EWTN
+udp://@239.1.1.65:5000
+
+#EXTINF:98,TV5
+#EXTTV:T-2 TV programi;francoski;TV5
+udp://@239.1.1.126:5000
+
+#EXTINF:99,EURONEWS
+#EXTTV:T-2 TV programi;angleški ;NI
+udp://@239.1.1.62:5000
+
+#EXTINF:100,CNN
+#EXTTV:T-2 TV programi;angleški;CNN
+udp://@239.1.1.50:5000
+
+#EXTINF:101,24 HORAS
+#EXTTV:T-2 TV programi;španski;24HORAS
+udp://@239.1.1.45:5000
+
+#EXTINF:102,TV PIKA
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.127:5000
+
+#EXTINF:103,TV PAPRIKA
+#EXTTV:T-2 TV programi;slovenski;PAPRIKA
+udp://@239.1.1.12:5000
+
+#EXTINF:104,RTS MARIBOR
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.23:5000
+
+#EXTINF:105,NET TV
+#EXTTV:T-2 TV programi;slovenski;NET
+udp://@239.1.1.20:5000
+
+#EXTINF:106,SPONKA TV
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.19:5000
+
+#EXTINF:107,TV KOPER CAPODISTRIA
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.200:5000
+
+#EXTINF:108,TV PRIMORKA
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.16:5000
+
+#EXTINF:109,VAŠ KANAL
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.32:5000
+
+#EXTINF:110,TELE M
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.14:5000
+
+#EXTINF:111,VITEL
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.3:5000
+
+#EXTINF:112,SIP TV
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.24:5000
+
+#EXTINF:113,TV AS
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.21:5000
+
+#EXTINF:114,KANAL 10
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.17:5000
+
+#EXTINF:115,VTV
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.15:5000
+
+#EXTINF:116,N24
+#EXTTV:T-2 TV programi;nemški;NI
+udp://@239.1.1.141:5000
+
+#EXTINF:117,FREE X TV
+#EXTTV:T-2 TV programi;angleški;FREEX
+udp://@239.1.1.167:5000
+
+#EXTINF:118,FREE X TV 2
+#EXTTV:T-2 TV programi;angleški;FREEX2
+udp://@239.1.1.169:5000
+
+#EXTINF:119,SPICE PLATINUM
+#EXTTV:T-2 TV programi;angleški;SPICE
+udp://@239.1.1.117:5000
+
+#EXTINF:120,HUSTLER TV
+#EXTTV:T-2 TV programi;angleški;HUSTLER
+udp://@239.1.1.95:5000
+
+#EXTINF:121,X DREAM TV
+#EXTTV:T-2 TV programi;angleški;XDREAM
+udp://@239.1.1.168:5000
+
+#EXTINF:122,SCT
+#EXTTV:T-2 TV programi;italijanski;NI
+udp://@239.1.1.149:5000
+
+#EXTINF:123,MELODY ZEN - HD
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.152:5000
+
+#EXTINF:124,LUXE TV - HD
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.185:5000
+
+#EXTINF:125,DISCOVERY - HD
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.142:5000
+
+#EXTINF:126,INFO TV - HD
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.143:5000
+
+#EXTINF:127,PLAY TV - HD
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.147:5000
+
+#EXTINF:128,OBN
+#EXTTV:T-2 TV programi;srbski;NI
+udp://@239.1.1.88:5000
+
+#EXTINF:129,ALSAT
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.33:5000
+
+#EXTINF:130,RTV SHQIPTAR
+#EXTTV:T-2 TV programi;albanski;NI
+udp://@239.1.1.80:5000
+
+#EXTINF:131,DUNA 1
+#EXTTV:T-2 TV programi;madžarski;NI
+udp://@239.1.1.58:5000
+
+#EXTINF:132,DUNA 2
+#EXTTV:T-2 TV programi;madžarski;NI
+udp://@239.1.1.27:5000
+
+#EXTINF:133,MAGYAR TV 2
+#EXTTV:T-2 TV programi;madžarski;NI
+udp://@239.1.1.84:5000
+
+#EXTINF:134,TV POLONIA
+#EXTTV:T-2 TV programi;poljski;NI
+udp://@239.1.1.166:5000
+
+#EXTINF:135,BALKANIKA MUSIC TV
+#EXTTV:T-2 TV programi;srbski,hrvaški,bolgarski;NI
+udp://@239.1.1.197:5000
+
+#EXTINF:136,DUGA TV
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.199:5000
+
+#EXTINF:137,TV NOVELAS EUROPE
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.120:5000
+
+#EXTINF:138,CANALE 5
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.144:5000
+
+#EXTINF:139,ITALIA 1
+#EXTTV:T-2 TV programi;italijanski;NI
+udp://@239.1.1.123:5000
+
+#EXTINF:140,RETE 4
+#EXTTV:T-2 TV programi;italijanski;NI
+udp://@239.1.1.145:5000
+
+#EXTINF:141,DM SAT TELEVIZIJA
+#EXTTV:T-2 TV programi;srbski;NI
+udp://@239.1.1.198:5000
+
+#EXTINF:142,SVET PLUS TV
+#EXTTV:T-2 TV programi;srbski;NI
+udp://@239.1.1.71:5000
+
+#EXTINF:143,VIKOM
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.87:5000
+
+#EXTINF:144,NEZAVISNA TELEVIZIJA
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.163:5000
+
+#EXTINF:145,RTV ATLAS
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.66:5000
+
+#EXTINF:146,BNTV
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.101:5000
+
+#EXTINF:147,TELE 5
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.140:5000
+
+#EXTINF:148,TW 1
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.131:5000
+
+#EXTINF:149,AB MOTEURS
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.82:5000
+
+#EXTINF:150,FR 2
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.69:5000
+
+#EXTINF:151,FR 3
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.70:5000
+
+#EXTINF:152,NASN
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.196:5000
+
+#EXTINF:153,RUSSIA TODAY
+#EXTTV:T-2 TV programi;ruski;NI
+udp://@239.1.1.192:5000
+
+#EXTINF:154,SAILING CHANNEL
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.111:5000
+
+#EXTINF:155,SMILE OF A CHILD TV
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.28:5000
+
+#EXTINF:156,SUPREME MASTER TV
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.113:5000
+
+#EXTINF:157,DW-TV
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.49:5000
+
+#EXTINF:158,CNBC
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.102:5000
+
+#EXTINF:159,EUROPE BY SATELLITE
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.59:5000
+
+#EXTINF:160,FOX NEWS
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.164:5000
+
+#EXTINF:161,MOTORS TV
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.83:5000
+
+#EXTINF:162,TV LJUBLJANA
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.25:5000
+
+#EXTINF:163,TV ORON
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.36:5000
+
+#EXTINF:164,AL JAZEERA ENGLISH
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.153:5000
+
+#EXTINF:165,BLOOMBERG EU
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.43:5000
+
+#EXTINF:166,CCTV-9
+#EXTTV:T-2 TV programi;kitajski;NI
+udp://@239.1.1.161:5000
+
+#EXTINF:167,TV MARIBOR
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.4:5000
+
+#EXTINF:168,PLAY TV
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.253:5000
+
+#EXTINF:169,ATM KRANJSKA GORA
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.18:5000
+
+#EXTINF:170,MEDIA TV
+#EXTTV:T-2 TV programi;slovenski;NI
+udp://@239.1.1.5:5000
+
+#EXTINF:171,R KANAL+
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.22:5000
+
+#EXTINF:172,MELOS TV
+#EXTTV:T-2 TV programi;jezik;NI
+udp://239.1.1.148:5000
+
+#EXTINF:173,SKLEDAR TV
+#EXTTV:T-2 TV programi;jezik;NI
+udp://239.1.1.103:5000
+
+#EXTINF:174,KLIK TV
+#EXTTV:T-2 TV programi;jezik;NI
+udp://239.1.1.248:5000
+
+#EXTINF:175,CARTOON NETWORK 24 HOURS
+#EXTTV:T-2 TV programi;angleški;NI
+udp://239.1.1.46:5000
+
+#EXTINF:176,MELODY ZEN
+#EXTTV:T-2 TV programi;angleški;NI
+udp://@239.1.1.183:5000
+
+#EXTINF:177,DA VINCI LEARNING
+#EXTTV:T-2 TV programi;nemški;NI
+udp://239.1.1.158:5000
+
+#EXTINF:178,ARTE - HD
+#EXTTV:T-2 TV programi;jezik;NI
+udp://239.1.1.202:5000
+
+#EXTINF:179,HISTORY - HD
+#EXTTV:T-2 TV programi;angleški;NI
+udp://239.1.1.136:5000
+
+#EXTINF:180,MAGYAR TV 2 - HD
+#EXTTV:T-2 TV programi;madžarski;NI
+udp://239.1.1.201:5000
+
+#EXTINF:181,MGM
+#EXTTV:T-2 TV programi;angleški;NI
+udp://239.1.1.204:5000
+
+#EXTINF:182,ANIXE - HD
+#EXTTV:T-2 TV programi;jezik;NI
+udp://@239.1.1.182:5000
+
+#EXTINF:183,ORF - HD
+#EXTTV:T-2 TV programi;nemški;NI
+udp://@239.1.1.194:5000
+
+#EXTINF:200,ALPSKI VAL
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://stream.estrela.si:8000/
+
+#EXTINF:201,KOROŠKI RADIO
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://shoutcast.netsi.net:8300/
+
+#EXTINF:202,RADIO ENA
+#EXTTV:T-2 RADIO programi;slovenski;NI
+mms://live.radio1.si/radio1
+
+#EXTINF:203,RADIO ANTENA
+#EXTTV:T-2 RADIO programi;slovenski;NI
+mms://live.radio1.si/antena
+
+#EXTINF:204,RADIO BELVI
+#EXTTV:T-2 RADIO programi;slovenski;NI
+mms://live.infonetmedia.si/Belvi
+
+#EXTINF:205,RADIO CAPRIS
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://194.165.104.23:8020/
+
+#EXTINF:206,RADIO CELJE
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://shoutcast.netsi.net:9025/
+
+#EXTINF:207,RADIO CELJSKI VAL
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://arisa.onair.si:8002/
+
+#EXTINF:208,RADIO CITY
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://213.161.22.13:9000/racity.ogg
+
+#EXTINF:209,RADIO DUR
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://91.185.196.3:8000/
+
+#EXTINF:210,RADIO FANTASY
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://shoutcast.netsi.net:8220/
+
+#EXTINF:211,RADIO GROM
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://93.103.0.67:8022
+
+#EXTINF:212,RADIO HIT
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://live.radiohit.si:9560/
+
+#EXTINF:213,RADIO KRANJ
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://radio-kranj.si:8000/radio_kranj.ogg
+
+#EXTINF:214,RADIO KUM
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://shoutcast.netsi.net:9035/
+
+#EXTINF:215,RADIO MARS
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://164.8.14.62:8000/
+
+#EXTINF:216,RADIO MAXI
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://shoutcast.netsi.net:9015/
+
+#EXTINF:217,RADIO NET
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://213.161.22.14:9000/radionet.ogg
+
+#EXTINF:218,RADIO ODMEV
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://odmev.radio-odmev.net:8000/hiq
+
+#EXTINF:219,RADIO OGNJIŠČE
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://real.ognjisce.si:8000/ognjisce.aac
+
+#EXTINF:220,RADIO PLUS
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://213.161.22.12:9000/raplus.ogg
+
+#EXTINF:221,RADIO ROBIN
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://194.165.104.23:8024/
+
+#EXTINF:222,RADIO ROGLA
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://213.250.2.96:8010
+
+#EXTINF:223,RADIO SIOL
+#EXTTV:T-2 RADIO programi;slovenski;NI
+mms://wmedia.siol.net/radio
+
+#EXTINF:224,RADIO SORA
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://www.radio-sora.si:8000/radio_sora.ogg
+
+#EXTINF:225,RADIO SRAKA
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://194.165.104.23:8006/
+
+#EXTINF:226,RADIO ŠTUDENT
+#EXTTV:T-2 RADIO programi;slovenski;NI
+http://kruljo.radiostudent.si:8000/hiq
+
+#EXTINF:227,RADIO TARTINI
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://194.165.104.23:8012/
+
+#EXTINF:228,RADIO PTUJ
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://stream.radio-ptuj.si:8000/
+
+#EXTINF:229,RADIO TRIGLAV
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://www.radiotriglav.si:8000/
+
+#EXTINF:230,RADIO VIVA
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://shoutcast.netsi.net:9075/
+
+#EXTINF:231,RADIO ZELENI VAL
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://www.zelenival.com:8000/
+
+#EXTINF:232,ŠTAJERSKI VAL
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://arisa.onair.si:8004/
+
+#EXTINF:233,RADIO VUKOVAR
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://wms.iskon.hr/Hrvatski%20radio%20Vukovar
+
+#EXTINF:234,RADIO ZADAR
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://88.191.61.246:8050/
+
+#EXTINF:235,PLAVI RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://217.14.208.58/plavi9
+
+#EXTINF:236,PRIMORSKI RADIO HR
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://213.147.116.138:8000/
+
+#EXTINF:237,RADIO DUBROVNIK
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://radiodubrovnik.ath.cx:8000/
+
+#EXTINF:238,RADIO OGULIN
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://s6.viastreaming.net:7370/
+
+#EXTINF:239,HRVATSKI DRUGI RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://195.29.5.140/hr2
+
+#EXTINF:240,RADIO ROVINJ
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://server-017.com:8002/
+
+#EXTINF:241,RADIO ŠIBENIK
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://38.96.148.19:9510/
+
+#EXTINF:242,SLAVONSKI RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://wms.iskon.hr/Slavonski%20radio%20Osijek
+
+#EXTINF:243,RADIO B92
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://xs3.b92.net:7999/radio-b92.ogg
+
+#EXTINF:244,RADIO TRI
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://195.178.44.140/radiotri1
+
+#EXTINF:245,RADIO TOP BEOGRAD
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://beotelmedia.beotel.net/topfm
+
+#EXTINF:246,DISCO RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://live.wm.p1.str3.com/discord
+
+#EXTINF:247,HIT RADIO O3 AUSTRIA
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://v7C202059D4D5FAgcsj2w07739FA61.proxitv.speednet.at/WSX/oe3_live
+
+#EXTINF:248,RADIO SALZBURG
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://streaming.conova.com/ORF_Salzburg_Live
+
+#EXTINF:249,RADIO VORARLBERG
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://qtss.fh-vorarlberg.ac.at:8000/radiovbg_32
+
+#EXTINF:250,ATLANTIC RADIO 80S
+#EXTTV:T-2 RADIO programi;jezik;NI
+rtsp://ysj00ms01s0.aliant.net/80sTimeMachine
+
+#EXTINF:251,GOLDEN RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://87.117.203.226:8008
+
+#EXTINF:252,DANCE RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://netshow.play.cz:8000/danceradio128.ogg
+
+#EXTINF:253,POWER HIT RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://mms.skynet.lt/PHR128
+
+#EXTINF:254,ENERGY 98 DANCE HITS
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://207.200.96.226:8004
+
+#EXTINF:255,BLUE RADIO BERLIN
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://sc1.netstreamer.net:9712
+
+#EXTINF:256,PLANET ROCK
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://mediasrv-the.musicradio.com/PlanetRock
+
+#EXTINF:257,RADIO SYMPHONY
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://giga2.radiostreamlive.com/radiosymphony_48
+
+#EXTINF:258,OLDIES RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://cdn-four.977music.com/oldies64
+
+#EXTINF:259,ITALIA 101
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://94.23.194.126/goto101
+
+#EXTINF:260,N-JOY
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://193.108.24.6:8000/njoy.ogg
+
+#EXTINF:261,COUNTRY RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://netshow6.play.cz/country128
+
+#EXTINF:262,NASHVILLE FM
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://breedband.nashvillefm.nl:8060/
+
+#EXTINF:263,SUPER COUNTRY RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://energy10.egihosting.com:80/737381
+
+#EXTINF:264,METAL EXPRESS RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://ic237.c527.fast-serv.com:80/MetalExpressRadio.ogg
+
+#EXTINF:265,SKY RADIO
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://streamer.sotovik.ee:8500/skyradio_hi.ogg
+
+#EXTINF:266,OTTO FM
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://ottofm.emmequadro.net:8000
+
+#EXTINF:267,BEST OF 80S
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://scfire-dtc-aa02.stream.aol.com:80/stream/1013
+
+#EXTINF:268,LONESTAR
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://208.85.240.2:8304
+
+#EXTINF:269,CLASSIC 80S
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://vipnrj.yacast.net/nostalgie_webradio01
+
+#EXTINF:270,ROCK LEGENDS
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://vipnrj.yacast.net/nostalgie_webradio02
+
+#EXTINF:271,RADIO KRITI GRČIJA
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://62.1.1.141/radiokriti
+
+#EXTINF:272,RADIO NOVA BOLGARIJA
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://80.72.68.217:8000/nova.ogg
+
+#EXTINF:273,RADIO AUSTRALIA
+#EXTTV:T-2 RADIO programi;jezik;NI
+mms://media3.abc.net.au/raelp
+
+#EXTINF:274,MAXXIMA LIVE
+#EXTTV:T-2 RADIO programi;jezik;NI
+http://maxxima.mine.nu:8000/
+

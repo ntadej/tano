@@ -44,6 +44,17 @@
       <property name="animated">
        <bool>true</bool>
       </property>
+      <attribute name="headerDefaultSectionSize">
+       <number>29</number>
+      </attribute>
+      <attribute name="headerDefaultSectionSize">
+       <number>29</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string notr="true">#</string>
+       </property>
+      </column>
       <column>
        <property name="text">
         <string>Channel</string>
@@ -62,6 +73,11 @@
       <column>
        <property name="text">
         <string>URL</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Categories (separated with ',')</string>
        </property>
       </column>
      </widget>
@@ -100,7 +116,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuChannel_List">

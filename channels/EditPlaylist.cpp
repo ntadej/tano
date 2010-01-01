@@ -27,11 +27,11 @@ EditPlaylist::EditPlaylist(QWidget *parent, QString fileName)
 	connect(ui.actionAdd, SIGNAL(triggered()), this, SLOT(menuOpen()));
 	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 
-	ui.playlist->header()->setResizeMode(QHeaderView::Stretch);
+	ui.playlist->header()->setResizeMode(QHeaderView::ResizeToContents);
 
 	treeStyle();
 
-	load = new TanoHandler(ui.playlist, true);
+	load = new M3UHandler(ui.playlist, true);
 
 	fileN = fileName;
 
@@ -119,7 +119,7 @@ void EditPlaylist::save()
 	fileName =
 		QFileDialog::getSaveFileName(this, tr("Save Channel list"),
 									QDir::homePath(),
-									tr("Tano TV Channel list Files (*.tano *.xml)"));
+									tr("Tano TV Channel list Files (*.m3u)"));
 	if (fileName.isEmpty())
 		return;
 
@@ -132,7 +132,7 @@ void EditPlaylist::save()
 		return;
 	}
 
-	generator = new TanoGenerator(ui.editName->text(), ui.playlist);
+	generator = new M3UGenerator(ui.editName->text(), ui.playlist);
 	generator->write(&file);
 }
 
@@ -140,10 +140,6 @@ void EditPlaylist::open()
 {
 	load->clear();
 	ui.playlist->clear();
-
-	QXmlSimpleReader reader;
-	reader.setContentHandler(load);
-	reader.setErrorHandler(load);
 
 	QFile file(fileN);
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
@@ -153,8 +149,7 @@ void EditPlaylist::open()
 							.arg(file.errorString()));
 		return;
 	}
-	QXmlInputSource xmlInputSource(&file);
-	reader.parse(xmlInputSource);
+	load->processFile(fileN);
 
 	ui.editName->setText(load->getName());
 	setWindowTitle(load->getName());

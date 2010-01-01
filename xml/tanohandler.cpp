@@ -113,23 +113,26 @@ bool TanoHandler::endElement(const QString & /* namespaceURI */,
         		item->setText(0, channel->numToString() + ". " + currentText);
         	else
         		item->setText(0, currentText);
+
+        	if(!channel->isCategory())
+        		item->setText(1,channel->numToString());
             channel->setName(currentText);
             map.insert(item, channel);
         }
     } else if (qName == "epg") {
         if (item && channel) {
             channel->setEpg(currentText);
-            if(edit) item->setText(2, currentText);
+            if(edit) item->setText(3, currentText);
         }
     } else if (qName == "language") {
         if (item && channel) {
         	channel->setLanguage(currentText);
-        	if(edit) item->setText(1, currentText);
+        	if(edit) item->setText(2, currentText);
         }
     } else if (qName == "url") {
     	if (item && channel) {
     		channel->setUrl(currentText);
-    		if(edit) item->setText(3, currentText);
+    		if(edit) item->setText(4, currentText);
     	}
     } else if (qName == "category" || qName == "channel") {
         item = item->parent();

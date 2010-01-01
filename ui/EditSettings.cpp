@@ -90,13 +90,13 @@ void EditSettings::ok()
 	settings->setValue("session",ui.checkSession->isChecked());
 
 	if(ui.radioSiol2->isChecked()) {
-		settings->setValue("playlist","playlists/siol-mpeg2.xml");
+		settings->setValue("playlist","playlists/siol-mpeg2.m3u");
 	} else if(ui.radioSiol4->isChecked()) {
-		settings->setValue("playlist","playlists/siol-mpeg4.xml");
+		settings->setValue("playlist","playlists/siol-mpeg4.m3u");
 	} else if(ui.radioT2->isChecked()) {
-		settings->setValue("playlist","playlists/t-2-cat.xml");
+		settings->setValue("playlist","playlists/t-2-cat.m3u");
 	} else if(ui.radioT2full->isChecked()) {
-			settings->setValue("playlist","playlists/t-2-full.xml");
+			settings->setValue("playlist","playlists/t-2-full.m3u");
 	} else {
 		settings->setValue("playlist",ui.pEdit->text());
 	}
@@ -184,13 +184,13 @@ void EditSettings::read()
 	ui.checkUpdates->setChecked(settings->value("updates",true).toBool());
 	ui.checkSession->setChecked(settings->value("session",true).toBool());
 
-	if(settings->value("playlist","playlists/siol-mpeg2.xml").toString() == "playlists/siol-mpeg2.xml")
+	if(settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/siol-mpeg2.m3u")
 		ui.radioSiol2->setChecked(true);
-	else if(settings->value("playlist","playlists/siol-mpeg2.xml").toString() == "playlists/siol-mpeg4.xml")
+	else if(settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/siol-mpeg4.m3u")
 		ui.radioSiol4->setChecked(true);
-	else if(settings->value("playlist","playlists/siol-mpeg2.xml").toString() == "playlists/t-2-cat.xml")
+	else if(settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2-cat.m3u")
 		ui.radioT2->setChecked(true);
-	else if(settings->value("playlist","playlists/siol-mpeg2.xml").toString() == "playlists/t-2-full.xml")
+	else if(settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2-full.m3u")
 			ui.radioT2full->setChecked(true);
 	else {
 		ui.radioBrowse->setChecked(true);
@@ -276,7 +276,7 @@ void EditSettings::playlistBrowse()
 {
 	QString dfile = QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
 												QDir::homePath(),
-												tr("Tano TV Channel list Files(*.tano *.xml)"));
+												tr("Tano TV Channel list Files(*.m3u)"));
 	ui.pEdit->setText(dfile);
 }
 

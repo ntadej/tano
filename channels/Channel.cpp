@@ -26,6 +26,9 @@ void Channel::setLanguage(QString xmlLanguage) {
 void Channel::setUrl(QString xmlUrl) {
 	_url = xmlUrl;
 }
+void Channel::setCategoryList(QStringList xmlCategoryList) {
+	_categoryList = xmlCategoryList;
+}
 
 int Channel::num()
 {
@@ -40,19 +43,18 @@ QString Channel::numToString()
 QString Channel::name() {
 	return _name;
 }
-
 bool Channel::isCategory() {
 	return category;
 }
-
 QString Channel::language() {
 	return _lang;
 }
-
 QString Channel::url() {
 	return _url;
 }
-
 QString Channel::epg() {
 	return _epg;
+}
+QStringList Channel::categoryList() {
+	return _categoryList;
 }

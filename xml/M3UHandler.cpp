@@ -48,6 +48,7 @@ void M3UHandler::processList()
 {
 	QString tmp;
 	QStringList tmpList;
+	QStringList tmpCList;
 
 	if(!m3uLineList.at(0).contains("#EXTM3U"))
 		return;
@@ -68,7 +69,8 @@ void M3UHandler::processList()
 			item->setData(0, Qt::UserRole, "channel");
 			item->setFlags(item->flags() | Qt::ItemIsEditable);
 			item->setIcon(0, channelIcon);
-			item->setText(0, tmpList.at(1));
+			item->setText(0, tmpList.at(0));
+			item->setText(1, tmpList.at(1));
 			channel = createChannel(tmpList.at(1), tmpList.at(0).toInt(), false);
 
 			map.insert(item, channel);
@@ -79,14 +81,18 @@ void M3UHandler::processList()
 			tmpList = tmp.split(";");
 
 			if(tmpList.size()!=0) {
+				tmpCList = tmpList.at(0).split(",");
+				channel->setCategoryList(tmpCList);
+				item->setText(5, tmpList.at(0));
 				channel->setLanguage(tmpList.at(1));
+				item->setText(2, tmpList.at(1));
 				channel->setEpg(tmpList.at(2));
+				item->setText(4, tmpList.at(2));
 			}
-
-			//processCategory(channel, tmpList.at(0));
 		} else {
 			tmp = m3uLineList.at(i);
 			channel->setUrl(tmp);
+			item->setText(3, m3uLineList.at(i));
 		}
 	}
 }

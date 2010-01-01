@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.toolBarOsd->addWidget(ui.controlsWidget);
 	ui.menuSubtitles->clear();
 	ui.menuAudio_channel->clear();
+	ui.playlistTree->header()->setResizeMode(QHeaderView::ResizeToContents);
 	//this->statusBar()->hide();
 
 #ifdef TANO_DEINTERLACING
@@ -101,7 +102,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::createSettings()
 {
 	sessionEnabled = settings->value("session", true).toBool();
-	defaultP = settings->value("playlist","playlists/siol-mpeg2.xml").toString();
+	defaultP = settings->value("playlist","playlists/siol-mpeg2.m3u").toString();
 
 	openPlaylist(true);
 	editor = new EditPlaylist(this, fileName);
@@ -500,8 +501,8 @@ void MainWindow::openPlaylist(bool start)
                                          QDir::homePath(),
                                          tr("Tano TV Channel list Files(*.m3u)"));
     	if (!fileName.isEmpty()) {
-    		//editor->setFile(fileName);
-    	   // ui.recorder->openPlaylist(true,fileName);
+    		editor->setFile(fileName);
+    	    // ui.recorder->openPlaylist(true,fileName);
     	}
 	} else {
 		fileName = Common::locateResource(defaultP);
@@ -512,19 +513,23 @@ void MainWindow::openPlaylist(bool start)
 
     ui.playlistTree->clear();
 
-    handler->processFile(fileName);
+    QList<int> tmp;
+    tmp << 0 << 100;
 
-    /*if (handler->error()) {
+    QFile file(fileName);
+    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+
         QMessageBox::warning(this, tr("Tano"),
                              tr("Cannot read file %1:\n%2.")
                              .arg(fileName)
                              .arg(file.errorString()));
         hasPlaylist = false;
-        select = new ChannelSelect(this, ui.channelNumber, handler->limit());
+        select = new ChannelSelect(this, ui.channelNumber, tmp);
         return;
-    }*/
-    QList<int> tmp;
-    tmp << 0 << 100;
+    }
+
+    handler->processFile(fileName);
+
     hasPlaylist = true;
     select = new ChannelSelect(this, ui.channelNumber, tmp);
 

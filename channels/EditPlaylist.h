@@ -5,8 +5,8 @@
 #include <QMenu>
 #include "ui_EditPlaylist.h"
 
-#include "../xml/tanohandler.h"
-#include "../xml/tanogenerator.h"
+#include "../xml/M3UHandler.h"
+#include "../xml/M3UGenerator.h"
 
 class EditPlaylist : public QMainWindow
 {
@@ -40,8 +40,8 @@ private:
 
     Ui::EditPlaylist ui;
 
-    TanoHandler *load;
-    TanoGenerator *generator;
+    M3UHandler *load;
+    M3UGenerator *generator;
 
     QIcon categoryIcon;
     QIcon channelIcon;
