@@ -149,6 +149,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	ui/Osd.cpp
 	ui/TrayIcon.cpp
 	ui/TrayRecorder.cpp
+	xml/M3UHandler.cpp
 	xml/tanogenerator.cpp
 	xml/tanohandler.cpp
 )

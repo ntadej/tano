@@ -35,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
 	flags = this->windowFlags();
 
 	update = new Updates();
-	handler = new TanoHandler(ui.playlistTree);
+	handler = new M3UHandler(ui.playlistTree);
 	epg = new Epg();
 	epgShow = new EpgShow();
 
@@ -498,26 +498,23 @@ void MainWindow::openPlaylist(bool start)
     	fileName =
             QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
                                          QDir::homePath(),
-                                         tr("Tano TV Channel list Files(*.tano *.xml)"));
+                                         tr("Tano TV Channel list Files(*.m3u)"));
     	if (!fileName.isEmpty()) {
-    		editor->setFile(fileName);
-    	    ui.recorder->openPlaylist(true,fileName);
+    		//editor->setFile(fileName);
+    	   // ui.recorder->openPlaylist(true,fileName);
     	}
 	} else {
 		fileName = Common::locateResource(defaultP);
-	    ui.recorder->openPlaylist(false,fileName);
+	    //ui.recorder->openPlaylist(false,fileName);
 	}
     if (fileName.isEmpty())
         return;
 
     ui.playlistTree->clear();
 
-    QXmlSimpleReader reader;
-    reader.setContentHandler(handler);
-    reader.setErrorHandler(handler);
+    handler->processFile(fileName);
 
-    QFile file(fileName);
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+    /*if (handler->error()) {
         QMessageBox::warning(this, tr("Tano"),
                              tr("Cannot read file %1:\n%2.")
                              .arg(fileName)
@@ -525,13 +522,11 @@ void MainWindow::openPlaylist(bool start)
         hasPlaylist = false;
         select = new ChannelSelect(this, ui.channelNumber, handler->limit());
         return;
-    }
-    QXmlInputSource xmlInputSource(&file);
-    if (!reader.parse(xmlInputSource))
-    	return;
-
+    }*/
+    QList<int> tmp;
+    tmp << 0 << 100;
     hasPlaylist = true;
-    select = new ChannelSelect(this, ui.channelNumber, handler->limit());
+    select = new ChannelSelect(this, ui.channelNumber, tmp);
 
     ui.channelToolBox->setItemText(0,handler->getName());
 }

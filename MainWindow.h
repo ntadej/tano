@@ -11,7 +11,7 @@
 #include "libvlc/VlcControl.h"
 #include "ui_MainWindow.h"
 #include "Updates.h"
-#include "xml/tanohandler.h"
+#include "xml/M3UHandler.h"
 #include "channels/Channel.h"
 #include "channels/EditPlaylist.h"
 #include "ui/EditSettings.h"
@@ -82,7 +82,7 @@ private:
     Osd *osd;
     QSettings *settings;
 
-    TanoHandler *handler;
+    M3UHandler *handler;
     Channel *channel;
 	QString fileName;
 	QString defaultP;

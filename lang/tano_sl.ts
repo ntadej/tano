@@ -1066,33 +1066,26 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../MainWindow.cpp" line="501"/>
-        <source>Tano TV Channel list Files(*.tano *.xml)</source>
-        <translation>Tano TV Seznam programov (*.tano *.xml)</translation>
+        <source>Tano TV Channel list Files(*.m3u)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="522"/>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation>Ne morem prebrati %1:
-%2.</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.cpp" line="542"/>
+        <location filename="../MainWindow.cpp" line="537"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="544"/>
+        <location filename="../MainWindow.cpp" line="539"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="556"/>
+        <location filename="../MainWindow.cpp" line="551"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="557"/>
+        <location filename="../MainWindow.cpp" line="552"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -1109,9 +1102,8 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../build/ui_MainWindow.h" line="723"/>
         <location filename="../MainWindow.cpp" line="70"/>
-        <location filename="../MainWindow.cpp" line="521"/>
-        <location filename="../MainWindow.cpp" line="577"/>
-        <location filename="../MainWindow.cpp" line="579"/>
+        <location filename="../MainWindow.cpp" line="572"/>
+        <location filename="../MainWindow.cpp" line="574"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1193,6 +1185,8 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../xml/M3UHandler.cpp" line="13"/>
+        <location filename="../xml/M3UHandler.cpp" line="42"/>
         <location filename="../xml/tanohandler.cpp" line="36"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
