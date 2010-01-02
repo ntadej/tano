@@ -110,8 +110,8 @@ void EpgLoader::epgPrint()
 	epgValue.replace("<table class=\"schedule\">", ": ");
 	epgValue.replace("(<a href=", "(<p style=");
 	epgValue.replace("ogled</a>)","ogled</p>)");
-	epgValue.replace("<a", ";<a");
-	epgValue.replace("</a>", ";");
+	epgValue.replace("<a", "|<a");
+	epgValue.replace("</a>", "|");
 	epgValue.replace("	","");
 	epgValue.replace(" href=\"",">");
 
@@ -120,19 +120,19 @@ void EpgLoader::epgPrint()
 	edit->setText("");
 
 	epgValue.replace("\n","");
-	epgValue.replace("\">",";");
+	epgValue.replace("\">","|");
 	epgValue.replace("tv-spored.aspx", "http://www.siol.net/tv-spored.aspx");
-	epgValue.replace(";: ",";");
-	epgValue.replace(".2009: ", ".2009:;");
-	epgValue.replace(".2010: ", ".2010:;");
-	epgValue.replace(".2011: ", ".2011:;");
+	epgValue.replace("|: ","|");
+	epgValue.replace(".2009: ", ".2009:|");
+	epgValue.replace(".2010: ", ".2010:|");
+	epgValue.replace(".2011: ", ".2011:|");
 	epgValue.replace(" (ogled): ","");
 	epgValue.replace(" (ogled)","");
 	epgValue.remove(epgValue.size()-1,1);
 
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
 
-	epgList = epgValue.split(";");
+	epgList = epgValue.split("|");
 
 	emit epgDone(epgList);
 }
