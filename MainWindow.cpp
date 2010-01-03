@@ -167,7 +167,7 @@ void MainWindow::createConnections()
 	connect(ui.actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
 
 	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
-	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(show()));
+	connect(ui.actionEditPlaylist, SIGNAL(triggered()), editor, SLOT(open()));
 	connect(ui.actionTimers, SIGNAL(triggered()), timers, SLOT(show()));
 
 	connect(ui.actionPlay, SIGNAL(triggered()), backend, SLOT(pause()));
@@ -199,7 +199,6 @@ void MainWindow::createConnections()
 	connect(ui.epgToday_2, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_3, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_4, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
-	connect(ui.epgToday_5, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
 
 	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.playlistWidget, SLOT(setVisible(bool)));
@@ -459,10 +458,6 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 			ui.epgTabWidget->setTabText(3,date);
 			ui.epgToday_4->setEpg(epgValue);
 			break;
-		/*case 5:
-			ui.epgTabWidget->setTabText(4,date);
-			ui.epgToday_5->setEpg(epgValue);
-			break;*/
 		default:
 			break;
 	}
@@ -479,7 +474,6 @@ void MainWindow::stop()
 	ui.epgToday_2->epgClear();
 	ui.epgToday_3->epgClear();
 	ui.epgToday_4->epgClear();
-	ui.epgToday_5->epgClear();
 	ui.videoWidget->setRatioOriginal();
 	ui.infoBarWidget->clear();
 	if(osdEnabled) {

@@ -81,6 +81,7 @@ private:
     QIcon channelIcon;
 
     QString name;
+    QString category;
 };
 
 #endif

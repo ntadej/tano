@@ -23,12 +23,11 @@ protected:
 
 private slots:
 	void deleteItem();
-	void addItemCategory();
-	void addItemSubCategory();
 	void addItemChannel();
 
 	void open();
 	void save();
+	void import();
 
 	void menuOpen();
 	void exit();

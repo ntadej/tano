@@ -4,6 +4,8 @@
 #include <QFileDialog>
 #include <QCloseEvent>
 
+#include "../xml/tanohandler.h"
+
 #include "EditPlaylist.h"
 
 EditPlaylist::EditPlaylist(QWidget *parent, QString fileName)
@@ -13,19 +15,12 @@ EditPlaylist::EditPlaylist(QWidget *parent, QString fileName)
 
 	closeEnabled = false;
 
-	add = new QMenu();
-	add->addAction(ui.actionAddChannel);
-	add->addAction(ui.actionAddCategory);
-	add->addAction(ui.actionAddSubCategory);
-
 	connect(ui.actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
-	connect(ui.actionAddCategory, SIGNAL(triggered()), this, SLOT(addItemCategory()));
-	connect(ui.actionAddSubCategory, SIGNAL(triggered()), this, SLOT(addItemSubCategory()));
 	connect(ui.actionAddChannel, SIGNAL(triggered()), this, SLOT(addItemChannel()));
 	connect(ui.actionReload, SIGNAL(triggered()), this, SLOT(open()));
 	connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(save()));
-	connect(ui.actionAdd, SIGNAL(triggered()), this, SLOT(menuOpen()));
 	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
+	connect(ui.actionImport, SIGNAL(triggered()), this, SLOT(import()));
 
 	ui.playlist->header()->setResizeMode(QHeaderView::ResizeToContents);
 
@@ -34,8 +29,6 @@ EditPlaylist::EditPlaylist(QWidget *parent, QString fileName)
 	load = new M3UHandler(ui.playlist, true);
 
 	fileN = fileName;
-
-	open();
 }
 
 EditPlaylist::~EditPlaylist()
@@ -71,47 +64,22 @@ void EditPlaylist::deleteItem()
 		ui.playlist->takeTopLevelItem(ui.playlist->indexOfTopLevelItem(ui.playlist->currentItem()));
 }
 
-void EditPlaylist::addItemCategory()
-{
-	QStringList defaults;
-	defaults << tr("Category");
-	QTreeWidgetItem *item = new QTreeWidgetItem(defaults);
-	item->setIcon(0,categoryIcon);
-	item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsDragEnabled | Qt::ItemIsEditable);
-	item->setData(0, Qt::UserRole, "category");
-	ui.playlist->addTopLevelItem(item);
-}
-
-void EditPlaylist::addItemSubCategory()
-{
-	QStringList defaults;
-	defaults << tr("Category");
-
-	if(ui.playlist->currentItem()->data(0, Qt::UserRole).toString() == "category") {
-		QTreeWidgetItem *item = new QTreeWidgetItem(ui.playlist->currentItem(), defaults);
-		item->setIcon(0,categoryIcon);
-		item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsDragEnabled | Qt::ItemIsEditable);
-		item->setData(0, Qt::UserRole, "category");
-	}
-	else
-		QMessageBox::warning(this, tr("Tano"),
-									tr("Please, add subcategory to a category."));
-}
-
 void EditPlaylist::addItemChannel()
 {
 	QStringList defaults;
-	defaults << tr("Channel") << tr("New channel") << tr("language") << "NI" << "URL";
+	defaults << "#" << tr("Channel") << tr("language") << "" << "URL" << tr("Categories");
 
-	if(ui.playlist->currentItem()->data(0, Qt::UserRole).toString() == "category") {
-		QTreeWidgetItem *item = new QTreeWidgetItem(ui.playlist->currentItem(), defaults);
-		item->setIcon(0,channelIcon);
-		item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsDragEnabled | Qt::ItemIsEditable);
-		item->setData(0, Qt::UserRole, "channel");
-	}
-	else
-		QMessageBox::warning(this, tr("Tano"),
-									tr("Please, add channel to a category."));
+	QTreeWidgetItem *item = new QTreeWidgetItem(ui.playlist, ui.playlist->currentItem());
+	item->setIcon(0,channelIcon);
+	item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsDragEnabled | Qt::ItemIsEditable);
+	item->setData(0, Qt::UserRole, "channel");
+
+	item->setText(0,defaults.at(0));
+	item->setText(1,defaults.at(1));
+	item->setText(2,defaults.at(2));
+	item->setText(3,defaults.at(3));
+	item->setText(4,defaults.at(4));
+	item->setText(5,defaults.at(5));
 }
 
 void EditPlaylist::save()
@@ -153,12 +121,47 @@ void EditPlaylist::open()
 
 	ui.editName->setText(load->getName());
 	setWindowTitle(load->getName());
+
+	show();
+}
+
+void EditPlaylist::import()
+{
+	TanoHandler *handler = new TanoHandler(ui.playlist,true);
+
+	QString fileNameI =
+			QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
+										QDir::homePath(),
+										tr("Tano TV Old Channel list Files(*.tano *.xml)"));
+	if (fileNameI.isEmpty())
+		return;
+
+	ui.playlist->clear();
+
+	QXmlSimpleReader reader;
+	reader.setContentHandler(handler);
+	reader.setErrorHandler(handler);
+
+	QFile file(fileNameI);
+	if (!file.open(QFile::ReadOnly | QFile::Text)) {
+		QMessageBox::warning(this, tr("Tano"),
+							tr("Cannot read file %1:\n%2.")
+							.arg(fileNameI)
+							.arg(file.errorString()));
+		return;
+	}
+
+	QXmlInputSource xmlInputSource(&file);
+	if (!reader.parse(xmlInputSource))
+		return;
+
+	ui.editName->setText(handler->getName());
+	setWindowTitle(handler->getName());
 }
 
 void EditPlaylist::setFile(QString file)
 {
 	fileN = file;
-	open();
 }
 
 void EditPlaylist::menuOpen()

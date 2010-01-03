@@ -32,8 +32,7 @@ void M3UGenerator::generateItem(QTreeWidgetItem *item, int depth)
             << item->text(0) << "\n";
         if(!item->text(2).isEmpty() || !item->text(3).isEmpty() || !item->text(5).isEmpty()) {
         	out	<< "#EXTTV:"
-        		//<< item->text(5) << ";"
-        		<< name << ";"
+        		<< item->text(5) << ";"
         		<< item->text(2) << ";"
         		<< item->text(3)
         		<< "\n";

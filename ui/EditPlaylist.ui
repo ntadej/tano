@@ -47,9 +47,6 @@
       <attribute name="headerDefaultSectionSize">
        <number>29</number>
       </attribute>
-      <attribute name="headerDefaultSectionSize">
-       <number>29</number>
-      </attribute>
       <column>
        <property name="text">
         <string notr="true">#</string>
@@ -67,17 +64,17 @@
       </column>
       <column>
        <property name="text">
-        <string>EPG</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
         <string>URL</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Categories (separated with ',')</string>
+        <string>EPG</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Categories (separated with commas)</string>
        </property>
       </column>
      </widget>
@@ -103,42 +100,13 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionAdd"/>
+   <addaction name="actionAddChannel"/>
    <addaction name="actionDelete"/>
    <addaction name="separator"/>
+   <addaction name="actionImport"/>
    <addaction name="actionReload"/>
    <addaction name="actionSave"/>
    <addaction name="actionClose"/>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuChannel_List">
-    <property name="title">
-     <string>Channel List</string>
-    </property>
-    <addaction name="actionReload"/>
-    <addaction name="actionSave"/>
-    <addaction name="actionClose"/>
-   </widget>
-   <widget class="QMenu" name="menuAdd">
-    <property name="title">
-     <string>Add item</string>
-    </property>
-    <addaction name="actionAddChannel"/>
-    <addaction name="actionAddCategory"/>
-    <addaction name="actionAddSubCategory"/>
-    <addaction name="separator"/>
-    <addaction name="actionDelete"/>
-   </widget>
-   <addaction name="menuChannel_List"/>
-   <addaction name="menuAdd"/>
   </widget>
   <action name="actionAddChannel">
    <property name="icon">
@@ -146,22 +114,10 @@
      <normaloff>:/icons/images/video.png</normaloff>:/icons/images/video.png</iconset>
    </property>
    <property name="text">
-    <string>Channel</string>
+    <string>Add Channel</string>
    </property>
    <property name="toolTip">
-    <string>Channel</string>
-   </property>
-  </action>
-  <action name="actionAddCategory">
-   <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
-   </property>
-   <property name="text">
-    <string>Main Category</string>
-   </property>
-   <property name="toolTip">
-    <string>Main Category</string>
+    <string>Add Channel</string>
    </property>
   </action>
   <action name="actionDelete">
@@ -170,10 +126,10 @@
      <normaloff>:/icons/images/editdelete.png</normaloff>:/icons/images/editdelete.png</iconset>
    </property>
    <property name="text">
-    <string>Delete item</string>
+    <string>Delete Channel</string>
    </property>
    <property name="toolTip">
-    <string>Delete item</string>
+    <string>Delete Channel</string>
    </property>
   </action>
   <action name="actionSave">
@@ -203,28 +159,13 @@
     <string>Reload</string>
    </property>
   </action>
-  <action name="actionAddSubCategory">
+  <action name="actionImport">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
+     <normaloff>:/icons/images/fileimport.png</normaloff>:/icons/images/fileimport.png</iconset>
    </property>
    <property name="text">
-    <string>Subcategory</string>
-   </property>
-   <property name="toolTip">
-    <string>Subcategory</string>
-   </property>
-  </action>
-  <action name="actionAdd">
-   <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
-   </property>
-   <property name="text">
-    <string>Add item</string>
-   </property>
-   <property name="toolTip">
-    <string>Add item</string>
+    <string>Import</string>
    </property>
   </action>
  </widget>

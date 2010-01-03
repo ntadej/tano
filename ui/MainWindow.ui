@@ -531,9 +531,6 @@
            <attribute name="headerDefaultSectionSize">
             <number>29</number>
            </attribute>
-           <attribute name="headerDefaultSectionSize">
-            <number>29</number>
-           </attribute>
            <column>
             <property name="text">
              <string>#</string>
@@ -606,16 +603,6 @@
             <layout class="QVBoxLayout" name="verticalLayout_8">
              <item>
               <widget class="EpgList" name="epgToday_4" native="true"/>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="tabDay5">
-            <attribute name="title">
-             <string/>
-            </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_9">
-             <item>
-              <widget class="EpgList" name="epgToday_5" native="true"/>
              </item>
             </layout>
            </widget>

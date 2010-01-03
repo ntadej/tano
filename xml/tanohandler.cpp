@@ -34,6 +34,7 @@ TanoHandler::TanoHandler(QTreeWidget *treeWidget, bool editable)
     item = 0;
     metTanoTag = false;
     name = QObject::tr("Channel list");
+    category = "";
     treeStyle();
 }
 
@@ -76,14 +77,6 @@ bool TanoHandler::startElement(const QString & /* namespaceURI */,
     		cat++;
     		num = channelNumSync(cat);
     	}
-        item = createChildItem(qName);
-        item->setFlags(item->flags() | Qt::ItemIsEditable);
-        item->setIcon(0, categoryIcon);
-        item->setText(0, QObject::tr("Category"));
-        if (attributes.value("expanded") == "true")
-        	treeWidget->setItemExpanded(item, true);
-        else
-        	treeWidget->setItemExpanded(item, false);
         channel = createChannel(QObject::tr("Unknown title"), cat, true);
     } else if (qName == "channel") {
     	num++;
@@ -111,18 +104,20 @@ bool TanoHandler::endElement(const QString & /* namespaceURI */,
         if (item && channel) {
         	if(!edit && !channel->isCategory())
         		item->setText(0, channel->numToString() + ". " + currentText);
-        	else
-        		item->setText(0, currentText);
-
+        	else if(!channel->isCategory())
+        		item->setText(1, currentText);
+        	if(channel->isCategory())
+        		category = currentText;
         	if(!channel->isCategory())
-        		item->setText(1,channel->numToString());
+        		item->setText(0,channel->numToString());
             channel->setName(currentText);
             map.insert(item, channel);
+            item->setText(5, category);
         }
     } else if (qName == "epg") {
         if (item && channel) {
             channel->setEpg(currentText);
-            if(edit) item->setText(3, currentText);
+            if(edit) item->setText(4, currentText);
         }
     } else if (qName == "language") {
         if (item && channel) {
@@ -132,10 +127,10 @@ bool TanoHandler::endElement(const QString & /* namespaceURI */,
     } else if (qName == "url") {
     	if (item && channel) {
     		channel->setUrl(currentText);
-    		if(edit) item->setText(4, currentText);
+    		if(edit) item->setText(3, currentText);
     	}
     } else if (qName == "category" || qName == "channel") {
-        item = item->parent();
+       // item = item->parent();
     } else if (qName == "playlist") {
     	name = currentText;
     }
@@ -167,11 +162,7 @@ QString TanoHandler::errorString() const
 QTreeWidgetItem *TanoHandler::createChildItem(const QString &tagName)
 {
     QTreeWidgetItem *childItem;
-    if (item) {
-        childItem = new QTreeWidgetItem(item);
-    } else {
-        childItem = new QTreeWidgetItem(treeWidget);
-    }
+    childItem = new QTreeWidgetItem(treeWidget);
     childItem->setData(0, Qt::UserRole, tagName);
     return childItem;
 }
