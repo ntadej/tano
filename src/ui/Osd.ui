@@ -230,13 +230,13 @@
   <customwidget>
    <class>VlcVolumeSlider</class>
    <extends>QWidget</extends>
-   <header>libvlc/VlcVolumeSlider.h</header>
+   <header location="global">QVlc/VlcVolumeSlider.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>VlcSeekWidget</class>
    <extends>QWidget</extends>
-   <header>libvlc/VlcSeekWidget.h</header>
+   <header location="global">QVlc/VlcSeekWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

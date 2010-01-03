@@ -550,8 +550,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>418</height>
+          <width>94</width>
+          <height>65</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1092,19 +1092,19 @@
   <customwidget>
    <class>VlcVolumeSlider</class>
    <extends>QWidget</extends>
-   <header>libvlc/VlcVolumeSlider.h</header>
+   <header location="global">QVlc/VlcVolumeSlider.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>VlcSeekWidget</class>
    <extends>QWidget</extends>
-   <header>libvlc/VlcSeekWidget.h</header>
+   <header location="global">QVlc/VlcSeekWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>VlcVideoWidget</class>
    <extends>QWidget</extends>
-   <header>libvlc/VlcVideoWidget.h</header>
+   <header location="global">QVlc/VlcVideoWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

@@ -4,6 +4,8 @@ IF(MINGW)
 add_definitions(-DCMAKE_TOOLCHAIN=../../Toolchain-win32.cmake)
 ENDIF(MINGW)
 
+add_definitions(-DTANO_DEINTERLACING=0)
+
 # Set your list of sources here.
 SET(QVLC_SRCS
     VlcControl.cpp

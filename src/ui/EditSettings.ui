@@ -894,7 +894,7 @@
   <customwidget>
    <class>QtKeySequenceEdit</class>
    <extends>QWidget</extends>
-   <header>lib/QtKeySequenceEdit.h</header>
+   <header location="global">QtKeySequenceEdit/QtKeySequenceEdit.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
