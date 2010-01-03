@@ -19,6 +19,7 @@ public:
     Channel *channelRead(QTreeWidgetItem *clickedItem);
     Channel *channelReadNum(int clickedItem);
     QString getName();
+    QList<int> nums();
 
 private:
 	void processList();
@@ -38,6 +39,8 @@ private:
 
     QString name;
     QStringList m3uLineList;
+
+    QList<int> channelNums;
 
     QMap<QTreeWidgetItem*, Channel*> map;
     QMap<int, Channel*> nmap;

@@ -42,6 +42,7 @@ void M3UHandler::clear()
 	name = QObject::tr("Channel list");
 	valid = false;
 	m3uLineList.clear();
+	channelNums.clear();
 }
 
 void M3UHandler::processList()
@@ -75,6 +76,8 @@ void M3UHandler::processList()
 
 			map.insert(item, channel);
 			nmap.insert(tmpList.at(0).toInt(), channel);
+
+			channelNums << tmpList.at(0).toInt();
 		} else if(m3uLineList.at(i).contains("#EXTTV")) {
 			tmp = m3uLineList.at(i);
 			tmp.replace(QString("#EXTTV:"),QString(""));
@@ -120,4 +123,9 @@ Channel *M3UHandler::channelReadNum(int clickedItem)
 QString M3UHandler::getName()
 {
 	return name;
+}
+
+QList<int> M3UHandler::nums()
+{
+	return channelNums;
 }

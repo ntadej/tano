@@ -507,9 +507,6 @@ void MainWindow::openPlaylist(bool start)
 
     ui.playlistTree->clear();
 
-    QList<int> tmp;
-    tmp << 0 << 100;
-
     QFile file(fileName);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
 
@@ -518,14 +515,14 @@ void MainWindow::openPlaylist(bool start)
                              .arg(fileName)
                              .arg(file.errorString()));
         hasPlaylist = false;
-        select = new ChannelSelect(this, ui.channelNumber, tmp);
+        select = new ChannelSelect(this, ui.channelNumber, handler->nums());
         return;
     }
 
     handler->processFile(fileName);
 
     hasPlaylist = true;
-    select = new ChannelSelect(this, ui.channelNumber, tmp);
+    select = new ChannelSelect(this, ui.channelNumber, handler->nums());
 
     ui.channelToolBox->setItemText(0,handler->getName());
 }

@@ -17,7 +17,7 @@ ChannelSelect::ChannelSelect(QWidget *parent, QLCDNumber *number, QList<int> l) 
 	     tmp = l.at(i);
 	     lim.append(tmp);
 	}
-	qDebug() << "Limit" << lim.size();
+	qDebug() << "Channels:" << lim.size();
 
 	key_0 = new QShortcut(QKeySequence("0"), parent, 0, 0, Qt::ApplicationShortcut);
 	key_1 = new QShortcut(QKeySequence("1"), parent, 0, 0, Qt::ApplicationShortcut);
@@ -69,6 +69,7 @@ void ChannelSelect::process(int key)
 		timer->start(1000);
 		num++;
 	} else {
+		full = number3*100 + number2*10 + number1;
 		display();
 	}
 }
@@ -76,14 +77,9 @@ void ChannelSelect::process(int key)
 void ChannelSelect::display()
 {
 	bool signal = false;
-	full = number3*100 + number2*10 + number1;
 
-	int i = 0;
-	while(i < lim.size() && signal == false) {
-		if(full>=lim.at(i) && full<=lim.at(i+1))
-			signal = true;
-		i+=2;
-	}
+	if(lim.contains(full))
+		signal = true;
 
 	if(signal == true) {
 		emit channelSelect(full);
@@ -106,42 +102,21 @@ void ChannelSelect::channel(bool direction)
 	int i = 0;
 
 	old = lcd->intValue();
-	if(direction)
+	if(direction) {
 		full = old + 1;
-	else
+		i = 1;
+	} else {
 		full = old - 1;
-
-	while(i < lim.size() && signal == false) {
-		if(full>=lim.at(i) && full<=lim.at(i+1)) {
-			signal = true;
-			emit channelSelect(full);
-		}
-		i+=2;
+		i = -1;
 	}
 
-	i = 0;
-	if(!signal) {
-		if(direction) {
-			int k = lim.size() - 1;
-			if(full < lim.at(k)) {
-				while(k > 0 && signal == false) {
-					k-=2;
-					if(full > lim.at(k)) {
-						emit channelSelect(lim.at(k+1));
-						signal = true;
-					}
-				}
-			}
-		} else {
-			while(i < lim.size() && signal == false) {
-				if(full < lim.at(i) && full > 0) {
-					emit channelSelect(lim.at(i-1));
-					signal = true;
-				}
-				i+=2;
-			}
-		}
-	}
+	qDebug() << full;
+
+	while(!lim.contains(full)&&full>0&&full<=lim.at(lim.size()-1))
+		full+=i;
+
+	qDebug() << full;
+	display();
 }
 
 void ChannelSelect::back()

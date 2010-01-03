@@ -7,8 +7,9 @@
 #include <QSettings>
 #include <QErrorMessage>
 
-#include "libvlc/VlcInstance.h"
-#include "libvlc/VlcControl.h"
+#include <QVlc/VlcInstance.h>
+#include <QVlc/VlcControl.h>
+
 #include "ui_MainWindow.h"
 #include "Updates.h"
 #include "xml/M3UHandler.h"
