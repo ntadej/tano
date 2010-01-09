@@ -10,7 +10,7 @@
 
 #include "../channels/Channel.h"
 #include "../ui/TrayRecorder.h"
-#include "../xml/tanohandler.h"
+#include "../xml/M3UHandler.h"
 
 #include "ui_Recorder.h"
 
@@ -27,7 +27,7 @@ public:
 public slots:
 	void stop();
 	void recordNow(int nmb, QString url, QString name);
-	void openPlaylist(bool open, QString file);
+	void openPlaylist(QString file);
 
 private slots:
 	void record(bool status);
@@ -46,7 +46,7 @@ private:
 	TrayRecorder *trayIcon;
 	QMenu *tray;
 
-	TanoHandler *handler;
+	M3UHandler *handler;
 	QString fileName;
 
 	QProcess *frip;

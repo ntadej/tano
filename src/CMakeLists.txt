@@ -34,6 +34,7 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/InfoBar.ui
 	ui/MainWindow.ui
 	ui/Osd.ui
+	ui/PlaylistWidget.ui
 	ui/Recorder.ui
 	ui/Timers.ui
 )
@@ -57,6 +58,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/InfoBar.h
 	ui/License.h
 	ui/Osd.h
+	ui/PlaylistWidget.h
 	ui/TrayIcon.h
 	ui/TrayRecorder.h
 )
@@ -81,6 +83,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	ui/InfoBar.cpp
 	ui/License.cpp
 	ui/Osd.cpp
+	ui/PlaylistWidget.cpp
 	ui/TrayIcon.cpp
 	ui/TrayRecorder.cpp
 	xml/M3UGenerator.cpp
@@ -114,12 +117,6 @@ SET ( Tano_Translation_Bins
 # loaded when linking Tano
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
-
-# Add all resources to Tano_Resrcs (icons, html files etc.)
-#SET(Tano_Resrcs ui/mainwin.qrc) # not needed, all resources are loaded on-the-fly
-
-# Add all the dependencies needed for the MainWindow
-# add_file_dependencies( ui/mainwin.cpp ui/ui_mainwin.h )
 
 # This scripts runs the resource compiler rcc.
 # The result of it is stored into Tano_Resrcs_Srcs

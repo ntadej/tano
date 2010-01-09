@@ -15,7 +15,7 @@ Recorder::Recorder(QWidget *parent)
 
 	ui.setupUi(this);
 
-	handler = new TanoHandler(ui.playlistWidget);
+	handler = new M3UHandler(ui.playlistWidget->treeWidget());
 
 	//Init
 	settings = Common::settings();
@@ -51,34 +51,28 @@ void Recorder::stop()
 	frip->terminate();
 }
 
-void Recorder::openPlaylist(bool open, QString file)
+void Recorder::openPlaylist(QString file)
 {
 	handler->clear();
 
-	if(!open)
-		fileName = Common::locateResource(file);
-	else
-		fileName = file;
-
-    if (fileName.isEmpty())
+    if (file.isEmpty())
         return;
+
+    fileName = file;
 
     ui.playlistWidget->clear();
 
-    QXmlSimpleReader reader;
-    reader.setContentHandler(handler);
-    reader.setErrorHandler(handler);
-
-    QFile fileOpen(fileName);
-    if (!fileOpen.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Recorder"),
-                             tr("Cannot read file %1:\n%2.")
-                             .arg(fileName)
-                             .arg(fileOpen.errorString()));
+    QFile f(fileName);
+    if (!f.open(QFile::ReadOnly | QFile::Text)) {
+    	QMessageBox::warning(this, tr("Tano"),
+							tr("Cannot read file %1:\n%2.")
+							.arg(fileName)
+							.arg(f.errorString()));
         return;
     }
-    QXmlInputSource xmlInputSource(&fileOpen);
-    reader.parse(xmlInputSource);
+
+    handler->processFile(fileName);
+    ui.playlistWidget->setCategories(handler->getCategories());
 }
 
 void Recorder::playlist(QTreeWidgetItem* clickedChannel)

@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.toolBarOsd->addWidget(ui.controlsWidget);
 	ui.menuSubtitles->clear();
 	ui.menuAudio_channel->clear();
-	ui.playlistTree->header()->setResizeMode(QHeaderView::ResizeToContents);
 	//this->statusBar()->hide();
 
 #ifdef TANO_DEINTERLACING
@@ -36,7 +35,7 @@ MainWindow::MainWindow(QWidget *parent)
 	flags = this->windowFlags();
 
 	update = new Updates();
-	handler = new M3UHandler(ui.playlistTree);
+	handler = new M3UHandler(ui.playlistWidget->treeWidget());
 	epg = new Epg();
 	epgShow = new EpgShow();
 
@@ -125,7 +124,7 @@ void MainWindow::createSettings()
 		osdEnabled = false;
 	}
 	if(!settings->value("info",true).toBool()) {
-		ui.playlistWidget->hide();
+		ui.infoWidget->hide();
 		ui.actionChannel_info->setChecked(false);
 	}
 	if(settings->value("wheel",false).toBool()) {
@@ -184,7 +183,7 @@ void MainWindow::createConnections()
 	connect(ui.infoBarWidget, SIGNAL(refresh()), epg, SLOT(refresh()));
 	connect(ui.infoBarWidget, SIGNAL(open(QString)), epgShow, SLOT(open(QString)));
 
-	connect(ui.playlistTree, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
+	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 	connect(select, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
 	//connect(select, SIGNAL(error(QString, int)), this->statusBar(), SLOT(showMessage(QString, int)));
 
@@ -201,8 +200,8 @@ void MainWindow::createConnections()
 	connect(ui.epgToday_4, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
 
-	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.playlistWidget, SLOT(setVisible(bool)));
-	connect(ui.playlistWidget, SIGNAL(visibilityChanged(bool)), ui.actionChannel_info, SLOT(setChecked(bool)));
+	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.infoWidget, SLOT(setVisible(bool)));
+	connect(ui.infoWidget, SIGNAL(visibilityChanged(bool)), ui.actionChannel_info, SLOT(setChecked(bool)));
 
 	connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatioOriginal()));
 	connect(ui.actionRatio1_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio1_1()));
@@ -417,13 +416,13 @@ void MainWindow::play(QString itemFile, QString itemType)
 		trayIcon->changeToolTip(channel->name());
 		//statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 	} else if(itemType == "file") {
-	    ui.playlistWidget->hide();
+	    ui.infoWidget->hide();
 	    backend->openMedia(fileName);
 		controller->update();
 		tooltip(fileName);
 		//statusBar()->showMessage(tr("Playing file"), 5000);
 	} else {
-		ui.playlistWidget->hide();
+		ui.infoWidget->hide();
 		backend->openMedia(fileName);
     	controller->update();
     	tooltip(fileName);
@@ -496,16 +495,16 @@ void MainWindow::openPlaylist(bool start)
                                          tr("Tano TV Channel list Files(*.m3u)"));
     	if (!fileName.isEmpty()) {
     		editor->setFile(fileName);
-    	    // ui.recorder->openPlaylist(true,fileName);
+    	    ui.recorder->openPlaylist(fileName);
     	}
 	} else {
 		fileName = Common::locateResource(defaultP);
-	    //ui.recorder->openPlaylist(false,fileName);
+	    ui.recorder->openPlaylist(fileName);
 	}
     if (fileName.isEmpty())
         return;
 
-    ui.playlistTree->clear();
+    ui.playlistWidget->clear();
 
     QFile file(fileName);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
@@ -525,6 +524,7 @@ void MainWindow::openPlaylist(bool start)
     select = new ChannelSelect(this, ui.channelNumber, handler->nums());
 
     ui.channelToolBox->setItemText(0,handler->getName());
+    ui.playlistWidget->setCategories(handler->getCategories());
 }
 
 void MainWindow::openFile()
@@ -612,12 +612,12 @@ void MainWindow::top()
 void MainWindow::lite()
 {
 	if(isLite) {
-		ui.playlistWidget->show();
+		ui.infoWidget->show();
 		ui.toolBar->show();
 		ui.toolBarOsd->show();
 		isLite = false;
 	} else {
-		ui.playlistWidget->hide();
+		ui.infoWidget->hide();
 		ui.toolBar->hide();
 		ui.toolBarOsd->hide();
 		isLite = true;
@@ -661,11 +661,11 @@ void MainWindow::recorder(bool enabled)
 {
 	if(enabled) {
 		ui.stackedWidget->setCurrentIndex(1);
-		ui.playlistWidget->setVisible(false);
+		ui.infoWidget->setVisible(false);
 		ui.toolBarOsd->setVisible(false);
 	} else {
 		ui.stackedWidget->setCurrentIndex(0);
-		ui.playlistWidget->setVisible(true);
+		ui.infoWidget->setVisible(true);
 		ui.toolBarOsd->setVisible(true);
 	}
 }

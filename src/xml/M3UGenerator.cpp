@@ -28,16 +28,16 @@ void M3UGenerator::generateItem(QTreeWidgetItem *item, int depth)
             generateItem(item->child(i), depth + 1);
     } else if (tagName == "channel") {
         out	<< "#EXTINF:"
-            << item->text(1) << ","
-            << item->text(0) << "\n";
-        if(!item->text(2).isEmpty() || !item->text(3).isEmpty() || !item->text(5).isEmpty()) {
+            << item->text(0) << ","
+            << item->text(1) << "\n";
+        if(!item->text(2).isEmpty() || !item->text(3).isEmpty() || !item->text(4).isEmpty()) {
         	out	<< "#EXTTV:"
-        		<< item->text(5) << ";"
         		<< item->text(2) << ";"
-        		<< item->text(3)
+        		<< item->text(4) << ";"
+        		<< item->text(5)
         		<< "\n";
         }
-        out	<< item->text(4);
+        out	<< item->text(3);
         out	<< "\n\n";
     }
 }

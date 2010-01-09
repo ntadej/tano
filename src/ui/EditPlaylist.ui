@@ -59,7 +59,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Language</string>
+        <string>Categories (separated with commas)</string>
        </property>
       </column>
       <column>
@@ -69,12 +69,12 @@
       </column>
       <column>
        <property name="text">
-        <string>EPG</string>
+        <string>Language</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Categories (separated with commas)</string>
+        <string>EPG</string>
        </property>
       </column>
      </widget>

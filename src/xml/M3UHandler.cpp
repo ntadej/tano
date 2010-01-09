@@ -43,6 +43,7 @@ void M3UHandler::clear()
 	valid = false;
 	m3uLineList.clear();
 	channelNums.clear();
+	categoryList.clear();
 }
 
 void M3UHandler::processList()
@@ -86,11 +87,14 @@ void M3UHandler::processList()
 			if(tmpList.size()!=0) {
 				tmpCList = tmpList.at(0).split(",");
 				channel->setCategoryList(tmpCList);
-				item->setText(5, tmpList.at(0));
+				for(int i=0;i<tmpCList.size();i++)
+					if(!categoryList.contains(tmpCList.at(i)))
+						categoryList.append(tmpCList.at(i));
+				item->setText(2, tmpList.at(0));
 				channel->setLanguage(tmpList.at(1));
-				item->setText(2, tmpList.at(1));
+				item->setText(4, tmpList.at(1));
 				channel->setEpg(tmpList.at(2));
-				item->setText(4, tmpList.at(2));
+				item->setText(5, tmpList.at(2));
 			}
 		} else {
 			tmp = m3uLineList.at(i);
@@ -123,6 +127,11 @@ Channel *M3UHandler::channelReadNum(int clickedItem)
 QString M3UHandler::getName()
 {
 	return name;
+}
+
+QStringList M3UHandler::getCategories()
+{
+	return categoryList;
 }
 
 QList<int> M3UHandler::nums()

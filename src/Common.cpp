@@ -48,9 +48,17 @@ QString Common::locateLang(QString fileL) {
 	else if (QFileInfo(QDir::currentPath() + "/lang/" + fileL).exists())
 		path = QFileInfo(QDir::currentPath() + "/lang/" + fileL).absoluteFilePath();
 
+	// Try application exe working path + src for development
+	else if (QFileInfo(QDir::currentPath() + "/src/lang/" + fileL).exists())
+		path = QFileInfo(QDir::currentPath() + "/src/lang/" + fileL).absoluteFilePath();
+
 	// Try application exe directory
 	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + fileL).exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + fileL).absoluteFilePath();
+
+	// Try application exe directory + src for development
+	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/src/lang/" + fileL).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath() + "/src/lang/" + fileL).absoluteFilePath();
 
 #ifdef DEFAULT_DATA_DIR
 

@@ -468,7 +468,7 @@
    <addaction name="actionEditPlaylist"/>
    <addaction name="actionSettings"/>
   </widget>
-  <widget class="QDockWidget" name="playlistWidget">
+  <widget class="QDockWidget" name="infoWidget">
    <property name="windowIcon">
     <iconset resource="images.qrc">
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
@@ -523,25 +523,14 @@
          <string>Channel list</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_7">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item>
-          <widget class="QTreeWidget" name="playlistTree">
-           <property name="editTriggers">
-            <set>QAbstractItemView::NoEditTriggers</set>
-           </property>
-           <attribute name="headerDefaultSectionSize">
-            <number>29</number>
-           </attribute>
-           <column>
-            <property name="text">
-             <string>#</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Channel</string>
-            </property>
-           </column>
-          </widget>
+          <widget class="PlaylistWidget" name="playlistWidget" native="true"/>
          </item>
         </layout>
        </widget>
@@ -550,8 +539,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>94</width>
-          <height>65</height>
+          <width>340</width>
+          <height>418</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1123,6 +1112,12 @@
    <class>EpgList</class>
    <extends>QWidget</extends>
    <header>epg/EpgList.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PlaylistWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/PlaylistWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

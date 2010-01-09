@@ -194,21 +194,13 @@
     </layout>
    </item>
    <item>
-    <widget class="QTreeWidget" name="playlistWidget">
-     <property name="maximumSize">
+    <widget class="PlaylistWidget" name="playlistWidget" native="true">
+     <property name="minimumSize">
       <size>
-       <width>300</width>
-       <height>16777215</height>
+       <width>200</width>
+       <height>0</height>
       </size>
      </property>
-     <property name="animated">
-      <bool>true</bool>
-     </property>
-     <column>
-      <property name="text">
-       <string>Channel</string>
-      </property>
-     </column>
     </widget>
    </item>
   </layout>
@@ -225,6 +217,14 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlaylistWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/PlaylistWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="images.qrc"/>
  </resources>
