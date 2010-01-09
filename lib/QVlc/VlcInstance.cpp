@@ -7,7 +7,7 @@ libvlc_instance_t * _vlcInstance = NULL;
 libvlc_exception_t * _vlcException = new libvlc_exception_t();
 libvlc_media_player_t * _vlcCurrentMediaPlayer = NULL;
 
-VlcInstance::VlcInstance(WId widget, QString iface)
+VlcInstance::VlcInstance(bool settings, WId widget, QString iface)
 {
 	_vlcInstance = NULL;
 	_vlcException = new libvlc_exception_t();
@@ -23,6 +23,11 @@ VlcInstance::VlcInstance(WId widget, QString iface)
 VlcInstance::~VlcInstance()
 {
 	libvlc_release(_vlcInstance);
+}
+
+QString VlcInstance::version()
+{
+	return QString(libvlc_get_version());
 }
 
 void VlcInstance::init()

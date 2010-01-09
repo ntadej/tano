@@ -13,11 +13,12 @@ extern libvlc_media_player_t *_vlcCurrentMediaPlayer;
 class VlcInstance : public QObject {
 Q_OBJECT
 public:
-	VlcInstance(WId widget = NULL, QString iface = "");
+	VlcInstance(bool settings = false, WId widget = NULL, QString iface = "");
 	virtual ~VlcInstance();
 
 	void openMedia(QString media);
 	static void checkException();
+	static QString version();
 
 public slots:
 	void init();

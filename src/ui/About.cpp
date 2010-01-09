@@ -1,4 +1,4 @@
-#include <vlc/vlc.h>
+#include <QVlc/VlcInstance.h>
 
 #include "About.h"
 
@@ -17,7 +17,7 @@ About::About(QWidget *parent, QString version)
 	qt = "Unknown version";
 #endif
 
-	ui.labelVlc->setText("<h3>Videolan VLC "+QString(libvlc_get_version())+"</h3>");
+	ui.labelVlc->setText("<h3>Videolan VLC "+VlcInstance::version()+"</h3>");
 	ui.labelRecorder->setText(ui.labelRecorder->text().replace("friptv","<a href=http://friptv.sourceforge.net>friptv</a>"));
 
 	ui.labelQtVersion->setText(ui.labelQtVersion->text().replace("0.0.0",qt));

@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 	settings = Common::settings();
 
-	backend = new VlcInstance(ui.videoWidget->getWinId(), settings->value("network","").toString());
+	backend = new VlcInstance(false, ui.videoWidget->getWinId(), settings->value("network","").toString());
 	backend->init();
 
 	controller = new VlcControl();
