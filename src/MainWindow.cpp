@@ -35,11 +35,12 @@ MainWindow::MainWindow(QWidget *parent)
 	flags = this->windowFlags();
 
 	update = new Updates();
-	handler = new M3UHandler(ui.playlistWidget->treeWidget());
 	epg = new Epg();
 	epgShow = new EpgShow();
 
-	timers = new Timers();
+	editor = new EditPlaylist(this);
+
+	timers = new TimersManager();
 
 	createSettings();
 
@@ -104,7 +105,6 @@ void MainWindow::createSettings()
 	defaultP = settings->value("playlist","playlists/siol-mpeg2.m3u").toString();
 
 	openPlaylist(true);
-	editor = new EditPlaylist(this, fileName);
 
 	settings->beginGroup("GUI");
 	if(settings->value("lite",false).toBool()) {
@@ -348,7 +348,7 @@ void MainWindow::aboutTano()
 //Media controls
 void MainWindow::playlist(QTreeWidgetItem* clickedChannel)
 {
-	Channel *tmp = handler->channelRead(clickedChannel);
+	Channel *tmp = ui.playlistWidget->channelRead(clickedChannel);
 	if (tmp->isCategory() != true) {
 		channel = tmp;
 		play();
@@ -357,7 +357,7 @@ void MainWindow::playlist(QTreeWidgetItem* clickedChannel)
 
 void MainWindow::key(int clickedChannel)
 {
-	Channel *tmp = handler->channelReadNum(clickedChannel);
+	Channel *tmp = ui.playlistWidget->channelReadNum(clickedChannel);
 	if (tmp->isCategory() != true) {
 		channel = tmp;
 		play();
@@ -486,45 +486,26 @@ void MainWindow::stop()
 
 void MainWindow::openPlaylist(bool start)
 {
-	handler->clear();
-
-	if (start != true) {
+	if (!start)
     	fileName =
             QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
                                          QDir::homePath(),
                                          tr("Tano TV Channel list Files(*.m3u)"));
-    	if (!fileName.isEmpty()) {
-    		editor->setFile(fileName);
-    	    ui.recorder->openPlaylist(fileName);
-    	}
-	} else {
+	else
 		fileName = Common::locateResource(defaultP);
+
+	if (!fileName.isEmpty()) {
+	    editor->setFile(fileName);
 	    ui.recorder->openPlaylist(fileName);
-	}
-    if (fileName.isEmpty())
+	    timers->openPlaylist(fileName);
+	} else
         return;
 
-    ui.playlistWidget->clear();
-
-    QFile file(fileName);
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
-
-        QMessageBox::warning(this, tr("Tano"),
-                             tr("Cannot read file %1:\n%2.")
-                             .arg(fileName)
-                             .arg(file.errorString()));
-        hasPlaylist = false;
-        select = new ChannelSelect(this, ui.channelNumber, handler->nums());
-        return;
-    }
-
-    handler->processFile(fileName);
+	ui.playlistWidget->open(fileName);
 
     hasPlaylist = true;
-    select = new ChannelSelect(this, ui.channelNumber, handler->nums());
-
-    ui.channelToolBox->setItemText(0,handler->getName());
-    ui.playlistWidget->setCategories(handler->getCategories());
+    select = new ChannelSelect(this, ui.channelNumber, ui.playlistWidget->nums());
+    ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
 }
 
 void MainWindow::openFile()

@@ -46,9 +46,6 @@ private:
 	TrayRecorder *trayIcon;
 	QMenu *tray;
 
-	M3UHandler *handler;
-	QString fileName;
-
 	QProcess *frip;
 	QString fripPath;
 	QString slash;

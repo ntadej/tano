@@ -128,8 +128,8 @@
 <context>
     <name>EditPlaylist</name>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="115"/>
-        <location filename="../channels/EditPlaylist.cpp" line="148"/>
+        <location filename="../channels/EditPlaylist.cpp" line="113"/>
+        <location filename="../channels/EditPlaylist.cpp" line="146"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
@@ -137,56 +137,56 @@
     </message>
     <message>
         <location filename="../../build/src/ui_EditPlaylist.h" line="160"/>
-        <location filename="../channels/EditPlaylist.cpp" line="70"/>
+        <location filename="../channels/EditPlaylist.cpp" line="68"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="96"/>
-        <location filename="../channels/EditPlaylist.cpp" line="114"/>
-        <location filename="../channels/EditPlaylist.cpp" line="147"/>
+        <location filename="../channels/EditPlaylist.cpp" line="94"/>
+        <location filename="../channels/EditPlaylist.cpp" line="112"/>
+        <location filename="../channels/EditPlaylist.cpp" line="145"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="70"/>
+        <location filename="../channels/EditPlaylist.cpp" line="68"/>
         <source>language</source>
         <translation>jezik</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="70"/>
+        <location filename="../channels/EditPlaylist.cpp" line="68"/>
         <source>Categories</source>
         <translation>Kategorije</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="88"/>
+        <location filename="../channels/EditPlaylist.cpp" line="86"/>
         <source>Save Channel list</source>
         <translation>Shrani Seznam programov</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="90"/>
+        <location filename="../channels/EditPlaylist.cpp" line="88"/>
         <source>Tano TV Channel list Files (*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="97"/>
+        <location filename="../channels/EditPlaylist.cpp" line="95"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="133"/>
+        <location filename="../channels/EditPlaylist.cpp" line="131"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="135"/>
+        <location filename="../channels/EditPlaylist.cpp" line="133"/>
         <source>Tano TV Old Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV star Seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="181"/>
+        <location filename="../channels/EditPlaylist.cpp" line="179"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation>Ali želiš zapreti urejevalnik?
@@ -1024,7 +1024,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Orodna vrstica predvajanja</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="71"/>
+        <location filename="../MainWindow.cpp" line="72"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Ali želiš zapreti Tano?
@@ -1039,39 +1039,32 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="493"/>
+        <location filename="../MainWindow.cpp" line="491"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="495"/>
+        <location filename="../MainWindow.cpp" line="493"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="513"/>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation>Ne morem prebrati datoteke %1:
-%2.</translation>
-    </message>
-    <message>
-        <location filename="../MainWindow.cpp" line="533"/>
+        <location filename="../MainWindow.cpp" line="514"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="535"/>
+        <location filename="../MainWindow.cpp" line="516"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="547"/>
+        <location filename="../MainWindow.cpp" line="528"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="548"/>
+        <location filename="../MainWindow.cpp" line="529"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -1087,10 +1080,9 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../../build/src/ui_MainWindow.h" line="708"/>
-        <location filename="../MainWindow.cpp" line="70"/>
-        <location filename="../MainWindow.cpp" line="512"/>
-        <location filename="../MainWindow.cpp" line="568"/>
-        <location filename="../MainWindow.cpp" line="570"/>
+        <location filename="../MainWindow.cpp" line="71"/>
+        <location filename="../MainWindow.cpp" line="549"/>
+        <location filename="../MainWindow.cpp" line="551"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1197,8 +1189,20 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Počisti</translation>
     </message>
     <message>
-        <location filename="../ui/PlaylistWidget.cpp" line="32"/>
-        <location filename="../ui/PlaylistWidget.cpp" line="38"/>
+        <location filename="../ui/PlaylistWidget.cpp" line="42"/>
+        <source>Tano</source>
+        <translation>Tano</translation>
+    </message>
+    <message>
+        <location filename="../ui/PlaylistWidget.cpp" line="43"/>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation>Ne morem prebrati %1:
+%2.</translation>
+    </message>
+    <message>
+        <location filename="../ui/PlaylistWidget.cpp" line="52"/>
+        <location filename="../ui/PlaylistWidget.cpp" line="58"/>
         <source>All channels</source>
         <translation>Vsi programi</translation>
     </message>
@@ -1245,65 +1249,53 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>Recorder</name>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="67"/>
-        <source>Tano</source>
-        <translation>Tano</translation>
-    </message>
-    <message>
-        <location filename="../recorder/Recorder.cpp" line="68"/>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation>Ne morem prebrati %1:
-%2.</translation>
-    </message>
-    <message>
-        <location filename="../recorder/Recorder.cpp" line="93"/>
+        <location filename="../recorder/Recorder.cpp" line="72"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="157"/>
+        <location filename="../recorder/Recorder.cpp" line="136"/>
         <source>No timer - press button to stop.</source>
         <translation>Ni timerja - pritisni gumb in ustavi.</translation>
     </message>
     <message>
         <location filename="../../build/src/ui_Recorder.h" line="232"/>
         <location filename="../../build/src/ui_Recorder.h" line="234"/>
-        <location filename="../recorder/Recorder.cpp" line="177"/>
+        <location filename="../recorder/Recorder.cpp" line="156"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="160"/>
-        <location filename="../recorder/Recorder.cpp" line="161"/>
+        <location filename="../recorder/Recorder.cpp" line="139"/>
+        <location filename="../recorder/Recorder.cpp" line="140"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
         <location filename="../../build/src/ui_Recorder.h" line="220"/>
         <location filename="../../build/src/ui_Recorder.h" line="227"/>
-        <location filename="../recorder/Recorder.cpp" line="180"/>
-        <location filename="../recorder/Recorder.cpp" line="181"/>
+        <location filename="../recorder/Recorder.cpp" line="159"/>
+        <location filename="../recorder/Recorder.cpp" line="160"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="110"/>
+        <location filename="../recorder/Recorder.cpp" line="89"/>
         <source>Cannot write to %1.</source>
         <translation>Ne morem pisati v %1.</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="116"/>
-        <location filename="../recorder/Recorder.cpp" line="203"/>
+        <location filename="../recorder/Recorder.cpp" line="95"/>
+        <location filename="../recorder/Recorder.cpp" line="182"/>
         <source>Channel is not selected!</source>
         <translation>Program ni izbran!</translation>
     </message>
     <message>
         <location filename="../../build/src/ui_Recorder.h" line="219"/>
         <location filename="../../build/src/ui_Recorder.h" line="221"/>
-        <location filename="../recorder/Recorder.cpp" line="109"/>
-        <location filename="../recorder/Recorder.cpp" line="115"/>
-        <location filename="../recorder/Recorder.cpp" line="202"/>
+        <location filename="../recorder/Recorder.cpp" line="88"/>
+        <location filename="../recorder/Recorder.cpp" line="94"/>
+        <location filename="../recorder/Recorder.cpp" line="181"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
@@ -1404,46 +1396,83 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
 </context>
 <context>
-    <name>Timers</name>
+    <name>TimersManager</name>
     <message>
-        <location filename="../../build/src/ui_Timers.h" line="117"/>
+        <location filename="../../build/src/ui_TimersManager.h" line="268"/>
         <source>Timers</source>
         <translation>Timerji</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Timers.h" line="118"/>
+        <location filename="../../build/src/ui_TimersManager.h" line="269"/>
         <source>New Task</source>
         <translation>Novo opravilo</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Timers.h" line="119"/>
+        <location filename="../../build/src/ui_TimersManager.h" line="270"/>
         <source>Delete Task</source>
         <translation>Izbriši opravilo</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Timers.h" line="121"/>
-        <source>Channel</source>
-        <translation>Program</translation>
+        <location filename="../../build/src/ui_TimersManager.h" line="272"/>
+        <source>Timer</source>
+        <translation>Timer</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Timers.h" line="123"/>
-        <source>Start time</source>
-        <translation>Začetni čas</translation>
+        <location filename="../../build/src/ui_TimersManager.h" line="273"/>
+        <source>Create</source>
+        <translation>Ustvari</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Timers.h" line="125"/>
-        <source>End time</source>
-        <translation>Končni čas</translation>
+        <location filename="../../build/src/ui_TimersManager.h" line="275"/>
+        <source>Select a channel from the list below:</source>
+        <translation>Izberi program s spodnjega seznama:</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Timers.h" line="127"/>
-        <source>From EPG?</source>
-        <translation>Z EPG?</translation>
+        <location filename="../../build/src/ui_TimersManager.h" line="276"/>
+        <source>Timer Editor</source>
+        <translation>Urejevalnik</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Timers.h" line="128"/>
-        <source>toolBar</source>
-        <translation></translation>
+        <location filename="../../build/src/ui_TimersManager.h" line="274"/>
+        <location filename="../../build/src/ui_TimersManager.h" line="277"/>
+        <source>Name:</source>
+        <translation>Ime:</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_TimersManager.h" line="278"/>
+        <source>Channel:</source>
+        <translation>Program:</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_TimersManager.h" line="279"/>
+        <source>Playlist:</source>
+        <translation>Seznam:</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_TimersManager.h" line="280"/>
+        <source>Date:</source>
+        <translation>Datum:</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_TimersManager.h" line="281"/>
+        <source>Start time:</source>
+        <translation>Začetek:</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_TimersManager.h" line="282"/>
+        <source>End time:</source>
+        <translation>Konec:</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_TimersManager.h" line="283"/>
+        <source>dd.MM.yyyy</source>
+        <translation>dd.MM.yyyy</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_TimersManager.h" line="284"/>
+        <location filename="../../build/src/ui_TimersManager.h" line="285"/>
+        <source>hh:mm</source>
+        <translation>hh:mm</translation>
     </message>
 </context>
 <context>

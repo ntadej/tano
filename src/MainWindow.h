@@ -12,7 +12,6 @@
 
 #include "ui_MainWindow.h"
 #include "Updates.h"
-#include "xml/M3UHandler.h"
 #include "channels/Channel.h"
 #include "channels/EditPlaylist.h"
 #include "ui/EditSettings.h"
@@ -22,7 +21,7 @@
 #include "control/Shortcuts.h"
 #include "epg/Epg.h"
 #include "epg/EpgShow.h"
-#include "recorder/Timers.h"
+#include "recorder/TimersManager.h"
 
 class MainWindow : public QMainWindow
 {
@@ -83,7 +82,6 @@ private:
     Osd *osd;
     QSettings *settings;
 
-    M3UHandler *handler;
     Channel *channel;
 	QString fileName;
 	QString defaultP;
@@ -109,7 +107,7 @@ private:
 
 	QErrorMessage *errorHandler;
 
-	Timers *timers;
+	TimersManager *timers;
 
 	bool isLite;
 	bool osdEnabled;

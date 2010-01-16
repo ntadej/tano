@@ -13,7 +13,7 @@ class EditPlaylist : public QMainWindow
     Q_OBJECT
 
 public:
-    EditPlaylist(QWidget *parent = 0, QString fileName = "");
+    EditPlaylist(QWidget *parent = 0);
     ~EditPlaylist();
 
     void setFile(QString file);

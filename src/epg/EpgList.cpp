@@ -20,7 +20,7 @@ EpgList::EpgList(QWidget *parent)
 	rightMenu->addAction(info);
 	rightMenu->addAction(record);
 
-//    connect(info, SIGNAL(triggered()), this, SLOT(open()));
+    connect(info, SIGNAL(triggered()), this, SLOT(epgClicked()));
 }
 
 EpgList::~EpgList()
@@ -72,6 +72,11 @@ void EpgList::processEpg() {
 }
 
 void EpgList::epgClicked(QTableWidgetItem *item) {
-	ChannelEpg *newEpg = map[item];
+	ChannelEpg *newEpg;
+	if(item == 0)
+		newEpg = map[currentItem()];
+	else
+		newEpg = map[item];
+
 	emit urlClicked(newEpg->url());
 }

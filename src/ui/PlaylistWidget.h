@@ -3,6 +3,9 @@
 
 #include <QtGui/QWidget>
 
+#include "../channels/Channel.h"
+#include "../xml/M3UHandler.h"
+
 #include "ui_PlaylistWidget.h"
 
 class PlaylistWidget : public QWidget
@@ -13,9 +16,15 @@ public:
 	PlaylistWidget(QWidget *parent = 0);
 	~PlaylistWidget();
 
-	QTreeWidget* treeWidget();
 	void clear();
-	void setCategories(QStringList c);
+	void open(QString file);
+	QString name();
+	QString fileName();
+	QList<int> nums();
+
+public slots:
+	Channel *channelRead(QTreeWidgetItem* clickedChannel);
+	Channel *channelReadNum(int clickedChannel);
 
 signals:
 	void itemClicked(QTreeWidgetItem*, int);
@@ -27,6 +36,8 @@ private slots:
 private:
     Ui::PlaylistWidget ui;
 
+	M3UHandler *handler;
+	QString _fileName;
 };
 
 #endif /* PLAYLISTWIDGET_H_ */

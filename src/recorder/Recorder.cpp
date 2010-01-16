@@ -15,8 +15,6 @@ Recorder::Recorder(QWidget *parent)
 
 	ui.setupUi(this);
 
-	handler = new M3UHandler(ui.playlistWidget->treeWidget());
-
 	//Init
 	settings = Common::settings();
 	settings->beginGroup("Recorder");
@@ -53,31 +51,12 @@ void Recorder::stop()
 
 void Recorder::openPlaylist(QString file)
 {
-	handler->clear();
-
-    if (file.isEmpty())
-        return;
-
-    fileName = file;
-
-    ui.playlistWidget->clear();
-
-    QFile f(fileName);
-    if (!f.open(QFile::ReadOnly | QFile::Text)) {
-    	QMessageBox::warning(this, tr("Tano"),
-							tr("Cannot read file %1:\n%2.")
-							.arg(fileName)
-							.arg(f.errorString()));
-        return;
-    }
-
-    handler->processFile(fileName);
-    ui.playlistWidget->setCategories(handler->getCategories());
+	ui.playlistWidget->open(file);
 }
 
 void Recorder::playlist(QTreeWidgetItem* clickedChannel)
 {
-	channel = handler->channelRead(clickedChannel);
+	channel = ui.playlistWidget->channelRead(clickedChannel);
 	if (channel->isCategory() != true) {
 		ui.valueSelected->setText(channel->name());
 	}
@@ -194,7 +173,7 @@ void Recorder::recordNow(int nmb, QString url, QString name)
 	settings->endGroup();
 	trayIcon->show();
 
-	channel = handler->channelReadNum(nmb);
+	channel = ui.playlistWidget->channelReadNum(nmb);
 	if (channel->isCategory() != true) {
 		ui.valueSelected->setText(channel->name());
 		ui.actionRecord->setChecked(true);

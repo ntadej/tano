@@ -56,7 +56,7 @@ ENDIF(MINGW)
 
 #------------------------------------------------------------------------------
 ADD_SUBDIRECTORY(lib/QVlc)
-ADD_SUBDIRECTORY(lib/QPropertyEditor)
+#ADD_SUBDIRECTORY(lib/QPropertyEditor)
 ADD_SUBDIRECTORY(lib/QtKeySequenceEdit)
 ADD_SUBDIRECTORY(src)
 

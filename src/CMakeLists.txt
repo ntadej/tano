@@ -36,7 +36,7 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/Osd.ui
 	ui/PlaylistWidget.ui
 	ui/Recorder.ui
-	ui/Timers.ui
+	ui/TimersManager.ui
 )
 
 # Define the MOC source files used by Tano
@@ -51,7 +51,8 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	epg/EpgLoader.h
 	epg/EpgShow.h
 	recorder/Recorder.h
-	recorder/Timers.h
+	recorder/Timer.h
+	recorder/TimersManager.h
 	ui/About.h
 	ui/EditSettings.h
 	ui/FirstRun.h
@@ -76,7 +77,8 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	epg/EpgLoader.cpp
 	epg/EpgShow.cpp
 	recorder/Recorder.cpp
-	recorder/Timers.cpp
+	recorder/Timer.cpp
+	recorder/TimersManager.cpp
 	ui/About.cpp
 	ui/EditSettings.cpp
 	ui/FirstRun.cpp
@@ -190,7 +192,7 @@ ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs
 
 # Here the needed Qt Libraries are added to the link
 # command. Never remove that line :-)
-TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} QVlc QPropertyEditor QtKeySequenceEdit)
+TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} QVlc QtKeySequenceEdit)
 
 
 ###############

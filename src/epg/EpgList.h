@@ -29,7 +29,7 @@ protected:
 
 private slots:
 	void processEpg();
-	void epgClicked(QTableWidgetItem *item);
+	void epgClicked(QTableWidgetItem *item = 0);
 
 private:
     QStringList epgList;

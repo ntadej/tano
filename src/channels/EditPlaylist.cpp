@@ -8,7 +8,7 @@
 
 #include "EditPlaylist.h"
 
-EditPlaylist::EditPlaylist(QWidget *parent, QString fileName)
+EditPlaylist::EditPlaylist(QWidget *parent)
     : QMainWindow(parent)
 {
 	ui.setupUi(this);
@@ -27,8 +27,6 @@ EditPlaylist::EditPlaylist(QWidget *parent, QString fileName)
 	treeStyle();
 
 	load = new M3UHandler(ui.playlist, true);
-
-	fileN = fileName;
 }
 
 EditPlaylist::~EditPlaylist()
