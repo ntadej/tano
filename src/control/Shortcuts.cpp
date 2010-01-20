@@ -1,9 +1,9 @@
 #include "Shortcuts.h"
 #include "../Common.h"
 
-Shortcuts::Shortcuts(QList<QAction*> list) {
-	actions = list;
-
+Shortcuts::Shortcuts(QList<QAction*> list)
+	: actions(list)
+{
 	defaultList << "Space"
 				<< "S"
 				<< "N"
@@ -58,14 +58,4 @@ void Shortcuts::apply()
 		actions.at(i)->setShortcutContext(Qt::ApplicationShortcut);
 	}
 	settings->endGroup();
-}
-
-QStringList Shortcuts::defaultKeys()
-{
-	return defaultList;
-}
-
-QStringList Shortcuts::actionsNames()
-{
-	return actionsName;
 }

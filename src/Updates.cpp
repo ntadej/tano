@@ -1,13 +1,8 @@
+#include "Common.h"
 #include "Updates.h"
 
-#include <QtDebug>
-
 Updates::Updates() {
-
-	qDebug() << "Updates Success!";
-
 	codec = QTextCodec::codecForName("UTF-8");
-
 	setHost("tano.sourceforge.net");
 }
 
@@ -15,11 +10,9 @@ Updates::~Updates() {
 
 }
 
-
 void Updates::getUpdates()
 {
 	get("/version.php");
-
 	connect(this, SIGNAL(done(bool)), this, SLOT(updatesPrint()));
 }
 
@@ -31,9 +24,23 @@ void Updates::updatesPrint()
 	string = string.replace(" ","");
 	string = string.replace("\n","");
 
-	qDebug() << string;
-
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(updatesPrint()));
 
-	emit updatesDone(string);
+	processUpdates(string);
+}
+
+void Updates::processUpdates(QString v)
+{
+	QStringList updatesList;
+
+	if(Common::version() != v) {
+		if(Common::version().contains("svn"))
+			updatesList << "svn" << v << Common::version();
+		else
+			updatesList << "update" << v;
+	} else {
+		updatesList << "latest";
+	}
+
+	emit updatesDone(updatesList);
 }

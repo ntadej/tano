@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include <QMenu>
-#include "ui_EditPlaylist.h"
+
+#include <ui_EditPlaylist.h>
 
 #include "../xml/M3UHandler.h"
 #include "../xml/M3UGenerator.h"
@@ -33,8 +34,6 @@ private slots:
 	void exit();
 
 private:
-	void treeStyle();
-
 	bool closeEnabled;
 
     Ui::EditPlaylist ui;
@@ -42,7 +41,6 @@ private:
     M3UHandler *load;
     M3UGenerator *generator;
 
-    QIcon categoryIcon;
     QIcon channelIcon;
 
     QString fileN;

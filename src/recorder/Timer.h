@@ -1,5 +1,5 @@
-#ifndef TIMER_H_
-#define TIMER_H_
+#ifndef TANO_TIMER_H_
+#define TANO_TIMER_H_
 
 #include <QObject>
 #include <QTime>
@@ -37,4 +37,4 @@ private:
 	QTime _endTime;
 };
 
-#endif // TIMER_H_
+#endif // TANO_TIMER_H_

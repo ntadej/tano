@@ -24,7 +24,7 @@ EditPlaylist::EditPlaylist(QWidget *parent)
 
 	ui.playlist->header()->setResizeMode(QHeaderView::ResizeToContents);
 
-	treeStyle();
+	channelIcon = QIcon(":/icons/images/video.png");
 
 	load = new M3UHandler(ui.playlist, true);
 }
@@ -44,15 +44,6 @@ void EditPlaylist::closeEvent(QCloseEvent *event)
 	}
 }
 
-void EditPlaylist::treeStyle()
-{
-	categoryIcon.addPixmap(QPixmap(":/icons/images/folder.png"),
-	                     QIcon::Normal, QIcon::Off);
-	categoryIcon.addPixmap(QPixmap(":/icons/images/folder_video.png"),
-	                     QIcon::Normal, QIcon::On);
-	channelIcon = QIcon(":/icons/images/video.png");
-}
-
 void EditPlaylist::deleteItem()
 {
 	QTreeWidgetItem *parent = ui.playlist->currentItem()->parent();
@@ -65,7 +56,7 @@ void EditPlaylist::deleteItem()
 void EditPlaylist::addItemChannel()
 {
 	QStringList defaults;
-	defaults << "#" << tr("Channel") << tr("language") << "" << "URL" << tr("Categories");
+	defaults << "#" << tr("Channel") << tr("Categories") << "URL" << tr("language") << "";
 
 	QTreeWidgetItem *item = new QTreeWidgetItem(ui.playlist, ui.playlist->currentItem());
 	item->setIcon(0,channelIcon);

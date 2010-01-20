@@ -1,9 +1,7 @@
-#include <QApplication>
 #include <QCoreApplication>
 #include <QTranslator>
 #include <QSettings>
 #include <QLocale>
-#include <QtDebug>
 
 #include "MainWindow.h"
 #include "Common.h"
@@ -30,7 +28,6 @@ int main(int argc, char *argv[])
 	}
 
     MainWindow mainWindow;
-
     mainWindow.show();
 
     return app.exec();

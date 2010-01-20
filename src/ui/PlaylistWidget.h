@@ -1,12 +1,12 @@
-#ifndef PLAYLISTWIDGET_H_
-#define PLAYLISTWIDGET_H_
+#ifndef TANO_PLAYLISTWIDGET_H_
+#define TANO_PLAYLISTWIDGET_H_
 
 #include <QtGui/QWidget>
 
 #include "../channels/Channel.h"
 #include "../xml/M3UHandler.h"
 
-#include "ui_PlaylistWidget.h"
+#include <ui_PlaylistWidget.h>
 
 class PlaylistWidget : public QWidget
 {
@@ -40,4 +40,4 @@ private:
 	QString _fileName;
 };
 
-#endif /* PLAYLISTWIDGET_H_ */
+#endif // TANO_PLAYLISTWIDGET_H_

@@ -1,9 +1,9 @@
 #include "M3UGenerator.h"
 
 M3UGenerator::M3UGenerator(QString n, QTreeWidget *treeWidget)
-    : treeWidget(treeWidget)
+    : treeWidget(treeWidget), name(n)
 {
-	name = n;
+
 }
 
 bool M3UGenerator::write(QIODevice *device)

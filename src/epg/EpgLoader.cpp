@@ -1,7 +1,7 @@
-#include "EpgLoader.h"
-
 #include <QtDebug>
 #include <QTime>
+
+#include "EpgLoader.h"
 
 EpgLoader::EpgLoader()
 {

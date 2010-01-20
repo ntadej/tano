@@ -43,4 +43,4 @@ private:
 	QHttpRequestHeader header;
 };
 
-#endif /* TANO_EPGLOADER_H_ */
+#endif // TANO_EPGLOADER_H_

@@ -1,8 +1,7 @@
-#ifndef COMMON_H_
-#define COMMON_H_
+#ifndef TANO_COMMON_H_
+#define TANO_COMMON_H_
 
 #include <QString>
-#include <QStringList>
 #include <QSettings>
 
 class Common {
@@ -20,4 +19,4 @@ public:
 	static QSettings* settings();
 };
 
-#endif /* COMMON_H_ */
+#endif // TANO_COMMON_H_

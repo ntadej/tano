@@ -1,5 +1,5 @@
-#ifndef FIRSTRUN_H_
-#define FIRSTRUN_H_
+#ifndef TANO_FIRSTRUN_H_
+#define TANO_FIRSTRUN_H_
 
 #include <QObject>
 #include <QWizard>
@@ -50,10 +50,12 @@ private slots:
 	void setPlaylist();
 
 private:
-	QLabel *sessionLabel;
+	QLabel *settingsLabel;
+	QLabel *spacerLabel;
 	QLabel *siol;
 	QLabel *t2;
 	QCheckBox *sessionBox;
+	QCheckBox *vlcBox;
     QRadioButton *siolRadio2;
     QRadioButton *siolRadio4;
     QRadioButton *T2Radio;
@@ -79,4 +81,4 @@ private:
     QSettings *settings;
 };
 
-#endif
+#endif // TANO_FIRSTRUN_H_

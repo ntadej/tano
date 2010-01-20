@@ -1,19 +1,18 @@
+#ifndef TANO_TRAYICON_H_
+#define TANO_TRAYICON_H_
+
 #include <QSystemTrayIcon>
 #include <QMenu>
 #include <QAction>
 
-#ifndef TRAYICON_H_
-#define TRAYICON_H_
-
 class TrayIcon : public QSystemTrayIcon {
 Q_OBJECT
 public:
-	TrayIcon(QMenu *menu);
+	TrayIcon(QMenu *menu, bool recorder = false);
 	virtual ~TrayIcon();
 
-	void message(QString type);
-
 public slots:
+	void message(QStringList arg);
 	void changeToolTip(QString text = "stop");
 
 signals:
@@ -22,6 +21,9 @@ signals:
 private slots:
 	void iconActivated(QSystemTrayIcon::ActivationReason reason);
 	void eRestore();
+
+private:
+	bool _recorder;
 };
 
-#endif /* TRAYICON_H_ */
+#endif // TANO_TRAYICON_H_

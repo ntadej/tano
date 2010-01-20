@@ -44,4 +44,4 @@ private:
 	QDateTime date;
 };
 
-#endif /* EPG_H_ */
+#endif // TANO_EPG_H_

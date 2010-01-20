@@ -1,12 +1,5 @@
 #include <QDir>
 #include <QFileInfo>
-#include <QString>
-#include <QMap>
-#include <QCoreApplication>
-#include <QProcess>
-#include <QLibraryInfo>
-#include <QMessageBox>
-#include <QTextStream>
 
 #include "Common.h"
 #include "ui/About.h"

@@ -1,5 +1,5 @@
-#ifndef LICENSE_H_
-#define LICENSE_H_
+#ifndef TANO_LICENSE_H_
+#define TANO_LICENSE_H_
 
 #include <QTextBrowser>
 
@@ -12,4 +12,4 @@ public:
 	~License();
 };
 
-#endif /* LICENSE_H_ */
+#endif // TANO_LICENSE_H_

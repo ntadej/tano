@@ -1,4 +1,3 @@
-#include <QDebug>
 #include <QScrollBar>
 
 #include "InfoBar.h"

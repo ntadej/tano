@@ -2,9 +2,10 @@
 
 #include <QDebug>
 
-ChannelSelect::ChannelSelect(QWidget *parent, QLCDNumber *number, QList<int> l) {
+ChannelSelect::ChannelSelect(QWidget *parent, QLCDNumber *number, QList<int> l)
+	: lcd(number)
+{
 	num = 1;
-	lcd = number;
 	timer = new QTimer(parent);
 
 	number1 = 0;
@@ -110,12 +111,9 @@ void ChannelSelect::channel(bool direction)
 		i = -1;
 	}
 
-	qDebug() << full;
-
 	while(!lim.contains(full)&&full>0&&full<=lim.at(lim.size()-1))
 		full+=i;
 
-	qDebug() << full;
 	display();
 }
 

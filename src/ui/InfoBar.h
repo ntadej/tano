@@ -1,10 +1,10 @@
-#ifndef INFOBAR_H
-#define INFOBAR_H
+#ifndef TANO_INFOBAR_H_
+#define TANO_INFOBAR_H_
 
 #include <QtGui/QWidget>
 #include <QTimer>
 
-#include "ui_InfoBar.h"
+#include <ui_InfoBar.h>
 
 class InfoBar : public QWidget
 {
@@ -33,4 +33,4 @@ private:
     bool direction;
 };
 
-#endif // INFOBAR_H
+#endif // TANO_INFOBAR_H_

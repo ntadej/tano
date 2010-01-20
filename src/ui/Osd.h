@@ -1,10 +1,10 @@
-#ifndef TANO_OSD_H
-#define TANO_OSD_H
+#ifndef TANO_OSD_H_
+#define TANO_OSD_H_
 
 #include <QtGui/QWidget>
 #include <QTime>
 
-#include "ui_Osd.h"
+#include <ui_Osd.h>
 
 class Osd : public QWidget
 {
@@ -47,4 +47,4 @@ private:
     QTime timeNow;
 };
 
-#endif // TANO_OSD_H
+#endif // TANO_OSD_H_

@@ -92,7 +92,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 {
 	if(settings->value("tray",false).toBool()) {
 		if (trayIcon->isVisible()) {
-			trayIcon->message("close");
+			trayIcon->message(QStringList() << "close");
 			hide();
 			event->ignore();
 		}
@@ -198,7 +198,7 @@ void MainWindow::createConnections()
 	connect(ui.epgToday_2, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_3, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_4, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
-	connect(update, SIGNAL(updatesDone(QString)), this, SLOT(processUpdates(QString)));
+	connect(update, SIGNAL(updatesDone(QStringList)), trayIcon, SLOT(message(QStringList)));
 
 	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.infoWidget, SLOT(setVisible(bool)));
 	connect(ui.infoWidget, SIGNAL(visibilityChanged(bool)), ui.actionChannel_info, SLOT(setChecked(bool)));
@@ -304,6 +304,7 @@ void MainWindow::createMenus()
 	tray->addAction(ui.actionClose);
 
 	trayIcon = new TrayIcon(tray);
+	trayIcon->show();
 }
 
 void MainWindow::createShortcuts()
@@ -462,18 +463,14 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 	}
 }
 
-void MainWindow::pause()
-{
-
-}
-
 void MainWindow::stop()
 {
 	ui.epgToday->epgClear();
 	ui.epgToday_2->epgClear();
 	ui.epgToday_3->epgClear();
 	ui.epgToday_4->epgClear();
-	ui.videoWidget->setRatioOriginal();
+	ui.actionRatioOriginal->trigger();
+	ui.actionCropOriginal->trigger();
 	ui.infoBarWidget->clear();
 	if(osdEnabled) {
 		osd->setInfo();
@@ -549,23 +546,6 @@ void MainWindow::tooltip(QString channelNow)
 		setWindowTitle(channelNow + " - " + tr("Tano"));
 	else
 		setWindowTitle(tr("Tano"));
-}
-
-void MainWindow::processUpdates(QString updates)
-{
-	qDebug() << Common::version();
-	if(Common::version() != updates) {
-		if(Common::version().contains("svn")) {
-			if (trayIcon->isVisible())
-				trayIcon->message(updates+","+Common::version());
-		} else{
-			if (trayIcon->isVisible())
-				trayIcon->message(updates);
-		}
-	} else {
-		if (trayIcon->isVisible())
-			trayIcon->message("latest");
-	}
 }
 
 void MainWindow::rightMenu(QPoint pos)

@@ -1,21 +1,15 @@
 #include <QFile>
 #include <QTextStream>
-#include <QDebug>
 
 #include "M3UHandler.h"
 
 M3UHandler::M3UHandler(QTreeWidget *treeWidget, bool editable)
-	: treeWidget(treeWidget)
+	: treeWidget(treeWidget), edit(editable)
 {
 	valid = false;
-	edit = editable;
 
 	name = QObject::tr("Channel list");
 
-	categoryIcon.addPixmap(QPixmap(":/icons/images/folder.png"),
-	                     QIcon::Normal, QIcon::Off);
-	categoryIcon.addPixmap(QPixmap(":/icons/images/folder_video.png"),
-	                     QIcon::Normal, QIcon::On);
 	channelIcon = QIcon(":/icons/images/video.png");
 }
 
@@ -122,19 +116,4 @@ Channel *M3UHandler::channelReadNum(int clickedItem)
 	Channel *newChannel = nmap[clickedItem];
 
 	return newChannel;
-}
-
-QString M3UHandler::getName()
-{
-	return name;
-}
-
-QStringList M3UHandler::getCategories()
-{
-	return categoryList;
-}
-
-QList<int> M3UHandler::nums()
-{
-	return channelNums;
 }

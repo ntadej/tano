@@ -1,5 +1,5 @@
-#ifndef TIMERSMANAGER_H
-#define TIMERSMANAGER_H
+#ifndef TANO_TIMERSMANAGER_H_
+#define TANO_TIMERSMANAGER_H_
 
 #include <QtGui/QMainWindow>
 #include <QSettings>
@@ -9,7 +9,7 @@
 #include "../channels/Channel.h"
 #include "Timer.h"
 
-#include "ui_TimersManager.h"
+#include <ui_TimersManager.h>
 
 class TimersManager : public QMainWindow
 {
@@ -38,4 +38,4 @@ private:
     Channel *channel;
 };
 
-#endif // TIMERSMANAGER_H
+#endif // TANO_TIMERSMANAGER_H_

@@ -24,7 +24,7 @@ Recorder::Recorder(QWidget *parent)
 	recording = false;
 
 	tray = new QMenu();
-	trayIcon = new TrayRecorder(tray);
+	trayIcon = new TrayIcon(tray, true);
 
 	frip = new QProcess(this);
 	fripPath = Common::frip();

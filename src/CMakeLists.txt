@@ -61,7 +61,6 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/Osd.h
 	ui/PlaylistWidget.h
 	ui/TrayIcon.h
-	ui/TrayRecorder.h
 )
 
 SET(Tano_Resrcs ui/images.qrc)
@@ -87,10 +86,8 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	ui/Osd.cpp
 	ui/PlaylistWidget.cpp
 	ui/TrayIcon.cpp
-	ui/TrayRecorder.cpp
 	xml/M3UGenerator.cpp
 	xml/M3UHandler.cpp
-	xml/tanogenerator.cpp
 	xml/tanohandler.cpp
 )
 

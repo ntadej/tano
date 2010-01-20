@@ -1,10 +1,11 @@
-#ifndef EPGSHOW_H
-#define EPGSHOW_H
+#ifndef TANO_EPGSHOW_H_
+#define TANO_EPGSHOW_H_
 
 #include <QtGui/QWidget>
 #include <QFile>
 
-#include "ui_EpgShow.h"
+#include <ui_EpgShow.h>
+
 #include "EpgLoader.h"
 
 class EpgShow : public QWidget
@@ -35,4 +36,4 @@ private:
     bool httpRequestAborted;
 };
 
-#endif // EPGSHOW_H
+#endif // TANO_EPGSHOW_H_

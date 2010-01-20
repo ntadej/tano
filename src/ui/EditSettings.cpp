@@ -3,12 +3,13 @@
 #include <QTextEdit>
 #include <QDir>
 #include <QFileDialog>
+#include <QVlc/VlcInstance.h>
 
 #include "EditSettings.h"
 #include "../Common.h"
 
 EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
-	: QDialog(parent)
+	: QDialog(parent), shortcuts(s)
 {
 	ui.setupUi(this);
 	createActions();
@@ -21,7 +22,6 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	ui.shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 	ui.shortcutsWidget->verticalHeader()->hide();
 
-	shortcuts = s;
 	keysList = shortcuts->defaultKeys();
 	actionsList = shortcuts->actionsNames();
 
@@ -29,6 +29,7 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	settings->sync();
 
 	ui.labelVersion->setText(tr("You are using Tano version:")+" "+Common::version());
+	ui.labelVlcVersion->setText(ui.labelVlcVersion->text()+" "+VlcInstance::version());
 
 	read();
 	shortcutRead();
@@ -38,20 +39,20 @@ void EditSettings::createActions()
 {
 	connect(ui.buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 
-	connect(ui.radioDefault, SIGNAL(clicked()), this, SLOT(toggleCustom()));
-	connect(ui.radioCustom, SIGNAL(clicked()), this, SLOT(toggleCustom()));
+	connect(ui.radioCustomLanguage, SIGNAL(clicked()), this, SLOT(toggleCustom()));
+	connect(ui.radioDefaultLanguage, SIGNAL(clicked()), this, SLOT(toggleCustom()));
 
-	connect(ui.radioPreset, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
-	connect(ui.radioBrowse, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
+	connect(ui.radioPresetPlaylist, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
+	connect(ui.radioCustomPlaylist, SIGNAL(clicked()), this, SLOT(togglePlaylist()));
 
-	connect(ui.radioNDefault, SIGNAL(clicked()), this, SLOT(toggleNetwork()));
-	connect(ui.radioNCustom, SIGNAL(clicked()), this, SLOT(toggleNetwork()));
+	connect(ui.radioNetworkDefault, SIGNAL(clicked()), this, SLOT(toggleNetwork()));
+	connect(ui.radioNetworkCustom, SIGNAL(clicked()), this, SLOT(toggleNetwork()));
 
 	connect(ui.buttonBrowse, SIGNAL(clicked()), this, SLOT(playlistBrowse()));
 	connect(ui.buttonReset, SIGNAL(clicked()), this, SLOT(playlistReset()));
 
-	connect(ui.buttonBrowseDir, SIGNAL(clicked()), this, SLOT(dirBrowse()));
-	connect(ui.buttonResetDir, SIGNAL(clicked()), this, SLOT(dirReset()));
+	connect(ui.buttonBrowseRecorder, SIGNAL(clicked()), this, SLOT(dirBrowse()));
+	connect(ui.buttonResetRecorder, SIGNAL(clicked()), this, SLOT(dirReset()));
 
 	connect(ui.shortcutsWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(shortcutEdit(QTableWidgetItem*)));
 	connect(ui.keyEditor, SIGNAL(keySequenceChanged(const QKeySequence)), this, SLOT(shortcutSequence(const QKeySequence)));
@@ -76,12 +77,12 @@ void EditSettings::action(QAbstractButton *button)
 
 void EditSettings::ok()
 {
-	if (ui.radioDefault->isChecked()) {
+	if (ui.radioDefaultLanguage->isChecked()) {
 		settings->remove("locale");
 	} else {
-		if(ui.comboBox->currentIndex() == 1)
+		if(ui.languageComboBox->currentIndex() == 1)
 			settings->setValue("locale","sl");
-		else if(ui.comboBox->currentIndex() == 0)
+		else if(ui.languageComboBox->currentIndex() == 0)
 			settings->setValue("locale","en");
 	}
 
@@ -98,13 +99,18 @@ void EditSettings::ok()
 	} else if(ui.radioT2full->isChecked()) {
 			settings->setValue("playlist","playlists/t-2-full.m3u");
 	} else {
-		settings->setValue("playlist",ui.pEdit->text());
+		settings->setValue("playlist",ui.editPlaylist->text());
 	}
 
-	if(ui.radioNCustom->isChecked()) {
+	if(ui.radioNetworkCustom->isChecked()) {
 		settings->setValue("network", ui.editNetwork->text());
 	} else {
 		settings->remove("network");
+	}
+	if(ui.vlcBox->isChecked()) {
+		settings->setValue("vlc", true);
+	} else {
+		settings->remove("vlc");
 	}
 
 	settings->beginGroup("GUI");
@@ -128,7 +134,7 @@ void EditSettings::ok()
 	} else {
 		settings->setValue("info",false);
 	}
-	if(ui.volumeRadio->isChecked()) {
+	if(ui.radioWheelVolume->isChecked()) {
 		settings->setValue("wheel",true);
 	} else {
 		settings->setValue("wheel",false);
@@ -143,8 +149,8 @@ void EditSettings::ok()
 	settings->beginGroup("Recorder");
 	if(ui.checkRecorder->isChecked()) {
 		settings->setValue("enabled",true);
-		if(ui.pEditDir->text() != "")
-			settings->setValue("dir",ui.pEditDir->text());
+		if(ui.editRecorder->text() != "")
+			settings->setValue("dir",ui.editRecorder->text());
 	} else {
 		settings->setValue("enabled",false);
 		settings->remove("dir");
@@ -172,13 +178,13 @@ void EditSettings::read()
 {
 	if(settings->value("locale","Default").toString() != "Default")
 	{
-		ui.radioCustom->setChecked(true);
-		ui.comboBox->setEnabled(true);
+		ui.radioCustomLanguage->setChecked(true);
+		ui.languageComboBox->setEnabled(true);
 		bool okint;
 		if(settings->value("locale").toString() == "sl")
-			ui.comboBox->setCurrentIndex(1);
+			ui.languageComboBox->setCurrentIndex(1);
 		else if(settings->value("locale").toString() == "en")
-			ui.comboBox->setCurrentIndex(0);
+			ui.languageComboBox->setCurrentIndex(0);
 	}
 
 	ui.checkUpdates->setChecked(settings->value("updates",true).toBool());
@@ -193,54 +199,56 @@ void EditSettings::read()
 	else if(settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2-full.m3u")
 			ui.radioT2full->setChecked(true);
 	else {
-		ui.radioBrowse->setChecked(true);
+		ui.radioPresetPlaylist->setChecked(true);
 		ui.buttonBrowse->setEnabled(true);
 		ui.buttonReset->setEnabled(true);
-		ui.groupBoxPresets->setEnabled(false);
-		ui.pEdit->setText(settings->value("playlist").toString());
+		ui.presetsBox->setEnabled(false);
+		ui.editPlaylist->setText(settings->value("playlist").toString());
 	}
 
 	if(settings->value("network","").toString() != "")
 	{
-		ui.radioNCustom->setChecked(true);
+		ui.radioNetworkCustom->setChecked(true);
 		ui.editNetwork->setText(settings->value("network","").toString());
 		ui.editNetwork->setEnabled(true);
 	} else {
-		ui.radioNDefault->setChecked(true);
+		ui.radioNetworkDefault->setChecked(true);
 	}
+
+	ui.checkVlc->setChecked(settings->value("vlc",false).toBool());
 
 	settings->beginGroup("GUI");
 	ui.checkLite->setChecked(settings->value("lite",false).toBool());
 	ui.checkTop->setChecked(settings->value("ontop",false).toBool());
 	ui.checkOsd->setChecked(settings->value("OSD",true).toBool());
 	ui.checkInfo->setChecked(settings->value("info",true).toBool());
-	ui.channelRadio->setChecked(!settings->value("wheel",false).toBool());
-	ui.volumeRadio->setChecked(settings->value("wheel",false).toBool());
+	ui.radioWheelChannel->setChecked(!settings->value("wheel",false).toBool());
+	ui.radioWheelVolume->setChecked(settings->value("wheel",false).toBool());
 	ui.radioExit->setChecked(!settings->value("tray",false).toBool());
 	settings->endGroup();
 
 	settings->beginGroup("Recorder");
 	if(settings->value("enabled",true).toBool()) {
 		ui.checkRecorder->toggle();
-		ui.pEditDir->setText(settings->value("dir","").toString());
+		ui.editRecorder->setText(settings->value("dir","").toString());
 	}
 	settings->endGroup();
 }
 
 void EditSettings::toggleCustom()
 {
-	if (ui.radioCustom->isChecked())
+	if (ui.radioCustomLanguage->isChecked())
 	{
-		ui.comboBox->setEnabled(true);
+		ui.languageComboBox->setEnabled(true);
 	} else
 	{
-		ui.comboBox->setEnabled(false);
+		ui.languageComboBox->setEnabled(false);
 	}
 }
 
 void EditSettings::toggleNetwork()
 {
-	if (ui.radioNDefault->isChecked())
+	if (ui.radioNetworkDefault->isChecked())
 	{
 		ui.editNetwork->setEnabled(false);
 	} else
@@ -251,24 +259,22 @@ void EditSettings::toggleNetwork()
 
 void EditSettings::togglePlaylist()
 {
-	if (ui.radioBrowse->isChecked())
-	{
+	if (ui.radioCustomPlaylist->isChecked()) {
 		ui.buttonBrowse->setEnabled(true);
 		ui.buttonReset->setEnabled(true);
 		ui.radioSiol2->setCheckable(false);
 		ui.radioSiol4->setCheckable(false);
 		ui.radioT2->setCheckable(false);
 		ui.radioT2full->setCheckable(false);
-		ui.groupBoxPresets->setEnabled(false);
-	} else
-	{
+		ui.presetsBox->setEnabled(false);
+	} else {
 		ui.buttonBrowse->setEnabled(false);
 		ui.buttonReset->setEnabled(false);
 		ui.radioSiol2->setCheckable(true);
 		ui.radioSiol4->setCheckable(true);
 		ui.radioT2->setCheckable(true);
 		ui.radioT2full->setCheckable(true);
-		ui.groupBoxPresets->setEnabled(true);
+		ui.presetsBox->setEnabled(true);
 	}
 }
 
@@ -277,31 +283,31 @@ void EditSettings::playlistBrowse()
 	QString dfile = QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
 												QDir::homePath(),
 												tr("Tano TV Channel list Files(*.m3u)"));
-	ui.pEdit->setText(dfile);
+	ui.editPlaylist->setText(dfile);
 }
 
 void EditSettings::dirReset()
 {
-	ui.pEditDir->setText("");
+	ui.editRecorder->setText("");
 }
 
 void EditSettings::dirBrowse()
 {
 	QString dir;
-	if(ui.pEditDir->text() == "")
+	if(ui.editRecorder->text() == "")
 		dir = QDir::homePath();
 	else
-		dir = ui.pEditDir->text();
+		dir = ui.editRecorder->text();
 	QString dfile = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
 															dir,
 															QFileDialog::ShowDirsOnly
 															| QFileDialog::DontResolveSymlinks);
-	ui.pEditDir->setText(dfile);
+	ui.editRecorder->setText(dfile);
 }
 
 void EditSettings::playlistReset()
 {
-	ui.pEdit->setText("");
+	ui.editPlaylist->setText("");
 }
 
 void EditSettings::shortcutRead()

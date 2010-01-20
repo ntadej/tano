@@ -1,5 +1,5 @@
-#ifndef M3UHANDLER_H_
-#define M3UHANDLER_H_
+#ifndef TANO_M3UHANDLER_H_
+#define TANO_M3UHANDLER_H_
 
 #include <QIcon>
 #include <QMap>
@@ -18,9 +18,9 @@ public:
 
     Channel *channelRead(QTreeWidgetItem *clickedItem);
     Channel *channelReadNum(int clickedItem);
-    QString getName();
-    QStringList getCategories();
-    QList<int> nums();
+    QString getName() const {return name;};
+    QStringList getCategories() const {return categoryList;};
+    QList<int> nums() const {return channelNums;};
 
 private:
 	void processList();
@@ -35,7 +35,6 @@ private:
 	QTreeWidgetItem *item;
 	Channel *channel;
 
-    QIcon categoryIcon;
     QIcon channelIcon;
 
     QString name;
@@ -48,4 +47,4 @@ private:
     QMap<int, Channel*> nmap;
 };
 
-#endif // M3UHANDLER_H_
+#endif // TANO_M3UHANDLER_H_

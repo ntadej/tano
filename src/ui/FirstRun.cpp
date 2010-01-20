@@ -60,7 +60,8 @@ SettingsPage::SettingsPage(QWidget *parent)
      playlist = new QLineEdit;
      type = new QLineEdit;
 
-     sessionLabel = new QLabel(tr("Set your session store settings:"));
+     spacerLabel = new QLabel("");
+     settingsLabel = new QLabel(tr("Quick settings:"));
      siol = new QLabel("SiOL");
      t2 = new QLabel("T-2");
 
@@ -69,6 +70,7 @@ SettingsPage::SettingsPage(QWidget *parent)
      T2Radio = new QRadioButton(tr("T-2 Categorised"));
      T2RadioFull = new QRadioButton(tr("T-2 Full"));
      sessionBox = new QCheckBox(tr("Enable Session store"));
+     vlcBox = new QCheckBox(tr("Use global VLC configuration"));
 
      connect(siolRadio2, SIGNAL(clicked()), this, SLOT(setPlaylist()));
      connect(siolRadio4, SIGNAL(clicked()), this, SLOT(setPlaylist()));
@@ -83,13 +85,16 @@ SettingsPage::SettingsPage(QWidget *parent)
      layout->addWidget(T2Radio);
      layout->addWidget(T2RadioFull);
      layout->insertSpacerItem(6,new QSpacerItem(10,10,QSizePolicy::Expanding,QSizePolicy::Expanding));
-     layout->addWidget(sessionLabel);
+     layout->addWidget(spacerLabel);
+     layout->addWidget(settingsLabel);
      layout->addWidget(sessionBox);
+     layout->addWidget(vlcBox);
      setLayout(layout);
 
      registerField("playlist*", playlist);
      registerField("type*", type);
      registerField("session", sessionBox);
+     registerField("vlc", vlcBox);
 }
 
 int SettingsPage::nextId() const
@@ -100,16 +105,16 @@ int SettingsPage::nextId() const
 void SettingsPage::setPlaylist()
 {
 	if(siolRadio2->isChecked()) {
-		playlist->setText("playlists/siol-mpeg2.xml");
+		playlist->setText("playlists/siol-mpeg2.m3u");
 		type->setText(siolRadio2->text());
 	} else if(siolRadio4->isChecked()) {
-		playlist->setText("playlists/siol-mpeg4.xml");
+		playlist->setText("playlists/siol-mpeg4.m3u");
 		type->setText(siolRadio4->text());
 	} else if(T2Radio->isChecked()) {
-		playlist->setText("playlists/t-2-cat.xml");
+		playlist->setText("playlists/t-2-cat.m3u");
 		type->setText(T2Radio->text());
 	} else if(T2RadioFull->isChecked()) {
-		playlist->setText("playlists/t-2-full.xml");
+		playlist->setText("playlists/t-2-full.m3u");
 		type->setText(T2RadioFull->text());
 	}
 }
@@ -145,6 +150,7 @@ int ConclusionPage::nextId() const
 	settings->setValue("registered",true);
 	settings->setValue("playlist",field("playlist").toString());
 	settings->setValue("session",field("session").toBool());
+	settings->setValue("vlc",field("vlc").toBool());
 
     return -1;
 }

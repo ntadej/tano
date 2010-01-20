@@ -1,5 +1,6 @@
 #ifndef TANO_CHANNEL_H_
 #define TANO_CHANNEL_H_
+
 #include <QString>
 #include <QStringList>
 
@@ -8,21 +9,22 @@ public:
 	Channel(QString name, int num, bool cat);
 	virtual ~Channel();
 
-	void setNum(int num);
-	void setName(QString xmlName);
-	void setEpg(QString xmlEpg);
-	void setLanguage(QString xmlLanguage);
-	void setUrl(QString xmlUrl);
-	void setCategoryList(QStringList xmlCategoryList);
+	void setNum(const int &num);
+	void setName(const QString &xmlName);
+	void setEpg(const QString &xmlEpg);
+	void setLanguage(const QString &xmlLanguage);
+	void setUrl(const QString &xmlUrl);
+	void setCategoryList(const QStringList &xmlCategoryList);
 
-	int num();
 	QString numToString();
-	QString name();
-	bool isCategory();
-	QString language();
-	QString url();
-	QString epg();
-	QStringList categoryList();
+
+	int num() const {return _num;};
+	QString name() const {return _name;};
+	bool isCategory() const {return _category;};
+	QString language() const {return _lang;};
+	QString url() const {return _url;};
+	QString epg() const {return _epg;};
+	QStringList categoryList() const {return _categoryList;};
 
 private:
 	int _num;
@@ -31,7 +33,7 @@ private:
 	QString _url;
 	QString _epg;
 	QStringList _categoryList;
-	bool category;
+	bool _category;
 };
 
 #endif // TANO_CHANNEL_H_

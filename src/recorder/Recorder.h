@@ -1,5 +1,5 @@
-#ifndef RECORDER_H
-#define RECORDER_H
+#ifndef TANO_RECORDER_H_
+#define TANO_RECORDER_H_
 
 #include <QtGui/QMainWindow>
 #include <QMenu>
@@ -9,10 +9,10 @@
 #include <QSettings>
 
 #include "../channels/Channel.h"
-#include "../ui/TrayRecorder.h"
+#include "../ui/TrayIcon.h"
 #include "../xml/M3UHandler.h"
 
-#include "ui_Recorder.h"
+#include <ui_Recorder.h>
 
 class Recorder : public QWidget
 {
@@ -43,7 +43,7 @@ private:
     bool recording;
     Channel *channel;
 
-	TrayRecorder *trayIcon;
+	TrayIcon *trayIcon;
 	QMenu *tray;
 
 	QProcess *frip;
@@ -56,4 +56,4 @@ private:
 	QSettings *settings;
 };
 
-#endif // RECORDER_H
+#endif // TANO_RECORDER_H_

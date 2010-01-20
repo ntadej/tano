@@ -1,21 +1,19 @@
-#ifndef ABOUT_H
-#define ABOUT_H
+#ifndef TANO_ABOUT_H_
+#define TANO_ABOUT_H_
 
 #include <QtGui/QDialog>
-#include "ui_About.h"
+#include <ui_About.h>
 
 class About : public QDialog
 {
     Q_OBJECT
-
 public:
     About(QWidget *parent = 0, QString version = "Unknown");
     ~About();
 
 private:
     Ui::About ui;
-
     QString qt;
 };
 
-#endif // ABOUT_H
+#endif // TANO_ABOUT_H

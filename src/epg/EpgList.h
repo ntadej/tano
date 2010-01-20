@@ -1,11 +1,12 @@
-#ifndef EPGLIST_H
-#define EPGLIST_H
+#ifndef TANO_EPGLIST_H_
+#define TANO_EPGLIST_H_
 
 #include <QTableWidget>
 #include <QMap>
 #include <QMenu>
 #include <QAction>
 #include <QMouseEvent>
+
 #include "../channels/ChannelEpg.h"
 
 class EpgList : public QTableWidget
@@ -42,4 +43,4 @@ private:
     QAction *record;
 };
 
-#endif // EPGLIST_H
+#endif // TANO_EPGLIST_H_

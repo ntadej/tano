@@ -14,8 +14,8 @@ public:
 	virtual ~Shortcuts();
 
 	void apply();
-	QStringList defaultKeys();
-	QStringList actionsNames();
+	QStringList defaultKeys() const {return defaultList;};
+	QStringList actionsNames() const {return actionsName;};
 
 private:
 	QList<QAction*> actions;

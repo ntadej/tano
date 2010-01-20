@@ -26,6 +26,8 @@ EpgShow::~EpgShow()
 
 void EpgShow::open(QString url)
 {
+	ui.mainWidget->setCurrentIndex(0);
+
 	setWindowTitle("");
 	ui.labelName->setText("");
 	ui.labelTime->setText("");
@@ -47,6 +49,8 @@ void EpgShow::display(QStringList list)
 	ui.labelActors->setText("\n" + list.at(4));
 
 	downloadFile(list.at(5));
+
+	ui.mainWidget->setCurrentIndex(1);
 }
 
 void EpgShow::downloadFile(QString u)

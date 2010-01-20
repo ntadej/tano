@@ -1,5 +1,5 @@
-#ifndef M3UGENERATOR_H
-#define M3UGENERATOR_H
+#ifndef TANO_M3UGENERATOR_H_
+#define TANO_M3UGENERATOR_H_
 
 #include <QTextStream>
 #include <QTreeWidget>
@@ -20,4 +20,4 @@ private:
     QTextStream out;
 };
 
-#endif
+#endif // TANO_M3UGENERATOR_H_
