@@ -3,7 +3,7 @@
 ** Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
 ** Contact: Qt Software Information (qt-info@nokia.com)
 **
-** Copyright (C) 2008-2009 Tadej Novak
+** Copyright (C) 2008-2010 Tadej Novak
 **
 ** This file is part of the example classes of the Qt Toolkit.
 **
@@ -21,18 +21,19 @@
 **
 ****************************************************************************/
 
-#ifndef TANOGENERATOR_H
-#define TANOGENERATOR_H
+#ifndef TANO_TIMERSGENERATOR_H_
+#define TANO_TIMERSGENERATOR_H_
 
 #include <QTextStream>
+#include <QTreeWidget>
+#include <QTreeWidgetItem>
+#include <QMap>
 
-class QTreeWidget;
-class QTreeWidgetItem;
+#include "../recorder/Timer.h"
 
-class TanoGenerator
-{
+class TanoGenerator {
 public:
-    TanoGenerator(QString n, QTreeWidget *treeWidget);
+    TanoGenerator(QTreeWidget *treeWidget, QMap<QTreeWidgetItem*,Timer*> map);
 
     bool write(QIODevice *device);
 
@@ -43,8 +44,9 @@ private:
     void generateItem(QTreeWidgetItem *item, int depth);
 
     QTreeWidget *treeWidget;
-    QString name;
     QTextStream out;
+
+    QMap<QTreeWidgetItem*,Timer*> _map;
 };
 
-#endif
+#endif // TANO_TIMERSGENERATOR_H_

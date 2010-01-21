@@ -74,14 +74,7 @@ QString Common::version()
 
 bool Common::fripExists()
 {
-	QString frip;
-#ifdef Q_WS_X11
-	frip = "friptv";
-#else
-	frip = QCoreApplication::applicationDirPath() + "/friptv/friptv.exe";
-#endif
-
-	if (!locateResource(frip).isEmpty())
+	if (!locateResource(frip()).isEmpty())
 		return true;
 	else
 		return false;
@@ -113,4 +106,11 @@ QSettings* Common::settings()
 {
 	QSettings* settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 	return settings;
+}
+
+QString Common::settingsPath()
+{
+	QString path = settings()->fileName();
+	path.replace("Settings.ini","");
+	return path;
 }

@@ -103,3 +103,8 @@ Channel *PlaylistWidget::channelReadNum(int clickedChannel)
 {
 	return handler->channelReadNum(clickedChannel);
 }
+
+QTreeWidget *PlaylistWidget::treeWidget()
+{
+	return ui.treeWidget;
+}

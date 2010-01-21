@@ -36,6 +36,7 @@ void EpgLoader::stop()
 {
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgShow()));
+	abort();
 }
 
 void EpgLoader::epgInit()

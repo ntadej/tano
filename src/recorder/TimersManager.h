@@ -22,11 +22,15 @@ public:
     void openPlaylist(QString file);
 
 private slots:
+	void action(QAbstractButton*);
+
     void newItem();
     void addItem();
     void edit(QTreeWidgetItem *item);
     void playlist(QTreeWidgetItem *item);
     void applyName(QString name);
+
+    void write();
 
 private:
     Ui::TimersManager ui;

@@ -1,5 +1,9 @@
 #include <QDebug>
+#include <QFile>
+#include <QMessageBox>
 
+#include "../Common.h"
+#include "../xml/TimersGenerator.h"
 #include "TimersManager.h"
 
 TimersManager::TimersManager(QWidget *parent)
@@ -8,6 +12,7 @@ TimersManager::TimersManager(QWidget *parent)
 	ui.setupUi(this);
 	ui.timersWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
 
+	channel = 0;
 	currentTimer = 0;
 	currentItem = 0;
 	ui.dockWidgetContents->setDisabled(true);
@@ -16,10 +21,25 @@ TimersManager::TimersManager(QWidget *parent)
 	connect(ui.actionNew, SIGNAL(triggered()), this, SLOT(newItem()));
 	connect(ui.buttonCreate, SIGNAL(clicked()), this, SLOT(addItem()));
 	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
+	connect(ui.buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 }
 
 TimersManager::~TimersManager() {
 
+}
+
+void TimersManager::action(QAbstractButton *button)
+{
+	switch(ui.buttonBox->standardButton(button)) {
+	case 0x00000800:
+		write();
+		break;
+	case 0x00200000:
+		close();
+		break;
+	default:
+		break;
+	}
 }
 
 void TimersManager::openPlaylist(QString file)
@@ -35,6 +55,12 @@ void TimersManager::newItem()
 
 void TimersManager::addItem()
 {
+	if(channel == 0 || ui.editNameNew->text() == "") {
+		QMessageBox::warning(this, tr("Tano"),
+							tr("Please enter a name and select a channel from the list."));
+		return;
+	}
+
 	QTreeWidgetItem *newItem = new QTreeWidgetItem(ui.timersWidget, QStringList("Test"));
 	newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
 
@@ -44,6 +70,8 @@ void TimersManager::addItem()
 	ui.dockWidgetContents->setDisabled(false);
 	edit(newItem);
 	ui.mainWidget->setCurrentIndex(0);
+
+	channel = 0;
 }
 
 void TimersManager::playlist(QTreeWidgetItem *item)
@@ -84,4 +112,33 @@ void TimersManager::edit(QTreeWidgetItem *item)
 void TimersManager::applyName(QString name)
 {
 	currentItem->setText(0,name);
+}
+
+void TimersManager::write()
+{
+	QString fileName;
+
+	/*fileName =
+		QFileDialog::getSaveFileName(this, tr("Save Timers"),
+	  								QDir::homePath(),
+	   									tr("Tano Timers (*.tano.xml)"));
+	*/
+
+	fileName = Common::settingsPath() + "timers.tano.xml";
+	qDebug() << fileName;
+
+	if (fileName.isEmpty())
+		return;
+
+	QFile file(fileName);
+	if (!file.open(QFile::WriteOnly | QFile::Text)) {
+		QMessageBox::warning(this, tr("Tano"),
+							tr("Cannot write file %1:\n%2.")
+							.arg(fileName)
+							.arg(file.errorString()));
+		return;
+	}
+
+	TanoGenerator *generator = new TanoGenerator(ui.timersWidget, map);
+	generator->write(&file);
 }

@@ -21,6 +21,7 @@ public:
 	QString name();
 	QString fileName();
 	QList<int> nums();
+	QTreeWidget *treeWidget();
 
 public slots:
 	Channel *channelRead(QTreeWidgetItem* clickedChannel);

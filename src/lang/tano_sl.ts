@@ -1509,6 +1509,24 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>hh:mm</source>
         <translation>hh:mm</translation>
     </message>
+    <message>
+        <location filename="../recorder/TimersManager.cpp" line="59"/>
+        <location filename="../recorder/TimersManager.cpp" line="135"/>
+        <source>Tano</source>
+        <translation>Tano</translation>
+    </message>
+    <message>
+        <location filename="../recorder/TimersManager.cpp" line="60"/>
+        <source>Please enter a name and select a channel from the list.</source>
+        <translation>Prosim vnesi ime in izberi program s seznama.</translation>
+    </message>
+    <message>
+        <location filename="../recorder/TimersManager.cpp" line="136"/>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation>Ne morem pisati datoteke %1:
+%2.</translation>
+    </message>
 </context>
 <context>
     <name>TrayIcon</name>

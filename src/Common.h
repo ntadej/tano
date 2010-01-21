@@ -17,6 +17,7 @@ public:
 	static void about(QWidget *parent = 0 );
 
 	static QSettings* settings();
+	static QString settingsPath();
 };
 
 #endif // TANO_COMMON_H_

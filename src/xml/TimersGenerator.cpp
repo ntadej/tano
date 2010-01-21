@@ -21,14 +21,15 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
+#include <QDate>
+#include <QTime>
 
-#include "tanogenerator.h"
+#include "TimersGenerator.h"
 
-TanoGenerator::TanoGenerator(QString n, QTreeWidget *treeWidget)
-    : treeWidget(treeWidget)
+TanoGenerator::TanoGenerator(QTreeWidget *treeWidget, QMap<QTreeWidgetItem*,Timer*> map)
+    : treeWidget(treeWidget), _map(map)
 {
-	name = n;
+
 }
 
 bool TanoGenerator::write(QIODevice *device)
@@ -37,10 +38,7 @@ bool TanoGenerator::write(QIODevice *device)
     out.setCodec("UTF-8");
     out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         << "<!DOCTYPE tano>\n"
-        << "<tano version=\"1.3\">\n"
-        << "<playlist>"
-        << name
-        << "</playlist>\n";
+        << "<tano version=\"0.1\">\n";
     for (int i = 0; i < treeWidget->topLevelItemCount(); ++i)
         generateItem(treeWidget->topLevelItem(i), 1);
     out << "</tano>\n";
@@ -73,34 +71,21 @@ QString TanoGenerator::escapedAttribute(const QString &str)
 
 void TanoGenerator::generateItem(QTreeWidgetItem *item, int depth)
 {
-    QString tagName = item->data(0, Qt::UserRole).toString();
-    if (tagName == "category") {
-        bool expanded = !treeWidget->isItemExpanded(item);
-        bool type;
-        if(treeWidget->indexOfTopLevelItem(item) == -1)
-        	type = false;
-        else
-        	type = true;
+	Timer *currentTimer = _map[item];
 
-        out << indent(depth) << "<category "
-							 << "expanded=\"" << (expanded ? "false" : "true") << "\" "
-							 << "type=\"" << (type ? "main" : "sub")
-                             << "\">\n"
-            << indent(depth + 1) << "<title>" << escapedText(item->text(0))
-                                 << "</title>\n";
-        for (int i = 0; i < item->childCount(); ++i)
-            generateItem(item->child(i), depth + 1);
-        out << indent(depth) << "</category>\n";
-    } else if (tagName == "channel") {
-        out << indent(depth) << "<channel>\n"
-            << indent(depth + 1) << "<title>" << escapedText(item->text(0))
-                                 << "</title>\n"
-            << indent(depth + 1) << "<epg>" << escapedText(item->text(2))
-                                 << "</epg>\n"
-            << indent(depth + 1) << "<language>" << escapedText(item->text(1))
-                                 << "</language>\n"
-            << indent(depth + 1) << "<url>" << escapedText(item->text(3))
-                                 << "</url>\n"
-            << indent(depth) << "</channel>\n";
-    }
+    out << indent(depth) << "<timer>\n"
+        << indent(depth + 1) << "<name>" << escapedText(currentTimer->name())
+                             << "</name>\n"
+        << indent(depth + 1) << "<channel>" << escapedText(currentTimer->channel())
+                             << "</channel>\n"
+        << indent(depth + 1) << "<playlist channelId=\"" << escapedText(QString().number(currentTimer->num()))
+							 << "\">" << escapedText(currentTimer->playlist())
+							 << "</playlist>\n"
+        << indent(depth + 1) << "<date>" << escapedText(currentTimer->date().toString(Qt::ISODate))
+                             << "</date>\n"
+        << indent(depth + 1) << "<start>" << escapedText(currentTimer->startTime().toString(Qt::ISODate))
+                             << "</start>\n"
+        << indent(depth + 1) << "<end>" << escapedText(currentTimer->endTime().toString(Qt::ISODate))
+                             << "</end>\n"
+        << indent(depth) << "</timer>\n";
 }
