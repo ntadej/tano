@@ -1,0 +1,22 @@
+#include "Ver.h"
+
+QString TanoVersion()
+{
+	QString version = "@TANO_VERSION@";
+	
+	return version;
+}
+
+QString QtVersion()
+{
+	QString version = "@TANO_QT_VERSION@";
+	
+	return version;
+}
+
+QString SvnRevision()
+{
+	QString svn = "@TANO_WC_REVISION@";
+	
+	return svn;
+}

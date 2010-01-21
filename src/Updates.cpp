@@ -34,7 +34,7 @@ void Updates::processUpdates(QString v)
 	QStringList updatesList;
 
 	if(Common::version() != v) {
-		if(Common::version().contains("svn"))
+		if(Common::version().contains("-r"))
 			updatesList << "svn" << v << Common::version();
 		else
 			updatesList << "update" << v;

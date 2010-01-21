@@ -30,8 +30,8 @@
     </message>
     <message>
         <location filename="../../build/src/ui_About.h" line="324"/>
-        <source>Copyright &amp;copy; 2008-2009 Tadej Novak&lt;br&gt;http://tanoplayer.co.cc&lt;br&gt;ntadej@users.sourceforge.net</source>
-        <translation>&amp;copy; 2008-2009 Tadej Novak&lt;br&gt;http://tanoplayer.co.cc&lt;br&gt;ntadej@users.sourceforge.net</translation>
+        <source>Copyright &amp;copy; 2008-%1 Tadej Novak&lt;br&gt;http://tanoplayer.co.cc&lt;br&gt;info@tanoplayer.co.cc</source>
+        <translation>&amp;copy; 2008-%1 Tadej Novak&lt;br&gt;http://tanoplayer.co.cc&lt;br&gt;info@tanoplayer.co.cc</translation>
     </message>
     <message>
         <location filename="../../build/src/ui_About.h" line="325"/>

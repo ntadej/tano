@@ -2,24 +2,15 @@ SET(MAIN_SOURCE_DIR "../")
 
 IF(MINGW)
 add_definitions(-DCMAKE_TOOLCHAIN=../Toolchain-win32.cmake)
-find_package(VLC REQUIRED)
 if (VLC_FOUND)
 	include_directories(${VLC_INCLUDE_DIRS})
 endif (VLC_FOUND)
 ENDIF(MINGW)
 
-# Search for Qt4. We need the latest version of Qt
-SET(QT_MIN_VERSION "4.4.0")
-
-# this line includes FindQt4.cmake, which searches the Qt library and headers
-FIND_PACKAGE(Qt4 REQUIRED)
-
-# This module is used to resolve the file dependencies
-# for QT files using an UI (User Unterface) Qt file
-# created with the Qt4 designer
-# INCLUDE(AddFileDependencies)
-
-# SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g")
+CONFIGURE_FILE(
+  "${CMAKE_CURRENT_SOURCE_DIR}/Ver.cpp.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp"
+)
 
 ###################
 # List of sources #
@@ -99,6 +90,7 @@ SET(Tano_Srcs
 	Updates.cpp
 	
 	${Tano_Class_Srcs}
+	${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp
 )
 
 # Set translation files
@@ -147,13 +139,6 @@ IF(NOT MINGW)
 		ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${DEFAULT_DATA_DIR}")
 	ENDIF (NOT DEFAULT_DATA_DIR)
 ENDIF(NOT MINGW)
-
-# Define Tano version
-ADD_DEFINITIONS(-DTANO_VERSION="${TANO_VERSION}")
-# Define Tano build
-ADD_DEFINITIONS(-DTANO_BUILD="${TANO_BUILD}")
-# Define Qt version
-ADD_DEFINITIONS(-DTANO_QT_VERSION="${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
 
 ####################################
 # Include paths and set up targets #

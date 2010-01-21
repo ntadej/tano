@@ -13,7 +13,6 @@ public:
 
 private:
     Ui::About ui;
-    QString qt;
 };
 
 #endif // TANO_ABOUT_H

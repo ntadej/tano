@@ -102,7 +102,7 @@
          <item>
           <widget class="QLabel" name="labelCopy">
            <property name="text">
-            <string>Copyright &amp;copy; 2008-2009 Tadej Novak&lt;br&gt;http://tanoplayer.co.cc&lt;br&gt;ntadej@users.sourceforge.net</string>
+            <string>Copyright &amp;copy; 2008-%1 Tadej Novak&lt;br&gt;http://tanoplayer.co.cc&lt;br&gt;info@tanoplayer.co.cc</string>
            </property>
            <property name="openExternalLinks">
             <bool>true</bool>

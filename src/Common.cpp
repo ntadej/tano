@@ -2,6 +2,7 @@
 #include <QFileInfo>
 
 #include "Common.h"
+#include "Ver.h"
 #include "ui/About.h"
 
 QString Common::locateResource(QString fileN) {
@@ -65,11 +66,10 @@ QString Common::locateLang(QString fileL) {
 
 QString Common::version()
 {
-#ifdef TANO_VERSION
-	return QString(TANO_VERSION);
-#else
-	return "Unknown version";
-#endif
+	if(SvnRevision() != "")
+		return TanoVersion()+"-r"+SvnRevision();
+	else
+		return TanoVersion();
 }
 
 bool Common::fripExists()
@@ -92,13 +92,7 @@ QString Common::frip()
 void Common::about(QWidget *parent)
 {
 
-#ifdef TANO_VERSION
-	QString version = QString(TANO_VERSION);
-#else
-	QString version = "Unknown version";
-#endif
-
-	About about(parent, version);
+	About about(parent, version());
 	about.exec();
 }
 

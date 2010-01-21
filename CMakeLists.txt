@@ -27,6 +27,13 @@ IF(MINGW)
 	SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
 ENDIF(MINGW)
 
+# Search for Qt4. We need the latest version of Qt
+SET(QT_MIN_VERSION "4.5.0")
+
+# this line includes FindQt4.cmake, which searches the Qt library and headers
+FIND_PACKAGE(Qt4 REQUIRED)
+FIND_PACKAGE(VLC REQUIRED)
+
 # Set Qt4 bin dir to find QtCore4.dll and other libs to install
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
 STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back slashes to slashes
@@ -35,6 +42,25 @@ STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back 
 # Tano version number.
 FILE(READ VERSION TANO_VERSION)
 STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
+# Define Qt version
+SET(TANO_QT_VERSION "${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
+
+# SVN revision
+MACRO(Subversion_GET_REVISION dir variable)
+  EXECUTE_PROCESS(COMMAND ${Subversion_SVN_EXECUTABLE} info ${dir}
+    OUTPUT_VARIABLE ${variable}
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
+  STRING(REGEX REPLACE "^(.*\n)?Revision: ([^\n]+).*"
+    "\\2" ${variable} "${${variable}}")
+ENDMACRO(Subversion_GET_REVISION)
+
+FIND_PACKAGE(Subversion)
+IF(Subversion_FOUND)
+    Subversion_GET_REVISION(${CMAKE_CURRENT_SOURCE_DIR} TANO_WC_REVISION)
+    MESSAGE("Current revision is ${TANO_WC_REVISION}")
+ELSE(Subversion_FOUND)
+    SET(TANO_WC_REVISION "")
+ENDIF(Subversion_FOUND)
 
 # Set default install path:
 # In *nix environments this is /usr/local 
