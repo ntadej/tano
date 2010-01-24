@@ -14,7 +14,7 @@ class EditSettings : public QDialog
 Q_OBJECT
 public:
 	EditSettings(QWidget *parent = 0, Shortcuts *s = 0);
-
+	~EditSettings();
 signals:
 	void apply();
 

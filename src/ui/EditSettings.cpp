@@ -35,6 +35,11 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	shortcutRead();
 }
 
+EditSettings::~EditSettings()
+{
+	delete settings;
+}
+
 void EditSettings::createActions()
 {
 	connect(ui.buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));

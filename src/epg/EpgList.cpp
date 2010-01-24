@@ -25,7 +25,9 @@ EpgList::EpgList(QWidget *parent)
 
 EpgList::~EpgList()
 {
-
+	delete info;
+	delete record;
+	delete rightMenu;
 }
 
 void EpgList::mouseReleaseEvent(QMouseEvent *event)
@@ -62,8 +64,8 @@ void EpgList::processEpg() {
 
 	int r = 0;
 	for (int i = 1; i < epgList.size(); i+=3) {
-		newEpg = new ChannelEpg(epgList.at(i),epgList.at(i+1),epgList.at(i+2));
-		newItem = new QTableWidgetItem(QString(epgList.at(i) + " - " + epgList.at(i+2)));
+		ChannelEpg *newEpg = new ChannelEpg(epgList.at(i),epgList.at(i+1),epgList.at(i+2));
+		QTableWidgetItem *newItem = new QTableWidgetItem(QString(epgList.at(i) + " - " + epgList.at(i+2)));
 		newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
 		map.insert(newItem, newEpg);
 		this->setItem(r, 0, newItem);
@@ -72,11 +74,8 @@ void EpgList::processEpg() {
 }
 
 void EpgList::epgClicked(QTableWidgetItem *item) {
-	ChannelEpg *newEpg;
 	if(item == 0)
-		newEpg = map[currentItem()];
+		emit urlClicked(map[currentItem()]->url());
 	else
-		newEpg = map[item];
-
-	emit urlClicked(newEpg->url());
+		emit urlClicked(map[item]->url());
 }

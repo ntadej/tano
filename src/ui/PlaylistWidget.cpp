@@ -18,7 +18,7 @@ PlaylistWidget::PlaylistWidget(QWidget *parent)
 
 PlaylistWidget::~PlaylistWidget()
 {
-
+	delete handler;
 }
 
 void PlaylistWidget::clear()

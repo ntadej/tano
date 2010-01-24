@@ -32,35 +32,13 @@ SET(QT_MIN_VERSION "4.5.0")
 
 # this line includes FindQt4.cmake, which searches the Qt library and headers
 FIND_PACKAGE(Qt4 REQUIRED)
-FIND_PACKAGE(VLC REQUIRED)
+FIND_PACKAGE(LIBVLC REQUIRED)
 
 # Set Qt4 bin dir to find QtCore4.dll and other libs to install
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
 STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back slashes to slashes
-
-#-----------------------------------------------------------------------------
-# Tano version number.
-FILE(READ VERSION TANO_VERSION)
-STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
 # Define Qt version
 SET(TANO_QT_VERSION "${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
-
-# SVN revision
-MACRO(Subversion_GET_REVISION dir variable)
-  EXECUTE_PROCESS(COMMAND ${Subversion_SVN_EXECUTABLE} info ${dir}
-    OUTPUT_VARIABLE ${variable}
-    OUTPUT_STRIP_TRAILING_WHITESPACE)
-  STRING(REGEX REPLACE "^(.*\n)?Revision: ([^\n]+).*"
-    "\\2" ${variable} "${${variable}}")
-ENDMACRO(Subversion_GET_REVISION)
-
-FIND_PACKAGE(Subversion)
-IF(Subversion_FOUND)
-    Subversion_GET_REVISION(${CMAKE_CURRENT_SOURCE_DIR} TANO_WC_REVISION)
-    MESSAGE("Current revision is ${TANO_WC_REVISION}")
-ELSE(Subversion_FOUND)
-    SET(TANO_WC_REVISION "")
-ENDIF(Subversion_FOUND)
 
 # Set default install path:
 # In *nix environments this is /usr/local 
@@ -81,10 +59,36 @@ ELSE(MINGW)
 ENDIF(MINGW)
 
 #------------------------------------------------------------------------------
+# Tano version number.
+FILE(READ VERSION TANO_VERSION)
+STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
+MESSAGE("You are compiling Tano ${TANO_VERSION}")
+
+# SVN revision
+MACRO(Subversion_GET_REVISION dir variable)
+  EXECUTE_PROCESS(COMMAND ${Subversion_SVN_EXECUTABLE} info ${dir}
+    OUTPUT_VARIABLE ${variable}
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
+  STRING(REGEX REPLACE "^(.*\n)?Revision: ([^\n]+).*"
+    "\\2" ${variable} "${${variable}}")
+ENDMACRO(Subversion_GET_REVISION)
+
+FIND_PACKAGE(Subversion)
+IF(Subversion_FOUND)
+    Subversion_GET_REVISION(${CMAKE_CURRENT_SOURCE_DIR} TANO_WC_REVISION)
+    MESSAGE("Current revision is ${TANO_WC_REVISION}")
+ELSE(Subversion_FOUND)
+    SET(TANO_WC_REVISION "")
+ENDIF(Subversion_FOUND)
+#------------------------------------------------------------------------------
+
 ADD_SUBDIRECTORY(lib/QVlc)
-#ADD_SUBDIRECTORY(lib/QPropertyEditor)
 ADD_SUBDIRECTORY(lib/QtKeySequenceEdit)
 ADD_SUBDIRECTORY(src)
+
+OPTION(VLC_TRUNK "Use LibVLC trunk features")
+
+MESSAGE("Libvlc: ${VLC_TRUNK}")
 
 SET (Tano_Files
     LICENSE

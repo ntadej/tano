@@ -14,7 +14,7 @@ EpgLoader::EpgLoader()
 
 EpgLoader::~EpgLoader()
 {
-
+	delete edit;
 }
 
 void EpgLoader::getEpg(bool f, QString epgP)

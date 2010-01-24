@@ -100,20 +100,15 @@ void M3UHandler::processList()
 
 Channel *M3UHandler::createChannel(QString name, int num, bool cat)
 {
-    Channel *childChannel = new Channel(name,num,cat);
-    return childChannel;
+    return new Channel(name,num,cat);
 }
 
 Channel *M3UHandler::channelRead(QTreeWidgetItem *clickedItem)
 {
-	Channel *newChannel = map[clickedItem];
-
-	return newChannel;
+	return map[clickedItem];
 }
 
 Channel *M3UHandler::channelReadNum(int clickedItem)
 {
-	Channel *newChannel = nmap[clickedItem];
-
-	return newChannel;
+	return nmap[clickedItem];
 }

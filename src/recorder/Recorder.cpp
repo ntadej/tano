@@ -41,7 +41,11 @@ Recorder::Recorder(QWidget *parent)
 
 Recorder::~Recorder()
 {
-
+	delete tray;
+	delete trayIcon;
+	delete frip;
+	delete timer;
+	delete settings;
 }
 
 void Recorder::stop()

@@ -21,7 +21,8 @@ EpgShow::EpgShow(QWidget *parent)
 
 EpgShow::~EpgShow()
 {
-
+	delete loader;
+	delete http;
 }
 
 void EpgShow::open(QString url)

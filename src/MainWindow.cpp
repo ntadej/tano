@@ -1,9 +1,9 @@
-#include <QResource>
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QDir>
 #include <QSettings>
+#include <QSplashScreen>
 #include <QDebug>
 
 #include "MainWindow.h"
@@ -12,7 +12,9 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-	QResource::registerResource("images.qrc");
+	QPixmap pixmap(":/icons/images/splash.png");
+	QSplashScreen *splash = new QSplashScreen(pixmap);
+	splash->show();
 
 	ui.setupUi(this);
 	ui.toolBarOsd->addWidget(ui.controlsWidget);
@@ -20,7 +22,9 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.menuAudio_channel->clear();
 	//this->statusBar()->hide();
 
-#ifdef TANO_DEINTERLACING
+#if VLC_TRUNK
+
+#else
 	ui.menuDeinterlacing->setEnabled(false);
 #endif
 
@@ -37,11 +41,11 @@ MainWindow::MainWindow(QWidget *parent)
 	update = new Updates();
 	epg = new Epg();
 	epgShow = new EpgShow();
+	select = 0;
 
 	editor = new EditPlaylist(this);
 
 	timers = new TimersManager();
-
 	createSettings();
 
 	createMenus();
@@ -51,6 +55,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 	if(settings->value("updates",true).toBool())
 		update->getUpdates();
+
+	splash->close();
+	delete splash;
 }
 
 MainWindow::~MainWindow()
@@ -499,7 +506,12 @@ void MainWindow::openPlaylist(bool start)
 	ui.playlistWidget->open(fileName);
 
     hasPlaylist = true;
+
+    if(select != 0)
+    	delete select;
+
     select = new ChannelSelect(this, ui.channelNumber, ui.playlistWidget->nums());
+
     ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
 }
 

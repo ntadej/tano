@@ -2,9 +2,6 @@ SET(MAIN_SOURCE_DIR "../")
 
 IF(MINGW)
 add_definitions(-DCMAKE_TOOLCHAIN=../Toolchain-win32.cmake)
-if (VLC_FOUND)
-	include_directories(${VLC_INCLUDE_DIRS})
-endif (VLC_FOUND)
 ENDIF(MINGW)
 
 CONFIGURE_FILE(

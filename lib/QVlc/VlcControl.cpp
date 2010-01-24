@@ -7,6 +7,9 @@ VlcControl::VlcControl()
 {
 	isPlaying = false;
 
+	audioGroup = 0;
+	subGroup = 0;
+
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(updateActions()));
 
@@ -18,13 +21,24 @@ VlcControl::VlcControl()
 
 VlcControl::~VlcControl()
 {
-
+	delete timer;
+	delete check;
 }
 
 void VlcControl::updateActions() {
+	for(int i=0; i<audioList.size(); i++)
+		delete audioList.at(i);
 	audioList.clear();
+	for(int i=0; i<subList.size(); i++)
+		delete subList.at(i);
 	subList.clear();
+	audioMap.clear();
+	subMap.clear();
 
+	if(audioGroup != 0)
+		delete audioGroup;
+	if(subGroup != 0)
+		delete subGroup;
 	audioGroup = new QActionGroup(this);
     subGroup = new QActionGroup(this);
 

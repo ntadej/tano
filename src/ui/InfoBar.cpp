@@ -21,7 +21,7 @@ InfoBar::InfoBar(QWidget *parent)
 
 InfoBar::~InfoBar()
 {
-
+	delete timer;
 }
 
 void InfoBar::scroll()

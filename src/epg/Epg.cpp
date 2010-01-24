@@ -16,7 +16,8 @@ Epg::Epg()
 
 Epg::~Epg()
 {
-
+	delete loader;
+	delete timer;
 }
 
 void Epg::getEpg(QString epgP)

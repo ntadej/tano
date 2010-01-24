@@ -29,7 +29,9 @@ VlcVolumeSlider::VlcVolumeSlider(QWidget *parent)
 }
 
 VlcVolumeSlider::~VlcVolumeSlider() {
-
+	delete slider;
+	delete label;
+	delete timer;
 }
 
 void VlcVolumeSlider::changeVolume(int newVolume)

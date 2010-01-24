@@ -46,5 +46,6 @@
     <file>images/settings.png</file>
     <file>images/video.png</file>
     <file>images/tano.png</file>
+    <file>images/splash.png</file>
   </qresource>
 </RCC>

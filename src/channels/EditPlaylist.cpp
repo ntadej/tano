@@ -4,6 +4,8 @@
 #include <QFileDialog>
 #include <QCloseEvent>
 
+#include "../xml/M3UGenerator.h"
+#include "../xml/M3UHandler.h"
 #include "../xml/tanohandler.h"
 
 #include "EditPlaylist.h"
@@ -25,8 +27,6 @@ EditPlaylist::EditPlaylist(QWidget *parent)
 	ui.playlist->header()->setResizeMode(QHeaderView::ResizeToContents);
 
 	channelIcon = QIcon(":/icons/images/video.png");
-
-	load = new M3UHandler(ui.playlist, true);
 }
 
 EditPlaylist::~EditPlaylist()
@@ -46,8 +46,7 @@ void EditPlaylist::closeEvent(QCloseEvent *event)
 
 void EditPlaylist::deleteItem()
 {
-	QTreeWidgetItem *parent = ui.playlist->currentItem()->parent();
-	if(parent)
+	if(ui.playlist->currentItem()->parent())
 		ui.playlist->currentItem()->parent()->removeChild(ui.playlist->currentItem());
 	else
 		ui.playlist->takeTopLevelItem(ui.playlist->indexOfTopLevelItem(ui.playlist->currentItem()));
@@ -89,12 +88,15 @@ void EditPlaylist::save()
 		return;
 	}
 
-	generator = new M3UGenerator(ui.editName->text(), ui.playlist);
+	M3UGenerator *generator = new M3UGenerator(ui.editName->text(), ui.playlist);
 	generator->write(&file);
+	delete generator;
 }
 
 void EditPlaylist::open()
 {
+	M3UHandler *load = new M3UHandler(ui.playlist, true);
+
 	load->clear();
 	ui.playlist->clear();
 
@@ -112,6 +114,8 @@ void EditPlaylist::open()
 	setWindowTitle(load->getName());
 
 	show();
+
+	delete load;
 }
 
 void EditPlaylist::import()
@@ -146,16 +150,13 @@ void EditPlaylist::import()
 
 	ui.editName->setText(handler->getName());
 	setWindowTitle(handler->getName());
+
+	delete handler;
 }
 
 void EditPlaylist::setFile(QString file)
 {
 	fileN = file;
-}
-
-void EditPlaylist::menuOpen()
-{
-	add->exec(QCursor::pos());
 }
 
 void EditPlaylist::exit()

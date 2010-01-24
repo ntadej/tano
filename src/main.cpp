@@ -7,7 +7,6 @@
 #include "Common.h"
 #include "ui/FirstRun.h"
 
-
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);

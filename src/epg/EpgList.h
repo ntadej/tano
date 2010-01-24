@@ -34,8 +34,6 @@ private slots:
 
 private:
     QStringList epgList;
-    ChannelEpg *newEpg;
-    QTableWidgetItem *newItem;
     QMap<QTableWidgetItem*, ChannelEpg*> map;
 
     QMenu *rightMenu;

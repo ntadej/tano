@@ -141,4 +141,5 @@ void TimersManager::write()
 
 	TanoGenerator *generator = new TanoGenerator(ui.timersWidget, map);
 	generator->write(&file);
+	delete generator;
 }

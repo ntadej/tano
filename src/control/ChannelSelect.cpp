@@ -46,7 +46,17 @@ ChannelSelect::ChannelSelect(QWidget *parent, QLCDNumber *number, QList<int> l)
 }
 
 ChannelSelect::~ChannelSelect() {
-
+	delete timer;
+	delete key_0;
+	delete key_1;
+	delete key_2;
+	delete key_3;
+	delete key_4;
+	delete key_5;
+	delete key_6;
+	delete key_7;
+	delete key_8;
+	delete key_9;
 }
 
 void ChannelSelect::process(int key)

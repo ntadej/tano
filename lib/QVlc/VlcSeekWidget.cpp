@@ -33,7 +33,10 @@ VlcSeekWidget::VlcSeekWidget(QWidget *parent)
 }
 
 VlcSeekWidget::~VlcSeekWidget() {
-
+	delete seek;
+	delete labelElapsed;
+	delete labelFull;
+	delete timer;
 }
 
 void VlcSeekWidget::updateTime()
@@ -45,7 +48,7 @@ void VlcSeekWidget::updateTime()
 	// so check before
 	libvlc_media_t *curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer, _vlcException);
 	libvlc_exception_clear(_vlcException);
-	if (curMedia == NULL)
+	if (curMedia == 0)
 		return;
 
 	libvlc_state_t state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
