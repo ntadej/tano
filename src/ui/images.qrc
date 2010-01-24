@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons" >
+    <file>images/view_text.png</file>
     <file>images/fileimport.png</file>
     <file>images/player_pause.png</file>
     <file>images/unlock.png</file>

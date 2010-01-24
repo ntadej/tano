@@ -361,18 +361,6 @@
       <iconset resource="images.qrc">
        <normaloff>:/icons/images/video.png</normaloff>:/icons/images/video.png</iconset>
      </property>
-     <widget class="QMenu" name="menuAspect_ratio">
-      <property name="title">
-       <string>Aspect ratio</string>
-      </property>
-      <addaction name="actionRatioOriginal"/>
-      <addaction name="actionRatio1_1"/>
-      <addaction name="actionRatio4_3"/>
-      <addaction name="actionRatio16_9"/>
-      <addaction name="actionRatio16_10"/>
-      <addaction name="actionRatio2_21_1"/>
-      <addaction name="actionRatio5_4"/>
-     </widget>
      <widget class="QMenu" name="menuCrop_video">
       <property name="title">
        <string>Crop video</string>
@@ -405,6 +393,18 @@
       <addaction name="actionFilterBob"/>
       <addaction name="actionFilterLinear"/>
       <addaction name="actionFilterX"/>
+     </widget>
+     <widget class="QMenu" name="menuAspect_ratio">
+      <property name="title">
+       <string>Aspect ratio</string>
+      </property>
+      <addaction name="actionRatioOriginal"/>
+      <addaction name="actionRatio1_1"/>
+      <addaction name="actionRatio4_3"/>
+      <addaction name="actionRatio16_9"/>
+      <addaction name="actionRatio16_10"/>
+      <addaction name="actionRatio2_21_1"/>
+      <addaction name="actionRatio5_4"/>
      </widget>
      <addaction name="menuAspect_ratio"/>
      <addaction name="menuCrop_video"/>
@@ -539,8 +539,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>418</height>
+          <width>94</width>
+          <height>65</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1218,6 +1218,38 @@
     <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMute</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>buttonMute</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>366</x>
+     <y>541</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMute</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>volumeSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>508</x>
+     <y>541</y>
     </hint>
    </hints>
   </connection>

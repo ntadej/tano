@@ -33,6 +33,10 @@ public slots:
 	void enableMove();
 	void controlFull();
 
+	void teletext();
+	int teletextPage();
+	void setTeletextPage(const int &page);
+
 	void setRatioOriginal();
 	void setRatio1_1();
 	void setRatio4_3();

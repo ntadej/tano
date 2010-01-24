@@ -175,8 +175,6 @@ void MainWindow::createConnections()
 	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));
 	connect(ui.actionNext, SIGNAL(triggered()), select, SLOT(next()));
 	connect(ui.actionMute, SIGNAL(triggered()), backend, SLOT(mute()));
-	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.buttonMute, SLOT(setChecked(bool)));
-	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.volumeSlider, SLOT(setDisabled(bool)));
 	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.volumeSlider, SLOT(vup()));
 	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.volumeSlider, SLOT(vdown()));
 

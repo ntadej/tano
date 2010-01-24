@@ -123,6 +123,19 @@ void VlcVideoWidget::controlFull()
 	}
 }
 
+void VlcVideoWidget::teletext()
+{
+	libvlc_toggle_teletext(_vlcCurrentMediaPlayer, _vlcException);
+}
+int VlcVideoWidget::teletextPage()
+{
+	return libvlc_video_get_teletext(_vlcCurrentMediaPlayer, _vlcException);
+}
+void VlcVideoWidget::setTeletextPage(const int &page)
+{
+	libvlc_video_set_teletext(_vlcCurrentMediaPlayer, page, _vlcException);
+}
+
 void VlcVideoWidget::setRatioOriginal()
 {
 	if (_vlcCurrentMediaPlayer) {
