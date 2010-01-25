@@ -1,12 +1,13 @@
 #ifndef TANO_TIMERSMANAGER_H_
 #define TANO_TIMERSMANAGER_H_
 
-#include <QtGui/QMainWindow>
+#include <QMainWindow>
 #include <QSettings>
 #include <QTreeWidgetItem>
 #include <QMap>
 
 #include "../channels/Channel.h"
+#include "../xml/TimersHandler.h"
 #include "Timer.h"
 
 #include <ui_TimersManager.h>
@@ -30,16 +31,17 @@ private slots:
     void playlist(QTreeWidgetItem *item);
     void applyName(QString name);
 
+    void read(QString file = 0);
     void write();
 
 private:
     Ui::TimersManager ui;
 
-    QMap<QTreeWidgetItem*,Timer*> map;
-
     Timer *currentTimer;
     QTreeWidgetItem *currentItem;
     Channel *channel;
+
+    TimersHandler *handler;
 };
 
 #endif // TANO_TIMERSMANAGER_H_

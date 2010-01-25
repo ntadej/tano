@@ -523,10 +523,7 @@
          <string>Channel list</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_7">
-         <property name="topMargin">
-          <number>0</number>
-         </property>
-         <property name="bottomMargin">
+         <property name="margin">
           <number>0</number>
          </property>
          <item>
@@ -539,8 +536,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>94</width>
-          <height>65</height>
+          <width>340</width>
+          <height>418</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1091,15 +1088,15 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>VlcVideoWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">QVlc/VlcVideoWidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>InfoBar</class>
    <extends>QWidget</extends>
    <header>ui/InfoBar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>VlcVideoWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QVlc/VlcVideoWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

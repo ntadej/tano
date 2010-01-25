@@ -8,7 +8,7 @@
 class Timer : public QObject {
 Q_OBJECT
 public:
-	Timer(QString fname, QString fchannel, QString fplaylist, int fnum);
+	Timer(QString fname, QString fchannel = "", QString fplaylist = "", int fnum = 0);
 	~Timer();
 
 public slots:

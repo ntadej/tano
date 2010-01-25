@@ -22,8 +22,9 @@ int main(int argc, char *argv[])
 	app.installTranslator(&translator);
 
 	if(!settings.value("registered",false).toBool() || settings.value("version",Common::version()).toString() != Common::version()) {
-		FirstRun wizard;
-		wizard.exec();
+		FirstRun *wizard = new FirstRun();
+		wizard->exec();
+		delete wizard;
 	}
 
     MainWindow mainWindow;

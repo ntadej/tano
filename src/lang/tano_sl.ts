@@ -1240,8 +1240,8 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../xml/M3UHandler.cpp" line="11"/>
-        <location filename="../xml/M3UHandler.cpp" line="36"/>
+        <location filename="../xml/M3UHandler.cpp" line="9"/>
+        <location filename="../xml/M3UHandler.cpp" line="35"/>
         <location filename="../xml/tanohandler.cpp" line="36"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
@@ -1255,16 +1255,20 @@ To bo ustavilo trenutno snemanje.</translation>
         <location filename="../xml/tanohandler.cpp" line="80"/>
         <location filename="../xml/tanohandler.cpp" line="86"/>
         <location filename="../xml/tanohandler.cpp" line="87"/>
+        <location filename="../xml/TimersHandler.cpp" line="58"/>
+        <location filename="../xml/TimersHandler.cpp" line="59"/>
         <source>Unknown title</source>
         <translation>Neznan naslov</translation>
     </message>
     <message>
         <location filename="../xml/tanohandler.cpp" line="148"/>
+        <location filename="../xml/TimersHandler.cpp" line="112"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
         <location filename="../xml/tanohandler.cpp" line="149"/>
+        <location filename="../xml/TimersHandler.cpp" line="113"/>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation>Napaka branja na vrstici %1, stolpec %2:
@@ -1274,6 +1278,11 @@ To bo ustavilo trenutno snemanje.</translation>
         <location filename="../xml/tanohandler.cpp" line="64"/>
         <source>The file is not a Tano TV channel list file.</source>
         <translation>Datoteka ni Tano TV Seznam programov.</translation>
+    </message>
+    <message>
+        <location filename="../xml/TimersHandler.cpp" line="48"/>
+        <source>The file is not a Tano Timers list.</source>
+        <translation>Datoteka ni Tano seznam timerjev.</translation>
     </message>
 </context>
 <context>
@@ -1510,18 +1519,26 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>hh:mm</translation>
     </message>
     <message>
-        <location filename="../recorder/TimersManager.cpp" line="59"/>
-        <location filename="../recorder/TimersManager.cpp" line="135"/>
+        <location filename="../recorder/TimersManager.cpp" line="65"/>
+        <location filename="../recorder/TimersManager.cpp" line="139"/>
+        <location filename="../recorder/TimersManager.cpp" line="169"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../recorder/TimersManager.cpp" line="60"/>
+        <location filename="../recorder/TimersManager.cpp" line="66"/>
         <source>Please enter a name and select a channel from the list.</source>
         <translation>Prosim vnesi ime in izberi program s seznama.</translation>
     </message>
     <message>
-        <location filename="../recorder/TimersManager.cpp" line="136"/>
+        <location filename="../recorder/TimersManager.cpp" line="140"/>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation>Ne morem prebrati %1:
+%2.</translation>
+    </message>
+    <message>
+        <location filename="../recorder/TimersManager.cpp" line="170"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne morem pisati datoteke %1:

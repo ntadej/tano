@@ -6,15 +6,14 @@
 M3UHandler::M3UHandler(QTreeWidget *treeWidget, bool editable)
 	: treeWidget(treeWidget), edit(editable)
 {
-	valid = false;
-
 	name = QObject::tr("Channel list");
-
 	channelIcon = QIcon(":/icons/images/video.png");
 }
 
 M3UHandler::~M3UHandler() {
-
+	for(int i=0; i<treeWidget->topLevelItemCount(); i++) {
+		delete map.value(treeWidget->topLevelItem(i));
+	}
 }
 
 void M3UHandler::processFile(QString m3uFile)
@@ -34,10 +33,17 @@ void M3UHandler::processFile(QString m3uFile)
 void M3UHandler::clear()
 {
 	name = QObject::tr("Channel list");
-	valid = false;
 	m3uLineList.clear();
 	channelNums.clear();
 	categoryList.clear();
+
+	for(int i=0; i<treeWidget->topLevelItemCount(); i++) {
+		delete map.value(treeWidget->topLevelItem(i));
+	}
+
+	map.clear();
+	nmap.clear();
+	treeWidget->clear();
 }
 
 void M3UHandler::processList()
@@ -67,7 +73,7 @@ void M3UHandler::processList()
 			item->setIcon(0, channelIcon);
 			item->setText(0, tmpList.at(0));
 			item->setText(1, tmpList.at(1));
-			channel = createChannel(tmpList.at(1), tmpList.at(0).toInt(), false);
+			channel = new Channel(tmpList.at(1), tmpList.at(0).toInt(), false);
 
 			map.insert(item, channel);
 			nmap.insert(tmpList.at(0).toInt(), channel);
@@ -96,11 +102,6 @@ void M3UHandler::processList()
 			item->setText(3, m3uLineList.at(i));
 		}
 	}
-}
-
-Channel *M3UHandler::createChannel(QString name, int num, bool cat)
-{
-    return new Channel(name,num,cat);
 }
 
 Channel *M3UHandler::channelRead(QTreeWidgetItem *clickedItem)

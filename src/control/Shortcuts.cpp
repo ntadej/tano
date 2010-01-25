@@ -58,4 +58,6 @@ void Shortcuts::apply()
 		actions.at(i)->setShortcutContext(Qt::ApplicationShortcut);
 	}
 	settings->endGroup();
+
+	delete settings;
 }

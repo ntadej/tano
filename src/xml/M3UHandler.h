@@ -25,10 +25,6 @@ public:
 private:
 	void processList();
 
-    QTreeWidgetItem *createChildItem(const QString &tagName);
-    Channel *createChannel(QString name, int num, bool cat);
-
-	bool valid;
 	bool edit;
 
 	QTreeWidget *treeWidget;

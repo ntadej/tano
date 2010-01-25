@@ -1,6 +1,8 @@
 #include <QDebug>
 #include <QFile>
 #include <QMessageBox>
+#include <QXmlSimpleReader>
+#include <QXmlInputSource>
 
 #include "../Common.h"
 #include "../xml/TimersGenerator.h"
@@ -22,6 +24,10 @@ TimersManager::TimersManager(QWidget *parent)
 	connect(ui.buttonCreate, SIGNAL(clicked()), this, SLOT(addItem()));
 	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 	connect(ui.buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
+
+	handler = new TimersHandler(ui.timersWidget);
+
+	read();
 }
 
 TimersManager::~TimersManager() {
@@ -61,21 +67,19 @@ void TimersManager::addItem()
 		return;
 	}
 
-	QTreeWidgetItem *newItem = new QTreeWidgetItem(ui.timersWidget, QStringList("Test"));
-	newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-
-	currentTimer = new Timer(ui.editNameNew->text(),channel->name(),ui.playlistWidget->fileName(),channel->num());
-	map.insert(newItem, currentTimer);
+	edit(handler->newTimer(ui.editNameNew->text(),channel->name(),ui.playlistWidget->fileName(),channel->num()));
 
 	ui.dockWidgetContents->setDisabled(false);
-	edit(newItem);
 	ui.mainWidget->setCurrentIndex(0);
 
-	channel = 0;
+	delete channel;
 }
 
 void TimersManager::playlist(QTreeWidgetItem *item)
 {
+	if(channel != 0)
+		delete channel;
+
 	channel = ui.playlistWidget->channelRead(item);
 }
 
@@ -91,7 +95,7 @@ void TimersManager::edit(QTreeWidgetItem *item)
 		ui.dockWidgetContents->setDisabled(false);
 	}
 
-	currentTimer = map[item];
+	currentTimer = handler->timerRead(item);
 	currentItem = item;
 
 	connect(ui.editName, SIGNAL(textChanged(QString)), this, SLOT(applyName(QString)));
@@ -112,6 +116,36 @@ void TimersManager::edit(QTreeWidgetItem *item)
 void TimersManager::applyName(QString name)
 {
 	currentItem->setText(0,name);
+}
+
+void TimersManager::read(QString file)
+{
+	QString fileName;
+
+	if(file.isNull())
+		fileName = Common::settingsPath() + "timers.tano.xml";
+	else
+		fileName = file;
+
+	if (fileName.isEmpty())
+		return;
+
+	QXmlSimpleReader reader;
+	reader.setContentHandler(handler);
+	reader.setErrorHandler(handler);
+
+	QFile fileR(fileName);
+	if (!fileR.open(QFile::ReadOnly | QFile::Text)) {
+		QMessageBox::warning(this, tr("Tano"),
+							tr("Cannot read file %1:\n%2.")
+							.arg(fileName)
+							.arg(fileR.errorString()));
+		return;
+	}
+
+	QXmlInputSource xmlInputSource(&fileR);
+	if (!reader.parse(xmlInputSource))
+		return;
 }
 
 void TimersManager::write()
@@ -139,7 +173,7 @@ void TimersManager::write()
 		return;
 	}
 
-	TanoGenerator *generator = new TanoGenerator(ui.timersWidget, map);
+	TanoGenerator *generator = new TanoGenerator(ui.timersWidget, handler->timersMap());
 	generator->write(&file);
 	delete generator;
 }

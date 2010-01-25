@@ -78,6 +78,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	xml/M3UHandler.cpp
 	xml/tanohandler.cpp
 	xml/TimersGenerator.cpp
+	xml/TimersHandler.cpp
 )
 
 SET(Tano_Srcs
@@ -86,8 +87,8 @@ SET(Tano_Srcs
 	MainWindow.cpp
 	Updates.cpp
 	
-	${Tano_Class_Srcs}
 	${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp
+	${Tano_Class_Srcs}
 )
 
 # Set translation files

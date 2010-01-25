@@ -52,7 +52,7 @@ void VlcVideoWidget::mouseMoveEvent(QMouseEvent *event)
 		qApp->setOverrideCursor(Qt::ArrowCursor);
 		pos = event->globalPos();
 
-		if(event->globalPos().y() > h-105) {
+		if(event->globalPos().y() > h-115) {
 			emit osd(false);
 			timer->stop();
 		} else {
