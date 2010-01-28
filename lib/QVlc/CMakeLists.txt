@@ -4,6 +4,10 @@ IF(MINGW)
 add_definitions(-DCMAKE_TOOLCHAIN=../../Toolchain-win32.cmake)
 ENDIF(MINGW)
 
+IF(${VLC_TRUNK} MATCHES "ON")
+ADD_DEFINITIONS(-DVLC_TRUNK=1)
+ENDIF(${VLC_TRUNK} MATCHES "ON")
+
 # Set your list of sources here.
 SET(QVLC_SRCS
     VlcControl.cpp

@@ -42,8 +42,11 @@ void VlcControl::updateActions() {
 	audioGroup = new QActionGroup(this);
     subGroup = new QActionGroup(this);
 
-
+#if VLC_TRUNK
+	if(libvlc_media_player_is_playing(_vlcCurrentMediaPlayer) != 1) {
+#else
 	if(libvlc_media_player_is_playing(_vlcCurrentMediaPlayer, _vlcException) != 1) {
+#endif
 		audioList << new QAction(tr("Disabled"), this);
 		audioList.at(0)->setCheckable(true);
 		audioList.at(0)->setChecked(true);
@@ -150,8 +153,15 @@ void VlcControl::update()
 void VlcControl::checkPlayingState()
 {
 	int state;
+#if VLC_TRUNK
+	//state = libvlc_media_player_is_playing(_vlcCurrentMediaPlayer); -> LibVLC bug
+#else
 	state = libvlc_media_player_is_playing(_vlcCurrentMediaPlayer, _vlcException);
+#endif
 
+#if VLC_TRUNK
+
+#else
 	if(state == 1 && isPlaying == 0) {
 		isPlaying = 1;
 		emit stateChanged(1);
@@ -159,4 +169,5 @@ void VlcControl::checkPlayingState()
 		isPlaying = 0;
 		emit stateChanged(0);
 	}
+#endif
 }

@@ -130,11 +130,19 @@ void VlcVideoWidget::teletext()
 }
 int VlcVideoWidget::teletextPage()
 {
+#if VLC_TRUNK
+	return 0;
+#else
 	return libvlc_video_get_teletext(_vlcCurrentMediaPlayer, _vlcException);
+#endif
 }
 void VlcVideoWidget::setTeletextPage(const int &page)
 {
+#if VLC_TRUNK
+
+#else
 	libvlc_video_set_teletext(_vlcCurrentMediaPlayer, page, _vlcException);
+#endif
 }
 
 void VlcVideoWidget::setRatioOriginal()

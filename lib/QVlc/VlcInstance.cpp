@@ -94,14 +94,23 @@ void VlcInstance::openMedia(QString media)
 	/* Get our media instance to use our window */
 	if (_vlcMediaPlayer) {
 #if defined(Q_OS_WIN)
-		libvlc_media_player_set_hwnd(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
-		//libvlc_media_player_set_drawable(_vlcMediaPlayer, reinterpret_cast<unsigned int>(_widgetId), _vlcException); // VLC 0.9.*
+	#if VLC_TRUNK
+		libvlc_media_player_set_hwnd(_vlcMediaPlayer, _widgetId);
+	#else
+		libvlc_media_player_set_hwnd(_vlcMediaPlayer, _widgetId, _vlcException);
+	#endif
 #elif defined(Q_OS_MAC)
-		libvlc_media_player_set_agl (_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
-		//libvlc_media_player_set_drawable(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 0.9.*
+	#if VLC_TRUNK
+		libvlc_media_player_set_agl (_vlcMediaPlayer, _widgetId);
+	#else
+		libvlc_media_player_set_agl (_vlcMediaPlayer, _widgetId, _vlcException);
+	#endif
 #else
-		libvlc_media_player_set_xwindow(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 1.0.*
-		//libvlc_media_player_set_drawable(_vlcMediaPlayer, _widgetId, _vlcException); // VLC 0.9.*
+	#if VLC_TRUNK
+		libvlc_media_player_set_xwindow(_vlcMediaPlayer, _widgetId);
+	#else
+		libvlc_media_player_set_xwindow(_vlcMediaPlayer, _widgetId, _vlcException);
+	#endif
 #endif
 		checkException();
 	}
@@ -138,18 +147,30 @@ void VlcInstance::pause() {
 }
 
 void VlcInstance::stop() {
+#if VLC_TRUNK
+	libvlc_media_player_stop(_vlcMediaPlayer);
+#else
 	libvlc_media_player_stop(_vlcMediaPlayer, _vlcException);
+#endif
 	checkException();
 }
 
 void VlcInstance::mute() {
+#if VLC_TRUNK
+	libvlc_audio_toggle_mute(_vlcInstance);
+#else
 	libvlc_audio_toggle_mute(_vlcInstance, _vlcException);
+#endif
 	checkException();
 }
 
 void VlcInstance::checkException() {
 	if (libvlc_exception_raised(_vlcException)) {
+#if VLC_TRUNK
+		qDebug() << "libvlc exception:" << libvlc_errmsg();
+#else
 		qDebug() << "libvlc exception:" << libvlc_exception_get_message(_vlcException);
+#endif
 		libvlc_exception_clear(_vlcException);
 	}
 }

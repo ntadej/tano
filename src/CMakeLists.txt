@@ -2,12 +2,17 @@ SET(MAIN_SOURCE_DIR "../")
 
 IF(MINGW)
 add_definitions(-DCMAKE_TOOLCHAIN=../Toolchain-win32.cmake)
+include_directories(${LIBVLC_INCLUDE_DIR})
 ENDIF(MINGW)
 
 CONFIGURE_FILE(
   "${CMAKE_CURRENT_SOURCE_DIR}/Ver.cpp.in"
   "${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp"
 )
+
+IF(${VLC_TRUNK} MATCHES "ON")
+ADD_DEFINITIONS(-DVLC_TRUNK=1)
+ENDIF(${VLC_TRUNK} MATCHES "ON")
 
 ###################
 # List of sources #

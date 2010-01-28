@@ -5,7 +5,7 @@
 #include <QSettings>
 #include <QSplashScreen>
 #include <QDebug>
-
+#include <QBitmap>
 #include "MainWindow.h"
 #include "Common.h"
 
@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
 	QPixmap pixmap(":/icons/images/splash.png");
 	QSplashScreen *splash = new QSplashScreen(pixmap);
+	//splash->setAttribute(Qt::WA_TranslucentBackground);
+	splash->setMask(pixmap.mask());
 	splash->show();
 
 	ui.setupUi(this);
@@ -228,7 +230,7 @@ void MainWindow::createConnections()
 	connect(ui.actionCrop5_4, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop5_4()));
 	connect(ui.actionCrop5_3, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop5_3()));
 
-#ifndef TANO_DEINTERLACING
+#if VLC_TRUNK
 	connect(ui.actionFilterDisabled, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterDisabled()));
 	connect(ui.actionFilterDiscard, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterDiscard()));
 	connect(ui.actionFilterBlend, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterBlend()));

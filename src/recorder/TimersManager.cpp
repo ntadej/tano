@@ -1,5 +1,6 @@
 #include <QDebug>
 #include <QFile>
+#include <QFileInfo>
 #include <QMessageBox>
 #include <QXmlSimpleReader>
 #include <QXmlInputSource>
@@ -133,6 +134,9 @@ void TimersManager::read(QString file)
 	QXmlSimpleReader reader;
 	reader.setContentHandler(handler);
 	reader.setErrorHandler(handler);
+
+	if(!QFileInfo(fileName).exists())
+		return;
 
 	QFile fileR(fileName);
 	if (!fileR.open(QFile::ReadOnly | QFile::Text)) {

@@ -50,12 +50,22 @@ void VlcVolumeSlider::updateVolume()
 
     // It's possible that the vlc doesn't play anything
     // so check before
-    libvlc_media_t *curMedia = libvlc_media_player_get_media (_vlcCurrentMediaPlayer, _vlcException);
+	libvlc_media_t *curMedia;
+#if VLC_TRUNK
+	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer);
+#else
+	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer, _vlcException);
+#endif
     libvlc_exception_clear(_vlcException);
     if (curMedia == NULL)
         return;
 
-    int volume = libvlc_audio_get_volume (_vlcInstance, _vlcException);
+    int volume;
+#if VLC_TRUNK
+    volume = libvlc_audio_get_volume (_vlcInstance);
+#else
+    volume = libvlc_audio_get_volume (_vlcInstance, _vlcException);
+#endif
     slider->setValue(volume);
     label->setText(QString().number(volume));
 
