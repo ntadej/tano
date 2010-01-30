@@ -9,8 +9,8 @@
 #include "../xml/TimersGenerator.h"
 #include "TimersManager.h"
 
-TimersManager::TimersManager(QWidget *parent)
-	:QMainWindow(parent)
+TimersManager::TimersManager(Time *t, QWidget *parent)
+	:QMainWindow(parent), time(t)
 {
 	ui.setupUi(this);
 	ui.timersWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
@@ -150,6 +150,10 @@ void TimersManager::read(QString file)
 	QXmlInputSource xmlInputSource(&fileR);
 	if (!reader.parse(xmlInputSource))
 		return;
+
+	for(int i=0; i<ui.timersWidget->topLevelItemCount(); i++) {
+		time->addTimer(handler->timerRead(ui.timersWidget->topLevelItem(i)));
+	}
 }
 
 void TimersManager::write()
@@ -180,4 +184,8 @@ void TimersManager::write()
 	TanoGenerator *generator = new TanoGenerator(ui.timersWidget, handler->timersMap());
 	generator->write(&file);
 	delete generator;
+
+	for(int i=0; i<ui.timersWidget->topLevelItemCount(); i++) {
+		time->addTimer(handler->timerRead(ui.timersWidget->topLevelItem(i)));
+	}
 }

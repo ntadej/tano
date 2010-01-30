@@ -34,9 +34,20 @@ TimersHandler::TimersHandler(QTreeWidget *treeWidget)
 	timerIcon = QIcon(":/icons/images/clock.png");
 }
 
+TimersHandler::~TimersHandler()
+{
+	for(int i=0; i<treeWidget->topLevelItemCount(); i++) {
+		delete map.value(treeWidget->topLevelItem(i));
+	}
+}
+
 void TimersHandler::clear()
 {
-//TODO: Clean timers!
+	for(int i=0; i<treeWidget->topLevelItemCount(); i++) {
+		delete map.value(treeWidget->topLevelItem(i));
+	}
+	treeWidget->clear();
+	map.clear();
 }
 
 bool TimersHandler::startElement(const QString & /* namespaceURI */,

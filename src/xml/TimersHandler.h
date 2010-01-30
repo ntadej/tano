@@ -36,6 +36,7 @@ class TimersHandler : public QXmlDefaultHandler
 {
 public:
     TimersHandler(QTreeWidget *treeWidget);
+    ~TimersHandler();
 
     bool startElement(const QString &namespaceURI, const QString &localName,
                       const QString &qName, const QXmlAttributes &attributes);

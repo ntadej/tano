@@ -7,6 +7,7 @@
 #include <QMap>
 
 #include "../channels/Channel.h"
+#include "../control/Time.h"
 #include "../xml/TimersHandler.h"
 #include "Timer.h"
 
@@ -17,7 +18,7 @@ class TimersManager : public QMainWindow
     Q_OBJECT
 
 public:
-    TimersManager(QWidget *parent = 0);
+    TimersManager(Time *t, QWidget *parent = 0);
     ~TimersManager();
 
     void openPlaylist(QString file);
@@ -37,6 +38,7 @@ private slots:
 private:
     Ui::TimersManager ui;
 
+    Time *time;
     Timer *currentTimer;
     QTreeWidgetItem *currentItem;
     Channel *channel;

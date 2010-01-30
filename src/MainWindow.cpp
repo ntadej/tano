@@ -47,7 +47,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 	editor = new EditPlaylist(this);
 
-	timers = new TimersManager();
+	time = new Time();
+	timers = new TimersManager(time);
 	createSettings();
 
 	createMenus();

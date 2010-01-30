@@ -39,6 +39,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	channels/EditPlaylist.h
 	control/ChannelSelect.h
 	control/Shortcuts.h
+	control/Time.h
 	epg/Epg.h
 	epg/EpgList.h
 	epg/EpgLoader.h
@@ -64,6 +65,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	channels/EditPlaylist.cpp
 	control/ChannelSelect.cpp
 	control/Shortcuts.cpp
+	control/Time.cpp
 	epg/Epg.cpp
 	epg/EpgList.cpp
 	epg/EpgLoader.cpp

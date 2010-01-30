@@ -17,6 +17,7 @@
 #include "channels/EditPlaylist.h"
 #include "control/ChannelSelect.h"
 #include "control/Shortcuts.h"
+#include "control/Time.h"
 #include "epg/Epg.h"
 #include "epg/EpgShow.h"
 #include "recorder/TimersManager.h"
@@ -92,6 +93,7 @@ private:
 
 	Shortcuts *shortcuts;
 	ChannelSelect *select;
+	Time *time;
 
 	QMenu *right;
 	QMenu *open;
