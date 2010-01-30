@@ -1,16 +1,16 @@
-#include <QHBoxLayout>
-#include <QTime>
-#include <QDebug>
+#include <QtCore/QTime>
+#include <QtGui/QHBoxLayout>
 
-#include "VlcSeekWidget.h"
 #include "VlcInstance.h"
+#include "VlcSeekWidget.h"
 
 VlcSeekWidget::VlcSeekWidget(QWidget *parent)
 	:QWidget(parent)
 {
 	seek = new QSlider(this);
 	seek->setOrientation(Qt::Horizontal);
-	//seek->setMaximum(200);
+	seek->setMaximum(0);
+	seek->setPageStep(1000);
 
 	labelElapsed = new QLabel(this);
 	labelElapsed->setText("00:00:00");
@@ -27,7 +27,7 @@ VlcSeekWidget::VlcSeekWidget(QWidget *parent)
 	timer = new QTimer(this);
 
 	connect(timer, SIGNAL(timeout()), this, SLOT(updateTime()));
-	connect(seek, SIGNAL(sliderMoved(int)), this, SLOT(changeTime(int)));
+	connect(seek, SIGNAL(sliderReleased()), this, SLOT(changeTime()));
 
 	timer->start(400);
 }
@@ -42,7 +42,7 @@ VlcSeekWidget::~VlcSeekWidget() {
 void VlcSeekWidget::updateTime()
 {
 	if(!_vlcCurrentMediaPlayer)
-	        return;
+		return;
 
 	// It's possible that the vlc doesn't play anything
 	// so check before
@@ -64,8 +64,8 @@ void VlcSeekWidget::updateTime()
 #endif
 
 	if(state != 0 && state != 6 && state != 7) {
-		qint64 fullTime = libvlc_media_player_get_length(_vlcCurrentMediaPlayer, _vlcException);
-		qint64 currentTime = libvlc_media_player_get_time(_vlcCurrentMediaPlayer, _vlcException);
+		libvlc_time_t fullTime = libvlc_media_player_get_length(_vlcCurrentMediaPlayer, _vlcException);
+		libvlc_time_t currentTime = libvlc_media_player_get_time(_vlcCurrentMediaPlayer, _vlcException);
 
 		labelFull->setText(QTime(0,0,0,0).addMSecs(fullTime).toString("hh:mm:ss"));
 		seek->setMaximum(fullTime);
@@ -83,11 +83,11 @@ void VlcSeekWidget::updateTime()
 	VlcInstance::checkException();
 }
 
-void VlcSeekWidget::changeTime(int newTime)
+void VlcSeekWidget::changeTime()
 {
-	labelElapsed->setText(QTime(0,0,0,0).addMSecs(newTime).toString("hh:mm:ss"));
+	labelElapsed->setText(QTime(0,0,0,0).addMSecs(seek->value()).toString("hh:mm:ss"));
 
     libvlc_exception_clear(_vlcException);
-    libvlc_media_player_set_time(_vlcCurrentMediaPlayer, newTime, _vlcException);
+    libvlc_media_player_set_time(_vlcCurrentMediaPlayer, seek->value(), _vlcException);
     VlcInstance::checkException();
 }

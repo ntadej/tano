@@ -1,10 +1,10 @@
-#ifndef VLCSEEKWIDGET_H_
-#define VLCSEEKWIDGET_H_
+#ifndef QVLC_VLCSEEKWIDGET_H_
+#define QVLC_VLCSEEKWIDGET_H_
 
-#include <QWidget>
-#include <QSlider>
-#include <QLabel>
-#include <QTimer>
+#include <QtCore/QTimer>
+#include <QtGui/QLabel>
+#include <QtGui/QSlider>
+#include <QtGui/QWidget>
 
 class VlcSeekWidget : public QWidget {
 Q_OBJECT
@@ -13,7 +13,7 @@ public:
 	virtual ~VlcSeekWidget();
 
 private slots:
-	void changeTime(int newTime);
+	void changeTime();
 	void updateTime();
 
 private:
@@ -23,4 +23,4 @@ private:
 	QTimer *timer;
 };
 
-#endif /* VLCSEEKWIDGET_H_ */
+#endif // QVLC_VLCSEEKWIDGET_H_

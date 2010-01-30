@@ -107,16 +107,18 @@ void EditSettings::ok()
 		settings->setValue("playlist",ui.editPlaylist->text());
 	}
 
+	settings->beginGroup("VLC");
 	if(ui.radioNetworkCustom->isChecked()) {
 		settings->setValue("network", ui.editNetwork->text());
 	} else {
 		settings->remove("network");
 	}
 	if(ui.vlcBox->isChecked()) {
-		settings->setValue("vlc", true);
+		settings->setValue("ignore-config", false);
 	} else {
-		settings->remove("vlc");
+		settings->remove("ignore-config");
 	}
+	settings->endGroup();
 
 	settings->beginGroup("GUI");
 	if(ui.checkLite->isChecked()) {
@@ -211,6 +213,7 @@ void EditSettings::read()
 		ui.editPlaylist->setText(settings->value("playlist").toString());
 	}
 
+	settings->beginGroup("VLC");
 	if(settings->value("network","").toString() != "")
 	{
 		ui.radioNetworkCustom->setChecked(true);
@@ -219,8 +222,8 @@ void EditSettings::read()
 	} else {
 		ui.radioNetworkDefault->setChecked(true);
 	}
-
-	ui.checkVlc->setChecked(settings->value("vlc",false).toBool());
+	ui.checkVlc->setChecked(!settings->value("ignore-config",true).toBool());
+	settings->endGroup();
 
 	settings->beginGroup("GUI");
 	ui.checkLite->setChecked(settings->value("lite",false).toBool());

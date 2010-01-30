@@ -1,8 +1,8 @@
-#ifndef VLCINSTANCE_H_
-#define VLCINSTANCE_H_
+#ifndef QVLC_VLCINSTANCE_H_
+#define QVLC_VLCINSTANCE_H_
 
-#include <QObject>
-#include <QWidget>
+#include <QtCore/QObject>
+#include <QtGui/QWidget>
 
 #include <vlc/vlc.h>
 
@@ -13,7 +13,7 @@ extern libvlc_media_player_t *_vlcCurrentMediaPlayer;
 class VlcInstance : public QObject {
 Q_OBJECT
 public:
-	VlcInstance(bool settings = false, WId widget = NULL, QString iface = "");
+	VlcInstance(QStringList args, WId widget = NULL);
 	virtual ~VlcInstance();
 
 	void openMedia(QString media);
@@ -22,20 +22,19 @@ public:
 
 public slots:
 	void init();
+	void play();
 	void pause();
 	void stop();
 	void mute();
 
 private:
 	int fatalError();
-	void playInternal();
 	void unloadMedia();
-	bool _isPlaying;
 
 	libvlc_media_player_t * _vlcMediaPlayer;
 	libvlc_media_t * _vlcMedia;
 	WId _widgetId;
-	QString _networkInterface;
+	QStringList _args;
 };
 
-#endif /* VLCINSTANCE_H_ */
+#endif // QVLC_VLCINSTANCE_H_

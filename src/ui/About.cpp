@@ -15,7 +15,7 @@ About::About(QWidget *parent, QString version)
 	ui.labelCopy->setText(ui.labelCopy->text().replace("http://tanoplayer.co.cc","<a href='http://tanoplayer.co.cc'>http://tanoplayer.co.cc</a>"));
 	ui.labelCopy->setText(ui.labelCopy->text().replace("info@tanoplayer.co.cc","<a href='info@tanoplayer.co.cc'>info@tanoplayer.co.cc</a>"));
 
-	ui.labelVlc->setText("<h3>Videolan VLC "+VlcInstance::version()+"</h3>");
+	ui.labelVlc->setText("<h3>Videolan libVLC "+VlcInstance::version()+"</h3>");
 	ui.labelRecorder->setText(ui.labelRecorder->text().replace("friptv","<a href=http://friptv.sourceforge.net>friptv</a>"));
 
 	ui.labelQtVersion->setText(ui.labelQtVersion->text().replace("0.0.0",QtVersion()));

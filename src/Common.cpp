@@ -108,3 +108,33 @@ QString Common::settingsPath()
 	path.replace("Settings.ini","");
 	return path;
 }
+
+QStringList Common::libvlcArgs()
+{
+	QSettings *s = settings();
+
+	QStringList args;
+	args << "--intf=dummy"
+		 << "--no-media-library"
+		 << "--reset-plugins-cache"
+		 << "--no-stats"
+		 << "--no-osd"
+		 << "--no-video-title-show";
+
+	if(s->value("ignore-config",true).toBool())
+		args << "--ignore-config";
+
+	if(s->value("network","").toString() != "") {
+		args << "--miface-addr"
+			 << s->value("network","").toString();
+	}
+
+#ifdef Q_WS_X11
+	args << "--vout-event"
+		 << "3";
+#endif
+
+	delete s;
+
+	return args;
+}

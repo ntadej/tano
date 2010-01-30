@@ -2,6 +2,7 @@
 #define TANO_COMMON_H_
 
 #include <QString>
+#include <QStringList>
 #include <QSettings>
 
 class Common {
@@ -18,6 +19,8 @@ public:
 
 	static QSettings* settings();
 	static QString settingsPath();
+
+	static QStringList libvlcArgs();
 };
 
 #endif // TANO_COMMON_H_

@@ -14,7 +14,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
 	QPixmap pixmap(":/icons/images/splash.png");
 	QSplashScreen *splash = new QSplashScreen(pixmap);
-	//splash->setAttribute(Qt::WA_TranslucentBackground);
 	splash->setMask(pixmap.mask());
 	splash->show();
 
@@ -34,7 +33,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 	settings = Common::settings();
 
-	backend = new VlcInstance(false, ui.videoWidget->getWinId(), settings->value("network","").toString());
+	backend = new VlcInstance(Common::libvlcArgs(), ui.videoWidget->getWinId());
 	backend->init();
 
 	controller = new VlcControl();
@@ -49,8 +48,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 	time = new Time();
 	timers = new TimersManager(time);
-	createSettings();
 
+	createSettings();
 	createMenus();
 	createConnections();
 	createShortcuts();

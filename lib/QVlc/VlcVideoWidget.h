@@ -1,9 +1,8 @@
-#ifndef VLCVIDEOWIDGET_H
-#define VLCVIDEOWIDGET_H
+#ifndef QVLC_VLCVIDEOWIDGET_H_
+#define QVLC_VLCVIDEOWIDGET_H_
 
-#include <QWidget>
-#include <QTimer>
-#include <QPoint>
+#include <QtCore/QTimer>
+#include <QtGui/QWidget>
 
 class VlcVideoWidget : public QWidget
 {
@@ -71,8 +70,7 @@ private slots:
 private:
 	QWidget *widget;
 	QTimer *timer;
-	QPoint pos;
 	bool move;
 };
 
-#endif // VLCVIDEOWIDGET_H
+#endif // QVLC_VLCVIDEOWIDGET_H_

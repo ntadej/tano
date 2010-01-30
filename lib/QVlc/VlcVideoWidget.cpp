@@ -11,10 +11,7 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
     : QWidget(parent)
 {
 	setMouseTracking(true);
-	timer = new QTimer(this);
-	connect(timer, SIGNAL(timeout()), this, SLOT(hideMouse()));
 
-	pos = QPoint();
 	move = true;
 
 	widget = new QWidget(this);
@@ -23,6 +20,9 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(widget);
     setLayout(layout);
+
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(hideMouse()));
 }
 
 VlcVideoWidget::~VlcVideoWidget()
@@ -89,14 +89,8 @@ void VlcVideoWidget::hideMouse()
 }
 
 //Move
-void VlcVideoWidget::disableMove()
-{
-	move = false;
-}
-void VlcVideoWidget::enableMove()
-{
-	move = true;
-}
+void VlcVideoWidget::disableMove() { move = false; }
+void VlcVideoWidget::enableMove() {	move = true; }
 
 void VlcVideoWidget::controlFull()
 {
