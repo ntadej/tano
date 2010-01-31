@@ -1,11 +1,11 @@
-#ifndef VLCCONTROL_H_
-#define VLCCONTROL_H_
+#ifndef QVLC_VLCCONTROL_H_
+#define QVLC_VLCCONTROL_H_
 
-#include <QTimer>
-#include <QList>
-#include <QMap>
-#include <QAction>
-#include <QActionGroup>
+#include <QtCore/QList>
+#include <QtCore/QMap>
+#include <QtCore/QTimer>
+#include <QtGui/QAction>
+#include <QtGui/QActionGroup>
 
 class VlcControl : public QObject {
 Q_OBJECT
@@ -13,10 +13,9 @@ public:
 	VlcControl();
 	virtual ~VlcControl();
 
-	void update();
-
 private slots:
-	void updateActions();
+	void updateActionsAudio();
+	void updateActionsVideo();
 	void updateAudio();
 	void updateSub();
 
@@ -30,8 +29,6 @@ private:
 	QTimer *timer;
 	QTimer *check;
 
-	int isPlaying;
-
 	QList<QAction*> audioList;
 	QMap<QString,int> audioMap;
 	QActionGroup *audioGroup;
@@ -41,4 +38,4 @@ private:
 	QActionGroup *subGroup;
 };
 
-#endif /* VLCCONTROL_H_ */
+#endif // QVLC_VLCCONTROL_H_

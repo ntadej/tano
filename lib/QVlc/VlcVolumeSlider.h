@@ -1,10 +1,10 @@
-#ifndef VLCVOLUMESLIDER_H_
-#define VLCVOLUMESLIDER_H_
+#ifndef QVLC_VLCVOLUMESLIDER_H_
+#define QVLC_VLCVOLUMESLIDER_H_
 
-#include <QWidget>
-#include <QSlider>
-#include <QLabel>
-#include <QTimer>
+#include <QtCore/QTimer>
+#include <QtGui/QLabel>
+#include <QtGui/QSlider>
+#include <QtGui/QWidget>
 
 class VlcVolumeSlider : public QWidget {
 Q_OBJECT
@@ -12,10 +12,11 @@ public:
 	VlcVolumeSlider(QWidget *parent = 0);
 	virtual ~VlcVolumeSlider();
 
-	void setValue(int volume);
-	int value();
+	void setVolume(int volume);
+	int volume();
 
 public slots:
+	void mute();
 	void vup();
 	void vdown();
 
@@ -29,4 +30,4 @@ private:
 	QTimer *timer;
 };
 
-#endif /* VLCVOLUMESLIDER_H_ */
+#endif // QVLC_VLCVOLUMESLIDER_H_

@@ -112,6 +112,7 @@ QString Common::settingsPath()
 QList<const char *> Common::libvlcArgs()
 {
 	QSettings *s = settings();
+	QByteArray tmp;
 
 	QList<const char *> args;
 	if(s->value("ignore-config",true).toBool())
@@ -125,11 +126,14 @@ QList<const char *> Common::libvlcArgs()
 		 << "--no-video-title-show";
 
 #ifdef Q_WS_X11
+#if VLC_TRUNK
+
+#else
 	args << "--vout-event"
 		 << "3";
 #endif
+#endif
 
-	QByteArray tmp;
 	if(s->value("network","").toString() != "") {
 		tmp = s->value("network","").toString().toLatin1();
 		args << "--miface-addr"

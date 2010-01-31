@@ -25,13 +25,11 @@ public slots:
 	void play();
 	void pause();
 	void stop();
-	void mute();
 
 private:
 	int fatalError();
 	void unloadMedia();
 
-	libvlc_media_player_t * _vlcMediaPlayer;
 	libvlc_media_t * _vlcMedia;
 	WId _widgetId;
 	QList<const char *> _args;

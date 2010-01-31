@@ -1,8 +1,7 @@
-#include <QHBoxLayout>
-#include <QDebug>
+#include <QtGui/QHBoxLayout>
 
-#include "VlcVolumeSlider.h"
 #include "VlcInstance.h"
+#include "VlcVolumeSlider.h"
 
 VlcVolumeSlider::VlcVolumeSlider(QWidget *parent)
 	: QWidget(parent)
@@ -36,6 +35,9 @@ VlcVolumeSlider::~VlcVolumeSlider() {
 
 void VlcVolumeSlider::changeVolume(int newVolume)
 {
+    if(!_vlcCurrentMediaPlayer)
+    	return;
+
 	label->setText(QString().number(newVolume));
 
     libvlc_exception_clear(_vlcException);
@@ -62,9 +64,9 @@ void VlcVolumeSlider::updateVolume()
 
     int volume;
 #if VLC_TRUNK
-    volume = libvlc_audio_get_volume (_vlcInstance);
+    volume = libvlc_audio_get_volume(_vlcInstance);
 #else
-    volume = libvlc_audio_get_volume (_vlcInstance, _vlcException);
+    volume = libvlc_audio_get_volume(_vlcInstance, _vlcException);
 #endif
     slider->setValue(volume);
     label->setText(QString().number(volume));
@@ -72,13 +74,13 @@ void VlcVolumeSlider::updateVolume()
 	VlcInstance::checkException();
 }
 
-void VlcVolumeSlider::setValue(int volume)
+void VlcVolumeSlider::setVolume(int volume)
 {
     slider->setValue(volume);
     label->setText(QString().number(volume));
 }
 
-int VlcVolumeSlider::value()
+int VlcVolumeSlider::volume()
 {
 	return slider->value();
 }
@@ -93,4 +95,13 @@ void VlcVolumeSlider::vdown()
 {
 	if(slider->value() != 0)
 		changeVolume(slider->value()-1);
+}
+
+void VlcVolumeSlider::mute() {
+#if VLC_TRUNK
+	libvlc_audio_toggle_mute(_vlcInstance);
+#else
+	libvlc_audio_toggle_mute(_vlcInstance, _vlcException);
+#endif
+	VlcInstance::checkException();
 }

@@ -10,7 +10,6 @@ libvlc_media_player_t * _vlcCurrentMediaPlayer = NULL;
 VlcInstance::VlcInstance(QList<const char *> args, WId widget)
 	:_widgetId(widget), _args(args)
 {
-	_vlcMediaPlayer = NULL;
 	_vlcMedia = NULL;
 }
 
@@ -59,42 +58,40 @@ void VlcInstance::openMedia(QString media)
 
     qDebug() << "libVlc" <<"Media:" << media;
 
-    _vlcMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia, _vlcException);
+    _vlcCurrentMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia, _vlcException);
     checkException();
 
 	/* Get our media instance to use our window */
-	if (_vlcMediaPlayer) {
+	if (_vlcCurrentMediaPlayer) {
 #if defined(Q_OS_WIN)
 	#if VLC_TRUNK
-		libvlc_media_player_set_hwnd(_vlcMediaPlayer, _widgetId);
+		libvlc_media_player_set_hwnd(_vlcCurrentMediaPlayer, _widgetId);
 	#else
-		libvlc_media_player_set_hwnd(_vlcMediaPlayer, _widgetId, _vlcException);
+		libvlc_media_player_set_hwnd(_vlcCurrentMediaPlayer, _widgetId, _vlcException);
 	#endif
 #elif defined(Q_OS_MAC)
 	#if VLC_TRUNK
-		libvlc_media_player_set_agl (_vlcMediaPlayer, _widgetId);
+		libvlc_media_player_set_agl (_vlcCurrentMediaPlayer, _widgetId);
 	#else
-		libvlc_media_player_set_agl (_vlcMediaPlayer, _widgetId, _vlcException);
+		libvlc_media_player_set_agl (_vlcCurrentMediaPlayer, _widgetId, _vlcException);
 	#endif
 #else
 	#if VLC_TRUNK
-		libvlc_media_player_set_xwindow(_vlcMediaPlayer, _widgetId);
+		libvlc_media_player_set_xwindow(_vlcCurrentMediaPlayer, _widgetId);
 	#else
-		libvlc_media_player_set_xwindow(_vlcMediaPlayer, _widgetId, _vlcException);
+		libvlc_media_player_set_xwindow(_vlcCurrentMediaPlayer, _widgetId, _vlcException);
 	#endif
 #endif
 		checkException();
 	}
 
-	_vlcCurrentMediaPlayer = _vlcMediaPlayer;
-
 	play();
 }
 
 void VlcInstance::unloadMedia() {
-	if (_vlcMediaPlayer) {
-		libvlc_media_player_release(_vlcMediaPlayer);
-		_vlcMediaPlayer = NULL;
+	if (_vlcCurrentMediaPlayer) {
+		libvlc_media_player_release(_vlcCurrentMediaPlayer);
+		_vlcCurrentMediaPlayer = NULL;
 	}
 
 	if (_vlcMedia) {
@@ -104,31 +101,26 @@ void VlcInstance::unloadMedia() {
 }
 
 void VlcInstance::play() {
-	libvlc_media_player_play(_vlcMediaPlayer, _vlcException);
+	libvlc_media_player_play(_vlcCurrentMediaPlayer, _vlcException);
 	checkException();
 }
 
 void VlcInstance::pause() {
-	if(libvlc_media_player_can_pause(_vlcMediaPlayer, _vlcException) == 1)
-		libvlc_media_player_pause(_vlcMediaPlayer, _vlcException);
+	if(libvlc_media_player_can_pause(_vlcCurrentMediaPlayer, _vlcException) == 1)
+		libvlc_media_player_pause(_vlcCurrentMediaPlayer, _vlcException);
 	checkException();
 }
 
 void VlcInstance::stop() {
-#if VLC_TRUNK
-	libvlc_media_player_stop(_vlcMediaPlayer);
-#else
-	libvlc_media_player_stop(_vlcMediaPlayer, _vlcException);
-#endif
-	checkException();
-}
+	if(!_vlcCurrentMediaPlayer)
+		return;
 
-void VlcInstance::mute() {
 #if VLC_TRUNK
-	libvlc_audio_toggle_mute(_vlcInstance);
+	libvlc_media_player_stop(_vlcCurrentMediaPlayer);
 #else
-	libvlc_audio_toggle_mute(_vlcInstance, _vlcException);
+	libvlc_media_player_stop(_vlcCurrentMediaPlayer, _vlcException);
 #endif
+	unloadMedia();
 	checkException();
 }
 

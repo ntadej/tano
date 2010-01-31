@@ -22,6 +22,8 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.toolBarOsd->addWidget(ui.controlsWidget);
 	ui.menuSubtitles->clear();
 	ui.menuAudio_channel->clear();
+	ui.menuSubtitles->setDisabled(true);
+	ui.menuAudio_channel->setDisabled(true);
 	//this->statusBar()->hide();
 
 #if VLC_TRUNK
@@ -68,7 +70,7 @@ MainWindow::~MainWindow()
 	if(sessionEnabled) {
 		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 		session.beginGroup("Session");
-        session.setValue("volume", ui.volumeSlider->value());
+        session.setValue("volume", ui.volumeSlider->volume());
 		session.setValue("channel", ui.channelNumber->value());
 		session.endGroup();
 	}
@@ -184,7 +186,7 @@ void MainWindow::createConnections()
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));
 	connect(ui.actionNext, SIGNAL(triggered()), select, SLOT(next()));
-	connect(ui.actionMute, SIGNAL(triggered()), backend, SLOT(mute()));
+	connect(ui.actionMute, SIGNAL(triggered()), ui.volumeSlider, SLOT(mute()));
 	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.volumeSlider, SLOT(vup()));
 	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.volumeSlider, SLOT(vdown()));
 
@@ -342,7 +344,7 @@ void MainWindow::createSession()
 {
 	if(sessionEnabled) {
 		settings->beginGroup("Session");
-        ui.volumeSlider->setValue(settings->value("volume",50).toString().toInt());
+        ui.volumeSlider->setVolume(settings->value("volume",50).toString().toInt());
 		if(hasPlaylist)
 			key(settings->value("channel",1).toInt());
 		settings->endGroup();
@@ -420,20 +422,17 @@ void MainWindow::play(QString itemFile, QString itemType)
 		ui.channelNumber->display(channel->num());
 
 		backend->openMedia(channel->url());
-		controller->update();
 		tooltip(channel->name());
 		trayIcon->changeToolTip(channel->name());
 		//statusBar()->showMessage(tr("Channel")+" #"+channel->numToString()+" "+tr("selected"), 2000);
 	} else if(itemType == "file") {
 	    ui.infoWidget->hide();
 	    backend->openMedia(fileName);
-		controller->update();
 		tooltip(fileName);
 		//statusBar()->showMessage(tr("Playing file"), 5000);
 	} else {
 		ui.infoWidget->hide();
 		backend->openMedia(fileName);
-    	controller->update();
     	tooltip(fileName);
 		//statusBar()->showMessage(tr("Playing URL"), 5000);
 
@@ -652,6 +651,20 @@ void MainWindow::processMenu(QString type, QList<QAction*> list)
 		ui.menuSubtitles->clear();
 	else if(type == "audio")
 		ui.menuAudio_channel->clear();
+
+	if(list.size()==0) {
+		if(type == "sub")
+			ui.menuSubtitles->setDisabled(true);
+		else if(type == "audio")
+			ui.menuAudio_channel->setDisabled(true);
+
+		return;
+	} else {
+		if(type == "sub")
+			ui.menuSubtitles->setDisabled(false);
+		else if(type == "audio")
+			ui.menuAudio_channel->setDisabled(false);
+	}
 
 	for (int i = 0; i < list.size(); ++i) {
 		if(type == "sub")

@@ -85,6 +85,9 @@ void VlcSeekWidget::updateTime()
 
 void VlcSeekWidget::changeTime()
 {
+    if(!_vlcCurrentMediaPlayer)
+    	return;
+
 	labelElapsed->setText(QTime(0,0,0,0).addMSecs(seek->value()).toString("hh:mm:ss"));
 
     libvlc_exception_clear(_vlcException);
