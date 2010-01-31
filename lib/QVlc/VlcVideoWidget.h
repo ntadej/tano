@@ -13,6 +13,7 @@ public:
     ~VlcVideoWidget();
 
 	WId getWinId();
+	void setOsd(int width, int height, int posLeft, int posTop);
 
 protected:
 	void mouseDoubleClickEvent(QMouseEvent *event);
@@ -71,6 +72,11 @@ private:
 	QWidget *widget;
 	QTimer *timer;
 	bool move;
+
+	int _osdWidth;
+	int _osdHeight;
+	int _osdPosLeft;
+	int _osdPosTop;
 };
 
 #endif // QVLC_VLCVIDEOWIDGET_H_

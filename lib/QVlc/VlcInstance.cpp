@@ -7,7 +7,7 @@ libvlc_instance_t * _vlcInstance = NULL;
 libvlc_exception_t * _vlcException = new libvlc_exception_t();
 libvlc_media_player_t * _vlcCurrentMediaPlayer = NULL;
 
-VlcInstance::VlcInstance(QStringList args, WId widget)
+VlcInstance::VlcInstance(QList<const char *> args, WId widget)
 	:_widgetId(widget), _args(args)
 {
 	_vlcMediaPlayer = NULL;
@@ -28,7 +28,7 @@ void VlcInstance::init()
 {
 	const char *vlcArgs[_args.size()];
 	for(int i=0; i<_args.size(); i++)
-		vlcArgs[i] = _args[i].toUtf8();
+		vlcArgs[i] = _args[i];
 
 	libvlc_exception_init(_vlcException);
 

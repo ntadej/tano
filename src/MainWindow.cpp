@@ -1,4 +1,5 @@
 #include <QFileDialog>
+#include <QDesktopWidget>
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QDir>
@@ -607,6 +608,8 @@ void MainWindow::volumeControl(bool type)
 
 void MainWindow::createOsd()
 {
+	ui.videoWidget->setOsd(QApplication::desktop()->width(),osd->height(),0,QApplication::desktop()->height()-osd->height());
+
 	connect(osd, SIGNAL(play()), ui.actionPlay, SLOT(trigger()));
 	connect(osd, SIGNAL(stop()), ui.actionStop, SLOT(trigger()));
 	connect(osd, SIGNAL(back()), ui.actionBack, SLOT(trigger()));

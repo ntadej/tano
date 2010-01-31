@@ -1,11 +1,9 @@
-#include <QMouseEvent>
-#include <QApplication>
-#include <QDesktopWidget>
-#include <QHBoxLayout>
-#include <QDebug>
+#include <QtGui/QApplication>
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QMouseEvent>
 
-#include "VlcVideoWidget.h"
 #include "VlcInstance.h"
+#include "VlcVideoWidget.h"
 
 VlcVideoWidget::VlcVideoWidget(QWidget *parent)
     : QWidget(parent)
@@ -16,6 +14,11 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
 
 	widget = new QWidget(this);
 	widget->setMouseTracking(true);
+
+	_osdWidth = 0;
+	_osdHeight = 0;
+	_osdPosLeft = 0;
+	_osdPosTop = 0;
 
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(widget);
@@ -36,6 +39,14 @@ WId VlcVideoWidget::getWinId()
 	return widget->winId();
 }
 
+void VlcVideoWidget::setOsd(int width, int height, int posLeft, int posTop)
+{
+	_osdWidth = width;
+	_osdHeight = height;
+	_osdPosLeft = posLeft;
+	_osdPosTop = posTop;
+}
+
 //Events:
 void VlcVideoWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
@@ -46,13 +57,11 @@ void VlcVideoWidget::mouseMoveEvent(QMouseEvent *event)
 {
 	event->ignore();
 
-	int h = QApplication::desktop()->height();
-
 	if(this->isFullScreen() && move) {
 		qApp->setOverrideCursor(Qt::ArrowCursor);
-		pos = event->globalPos();
 
-		if(event->globalPos().y() > h-115) {
+		if((event->globalPos().y() >= _osdPosTop && event->globalPos().y() <= _osdPosTop+_osdHeight)
+			&& (event->globalPos().x() >= _osdPosLeft && event->globalPos().x() <= _osdPosLeft+_osdWidth)) {
 			emit osd(false);
 			timer->stop();
 		} else {

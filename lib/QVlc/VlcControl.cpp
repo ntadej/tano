@@ -128,7 +128,7 @@ void VlcControl::updateActions() {
 
     emit vlcAction("sub", subList);
 
-	timer->start(5000);
+	timer->start(1000);
 }
 
 void VlcControl::updateAudio()
