@@ -33,12 +33,17 @@
             <string>Timer</string>
            </property>
           </column>
+          <column>
+           <property name="text">
+            <string>Status</string>
+           </property>
+          </column>
          </widget>
         </item>
         <item>
          <widget class="QDialogButtonBox" name="buttonBox">
           <property name="standardButtons">
-           <set>QDialogButtonBox::Close|QDialogButtonBox::Save</set>
+           <set>QDialogButtonBox::Save</set>
           </property>
          </widget>
         </item>
@@ -245,6 +250,16 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="labelDisabled">
+       <property name="text">
+        <string>Disabled:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QCheckBox" name="checkBoxDisabled"/>
      </item>
     </layout>
    </widget>

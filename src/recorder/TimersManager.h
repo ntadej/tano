@@ -23,16 +23,21 @@ public:
 
     void openPlaylist(QString file);
 
+public slots:
+	void setStatus(Timer* t, const QString status);
+
 private slots:
 	void action(QAbstractButton*);
 
     void newItem();
     void addItem();
+    void deleteItem();
     void edit(QTreeWidgetItem *item);
     void playlist(QTreeWidgetItem *item);
-    void applyName(QString name);
+    void applyName(const QString name);
+    void validate();
 
-    void read(QString file = 0);
+    void read(const QString file = 0);
     void write();
 
 private:

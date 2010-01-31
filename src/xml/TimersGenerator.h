@@ -39,6 +39,7 @@ public:
 
 private:
     static QString indent(int indentLevel);
+    QString boolToString(const bool b);
     static QString escapedText(const QString &str);
     static QString escapedAttribute(const QString &str);
     void generateItem(QTreeWidgetItem *item, int depth);

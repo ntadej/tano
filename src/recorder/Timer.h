@@ -26,8 +26,11 @@ public slots:
 	void setStartTime(const QTime &sstartTime);
 	QTime endTime() const {return _endTime;}
 	void setEndTime(const QTime &sendTime);
+	bool isDisabled() const {return _disabled;}
+	void setDisabled(const bool &disabled);
 
 private:
+	bool _disabled;
 	QString _name;
 	QString _channel;
 	QString _playlist;

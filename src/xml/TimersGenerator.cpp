@@ -69,12 +69,22 @@ QString TanoGenerator::escapedAttribute(const QString &str)
     return result;
 }
 
+QString TanoGenerator::boolToString(const bool b)
+{
+	if(b) {
+		return QString("true");
+	} else {
+		return QString("false");
+	}
+}
+
 void TanoGenerator::generateItem(QTreeWidgetItem *item, int depth)
 {
 	Timer *currentTimer = _map[item];
 
     out << indent(depth) << "<timer>\n"
-        << indent(depth + 1) << "<name>" << escapedText(currentTimer->name())
+        << indent(depth + 1) << "<name disabled=\"" << boolToString(currentTimer->isDisabled())
+							 << "\">" << escapedText(currentTimer->name())
                              << "</name>\n"
         << indent(depth + 1) << "<channel>" << escapedText(currentTimer->channel())
                              << "</channel>\n"

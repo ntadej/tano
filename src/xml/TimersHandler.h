@@ -47,12 +47,15 @@ public:
     QString errorString() const;
 
     Timer *timerRead(QTreeWidgetItem *clickedItem);
+    QTreeWidgetItem *itemRead(Timer *clickedItem);
     QMap<QTreeWidgetItem*, Timer*> timersMap();
 
     void clear();
 
 public slots:
-	QTreeWidgetItem *newTimer(QString name, QString channel, QString playlist, int num);
+	QTreeWidgetItem *newTimer(const QString name, const QString channel,
+							  const QString playlist, const int num);
+	void deleteItem(QTreeWidgetItem *item);
 
 private:
     QTreeWidgetItem *createChildItem(const QString &tagName);

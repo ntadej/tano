@@ -72,6 +72,11 @@ bool TimersHandler::startElement(const QString & /* namespaceURI */,
     	if(item && timer) {
     		timer->setNum(attributes.value("channelId").toInt());
     	}
+    } else if(qName == "name") {
+    	if(item && timer) {
+    		if(attributes.value("disabled") == "true")
+    			timer->setDisabled(true);
+    	}
     }
 
     currentText.clear();
@@ -85,6 +90,7 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
     if (qName == "name") {
         if (item && timer) {
        		item->setText(0,currentText);
+       		item->setText(1,QObject::tr("Active"));
             timer->setName(currentText);
             map.insert(item, timer);
         }
@@ -99,10 +105,18 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
     } else if (qName == "date") {
     	if (item && timer) {
     		timer->setDate(QDate::fromString(currentText,Qt::ISODate));
+    		if(QDate::fromString(currentText,Qt::ISODate) < QDate::currentDate()) {
+    			item->setText(1,QObject::tr("Disabled or expired"));
+    			timer->setDisabled(true);
+    		}
     	}
     } else if (qName == "start") {
     	if (item && timer) {
     		timer->setStartTime(QTime::fromString(currentText,Qt::ISODate));
+    		if(QTime::fromString(currentText,Qt::ISODate) < QTime::currentTime()) {
+    			item->setText(1,QObject::tr("Disabled or expired"));
+    			timer->setDisabled(true);
+    		}
     	}
     } else if (qName == "end") {
     	if (item && timer) {
@@ -139,17 +153,33 @@ Timer *TimersHandler::timerRead(QTreeWidgetItem *clickedItem)
 	return map[clickedItem];
 }
 
-QTreeWidgetItem *TimersHandler::newTimer(QString name, QString channel, QString playlist, int num)
+QTreeWidgetItem *TimersHandler::itemRead(Timer *clickedItem)
+{
+	for(int i=0; i<treeWidget->topLevelItemCount(); i++)
+		if(treeWidget->topLevelItem(i)->text(0) == clickedItem->name())
+			return treeWidget->topLevelItem(i);
+}
+
+QTreeWidgetItem *TimersHandler::newTimer(const QString name, const QString channel, const QString playlist, const int num)
 {
 	item = new QTreeWidgetItem(treeWidget);
 	item->setIcon(0, timerIcon);
 	item->setFlags(item->flags() | Qt::ItemIsEditable);
 	item->setText(0,name);
+	item->setText(1,QObject::tr("Active"));
 
 	timer = new Timer(name, channel, playlist, num);
 	map.insert(item, timer);
 
 	return item;
+}
+
+void TimersHandler::deleteItem(QTreeWidgetItem *item)
+{
+	Timer *tmp = map[item];
+	map.remove(item);
+	delete tmp;
+	delete item;
 }
 
 QMap<QTreeWidgetItem*, Timer*> TimersHandler::timersMap()
