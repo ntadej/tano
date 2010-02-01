@@ -103,11 +103,8 @@ void MainWindow::exit()
 void MainWindow::closeEvent(QCloseEvent *event)
 {
 	if(settings->value("tray",false).toBool()) {
-		if (trayIcon->isVisible()) {
-			trayIcon->message(QStringList() << "close");
-			hide();
-			event->ignore();
-		}
+		tray();
+		event->ignore();
 	}
 }
 
@@ -197,10 +194,10 @@ void MainWindow::createConnections()
 	connect(select, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
 	//connect(select, SIGNAL(error(QString, int)), this->statusBar(), SLOT(showMessage(QString, int)));
 
-	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(showNormal()));
-	connect(ui.actionRestore, SIGNAL(triggered()), this, SLOT(showNormal()));
+	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
+	connect(ui.actionTray, SIGNAL(triggered()), this, SLOT(tray()));
 
-	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(rightMenu(QPoint)));
+	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
 	connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
 
 	connect(epg, SIGNAL(epgDone(int,QStringList,QString)), this, SLOT(showEpg(int,QStringList,QString)));
@@ -243,8 +240,8 @@ void MainWindow::createConnections()
 	connect(ui.actionFilterX, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterX()));
 #endif
 
-	connect(right, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
-	connect(right, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
+	connect(rightMenu, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
+	connect(rightMenu, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 
 	connect(controller, SIGNAL(vlcAction(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
 	connect(controller, SIGNAL(stateChanged(int)), this, SLOT(playingState(int)));
@@ -283,37 +280,37 @@ void MainWindow::createMenus()
 	filterGroup->addAction(ui.actionFilterLinear);
 	filterGroup->addAction(ui.actionFilterX);
 
-	right = new QMenu();
-	right->addAction(ui.actionPlay);
-	right->addAction(ui.actionStop);
-	right->addAction(ui.actionBack);
-	right->addAction(ui.actionNext);
-	right->addSeparator();
-	right->addAction(ui.actionTop);
-	right->addAction(ui.actionLite);
-	right->addAction(ui.actionFullscreen);
-	right->addSeparator();
-	right->addMenu(ui.menuVolume);
-	right->addMenu(ui.menuVideo);
-	right->addSeparator();
-	right->addAction(ui.actionClose);
+	rightMenu = new QMenu();
+	rightMenu->addAction(ui.actionPlay);
+	rightMenu->addAction(ui.actionStop);
+	rightMenu->addAction(ui.actionBack);
+	rightMenu->addAction(ui.actionNext);
+	rightMenu->addSeparator();
+	rightMenu->addAction(ui.actionTop);
+	rightMenu->addAction(ui.actionLite);
+	rightMenu->addAction(ui.actionFullscreen);
+	rightMenu->addSeparator();
+	rightMenu->addMenu(ui.menuVolume);
+	rightMenu->addMenu(ui.menuVideo);
+	rightMenu->addSeparator();
+	rightMenu->addAction(ui.actionClose);
 
-	open = new QMenu();
-	open->addAction(ui.actionOpenFile);
-	open->addAction(ui.actionOpenUrl);
-	open->addAction(ui.actionOpen);
+	openMenu = new QMenu();
+	openMenu->addAction(ui.actionOpenFile);
+	openMenu->addAction(ui.actionOpenUrl);
+	openMenu->addAction(ui.actionOpen);
 
-	tray = new QMenu();
-	tray->addAction(ui.actionPlay);
-	tray->addAction(ui.actionStop);
-	tray->addAction(ui.actionBack);
-	tray->addAction(ui.actionNext);
-	tray->addSeparator();
-	tray->addAction(ui.actionRestore);
-	tray->addSeparator();
-	tray->addAction(ui.actionClose);
+	trayMenu = new QMenu();
+	trayMenu->addAction(ui.actionPlay);
+	trayMenu->addAction(ui.actionStop);
+	trayMenu->addAction(ui.actionBack);
+	trayMenu->addAction(ui.actionNext);
+	trayMenu->addSeparator();
+	trayMenu->addAction(ui.actionTray);
+	trayMenu->addSeparator();
+	trayMenu->addAction(ui.actionClose);
 
-	trayIcon = new TrayIcon(tray);
+	trayIcon = new TrayIcon(trayMenu);
 	trayIcon->show();
 }
 
@@ -560,14 +557,14 @@ void MainWindow::tooltip(QString channelNow)
 		setWindowTitle(tr("Tano"));
 }
 
-void MainWindow::rightMenu(QPoint pos)
+void MainWindow::showRightMenu(QPoint pos)
 {
-	right->exec(pos);
+	rightMenu->exec(pos);
 }
 
 void MainWindow::menuOpen()
 {
-	open->exec(QCursor::pos());
+	openMenu->exec(QCursor::pos());
 }
 
 void MainWindow::top()
@@ -594,6 +591,21 @@ void MainWindow::lite()
 		ui.toolBar->hide();
 		ui.toolBarOsd->hide();
 		isLite = true;
+	}
+}
+
+void MainWindow::tray()
+{
+	if (!trayIcon->isVisible())
+		return;
+
+	if(this->isHidden()) {
+		ui.actionTray->setText(tr("Hide to tray"));
+		show();
+	} else {
+		ui.actionTray->setText(tr("Restore"));
+		trayIcon->message(QStringList() << "close");
+		hide();
 	}
 }
 

@@ -20,7 +20,6 @@ signals:
 
 private slots:
 	void iconActivated(QSystemTrayIcon::ActivationReason reason);
-	void eRestore();
 
 private:
 	bool _recorder;

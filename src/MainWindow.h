@@ -57,10 +57,11 @@ private slots:
 
     void tooltip(QString channelNow = "stop");
 
-    void rightMenu(QPoint pos);
+    void showRightMenu(QPoint pos);
     void menuOpen();
     void top();
     void lite();
+    void tray();
 
     void recordNow();
     void recorder(bool enabled);
@@ -95,9 +96,9 @@ private:
 	ChannelSelect *select;
 	Time *time;
 
-	QMenu *right;
-	QMenu *open;
-	QMenu *tray;
+	QMenu *rightMenu;
+	QMenu *openMenu;
+	QMenu *trayMenu;
 	QActionGroup *ratioGroup;
 	QActionGroup *cropGroup;
 	QActionGroup *filterGroup;

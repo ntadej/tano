@@ -304,7 +304,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>27</height>
+     <height>31</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -315,6 +315,7 @@
     <addaction name="actionOpenUrl"/>
     <addaction name="actionOpen"/>
     <addaction name="separator"/>
+    <addaction name="actionTray"/>
     <addaction name="actionClose"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
@@ -515,8 +516,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>418</height>
+          <width>346</width>
+          <height>411</height>
          </rect>
         </property>
         <attribute name="label">
@@ -536,8 +537,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>418</height>
+          <width>126</width>
+          <height>79</height>
          </rect>
         </property>
         <attribute name="label">
@@ -774,13 +775,16 @@
     <string>Always on top</string>
    </property>
   </action>
-  <action name="actionRestore">
+  <action name="actionTray">
    <property name="icon">
     <iconset resource="images.qrc">
      <normaloff>:/icons/images/win.png</normaloff>:/icons/images/win.png</iconset>
    </property>
    <property name="text">
-    <string>Restore</string>
+    <string>Hide to tray</string>
+   </property>
+   <property name="toolTip">
+    <string>Hide to tray</string>
    </property>
   </action>
   <action name="actionLite">

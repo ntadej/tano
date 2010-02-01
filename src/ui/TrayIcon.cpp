@@ -27,18 +27,13 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason)
     switch (reason) {
     case QSystemTrayIcon::Trigger:
     case QSystemTrayIcon::DoubleClick:
-        eRestore();
+    	emit restoreClick();
         break;
     case QSystemTrayIcon::MiddleClick:
         break;
     default:
         ;
     }
-}
-
-void TrayIcon::eRestore()
-{
-	emit restoreClick();
 }
 
 void TrayIcon::message(QStringList arg)
