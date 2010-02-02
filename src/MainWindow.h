@@ -98,7 +98,6 @@ private:
 
 	QMenu *rightMenu;
 	QMenu *openMenu;
-	QMenu *trayMenu;
 	QActionGroup *ratioGroup;
 	QActionGroup *cropGroup;
 	QActionGroup *filterGroup;
@@ -115,6 +114,7 @@ private:
 	bool sessionEnabled;
 	bool hasPlaylist;
 
+	void createVlcInstance();
     void createConnections();
     void createMenus();
     void createShortcuts();

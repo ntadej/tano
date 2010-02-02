@@ -6,13 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>112</height>
+    <width>500</width>
+    <height>100</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="buttonsLayout">
+     <property name="spacing">
+      <number>2</number>
+     </property>
      <item>
       <widget class="QLCDNumber" name="channelNumber">
        <property name="minimumSize">
@@ -218,10 +227,24 @@
     </layout>
    </item>
    <item>
-    <widget class="VlcSeekWidget" name="seekWidget" native="true"/>
+    <widget class="VlcSeekWidget" name="seekWidget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
    </item>
    <item>
-    <widget class="InfoBar" name="infoBarWidget" native="true"/>
+    <widget class="InfoBar" name="infoBarWidget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

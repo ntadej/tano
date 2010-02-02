@@ -9,11 +9,9 @@ Osd::Osd(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	this->setWindowFlags(Qt::ToolTip);
-
 	dWidth = QApplication::desktop()->width();
 	dHeight = QApplication::desktop()->height();
-	this->resize(dWidth*0.75,this->height());
+
 
 	connect(ui.buttonPlay, SIGNAL(clicked()), this, SIGNAL(play()));
 	connect(ui.buttonStop, SIGNAL(clicked()), this, SIGNAL(stop()));
@@ -31,6 +29,8 @@ Osd::~Osd()
 
 void Osd::showOsd()
 {
+	this->setWindowFlags(Qt::ToolTip);
+	this->resize(dWidth*0.75,this->height());
 	this->move(dWidth/2-this->width()/2,dHeight-this->height());
 	this->show();
 }
@@ -40,9 +40,9 @@ void Osd::hideOsd()
 	this->hide();
 }
 
-void Osd::setNumber(int n)
+QLCDNumber *Osd::lcd()
 {
-	ui.channelNumber->display(n);
+	return ui.channelNumber;
 }
 
 
