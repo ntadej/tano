@@ -18,7 +18,7 @@ public slots:
 	void showOsd();
 	void hideOsd();
 
-	QLCDNumber *lcd();
+	void setNumber(int n);
 	void setMuted(bool mute);
 	void setStatus(bool status);
 

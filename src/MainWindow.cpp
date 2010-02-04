@@ -19,8 +19,18 @@ MainWindow::MainWindow(QWidget *parent)
 	splash->show();
 
 	ui.setupUi(this);
-	ui.toolBarOsd->addWidget(ui.osd);
+	ui.toolBarOsd->addWidget(ui.controlsWidget);
 
+#if VLC_TRUNK
+	ui.menuDeinterlacing->setEnabled(true);
+#endif
+
+	settings = Common::settings();
+
+	backend = new VlcInstance(Common::libvlcArgs(), ui.videoWidget->getWinId());
+	backend->init();
+
+	controller = new VlcControl();
 	flags = this->windowFlags();
 
 	update = new Updates();
@@ -33,7 +43,6 @@ MainWindow::MainWindow(QWidget *parent)
 	time = new Time();
 	timers = new TimersManager(time);
 
-	createVlcInstance();
 	createSettings();
 	createMenus();
 	createConnections();
@@ -52,8 +61,8 @@ MainWindow::~MainWindow()
 	if(sessionEnabled) {
 		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 		session.beginGroup("Session");
-        //session.setValue("volume", ui.volumeSlider->volume());
-		session.setValue("channel", ui.osd->lcd()->value());
+        session.setValue("volume", ui.volumeSlider->volume());
+		session.setValue("channel", ui.channelNumber->value());
 		session.endGroup();
 	}
 }
@@ -92,8 +101,6 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::createSettings()
 {
-	settings = Common::settings();
-
 	sessionEnabled = settings->value("session", true).toBool();
 	defaultP = settings->value("playlist","playlists/siol-mpeg2.m3u").toString();
 
@@ -132,7 +139,7 @@ void MainWindow::createSettings()
 		connect(ui.actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
 		connect(ui.actionRecord, SIGNAL(triggered()), this, SLOT(recordNow()));
 	} else {
-		ui.osd->disableRecorder();
+		ui.buttonRecord->hide();
 		ui.menuMedia->removeAction(ui.actionRecord);
 		ui.menuFile->removeAction(ui.actionRecorder);
 		ui.toolBar->removeAction(ui.actionRecorder);
@@ -140,50 +147,6 @@ void MainWindow::createSettings()
 			osd->disableRecorder();
 	}
 	settings->endGroup();
-}
-
-void MainWindow::createVlcInstance()
-{
-	backend = new VlcInstance(Common::libvlcArgs(), ui.videoWidget->getWinId());
-	backend->init();
-
-	controller = new VlcControl();
-	connect(controller, SIGNAL(vlcAction(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
-	connect(controller, SIGNAL(stateChanged(int)), this, SLOT(playingState(int)));
-
-#if VLC_TRUNK
-	ui.menuDeinterlacing->setEnabled(true);
-#endif
-
-	connect(ui.actionRatioOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatioOriginal()));
-	connect(ui.actionRatio1_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio1_1()));
-	connect(ui.actionRatio4_3, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio4_3()));
-	connect(ui.actionRatio16_9, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio16_9()));
-	connect(ui.actionRatio16_10, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio16_10()));
-	connect(ui.actionRatio2_21_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio2_21_1()));
-	connect(ui.actionRatio5_4, SIGNAL(triggered()), ui.videoWidget, SLOT(setRatio5_4()));
-
-	connect(ui.actionCropOriginal, SIGNAL(triggered()), ui.videoWidget, SLOT(setCropOriginal()));
-	connect(ui.actionCrop1_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop1_1()));
-	connect(ui.actionCrop4_3, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop4_3()));
-	connect(ui.actionCrop16_9, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop16_9()));
-	connect(ui.actionCrop16_10, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop16_10()));
-	connect(ui.actionCrop1_85_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop1_85_1()));
-	connect(ui.actionCrop2_21_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop2_21_1()));
-	connect(ui.actionCrop2_35_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop2_35_1()));
-	connect(ui.actionCrop2_39_1, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop2_39_1()));
-	connect(ui.actionCrop5_4, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop5_4()));
-	connect(ui.actionCrop5_3, SIGNAL(triggered()), ui.videoWidget, SLOT(setCrop5_3()));
-
-#if VLC_TRUNK
-	connect(ui.actionFilterDisabled, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterDisabled()));
-	connect(ui.actionFilterDiscard, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterDiscard()));
-	connect(ui.actionFilterBlend, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterBlend()));
-	connect(ui.actionFilterMean, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterMean()));
-	connect(ui.actionFilterBob, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterBob()));
-	connect(ui.actionFilterLinear, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterLinear()));
-	connect(ui.actionFilterX, SIGNAL(triggered()), ui.videoWidget, SLOT(setFilterX()));
-#endif
 }
 
 void MainWindow::createConnections()
@@ -209,32 +172,30 @@ void MainWindow::createConnections()
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 	connect(ui.actionBack, SIGNAL(triggered()), select, SLOT(back()));
 	connect(ui.actionNext, SIGNAL(triggered()), select, SLOT(next()));
-//	connect(ui.actionMute, SIGNAL(triggered()), ui.volumeSlider, SLOT(mute()));
-//	connect(ui.actionVolumeUp, SIGNAL(triggered()), ui.volumeSlider, SLOT(vup()));
-//	connect(ui.actionVolumeDown, SIGNAL(triggered()), ui.volumeSlider, SLOT(vdown()));
+
+	connect(ui.infoBarWidget, SIGNAL(refresh()), epg, SLOT(refresh()));
+	connect(ui.infoBarWidget, SIGNAL(open(QString)), epgShow, SLOT(open(QString)));
 
 	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 	connect(select, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
 
 	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
 	connect(ui.actionTray, SIGNAL(triggered()), this, SLOT(tray()));
-	connect(update, SIGNAL(updatesDone(QStringList)), trayIcon, SLOT(message(QStringList)));
 
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
-	connect(ui.videoWidget, SIGNAL(full()), ui.actionFullscreen, SLOT(trigger()));
-	connect(ui.actionFullscreen, SIGNAL(triggered()), ui.videoWidget, SLOT(controlFull()));
 
 	connect(epg, SIGNAL(epgDone(int,QStringList,QString)), this, SLOT(showEpg(int,QStringList,QString)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_2, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_3, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_4, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
-
-	connect(ui.actionChannel_info, SIGNAL(toggled(bool)), ui.infoWidget, SLOT(setVisible(bool)));
-	connect(ui.infoWidget, SIGNAL(visibilityChanged(bool)), ui.actionChannel_info, SLOT(setChecked(bool)));
+	connect(update, SIGNAL(updatesDone(QStringList)), trayIcon, SLOT(message(QStringList)));
 
 	connect(rightMenu, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
 	connect(rightMenu, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
+
+	connect(controller, SIGNAL(vlcAction(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
+	connect(controller, SIGNAL(stateChanged(int)), this, SLOT(playingState(int)));
 }
 
 void MainWindow::createMenus()
@@ -322,7 +283,7 @@ void MainWindow::createSession()
 {
 	if(sessionEnabled) {
 		settings->beginGroup("Session");
-        //ui.volumeSlider->setVolume(settings->value("volume",50).toString().toInt());
+        ui.volumeSlider->setVolume(settings->value("volume",50).toString().toInt());
 		if(hasPlaylist)
 			key(settings->value("channel",1).toInt());
 		settings->endGroup();
@@ -357,18 +318,29 @@ void MainWindow::playingState(int status)
 {
 	if(status == 1) {
 		ui.actionPlay->setEnabled(true);
+		ui.buttonPlay->setEnabled(true);
 		ui.actionPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
+		ui.buttonPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
 		ui.actionPlay->setText(tr("Pause"));
 		ui.actionPlay->setToolTip(tr("Pause"));
+		ui.buttonPlay->setToolTip(tr("Pause"));
+		ui.buttonPlay->setStatusTip(tr("Pause"));
 	} else if(status == 0) {
 		ui.actionPlay->setEnabled(true);
+		ui.buttonPlay->setEnabled(true);
 		ui.actionPlay->setIcon(QIcon(":/icons/images/player_play.png"));
+		ui.buttonPlay->setIcon(QIcon(":/icons/images/player_play.png"));
 		ui.actionPlay->setText(tr("Play"));
 		ui.actionPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setStatusTip(tr("Play"));
 	} else if(status == -1) {
 		ui.actionPlay->setEnabled(false);
+		ui.buttonPlay->setEnabled(false);
 		ui.actionPlay->setText(tr("Play"));
 		ui.actionPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setToolTip(tr("Play"));
+		ui.buttonPlay->setStatusTip(tr("Play"));
 	}
 }
 
@@ -377,16 +349,16 @@ void MainWindow::play(QString itemFile, QString itemType)
 	this->stop();
 
 	if(itemFile.isNull()) {
-		ui.osd->setInfo(channel->name(), channel->language());
+		ui.infoBarWidget->setInfo(channel->name(), channel->language());
 
 		if(osdEnabled) {
-			osd->lcd()->display(channel->num());
+			osd->setNumber(channel->num());
 			osd->setInfo(channel->name(), channel->language());
 		}
 
 		epg->getEpg(channel->epg());
 
-		ui.osd->lcd()->display(channel->num());
+		ui.channelNumber->display(channel->num());
 
 		backend->openMedia(channel->url());
 		tooltip(channel->name());
@@ -406,7 +378,7 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 {
 	switch (id) {
 		case 0:
-			ui.osd->setEpg(true, epgValue.at(0), epgValue.at(1));
+			ui.infoBarWidget->setEpg(epgValue.at(0), epgValue.at(1));
 
 			if(osdEnabled)
 				osd->setEpg(true, epgValue.at(0), epgValue.at(1));
@@ -441,8 +413,7 @@ void MainWindow::stop()
 	ui.epgToday_4->epgClear();
 	ui.actionRatioOriginal->trigger();
 	ui.actionCropOriginal->trigger();
-	ui.osd->setInfo();
-	ui.osd->setEpg(false);
+	ui.infoBarWidget->clear();
 	if(osdEnabled) {
 		osd->setInfo();
 		osd->setEpg(false);
@@ -476,7 +447,7 @@ void MainWindow::openPlaylist(bool start)
     if(select != 0)
     	delete select;
 
-    select = new ChannelSelect(this, ui.osd->lcd(), ui.playlistWidget->nums());
+    select = new ChannelSelect(this, ui.channelNumber, ui.playlistWidget->nums());
 
     ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
 }
@@ -604,24 +575,11 @@ void MainWindow::createOsd()
 	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
 
 	connect(controller, SIGNAL(stateChanged(int)), osd, SLOT(playingState(int)));
-
-	connect(ui.osd, SIGNAL(play()), ui.actionPlay, SLOT(trigger()));
-	connect(ui.osd, SIGNAL(stop()), ui.actionStop, SLOT(trigger()));
-	connect(ui.osd, SIGNAL(back()), ui.actionBack, SLOT(trigger()));
-	connect(ui.osd, SIGNAL(next()), ui.actionNext, SLOT(trigger()));
-	connect(ui.osd, SIGNAL(mute()), ui.actionMute, SLOT(trigger()));
-
-	connect(ui.actionMute, SIGNAL(triggered(bool)), ui.osd, SLOT(setMuted(bool)));
-
-	connect(ui.osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
-	connect(ui.osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
-
-	connect(controller, SIGNAL(stateChanged(int)), ui.osd, SLOT(playingState(int)));
 }
 
 void MainWindow::recordNow()
 {
-	ui.recorder->recordNow(ui.osd->lcd()->value(), channel->url(), channel->name());
+	ui.recorder->recordNow(ui.channelNumber->value(), channel->url(), channel->name());
 }
 
 void MainWindow::recorder(bool enabled)

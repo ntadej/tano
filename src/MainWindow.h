@@ -114,7 +114,6 @@ private:
 	bool sessionEnabled;
 	bool hasPlaylist;
 
-	void createVlcInstance();
     void createConnections();
     void createMenus();
     void createShortcuts();

@@ -50,17 +50,252 @@
      </widget>
     </item>
     <item>
-     <widget class="Osd" name="osd" native="true">
+     <widget class="QWidget" name="controlsWidget" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="layoutButtons">
+         <item>
+          <widget class="QLCDNumber" name="channelNumber">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="numDigits">
+            <number>3</number>
+           </property>
+           <property name="segmentStyle">
+            <enum>QLCDNumber::Flat</enum>
+           </property>
+           <property name="value" stdset="0">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonPlay">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Play</string>
+           </property>
+           <property name="statusTip">
+            <string>Play</string>
+           </property>
+           <property name="icon">
+            <iconset resource="images.qrc">
+             <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonStop">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Stop</string>
+           </property>
+           <property name="statusTip">
+            <string>Stop</string>
+           </property>
+           <property name="icon">
+            <iconset resource="images.qrc">
+             <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonBack">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Back</string>
+           </property>
+           <property name="statusTip">
+            <string>Back</string>
+           </property>
+           <property name="icon">
+            <iconset resource="images.qrc">
+             <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonNext">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Next</string>
+           </property>
+           <property name="statusTip">
+            <string>Next</string>
+           </property>
+           <property name="icon">
+            <iconset resource="images.qrc">
+             <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonRecord">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Record Now</string>
+           </property>
+           <property name="statusTip">
+            <string>Record Now</string>
+           </property>
+           <property name="icon">
+            <iconset resource="images.qrc">
+             <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>22</width>
+             <height>22</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonMute">
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Mute</string>
+           </property>
+           <property name="statusTip">
+            <string>Mute</string>
+           </property>
+           <property name="icon">
+            <iconset resource="images.qrc">
+             <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>32</width>
+             <height>32</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="VlcVolumeSlider" name="volumeSlider" native="true"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="VlcSeekWidget" name="seekWidget" native="true"/>
+       </item>
+       <item>
+        <widget class="InfoBar" name="infoBarWidget" native="true"/>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
-   <zorder>osd</zorder>
+   <zorder>controlsWidget</zorder>
    <zorder>stackedWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -854,10 +1089,62 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>VlcVolumeSlider</class>
+   <extends>QWidget</extends>
+   <header location="global">QVlc/VlcVolumeSlider.h</header>
+   <container>1</container>
+   <slots>
+    <slot>mute()</slot>
+    <slot>vup()</slot>
+    <slot>vdown()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>VlcSeekWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QVlc/VlcSeekWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>InfoBar</class>
+   <extends>QWidget</extends>
+   <header>ui/InfoBar.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>VlcVideoWidget</class>
    <extends>QWidget</extends>
    <header location="global">QVlc/VlcVideoWidget.h</header>
    <container>1</container>
+   <slots>
+    <signal>full()</signal>
+    <slot>controlFull()</slot>
+    <slot>setRatioOriginal()</slot>
+    <slot>setRatio1_1()</slot>
+    <slot>setRatio4_3()</slot>
+    <slot>setRatio16_9()</slot>
+    <slot>setRatio16_10()</slot>
+    <slot>setRatio2_21_1()</slot>
+    <slot>setRatio5_4()</slot>
+    <slot>setCrop1_1()</slot>
+    <slot>setCrop4_3()</slot>
+    <slot>setCrop16_9()</slot>
+    <slot>setCrop16_10()</slot>
+    <slot>setCrop1_85_1()</slot>
+    <slot>setCrop2_21_1()</slot>
+    <slot>setCrop2_35_1()</slot>
+    <slot>setCrop2_39_1()</slot>
+    <slot>setCrop5_4()</slot>
+    <slot>setCrop5_3()</slot>
+    <slot>setFilterBob()</slot>
+    <slot>setFilterBlend()</slot>
+    <slot>setFilterMean()</slot>
+    <slot>setFilterLinear()</slot>
+    <slot>setFilterX()</slot>
+    <slot>setFilterDiscard()</slot>
+    <slot>setFilterDisabled()</slot>
+    <slot>setCropOriginal()</slot>
+   </slots>
   </customwidget>
   <customwidget>
    <class>Recorder</class>
@@ -877,15 +1164,650 @@
    <header>ui/PlaylistWidget.h</header>
    <container>1</container>
   </customwidget>
-  <customwidget>
-   <class>Osd</class>
-   <extends>QWidget</extends>
-   <header>ui/Osd.h</header>
-   <container>1</container>
-  </customwidget>
  </customwidgets>
  <resources>
   <include location="images.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>buttonMute</sender>
+   <signal>clicked()</signal>
+   <receiver>actionMute</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>388</x>
+     <y>545</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonRecord</sender>
+   <signal>clicked()</signal>
+   <receiver>actionRecord</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>545</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonNext</sender>
+   <signal>clicked()</signal>
+   <receiver>actionNext</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>545</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBack</sender>
+   <signal>clicked()</signal>
+   <receiver>actionBack</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>238</x>
+     <y>545</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonStop</sender>
+   <signal>clicked()</signal>
+   <receiver>actionStop</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>545</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonPlay</sender>
+   <signal>clicked()</signal>
+   <receiver>actionPlay</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>545</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMute</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>buttonMute</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>366</x>
+     <y>541</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMute</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>volumeSlider</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>508</x>
+     <y>541</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFullscreen</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>controlFull()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop16_10</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop16_10()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop16_9</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop16_9()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop1_1</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop1_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop1_85_1</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop1_85_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop2_21_1</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop2_21_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop2_35_1</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop2_35_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop2_39_1</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop2_39_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop4_3</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop4_3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop5_3</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop5_3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCrop5_4</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop5_4()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRatio16_10</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setRatio16_10()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRatio16_9</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setRatio16_9()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRatio1_1</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setRatio1_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRatio2_21_1</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setRatio2_21_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRatio4_3</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCrop4_3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRatio5_4</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setRatio5_4()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFilterBlend</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setFilterBlend()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFilterBob</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setFilterBob()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFilterDiscard</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setFilterDiscard()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFilterDisabled</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setFilterDisabled()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFilterLinear</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setFilterLinear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFilterMean</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setFilterMean()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFilterX</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setFilterX()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCropOriginal</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setCropOriginal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>499</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRatioOriginal</sender>
+   <signal>triggered()</signal>
+   <receiver>videoWidget</receiver>
+   <slot>setRatioOriginal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMute</sender>
+   <signal>triggered()</signal>
+   <receiver>volumeSlider</receiver>
+   <slot>mute()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>508</x>
+     <y>525</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionVolumeUp</sender>
+   <signal>triggered()</signal>
+   <receiver>volumeSlider</receiver>
+   <slot>vup()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>508</x>
+     <y>525</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionVolumeDown</sender>
+   <signal>triggered()</signal>
+   <receiver>volumeSlider</receiver>
+   <slot>vdown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>508</x>
+     <y>525</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>videoWidget</sender>
+   <signal>full()</signal>
+   <receiver>actionFullscreen</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>318</x>
+     <y>283</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionChannel_info</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>infoWidget</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>821</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>infoWidget</sender>
+   <signal>visibilityChanged(bool)</signal>
+   <receiver>actionChannel_info</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>326</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
