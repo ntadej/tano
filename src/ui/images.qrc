@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icons" >
+    <file>images/keyboard.png</file>
+    <file>images/playback.png</file>
     <file>images/view_text.png</file>
     <file>images/fileimport.png</file>
     <file>images/player_pause.png</file>

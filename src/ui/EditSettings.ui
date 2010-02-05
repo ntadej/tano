@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>708</width>
-    <height>588</height>
+    <width>700</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -25,44 +25,215 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTabWidget" name="settingsTabs">
-     <property name="tabPosition">
-      <enum>QTabWidget::West</enum>
-     </property>
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
-     <widget class="QWidget" name="tabMain">
-      <attribute name="title">
-       <string>Main</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+    <layout class="QHBoxLayout" name="mainLayout">
+     <item>
+      <widget class="QListWidget" name="setttingsListWidget">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>64</width>
+         <height>64</height>
+        </size>
+       </property>
+       <property name="textElideMode">
+        <enum>Qt::ElideNone</enum>
+       </property>
+       <property name="movement">
+        <enum>QListView::Static</enum>
+       </property>
+       <property name="layoutMode">
+        <enum>QListView::SinglePass</enum>
+       </property>
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="viewMode">
+        <enum>QListView::IconMode</enum>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+       <property name="selectionRectVisible">
+        <bool>true</bool>
+       </property>
        <item>
-        <widget class="QGroupBox" name="tanoBox">
-         <property name="title">
-          <string>Tano</string>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_10">
+        <property name="text">
+         <string>Main</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/icons/images/settings.png</normaloff>:/icons/images/settings.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Channels</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Interface</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/icons/images/win.png</normaloff>:/icons/images/win.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Playback</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/icons/images/playback.png</normaloff>:/icons/images/playback.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Recorder</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/icons/images/recorder.png</normaloff>:/icons/images/recorder.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Shortcuts</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/icons/images/keyboard.png</normaloff>:/icons/images/keyboard.png</iconset>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="settingsWidget">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="pageMain">
+        <layout class="QVBoxLayout" name="verticalLayout_18">
+         <item>
+          <widget class="QGroupBox" name="tanoBox">
+           <property name="title">
+            <string>Tano</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QLabel" name="labelVersion">
-              <property name="text">
-               <string/>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <widget class="QLabel" name="labelVersion">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="checkWizard">
+                <property name="text">
+                 <string>Run First run wizard</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="checkUpdates">
+                <property name="text">
+                 <string>Check for updates on application start</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelWizard">
+                <property name="text">
+                 <string>&lt;i&gt;Wizard will be run after restart.&lt;/i&gt;</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Maximum</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelLogo">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="images.qrc">:/icons/images/tano.png</pixmap>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="langBox">
+           <property name="title">
+            <string>Language</string>
+           </property>
+           <layout class="QVBoxLayout">
             <item>
-             <widget class="QCheckBox" name="checkWizard">
+             <widget class="QRadioButton" name="radioDefaultLanguage">
               <property name="text">
-               <string>Run First run wizard</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="checkUpdates">
-              <property name="text">
-               <string>Check for updates on application start</string>
+               <string>System default language</string>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -70,163 +241,55 @@
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="labelWizard">
+             <widget class="QRadioButton" name="radioCustomLanguage">
               <property name="text">
-               <string>&lt;i&gt;Wizard will be run after restart.&lt;/i&gt;</string>
+               <string>Custom language</string>
               </property>
              </widget>
             </item>
             <item>
-             <spacer name="verticalSpacer_6">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
+             <widget class="QComboBox" name="languageComboBox">
+              <property name="enabled">
+               <bool>false</bool>
               </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Maximum</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
+              <property name="minimumSize">
                <size>
-                <width>20</width>
-                <height>40</height>
+                <width>0</width>
+                <height>25</height>
                </size>
               </property>
-             </spacer>
+              <item>
+               <property name="text">
+                <string>English</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Slovensko</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelLanguage">
+              <property name="text">
+               <string>&lt;i&gt;You need to restart Tano when changing language!&lt;/i&gt;</string>
+              </property>
+             </widget>
             </item>
            </layout>
-          </item>
-          <item>
-           <widget class="QLabel" name="labelLogo">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="images.qrc">:/icons/images/tano.png</pixmap>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="langBox">
-         <property name="title">
-          <string>Language</string>
-         </property>
-         <layout class="QVBoxLayout">
-          <item>
-           <widget class="QRadioButton" name="radioDefaultLanguage">
-            <property name="text">
-             <string>System default language</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioCustomLanguage">
-            <property name="text">
-             <string>Custom language</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="languageComboBox">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>25</height>
-             </size>
-            </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="sessionBox">
+           <property name="title">
+            <string>Session store</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
             <item>
-             <property name="text">
-              <string>English</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Slovensko</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="labelLanguage">
-            <property name="text">
-             <string>&lt;i&gt;You need to restart Tano when changing language!&lt;/i&gt;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="sessionBox">
-         <property name="title">
-          <string>Session store</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
-          <item>
-           <widget class="QCheckBox" name="checkSession">
-            <property name="text">
-             <string>Enable</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="labelSession">
-            <property name="text">
-             <string>&lt;i&gt;You need to restart Tano when changing session settings!&lt;/i&gt;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tabPlaylist">
-      <attribute name="title">
-       <string>Channels</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_14">
-       <item>
-        <widget class="QGroupBox" name="defaultPlaylistBox">
-         <property name="title">
-          <string>Default Channel list</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <layout class="QHBoxLayout" name="typeLayout">
-            <item>
-             <widget class="QRadioButton" name="radioPresetPlaylist">
+             <widget class="QCheckBox" name="checkSession">
               <property name="text">
-               <string>Preset</string>
+               <string>Enable</string>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -234,758 +297,853 @@
              </widget>
             </item>
             <item>
-             <widget class="QRadioButton" name="radioCustomPlaylist">
+             <widget class="QLabel" name="labelSession">
               <property name="text">
-               <string>Custom</string>
+               <string>&lt;i&gt;You need to restart Tano when changing session settings!&lt;/i&gt;</string>
               </property>
              </widget>
             </item>
            </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="browseLayout">
-            <item>
-             <widget class="QLabel" name="labelBrowse">
-              <property name="text">
-               <string>Browse:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="editPlaylist">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="readOnly">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="buttonBrowse">
-              <property name="text">
-               <string>...</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="buttonReset">
-              <property name="text">
-               <string>Reset</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="presetsBox">
-         <property name="title">
-          <string>Presets</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_13">
-          <item>
-           <widget class="QLabel" name="labelSiol">
-            <property name="text">
-             <string>SiOL</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioSiol2">
-            <property name="text">
-             <string>MPEG-2</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioSiol4">
-            <property name="text">
-             <string>MPEG-4</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="labelT2">
-            <property name="text">
-             <string>T-2</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioT2">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>Categorised</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioT2full">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="text">
-             <string>Full</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>166</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tabGui">
-      <attribute name="title">
-       <string>Interface</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_8">
-       <item>
-        <widget class="QGroupBox" name="guiMainBox">
-         <property name="title">
-          <string>Default interface settings</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_9">
-          <item>
-           <widget class="QCheckBox" name="checkLite">
-            <property name="text">
-             <string>Simple mode</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkTop">
-            <property name="text">
-             <string>Always on top</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkOsd">
-            <property name="text">
-             <string>Enable On Screen Display - OSD in Fullscreen mode</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkInfo">
-            <property name="text">
-             <string>Start with Channel info enabled</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="wheelBox">
-         <property name="title">
-          <string>Mouse wheel</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_11">
-          <item>
-           <widget class="QRadioButton" name="radioWheelChannel">
-            <property name="text">
-             <string>Change channel</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioWheelVolume">
-            <property name="text">
-             <string>Change volume</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="exitBox">
-         <property name="title">
-          <string>Minimise to tray</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_12">
-          <item>
-           <widget class="QRadioButton" name="radioTray">
-            <property name="text">
-             <string>Enable</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radioExit">
-            <property name="text">
-             <string>Disable</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="labelGui">
-         <property name="text">
-          <string>&lt;i&gt;You need to restart Tano when changing interface settings!&lt;/i&gt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tabVlc">
-      <attribute name="title">
-       <string>Playback</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_16">
-       <item>
-        <widget class="QGroupBox" name="vlcBox">
-         <property name="title">
-          <string>VLC Backend</string>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_17">
-            <item>
-             <widget class="QLabel" name="labelVlc">
-              <property name="text">
-               <string>Curently using Videolan VLC Backend</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="labelVlcVersion">
-              <property name="text">
-               <string>Version:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="checkVlc">
-              <property name="text">
-               <string>Use global VLC settings</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="QLabel" name="labelVlcIcon">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="images.qrc">:/icons/images/vlc.png</pixmap>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="networkBox">
-         <property name="title">
-          <string>Network Card</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_15">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <widget class="QRadioButton" name="radioNetworkDefault">
-              <property name="text">
-               <string>Use default settings</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QRadioButton" name="radioNetworkCustom">
-              <property name="text">
-               <string>Use custom network card IP</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="editNetwork"/>
-          </item>
-          <item>
-           <widget class="QLabel" name="labelNetwork">
-            <property name="text">
-             <string>&lt;i&gt;You need to restart Tano when changing network settings!&lt;/i&gt;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>320</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tabRecorder">
-      <attribute name="title">
-       <string>Recorder</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
-       <item>
-        <widget class="QCheckBox" name="checkRecorder">
-         <property name="text">
-          <string>Enable Recorder</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="labelRecorder">
-         <property name="text">
-          <string>&lt;i&gt;You need to restart Tano when enabling/disabling Recorder!&lt;/i&gt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="defaultDirBox">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="title">
-          <string>Default recording directory</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_6">
-          <item>
-           <layout class="QHBoxLayout" name="browseLayoutDir">
-            <item>
-             <widget class="QLabel" name="labelBrowseRecorder">
-              <property name="text">
-               <string>Browse:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="editRecorder">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="readOnly">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="buttonBrowseRecorder">
-              <property name="text">
-               <string>...</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="buttonResetRecorder">
-              <property name="text">
-               <string>Reset</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tabShortcuts">
-      <attribute name="title">
-       <string>Shortcuts</string>
-      </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QTableWidget" name="shortcutsWidget">
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="editTriggers">
-          <set>QAbstractItemView::NoEditTriggers</set>
-         </property>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <row>
-          <property name="text">
-           <string>0</string>
-          </property>
-         </row>
-         <column>
-          <property name="text">
-           <string>Action</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Key</string>
-          </property>
-         </column>
-         <item row="0" column="0">
-          <property name="text">
-           <string>Play</string>
-          </property>
-         </item>
-         <item row="0" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="1" column="0">
-          <property name="text">
-           <string>Stop</string>
-          </property>
-         </item>
-         <item row="1" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="2" column="0">
-          <property name="text">
-           <string>Next channel</string>
-          </property>
-         </item>
-         <item row="2" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="3" column="0">
-          <property name="text">
-           <string>Previous channel</string>
-          </property>
-         </item>
-         <item row="3" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="4" column="0">
-          <property name="text">
-           <string>Fullscreen</string>
-          </property>
-         </item>
-         <item row="4" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="5" column="0">
-          <property name="text">
-           <string>Mute</string>
-          </property>
-         </item>
-         <item row="5" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="6" column="0">
-          <property name="text">
-           <string>Volume up</string>
-          </property>
-         </item>
-         <item row="6" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="7" column="0">
-          <property name="text">
-           <string>Volume down</string>
-          </property>
-         </item>
-         <item row="7" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="8" column="0">
-          <property name="text">
-           <string>Record</string>
-          </property>
-         </item>
-         <item row="8" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="9" column="0">
-          <property name="text">
-           <string>Open File</string>
-          </property>
-         </item>
-         <item row="9" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="10" column="0">
-          <property name="text">
-           <string>Open URL</string>
-          </property>
-         </item>
-         <item row="10" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="11" column="0">
-          <property name="text">
-           <string>Open Channel list</string>
-          </property>
-         </item>
-         <item row="11" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="12" column="0">
-          <property name="text">
-           <string>Edit Channel list</string>
-          </property>
-         </item>
-         <item row="12" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="13" column="0">
-          <property name="text">
-           <string>Settings</string>
-          </property>
-         </item>
-         <item row="13" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="14" column="0">
-          <property name="text">
-           <string>Always on top</string>
-          </property>
-         </item>
-         <item row="14" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="15" column="0">
-          <property name="text">
-           <string>Simple Mode</string>
-          </property>
-         </item>
-         <item row="15" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-         <item row="16" column="0">
-          <property name="text">
-           <string>About</string>
-          </property>
-         </item>
-         <item row="16" column="1">
-          <property name="text">
-           <string/>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="restoreLayout">
-         <item>
-          <widget class="QtKeySequenceEdit" name="keyEditor" native="true"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttonSet">
-           <property name="text">
-            <string>Set</string>
-           </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="buttonClear">
-           <property name="text">
-            <string>Clear Shortcut</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer">
+          <spacer name="verticalSpacer">
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Vertical</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>40</width>
-             <height>20</height>
+             <width>20</width>
+             <height>156</height>
             </size>
            </property>
           </spacer>
          </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="pageChannels">
+        <layout class="QVBoxLayout" name="verticalLayout_19">
          <item>
-          <widget class="QPushButton" name="buttonDefaults">
+          <widget class="QGroupBox" name="defaultPlaylistBox">
+           <property name="title">
+            <string>Default Channel list</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <layout class="QHBoxLayout" name="typeLayout">
+              <item>
+               <widget class="QRadioButton" name="radioPresetPlaylist">
+                <property name="text">
+                 <string>Preset</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="radioCustomPlaylist">
+                <property name="text">
+                 <string>Custom</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="browseLayout">
+              <item>
+               <widget class="QLabel" name="labelBrowse">
+                <property name="text">
+                 <string>Browse:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="editPlaylist">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="buttonBrowse">
+                <property name="text">
+                 <string>...</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="buttonReset">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="presetsBox">
+           <property name="title">
+            <string>Presets</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_13">
+            <item>
+             <widget class="QLabel" name="labelSiol">
+              <property name="text">
+               <string>SiOL</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioSiol2">
+              <property name="text">
+               <string>MPEG-2</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioSiol4">
+              <property name="text">
+               <string>MPEG-4</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelT2">
+              <property name="text">
+               <string>T-2</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioT2">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Categorised</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioT2full">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Full</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>273</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="pageInterface">
+        <layout class="QVBoxLayout" name="verticalLayout_20">
+         <item>
+          <widget class="QGroupBox" name="guiMainBox">
+           <property name="title">
+            <string>Default interface settings</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QCheckBox" name="checkLite">
+              <property name="text">
+               <string>Simple mode</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkTop">
+              <property name="text">
+               <string>Always on top</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkOsd">
+              <property name="text">
+               <string>Enable On Screen Display - OSD in Fullscreen mode</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkInfo">
+              <property name="text">
+               <string>Start with Channel info enabled</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="wheelBox">
+           <property name="title">
+            <string>Mouse wheel</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <widget class="QRadioButton" name="radioWheelChannel">
+              <property name="text">
+               <string>Change channel</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioWheelVolume">
+              <property name="text">
+               <string>Change volume</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="exitBox">
+           <property name="title">
+            <string>Minimise to tray</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_12">
+            <item>
+             <widget class="QRadioButton" name="radioTray">
+              <property name="text">
+               <string>Enable</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="radioExit">
+              <property name="text">
+               <string>Disable</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelGui">
            <property name="text">
-            <string>Restore defaults</string>
+            <string>&lt;i&gt;You need to restart Tano when changing interface settings!&lt;/i&gt;</string>
            </property>
           </widget>
          </item>
+         <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>209</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
         </layout>
-       </item>
-      </layout>
-     </widget>
-    </widget>
+       </widget>
+       <widget class="QWidget" name="pagePlayback">
+        <layout class="QVBoxLayout" name="verticalLayout_21">
+         <item>
+          <widget class="QGroupBox" name="vlcBox">
+           <property name="title">
+            <string>VLC Backend</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_17">
+              <item>
+               <widget class="QLabel" name="labelVlc">
+                <property name="text">
+                 <string>Curently using Videolan VLC Backend</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelVlcVersion">
+                <property name="text">
+                 <string>Version:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="checkVlc">
+                <property name="text">
+                 <string>Use global VLC settings</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelVlcIcon">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="images.qrc">:/icons/images/vlc.png</pixmap>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="playbackBox">
+           <property name="title">
+            <string>Playback</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+             <widget class="QCheckBox" name="checkVideoSettings">
+              <property name="text">
+               <string>Remember Video settings between media</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="labelLSub">
+              <property name="text">
+               <string>Default subtitle language:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="comboSub">
+              <property name="editable">
+               <bool>true</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Disabled</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">English</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">Slovenščina / Slovenian </string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">Deutsch / German</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string notr="true">Hrvatski / Croatian</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Other</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="networkBox">
+           <property name="title">
+            <string>Network Card</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_15">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QRadioButton" name="radioNetworkDefault">
+                <property name="text">
+                 <string>Use default settings</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="radioNetworkCustom">
+                <property name="text">
+                 <string>Use custom network card IP</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="editNetwork"/>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelNetwork">
+              <property name="text">
+               <string>&lt;i&gt;You need to restart Tano when changing network settings!&lt;/i&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>320</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="pageRecorder">
+        <layout class="QVBoxLayout" name="verticalLayout_22">
+         <item>
+          <widget class="QCheckBox" name="checkRecorder">
+           <property name="text">
+            <string>Enable Recorder</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelRecorder">
+           <property name="text">
+            <string>&lt;i&gt;You need to restart Tano when enabling/disabling Recorder!&lt;/i&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="defaultDirBox">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="title">
+            <string>Default recording directory</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <layout class="QHBoxLayout" name="browseLayoutDir">
+              <item>
+               <widget class="QLabel" name="labelBrowseRecorder">
+                <property name="text">
+                 <string>Browse:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="editRecorder">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QToolButton" name="buttonBrowseRecorder">
+                <property name="text">
+                 <string>...</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="buttonResetRecorder">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="pageShortcuts">
+        <layout class="QVBoxLayout" name="verticalLayout_23">
+         <item>
+          <widget class="QTableWidget" name="shortcutsWidget">
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>Action</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Key</string>
+            </property>
+           </column>
+           <item row="0" column="0">
+            <property name="text">
+             <string>Play</string>
+            </property>
+           </item>
+           <item row="0" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="1" column="0">
+            <property name="text">
+             <string>Stop</string>
+            </property>
+           </item>
+           <item row="1" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="2" column="0">
+            <property name="text">
+             <string>Next channel</string>
+            </property>
+           </item>
+           <item row="2" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="3" column="0">
+            <property name="text">
+             <string>Previous channel</string>
+            </property>
+           </item>
+           <item row="3" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="4" column="0">
+            <property name="text">
+             <string>Fullscreen</string>
+            </property>
+           </item>
+           <item row="4" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="5" column="0">
+            <property name="text">
+             <string>Mute</string>
+            </property>
+           </item>
+           <item row="5" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="6" column="0">
+            <property name="text">
+             <string>Volume up</string>
+            </property>
+           </item>
+           <item row="6" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="7" column="0">
+            <property name="text">
+             <string>Volume down</string>
+            </property>
+           </item>
+           <item row="7" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="8" column="0">
+            <property name="text">
+             <string>Record</string>
+            </property>
+           </item>
+           <item row="8" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="9" column="0">
+            <property name="text">
+             <string>Open File</string>
+            </property>
+           </item>
+           <item row="9" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="10" column="0">
+            <property name="text">
+             <string>Open URL</string>
+            </property>
+           </item>
+           <item row="10" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="11" column="0">
+            <property name="text">
+             <string>Open Channel list</string>
+            </property>
+           </item>
+           <item row="11" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="12" column="0">
+            <property name="text">
+             <string>Edit Channel list</string>
+            </property>
+           </item>
+           <item row="12" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="13" column="0">
+            <property name="text">
+             <string>Settings</string>
+            </property>
+           </item>
+           <item row="13" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="14" column="0">
+            <property name="text">
+             <string>Always on top</string>
+            </property>
+           </item>
+           <item row="14" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="15" column="0">
+            <property name="text">
+             <string>Simple Mode</string>
+            </property>
+           </item>
+           <item row="15" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item row="16" column="0">
+            <property name="text">
+             <string>About</string>
+            </property>
+           </item>
+           <item row="16" column="1">
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="restoreLayout">
+           <item>
+            <widget class="QtKeySequenceEdit" name="keyEditor" native="true"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonSet">
+             <property name="text">
+              <string>Set</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonClear">
+             <property name="text">
+              <string>Clear Shortcut</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonDefaults">
+             <property name="text">
+              <string>Restore defaults</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -1021,6 +1179,22 @@
     <hint type="destinationlabel">
      <x>361</x>
      <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>setttingsListWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>settingsWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>328</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>402</x>
+     <y>328</y>
     </hint>
    </hints>
   </connection>

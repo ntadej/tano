@@ -7,8 +7,10 @@
 #include <QSplashScreen>
 #include <QDebug>
 #include <QBitmap>
+
 #include "MainWindow.h"
 #include "Common.h"
+#include "ui/EditSettings.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -132,6 +134,10 @@ void MainWindow::createSettings()
 	} else {
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
 	}
+	settings->endGroup();
+
+	settings->beginGroup("VLC");
+	videoSettings = settings->value("remember-video-config",false).toBool();
 	settings->endGroup();
 
 	settings->beginGroup("Recorder");
@@ -411,8 +417,12 @@ void MainWindow::stop()
 	ui.epgToday_2->epgClear();
 	ui.epgToday_3->epgClear();
 	ui.epgToday_4->epgClear();
-	ui.actionRatioOriginal->trigger();
-	ui.actionCropOriginal->trigger();
+
+	if(!videoSettings) {
+		ui.actionRatioOriginal->trigger();
+		ui.actionCropOriginal->trigger();
+	}
+
 	ui.infoBarWidget->clear();
 	if(osdEnabled) {
 		osd->setInfo();

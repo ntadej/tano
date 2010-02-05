@@ -21,7 +21,6 @@
 #include "epg/Epg.h"
 #include "epg/EpgShow.h"
 #include "recorder/TimersManager.h"
-#include "ui/EditSettings.h"
 #include "ui/Osd.h"
 #include "ui/TrayIcon.h"
 
@@ -113,6 +112,7 @@ private:
 	bool osdEnabled;
 	bool sessionEnabled;
 	bool hasPlaylist;
+	bool videoSettings;
 
     void createConnections();
     void createMenus();

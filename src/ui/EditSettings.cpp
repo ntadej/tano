@@ -113,11 +113,17 @@ void EditSettings::ok()
 	} else {
 		settings->remove("network");
 	}
-	if(ui.vlcBox->isChecked()) {
+	if(ui.checkVlc->isChecked()) {
 		settings->setValue("ignore-config", false);
 	} else {
 		settings->remove("ignore-config");
 	}
+	if(ui.checkVideoSettings->isChecked()) {
+		settings->setValue("remember-video-config", true);
+	} else {
+		settings->remove("remember-video-config");
+	}
+	settings->setValue("default-sub-lang", ui.comboSub->currentText());
 	settings->endGroup();
 
 	settings->beginGroup("GUI");
@@ -223,6 +229,16 @@ void EditSettings::read()
 		ui.radioNetworkDefault->setChecked(true);
 	}
 	ui.checkVlc->setChecked(!settings->value("ignore-config",true).toBool());
+	ui.checkVideoSettings->setChecked(settings->value("remember-video-config", false).toBool());
+	for(int i=0;i<ui.comboSub->count();i++) {
+		if(ui.comboSub->itemText(i)==settings->value("default-sub-lang", tr("Disabled")).toString()) {
+			ui.comboSub->setCurrentIndex(i);
+			break;
+		} else if(i == ui.comboSub->count()-1) {
+			ui.comboSub->setItemText(i, settings->value("default-sub-lang", tr("Disabled")).toString());
+			ui.comboSub->setCurrentIndex(i);
+		}
+	}
 	settings->endGroup();
 
 	settings->beginGroup("GUI");
