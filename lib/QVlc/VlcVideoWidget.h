@@ -77,6 +77,10 @@ private:
 	int _osdHeight;
 	int _osdPosLeft;
 	int _osdPosTop;
+
+	QString _currentRatio;
+	QString _currentCrop;
+	QString _currentFilter;
 };
 
 #endif // QVLC_VLCVIDEOWIDGET_H_

@@ -51,8 +51,9 @@ void VlcSeekWidget::updateTime()
 	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer);
 #else
 	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer, _vlcException);
-#endif
 	libvlc_exception_clear(_vlcException);
+#endif
+
 	if (curMedia == 0)
 		return;
 
@@ -64,8 +65,15 @@ void VlcSeekWidget::updateTime()
 #endif
 
 	if(state != 0 && state != 6 && state != 7) {
-		libvlc_time_t fullTime = libvlc_media_player_get_length(_vlcCurrentMediaPlayer, _vlcException);
-		libvlc_time_t currentTime = libvlc_media_player_get_time(_vlcCurrentMediaPlayer, _vlcException);
+		libvlc_time_t fullTime;
+		libvlc_time_t currentTime;
+#if VLC_TRUNK
+		fullTime = libvlc_media_player_get_length(_vlcCurrentMediaPlayer);
+		currentTime = libvlc_media_player_get_time(_vlcCurrentMediaPlayer);
+#else
+		fullTime = libvlc_media_player_get_length(_vlcCurrentMediaPlayer, _vlcException);
+		currentTime = libvlc_media_player_get_time(_vlcCurrentMediaPlayer, _vlcException);
+#endif
 
 		labelFull->setText(QTime(0,0,0,0).addMSecs(fullTime).toString("hh:mm:ss"));
 		seek->setMaximum(fullTime);
@@ -80,7 +88,7 @@ void VlcSeekWidget::updateTime()
 		seek->setValue(0);
 	}
 
-	VlcInstance::checkException();
+	VlcInstance::checkError();
 }
 
 void VlcSeekWidget::changeTime()
@@ -90,7 +98,12 @@ void VlcSeekWidget::changeTime()
 
 	labelElapsed->setText(QTime(0,0,0,0).addMSecs(seek->value()).toString("hh:mm:ss"));
 
+#if VLC_TRUNK
+    libvlc_media_player_set_time(_vlcCurrentMediaPlayer, seek->value());
+#else
     libvlc_exception_clear(_vlcException);
     libvlc_media_player_set_time(_vlcCurrentMediaPlayer, seek->value(), _vlcException);
-    VlcInstance::checkException();
+#endif
+
+    VlcInstance::checkError();
 }

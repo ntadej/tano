@@ -6,7 +6,12 @@
 
 #include <vlc/vlc.h>
 
+#if VLC_TRUNK
+
+#else
 extern libvlc_exception_t *_vlcException;
+#endif
+
 extern libvlc_instance_t *_vlcInstance;
 extern libvlc_media_player_t *_vlcCurrentMediaPlayer;
 
@@ -17,7 +22,7 @@ public:
 	virtual ~VlcInstance();
 
 	void openMedia(QString media);
-	static void checkException();
+	static void checkError();
 	static QString version();
 
 public slots:

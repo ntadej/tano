@@ -48,10 +48,28 @@ void VlcControl::updateActionsAudio() {
 		return;
 	}
 
+#if VLC_TRUNK
+    if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer) != 0) {
+#else
     if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
-    	libvlc_track_description_t *desc = libvlc_audio_get_track_description(_vlcCurrentMediaPlayer, _vlcException);
+#endif
+    	libvlc_track_description_t *desc;
+#if VLC_TRUNK
+    	desc = libvlc_audio_get_track_description(_vlcCurrentMediaPlayer);
+#else
+    	desc = libvlc_audio_get_track_description(_vlcCurrentMediaPlayer, _vlcException);
+#endif
     	audioMap.insert(QString().fromUtf8(desc->psz_name), 0);
     	audioList << new QAction(QString().fromUtf8(desc->psz_name), this);
+#if VLC_TRUNK
+    	if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer) > 1) {
+    		for(int i = 1; i < libvlc_audio_get_track_count(_vlcCurrentMediaPlayer); i++) {
+    			desc = desc->p_next;
+    			audioMap.insert(QString().fromUtf8(desc->psz_name), i);
+    			audioList << new QAction(QString().fromUtf8(desc->psz_name), this);
+    		}
+    	}
+#else
     	if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) > 1) {
     		for(int i = 1; i < libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException); i++) {
     			desc = desc->p_next;
@@ -59,19 +77,26 @@ void VlcControl::updateActionsAudio() {
     	    	audioList << new QAction(QString().fromUtf8(desc->psz_name), this);
     		}
     	}
+#endif
     } else {
 		emit vlcAction("audio", audioList);
     	return;
     }
-	VlcInstance::checkException();
+
+	VlcInstance::checkError();
 
     for (int i = 0; i < audioList.size(); ++i) {
     	audioList.at(i)->setCheckable(true);
     	audioGroup->addAction(audioList.at(i));
         connect(audioList.at(i), SIGNAL(triggered()), this, SLOT(updateAudio()));
     }
+
+#if VLC_TRUNK
+    audioList.at(libvlc_audio_get_track(_vlcCurrentMediaPlayer))->setChecked(true);
+#else
     audioList.at(libvlc_audio_get_track(_vlcCurrentMediaPlayer, _vlcException))->setChecked(true);
-	VlcInstance::checkException();
+#endif
+	VlcInstance::checkError();
 
     emit vlcAction("audio", audioList);
 }
@@ -101,10 +126,28 @@ void VlcControl::updateActionsVideo() {
 		return;
     }
 
+#if VLC_TRUNK
+    if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer) != 0) {
+#else
     if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
-      	libvlc_track_description_t *descs = libvlc_video_get_spu_description(_vlcCurrentMediaPlayer, _vlcException);
+#endif
+      	libvlc_track_description_t *descs;
+#if VLC_TRUNK
+      	descs = libvlc_video_get_spu_description(_vlcCurrentMediaPlayer);
+#else
+      	descs = libvlc_video_get_spu_description(_vlcCurrentMediaPlayer, _vlcException);
+#endif
     	subMap.insert(QString().fromUtf8(descs->psz_name), 0);
     	subList << new QAction(QString().fromUtf8(descs->psz_name), this);
+#if VLC_TRUNK
+       	if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer) > 1) {
+       		for(int i = 1; i < libvlc_video_get_spu_count(_vlcCurrentMediaPlayer); i++) {
+       			descs = descs->p_next;
+    	    	subMap.insert(QString().fromUtf8(descs->psz_name), i);
+    	    	subList << new QAction(QString().fromUtf8(descs->psz_name), this);
+       		}
+       	}
+#else
        	if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException) > 1) {
        		for(int i = 1; i < libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException); i++) {
        			descs = descs->p_next;
@@ -112,19 +155,25 @@ void VlcControl::updateActionsVideo() {
     	    	subList << new QAction(QString().fromUtf8(descs->psz_name), this);
        		}
        	}
+#endif
 	} else {
 		emit vlcAction("sub", subList);
 	    return;
 	}
-	VlcInstance::checkException();
+
+	VlcInstance::checkError();
 
     for (int i = 0; i < subList.size(); ++i) {
     	subList.at(i)->setCheckable(true);
     	subGroup->addAction(subList.at(i));
         connect(subList.at(i), SIGNAL(triggered()), this, SLOT(updateSub()));
 	}
+#if VLC_TRUNK
+    subList.at(libvlc_video_get_spu(_vlcCurrentMediaPlayer))->setChecked(true);
+#else
     subList.at(libvlc_video_get_spu(_vlcCurrentMediaPlayer, _vlcException))->setChecked(true);
-	VlcInstance::checkException();
+#endif
+	VlcInstance::checkError();
 
     emit vlcAction("sub", subList);
 }
@@ -132,15 +181,27 @@ void VlcControl::updateActionsVideo() {
 void VlcControl::updateAudio()
 {
 	int id = audioMap.value(audioGroup->checkedAction()->text());
+
+#if VLC_TRUNK
+	libvlc_audio_set_track(_vlcCurrentMediaPlayer, id);
+#else
 	libvlc_audio_set_track(_vlcCurrentMediaPlayer, id ,_vlcException);
-	VlcInstance::checkException();
+#endif
+
+	VlcInstance::checkError();
 }
 
 void VlcControl::updateSub()
 {
 	int id = subMap.value(subGroup->checkedAction()->text());
+
+#if VLC_TRUNK
+	libvlc_video_set_spu(_vlcCurrentMediaPlayer, id);
+#else
 	libvlc_video_set_spu(_vlcCurrentMediaPlayer, id ,_vlcException);
-	VlcInstance::checkException();
+#endif
+
+	VlcInstance::checkError();
 }
 
 void VlcControl::checkPlayingState()

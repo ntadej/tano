@@ -40,9 +40,14 @@ void VlcVolumeSlider::changeVolume(int newVolume)
 
 	label->setText(QString().number(newVolume));
 
+#if VLC_TRUNK
+    libvlc_audio_set_volume (_vlcCurrentMediaPlayer, newVolume);
+#else
     libvlc_exception_clear(_vlcException);
     libvlc_audio_set_volume (_vlcInstance, newVolume, _vlcException);
-    VlcInstance::checkException();
+#endif
+
+    VlcInstance::checkError();
 }
 
 void VlcVolumeSlider::updateVolume()
@@ -57,21 +62,22 @@ void VlcVolumeSlider::updateVolume()
 	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer);
 #else
 	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer, _vlcException);
+	libvlc_exception_clear(_vlcException);
 #endif
-    libvlc_exception_clear(_vlcException);
+
     if (curMedia == NULL)
         return;
 
     int volume;
 #if VLC_TRUNK
-    volume = libvlc_audio_get_volume(_vlcInstance);
+    volume = libvlc_audio_get_volume(_vlcCurrentMediaPlayer);
 #else
     volume = libvlc_audio_get_volume(_vlcInstance, _vlcException);
 #endif
     slider->setValue(volume);
     label->setText(QString().number(volume));
 
-	VlcInstance::checkException();
+	VlcInstance::checkError();
 }
 
 void VlcVolumeSlider::setVolume(int volume)
@@ -99,9 +105,10 @@ void VlcVolumeSlider::vdown()
 
 void VlcVolumeSlider::mute() {
 #if VLC_TRUNK
-	libvlc_audio_toggle_mute(_vlcInstance);
+	libvlc_audio_toggle_mute(_vlcCurrentMediaPlayer);
 #else
 	libvlc_audio_toggle_mute(_vlcInstance, _vlcException);
 #endif
-	VlcInstance::checkException();
+
+	VlcInstance::checkError();
 }
