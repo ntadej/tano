@@ -32,7 +32,10 @@ MainWindow::MainWindow(QWidget *parent)
 	backend = new VlcInstance(Common::libvlcArgs(), ui.videoWidget->getWinId());
 	backend->init();
 
-	controller = new VlcControl();
+	settings->beginGroup("VLC");
+	controller = new VlcControl(settings->value("default-sub-lang",tr("Disabled")).toString());
+	settings->endGroup();
+
 	flags = this->windowFlags();
 
 	update = new Updates();
@@ -357,26 +360,25 @@ void MainWindow::play(QString itemFile, QString itemType)
 	if(itemFile.isNull()) {
 		ui.infoBarWidget->setInfo(channel->name(), channel->language());
 
-		if(osdEnabled) {
-			osd->setNumber(channel->num());
-			osd->setInfo(channel->name(), channel->language());
-		}
-
 		epg->getEpg(channel->epg());
-
 		ui.channelNumber->display(channel->num());
 
 		backend->openMedia(channel->url());
 		tooltip(channel->name());
 		trayIcon->changeToolTip(channel->name());
-	} else if(itemType == "file") {
-	    ui.infoWidget->hide();
-	    backend->openMedia(fileName);
-		tooltip(fileName);
+
+		if(osdEnabled) {
+			osd->setNumber(channel->num());
+			osd->setInfo(channel->name(), channel->language());
+		}
 	} else {
 		ui.infoWidget->hide();
 		backend->openMedia(fileName);
     	tooltip(fileName);
+	}
+
+	if(videoSettings) {
+		ui.videoWidget->setPreviousSettings();
 	}
 }
 

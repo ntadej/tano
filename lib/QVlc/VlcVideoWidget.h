@@ -37,6 +37,8 @@ public slots:
 	int teletextPage();
 	void setTeletextPage(const int &page);
 
+	void setPreviousSettings();
+
 	void setRatioOriginal();
 	void setRatio1_1();
 	void setRatio4_3();
@@ -67,10 +69,12 @@ public slots:
 
 private slots:
 	void hideMouse();
+	void applyPreviousSettings();
 
 private:
 	QWidget *widget;
-	QTimer *timer;
+	QTimer *timerMouse;
+	QTimer *timerSettings;
 	bool move;
 
 	int _osdWidth;

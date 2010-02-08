@@ -1,10 +1,12 @@
 #include "VlcControl.h"
 #include "VlcInstance.h"
 
-VlcControl::VlcControl()
+VlcControl::VlcControl(const QString lang)
 {
 	audioGroup = 0;
 	subGroup = 0;
+
+	preferedLanguage = lang.split(" / ");
 
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(updateActionsAudio()));
@@ -25,7 +27,7 @@ VlcControl::~VlcControl()
 
 void VlcControl::updateActionsAudio() {
 	for(int i=0; i<audioList.size(); i++)
-		delete audioList.at(i);
+		delete audioList[i];
 	audioList.clear();
 	audioMap.clear();
 
@@ -86,15 +88,15 @@ void VlcControl::updateActionsAudio() {
 	VlcInstance::checkError();
 
     for (int i = 0; i < audioList.size(); ++i) {
-    	audioList.at(i)->setCheckable(true);
-    	audioGroup->addAction(audioList.at(i));
-        connect(audioList.at(i), SIGNAL(triggered()), this, SLOT(updateAudio()));
+    	audioList[i]->setCheckable(true);
+    	audioGroup->addAction(audioList[i]);
+        connect(audioList[i], SIGNAL(triggered()), this, SLOT(updateAudio()));
     }
 
 #if VLC_TRUNK
-    audioList.at(libvlc_audio_get_track(_vlcCurrentMediaPlayer))->setChecked(true);
+    audioList[libvlc_audio_get_track(_vlcCurrentMediaPlayer)]->setChecked(true);
 #else
-    audioList.at(libvlc_audio_get_track(_vlcCurrentMediaPlayer, _vlcException))->setChecked(true);
+    audioList[libvlc_audio_get_track(_vlcCurrentMediaPlayer, _vlcException)]->setChecked(true);
 #endif
 	VlcInstance::checkError();
 
@@ -103,7 +105,7 @@ void VlcControl::updateActionsAudio() {
 
 void VlcControl::updateActionsVideo() {
 	for(int i=0; i<subList.size(); i++)
-		delete subList.at(i);
+		delete subList[i];
 	subList.clear();
 	subMap.clear();
 
@@ -164,14 +166,20 @@ void VlcControl::updateActionsVideo() {
 	VlcInstance::checkError();
 
     for (int i = 0; i < subList.size(); ++i) {
-    	subList.at(i)->setCheckable(true);
-    	subGroup->addAction(subList.at(i));
-        connect(subList.at(i), SIGNAL(triggered()), this, SLOT(updateSub()));
+    	subList[i]->setCheckable(true);
+    	subGroup->addAction(subList[i]);
+        connect(subList[i], SIGNAL(triggered()), this, SLOT(updateSub()));
+
+        for(int j = 0; j < preferedLanguage.size(); ++j) {
+        	if(subList[i]->text().contains(preferedLanguage[j],Qt::CaseInsensitive)) {
+        		subList[i]->trigger();
+        	}
+        }
 	}
 #if VLC_TRUNK
-    subList.at(libvlc_video_get_spu(_vlcCurrentMediaPlayer))->setChecked(true);
+    subList[libvlc_video_get_spu(_vlcCurrentMediaPlayer)]->setChecked(true);
 #else
-    subList.at(libvlc_video_get_spu(_vlcCurrentMediaPlayer, _vlcException))->setChecked(true);
+    subList[libvlc_video_get_spu(_vlcCurrentMediaPlayer, _vlcException)]->setChecked(true);
 #endif
 	VlcInstance::checkError();
 

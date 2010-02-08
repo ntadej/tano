@@ -10,7 +10,7 @@
 class VlcControl : public QObject {
 Q_OBJECT
 public:
-	VlcControl();
+	VlcControl(const QString lang = "");
 	virtual ~VlcControl();
 
 private slots:
@@ -22,7 +22,7 @@ private slots:
 	void checkPlayingState();
 
 signals:
-	void vlcAction(QString, QList<QAction*>);
+	void vlcAction(const QString, QList<QAction*>);
 	void stateChanged(int);
 
 private:
@@ -36,6 +36,8 @@ private:
     QList<QAction*> subList;
 	QMap<QString,int> subMap;
 	QActionGroup *subGroup;
+
+	QStringList preferedLanguage;
 };
 
 #endif // QVLC_VLCCONTROL_H_

@@ -24,8 +24,10 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
     layout->addWidget(widget);
     setLayout(layout);
 
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(hideMouse()));
+    timerMouse = new QTimer(this);
+    connect(timerMouse, SIGNAL(timeout()), this, SLOT(hideMouse()));
+    timerSettings = new QTimer(this);
+    connect(timerSettings, SIGNAL(timeout()), this, SLOT(applyPreviousSettings()));
 
     _currentRatio = "";
     _currentCrop = "";
@@ -34,7 +36,8 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
 
 VlcVideoWidget::~VlcVideoWidget()
 {
-	delete timer;
+	delete timerMouse;
+	delete timerSettings;
 	delete widget;
 }
 
@@ -67,10 +70,10 @@ void VlcVideoWidget::mouseMoveEvent(QMouseEvent *event)
 		if((event->globalPos().y() >= _osdPosTop && event->globalPos().y() <= _osdPosTop+_osdHeight)
 			&& (event->globalPos().x() >= _osdPosLeft && event->globalPos().x() <= _osdPosLeft+_osdWidth)) {
 			emit osd(false);
-			timer->stop();
+			timerMouse->stop();
 		} else {
 			emit osd(true);
-			timer->start(1000);
+			timerMouse->start(1000);
 		}
 	}
 }
@@ -97,7 +100,7 @@ void VlcVideoWidget::hideMouse()
 {
 	if(this->isFullScreen() && move) {
 		qApp->setOverrideCursor(Qt::BlankCursor);
-		timer->stop();
+		timerMouse->stop();
 	}
 }
 
@@ -158,6 +161,48 @@ void VlcVideoWidget::setTeletextPage(const int &page)
 #else
 	libvlc_video_set_teletext(_vlcCurrentMediaPlayer, page, _vlcException);
 #endif
+
+	VlcInstance::checkError();
+}
+
+void VlcVideoWidget::setPreviousSettings()
+{
+	timerSettings->start(500);
+}
+void VlcVideoWidget::applyPreviousSettings()
+{
+	if(_currentRatio == "" && _currentCrop == "" && _currentFilter == "") {
+		timerSettings->stop();
+		return;
+	}
+
+	QString success = "";
+	if (_vlcCurrentMediaPlayer) {
+#if VLC_TRUNK
+		if(QString(libvlc_video_get_aspect_ratio(_vlcCurrentMediaPlayer)) != _currentRatio)
+			libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, _currentRatio.toAscii().data());
+		else
+			success.append("+");
+		if(QString(libvlc_video_get_crop_geometry(_vlcCurrentMediaPlayer)) != _currentCrop)
+			libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, _currentCrop.toAscii().data());
+		else
+			success.append("+");
+
+		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, _currentFilter.toAscii().data());
+#else
+		if(QString(libvlc_video_get_aspect_ratio(_vlcCurrentMediaPlayer, _vlcException)) != _currentRatio)
+			libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, _currentRatio.toAscii().data(), _vlcException);
+		else
+			success.append("+");
+		if(QString(libvlc_video_get_crop_geometry(_vlcCurrentMediaPlayer, _vlcException)) != _currentCrop)
+			libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, _currentCrop.toAscii().data(), _vlcException);
+		else
+			success.append("+");
+#endif
+	}
+
+	if(success == "++")
+		timerSettings->stop();
 
 	VlcInstance::checkError();
 }
