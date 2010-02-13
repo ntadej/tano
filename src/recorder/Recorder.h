@@ -2,7 +2,6 @@
 #define TANO_RECORDER_H_
 
 #include <QtGui/QMainWindow>
-#include <QMenu>
 #include <QProcess>
 #include <QTime>
 #include <QTimer>
@@ -16,21 +15,22 @@
 
 class Recorder : public QWidget
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    Recorder(QWidget *parent = 0);
-    ~Recorder();
+	Recorder(QWidget *parent = 0);
+	~Recorder();
 
-    bool isRecording();
+	bool isRecording();
+	void setGlobals(TrayIcon *icon, QAction *action);
 
 public slots:
 	void stop();
-	void recordNow(int nmb, QString url, QString name);
-	void openPlaylist(QString file);
+	void recordNow(const int nmb, const QString &url, const QString &name);
+	void openPlaylist(const QString &file);
 
 private slots:
-	void record(bool status);
+	void record(const bool status);
 
 	void sec();
 
@@ -38,13 +38,12 @@ private slots:
 	void fileBrowse();
 
 private:
-    Ui::Recorder ui;
+	Ui::Recorder ui;
 
-    bool recording;
-    Channel *channel;
+	bool recording;
+	Channel *channel;
 
 	TrayIcon *trayIcon;
-	QMenu *tray;
 
 	QProcess *frip;
 	QString fripPath;
@@ -54,6 +53,8 @@ private:
 	QTime time;
 
 	QSettings *settings;
+
+	QAction *actionRecord;
 };
 
 #endif // TANO_RECORDER_H_

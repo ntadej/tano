@@ -13,7 +13,7 @@
 #include "ui/EditSettings.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+	: QMainWindow(parent)
 {
 	QPixmap pixmap(":/icons/images/splash.png");
 	QSplashScreen *splash = new QSplashScreen(pixmap);
@@ -66,7 +66,7 @@ MainWindow::~MainWindow()
 	if(sessionEnabled) {
 		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 		session.beginGroup("Session");
-        session.setValue("volume", ui.volumeSlider->volume());
+		session.setValue("volume", ui.volumeSlider->volume());
 		session.setValue("channel", ui.channelNumber->value());
 		session.endGroup();
 	}
@@ -77,9 +77,9 @@ void MainWindow::exit()
 	int ret;
 	if(ui.recorder->isRecording()) {
 		ret = QMessageBox::warning(this, tr("Tano"),
-								   tr("Do you want to exit Tano?\nThis will stop recording in progress."),
-								   QMessageBox::Close | QMessageBox::Cancel,
-								   QMessageBox::Close);
+					  tr("Do you want to exit Tano?\nThis will stop recording in progress."),
+					  QMessageBox::Close | QMessageBox::Cancel,
+					  QMessageBox::Close);
 	} else {
 		ret = QMessageBox::Close;
 	}
@@ -130,7 +130,7 @@ void MainWindow::createSettings()
 	}
 	if(!settings->value("info",true).toBool()) {
 		ui.infoWidget->hide();
-		ui.actionChannel_info->setChecked(false);
+		ui.actionInfoPanel->setChecked(false);
 	}
 	if(settings->value("wheel",false).toBool()) {
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), this, SLOT(volumeControl(bool)));
@@ -146,10 +146,10 @@ void MainWindow::createSettings()
 	settings->beginGroup("Recorder");
 	if(settings->value("enabled",true).toBool() && Common::fripExists()) {
 		connect(ui.actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
-		connect(ui.actionRecord, SIGNAL(triggered()), this, SLOT(recordNow()));
+		connect(ui.actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
 	} else {
 		ui.buttonRecord->hide();
-		ui.menuMedia->removeAction(ui.actionRecord);
+		ui.menuMedia->removeAction(ui.actionRecordNow);
 		ui.menuFile->removeAction(ui.actionRecorder);
 		ui.toolBar->removeAction(ui.actionRecorder);
 		if(osdEnabled)
@@ -162,6 +162,7 @@ void MainWindow::createConnections()
 {
 	connect(ui.actionUpdate, SIGNAL(triggered()), update, SLOT(getUpdates()));
 	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
+	connect(ui.actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 
 	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
@@ -253,6 +254,9 @@ void MainWindow::createMenus()
 	rightMenu->addMenu(ui.menuVolume);
 	rightMenu->addMenu(ui.menuVideo);
 	rightMenu->addSeparator();
+	rightMenu->addAction(ui.actionRecordNow);
+	rightMenu->addAction(ui.actionRecord);
+	rightMenu->addSeparator();
 	rightMenu->addAction(ui.actionTray);
 	rightMenu->addAction(ui.actionClose);
 
@@ -263,27 +267,28 @@ void MainWindow::createMenus()
 
 	trayIcon = new TrayIcon(rightMenu);
 	trayIcon->show();
+	ui.recorder->setGlobals(trayIcon, ui.actionRecord);
 }
 
 void MainWindow::createShortcuts()
 {
 	actions << ui.actionPlay
-			<< ui.actionStop
-			<< ui.actionNext
-			<< ui.actionBack
-			<< ui.actionFullscreen
-			<< ui.actionMute
-			<< ui.actionVolumeUp
-			<< ui.actionVolumeDown
-			<< ui.actionRecord
-			<< ui.actionOpenFile
-			<< ui.actionOpenUrl
-			<< ui.actionOpen
-			<< ui.actionEditPlaylist
-			<< ui.actionSettings
-			<< ui.actionTop
-			<< ui.actionLite
-			<< ui.actionAbout;
+		<< ui.actionStop
+		<< ui.actionNext
+		<< ui.actionBack
+		<< ui.actionFullscreen
+		<< ui.actionMute
+		<< ui.actionVolumeUp
+		<< ui.actionVolumeDown
+		<< ui.actionRecordNow
+		<< ui.actionOpenFile
+		<< ui.actionOpenUrl
+		<< ui.actionOpen
+		<< ui.actionEditPlaylist
+		<< ui.actionSettings
+		<< ui.actionTop
+		<< ui.actionLite
+		<< ui.actionAbout;
 
 	shortcuts = new Shortcuts(actions);
 }
@@ -292,7 +297,7 @@ void MainWindow::createSession()
 {
 	if(sessionEnabled) {
 		settings->beginGroup("Session");
-        ui.volumeSlider->setVolume(settings->value("volume",50).toString().toInt());
+		ui.volumeSlider->setVolume(settings->value("volume",50).toString().toInt());
 		if(hasPlaylist)
 			key(settings->value("channel",1).toInt());
 		settings->endGroup();
@@ -374,7 +379,7 @@ void MainWindow::play(QString itemFile, QString itemType)
 	} else {
 		ui.infoWidget->hide();
 		backend->openMedia(fileName);
-    	tooltip(fileName);
+		tooltip(fileName);
 	}
 
 	if(videoSettings) {
@@ -438,43 +443,43 @@ void MainWindow::stop()
 void MainWindow::openPlaylist(bool start)
 {
 	if (!start)
-    	fileName =
-            QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
-                                         QDir::homePath(),
-                                         tr("Tano TV Channel list Files(*.m3u)"));
+	fileName =
+		QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
+						QDir::homePath(),
+						tr("Tano TV Channel list Files(*.m3u)"));
 	else
 		fileName = Common::locateResource(defaultP);
 
 	if (!fileName.isEmpty()) {
-	    editor->setFile(fileName);
-	    ui.recorder->openPlaylist(fileName);
-	    timers->openPlaylist(fileName);
+		editor->setFile(fileName);
+		ui.recorder->openPlaylist(fileName);
+		timers->openPlaylist(fileName);
 	} else
-        return;
+	return;
 
 	ui.playlistWidget->open(fileName);
 
-    hasPlaylist = true;
+	hasPlaylist = true;
 
-    if(select != 0)
-    	delete select;
+	if(select != 0)
+		delete select;
 
-    select = new ChannelSelect(this, ui.channelNumber, ui.playlistWidget->nums());
+	select = new ChannelSelect(this, ui.channelNumber, ui.playlistWidget->nums());
 
-    ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
+	ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
 }
 
 void MainWindow::openFile()
 {
 	fileName =
-        QFileDialog::getOpenFileName(this, tr("Open File or URL"),
-									QDir::homePath(),
-									tr("Multimedia files(*)"));
+		QFileDialog::getOpenFileName(this, tr("Open File or URL"),
+						QDir::homePath(),
+						tr("Multimedia files(*)"));
 
-    if (fileName.isEmpty())
-        return;
+	if (fileName.isEmpty())
+		return;
 
-    play(fileName, "file");
+	play(fileName, "file");
 }
 
 void MainWindow::openUrl()
@@ -495,8 +500,8 @@ void MainWindow::openUrl()
 //GUI
 void MainWindow::showSettings()
 {
-    EditSettings s(this, shortcuts);
-    s.exec();
+	EditSettings s(this, shortcuts);
+	s.exec();
 }
 
 void MainWindow::tooltip(QString channelNow)

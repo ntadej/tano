@@ -4,99 +4,19 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../../build/src/ui_About.h" line="323"/>
-        <source>&lt;h2&gt;&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="327"/>
-        <source>&lt;b&gt;Note:&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Opozorilo:&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="330"/>
-        <source>About</source>
-        <translation>O programu</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="321"/>
+        <location filename="../../build/src/ui_About.h" line="236"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_About.h" line="322"/>
-        <source>&lt;h1&gt;Tano&lt;/h1&gt;</source>
-        <translation>&lt;h1&gt;Tano&lt;/h1&gt;</translation>
+        <location filename="../../build/src/ui_About.h" line="237"/>
+        <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
+        <translation>&lt;h4&gt;Licensirano pod licenco GNU GPL&lt;/h4&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_About.h" line="324"/>
-        <source>Copyright &amp;copy; 2008-%1 Tadej Novak&lt;br&gt;http://tanoplayer.co.cc&lt;br&gt;info@tanoplayer.co.cc</source>
-        <translation>&amp;copy; 2008-%1 Tadej Novak&lt;br&gt;http://tanoplayer.co.cc&lt;br&gt;info@tanoplayer.co.cc</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="325"/>
-        <source>Recorder is powered by friptv.</source>
-        <translation>Snemalnik poganja friptv.</translation>
-    </message>
-    <message utf8="true">
-        <location filename="../../build/src/ui_About.h" line="326"/>
-        <source>Crystal Icons Â© The Yellow Icon.</source>
-        <translation>Crystal Icons Â© The Yellow Icon.</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="328"/>
-        <source>This is a development version of Tano.</source>
-        <translation>To je razvojna različica programa Tano.</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="331"/>
-        <source>Licence</source>
-        <translation>Licenca</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="332"/>
-        <source>&lt;h1&gt;About Qt&lt;/h1&gt;</source>
-        <translation>&lt;h1&gt;O Qt&lt;/h1&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="333"/>
-        <source>This program uses Qt Open Source Edition version 0.0.0.</source>
-        <translation>Ta program uporablja odprtokodno različico Qt 0.0.0.</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="334"/>
-        <source>Qt Open Source Edition is intended for the development of Open Source applications. You need a commercial Qt license for development of proprietary (closed source) applications.</source>
-        <translation>Odprtokodna različica Qt je namenjena razvoju odprtokodnih aplikacij. Za razvoj zaprtih aplikacij potrebuješ komercialno licenco.</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="335"/>
-        <source>Please see http://qt.nokia.com/products/licensing for an overview of Qt licensing.</source>
-        <translation>Oglej si http://qt.nokia.com/products/licensing za pregled licenciranja knjižnice Qt.</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="338"/>
-        <source>Qt is a Nokia product. See http://qt.nokia.com/products/appdev for more information.</source>
-        <translation>Qt je izdelek Nokie. Pojdi na http://qt.nokia.com/products/appdev za več informacij.</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="336"/>
-        <source>Qt is a C++ toolkit for cross-platform application development.</source>
-        <translation>Qt je C++ orodje za razvoj večplatformnih aplikacij.</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="337"/>
-        <source>Qt provides single-source portability across MS Windows, Mac OS X, Linux, and all major commercial Unix variants. Qt is also available for embedded devices as Qt for Embedded Linux and Qt for Windows CE.</source>
-        <translation>Qt zagotavlja prenosljivost preko MS Windows, Mac OS X, Linuxa in vseh večjih komercialnih Unix variant. Qt je na voljo tudi za prenosne naprave z Linuxom ali Windows CE.</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="339"/>
-        <source>Qt</source>
-        <translation>Qt</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_About.h" line="340"/>
-        <source>Close</source>
-        <translation>Zapri</translation>
+        <location filename="../../build/src/ui_About.h" line="240"/>
+        <source>Back</source>
+        <translation>Nazaj</translation>
     </message>
 </context>
 <context>
@@ -786,394 +706,412 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="748"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="762"/>
         <source>&amp;Exit</source>
         <translation>&amp;Izhod</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="749"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="763"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="750"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="764"/>
         <source>&amp;Settings</source>
         <translation>&amp;Nastavitve</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="751"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="765"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="752"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="766"/>
         <source>&amp;Open Channel list</source>
         <translation>&amp;Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="753"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="767"/>
         <source>Open &amp;File</source>
         <translation>Odpri &amp;Datoteko</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="843"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="877"/>
         <source>&amp;Help</source>
         <translation>&amp;Pomoč</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="758"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="856"/>
-        <source>Channel info</source>
-        <translation>Informacije o kanalu</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="759"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="776"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="760"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="777"/>
         <source>Check for updates</source>
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="761"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="786"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="778"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="806"/>
         <source>Original</source>
         <translation>Originalno</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="762"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="795"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="779"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="815"/>
         <source>4:3</source>
         <translation>4:3</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="763"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="787"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="780"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="807"/>
         <source>16:9</source>
         <translation>16:9</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="764"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="781"/>
         <source>Open</source>
         <translation>Odpri</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="765"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="807"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="810"/>
-        <location filename="../MainWindow.cpp" line="339"/>
-        <location filename="../MainWindow.cpp" line="340"/>
-        <location filename="../MainWindow.cpp" line="341"/>
-        <location filename="../MainWindow.cpp" line="342"/>
-        <location filename="../MainWindow.cpp" line="346"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="782"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="832"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="835"/>
         <location filename="../MainWindow.cpp" line="347"/>
         <location filename="../MainWindow.cpp" line="348"/>
         <location filename="../MainWindow.cpp" line="349"/>
+        <location filename="../MainWindow.cpp" line="350"/>
+        <location filename="../MainWindow.cpp" line="354"/>
+        <location filename="../MainWindow.cpp" line="355"/>
+        <location filename="../MainWindow.cpp" line="356"/>
+        <location filename="../MainWindow.cpp" line="357"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="766"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="813"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="816"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="783"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="838"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="841"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="767"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="784"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="554"/>
+        <location filename="../MainWindow.cpp" line="561"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="772"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="789"/>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="773"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="855"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="790"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="880"/>
         <source>Main Toolbar</source>
         <translation>Glavna orodna vrstica</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="774"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="825"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="828"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="791"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="850"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="853"/>
         <source>Next</source>
         <translation>Naslednji</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="775"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="819"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="822"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="792"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="844"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="847"/>
         <source>Back</source>
         <translation>Nazaj</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="776"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="837"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="840"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="793"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="862"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="865"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="777"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="794"/>
         <source>Volume up</source>
         <translation>Povečaj glasnost</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="778"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="795"/>
         <source>Volume down</source>
         <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="779"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="854"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="796"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="878"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="780"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="831"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="834"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="856"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="859"/>
         <source>Record Now</source>
         <translation>Snemaj takoj</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="782"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="796"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="802"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="816"/>
         <source>1:1</source>
         <translation>1:1</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="783"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="788"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="797"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="799"/>
+        <source>Record Current</source>
+        <translation>Snemaj trenutno</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_MainWindow.h" line="803"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="808"/>
         <source>16:10</source>
         <translation>16:10</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="784"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="790"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="804"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="810"/>
         <source>2.21:1</source>
         <translation>2.21:1</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="785"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="794"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="805"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="814"/>
         <source>5:4</source>
         <translation>5:4</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="789"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="809"/>
         <source>1.85:1</source>
         <translation>1.85:1</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="791"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="811"/>
         <source>2.35:1</source>
         <translation>2.35:1</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="792"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="812"/>
         <source>2.39:1</source>
         <translation>2.39:1</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="793"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="813"/>
         <source>5:3</source>
         <translation>5:3</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="797"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="817"/>
+        <location filename="../MainWindow.cpp" line="36"/>
         <source>Disabled</source>
         <translation>Onemogočeno</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="798"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="818"/>
         <source>Blend</source>
         <translation>Prelivanje</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="799"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="819"/>
         <source>Mean</source>
         <translation>Sredina</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="800"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="820"/>
         <source>Bob</source>
         <translation>Bob</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="801"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="821"/>
         <source>Linear</source>
         <translation>Linearno</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="802"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="822"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="803"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="823"/>
         <source>Discard</source>
         <translation>Zavrzi</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="804"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="824"/>
         <source>Timers</source>
         <translation>Timerji</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="805"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="825"/>
+        <source>About Qt</source>
+        <translation>O Qt</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_MainWindow.h" line="830"/>
         <source>background-color: rgb(0, 0, 0);</source>
         <translation>background-color: rgb(0, 0, 0);</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="842"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="867"/>
         <source>&amp;File</source>
         <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="846"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="869"/>
         <source>Audio</source>
         <translation>Zvok</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="847"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="870"/>
         <source>Audio channel</source>
         <translation>Zvočna sled</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="848"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="871"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="852"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="875"/>
         <source>Aspect ratio</source>
         <translation>Razmerje slike</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="851"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="874"/>
         <source>Deinterlacing</source>
         <translation>Razpletanje</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="857"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="882"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="781"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="863"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="801"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="888"/>
         <source>Controls Toolbar</source>
         <translation>Orodna vrstica predvajanja</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="77"/>
+        <location filename="../MainWindow.cpp" line="80"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Ali želiš zapreti Tano?
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="330"/>
-        <location filename="../MainWindow.cpp" line="331"/>
-        <location filename="../MainWindow.cpp" line="332"/>
-        <location filename="../MainWindow.cpp" line="333"/>
+        <location filename="../MainWindow.cpp" line="338"/>
+        <location filename="../MainWindow.cpp" line="339"/>
+        <location filename="../MainWindow.cpp" line="340"/>
+        <location filename="../MainWindow.cpp" line="341"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="440"/>
+        <location filename="../MainWindow.cpp" line="447"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="442"/>
+        <location filename="../MainWindow.cpp" line="449"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="468"/>
+        <location filename="../MainWindow.cpp" line="475"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="470"/>
+        <location filename="../MainWindow.cpp" line="477"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="482"/>
+        <location filename="../MainWindow.cpp" line="489"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="483"/>
+        <location filename="../MainWindow.cpp" line="490"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="862"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="887"/>
         <source>Schedule</source>
         <translation>Spored</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="844"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="879"/>
         <source>&amp;Options</source>
         <translation>&amp;Možnosti</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="746"/>
-        <location filename="../MainWindow.cpp" line="76"/>
-        <location filename="../MainWindow.cpp" line="503"/>
-        <location filename="../MainWindow.cpp" line="505"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="760"/>
+        <location filename="../MainWindow.cpp" line="79"/>
+        <location filename="../MainWindow.cpp" line="510"/>
+        <location filename="../MainWindow.cpp" line="512"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="747"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="761"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="754"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="756"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="768"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="770"/>
         <source>Edit Channels</source>
         <translation>Uredi programe</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="768"/>
-        <location filename="../../build/src/ui_MainWindow.h" line="770"/>
-        <location filename="../MainWindow.cpp" line="551"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="772"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="774"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="881"/>
+        <source>Info panel</source>
+        <translation>Info pult</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_MainWindow.h" line="785"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="787"/>
+        <location filename="../MainWindow.cpp" line="558"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="845"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="826"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="828"/>
+        <source>Stop recording</source>
+        <translation>Prenehaj s snemanjem</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_MainWindow.h" line="868"/>
         <source>&amp;Media</source>
         <translation>&amp;Predvajanje</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="849"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="872"/>
         <source>Crop video</source>
         <translation>Obreži video</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="850"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="873"/>
         <source>Subtitles</source>
         <translation>Podnapisi</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_MainWindow.h" line="853"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="876"/>
         <source>&amp;View</source>
         <translation>&amp;Videz</translation>
     </message>
@@ -1340,23 +1278,20 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Ni timerja - pritisni gumb in ustavi.</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="232"/>
-        <location filename="../../build/src/ui_Recorder.h" line="234"/>
-        <location filename="../recorder/Recorder.cpp" line="160"/>
+        <location filename="../../build/src/ui_Recorder.h" line="203"/>
+        <location filename="../../build/src/ui_Recorder.h" line="205"/>
+        <location filename="../recorder/Recorder.cpp" line="159"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
         <location filename="../recorder/Recorder.cpp" line="143"/>
-        <location filename="../recorder/Recorder.cpp" line="144"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="220"/>
-        <location filename="../../build/src/ui_Recorder.h" line="227"/>
-        <location filename="../recorder/Recorder.cpp" line="163"/>
-        <location filename="../recorder/Recorder.cpp" line="164"/>
+        <location filename="../../build/src/ui_Recorder.h" line="196"/>
+        <location filename="../recorder/Recorder.cpp" line="162"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
@@ -1367,68 +1302,62 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../recorder/Recorder.cpp" line="99"/>
-        <location filename="../recorder/Recorder.cpp" line="186"/>
+        <location filename="../recorder/Recorder.cpp" line="185"/>
         <source>Channel is not selected!</source>
         <translation>Program ni izbran!</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="219"/>
-        <location filename="../../build/src/ui_Recorder.h" line="221"/>
+        <location filename="../../build/src/ui_Recorder.h" line="190"/>
+        <location filename="../../build/src/ui_Recorder.h" line="191"/>
         <location filename="../recorder/Recorder.cpp" line="92"/>
         <location filename="../recorder/Recorder.cpp" line="98"/>
-        <location filename="../recorder/Recorder.cpp" line="185"/>
+        <location filename="../recorder/Recorder.cpp" line="184"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="222"/>
+        <location filename="../../build/src/ui_Recorder.h" line="192"/>
         <source>Selected channel:</source>
         <translation>Izbran kanal:</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="223"/>
-        <location filename="../../build/src/ui_Recorder.h" line="230"/>
-        <location filename="../../build/src/ui_Recorder.h" line="236"/>
+        <location filename="../../build/src/ui_Recorder.h" line="199"/>
+        <location filename="../../build/src/ui_Recorder.h" line="201"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="224"/>
-        <source>No timer</source>
-        <translation>Ni časovne nastavitve</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_Recorder.h" line="225"/>
+        <location filename="../../build/src/ui_Recorder.h" line="194"/>
         <source>Directory:</source>
         <translation>Imenik:</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="226"/>
+        <location filename="../../build/src/ui_Recorder.h" line="195"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="228"/>
+        <location filename="../../build/src/ui_Recorder.h" line="197"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="229"/>
+        <location filename="../../build/src/ui_Recorder.h" line="200"/>
         <source>Currently recording:</source>
         <translation>Trenutno snemam:</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="231"/>
+        <location filename="../../build/src/ui_Recorder.h" line="202"/>
         <source>Time:</source>
         <translation>Čas:</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="233"/>
+        <location filename="../../build/src/ui_Recorder.h" line="204"/>
         <source>Time remaining:</source>
         <translation>Čas do konca:</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_Recorder.h" line="235"/>
+        <location filename="../../build/src/ui_Recorder.h" line="198"/>
         <source>Recording to file:</source>
         <translation>Snemam v datoteko:</translation>
     </message>

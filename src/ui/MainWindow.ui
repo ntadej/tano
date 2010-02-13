@@ -304,7 +304,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>31</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -317,20 +317,6 @@
     <addaction name="separator"/>
     <addaction name="actionTray"/>
     <addaction name="actionClose"/>
-   </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>&amp;Help</string>
-    </property>
-    <addaction name="actionUpdate"/>
-    <addaction name="actionAbout"/>
-   </widget>
-   <widget class="QMenu" name="menuOptions">
-    <property name="title">
-     <string>&amp;Options</string>
-    </property>
-    <addaction name="actionEditPlaylist"/>
-    <addaction name="actionSettings"/>
    </widget>
    <widget class="QMenu" name="menuMedia">
     <property name="title">
@@ -425,7 +411,7 @@
     <addaction name="actionStop"/>
     <addaction name="actionBack"/>
     <addaction name="actionNext"/>
-    <addaction name="actionRecord"/>
+    <addaction name="actionRecordNow"/>
     <addaction name="menuVolume"/>
     <addaction name="menuVideo"/>
    </widget>
@@ -437,14 +423,31 @@
     <addaction name="actionLite"/>
     <addaction name="actionFullscreen"/>
     <addaction name="separator"/>
-    <addaction name="actionChannel_info"/>
+    <addaction name="actionInfoPanel"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionUpdate"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAboutQt"/>
    </widget>
    <widget class="QMenu" name="menuRecorder">
     <property name="title">
      <string>Recorder</string>
     </property>
     <addaction name="actionRecorder"/>
+    <addaction name="actionRecord"/>
+    <addaction name="separator"/>
     <addaction name="actionTimers"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>&amp;Options</string>
+    </property>
+    <addaction name="actionEditPlaylist"/>
+    <addaction name="actionSettings"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -493,7 +496,7 @@
     <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
    <property name="windowTitle">
-    <string>Channel info</string>
+    <string>Info panel</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>2</number>
@@ -525,8 +528,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>346</width>
-          <height>411</height>
+          <width>340</width>
+          <height>423</height>
          </rect>
         </property>
         <attribute name="label">
@@ -546,8 +549,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>346</width>
-          <height>411</height>
+          <width>340</width>
+          <height>423</height>
          </rect>
         </property>
         <attribute name="label">
@@ -693,7 +696,7 @@
     <string>Edit Channels</string>
    </property>
   </action>
-  <action name="actionChannel_info">
+  <action name="actionInfoPanel">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -701,7 +704,10 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Channel info</string>
+    <string>Info panel</string>
+   </property>
+   <property name="toolTip">
+    <string>Info panel</string>
    </property>
   </action>
   <action name="actionOpenUrl">
@@ -875,13 +881,16 @@
     <string>Recorder</string>
    </property>
   </action>
-  <action name="actionRecord">
+  <action name="actionRecordNow">
    <property name="icon">
     <iconset resource="images.qrc">
      <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
    </property>
    <property name="text">
-    <string>Record Now</string>
+    <string>Record Current</string>
+   </property>
+   <property name="toolTip">
+    <string>Record Current</string>
    </property>
   </action>
   <action name="actionCToolbar">
@@ -1086,6 +1095,30 @@
     <string>Timers</string>
    </property>
   </action>
+  <action name="actionAboutQt">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/icons/images/qt.png</normaloff>:/icons/images/qt.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Qt</string>
+   </property>
+  </action>
+  <action name="actionRecord">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stop recording</string>
+   </property>
+   <property name="toolTip">
+    <string>Stop recording</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -1188,7 +1221,7 @@
   <connection>
    <sender>buttonRecord</sender>
    <signal>clicked()</signal>
-   <receiver>actionRecord</receiver>
+   <receiver>actionRecordNow</receiver>
    <slot>trigger()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1688,8 +1721,8 @@
    <slot>setCropOriginal()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>499</x>
-     <y>299</y>
+     <x>-1</x>
+     <y>-1</y>
     </hint>
     <hint type="destinationlabel">
      <x>318</x>
@@ -1778,7 +1811,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>actionChannel_info</sender>
+   <sender>actionInfoPanel</sender>
    <signal>triggered(bool)</signal>
    <receiver>infoWidget</receiver>
    <slot>setVisible(bool)</slot>
@@ -1796,7 +1829,7 @@
   <connection>
    <sender>infoWidget</sender>
    <signal>visibilityChanged(bool)</signal>
-   <receiver>actionChannel_info</receiver>
+   <receiver>actionInfoPanel</receiver>
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">

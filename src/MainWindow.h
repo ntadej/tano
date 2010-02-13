@@ -26,11 +26,11 @@
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+	MainWindow(QWidget *parent = 0);
+	~MainWindow();
 
 protected:
 	void closeEvent(QCloseEvent *event);
@@ -38,50 +38,50 @@ protected:
 private slots:
 	void exit();
 
-    void aboutTano();
-    void playlist(QTreeWidgetItem* clickedChannel);
-    void key(int clickedChannel);
+	void aboutTano();
+	void playlist(QTreeWidgetItem* clickedChannel);
+	void key(int clickedChannel);
 
-    void play(QString itemFile = 0, QString itemType = 0);
-    void stop();
+	void play(QString itemFile = 0, QString itemType = 0);
+	void stop();
 
-    void playingState(int status);
+	void playingState(int status);
 
-    void openPlaylist(bool start = false);
-    void openFile();
-    void openUrl();
-    void showSettings();
+	void openPlaylist(bool start = false);
+	void openFile();
+	void openUrl();
+	void showSettings();
 
-    void showEpg(int id, QStringList epgValue, QString date);
+	void showEpg(int id, QStringList epgValue, QString date);
 
-    void tooltip(QString channelNow = "stop");
+	void tooltip(QString channelNow = "stop");
 
-    void showRightMenu(QPoint pos);
-    void menuOpen();
-    void top();
-    void lite();
-    void tray();
+	void showRightMenu(QPoint pos);
+	void menuOpen();
+	void top();
+	void lite();
+	void tray();
 
-    void recordNow();
-    void recorder(bool enabled);
-    void volumeControl(bool type);
-    void processMenu(QString type, QList<QAction*> list);
+	void recordNow();
+	void recorder(bool enabled);
+	void volumeControl(bool type);
+	void processMenu(QString type, QList<QAction*> list);
 
 signals:
-    void setVolume(int);
+	void setVolume(int);
 
 private:
-    Ui::MainWindow ui;
-    Qt::WindowFlags flags;
+	Ui::MainWindow ui;
+	Qt::WindowFlags flags;
 
-    VlcInstance *backend;
-    VlcControl *controller;
+	VlcInstance *backend;
+	VlcControl *controller;
 
-    Updates *update;
-    Osd *osd;
-    QSettings *settings;
+	Updates *update;
+	Osd *osd;
+	QSettings *settings;
 
-    Channel *channel;
+	Channel *channel;
 	QString fileName;
 	QString defaultP;
 	QString lastChannel;
@@ -114,12 +114,12 @@ private:
 	bool hasPlaylist;
 	bool videoSettings;
 
-    void createConnections();
-    void createMenus();
-    void createShortcuts();
-    void createSettings();
-    void createSession();
-    void createOsd();
+	void createConnections();
+	void createMenus();
+	void createShortcuts();
+	void createSettings();
+	void createSession();
+	void createOsd();
 };
 
 #endif // TANO_MAINWINDOW_H_

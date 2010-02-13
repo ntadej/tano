@@ -1,3 +1,4 @@
+#include <QAction>
 #include <QCloseEvent>
 #include <QDir>
 #include <QFileDialog>
@@ -9,7 +10,7 @@
 #include "Recorder.h"
 
 Recorder::Recorder(QWidget *parent)
-    : QWidget(parent)
+	: QWidget(parent)
 {
 	slash = "/";
 
@@ -23,15 +24,15 @@ Recorder::Recorder(QWidget *parent)
 
 	recording = false;
 
-	tray = new QMenu();
-	trayIcon = new TrayIcon(tray, true);
+	trayIcon = 0;
+	actionRecord = 0;
 
 	frip = new QProcess(this);
 	fripPath = Common::frip();
 
-    timer = new QTimer(this);
+	timer = new QTimer(this);
 
-    connect(timer, SIGNAL(timeout()), this, SLOT(sec()));
+	connect(timer, SIGNAL(timeout()), this, SLOT(sec()));
 
 	connect(ui.buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
 	connect(ui.buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
@@ -41,7 +42,6 @@ Recorder::Recorder(QWidget *parent)
 
 Recorder::~Recorder()
 {
-	delete tray;
 	delete trayIcon;
 	delete frip;
 	delete timer;
@@ -53,7 +53,7 @@ void Recorder::stop()
 	frip->terminate();
 }
 
-void Recorder::openPlaylist(QString file)
+void Recorder::openPlaylist(const QString &file)
 {
 	ui.playlistWidget->open(file);
 }
@@ -74,14 +74,14 @@ void Recorder::fileBrowse()
 	else
 		dir = ui.fileEdit->text();
 	QString dfile = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
-														dir,
-														QFileDialog::ShowDirsOnly
-														| QFileDialog::DontResolveSymlinks);
+							dir,
+							QFileDialog::ShowDirsOnly
+							| QFileDialog::DontResolveSymlinks);
 	if(dfile != "")
 		ui.fileEdit->setText(dfile);
 }
 
-void Recorder::record(bool status)
+void Recorder::record(const bool status)
 {
 	if(status) {
 		if(ui.fileEdit->text() == "") {
@@ -90,13 +90,13 @@ void Recorder::record(bool status)
 		} else if(!QDir(ui.fileEdit->text()).exists()) {
 			ui.buttonRecord->setChecked(false);
 			QMessageBox::critical(this, tr("Recorder"),
-										tr("Cannot write to %1.")
-										.arg(ui.fileEdit->text()));
+						tr("Cannot write to %1.")
+						.arg(ui.fileEdit->text()));
 			return;
 		} else if(ui.valueSelected->text() == "-") {
 			ui.buttonRecord->setChecked(false);
 			QMessageBox::critical(this, tr("Recorder"),
-										tr("Channel is not selected!"));
+						tr("Channel is not selected!"));
 			return;
 		}
 
@@ -109,7 +109,7 @@ void Recorder::record(bool status)
 			<< "#EXTINF:0," << channel->name() << "\n"
 			<< channel->url();
 
-		QString fileName = ui.fileEdit->text()+slash+channel->name()+QDateTime::currentDateTime().toString("-dd_MM_yyyy-hh_mm_ss")+".avi";
+		QString fileName = ui.fileEdit->text()+slash+channel->name().replace(" ","_")+QDateTime::currentDateTime().toString("-dd_MM_yyyy-hh_mm_ss")+".avi";
 
 #ifdef Q_WS_WIN
 		fileName.replace("/","\\");
@@ -129,8 +129,8 @@ void Recorder::record(bool status)
 
 		frip->start(fripPath, arguments);
 
-		trayIcon->show();
-		trayIcon->changeToolTip(channel->name());
+		if(trayIcon)
+			trayIcon->changeToolTip(channel->name());
 
 		timer->start(1000);
 		time = QTime(0,0);
@@ -141,15 +141,14 @@ void Recorder::record(bool status)
 		ui.valueFile->setText(fileName);
 
 		ui.buttonRecord->setText(tr("Stop recording"));
-		ui.actionRecord->setText(tr("Stop recording"));
-
-		//tray->insertAction(ui.actionRecord);
+		if(actionRecord)
+			actionRecord->setEnabled(true);
 
 		QStringList arg;
 		arg << "record" << channel->name() << fileName;
-	    if (trayIcon->isVisible()) {
-	    	trayIcon->message(arg);
-	    }
+		if (trayIcon && trayIcon->isVisible()) {
+			trayIcon->message(arg);
+		}
 
 		recording = true;
 	} else {
@@ -161,29 +160,29 @@ void Recorder::record(bool status)
 		ui.valueFile->setText("-");
 
 		ui.buttonRecord->setText(tr("Record"));
-		ui.actionRecord->setText(tr("Record"));
+		if(actionRecord)
+			actionRecord->setEnabled(false);
 
 		trayIcon->changeToolTip("stop");
-		trayIcon->hide();
 
 		recording = false;
 	}
 }
 
-void Recorder::recordNow(int nmb, QString url, QString name)
+void Recorder::recordNow(const int nmb, const QString &url, const QString &name)
 {
 	settings->beginGroup("Recorder");
 	ui.fileEdit->setText(settings->value("dir",QDir::homePath()+"/Videos").toString());
 	settings->endGroup();
-	trayIcon->show();
 
 	channel = ui.playlistWidget->channelReadNum(nmb);
 	if (channel->isCategory() != true) {
 		ui.valueSelected->setText(channel->name());
-		ui.actionRecord->setChecked(true);
+		if(actionRecord)
+			actionRecord->setEnabled(true);
 	} else {
 		QMessageBox::critical(this, tr("Recorder"),
-									tr("Channel is not selected!"));
+					tr("Channel is not selected!"));
 	}
 }
 
@@ -196,4 +195,11 @@ void Recorder::sec()
 {
 	time = time.addSecs(1);
 	ui.valueTime->setText(time.toString("hh:mm:ss"));
+}
+
+void Recorder::setGlobals(TrayIcon *icon, QAction *action)
+{
+	trayIcon = icon;
+	actionRecord = action;
+	connect(actionRecord, SIGNAL(triggered()), ui.buttonRecord, SLOT(toggle()));
 }

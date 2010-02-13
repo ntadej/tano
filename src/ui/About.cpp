@@ -6,24 +6,32 @@
 #include "../Ver.h"
 
 About::About(QWidget *parent, QString version)
-    : QDialog(parent)
+	: QDialog(parent)
 {
 	ui.setupUi(this);
 
-	ui.labelVersion->setText(ui.labelVersion->text().replace("><",">"+version+"<"));
+	ui.labelVersion->setText("<h2>"+version+"</h2>");
 	ui.labelCopy->setText(ui.labelCopy->text().replace("%1",QDate().currentDate().toString("yyyy")));
-	ui.labelCopy->setText(ui.labelCopy->text().replace("http://tanoplayer.co.cc","<a href='http://tanoplayer.co.cc'>http://tanoplayer.co.cc</a>"));
-	ui.labelCopy->setText(ui.labelCopy->text().replace("info@tanoplayer.co.cc","<a href='info@tanoplayer.co.cc'>info@tanoplayer.co.cc</a>"));
+	ui.labelLicense->setText(ui.labelLicense->text().replace("GNU GPL","<a href='#'>GNU GPL</a>"));
+	ui.labelLinks->setText(ui.labelLinks->text().replace("http://tanoplayer.co.cc","<a href='http://tanoplayer.co.cc'>http://tanoplayer.co.cc</a>"));
+	ui.labelLinks->setText(ui.labelLinks->text().replace("info@tanoplayer.co.cc","<a href='info@tanoplayer.co.cc'>info@tanoplayer.co.cc</a>"));
 
-	ui.labelVlc->setText("<h3>Videolan libVLC "+VlcInstance::version()+"</h3>");
-	ui.labelRecorder->setText(ui.labelRecorder->text().replace("friptv","<a href=http://friptv.sourceforge.net>friptv</a>"));
+	ui.labelVlc->setText("<h3>libVLC "+VlcInstance::version().mid(0,5)+"</h3>");
+	ui.labelQt->setText("<h3>Qt "+QtVersion()+"</h3>");
 
-	ui.labelQtVersion->setText(ui.labelQtVersion->text().replace("0.0.0",QtVersion()));
-	ui.labelQtLicenceLink->setText(ui.labelQtLicenceLink->text().replace("http://qt.nokia.com/products/licensing","<a href='http://qt.nokia.com/products/licensing'>http://qt.nokia.com/products/licensing</a>"));
-	ui.labelQtLink->setText(ui.labelQtLink->text().replace("http://qt.nokia.com/products/appdev","<a href='http://qt.nokia.com/products/appdev'>http://qt.nokia.com/products/appdev</a>"));
+	connect(ui.buttonLicense, SIGNAL(clicked()), this, SLOT(license()));
+	connect(ui.labelLicense, SIGNAL(linkActivated(QString)), this, SLOT(license()));
 }
 
 About::~About()
 {
 
+}
+
+void About::license()
+{
+	if(ui.stackedWidget->currentIndex() == 1)
+		ui.stackedWidget->setCurrentIndex(0);
+	else
+		ui.stackedWidget->setCurrentIndex(1);
 }

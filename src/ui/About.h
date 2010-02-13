@@ -6,13 +6,16 @@
 
 class About : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-    About(QWidget *parent = 0, QString version = "Unknown");
-    ~About();
+	About(QWidget *parent = 0, QString version = "Unknown");
+	~About();
+
+private slots:
+	void license();
 
 private:
-    Ui::About ui;
+	Ui::About ui;
 };
 
 #endif // TANO_ABOUT_H
