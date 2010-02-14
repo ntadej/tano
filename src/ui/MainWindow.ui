@@ -318,6 +318,41 @@
     <addaction name="actionTray"/>
     <addaction name="actionClose"/>
    </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <addaction name="actionTop"/>
+    <addaction name="actionLite"/>
+    <addaction name="actionFullscreen"/>
+    <addaction name="separator"/>
+    <addaction name="actionInfoPanel"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionUpdate"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAboutQt"/>
+   </widget>
+   <widget class="QMenu" name="menuRecorder">
+    <property name="title">
+     <string>Recorder</string>
+    </property>
+    <addaction name="actionRecorder"/>
+    <addaction name="actionTimers"/>
+    <addaction name="separator"/>
+    <addaction name="actionRecordNow"/>
+    <addaction name="actionRecord"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>&amp;Options</string>
+    </property>
+    <addaction name="actionEditPlaylist"/>
+    <addaction name="actionSettings"/>
+   </widget>
    <widget class="QMenu" name="menuMedia">
     <property name="title">
      <string>&amp;Media</string>
@@ -411,43 +446,8 @@
     <addaction name="actionStop"/>
     <addaction name="actionBack"/>
     <addaction name="actionNext"/>
-    <addaction name="actionRecordNow"/>
     <addaction name="menuVolume"/>
     <addaction name="menuVideo"/>
-   </widget>
-   <widget class="QMenu" name="menuView">
-    <property name="title">
-     <string>&amp;View</string>
-    </property>
-    <addaction name="actionTop"/>
-    <addaction name="actionLite"/>
-    <addaction name="actionFullscreen"/>
-    <addaction name="separator"/>
-    <addaction name="actionInfoPanel"/>
-   </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>&amp;Help</string>
-    </property>
-    <addaction name="actionUpdate"/>
-    <addaction name="actionAbout"/>
-    <addaction name="actionAboutQt"/>
-   </widget>
-   <widget class="QMenu" name="menuRecorder">
-    <property name="title">
-     <string>Recorder</string>
-    </property>
-    <addaction name="actionRecorder"/>
-    <addaction name="actionRecord"/>
-    <addaction name="separator"/>
-    <addaction name="actionTimers"/>
-   </widget>
-   <widget class="QMenu" name="menuOptions">
-    <property name="title">
-     <string>&amp;Options</string>
-    </property>
-    <addaction name="actionEditPlaylist"/>
-    <addaction name="actionSettings"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -549,8 +549,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>423</height>
+          <width>88</width>
+          <height>64</height>
          </rect>
         </property>
         <attribute name="label">

@@ -130,7 +130,7 @@ void Recorder::record(const bool status)
 		frip->start(fripPath, arguments);
 
 		if(trayIcon)
-			trayIcon->changeToolTip(channel->name());
+			trayIcon->changeToolTip(channel->name(), "recorder");
 
 		timer->start(1000);
 		time = QTime(0,0);
@@ -163,7 +163,7 @@ void Recorder::record(const bool status)
 		if(actionRecord)
 			actionRecord->setEnabled(false);
 
-		trayIcon->changeToolTip("stop");
+		trayIcon->changeToolTip("stop", "recorder");
 
 		recording = false;
 	}

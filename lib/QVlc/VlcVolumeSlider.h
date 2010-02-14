@@ -12,16 +12,17 @@ public:
 	VlcVolumeSlider(QWidget *parent = 0);
 	virtual ~VlcVolumeSlider();
 
-	void setVolume(int volume);
+	void setVolume(const int volume);
 	int volume();
 
 public slots:
 	void mute();
 	void vup();
 	void vdown();
+	void volumeControl(const bool direction);
 
 private slots:
-	void changeVolume(int newVolume);
+	void changeVolume(const int newVolume);
 	void updateVolume();
 
 private:

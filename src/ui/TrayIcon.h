@@ -8,12 +8,12 @@
 class TrayIcon : public QSystemTrayIcon {
 Q_OBJECT
 public:
-	TrayIcon(QMenu *menu, bool recorder = false);
+	TrayIcon(QMenu *menu);
 	virtual ~TrayIcon();
 
 public slots:
 	void message(QStringList arg);
-	void changeToolTip(QString text = "stop");
+	void changeToolTip(const QString &text = "stop", const QString &type = "main");
 
 signals:
 	void restoreClick();
@@ -22,7 +22,8 @@ private slots:
 	void iconActivated(QSystemTrayIcon::ActivationReason reason);
 
 private:
-	bool _recorder;
+	QString _currentlyPlaying;
+	QString _currentlyRecording;
 };
 
 #endif // TANO_TRAYICON_H_

@@ -37,9 +37,9 @@ void M3UHandler::clear()
 	channelNums.clear();
 	categoryList.clear();
 
-	for(int i=0; i<treeWidget->topLevelItemCount(); i++) {
-		delete map.value(treeWidget->topLevelItem(i));
-	}
+	if(treeWidget->topLevelItemCount()>0)
+		for(int i=0; i<treeWidget->topLevelItemCount(); i++)
+			delete map.value(treeWidget->topLevelItem(i));
 
 	map.clear();
 	nmap.clear();

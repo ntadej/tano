@@ -13,6 +13,8 @@ public:
 	VlcControl(const QString lang = "");
 	virtual ~VlcControl();
 
+	void update();
+
 private slots:
 	void updateActionsAudio();
 	void updateActionsVideo();
@@ -37,6 +39,7 @@ private:
 	QMap<QString,int> subMap;
 	QActionGroup *subGroup;
 
+	bool manualLanguage;
 	QStringList preferedLanguage;
 };
 

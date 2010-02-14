@@ -3,9 +3,7 @@
 
 #include <QtGui/QMainWindow>
 #include <QCloseEvent>
-#include <QTime>
 #include <QSettings>
-#include <QErrorMessage>
 
 #include <QVlc/VlcInstance.h>
 #include <QVlc/VlcControl.h>
@@ -64,37 +62,64 @@ private slots:
 
 	void recordNow();
 	void recorder(bool enabled);
-	void volumeControl(bool type);
 	void processMenu(QString type, QList<QAction*> list);
 
 signals:
 	void setVolume(int);
 
 private:
-	Ui::MainWindow ui;
-	Qt::WindowFlags flags;
+	//Initialising functions
+	void createBackend();
+	void createCommon();
+	void createConnections();
+	void createGui();
+	void createMenus();
+	void createOsd();
+	void createRecorder();
+	void createSettings();
+	void createSession();
+	void createShortcuts();
 
+	//Settings
+	QSettings *settings;
+	QString _defaultPlaylist;
+	QString _defaultSubtitleLanguage;
+	bool _hasPlaylist;
+	bool _isLite;
+	bool _osdEnabled;
+	bool _recorderEnabled;
+	int _sessionChannel;
+	bool _sessionEnabled;
+	int _sessionVolume;
+	bool _updatesOnStart;
+	bool _videoSettings;
+	QString _wheelType;
+
+	//Main
+	ChannelSelect *select;
+	Shortcuts *shortcuts;
+	Time *time;
+	Updates *update;
+
+	//Backend
 	VlcInstance *backend;
 	VlcControl *controller;
 
-	Updates *update;
+	//GUI
+	Ui::MainWindow ui;
+	Qt::WindowFlags flags;
 	Osd *osd;
-	QSettings *settings;
 
+	//Playback and channels
 	Channel *channel;
-	QString fileName;
-	QString defaultP;
-	QString lastChannel;
-
-	TrayIcon *trayIcon;
 	Epg *epg;
 	EpgShow *epgShow;
 	EditPlaylist *editor;
+	QString _fileName;
+	QString _playlistName;
 
-	Shortcuts *shortcuts;
-	ChannelSelect *select;
-	Time *time;
-
+	//Menus and actions
+	TrayIcon *trayIcon;
 	QMenu *rightMenu;
 	QMenu *openMenu;
 	QActionGroup *ratioGroup;
@@ -102,24 +127,8 @@ private:
 	QActionGroup *filterGroup;
 	QList<QAction*> actions;
 
-	QTime timeNow;
-
-	QErrorMessage *errorHandler;
-
+	//Recorder
 	TimersManager *timers;
-
-	bool isLite;
-	bool osdEnabled;
-	bool sessionEnabled;
-	bool hasPlaylist;
-	bool videoSettings;
-
-	void createConnections();
-	void createMenus();
-	void createShortcuts();
-	void createSettings();
-	void createSession();
-	void createOsd();
 };
 
 #endif // TANO_MAINWINDOW_H_

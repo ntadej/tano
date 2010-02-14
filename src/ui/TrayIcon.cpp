@@ -1,17 +1,14 @@
 #include "TrayIcon.h"
 
-TrayIcon::TrayIcon(QMenu *menu, bool recorder)
-	: _recorder(recorder)
+TrayIcon::TrayIcon(QMenu *menu)
 {
 	this->setContextMenu(menu);
 
-	if(!_recorder) {
-		this->setIcon(QIcon(":/icons/images/tano.png"));
-		this->setToolTip(tr("Tano"));
-	} else {
-		this->setIcon(QIcon(":/icons/images/record.png"));
-		this->setToolTip(tr("Tano Recorder"));
-	}
+	this->setIcon(QIcon(":/icons/images/tano.png"));
+	this->setToolTip(tr("Tano"));
+
+	_currentlyRecording = "";
+	_currentlyPlaying = "";
 
 	connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
 			this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
@@ -24,16 +21,16 @@ TrayIcon::~TrayIcon()
 
 void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
-    switch (reason) {
-    case QSystemTrayIcon::Trigger:
-    case QSystemTrayIcon::DoubleClick:
-    	emit restoreClick();
-        break;
-    case QSystemTrayIcon::MiddleClick:
-        break;
-    default:
-        ;
-    }
+	switch (reason) {
+	case QSystemTrayIcon::Trigger:
+	case QSystemTrayIcon::DoubleClick:
+		emit restoreClick();
+		break;
+	case QSystemTrayIcon::MiddleClick:
+		break;
+	default:
+		break;
+	}
 }
 
 void TrayIcon::message(QStringList arg)
@@ -50,12 +47,21 @@ void TrayIcon::message(QStringList arg)
 		this->showMessage(tr("Update available"), tr("A new version of Tano is available!")+"\n" + tr("Version:") + " " + arg.at(1), QSystemTrayIcon::Information, 10000);
 }
 
-void TrayIcon::changeToolTip(QString text)
+void TrayIcon::changeToolTip(const QString &text, const QString &type)
 {
-	if(text != "stop" && !_recorder)
-		this->setToolTip(tr("Tano") + " - " + tr("Currently playing:") + " " + text);
-	else if(text != "stop" && _recorder)
-		this->setToolTip(tr("Tano") + " - " + tr("Currently recording:") + " " + text);
-	else
-		this->setToolTip(tr("Tano"));
+	if(text != "stop" && type == "main") {
+		_currentlyPlaying = text;
+	} else if(text != "stop" && type == "recorder") {
+		_currentlyRecording = text;
+	} else if(text == "stop" && type == "main") {
+		_currentlyPlaying = "";
+	} else if(text == "stop" && type == "recorder") {
+		_currentlyRecording = "";
+	}
+
+	this->setToolTip(tr("Tano"));
+	if(_currentlyPlaying != "")
+		this->setToolTip(this->toolTip().append(" - " + tr("Playing:") + " " + _currentlyPlaying));
+	if(_currentlyRecording != "")
+			this->setToolTip(this->toolTip().append(" - " + tr("Recording:") + " " + _currentlyRecording));
 }
