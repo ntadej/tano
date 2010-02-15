@@ -7,10 +7,11 @@
 #include <QtGui/QAction>
 #include <QtGui/QActionGroup>
 
-class VlcControl : public QObject {
+class VlcControl : public QObject
+{
 Q_OBJECT
 public:
-	VlcControl(const QString lang = "");
+	VlcControl(const QString &lang = "");
 	virtual ~VlcControl();
 
 	void update();
@@ -35,7 +36,7 @@ private:
 	QMap<QString,int> audioMap;
 	QActionGroup *audioGroup;
 
-    QList<QAction*> subList;
+	QList<QAction*> subList;
 	QMap<QString,int> subMap;
 	QActionGroup *subGroup;
 

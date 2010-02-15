@@ -2,19 +2,17 @@
 #define QVLC_VLCVIDEOWIDGET_H_
 
 #include <QtCore/QTimer>
-#include <QtGui/QMainWindow>
+#include <QtGui/QWidget>
 
-class VlcVideoWidget : public QMainWindow
+class VlcVideoWidget : public QWidget
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
-    VlcVideoWidget(QWidget *parent = 0);
-    ~VlcVideoWidget();
+	VlcVideoWidget(QWidget *parent = 0);
+	~VlcVideoWidget();
 
 	WId getWinId();
-	void setOsd(int width, int height, int posLeft, int posTop);
-	void setToolbar(QToolBar *toolbar);
+	void setOsdSize(const int &width, const int &height);
 
 protected:
 	void mouseDoubleClickEvent(QMouseEvent *event);
@@ -24,9 +22,10 @@ protected:
 
 signals:
 	void full();
-	void rightClick(QPoint);
-	void wheel(bool);
+	void rightClick(const QPoint);
+	void wheel(const bool);
 	void mouseMove();
+	void osdVisibility(const bool);
 
 public slots:
 	void disableMove();
@@ -75,18 +74,18 @@ private:
 	QWidget *widget;
 	QTimer *timerMouse;
 	QTimer *timerSettings;
-	bool move;
+
+	bool _move;
+
+	int _desktopWidth;
+	int _desktopHeight;
 
 	int _osdWidth;
 	int _osdHeight;
-	int _osdPosLeft;
-	int _osdPosTop;
 
 	QString _currentRatio;
 	QString _currentCrop;
 	QString _currentFilter;
-
-	QToolBar *osd;
 };
 
 #endif // QVLC_VLCVIDEOWIDGET_H_

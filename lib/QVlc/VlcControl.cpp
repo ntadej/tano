@@ -1,7 +1,7 @@
 #include "VlcControl.h"
 #include "VlcInstance.h"
 
-VlcControl::VlcControl(const QString lang)
+VlcControl::VlcControl(const QString &lang)
 {
 	audioGroup = 0;
 	subGroup = 0;

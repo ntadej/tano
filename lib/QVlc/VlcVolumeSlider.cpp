@@ -33,7 +33,7 @@ VlcVolumeSlider::~VlcVolumeSlider() {
 	delete timer;
 }
 
-void VlcVolumeSlider::changeVolume(const int newVolume)
+void VlcVolumeSlider::changeVolume(const int &newVolume)
 {
 	if(!_vlcCurrentMediaPlayer)
 		return;
@@ -80,7 +80,7 @@ void VlcVolumeSlider::updateVolume()
 	VlcInstance::checkError();
 }
 
-void VlcVolumeSlider::setVolume(const int volume)
+void VlcVolumeSlider::setVolume(const int &volume)
 {
 	slider->setValue(volume);
 	label->setText(QString().number(volume));
@@ -91,7 +91,7 @@ int VlcVolumeSlider::volume()
 	return slider->value();
 }
 
-void VlcVolumeSlider::volumeControl(const bool direction)
+void VlcVolumeSlider::volumeControl(const bool &direction)
 {
 	if(direction)
 		vup();

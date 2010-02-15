@@ -6,7 +6,7 @@
 
 class About : public QDialog
 {
-	Q_OBJECT
+Q_OBJECT
 public:
 	About(QWidget *parent = 0, QString version = "Unknown");
 	~About();

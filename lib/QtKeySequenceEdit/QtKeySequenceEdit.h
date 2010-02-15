@@ -3,7 +3,7 @@
 ** Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
 ** Contact: Qt Software Information (qt-info@nokia.com)
 **
-** Copyright (C) 2009 Tadej Novak
+** Copyright (C) 2009-2010 Tadej Novak
 **
 ** This file is part of the tools applications of the Qt Toolkit.
 **
@@ -21,38 +21,38 @@
 **
 ****************************************************************************/
 
+#include <QtGui/QAction>
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QLineEdit>
+#include <QtGui/QKeyEvent>
+#include <QtGui/QMenu>
 #include <QtGui/QWidget>
-#include <QLineEdit>
-#include <QHBoxLayout>
-#include <QMenu>
-#include <QAction>
-#include <QKeyEvent>
 
 class QtKeySequenceEdit : public QWidget
 {
-    Q_OBJECT
+Q_OBJECT
 public:
-    QtKeySequenceEdit(QWidget *parent = 0);
+	QtKeySequenceEdit(QWidget *parent = 0);
 
-    QKeySequence keySequence() const;
-    bool eventFilter(QObject *o, QEvent *e);
+	QKeySequence keySequence() const;
+	bool eventFilter(QObject *o, QEvent *e);
 public Q_SLOTS:
-    void setKeySequence(const QKeySequence &sequence);
+	void setKeySequence(const QKeySequence &sequence);
 Q_SIGNALS:
-    void keySequenceChanged(const QKeySequence &sequence);
+	void keySequenceChanged(const QKeySequence &sequence);
 protected:
-    void focusInEvent(QFocusEvent *e);
-    void focusOutEvent(QFocusEvent *e);
-    void keyPressEvent(QKeyEvent *e);
-    void keyReleaseEvent(QKeyEvent *e);
-    bool event(QEvent *e);
+	void focusInEvent(QFocusEvent *e);
+	void focusOutEvent(QFocusEvent *e);
+	void keyPressEvent(QKeyEvent *e);
+	void keyReleaseEvent(QKeyEvent *e);
+	bool event(QEvent *e);
 private slots:
-    void slotClearShortcut();
+	void slotClearShortcut();
 private:
-    void handleKeyEvent(QKeyEvent *e);
-    int translateModifiers(Qt::KeyboardModifiers state, const QString &text) const;
+	void handleKeyEvent(QKeyEvent *e);
+	int translateModifiers(Qt::KeyboardModifiers state, const QString &text) const;
 
-    int m_num;
-    QKeySequence m_keySequence;
-    QLineEdit *m_lineEdit;
+	int m_num;
+	QKeySequence m_keySequence;
+	QLineEdit *m_lineEdit;
 };

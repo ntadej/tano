@@ -1,11 +1,11 @@
-#include <QFileDialog>
-#include <QDesktopWidget>
-#include <QInputDialog>
-#include <QMessageBox>
-#include <QDir>
-#include <QSplashScreen>
-#include <QDebug>
-#include <QBitmap>
+#include <QtCore/QDir>
+#include <QtGui/QApplication>
+#include <QtGui/QBitmap>
+#include <QtGui/QDesktopWidget>
+#include <QtGui/QFileDialog>
+#include <QtGui/QInputDialog>
+#include <QtGui/QMessageBox>
+#include <QtGui/QSplashScreen>
 
 #include "MainWindow.h"
 #include "Common.h"
@@ -96,13 +96,9 @@ void MainWindow::createCommon()
 
 void MainWindow::createGui()
 {
-	ui.toolBarOsd->addWidget(ui.controlsWidget);
-	ui.toolBarOsd->setBackgroundRole(QPalette::Window);
-	ui.toolBarOsd->setStyleSheet("background-image: url(:/icons/images/blank.png);");
-
 	openPlaylist(true);
 
-	ui.pageMain->setStyleSheet("background-image: url(:/icons/images/name.png);\nbackground-position: center;\nbackground-repeat: none;");
+	ui.pageMain->setStyleSheet("background-color: rgb(0,0,0);\nbackground-image: url(:/icons/images/name.png);\nbackground-position: center;\nbackground-repeat: none;");
 }
 
 void MainWindow::createBackend()
@@ -112,8 +108,6 @@ void MainWindow::createBackend()
 
 	controller = new VlcControl(_defaultSubtitleLanguage);
 
-	ui.videoWidget->setToolbar(ui.toolBarOsd);
-
 #if VLC_TRUNK
 	ui.menuDeinterlacing->setEnabled(true);
 #endif
@@ -121,6 +115,9 @@ void MainWindow::createBackend()
 
 void MainWindow::createSettings()
 {
+	_desktopWidth = QApplication::desktop()->width();
+	_desktopHeight = QApplication::desktop()->height();
+
 	settings = Common::settings();
 	_defaultPlaylist = settings->value("playlist","playlists/siol-mpeg2.m3u").toString();
 	_hideToTray = settings->value("tray",false).toBool();
@@ -212,6 +209,7 @@ void MainWindow::createConnections()
 	connect(ui.actionTray, SIGNAL(triggered()), this, SLOT(tray()));
 
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
+	connect(ui.videoWidget, SIGNAL(osdVisibility(bool)), ui.osdWidget, SLOT(setVisible(bool)));
 
 	connect(epg, SIGNAL(epgDone(int,QStringList,QString)), this, SLOT(showEpg(int,QStringList,QString)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), epgShow, SLOT(open(QString)));
@@ -604,7 +602,7 @@ void MainWindow::lite()
 {
 	ui.infoWidget->setVisible(_isLite);
 	ui.toolBar->setVisible(_isLite);
-	ui.toolBarOsd->setVisible(_isLite);
+	ui.osdWidget->setVisible(_isLite);
 	_isLite = !_isLite;
 }
 
@@ -628,10 +626,17 @@ void MainWindow::fullscreen(const bool &on)
 	if(!_osdEnabled)
 		return;
 
-	if(on)
-		ui.videoWidget->addToolBar(Qt::BottomToolBarArea, ui.toolBarOsd);
-	else
-		this->addToolBar(Qt::BottomToolBarArea, ui.toolBarOsd);
+	if(on) {
+		ui.videoWidget->setOsdSize(ui.osdWidget->width(), ui.osdWidget->height());
+		ui.osdWidget->resize(2*_desktopWidth/3,ui.osdWidget->height());
+		ui.osdWidget->setFloating(true);
+		ui.osdWidget->move(_desktopWidth/6, _desktopHeight-ui.osdWidget->height());
+		ui.osdWidget->show();
+		ui.osdWidget->setWindowFlags(Qt::ToolTip);
+	} else {
+		ui.osdWidget->setFloating(false);
+		ui.osdWidget->show();
+	}
 }
 
 // Recorder
@@ -645,16 +650,16 @@ void MainWindow::recorder(const bool &enabled)
 	if(enabled) {
 		ui.stackedWidget->setCurrentIndex(1);
 		ui.infoWidget->setVisible(false);
-		ui.toolBarOsd->setVisible(false);
+		ui.osdWidget->setVisible(false);
 	} else {
 		ui.stackedWidget->setCurrentIndex(0);
 		ui.infoWidget->setVisible(true);
-		ui.toolBarOsd->setVisible(true);
+		ui.osdWidget->setVisible(true);
 	}
 }
 
 // Test
 void MainWindow::test()
 {
-	//A place for testing
+
 }

@@ -1,9 +1,9 @@
 #ifndef TANO_MAINWINDOW_H_
 #define TANO_MAINWINDOW_H_
 
+#include <QtCore/QSettings>
+#include <QtGui/QCloseEvent>
 #include <QtGui/QMainWindow>
-#include <QCloseEvent>
-#include <QSettings>
 
 #include <QVlc/VlcInstance.h>
 #include <QVlc/VlcControl.h>
@@ -23,8 +23,7 @@
 
 class MainWindow : public QMainWindow
 {
-	Q_OBJECT
-
+Q_OBJECT
 public:
 	MainWindow(QWidget *parent = 0);
 	~MainWindow();
@@ -83,6 +82,8 @@ private:
 	QSettings *settings;
 	QString _defaultPlaylist;
 	QString _defaultSubtitleLanguage;
+	int _desktopWidth;
+	int _desktopHeight;
 	bool _hasPlaylist;
 	bool _hideToTray;
 	bool _isLite;

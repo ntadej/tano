@@ -1,6 +1,6 @@
-#include <QVlc/VlcInstance.h>
+#include <QtCore/QDate>
 
-#include <QDate>
+#include <QVlc/VlcInstance.h>
 
 #include "About.h"
 #include "../Ver.h"
@@ -16,7 +16,7 @@ About::About(QWidget *parent, QString version)
 	ui.labelLinks->setText(ui.labelLinks->text().replace("http://tanoplayer.co.cc","<a href='http://tanoplayer.co.cc'>http://tanoplayer.co.cc</a>"));
 	ui.labelLinks->setText(ui.labelLinks->text().replace("info@tanoplayer.co.cc","<a href='info@tanoplayer.co.cc'>info@tanoplayer.co.cc</a>"));
 
-	ui.labelVlc->setText("<h3>libVLC "+VlcInstance::version().mid(0,5)+"</h3>");
+	ui.labelVlc->setText("<h3>libVLC "+VlcInstance::version().split(" ")[0]+"</h3>");
 	ui.labelQt->setText("<h3>Qt "+QtVersion()+"</h3>");
 
 	connect(ui.buttonLicense, SIGNAL(clicked()), this, SLOT(license()));

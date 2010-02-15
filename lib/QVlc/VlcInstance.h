@@ -7,7 +7,6 @@
 #include <vlc/vlc.h>
 
 #if VLC_TRUNK
-
 #else
 extern libvlc_exception_t *_vlcException;
 #endif
@@ -15,13 +14,14 @@ extern libvlc_exception_t *_vlcException;
 extern libvlc_instance_t *_vlcInstance;
 extern libvlc_media_player_t *_vlcCurrentMediaPlayer;
 
-class VlcInstance : public QObject {
+class VlcInstance : public QObject
+{
 Q_OBJECT
 public:
-	VlcInstance(QList<const char *> args, WId widget = NULL);
+	VlcInstance(const QList<const char *> &args, const WId &widget = NULL);
 	virtual ~VlcInstance();
 
-	void openMedia(QString media);
+	void openMedia(const QString &media);
 	static void checkError();
 	static QString version();
 

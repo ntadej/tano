@@ -93,17 +93,17 @@ void VlcSeekWidget::updateTime()
 
 void VlcSeekWidget::changeTime()
 {
-    if(!_vlcCurrentMediaPlayer)
-    	return;
+	if(!_vlcCurrentMediaPlayer)
+		return;
 
 	labelElapsed->setText(QTime(0,0,0,0).addMSecs(seek->value()).toString("hh:mm:ss"));
 
 #if VLC_TRUNK
-    libvlc_media_player_set_time(_vlcCurrentMediaPlayer, seek->value());
+	libvlc_media_player_set_time(_vlcCurrentMediaPlayer, seek->value());
 #else
-    libvlc_exception_clear(_vlcException);
-    libvlc_media_player_set_time(_vlcCurrentMediaPlayer, seek->value(), _vlcException);
+	libvlc_exception_clear(_vlcException);
+	libvlc_media_player_set_time(_vlcCurrentMediaPlayer, seek->value(), _vlcException);
 #endif
 
-    VlcInstance::checkError();
+	VlcInstance::checkError();
 }

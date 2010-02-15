@@ -12,7 +12,7 @@ libvlc_exception_t * _vlcException = new libvlc_exception_t();
 
 libvlc_media_player_t * _vlcCurrentMediaPlayer = NULL;
 
-VlcInstance::VlcInstance(QList<const char *> args, WId widget)
+VlcInstance::VlcInstance(const QList<const char *> &args, const WId &widget)
 	:_widgetId(widget), _args(args)
 {
 	_vlcMedia = NULL;
@@ -57,27 +57,27 @@ void VlcInstance::init()
 	}
 }
 
-void VlcInstance::openMedia(QString media)
+void VlcInstance::openMedia(const QString &media)
 {
 	unloadMedia();
 
 #if VLC_TRUNK
-    /* Create a new LibVLC media descriptor */
-    _vlcMedia = libvlc_media_new (_vlcInstance, media.toAscii());
-    checkError();
-    qDebug() << "libVlc" <<"Media:" << media;
+	/* Create a new LibVLC media descriptor */
+	_vlcMedia = libvlc_media_new (_vlcInstance, media.toAscii());
+	checkError();
+	qDebug() << "libVlc" <<"Media:" << media;
 
-    _vlcCurrentMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia);
-    checkError();
+	_vlcCurrentMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia);
+	checkError();
 #else
-    /* Create a new LibVLC media descriptor */
-    _vlcMedia = libvlc_media_new (_vlcInstance, media.toAscii(), _vlcException);
-    checkError();
+	/* Create a new LibVLC media descriptor */
+	_vlcMedia = libvlc_media_new (_vlcInstance, media.toAscii(), _vlcException);
+	checkError();
 
-    qDebug() << "libVlc" <<"Media:" << media;
+	qDebug() << "libVlc" <<"Media:" << media;
 
-    _vlcCurrentMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia, _vlcException);
-    checkError();
+	_vlcCurrentMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia, _vlcException);
+	checkError();
 #endif
 
 	/* Get our media instance to use our window */
@@ -173,9 +173,9 @@ void VlcInstance::checkError() {
 
 int VlcInstance::fatalError() {
 	 int ret = QMessageBox::critical(0, "libVLC Initialization",
-	                                "libVLC could not be initialized successfully.\n"
-	                                   "The application will now exit.",
-	                                QMessageBox::Ok | QMessageBox::Cancel,
-	                                QMessageBox::Ok);
+									"libVLC could not be initialized successfully.\n"
+									"The application will now exit.",
+									QMessageBox::Ok | QMessageBox::Cancel,
+									QMessageBox::Ok);
 	 return ret;
 }

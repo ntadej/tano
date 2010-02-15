@@ -1,4 +1,5 @@
 #include <QtGui/QApplication>
+#include <QtGui/QDesktopWidget>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QMouseEvent>
 #include <QtGui/QToolBar>
@@ -7,22 +8,24 @@
 #include "VlcVideoWidget.h"
 
 VlcVideoWidget::VlcVideoWidget(QWidget *parent)
-	: QMainWindow(parent)
+	: QWidget(parent)
 {
 	setMouseTracking(true);
 
-	move = true;
+	_move = true;
 
 	widget = new QWidget(this);
-	setCentralWidget(widget);
 	widget->setMouseTracking(true);
 
-	osd = 0;
+	QHBoxLayout *layout = new QHBoxLayout;
+	layout->addWidget(widget);
+	setLayout(layout);
+
+	_desktopWidth = QApplication::desktop()->width();
+	_desktopHeight = QApplication::desktop()->height();
 
 	_osdWidth = 0;
 	_osdHeight = 0;
-	_osdPosLeft = 0;
-	_osdPosTop = 0;
 
 	timerMouse = new QTimer(this);
 	connect(timerMouse, SIGNAL(timeout()), this, SLOT(hideMouse()));
@@ -46,17 +49,10 @@ WId VlcVideoWidget::getWinId()
 	return widget->winId();
 }
 
-void VlcVideoWidget::setOsd(int width, int height, int posLeft, int posTop)
+void VlcVideoWidget::setOsdSize(const int &width, const int &height)
 {
 	_osdWidth = width;
 	_osdHeight = height;
-	_osdPosLeft = posLeft;
-	_osdPosTop = posTop;
-}
-
-void VlcVideoWidget::setToolbar(QToolBar *toolbar)
-{
-	osd = toolbar;
 }
 
 //Events:
@@ -69,11 +65,15 @@ void VlcVideoWidget::mouseMoveEvent(QMouseEvent *event)
 {
 	event->ignore();
 
-	if(this->isFullScreen() && move) {
+	if(this->isFullScreen() && _move) {
 		qApp->setOverrideCursor(Qt::ArrowCursor);
+		emit osdVisibility(true);
 
-	osd->show();
-	timerMouse->start(2000);
+		if(event->globalPos().y() >= _desktopHeight-_osdHeight) {
+			timerMouse->stop();
+		} else {
+			timerMouse->start(1000);
+		}
 	}
 }
 void VlcVideoWidget::mousePressEvent(QMouseEvent *event)
@@ -97,16 +97,16 @@ void VlcVideoWidget::wheelEvent(QWheelEvent *event)
 
 void VlcVideoWidget::hideMouse()
 {
-	if(this->isFullScreen() && move) {
+	if(this->isFullScreen() && _move) {
 		qApp->setOverrideCursor(Qt::BlankCursor);
+		emit osdVisibility(false);
 		timerMouse->stop();
-		osd->hide();
 	}
 }
 
 //Move
-void VlcVideoWidget::disableMove() { move = false; }
-void VlcVideoWidget::enableMove() {	move = true; }
+void VlcVideoWidget::disableMove() { _move = false; }
+void VlcVideoWidget::enableMove() {	_move = true; }
 
 void VlcVideoWidget::controlFull()
 {
@@ -132,8 +132,6 @@ void VlcVideoWidget::controlFull()
 		qApp->setOverrideCursor(Qt::ArrowCursor);
 		show();
 	}
-
-	osd->show();
 }
 
 void VlcVideoWidget::teletext()

@@ -6,7 +6,8 @@
 #include <QtGui/QSlider>
 #include <QtGui/QWidget>
 
-class VlcSeekWidget : public QWidget {
+class VlcSeekWidget : public QWidget
+{
 Q_OBJECT
 public:
 	VlcSeekWidget(QWidget *parent = 0);
