@@ -26,7 +26,6 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/EpgShow.ui
 	ui/InfoBar.ui
 	ui/MainWindow.ui
-	ui/Osd.ui
 	ui/PlaylistWidget.ui
 	ui/Recorder.ui
 	ui/TimersManager.ui
@@ -52,7 +51,6 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/FirstRun.h
 	ui/InfoBar.h
 	ui/License.h
-	ui/Osd.h
 	ui/PlaylistWidget.h
 	ui/TrayIcon.h
 )
@@ -78,7 +76,6 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	ui/FirstRun.cpp
 	ui/InfoBar.cpp
 	ui/License.cpp
-	ui/Osd.cpp
 	ui/PlaylistWidget.cpp
 	ui/TrayIcon.cpp
 	xml/M3UGenerator.cpp

@@ -70,7 +70,7 @@ void MainWindow::exit()
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-	if(settings->value("tray",false).toBool()) {
+	if(_hideToTray) {
 		tray();
 		event->ignore();
 	}
@@ -97,13 +97,12 @@ void MainWindow::createCommon()
 void MainWindow::createGui()
 {
 	ui.toolBarOsd->addWidget(ui.controlsWidget);
-
-	if(_osdEnabled)
-		createOsd();
-	else
-		osd = 0;
+	ui.toolBarOsd->setBackgroundRole(QPalette::Window);
+	ui.toolBarOsd->setStyleSheet("background-image: url(:/icons/images/blank.png);");
 
 	openPlaylist(true);
+
+	ui.pageMain->setStyleSheet("background-image: url(:/icons/images/name.png);\nbackground-position: center;\nbackground-repeat: none;");
 }
 
 void MainWindow::createBackend()
@@ -112,6 +111,8 @@ void MainWindow::createBackend()
 	backend->init();
 
 	controller = new VlcControl(_defaultSubtitleLanguage);
+
+	ui.videoWidget->setToolbar(ui.toolBarOsd);
 
 #if VLC_TRUNK
 	ui.menuDeinterlacing->setEnabled(true);
@@ -122,6 +123,7 @@ void MainWindow::createSettings()
 {
 	settings = Common::settings();
 	_defaultPlaylist = settings->value("playlist","playlists/siol-mpeg2.m3u").toString();
+	_hideToTray = settings->value("tray",false).toBool();
 	_updatesOnStart = settings->value("updates",true).toBool();
 
 	//Session
@@ -184,6 +186,7 @@ void MainWindow::createConnections()
 
 	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
 	connect(ui.actionLite, SIGNAL(triggered()), this, SLOT(lite()));
+	connect(ui.actionFullscreen, SIGNAL(toggled(bool)), this, SLOT(fullscreen(bool)));
 
 	connect(ui.actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
 	connect(ui.actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
@@ -202,8 +205,8 @@ void MainWindow::createConnections()
 	connect(ui.infoBarWidget, SIGNAL(refresh()), epg, SLOT(refresh()));
 	connect(ui.infoBarWidget, SIGNAL(open(QString)), epgShow, SLOT(open(QString)));
 
-	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
-	connect(select, SIGNAL(channelSelect(int)), this, SLOT(key(int)));
+	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playChannel(QTreeWidgetItem*)));
+	connect(select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
 
 	connect(trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
 	connect(ui.actionTray, SIGNAL(triggered()), this, SLOT(tray()));
@@ -231,6 +234,8 @@ void MainWindow::createConnections()
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
 	else
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), select, SLOT(channel(bool)));
+
+	connect(ui.actionTest_button, SIGNAL(triggered()), this, SLOT(test()));
 }
 
 void MainWindow::createMenus()
@@ -324,34 +329,11 @@ void MainWindow::createSession()
 	if(_sessionEnabled) {
 		ui.volumeSlider->setVolume(_sessionVolume);
 		if(_hasPlaylist)
-			key(_sessionChannel);
+			playChannel(_sessionChannel);
 	}
 
 	if(_updatesOnStart)
 		update->getUpdates();
-}
-
-void MainWindow::createOsd()
-{
-	osd = new Osd();
-	ui.videoWidget->setOsd(QApplication::desktop()->width(),osd->height(),0,QApplication::desktop()->height()-osd->height());
-
-	connect(osd, SIGNAL(play()), ui.actionPlay, SLOT(trigger()));
-	connect(osd, SIGNAL(stop()), ui.actionStop, SLOT(trigger()));
-	connect(osd, SIGNAL(back()), ui.actionBack, SLOT(trigger()));
-	connect(osd, SIGNAL(next()), ui.actionNext, SLOT(trigger()));
-	connect(osd, SIGNAL(mute()), ui.actionMute, SLOT(trigger()));
-
-	connect(ui.actionMute, SIGNAL(triggered(bool)), osd, SLOT(setMuted(bool)));
-
-	connect(ui.videoWidget, SIGNAL(full()), osd, SLOT(hideOsd()));
-	connect(ui.videoWidget, SIGNAL(mouseMove()), osd, SLOT(showOsd()));
-	connect(ui.videoWidget, SIGNAL(osd(bool)), osd, SLOT(setStatus(bool)));
-
-	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
-	connect(osd, SIGNAL(linkActivated(QString)), epgShow, SLOT(open(QString)));
-
-	connect(controller, SIGNAL(stateChanged(int)), osd, SLOT(playingState(int)));
 }
 
 void MainWindow::createRecorder()
@@ -367,8 +349,6 @@ void MainWindow::createRecorder()
 		ui.menuRecorder->hide();
 		ui.toolBar->removeAction(ui.actionRecorder);
 		ui.toolBar->removeAction(ui.actionTimers);
-		if(_osdEnabled)
-			osd->disableRecorder();
 	}
 }
 
@@ -377,8 +357,9 @@ void MainWindow::aboutTano()
 	Common::about();
 }
 
+
 //Media controls
-void MainWindow::playlist(QTreeWidgetItem* clickedChannel)
+void MainWindow::playChannel(QTreeWidgetItem* clickedChannel)
 {
 	Channel *tmp = ui.playlistWidget->channelRead(clickedChannel);
 	if (tmp->isCategory() != true) {
@@ -386,8 +367,7 @@ void MainWindow::playlist(QTreeWidgetItem* clickedChannel)
 		play();
 	}
 }
-
-void MainWindow::key(int clickedChannel)
+void MainWindow::playChannel(const int &clickedChannel)
 {
 	Channel *tmp = ui.playlistWidget->channelReadNum(clickedChannel);
 	if (tmp->isCategory() != true) {
@@ -396,7 +376,7 @@ void MainWindow::key(int clickedChannel)
 	}
 }
 
-void MainWindow::playingState(int status)
+void MainWindow::playingState(const int &status)
 {
 	if(status == 1) {
 		ui.actionPlay->setEnabled(true);
@@ -426,7 +406,7 @@ void MainWindow::playingState(int status)
 	}
 }
 
-void MainWindow::play(QString itemFile, QString itemType)
+void MainWindow::play(const QString &itemFile)
 {
 	this->stop();
 
@@ -439,11 +419,6 @@ void MainWindow::play(QString itemFile, QString itemType)
 		backend->openMedia(channel->url());
 		tooltip(channel->name());
 		trayIcon->changeToolTip(channel->name());
-
-		if(_osdEnabled) {
-			osd->setNumber(channel->num());
-			osd->setInfo(channel->name(), channel->language());
-		}
 	} else {
 		ui.infoWidget->hide();
 		backend->openMedia(itemFile);
@@ -454,15 +429,31 @@ void MainWindow::play(QString itemFile, QString itemType)
 		ui.videoWidget->setPreviousSettings();
 }
 
-void MainWindow::showEpg(int id, QStringList epgValue, QString date)
+void MainWindow::stop()
+{
+	ui.epgToday->epgClear();
+	ui.epgToday_2->epgClear();
+	ui.epgToday_3->epgClear();
+	ui.epgToday_4->epgClear();
+
+	if(!_videoSettings) {
+		ui.actionRatioOriginal->trigger();
+		ui.actionCropOriginal->trigger();
+	}
+
+	ui.infoBarWidget->clear();
+	epg->stop();
+	tooltip();
+	trayIcon->changeToolTip();
+
+	controller->update();
+}
+
+void MainWindow::showEpg(const int &id, const QStringList &epgValue, const QString &date)
 {
 	switch (id) {
 		case 0:
 			ui.infoBarWidget->setEpg(epgValue.at(0), epgValue.at(1));
-
-			if(_osdEnabled)
-				osd->setEpg(true, epgValue.at(0), epgValue.at(1));
-
 			break;
 		case 1:
 			ui.epgTabWidget->setTabText(0,date);
@@ -485,31 +476,37 @@ void MainWindow::showEpg(int id, QStringList epgValue, QString date)
 	}
 }
 
-void MainWindow::stop()
+void MainWindow::processMenu(const QString &type, const QList<QAction *> &list)
 {
-	ui.epgToday->epgClear();
-	ui.epgToday_2->epgClear();
-	ui.epgToday_3->epgClear();
-	ui.epgToday_4->epgClear();
+	if(type == "sub")
+		ui.menuSubtitles->clear();
+	else if(type == "audio")
+		ui.menuAudio_channel->clear();
 
-	if(!_videoSettings) {
-		ui.actionRatioOriginal->trigger();
-		ui.actionCropOriginal->trigger();
+	if(list.size()==0) {
+		if(type == "sub")
+			ui.menuSubtitles->setDisabled(true);
+		else if(type == "audio")
+			ui.menuAudio_channel->setDisabled(true);
+
+		return;
+	} else {
+		if(type == "sub")
+			ui.menuSubtitles->setDisabled(false);
+		else if(type == "audio")
+			ui.menuAudio_channel->setDisabled(false);
 	}
 
-	ui.infoBarWidget->clear();
-	if(_osdEnabled) {
-		osd->setInfo();
-		osd->setEpg(false);
+	for (int i = 0; i < list.size(); ++i) {
+		if(type == "sub")
+			ui.menuSubtitles->addAction(list.at(i));
+		else if(type == "audio")
+			ui.menuAudio_channel->addAction(list.at(i));
 	}
-	epg->stop();
-	tooltip();
-	trayIcon->changeToolTip();
-
-	controller->update();
 }
 
-void MainWindow::openPlaylist(bool start)
+// Open dialogs
+void MainWindow::openPlaylist(const bool &start)
 {
 	if (!start)
 	_playlistName =
@@ -539,7 +536,6 @@ void MainWindow::openPlaylist(bool start)
 
 	ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
 }
-
 void MainWindow::openFile()
 {
 	_fileName =
@@ -550,9 +546,8 @@ void MainWindow::openFile()
 	if (_fileName.isEmpty())
 		return;
 
-	play(_fileName, "file");
+	play(_fileName);
 }
-
 void MainWindow::openUrl()
 {
 	bool ok;
@@ -564,7 +559,7 @@ void MainWindow::openUrl()
 	if (!ok && _fileName.isEmpty())
 		return;
 
-	play(_fileName,"url");
+	play(_fileName);
 }
 
 
@@ -575,7 +570,7 @@ void MainWindow::showSettings()
 	s.exec();
 }
 
-void MainWindow::tooltip(QString channelNow)
+void MainWindow::tooltip(const QString &channelNow)
 {
 	if (channelNow != "stop")
 		setWindowTitle(channelNow + " - " + tr("Tano"));
@@ -583,7 +578,7 @@ void MainWindow::tooltip(QString channelNow)
 		setWindowTitle(tr("Tano"));
 }
 
-void MainWindow::showRightMenu(QPoint pos)
+void MainWindow::showRightMenu(const QPoint &pos)
 {
 	rightMenu->exec(pos);
 }
@@ -628,12 +623,24 @@ void MainWindow::tray()
 	}
 }
 
+void MainWindow::fullscreen(const bool &on)
+{
+	if(!_osdEnabled)
+		return;
+
+	if(on)
+		ui.videoWidget->addToolBar(Qt::BottomToolBarArea, ui.toolBarOsd);
+	else
+		this->addToolBar(Qt::BottomToolBarArea, ui.toolBarOsd);
+}
+
+// Recorder
 void MainWindow::recordNow()
 {
 	ui.recorder->recordNow(ui.channelNumber->value(), channel->url(), channel->name());
 }
 
-void MainWindow::recorder(bool enabled)
+void MainWindow::recorder(const bool &enabled)
 {
 	if(enabled) {
 		ui.stackedWidget->setCurrentIndex(1);
@@ -646,31 +653,8 @@ void MainWindow::recorder(bool enabled)
 	}
 }
 
-void MainWindow::processMenu(QString type, QList<QAction*> list)
+// Test
+void MainWindow::test()
 {
-	if(type == "sub")
-		ui.menuSubtitles->clear();
-	else if(type == "audio")
-		ui.menuAudio_channel->clear();
-
-	if(list.size()==0) {
-		if(type == "sub")
-			ui.menuSubtitles->setDisabled(true);
-		else if(type == "audio")
-			ui.menuAudio_channel->setDisabled(true);
-
-		return;
-	} else {
-		if(type == "sub")
-			ui.menuSubtitles->setDisabled(false);
-		else if(type == "audio")
-			ui.menuAudio_channel->setDisabled(false);
-	}
-
-	for (int i = 0; i < list.size(); ++i) {
-		if(type == "sub")
-			ui.menuSubtitles->addAction(list.at(i));
-		else if(type == "audio")
-			ui.menuAudio_channel->addAction(list.at(i));
-	}
+	//A place for testing
 }

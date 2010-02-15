@@ -19,7 +19,6 @@
 #include "epg/Epg.h"
 #include "epg/EpgShow.h"
 #include "recorder/TimersManager.h"
-#include "ui/Osd.h"
 #include "ui/TrayIcon.h"
 
 class MainWindow : public QMainWindow
@@ -35,34 +34,35 @@ protected:
 
 private slots:
 	void exit();
-
 	void aboutTano();
-	void playlist(QTreeWidgetItem* clickedChannel);
-	void key(int clickedChannel);
-
-	void play(QString itemFile = 0, QString itemType = 0);
-	void stop();
-
-	void playingState(int status);
-
-	void openPlaylist(bool start = false);
-	void openFile();
-	void openUrl();
 	void showSettings();
 
-	void showEpg(int id, QStringList epgValue, QString date);
+	void play(const QString &itemFile = 0);
+	void stop();
+	void playingState(const int &status);
 
-	void tooltip(QString channelNow = "stop");
+	void playChannel(QTreeWidgetItem* clickedChannel);
+	void playChannel(const int &clickedChannel);
 
-	void showRightMenu(QPoint pos);
+	void openPlaylist(const bool &start = false);
+	void openFile();
+	void openUrl();
+
+	void showEpg(const int &id, const QStringList &epgValue, const QString &date);
+	void processMenu(const QString &type, const QList<QAction*> &list);
+
+	void tooltip(const QString &channelNow = "stop");
+	void showRightMenu(const QPoint &pos);
 	void menuOpen();
 	void top();
 	void lite();
 	void tray();
+	void fullscreen(const bool &on);
 
 	void recordNow();
-	void recorder(bool enabled);
-	void processMenu(QString type, QList<QAction*> list);
+	void recorder(const bool &enabled);
+
+	void test();
 
 signals:
 	void setVolume(int);
@@ -74,7 +74,6 @@ private:
 	void createConnections();
 	void createGui();
 	void createMenus();
-	void createOsd();
 	void createRecorder();
 	void createSettings();
 	void createSession();
@@ -85,6 +84,7 @@ private:
 	QString _defaultPlaylist;
 	QString _defaultSubtitleLanguage;
 	bool _hasPlaylist;
+	bool _hideToTray;
 	bool _isLite;
 	bool _osdEnabled;
 	bool _recorderEnabled;
@@ -108,7 +108,6 @@ private:
 	//GUI
 	Ui::MainWindow ui;
 	Qt::WindowFlags flags;
-	Osd *osd;
 
 	//Playback and channels
 	Channel *channel;

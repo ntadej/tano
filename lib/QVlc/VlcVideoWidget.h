@@ -2,9 +2,9 @@
 #define QVLC_VLCVIDEOWIDGET_H_
 
 #include <QtCore/QTimer>
-#include <QtGui/QWidget>
+#include <QtGui/QMainWindow>
 
-class VlcVideoWidget : public QWidget
+class VlcVideoWidget : public QMainWindow
 {
     Q_OBJECT
 
@@ -14,6 +14,7 @@ public:
 
 	WId getWinId();
 	void setOsd(int width, int height, int posLeft, int posTop);
+	void setToolbar(QToolBar *toolbar);
 
 protected:
 	void mouseDoubleClickEvent(QMouseEvent *event);
@@ -26,7 +27,6 @@ signals:
 	void rightClick(QPoint);
 	void wheel(bool);
 	void mouseMove();
-	void osd(bool);
 
 public slots:
 	void disableMove();
@@ -85,6 +85,8 @@ private:
 	QString _currentRatio;
 	QString _currentCrop;
 	QString _currentFilter;
+
+	QToolBar *osd;
 };
 
 #endif // QVLC_VLCVIDEOWIDGET_H_
