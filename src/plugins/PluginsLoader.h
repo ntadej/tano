@@ -1,5 +1,5 @@
 /****************************************************************************
-* FripPlugin.h: Recorder Plugin using friptv
+* PluginsLoader.h: A class for loading plugins
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,38 +13,34 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_FRIPPLUGIN_H_
-#define TANO_FRIPPLUGIN_H_
+#ifndef TANO_PLUGINSLOADER_H_
+#define TANO_PLUGINSLOADER_H_
 
-#include <QtCore/QProcess>
+#include <QtCore/QDir>
+#include <QtCore/QList>
+#include <QtCore/QObject>
 #include <QtCore/QString>
 
-#include "plugins/Plugins.h"
+#include "Plugins.h"
 
-class FripPlugin : public RecorderPlugin
+class PluginsLoader
 {
 public:
-	FripPlugin();
-	~FripPlugin();
+    PluginsLoader();
+	~PluginsLoader();
 
-	void record(const QString &channelName,
-				const QString &channelUrl,
-				const QString &recordingDir);
-	void stop();
-	bool isRecording() const;
-	bool isValid() const {return fripExists();};
-	QString output() const {return _output;};
+	QList<QObject*> recorderPlugin() const {return _recorderPlugins;};
+	QStringList recorderFile() const {return _recorderFiles;};
+	QStringList recorderName() const {return _recorderNames;};
+	RecorderPlugin *recorder(QObject *plugin);
 
 private:
-	bool fripExists() const;
-	QString fripPath() const;
+	void processDir(QDir &dir);
+	void processPlugin(QObject *plugin, const QString &pluginFile);
 
-	QProcess *fripProcess;
-	QString _fripPath;
-
-	QString _file;
-	QString _slash;
-	QString _output;
+	QList<QObject*> _recorderPlugins;
+	QStringList _recorderFiles;
+	QStringList _recorderNames;
 };
 
-#endif // TANO_FRIPPLUGIN_H_
+#endif // TANO_PLUGINSLOADER_H_

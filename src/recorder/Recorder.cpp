@@ -1,19 +1,31 @@
-#include <QAction>
-#include <QCloseEvent>
-#include <QDir>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QDateTime>
-#include <QDebug>
+/****************************************************************************
+* Recorder.cpp: Class for recording management
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
+#include <QtCore/QPluginLoader>
+#include <QtGui/QFileDialog>
+#include <QtGui/QMessageBox>
 
 #include "../Common.h"
+#include "../plugins/PluginsLoader.h"
 #include "Recorder.h"
+
+#include <QDebug>
 
 Recorder::Recorder(QWidget *parent)
 	: QWidget(parent)
 {
-	slash = "/";
-
 	ui.setupUi(this);
 
 	//Init
@@ -27,9 +39,6 @@ Recorder::Recorder(QWidget *parent)
 	trayIcon = 0;
 	actionRecord = 0;
 
-	frip = new QProcess(this);
-	fripPath = Common::frip();
-
 	timer = new QTimer(this);
 
 	connect(timer, SIGNAL(timeout()), this, SLOT(sec()));
@@ -38,19 +47,24 @@ Recorder::Recorder(QWidget *parent)
 	connect(ui.buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
 
 	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
+
+	PluginsLoader *loader = new PluginsLoader();
+	for(int i=0; i < loader->recorderPlugin().size(); i++)
+		if(loader->recorderName()[i] == "FripPlugin")
+			plugin = loader->recorder(loader->recorderPlugin()[i]);
+	delete loader;
 }
 
 Recorder::~Recorder()
 {
 	delete trayIcon;
-	delete frip;
 	delete timer;
 	delete settings;
 }
 
 void Recorder::stop()
 {
-	frip->terminate();
+	plugin->stop();
 }
 
 void Recorder::openPlaylist(const QString &file)
@@ -93,41 +107,17 @@ void Recorder::record(const bool &status)
 						tr("Cannot write to %1.")
 						.arg(ui.fileEdit->text()));
 			return;
-		} else if(ui.valueSelected->text() == "-") {
+		} else if(ui.valueSelected->text() == "") {
 			ui.buttonRecord->setChecked(false);
 			QMessageBox::critical(this, tr("Recorder"),
 						tr("Channel is not selected!"));
 			return;
 		}
 
-		QFile file(QDir::tempPath()+"/tano.txt");
-		if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-			return;
+		plugin->record(channel->name(), channel->url(), ui.fileEdit->text());
 
-		QTextStream out(&file);
-		out << "#EXTM3U" << "\n"
-			<< "#EXTINF:0," << channel->name() << "\n"
-			<< channel->url();
-
-		QString fileName = ui.fileEdit->text()+slash+channel->name().replace(" ","_")+QDateTime::currentDateTime().toString("-dd_MM_yyyy-hh_mm_ss")+".avi";
-
-#ifdef Q_WS_WIN
-		fileName.replace("/","\\");
-#endif
-
-		QStringList arguments;
-		arguments << "-cl";
-
-#ifdef Q_WS_WIN
-		arguments << QString(QDir::tempPath()+slash+"tano.txt").replace("/","\\");
-#else
-		arguments << QDir::tempPath()+slash+"tano.txt";
-#endif
-		arguments << "-s"
-				  << "-fi"
-				  << fileName;
-
-		frip->start(fripPath, arguments);
+		QString fileName;
+		fileName = plugin->output();
 
 		if(trayIcon)
 			trayIcon->changeToolTip(channel->name(), "recorder");
@@ -144,20 +134,18 @@ void Recorder::record(const bool &status)
 		if(actionRecord)
 			actionRecord->setEnabled(true);
 
-		QStringList arg;
-		arg << "record" << channel->name() << fileName;
 		if (trayIcon && trayIcon->isVisible()) {
-			trayIcon->message(arg);
+			trayIcon->message(QStringList() << "record" << channel->name() << fileName);
 		}
 
 		recording = true;
 	} else {
-		frip->kill();
+		plugin->stop();
 		timer->stop();
-		ui.valueCurrent->setText("-");
-		ui.valueTime->setText("0");
-		ui.valueRemaining->setText(tr("0"));
-		ui.valueFile->setText("-");
+		ui.valueCurrent->setText("");
+		ui.valueTime->setText("");
+		ui.valueRemaining->setText(tr(""));
+		ui.valueFile->setText("");
 
 		ui.buttonRecord->setText(tr("Record"));
 		if(actionRecord)

@@ -1,67 +1,82 @@
-#include <QDir>
-#include <QFileInfo>
+/****************************************************************************
+* Common.cpp: Basic functions for Tano application
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
+#include <QtCore/QDir>
+#include <QtCore/QFileInfo>
 
 #include "Common.h"
 #include "Ver.h"
 #include "ui/About.h"
 
-QString Common::locateResource(QString fileN) {
+QString Common::locateResource(const QString &file)
+{
 	QString path;
 
-	if (QFileInfo(fileN).exists())
-		path = QFileInfo(fileN).absoluteFilePath();
+	if (QFileInfo(file).exists())
+		path = QFileInfo(file).absoluteFilePath();
 
 	// Try application exe working path
-	else if (QFileInfo(QDir::currentPath() + "/" + fileN).exists())
-		path = QFileInfo(QDir::currentPath() + "/" + fileN).absoluteFilePath();
+	else if (QFileInfo(QDir::currentPath() + "/" + file).exists())
+		path = QFileInfo(QDir::currentPath() + "/" + file).absoluteFilePath();
 
 	// Try application exe directory
-	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + fileN).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + fileN).absoluteFilePath();
+	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
 
 #ifdef Q_WS_X11
-		else if (QFileInfo("/usr/bin/" + fileN).exists())
-			path = QFileInfo("/usr/bin/" + fileN).absoluteFilePath();
+		else if (QFileInfo("/usr/bin/" + file).exists())
+			path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
 #endif
 
 #ifdef DEFAULT_DATA_DIR
-	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + fileN).exists())
-		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + fileN).absoluteFilePath();
+	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
+		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
 #endif
 
 	return path;
 }
 
-QString Common::locateLang(QString fileL) {
+QString Common::locateLang(const QString &file)
+{
 	QString path;
 
-	if (QFileInfo(fileL).exists())
-		path = QFileInfo(fileL).absoluteFilePath();
+	if (QFileInfo(file).exists())
+		path = QFileInfo(file).absoluteFilePath();
 
 	// Try application exe working path
-	else if (QFileInfo(QDir::currentPath() + "/lang/" + fileL).exists())
-		path = QFileInfo(QDir::currentPath() + "/lang/" + fileL).absoluteFilePath();
+	else if (QFileInfo(QDir::currentPath() + "/lang/" + file).exists())
+		path = QFileInfo(QDir::currentPath() + "/lang/" + file).absoluteFilePath();
 
 	// Try application exe working path + src for development
-	else if (QFileInfo(QDir::currentPath() + "/src/lang/" + fileL).exists())
-		path = QFileInfo(QDir::currentPath() + "/src/lang/" + fileL).absoluteFilePath();
+	else if (QFileInfo(QDir::currentPath() + "/src/lang/" + file).exists())
+		path = QFileInfo(QDir::currentPath() + "/src/lang/" + file).absoluteFilePath();
 
 	// Try application exe directory
-	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + fileL).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + fileL).absoluteFilePath();
+	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + file).absoluteFilePath();
 
 	// Try application exe directory + src for development
-	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/src/lang/" + fileL).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath() + "/src/lang/" + fileL).absoluteFilePath();
+	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/src/lang/" + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath() + "/src/lang/" + file).absoluteFilePath();
 
 #ifdef DEFAULT_DATA_DIR
-
-	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + fileL).exists())
-		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + fileL).absoluteFilePath();
-
+	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + file).exists())
+		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + file).absoluteFilePath();
 #endif
 
-	return path.replace(QString("/" + fileL), QString(""));
+	return path.replace(QString("/" + file), QString(""));
 }
 
 QString Common::version()
@@ -72,40 +87,25 @@ QString Common::version()
 		return TanoVersion();
 }
 
-bool Common::fripExists()
-{
-	if (!locateResource(frip()).isEmpty())
-		return true;
-	else
-		return false;
-}
-
-QString Common::frip()
-{
-#ifdef Q_WS_X11
-	return "friptv";
-#else
-	return QCoreApplication::applicationDirPath() + "/friptv/friptv.exe";
-#endif
-}
-
 void Common::about(QWidget *parent)
 {
-
 	About about(parent, version());
 	about.exec();
 }
 
 QSettings* Common::settings()
 {
-	QSettings* settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-	return settings;
+	return new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
 }
 
 QString Common::settingsPath()
 {
-	QString path = settings()->fileName();
+	QSettings *s = settings();
+	QString path = s->fileName();
 	path.replace("Settings.ini","");
+
+	delete s;
+
 	return path;
 }
 

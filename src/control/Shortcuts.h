@@ -1,17 +1,31 @@
+/****************************************************************************
+* Shortcuts.h: Setting shortcuts on actions
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #ifndef TANO_SHORTCUTS_H_
 #define TANO_SHORTCUTS_H_
 
-#include <QObject>
-#include <QAction>
-#include <QList>
-#include <QStringList>
-#include <QSettings>
+#include <QtCore/QList>
+#include <QtCore/QSettings>
+#include <QtCore/QStringList>
+#include <QtGui/QAction>
 
-class Shortcuts : public QObject {
-	Q_OBJECT
+class Shortcuts
+{
 public:
-	Shortcuts(QList<QAction*> list);
-	virtual ~Shortcuts();
+	Shortcuts(const QList<QAction*> &list);
+	~Shortcuts();
 
 	void apply();
 	QStringList defaultKeys() const {return defaultList;};

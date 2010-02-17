@@ -1,10 +1,25 @@
-#include <QCoreApplication>
-#include <QTranslator>
-#include <QSettings>
-#include <QLocale>
+/****************************************************************************
+* main.cpp: Tano application main
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
 
-#include "MainWindow.h"
+#include <QtCore/QCoreApplication>
+#include <QtCore/QLocale>
+#include <QtCore/QSettings>
+#include <QtCore/QTranslator>
+
 #include "Common.h"
+#include "MainWindow.h"
 #include "ui/FirstRun.h"
 
 int main(int argc, char *argv[])

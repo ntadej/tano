@@ -1,7 +1,19 @@
-#include <QtCore/QPluginLoader>
-#include <QtCore/QDebug>
+/****************************************************************************
+* PluginsManager.cpp: A dialog that lists all available plugins
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
 
-#include "Plugins.h"
+#include "PluginsLoader.h"
 #include "PluginsManager.h"
 
 PluginsManager::PluginsManager(QWidget *parent)
@@ -15,25 +27,12 @@ PluginsManager::PluginsManager(QWidget *parent)
 							QIcon::Normal, QIcon::Off);
 	featureIcon.addPixmap(style()->standardPixmap(QStyle::SP_FileIcon));
 
-	pluginsDir = QDir(qApp->applicationDirPath());
-	pluginsDir.cdUp();
-	pluginsDir.cd("plugins");
+	PluginsLoader *loader = new PluginsLoader();
 
-	QDir tmp;
-	foreach (QString folderName, pluginsDir.entryList(QDir::Dirs)) {
-		tmp = pluginsDir;
-		tmp.cd(folderName);
-		foreach (QString fileName, tmp.entryList(QDir::Files)) {
-			QPluginLoader loader;
-			loader.setFileName(tmp.absoluteFilePath(fileName));
-			QObject *plugin = loader.instance();
-			if (plugin) {
-				pluginFileNames += fileName;
-				populateTreeWidget(plugin, fileName);
-			}
-		}
-	}
+	for(int i=0; i < loader->recorderPlugin().size(); i++)
+		populateTreeWidget(loader->recorderFile()[i], loader->recorderName()[i]);
 
+	delete loader;
 }
 
 PluginsManager::~PluginsManager()
@@ -41,26 +40,20 @@ PluginsManager::~PluginsManager()
 
 }
 
-void PluginsManager::populateTreeWidget(QObject *plugin, const QString &text)
+void PluginsManager::populateTreeWidget(const QString &file, const QString &name)
 {
 	QTreeWidgetItem *pluginItem = new QTreeWidgetItem(ui.pluginsWidget);
-	pluginItem->setText(0, text);
+	pluginItem->setText(0, file);
 	ui.pluginsWidget->setItemExpanded(pluginItem, true);
 
 	QFont boldFont = pluginItem->font(0);
 	boldFont.setBold(true);
 	pluginItem->setFont(0, boldFont);
 
-	if (plugin) {
-		RecorderPluginCreator *rp =
-				qobject_cast<RecorderPluginCreator *>(plugin);
-		if (rp) {
-			QTreeWidgetItem *interfaceItem = new QTreeWidgetItem(pluginItem);
-			interfaceItem->setText(0, "Recorder");
-			interfaceItem->setIcon(0, interfaceIcon);
-			QTreeWidgetItem *featureItem = new QTreeWidgetItem(interfaceItem);
-			featureItem->setText(0, rp->createRecorderPluginInstance()->name());
-			featureItem->setIcon(0, featureIcon);
-		}
-	}
+	QTreeWidgetItem *interfaceItem = new QTreeWidgetItem(pluginItem);
+	interfaceItem->setText(0, tr("Recorder Plugin"));
+	interfaceItem->setIcon(0, interfaceIcon);
+	QTreeWidgetItem *featureItem = new QTreeWidgetItem(interfaceItem);
+	featureItem->setText(0, name);
+	featureItem->setIcon(0, featureIcon);
 }
