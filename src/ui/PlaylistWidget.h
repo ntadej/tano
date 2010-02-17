@@ -10,14 +10,14 @@
 
 class PlaylistWidget : public QWidget
 {
-    Q_OBJECT
+Q_OBJECT
 
 public:
 	PlaylistWidget(QWidget *parent = 0);
 	~PlaylistWidget();
 
 	void clear();
-	void open(QString file);
+	void open(const QString &file);
 	QString name();
 	QString fileName();
 	QList<int> nums();
@@ -25,17 +25,17 @@ public:
 
 public slots:
 	Channel *channelRead(QTreeWidgetItem* clickedChannel);
-	Channel *channelReadNum(int clickedChannel);
+	Channel *channelRead(const int &clickedChannel);
 
 signals:
-	void itemClicked(QTreeWidgetItem*, int);
+	void itemClicked(QTreeWidgetItem*, const int);
 
 private slots:
-	void processCategories(QString cat);
-	void processSearch(QString search);
+	void processCategories(const QString &cat);
+	void processSearch(const QString &search);
 
 private:
-    Ui::PlaylistWidget ui;
+	Ui::PlaylistWidget ui;
 
 	M3UHandler *handler;
 	QString _fileName;

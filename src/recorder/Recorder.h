@@ -7,6 +7,7 @@
 #include <QTimer>
 #include <QSettings>
 
+#include "Timer.h"
 #include "../channels/Channel.h"
 #include "../ui/TrayIcon.h"
 #include "../xml/M3UHandler.h"
@@ -26,11 +27,13 @@ public:
 
 public slots:
 	void stop();
-	void recordNow(const int nmb, const QString &url, const QString &name);
+	void recordNow(const int &nmb, const QString &url, const QString &name);
 	void openPlaylist(const QString &file);
+	void recordTimer(const Timer *timer);
+	void stopTimer(const Timer *timer);
 
 private slots:
-	void record(const bool status);
+	void record(const bool &status);
 
 	void sec();
 
@@ -44,6 +47,8 @@ private:
 	Channel *channel;
 
 	TrayIcon *trayIcon;
+
+	Timer *currentTimer;
 
 	QProcess *frip;
 	QString fripPath;

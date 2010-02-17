@@ -1,5 +1,5 @@
-#include <QFile>
-#include <QMessageBox>
+#include <QtCore/QFile>
+#include <QtGui/QMessageBox>
 
 #include "PlaylistWidget.h"
 
@@ -26,34 +26,34 @@ void PlaylistWidget::clear()
 	ui.treeWidget->clear();
 }
 
-void PlaylistWidget::open(QString file)
+void PlaylistWidget::open(const QString &file)
 {
 	handler->clear();
 
-    if (file.isEmpty())
-        return;
+	if (file.isEmpty())
+		return;
 
-    _fileName = file;
+	_fileName = file;
 
-    ui.treeWidget->clear();
+	ui.treeWidget->clear();
 
-    QFile f(_fileName);
-    if (!f.open(QFile::ReadOnly | QFile::Text)) {
-    	QMessageBox::warning(this, tr("Tano"),
+	QFile f(_fileName);
+	if (!f.open(QFile::ReadOnly | QFile::Text)) {
+		QMessageBox::warning(this, tr("Tano"),
 							tr("Cannot read file %1:\n%2.")
 							.arg(_fileName)
 							.arg(f.errorString()));
-        return;
-    }
+		return;
+	}
 
-    handler->processFile(_fileName);
+	handler->processFile(_fileName);
 
 	ui.categoryBox->clear();
 	ui.categoryBox->insertItem(0,tr("All channels"));
 	ui.categoryBox->insertItems(1,handler->getCategories());
 }
 
-void PlaylistWidget::processCategories(QString cat)
+void PlaylistWidget::processCategories(const QString &cat)
 {
 	if(cat == tr("All channels"))
 		for(int i=0; i<ui.treeWidget->topLevelItemCount(); i++)
@@ -66,7 +66,7 @@ void PlaylistWidget::processCategories(QString cat)
 				ui.treeWidget->topLevelItem(i)->setHidden(true);
 }
 
-void PlaylistWidget::processSearch(QString search)
+void PlaylistWidget::processSearch(const QString &search)
 {
 	if(search == "")
 		for(int i=0; i<ui.treeWidget->topLevelItemCount(); i++)
@@ -99,9 +99,9 @@ Channel *PlaylistWidget::channelRead(QTreeWidgetItem* clickedChannel)
 	return handler->channelRead(clickedChannel);
 }
 
-Channel *PlaylistWidget::channelReadNum(int clickedChannel)
+Channel *PlaylistWidget::channelRead(const int &clickedChannel)
 {
-	return handler->channelReadNum(clickedChannel);
+	return handler->channelRead(clickedChannel);
 }
 
 QTreeWidget *PlaylistWidget::treeWidget()

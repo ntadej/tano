@@ -1,9 +1,9 @@
-#include <QFile>
-#include <QTextStream>
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
 
 #include "M3UHandler.h"
 
-M3UHandler::M3UHandler(QTreeWidget *treeWidget, bool editable)
+M3UHandler::M3UHandler(QTreeWidget *treeWidget, const bool &editable)
 	: treeWidget(treeWidget), edit(editable)
 {
 	name = QObject::tr("Channel list");
@@ -16,7 +16,7 @@ M3UHandler::~M3UHandler() {
 	}
 }
 
-void M3UHandler::processFile(QString m3uFile)
+void M3UHandler::processFile(const QString &m3uFile)
 {
 	QFile file(m3uFile);
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -109,7 +109,7 @@ Channel *M3UHandler::channelRead(QTreeWidgetItem *clickedItem)
 	return map[clickedItem];
 }
 
-Channel *M3UHandler::channelReadNum(int clickedItem)
+Channel *M3UHandler::channelRead(const int &clickedItem)
 {
 	return nmap[clickedItem];
 }

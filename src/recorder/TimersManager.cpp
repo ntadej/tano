@@ -1,13 +1,13 @@
-#include <QDebug>
-#include <QFile>
-#include <QFileInfo>
-#include <QMessageBox>
-#include <QXmlSimpleReader>
-#include <QXmlInputSource>
+#include <QtCore/QFile>
+#include <QtCore/QFileInfo>
+#include <QtGui/QMessageBox>
+#include <QtXml/QXmlSimpleReader>
+#include <QtXml/QXmlInputSource>
 
+#include "TimersManager.h"
 #include "../Common.h"
 #include "../xml/TimersGenerator.h"
-#include "TimersManager.h"
+
 
 TimersManager::TimersManager(Time *t, QWidget *parent)
 	:QMainWindow(parent), time(t)
@@ -53,7 +53,7 @@ void TimersManager::action(QAbstractButton *button)
 	}
 }
 
-void TimersManager::openPlaylist(QString file)
+void TimersManager::openPlaylist(const QString &file)
 {
 	ui.playlistWidget->open(file);
 }
@@ -95,7 +95,7 @@ void TimersManager::addItem()
 			}
 	}
 
-	edit(handler->newTimer(ui.editNameNew->text(),channel->name(),ui.playlistWidget->fileName(),channel->num()));
+	edit(handler->newTimer(ui.editNameNew->text(),channel->name(),ui.playlistWidget->fileName(),channel->num(),channel->url()));
 
 	ui.dockWidgetContents->setDisabled(false);
 	ui.toolBar->setDisabled(false);
@@ -135,12 +135,13 @@ void TimersManager::edit(QTreeWidgetItem *item)
 	ui.editChannel->setText(currentTimer->channel());
 	ui.editNum->display(currentTimer->num());
 	ui.editPlaylist->setText(currentTimer->playlist());
+	ui.editUrl->setText(currentTimer->url());
 	ui.editDate->setDate(currentTimer->date());
 	ui.editStartTime->setTime(currentTimer->startTime());
 	ui.editEndTime->setTime(currentTimer->endTime());
 }
 
-void TimersManager::applyName(const QString name)
+void TimersManager::applyName(const QString &name)
 {
 	for(int i=0; i<ui.timersWidget->topLevelItemCount(); i++)
 		if(ui.timersWidget->topLevelItem(i)->text(0) == name && ui.timersWidget->topLevelItem(i) != currentItem) {
@@ -154,7 +155,7 @@ void TimersManager::applyName(const QString name)
 	currentItem->setText(0,name);
 }
 
-void TimersManager::read(const QString file)
+void TimersManager::read(const QString &file)
 {
 	QString fileName;
 
@@ -198,12 +199,11 @@ void TimersManager::write()
 
 	/*fileName =
 		QFileDialog::getSaveFileName(this, tr("Save Timers"),
-	  								QDir::homePath(),
-	   									tr("Tano Timers (*.tano.xml)"));
+									QDir::homePath(),
+									tr("Tano Timers (*.tano.xml)"));
 	*/
 
 	fileName = Common::settingsPath() + "timers.tano.xml";
-	qDebug() << fileName;
 
 	if (fileName.isEmpty())
 		return;
@@ -226,7 +226,7 @@ void TimersManager::write()
 	}
 }
 
-void TimersManager::setStatus(Timer *t, const QString status)
+void TimersManager::setStatus(Timer *t, const QString &status)
 {
 	handler->itemRead(t)->setText(1,status);
 }

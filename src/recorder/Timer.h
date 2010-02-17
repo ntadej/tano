@@ -1,14 +1,19 @@
 #ifndef TANO_TIMER_H_
 #define TANO_TIMER_H_
 
-#include <QObject>
-#include <QTime>
-#include <QDate>
+#include <QtCore/QObject>
+#include <QtCore/QDate>
+#include <QtCore/QTime>
 
-class Timer : public QObject {
+class Timer : public QObject
+{
 Q_OBJECT
 public:
-	Timer(QString fname, QString fchannel = "", QString fplaylist = "", int fnum = 0);
+	Timer(const QString &fname,
+		  const QString &fchannel = 0,
+		  const QString &fplaylist = 0,
+		  const int &fnum = 0,
+		  const QString &furl = 0);
 	~Timer();
 
 public slots:
@@ -18,6 +23,8 @@ public slots:
 	void setChannel(const QString &schannel);
 	QString playlist() const {return _playlist;}
 	void setPlaylist(const QString &splaylist);
+	QString url() const {return _url;}
+	void setUrl(const QString &surl);
 	int num() const {return _num;}
 	void setNum(const int &snum);
 	QDate date() const {return _date;}
@@ -34,6 +41,7 @@ private:
 	QString _name;
 	QString _channel;
 	QString _playlist;
+	QString _url;
 	int _num;
 	QDate _date;
 	QTime _startTime;

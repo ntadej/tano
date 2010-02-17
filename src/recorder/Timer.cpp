@@ -1,7 +1,11 @@
 #include "Timer.h"
 
-Timer::Timer(QString fname, QString fchannel, QString fplaylist, int fnum)
-	: _name(fname), _channel(fchannel), _playlist(fplaylist), _num(fnum)
+Timer::Timer(const QString &fname,
+			 const QString &fchannel,
+			 const QString &fplaylist,
+			 const int &fnum,
+			 const QString &furl)
+	: _name(fname), _channel(fchannel), _playlist(fplaylist), _num(fnum), _url(furl)
 {
 	_date = QDate::currentDate();
 	_startTime = QTime::currentTime();
@@ -26,6 +30,11 @@ void Timer::setChannel(const QString &schannel)
 void Timer::setPlaylist(const QString &splaylist)
 {
 	_playlist = splaylist;
+}
+
+void Timer::setUrl(const QString &surl)
+{
+	_url = surl;
 }
 
 void Timer::setNum(const int &snum)

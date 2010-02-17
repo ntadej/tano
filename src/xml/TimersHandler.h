@@ -24,52 +24,52 @@
 #ifndef TANO_TIMERSHANDLER_H_
 #define TANO_TIMERSHANDLER_H_
 
-#include <QIcon>
-#include <QMap>
-#include <QXmlDefaultHandler>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
+#include <QtCore/QMap>
+#include <QtGui/QIcon>
+#include <QtGui/QTreeWidget>
+#include <QtGui/QTreeWidgetItem>
+#include <QtXml/QXmlDefaultHandler>
 
 #include "../recorder/Timer.h"
 
 class TimersHandler : public QXmlDefaultHandler
 {
 public:
-    TimersHandler(QTreeWidget *treeWidget);
-    ~TimersHandler();
+	TimersHandler(QTreeWidget *treeWidget);
+	~TimersHandler();
 
-    bool startElement(const QString &namespaceURI, const QString &localName,
-                      const QString &qName, const QXmlAttributes &attributes);
-    bool endElement(const QString &namespaceURI, const QString &localName,
-                    const QString &qName);
-    bool characters(const QString &str);
-    bool fatalError(const QXmlParseException &exception);
-    QString errorString() const;
+	bool startElement(const QString &namespaceURI, const QString &localName,
+					  const QString &qName, const QXmlAttributes &attributes);
+	bool endElement(const QString &namespaceURI, const QString &localName,
+					const QString &qName);
+	bool characters(const QString &str);
+	bool fatalError(const QXmlParseException &exception);
+	QString errorString() const;
 
-    Timer *timerRead(QTreeWidgetItem *clickedItem);
-    QTreeWidgetItem *itemRead(Timer *clickedItem);
-    QMap<QTreeWidgetItem*, Timer*> timersMap();
+	Timer *timerRead(QTreeWidgetItem *clickedItem);
+	QTreeWidgetItem *itemRead(Timer *clickedItem);
+	QMap<QTreeWidgetItem*, Timer*> timersMap();
 
-    void clear();
+	void clear();
 
-public slots:
-	QTreeWidgetItem *newTimer(const QString name, const QString channel,
-							  const QString playlist, const int num);
+	QTreeWidgetItem *newTimer(const QString &name, const QString &channel,
+							  const QString &playlist, const int &num,
+							  const QString &url);
 	void deleteItem(QTreeWidgetItem *item);
 
 private:
-    QTreeWidgetItem *createChildItem(const QString &tagName);
+	QTreeWidgetItem *createChildItem(const QString &tagName);
 
-    QTreeWidget *treeWidget;
-    QTreeWidgetItem *item;
-    Timer *timer;
-    QString currentText;
-    QString errorStr;
-    bool metTanoTag;
+	QTreeWidget *treeWidget;
+	QTreeWidgetItem *item;
+	Timer *timer;
+	QString currentText;
+	QString errorStr;
+	bool metTanoTag;
 
-    QMap<QTreeWidgetItem*, Timer*> map;
+	QMap<QTreeWidgetItem*, Timer*> map;
 
-    QIcon timerIcon;
+	QIcon timerIcon;
 };
 
 #endif // TANO_TIMERSHANDLER_H_

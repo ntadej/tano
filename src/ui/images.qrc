@@ -50,5 +50,6 @@
         <file>images/tano.png</file>
         <file>images/splash.png</file>
         <file>images/name.png</file>
+        <file>images/plugin.png</file>
     </qresource>
 </RCC>

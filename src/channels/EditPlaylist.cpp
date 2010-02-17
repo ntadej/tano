@@ -88,7 +88,7 @@ void EditPlaylist::save()
 		return;
 	}
 
-	M3UGenerator *generator = new M3UGenerator(ui.editName->text(), ui.playlist);
+	M3UGenerator *generator = new M3UGenerator(ui.playlist, ui.editName->text());
 	generator->write(&file);
 	delete generator;
 }

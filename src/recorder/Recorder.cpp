@@ -81,7 +81,7 @@ void Recorder::fileBrowse()
 		ui.fileEdit->setText(dfile);
 }
 
-void Recorder::record(const bool status)
+void Recorder::record(const bool &status)
 {
 	if(status) {
 		if(ui.fileEdit->text() == "") {
@@ -169,13 +169,13 @@ void Recorder::record(const bool status)
 	}
 }
 
-void Recorder::recordNow(const int nmb, const QString &url, const QString &name)
+void Recorder::recordNow(const int &nmb, const QString &url, const QString &name)
 {
 	settings->beginGroup("Recorder");
 	ui.fileEdit->setText(settings->value("dir",QDir::homePath()+"/Videos").toString());
 	settings->endGroup();
 
-	channel = ui.playlistWidget->channelReadNum(nmb);
+	channel = ui.playlistWidget->channelRead(nmb);
 	if (channel->isCategory() != true) {
 		ui.valueSelected->setText(channel->name());
 		if(actionRecord)
@@ -202,4 +202,14 @@ void Recorder::setGlobals(TrayIcon *icon, QAction *action)
 	trayIcon = icon;
 	actionRecord = action;
 	connect(actionRecord, SIGNAL(triggered()), ui.buttonRecord, SLOT(toggle()));
+}
+
+void Recorder::recordTimer(const Timer *timer)
+{
+
+}
+
+void Recorder::stopTimer(const Timer *timer)
+{
+
 }

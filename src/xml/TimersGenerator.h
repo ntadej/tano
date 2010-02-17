@@ -24,30 +24,31 @@
 #ifndef TANO_TIMERSGENERATOR_H_
 #define TANO_TIMERSGENERATOR_H_
 
-#include <QTextStream>
-#include <QTreeWidget>
-#include <QTreeWidgetItem>
-#include <QMap>
+#include <QtCore/QMap>
+#include <QtCore/QTextStream>
+#include <QtGui/QTreeWidget>
+#include <QtGui/QTreeWidgetItem>
 
 #include "../recorder/Timer.h"
 
-class TanoGenerator {
+class TanoGenerator
+{
 public:
-    TanoGenerator(QTreeWidget *treeWidget, QMap<QTreeWidgetItem*,Timer*> map);
+	TanoGenerator(QTreeWidget *treeWidget, QMap<QTreeWidgetItem*,Timer*> map);
 
-    bool write(QIODevice *device);
+	bool write(QIODevice *device);
 
 private:
-    static QString indent(int indentLevel);
-    QString boolToString(const bool b);
-    static QString escapedText(const QString &str);
-    static QString escapedAttribute(const QString &str);
-    void generateItem(QTreeWidgetItem *item, int depth);
+	static QString indent(int indentLevel);
+	QString boolToString(const bool &b);
+	static QString escapedText(const QString &str);
+	static QString escapedAttribute(const QString &str);
+	void generateItem(QTreeWidgetItem *item, int depth);
 
-    QTreeWidget *treeWidget;
-    QTextStream out;
+	QTreeWidget *treeWidget;
+	QTextStream out;
 
-    QMap<QTreeWidgetItem*,Timer*> _map;
+	QMap<QTreeWidgetItem*,Timer*> _map;
 };
 
 #endif // TANO_TIMERSGENERATOR_H_

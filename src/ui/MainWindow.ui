@@ -68,14 +68,6 @@
     <addaction name="actionTray"/>
     <addaction name="actionClose"/>
    </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>&amp;Help</string>
-    </property>
-    <addaction name="actionUpdate"/>
-    <addaction name="actionAbout"/>
-    <addaction name="actionAboutQt"/>
-   </widget>
    <widget class="QMenu" name="menuRecorder">
     <property name="title">
      <string>Recorder</string>
@@ -200,6 +192,15 @@
     <addaction name="actionInfoPanel"/>
     <addaction name="actionControls"/>
    </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionUpdate"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAboutPlugins"/>
+    <addaction name="actionAboutQt"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
    <addaction name="menuMedia"/>
@@ -282,7 +283,7 @@
           <x>0</x>
           <y>0</y>
           <width>340</width>
-          <height>319</height>
+          <height>353</height>
          </rect>
         </property>
         <attribute name="label">
@@ -303,7 +304,7 @@
           <x>0</x>
           <y>0</y>
           <width>340</width>
-          <height>319</height>
+          <height>353</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1141,8 +1142,23 @@
     <string>Controls panel</string>
    </property>
   </action>
+  <action name="actionAboutPlugins">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/icons/images/plugin.png</normaloff>:/icons/images/plugin.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Plugins</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>PlaylistWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/PlaylistWidget.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>VlcVolumeSlider</class>
    <extends>QWidget</extends>
@@ -1211,12 +1227,6 @@
    <class>EpgList</class>
    <extends>QWidget</extends>
    <header>epg/EpgList.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>PlaylistWidget</class>
-   <extends>QWidget</extends>
-   <header>ui/PlaylistWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

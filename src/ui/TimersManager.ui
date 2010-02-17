@@ -111,7 +111,7 @@
    <property name="minimumSize">
     <size>
      <width>300</width>
-     <height>286</height>
+     <height>307</height>
     </size>
    </property>
    <property name="windowTitle">
@@ -143,21 +143,21 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="4" column="0">
       <widget class="QLabel" name="labelDate">
        <property name="text">
         <string>Date:</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
+     <item row="5" column="0">
       <widget class="QLabel" name="labelStartTime">
        <property name="text">
         <string>Start time:</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="0">
+     <item row="6" column="0">
       <widget class="QLabel" name="labelEndTime">
        <property name="text">
         <string>End time:</string>
@@ -174,7 +174,7 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
+     <item row="4" column="1">
       <widget class="QDateEdit" name="editDate">
        <property name="displayFormat">
         <string>dd.MM.yyyy</string>
@@ -191,14 +191,14 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
+     <item row="5" column="1">
       <widget class="QTimeEdit" name="editStartTime">
        <property name="displayFormat">
         <string>hh:mm</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="1">
+     <item row="6" column="1">
       <widget class="QTimeEdit" name="editEndTime">
        <property name="displayFormat">
         <string>hh:mm</string>
@@ -238,7 +238,7 @@
        </item>
       </layout>
      </item>
-     <item row="7" column="1">
+     <item row="8" column="1">
       <spacer name="verticalSpacer">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -251,15 +251,29 @@
        </property>
       </spacer>
      </item>
-     <item row="6" column="0">
+     <item row="7" column="0">
       <widget class="QLabel" name="labelDisabled">
        <property name="text">
         <string>Disabled:</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
+     <item row="7" column="1">
       <widget class="QCheckBox" name="checkBoxDisabled"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="editUrl">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="labelUrl">
+       <property name="text">
+        <string>Url:</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

@@ -9,6 +9,7 @@
 
 #include "MainWindow.h"
 #include "Common.h"
+#include "plugins/PluginsManager.h"
 #include "ui/EditSettings.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -178,6 +179,7 @@ void MainWindow::createConnections()
 {
 	connect(ui.actionUpdate, SIGNAL(triggered()), update, SLOT(getUpdates()));
 	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
+	connect(ui.actionAboutPlugins, SIGNAL(triggered()), this, SLOT(aboutPlugins()));
 	connect(ui.actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 
@@ -354,6 +356,11 @@ void MainWindow::aboutTano()
 {
 	Common::about();
 }
+void MainWindow::aboutPlugins()
+{
+	PluginsManager p;
+	p.exec();
+}
 
 
 //Media controls
@@ -367,7 +374,7 @@ void MainWindow::playChannel(QTreeWidgetItem* clickedChannel)
 }
 void MainWindow::playChannel(const int &clickedChannel)
 {
-	Channel *tmp = ui.playlistWidget->channelReadNum(clickedChannel);
+	Channel *tmp = ui.playlistWidget->channelRead(clickedChannel);
 	if (tmp->isCategory() != true) {
 		channel = tmp;
 		play();

@@ -34,6 +34,7 @@ protected:
 private slots:
 	void exit();
 	void aboutTano();
+	void aboutPlugins();
 	void showSettings();
 
 	void play(const QString &itemFile = 0);

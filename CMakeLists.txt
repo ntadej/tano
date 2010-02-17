@@ -85,6 +85,7 @@ ENDIF(Subversion_FOUND)
 ADD_SUBDIRECTORY(lib/QVlc)
 ADD_SUBDIRECTORY(lib/QtKeySequenceEdit)
 ADD_SUBDIRECTORY(src)
+ADD_SUBDIRECTORY(plugins)
 
 OPTION(VLC_TRUNK "Use LibVLC trunk features")
 

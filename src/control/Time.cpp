@@ -1,5 +1,3 @@
-#include <QDebug>
-
 #include "Time.h"
 
 Time::Time() {
@@ -15,24 +13,25 @@ Time::~Time() {
 
 void Time::check()
 {
-	qDebug() << "Time check" << timersList.size();
-	for(int i=0; i<timersList.size(); i++) {
-		if(timersList[i]->startTime() >= QTime::currentTime()) {
-			emit startTimer(timersList[i]);
-		} else if(timersList[i]->endTime() >= QTime::currentTime()) {
-			emit startTimer(timersList[i]);
+	for(int i=0; i<_timersList.size(); i++) {
+		if(_timersList[i]->startTime() >= QTime::currentTime()) {
+			emit startTimer(_timersList[i]);
+		} else if(_timersList[i]->endTime() <= QTime::currentTime()) {
+			emit startTimer(_timersList[i]);
+		} else if(_timersList[i]->endTime() >= QTime::currentTime()) {
+			emit stopTimer(_timersList[i]);
 		}
 	}
 }
 
 void Time::addTimer(const Timer *t)
 {
-	if(!timersList.contains(t))
-		timersList.append(t);
+	if(!_timersList.contains(t))
+		_timersList.append(t);
 }
 
 void Time::removeTimer(const Timer *t)
 {
-	if(timersList.contains(t))
-		timersList.removeOne(t);
+	if(_timersList.contains(t))
+		_timersList.removeOne(t);
 }

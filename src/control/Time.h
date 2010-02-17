@@ -1,12 +1,13 @@
 #ifndef TANO_TIME_H_
 #define TANO_TIME_H_
 
-#include <QTimer>
-#include <QList>
+#include <QtCore/QList>
+#include <QtCore/QTimer>
 
 #include "../recorder/Timer.h"
 
-class Time : public QObject {
+class Time : public QObject
+{
 Q_OBJECT
 public:
 	Time();
@@ -24,7 +25,7 @@ private slots:
 
 private:
 	QTimer *time;
-	QList<const Timer*> timersList;
+	QList<const Timer*> _timersList;
 };
 
 #endif // TANO_TIME_H_
