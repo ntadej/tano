@@ -36,7 +36,6 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
 	MainWindow.h
 	Updates.h
-	channels/EditPlaylist.h
 	control/ChannelSelect.h
 	control/Time.h
 	epg/Epg.h
@@ -48,6 +47,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	recorder/Timer.h
 	recorder/TimersManager.h
 	ui/About.h
+	ui/EditPlaylist.h
 	ui/EditSettings.h
 	ui/FirstRun.h
 	ui/InfoBar.h
@@ -61,7 +61,6 @@ SET(Tano_Resrcs ui/images.qrc)
 SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	channels/Channel.cpp
 	channels/ChannelEpg.cpp
-	channels/EditPlaylist.cpp
 	control/ChannelSelect.cpp
 	control/Shortcuts.cpp
 	control/Time.cpp
@@ -75,6 +74,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	recorder/Timer.cpp
 	recorder/TimersManager.cpp
 	ui/About.cpp
+	ui/EditPlaylist.cpp
 	ui/EditSettings.cpp
 	ui/FirstRun.cpp
 	ui/InfoBar.cpp

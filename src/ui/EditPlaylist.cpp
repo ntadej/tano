@@ -1,8 +1,22 @@
-#include <QMessageBox>
-#include <QHeaderView>
-#include <QDir>
-#include <QFileDialog>
-#include <QCloseEvent>
+/****************************************************************************
+* EditPlaylist.cpp: Playlist editor
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
+#include <QtGui/QCloseEvent>
+#include <QtGui/QFileDialog>
+#include <QtGui/QMessageBox>
+#include <QtGui/QHeaderView>
 
 #include "../xml/M3UGenerator.h"
 #include "../xml/M3UHandler.h"
@@ -11,22 +25,20 @@
 #include "EditPlaylist.h"
 
 EditPlaylist::EditPlaylist(QWidget *parent)
-    : QMainWindow(parent)
+	: QMainWindow(parent)
 {
 	ui.setupUi(this);
 
-	closeEnabled = false;
+	_closeEnabled = false;
 
 	connect(ui.actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
-	connect(ui.actionAddChannel, SIGNAL(triggered()), this, SLOT(addItemChannel()));
+	connect(ui.actionAddChannel, SIGNAL(triggered()), this, SLOT(addItem()));
 	connect(ui.actionReload, SIGNAL(triggered()), this, SLOT(open()));
 	connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(save()));
 	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 	connect(ui.actionImport, SIGNAL(triggered()), this, SLOT(import()));
 
-	ui.playlist->header()->setResizeMode(QHeaderView::ResizeToContents);
-
-	channelIcon = QIcon(":/icons/images/video.png");
+	_channelIcon = QIcon(":/icons/images/video.png");
 }
 
 EditPlaylist::~EditPlaylist()
@@ -36,43 +48,29 @@ EditPlaylist::~EditPlaylist()
 
 void EditPlaylist::closeEvent(QCloseEvent *event)
 {
-	if(!closeEnabled) {
+	if(!_closeEnabled) {
 		event->ignore();
-		//ui.actionClose->trigger();
 	} else {
-		closeEnabled = false;
+		_closeEnabled = false;
 	}
 }
 
 void EditPlaylist::deleteItem()
 {
-	if(ui.playlist->currentItem()->parent())
+	/*if(ui.playlist->currentItem()->parent())
 		ui.playlist->currentItem()->parent()->removeChild(ui.playlist->currentItem());
 	else
-		ui.playlist->takeTopLevelItem(ui.playlist->indexOfTopLevelItem(ui.playlist->currentItem()));
+		ui.playlist->takeTopLevelItem(ui.playlist->indexOfTopLevelItem(ui.playlist->currentItem()));*/
 }
 
-void EditPlaylist::addItemChannel()
+void EditPlaylist::addItem()
 {
-	QStringList defaults;
-	defaults << "#" << tr("Channel") << tr("Categories") << "URL" << tr("language") << "";
-
-	QTreeWidgetItem *item = new QTreeWidgetItem(ui.playlist, ui.playlist->currentItem());
-	item->setIcon(0,channelIcon);
-	item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsDragEnabled | Qt::ItemIsEditable);
-	item->setData(0, Qt::UserRole, "channel");
-
-	item->setText(0,defaults.at(0));
-	item->setText(1,defaults.at(1));
-	item->setText(2,defaults.at(2));
-	item->setText(3,defaults.at(3));
-	item->setText(4,defaults.at(4));
-	item->setText(5,defaults.at(5));
+	ui.playlist->createItem();
 }
 
 void EditPlaylist::save()
 {
-	fileName =
+	/*QString fileName =
 		QFileDialog::getSaveFileName(this, tr("Save Channel list"),
 									QDir::homePath(),
 									tr("Tano TV Channel list Files (*.m3u)"));
@@ -90,43 +88,25 @@ void EditPlaylist::save()
 
 	M3UGenerator *generator = new M3UGenerator(ui.playlist, ui.editName->text());
 	generator->write(&file);
-	delete generator;
+	delete generator;*/
 }
 
 void EditPlaylist::open()
 {
-	M3UHandler *load = new M3UHandler(ui.playlist, true);
-
-	load->clear();
-	ui.playlist->clear();
-
-	QFile file(fileN);
-	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano"),
-							tr("Cannot read file %1:\n%2.")
-							.arg(fileN)
-							.arg(file.errorString()));
-		return;
-	}
-	load->processFile(fileN);
-
-	ui.editName->setText(load->getName());
-	setWindowTitle(load->getName());
+	ui.playlist->open(_playlist);
 
 	show();
-
-	delete load;
 }
 
 void EditPlaylist::import()
 {
-	TanoHandler *handler = new TanoHandler(ui.playlist,true);
+	/*TanoHandler *handler = new TanoHandler(ui.playlist,true);
 
-	QString fileNameI =
+	QString fileName =
 			QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
 										QDir::homePath(),
 										tr("Tano TV Old Channel list Files(*.tano *.xml)"));
-	if (fileNameI.isEmpty())
+	if (fileName.isEmpty())
 		return;
 
 	ui.playlist->clear();
@@ -135,11 +115,11 @@ void EditPlaylist::import()
 	reader.setContentHandler(handler);
 	reader.setErrorHandler(handler);
 
-	QFile file(fileNameI);
+	QFile file(fileName);
 	if (!file.open(QFile::ReadOnly | QFile::Text)) {
 		QMessageBox::warning(this, tr("Tano"),
 							tr("Cannot read file %1:\n%2.")
-							.arg(fileNameI)
+							.arg(fileName)
 							.arg(file.errorString()));
 		return;
 	}
@@ -152,16 +132,18 @@ void EditPlaylist::import()
 	setWindowTitle(handler->getName());
 
 	delete handler;
+
+	processPlaylist();*/
 }
 
-void EditPlaylist::setFile(QString file)
+void EditPlaylist::setPlaylist(const QString &file)
 {
-	fileN = file;
+	_playlist = file;
 }
 
 void EditPlaylist::exit()
 {
-	if(closeEnabled) {
+	if(_closeEnabled) {
 		close();
 		return;
 	}
@@ -174,7 +156,7 @@ void EditPlaylist::exit()
 
 	switch (ret) {
 		case QMessageBox::Close:
-			closeEnabled = true;
+			_closeEnabled = true;
 			ui.actionClose->trigger();
 			break;
 		case QMessageBox::Cancel:

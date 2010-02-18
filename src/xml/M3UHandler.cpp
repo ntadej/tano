@@ -1,3 +1,18 @@
+/****************************************************************************
+* M3UHandler.cpp: Reader and handler of modified m3u format
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
@@ -28,6 +43,15 @@ void M3UHandler::processFile(const QString &m3uFile)
 	}
 
 	processList();
+}
+
+QString M3UHandler::processNum(const QString &num)
+{
+	QString newNum = "000";
+	newNum.append(num);
+	newNum.remove(0,num.size());
+
+	return newNum;
 }
 
 void M3UHandler::clear()
@@ -71,13 +95,14 @@ void M3UHandler::processList()
 			item->setData(0, Qt::UserRole, "channel");
 			item->setFlags(item->flags() | Qt::ItemIsEditable);
 			item->setIcon(0, channelIcon);
-			item->setText(0, tmpList.at(0));
+			item->setText(0, processNum(tmpList.at(0)));
 			item->setText(1, tmpList.at(1));
 			channel = new Channel(tmpList.at(1), tmpList.at(0).toInt(), false);
 
 			map.insert(item, channel);
 			nmap.insert(tmpList.at(0).toInt(), channel);
 
+			channels << channel;
 			channelNums << tmpList.at(0).toInt();
 		} else if(m3uLineList.at(i).contains("#EXTTV")) {
 			tmp = m3uLineList.at(i);
@@ -112,4 +137,30 @@ Channel *M3UHandler::channelRead(QTreeWidgetItem *clickedItem)
 Channel *M3UHandler::channelRead(const int &clickedItem)
 {
 	return nmap[clickedItem];
+}
+
+void M3UHandler::createChannel()
+{
+	int tmpNum;
+	for(int i=1; i<1000; i++) {
+		if(!channelNums.contains(i)) {
+			tmpNum = i;
+			break;
+		}
+	}
+
+	item = new QTreeWidgetItem(treeWidget);
+	item->setData(0, Qt::UserRole, "channel");
+	item->setFlags(item->flags() | Qt::ItemIsEditable);
+	item->setIcon(0, channelIcon);
+	item->setText(0, processNum(QString().number(tmpNum)));
+	item->setText(1, QObject::tr("New channel"));
+
+	channel = new Channel(QObject::tr("New channel"), tmpNum, false);
+
+	map.insert(item, channel);
+	nmap.insert(tmpNum, channel);
+
+	channels << channel;
+	channelNums << tmpNum;
 }

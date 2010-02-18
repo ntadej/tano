@@ -34,50 +34,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QTreeWidget" name="playlist">
-      <property name="dragEnabled">
-       <bool>true</bool>
-      </property>
-      <property name="dragDropMode">
-       <enum>QAbstractItemView::InternalMove</enum>
-      </property>
-      <property name="animated">
-       <bool>true</bool>
-      </property>
-      <attribute name="headerDefaultSectionSize">
-       <number>29</number>
-      </attribute>
-      <column>
-       <property name="text">
-        <string notr="true">#</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Channel</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Categories (separated with commas)</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>URL</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Language</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>EPG</string>
-       </property>
-      </column>
-     </widget>
+     <widget class="PlaylistWidget" name="playlist" native="true"/>
     </item>
    </layout>
   </widget>
@@ -170,6 +127,14 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>PlaylistWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/PlaylistWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="images.qrc"/>
  </resources>

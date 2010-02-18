@@ -27,13 +27,13 @@
 
 #include "Updates.h"
 #include "channels/Channel.h"
-#include "channels/EditPlaylist.h"
 #include "control/ChannelSelect.h"
 #include "control/Shortcuts.h"
 #include "control/Time.h"
 #include "epg/Epg.h"
 #include "epg/EpgShow.h"
 #include "recorder/TimersManager.h"
+#include "ui/EditPlaylist.h"
 #include "ui/TrayIcon.h"
 
 class MainWindow : public QMainWindow

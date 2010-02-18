@@ -537,7 +537,7 @@ void MainWindow::openPlaylist(const bool &start)
 		_playlistName = Common::locateResource(_defaultPlaylist);
 
 	if (!_playlistName.isEmpty()) {
-		editor->setFile(_playlistName);
+		editor->setPlaylist(_playlistName);
 		if(!start) {
 			ui.recorder->openPlaylist(_playlistName);
 			timers->openPlaylist(_playlistName);

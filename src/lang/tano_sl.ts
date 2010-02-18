@@ -48,134 +48,56 @@
 <context>
     <name>EditPlaylist</name>
     <message>
-        <location filename="../channels/EditPlaylist.cpp" line="106"/>
-        <location filename="../channels/EditPlaylist.cpp" line="141"/>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation>Ne morem prebrati %1:
-%2.</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="160"/>
-        <location filename="../channels/EditPlaylist.cpp" line="58"/>
-        <source>Channel</source>
-        <translation>Program</translation>
-    </message>
-    <message>
-        <location filename="../channels/EditPlaylist.cpp" line="84"/>
-        <location filename="../channels/EditPlaylist.cpp" line="105"/>
-        <location filename="../channels/EditPlaylist.cpp" line="140"/>
-        <source>Tano</source>
-        <translation>Tano</translation>
-    </message>
-    <message>
-        <location filename="../channels/EditPlaylist.cpp" line="58"/>
-        <source>language</source>
-        <translation>jezik</translation>
-    </message>
-    <message>
-        <location filename="../channels/EditPlaylist.cpp" line="58"/>
-        <source>Categories</source>
-        <translation>Kategorije</translation>
-    </message>
-    <message>
-        <location filename="../channels/EditPlaylist.cpp" line="76"/>
-        <source>Save Channel list</source>
-        <translation>Shrani Seznam programov</translation>
-    </message>
-    <message>
-        <location filename="../channels/EditPlaylist.cpp" line="78"/>
-        <source>Tano TV Channel list Files (*.m3u)</source>
-        <translation>Tano TV Seznam programov (*.m3u)</translation>
-    </message>
-    <message>
-        <location filename="../channels/EditPlaylist.cpp" line="85"/>
-        <source>Cannot write file %1:
-%2.</source>
-        <translation>Ne morem pisati datoteke %1:
-%2.</translation>
-    </message>
-    <message>
-        <location filename="../channels/EditPlaylist.cpp" line="126"/>
-        <source>Open Channel list File</source>
-        <translation>Odpri Seznam programov</translation>
-    </message>
-    <message>
-        <location filename="../channels/EditPlaylist.cpp" line="128"/>
-        <source>Tano TV Old Channel list Files(*.tano *.xml)</source>
-        <translation>Tano TV star Seznam programov (*.tano *.xml)</translation>
-    </message>
-    <message>
-        <location filename="../channels/EditPlaylist.cpp" line="171"/>
+        <location filename="../ui/EditPlaylist.cpp" line="153"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation>Ali želiš zapreti urejevalnik?
 Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="141"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="134"/>
         <source>Edit Channel List</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="142"/>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="144"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="135"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="137"/>
         <source>Add Channel</source>
         <translation>Dodaj Program</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="146"/>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="148"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="139"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="141"/>
         <source>Delete Channel</source>
         <translation>Izbriši Program</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="150"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="143"/>
         <source>Save</source>
         <translation>Shrani</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="151"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="144"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="152"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="145"/>
         <source>Reload</source>
         <translation>Ponovno naloži</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="153"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="146"/>
         <source>Import</source>
         <translation>Uvozi</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="154"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="147"/>
         <source>Name:</source>
         <translation>Ime:</translation>
     </message>
     <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="159"/>
-        <source>Categories (separated with commas)</source>
-        <translation>Kategorije (ločene z vejico)</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="157"/>
-        <source>Language</source>
-        <translation>Jezik</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="156"/>
-        <source>EPG</source>
-        <translation>EPG</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="158"/>
-        <source>URL</source>
-        <translation>URL</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_EditPlaylist.h" line="161"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="148"/>
         <source>Toolbar</source>
         <translation>Orodna vrstica</translation>
     </message>
@@ -1158,20 +1080,20 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Počisti</translation>
     </message>
     <message>
-        <location filename="../ui/PlaylistWidget.cpp" line="42"/>
+        <location filename="../ui/PlaylistWidget.cpp" line="58"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../ui/PlaylistWidget.cpp" line="43"/>
+        <location filename="../ui/PlaylistWidget.cpp" line="59"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../ui/PlaylistWidget.cpp" line="52"/>
-        <location filename="../ui/PlaylistWidget.cpp" line="58"/>
+        <location filename="../ui/PlaylistWidget.cpp" line="68"/>
+        <location filename="../ui/PlaylistWidget.cpp" line="74"/>
         <source>All channels</source>
         <translation>Vsi programi</translation>
     </message>
@@ -1197,11 +1119,17 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../xml/M3UHandler.cpp" line="9"/>
-        <location filename="../xml/M3UHandler.cpp" line="35"/>
+        <location filename="../xml/M3UHandler.cpp" line="24"/>
+        <location filename="../xml/M3UHandler.cpp" line="59"/>
         <location filename="../xml/tanohandler.cpp" line="36"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
+    </message>
+    <message>
+        <location filename="../xml/M3UHandler.cpp" line="157"/>
+        <location filename="../xml/M3UHandler.cpp" line="159"/>
+        <source>New channel</source>
+        <translation>Nov program</translation>
     </message>
     <message>
         <location filename="../xml/tanohandler.cpp" line="71"/>

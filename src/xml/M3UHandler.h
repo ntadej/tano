@@ -1,3 +1,18 @@
+/****************************************************************************
+* M3UHandler.h: Reader and handler of modified m3u format
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #ifndef TANO_M3UHANDLER_H_
 #define TANO_M3UHANDLER_H_
 
@@ -15,6 +30,7 @@ public:
 	virtual ~M3UHandler();
 
 	void processFile(const QString &m3uFile);
+	void createChannel();
 	void clear();
 
 	Channel *channelRead(QTreeWidgetItem *clickedItem);
@@ -25,6 +41,7 @@ public:
 
 private:
 	void processList();
+	QString processNum(const QString &num);
 
 	bool edit;
 
@@ -38,6 +55,7 @@ private:
 	QStringList m3uLineList;
 	QStringList categoryList;
 
+	QList<Channel*> channels;
 	QList<int> channelNums;
 
 	QMap<QTreeWidgetItem*, Channel*> map;
