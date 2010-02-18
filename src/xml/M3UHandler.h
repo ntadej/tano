@@ -30,7 +30,10 @@ public:
 	virtual ~M3UHandler();
 
 	void processFile(const QString &m3uFile);
-	void createChannel();
+	void importOldFormat(const QString &tanoFile);
+
+	QTreeWidgetItem *createChannel();
+	void deleteChannel(QTreeWidgetItem *i);
 	void clear();
 
 	Channel *channelRead(QTreeWidgetItem *clickedItem);

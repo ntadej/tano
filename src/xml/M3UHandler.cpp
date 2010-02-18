@@ -17,6 +17,7 @@
 #include <QtCore/QTextStream>
 
 #include "M3UHandler.h"
+#include "tanohandler.h"
 
 M3UHandler::M3UHandler(QTreeWidget *treeWidget, const bool &editable)
 	: treeWidget(treeWidget), edit(editable)
@@ -93,7 +94,6 @@ void M3UHandler::processList()
 
 			item = new QTreeWidgetItem(treeWidget);
 			item->setData(0, Qt::UserRole, "channel");
-			item->setFlags(item->flags() | Qt::ItemIsEditable);
 			item->setIcon(0, channelIcon);
 			item->setText(0, processNum(tmpList.at(0)));
 			item->setText(1, tmpList.at(1));
@@ -117,14 +117,11 @@ void M3UHandler::processList()
 						categoryList.append(tmpCList.at(i));
 				item->setText(2, tmpList.at(0));
 				channel->setLanguage(tmpList.at(1));
-				item->setText(4, tmpList.at(1));
 				channel->setEpg(tmpList.at(2));
-				item->setText(5, tmpList.at(2));
 			}
 		} else {
 			tmp = m3uLineList.at(i);
 			channel->setUrl(tmp);
-			item->setText(3, m3uLineList.at(i));
 		}
 	}
 }
@@ -139,7 +136,7 @@ Channel *M3UHandler::channelRead(const int &clickedItem)
 	return nmap[clickedItem];
 }
 
-void M3UHandler::createChannel()
+QTreeWidgetItem *M3UHandler::createChannel()
 {
 	int tmpNum;
 	for(int i=1; i<1000; i++) {
@@ -151,7 +148,6 @@ void M3UHandler::createChannel()
 
 	item = new QTreeWidgetItem(treeWidget);
 	item->setData(0, Qt::UserRole, "channel");
-	item->setFlags(item->flags() | Qt::ItemIsEditable);
 	item->setIcon(0, channelIcon);
 	item->setText(0, processNum(QString().number(tmpNum)));
 	item->setText(1, QObject::tr("New channel"));
@@ -163,4 +159,53 @@ void M3UHandler::createChannel()
 
 	channels << channel;
 	channelNums << tmpNum;
+
+	return item;
+}
+
+void M3UHandler::deleteChannel(QTreeWidgetItem *i)
+{
+	channels.removeAll(map[i]);
+	channelNums.removeAll(map[i]->num());
+
+	nmap.remove(map[i]->num());
+	delete map[i];
+	map.remove(i);
+	delete i;
+}
+
+void M3UHandler::importOldFormat(const QString &tanoFile)
+{
+	TanoHandler *import = new TanoHandler();
+
+	QXmlSimpleReader reader;
+	reader.setContentHandler(import);
+	reader.setErrorHandler(import);
+
+	QFile file(tanoFile);
+	if (!file.open(QFile::ReadOnly | QFile::Text))
+		return;
+
+	QXmlInputSource xmlInputSource(&file);
+	if (!reader.parse(xmlInputSource))
+		return;
+
+	for(int i=0; i<import->channelList().size(); i++) {
+		channels << import->channelList()[i];
+		channelNums << import->channelList()[i]->num();
+
+		item = new QTreeWidgetItem(treeWidget);
+		item->setData(0, Qt::UserRole, "channel");
+		item->setIcon(0, channelIcon);
+		item->setText(0, processNum(QString().number(import->channelList()[i]->num())));
+		item->setText(1, import->channelList()[i]->name());
+		item->setText(2, import->channelList()[i]->categoryList().join(","));
+
+		map.insert(item, import->channelList()[i]);
+		nmap.insert(import->channelList()[i]->num(), import->channelList()[i]);
+	}
+
+	name = import->name();
+
+	delete import;
 }

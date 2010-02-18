@@ -33,12 +33,15 @@ public:
 	void clear();
 	void open(const QString &file);
 
-	void createItem();
+	QTreeWidgetItem* createItem();
+	void deleteItem();
 
-	QString name() const;
-	QString fileName() const;
-	QList<int> nums() const;
-	QTreeWidget *treeWidget();
+	QString name() const {return handler->getName();};
+	QString fileName() const {return _fileName;};
+	QList<int> nums() const {return handler->nums();};
+	QTreeWidget *treeWidget() {return ui.treeWidget;};
+
+	void import(const QString &file);
 
 public slots:
 	Channel *channelRead(QTreeWidgetItem* clickedChannel);

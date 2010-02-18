@@ -16,11 +16,6 @@
 #include <QtGui/QCloseEvent>
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
-#include <QtGui/QHeaderView>
-
-#include "../xml/M3UGenerator.h"
-#include "../xml/M3UHandler.h"
-#include "../xml/tanohandler.h"
 
 #include "EditPlaylist.h"
 
@@ -57,10 +52,7 @@ void EditPlaylist::closeEvent(QCloseEvent *event)
 
 void EditPlaylist::deleteItem()
 {
-	/*if(ui.playlist->currentItem()->parent())
-		ui.playlist->currentItem()->parent()->removeChild(ui.playlist->currentItem());
-	else
-		ui.playlist->takeTopLevelItem(ui.playlist->indexOfTopLevelItem(ui.playlist->currentItem()));*/
+	ui.playlist->deleteItem();
 }
 
 void EditPlaylist::addItem()
@@ -94,14 +86,12 @@ void EditPlaylist::save()
 void EditPlaylist::open()
 {
 	ui.playlist->open(_playlist);
-
+	ui.editName->setText(ui.playlist->name());
 	show();
 }
 
 void EditPlaylist::import()
 {
-	/*TanoHandler *handler = new TanoHandler(ui.playlist,true);
-
 	QString fileName =
 			QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
 										QDir::homePath(),
@@ -109,31 +99,7 @@ void EditPlaylist::import()
 	if (fileName.isEmpty())
 		return;
 
-	ui.playlist->clear();
-
-	QXmlSimpleReader reader;
-	reader.setContentHandler(handler);
-	reader.setErrorHandler(handler);
-
-	QFile file(fileName);
-	if (!file.open(QFile::ReadOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano"),
-							tr("Cannot read file %1:\n%2.")
-							.arg(fileName)
-							.arg(file.errorString()));
-		return;
-	}
-
-	QXmlInputSource xmlInputSource(&file);
-	if (!reader.parse(xmlInputSource))
-		return;
-
-	ui.editName->setText(handler->getName());
-	setWindowTitle(handler->getName());
-
-	delete handler;
-
-	processPlaylist();*/
+	ui.playlist->import(fileName);
 }
 
 void EditPlaylist::setPlaylist(const QString &file)

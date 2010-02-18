@@ -23,7 +23,6 @@ PlaylistWidget::PlaylistWidget(QWidget *parent)
 {
 	ui.setupUi(this);
 	ui.treeWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
-	ui.treeWidget->sortByColumn(0);
 
 	handler = new M3UHandler(ui.treeWidget);
 
@@ -39,7 +38,7 @@ PlaylistWidget::~PlaylistWidget()
 
 void PlaylistWidget::clear()
 {
-	ui.treeWidget->clear();
+	handler->clear();
 }
 
 void PlaylistWidget::open(const QString &file)
@@ -50,8 +49,6 @@ void PlaylistWidget::open(const QString &file)
 		return;
 
 	_fileName = file;
-
-	ui.treeWidget->clear();
 
 	QFile f(_fileName);
 	if (!f.open(QFile::ReadOnly | QFile::Text)) {
@@ -67,6 +64,8 @@ void PlaylistWidget::open(const QString &file)
 	ui.categoryBox->clear();
 	ui.categoryBox->insertItem(0,tr("All channels"));
 	ui.categoryBox->insertItems(1,handler->getCategories());
+
+	ui.treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
 void PlaylistWidget::processCategories(const QString &cat)
@@ -95,24 +94,17 @@ void PlaylistWidget::processSearch(const QString &search)
 				ui.treeWidget->topLevelItem(i)->setHidden(true);
 }
 
-void PlaylistWidget::createItem()
+QTreeWidgetItem *PlaylistWidget::createItem()
 {
-	handler->createChannel();
+	QTreeWidgetItem *newI = handler->createChannel();
+	ui.treeWidget->sortByColumn(0, Qt::AscendingOrder);
+	return newI;
 }
 
-QString PlaylistWidget::name() const
+void PlaylistWidget::deleteItem()
 {
-	return handler->getName();
-}
-
-QString PlaylistWidget::fileName() const
-{
-	return _fileName;
-}
-
-QList<int> PlaylistWidget::nums() const
-{
-	return handler->nums();
+	handler->deleteChannel(ui.treeWidget->currentItem());
+	ui.treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
 Channel *PlaylistWidget::channelRead(QTreeWidgetItem* clickedChannel)
@@ -125,7 +117,8 @@ Channel *PlaylistWidget::channelRead(const int &clickedChannel)
 	return handler->channelRead(clickedChannel);
 }
 
-QTreeWidget *PlaylistWidget::treeWidget()
+void PlaylistWidget::import(const QString &file)
 {
-	return ui.treeWidget;
+	handler->clear();
+	handler->importOldFormat(file);
 }
