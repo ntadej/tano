@@ -24,7 +24,7 @@
       <item>
        <widget class="QLabel" name="labelName">
         <property name="text">
-         <string>Name:</string>
+         <string>Playlist name:</string>
         </property>
        </widget>
       </item>
@@ -57,18 +57,148 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionAddChannel"/>
+   <addaction name="actionAdd"/>
    <addaction name="actionDelete"/>
    <addaction name="separator"/>
    <addaction name="actionImport"/>
-   <addaction name="actionReload"/>
    <addaction name="actionSave"/>
    <addaction name="actionClose"/>
   </widget>
-  <action name="actionAddChannel">
+  <widget class="QDockWidget" name="editWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Editor</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelNumber">
+       <property name="text">
+        <string>Number:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelChannelName">
+       <property name="text">
+        <string>Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="labelCategories">
+       <property name="text">
+        <string>Categories:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="labelLanguage">
+       <property name="text">
+        <string>Language:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="labelEpg">
+       <property name="text">
+        <string>EPG:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="editNumber"/>
+     </item>
+     <item row="2" column="1" colspan="2">
+      <widget class="QLineEdit" name="editChannelName"/>
+     </item>
+     <item row="4" column="1" colspan="2">
+      <widget class="QLineEdit" name="editCategories"/>
+     </item>
+     <item row="6" column="1" colspan="2">
+      <widget class="QLineEdit" name="editLanguage"/>
+     </item>
+     <item row="7" column="1" colspan="2">
+      <widget class="QLineEdit" name="editEpg"/>
+     </item>
+     <item row="8" column="1">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="5" column="0" colspan="3">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&lt;i&gt;You can separate categories with comma.&lt;/i&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="labelUrl">
+       <property name="text">
+        <string>Url:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" colspan="2">
+      <widget class="QLineEdit" name="editUrl"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="buttonApplyNum">
+       <property name="minimumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/icons/images/apply.png</normaloff>:/icons/images/apply.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="3">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionAdd">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/icons/images/video.png</normaloff>:/icons/images/video.png</iconset>
+     <normaloff>:/icons/images/editadd.png</normaloff>:/icons/images/editadd.png</iconset>
    </property>
    <property name="text">
     <string>Add Channel</string>

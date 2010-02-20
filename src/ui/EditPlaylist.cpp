@@ -17,23 +17,37 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
+#include <qdebug.h>
+
 #include "EditPlaylist.h"
 
-EditPlaylist::EditPlaylist(QWidget *parent)
-	: QMainWindow(parent)
+EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent)
+	: QMainWindow(parent), _closeEnabled(false), _playlist(playlist)
 {
 	ui.setupUi(this);
 
-	_closeEnabled = false;
+	ui.editWidget->setEnabled(false);
 
 	connect(ui.actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
-	connect(ui.actionAddChannel, SIGNAL(triggered()), this, SLOT(addItem()));
-	connect(ui.actionReload, SIGNAL(triggered()), this, SLOT(open()));
+	connect(ui.actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
 	connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(save()));
 	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 	connect(ui.actionImport, SIGNAL(triggered()), this, SLOT(import()));
 
+	connect(ui.buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
+	connect(ui.editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
+	connect(ui.editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
+	connect(ui.editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
+	connect(ui.editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
+	connect(ui.editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
+
+	connect(ui.playlist, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(editItem(QTreeWidgetItem*)));
+
 	_channelIcon = QIcon(":/icons/images/video.png");
+
+	ui.playlist->disableCategories();
+	ui.playlist->open(_playlist);
+	ui.editName->setText(ui.playlist->name());
 }
 
 EditPlaylist::~EditPlaylist()
@@ -52,42 +66,33 @@ void EditPlaylist::closeEvent(QCloseEvent *event)
 
 void EditPlaylist::deleteItem()
 {
+	ui.editNumber->setText("");
+	ui.editChannelName->setText("");
+	ui.editUrl->setText("");
+	ui.editCategories->setText("");
+	ui.editLanguage->setText("");
+	ui.editEpg->setText("");
+
+	ui.editWidget->setEnabled(false);
+
 	ui.playlist->deleteItem();
 }
 
 void EditPlaylist::addItem()
 {
-	ui.playlist->createItem();
+	editItem(ui.playlist->createItem());
 }
 
 void EditPlaylist::save()
 {
-	/*QString fileName =
+	QString fileName =
 		QFileDialog::getSaveFileName(this, tr("Save Channel list"),
 									QDir::homePath(),
 									tr("Tano TV Channel list Files (*.m3u)"));
 	if (fileName.isEmpty())
 		return;
 
-	QFile file(fileName);
-	if (!file.open(QFile::WriteOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano"),
-							tr("Cannot write file %1:\n%2.")
-							.arg(fileName)
-							.arg(file.errorString()));
-		return;
-	}
-
-	M3UGenerator *generator = new M3UGenerator(ui.playlist, ui.editName->text());
-	generator->write(&file);
-	delete generator;*/
-}
-
-void EditPlaylist::open()
-{
-	ui.playlist->open(_playlist);
-	ui.editName->setText(ui.playlist->name());
-	show();
+	ui.playlist->save(ui.editName->text(), fileName);
 }
 
 void EditPlaylist::import()
@@ -100,11 +105,6 @@ void EditPlaylist::import()
 		return;
 
 	ui.playlist->import(fileName);
-}
-
-void EditPlaylist::setPlaylist(const QString &file)
-{
-	_playlist = file;
 }
 
 void EditPlaylist::exit()
@@ -130,4 +130,52 @@ void EditPlaylist::exit()
 		default:
 			break;
 	}
+}
+
+void EditPlaylist::editItem(QTreeWidgetItem *item)
+{
+	if(!ui.editWidget->isEnabled())
+		ui.editWidget->setEnabled(true);
+
+	ui.playlist->treeWidget()->setCurrentItem(item);
+
+	ui.editNumber->setText(ui.playlist->channelRead(item)->numToString());
+	ui.editChannelName->setText(ui.playlist->channelRead(item)->name());
+	ui.editUrl->setText(ui.playlist->channelRead(item)->url());
+	ui.editCategories->setText(ui.playlist->channelRead(item)->categoryList().join(","));
+	ui.editLanguage->setText(ui.playlist->channelRead(item)->language());
+	ui.editEpg->setText(ui.playlist->channelRead(item)->epg());
+}
+
+void EditPlaylist::editChannelNumber()
+{
+	QString text = ui.editNumber->text();
+	if(text.toInt() != ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->num())
+		ui.editNumber->setText(QString().number(ui.playlist->processNum(ui.playlist->treeWidget()->currentItem(), text.toInt())));
+}
+
+void EditPlaylist::editChannelName(const QString &text)
+{
+	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setName(text);
+	ui.playlist->treeWidget()->currentItem()->setText(1, text);
+}
+
+void EditPlaylist::editChannelUrl(const QString &text)
+{
+	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setUrl(text);
+}
+
+void EditPlaylist::editChannelCategories(const QString &text)
+{
+	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setCategoryList(text.split(","));
+}
+
+void EditPlaylist::editChannelLanguage(const QString &text)
+{
+	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setLanguage(text);
+}
+
+void EditPlaylist::editChannelEpg(const QString &text)
+{
+	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setEpg(text);
 }

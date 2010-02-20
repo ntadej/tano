@@ -232,8 +232,6 @@
    <addaction name="actionTimers"/>
    <addaction name="actionEditPlaylist"/>
    <addaction name="actionSettings"/>
-   <addaction name="separator"/>
-   <addaction name="actionTest_button"/>
   </widget>
   <widget class="QDockWidget" name="infoWidget">
    <property name="windowIcon">
@@ -303,8 +301,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>353</height>
+          <width>88</width>
+          <height>64</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1123,15 +1121,6 @@
    </property>
    <property name="toolTip">
     <string>Stop recording</string>
-   </property>
-  </action>
-  <action name="actionTest_button">
-   <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/help.png</normaloff>:/icons/images/help.png</iconset>
-   </property>
-   <property name="text">
-    <string>Test button</string>
    </property>
   </action>
   <action name="actionControls">

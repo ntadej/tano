@@ -38,7 +38,11 @@ FIND_PACKAGE(LIBVLC REQUIRED)
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
 STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back slashes to slashes
 # Define Qt version
-SET(TANO_QT_VERSION "${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
+IF(MINGW)
+	SET(TANO_QT_VERSION "${QT_VERSION}") # Use -D command or set it manualy
+ELSE(MINGW)
+	SET(TANO_QT_VERSION "${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
+ENDIF(MINGW)
 
 # Set default install path:
 # In *nix environments this is /usr/local 

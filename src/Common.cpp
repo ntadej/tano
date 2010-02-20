@@ -17,7 +17,6 @@
 #include <QtCore/QFileInfo>
 
 #include "Common.h"
-#include "Ver.h"
 #include "ui/About.h"
 
 QString Common::locateResource(const QString &file)
@@ -79,17 +78,9 @@ QString Common::locateLang(const QString &file)
 	return path.replace(QString("/" + file), QString(""));
 }
 
-QString Common::version()
-{
-	if(SvnRevision() != "")
-		return TanoVersion()+"-r"+SvnRevision();
-	else
-		return TanoVersion();
-}
-
 void Common::about(QWidget *parent)
 {
-	About about(parent, version());
+	About about(parent);
 	about.exec();
 }
 

@@ -26,7 +26,7 @@
 class M3UHandler
 {
 public:
-	M3UHandler(QTreeWidget *treeWidget, const bool &editable = false);
+	M3UHandler(QTreeWidget *treeWidget);
 	virtual ~M3UHandler();
 
 	void processFile(const QString &m3uFile);
@@ -38,31 +38,31 @@ public:
 
 	Channel *channelRead(QTreeWidgetItem *clickedItem);
 	Channel *channelRead(const int &clickedItem);
-	QString getName() const {return name;};
-	QStringList getCategories() const {return categoryList;};
-	QList<int> nums() const {return channelNums;};
+	QString name() const {return _name;};
+	QStringList categories() const {return _categoryList;};
+	QList<int> nums() const {return _channelNums;};
+	int processNewNum(QTreeWidgetItem *channel, const int &num);
+	QMap<QTreeWidgetItem*, Channel*> channelMap() const {return _map;};
 
 private:
 	void processList();
 	QString processNum(const QString &num);
 
-	bool edit;
+	QTreeWidget *_treeWidget;
+	QTreeWidgetItem *_item;
+	Channel *_channel;
 
-	QTreeWidget *treeWidget;
-	QTreeWidgetItem *item;
-	Channel *channel;
+	QIcon _channelIcon;
 
-	QIcon channelIcon;
+	QString _name;
+	QStringList _m3uLineList;
+	QStringList _categoryList;
 
-	QString name;
-	QStringList m3uLineList;
-	QStringList categoryList;
+	QList<Channel*> _channels;
+	QList<int> _channelNums;
 
-	QList<Channel*> channels;
-	QList<int> channelNums;
-
-	QMap<QTreeWidgetItem*, Channel*> map;
-	QMap<int, Channel*> nmap;
+	QMap<QTreeWidgetItem*, Channel*> _map;
+	QMap<int, Channel*> _nmap;
 };
 
 #endif // TANO_M3UHANDLER_H_

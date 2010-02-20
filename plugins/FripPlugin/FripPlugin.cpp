@@ -13,12 +13,12 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include <QtCore/QCoreApplication>
 #include <QtCore/QDir>
 #include <QtCore/QDateTime>
 #include <QtCore/QFile>
+#include <QtCore/QFileInfo>
 #include <QtCore/QTextStream>
-#include <QDebug>
-#include <Common.h>
 
 #include "FripPlugin.h"
 
@@ -94,7 +94,7 @@ bool FripPlugin::isRecording() const
 
 bool FripPlugin::fripExists() const
 {
-	if (!Common::locateResource(fripPath()).isEmpty())
+	if (QFileInfo(fripPath()).exists())
 		return true;
 	else
 		return false;

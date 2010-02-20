@@ -18,8 +18,12 @@
 
 #include <QtCore/QString>
 
-extern QString TanoVersion();
-extern QString QtVersion();
-extern QString SvnRevision();
+class Version
+{
+public:
+	static QString Tano();
+	static QString Qt();
+	static QString Svn();
+};
 
 #endif // TANO_VER_H_

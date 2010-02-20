@@ -32,18 +32,20 @@ public:
 
 	void clear();
 	void open(const QString &file);
+	void save(const QString &name, const QString &file);
 
 	QTreeWidgetItem* createItem();
 	void deleteItem();
 
-	QString name() const {return handler->getName();};
+	QString name() const {return _handler->name();};
 	QString fileName() const {return _fileName;};
-	QList<int> nums() const {return handler->nums();};
+	QList<int> nums() const {return _handler->nums();};
 	QTreeWidget *treeWidget() {return ui.treeWidget;};
 
 	void import(const QString &file);
+	int processNum(QTreeWidgetItem *channel, const int &num);
+	void disableCategories();
 
-public slots:
 	Channel *channelRead(QTreeWidgetItem* clickedChannel);
 	Channel *channelRead(const int &clickedChannel);
 
@@ -57,7 +59,7 @@ private slots:
 private:
 	Ui::PlaylistWidget ui;
 
-	M3UHandler *handler;
+	M3UHandler *_handler;
 	QString _fileName;
 };
 

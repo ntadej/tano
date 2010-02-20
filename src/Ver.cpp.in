@@ -15,21 +15,24 @@
 
 #include "Ver.h"
 
-QString TanoVersion()
+QString Version::Tano()
 {
 	QString version = "@TANO_VERSION@";
-	
-	return version;
+
+	if(Svn() != "")
+		return version+"-r"+Svn();
+	else
+		return version;
 }
 
-QString QtVersion()
+QString Version::Qt()
 {
 	QString version = "@TANO_QT_VERSION@";
 	
 	return version;
 }
 
-QString SvnRevision()
+QString Version::Svn()
 {
 	QString svn = "@TANO_WC_REVISION@";
 	

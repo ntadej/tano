@@ -1,7 +1,6 @@
 SET(MAIN_SOURCE_DIR "../")
 
 IF(MINGW)
-add_definitions(-DCMAKE_TOOLCHAIN=../Toolchain-win32.cmake)
 include_directories(${LIBVLC_INCLUDE_DIR})
 ENDIF(MINGW)
 
@@ -23,13 +22,13 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 	ui/About.ui
 	ui/EditPlaylist.ui
 	ui/EditSettings.ui
+	ui/EditTimers.ui
 	ui/EpgShow.ui
 	ui/InfoBar.ui
 	ui/MainWindow.ui
 	ui/PlaylistWidget.ui
 	ui/PluginsManager.ui
 	ui/Recorder.ui
-	ui/TimersManager.ui
 )
 
 # Define the MOC source files used by Tano
@@ -44,11 +43,10 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	epg/EpgShow.h
 	plugins/PluginsManager.h
 	recorder/Recorder.h
-	recorder/Timer.h
-	recorder/TimersManager.h
 	ui/About.h
 	ui/EditPlaylist.h
 	ui/EditSettings.h
+	ui/EditTimers.h
 	ui/FirstRun.h
 	ui/InfoBar.h
 	ui/License.h
@@ -72,10 +70,10 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	plugins/PluginsManager.cpp
 	recorder/Recorder.cpp
 	recorder/Timer.cpp
-	recorder/TimersManager.cpp
 	ui/About.cpp
 	ui/EditPlaylist.cpp
 	ui/EditSettings.cpp
+	ui/EditTimers.cpp
 	ui/FirstRun.cpp
 	ui/InfoBar.cpp
 	ui/License.cpp

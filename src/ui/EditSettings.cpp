@@ -7,6 +7,7 @@
 
 #include "EditSettings.h"
 #include "../Common.h"
+#include "../Ver.h"
 
 EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	: QDialog(parent), shortcuts(s)
@@ -28,7 +29,7 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	settings = Common::settings();
 	settings->sync();
 
-	ui.labelVersion->setText(tr("You are using Tano version:")+" "+Common::version());
+	ui.labelVersion->setText(tr("You are using Tano version:")+" "+Version::Tano());
 	ui.labelVlcVersion->setText(ui.labelVlcVersion->text()+" "+VlcInstance::version());
 
 	read();

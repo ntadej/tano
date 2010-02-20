@@ -25,8 +25,6 @@ public:
 	static QString locateResource(const QString &file);
 	static QString locateLang(const QString &file);
 
-	static QString version();
-
 	static void about(QWidget *parent = 0 );
 
 	static QSettings* settings();

@@ -32,8 +32,8 @@
 #include "control/Time.h"
 #include "epg/Epg.h"
 #include "epg/EpgShow.h"
-#include "recorder/TimersManager.h"
 #include "ui/EditPlaylist.h"
+#include "ui/EditTimers.h"
 #include "ui/TrayIcon.h"
 
 class MainWindow : public QMainWindow
@@ -50,7 +50,10 @@ private slots:
 	void exit();
 	void aboutTano();
 	void aboutPlugins();
+
 	void showSettings();
+	void showPlaylistEditor();
+	void showTimersEditor();
 
 	void play(const QString &itemFile = 0);
 	void stop();
@@ -77,15 +80,12 @@ private slots:
 	void recordNow();
 	void recorder(const bool &enabled);
 
-	void test();
-
 signals:
 	void setVolume(int);
 
 private:
 	//Initialising functions
 	void createBackend();
-	void createCommon();
 	void createConnections();
 	void createGui();
 	void createMenus();
@@ -95,7 +95,7 @@ private:
 	void createShortcuts();
 
 	//Settings
-	QSettings *settings;
+	QSettings *_settings;
 	QString _defaultPlaylist;
 	QString _defaultSubtitleLanguage;
 	int _desktopWidth;
@@ -113,38 +113,36 @@ private:
 	QString _wheelType;
 
 	//Main
-	ChannelSelect *select;
-	Shortcuts *shortcuts;
-	Time *time;
-	Updates *update;
+	ChannelSelect *_select;
+	Shortcuts *_shortcuts;
+	Time *_time;
+	Updates *_update;
 
 	//Backend
-	VlcInstance *backend;
-	VlcControl *controller;
+	VlcInstance *_backend;
+	VlcControl *_controller;
 
 	//GUI
 	Ui::MainWindow ui;
-	Qt::WindowFlags flags;
+	Qt::WindowFlags _flags;
+	EditPlaylist *_playlistEditor;
+	EditTimers *_timersEditor;
 
 	//Playback and channels
-	Channel *channel;
-	Epg *epg;
-	EpgShow *epgShow;
-	EditPlaylist *editor;
+	Channel *_channel;
+	Epg *_epg;
+	EpgShow *_epgShow;
 	QString _fileName;
 	QString _playlistName;
 
 	//Menus and actions
-	TrayIcon *trayIcon;
-	QMenu *rightMenu;
-	QMenu *openMenu;
-	QActionGroup *ratioGroup;
-	QActionGroup *cropGroup;
-	QActionGroup *filterGroup;
-	QList<QAction*> actions;
-
-	//Recorder
-	TimersManager *timers;
+	TrayIcon *_trayIcon;
+	QMenu *_rightMenu;
+	QMenu *_openMenu;
+	QActionGroup *_ratioGroup;
+	QActionGroup *_cropGroup;
+	QActionGroup *_filterGroup;
+	QList<QAction*> _actions;
 };
 
 #endif // TANO_MAINWINDOW_H_

@@ -1,9 +1,5 @@
 PROJECT(QtKeySequenceEdit)
 
-IF(MINGW)
-add_definitions(-DCMAKE_TOOLCHAIN=../../Toolchain-win32.cmake)
-ENDIF(MINGW)
-
 # Set your list of sources here.
 SET(QKEY_EDITOR_SRCS
     QtKeySequenceEdit.cpp

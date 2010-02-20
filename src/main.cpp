@@ -19,6 +19,7 @@
 #include <QtCore/QTranslator>
 
 #include "Common.h"
+#include "Ver.h"
 #include "MainWindow.h"
 #include "ui/FirstRun.h"
 
@@ -36,7 +37,7 @@ int main(int argc, char *argv[])
 	translator.load(QString("tano_" + locale), langPath);
 	app.installTranslator(&translator);
 
-	if(!settings.value("registered",false).toBool() || settings.value("version",Common::version()).toString() != Common::version()) {
+	if(!settings.value("registered",false).toBool() || settings.value("version",Version::Tano()).toString() != Version::Tano()) {
 		FirstRun *wizard = new FirstRun();
 		wizard->exec();
 		delete wizard;

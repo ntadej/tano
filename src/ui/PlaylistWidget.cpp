@@ -16,6 +16,8 @@
 #include <QtCore/QFile>
 #include <QtGui/QMessageBox>
 
+#include "../xml/M3UGenerator.h"
+
 #include "PlaylistWidget.h"
 
 PlaylistWidget::PlaylistWidget(QWidget *parent)
@@ -24,7 +26,7 @@ PlaylistWidget::PlaylistWidget(QWidget *parent)
 	ui.setupUi(this);
 	ui.treeWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
 
-	handler = new M3UHandler(ui.treeWidget);
+	_handler = new M3UHandler(ui.treeWidget);
 
 	connect(ui.treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SIGNAL(itemClicked(QTreeWidgetItem*, int)));
 	connect(ui.categoryBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processCategories(QString)));
@@ -33,17 +35,17 @@ PlaylistWidget::PlaylistWidget(QWidget *parent)
 
 PlaylistWidget::~PlaylistWidget()
 {
-	delete handler;
+	delete _handler;
 }
 
 void PlaylistWidget::clear()
 {
-	handler->clear();
+	_handler->clear();
 }
 
 void PlaylistWidget::open(const QString &file)
 {
-	handler->clear();
+	_handler->clear();
 
 	if (file.isEmpty())
 		return;
@@ -59,13 +61,29 @@ void PlaylistWidget::open(const QString &file)
 		return;
 	}
 
-	handler->processFile(_fileName);
+	_handler->processFile(_fileName);
 
 	ui.categoryBox->clear();
 	ui.categoryBox->insertItem(0,tr("All channels"));
-	ui.categoryBox->insertItems(1,handler->getCategories());
+	ui.categoryBox->insertItems(1,_handler->categories());
 
 	ui.treeWidget->sortByColumn(0, Qt::AscendingOrder);
+}
+
+void PlaylistWidget::save(const QString &name, const QString &file)
+{
+	QFile f(file);
+	if (!f.open(QFile::WriteOnly | QFile::Text)) {
+		QMessageBox::warning(this, tr("Tano"),
+							tr("Cannot write file %1:\n%2.")
+							.arg(file)
+							.arg(f.errorString()));
+		return;
+	}
+
+	M3UGenerator *generator = new M3UGenerator(ui.treeWidget, name, _handler->channelMap());
+	generator->write(&f);
+	delete generator;
 }
 
 void PlaylistWidget::processCategories(const QString &cat)
@@ -96,29 +114,40 @@ void PlaylistWidget::processSearch(const QString &search)
 
 QTreeWidgetItem *PlaylistWidget::createItem()
 {
-	QTreeWidgetItem *newI = handler->createChannel();
+	QTreeWidgetItem *newI = _handler->createChannel();
 	ui.treeWidget->sortByColumn(0, Qt::AscendingOrder);
 	return newI;
 }
 
 void PlaylistWidget::deleteItem()
 {
-	handler->deleteChannel(ui.treeWidget->currentItem());
+	_handler->deleteChannel(ui.treeWidget->currentItem());
 	ui.treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
 Channel *PlaylistWidget::channelRead(QTreeWidgetItem* clickedChannel)
 {
-	return handler->channelRead(clickedChannel);
+	return _handler->channelRead(clickedChannel);
 }
 
 Channel *PlaylistWidget::channelRead(const int &clickedChannel)
 {
-	return handler->channelRead(clickedChannel);
+	return _handler->channelRead(clickedChannel);
 }
 
 void PlaylistWidget::import(const QString &file)
 {
-	handler->clear();
-	handler->importOldFormat(file);
+	_handler->clear();
+	_handler->importOldFormat(file);
+}
+
+int PlaylistWidget::processNum(QTreeWidgetItem *channel, const int &num)
+{
+	return _handler->processNewNum(channel, num);
+}
+
+void PlaylistWidget::disableCategories()
+{
+	ui.labelCategory->hide();
+	ui.categoryBox->hide();
 }

@@ -24,10 +24,8 @@ class EditPlaylist : public QMainWindow
 {
 Q_OBJECT
 public:
-	EditPlaylist(QWidget *parent = 0);
+	EditPlaylist(const QString &playlist, QWidget *parent = 0);
 	~EditPlaylist();
-
-	void setPlaylist(const QString &file);
 
 protected:
 	void closeEvent(QCloseEvent *event);
@@ -36,18 +34,26 @@ private slots:
 	void deleteItem();
 	void addItem();
 
-	void open();
 	void save();
 	void import();
 
 	void exit();
 
+	void editItem(QTreeWidgetItem *item);
+
+	void editChannelNumber();
+	void editChannelName(const QString &text);
+	void editChannelUrl(const QString &text);
+	void editChannelCategories(const QString &text);
+	void editChannelLanguage(const QString &text);
+	void editChannelEpg(const QString &text);
+
 private:
 	Ui::EditPlaylist ui;
 
-	QIcon _channelIcon;
 	bool _closeEnabled;
 	QString _playlist;
+	QIcon _channelIcon;
 };
 
 #endif // TANO_EDITPLAYLIST_H_

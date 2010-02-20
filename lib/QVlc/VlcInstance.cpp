@@ -63,20 +63,20 @@ void VlcInstance::openMedia(const QString &media)
 
 #if VLC_TRUNK
 	/* Create a new LibVLC media descriptor */
-	_vlcMedia = libvlc_media_new (_vlcInstance, media.toAscii());
+	_vlcMedia = libvlc_media_new_location(_vlcInstance, media.toAscii());
 	checkError();
 	qDebug() << "libVlc" <<"Media:" << media;
 
-	_vlcCurrentMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia);
+	_vlcCurrentMediaPlayer = libvlc_media_player_new_from_media(_vlcMedia);
 	checkError();
 #else
 	/* Create a new LibVLC media descriptor */
-	_vlcMedia = libvlc_media_new (_vlcInstance, media.toAscii(), _vlcException);
+	_vlcMedia = libvlc_media_new(_vlcInstance, media.toAscii(), _vlcException);
 	checkError();
 
 	qDebug() << "libVlc" <<"Media:" << media;
 
-	_vlcCurrentMediaPlayer = libvlc_media_player_new_from_media (_vlcMedia, _vlcException);
+	_vlcCurrentMediaPlayer = libvlc_media_player_new_from_media(_vlcMedia, _vlcException);
 	checkError();
 #endif
 
@@ -90,9 +90,9 @@ void VlcInstance::openMedia(const QString &media)
 	#endif
 #elif defined(Q_OS_MAC)
 	#if VLC_TRUNK
-		libvlc_media_player_set_agl (_vlcCurrentMediaPlayer, _widgetId);
+		libvlc_media_player_set_agl(_vlcCurrentMediaPlayer, _widgetId);
 	#else
-		libvlc_media_player_set_agl (_vlcCurrentMediaPlayer, _widgetId, _vlcException);
+		libvlc_media_player_set_agl(_vlcCurrentMediaPlayer, _widgetId, _vlcException);
 	#endif
 #else
 	#if VLC_TRUNK
