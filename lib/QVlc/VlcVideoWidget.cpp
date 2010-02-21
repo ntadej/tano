@@ -1,3 +1,19 @@
+/****************************************************************************
+* QVlc - Qt and libVLC connector library
+* VlcVideoWidget.cpp: Video widget
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
 #include <QtGui/QHBoxLayout>
@@ -14,11 +30,11 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
 
 	_move = true;
 
-	widget = new QWidget(this);
-	widget->setMouseTracking(true);
+	_widget = new QWidget(this);
+	_widget->setMouseTracking(true);
 
 	QHBoxLayout *layout = new QHBoxLayout;
-	layout->addWidget(widget);
+	layout->addWidget(_widget);
 	setLayout(layout);
 
 	_desktopWidth = QApplication::desktop()->width();
@@ -27,10 +43,10 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
 	_osdWidth = 0;
 	_osdHeight = 0;
 
-	timerMouse = new QTimer(this);
-	connect(timerMouse, SIGNAL(timeout()), this, SLOT(hideMouse()));
-	timerSettings = new QTimer(this);
-	connect(timerSettings, SIGNAL(timeout()), this, SLOT(applyPreviousSettings()));
+	_timerMouse = new QTimer(this);
+	connect(_timerMouse, SIGNAL(timeout()), this, SLOT(hideMouse()));
+	_timerSettings = new QTimer(this);
+	connect(_timerSettings, SIGNAL(timeout()), this, SLOT(applyPreviousSettings()));
 
 	_currentRatio = "";
 	_currentCrop = "";
@@ -39,14 +55,9 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
 
 VlcVideoWidget::~VlcVideoWidget()
 {
-	delete timerMouse;
-	delete timerSettings;
-	delete widget;
-}
-
-WId VlcVideoWidget::getWinId()
-{
-	return widget->winId();
+	delete _timerMouse;
+	delete _timerSettings;
+	delete _widget;
 }
 
 void VlcVideoWidget::setOsdSize(const int &width, const int &height)
@@ -70,9 +81,9 @@ void VlcVideoWidget::mouseMoveEvent(QMouseEvent *event)
 		emit osdVisibility(true);
 
 		if(event->globalPos().y() >= _desktopHeight-_osdHeight) {
-			timerMouse->stop();
+			_timerMouse->stop();
 		} else {
-			timerMouse->start(1000);
+			_timerMouse->start(1000);
 		}
 	}
 }
@@ -100,7 +111,7 @@ void VlcVideoWidget::hideMouse()
 	if(this->isFullScreen() && _move) {
 		qApp->setOverrideCursor(Qt::BlankCursor);
 		emit osdVisibility(false);
-		timerMouse->stop();
+		_timerMouse->stop();
 	}
 }
 
@@ -167,12 +178,12 @@ void VlcVideoWidget::setTeletextPage(const int &page)
 
 void VlcVideoWidget::setPreviousSettings()
 {
-	timerSettings->start(500);
+	_timerSettings->start(500);
 }
 void VlcVideoWidget::applyPreviousSettings()
 {
 	if(_currentRatio == "" && _currentCrop == "" && _currentFilter == "") {
-		timerSettings->stop();
+		_timerSettings->stop();
 		return;
 	}
 
@@ -202,7 +213,7 @@ void VlcVideoWidget::applyPreviousSettings()
 	}
 
 	if(success == "++")
-		timerSettings->stop();
+		_timerSettings->stop();
 
 	VlcInstance::checkError();
 }

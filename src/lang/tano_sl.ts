@@ -231,17 +231,17 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="47"/>
+        <location filename="../ui/EditSettings.cpp" line="45"/>
         <source>You are using Tano version:</source>
         <translation>Uporabljaš Tano različice:</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="330"/>
+        <location filename="../ui/EditSettings.cpp" line="328"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="332"/>
+        <location filename="../ui/EditSettings.cpp" line="330"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
@@ -397,8 +397,8 @@ Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
         <location filename="../../build/src/ui_EditSettings.h" line="966"/>
-        <location filename="../ui/EditSettings.cpp" line="251"/>
-        <location filename="../ui/EditSettings.cpp" line="255"/>
+        <location filename="../ui/EditSettings.cpp" line="249"/>
+        <location filename="../ui/EditSettings.cpp" line="253"/>
         <source>Disabled</source>
         <translation>Onemogočeno</translation>
     </message>
@@ -567,7 +567,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="348"/>
+        <location filename="../ui/EditSettings.cpp" line="346"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>
@@ -798,17 +798,17 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>InfoBar</name>
     <message>
-        <location filename="../ui/InfoBar.cpp" line="54"/>
+        <location filename="../ui/InfoBar.cpp" line="69"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../ui/InfoBar.cpp" line="60"/>
+        <location filename="../ui/InfoBar.cpp" line="75"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
     <message>
-        <location filename="../ui/InfoBar.cpp" line="61"/>
+        <location filename="../ui/InfoBar.cpp" line="76"/>
         <source>Next:</source>
         <translation>Naslednje:</translation>
     </message>
@@ -1526,82 +1526,82 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="41"/>
+        <location filename="../ui/TrayIcon.cpp" line="53"/>
         <source>Still running</source>
         <translation>Še vedno teče</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="47"/>
+        <location filename="../ui/TrayIcon.cpp" line="59"/>
         <source>A new version of Tano is available!</source>
         <translation>Nova različica programa Tano je na voljo!</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="47"/>
+        <location filename="../ui/TrayIcon.cpp" line="59"/>
         <source>Version:</source>
         <translation>Različica:</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="43"/>
+        <location filename="../ui/TrayIcon.cpp" line="55"/>
         <source>Latest version</source>
         <translation>Zadnja različica</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="47"/>
+        <location filename="../ui/TrayIcon.cpp" line="59"/>
         <source>Update available</source>
         <translation>Posodobitev je na voljo</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="45"/>
+        <location filename="../ui/TrayIcon.cpp" line="57"/>
         <source>SVN</source>
         <translation>SVN</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="8"/>
-        <location filename="../ui/TrayIcon.cpp" line="62"/>
+        <location filename="../ui/TrayIcon.cpp" line="23"/>
+        <location filename="../ui/TrayIcon.cpp" line="74"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="39"/>
+        <location filename="../ui/TrayIcon.cpp" line="51"/>
         <source>Recording</source>
         <translation>Snemanje</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="39"/>
+        <location filename="../ui/TrayIcon.cpp" line="51"/>
         <source>Tano Recorder is recording %1 to
 %2.</source>
         <translation>Tano Snemalnik sedaj snema %1 v
 %2.</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="41"/>
+        <location filename="../ui/TrayIcon.cpp" line="53"/>
         <source>Tano is still running.
 Right click to exit.</source>
         <translation>Tano še vedno teče.
 Desno klikni za izhod.</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="43"/>
+        <location filename="../ui/TrayIcon.cpp" line="55"/>
         <source>You are using the latest version of Tano.</source>
         <translation>Uporabljaš zadno različico programa Tano.</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="45"/>
+        <location filename="../ui/TrayIcon.cpp" line="57"/>
         <source>You are using SVN version:</source>
         <translation>Uporaljaš nestabilno SVN različico:</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="45"/>
+        <location filename="../ui/TrayIcon.cpp" line="57"/>
         <source>Stable version:</source>
         <translation>Stabilna različica:</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="64"/>
+        <location filename="../ui/TrayIcon.cpp" line="76"/>
         <source>Playing:</source>
         <translation>Predvajam:</translation>
     </message>
     <message>
-        <location filename="../ui/TrayIcon.cpp" line="66"/>
+        <location filename="../ui/TrayIcon.cpp" line="78"/>
         <source>Recording:</source>
         <translation>Snemam:</translation>
     </message>

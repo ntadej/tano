@@ -22,7 +22,7 @@
 
 #include "Timer.h"
 #include "../channels/Channel.h"
-#include "../plugins/Plugins.h"
+#include "../plugins/RecorderPlugins.h"
 #include "../ui/TrayIcon.h"
 #include "../xml/M3UHandler.h"
 

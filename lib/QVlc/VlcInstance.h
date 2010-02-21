@@ -1,3 +1,19 @@
+/****************************************************************************
+* QVlc - Qt and libVLC connector library
+* VlcInstance.h: Main libVLC instance
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #ifndef QVLC_VLCINSTANCE_H_
 #define QVLC_VLCINSTANCE_H_
 
@@ -19,7 +35,7 @@ class VlcInstance : public QObject
 Q_OBJECT
 public:
 	VlcInstance(const QList<const char *> &args, const WId &widget = NULL);
-	virtual ~VlcInstance();
+	~VlcInstance();
 
 	void openMedia(const QString &media);
 	static void checkError();

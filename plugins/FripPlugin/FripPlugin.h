@@ -19,7 +19,7 @@
 #include <QtCore/QProcess>
 #include <QtCore/QString>
 
-#include "plugins/Plugins.h"
+#include "plugins/RecorderPlugins.h"
 
 class FripPlugin : public RecorderPlugin
 {

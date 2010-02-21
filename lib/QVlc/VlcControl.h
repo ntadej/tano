@@ -1,3 +1,19 @@
+/****************************************************************************
+* QVlc - Qt and libVLC connector library
+* VlcControl.h: Subtitles and audio channels controller
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #ifndef QVLC_VLCCONTROL_H_
 #define QVLC_VLCCONTROL_H_
 
@@ -12,7 +28,7 @@ class VlcControl : public QObject
 Q_OBJECT
 public:
 	VlcControl(const QString &lang = "");
-	virtual ~VlcControl();
+	~VlcControl();
 
 	void update();
 
@@ -26,22 +42,22 @@ private slots:
 
 signals:
 	void vlcAction(const QString, QList<QAction*>);
-	void stateChanged(int);
+	void stateChanged(const int);
 
 private:
-	QTimer *timer;
-	QTimer *check;
+	QTimer *_timer;
+	QTimer *_check;
 
-	QList<QAction*> audioList;
-	QMap<QString,int> audioMap;
-	QActionGroup *audioGroup;
+	QList<QAction*> _audioList;
+	QMap<QString,int> _audioMap;
+	QActionGroup *_audioGroup;
 
-	QList<QAction*> subList;
-	QMap<QString,int> subMap;
-	QActionGroup *subGroup;
+	QList<QAction*> _subList;
+	QMap<QString,int> _subMap;
+	QActionGroup *_subGroup;
 
-	bool manualLanguage;
-	QStringList preferedLanguage;
+	bool _manualLanguage;
+	QStringList _preferedLanguage;
 };
 
 #endif // QVLC_VLCCONTROL_H_

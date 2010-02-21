@@ -19,7 +19,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QtPlugin>
 
-#include <plugins/Plugins.h>
+#include <plugins/RecorderPlugins.h>
 
 class FripPluginCreator : public QObject, public RecorderPluginCreator
 {

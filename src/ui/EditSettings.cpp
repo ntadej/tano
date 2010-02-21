@@ -18,8 +18,6 @@
 #include <QtGui/QMessageBox>
 #include <QtGui/QTextEdit>
 
-#include <QVlc/VlcInstance.h>
-
 #include "EditSettings.h"
 #include "../Common.h"
 #include "../Ver.h"
@@ -45,7 +43,7 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	_settings->sync();
 
 	ui.labelVersion->setText(tr("You are using Tano version:")+" "+Version::Tano());
-	ui.labelVlcVersion->setText(ui.labelVlcVersion->text()+" "+VlcInstance::version());
+	ui.labelVlcVersion->setText(ui.labelVlcVersion->text()+" "+Version::libVLC());
 
 	loadPlugins();
 	read();

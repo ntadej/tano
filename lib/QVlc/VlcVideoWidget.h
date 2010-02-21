@@ -1,3 +1,19 @@
+/****************************************************************************
+* QVlc - Qt and libVLC connector library
+* VlcVideoWidget.h: Video widget
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #ifndef QVLC_VLCVIDEOWIDGET_H_
 #define QVLC_VLCVIDEOWIDGET_H_
 
@@ -11,7 +27,7 @@ public:
 	VlcVideoWidget(QWidget *parent = 0);
 	~VlcVideoWidget();
 
-	WId getWinId();
+	WId getWinId() {return _widget->winId();};
 	void setOsdSize(const int &width, const int &height);
 
 protected:
@@ -71,9 +87,9 @@ private slots:
 	void applyPreviousSettings();
 
 private:
-	QWidget *widget;
-	QTimer *timerMouse;
-	QTimer *timerSettings;
+	QWidget *_widget;
+	QTimer *_timerMouse;
+	QTimer *_timerSettings;
 
 	bool _move;
 

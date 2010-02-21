@@ -20,8 +20,6 @@
 
 #include "PluginsLoader.h"
 
-#include <QDebug>
-
 PluginsLoader::PluginsLoader()
 {
 	QDir pluginsDir = QDir(qApp->applicationDirPath());

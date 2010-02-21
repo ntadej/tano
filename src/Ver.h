@@ -18,12 +18,15 @@
 
 #include <QtCore/QString>
 
+#include <QVlc/VlcInstance.h>
+
 class Version
 {
 public:
 	static QString Tano();
 	static QString Qt();
 	static QString Svn();
+	static QString libVLC() {return VlcInstance::version();};
 };
 
 #endif // TANO_VER_H_

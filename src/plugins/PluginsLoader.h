@@ -21,7 +21,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
-#include "Plugins.h"
+#include "RecorderPlugins.h"
 
 class PluginsLoader
 {
