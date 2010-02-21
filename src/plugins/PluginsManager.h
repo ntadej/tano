@@ -34,11 +34,11 @@ private:
 
 	void populateTreeWidget(const QString &file, const QString &name);
 
-	QDir pluginsDir;
-	QStringList pluginFileNames;
+	QDir _pluginsDir;
+	QStringList _pluginFileNames;
 
-	QIcon interfaceIcon;
-	QIcon featureIcon;
+	QIcon _interfaceIcon;
+	QIcon _featureIcon;
 };
 
 #endif // TANO_PLUGINSMANAGER_H_

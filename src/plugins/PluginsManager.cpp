@@ -21,11 +21,9 @@ PluginsManager::PluginsManager(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirOpenIcon),
-							QIcon::Normal, QIcon::On);
-	interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirClosedIcon),
-							QIcon::Normal, QIcon::Off);
-	featureIcon.addPixmap(style()->standardPixmap(QStyle::SP_FileIcon));
+	_interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirOpenIcon), QIcon::Normal, QIcon::On);
+	_interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirClosedIcon), QIcon::Normal, QIcon::Off);
+	_featureIcon.addPixmap(style()->standardPixmap(QStyle::SP_FileIcon));
 
 	PluginsLoader *loader = new PluginsLoader();
 
@@ -52,8 +50,8 @@ void PluginsManager::populateTreeWidget(const QString &file, const QString &name
 
 	QTreeWidgetItem *interfaceItem = new QTreeWidgetItem(pluginItem);
 	interfaceItem->setText(0, tr("Recorder Plugin"));
-	interfaceItem->setIcon(0, interfaceIcon);
+	interfaceItem->setIcon(0, _interfaceIcon);
 	QTreeWidgetItem *featureItem = new QTreeWidgetItem(interfaceItem);
 	featureItem->setText(0, name);
-	featureItem->setIcon(0, featureIcon);
+	featureItem->setIcon(0, _featureIcon);
 }

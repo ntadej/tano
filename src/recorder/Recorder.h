@@ -16,7 +16,6 @@
 #ifndef TANO_RECORDER_H_
 #define TANO_RECORDER_H_
 
-#include <QtCore/QSettings>
 #include <QtCore/QTime>
 #include <QtCore/QTimer>
 #include <QtGui/QMainWindow>
@@ -57,21 +56,15 @@ private slots:
 private:
 	Ui::Recorder ui;
 
-	bool recording;
-	Channel *channel;
+	bool _recording;
+	Channel *_channel;
+	RecorderPlugin *_plugin;
+	TrayIcon *_trayIcon;
+	Timer *_currentTimer;
 
-	RecorderPlugin *plugin;
-
-	TrayIcon *trayIcon;
-
-	Timer *currentTimer;
-
-	QTimer *timer;
-	QTime time;
-
-	QSettings *settings;
-
-	QAction *actionRecord;
+	QTimer *_timer;
+	QTime _time;
+	QAction *_actionRecord;
 };
 
 #endif // TANO_RECORDER_H_

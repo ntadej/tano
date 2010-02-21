@@ -28,16 +28,16 @@ public:
 	~Shortcuts();
 
 	void apply();
-	QStringList defaultKeys() const {return defaultList;};
-	QStringList actionsNames() const {return actionsName;};
+	QStringList defaultKeys() const {return _defaultList;};
+	QStringList actionsNames() const {return _actionsName;};
 
 private:
-	QList<QAction*> actions;
-	QStringList defaultList;
-	QStringList actionsName;
-	QStringList keys;
+	QList<QAction*> _actions;
+	QStringList _defaultList;
+	QStringList _actionsName;
+	QStringList _keys;
 
-	QSettings *settings;
+	QSettings *_settings;
 };
 
 #endif // TANO_SHORTCUTS_H_

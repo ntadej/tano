@@ -139,10 +139,10 @@ void EditPlaylist::editItem(QTreeWidgetItem *item)
 
 	ui.playlist->treeWidget()->setCurrentItem(item);
 
-	ui.editNumber->setText(ui.playlist->channelRead(item)->numToString());
+	ui.editNumber->setText(ui.playlist->channelRead(item)->numberString());
 	ui.editChannelName->setText(ui.playlist->channelRead(item)->name());
 	ui.editUrl->setText(ui.playlist->channelRead(item)->url());
-	ui.editCategories->setText(ui.playlist->channelRead(item)->categoryList().join(","));
+	ui.editCategories->setText(ui.playlist->channelRead(item)->categories().join(","));
 	ui.editLanguage->setText(ui.playlist->channelRead(item)->language());
 	ui.editEpg->setText(ui.playlist->channelRead(item)->epg());
 }
@@ -150,7 +150,7 @@ void EditPlaylist::editItem(QTreeWidgetItem *item)
 void EditPlaylist::editChannelNumber()
 {
 	QString text = ui.editNumber->text();
-	if(text.toInt() != ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->num())
+	if(text.toInt() != ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->number())
 		ui.editNumber->setText(QString().number(ui.playlist->processNum(ui.playlist->treeWidget()->currentItem(), text.toInt())));
 }
 
@@ -167,7 +167,7 @@ void EditPlaylist::editChannelUrl(const QString &text)
 
 void EditPlaylist::editChannelCategories(const QString &text)
 {
-	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setCategoryList(text.split(","));
+	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setCategories(text.split(","));
 }
 
 void EditPlaylist::editChannelLanguage(const QString &text)

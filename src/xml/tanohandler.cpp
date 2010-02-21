@@ -4,6 +4,9 @@
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
+* Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* Contact: Qt Software Information (qt-info@nokia.com)
+*
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -19,12 +22,10 @@
 #include "tanohandler.h"
 
 TanoHandler::TanoHandler()
+	: _num(0), _cat(0), _metTanoTag(false),
+	_playlistName(QObject::tr("Channel list")), _category("")
 {
-	num = 0;
-	cat = 0;
-	metTanoTag = false;
-	playlistName = QObject::tr("Channel list");
-	category = "";
+
 }
 
 bool TanoHandler::startElement(const QString & /* namespaceURI */,
@@ -32,31 +33,31 @@ bool TanoHandler::startElement(const QString & /* namespaceURI */,
 							   const QString &qName,
 							   const QXmlAttributes &attributes)
 {
-	if (!metTanoTag && qName != "tano") {
-		errorStr = QObject::tr("The file is not a Tano TV channel list file.");
+	if (!_metTanoTag && qName != "tano") {
+		_errorStr = QObject::tr("The file is not a Tano TV channel list file.");
 		return false;
 	}
 
 	if (qName == "tano") {
 		QString version = attributes.value("version");
 		if (!version.isEmpty() && !(version == "1.1" || version == "1.2" || version == "1.3")) {
-			errorStr = QObject::tr("The file is not a Tano TV channel list 1.1 or later.");
+			_errorStr = QObject::tr("The file is not a Tano TV channel list 1.1 or later.");
 			return false;
 		}
-		metTanoTag = true;
+		_metTanoTag = true;
 	} else if (qName == "category") {
 		if (attributes.value("type") == "main") {
-			cat++;
-			num = channelNumSync(cat);
+			_cat++;
+			_num = channelNumSync(_cat);
 		}
-		channel = createChannel(QObject::tr("Unknown title"), cat, true);
+		_channel = new Channel("",0);
 	} else if (qName == "channel") {
-		num++;
-		channel = createChannel(QObject::tr("Unknown title"), num, false);
-		_channelList << channel;
+		_num++;
+		_channel = new Channel(QObject::tr("Unknown title"), _num);
+		_channelList << _channel;
 	}
 
-	currentText.clear();
+	_currentText.clear();
 	return true;
 }
 
@@ -65,34 +66,33 @@ bool TanoHandler::endElement(const QString & /* namespaceURI */,
 							 const QString &qName)
 {
 	if (qName == "title") {
-		if (channel) {
-			if(channel->isCategory())
-				category = currentText;
-			channel->setName(currentText);
+		if (_channel) {
+			if(_channel->number() == 0)
+				_category = _currentText;
+			_channel->setName(_currentText);
+			_channel->setCategories(QStringList() << _category);
 		}
 	} else if (qName == "epg") {
-		if (channel) {
-			channel->setEpg(currentText);
+		if (_channel) {
+			_channel->setEpg(_currentText);
 		}
 	} else if (qName == "language") {
-		if (channel) {
-			channel->setLanguage(currentText);
+		if (_channel) {
+			_channel->setLanguage(_currentText);
 		}
 	} else if (qName == "url") {
-		if (channel) {
-			channel->setUrl(currentText);
+		if (_channel) {
+			_channel->setUrl(_currentText);
 		}
-	} else if (qName == "category" || qName == "channel") {
-	   // item = item->parent();
 	} else if (qName == "playlist") {
-		playlistName = currentText;
+		_playlistName = _currentText;
 	}
 	return true;
 }
 
 bool TanoHandler::characters(const QString &str)
 {
-	currentText += str;
+	_currentText += str;
 	return true;
 }
 
@@ -105,22 +105,11 @@ bool TanoHandler::fatalError(const QXmlParseException &exception)
 	return false;
 }
 
-QString TanoHandler::errorString() const
-{
-	return errorStr;
-}
-
-Channel *TanoHandler::createChannel(const QString &name, const int &num, const bool &cat)
-{
-	Channel *childChannel = new Channel(name,num, cat);
-	return childChannel;
-}
-
 int TanoHandler::channelNumSync(const int &c)
 {
 	if(c>1) {
 		int i=c*100;
-		while(i<num)
+		while(i<_num)
 			i+=100;
 		return i-1;
 	} else {

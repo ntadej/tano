@@ -1,52 +1,45 @@
 /****************************************************************************
-**
-** Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
-** Contact: Qt Software Information (qt-info@nokia.com)
-**
-** Copyright (C) 2008-2009 Tadej Novak
-**
-** This file is part of the example classes of the Qt Toolkit.
-**
-** GNU General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU
-** General Public License versions 2.0 or 3.0 as published by the Free
-** Software Foundation and appearing in the file LICENSE.GPL included in
-** the packaging of this file.  Please review the following information
-** to ensure GNU General Public Licensing requirements will be met:
-** http://www.fsf.org/licensing/licenses/info/GPLv2.html and
-** http://www.gnu.org/copyleft/gpl.html.  In addition, as a special
-** exception, Nokia gives you certain additional rights. These rights
-** are described in the Nokia Qt GPL Exception version 1.3, included in
-** the file GPL_EXCEPTION.txt in this package.
-**
-****************************************************************************/
+* TimersHandler.cpp: Reader and handler of tano timers format
+* This file is also part of the example classes of the Qt Toolkit.
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* Contact: Qt Software Information (qt-info@nokia.com)
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
 
 #include <QtGui/QMessageBox>
 
 #include "TimersHandler.h"
 
 TimersHandler::TimersHandler(QTreeWidget *treeWidget)
-	: treeWidget(treeWidget)
+	: _treeWidget(treeWidget), _item(0), _timer(0), _metTanoTag(false), _timerIcon(QIcon(":/icons/images/clock.png"))
 {
-	item = 0;
-	timer = 0;
-	metTanoTag = false;
-	timerIcon = QIcon(":/icons/images/clock.png");
+
 }
 
 TimersHandler::~TimersHandler()
 {
-	for(int i=0; i<treeWidget->topLevelItemCount(); i++)
-		delete map.value(treeWidget->topLevelItem(i));
+	for(int i=0; i < _treeWidget->topLevelItemCount(); i++)
+		delete _map.value(_treeWidget->topLevelItem(i));
 }
 
 void TimersHandler::clear()
 {
-	for(int i=0; i<treeWidget->topLevelItemCount(); i++)
-		delete map.value(treeWidget->topLevelItem(i));
+	for(int i=0; i < _treeWidget->topLevelItemCount(); i++)
+		delete _map.value(_treeWidget->topLevelItem(i));
 
-	treeWidget->clear();
-	map.clear();
+	_treeWidget->clear();
+	_map.clear();
 }
 
 bool TimersHandler::startElement(const QString & /* namespaceURI */,
@@ -54,29 +47,28 @@ bool TimersHandler::startElement(const QString & /* namespaceURI */,
 								const QString &qName,
 								const QXmlAttributes &attributes)
 {
-	if (!metTanoTag && qName != "tano") {
-		errorStr = QObject::tr("The file is not a Tano Timers list.");
+	if (!_metTanoTag && qName != "tano") {
+		_errorStr = QObject::tr("The file is not a Tano Timers list.");
 		return false;
 	}
 
 	if(qName == "tano") {
-		metTanoTag = true;
+		_metTanoTag = true;
 	} else if(qName == "timer") {
-		item = new QTreeWidgetItem(treeWidget);
-		item->setFlags(item->flags() | Qt::ItemIsEditable);
-		item->setIcon(0, timerIcon);
-		item->setText(0, QObject::tr("Unknown title"));
-		timer = new Timer(QObject::tr("Unknown title"));
+		_item = new QTreeWidgetItem(_treeWidget);
+		_item->setIcon(0, _timerIcon);
+		_item->setText(0, QObject::tr("Unknown title"));
+		_timer = new Timer(QObject::tr("Unknown title"));
 	} else if(qName == "playlist") {
-		if(item && timer)
-			timer->setNum(attributes.value("channelId").toInt());
+		if(_item && _timer)
+			_timer->setNum(attributes.value("channelId").toInt());
 	} else if(qName == "name") {
-		if(item && timer)
+		if(_item && _timer)
 			if(attributes.value("disabled") == "true")
-				timer->setDisabled(true);
+				_timer->setDisabled(true);
 	}
 
-	currentText.clear();
+	_currentText.clear();
 	return true;
 }
 
@@ -85,53 +77,53 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
 							 const QString &qName)
 {
 	if (qName == "name") {
-		if (item && timer) {
-			item->setText(0,currentText);
-			item->setText(1,QObject::tr("Active"));
-			timer->setName(currentText);
-			map.insert(item, timer);
+		if (_item && _timer) {
+			_item->setText(0, _currentText);
+			_item->setText(1, QObject::tr("Active"));
+			_timer->setName(_currentText);
+			_map.insert(_item, _timer);
 		}
 	} else if (qName == "channel") {
-		if (item && timer)
-			timer->setChannel(currentText);
+		if (_item && _timer)
+			_timer->setChannel(_currentText);
 	} else if (qName == "playlist") {
-		if (item && timer)
-			timer->setPlaylist(currentText);
+		if (_item && _timer)
+			_timer->setPlaylist(_currentText);
 	} else if (qName == "url") {
-		if (item && timer)
-			timer->setUrl(currentText);
+		if (_item && _timer)
+			_timer->setUrl(_currentText);
 	} else if (qName == "date") {
-		if (item && timer) {
-			timer->setDate(QDate::fromString(currentText,Qt::ISODate));
-			if(QDate::fromString(currentText,Qt::ISODate) < QDate::currentDate()) {
-				item->setText(1,QObject::tr("Disabled or expired"));
-				timer->setDisabled(true);
+		if (_item && _timer) {
+			_timer->setDate(QDate::fromString(_currentText,Qt::ISODate));
+			if(QDate::fromString(_currentText,Qt::ISODate) < QDate::currentDate()) {
+				_item->setText(1, QObject::tr("Disabled or expired"));
+				_timer->setDisabled(true);
 			}
 		}
 	} else if (qName == "start") {
-		if (item && timer) {
-			timer->setStartTime(QTime::fromString(currentText,Qt::ISODate));
-			if(QTime::fromString(currentText,Qt::ISODate) < QTime::currentTime()) {
-				item->setText(1,QObject::tr("Disabled or expired"));
-				timer->setDisabled(true);
+		if (_item && _timer) {
+			_timer->setStartTime(QTime::fromString(_currentText,Qt::ISODate));
+			if(QTime::fromString(_currentText,Qt::ISODate) < QTime::currentTime()) {
+				_item->setText(1, QObject::tr("Disabled or expired"));
+				_timer->setDisabled(true);
 			}
 		}
 	} else if (qName == "end") {
-		if (item && timer)
-			timer->setEndTime(QTime::fromString(currentText,Qt::ISODate));
+		if (_item && _timer)
+			_timer->setEndTime(QTime::fromString(_currentText,Qt::ISODate));
 	}
 	return true;
 }
 
 bool TimersHandler::characters(const QString &str)
 {
-	currentText += str;
+	_currentText += str;
 	return true;
 }
 
 bool TimersHandler::fatalError(const QXmlParseException &exception)
 {
-	QMessageBox::information(treeWidget->window(), QObject::tr("Tano"),
+	QMessageBox::information(_treeWidget->window(), QObject::tr("Tano"),
 							 QObject::tr("Parse error at line %1, column %2:\n"
 										 "%3")
 							 .arg(exception.lineNumber())
@@ -140,48 +132,33 @@ bool TimersHandler::fatalError(const QXmlParseException &exception)
 	return false;
 }
 
-QString TimersHandler::errorString() const
-{
-	return errorStr;
-}
 
-Timer *TimersHandler::timerRead(QTreeWidgetItem *clickedItem)
+QTreeWidgetItem *TimersHandler::itemRead(Timer *item)
 {
-	return map[clickedItem];
-}
-
-QTreeWidgetItem *TimersHandler::itemRead(Timer *clickedItem)
-{
-	for(int i=0; i<treeWidget->topLevelItemCount(); i++)
-		if(treeWidget->topLevelItem(i)->text(0) == clickedItem->name())
-			return treeWidget->topLevelItem(i);
+	for(int i=0; i<_treeWidget->topLevelItemCount(); i++)
+		if(_treeWidget->topLevelItem(i)->text(0) == item->name())
+			return _treeWidget->topLevelItem(i);
 }
 
 QTreeWidgetItem *TimersHandler::newTimer(const QString &name, const QString &channel,
 										 const QString &playlist, const int &num,
 										 const QString &url)
 {
-	item = new QTreeWidgetItem(treeWidget);
-	item->setIcon(0, timerIcon);
-	item->setFlags(item->flags() | Qt::ItemIsEditable);
-	item->setText(0,name);
-	item->setText(1,QObject::tr("Active"));
+	_item = new QTreeWidgetItem(_treeWidget);
+	_item->setIcon(0, _timerIcon);
+	_item->setText(0, name);
+	_item->setText(1, QObject::tr("Active"));
 
-	timer = new Timer(name, channel, playlist, num, url);
-	map.insert(item, timer);
+	_timer = new Timer(name, channel, playlist, num, url);
+	_map.insert(_item, _timer);
 
-	return item;
+	return _item;
 }
 
 void TimersHandler::deleteItem(QTreeWidgetItem *item)
 {
-	Timer *tmp = map[item];
-	map.remove(item);
+	Timer *tmp = _map[item];
+	_map.remove(_item);
 	delete tmp;
-	delete item;
-}
-
-QMap<QTreeWidgetItem*, Timer*> TimersHandler::timersMap()
-{
-	return map;
+	delete _item;
 }

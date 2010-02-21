@@ -96,12 +96,14 @@ private:
 
 	//Settings
 	QSettings *_settings;
+	bool _controlsVisible;
 	QString _defaultPlaylist;
 	QString _defaultSubtitleLanguage;
 	int _desktopWidth;
 	int _desktopHeight;
 	bool _hasPlaylist;
 	bool _hideToTray;
+	bool _infoWidgetVisible;
 	bool _isLite;
 	bool _osdEnabled;
 	bool _recorderEnabled;

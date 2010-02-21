@@ -1,9 +1,24 @@
+/****************************************************************************
+* EditSettings.h: Settings editor
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #ifndef TANO_EDITSETTINGS_H_
 #define TANO_EDITSETTINGS_H_
 
-#include <QDialog>
-#include <QStringList>
-#include <QSettings>
+#include <QtCore/QSettings>
+#include <QtCore/QStringList>
+#include <QtGui/QDialog>
 
 #include "../control/Shortcuts.h"
 
@@ -38,19 +53,21 @@ private slots:
 	void shortcutClear();
 	void shortcutEdit(QTableWidgetItem *titem);
 
+	void loadPlugins();
+
 private:
 	void createActions();
 	void read();
 	void shortcutRead();
 
 	Ui::EditSettings ui;
-	QSettings *settings;
-	Shortcuts *shortcuts;
-	QTableWidgetItem *item;
-	QKeySequence sequence;
-	QStringList actionsList;
-	QStringList keysList;
-	bool success;
+	QSettings *_settings;
+	Shortcuts *_shortcuts;
+	QTableWidgetItem *_item;
+	QKeySequence _sequence;
+	QStringList _actionsList;
+	QStringList _keysList;
+	bool _success;
 };
 
 #endif // TANO_EDITSETTINGS_H_

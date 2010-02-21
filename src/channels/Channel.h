@@ -1,39 +1,52 @@
+/****************************************************************************
+* Channel.h: Channel class
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #ifndef TANO_CHANNEL_H_
 #define TANO_CHANNEL_H_
 
-#include <QString>
-#include <QStringList>
+#include <QtCore/QString>
+#include <QtCore/QStringList>
 
-class Channel {
+class Channel
+{
 public:
-	Channel(QString name, int num, bool cat);
-	virtual ~Channel();
+	Channel(const QString &name, const int &number);
+	~Channel();
 
-	void setNum(const int &num);
-	void setName(const QString &xmlName);
-	void setEpg(const QString &xmlEpg);
-	void setLanguage(const QString &xmlLanguage);
-	void setUrl(const QString &xmlUrl);
-	void setCategoryList(const QStringList &xmlCategoryList);
+	void setNumber(const int &number);
+	void setName(const QString &name);
+	void setEpg(const QString &epg);
+	void setLanguage(const QString &language);
+	void setUrl(const QString &url);
+	void setCategories(const QStringList &categories);
 
-	QString numToString();
-
-	int num() const {return _num;};
+	int number() const {return _number;};
+	QString numberString() const {return QString().number(_number);};
 	QString name() const {return _name;};
-	bool isCategory() const {return _category;};
-	QString language() const {return _lang;};
+	QString language() const {return _language;};
 	QString url() const {return _url;};
 	QString epg() const {return _epg;};
-	QStringList categoryList() const {return _categoryList;};
+	QStringList categories() const {return _categories;};
 
 private:
-	int _num;
+	int _number;
 	QString _name;
-	QString _lang;
+	QString _language;
 	QString _url;
 	QString _epg;
-	QStringList _categoryList;
-	bool _category;
+	QStringList _categories;
 };
 
 #endif // TANO_CHANNEL_H_

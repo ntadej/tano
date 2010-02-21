@@ -1,62 +1,55 @@
+/****************************************************************************
+* ChannelSelect.h: Channel selector
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #ifndef TANO_CHANNELSELECT_H_
 #define TANO_CHANNELSELECT_H_
 
-#include <QShortcut>
-#include <QLCDNumber>
-#include <QTimer>
+#include <QtCore/QTimer>
+#include <QtGui/QLCDNumber>
+#include <QtGui/QShortcut>
 
-class ChannelSelect : public QObject {
+class ChannelSelect : public QObject
+{
 Q_OBJECT
 public:
-	ChannelSelect(QWidget *parent, QLCDNumber *number, QList<int> l);
+	ChannelSelect(QWidget *parent, QLCDNumber *number, const QList<int> &list);
 	virtual ~ChannelSelect();
 
 public slots:
 	void back();
 	void next();
-	void channel(bool direction);
+	void channel(const bool &direction);
 
 private slots:
-    void keyPressed_0();
-    void keyPressed_1();
-    void keyPressed_2();
-    void keyPressed_3();
-    void keyPressed_4();
-    void keyPressed_5();
-    void keyPressed_6();
-    void keyPressed_7();
-    void keyPressed_8();
-    void keyPressed_9();
-
-    void display();
+	void keyPressed();
+	void display();
 
 signals:
-	void channelSelect(int);
-	void error(QString, int);
+	void channelSelect(const int);
 
 private:
-	void process(int key);
+	void process(const int &key);
 
-	QShortcut *key_0;
-	QShortcut *key_1;
-	QShortcut *key_2;
-	QShortcut *key_3;
-	QShortcut *key_4;
-	QShortcut *key_5;
-	QShortcut *key_6;
-	QShortcut *key_7;
-	QShortcut *key_8;
-	QShortcut *key_9;
-
-	QList<int> lim;
-	QLCDNumber *lcd;
-	QTimer *timer;
-	int num;
-	int number1;
-	int number2;
-	int number3;
-	int full;
-	int old;
+	QList<QShortcut*> _key;
+	QList<int> _channels;
+	QLCDNumber *_lcd;
+	QTimer *_timer;
+	int _num;
+	int _number[3];
+	int _full;
+	int _old;
 };
 
 #endif // TANO_CHANNELSELECT_H_

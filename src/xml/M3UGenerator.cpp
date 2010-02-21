@@ -37,11 +37,11 @@ bool M3UGenerator::write(QIODevice *device)
 void M3UGenerator::generateItem(Channel *channel, const int &depth)
 {
 	_out << "#EXTINF:"
-		<< channel->numToString() << ","
+		<< channel->numberString() << ","
 		<< channel->name() << "\n";
 
 	_out << "#EXTTV:"
-		<< channel->categoryList().join(",") << ";"
+		<< channel->categories().join(",") << ";"
 		<< channel->language() << ";"
 		<< channel->epg()
 		<< "\n";

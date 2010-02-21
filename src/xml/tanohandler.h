@@ -4,6 +4,9 @@
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
+* Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* Contact: Qt Software Information (qt-info@nokia.com)
+*
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -32,27 +35,26 @@ public:
                     const QString &qName);
     bool characters(const QString &str);
     bool fatalError(const QXmlParseException &exception);
-    QString errorString() const;
 
-	QString name() const {return playlistName;};
+	QString errorString() const {return _errorStr;};
+	QString name() const {return _playlistName;};
 	QList<Channel*> channelList() const {return _channelList;};
 
 private:
-	int num;
-	int cat;
-
-	Channel *createChannel(const QString &name, const int &num, const bool &cat);
 	int channelNumSync(const int &c);
 
-    Channel *channel;
-    QString currentText;
-    QString errorStr;
-    bool metTanoTag;
+	int _num;
+	int _cat;
+
+	Channel *_channel;
+	QString _currentText;
+	QString _errorStr;
+	bool _metTanoTag;
 
 	QList<Channel*> _channelList;
 
-	QString playlistName;
-    QString category;
+	QString _playlistName;
+	QString _category;
 };
 
 #endif // TANO_TANOHANDLER_H_

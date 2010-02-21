@@ -1,16 +1,32 @@
-#include <QtGui>
-#include <QMessageBox>
-#include <QTextEdit>
-#include <QDir>
-#include <QFileDialog>
+/****************************************************************************
+* EditSettings.cpp: _settings editor
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
+#include <QtCore/QDir>
+#include <QtGui/QFileDialog>
+#include <QtGui/QMessageBox>
+#include <QtGui/QTextEdit>
+
 #include <QVlc/VlcInstance.h>
 
 #include "EditSettings.h"
 #include "../Common.h"
 #include "../Ver.h"
+#include "../plugins/PluginsLoader.h"
 
 EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
-	: QDialog(parent), shortcuts(s)
+	: QDialog(parent), _shortcuts(s)
 {
 	ui.setupUi(this);
 	createActions();
@@ -21,24 +37,24 @@ EditSettings::EditSettings(QWidget *parent, Shortcuts *s)
 	ui.editNetwork->setEnabled(false);
 
 	ui.shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-	ui.shortcutsWidget->verticalHeader()->hide();
 
-	keysList = shortcuts->defaultKeys();
-	actionsList = shortcuts->actionsNames();
+	_keysList = _shortcuts->defaultKeys();
+	_actionsList = _shortcuts->actionsNames();
 
-	settings = Common::settings();
-	settings->sync();
+	_settings = Common::settings();
+	_settings->sync();
 
 	ui.labelVersion->setText(tr("You are using Tano version:")+" "+Version::Tano());
 	ui.labelVlcVersion->setText(ui.labelVlcVersion->text()+" "+VlcInstance::version());
 
+	loadPlugins();
 	read();
 	shortcutRead();
 }
 
 EditSettings::~EditSettings()
 {
-	delete settings;
+	delete _settings;
 }
 
 void EditSettings::createActions()
@@ -84,102 +100,102 @@ void EditSettings::action(QAbstractButton *button)
 void EditSettings::ok()
 {
 	if (ui.radioDefaultLanguage->isChecked()) {
-		settings->remove("locale");
+		_settings->remove("locale");
 	} else {
 		if(ui.languageComboBox->currentIndex() == 1)
-			settings->setValue("locale","sl");
+			_settings->setValue("locale","sl");
 		else if(ui.languageComboBox->currentIndex() == 0)
-			settings->setValue("locale","en");
+			_settings->setValue("locale","en");
 	}
 
-	settings->setValue("registered",!ui.checkWizard->isChecked());
-	settings->setValue("updates",ui.checkUpdates->isChecked());
-	settings->setValue("session",ui.checkSession->isChecked());
+	_settings->setValue("registered",!ui.checkWizard->isChecked());
+	_settings->setValue("updates",ui.checkUpdates->isChecked());
+	_settings->setValue("session",ui.checkSession->isChecked());
 
 	if(ui.radioSiol2->isChecked()) {
-		settings->setValue("playlist","playlists/siol-mpeg2.m3u");
+		_settings->setValue("playlist","playlists/siol-mpeg2.m3u");
 	} else if(ui.radioSiol4->isChecked()) {
-		settings->setValue("playlist","playlists/siol-mpeg4.m3u");
+		_settings->setValue("playlist","playlists/siol-mpeg4.m3u");
 	} else if(ui.radioT2->isChecked()) {
-		settings->setValue("playlist","playlists/t-2-cat.m3u");
+		_settings->setValue("playlist","playlists/t-2-cat.m3u");
 	} else if(ui.radioT2full->isChecked()) {
-			settings->setValue("playlist","playlists/t-2-full.m3u");
+			_settings->setValue("playlist","playlists/t-2-full.m3u");
 	} else {
-		settings->setValue("playlist",ui.editPlaylist->text());
+		_settings->setValue("playlist",ui.editPlaylist->text());
 	}
 
-	settings->beginGroup("VLC");
+	_settings->beginGroup("VLC");
 	if(ui.radioNetworkCustom->isChecked()) {
-		settings->setValue("network", ui.editNetwork->text());
+		_settings->setValue("network", ui.editNetwork->text());
 	} else {
-		settings->remove("network");
+		_settings->remove("network");
 	}
 	if(ui.checkVlc->isChecked()) {
-		settings->setValue("ignore-config", false);
+		_settings->setValue("ignore-config", false);
 	} else {
-		settings->remove("ignore-config");
+		_settings->remove("ignore-config");
 	}
 	if(ui.checkVideoSettings->isChecked()) {
-		settings->setValue("remember-video-config", true);
+		_settings->setValue("remember-video-config", true);
 	} else {
-		settings->remove("remember-video-config");
+		_settings->remove("remember-video-config");
 	}
-	settings->setValue("default-sub-lang", ui.comboSub->currentText());
-	settings->endGroup();
+	_settings->setValue("default-sub-lang", ui.comboSub->currentText());
+	_settings->endGroup();
 
-	settings->beginGroup("GUI");
+	_settings->beginGroup("GUI");
 	if(ui.checkLite->isChecked()) {
-		settings->setValue("lite",true);
+		_settings->setValue("lite",true);
 	} else {
-		settings->setValue("lite",false);
+		_settings->setValue("lite",false);
 	}
 	if(ui.checkTop->isChecked()) {
-		settings->setValue("ontop",true);
+		_settings->setValue("ontop",true);
 	} else {
-		settings->setValue("ontop",false);
+		_settings->setValue("ontop",false);
 	}
 	if(ui.checkOsd->isChecked()) {
-		settings->setValue("OSD",true);
+		_settings->setValue("OSD",true);
 	} else {
-		settings->setValue("OSD",false);
+		_settings->setValue("OSD",false);
 	}
 	if(ui.checkInfo->isChecked()) {
-		settings->setValue("info",true);
+		_settings->setValue("info",true);
 	} else {
-		settings->setValue("info",false);
+		_settings->setValue("info",false);
 	}
 	if(ui.radioWheelVolume->isChecked()) {
-		settings->setValue("wheel",true);
+		_settings->setValue("wheel",true);
 	} else {
-		settings->setValue("wheel",false);
+		_settings->setValue("wheel",false);
 	}
 	if(ui.radioTray->isChecked()) {
-		settings->setValue("tray",true);
+		_settings->setValue("tray",true);
 	} else {
-		settings->setValue("tray",false);
+		_settings->setValue("tray",false);
 	}
-	settings->endGroup();
+	_settings->endGroup();
 
-	settings->beginGroup("Recorder");
+	_settings->beginGroup("Recorder");
 	if(ui.checkRecorder->isChecked()) {
-		settings->setValue("enabled",true);
+		_settings->setValue("enabled",true);
 		if(ui.editRecorder->text() != "")
-			settings->setValue("dir",ui.editRecorder->text());
+			_settings->setValue("dir",ui.editRecorder->text());
+		_settings->setValue("backend",ui.comboRecorderPlugin->currentText());
 	} else {
-		settings->setValue("enabled",false);
-		settings->remove("dir");
+		_settings->setValue("enabled",false);
+		_settings->remove("dir");
+		_settings->remove("backend");
 	}
-	settings->endGroup();
+	_settings->endGroup();
 
-	settings->beginGroup("Shortcuts");
-	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++) {
-		item = ui.shortcutsWidget->item(i,1);
-		if(item->text() != keysList.at(i))
-			settings->setValue(actionsList.at(i),item->text());
-	}
-	settings->endGroup();
+	_settings->beginGroup("Shortcuts");
+	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++)
+		if(ui.shortcutsWidget->item(i,1)->text() != _keysList.at(i))
+			_settings->setValue(_actionsList.at(i),ui.shortcutsWidget->item(i,1)->text());
+	_settings->endGroup();
 
-	shortcuts->apply();
+	_shortcuts->apply();
 	hide();
 }
 
@@ -190,74 +206,80 @@ void EditSettings::cancel()
 
 void EditSettings::read()
 {
-	if(settings->value("locale","Default").toString() != "Default")
+	if(_settings->value("locale","Default").toString() != "Default")
 	{
 		ui.radioCustomLanguage->setChecked(true);
 		ui.languageComboBox->setEnabled(true);
 		bool okint;
-		if(settings->value("locale").toString() == "sl")
+		if(_settings->value("locale").toString() == "sl")
 			ui.languageComboBox->setCurrentIndex(1);
-		else if(settings->value("locale").toString() == "en")
+		else if(_settings->value("locale").toString() == "en")
 			ui.languageComboBox->setCurrentIndex(0);
 	}
 
-	ui.checkUpdates->setChecked(settings->value("updates",true).toBool());
-	ui.checkSession->setChecked(settings->value("session",true).toBool());
+	ui.checkUpdates->setChecked(_settings->value("updates",true).toBool());
+	ui.checkSession->setChecked(_settings->value("session",true).toBool());
 
-	if(settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/siol-mpeg2.m3u")
+	if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/siol-mpeg2.m3u")
 		ui.radioSiol2->setChecked(true);
-	else if(settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/siol-mpeg4.m3u")
+	else if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/siol-mpeg4.m3u")
 		ui.radioSiol4->setChecked(true);
-	else if(settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2-cat.m3u")
+	else if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2-cat.m3u")
 		ui.radioT2->setChecked(true);
-	else if(settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2-full.m3u")
+	else if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2-full.m3u")
 			ui.radioT2full->setChecked(true);
 	else {
 		ui.radioPresetPlaylist->setChecked(true);
 		ui.buttonBrowse->setEnabled(true);
 		ui.buttonReset->setEnabled(true);
 		ui.presetsBox->setEnabled(false);
-		ui.editPlaylist->setText(settings->value("playlist").toString());
+		ui.editPlaylist->setText(_settings->value("playlist").toString());
 	}
 
-	settings->beginGroup("VLC");
-	if(settings->value("network","").toString() != "")
+	_settings->beginGroup("VLC");
+	if(_settings->value("network","").toString() != "")
 	{
 		ui.radioNetworkCustom->setChecked(true);
-		ui.editNetwork->setText(settings->value("network","").toString());
+		ui.editNetwork->setText(_settings->value("network","").toString());
 		ui.editNetwork->setEnabled(true);
 	} else {
 		ui.radioNetworkDefault->setChecked(true);
 	}
-	ui.checkVlc->setChecked(!settings->value("ignore-config",true).toBool());
-	ui.checkVideoSettings->setChecked(settings->value("remember-video-config", false).toBool());
+	ui.checkVlc->setChecked(!_settings->value("ignore-config",true).toBool());
+	ui.checkVideoSettings->setChecked(_settings->value("remember-video-config", false).toBool());
 	for(int i=0;i<ui.comboSub->count();i++) {
-		if(ui.comboSub->itemText(i)==settings->value("default-sub-lang", tr("Disabled")).toString()) {
+		if(ui.comboSub->itemText(i)==_settings->value("default-sub-lang", tr("Disabled")).toString()) {
 			ui.comboSub->setCurrentIndex(i);
 			break;
 		} else if(i == ui.comboSub->count()-1) {
-			ui.comboSub->setItemText(i, settings->value("default-sub-lang", tr("Disabled")).toString());
+			ui.comboSub->setItemText(i, _settings->value("default-sub-lang", tr("Disabled")).toString());
 			ui.comboSub->setCurrentIndex(i);
 		}
 	}
-	settings->endGroup();
+	_settings->endGroup();
 
-	settings->beginGroup("GUI");
-	ui.checkLite->setChecked(settings->value("lite",false).toBool());
-	ui.checkTop->setChecked(settings->value("ontop",false).toBool());
-	ui.checkOsd->setChecked(settings->value("OSD",true).toBool());
-	ui.checkInfo->setChecked(settings->value("info",true).toBool());
-	ui.radioWheelChannel->setChecked(!settings->value("wheel",false).toBool());
-	ui.radioWheelVolume->setChecked(settings->value("wheel",false).toBool());
-	ui.radioExit->setChecked(!settings->value("tray",false).toBool());
-	settings->endGroup();
+	_settings->beginGroup("GUI");
+	ui.checkLite->setChecked(_settings->value("lite",false).toBool());
+	ui.checkTop->setChecked(_settings->value("ontop",false).toBool());
+	ui.checkOsd->setChecked(_settings->value("OSD",true).toBool());
+	ui.checkInfo->setChecked(_settings->value("info",true).toBool());
+	ui.radioWheelChannel->setChecked(!_settings->value("wheel",false).toBool());
+	ui.radioWheelVolume->setChecked(_settings->value("wheel",false).toBool());
+	ui.radioExit->setChecked(!_settings->value("tray",false).toBool());
+	_settings->endGroup();
 
-	settings->beginGroup("Recorder");
-	if(settings->value("enabled",true).toBool()) {
+	_settings->beginGroup("Recorder");
+	if(_settings->value("enabled",true).toBool()) {
 		ui.checkRecorder->toggle();
-		ui.editRecorder->setText(settings->value("dir","").toString());
+		ui.editRecorder->setText(_settings->value("dir","").toString());
+		for(int i=0;i<ui.comboRecorderPlugin->count();i++) {
+			if(ui.comboRecorderPlugin->itemText(i)==_settings->value("backend", "FripPlugin").toString()) {
+				ui.comboSub->setCurrentIndex(i);
+				break;
+			}
+		}
 	}
-	settings->endGroup();
+	_settings->endGroup();
 }
 
 void EditSettings::toggleCustom()
@@ -337,45 +359,50 @@ void EditSettings::playlistReset()
 
 void EditSettings::shortcutRead()
 {
-	settings->beginGroup("Shortcuts");
-	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++) {
-		item = ui.shortcutsWidget->item(i,1);
-		item->setText(settings->value(actionsList.at(i),keysList.at(i)).toString());
-	}
-	settings->endGroup();
+	_settings->beginGroup("Shortcuts");
+	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++)
+		ui.shortcutsWidget->item(i,1)->setText(_settings->value(_actionsList.at(i),_keysList.at(i)).toString());
+	_settings->endGroup();
 }
 
 void EditSettings::shortcutRestore()
 {
-	settings->beginGroup("Shortcuts");
-	for(int i=0; i < actionsList.size(); i++) {
-		settings->remove(actionsList.at(i));
-		item = ui.shortcutsWidget->item(i,1);
-		item->setText(keysList.at(i));
+	_settings->beginGroup("Shortcuts");
+	for(int i=0; i < _actionsList.size(); i++) {
+		_settings->remove(_actionsList.at(i));
+		ui.shortcutsWidget->item(i,1)->setText(_keysList.at(i));
 	}
-	settings->endGroup();
+	_settings->endGroup();
 }
 
 void EditSettings::shortcutEdit(QTableWidgetItem *titem)
 {
 	if(titem->column() == 1) {
 		ui.buttonSet->setEnabled(true);
-		item = titem;
+		_item = titem;
 	}
 }
 
 void EditSettings::shortcutSequence(const QKeySequence &s)
 {
-	sequence = s;
+	_sequence = s;
 }
 
 void EditSettings::shortcutSet()
 {
-	item->setText(sequence.toString());
+	_item->setText(_sequence.toString());
 	shortcutClear();
 }
 
 void EditSettings::shortcutClear()
 {
 	ui.keyEditor->setKeySequence(QKeySequence(""));
+}
+
+void EditSettings::loadPlugins()
+{
+	PluginsLoader *loader = new PluginsLoader();
+	for(int i=0; i < loader->recorderPlugin().size(); i++)
+		ui.comboRecorderPlugin->addItem(loader->recorderName()[i]);
+	delete loader;
 }

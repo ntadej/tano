@@ -755,7 +755,7 @@
          <item>
           <widget class="QLabel" name="labelRecorder">
            <property name="text">
-            <string>&lt;i&gt;You need to restart Tano when enabling/disabling Recorder!&lt;/i&gt;</string>
+            <string>&lt;i&gt;You need to restart Tano when changing Recorder settings!&lt;/i&gt;</string>
            </property>
           </widget>
          </item>
@@ -807,6 +807,28 @@
           </widget>
          </item>
          <item>
+          <widget class="QGroupBox" name="recorderPluginBox">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="title">
+            <string>Recorder backend</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="labelRecorderPlugin">
+              <property name="text">
+               <string>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="comboRecorderPlugin"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_2">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
@@ -831,89 +853,100 @@
            <property name="editTriggers">
             <set>QAbstractItemView::NoEditTriggers</set>
            </property>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
             </property>
            </row>
            <row>
             <property name="text">
-             <string>0</string>
+             <string notr="true">0</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string notr="true">0</string>
             </property>
            </row>
            <column>
@@ -930,170 +963,234 @@
             <property name="text">
              <string>Play</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="0" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="1" column="0">
             <property name="text">
              <string>Stop</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="1" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="2" column="0">
             <property name="text">
              <string>Next channel</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="2" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="3" column="0">
             <property name="text">
              <string>Previous channel</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="3" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="4" column="0">
             <property name="text">
              <string>Fullscreen</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="4" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="5" column="0">
             <property name="text">
              <string>Mute</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="5" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="6" column="0">
             <property name="text">
              <string>Volume up</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="6" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="7" column="0">
             <property name="text">
              <string>Volume down</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="7" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="8" column="0">
             <property name="text">
-             <string>Record</string>
+             <string>Recorder</string>
+            </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
             </property>
            </item>
            <item row="8" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="9" column="0">
             <property name="text">
              <string>Open File</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="9" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="10" column="0">
             <property name="text">
              <string>Open URL</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="10" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="11" column="0">
             <property name="text">
              <string>Open Channel list</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="11" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="12" column="0">
             <property name="text">
              <string>Edit Channel list</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="12" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="13" column="0">
             <property name="text">
              <string>Settings</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="13" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="14" column="0">
             <property name="text">
              <string>Always on top</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="14" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="15" column="0">
             <property name="text">
              <string>Simple Mode</string>
             </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
            </item>
            <item row="15" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
             </property>
            </item>
            <item row="16" column="0">
             <property name="text">
-             <string>About</string>
+             <string>Hide to tray</string>
+            </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
             </property>
            </item>
            <item row="16" column="1">
             <property name="text">
-             <string/>
+             <string notr="true"> </string>
+            </property>
+           </item>
+           <item row="17" column="0">
+            <property name="text">
+             <string>About</string>
+            </property>
+            <property name="flags">
+             <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+            </property>
+           </item>
+           <item row="17" column="1">
+            <property name="text">
+             <string notr="true"> </string>
             </property>
            </item>
           </widget>
@@ -1195,6 +1292,22 @@
     <hint type="destinationlabel">
      <x>402</x>
      <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkRecorder</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>recorderPluginBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>401</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>193</y>
     </hint>
    </hints>
   </connection>

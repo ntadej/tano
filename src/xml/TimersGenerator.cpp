@@ -1,25 +1,21 @@
 /****************************************************************************
-**
-** Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
-** Contact: Qt Software Information (qt-info@nokia.com)
-**
-** Copyright (C) 2008-2009 Tadej Novak
-**
-** This file is part of the example classes of the Qt Toolkit.
-**
-** GNU General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU
-** General Public License versions 2.0 or 3.0 as published by the Free
-** Software Foundation and appearing in the file LICENSE.GPL included in
-** the packaging of this file.  Please review the following information
-** to ensure GNU General Public Licensing requirements will be met:
-** http://www.fsf.org/licensing/licenses/info/GPLv2.html and
-** http://www.gnu.org/copyleft/gpl.html.  In addition, as a special
-** exception, Nokia gives you certain additional rights. These rights
-** are described in the Nokia Qt GPL Exception version 1.3, included in
-** the file GPL_EXCEPTION.txt in this package.
-**
-****************************************************************************/
+* TimersGenerator.cpp: Generator and writer of tano timers format
+* This file is also part of the example classes of the Qt Toolkit.
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* Contact: Qt Software Information (qt-info@nokia.com)
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
 
 #include <QDate>
 #include <QTime>
@@ -27,28 +23,28 @@
 #include "TimersGenerator.h"
 
 TanoGenerator::TanoGenerator(QTreeWidget *treeWidget, QMap<QTreeWidgetItem*,Timer*> map)
-	: treeWidget(treeWidget), _map(map)
+	: _treeWidget(treeWidget), _map(map)
 {
 
 }
 
 bool TanoGenerator::write(QIODevice *device)
 {
-	out.setDevice(device);
-	out.setCodec("UTF-8");
-	out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+	_out.setDevice(device);
+	_out.setCodec("UTF-8");
+	_out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 		<< "<!DOCTYPE tano>\n"
 		<< "<tano version=\"0.1\">\n";
-	for (int i = 0; i < treeWidget->topLevelItemCount(); ++i)
-		generateItem(treeWidget->topLevelItem(i), 1);
-	out << "</tano>\n";
+	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i)
+		generateItem(_treeWidget->topLevelItem(i), 1);
+	_out << "</tano>\n";
 	return true;
 }
 
-QString TanoGenerator::indent(int depth)
+QString TanoGenerator::indent(const int &indentLevel)
 {
 	const int IndentSize = 4;
-	return QString(IndentSize * depth, ' ');
+	return QString(IndentSize * indentLevel, ' ');
 }
 
 QString TanoGenerator::escapedText(const QString &str)
@@ -78,11 +74,11 @@ QString TanoGenerator::boolToString(const bool &b)
 	}
 }
 
-void TanoGenerator::generateItem(QTreeWidgetItem *item, int depth)
+void TanoGenerator::generateItem(QTreeWidgetItem *item, const int &depth)
 {
 	Timer *currentTimer = _map[item];
 
-	out << indent(depth) << "<timer>\n"
+	_out << indent(depth) << "<timer>\n"
 		<< indent(depth + 1) << "<name disabled=\"" << boolToString(currentTimer->isDisabled())
 							 << "\">" << escapedText(currentTimer->name())
 							 << "</name>\n"

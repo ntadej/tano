@@ -27,7 +27,8 @@ M3UHandler::M3UHandler(QTreeWidget *treeWidget)
 	_channelIcon = QIcon(":/icons/images/video.png");
 }
 
-M3UHandler::~M3UHandler() {
+M3UHandler::~M3UHandler()
+{
 	for(int i=0; i<_treeWidget->topLevelItemCount(); i++) {
 		delete _map.value(_treeWidget->topLevelItem(i));
 	}
@@ -61,13 +62,13 @@ int M3UHandler::processNewNum(QTreeWidgetItem *channel, const int &num)
 	if(_channelNums.contains(num)) {
 		QMessageBox::warning(_treeWidget, QObject::tr("Tano"),
 							QObject::tr("A channel with this number already exists!"));
-		return channelRead(channel)->num();
+		return channelRead(channel)->number();
 	}
 
-	_channelNums.removeAll(channelRead(channel)->num());
+	_channelNums.removeAll(channelRead(channel)->number());
 	_channelNums.append(num);
 
-	channelRead(channel)->setNum(num);
+	channelRead(channel)->setNumber(num);
 	channel->setText(0,processNum(QString().number(num)));
 
 	return num;
@@ -115,7 +116,7 @@ void M3UHandler::processList()
 			_item->setIcon(0, _channelIcon);
 			_item->setText(0, processNum(tmpList.at(0)));
 			_item->setText(1, tmpList.at(1));
-			_channel = new Channel(tmpList.at(1), tmpList.at(0).toInt(), false);
+			_channel = new Channel(tmpList.at(1), tmpList.at(0).toInt());
 
 			_map.insert(_item, _channel);
 			_nmap.insert(tmpList.at(0).toInt(), _channel);
@@ -129,7 +130,7 @@ void M3UHandler::processList()
 
 			if(tmpList.size()!=0) {
 				tmpCList = tmpList.at(0).split(",");
-				_channel->setCategoryList(tmpCList);
+				_channel->setCategories(tmpCList);
 				for(int i=0;i<tmpCList.size();i++)
 					if(!_categoryList.contains(tmpCList.at(i)))
 						_categoryList.append(tmpCList.at(i));
@@ -142,16 +143,6 @@ void M3UHandler::processList()
 			_channel->setUrl(tmp);
 		}
 	}
-}
-
-Channel *M3UHandler::channelRead(QTreeWidgetItem *clickedItem)
-{
-	return _map[clickedItem];
-}
-
-Channel *M3UHandler::channelRead(const int &clickedItem)
-{
-	return _nmap[clickedItem];
 }
 
 QTreeWidgetItem *M3UHandler::createChannel()
@@ -170,7 +161,7 @@ QTreeWidgetItem *M3UHandler::createChannel()
 	_item->setText(0, processNum(QString().number(tmpNum)));
 	_item->setText(1, QObject::tr("New channel"));
 
-	_channel = new Channel(QObject::tr("New channel"), tmpNum, false);
+	_channel = new Channel(QObject::tr("New channel"), tmpNum);
 
 	_map.insert(_item, _channel);
 	_nmap.insert(tmpNum, _channel);
@@ -184,9 +175,9 @@ QTreeWidgetItem *M3UHandler::createChannel()
 void M3UHandler::deleteChannel(QTreeWidgetItem *i)
 {
 	_channels.removeAll(_map[i]);
-	_channelNums.removeAll(_map[i]->num());
+	_channelNums.removeAll(_map[i]->number());
 
-	_nmap.remove(_map[i]->num());
+	_nmap.remove(_map[i]->number());
 	delete _map[i];
 	_map.remove(i);
 	delete i;
@@ -210,17 +201,17 @@ void M3UHandler::importOldFormat(const QString &tanoFile)
 
 	for(int i=0; i<import->channelList().size(); i++) {
 		_channels << import->channelList()[i];
-		_channelNums << import->channelList()[i]->num();
+		_channelNums << import->channelList()[i]->number();
 
 		_item = new QTreeWidgetItem(_treeWidget);
 		_item->setData(0, Qt::UserRole, "channel");
 		_item->setIcon(0, _channelIcon);
-		_item->setText(0, processNum(QString().number(import->channelList()[i]->num())));
+		_item->setText(0, processNum(QString().number(import->channelList()[i]->number())));
 		_item->setText(1, import->channelList()[i]->name());
-		_item->setText(2, import->channelList()[i]->categoryList().join(","));
+		_item->setText(2, import->channelList()[i]->categories().join(","));
 
 		_map.insert(_item, import->channelList()[i]);
-		_nmap.insert(import->channelList()[i]->num(), import->channelList()[i]);
+		_nmap.insert(import->channelList()[i]->number(), import->channelList()[i]);
 	}
 
 	_name = import->name();

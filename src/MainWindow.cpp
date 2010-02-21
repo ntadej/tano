@@ -309,7 +309,7 @@ void MainWindow::createShortcuts()
 		<< ui.actionMute
 		<< ui.actionVolumeUp
 		<< ui.actionVolumeDown
-		<< ui.actionRecordNow
+		<< ui.actionRecorder
 		<< ui.actionOpenFile
 		<< ui.actionOpenUrl
 		<< ui.actionOpen
@@ -317,6 +317,7 @@ void MainWindow::createShortcuts()
 		<< ui.actionSettings
 		<< ui.actionTop
 		<< ui.actionLite
+		<< ui.actionTray
 		<< ui.actionAbout;
 
 	_shortcuts = new Shortcuts(_actions);
@@ -361,19 +362,13 @@ void MainWindow::aboutPlugins()
 //Media controls
 void MainWindow::playChannel(QTreeWidgetItem* clickedChannel)
 {
-	Channel *tmp = ui.playlistWidget->channelRead(clickedChannel);
-	if (tmp->isCategory() != true) {
-		_channel = tmp;
-		play();
-	}
+	_channel = ui.playlistWidget->channelRead(clickedChannel);
+	play();
 }
 void MainWindow::playChannel(const int &clickedChannel)
 {
-	Channel *tmp = ui.playlistWidget->channelRead(clickedChannel);
-	if (tmp->isCategory() != true) {
-		_channel = tmp;
-		play();
-	}
+	_channel = ui.playlistWidget->channelRead(clickedChannel);
+	play();
 }
 
 void MainWindow::playingState(const int &status)
@@ -414,7 +409,7 @@ void MainWindow::play(const QString &itemFile)
 		ui.infoBarWidget->setInfo(_channel->name(), _channel->language());
 
 		_epg->getEpg(_channel->epg());
-		ui.channelNumber->display(_channel->num());
+		ui.channelNumber->display(_channel->number());
 
 		_backend->openMedia(_channel->url());
 		tooltip(_channel->name());
@@ -630,7 +625,11 @@ void MainWindow::tray()
 	if(this->isHidden()) {
 		ui.actionTray->setText(tr("Hide to tray"));
 		show();
+		ui.osdWidget->setVisible(_controlsVisible);
+		ui.infoWidget->setVisible(_infoWidgetVisible);
 	} else {
+		_controlsVisible = ui.osdWidget->isVisible();
+		_infoWidgetVisible = ui.infoWidget->isVisible();
 		ui.actionTray->setText(tr("Restore"));
 		_trayIcon->message(QStringList() << "close");
 		hide();

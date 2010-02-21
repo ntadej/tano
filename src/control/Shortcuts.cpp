@@ -17,9 +17,9 @@
 #include "../Common.h"
 
 Shortcuts::Shortcuts(const QList<QAction *> &list)
-	: actions(list)
+	: _actions(list)
 {
-	defaultList << "Space"
+	_defaultList << "Space"
 				<< "S"
 				<< "N"
 				<< "P"
@@ -35,9 +35,10 @@ Shortcuts::Shortcuts(const QList<QAction *> &list)
 				<< "Ctrl+S"
 				<< "Ctrl+T"
 				<< "Ctrl+L"
+				<< "Ctrl+H"
 				<< "Ctrl+F1";
 
-	actionsName << "Play"
+	_actionsName << "Play"
 				<< "Stop"
 				<< "Next"
 				<< "Back"
@@ -45,7 +46,7 @@ Shortcuts::Shortcuts(const QList<QAction *> &list)
 				<< "Mute"
 				<< "VolumeUp"
 				<< "VolumeDown"
-				<< "Record"
+				<< "Recorder"
 				<< "OpenFile"
 				<< "OpenUrl"
 				<< "OpenPlaylist"
@@ -53,6 +54,7 @@ Shortcuts::Shortcuts(const QList<QAction *> &list)
 				<< "Settings"
 				<< "Top"
 				<< "Lite"
+				<< "Tray"
 				<< "About";
 
 	apply();
@@ -64,15 +66,15 @@ Shortcuts::~Shortcuts() {
 
 void Shortcuts::apply()
 {
-	settings = Common::settings();
-	settings->sync();
+	_settings = Common::settings();
+	_settings->sync();
 
-	settings->beginGroup("Shortcuts");
-	for (int i=0; i < actions.size(); i++) {
-		actions.at(i)->setShortcut(QKeySequence(settings->value(actionsName.at(i),defaultList.at(i)).toString()));
-		actions.at(i)->setShortcutContext(Qt::ApplicationShortcut);
+	_settings->beginGroup("Shortcuts");
+	for (int i=0; i < _actions.size(); i++) {
+		_actions[i]->setShortcut(QKeySequence(_settings->value(_actionsName[i],_defaultList[i]).toString()));
+		_actions[i]->setShortcutContext(Qt::ApplicationShortcut);
 	}
-	settings->endGroup();
+	_settings->endGroup();
 
-	delete settings;
+	delete _settings;
 }

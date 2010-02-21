@@ -1,25 +1,21 @@
 /****************************************************************************
-**
-** Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
-** Contact: Qt Software Information (qt-info@nokia.com)
-**
-** Copyright (C) 2008-2009 Tadej Novak
-**
-** This file is part of the example classes of the Qt Toolkit.
-**
-** GNU General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU
-** General Public License versions 2.0 or 3.0 as published by the Free
-** Software Foundation and appearing in the file LICENSE.GPL included in
-** the packaging of this file.  Please review the following information
-** to ensure GNU General Public Licensing requirements will be met:
-** http://www.fsf.org/licensing/licenses/info/GPLv2.html and
-** http://www.gnu.org/copyleft/gpl.html.  In addition, as a special
-** exception, Nokia gives you certain additional rights. These rights
-** are described in the Nokia Qt GPL Exception version 1.3, included in
-** the file GPL_EXCEPTION.txt in this package.
-**
-****************************************************************************/
+* TimersHandler.h: Reader and handler of tano timers format
+* This file is also part of the example classes of the Qt Toolkit.
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* Contact: Qt Software Information (qt-info@nokia.com)
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
 
 #ifndef TANO_TIMERSHANDLER_H_
 #define TANO_TIMERSHANDLER_H_
@@ -44,11 +40,11 @@ public:
 					const QString &qName);
 	bool characters(const QString &str);
 	bool fatalError(const QXmlParseException &exception);
-	QString errorString() const;
+	QString errorString() const {return _errorStr;};
 
-	Timer *timerRead(QTreeWidgetItem *clickedItem);
-	QTreeWidgetItem *itemRead(Timer *clickedItem);
-	QMap<QTreeWidgetItem*, Timer*> timersMap();
+	Timer *timerRead(QTreeWidgetItem *item) {return _map[item];};
+	QTreeWidgetItem *itemRead(Timer *item);
+	QMap<QTreeWidgetItem*, Timer*> timersMap() {return _map;};
 
 	void clear();
 
@@ -60,16 +56,16 @@ public:
 private:
 	QTreeWidgetItem *createChildItem(const QString &tagName);
 
-	QTreeWidget *treeWidget;
-	QTreeWidgetItem *item;
-	Timer *timer;
-	QString currentText;
-	QString errorStr;
-	bool metTanoTag;
+	QTreeWidget *_treeWidget;
+	QTreeWidgetItem *_item;
+	Timer *_timer;
+	QString _currentText;
+	QString _errorStr;
+	bool _metTanoTag;
 
-	QMap<QTreeWidgetItem*, Timer*> map;
+	QMap<QTreeWidgetItem*, Timer*> _map;
 
-	QIcon timerIcon;
+	QIcon _timerIcon;
 };
 
 #endif // TANO_TIMERSHANDLER_H_

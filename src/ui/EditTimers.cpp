@@ -123,7 +123,7 @@ void EditTimers::addItem()
 		}
 	}
 
-	edit(_handler->newTimer(ui.editNameNew->text(),_channel->name(),ui.playlistWidget->fileName(),_channel->num(),_channel->url()));
+	edit(_handler->newTimer(ui.editNameNew->text(),_channel->name(),ui.playlistWidget->fileName(),_channel->number(),_channel->url()));
 
 	ui.dockWidgetContents->setDisabled(false);
 	ui.toolBar->setDisabled(false);

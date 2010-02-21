@@ -4,27 +4,19 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../../build/win32/src/ui_About.h" line="237"/>
+        <location filename="../../build/src/ui_About.h" line="237"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_About.h" line="238"/>
+        <location filename="../../build/src/ui_About.h" line="238"/>
         <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
         <translation>&lt;h4&gt;Licensirano pod licenco GNU GPL&lt;/h4&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_About.h" line="241"/>
+        <location filename="../../build/src/ui_About.h" line="241"/>
         <source>Back</source>
         <translation>Nazaj</translation>
-    </message>
-</context>
-<context>
-    <name>ChannelSelect</name>
-    <message>
-        <location filename="../control/ChannelSelect.cpp" line="100"/>
-        <source>No channel with this number</source>
-        <translation>Ni programa s to številko</translation>
     </message>
 </context>
 <context>
@@ -75,94 +67,94 @@ You will lose any unsaved settings.</source>
 Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="257"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="257"/>
         <source>Edit Channel List</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="258"/>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="260"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="258"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="260"/>
         <source>Add Channel</source>
         <translation>Dodaj Program</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="262"/>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="264"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="262"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="264"/>
         <source>Delete Channel</source>
         <translation>Izbriši Program</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="266"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="266"/>
         <source>Save</source>
         <translation>Shrani</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="267"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="267"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="268"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="268"/>
         <source>Reload</source>
         <translation>Ponovno naloži</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="269"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="269"/>
         <source>Import</source>
         <translation>Uvozi</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="270"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="270"/>
         <source>Playlist name:</source>
         <translation>Ime seznama programov:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="272"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="272"/>
         <source>Editor</source>
         <translation>Urejevalnik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="273"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="273"/>
         <source>Number:</source>
         <translation>Število:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="274"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="274"/>
         <source>Name:</source>
         <translation>Ime:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="275"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="275"/>
         <source>Categories:</source>
         <translation>Kategorije:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="276"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="276"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="277"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="277"/>
         <source>EPG:</source>
         <translation>EPG:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="278"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="278"/>
         <source>&lt;i&gt;You can separate categories with comma.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Kategorije lahko ločiš z vejico.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="279"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="279"/>
         <source>Url:</source>
         <translation>Naslov:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="280"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="280"/>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Zaporedno število moraš uveljaviti.&lt;br&gt;Vse druge vrednosti se avtomatsko spremenijo.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditPlaylist.h" line="271"/>
+        <location filename="../../build/src/ui_EditPlaylist.h" line="271"/>
         <source>Toolbar</source>
         <translation>Orodna vrstica</translation>
     </message>
@@ -170,447 +162,437 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>EditSettings</name>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="832"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="982"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="898"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1016"/>
         <source>Settings</source>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="847"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="913"/>
         <source>Shortcuts</source>
         <translation>Bližnjice</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="852"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="918"/>
         <source>Run First run wizard</source>
         <translation>Zaženi Čarovnik ob prvem zagonu</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="855"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="921"/>
         <source>Language</source>
         <translation>Jezik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="856"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="922"/>
         <source>System default language</source>
         <translation>Sistemsko privzet jezik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="857"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="923"/>
         <source>Custom language</source>
         <translation>Poljuben jezik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="860"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="926"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="861"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="927"/>
         <source>Slovensko</source>
         <translation>Slovensko</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="863"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="929"/>
         <source>&lt;i&gt;You need to restart Tano when changing language!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Pri spreminjanju jezika moraš ponovno zagnati Tano!&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="866"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="932"/>
         <source>&lt;i&gt;You need to restart Tano when changing session settings!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Pri spreminjanju nastavitev seje moraš ponovno zagnati Tano!&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="870"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="910"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="936"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="976"/>
         <source>Browse:</source>
         <translation>Brskaj:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="872"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="912"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="938"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="978"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="873"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="913"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="939"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="979"/>
         <source>Reset</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="32"/>
+        <location filename="../ui/EditSettings.cpp" line="47"/>
         <source>You are using Tano version:</source>
         <translation>Uporabljaš Tano različice:</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="308"/>
+        <location filename="../ui/EditSettings.cpp" line="330"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="310"/>
+        <location filename="../ui/EditSettings.cpp" line="332"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="837"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="903"/>
         <source>Main</source>
         <translation>Glavno</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="915"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="983"/>
         <source>Action</source>
         <translation>Ukaz</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="917"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="985"/>
         <source>Key</source>
         <translation>Tipke</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="956"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="990"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="850"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="916"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="853"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="919"/>
         <source>Check for updates on application start</source>
         <translation>Preveri za posodobitve ob zagonu</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="903"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="969"/>
         <source>Network Card</source>
         <translation>Omrežna kartica</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="904"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="970"/>
         <source>Use default settings</source>
         <translation>Uporabi privzete nastavitve</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="905"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="971"/>
         <source>Use custom network card IP</source>
         <translation>Uporabi določen IP omrežne kartice</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="906"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="972"/>
         <source>&lt;i&gt;You need to restart Tano when changing network settings!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Pri spreminjanju nastavitev omrežja moraš ponovno zagnati Tano!&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="868"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="934"/>
         <source>Preset</source>
         <translation>Prednastavljeno</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="854"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="920"/>
         <source>&lt;i&gt;Wizard will be run after restart.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Čarovnik bo zagnan po ponovnem zagonu.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="874"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="940"/>
         <source>Presets</source>
         <translation>Prednastavljene sheme</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="875"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="941"/>
         <source>SiOL</source>
         <translation>SiOL</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="876"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="942"/>
         <source>MPEG-2</source>
         <translation>MPEG-2</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="877"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="943"/>
         <source>MPEG-4</source>
         <translation>MPEG-4</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="878"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="944"/>
         <source>T-2</source>
         <translation>T-2</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="839"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="905"/>
         <source>Channels</source>
         <translation>Programi</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="886"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="952"/>
         <source>Mouse wheel</source>
         <translation>Miškin kolešček</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="887"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="953"/>
         <source>Change channel</source>
         <translation>Spremeni program</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="888"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="954"/>
         <source>Change volume</source>
         <translation>Spremeni glasnost</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="889"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="955"/>
         <source>Minimise to tray</source>
         <translation>Skrij v sistemsko vrstico</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="891"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="957"/>
         <source>Disable</source>
         <translation>Onemogoči</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="841"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="907"/>
         <source>Interface</source>
         <translation>Vmesnik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="893"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="959"/>
         <source>VLC Backend</source>
         <translation>VLC Pogon</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="894"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="960"/>
         <source>Curently using Videolan VLC Backend</source>
         <translation>Trenutno uporabljaš Videolan VLC</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="895"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="961"/>
         <source>Version:</source>
         <translation>Različica:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="896"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="962"/>
         <source>Use global VLC settings</source>
         <translation>Uporabi globalne VLC nastavitve</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="898"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="964"/>
         <source>Remember Video settings between media</source>
         <translation>Zapomni si nastavitve videa med preklapljanjem</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="899"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="965"/>
         <source>Default subtitle language:</source>
         <translation>Privzet jezik podnapisov:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="900"/>
-        <location filename="../ui/EditSettings.cpp" line="235"/>
-        <location filename="../ui/EditSettings.cpp" line="239"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="966"/>
+        <location filename="../ui/EditSettings.cpp" line="251"/>
+        <location filename="../ui/EditSettings.cpp" line="255"/>
         <source>Disabled</source>
         <translation>Onemogočeno</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="901"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="967"/>
         <source>Other</source>
         <translation>Drugo</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="908"/>
-        <source>&lt;i&gt;You need to restart Tano when enabling/disabling Recorder!&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Pri vklopu/izklopu snemalnika moraš ponovno zagnati Tano!&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="958"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="992"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="960"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="994"/>
         <source>Next channel</source>
         <translation>Naslednii kanal</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="962"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="996"/>
         <source>Previous channel</source>
         <translation>Prejšnji kanal</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="964"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="998"/>
         <source>Fullscreen</source>
         <translation>Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="993"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1029"/>
         <source>Restore defaults</source>
         <translation>Obnovi privzeto</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="991"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1027"/>
         <source>Set</source>
         <translation>Nastavi</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="892"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="958"/>
         <source>&lt;i&gt;You need to restart Tano when changing interface settings!&lt;/i&gt;</source>
         <translation>&lt;i&gt;Pri spreminjanju nastavitev vmesnika moraš ponovno zagnati Tano!&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="966"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="974"/>
+        <source>&lt;i&gt;You need to restart Tano when changing Recorder settings!&lt;/i&gt;</source>
+        <translation>&lt;i&gt;Pri spreminjanju nastavitev snemalnika moraš ponovno zagnati Tano!&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_EditSettings.h" line="980"/>
+        <source>Recorder backend</source>
+        <translation>Hrbtenica snemalnika</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_EditSettings.h" line="981"/>
+        <source>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</source>
+        <translation>Prosim, izberi vtičnik snemalnika s spodnjega seznama:&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_EditSettings.h" line="1000"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="968"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1002"/>
         <source>Volume up</source>
         <translation>Povečaj glasnost</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="970"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1004"/>
         <source>Volume down</source>
         <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="992"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1022"/>
+        <source>Hide to tray</source>
+        <translation>Skrij v orodno vrstico</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_EditSettings.h" line="1028"/>
         <source>Clear Shortcut</source>
         <translation>Počisti bližnjico</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="919"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="921"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="923"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="925"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="927"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="929"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="931"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="933"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="935"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="937"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="939"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="941"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="943"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="945"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="947"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="949"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="951"/>
-        <source>0</source>
-        <translation>0</translation>
-    </message>
-    <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="879"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="945"/>
         <source>Categorised</source>
         <translation>Kategorizirano</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="880"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="946"/>
         <source>Full</source>
         <translation>Celotna shema</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="843"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="897"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="909"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="963"/>
         <source>Playback</source>
         <translation>Predvajanje</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="974"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1008"/>
         <source>Open File</source>
         <translation>Odpri Datoteko</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="976"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1010"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="978"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1012"/>
         <source>Open Channel list</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="980"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1014"/>
         <source>Edit Channel list</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="883"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="984"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="949"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1018"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="986"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1020"/>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="988"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1024"/>
         <source>About</source>
         <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="864"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="930"/>
         <source>Session store</source>
         <translation>Shranjevanje sej</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="865"/>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="890"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="931"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="956"/>
         <source>Enable</source>
         <translation>Vključi</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="869"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="935"/>
         <source>Custom</source>
         <translation>Drugo</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="867"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="933"/>
         <source>Default Channel list</source>
         <translation>Privzet Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="972"/>
-        <source>Record</source>
-        <translation>Snemaj</translation>
-    </message>
-    <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="909"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="975"/>
         <source>Default recording directory</source>
         <translation>Privzet imenik snemanja</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="845"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="911"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="1006"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../ui/EditSettings.cpp" line="326"/>
+        <location filename="../ui/EditSettings.cpp" line="348"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="881"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="947"/>
         <source>Default interface settings</source>
         <translation>Privzete nastavitve vmesnika</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="884"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="950"/>
         <source>Enable On Screen Display - OSD in Fullscreen mode</source>
         <translation>Vključi OSD v celozaslonskem načinu</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="907"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="973"/>
         <source>Enable Recorder</source>
         <translation>Vključi Snemalnik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="882"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="948"/>
         <source>Simple mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditSettings.h" line="885"/>
+        <location filename="../../build/src/ui_EditSettings.h" line="951"/>
         <source>Start with Channel info enabled</source>
         <translation>Začni z vidno Informacijo o kanalu</translation>
     </message>
@@ -618,107 +600,107 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>EditTimers</name>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="301"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="301"/>
         <location filename="../ui/EditTimers.cpp" line="79"/>
         <source>Timers</source>
         <translation>Timerji</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="302"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="302"/>
         <source>New Task</source>
         <translation>Novo opravilo</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="303"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="303"/>
         <source>Delete Task</source>
         <translation>Izbriši opravilo</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="304"/>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="306"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="304"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="306"/>
         <source>Save</source>
         <translation>Shrani</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="308"/>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="310"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="308"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="310"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="313"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="313"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="314"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="314"/>
         <source>Timer</source>
         <translation>Timer</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="315"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="315"/>
         <source>Create</source>
         <translation>Ustvari</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="316"/>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="319"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="316"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="319"/>
         <source>Name:</source>
         <translation>Ime:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="317"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="317"/>
         <source>Select a channel from the list below:</source>
         <translation>Izberi program s spodnjega seznama:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="318"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="318"/>
         <source>Editor</source>
         <translation>Urejevalnik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="320"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="320"/>
         <source>Channel:</source>
         <translation>Program:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="321"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="321"/>
         <source>Playlist:</source>
         <translation>Seznam:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="322"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="322"/>
         <source>Date:</source>
         <translation>Datum:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="323"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="323"/>
         <source>Start time:</source>
         <translation>Začetek:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="324"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="324"/>
         <source>End time:</source>
         <translation>Konec:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="325"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="325"/>
         <source>dd.MM.yyyy</source>
         <translation>dd.MM.yyyy</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="326"/>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="327"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="326"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="327"/>
         <source>hh:mm</source>
         <translation>hh:mm</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="328"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="328"/>
         <source>Disabled:</source>
         <translation>Izključen:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EditTimers.h" line="329"/>
+        <location filename="../../build/src/ui_EditTimers.h" line="329"/>
         <source>Url:</source>
         <translation>Naslov:</translation>
     </message>
@@ -795,12 +777,12 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>EpgShow</name>
     <message>
-        <location filename="../../build/win32/src/ui_EpgShow.h" line="194"/>
+        <location filename="../../build/src/ui_EpgShow.h" line="194"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_EpgShow.h" line="195"/>
+        <location filename="../../build/src/ui_EpgShow.h" line="195"/>
         <source>&lt;center&gt;&lt;h1&gt;Loading ...&lt;/h1&gt;&lt;/center&gt;</source>
         <translation>&lt;center&gt;&lt;h1&gt;Nalagam ...&lt;/h1&gt;&lt;/center&gt;</translation>
     </message>
@@ -852,307 +834,307 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="783"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="769"/>
         <source>&amp;Exit</source>
         <translation>&amp;Izhod</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="784"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="770"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="785"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="771"/>
         <source>&amp;Settings</source>
         <translation>&amp;Nastavitve</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="786"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="772"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="787"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="773"/>
         <source>&amp;Open Channel list</source>
         <translation>&amp;Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="788"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="774"/>
         <source>Open &amp;File</source>
         <translation>Odpri &amp;Datoteko</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="865"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="851"/>
         <source>&amp;Help</source>
         <translation>&amp;Pomoč</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="797"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="783"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="798"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="784"/>
         <source>Check for updates</source>
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="799"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="827"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="785"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="813"/>
         <source>Original</source>
         <translation>Originalno</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="800"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="836"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="786"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="822"/>
         <source>4:3</source>
         <translation>4:3</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="801"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="828"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="787"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="814"/>
         <source>16:9</source>
         <translation>16:9</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="802"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="788"/>
         <source>Open</source>
         <translation>Odpri</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="803"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="876"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="879"/>
-        <location filename="../MainWindow.cpp" line="395"/>
-        <location filename="../MainWindow.cpp" line="396"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="789"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="862"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="865"/>
+        <location filename="../MainWindow.cpp" line="390"/>
+        <location filename="../MainWindow.cpp" line="391"/>
+        <location filename="../MainWindow.cpp" line="392"/>
+        <location filename="../MainWindow.cpp" line="393"/>
         <location filename="../MainWindow.cpp" line="397"/>
         <location filename="../MainWindow.cpp" line="398"/>
-        <location filename="../MainWindow.cpp" line="402"/>
-        <location filename="../MainWindow.cpp" line="403"/>
-        <location filename="../MainWindow.cpp" line="404"/>
-        <location filename="../MainWindow.cpp" line="405"/>
+        <location filename="../MainWindow.cpp" line="399"/>
+        <location filename="../MainWindow.cpp" line="400"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="804"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="882"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="885"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="790"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="868"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="871"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="805"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="791"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="634"/>
+        <location filename="../MainWindow.cpp" line="633"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="810"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="796"/>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="811"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="866"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="797"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="852"/>
         <source>Main Toolbar</source>
         <translation>Glavna orodna vrstica</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="812"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="894"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="897"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="798"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="880"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="883"/>
         <source>Next</source>
         <translation>Naslednji</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="813"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="888"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="891"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="799"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="874"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="877"/>
         <source>Back</source>
         <translation>Nazaj</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="814"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="906"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="909"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="800"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="892"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="895"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="815"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="801"/>
         <source>Volume up</source>
         <translation>Povečaj glasnost</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="816"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="802"/>
         <source>Volume down</source>
         <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="817"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="854"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="803"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="840"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="874"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="860"/>
         <source>Controls</source>
         <translation>Upravljanje</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="900"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="903"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="886"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="889"/>
         <source>Record Now</source>
         <translation>Snemaj takoj</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="823"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="837"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="809"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="823"/>
         <source>1:1</source>
         <translation>1:1</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="818"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="820"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="804"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="806"/>
         <source>Record Current</source>
         <translation>Snemaj trenutno</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="824"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="829"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="810"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="815"/>
         <source>16:10</source>
         <translation>16:10</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="825"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="831"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="811"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="817"/>
         <source>2.21:1</source>
         <translation>2.21:1</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="826"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="835"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="812"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="821"/>
         <source>5:4</source>
         <translation>5:4</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="830"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="816"/>
         <source>1.85:1</source>
         <translation>1.85:1</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="832"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="818"/>
         <source>2.35:1</source>
         <translation>2.35:1</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="833"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="819"/>
         <source>2.39:1</source>
         <translation>2.39:1</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="834"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="820"/>
         <source>5:3</source>
         <translation>5:3</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="838"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="824"/>
         <location filename="../MainWindow.cpp" line="165"/>
         <source>Disabled</source>
         <translation>Onemogočeno</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="839"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="825"/>
         <source>Blend</source>
         <translation>Prelivanje</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="840"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="826"/>
         <source>Mean</source>
         <translation>Sredina</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="841"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="827"/>
         <source>Bob</source>
         <translation>Bob</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="842"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="828"/>
         <source>Linear</source>
         <translation>Linearno</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="843"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="829"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="844"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="830"/>
         <source>Discard</source>
         <translation>Zavrzi</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="845"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="831"/>
         <source>Timers</source>
         <translation>Timerji</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="846"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="832"/>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="851"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="837"/>
         <source>Controls panel</source>
         <translation>Upravljalni pult</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="852"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="838"/>
         <source>About Plugins</source>
         <translation>O vtičnikih</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="853"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="839"/>
         <source>&amp;File</source>
         <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="857"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="843"/>
         <source>Audio</source>
         <translation>Zvok</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="858"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="844"/>
         <source>Audio channel</source>
         <translation>Zvočna sled</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="859"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="845"/>
         <source>Video</source>
         <translation>Video</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="863"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="849"/>
         <source>Aspect ratio</source>
         <translation>Razmerje slike</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="862"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="848"/>
         <source>Deinterlacing</source>
         <translation>Razpletanje</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="868"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="854"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="822"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="808"/>
         <source>Controls Toolbar</source>
         <translation>Orodna vrstica predvajanja</translation>
     </message>
@@ -1164,109 +1146,109 @@ This will stop recording in progress.</source>
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="386"/>
-        <location filename="../MainWindow.cpp" line="387"/>
-        <location filename="../MainWindow.cpp" line="388"/>
-        <location filename="../MainWindow.cpp" line="389"/>
+        <location filename="../MainWindow.cpp" line="381"/>
+        <location filename="../MainWindow.cpp" line="382"/>
+        <location filename="../MainWindow.cpp" line="383"/>
+        <location filename="../MainWindow.cpp" line="384"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="513"/>
+        <location filename="../MainWindow.cpp" line="508"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="515"/>
+        <location filename="../MainWindow.cpp" line="510"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="538"/>
+        <location filename="../MainWindow.cpp" line="533"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="540"/>
+        <location filename="../MainWindow.cpp" line="535"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="551"/>
+        <location filename="../MainWindow.cpp" line="546"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="552"/>
+        <location filename="../MainWindow.cpp" line="547"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="873"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="859"/>
         <source>Schedule</source>
         <translation>Spored</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="855"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="841"/>
         <source>&amp;Options</source>
         <translation>&amp;Možnosti</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="781"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="767"/>
         <location filename="../MainWindow.cpp" line="69"/>
-        <location filename="../MainWindow.cpp" line="590"/>
-        <location filename="../MainWindow.cpp" line="592"/>
+        <location filename="../MainWindow.cpp" line="585"/>
+        <location filename="../MainWindow.cpp" line="587"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="782"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="768"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="789"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="791"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="775"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="777"/>
         <source>Edit Channels</source>
         <translation>Uredi programe</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="793"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="795"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="867"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="779"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="781"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="853"/>
         <source>Info panel</source>
         <translation>Info pult</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="806"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="808"/>
-        <location filename="../MainWindow.cpp" line="631"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="792"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="794"/>
+        <location filename="../MainWindow.cpp" line="626"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="847"/>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="849"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="833"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="835"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="856"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="842"/>
         <source>&amp;Media</source>
         <translation>&amp;Predvajanje</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="860"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="846"/>
         <source>Crop video</source>
         <translation>Obreži video</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="861"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="847"/>
         <source>Subtitles</source>
         <translation>Podnapisi</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_MainWindow.h" line="864"/>
+        <location filename="../../build/src/ui_MainWindow.h" line="850"/>
         <source>&amp;View</source>
         <translation>&amp;Videz</translation>
     </message>
@@ -1274,27 +1256,27 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>PlaylistWidget</name>
     <message>
-        <location filename="../../build/win32/src/ui_PlaylistWidget.h" line="109"/>
+        <location filename="../../build/src/ui_PlaylistWidget.h" line="109"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_PlaylistWidget.h" line="110"/>
+        <location filename="../../build/src/ui_PlaylistWidget.h" line="110"/>
         <source>#</source>
         <translation>#</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_PlaylistWidget.h" line="111"/>
+        <location filename="../../build/src/ui_PlaylistWidget.h" line="111"/>
         <source>Search:</source>
         <translation>Išči:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_PlaylistWidget.h" line="112"/>
+        <location filename="../../build/src/ui_PlaylistWidget.h" line="112"/>
         <source>Category:</source>
         <translation>Kategorija:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_PlaylistWidget.h" line="114"/>
+        <location filename="../../build/src/ui_PlaylistWidget.h" line="114"/>
         <source>Clear</source>
         <translation>Počisti</translation>
     </message>
@@ -1328,17 +1310,17 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>PluginsManager</name>
     <message>
-        <location filename="../../build/win32/src/ui_PluginsManager.h" line="73"/>
+        <location filename="../../build/src/ui_PluginsManager.h" line="73"/>
         <source>About Plugins</source>
         <translation>O vtičnikih</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_PluginsManager.h" line="74"/>
+        <location filename="../../build/src/ui_PluginsManager.h" line="74"/>
         <source>These plugins are currently available for Tano:</source>
         <translation>Sledeči vtičniki so trenutno na voljo za Tano:</translation>
     </message>
     <message>
-        <location filename="../plugins/PluginsManager.cpp" line="54"/>
+        <location filename="../plugins/PluginsManager.cpp" line="52"/>
         <source>Recorder Plugin</source>
         <translation>Vtičnik za snemalnik</translation>
     </message>
@@ -1347,67 +1329,66 @@ To bo ustavilo trenutno snemanje.</translation>
     <name>QObject</name>
     <message>
         <location filename="../xml/M3UHandler.cpp" line="26"/>
-        <location filename="../xml/M3UHandler.cpp" line="78"/>
+        <location filename="../xml/M3UHandler.cpp" line="79"/>
         <location filename="../xml/tanohandler.cpp" line="26"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../xml/M3UHandler.cpp" line="63"/>
+        <location filename="../xml/M3UHandler.cpp" line="64"/>
         <source>A channel with this number already exists!</source>
         <translation>Program s to številko že obstaja!</translation>
     </message>
     <message>
-        <location filename="../xml/M3UHandler.cpp" line="171"/>
-        <location filename="../xml/M3UHandler.cpp" line="173"/>
+        <location filename="../xml/M3UHandler.cpp" line="162"/>
+        <location filename="../xml/M3UHandler.cpp" line="164"/>
         <source>New channel</source>
         <translation>Nov program</translation>
     </message>
     <message>
-        <location filename="../xml/tanohandler.cpp" line="43"/>
+        <location filename="../xml/tanohandler.cpp" line="44"/>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
         <translation>Datoteka ni Tano TV Seznam programov 1.1 ali novejša.</translation>
     </message>
     <message>
-        <location filename="../xml/tanohandler.cpp" line="52"/>
-        <location filename="../xml/tanohandler.cpp" line="55"/>
-        <location filename="../xml/TimersHandler.cpp" line="68"/>
-        <location filename="../xml/TimersHandler.cpp" line="69"/>
+        <location filename="../xml/tanohandler.cpp" line="56"/>
+        <location filename="../xml/TimersHandler.cpp" line="60"/>
+        <location filename="../xml/TimersHandler.cpp" line="61"/>
         <source>Unknown title</source>
         <translation>Neznan naslov</translation>
     </message>
     <message>
-        <location filename="../xml/M3UHandler.cpp" line="62"/>
-        <location filename="../xml/TimersHandler.cpp" line="134"/>
+        <location filename="../xml/M3UHandler.cpp" line="63"/>
+        <location filename="../xml/TimersHandler.cpp" line="126"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../xml/TimersHandler.cpp" line="135"/>
+        <location filename="../xml/TimersHandler.cpp" line="127"/>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation>Napaka branja na vrstici %1, stolpec %2:
 %3</translation>
     </message>
     <message>
-        <location filename="../xml/tanohandler.cpp" line="36"/>
+        <location filename="../xml/tanohandler.cpp" line="37"/>
         <source>The file is not a Tano TV channel list file.</source>
         <translation>Datoteka ni Tano TV Seznam programov.</translation>
     </message>
     <message>
-        <location filename="../xml/TimersHandler.cpp" line="58"/>
+        <location filename="../xml/TimersHandler.cpp" line="51"/>
         <source>The file is not a Tano Timers list.</source>
         <translation>Datoteka ni Tano seznam timerjev.</translation>
     </message>
     <message>
-        <location filename="../xml/TimersHandler.cpp" line="90"/>
-        <location filename="../xml/TimersHandler.cpp" line="168"/>
+        <location filename="../xml/TimersHandler.cpp" line="82"/>
+        <location filename="../xml/TimersHandler.cpp" line="150"/>
         <source>Active</source>
         <translation>Aktiven</translation>
     </message>
     <message>
+        <location filename="../xml/TimersHandler.cpp" line="99"/>
         <location filename="../xml/TimersHandler.cpp" line="107"/>
-        <location filename="../xml/TimersHandler.cpp" line="115"/>
         <source>Disabled or expired</source>
         <translation>Izključen ali pretečen</translation>
     </message>
@@ -1415,83 +1396,81 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>Recorder</name>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="90"/>
+        <location filename="../recorder/Recorder.cpp" line="81"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="130"/>
+        <location filename="../recorder/Recorder.cpp" line="121"/>
         <source>No timer - press button to stop.</source>
         <translation>Ni timerja - pritisni gumb in ustavi.</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="133"/>
+        <location filename="../recorder/Recorder.cpp" line="124"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="196"/>
-        <location filename="../recorder/Recorder.cpp" line="150"/>
+        <location filename="../../build/src/ui_Recorder.h" line="196"/>
+        <location filename="../recorder/Recorder.cpp" line="139"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="107"/>
+        <location filename="../recorder/Recorder.cpp" line="98"/>
         <source>Cannot write to %1.</source>
         <translation>Ne morem pisati v %1.</translation>
     </message>
     <message>
-        <location filename="../recorder/Recorder.cpp" line="113"/>
-        <location filename="../recorder/Recorder.cpp" line="173"/>
+        <location filename="../recorder/Recorder.cpp" line="104"/>
         <source>Channel is not selected!</source>
         <translation>Program ni izbran!</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="190"/>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="191"/>
-        <location filename="../recorder/Recorder.cpp" line="106"/>
-        <location filename="../recorder/Recorder.cpp" line="112"/>
-        <location filename="../recorder/Recorder.cpp" line="172"/>
+        <location filename="../../build/src/ui_Recorder.h" line="190"/>
+        <location filename="../../build/src/ui_Recorder.h" line="191"/>
+        <location filename="../recorder/Recorder.cpp" line="97"/>
+        <location filename="../recorder/Recorder.cpp" line="103"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="192"/>
+        <location filename="../../build/src/ui_Recorder.h" line="192"/>
         <source>Selected channel:</source>
         <translation>Izbran kanal:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="194"/>
+        <location filename="../../build/src/ui_Recorder.h" line="194"/>
         <source>Directory:</source>
         <translation>Imenik:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="195"/>
+        <location filename="../../build/src/ui_Recorder.h" line="195"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="197"/>
+        <location filename="../../build/src/ui_Recorder.h" line="197"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="200"/>
+        <location filename="../../build/src/ui_Recorder.h" line="200"/>
         <source>Currently recording:</source>
         <translation>Trenutno snemam:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="202"/>
+        <location filename="../../build/src/ui_Recorder.h" line="202"/>
         <source>Time:</source>
         <translation>Čas:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="204"/>
+        <location filename="../../build/src/ui_Recorder.h" line="204"/>
         <source>Time remaining:</source>
         <translation>Čas do konca:</translation>
     </message>
     <message>
-        <location filename="../../build/win32/src/ui_Recorder.h" line="198"/>
+        <location filename="../../build/src/ui_Recorder.h" line="198"/>
         <source>Recording to file:</source>
         <translation>Snemam v datoteko:</translation>
     </message>

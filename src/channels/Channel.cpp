@@ -1,37 +1,52 @@
+/****************************************************************************
+* Channel.cpp: Channel class
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #include "Channel.h"
 
-Channel::Channel(QString name, int num, bool cat)
-	: _name(name), _num(num), _category(cat)
+Channel::Channel(const QString &name, const int &number)
+	: _name(name), _number(number)
 {
 
 }
 
-Channel::~Channel() {
-
-}
-
-void Channel::setNum(const int &num) {
-	_num = num;
-}
-void Channel::setName(const QString &xmlName) {
-	_name = xmlName;
-}
-void Channel::setEpg(const QString &xmlEpg) {
-	_epg = xmlEpg;
-}
-void Channel::setLanguage(const QString &xmlLanguage) {
-	_lang = xmlLanguage;
-}
-void Channel::setUrl(const QString &xmlUrl) {
-	_url = xmlUrl;
-}
-void Channel::setCategoryList(const QStringList &xmlCategoryList) {
-	_categoryList = xmlCategoryList;
-}
-
-QString Channel::numToString()
+Channel::~Channel()
 {
-	QString num;
-	num.setNum(_num);
-	return num;
+
+}
+
+void Channel::setNumber(const int &number)
+{
+	_number = number;
+}
+void Channel::setName(const QString &name)
+{
+	_name = name;
+}
+void Channel::setEpg(const QString &epg)
+{
+	_epg = epg;
+}
+void Channel::setLanguage(const QString &language)
+{
+	_language = language;
+}
+void Channel::setUrl(const QString &url)
+{
+	_url = url;
+}
+void Channel::setCategories(const QStringList &categories)
+{
+	_categories = categories;
 }

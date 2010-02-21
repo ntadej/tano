@@ -36,8 +36,8 @@ public:
 	void deleteChannel(QTreeWidgetItem *i);
 	void clear();
 
-	Channel *channelRead(QTreeWidgetItem *clickedItem);
-	Channel *channelRead(const int &clickedItem);
+	Channel *channelRead(QTreeWidgetItem *item) {return _map[item];};
+	Channel *channelRead(const int &item) {return _nmap[item];};
 	QString name() const {return _name;};
 	QStringList categories() const {return _categoryList;};
 	QList<int> nums() const {return _channelNums;};
