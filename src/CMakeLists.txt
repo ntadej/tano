@@ -143,6 +143,15 @@ IF(NOT MINGW)
 	ENDIF (NOT DEFAULT_DATA_DIR)
 ENDIF(NOT MINGW)
 
+# Define default plugin dir, if under POSIX systems.
+IF(NOT MINGW)
+	IF (NOT DEFAULT_PLUGIN_DIR)
+		ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR}")
+	ELSE (NOT DEFAULT_PLUGIN_DIR)
+		ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${DEFAULT_PLUGIN_DIR}")
+	ENDIF (NOT DEFAULT_PLUGIN_DIR)
+ENDIF(NOT MINGW)
+
 ####################################
 # Include paths and set up targets #
 ####################################

@@ -1,0 +1,439 @@
+#EXTM3U
+#EXTNAME:Tuš
+
+#EXTINF:1,Sky News
+#EXTTV:Informativni;angleški;
+udp://@239.10.30.1:1234
+
+#EXTINF:2,DW-TW
+#EXTTV:Informativni;nemški;
+udp://@239.10.30.2:1234
+
+#EXTINF:3,BBC Word News
+#EXTTV:Informativni;angleški;
+udp://@239.10.30.3:1234
+
+#EXTINF:4,CNBC
+#EXTTV:Informativni;angleški;
+udp://@239.10.30.4:1234
+
+#EXTINF:5,TV5 Monde
+#EXTTV:Informativni;francoski;
+udp://@239.10.30.5:1234
+
+#EXTINF:6,MTV
+#EXTTV:Glasbeni;angleški;
+udp://@239.10.30.6:1234
+
+#EXTINF:7,Golica TV
+#EXTTV:ExYU,Glasbeni;slovenski;
+udp://@239.10.30.7:1234
+
+#EXTINF:8,Čarli
+#EXTTV:Glasbeni,ExYU;slovenski;
+udp://@239.10.30.8:1234
+
+#EXTINF:9,Viva
+#EXTTV:Glasbeni;nemški;VIVA
+udp://@239.10.30.9:1234
+
+#EXTINF:10,CNN
+#EXTTV:Informativni;angleški;CNN
+udp://@239.10.30.10:1234
+
+#EXTINF:11,Cartoon Network
+#EXTTV:Otroški;angleški;
+udp://@239.10.30.11:1234
+
+#EXTINF:12,Info TV
+#EXTTV:ExYU,Informativni;slovenski;
+udp://@239.10.30.12:1234
+
+#EXTINF:13,Kabel 1
+#EXTTV:Zabavni;nemški;KABEL1
+udp://@239.10.30.13:1234
+
+#EXTINF:14,N24
+#EXTTV:Informativni;nemški;
+udp://@239.10.30.14:1234
+
+#EXTINF:15,Pro7
+#EXTTV:Zabavni;nemški;PRO7
+udp://@239.10.30.15:1234
+
+#EXTINF:16,SAT 1
+#EXTTV:Zabavni;nemški;SAT1
+udp://@239.10.30.16:1234
+
+#EXTINF:17,RTL
+#EXTTV:Zabavni;nemški;RTL
+udp://@239.10.30.17:1234
+
+#EXTINF:18,RTL 2
+#EXTTV:Zabavni;nemški;RTL2
+udp://@239.10.30.18:1234
+
+#EXTINF:19,Super RTL
+#EXTTV:Otroški,Zabavni;nemški;SUPERRTL
+udp://@239.10.30.19:1234
+
+#EXTINF:20,VOX
+#EXTTV:Zabavni;nemški;VOX
+udp://@239.10.30.20:1234
+
+#EXTINF:21,N-TV
+#EXTTV:Informativni;nemški;
+udp://@239.10.30.21:1234
+
+#EXTINF:22,HRT 1
+#EXTTV:ExYU;hrvaški;HRT1
+udp://@239.10.30.22:1234
+
+#EXTINF:23,HRT 2
+#EXTTV:ExYU;hrvaški;HRT2
+udp://@239.10.30.23:1234
+
+#EXTINF:24,CMC
+#EXTTV:ExYU,Glasbeni;hrvaški;CMC
+udp://@239.10.30.24:1234
+
+#EXTINF:25,SLO 3
+#EXTTV:ExYU;slovenski;
+udp://@239.10.30.25:1234
+
+#EXTINF:26,Hayat
+#EXTTV:ExYU;bosanski;HAYAT
+udp://@239.10.30.26:1234
+
+#EXTINF:27,TV Koper
+#EXTTV:ExYU;slovenski;
+udp://@239.10.30.27:1234
+
+#EXTINF:28,SLO 1
+#EXTTV:ExYU;slovenski;SLO1
+udp://@239.10.30.28:1234
+
+#EXTINF:29,SLO 2
+#EXTTV:ExYU;slovenski;SLO2
+udp://@239.10.30.29:1234
+
+#EXTINF:30,MTV Hits
+#EXTTV:Glasbeni;angleški;MTVH
+udp://@239.10.30.30:1234
+
+#EXTINF:31,MTV 2
+#EXTTV:Glasbeni;angleški;MTV2
+udp://@239.10.30.31:1234
+
+#EXTINF:32,VH1 Classic
+#EXTTV:Glasbeni;angleški;VH1CLA
+udp://@239.10.30.32:1234
+
+#EXTINF:33,MTV Dance
+#EXTTV:Glasbeni;angleški;MTVDANCE
+udp://@239.10.30.33:1234
+
+#EXTINF:34,Baby TV
+#EXTTV:Otroški;angleški;
+udp://@239.10.30.34:1234
+
+#EXTINF:35,Fox Life
+#EXTTV:Zabavni,Filmski;angleški;FOXLIFE
+udp://@239.10.30.35:1234
+
+#EXTINF:36,Fox Crime
+#EXTTV:Zabavni,Filmski;angleški;FOXCRIME
+udp://@239.10.30.36:1234
+
+#EXTINF:37,VH1
+#EXTTV:Glasbeni;angleški;VH1
+udp://@239.10.30.37:1234
+
+#EXTINF:38,Travel
+#EXTTV:Dokumentarni;angleški;
+udp://@239.10.30.38:1234
+
+#EXTINF:39,ESPN Classic
+#EXTTV:Športni;angleški;ESPN
+udp://@239.10.30.39:1234
+
+#EXTINF:40,Zone Romantica
+#EXTTV:Zabavni;angleški;
+udp://@239.10.30.40:1234
+
+#EXTINF:41,Jetix
+#EXTTV:Otroški;angleški;JETIX
+udp://@239.10.30.41:1234
+
+#EXTINF:42,Hallmark
+#EXTTV:Zabavni,Filmski;angleški;HALLMARK
+udp://@239.10.30.42:1234
+
+#EXTINF:43,Playboy
+#EXTTV:Za odrasle;;
+udp://@239.10.30.43:1234
+
+#EXTINF:44,National Geographic
+#EXTTV:Dokumentarni;angleški;NATGEO
+udp://@239.10.30.44:1234
+
+#EXTINF:45,Zone Reality
+#EXTTV:Zabavni;angleški;REALITY
+udp://@239.10.30.45:1234
+
+#EXTINF:46,Zone Club
+#EXTTV:Zabavni;angleški;
+udp://@239.10.30.46:1234
+
+#EXTINF:47,Extreme
+#EXTTV:Športni;angleški;EXTREME
+udp://@239.10.30.47:1234
+
+#EXTINF:48,NatGeo Wild
+#EXTTV:Dokumentarni;angleški;
+udp://@239.10.30.48:1234
+
+#EXTINF:49,X-Dream
+#EXTTV:Za odrasle;;
+udp://@239.10.30.49:1234
+
+#EXTINF:50,Free-X
+#EXTTV:Za odrasle;;
+udp://@239.10.30.50:1234
+
+#EXTINF:51,Free-X 2
+#EXTTV:Za odrasle;;
+udp://@239.10.30.51:1234
+
+#EXTINF:52,Viasat TV 1000
+#EXTTV:Zabavni,Filmski;angleški;
+udp://@239.10.30.52:1234
+
+#EXTINF:53,Viasat History
+#EXTTV:Dokumentarni;angleški;
+udp://@239.10.30.53:1234
+
+#EXTINF:54,Viasat Explorer
+#EXTTV:Dokumentarni;angleški;
+udp://@239.10.30.54:1234
+
+#EXTINF:55,Astro Net
+#EXTTV:ExYU;slovenski;
+udp://@239.10.30.55:1234
+
+#EXTINF:56,Sport Klub
+#EXTTV:Športni;slovenski;SPORTKL
+udp://@239.10.30.56:1234
+
+#EXTINF:57,MGM
+#EXTTV:Zabavni,Filmski;angleški;MGM
+udp://@239.10.30.57:1234
+
+#EXTINF:58,POP TV
+#EXTTV:ExYU;slovenski;POPTV
+udp://@239.10.30.58:1234
+
+#EXTINF:59,A Kanal
+#EXTTV:ExYU;slovenski;AKANAL
+udp://@239.10.30.59:1234
+
+#EXTINF:60,TV Pika
+#EXTTV:ExYU;slovenski;PIKA
+udp://@239.10.30.60:1234
+
+#EXTINF:61,Viasat 3
+#EXTTV:Zabavni,Filmski;angleški;
+udp://@239.10.30.61:1234
+
+#EXTINF:62,Pink Plus
+#EXTTV:ExYU;srbski;PINK
+udp://@239.10.30.62:1234
+
+#EXTINF:63,History
+#EXTTV:Dokumentarni;angleški;HISTORY
+udp://@239.10.30.63:1234
+
+#EXTINF:64,RTS
+#EXTTV:ExYU;srbski;RTS
+udp://@239.10.30.64:1234
+
+#EXTINF:65,ORF 1
+#EXTTV:Zabavni;nemški;ORF1
+udp://@239.10.30.65:1234
+
+#EXTINF:66,ORF 2
+#EXTTV:Zabavni;nemški;ORF2
+udp://@239.10.30.66:1234
+
+#EXTINF:67,ESPN America
+#EXTTV:Športni;angleški;NASN
+udp://@239.10.30.67:1234
+
+#EXTINF:68,Disney XD
+#EXTTV:Otroški;angleški;
+udp://@239.10.30.68:1234
+
+#EXTINF:69,Kika
+#EXTTV:Otroški;nemški;KIKA
+udp://@239.10.30.69:1234
+
+#EXTINF:70,ZDF
+#EXTTV:Zabavni;nemški;ZDF
+udp://@239.10.30.70:1234
+
+#EXTINF:71,3 SAT
+#EXTTV:Zabavni;nemški;3SAT
+udp://@239.10.30.71:1234
+
+#EXTINF:72,Kanal 1
+#EXTTV:Zabavni;nemški;
+udp://@239.10.30.72:1234
+
+#EXTINF:73,WDR
+#EXTTV:Informativni;nemški;
+udp://@239.10.30.73:1234
+
+#EXTINF:74,Phoenix
+#EXTTV:Dokumentarni;nemški;
+udp://@239.10.30.74:1234
+
+#EXTINF:75,BR Alpha
+#EXTTV:Zabavni;nemški;
+udp://@239.10.30.75:1234
+
+#EXTINF:76,Arte
+#EXTTV:Ostali;nemški;
+udp://@239.10.30.76:1234
+
+#EXTINF:77,RAI 1
+#EXTTV:Zabavni;italijanski;RAI1
+udp://@239.10.30.77:1234
+
+#EXTINF:78,RAI 2
+#EXTTV:Zabavni;italijanski;RAI2
+udp://@239.10.30.78:1234
+
+#EXTINF:79,RAI 3
+#EXTTV:Zabavni;italijanski;RAI3
+udp://@239.10.30.79:1234
+
+#EXTINF:80,NDR
+#EXTTV:Informativni;nemški;
+udp://@239.10.30.80:1234
+
+#EXTINF:81,MDR
+#EXTTV:Informativni;nemški;
+udp://@239.10.30.81:1234
+
+#EXTINF:82,Boomerang
+#EXTTV:Otroški;angleški;BOOMERANG
+udp://@239.10.30.82:1234
+
+#EXTINF:83,Private Spice
+#EXTTV:Za odrasle;angleški;
+udp://@239.10.30.83:1234
+
+#EXTINF:84,DSF
+#EXTTV:Športni;nemški;DSF
+udp://@239.10.30.84:1234
+
+#EXTINF:85,MKTV
+#EXTTV:ExYU;makedonski;
+udp://@239.10.30.85:1234
+
+#EXTINF:86,Euronews
+#EXTTV:Informativni;angleški;
+udp://@239.10.30.86:1234
+
+#EXTINF:87,BBC Prime
+#EXTTV:Informativni,Zabavni;angleški;BBCPRIME
+udp://@239.10.30.87:1234
+
+#EXTINF:88,Kanal 88
+#EXTTV:Ostali;;
+udp://@239.10.30.88:1234
+
+#EXTINF:89,Al Jazeera
+#EXTTV:Informativni;angleški;
+udp://@239.10.30.89:1234
+
+#EXTINF:90,Fashion
+#EXTTV:Ostali;angleški;
+udp://@239.10.30.90:1234
+
+#EXTINF:91,Eurosport
+#EXTTV:Športni;angleški;EUROSPORT
+udp://@239.10.30.91:1234
+
+#EXTINF:92,Eurosport 2
+#EXTTV:Športni;angleški;EUROSPORT2
+udp://@239.10.30.92:1234
+
+#EXTINF:93,Discovery
+#EXTTV:Dokumentarni;angleški;
+udp://@239.10.30.93:1234
+
+#EXTINF:94,Animal Planet
+#EXTTV:Dokumentarni;angleški;ANIMAL
+udp://@239.10.30.94:1234
+
+#EXTINF:95,Discovery World
+#EXTTV:Dokumentarni;angleški;DISCCI
+udp://@239.10.30.95:1234
+
+#EXTINF:96,Discovery Science
+#EXTTV:Dokumentarni;angleški;DISCSCI
+udp://@239.10.30.96:1234
+
+#EXTINF:97,TV Petelin
+#EXTTV:ExYU,Glasbeni;slovenski;
+udp://@239.10.30.97:1234
+
+#EXTINF:98,Šport TV 1
+#EXTTV:Športni;slovenski;SPORTTV
+udp://@239.10.30.98:1234
+
+#EXTINF:99,Šport TV 2
+#EXTTV:Športni;slovenski;SPORTTV2
+udp://@239.10.30.99:1234
+
+#EXTINF:100,Da Vinci
+#EXTTV:Dokumentarni;angleški;
+udp://@239.10.30.100:1234
+
+#EXTINF:101,Sport Klub +
+#EXTTV:Športni;slovenski;SPORTKLUBP
+udp://@239.10.30.101:1234
+
+#EXTINF:102,RT CG
+#EXTTV:ExYU;srbski;
+udp://@239.10.30.102:1234
+
+#EXTINF:103,Discovery T&L
+#EXTTV:Dokumentarni;angleški;DISCTL
+udp://@239.10.30.103:1234
+
+#EXTINF:104,Paprika
+#EXTTV:ExYU,Glasbeni;slovenski;
+udp://@239.10.30.104:1234
+
+#EXTINF:105,Net TV
+#EXTTV:ExYU;slovenski;NET
+udp://@239.10.30.105:1234
+
+#EXTINF:106,RTS Maribor
+#EXTTV:ExYU;slovenski;RTSM
+udp://@239.10.30.106:1234
+
+#EXTINF:107,Sponka TV
+#EXTTV:ExYU;slovenski;
+udp://@239.10.30.107:1234
+
+#EXTINF:108,RTK1
+#EXTTV:Ostali;albanski;
+udp://@239.10.30.108:1234
+
+#EXTINF:109,Luxe TV
+#EXTTV:Ostali;angleški;
+udp://@239.10.30.182:1234
+

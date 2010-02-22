@@ -1,0 +1,1239 @@
+#EXTM3U
+#EXTNAME:T-2 Polna shema
+
+#EXTINF:1,POP TV
+#EXTTV:Zabavni;slovenski;POPTV
+udp://@239.1.1.9:5000
+
+#EXTINF:2,Kanal A
+#EXTTV:Zabavni;slovenski;AKANAL
+udp://@239.1.1.8:5000
+
+#EXTINF:3,TV3
+#EXTTV:Zabavni;slovenski;TV3
+udp://@239.1.1.7:5000
+
+#EXTINF:4,SLO 1
+#EXTTV:Nacionalni;slovenski;SLO1
+udp://@239.1.1.115:5000
+
+#EXTINF:5,SLO 2
+#EXTTV:Nacionalni;slovenski;SLO2
+udp://@239.1.1.116:5000
+
+#EXTINF:6,SLO 3
+#EXTTV:Nacionalni;slovenski;
+udp://@239.1.1.11:5000
+
+#EXTINF:7,Info TV
+#EXTTV:Informativni;slovenski;
+udp://@239.1.1.10:5000
+
+#EXTINF:8,HBO
+#EXTTV:Filmski;angleški;HBO
+udp://@239.1.1.151:5000
+
+#EXTINF:9,HBO Comedy
+#EXTTV:Zabavni;angleški;HBOC
+udp://@239.1.1.154:5000
+
+#EXTINF:10,TV1000
+#EXTTV:Filmski;angleški;TV1000
+udp://@239.1.1.29:5000
+
+#EXTINF:11,Hallmark
+#EXTTV:Filmski;angleški;HALLMARK
+udp://@239.1.1.104:5000
+
+#EXTINF:12,MGM
+#EXTTV:Filmski;angleški;MGM
+udp://@239.1.1.204:5000
+
+#EXTINF:13,Fox Life
+#EXTTV:Zabavni;angleški;FOXLIFE
+udp://@239.1.1.138:5000
+
+#EXTINF:14,Fox Crime
+#EXTTV:Zabavni;angleški;FOXCRIME
+udp://@239.1.1.139:5000
+
+#EXTINF:15,Net TV
+#EXTTV:Zabavni;slovenski;NET
+udp://@239.1.1.20:5000
+
+#EXTINF:16,TV Pika
+#EXTTV:Ostali;slovenski;PIKA
+udp://@239.1.1.127:5000
+
+#EXTINF:17,TV Paprika
+#EXTTV:Zabavni;slovenski;PAPRIKA
+udp://@239.1.1.12:5000
+
+#EXTINF:18,HRT 1
+#EXTTV:Nacionalni;hrvaški;HRT1
+udp://@239.1.1.74:5000
+
+#EXTINF:19,HRT 2
+#EXTTV:Nacionalni;hrvaški;HRT2
+udp://@239.1.1.75:5000
+
+#EXTINF:20,Nova TV
+#EXTTV:Zabavni;hrvaški;
+udp://@239.1.1.248:5000
+
+#EXTINF:21,RTL Televizija
+#EXTTV:Zabavni;hrvaški;
+udp://@239.1.1.247:5000
+
+#EXTINF:22,OBN
+#EXTTV:Zabavni;hrvaški;
+udp://@239.1.1.88:5000
+
+#EXTINF:23,RTV Atlas
+#EXTTV:Nacionalni;srbski;
+udp://@239.1.1.66:5000
+
+#EXTINF:24,National Geographic
+#EXTTV:Dokumentarni;angleški;NATGEO
+udp://@239.1.1.85:5000
+
+#EXTINF:25,National Geographic Wild
+#EXTTV:Dokumentarni;angleški;NATGEOW
+udp://@239.1.1.31:5000
+
+#EXTINF:26,Animal Planet
+#EXTTV:Dokumentarni;angleški;ANIMAL
+udp://@239.1.1.34:5000
+
+#EXTINF:27,Discovery Channel
+#EXTTV:Dokumentarni;angleški;DISCOVERY
+udp://@239.1.1.53:5000
+
+#EXTINF:28,Viasat Explorer
+#EXTTV:Dokumentarni;angleški;
+udp://@239.1.1.133:5000
+
+#EXTINF:29,Viasat History
+#EXTTV:Dokumentarni;angleški;
+udp://@239.1.1.146:5000
+
+#EXTINF:30,History Channel
+#EXTTV:Dokumentarni;angleški;
+udp://@239.1.1.135:5000
+
+#EXTINF:31,Travel Channel
+#EXTTV:Informativni;angleški;TRAVEL
+udp://@239.1.1.125:5000
+
+#EXTINF:32,Zone Reality
+#EXTTV:Zabavni;angleški;REALITY
+udp://@239.1.1.100:5000
+
+#EXTINF:33,Zone Romantica
+#EXTTV:Ostali;angleški;
+udp://@239.1.1.105:5000
+
+#EXTINF:34,TV Maribor
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.4:5000
+
+#EXTINF:35,RTS Maribor
+#EXTTV:Zabavni;slovenski;RTSM
+udp://@239.1.1.23:5000
+
+#EXTINF:36,Vaš kanal (NM)
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.32:5000
+
+#EXTINF:37,TV Koper
+#EXTTV:Nacionalni,Ostali;slovenski;
+udp://@239.1.1.200:5000
+
+#EXTINF:38,Cartoon Network / TCM
+#EXTTV:Otroški;angleški;
+udp://@239.1.1.60:5000
+
+#EXTINF:39,Boomerang
+#EXTTV:Otroški;angleški;BOOMERANG
+udp://@239.1.1.189:5000
+
+#EXTINF:40,Disney Channel
+#EXTTV:Otroški;angleški;DISNEY
+udp://@239.1.1.188:5000
+
+#EXTINF:41,Disney XD
+#EXTTV:Otroški;angleški;
+udp://@239.1.1.76:5000
+
+#EXTINF:42,Šport TV1
+#EXTTV:Športni;slovenski;SPORTTV
+udp://@239.1.1.26:5000
+
+#EXTINF:43,Šport TV2
+#EXTTV:Športni;slovenski;SPORTTV2
+udp://@239.1.1.38:5000
+
+#EXTINF:44,Sportklub Slovenija
+#EXTTV:Športni;slovenski;
+udp://@239.1.1.172:5000
+
+#EXTINF:45,Sportklub +
+#EXTTV:Športni;slovenski;SPORTKLUBP
+udp://@239.1.1.171:5000
+
+#EXTINF:46,Eurosport (ANG)
+#EXTTV:Športni;angleški;
+udp://@239.1.1.63:5000
+
+#EXTINF:47,Eurosport (NEM)
+#EXTTV:Športni;nemški;
+udp://@239.1.1.119:5000
+
+#EXTINF:48,Eurosport 2 Bundesliga
+#EXTTV:Športni;nemški;
+udp://@239.1.1.186:5000
+
+#EXTINF:49,ESPN America
+#EXTTV:Športni;angleški;NASN
+udp://@239.1.1.196:5000
+
+#EXTINF:50,ESPN Classic Sport
+#EXTTV:Športni;angleški;
+udp://@239.1.1.61:5000
+
+#EXTINF:51,Extreme Sports
+#EXTTV:Športni;angleški;
+udp://@239.1.1.67:5000
+
+#EXTINF:52,DSF
+#EXTTV:Športni;nemški;DSF
+udp://@239.1.1.57:5000
+
+#EXTINF:53,Motors TV
+#EXTTV:Športni;angleški;MOTORS
+udp://@239.1.1.83:5000
+
+#EXTINF:54,AB Moteurs
+#EXTTV:Športni;francoski;
+udp://@239.1.1.82:5000
+
+#EXTINF:55,MCM TOP
+#EXTTV:Glasbeni;francoski;MCM
+udp://@239.1.1.91:5000
+
+#EXTINF:56,MCM POP
+#EXTTV:Glasbeni;francoski;
+udp://@239.1.1.92:5000
+
+#EXTINF:57,Trace TV
+#EXTTV:Glasbeni,Zabavni;francoski;TRACE
+udp://@239.1.1.124:5000
+
+#EXTINF:58,Viva
+#EXTTV:Glasbeni;nemški;VIVA
+udp://@239.1.1.132:5000
+
+#EXTINF:59,MTV Hits
+#EXTTV:Glasbeni;angleški;MTVH
+udp://@239.1.1.160:5000
+
+#EXTINF:60,MTV Dance
+#EXTTV:Glasbeni;angleški;MTVDANCE
+udp://@239.1.1.159:5000
+
+#EXTINF:61,MTV Adria
+#EXTTV:Glasbeni;angleški;MTV
+udp://@239.1.1.6:5000
+
+#EXTINF:62,MTV 2
+#EXTTV:Glasbeni;angleški;MTV2
+udp://@239.1.1.162:5000
+
+#EXTINF:63,VH1
+#EXTTV:Glasbeni;angleški;VH1
+udp://@239.1.1.129:5000
+
+#EXTINF:64,VH1 Classic
+#EXTTV:Glasbeni;angleški;VH1CLA
+udp://@239.1.1.130:5000
+
+#EXTINF:65,Play TV
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.253:5000
+
+#EXTINF:66,TV Čarli
+#EXTTV:Glasbeni;slovenski;
+udp://@239.1.1.155:5000
+
+#EXTINF:67,CMC
+#EXTTV:Glasbeni;hrvaški;CMC
+udp://@239.1.1.245:5000
+
+#EXTINF:68,Balkanika Music TV
+#EXTTV:Glasbeni;bulgarski;
+udp://@239.1.1.197:5000
+
+#EXTINF:69,Mezzo
+#EXTTV:Glasbeni;francoski;MEZZO
+udp://@239.1.1.81:5000
+
+#EXTINF:70,MelodyZen
+#EXTTV:Ostali;angleški;MELODYZEN
+udp://@239.1.1.183:5000
+
+#EXTINF:71,CNN International
+#EXTTV:Informativni;angleški;CNN
+udp://@239.1.1.50:5000
+
+#EXTINF:72,Sky News
+#EXTTV:Informativni;angleški;
+udp://@239.1.1.165:5000
+
+#EXTINF:73,BBC World
+#EXTTV:Informativni;angleški;BBCWORLD
+udp://@239.1.1.40:5000
+
+#EXTINF:74,Fox News
+#EXTTV:Informativni;angleški;
+udp://@239.1.1.164:5000
+
+#EXTINF:75,EuroNews
+#EXTTV:Informativni;angleški;
+udp://@239.1.1.62:5000
+
+#EXTINF:76,Euronews (multilanguage)
+#EXTTV:Informativni;angleški;
+udp://@239.1.1.250:5000
+
+#EXTINF:77,DW-TV
+#EXTTV:Ostali;angleški;
+udp://@239.1.1.49:5000
+
+#EXTINF:78,Russia Today
+#EXTTV:Informativni;ruski;
+udp://@239.1.1.192:5000
+
+#EXTINF:79,Bloomberg EU
+#EXTTV:Informativni;angleški;
+udp://@239.1.1.43:5000
+
+#EXTINF:80,Europe by Satellite
+#EXTTV:Informativni;angleški;
+udp://@239.1.1.59:5000
+
+#EXTINF:81,CNBC
+#EXTTV:Informativni;angleški;
+udp://@239.1.1.102:5000
+
+#EXTINF:82,CCTV-9
+#EXTTV:Zabavni;angleški;
+udp://@239.1.1.161:5000
+
+#EXTINF:83,Al Jazeera English
+#EXTTV:Informativni;angleški;
+udp://@239.1.1.153:5000
+
+#EXTINF:84,BBC Entertainment
+#EXTTV:Zabavni;angleški;
+udp://@239.1.1.39:5000
+
+#EXTINF:85,Zone Club
+#EXTTV:Zabavni;angleški;
+udp://@239.1.1.48:5000
+
+#EXTINF:86,Fashion TV
+#EXTTV:Zabavni;angleški;
+udp://@239.1.1.68:5000
+
+#EXTINF:87,Yacht & Sail
+#EXTTV:Ostali;angleški;
+udp://@239.1.1.111:5000
+
+#EXTINF:88,Da Vinci Learning
+#EXTTV:Dokumentarni;angleški;DAVINCILEAR
+udp://@239.1.1.158:5000
+
+#EXTINF:89,Discovery Science
+#EXTTV:Dokumentarni;angleški;DISCSCI
+udp://@239.1.1.55:5000
+
+#EXTINF:90,Discovery World
+#EXTTV:Dokumentarni;angleški;DISCCI
+udp://@239.1.1.54:5000
+
+#EXTINF:91,Discovery T & L
+#EXTTV:Dokumentarni;angleški;DISCTL
+udp://@239.1.1.56:5000
+
+#EXTINF:92,Baby TV
+#EXTTV:Otroški;angleški;
+udp://@239.1.1.37:5000
+
+#EXTINF:93,Smile of a Child TV
+#EXTTV:Otroški;angleški;
+udp://@239.1.1.28:5000
+
+#EXTINF:94,ORF1
+#EXTTV:Nacionalni;nemški;ORF1
+udp://@239.1.1.89:5000
+
+#EXTINF:95,ORF2
+#EXTTV:Nacionalni;nemški;ORF2
+udp://@239.1.1.90:5000
+
+#EXTINF:96,Das Erste (ARD)
+#EXTTV:Zabavni;nemški;
+udp://@239.1.1.52:5000
+
+#EXTINF:97,ZDF
+#EXTTV:Nacionalni;nemški;ZDF
+udp://@239.1.1.137:5000
+
+#EXTINF:98,3SAT
+#EXTTV:Zabavni;nemški;3SAT
+udp://@239.1.1.30:5000
+
+#EXTINF:99,SAT1
+#EXTTV:Informativni;nemški;SAT1
+udp://@239.1.1.112:5000
+
+#EXTINF:100,Pro 7
+#EXTTV:Informativni;nemški;PRO7
+udp://@239.1.1.96:5000
+
+#EXTINF:101,VOX
+#EXTTV:Zabavni;nemški;VOX
+udp://@239.1.1.134:5000
+
+#EXTINF:102,Kabel 1
+#EXTTV:Informativni;nemški;KABEL1
+udp://@239.1.1.77:5000
+
+#EXTINF:103,RTL
+#EXTTV:Zabavni;nemški;RTL
+udp://@239.1.1.108:5000
+
+#EXTINF:104,RTL2
+#EXTTV:Zabavni;nemški;RTL2
+udp://@239.1.1.109:5000
+
+#EXTINF:105,Super RTL
+#EXTTV:Otroški,Zabavni;nemški;SUPERRTL
+udp://@239.1.1.118:5000
+
+#EXTINF:106,Tele 5
+#EXTTV:Zabavni;nemški;
+udp://@239.1.1.140:5000
+
+#EXTINF:107,KiKa
+#EXTTV:Otroški;nemški;KIKA
+udp://@239.1.1.78:5000
+
+#EXTINF:108,N 24
+#EXTTV:Informativni;nemški;
+udp://@239.1.1.141:5000
+
+#EXTINF:109,TW1
+#EXTTV:Ostali;nemški;
+udp://@239.1.1.131:5000
+
+#EXTINF:110,RTS
+#EXTTV:Nacionalni;srbski;RTS
+udp://@239.1.1.110:5000
+
+#EXTINF:111,Pink Plus
+#EXTTV:Zabavni;srbski;PINK
+udp://@239.1.1.93:5000
+
+#EXTINF:112,Hayat SAT
+#EXTTV:Nacionalni;bosanski;
+udp://@239.1.1.72:5000
+
+#EXTINF:113,OTV Valentino
+#EXTTV:Zabavni;bosanski;
+udp://@239.1.1.187:5000
+
+#EXTINF:114,BNTV
+#EXTTV:Zabavni;srbski;
+udp://@239.1.1.101:5000
+
+#EXTINF:115,Z1 Televizija
+#EXTTV:Zabavni;hrvaški;
+udp://@239.1.1.163:5000
+
+#EXTINF:116,RTCG
+#EXTTV:Nacionalni;srbski;RTCG
+udp://@239.1.1.106:5000
+
+#EXTINF:117,Duga TV
+#EXTTV:Ostali;srbski;
+udp://@239.1.1.199:5000
+
+#EXTINF:118,DM SAT Televizija
+#EXTTV:Zabavni;srbski;
+udp://@239.1.1.198:5000
+
+#EXTINF:119,MTI-Muzika Tina Ivanović
+#EXTTV:Glasbeni;srbski;
+udp://@239.1.1.182:5000
+
+#EXTINF:120,BN Music
+#EXTTV:Glasbeni;srbski;
+udp://@239.1.1.184:5000
+
+#EXTINF:121,Svet Plus TV
+#EXTTV:Zabavni;srbski;
+udp://@239.1.1.71:5000
+
+#EXTINF:122,Top Music
+#EXTTV:Glasbeni;srbski;
+udp://@239.1.1.87:5000
+
+#EXTINF:123,Melos TV
+#EXTTV:Ostali;srbski;
+udp://@239.1.1.148:5000
+
+#EXTINF:124,MKTV-SAT
+#EXTTV:Nacionalni;makedoski;
+udp://@239.1.1.79:5000
+
+#EXTINF:125,Astro Tv
+#EXTTV:Ostali;srbski;
+udp://@239.1.1.44:5000
+
+#EXTINF:126,Astronet
+#EXTTV:Ostali;slovenski;
+udp://@239.1.1.178:5000
+
+#EXTINF:127,R Kanal+
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.22:5000
+
+#EXTINF:128,VTV Velenje
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.15:5000
+
+#EXTINF:129,TV Celje
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.181:5000
+
+#EXTINF:130,Sponka TV
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.19:5000
+
+#EXTINF:131,TV Primorka
+#EXTTV:Zabavni;slovenski;
+udp://@239.1.1.16:5000
+
+#EXTINF:132,TV AS
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.21:5000
+
+#EXTINF:133,ATM Kranjska Gora
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.18:5000
+
+#EXTINF:134,Kanal 10
+#EXTTV:Zabavni;slovenski;
+udp://@239.1.1.17:5000
+
+#EXTINF:135,MediaTV
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.5:5000
+
+#EXTINF:136,SIP TV
+#EXTTV:Zabavni;slovenski;
+udp://@239.1.1.24:5000
+
+#EXTINF:137,TVM
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.14:5000
+
+#EXTINF:138,TV Oron
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.36:5000
+
+#EXTINF:139,ViTel
+#EXTTV:Zabavni;slovenski;
+udp://@239.1.1.3:5000
+
+#EXTINF:140,Moj TV
+#EXTTV:Zabavni;hrvaški;
+udp://@239.1.1.41:5000
+
+#EXTINF:141,Gea TV
+#EXTTV:Ostali;slovenski;
+udp://@239.1.1.42:5000
+
+#EXTINF:142,Teve Nakupi
+#EXTTV:Ostali;slovenski;
+udp://@239.1.1.179:5000
+
+#EXTINF:143,TV Exodus
+#EXTTV:Ostali;slovenski;
+udp://@239.1.1.13:5000
+
+#EXTINF:144,S-TV Skledar
+#EXTTV:Ostali;slovenski;
+udp://@239.1.1.103:5000
+
+#EXTINF:145,TV Golica
+#EXTTV:Glasbeni;slovenski;
+udp://@239.1.1.156:5000
+
+#EXTINF:146,TV Petelin
+#EXTTV:Zabavni;slovenski;
+udp://@239.1.1.157:5000
+
+#EXTINF:147,TV Ljubljana
+#EXTTV:Lokalni;slovenski;
+udp://@239.1.1.25:5000
+
+#EXTINF:148,RAI 1
+#EXTTV:Nacionalni;italijanski;RAI1
+udp://@239.1.1.97:5000
+
+#EXTINF:149,RAI 2
+#EXTTV:Nacionalni;italijanski;RAI2
+udp://@239.1.1.98:5000
+
+#EXTINF:150,RAI 3
+#EXTTV:Nacionalni;italijanski;RAI3
+udp://@239.1.1.99:5000
+
+#EXTINF:151,Canale 5
+#EXTTV:Zabavni;italijanski;
+udp://@239.1.1.144:5000
+
+#EXTINF:152,Italia 1
+#EXTTV:Zabavni;italijanski;
+udp://@239.1.1.123:5000
+
+#EXTINF:153,Rete 4
+#EXTTV:Zabavni;italijanski;
+udp://@239.1.1.145:5000
+
+#EXTINF:154,FR2
+#EXTTV:Nacionalni;francoski;
+udp://@239.1.1.69:5000
+
+#EXTINF:155,FR3
+#EXTTV:Nacionalni;francoski;
+udp://@239.1.1.70:5000
+
+#EXTINF:156,TiJi
+#EXTTV:Otroški;francoski;TIJI
+udp://@239.1.1.122:5000
+
+#EXTINF:157,TV 5 Europe
+#EXTTV:Zabavni;francoski;
+udp://@239.1.1.126:5000
+
+#EXTINF:158,Animaux
+#EXTTV:Dokumentarni;francoski;ANIMAUX
+udp://@239.1.1.35:5000
+
+#EXTINF:159,Chasse et Peche
+#EXTTV:Dokumentarni;francoski;
+udp://@239.1.1.47:5000
+
+#EXTINF:160,Escales
+#EXTTV:Dokumentarni;francoski;
+udp://@239.1.1.51:5000
+
+#EXTINF:161,Encyclopedia
+#EXTTV:Dokumentarni;angleški;
+udp://@239.1.1.86:5000
+
+#EXTINF:162,RTVE
+#EXTTV:Nacionalni;španski;
+udp://@239.1.1.128:5000
+
+#EXTINF:163,24 Horas
+#EXTTV:Informativni;španski;24HORAS
+udp://@239.1.1.45:5000
+
+#EXTINF:164,TL Novelas Europe
+#EXTTV:Ostali;španski;
+udp://@239.1.1.120:5000
+
+#EXTINF:165,TV Polonia
+#EXTTV:Nacionalni;poljski;
+udp://@239.1.1.166:5000
+
+#EXTINF:166,RTR Planeta
+#EXTTV:Zabavni;ruski;
+udp://@239.1.1.150:5000
+
+#EXTINF:167,Vesti
+#EXTTV:Informativni;ruski;
+udp://@239.1.1.195:5000
+
+#EXTINF:168,EWTN Europe
+#EXTTV:Ostali;angleški;
+udp://@239.1.1.65:5000
+
+#EXTINF:169,Supreme Master TV
+#EXTTV:Ostali;angleški;
+udp://@239.1.1.113:5000
+
+#EXTINF:170,Alsat
+#EXTTV:Nacionalni;črnogorski;
+udp://@239.1.1.33:5000
+
+#EXTINF:171,RTK Kosova
+#EXTTV:Nacionalni;albanski;
+udp://@239.1.1.107:5000
+
+#EXTINF:172,RTV Shqiptar
+#EXTTV:Zabavni;albanski;
+udp://@239.1.1.80:5000
+
+#EXTINF:173,Duna 1
+#EXTTV:Nacionalni;madžarski;
+udp://@239.1.1.58:5000
+
+#EXTINF:174,Duna 2
+#EXTTV:Nacionalni;madžarski;
+udp://@239.1.1.27:5000
+
+#EXTINF:175,Magyar Televizio 2
+#EXTTV:Nacionalni;madžarski;
+udp://@239.1.1.84:5000
+
+#EXTINF:200,Radio 1
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.114:5000
+
+#EXTINF:201,Radio Slovenija 1
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.1:5000
+
+#EXTINF:202,Val 202
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.2:5000
+
+#EXTINF:203,ARS
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.3:5000
+
+#EXTINF:204,Radio Slovenia International
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.4:5000
+
+#EXTINF:205,Radio Center - LJ
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.150:5000
+
+#EXTINF:206,Radio Antena
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.143:5000
+
+#EXTINF:207,Radio Ekspres
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.170:5000
+
+#EXTINF:208,Radio Hit
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.172:5000
+
+#EXTINF:209,Radio Aktual
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.199:5000
+
+#EXTINF:210,Radio Net FM
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.185:5000
+
+#EXTINF:211,Radio Salomon
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.149:5000
+
+#EXTINF:212,Radio Krka
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.159:5000
+
+#EXTINF:213,Moj Radio
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.189:5000
+
+#EXTINF:214,Radio Bizjak (Radio Tomi)
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.163:5000
+
+#EXTINF:215,Radio Potepuh
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.161:5000
+
+#EXTINF:216,Radio Dur
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.180:5000
+
+#EXTINF:217,Radio Capris
+#EXTTV:Radio;;
+udp://@239.1.2.140:5000
+
+#EXTINF:218,Radio City
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.141:5000
+
+#EXTINF:219,Radio Fantasy
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.195:5000
+
+#EXTINF:220,Alpski Val
+#EXTTV:Radio;;
+udp://@239.1.2.190:5000
+
+#EXTINF:221,Koroski Radio
+#EXTTV:Radio;;
+udp://@239.1.2.179:5000
+
+#EXTINF:222,Radio 94 in NTR
+#EXTTV:Radio;;
+udp://@239.1.2.146:5000
+
+#EXTINF:223,Radio Alfa
+#EXTTV:Radio;;
+udp://@239.1.2.158:5000
+
+#EXTINF:224,Radio Belvi
+#EXTTV:Radio;;
+udp://@239.1.2.197:5000
+
+#EXTINF:225,Radio Celje
+#EXTTV:Radio;;
+udp://@239.1.2.153:5000
+
+#EXTINF:226,Radio Celjski Val
+#EXTTV:Radio;;
+udp://@239.1.2.142:5000
+
+#EXTINF:227,Radio Goldi
+#EXTTV:Radio;;
+udp://@239.1.2.156:5000
+
+#EXTINF:228,Radio Kaos
+#EXTTV:Radio;;
+udp://@239.1.2.152:5000
+
+#EXTINF:229,Radio Kranj
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.174:5000
+
+#EXTINF:230,Radio Kum
+#EXTTV:Radio;;
+udp://@239.1.2.148:5000
+
+#EXTINF:231,Radio Odmev
+#EXTTV:Radio;;
+udp://@239.1.2.175:5000
+
+#EXTINF:232,Radio Plus
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.154:5000
+
+#EXTINF:233,Radio Prlek
+#EXTTV:Radio;;
+udp://@239.1.2.187:5000
+
+#EXTINF:234,Radio Ptuj
+#EXTTV:Radio;;
+udp://@239.1.2.147:5000
+
+#EXTINF:235,Radio Radlje
+#EXTTV:Radio;;
+udp://@239.1.2.160:5000
+
+#EXTINF:236,Radio Robin
+#EXTTV:Radio;;
+udp://@239.1.2.151:5000
+
+#EXTINF:237,Radio Rogla
+#EXTTV:Radio;;
+udp://@239.1.2.196:5000
+
+#EXTINF:238,Radio Slovenske Gorice
+#EXTTV:Radio;;
+udp://@239.1.2.191:5000
+
+#EXTINF:239,Radio Sora
+#EXTTV:Radio;;
+udp://@239.1.2.188:5000
+
+#EXTINF:240,Radio Sraka
+#EXTTV:Radio;;
+udp://@239.1.2.145:5000
+
+#EXTINF:241,Radio Tartini
+#EXTTV:Radio;;
+udp://@239.1.2.144:5000
+
+#EXTINF:242,Radio Triglav
+#EXTTV:Radio;;
+udp://@239.1.2.176:5000
+
+#EXTINF:243,Radio Veseljak
+#EXTTV:Radio;;
+udp://@239.1.2.177:5000
+
+#EXTINF:244,Radio Viva
+#EXTTV:Radio;;
+udp://@239.1.2.155:5000
+
+#EXTINF:245,Radio Zeleni Val
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.186:5000
+
+#EXTINF:246,Radio Štajerski val
+#EXTTV:Radio;;
+udp://@239.1.2.173:5000
+
+#EXTINF:247,Radio Študent
+#EXTTV:Radio;;
+udp://@239.1.2.181:5000
+
+#EXTINF:248,Radio Ognjišče
+#EXTTV:Radio;;
+udp://@239.1.2.5:5000
+
+#EXTINF:249,Radio Capodistria
+#EXTTV:Radio;;
+udp://@239.1.2.127:5000
+
+#EXTINF:250,Prvi program HR
+#EXTTV:Radio;hrvaški;
+udp://@239.1.2.7:5000
+
+#EXTINF:251,Drugi program HR
+#EXTTV:Radio;hrvaški;
+udp://@239.1.2.8:5000
+
+#EXTINF:252,Treči program HR
+#EXTTV:Radio;;
+udp://@239.1.2.9:5000
+
+#EXTINF:253,Otvoreni Radio
+#EXTTV:Radio;;
+udp://@239.1.2.10:5000
+
+#EXTINF:254,Radio Dalmacija
+#EXTTV:Radio;hrvaški;
+udp://@239.1.2.11:5000
+
+#EXTINF:255,Radio Posavina
+#EXTTV:Radio;;
+udp://@239.1.2.119:5000
+
+#EXTINF:256,Radio Atlas
+#EXTTV:Radio;;
+udp://@239.1.2.12:5000
+
+#EXTINF:257,Radio Montenegro
+#EXTTV:Radio;srbski;
+udp://@239.1.2.6:5000
+
+#EXTINF:258,Cherie FM
+#EXTTV:Radio;;
+udp://@239.1.2.58:5000
+
+#EXTINF:259,Jazzy Love
+#EXTTV:Radio;;
+udp://@239.1.2.64:5000
+
+#EXTINF:260,Manhattan Show
+#EXTTV:Radio;;
+udp://@239.1.2.63:5000
+
+#EXTINF:261,Maxximum
+#EXTTV:Radio;;
+udp://@239.1.2.61:5000
+
+#EXTINF:262,NRJ
+#EXTTV:Radio;;
+udp://@239.1.2.57:5000
+
+#EXTINF:263,Radio Nostalgie
+#EXTTV:Radio;;
+udp://@239.1.2.60:5000
+
+#EXTINF:264,Rire Et Chansons
+#EXTTV:Radio;;
+udp://@239.1.2.66:5000
+
+#EXTINF:265,WRB
+#EXTTV:Radio;;
+udp://@239.1.2.62:5000
+
+#EXTINF:266,BBC Radio
+#EXTTV:Radio;;
+udp://@239.1.2.124:5000
+
+#EXTINF:267,Radio Paradise
+#EXTTV:Radio;;
+udp://@239.1.2.182:5000
+
+#EXTINF:268,Deutschlandfunk
+#EXTTV:Radio;nemški;
+udp://@239.1.2.41:5000
+
+#EXTINF:269,Deutschlandradio Kultur
+#EXTTV:Radio;nemški;
+udp://@239.1.2.42:5000
+
+#EXTINF:270,DW1
+#EXTTV:Radio;;
+udp://@239.1.2.43:5000
+
+#EXTINF:271,HR2
+#EXTTV:Radio;;
+udp://@239.1.2.44:5000
+
+#EXTINF:272,MDR 1 Radio Sachsen
+#EXTTV:Radio;;
+udp://@239.1.2.47:5000
+
+#EXTINF:273,MDR 1 Radio Sachsen-Anhalt
+#EXTTV:Radio;;
+udp://@239.1.2.48:5000
+
+#EXTINF:274,MDR 1 Radio Thuringen
+#EXTTV:Radio;;
+udp://@239.1.2.49:5000
+
+#EXTINF:275,MDR Figaro
+#EXTTV:Radio;;
+udp://@239.1.2.46:5000
+
+#EXTINF:276,MDR Info
+#EXTTV:Radio;;
+udp://@239.1.2.45:5000
+
+#EXTINF:277,MDR Klassik
+#EXTTV:Radio;;
+udp://@239.1.2.50:5000
+
+#EXTINF:278,MDR Sorbischer Horfunk
+#EXTTV:Radio;;
+udp://@239.1.2.51:5000
+
+#EXTINF:279,MDR Sputnik
+#EXTTV:Radio;;
+udp://@239.1.2.52:5000
+
+#EXTINF:280,MDR Sputnik Black-Stream
+#EXTTV:Radio;;
+udp://@239.1.2.53:5000
+
+#EXTINF:281,MDR Sputnik Club-Stream
+#EXTTV:Radio;;
+udp://@239.1.2.55:5000
+
+#EXTINF:282,MDR Sputnik Insomnia-Stream
+#EXTTV:Radio;;
+udp://@239.1.2.56:5000
+
+#EXTINF:283,MDR Sputnik Rock-Stream
+#EXTTV:Radio;;
+udp://@239.1.2.54:5000
+
+#EXTINF:284,Oe1 Inforadio
+#EXTTV:Radio;;
+udp://@239.1.2.69:5000
+
+#EXTINF:285,Oe1 Liveradio
+#EXTTV:Radio;;
+udp://@239.1.2.68:5000
+
+#EXTINF:286,Hitradio Oe3
+#EXTTV:Radio;;
+udp://@239.1.2.65:5000
+
+#EXTINF:287,Fm4
+#EXTTV:Radio;;
+udp://@239.1.2.67:5000
+
+#EXTINF:288,Fles Radio
+#EXTTV:Radio;;
+udp://@239.1.2.118:5000
+
+#EXTINF:289,Grand Radio
+#EXTTV:Radio;;
+udp://@239.1.2.104:5000
+
+#EXTINF:290,Izvor Radio
+#EXTTV:Radio;;
+udp://@239.1.2.121:5000
+
+#EXTINF:291,Kiss Radio
+#EXTTV:Radio;;
+udp://@239.1.2.103:5000
+
+#EXTINF:292,Kiss Rom Radio
+#EXTTV:Radio;;
+udp://@239.1.2.102:5000
+
+#EXTINF:293,Koktel Radio
+#EXTTV:Radio;;
+udp://@239.1.2.117:5000
+
+#EXTINF:294,Svet Plus Radio
+#EXTTV:Radio;;
+udp://@239.1.2.113:5000
+
+#EXTINF:295,Vip Radio
+#EXTTV:Radio;;
+udp://@239.1.2.108:5000
+
+#EXTINF:296,Radio Vikum
+#EXTTV:Radio;;
+udp://@239.1.2.112:5000
+
+#EXTINF:297,Valentino BIH
+#EXTTV:Radio;;
+udp://@239.1.2.111:5000
+
+#EXTINF:298,Radio BIR
+#EXTTV:Radio;;
+udp://@239.1.2.162:5000
+
+#EXTINF:299,Vulkan Radio
+#EXTTV:Radio;;
+udp://@239.1.2.100:5000
+
+#EXTINF:300,Doina Vlaski Raj
+#EXTTV:Radio;;
+udp://@239.1.2.105:5000
+
+#EXTINF:301,Top 3 Radio
+#EXTTV:Radio;;
+udp://@239.1.2.122:5000
+
+#EXTINF:302,Radio Pink
+#EXTTV:Radio;;
+udp://@239.1.2.107:5000
+
+#EXTINF:303,Tref Radio
+#EXTTV:Radio;;
+udp://@239.1.2.109:5000
+
+#EXTINF:304,Radio Glas Drine
+#EXTTV:Radio;;
+udp://@239.1.2.115:5000
+
+#EXTINF:305,Radio Velkaton
+#EXTTV:Radio;;
+udp://@239.1.2.120:5000
+
+#EXTINF:306,Fenomen Radio
+#EXTTV:Radio;;
+udp://@239.1.2.116:5000
+
+#EXTINF:307,Radio Ena
+#EXTTV:Radio;slovenski;
+udp://@239.1.2.157:5000
+
+#EXTINF:400,Private Spice
+#EXTTV:Za odrasle;angleški;
+udp://@239.1.1.117:5000
+
+#EXTINF:401,Hustler TV
+#EXTTV:Za odrasle;angleški;HUSTLER
+udp://@239.1.1.95:5000
+
+#EXTINF:402,XXL
+#EXTTV:Za odrasle;angleški;
+udp://@239.1.1.94:5000
+
+#EXTINF:403,SCT
+#EXTTV:Za odrasle;italijanski;
+udp://@239.1.1.149:5000
+
+#EXTINF:404,X-Dream TV
+#EXTTV:Za odrasle;angleški;XDREAM
+udp://@239.1.1.168:5000
+
+#EXTINF:405,Free-X TV
+#EXTTV:Za odrasle;angleški;
+udp://@239.1.1.167:5000
+
+#EXTINF:406,Free-X TV 2
+#EXTTV:Za odrasle;angleški;
+udp://@239.1.1.169:5000
+
+#EXTINF:500,Info TV (HD)
+#EXTTV:Informativni,HD;slovenski;
+udp://@239.1.1.143:5000
+
+#EXTINF:501,RTS Maribor(HD)
+#EXTTV:Lokalni,HD;slovenski;
+udp://@239.1.1.147:5000
+
+#EXTINF:502,National Geographic (HD)
+#EXTTV:Dokumentarni,HD;angleški;
+udp://@239.1.1.114:5000
+
+#EXTINF:503,Discovery Channel (HD)
+#EXTTV:Dokumentarni,HD;angleški;DISCOVERYHD
+udp://@239.1.1.142:5000
+
+#EXTINF:504,History Channel (HD)
+#EXTTV:Dokumentarni,HD;angleški;HISTORYHD
+udp://@239.1.1.136:5000
+
+#EXTINF:505,Eurosport (HD)
+#EXTTV:Športni,HD;angleški;EUROSPORTHD
+udp://@239.1.1.73:5000
+
+#EXTINF:506,Rush (HD)
+#EXTTV:Športni,HD;angleški;
+udp://@239.1.1.121:5000
+
+#EXTINF:507,MelodyZen (HD)
+#EXTTV:Ostali,HD;angleški;
+udp://@239.1.1.152:5000
+
+#EXTINF:508,Luxe.TV (HD)
+#EXTTV:Ostali,HD;angleški;
+udp://@239.1.1.185:5000
+
+#EXTINF:509,Fashion TV (HD)
+#EXTTV:Ostali,HD;angleški;
+udp://@239.1.1.170:5000
+
+#EXTINF:510,Anixe (HD)
+#EXTTV:Ostali,HD;nemški;
+udp://@239.1.1.175:5000
+
+#EXTINF:511,Das Erste (ARD) (HD)
+#EXTTV:Zabavni,HD;nemški;
+udp://@239.1.1.173:5000
+
+#EXTINF:512,ZDF (HD)
+#EXTTV:Nacionalni,HD;nemški;
+udp://@239.1.1.180:5000
+
+#EXTINF:513,Pro 7 (HD)
+#EXTTV:Informativni,HD;nemški;
+udp://@239.1.1.191:5000
+
+#EXTINF:514,SAT1 (HD)
+#EXTTV:Informativni,HD;nemški;
+udp://@239.1.1.190:5000
+
+#EXTINF:515,Kabel 1 (HD)
+#EXTTV:Informativni,HD;nemški;
+udp://@239.1.1.177:5000
+
+#EXTINF:516,Astra Promo (HD)
+#EXTTV:Ostali,HD;nemški;
+udp://@239.1.1.176:5000
+
+#EXTINF:517,Arte (FR) (HD)
+#EXTTV:Kulturni,HD;francoski;
+udp://@239.1.1.174:5000
+
+#EXTINF:518,Magyar Televizio 2 (HD)
+#EXTTV:Nacionalni,HD;madžarski;
+udp://@239.1.1.201:5000
+

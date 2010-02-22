@@ -183,7 +183,7 @@
               <item>
                <widget class="QLabel" name="labelWizard">
                 <property name="text">
-                 <string>&lt;i&gt;Wizard will be run after restart.&lt;/i&gt;</string>
+                 <string>&lt;i&gt;First run wizard will be run after restart.&lt;/i&gt;</string>
                 </property>
                </widget>
               </item>
@@ -395,30 +395,16 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_13">
             <item>
-             <widget class="QLabel" name="labelSiol">
-              <property name="text">
-               <string>SiOL</string>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QRadioButton" name="radioSiol2">
               <property name="text">
-               <string>MPEG-2</string>
+               <string notr="true">SiOL - MPEG-2</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QRadioButton" name="radioSiol4">
               <property name="text">
-               <string>MPEG-4</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="labelT2">
-              <property name="text">
-               <string>T-2</string>
+               <string notr="true">SiOL - MPEG-4</string>
               </property>
              </widget>
             </item>
@@ -428,17 +414,17 @@
                <bool>true</bool>
               </property>
               <property name="text">
-               <string>Categorised</string>
+               <string notr="true">T-2</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QRadioButton" name="radioT2full">
+             <widget class="QRadioButton" name="radioTus">
               <property name="enabled">
                <bool>true</bool>
               </property>
               <property name="text">
-               <string>Full</string>
+               <string notr="true">Tuš Telekom</string>
               </property>
              </widget>
             </item>
@@ -483,9 +469,9 @@
              </widget>
             </item>
             <item>
-             <widget class="QCheckBox" name="checkOsd">
+             <widget class="QCheckBox" name="checkControls">
               <property name="text">
-               <string>Enable On Screen Display - OSD in Fullscreen mode</string>
+               <string>Start with Controls enabled</string>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -495,7 +481,17 @@
             <item>
              <widget class="QCheckBox" name="checkInfo">
               <property name="text">
-               <string>Start with Channel info enabled</string>
+               <string>Start with Info panel enabled</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="checkOsd">
+              <property name="text">
+               <string>Enable On Screen Display - OSD in Fullscreen mode</string>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -969,7 +965,7 @@
            </item>
            <item row="0" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="1" column="0">
@@ -982,7 +978,7 @@
            </item>
            <item row="1" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="2" column="0">
@@ -995,7 +991,7 @@
            </item>
            <item row="2" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="3" column="0">
@@ -1008,7 +1004,7 @@
            </item>
            <item row="3" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="4" column="0">
@@ -1021,7 +1017,7 @@
            </item>
            <item row="4" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="5" column="0">
@@ -1034,7 +1030,7 @@
            </item>
            <item row="5" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="6" column="0">
@@ -1047,7 +1043,7 @@
            </item>
            <item row="6" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="7" column="0">
@@ -1060,7 +1056,7 @@
            </item>
            <item row="7" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="8" column="0">
@@ -1073,7 +1069,7 @@
            </item>
            <item row="8" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="9" column="0">
@@ -1086,7 +1082,7 @@
            </item>
            <item row="9" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="10" column="0">
@@ -1099,7 +1095,7 @@
            </item>
            <item row="10" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="11" column="0">
@@ -1112,7 +1108,7 @@
            </item>
            <item row="11" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="12" column="0">
@@ -1125,7 +1121,7 @@
            </item>
            <item row="12" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="13" column="0">
@@ -1138,7 +1134,7 @@
            </item>
            <item row="13" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="14" column="0">
@@ -1151,7 +1147,7 @@
            </item>
            <item row="14" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="15" column="0">
@@ -1164,7 +1160,7 @@
            </item>
            <item row="15" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="16" column="0">
@@ -1177,7 +1173,7 @@
            </item>
            <item row="16" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
            <item row="17" column="0">
@@ -1190,7 +1186,7 @@
            </item>
            <item row="17" column="1">
             <property name="text">
-             <string notr="true"> </string>
+             <string notr="true"/>
             </property>
            </item>
           </widget>

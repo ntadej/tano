@@ -22,12 +22,19 @@
 
 PluginsLoader::PluginsLoader()
 {
-	QDir pluginsDir = QDir(qApp->applicationDirPath());
-	if(qApp->applicationDirPath().contains("src"))
-		pluginsDir.cdUp();
-	pluginsDir.cd("plugins");
+	QDir pluginsDir;
 
-	processDir(pluginsDir);
+	if(qApp->applicationDirPath().contains("src")) {
+		pluginsDir = QDir(qApp->applicationDirPath());
+		pluginsDir.cdUp();
+		pluginsDir.cd("plugins");
+		processDir(pluginsDir);
+	} else {
+#ifdef DEFAULT_PLUGIN_DIR
+		pluginsDir = QDir(QString(DEFAULT_PLUGIN_DIR));
+		processDir(pluginsDir);
+#endif
+	}
 }
 
 PluginsLoader::~PluginsLoader()

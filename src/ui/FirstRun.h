@@ -70,14 +70,12 @@ private slots:
 private:
 	QLabel *_settingsLabel;
 	QLabel *_spacerLabel;
-	QLabel *_siol;
-	QLabel *_t2;
 	QCheckBox *_sessionBox;
 	QCheckBox *_vlcBox;
 	QRadioButton *_siolRadio2;
 	QRadioButton *_siolRadio4;
 	QRadioButton *_T2Radio;
-	QRadioButton *_T2RadioFull;
+	QRadioButton *_tusRadio;
 	QLineEdit *_playlist;
 	QLineEdit *_type;
 };

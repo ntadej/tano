@@ -53,12 +53,14 @@ IF(MINGW)
 		SET(CMAKE_INSTALL_PREFIX "C:/Program files/Tano")
 	ENDIF (NOT CMAKE_INSTALL_PREFIX)
 	SET(TANO_INSTALL_DATA_DIR "")
+	SET(TANO_INSTALL_PLUGIN_DIR "plugins")
 	SET(TANO_INSTALL_BIN_DIR "")
 ELSE(MINGW)
 	IF (NOT CMAKE_INSTALL_PREFIX)
 		SET(CMAKE_INSTALL_PREFIX "/usr/local")
 	ENDIF (NOT CMAKE_INSTALL_PREFIX)
 	SET(TANO_INSTALL_DATA_DIR "share/tano")
+	SET(TANO_INSTALL_PLUGIN_DIR "lib/tano")
 	SET(TANO_INSTALL_BIN_DIR "bin")
 ENDIF(MINGW)
 
@@ -96,7 +98,7 @@ OPTION(VLC_TRUNK "Use LibVLC trunk features")
 MESSAGE("Libvlc: ${VLC_TRUNK}")
 
 SET (Tano_Files
-    LICENSE
+	LICENSE.GPL
 	src/ui/images/tano.png
 	src/ui/images/tano-small.png
 )
@@ -104,8 +106,8 @@ SET (Tano_Files
 SET (Tano_Playlists
     playlists/siol-mpeg2.m3u
     playlists/siol-mpeg4.m3u
-    playlists/t-2-cat.m3u
-    playlists/t-2-full.m3u
+	playlists/t-2.m3u
+	playlists/tus.m3u
 )
 
 # Install data

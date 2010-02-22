@@ -144,15 +144,12 @@ void MainWindow::createSettings()
 		top();
 	}
 
-	if(_settings->value("OSD",true).toBool())
-		_osdEnabled = true;
-	else
-		_osdEnabled = false;
+	_osdEnabled = _settings->value("OSD",true).toBool();
 
-	if(!_settings->value("info",true).toBool()) {
-		ui.infoWidget->hide();
-		ui.actionInfoPanel->setChecked(false);
-	}
+	ui.osdWidget->setVisible(_settings->value("controls",true).toBool());
+	ui.actionControls->setChecked(_settings->value("controls",true).toBool());
+	ui.infoWidget->setVisible(_settings->value("info",true).toBool());
+	ui.actionInfoPanel->setChecked(_settings->value("info",true).toBool());
 
 	if(_settings->value("wheel",false).toBool())
 		_wheelType = "volume";
@@ -168,10 +165,7 @@ void MainWindow::createSettings()
 
 	//Recorder settings
 	_settings->beginGroup("Recorder");
-	if(_settings->value("enabled",true).toBool())
-		_recorderEnabled = true;
-	else
-		_recorderEnabled = false;
+	_recorderEnabled = _settings->value("enabled",true).toBool();
 	_settings->endGroup();
 }
 

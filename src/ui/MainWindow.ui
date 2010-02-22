@@ -181,6 +181,15 @@
     <addaction name="menuVolume"/>
     <addaction name="menuVideo"/>
    </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionUpdate"/>
+    <addaction name="actionAbout"/>
+    <addaction name="actionAboutPlugins"/>
+    <addaction name="actionAboutQt"/>
+   </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
      <string>&amp;View</string>
@@ -191,15 +200,6 @@
     <addaction name="separator"/>
     <addaction name="actionInfoPanel"/>
     <addaction name="actionControls"/>
-   </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>&amp;Help</string>
-    </property>
-    <addaction name="actionUpdate"/>
-    <addaction name="actionAbout"/>
-    <addaction name="actionAboutPlugins"/>
-    <addaction name="actionAboutQt"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -232,6 +232,7 @@
    <addaction name="actionTimers"/>
    <addaction name="actionEditPlaylist"/>
    <addaction name="actionSettings"/>
+   <addaction name="actionClose"/>
   </widget>
   <widget class="QDockWidget" name="infoWidget">
    <property name="windowIcon">
@@ -281,7 +282,7 @@
           <x>0</x>
           <y>0</y>
           <width>340</width>
-          <height>335</height>
+          <height>361</height>
          </rect>
         </property>
         <attribute name="label">
@@ -302,7 +303,7 @@
           <x>0</x>
           <y>0</y>
           <width>340</width>
-          <height>341</height>
+          <height>361</height>
          </rect>
         </property>
         <attribute name="label">
@@ -372,9 +373,6 @@
    </property>
    <property name="allowedAreas">
     <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>Controls</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
@@ -802,17 +800,6 @@
     <string>Simple Mode</string>
    </property>
   </action>
-  <action name="actionToolbar">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Main Toolbar</string>
-   </property>
-  </action>
   <action name="actionNext">
    <property name="icon">
     <iconset resource="images.qrc">
@@ -883,17 +870,6 @@
    </property>
    <property name="toolTip">
     <string>Record Current</string>
-   </property>
-  </action>
-  <action name="actionCToolbar">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Controls Toolbar</string>
    </property>
   </action>
   <action name="actionRatio1_1">

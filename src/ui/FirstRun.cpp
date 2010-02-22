@@ -87,28 +87,24 @@ SettingsPage::SettingsPage(QWidget *parent)
 
 	_spacerLabel = new QLabel("");
 	_settingsLabel = new QLabel(tr("Quick settings:"));
-	_siol = new QLabel("SiOL");
-	_t2 = new QLabel("T-2");
 
-	_siolRadio2 = new QRadioButton(tr("SiOL MPEG-2"));
-	_siolRadio4 = new QRadioButton(tr("SiOL MPEG-4"));
-	_T2Radio = new QRadioButton(tr("T-2 Categorised"));
-	_T2RadioFull = new QRadioButton(tr("T-2 Full"));
+	_siolRadio2 = new QRadioButton("SiOL - MPEG-2");
+	_siolRadio4 = new QRadioButton("SiOL - MPEG-4");
+	_T2Radio = new QRadioButton("T-2");
+	_tusRadio = new QRadioButton("Tuš Telekom");
 	_sessionBox = new QCheckBox(tr("Enable Session store"));
 	_vlcBox = new QCheckBox(tr("Use global VLC configuration"));
 
 	connect(_siolRadio2, SIGNAL(clicked()), this, SLOT(setPlaylist()));
 	connect(_siolRadio4, SIGNAL(clicked()), this, SLOT(setPlaylist()));
 	connect(_T2Radio, SIGNAL(clicked()), this, SLOT(setPlaylist()));
-	connect(_T2RadioFull, SIGNAL(clicked()), this, SLOT(setPlaylist()));
+	connect(_tusRadio, SIGNAL(clicked()), this, SLOT(setPlaylist()));
 
 	QVBoxLayout *layout = new QVBoxLayout;
-	layout->addWidget(_siol);
 	layout->addWidget(_siolRadio2);
 	layout->addWidget(_siolRadio4);
-	layout->addWidget(_t2);
 	layout->addWidget(_T2Radio);
-	layout->addWidget(_T2RadioFull);
+	layout->addWidget(_tusRadio);
 	layout->insertSpacerItem(6,new QSpacerItem(10,10,QSizePolicy::Expanding,QSizePolicy::Expanding));
 	layout->addWidget(_spacerLabel);
 	layout->addWidget(_settingsLabel);
@@ -126,14 +122,12 @@ SettingsPage::~SettingsPage()
 {
 	delete _settingsLabel;
 	delete _spacerLabel;
-	delete _siol;
-	delete _t2;
 	delete _sessionBox;
 	delete _vlcBox;
 	delete _siolRadio2;
 	delete _siolRadio4;
 	delete _T2Radio;
-	delete _T2RadioFull;
+	delete _tusRadio;
 	delete _playlist;
 	delete _type;
 }
@@ -152,11 +146,11 @@ void SettingsPage::setPlaylist()
 		_playlist->setText("playlists/siol-mpeg4.m3u");
 		_type->setText(_siolRadio4->text());
 	} else if(_T2Radio->isChecked()) {
-		_playlist->setText("playlists/t-2-cat.m3u");
+		_playlist->setText("playlists/t-2.m3u");
 		_type->setText(_T2Radio->text());
-	} else if(_T2RadioFull->isChecked()) {
-		_playlist->setText("playlists/t-2-full.m3u");
-		_type->setText(_T2RadioFull->text());
+	} else if(_tusRadio->isChecked()) {
+		_playlist->setText("playlists/tus.m3u");
+		_type->setText(_tusRadio->text());
 	}
 }
 

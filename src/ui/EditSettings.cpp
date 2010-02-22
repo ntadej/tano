@@ -115,63 +115,32 @@ void EditSettings::ok()
 	} else if(ui.radioSiol4->isChecked()) {
 		_settings->setValue("playlist","playlists/siol-mpeg4.m3u");
 	} else if(ui.radioT2->isChecked()) {
-		_settings->setValue("playlist","playlists/t-2-cat.m3u");
-	} else if(ui.radioT2full->isChecked()) {
-			_settings->setValue("playlist","playlists/t-2-full.m3u");
+		_settings->setValue("playlist","playlists/t-2.m3u");
+	} else if(ui.radioTus->isChecked()) {
+		_settings->setValue("playlist","playlists/tus.m3u");
 	} else {
 		_settings->setValue("playlist",ui.editPlaylist->text());
 	}
 
 	_settings->beginGroup("VLC");
-	if(ui.radioNetworkCustom->isChecked()) {
+	if(ui.radioNetworkCustom->isChecked())
 		_settings->setValue("network", ui.editNetwork->text());
-	} else {
+	else
 		_settings->remove("network");
-	}
-	if(ui.checkVlc->isChecked()) {
-		_settings->setValue("ignore-config", false);
-	} else {
-		_settings->remove("ignore-config");
-	}
-	if(ui.checkVideoSettings->isChecked()) {
-		_settings->setValue("remember-video-config", true);
-	} else {
-		_settings->remove("remember-video-config");
-	}
+
+	_settings->setValue("ignore-config", !ui.checkVlc->isChecked());
+	_settings->setValue("remember-video-config", ui.checkVideoSettings->isChecked());
 	_settings->setValue("default-sub-lang", ui.comboSub->currentText());
 	_settings->endGroup();
 
 	_settings->beginGroup("GUI");
-	if(ui.checkLite->isChecked()) {
-		_settings->setValue("lite",true);
-	} else {
-		_settings->setValue("lite",false);
-	}
-	if(ui.checkTop->isChecked()) {
-		_settings->setValue("ontop",true);
-	} else {
-		_settings->setValue("ontop",false);
-	}
-	if(ui.checkOsd->isChecked()) {
-		_settings->setValue("OSD",true);
-	} else {
-		_settings->setValue("OSD",false);
-	}
-	if(ui.checkInfo->isChecked()) {
-		_settings->setValue("info",true);
-	} else {
-		_settings->setValue("info",false);
-	}
-	if(ui.radioWheelVolume->isChecked()) {
-		_settings->setValue("wheel",true);
-	} else {
-		_settings->setValue("wheel",false);
-	}
-	if(ui.radioTray->isChecked()) {
-		_settings->setValue("tray",true);
-	} else {
-		_settings->setValue("tray",false);
-	}
+	_settings->setValue("lite",ui.checkLite->isChecked());
+	_settings->setValue("ontop",ui.checkTop->isChecked());
+	_settings->setValue("OSD",ui.checkOsd->isChecked());
+	_settings->setValue("info",ui.checkInfo->isChecked());
+	_settings->setValue("controls",ui.checkControls->isChecked());
+	_settings->setValue("wheel",ui.radioWheelVolume->isChecked());
+	_settings->setValue("tray",ui.radioTray->isChecked());
 	_settings->endGroup();
 
 	_settings->beginGroup("Recorder");
@@ -222,10 +191,10 @@ void EditSettings::read()
 		ui.radioSiol2->setChecked(true);
 	else if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/siol-mpeg4.m3u")
 		ui.radioSiol4->setChecked(true);
-	else if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2-cat.m3u")
+	else if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2.m3u")
 		ui.radioT2->setChecked(true);
-	else if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/t-2-full.m3u")
-			ui.radioT2full->setChecked(true);
+	else if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/tus.m3u")
+		ui.radioTus->setChecked(true);
 	else {
 		ui.radioPresetPlaylist->setChecked(true);
 		ui.buttonBrowse->setEnabled(true);
@@ -260,6 +229,7 @@ void EditSettings::read()
 	ui.checkLite->setChecked(_settings->value("lite",false).toBool());
 	ui.checkTop->setChecked(_settings->value("ontop",false).toBool());
 	ui.checkOsd->setChecked(_settings->value("OSD",true).toBool());
+	ui.checkControls->setChecked(_settings->value("OSD",true).toBool());
 	ui.checkInfo->setChecked(_settings->value("info",true).toBool());
 	ui.radioWheelChannel->setChecked(!_settings->value("wheel",false).toBool());
 	ui.radioWheelVolume->setChecked(_settings->value("wheel",false).toBool());
@@ -282,53 +252,31 @@ void EditSettings::read()
 
 void EditSettings::toggleCustom()
 {
-	if (ui.radioCustomLanguage->isChecked())
-	{
-		ui.languageComboBox->setEnabled(true);
-	} else
-	{
-		ui.languageComboBox->setEnabled(false);
-	}
+	ui.languageComboBox->setEnabled(ui.radioCustomLanguage->isChecked());
 }
 
 void EditSettings::toggleNetwork()
 {
-	if (ui.radioNetworkDefault->isChecked())
-	{
-		ui.editNetwork->setEnabled(false);
-	} else
-	{
-		ui.editNetwork->setEnabled(true);
-	}
+	ui.editNetwork->setEnabled(!ui.radioNetworkDefault->isChecked());
 }
 
 void EditSettings::togglePlaylist()
 {
-	if (ui.radioCustomPlaylist->isChecked()) {
-		ui.buttonBrowse->setEnabled(true);
-		ui.buttonReset->setEnabled(true);
-		ui.radioSiol2->setCheckable(false);
-		ui.radioSiol4->setCheckable(false);
-		ui.radioT2->setCheckable(false);
-		ui.radioT2full->setCheckable(false);
-		ui.presetsBox->setEnabled(false);
-	} else {
-		ui.buttonBrowse->setEnabled(false);
-		ui.buttonReset->setEnabled(false);
-		ui.radioSiol2->setCheckable(true);
-		ui.radioSiol4->setCheckable(true);
-		ui.radioT2->setCheckable(true);
-		ui.radioT2full->setCheckable(true);
-		ui.presetsBox->setEnabled(true);
-	}
+	ui.buttonBrowse->setEnabled(ui.radioCustomPlaylist->isChecked());
+	ui.buttonReset->setEnabled(ui.radioCustomPlaylist->isChecked());
+	ui.radioSiol2->setCheckable(!ui.radioCustomPlaylist->isChecked());
+	ui.radioSiol4->setCheckable(!ui.radioCustomPlaylist->isChecked());
+	ui.radioT2->setCheckable(!ui.radioCustomPlaylist->isChecked());
+	ui.radioTus->setCheckable(!ui.radioCustomPlaylist->isChecked());
+	ui.presetsBox->setEnabled(!ui.radioCustomPlaylist->isChecked());
 }
 
 void EditSettings::playlistBrowse()
 {
-	QString dfile = QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
+	QString file = QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
 												QDir::homePath(),
 												tr("Tano TV Channel list Files(*.m3u)"));
-	ui.editPlaylist->setText(dfile);
+	ui.editPlaylist->setText(file);
 }
 
 void EditSettings::dirReset()
