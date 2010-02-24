@@ -13,6 +13,8 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
+
 #include "Time.h"
 
 Time::Time()
@@ -30,23 +32,29 @@ Time::~Time()
 void Time::check()
 {
 	for(int i=0; i<_timersList.size(); i++) {
-		if(_timersList[i]->startTime() >= QTime::currentTime()) {
-			emit startTimer(_timersList[i]);
-		} else if(_timersList[i]->endTime() <= QTime::currentTime()) {
-			emit startTimer(_timersList[i]);
-		} else if(_timersList[i]->endTime() >= QTime::currentTime()) {
+		if(_timersList[i]->startTime() <= QTime::currentTime() && _timersList[i]->endTime() >= QTime::currentTime()) {
+			if(!_timersList[i]->isActive()) {
+				qDebug() << "Timer starting:" << _timersList[i]->name();
+				_timersList[i]->setActive(true);
+				emit startTimer(_timersList[i]);
+				emit timerStatus(_timersList[i], true);
+			}
+		} else if(_timersList[i]->isActive()) {
+			qDebug() << "Timer ending:" << _timersList[i]->name();
+			_timersList[i]->setActive(false);
 			emit stopTimer(_timersList[i]);
+			emit timerStatus(_timersList[i], false);
 		}
 	}
 }
 
-void Time::addTimer(const Timer *t)
+void Time::addTimer(Timer *t)
 {
 	if(!_timersList.contains(t))
 		_timersList.append(t);
 }
 
-void Time::removeTimer(const Timer *t)
+void Time::removeTimer(Timer *t)
 {
 	if(_timersList.contains(t))
 		_timersList.removeOne(t);

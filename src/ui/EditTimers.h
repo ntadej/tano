@@ -35,9 +35,6 @@ public:
 	EditTimers(Time *t, const QString &playlist, QWidget *parent = 0);
 	~EditTimers();
 
-public slots:
-	void setStatus(Timer* t, const QString &status);
-
 protected:
 	void closeEvent(QCloseEvent *event);
 
@@ -50,6 +47,7 @@ private slots:
 	void playlist(QTreeWidgetItem *item);
 
 	void validate();
+	void changeStatus(Timer* t, const bool &status);
 
 	void editName(const QString &name);
 	void editDate(const QDate &date);
@@ -63,6 +61,7 @@ private slots:
 private:
 	Ui::EditTimers ui;
 
+	bool _activeTimers;
 	bool _closeEnabled;
 
 	QString _playlist;

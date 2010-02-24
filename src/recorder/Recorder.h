@@ -21,7 +21,6 @@
 #include <QtGui/QMainWindow>
 
 #include "Timer.h"
-#include "../channels/Channel.h"
 #include "../plugins/RecorderPlugins.h"
 #include "../ui/TrayIcon.h"
 #include "../xml/M3UHandler.h"
@@ -35,15 +34,15 @@ public:
 	Recorder(QWidget *parent = 0);
 	~Recorder();
 
-	bool isRecording();
+	bool isRecording() const {return _recording;};
 	void setGlobals(TrayIcon *icon, QAction *action);
 
 public slots:
 	void stop();
-	void recordNow(const int &nmb, const QString &url, const QString &name);
+	void recordNow(const QString &name, const QString &url);
 	void openPlaylist(const QString &file);
-	void recordTimer(const Timer *timer);
-	void stopTimer(const Timer *timer);
+	void recordTimer(Timer *timer);
+	void stopTimer(Timer *timer);
 
 private slots:
 	void record(const bool &status);
@@ -57,7 +56,11 @@ private:
 	Ui::Recorder ui;
 
 	bool _recording;
-	Channel *_channel;
+	bool _isTimer;
+
+	QString _channelName;
+	QString _channelUrl;
+
 	RecorderPlugin *_plugin;
 	TrayIcon *_trayIcon;
 	Timer *_currentTimer;

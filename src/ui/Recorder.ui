@@ -122,7 +122,7 @@
         <item row="1" column="0">
          <widget class="QLabel" name="labelTime">
           <property name="text">
-           <string>Time:</string>
+           <string>Time elapsed:</string>
           </property>
          </widget>
         </item>
@@ -134,14 +134,14 @@
          </widget>
         </item>
         <item row="2" column="0">
-         <widget class="QLabel" name="labelRemaining">
+         <widget class="QLabel" name="labelEndTime">
           <property name="text">
-           <string>Time remaining:</string>
+           <string>End time:</string>
           </property>
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLabel" name="valueRemaining">
+         <widget class="QLabel" name="valueEndTime">
           <property name="text">
            <string/>
           </property>

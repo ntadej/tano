@@ -17,8 +17,8 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include <QDate>
-#include <QTime>
+#include <QtCore/QDate>
+#include <QtCore/QTime>
 
 #include "TimersGenerator.h"
 

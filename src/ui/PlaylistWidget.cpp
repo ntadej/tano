@@ -29,8 +29,8 @@ PlaylistWidget::PlaylistWidget(QWidget *parent)
 	_handler = new M3UHandler(ui.treeWidget);
 
 	connect(ui.treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SIGNAL(itemClicked(QTreeWidgetItem*, int)));
-	connect(ui.categoryBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processCategories(QString)));
-	connect(ui.searchEdit, SIGNAL(textChanged(QString)), this, SLOT(processSearch(QString)));
+	connect(ui.categoryBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
+	connect(ui.searchEdit, SIGNAL(textChanged(QString)), this, SLOT(processPlaylist()));
 }
 
 PlaylistWidget::~PlaylistWidget()
@@ -86,30 +86,21 @@ void PlaylistWidget::save(const QString &name, const QString &file)
 	delete generator;
 }
 
-void PlaylistWidget::processCategories(const QString &cat)
+void PlaylistWidget::processPlaylist()
 {
-	if(cat == tr("All channels"))
-		for(int i=0; i<ui.treeWidget->topLevelItemCount(); i++)
-			ui.treeWidget->topLevelItem(i)->setHidden(false);
-	else
-		for(int i=0; i<ui.treeWidget->topLevelItemCount(); i++)
-			if(ui.treeWidget->topLevelItem(i)->text(2).contains(cat))
-				ui.treeWidget->topLevelItem(i)->setHidden(false);
-			else
-				ui.treeWidget->topLevelItem(i)->setHidden(true);
-}
+	for(int i=0; i<ui.treeWidget->topLevelItemCount(); i++)
+		ui.treeWidget->topLevelItem(i)->setHidden(false);
 
-void PlaylistWidget::processSearch(const QString &search)
-{
-	if(search == "")
+	if(ui.categoryBox->currentText() != tr("All channels"))
 		for(int i=0; i<ui.treeWidget->topLevelItemCount(); i++)
-			ui.treeWidget->topLevelItem(i)->setHidden(false);
-	else
-		for(int i=0; i<ui.treeWidget->topLevelItemCount(); i++)
-			if(ui.treeWidget->topLevelItem(i)->text(1).contains(search, Qt::CaseInsensitive))
-				ui.treeWidget->topLevelItem(i)->setHidden(false);
-			else
+			if(!ui.treeWidget->topLevelItem(i)->text(2).contains(ui.categoryBox->currentText(), Qt::CaseInsensitive))
 				ui.treeWidget->topLevelItem(i)->setHidden(true);
+
+	if(ui.searchEdit->text() != "")
+			for(int i=0; i<ui.treeWidget->topLevelItemCount(); i++)
+				if(!ui.treeWidget->topLevelItem(i)->text(1).contains(ui.searchEdit->text(), Qt::CaseInsensitive))
+					ui.treeWidget->topLevelItem(i)->setHidden(true);
+
 }
 
 QTreeWidgetItem *PlaylistWidget::createItem()

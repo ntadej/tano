@@ -28,19 +28,20 @@ public:
 	Time();
 	virtual ~Time();
 
-	void addTimer(const Timer *t);
-	void removeTimer(const Timer *t);
+	void addTimer(Timer *t);
+	void removeTimer(Timer *t);
 
 signals:
-	void startTimer(const Timer*);
-	void stopTimer(const Timer*);
+	void startTimer(Timer*);
+	void stopTimer(Timer*);
+	void timerStatus(Timer*, bool);
 
 private slots:
 	void check();
 
 private:
 	QTimer *_timer;
-	QList<const Timer*> _timersList;
+	QList<Timer*> _timersList;
 };
 
 #endif // TANO_TIME_H_

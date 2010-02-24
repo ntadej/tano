@@ -63,9 +63,12 @@ bool TimersHandler::startElement(const QString & /* namespaceURI */,
 		if(_item && _timer)
 			_timer->setNum(attributes.value("channelId").toInt());
 	} else if(qName == "name") {
-		if(_item && _timer)
+		if(_item && _timer) {
 			if(attributes.value("disabled") == "true")
 				_timer->setDisabled(true);
+			else
+				_timer->setDisabled(false);
+		}
 	}
 
 	_currentText.clear();
@@ -101,16 +104,16 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
 			}
 		}
 	} else if (qName == "start") {
-		if (_item && _timer) {
+		if (_item && _timer)
 			_timer->setStartTime(QTime::fromString(_currentText,Qt::ISODate));
+	} else if (qName == "end") {
+		if (_item && _timer) {
+			_timer->setEndTime(QTime::fromString(_currentText,Qt::ISODate));
 			if(QTime::fromString(_currentText,Qt::ISODate) < QTime::currentTime()) {
 				_item->setText(1, QObject::tr("Disabled or expired"));
 				_timer->setDisabled(true);
 			}
 		}
-	} else if (qName == "end") {
-		if (_item && _timer)
-			_timer->setEndTime(QTime::fromString(_currentText,Qt::ISODate));
 	}
 	return true;
 }

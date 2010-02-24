@@ -23,9 +23,10 @@ Timer::Timer(const QString &fname,
 	: _name(fname), _channel(fchannel), _playlist(fplaylist), _num(fnum), _url(furl)
 {
 	_date = QDate::currentDate();
-	_startTime = QTime::currentTime();
-	_endTime = QTime::currentTime().addSecs(3600);
+	_startTime = QTime::currentTime().addSecs(300);
+	_endTime = QTime::currentTime().addSecs(3900);
 	_disabled = false;
+	_active = false;
 }
 
 Timer::~Timer() {
@@ -75,4 +76,9 @@ void Timer::setEndTime(const QTime &sendTime)
 void Timer::setDisabled(const bool &disabled)
 {
 	_disabled = disabled;
+}
+
+void Timer::setActive(const bool &active)
+{
+	_active = active;
 }

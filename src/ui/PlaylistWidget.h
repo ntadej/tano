@@ -53,8 +53,7 @@ signals:
 	void itemClicked(QTreeWidgetItem*, const int);
 
 private slots:
-	void processCategories(const QString &cat);
-	void processSearch(const QString &search);
+	void processPlaylist();
 
 private:
 	Ui::PlaylistWidget ui;

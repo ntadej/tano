@@ -228,6 +228,9 @@ void MainWindow::createConnections()
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
 	else
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
+
+	connect(_time, SIGNAL(startTimer(Timer*)), ui.recorder, SLOT(recordTimer(Timer*)));
+	connect(_time, SIGNAL(stopTimer(Timer*)), ui.recorder, SLOT(stopTimer(Timer*)));
 }
 
 void MainWindow::createMenus()
@@ -334,6 +337,7 @@ void MainWindow::createRecorder()
 	if(_recorderEnabled) {
 		ui.recorder->openPlaylist(_playlistName);
 		ui.recorder->setGlobals(_trayIcon, ui.actionRecord);
+		_timersEditor = new EditTimers(_time, _playlistName, this);
 	} else {
 		ui.buttonRecord->hide();
 		ui.menuRecorder->hide();
@@ -566,10 +570,6 @@ void MainWindow::showPlaylistEditor()
 
 void MainWindow::showTimersEditor()
 {
-	if(_timersEditor)
-		delete _timersEditor;
-
-	_timersEditor = new EditTimers(_time, _playlistName, this);
 	_timersEditor->show();
 }
 
@@ -651,7 +651,7 @@ void MainWindow::fullscreen(const bool &on)
 // Recorder
 void MainWindow::recordNow()
 {
-	ui.recorder->recordNow(ui.channelNumber->value(), _channel->url(), _channel->name());
+	ui.recorder->recordNow(_channel->name(), _channel->url());
 }
 
 void MainWindow::recorder(const bool &enabled)

@@ -18,11 +18,13 @@
 #include <QtGui/QMessageBox>
 
 #include "../Common.h"
+#include "../channels/Channel.h"
 #include "../plugins/PluginsLoader.h"
 #include "Recorder.h"
 
 Recorder::Recorder(QWidget *parent)
-	: QWidget(parent), _recording(false), _trayIcon(0), _actionRecord(0)
+	: QWidget(parent), _recording(false), _isTimer(false), _channelName(""), _channelUrl(""),
+	_trayIcon(0), _actionRecord(0), _currentTimer(0)
 {
 	ui.setupUi(this);
 
@@ -53,6 +55,7 @@ Recorder::Recorder(QWidget *parent)
 Recorder::~Recorder()
 {
 	delete _timer;
+	delete _plugin;
 }
 
 void Recorder::stop()
@@ -67,8 +70,14 @@ void Recorder::openPlaylist(const QString &file)
 
 void Recorder::playlist(QTreeWidgetItem* clickedChannel)
 {
-	_channel = ui.playlistWidget->channelRead(clickedChannel);
-	ui.valueSelected->setText(_channel->name());
+	Channel *channel = ui.playlistWidget->channelRead(clickedChannel);
+
+	_channelName = channel->name();
+	_channelUrl = channel->url();
+
+	ui.valueSelected->setText(channel->name());
+
+	delete channel;
 }
 
 void Recorder::fileBrowse()
@@ -105,27 +114,30 @@ void Recorder::record(const bool &status)
 			return;
 		}
 
-		_plugin->record(_channel->name(), _channel->url(), ui.fileEdit->text());
+		_plugin->record(_channelName, _channelUrl, ui.fileEdit->text());
 
 		QString fileName;
 		fileName = _plugin->output();
 
 		if(_trayIcon)
-			_trayIcon->changeToolTip(_channel->name(), "recorder");
+			_trayIcon->changeToolTip(_channelName, "recorder");
 
 		_timer->start(1000);
 		_time = QTime(0,0);
 
-		ui.valueCurrent->setText(_channel->name());
+		ui.valueCurrent->setText(_channelName);
 		ui.valueTime->setText(_time.toString("hh:mm:ss"));
-		ui.valueRemaining->setText(tr("No timer - press button to stop."));
+		if(_isTimer)
+			ui.valueEndTime->setText(_currentTimer->endTime().toString("hh:mm"));
+		else
+			ui.valueEndTime->setText(tr("No timer - press button to stop."));
 		ui.valueFile->setText(fileName);
 
 		ui.buttonRecord->setText(tr("Stop recording"));
 		if(_actionRecord)
 			_actionRecord->setEnabled(true);
 
-		_trayIcon->message(QStringList() << "record" << _channel->name() << fileName);
+		_trayIcon->message(QStringList() << "record" << _channelName << fileName);
 
 		_recording = true;
 	} else {
@@ -133,7 +145,7 @@ void Recorder::record(const bool &status)
 		_timer->stop();
 		ui.valueCurrent->setText("");
 		ui.valueTime->setText("");
-		ui.valueRemaining->setText(tr(""));
+		ui.valueEndTime->setText(tr(""));
 		ui.valueFile->setText("");
 
 		ui.buttonRecord->setText(tr("Record"));
@@ -143,20 +155,19 @@ void Recorder::record(const bool &status)
 		_trayIcon->changeToolTip("stop", "recorder");
 
 		_recording = false;
+		_isTimer = false;
 	}
 }
 
-void Recorder::recordNow(const int &nmb, const QString &url, const QString &name)
+void Recorder::recordNow(const QString &name, const QString &url)
 {
-	_channel = ui.playlistWidget->channelRead(nmb);
-	ui.valueSelected->setText(_channel->name());
-	if(_actionRecord)
-		_actionRecord->setEnabled(true);
-}
+	_channelName = name;
+	_channelUrl = url;
 
-bool Recorder::isRecording()
-{
-	return _recording;
+	ui.valueSelected->setText(name);
+
+	if(!_recording)
+		ui.buttonRecord->toggle();
 }
 
 void Recorder::sec()
@@ -172,12 +183,25 @@ void Recorder::setGlobals(TrayIcon *icon, QAction *action)
 	connect(_actionRecord, SIGNAL(triggered()), ui.buttonRecord, SLOT(toggle()));
 }
 
-void Recorder::recordTimer(const Timer *timer)
+void Recorder::recordTimer(Timer *timer)
 {
+	_isTimer = true;
+	_currentTimer = timer;
+	_channelName = timer->channel();
+	_channelUrl = timer->url();
+	ui.valueSelected->setText(timer->channel());
 
+	if(!_recording)
+		ui.buttonRecord->toggle();
 }
 
-void Recorder::stopTimer(const Timer *timer)
+void Recorder::stopTimer(Timer *timer)
 {
+	if(_currentTimer != timer)
+		return;
 
+	_isTimer = false;
+	if(_recording)
+		ui.buttonRecord->toggle();
+	_currentTimer = 0;
 }

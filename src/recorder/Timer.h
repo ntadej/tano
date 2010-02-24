@@ -49,9 +49,12 @@ public:
 	void setEndTime(const QTime &sendTime);
 	bool isDisabled() const {return _disabled;}
 	void setDisabled(const bool &disabled);
+	bool isActive() const {return _active;}
+	void setActive(const bool &active);
 
 private:
 	bool _disabled;
+	bool _active;
 	QString _name;
 	QString _channel;
 	QString _playlist;

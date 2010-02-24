@@ -26,7 +26,7 @@
 
 
 EditTimers::EditTimers(Time *t, const QString &playlist, QWidget *parent)
-	: QMainWindow(parent), _time(t), _channel(0), _closeEnabled(false)
+	: QMainWindow(parent), _time(t), _channel(0), _activeTimers(false), _closeEnabled(false)
 {
 	ui.setupUi(this);
 	ui.timersWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
@@ -48,6 +48,8 @@ EditTimers::EditTimers(Time *t, const QString &playlist, QWidget *parent)
 	connect(ui.editStartTime, SIGNAL(timeChanged(QTime)), this, SLOT(editStartTime(QTime)));
 	connect(ui.editEndTime, SIGNAL(timeChanged(QTime)), this, SLOT(editEndTime(QTime)));
 	connect(ui.checkBoxDisabled, SIGNAL(clicked()), this, SLOT(validate()));
+
+	connect(_time, SIGNAL(timerStatus(Timer*,bool)), this, SLOT(changeStatus(Timer*,bool)));
 
 	_handler = new TimersHandler(ui.timersWidget);
 
@@ -144,6 +146,11 @@ void EditTimers::edit(QTreeWidgetItem *item)
 {
 	ui.dockWidgetContents->setDisabled(false);
 
+	if(_handler->timerRead(item)->isActive()) {
+		ui.dockWidgetContents->setDisabled(true);
+		return;
+	}
+
 	ui.timersWidget->setCurrentItem(item);
 
 	ui.checkBoxDisabled->setChecked(_handler->timerRead(item)->isDisabled());
@@ -191,6 +198,8 @@ void EditTimers::editEndTime(const QTime &time)
 
 void EditTimers::read(const QString &file)
 {
+	_activeTimers = false;
+
 	QString fileName;
 
 	if(file.isNull())
@@ -225,6 +234,8 @@ void EditTimers::read(const QString &file)
 		if(!_handler->timerRead(ui.timersWidget->topLevelItem(i))->isDisabled())
 			_time->addTimer(_handler->timerRead(ui.timersWidget->topLevelItem(i)));
 	}
+
+	_activeTimers = true;
 }
 
 void EditTimers::write()
@@ -256,19 +267,27 @@ void EditTimers::write()
 	delete generator;
 
 	for(int i=0; i<ui.timersWidget->topLevelItemCount(); i++) {
-		_time->addTimer(_handler->timerRead(ui.timersWidget->topLevelItem(i)));
+		if(!_handler->timerRead(ui.timersWidget->topLevelItem(i))->isDisabled())
+			_time->addTimer(_handler->timerRead(ui.timersWidget->topLevelItem(i)));
 	}
 }
 
-void EditTimers::setStatus(Timer *t, const QString &status)
+void EditTimers::changeStatus(Timer *t, const bool &status)
 {
-	_handler->itemRead(t)->setText(1,status);
+	if(status) {
+		_handler->itemRead(t)->setText(1,tr("Recording"));
+		if(ui.timersWidget->currentItem() == _handler->itemRead(t))
+			ui.dockWidgetContents->setDisabled(true);
+	}
 }
 
 void EditTimers::validate()
 {
+	if(!_activeTimers)
+		return;
+
 	if(ui.editDate->date() < QDate::currentDate() ||
-		ui.editStartTime->time() < QTime::currentTime() ||
+		ui.editEndTime->time() < QTime::currentTime() ||
 		ui.checkBoxDisabled->isChecked())
 	{
 		_handler->timerRead(ui.timersWidget->currentItem())->setDisabled(true);
