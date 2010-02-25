@@ -14,6 +14,7 @@
 *****************************************************************************/
 
 #include <QtCore/QFile>
+#include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 #include <QtGui/QMessageBox>
 
@@ -41,6 +42,7 @@ void M3UHandler::processFile(const QString &m3uFile)
 		return;
 
 	QTextStream in(&file);
+	in.setCodec(QTextCodec::codecForName("UTF-8"));
 	while (!in.atEnd()) {
 		_m3uLineList << in.readLine();
 	}

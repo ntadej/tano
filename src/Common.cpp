@@ -116,6 +116,10 @@ QList<const char *> Common::libvlcArgs()
 		 << "--no-osd"
 		 << "--no-video-title-show";
 
+#ifdef Q_WS_WIN
+	args << "--plugin-path=vlc\\plugins\\";
+#endif
+
 #ifdef Q_WS_X11
 #if VLC_TRUNK
 

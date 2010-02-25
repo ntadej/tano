@@ -91,7 +91,7 @@ SettingsPage::SettingsPage(QWidget *parent)
 	_siolRadio2 = new QRadioButton("SiOL - MPEG-2");
 	_siolRadio4 = new QRadioButton("SiOL - MPEG-4");
 	_T2Radio = new QRadioButton("T-2");
-	_tusRadio = new QRadioButton("Tuš Telekom");
+	_tusRadio = new QRadioButton(QString().fromUtf8("Tuš Telekom"));
 	_sessionBox = new QCheckBox(tr("Enable Session store"));
 	_vlcBox = new QCheckBox(tr("Use global VLC configuration"));
 

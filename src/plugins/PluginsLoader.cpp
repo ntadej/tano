@@ -33,6 +33,10 @@ PluginsLoader::PluginsLoader()
 #ifdef DEFAULT_PLUGIN_DIR
 		pluginsDir = QDir(QString(DEFAULT_PLUGIN_DIR));
 		processDir(pluginsDir);
+#else
+		pluginsDir = QDir(qApp->applicationDirPath());
+		pluginsDir.cd("plugins");
+		processDir(pluginsDir);
 #endif
 	}
 }
