@@ -1,232 +1,141 @@
-#include <QtDebug>
-#include <QTime>
+/****************************************************************************
+* EpgLoader.cpp: EPG loader and processer
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
+#include <QtCore/QTime>
 
 #include "EpgLoader.h"
+#include "../plugins/PluginsLoader.h"
 
-EpgLoader::EpgLoader()
+EpgLoader::EpgLoader(const QString &plugin)
+	: _init(false), _show(false), _step(0),	_currentArgument(""), _currentRequest(""), _codec(QTextCodec::codecForName("UTF-8"))
 {
-	init = false;
-	setHost("www.siol.net");
-	codec = QTextCodec::codecForName("UTF-8");
-	edit = new QTextEdit();
-    epgInit();
+	PluginsLoader *loader = new PluginsLoader();
+	for(int i=0; i < loader->epgPlugin().size(); i++)
+		if(loader->epgName()[i] == plugin)
+			_plugin = loader->epg(loader->epgPlugin()[i]);
+	delete loader;
+
+	setHost(_plugin->host());
+
+	_timer = new QTimer(this);
+	connect(_timer, SIGNAL(timeout()), this, SLOT(now()));
 }
 
 EpgLoader::~EpgLoader()
 {
-	delete edit;
+
 }
 
-void EpgLoader::getEpg(bool f, QString epgP)
+void EpgLoader::getEpg(const QString &arg, const bool &type)
 {
-	epgGet = epgP;
+	_show = type;
+	_currentArgument = arg;
 
-	if(f)
-		epgFull = epgP  + "&flag=" + epgFlag;
-	else
-		epgFull = epgP.remove("http://www.siol.net");
+	if(!_init) {
+		init();
+		return;
+	}
 
-	full = f;
+	_currentRequest = _plugin->load(arg, _step);
+	epg();
+}
 
-	if(init)
-		epg();
+void EpgLoader::now()
+{
+	QStringList now;
+	for(int i = 1; i < _currentList.size(); i+=3) {
+		if(QTime::currentTime() > QTime::fromString(_currentList[i], "hh:mm") && QTime::currentTime() < QTime::fromString(_currentList[i+3], "hh:mm")) {
+			now << "<a href=\"" + _currentList[i+1] + "\">" + _currentList[i] + " - " + _currentList[i+2] + "</a>"
+				<< "<a href=\"" + _currentList[i+4] + "\">" + _currentList[i+3] + " - " + _currentList[i+5] + "</a>";
+			emit epgDone(now, 0);
+			break;
+		}
+	}
+
+	_timer->start(60000);
 }
 
 void EpgLoader::stop()
 {
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgShow()));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule()));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(show()));
 	abort();
 }
 
-void EpgLoader::epgInit()
+void EpgLoader::init()
 {
-	header = QHttpRequestHeader("GET","/tv-spored.aspx");
-	header.setValue("Referer","http://www.siol.net/tv-spored.aspx");
-	header.setValue("User-Agent","Firefox");
-	header.setValue("Host","www.siol.net");
-
-	request(header);
-	connect(this, SIGNAL(done(bool)), this, SLOT(epgInitDone()));
+	request(_plugin->httpHeader("init"));
+	connect(this, SIGNAL(done(bool)), this, SLOT(initDone()));
 }
 
-void EpgLoader::epgInitDone()
+void EpgLoader::initDone()
 {
-	int m = 0;
-	int n = 0;
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(initDone()));
+
 	QByteArray httpResponse = readAll();
 
-	epgValue = codec->toUnicode(httpResponse);
+	_init = _plugin->init(_codec->toUnicode(httpResponse));
 
-	//qDebug() << epgValue;
-
-	m = epgValue.indexOf("flag=",epgValue.indexOf("whatson"));
-	n = epgValue.indexOf("\"",m);
-
-	for(int i=m+5;i<n;i++)
-		epgFlag.append(epgValue.at(i));
-
-	qDebug() << epgFlag;
-
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgInitDone()));
-
-	init = true;
-	getEpg(true, epgGet);
+	if(_currentArgument != "")
+		getEpg(_currentArgument, false);
 }
 
 void EpgLoader::epg()
 {
-	header = QHttpRequestHeader("GET",epgFull);
-	header.setValue("Referer","http://www.siol.net/tv-spored.aspx");
-	header.setValue("User-Agent","Firefox");
-	header.setValue("Host","www.siol.net");
+	request(_plugin->httpHeader(_currentRequest));
 
-	request(header);
-
-	if(full)
-		connect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
+	if(_show)
+		connect(this, SIGNAL(done(bool)), this, SLOT(show()));
 	else
-		connect(this, SIGNAL(done(bool)), this, SLOT(epgShow()));
+		connect(this, SIGNAL(done(bool)), this, SLOT(schedule()));
 }
 
-void EpgLoader::epgPrint()
+void EpgLoader::schedule()
 {
-	int n = 0;
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule()));
+
 	QByteArray httpResponse = readAll();
+	QStringList list = _plugin->processSchedule(_codec->toUnicode(httpResponse));
 
-	epgValue = codec->toUnicode(httpResponse);
-
-	if(!epgValue.contains("schedule_title")) {
-		disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
+	if(list[0] == "error")
 		return;
+
+	emit epgDone(list, _step+1);
+
+	if(_step == 0) {
+		_currentList = list;
+		now();
 	}
 
-	//Main EPG
-	n = epgValue.indexOf("<dl class=\"listB\">");
-	epgValue.remove(0,n);
-	n = epgValue.indexOf("</dl>");
-	epgValue.remove(n,epgValue.size()-1-n);
-
-	//Changes
-	epgValue.replace("<table class=\"schedule\">", ": ");
-	epgValue.replace("(<a href=", "(<p style=");
-	epgValue.replace("ogled</a>)","ogled</p>)");
-	epgValue.replace("<a", "|<a");
-	epgValue.replace("</a>", "|");
-	epgValue.replace("	","");
-	epgValue.replace(" href=\"",">");
-
-	edit->setHtml(epgValue);
-	epgValue = edit->toPlainText();
-	edit->setText("");
-
-	epgValue.replace("\n","");
-	epgValue.replace("\">","|");
-	epgValue.replace("tv-spored.aspx", "http://www.siol.net/tv-spored.aspx");
-	epgValue.replace("|: ","|");
-	epgValue.replace(".2009: ", ".2009:|");
-	epgValue.replace(".2010: ", ".2010:|");
-	epgValue.replace(".2011: ", ".2011:|");
-	epgValue.replace(" (ogled): ","");
-	epgValue.replace(" (ogled)","");
-	epgValue.remove(epgValue.size()-1,1);
-
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
-
-	epgList = epgValue.split("|");
-
-	emit epgDone(epgList);
-}
-
-void EpgLoader::epgShow()
-{
-	epgListShow.clear();
-	int n = 0;
-	QString tmp;
-	QByteArray httpResponse = readAll();
-
-	epgValue = codec->toUnicode(httpResponse);
-
-	if(!epgValue.contains("schedule_title")) {
-		disconnect(this, SIGNAL(done(bool)), this, SLOT(epgPrint()));
-		return;
-	}
-
-	//Title
-	tmp = epgValue;
-	n = tmp.indexOf("<div class=\"event\">");
-        tmp.remove(0,n);
-	n = tmp.indexOf("</h4>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	epgListShow << tmp;
-
-	//Time
-	tmp = epgValue;
-	n = tmp.indexOf("<div class=\"schedule_title\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</div>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	tmp.replace(" ,",",");
-	epgListShow << tmp;
-
-	//Info
-	tmp = epgValue;
-	n = tmp.indexOf("<p class=\"sub\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</p>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	epgListShow << tmp;
-
-	//Description
-	tmp = epgValue;
-	n = tmp.indexOf("<p class=\"desc\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</p>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	epgListShow << tmp;
-
-	//Actor
-	tmp = epgValue;
-	n = tmp.indexOf("<p class=\"actor\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</p>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	tmp.remove(tmp.size()-2,2);
-	epgListShow << tmp;
-
-	//Image
-	tmp = epgValue;
-	n = tmp.indexOf("<div class=\"event\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</h4>");
-	tmp.remove(n,tmp.size()-1-n);
-	if(!tmp.contains("<img src")) {
-		tmp = "NI";
+	if(_step < 3) {
+		_step++;
+		getEpg(_currentArgument);
 	} else {
-		n = tmp.indexOf("<img src='");
-		tmp.remove(0,n+10);
-		n = tmp.indexOf("' alt=\"\"");
-		tmp.remove(n,tmp.size()-1-n);
-		tmp.remove(tmp.size()-1,1);
+		_step = 0;
 	}
-	epgListShow << tmp;
+}
 
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(epgShow()));
+void EpgLoader::show()
+{
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(show()));
 
-	emit epgDone(epgListShow);
+	QByteArray httpResponse = readAll();
+	QStringList list = _plugin->processShow(_codec->toUnicode(httpResponse));
+
+	if(list[0] == "error")
+		return;
+
+	emit epgDone(list, 0);
 }

@@ -1,5 +1,5 @@
 /****************************************************************************
-* PluginsManager.h: A dialog that lists all available plugins
+* EpgSloveniaPlugin.cpp: EPG Slovenia creator class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,35 +13,12 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_PLUGINSMANAGER_H_
-#define TANO_PLUGINSMANAGER_H_
+#include "EpgSloveniaPlugin.h"
+#include "EpgSloveniaPluginCreator.h"
 
-#include <QtCore/QDir>
-#include <QtGui/QDialog>
-#include <QtGui/QIcon>
-
-#include <ui_PluginsManager.h>
-
-class PluginsManager : public QDialog
+EpgPlugin *EpgSloveniaPluginCreator::createEpgPluginInstance()
 {
-Q_OBJECT
-public:
-	PluginsManager(QWidget *parent = 0);
-	~PluginsManager();
+	return new EpgSloveniaPlugin();
+}
 
-private:
-	Ui::PluginsManager ui;
-
-	void populateTreeWidget(const QString &file, const QString &name, const QString &type);
-
-	QDir _pluginsDir;
-	QStringList _pluginFileNames;
-
-	QIcon _interfaceIcon;
-	QIcon _featureIcon;
-
-	QTreeWidgetItem *_epg;
-	QTreeWidgetItem *_recorder;
-};
-
-#endif // TANO_PLUGINSMANAGER_H_
+Q_EXPORT_PLUGIN2( EpgSloveniaPluginCreator, EpgSloveniaPluginCreator )

@@ -1,5 +1,5 @@
 /****************************************************************************
-* PluginsManager.h: A dialog that lists all available plugins
+* EpgSloveniaPlugin.cpp: EPG plugin for Slovenia
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,35 +13,29 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_PLUGINSMANAGER_H_
-#define TANO_PLUGINSMANAGER_H_
+#ifndef TANO_EPGSLOVENIAPLUGIN_H_
+#define TANO_EPGSLOVENIAPLUGIN_H_
 
-#include <QtCore/QDir>
-#include <QtGui/QDialog>
-#include <QtGui/QIcon>
+#include <QtCore/QProcess>
+#include <QtCore/QString>
 
-#include <ui_PluginsManager.h>
+#include "plugins/EpgPlugins.h"
 
-class PluginsManager : public QDialog
+class EpgSloveniaPlugin : public EpgPlugin
 {
-Q_OBJECT
 public:
-	PluginsManager(QWidget *parent = 0);
-	~PluginsManager();
+	EpgSloveniaPlugin();
+	~EpgSloveniaPlugin();
+
+	QString host() const;
+	QHttpRequestHeader httpHeader(const QString &url) const;
+	bool init(const QString &text);
+	QString load(const QString &input, const int &arg = 0) const;
+	QStringList processSchedule(const QString &input) const;
+	QStringList processShow(const QString &input) const;
 
 private:
-	Ui::PluginsManager ui;
-
-	void populateTreeWidget(const QString &file, const QString &name, const QString &type);
-
-	QDir _pluginsDir;
-	QStringList _pluginFileNames;
-
-	QIcon _interfaceIcon;
-	QIcon _featureIcon;
-
-	QTreeWidgetItem *_epg;
-	QTreeWidgetItem *_recorder;
+	QString _flag;
 };
 
-#endif // TANO_PLUGINSMANAGER_H_
+#endif // TANO_EPGSLOVENIAPLUGIN_H_

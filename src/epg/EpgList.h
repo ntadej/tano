@@ -1,26 +1,40 @@
+/****************************************************************************
+* EpgList.h: EPG Schedule display
+*****************************************************************************
+* Copyright (C) 2008-2010 Tadej Novak
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* This file may be used under the terms of the
+* GNU General Public License version 3.0 as published by the
+* Free Software Foundation and appearing in the file LICENSE.GPL
+* included in the packaging of this file.
+*****************************************************************************/
+
 #ifndef TANO_EPGLIST_H_
 #define TANO_EPGLIST_H_
 
-#include <QTableWidget>
-#include <QMap>
-#include <QMenu>
-#include <QAction>
-#include <QMouseEvent>
+#include <QtCore/QMap>
+#include <QtGui/QAction>
+#include <QtGui/QMenu>
+#include <QtGui/QMouseEvent>
+#include <QtGui/QTableWidget>
 
 #include "../channels/ChannelEpg.h"
 
 class EpgList : public QTableWidget
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
-    EpgList(QWidget *parent = 0);
-    ~EpgList();
+	EpgList(QWidget *parent = 0);
+	~EpgList();
 
-    void epgClear();
+	void clearList();
 
 public slots:
-    void setEpg(QStringList epg);
+	void setEpg(const QStringList &epg);
 
 signals:
 	void urlClicked(QString);
@@ -29,16 +43,15 @@ protected:
 	void mouseReleaseEvent(QMouseEvent *event);
 
 private slots:
-	void processEpg();
-	void epgClicked(QTableWidgetItem *item = 0);
+	void clicked(QTableWidgetItem *item = 0);
 
 private:
-    QStringList epgList;
-    QMap<QTableWidgetItem*, ChannelEpg*> map;
+	QMap<QTableWidgetItem*, ChannelEpg*> _map;
+	QMap<int, ChannelEpg*> _nmap;
 
-    QMenu *rightMenu;
-    QAction *info;
-    QAction *record;
+	QMenu *_rightMenu;
+	QAction *_info;
+	QAction *_record;
 };
 
 #endif // TANO_EPGLIST_H_

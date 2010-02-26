@@ -1,5 +1,5 @@
 /****************************************************************************
-* PluginsManager.h: A dialog that lists all available plugins
+* EpgSloveniaPlugin.h: EPG Slovenia creator class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,35 +13,23 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_PLUGINSMANAGER_H_
-#define TANO_PLUGINSMANAGER_H_
+#ifndef TANO_EPGSLOVENIAPLUGINCREATOR_H_
+#define TANO_EPGSLOVENIAPLUGINCREATOR_H_
 
-#include <QtCore/QDir>
-#include <QtGui/QDialog>
-#include <QtGui/QIcon>
+#include <QtCore/QObject>
+#include <QtCore/QtPlugin>
 
-#include <ui_PluginsManager.h>
+#include "plugins/EpgPlugins.h"
 
-class PluginsManager : public QDialog
+class EpgSloveniaPluginCreator : public QObject, public EpgPluginCreator
 {
-Q_OBJECT
+Q_OBJECT;
+Q_INTERFACES( EpgPluginCreator );
+Q_CLASSINFO("PLUGINTYPE", "EPG");
+Q_CLASSINFO("PLUGINNAME", "EpgSloveniaPlugin");
+
 public:
-	PluginsManager(QWidget *parent = 0);
-	~PluginsManager();
-
-private:
-	Ui::PluginsManager ui;
-
-	void populateTreeWidget(const QString &file, const QString &name, const QString &type);
-
-	QDir _pluginsDir;
-	QStringList _pluginFileNames;
-
-	QIcon _interfaceIcon;
-	QIcon _featureIcon;
-
-	QTreeWidgetItem *_epg;
-	QTreeWidgetItem *_recorder;
+	EpgPlugin *createEpgPluginInstance();
 };
 
-#endif // TANO_PLUGINSMANAGER_H_
+#endif // TANO_EPGSLOVENIAPLUGINCREATOR_H_

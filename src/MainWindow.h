@@ -30,7 +30,7 @@
 #include "control/ChannelSelect.h"
 #include "control/Shortcuts.h"
 #include "control/Time.h"
-#include "epg/Epg.h"
+#include "epg/EpgLoader.h"
 #include "epg/EpgShow.h"
 #include "ui/EditPlaylist.h"
 #include "ui/EditTimers.h"
@@ -66,7 +66,7 @@ private slots:
 	void openFile();
 	void openUrl();
 
-	void showEpg(const int &id, const QStringList &epgValue, const QString &date);
+	void showEpg(const QStringList &epgValue, const int &id);
 	void processMenu(const QString &type, const QList<QAction*> &list);
 
 	void tooltip(const QString &channelNow = "stop");
@@ -132,7 +132,7 @@ private:
 
 	//Playback and channels
 	Channel *_channel;
-	Epg *_epg;
+	EpgLoader *_epg;
 	EpgShow *_epgShow;
 	QString _fileName;
 	QString _playlistName;

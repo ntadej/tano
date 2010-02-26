@@ -45,6 +45,8 @@ PluginsLoader::~PluginsLoader()
 {
 	for(int i=0; i<_recorderPlugins.size(); i++)
 		delete _recorderPlugins[i];
+	for(int i=0; i<_epgPlugins.size(); i++)
+		delete _epgPlugins[i];
 }
 
 void PluginsLoader::processDir(QDir &dir)
@@ -75,6 +77,13 @@ void PluginsLoader::processPlugin(QObject *plugin, const QString &pluginFile)
 		_recorderFiles << pluginFile;
 		_recorderNames << plugin->metaObject()->classInfo(plugin->metaObject()->indexOfClassInfo( "PLUGINNAME" )).value();
 	}
+
+	EpgPluginCreator *epg = qobject_cast<EpgPluginCreator *>(plugin);
+	if(epg) {
+		_epgPlugins << plugin;
+		_epgFiles << pluginFile;
+		_epgNames << plugin->metaObject()->classInfo(plugin->metaObject()->indexOfClassInfo( "PLUGINNAME" )).value();
+	}
 }
 
 RecorderPlugin *PluginsLoader::recorder(QObject *plugin)
@@ -82,4 +91,11 @@ RecorderPlugin *PluginsLoader::recorder(QObject *plugin)
 	RecorderPluginCreator *recorder = qobject_cast<RecorderPluginCreator *>(plugin);
 	if(recorder)
 		return recorder->createRecorderPluginInstance();
+}
+
+EpgPlugin *PluginsLoader::epg(QObject *plugin)
+{
+	EpgPluginCreator *epg = qobject_cast<EpgPluginCreator *>(plugin);
+	if(epg)
+		return epg->createEpgPluginInstance();
 }

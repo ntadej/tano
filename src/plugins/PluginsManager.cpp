@@ -25,33 +25,44 @@ PluginsManager::PluginsManager(QWidget *parent)
 	_interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirClosedIcon), QIcon::Normal, QIcon::Off);
 	_featureIcon.addPixmap(style()->standardPixmap(QStyle::SP_FileIcon));
 
+	_epg = new QTreeWidgetItem(ui.pluginsWidget);
+	_epg->setText(0, tr("EPG Plugins"));
+	_recorder = new QTreeWidgetItem(ui.pluginsWidget);
+	_recorder->setText(0, tr("Recorder Plugins"));
+	ui.pluginsWidget->setItemExpanded(_epg, true);
+	ui.pluginsWidget->setItemExpanded(_recorder, true);
+
+	QFont font = _epg->font(0);
+	font.setBold(true);
+	_epg->setFont(0, font);
+	_recorder->setFont(0, font);
+
 	PluginsLoader *loader = new PluginsLoader();
 
 	for(int i=0; i < loader->recorderPlugin().size(); i++)
-		populateTreeWidget(loader->recorderFile()[i], loader->recorderName()[i]);
+		populateTreeWidget(loader->recorderFile()[i], loader->recorderName()[i], "Recorder");
+	for(int i=0; i < loader->epgPlugin().size(); i++)
+		populateTreeWidget(loader->epgFile()[i], loader->epgName()[i], "EPG");
 
 	delete loader;
 }
 
 PluginsManager::~PluginsManager()
 {
-
+	ui.pluginsWidget->clear();
 }
 
-void PluginsManager::populateTreeWidget(const QString &file, const QString &name)
+void PluginsManager::populateTreeWidget(const QString &file, const QString &name, const QString &type)
 {
-	QTreeWidgetItem *pluginItem = new QTreeWidgetItem(ui.pluginsWidget);
+	QTreeWidgetItem *pluginItem;
+	if(type == "EPG")
+		pluginItem = new QTreeWidgetItem(_epg);
+	else if(type == "Recorder")
+		pluginItem = new QTreeWidgetItem(_recorder);
 	pluginItem->setText(0, file);
-	ui.pluginsWidget->setItemExpanded(pluginItem, true);
+	pluginItem->setIcon(0, _interfaceIcon);
 
-	QFont boldFont = pluginItem->font(0);
-	boldFont.setBold(true);
-	pluginItem->setFont(0, boldFont);
-
-	QTreeWidgetItem *interfaceItem = new QTreeWidgetItem(pluginItem);
-	interfaceItem->setText(0, tr("Recorder Plugin"));
-	interfaceItem->setIcon(0, _interfaceIcon);
-	QTreeWidgetItem *featureItem = new QTreeWidgetItem(interfaceItem);
+	QTreeWidgetItem *featureItem = new QTreeWidgetItem(pluginItem);
 	featureItem->setText(0, name);
 	featureItem->setIcon(0, _featureIcon);
 }

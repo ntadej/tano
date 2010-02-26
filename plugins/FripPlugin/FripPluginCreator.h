@@ -19,17 +19,17 @@
 #include <QtCore/QObject>
 #include <QtCore/QtPlugin>
 
-#include <plugins/RecorderPlugins.h>
+#include "plugins/RecorderPlugins.h"
 
 class FripPluginCreator : public QObject, public RecorderPluginCreator
 {
 Q_OBJECT;
 Q_INTERFACES( RecorderPluginCreator );
-Q_CLASSINFO("PLUGINNAME", "Recorder");
+Q_CLASSINFO("PLUGINTYPE", "Recorder");
 Q_CLASSINFO("PLUGINNAME", "FripPlugin");
 
 public:
 	RecorderPlugin *createRecorderPluginInstance();
 };
 
-#endif // TANO_FRIPPLUGIN_H_
+#endif // TANO_FRIPPLUGINCREATOR_H_

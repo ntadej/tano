@@ -21,6 +21,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
+#include "EpgPlugins.h"
 #include "RecorderPlugins.h"
 
 class PluginsLoader
@@ -34,6 +35,11 @@ public:
 	QStringList recorderName() const {return _recorderNames;};
 	RecorderPlugin *recorder(QObject *plugin);
 
+	QList<QObject*> epgPlugin() const {return _epgPlugins;};
+	QStringList epgFile() const {return _epgFiles;};
+	QStringList epgName() const {return _epgNames;};
+	EpgPlugin *epg(QObject *plugin);
+
 private:
 	void processDir(QDir &dir);
 	void processPlugin(QObject *plugin, const QString &pluginFile);
@@ -41,6 +47,10 @@ private:
 	QList<QObject*> _recorderPlugins;
 	QStringList _recorderFiles;
 	QStringList _recorderNames;
+
+	QList<QObject*> _epgPlugins;
+	QStringList _epgFiles;
+	QStringList _epgNames;
 };
 
 #endif // TANO_PLUGINSLOADER_H_

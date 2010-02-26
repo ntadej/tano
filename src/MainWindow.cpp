@@ -29,7 +29,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent), _select(0), _time(new Time()), _update(new Updates()),
-	_playlistEditor(0), _timersEditor(0), _epg(new Epg()), _epgShow(new EpgShow())
+	_playlistEditor(0), _timersEditor(0), _epg(new EpgLoader("EpgSloveniaPlugin")), _epgShow(new EpgShow())
 {
 	QPixmap pixmap(":/icons/images/splash.png");
 	QSplashScreen *splash = new QSplashScreen(pixmap);
@@ -195,7 +195,7 @@ void MainWindow::createConnections()
 	connect(ui.actionBack, SIGNAL(triggered()), _select, SLOT(back()));
 	connect(ui.actionNext, SIGNAL(triggered()), _select, SLOT(next()));
 
-	connect(ui.infoBarWidget, SIGNAL(refresh()), _epg, SLOT(refresh()));
+	//connect(ui.infoBarWidget, SIGNAL(refresh()), _epg, SLOT(refresh()));
 	connect(ui.infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
 
 	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playChannel(QTreeWidgetItem*)));
@@ -207,7 +207,7 @@ void MainWindow::createConnections()
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
 	connect(ui.videoWidget, SIGNAL(osdVisibility(bool)), ui.osdWidget, SLOT(setVisible(bool)));
 
-	connect(_epg, SIGNAL(epgDone(int,QStringList,QString)), this, SLOT(showEpg(int,QStringList,QString)));
+	connect(_epg, SIGNAL(epgDone(QStringList, int)), this, SLOT(showEpg(QStringList, int)));
 	connect(ui.epgToday, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_2, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_3, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
@@ -424,10 +424,10 @@ void MainWindow::play(const QString &itemFile)
 
 void MainWindow::stop()
 {
-	ui.epgToday->epgClear();
-	ui.epgToday_2->epgClear();
-	ui.epgToday_3->epgClear();
-	ui.epgToday_4->epgClear();
+	ui.epgToday->clearList();
+	ui.epgToday_2->clearList();
+	ui.epgToday_3->clearList();
+	ui.epgToday_4->clearList();
 
 	if(!_videoSettings) {
 		ui.actionRatioOriginal->trigger();
@@ -442,26 +442,26 @@ void MainWindow::stop()
 	_controller->update();
 }
 
-void MainWindow::showEpg(const int &id, const QStringList &epgValue, const QString &date)
+void MainWindow::showEpg(const QStringList &epgValue, const int &id)
 {
 	switch (id) {
 		case 0:
 			ui.infoBarWidget->setEpg(epgValue.at(0), epgValue.at(1));
 			break;
 		case 1:
-			ui.epgTabWidget->setTabText(0,date);
+			ui.epgTabWidget->setTabText(0,QDate::currentDate().addDays(id-1).toString("d.M."));
 			ui.epgToday->setEpg(epgValue);
 			break;
 		case 2:
-			ui.epgTabWidget->setTabText(1,date);
+			ui.epgTabWidget->setTabText(1,QDate::currentDate().addDays(id-1).toString("d.M."));
 			ui.epgToday_2->setEpg(epgValue);
 			break;
 		case 3:
-			ui.epgTabWidget->setTabText(2,date);
+			ui.epgTabWidget->setTabText(2,QDate::currentDate().addDays(id-1).toString("d.M."));
 			ui.epgToday_3->setEpg(epgValue);
 			break;
 		case 4:
-			ui.epgTabWidget->setTabText(3,date);
+			ui.epgTabWidget->setTabText(3,QDate::currentDate().addDays(id-1).toString("d.M."));
 			ui.epgToday_4->setEpg(epgValue);
 			break;
 		default:

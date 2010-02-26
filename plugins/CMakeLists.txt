@@ -1,1 +1,2 @@
+ADD_SUBDIRECTORY(EpgSloveniaPlugin)
 ADD_SUBDIRECTORY(FripPlugin)
