@@ -43,7 +43,7 @@ void EpgLoader::getEpg(const QString &arg, const bool &type)
 	_show = type;
 	_currentArgument = arg;
 
-	if(!_init) {
+	if(!_init && !_show) {
 		init();
 		return;
 	}
@@ -89,7 +89,7 @@ void EpgLoader::initDone()
 	_init = _plugin->init(_codec->toUnicode(httpResponse));
 
 	if(_currentArgument != "")
-		getEpg(_currentArgument, false);
+		getEpg(_currentArgument, _show);
 }
 
 void EpgLoader::epg()
