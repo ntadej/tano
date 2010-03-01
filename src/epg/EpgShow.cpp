@@ -18,6 +18,7 @@
 #include <QtCore/QUrl>
 
 #include "EpgShow.h"
+#include "../Common.h"
 
 EpgShow::EpgShow(QWidget *parent)
 	: QWidget(parent)
@@ -25,7 +26,7 @@ EpgShow::EpgShow(QWidget *parent)
 	ui.setupUi(this);
 
 	_file = 0;
-	_loader = new EpgLoader("EpgSloveniaPlugin");
+	_loader = new EpgLoader(Common::defaultEpgPlugin());
 	_http = new QHttp(this);
 
 	connect(_loader, SIGNAL(epgDone(QStringList, int)), this, SLOT(display(QStringList)));
@@ -42,7 +43,7 @@ void EpgShow::open(const QString &url)
 {
 	ui.mainWidget->setCurrentIndex(0);
 
-	setWindowTitle("");
+	setWindowTitle(tr("Show info"));
 	ui.labelName->setText("");
 	ui.labelTime->setText("");
 	ui.labelInfo->setText("");
@@ -78,9 +79,6 @@ void EpgShow::downloadFile(const QString &u)
 	if (QFile::exists(fileInfo.fileName())) {
 		QFile::remove(fileInfo.fileName());
 	}
-
-	if(_file)
-		delete _file;
 
 	_file = new QFile(QDir::tempPath() + "/" + fileInfo.fileName());
 	if (!_file->open(QIODevice::WriteOnly)) {

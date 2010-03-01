@@ -241,7 +241,7 @@ void EditSettings::read()
 		ui.checkRecorder->toggle();
 		ui.editRecorder->setText(_settings->value("dir","").toString());
 		for(int i=0;i<ui.comboRecorderPlugin->count();i++) {
-			if(ui.comboRecorderPlugin->itemText(i)==_settings->value("backend", "FripPlugin").toString()) {
+			if(ui.comboRecorderPlugin->itemText(i)==_settings->value("backend", Common::defaultRecorderPlugin()).toString()) {
 				ui.comboSub->setCurrentIndex(i);
 				break;
 			}

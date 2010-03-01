@@ -29,7 +29,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent), _select(0), _time(new Time()), _update(new Updates()),
-	_playlistEditor(0), _timersEditor(0), _epg(new EpgLoader("EpgSloveniaPlugin")), _epgShow(new EpgShow())
+	_playlistEditor(0), _timersEditor(0), _epg(new EpgLoader(Common::defaultEpgPlugin())), _epgShow(new EpgShow())
 {
 	QPixmap pixmap(":/icons/images/splash.png");
 	QSplashScreen *splash = new QSplashScreen(pixmap);
@@ -192,14 +192,8 @@ void MainWindow::createConnections()
 	connect(ui.actionPlay, SIGNAL(triggered()), _backend, SLOT(pause()));
 	connect(ui.actionStop, SIGNAL(triggered()), _backend, SLOT(stop()));
 	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
-	connect(ui.actionBack, SIGNAL(triggered()), _select, SLOT(back()));
-	connect(ui.actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-
-	//connect(ui.infoBarWidget, SIGNAL(refresh()), _epg, SLOT(refresh()));
-	connect(ui.infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
 
 	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playChannel(QTreeWidgetItem*)));
-	connect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
 
 	connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
 	connect(ui.actionTray, SIGNAL(triggered()), this, SLOT(tray()));
@@ -212,6 +206,7 @@ void MainWindow::createConnections()
 	connect(ui.epgToday_2, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_3, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui.epgToday_4, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
+	connect(ui.infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
 	connect(_update, SIGNAL(updatesDone(QStringList)), _trayIcon, SLOT(message(QStringList)));
 
 	connect(_rightMenu, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
@@ -226,8 +221,6 @@ void MainWindow::createConnections()
 
 	if(_wheelType == "volume")
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
-	else
-		connect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
 
 	connect(_time, SIGNAL(startTimer(Timer*)), ui.recorder, SLOT(recordTimer(Timer*)));
 	connect(_time, SIGNAL(stopTimer(Timer*)), ui.recorder, SLOT(stopTimer(Timer*)));
@@ -501,6 +494,15 @@ void MainWindow::processMenu(const QString &type, const QList<QAction *> &list)
 // Open dialogs
 void MainWindow::openPlaylist(const bool &start)
 {
+	if(_select != 0) {
+		disconnect(ui.actionBack, SIGNAL(triggered()), _select, SLOT(back()));
+		disconnect(ui.actionNext, SIGNAL(triggered()), _select, SLOT(next()));
+		disconnect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
+		if(_wheelType != "volume")
+			disconnect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
+		delete _select;
+	}
+
 	if (!start)
 	_playlistName =
 		QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
@@ -518,10 +520,12 @@ void MainWindow::openPlaylist(const bool &start)
 
 	_hasPlaylist = true;
 
-	if(_select != 0)
-		delete _select;
-
 	_select = new ChannelSelect(this, ui.channelNumber, ui.playlistWidget->nums());
+	connect(ui.actionBack, SIGNAL(triggered()), _select, SLOT(back()));
+	connect(ui.actionNext, SIGNAL(triggered()), _select, SLOT(next()));
+	connect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
+	if(_wheelType != "volume")
+		connect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
 
 	ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
 }

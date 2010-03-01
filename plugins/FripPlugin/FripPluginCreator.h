@@ -26,7 +26,7 @@ class FripPluginCreator : public QObject, public RecorderPluginCreator
 Q_OBJECT;
 Q_INTERFACES( RecorderPluginCreator );
 Q_CLASSINFO("PLUGINTYPE", "Recorder");
-Q_CLASSINFO("PLUGINNAME", "FripPlugin");
+Q_CLASSINFO("PLUGINNAME", "Frip");
 
 public:
 	RecorderPlugin *createRecorderPluginInstance();

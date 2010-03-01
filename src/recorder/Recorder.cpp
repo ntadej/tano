@@ -44,7 +44,7 @@ Recorder::Recorder(QWidget *parent)
 
 	PluginsLoader *loader = new PluginsLoader();
 	for(int i=0; i < loader->recorderPlugin().size(); i++)
-		if(loader->recorderName()[i] == settings->value("backend","FripPlugin").toString())
+		if(loader->recorderName()[i] == settings->value("backend", Common::defaultRecorderPlugin()).toString())
 			_plugin = loader->recorder(loader->recorderPlugin()[i]);
 	delete loader;
 

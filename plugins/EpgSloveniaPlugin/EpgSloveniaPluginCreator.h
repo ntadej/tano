@@ -26,7 +26,7 @@ class EpgSloveniaPluginCreator : public QObject, public EpgPluginCreator
 Q_OBJECT;
 Q_INTERFACES( EpgPluginCreator );
 Q_CLASSINFO("PLUGINTYPE", "EPG");
-Q_CLASSINFO("PLUGINNAME", "EpgSloveniaPlugin");
+Q_CLASSINFO("PLUGINNAME", "EpgSlovenia");
 
 public:
 	EpgPlugin *createEpgPluginInstance();

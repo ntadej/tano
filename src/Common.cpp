@@ -139,3 +139,13 @@ QList<const char *> Common::libvlcArgs()
 
 	return args;
 }
+
+QString Common::defaultEpgPlugin()
+{
+	return QString("EpgSlovenia");
+}
+
+QString Common::defaultRecorderPlugin()
+{
+	return QString("Frip");
+}

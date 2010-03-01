@@ -31,6 +31,9 @@ public:
 	static QString settingsPath();
 
 	static QList<const char *> libvlcArgs();
+
+	static QString defaultEpgPlugin();
+	static QString defaultRecorderPlugin();
 };
 
 #endif // TANO_COMMON_H_

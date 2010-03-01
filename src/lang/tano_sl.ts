@@ -766,6 +766,11 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <source>&lt;center&gt;&lt;h1&gt;Loading ...&lt;/h1&gt;&lt;/center&gt;</source>
         <translation>&lt;center&gt;&lt;h1&gt;Nalagam ...&lt;/h1&gt;&lt;/center&gt;</translation>
     </message>
+    <message>
+        <location filename="../epg/EpgShow.cpp" line="46"/>
+        <source>Show info</source>
+        <translation>Informacija o oddaji</translation>
+    </message>
 </context>
 <context>
     <name>FirstRun</name>
@@ -885,14 +890,14 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <location filename="../../build/src/ui_MainWindow.h" line="782"/>
         <location filename="../../build/src/ui_MainWindow.h" line="852"/>
         <location filename="../../build/src/ui_MainWindow.h" line="855"/>
+        <location filename="../MainWindow.cpp" line="381"/>
+        <location filename="../MainWindow.cpp" line="382"/>
+        <location filename="../MainWindow.cpp" line="383"/>
+        <location filename="../MainWindow.cpp" line="384"/>
         <location filename="../MainWindow.cpp" line="388"/>
         <location filename="../MainWindow.cpp" line="389"/>
         <location filename="../MainWindow.cpp" line="390"/>
         <location filename="../MainWindow.cpp" line="391"/>
-        <location filename="../MainWindow.cpp" line="395"/>
-        <location filename="../MainWindow.cpp" line="396"/>
-        <location filename="../MainWindow.cpp" line="397"/>
-        <location filename="../MainWindow.cpp" line="398"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
@@ -909,7 +914,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="627"/>
+        <location filename="../MainWindow.cpp" line="631"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
@@ -1115,40 +1120,40 @@ This will stop recording in progress.</source>
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="379"/>
-        <location filename="../MainWindow.cpp" line="380"/>
-        <location filename="../MainWindow.cpp" line="381"/>
-        <location filename="../MainWindow.cpp" line="382"/>
+        <location filename="../MainWindow.cpp" line="372"/>
+        <location filename="../MainWindow.cpp" line="373"/>
+        <location filename="../MainWindow.cpp" line="374"/>
+        <location filename="../MainWindow.cpp" line="375"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="506"/>
+        <location filename="../MainWindow.cpp" line="508"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="508"/>
+        <location filename="../MainWindow.cpp" line="510"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="531"/>
+        <location filename="../MainWindow.cpp" line="535"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="533"/>
+        <location filename="../MainWindow.cpp" line="537"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="544"/>
+        <location filename="../MainWindow.cpp" line="548"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="545"/>
+        <location filename="../MainWindow.cpp" line="549"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -1165,8 +1170,8 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../../build/src/ui_MainWindow.h" line="760"/>
         <location filename="../MainWindow.cpp" line="69"/>
-        <location filename="../MainWindow.cpp" line="579"/>
-        <location filename="../MainWindow.cpp" line="581"/>
+        <location filename="../MainWindow.cpp" line="583"/>
+        <location filename="../MainWindow.cpp" line="585"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1191,7 +1196,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../../build/src/ui_MainWindow.h" line="785"/>
         <location filename="../../build/src/ui_MainWindow.h" line="787"/>
-        <location filename="../MainWindow.cpp" line="620"/>
+        <location filename="../MainWindow.cpp" line="624"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
