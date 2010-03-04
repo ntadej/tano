@@ -38,10 +38,10 @@ signals:
 
 private slots:
 	void epg();
-	void schedule();
-	void show();
+	void schedule(const bool &error);
+	void show(const bool &error);
 	void init();
-	void initDone();
+	void initDone(const bool &error);
 	void now();
 
 private:

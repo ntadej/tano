@@ -73,7 +73,7 @@
    </widget>
    <widget class="QMenu" name="menuRecorder">
     <property name="title">
-     <string>Recorder</string>
+     <string>&amp;Recorder</string>
     </property>
     <addaction name="actionRecorder"/>
     <addaction name="actionTimers"/>
@@ -88,102 +88,6 @@
     <addaction name="actionEditPlaylist"/>
     <addaction name="actionSettings"/>
    </widget>
-   <widget class="QMenu" name="menuMedia">
-    <property name="title">
-     <string>&amp;Media</string>
-    </property>
-    <widget class="QMenu" name="menuVolume">
-     <property name="title">
-      <string>Audio</string>
-     </property>
-     <property name="icon">
-      <iconset resource="images.qrc">
-       <normaloff>:/icons/images/player_volume.png</normaloff>:/icons/images/player_volume.png</iconset>
-     </property>
-     <widget class="QMenu" name="menuAudio_channel">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="title">
-       <string>Audio channel</string>
-      </property>
-     </widget>
-     <addaction name="actionMute"/>
-     <addaction name="actionVolumeUp"/>
-     <addaction name="actionVolumeDown"/>
-     <addaction name="menuAudio_channel"/>
-    </widget>
-    <widget class="QMenu" name="menuVideo">
-     <property name="title">
-      <string>Video</string>
-     </property>
-     <property name="icon">
-      <iconset resource="images.qrc">
-       <normaloff>:/icons/images/video.png</normaloff>:/icons/images/video.png</iconset>
-     </property>
-     <widget class="QMenu" name="menuCrop_video">
-      <property name="title">
-       <string>Crop video</string>
-      </property>
-      <addaction name="actionCropOriginal"/>
-      <addaction name="actionCrop16_9"/>
-      <addaction name="actionCrop16_10"/>
-      <addaction name="actionCrop1_85_1"/>
-      <addaction name="actionCrop2_21_1"/>
-      <addaction name="actionCrop2_35_1"/>
-      <addaction name="actionCrop2_39_1"/>
-      <addaction name="actionCrop5_4"/>
-      <addaction name="actionCrop5_3"/>
-      <addaction name="actionCrop4_3"/>
-      <addaction name="actionCrop1_1"/>
-     </widget>
-     <widget class="QMenu" name="menuSubtitles">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="title">
-       <string>Subtitles</string>
-      </property>
-     </widget>
-     <widget class="QMenu" name="menuDeinterlacing">
-      <property name="enabled">
-       <bool>false</bool>
-      </property>
-      <property name="title">
-       <string>Deinterlacing</string>
-      </property>
-      <addaction name="actionFilterDisabled"/>
-      <addaction name="actionFilterDiscard"/>
-      <addaction name="actionFilterBlend"/>
-      <addaction name="actionFilterMean"/>
-      <addaction name="actionFilterBob"/>
-      <addaction name="actionFilterLinear"/>
-      <addaction name="actionFilterX"/>
-     </widget>
-     <widget class="QMenu" name="menuAspect_ratio">
-      <property name="title">
-       <string>Aspect ratio</string>
-      </property>
-      <addaction name="actionRatioOriginal"/>
-      <addaction name="actionRatio1_1"/>
-      <addaction name="actionRatio4_3"/>
-      <addaction name="actionRatio16_9"/>
-      <addaction name="actionRatio16_10"/>
-      <addaction name="actionRatio2_21_1"/>
-      <addaction name="actionRatio5_4"/>
-     </widget>
-     <addaction name="menuAspect_ratio"/>
-     <addaction name="menuCrop_video"/>
-     <addaction name="menuSubtitles"/>
-     <addaction name="menuDeinterlacing"/>
-    </widget>
-    <addaction name="actionPlay"/>
-    <addaction name="actionStop"/>
-    <addaction name="actionBack"/>
-    <addaction name="actionNext"/>
-    <addaction name="menuVolume"/>
-    <addaction name="menuVideo"/>
-   </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
      <string>&amp;Help</string>
@@ -195,7 +99,7 @@
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
-     <string>&amp;View</string>
+     <string>Vie&amp;w</string>
     </property>
     <addaction name="actionTop"/>
     <addaction name="actionLite"/>
@@ -204,9 +108,97 @@
     <addaction name="actionInfoPanel"/>
     <addaction name="actionControls"/>
    </widget>
+   <widget class="QMenu" name="menuVideo">
+    <property name="title">
+     <string>&amp;Video</string>
+    </property>
+    <widget class="QMenu" name="menuCrop">
+     <property name="title">
+      <string>Crop video</string>
+     </property>
+     <addaction name="actionCropOriginal"/>
+     <addaction name="actionCrop16_9"/>
+     <addaction name="actionCrop16_10"/>
+     <addaction name="actionCrop1_85_1"/>
+     <addaction name="actionCrop2_21_1"/>
+     <addaction name="actionCrop2_35_1"/>
+     <addaction name="actionCrop2_39_1"/>
+     <addaction name="actionCrop5_4"/>
+     <addaction name="actionCrop5_3"/>
+     <addaction name="actionCrop4_3"/>
+     <addaction name="actionCrop1_1"/>
+    </widget>
+    <widget class="QMenu" name="menuSubtitles">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Subtitles</string>
+     </property>
+    </widget>
+    <widget class="QMenu" name="menuDeinterlacing">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Deinterlacing</string>
+     </property>
+     <addaction name="actionFilterDisabled"/>
+     <addaction name="actionFilterDiscard"/>
+     <addaction name="actionFilterBlend"/>
+     <addaction name="actionFilterMean"/>
+     <addaction name="actionFilterBob"/>
+     <addaction name="actionFilterLinear"/>
+     <addaction name="actionFilterX"/>
+    </widget>
+    <widget class="QMenu" name="menuAspectRatio">
+     <property name="title">
+      <string>Aspect ratio</string>
+     </property>
+     <addaction name="actionRatioOriginal"/>
+     <addaction name="actionRatio1_1"/>
+     <addaction name="actionRatio4_3"/>
+     <addaction name="actionRatio16_9"/>
+     <addaction name="actionRatio16_10"/>
+     <addaction name="actionRatio2_21_1"/>
+     <addaction name="actionRatio5_4"/>
+    </widget>
+    <addaction name="menuAspectRatio"/>
+    <addaction name="menuCrop"/>
+    <addaction name="menuSubtitles"/>
+    <addaction name="menuDeinterlacing"/>
+   </widget>
+   <widget class="QMenu" name="menuAudio">
+    <property name="title">
+     <string>&amp;Audio</string>
+    </property>
+    <widget class="QMenu" name="menuAudioChannel">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Audio channel</string>
+     </property>
+    </widget>
+    <addaction name="actionMute"/>
+    <addaction name="actionVolumeUp"/>
+    <addaction name="actionVolumeDown"/>
+    <addaction name="menuAudioChannel"/>
+   </widget>
+   <widget class="QMenu" name="menuMedia">
+    <property name="title">
+     <string>&amp;Playback</string>
+    </property>
+    <addaction name="actionPlay"/>
+    <addaction name="actionStop"/>
+    <addaction name="actionBack"/>
+    <addaction name="actionNext"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
    <addaction name="menuMedia"/>
+   <addaction name="menuAudio"/>
+   <addaction name="menuVideo"/>
    <addaction name="menuRecorder"/>
    <addaction name="menuOptions"/>
    <addaction name="menuAbout"/>
@@ -313,55 +305,11 @@
          <string>Schedule</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="margin">
+          <number>0</number>
+         </property>
          <item>
-          <widget class="QTabWidget" name="epgTabWidget">
-           <property name="currentIndex">
-            <number>0</number>
-           </property>
-           <property name="usesScrollButtons">
-            <bool>false</bool>
-           </property>
-           <widget class="QWidget" name="tabToday">
-            <attribute name="title">
-             <string/>
-            </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_2">
-             <item>
-              <widget class="EpgList" name="epgToday" native="true"/>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="tabDay2">
-            <attribute name="title">
-             <string/>
-            </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_5">
-             <item>
-              <widget class="EpgList" name="epgToday_2" native="true"/>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="tabDay3">
-            <attribute name="title">
-             <string/>
-            </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_6">
-             <item>
-              <widget class="EpgList" name="epgToday_3" native="true"/>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="tabDay4">
-            <attribute name="title">
-             <string/>
-            </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_8">
-             <item>
-              <widget class="EpgList" name="epgToday_4" native="true"/>
-             </item>
-            </layout>
-           </widget>
-          </widget>
+          <widget class="EpgSchedule" name="scheduleWidget" native="true"/>
          </item>
         </layout>
        </widget>
@@ -1183,9 +1131,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>EpgList</class>
+   <class>EpgSchedule</class>
    <extends>QWidget</extends>
-   <header>epg/EpgList.h</header>
+   <header>epg/EpgSchedule.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -202,10 +202,7 @@ void MainWindow::createConnections()
 	connect(ui.videoWidget, SIGNAL(osdVisibility(bool)), ui.osdWidget, SLOT(setVisible(bool)));
 
 	connect(_epg, SIGNAL(epgDone(QStringList, int)), this, SLOT(showEpg(QStringList, int)));
-	connect(ui.epgToday, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
-	connect(ui.epgToday_2, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
-	connect(ui.epgToday_3, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
-	connect(ui.epgToday_4, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
+	connect(ui.scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui.infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
 	connect(_update, SIGNAL(updatesDone(QStringList)), _trayIcon, SLOT(message(QStringList)));
 
@@ -269,7 +266,7 @@ void MainWindow::createMenus()
 	_rightMenu->addAction(ui.actionLite);
 	_rightMenu->addAction(ui.actionFullscreen);
 	_rightMenu->addSeparator();
-	_rightMenu->addMenu(ui.menuVolume);
+	_rightMenu->addMenu(ui.menuAudio);
 	_rightMenu->addMenu(ui.menuVideo);
 	_rightMenu->addSeparator();
 	if(_recorderEnabled) {
@@ -416,18 +413,17 @@ void MainWindow::play(const QString &itemFile)
 
 void MainWindow::stop()
 {
-	ui.epgToday->clearList();
-	ui.epgToday_2->clearList();
-	ui.epgToday_3->clearList();
-	ui.epgToday_4->clearList();
-
 	if(!_videoSettings) {
 		ui.actionRatioOriginal->trigger();
 		ui.actionCropOriginal->trigger();
 	}
 
 	ui.infoBarWidget->clear();
+
 	_epg->stop();
+	ui.scheduleWidget->clear();
+	ui.scheduleWidget->setPage(0);
+
 	tooltip();
 	_trayIcon->changeToolTip();
 
@@ -441,20 +437,11 @@ void MainWindow::showEpg(const QStringList &epgValue, const int &id)
 			ui.infoBarWidget->setEpg(epgValue.at(0), epgValue.at(1));
 			break;
 		case 1:
-			ui.epgTabWidget->setTabText(0,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui.epgToday->setEpg(epgValue);
-			break;
 		case 2:
-			ui.epgTabWidget->setTabText(1,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui.epgToday_2->setEpg(epgValue);
-			break;
 		case 3:
-			ui.epgTabWidget->setTabText(2,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui.epgToday_3->setEpg(epgValue);
-			break;
 		case 4:
-			ui.epgTabWidget->setTabText(3,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui.epgToday_4->setEpg(epgValue);
+			ui.scheduleWidget->setEpg(epgValue, id);
+			ui.scheduleWidget->setPage(1);
 			break;
 		default:
 			break;
@@ -466,27 +453,27 @@ void MainWindow::processMenu(const QString &type, const QList<QAction *> &list)
 	if(type == "sub")
 		ui.menuSubtitles->clear();
 	else if(type == "audio")
-		ui.menuAudio_channel->clear();
+		ui.menuAudioChannel->clear();
 
 	if(list.size()==0) {
 		if(type == "sub")
 			ui.menuSubtitles->setDisabled(true);
 		else if(type == "audio")
-			ui.menuAudio_channel->setDisabled(true);
+			ui.menuAudioChannel->setDisabled(true);
 
 		return;
 	} else {
 		if(type == "sub")
 			ui.menuSubtitles->setDisabled(false);
 		else if(type == "audio")
-			ui.menuAudio_channel->setDisabled(false);
+			ui.menuAudioChannel->setDisabled(false);
 	}
 
 	for (int i = 0; i < list.size(); ++i) {
 		if(type == "sub")
 			ui.menuSubtitles->addAction(list.at(i));
 		else if(type == "audio")
-			ui.menuAudio_channel->addAction(list.at(i));
+			ui.menuAudioChannel->addAction(list.at(i));
 	}
 }
 

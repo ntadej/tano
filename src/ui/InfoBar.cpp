@@ -13,22 +13,40 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include <QtGui/QHBoxLayout>
 #include <QtGui/QScrollBar>
 
 #include "InfoBar.h"
 
 InfoBar::InfoBar(QWidget *parent)
-	: QWidget(parent)
+	: QScrollArea(parent), _direction(false)
 {
-	ui.setupUi(this);
-	ui.buttonRefresh->setEnabled(false);
-
 	_timer = new QTimer(this);
 	_direction = true;
 
-	connect(ui.labelNow, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
-	connect(ui.labelNext, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
-	connect(ui.buttonRefresh, SIGNAL(clicked()), this, SIGNAL(refresh()));
+	QWidget *widget = new QWidget(this);
+	_labelChannel = new QLabel(widget);
+	_labelLanguage = new QLabel(widget);
+	_labelNow = new QLabel(widget);
+	_labelNext = new QLabel(widget);
+	QHBoxLayout *layout = new QHBoxLayout;
+	layout->setContentsMargins(4,0,4,0);
+	layout->setSpacing(10);
+	layout->addWidget(_labelChannel);
+	layout->addWidget(_labelLanguage);
+	layout->addWidget(_labelNow);
+	layout->addWidget(_labelNext);
+	layout->addSpacerItem(new QSpacerItem(10, 10, QSizePolicy::Expanding, QSizePolicy::Fixed));
+	widget->setLayout(layout);
+
+	setWidget(widget);
+	setWidgetResizable(true);
+	setMaximumHeight(35);
+	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+	connect(_labelNow, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
+	connect(_labelNext, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
 	connect(_timer, SIGNAL(timeout()), this, SLOT(scroll()));
 
 	_timer->start(50);
@@ -41,14 +59,14 @@ InfoBar::~InfoBar()
 
 void InfoBar::scroll()
 {
-	if(ui.scrollArea->horizontalScrollBar()->maximum() != 0) {
-		if(_direction && ui.scrollArea->horizontalScrollBar()->value()<ui.scrollArea->horizontalScrollBar()->maximum()) {
-			ui.scrollArea->horizontalScrollBar()->setValue(ui.scrollArea->horizontalScrollBar()->value()+1);
-			if(ui.scrollArea->horizontalScrollBar()->maximum() == ui.scrollArea->horizontalScrollBar()->value())
+	if(horizontalScrollBar()->maximum() != 0) {
+		if(_direction && horizontalScrollBar()->value() < horizontalScrollBar()->maximum()) {
+			horizontalScrollBar()->setValue(horizontalScrollBar()->value()+1);
+			if(horizontalScrollBar()->maximum() == horizontalScrollBar()->value())
 				_direction = false;
-		} else if(!_direction && ui.scrollArea->horizontalScrollBar()->value()>ui.scrollArea->horizontalScrollBar()->minimum()) {
-			ui.scrollArea->horizontalScrollBar()->setValue(ui.scrollArea->horizontalScrollBar()->value()-1);
-			if(ui.scrollArea->horizontalScrollBar()->value() == 0)
+		} else if(!_direction && horizontalScrollBar()->value() > horizontalScrollBar()->minimum()) {
+			horizontalScrollBar()->setValue(horizontalScrollBar()->value()-1);
+			if(horizontalScrollBar()->value() == 0)
 				_direction = true;
 		}
 	}
@@ -56,22 +74,20 @@ void InfoBar::scroll()
 
 void InfoBar::clear()
 {
-	ui.buttonRefresh->setEnabled(false);
-	ui.labelNow->setText("");
-	ui.labelNext->setText("");
-	ui.labelChannel->setText("");
-	ui.labelLanguage->setText("");
+	_labelNow->setText("");
+	_labelNext->setText("");
+	_labelChannel->setText("");
+	_labelLanguage->setText("");
 }
 
 void InfoBar::setInfo(const QString &channel, const QString &language)
 {
-	ui.labelChannel->setText("<b>"+channel+"</b>");
-	ui.labelLanguage->setText(tr("Language:")+" "+language);
+	_labelChannel->setText("<b>"+channel+"</b>");
+	_labelLanguage->setText(tr("Language:")+" "+language);
 }
 
 void InfoBar::setEpg(const QString &now, const QString &next)
 {
-	ui.buttonRefresh->setEnabled(true);
-	ui.labelNow->setText(tr("Now:")+" "+now);
-	ui.labelNext->setText(tr("Next:")+" "+next);
+	_labelNow->setText(tr("Now:")+" "+now);
+	_labelNext->setText(tr("Next:")+" "+next);
 }

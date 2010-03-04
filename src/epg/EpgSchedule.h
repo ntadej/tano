@@ -1,5 +1,5 @@
 /****************************************************************************
-* InfoBar.h: InfoBar for Channel information display
+* EpgShedule.h: EPG schedule GUI class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,39 +13,29 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_INFOBAR_H_
-#define TANO_INFOBAR_H_
+#ifndef TANO_EPGSCHEDULE_H_
+#define TANO_EPGSCHEDULE_H_
 
-#include <QtCore/QTimer>
-#include <QtGui/QLabel>
-#include <QtGui/QScrollArea>
+#include <QWidget>
 
-class InfoBar : public QScrollArea
+#include <ui_EpgSchedule.h>
+
+class EpgSchedule : public QWidget
 {
 Q_OBJECT
 public:
-	InfoBar(QWidget *parent = 0);
-	~InfoBar();
+	EpgSchedule(QWidget *parent = 0);
+	~EpgSchedule();
 
-public slots:
 	void clear();
-	void setInfo(const QString &channel, const QString &language);
-	void setEpg(const QString &now, const QString &next);
+	void setEpg(const QStringList &epgValue, const int &id);
+	void setPage(const int &id);
 
 signals:
-	void open(const QString);
-
-private slots:
-	void scroll();
+	void urlClicked(const QString);
 
 private:
-	bool _direction;
-	QTimer *_timer;
-
-	QLabel *_labelLanguage;
-	QLabel *_labelChannel;
-	QLabel *_labelNow;
-	QLabel *_labelNext;
+	Ui::EpgSchedule ui;
 };
 
-#endif // TANO_INFOBAR_H_
+#endif // EPGSCHEDULE_H_

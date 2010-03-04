@@ -18,6 +18,9 @@
     <normaloff>:/icons/images/image.png</normaloff>:/icons/images/image.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QStackedWidget" name="mainWidget">
      <widget class="QWidget" name="pageLoading">
@@ -48,7 +51,7 @@
           <number>0</number>
          </property>
          <property name="value">
-          <number>80</number>
+          <number>263</number>
          </property>
         </widget>
        </item>
@@ -152,8 +155,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>578</width>
-            <height>466</height>
+            <width>68</width>
+            <height>33</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="_2">

@@ -69,8 +69,9 @@ void EpgLoader::now()
 
 void EpgLoader::stop()
 {
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule()));
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(show()));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(initDone(bool)));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule(bool)));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(show(bool)));
 	abort();
 	_timer->stop();
 }
@@ -78,12 +79,15 @@ void EpgLoader::stop()
 void EpgLoader::init()
 {
 	request(_plugin->httpHeader("init"));
-	connect(this, SIGNAL(done(bool)), this, SLOT(initDone()));
+	connect(this, SIGNAL(done(bool)), this, SLOT(initDone(bool)));
 }
 
-void EpgLoader::initDone()
+void EpgLoader::initDone(const bool &error)
 {
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(initDone()));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(initDone(bool)));
+
+	if(error)
+		return;
 
 	QByteArray httpResponse = readAll();
 
@@ -98,14 +102,17 @@ void EpgLoader::epg()
 	request(_plugin->httpHeader(_currentRequest));
 
 	if(_show)
-		connect(this, SIGNAL(done(bool)), this, SLOT(show()));
+		connect(this, SIGNAL(done(bool)), this, SLOT(show(bool)));
 	else
-		connect(this, SIGNAL(done(bool)), this, SLOT(schedule()));
+		connect(this, SIGNAL(done(bool)), this, SLOT(schedule(bool)));
 }
 
-void EpgLoader::schedule()
+void EpgLoader::schedule(const bool &error)
 {
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule()));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule(bool)));
+
+	if(error)
+		return;
 
 	QByteArray httpResponse = readAll();
 	QStringList list = _plugin->processSchedule(_codec->toUnicode(httpResponse));
@@ -128,9 +135,12 @@ void EpgLoader::schedule()
 	}
 }
 
-void EpgLoader::show()
+void EpgLoader::show(const bool &error)
 {
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(show()));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(show(bool)));
+
+	if(error)
+		return;
 
 	QByteArray httpResponse = readAll();
 	QStringList list = _plugin->processShow(_codec->toUnicode(httpResponse));
