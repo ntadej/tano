@@ -233,8 +233,10 @@ void VlcControl::updateSub()
 
 void VlcControl::checkPlayingState()
 {
-	if(!_vlcCurrentMediaPlayer)
+	if(!_vlcCurrentMediaPlayer) {
+		emit stateChanged(0);
 		return;
+	}
 
 	libvlc_state_t state;
 #if VLC_TRUNK

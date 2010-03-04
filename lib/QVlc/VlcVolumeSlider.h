@@ -29,20 +29,21 @@ public:
 	VlcVolumeSlider(QWidget *parent = 0);
 	~VlcVolumeSlider();
 
-	void setVolume(const int &volume);
-	int volume() const {return _slider->value();};
+	int volume() const {return _currentVolume;};
 
 public slots:
+	void setVolume(const int &volume);
 	void mute();
-	void vup();
-	void vdown();
-	void volumeControl(const bool &direction);
+	void vup() {volumeControl(true);};
+	void vdown() {volumeControl(false);};
+	void volumeControl(const bool &up);
 
 private slots:
-	void changeVolume(const int &newVolume);
 	void updateVolume();
 
 private:
+	int _currentVolume;
+
 	QSlider *_slider;
 	QLabel *_label;
 	QTimer *_timer;

@@ -28,7 +28,7 @@ VlcVolumeSlider::VlcVolumeSlider(QWidget *parent)
 
 	_label = new QLabel(this);
 	_label->setMinimumWidth(20);
-	_label->setText(QString().number(50));
+	_label->setText(QString().number(0));
 
 	QHBoxLayout *layout = new QHBoxLayout;
 	layout->addWidget(_slider);
@@ -38,7 +38,7 @@ VlcVolumeSlider::VlcVolumeSlider(QWidget *parent)
 	_timer = new QTimer(this);
 
 	connect(_timer, SIGNAL(timeout()), this, SLOT(updateVolume()));
-	connect(_slider, SIGNAL(valueChanged(int)), this, SLOT(changeVolume(int)));
+	connect(_slider, SIGNAL(valueChanged(int)), this, SLOT(setVolume(int)));
 
 	_timer->start(100);
 }
@@ -49,21 +49,11 @@ VlcVolumeSlider::~VlcVolumeSlider() {
 	delete _timer;
 }
 
-void VlcVolumeSlider::changeVolume(const int &newVolume)
+void VlcVolumeSlider::setVolume(const int &volume)
 {
-	if(!_vlcCurrentMediaPlayer)
-		return;
-
-	_label->setText(QString().number(newVolume));
-
-#if VLC_TRUNK
-	libvlc_audio_set_volume (_vlcCurrentMediaPlayer, newVolume);
-#else
-	libvlc_exception_clear(_vlcException);
-	libvlc_audio_set_volume (_vlcInstance, newVolume, _vlcException);
-#endif
-
-	VlcInstance::checkError();
+	_currentVolume = volume;
+	_slider->setValue(_currentVolume);
+	_label->setText(QString().number(_currentVolume));
 }
 
 void VlcVolumeSlider::updateVolume()
@@ -90,39 +80,49 @@ void VlcVolumeSlider::updateVolume()
 #else
 	volume = libvlc_audio_get_volume(_vlcInstance, _vlcException);
 #endif
-	_slider->setValue(volume);
-	_label->setText(QString().number(volume));
+
+	if(volume != _currentVolume) {
+#if VLC_TRUNK
+		libvlc_audio_set_volume (_vlcCurrentMediaPlayer, _currentVolume);
+#else
+		libvlc_exception_clear(_vlcException);
+		libvlc_audio_set_volume (_vlcInstance, _currentVolume, _vlcException);
+#endif
+	}
 
 	VlcInstance::checkError();
 }
 
-void VlcVolumeSlider::setVolume(const int &volume)
+void VlcVolumeSlider::volumeControl(const bool &up)
 {
-	_slider->setValue(volume);
-	_label->setText(QString().number(volume));
-}
-
-void VlcVolumeSlider::volumeControl(const bool &direction)
-{
-	if(direction)
-		vup();
+	if(up)
+		if(_currentVolume != 200)
+			_currentVolume+=1;
 	else
-		vdown();
-}
-
-void VlcVolumeSlider::vup()
-{
-	if(_slider->value() != 200)
-		changeVolume(_slider->value()+1);
-}
-
-void VlcVolumeSlider::vdown()
-{
-	if(_slider->value() != 0)
-		changeVolume(_slider->value()-1);
+		if(_currentVolume != 0)
+			_currentVolume-=1;
 }
 
 void VlcVolumeSlider::mute() {
+	int isMute;
+#if VLC_TRUNK
+	isMute = libvlc_audio_get_mute(_vlcCurrentMediaPlayer);
+#else
+	isMute = libvlc_audio_get_mute(_vlcInstance, _vlcException);
+#endif
+
+	VlcInstance::checkError();
+
+	if(isMute == 1) {
+		_timer->start(100);
+		_slider->setDisabled(false);
+		_label->setDisabled(false);
+	} else {
+		_timer->stop();
+		_slider->setDisabled(true);
+		_label->setDisabled(true);
+	}
+
 #if VLC_TRUNK
 	libvlc_audio_toggle_mute(_vlcCurrentMediaPlayer);
 #else

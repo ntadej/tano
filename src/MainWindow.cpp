@@ -98,7 +98,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::createGui()
 {
 	openPlaylist(true);
-
+	playingState(-1);
 	ui.pageMain->setStyleSheet("background-color: rgb(0,0,0);");
 }
 
@@ -319,6 +319,8 @@ void MainWindow::createSession()
 		ui.volumeSlider->setVolume(_sessionVolume);
 		if(_hasPlaylist)
 			playChannel(_sessionChannel);
+	} else {
+		ui.volumeSlider->setVolume(50);
 	}
 
 	if(_updatesOnStart)
@@ -373,7 +375,9 @@ void MainWindow::playingState(const int &status)
 		ui.actionPlay->setToolTip(tr("Pause"));
 		ui.buttonPlay->setToolTip(tr("Pause"));
 		ui.buttonPlay->setStatusTip(tr("Pause"));
-	} else if(status == 0) {
+		ui.actionMute->setEnabled(true);
+		ui.buttonMute->setEnabled(true);
+	} else if(status == 0 || status == -1) {
 		ui.actionPlay->setEnabled(true);
 		ui.buttonPlay->setEnabled(true);
 		ui.actionPlay->setIcon(QIcon(":/icons/images/player_play.png"));
@@ -382,13 +386,8 @@ void MainWindow::playingState(const int &status)
 		ui.actionPlay->setToolTip(tr("Play"));
 		ui.buttonPlay->setToolTip(tr("Play"));
 		ui.buttonPlay->setStatusTip(tr("Play"));
-	} else if(status == -1) {
-		ui.actionPlay->setEnabled(false);
-		ui.buttonPlay->setEnabled(false);
-		ui.actionPlay->setText(tr("Play"));
-		ui.actionPlay->setToolTip(tr("Play"));
-		ui.buttonPlay->setToolTip(tr("Play"));
-		ui.buttonPlay->setStatusTip(tr("Play"));
+		ui.actionMute->setEnabled(false);
+		ui.buttonMute->setEnabled(false);
 	}
 }
 

@@ -139,6 +139,9 @@ void VlcInstance::unloadMedia() {
 }
 
 void VlcInstance::play() {
+	if(_vlcCurrentMediaPlayer == NULL)
+		return;
+
 #if VLC_TRUNK
 	libvlc_media_player_play(_vlcCurrentMediaPlayer);
 #else
@@ -148,6 +151,9 @@ void VlcInstance::play() {
 }
 
 void VlcInstance::pause() {
+	if(_vlcCurrentMediaPlayer == NULL)
+		return;
+
 #if VLC_TRUNK
 	if(libvlc_media_player_can_pause(_vlcCurrentMediaPlayer) == 1)
 		libvlc_media_player_pause(_vlcCurrentMediaPlayer);
@@ -159,7 +165,7 @@ void VlcInstance::pause() {
 }
 
 void VlcInstance::stop() {
-	if(!_vlcCurrentMediaPlayer)
+	if(_vlcCurrentMediaPlayer == NULL)
 		return;
 
 #if VLC_TRUNK

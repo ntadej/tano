@@ -72,6 +72,7 @@ void EpgLoader::stop()
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule()));
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(show()));
 	abort();
+	_timer->stop();
 }
 
 void EpgLoader::init()
