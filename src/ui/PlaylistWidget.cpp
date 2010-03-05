@@ -70,7 +70,7 @@ void PlaylistWidget::open(const QString &file)
 	ui.treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
-void PlaylistWidget::save(const QString &name, const QString &file)
+void PlaylistWidget::save(const QString &name, const QString &epg, const QString &file)
 {
 	QFile f(file);
 	if (!f.open(QFile::WriteOnly | QFile::Text)) {
@@ -81,7 +81,7 @@ void PlaylistWidget::save(const QString &name, const QString &file)
 		return;
 	}
 
-	M3UGenerator *generator = new M3UGenerator(ui.treeWidget, name, _handler->channelMap());
+	M3UGenerator *generator = new M3UGenerator(ui.treeWidget, name, epg, _handler->channelMap());
 	generator->write(&f);
 	delete generator;
 }

@@ -40,121 +40,126 @@
 <context>
     <name>EditPlaylist</name>
     <message>
-        <location filename="../ui/EditPlaylist.cpp" line="89"/>
+        <location filename="../ui/EditPlaylist.cpp" line="98"/>
         <source>Save Channel list</source>
         <translation>Shrani Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui/EditPlaylist.cpp" line="91"/>
+        <location filename="../ui/EditPlaylist.cpp" line="100"/>
         <source>Tano TV Channel list Files (*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../ui/EditPlaylist.cpp" line="101"/>
+        <location filename="../ui/EditPlaylist.cpp" line="110"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../ui/EditPlaylist.cpp" line="103"/>
+        <location filename="../ui/EditPlaylist.cpp" line="112"/>
         <source>Tano TV Old Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Star seznam programov(*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../ui/EditPlaylist.cpp" line="119"/>
+        <location filename="../ui/EditPlaylist.cpp" line="128"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation>Ali želiš zapreti urejevalnik?
 Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="257"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="269"/>
         <source>Edit Channel List</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="258"/>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="260"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="270"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="272"/>
         <source>Add Channel</source>
         <translation>Dodaj Program</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="262"/>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="264"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="274"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="276"/>
         <source>Delete Channel</source>
         <translation>Izbriši Program</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="266"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="278"/>
         <source>Save</source>
         <translation>Shrani</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="267"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="279"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="268"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="280"/>
         <source>Reload</source>
         <translation>Ponovno naloži</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="269"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="281"/>
         <source>Import</source>
         <translation>Uvozi</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="270"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="282"/>
         <source>Playlist name:</source>
         <translation>Ime seznama programov:</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="272"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="283"/>
+        <source>EPG Plugin:</source>
+        <translation>EPG Vtičnik:</translation>
+    </message>
+    <message>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="285"/>
         <source>Editor</source>
         <translation>Urejevalnik</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="273"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="286"/>
         <source>Number:</source>
         <translation>Število:</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="274"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="287"/>
         <source>Name:</source>
         <translation>Ime:</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="275"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="288"/>
         <source>Categories:</source>
         <translation>Kategorije:</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="276"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="289"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="277"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="290"/>
         <source>EPG:</source>
         <translation>EPG:</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="278"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="291"/>
         <source>&lt;i&gt;You can separate categories with comma.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Kategorije lahko ločiš z vejico.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="279"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="292"/>
         <source>Url:</source>
         <translation>Naslov:</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="280"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="293"/>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Zaporedno število moraš uveljaviti.&lt;br&gt;Vse druge vrednosti se avtomatsko spremenijo.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="271"/>
+        <location filename="../../build/vlc-trunk/src/ui_EditPlaylist.h" line="284"/>
         <source>Toolbar</source>
         <translation>Orodna vrstica</translation>
     </message>
@@ -1315,20 +1320,20 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../xml/M3UHandler.cpp" line="27"/>
-        <location filename="../xml/M3UHandler.cpp" line="81"/>
+        <location filename="../xml/M3UHandler.cpp" line="28"/>
+        <location filename="../xml/M3UHandler.cpp" line="83"/>
         <location filename="../xml/tanohandler.cpp" line="26"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../xml/M3UHandler.cpp" line="66"/>
+        <location filename="../xml/M3UHandler.cpp" line="68"/>
         <source>A channel with this number already exists!</source>
         <translation>Program s to številko že obstaja!</translation>
     </message>
     <message>
-        <location filename="../xml/M3UHandler.cpp" line="164"/>
-        <location filename="../xml/M3UHandler.cpp" line="166"/>
+        <location filename="../xml/M3UHandler.cpp" line="169"/>
+        <location filename="../xml/M3UHandler.cpp" line="171"/>
         <source>New channel</source>
         <translation>Nov program</translation>
     </message>
@@ -1345,7 +1350,7 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Neznan naslov</translation>
     </message>
     <message>
-        <location filename="../xml/M3UHandler.cpp" line="65"/>
+        <location filename="../xml/M3UHandler.cpp" line="67"/>
         <location filename="../xml/TimersHandler.cpp" line="129"/>
         <source>Tano</source>
         <translation>Tano</translation>

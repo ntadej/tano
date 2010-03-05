@@ -32,12 +32,13 @@ public:
 
 	void clear();
 	void open(const QString &file);
-	void save(const QString &name, const QString &file);
+	void save(const QString &name, const QString &epg, const QString &file);
 
 	QTreeWidgetItem* createItem();
 	void deleteItem();
 
 	QString name() const {return _handler->name();};
+	QString epgPlugin() const {return _handler->epgPlugin();};
 	QString fileName() const {return _fileName;};
 	QList<int> nums() const {return _handler->nums();};
 	QTreeWidget *treeWidget() {return ui.treeWidget;};

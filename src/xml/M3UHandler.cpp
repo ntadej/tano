@@ -18,6 +18,7 @@
 #include <QtCore/QTextStream>
 #include <QtGui/QMessageBox>
 
+#include "Common.h"
 #include "M3UHandler.h"
 #include "tanohandler.h"
 
@@ -25,6 +26,7 @@ M3UHandler::M3UHandler(QTreeWidget *treeWidget)
 	: _treeWidget(treeWidget)
 {
 	_name = QObject::tr("Channel list");
+	_epgPlugin = Common::defaultEpgPlugin();
 	_channelIcon = QIcon(":/icons/images/video.png");
 }
 
@@ -108,6 +110,9 @@ void M3UHandler::processList()
 		if(_m3uLineList.at(i).contains("#EXTNAME")) {
 			_name = _m3uLineList.at(i);
 			_name.replace(QString("#EXTNAME:"),QString(""));
+		} else if(_m3uLineList.at(i).contains("#EXTEPG")) {
+			_epgPlugin = _m3uLineList.at(i);
+			_epgPlugin.replace(QString("#EXTEPG:"),QString(""));
 		} else if(_m3uLineList.at(i).contains("#EXTINF")) {
 			tmp = _m3uLineList.at(i);
 			tmp.replace(QString("#EXTINF:"),QString(""));

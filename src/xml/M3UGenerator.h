@@ -20,12 +20,12 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
-#include "../channels/Channel.h"
+#include "channels/Channel.h"
 
 class M3UGenerator
 {
 public:
-	M3UGenerator(QTreeWidget *treeWidget, const QString &n, QMap<QTreeWidgetItem*, Channel*> map);
+	M3UGenerator(QTreeWidget *treeWidget, const QString &n, const QString &epg, QMap<QTreeWidgetItem*, Channel*> map);
 
 	bool write(QIODevice *device);
 
@@ -34,6 +34,7 @@ private:
 
 	QTreeWidget *_treeWidget;
 	QString _name;
+	QString _epgPlugin;
 	QTextStream _out;
 
 	QMap<QTreeWidgetItem*, Channel*> _map;

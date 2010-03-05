@@ -17,9 +17,8 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
-#include <qdebug.h>
-
 #include "EditPlaylist.h"
+#include "plugins/PluginsLoader.h"
 
 EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent)
 	: QMainWindow(parent), _closeEnabled(false), _playlist(playlist)
@@ -48,6 +47,16 @@ EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent)
 	ui.playlist->disableCategories();
 	ui.playlist->open(_playlist);
 	ui.editName->setText(ui.playlist->name());
+
+	PluginsLoader *loader = new PluginsLoader();
+	for(int i=0; i < loader->epgPlugin().size(); i++)
+		ui.epgCombo->addItem(loader->epgName()[i]);
+	delete loader;
+	for(int i=0; i < ui.epgCombo->count(); i++)
+		if(ui.epgCombo->itemText(i) == ui.playlist->epgPlugin()) {
+			ui.epgCombo->setCurrentIndex(i);
+			break;
+		}
 }
 
 EditPlaylist::~EditPlaylist()
@@ -92,7 +101,7 @@ void EditPlaylist::save()
 	if (fileName.isEmpty())
 		return;
 
-	ui.playlist->save(ui.editName->text(), fileName);
+	ui.playlist->save(ui.editName->text(), ui.epgCombo->currentText(), fileName);
 }
 
 void EditPlaylist::import()

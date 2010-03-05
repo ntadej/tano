@@ -20,16 +20,26 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
        <widget class="QLabel" name="labelName">
         <property name="text">
          <string>Playlist name:</string>
         </property>
        </widget>
       </item>
-      <item>
+      <item row="0" column="1">
        <widget class="QLineEdit" name="editName"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelEpgPlugin">
+        <property name="text">
+         <string>EPG Plugin:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="epgCombo"/>
       </item>
      </layout>
     </item>

@@ -15,8 +15,8 @@
 
 #include "M3UGenerator.h"
 
-M3UGenerator::M3UGenerator(QTreeWidget *treeWidget, const QString &n, QMap<QTreeWidgetItem *, Channel *>map)
-	: _treeWidget(treeWidget), _name(n), _map(map)
+M3UGenerator::M3UGenerator(QTreeWidget *treeWidget, const QString &n, const QString &epg, QMap<QTreeWidgetItem *, Channel *>map)
+	: _treeWidget(treeWidget), _name(n),  _epgPlugin(epg), _map(map)
 {
 
 }
@@ -28,6 +28,9 @@ bool M3UGenerator::write(QIODevice *device)
 	_out << "#EXTM3U\n"
 		<< "#EXTNAME:"
 		<< _name
+		<< "\n"
+		<< "#EXTEPG:"
+		<< _epgPlugin
 		<< "\n\n";
 	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i)
 		generateItem(_map[_treeWidget->topLevelItem(i)], 1);

@@ -21,7 +21,7 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
-#include "../channels/Channel.h"
+#include "channels/Channel.h"
 
 class M3UHandler
 {
@@ -39,6 +39,7 @@ public:
 	Channel *channelRead(QTreeWidgetItem *item) {return _map[item];};
 	Channel *channelRead(const int &item) {return _nmap[item];};
 	QString name() const {return _name;};
+	QString epgPlugin() const {return _epgPlugin;};
 	QStringList categories() const {return _categoryList;};
 	QList<int> nums() const {return _channelNums;};
 	int processNewNum(QTreeWidgetItem *channel, const int &num);
@@ -55,6 +56,7 @@ private:
 	QIcon _channelIcon;
 
 	QString _name;
+	QString _epgPlugin;
 	QStringList _m3uLineList;
 	QStringList _categoryList;
 
