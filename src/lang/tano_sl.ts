@@ -4,17 +4,17 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_About.h" line="237"/>
+        <location filename="../../build/vlc-trunk/src/ui_About.h" line="243"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_About.h" line="238"/>
+        <location filename="../../build/vlc-trunk/src/ui_About.h" line="244"/>
         <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
         <translation>&lt;h4&gt;Licensirano pod licenco GNU GPL&lt;/h4&gt;</translation>
     </message>
     <message>
-        <location filename="../../build/vlc-trunk/src/ui_About.h" line="241"/>
+        <location filename="../../build/vlc-trunk/src/ui_About.h" line="247"/>
         <source>Back</source>
         <translation>Nazaj</translation>
     </message>
@@ -903,10 +903,10 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <location filename="../../build/vlc-trunk/src/ui_MainWindow.h" line="722"/>
         <location filename="../../build/vlc-trunk/src/ui_MainWindow.h" line="788"/>
         <location filename="../../build/vlc-trunk/src/ui_MainWindow.h" line="791"/>
-        <location filename="../MainWindow.cpp" line="382"/>
-        <location filename="../MainWindow.cpp" line="383"/>
         <location filename="../MainWindow.cpp" line="384"/>
         <location filename="../MainWindow.cpp" line="385"/>
+        <location filename="../MainWindow.cpp" line="386"/>
+        <location filename="../MainWindow.cpp" line="387"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
@@ -923,7 +923,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="617"/>
+        <location filename="../MainWindow.cpp" line="619"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
@@ -1041,7 +1041,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
         <location filename="../../build/vlc-trunk/src/ui_MainWindow.h" line="755"/>
-        <location filename="../MainWindow.cpp" line="162"/>
+        <location filename="../MainWindow.cpp" line="164"/>
         <source>Disabled</source>
         <translation>Onemogočeno</translation>
     </message>
@@ -1121,47 +1121,47 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="70"/>
+        <location filename="../MainWindow.cpp" line="72"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Ali želiš zapreti Tano?
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="371"/>
-        <location filename="../MainWindow.cpp" line="372"/>
         <location filename="../MainWindow.cpp" line="373"/>
         <location filename="../MainWindow.cpp" line="374"/>
+        <location filename="../MainWindow.cpp" line="375"/>
+        <location filename="../MainWindow.cpp" line="376"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="494"/>
+        <location filename="../MainWindow.cpp" line="496"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="496"/>
+        <location filename="../MainWindow.cpp" line="498"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="521"/>
+        <location filename="../MainWindow.cpp" line="523"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="523"/>
+        <location filename="../MainWindow.cpp" line="525"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="534"/>
+        <location filename="../MainWindow.cpp" line="536"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../MainWindow.cpp" line="535"/>
+        <location filename="../MainWindow.cpp" line="537"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -1177,9 +1177,9 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../../build/vlc-trunk/src/ui_MainWindow.h" line="700"/>
-        <location filename="../MainWindow.cpp" line="69"/>
-        <location filename="../MainWindow.cpp" line="569"/>
+        <location filename="../MainWindow.cpp" line="71"/>
         <location filename="../MainWindow.cpp" line="571"/>
+        <location filename="../MainWindow.cpp" line="573"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1204,7 +1204,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../../build/vlc-trunk/src/ui_MainWindow.h" line="725"/>
         <location filename="../../build/vlc-trunk/src/ui_MainWindow.h" line="727"/>
-        <location filename="../MainWindow.cpp" line="610"/>
+        <location filename="../MainWindow.cpp" line="612"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
@@ -1383,6 +1383,14 @@ To bo ustavilo trenutno snemanje.</translation>
         <location filename="../xml/TimersHandler.cpp" line="113"/>
         <source>Disabled or expired</source>
         <translation>Izključen ali pretečen</translation>
+    </message>
+</context>
+<context>
+    <name>QtKeySequenceEdit</name>
+    <message>
+        <location filename="../ui/QtKeySequenceEdit.cpp" line="54"/>
+        <source>Clear Shortcut</source>
+        <translation type="unfinished">Počisti bližnjico</translation>
     </message>
 </context>
 <context>

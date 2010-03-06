@@ -20,9 +20,11 @@
 #include <QtCore/QObject>
 #include <QtGui/QWidget>
 
+#include "VlcConfig.h"
+
 #include <vlc/vlc.h>
 
-#if VLC_TRUNK
+#if VLC_UNSTABLE
 #else
 extern libvlc_exception_t *_vlcException;
 #endif
@@ -40,6 +42,7 @@ public:
 	void openMedia(const QString &media);
 	static void checkError();
 	static QString version();
+	static QString libVlcVersion();
 
 public slots:
 	void init();
@@ -48,7 +51,7 @@ public slots:
 	void stop();
 
 private:
-	int fatalError();
+	int fatalError() const;
 	void unloadMedia();
 
 	libvlc_media_t * _vlcMedia;

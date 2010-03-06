@@ -22,6 +22,8 @@
 #include <QtGui/QMessageBox>
 #include <QtGui/QSplashScreen>
 
+#include <QVlc/VlcConfig.h>
+
 #include "MainWindow.h"
 #include "Common.h"
 #include "plugins/PluginsManager.h"
@@ -109,7 +111,7 @@ void MainWindow::createBackend()
 
 	_controller = new VlcControl(_defaultSubtitleLanguage);
 
-#if VLC_TRUNK
+#if VLC_UNSTABLE
 	ui.menuDeinterlacing->setEnabled(true);
 #endif
 }

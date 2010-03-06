@@ -1,17 +1,7 @@
-SET(MAIN_SOURCE_DIR "../")
-
-IF(MINGW)
-include_directories(${LIBVLC_INCLUDE_DIR})
-ENDIF(MINGW)
-
 CONFIGURE_FILE(
   "${CMAKE_CURRENT_SOURCE_DIR}/Ver.cpp.in"
   "${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp"
 )
-
-IF(${VLC_TRUNK} MATCHES "ON")
-ADD_DEFINITIONS(-DVLC_TRUNK=1)
-ENDIF(${VLC_TRUNK} MATCHES "ON")
 
 ###################
 # List of sources #
@@ -51,6 +41,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/InfoBar.h
 	ui/License.h
 	ui/PlaylistWidget.h
+	ui/QtKeySequenceEdit.h
 	ui/TrayIcon.h
 )
 
@@ -78,6 +69,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	ui/InfoBar.cpp
 	ui/License.cpp
 	ui/PlaylistWidget.cpp
+	ui/QtKeySequenceEdit.cpp
 	ui/TrayIcon.cpp
 	xml/M3UGenerator.cpp
 	xml/M3UHandler.cpp
@@ -156,12 +148,12 @@ ENDIF(NOT MINGW)
 # Include paths and set up targets #
 ####################################
 # This needs to be added in order for #include to work inside .cpp files
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR} "${MAIN_SOURCE_DIR}/lib")
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 
 # This line adds the include path of the Qt
 # directory to the compiler include path
 INCLUDE(${QT_USE_FILE})
-
+INCLUDE_DIRECTORIES(${LIBQVLC_INCLUDE_DIR})
 
 IF(MINGW)
 	# CMake currently doesn't support windres yet. Add command manually
@@ -187,7 +179,7 @@ ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs
 
 # Here the needed Qt Libraries are added to the link
 # command. Never remove that line :-)
-TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} QVlc QtKeySequenceEdit)
+TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${LIBQVLC_LIBRARY})
 
 
 ###############

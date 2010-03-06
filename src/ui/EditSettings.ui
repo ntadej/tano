@@ -1251,7 +1251,7 @@
   <customwidget>
    <class>QtKeySequenceEdit</class>
    <extends>QWidget</extends>
-   <header location="global">QtKeySequenceEdit/QtKeySequenceEdit.h</header>
+   <header>ui/QtKeySequenceEdit.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

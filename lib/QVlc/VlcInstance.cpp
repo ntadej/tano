@@ -17,11 +17,12 @@
 #include <QtCore/QDebug>
 #include <QtGui/QMessageBox>
 
+#include "Version.h"
 #include "VlcInstance.h"
 
 libvlc_instance_t * _vlcInstance = NULL;
 
-#if VLC_TRUNK
+#if VLC_UNSTABLE
 #else
 libvlc_exception_t * _vlcException = new libvlc_exception_t();
 #endif
@@ -41,6 +42,11 @@ VlcInstance::~VlcInstance()
 
 QString VlcInstance::version()
 {
+	return Version::QVlc();
+}
+
+QString VlcInstance::libVlcVersion()
+{
 	return QString(libvlc_get_version());
 }
 
@@ -50,7 +56,7 @@ void VlcInstance::init()
 	for(int i=0; i<_args.size(); i++)
 		vlcArgs[i] = _args[i];
 
-#if VLC_TRUNK
+#if VLC_UNSTABLE
 	_vlcInstance = libvlc_new(sizeof(vlcArgs) / sizeof(*vlcArgs), vlcArgs);
 #else
 	libvlc_exception_init(_vlcException);
@@ -77,7 +83,7 @@ void VlcInstance::openMedia(const QString &media)
 {
 	unloadMedia();
 
-#if VLC_TRUNK
+#if VLC_UNSTABLE
 	/* Create a new LibVLC media descriptor */
 	_vlcMedia = libvlc_media_new_location(_vlcInstance, media.toAscii());
 	checkError();
@@ -99,19 +105,19 @@ void VlcInstance::openMedia(const QString &media)
 	/* Get our media instance to use our window */
 	if (_vlcCurrentMediaPlayer) {
 #if defined(Q_OS_WIN)
-	#if VLC_TRUNK
+	#if VLC_UNSTABLE
 		libvlc_media_player_set_hwnd(_vlcCurrentMediaPlayer, _widgetId);
 	#else
 		libvlc_media_player_set_hwnd(_vlcCurrentMediaPlayer, _widgetId, _vlcException);
 	#endif
 #elif defined(Q_OS_MAC)
-	#if VLC_TRUNK
+	#if VLC_UNSTABLE
 		libvlc_media_player_set_agl(_vlcCurrentMediaPlayer, _widgetId);
 	#else
 		libvlc_media_player_set_agl(_vlcCurrentMediaPlayer, _widgetId, _vlcException);
 	#endif
 #else
-	#if VLC_TRUNK
+	#if VLC_UNSTABLE
 		libvlc_media_player_set_xwindow(_vlcCurrentMediaPlayer, _widgetId);
 	#else
 		libvlc_media_player_set_xwindow(_vlcCurrentMediaPlayer, _widgetId, _vlcException);
@@ -124,7 +130,8 @@ void VlcInstance::openMedia(const QString &media)
 	play();
 }
 
-void VlcInstance::unloadMedia() {
+void VlcInstance::unloadMedia()
+{
 	if (_vlcCurrentMediaPlayer) {
 		libvlc_media_player_release(_vlcCurrentMediaPlayer);
 		_vlcCurrentMediaPlayer = NULL;
@@ -138,11 +145,12 @@ void VlcInstance::unloadMedia() {
 	checkError();
 }
 
-void VlcInstance::play() {
+void VlcInstance::play()
+{
 	if(_vlcCurrentMediaPlayer == NULL)
 		return;
 
-#if VLC_TRUNK
+#if VLC_UNSTABLE
 	libvlc_media_player_play(_vlcCurrentMediaPlayer);
 #else
 	libvlc_media_player_play(_vlcCurrentMediaPlayer, _vlcException);
@@ -150,11 +158,12 @@ void VlcInstance::play() {
 	checkError();
 }
 
-void VlcInstance::pause() {
+void VlcInstance::pause()
+{
 	if(_vlcCurrentMediaPlayer == NULL)
 		return;
 
-#if VLC_TRUNK
+#if VLC_UNSTABLE
 	if(libvlc_media_player_can_pause(_vlcCurrentMediaPlayer) == 1)
 		libvlc_media_player_pause(_vlcCurrentMediaPlayer);
 #else
@@ -164,11 +173,12 @@ void VlcInstance::pause() {
 	checkError();
 }
 
-void VlcInstance::stop() {
+void VlcInstance::stop()
+{
 	if(_vlcCurrentMediaPlayer == NULL)
 		return;
 
-#if VLC_TRUNK
+#if VLC_UNSTABLE
 	libvlc_media_player_stop(_vlcCurrentMediaPlayer);
 #else
 	libvlc_media_player_stop(_vlcCurrentMediaPlayer, _vlcException);
@@ -178,9 +188,10 @@ void VlcInstance::stop() {
 	checkError();
 }
 
-void VlcInstance::checkError() {
+void VlcInstance::checkError()
+{
 
-#if VLC_TRUNK
+#if VLC_UNSTABLE
 	if(libvlc_errmsg() != NULL) {
 		qDebug() << "libVLC" << "Error:" << libvlc_errmsg();
 		libvlc_clearerr();
@@ -193,7 +204,8 @@ void VlcInstance::checkError() {
 #endif
 }
 
-int VlcInstance::fatalError() {
+int VlcInstance::fatalError() const
+{
 	 int ret = QMessageBox::critical(0, "libVLC Initialization",
 									"libVLC could not be initialized successfully.\n"
 									"The application will now exit.",

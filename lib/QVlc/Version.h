@@ -1,5 +1,6 @@
 /****************************************************************************
-* Ver.h: Version info
+* QVlc - Qt and libVLC connector library
+* Version.h: Version info
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,21 +14,16 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_VER_H_
-#define TANO_VER_H_
+#ifndef QVLC_VER_H_
+#define QVLC_VER_H_
 
 #include <QtCore/QString>
-
-#include <QVlc/VlcInstance.h>
 
 class Version
 {
 public:
-	static QString Tano();
-	static QString Qt();
+	static QString QVlc();
 	static QString Svn();
-	static QString libQVlc() {return VlcInstance::version();};
-	static QString libVLC() {return VlcInstance::libVlcVersion();};
 };
 
-#endif // TANO_VER_H_
+#endif // QVLC_VER_H_

@@ -29,6 +29,7 @@ About::About(QWidget *parent)
 	ui.labelLinks->setText(ui.labelLinks->text().replace("http://tanoplayer.co.cc","<a href='http://tanoplayer.co.cc'>http://tanoplayer.co.cc</a>"));
 	ui.labelLinks->setText(ui.labelLinks->text().replace("info@tanoplayer.co.cc","<a href='info@tanoplayer.co.cc'>info@tanoplayer.co.cc</a>"));
 
+	ui.labelQVlc->setText("<h3>QVlc "+Version::libQVlc()+"</h3>");
 	ui.labelVlc->setText("<h3>libVLC "+Version::libVLC().split(" ")[0]+"</h3>");
 	ui.labelQt->setText("<h3>Qt "+Version::Qt()+"</h3>");
 

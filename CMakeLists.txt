@@ -32,17 +32,13 @@ SET(QT_MIN_VERSION "4.5.0")
 
 # this line includes FindQt4.cmake, which searches the Qt library and headers
 FIND_PACKAGE(Qt4 REQUIRED)
-FIND_PACKAGE(LIBVLC REQUIRED)
+FIND_PACKAGE(LIBQVLC REQUIRED)
 
 # Set Qt4 bin dir to find QtCore4.dll and other libs to install
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
 STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back slashes to slashes
 # Define Qt version
-IF(MINGW)
-	SET(TANO_QT_VERSION "${QT_VERSION}") # Use -D command or set it manualy
-ELSE(MINGW)
-	SET(TANO_QT_VERSION "${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
-ENDIF(MINGW)
+SET(TANO_QT_VERSION "${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
 
 # Set default install path:
 # In *nix environments this is /usr/local 
@@ -88,14 +84,8 @@ ELSE(Subversion_FOUND)
 ENDIF(Subversion_FOUND)
 #------------------------------------------------------------------------------
 
-ADD_SUBDIRECTORY(lib/QVlc)
-ADD_SUBDIRECTORY(lib/QtKeySequenceEdit)
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(plugins)
-
-OPTION(VLC_TRUNK "Use LibVLC trunk features")
-
-MESSAGE("Libvlc: ${VLC_TRUNK}")
 
 SET (Tano_Files
 	LICENSE.GPL
