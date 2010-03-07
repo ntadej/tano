@@ -20,7 +20,7 @@
 #include <QtGui/QMouseEvent>
 #include <QtGui/QToolBar>
 
-#include "VlcInstance.h"
+#include "Instance.h"
 #include "VlcVideoWidget.h"
 
 VlcVideoWidget::VlcVideoWidget(QWidget *parent)

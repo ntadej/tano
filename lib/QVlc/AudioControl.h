@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* Version.h: Version info
+* AudioControl.h: Audio controller
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -14,16 +14,38 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef QVLC_VER_H_
-#define QVLC_VER_H_
+#ifndef QVLC_AUDIOCONTROL_H_
+#define QVLC_AUDIOCONTROL_H_
 
-#include <QtCore/QString>
+#include <QtCore/QList>
+#include <QtCore/QMap>
+#include <QtCore/QObject>
+#include <QtCore/QTimer>
+#include <QtGui/QAction>
 
-class Version
+namespace QVlc
 {
-public:
-	static QString QVlc();
-	static QString Svn();
+	class AudioControl : public QObject
+	{
+	Q_OBJECT
+	public:
+		AudioControl(QObject *parent = 0);
+		~AudioControl();
+
+	signals:
+		void audioActions(const QString, QList<QAction*>);
+
+	private slots:
+		void update();
+		void updateActions();
+
+	private:
+		QTimer *_timer;
+
+		QList<QAction*> _actionList;
+		QMap<QString,int> _map;
+		QActionGroup *_actionGroup;
+	};
 };
 
-#endif // QVLC_VER_H_
+#endif // QVLC_AUDIOCONTROL_H_

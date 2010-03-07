@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* VlcControl.h: Subtitles and audio channels controller
+* VideoControl.h: Video and subtitles controller
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -14,8 +14,8 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef QVLC_VLCCONTROL_H_
-#define QVLC_VLCCONTROL_H_
+#ifndef QVLC_VIDEOCONTROL_H_
+#define QVLC_VIDEOCONTROL_H_
 
 #include <QtCore/QList>
 #include <QtCore/QMap>
@@ -23,41 +23,34 @@
 #include <QtGui/QAction>
 #include <QtGui/QActionGroup>
 
-class VlcControl : public QObject
+namespace QVlc
 {
-Q_OBJECT
-public:
-	VlcControl(const QString &lang = "");
-	~VlcControl();
+	class VideoControl : public QObject
+	{
+	Q_OBJECT
+	public:
+		VideoControl(const QString &lang = "", QObject *parent = 0);
+		~VideoControl();
 
-	void update();
+		void mediaChange();
 
-private slots:
-	void updateActionsAudio();
-	void updateActionsVideo();
-	void updateAudio();
-	void updateSub();
+	private slots:
+		void updateActions();
+		void update();
 
-	void checkPlayingState();
+	signals:
+		void subtitlesActions(const QString, QList<QAction*>);
 
-signals:
-	void vlcAction(const QString, QList<QAction*>);
-	void stateChanged(const int);
+	private:
+		QTimer *_timer;
 
-private:
-	QTimer *_timer;
-	QTimer *_check;
+		QList<QAction*> _actionList;
+		QMap<QString,int> _map;
+		QActionGroup *_actionGroup;
 
-	QList<QAction*> _audioList;
-	QMap<QString,int> _audioMap;
-	QActionGroup *_audioGroup;
-
-	QList<QAction*> _subList;
-	QMap<QString,int> _subMap;
-	QActionGroup *_subGroup;
-
-	bool _manualLanguage;
-	QStringList _preferedLanguage;
+		bool _manualLanguage;
+		QStringList _preferedLanguage;
+	};
 };
 
-#endif // QVLC_VLCCONTROL_H_
+#endif // QVLC_VIDEOCONTROL_H_

@@ -16,7 +16,7 @@
 
 #include <QtGui/QHBoxLayout>
 
-#include "VlcInstance.h"
+#include "Instance.h"
 #include "VlcVolumeSlider.h"
 
 VlcVolumeSlider::VlcVolumeSlider(QWidget *parent)

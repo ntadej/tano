@@ -17,6 +17,10 @@
 #ifndef QVLC_CONFIG_H_
 #define QVLC_CONFIG_H_
 
-#define VLC_UNSTABLE @VLC_TRUNK_INT@
+#define LIBQVLC_VERSION @QVLC_VERSION@
+#define LIBQVLC_REVISION @QVLC_WC_REVISION@
+
+#define VLC_1_1 @VLC_1_1_INT@
+#define VLC_1_0 @VLC_1_0_INT@
 
 #endif // QVLC_CONFIG_H_

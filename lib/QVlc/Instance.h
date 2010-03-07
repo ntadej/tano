@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* VlcInstance.h: Main libVLC instance
+* Instance.h: Main libVLC instance
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -18,45 +18,62 @@
 #define QVLC_VLCINSTANCE_H_
 
 #include <QtCore/QObject>
+#include <QtCore/QTimer>
 #include <QtGui/QWidget>
 
-#include "VlcConfig.h"
+#include "Config.h"
 
 #include <vlc/vlc.h>
 
-#if VLC_UNSTABLE
-#else
+#if VLC_1_0
 extern libvlc_exception_t *_vlcException;
 #endif
 
 extern libvlc_instance_t *_vlcInstance;
 extern libvlc_media_player_t *_vlcCurrentMediaPlayer;
 
-class VlcInstance : public QObject
+namespace QVlc
 {
-Q_OBJECT
+	class Instance : public QObject
+	{
+	Q_OBJECT
+	public:
+		Instance(const QList<const char *> &args, const WId &widget = NULL, QObject *parent = 0);
+		~Instance();
+
+		void openMedia(const QString &media);
+		static void checkError();
+		static QString version();
+		static QString libVlcVersion();
+
+	public slots:
+		void init();
+		void play();
+		void pause();
+		void stop();
+
+	signals:
+		void stateChanged(const int);
+
+	private slots:
+		void checkPlayingState();
+
+	private:
+		int fatalError() const;
+		void unloadMedia();
+
+		libvlc_media_t * _vlcMedia;
+		WId _widgetId;
+		QList<const char *> _args;
+
+		QTimer *_check;
+	};
+};
+
+class VlcInstance
+{
 public:
-	VlcInstance(const QList<const char *> &args, const WId &widget = NULL);
-	~VlcInstance();
-
-	void openMedia(const QString &media);
-	static void checkError();
-	static QString version();
-	static QString libVlcVersion();
-
-public slots:
-	void init();
-	void play();
-	void pause();
-	void stop();
-
-private:
-	int fatalError() const;
-	void unloadMedia();
-
-	libvlc_media_t * _vlcMedia;
-	WId _widgetId;
-	QList<const char *> _args;
+	static void checkError() {QVlc::Instance::checkError();};
 };
 
 #endif // QVLC_VLCINSTANCE_H_

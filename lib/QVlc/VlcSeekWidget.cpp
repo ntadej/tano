@@ -17,7 +17,7 @@
 #include <QtCore/QTime>
 #include <QtGui/QHBoxLayout>
 
-#include "VlcInstance.h"
+#include "Instance.h"
 #include "VlcSeekWidget.h"
 
 VlcSeekWidget::VlcSeekWidget(QWidget *parent)

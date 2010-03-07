@@ -1,6 +1,14 @@
 PROJECT(qvlc)
 cmake_minimum_required(VERSION 2.6)
 
+CONFIGURE_FILE(
+  "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+  IMMEDIATE @ONLY)
+
+ADD_CUSTOM_TARGET(uninstall
+  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
+
 set(CMAKE_MODULE_PATH
 	${CMAKE_SOURCE_DIR}/cmake
 )
@@ -18,6 +26,7 @@ FIND_PACKAGE(LIBVLC REQUIRED)
 # libQVlc version number
 FILE(READ VERSION QVLC_VERSION)
 STRING(REGEX REPLACE "\n" "" QVLC_VERSION "${QVLC_VERSION}") # get rid of the newline at the end
+SET(QVLC_VERSION "\"${QVLC_VERSION}\"")
 MESSAGE("You are compiling libQVlc ${QVLC_VERSION}")
 
 # SVN revision
@@ -34,30 +43,26 @@ IF(Subversion_FOUND)
 	Subversion_GET_REVISION(${CMAKE_CURRENT_SOURCE_DIR} QVLC_WC_REVISION)
 	MESSAGE("Current revision is ${QVLC_WC_REVISION}")
 ELSE(Subversion_FOUND)
-	SET(QVLC_WC_REVISION "")
+	SET(QVLC_WC_REVISION 0)
 ENDIF(Subversion_FOUND)
 
 OPTION(VLC_TRUNK "Use LibVLC trunk features")
 MESSAGE("Libvlc: ${VLC_TRUNK}")
 
-OPTION(UNIX_PACKAGE "UNIX lib.so.version features")
-
 #------------------------------------------------------------------------------
 
 IF(${VLC_TRUNK} MATCHES "ON")
 ADD_DEFINITIONS(-DVLC_TRUNK=1)
-SET(VLC_TRUNK_INT 1)
+SET(VLC_1_1_INT 1)
+SET(VLC_1_0_INT 0)
 ELSE(${VLC_TRUNK} MATCHES "ON")
-SET(VLC_TRUNK_INT 0)
+SET(VLC_1_1_INT 0)
+SET(VLC_1_0_INT 1)
 ENDIF(${VLC_TRUNK} MATCHES "ON")
 
 CONFIGURE_FILE(
-	"${CMAKE_CURRENT_SOURCE_DIR}/Version.cpp.in"
-	"${CMAKE_CURRENT_BINARY_DIR}/Version.cpp"
-)
-CONFIGURE_FILE(
-	"${CMAKE_CURRENT_SOURCE_DIR}/VlcConfig.h.in"
-	"${CMAKE_CURRENT_BINARY_DIR}/VlcConfig.h"
+	"${CMAKE_CURRENT_SOURCE_DIR}/Config.h.in"
+	"${CMAKE_CURRENT_BINARY_DIR}/Config.h"
 )
 
 
@@ -65,31 +70,27 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Set your list of sources here.
 SET(QVLC_SRCS
-	VlcControl.cpp
-	VlcInstance.cpp
+	AudioControl.cpp
+	Instance.cpp
+	VideoControl.cpp
 	VlcSeekWidget.cpp
 	VlcVideoWidget.cpp
 	VlcVolumeSlider.cpp
-
-	${CMAKE_CURRENT_BINARY_DIR}/Version.cpp
 )
 
 SET(QVLC_MOCS
-	VlcControl.h
-	VlcInstance.h
+	AudioControl.h
+	Instance.h
+	VideoControl.h
 	VlcSeekWidget.h
 	VlcVideoWidget.h
 	VlcVolumeSlider.h
 )
 
 SET(QVLC_HEADERS
-	VlcControl.h
-	VlcInstance.h
-	VlcSeekWidget.h
-	VlcVideoWidget.h
-	VlcVolumeSlider.h
+	${QVLC_MOCS}
 
-	${CMAKE_CURRENT_BINARY_DIR}/VlcConfig.h
+	${CMAKE_CURRENT_BINARY_DIR}/Config.h
 )
 
 INCLUDE(${QT_USE_FILE})
@@ -100,10 +101,10 @@ INCLUDE_DIRECTORIES(${LIBVLC_INCLUDE_DIR})
 # Create the library.
 ADD_LIBRARY(${PROJECT_NAME} SHARED ${QVLC_SRCS} ${QVLC_MOCS_SRCS})
 
-IF(UNIX_PACKAGE)
+IF(PACKAGE)
 SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES VERSION 0.2.1
 									  SOVERSION 0.2)
-ENDIF(UNIX_PACKAGE)
+ENDIF(PACKAGE)
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${QT_LIBRARIES} ${LIBVLC_LIBRARY} ${LIBVLCCORE_LIBRARY})
 
