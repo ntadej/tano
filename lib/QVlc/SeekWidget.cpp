@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* VlcSeekWidget.cpp: Seek widget
+* SeekWidget.cpp: Seek widget
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -18,9 +18,9 @@
 #include <QtGui/QHBoxLayout>
 
 #include "Instance.h"
-#include "VlcSeekWidget.h"
+#include "SeekWidget.h"
 
-VlcSeekWidget::VlcSeekWidget(QWidget *parent)
+QVlc::SeekWidget::SeekWidget(QWidget *parent)
 	:QWidget(parent)
 {
 	_seek = new QSlider(this);
@@ -48,14 +48,15 @@ VlcSeekWidget::VlcSeekWidget(QWidget *parent)
 	_timer->start(400);
 }
 
-VlcSeekWidget::~VlcSeekWidget() {
+QVlc::SeekWidget::~SeekWidget()
+{
 	delete _seek;
 	delete _labelElapsed;
 	delete _labelFull;
 	delete _timer;
 }
 
-void VlcSeekWidget::updateTime()
+void QVlc::SeekWidget::updateTime()
 {
 	if(!_vlcCurrentMediaPlayer)
 		return;
@@ -63,7 +64,7 @@ void VlcSeekWidget::updateTime()
 	// It's possible that the vlc doesn't play anything
 	// so check before
 	libvlc_media_t *curMedia;
-#if VLC_TRUNK
+#if VLC_1_1
 	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer);
 #else
 	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer, _vlcException);
@@ -74,7 +75,7 @@ void VlcSeekWidget::updateTime()
 		return;
 
 	libvlc_state_t state;
-#if VLC_TRUNK
+#if VLC_1_1
 	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer);
 #else
 	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
@@ -83,7 +84,7 @@ void VlcSeekWidget::updateTime()
 	if(state != 0 && state != 6 && state != 7) {
 		libvlc_time_t fullTime;
 		libvlc_time_t currentTime;
-#if VLC_TRUNK
+#if VLC_1_1
 		fullTime = libvlc_media_player_get_length(_vlcCurrentMediaPlayer);
 		currentTime = libvlc_media_player_get_time(_vlcCurrentMediaPlayer);
 #else
@@ -104,22 +105,22 @@ void VlcSeekWidget::updateTime()
 		_seek->setValue(0);
 	}
 
-	VlcInstance::checkError();
+	Instance::checkError();
 }
 
-void VlcSeekWidget::changeTime()
+void QVlc::SeekWidget::changeTime()
 {
 	if(!_vlcCurrentMediaPlayer)
 		return;
 
 	_labelElapsed->setText(QTime(0,0,0,0).addMSecs(_seek->value()).toString("hh:mm:ss"));
 
-#if VLC_TRUNK
+#if VLC_1_1
 	libvlc_media_player_set_time(_vlcCurrentMediaPlayer, _seek->value());
 #else
 	libvlc_exception_clear(_vlcException);
 	libvlc_media_player_set_time(_vlcCurrentMediaPlayer, _seek->value(), _vlcException);
 #endif
 
-	VlcInstance::checkError();
+	Instance::checkError();
 }

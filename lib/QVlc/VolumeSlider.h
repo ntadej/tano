@@ -14,39 +14,42 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef QVLC_VLCVOLUMESLIDER_H_
-#define QVLC_VLCVOLUMESLIDER_H_
+#ifndef QVLC_VOLUMESLIDER_H_
+#define QVLC_VOLUMESLIDER_H_
 
 #include <QtCore/QTimer>
 #include <QtGui/QLabel>
 #include <QtGui/QSlider>
 #include <QtGui/QWidget>
 
-class VlcVolumeSlider : public QWidget
+namespace QVlc
 {
-Q_OBJECT
-public:
-	VlcVolumeSlider(QWidget *parent = 0);
-	~VlcVolumeSlider();
+	class VolumeSlider : public QWidget
+	{
+	Q_OBJECT
+	public:
+		VolumeSlider(QWidget *parent = 0);
+		~VolumeSlider();
 
-	int volume() const {return _currentVolume;};
+		int volume() const {return _currentVolume;};
 
-public slots:
-	void setVolume(const int &volume);
-	void mute();
-	void vup() {volumeControl(true);};
-	void vdown() {volumeControl(false);};
-	void volumeControl(const bool &up);
+	public slots:
+		void setVolume(const int &volume);
+		void mute();
+		void vup() {volumeControl(true);};
+		void vdown() {volumeControl(false);};
+		void volumeControl(const bool &up);
 
-private slots:
-	void updateVolume();
+	private slots:
+		void updateVolume();
 
-private:
-	int _currentVolume;
+	private:
+		int _currentVolume;
 
-	QSlider *_slider;
-	QLabel *_label;
-	QTimer *_timer;
+		QSlider *_slider;
+		QLabel *_label;
+		QTimer *_timer;
+	};
 };
 
-#endif // QVLC_VLCVOLUMESLIDER_H_
+#endif // QVLC_VOLUMESLIDER_H_

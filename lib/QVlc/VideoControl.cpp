@@ -94,7 +94,7 @@ void QVlc::VideoControl::updateActions() {
 		return;
 	}
 
-	VlcInstance::checkError();
+	Instance::checkError();
 
 	for (int i = 0; i < _actionList.size(); ++i) {
 		_actionList[i]->setCheckable(true);
@@ -113,7 +113,7 @@ void QVlc::VideoControl::updateActions() {
 #else
 	_actionList[libvlc_video_get_spu(_vlcCurrentMediaPlayer, _vlcException)]->setChecked(true);
 #endif
-	VlcInstance::checkError();
+	Instance::checkError();
 
 	emit subtitlesActions("sub", _actionList);
 }
@@ -128,7 +128,7 @@ void QVlc::VideoControl::update()
 	libvlc_video_set_spu(_vlcCurrentMediaPlayer, id ,_vlcException);
 #endif
 
-	VlcInstance::checkError();
+	Instance::checkError();
 }
 
 void QVlc::VideoControl::mediaChange()

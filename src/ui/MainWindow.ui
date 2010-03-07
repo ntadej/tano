@@ -33,7 +33,7 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="VlcVideoWidget" name="videoWidget" native="true"/>
+         <widget class="QVlc::VideoWidget" name="videoWidget" native="true"/>
         </item>
        </layout>
       </widget>
@@ -559,12 +559,12 @@
         </widget>
        </item>
        <item>
-        <widget class="VlcVolumeSlider" name="volumeSlider" native="true"/>
+        <widget class="QVlc::VolumeSlider" name="volumeSlider" native="true"/>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="VlcSeekWidget" name="seekWidget" native="true"/>
+      <widget class="QVlc::SeekWidget" name="seekWidget" native="true"/>
      </item>
      <item>
       <widget class="InfoBar" name="infoBarWidget" native="true"/>
@@ -1067,9 +1067,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>VlcVolumeSlider</class>
+   <class>QVlc::VolumeSlider</class>
    <extends>QWidget</extends>
-   <header location="global">QVlc/VlcVolumeSlider.h</header>
+   <header location="global">QVlc/VolumeSlider.h</header>
    <container>1</container>
    <slots>
     <slot>mute()</slot>
@@ -1078,9 +1078,9 @@
    </slots>
   </customwidget>
   <customwidget>
-   <class>VlcSeekWidget</class>
+   <class>QVlc::SeekWidget</class>
    <extends>QWidget</extends>
-   <header location="global">QVlc/VlcSeekWidget.h</header>
+   <header location="global">QVlc/SeekWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -1090,9 +1090,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>VlcVideoWidget</class>
+   <class>QVlc::VideoWidget</class>
    <extends>QWidget</extends>
-   <header location="global">QVlc/VlcVideoWidget.h</header>
+   <header location="global">QVlc/VideoWidget.h</header>
    <container>1</container>
    <slots>
     <signal>full()</signal>

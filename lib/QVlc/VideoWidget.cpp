@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* VlcVideoWidget.cpp: Video widget
+* VideoWidget.cpp: Video widget
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -21,14 +21,13 @@
 #include <QtGui/QToolBar>
 
 #include "Instance.h"
-#include "VlcVideoWidget.h"
+#include "VideoWidget.h"
 
-VlcVideoWidget::VlcVideoWidget(QWidget *parent)
-	: QWidget(parent)
+QVlc::VideoWidget::VideoWidget(QWidget *parent)
+	: QWidget(parent), _move(true), _desktopWidth(QApplication::desktop()->width()), _desktopHeight(QApplication::desktop()->height()),
+	_osdWidth(0), _osdHeight(0), _currentRatio(""), _currentCrop(""), _currentFilter("")
 {
 	setMouseTracking(true);
-
-	_move = true;
 
 	_widget = new QWidget(this);
 	_widget->setMouseTracking(true);
@@ -37,42 +36,32 @@ VlcVideoWidget::VlcVideoWidget(QWidget *parent)
 	layout->addWidget(_widget);
 	setLayout(layout);
 
-	_desktopWidth = QApplication::desktop()->width();
-	_desktopHeight = QApplication::desktop()->height();
-
-	_osdWidth = 0;
-	_osdHeight = 0;
-
 	_timerMouse = new QTimer(this);
 	connect(_timerMouse, SIGNAL(timeout()), this, SLOT(hideMouse()));
 	_timerSettings = new QTimer(this);
 	connect(_timerSettings, SIGNAL(timeout()), this, SLOT(applyPreviousSettings()));
-
-	_currentRatio = "";
-	_currentCrop = "";
-	_currentFilter = "";
 }
 
-VlcVideoWidget::~VlcVideoWidget()
+QVlc::VideoWidget::~VideoWidget()
 {
 	delete _timerMouse;
 	delete _timerSettings;
 	delete _widget;
 }
 
-void VlcVideoWidget::setOsdSize(const int &width, const int &height)
+void QVlc::VideoWidget::setOsdSize(const int &width, const int &height)
 {
 	_osdWidth = width;
 	_osdHeight = height;
 }
 
 //Events:
-void VlcVideoWidget::mouseDoubleClickEvent(QMouseEvent *event)
+void QVlc::VideoWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
 	event->ignore();
 	emit full();
 }
-void VlcVideoWidget::mouseMoveEvent(QMouseEvent *event)
+void QVlc::VideoWidget::mouseMoveEvent(QMouseEvent *event)
 {
 	event->ignore();
 
@@ -87,7 +76,7 @@ void VlcVideoWidget::mouseMoveEvent(QMouseEvent *event)
 		}
 	}
 }
-void VlcVideoWidget::mousePressEvent(QMouseEvent *event)
+void QVlc::VideoWidget::mousePressEvent(QMouseEvent *event)
 {
 	event->ignore();
 
@@ -96,7 +85,7 @@ void VlcVideoWidget::mousePressEvent(QMouseEvent *event)
 		emit rightClick(event->globalPos());
 	}
 }
-void VlcVideoWidget::wheelEvent(QWheelEvent *event)
+void QVlc::VideoWidget::wheelEvent(QWheelEvent *event)
 {
 	event->ignore();
 
@@ -106,7 +95,7 @@ void VlcVideoWidget::wheelEvent(QWheelEvent *event)
 		emit wheel(false);
 }
 
-void VlcVideoWidget::hideMouse()
+void QVlc::VideoWidget::hideMouse()
 {
 	if(this->isFullScreen() && _move) {
 		qApp->setOverrideCursor(Qt::BlankCursor);
@@ -116,10 +105,10 @@ void VlcVideoWidget::hideMouse()
 }
 
 //Move
-void VlcVideoWidget::disableMove() { _move = false; }
-void VlcVideoWidget::enableMove() {	_move = true; }
+void QVlc::VideoWidget::disableMove() { _move = false; }
+void QVlc::VideoWidget::enableMove() {	_move = true; }
 
-void VlcVideoWidget::controlFull()
+void QVlc::VideoWidget::controlFull()
 {
 	Qt::WindowFlags flags = windowFlags();
 	if (!isFullScreen()) {
@@ -145,42 +134,42 @@ void VlcVideoWidget::controlFull()
 	}
 }
 
-void VlcVideoWidget::teletext()
+void QVlc::VideoWidget::teletext()
 {
-#if VLC_TRUNK
+#if VLC_1_1
 	libvlc_toggle_teletext(_vlcCurrentMediaPlayer);
 #else
 	libvlc_toggle_teletext(_vlcCurrentMediaPlayer, _vlcException);
 #endif
 
-	VlcInstance::checkError();
+	Instance::checkError();
 }
-int VlcVideoWidget::teletextPage()
+int QVlc::VideoWidget::teletextPage()
 {
-#if VLC_TRUNK
+#if VLC_1_1
 	return libvlc_video_get_teletext(_vlcCurrentMediaPlayer);
 #else
 	return libvlc_video_get_teletext(_vlcCurrentMediaPlayer, _vlcException);
 #endif
 
-	VlcInstance::checkError();
+	Instance::checkError();
 }
-void VlcVideoWidget::setTeletextPage(const int &page)
+void QVlc::VideoWidget::setTeletextPage(const int &page)
 {
-#if VLC_TRUNK
+#if VLC_1_1
 	libvlc_video_set_teletext(_vlcCurrentMediaPlayer, page);
 #else
 	libvlc_video_set_teletext(_vlcCurrentMediaPlayer, page, _vlcException);
 #endif
 
-	VlcInstance::checkError();
+	Instance::checkError();
 }
 
-void VlcVideoWidget::setPreviousSettings()
+void QVlc::VideoWidget::setPreviousSettings()
 {
 	_timerSettings->start(500);
 }
-void VlcVideoWidget::applyPreviousSettings()
+void QVlc::VideoWidget::applyPreviousSettings()
 {
 	if(_currentRatio == "" && _currentCrop == "" && _currentFilter == "") {
 		_timerSettings->stop();
@@ -189,7 +178,7 @@ void VlcVideoWidget::applyPreviousSettings()
 
 	QString success = "";
 	if (_vlcCurrentMediaPlayer) {
-#if VLC_TRUNK
+#if VLC_1_1
 		if(QString(libvlc_video_get_aspect_ratio(_vlcCurrentMediaPlayer)) != _currentRatio)
 			libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, _currentRatio.toAscii().data());
 		else
@@ -215,319 +204,319 @@ void VlcVideoWidget::applyPreviousSettings()
 	if(success == "++")
 		_timerSettings->stop();
 
-	VlcInstance::checkError();
+	Instance::checkError();
 }
 
-void VlcVideoWidget::setRatioOriginal()
+void QVlc::VideoWidget::setRatioOriginal()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentRatio = "";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("").toAscii().data());
 #else
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setRatio1_1()
+void QVlc::VideoWidget::setRatio1_1()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentRatio = "1:1";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("1:1").toAscii().data());
 #else
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("1:1").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setRatio4_3()
+void QVlc::VideoWidget::setRatio4_3()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentRatio = "4:3";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("4:3").toAscii().data());
 #else
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("4:3").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setRatio16_9()
+void QVlc::VideoWidget::setRatio16_9()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentRatio = "16:9";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("16:9").toAscii().data());
 #else
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("16:9").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setRatio16_10()
+void QVlc::VideoWidget::setRatio16_10()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentRatio = "16:10";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("16:10").toAscii().data());
 #else
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("16:10").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setRatio2_21_1()
+void QVlc::VideoWidget::setRatio2_21_1()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentRatio = "221:100";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("221:100").toAscii().data());
 #else
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("221:100").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setRatio5_4()
+void QVlc::VideoWidget::setRatio5_4()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentRatio = "5:4";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("5:4").toAscii().data());
 #else
 		libvlc_video_set_aspect_ratio(_vlcCurrentMediaPlayer, QString("5:4").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
 
-void VlcVideoWidget::setCropOriginal()
+void QVlc::VideoWidget::setCropOriginal()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop16_9()
+void QVlc::VideoWidget::setCrop16_9()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "16:9";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("16:9").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("16:9").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop16_10()
+void QVlc::VideoWidget::setCrop16_10()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "16:10";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("16:10").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("16:10").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop1_85_1()
+void QVlc::VideoWidget::setCrop1_85_1()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "185:100";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("185:100").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("185:100").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop2_21_1()
+void QVlc::VideoWidget::setCrop2_21_1()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "221:100";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("221:100").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("221:100").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop2_35_1()
+void QVlc::VideoWidget::setCrop2_35_1()
 {		_currentCrop = "235:100";
 	if (_vlcCurrentMediaPlayer) {
 
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("235:100").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("235:100").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop2_39_1()
+void QVlc::VideoWidget::setCrop2_39_1()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "239:100";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("239:100").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("239:100").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop5_4()
+void QVlc::VideoWidget::setCrop5_4()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "5:4";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("5:4").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("5:4").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop5_3()
+void QVlc::VideoWidget::setCrop5_3()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "5:3";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("5:3").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("5:3").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop4_3()
+void QVlc::VideoWidget::setCrop4_3()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "4:3";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("4:3").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("4:3").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setCrop1_1()
+void QVlc::VideoWidget::setCrop1_1()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentCrop = "1:1";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("1:1").toAscii().data());
 #else
 		libvlc_video_set_crop_geometry(_vlcCurrentMediaPlayer, QString("1:1").toAscii().data(), _vlcException);
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
 
-void VlcVideoWidget::setFilterDisabled()
+void QVlc::VideoWidget::setFilterDisabled()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentFilter = "";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, QString("").toAscii().data());
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setFilterDiscard()
+void QVlc::VideoWidget::setFilterDiscard()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentFilter = "discard";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, QString("discard").toAscii().data());
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setFilterBlend()
+void QVlc::VideoWidget::setFilterBlend()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentFilter = "blend";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, QString("blend").toAscii().data());
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setFilterMean()
+void QVlc::VideoWidget::setFilterMean()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentFilter = "mean";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, QString("mean").toAscii().data());
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setFilterBob()
+void QVlc::VideoWidget::setFilterBob()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentFilter = "bob";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, QString("bob").toAscii().data());
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setFilterLinear()
+void QVlc::VideoWidget::setFilterLinear()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentFilter = "linear";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, QString("linear").toAscii().data());
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }
-void VlcVideoWidget::setFilterX()
+void QVlc::VideoWidget::setFilterX()
 {
 	if (_vlcCurrentMediaPlayer) {
 		_currentFilter = "x";
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_video_set_deinterlace(_vlcCurrentMediaPlayer, QString("x").toAscii().data());
 #endif
 
-		VlcInstance::checkError();
+		Instance::checkError();
 	}
 }

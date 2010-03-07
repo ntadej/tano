@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* VlcSeekWidget.h: Seek widget
+* SeekWidget.h: Seek widget
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -14,30 +14,33 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef QVLC_VLCSEEKWIDGET_H_
-#define QVLC_VLCSEEKWIDGET_H_
+#ifndef QVLC_SEEKWIDGET_H_
+#define QVLC_SEEKWIDGET_H_
 
 #include <QtCore/QTimer>
 #include <QtGui/QLabel>
 #include <QtGui/QSlider>
 #include <QtGui/QWidget>
 
-class VlcSeekWidget : public QWidget
+namespace QVlc
 {
-Q_OBJECT
-public:
-	VlcSeekWidget(QWidget *parent = 0);
-	~VlcSeekWidget();
+	class SeekWidget : public QWidget
+	{
+	Q_OBJECT
+	public:
+		SeekWidget(QWidget *parent = 0);
+		~SeekWidget();
 
-private slots:
-	void changeTime();
-	void updateTime();
+	private slots:
+		void changeTime();
+		void updateTime();
 
-private:
-	QSlider *_seek;
-	QLabel *_labelElapsed;
-	QLabel *_labelFull;
-	QTimer *_timer;
+	private:
+		QSlider *_seek;
+		QLabel *_labelElapsed;
+		QLabel *_labelFull;
+		QTimer *_timer;
+	};
 };
 
-#endif // QVLC_VLCSEEKWIDGET_H_
+#endif // QVLC_SEEKWIDGET_H_

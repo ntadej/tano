@@ -52,7 +52,6 @@ MESSAGE("Libvlc: ${VLC_TRUNK}")
 #------------------------------------------------------------------------------
 
 IF(${VLC_TRUNK} MATCHES "ON")
-ADD_DEFINITIONS(-DVLC_TRUNK=1)
 SET(VLC_1_1_INT 1)
 SET(VLC_1_0_INT 0)
 ELSE(${VLC_TRUNK} MATCHES "ON")
@@ -72,19 +71,19 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 SET(QVLC_SRCS
 	AudioControl.cpp
 	Instance.cpp
+	SeekWidget.cpp
 	VideoControl.cpp
-	VlcSeekWidget.cpp
-	VlcVideoWidget.cpp
-	VlcVolumeSlider.cpp
+	VideoWidget.cpp
+	VolumeSlider.cpp
 )
 
 SET(QVLC_MOCS
 	AudioControl.h
 	Instance.h
+	SeekWidget.h
 	VideoControl.h
-	VlcSeekWidget.h
-	VlcVideoWidget.h
-	VlcVolumeSlider.h
+	VideoWidget.h
+	VolumeSlider.h
 )
 
 SET(QVLC_HEADERS

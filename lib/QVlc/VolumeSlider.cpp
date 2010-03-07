@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* VlcVolumeSlider.cpp: Volume manager and slider
+* VVolumeSlider.cpp: Volume manager and slider
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -17,9 +17,9 @@
 #include <QtGui/QHBoxLayout>
 
 #include "Instance.h"
-#include "VlcVolumeSlider.h"
+#include "VolumeSlider.h"
 
-VlcVolumeSlider::VlcVolumeSlider(QWidget *parent)
+QVlc::VolumeSlider::VolumeSlider(QWidget *parent)
 	: QWidget(parent)
 {
 	_slider = new QSlider(this);
@@ -43,20 +43,21 @@ VlcVolumeSlider::VlcVolumeSlider(QWidget *parent)
 	_timer->start(100);
 }
 
-VlcVolumeSlider::~VlcVolumeSlider() {
+QVlc::VolumeSlider::~VolumeSlider()
+{
 	delete _slider;
 	delete _label;
 	delete _timer;
 }
 
-void VlcVolumeSlider::setVolume(const int &volume)
+void QVlc::VolumeSlider::setVolume(const int &volume)
 {
 	_currentVolume = volume;
 	_slider->setValue(_currentVolume);
 	_label->setText(QString().number(_currentVolume));
 }
 
-void VlcVolumeSlider::updateVolume()
+void QVlc::VolumeSlider::updateVolume()
 {
 	if(!_vlcCurrentMediaPlayer)
 		return;
@@ -64,7 +65,7 @@ void VlcVolumeSlider::updateVolume()
 	// It's possible that the vlc doesn't play anything
 	// so check before
 	libvlc_media_t *curMedia;
-#if VLC_TRUNK
+#if VLC_1_1
 	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer);
 #else
 	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer, _vlcException);
@@ -75,14 +76,14 @@ void VlcVolumeSlider::updateVolume()
 		return;
 
 	int volume;
-#if VLC_TRUNK
+#if VLC_1_1
 	volume = libvlc_audio_get_volume(_vlcCurrentMediaPlayer);
 #else
 	volume = libvlc_audio_get_volume(_vlcInstance, _vlcException);
 #endif
 
 	if(volume != _currentVolume) {
-#if VLC_TRUNK
+#if VLC_1_1
 		libvlc_audio_set_volume (_vlcCurrentMediaPlayer, _currentVolume);
 #else
 		libvlc_exception_clear(_vlcException);
@@ -90,10 +91,10 @@ void VlcVolumeSlider::updateVolume()
 #endif
 	}
 
-	VlcInstance::checkError();
+	Instance::checkError();
 }
 
-void VlcVolumeSlider::volumeControl(const bool &up)
+void QVlc::VolumeSlider::volumeControl(const bool &up)
 {
 	if(up)
 		if(_currentVolume != 200)
@@ -103,15 +104,16 @@ void VlcVolumeSlider::volumeControl(const bool &up)
 			_currentVolume-=1;
 }
 
-void VlcVolumeSlider::mute() {
+void QVlc::VolumeSlider::mute()
+{
 	int isMute;
-#if VLC_TRUNK
+#if VLC_1_1
 	isMute = libvlc_audio_get_mute(_vlcCurrentMediaPlayer);
 #else
 	isMute = libvlc_audio_get_mute(_vlcInstance, _vlcException);
 #endif
 
-	VlcInstance::checkError();
+	Instance::checkError();
 
 	if(isMute == 1) {
 		_timer->start(100);
@@ -123,11 +125,11 @@ void VlcVolumeSlider::mute() {
 		_label->setDisabled(true);
 	}
 
-#if VLC_TRUNK
+#if VLC_1_1
 	libvlc_audio_toggle_mute(_vlcCurrentMediaPlayer);
 #else
 	libvlc_audio_toggle_mute(_vlcInstance, _vlcException);
 #endif
 
-	VlcInstance::checkError();
+	Instance::checkError();
 }

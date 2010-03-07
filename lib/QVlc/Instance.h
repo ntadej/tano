@@ -70,10 +70,4 @@ namespace QVlc
 	};
 };
 
-class VlcInstance
-{
-public:
-	static void checkError() {QVlc::Instance::checkError();};
-};
-
 #endif // QVLC_VLCINSTANCE_H_
