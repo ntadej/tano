@@ -22,7 +22,7 @@
 #include <QtGui/QMessageBox>
 #include <QtGui/QSplashScreen>
 
-#include <QVlc/VlcConfig.h>
+#include <QVlc/Config.h>
 
 #include "MainWindow.h"
 #include "Common.h"
@@ -106,12 +106,13 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
-	_backend = new VlcInstance(Common::libvlcArgs(), ui.videoWidget->getWinId());
+	_backend = new QVlc::Instance(Common::libvlcArgs(), ui.videoWidget->getWinId());
 	_backend->init();
 
-	_controller = new VlcControl(_defaultSubtitleLanguage);
+	_audioController = new QVlc::AudioControl();
+	_videoController = new QVlc::VideoControl(_defaultSubtitleLanguage);
 
-#if VLC_UNSTABLE
+#if VLC_1_1
 	ui.menuDeinterlacing->setEnabled(true);
 #endif
 }
@@ -211,8 +212,9 @@ void MainWindow::createConnections()
 	connect(_rightMenu, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
 	connect(_rightMenu, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 
-	connect(_controller, SIGNAL(vlcAction(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
-	connect(_controller, SIGNAL(stateChanged(int)), this, SLOT(playingState(int)));
+	connect(_audioController, SIGNAL(audioActions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
+	connect(_videoController, SIGNAL(subtitlesActions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
+	connect(_backend, SIGNAL(stateChanged(int)), this, SLOT(playingState(int)));
 
 	connect(ui.actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
 	connect(ui.actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
@@ -429,7 +431,7 @@ void MainWindow::stop()
 	tooltip();
 	_trayIcon->changeToolTip();
 
-	_controller->update();
+	_videoController->mediaChange();
 }
 
 void MainWindow::showEpg(const QStringList &epgValue, const int &id)

@@ -20,8 +20,9 @@
 #include <QtGui/QCloseEvent>
 #include <QtGui/QMainWindow>
 
-#include <QVlc/VlcInstance.h>
-#include <QVlc/VlcControl.h>
+#include <QVlc/AudioControl.h>
+#include <QVlc/Instance.h>
+#include <QVlc/VideoControl.h>
 
 #include <ui_MainWindow.h>
 
@@ -121,8 +122,9 @@ private:
 	Updates *_update;
 
 	//Backend
-	VlcInstance *_backend;
-	VlcControl *_controller;
+	QVlc::AudioControl *_audioController;
+	QVlc::Instance *_backend;
+	QVlc::VideoControl *_videoController;
 
 	//GUI
 	Ui::MainWindow ui;

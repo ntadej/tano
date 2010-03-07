@@ -16,7 +16,7 @@
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 
-#include <QVlc/VlcConfig.h>
+#include <QVlc/Config.h>
 
 #include "Common.h"
 #include "ui/About.h"
@@ -123,7 +123,7 @@ QList<const char *> Common::libvlcArgs()
 #endif
 
 #ifdef Q_WS_X11	
-#if VLC_UNSTABLE
+#if VLC_1_1
 #else
 	args << "--vout-event"
 		 << "3";
