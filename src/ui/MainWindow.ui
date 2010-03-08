@@ -108,10 +108,41 @@
     <addaction name="actionInfoPanel"/>
     <addaction name="actionControls"/>
    </widget>
+   <widget class="QMenu" name="menuAudio">
+    <property name="title">
+     <string>&amp;Audio</string>
+    </property>
+    <widget class="QMenu" name="menuAudioTrack">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Audio track</string>
+     </property>
+    </widget>
+    <addaction name="actionMute"/>
+    <addaction name="actionVolumeUp"/>
+    <addaction name="actionVolumeDown"/>
+    <addaction name="menuAudioTrack"/>
+   </widget>
+   <widget class="QMenu" name="menuMedia">
+    <property name="title">
+     <string>&amp;Playback</string>
+    </property>
+    <addaction name="actionPlay"/>
+    <addaction name="actionStop"/>
+    <addaction name="actionBack"/>
+    <addaction name="actionNext"/>
+   </widget>
    <widget class="QMenu" name="menuVideo">
     <property name="title">
      <string>&amp;Video</string>
     </property>
+    <widget class="QMenu" name="menuVideoTrack">
+     <property name="title">
+      <string>Video track</string>
+     </property>
+    </widget>
     <widget class="QMenu" name="menuCrop">
      <property name="title">
       <string>Crop video</string>
@@ -163,36 +194,11 @@
      <addaction name="actionRatio2_21_1"/>
      <addaction name="actionRatio5_4"/>
     </widget>
+    <addaction name="menuVideoTrack"/>
     <addaction name="menuAspectRatio"/>
     <addaction name="menuCrop"/>
     <addaction name="menuSubtitles"/>
     <addaction name="menuDeinterlacing"/>
-   </widget>
-   <widget class="QMenu" name="menuAudio">
-    <property name="title">
-     <string>&amp;Audio</string>
-    </property>
-    <widget class="QMenu" name="menuAudioChannel">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="title">
-      <string>Audio channel</string>
-     </property>
-    </widget>
-    <addaction name="actionMute"/>
-    <addaction name="actionVolumeUp"/>
-    <addaction name="actionVolumeDown"/>
-    <addaction name="menuAudioChannel"/>
-   </widget>
-   <widget class="QMenu" name="menuMedia">
-    <property name="title">
-     <string>&amp;Playback</string>
-    </property>
-    <addaction name="actionPlay"/>
-    <addaction name="actionStop"/>
-    <addaction name="actionBack"/>
-    <addaction name="actionNext"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -297,8 +303,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>361</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <attribute name="label">

@@ -58,30 +58,7 @@ QVlc::SeekWidget::~SeekWidget()
 
 void QVlc::SeekWidget::updateTime()
 {
-	if(!_vlcCurrentMediaPlayer)
-		return;
-
-	// It's possible that the vlc doesn't play anything
-	// so check before
-	libvlc_media_t *curMedia;
-#if VLC_1_1
-	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer);
-#else
-	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer, _vlcException);
-	libvlc_exception_clear(_vlcException);
-#endif
-
-	if (curMedia == 0)
-		return;
-
-	libvlc_state_t state;
-#if VLC_1_1
-	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer);
-#else
-	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
-#endif
-
-	if(state != 0 && state != 6 && state != 7) {
+	if(Instance::isActive()) {
 		libvlc_time_t fullTime;
 		libvlc_time_t currentTime;
 #if VLC_1_1

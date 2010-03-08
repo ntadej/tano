@@ -59,20 +59,7 @@ void QVlc::VolumeSlider::setVolume(const int &volume)
 
 void QVlc::VolumeSlider::updateVolume()
 {
-	if(!_vlcCurrentMediaPlayer)
-		return;
-
-	// It's possible that the vlc doesn't play anything
-	// so check before
-	libvlc_media_t *curMedia;
-#if VLC_1_1
-	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer);
-#else
-	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer, _vlcException);
-	libvlc_exception_clear(_vlcException);
-#endif
-
-	if (curMedia == NULL)
+	if(!Instance::isActive())
 		return;
 
 	int volume;

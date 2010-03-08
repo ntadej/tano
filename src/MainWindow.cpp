@@ -212,8 +212,8 @@ void MainWindow::createConnections()
 	connect(_rightMenu, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
 	connect(_rightMenu, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
 
-	connect(_audioController, SIGNAL(audioActions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
-	connect(_videoController, SIGNAL(subtitlesActions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
+	connect(_audioController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
+	connect(_videoController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
 	connect(_backend, SIGNAL(stateChanged(int)), this, SLOT(playingState(int)));
 
 	connect(ui.actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
@@ -431,6 +431,7 @@ void MainWindow::stop()
 	tooltip();
 	_trayIcon->changeToolTip();
 
+	_audioController->mediaChange();
 	_videoController->mediaChange();
 }
 
@@ -438,7 +439,7 @@ void MainWindow::showEpg(const QStringList &epgValue, const int &id)
 {
 	switch (id) {
 		case 0:
-			ui.infoBarWidget->setEpg(epgValue.at(0), epgValue.at(1));
+			ui.infoBarWidget->setEpg(epgValue[0], epgValue[1]);
 			break;
 		case 1:
 		case 2:
@@ -454,31 +455,23 @@ void MainWindow::showEpg(const QStringList &epgValue, const int &id)
 
 void MainWindow::processMenu(const QString &type, const QList<QAction *> &list)
 {
+	QMenu *menu;
 	if(type == "sub")
-		ui.menuSubtitles->clear();
+		menu = ui.menuSubtitles;
 	else if(type == "audio")
-		ui.menuAudioChannel->clear();
+		menu = ui.menuAudioTrack;
+	else if(type == "video")
+		menu = ui.menuVideoTrack;
 
 	if(list.size()==0) {
-		if(type == "sub")
-			ui.menuSubtitles->setDisabled(true);
-		else if(type == "audio")
-			ui.menuAudioChannel->setDisabled(true);
-
+		menu->setDisabled(true);
 		return;
 	} else {
-		if(type == "sub")
-			ui.menuSubtitles->setDisabled(false);
-		else if(type == "audio")
-			ui.menuAudioChannel->setDisabled(false);
+		menu->setDisabled(false);
 	}
 
-	for (int i = 0; i < list.size(); ++i) {
-		if(type == "sub")
-			ui.menuSubtitles->addAction(list.at(i));
-		else if(type == "audio")
-			ui.menuAudioChannel->addAction(list.at(i));
-	}
+	for(int i = 0; i < list.size(); ++i)
+		menu->addAction(list[i]);
 }
 
 // Open dialogs

@@ -13,6 +13,8 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include <QVlc/Instance.h>
+
 #include "Ver.h"
 
 QString Version::Tano()
@@ -37,4 +39,14 @@ QString Version::Svn()
 	QString svn = "@TANO_WC_REVISION@";
 	
 	return svn;
+}
+
+QString Version::libQVlc()
+{
+	return QVlc::Instance::version();
+}
+
+QString Version::libVLC()
+{
+	return QVlc::Instance::libVlcVersion();
 }

@@ -42,6 +42,7 @@ namespace QVlc
 		~Instance();
 
 		void openMedia(const QString &media);
+		static bool isActive();
 		static void checkError();
 		static QString version();
 		static QString libVlcVersion();

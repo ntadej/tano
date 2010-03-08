@@ -214,11 +214,10 @@ void QVlc::Instance::checkPlayingState()
 	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
 #endif
 
-	if(state == 3) {
+	if(state == libvlc_Playing)
 		emit stateChanged(1);
-	} else {
+	else
 		emit stateChanged(0);
-	}
 }
 
 void QVlc::Instance::checkError()
@@ -235,6 +234,37 @@ void QVlc::Instance::checkError()
 		libvlc_exception_clear(_vlcException);
 	}
 #endif
+}
+
+bool QVlc::Instance::isActive()
+{
+	if(!_vlcCurrentMediaPlayer)
+		return false;
+
+	// It's possible that the vlc doesn't play anything
+	// so check before
+	libvlc_media_t *curMedia;
+#if VLC_1_1
+	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer);
+#else
+	curMedia = libvlc_media_player_get_media(_vlcCurrentMediaPlayer, _vlcException);
+	libvlc_exception_clear(_vlcException);
+#endif
+
+	if (!curMedia)
+		return false;
+
+	libvlc_state_t state;
+	#if VLC_1_1
+		state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer);
+	#else
+		state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
+	#endif
+
+	if(state == libvlc_NothingSpecial || state == libvlc_Ended || state == libvlc_Error)
+		return false;
+	else
+		return true;
 }
 
 int QVlc::Instance::fatalError() const

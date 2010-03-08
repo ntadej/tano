@@ -46,18 +46,8 @@ void QVlc::AudioControl::updateActions()
 		delete _actionGroup;
 	_actionGroup = new QActionGroup(this);
 
-	if(!_vlcCurrentMediaPlayer)
-		return;
-
-	libvlc_state_t state;
-#if VLC_1_1
-	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer);
-#else
-	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
-#endif
-
-	if(state == 0 || state == 6 || state == 7) {
-		emit audioActions("audio", _actionList);
+	if(!Instance::isActive()) {
+		emit actions("audio", _actionList);
 		return;
 	}
 
@@ -92,7 +82,7 @@ void QVlc::AudioControl::updateActions()
 		}
 #endif
 	} else {
-		emit audioActions("audio", _actionList);
+		emit actions("audio", _actionList);
 		return;
 	}
 
@@ -111,7 +101,9 @@ void QVlc::AudioControl::updateActions()
 #endif
 	Instance::checkError();
 
-	emit audioActions("audio", _actionList);
+	emit actions("audio", _actionList);
+
+	_timer->start(60000);
 }
 
 void QVlc::AudioControl::update()
@@ -125,4 +117,9 @@ void QVlc::AudioControl::update()
 #endif
 
 	Instance::checkError();
+}
+
+void QVlc::AudioControl::mediaChange()
+{
+	_timer->start(2000);
 }

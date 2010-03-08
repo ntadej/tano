@@ -32,8 +32,10 @@ namespace QVlc
 		AudioControl(QObject *parent = 0);
 		~AudioControl();
 
+		void mediaChange();
+
 	signals:
-		void audioActions(const QString, QList<QAction*>);
+		void actions(const QString, QList<QAction*>);
 
 	private slots:
 		void update();

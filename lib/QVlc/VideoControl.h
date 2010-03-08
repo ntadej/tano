@@ -33,13 +33,16 @@ namespace QVlc
 		~VideoControl();
 
 		void mediaChange();
+		void loadSubtitle(const QString &sub);
 
 	private slots:
-		void updateActions();
-		void update();
+		void updateSubtitleActions();
+		void updateSubtitles();
+		void updateVideoActions();
+		void updateVideo();
 
 	signals:
-		void subtitlesActions(const QString, QList<QAction*>);
+		void actions(const QString, QList<QAction*>);
 
 	private:
 		QTimer *_timer;
@@ -47,6 +50,10 @@ namespace QVlc
 		QList<QAction*> _actionList;
 		QMap<QString,int> _map;
 		QActionGroup *_actionGroup;
+
+		QList<QAction*> _actionVideoList;
+		QMap<QString,int> _mapVideo;
+		QActionGroup *_actionVideoGroup;
 
 		bool _manualLanguage;
 		QStringList _preferedLanguage;
