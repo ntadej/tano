@@ -132,7 +132,18 @@ void QVlc::VideoControl::updateSubtitles()
 
 void QVlc::VideoControl::loadSubtitle(const QString &sub)
 {
+	if(!Instance::isActive() || sub.isEmpty())
+		return;
 
+#if VLC_1_1
+	libvlc_video_set_subtitle_file(_vlcCurrentMediaPlayer, sub.toUtf8().data());
+#else
+	libvlc_video_set_subtitle_file(_vlcCurrentMediaPlayer, sub.toUtf8().data(), _vlcException);
+#endif
+
+	Instance::checkError();
+
+	_timer->start(1000);
 }
 
 void QVlc::VideoControl::updateVideoActions() {

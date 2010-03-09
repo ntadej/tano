@@ -160,12 +160,10 @@
      <addaction name="actionCrop1_1"/>
     </widget>
     <widget class="QMenu" name="menuSubtitles">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
      <property name="title">
       <string>Subtitles</string>
      </property>
+     <addaction name="actionOpenSubtitles"/>
     </widget>
     <widget class="QMenu" name="menuDeinterlacing">
      <property name="enabled">
@@ -1062,6 +1060,14 @@
    </property>
    <property name="text">
     <string>About Plugins</string>
+   </property>
+  </action>
+  <action name="actionOpenSubtitles">
+   <property name="text">
+    <string>Open from file</string>
+   </property>
+   <property name="toolTip">
+    <string>Open from file</string>
    </property>
   </action>
  </widget>

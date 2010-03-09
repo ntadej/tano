@@ -66,6 +66,7 @@ private slots:
 	void openPlaylist(const bool &start = false);
 	void openFile();
 	void openUrl();
+	void openSubtitles();
 
 	void showEpg(const QStringList &epgValue, const int &id);
 	void processMenu(const QString &type, const QList<QAction*> &list);
@@ -136,7 +137,6 @@ private:
 	Channel *_channel;
 	EpgLoader *_epg;
 	EpgShow *_epgShow;
-	QString _fileName;
 	QString _playlistName;
 
 	//Menus and actions

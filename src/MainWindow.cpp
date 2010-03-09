@@ -187,6 +187,7 @@ void MainWindow::createConnections()
 	connect(ui.actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
 	connect(ui.actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
 	connect(ui.actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
+	connect(ui.actionOpenSubtitles, SIGNAL(triggered()), this, SLOT(openSubtitles()));
 	connect(ui.actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
 
 	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
@@ -465,6 +466,7 @@ void MainWindow::processMenu(const QString &type, const QList<QAction *> &list)
 
 	if(list.size()==0) {
 		menu->setDisabled(true);
+		ui.menuSubtitles->setDisabled(false);
 		return;
 	} else {
 		menu->setDisabled(false);
@@ -514,28 +516,40 @@ void MainWindow::openPlaylist(const bool &start)
 }
 void MainWindow::openFile()
 {
-	_fileName =
+	QString file =
 		QFileDialog::getOpenFileName(this, tr("Open File or URL"),
 						QDir::homePath(),
 						tr("Multimedia files(*)"));
 
-	if (_fileName.isEmpty())
+	if (file.isEmpty())
 		return;
 
-	play(_fileName);
+	play(file);
 }
 void MainWindow::openUrl()
 {
 	bool ok;
-	_fileName =
+	QString file =
 		QInputDialog::getText(this, tr("Open URL or stream"),
 							 tr("Enter the URL of multimedia file or stream you want to play:"),
 							 QLineEdit::Normal, "", &ok);
 
-	if (!ok && _fileName.isEmpty())
+	if (!ok && file.isEmpty())
 		return;
 
-	play(_fileName);
+	play(file);
+}
+void MainWindow::openSubtitles()
+{
+	QString file =
+		QFileDialog::getOpenFileName(this, tr("Open Subtitles file"),
+						QDir::homePath(),
+						tr("Subtitles files(*.sub *.srt *.txt)"));
+
+	if (file.isEmpty())
+		return;
+
+	_videoController->loadSubtitle(file);
 }
 
 
