@@ -47,9 +47,9 @@ namespace QVlc
 	private:
 		QTimer *_timer;
 
-		QList<QAction*> _actionList;
-		QMap<QString,int> _map;
-		QActionGroup *_actionGroup;
+		QList<QAction*> _actionSubList;
+		QMap<QString,int> _mapSub;
+		QActionGroup *_actionSubGroup;
 
 		QList<QAction*> _actionVideoList;
 		QMap<QString,int> _mapVideo;

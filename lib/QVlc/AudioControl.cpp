@@ -18,7 +18,7 @@
 #include "Instance.h"
 
 QVlc::AudioControl::AudioControl(QObject *parent)
-	: QObject(parent), _actionGroup(0)
+	: QObject(parent), _actionList(QList<QAction*>()), _map(QMap<QString,int>()), _actionGroup(0)
 {
 	_timer = new QTimer(this);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(updateActions()));
@@ -33,6 +33,8 @@ QVlc::AudioControl::~AudioControl()
 
 	for(int i=0; i<_actionList.size(); i++)
 		delete _actionList[i];
+	if(_actionGroup != 0)
+		delete _actionGroup;
 }
 
 void QVlc::AudioControl::updateActions()
@@ -53,13 +55,11 @@ void QVlc::AudioControl::updateActions()
 
 #if VLC_1_1
 	if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer) != 0) {
-#else
-	if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
-#endif
 		libvlc_track_description_t *desc;
-#if VLC_1_1
 		desc = libvlc_audio_get_track_description(_vlcCurrentMediaPlayer);
 #else
+	if(libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
+		libvlc_track_description_t *desc;
 		desc = libvlc_audio_get_track_description(_vlcCurrentMediaPlayer, _vlcException);
 #endif
 		_map.insert(QString().fromUtf8(desc->psz_name), 0);

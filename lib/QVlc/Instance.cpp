@@ -21,18 +21,14 @@
 #include "Instance.h"
 
 libvlc_instance_t * _vlcInstance = NULL;
-
 #if VLC_1_0
 libvlc_exception_t * _vlcException = new libvlc_exception_t();
 #endif
-
 libvlc_media_player_t * _vlcCurrentMediaPlayer = NULL;
 
 QVlc::Instance::Instance(const QList<const char *> &args, const WId &widget, QObject *parent)
-	: QObject(parent), _widgetId(widget), _args(args)
+	: QObject(parent), _vlcMedia(NULL), _widgetId(widget), _args(args)
 {
-	_vlcMedia = NULL;
-
 	_check = new QTimer(this);
 	connect(_check, SIGNAL(timeout()), this, SLOT(checkPlayingState()));
 	_check->start(300);

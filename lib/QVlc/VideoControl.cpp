@@ -18,7 +18,9 @@
 #include "VideoControl.h"
 
 QVlc::VideoControl::VideoControl(const QString &lang, QObject *parent)
-	: QObject(parent), _actionGroup(0), _actionVideoGroup(0), _manualLanguage(false), _preferedLanguage(lang.split(" / "))
+	: QObject(parent), _actionSubList(QList<QAction*>()), _mapSub(QMap<QString,int>()), _actionSubGroup(0),
+	_actionVideoList(QList<QAction*>()), _mapVideo(QMap<QString,int>()), _actionVideoGroup(0),
+	_manualLanguage(false), _preferedLanguage(lang.split(" / "))
 {
 	_timer = new QTimer(this);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(updateSubtitleActions()));
@@ -31,95 +33,93 @@ QVlc::VideoControl::~VideoControl()
 {
 	delete _timer;
 
-	for(int i=0; i<_actionList.size(); i++)
-		delete _actionList[i];
+	for(int i=0; i<_actionSubList.size(); i++)
+		delete _actionSubList[i];
 	for(int i=0; i<_actionVideoList.size(); i++)
 		delete _actionVideoList[i];
-	if(_actionGroup != 0)
-		delete _actionGroup;
+	if(_actionSubGroup != 0)
+		delete _actionSubGroup;
 	if(_actionVideoGroup != 0)
 		delete _actionVideoGroup;
 }
 
 void QVlc::VideoControl::updateSubtitleActions() {
-	for(int i=0; i<_actionList.size(); i++)
-		delete _actionList[i];
-	_actionList.clear();
-	_map.clear();
+	for(int i=0; i<_actionSubList.size(); i++)
+		delete _actionSubList[i];
+	_actionSubList.clear();
+	_mapSub.clear();
 
-	if(_actionGroup != 0)
-		delete _actionGroup;
-	_actionGroup = new QActionGroup(this);
+	if(_actionSubGroup != 0)
+		delete _actionSubGroup;
+	_actionSubGroup = new QActionGroup(this);
 
 	if(!Instance::isActive()) {
-		emit actions("sub", _actionList);
+		emit actions("sub", _actionSubList);
 		return;
 	}
 
 #if VLC_1_1
 	if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer) != 0) {
-#else
-	if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
-#endif
 		libvlc_track_description_t *desc;
-#if VLC_1_1
 		desc = libvlc_video_get_spu_description(_vlcCurrentMediaPlayer);
 #else
+	if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
+		libvlc_track_description_t *desc;
 		desc = libvlc_video_get_spu_description(_vlcCurrentMediaPlayer, _vlcException);
 #endif
-		_map.insert(QString().fromUtf8(desc->psz_name), 0);
-		_actionList << new QAction(QString().fromUtf8(desc->psz_name), this);
+		_mapSub.insert(QString().fromUtf8(desc->psz_name), 0);
+		_actionSubList << new QAction(QString().fromUtf8(desc->psz_name), this);
 #if VLC_1_1
 		if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer) > 1) {
 			for(int i = 1; i < libvlc_video_get_spu_count(_vlcCurrentMediaPlayer); i++) {
 				desc = desc->p_next;
-				_map.insert(QString().fromUtf8(desc->psz_name), i);
-				_actionList << new QAction(QString().fromUtf8(desc->psz_name), this);
+				_mapSub.insert(QString().fromUtf8(desc->psz_name), i);
+				_actionSubList << new QAction(QString().fromUtf8(desc->psz_name), this);
 			}
 		}
 #else
 		if(libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException) > 1) {
 			for(int i = 1; i < libvlc_video_get_spu_count(_vlcCurrentMediaPlayer, _vlcException); i++) {
 				desc = desc->p_next;
-				_map.insert(QString().fromUtf8(desc->psz_name), i);
-				_actionList << new QAction(QString().fromUtf8(desc->psz_name), this);
+				_mapSub.insert(QString().fromUtf8(desc->psz_name), i);
+				_actionSubList << new QAction(QString().fromUtf8(desc->psz_name), this);
 			}
 		}
 #endif
 	} else {
-		emit actions("sub", _actionList);
+		emit actions("sub", _actionSubList);
 		return;
 	}
 
 	Instance::checkError();
 
-	for (int i = 0; i < _actionList.size(); ++i) {
-		_actionList[i]->setCheckable(true);
-		_actionGroup->addAction(_actionList[i]);
-		connect(_actionList[i], SIGNAL(triggered()), this, SLOT(updateSubtitles()));
+	for (int i = 0; i < _actionSubList.size(); ++i) {
+		_actionSubList[i]->setCheckable(true);
+		_actionSubGroup->addAction(_actionSubList[i]);
+		connect(_actionSubList[i], SIGNAL(triggered()), this, SLOT(updateSubtitles()));
 
 		if(!_manualLanguage)
 			for(int j = 0; j < _preferedLanguage.size(); ++j)
-				if(_actionList[i]->text().contains(_preferedLanguage[j],Qt::CaseInsensitive)) {
-					_actionList[i]->trigger();
+				if(_actionSubList[i]->text().contains(_preferedLanguage[j],Qt::CaseInsensitive)) {
+					_actionSubList[i]->trigger();
 					_manualLanguage = true;
 				}
 	}
 #if VLC_1_1
-	_actionList[libvlc_video_get_spu(_vlcCurrentMediaPlayer)]->setChecked(true);
+	_actionSubList[libvlc_video_get_spu(_vlcCurrentMediaPlayer)]->setChecked(true);
 #else
-	_actionList[libvlc_video_get_spu(_vlcCurrentMediaPlayer, _vlcException)]->setChecked(true);
+	_actionSubList[libvlc_video_get_spu(_vlcCurrentMediaPlayer, _vlcException)]->setChecked(true);
 #endif
 	Instance::checkError();
 
-	emit actions("sub", _actionList);
+	emit actions("sub", _actionSubList);
 
 	_timer->start(60000);
 }
 
 void QVlc::VideoControl::updateSubtitles()
 {
-	int id = _map.value(_actionGroup->checkedAction()->text());
+	int id = _mapSub.value(_actionSubGroup->checkedAction()->text());
 
 #if VLC_1_1
 	libvlc_video_set_spu(_vlcCurrentMediaPlayer, id);
@@ -163,13 +163,11 @@ void QVlc::VideoControl::updateVideoActions() {
 
 #if VLC_1_1
 	if(libvlc_video_get_track_count(_vlcCurrentMediaPlayer) != 0) {
-#else
-	if(libvlc_video_get_track_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
-#endif
 		libvlc_track_description_t *desc;
-#if VLC_1_1
 		desc = libvlc_video_get_track_description(_vlcCurrentMediaPlayer);
 #else
+	if(libvlc_video_get_track_count(_vlcCurrentMediaPlayer, _vlcException) != 0) {
+		libvlc_track_description_t *desc;
 		desc = libvlc_video_get_track_description(_vlcCurrentMediaPlayer, _vlcException);
 #endif
 		_mapVideo.insert(QString().fromUtf8(desc->psz_name), desc->i_id);
