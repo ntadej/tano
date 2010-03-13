@@ -32,6 +32,7 @@ public:
 
 public slots:
 	void open(const QString &url);
+	void loadPlugin(const QString &plugin);
 
 private slots:
 	void display(const QStringList &list);

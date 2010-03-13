@@ -18,17 +18,10 @@
 #include "EpgLoader.h"
 #include "../plugins/PluginsLoader.h"
 
-EpgLoader::EpgLoader(const QString &plugin)
-	: _init(false), _show(false), _step(0),	_currentArgument(""), _currentRequest(""), _codec(QTextCodec::codecForName("UTF-8"))
+EpgLoader::EpgLoader(QObject *parent)
+	: QHttp(parent), _init(false), _show(false), _step(0), _plugin(0),
+	_currentArgument(""), _currentRequest(""), _codec(QTextCodec::codecForName("UTF-8"))
 {
-	PluginsLoader *loader = new PluginsLoader();
-	for(int i=0; i < loader->epgPlugin().size(); i++)
-		if(loader->epgName()[i] == plugin)
-			_plugin = loader->epg(loader->epgPlugin()[i]);
-	delete loader;
-
-	setHost(_plugin->host());
-
 	_timer = new QTimer(this);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(now()));
 }
@@ -50,6 +43,20 @@ void EpgLoader::getEpg(const QString &arg, const bool &type)
 
 	_currentRequest = _plugin->load(arg, _step);
 	epg();
+}
+
+void EpgLoader::loadPlugin(const QString &plugin)
+{
+	if(_plugin != 0)
+		delete _plugin;
+
+	PluginsLoader *loader = new PluginsLoader();
+	for(int i=0; i < loader->epgPlugin().size(); i++)
+		if(loader->epgName()[i] == plugin)
+			_plugin = loader->epg(loader->epgPlugin()[i]);
+	delete loader;
+
+	setHost(_plugin->host());
 }
 
 void EpgLoader::now()

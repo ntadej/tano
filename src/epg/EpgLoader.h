@@ -27,10 +27,11 @@ class EpgLoader : public QHttp
 {
 Q_OBJECT
 public:
-	EpgLoader(const QString &plugin);
+	EpgLoader(QObject *parent = 0);
 	~EpgLoader();
 
 	void getEpg(const QString &arg, const bool &type = false);
+	void loadPlugin(const QString &plugin);
 	void stop();
 
 signals:

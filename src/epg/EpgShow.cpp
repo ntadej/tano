@@ -26,7 +26,7 @@ EpgShow::EpgShow(QWidget *parent)
 	ui.setupUi(this);
 
 	_file = 0;
-	_loader = new EpgLoader(Common::defaultEpgPlugin());
+	_loader = new EpgLoader();
 	_http = new QHttp(this);
 
 	connect(_loader, SIGNAL(epgDone(QStringList, int)), this, SLOT(display(QStringList)));
@@ -52,6 +52,11 @@ void EpgShow::open(const QString &url)
 	ui.labelPhoto->setPixmap(QPixmap(":/icons/images/image.png"));
 	show();
 	_loader->getEpg(url, true);
+}
+
+void EpgShow::loadPlugin(const QString &plugin)
+{
+	_loader->loadPlugin(plugin);
 }
 
 void EpgShow::display(const QStringList &list)

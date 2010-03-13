@@ -3,6 +3,11 @@ CONFIGURE_FILE(
   "${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp"
 )
 
+IF(MINGW)
+	FIND_PACKAGE(LIBVLC REQUIRED)
+	INCLUDE_DIRECTORIES(${LIBVLC_INCLUDE_DIR})
+ENDIF(MINGW)
+
 ###################
 # List of sources #
 ###################

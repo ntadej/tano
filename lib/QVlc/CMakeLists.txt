@@ -1,4 +1,4 @@
-PROJECT(qvlc)
+PROJECT(QVlc)
 cmake_minimum_required(VERSION 2.6)
 
 CONFIGURE_FILE(

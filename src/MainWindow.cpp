@@ -31,7 +31,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent), _select(0), _time(new Time()), _update(new Updates()),
-	_playlistEditor(0), _timersEditor(0), _epg(new EpgLoader(Common::defaultEpgPlugin())), _epgShow(new EpgShow())
+	_playlistEditor(0), _timersEditor(0), _epg(new EpgLoader()), _epgShow(new EpgShow())
 {
 	QPixmap pixmap(":/icons/images/splash.png");
 	QSplashScreen *splash = new QSplashScreen(pixmap);
@@ -513,6 +513,8 @@ void MainWindow::openPlaylist(const bool &start)
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
 
 	ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
+	_epg->loadPlugin(ui.playlistWidget->epgPlugin());
+	_epgShow->loadPlugin(ui.playlistWidget->epgPlugin());
 }
 void MainWindow::openFile()
 {
