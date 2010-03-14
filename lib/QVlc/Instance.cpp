@@ -46,6 +46,8 @@ QString QVlc::Instance::version()
 #ifdef LIBQVLC_VERSION
 #if LIBQVLC_REVISION
 	return QString(QString(LIBQVLC_VERSION)+"-r"+QString().number(LIBQVLC_REVISION));
+#else
+	return QString(QString(LIBQVLC_VERSION));
 #endif //LIBQVLC_REVISION
 #else
 	return QString("Unknown");

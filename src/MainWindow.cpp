@@ -31,7 +31,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent), _select(0), _time(new Time()), _update(new Updates()),
-	_playlistEditor(0), _timersEditor(0), _epg(new EpgLoader()), _epgShow(new EpgShow())
+	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow())
 {
 	QPixmap pixmap(":/icons/images/splash.png");
 	QSplashScreen *splash = new QSplashScreen(pixmap);
@@ -136,6 +136,7 @@ void MainWindow::createSettings()
 
 	//GUI Settings
 	_settings->beginGroup("GUI");
+	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(_settings->value("toolbar",4).toInt()));
 	if(_settings->value("lite",false).toBool()) {
 		ui.actionLite->setChecked(true);
 		lite();
@@ -205,7 +206,7 @@ void MainWindow::createConnections()
 	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
 	connect(ui.videoWidget, SIGNAL(osdVisibility(bool)), ui.osdWidget, SLOT(setVisible(bool)));
 
-	connect(_epg, SIGNAL(epgDone(QStringList, int)), this, SLOT(showEpg(QStringList, int)));
+	connect(_epg, SIGNAL(epg(QStringList, int)), this, SLOT(showEpg(QStringList, int)));
 	connect(ui.scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui.infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
 	connect(_update, SIGNAL(updatesDone(QStringList)), _trayIcon, SLOT(message(QStringList)));
@@ -400,7 +401,7 @@ void MainWindow::play(const QString &itemFile)
 	if(itemFile.isNull()) {
 		ui.infoBarWidget->setInfo(_channel->name(), _channel->language());
 
-		_epg->getEpg(_channel->epg());
+		_epg->request(_channel->epg());
 		ui.channelNumber->display(_channel->number());
 
 		_backend->openMedia(_channel->url());
@@ -425,7 +426,6 @@ void MainWindow::stop()
 
 	ui.infoBarWidget->clear();
 
-	_epg->stop();
 	ui.scheduleWidget->clear();
 	ui.scheduleWidget->setPage(0);
 
@@ -513,7 +513,7 @@ void MainWindow::openPlaylist(const bool &start)
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
 
 	ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
-	_epg->loadPlugin(ui.playlistWidget->epgPlugin());
+	_epg->setEpg(ui.playlistWidget->epg(), ui.playlistWidget->epgPlugin());
 	_epgShow->loadPlugin(ui.playlistWidget->epgPlugin());
 }
 void MainWindow::openFile()

@@ -141,6 +141,7 @@ void EditSettings::ok()
 	_settings->setValue("controls",ui.checkControls->isChecked());
 	_settings->setValue("wheel",ui.radioWheelVolume->isChecked());
 	_settings->setValue("tray",ui.radioTray->isChecked());
+	_settings->setValue("toolbar",ui.comboToolBar->currentIndex());
 	_settings->endGroup();
 
 	_settings->beginGroup("Recorder");
@@ -234,6 +235,7 @@ void EditSettings::read()
 	ui.radioWheelChannel->setChecked(!_settings->value("wheel",false).toBool());
 	ui.radioWheelVolume->setChecked(_settings->value("wheel",false).toBool());
 	ui.radioExit->setChecked(!_settings->value("tray",false).toBool());
+	ui.comboToolBar->setCurrentIndex(_settings->value("toolbar",4).toInt());
 	_settings->endGroup();
 
 	_settings->beginGroup("Recorder");

@@ -41,6 +41,7 @@ public:
 	QString name() const {return _name;};
 	QString epgPlugin() const {return _epgPlugin;};
 	QStringList categories() const {return _categoryList;};
+	QStringList epg() const {return _epgList;};
 	QList<int> nums() const {return _channelNums;};
 	int processNewNum(QTreeWidgetItem *channel, const int &num);
 	QMap<QTreeWidgetItem*, Channel*> channelMap() const {return _map;};
@@ -59,6 +60,7 @@ private:
 	QString _epgPlugin;
 	QStringList _m3uLineList;
 	QStringList _categoryList;
+	QStringList _epgList;
 
 	QList<Channel*> _channels;
 	QList<int> _channelNums;

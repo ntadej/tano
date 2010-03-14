@@ -31,7 +31,7 @@
 #include "control/ChannelSelect.h"
 #include "control/Shortcuts.h"
 #include "control/Time.h"
-#include "epg/EpgLoader.h"
+#include "epg/EpgManager.h"
 #include "epg/EpgShow.h"
 #include "ui/EditPlaylist.h"
 #include "ui/EditTimers.h"
@@ -135,7 +135,7 @@ private:
 
 	//Playback and channels
 	Channel *_channel;
-	EpgLoader *_epg;
+	EpgManager *_epg;
 	EpgShow *_epgShow;
 	QString _playlistName;
 

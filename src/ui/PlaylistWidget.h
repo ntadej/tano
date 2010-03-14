@@ -39,6 +39,7 @@ public:
 
 	QString name() const {return _handler->name();};
 	QString epgPlugin() const {return _handler->epgPlugin();};
+	QStringList epg() const {return _handler->epg();};
 	QString fileName() const {return _fileName;};
 	QList<int> nums() const {return _handler->nums();};
 	QTreeWidget *treeWidget() {return ui.treeWidget;};

@@ -26,6 +26,7 @@ EpgShow::EpgShow(QWidget *parent)
 	ui.setupUi(this);
 
 	_file = 0;
+	_httpGetId = 0;
 	_loader = new EpgLoader();
 	_http = new QHttp(this);
 

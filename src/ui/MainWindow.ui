@@ -56,8 +56,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1000</width>
-     <height>26</height>
+     <width>0</width>
+     <height>0</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -218,7 +218,7 @@
     </size>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextBesideIcon</enum>
+    <enum>Qt::ToolButtonFollowStyle</enum>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -227,9 +227,11 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionOpenToolbar"/>
+   <addaction name="separator"/>
    <addaction name="actionRecorder"/>
    <addaction name="actionTimers"/>
    <addaction name="actionEditPlaylist"/>
+   <addaction name="separator"/>
    <addaction name="actionSettings"/>
    <addaction name="actionClose"/>
   </widget>
@@ -280,8 +282,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>361</height>
+          <width>350</width>
+          <height>392</height>
          </rect>
         </property>
         <attribute name="label">
@@ -301,8 +303,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>100</width>
-          <height>30</height>
+          <width>350</width>
+          <height>392</height>
          </rect>
         </property>
         <attribute name="label">
@@ -336,7 +338,7 @@
     <number>8</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_2">
-    <layout class="QVBoxLayout" name="verticalLayout_9">
+    <layout class="QVBoxLayout" name="verticalLayout">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -571,7 +573,14 @@
       <widget class="QVlc::SeekWidget" name="seekWidget" native="true"/>
      </item>
      <item>
-      <widget class="InfoBar" name="infoBarWidget" native="true"/>
+      <layout class="QHBoxLayout" name="infoLayout">
+       <item>
+        <widget class="InfoBar" name="infoBarWidget" native="true"/>
+       </item>
+       <item>
+        <widget class="CurrentTime" name="timeWidget" native="true"/>
+       </item>
+      </layout>
      </item>
     </layout>
    </widget>
@@ -1146,6 +1155,12 @@
    <class>EpgSchedule</class>
    <extends>QWidget</extends>
    <header>epg/EpgSchedule.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CurrentTime</class>
+   <extends>QWidget</extends>
+   <header>ui/CurrentTime.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

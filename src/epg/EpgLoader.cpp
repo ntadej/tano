@@ -20,7 +20,7 @@
 
 EpgLoader::EpgLoader(QObject *parent)
 	: QHttp(parent), _init(false), _show(false), _step(0), _plugin(0),
-	_currentArgument(""), _currentRequest(""), _codec(QTextCodec::codecForName("UTF-8"))
+	_currentArgument(""), _currentRequest(""), _currentList(QStringList()), _codec(QTextCodec::codecForName("UTF-8"))
 {
 	_timer = new QTimer(this);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(now()));
