@@ -43,7 +43,6 @@ private slots:
 	void show(const bool &error);
 	void init();
 	void initDone(const bool &error);
-	void now();
 
 private:
 	bool _init;
@@ -54,10 +53,8 @@ private:
 
 	QString _currentArgument;
 	QString _currentRequest;
-	QStringList _currentList;
 
 	QTextCodec *_codec;
-	QTimer *_timer;
 };
 
 #endif // TANO_EPGLOADER_H_

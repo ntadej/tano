@@ -14,6 +14,7 @@
 *****************************************************************************/
 
 #include <QtCore/QDate>
+#include <QtCore/QDebug>
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
@@ -21,15 +22,19 @@
 #include "EpgManager.h"
 
 EpgManager::EpgManager(QObject *parent)
-	: QObject(parent), _reload(false)
+	: QObject(parent), _ready(false), _reload(false), _currentEpg(""), _currentLoadEpg(""), _currentRequest("")
 {
 	_loader = new EpgLoader(this);
-	connect(_loader, SIGNAL(epgDone(QStringList,int)), this, SIGNAL(epg(QStringList,int)));
+	connect(_loader, SIGNAL(epgDone(QStringList,int)), this, SLOT(set(QStringList,int)));
+
+	_timer = new QTimer(this);
+	connect(_timer, SIGNAL(timeout()), this, SLOT(now()));
 }
 
 EpgManager::~EpgManager()
 {
 	delete _loader;
+	delete _timer;
 }
 
 void EpgManager::setEpg(const QStringList &epg, const QString &epgPlugin)
@@ -62,11 +67,78 @@ void EpgManager::clear()
 
 void EpgManager::init()
 {
-	if(_reload)
-		clear();
+	clear();
+
+	load();
 }
 
 void EpgManager::request(const QString &epg)
 {
-	_loader->getEpg(epg);
+	if(epg == "") {
+		_timer->stop();
+	} else if(_day[0][epg].isEmpty()) {
+		_currentRequest = epg;
+		if(_ready)
+			load();
+	} else {
+		post(epg);
+	}
+}
+
+void EpgManager::load()
+{
+	if(_currentRequest != "") {
+		_currentLoadEpg = _currentRequest;
+		qDebug() << "Request:" << _currentLoadEpg;
+		_loader->getEpg(_currentLoadEpg);
+	} else {
+		for(int i=0; i<_epgList.size(); i++) {
+			if(!_day[0].contains(_epgList[i])) {
+				_currentLoadEpg = _epgList[i];
+				_loader->getEpg(_epgList[i]);
+				break;
+			} else if(i == _epgList.size()-1) {
+				_ready = true;
+			}
+		}
+	}
+}
+
+void EpgManager::set(const QStringList &epg, const int &day)
+{
+	_day[day].insert(_currentLoadEpg, epg);
+	qDebug() << _currentLoadEpg << "day" << day << "gotten";
+
+	if(day == 3) {
+		if(_currentLoadEpg == _currentRequest) {
+			_currentRequest = "";
+			post(_currentLoadEpg);
+		}
+		load();
+	}
+}
+
+void EpgManager::post(const QString &e)
+{
+	_currentEpg = e;
+	now();
+	emit epg(_day[0][e], 1);
+	emit epg(_day[1][e], 2);
+	emit epg(_day[2][e], 3);
+	emit epg(_day[3][e], 4);
+}
+
+void EpgManager::now()
+{
+	QStringList now;
+	for(int i = 1; i < _day[0][_currentEpg].size(); i+=3) {
+		if(QTime::currentTime() > QTime::fromString(_day[0][_currentEpg][i], "hh:mm") && QTime::currentTime() < QTime::fromString(_day[0][_currentEpg][i+3], "hh:mm")) {
+			now << "<a href=\"" + _day[0][_currentEpg][i+1] + "\">" + _day[0][_currentEpg][i] + " - " + _day[0][_currentEpg][i+2] + "</a>"
+				<< "<a href=\"" + _day[0][_currentEpg][i+4] + "\">" + _day[0][_currentEpg][i+3] + " - " + _day[0][_currentEpg][i+5] + "</a>";
+			emit epg(now, 0);
+			break;
+		}
+	}
+
+	_timer->start(60000);
 }

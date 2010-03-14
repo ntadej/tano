@@ -101,55 +101,55 @@ void M3UHandler::processList()
 	QStringList tmpList;
 	QStringList tmpCList;
 
-	if(!_m3uLineList.at(0).contains("#EXTM3U"))
+	if(!_m3uLineList[0].contains("#EXTM3U"))
 		return;
 
 	for(int i=1; i<_m3uLineList.size(); i++) {
-		if(_m3uLineList.at(i)=="")
+		if(_m3uLineList[i]=="")
 			continue;
 
-		if(_m3uLineList.at(i).contains("#EXTNAME")) {
-			_name = _m3uLineList.at(i);
+		if(_m3uLineList[i].contains("#EXTNAME")) {
+			_name = _m3uLineList[i];
 			_name.replace(QString("#EXTNAME:"),QString(""));
-		} else if(_m3uLineList.at(i).contains("#EXTEPG")) {
-			_epgPlugin = _m3uLineList.at(i);
+		} else if(_m3uLineList[i].contains("#EXTEPG")) {
+			_epgPlugin = _m3uLineList[i];
 			_epgPlugin.replace(QString("#EXTEPG:"),QString(""));
-		} else if(_m3uLineList.at(i).contains("#EXTINF")) {
-			tmp = _m3uLineList.at(i);
+		} else if(_m3uLineList[i].contains("#EXTINF")) {
+			tmp = _m3uLineList[i];
 			tmp.replace(QString("#EXTINF:"),QString(""));
 			tmpList = tmp.split(",");
 
 			_item = new QTreeWidgetItem(_treeWidget);
 			_item->setData(0, Qt::UserRole, "channel");
 			_item->setIcon(0, _channelIcon);
-			_item->setText(0, processNum(tmpList.at(0)));
-			_item->setText(1, tmpList.at(1));
-			_channel = new Channel(tmpList.at(1), tmpList.at(0).toInt());
+			_item->setText(0, processNum(tmpList[0]));
+			_item->setText(1, tmpList[1]);
+			_channel = new Channel(tmpList[1], tmpList[0].toInt());
 
 			_map.insert(_item, _channel);
-			_nmap.insert(tmpList.at(0).toInt(), _channel);
+			_nmap.insert(tmpList[0].toInt(), _channel);
 
 			_channels << _channel;
-			_channelNums << tmpList.at(0).toInt();
-		} else if(_m3uLineList.at(i).contains("#EXTTV")) {
-			tmp = _m3uLineList.at(i);
+			_channelNums << tmpList[0].toInt();
+		} else if(_m3uLineList[i].contains("#EXTTV")) {
+			tmp = _m3uLineList[i];
 			tmp.replace(QString("#EXTTV:"),QString(""));
 			tmpList = tmp.split(";");
 
 			if(tmpList.size()!=0) {
-				tmpCList = tmpList.at(0).split(",");
+				tmpCList = tmpList[0].split(",");
 				_channel->setCategories(tmpCList);
-				for(int i=0;i<tmpCList.size();i++)
-					if(!_categoryList.contains(tmpCList.at(i)))
-						_categoryList.append(tmpCList.at(i));
-				_item->setText(2, tmpList.at(0));
-				_channel->setLanguage(tmpList.at(1));
-				_channel->setEpg(tmpList.at(2));
-				if(!_epgList.contains(tmpList.at(2)))
-					_epgList.append(tmpList.at(2));
+				for(int k=0;k<tmpCList.size();k++)
+					if(!_categoryList.contains(tmpCList[k]))
+						_categoryList << tmpCList[k];
+				_item->setText(2, tmpList[0]);
+				_channel->setLanguage(tmpList[1]);
+				_channel->setEpg(tmpList[2]);
+				if(!_epgList.contains(tmpList[2]) && !tmpList[2].isEmpty())
+					_epgList << tmpList[2];
 			}
 		} else {
-			tmp = _m3uLineList.at(i);
+			tmp = _m3uLineList[i];
 			_channel->setUrl(tmp);
 		}
 	}

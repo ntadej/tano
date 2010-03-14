@@ -20,6 +20,7 @@
 #include <QtCore/QMap>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
+#include <QtCore/QTimer>
 
 #include "EpgLoader.h"
 
@@ -36,12 +37,22 @@ public:
 signals:
 	void epg(QStringList, int);
 
+private slots:
+	void now();
+	void set(const QStringList &epg, const int &day);
+
 private:
 	void clear();
 	void init();
+	void load();
+	void post(const QString &e);
 
+	bool _ready;
 	bool _reload;
 
+	QString _currentEpg;
+	QString _currentLoadEpg;
+	QString _currentRequest;
 	QStringList _epgList;
 	QString _epgPlugin;
 	QString _path;
@@ -49,6 +60,7 @@ private:
 	QMap<QString, QStringList> _day[4];
 
 	EpgLoader *_loader;
+	QTimer *_timer;
 };
 
 #endif // TANO_EPGMANAGER_H_

@@ -20,10 +20,9 @@
 
 EpgLoader::EpgLoader(QObject *parent)
 	: QHttp(parent), _init(false), _show(false), _step(0), _plugin(0),
-	_currentArgument(""), _currentRequest(""), _currentList(QStringList()), _codec(QTextCodec::codecForName("UTF-8"))
+	_currentArgument(""), _currentRequest(""), _codec(QTextCodec::codecForName("UTF-8"))
 {
-	_timer = new QTimer(this);
-	connect(_timer, SIGNAL(timeout()), this, SLOT(now()));
+
 }
 
 EpgLoader::~EpgLoader()
@@ -59,28 +58,12 @@ void EpgLoader::loadPlugin(const QString &plugin)
 	setHost(_plugin->host());
 }
 
-void EpgLoader::now()
-{
-	QStringList now;
-	for(int i = 1; i < _currentList.size(); i+=3) {
-		if(QTime::currentTime() > QTime::fromString(_currentList[i], "hh:mm") && QTime::currentTime() < QTime::fromString(_currentList[i+3], "hh:mm")) {
-			now << "<a href=\"" + _currentList[i+1] + "\">" + _currentList[i] + " - " + _currentList[i+2] + "</a>"
-				<< "<a href=\"" + _currentList[i+4] + "\">" + _currentList[i+3] + " - " + _currentList[i+5] + "</a>";
-			emit epgDone(now, 0);
-			break;
-		}
-	}
-
-	_timer->start(60000);
-}
-
 void EpgLoader::stop()
 {
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(initDone(bool)));
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule(bool)));
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(show(bool)));
 	abort();
-	_timer->stop();
 }
 
 void EpgLoader::init()
@@ -127,12 +110,7 @@ void EpgLoader::schedule(const bool &error)
 	if(list[0] == "error")
 		return;
 
-	emit epgDone(list, _step+1);
-
-	if(_step == 0) {
-		_currentList = list;
-		now();
-	}
+	emit epgDone(list, _step);
 
 	if(_step < 3) {
 		_step++;
