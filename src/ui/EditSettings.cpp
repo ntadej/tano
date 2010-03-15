@@ -197,7 +197,7 @@ void EditSettings::read()
 	else if(_settings->value("playlist","playlists/siol-mpeg2.m3u").toString() == "playlists/tus.m3u")
 		ui.radioTus->setChecked(true);
 	else {
-		ui.radioPresetPlaylist->setChecked(true);
+		ui.radioCustomPlaylist->setChecked(true);
 		ui.buttonBrowse->setEnabled(true);
 		ui.buttonReset->setEnabled(true);
 		ui.presetsBox->setEnabled(false);

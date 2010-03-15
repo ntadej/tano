@@ -13,6 +13,7 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
 #include <QtGui/QTextEdit>
 
 #include "EpgSloveniaPlugin.h"
@@ -46,14 +47,11 @@ QHttpRequestHeader EpgSloveniaPlugin::httpHeader(const QString &url) const
 
 bool EpgSloveniaPlugin::init(const QString &input)
 {
-	int m = input.indexOf("flag=", input.indexOf("whatson"));
-	int n = input.indexOf("\"",m);
+	QRegExp flag("flag\\s*=\\s*(\\w{10,30})");
+	flag.indexIn(input);
 
-	QString flag;
-	for(int i=m+5;i<n;i++)
-		flag.append(QString(input[i]));
-
-	_flag = flag;
+	_flag = flag.cap(1);
+	qDebug() << "EPG: Flag:" << _flag;
 
 	if(_flag.size()>0)
 		return true;
@@ -73,8 +71,9 @@ QString EpgSloveniaPlugin::load(const QString &input, const int &arg) const
 
 		if(!epg.contains("flag"))
 			epg = epg + "&flag=" + _flag;
-	} else
+	} else {
 		epg = epg.remove("http://www.siol.net");
+	}
 
 	return epg;
 }
@@ -84,41 +83,34 @@ QStringList EpgSloveniaPlugin::processSchedule(const QString &input) const
 	if(!input.contains("schedule_title"))
 		return QStringList() << "error";
 
-	int n;
-	QString value = input;
+	QStringList mainList;
+	QStringList list[3];
 
-	//Main EPG
-	n = value.indexOf("<dl class=\"listB\">");
-	value.remove(0,n);
-	n = value.indexOf("</dl>");
-	value.remove(n,value.size()-1-n);
+	QRegExp title("<div class=\"schedule_title\">\\t*\\s*<span class=\"title\">([^</span>]*)</span>\\t*\\s*<span class=\"time\">([^<]*)");
+	title.indexIn(input);
+	mainList << title.cap(1)+title.cap(2);
 
-	//Changes
-	value.replace("<table class=\"schedule\">", ": ");
-	value.replace("(<a href=", "(<p style=");
-	value.replace("ogled</a>)","ogled</p>)");
-	value.replace("<a", "|<a");
-	value.replace("</a>", "|");
-	value.replace("	","");
-	value.replace(" href=\"",">");
+	QRegExp exp[3];
+	exp[0].setPattern("class=\"time\">(\\d{2,2}.\\d{2,2})"); // Time
+	exp[1].setPattern("href=\"([^\">]*)"); // Url
+	exp[2].setPattern(_flag+"\">([^<]*)"); // Name
 
-	QTextEdit *edit = new QTextEdit();
-	edit->setHtml(value);
-	value = edit->toPlainText();
-	delete edit;
+	int pos;
+	int start = input.indexOf("<dd class=\"lowL\">");
+	int end = input.indexOf("</dd>", start);
 
-	value.replace("\n","");
-	value.replace("\">","|");
-	value.replace("tv-spored.aspx", "http://www.siol.net/tv-spored.aspx");
-	value.replace("|: ","|");
-	value.replace(".2009: ", ".2009:|");
-	value.replace(".2010: ", ".2010:|");
-	value.replace(".2011: ", ".2011:|");
-	value.replace(" (ogled): ","");
-	value.replace(" (ogled)","");
-	value.remove(value.size()-1,1);
+	for(int i=0; i<3; i++) {
+		pos = start;
+		while ((pos = exp[i].indexIn(input, pos)) != -1 && pos <= end) {
+			list[i] << exp[i].cap(1);
+			pos += exp[i].matchedLength();
+		}
+	}
 
-	return value.split("|");
+	for(int i=0; i<list[0].size(); i++)
+		mainList << list[0][i] << list[1][i].prepend("http://www.siol.net/") << list[2][i];
+
+	return mainList;
 }
 
 QStringList EpgSloveniaPlugin::processShow(const QString &input) const

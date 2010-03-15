@@ -76,7 +76,7 @@ void EpgManager::request(const QString &epg)
 {
 	if(epg == "") {
 		_timer->stop();
-	} else if(_day[0][epg].isEmpty()) {
+	} else if(_day[3][epg].isEmpty()) {
 		_currentRequest = epg;
 		if(_ready)
 			load();
