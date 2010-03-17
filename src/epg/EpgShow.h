@@ -17,13 +17,13 @@
 #define TANO_EPGSHOW_H_
 
 #include <QtCore/QFile>
-#include <QtGui/QWidget>
+#include <QtGui/QStackedWidget>
 
 #include <ui_EpgShow.h>
 
 #include "EpgLoader.h"
 
-class EpgShow : public QWidget
+class EpgShow : public QStackedWidget
 {
 Q_OBJECT
 public:
@@ -38,6 +38,8 @@ private slots:
 	void display(const QStringList &list);
 	void downloadFile(const QString &u);
 	void httpRequestFinished(const int &requestId, const bool &error);
+	void next();
+	void previous();
 
 private:
 	Ui::EpgShow ui;
@@ -47,6 +49,9 @@ private:
 	QHttp *_http;
 	QFile *_file;
 	int _httpGetId;
+
+	QString _epgNext;
+	QString _epgPrevious;
 };
 
 #endif // TANO_EPGSHOW_H_

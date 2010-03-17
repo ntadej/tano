@@ -16,12 +16,13 @@
 #ifndef TANO_EPGLOADER_H_
 #define TANO_EPGLOADER_H_
 
+#include <QtCore/QMap>
 #include <QtCore/QString>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTimer>
 #include <QtNetwork/QHttp>
 
-#include "../plugins/EpgPlugins.h"
+#include "plugins/EpgPlugins.h"
 
 class EpgLoader : public QHttp
 {
@@ -30,29 +31,31 @@ public:
 	EpgLoader(QObject *parent = 0);
 	~EpgLoader();
 
-	void getEpg(const QString &arg, const bool &type = false);
+	void getSchedule(const QString &arg, const int &day = 0);
+	void getShow(const QString &arg);
 	void loadPlugin(const QString &plugin);
 	void stop();
 
 signals:
-	void epgDone(QStringList, int);
+	void schedule(QString, int, QStringList);
+	void show(QStringList);
 
 private slots:
-	void epg();
-	void schedule(const bool &error);
-	void show(const bool &error);
+	void processSchedule(const int &req, const bool &error);
+	void processShow(const bool &error);
 	void init();
 	void initDone(const bool &error);
 
 private:
 	bool _init;
-	bool _show;
-	int _step;
 
 	EpgPlugin *_plugin;
 
 	QString _currentArgument;
 	QString _currentRequest;
+
+	QMap<int, QString> _mapArg;
+	QMap<int, int> _mapStep;
 
 	QTextCodec *_codec;
 };

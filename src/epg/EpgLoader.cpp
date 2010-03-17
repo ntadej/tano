@@ -16,10 +16,10 @@
 #include <QtCore/QTime>
 
 #include "EpgLoader.h"
-#include "../plugins/PluginsLoader.h"
+#include "plugins/PluginsLoader.h"
 
 EpgLoader::EpgLoader(QObject *parent)
-	: QHttp(parent), _init(false), _show(false), _step(0), _plugin(0),
+	: QHttp(parent), _init(false), _plugin(0),
 	_currentArgument(""), _currentRequest(""), _codec(QTextCodec::codecForName("UTF-8"))
 {
 
@@ -30,18 +30,30 @@ EpgLoader::~EpgLoader()
 
 }
 
-void EpgLoader::getEpg(const QString &arg, const bool &type)
+void EpgLoader::getSchedule(const QString &arg, const int &day)
 {
-	_show = type;
 	_currentArgument = arg;
 
-	if(!_init && !_show) {
+	if(!_init) {
 		init();
 		return;
 	}
 
-	_currentRequest = _plugin->load(arg, _step);
-	epg();
+	_currentRequest = _plugin->load(arg, day);
+
+	int r =	request(_plugin->httpHeader(_currentRequest));
+	_mapArg.insert(r, arg);
+	_mapStep.insert(r, day);
+	connect(this, SIGNAL(requestFinished(int, bool)), this, SLOT(processSchedule(int, bool)));
+}
+
+void EpgLoader::getShow(const QString &arg)
+{
+	_currentArgument = arg;
+	_currentRequest = _plugin->load(arg);
+
+	request(_plugin->httpHeader(_currentRequest));
+	connect(this, SIGNAL(done(bool)), this, SLOT(processShow(bool)));
 }
 
 void EpgLoader::loadPlugin(const QString &plugin)
@@ -61,8 +73,8 @@ void EpgLoader::loadPlugin(const QString &plugin)
 void EpgLoader::stop()
 {
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(initDone(bool)));
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule(bool)));
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(show(bool)));
+	disconnect(this, SIGNAL(requestFinished(int, bool)), this, SLOT(processSchedule(int, bool)));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(processShow(bool)));
 	abort();
 }
 
@@ -84,22 +96,12 @@ void EpgLoader::initDone(const bool &error)
 	_init = _plugin->init(_codec->toUnicode(httpResponse));
 
 	if(_currentArgument != "")
-		getEpg(_currentArgument, _show);
+		getSchedule(_currentArgument);
 }
 
-void EpgLoader::epg()
+void EpgLoader::processSchedule(const int &req, const bool &error)
 {
-	request(_plugin->httpHeader(_currentRequest));
-
-	if(_show)
-		connect(this, SIGNAL(done(bool)), this, SLOT(show(bool)));
-	else
-		connect(this, SIGNAL(done(bool)), this, SLOT(schedule(bool)));
-}
-
-void EpgLoader::schedule(const bool &error)
-{
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(schedule(bool)));
+	disconnect(this, SIGNAL(requestFinished(int, bool)), this, SLOT(processSchedule(int, bool)));
 
 	if(error)
 		return;
@@ -110,19 +112,19 @@ void EpgLoader::schedule(const bool &error)
 	if(list[0] == "error")
 		return;
 
-	emit epgDone(list, _step);
+	emit schedule(_mapArg[req], _mapStep[req], list);
 
-	if(_step < 3) {
-		_step++;
-		getEpg(_currentArgument);
-	} else {
-		_step = 0;
-	}
+	if(_mapStep[req] == 0)
+		getSchedule(_currentArgument, 1);
+	else if(_mapStep[req] == 1)
+		getSchedule(_currentArgument, 2);
+	else if(_mapStep[req] == 2)
+		getSchedule(_currentArgument, 3);
 }
 
-void EpgLoader::show(const bool &error)
+void EpgLoader::processShow(const bool &error)
 {
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(show(bool)));
+	disconnect(this, SIGNAL(done(bool)), this, SLOT(processShow(bool)));
 
 	if(error)
 		return;
@@ -133,5 +135,5 @@ void EpgLoader::show(const bool &error)
 	if(list[0] == "error")
 		return;
 
-	emit epgDone(list, 0);
+	emit show(list);
 }

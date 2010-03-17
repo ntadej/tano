@@ -64,10 +64,7 @@ QString EpgSloveniaPlugin::load(const QString &input, const int &arg) const
 	QString epg = input;
 
 	if(!epg.contains("http://", Qt::CaseInsensitive)) {
-		if(arg==0)
-			epg = QString("/tv-spored.aspx?chn=" + input);
-		else
-			epg = QString("/tv-spored.aspx?day=" + QString::number(arg+1) + "&chn=" + input);
+		epg = QString("/tv-spored.aspx?day=" + QString::number(arg+1) + "&chn=" + input);
 
 		if(!epg.contains("flag"))
 			epg = epg + "&flag=" + _flag;
@@ -118,86 +115,29 @@ QStringList EpgSloveniaPlugin::processShow(const QString &input) const
 	if(!input.contains("schedule_title"))
 		return QStringList() << "error";
 
-	int n;
-	QString tmp;
 	QStringList show;
-	QTextEdit *edit = new QTextEdit();
 
-	//Title
-	tmp = input;
-	n = tmp.indexOf("<div class=\"event\">");
-		tmp.remove(0,n);
-	n = tmp.indexOf("</h4>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	show << tmp;
+	QRegExp exp[10];
+	exp[0].setPattern("<h4>(.*)</h4>"); //Title
+	exp[1].setPattern("class=\"title\">([^<]*)"); //Channel
+	exp[2].setPattern("class=\"time\">([^<]*)"); //Time
+	exp[3].setPattern("class=\"duration\">([^<]*)</span>"); //Duration
+	exp[4].setPattern("class=\"sub\">([^<]*)"); //Info
+	exp[5].setPattern("class=\"desc\">([^<]*)"); //Description
+	exp[6].setPattern("class=\"actor\"><span>Igrajo:</span>\\s*([^<]*)"); //Starring
+	exp[7].setPattern("<h4><img src='([^']*)"); //Image
+	exp[8].setPattern("href=\"([^\"]*)\" title=\"Prej"); //Previous
+	exp[9].setPattern("href=\"([^\"]*)\" title=\"Naslednja"); //Next
 
-	//Time
-	tmp = input;
-	n = tmp.indexOf("<div class=\"schedule_title\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</div>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	tmp.replace(" ,",",");
-	show << tmp;
-
-	//Info
-	tmp = input;
-	n = tmp.indexOf("<p class=\"sub\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</p>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	show << tmp;
-
-	//Description
-	tmp = input;
-	n = tmp.indexOf("<p class=\"desc\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</p>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	show << tmp;
-
-	//Actor
-	tmp = input;
-	n = tmp.indexOf("<p class=\"actor\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</p>");
-	tmp.remove(n,tmp.size()-1-n);
-	edit->setHtml(tmp);
-	tmp = edit->toPlainText();
-	edit->setText("");
-	tmp.remove(tmp.size()-2,2);
-	show << tmp;
-
-	//Image
-	tmp = input;
-	n = tmp.indexOf("<div class=\"event\">");
-	tmp.remove(0,n);
-	n = tmp.indexOf("</h4>");
-	tmp.remove(n,tmp.size()-1-n);
-	if(!tmp.contains("<img src")) {
-		tmp = "";
-	} else {
-		n = tmp.indexOf("<img src='");
-		tmp.remove(0,n+10);
-		n = tmp.indexOf("' alt=\"\"");
-		tmp.remove(n,tmp.size()-1-n);
-		tmp.remove(tmp.size()-1,1);
+	for(int i=0; i<10; i++) {
+		exp[i].indexIn(input);
+		if(i==0)
+			show << exp[i].cap(1).replace(QRegExp("(<.*>)"), "");
+		else if(i==8 || i==9)
+			show << exp[i].cap(1).prepend("http://www.siol.net/");
+		else
+			show << exp[i].cap(1);
 	}
-	show << tmp;
-
-	delete edit;
 
 	return show;
 }

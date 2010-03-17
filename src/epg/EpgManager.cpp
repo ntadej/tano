@@ -25,7 +25,7 @@ EpgManager::EpgManager(QObject *parent)
 	: QObject(parent), _ready(false), _reload(false), _currentEpg(""), _currentLoadEpg(""), _currentRequest("")
 {
 	_loader = new EpgLoader(this);
-	connect(_loader, SIGNAL(epgDone(QStringList,int)), this, SLOT(set(QStringList,int)));
+	connect(_loader, SIGNAL(schedule(QString, int, QStringList)), this, SLOT(set(QString, int, QStringList)));
 
 	_timer = new QTimer(this);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(now()));
@@ -90,12 +90,12 @@ void EpgManager::load()
 	if(_currentRequest != "") {
 		_currentLoadEpg = _currentRequest;
 		qDebug() << "Request:" << _currentLoadEpg;
-		_loader->getEpg(_currentLoadEpg);
+		_loader->getSchedule(_currentLoadEpg);
 	} else {
 		for(int i=0; i<_epgList.size(); i++) {
 			if(!_day[0].contains(_epgList[i])) {
 				_currentLoadEpg = _epgList[i];
-				_loader->getEpg(_epgList[i]);
+				_loader->getSchedule(_epgList[i]);
 				break;
 			} else if(i == _epgList.size()-1) {
 				_ready = true;
@@ -104,10 +104,10 @@ void EpgManager::load()
 	}
 }
 
-void EpgManager::set(const QStringList &epg, const int &day)
+void EpgManager::set(const QString &channel, const int &day, const QStringList &epg)
 {
-	_day[day].insert(_currentLoadEpg, epg);
-	qDebug() << _currentLoadEpg << "day" << day << "gotten";
+	_day[day].insert(channel, epg);
+	qDebug() << channel << "day" << day << "gotten";
 
 	if(day == 3) {
 		if(_currentLoadEpg == _currentRequest) {

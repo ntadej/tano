@@ -17,21 +17,22 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QUrl>
 
+#include "Common.h"
 #include "EpgShow.h"
-#include "../Common.h"
 
 EpgShow::EpgShow(QWidget *parent)
-	: QWidget(parent)
+	: QStackedWidget(parent), _file(0), _httpGetId(0), _epgNext(""), _epgPrevious("")
 {
 	ui.setupUi(this);
 
-	_file = 0;
-	_httpGetId = 0;
 	_loader = new EpgLoader();
 	_http = new QHttp(this);
 
-	connect(_loader, SIGNAL(epgDone(QStringList, int)), this, SLOT(display(QStringList)));
+	connect(_loader, SIGNAL(show(QStringList)), this, SLOT(display(QStringList)));
 	connect(_http, SIGNAL(requestFinished(int, bool)), this, SLOT(httpRequestFinished(int, bool)));
+
+	connect(ui.buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
+	connect(ui.buttonNext, SIGNAL(clicked()), this, SLOT(next()));
 }
 
 EpgShow::~EpgShow()
@@ -42,17 +43,18 @@ EpgShow::~EpgShow()
 
 void EpgShow::open(const QString &url)
 {
-	ui.mainWidget->setCurrentIndex(0);
+	setCurrentIndex(0);
 
 	setWindowTitle(tr("Show info"));
-	ui.labelName->setText("");
+	ui.labelTitle->setText("");
 	ui.labelTime->setText("");
 	ui.labelInfo->setText("");
 	ui.labelDescription->setText("");
-	ui.labelActors->setText("");
+	ui.labelStarring->setText("");
 	ui.labelPhoto->setPixmap(QPixmap(":/icons/images/image.png"));
+
 	show();
-	_loader->getEpg(url, true);
+	_loader->getShow(url);
 }
 
 void EpgShow::loadPlugin(const QString &plugin)
@@ -63,15 +65,19 @@ void EpgShow::loadPlugin(const QString &plugin)
 void EpgShow::display(const QStringList &list)
 {
 	setWindowTitle(list[0]);
-	ui.labelName->setText("<h1>" + list[0] + "</h1>");
-	ui.labelTime->setText("<h2>" + list[1] + "</h2>");
-	ui.labelInfo->setText("<h3>" + list[2] + "</h3>");
-	ui.labelDescription->setText("\n" + list[3]);
-	ui.labelActors->setText("\n" + list[4]);
+	ui.labelTitle->setText("<h1>" + list[0] + "</h1>");
+	ui.labelTime->setText("<h2>" + list[3] + " (" + list[1] + list[2] + ")</h2>");
+	ui.labelInfo->setText("<h3>" + list[4] + "</h3>");
+	ui.labelDescription->setText(list[5]);
+	if(!list[6].isEmpty())
+		ui.labelStarring->setText("<b>" + tr("Starring:") + "</b> " + list[6]);
 
-	downloadFile(list[5]);
+	downloadFile(list[7]);
 
-	ui.mainWidget->setCurrentIndex(1);
+	_epgPrevious = list[8];
+	_epgNext =list[9];
+
+	setCurrentIndex(1);
 }
 
 void EpgShow::downloadFile(const QString &u)
@@ -117,4 +123,20 @@ void EpgShow::httpRequestFinished(const int &requestId, const bool &error)
 	}
 
 	delete _file;
+}
+
+void EpgShow::next()
+{
+	if(_epgNext.isEmpty())
+		return;
+
+	open(_epgNext);
+}
+
+void EpgShow::previous()
+{
+	if(_epgPrevious.isEmpty())
+		return;
+
+	open(_epgPrevious);
 }

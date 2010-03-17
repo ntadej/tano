@@ -39,7 +39,7 @@ signals:
 
 private slots:
 	void now();
-	void set(const QStringList &epg, const int &day);
+	void set(const QString &channel, const int &day, const QStringList &epg);
 
 private:
 	void clear();

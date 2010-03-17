@@ -28,7 +28,7 @@ public:
 	virtual QString host() const = 0;
 	virtual QHttpRequestHeader httpHeader(const QString &url) const = 0;
 	virtual bool init(const QString &text) = 0;
-	virtual QString load(const QString &input, const int &arg) const = 0;
+	virtual QString load(const QString &input, const int &arg = 0) const = 0;
 	virtual QStringList processSchedule(const QString &input) const = 0;
 	virtual QStringList processShow(const QString &input) const = 0;
 };

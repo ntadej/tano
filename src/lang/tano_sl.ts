@@ -805,19 +805,29 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>EpgShow</name>
     <message>
-        <location filename="../../build/src/ui_EpgShow.h" line="194"/>
-        <source>Channel</source>
-        <translation>Program</translation>
-    </message>
-    <message>
-        <location filename="../../build/src/ui_EpgShow.h" line="195"/>
-        <source>&lt;center&gt;&lt;h1&gt;Loading ...&lt;/h1&gt;&lt;/center&gt;</source>
-        <translation>&lt;center&gt;&lt;h1&gt;Nalagam ...&lt;/h1&gt;&lt;/center&gt;</translation>
-    </message>
-    <message>
-        <location filename="../epg/EpgShow.cpp" line="47"/>
+        <location filename="../epg/EpgShow.cpp" line="48"/>
         <source>Show info</source>
         <translation>Informacija o oddaji</translation>
+    </message>
+    <message>
+        <location filename="../epg/EpgShow.cpp" line="73"/>
+        <source>Starring:</source>
+        <translation>Igrajo:</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_EpgShow.h" line="186"/>
+        <source>&lt;h1&gt;Loading...&lt;/h1&gt;</source>
+        <translation>&lt;h1&gt;Nalagam...&lt;/h1&gt;</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_EpgShow.h" line="187"/>
+        <source>Previous</source>
+        <translation>Prejšnja oddaja</translation>
+    </message>
+    <message>
+        <location filename="../../build/src/ui_EpgShow.h" line="188"/>
+        <source>Next</source>
+        <translation>Naslednja oddaja</translation>
     </message>
 </context>
 <context>
