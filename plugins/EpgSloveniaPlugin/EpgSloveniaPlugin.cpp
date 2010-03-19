@@ -123,8 +123,8 @@ QStringList EpgSloveniaPlugin::processShow(const QString &input) const
 	exp[2].setPattern("class=\"time\">([^<]*)"); //Time
 	exp[3].setPattern("class=\"duration\">([^<]*)</span>"); //Duration
 	exp[4].setPattern("class=\"sub\">([^<]*)"); //Info
-	exp[5].setPattern("class=\"desc\">([^<]*)"); //Description
-	exp[6].setPattern("class=\"actor\"><span>Igrajo:</span>\\s*([^<]*)"); //Starring
+	exp[5].setPattern("class=\"desc\">([^<]*)<br /><br />([^<]*)"); //Description
+	exp[6].setPattern("<span>Igrajo:</span>\\s*([^<]*)"); //Starring
 	exp[7].setPattern("<h4><img src='([^']*)"); //Image
 	exp[8].setPattern("href=\"([^\"]*)\" title=\"Prej"); //Previous
 	exp[9].setPattern("href=\"([^\"]*)\" title=\"Naslednja"); //Next
@@ -133,6 +133,8 @@ QStringList EpgSloveniaPlugin::processShow(const QString &input) const
 		exp[i].indexIn(input);
 		if(i==0)
 			show << exp[i].cap(1).replace(QRegExp("(<.*>)"), "");
+		else if(i==5)
+			show << exp[i].cap(1)+"\n\n"+exp[i].cap(2);
 		else if(i==8 || i==9)
 			show << exp[i].cap(1).prepend("http://www.siol.net/");
 		else
