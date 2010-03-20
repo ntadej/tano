@@ -17,36 +17,23 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
+#include "Common.h"
 #include "EditPlaylist.h"
 #include "plugins/PluginsLoader.h"
 
 EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent)
-	: QMainWindow(parent), _closeEnabled(false), _playlist(playlist)
+	: QMainWindow(parent), _closeEnabled(false), _playlist(playlist), _channelIcon(QIcon(":/icons/images/video.png"))
 {
 	ui.setupUi(this);
 
+	createSettings();
+	createConnections();
+
 	ui.editWidget->setEnabled(false);
-
-	connect(ui.actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
-	connect(ui.actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
-	connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(save()));
-	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
-	connect(ui.actionImport, SIGNAL(triggered()), this, SLOT(import()));
-
-	connect(ui.buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
-	connect(ui.editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
-	connect(ui.editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
-	connect(ui.editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
-	connect(ui.editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
-	connect(ui.editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
-
-	connect(ui.playlist, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(editItem(QTreeWidgetItem*)));
-
-	_channelIcon = QIcon(":/icons/images/video.png");
-
 	ui.playlist->disableCategories();
 	ui.playlist->open(_playlist);
 	ui.editName->setText(ui.playlist->name());
+	ui.number->display(ui.playlist->treeWidget()->topLevelItemCount());
 
 	PluginsLoader *loader = new PluginsLoader();
 	for(int i=0; i < loader->epgPlugin().size(); i++)
@@ -73,6 +60,33 @@ void EditPlaylist::closeEvent(QCloseEvent *event)
 	}
 }
 
+void EditPlaylist::createSettings()
+{
+	QSettings *settings = Common::settings();
+	settings->beginGroup("GUI");
+	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->value("toolbar",4).toInt()));
+	settings->endGroup();
+	delete settings;
+}
+
+void EditPlaylist::createConnections()
+{
+	connect(ui.actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
+	connect(ui.actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
+	connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(save()));
+	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
+	connect(ui.actionImport, SIGNAL(triggered()), this, SLOT(import()));
+
+	connect(ui.buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
+	connect(ui.editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
+	connect(ui.editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
+	connect(ui.editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
+	connect(ui.editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
+	connect(ui.editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
+
+	connect(ui.playlist, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(editItem(QTreeWidgetItem*)));
+}
+
 void EditPlaylist::deleteItem()
 {
 	ui.editNumber->setText("");
@@ -85,11 +99,14 @@ void EditPlaylist::deleteItem()
 	ui.editWidget->setEnabled(false);
 
 	ui.playlist->deleteItem();
+
+	ui.number->display(ui.playlist->treeWidget()->topLevelItemCount());
 }
 
 void EditPlaylist::addItem()
 {
 	editItem(ui.playlist->createItem());
+	ui.number->display(ui.playlist->treeWidget()->topLevelItemCount());
 }
 
 void EditPlaylist::save()
@@ -114,6 +131,7 @@ void EditPlaylist::import()
 		return;
 
 	ui.playlist->import(fileName);
+	ui.number->display(ui.playlist->treeWidget()->topLevelItemCount());
 }
 
 void EditPlaylist::exit()
@@ -161,6 +179,7 @@ void EditPlaylist::editChannelNumber()
 	QString text = ui.editNumber->text();
 	if(text.toInt() != ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->number())
 		ui.editNumber->setText(QString().number(ui.playlist->processNum(ui.playlist->treeWidget()->currentItem(), text.toInt())));
+	ui.playlist->treeWidget()->sortByColumn(0, Qt::AscendingOrder);
 }
 
 void EditPlaylist::editChannelName(const QString &text)

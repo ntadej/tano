@@ -21,10 +21,10 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QTreeWidgetItem>
 
-#include "../channels/Channel.h"
-#include "../control/Time.h"
-#include "../recorder/Timer.h"
-#include "../xml/TimersHandler.h"
+#include "channels/Channel.h"
+#include "control/Time.h"
+#include "recorder/Timer.h"
+#include "xml/TimersHandler.h"
 
 #include <ui_EditTimers.h>
 
@@ -59,6 +59,9 @@ private slots:
 	void exit();
 
 private:
+	void createConnections();
+	void createSettings();
+
 	Ui::EditTimers ui;
 
 	bool _activeTimers;

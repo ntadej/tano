@@ -16,10 +16,9 @@
 #include <QtCore/QDate>
 
 #include "EpgSchedule.h"
-#include "ui_EpgSchedule.h"
 
 EpgSchedule::EpgSchedule(QWidget *parent)
-	: QWidget(parent)
+	: QStackedWidget(parent)
 {
 	ui.setupUi(this);
 
@@ -68,5 +67,5 @@ void EpgSchedule::setEpg(const QStringList &epgValue, const int &id)
 
 void EpgSchedule::setPage(const int &id)
 {
-	ui.main->setCurrentIndex(id);
+	setCurrentIndex(id);
 }

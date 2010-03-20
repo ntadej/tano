@@ -49,6 +49,9 @@ private slots:
 	void editChannelEpg(const QString &text);
 
 private:
+	void createConnections();
+	void createSettings();
+
 	Ui::EditPlaylist ui;
 
 	bool _closeEnabled;

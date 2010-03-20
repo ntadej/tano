@@ -130,15 +130,23 @@ void EpgManager::post(const QString &e)
 
 void EpgManager::now()
 {
+	int k;
 	QStringList now;
-	for(int i = 1; i < _day[0][_currentEpg].size(); i+=3) {
-		if(QTime::currentTime() > QTime::fromString(_day[0][_currentEpg][i], "hh:mm") && QTime::currentTime() < QTime::fromString(_day[0][_currentEpg][i+3], "hh:mm")) {
-			now << "<a href=\"" + _day[0][_currentEpg][i+1] + "\">" + _day[0][_currentEpg][i] + " - " + _day[0][_currentEpg][i+2] + "</a>"
-				<< "<a href=\"" + _day[0][_currentEpg][i+4] + "\">" + _day[0][_currentEpg][i+3] + " - " + _day[0][_currentEpg][i+5] + "</a>";
-			emit epg(now, 0);
+	for(int i = 4; i < _day[0][_currentEpg].size(); i+=3) {
+		if(QTime::fromString(_day[0][_currentEpg][i-3], "hh:mm") >=
+		   QTime::fromString(_day[0][_currentEpg][i], "hh:mm")) {
+			k = i;
+			break;
+		} else if(QTime::currentTime() > QTime::fromString(_day[0][_currentEpg][i-3], "hh:mm") &&
+				  QTime::currentTime() < QTime::fromString(_day[0][_currentEpg][i], "hh:mm")) {
+			k = i;
 			break;
 		}
 	}
+
+	now << "<a href=\"" + _day[0][_currentEpg][k-2] + "\">" + _day[0][_currentEpg][k-3] + " - " + _day[0][_currentEpg][k-1] + "</a>"
+		<< "<a href=\"" + _day[0][_currentEpg][k+1] + "\">" + _day[0][_currentEpg][k] + " - " + _day[0][_currentEpg][k+2] + "</a>";
+	emit epg(now, 0);
 
 	_timer->start(60000);
 }

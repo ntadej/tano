@@ -20,9 +20,9 @@
 #include <QtXml/QXmlSimpleReader>
 #include <QtXml/QXmlInputSource>
 
+#include "Common.h"
 #include "EditTimers.h"
-#include "../Common.h"
-#include "../xml/TimersGenerator.h"
+#include "xml/TimersGenerator.h"
 
 
 EditTimers::EditTimers(Time *t, const QString &playlist, QWidget *parent)
@@ -34,22 +34,8 @@ EditTimers::EditTimers(Time *t, const QString &playlist, QWidget *parent)
 	ui.dockWidgetContents->setDisabled(true);
 	ui.playlistWidget->open(playlist);
 
-	connect(ui.timersWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(edit(QTreeWidgetItem*)));
-	connect(ui.actionNew, SIGNAL(triggered()), this, SLOT(newItem()));
-	connect(ui.actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
-	connect(ui.buttonCreate, SIGNAL(clicked()), this, SLOT(addItem()));
-	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
-
-	connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(write()));
-	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
-
-	connect(ui.editName, SIGNAL(textChanged(QString)), this, SLOT(editName(QString)));
-	connect(ui.editDate, SIGNAL(dateChanged(QDate)), this, SLOT(editDate(QDate)));
-	connect(ui.editStartTime, SIGNAL(timeChanged(QTime)), this, SLOT(editStartTime(QTime)));
-	connect(ui.editEndTime, SIGNAL(timeChanged(QTime)), this, SLOT(editEndTime(QTime)));
-	connect(ui.checkBoxDisabled, SIGNAL(clicked()), this, SLOT(validate()));
-
-	connect(_time, SIGNAL(timerStatus(Timer*,bool)), this, SLOT(changeStatus(Timer*,bool)));
+	createSettings();
+	createConnections();
 
 	_handler = new TimersHandler(ui.timersWidget);
 
@@ -68,6 +54,35 @@ void EditTimers::closeEvent(QCloseEvent *event)
 	} else {
 		_closeEnabled = false;
 	}
+}
+
+void EditTimers::createSettings()
+{
+	QSettings *settings = Common::settings();
+	settings->beginGroup("GUI");
+	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->value("toolbar",4).toInt()));
+	settings->endGroup();
+	delete settings;
+}
+
+void EditTimers::createConnections()
+{
+	connect(ui.timersWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(edit(QTreeWidgetItem*)));
+	connect(ui.actionNew, SIGNAL(triggered()), this, SLOT(newItem()));
+	connect(ui.actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
+	connect(ui.buttonCreate, SIGNAL(clicked()), this, SLOT(addItem()));
+	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
+
+	connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(write()));
+	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
+
+	connect(ui.editName, SIGNAL(textChanged(QString)), this, SLOT(editName(QString)));
+	connect(ui.editDate, SIGNAL(dateChanged(QDate)), this, SLOT(editDate(QDate)));
+	connect(ui.editStartTime, SIGNAL(timeChanged(QTime)), this, SLOT(editStartTime(QTime)));
+	connect(ui.editEndTime, SIGNAL(timeChanged(QTime)), this, SLOT(editEndTime(QTime)));
+	connect(ui.checkBoxDisabled, SIGNAL(clicked()), this, SLOT(validate()));
+
+	connect(_time, SIGNAL(timerStatus(Timer*, bool)), this, SLOT(changeStatus(Timer*, bool)));
 }
 
 void EditTimers::exit()

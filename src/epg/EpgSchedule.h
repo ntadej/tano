@@ -20,7 +20,7 @@
 
 #include <ui_EpgSchedule.h>
 
-class EpgSchedule : public QWidget
+class EpgSchedule : public QStackedWidget
 {
 Q_OBJECT
 public:

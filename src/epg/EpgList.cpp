@@ -56,7 +56,7 @@ void EpgList::mouseReleaseEvent(QMouseEvent *event)
 void EpgList::setEpg(const QStringList &epg)
 {
 	clearList();
-	setRowCount((epg.size() - 1)/3 + 1);
+	setRowCount((epg.size() - 1)/3);
 
 	QStringList epgHeader;
 	epgHeader << epg[0];
