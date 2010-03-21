@@ -424,6 +424,8 @@ void MainWindow::stop()
 		ui.actionCropOriginal->trigger();
 	}
 
+	_epg->stop();
+
 	ui.infoBarWidget->clear();
 
 	ui.scheduleWidget->clear();

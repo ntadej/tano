@@ -1,4 +1,3 @@
-
 # CMake module to search for QVLC (Qt and libVLC connector library)
 # Authors: Rohit Yadav <rohityadav89@gmail.com>
 #          Tadej Novak <ntadej@users.sourceforge.net>
@@ -34,14 +33,14 @@ FIND_PATH(LIBQVLC_INCLUDE_DIR VlcInstance.h)
 
 #Put here path to custom location
 #example: /home/user/vlc/lib etc..
-FIND_LIBRARY(LIBQVLC_LIBRARY NAMES qvlc PATHS
+FIND_LIBRARY(LIBQVLC_LIBRARY NAMES QVlc PATHS
   "$ENV{LIBQVLC_LIBRARY_PATH}"
   "$ENV{LIB_DIR}/lib"
   #mingw
   c:/msys/local/lib
   NO_DEFAULT_PATH
   )
-FIND_LIBRARY(LIBQVLC_LIBRARY NAMES qvlc)
+FIND_LIBRARY(LIBQVLC_LIBRARY NAMES QVlc)
 
 IF (LIBQVLC_INCLUDE_DIR AND LIBQVLC_LIBRARY)
    SET(LIBQVLC_FOUND TRUE)

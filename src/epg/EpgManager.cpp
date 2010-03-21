@@ -150,3 +150,8 @@ void EpgManager::now()
 
 	_timer->start(60000);
 }
+
+void EpgManager::stop()
+{
+	_timer->stop();
+}

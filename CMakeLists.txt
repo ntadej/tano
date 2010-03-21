@@ -24,7 +24,12 @@ IF(MINGW)
 ENDIF(MINGW)
 
 IF(MINGW)
-	SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
+OPTION(DEBUG_CONSOLE "Compile with debug console")
+	IF(${DEBUG_CONSOLE} MATCHES "ON")
+
+	ELSE(${DEBUG_CONSOLE} MATCHES "ON")
+		SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
+	ENDIF(${DEBUG_CONSOLE} MATCHES "ON")
 ENDIF(MINGW)
 
 # Search for Qt4. We need the latest version of Qt

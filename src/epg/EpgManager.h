@@ -33,6 +33,7 @@ public:
 
 	void setEpg(const QStringList &epg, const QString &epgPlugin);
 	void request(const QString &epg);
+	void stop();
 
 signals:
 	void epg(QStringList, int);
