@@ -17,7 +17,7 @@
 
 #Put here path to custom location
 #example: /home/user/QVlc/include etc..
-FIND_PATH(LIBQVLC_INCLUDE_DIR QVlc/VlcInstance.h
+FIND_PATH(LIBQVLC_INCLUDE_DIR QVlc/Instance.h
   "$ENV{LIBQVLC_INCLUDE_PATH}"
   "$ENV{LIB_DIR}/include"
   "$ENV{LIB_DIR}/include/QVlc"
@@ -29,7 +29,7 @@ FIND_PATH(LIBQVLC_INCLUDE_DIR QVlc/VlcInstance.h
   c:/msys/local/include
   NO_DEFAULT_PATH
   )
-FIND_PATH(LIBQVLC_INCLUDE_DIR VlcInstance.h)
+FIND_PATH(LIBQVLC_INCLUDE_DIR Instance.h)
 
 #Put here path to custom location
 #example: /home/user/vlc/lib etc..
