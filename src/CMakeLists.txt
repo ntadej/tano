@@ -29,9 +29,9 @@ SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
 # Define the MOC source files used by Tano
 SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
 	MainWindow.h
-	Updates.h
-	control/ChannelSelect.h
-	control/Time.h
+	core/ChannelSelect.h
+	core/Time.h
+	core/Updates.h
 	epg/EpgList.h
 	epg/EpgLoader.h
 	epg/EpgManager.h
@@ -57,9 +57,11 @@ SET(Tano_Resrcs ui/images.qrc)
 SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	channels/Channel.cpp
 	channels/ChannelEpg.cpp
-	control/ChannelSelect.cpp
-	control/Shortcuts.cpp
-	control/Time.cpp
+	core/ChannelSelect.cpp
+	core/Settings.cpp
+	core/Shortcuts.cpp
+	core/Time.cpp
+	core/Updates.cpp
 	epg/EpgList.cpp
 	epg/EpgLoader.cpp
 	epg/EpgManager.cpp
@@ -91,7 +93,6 @@ SET(Tano_Srcs
 	main.cpp
 	Common.cpp
 	MainWindow.cpp
-	Updates.cpp
 	
 	${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp
 	${Tano_Class_Srcs}

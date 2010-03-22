@@ -26,11 +26,11 @@
 
 #include <ui_MainWindow.h>
 
-#include "Updates.h"
 #include "channels/Channel.h"
-#include "control/ChannelSelect.h"
-#include "control/Shortcuts.h"
-#include "control/Time.h"
+#include "core/ChannelSelect.h"
+#include "core/Shortcuts.h"
+#include "core/Time.h"
+#include "core/Updates.h"
 #include "epg/EpgManager.h"
 #include "epg/EpgShow.h"
 #include "ui/EditPlaylist.h"

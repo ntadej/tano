@@ -20,7 +20,7 @@
 #include <QtCore/QStringList>
 #include <QtGui/QDialog>
 
-#include "../control/Shortcuts.h"
+#include "core/Shortcuts.h"
 
 #include <ui_EditSettings.h>
 

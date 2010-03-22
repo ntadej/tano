@@ -22,7 +22,7 @@
 #include <QtGui/QTreeWidgetItem>
 
 #include "channels/Channel.h"
-#include "control/Time.h"
+#include "core/Time.h"
 #include "recorder/Timer.h"
 #include "xml/TimersHandler.h"
 
