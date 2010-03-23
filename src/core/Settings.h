@@ -27,6 +27,12 @@ public:
 	int readSettings();
 	void writeSettings();
 
+	// Playlists
+	static const QString PLAYLIST_SIOL_MPEG2;
+	static const QString PLAYLIST_SIOL_MPEG4;
+	static const QString PLAYLIST_T2;
+	static const QString PLAYLIST_TUS;
+
 	// General
 	QString configurationVersion() { return _configurationVersion; }
 	void setConfigurationVersion(const QString &s) { _configurationVersion = s; }
@@ -39,7 +45,7 @@ public:
 	bool session() { return _session; }
 	void setSession(const bool &b) { _session = b; }
 	static const bool DEFAULT_SESSION;
-	QString language() { return _configurationVersion; }
+	QString language() { return _language; }
 	void setLanguage(const QString &s) { _language = s; }
 	static const QString DEFAULT_LANGUAGE;
 
@@ -80,6 +86,9 @@ public:
 	bool globalSettings() { return _globalSettings; }
 	void setGlobalSettings(const bool &b) { _globalSettings = b; }
 	static const bool DEFAULT_GLOBAL_SETTINGS;
+	bool rememberVideoSettings() { return _rememberVideoSettings; }
+	void setRememberVideoSettings(const bool &b) { _rememberVideoSettings = b; }
+	static const bool DEFAULT_REMEMBER_VIDEO_SETTINGS;
 	QString subtitleLanguage() { return _subtitleLanguage; }
 	void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
 	static const QString DEFAULT_SUBTITLE_LANGUAGE;
@@ -120,6 +129,7 @@ private:
 
 	// Backend
 	bool _globalSettings;
+	bool _rememberVideoSettings;
 	QString _subtitleLanguage;
 
 	// Recorder

@@ -20,6 +20,7 @@
 #include <QtCore/QStringList>
 #include <QtGui/QDialog>
 
+#include "core/Settings.h"
 #include "core/Shortcuts.h"
 
 #include <ui_EditSettings.h>
@@ -28,24 +29,18 @@ class EditSettings : public QDialog
 {
 Q_OBJECT
 public:
-	EditSettings(QWidget *parent = 0, Shortcuts *s = 0);
+	EditSettings(Shortcuts *s = 0, QWidget *parent = 0);
 	~EditSettings();
-signals:
-	void apply();
 
 private slots:
 	void action(QAbstractButton *button);
-	void ok();
+	void save();
 	void cancel();
-
-	void toggleCustom();
-	void toggleNetwork();
-	void togglePlaylist();
 
 	void playlistBrowse();
 	void playlistReset();
-	void dirBrowse();
-	void dirReset();
+	void recorderDirectoryBrowse();
+	void recorderDirectoryReset();
 
 	void shortcutRestore();
 	void shortcutSequence(const QKeySequence &s);
@@ -61,8 +56,10 @@ private:
 	void shortcutRead();
 
 	Ui::EditSettings ui;
-	QSettings *_settings;
+
+	Settings *_settings;
 	Shortcuts *_shortcuts;
+
 	QTableWidgetItem *_item;
 	QKeySequence _sequence;
 	QStringList _actionsList;

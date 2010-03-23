@@ -560,7 +560,7 @@ void MainWindow::openSubtitles()
 //GUI
 void MainWindow::showSettings()
 {
-	EditSettings s(this, _shortcuts);
+	EditSettings s(_shortcuts, this);
 	s.exec();
 }
 
