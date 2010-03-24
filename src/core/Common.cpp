@@ -16,6 +16,8 @@
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 
+#include <QVlc/Config.h>
+
 #include "Common.h"
 #include "core/Settings.h"
 #include "ui/About.h"

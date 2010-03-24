@@ -26,6 +26,7 @@
 
 #include "MainWindow.h"
 #include "core/Common.h"
+#include "core/Settings.h"
 #include "plugins/PluginsManager.h"
 #include "ui/EditSettings.h"
 
@@ -75,9 +76,11 @@ void MainWindow::exit()
 		case QMessageBox::Close:
 			ui.recorder->stop();
 			if(_sessionEnabled) {
-				_settings->setVolume(ui.volumeSlider->volume());
-				_settings->setChannel(ui.channelNumber->value());
-				_settings->writeSettings();
+				Settings *settings = new Settings(this);
+				settings->setVolume(ui.volumeSlider->volume());
+				settings->setChannel(ui.channelNumber->value());
+				settings->writeSettings();
+				delete settings;
 			}
 			qApp->quit();
 			break;
@@ -122,43 +125,45 @@ void MainWindow::createSettings()
 	_desktopWidth = QApplication::desktop()->width();
 	_desktopHeight = QApplication::desktop()->height();
 
-	_settings = new Settings(this);
-	_defaultPlaylist = _settings->playlist();
-	_hideToTray = _settings->hideToTray();
-	_updatesOnStart = _settings->updatesCheck();
+	Settings *settings = new Settings(this);
+	_defaultPlaylist = settings->playlist();
+	_hideToTray = settings->hideToTray();
+	_updatesOnStart = settings->updatesCheck();
 
 	//Session
-	_sessionEnabled = _settings->session();
-	_sessionVolume = _settings->volume();
-	_sessionChannel = _settings->channel();
+	_sessionEnabled = settings->session();
+	_sessionVolume = settings->volume();
+	_sessionChannel = settings->channel();
 
 	//GUI Settings
-	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(_settings->toolbarLook()));
-	if(_settings->startLite()) {
+	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
+	if(settings->startLite()) {
 		ui.actionLite->setChecked(true);
 		lite();
 	} else
 		_isLite = false;
 
-	if(_settings->startOnTop()) {
+	if(settings->startOnTop()) {
 		ui.actionTop->setChecked(true);;
 		top();
 	}
 
-	_osdEnabled = _settings->osd();
-	_wheelType = _settings->mouseWheel();
+	_osdEnabled = settings->osd();
+	_wheelType = settings->mouseWheel();
 	if(_wheelType == "volume")
 		connect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
 
-	ui.osdWidget->setVisible(_settings->startControls());
-	ui.infoWidget->setVisible(_settings->startInfo());
+	ui.osdWidget->setVisible(settings->startControls());
+	ui.infoWidget->setVisible(settings->startInfo());
 
 	//Playback settings
-	_defaultSubtitleLanguage = _settings->subtitleLanguage();
-	_videoSettings = _settings->rememberVideoSettings();
+	_defaultSubtitleLanguage = settings->subtitleLanguage();
+	_videoSettings = settings->rememberVideoSettings();
 
 	//Recorder settings
-	_recorderEnabled = _settings->recorderEnabled();
+	_recorderEnabled = settings->recorderEnabled();
+
+	delete settings;
 }
 
 void MainWindow::createSettingsStartup()

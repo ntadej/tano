@@ -91,7 +91,9 @@ void EditSettings::save()
 	}
 
 	// Channels
-	if(ui.radioSiol2->isChecked())
+	if(ui.customPlaylistRadio->isChecked())
+		_settings->setPlaylist(ui.playlistLineEdit->text());
+	else if(ui.radioSiol2->isChecked())
 		_settings->setPlaylist(Settings::PLAYLIST_SIOL_MPEG2);
 	else if(ui.radioSiol4->isChecked())
 		_settings->setPlaylist(Settings::PLAYLIST_SIOL_MPEG4);
@@ -99,8 +101,6 @@ void EditSettings::save()
 		_settings->setPlaylist(Settings::PLAYLIST_T2);
 	else if(ui.radioTus->isChecked())
 		_settings->setPlaylist(Settings::PLAYLIST_TUS);
-	else if(ui.customPlaylistRadio->isChecked())
-		_settings->setPlaylist(ui.playlistLineEdit->text());
 
 	// GUI
 	_settings->setOsd(ui.osdCheck->isChecked());

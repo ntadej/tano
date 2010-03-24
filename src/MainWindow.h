@@ -27,7 +27,6 @@
 
 #include "channels/Channel.h"
 #include "core/ChannelSelect.h"
-#include "core/Settings.h"
 #include "core/Shortcuts.h"
 #include "core/Time.h"
 #include "core/Updates.h"
@@ -98,7 +97,6 @@ private:
 	void createShortcuts();
 
 	//Settings
-	Settings *_settings;
 	bool _controlsVisible;
 	QString _defaultPlaylist;
 	QString _defaultSubtitleLanguage;
