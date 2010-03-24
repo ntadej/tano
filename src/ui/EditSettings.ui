@@ -799,11 +799,6 @@
            <string notr="true">0</string>
           </property>
          </row>
-         <row>
-          <property name="text">
-           <string notr="true">0</string>
-          </property>
-         </row>
          <column>
           <property name="text">
            <string>Action</string>
@@ -824,7 +819,7 @@
          </item>
          <item row="0" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="1" column="0">
@@ -837,7 +832,7 @@
          </item>
          <item row="1" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="2" column="0">
@@ -850,7 +845,7 @@
          </item>
          <item row="2" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="3" column="0">
@@ -863,7 +858,7 @@
          </item>
          <item row="3" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="4" column="0">
@@ -876,7 +871,7 @@
          </item>
          <item row="4" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="5" column="0">
@@ -889,7 +884,7 @@
          </item>
          <item row="5" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="6" column="0">
@@ -902,7 +897,7 @@
          </item>
          <item row="6" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="7" column="0">
@@ -915,7 +910,7 @@
          </item>
          <item row="7" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="8" column="0">
@@ -928,7 +923,7 @@
          </item>
          <item row="8" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="9" column="0">
@@ -941,7 +936,7 @@
          </item>
          <item row="9" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="10" column="0">
@@ -954,7 +949,7 @@
          </item>
          <item row="10" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="11" column="0">
@@ -967,7 +962,7 @@
          </item>
          <item row="11" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="12" column="0">
@@ -980,7 +975,7 @@
          </item>
          <item row="12" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="13" column="0">
@@ -993,7 +988,7 @@
          </item>
          <item row="13" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="14" column="0">
@@ -1006,7 +1001,7 @@
          </item>
          <item row="14" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="15" column="0">
@@ -1019,7 +1014,7 @@
          </item>
          <item row="15" column="1">
           <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
          <item row="16" column="0">
@@ -1032,20 +1027,7 @@
          </item>
          <item row="16" column="1">
           <property name="text">
-           <string notr="true"/>
-          </property>
-         </item>
-         <item row="17" column="0">
-          <property name="text">
-           <string>About</string>
-          </property>
-          <property name="flags">
-           <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-          </property>
-         </item>
-         <item row="17" column="1">
-          <property name="text">
-           <string notr="true"/>
+           <string notr="true"> </string>
           </property>
          </item>
         </widget>

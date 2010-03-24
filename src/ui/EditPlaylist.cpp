@@ -17,8 +17,8 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
-#include "Common.h"
 #include "EditPlaylist.h"
+#include "core/Settings.h"
 #include "plugins/PluginsLoader.h"
 
 EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent)
@@ -62,10 +62,8 @@ void EditPlaylist::closeEvent(QCloseEvent *event)
 
 void EditPlaylist::createSettings()
 {
-	QSettings *settings = Common::settings();
-	settings->beginGroup("GUI");
-	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->value("toolbar",4).toInt()));
-	settings->endGroup();
+	Settings *settings = new Settings(this);
+	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
 	delete settings;
 }
 

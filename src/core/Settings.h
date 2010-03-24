@@ -24,6 +24,7 @@ public:
 	Settings(QObject * parent = 0);
 	~Settings();
 
+	QString path() const;
 	int readSettings();
 	void writeSettings();
 
@@ -104,6 +105,17 @@ public:
 	void setRecorderPlugin(const QString &s) { _recorderPlugin = s; }
 	static const QString DEFAULT_RECORDER_PLUGIN;
 
+	// Session
+	int channel() { return _channel; }
+	void setChannel(const int &i) { _channel = i; }
+	static const int DEFAULT_CHANNEL;
+	int volume() { return _volume; }
+	void setVolume(const int &i) { _volume = i; }
+	static const int DEFAULT_VOLUME;
+
+	// Misc
+	static const QString DEFAULT_EPG_PLUGIN;
+
 private:
 	// General variables
 	QString _configurationVersion;
@@ -136,6 +148,10 @@ private:
 	bool _recorderEnabled;
 	QString _recorderDirectory;
 	QString _recorderPlugin;
+
+	// Session
+	int _channel;
+	int _volume;
 };
 
 #endif // TANO_SETTINGS_H_

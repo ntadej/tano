@@ -16,9 +16,8 @@
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 
-#include <QVlc/Config.h>
-
 #include "Common.h"
+#include "core/Settings.h"
 #include "ui/About.h"
 
 QString Common::locateResource(const QString &file)
@@ -86,30 +85,14 @@ void Common::about(QWidget *parent)
 	about.exec();
 }
 
-QSettings* Common::settings()
-{
-	return new QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-}
-
-QString Common::settingsPath()
-{
-	QSettings *s = settings();
-	QString path = s->fileName();
-	path.replace("Settings.ini","");
-
-	delete s;
-
-	return path;
-}
-
 QList<const char *> Common::libvlcArgs()
 {
-	QSettings *s = settings();
-	QByteArray tmp;
-
 	QList<const char *> args;
-	if(s->value("ignore-config",true).toBool())
+
+	Settings *s = new Settings();
+	if(s->globalSettings())
 		args << "--ignore-config";
+	delete s;
 
 	args << "--intf=dummy"
 		 << "--no-media-library"
@@ -130,23 +113,5 @@ QList<const char *> Common::libvlcArgs()
 #endif
 #endif
 
-	if(s->value("network","").toString() != "") {
-		tmp = s->value("network","").toString().toLatin1();
-		args << "--miface-addr"
-			 << tmp.constData();
-	}
-
-	delete s;
-
 	return args;
-}
-
-QString Common::defaultEpgPlugin()
-{
-	return QString("EpgSlovenia");
-}
-
-QString Common::defaultRecorderPlugin()
-{
-	return QString("Frip");
 }

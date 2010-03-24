@@ -49,7 +49,11 @@ const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
 const bool Settings::DEFAULT_RECORDER_ENABLED = true;
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath();
 const QString Settings::DEFAULT_RECORDER_PLUGIN = "Frip";
-
+// Session
+const int Settings::DEFAULT_CHANNEL = 1;
+const int Settings::DEFAULT_VOLUME = 50;
+// Misc
+const QString Settings::DEFAULT_EPG_PLUGIN = "EpgSlovenia";
 
 Settings::Settings(QObject *parent)
 	: QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Main", parent)
@@ -62,6 +66,11 @@ Settings::~Settings()
 
 }
 
+QString Settings::path() const
+{
+	return fileName().replace("Main.ini","");
+}
+
 void Settings::writeSettings()
 {
 	setValue("general/version", configurationVersion());
@@ -69,6 +78,9 @@ void Settings::writeSettings()
 	setValue("general/updatescheck", updatesCheck());
 	setValue("general/session", session());
 	setValue("general/language", language());
+
+	setValue("session/channel", channel());
+	setValue("session/volume", volume());
 
 	setValue("channels/playlist", playlist());
 
@@ -120,4 +132,7 @@ int Settings::readSettings()
 	setRecorderEnabled(value("recorder/enabled", DEFAULT_RECORDER_ENABLED).toBool());
 	setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
 	setRecorderPlugin(value("recorder/plugin", DEFAULT_RECORDER_PLUGIN).toString());
+
+	setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());
+	setVolume(value("session/volume", DEFAULT_VOLUME).toInt());
 }

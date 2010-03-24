@@ -17,9 +17,9 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
-#include "../Common.h"
-#include "../channels/Channel.h"
-#include "../plugins/PluginsLoader.h"
+#include "channels/Channel.h"
+#include "core/Settings.h"
+#include "plugins/PluginsLoader.h"
 #include "Recorder.h"
 
 Recorder::Recorder(QWidget *parent)
@@ -38,17 +38,15 @@ Recorder::Recorder(QWidget *parent)
 
 	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 
-	QSettings *settings = Common::settings();
-	settings->beginGroup("Recorder");
-	ui.fileEdit->setText(settings->value("dir",QDir::homePath()+"/Videos").toString());
+	Settings *settings = new Settings(this);
+	ui.fileEdit->setText(settings->recorderDirectory());
 
 	PluginsLoader *loader = new PluginsLoader();
 	for(int i=0; i < loader->recorderPlugin().size(); i++)
-		if(loader->recorderName()[i] == settings->value("backend", Common::defaultRecorderPlugin()).toString())
+		if(loader->recorderName()[i] == settings->recorderPlugin())
 			_plugin = loader->recorder(loader->recorderPlugin()[i]);
 	delete loader;
 
-	settings->endGroup();
 	delete settings;
 }
 

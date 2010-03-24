@@ -16,8 +16,7 @@
 #include <QtGui/QLayout>
 
 #include "FirstRun.h"
-#include "../Common.h"
-#include "../Ver.h"
+#include "Ver.h"
 
 FirstRun::FirstRun(QWidget *parent)
 	: QWizard(parent)
@@ -50,10 +49,11 @@ IntroPage::IntroPage(QWidget *parent)
 	_topLabel = new QLabel(tr("This wizard will help you set basic settings for your copy of <i>Tano</i>."));
 	_topLabel->setWordWrap(true);
 
-	_settings = Common::settings();
+	_settings = new Settings();
 
-	if(_settings->value("version", Version::Tano()).toString() != Version::Tano()) {
-		_versionLabel = new QLabel(tr("You previously used version %1 of <i>Tano</i>. Please re-set your settings.").arg(_settings->value("version", Version::Tano()).toString()));
+	if(_settings->configurationVersion() != Version::Tano()) {
+		_versionLabel = new QLabel(tr("You previously used version %1 of <i>Tano</i>. Please re-set your settings.")
+									.arg(_settings->configurationVersion()));
 		_versionLabel->setWordWrap(true);
 	} else
 		_versionLabel = new QLabel("");
@@ -140,16 +140,16 @@ int SettingsPage::nextId() const
 void SettingsPage::setPlaylist()
 {
 	if(_siolRadio2->isChecked()) {
-		_playlist->setText("playlists/siol-mpeg2.m3u");
+		_playlist->setText(Settings::PLAYLIST_SIOL_MPEG2);
 		_type->setText(_siolRadio2->text());
 	} else if(_siolRadio4->isChecked()) {
-		_playlist->setText("playlists/siol-mpeg4.m3u");
+		_playlist->setText(Settings::PLAYLIST_SIOL_MPEG2);
 		_type->setText(_siolRadio4->text());
 	} else if(_T2Radio->isChecked()) {
-		_playlist->setText("playlists/t-2.m3u");
+		_playlist->setText(Settings::PLAYLIST_T2);
 		_type->setText(_T2Radio->text());
 	} else if(_tusRadio->isChecked()) {
-		_playlist->setText("playlists/tus.m3u");
+		_playlist->setText(Settings::PLAYLIST_TUS);
 		_type->setText(_tusRadio->text());
 	}
 }
@@ -160,7 +160,7 @@ ConclusionPage::ConclusionPage(QWidget *parent)
 	setTitle(tr("Complete Wizard"));
 	setPixmap(QWizard::WatermarkPixmap, QPixmap(":/icons/images/wizard.bmp"));
 
-	_settings = Common::settings();
+	_settings = new Settings();
 
 	_topLabel = new QLabel(tr("Thank you for using <i>Tano</i>."));
 	_topLabel->setWordWrap(true);
@@ -189,15 +189,13 @@ ConclusionPage::~ConclusionPage()
 
 int ConclusionPage::nextId() const
 {
-	_settings->setValue("version",Version::Tano());
-	_settings->setValue("registered",true);
-	_settings->setValue("playlist",field("playlist").toString());
-	_settings->setValue("session",field("session").toBool());
+	_settings->setConfigurationVersion(Version::Tano());
+	_settings->setConfigured(true);
+	_settings->setPlaylist(field("playlist").toString());
+	_settings->setSession(field("session").toBool());
+	_settings->setGlobalSettings(field("vlc").toBool());
 
-	_settings->beginGroup("VLC");
-	_settings->setValue("ignore-config",!field("vlc").toBool());
-	_settings->endGroup();
+	_settings->writeSettings();
 
 	return -1;
 }
-

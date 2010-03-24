@@ -68,6 +68,7 @@ private:
 	bool _closeEnabled;
 
 	QString _playlist;
+	QString _path;
 
 	Time *_time;
 	TimersHandler *_handler;

@@ -16,8 +16,8 @@
 #ifndef TANO_COMMON_H_
 #define TANO_COMMON_H_
 
-#include <QtCore/QSettings>
 #include <QtCore/QString>
+#include <QtGui/QWidget>
 
 class Common
 {
@@ -27,13 +27,7 @@ public:
 
 	static void about(QWidget *parent = 0 );
 
-	static QSettings* settings();
-	static QString settingsPath();
-
 	static QList<const char *> libvlcArgs();
-
-	static QString defaultEpgPlugin();
-	static QString defaultRecorderPlugin();
 };
 
 #endif // TANO_COMMON_H_

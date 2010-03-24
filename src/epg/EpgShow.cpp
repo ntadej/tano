@@ -17,7 +17,6 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QUrl>
 
-#include "Common.h"
 #include "EpgShow.h"
 
 EpgShow::EpgShow(QWidget *parent)

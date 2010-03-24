@@ -21,23 +21,23 @@
 #include <QtCore/QStringList>
 #include <QtGui/QAction>
 
-class Shortcuts
+class Shortcuts : public QSettings
 {
 public:
-	Shortcuts(const QList<QAction*> &list);
+	Shortcuts(const QList<QAction*> &list, QObject *parent = 0);
 	~Shortcuts();
 
 	void apply();
-	QStringList defaultKeys() const {return _defaultList;};
-	QStringList actionsNames() const {return _actionsName;};
+	void restoreDefaults() { write(_defaultList); };
+	void write(const QStringList &keys);
+	QStringList defaultKeys() const { return _defaultList; };
+	QStringList actionsNames() const { return _actionsName; };
+	QStringList readKeys() const;
 
 private:
 	QList<QAction*> _actions;
 	QStringList _defaultList;
 	QStringList _actionsName;
-	QStringList _keys;
-
-	QSettings *_settings;
 };
 
 #endif // TANO_SHORTCUTS_H_

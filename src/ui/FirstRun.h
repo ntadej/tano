@@ -23,7 +23,9 @@
 #include <QtGui/QLineEdit>
 #include <QtGui/QRadioButton>
 #include <QtGui/QWizard>
+
 #include "License.h"
+#include "core/Settings.h"
 
 class FirstRun : public QWizard
 {
@@ -50,7 +52,7 @@ public:
 private:
 	QLabel *_topLabel;
 	QLabel *_versionLabel;
-	QSettings *_settings;
+	Settings *_settings;
 };
 
 
@@ -95,7 +97,7 @@ private:
 	QLabel *_topLabel;
 	QCheckBox *_agreeCheckBox;
 	License *_license;
-	QSettings *_settings;
+	Settings *_settings;
 };
 
 #endif // TANO_FIRSTRUN_H_

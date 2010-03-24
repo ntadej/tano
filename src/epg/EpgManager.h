@@ -44,12 +44,10 @@ private slots:
 
 private:
 	void clear();
-	void init();
 	void load();
 	void post(const QString &e);
 
 	bool _ready;
-	bool _reload;
 
 	QString _currentEpg;
 	QString _currentLoadEpg;

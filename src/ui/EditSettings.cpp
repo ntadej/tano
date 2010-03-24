@@ -17,7 +17,6 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
-#include "Common.h"
 #include "EditSettings.h"
 #include "Ver.h"
 #include "plugins/PluginsLoader.h"
@@ -84,9 +83,9 @@ void EditSettings::save()
 	_settings->setSession(ui.sessionCheck->isChecked());
 	if(ui.customLanguageRadio->isChecked()) {
 		if(ui.languageComboBox->currentIndex() == 1)
-			_settings->setLanguage("sl");
+			_settings->setLanguage("sl_SI");
 		else if(ui.languageComboBox->currentIndex() == 0)
-			_settings->setLanguage("en");
+			_settings->setLanguage("en_US");
 	} else {
 		_settings->setLanguage("");
 	}
@@ -127,6 +126,8 @@ void EditSettings::save()
 	_settings->setRecorderPlugin(ui.recorderPluginComboBox->currentText());
 
 	_settings->writeSettings();
+
+	shortcutWrite();
 
 	hide();
 }
@@ -233,26 +234,35 @@ void EditSettings::recorderDirectoryBrowse()
 
 void EditSettings::shortcutRead()
 {
-	/*_settings->beginGroup("Shortcuts");
+	QStringList keys = _shortcuts->readKeys();
 	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++)
-		ui.shortcutsWidget->item(i,1)->setText(_settings->value(_actionsList.at(i),_keysList.at(i)).toString());
-	_settings->endGroup();*/
+		ui.shortcutsWidget->item(i,1)->setText(keys[i]);
 }
 
 void EditSettings::shortcutRestore()
 {
-	/*_settings->beginGroup("Shortcuts");
-	for(int i=0; i < _actionsList.size(); i++) {
-		_settings->remove(_actionsList.at(i));
-		ui.shortcutsWidget->item(i,1)->setText(_keysList.at(i));
-	}
-	_settings->endGroup();*/
+	_shortcuts->restoreDefaults();
+
+	QStringList keys = _shortcuts->readKeys();
+	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++)
+		ui.shortcutsWidget->item(i,1)->setText(keys[i]);
+}
+
+void EditSettings::shortcutWrite()
+{
+	QStringList keys;
+	for(int i=0; i < ui.shortcutsWidget->rowCount(); i++)
+		keys << ui.shortcutsWidget->item(i,1)->text();
+
+	_shortcuts->write(keys);
+	_shortcuts->apply();
 }
 
 void EditSettings::shortcutEdit(QTableWidgetItem *titem)
 {
 	if(titem->column() == 1) {
 		ui.buttonSet->setEnabled(true);
+		ui.keyEditor->setKeySequence(QKeySequence(titem->text()));
 		_item = titem;
 	}
 }

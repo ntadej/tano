@@ -18,11 +18,10 @@
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
-#include "Common.h"
 #include "EpgManager.h"
 
 EpgManager::EpgManager(QObject *parent)
-	: QObject(parent), _ready(false), _reload(false), _currentEpg(""), _currentLoadEpg(""), _currentRequest("")
+	: QObject(parent), _ready(false), _currentEpg(""), _currentLoadEpg(""), _currentRequest("")
 {
 	_loader = new EpgLoader(this);
 	connect(_loader, SIGNAL(schedule(QString, int, QStringList)), this, SLOT(set(QString, int, QStringList)));
@@ -43,18 +42,8 @@ void EpgManager::setEpg(const QStringList &epg, const QString &epgPlugin)
 
 	_epgPlugin = epgPlugin;
 	_loader->loadPlugin(epgPlugin);
-	_path = Common::settingsPath()+_epgPlugin+"/";
 
-	QFile file(_path+"time");
-	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-		_reload = true;
-
-	QTextStream in(&file);
-	in.setCodec(QTextCodec::codecForName("UTF-8"));
-	if(QDate().fromString(in.readLine(), "dd.mm.yyyy") != QDate::currentDate())
-		_reload = true;
-
-	init();
+	load();
 }
 
 void EpgManager::clear()
@@ -63,13 +52,6 @@ void EpgManager::clear()
 	_day[1].clear();
 	_day[2].clear();
 	_day[3].clear();
-}
-
-void EpgManager::init()
-{
-	clear();
-
-	load();
 }
 
 void EpgManager::request(const QString &epg)

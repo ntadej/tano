@@ -18,15 +18,15 @@
 #include <QtCore/QTextStream>
 #include <QtGui/QMessageBox>
 
-#include "Common.h"
 #include "M3UHandler.h"
 #include "tanohandler.h"
+#include "core/Settings.h"
 
 M3UHandler::M3UHandler(QTreeWidget *treeWidget)
 	: _treeWidget(treeWidget)
 {
 	_name = QObject::tr("Channel list");
-	_epgPlugin = Common::defaultEpgPlugin();
+	_epgPlugin = Settings::DEFAULT_EPG_PLUGIN;
 	_channelIcon = QIcon(":/icons/images/video.png");
 }
 

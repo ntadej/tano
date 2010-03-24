@@ -16,7 +16,6 @@
 #ifndef TANO_MAINWINDOW_H_
 #define TANO_MAINWINDOW_H_
 
-#include <QtCore/QSettings>
 #include <QtGui/QCloseEvent>
 #include <QtGui/QMainWindow>
 
@@ -28,6 +27,7 @@
 
 #include "channels/Channel.h"
 #include "core/ChannelSelect.h"
+#include "core/Settings.h"
 #include "core/Shortcuts.h"
 #include "core/Time.h"
 #include "core/Updates.h"
@@ -93,11 +93,12 @@ private:
 	void createMenus();
 	void createRecorder();
 	void createSettings();
+	void createSettingsStartup();
 	void createSession();
 	void createShortcuts();
 
 	//Settings
-	QSettings *_settings;
+	Settings *_settings;
 	bool _controlsVisible;
 	QString _defaultPlaylist;
 	QString _defaultSubtitleLanguage;

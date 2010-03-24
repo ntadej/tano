@@ -54,6 +54,7 @@ private:
 	void createActions();
 	void read();
 	void shortcutRead();
+	void shortcutWrite();
 
 	Ui::EditSettings ui;
 
@@ -62,8 +63,6 @@ private:
 
 	QTableWidgetItem *_item;
 	QKeySequence _sequence;
-	QStringList _actionsList;
-	QStringList _keysList;
 	bool _success;
 };
 

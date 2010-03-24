@@ -25,7 +25,7 @@
 #include <QVlc/Config.h>
 
 #include "MainWindow.h"
-#include "Common.h"
+#include "core/Common.h"
 #include "plugins/PluginsManager.h"
 #include "ui/EditSettings.h"
 
@@ -41,6 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
 	ui.setupUi(this);
 
 	createSettings();
+	createSettingsStartup();
 	createBackend();
 	createGui();
 	createMenus();
@@ -55,13 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-	if(_sessionEnabled) {
-		QSettings session(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-		session.beginGroup("Session");
-		session.setValue("volume", ui.volumeSlider->volume());
-		session.setValue("channel", ui.channelNumber->value());
-		session.endGroup();
-	}
+
 }
 
 void MainWindow::exit()
@@ -79,6 +74,11 @@ void MainWindow::exit()
 	switch (ret) {
 		case QMessageBox::Close:
 			ui.recorder->stop();
+			if(_sessionEnabled) {
+				_settings->setVolume(ui.volumeSlider->volume());
+				_settings->setChannel(ui.channelNumber->value());
+				_settings->writeSettings();
+			}
 			qApp->quit();
 			break;
 		case QMessageBox::Cancel:
@@ -122,55 +122,48 @@ void MainWindow::createSettings()
 	_desktopWidth = QApplication::desktop()->width();
 	_desktopHeight = QApplication::desktop()->height();
 
-	_settings = Common::settings();
-	_defaultPlaylist = _settings->value("playlist","playlists/siol-mpeg2.m3u").toString();
-	_hideToTray = _settings->value("tray",false).toBool();
-	_updatesOnStart = _settings->value("updates",true).toBool();
+	_settings = new Settings(this);
+	_defaultPlaylist = _settings->playlist();
+	_hideToTray = _settings->hideToTray();
+	_updatesOnStart = _settings->updatesCheck();
 
 	//Session
-	_sessionEnabled = _settings->value("session", true).toBool();
-	_settings->beginGroup("Session");
-	_sessionVolume = _settings->value("volume",50).toString().toInt();
-	_sessionChannel = _settings->value("channel",1).toInt();
-	_settings->endGroup();
+	_sessionEnabled = _settings->session();
+	_sessionVolume = _settings->volume();
+	_sessionChannel = _settings->channel();
 
 	//GUI Settings
-	_settings->beginGroup("GUI");
-	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(_settings->value("toolbar",4).toInt()));
-	if(_settings->value("lite",false).toBool()) {
+	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(_settings->toolbarLook()));
+	if(_settings->startLite()) {
 		ui.actionLite->setChecked(true);
 		lite();
 	} else
 		_isLite = false;
 
-	if(_settings->value("ontop",false).toBool()) {
+	if(_settings->startOnTop()) {
 		ui.actionTop->setChecked(true);;
 		top();
 	}
 
-	_osdEnabled = _settings->value("OSD",true).toBool();
+	_osdEnabled = _settings->osd();
+	_wheelType = _settings->mouseWheel();
+	if(_wheelType == "volume")
+		connect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
 
-	ui.osdWidget->setVisible(_settings->value("controls",true).toBool());
-	ui.actionControls->setChecked(_settings->value("controls",true).toBool());
-	ui.infoWidget->setVisible(_settings->value("info",true).toBool());
-	ui.actionInfoPanel->setChecked(_settings->value("info",true).toBool());
-
-	if(_settings->value("wheel",false).toBool())
-		_wheelType = "volume";
-	else
-		_wheelType = "channel";
-	_settings->endGroup();
+	ui.osdWidget->setVisible(_settings->startControls());
+	ui.infoWidget->setVisible(_settings->startInfo());
 
 	//Playback settings
-	_settings->beginGroup("VLC");
-	_defaultSubtitleLanguage = _settings->value("default-sub-lang",tr("Disabled")).toString();
-	_videoSettings = _settings->value("remember-video-config",false).toBool();
-	_settings->endGroup();
+	_defaultSubtitleLanguage = _settings->subtitleLanguage();
+	_videoSettings = _settings->rememberVideoSettings();
 
 	//Recorder settings
-	_settings->beginGroup("Recorder");
-	_recorderEnabled = _settings->value("enabled",true).toBool();
-	_settings->endGroup();
+	_recorderEnabled = _settings->recorderEnabled();
+}
+
+void MainWindow::createSettingsStartup()
+{
+
 }
 
 void MainWindow::createConnections()
@@ -221,9 +214,6 @@ void MainWindow::createConnections()
 	connect(ui.actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
 	connect(ui.actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
 	connect(ui.actionTimers, SIGNAL(triggered()), this, SLOT(showTimersEditor()));
-
-	if(_wheelType == "volume")
-		connect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
 
 	connect(_time, SIGNAL(startTimer(Timer*)), ui.recorder, SLOT(recordTimer(Timer*)));
 	connect(_time, SIGNAL(stopTimer(Timer*)), ui.recorder, SLOT(stopTimer(Timer*)));
@@ -310,21 +300,17 @@ void MainWindow::createShortcuts()
 		<< ui.actionSettings
 		<< ui.actionTop
 		<< ui.actionLite
-		<< ui.actionTray
-		<< ui.actionAbout;
+		<< ui.actionTray;
 
-	_shortcuts = new Shortcuts(_actions);
+	_shortcuts = new Shortcuts(_actions, this);
 }
 
 void MainWindow::createSession()
 {
-	if(_sessionEnabled) {
-		ui.volumeSlider->setVolume(_sessionVolume);
-		if(_hasPlaylist)
-			playChannel(_sessionChannel);
-	} else {
-		ui.volumeSlider->setVolume(50);
-	}
+	ui.volumeSlider->setVolume(_sessionVolume);
+
+	if(_sessionEnabled && _hasPlaylist)
+		playChannel(_sessionChannel);
 
 	if(_updatesOnStart)
 		_update->getUpdates();

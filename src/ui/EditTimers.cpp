@@ -20,13 +20,13 @@
 #include <QtXml/QXmlSimpleReader>
 #include <QtXml/QXmlInputSource>
 
-#include "Common.h"
 #include "EditTimers.h"
+#include "core/Settings.h"
 #include "xml/TimersGenerator.h"
 
 
 EditTimers::EditTimers(Time *t, const QString &playlist, QWidget *parent)
-	: QMainWindow(parent), _time(t), _channel(0), _activeTimers(false), _closeEnabled(false)
+	: QMainWindow(parent), _time(t), _channel(0), _activeTimers(false), _closeEnabled(false), _path("")
 {
 	ui.setupUi(this);
 	ui.timersWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
@@ -58,10 +58,9 @@ void EditTimers::closeEvent(QCloseEvent *event)
 
 void EditTimers::createSettings()
 {
-	QSettings *settings = Common::settings();
-	settings->beginGroup("GUI");
-	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->value("toolbar",4).toInt()));
-	settings->endGroup();
+	Settings *settings = new Settings(this);
+	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
+	_path = settings->path();
 	delete settings;
 }
 
@@ -218,7 +217,7 @@ void EditTimers::read(const QString &file)
 	QString fileName;
 
 	if(file.isNull())
-		fileName = Common::settingsPath() + "timers.tano.xml";
+		fileName = _path + "timers.tano.xml";
 	else
 		fileName = file;
 
@@ -263,7 +262,7 @@ void EditTimers::write()
 									tr("Tano Timers (*.tano.xml)"));
 	*/
 
-	fileName = Common::settingsPath() + "timers.tano.xml";
+	fileName = _path + "timers.tano.xml";
 
 	if (fileName.isEmpty())
 		return;

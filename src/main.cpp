@@ -15,12 +15,12 @@
 
 #include <QtCore/QCoreApplication>
 #include <QtCore/QLocale>
-#include <QtCore/QSettings>
 #include <QtCore/QTranslator>
 
-#include "Common.h"
-#include "Ver.h"
 #include "MainWindow.h"
+#include "Ver.h"
+#include "core/Common.h"
+#include "core/Settings.h"
 #include "ui/FirstRun.h"
 
 int main(int argc, char *argv[])
@@ -28,16 +28,19 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QCoreApplication::setApplicationName("Tano");
 
-    //Settings
-    QSettings settings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Settings");
-    QString locale = settings.value("locale", QString(QLocale::system().name()).replace(2, 3, "")).toString();
+	QString locale;
+	Settings *settings = new Settings();
+	if(settings->language().isEmpty())
+		locale = QLocale::system().name();
+	else
+		locale = settings->language();
 
     QTranslator translator;
 	QString langPath = Common::locateLang("tano_" + locale + ".qm");
 	translator.load(QString("tano_" + locale), langPath);
 	app.installTranslator(&translator);
 
-	if(!settings.value("registered",false).toBool() || settings.value("version",Version::Tano()).toString() != Version::Tano()) {
+	if(!settings->configured() || settings->configurationVersion() != Version::Tano()) {
 		FirstRun *wizard = new FirstRun();
 		wizard->exec();
 		delete wizard;

@@ -58,6 +58,7 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	channels/Channel.cpp
 	channels/ChannelEpg.cpp
 	core/ChannelSelect.cpp
+	core/Common.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
 	core/Time.cpp
@@ -91,7 +92,6 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 
 SET(Tano_Srcs
 	main.cpp
-	Common.cpp
 	MainWindow.cpp
 	
 	${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp
@@ -100,11 +100,11 @@ SET(Tano_Srcs
 
 # Set translation files
 SET(Tano_Translation_Srcs 
-	lang/tano_sl.ts
+	lang/tano_sl_SI.ts
 )
 # lang/*.ts -> Tano_Translation_Srcs
 SET ( Tano_Translation_Bins
-	lang/tano_sl.qm
+	lang/tano_sl_SI.qm
 )	
 
 ################
