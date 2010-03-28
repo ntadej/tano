@@ -25,20 +25,19 @@ public:
 	Channel(const QString &name, const int &number);
 	~Channel();
 
-	void setNumber(const int &number);
-	void setName(const QString &name);
-	void setEpg(const QString &epg);
-	void setLanguage(const QString &language);
-	void setUrl(const QString &url);
-	void setCategories(const QStringList &categories);
-
-	int number() const {return _number;};
-	QString numberString() const {return QString().number(_number);};
-	QString name() const {return _name;};
-	QString language() const {return _language;};
-	QString url() const {return _url;};
-	QString epg() const {return _epg;};
-	QStringList categories() const {return _categories;};
+	int number() const { return _number; };
+	QString numberString() const {return QString().number(_number); };
+	void setNumber(const int &number) { _number = number; };
+	QString name() const { return _name; };
+	void setName(const QString &name) { _name = name; };
+	QString language() const { return _language; };
+	void setLanguage(const QString &language) { _language = language; };
+	QString url() const { return _url;};
+	void setUrl(const QString &url) { _url = url; };
+	QString epg() const { return _epg; };
+	void setEpg(const QString &epg) { _epg = epg; };
+	QStringList categories() const { return _categories; };
+	void setCategories(const QStringList &categories) { _categories = categories; };
 
 private:
 	int _number;

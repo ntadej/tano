@@ -1,5 +1,5 @@
 /****************************************************************************
-* Ver.cpp: Version info
+* Version.cpp: Version info
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -15,30 +15,42 @@
 
 #include <QVlc/Instance.h>
 
-#include "Ver.h"
+#include "Config.h"
+#include "Version.h"
 
 QString Version::Tano()
 {
-	QString version = "@TANO_VERSION@";
+	QString version;
+	int svn;
 
-	if(Svn() != "")
-		return version+"-r"+Svn();
+#ifdef VERSION
+	version = QString(VERSION);
+#else
+	version = "Unknown";
+#endif
+#ifdef SVN_REVISION
+	svn = SVN_REVISION;
+#else
+	svn = 0;
+#endif
+
+	if(svn != 0)
+		return version+"-r"+QString::number(svn);
 	else
 		return version;
 }
 
 QString Version::Qt()
 {
-	QString version = "@TANO_QT_VERSION@";
+	QString version;
+
+#ifdef QT_VERSION_MAJOR
+	version = QString::number(QT_VERSION_MAJOR)+"."+QString::number(QT_VERSION_MINOR)+"."+QString::number(QT_VERSION_PATCH);
+#else
+	version = "Unknown";
+#endif
 	
 	return version;
-}
-
-QString Version::Svn()
-{
-	QString svn = "@TANO_WC_REVISION@";
-	
-	return svn;
 }
 
 QString Version::libQVlc()

@@ -1,19 +1,23 @@
+#################
+# Configuration #
+#################
 CONFIGURE_FILE(
-  "${CMAKE_CURRENT_SOURCE_DIR}/Ver.cpp.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp"
+  "${CMAKE_SOURCE_DIR}/src/Config.h.in"
+  "${CMAKE_BINARY_DIR}/src/Config.h"
 )
 
+# MinGW needs some more includes
 IF(MINGW)
 	FIND_PACKAGE(LIBVLC REQUIRED)
 	INCLUDE_DIRECTORIES(${LIBVLC_INCLUDE_DIR})
 ENDIF(MINGW)
 
+
 ###################
 # List of sources #
 ###################
-
 # Define the UI source files used by Tano
-SET(Tano_UIs		# List of .ui forms drawn by qt-designer that need to be compiled
+SET(Tano_UIs
 	ui/About.ui
 	ui/EditPlaylist.ui
 	ui/EditSettings.ui
@@ -54,24 +58,36 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 
 SET(Tano_Resrcs ui/images.qrc)
 
-SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
+# Define the C++ source files used by Tano
+SET(Tano_Channels_Srcs
 	channels/Channel.cpp
 	channels/ChannelEpg.cpp
+)
+SET(Tano_Core_Srcs
 	core/ChannelSelect.cpp
 	core/Common.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
 	core/Time.cpp
 	core/Updates.cpp
+	core/Version.cpp
+)
+SET(Tano_Epg_Srcs
 	epg/EpgList.cpp
 	epg/EpgLoader.cpp
 	epg/EpgManager.cpp
 	epg/EpgSchedule.cpp
 	epg/EpgShow.cpp
+)
+SET(Tano_Plugins_Srcs
 	plugins/PluginsLoader.cpp
 	plugins/PluginsManager.cpp
+)
+SET(Tano_Recorder_Srcs
 	recorder/Recorder.cpp
 	recorder/Timer.cpp
+)
+SET(Tano_UI_Srcs
 	ui/About.cpp
 	ui/CurrentTime.cpp
 	ui/EditPlaylist.cpp
@@ -83,55 +99,46 @@ SET(Tano_Class_Srcs		# Core sources - data part of the MVC model
 	ui/PlaylistWidget.cpp
 	ui/QtKeySequenceEdit.cpp
 	ui/TrayIcon.cpp
+)
+SET(Tano_XML_Srcs
 	xml/M3UGenerator.cpp
 	xml/M3UHandler.cpp
-	xml/tanohandler.cpp
 	xml/TimersGenerator.cpp
 	xml/TimersHandler.cpp
+	xml/tanohandler.cpp
 )
 
 SET(Tano_Srcs
 	main.cpp
 	MainWindow.cpp
-	
-	${CMAKE_CURRENT_BINARY_DIR}/Ver.cpp
-	${Tano_Class_Srcs}
+
+	${Tano_Channels_Srcs}
+	${Tano_Core_Srcs}
+	${Tano_Epg_Srcs}
+	${Tano_Plugins_Srcs}
+	${Tano_Recorder_Srcs}
+	${Tano_UI_Srcs}
+	${Tano_XML_Srcs}
 )
 
-# Set translation files
-SET(Tano_Translation_Srcs 
-	lang/tano_sl_SI.ts
-)
-# lang/*.ts -> Tano_Translation_Srcs
-SET ( Tano_Translation_Bins
-	lang/tano_sl_SI.qm
-)	
 
 ################
 # Qt4 settings #
-###############
+################
 # This line adds the QtXML and QtNETWORK libraries to the Qt libraries
 # loaded when linking Tano
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
 
 # This scripts runs the resource compiler rcc.
-# The result of it is stored into Tano_Resrcs_Srcs
-# variable. This has to be included later in the
-# add_executable line.
 QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
 
 # This scripts runs the user interface compiler uic.
-# The result of it is stored into Tano_UIC_Srcs
-# variable. This has to be included later in the
-# add_executable line.
 QT4_WRAP_UI(Tano_UIC_Srcs ${Tano_UIs})
 
 # This script runs the meta object compiler moc.
-# The result of it is stored into Tano_MOC_Srcs
-# variable. This has to be included later in the
-# add_executable line.
 QT4_WRAP_CPP(Tano_MOC_Srcs ${Tano_MOCs})
+
 
 #########################
 # Compiler Define flags #
@@ -154,11 +161,12 @@ IF(NOT MINGW)
 	ENDIF (NOT DEFAULT_PLUGIN_DIR)
 ENDIF(NOT MINGW)
 
+
 ####################################
 # Include paths and set up targets #
 ####################################
 # This needs to be added in order for #include to work inside .cpp files
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+INCLUDE_DIRECTORIES("${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src")
 
 # This line adds the include path of the Qt
 # directory to the compiler include path
@@ -173,42 +181,22 @@ IF(MINGW)
 		c:/MinGW/bin /MinGW/bin
 	)
 	ADD_CUSTOM_COMMAND(
-		OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/tano.obj
+		OUTPUT ${CMAKE_BINARY_DIR}/src/tano.obj
 		COMMAND ${WINDRES_PROGRAM}
-		-i ${CMAKE_CURRENT_SOURCE_DIR}/tano.rc
-		-o ${CMAKE_CURRENT_BINARY_DIR}/tano.obj
-		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+		-i ${CMAKE_SOURCE_DIR}/src/tano.rc
+		-o ${CMAKE_BINARY_DIR}/src/tano.obj
+		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR/src"}
 	)
-	SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_CURRENT_BINARY_DIR}/tano.obj)
+	SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/tano.obj)
 ENDIF(MINGW)
 
 
 # This line tells cmake to create the Tano program.
-# Attention: In contrast to Makefiles don't add "\" to separate lines
 ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs_Srcs})
 
-# Here the needed Qt Libraries are added to the link
-# command. Never remove that line :-)
+# Here the needed Qt Libraries are added to the link command.
 TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${LIBQVLC_LIBRARY})
 
-
-###############
-# Translation #
-###############
-ADD_CUSTOM_COMMAND(
-	TARGET tano
-	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-	PRE_BUILD
-	COMMAND ${QT_LUPDATE_EXECUTABLE}
-	ARGS -noobsolete ${Tano_UIC_Srcs} ${Tano_Srcs} -ts ${Tano_Translation_Srcs}
-)
-ADD_CUSTOM_COMMAND(
-	TARGET tano
-	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-	PRE_BUILD
-	COMMAND ${QT_LRELEASE_EXECUTABLE}
-	ARGS ${Tano_Translation_Srcs} -qm ${Tano_Translation_Bins}
-)
 
 ################
 # Installation #
@@ -217,23 +205,3 @@ ADD_CUSTOM_COMMAND(
 INSTALL(TARGETS tano
   RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
 )
-
-# Install data - icons, images, sounds etc.
-INSTALL( DIRECTORY ${Tano_Images} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}" PATTERN ".svn" EXCLUDE )
-# Install translations
-INSTALL(FILES ${Tano_Translation_Bins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/lang")
-
-IF(MINGW)
-	# Install Qt libs
-	INSTALL( FILES ${QT_BIN_DIR}/QtCore4.dll ${QT_BIN_DIR}/QtGui4.dll ${QT_BIN_DIR}/QtNetwork4.dll ${QT_BIN_DIR}/QtSvg4.dll ${QT_BIN_DIR}/QtXml4.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
-	INSTALL( FILES ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qmng4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qtiff4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qico4.dll
-	    ${QT_PLUGINS_DIR}/imageformats/qsvg4.dll
-	  DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/imageformats)
-	
-	# Install OpenSSL
-	INSTALL( FILES ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/libeay32.dll ${CMAKE_CURRENT_SOURCE_DIR}/win/3rdparty/openssl/ssleay32.dll DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR} )
-ENDIF(MINGW)

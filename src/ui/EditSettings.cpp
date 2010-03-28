@@ -12,13 +12,14 @@
 * Free Software Foundation and appearing in the file LICENSE.GPL
 * included in the packaging of this file.
 *****************************************************************************/
-
+#include <QDebug>
 #include <QtCore/QDir>
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
 #include "EditSettings.h"
-#include "Ver.h"
+#include "core/Common.h"
+#include "core/Version.h"
 #include "plugins/PluginsLoader.h"
 
 EditSettings::EditSettings(Shortcuts *s, QWidget *parent)
@@ -34,6 +35,7 @@ EditSettings::EditSettings(Shortcuts *s, QWidget *parent)
 	ui.labelVersion->setText(tr("You are using Tano version:")+" <b>"+Version::Tano()+"</b>");
 	ui.labelVlcVersion->setText(ui.labelVlcVersion->text()+" <b>"+Version::libVLC()+"</b>");
 
+	loadLocale();
 	loadPlugins();
 	read();
 	shortcutRead();
@@ -81,14 +83,10 @@ void EditSettings::save()
 	_settings->setConfigured(!ui.wizardCheck->isChecked());
 	_settings->setUpdatesCheck(ui.updatesCheck->isChecked());
 	_settings->setSession(ui.sessionCheck->isChecked());
-	if(ui.customLanguageRadio->isChecked()) {
-		if(ui.languageComboBox->currentIndex() == 1)
-			_settings->setLanguage("sl_SI");
-		else if(ui.languageComboBox->currentIndex() == 0)
-			_settings->setLanguage("en_US");
-	} else {
+	if(ui.customLanguageRadio->isChecked())
+		_settings->setLanguage(_locale[ui.languageComboBox->currentIndex()]);
+	else
 		_settings->setLanguage("");
-	}
 
 	// Channels
 	if(ui.customPlaylistRadio->isChecked())
@@ -145,10 +143,9 @@ void EditSettings::read()
 	ui.sessionCheck->setChecked(_settings->session());
 	if(_settings->language() != "") {
 		ui.customLanguageRadio->setChecked(true);
-		if(_settings->language() == "sl")
-			ui.languageComboBox->setCurrentIndex(1);
-		else if(_settings->language() == "en")
-			ui.languageComboBox->setCurrentIndex(0);
+		for(int i=0; i<_locale.size(); i++)
+			if(_settings->language() == _locale[i])
+				ui.languageComboBox->setCurrentIndex(i);
 	}
 
 	// Channels
@@ -281,6 +278,14 @@ void EditSettings::shortcutSet()
 void EditSettings::shortcutClear()
 {
 	ui.keyEditor->setKeySequence(QKeySequence(""));
+}
+
+void EditSettings::loadLocale()
+{
+	_locale = Common::loadLocale();
+
+	for(int i=0; i<_locale.size(); i++)
+		ui.languageComboBox->addItem(Common::language(_locale[i]));
 }
 
 void EditSettings::loadPlugins()

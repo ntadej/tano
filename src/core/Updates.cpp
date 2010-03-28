@@ -13,8 +13,8 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include "Version.h"
 #include "Updates.h"
-#include "Ver.h"
 
 Updates::Updates()
 	: _codec(QTextCodec::codecForName("UTF-8"))

@@ -1,3 +1,6 @@
+###############################
+# Tano - An open IP TV player #
+###############################
 # The name of our project is "Tano". CMakeLists files in this project can
 # refer to the root source directory of the project as ${TANO_SOURCE_DIR}
 # and to the root binary directory of the project as ${TANO_BINARY_DIR}.
@@ -6,12 +9,12 @@ PROJECT(Tano)
 cmake_minimum_required(VERSION 2.6)
 
 CONFIGURE_FILE(
-  "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+  "${CMAKE_SOURCE_DIR}/cmake_uninstall.cmake.in"
+  "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake"
   IMMEDIATE @ONLY)
 
 ADD_CUSTOM_TARGET(uninstall
-  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
+  "${CMAKE_COMMAND}" -P "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake")
 
 set(CMAKE_MODULE_PATH
     ${CMAKE_SOURCE_DIR}/cmake
@@ -26,24 +29,22 @@ ENDIF(MINGW)
 IF(MINGW)
 OPTION(DEBUG_CONSOLE "Compile with debug console")
 	IF(${DEBUG_CONSOLE} MATCHES "ON")
-
+		SET(TANO_DEBUG_CONSOLE 1)
 	ELSE(${DEBUG_CONSOLE} MATCHES "ON")
 		SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
+		SET(TANO_DEBUG_CONSOLE 0)
 	ENDIF(${DEBUG_CONSOLE} MATCHES "ON")
 ENDIF(MINGW)
 
-# Search for Qt4. We need the latest version of Qt
+# Search for Qt4 and other libraries
 SET(QT_MIN_VERSION "4.5.0")
 
-# this line includes FindQt4.cmake, which searches the Qt library and headers
 FIND_PACKAGE(Qt4 REQUIRED)
 FIND_PACKAGE(LIBQVLC REQUIRED)
 
 # Set Qt4 bin dir to find QtCore4.dll and other libs to install
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
 STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back slashes to slashes
-# Define Qt version
-SET(TANO_QT_VERSION "${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH}")
 
 # Set default install path:
 # In *nix environments this is /usr/local 
@@ -65,7 +66,10 @@ ELSE(MINGW)
 	SET(TANO_INSTALL_BIN_DIR "bin")
 ENDIF(MINGW)
 
-#------------------------------------------------------------------------------
+
+###########
+# Version #
+###########
 # Tano version number.
 FILE(READ VERSION TANO_VERSION)
 STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
@@ -82,13 +86,17 @@ ENDMACRO(Subversion_GET_REVISION)
 
 FIND_PACKAGE(Subversion)
 IF(Subversion_FOUND)
-    Subversion_GET_REVISION(${CMAKE_CURRENT_SOURCE_DIR} TANO_WC_REVISION)
+	Subversion_GET_REVISION(${CMAKE_SOURCE_DIR} TANO_WC_REVISION)
     MESSAGE("Current revision is ${TANO_WC_REVISION}")
 ELSE(Subversion_FOUND)
     SET(TANO_WC_REVISION "")
 ENDIF(Subversion_FOUND)
-#------------------------------------------------------------------------------
 
+
+###################
+# Compile and set #
+###################
+ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(plugins)
 
@@ -98,13 +106,12 @@ SET (Tano_Files
 	src/ui/images/tano-small.png
 )
 
-SET (Tano_Playlists
-    playlists/siol-mpeg2.m3u
-    playlists/siol-mpeg4.m3u
-	playlists/t-2.m3u
-	playlists/tus.m3u
-)
+FILE (GLOB Tano_Playlists ${CMAKE_SOURCE_DIR}/playlists/*.m3u)
 
+
+################
+# Installation #
+################
 # Install data
 INSTALL( FILES ${Tano_Files} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
 # Install playlists

@@ -1,5 +1,5 @@
 /****************************************************************************
-* ChannelEpg.cpp: ChannelEpg class
+* Config.h: Tano configuration file
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,9 +13,19 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "ChannelEpg.h"
+#ifndef TANO_CONFIG_H_
+#define TANO_CONFIG_H_
 
-ChannelEpg::ChannelEpg(const QString &time, const QString &url, const QString &title)
-	: _time(time), _url(url), _title(title) { }
+// Tano version
+#define VERSION "@TANO_VERSION@"
+#define SVN_REVISION @TANO_WC_REVISION@
 
-ChannelEpg::~ChannelEpg() { }
+// Qt version
+#define QT_VERSION_MAJOR @QT_VERSION_MAJOR@
+#define QT_VERSION_MINOR @QT_VERSION_MINOR@
+#define QT_VERSION_PATCH @QT_VERSION_PATCH@
+
+// Other settings
+#define DEBUG_CONSOLE @TANO_DEBUG_CONSOLE@
+
+#endif // TANO_CONFIG_H_

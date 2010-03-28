@@ -1,5 +1,5 @@
 /****************************************************************************
-* Ver.h: Version info
+* Version.h: Version info
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -23,7 +23,6 @@ class Version
 public:
 	static QString Tano();
 	static QString Qt();
-	static QString Svn();
 	static QString libQVlc();
 	static QString libVLC();
 };

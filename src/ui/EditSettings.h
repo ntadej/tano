@@ -48,13 +48,14 @@ private slots:
 	void shortcutClear();
 	void shortcutEdit(QTableWidgetItem *titem);
 
-	void loadPlugins();
-
 private:
 	void createActions();
 	void read();
 	void shortcutRead();
 	void shortcutWrite();
+
+	void loadLocale();
+	void loadPlugins();
 
 	Ui::EditSettings ui;
 
@@ -64,6 +65,8 @@ private:
 	QTableWidgetItem *_item;
 	QKeySequence _sequence;
 	bool _success;
+
+	QStringList _locale;
 };
 
 #endif // TANO_EDITSETTINGS_H_

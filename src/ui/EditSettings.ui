@@ -121,16 +121,6 @@
               <height>25</height>
              </size>
             </property>
-            <item>
-             <property name="text">
-              <string>English</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Slovensko</string>
-             </property>
-            </item>
            </widget>
           </item>
           <item>
@@ -197,16 +187,6 @@
           </item>
           <item row="2" column="0" colspan="2">
            <layout class="QHBoxLayout" name="browseLayout">
-            <item>
-             <widget class="QLabel" name="labelBrowse">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="text">
-               <string>Browse:</string>
-              </property>
-             </widget>
-            </item>
             <item>
              <widget class="QLineEdit" name="playlistLineEdit">
               <property name="enabled">
@@ -604,13 +584,6 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QLabel" name="labelBrowseRecorder">
-            <property name="text">
-             <string>Browse:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QLineEdit" name="recorderDirectoryLineEdit">
             <property name="text">
              <string/>
@@ -819,7 +792,7 @@
          </item>
          <item row="0" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="1" column="0">
@@ -832,7 +805,7 @@
          </item>
          <item row="1" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="2" column="0">
@@ -845,7 +818,7 @@
          </item>
          <item row="2" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="3" column="0">
@@ -858,7 +831,7 @@
          </item>
          <item row="3" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="4" column="0">
@@ -871,7 +844,7 @@
          </item>
          <item row="4" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="5" column="0">
@@ -884,7 +857,7 @@
          </item>
          <item row="5" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="6" column="0">
@@ -897,7 +870,7 @@
          </item>
          <item row="6" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="7" column="0">
@@ -910,7 +883,7 @@
          </item>
          <item row="7" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="8" column="0">
@@ -923,7 +896,7 @@
          </item>
          <item row="8" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="9" column="0">
@@ -936,7 +909,7 @@
          </item>
          <item row="9" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="10" column="0">
@@ -949,7 +922,7 @@
          </item>
          <item row="10" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="11" column="0">
@@ -962,7 +935,7 @@
          </item>
          <item row="11" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="12" column="0">
@@ -975,7 +948,7 @@
          </item>
          <item row="12" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="13" column="0">
@@ -988,7 +961,7 @@
          </item>
          <item row="13" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="14" column="0">
@@ -1001,7 +974,7 @@
          </item>
          <item row="14" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="15" column="0">
@@ -1014,7 +987,7 @@
          </item>
          <item row="15" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
          <item row="16" column="0">
@@ -1027,7 +1000,7 @@
          </item>
          <item row="16" column="1">
           <property name="text">
-           <string notr="true"> </string>
+           <string notr="true"/>
           </property>
          </item>
         </widget>
@@ -1236,22 +1209,6 @@
     <hint type="destinationlabel">
      <x>203</x>
      <y>121</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>customPlaylistRadio</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>labelBrowse</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>387</x>
-     <y>57</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>162</x>
-     <y>93</y>
     </hint>
    </hints>
   </connection>

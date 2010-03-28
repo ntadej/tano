@@ -16,7 +16,7 @@
 #include <QtCore/QDir>
 
 #include "Settings.h"
-#include "Ver.h"
+#include "Version.h"
 
 // Playlists
 const QString Settings::PLAYLIST_SIOL_MPEG2 = "playlists/siol-mpeg2.m3u";

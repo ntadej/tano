@@ -25,6 +25,9 @@ public:
 	static QString locateResource(const QString &file);
 	static QString locateLang(const QString &file);
 
+	static QString language(const QString &locale);
+	static QStringList loadLocale();
+
 	static void about(QWidget *parent = 0 );
 
 	static QList<const char *> libvlcArgs();

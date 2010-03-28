@@ -16,7 +16,7 @@
 #include <QtGui/QLayout>
 
 #include "FirstRun.h"
-#include "Ver.h"
+#include "core/Version.h"
 
 FirstRun::FirstRun(QWidget *parent)
 	: QWizard(parent)

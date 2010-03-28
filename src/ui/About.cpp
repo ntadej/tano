@@ -16,7 +16,7 @@
 #include <QtCore/QDate>
 
 #include "About.h"
-#include "../Ver.h"
+#include "core/Version.h"
 
 About::About(QWidget *parent)
 	: QDialog(parent)

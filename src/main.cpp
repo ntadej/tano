@@ -18,9 +18,9 @@
 #include <QtCore/QTranslator>
 
 #include "MainWindow.h"
-#include "Ver.h"
 #include "core/Common.h"
 #include "core/Settings.h"
+#include "core/Version.h"
 #include "ui/FirstRun.h"
 
 int main(int argc, char *argv[])
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	if(settings->language().isEmpty())
 		locale = QLocale::system().name();
 	else
-		locale = settings->language();
+		locale = QLocale(settings->language()).name();
 
     QTranslator translator;
 	QString langPath = Common::locateLang("tano_" + locale + ".qm");

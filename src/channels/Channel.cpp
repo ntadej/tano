@@ -16,37 +16,6 @@
 #include "Channel.h"
 
 Channel::Channel(const QString &name, const int &number)
-	: _name(name), _number(number)
-{
+	: _name(name), _number(number) { }
 
-}
-
-Channel::~Channel()
-{
-
-}
-
-void Channel::setNumber(const int &number)
-{
-	_number = number;
-}
-void Channel::setName(const QString &name)
-{
-	_name = name;
-}
-void Channel::setEpg(const QString &epg)
-{
-	_epg = epg;
-}
-void Channel::setLanguage(const QString &language)
-{
-	_language = language;
-}
-void Channel::setUrl(const QString &url)
-{
-	_url = url;
-}
-void Channel::setCategories(const QStringList &categories)
-{
-	_categories = categories;
-}
+Channel::~Channel() { }

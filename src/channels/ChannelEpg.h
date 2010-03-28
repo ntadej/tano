@@ -24,9 +24,9 @@ public:
 	ChannelEpg(const QString &time, const QString &url, const QString &title);
 	~ChannelEpg();
 
-	QString time() const {return _time;};
-	QString url() const {return _url;};
-	QString title() const {return _title;};
+	QString time() const { return _time; };
+	QString url() const { return _url; };
+	QString title() const { return _title; };
 
 private:
 	QString _time;

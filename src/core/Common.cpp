@@ -15,6 +15,7 @@
 
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
+#include <QtCore/QLocale>
 
 #include <QVlc/Config.h>
 
@@ -61,17 +62,13 @@ QString Common::locateLang(const QString &file)
 	else if (QFileInfo(QDir::currentPath() + "/lang/" + file).exists())
 		path = QFileInfo(QDir::currentPath() + "/lang/" + file).absoluteFilePath();
 
-	// Try application exe working path + src for development
-	else if (QFileInfo(QDir::currentPath() + "/src/lang/" + file).exists())
-		path = QFileInfo(QDir::currentPath() + "/src/lang/" + file).absoluteFilePath();
-
 	// Try application exe directory
 	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + file).exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + file).absoluteFilePath();
 
-	// Try application exe directory + src for development
-	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/src/lang/" + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath() + "/src/lang/" + file).absoluteFilePath();
+	// Try application exe directory without src for development
+	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + "/lang/" + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + "/lang/" + file).absoluteFilePath();
 
 #ifdef DEFAULT_DATA_DIR
 	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + file).exists())
@@ -79,6 +76,28 @@ QString Common::locateLang(const QString &file)
 #endif
 
 	return path.replace(QString("/" + file), QString(""));
+}
+
+QString Common::language(const QString &locale)
+{
+	return QLocale::languageToString(QLocale(locale).language());
+}
+
+QStringList Common::loadLocale()
+{
+	QDir dir(Common::locateLang("tano_sl_SI.qm"));
+	QStringList list;
+	QLocale locale = QLocale::English;
+	list << QLocale::languageToString(locale.language());
+
+	foreach (QString fileName, dir.entryList(QDir::Files)) {
+		if(fileName.contains(".qm")) {
+			locale = QLocale(fileName.replace("tano_",""));
+			list << locale.name();
+		}
+	}
+
+	return list;
 }
 
 void Common::about(QWidget *parent)
