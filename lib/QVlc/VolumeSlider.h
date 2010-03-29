@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* VlcVolumeSlider.h: Volume manager and slider
+* VolumeSlider.h: Volume manager and slider
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *

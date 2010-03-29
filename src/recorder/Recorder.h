@@ -34,6 +34,7 @@ public:
 	Recorder(QWidget *parent = 0);
 	~Recorder();
 
+	void createSettings();
 	bool isRecording() const {return _recording;};
 	void setGlobals(TrayIcon *icon, QAction *action);
 

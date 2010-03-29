@@ -95,6 +95,7 @@ private:
 	void createSettingsStartup();
 	void createSession();
 	void createShortcuts();
+	void mouseWheel();
 
 	//Settings
 	bool _controlsVisible;

@@ -34,6 +34,8 @@ OPTION(DEBUG_CONSOLE "Compile with debug console")
 		SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
 		SET(TANO_DEBUG_CONSOLE 0)
 	ENDIF(${DEBUG_CONSOLE} MATCHES "ON")
+ELSE(MINGW)
+	SET(TANO_DEBUG_CONSOLE 0)
 ENDIF(MINGW)
 
 # Search for Qt4 and other libraries

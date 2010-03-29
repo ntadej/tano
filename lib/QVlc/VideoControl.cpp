@@ -37,9 +37,9 @@ QVlc::VideoControl::~VideoControl()
 		delete _actionSubList[i];
 	for(int i=0; i<_actionVideoList.size(); i++)
 		delete _actionVideoList[i];
-	if(_actionSubGroup != 0)
+	if(_actionSubGroup)
 		delete _actionSubGroup;
-	if(_actionVideoGroup != 0)
+	if(_actionVideoGroup)
 		delete _actionVideoGroup;
 }
 
@@ -49,7 +49,7 @@ void QVlc::VideoControl::updateSubtitleActions() {
 	_actionSubList.clear();
 	_mapSub.clear();
 
-	if(_actionSubGroup != 0)
+	if(_actionSubGroup)
 		delete _actionSubGroup;
 	_actionSubGroup = new QActionGroup(this);
 
@@ -152,7 +152,7 @@ void QVlc::VideoControl::updateVideoActions() {
 	_actionVideoList.clear();
 	_mapVideo.clear();
 
-	if(_actionVideoGroup != 0)
+	if(_actionVideoGroup)
 		delete _actionVideoGroup;
 	_actionVideoGroup = new QActionGroup(this);
 
@@ -230,4 +230,9 @@ void QVlc::VideoControl::mediaChange()
 {
 	_timer->start(2000);
 	_manualLanguage = false;
+}
+
+void QVlc::VideoControl::setDefaultSubtitleLanguage(const QString &lang)
+{
+	_preferedLanguage = lang.split(" / ");
 }

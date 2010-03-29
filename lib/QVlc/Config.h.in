@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* VlcConfig.h: Version info
+* Config.h: Version info
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -17,9 +17,11 @@
 #ifndef QVLC_CONFIG_H_
 #define QVLC_CONFIG_H_
 
-#define LIBQVLC_VERSION @QVLC_VERSION@
+// Version
+#define LIBQVLC_VERSION "@QVLC_VERSION@"
 #define LIBQVLC_REVISION @QVLC_WC_REVISION@
 
+// VLC version
 #define VLC_1_1 @VLC_1_1_INT@
 #define VLC_1_0 @VLC_1_0_INT@
 

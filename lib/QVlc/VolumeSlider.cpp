@@ -1,6 +1,6 @@
 /****************************************************************************
 * QVlc - Qt and libVLC connector library
-* VVolumeSlider.cpp: Volume manager and slider
+* VolumeSlider.cpp: Volume manager and slider
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -83,12 +83,15 @@ void QVlc::VolumeSlider::updateVolume()
 
 void QVlc::VolumeSlider::volumeControl(const bool &up)
 {
-	if(up)
-		if(_currentVolume != 200)
-			_currentVolume+=1;
-	else
-		if(_currentVolume != 0)
-			_currentVolume-=1;
+	if(up) {
+		if(_currentVolume != 200) {
+			setVolume(_currentVolume+1);
+		}
+	} else {
+		if(_currentVolume != 0) {
+			setVolume(_currentVolume-1);
+		}
+	}
 }
 
 void QVlc::VolumeSlider::mute()

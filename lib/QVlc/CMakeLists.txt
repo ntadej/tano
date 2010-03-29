@@ -1,13 +1,16 @@
+##########################################
+# QVlc - Qt and libVLC connector library #
+##########################################
 PROJECT(QVlc)
 cmake_minimum_required(VERSION 2.6)
 
 CONFIGURE_FILE(
-  "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+  "${CMAKE_SOURCE_DIR}/cmake_uninstall.cmake.in"
+  "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake"
   IMMEDIATE @ONLY)
 
 ADD_CUSTOM_TARGET(uninstall
-  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
+  "${CMAKE_COMMAND}" -P "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake")
 
 set(CMAKE_MODULE_PATH
 	${CMAKE_SOURCE_DIR}/cmake
@@ -23,10 +26,13 @@ ENDIF(MINGW)
 FIND_PACKAGE(Qt4 REQUIRED)
 FIND_PACKAGE(LIBVLC REQUIRED)
 
+
+###########
+# Version #
+###########
 # libQVlc version number
 FILE(READ VERSION QVLC_VERSION)
 STRING(REGEX REPLACE "\n" "" QVLC_VERSION "${QVLC_VERSION}") # get rid of the newline at the end
-SET(QVLC_VERSION "\"${QVLC_VERSION}\"")
 MESSAGE("You are compiling libQVlc ${QVLC_VERSION}")
 
 # SVN revision
@@ -40,16 +46,18 @@ ENDMACRO(Subversion_GET_REVISION)
 
 FIND_PACKAGE(Subversion)
 IF(Subversion_FOUND)
-	Subversion_GET_REVISION(${CMAKE_CURRENT_SOURCE_DIR} QVLC_WC_REVISION)
+	Subversion_GET_REVISION(${CMAKE_SOURCE_DIR} QVLC_WC_REVISION)
 	MESSAGE("Current revision is ${QVLC_WC_REVISION}")
 ELSE(Subversion_FOUND)
 	SET(QVLC_WC_REVISION 0)
 ENDIF(Subversion_FOUND)
 
+
+#################
+# Configuration #
+#################
 OPTION(VLC_TRUNK "Use LibVLC trunk features")
 MESSAGE("Libvlc: ${VLC_TRUNK}")
-
-#------------------------------------------------------------------------------
 
 IF(${VLC_TRUNK} MATCHES "ON")
 SET(VLC_1_1_INT 1)
@@ -60,13 +68,17 @@ SET(VLC_1_0_INT 1)
 ENDIF(${VLC_TRUNK} MATCHES "ON")
 
 CONFIGURE_FILE(
-	"${CMAKE_CURRENT_SOURCE_DIR}/Config.h.in"
-	"${CMAKE_CURRENT_BINARY_DIR}/Config.h"
+	"${CMAKE_SOURCE_DIR}/Config.h.in"
+	"${CMAKE_BINARY_DIR}/Config.h"
 )
 
 
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+INCLUDE_DIRECTORIES(${CMAKE_BINARY_DIR} ${CMAKE_SOURCE_DIR})
 
+
+###################
+# List of sources #
+###################
 # Set your list of sources here.
 SET(QVLC_SRCS
 	AudioControl.cpp
@@ -88,8 +100,7 @@ SET(QVLC_MOCS
 
 SET(QVLC_HEADERS
 	${QVLC_MOCS}
-
-	${CMAKE_CURRENT_BINARY_DIR}/Config.h
+	${CMAKE_BINARY_DIR}/Config.h
 )
 
 INCLUDE(${QT_USE_FILE})
@@ -101,15 +112,17 @@ INCLUDE_DIRECTORIES(${LIBVLC_INCLUDE_DIR})
 ADD_LIBRARY(${PROJECT_NAME} SHARED ${QVLC_SRCS} ${QVLC_MOCS_SRCS})
 
 IF(PACKAGE)
-SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES VERSION 0.2.1
-									  SOVERSION 0.2)
+SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES VERSION ${QVLC_VERSION}
+									  SOVERSION 0.3)
 ENDIF(PACKAGE)
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${QT_LIBRARIES} ${LIBVLC_LIBRARY} ${LIBVLCCORE_LIBRARY})
 
-# Install files
+
+################
+# Installation #
+################
 INSTALL(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin
 					LIBRARY DESTINATION lib${LIB_SUFFIX}
 					ARCHIVE DESTINATION lib${LIB_SUFFIX})
 INSTALL(FILES ${QVLC_HEADERS} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/QVlc)
-

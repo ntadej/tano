@@ -89,9 +89,9 @@ void EpgManager::load()
 void EpgManager::set(const QString &channel, const int &day, const QStringList &epg)
 {
 	_day[day].insert(channel, epg);
-	qDebug() << channel << "day" << day << "gotten";
 
 	if(day == 3) {
+		qDebug() << channel << "loaded";
 		if(_currentLoadEpg == _currentRequest) {
 			_currentRequest = "";
 			post(_currentLoadEpg);

@@ -24,7 +24,7 @@
 
 Recorder::Recorder(QWidget *parent)
 	: QWidget(parent), _recording(false), _isTimer(false), _channelName(""), _channelUrl(""),
-	_trayIcon(0), _actionRecord(0), _currentTimer(0)
+	_plugin(0), _trayIcon(0), _actionRecord(0), _currentTimer(0)
 {
 	ui.setupUi(this);
 
@@ -38,8 +38,22 @@ Recorder::Recorder(QWidget *parent)
 
 	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
 
+	createSettings();
+}
+
+Recorder::~Recorder()
+{
+	delete _timer;
+	delete _plugin;
+}
+
+void Recorder::createSettings()
+{
 	Settings *settings = new Settings(this);
 	ui.fileEdit->setText(settings->recorderDirectory());
+
+	if(_plugin)
+		delete _plugin;
 
 	PluginsLoader *loader = new PluginsLoader();
 	for(int i=0; i < loader->recorderPlugin().size(); i++)
@@ -48,12 +62,6 @@ Recorder::Recorder(QWidget *parent)
 	delete loader;
 
 	delete settings;
-}
-
-Recorder::~Recorder()
-{
-	delete _timer;
-	delete _plugin;
 }
 
 void Recorder::stop()

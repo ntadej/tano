@@ -38,7 +38,7 @@ namespace QVlc
 	{
 	Q_OBJECT
 	public:
-		Instance(const QList<const char *> &args, const WId &widget = NULL, QObject *parent = 0);
+		Instance(const QList<const char *> &args, const WId &widget = NULL, QObject *parent = NULL);
 		~Instance();
 
 		void openMedia(const QString &media);

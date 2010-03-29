@@ -80,7 +80,12 @@ QString Common::locateLang(const QString &file)
 
 QString Common::language(const QString &locale)
 {
-	return QLocale::languageToString(QLocale(locale).language());
+	QString language = QLocale::languageToString(QLocale(locale).language());
+
+	if(language == "C")
+		return "English";
+	else
+		return language;
 }
 
 QStringList Common::loadLocale()

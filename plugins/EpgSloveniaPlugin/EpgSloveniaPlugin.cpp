@@ -123,7 +123,7 @@ QStringList EpgSloveniaPlugin::processShow(const QString &input) const
 	exp[2].setPattern("class=\"time\">([^<]*)"); //Time
 	exp[3].setPattern("class=\"duration\">([^<]*)</span>"); //Duration
 	exp[4].setPattern("class=\"sub\">([^<]*)"); //Info
-	exp[5].setPattern("class=\"desc\">([^<]*)<br /><br />([^<]*)"); //Description
+	exp[5].setPattern("class=\"desc\">(.*)</p><p class=\"prevnext\""); //Description
 	exp[6].setPattern("<span>Igrajo:</span>\\s*([^<]*)"); //Starring
 	exp[7].setPattern("<h4><img src='([^']*)"); //Image
 	exp[8].setPattern("href=\"([^\"]*)\" title=\"Prej"); //Previous

@@ -33,7 +33,7 @@ QVlc::AudioControl::~AudioControl()
 
 	for(int i=0; i<_actionList.size(); i++)
 		delete _actionList[i];
-	if(_actionGroup != 0)
+	if(_actionGroup)
 		delete _actionGroup;
 }
 
@@ -44,7 +44,7 @@ void QVlc::AudioControl::updateActions()
 	_actionList.clear();
 	_map.clear();
 
-	if(_actionGroup != 0)
+	if(_actionGroup)
 		delete _actionGroup;
 	_actionGroup = new QActionGroup(this);
 

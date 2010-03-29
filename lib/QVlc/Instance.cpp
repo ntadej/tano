@@ -200,7 +200,7 @@ void QVlc::Instance::stop()
 
 void QVlc::Instance::checkPlayingState()
 {
-	if(!_vlcCurrentMediaPlayer) {
+	if(_vlcCurrentMediaPlayer == NULL) {
 		emit stateChanged(0);
 		return;
 	}
@@ -222,7 +222,7 @@ void QVlc::Instance::checkError()
 {
 
 #if VLC_1_1
-	if(libvlc_errmsg() != NULL) {
+	if(libvlc_errmsg()) {
 		qDebug() << "libVLC" << "Error:" << libvlc_errmsg();
 		libvlc_clearerr();
 	}
@@ -236,7 +236,7 @@ void QVlc::Instance::checkError()
 
 bool QVlc::Instance::isActive()
 {
-	if(!_vlcCurrentMediaPlayer)
+	if(_vlcCurrentMediaPlayer == NULL)
 		return false;
 
 	// It's possible that the vlc doesn't play anything
@@ -249,7 +249,7 @@ bool QVlc::Instance::isActive()
 	libvlc_exception_clear(_vlcException);
 #endif
 
-	if (!curMedia)
+	if (curMedia == NULL)
 		return false;
 
 	libvlc_state_t state;

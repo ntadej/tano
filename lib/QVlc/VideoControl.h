@@ -34,6 +34,7 @@ namespace QVlc
 
 		void mediaChange();
 		void loadSubtitle(const QString &sub);
+		void setDefaultSubtitleLanguage(const QString &lang);
 
 	private slots:
 		void updateSubtitleActions();

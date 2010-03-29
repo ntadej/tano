@@ -32,6 +32,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent), _select(0), _time(new Time()), _update(new Updates()),
+	_audioController(0), _backend(0), _videoController(0),
 	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow())
 {
 	QPixmap pixmap(":/icons/images/splash.png");
@@ -41,8 +42,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 	ui.setupUi(this);
 
-	createSettings();
 	createSettingsStartup();
+	createSettings();
 	createBackend();
 	createGui();
 	createMenus();
@@ -122,12 +123,36 @@ void MainWindow::createBackend()
 
 void MainWindow::createSettings()
 {
+	Settings *settings = new Settings(this);
+	_hideToTray = settings->hideToTray();
+
+	//GUI Settings
+	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
+
+	_osdEnabled = settings->osd();
+	_wheelType = settings->mouseWheel();
+	mouseWheel();
+
+	//Playback settings
+	_defaultSubtitleLanguage = settings->subtitleLanguage();
+	_videoSettings = settings->rememberVideoSettings();
+	if(_videoController)
+		_videoController->setDefaultSubtitleLanguage(_defaultSubtitleLanguage);
+
+	//Recorder settings
+	_recorderEnabled = settings->recorderEnabled();
+	_sessionEnabled = settings->session();
+
+	delete settings;
+}
+
+void MainWindow::createSettingsStartup()
+{
+	Settings *settings = new Settings(this);
 	_desktopWidth = QApplication::desktop()->width();
 	_desktopHeight = QApplication::desktop()->height();
 
-	Settings *settings = new Settings(this);
 	_defaultPlaylist = settings->playlist();
-	_hideToTray = settings->hideToTray();
 	_updatesOnStart = settings->updatesCheck();
 
 	//Session
@@ -135,8 +160,7 @@ void MainWindow::createSettings()
 	_sessionVolume = settings->volume();
 	_sessionChannel = settings->channel();
 
-	//GUI Settings
-	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
+	// GUI
 	if(settings->startLite()) {
 		ui.actionLite->setChecked(true);
 		lite();
@@ -148,27 +172,10 @@ void MainWindow::createSettings()
 		top();
 	}
 
-	_osdEnabled = settings->osd();
-	_wheelType = settings->mouseWheel();
-	if(_wheelType == "volume")
-		connect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
-
 	ui.osdWidget->setVisible(settings->startControls());
 	ui.infoWidget->setVisible(settings->startInfo());
 
-	//Playback settings
-	_defaultSubtitleLanguage = settings->subtitleLanguage();
-	_videoSettings = settings->rememberVideoSettings();
-
-	//Recorder settings
-	_recorderEnabled = settings->recorderEnabled();
-
 	delete settings;
-}
-
-void MainWindow::createSettingsStartup()
-{
-
 }
 
 void MainWindow::createConnections()
@@ -270,11 +277,6 @@ void MainWindow::createMenus()
 	_rightMenu->addMenu(ui.menuAudio);
 	_rightMenu->addMenu(ui.menuVideo);
 	_rightMenu->addSeparator();
-	if(_recorderEnabled) {
-		_rightMenu->addAction(ui.actionRecordNow);
-		_rightMenu->addAction(ui.actionRecord);
-		_rightMenu->addSeparator();
-	}
 	_rightMenu->addAction(ui.actionTray);
 	_rightMenu->addAction(ui.actionClose);
 
@@ -326,12 +328,31 @@ void MainWindow::createRecorder()
 	if(_recorderEnabled) {
 		ui.recorder->openPlaylist(_playlistName);
 		ui.recorder->setGlobals(_trayIcon, ui.actionRecord);
-		_timersEditor = new EditTimers(_time, _playlistName, this);
+		ui.recorder->createSettings();
+		if(!_timersEditor)
+			_timersEditor = new EditTimers(_time, _playlistName, this);
+		if(ui.buttonRecord->isHidden()) {
+			ui.buttonRecord->show();
+			ui.menuRecorder->setEnabled(true);
+		}
+		ui.toolBar->insertAction(ui.actionEditPlaylist, ui.actionRecorder);
+		ui.toolBar->insertAction(ui.actionEditPlaylist, ui.actionTimers);
 	} else {
 		ui.buttonRecord->hide();
-		ui.menuRecorder->hide();
+		ui.menuRecorder->setEnabled(false);
 		ui.toolBar->removeAction(ui.actionRecorder);
 		ui.toolBar->removeAction(ui.actionTimers);
+	}
+}
+void MainWindow::mouseWheel()
+{
+	if(_wheelType == "volume") {
+		if(_select)
+			disconnect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
+		connect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
+	} else if(_select) {
+		disconnect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
+		connect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
 	}
 }
 
@@ -476,8 +497,6 @@ void MainWindow::openPlaylist(const bool &start)
 		disconnect(ui.actionBack, SIGNAL(triggered()), _select, SLOT(back()));
 		disconnect(ui.actionNext, SIGNAL(triggered()), _select, SLOT(next()));
 		disconnect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
-		if(_wheelType != "volume")
-			disconnect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
 		delete _select;
 	}
 
@@ -502,8 +521,7 @@ void MainWindow::openPlaylist(const bool &start)
 	connect(ui.actionBack, SIGNAL(triggered()), _select, SLOT(back()));
 	connect(ui.actionNext, SIGNAL(triggered()), _select, SLOT(next()));
 	connect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
-	if(_wheelType != "volume")
-		connect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
+	mouseWheel();
 
 	ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
 	_epg->setEpg(ui.playlistWidget->epg(), ui.playlistWidget->epgPlugin());
@@ -553,6 +571,8 @@ void MainWindow::showSettings()
 {
 	EditSettings s(_shortcuts, this);
 	s.exec();
+	createSettings();
+	createRecorder();
 }
 
 void MainWindow::showPlaylistEditor()
