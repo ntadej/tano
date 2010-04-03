@@ -21,7 +21,7 @@
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "core/Version.h"
-#include "ui/FirstRun.h"
+#include "ui/wizard/FirstRunWizard.h"
 
 int main(int argc, char *argv[])
 {
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	app.installTranslator(&translator);
 
 	if(!settings->configured() || settings->configurationVersion() != Version::Tano()) {
-		FirstRun *wizard = new FirstRun();
+		FirstRunWizard *wizard = new FirstRunWizard();
 		wizard->exec();
 		delete wizard;
 	}

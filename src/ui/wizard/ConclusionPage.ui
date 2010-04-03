@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ConclusionPage</class>
+ <widget class="QWizardPage" name="ConclusionPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../images.qrc">
+    <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
+  </property>
+  <property name="title">
+   <string>Complete Wizard</string>
+  </property>
+  <property name="subTitle">
+   <string>Thank you for using &lt;i&gt;Tano&lt;/i&gt;.</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="License" name="license" native="true"/>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="agreeCheckBox">
+     <property name="text">
+      <string>I agree to the terms of the GNU General Public License</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>License</class>
+   <extends>QWidget</extends>
+   <header>ui/License.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -28,6 +28,10 @@ SET(Tano_UIs
 	ui/PlaylistWidget.ui
 	ui/PluginsManager.ui
 	ui/Recorder.ui
+	ui/wizard/ConclusionPage.ui
+	ui/wizard/IntroPage.ui
+	ui/wizard/PlaylistPage.ui
+	ui/wizard/SettingsPage.ui
 )
 
 # Define the MOC source files used by Tano
@@ -48,12 +52,16 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/EditPlaylist.h
 	ui/EditSettings.h
 	ui/EditTimers.h
-	ui/FirstRun.h
 	ui/InfoBar.h
 	ui/License.h
 	ui/PlaylistWidget.h
 	ui/QtKeySequenceEdit.h
 	ui/TrayIcon.h
+	ui/wizard/ConclusionPage.h
+	ui/wizard/FirstRunWizard.h
+	ui/wizard/IntroPage.h
+	ui/wizard/PlaylistPage.h
+	ui/wizard/SettingsPage.h
 )
 
 SET(Tano_Resrcs ui/images.qrc)
@@ -93,12 +101,16 @@ SET(Tano_UI_Srcs
 	ui/EditPlaylist.cpp
 	ui/EditSettings.cpp
 	ui/EditTimers.cpp
-	ui/FirstRun.cpp
 	ui/InfoBar.cpp
 	ui/License.cpp
 	ui/PlaylistWidget.cpp
 	ui/QtKeySequenceEdit.cpp
 	ui/TrayIcon.cpp
+	ui/wizard/ConclusionPage.cpp
+	ui/wizard/FirstRunWizard.cpp
+	ui/wizard/IntroPage.cpp
+	ui/wizard/PlaylistPage.cpp
+	ui/wizard/SettingsPage.cpp
 )
 SET(Tano_XML_Srcs
 	xml/M3UGenerator.cpp

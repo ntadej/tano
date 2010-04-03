@@ -50,7 +50,7 @@ IF(QT_LUPDATE_EXECUTABLE)
 
 	## Create a target that runs lupdate for all the sources and UI files
 	ADD_CUSTOM_TARGET(lupdate ALL
-		COMMAND ${QT_LUPDATE_EXECUTABLE} -noobsolete ${translate_SRCS} -ts ${Tano_TS}
+		COMMAND ${QT_LUPDATE_EXECUTABLE} -no-obsolete ${translate_SRCS} -ts ${Tano_TS}
 	)
 ENDIF(QT_LUPDATE_EXECUTABLE)
 

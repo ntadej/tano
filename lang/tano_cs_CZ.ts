@@ -22,17 +22,17 @@
 <context>
     <name>ConclusionPage</name>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="170"/>
+        <location filename="../src/ui/wizard/ConclusionPage.ui" line="30"/>
         <source>I agree to the terms of the GNU General Public License</source>
         <translation>Souhlasím s podmínkami povolení GNU General Public License</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="160"/>
+        <location filename="../src/ui/wizard/ConclusionPage.ui" line="18"/>
         <source>Complete Wizard</source>
         <translation>Dokončit průvodce</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="165"/>
+        <location filename="../src/ui/wizard/ConclusionPage.ui" line="21"/>
         <source>Thank you for using &lt;i&gt;Tano&lt;/i&gt;.</source>
         <translation>Děkujeme vám za používání programu &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
@@ -762,11 +762,11 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     </message>
 </context>
 <context>
-    <name>FirstRun</name>
+    <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="35"/>
+        <location filename="../src/ui/wizard/FirstRunWizard.cpp" line="38"/>
         <source>First Run Wizard</source>
-        <translation>Průvodce prvním spuštěním</translation>
+        <translation type="unfinished">Průvodce prvním spuštěním</translation>
     </message>
 </context>
 <context>
@@ -790,19 +790,24 @@ Ztratíte tím všechna neuložená nastavení.</translation>
 <context>
     <name>IntroPage</name>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="46"/>
+        <location filename="../src/ui/wizard/IntroPage.ui" line="18"/>
         <source>Welcome</source>
         <translation>Vítejte</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="49"/>
+        <location filename="../src/ui/wizard/IntroPage.ui" line="21"/>
         <source>This wizard will help you set basic settings for your copy of &lt;i&gt;Tano&lt;/i&gt;.</source>
         <translation>Tento průvodce vám pomůže se základním nastavením programu &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="55"/>
-        <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;. Please re-set your settings.</source>
-        <translation>Předtím jste používal &lt;i&gt;Tano&lt;/i&gt; ve verzi %1. Nastavte, prosím, nastavení znovu.</translation>
+        <location filename="../src/ui/wizard/IntroPage.cpp" line="33"/>
+        <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/IntroPage.cpp" line="35"/>
+        <source>Please re-set your settings.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1237,6 +1242,59 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
 </context>
 <context>
+    <name>PlaylistPage</name>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="18"/>
+        <source>Select Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="21"/>
+        <source>Please, select your IP TV provider or browse for custom playlist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="27"/>
+        <source>Default Channel list</source>
+        <translation type="unfinished">Výchozí seznam programů</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="33"/>
+        <source>Preset</source>
+        <translation type="unfinished">Přednastavení</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="61"/>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="71"/>
+        <source>Reset</source>
+        <translation type="unfinished">Nastavit znovu</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="80"/>
+        <source>Custom</source>
+        <translation type="unfinished">Stanovený uživatelem</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="90"/>
+        <source>Presets</source>
+        <translation type="unfinished">Zobrazení přednastavení</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.cpp" line="79"/>
+        <source>Open Channel list File</source>
+        <translation type="unfinished">Otevřít soubor se seznamem programů</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.cpp" line="81"/>
+        <source>Tano TV Channel list Files(*.m3u)</source>
+        <translation type="unfinished">Soubory Tano se seznamem programů TV (*.m3u)</translation>
+    </message>
+</context>
+<context>
     <name>PlaylistWidget</name>
     <message>
         <location filename="../src/ui/PlaylistWidget.ui" line="38"/>
@@ -1479,29 +1537,29 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="89"/>
-        <source>Quick settings:</source>
-        <translation>Rychlé nastavení:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/FirstRun.cpp" line="96"/>
-        <source>Use global VLC configuration</source>
-        <translation>Použít celková nastavení VLC</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/FirstRun.cpp" line="82"/>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="18"/>
         <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
         <translation>Nastavit &lt;i&gt;Tano&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="83"/>
-        <source>Please select your IP TV provider with playlist and other settings.</source>
-        <translation>Vyberte, prosím, svého poskytovatele IP TV se seznamem programů a jinými nastaveními.</translation>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="21"/>
+        <source>Please select session, backend and other settings.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="95"/>
-        <source>Enable Session store</source>
-        <translation>Povolit ukládání sezení</translation>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="27"/>
+        <source>Enable session store</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="34"/>
+        <source>Use global VLC settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="54"/>
+        <source>Select or change playlist</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

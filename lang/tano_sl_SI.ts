@@ -22,17 +22,17 @@
 <context>
     <name>ConclusionPage</name>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="170"/>
+        <location filename="../src/ui/wizard/ConclusionPage.ui" line="30"/>
         <source>I agree to the terms of the GNU General Public License</source>
         <translation>Strinjam se s pogoji GNU General Public License</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="160"/>
+        <location filename="../src/ui/wizard/ConclusionPage.ui" line="18"/>
         <source>Complete Wizard</source>
         <translation>Zaključi čarovnika</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="165"/>
+        <location filename="../src/ui/wizard/ConclusionPage.ui" line="21"/>
         <source>Thank you for using &lt;i&gt;Tano&lt;/i&gt;.</source>
         <translation>Hvala, da uporabljaš &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
@@ -762,9 +762,9 @@ Izgubil boš vse neshranjene spremembe.</translation>
     </message>
 </context>
 <context>
-    <name>FirstRun</name>
+    <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="35"/>
+        <location filename="../src/ui/wizard/FirstRunWizard.cpp" line="38"/>
         <source>First Run Wizard</source>
         <translation>Čarovnik ob prvem zagonu</translation>
     </message>
@@ -790,19 +790,24 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>IntroPage</name>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="46"/>
+        <location filename="../src/ui/wizard/IntroPage.ui" line="18"/>
         <source>Welcome</source>
         <translation>Pozdravljen</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="49"/>
+        <location filename="../src/ui/wizard/IntroPage.ui" line="21"/>
         <source>This wizard will help you set basic settings for your copy of &lt;i&gt;Tano&lt;/i&gt;.</source>
         <translation>Ta čarovnik ti bo pomagal določiti osnovne nastavitve za program &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="55"/>
-        <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;. Please re-set your settings.</source>
-        <translation>Prej si uporabljal &lt;i&gt;Tano&lt;/i&gt; različice %1. Prosim, ponovno določi svoje nastavitve.</translation>
+        <location filename="../src/ui/wizard/IntroPage.cpp" line="33"/>
+        <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
+        <translation>Uporabljal si &lt;i&gt;Tano&lt;/i&gt; različice %1.</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/IntroPage.cpp" line="35"/>
+        <source>Please re-set your settings.</source>
+        <translation>Prosim, ponovno nastavi aplikacijo.</translation>
     </message>
 </context>
 <context>
@@ -1237,6 +1242,59 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
 </context>
 <context>
+    <name>PlaylistPage</name>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="18"/>
+        <source>Select Playlist</source>
+        <translation>Izberi Seznam programov</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="21"/>
+        <source>Please, select your IP TV provider or browse for custom playlist.</source>
+        <translation>Prosim, izberi svojega IP TV ponudnika ali pa brskaj za svoj seznam programov.</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="27"/>
+        <source>Default Channel list</source>
+        <translation>Privzet Seznam programov</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="33"/>
+        <source>Preset</source>
+        <translation>Prednastavljeno</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="61"/>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="71"/>
+        <source>Reset</source>
+        <translation>Obnovi</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="80"/>
+        <source>Custom</source>
+        <translation>Drugo</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.ui" line="90"/>
+        <source>Presets</source>
+        <translation>Prednastavljene sheme</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.cpp" line="79"/>
+        <source>Open Channel list File</source>
+        <translation>Odpri Seznam programov</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/PlaylistPage.cpp" line="81"/>
+        <source>Tano TV Channel list Files(*.m3u)</source>
+        <translation>Tano TV Seznam programov (*.m3u)</translation>
+    </message>
+</context>
+<context>
     <name>PlaylistWidget</name>
     <message>
         <location filename="../src/ui/PlaylistWidget.ui" line="38"/>
@@ -1479,29 +1537,29 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="89"/>
-        <source>Quick settings:</source>
-        <translation>Hitre nastavitve:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/FirstRun.cpp" line="96"/>
-        <source>Use global VLC configuration</source>
-        <translation>Uporabi globalne VLC nastavitve</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/FirstRun.cpp" line="82"/>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="18"/>
         <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
         <translation>Nastavi &lt;i&gt;Tano&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="83"/>
-        <source>Please select your IP TV provider with playlist and other settings.</source>
-        <translation>Prosim, izberi tvojega IP TV ponudnika s seznamom predvajanja in druge nastavitve.</translation>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="21"/>
+        <source>Please select session, backend and other settings.</source>
+        <translation>Prosim, izberi nastavitve seje, hrbtenice in drugo.</translation>
     </message>
     <message>
-        <location filename="../src/ui/FirstRun.cpp" line="95"/>
-        <source>Enable Session store</source>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="27"/>
+        <source>Enable session store</source>
         <translation>Vključi shranjevanje sej</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="34"/>
+        <source>Use global VLC settings</source>
+        <translation>Uporabi globalne VLC nastavitve</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/wizard/SettingsPage.ui" line="54"/>
+        <source>Select or change playlist</source>
+        <translation>Izberi ali zamenjaj seznam programov</translation>
     </message>
 </context>
 <context>
