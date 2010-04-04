@@ -18,10 +18,13 @@
 
 #include <QtGui/QWidget>
 
-#include "../channels/Channel.h"
-#include "../xml/M3UHandler.h"
+#include "channels/Channel.h"
+#include "xml/M3UHandler.h"
 
-#include <ui_PlaylistWidget.h>
+namespace Ui
+{
+	class PlaylistWidget;
+}
 
 class PlaylistWidget : public QWidget
 {
@@ -37,19 +40,24 @@ public:
 	QTreeWidgetItem* createItem();
 	void deleteItem();
 
-	QString name() const {return _handler->name();};
-	QString epgPlugin() const {return _handler->epgPlugin();};
-	QStringList epg() const {return _handler->epg();};
-	QString fileName() const {return _fileName;};
-	QList<int> nums() const {return _handler->nums();};
-	QTreeWidget *treeWidget() {return ui.treeWidget;};
+	QString name() const { return _handler->name(); };
+	QString epgPlugin() const { return _handler->epgPlugin(); };
+	QStringList epg() const { return _handler->epg(); };
+	QString fileName() const { return _fileName; };
+	QList<int> nums() const { return _handler->nums(); };
+	QTreeWidget *treeWidget();
 
 	void import(const QString &file);
-	int processNum(QTreeWidgetItem *channel, const int &num);
+	int processNum(QTreeWidgetItem *channel, const int &num) { return _handler->processNewNum(channel, num); };
+	void moveUp(QTreeWidgetItem *channel) { _handler->moveUp(channel); };
+	void moveDown(QTreeWidgetItem *channel) { _handler->moveDown(channel); };
 	void disableCategories();
 
-	Channel *channelRead(QTreeWidgetItem* clickedChannel);
-	Channel *channelRead(const int &clickedChannel);
+	Channel *channelRead(QTreeWidgetItem* clickedChannel) {	return _handler->channelRead(clickedChannel); };
+	Channel *channelRead(const int &clickedChannel) { return _handler->channelRead(clickedChannel); };
+
+protected:
+	void changeEvent(QEvent *e);
 
 signals:
 	void itemClicked(QTreeWidgetItem*, const int);
@@ -58,7 +66,7 @@ private slots:
 	void processPlaylist();
 
 private:
-	Ui::PlaylistWidget ui;
+	Ui::PlaylistWidget *ui;
 
 	M3UHandler *_handler;
 	QString _fileName;

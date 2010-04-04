@@ -95,6 +95,20 @@ ELSE(Subversion_FOUND)
 ENDIF(Subversion_FOUND)
 
 
+#################
+# Configuration #
+#################
+OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile")
+MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
+OPTION(PORTABLE "Compile as PortableApps application")
+MESSAGE("Compile as PortableApps application: ${PORTABLE}")
+IF(${PORTABLE} MATCHES "ON")
+SET(PORTABLEAPP 1)
+ELSE(${PORTABLE} MATCHES "ON")
+SET(PORTABLEAPP 0)
+ENDIF(${PORTABLE} MATCHES "ON")
+
+
 ###################
 # Compile and set #
 ###################

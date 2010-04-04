@@ -38,13 +38,17 @@ public:
 
 	Channel *channelRead(QTreeWidgetItem *item) {return _map[item];};
 	Channel *channelRead(const int &item) {return _nmap[item];};
+
 	QString name() const {return _name;};
 	QString epgPlugin() const {return _epgPlugin;};
 	QStringList categories() const {return _categoryList;};
 	QStringList epg() const {return _epgList;};
 	QList<int> nums() const {return _channelNums;};
-	int processNewNum(QTreeWidgetItem *channel, const int &num);
 	QMap<QTreeWidgetItem*, Channel*> channelMap() const {return _map;};
+
+	int processNewNum(QTreeWidgetItem *channel, const int &num);
+	void moveUp(QTreeWidgetItem *channel);
+	void moveDown(QTreeWidgetItem *channel);
 
 private:
 	void processList();

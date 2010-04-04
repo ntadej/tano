@@ -13,6 +13,7 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include <QtCore/QCoreApplication>
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>

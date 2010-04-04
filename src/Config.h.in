@@ -26,6 +26,7 @@
 #define QT_VERSION_PATCH @QT_VERSION_PATCH@
 
 // Other settings
+#define PORTABLE @PORTABLEAPP@
 #define DEBUG_CONSOLE @TANO_DEBUG_CONSOLE@
 
 #endif // TANO_CONFIG_H_

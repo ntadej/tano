@@ -18,59 +18,55 @@
     <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QLabel" name="labelName">
-        <property name="text">
-         <string>Playlist name:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="editName"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="labelEpgPlugin">
-        <property name="text">
-         <string>EPG Plugin:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="epgCombo"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="labelCount">
-        <property name="text">
-         <string>Channels number:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLCDNumber" name="number">
-        <property name="minimumSize">
-         <size>
-          <width>60</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="numDigits">
-         <number>3</number>
-        </property>
-       </widget>
-      </item>
-     </layout>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelName">
+      <property name="text">
+       <string>Playlist name:</string>
+      </property>
+     </widget>
     </item>
-    <item>
+    <item row="3" column="0" colspan="2">
      <widget class="PlaylistWidget" name="playlist" native="true"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="editName"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelEpgPlugin">
+      <property name="text">
+       <string>EPG Plugin:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QComboBox" name="epgCombo"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelCount">
+      <property name="text">
+       <string>Channels number:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLCDNumber" name="number">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="numDigits">
+       <number>3</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -95,6 +91,9 @@
    </attribute>
    <addaction name="actionAdd"/>
    <addaction name="actionDelete"/>
+   <addaction name="separator"/>
+   <addaction name="actionUp"/>
+   <addaction name="actionDown"/>
    <addaction name="separator"/>
    <addaction name="actionImport"/>
    <addaction name="actionSave"/>
@@ -289,6 +288,27 @@
    </property>
    <property name="text">
     <string>Import</string>
+   </property>
+  </action>
+  <action name="actionUp">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/icons/images/up.png</normaloff>:/icons/images/up.png</iconset>
+   </property>
+   <property name="text">
+    <string>Move Up</string>
+   </property>
+  </action>
+  <action name="actionDown">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/icons/images/down.png</normaloff>:/icons/images/down.png</iconset>
+   </property>
+   <property name="text">
+    <string>Move Down</string>
+   </property>
+   <property name="toolTip">
+    <string>Move Down</string>
    </property>
   </action>
  </widget>

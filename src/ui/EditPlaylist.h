@@ -17,8 +17,12 @@
 #define TANO_EDITPLAYLIST_H_
 
 #include <QtGui/QMainWindow>
+#include <QtGui/QTreeWidgetItem>
 
-#include <ui_EditPlaylist.h>
+namespace Ui
+{
+	class EditPlaylist;
+}
 
 class EditPlaylist : public QMainWindow
 {
@@ -28,6 +32,7 @@ public:
 	~EditPlaylist();
 
 protected:
+	void changeEvent(QEvent *e);
 	void closeEvent(QCloseEvent *event);
 
 private slots:
@@ -48,11 +53,14 @@ private slots:
 	void editChannelLanguage(const QString &text);
 	void editChannelEpg(const QString &text);
 
+	void moveUp();
+	void moveDown();
+
 private:
 	void createConnections();
 	void createSettings();
 
-	Ui::EditPlaylist ui;
+	Ui::EditPlaylist *ui;
 
 	bool _closeEnabled;
 	QString _playlist;

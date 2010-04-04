@@ -17,7 +17,11 @@
 #define TANO_ABOUT_H_
 
 #include <QtGui/QDialog>
-#include <ui_About.h>
+
+namespace Ui
+{
+	class About;
+}
 
 class About : public QDialog
 {
@@ -26,11 +30,14 @@ public:
 	About(QWidget *parent = 0);
 	~About();
 
+protected:
+	void changeEvent(QEvent *e);
+
 private slots:
 	void license();
 
 private:
-	Ui::About ui;
+	Ui::About *ui;
 };
 
 #endif // TANO_ABOUT_H

@@ -49,9 +49,13 @@ IF(QT_LUPDATE_EXECUTABLE)
 	SET(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS})
 
 	## Create a target that runs lupdate for all the sources and UI files
-	ADD_CUSTOM_TARGET(lupdate ALL
-		COMMAND ${QT_LUPDATE_EXECUTABLE} -no-obsolete ${translate_SRCS} -ts ${Tano_TS}
-	)
+	IF(REFRESH_TRANSLATIONS)
+		ADD_CUSTOM_TARGET(lupdate ALL
+			COMMAND ${QT_LUPDATE_EXECUTABLE} -no-obsolete ${translate_SRCS} -ts ${Tano_TS} )
+	ELSE(REFRESH_TRANSLATIONS)
+		ADD_CUSTOM_TARGET(lupdate
+			COMMAND ${QT_LUPDATE_EXECUTABLE} -no-obsolete ${translate_SRCS} -ts ${Tano_TS} )
+	ENDIF(REFRESH_TRANSLATIONS)
 ENDIF(QT_LUPDATE_EXECUTABLE)
 
 

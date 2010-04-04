@@ -22,8 +22,8 @@
 #include "tanohandler.h"
 #include "core/Settings.h"
 
-M3UHandler::M3UHandler(QTreeWidget *treeWidget)
-	: _treeWidget(treeWidget)
+M3UHandler::M3UHandler(QTreeWidget *treeWidget) :
+	_treeWidget(treeWidget)
 {
 	_name = QObject::tr("Channel list");
 	_epgPlugin = Settings::DEFAULT_EPG_PLUGIN;
@@ -74,6 +74,8 @@ int M3UHandler::processNewNum(QTreeWidgetItem *channel, const int &num)
 
 	channelRead(channel)->setNumber(num);
 	channel->setText(0,processNum(QString().number(num)));
+
+	_treeWidget->sortByColumn(0, Qt::AscendingOrder);
 
 	return num;
 }
@@ -227,4 +229,56 @@ void M3UHandler::importOldFormat(const QString &tanoFile)
 	_name = import->name();
 
 	delete import;
+}
+
+void M3UHandler::moveUp(QTreeWidgetItem *channel)
+{
+	int currentNum = channelRead(channel)->number();
+
+	if(currentNum == 1)
+		return;
+
+	int tmpNum;
+	int id = _treeWidget->indexOfTopLevelItem(channel);
+	QTreeWidgetItem *tmp = _treeWidget->topLevelItem(id-1);
+	for(int i=1; i<1000; i++) {
+		if(!_channelNums.contains(i)) {
+			tmpNum = i;
+			break;
+		}
+	}
+
+	if(channelRead(tmp)->number() == currentNum-1) {
+		processNewNum(tmp, tmpNum);
+		processNewNum(channel, currentNum-1);
+		processNewNum(tmp, currentNum);
+	} else {
+		processNewNum(channel, currentNum-1);
+	}
+}
+
+void M3UHandler::moveDown(QTreeWidgetItem *channel)
+{
+	int currentNum = channelRead(channel)->number();
+
+	if(currentNum == 999)
+		return;
+
+	int tmpNum;
+	int id = _treeWidget->indexOfTopLevelItem(channel);
+	QTreeWidgetItem *tmp = _treeWidget->topLevelItem(id+1);
+	for(int i=1; i<1000; i++) {
+		if(!_channelNums.contains(i)) {
+			tmpNum = i;
+			break;
+		}
+	}
+
+	if(channelRead(tmp)->number() == currentNum+1) {
+		processNewNum(tmp, tmpNum);
+		processNewNum(channel, currentNum+1);
+		processNewNum(tmp, currentNum);
+	} else {
+		processNewNum(channel, currentNum+1);
+	}
 }

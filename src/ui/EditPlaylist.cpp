@@ -13,98 +13,117 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include "EditPlaylist.h"
+#include "ui_EditPlaylist.h"
+
 #include <QtGui/QCloseEvent>
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
-#include "EditPlaylist.h"
 #include "core/Settings.h"
 #include "plugins/PluginsLoader.h"
 
-EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent)
-	: QMainWindow(parent), _closeEnabled(false), _playlist(playlist), _channelIcon(QIcon(":/icons/images/video.png"))
+EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent) :
+		QMainWindow(parent),
+		ui(new Ui::EditPlaylist),
+		_closeEnabled(false),
+		_playlist(playlist),
+		_channelIcon(QIcon(":/icons/images/video.png"))
 {
-	ui.setupUi(this);
+	ui->setupUi(this);
 
 	createSettings();
 	createConnections();
 
-	ui.editWidget->setEnabled(false);
-	ui.playlist->disableCategories();
-	ui.playlist->open(_playlist);
-	ui.editName->setText(ui.playlist->name());
-	ui.number->display(ui.playlist->treeWidget()->topLevelItemCount());
+	ui->editWidget->setEnabled(false);
+	ui->playlist->disableCategories();
+	ui->playlist->open(_playlist);
+	ui->editName->setText(ui->playlist->name());
+	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 
 	PluginsLoader *loader = new PluginsLoader();
 	for(int i=0; i < loader->epgPlugin().size(); i++)
-		ui.epgCombo->addItem(loader->epgName()[i]);
+		ui->epgCombo->addItem(loader->epgName()[i]);
 	delete loader;
-	for(int i=0; i < ui.epgCombo->count(); i++)
-		if(ui.epgCombo->itemText(i) == ui.playlist->epgPlugin()) {
-			ui.epgCombo->setCurrentIndex(i);
+	for(int i=0; i < ui->epgCombo->count(); i++) {
+		if(ui->epgCombo->itemText(i) == ui->playlist->epgPlugin()) {
+			ui->epgCombo->setCurrentIndex(i);
 			break;
 		}
+	}
 }
 
 EditPlaylist::~EditPlaylist()
 {
+	delete ui;
+}
 
+void EditPlaylist::changeEvent(QEvent *e)
+{
+	QMainWindow::changeEvent(e);
+	switch (e->type()) {
+		case QEvent::LanguageChange:
+			ui->retranslateUi(this);
+			break;
+		default:
+			break;
+	}
 }
 
 void EditPlaylist::closeEvent(QCloseEvent *event)
 {
-	if(!_closeEnabled) {
-		event->ignore();
-	} else {
-		_closeEnabled = false;
-	}
+	event->ignore();
+	exit();
 }
 
 void EditPlaylist::createSettings()
 {
 	Settings *settings = new Settings(this);
-	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
+	ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
 	delete settings;
 }
 
 void EditPlaylist::createConnections()
 {
-	connect(ui.actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
-	connect(ui.actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
-	connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(save()));
-	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
-	connect(ui.actionImport, SIGNAL(triggered()), this, SLOT(import()));
+	connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
+	connect(ui->actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
+	connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
+	connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
+	connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(import()));
 
-	connect(ui.buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
-	connect(ui.editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
-	connect(ui.editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
-	connect(ui.editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
-	connect(ui.editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
-	connect(ui.editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
+	connect(ui->buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
+	connect(ui->editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
+	connect(ui->editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
+	connect(ui->editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
+	connect(ui->editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
+	connect(ui->editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
 
-	connect(ui.playlist, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(editItem(QTreeWidgetItem*)));
+	connect(ui->actionUp, SIGNAL(triggered()), this, SLOT(moveUp()));
+	connect(ui->actionDown, SIGNAL(triggered()), this, SLOT(moveDown()));
+
+	connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
 }
 
 void EditPlaylist::deleteItem()
 {
-	ui.editNumber->setText("");
-	ui.editChannelName->setText("");
-	ui.editUrl->setText("");
-	ui.editCategories->setText("");
-	ui.editLanguage->setText("");
-	ui.editEpg->setText("");
+	ui->editNumber->setText("");
+	ui->editChannelName->setText("");
+	ui->editUrl->setText("");
+	ui->editCategories->setText("");
+	ui->editLanguage->setText("");
+	ui->editEpg->setText("");
 
-	ui.editWidget->setEnabled(false);
+	ui->editWidget->setEnabled(false);
 
-	ui.playlist->deleteItem();
+	ui->playlist->deleteItem();
 
-	ui.number->display(ui.playlist->treeWidget()->topLevelItemCount());
+	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
 void EditPlaylist::addItem()
 {
-	editItem(ui.playlist->createItem());
-	ui.number->display(ui.playlist->treeWidget()->topLevelItemCount());
+	editItem(ui->playlist->createItem());
+	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
 void EditPlaylist::save()
@@ -116,7 +135,7 @@ void EditPlaylist::save()
 	if (fileName.isEmpty())
 		return;
 
-	ui.playlist->save(ui.editName->text(), ui.epgCombo->currentText(), fileName);
+	ui->playlist->save(ui->editName->text(), ui->epgCombo->currentText(), fileName);
 }
 
 void EditPlaylist::import()
@@ -128,19 +147,19 @@ void EditPlaylist::import()
 	if (fileName.isEmpty())
 		return;
 
-	ui.playlist->import(fileName);
-	ui.number->display(ui.playlist->treeWidget()->topLevelItemCount());
+	ui->playlist->import(fileName);
+	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
 void EditPlaylist::exit()
 {
 	if(_closeEnabled) {
-		close();
+		hide();
 		return;
 	}
 
 	int ret;
-	ret = QMessageBox::warning(this, ui.editName->text(),
+	ret = QMessageBox::warning(this, tr("Playlist Editor"),
 								   tr("Do you want close the editor?\nYou will lose any unsaved settings."),
 								   QMessageBox::Close | QMessageBox::Cancel,
 								   QMessageBox::Close);
@@ -148,7 +167,7 @@ void EditPlaylist::exit()
 	switch (ret) {
 		case QMessageBox::Close:
 			_closeEnabled = true;
-			ui.actionClose->trigger();
+			ui->actionClose->trigger();
 			break;
 		case QMessageBox::Cancel:
 			break;
@@ -159,49 +178,61 @@ void EditPlaylist::exit()
 
 void EditPlaylist::editItem(QTreeWidgetItem *item)
 {
-	if(!ui.editWidget->isEnabled())
-		ui.editWidget->setEnabled(true);
+	if(!ui->editWidget->isEnabled())
+		ui->editWidget->setEnabled(true);
 
-	ui.playlist->treeWidget()->setCurrentItem(item);
+	ui->playlist->treeWidget()->setCurrentItem(item);
 
-	ui.editNumber->setText(ui.playlist->channelRead(item)->numberString());
-	ui.editChannelName->setText(ui.playlist->channelRead(item)->name());
-	ui.editUrl->setText(ui.playlist->channelRead(item)->url());
-	ui.editCategories->setText(ui.playlist->channelRead(item)->categories().join(","));
-	ui.editLanguage->setText(ui.playlist->channelRead(item)->language());
-	ui.editEpg->setText(ui.playlist->channelRead(item)->epg());
+	ui->editNumber->setText(ui->playlist->channelRead(item)->numberString());
+	ui->editChannelName->setText(ui->playlist->channelRead(item)->name());
+	ui->editUrl->setText(ui->playlist->channelRead(item)->url());
+	ui->editCategories->setText(ui->playlist->channelRead(item)->categories().join(","));
+	ui->editLanguage->setText(ui->playlist->channelRead(item)->language());
+	ui->editEpg->setText(ui->playlist->channelRead(item)->epg());
 }
 
 void EditPlaylist::editChannelNumber()
 {
-	QString text = ui.editNumber->text();
-	if(text.toInt() != ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->number())
-		ui.editNumber->setText(QString().number(ui.playlist->processNum(ui.playlist->treeWidget()->currentItem(), text.toInt())));
-	ui.playlist->treeWidget()->sortByColumn(0, Qt::AscendingOrder);
+	QString text = ui->editNumber->text();
+	if(text.toInt() != ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->number())
+		ui->editNumber->setText(QString().number(ui->playlist->processNum(ui->playlist->treeWidget()->currentItem(), text.toInt())));
+	ui->playlist->treeWidget()->sortByColumn(0, Qt::AscendingOrder);
 }
 
 void EditPlaylist::editChannelName(const QString &text)
 {
-	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setName(text);
-	ui.playlist->treeWidget()->currentItem()->setText(1, text);
+	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setName(text);
+	ui->playlist->treeWidget()->currentItem()->setText(1, text);
 }
 
 void EditPlaylist::editChannelUrl(const QString &text)
 {
-	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setUrl(text);
+	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setUrl(text);
 }
 
 void EditPlaylist::editChannelCategories(const QString &text)
 {
-	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setCategories(text.split(","));
+	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setCategories(text.split(","));
 }
 
 void EditPlaylist::editChannelLanguage(const QString &text)
 {
-	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setLanguage(text);
+	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setLanguage(text);
 }
 
 void EditPlaylist::editChannelEpg(const QString &text)
 {
-	ui.playlist->channelRead(ui.playlist->treeWidget()->currentItem())->setEpg(text);
+	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setEpg(text);
+}
+
+void EditPlaylist::moveUp()
+{
+	ui->playlist->moveUp(ui->playlist->treeWidget()->currentItem());
+	ui->editNumber->setText(ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->numberString());
+}
+
+void EditPlaylist::moveDown()
+{
+	ui->playlist->moveDown(ui->playlist->treeWidget()->currentItem());
+	ui->editNumber->setText(ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->numberString());
 }
