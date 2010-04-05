@@ -136,6 +136,9 @@ void EditPlaylist::save()
 		return;
 
 	ui->playlist->save(ui->editName->text(), ui->epgCombo->currentText(), fileName);
+
+	_closeEnabled = true;
+	exit();
 }
 
 void EditPlaylist::import()
@@ -161,10 +164,13 @@ void EditPlaylist::exit()
 	int ret;
 	ret = QMessageBox::warning(this, tr("Playlist Editor"),
 								   tr("Do you want close the editor?\nYou will lose any unsaved settings."),
-								   QMessageBox::Close | QMessageBox::Cancel,
+								   QMessageBox::Save | QMessageBox::Close | QMessageBox::Cancel,
 								   QMessageBox::Close);
 
 	switch (ret) {
+		case QMessageBox::Save:
+			ui->actionSave->trigger();
+			break;
 		case QMessageBox::Close:
 			_closeEnabled = true;
 			ui->actionClose->trigger();

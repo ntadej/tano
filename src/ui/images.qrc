@@ -53,5 +53,6 @@
         <file>images/plugin.png</file>
         <file>images/editadd.png</file>
         <file>images/apply.png</file>
+        <file>images/splash-portable.png</file>
     </qresource>
 </RCC>

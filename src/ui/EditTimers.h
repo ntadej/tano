@@ -26,7 +26,10 @@
 #include "recorder/Timer.h"
 #include "xml/TimersHandler.h"
 
-#include <ui_EditTimers.h>
+namespace Ui
+{
+	class EditTimers;
+}
 
 class EditTimers : public QMainWindow
 {
@@ -35,7 +38,10 @@ public:
 	EditTimers(Time *t, const QString &playlist, QWidget *parent = 0);
 	~EditTimers();
 
+	void showTimersEditor();
+
 protected:
+	void changeEvent(QEvent *e);
 	void closeEvent(QCloseEvent *event);
 
 private slots:
@@ -62,7 +68,7 @@ private:
 	void createConnections();
 	void createSettings();
 
-	Ui::EditTimers ui;
+	Ui::EditTimers *ui;
 
 	bool _activeTimers;
 	bool _closeEnabled;

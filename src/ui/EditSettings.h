@@ -18,12 +18,17 @@
 
 #include <QtCore/QSettings>
 #include <QtCore/QStringList>
+#include <QtGui/QAbstractButton>
 #include <QtGui/QDialog>
+#include <QtGui/QTableWidgetItem>
 
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
 
-#include <ui_EditSettings.h>
+namespace Ui
+{
+	class EditSettings;
+}
 
 class EditSettings : public QDialog
 {
@@ -32,13 +37,15 @@ public:
 	EditSettings(Shortcuts *s = 0, QWidget *parent = 0);
 	~EditSettings();
 
+protected:
+	void changeEvent(QEvent *e);
+
 private slots:
 	void action(QAbstractButton *button);
+	void apply();
 	void save();
 	void cancel();
 
-	void playlistBrowse();
-	void playlistReset();
 	void recorderDirectoryBrowse();
 	void recorderDirectoryReset();
 
@@ -57,7 +64,7 @@ private:
 	void loadLocale();
 	void loadPlugins();
 
-	Ui::EditSettings ui;
+	Ui::EditSettings *ui;
 
 	Settings *_settings;
 	Shortcuts *_shortcuts;

@@ -13,6 +13,9 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include "MainWindow.h"
+#include "ui_MainWindow.h"
+
 #include <QtCore/QDir>
 #include <QtGui/QApplication>
 #include <QtGui/QBitmap>
@@ -22,25 +25,30 @@
 #include <QtGui/QMessageBox>
 #include <QtGui/QSplashScreen>
 
+#include "Config.h"
 #include <QVlc/Config.h>
 
-#include "MainWindow.h"
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "plugins/PluginsManager.h"
 #include "ui/EditSettings.h"
 
-MainWindow::MainWindow(QWidget *parent)
-	: QMainWindow(parent), _select(0), _time(new Time()), _update(new Updates()),
+MainWindow::MainWindow(QWidget *parent)	:
+	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()),
+	_time(new Time()), _update(new Updates()),
 	_audioController(0), _backend(0), _videoController(0),
 	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow())
 {
+#if PORTABLE
+	QPixmap pixmap(":/icons/images/splash-portable.png");
+#else
 	QPixmap pixmap(":/icons/images/splash.png");
+#endif
 	QSplashScreen *splash = new QSplashScreen(pixmap);
 	splash->setMask(pixmap.mask());
 	splash->show();
 
-	ui.setupUi(this);
+	ui->setupUi(this);
 
 	createSettingsStartup();
 	createSettings();
@@ -64,7 +72,7 @@ MainWindow::~MainWindow()
 void MainWindow::exit()
 {
 	int ret;
-	if(ui.recorder->isRecording()) {
+	if(ui->recorder->isRecording()) {
 		ret = QMessageBox::warning(this, tr("Tano"),
 					  tr("Do you want to exit Tano?\nThis will stop recording in progress."),
 					  QMessageBox::Close | QMessageBox::Cancel,
@@ -75,17 +83,29 @@ void MainWindow::exit()
 
 	switch (ret) {
 		case QMessageBox::Close:
-			ui.recorder->stop();
+			ui->recorder->stop();
 			if(_sessionEnabled) {
 				Settings *settings = new Settings(this);
-				settings->setVolume(ui.volumeSlider->volume());
-				settings->setChannel(ui.channelNumber->value());
+				settings->setVolume(ui->volumeSlider->volume());
+				settings->setChannel(ui->channelNumber->value());
 				settings->writeSettings();
 				delete settings;
 			}
 			qApp->quit();
 			break;
 		case QMessageBox::Cancel:
+			break;
+		default:
+			break;
+	}
+}
+
+void MainWindow::changeEvent(QEvent *e)
+{
+	QMainWindow::changeEvent(e);
+	switch (e->type()) {
+		case QEvent::LanguageChange:
+			ui->retranslateUi(this);
 			break;
 		default:
 			break;
@@ -105,19 +125,19 @@ void MainWindow::createGui()
 {
 	openPlaylist(true);
 	playingState(-1);
-	ui.pageMain->setStyleSheet("background-color: rgb(0,0,0);");
+	ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
 }
 
 void MainWindow::createBackend()
 {
-	_backend = new QVlc::Instance(Common::libvlcArgs(), ui.videoWidget->getWinId());
+	_backend = new QVlc::Instance(Common::libvlcArgs(), ui->videoWidget->getWinId());
 	_backend->init();
 
 	_audioController = new QVlc::AudioControl();
 	_videoController = new QVlc::VideoControl(_defaultSubtitleLanguage);
 
 #if VLC_1_1
-	ui.menuDeinterlacing->setEnabled(true);
+	ui->menuDeinterlacing->setEnabled(true);
 #endif
 }
 
@@ -127,7 +147,7 @@ void MainWindow::createSettings()
 	_hideToTray = settings->hideToTray();
 
 	//GUI Settings
-	ui.toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
+	ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
 
 	_osdEnabled = settings->osd();
 	_wheelType = settings->mouseWheel();
@@ -162,128 +182,128 @@ void MainWindow::createSettingsStartup()
 
 	// GUI
 	if(settings->startLite()) {
-		ui.actionLite->setChecked(true);
+		ui->actionLite->setChecked(true);
 		lite();
 	} else
 		_isLite = false;
 
 	if(settings->startOnTop()) {
-		ui.actionTop->setChecked(true);;
+		ui->actionTop->setChecked(true);;
 		top();
 	}
 
-	ui.osdWidget->setVisible(settings->startControls());
-	ui.infoWidget->setVisible(settings->startInfo());
+	ui->osdWidget->setVisible(settings->startControls());
+	ui->infoWidget->setVisible(settings->startInfo());
 
 	delete settings;
 }
 
 void MainWindow::createConnections()
 {
-	connect(ui.actionUpdate, SIGNAL(triggered()), _update, SLOT(getUpdates()));
-	connect(ui.actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
-	connect(ui.actionAboutPlugins, SIGNAL(triggered()), this, SLOT(aboutPlugins()));
-	connect(ui.actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
-	connect(ui.actionClose, SIGNAL(triggered()), this, SLOT(exit()));
+	connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(getUpdates()));
+	connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
+	connect(ui->actionAboutPlugins, SIGNAL(triggered()), this, SLOT(aboutPlugins()));
+	connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+	connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 
-	connect(ui.actionTop, SIGNAL(triggered()), this, SLOT(top()));
-	connect(ui.actionLite, SIGNAL(triggered()), this, SLOT(lite()));
-	connect(ui.actionFullscreen, SIGNAL(toggled(bool)), this, SLOT(fullscreen(bool)));
+	connect(ui->actionTop, SIGNAL(triggered()), this, SLOT(top()));
+	connect(ui->actionLite, SIGNAL(triggered()), this, SLOT(lite()));
+	connect(ui->actionFullscreen, SIGNAL(toggled(bool)), this, SLOT(fullscreen(bool)));
 
-	connect(ui.actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
-	connect(ui.actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
-	connect(ui.actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
-	connect(ui.actionOpenSubtitles, SIGNAL(triggered()), this, SLOT(openSubtitles()));
-	connect(ui.actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
+	connect(ui->actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
+	connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
+	connect(ui->actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
+	connect(ui->actionOpenSubtitles, SIGNAL(triggered()), this, SLOT(openSubtitles()));
+	connect(ui->actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
 
-	connect(ui.actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
-	connect(ui.actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
+	connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
+	connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
-	connect(ui.actionPlay, SIGNAL(triggered()), _backend, SLOT(pause()));
-	connect(ui.actionStop, SIGNAL(triggered()), _backend, SLOT(stop()));
-	connect(ui.actionStop, SIGNAL(triggered()), this, SLOT(stop()));
+	connect(ui->actionPlay, SIGNAL(triggered()), _backend, SLOT(pause()));
+	connect(ui->actionStop, SIGNAL(triggered()), _backend, SLOT(stop()));
+	connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 
-	connect(ui.playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playChannel(QTreeWidgetItem*)));
+	connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playChannel(QTreeWidgetItem*)));
 
 	connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
-	connect(ui.actionTray, SIGNAL(triggered()), this, SLOT(tray()));
+	connect(ui->actionTray, SIGNAL(triggered()), this, SLOT(tray()));
 
-	connect(ui.videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
-	connect(ui.videoWidget, SIGNAL(osdVisibility(bool)), ui.osdWidget, SLOT(setVisible(bool)));
+	connect(ui->videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
+	connect(ui->videoWidget, SIGNAL(osdVisibility(bool)), ui->osdWidget, SLOT(setVisible(bool)));
 
 	connect(_epg, SIGNAL(epg(QStringList, int)), this, SLOT(showEpg(QStringList, int)));
-	connect(ui.scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
-	connect(ui.infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
+	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
+	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
 	connect(_update, SIGNAL(updatesDone(QStringList)), _trayIcon, SLOT(message(QStringList)));
 
-	connect(_rightMenu, SIGNAL(aboutToHide()), ui.videoWidget, SLOT(enableMove()));
-	connect(_rightMenu, SIGNAL(aboutToShow()), ui.videoWidget, SLOT(disableMove()));
+	connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMove()));
+	connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMove()));
 
 	connect(_audioController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
 	connect(_videoController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
 	connect(_backend, SIGNAL(stateChanged(int)), this, SLOT(playingState(int)));
 
-	connect(ui.actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
-	connect(ui.actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
-	connect(ui.actionTimers, SIGNAL(triggered()), this, SLOT(showTimersEditor()));
+	connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
+	connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
+	connect(ui->actionTimers, SIGNAL(triggered()), this, SLOT(showTimersEditor()));
 
-	connect(_time, SIGNAL(startTimer(Timer*)), ui.recorder, SLOT(recordTimer(Timer*)));
-	connect(_time, SIGNAL(stopTimer(Timer*)), ui.recorder, SLOT(stopTimer(Timer*)));
+	connect(_time, SIGNAL(startTimer(Timer*)), ui->recorder, SLOT(recordTimer(Timer*)));
+	connect(_time, SIGNAL(stopTimer(Timer*)), ui->recorder, SLOT(stopTimer(Timer*)));
 }
 
 void MainWindow::createMenus()
 {
 	_ratioGroup = new QActionGroup(this);
-	_ratioGroup->addAction(ui.actionRatioOriginal);
-	_ratioGroup->addAction(ui.actionRatio1_1);
-	_ratioGroup->addAction(ui.actionRatio4_3);
-	_ratioGroup->addAction(ui.actionRatio16_9);
-	_ratioGroup->addAction(ui.actionRatio16_10);
-	_ratioGroup->addAction(ui.actionRatio2_21_1);
-	_ratioGroup->addAction(ui.actionRatio5_4);
+	_ratioGroup->addAction(ui->actionRatioOriginal);
+	_ratioGroup->addAction(ui->actionRatio1_1);
+	_ratioGroup->addAction(ui->actionRatio4_3);
+	_ratioGroup->addAction(ui->actionRatio16_9);
+	_ratioGroup->addAction(ui->actionRatio16_10);
+	_ratioGroup->addAction(ui->actionRatio2_21_1);
+	_ratioGroup->addAction(ui->actionRatio5_4);
 
 	_cropGroup = new QActionGroup(this);
-	_cropGroup->addAction(ui.actionCropOriginal);
-	_cropGroup->addAction(ui.actionCrop1_1);
-	_cropGroup->addAction(ui.actionCrop4_3);
-	_cropGroup->addAction(ui.actionCrop16_9);
-	_cropGroup->addAction(ui.actionCrop16_10);
-	_cropGroup->addAction(ui.actionCrop1_85_1);
-	_cropGroup->addAction(ui.actionCrop2_21_1);
-	_cropGroup->addAction(ui.actionCrop2_35_1);
-	_cropGroup->addAction(ui.actionCrop2_39_1);
-	_cropGroup->addAction(ui.actionCrop5_4);
-	_cropGroup->addAction(ui.actionCrop5_3);
+	_cropGroup->addAction(ui->actionCropOriginal);
+	_cropGroup->addAction(ui->actionCrop1_1);
+	_cropGroup->addAction(ui->actionCrop4_3);
+	_cropGroup->addAction(ui->actionCrop16_9);
+	_cropGroup->addAction(ui->actionCrop16_10);
+	_cropGroup->addAction(ui->actionCrop1_85_1);
+	_cropGroup->addAction(ui->actionCrop2_21_1);
+	_cropGroup->addAction(ui->actionCrop2_35_1);
+	_cropGroup->addAction(ui->actionCrop2_39_1);
+	_cropGroup->addAction(ui->actionCrop5_4);
+	_cropGroup->addAction(ui->actionCrop5_3);
 
 	_filterGroup = new QActionGroup(this);
-	_filterGroup->addAction(ui.actionFilterDisabled);
-	_filterGroup->addAction(ui.actionFilterDiscard);
-	_filterGroup->addAction(ui.actionFilterBlend);
-	_filterGroup->addAction(ui.actionFilterMean);
-	_filterGroup->addAction(ui.actionFilterBob);
-	_filterGroup->addAction(ui.actionFilterLinear);
-	_filterGroup->addAction(ui.actionFilterX);
+	_filterGroup->addAction(ui->actionFilterDisabled);
+	_filterGroup->addAction(ui->actionFilterDiscard);
+	_filterGroup->addAction(ui->actionFilterBlend);
+	_filterGroup->addAction(ui->actionFilterMean);
+	_filterGroup->addAction(ui->actionFilterBob);
+	_filterGroup->addAction(ui->actionFilterLinear);
+	_filterGroup->addAction(ui->actionFilterX);
 
 	_rightMenu = new QMenu();
-	_rightMenu->addAction(ui.actionPlay);
-	_rightMenu->addAction(ui.actionStop);
-	_rightMenu->addAction(ui.actionBack);
-	_rightMenu->addAction(ui.actionNext);
+	_rightMenu->addAction(ui->actionPlay);
+	_rightMenu->addAction(ui->actionStop);
+	_rightMenu->addAction(ui->actionBack);
+	_rightMenu->addAction(ui->actionNext);
 	_rightMenu->addSeparator();
-	_rightMenu->addAction(ui.actionTop);
-	_rightMenu->addAction(ui.actionLite);
-	_rightMenu->addAction(ui.actionFullscreen);
+	_rightMenu->addAction(ui->actionTop);
+	_rightMenu->addAction(ui->actionLite);
+	_rightMenu->addAction(ui->actionFullscreen);
 	_rightMenu->addSeparator();
-	_rightMenu->addMenu(ui.menuAudio);
-	_rightMenu->addMenu(ui.menuVideo);
+	_rightMenu->addMenu(ui->menuAudio);
+	_rightMenu->addMenu(ui->menuVideo);
 	_rightMenu->addSeparator();
-	_rightMenu->addAction(ui.actionTray);
-	_rightMenu->addAction(ui.actionClose);
+	_rightMenu->addAction(ui->actionTray);
+	_rightMenu->addAction(ui->actionClose);
 
 	_openMenu = new QMenu();
-	_openMenu->addAction(ui.actionOpenFile);
-	_openMenu->addAction(ui.actionOpenUrl);
-	_openMenu->addAction(ui.actionOpen);
+	_openMenu->addAction(ui->actionOpenFile);
+	_openMenu->addAction(ui->actionOpenUrl);
+	_openMenu->addAction(ui->actionOpen);
 
 	_trayIcon = new TrayIcon(_rightMenu);
 	_trayIcon->show();
@@ -291,30 +311,30 @@ void MainWindow::createMenus()
 
 void MainWindow::createShortcuts()
 {
-	_actions << ui.actionPlay
-		<< ui.actionStop
-		<< ui.actionNext
-		<< ui.actionBack
-		<< ui.actionFullscreen
-		<< ui.actionMute
-		<< ui.actionVolumeUp
-		<< ui.actionVolumeDown
-		<< ui.actionRecorder
-		<< ui.actionOpenFile
-		<< ui.actionOpenUrl
-		<< ui.actionOpen
-		<< ui.actionEditPlaylist
-		<< ui.actionSettings
-		<< ui.actionTop
-		<< ui.actionLite
-		<< ui.actionTray;
+	_actions << ui->actionPlay
+		<< ui->actionStop
+		<< ui->actionNext
+		<< ui->actionBack
+		<< ui->actionFullscreen
+		<< ui->actionMute
+		<< ui->actionVolumeUp
+		<< ui->actionVolumeDown
+		<< ui->actionRecorder
+		<< ui->actionOpenFile
+		<< ui->actionOpenUrl
+		<< ui->actionOpen
+		<< ui->actionEditPlaylist
+		<< ui->actionSettings
+		<< ui->actionTop
+		<< ui->actionLite
+		<< ui->actionTray;
 
 	_shortcuts = new Shortcuts(_actions, this);
 }
 
 void MainWindow::createSession()
 {
-	ui.volumeSlider->setVolume(_sessionVolume);
+	ui->volumeSlider->setVolume(_sessionVolume);
 
 	if(_sessionEnabled && _hasPlaylist)
 		playChannel(_sessionChannel);
@@ -326,33 +346,33 @@ void MainWindow::createSession()
 void MainWindow::createRecorder()
 {
 	if(_recorderEnabled) {
-		ui.recorder->openPlaylist(_playlistName);
-		ui.recorder->setGlobals(_trayIcon, ui.actionRecord);
-		ui.recorder->createSettings();
+		ui->recorder->openPlaylist(_playlistName);
+		ui->recorder->setGlobals(_trayIcon, ui->actionRecord);
+		ui->recorder->createSettings();
 		if(!_timersEditor)
 			_timersEditor = new EditTimers(_time, _playlistName, this);
-		if(ui.buttonRecord->isHidden()) {
-			ui.buttonRecord->show();
-			ui.menuRecorder->setEnabled(true);
+		if(ui->buttonRecord->isHidden()) {
+			ui->buttonRecord->show();
+			ui->menuRecorder->setEnabled(true);
 		}
-		ui.toolBar->insertAction(ui.actionEditPlaylist, ui.actionRecorder);
-		ui.toolBar->insertAction(ui.actionEditPlaylist, ui.actionTimers);
+		ui->toolBar->insertAction(ui->actionEditPlaylist, ui->actionRecorder);
+		ui->toolBar->insertAction(ui->actionEditPlaylist, ui->actionTimers);
 	} else {
-		ui.buttonRecord->hide();
-		ui.menuRecorder->setEnabled(false);
-		ui.toolBar->removeAction(ui.actionRecorder);
-		ui.toolBar->removeAction(ui.actionTimers);
+		ui->buttonRecord->hide();
+		ui->menuRecorder->setEnabled(false);
+		ui->toolBar->removeAction(ui->actionRecorder);
+		ui->toolBar->removeAction(ui->actionTimers);
 	}
 }
 void MainWindow::mouseWheel()
 {
 	if(_wheelType == "volume") {
 		if(_select)
-			disconnect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
-		connect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
+			disconnect(ui->videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
+		connect(ui->videoWidget, SIGNAL(wheel(bool)), ui->volumeSlider, SLOT(volumeControl(bool)));
 	} else if(_select) {
-		disconnect(ui.videoWidget, SIGNAL(wheel(bool)), ui.volumeSlider, SLOT(volumeControl(bool)));
-		connect(ui.videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
+		disconnect(ui->videoWidget, SIGNAL(wheel(bool)), ui->volumeSlider, SLOT(volumeControl(bool)));
+		connect(ui->videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
 	}
 }
 
@@ -370,39 +390,39 @@ void MainWindow::aboutPlugins()
 //Media controls
 void MainWindow::playChannel(QTreeWidgetItem* clickedChannel)
 {
-	_channel = ui.playlistWidget->channelRead(clickedChannel);
+	_channel = ui->playlistWidget->channelRead(clickedChannel);
 	play();
 }
 void MainWindow::playChannel(const int &clickedChannel)
 {
-	_channel = ui.playlistWidget->channelRead(clickedChannel);
+	_channel = ui->playlistWidget->channelRead(clickedChannel);
 	play();
 }
 
 void MainWindow::playingState(const int &status)
 {
 	if(status == 1) {
-		ui.actionPlay->setEnabled(true);
-		ui.buttonPlay->setEnabled(true);
-		ui.actionPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
-		ui.buttonPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
-		ui.actionPlay->setText(tr("Pause"));
-		ui.actionPlay->setToolTip(tr("Pause"));
-		ui.buttonPlay->setToolTip(tr("Pause"));
-		ui.buttonPlay->setStatusTip(tr("Pause"));
-		ui.actionMute->setEnabled(true);
-		ui.buttonMute->setEnabled(true);
+		ui->actionPlay->setEnabled(true);
+		ui->buttonPlay->setEnabled(true);
+		ui->actionPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
+		ui->buttonPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
+		ui->actionPlay->setText(tr("Pause"));
+		ui->actionPlay->setToolTip(tr("Pause"));
+		ui->buttonPlay->setToolTip(tr("Pause"));
+		ui->buttonPlay->setStatusTip(tr("Pause"));
+		ui->actionMute->setEnabled(true);
+		ui->buttonMute->setEnabled(true);
 	} else if(status == 0 || status == -1) {
-		ui.actionPlay->setEnabled(true);
-		ui.buttonPlay->setEnabled(true);
-		ui.actionPlay->setIcon(QIcon(":/icons/images/player_play.png"));
-		ui.buttonPlay->setIcon(QIcon(":/icons/images/player_play.png"));
-		ui.actionPlay->setText(tr("Play"));
-		ui.actionPlay->setToolTip(tr("Play"));
-		ui.buttonPlay->setToolTip(tr("Play"));
-		ui.buttonPlay->setStatusTip(tr("Play"));
-		ui.actionMute->setEnabled(false);
-		ui.buttonMute->setEnabled(false);
+		ui->actionPlay->setEnabled(true);
+		ui->buttonPlay->setEnabled(true);
+		ui->actionPlay->setIcon(QIcon(":/icons/images/player_play.png"));
+		ui->buttonPlay->setIcon(QIcon(":/icons/images/player_play.png"));
+		ui->actionPlay->setText(tr("Play"));
+		ui->actionPlay->setToolTip(tr("Play"));
+		ui->buttonPlay->setToolTip(tr("Play"));
+		ui->buttonPlay->setStatusTip(tr("Play"));
+		ui->actionMute->setEnabled(false);
+		ui->buttonMute->setEnabled(false);
 	}
 }
 
@@ -411,37 +431,37 @@ void MainWindow::play(const QString &itemFile)
 	this->stop();
 
 	if(itemFile.isNull()) {
-		ui.infoBarWidget->setInfo(_channel->name(), _channel->language());
+		ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
 
 		_epg->request(_channel->epg());
-		ui.channelNumber->display(_channel->number());
+		ui->channelNumber->display(_channel->number());
 
 		_backend->openMedia(_channel->url());
 		tooltip(_channel->name());
 		_trayIcon->changeToolTip(_channel->name());
 	} else {
-		ui.infoWidget->hide();
+		ui->infoWidget->hide();
 		_backend->openMedia(itemFile);
 		tooltip(itemFile);
 	}
 
 	if(_videoSettings)
-		ui.videoWidget->setPreviousSettings();
+		ui->videoWidget->setPreviousSettings();
 }
 
 void MainWindow::stop()
 {
 	if(!_videoSettings) {
-		ui.actionRatioOriginal->trigger();
-		ui.actionCropOriginal->trigger();
+		ui->actionRatioOriginal->trigger();
+		ui->actionCropOriginal->trigger();
 	}
 
 	_epg->stop();
 
-	ui.infoBarWidget->clear();
+	ui->infoBarWidget->clear();
 
-	ui.scheduleWidget->clear();
-	ui.scheduleWidget->setPage(0);
+	ui->scheduleWidget->clear();
+	ui->scheduleWidget->setPage(0);
 
 	tooltip();
 	_trayIcon->changeToolTip();
@@ -454,14 +474,14 @@ void MainWindow::showEpg(const QStringList &epgValue, const int &id)
 {
 	switch (id) {
 		case 0:
-			ui.infoBarWidget->setEpg(epgValue[0], epgValue[1]);
+			ui->infoBarWidget->setEpg(epgValue[0], epgValue[1]);
 			break;
 		case 1:
 		case 2:
 		case 3:
 		case 4:
-			ui.scheduleWidget->setEpg(epgValue, id);
-			ui.scheduleWidget->setPage(1);
+			ui->scheduleWidget->setEpg(epgValue, id);
+			ui->scheduleWidget->setPage(1);
 			break;
 		default:
 			break;
@@ -472,15 +492,15 @@ void MainWindow::processMenu(const QString &type, const QList<QAction *> &list)
 {
 	QMenu *menu;
 	if(type == "sub")
-		menu = ui.menuSubtitles;
+		menu = ui->menuSubtitles;
 	else if(type == "audio")
-		menu = ui.menuAudioTrack;
+		menu = ui->menuAudioTrack;
 	else if(type == "video")
-		menu = ui.menuVideoTrack;
+		menu = ui->menuVideoTrack;
 
 	if(list.size()==0) {
 		menu->setDisabled(true);
-		ui.menuSubtitles->setDisabled(false);
+		ui->menuSubtitles->setDisabled(false);
 		return;
 	} else {
 		menu->setDisabled(false);
@@ -494,8 +514,8 @@ void MainWindow::processMenu(const QString &type, const QList<QAction *> &list)
 void MainWindow::openPlaylist(const bool &start)
 {
 	if(_select != 0) {
-		disconnect(ui.actionBack, SIGNAL(triggered()), _select, SLOT(back()));
-		disconnect(ui.actionNext, SIGNAL(triggered()), _select, SLOT(next()));
+		disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
+		disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
 		disconnect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
 		delete _select;
 	}
@@ -509,23 +529,23 @@ void MainWindow::openPlaylist(const bool &start)
 		_playlistName = Common::locateResource(_defaultPlaylist);
 
 	if (!_playlistName.isEmpty())
-		ui.recorder->openPlaylist(_playlistName);
+		ui->recorder->openPlaylist(_playlistName);
 	else
 		return;
 
-	ui.playlistWidget->open(_playlistName);
+	ui->playlistWidget->open(_playlistName);
 
 	_hasPlaylist = true;
 
-	_select = new ChannelSelect(this, ui.channelNumber, ui.playlistWidget->nums());
-	connect(ui.actionBack, SIGNAL(triggered()), _select, SLOT(back()));
-	connect(ui.actionNext, SIGNAL(triggered()), _select, SLOT(next()));
+	_select = new ChannelSelect(this, ui->channelNumber, ui->playlistWidget->nums());
+	connect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
+	connect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
 	connect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
 	mouseWheel();
 
-	ui.channelToolBox->setItemText(0,ui.playlistWidget->name());
-	_epg->setEpg(ui.playlistWidget->epg(), ui.playlistWidget->epgPlugin());
-	_epgShow->loadPlugin(ui.playlistWidget->epgPlugin());
+	ui->channelToolBox->setItemText(0,ui->playlistWidget->name());
+	_epg->setEpg(ui->playlistWidget->epg(), ui->playlistWidget->epgPlugin());
+	_epgShow->loadPlugin(ui->playlistWidget->epgPlugin());
 }
 void MainWindow::openFile()
 {
@@ -571,22 +591,30 @@ void MainWindow::showSettings()
 {
 	EditSettings s(_shortcuts, this);
 	s.exec();
+	_locale->setLocale();
 	createSettings();
 	createRecorder();
 }
 
 void MainWindow::showPlaylistEditor()
 {
-	if(_playlistEditor)
-		delete _playlistEditor;
-
-	_playlistEditor = new EditPlaylist(_playlistName);
-	_playlistEditor->show();
+	if(_playlistEditor) {
+		if(_playlistEditor->isVisible()) {
+			_playlistEditor->activateWindow();
+		} else {
+			delete _playlistEditor;
+			_playlistEditor = new EditPlaylist(_playlistName);
+			_playlistEditor->show();
+		}
+	} else {
+		_playlistEditor = new EditPlaylist(_playlistName);
+		_playlistEditor->show();
+	}
 }
 
 void MainWindow::showTimersEditor()
 {
-	_timersEditor->show();
+	_timersEditor->showTimersEditor();
 }
 
 void MainWindow::tooltip(const QString &channelNow)
@@ -611,7 +639,7 @@ void MainWindow::top()
 {
 	Qt::WindowFlags top = _flags;
 	top |= Qt::WindowStaysOnTopHint;
-	if(ui.actionTop->isChecked())
+	if(ui->actionTop->isChecked())
 		this->setWindowFlags(top);
 	else
 		this->setWindowFlags(_flags);
@@ -621,9 +649,9 @@ void MainWindow::top()
 
 void MainWindow::lite()
 {
-	ui.infoWidget->setVisible(_isLite);
-	ui.toolBar->setVisible(_isLite);
-	ui.osdWidget->setVisible(_isLite);
+	ui->infoWidget->setVisible(_isLite);
+	ui->toolBar->setVisible(_isLite);
+	ui->osdWidget->setVisible(_isLite);
 	_isLite = !_isLite;
 }
 
@@ -633,14 +661,14 @@ void MainWindow::tray()
 		return;
 
 	if(this->isHidden()) {
-		ui.actionTray->setText(tr("Hide to tray"));
+		ui->actionTray->setText(tr("Hide to tray"));
 		show();
-		ui.osdWidget->setVisible(_controlsVisible);
-		ui.infoWidget->setVisible(_infoWidgetVisible);
+		ui->osdWidget->setVisible(_controlsVisible);
+		ui->infoWidget->setVisible(_infoWidgetVisible);
 	} else {
-		_controlsVisible = ui.osdWidget->isVisible();
-		_infoWidgetVisible = ui.infoWidget->isVisible();
-		ui.actionTray->setText(tr("Restore"));
+		_controlsVisible = ui->osdWidget->isVisible();
+		_infoWidgetVisible = ui->infoWidget->isVisible();
+		ui->actionTray->setText(tr("Restore"));
 		_trayIcon->message(QStringList() << "close");
 		hide();
 	}
@@ -652,33 +680,33 @@ void MainWindow::fullscreen(const bool &on)
 		return;
 
 	if(on) {
-		ui.videoWidget->setOsdSize(ui.osdWidget->width(), ui.osdWidget->height());
-		ui.osdWidget->resize(2*_desktopWidth/3,ui.osdWidget->height());
-		ui.osdWidget->setFloating(true);
-		ui.osdWidget->move(_desktopWidth/6, _desktopHeight-ui.osdWidget->height());
-		ui.osdWidget->show();
-		ui.osdWidget->setWindowFlags(Qt::ToolTip);
+		ui->videoWidget->setOsdSize(ui->osdWidget->width(), ui->osdWidget->height());
+		ui->osdWidget->resize(2*_desktopWidth/3,ui->osdWidget->height());
+		ui->osdWidget->setFloating(true);
+		ui->osdWidget->move(_desktopWidth/6, _desktopHeight-ui->osdWidget->height());
+		ui->osdWidget->show();
+		ui->osdWidget->setWindowFlags(Qt::ToolTip);
 	} else {
-		ui.osdWidget->setFloating(false);
-		ui.osdWidget->show();
+		ui->osdWidget->setFloating(false);
+		ui->osdWidget->show();
 	}
 }
 
 // Recorder
 void MainWindow::recordNow()
 {
-	ui.recorder->recordNow(_channel->name(), _channel->url());
+	ui->recorder->recordNow(_channel->name(), _channel->url());
 }
 
 void MainWindow::recorder(const bool &enabled)
 {
 	if(enabled) {
-		ui.stackedWidget->setCurrentIndex(1);
-		ui.infoWidget->setVisible(false);
-		ui.osdWidget->setVisible(false);
+		ui->stackedWidget->setCurrentIndex(1);
+		ui->infoWidget->setVisible(false);
+		ui->osdWidget->setVisible(false);
 	} else {
-		ui.stackedWidget->setCurrentIndex(0);
-		ui.infoWidget->setVisible(true);
-		ui.osdWidget->setVisible(true);
+		ui->stackedWidget->setCurrentIndex(0);
+		ui->infoWidget->setVisible(true);
+		ui->osdWidget->setVisible(true);
 	}
 }

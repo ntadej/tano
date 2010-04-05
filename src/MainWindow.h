@@ -23,10 +23,9 @@
 #include <QVlc/Instance.h>
 #include <QVlc/VideoControl.h>
 
-#include <ui_MainWindow.h>
-
 #include "channels/Channel.h"
 #include "core/ChannelSelect.h"
+#include "core/LocaleManager.h"
 #include "core/Shortcuts.h"
 #include "core/Time.h"
 #include "core/Updates.h"
@@ -36,6 +35,11 @@
 #include "ui/EditTimers.h"
 #include "ui/TrayIcon.h"
 
+namespace Ui
+{
+	class MainWindow;
+}
+
 class MainWindow : public QMainWindow
 {
 Q_OBJECT
@@ -44,6 +48,7 @@ public:
 	~MainWindow();
 
 protected:
+	void changeEvent(QEvent *e);
 	void closeEvent(QCloseEvent *event);
 
 private slots:
@@ -118,6 +123,7 @@ private:
 
 	//Main
 	ChannelSelect *_select;
+	LocaleManager *_locale;
 	Shortcuts *_shortcuts;
 	Time *_time;
 	Updates *_update;
@@ -128,7 +134,7 @@ private:
 	QVlc::VideoControl *_videoController;
 
 	//GUI
-	Ui::MainWindow ui;
+	Ui::MainWindow *ui;
 	Qt::WindowFlags _flags;
 	EditPlaylist *_playlistEditor;
 	EditTimers *_timersEditor;

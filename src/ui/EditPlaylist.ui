@@ -260,7 +260,10 @@
      <normaloff>:/icons/images/filesave.png</normaloff>:/icons/images/filesave.png</iconset>
    </property>
    <property name="text">
-    <string>Save</string>
+    <string>Save and Close</string>
+   </property>
+   <property name="toolTip">
+    <string>Save and Close</string>
    </property>
   </action>
   <action name="actionClose">

@@ -28,6 +28,7 @@ SET(Tano_UIs
 	ui/PlaylistWidget.ui
 	ui/PluginsManager.ui
 	ui/Recorder.ui
+	ui/SelectPlaylist.ui
 	ui/wizard/ConclusionPage.ui
 	ui/wizard/IntroPage.ui
 	ui/wizard/PlaylistPage.ui
@@ -56,6 +57,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/License.h
 	ui/PlaylistWidget.h
 	ui/QtKeySequenceEdit.h
+	ui/SelectPlaylist.h
 	ui/TrayIcon.h
 	ui/wizard/ConclusionPage.h
 	ui/wizard/FirstRunWizard.h
@@ -74,6 +76,7 @@ SET(Tano_Channels_Srcs
 SET(Tano_Core_Srcs
 	core/ChannelSelect.cpp
 	core/Common.cpp
+	core/LocaleManager.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
 	core/Time.cpp
@@ -105,6 +108,7 @@ SET(Tano_UI_Srcs
 	ui/License.cpp
 	ui/PlaylistWidget.cpp
 	ui/QtKeySequenceEdit.cpp
+	ui/SelectPlaylist.cpp
 	ui/TrayIcon.cpp
 	ui/wizard/ConclusionPage.cpp
 	ui/wizard/FirstRunWizard.cpp

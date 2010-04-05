@@ -24,6 +24,12 @@
 #include "core/Settings.h"
 #include "ui/About.h"
 
+void Common::about(QWidget *parent)
+{
+	About about(parent);
+	about.exec();
+}
+
 QString Common::locateResource(const QString &file)
 {
 	QString path;
@@ -39,6 +45,10 @@ QString Common::locateResource(const QString &file)
 	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
 
+	// Try application exe directory without src for development
+	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).absoluteFilePath();
+
 #ifdef Q_WS_X11
 		else if (QFileInfo("/usr/bin/" + file).exists())
 			path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
@@ -52,64 +62,11 @@ QString Common::locateResource(const QString &file)
 	return path;
 }
 
-QString Common::locateLang(const QString &file)
+QString Common::locateTranslation(const QString &file)
 {
-	QString path;
-
-	if (QFileInfo(file).exists())
-		path = QFileInfo(file).absoluteFilePath();
-
-	// Try application exe working path
-	else if (QFileInfo(QDir::currentPath() + "/lang/" + file).exists())
-		path = QFileInfo(QDir::currentPath() + "/lang/" + file).absoluteFilePath();
-
-	// Try application exe directory
-	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath() + "/lang/" + file).absoluteFilePath();
-
-	// Try application exe directory without src for development
-	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + "/lang/" + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + "/lang/" + file).absoluteFilePath();
-
-#ifdef DEFAULT_DATA_DIR
-	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + file).exists())
-		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/lang/" + file).absoluteFilePath();
-#endif
+	QString path = locateResource("/lang/" + file);
 
 	return path.replace(QString("/" + file), QString(""));
-}
-
-QString Common::language(const QString &locale)
-{
-	QString language = QLocale::languageToString(QLocale(locale).language());
-
-	if(language == "C")
-		return "English";
-	else
-		return language;
-}
-
-QStringList Common::loadLocale()
-{
-	QDir dir(Common::locateLang("tano_sl_SI.qm"));
-	QStringList list;
-	QLocale locale = QLocale::English;
-	list << QLocale::languageToString(locale.language());
-
-	foreach (QString fileName, dir.entryList(QDir::Files)) {
-		if(fileName.contains(".qm")) {
-			locale = QLocale(fileName.replace("tano_",""));
-			list << locale.name();
-		}
-	}
-
-	return list;
-}
-
-void Common::about(QWidget *parent)
-{
-	About about(parent);
-	about.exec();
 }
 
 QList<const char *> Common::libvlcArgs()

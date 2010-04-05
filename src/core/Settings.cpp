@@ -23,6 +23,7 @@ const QString Settings::PLAYLIST_SIOL_MPEG2 = "playlists/siol-mpeg2.m3u";
 const QString Settings::PLAYLIST_SIOL_MPEG4 = "playlists/siol-mpeg4.m3u";
 const QString Settings::PLAYLIST_T2 = "playlists/t-2.m3u";
 const QString Settings::PLAYLIST_TUS = "playlists/tus.m3u";
+const QString Settings::PLAYLIST_WORLDTV = "playlists/worldtv.m3u";
 
 // Define defaults - General
 const bool Settings::DEFAULT_CONFIGURED = false;

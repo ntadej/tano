@@ -36,10 +36,6 @@ public:
 protected:
 	void changeEvent(QEvent *e);
 
-private slots:
-	void playlistBrowse();
-	void playlistReset();
-
 private:
 	Ui::PlaylistPage *ui;
 

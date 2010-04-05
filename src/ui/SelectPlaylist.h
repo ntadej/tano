@@ -1,5 +1,5 @@
 /****************************************************************************
-* Common.h: Basic functions for Tano application
+* SelectPlaylist.h: Common playlist selector widget
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,22 +13,35 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_SELECTPLAYLIST_H_
+#define TANO_SELECTPLAYLIST_H_
 
-#include <QtCore/QString>
 #include <QtGui/QWidget>
 
-class Common
+namespace Ui
 {
+	class SelectPlaylist;
+}
+
+class SelectPlaylist : public QWidget
+{
+	Q_OBJECT
 public:
-	// About dialog
-	static void about(QWidget *parent = 0 );
-	// Resources locators
-	static QString locateResource(const QString &file);
-	static QString locateTranslation(const QString &file);
-	// Backend settings
-	static QList<const char *> libvlcArgs();
+	SelectPlaylist(QWidget *parent = 0);
+	~SelectPlaylist();
+
+	QString playlist() const;
+	void setPlaylist(const QString &playlist);
+
+protected:
+	void changeEvent(QEvent *e);
+
+private slots:
+	void playlistBrowse();
+	void playlistReset();
+
+private:
+	Ui::SelectPlaylist *ui;
 };
 
-#endif // TANO_COMMON_H_
+#endif // TANO_SELECTPLAYLIST_H_

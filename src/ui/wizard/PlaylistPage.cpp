@@ -29,8 +29,9 @@ PlaylistPage::PlaylistPage(QWidget *parent) :
 {
 	ui->setupUi(this);
 
-	connect(ui->browsePlaylistButton, SIGNAL(clicked()), this, SLOT(playlistBrowse()));
-	connect(ui->resetPlaylistButton, SIGNAL(clicked()), this, SLOT(playlistReset()));
+	Settings *settings = new Settings();
+	ui->widgetSelectPlaylist->setPlaylist(settings->playlist());
+	delete settings;
 
 	registerField("playlist", _edit);
 }
@@ -55,29 +56,7 @@ void PlaylistPage::changeEvent(QEvent *e)
 
 int PlaylistPage::nextId() const
 {
-	if(ui->customPlaylistRadio->isChecked())
-		_edit->setText(ui->playlistLineEdit->text());
-	else if(ui->radioSiol2->isChecked())
-		_edit->setText(Settings::PLAYLIST_SIOL_MPEG2);
-	else if(ui->radioSiol4->isChecked())
-		_edit->setText(Settings::PLAYLIST_SIOL_MPEG4);
-	else if(ui->radioT2->isChecked())
-		_edit->setText(Settings::PLAYLIST_T2);
-	else if(ui->radioTus->isChecked())
-		_edit->setText(Settings::PLAYLIST_TUS);
+	_edit->setText(ui->widgetSelectPlaylist->playlist());
 
 	return FirstRunWizard::Conclusion;
-}
-
-void PlaylistPage::playlistReset()
-{
-	ui->playlistLineEdit->setText("");
-}
-
-void PlaylistPage::playlistBrowse()
-{
-	QString file = QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
-												QDir::homePath(),
-												tr("Tano TV Channel list Files(*.m3u)"));
-	ui->playlistLineEdit->setText(file);
 }

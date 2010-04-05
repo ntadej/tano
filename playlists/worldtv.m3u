@@ -1,0 +1,248 @@
+#EXTM3U
+#EXTNAME:World TV
+#EXTEPG:EpgSlovenia
+
+#EXTINF:1,NRJ GROOVE
+#EXTTV:Music;;
+mms://vipnrj.yacast.net/nrj_webtv01
+
+#EXTINF:2,NRJ Dance
+#EXTTV:Music;English;
+mms://vipnrj.yacast.net/nrj_webtv02
+
+#EXTINF:3,NRJ PopRock
+#EXTTV:Music;English;
+mms://vipnrj.yacast.net/nrj_webtv03
+
+#EXTINF:4,NRJ Pure
+#EXTTV:Music;English;
+mms://vipnrj.yacast.net/nrj_tvhit
+
+#EXTINF:5,Gunk tv
+#EXTTV:Music;English;
+mms://193.227.114.71/gunk
+
+#EXTINF:6,Music Box
+#EXTTV:Music;English;
+mms://81.89.49.210/musicbox
+
+#EXTINF:7,The Voice
+#EXTTV:Music;;
+http://85.196.91.162/VTV-LO
+
+#EXTINF:8,GoTv.hu
+#EXTTV:Music;;
+http://195.56.172.67/gotv
+
+#EXTINF:9,HipHop TV
+#EXTTV:Music;English;
+mms://84.22.1.210/hiphoptv
+
+#EXTINF:10,Play TV
+#EXTTV:Music;English;
+mms://93.103.4.16/playtv
+
+#EXTINF:11,DISCO TV
+#EXTTV:Music;;
+mms://m10.101.ru/tv
+
+#EXTINF:12,Seven HipHop
+#EXTTV:Music;English;
+http://www.impek.com/go/shiphop/wm
+
+#EXTINF:13,E-Music
+#EXTTV:Music;Englis;
+http://87.117.228.28/emusictv
+
+#EXTINF:14,EMTV
+#EXTTV:Music;English;
+mms://84.22.1.210/emtv
+
+#EXTINF:15,CMTV
+#EXTTV:Music;English;
+mms://www.cmtv.com.ar:1234/
+
+#EXTINF:16,RMF Maxx TV
+#EXTTV:Music;;
+http://www.rmfmaxxx.pl/tv400.wpl
+
+#EXTINF:17,RTL 102.5
+#EXTTV:Music;;
+mms://151.1.245.36/rtl102.5vs/
+
+#EXTINF:18,CCTV Music
+#EXTTV:Music;English;
+mms://218.108.231.84:554/dftv1
+
+#EXTINF:19,PARTYPATROL
+#EXTTV:Music;;
+mms://partypatrol.streaming.true.nl/partypatrol?.wma
+
+#EXTINF:20,TV Oranje
+#EXTTV:Music;;
+mms://tvoranjesmall.streamonline.nl/tvoranjesmall
+
+#EXTINF:21,RTV Channel
+#EXTTV:UKTV;English;
+mms://www.rtvchannel.tv:8080/
+
+#EXTINF:22,Channel Zero
+#EXTTV:Music;;
+mms://85.214.87.175/rabatz
+
+#EXTINF:23,Seven TV Casting
+#EXTTV:Music;;
+mms://91.121.179.127/sbeaute
+
+#EXTINF:24,Seven TV
+#EXTTV:Music;;
+mms://91.121.179.127/sseven
+
+#EXTINF:25,Seven TV HipHop
+#EXTTV:Music;English;
+mms://91.121.179.127/shiphop
+
+#EXTINF:26,Seven TV
+#EXTTV:Music;;
+mms://91.121.179.127/sdance
+
+#EXTINF:27,Dominican York TV
+#EXTTV:Music;;
+mms://javierlinares.primcast.com/JavierLinares?.wma
+
+#EXTINF:28,TV FLY
+#EXTTV:Music;;
+mms://tvfly.server-tv.com/TVFLY
+
+#EXTINF:29,Seven TV Rock
+#EXTTV:Music;English;
+mms://91.121.179.127/srock
+
+#EXTINF:30,TV Almansa
+#EXTTV:Music;;
+mms://89.29.128.10/tvalmansa
+
+#EXTINF:31,RTP 2
+#EXTTV:;;
+mms://195.245.168.21/c2
+
+#EXTINF:32,Comedy Classics
+#EXTTV:Movies;;
+mms://85.214.87.175/comedy-movies
+
+#EXTINF:33,Fox 11 News
+#EXTTV:News;English;
+mms://a195.l2307334194.c23073.n.lm.akamaistream.net/D/195/23073/v0001/reflector:34194
+
+#EXTINF:34,National Geographic
+#EXTTV:Documentary;English;
+mms://218.108.231.3:554/ngtv1
+
+#EXTINF:35,Zhejiang Children
+#EXTTV:Kids;Chinese;
+mms://218.108.231.3:554/ztv8
+
+#EXTINF:48,BBC 1
+#EXTTV:;English;
+http://is.gd/aUn07
+
+#EXTINF:49,DR Update
+#EXTTV:;Danish;
+rtsp://rtsplive.dr.dk:80/livestream32.sdp
+
+#EXTINF:50,DR1
+#EXTTV:;Danish;
+rtsp://rtsplive.dr.dk:80/livestream12.sdp  Rtsp: / / rtsplive.dr.dk:80/livestream12.sdp
+
+#EXTINF:51,DR 2
+#EXTTV:;Danish;
+rtsp://rtsplive.dr.dk:80/livestream22.sdp
+
+#EXTINF:52,DR Ramasjang
+#EXTTV:;Danish;
+rtsp://rtsplive.dr.dk:80/livestream52.sdp
+
+#EXTINF:53,24 Nordjyske
+#EXTTV:;Danish;
+mms://stream.nordjyske.dk/24nordjyske
+
+#EXTINF:55,Wild life Channel
+#EXTTV:Documentary;;
+mms://streaming.i2i-technology.com/wlc_71000
+
+#EXTINF:56,Damlak TV
+#EXTTV:;English;
+mms://tv.damlak.net/damlak_tv
+
+#EXTINF:57,Paprika TV
+#EXTTV:;;
+mms://wmedia.siol.net/paprika/live
+
+#EXTINF:58,Sintesis TV
+#EXTTV:;;
+mms://70.38.38.6:8088
+
+#EXTINF:59,Orange sport info
+#EXTTV:Sport;French;
+mms://livewm.orange.fr/live-multicanaux
+
+#EXTINF:60,CCTV 5 
+#EXTTV:Sport;;
+mms://61.175.162.38/cctv5
+
+#EXTINF:61,CCTV 5
+#EXTTV:Sport;;
+mms://218.108.231.3/cctv5
+
+#EXTINF:62,JXTV 6
+#EXTTV:Kids;Chinese;
+mms://tv.jxgdw.com/jxtv6
+
+#EXTINF:63,FY Football 1
+#EXTTV:Sport;Chinese;
+mms://218.108.231.98/0/proxy/HZCNCPC/hytv1
+
+#EXTINF:64,FY Football 2
+#EXTTV:Sport;Chinese;
+mms://218.108.231.84/hytv1
+
+#EXTINF:65,Star Sports Taiwan
+#EXTTV:Sport;;
+mms://218.108.231.3:554/suntv1
+
+#EXTINF:66,Somethingmovies 1
+#EXTTV:Movies;Deutsch;
+mms://195.90.118.87/somethingmovies1_1
+
+#EXTINF:67,Somethingmovies 2
+#EXTTV:Movies;English;
+mms://195.90.118.87/somethingmovies2_1
+
+#EXTINF:68,Somethingmovies 3
+#EXTTV:Movies;English;
+//195.90.118.87/somethingmovies3_1
+
+#EXTINF:69,Somethingmovies 4
+#EXTTV:Movies;English;
+mms://195.90.118.87/somethingmovies4_1
+
+#EXTINF:70,Movie Channel
+#EXTTV:Movies;English;
+mms://222.77.190.24:9090/xzt
+
+#EXTINF:71,CCTV 6
+#EXTTV:Movies;;
+mms://61.175.162.38/cctv6
+
+#EXTINF:72,CCTV 8
+#EXTTV:Movies;Chinese;
+mms://218.108.231.3/cctv8
+
+#EXTINF:73,NJTV 18
+#EXTTV:Entertainment;Chinese;
+mms://218.94.122.203/njtv18
+
+#EXTINF:75,CBC Calgary
+#EXTTV:News;English;
+http://www.cbc.ca/mrl3/8752/newsatsix/calgary.wmv
+

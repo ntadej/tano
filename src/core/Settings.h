@@ -33,6 +33,7 @@ public:
 	static const QString PLAYLIST_SIOL_MPEG4;
 	static const QString PLAYLIST_T2;
 	static const QString PLAYLIST_TUS;
+	static const QString PLAYLIST_WORLDTV;
 
 	// General
 	QString configurationVersion() { return _configurationVersion; }
