@@ -126,6 +126,7 @@ void MainWindow::createGui()
 	openPlaylist(true);
 	playingState(-1);
 	ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
+	ui->statusBar->addPermanentWidget(ui->timeWidget);
 }
 
 void MainWindow::createBackend()

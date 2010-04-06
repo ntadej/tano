@@ -18,13 +18,15 @@
 
 #include "CurrentTime.h"
 
-CurrentTime::CurrentTime(QWidget *parent)
-	: QWidget(parent)
+CurrentTime::CurrentTime(QWidget *parent) :
+	QWidget(parent)
 {
 	_time = new QLabel(this);
 
 	QHBoxLayout *layout = new QHBoxLayout;
 	layout->addWidget(_time);
+	layout->setSpacing(0);
+	layout->setMargin(0);
 	setLayout(layout);
 
 	_timer = new QTimer(this);

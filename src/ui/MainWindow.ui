@@ -14,15 +14,15 @@
    <string>Tano</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
+   <iconset>
     <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_10">
+   <layout class="QGridLayout" name="gridLayout">
     <property name="margin">
      <number>0</number>
     </property>
-    <item>
+    <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
        <number>0</number>
@@ -237,7 +237,7 @@
   </widget>
   <widget class="QDockWidget" name="infoWidget">
    <property name="windowIcon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
    </property>
    <property name="floating">
@@ -283,11 +283,11 @@
           <x>0</x>
           <y>0</y>
           <width>350</width>
-          <height>392</height>
+          <height>353</height>
          </rect>
         </property>
         <attribute name="label">
-         <string>Channel list</string>
+         <string notr="true">Channel list</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_7">
          <property name="margin">
@@ -304,7 +304,7 @@
           <x>0</x>
           <y>0</y>
           <width>350</width>
-          <height>392</height>
+          <height>353</height>
          </rect>
         </property>
         <attribute name="label">
@@ -337,257 +337,259 @@
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents_2">
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <property name="spacing">
+   <widget class="QWidget" name="osdContents">
+    <layout class="QGridLayout" name="osdLayout">
+     <property name="leftMargin">
+      <number>4</number>
+     </property>
+     <property name="topMargin">
       <number>0</number>
      </property>
-     <property name="margin">
+     <property name="rightMargin">
+      <number>4</number>
+     </property>
+     <property name="bottomMargin">
       <number>0</number>
      </property>
-     <item>
-      <layout class="QHBoxLayout" name="layoutButtons">
-       <item>
-        <widget class="QLCDNumber" name="channelNumber">
-         <property name="minimumSize">
-          <size>
-           <width>70</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>70</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="numDigits">
-          <number>3</number>
-         </property>
-         <property name="segmentStyle">
-          <enum>QLCDNumber::Flat</enum>
-         </property>
-         <property name="value" stdset="0">
-          <double>1.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonPlay">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Play</string>
-         </property>
-         <property name="statusTip">
-          <string>Play</string>
-         </property>
-         <property name="icon">
-          <iconset resource="images.qrc">
-           <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonStop">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Stop</string>
-         </property>
-         <property name="statusTip">
-          <string>Stop</string>
-         </property>
-         <property name="icon">
-          <iconset resource="images.qrc">
-           <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonBack">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Back</string>
-         </property>
-         <property name="statusTip">
-          <string>Back</string>
-         </property>
-         <property name="icon">
-          <iconset resource="images.qrc">
-           <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonNext">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Next</string>
-         </property>
-         <property name="statusTip">
-          <string>Next</string>
-         </property>
-         <property name="icon">
-          <iconset resource="images.qrc">
-           <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonRecord">
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Record Now</string>
-         </property>
-         <property name="statusTip">
-          <string>Record Now</string>
-         </property>
-         <property name="icon">
-          <iconset resource="images.qrc">
-           <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="buttonMute">
-         <property name="maximumSize">
-          <size>
-           <width>40</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Mute</string>
-         </property>
-         <property name="statusTip">
-          <string>Mute</string>
-         </property>
-         <property name="icon">
-          <iconset resource="images.qrc">
-           <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>32</width>
-           <height>32</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QVlc::VolumeSlider" name="volumeSlider" native="true"/>
-       </item>
-      </layout>
+     <property name="verticalSpacing">
+      <number>1</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLCDNumber" name="channelNumber">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="numDigits">
+        <number>3</number>
+       </property>
+       <property name="segmentStyle">
+        <enum>QLCDNumber::Flat</enum>
+       </property>
+       <property name="value" stdset="0">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
      </item>
-     <item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="buttonPlay">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Play</string>
+       </property>
+       <property name="statusTip">
+        <string>Play</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="buttonStop">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Stop</string>
+       </property>
+       <property name="statusTip">
+        <string>Stop</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="buttonBack">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Back</string>
+       </property>
+       <property name="statusTip">
+        <string>Back</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QPushButton" name="buttonNext">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Next</string>
+       </property>
+       <property name="statusTip">
+        <string>Next</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QPushButton" name="buttonRecord">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Record Now</string>
+       </property>
+       <property name="statusTip">
+        <string>Record Now</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>22</width>
+         <height>22</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QPushButton" name="buttonMute">
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Mute</string>
+       </property>
+       <property name="statusTip">
+        <string>Mute</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="7">
+      <widget class="QVlc::VolumeSlider" name="volumeSlider" native="true"/>
+     </item>
+     <item row="2" column="0" colspan="9">
       <widget class="QVlc::SeekWidget" name="seekWidget" native="true"/>
      </item>
-     <item>
-      <layout class="QHBoxLayout" name="infoLayout">
-       <item>
-        <widget class="InfoBar" name="infoBarWidget" native="true"/>
-       </item>
-       <item>
-        <widget class="CurrentTime" name="timeWidget" native="true"/>
-       </item>
-      </layout>
+     <item row="3" column="0" colspan="9">
+      <widget class="InfoBar" name="infoBarWidget" native="true"/>
+     </item>
+     <item row="0" column="8">
+      <widget class="CurrentTime" name="timeWidget" native="true"/>
      </item>
     </layout>
    </widget>
   </widget>
+  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAbout">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
    </property>
    <property name="text">
@@ -596,7 +598,7 @@
   </action>
   <action name="actionClose">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/exit.png</normaloff>:/icons/images/exit.png</iconset>
    </property>
    <property name="text">
@@ -608,7 +610,7 @@
   </action>
   <action name="actionSettings">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/settings.png</normaloff>:/icons/images/settings.png</iconset>
    </property>
    <property name="text">
@@ -625,7 +627,7 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
    </property>
    <property name="text">
@@ -634,7 +636,7 @@
   </action>
   <action name="actionOpenFile">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
    </property>
    <property name="text">
@@ -643,7 +645,7 @@
   </action>
   <action name="actionEditPlaylist">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
    </property>
    <property name="text">
@@ -669,7 +671,7 @@
   </action>
   <action name="actionOpenUrl">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
    </property>
    <property name="text">
@@ -678,7 +680,7 @@
   </action>
   <action name="actionUpdate">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/update.png</normaloff>:/icons/images/update.png</iconset>
    </property>
    <property name="text">
@@ -714,7 +716,7 @@
   </action>
   <action name="actionOpenToolbar">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
    </property>
    <property name="text">
@@ -723,7 +725,7 @@
   </action>
   <action name="actionPlay">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
    </property>
    <property name="text">
@@ -732,7 +734,7 @@
   </action>
   <action name="actionStop">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
    </property>
    <property name="text">
@@ -749,7 +751,7 @@
   </action>
   <action name="actionTray">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/win.png</normaloff>:/icons/images/win.png</iconset>
    </property>
    <property name="text">
@@ -769,7 +771,7 @@
   </action>
   <action name="actionNext">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
    </property>
    <property name="text">
@@ -778,7 +780,7 @@
   </action>
   <action name="actionBack">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
    </property>
    <property name="text">
@@ -790,7 +792,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
    </property>
    <property name="text">
@@ -799,7 +801,7 @@
   </action>
   <action name="actionVolumeUp">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/up.png</normaloff>:/icons/images/up.png</iconset>
    </property>
    <property name="text">
@@ -808,7 +810,7 @@
   </action>
   <action name="actionVolumeDown">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/down.png</normaloff>:/icons/images/down.png</iconset>
    </property>
    <property name="text">
@@ -820,7 +822,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/recorder.png</normaloff>:/icons/images/recorder.png</iconset>
    </property>
    <property name="text">
@@ -829,7 +831,7 @@
   </action>
   <action name="actionRecordNow">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
    </property>
    <property name="text">
@@ -1023,7 +1025,7 @@
   </action>
   <action name="actionTimers">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/clock.png</normaloff>:/icons/images/clock.png</iconset>
    </property>
    <property name="text">
@@ -1032,7 +1034,7 @@
   </action>
   <action name="actionAboutQt">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/qt.png</normaloff>:/icons/images/qt.png</iconset>
    </property>
    <property name="text">
@@ -1044,7 +1046,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
    </property>
    <property name="text">
@@ -1064,7 +1066,7 @@
   </action>
   <action name="actionAboutPlugins">
    <property name="icon">
-    <iconset resource="images.qrc">
+    <iconset>
      <normaloff>:/icons/images/plugin.png</normaloff>:/icons/images/plugin.png</iconset>
    </property>
    <property name="text">
@@ -1164,9 +1166,7 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="images.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonMute</sender>

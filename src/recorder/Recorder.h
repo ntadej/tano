@@ -21,11 +21,14 @@
 #include <QtGui/QMainWindow>
 
 #include "Timer.h"
-#include "../plugins/RecorderPlugins.h"
-#include "../ui/TrayIcon.h"
-#include "../xml/M3UHandler.h"
+#include "plugins/RecorderPlugins.h"
+#include "ui/TrayIcon.h"
+#include "xml/M3UHandler.h"
 
-#include <ui_Recorder.h>
+namespace Ui
+{
+	class Recorder;
+}
 
 class Recorder : public QWidget
 {
@@ -37,6 +40,9 @@ public:
 	void createSettings();
 	bool isRecording() const {return _recording;};
 	void setGlobals(TrayIcon *icon, QAction *action);
+
+protected:
+	void changeEvent(QEvent *e);
 
 public slots:
 	void stop();
@@ -54,7 +60,7 @@ private slots:
 	void fileBrowse();
 
 private:
-	Ui::Recorder ui;
+	Ui::Recorder *ui;
 
 	bool _recording;
 	bool _isTimer;

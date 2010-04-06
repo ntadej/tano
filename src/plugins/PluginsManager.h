@@ -19,8 +19,12 @@
 #include <QtCore/QDir>
 #include <QtGui/QDialog>
 #include <QtGui/QIcon>
+#include <QtGui/QTreeWidgetItem>
 
-#include <ui_PluginsManager.h>
+namespace Ui
+{
+	class PluginsManager;
+}
 
 class PluginsManager : public QDialog
 {
@@ -29,8 +33,11 @@ public:
 	PluginsManager(QWidget *parent = 0);
 	~PluginsManager();
 
+protected:
+	void changeEvent(QEvent *e);
+
 private:
-	Ui::PluginsManager ui;
+	Ui::PluginsManager *ui;
 
 	void populateTreeWidget(const QString &file, const QString &name, const QString &type);
 

@@ -14,6 +14,7 @@
 *****************************************************************************/
 
 #include <QtCore/QCoreApplication>
+#include <QtGui/QApplication>
 
 #include "MainWindow.h"
 #include "core/Settings.h"

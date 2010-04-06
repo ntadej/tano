@@ -47,6 +47,7 @@ void PlaylistWidget::changeEvent(QEvent *e)
 	switch (e->type()) {
 		case QEvent::LanguageChange:
 			ui->retranslateUi(this);
+			ui->categoryBox->setItemText(0, tr("All channels"));
 			break;
 		default:
 			break;

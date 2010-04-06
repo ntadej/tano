@@ -16,9 +16,12 @@
 #ifndef TANO_EPGSCHEDULE_H_
 #define TANO_EPGSCHEDULE_H_
 
-#include <QWidget>
+#include <QtGui/QStackedWidget>
 
-#include <ui_EpgSchedule.h>
+namespace Ui
+{
+	class EpgSchedule;
+}
 
 class EpgSchedule : public QStackedWidget
 {
@@ -31,11 +34,14 @@ public:
 	void setEpg(const QStringList &epgValue, const int &id);
 	void setPage(const int &id);
 
+protected:
+	void changeEvent(QEvent *e);
+
 signals:
 	void urlClicked(const QString);
 
 private:
-	Ui::EpgSchedule ui;
+	Ui::EpgSchedule *ui;
 };
 
 #endif // EPGSCHEDULE_H_

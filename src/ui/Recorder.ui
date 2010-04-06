@@ -17,155 +17,65 @@
    <iconset resource="images.qrc">
     <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_2">
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QGroupBox" name="recorderBox">
-       <property name="title">
-        <string>Recorder</string>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QLabel" name="labelSelected">
-            <property name="text">
-             <string>Selected channel:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="valueSelected">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QLabel" name="labelBrowse">
-            <property name="text">
-             <string>Directory:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="fileEdit"/>
-          </item>
-          <item>
-           <widget class="QToolButton" name="buttonBrowse">
-            <property name="text">
-             <string>...</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QPushButton" name="buttonRecord">
-          <property name="text">
-           <string>Record</string>
-          </property>
-          <property name="icon">
-           <iconset resource="images.qrc">
-            <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="checked">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="statusBox">
-       <property name="title">
-        <string>Status</string>
-       </property>
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="3" column="0">
-         <widget class="QLabel" name="labelFile">
-          <property name="text">
-           <string>Recording to file:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0" colspan="2">
-         <widget class="QLabel" name="valueFile">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="labelCurrent">
-          <property name="text">
-           <string>Currently recording:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="valueCurrent">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="labelTime">
-          <property name="text">
-           <string>Time elapsed:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QLabel" name="valueTime">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="labelEndTime">
-          <property name="text">
-           <string>End time:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="valueEndTime">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="recorderBox">
+     <property name="title">
+      <string>Recorder</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelSelected">
+        <property name="text">
+         <string>Selected channel:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <widget class="QLabel" name="valueSelected">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelBrowse">
+        <property name="text">
+         <string>Directory:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="fileEdit"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QToolButton" name="buttonBrowse">
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3">
+       <widget class="QPushButton" name="buttonRecord">
+        <property name="text">
+         <string>Record</string>
+        </property>
+        <property name="icon">
+         <iconset resource="images.qrc">
+          <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
-   <item>
+   <item row="0" column="1" rowspan="3">
     <widget class="PlaylistWidget" name="playlistWidget" native="true">
      <property name="minimumSize">
       <size>
@@ -174,6 +84,84 @@
       </size>
      </property>
     </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="statusBox">
+     <property name="title">
+      <string>Status</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="3" column="0">
+       <widget class="QLabel" name="labelFile">
+        <property name="text">
+         <string>Recording to file:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QLabel" name="valueFile">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelCurrent">
+        <property name="text">
+         <string>Currently recording:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="valueCurrent">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelTime">
+        <property name="text">
+         <string>Time elapsed:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="valueTime">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelEndTime">
+        <property name="text">
+         <string>End time:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="valueEndTime">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

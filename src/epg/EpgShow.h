@@ -19,9 +19,12 @@
 #include <QtCore/QFile>
 #include <QtGui/QStackedWidget>
 
-#include <ui_EpgShow.h>
-
 #include "EpgLoader.h"
+
+namespace Ui
+{
+	class EpgShow;
+}
 
 class EpgShow : public QStackedWidget
 {
@@ -29,6 +32,9 @@ Q_OBJECT
 public:
 	EpgShow(QWidget *parent = 0);
 	~EpgShow();
+
+protected:
+	void changeEvent(QEvent *e);
 
 public slots:
 	void open(const QString &url);
@@ -42,7 +48,7 @@ private slots:
 	void previous();
 
 private:
-	Ui::EpgShow ui;
+	Ui::EpgShow *ui;
 
 	EpgLoader *_loader;
 

@@ -13,52 +13,66 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include "EpgSchedule.h"
+#include "ui_EpgSchedule.h"
+
 #include <QtCore/QDate>
 
-#include "EpgSchedule.h"
-
-EpgSchedule::EpgSchedule(QWidget *parent)
-	: QStackedWidget(parent)
+EpgSchedule::EpgSchedule(QWidget *parent) :
+	QStackedWidget(parent),
+	ui(new Ui::EpgSchedule)
 {
-	ui.setupUi(this);
+	ui->setupUi(this);
 
-	connect(ui.epgToday, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
-	connect(ui.epgToday_2, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
-	connect(ui.epgToday_3, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
-	connect(ui.epgToday_4, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
+	connect(ui->epgToday, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
+	connect(ui->epgToday_2, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
+	connect(ui->epgToday_3, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
+	connect(ui->epgToday_4, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
 }
 
 EpgSchedule::~EpgSchedule()
 {
+	delete ui;
+}
 
+void EpgSchedule::changeEvent(QEvent *e)
+{
+	QStackedWidget::changeEvent(e);
+	switch (e->type()) {
+		case QEvent::LanguageChange:
+			ui->retranslateUi(this);
+			break;
+		default:
+			break;
+	}
 }
 
 void EpgSchedule::clear()
 {
-	ui.epgToday->clearList();
-	ui.epgToday_2->clearList();
-	ui.epgToday_3->clearList();
-	ui.epgToday_4->clearList();
+	ui->epgToday->clearList();
+	ui->epgToday_2->clearList();
+	ui->epgToday_3->clearList();
+	ui->epgToday_4->clearList();
 }
 
 void EpgSchedule::setEpg(const QStringList &epgValue, const int &id)
 {
 	switch (id) {
 		case 1:
-			ui.epgTabWidget->setTabText(0,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui.epgToday->setEpg(epgValue);
+			ui->epgTabWidget->setTabText(0,QDate::currentDate().addDays(id-1).toString("d.M."));
+			ui->epgToday->setEpg(epgValue);
 			break;
 		case 2:
-			ui.epgTabWidget->setTabText(1,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui.epgToday_2->setEpg(epgValue);
+			ui->epgTabWidget->setTabText(1,QDate::currentDate().addDays(id-1).toString("d.M."));
+			ui->epgToday_2->setEpg(epgValue);
 			break;
 		case 3:
-			ui.epgTabWidget->setTabText(2,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui.epgToday_3->setEpg(epgValue);
+			ui->epgTabWidget->setTabText(2,QDate::currentDate().addDays(id-1).toString("d.M."));
+			ui->epgToday_3->setEpg(epgValue);
 			break;
 		case 4:
-			ui.epgTabWidget->setTabText(3,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui.epgToday_4->setEpg(epgValue);
+			ui->epgTabWidget->setTabText(3,QDate::currentDate().addDays(id-1).toString("d.M."));
+			ui->epgToday_4->setEpg(epgValue);
 			break;
 		default:
 			break;

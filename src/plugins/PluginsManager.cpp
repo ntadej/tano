@@ -13,24 +13,27 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "PluginsLoader.h"
 #include "PluginsManager.h"
+#include "ui_PluginsManager.h"
 
-PluginsManager::PluginsManager(QWidget *parent)
-	: QDialog(parent)
+#include "PluginsLoader.h"
+
+PluginsManager::PluginsManager(QWidget *parent) :
+	QDialog(parent),
+	ui(new Ui::PluginsManager)
 {
-	ui.setupUi(this);
+	ui->setupUi(this);
 
 	_interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirOpenIcon), QIcon::Normal, QIcon::On);
 	_interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirClosedIcon), QIcon::Normal, QIcon::Off);
 	_featureIcon = QIcon(":/icons/images/plugin.png");
 
-	_epg = new QTreeWidgetItem(ui.pluginsWidget);
+	_epg = new QTreeWidgetItem(ui->pluginsWidget);
 	_epg->setText(0, tr("EPG Plugins"));
-	_recorder = new QTreeWidgetItem(ui.pluginsWidget);
+	_recorder = new QTreeWidgetItem(ui->pluginsWidget);
 	_recorder->setText(0, tr("Recorder Plugins"));
-	ui.pluginsWidget->setItemExpanded(_epg, true);
-	ui.pluginsWidget->setItemExpanded(_recorder, true);
+	ui->pluginsWidget->setItemExpanded(_epg, true);
+	ui->pluginsWidget->setItemExpanded(_recorder, true);
 
 	QFont font = _epg->font(0);
 	font.setBold(true);
@@ -49,7 +52,19 @@ PluginsManager::PluginsManager(QWidget *parent)
 
 PluginsManager::~PluginsManager()
 {
-	ui.pluginsWidget->clear();
+	delete ui;
+}
+
+void PluginsManager::changeEvent(QEvent *e)
+{
+	QDialog::changeEvent(e);
+	switch (e->type()) {
+		case QEvent::LanguageChange:
+			ui->retranslateUi(this);
+			break;
+		default:
+			break;
+	}
 }
 
 void PluginsManager::populateTreeWidget(const QString &file, const QString &name, const QString &type)

@@ -13,16 +13,22 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include "EpgShow.h"
+#include "ui_EpgShow.h"
+
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 #include <QtCore/QUrl>
 
-#include "EpgShow.h"
-
-EpgShow::EpgShow(QWidget *parent)
-	: QStackedWidget(parent), _file(0), _httpGetId(0), _epgNext(""), _epgPrevious("")
+EpgShow::EpgShow(QWidget *parent) :
+	QStackedWidget(parent),
+	ui(new Ui::EpgShow),
+	_file(0),
+	_httpGetId(0),
+	_epgNext(""),
+	_epgPrevious("")
 {
-	ui.setupUi(this);
+	ui->setupUi(this);
 
 	_loader = new EpgLoader();
 	_http = new QHttp(this);
@@ -30,14 +36,27 @@ EpgShow::EpgShow(QWidget *parent)
 	connect(_loader, SIGNAL(show(QStringList)), this, SLOT(display(QStringList)));
 	connect(_http, SIGNAL(requestFinished(int, bool)), this, SLOT(httpRequestFinished(int, bool)));
 
-	connect(ui.buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
-	connect(ui.buttonNext, SIGNAL(clicked()), this, SLOT(next()));
+	connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
+	connect(ui->buttonNext, SIGNAL(clicked()), this, SLOT(next()));
 }
 
 EpgShow::~EpgShow()
 {
+	delete ui;
 	delete _loader;
 	delete _http;
+}
+
+void EpgShow::changeEvent(QEvent *e)
+{
+	QStackedWidget::changeEvent(e);
+	switch (e->type()) {
+		case QEvent::LanguageChange:
+			ui->retranslateUi(this);
+			break;
+		default:
+			break;
+	}
 }
 
 void EpgShow::open(const QString &url)
@@ -45,12 +64,12 @@ void EpgShow::open(const QString &url)
 	setCurrentIndex(0);
 
 	setWindowTitle(tr("Show info"));
-	ui.labelTitle->setText("");
-	ui.labelTime->setText("");
-	ui.labelInfo->setText("");
-	ui.labelDescription->setText("");
-	ui.labelStarring->setText("");
-	ui.labelPhoto->setPixmap(QPixmap(":/icons/images/image.png"));
+	ui->labelTitle->setText("");
+	ui->labelTime->setText("");
+	ui->labelInfo->setText("");
+	ui->labelDescription->setText("");
+	ui->labelStarring->setText("");
+	ui->labelPhoto->setPixmap(QPixmap(":/icons/images/image.png"));
 
 	show();
 	_loader->getShow(url);
@@ -64,12 +83,12 @@ void EpgShow::loadPlugin(const QString &plugin)
 void EpgShow::display(const QStringList &list)
 {
 	setWindowTitle(list[0]);
-	ui.labelTitle->setText("<h1>" + list[0] + "</h1>");
-	ui.labelTime->setText("<h2>" + list[3] + " (" + list[1] + list[2] + ")</h2>");
-	ui.labelInfo->setText("<h3>" + list[4] + "</h3>");
-	ui.labelDescription->setText(list[5]);
+	ui->labelTitle->setText("<h1>" + list[0] + "</h1>");
+	ui->labelTime->setText("<h2>" + list[3] + " (" + list[1] + list[2] + ")</h2>");
+	ui->labelInfo->setText("<h3>" + list[4] + "</h3>");
+	ui->labelDescription->setText(list[5]);
 	if(!list[6].isEmpty())
-		ui.labelStarring->setText("<b>" + tr("Starring:") + "</b> " + list[6]);
+		ui->labelStarring->setText("<b>" + tr("Starring:") + "</b> " + list[6]);
 
 	downloadFile(list[7]);
 
@@ -118,7 +137,7 @@ void EpgShow::httpRequestFinished(const int &requestId, const bool &error)
 	_file->close();
 
 	if (!error) {
-		ui.labelPhoto->setPixmap(QPixmap(_file->fileName()));
+		ui->labelPhoto->setPixmap(QPixmap(_file->fileName()));
 	}
 
 	delete _file;
