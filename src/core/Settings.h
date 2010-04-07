@@ -44,9 +44,12 @@ public:
 	bool updatesCheck() { return _updatesCheck; }
 	void setUpdatesCheck(const bool &b) { _updatesCheck = b; }
 	static const bool DEFAULT_UPDATES_CHECK;
-	bool session() { return _session; }
-	void setSession(const bool &b) { _session = b; }
-	static const bool DEFAULT_SESSION;
+	bool sessionVolume() { return _sessionVolume; }
+	void setSessionVolume(const bool &b) { _sessionVolume = b; }
+	static const bool DEFAULT_SESSION_VOLUME;
+	bool sessionAutoplay() { return _sessionAutoplay; }
+	void setSessionAutoplay(const bool &b) { _sessionAutoplay = b; }
+	static const bool DEFAULT_SESSION_AUTOPLAY;
 	QString language() { return _language; }
 	void setLanguage(const QString &s) { _language = s; }
 	static const QString DEFAULT_LANGUAGE;
@@ -122,7 +125,8 @@ private:
 	QString _configurationVersion;
 	bool _configured;
 	bool _updatesCheck;
-	bool _session;
+	bool _sessionVolume;
+	bool _sessionAutoplay;
 	QString _language;
 
 	// Channels

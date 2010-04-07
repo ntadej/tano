@@ -84,13 +84,7 @@ void MainWindow::exit()
 	switch (ret) {
 		case QMessageBox::Close:
 			ui->recorder->stop();
-			if(_sessionEnabled) {
-				Settings *settings = new Settings(this);
-				settings->setVolume(ui->volumeSlider->volume());
-				settings->setChannel(ui->channelNumber->value());
-				settings->writeSettings();
-				delete settings;
-			}
+			writeSession();
 			qApp->quit();
 			break;
 		case QMessageBox::Cancel:
@@ -162,7 +156,8 @@ void MainWindow::createSettings()
 
 	//Recorder settings
 	_recorderEnabled = settings->recorderEnabled();
-	_sessionEnabled = settings->session();
+	_sessionVolumeEnabled = settings->sessionVolume();
+	_sessionAutoplayEnabled = settings->sessionAutoplay();
 
 	delete settings;
 }
@@ -177,7 +172,8 @@ void MainWindow::createSettingsStartup()
 	_updatesOnStart = settings->updatesCheck();
 
 	//Session
-	_sessionEnabled = settings->session();
+	_sessionVolumeEnabled = settings->sessionVolume();
+	_sessionAutoplayEnabled = settings->sessionAutoplay();
 	_sessionVolume = settings->volume();
 	_sessionChannel = settings->channel();
 
@@ -337,11 +333,24 @@ void MainWindow::createSession()
 {
 	ui->volumeSlider->setVolume(_sessionVolume);
 
-	if(_sessionEnabled && _hasPlaylist)
+	if(_sessionAutoplayEnabled && _hasPlaylist)
 		playChannel(_sessionChannel);
 
 	if(_updatesOnStart)
 		_update->getUpdates();
+}
+
+void MainWindow::writeSession()
+{
+	Settings *settings = new Settings(this);
+	if(_sessionVolumeEnabled)
+		settings->setVolume(ui->volumeSlider->volume());
+	else
+		settings->setVolume(Settings::DEFAULT_VOLUME);
+	if(_sessionAutoplayEnabled)
+		settings->setChannel(ui->channelNumber->value());
+	settings->writeSettings();
+	delete settings;
 }
 
 void MainWindow::createRecorder()

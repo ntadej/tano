@@ -31,6 +31,7 @@ LocaleManager::LocaleManager()
 
 LocaleManager::~LocaleManager()
 {
+	QCoreApplication::removeTranslator(_translator);
 	delete _translator;
 }
 

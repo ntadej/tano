@@ -22,9 +22,30 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QCheckBox" name="sessionCheckBox">
+    <widget class="QLabel" name="labelSession">
      <property name="text">
-      <string>Enable session store</string>
+      <string>&lt;b&gt;Session settings&lt;/b&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="sessionVolumeCheckBox">
+     <property name="text">
+      <string>Remember volume</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="sessionAutoplayCheckBox">
+     <property name="text">
+      <string>Autoplay last channel</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelBreak">
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </item>

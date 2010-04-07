@@ -52,7 +52,8 @@ int ConclusionPage::nextId() const
 	settings->setConfigured(true);
 	if(!field("playlist").toString().isEmpty())
 		settings->setPlaylist(field("playlist").toString());
-	settings->setSession(field("session").toBool());
+	settings->setSessionVolume(field("sessionvolume").toBool());
+	settings->setSessionAutoplay(field("sessionplay").toBool());
 	settings->setGlobalSettings(field("vlc").toBool());
 
 	settings->writeSettings();

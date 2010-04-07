@@ -133,12 +133,16 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QCheckBox" name="sessionCheck">
+           <widget class="QCheckBox" name="sessionVolumeCheck">
             <property name="text">
-             <string>Enable</string>
+             <string>Remember volume</string>
             </property>
-            <property name="checked">
-             <bool>true</bool>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="sessionAutoplayCheck">
+            <property name="text">
+             <string>Autoplay last channel</string>
             </property>
            </widget>
           </item>

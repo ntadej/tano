@@ -17,6 +17,7 @@
 #include "ui_SettingsPage.h"
 
 #include "FirstRunWizard.h"
+#include "core/Settings.h"
 
 SettingsPage::SettingsPage(QWidget *parent) :
 	QWizardPage(parent),
@@ -24,7 +25,14 @@ SettingsPage::SettingsPage(QWidget *parent) :
 {
 	ui->setupUi(this);
 
-	registerField("session", ui->sessionCheckBox);
+	Settings *settings = new Settings();
+	ui->sessionVolumeCheckBox->setChecked(settings->sessionVolume());
+	ui->sessionAutoplayCheckBox->setChecked(settings->sessionAutoplay());
+	ui->vlcCheckBox->setChecked(settings->globalSettings());
+	delete settings;
+
+	registerField("sessionvolume", ui->sessionVolumeCheckBox);
+	registerField("sessionplay", ui->sessionAutoplayCheckBox);
 	registerField("vlc", ui->vlcCheckBox);
 }
 

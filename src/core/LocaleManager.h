@@ -14,7 +14,7 @@
 *****************************************************************************/
 
 #ifndef TANO_LOCALEMANAGER_H_
-#define TANP_LOCALEMANAGER_H_
+#define TANO_LOCALEMANAGER_H_
 
 #include <QtCore/QString>
 #include <QtCore/QTranslator>

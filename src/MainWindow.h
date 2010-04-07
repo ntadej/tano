@@ -101,6 +101,7 @@ private:
 	void createSession();
 	void createShortcuts();
 	void mouseWheel();
+	void writeSession();
 
 	//Settings
 	bool _controlsVisible;
@@ -115,7 +116,8 @@ private:
 	bool _osdEnabled;
 	bool _recorderEnabled;
 	int _sessionChannel;
-	bool _sessionEnabled;
+	bool _sessionVolumeEnabled;
+	bool _sessionAutoplayEnabled;
 	int _sessionVolume;
 	bool _updatesOnStart;
 	bool _videoSettings;

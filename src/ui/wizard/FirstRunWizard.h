@@ -18,6 +18,8 @@
 
 #include <QtGui/QWizard>
 
+#include "core/LocaleManager.h"
+
 class FirstRunWizard : public QWizard
 {
 Q_OBJECT
@@ -26,6 +28,9 @@ public:
 
 	FirstRunWizard(QWidget *parent = 0);
 	~FirstRunWizard();
+
+private:
+	LocaleManager *_locale;
 };
 
 #endif // TANO_FIRSTRUNWIZARD_H_

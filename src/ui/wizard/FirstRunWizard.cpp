@@ -21,8 +21,8 @@
 #include "SettingsPage.h"
 
 FirstRunWizard::FirstRunWizard(QWidget *parent) :
-	QWizard(parent)
-{
+	QWizard(parent), _locale(new LocaleManager())
+{	
 	setPage(Intro, new IntroPage);
 	setPage(Settings, new SettingsPage);
 	setPage(Playlist, new PlaylistPage);
@@ -38,4 +38,7 @@ FirstRunWizard::FirstRunWizard(QWidget *parent) :
 	setWindowTitle(tr("First Run Wizard"));
 }
 
-FirstRunWizard::~FirstRunWizard() { }
+FirstRunWizard::~FirstRunWizard()
+{
+	delete _locale;
+}
