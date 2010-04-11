@@ -1,5 +1,5 @@
 /****************************************************************************
-* EpgShow.h: EPG show information
+* Schedule.h: Schedule widget
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,47 +13,43 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_EPGSHOW_H_
-#define TANO_EPGSHOW_H_
+#ifndef TANO_SCHEDULE_H_
+#define TANO_SCHEDULE_H_
 
-#include <QtGui/QStackedWidget>
+#include <QtGui/QTreeWidgetItem>
+#include <QtGui/QWidget>
 
-#include "EpgLoader.h"
-#include "core/GetImage.h"
+#include "epg/EpgManager.h"
 
 namespace Ui
 {
-	class EpgShow;
+	class Schedule;
 }
 
-class EpgShow : public QStackedWidget
+class Schedule : public QWidget
 {
 Q_OBJECT
 public:
-	EpgShow(QWidget *parent = 0);
-	~EpgShow();
+	Schedule(QWidget *parent = 0);
+	~Schedule();
+
+	void openPlaylist(const QString &p);
+	void setEpg(const QStringList &epgList, const QString &epgPlugin) { _epg->setEpg(epgList, epgPlugin); };
 
 protected:
 	void changeEvent(QEvent *e);
 
-public slots:
-	void open(const QString &url);
-	void loadPlugin(const QString &plugin);
+signals:
+	void urlClicked(QString);
 
 private slots:
-	void display(const QStringList &list);
-	void image(const QString &image);
-	void next();
-	void previous();
+	void channel(QTreeWidgetItem *item);
+	void loadEpg(const QStringList &list, const int &day);
 
 private:
-	Ui::EpgShow *ui;
+	Ui::Schedule *ui;
 
-	GetImage *_image;
-	EpgLoader *_loader;
-
-	QString _epgNext;
-	QString _epgPrevious;
+	EpgManager *_epg;
 };
 
-#endif // TANO_EPGSHOW_H_
+#endif // TANO_SCHEDULE_H_

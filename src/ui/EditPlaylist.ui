@@ -17,6 +17,9 @@
    <iconset resource="images.qrc">
     <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
   </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
     <item row="0" column="0">
@@ -170,7 +173,7 @@
      <item row="7" column="1" colspan="2">
       <widget class="QLineEdit" name="editEpg"/>
      </item>
-     <item row="8" column="1">
+     <item row="10" column="1">
       <spacer name="verticalSpacer">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -184,7 +187,7 @@
       </spacer>
      </item>
      <item row="5" column="0" colspan="3">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="labelCategoriesInfo">
        <property name="text">
         <string>&lt;i&gt;You can separate categories with comma.&lt;/i&gt;</string>
        </property>
@@ -221,11 +224,28 @@
       </widget>
      </item>
      <item row="1" column="0" colspan="3">
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="labelNumberInfo">
        <property name="text">
         <string>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</string>
        </property>
       </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="labelLogo">
+       <property name="text">
+        <string>Logo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0" colspan="3">
+      <widget class="QLabel" name="labelLogoInfo">
+       <property name="text">
+        <string>&lt;i&gt;Please provide full path or URL.&lt;/i&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1" colspan="2">
+      <widget class="QLineEdit" name="editLogo"/>
      </item>
     </layout>
    </widget>

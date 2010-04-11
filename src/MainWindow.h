@@ -33,6 +33,7 @@
 #include "epg/EpgShow.h"
 #include "ui/EditPlaylist.h"
 #include "ui/EditTimers.h"
+#include "ui/Schedule.h"
 #include "ui/TrayIcon.h"
 
 namespace Ui
@@ -56,6 +57,7 @@ private slots:
 	void aboutTano();
 	void aboutPlugins();
 
+	void showSchedule();
 	void showSettings();
 	void showPlaylistEditor();
 	void showTimersEditor();
@@ -138,6 +140,7 @@ private:
 	//GUI
 	Ui::MainWindow *ui;
 	Qt::WindowFlags _flags;
+	Schedule *_schedule;
 	EditPlaylist *_playlistEditor;
 	EditTimers *_timersEditor;
 

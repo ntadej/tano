@@ -17,6 +17,9 @@
    <iconset resource="images.qrc">
     <normaloff>:/icons/images/clock.png</normaloff>:/icons/images/clock.png</iconset>
   </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="margin">

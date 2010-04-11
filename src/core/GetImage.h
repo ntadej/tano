@@ -1,5 +1,5 @@
 /****************************************************************************
-* EpgShow.h: EPG show information
+* GetImage.h: Image downloader class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,47 +13,30 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_EPGSHOW_H_
-#define TANO_EPGSHOW_H_
+#ifndef TANO_GETIMAGE_H_
+#define TANO_GETIMAGE_H_
 
-#include <QtGui/QStackedWidget>
+#include <QtCore/QFile>
+#include <QtNetwork/QHttp>
 
-#include "EpgLoader.h"
-#include "core/GetImage.h"
-
-namespace Ui
-{
-	class EpgShow;
-}
-
-class EpgShow : public QStackedWidget
+class GetImage : public QHttp
 {
 Q_OBJECT
 public:
-	EpgShow(QWidget *parent = 0);
-	~EpgShow();
+	GetImage(QObject *parent = 0);
+	~GetImage();
 
-protected:
-	void changeEvent(QEvent *e);
+	void getImage(const QString &u);
 
-public slots:
-	void open(const QString &url);
-	void loadPlugin(const QString &plugin);
+signals:
+	void image(const QString);
 
 private slots:
-	void display(const QStringList &list);
-	void image(const QString &image);
-	void next();
-	void previous();
+	void httpRequestFinished(const int &requestId, const bool &error);
 
 private:
-	Ui::EpgShow *ui;
-
-	GetImage *_image;
-	EpgLoader *_loader;
-
-	QString _epgNext;
-	QString _epgPrevious;
+	QFile *_file;
+	int _httpGetId;
 };
 
-#endif // TANO_EPGSHOW_H_
+#endif // TANO_GETIMAGE_H_

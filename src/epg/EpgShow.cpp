@@ -16,25 +16,18 @@
 #include "EpgShow.h"
 #include "ui_EpgShow.h"
 
-#include <QtCore/QDir>
-#include <QtCore/QFileInfo>
-#include <QtCore/QUrl>
-
 EpgShow::EpgShow(QWidget *parent) :
 	QStackedWidget(parent),
 	ui(new Ui::EpgShow),
-	_file(0),
-	_httpGetId(0),
+	_image(new GetImage()),
+	_loader(new EpgLoader()),
 	_epgNext(""),
 	_epgPrevious("")
 {
 	ui->setupUi(this);
 
-	_loader = new EpgLoader();
-	_http = new QHttp(this);
-
+	connect(_image, SIGNAL(image(QString)), this, SLOT(image(QString)));
 	connect(_loader, SIGNAL(show(QStringList)), this, SLOT(display(QStringList)));
-	connect(_http, SIGNAL(requestFinished(int, bool)), this, SLOT(httpRequestFinished(int, bool)));
 
 	connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
 	connect(ui->buttonNext, SIGNAL(clicked()), this, SLOT(next()));
@@ -43,8 +36,8 @@ EpgShow::EpgShow(QWidget *parent) :
 EpgShow::~EpgShow()
 {
 	delete ui;
+	delete _image;
 	delete _loader;
-	delete _http;
 }
 
 void EpgShow::changeEvent(QEvent *e)
@@ -90,7 +83,7 @@ void EpgShow::display(const QStringList &list)
 	if(!list[6].isEmpty())
 		ui->labelStarring->setText("<b>" + tr("Starring:") + "</b> " + list[6]);
 
-	downloadFile(list[7]);
+	_image->getImage(list[7]);
 
 	_epgPrevious = list[8];
 	_epgNext =list[9];
@@ -98,49 +91,9 @@ void EpgShow::display(const QStringList &list)
 	setCurrentIndex(1);
 }
 
-void EpgShow::downloadFile(const QString &u)
+void EpgShow::image(const QString &image)
 {
-	if(u == "")
-		return;
-
-	QUrl url(u);
-	QFileInfo fileInfo(url.path());
-
-	if (QFile::exists(fileInfo.fileName())) {
-		QFile::remove(fileInfo.fileName());
-	}
-
-	_file = new QFile(QDir::tempPath() + "/" + fileInfo.fileName());
-	if (!_file->open(QIODevice::WriteOnly)) {
-		delete _file;
-		return;
-	}
-
-	QHttp::ConnectionMode mode = url.scheme().toLower() == "https" ? QHttp::ConnectionModeHttps : QHttp::ConnectionModeHttp;
-	_http->setHost(url.host(), mode, url.port() == -1 ? 0 : url.port());
-
-	if (!url.userName().isEmpty())
-		_http->setUser(url.userName(), url.password());
-
-	QByteArray path = QUrl::toPercentEncoding(url.path(), "!$&'()*+,;=:@/");
-	if (path.isEmpty())
-		path = "/";
-
-	_httpGetId = _http->get(path, _file);
-}
-
-void EpgShow::httpRequestFinished(const int &requestId, const bool &error)
-{
-	if (requestId != _httpGetId)
-		return;
-
-	_file->close();
-
-	if (!error) {
-		ui->labelPhoto->setPixmap(QPixmap(_file->fileName()));
-	}
-
-	delete _file;
+	ui->labelPhoto->setPixmap(QPixmap(image));
 }
 
 void EpgShow::next()

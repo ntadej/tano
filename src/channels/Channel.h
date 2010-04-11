@@ -38,6 +38,8 @@ public:
 	void setEpg(const QString &epg) { _epg = epg; };
 	QStringList categories() const { return _categories; };
 	void setCategories(const QStringList &categories) { _categories = categories; };
+	QString logo() const { return _logo; };
+	void setLogo(const QString &logo) { _logo = logo; };
 
 private:
 	int _number;
@@ -46,6 +48,7 @@ private:
 	QString _url;
 	QString _epg;
 	QStringList _categories;
+	QString _logo;
 };
 
 #endif // TANO_CHANNEL_H_

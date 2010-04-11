@@ -15,8 +15,15 @@
 
 #include "M3UGenerator.h"
 
-M3UGenerator::M3UGenerator(QTreeWidget *treeWidget, const QString &n, const QString &epg, QMap<QTreeWidgetItem *, Channel *>map)
-	: _treeWidget(treeWidget), _name(n),  _epgPlugin(epg), _map(map)
+M3UGenerator::M3UGenerator(QTreeWidget *treeWidget,
+						   const QString &n,
+						   const QString &epg,
+						   QMap<QTreeWidgetItem *,
+						   Channel *>map) :
+	_treeWidget(treeWidget),
+	_name(n),
+	_epgPlugin(epg),
+	_map(map)
 {
 
 }
@@ -46,8 +53,10 @@ void M3UGenerator::generateItem(Channel *channel, const int &depth)
 	_out << "#EXTTV:"
 		<< channel->categories().join(",") << ";"
 		<< channel->language() << ";"
-		<< channel->epg()
-		<< "\n";
+		<< channel->epg();
+	if(!channel->logo().isEmpty())
+		_out << ";" << channel->logo();
+	_out << "\n";
 
 	_out << channel->url();
 	_out << "\n\n";

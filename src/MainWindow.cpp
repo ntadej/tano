@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()),
 	_time(new Time()), _update(new Updates()),
 	_audioController(0), _backend(0), _videoController(0),
-	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow())
+	_schedule(new Schedule()), _playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow())
 {
 #if PORTABLE
 	QPixmap pixmap(":/icons/images/splash-portable.png");
@@ -213,6 +213,7 @@ void MainWindow::createConnections()
 	connect(ui->actionOpenSubtitles, SIGNAL(triggered()), this, SLOT(openSubtitles()));
 	connect(ui->actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
 
+	connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
 	connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
 	connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
@@ -229,6 +230,7 @@ void MainWindow::createConnections()
 	connect(ui->videoWidget, SIGNAL(osdVisibility(bool)), ui->osdWidget, SLOT(setVisible(bool)));
 
 	connect(_epg, SIGNAL(epg(QStringList, int)), this, SLOT(showEpg(QStringList, int)));
+	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
 	connect(_update, SIGNAL(updatesDone(QStringList)), _trayIcon, SLOT(message(QStringList)));
@@ -442,6 +444,7 @@ void MainWindow::play(const QString &itemFile)
 
 	if(itemFile.isNull()) {
 		ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
+		ui->infoBarWidget->setLogo(_channel->logo());
 
 		_epg->request(_channel->epg());
 		ui->channelNumber->display(_channel->number());
@@ -538,10 +541,12 @@ void MainWindow::openPlaylist(const bool &start)
 	else
 		_playlistName = Common::locateResource(_defaultPlaylist);
 
-	if (!_playlistName.isEmpty())
+	if (!_playlistName.isEmpty()) {
+		_schedule->openPlaylist(_playlistName);
 		ui->recorder->openPlaylist(_playlistName);
-	else
+	} else {
 		return;
+	}
 
 	ui->playlistWidget->open(_playlistName);
 
@@ -555,6 +560,7 @@ void MainWindow::openPlaylist(const bool &start)
 
 	ui->channelToolBox->setItemText(0,ui->playlistWidget->name());
 	_epg->setEpg(ui->playlistWidget->epg(), ui->playlistWidget->epgPlugin());
+	_schedule->setEpg(ui->playlistWidget->epg(), ui->playlistWidget->epgPlugin());
 	_epgShow->loadPlugin(ui->playlistWidget->epgPlugin());
 }
 void MainWindow::openFile()
@@ -597,6 +603,11 @@ void MainWindow::openSubtitles()
 
 
 //GUI
+void MainWindow::showSchedule()
+{
+	_schedule->show();
+}
+
 void MainWindow::showSettings()
 {
 	EditSettings s(_shortcuts, this);

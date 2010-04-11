@@ -20,6 +20,8 @@
 #include <QtGui/QLabel>
 #include <QtGui/QScrollArea>
 
+#include "core/GetImage.h"
+
 class InfoBar : public QScrollArea
 {
 Q_OBJECT
@@ -31,21 +33,25 @@ public slots:
 	void clear();
 	void setInfo(const QString &channel, const QString &language);
 	void setEpg(const QString &now, const QString &next);
+	void setLogo(const QString &logo);
 
 signals:
 	void open(const QString);
 
 private slots:
+	void image(const QString &image);
 	void scroll();
 
 private:
 	bool _direction;
+	GetImage *_image;
 	QTimer *_timer;
 
-	QLabel *_labelLanguage;
 	QLabel *_labelChannel;
-	QLabel *_labelNow;
+	QLabel *_labelLanguage;
+	QLabel *_labelLogo;
 	QLabel *_labelNext;
+	QLabel *_labelNow;
 };
 
 #endif // TANO_INFOBAR_H_

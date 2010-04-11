@@ -18,20 +18,23 @@
 
 #include "InfoBar.h"
 
-InfoBar::InfoBar(QWidget *parent)
-	: QScrollArea(parent), _direction(false)
+InfoBar::InfoBar(QWidget *parent) :
+	QScrollArea(parent),
+	_direction(true),
+	_image(new GetImage())
 {
 	_timer = new QTimer(this);
-	_direction = true;
 
 	QWidget *widget = new QWidget(this);
 	_labelChannel = new QLabel(widget);
 	_labelLanguage = new QLabel(widget);
-	_labelNow = new QLabel(widget);
+	_labelLogo = new QLabel(widget);
 	_labelNext = new QLabel(widget);
+	_labelNow = new QLabel(widget);
 	QHBoxLayout *layout = new QHBoxLayout;
 	layout->setContentsMargins(4,0,4,0);
 	layout->setSpacing(10);
+	layout->addWidget(_labelLogo);
 	layout->addWidget(_labelChannel);
 	layout->addWidget(_labelLanguage);
 	layout->addWidget(_labelNow);
@@ -47,6 +50,7 @@ InfoBar::InfoBar(QWidget *parent)
 
 	connect(_labelNow, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
 	connect(_labelNext, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
+	connect(_image, SIGNAL(image(QString)), this, SLOT(image(QString)));
 	connect(_timer, SIGNAL(timeout()), this, SLOT(scroll()));
 
 	_timer->start(50);
@@ -54,6 +58,7 @@ InfoBar::InfoBar(QWidget *parent)
 
 InfoBar::~InfoBar()
 {
+	delete _image;
 	delete _timer;
 }
 
@@ -78,6 +83,7 @@ void InfoBar::clear()
 	_labelNext->setText("");
 	_labelChannel->setText("");
 	_labelLanguage->setText("");
+	_labelLogo->clear();
 }
 
 void InfoBar::setInfo(const QString &channel, const QString &language)
@@ -90,4 +96,20 @@ void InfoBar::setEpg(const QString &now, const QString &next)
 {
 	_labelNow->setText(tr("Now:")+" "+now);
 	_labelNext->setText(tr("Next:")+" "+next);
+}
+
+void InfoBar::setLogo(const QString &logo)
+{
+	if(logo.isEmpty())
+		return;
+
+	if(logo.contains("http"))
+		_image->getImage(logo);
+	else
+		image(logo);
+}
+
+void InfoBar::image(const QString &image)
+{
+	_labelLogo->setPixmap(QPixmap(image));
 }

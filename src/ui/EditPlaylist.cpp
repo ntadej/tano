@@ -97,6 +97,7 @@ void EditPlaylist::createConnections()
 	connect(ui->editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
 	connect(ui->editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
 	connect(ui->editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
+	connect(ui->editLogo, SIGNAL(textChanged(QString)), this, SLOT(editChannelLogo(QString)));
 
 	connect(ui->actionUp, SIGNAL(triggered()), this, SLOT(moveUp()));
 	connect(ui->actionDown, SIGNAL(triggered()), this, SLOT(moveDown()));
@@ -195,6 +196,7 @@ void EditPlaylist::editItem(QTreeWidgetItem *item)
 	ui->editCategories->setText(ui->playlist->channelRead(item)->categories().join(","));
 	ui->editLanguage->setText(ui->playlist->channelRead(item)->language());
 	ui->editEpg->setText(ui->playlist->channelRead(item)->epg());
+	ui->editLogo->setText(ui->playlist->channelRead(item)->logo());
 }
 
 void EditPlaylist::editChannelNumber()
@@ -229,6 +231,11 @@ void EditPlaylist::editChannelLanguage(const QString &text)
 void EditPlaylist::editChannelEpg(const QString &text)
 {
 	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setEpg(text);
+}
+
+void EditPlaylist::editChannelLogo(const QString &text)
+{
+	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setLogo(text);
 }
 
 void EditPlaylist::moveUp()

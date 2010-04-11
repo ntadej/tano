@@ -149,6 +149,8 @@ void M3UHandler::processList()
 				_channel->setEpg(tmpList[2]);
 				if(!_epgList.contains(tmpList[2]) && !tmpList[2].isEmpty())
 					_epgList << tmpList[2];
+				if(tmpList.size()==4)
+					_channel->setLogo(tmpList[3]);
 			}
 		} else {
 			tmp = _m3uLineList[i];
