@@ -84,6 +84,7 @@ void InfoBar::clear()
 	_labelChannel->setText("");
 	_labelLanguage->setText("");
 	_labelLogo->clear();
+	_labelLogo->hide();
 }
 
 void InfoBar::setInfo(const QString &channel, const QString &language)
@@ -112,4 +113,5 @@ void InfoBar::setLogo(const QString &logo)
 void InfoBar::image(const QString &image)
 {
 	_labelLogo->setPixmap(QPixmap(image));
+	_labelLogo->show();
 }

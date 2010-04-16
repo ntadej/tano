@@ -19,6 +19,7 @@
 #include <QtCore/QDir>
 #include <QtGui/QFileDialog>
 
+#include "Config.h"
 #include "core/LocaleManager.h"
 #include "core/Version.h"
 #include "plugins/PluginsLoader.h"
@@ -30,6 +31,10 @@ EditSettings::EditSettings(Shortcuts *s, QWidget *parent) :
 {
 	ui->setupUi(this);
 	createActions();
+
+#if QT_OLD_VERSION
+	ui->toolbarLookComboBox->removeItem(4);
+#endif
 
 	ui->shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 
