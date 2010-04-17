@@ -65,17 +65,22 @@ QString SelectPlaylist::playlist() const
 
 void SelectPlaylist::setPlaylist(const QString &playlist)
 {
-	if(playlist == Settings::PLAYLIST_SIOL_MPEG2)
+	if(playlist == Settings::PLAYLIST_SIOL_MPEG2) {
 		ui->radioSiol2->setChecked(true);
-	else if(playlist == Settings::PLAYLIST_SIOL_MPEG4)
+		ui->playlistLineEdit->clear();
+	} else if(playlist == Settings::PLAYLIST_SIOL_MPEG4) {
 		ui->radioSiol4->setChecked(true);
-	else if(playlist == Settings::PLAYLIST_T2)
+		ui->playlistLineEdit->clear();
+	} else if(playlist == Settings::PLAYLIST_T2) {
 		ui->radioT2->setChecked(true);
-	else if(playlist == Settings::PLAYLIST_TUS)
+		ui->playlistLineEdit->clear();
+	} else if(playlist == Settings::PLAYLIST_TUS) {
 		ui->radioTus->setChecked(true);
-	else if(playlist == Settings::PLAYLIST_WORLDTV)
+		ui->playlistLineEdit->clear();
+	} else if(playlist == Settings::PLAYLIST_WORLDTV) {
 		ui->radioWorldTv->setChecked(true);
-	else {
+		ui->playlistLineEdit->clear();
+	} else {
 		ui->customPlaylistRadio->setChecked(true);
 		ui->playlistLineEdit->setText(playlist);
 	}

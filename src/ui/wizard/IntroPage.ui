@@ -24,7 +24,7 @@
    <item>
     <widget class="QLabel" name="labelVersion">
      <property name="text">
-      <string/>
+      <string notr="true">Version</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

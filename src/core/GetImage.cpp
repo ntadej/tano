@@ -40,11 +40,10 @@ void GetImage::getImage(const QString &u)
 	QUrl url(u);
 	QFileInfo fileInfo(url.path());
 
-	if (QFile::exists(fileInfo.fileName())) {
-		QFile::remove(fileInfo.fileName());
-	}
+	QDir dir(QDir::tempPath());
+	dir.mkdir("tano");
 
-	_file = new QFile(QDir::tempPath() + "/" + fileInfo.fileName());
+	_file = new QFile(QDir::tempPath() + "/tano/" + fileInfo.fileName());
 	if (!_file->open(QIODevice::WriteOnly)) {
 		delete _file;
 		return;

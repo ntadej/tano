@@ -38,7 +38,7 @@
            <bool>false</bool>
           </property>
           <property name="text">
-           <string/>
+           <string notr="true">-</string>
           </property>
           <property name="readOnly">
            <bool>true</bool>

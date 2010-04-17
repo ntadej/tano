@@ -1,2 +1,3 @@
 ADD_SUBDIRECTORY(EpgSloveniaPlugin)
 ADD_SUBDIRECTORY(FripPlugin)
+ADD_SUBDIRECTORY(VlcPlugin)

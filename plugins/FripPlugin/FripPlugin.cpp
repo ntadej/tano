@@ -22,13 +22,9 @@
 
 #include "FripPlugin.h"
 
-FripPlugin::FripPlugin()
+FripPlugin::FripPlugin() :
+	_fripProcess(new QProcess()), _fripPath(fripPath()), _output("")
 {
-	fripProcess = new QProcess();
-	_fripPath = fripPath();
-
-	_output = "";
-
 #ifdef Q_WS_WIN
 	_slash = "\\";
 #else
@@ -76,17 +72,17 @@ void FripPlugin::record(const QString &channelName,
 			  << fileName;
 
 	_output = fileName;
-	fripProcess->start(_fripPath, arguments);
+	_fripProcess->start(_fripPath, arguments);
 }
 
 void FripPlugin::stop()
 {
-	fripProcess->kill();
+	_fripProcess->kill();
 }
 
 bool FripPlugin::isRecording() const
 {
-	if(fripProcess->state() == QProcess::Running || fripProcess->state() == QProcess::Starting)
+	if(_fripProcess->state() == QProcess::Running || _fripProcess->state() == QProcess::Starting)
 		return true;
 	else
 		return false;

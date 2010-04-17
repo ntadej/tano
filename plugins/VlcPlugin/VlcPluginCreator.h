@@ -1,5 +1,5 @@
 /****************************************************************************
-* FripPlugin.h: Recorder Plugin using friptv
+* VlcPluginCreator.h: VlcPlugin Creator Class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,37 +13,23 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_FRIPPLUGIN_H_
-#define TANO_FRIPPLUGIN_H_
+#ifndef TANO_VLCPLUGINCREATOR_H_
+#define TANO_VLCPLUGINCREATOR_H_
 
-#include <QtCore/QProcess>
-#include <QtCore/QString>
+#include <QtCore/QObject>
+#include <QtCore/QtPlugin>
 
 #include "plugins/RecorderPlugins.h"
 
-class FripPlugin : public RecorderPlugin
+class VlcPluginCreator : public QObject, public RecorderPluginCreator
 {
+Q_OBJECT;
+Q_INTERFACES( RecorderPluginCreator );
+Q_CLASSINFO("PLUGINTYPE", "Recorder");
+Q_CLASSINFO("PLUGINNAME", "Vlc");
+
 public:
-	FripPlugin();
-	~FripPlugin();
-
-	void record(const QString &channelName,
-				const QString &channelUrl,
-				const QString &recordingDir);
-	void stop();
-	bool isRecording() const;
-	bool isValid() const {return fripExists();};
-	QString output() const {return _output;};
-
-private:
-	bool fripExists() const;
-	QString fripPath() const;
-
-	QProcess *_fripProcess;
-	QString _fripPath;
-
-	QString _slash;
-	QString _output;
+	RecorderPlugin *createRecorderPluginInstance();
 };
 
-#endif // TANO_FRIPPLUGIN_H_
+#endif // TANO_VLCPLUGINCREATOR_H_

@@ -83,7 +83,7 @@ mms://partypatrol.streaming.true.nl/partypatrol?.wma
 mms://tvoranjesmall.streamonline.nl/tvoranjesmall
 
 #EXTINF:21,RTV Channel
-#EXTTV:UKTV;English;
+#EXTTV:Music;;
 mms://www.rtvchannel.tv:8080/
 
 #EXTINF:22,Channel Zero
@@ -123,7 +123,7 @@ mms://91.121.179.127/srock
 mms://89.29.128.10/tvalmansa
 
 #EXTINF:31,RTP 2
-#EXTTV:;;
+#EXTTV:Documentary;;
 mms://195.245.168.21/c2
 
 #EXTINF:32,Comedy Classics
@@ -142,44 +142,96 @@ mms://218.108.231.3:554/ngtv1
 #EXTTV:Kids;Chinese;
 mms://218.108.231.3:554/ztv8
 
+#EXTINF:36,Toon TV
+#EXTTV:Kids;;
+mms://85.214.87.175/toon-tv
+
+#EXTINF:37,Film 1
+#EXTTV:Movies;;
+mms://stream.hdtv1.cz/Film1cz-live
+
+#EXTINF:38,Radio Canada (RDI)
+#EXTTV:News;Canada;
+http://direct.radio-canada.ca/rdi
+
+#EXTINF:39,TV 24
+#EXTTV:News;Lettland;
+http://217.198.224.70/TV24_big
+
+#EXTINF:40,NOS Journal
+#EXTTV:News;;
+http://livestreams.omroep.nl/nos/journaal24-bb
+
+#EXTINF:41,France 24 Arabic
+#EXTTV:News;French;
+mms://stream1.france24.yacast.net/f24_livefrda
+
+#EXTINF:42,France 24 English
+#EXTTV:News;English;
+mms://stream1.france24.yacast.net/f24_liveen
+
+#EXTINF:43,Inraci TV
+#EXTTV:News;French;
+http://www.impek.com/go/inraci/wm
+
+#EXTINF:44,KinWebTV
+#EXTTV:Music;French;
+mms://87.98.215.37/kin
+
+#EXTINF:45,RTV Oost
+#EXTTV:Lokal;Dutch;
+mms://media.rtvoost.nl/TVOost
+
+#EXTINF:46,RTV Noord
+#EXTTV:News;Dutch;
+mms://stream.rtvnh.nl/TVNH
+
+#EXTINF:47,RTV Utrecht
+#EXTTV:News;Dutch;
+mms://wm1.ams.cdn.surf.net/surfnetvdox=RTVUtrecht=regiotv_utrecht
+
 #EXTINF:48,BBC 1
-#EXTTV:;English;
+#EXTTV:News;English;
 http://is.gd/aUn07
 
 #EXTINF:49,DR Update
-#EXTTV:;Danish;
+#EXTTV:News;Danish;
 rtsp://rtsplive.dr.dk:80/livestream32.sdp
 
 #EXTINF:50,DR1
-#EXTTV:;Danish;
-rtsp://rtsplive.dr.dk:80/livestream12.sdp  Rtsp: / / rtsplive.dr.dk:80/livestream12.sdp
+#EXTTV:Entertainment;Danish;
+rtsp://rtsplive.dr.dk:80/livestream12.sdp
 
 #EXTINF:51,DR 2
-#EXTTV:;Danish;
+#EXTTV:Entertainment;Danish;
 rtsp://rtsplive.dr.dk:80/livestream22.sdp
 
 #EXTINF:52,DR Ramasjang
-#EXTTV:;Danish;
+#EXTTV:Kids;Danish;
 rtsp://rtsplive.dr.dk:80/livestream52.sdp
 
 #EXTINF:53,24 Nordjyske
-#EXTTV:;Danish;
+#EXTTV:News;Danish;
 mms://stream.nordjyske.dk/24nordjyske
+
+#EXTINF:54,BBC 4
+#EXTTV:Kids;English;
+http://cctv.ws/7/CBeebies/BBC4
 
 #EXTINF:55,Wild life Channel
 #EXTTV:Documentary;;
 mms://streaming.i2i-technology.com/wlc_71000
 
 #EXTINF:56,Damlak TV
-#EXTTV:;English;
+#EXTTV:Music;English;
 mms://tv.damlak.net/damlak_tv
 
 #EXTINF:57,Paprika TV
-#EXTTV:;;
+#EXTTV:Entertainment;;
 mms://wmedia.siol.net/paprika/live
 
 #EXTINF:58,Sintesis TV
-#EXTTV:;;
+#EXTTV:Entertainment;;
 mms://70.38.38.6:8088
 
 #EXTINF:59,Orange sport info
@@ -194,7 +246,7 @@ mms://61.175.162.38/cctv5
 #EXTTV:Sport;;
 mms://218.108.231.3/cctv5
 
-#EXTINF:62,JXTV 6
+#EXTINF:62,Jiangxi TV 6
 #EXTTV:Kids;Chinese;
 mms://tv.jxgdw.com/jxtv6
 
@@ -211,7 +263,7 @@ mms://218.108.231.84/hytv1
 mms://218.108.231.3:554/suntv1
 
 #EXTINF:66,Somethingmovies 1
-#EXTTV:Movies;Deutsch;
+#EXTTV:Movies;English;
 mms://195.90.118.87/somethingmovies1_1
 
 #EXTINF:67,Somethingmovies 2
@@ -220,13 +272,13 @@ mms://195.90.118.87/somethingmovies2_1
 
 #EXTINF:68,Somethingmovies 3
 #EXTTV:Movies;English;
-//195.90.118.87/somethingmovies3_1
+mms://195.90.118.87/somethingmovies3_1
 
 #EXTINF:69,Somethingmovies 4
 #EXTTV:Movies;English;
 mms://195.90.118.87/somethingmovies4_1
 
-#EXTINF:70,Movie Channel
+#EXTINF:70,Macau Lotus TV
 #EXTTV:Movies;English;
 mms://222.77.190.24:9090/xzt
 
@@ -242,7 +294,103 @@ mms://218.108.231.3/cctv8
 #EXTTV:Entertainment;Chinese;
 mms://218.94.122.203/njtv18
 
-#EXTINF:75,CBC Calgary
-#EXTTV:News;English;
-http://www.cbc.ca/mrl3/8752/newsatsix/calgary.wmv
+#EXTINF:74,Zone Horror
+#EXTTV:Movies;English;
+http://69.55.50.34:51004
+
+#EXTINF:75,CBS Reality
+#EXTTV:Entertainment;English;
+http://cctv.ws/4/CBSRealityLQ
+
+#EXTINF:76,FOX Series
+#EXTTV:Series;English;
+http://93.158.79.241:9000/tv11
+
+#EXTINF:77,Infinity
+#EXTTV:Movies;;
+http://93.158.79.241:9000/tv21
+
+#EXTINF:78,E4
+#EXTTV:Movies;;
+http://cctv.ws/5/E4Channel
+
+#EXTINF:79,F 4
+#EXTTV:Entertainment;English;
+http://cctv.ws/1/3eZ1R1/Film4
+
+#EXTINF:80,Five
+#EXTTV:Movies;English;
+http://cctv.ws/0/s3byz/Five
+
+#EXTINF:81,NRK1
+#EXTTV:;;
+mms://78.24.88.15/nrk
+
+#EXTINF:82,NRK2
+#EXTTV:;;
+mms://78.24.88.15/nrk2
+
+#EXTINF:83,NRK3
+#EXTTV:;;
+mms://78.24.88.15/nrk3
+
+#EXTINF:84,TV2
+#EXTTV:;;
+mms://78.24.88.15/tv2
+
+#EXTINF:85,TV2 FILM KANALEN
+#EXTTV:;;
+mms://78.24.88.15/tv2filmkanalen
+
+#EXTINF:86,CANAL+ ACTION
+#EXTTV:;;
+mms://78.24.88.15/canalplusaction
+
+#EXTINF:87,CANAL+ COMEDY
+#EXTTV:;;
+mms://78.24.88.15/canalpluscomedy
+
+#EXTINF:88,CANAL+ DRAMA
+#EXTTV:;;
+mms://78.24.88.15/canalplusdrama
+
+#EXTINF:89,CANAL+ FIRST
+#EXTTV:;;
+mms://78.24.88.15/canalplusfirst
+
+#EXTINF:90,CANAL+ HITS
+#EXTTV:;;
+mms://78.24.88.15/canalplushits
+
+#EXTINF:91,CANAL+ SPORT 1
+#EXTTV:;;
+mms://78.24.88.15/canalplussport1
+
+#EXTINF:92,CANAL+ SPORT 2
+#EXTTV:;;
+mms://78.24.88.15/canalplussport2
+
+#EXTINF:93,TV2 Zebra
+#EXTTV:;;
+mms://78.24.88.15/tv2zebra
+
+#EXTINF:94,TV NORGEFEM
+#EXTTV:;;
+mms://78.24.88.15/tvnorgefem
+
+#EXTINF:95,Star TV
+#EXTTV:Movies;Chinese;
+mms://222.77.190.24:9090/xkws
+
+#EXTINF:96,Mandarin
+#EXTTV:Movies;;
+mms://webdfdy.bbtv.cn/webdfdy
+
+#EXTINF:97,Toonmax
+#EXTTV:Kids;Chinese;
+mms://webxdkt.bbtv.cn/webxdkt
+
+#EXTINF:99,Children
+#EXTTV:Kids;;
+mms://webdfchild.bbtv.cn/webdfchild
 
