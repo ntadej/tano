@@ -118,7 +118,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::createGui()
 {
 	openPlaylist(true);
-	playingState(-1);
+	setState(false);
 	ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
 	ui->statusBar->addPermanentWidget(ui->timeWidget);
 }
@@ -240,7 +240,7 @@ void MainWindow::createConnections()
 
 	connect(_audioController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
 	connect(_videoController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
-	connect(_backend, SIGNAL(stateChanged(int)), this, SLOT(playingState(int)));
+	connect(_backend, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool, bool, bool)));
 
 	connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
 	connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
@@ -411,11 +411,9 @@ void MainWindow::playChannel(const int &clickedChannel)
 	play();
 }
 
-void MainWindow::playingState(const int &status)
+void MainWindow::setState(const bool &playing, const bool &audio, const bool &video)
 {
-	if(status == 1) {
-		ui->actionPlay->setEnabled(true);
-		ui->buttonPlay->setEnabled(true);
+	if(playing) {
 		ui->actionPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
 		ui->buttonPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
 		ui->actionPlay->setText(tr("Pause"));
@@ -424,9 +422,7 @@ void MainWindow::playingState(const int &status)
 		ui->buttonPlay->setStatusTip(tr("Pause"));
 		ui->actionMute->setEnabled(true);
 		ui->buttonMute->setEnabled(true);
-	} else if(status == 0 || status == -1) {
-		ui->actionPlay->setEnabled(true);
-		ui->buttonPlay->setEnabled(true);
+	} else {
 		ui->actionPlay->setIcon(QIcon(":/icons/images/player_play.png"));
 		ui->buttonPlay->setIcon(QIcon(":/icons/images/player_play.png"));
 		ui->actionPlay->setText(tr("Play"));
@@ -436,6 +432,9 @@ void MainWindow::playingState(const int &status)
 		ui->actionMute->setEnabled(false);
 		ui->buttonMute->setEnabled(false);
 	}
+
+	ui->menuAudio->setEnabled(audio);
+	ui->menuVideo->setEnabled(video);
 }
 
 void MainWindow::play(const QString &itemFile)

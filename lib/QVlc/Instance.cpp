@@ -26,8 +26,13 @@ libvlc_exception_t * _vlcException = new libvlc_exception_t();
 #endif
 libvlc_media_player_t * _vlcCurrentMediaPlayer = NULL;
 
-QVlc::Instance::Instance(const QList<const char *> &args, const WId &widget, QObject *parent)
-	: QObject(parent), _vlcMedia(NULL), _widgetId(widget), _args(args)
+QVlc::Instance::Instance(const QList<const char *> &args,
+						 const WId &widget,
+						 QObject *parent) :
+	QObject(parent),
+	_vlcMedia(NULL),
+	_widgetId(widget),
+	_args(args)
 {
 	_check = new QTimer(this);
 	connect(_check, SIGNAL(timeout()), this, SLOT(checkPlayingState()));
@@ -201,21 +206,24 @@ void QVlc::Instance::stop()
 void QVlc::Instance::checkPlayingState()
 {
 	if(_vlcCurrentMediaPlayer == NULL) {
-		emit stateChanged(0);
+		emit state(false, false, false);
 		return;
 	}
 
-	libvlc_state_t state;
+	bool playing;
+	bool audio_count;
+	bool video_count;
 #if VLC_1_1
-	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer);
+	playing = libvlc_media_player_get_state(_vlcCurrentMediaPlayer) == libvlc_Playing;
+	audio_count = libvlc_audio_get_track_count(_vlcCurrentMediaPlayer) > 0;
+	video_count = libvlc_video_get_track_count(_vlcCurrentMediaPlayer) > 0;
 #else
-	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
+	playing = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException) == libvlc_Playing;
+	audio_count = libvlc_audio_get_track_count(_vlcCurrentMediaPlayer, _vlcException) > 0;
+	video_count = libvlc_video_get_track_count(_vlcCurrentMediaPlayer, _vlcException) > 0;
 #endif
 
-	if(state == libvlc_Playing)
-		emit stateChanged(1);
-	else
-		emit stateChanged(0);
+	emit state(playing, audio_count, video_count);
 }
 
 void QVlc::Instance::checkError()
@@ -253,11 +261,11 @@ bool QVlc::Instance::isActive()
 		return false;
 
 	libvlc_state_t state;
-	#if VLC_1_1
-		state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer);
-	#else
-		state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
-	#endif
+#if VLC_1_1
+	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer);
+#else
+	state = libvlc_media_player_get_state(_vlcCurrentMediaPlayer, _vlcException);
+#endif
 
 	if(state == libvlc_NothingSpecial || state == libvlc_Ended || state == libvlc_Error)
 		return false;

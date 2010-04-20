@@ -54,7 +54,7 @@ namespace QVlc
 		void stop();
 
 	signals:
-		void stateChanged(const int);
+		void state(const bool, const bool, const bool);
 
 	private slots:
 		void checkPlayingState();
