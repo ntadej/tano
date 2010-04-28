@@ -17,6 +17,8 @@
 #define TANO_MAINWINDOW_H_
 
 #include <QtGui/QCloseEvent>
+#include <QtGui/QHideEvent>
+#include <QtGui/QShowEvent>
 #include <QtGui/QMainWindow>
 
 #include <QVlc/AudioControl.h>
@@ -51,6 +53,8 @@ public:
 protected:
 	void changeEvent(QEvent *e);
 	void closeEvent(QCloseEvent *event);
+	void hideEvent(QHideEvent *event);
+	void showEvent(QShowEvent *event);
 
 private slots:
 	void exit();

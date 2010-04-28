@@ -23,9 +23,12 @@
 #include "Instance.h"
 #include "VideoWidget.h"
 
-QVlc::VideoWidget::VideoWidget(QWidget *parent)
-	: QWidget(parent), _move(true), _desktopWidth(QApplication::desktop()->width()), _desktopHeight(QApplication::desktop()->height()),
-	_osdWidth(0), _osdHeight(0), _currentRatio(""), _currentCrop(""), _currentFilter("")
+QVlc::VideoWidget::VideoWidget(QWidget *parent) :
+	QWidget(parent),
+	_hide(true),
+	_desktopWidth(QApplication::desktop()->width()), _desktopHeight(QApplication::desktop()->height()),
+	_osdWidth(0), _osdHeight(0),
+	_currentRatio(""), _currentCrop(""), _currentFilter("")
 {
 	setMouseTracking(true);
 
@@ -49,7 +52,7 @@ QVlc::VideoWidget::~VideoWidget()
 	delete _widget;
 }
 
-void QVlc::VideoWidget::setOsdSize(const int &width, const int &height)
+void QVlc::VideoWidget::setOsdParameters(const int &width, const int &height, const int &x, const int y)
 {
 	_osdWidth = width;
 	_osdHeight = height;
@@ -59,13 +62,13 @@ void QVlc::VideoWidget::setOsdSize(const int &width, const int &height)
 void QVlc::VideoWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
 	event->ignore();
-	emit full();
+	emit fullscreen();
 }
 void QVlc::VideoWidget::mouseMoveEvent(QMouseEvent *event)
 {
 	event->ignore();
 
-	if(this->isFullScreen() && _move) {
+	if(isFullScreen() && _hide) {
 		qApp->setOverrideCursor(Qt::ArrowCursor);
 		emit osdVisibility(true);
 
@@ -97,18 +100,14 @@ void QVlc::VideoWidget::wheelEvent(QWheelEvent *event)
 
 void QVlc::VideoWidget::hideMouse()
 {
-	if(this->isFullScreen() && _move) {
+	if(isFullScreen() && _hide) {
 		qApp->setOverrideCursor(Qt::BlankCursor);
 		emit osdVisibility(false);
 		_timerMouse->stop();
 	}
 }
 
-//Move
-void QVlc::VideoWidget::disableMove() { _move = false; }
-void QVlc::VideoWidget::enableMove() {	_move = true; }
-
-void QVlc::VideoWidget::controlFull()
+void QVlc::VideoWidget::toggleFullscreen()
 {
 	Qt::WindowFlags flags = windowFlags();
 	if (!isFullScreen()) {
@@ -128,7 +127,7 @@ void QVlc::VideoWidget::controlFull()
 	} else if (isFullScreen()) {
 		flags ^= (Qt::Window | Qt::SubWindow);
 		setWindowFlags(flags);
-		setWindowState( windowState()  ^ Qt::WindowFullScreen );
+		setWindowState( windowState() ^ Qt::WindowFullScreen );
 		qApp->setOverrideCursor(Qt::ArrowCursor);
 		show();
 	}

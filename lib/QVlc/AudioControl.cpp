@@ -17,8 +17,11 @@
 #include "AudioControl.h"
 #include "Instance.h"
 
-QVlc::AudioControl::AudioControl(QObject *parent)
-	: QObject(parent), _actionList(QList<QAction*>()), _map(QMap<QString,int>()), _actionGroup(0)
+QVlc::AudioControl::AudioControl(QObject *parent) :
+	QObject(parent),
+	_actionList(QList<QAction*>()),
+	_map(QMap<QString,int>()),
+	_actionGroup(0)
 {
 	_timer = new QTimer(this);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(updateActions()));
@@ -119,7 +122,7 @@ void QVlc::AudioControl::update()
 	Instance::checkError();
 }
 
-void QVlc::AudioControl::mediaChange()
+void QVlc::AudioControl::reset()
 {
 	_timer->start(2000);
 }

@@ -113,6 +113,16 @@ void MainWindow::closeEvent(QCloseEvent *event)
 		event->ignore();
 	}
 }
+void MainWindow::hideEvent(QHideEvent *event)
+{
+	_controlsVisible = ui->osdWidget->isVisible();
+	_infoWidgetVisible = ui->infoWidget->isVisible();
+}
+void MainWindow::showEvent(QShowEvent *event)
+{
+	ui->osdWidget->setVisible(_controlsVisible);
+	ui->infoWidget->setVisible(_infoWidgetVisible);
+}
 
 // Init functions
 void MainWindow::createGui()
@@ -125,8 +135,7 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
-	_backend = new QVlc::Instance(Common::libvlcArgs(), ui->videoWidget->getWinId());
-	_backend->init();
+	_backend = new QVlc::Instance(Common::libvlcArgs(), ui->videoWidget->widgetId());
 
 	_audioController = new QVlc::AudioControl();
 	_videoController = new QVlc::VideoControl(_defaultSubtitleLanguage);
@@ -235,8 +244,8 @@ void MainWindow::createConnections()
 	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
 	connect(_update, SIGNAL(updatesDone(QStringList)), _trayIcon, SLOT(message(QStringList)));
 
-	connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMove()));
-	connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMove()));
+	connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMouseHide()));
+	connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMouseHide()));
 
 	connect(_audioController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
 	connect(_videoController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
@@ -448,12 +457,12 @@ void MainWindow::play(const QString &itemFile)
 		_epg->request(_channel->epg());
 		ui->channelNumber->display(_channel->number());
 
-		_backend->openMedia(_channel->url());
+		_backend->open(_channel->url());
 		tooltip(_channel->name());
 		_trayIcon->changeToolTip(_channel->name());
 	} else {
 		ui->infoWidget->hide();
-		_backend->openMedia(itemFile);
+		_backend->open(itemFile);
 		tooltip(itemFile);
 	}
 
@@ -478,8 +487,8 @@ void MainWindow::stop()
 	tooltip();
 	_trayIcon->changeToolTip();
 
-	_audioController->mediaChange();
-	_videoController->mediaChange();
+	_audioController->reset();
+	_videoController->reset();
 }
 
 void MainWindow::showEpg(const QStringList &epgValue, const int &id)
@@ -683,13 +692,8 @@ void MainWindow::tray()
 	if(this->isHidden()) {
 		ui->actionTray->setText(tr("Hide to tray"));
 		show();
-		ui->osdWidget->setVisible(_controlsVisible);
-		ui->infoWidget->setVisible(_infoWidgetVisible);
 	} else {
-		_controlsVisible = ui->osdWidget->isVisible();
-		_infoWidgetVisible = ui->infoWidget->isVisible();
 		ui->actionTray->setText(tr("Restore"));
-		_trayIcon->message(QStringList() << "close");
 		hide();
 	}
 }
@@ -700,7 +704,7 @@ void MainWindow::fullscreen(const bool &on)
 		return;
 
 	if(on) {
-		ui->videoWidget->setOsdSize(ui->osdWidget->width(), ui->osdWidget->height());
+		ui->videoWidget->setOsdParameters(ui->osdWidget->width(), ui->osdWidget->height());
 		ui->osdWidget->resize(2*_desktopWidth/3,ui->osdWidget->height());
 		ui->osdWidget->setFloating(true);
 		ui->osdWidget->move(_desktopWidth/6, _desktopHeight-ui->osdWidget->height());

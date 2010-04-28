@@ -15,8 +15,9 @@
 
 #include "TrayIcon.h"
 
-TrayIcon::TrayIcon(QMenu *menu)
-	: _currentlyRecording(""), _currentlyPlaying("")
+TrayIcon::TrayIcon(QMenu *menu) :
+	_currentlyRecording(""),
+	_currentlyPlaying("")
 {
 	setContextMenu(menu);
 	setIcon(QIcon(":/icons/images/tano.png"));
@@ -49,8 +50,6 @@ void TrayIcon::message(const QStringList &arg)
 {
 	if (arg.at(0) == "record")
 		this->showMessage(tr("Recording"), tr("Tano Recorder is recording %1 to\n%2.").arg(arg.at(1), arg.at(2)), QSystemTrayIcon::Information, 10000);
-	else if (arg.at(0) == "close")
-		this->showMessage(tr("Still running"), tr("Tano is still running.\nRight click to exit."), QSystemTrayIcon::Information, 10000);
 	else if (arg.at(0) == "latest")
 		this->showMessage(tr("Latest version"), tr("You are using the latest version of Tano."), QSystemTrayIcon::Information, 10000);
 	else if (arg.at(0) == "svn")

@@ -24,21 +24,65 @@
 
 namespace QVlc
 {
+	/*! \class VolumeSlider VolumeSlider.h QVlc/VolumeSlider.h
+		\brief Volume slider widget
+
+		This is one of QVlc GUI classes.
+		It provides main volume control and also visual display of current volume.
+	*/
 	class VolumeSlider : public QWidget
 	{
 	Q_OBJECT
 	public:
+		/*!
+			VolumeSlider constructor
+			\param parent volume slider's parent GUI widget
+		*/
 		VolumeSlider(QWidget *parent = 0);
+
+		/*!
+			VolumeSlider destructor
+		*/
 		~VolumeSlider();
 
+
+		/*!
+			Returns current volume of active instance
+			\return current volume
+		*/
 		int volume() const {return _currentVolume;};
 
 	public slots:
+		/*!
+			Set volume for current instance
+			\param volume number from 0 to 200
+		*/
 		void setVolume(const int &volume);
+
+		/*!
+			Toggle mute
+		*/
 		void mute();
-		void vup() {volumeControl(true);};
-		void vdown() {volumeControl(false);};
+
+		/*!
+			Increases volume for 1. This function is provided for convenience.
+			\sa volumeControl()
+		*/
+		void volumeUp() {volumeControl(true);};
+
+		/*!
+			Decreases volume for 1. This function is provided for convenience.
+			\sa volumeControl()
+		*/
+		void volumeDown() {volumeControl(false);};
+
+		/*!
+			Decreases or increases volume for 1, depending on the parameter.
+			Limits from 0 to 200 apply to this function.
+			\param up if true increases the volume
+		*/
 		void volumeControl(const bool &up);
+
 
 	private slots:
 		void updateVolume();

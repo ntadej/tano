@@ -19,8 +19,8 @@
 #include "Instance.h"
 #include "VolumeSlider.h"
 
-QVlc::VolumeSlider::VolumeSlider(QWidget *parent)
-	: QWidget(parent)
+QVlc::VolumeSlider::VolumeSlider(QWidget *parent) :
+	QWidget(parent)
 {
 	_slider = new QSlider(this);
 	_slider->setOrientation(Qt::Horizontal);

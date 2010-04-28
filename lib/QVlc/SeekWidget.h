@@ -24,12 +24,27 @@
 
 namespace QVlc
 {
+	/*! \class SeekWidget SeekWidget.h QVlc/SeekWidget.h
+		\brief Seek widget
+
+		This is one of QVlc GUI classes.
+		It provides only a display of elapsed time and full time of the media.
+	*/
 	class SeekWidget : public QWidget
 	{
 	Q_OBJECT
 	public:
+		/*!
+			SeekWidget constructor
+			\param parent seek widget's parent GUI widget
+		*/
 		SeekWidget(QWidget *parent = 0);
+
+		/*!
+			SeekWidget destructor
+		*/
 		~SeekWidget();
+
 
 	private slots:
 		void changeTime();

@@ -25,25 +25,62 @@
 
 namespace QVlc
 {
+	/*! \class VideoControl VideoControl.h QVlc/VideoControl.h
+		\brief Video control class
+
+		This is one of QVlc control classes.
+		It provides video and subtitle tracks management.
+	*/
 	class VideoControl : public QObject
 	{
 	Q_OBJECT
 	public:
-		VideoControl(const QString &lang = "", QObject *parent = 0);
+		/*!
+			VideoControl constructor
+			\param lang default subtitle language
+			\param parent video controller's parent object
+		*/
+		VideoControl(const QString &lang = 0, QObject *parent = 0);
+
+		/*!
+			VideoControl destructor
+		*/
 		~VideoControl();
 
-		void mediaChange();
+
+		/*!
+			Open and load subtitles from file
+			\param sub full path to subtitles file
+		*/
 		void loadSubtitle(const QString &sub);
+
+		/*!
+			Reset all settings and selected video and subtitle tracks
+			Usually called on media change.
+		*/
+		void reset();
+
+		/*!
+			Set default subtitle language
+			\param lang comma separated languages
+		*/
 		void setDefaultSubtitleLanguage(const QString &lang);
+
+
+	signals:
+		/*!
+			Signal sending actions for changing video and subititle tracks
+			\param QString type of actions
+			\param QList<QAction*> list of actions
+		*/
+		void actions(const QString, QList<QAction*>);
+
 
 	private slots:
 		void updateSubtitleActions();
 		void updateSubtitles();
 		void updateVideoActions();
 		void updateVideo();
-
-	signals:
-		void actions(const QString, QList<QAction*>);
 
 	private:
 		QTimer *_timer;

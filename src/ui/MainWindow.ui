@@ -57,7 +57,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>25</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuRecorder">
@@ -286,8 +286,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>348</width>
-          <height>332</height>
+          <width>350</width>
+          <height>343</height>
          </rect>
         </property>
         <attribute name="label">
@@ -307,8 +307,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>98</width>
-          <height>28</height>
+          <width>350</width>
+          <height>343</height>
          </rect>
         </property>
         <attribute name="label">
@@ -1109,8 +1109,8 @@
    <container>1</container>
    <slots>
     <slot>mute()</slot>
-    <slot>vup()</slot>
-    <slot>vdown()</slot>
+    <slot>volumeUp()</slot>
+    <slot>volumeDown()</slot>
    </slots>
   </customwidget>
   <customwidget>
@@ -1131,8 +1131,8 @@
    <header location="global">QVlc/VideoWidget.h</header>
    <container>1</container>
    <slots>
-    <signal>full()</signal>
-    <slot>controlFull()</slot>
+    <signal>fullscreen()</signal>
+    <slot>toggleFullscreen()</slot>
     <slot>setRatioOriginal()</slot>
     <slot>setRatio1_1()</slot>
     <slot>setRatio4_3()</slot>
@@ -1315,7 +1315,7 @@
    <sender>actionFullscreen</sender>
    <signal>triggered()</signal>
    <receiver>videoWidget</receiver>
-   <slot>controlFull()</slot>
+   <slot>toggleFullscreen()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -1747,7 +1747,7 @@
    <sender>actionVolumeUp</sender>
    <signal>triggered()</signal>
    <receiver>volumeSlider</receiver>
-   <slot>vup()</slot>
+   <slot>volumeUp()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -1763,7 +1763,7 @@
    <sender>actionVolumeDown</sender>
    <signal>triggered()</signal>
    <receiver>volumeSlider</receiver>
-   <slot>vdown()</slot>
+   <slot>volumeDown()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -1777,7 +1777,7 @@
   </connection>
   <connection>
    <sender>videoWidget</sender>
-   <signal>full()</signal>
+   <signal>fullscreen()</signal>
    <receiver>actionFullscreen</receiver>
    <slot>trigger()</slot>
    <hints>

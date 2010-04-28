@@ -17,11 +17,15 @@
 #include "Instance.h"
 #include "VideoControl.h"
 
-QVlc::VideoControl::VideoControl(const QString &lang, QObject *parent)
-	: QObject(parent), _actionSubList(QList<QAction*>()), _mapSub(QMap<QString,int>()), _actionSubGroup(0),
+QVlc::VideoControl::VideoControl(const QString &lang, QObject *parent) :
+	QObject(parent),
+	_actionSubList(QList<QAction*>()), _mapSub(QMap<QString,int>()), _actionSubGroup(0),
 	_actionVideoList(QList<QAction*>()), _mapVideo(QMap<QString,int>()), _actionVideoGroup(0),
-	_manualLanguage(false), _preferedLanguage(lang.split(" / "))
+	_manualLanguage(false)
 {
+	if(!lang.isNull() && !lang.isEmpty())
+		_preferedLanguage = lang.split(" / ");
+
 	_timer = new QTimer(this);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(updateSubtitleActions()));
 	connect(_timer, SIGNAL(timeout()), this, SLOT(updateVideoActions()));
@@ -226,7 +230,7 @@ void QVlc::VideoControl::updateVideo()
 	Instance::checkError();
 }
 
-void QVlc::VideoControl::mediaChange()
+void QVlc::VideoControl::reset()
 {
 	_timer->start(2000);
 	_manualLanguage = false;

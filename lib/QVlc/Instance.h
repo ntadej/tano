@@ -32,29 +32,91 @@ extern libvlc_exception_t *_vlcException;
 extern libvlc_instance_t *_vlcInstance;
 extern libvlc_media_player_t *_vlcCurrentMediaPlayer;
 
+/*!
+	\brief QVlc Namespace
+*/
 namespace QVlc
 {
+	/*! \class Instance Instance.h QVlc/Instance.h
+		\brief Main instance
+
+		This class is basic Instance manager for QVlc library.
+		It provides main playback controls.
+	*/
 	class Instance : public QObject
 	{
 	Q_OBJECT
 	public:
+		/*!
+			Instance constructor. This is mandatory to use QVlc and all its other classes.
+			\param args libVLC arguments
+			\param widget unique ID of video widget
+			\param parent instance's parent object
+		*/
 		Instance(const QList<const char *> &args, const WId &widget = NULL, QObject *parent = NULL);
+
+		/*!
+			Instance destructor
+		*/
 		~Instance();
 
-		void openMedia(const QString &media);
+
+		/*!
+			Open media file or stream. Any media shoudl be playable and opened.
+			\param media path or URL
+		*/
+		void open(const QString &media);
+
+		/*!
+			Check if player is currently playing any media
+			\return true if instance is playing
+		*/
 		static bool isActive();
+
+		/*!
+			Error check
+		*/
 		static void checkError();
+
+		/*!
+			Version info
+			\return version
+		*/
 		static QString version();
+
+		/*!
+			libVLC version info
+			\return libVLC version
+		*/
 		static QString libVlcVersion();
 
+
 	public slots:
-		void init();
+		/*!
+			Starts playing current media if possible
+		*/
 		void play();
+
+		/*!
+			Pauses the playback of current media if possible
+		*/
 		void pause();
+
+		/*!
+			Stops playing current media
+		*/
 		void stop();
 
+
 	signals:
+		/*!
+			Signal sending QVlc state
+			\param bool true if player is playing any media
+			\param bool true if media has audio
+			\param bool true if media has video
+		*/
 		void state(const bool, const bool, const bool);
+
 
 	private slots:
 		void checkPlayingState();
@@ -65,7 +127,6 @@ namespace QVlc
 
 		libvlc_media_t * _vlcMedia;
 		WId _widgetId;
-		QList<const char *> _args;
 
 		QTimer *_check;
 	};

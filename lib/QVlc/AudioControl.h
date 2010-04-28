@@ -25,17 +25,43 @@
 
 namespace QVlc
 {
+	/*! \class AudioControl AudioControl.h QVlc/AudioControl.h
+		\brief Audio control class
+
+		This is one of QVlc control classes.
+		It provides audio tracks management.
+	*/
 	class AudioControl : public QObject
 	{
 	Q_OBJECT
 	public:
+		/*!
+			AudioControl constructor
+			\param parent audio controller's parent object
+		*/
 		AudioControl(QObject *parent = 0);
+
+		/*!
+			AudioControl destructor
+		*/
 		~AudioControl();
 
-		void mediaChange();
+
+		/*!
+			Reset all settings and selected audio tracks.
+			Usually called on media change.
+		*/
+		void reset();
+
 
 	signals:
+		/*!
+			Signal sending actions for changing audio tracks
+			\param QString type of actions
+			\param QList<QAction*> list of actions
+		*/
 		void actions(const QString, QList<QAction*>);
+
 
 	private slots:
 		void update();

@@ -31,12 +31,38 @@ QVlc::Instance::Instance(const QList<const char *> &args,
 						 QObject *parent) :
 	QObject(parent),
 	_vlcMedia(NULL),
-	_widgetId(widget),
-	_args(args)
+	_widgetId(widget)
 {
 	_check = new QTimer(this);
 	connect(_check, SIGNAL(timeout()), this, SLOT(checkPlayingState()));
 	_check->start(300);
+
+	const char *vlcArgs[args.size()];
+	for(int i=0; i<args.size(); i++)
+		vlcArgs[i] = args[i];
+
+#if VLC_1_1
+	_vlcInstance = libvlc_new(sizeof(vlcArgs) / sizeof(*vlcArgs), vlcArgs);
+#else
+	libvlc_exception_init(_vlcException);
+	_vlcInstance = libvlc_new(sizeof(vlcArgs) / sizeof(*vlcArgs), vlcArgs, _vlcException);
+#endif
+	checkError();
+
+	if(_vlcInstance) {
+		qDebug() << "libQVlc" << version() << "initialised";
+		qDebug() << "Using libVLC version:" << libvlc_get_version();
+		qDebug() << "libVLC loaded";
+	} else {
+		qDebug() << "libQVlc Error: libVLC failed to load!";
+		switch(fatalError()) {
+		case QMessageBox::Ok:
+			exit(-100);
+			break;
+		default:
+			break;
+		};
+	}
 }
 
 QVlc::Instance::~Instance()
@@ -64,37 +90,7 @@ QString QVlc::Instance::libVlcVersion()
 	return QString(libvlc_get_version());
 }
 
-void QVlc::Instance::init()
-{
-	const char *vlcArgs[_args.size()];
-	for(int i=0; i<_args.size(); i++)
-		vlcArgs[i] = _args[i];
-
-#if VLC_1_1
-	_vlcInstance = libvlc_new(sizeof(vlcArgs) / sizeof(*vlcArgs), vlcArgs);
-#else
-	libvlc_exception_init(_vlcException);
-	_vlcInstance = libvlc_new(sizeof(vlcArgs) / sizeof(*vlcArgs), vlcArgs, _vlcException);
-#endif
-	checkError();
-
-	if(_vlcInstance) {
-		qDebug() << "libQVlc" << version() << "initialised";
-		qDebug() << "Using libVLC version:" << libvlc_get_version();
-		qDebug() << "libVLC loaded";
-	} else {
-		qDebug() << "libQVlc Error: libVLC failed to load!";
-		switch(fatalError()) {
-		case QMessageBox::Ok:
-			exit(-100);
-			break;
-		default:
-			break;
-		};
-	}
-}
-
-void QVlc::Instance::openMedia(const QString &media)
+void QVlc::Instance::open(const QString &media)
 {
 	unloadMedia();
 
