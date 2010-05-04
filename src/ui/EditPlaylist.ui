@@ -99,6 +99,8 @@
    <addaction name="actionDown"/>
    <addaction name="separator"/>
    <addaction name="actionImport"/>
+   <addaction name="actionPrint"/>
+   <addaction name="separator"/>
    <addaction name="actionSave"/>
    <addaction name="actionClose"/>
   </widget>
@@ -332,6 +334,15 @@
    </property>
    <property name="toolTip">
     <string>Move Down</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/icons/images/print.png</normaloff>:/icons/images/print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print</string>
    </property>
   </action>
  </widget>

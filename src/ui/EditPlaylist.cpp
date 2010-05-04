@@ -28,7 +28,8 @@ EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent) :
 		ui(new Ui::EditPlaylist),
 		_closeEnabled(false),
 		_playlist(playlist),
-		_channelIcon(QIcon(":/icons/images/video.png"))
+		_channelIcon(QIcon(":/icons/images/video.png")),
+		_print(0)
 {
 	ui->setupUi(this);
 
@@ -56,6 +57,7 @@ EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent) :
 EditPlaylist::~EditPlaylist()
 {
 	delete ui;
+	delete _print;
 }
 
 void EditPlaylist::changeEvent(QEvent *e)
@@ -90,6 +92,7 @@ void EditPlaylist::createConnections()
 	connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
 	connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 	connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(import()));
+	connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
 
 	connect(ui->buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
 	connect(ui->editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
@@ -181,6 +184,15 @@ void EditPlaylist::exit()
 		default:
 			break;
 	}
+}
+
+void EditPlaylist::print()
+{
+	if(_print)
+		delete _print;
+
+	_print = new Print();
+	_print->channelList(ui->editName->text(), ui->playlist);
 }
 
 void EditPlaylist::editItem(QTreeWidgetItem *item)

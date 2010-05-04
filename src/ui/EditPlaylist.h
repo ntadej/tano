@@ -19,6 +19,8 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QTreeWidgetItem>
 
+#include "core/Print.h"
+
 namespace Ui
 {
 	class EditPlaylist;
@@ -41,6 +43,7 @@ private slots:
 
 	void save();
 	void import();
+	void print();
 
 	void exit();
 
@@ -66,6 +69,8 @@ private:
 	bool _closeEnabled;
 	QString _playlist;
 	QIcon _channelIcon;
+
+	Print *_print;
 };
 
 #endif // TANO_EDITPLAYLIST_H_

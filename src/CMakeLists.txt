@@ -41,6 +41,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	MainWindow.h
 	core/ChannelSelect.h
 	core/GetImage.h
+	core/Print.h
 	core/Time.h
 	core/Updates.h
 	epg/EpgList.h
@@ -81,6 +82,7 @@ SET(Tano_Core_Srcs
 	core/Common.cpp
 	core/GetImage.cpp
 	core/LocaleManager.cpp
+	core/Print.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
 	core/Time.cpp
