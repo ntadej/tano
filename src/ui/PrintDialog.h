@@ -1,5 +1,5 @@
 /****************************************************************************
-* Print.h: Main print class
+* PrintDialog.h: Dialog for printing settings
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,32 +13,40 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_PRINT_H_
-#define TANO_PRINT_H_
+#ifndef TANO_PRINTDIALOG_H_
+#define TANO_PRINTDIALOG_H_
 
-#include <QtGui/QTextEdit>
+#include <QtGui/QAbstractButton>
+#include <QtGui/QDialog>
 
-#include "ui/PlaylistWidget.h"
+#include "core/Print.h"
 
-class Print : public QTextEdit
+namespace Ui {
+	class PrintDialog;
+}
+
+class PrintDialog : public QDialog
 {
 Q_OBJECT
 public:
-	Print(QWidget *parent = 0);
-	~Print();
+	PrintDialog(const QString &name, PlaylistWidget *playlist, QWidget *parent = 0);
+	~PrintDialog();
 
-	void channelList(const QString &name, PlaylistWidget *widget, const QList<int> &list);
+protected:
+	void changeEvent(QEvent *e);
 
 private slots:
-	void preview(QPrinter *printer);
+	void action(QAbstractButton *button);
 
 private:
-	void start();
+	void print();
 
-	QTextCharFormat _textFormat;
-	QTextCharFormat _boldFormat;
-	QTextCharFormat _titleFormat;
-	QTextTableFormat _tableFormat;
+	Ui::PrintDialog *ui;
+
+	Print *_print;
+
+	QString _name;
+	PlaylistWidget *_playlist;
 };
 
-#endif // TANO_PRINT_H_
+#endif // TANO_PRINTDIALOG_H_

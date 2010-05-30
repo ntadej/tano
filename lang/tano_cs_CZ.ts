@@ -77,29 +77,29 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Upravit seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="261"/>
-        <location filename="../src/ui/EditPlaylist.ui" line="264"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="268"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="271"/>
         <source>Add Channel</source>
         <translation>Přidat program</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="273"/>
-        <location filename="../src/ui/EditPlaylist.ui" line="276"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="280"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="283"/>
         <source>Delete Channel</source>
         <translation>Smazat program</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="297"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="304"/>
         <source>Close</source>
         <translation>Zavřít</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="306"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="313"/>
         <source>Reload</source>
         <translation>Nahrát znovu</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="315"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="322"/>
         <source>Import</source>
         <translation>Zavést</translation>
     </message>
@@ -149,49 +149,49 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>EPG:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="194"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="201"/>
         <source>&lt;i&gt;You can separate categories with comma.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Skupiny můžete oddělit středníkem.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="201"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="208"/>
         <source>Url:</source>
         <translation>Adresa (URL):</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="231"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="238"/>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Musíte použít číslo.&lt;br&gt;Všechny ostatní hodnoty jsou automaticky změněny.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="238"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="245"/>
         <source>Logo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="245"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="252"/>
         <source>&lt;i&gt;Please provide full path or URL.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="285"/>
-        <location filename="../src/ui/EditPlaylist.ui" line="288"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="292"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="295"/>
         <source>Save and Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="324"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="331"/>
         <source>Move Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="333"/>
-        <location filename="../src/ui/EditPlaylist.ui" line="336"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="340"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="343"/>
         <source>Move Down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="345"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="352"/>
         <source>Print</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1339,43 +1339,96 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
 <context>
     <name>Print</name>
     <message>
-        <location filename="../src/core/Print.cpp" line="54"/>
+        <location filename="../src/core/Print.cpp" line="56"/>
         <source>#</source>
         <translation type="unfinished">#</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="56"/>
+        <location filename="../src/core/Print.cpp" line="60"/>
         <source>Channel</source>
         <translation type="unfinished">Program</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="58"/>
+        <location filename="../src/core/Print.cpp" line="64"/>
         <source>Url</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="60"/>
+        <location filename="../src/core/Print.cpp" line="68"/>
         <source>Categories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="62"/>
+        <location filename="../src/core/Print.cpp" line="72"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="64"/>
+        <location filename="../src/core/Print.cpp" line="76"/>
         <source>EPG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="66"/>
+        <location filename="../src/core/Print.cpp" line="80"/>
         <source>Logo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="92"/>
+        <location filename="../src/core/Print.cpp" line="121"/>
         <source>Exported with Tano on %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PrintDialog</name>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="14"/>
+        <source>Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="34"/>
+        <source>Print Channel List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="40"/>
+        <source>Select information for printing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="47"/>
+        <source>Channel number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="54"/>
+        <source>Channel name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="61"/>
+        <source>URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="68"/>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="75"/>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="82"/>
+        <source>EPG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PrintDialog.ui" line="89"/>
+        <source>Logo</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

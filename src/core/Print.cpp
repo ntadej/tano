@@ -21,7 +21,8 @@
 
 #include "Print.h"
 
-Print::Print()
+Print::Print(QWidget *parent) :
+	QTextEdit(parent)
 {
 	_boldFormat.setFontWeight(QFont::Bold);
 	_titleFormat.setFontWeight(QFont::Bold);
@@ -39,7 +40,7 @@ Print::~Print()
 
 }
 
-void Print::channelList(const QString &name, PlaylistWidget *widget)
+void Print::channelList(const QString &name, PlaylistWidget *widget, const QList<int> &list)
 {
 	QTextCursor cursor(textCursor());
 	cursor.movePosition(QTextCursor::Start);
@@ -48,41 +49,69 @@ void Print::channelList(const QString &name, PlaylistWidget *widget)
 	cursor.insertText(name, _titleFormat);
 	cursor.insertBlock();
 
-	QTextTable *channelsTable = cursor.insertTable(1, 7, _tableFormat);
+	QTextTable *channelsTable = cursor.insertTable(1, list[list.size()-1], _tableFormat);
 
-	cursor = channelsTable->cellAt(0, 0).firstCursorPosition();
-	cursor.insertText(tr("#"), _boldFormat);
-	cursor = channelsTable->cellAt(0, 1).firstCursorPosition();
-	cursor.insertText(tr("Channel"), _boldFormat);
-	cursor = channelsTable->cellAt(0, 2).firstCursorPosition();
-	cursor.insertText(tr("Url"), _boldFormat);
-	cursor = channelsTable->cellAt(0, 3).firstCursorPosition();
-	cursor.insertText(tr("Categories"), _boldFormat);
-	cursor = channelsTable->cellAt(0, 4).firstCursorPosition();
-	cursor.insertText(tr("Language"), _boldFormat);
-	cursor = channelsTable->cellAt(0, 5).firstCursorPosition();
-	cursor.insertText(tr("EPG"), _boldFormat);
-	cursor = channelsTable->cellAt(0, 6).firstCursorPosition();
-	cursor.insertText(tr("Logo"), _boldFormat);
+	if(list[0] >= 0) {
+		cursor = channelsTable->cellAt(0, list[0]).firstCursorPosition();
+		cursor.insertText(tr("#"), _boldFormat);
+	}
+	if(list[1] >= 0) {
+		cursor = channelsTable->cellAt(0, list[1]).firstCursorPosition();
+		cursor.insertText(tr("Channel"), _boldFormat);
+	}
+	if(list[2] >= 0) {
+		cursor = channelsTable->cellAt(0, list[2]).firstCursorPosition();
+		cursor.insertText(tr("Url"), _boldFormat);
+	}
+	if(list[3] >= 0) {
+		cursor = channelsTable->cellAt(0, list[3]).firstCursorPosition();
+		cursor.insertText(tr("Categories"), _boldFormat);
+	}
+	if(list[4] >= 0) {
+		cursor = channelsTable->cellAt(0, list[4]).firstCursorPosition();
+		cursor.insertText(tr("Language"), _boldFormat);
+	}
+	if(list[5] >= 0) {
+		cursor = channelsTable->cellAt(0, list[5]).firstCursorPosition();
+		cursor.insertText(tr("EPG"), _boldFormat);
+	}
+	if(list[6] >= 0) {
+		cursor = channelsTable->cellAt(0, list[6]).firstCursorPosition();
+		cursor.insertText(tr("Logo"), _boldFormat);
+	}
 
 	for (int i = 0; i < widget->treeWidget()->topLevelItemCount(); ++i) {
 		int row = channelsTable->rows();
 		channelsTable->insertRows(row, 1);
 
-		cursor = channelsTable->cellAt(row, 0).firstCursorPosition();
-		cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->numberString(), _textFormat);
-		cursor = channelsTable->cellAt(row, 1).firstCursorPosition();
-		cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->name(), _textFormat);
-		cursor = channelsTable->cellAt(row, 2).firstCursorPosition();
-		cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->url(), _textFormat);
-		cursor = channelsTable->cellAt(row, 3).firstCursorPosition();
-		cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->categories().join(", "), _textFormat);
-		cursor = channelsTable->cellAt(row, 4).firstCursorPosition();
-		cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->language(), _textFormat);
-		cursor = channelsTable->cellAt(row, 5).firstCursorPosition();
-		cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->epg(), _textFormat);
-		cursor = channelsTable->cellAt(row, 6).firstCursorPosition();
-		cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->logo(), _textFormat);
+		if(list[0] >= 0) {
+			cursor = channelsTable->cellAt(row, list[0]).firstCursorPosition();
+			cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->numberString(), _textFormat);
+		}
+		if(list[1] >= 0) {
+			cursor = channelsTable->cellAt(row, list[1]).firstCursorPosition();
+			cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->name(), _textFormat);
+		}
+		if(list[2] >= 0) {
+			cursor = channelsTable->cellAt(row, list[2]).firstCursorPosition();
+			cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->url(), _textFormat);
+		}
+		if(list[3] >= 0) {
+			cursor = channelsTable->cellAt(row, list[3]).firstCursorPosition();
+			cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->categories().join(", "), _textFormat);
+		}
+		if(list[4] >= 0) {
+			cursor = channelsTable->cellAt(row, list[4]).firstCursorPosition();
+			cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->language(), _textFormat);
+		}
+		if(list[5] >= 0) {
+			cursor = channelsTable->cellAt(row, list[5]).firstCursorPosition();
+			cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->epg(), _textFormat);
+		}
+		if(list[6] >= 0) {
+			cursor = channelsTable->cellAt(row, list[6]).firstCursorPosition();
+			cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->logo(), _textFormat);
+		}
 	}
 
 	cursor.setPosition(topFrame->lastPosition());

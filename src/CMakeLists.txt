@@ -27,6 +27,7 @@ SET(Tano_UIs
 	ui/MainWindow.ui
 	ui/PlaylistWidget.ui
 	ui/PluginsManager.ui
+	ui/PrintDialog.ui
 	ui/Recorder.ui
 	ui/Schedule.ui
 	ui/SelectPlaylist.ui
@@ -59,6 +60,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/InfoBar.h
 	ui/License.h
 	ui/PlaylistWidget.h
+	ui/PrintDialog.h
 	ui/QtKeySequenceEdit.h
 	ui/Schedule.h
 	ui/SelectPlaylist.h
@@ -113,6 +115,7 @@ SET(Tano_UI_Srcs
 	ui/InfoBar.cpp
 	ui/License.cpp
 	ui/PlaylistWidget.cpp
+	ui/PrintDialog.cpp
 	ui/QtKeySequenceEdit.cpp
 	ui/Schedule.cpp
 	ui/SelectPlaylist.cpp
