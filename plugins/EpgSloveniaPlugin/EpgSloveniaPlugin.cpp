@@ -117,25 +117,25 @@ QStringList EpgSloveniaPlugin::processShow(const QString &input) const
 
 	QStringList show;
 
-	QRegExp exp[10];
+	QRegExp exp[9];
 	exp[0].setPattern("<h4>(.*)</h4>"); //Title
 	exp[1].setPattern("class=\"title\">([^<]*)"); //Channel
 	exp[2].setPattern("class=\"time\">([^<]*)"); //Time
 	exp[3].setPattern("class=\"duration\">([^<]*)</span>"); //Duration
 	exp[4].setPattern("class=\"sub\">([^<]*)"); //Info
 	exp[5].setPattern("class=\"desc\">(.*)</p><p class=\"prevnext\""); //Description
-	exp[6].setPattern("<span>Igrajo:</span>\\s*([^<]*)"); //Starring
-	exp[7].setPattern("<h4><img src='([^']*)"); //Image
-	exp[8].setPattern("href=\"([^\"]*)\" title=\"Prej"); //Previous
-	exp[9].setPattern("href=\"([^\"]*)\" title=\"Naslednja"); //Next
+	exp[6].setPattern("<h4><img src='([^']*)"); //Image
+	exp[7].setPattern("href=\"([^\"]*)\" title=\"Prej"); //Previous
+	exp[8].setPattern("href=\"([^\"]*)\" title=\"Naslednja"); //Next
 
-	for(int i=0; i<10; i++) {
+	for(int i=0; i<9; i++) {
 		exp[i].indexIn(input);
 		if(i==0)
 			show << exp[i].cap(1).replace(QRegExp("(<.*>)"), "");
 		else if(i==5)
-			show << exp[i].cap(1)+"\n\n"+exp[i].cap(2);
-		else if(i==8 || i==9)
+			if(!exp[i].cap(1).contains("<br /><br />"))
+				show << exp[i].cap(1).replace("</p>","");
+		else if(i==7 || i==8)
 			show << exp[i].cap(1).prepend("http://www.siol.net/");
 		else
 			show << exp[i].cap(1);

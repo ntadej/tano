@@ -19,8 +19,6 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QWidget>
 
-#include "epg/EpgManager.h"
-
 namespace Ui
 {
 	class Schedule;
@@ -34,22 +32,22 @@ public:
 	~Schedule();
 
 	void openPlaylist(const QString &p);
-	void setEpg(const QStringList &epgList, const QString &epgPlugin) { _epg->setEpg(epgList, epgPlugin); };
+
+	static const QString IDENTIFIER;
 
 protected:
 	void changeEvent(QEvent *e);
 
 signals:
+	void requestEpg(QString, QString);
 	void urlClicked(QString);
 
 private slots:
 	void channel(QTreeWidgetItem *item);
-	void loadEpg(const QStringList &list, const int &day);
+	void loadEpg(const QStringList &list, const int &day, const QString &identifier);
 
 private:
 	Ui::Schedule *ui;
-
-	EpgManager *_epg;
 };
 
 #endif // TANO_SCHEDULE_H_

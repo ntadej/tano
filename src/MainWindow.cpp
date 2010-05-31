@@ -33,11 +33,13 @@
 #include "plugins/PluginsManager.h"
 #include "ui/EditSettings.h"
 
+const QString MainWindow::IDENTIFIER = "main";
+
 MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()),
 	_time(new Time()), _update(new Updates()),
 	_audioController(0), _backend(0), _videoController(0),
-	_schedule(new Schedule()), _playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow())
+	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new Schedule())
 {
 #if PORTABLE
 	QPixmap pixmap(":/icons/images/splash-portable.png");
@@ -238,7 +240,9 @@ void MainWindow::createConnections()
 	connect(ui->videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
 	connect(ui->videoWidget, SIGNAL(osdVisibility(bool)), ui->osdWidget, SLOT(setVisible(bool)));
 
-	connect(_epg, SIGNAL(epg(QStringList, int)), this, SLOT(showEpg(QStringList, int)));
+	connect(_epg, SIGNAL(epg(QStringList, int, QString)), this, SLOT(showEpg(QStringList, int, QString)));
+	connect(_epg, SIGNAL(epg(QStringList, int, QString)), _schedule, SLOT(loadEpg(QStringList, int, QString)));
+	connect(_schedule, SIGNAL(requestEpg(QString, QString)), _epg, SLOT(request(QString, QString)));
 	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
@@ -454,7 +458,7 @@ void MainWindow::play(const QString &itemFile)
 		ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
 		ui->infoBarWidget->setLogo(_channel->logo());
 
-		_epg->request(_channel->epg());
+		_epg->request(_channel->epg(), MainWindow::IDENTIFIER);
 		ui->channelNumber->display(_channel->number());
 
 		_backend->open(_channel->url());
@@ -491,8 +495,11 @@ void MainWindow::stop()
 	_videoController->reset();
 }
 
-void MainWindow::showEpg(const QStringList &epgValue, const int &id)
+void MainWindow::showEpg(const QStringList &epgValue, const int &id, const QString &identifier)
 {
+	if(identifier != MainWindow::IDENTIFIER)
+		return;
+
 	switch (id) {
 		case 0:
 			ui->infoBarWidget->setEpg(epgValue[0], epgValue[1]);
@@ -568,7 +575,6 @@ void MainWindow::openPlaylist(const bool &start)
 
 	ui->channelToolBox->setItemText(0,ui->playlistWidget->name());
 	_epg->setEpg(ui->playlistWidget->epg(), ui->playlistWidget->epgPlugin());
-	_schedule->setEpg(ui->playlistWidget->epg(), ui->playlistWidget->epgPlugin());
 	_epgShow->loadPlugin(ui->playlistWidget->epgPlugin());
 }
 void MainWindow::openFile()

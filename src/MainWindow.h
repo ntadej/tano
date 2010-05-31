@@ -50,6 +50,8 @@ public:
 	MainWindow(QWidget *parent = 0);
 	~MainWindow();
 
+	static const QString IDENTIFIER;
+
 protected:
 	void changeEvent(QEvent *e);
 	void closeEvent(QCloseEvent *event);
@@ -78,7 +80,7 @@ private slots:
 	void openUrl();
 	void openSubtitles();
 
-	void showEpg(const QStringList &epgValue, const int &id);
+	void showEpg(const QStringList &epgValue, const int &id, const QString &identifier = IDENTIFIER);
 	void processMenu(const QString &type, const QList<QAction*> &list);
 
 	void tooltip(const QString &channelNow = "stop");

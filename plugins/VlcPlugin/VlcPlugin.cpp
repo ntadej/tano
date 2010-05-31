@@ -14,10 +14,11 @@
 *****************************************************************************/
 
 #include <QtCore/QDateTime>
-
+#include <QDebug>
 #include "VlcPlugin.h"
 
 VlcPlugin::VlcPlugin() :
+	_vlcProcess(new QProcess()),
 	_output("")
 {
 #ifdef Q_WS_WIN
@@ -46,17 +47,18 @@ void VlcPlugin::record(const QString &channelName,
 #endif
 
 	_output = fileName;
+	_vlcProcess->start("vlc "+channelUrl+" :demux=dump :demuxdump-file=\""+fileName+"\"");
 }
 
 void VlcPlugin::stop()
 {
-
+	_vlcProcess->kill();
 }
 
 bool VlcPlugin::isRecording() const
 {
-	//if()
-	//	return true;
-	//else
+	if(_vlcProcess->state() == QProcess::Running || _vlcProcess->state() == QProcess::Starting)
+		return true;
+	else
 		return false;
 }

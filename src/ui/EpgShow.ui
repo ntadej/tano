@@ -6,9 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>600</width>
     <height>480</height>
    </rect>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/icons/images/schedule.png</normaloff>:/icons/images/schedule.png</iconset>
+  </property>
+  <property name="currentIndex">
+   <number>1</number>
   </property>
   <widget class="QWidget" name="pageLoading">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -92,17 +99,13 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="2" column="0" colspan="2">
      <widget class="QLabel" name="labelInfo">
       <property name="text">
        <string notr="true">Info</string>
       </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="labelStarring">
-      <property name="text">
-       <string notr="true">Starring</string>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -145,8 +148,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>786</width>
-         <height>339</height>
+         <width>586</width>
+         <height>359</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">

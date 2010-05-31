@@ -61,7 +61,6 @@ void EpgShow::open(const QString &url)
 	ui->labelTime->setText("");
 	ui->labelInfo->setText("");
 	ui->labelDescription->setText("");
-	ui->labelStarring->setText("");
 	ui->labelPhoto->setPixmap(QPixmap(":/icons/images/image.png"));
 
 	show();
@@ -80,13 +79,11 @@ void EpgShow::display(const QStringList &list)
 	ui->labelTime->setText("<h2>" + list[3] + " (" + list[1] + list[2] + ")</h2>");
 	ui->labelInfo->setText("<h3>" + list[4] + "</h3>");
 	ui->labelDescription->setText(list[5]);
-	if(!list[6].isEmpty())
-		ui->labelStarring->setText("<b>" + tr("Starring:") + "</b> " + list[6]);
 
-	_image->getImage(list[7]);
+	_image->getImage(list[6]);
 
-	_epgPrevious = list[8];
-	_epgNext =list[9];
+	_epgPrevious = list[7];
+	_epgNext = list[8];
 
 	setCurrentIndex(1);
 }

@@ -16,6 +16,7 @@
 #ifndef TANO_VLCPLUGIN_H_
 #define TANO_VLCPLUGIN_H_
 
+#include <QtCore/QProcess>
 #include <QtCore/QString>
 
 #include "plugins/RecorderPlugins.h"
@@ -37,6 +38,8 @@ public:
 private:
 	QString _slash;
 	QString _output;
+
+	QProcess *_vlcProcess;
 };
 
 #endif // TANO_VLCPLUGIN_H_

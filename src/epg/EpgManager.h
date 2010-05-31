@@ -32,11 +32,13 @@ public:
 	~EpgManager();
 
 	void setEpg(const QStringList &epg, const QString &epgPlugin);
-	void request(const QString &epg);
 	void stop();
 
+public slots:
+	void request(const QString &epg, const QString &identifier);
+
 signals:
-	void epg(QStringList, int);
+	void epg(QStringList, int, QString);
 
 private slots:
 	void now();
@@ -50,6 +52,8 @@ private:
 	bool _ready;
 
 	QString _currentEpg;
+	QString _currentEpgNow;
+	QString _currentIdentifier;
 	QString _currentLoadEpg;
 	QString _currentRequest;
 	QStringList _epgList;

@@ -16,14 +16,14 @@
 #include "Schedule.h"
 #include "ui_Schedule.h"
 
+const QString Schedule::IDENTIFIER = "schedule";
+
 Schedule::Schedule(QWidget *parent) :
 	QWidget(parent),
-	ui(new Ui::Schedule),
-	_epg(new EpgManager())
+	ui(new Ui::Schedule)
 {
 	ui->setupUi(this);
 
-	connect(_epg, SIGNAL(epg(QStringList, int)), this, SLOT(loadEpg(QStringList, int)));
 	connect(ui->playlist, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(channel(QTreeWidgetItem*)));
 	connect(ui->schedule, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
 }
@@ -31,7 +31,6 @@ Schedule::Schedule(QWidget *parent) :
 Schedule::~Schedule()
 {
 	delete ui;
-	delete _epg;
 }
 
 void Schedule::changeEvent(QEvent *e)
@@ -49,7 +48,7 @@ void Schedule::changeEvent(QEvent *e)
 void Schedule::channel(QTreeWidgetItem *item)
 {
 	ui->schedule->setPage(0);
-	_epg->request(ui->playlist->channelRead(item)->epg());
+	emit requestEpg(ui->playlist->channelRead(item)->epg(), Schedule::IDENTIFIER);
 }
 
 void Schedule::openPlaylist(const QString &p)
@@ -57,8 +56,11 @@ void Schedule::openPlaylist(const QString &p)
 	ui->playlist->open(p);
 }
 
-void Schedule::loadEpg(const QStringList &list, const int &day)
+void Schedule::loadEpg(const QStringList &list, const int &day, const QString &identifier)
 {
+	if(identifier != Schedule::IDENTIFIER)
+		return;
+
 	ui->schedule->setEpg(list, day);
 	ui->schedule->setPage(1);
 }
