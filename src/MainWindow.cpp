@@ -46,9 +46,12 @@ MainWindow::MainWindow(QWidget *parent)	:
 #else
 	QPixmap pixmap(":/icons/images/splash.png");
 #endif
+	Settings *settings = new Settings(this);
 	QSplashScreen *splash = new QSplashScreen(pixmap);
 	splash->setMask(pixmap.mask());
-	splash->show();
+	if(settings->splash())
+		splash->show();
+	delete settings;
 
 	ui->setupUi(this);
 

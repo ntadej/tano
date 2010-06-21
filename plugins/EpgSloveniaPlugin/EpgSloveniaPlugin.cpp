@@ -135,10 +135,16 @@ QStringList EpgSloveniaPlugin::processShow(const QString &input) const
 		else if(i==5)
 			if(!exp[i].cap(1).contains("<br /><br />"))
 				show << exp[i].cap(1).replace("</p>","");
+			else
+				show << exp[i].cap(1).remove(exp[i].cap(1).size()-12, 12).prepend("<p>");
 		else if(i==7 || i==8)
 			show << exp[i].cap(1).prepend("http://www.siol.net/");
 		else
 			show << exp[i].cap(1);
+	}
+
+	for(int i=0; i<9; i++) {
+		qDebug() << show[i];
 	}
 
 	return show;

@@ -118,6 +118,7 @@ void EditSettings::apply()
 	else if(ui->radioWheelChannel->isChecked())
 		_settings->setMouseWheel("channel");
 	_settings->setToolbarLook(ui->toolbarLookComboBox->currentIndex());
+	_settings->setSplash(ui->checkSplash->isChecked());
 	_settings->setStartOnTop(ui->checkTop->isChecked());
 	_settings->setStartLite(ui->checkLite->isChecked());
 	_settings->setStartControls(ui->checkControls->isChecked());
@@ -174,6 +175,7 @@ void EditSettings::read()
 	else if(_settings->mouseWheel() == "channel")
 		ui->radioWheelChannel->setChecked(true);
 	ui->toolbarLookComboBox->setCurrentIndex(_settings->toolbarLook());
+	ui->checkSplash->setChecked(_settings->splash());
 	ui->checkTop->setChecked(_settings->startOnTop());
 	ui->checkLite->setChecked(_settings->startLite());
 	ui->checkControls->setChecked(_settings->startControls());

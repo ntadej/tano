@@ -35,6 +35,7 @@ const QString Settings::DEFAULT_LANGUAGE = "";
 // Channels
 const QString Settings::DEFAULT_PLAYLIST = Settings::PLAYLIST_SIOL_MPEG2;
 // GUI - start
+const bool Settings::DEFAULT_SPLASH = true;
 const bool Settings::DEFAULT_START_LITE = false;
 const bool Settings::DEFAULT_START_ON_TOP = false;
 const bool Settings::DEFAULT_START_CONTROLS = true;
@@ -92,6 +93,7 @@ void Settings::writeSettings()
 
 	setValue("channels/playlist", playlist());
 
+	setValue("start/splash", splash());
 	setValue("start/lite", startLite());
 	setValue("start/ontop", startOnTop());
 	setValue("start/controls", startControls());
@@ -124,6 +126,7 @@ int Settings::readSettings()
 
 	setPlaylist(value("channels/playlist", DEFAULT_PLAYLIST).toString());
 
+	setSplash(value("start/splash", DEFAULT_SPLASH).toBool());
 	setStartLite(value("start/lite", DEFAULT_START_LITE).toBool());
 	setStartOnTop(value("start/ontop", DEFAULT_START_ON_TOP).toBool());
 	setStartControls(value("start/controls", DEFAULT_START_CONTROLS).toBool());

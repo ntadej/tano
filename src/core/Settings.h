@@ -60,6 +60,9 @@ public:
 	static const QString DEFAULT_PLAYLIST;
 
 	// GUI - start
+	bool splash() { return _splash; }
+	void setSplash(const bool &b) { _splash = b; }
+	static const bool DEFAULT_SPLASH;
 	bool startLite() { return _startLite; }
 	void setStartLite(const bool &b) { _startLite = b; }
 	static const bool DEFAULT_START_LITE;
@@ -133,6 +136,7 @@ private:
 	QString _playlist;
 
 	// GUI - start
+	bool _splash;
 	bool _startLite;
 	bool _startOnTop;
 	bool _startControls;
