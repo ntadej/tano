@@ -42,8 +42,8 @@ public:
 	void setLogo(const QString &logo) { _logo = logo; };
 
 private:
-	int _number;
 	QString _name;
+	int _number;
 	QString _language;
 	QString _url;
 	QString _epg;

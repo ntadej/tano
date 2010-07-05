@@ -30,7 +30,7 @@ public:
 	bool write(QIODevice *device);
 
 private:
-	void generateItem(Channel *channel, const int &depth);
+	void generateItem(Channel *channel);
 
 	QTreeWidget *_treeWidget;
 	QString _name;

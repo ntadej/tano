@@ -115,7 +115,7 @@ void Settings::writeSettings()
 	sync();
 }
 
-int Settings::readSettings()
+void Settings::readSettings()
 {
 	setConfigurationVersion(value("general/version", Version::Tano()).toString());
 	setConfigured(value("general/configured", DEFAULT_CONFIGURED).toBool());

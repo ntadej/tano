@@ -40,11 +40,11 @@ bool M3UGenerator::write(QIODevice *device)
 		<< _epgPlugin
 		<< "\n\n";
 	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i)
-		generateItem(_map[_treeWidget->topLevelItem(i)], 1);
+		generateItem(_map[_treeWidget->topLevelItem(i)]);
 	return true;
 }
 
-void M3UGenerator::generateItem(Channel *channel, const int &depth)
+void M3UGenerator::generateItem(Channel *channel)
 {
 	_out << "#EXTINF:"
 		<< channel->numberString() << ","

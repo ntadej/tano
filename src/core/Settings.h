@@ -25,7 +25,7 @@ public:
 	~Settings();
 
 	QString path() const;
-	int readSettings();
+	void readSettings();
 	void writeSettings();
 
 	// Playlists
