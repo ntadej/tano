@@ -37,6 +37,9 @@ About::About(QWidget *parent) :
 	ui->labelVlc->setText("<h3>libVLC "+Version::libVLC().split(" ")[0]+"</h3>");
 	ui->labelQt->setText("<h3>Qt "+Version::Qt()+"</h3>");
 
+#if DESKTOP
+	ui->labelExtra->setText("<h3>Desktop Edition</h3>");
+#endif
 #if PORTABLE
 	ui->labelExtra->setText("<h3>Portable Edition</h3>");
 #endif

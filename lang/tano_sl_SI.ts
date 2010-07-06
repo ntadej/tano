@@ -750,7 +750,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
 <context>
     <name>EpgShow</name>
     <message>
-        <location filename="../src/epg/EpgShow.cpp" line="59"/>
+        <location filename="../src/epg/EpgShow.cpp" line="61"/>
         <source>Show info</source>
         <translation>Informacija o oddaji</translation>
     </message>
@@ -1244,6 +1244,24 @@ To bo ustavilo trenutno snemanje.</translation>
         <location filename="../src/ui/MainWindow.ui" line="153"/>
         <source>Subtitles</source>
         <translation>Podnapisi</translation>
+    </message>
+</context>
+<context>
+    <name>Mobile</name>
+    <message>
+        <location filename="../mobile/Mobile.ui" line="14"/>
+        <source>Tano Mobile</source>
+        <translation>Tano Mobile</translation>
+    </message>
+    <message>
+        <location filename="../mobile/Mobile.ui" line="71"/>
+        <source>&lt;i&gt;Note: This is an experimental version of Tano. All features are not ported yet.&lt;/i&gt;</source>
+        <translation>&lt;i&gt;Opozorilo: To je eksperimentalna različica programa Tano. Vse funkcije še niso prenešene na mobilno platformo.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../mobile/Mobile.ui" line="81"/>
+        <source>Continue</source>
+        <translation>Nadaljuj</translation>
     </message>
 </context>
 <context>

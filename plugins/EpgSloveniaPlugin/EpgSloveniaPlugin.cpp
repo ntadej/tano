@@ -143,9 +143,5 @@ QStringList EpgSloveniaPlugin::processShow(const QString &input) const
 			show << exp[i].cap(1);
 	}
 
-	for(int i=0; i<9; i++) {
-		qDebug() << show[i];
-	}
-
 	return show;
 }

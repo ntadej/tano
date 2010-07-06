@@ -749,7 +749,7 @@ You changes will not be applied.</source>
 <context>
     <name>EpgShow</name>
     <message>
-        <location filename="../src/epg/EpgShow.cpp" line="59"/>
+        <location filename="../src/epg/EpgShow.cpp" line="61"/>
         <source>Show info</source>
         <translation>Ukázat podrobnosti</translation>
     </message>
@@ -1243,6 +1243,24 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <location filename="../src/ui/MainWindow.ui" line="153"/>
         <source>Subtitles</source>
         <translation>Titulky</translation>
+    </message>
+</context>
+<context>
+    <name>Mobile</name>
+    <message>
+        <location filename="../mobile/Mobile.ui" line="14"/>
+        <source>Tano Mobile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mobile/Mobile.ui" line="71"/>
+        <source>&lt;i&gt;Note: This is an experimental version of Tano. All features are not ported yet.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mobile/Mobile.ui" line="81"/>
+        <source>Continue</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,5 @@
 /****************************************************************************
-* Config.h: Tano configuration file
+* Config.h: Tano Mobile configuration file (Tano Mobile)
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,22 +13,10 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#ifndef TANOMOBILE_CONFIG_H_
+#define TANOMOBILE_CONFIG_H_
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define SVN_REVISION @TANO_WC_REVISION@
+#define VERSION "0.1"
+#define MOBILE 1
 
-// Qt version
-#define QT_VERSION_MAJOR @QT_VERSION_MAJOR@
-#define QT_VERSION_MINOR @QT_VERSION_MINOR@
-#define QT_VERSION_PATCH @QT_VERSION_PATCH@
-#define QT_OLD_VERSION @QT_OLD@
-
-// Other settings
-#define DESKTOP 1
-#define PORTABLE @PORTABLEAPP@
-#define DEBUG_CONSOLE @TANO_DEBUG_CONSOLE@
-
-#endif // TANO_CONFIG_H_
+#endif // TANOMOBILE_CONFIG_H_

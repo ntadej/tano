@@ -47,6 +47,8 @@ private slots:
 	void previous();
 
 private:
+	QString processUrl(const QString &url) const;
+
 	Ui::EpgShow *ui;
 
 	GetImage *_image;

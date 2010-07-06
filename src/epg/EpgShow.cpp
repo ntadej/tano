@@ -16,6 +16,8 @@
 #include "EpgShow.h"
 #include "ui_EpgShow.h"
 
+#include <QtCore/QDebug>
+
 EpgShow::EpgShow(QWidget *parent) :
 	QStackedWidget(parent),
 	ui(new Ui::EpgShow),
@@ -64,7 +66,8 @@ void EpgShow::open(const QString &url)
 	ui->labelPhoto->setPixmap(QPixmap(":/icons/images/image.png"));
 
 	show();
-	_loader->getShow(url);
+
+	_loader->getShow(processUrl(url));
 }
 
 void EpgShow::loadPlugin(const QString &plugin)
@@ -107,4 +110,9 @@ void EpgShow::previous()
 		return;
 
 	open(_epgPrevious);
+}
+
+QString EpgShow::processUrl(const QString &url) const
+{
+	return QString(url).replace(QRegExp("day=.&amp;"), "");
 }

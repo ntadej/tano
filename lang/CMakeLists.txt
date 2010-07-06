@@ -1,6 +1,18 @@
-################
-# Translations #
-################
+#############################################################################
+# Tano - An open IP TV player - Translations
+#############################################################################
+# Copyright (C) 2008-2010 Tadej Novak
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+# This file may be used under the terms of the
+# GNU General Public License version 3.0 as published by the
+# Free Software Foundation and appearing in the file LICENSE.GPL
+# included in the packaging of this file.
+#############################################################################
+
 IF(NOT QT_LUPDATE_EXECUTABLE)
 	MESSAGE(WARNING "Tano could not find lupdate. You won't be able to update translations.")
 ENDIF(NOT QT_LUPDATE_EXECUTABLE)
@@ -46,7 +58,12 @@ IF(QT_LUPDATE_EXECUTABLE)
 	FILE(GLOB_RECURSE translate_HDRS ${CMAKE_SOURCE_DIR}/src/*.h)
 	FILE(GLOB_RECURSE translate_UIS ${CMAKE_SOURCE_DIR}/src/*.ui)
 
-	SET(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS})
+	## Search for all translatable strings in the mobile directory
+	FILE(GLOB_RECURSE translate_mobile_SRCS ${CMAKE_SOURCE_DIR}/mobile/*.cpp)
+	FILE(GLOB_RECURSE translate_mobile_HDRS ${CMAKE_SOURCE_DIR}/mobile/*.h)
+	FILE(GLOB_RECURSE translate_mobile_UIS ${CMAKE_SOURCE_DIR}/mobile/*.ui)
+
+	SET(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS} ${translate_mobile_SRCS} ${translate_mobile_HDRS} ${translate_mobile_UIS})
 
 	## Create a target that runs lupdate for all the sources and UI files
 	IF(REFRESH_TRANSLATIONS)
@@ -59,7 +76,5 @@ IF(QT_LUPDATE_EXECUTABLE)
 ENDIF(QT_LUPDATE_EXECUTABLE)
 
 
-################
-# Installation #
-################
+## Installation
 INSTALL(FILES ${Tano_QMS} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/lang")

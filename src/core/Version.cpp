@@ -13,10 +13,12 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include <QVlc/Instance.h>
-
 #include "Config.h"
 #include "Version.h"
+
+#if DESKTOP
+	#include <QVlc/Instance.h>
+#endif
 
 QString Version::Tano()
 {
@@ -55,10 +57,18 @@ QString Version::Qt()
 
 QString Version::libQVlc()
 {
+#if DESKTOP
 	return QVlc::Instance::version();
+#else
+	return QString().number(0);
+#endif
 }
 
 QString Version::libVLC()
 {
+#if DESKTOP
 	return QVlc::Instance::libVlcVersion();
+#else
+	return QString().number(0);
+#endif
 }

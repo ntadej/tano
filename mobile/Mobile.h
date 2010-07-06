@@ -1,5 +1,5 @@
 /****************************************************************************
-* Config.h: Tano configuration file
+* Mobile.h: Main Widget (Tano Mobile)
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,22 +13,37 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#ifndef TANOMOBILE_MOBILE_H_
+#define TANOMOBILE_MOBILE_H_
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define SVN_REVISION @TANO_WC_REVISION@
+#include <QtGui/QMainWindow>
 
-// Qt version
-#define QT_VERSION_MAJOR @QT_VERSION_MAJOR@
-#define QT_VERSION_MINOR @QT_VERSION_MINOR@
-#define QT_VERSION_PATCH @QT_VERSION_PATCH@
-#define QT_OLD_VERSION @QT_OLD@
+#include "core/LocaleManager.h"
 
-// Other settings
-#define DESKTOP 1
-#define PORTABLE @PORTABLEAPP@
-#define DEBUG_CONSOLE @TANO_DEBUG_CONSOLE@
+namespace Ui {
+	class Mobile;
+}
 
-#endif // TANO_CONFIG_H_
+class Mobile : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+	explicit Mobile(QWidget *parent = 0);
+	~Mobile();
+
+protected:
+	void changeEvent(QEvent *e);
+
+private slots:
+	void read();
+
+private:
+	Ui::Mobile *ui;
+
+	LocaleManager *_locale;
+
+	QString _playlist;
+};
+
+#endif // TANOMOBILE_MOBILE_H_

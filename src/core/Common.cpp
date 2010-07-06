@@ -18,16 +18,21 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>
 
-#include <QVlc/Config.h>
-
+#include "Config.h"
 #include "Common.h"
 #include "core/Settings.h"
-#include "ui/About.h"
+
+#if DESKTOP
+	#include "ui/About.h"
+	#include <QVlc/Config.h>
+#endif
 
 void Common::about(QWidget *parent)
 {
+#if DESKTOP
 	About about(parent);
 	about.exec();
+#endif
 }
 
 QString Common::locateResource(const QString &file)
@@ -90,11 +95,10 @@ QList<const char *> Common::libvlcArgs()
 #endif
 
 #ifdef Q_WS_X11	
-#if VLC_1_1
-#else
-	args << "--vout-event"
-		 << "3";
-#endif
+	#if VLC_1_0
+		args << "--vout-event"
+			 << "3";
+	#endif
 #endif
 
 	return args;
