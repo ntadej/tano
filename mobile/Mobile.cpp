@@ -22,6 +22,7 @@
 #include "Config.h"
 #include "core/Common.h"
 #include "core/Settings.h"
+#include "plugins/PluginsLoader.h"
 
 Mobile::Mobile(QWidget *parent) :
 	QMainWindow(parent),
@@ -45,6 +46,9 @@ Mobile::Mobile(QWidget *parent) :
 #endif
 
 	ui->labelVersion->setText(version);
+
+	PluginsLoader *plugins = new PluginsLoader();
+	qDebug() << plugins->epgFile().size();
 }
 
 Mobile::~Mobile()

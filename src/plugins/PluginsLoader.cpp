@@ -18,13 +18,22 @@
 #include <QtCore/QPluginLoader>
 #include <QtGui/QApplication>
 
+#include "Config.h"
 #include "PluginsLoader.h"
 
 PluginsLoader::PluginsLoader()
 {
 	QDir pluginsDir;
+	bool mobile = false;
 
-	if(qApp->applicationDirPath().contains("src")) {
+#if MOBILE
+	mobile = true;
+#endif
+
+	if(mobile) {
+		pluginsDir = QDir(qApp->applicationDirPath());
+		processDir(pluginsDir);
+	} else if(qApp->applicationDirPath().contains("src")) {
 		pluginsDir = QDir(qApp->applicationDirPath());
 		pluginsDir.cdUp();
 		pluginsDir.cd("plugins");
@@ -91,6 +100,8 @@ RecorderPlugin *PluginsLoader::recorder(QObject *plugin)
 	RecorderPluginCreator *recorder = qobject_cast<RecorderPluginCreator *>(plugin);
 	if(recorder)
 		return recorder->createRecorderPluginInstance();
+	else
+		return 0;
 }
 
 EpgPlugin *PluginsLoader::epg(QObject *plugin)
@@ -98,4 +109,6 @@ EpgPlugin *PluginsLoader::epg(QObject *plugin)
 	EpgPluginCreator *epg = qobject_cast<EpgPluginCreator *>(plugin);
 	if(epg)
 		return epg->createEpgPluginInstance();
+	else
+		return 0;
 }

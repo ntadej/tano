@@ -30,6 +30,7 @@ SOURCES += main.cpp\
 	../src/core/Version.cpp\
 	../src/epg/EpgList.cpp\
 	../src/epg/EpgSchedule.cpp\
+	../src/plugins/PluginsLoader.cpp\
 	../src/ui/PlaylistWidget.cpp\
 	../src/xml/M3UHandler.cpp\
 	../src/xml/M3UGenerator.cpp\
@@ -45,6 +46,7 @@ HEADERS  += Config.h\
 	../src/core/Version.h\
 	../src/epg/EpgList.h\
 	../src/epg/EpgSchedule.h\
+	../src/plugins/PluginsLoader.h\
 	../src/ui/PlaylistWidget.h\
 	../src/xml/M3UHandler.h\
 	../src/xml/M3UGenerator.h\
