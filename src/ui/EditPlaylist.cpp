@@ -20,6 +20,9 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
+#include <QDebug>
+
+#include "core/Common.h"
 #include "core/Settings.h"
 #include "plugins/PluginsLoader.h"
 #include "ui/PrintDialog.h"
@@ -35,6 +38,12 @@ EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent) :
 
 	createSettings();
 	createConnections();
+
+	_updateActive = false;
+	_backend = new QVlc::Instance(Common::libvlcArgs(), ui->previewWidget->widgetId());
+	_timer = new QTimer();
+	connect(_backend, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
+	connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
 
 	ui->editWidget->setEnabled(false);
 	ui->playlist->disableCategories();
@@ -57,6 +66,8 @@ EditPlaylist::EditPlaylist(const QString &playlist, QWidget *parent) :
 EditPlaylist::~EditPlaylist()
 {
 	delete ui;
+	delete _backend;
+	delete _timer;
 }
 
 void EditPlaylist::changeEvent(QEvent *e)
@@ -106,6 +117,8 @@ void EditPlaylist::createConnections()
 	connect(ui->actionDown, SIGNAL(triggered()), this, SLOT(moveDown()));
 
 	connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
+
+	connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist()));
 }
 
 void EditPlaylist::deleteItem()
@@ -190,6 +203,69 @@ void EditPlaylist::print()
 {
 	PrintDialog dialog(ui->editName->text(), ui->playlist);
 	dialog.exec();
+}
+
+void EditPlaylist::refreshPlaylist()
+{
+	if(_updateActive) {
+		_timer->stop();
+		_updateActive = false;
+		ui->progressBar->setValue(1);
+	} else {
+		qDebug() << ui->ipFrom->text() << ui->ipPort->value() << ui->ipTimeout->value();
+
+		QStringList ipFrom = ui->ipFrom->text().split(".");
+		_currentIp[0] = ipFrom[0].toInt();
+		_currentIp[1] = ipFrom[1].toInt();
+		_currentIp[2] = ipFrom[2].toInt();
+		_currentIp[3] = 1;
+
+		_currentPort = ui->ipPort->value();
+		_currentTimeout = ui->ipTimeout->value();
+
+		_updateActive = true;
+
+		checkIp();
+	}
+}
+
+void EditPlaylist::checkIp()
+{
+	ui->progressBar->setValue(_currentIp[3]);
+	_backend->open(currentIp());
+
+	_timer->start(_currentTimeout);
+}
+
+void EditPlaylist::checkCurrentIp()
+{
+	if(_currentIpPlaying) {
+		qDebug() << "Playing!";
+	}
+
+	if(_currentIp[3] != 255) {
+		_currentIp[3]++;
+		checkIp();
+	} else {
+		ui->buttonUpdate->setChecked(false);
+	}
+}
+
+QString EditPlaylist::currentIp()
+{
+	QString ip = "udp://@";
+	ip.append(QString().number(_currentIp[0])+".");
+	ip.append(QString().number(_currentIp[1])+".");
+	ip.append(QString().number(_currentIp[2])+".");
+	ip.append(QString().number(_currentIp[3])+":");
+	ip.append(QString().number(_currentPort));
+
+	return ip;
+}
+
+void EditPlaylist::setState(const bool &playing)
+{
+	_currentIpPlaying = playing;
 }
 
 void EditPlaylist::editItem(QTreeWidgetItem *item)

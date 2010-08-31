@@ -16,8 +16,11 @@
 #ifndef TANO_EDITPLAYLIST_H_
 #define TANO_EDITPLAYLIST_H_
 
+#include <QtCore/QTimer>
 #include <QtGui/QMainWindow>
 #include <QtGui/QTreeWidgetItem>
+
+#include <QVlc/Instance.h>
 
 namespace Ui
 {
@@ -58,15 +61,32 @@ private slots:
 	void moveUp();
 	void moveDown();
 
+	void refreshPlaylist();
+	void checkIp();
+	void checkCurrentIp();
+	void setState(const bool &playing);
+
 private:
 	void createConnections();
 	void createSettings();
+
+	QString currentIp();
 
 	Ui::EditPlaylist *ui;
 
 	bool _closeEnabled;
 	QString _playlist;
 	QIcon _channelIcon;
+
+	// Update playlist
+	QVlc::Instance *_backend;
+	int _refresh;
+	int _currentIp[4];
+	int _currentPort;
+	int _currentTimeout;
+	bool _currentIpPlaying;
+	bool _updateActive;
+	QTimer *_timer;
 };
 
 #endif // TANO_EDITPLAYLIST_H_

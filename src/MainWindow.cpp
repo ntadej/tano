@@ -76,6 +76,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::exit()
 {
+	_backend->stop();
+	delete _backend;
+
 	int ret;
 	if(ui->recorder->isRecording()) {
 		ret = QMessageBox::warning(this, tr("Tano"),
@@ -205,6 +208,9 @@ void MainWindow::createSettingsStartup()
 
 	ui->osdWidget->setVisible(settings->startControls());
 	ui->infoWidget->setVisible(settings->startInfo());
+
+	_controlsVisible = settings->startControls();
+	_infoWidgetVisible = settings->startInfo();
 
 	delete settings;
 }

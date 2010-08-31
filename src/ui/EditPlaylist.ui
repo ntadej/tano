@@ -29,9 +29,6 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="0" colspan="2">
-     <widget class="PlaylistWidget" name="playlist" native="true"/>
-    </item>
     <item row="0" column="1">
      <widget class="QLineEdit" name="editName"/>
     </item>
@@ -70,6 +67,9 @@
        <number>3</number>
       </property>
      </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="PlaylistWidget" name="playlist" native="true"/>
     </item>
    </layout>
   </widget>
@@ -123,7 +123,7 @@
    <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents">
+   <widget class="QWidget" name="editWidgetContents">
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
       <widget class="QLabel" name="labelNumber">
@@ -259,6 +259,123 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QDockWidget" name="updateWidget">
+   <property name="features">
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Update Playlist</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="updateWidgetContents">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelFrom">
+       <property name="text">
+        <string>IP Range:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelTimeout">
+       <property name="text">
+        <string>Timeout:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="4">
+      <widget class="QPushButton" name="buttonUpdate">
+       <property name="text">
+        <string>Scan and update</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2" colspan="2">
+      <widget class="QLineEdit" name="ipFrom">
+       <property name="inputMask">
+        <string notr="true">000.000.000;_</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="2" column="2">
+      <widget class="QSpinBox" name="ipTimeout">
+       <property name="suffix">
+        <string> ms</string>
+       </property>
+       <property name="minimum">
+        <number>500</number>
+       </property>
+       <property name="maximum">
+        <number>2000</number>
+       </property>
+       <property name="singleStep">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>800</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelPort">
+       <property name="text">
+        <string>Port:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QSpinBox" name="ipPort">
+       <property name="minimum">
+        <number>80</number>
+       </property>
+       <property name="maximum">
+        <number>9999</number>
+       </property>
+       <property name="value">
+        <number>5000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="3">
+      <widget class="QProgressBar" name="progressBar">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>255</number>
+       </property>
+       <property name="value">
+        <number>1</number>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QVlc::VideoWidget" name="previewWidget" native="true"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
   <action name="actionAdd">
    <property name="icon">
     <iconset resource="images.qrc">
@@ -360,6 +477,41 @@
    <extends>QWidget</extends>
    <header>ui/PlaylistWidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QVlc::VideoWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QVlc/VideoWidget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>fullscreen()</signal>
+    <slot>toggleFullscreen()</slot>
+    <slot>setRatioOriginal()</slot>
+    <slot>setRatio1_1()</slot>
+    <slot>setRatio4_3()</slot>
+    <slot>setRatio16_9()</slot>
+    <slot>setRatio16_10()</slot>
+    <slot>setRatio2_21_1()</slot>
+    <slot>setRatio5_4()</slot>
+    <slot>setCrop1_1()</slot>
+    <slot>setCrop4_3()</slot>
+    <slot>setCrop16_9()</slot>
+    <slot>setCrop16_10()</slot>
+    <slot>setCrop1_85_1()</slot>
+    <slot>setCrop2_21_1()</slot>
+    <slot>setCrop2_35_1()</slot>
+    <slot>setCrop2_39_1()</slot>
+    <slot>setCrop5_4()</slot>
+    <slot>setCrop5_3()</slot>
+    <slot>setFilterBob()</slot>
+    <slot>setFilterBlend()</slot>
+    <slot>setFilterMean()</slot>
+    <slot>setFilterLinear()</slot>
+    <slot>setFilterX()</slot>
+    <slot>setFilterDiscard()</slot>
+    <slot>setFilterDisabled()</slot>
+    <slot>setCropOriginal()</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources>
