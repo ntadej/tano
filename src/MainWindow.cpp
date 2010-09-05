@@ -647,11 +647,11 @@ void MainWindow::showPlaylistEditor()
 			_playlistEditor->activateWindow();
 		} else {
 			delete _playlistEditor;
-			_playlistEditor = new EditPlaylist(_playlistName);
+			_playlistEditor = new EditPlaylist(_playlistName, ui->videoWidget->widgetId());
 			_playlistEditor->show();
 		}
 	} else {
-		_playlistEditor = new EditPlaylist(_playlistName);
+		_playlistEditor = new EditPlaylist(_playlistName, ui->videoWidget->widgetId());
 		_playlistEditor->show();
 	}
 }

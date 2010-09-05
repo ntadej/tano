@@ -119,9 +119,9 @@ void PlaylistWidget::processPlaylist()
 
 }
 
-QTreeWidgetItem *PlaylistWidget::createItem()
+QTreeWidgetItem *PlaylistWidget::createItem(const QString &name, const QString &url)
 {
-	QTreeWidgetItem *newI = _handler->createChannel();
+	QTreeWidgetItem *newI = _handler->createChannel(name, url);
 	ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
 	return newI;
 }

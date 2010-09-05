@@ -31,7 +31,7 @@ class EditPlaylist : public QMainWindow
 {
 Q_OBJECT
 public:
-	EditPlaylist(const QString &playlist, QWidget *parent = 0);
+	EditPlaylist(const QString &playlist, const WId &video, QWidget *parent = 0);
 	~EditPlaylist();
 
 protected:
@@ -41,6 +41,7 @@ protected:
 private slots:
 	void deleteItem();
 	void addItem();
+	void addItem(const QString &name, const QString &url);
 
 	void save();
 	void import();
@@ -61,7 +62,7 @@ private slots:
 	void moveUp();
 	void moveDown();
 
-	void refreshPlaylist();
+	void refreshPlaylist(const bool &refresh);
 	void checkIp();
 	void checkCurrentIp();
 	void setState(const bool &playing);
@@ -85,7 +86,6 @@ private:
 	int _currentPort;
 	int _currentTimeout;
 	bool _currentIpPlaying;
-	bool _updateActive;
 	QTimer *_timer;
 };
 

@@ -159,7 +159,7 @@ void M3UHandler::processList()
 	}
 }
 
-QTreeWidgetItem *M3UHandler::createChannel()
+QTreeWidgetItem *M3UHandler::createChannel(const QString &name, const QString &url)
 {
 	int tmpNum;
 	for(int i=1; i<1000; i++) {
@@ -169,13 +169,21 @@ QTreeWidgetItem *M3UHandler::createChannel()
 		}
 	}
 
+	QString cname;
+	if(name == 0)
+		cname = QObject::tr("New channel");
+	else
+		cname = name;
+
 	_item = new QTreeWidgetItem(_treeWidget);
 	_item->setData(0, Qt::UserRole, "channel");
 	_item->setIcon(0, _channelIcon);
 	_item->setText(0, processNum(QString().number(tmpNum)));
-	_item->setText(1, QObject::tr("New channel"));
+	_item->setText(1, cname);
 
-	_channel = new Channel(QObject::tr("New channel"), tmpNum);
+	_channel = new Channel(cname, tmpNum);
+	if(url != 0)
+		_channel->setUrl(url);
 
 	_map.insert(_item, _channel);
 	_nmap.insert(tmpNum, _channel);

@@ -357,7 +357,7 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="0" colspan="3">
+     <item row="4" column="0" colspan="4">
       <widget class="QProgressBar" name="progressBar">
        <property name="minimum">
         <number>1</number>
@@ -369,9 +369,6 @@
         <number>1</number>
        </property>
       </widget>
-     </item>
-     <item row="4" column="3">
-      <widget class="QVlc::VideoWidget" name="previewWidget" native="true"/>
      </item>
     </layout>
    </widget>
@@ -477,41 +474,6 @@
    <extends>QWidget</extends>
    <header>ui/PlaylistWidget.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>QVlc::VideoWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">QVlc/VideoWidget.h</header>
-   <container>1</container>
-   <slots>
-    <signal>fullscreen()</signal>
-    <slot>toggleFullscreen()</slot>
-    <slot>setRatioOriginal()</slot>
-    <slot>setRatio1_1()</slot>
-    <slot>setRatio4_3()</slot>
-    <slot>setRatio16_9()</slot>
-    <slot>setRatio16_10()</slot>
-    <slot>setRatio2_21_1()</slot>
-    <slot>setRatio5_4()</slot>
-    <slot>setCrop1_1()</slot>
-    <slot>setCrop4_3()</slot>
-    <slot>setCrop16_9()</slot>
-    <slot>setCrop16_10()</slot>
-    <slot>setCrop1_85_1()</slot>
-    <slot>setCrop2_21_1()</slot>
-    <slot>setCrop2_35_1()</slot>
-    <slot>setCrop2_39_1()</slot>
-    <slot>setCrop5_4()</slot>
-    <slot>setCrop5_3()</slot>
-    <slot>setFilterBob()</slot>
-    <slot>setFilterBlend()</slot>
-    <slot>setFilterMean()</slot>
-    <slot>setFilterLinear()</slot>
-    <slot>setFilterX()</slot>
-    <slot>setFilterDiscard()</slot>
-    <slot>setFilterDisabled()</slot>
-    <slot>setCropOriginal()</slot>
-   </slots>
   </customwidget>
  </customwidgets>
  <resources>

@@ -37,24 +37,24 @@ public:
 	void open(const QString &file);
 	void save(const QString &name, const QString &epg, const QString &file);
 
-	QTreeWidgetItem* createItem();
+	QTreeWidgetItem* createItem(const QString &name = 0, const QString &url = 0);
 	void deleteItem();
 
-	QString name() const { return _handler->name(); };
-	QString epgPlugin() const { return _handler->epgPlugin(); };
-	QStringList epg() const { return _handler->epg(); };
-	QString fileName() const { return _fileName; };
-	QList<int> nums() const { return _handler->nums(); };
+	QString name() const { return _handler->name(); }
+	QString epgPlugin() const { return _handler->epgPlugin(); }
+	QStringList epg() const { return _handler->epg(); }
+	QString fileName() const { return _fileName; }
+	QList<int> nums() const { return _handler->nums(); }
 	QTreeWidget *treeWidget();
 
 	void import(const QString &file);
-	int processNum(QTreeWidgetItem *channel, const int &num) { return _handler->processNewNum(channel, num); };
-	void moveUp(QTreeWidgetItem *channel) { _handler->moveUp(channel); };
-	void moveDown(QTreeWidgetItem *channel) { _handler->moveDown(channel); };
+	int processNum(QTreeWidgetItem *channel, const int &num) { return _handler->processNewNum(channel, num); }
+	void moveUp(QTreeWidgetItem *channel) { _handler->moveUp(channel); }
+	void moveDown(QTreeWidgetItem *channel) { _handler->moveDown(channel); }
 	void disableCategories();
 
-	Channel *channelRead(QTreeWidgetItem* clickedChannel) {	return _handler->channelRead(clickedChannel); };
-	Channel *channelRead(const int &clickedChannel) { return _handler->channelRead(clickedChannel); };
+	Channel *channelRead(QTreeWidgetItem* clickedChannel) {	return _handler->channelRead(clickedChannel); }
+	Channel *channelRead(const int &clickedChannel) { return _handler->channelRead(clickedChannel); }
 
 protected:
 	void changeEvent(QEvent *e);
