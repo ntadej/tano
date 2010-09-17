@@ -1689,12 +1689,12 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Prednastavljene sheme</translation>
     </message>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="123"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="116"/>
         <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
         <translation>&lt;b&gt;Slovenija&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="130"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="123"/>
         <source>&lt;b&gt;Global&lt;/b&gt;</source>
         <translation>&lt;b&gt;Globalno&lt;/b&gt;</translation>
     </message>

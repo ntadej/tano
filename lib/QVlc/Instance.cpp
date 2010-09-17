@@ -116,7 +116,7 @@ void QVlc::Instance::open(const QString &media)
 	/* Disable mouse and keyboard events */
 #if VLC_1_1
 	libvlc_video_set_key_input(_vlcCurrentMediaPlayer, false);
-	libvlc_video_set_mouse_input(_vlcCurrentMediaPlayer, false);
+	//libvlc_video_set_mouse_input(_vlcCurrentMediaPlayer, false);
 #endif
 
 	/* Get our media instance to use our window */

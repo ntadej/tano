@@ -30,7 +30,7 @@ QString Version::Tano()
 #else
 	version = "Unknown";
 #endif
-#ifdef SVN_REVISION
+#if SVN_REVISION
 	svn = SVN_REVISION;
 #else
 	svn = 0;

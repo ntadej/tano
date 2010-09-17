@@ -226,7 +226,7 @@ IF(MINGW)
 		COMMAND ${WINDRES_PROGRAM}
 		-i ${CMAKE_SOURCE_DIR}/src/tano.rc
 		-o ${CMAKE_BINARY_DIR}/src/tano.obj
-		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR/src"}
+		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src"
 	)
 	SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/tano.obj)
 ENDIF(MINGW)
