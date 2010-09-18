@@ -26,7 +26,7 @@
 #include <QtGui/QSplashScreen>
 
 #include "Config.h"
-#include <QVlc/Config.h>
+#include <vlc-qt/Config.h>
 
 #include "core/Common.h"
 #include "core/Settings.h"
@@ -143,10 +143,10 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
-	_backend = new QVlc::Instance(Common::libvlcArgs(), ui->videoWidget->widgetId());
+	_backend = new VlcInstance(Common::libvlcArgs(), ui->videoWidget->widgetId());
 
-	_audioController = new QVlc::AudioControl();
-	_videoController = new QVlc::VideoControl(_defaultSubtitleLanguage);
+	_audioController = new VlcAudioControl();
+	_videoController = new VlcVideoControl(_defaultSubtitleLanguage);
 
 #if VLC_1_1
 	ui->menuDeinterlacing->setEnabled(true);

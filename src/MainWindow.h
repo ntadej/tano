@@ -21,9 +21,9 @@
 #include <QtGui/QShowEvent>
 #include <QtGui/QMainWindow>
 
-#include <QVlc/AudioControl.h>
-#include <QVlc/Instance.h>
-#include <QVlc/VideoControl.h>
+#include <vlc-qt/AudioControl.h>
+#include <vlc-qt/Instance.h>
+#include <vlc-qt/VideoControl.h>
 
 #include "channels/Channel.h"
 #include "core/ChannelSelect.h"
@@ -139,9 +139,9 @@ private:
 	Updates *_update;
 
 	//Backend
-	QVlc::AudioControl *_audioController;
-	QVlc::Instance *_backend;
-	QVlc::VideoControl *_videoController;
+	VlcAudioControl *_audioController;
+	VlcInstance *_backend;
+	VlcVideoControl *_videoController;
 
 	//GUI
 	Ui::MainWindow *ui;

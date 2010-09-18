@@ -39,7 +39,7 @@ EditPlaylist::EditPlaylist(const QString &playlist, const WId &video, QWidget *p
 	createSettings();
 	createConnections();
 
-	_backend = new QVlc::Instance(Common::libvlcArgs(), video);
+	_backend = new VlcInstance(Common::libvlcArgs(), video);
 	_timer = new QTimer();
 	connect(_backend, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
 	connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));

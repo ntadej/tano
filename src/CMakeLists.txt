@@ -212,7 +212,7 @@ INCLUDE_DIRECTORIES("${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src")
 # This line adds the include path of the Qt
 # directory to the compiler include path
 INCLUDE(${QT_USE_FILE})
-INCLUDE_DIRECTORIES(${LIBQVLC_INCLUDE_DIR})
+INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
 
 IF(MINGW)
 	# CMake currently doesn't support windres yet. Add command manually
@@ -236,7 +236,7 @@ ENDIF(MINGW)
 ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs_Srcs})
 
 # Here the needed Qt Libraries are added to the link command.
-TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${LIBQVLC_LIBRARY})
+TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
 
 
 ################

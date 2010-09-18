@@ -24,7 +24,6 @@
 
 #if DESKTOP
 	#include "ui/About.h"
-	#include <QVlc/Config.h>
 #endif
 
 void Common::about(QWidget *parent)
@@ -92,13 +91,6 @@ QList<const char *> Common::libvlcArgs()
 
 #ifdef Q_WS_WIN
 	args << "--plugin-path=vlc\\plugins\\";
-#endif
-
-#ifdef Q_WS_X11	
-	#if VLC_1_0
-		args << "--vout-event"
-			 << "3";
-	#endif
 #endif
 
 	return args;

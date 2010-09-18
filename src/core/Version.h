@@ -23,7 +23,7 @@ class Version
 public:
 	static QString Tano();
 	static QString Qt();
-	static QString libQVlc();
+	static QString libVLCQt();
 	static QString libVLC();
 };
 

@@ -17,7 +17,7 @@
 #include "Version.h"
 
 #if DESKTOP
-	#include <QVlc/Instance.h>
+	#include <vlc-qt/Instance.h>
 #endif
 
 QString Version::Tano()
@@ -55,10 +55,10 @@ QString Version::Qt()
 	return version;
 }
 
-QString Version::libQVlc()
+QString Version::libVLCQt()
 {
 #if DESKTOP
-	return QVlc::Instance::version();
+	return VlcInstance::version();
 #else
 	return QString().number(0);
 #endif
@@ -67,7 +67,7 @@ QString Version::libQVlc()
 QString Version::libVLC()
 {
 #if DESKTOP
-	return QVlc::Instance::libVlcVersion();
+	return VlcInstance::libVlcVersion();
 #else
 	return QString().number(0);
 #endif
