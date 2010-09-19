@@ -18,7 +18,6 @@
 
 // Tano version
 #define VERSION "@TANO_VERSION@"
-#define SVN_REVISION @TANO_WC_REVISION@
 
 // Qt version
 #define QT_VERSION_MAJOR @QT_VERSION_MAJOR@
@@ -28,7 +27,6 @@
 
 // Other settings
 #define DESKTOP 1
-#define PORTABLE @PORTABLEAPP@
 #define DEBUG_CONSOLE @TANO_DEBUG_CONSOLE@
 
 #endif // TANO_CONFIG_H_

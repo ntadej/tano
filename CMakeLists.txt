@@ -88,23 +88,7 @@ FILE(READ VERSION TANO_VERSION)
 STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
 MESSAGE("You are compiling Tano ${TANO_VERSION}")
 
-# SVN revision
-MACRO(Subversion_GET_REVISION dir variable)
-  EXECUTE_PROCESS(COMMAND ${Subversion_SVN_EXECUTABLE} info ${dir}
-    OUTPUT_VARIABLE ${variable}
-    OUTPUT_STRIP_TRAILING_WHITESPACE)
-  STRING(REGEX REPLACE "^(.*\n)?Revision: ([^\n]+).*"
-    "\\2" ${variable} "${${variable}}")
-ENDMACRO(Subversion_GET_REVISION)
-
-FIND_PACKAGE(Subversion)
-IF(Subversion_FOUND)
-	Subversion_GET_REVISION(${CMAKE_SOURCE_DIR} TANO_WC_REVISION)
-    MESSAGE("Current revision is ${TANO_WC_REVISION}")
-ELSE(Subversion_FOUND)
-	SET(TANO_WC_REVISION 0)
-ENDIF(Subversion_FOUND)
-
+# Qt version check
 IF(QT_VERSION_MINOR MATCHES 5)
     SET(QT_OLD 1)
 ELSE(QT_VERSION_MINOR MATCHES 5)
@@ -117,13 +101,6 @@ ENDIF(QT_VERSION_MINOR MATCHES 5)
 #################
 OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile")
 MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
-OPTION(PORTABLE "Compile as PortableApps application")
-MESSAGE("Compile as PortableApps application: ${PORTABLE}")
-IF(${PORTABLE} MATCHES "ON")
-SET(PORTABLEAPP 1)
-ELSE(${PORTABLE} MATCHES "ON")
-SET(PORTABLEAPP 0)
-ENDIF(${PORTABLE} MATCHES "ON")
 
 
 ###################

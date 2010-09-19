@@ -23,23 +23,14 @@
 QString Version::Tano()
 {
 	QString version;
-	int svn;
 
 #ifdef VERSION
 	version = QString(VERSION);
 #else
 	version = "Unknown";
 #endif
-#if SVN_REVISION
-	svn = SVN_REVISION;
-#else
-	svn = 0;
-#endif
 
-	if(svn != 0)
-		return version+"-r"+QString::number(svn);
-	else
-		return version;
+	return version;
 }
 
 QString Version::Qt()

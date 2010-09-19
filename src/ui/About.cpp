@@ -34,14 +34,11 @@ About::About(QWidget *parent) :
 	ui->labelLinks->setText(ui->labelLinks->text().replace("info@tanoplayer.co.cc","<a href='info@tanoplayer.co.cc'>info@tanoplayer.co.cc</a>"));
 
 	ui->labelQVlc->setText("<h3>libvlc-qt "+Version::libVLCQt()+"</h3>");
-	ui->labelVlc->setText("<h3>libVLC "+Version::libVLC().split(" ")[0]+"</h3>");
+	ui->labelVlc->setText("<h3>libvlc "+Version::libVLC().split(" ")[0]+"</h3>");
 	ui->labelQt->setText("<h3>Qt "+Version::Qt()+"</h3>");
 
 #if DESKTOP
 	ui->labelExtra->setText("<h3>Desktop Edition</h3>");
-#endif
-#if PORTABLE
-	ui->labelExtra->setText("<h3>Portable Edition</h3>");
 #endif
 #if DEBUG_CONSOLE
 	ui->labelExtra->setText("<h3>Debug Edition</h3>");

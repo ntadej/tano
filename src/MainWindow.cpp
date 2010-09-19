@@ -41,11 +41,7 @@ MainWindow::MainWindow(QWidget *parent)	:
 	_audioController(0), _backend(0), _videoController(0),
 	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new Schedule())
 {
-#if PORTABLE
-	QPixmap pixmap(":/icons/images/splash-portable.png");
-#else
 	QPixmap pixmap(":/icons/images/splash.png");
-#endif
 	Settings *settings = new Settings(this);
 	QSplashScreen *splash = new QSplashScreen(pixmap);
 	splash->setMask(pixmap.mask());
