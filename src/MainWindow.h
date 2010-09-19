@@ -23,6 +23,7 @@
 
 #include <vlc-qt/AudioControl.h>
 #include <vlc-qt/Instance.h>
+#include <vlc-qt/MediaPlayer.h>
 #include <vlc-qt/VideoControl.h>
 
 #include "channels/Channel.h"
@@ -140,7 +141,8 @@ private:
 
 	//Backend
 	VlcAudioControl *_audioController;
-	VlcInstance *_backend;
+	VlcInstance *_mediaInstance;
+	VlcMediaPlayer *_mediaPlayer;
 	VlcVideoControl *_videoController;
 
 	//GUI

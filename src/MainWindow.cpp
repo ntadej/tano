@@ -38,7 +38,7 @@ const QString MainWindow::IDENTIFIER = "main";
 MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()),
 	_time(new Time()), _update(new Updates()),
-	_audioController(0), _backend(0), _videoController(0),
+	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0),
 	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new Schedule())
 {
 	QPixmap pixmap(":/icons/images/splash.png");
@@ -72,9 +72,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::exit()
 {
-	_backend->stop();
-	delete _backend;
-
 	int ret;
 	if(ui->recorder->isRecording()) {
 		ret = QMessageBox::warning(this, tr("Tano"),
@@ -139,14 +136,13 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
-	_backend = new VlcInstance(Common::libvlcArgs(), ui->videoWidget->widgetId());
+	_mediaInstance = new VlcInstance(Common::libvlcArgs(), this);
+	_mediaPlayer = new VlcMediaPlayer(ui->videoWidget->widgetId(), this);
 
 	_audioController = new VlcAudioControl();
 	_videoController = new VlcVideoControl(_defaultSubtitleLanguage);
 
-#if VLC_1_1
 	ui->menuDeinterlacing->setEnabled(true);
-#endif
 }
 
 void MainWindow::createSettings()
@@ -233,8 +229,8 @@ void MainWindow::createConnections()
 	connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
 	connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
-	connect(ui->actionPlay, SIGNAL(triggered()), _backend, SLOT(pause()));
-	connect(ui->actionStop, SIGNAL(triggered()), _backend, SLOT(stop()));
+	connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(pause()));
+	connect(ui->actionStop, SIGNAL(triggered()), _mediaPlayer, SLOT(stop()));
 	connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 
 	connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playChannel(QTreeWidgetItem*)));
@@ -258,7 +254,7 @@ void MainWindow::createConnections()
 
 	connect(_audioController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
 	connect(_videoController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
-	connect(_backend, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool, bool, bool)));
+	connect(_mediaPlayer, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool, bool, bool)));
 
 	connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
 	connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
@@ -466,12 +462,12 @@ void MainWindow::play(const QString &itemFile)
 		_epg->request(_channel->epg(), MainWindow::IDENTIFIER);
 		ui->channelNumber->display(_channel->number());
 
-		_backend->open(_channel->url());
+		_mediaPlayer->open(_channel->url());
 		tooltip(_channel->name());
 		_trayIcon->changeToolTip(_channel->name());
 	} else {
 		ui->infoWidget->hide();
-		_backend->open(itemFile);
+		_mediaPlayer->open(itemFile);
 		tooltip(itemFile);
 	}
 

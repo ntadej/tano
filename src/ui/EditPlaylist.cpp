@@ -39,9 +39,10 @@ EditPlaylist::EditPlaylist(const QString &playlist, const WId &video, QWidget *p
 	createSettings();
 	createConnections();
 
-	_backend = new VlcInstance(Common::libvlcArgs(), video);
+	_instance = new VlcInstance(Common::libvlcArgs(), this);
+	_player = new VlcMediaPlayer(video, this);
 	_timer = new QTimer();
-	connect(_backend, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
+	connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
 	connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
 
 	ui->editWidget->setEnabled(false);
@@ -65,7 +66,8 @@ EditPlaylist::EditPlaylist(const QString &playlist, const WId &video, QWidget *p
 EditPlaylist::~EditPlaylist()
 {
 	delete ui;
-	delete _backend;
+	delete _instance;
+	delete _player;
 	delete _timer;
 }
 
@@ -237,7 +239,7 @@ void EditPlaylist::refreshPlaylist(const bool &refresh)
 void EditPlaylist::checkIp()
 {
 	ui->progressBar->setValue(_currentIp[3]);
-	_backend->open(currentIp());
+	_player->open(currentIp());
 
 	_timer->start(_currentTimeout);
 }
@@ -245,7 +247,7 @@ void EditPlaylist::checkIp()
 void EditPlaylist::checkCurrentIp()
 {
 	if(_currentIpPlaying) {
-		_backend->stop();
+		_player->stop();
 
 		bool newChannel = true;
 		for(int i=0; i<ui->playlist->treeWidget()->topLevelItemCount(); i++) {

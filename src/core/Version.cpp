@@ -49,7 +49,7 @@ QString Version::Qt()
 QString Version::libVLCQt()
 {
 #if DESKTOP
-	return VlcInstance::version();
+	return VlcInstance::libVersion();
 #else
 	return QString().number(0);
 #endif
@@ -58,7 +58,7 @@ QString Version::libVLCQt()
 QString Version::libVLC()
 {
 #if DESKTOP
-	return VlcInstance::libVlcVersion();
+	return VlcInstance::version();
 #else
 	return QString().number(0);
 #endif

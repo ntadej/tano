@@ -21,6 +21,7 @@
 #include <QtGui/QTreeWidgetItem>
 
 #include <vlc-qt/Instance.h>
+#include <vlc-qt/MediaPlayer.h>
 
 namespace Ui
 {
@@ -80,7 +81,8 @@ private:
 	QIcon _channelIcon;
 
 	// Update playlist
-	VlcInstance *_backend;
+	VlcInstance *_instance;
+	VlcMediaPlayer *_player;
 	int _refresh;
 	int _currentIp[4];
 	int _currentPort;
