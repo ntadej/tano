@@ -20,6 +20,9 @@
     </property>
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
       <widget class="QWidget" name="pageIntro">
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
@@ -28,7 +31,7 @@
            <string notr="true"/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../src/ui/images.qrc">:/icons/images/tano.png</pixmap>
+           <pixmap resource="../src/ui/images.qrc">:/icons/images/tano-small.png</pixmap>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -38,17 +41,10 @@
         <item>
          <widget class="QLabel" name="labelTitle">
           <property name="text">
-           <string notr="true">&lt;h1&gt;Tano Mobile&lt;/h1&gt;</string>
+           <string notr="true">&lt;h2&gt;Tano Mobile&lt;/h2&gt;</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="labelVersion">
-          <property name="text">
-           <string/>
           </property>
          </widget>
         </item>
@@ -68,7 +64,7 @@
         <item>
          <widget class="QLabel" name="labelWarning">
           <property name="text">
-           <string>&lt;i&gt;Note: This is an experimental version of Tano. All features are not ported yet.&lt;/i&gt;</string>
+           <string>&lt;i&gt;Note: This is an experimental version of Tano. All features might not work yet.&lt;/i&gt;</string>
           </property>
           <property name="wordWrap">
            <bool>true</bool>
@@ -95,6 +91,40 @@
     </item>
    </layout>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="toolTip">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open Playlist</string>
+   </property>
+   <property name="toolTip">
+    <string>Open Playlist</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+   <property name="toolTip">
+    <string>Settings</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

@@ -1,5 +1,5 @@
 /****************************************************************************
-* Mobile.h: Main Widget (Tano Mobile)
+* About.cpp: About dialog (Tano Mobile)
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,41 +13,37 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANOMOBILE_MOBILE_H_
-#define TANOMOBILE_MOBILE_H_
+#include "About.h"
+#include "ui_About.h"
 
-#include <QtGui/QMainWindow>
-
-#include "core/LocaleManager.h"
-
-namespace Ui {
-	class Mobile;
+About::About(const QString &version, QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::About)
+{
+    ui->setupUi(this);
+	ui->labelVersion->setText(version);
 }
 
-class Mobile : public QMainWindow
+About::About(QWidget *parent) :
+	QDialog(parent),
+	ui(new Ui::About)
 {
-    Q_OBJECT
+	ui->setupUi(this);
+}
 
-public:
-	explicit Mobile(QWidget *parent = 0);
-	~Mobile();
+About::~About()
+{
+    delete ui;
+}
 
-protected:
-	void changeEvent(QEvent *e);
-
-private slots:
-	void about();
-	void openPlaylist();
-	void read();
-	void settings();
-
-private:
-	Ui::Mobile *ui;
-
-	LocaleManager *_locale;
-
-	QString _playlist;
-	QString _version;
-};
-
-#endif // TANOMOBILE_MOBILE_H_
+void About::changeEvent(QEvent *e)
+{
+	QDialog::changeEvent(e);
+	switch (e->type()) {
+		case QEvent::LanguageChange:
+			ui->retranslateUi(this);
+			break;
+		default:
+			break;
+	}
+}

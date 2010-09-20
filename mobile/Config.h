@@ -16,7 +16,7 @@
 #ifndef TANOMOBILE_CONFIG_H_
 #define TANOMOBILE_CONFIG_H_
 
-#define VERSION "0.1"
+#define VERSION "0.7"
 #define MOBILE 1
 
 #endif // TANOMOBILE_CONFIG_H_

@@ -21,7 +21,10 @@ TEMPLATE = app
 INCLUDEPATH = ../src
 
 SOURCES += main.cpp\
+	About.cpp\
+	EditSettings.cpp\
 	Mobile.cpp\
+	SelectPlaylist.cpp\
 	../src/channels/Channel.cpp\
 	../src/channels/ChannelEpg.cpp\
 	../src/core/Common.cpp\
@@ -36,8 +39,11 @@ SOURCES += main.cpp\
 	../src/xml/M3UGenerator.cpp\
 	../src/xml/tanohandler.cpp
 
-HEADERS  += Config.h\
+HEADERS  += About.h\
+	Config.h\
+	EditSettings.h\
 	Mobile.h\
+	SelectPlaylist.h\
 	../src/channels/Channel.h\
 	../src/channels/ChannelEpg.h\
 	../src/core/Common.h\
@@ -50,10 +56,15 @@ HEADERS  += Config.h\
 	../src/ui/PlaylistWidget.h\
 	../src/xml/M3UHandler.h\
 	../src/xml/M3UGenerator.h\
-	../src/xml/tanohandler.h \
+	../src/xml/tanohandler.h
 
-FORMS += Mobile.ui\
+
+FORMS += About.ui\
+	EditSettings.ui\
+	Mobile.ui\
+	SelectPlaylist.ui\
 	../src/ui/EpgSchedule.ui\
 	../src/ui/PlaylistWidget.ui
+
 
 RESOURCES = ../src/ui/images.qrc

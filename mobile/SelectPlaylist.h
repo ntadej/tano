@@ -1,5 +1,5 @@
 /****************************************************************************
-* Mobile.h: Main Widget (Tano Mobile)
+* SelectPlaylist.h: Common playlist selector widget (Tano Mobile)
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,41 +13,35 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANOMOBILE_MOBILE_H_
-#define TANOMOBILE_MOBILE_H_
+#ifndef TANOMOBILE_SELECTPLAYLIST_H_
+#define TANOMOBILE_SELECTPLAYLIST_H_
 
-#include <QtGui/QMainWindow>
+#include <QtGui/QWidget>
 
-#include "core/LocaleManager.h"
-
-namespace Ui {
-	class Mobile;
+namespace Ui
+{
+	class SelectPlaylist;
 }
 
-class Mobile : public QMainWindow
+class SelectPlaylist : public QWidget
 {
-    Q_OBJECT
-
+	Q_OBJECT
 public:
-	explicit Mobile(QWidget *parent = 0);
-	~Mobile();
+	SelectPlaylist(QWidget *parent = 0);
+	~SelectPlaylist();
+
+	QString playlist() const;
+	void setPlaylist(const QString &playlist);
 
 protected:
 	void changeEvent(QEvent *e);
 
 private slots:
-	void about();
-	void openPlaylist();
-	void read();
-	void settings();
+	void playlistBrowse();
+	void playlistReset();
 
 private:
-	Ui::Mobile *ui;
-
-	LocaleManager *_locale;
-
-	QString _playlist;
-	QString _version;
+	Ui::SelectPlaylist *ui;
 };
 
-#endif // TANOMOBILE_MOBILE_H_
+#endif // TANOMOBILE_SELECTPLAYLIST_H_

@@ -1,5 +1,5 @@
 /****************************************************************************
-* Mobile.h: Main Widget (Tano Mobile)
+* About.h: About dialog (Tano Mobile)
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,41 +13,29 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANOMOBILE_MOBILE_H_
-#define TANOMOBILE_MOBILE_H_
+#ifndef TANOMOBILE_ABOUT_H_
+#define TANOMOBILE_ABOUT_H_
 
-#include <QtGui/QMainWindow>
-
-#include "core/LocaleManager.h"
+#include <QtGui/QDialog>
 
 namespace Ui {
-	class Mobile;
+	class About;
 }
 
-class Mobile : public QMainWindow
+class About : public QDialog
 {
-    Q_OBJECT
+Q_OBJECT
 
 public:
-	explicit Mobile(QWidget *parent = 0);
-	~Mobile();
+	About(const QString &version, QWidget *parent = 0);
+	About(QWidget *parent = 0);
+	~About();
 
 protected:
 	void changeEvent(QEvent *e);
 
-private slots:
-	void about();
-	void openPlaylist();
-	void read();
-	void settings();
-
 private:
-	Ui::Mobile *ui;
-
-	LocaleManager *_locale;
-
-	QString _playlist;
-	QString _version;
+	Ui::About *ui;
 };
 
-#endif // TANOMOBILE_MOBILE_H_
+#endif // TANOMOBILE_ABOUT_H_

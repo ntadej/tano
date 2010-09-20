@@ -63,6 +63,11 @@ QString Common::locateResource(const QString &file)
 		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
 #endif
 
+#if MOBILE
+	else if (QFileInfo("/usr/local/share/tano/" + file).exists())
+		path = QFileInfo("/usr/local/share/tano/" + file).absoluteFilePath();
+#endif
+
 	return path;
 }
 
