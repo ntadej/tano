@@ -1,5 +1,5 @@
 /****************************************************************************
-* Updates.h: Update manager
+* UpdateManager.h: Update manager
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,32 +13,35 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_UPDATES_H_
-#define TANO_UPDATES_H_
+#ifndef TANO_UPDATEMANAGER_H_
+#define TANO_UPDATEMANAGER_H_
 
 #include <QtCore/QString>
 #include <QtCore/QTextCodec>
 #include <QtNetwork/QHttp>
 
-class Updates : public QHttp
+#include "xml/UpdateHandler.h"
+
+class UpdateManager : public QHttp
 {
 Q_OBJECT
 public:
-	Updates();
-	~Updates();
+	UpdateManager(QObject *parent = 0);
+	~UpdateManager();
 
 public slots:
 	void getUpdates();
 
 signals:
-	void updatesDone(QStringList);
+	void updates(const QStringList);
 
 private slots:
-	void processUpdates(const QString &v);
-	void updatesPrint();
+	void readUpdates();
 
 private:
 	QTextCodec *_codec;
+
+	UpdateHandler *_handler;
 };
 
-#endif // TANO_UPDATES_H_
+#endif // TANO_UPDATEMANAGER_H_

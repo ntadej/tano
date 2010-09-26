@@ -31,7 +31,7 @@
 #include "core/LocaleManager.h"
 #include "core/Shortcuts.h"
 #include "core/Time.h"
-#include "core/Updates.h"
+#include "core/UpdateManager.h"
 #include "epg/EpgManager.h"
 #include "epg/EpgShow.h"
 #include "ui/EditPlaylist.h"
@@ -91,6 +91,7 @@ private slots:
 	void lite();
 	void tray();
 	void fullscreen(const bool &on);
+	void showOsd(const QPoint &pos);
 
 	void recordNow();
 	void recorder(const bool &enabled);
@@ -137,7 +138,7 @@ private:
 	LocaleManager *_locale;
 	Shortcuts *_shortcuts;
 	Time *_time;
-	Updates *_update;
+	UpdateManager *_update;
 
 	//Backend
 	VlcAudioControl *_audioController;

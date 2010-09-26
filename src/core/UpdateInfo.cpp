@@ -1,5 +1,5 @@
 /****************************************************************************
-* TrayIcon.h: Tray icon class
+* UpdateInfo.cpp: Update information class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,33 +13,9 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_TRAYICON_H_
-#define TANO_TRAYICON_H_
+#include "core/UpdateInfo.h"
 
-#include <QtGui/QAction>
-#include <QtGui/QMenu>
-#include <QtGui/QSystemTrayIcon>
+UpdateInfo::UpdateInfo(const QString &name)
+	: _name(name) { }
 
-class TrayIcon : public QSystemTrayIcon
-{
-Q_OBJECT
-public:
-	TrayIcon(QMenu *menu, QObject *parent = 0);
-	~TrayIcon();
-
-public slots:
-	void message(const QStringList &arg);
-	void changeToolTip(const QString &text = "stop", const QString &type = "main");
-
-signals:
-	void restoreClick();
-
-private slots:
-	void iconActivated(const QSystemTrayIcon::ActivationReason reason);
-
-private:
-	QString _currentlyPlaying;
-	QString _currentlyRecording;
-};
-
-#endif // TANO_TRAYICON_H_
+UpdateInfo::~UpdateInfo() { }

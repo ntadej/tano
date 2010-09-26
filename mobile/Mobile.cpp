@@ -18,6 +18,8 @@
 
 #include <QtCore/QDir>
 #include <QtCore/QDebug>
+#include <QtCore/QtPlugin>
+#include <QtCore/QPluginLoader>
 #include <QtGui/QFileDialog>
 
 #include "About.h"
@@ -25,7 +27,8 @@
 #include "EditSettings.h"
 #include "core/Common.h"
 #include "core/Settings.h"
-#include "plugins/PluginsLoader.h"
+
+Q_IMPORT_PLUGIN(tes)
 
 Mobile::Mobile(QWidget *parent) :
 	QMainWindow(parent),
@@ -49,8 +52,8 @@ Mobile::Mobile(QWidget *parent) :
 	connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
 	connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(settings()));
 
-	PluginsLoader *plugins = new PluginsLoader();
-	qDebug() << plugins->epgFile().size();
+	foreach (QObject *plugin, QPluginLoader::staticInstances())
+		qDebug() << plugin->metaObject()->className();
 
 	menuBar()->addAction(ui->actionOpen);
 	menuBar()->addAction(ui->actionAbout);

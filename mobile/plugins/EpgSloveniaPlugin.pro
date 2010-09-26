@@ -15,7 +15,7 @@
 
 TEMPLATE = lib
 
-CONFIG += plugin
+CONFIG += plugin static
 
 INCLUDEPATH += ../../src
 
@@ -25,4 +25,4 @@ HEADERS = ../../plugins/EpgSloveniaPlugin/EpgSloveniaPlugin.h\
 SOURCES = ../../plugins/EpgSloveniaPlugin/EpgSloveniaPlugin.cpp\
 	../../plugins/EpgSloveniaPlugin/EpgSloveniaPluginCreator.cpp
 
-TARGET = $$qtLibraryTarget(EpgSloveniaPlugin)
+TARGET = $$qtLibraryTarget(tano-epg-slovenia)

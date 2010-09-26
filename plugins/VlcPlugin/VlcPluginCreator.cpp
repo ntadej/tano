@@ -21,4 +21,4 @@ RecorderPlugin *VlcPluginCreator::createRecorderPluginInstance()
 	return new VlcPlugin();
 }
 
-Q_EXPORT_PLUGIN2( VlcPluginCreator, VlcPluginCreator )
+Q_EXPORT_PLUGIN2(recorder-vlc, VlcPluginCreator)

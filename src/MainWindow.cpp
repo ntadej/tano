@@ -37,7 +37,7 @@ const QString MainWindow::IDENTIFIER = "main";
 
 MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()),
-	_time(new Time()), _update(new Updates()),
+	_time(new Time()), _update(new UpdateManager()),
 	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0),
 	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new Schedule())
 {
@@ -239,7 +239,9 @@ void MainWindow::createConnections()
 	connect(ui->actionTray, SIGNAL(triggered()), this, SLOT(tray()));
 
 	connect(ui->videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
-	connect(ui->videoWidget, SIGNAL(osdVisibility(bool)), ui->osdWidget, SLOT(setVisible(bool)));
+	connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), this, SLOT(showOsd(QPoint)));
+	connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), ui->osdWidget, SLOT(show()));
+	connect(ui->videoWidget, SIGNAL(mouseHide()), ui->osdWidget, SLOT(hide()));
 
 	connect(_epg, SIGNAL(epg(QStringList, int, QString)), this, SLOT(showEpg(QStringList, int, QString)));
 	connect(_epg, SIGNAL(epg(QStringList, int, QString)), _schedule, SLOT(loadEpg(QStringList, int, QString)));
@@ -247,7 +249,7 @@ void MainWindow::createConnections()
 	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
-	connect(_update, SIGNAL(updatesDone(QStringList)), _trayIcon, SLOT(message(QStringList)));
+	connect(_update, SIGNAL(updates(QStringList)), _trayIcon, SLOT(message(QStringList)));
 
 	connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMouseHide()));
 	connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMouseHide()));
@@ -711,7 +713,6 @@ void MainWindow::fullscreen(const bool &on)
 		return;
 
 	if(on) {
-		ui->videoWidget->setOsdParameters(ui->osdWidget->width(), ui->osdWidget->height());
 		ui->osdWidget->resize(2*_desktopWidth/3,ui->osdWidget->height());
 		ui->osdWidget->setFloating(true);
 		ui->osdWidget->move(_desktopWidth/6, _desktopHeight-ui->osdWidget->height());
@@ -720,6 +721,18 @@ void MainWindow::fullscreen(const bool &on)
 	} else {
 		ui->osdWidget->setFloating(false);
 		ui->osdWidget->show();
+	}
+}
+
+void MainWindow::showOsd(const QPoint &pos)
+{
+	if((pos.x() < ui->osdWidget->pos().x()+ui->osdWidget->width()) &&
+	   (pos.x() > ui->osdWidget->pos().x()) &&
+	   (pos.y() < ui->osdWidget->pos().y()+ui->osdWidget->height()) &&
+	   (pos.y() > ui->osdWidget->pos().y())) {
+		ui->videoWidget->disableMouseHide();
+	} else {
+		ui->videoWidget->enableMouseHide();
 	}
 }
 

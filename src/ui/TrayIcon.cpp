@@ -15,7 +15,8 @@
 
 #include "TrayIcon.h"
 
-TrayIcon::TrayIcon(QMenu *menu) :
+TrayIcon::TrayIcon(QMenu *menu, QObject *parent)
+	: QSystemTrayIcon(parent),
 	_currentlyRecording(""),
 	_currentlyPlaying("")
 {
@@ -27,10 +28,7 @@ TrayIcon::TrayIcon(QMenu *menu) :
 			this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 }
 
-TrayIcon::~TrayIcon()
-{
-
-}
+TrayIcon::~TrayIcon() { }
 
 void TrayIcon::iconActivated(const QSystemTrayIcon::ActivationReason reason)
 {
@@ -52,8 +50,8 @@ void TrayIcon::message(const QStringList &arg)
 		this->showMessage(tr("Recording"), tr("Tano Recorder is recording %1 to\n%2.").arg(arg.at(1), arg.at(2)), QSystemTrayIcon::Information, 10000);
 	else if (arg.at(0) == "latest")
 		this->showMessage(tr("Latest version"), tr("You are using the latest version of Tano."), QSystemTrayIcon::Information, 10000);
-	else if (arg.at(0) == "svn")
-		this->showMessage(tr("SVN"), tr("You are using SVN version:")+" "+arg.at(2)+"\n" + tr("Stable version:") + " " + arg.at(1), QSystemTrayIcon::Information, 10000);
+	else if (arg.at(0) == "development")
+		this->showMessage(tr("Development version"), tr("You are using development version:")+" "+arg.at(1)+"\n" + tr("Stable version:") + " " + arg.at(2), QSystemTrayIcon::Information, 10000);
 	else if (arg.at(0) == "update")
 		this->showMessage(tr("Update available"), tr("A new version of Tano is available!")+"\n" + tr("Version:") + " " + arg.at(1), QSystemTrayIcon::Information, 10000);
 }

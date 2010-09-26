@@ -13,11 +13,10 @@
 # included in the packaging of this file.
 #############################################################################
 
-QT += core gui xml
+QT += core gui xml network
 
 TARGET = tano
 TEMPLATE = app
-
 INCLUDEPATH = ../src
 
 SOURCES += main.cpp\
@@ -33,7 +32,6 @@ SOURCES += main.cpp\
 	../src/core/Version.cpp\
 	../src/epg/EpgList.cpp\
 	../src/epg/EpgSchedule.cpp\
-	../src/plugins/PluginsLoader.cpp\
 	../src/ui/PlaylistWidget.cpp\
 	../src/xml/M3UHandler.cpp\
 	../src/xml/M3UGenerator.cpp\
@@ -52,7 +50,6 @@ HEADERS  += About.h\
 	../src/core/Version.h\
 	../src/epg/EpgList.h\
 	../src/epg/EpgSchedule.h\
-	../src/plugins/PluginsLoader.h\
 	../src/ui/PlaylistWidget.h\
 	../src/xml/M3UHandler.h\
 	../src/xml/M3UGenerator.h\
@@ -68,3 +65,5 @@ FORMS += About.ui\
 
 
 RESOURCES = ../src/ui/images.qrc
+
+LIBS = -ltano

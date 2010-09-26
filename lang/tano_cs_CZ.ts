@@ -18,6 +18,11 @@
         <source>Back</source>
         <translation>Zpět</translation>
     </message>
+    <message>
+        <location filename="../mobile/About.ui" line="20"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConclusionPage</name>
@@ -40,39 +45,39 @@
 <context>
     <name>EditPlaylist</name>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="154"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="156"/>
         <source>Save Channel list</source>
         <translation>Uložit seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="156"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="158"/>
         <source>Tano TV Channel list Files (*.m3u)</source>
         <translation>Soubory Tano se seznamem programů TV (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="169"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="171"/>
         <source>Open Channel list File</source>
         <translation>Otevřít soubor se seznamem programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="171"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="173"/>
         <source>Tano TV Old Channel list Files(*.tano *.xml)</source>
         <translation>Soubory Tano se starým seznamem programů (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="187"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="189"/>
         <source>Playlist Editor</source>
         <translation>Editor seznamu skladeb</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="188"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="190"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation>Chcete zavřít editor?
 Ztratíte tím všechna neuložená nastavení.</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="260"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="262"/>
         <source>New channel from scan</source>
         <translation type="unfinished">Nový program</translation>
     </message>
@@ -241,6 +246,7 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     <message>
         <location filename="../src/ui/EditSettings.ui" line="14"/>
         <location filename="../src/ui/EditSettings.ui" line="857"/>
+        <location filename="../mobile/EditSettings.ui" line="14"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
@@ -251,11 +257,13 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     </message>
     <message>
         <location filename="../src/ui/EditSettings.ui" line="99"/>
+        <location filename="../mobile/EditSettings.ui" line="97"/>
         <source>System default language</source>
         <translation>Výchozí jazyk systému</translation>
     </message>
     <message>
         <location filename="../src/ui/EditSettings.ui" line="109"/>
+        <location filename="../mobile/EditSettings.ui" line="107"/>
         <source>Custom language</source>
         <translation>Jazyk stanovený uživatelem</translation>
     </message>
@@ -586,6 +594,26 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <location filename="../src/ui/EditSettings.ui" line="297"/>
         <source>Simple mode</source>
         <translation>Jednoduchý režim</translation>
+    </message>
+    <message>
+        <location filename="../mobile/EditSettings.ui" line="28"/>
+        <source>Main Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mobile/EditSettings.ui" line="133"/>
+        <source>&lt;b&gt;Language:&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mobile/EditSettings.ui" line="148"/>
+        <source>Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mobile/EditSettings.cpp" line="31"/>
+        <source>You are using Tano Mobile version:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -928,10 +956,10 @@ Vaše změny nebudou použity.</translation>
         <location filename="../src/ui/MainWindow.ui" line="404"/>
         <location filename="../src/ui/MainWindow.ui" line="407"/>
         <location filename="../src/ui/MainWindow.ui" line="736"/>
-        <location filename="../src/MainWindow.cpp" line="450"/>
-        <location filename="../src/MainWindow.cpp" line="451"/>
-        <location filename="../src/MainWindow.cpp" line="452"/>
-        <location filename="../src/MainWindow.cpp" line="453"/>
+        <location filename="../src/MainWindow.cpp" line="444"/>
+        <location filename="../src/MainWindow.cpp" line="445"/>
+        <location filename="../src/MainWindow.cpp" line="446"/>
+        <location filename="../src/MainWindow.cpp" line="447"/>
         <source>Play</source>
         <translation>Přehrát</translation>
     </message>
@@ -948,7 +976,7 @@ Vaše změny nebudou použity.</translation>
         <translation>Vždy nahoře</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="711"/>
+        <location filename="../src/MainWindow.cpp" line="705"/>
         <source>Restore</source>
         <translation>Obnovit</translation>
     </message>
@@ -1135,57 +1163,57 @@ Vaše změny nebudou použity.</translation>
         <translation>Zrušení prokládání</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="85"/>
+        <location filename="../src/MainWindow.cpp" line="78"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Chcete ukončit program Tano?
 Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="441"/>
-        <location filename="../src/MainWindow.cpp" line="442"/>
-        <location filename="../src/MainWindow.cpp" line="443"/>
-        <location filename="../src/MainWindow.cpp" line="444"/>
+        <location filename="../src/MainWindow.cpp" line="435"/>
+        <location filename="../src/MainWindow.cpp" line="436"/>
+        <location filename="../src/MainWindow.cpp" line="437"/>
+        <location filename="../src/MainWindow.cpp" line="438"/>
         <source>Pause</source>
         <translation>Pozastavit</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="562"/>
+        <location filename="../src/MainWindow.cpp" line="556"/>
         <source>Open Channel list File</source>
         <translation>Otevřít soubor se seznamem programů</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="564"/>
+        <location filename="../src/MainWindow.cpp" line="558"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Soubory Tano se seznamem programů TV (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="592"/>
+        <location filename="../src/MainWindow.cpp" line="586"/>
         <source>Open File or URL</source>
         <translation>Otevřít soubor nebo adresu (URL)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="594"/>
+        <location filename="../src/MainWindow.cpp" line="588"/>
         <source>Multimedia files(*)</source>
         <translation>Multimediální soubory (*)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="605"/>
+        <location filename="../src/MainWindow.cpp" line="599"/>
         <source>Open URL or stream</source>
         <translation>Otevřít adresu (URL) nebo datový proud</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="606"/>
+        <location filename="../src/MainWindow.cpp" line="600"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Zadejte adresu (URL) multimediálního souboru nebo datového proudu, jejž chcete přehrávat:</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="617"/>
+        <location filename="../src/MainWindow.cpp" line="611"/>
         <source>Open Subtitles file</source>
         <translation>Otevřít soubor s titulky</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="619"/>
+        <location filename="../src/MainWindow.cpp" line="613"/>
         <source>Subtitles files(*.sub *.srt *.txt)</source>
         <translation>Soubory s titulky (*.sub *.srt *.txt)</translation>
     </message>
@@ -1202,9 +1230,9 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
-        <location filename="../src/MainWindow.cpp" line="84"/>
-        <location filename="../src/MainWindow.cpp" line="667"/>
-        <location filename="../src/MainWindow.cpp" line="669"/>
+        <location filename="../src/MainWindow.cpp" line="77"/>
+        <location filename="../src/MainWindow.cpp" line="661"/>
+        <location filename="../src/MainWindow.cpp" line="663"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1229,7 +1257,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="762"/>
         <location filename="../src/ui/MainWindow.ui" line="765"/>
-        <location filename="../src/MainWindow.cpp" line="708"/>
+        <location filename="../src/MainWindow.cpp" line="702"/>
         <source>Hide to tray</source>
         <translation>Skrýt v oznamovací oblasti panelu</translation>
     </message>
@@ -1289,14 +1317,42 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation>Tano Mobile</translation>
     </message>
     <message>
-        <location filename="../mobile/Mobile.ui" line="71"/>
-        <source>&lt;i&gt;Note: This is an experimental version of Tano. All features are not ported yet.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Poznámka: Toto je pokusná verze programu Tano. Všechny funkce ještě nejsou přeneseny.&lt;/i&gt;</translation>
+        <location filename="../mobile/Mobile.ui" line="67"/>
+        <source>&lt;i&gt;Note: This is an experimental version of Tano. All features might not work yet.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mobile/Mobile.ui" line="81"/>
+        <location filename="../mobile/Mobile.ui" line="106"/>
+        <location filename="../mobile/Mobile.ui" line="109"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mobile/Mobile.ui" line="114"/>
+        <location filename="../mobile/Mobile.ui" line="117"/>
+        <source>Open Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mobile/Mobile.ui" line="122"/>
+        <location filename="../mobile/Mobile.ui" line="125"/>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavení</translation>
+    </message>
+    <message>
+        <location filename="../mobile/Mobile.ui" line="77"/>
         <source>Continue</source>
         <translation>Pokračovat</translation>
+    </message>
+    <message>
+        <location filename="../mobile/Mobile.cpp" line="91"/>
+        <source>Open Channel list File</source>
+        <translation type="unfinished">Otevřít soubor se seznamem programů</translation>
+    </message>
+    <message>
+        <location filename="../mobile/Mobile.cpp" line="93"/>
+        <source>Tano TV Channel list Files(*.m3u)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1557,6 +1613,11 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Disabled</source>
         <translation>Zakázáno</translation>
     </message>
+    <message>
+        <location filename="../src/xml/UpdateHandler.cpp" line="33"/>
+        <source>The file is not a Tano updates file.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1665,21 +1726,25 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/SelectPlaylist.ui" line="26"/>
+        <location filename="../mobile/SelectPlaylist.ui" line="42"/>
         <source>Preset</source>
         <translation>Přednastavení</translation>
     </message>
     <message>
         <location filename="../src/ui/SelectPlaylist.ui" line="54"/>
+        <location filename="../mobile/SelectPlaylist.ui" line="80"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
         <location filename="../src/ui/SelectPlaylist.ui" line="64"/>
+        <location filename="../mobile/SelectPlaylist.ui" line="90"/>
         <source>Reset</source>
         <translation>Nastavit znovu</translation>
     </message>
     <message>
         <location filename="../src/ui/SelectPlaylist.ui" line="73"/>
+        <location filename="../mobile/SelectPlaylist.ui" line="52"/>
         <source>Custom</source>
         <translation>Stanovený uživatelem</translation>
     </message>
@@ -1690,6 +1755,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/SelectPlaylist.ui" line="116"/>
+        <location filename="../mobile/SelectPlaylist.ui" line="109"/>
         <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
         <translation>&lt;b&gt;Slovinsko&lt;/b&gt;</translation>
     </message>
@@ -1700,13 +1766,25 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/SelectPlaylist.cpp" line="96"/>
+        <location filename="../mobile/SelectPlaylist.cpp" line="91"/>
         <source>Open Channel list File</source>
         <translation>Otevřít soubor se seznamem programů</translation>
     </message>
     <message>
         <location filename="../src/ui/SelectPlaylist.cpp" line="98"/>
+        <location filename="../mobile/SelectPlaylist.cpp" line="93"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Soubory Tano se seznamey programů TV (*.m3u)</translation>
+    </message>
+    <message>
+        <location filename="../mobile/SelectPlaylist.ui" line="20"/>
+        <source>&lt;b&gt;Default Channel list&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mobile/SelectPlaylist.ui" line="99"/>
+        <source>&lt;b&gt;Presets&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1750,70 +1828,70 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="58"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="56"/>
         <source>A new version of Tano is available!</source>
         <translation>Je dostupná nová verze programu Tano!</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="58"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="56"/>
         <source>Version:</source>
         <translation>Verze:</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="54"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="52"/>
         <source>Latest version</source>
         <translation>Poslední verze</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="58"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="56"/>
         <source>Update available</source>
         <translation>Aktualizace je dostupná</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="56"/>
-        <source>SVN</source>
-        <translation>SVN</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="24"/>
-        <location filename="../src/ui/TrayIcon.cpp" line="73"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="25"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="71"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="52"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="50"/>
         <source>Recording</source>
         <translation>Nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="52"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="50"/>
         <source>Tano Recorder is recording %1 to
 %2.</source>
         <translation>Nahrávač Tano nahrává %1 do
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="54"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="52"/>
         <source>You are using the latest version of Tano.</source>
         <translation>Používáte poslední verzi programu Tano.</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="56"/>
-        <source>You are using SVN version:</source>
-        <translation>Používáte nestálou verzi SVN:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="56"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="54"/>
         <source>Stable version:</source>
         <translation>Stálá verze:</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="75"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="54"/>
+        <source>Development version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/TrayIcon.cpp" line="54"/>
+        <source>You are using development version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/TrayIcon.cpp" line="73"/>
         <source>Playing:</source>
         <translation>Přehrává se:</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="77"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="75"/>
         <source>Recording:</source>
         <translation>Nahrává se:</translation>
     </message>

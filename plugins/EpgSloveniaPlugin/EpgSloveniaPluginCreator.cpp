@@ -21,4 +21,4 @@ EpgPlugin *EpgSloveniaPluginCreator::createEpgPluginInstance()
 	return new EpgSloveniaPlugin();
 }
 
-Q_EXPORT_PLUGIN2( EpgSloveniaPluginCreator, EpgSloveniaPluginCreator )
+Q_EXPORT_PLUGIN2(epg-slovenia, EpgSloveniaPluginCreator)

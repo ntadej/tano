@@ -59,7 +59,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	core/GetImage.h
 	core/Print.h
 	core/Time.h
-	core/Updates.h
+	core/UpdateManager.h
 	epg/EpgList.h
 	epg/EpgLoader.h
 	epg/EpgManager.h
@@ -103,7 +103,8 @@ SET(Tano_Core_Srcs
 	core/Settings.cpp
 	core/Shortcuts.cpp
 	core/Time.cpp
-	core/Updates.cpp
+	core/UpdateInfo.cpp
+	core/UpdateManager.cpp
 	core/Version.cpp
 )
 SET(Tano_Epg_Srcs
@@ -147,6 +148,7 @@ SET(Tano_XML_Srcs
 	xml/TimersGenerator.cpp
 	xml/TimersHandler.cpp
 	xml/tanohandler.cpp
+	xml/UpdateHandler.cpp
 )
 
 SET(Tano_Srcs
