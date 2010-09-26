@@ -19,7 +19,7 @@
 #include <QtCore/QLocale>
 
 #include "Config.h"
-#include "Common.h"
+#include "core/Common.h"
 #include "core/Settings.h"
 
 #if DESKTOP

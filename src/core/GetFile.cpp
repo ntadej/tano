@@ -1,5 +1,5 @@
 /****************************************************************************
-* GetImage.cpp: Image downloader class
+* GetFile.cpp: File downloader class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -17,33 +17,37 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QUrl>
 
-#include "GetImage.h"
+#include "core/GetFile.h"
 
-GetImage::GetImage(QObject *parent) :
-	QHttp(parent),
+GetFile::GetFile(QObject *parent)
+	: QHttp(parent),
 	_file(0),
 	_httpGetId(0)
 {
 	connect(this, SIGNAL(requestFinished(int, bool)), this, SLOT(httpRequestFinished(int, bool)));
 }
 
-GetImage::~GetImage()
-{
+GetFile::~GetFile() { }
 
-}
-
-void GetImage::getImage(const QString &u)
+void GetFile::getFile(const QString &fileUrl, const QString &location)
 {
-	if(u.isEmpty())
+	if(fileUrl.isEmpty())
 		return;
 
-	QUrl url(u);
+	QUrl url(fileUrl);
 	QFileInfo fileInfo(url.path());
 
-	QDir dir(QDir::tempPath());
-	dir.mkdir("tano");
+	QString destination;
+	if(location.isNull()) {
+		QDir dir(QDir::tempPath());
+		dir.mkdir("tano");
 
-	_file = new QFile(QDir::tempPath() + "/tano/" + fileInfo.fileName());
+		destination = QDir::tempPath() + "/tano/" + fileInfo.fileName();
+	} else {
+		destination = location;
+	}
+
+	_file = new QFile(destination);
 	if (!_file->open(QIODevice::WriteOnly)) {
 		delete _file;
 		return;
@@ -62,7 +66,7 @@ void GetImage::getImage(const QString &u)
 	_httpGetId = get(path, _file);
 }
 
-void GetImage::httpRequestFinished(const int &requestId, const bool &error)
+void GetFile::httpRequestFinished(const int &requestId, const bool &error)
 {
 	if (requestId != _httpGetId)
 		return;

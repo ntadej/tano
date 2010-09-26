@@ -1,5 +1,5 @@
 /****************************************************************************
-* GetImage.h: Image downloader class
+* GetFile.h: File downloader class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,20 +13,20 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_GETIMAGE_H_
-#define TANO_GETIMAGE_H_
+#ifndef TANO_GETFILE_H_
+#define TANO_GETFILE_H_
 
 #include <QtCore/QFile>
 #include <QtNetwork/QHttp>
 
-class GetImage : public QHttp
+class GetFile : public QHttp
 {
 Q_OBJECT
 public:
-	GetImage(QObject *parent = 0);
-	~GetImage();
+	GetFile(QObject *parent = 0);
+	~GetFile();
 
-	void getImage(const QString &u);
+	void getFile(const QString &fileUrl, const QString &location = 0);
 
 signals:
 	void image(const QString);
@@ -39,4 +39,4 @@ private:
 	int _httpGetId;
 };
 
-#endif // TANO_GETIMAGE_H_
+#endif // TANO_GETFILE_H_

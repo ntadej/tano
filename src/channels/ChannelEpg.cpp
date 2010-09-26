@@ -13,9 +13,11 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "ChannelEpg.h"
+#include "channels/ChannelEpg.h"
 
 ChannelEpg::ChannelEpg(const QString &time, const QString &url, const QString &title)
-	: _time(time), _url(url), _title(title) { }
+	: _time(time),
+	_url(url),
+	_title(title) { }
 
 ChannelEpg::~ChannelEpg() { }

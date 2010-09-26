@@ -13,13 +13,12 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "LocaleManager.h"
-
 #include <QtCore/QCoreApplication>
 #include <QtCore/QDir>
 #include <QtCore/QLocale>
 
 #include "core/Common.h"
+#include "core/LocaleManager.h"
 #include "core/Settings.h"
 
 LocaleManager::LocaleManager()

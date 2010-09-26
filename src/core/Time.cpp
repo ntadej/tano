@@ -15,7 +15,7 @@
 
 #include <QtCore/QDebug>
 
-#include "Time.h"
+#include "core/Time.h"
 
 Time::Time()
 {

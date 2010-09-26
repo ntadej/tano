@@ -25,7 +25,7 @@ class ChannelSelect : public QObject
 Q_OBJECT
 public:
 	ChannelSelect(QWidget *parent, QLCDNumber *number, const QList<int> &list);
-	virtual ~ChannelSelect();
+	~ChannelSelect();
 
 public slots:
 	void back();

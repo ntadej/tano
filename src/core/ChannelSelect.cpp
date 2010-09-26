@@ -13,10 +13,12 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "ChannelSelect.h"
+#include "core/ChannelSelect.h"
 
 ChannelSelect::ChannelSelect(QWidget *parent, QLCDNumber *number, const QList<int> &list)
-	: _lcd(number), _channels(list), _num(1)
+	: _lcd(number),
+	_channels(list),
+	_num(1)
 {
 	_timer = new QTimer(parent);
 

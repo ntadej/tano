@@ -21,7 +21,7 @@
 InfoBar::InfoBar(QWidget *parent) :
 	QScrollArea(parent),
 	_direction(true),
-	_image(new GetImage())
+	_image(new GetFile())
 {
 	_timer = new QTimer(this);
 
@@ -105,7 +105,7 @@ void InfoBar::setLogo(const QString &logo)
 		return;
 
 	if(logo.contains("http"))
-		_image->getImage(logo);
+		_image->getFile(logo);
 	else
 		image(logo);
 }

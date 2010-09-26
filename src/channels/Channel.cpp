@@ -13,9 +13,10 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "Channel.h"
+#include "channels/Channel.h"
 
 Channel::Channel(const QString &name, const int &number)
-	: _name(name), _number(number) { }
+	: _name(name),
+	_number(number) { }
 
 Channel::~Channel() { }

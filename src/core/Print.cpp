@@ -21,8 +21,8 @@
 
 #include "Print.h"
 
-Print::Print(QWidget *parent) :
-	QTextEdit(parent)
+Print::Print(QWidget *parent)
+	: QTextEdit(parent)
 {
 	_boldFormat.setFontWeight(QFont::Bold);
 	_titleFormat.setFontWeight(QFont::Bold);
@@ -35,10 +35,7 @@ Print::Print(QWidget *parent) :
 	_tableFormat.setBorderStyle(QTextTableFormat::BorderStyle_Solid);
 }
 
-Print::~Print()
-{
-
-}
+Print::~Print() { }
 
 void Print::channelList(const QString &name, PlaylistWidget *widget, const QList<int> &list)
 {

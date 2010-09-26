@@ -14,7 +14,7 @@
 *****************************************************************************/
 
 #include "Config.h"
-#include "Version.h"
+#include "core/Version.h"
 
 #if DESKTOP
 	#include <vlc-qt/Instance.h>
@@ -51,7 +51,7 @@ QString Version::libVLCQt()
 #if DESKTOP
 	return VlcInstance::libVersion();
 #else
-	return QString().number(0);
+	return QString("Unknown");
 #endif
 }
 
@@ -60,6 +60,6 @@ QString Version::libVLC()
 #if DESKTOP
 	return VlcInstance::version();
 #else
-	return QString().number(0);
+	return QString("Unknown");
 #endif
 }

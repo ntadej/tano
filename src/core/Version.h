@@ -13,8 +13,8 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_VER_H_
-#define TANO_VER_H_
+#ifndef TANO_VERSION_H_
+#define TANO_VERSION_H_
 
 #include <QtCore/QString>
 
@@ -27,4 +27,4 @@ public:
 	static QString libVLC();
 };
 
-#endif // TANO_VER_H_
+#endif // TANO_VERSION_H_

@@ -19,14 +19,14 @@
 #include <QtCore/QList>
 #include <QtCore/QTimer>
 
-#include "../recorder/Timer.h"
+#include "recorder/Timer.h"
 
 class Time : public QObject
 {
 Q_OBJECT
 public:
 	Time();
-	virtual ~Time();
+	~Time();
 
 	void addTimer(Timer *t);
 	void removeTimer(Timer *t);

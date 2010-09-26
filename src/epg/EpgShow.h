@@ -18,8 +18,8 @@
 
 #include <QtGui/QStackedWidget>
 
-#include "EpgLoader.h"
-#include "core/GetImage.h"
+#include "core/GetFile.h"
+#include "epg/EpgLoader.h"
 
 namespace Ui
 {
@@ -51,7 +51,7 @@ private:
 
 	Ui::EpgShow *ui;
 
-	GetImage *_image;
+	GetFile *_image;
 	EpgLoader *_loader;
 
 	QString _epgNext;

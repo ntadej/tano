@@ -20,7 +20,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QScrollArea>
 
-#include "core/GetImage.h"
+#include "core/GetFile.h"
 
 class InfoBar : public QScrollArea
 {
@@ -44,7 +44,7 @@ private slots:
 
 private:
 	bool _direction;
-	GetImage *_image;
+	GetFile *_image;
 	QTimer *_timer;
 
 	QLabel *_labelChannel;

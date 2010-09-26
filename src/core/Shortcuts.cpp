@@ -13,7 +13,7 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "Shortcuts.h"
+#include "core/Shortcuts.h"
 
 Shortcuts::Shortcuts(const QList<QAction *> &list, QObject *parent)
 	: QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Shortcuts", parent), _actions(list)
@@ -57,10 +57,7 @@ Shortcuts::Shortcuts(const QList<QAction *> &list, QObject *parent)
 	apply();
 }
 
-Shortcuts::~Shortcuts()
-{
-
-}
+Shortcuts::~Shortcuts() { }
 
 void Shortcuts::apply()
 {

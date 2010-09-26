@@ -18,10 +18,10 @@
 
 #include <QtCore/QDebug>
 
-EpgShow::EpgShow(QWidget *parent) :
-	QStackedWidget(parent),
+EpgShow::EpgShow(QWidget *parent)
+	: QStackedWidget(parent),
 	ui(new Ui::EpgShow),
-	_image(new GetImage()),
+	_image(new GetFile()),
 	_loader(new EpgLoader()),
 	_epgNext(""),
 	_epgPrevious("")
@@ -83,7 +83,7 @@ void EpgShow::display(const QStringList &list)
 	ui->labelInfo->setText("<h3>" + list[4] + "</h3>");
 	ui->labelDescription->setText(list[5]);
 
-	_image->getImage(list[6]);
+	_image->getFile(list[6]);
 
 	_epgPrevious = list[7];
 	_epgNext = list[8];

@@ -28,10 +28,10 @@ public:
 	~Shortcuts();
 
 	void apply();
-	void restoreDefaults() { write(_defaultList); };
+	void restoreDefaults() { write(_defaultList); }
 	void write(const QStringList &keys);
-	QStringList defaultKeys() const { return _defaultList; };
-	QStringList actionsNames() const { return _actionsName; };
+	QStringList defaultKeys() const { return _defaultList; }
+	QStringList actionsNames() const { return _actionsName; }
 	QStringList readKeys() const;
 
 private:

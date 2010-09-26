@@ -56,7 +56,7 @@ SET(Tano_UIs
 SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
 	MainWindow.h
 	core/ChannelSelect.h
-	core/GetImage.h
+	core/GetFile.h
 	core/Print.h
 	core/Time.h
 	core/UpdateManager.h
@@ -97,7 +97,7 @@ SET(Tano_Channels_Srcs
 SET(Tano_Core_Srcs
 	core/ChannelSelect.cpp
 	core/Common.cpp
-	core/GetImage.cpp
+	core/GetFile.cpp
 	core/LocaleManager.cpp
 	core/Print.cpp
 	core/Settings.cpp

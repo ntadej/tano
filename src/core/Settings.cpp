@@ -16,8 +16,8 @@
 #include <QtCore/QDir>
 
 #include "Config.h"
-#include "Settings.h"
-#include "Version.h"
+#include "core/Settings.h"
+#include "core/Version.h"
 
 // Playlists
 const QString Settings::PLAYLIST_SIOL_MPEG2 = "playlists/siol-mpeg2.m3u";
@@ -69,10 +69,7 @@ Settings::Settings(QObject *parent)
 	readSettings();
 }
 
-Settings::~Settings()
-{
-
-}
+Settings::~Settings() { }
 
 QString Settings::path() const
 {
