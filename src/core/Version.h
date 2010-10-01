@@ -21,7 +21,8 @@
 class Version
 {
 public:
-	static QString Tano();
+	static QString version();
+	static QString changeset();
 	static QString Qt();
 	static QString libVLCQt();
 	static QString libVLC();

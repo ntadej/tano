@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("Tano");
 
 	Settings *settings = new Settings();
-	if(!settings->configured() || settings->configurationVersion() != Version::Tano()) {
+	if(!settings->configured() || settings->configurationVersion() != Version::version()) {
 		FirstRunWizard *wizard = new FirstRunWizard();
 		wizard->exec();
 		delete wizard;

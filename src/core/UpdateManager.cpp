@@ -68,15 +68,15 @@ void UpdateManager::readUpdates()
 				<< list[i].url()
 				<< list[i].development();
 
-		if(Version::Tano() == list[i].version() && list[i].development()) {
+		if(Version::version() == list[i].version() && list[i].development()) {
 			updatesList << "development" << list[i].version();
 			continue;
-		} else if(Version::Tano() == list[i].version() && !list[i].development()) {
+		} else if(Version::version() == list[i].version() && !list[i].development()) {
 			updatesList << "latest";
 			break;
-		} else if(Version::Tano() != list[i].version() && list[i].development()) {
+		} else if(Version::version() != list[i].version() && list[i].development()) {
 			continue;
-		} else if(Version::Tano() != list[i].version() && !list[i].development()) {
+		} else if(Version::version() != list[i].version() && !list[i].development()) {
 			if(!updatesList.isEmpty()) {
 				updatesList << list[i].version();
 			} else {

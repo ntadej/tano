@@ -34,7 +34,6 @@
         <file>images/editdelete.png</file>
         <file>images/filesave.png</file>
         <file>images/edit.png</file>
-        <file>images/vlc.png</file>
         <file>images/schedule.png</file>
         <file>images/win.png</file>
         <file>images/exit.png</file>
@@ -54,5 +53,6 @@
         <file>images/editadd.png</file>
         <file>images/apply.png</file>
         <file>images/print.png</file>
+        <file>images/vlcqt.png</file>
     </qresource>
 </RCC>

@@ -114,7 +114,7 @@ void Settings::writeSettings()
 
 void Settings::readSettings()
 {
-	setConfigurationVersion(value("general/version", Version::Tano()).toString());
+	setConfigurationVersion(value("general/version", Version::version()).toString());
 	setConfigured(value("general/configured", DEFAULT_CONFIGURED).toBool());
 	setUpdatesCheck(value("general/updatescheck", DEFAULT_UPDATES_CHECK).toBool());
 	setSessionVolume(value("general/sessionvolume", DEFAULT_SESSION_VOLUME).toBool());

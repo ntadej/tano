@@ -48,7 +48,7 @@ void ConclusionPage::changeEvent(QEvent *e)
 int ConclusionPage::nextId() const
 {
 	Settings *settings = new Settings();
-	settings->setConfigurationVersion(Version::Tano());
+	settings->setConfigurationVersion(Version::version());
 	settings->setConfigured(true);
 	if(!field("playlist").toString().isEmpty())
 		settings->setPlaylist(field("playlist").toString());

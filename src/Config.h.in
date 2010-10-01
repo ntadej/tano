@@ -18,6 +18,7 @@
 
 // Tano version
 #define VERSION "@TANO_VERSION@"
+#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
 
 // Qt version
 #define QT_VERSION_MAJOR @QT_VERSION_MAJOR@

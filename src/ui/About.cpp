@@ -27,7 +27,8 @@ About::About(QWidget *parent) :
 {
 	ui->setupUi(this);
 
-	ui->labelVersion->setText("<h2>"+Version::Tano()+"</h2>");
+	ui->labelVersion->setText("<h2>"+Version::version()+"</h2>");
+	ui->labelChangeset->setText("<h2>"+Version::changeset()+"</h2>");
 	ui->labelCopy->setText(ui->labelCopy->text().replace("%1",QDate().currentDate().toString("yyyy")));
 	ui->labelLicense->setText(ui->labelLicense->text().replace("GNU GPL","<a href='#'>GNU GPL</a>"));
 	ui->labelLinks->setText(ui->labelLinks->text().replace("http://tanoplayer.co.cc","<a href='http://tanoplayer.co.cc'>http://tanoplayer.co.cc</a>"));

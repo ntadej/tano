@@ -40,7 +40,7 @@ EditSettings::EditSettings(Shortcuts *s, QWidget *parent) :
 
 	_settings = new Settings(this);
 
-	ui->labelVersion->setText(tr("You are using Tano version:")+" <b>"+Version::Tano()+"</b>");
+	ui->labelVersion->setText(tr("You are using Tano version:")+" <b>"+Version::version()+"</b>");
 	ui->labelVlcVersion->setText(ui->labelVlcVersion->text()+" <b>"+Version::libVLC()+"</b>");
 
 	loadLocale();

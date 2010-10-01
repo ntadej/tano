@@ -29,7 +29,7 @@ IntroPage::IntroPage(QWidget *parent) :
 	setPixmap(QWizard::WatermarkPixmap, QPixmap(":/icons/images/wizard.bmp"));
 
 	Settings *settings = new Settings();
-	if(settings->configurationVersion() != Version::Tano())
+	if(settings->configurationVersion() != Version::version())
 		ui->labelVersion->setText(tr("You previously used version %1 of <i>Tano</i>.")
 								  .arg(settings->configurationVersion()) +"<br>"+
 								  tr("Please re-set your settings."));

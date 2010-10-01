@@ -20,14 +20,27 @@
 	#include <vlc-qt/Instance.h>
 #endif
 
-QString Version::Tano()
+QString Version::version()
 {
 	QString version;
 
 #ifdef VERSION
-	version = QString(VERSION);
+	version.append(QString(VERSION));
 #else
-	version = "Unknown";
+	version.append("Unknown");
+#endif
+
+	return version;
+}
+
+QString Version::changeset()
+{
+	QString version;
+
+#ifdef VERSION_PATCH
+	if(QString(VERSION_PATCH) != "0") {
+		version.append("("+QString(VERSION_PATCH)+")");
+	}
 #endif
 
 	return version;
