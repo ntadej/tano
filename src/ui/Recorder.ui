@@ -14,8 +14,8 @@
    <string>Recorder</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
-    <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+   <iconset resource="../../data/icons.qrc">
+    <normaloff>:/icons/128x128/recorder.png</normaloff>:/icons/128x128/recorder.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -61,8 +61,8 @@
          <string>Record</string>
         </property>
         <property name="icon">
-         <iconset resource="images.qrc">
-          <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+         <iconset resource="../../data/icons.qrc">
+          <normaloff>:/icons/22x22/record.png</normaloff>:/icons/22x22/record.png</iconset>
         </property>
         <property name="checkable">
          <bool>true</bool>
@@ -174,7 +174,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc"/>
+  <include location="../../data/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

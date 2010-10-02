@@ -14,8 +14,8 @@
    <string>Schedule</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
-    <normaloff>:/icons/images/schedule.png</normaloff>:/icons/images/schedule.png</iconset>
+   <iconset resource="../../data/icons.qrc">
+    <normaloff>:/icons/128x128/schedule.png</normaloff>:/icons/128x128/schedule.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -41,7 +41,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc"/>
+  <include location="../../data/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

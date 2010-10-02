@@ -25,7 +25,7 @@ UpdateManager::UpdateManager(QObject *parent)
 	: QHttp(parent),
 	_codec(QTextCodec::codecForName("UTF-8"))
 {
-	setHost("tano.sourceforge.net");
+	setHost("update.tanoplayer.co.cc");
 
 	_handler = new UpdateHandler();
 }

@@ -14,8 +14,8 @@
    <string>Tano</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
-    <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
+   <iconset resource="../../data/logo.qrc">
+    <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -108,6 +108,10 @@
      <property name="title">
       <string>Audio track</string>
      </property>
+     <property name="icon">
+      <iconset resource="../../data/icons.qrc">
+       <normaloff>:/icons/128x128/track_audio.png</normaloff>:/icons/128x128/track_audio.png</iconset>
+     </property>
     </widget>
     <addaction name="actionMute"/>
     <addaction name="actionVolumeUp"/>
@@ -131,10 +135,18 @@
      <property name="title">
       <string>Video track</string>
      </property>
+     <property name="icon">
+      <iconset resource="../../data/icons.qrc">
+       <normaloff>:/icons/128x128/video.png</normaloff>:/icons/128x128/video.png</iconset>
+     </property>
     </widget>
     <widget class="QMenu" name="menuCrop">
      <property name="title">
       <string>Crop video</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../data/icons.qrc">
+       <normaloff>:/icons/32x32/window.png</normaloff>:/icons/32x32/window.png</iconset>
      </property>
      <addaction name="actionCropOriginal"/>
      <addaction name="actionCrop16_9"/>
@@ -152,6 +164,10 @@
      <property name="title">
       <string>Subtitles</string>
      </property>
+     <property name="icon">
+      <iconset resource="../../data/icons.qrc">
+       <normaloff>:/icons/128x128/subtitle.png</normaloff>:/icons/128x128/subtitle.png</iconset>
+     </property>
      <addaction name="actionOpenSubtitles"/>
     </widget>
     <widget class="QMenu" name="menuDeinterlacing">
@@ -160,6 +176,10 @@
      </property>
      <property name="title">
       <string>Deinterlacing</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../data/icons.qrc">
+       <normaloff>:/icons/128x128/video.png</normaloff>:/icons/128x128/video.png</iconset>
      </property>
      <addaction name="actionFilterDisabled"/>
      <addaction name="actionFilterDiscard"/>
@@ -172,6 +192,10 @@
     <widget class="QMenu" name="menuAspectRatio">
      <property name="title">
       <string>Aspect ratio</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../data/icons.qrc">
+       <normaloff>:/icons/32x32/window.png</normaloff>:/icons/32x32/window.png</iconset>
      </property>
      <addaction name="actionRatioOriginal"/>
      <addaction name="actionRatio1_1"/>
@@ -198,7 +222,7 @@
     <addaction name="actionSchedule"/>
     <addaction name="separator"/>
     <addaction name="actionTray"/>
-    <addaction name="actionClose"/>
+    <addaction name="actionExit"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -237,12 +261,12 @@
    <addaction name="actionEditPlaylist"/>
    <addaction name="separator"/>
    <addaction name="actionSettings"/>
-   <addaction name="actionClose"/>
+   <addaction name="actionExit"/>
   </widget>
   <widget class="QDockWidget" name="infoWidget">
    <property name="windowIcon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/folder_video.png</normaloff>:/icons/images/folder_video.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/info.png</normaloff>:/icons/128x128/info.png</iconset>
    </property>
    <property name="floating">
     <bool>false</bool>
@@ -290,6 +314,10 @@
           <height>339</height>
          </rect>
         </property>
+        <attribute name="icon">
+         <iconset resource="../../data/icons.qrc">
+          <normaloff>:/icons/128x128/edit.png</normaloff>:/icons/128x128/edit.png</iconset>
+        </attribute>
         <attribute name="label">
          <string notr="true">Channel list</string>
         </attribute>
@@ -307,10 +335,14 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>100</width>
-          <height>30</height>
+          <width>340</width>
+          <height>339</height>
          </rect>
         </property>
+        <attribute name="icon">
+         <iconset resource="../../data/icons.qrc">
+          <normaloff>:/icons/128x128/schedule.png</normaloff>:/icons/128x128/schedule.png</iconset>
+        </attribute>
         <attribute name="label">
          <string>Schedule</string>
         </attribute>
@@ -329,6 +361,10 @@
    </widget>
   </widget>
   <widget class="QDockWidget" name="osdWidget">
+   <property name="windowIcon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/control.png</normaloff>:/icons/128x128/control.png</iconset>
+   </property>
    <property name="features">
     <set>QDockWidget::DockWidgetFeatureMask</set>
    </property>
@@ -407,8 +443,8 @@
         <string>Play</string>
        </property>
        <property name="icon">
-        <iconset resource="images.qrc">
-         <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
+        <iconset resource="../../data/icons.qrc">
+         <normaloff>:/icons/32x32/player_play.png</normaloff>:/icons/32x32/player_play.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -439,8 +475,8 @@
         <string>Stop</string>
        </property>
        <property name="icon">
-        <iconset resource="images.qrc">
-         <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
+        <iconset resource="../../data/icons.qrc">
+         <normaloff>:/icons/32x32/player_stop.png</normaloff>:/icons/32x32/player_stop.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -471,8 +507,8 @@
         <string>Back</string>
        </property>
        <property name="icon">
-        <iconset resource="images.qrc">
-         <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
+        <iconset resource="../../data/icons.qrc">
+         <normaloff>:/icons/32x32/player_rew.png</normaloff>:/icons/32x32/player_rew.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -503,8 +539,8 @@
         <string>Next</string>
        </property>
        <property name="icon">
-        <iconset resource="images.qrc">
-         <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
+        <iconset resource="../../data/icons.qrc">
+         <normaloff>:/icons/32x32/player_fwd.png</normaloff>:/icons/32x32/player_fwd.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -535,8 +571,8 @@
         <string>Record Now</string>
        </property>
        <property name="icon">
-        <iconset resource="images.qrc">
-         <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+        <iconset resource="../../data/icons.qrc">
+         <normaloff>:/icons/22x22/record.png</normaloff>:/icons/22x22/record.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -561,8 +597,8 @@
         <string>Mute</string>
        </property>
        <property name="icon">
-        <iconset resource="images.qrc">
-         <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
+        <iconset resource="../../data/icons.qrc">
+         <normaloff>:/icons/32x32/player_mute.png</normaloff>:/icons/32x32/player_mute.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -593,17 +629,17 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionAbout">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
+    <iconset resource="../../data/logo.qrc">
+     <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
    </property>
    <property name="text">
     <string>About Tano</string>
    </property>
   </action>
-  <action name="actionClose">
+  <action name="actionExit">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/exit.png</normaloff>:/icons/images/exit.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/exit.png</normaloff>:/icons/128x128/exit.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Exit</string>
@@ -614,8 +650,8 @@
   </action>
   <action name="actionSettings">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/settings.png</normaloff>:/icons/images/settings.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/settings.png</normaloff>:/icons/128x128/settings.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Settings</string>
@@ -625,14 +661,18 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/fullscreen.png</normaloff>:/icons/32x32/fullscreen.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Fullscreen</string>
    </property>
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/open.png</normaloff>:/icons/32x32/open.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Open Channel list</string>
@@ -640,8 +680,8 @@
   </action>
   <action name="actionOpenFile">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/open.png</normaloff>:/icons/32x32/open.png</iconset>
    </property>
    <property name="text">
     <string>Open &amp;File</string>
@@ -649,8 +689,8 @@
   </action>
   <action name="actionEditPlaylist">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/edit.png</normaloff>:/icons/128x128/edit.png</iconset>
    </property>
    <property name="text">
     <string>Edit Channels</string>
@@ -666,17 +706,18 @@
    <property name="checked">
     <bool>true</bool>
    </property>
-   <property name="text">
-    <string>Info panel</string>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/info.png</normaloff>:/icons/128x128/info.png</iconset>
    </property>
-   <property name="toolTip">
+   <property name="text">
     <string>Info panel</string>
    </property>
   </action>
   <action name="actionOpenUrl">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/open.png</normaloff>:/icons/32x32/open.png</iconset>
    </property>
    <property name="text">
     <string>Open URL</string>
@@ -684,8 +725,8 @@
   </action>
   <action name="actionUpdate">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/update.png</normaloff>:/icons/images/update.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/update.png</normaloff>:/icons/32x32/update.png</iconset>
    </property>
    <property name="text">
     <string>Check for updates</string>
@@ -720,8 +761,8 @@
   </action>
   <action name="actionOpenToolbar">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/fileopen.png</normaloff>:/icons/images/fileopen.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/open.png</normaloff>:/icons/32x32/open.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -729,8 +770,8 @@
   </action>
   <action name="actionPlay">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/player_play.png</normaloff>:/icons/images/player_play.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/player_play.png</normaloff>:/icons/32x32/player_play.png</iconset>
    </property>
    <property name="text">
     <string>Play</string>
@@ -738,8 +779,8 @@
   </action>
   <action name="actionStop">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/player_stop.png</normaloff>:/icons/images/player_stop.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/player_stop.png</normaloff>:/icons/32x32/player_stop.png</iconset>
    </property>
    <property name="text">
     <string>Stop</string>
@@ -749,14 +790,18 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/top.png</normaloff>:/icons/32x32/top.png</iconset>
+   </property>
    <property name="text">
     <string>Always on top</string>
    </property>
   </action>
   <action name="actionTray">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/win.png</normaloff>:/icons/images/win.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/interface.png</normaloff>:/icons/128x128/interface.png</iconset>
    </property>
    <property name="text">
     <string>Hide to tray</string>
@@ -769,14 +814,18 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/interface.png</normaloff>:/icons/128x128/interface.png</iconset>
+   </property>
    <property name="text">
     <string>Simple Mode</string>
    </property>
   </action>
   <action name="actionNext">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/player_fwd.png</normaloff>:/icons/images/player_fwd.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/player_fwd.png</normaloff>:/icons/32x32/player_fwd.png</iconset>
    </property>
    <property name="text">
     <string>Next</string>
@@ -784,8 +833,8 @@
   </action>
   <action name="actionBack">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/player_rew.png</normaloff>:/icons/images/player_rew.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/player_rew.png</normaloff>:/icons/32x32/player_rew.png</iconset>
    </property>
    <property name="text">
     <string>Back</string>
@@ -796,8 +845,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/player_mute.png</normaloff>:/icons/images/player_mute.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/player_mute.png</normaloff>:/icons/32x32/player_mute.png</iconset>
    </property>
    <property name="text">
     <string>Mute</string>
@@ -805,8 +854,8 @@
   </action>
   <action name="actionVolumeUp">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/up.png</normaloff>:/icons/images/up.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/up.png</normaloff>:/icons/32x32/up.png</iconset>
    </property>
    <property name="text">
     <string>Volume up</string>
@@ -814,8 +863,8 @@
   </action>
   <action name="actionVolumeDown">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/down.png</normaloff>:/icons/images/down.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/down.png</normaloff>:/icons/32x32/down.png</iconset>
    </property>
    <property name="text">
     <string>Volume down</string>
@@ -826,8 +875,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/recorder.png</normaloff>:/icons/images/recorder.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/recorder.png</normaloff>:/icons/128x128/recorder.png</iconset>
    </property>
    <property name="text">
     <string>Recorder</string>
@@ -835,8 +884,8 @@
   </action>
   <action name="actionRecordNow">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/22x22/record.png</normaloff>:/icons/22x22/record.png</iconset>
    </property>
    <property name="text">
     <string>Record Current</string>
@@ -1029,8 +1078,8 @@
   </action>
   <action name="actionTimers">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/clock.png</normaloff>:/icons/images/clock.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/clock.png</normaloff>:/icons/128x128/clock.png</iconset>
    </property>
    <property name="text">
     <string>Timers</string>
@@ -1038,8 +1087,8 @@
   </action>
   <action name="actionAboutQt">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/qt.png</normaloff>:/icons/images/qt.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/other/qt.png</normaloff>:/icons/other/qt.png</iconset>
    </property>
    <property name="text">
     <string>About Qt</string>
@@ -1050,8 +1099,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/record.png</normaloff>:/icons/images/record.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/22x22/record.png</normaloff>:/icons/22x22/record.png</iconset>
    </property>
    <property name="text">
     <string>Stop recording</string>
@@ -1064,14 +1113,18 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/control.png</normaloff>:/icons/128x128/control.png</iconset>
+   </property>
    <property name="text">
     <string>Controls panel</string>
    </property>
   </action>
   <action name="actionAboutPlugins">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/plugin.png</normaloff>:/icons/images/plugin.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/22x22/plugin.png</normaloff>:/icons/22x22/plugin.png</iconset>
    </property>
    <property name="text">
     <string>About Plugins</string>
@@ -1087,8 +1140,8 @@
   </action>
   <action name="actionSchedule">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/schedule.png</normaloff>:/icons/images/schedule.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/schedule.png</normaloff>:/icons/128x128/schedule.png</iconset>
    </property>
    <property name="text">
     <string>Schedule</string>
@@ -1100,6 +1153,12 @@
    <class>PlaylistWidget</class>
    <extends>QWidget</extends>
    <header>ui/PlaylistWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>EpgSchedule</class>
+   <extends>QWidget</extends>
+   <header>epg/EpgSchedule.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -1167,12 +1226,6 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>EpgSchedule</class>
-   <extends>QWidget</extends>
-   <header>epg/EpgSchedule.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>CurrentTime</class>
    <extends>QWidget</extends>
    <header>ui/CurrentTime.h</header>
@@ -1180,7 +1233,8 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc"/>
+  <include location="../../data/icons.qrc"/>
+  <include location="../../data/logo.qrc"/>
  </resources>
  <connections>
   <connection>

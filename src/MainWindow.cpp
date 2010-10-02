@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)	:
 	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0),
 	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new Schedule())
 {
-	QPixmap pixmap(":/icons/images/splash.png");
+	QPixmap pixmap(":/images/splash.png");
 	Settings *settings = new Settings(this);
 	QSplashScreen *splash = new QSplashScreen(pixmap);
 	splash->setMask(pixmap.mask());
@@ -213,7 +213,7 @@ void MainWindow::createConnections()
 	connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
 	connect(ui->actionAboutPlugins, SIGNAL(triggered()), this, SLOT(aboutPlugins()));
 	connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
-	connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
+	connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(exit()));
 
 	connect(ui->actionTop, SIGNAL(triggered()), this, SLOT(top()));
 	connect(ui->actionLite, SIGNAL(triggered()), this, SLOT(lite()));
@@ -313,7 +313,7 @@ void MainWindow::createMenus()
 	_rightMenu->addMenu(ui->menuVideo);
 	_rightMenu->addSeparator();
 	_rightMenu->addAction(ui->actionTray);
-	_rightMenu->addAction(ui->actionClose);
+	_rightMenu->addAction(ui->actionExit);
 
 	_openMenu = new QMenu();
 	_openMenu->addAction(ui->actionOpenFile);
@@ -430,8 +430,8 @@ void MainWindow::playChannel(const int &clickedChannel)
 void MainWindow::setState(const bool &playing, const bool &audio, const bool &video)
 {
 	if(playing) {
-		ui->actionPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
-		ui->buttonPlay->setIcon(QIcon(":/icons/images/player_pause.png"));
+		ui->actionPlay->setIcon(QIcon(":/icons/32x32/player_pause.png"));
+		ui->buttonPlay->setIcon(QIcon(":/icons/32x32/player_pause.png"));
 		ui->actionPlay->setText(tr("Pause"));
 		ui->actionPlay->setToolTip(tr("Pause"));
 		ui->buttonPlay->setToolTip(tr("Pause"));
@@ -439,8 +439,8 @@ void MainWindow::setState(const bool &playing, const bool &audio, const bool &vi
 		ui->actionMute->setEnabled(true);
 		ui->buttonMute->setEnabled(true);
 	} else {
-		ui->actionPlay->setIcon(QIcon(":/icons/images/player_play.png"));
-		ui->buttonPlay->setIcon(QIcon(":/icons/images/player_play.png"));
+		ui->actionPlay->setIcon(QIcon(":/icons/32x32/player_play.png"));
+		ui->buttonPlay->setIcon(QIcon(":/icons/32x32/player_play.png"));
 		ui->actionPlay->setText(tr("Play"));
 		ui->actionPlay->setToolTip(tr("Play"));
 		ui->buttonPlay->setToolTip(tr("Play"));

@@ -14,8 +14,8 @@
    <string>Timers</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
-    <normaloff>:/icons/images/clock.png</normaloff>:/icons/images/clock.png</iconset>
+   <iconset resource="../../data/icons.qrc">
+    <normaloff>:/icons/128x128/clock.png</normaloff>:/icons/128x128/clock.png</iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -51,6 +51,10 @@
          <widget class="QPushButton" name="buttonCreate">
           <property name="text">
            <string>Create</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../data/icons.qrc">
+            <normaloff>:/icons/32x32/add.png</normaloff>:/icons/32x32/add.png</iconset>
           </property>
          </widget>
         </item>
@@ -279,8 +283,8 @@
   </widget>
   <action name="actionNew">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/editadd.png</normaloff>:/icons/images/editadd.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/add.png</normaloff>:/icons/32x32/add.png</iconset>
    </property>
    <property name="text">
     <string>New Task</string>
@@ -288,8 +292,8 @@
   </action>
   <action name="actionDelete">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/editdelete.png</normaloff>:/icons/images/editdelete.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/remove.png</normaloff>:/icons/32x32/remove.png</iconset>
    </property>
    <property name="text">
     <string>Delete Task</string>
@@ -297,8 +301,8 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/filesave.png</normaloff>:/icons/images/filesave.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/save.png</normaloff>:/icons/32x32/save.png</iconset>
    </property>
    <property name="text">
     <string>Save and Close</string>
@@ -309,8 +313,8 @@
   </action>
   <action name="actionClose">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/fileclose.png</normaloff>:/icons/images/fileclose.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/close.png</normaloff>:/icons/32x32/close.png</iconset>
    </property>
    <property name="text">
     <string>Close</string>
@@ -329,7 +333,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc"/>
+  <include location="../../data/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

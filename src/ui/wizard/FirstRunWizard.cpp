@@ -35,7 +35,7 @@ FirstRunWizard::FirstRunWizard(QWidget *parent)
 	setWizardStyle(ModernStyle);
 #endif
 
-	setPixmap(QWizard::LogoPixmap, QPixmap(":/icons/images/tano-small.png"));
+	setPixmap(QWizard::LogoPixmap, QPixmap(":/logo/48x48/logo.png"));
 	setWindowTitle(tr("First Run Wizard"));
 }
 

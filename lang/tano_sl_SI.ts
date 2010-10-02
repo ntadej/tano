@@ -92,39 +92,34 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>IP območje:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="324"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="328"/>
         <source> ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="343"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="347"/>
         <source>Port:</source>
         <translation>Vrata:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="382"/>
-        <location filename="../src/ui/EditPlaylist.ui" line="385"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="386"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="389"/>
         <source>Add Channel</source>
         <translation>Dodaj Program</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="394"/>
-        <location filename="../src/ui/EditPlaylist.ui" line="397"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="398"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="401"/>
         <source>Delete Channel</source>
         <translation>Izbriši Program</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="418"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="422"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="427"/>
-        <source>Reload</source>
-        <translation>Ponovno naloži</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="436"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="431"/>
         <source>Import</source>
         <translation>Uvozi</translation>
     </message>
@@ -214,24 +209,24 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Išči in posodobi</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="406"/>
-        <location filename="../src/ui/EditPlaylist.ui" line="409"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="410"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="413"/>
         <source>Save and Close</source>
         <translation>Shrani in zapri</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="445"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="440"/>
         <source>Move Up</source>
         <translation>Premakni gor</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="454"/>
-        <location filename="../src/ui/EditPlaylist.ui" line="457"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="449"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="452"/>
         <source>Move Down</source>
         <translation>Premakni dol</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.ui" line="466"/>
+        <location filename="../src/ui/EditPlaylist.ui" line="461"/>
         <source>Print</source>
         <translation>Natisni</translation>
     </message>
@@ -245,13 +240,13 @@ Izgubil boš vse neshranjene spremembe.</translation>
     <name>EditSettings</name>
     <message>
         <location filename="../src/ui/EditSettings.ui" line="14"/>
-        <location filename="../src/ui/EditSettings.ui" line="861"/>
+        <location filename="../src/ui/EditSettings.ui" line="877"/>
         <location filename="../mobile/EditSettings.ui" line="14"/>
         <source>Settings</source>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="1046"/>
+        <location filename="../src/ui/EditSettings.ui" line="1062"/>
         <source>Shortcuts</source>
         <translation>Bližnjice</translation>
     </message>
@@ -288,17 +283,17 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="682"/>
+        <location filename="../src/ui/EditSettings.ui" line="698"/>
         <source>Action</source>
         <translation>Ukaz</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="687"/>
+        <location filename="../src/ui/EditSettings.ui" line="703"/>
         <source>Key</source>
         <translation>Tipke</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="692"/>
+        <location filename="../src/ui/EditSettings.ui" line="708"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
@@ -313,12 +308,12 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Preveri za posodobitve ob zagonu</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="986"/>
+        <location filename="../src/ui/EditSettings.ui" line="1002"/>
         <source>General</source>
         <translation>Splošno</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="998"/>
+        <location filename="../src/ui/EditSettings.ui" line="1014"/>
         <source>Channels</source>
         <translation>Programi</translation>
     </message>
@@ -338,7 +333,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Skrij v sistemsko vrstico</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="1010"/>
+        <location filename="../src/ui/EditSettings.ui" line="1026"/>
         <source>Interface</source>
         <translation>Vmesnik</translation>
     </message>
@@ -438,67 +433,67 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Drugo</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="705"/>
+        <location filename="../src/ui/EditSettings.ui" line="721"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="718"/>
+        <location filename="../src/ui/EditSettings.ui" line="734"/>
         <source>Next channel</source>
         <translation>Naslednii kanal</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="731"/>
+        <location filename="../src/ui/EditSettings.ui" line="747"/>
         <source>Previous channel</source>
         <translation>Prejšnji kanal</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="744"/>
+        <location filename="../src/ui/EditSettings.ui" line="760"/>
         <source>Fullscreen</source>
         <translation>Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="577"/>
+        <location filename="../src/ui/EditSettings.ui" line="589"/>
         <source>Restore defaults</source>
         <translation>Obnovi privzeto</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="563"/>
+        <location filename="../src/ui/EditSettings.ui" line="567"/>
         <source>Set</source>
         <translation>Nastavi</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="527"/>
+        <location filename="../src/ui/EditSettings.ui" line="531"/>
         <source>Recorder backend</source>
         <translation>Hrbtenica snemalnika</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="533"/>
+        <location filename="../src/ui/EditSettings.ui" line="537"/>
         <source>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</source>
         <translation>&lt;i&gt;Prosim, izberi vtičnik snemalnika s spodnjega seznama:&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="757"/>
+        <location filename="../src/ui/EditSettings.ui" line="773"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="770"/>
+        <location filename="../src/ui/EditSettings.ui" line="786"/>
         <source>Volume up</source>
         <translation>Povečaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="783"/>
+        <location filename="../src/ui/EditSettings.ui" line="799"/>
         <source>Volume down</source>
         <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="900"/>
+        <location filename="../src/ui/EditSettings.ui" line="916"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="570"/>
+        <location filename="../src/ui/EditSettings.ui" line="578"/>
         <source>Clear Shortcut</source>
         <translation>Počisti bližnjico</translation>
     </message>
@@ -539,38 +534,38 @@ Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
         <location filename="../src/ui/EditSettings.ui" line="404"/>
-        <location filename="../src/ui/EditSettings.ui" line="1022"/>
+        <location filename="../src/ui/EditSettings.ui" line="1038"/>
         <source>Playback</source>
         <translation>Predvajanje</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="809"/>
+        <location filename="../src/ui/EditSettings.ui" line="825"/>
         <source>Open File</source>
         <translation>Odpri Datoteko</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="822"/>
+        <location filename="../src/ui/EditSettings.ui" line="838"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="835"/>
+        <location filename="../src/ui/EditSettings.ui" line="851"/>
         <source>Open Channel list</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="848"/>
+        <location filename="../src/ui/EditSettings.ui" line="864"/>
         <source>Edit Channel list</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
         <location filename="../src/ui/EditSettings.ui" line="304"/>
-        <location filename="../src/ui/EditSettings.ui" line="874"/>
+        <location filename="../src/ui/EditSettings.ui" line="890"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="887"/>
+        <location filename="../src/ui/EditSettings.ui" line="903"/>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
     </message>
@@ -585,8 +580,8 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Privzet imenik snemanja</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="796"/>
-        <location filename="../src/ui/EditSettings.ui" line="1034"/>
+        <location filename="../src/ui/EditSettings.ui" line="812"/>
+        <location filename="../src/ui/EditSettings.ui" line="1050"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
@@ -629,18 +624,18 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Timerji</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="286"/>
+        <location filename="../src/ui/EditTimers.ui" line="290"/>
         <source>New Task</source>
         <translation>Novo opravilo</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="295"/>
+        <location filename="../src/ui/EditTimers.ui" line="299"/>
         <source>Delete Task</source>
         <translation>Izbriši opravilo</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="316"/>
-        <location filename="../src/ui/EditTimers.ui" line="319"/>
+        <location filename="../src/ui/EditTimers.ui" line="320"/>
+        <location filename="../src/ui/EditTimers.ui" line="323"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
@@ -660,70 +655,70 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Ustvari</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="62"/>
-        <location filename="../src/ui/EditTimers.ui" line="127"/>
+        <location filename="../src/ui/EditTimers.ui" line="66"/>
+        <location filename="../src/ui/EditTimers.ui" line="131"/>
         <source>Name:</source>
         <translation>Ime:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="74"/>
+        <location filename="../src/ui/EditTimers.ui" line="78"/>
         <source>Select a channel from the list below:</source>
         <translation>Izberi program s spodnjega seznama:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="117"/>
+        <location filename="../src/ui/EditTimers.ui" line="121"/>
         <source>Editor</source>
         <translation>Urejevalnik</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="134"/>
+        <location filename="../src/ui/EditTimers.ui" line="138"/>
         <source>Channel:</source>
         <translation>Program:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="141"/>
+        <location filename="../src/ui/EditTimers.ui" line="145"/>
         <source>Playlist:</source>
         <translation>Seznam:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="148"/>
+        <location filename="../src/ui/EditTimers.ui" line="152"/>
         <source>Date:</source>
         <translation>Datum:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="155"/>
+        <location filename="../src/ui/EditTimers.ui" line="159"/>
         <source>Start time:</source>
         <translation>Začetek:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="162"/>
+        <location filename="../src/ui/EditTimers.ui" line="166"/>
         <source>End time:</source>
         <translation>Konec:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="179"/>
+        <location filename="../src/ui/EditTimers.ui" line="183"/>
         <source>dd.MM.yyyy</source>
         <translation>dd.MM.yyyy</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="196"/>
-        <location filename="../src/ui/EditTimers.ui" line="203"/>
+        <location filename="../src/ui/EditTimers.ui" line="200"/>
+        <location filename="../src/ui/EditTimers.ui" line="207"/>
         <source>hh:mm</source>
         <translation>hh:mm</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="256"/>
+        <location filename="../src/ui/EditTimers.ui" line="260"/>
         <source>Disabled:</source>
         <translation>Izključen:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="273"/>
+        <location filename="../src/ui/EditTimers.ui" line="277"/>
         <source>Url:</source>
         <translation>Naslov:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.ui" line="304"/>
-        <location filename="../src/ui/EditTimers.ui" line="307"/>
+        <location filename="../src/ui/EditTimers.ui" line="308"/>
+        <location filename="../src/ui/EditTimers.ui" line="311"/>
         <source>Save and Close</source>
         <translation>Shrani in zapri</translation>
     </message>
@@ -810,7 +805,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
 <context>
     <name>EpgSchedule</name>
     <message>
-        <location filename="../src/ui/EpgSchedule.ui" line="18"/>
+        <location filename="../src/ui/EpgSchedule.ui" line="44"/>
         <source>&lt;center&gt;&lt;h1&gt;No EPG&lt;/h1&gt;&lt;/center&gt;</source>
         <translation>&lt;center&gt;&lt;h1&gt;Ni sporeda&lt;/h1&gt;&lt;/center&gt;</translation>
     </message>
@@ -890,32 +885,32 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="609"/>
+        <location filename="../src/ui/MainWindow.ui" line="645"/>
         <source>&amp;Exit</source>
         <translation>&amp;Izhod</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="612"/>
+        <location filename="../src/ui/MainWindow.ui" line="648"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="621"/>
+        <location filename="../src/ui/MainWindow.ui" line="657"/>
         <source>&amp;Settings</source>
         <translation>&amp;Nastavitve</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="629"/>
+        <location filename="../src/ui/MainWindow.ui" line="669"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="638"/>
+        <location filename="../src/ui/MainWindow.ui" line="678"/>
         <source>&amp;Open Channel list</source>
         <translation>&amp;Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="647"/>
+        <location filename="../src/ui/MainWindow.ui" line="687"/>
         <source>Open &amp;File</source>
         <translation>Odpri &amp;Datoteko</translation>
     </message>
@@ -925,42 +920,42 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>P&amp;omoč</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="682"/>
+        <location filename="../src/ui/MainWindow.ui" line="723"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="691"/>
+        <location filename="../src/ui/MainWindow.ui" line="732"/>
         <source>Check for updates</source>
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="702"/>
-        <location filename="../src/ui/MainWindow.ui" line="888"/>
+        <location filename="../src/ui/MainWindow.ui" line="743"/>
+        <location filename="../src/ui/MainWindow.ui" line="937"/>
         <source>Original</source>
         <translation>Originalno</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="710"/>
-        <location filename="../src/ui/MainWindow.ui" line="960"/>
+        <location filename="../src/ui/MainWindow.ui" line="751"/>
+        <location filename="../src/ui/MainWindow.ui" line="1009"/>
         <source>4:3</source>
         <translation>4:3</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="718"/>
-        <location filename="../src/ui/MainWindow.ui" line="896"/>
+        <location filename="../src/ui/MainWindow.ui" line="759"/>
+        <location filename="../src/ui/MainWindow.ui" line="945"/>
         <source>16:9</source>
         <translation>16:9</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="727"/>
+        <location filename="../src/ui/MainWindow.ui" line="768"/>
         <source>Open</source>
         <translation>Odpri</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="404"/>
-        <location filename="../src/ui/MainWindow.ui" line="407"/>
-        <location filename="../src/ui/MainWindow.ui" line="736"/>
+        <location filename="../src/ui/MainWindow.ui" line="440"/>
+        <location filename="../src/ui/MainWindow.ui" line="443"/>
+        <location filename="../src/ui/MainWindow.ui" line="777"/>
         <location filename="../src/MainWindow.cpp" line="444"/>
         <location filename="../src/MainWindow.cpp" line="445"/>
         <location filename="../src/MainWindow.cpp" line="446"/>
@@ -969,14 +964,14 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="436"/>
-        <location filename="../src/ui/MainWindow.ui" line="439"/>
-        <location filename="../src/ui/MainWindow.ui" line="745"/>
+        <location filename="../src/ui/MainWindow.ui" line="472"/>
+        <location filename="../src/ui/MainWindow.ui" line="475"/>
+        <location filename="../src/ui/MainWindow.ui" line="786"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="753"/>
+        <location filename="../src/ui/MainWindow.ui" line="798"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
@@ -986,48 +981,48 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="773"/>
+        <location filename="../src/ui/MainWindow.ui" line="822"/>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="214"/>
+        <location filename="../src/ui/MainWindow.ui" line="238"/>
         <source>Main Toolbar</source>
         <translation>Glavna orodna vrstica</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="500"/>
-        <location filename="../src/ui/MainWindow.ui" line="503"/>
-        <location filename="../src/ui/MainWindow.ui" line="782"/>
+        <location filename="../src/ui/MainWindow.ui" line="536"/>
+        <location filename="../src/ui/MainWindow.ui" line="539"/>
+        <location filename="../src/ui/MainWindow.ui" line="831"/>
         <source>Next</source>
         <translation>Naslednji</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="468"/>
-        <location filename="../src/ui/MainWindow.ui" line="471"/>
-        <location filename="../src/ui/MainWindow.ui" line="791"/>
+        <location filename="../src/ui/MainWindow.ui" line="504"/>
+        <location filename="../src/ui/MainWindow.ui" line="507"/>
+        <location filename="../src/ui/MainWindow.ui" line="840"/>
         <source>Back</source>
         <translation>Nazaj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="558"/>
-        <location filename="../src/ui/MainWindow.ui" line="561"/>
-        <location filename="../src/ui/MainWindow.ui" line="803"/>
+        <location filename="../src/ui/MainWindow.ui" line="594"/>
+        <location filename="../src/ui/MainWindow.ui" line="597"/>
+        <location filename="../src/ui/MainWindow.ui" line="852"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="812"/>
+        <location filename="../src/ui/MainWindow.ui" line="861"/>
         <source>Volume up</source>
         <translation>Povečaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="821"/>
+        <location filename="../src/ui/MainWindow.ui" line="870"/>
         <source>Volume down</source>
         <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="833"/>
+        <location filename="../src/ui/MainWindow.ui" line="882"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
@@ -1037,133 +1032,133 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>&amp;Zvok</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="119"/>
+        <location filename="../src/ui/MainWindow.ui" line="123"/>
         <source>&amp;Playback</source>
         <translation>&amp;Predvajanje</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="532"/>
-        <location filename="../src/ui/MainWindow.ui" line="535"/>
+        <location filename="../src/ui/MainWindow.ui" line="568"/>
+        <location filename="../src/ui/MainWindow.ui" line="571"/>
         <source>Record Now</source>
         <translation>Snemaj takoj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="853"/>
-        <location filename="../src/ui/MainWindow.ui" line="968"/>
+        <location filename="../src/ui/MainWindow.ui" line="902"/>
+        <location filename="../src/ui/MainWindow.ui" line="1017"/>
         <source>1:1</source>
         <translation>1:1</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="842"/>
-        <location filename="../src/ui/MainWindow.ui" line="845"/>
+        <location filename="../src/ui/MainWindow.ui" line="891"/>
+        <location filename="../src/ui/MainWindow.ui" line="894"/>
         <source>Record Current</source>
         <translation>Snemaj trenutno</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="861"/>
-        <location filename="../src/ui/MainWindow.ui" line="904"/>
+        <location filename="../src/ui/MainWindow.ui" line="910"/>
+        <location filename="../src/ui/MainWindow.ui" line="953"/>
         <source>16:10</source>
         <translation>16:10</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="869"/>
-        <location filename="../src/ui/MainWindow.ui" line="920"/>
+        <location filename="../src/ui/MainWindow.ui" line="918"/>
+        <location filename="../src/ui/MainWindow.ui" line="969"/>
         <source>2.21:1</source>
         <translation>2.21:1</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="877"/>
-        <location filename="../src/ui/MainWindow.ui" line="952"/>
+        <location filename="../src/ui/MainWindow.ui" line="926"/>
+        <location filename="../src/ui/MainWindow.ui" line="1001"/>
         <source>5:4</source>
         <translation>5:4</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="912"/>
+        <location filename="../src/ui/MainWindow.ui" line="961"/>
         <source>1.85:1</source>
         <translation>1.85:1</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="928"/>
+        <location filename="../src/ui/MainWindow.ui" line="977"/>
         <source>2.35:1</source>
         <translation>2.35:1</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="936"/>
+        <location filename="../src/ui/MainWindow.ui" line="985"/>
         <source>2.39:1</source>
         <translation>2.39:1</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="944"/>
+        <location filename="../src/ui/MainWindow.ui" line="993"/>
         <source>5:3</source>
         <translation>5:3</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="979"/>
+        <location filename="../src/ui/MainWindow.ui" line="1028"/>
         <source>Disabled</source>
         <translation>Onemogočeno</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="987"/>
+        <location filename="../src/ui/MainWindow.ui" line="1036"/>
         <source>Blend</source>
         <translation>Prelivanje</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="995"/>
+        <location filename="../src/ui/MainWindow.ui" line="1044"/>
         <source>Mean</source>
         <translation>Sredina</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1003"/>
+        <location filename="../src/ui/MainWindow.ui" line="1052"/>
         <source>Bob</source>
         <translation>Bob</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1011"/>
+        <location filename="../src/ui/MainWindow.ui" line="1060"/>
         <source>Linear</source>
         <translation>Linearno</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1019"/>
+        <location filename="../src/ui/MainWindow.ui" line="1068"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1027"/>
+        <location filename="../src/ui/MainWindow.ui" line="1076"/>
         <source>Discard</source>
         <translation>Zavrzi</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1036"/>
+        <location filename="../src/ui/MainWindow.ui" line="1085"/>
         <source>Timers</source>
         <translation>Timerji</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1045"/>
+        <location filename="../src/ui/MainWindow.ui" line="1094"/>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1068"/>
+        <location filename="../src/ui/MainWindow.ui" line="1121"/>
         <source>Controls panel</source>
         <translation>Upravljalni pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1077"/>
+        <location filename="../src/ui/MainWindow.ui" line="1130"/>
         <source>About Plugins</source>
         <translation>O vtičnikih</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="192"/>
+        <location filename="../src/ui/MainWindow.ui" line="216"/>
         <source>&amp;File</source>
         <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="174"/>
+        <location filename="../src/ui/MainWindow.ui" line="194"/>
         <source>Aspect ratio</source>
         <translation>Razmerje slike</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="162"/>
+        <location filename="../src/ui/MainWindow.ui" line="178"/>
         <source>Deinterlacing</source>
         <translation>Razpletanje</translation>
     </message>
@@ -1223,8 +1218,8 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Datoteke podnapisov(*.sub *.srt *.txt)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="315"/>
-        <location filename="../src/ui/MainWindow.ui" line="1094"/>
+        <location filename="../src/ui/MainWindow.ui" line="347"/>
+        <location filename="../src/ui/MainWindow.ui" line="1147"/>
         <source>Schedule</source>
         <translation>Spored</translation>
     </message>
@@ -1242,39 +1237,38 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="600"/>
+        <location filename="../src/ui/MainWindow.ui" line="636"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="656"/>
-        <location filename="../src/ui/MainWindow.ui" line="659"/>
+        <location filename="../src/ui/MainWindow.ui" line="696"/>
+        <location filename="../src/ui/MainWindow.ui" line="699"/>
         <source>Edit Channels</source>
         <translation>Uredi programe</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="257"/>
-        <location filename="../src/ui/MainWindow.ui" line="670"/>
-        <location filename="../src/ui/MainWindow.ui" line="673"/>
+        <location filename="../src/ui/MainWindow.ui" line="281"/>
+        <location filename="../src/ui/MainWindow.ui" line="714"/>
         <source>Info panel</source>
         <translation>Info pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="762"/>
-        <location filename="../src/ui/MainWindow.ui" line="765"/>
+        <location filename="../src/ui/MainWindow.ui" line="807"/>
+        <location filename="../src/ui/MainWindow.ui" line="810"/>
         <location filename="../src/MainWindow.cpp" line="702"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1057"/>
-        <location filename="../src/ui/MainWindow.ui" line="1060"/>
+        <location filename="../src/ui/MainWindow.ui" line="1106"/>
+        <location filename="../src/ui/MainWindow.ui" line="1109"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1082"/>
-        <location filename="../src/ui/MainWindow.ui" line="1085"/>
+        <location filename="../src/ui/MainWindow.ui" line="1135"/>
+        <location filename="../src/ui/MainWindow.ui" line="1138"/>
         <source>Open from file</source>
         <translation>Odpri iz datoteke</translation>
     </message>
@@ -1294,22 +1288,22 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Zvočna sled</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="128"/>
+        <location filename="../src/ui/MainWindow.ui" line="132"/>
         <source>&amp;Video</source>
         <translation>&amp;Slika</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="132"/>
+        <location filename="../src/ui/MainWindow.ui" line="136"/>
         <source>Video track</source>
         <translation>Slikovna sled</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="137"/>
+        <location filename="../src/ui/MainWindow.ui" line="145"/>
         <source>Crop video</source>
         <translation>Obreži sliko</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="153"/>
+        <location filename="../src/ui/MainWindow.ui" line="165"/>
         <source>Subtitles</source>
         <translation>Podnapisi</translation>
     </message>
@@ -1376,27 +1370,22 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>PlaylistWidget</name>
     <message>
-        <location filename="../src/ui/PlaylistWidget.ui" line="35"/>
+        <location filename="../src/ui/PlaylistWidget.ui" line="36"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.ui" line="30"/>
-        <source>#</source>
-        <translation>#</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/PlaylistWidget.ui" line="70"/>
+        <location filename="../src/ui/PlaylistWidget.ui" line="71"/>
         <source>Search:</source>
         <translation>Išči:</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.ui" line="77"/>
+        <location filename="../src/ui/PlaylistWidget.ui" line="78"/>
         <source>Category:</source>
         <translation>Kategorija:</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.ui" line="52"/>
+        <location filename="../src/ui/PlaylistWidget.ui" line="53"/>
         <source>Clear</source>
         <translation>Počisti</translation>
     </message>
@@ -1725,47 +1714,47 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>SelectPlaylist</name>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="20"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="24"/>
         <source>Default Channel list</source>
         <translation>Privzet Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="26"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="30"/>
         <location filename="../mobile/SelectPlaylist.ui" line="42"/>
         <source>Preset</source>
         <translation>Prednastavljeno</translation>
     </message>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="54"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="58"/>
         <location filename="../mobile/SelectPlaylist.ui" line="80"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="64"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="68"/>
         <location filename="../mobile/SelectPlaylist.ui" line="90"/>
         <source>Reset</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="73"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="81"/>
         <location filename="../mobile/SelectPlaylist.ui" line="52"/>
         <source>Custom</source>
         <translation>Drugo</translation>
     </message>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="83"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="91"/>
         <source>Presets</source>
         <translation>Prednastavljene sheme</translation>
     </message>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="116"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="124"/>
         <location filename="../mobile/SelectPlaylist.ui" line="109"/>
         <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
         <translation>&lt;b&gt;Slovenija&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/SelectPlaylist.ui" line="123"/>
+        <location filename="../src/ui/SelectPlaylist.ui" line="131"/>
         <source>&lt;b&gt;Global&lt;/b&gt;</source>
         <translation>&lt;b&gt;Globalno&lt;/b&gt;</translation>
     </message>

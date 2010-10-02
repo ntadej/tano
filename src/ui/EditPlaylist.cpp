@@ -33,7 +33,7 @@ EditPlaylist::EditPlaylist(const QString &playlist,
 	ui(new Ui::EditPlaylist),
 	_closeEnabled(false),
 	_playlist(playlist),
-	_channelIcon(QIcon(":/icons/images/video.png"))
+	_channelIcon(QIcon(":/icons/128x128/video.png"))
 {
 	ui->setupUi(this);
 

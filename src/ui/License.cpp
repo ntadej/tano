@@ -13,7 +13,7 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "License.h"
+#include "ui/License.h"
 
 License::License(QWidget *parent)
 	: QTextBrowser(parent)
@@ -163,7 +163,4 @@ License::License(QWidget *parent)
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The GNU General Public License does not permit incorporating your program into proprietary programs. If your program is a subroutine library, you may consider it more useful to permit linking proprietary applications with the library. If this is what you want to do, use the GNU Lesser General Public License instead of this License. But first, please read &lt;http://www.gnu.org/philosophy/why-not-lgpl.html&gt;. </p></body></html>");
 }
 
-License::~License()
-{
-
-}
+License::~License() { }

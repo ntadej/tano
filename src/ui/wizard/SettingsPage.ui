@@ -11,8 +11,8 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../images.qrc">
-    <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
+   <iconset resource="../../../data/logo.qrc">
+    <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
   </property>
   <property name="title">
    <string>Set &lt;i&gt;Tano&lt;/i&gt;</string>
@@ -79,7 +79,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../images.qrc"/>
+  <include location="../../../data/logo.qrc"/>
  </resources>
  <connections/>
 </ui>

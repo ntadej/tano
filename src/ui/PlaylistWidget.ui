@@ -22,12 +22,13 @@
      <attribute name="headerDefaultSectionSize">
       <number>29</number>
      </attribute>
-     <attribute name="headerDefaultSectionSize">
-      <number>29</number>
-     </attribute>
      <column>
       <property name="text">
-       <string>#</string>
+       <string> </string>
+      </property>
+      <property name="icon">
+       <iconset resource="../../data/icons.qrc">
+        <normaloff>:/icons/22x22/number.png</normaloff>:/icons/22x22/number.png</iconset>
       </property>
      </column>
      <column>
@@ -52,8 +53,8 @@
       <string>Clear</string>
      </property>
      <property name="icon">
-      <iconset resource="images.qrc">
-       <normaloff>:/icons/images/stop.png</normaloff>:/icons/images/stop.png</iconset>
+      <iconset resource="../../data/icons.qrc">
+       <normaloff>:/icons/32x32/clear.png</normaloff>:/icons/32x32/clear.png</iconset>
      </property>
     </widget>
    </item>
@@ -81,7 +82,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="images.qrc"/>
+  <include location="../../data/icons.qrc"/>
  </resources>
  <connections>
   <connection>

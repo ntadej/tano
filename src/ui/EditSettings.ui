@@ -14,8 +14,8 @@
    <string>Settings</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
-    <normaloff>:/icons/images/settings.png</normaloff>:/icons/images/settings.png</iconset>
+   <iconset resource="../../data/icons.qrc">
+    <normaloff>:/icons/128x128/settings.png</normaloff>:/icons/128x128/settings.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_6">
    <item row="0" column="1">
@@ -64,7 +64,7 @@
              </sizepolicy>
             </property>
             <property name="pixmap">
-             <pixmap resource="images.qrc">:/icons/images/tano.png</pixmap>
+             <pixmap resource="../../data/logo.qrc">:/logo/64x64/logo.png</pixmap>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -381,7 +381,7 @@
              </sizepolicy>
             </property>
             <property name="pixmap">
-             <pixmap resource="images.qrc">:/icons/images/vlcqt.png</pixmap>
+             <pixmap resource="../../data/icons.qrc">:/icons/other/vlcqt.png</pixmap>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -513,6 +513,10 @@
             <property name="text">
              <string>Reset</string>
             </property>
+            <property name="icon">
+             <iconset resource="../../data/icons.qrc">
+              <normaloff>:/icons/32x32/reload.png</normaloff>:/icons/32x32/reload.png</iconset>
+            </property>
            </widget>
           </item>
          </layout>
@@ -562,6 +566,10 @@
          <property name="text">
           <string>Set</string>
          </property>
+         <property name="icon">
+          <iconset resource="../../data/icons.qrc">
+           <normaloff>:/icons/32x32/apply.png</normaloff>:/icons/32x32/apply.png</iconset>
+         </property>
         </widget>
        </item>
        <item row="1" column="2">
@@ -569,12 +577,20 @@
          <property name="text">
           <string>Clear Shortcut</string>
          </property>
+         <property name="icon">
+          <iconset resource="../../data/icons.qrc">
+           <normaloff>:/icons/32x32/clear.png</normaloff>:/icons/32x32/clear.png</iconset>
+         </property>
         </widget>
        </item>
        <item row="1" column="4">
         <widget class="QPushButton" name="buttonDefaults">
          <property name="text">
           <string>Restore defaults</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../data/icons.qrc">
+           <normaloff>:/icons/32x32/reload.png</normaloff>:/icons/32x32/reload.png</iconset>
          </property>
         </widget>
        </item>
@@ -989,8 +1005,8 @@
        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
       <property name="icon">
-       <iconset resource="images.qrc">
-        <normaloff>:/icons/images/settings.png</normaloff>:/icons/images/settings.png</iconset>
+       <iconset resource="../../data/icons.qrc">
+        <normaloff>:/icons/128x128/settings.png</normaloff>:/icons/128x128/settings.png</iconset>
       </property>
      </item>
      <item>
@@ -1001,8 +1017,8 @@
        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
       <property name="icon">
-       <iconset resource="images.qrc">
-        <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
+       <iconset resource="../../data/icons.qrc">
+        <normaloff>:/icons/128x128/edit.png</normaloff>:/icons/128x128/edit.png</iconset>
       </property>
      </item>
      <item>
@@ -1013,8 +1029,8 @@
        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
       <property name="icon">
-       <iconset resource="images.qrc">
-        <normaloff>:/icons/images/win.png</normaloff>:/icons/images/win.png</iconset>
+       <iconset resource="../../data/icons.qrc">
+        <normaloff>:/icons/128x128/interface.png</normaloff>:/icons/128x128/interface.png</iconset>
       </property>
      </item>
      <item>
@@ -1025,8 +1041,8 @@
        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
       <property name="icon">
-       <iconset resource="images.qrc">
-        <normaloff>:/icons/images/playback.png</normaloff>:/icons/images/playback.png</iconset>
+       <iconset resource="../../data/icons.qrc">
+        <normaloff>:/icons/128x128/playback.png</normaloff>:/icons/128x128/playback.png</iconset>
       </property>
      </item>
      <item>
@@ -1037,8 +1053,8 @@
        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
       <property name="icon">
-       <iconset resource="images.qrc">
-        <normaloff>:/icons/images/recorder.png</normaloff>:/icons/images/recorder.png</iconset>
+       <iconset resource="../../data/icons.qrc">
+        <normaloff>:/icons/128x128/recorder.png</normaloff>:/icons/128x128/recorder.png</iconset>
       </property>
      </item>
      <item>
@@ -1049,8 +1065,8 @@
        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
       <property name="icon">
-       <iconset resource="images.qrc">
-        <normaloff>:/icons/images/keyboard.png</normaloff>:/icons/images/keyboard.png</iconset>
+       <iconset resource="../../data/icons.qrc">
+        <normaloff>:/icons/128x128/keyboard.png</normaloff>:/icons/128x128/keyboard.png</iconset>
       </property>
      </item>
     </widget>
@@ -1072,7 +1088,8 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc"/>
+  <include location="../../data/icons.qrc"/>
+  <include location="../../data/logo.qrc"/>
  </resources>
  <connections>
   <connection>

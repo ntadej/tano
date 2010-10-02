@@ -26,7 +26,7 @@ PluginsManager::PluginsManager(QWidget *parent)
 
 	_interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirOpenIcon), QIcon::Normal, QIcon::On);
 	_interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirClosedIcon), QIcon::Normal, QIcon::Off);
-	_featureIcon = QIcon(":/icons/images/plugin.png");
+	_featureIcon = QIcon(":/icons/22x22/plugin.png");
 
 	_epg = new QTreeWidgetItem(ui->pluginsWidget);
 	_epg->setText(0, tr("EPG Plugins"));

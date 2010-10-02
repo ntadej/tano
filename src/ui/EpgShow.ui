@@ -11,16 +11,16 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
-    <normaloff>:/icons/images/schedule.png</normaloff>:/icons/images/schedule.png</iconset>
+   <iconset resource="../../data/icons.qrc">
+    <normaloff>:/icons/128x128/schedule.png</normaloff>:/icons/128x128/schedule.png</iconset>
   </property>
   <property name="currentIndex">
-   <number>1</number>
+   <number>0</number>
   </property>
   <widget class="QWidget" name="pageLoading">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <spacer name="verticalSpacer_2">
+     <spacer name="verticalSpacerTop">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -50,7 +50,7 @@
      </widget>
     </item>
     <item>
-     <spacer name="verticalSpacer">
+     <spacer name="verticalSpacerBottom">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
       </property>
@@ -130,8 +130,8 @@
        <string>Previous</string>
       </property>
       <property name="icon">
-       <iconset resource="images.qrc">
-        <normaloff>:/icons/images/back.png</normaloff>:/icons/images/back.png</iconset>
+       <iconset resource="../../data/icons.qrc">
+        <normaloff>:/icons/32x32/left.png</normaloff>:/icons/32x32/left.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -152,7 +152,7 @@
          <x>0</x>
          <y>0</y>
          <width>586</width>
-         <height>359</height>
+         <height>355</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -201,8 +201,8 @@
        <string>Next</string>
       </property>
       <property name="icon">
-       <iconset resource="images.qrc">
-        <normaloff>:/icons/images/forward.png</normaloff>:/icons/images/forward.png</iconset>
+       <iconset resource="../../data/icons.qrc">
+        <normaloff>:/icons/32x32/right.png</normaloff>:/icons/32x32/right.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -230,7 +230,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="images.qrc"/>
+  <include location="../../data/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

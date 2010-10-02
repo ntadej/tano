@@ -87,7 +87,11 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/wizard/SettingsPage.h
 )
 
-SET(Tano_Resrcs ui/images.qrc)
+SET(Tano_Resrcs
+	../data/icons.qrc
+	../data/images.qrc
+	../data/logo.qrc
+)
 
 # Define the C++ source files used by Tano
 SET(Tano_Channels_Srcs

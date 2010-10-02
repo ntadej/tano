@@ -14,8 +14,8 @@
    <string>Edit Channel List</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
-    <normaloff>:/icons/images/edit.png</normaloff>:/icons/images/edit.png</iconset>
+   <iconset resource="../../data/icons.qrc">
+    <normaloff>:/icons/128x128/edit.png</normaloff>:/icons/128x128/edit.png</iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -227,8 +227,8 @@
         </size>
        </property>
        <property name="icon">
-        <iconset resource="images.qrc">
-         <normaloff>:/icons/images/apply.png</normaloff>:/icons/images/apply.png</iconset>
+        <iconset resource="../../data/icons.qrc">
+         <normaloff>:/icons/32x32/apply.png</normaloff>:/icons/32x32/apply.png</iconset>
        </property>
       </widget>
      </item>
@@ -292,6 +292,10 @@
       <widget class="QPushButton" name="buttonUpdate">
        <property name="text">
         <string>Scan and update</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../data/icons.qrc">
+         <normaloff>:/icons/32x32/find.png</normaloff>:/icons/32x32/find.png</iconset>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -375,8 +379,8 @@
   </widget>
   <action name="actionAdd">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/editadd.png</normaloff>:/icons/images/editadd.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/add.png</normaloff>:/icons/32x32/add.png</iconset>
    </property>
    <property name="text">
     <string>Add Channel</string>
@@ -387,8 +391,8 @@
   </action>
   <action name="actionDelete">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/editdelete.png</normaloff>:/icons/images/editdelete.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/remove.png</normaloff>:/icons/32x32/remove.png</iconset>
    </property>
    <property name="text">
     <string>Delete Channel</string>
@@ -399,8 +403,8 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/filesave.png</normaloff>:/icons/images/filesave.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/save.png</normaloff>:/icons/32x32/save.png</iconset>
    </property>
    <property name="text">
     <string>Save and Close</string>
@@ -411,26 +415,17 @@
   </action>
   <action name="actionClose">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/fileclose.png</normaloff>:/icons/images/fileclose.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/close.png</normaloff>:/icons/32x32/close.png</iconset>
    </property>
    <property name="text">
     <string>Close</string>
    </property>
   </action>
-  <action name="actionReload">
-   <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/refresh.png</normaloff>:/icons/images/refresh.png</iconset>
-   </property>
-   <property name="text">
-    <string>Reload</string>
-   </property>
-  </action>
   <action name="actionImport">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/fileimport.png</normaloff>:/icons/images/fileimport.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/import.png</normaloff>:/icons/32x32/import.png</iconset>
    </property>
    <property name="text">
     <string>Import</string>
@@ -438,8 +433,8 @@
   </action>
   <action name="actionUp">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/up.png</normaloff>:/icons/images/up.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/up.png</normaloff>:/icons/32x32/up.png</iconset>
    </property>
    <property name="text">
     <string>Move Up</string>
@@ -447,8 +442,8 @@
   </action>
   <action name="actionDown">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/down.png</normaloff>:/icons/images/down.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/32x32/down.png</normaloff>:/icons/32x32/down.png</iconset>
    </property>
    <property name="text">
     <string>Move Down</string>
@@ -459,8 +454,8 @@
   </action>
   <action name="actionPrint">
    <property name="icon">
-    <iconset resource="images.qrc">
-     <normaloff>:/icons/images/print.png</normaloff>:/icons/images/print.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/128x128/print.png</normaloff>:/icons/128x128/print.png</iconset>
    </property>
    <property name="text">
     <string>Print</string>
@@ -477,7 +472,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc"/>
+  <include location="../../data/icons.qrc"/>
  </resources>
  <connections>
   <connection>

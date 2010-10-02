@@ -22,7 +22,7 @@ TrayIcon::TrayIcon(QMenu *menu,
 	_currentlyPlaying("")
 {
 	setContextMenu(menu);
-	setIcon(QIcon(":/icons/images/tano.png"));
+	setIcon(QIcon(":/logo/48x48/logo.png"));
 	setToolTip(tr("Tano"));
 
 	connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),

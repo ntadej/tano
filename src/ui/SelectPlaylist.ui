@@ -6,9 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>304</width>
+    <width>329</width>
     <height>301</height>
    </rect>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../data/icons.qrc">
+    <normaloff>:/icons/128x128/edit.png</normaloff>:/icons/128x128/edit.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
@@ -62,6 +66,10 @@
           </property>
           <property name="text">
            <string>Reset</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../data/icons.qrc">
+            <normaloff>:/icons/32x32/reload.png</normaloff>:/icons/32x32/reload.png</iconset>
           </property>
          </widget>
         </item>
@@ -143,7 +151,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../data/icons.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>customPlaylistRadio</sender>

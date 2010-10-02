@@ -26,7 +26,7 @@ TimersHandler::TimersHandler(QTreeWidget *treeWidget)
 	_item(0),
 	_timer(0),
 	_metTanoTag(false),
-	_timerIcon(QIcon(":/icons/images/clock.png")) { }
+	_timerIcon(QIcon(":/icons/128x128/clock.png")) { }
 
 TimersHandler::~TimersHandler()
 {

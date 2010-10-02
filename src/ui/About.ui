@@ -20,8 +20,8 @@
    <string>About Tano</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
-    <normaloff>:/icons/images/tano.png</normaloff>:/icons/images/tano.png</iconset>
+   <iconset resource="../../data/logo.qrc">
+    <normaloff>:/logo/256x256/logo.png</normaloff>:/logo/256x256/logo.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -45,14 +45,14 @@
             </size>
            </property>
            <property name="pixmap">
-            <pixmap resource="images.qrc">:/icons/images/tano.png</pixmap>
+            <pixmap resource="../../data/logo.qrc">:/logo/128x128/logo.png</pixmap>
            </property>
           </widget>
          </item>
          <item row="0" column="1" colspan="4">
           <widget class="QLabel" name="labelName">
            <property name="pixmap">
-            <pixmap resource="images.qrc">:/icons/images/name.png</pixmap>
+            <pixmap resource="../../data/images.qrc">:/images/name.png</pixmap>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -158,7 +158,7 @@
             </size>
            </property>
            <property name="pixmap">
-            <pixmap resource="images.qrc">:/icons/images/qt.png</pixmap>
+            <pixmap resource="../../data/icons.qrc">:/icons/other/qt.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -174,7 +174,7 @@
             </size>
            </property>
            <property name="pixmap">
-            <pixmap resource="images.qrc">:/icons/images/vlcqt.png</pixmap>
+            <pixmap resource="../../data/icons.qrc">:/icons/other/vlcqt.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -256,7 +256,9 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc"/>
+  <include location="../../data/icons.qrc"/>
+  <include location="../../data/images.qrc"/>
+  <include location="../../data/logo.qrc"/>
  </resources>
  <connections>
   <connection>

@@ -27,7 +27,7 @@ M3UHandler::M3UHandler(QTreeWidget *treeWidget)
 {
 	_name = QObject::tr("Channel list");
 	_epgPlugin = Settings::DEFAULT_EPG_PLUGIN;
-	_channelIcon = QIcon(":/icons/images/video.png");
+	_channelIcon = QIcon(":/icons/128x128/video.png");
 }
 
 M3UHandler::~M3UHandler()
