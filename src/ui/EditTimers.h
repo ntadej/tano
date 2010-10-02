@@ -35,7 +35,8 @@ class EditTimers : public QMainWindow
 {
 Q_OBJECT
 public:
-	EditTimers(Time *t, const QString &playlist, QWidget *parent = 0);
+	EditTimers(Time *t, const QString &playlist,
+			   QWidget *parent = 0);
 	~EditTimers();
 
 	void showTimersEditor();
@@ -53,7 +54,8 @@ private slots:
 	void playlist(QTreeWidgetItem *item);
 
 	void validate();
-	void changeStatus(Timer* t, const bool &status);
+	void changeStatus(Timer* t,
+					  const bool &status);
 
 	void editName(const QString &name);
 	void editDate(const QDate &date);

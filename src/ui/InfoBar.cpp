@@ -18,8 +18,8 @@
 
 #include "InfoBar.h"
 
-InfoBar::InfoBar(QWidget *parent) :
-	QScrollArea(parent),
+InfoBar::InfoBar(QWidget *parent)
+	: QScrollArea(parent),
 	_direction(true),
 	_image(new GetFile())
 {
@@ -87,13 +87,15 @@ void InfoBar::clear()
 	_labelLogo->hide();
 }
 
-void InfoBar::setInfo(const QString &channel, const QString &language)
+void InfoBar::setInfo(const QString &channel,
+					  const QString &language)
 {
 	_labelChannel->setText("<b>"+channel+"</b>");
 	_labelLanguage->setText(tr("Language:")+" "+language);
 }
 
-void InfoBar::setEpg(const QString &now, const QString &next)
+void InfoBar::setEpg(const QString &now,
+					 const QString &next)
 {
 	_labelNow->setText(tr("Now:")+" "+now);
 	_labelNext->setText(tr("Next:")+" "+next);

@@ -71,7 +71,9 @@ private slots:
 
 	void play(const QString &itemFile = 0);
 	void stop();
-	void setState(const bool &playing, const bool &audio = false, const bool &video = false);
+	void setState(const bool &playing,
+				  const bool &audio = false,
+				  const bool &video = false);
 
 	void playChannel(QTreeWidgetItem* clickedChannel);
 	void playChannel(const int &clickedChannel);
@@ -81,8 +83,11 @@ private slots:
 	void openUrl();
 	void openSubtitles();
 
-	void showEpg(const QStringList &epgValue, const int &id, const QString &identifier = IDENTIFIER);
-	void processMenu(const QString &type, const QList<QAction*> &list);
+	void showEpg(const QStringList &epgValue,
+				 const int &id,
+				 const QString &identifier = IDENTIFIER);
+	void processMenu(const QString &type,
+					 const QList<QAction*> &list);
 
 	void tooltip(const QString &channelNow = "stop");
 	void showRightMenu(const QPoint &pos);

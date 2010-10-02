@@ -19,11 +19,11 @@
 #include <QtGui/QMessageBox>
 
 #include "M3UHandler.h"
-#include "tanohandler.h"
+#include "TanoHandlerOld.h"
 #include "core/Settings.h"
 
-M3UHandler::M3UHandler(QTreeWidget *treeWidget) :
-	_treeWidget(treeWidget)
+M3UHandler::M3UHandler(QTreeWidget *treeWidget)
+	: _treeWidget(treeWidget)
 {
 	_name = QObject::tr("Channel list");
 	_epgPlugin = Settings::DEFAULT_EPG_PLUGIN;
@@ -61,7 +61,8 @@ QString M3UHandler::processNum(const QString &num)
 	return newNum;
 }
 
-int M3UHandler::processNewNum(QTreeWidgetItem *channel, const int &num)
+int M3UHandler::processNewNum(QTreeWidgetItem *channel,
+							  const int &num)
 {
 	if(_channelNums.contains(num)) {
 		QMessageBox::warning(_treeWidget, QObject::tr("Tano"),
@@ -159,7 +160,8 @@ void M3UHandler::processList()
 	}
 }
 
-QTreeWidgetItem *M3UHandler::createChannel(const QString &name, const QString &url)
+QTreeWidgetItem *M3UHandler::createChannel(const QString &name,
+										   const QString &url)
 {
 	int tmpNum;
 	for(int i=1; i<1000; i++) {
@@ -207,7 +209,7 @@ void M3UHandler::deleteChannel(QTreeWidgetItem *i)
 
 void M3UHandler::importOldFormat(const QString &tanoFile)
 {
-	TanoHandler *import = new TanoHandler();
+	TanoHandlerOld *import = new TanoHandlerOld();
 
 	QXmlSimpleReader reader;
 	reader.setContentHandler(import);

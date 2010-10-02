@@ -22,10 +22,11 @@
 #include "TimersHandler.h"
 
 TimersHandler::TimersHandler(QTreeWidget *treeWidget)
-	: _treeWidget(treeWidget), _item(0), _timer(0), _metTanoTag(false), _timerIcon(QIcon(":/icons/images/clock.png"))
-{
-
-}
+	: _treeWidget(treeWidget),
+	_item(0),
+	_timer(0),
+	_metTanoTag(false),
+	_timerIcon(QIcon(":/icons/images/clock.png")) { }
 
 TimersHandler::~TimersHandler()
 {

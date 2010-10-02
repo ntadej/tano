@@ -16,23 +16,24 @@
 #include "EditPlaylist.h"
 #include "ui_EditPlaylist.h"
 
+#include <QtCore/QDebug>
 #include <QtGui/QCloseEvent>
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
-
-#include <QDebug>
 
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "plugins/PluginsLoader.h"
 #include "ui/PrintDialog.h"
 
-EditPlaylist::EditPlaylist(const QString &playlist, const WId &video, QWidget *parent) :
-		QMainWindow(parent),
-		ui(new Ui::EditPlaylist),
-		_closeEnabled(false),
-		_playlist(playlist),
-		_channelIcon(QIcon(":/icons/images/video.png"))
+EditPlaylist::EditPlaylist(const QString &playlist,
+						   const WId &video,
+						   QWidget *parent)
+	: QMainWindow(parent),
+	ui(new Ui::EditPlaylist),
+	_closeEnabled(false),
+	_playlist(playlist),
+	_channelIcon(QIcon(":/icons/images/video.png"))
 {
 	ui->setupUi(this);
 
@@ -144,7 +145,8 @@ void EditPlaylist::addItem()
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
-void EditPlaylist::addItem(const QString &name, const QString &url)
+void EditPlaylist::addItem(const QString &name,
+						   const QString &url)
 {
 	ui->playlist->createItem(name, url);
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());

@@ -32,7 +32,9 @@ class EditPlaylist : public QMainWindow
 {
 Q_OBJECT
 public:
-	EditPlaylist(const QString &playlist, const WId &video, QWidget *parent = 0);
+	EditPlaylist(const QString &playlist,
+				 const WId &video,
+				 QWidget *parent = 0);
 	~EditPlaylist();
 
 protected:
@@ -42,7 +44,8 @@ protected:
 private slots:
 	void deleteItem();
 	void addItem();
-	void addItem(const QString &name, const QString &url);
+	void addItem(const QString &name,
+				 const QString &url);
 
 	void save();
 	void import();

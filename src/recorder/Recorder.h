@@ -20,8 +20,8 @@
 #include <QtCore/QTimer>
 #include <QtGui/QMainWindow>
 
-#include "Timer.h"
 #include "plugins/RecorderPlugins.h"
+#include "recorder/Timer.h"
 #include "ui/TrayIcon.h"
 #include "xml/M3UHandler.h"
 
@@ -38,15 +38,17 @@ public:
 	~Recorder();
 
 	void createSettings();
-	bool isRecording() const {return _recording;};
-	void setGlobals(TrayIcon *icon, QAction *action);
+	bool isRecording() const {return _recording;}
+	void setGlobals(TrayIcon *icon,
+					QAction *action);
 
 protected:
 	void changeEvent(QEvent *e);
 
 public slots:
 	void stop();
-	void recordNow(const QString &name, const QString &url);
+	void recordNow(const QString &name,
+				   const QString &url);
 	void openPlaylist(const QString &file);
 	void recordTimer(Timer *timer);
 	void stopTimer(Timer *timer);

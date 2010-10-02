@@ -26,9 +26,9 @@
 #include "core/Settings.h"
 #include "xml/TimersGenerator.h"
 
-
-EditTimers::EditTimers(Time *t, const QString &playlist, QWidget *parent) :
-	QMainWindow(parent),
+EditTimers::EditTimers(Time *t, const QString &playlist,
+					   QWidget *parent)
+	: QMainWindow(parent),
 	ui(new Ui::EditTimers),
 	_time(t),
 	_channel(0),
@@ -304,7 +304,7 @@ void EditTimers::write()
 		return;
 	}
 
-	TanoGenerator *generator = new TanoGenerator(ui->timersWidget, _handler->timersMap());
+	TimersGenerator *generator = new TimersGenerator(ui->timersWidget, _handler->timersMap());
 	generator->write(&file);
 	delete generator;
 
@@ -317,7 +317,8 @@ void EditTimers::write()
 	exit();
 }
 
-void EditTimers::changeStatus(Timer *t, const bool &status)
+void EditTimers::changeStatus(Timer *t,
+							  const bool &status)
 {
 	if(status) {
 		_handler->itemRead(t)->setText(1,tr("Recording"));

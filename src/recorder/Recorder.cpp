@@ -24,9 +24,17 @@
 #include "core/Settings.h"
 #include "plugins/PluginsLoader.h"
 
-Recorder::Recorder(QWidget *parent) :
-	QWidget(parent), ui(new Ui::Recorder), _recording(false), _isTimer(false),
-	_channelName(""), _channelUrl(""),_plugin(0), _trayIcon(0), _actionRecord(0), _currentTimer(0)
+Recorder::Recorder(QWidget *parent)
+	: QWidget(parent),
+	ui(new Ui::Recorder),
+	_recording(false),
+	_isTimer(false),
+	_channelName(""),
+	_channelUrl(""),
+	_plugin(0),
+	_trayIcon(0),
+	_actionRecord(0),
+	_currentTimer(0)
 {
 	ui->setupUi(this);
 
@@ -180,7 +188,8 @@ void Recorder::record(const bool &status)
 	}
 }
 
-void Recorder::recordNow(const QString &name, const QString &url)
+void Recorder::recordNow(const QString &name,
+						 const QString &url)
 {
 	_channelName = name;
 	_channelUrl = url;
@@ -197,7 +206,8 @@ void Recorder::sec()
 	ui->valueTime->setText(_time.toString("hh:mm:ss"));
 }
 
-void Recorder::setGlobals(TrayIcon *icon, QAction *action)
+void Recorder::setGlobals(TrayIcon *icon,
+						  QAction *action)
 {
 	_trayIcon = icon;
 	_actionRecord = action;

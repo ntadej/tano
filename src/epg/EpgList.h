@@ -22,7 +22,7 @@
 #include <QtGui/QMouseEvent>
 #include <QtGui/QTableWidget>
 
-#include "../channels/ChannelEpg.h"
+#include "channels/ChannelEpg.h"
 
 class EpgList : public QTableWidget
 {
@@ -49,9 +49,9 @@ private:
 	QMap<QTableWidgetItem*, ChannelEpg*> _map;
 	QMap<int, ChannelEpg*> _nmap;
 
-	QMenu *_rightMenu;
 	QAction *_info;
 	QAction *_record;
+	QMenu *_rightMenu;
 };
 
 #endif // TANO_EPGLIST_H_

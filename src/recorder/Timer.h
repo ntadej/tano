@@ -23,34 +23,34 @@
 class Timer
 {
 public:
-	Timer(const QString &fname,
-		  const QString &fchannel = 0,
-		  const QString &fplaylist = 0,
-		  const int &fnum = 0,
-		  const QString &furl = 0);
+	Timer(const QString &name,
+		  const QString &channel = 0,
+		  const QString &playlist = 0,
+		  const int &num = 0,
+		  const QString &url = 0);
 	~Timer();
 
 public:
 	QString name() const {return _name;}
-	void setName(const QString &sname);
+	void setName(const QString &name) { _name = name; }
 	QString channel() const {return _channel;}
-	void setChannel(const QString &schannel);
+	void setChannel(const QString &channel) { _channel = channel; }
 	QString playlist() const {return _playlist;}
-	void setPlaylist(const QString &splaylist);
+	void setPlaylist(const QString &playlist) { _playlist = playlist; }
 	QString url() const {return _url;}
-	void setUrl(const QString &surl);
+	void setUrl(const QString &url) { _url = url; }
 	int num() const {return _num;}
-	void setNum(const int &snum);
+	void setNum(const int &num) { _num = num; }
 	QDate date() const {return _date;}
-	void setDate(const QDate &sdate);
+	void setDate(const QDate &date) { _date = date; }
 	QTime startTime() const {return _startTime;}
-	void setStartTime(const QTime &sstartTime);
+	void setStartTime(const QTime &startTime) { _startTime = startTime; }
 	QTime endTime() const {return _endTime;}
-	void setEndTime(const QTime &sendTime);
+	void setEndTime(const QTime &endTime) { _endTime = endTime; }
 	bool isDisabled() const {return _disabled;}
-	void setDisabled(const bool &disabled);
+	void setDisabled(const bool &disabled) { _disabled = disabled; }
 	bool isActive() const {return _active;}
-	void setActive(const bool &active);
+	void setActive(const bool &active) { _active = active; }
 
 private:
 	bool _disabled;

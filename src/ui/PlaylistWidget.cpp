@@ -21,8 +21,8 @@
 
 #include "xml/M3UGenerator.h"
 
-PlaylistWidget::PlaylistWidget(QWidget *parent) :
-	QWidget(parent),
+PlaylistWidget::PlaylistWidget(QWidget *parent)
+	: QWidget(parent),
 	ui(new Ui::PlaylistWidget)
 {
 	ui->setupUi(this);
@@ -86,7 +86,9 @@ void PlaylistWidget::open(const QString &file)
 	ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
-void PlaylistWidget::save(const QString &name, const QString &epg, const QString &file)
+void PlaylistWidget::save(const QString &name,
+						  const QString &epg,
+						  const QString &file)
 {
 	QFile f(file);
 	if (!f.open(QFile::WriteOnly | QFile::Text)) {
@@ -119,7 +121,8 @@ void PlaylistWidget::processPlaylist()
 
 }
 
-QTreeWidgetItem *PlaylistWidget::createItem(const QString &name, const QString &url)
+QTreeWidgetItem *PlaylistWidget::createItem(const QString &name,
+											const QString &url)
 {
 	QTreeWidgetItem *newI = _handler->createChannel(name, url);
 	ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);

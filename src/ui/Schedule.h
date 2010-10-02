@@ -44,7 +44,9 @@ signals:
 
 private slots:
 	void channel(QTreeWidgetItem *item);
-	void loadEpg(const QStringList &list, const int &day, const QString &identifier);
+	void loadEpg(const QStringList &list,
+				 const int &day,
+				 const QString &identifier);
 
 private:
 	Ui::Schedule *ui;

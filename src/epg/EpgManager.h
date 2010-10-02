@@ -22,7 +22,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTimer>
 
-#include "EpgLoader.h"
+#include "epg/EpgLoader.h"
 
 class EpgManager : public QObject
 {
@@ -31,18 +31,24 @@ public:
 	EpgManager(QObject *parent = 0);
 	~EpgManager();
 
-	void setEpg(const QStringList &epg, const QString &epgPlugin);
+	void setEpg(const QStringList &epg,
+				const QString &epgPlugin);
 	void stop();
 
 public slots:
-	void request(const QString &epg, const QString &identifier);
+	void request(const QString &epg,
+				 const QString &identifier);
 
 signals:
-	void epg(QStringList, int, QString);
+	void epg(QStringList,
+			 int,
+			 QString);
 
 private slots:
 	void now();
-	void set(const QString &channel, const int &day, const QStringList &epg);
+	void set(const QString &channel,
+			 const int &day,
+			 const QStringList &epg);
 
 private:
 	void clear();

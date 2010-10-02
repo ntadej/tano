@@ -346,34 +346,34 @@
      <widget class="QWidget" name="pagePlayback">
       <layout class="QVBoxLayout" name="verticalLayout_21">
        <item>
-        <widget class="QGroupBox" name="vlcBox">
+        <widget class="QGroupBox" name="vlcqtBox">
          <property name="title">
-          <string>VLC Backend</string>
+          <string>VLC-Qt Backend</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
           <item row="0" column="0">
-           <widget class="QLabel" name="labelVlc">
+           <widget class="QLabel" name="labelVlcqt">
             <property name="text">
-             <string>Curently using Videolan VLC Backend</string>
+             <string>Curently using VLC-Qt Backend</string>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="labelVlcVersion">
+           <widget class="QLabel" name="labelVlcqtVersion">
             <property name="text">
              <string>Version:</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
+          <item row="3" column="0">
            <widget class="QCheckBox" name="vlcGlobalCheck">
             <property name="text">
              <string>Use global VLC settings (requires restart)</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="1" rowspan="4">
-           <widget class="QLabel" name="labelVlcIcon">
+          <item row="0" column="1" rowspan="5">
+           <widget class="QLabel" name="labelVlcqtIcon">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -381,10 +381,17 @@
              </sizepolicy>
             </property>
             <property name="pixmap">
-             <pixmap resource="images.qrc">:/icons/images/vlc.png</pixmap>
+             <pixmap resource="images.qrc">:/icons/images/vlcqt.png</pixmap>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelVlcVersion">
+            <property name="text">
+             <string>Using Videolan VLC version:</string>
             </property>
            </widget>
           </item>
@@ -582,9 +589,6 @@
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
-         <attribute name="verticalHeaderVisible">
-          <bool>false</bool>
-         </attribute>
          <attribute name="verticalHeaderVisible">
           <bool>false</bool>
          </attribute>
@@ -1055,15 +1059,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QtKeySequenceEdit</class>
-   <extends>QWidget</extends>
-   <header>ui/QtKeySequenceEdit.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>SelectPlaylist</class>
    <extends>QWidget</extends>
    <header>ui/SelectPlaylist.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QtKeySequenceEdit</class>
+   <extends>QWidget</extends>
+   <header>ui/QtKeySequenceEdit.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

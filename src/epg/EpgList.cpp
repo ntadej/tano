@@ -29,7 +29,7 @@ EpgList::EpgList(QWidget *parent)
 	_info = new QAction(QIcon(":/icons/images/schedule.png"), tr("Show information"), this);
 	_record = new QAction(QIcon(":/icons/images/record.png"), tr("Record"), this);
 	_rightMenu->addAction(_info);
-	_rightMenu->addAction(_record);
+	//_rightMenu->addAction(_record);
 
 	clearList();
 

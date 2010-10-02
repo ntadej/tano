@@ -31,8 +31,10 @@ public:
 
 public slots:
 	void clear();
-	void setInfo(const QString &channel, const QString &language);
-	void setEpg(const QString &now, const QString &next);
+	void setInfo(const QString &channel,
+				 const QString &language);
+	void setEpg(const QString &now,
+				const QString &next);
 	void setLogo(const QString &logo);
 
 signals:

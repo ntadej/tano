@@ -19,8 +19,8 @@
 #include "core/Settings.h"
 #include "core/Version.h"
 
-ConclusionPage::ConclusionPage(QWidget *parent) :
-	QWizardPage(parent),
+ConclusionPage::ConclusionPage(QWidget *parent)
+	: QWizardPage(parent),
 	ui(new Ui::ConclusionPage)
 {
 	ui->setupUi(this);

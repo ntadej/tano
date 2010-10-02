@@ -26,7 +26,7 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtXml/QXmlDefaultHandler>
 
-#include "../recorder/Timer.h"
+#include "recorder/Timer.h"
 
 class TimersHandler : public QXmlDefaultHandler
 {
@@ -34,17 +34,20 @@ public:
 	TimersHandler(QTreeWidget *treeWidget);
 	~TimersHandler();
 
-	bool startElement(const QString &namespaceURI, const QString &localName,
-					  const QString &qName, const QXmlAttributes &attributes);
-	bool endElement(const QString &namespaceURI, const QString &localName,
+	bool startElement(const QString &namespaceURI,
+					  const QString &localName,
+					  const QString &qName,
+					  const QXmlAttributes &attributes);
+	bool endElement(const QString &namespaceURI,
+					const QString &localName,
 					const QString &qName);
 	bool characters(const QString &str);
 	bool fatalError(const QXmlParseException &exception);
-	QString errorString() const {return _errorStr;};
+	QString errorString() const { return _errorStr; }
 
-	Timer *timerRead(QTreeWidgetItem *item) {return _map[item];};
+	Timer *timerRead(QTreeWidgetItem *item) { return _map[item]; }
 	QTreeWidgetItem *itemRead(Timer *item);
-	QMap<QTreeWidgetItem*, Timer*> timersMap() {return _map;};
+	QMap<QTreeWidgetItem*, Timer*> timersMap() { return _map; }
 
 	void clear();
 

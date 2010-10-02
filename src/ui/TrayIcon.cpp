@@ -15,7 +15,8 @@
 
 #include "TrayIcon.h"
 
-TrayIcon::TrayIcon(QMenu *menu, QObject *parent)
+TrayIcon::TrayIcon(QMenu *menu,
+				   QObject *parent)
 	: QSystemTrayIcon(parent),
 	_currentlyRecording(""),
 	_currentlyPlaying("")
@@ -56,7 +57,8 @@ void TrayIcon::message(const QStringList &arg)
 		this->showMessage(tr("Update available"), tr("A new version of Tano is available!")+"\n" + tr("Version:") + " " + arg.at(1), QSystemTrayIcon::Information, 10000);
 }
 
-void TrayIcon::changeToolTip(const QString &text, const QString &type)
+void TrayIcon::changeToolTip(const QString &text,
+							 const QString &type)
 {
 	if(text != "stop" && type == "main") {
 		_currentlyPlaying = text;

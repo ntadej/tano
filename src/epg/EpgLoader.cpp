@@ -15,22 +15,21 @@
 
 #include <QtCore/QTime>
 
-#include "EpgLoader.h"
+#include "epg/EpgLoader.h"
 #include "plugins/PluginsLoader.h"
 
 EpgLoader::EpgLoader(QObject *parent)
-	: QHttp(parent), _init(false), _plugin(0),
-	_currentArgument(""), _currentRequest(""), _codec(QTextCodec::codecForName("UTF-8"))
-{
+	: QHttp(parent),
+	_init(false),
+	_plugin(0),
+	_currentArgument(""),
+	_currentRequest(""),
+	_codec(QTextCodec::codecForName("UTF-8")) { }
 
-}
+EpgLoader::~EpgLoader() { }
 
-EpgLoader::~EpgLoader()
-{
-
-}
-
-void EpgLoader::getSchedule(const QString &arg, const int &day)
+void EpgLoader::getSchedule(const QString &arg,
+							const int &day)
 {
 	_currentArgument = arg;
 
@@ -99,7 +98,8 @@ void EpgLoader::initDone(const bool &error)
 		getSchedule(_currentArgument);
 }
 
-void EpgLoader::processSchedule(const int &req, const bool &error)
+void EpgLoader::processSchedule(const int &req,
+								const bool &error)
 {
 	disconnect(this, SIGNAL(requestFinished(int, bool)), this, SLOT(processSchedule(int, bool)));
 

@@ -15,7 +15,8 @@
 
 #include "channels/Channel.h"
 
-Channel::Channel(const QString &name, const int &number)
+Channel::Channel(const QString &name,
+				 const int &number)
 	: _name(name),
 	_number(number) { }
 

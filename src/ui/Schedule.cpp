@@ -18,8 +18,8 @@
 
 const QString Schedule::IDENTIFIER = "schedule";
 
-Schedule::Schedule(QWidget *parent) :
-	QWidget(parent),
+Schedule::Schedule(QWidget *parent)
+	: QWidget(parent),
 	ui(new Ui::Schedule)
 {
 	ui->setupUi(this);
@@ -56,7 +56,9 @@ void Schedule::openPlaylist(const QString &p)
 	ui->playlist->open(p);
 }
 
-void Schedule::loadEpg(const QStringList &list, const int &day, const QString &identifier)
+void Schedule::loadEpg(const QStringList &list,
+					   const int &day,
+					   const QString &identifier)
 {
 	if(identifier != Schedule::IDENTIFIER)
 		return;

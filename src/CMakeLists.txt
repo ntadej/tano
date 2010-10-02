@@ -145,9 +145,9 @@ SET(Tano_UI_Srcs
 SET(Tano_XML_Srcs
 	xml/M3UGenerator.cpp
 	xml/M3UHandler.cpp
+	xml/TanoHandlerOld.cpp
 	xml/TimersGenerator.cpp
 	xml/TimersHandler.cpp
-	xml/tanohandler.cpp
 	xml/UpdateHandler.cpp
 )
 

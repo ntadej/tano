@@ -23,9 +23,9 @@ class Version
 public:
 	static QString version();
 	static QString changeset();
-	static QString Qt();
-	static QString libVLCQt();
-	static QString libVLC();
+	static QString qt();
+	static QString libVlcqt();
+	static QString libVlc();
 };
 
 #endif // TANO_VERSION_H_

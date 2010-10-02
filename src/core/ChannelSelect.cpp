@@ -15,7 +15,9 @@
 
 #include "core/ChannelSelect.h"
 
-ChannelSelect::ChannelSelect(QWidget *parent, QLCDNumber *number, const QList<int> &list)
+ChannelSelect::ChannelSelect(QWidget *parent,
+							 QLCDNumber *number,
+							 const QList<int> &list)
 	: _lcd(number),
 	_channels(list),
 	_num(1)

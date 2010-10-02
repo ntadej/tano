@@ -18,8 +18,10 @@
 #include "PrintDialog.h"
 #include "ui_PrintDialog.h"
 
-PrintDialog::PrintDialog(const QString &name, PlaylistWidget *playlist, QWidget *parent) :
-	QDialog(parent),
+PrintDialog::PrintDialog(const QString &name,
+						 PlaylistWidget *playlist,
+						 QWidget *parent)
+	: QDialog(parent),
 	ui(new Ui::PrintDialog),
 	_name(name),
 	_playlist(playlist)

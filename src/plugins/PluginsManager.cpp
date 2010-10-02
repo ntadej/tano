@@ -18,8 +18,8 @@
 
 #include "PluginsLoader.h"
 
-PluginsManager::PluginsManager(QWidget *parent) :
-	QDialog(parent),
+PluginsManager::PluginsManager(QWidget *parent)
+	: QDialog(parent),
 	ui(new Ui::PluginsManager)
 {
 	ui->setupUi(this);
@@ -67,7 +67,9 @@ void PluginsManager::changeEvent(QEvent *e)
 	}
 }
 
-void PluginsManager::populateTreeWidget(const QString &file, const QString &name, const QString &type)
+void PluginsManager::populateTreeWidget(const QString &file,
+										const QString &name,
+										const QString &type)
 {
 	QTreeWidgetItem *pluginItem;
 	if(type == "EPG")

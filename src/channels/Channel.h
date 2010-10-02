@@ -22,7 +22,8 @@
 class Channel
 {
 public:
-	Channel(const QString &name, const int &number);
+	Channel(const QString &name,
+			const int &number);
 	~Channel();
 
 	int number() const { return _number; }

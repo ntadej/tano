@@ -22,13 +22,17 @@
 
 #include "TimersGenerator.h"
 
-TanoGenerator::TanoGenerator(QTreeWidget *treeWidget, QMap<QTreeWidgetItem*,Timer*> map)
-	: _treeWidget(treeWidget), _map(map)
+TimersGenerator::TimersGenerator(QTreeWidget *treeWidget,
+							 QMap<QTreeWidgetItem*,Timer*> map)
+	: _treeWidget(treeWidget),
+	_map(map)
 {
 
 }
 
-bool TanoGenerator::write(QIODevice *device)
+TimersGenerator::~TimersGenerator() { }
+
+bool TimersGenerator::write(QIODevice *device)
 {
 	_out.setDevice(device);
 	_out.setCodec("UTF-8");
@@ -41,13 +45,13 @@ bool TanoGenerator::write(QIODevice *device)
 	return true;
 }
 
-QString TanoGenerator::indent(const int &indentLevel)
+QString TimersGenerator::indent(const int &indentLevel)
 {
 	const int IndentSize = 4;
 	return QString(IndentSize * indentLevel, ' ');
 }
 
-QString TanoGenerator::escapedText(const QString &str)
+QString TimersGenerator::escapedText(const QString &str)
 {
 	QString result = str;
 	result.replace("&", "&amp;");
@@ -56,7 +60,7 @@ QString TanoGenerator::escapedText(const QString &str)
 	return result;
 }
 
-QString TanoGenerator::escapedAttribute(const QString &str)
+QString TimersGenerator::escapedAttribute(const QString &str)
 {
 	QString result = escapedText(str);
 	result.replace("\"", "&quot;");
@@ -65,7 +69,7 @@ QString TanoGenerator::escapedAttribute(const QString &str)
 	return result;
 }
 
-QString TanoGenerator::boolToString(const bool &b)
+QString TimersGenerator::boolToString(const bool &b)
 {
 	if(b) {
 		return QString("true");
@@ -74,7 +78,7 @@ QString TanoGenerator::boolToString(const bool &b)
 	}
 }
 
-void TanoGenerator::generateItem(QTreeWidgetItem *item, const int &depth)
+void TimersGenerator::generateItem(QTreeWidgetItem *item, const int &depth)
 {
 	Timer *currentTimer = _map[item];
 

@@ -27,26 +27,28 @@ class M3UHandler
 {
 public:
 	M3UHandler(QTreeWidget *treeWidget);
-	virtual ~M3UHandler();
+	~M3UHandler();
 
 	void processFile(const QString &m3uFile);
 	void importOldFormat(const QString &tanoFile);
 
-	QTreeWidgetItem *createChannel(const QString &name = 0, const QString &url = 0);
+	QTreeWidgetItem *createChannel(const QString &name = 0,
+								   const QString &url = 0);
 	void deleteChannel(QTreeWidgetItem *i);
 	void clear();
 
-	Channel *channelRead(QTreeWidgetItem *item) {return _map[item];}
-	Channel *channelRead(const int &item) {return _nmap[item];}
+	Channel *channelRead(QTreeWidgetItem *item) { return _map[item]; }
+	Channel *channelRead(const int &item) { return _nmap[item]; }
 
-	QString name() const {return _name;}
-	QString epgPlugin() const {return _epgPlugin;}
-	QStringList categories() const {return _categoryList;}
-	QStringList epg() const {return _epgList;}
-	QList<int> nums() const {return _channelNums;}
-	QMap<QTreeWidgetItem*, Channel*> channelMap() const {return _map;}
+	QString name() const { return _name; }
+	QString epgPlugin() const { return _epgPlugin; }
+	QStringList categories() const { return _categoryList; }
+	QStringList epg() const { return _epgList; }
+	QList<int> nums() const { return _channelNums; }
+	QMap<QTreeWidgetItem*, Channel*> channelMap() const { return _map; }
 
-	int processNewNum(QTreeWidgetItem *channel, const int &num);
+	int processNewNum(QTreeWidgetItem *channel,
+					  const int &num);
 	void moveUp(QTreeWidgetItem *channel);
 	void moveDown(QTreeWidgetItem *channel);
 

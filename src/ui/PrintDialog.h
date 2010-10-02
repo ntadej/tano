@@ -29,7 +29,9 @@ class PrintDialog : public QDialog
 {
 Q_OBJECT
 public:
-	PrintDialog(const QString &name, PlaylistWidget *playlist, QWidget *parent = 0);
+	PrintDialog(const QString &name,
+				PlaylistWidget *playlist,
+				QWidget *parent = 0);
 	~PrintDialog();
 
 protected:

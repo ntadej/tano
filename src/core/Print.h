@@ -27,7 +27,9 @@ public:
 	Print(QWidget *parent = 0);
 	~Print();
 
-	void channelList(const QString &name, PlaylistWidget *widget, const QList<int> &list);
+	void channelList(const QString &name,
+					 PlaylistWidget *widget,
+					 const QList<int> &list);
 
 private slots:
 	void preview(QPrinter *printer);

@@ -35,9 +35,12 @@ public:
 
 	void clear();
 	void open(const QString &file);
-	void save(const QString &name, const QString &epg, const QString &file);
+	void save(const QString &name,
+			  const QString &epg,
+			  const QString &file);
 
-	QTreeWidgetItem* createItem(const QString &name = 0, const QString &url = 0);
+	QTreeWidgetItem* createItem(const QString &name = 0,
+								const QString &url = 0);
 	void deleteItem();
 
 	QString name() const { return _handler->name(); }
@@ -48,7 +51,8 @@ public:
 	QTreeWidget *treeWidget();
 
 	void import(const QString &file);
-	int processNum(QTreeWidgetItem *channel, const int &num) { return _handler->processNewNum(channel, num); }
+	int processNum(QTreeWidgetItem *channel,
+				   const int &num) const { return _handler->processNewNum(channel, num); }
 	void moveUp(QTreeWidgetItem *channel) { _handler->moveUp(channel); }
 	void moveDown(QTreeWidgetItem *channel) { _handler->moveDown(channel); }
 	void disableCategories();
@@ -60,7 +64,8 @@ protected:
 	void changeEvent(QEvent *e);
 
 signals:
-	void itemClicked(QTreeWidgetItem*, const int);
+	void itemClicked(QTreeWidgetItem*,
+					 const int);
 
 private slots:
 	void processPlaylist();

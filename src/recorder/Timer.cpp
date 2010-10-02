@@ -15,12 +15,16 @@
 
 #include "Timer.h"
 
-Timer::Timer(const QString &fname,
-			 const QString &fchannel,
-			 const QString &fplaylist,
-			 const int &fnum,
-			 const QString &furl)
-	: _name(fname), _channel(fchannel), _playlist(fplaylist), _num(fnum), _url(furl)
+Timer::Timer(const QString &name,
+			 const QString &channel,
+			 const QString &playlist,
+			 const int &num,
+			 const QString &url)
+	: _name(name),
+	_channel(channel),
+	_playlist(playlist),
+	_num(num),
+	_url(url)
 {
 	_date = QDate::currentDate();
 	_startTime = QTime::currentTime().addSecs(300);
@@ -29,56 +33,4 @@ Timer::Timer(const QString &fname,
 	_active = false;
 }
 
-Timer::~Timer() {
-
-}
-
-void Timer::setName(const QString &sname)
-{
-	_name = sname;
-}
-
-void Timer::setChannel(const QString &schannel)
-{
-	_channel = schannel;
-}
-
-void Timer::setPlaylist(const QString &splaylist)
-{
-	_playlist = splaylist;
-}
-
-void Timer::setUrl(const QString &surl)
-{
-	_url = surl;
-}
-
-void Timer::setNum(const int &snum)
-{
-	_num = snum;
-}
-
-void Timer::setDate(const QDate &sdate)
-{
-	_date = sdate;
-}
-
-void Timer::setStartTime(const QTime &sstartTime)
-{
-	_startTime = sstartTime;
-}
-
-void Timer::setEndTime(const QTime &sendTime)
-{
-	_endTime = sendTime;
-}
-
-void Timer::setDisabled(const bool &disabled)
-{
-	_disabled = disabled;
-}
-
-void Timer::setActive(const bool &active)
-{
-	_active = active;
-}
+Timer::~Timer() { }

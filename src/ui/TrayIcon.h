@@ -24,12 +24,14 @@ class TrayIcon : public QSystemTrayIcon
 {
 Q_OBJECT
 public:
-	TrayIcon(QMenu *menu, QObject *parent = 0);
+	TrayIcon(QMenu *menu,
+			 QObject *parent = 0);
 	~TrayIcon();
 
 public slots:
 	void message(const QStringList &arg);
-	void changeToolTip(const QString &text = "stop", const QString &type = "main");
+	void changeToolTip(const QString &text = "stop",
+					   const QString &type = "main");
 
 signals:
 	void restoreClick();

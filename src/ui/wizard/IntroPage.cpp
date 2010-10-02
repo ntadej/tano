@@ -20,8 +20,8 @@
 #include "core/Version.h"
 #include "FirstRunWizard.h"
 
-IntroPage::IntroPage(QWidget *parent) :
-	QWizardPage(parent),
+IntroPage::IntroPage(QWidget *parent)
+	: QWizardPage(parent),
 	ui(new Ui::IntroPage)
 {
 	ui->setupUi(this);

@@ -33,7 +33,8 @@ public:
 	void clear();
 
 public slots:
-	void setEpg(const QStringList &epgValue, const int &id);
+	void setEpg(const QStringList &epgValue,
+				const int &id);
 	void setPage(const int &id);
 
 protected:

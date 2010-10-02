@@ -18,8 +18,8 @@
 
 #include <QtCore/QDate>
 
-EpgSchedule::EpgSchedule(QWidget *parent) :
-	QStackedWidget(parent),
+EpgSchedule::EpgSchedule(QWidget *parent)
+	: QStackedWidget(parent),
 	ui(new Ui::EpgSchedule)
 {
 	ui->setupUi(this);
@@ -55,7 +55,8 @@ void EpgSchedule::clear()
 	ui->epgToday_4->clearList();
 }
 
-void EpgSchedule::setEpg(const QStringList &epgValue, const int &id)
+void EpgSchedule::setEpg(const QStringList &epgValue,
+						 const int &id)
 {
 	switch (id) {
 		case 1:

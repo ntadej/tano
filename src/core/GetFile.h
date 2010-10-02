@@ -26,13 +26,15 @@ public:
 	GetFile(QObject *parent = 0);
 	~GetFile();
 
-	void getFile(const QString &fileUrl, const QString &location = 0);
+	void getFile(const QString &fileUrl,
+				 const QString &location = 0);
 
 signals:
 	void image(const QString);
 
 private slots:
-	void httpRequestFinished(const int &requestId, const bool &error);
+	void httpRequestFinished(const int &requestId,
+							 const bool &error);
 
 private:
 	QFile *_file;

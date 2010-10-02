@@ -25,7 +25,12 @@
 class M3UGenerator
 {
 public:
-	M3UGenerator(QTreeWidget *treeWidget, const QString &n, const QString &epg, QMap<QTreeWidgetItem*, Channel*> map);
+	M3UGenerator(QTreeWidget *treeWidget,
+				 const QString &name,
+				 const QString &epg,
+				 QMap<QTreeWidgetItem*,
+				 Channel*> map);
+	~M3UGenerator();
 
 	bool write(QIODevice *device);
 

@@ -15,7 +15,9 @@
 
 #include "channels/ChannelEpg.h"
 
-ChannelEpg::ChannelEpg(const QString &time, const QString &url, const QString &title)
+ChannelEpg::ChannelEpg(const QString &time,
+					   const QString &url,
+					   const QString &title)
 	: _time(time),
 	_url(url),
 	_title(title) { }

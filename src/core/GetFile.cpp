@@ -29,7 +29,8 @@ GetFile::GetFile(QObject *parent)
 
 GetFile::~GetFile() { }
 
-void GetFile::getFile(const QString &fileUrl, const QString &location)
+void GetFile::getFile(const QString &fileUrl,
+					  const QString &location)
 {
 	if(fileUrl.isEmpty())
 		return;
@@ -66,7 +67,8 @@ void GetFile::getFile(const QString &fileUrl, const QString &location)
 	_httpGetId = get(path, _file);
 }
 
-void GetFile::httpRequestFinished(const int &requestId, const bool &error)
+void GetFile::httpRequestFinished(const int &requestId,
+								  const bool &error)
 {
 	if (requestId != _httpGetId)
 		return;

@@ -31,17 +31,21 @@ public:
 	EpgLoader(QObject *parent = 0);
 	~EpgLoader();
 
-	void getSchedule(const QString &arg, const int &day = 0);
+	void getSchedule(const QString &arg,
+					 const int &day = 0);
 	void getShow(const QString &arg);
 	void loadPlugin(const QString &plugin);
 	void stop();
 
 signals:
-	void schedule(QString, int, QStringList);
+	void schedule(QString,
+				  int,
+				  QStringList);
 	void show(QStringList);
 
 private slots:
-	void processSchedule(const int &req, const bool &error);
+	void processSchedule(const int &req,
+						 const bool &error);
 	void processShow(const bool &error);
 	void init();
 	void initDone(const bool &error);

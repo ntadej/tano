@@ -25,12 +25,14 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
-#include "../recorder/Timer.h"
+#include "recorder/Timer.h"
 
-class TanoGenerator
+class TimersGenerator
 {
 public:
-	TanoGenerator(QTreeWidget *treeWidget, QMap<QTreeWidgetItem*,Timer*> map);
+	TimersGenerator(QTreeWidget *treeWidget,
+					QMap<QTreeWidgetItem*,Timer*> map);
+	~TimersGenerator();
 
 	bool write(QIODevice *device);
 

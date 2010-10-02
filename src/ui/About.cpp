@@ -21,8 +21,8 @@
 #include "Config.h"
 #include "core/Version.h"
 
-About::About(QWidget *parent) :
-	QDialog(parent),
+About::About(QWidget *parent)
+	: QDialog(parent),
 	ui(new Ui::About)
 {
 	ui->setupUi(this);
@@ -34,9 +34,9 @@ About::About(QWidget *parent) :
 	ui->labelLinks->setText(ui->labelLinks->text().replace("http://tanoplayer.co.cc","<a href='http://tanoplayer.co.cc'>http://tanoplayer.co.cc</a>"));
 	ui->labelLinks->setText(ui->labelLinks->text().replace("info@tanoplayer.co.cc","<a href='info@tanoplayer.co.cc'>info@tanoplayer.co.cc</a>"));
 
-	ui->labelQVlc->setText("<h3>libvlc-qt "+Version::libVLCQt()+"</h3>");
-	ui->labelVlc->setText("<h3>libvlc "+Version::libVLC().split(" ")[0]+"</h3>");
-	ui->labelQt->setText("<h3>Qt "+Version::Qt()+"</h3>");
+	ui->labelQVlc->setText("<h3>libvlc-qt "+Version::libVlcqt()+"</h3>");
+	ui->labelVlc->setText("<h3>libvlc "+Version::libVlc().split(" ")[0]+"</h3>");
+	ui->labelQt->setText("<h3>Qt "+Version::qt()+"</h3>");
 
 #if DESKTOP
 	ui->labelExtra->setText("<h3>Desktop Edition</h3>");

@@ -20,8 +20,8 @@
 
 #include "core/Settings.h"
 
-SelectPlaylist::SelectPlaylist(QWidget *parent) :
-	QWidget(parent),
+SelectPlaylist::SelectPlaylist(QWidget *parent)
+	: QWidget(parent),
 	ui(new Ui::SelectPlaylist)
 {
 	ui->setupUi(this);

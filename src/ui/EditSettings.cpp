@@ -24,8 +24,9 @@
 #include "core/Version.h"
 #include "plugins/PluginsLoader.h"
 
-EditSettings::EditSettings(Shortcuts *s, QWidget *parent) :
-	QDialog(parent),
+EditSettings::EditSettings(Shortcuts *s,
+						   QWidget *parent)
+	: QDialog(parent),
 	ui(new Ui::EditSettings),
 	_shortcuts(s)
 {
@@ -41,7 +42,8 @@ EditSettings::EditSettings(Shortcuts *s, QWidget *parent) :
 	_settings = new Settings(this);
 
 	ui->labelVersion->setText(tr("You are using Tano version:")+" <b>"+Version::version()+"</b>");
-	ui->labelVlcVersion->setText(ui->labelVlcVersion->text()+" <b>"+Version::libVLC()+"</b>");
+	ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text()+" <b>"+Version::libVlcqt()+"</b>");
+	ui->labelVlcVersion->setText(ui->labelVlcVersion->text()+" <b>"+Version::libVlc()+"</b>");
 
 	loadLocale();
 	loadPlugins();

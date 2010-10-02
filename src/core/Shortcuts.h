@@ -24,7 +24,8 @@
 class Shortcuts : public QSettings
 {
 public:
-	Shortcuts(const QList<QAction*> &list, QObject *parent = 0);
+	Shortcuts(const QList<QAction*> &list,
+			  QObject *parent = 0);
 	~Shortcuts();
 
 	void apply();

@@ -34,7 +34,8 @@ class EditSettings : public QDialog
 {
 Q_OBJECT
 public:
-	EditSettings(Shortcuts *s = 0, QWidget *parent = 0);
+	EditSettings(Shortcuts *s = 0,
+				 QWidget *parent = 0);
 	~EditSettings();
 
 protected:

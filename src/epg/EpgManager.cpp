@@ -18,10 +18,14 @@
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
-#include "EpgManager.h"
+#include "epg/EpgManager.h"
 
 EpgManager::EpgManager(QObject *parent)
-	: QObject(parent), _ready(false), _currentEpg(""), _currentLoadEpg(""), _currentRequest("")
+	: QObject(parent),
+	_ready(false),
+	_currentEpg(""),
+	_currentLoadEpg(""),
+	_currentRequest("")
 {
 	_loader = new EpgLoader(this);
 	connect(_loader, SIGNAL(schedule(QString, int, QStringList)), this, SLOT(set(QString, int, QStringList)));
@@ -36,7 +40,8 @@ EpgManager::~EpgManager()
 	delete _timer;
 }
 
-void EpgManager::setEpg(const QStringList &epg, const QString &epgPlugin)
+void EpgManager::setEpg(const QStringList &epg,
+						const QString &epgPlugin)
 {
 	_epgList = epg;
 
@@ -54,7 +59,8 @@ void EpgManager::clear()
 	_day[3].clear();
 }
 
-void EpgManager::request(const QString &epg, const QString &identifier)
+void EpgManager::request(const QString &epg,
+						 const QString &identifier)
 {
 	_currentIdentifier = identifier;
 
@@ -88,7 +94,9 @@ void EpgManager::load()
 	}
 }
 
-void EpgManager::set(const QString &channel, const int &day, const QStringList &epg)
+void EpgManager::set(const QString &channel,
+					 const int &day,
+					 const QStringList &epg)
 {
 	_day[day].insert(channel, epg);
 

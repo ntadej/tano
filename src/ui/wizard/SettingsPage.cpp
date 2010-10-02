@@ -19,8 +19,8 @@
 #include "FirstRunWizard.h"
 #include "core/Settings.h"
 
-SettingsPage::SettingsPage(QWidget *parent) :
-	QWizardPage(parent),
+SettingsPage::SettingsPage(QWidget *parent)
+	: QWizardPage(parent),
 	ui(new Ui::SettingsPage)
 {
 	ui->setupUi(this);

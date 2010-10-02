@@ -9,12 +9,12 @@
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/About.ui" line="97"/>
+        <location filename="../src/ui/About.ui" line="126"/>
         <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
         <translation>&lt;h4&gt;Licencováno pod licencí GNU GPL&lt;/h4&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/About.ui" line="210"/>
+        <location filename="../src/ui/About.ui" line="239"/>
         <source>Back</source>
         <translation>Zpět</translation>
     </message>
@@ -45,39 +45,39 @@
 <context>
     <name>EditPlaylist</name>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="156"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="158"/>
         <source>Save Channel list</source>
         <translation>Uložit seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="158"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="160"/>
         <source>Tano TV Channel list Files (*.m3u)</source>
         <translation>Soubory Tano se seznamem programů TV (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="171"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="173"/>
         <source>Open Channel list File</source>
         <translation>Otevřít soubor se seznamem programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="173"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="175"/>
         <source>Tano TV Old Channel list Files(*.tano *.xml)</source>
         <translation>Soubory Tano se starým seznamem programů (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="189"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="191"/>
         <source>Playlist Editor</source>
         <translation>Editor seznamu skladeb</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="190"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="192"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation>Chcete zavřít editor?
 Ztratíte tím všechna neuložená nastavení.</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditPlaylist.cpp" line="262"/>
+        <location filename="../src/ui/EditPlaylist.cpp" line="264"/>
         <source>New channel from scan</source>
         <translation type="unfinished">Nový program</translation>
     </message>
@@ -245,13 +245,13 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     <name>EditSettings</name>
     <message>
         <location filename="../src/ui/EditSettings.ui" line="14"/>
-        <location filename="../src/ui/EditSettings.ui" line="857"/>
+        <location filename="../src/ui/EditSettings.ui" line="861"/>
         <location filename="../mobile/EditSettings.ui" line="14"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="1042"/>
+        <location filename="../src/ui/EditSettings.ui" line="1046"/>
         <source>Shortcuts</source>
         <translation>Zkratky</translation>
     </message>
@@ -268,32 +268,32 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Jazyk stanovený uživatelem</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="500"/>
+        <location filename="../src/ui/EditSettings.ui" line="507"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="507"/>
+        <location filename="../src/ui/EditSettings.ui" line="514"/>
         <source>Reset</source>
         <translation>Nastavit znovu</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.cpp" line="43"/>
+        <location filename="../src/ui/EditSettings.cpp" line="44"/>
         <source>You are using Tano version:</source>
         <translation>Používáte verzi programu Tano:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="678"/>
+        <location filename="../src/ui/EditSettings.ui" line="682"/>
         <source>Action</source>
         <translation>Činnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="683"/>
+        <location filename="../src/ui/EditSettings.ui" line="687"/>
         <source>Key</source>
         <translation>Klávesa</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="688"/>
+        <location filename="../src/ui/EditSettings.ui" line="692"/>
         <source>Play</source>
         <translation>Přehrát</translation>
     </message>
@@ -308,12 +308,12 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Při spuštění programu prověřit aktualizace</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="982"/>
+        <location filename="../src/ui/EditSettings.ui" line="986"/>
         <source>General</source>
         <translation>Obecné</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="994"/>
+        <location filename="../src/ui/EditSettings.ui" line="998"/>
         <source>Channels</source>
         <translation>Programy</translation>
     </message>
@@ -333,7 +333,7 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Zmenšit do oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="1006"/>
+        <location filename="../src/ui/EditSettings.ui" line="1010"/>
         <source>Interface</source>
         <translation>Rozhraní</translation>
     </message>
@@ -383,102 +383,92 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Ukázat úvodní obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="351"/>
-        <source>VLC Backend</source>
-        <translation>Jádro VLC</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/EditSettings.ui" line="357"/>
-        <source>Curently using Videolan VLC Backend</source>
-        <translation>V současnosti se používá jádro Videolan VLC</translation>
-    </message>
-    <message>
         <location filename="../src/ui/EditSettings.ui" line="364"/>
         <source>Version:</source>
         <translation>Verze:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="403"/>
+        <location filename="../src/ui/EditSettings.ui" line="410"/>
         <source>Remember Video settings between media</source>
         <translation>Zapamatovat si nastavení obrazu mezi médii</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="410"/>
+        <location filename="../src/ui/EditSettings.ui" line="417"/>
         <source>Default subtitle language:</source>
         <translation>Výchozí jazyk titulků:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="421"/>
+        <location filename="../src/ui/EditSettings.ui" line="428"/>
         <source>Disabled</source>
         <translation>Zakázáno</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="446"/>
+        <location filename="../src/ui/EditSettings.ui" line="453"/>
         <source>Other</source>
         <translation>Jiné</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="701"/>
+        <location filename="../src/ui/EditSettings.ui" line="705"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="714"/>
+        <location filename="../src/ui/EditSettings.ui" line="718"/>
         <source>Next channel</source>
         <translation>Další kanál</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="727"/>
+        <location filename="../src/ui/EditSettings.ui" line="731"/>
         <source>Previous channel</source>
         <translation>Předchozí kanál</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="740"/>
+        <location filename="../src/ui/EditSettings.ui" line="744"/>
         <source>Fullscreen</source>
         <translation>Na celou obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="570"/>
+        <location filename="../src/ui/EditSettings.ui" line="577"/>
         <source>Restore defaults</source>
         <translation>Obnovit výchozí nastavení</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="556"/>
+        <location filename="../src/ui/EditSettings.ui" line="563"/>
         <source>Set</source>
         <translation>Nastavit</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="520"/>
+        <location filename="../src/ui/EditSettings.ui" line="527"/>
         <source>Recorder backend</source>
         <translation>Jádro pro nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="526"/>
+        <location filename="../src/ui/EditSettings.ui" line="533"/>
         <source>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</source>
         <translation>&lt;i&gt;Vyberte, prosím, přídavný modul pro nahrávání ze seznamu níže:&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="753"/>
+        <location filename="../src/ui/EditSettings.ui" line="757"/>
         <source>Mute</source>
         <translation>Ztlumit</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="766"/>
+        <location filename="../src/ui/EditSettings.ui" line="770"/>
         <source>Volume up</source>
         <translation>Zvýšit hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="779"/>
+        <location filename="../src/ui/EditSettings.ui" line="783"/>
         <source>Volume down</source>
         <translation>Snížit hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="896"/>
+        <location filename="../src/ui/EditSettings.ui" line="900"/>
         <source>Hide to tray</source>
         <translation>Skrýt v oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="563"/>
+        <location filename="../src/ui/EditSettings.ui" line="570"/>
         <source>Clear Shortcut</source>
         <translation>Smazat klávesovou zkratku</translation>
     </message>
@@ -523,44 +513,59 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Panel s podrobnostmi povolen</translation>
     </message>
     <message>
+        <location filename="../src/ui/EditSettings.ui" line="351"/>
+        <source>VLC-Qt Backend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/EditSettings.ui" line="357"/>
+        <source>Curently using VLC-Qt Backend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/EditSettings.ui" line="371"/>
         <source>Use global VLC settings (requires restart)</source>
         <translation>Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="397"/>
-        <location filename="../src/ui/EditSettings.ui" line="1018"/>
+        <location filename="../src/ui/EditSettings.ui" line="394"/>
+        <source>Using Videolan VLC version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/EditSettings.ui" line="404"/>
+        <location filename="../src/ui/EditSettings.ui" line="1022"/>
         <source>Playback</source>
         <translation>Přehrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="805"/>
+        <location filename="../src/ui/EditSettings.ui" line="809"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="818"/>
+        <location filename="../src/ui/EditSettings.ui" line="822"/>
         <source>Open URL</source>
         <translation>Otevřít adresu (URL)</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="831"/>
+        <location filename="../src/ui/EditSettings.ui" line="835"/>
         <source>Open Channel list</source>
         <translation>Otevřít seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="844"/>
+        <location filename="../src/ui/EditSettings.ui" line="848"/>
         <source>Edit Channel list</source>
         <translation>Upravit seznam programů</translation>
     </message>
     <message>
         <location filename="../src/ui/EditSettings.ui" line="304"/>
-        <location filename="../src/ui/EditSettings.ui" line="870"/>
+        <location filename="../src/ui/EditSettings.ui" line="874"/>
         <source>Always on top</source>
         <translation>Vždy nahoře</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="883"/>
+        <location filename="../src/ui/EditSettings.ui" line="887"/>
         <source>Simple Mode</source>
         <translation>Jednoduchý režim</translation>
     </message>
@@ -570,23 +575,23 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Ukládání sezení</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="484"/>
+        <location filename="../src/ui/EditSettings.ui" line="491"/>
         <source>Default recording directory</source>
         <translation>Výchozí adresář pro nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="792"/>
-        <location filename="../src/ui/EditSettings.ui" line="1030"/>
+        <location filename="../src/ui/EditSettings.ui" line="796"/>
+        <location filename="../src/ui/EditSettings.ui" line="1034"/>
         <source>Recorder</source>
         <translation>Nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.cpp" line="220"/>
+        <location filename="../src/ui/EditSettings.cpp" line="222"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="474"/>
+        <location filename="../src/ui/EditSettings.ui" line="481"/>
         <source>Enable Recorder</source>
         <translation>Povolit nahrávání</translation>
     </message>
@@ -769,17 +774,17 @@ Vaše změny nebudou použity.</translation>
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.cpp" line="323"/>
+        <location filename="../src/ui/EditTimers.cpp" line="324"/>
         <source>Recording</source>
         <translation>Nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.cpp" line="339"/>
+        <location filename="../src/ui/EditTimers.cpp" line="340"/>
         <source>Disabled or expired</source>
         <translation>Zakázáno nebo vypršelo</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditTimers.cpp" line="343"/>
+        <location filename="../src/ui/EditTimers.cpp" line="344"/>
         <source>Active</source>
         <translation>V činnosti</translation>
     </message>
@@ -836,7 +841,7 @@ Vaše změny nebudou použity.</translation>
 <context>
     <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/ui/wizard/FirstRunWizard.cpp" line="38"/>
+        <location filename="../src/ui/wizard/FirstRunWizard.cpp" line="39"/>
         <source>First Run Wizard</source>
         <translation>Průvodce prvním spuštěním</translation>
     </message>
@@ -844,17 +849,17 @@ Vaše změny nebudou použity.</translation>
 <context>
     <name>InfoBar</name>
     <message>
-        <location filename="../src/ui/InfoBar.cpp" line="93"/>
+        <location filename="../src/ui/InfoBar.cpp" line="94"/>
         <source>Language:</source>
         <translation>Jazyk:</translation>
     </message>
     <message>
-        <location filename="../src/ui/InfoBar.cpp" line="98"/>
+        <location filename="../src/ui/InfoBar.cpp" line="100"/>
         <source>Now:</source>
         <translation>Nyní:</translation>
     </message>
     <message>
-        <location filename="../src/ui/InfoBar.cpp" line="99"/>
+        <location filename="../src/ui/InfoBar.cpp" line="101"/>
         <source>Next:</source>
         <translation>Další:</translation>
     </message>
@@ -1397,7 +1402,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/PlaylistWidget.cpp" line="73"/>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="93"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="95"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1411,12 +1416,12 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <location filename="../src/ui/PlaylistWidget.cpp" line="50"/>
         <location filename="../src/ui/PlaylistWidget.cpp" line="83"/>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="110"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="112"/>
         <source>All channels</source>
         <translation>Všechny programy</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="94"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="96"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Nelze zapisovat soubor %1:
@@ -1449,42 +1454,42 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
 <context>
     <name>Print</name>
     <message>
-        <location filename="../src/core/Print.cpp" line="56"/>
+        <location filename="../src/core/Print.cpp" line="53"/>
         <source>#</source>
         <translation>#</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="60"/>
+        <location filename="../src/core/Print.cpp" line="57"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="64"/>
+        <location filename="../src/core/Print.cpp" line="61"/>
         <source>Url</source>
         <translation>Adresa (URL)</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="68"/>
+        <location filename="../src/core/Print.cpp" line="65"/>
         <source>Categories</source>
         <translation>Skupiny</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="72"/>
+        <location filename="../src/core/Print.cpp" line="69"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="76"/>
+        <location filename="../src/core/Print.cpp" line="73"/>
         <source>EPG</source>
         <translation>EPG</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="80"/>
+        <location filename="../src/core/Print.cpp" line="77"/>
         <source>Logo</source>
         <translation>Značka</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="121"/>
+        <location filename="../src/core/Print.cpp" line="118"/>
         <source>Exported with Tano on %1.</source>
         <translation>Vyvedeno programem Tano na %1.</translation>
     </message>
@@ -1546,65 +1551,65 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <name>QObject</name>
     <message>
         <location filename="../src/xml/M3UHandler.cpp" line="28"/>
-        <location filename="../src/xml/M3UHandler.cpp" line="85"/>
-        <location filename="../src/xml/tanohandler.cpp" line="26"/>
+        <location filename="../src/xml/M3UHandler.cpp" line="86"/>
+        <location filename="../src/xml/TanoHandlerOld.cpp" line="28"/>
         <source>Channel list</source>
         <translation>Seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/xml/M3UHandler.cpp" line="68"/>
+        <location filename="../src/xml/M3UHandler.cpp" line="69"/>
         <source>A channel with this number already exists!</source>
         <translation>Program s tímto číslem již existuje!</translation>
     </message>
     <message>
-        <location filename="../src/xml/M3UHandler.cpp" line="174"/>
+        <location filename="../src/xml/M3UHandler.cpp" line="176"/>
         <source>New channel</source>
         <translation>Nový program</translation>
     </message>
     <message>
-        <location filename="../src/xml/tanohandler.cpp" line="44"/>
+        <location filename="../src/xml/TanoHandlerOld.cpp" line="45"/>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
         <translation>Soubor není Tano seznam programů TV 1.1 nebo pozdější.</translation>
     </message>
     <message>
-        <location filename="../src/xml/tanohandler.cpp" line="56"/>
-        <location filename="../src/xml/TimersHandler.cpp" line="60"/>
         <location filename="../src/xml/TimersHandler.cpp" line="61"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="62"/>
+        <location filename="../src/xml/TanoHandlerOld.cpp" line="57"/>
         <source>Unknown title</source>
         <translation>Neznámý název</translation>
     </message>
     <message>
-        <location filename="../src/xml/M3UHandler.cpp" line="67"/>
-        <location filename="../src/xml/TimersHandler.cpp" line="129"/>
+        <location filename="../src/xml/M3UHandler.cpp" line="68"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="130"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/xml/TimersHandler.cpp" line="130"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="131"/>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation>Chyba při zpracování na řádku %1, sloupec %2:
 %3</translation>
     </message>
     <message>
-        <location filename="../src/xml/tanohandler.cpp" line="37"/>
+        <location filename="../src/xml/TanoHandlerOld.cpp" line="38"/>
         <source>The file is not a Tano TV channel list file.</source>
         <translation>Soubor není souborem Tano seznam programů TV.</translation>
     </message>
     <message>
-        <location filename="../src/xml/TimersHandler.cpp" line="51"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="52"/>
         <source>The file is not a Tano Timers list.</source>
         <translation>Soubor není seznam časovačů Tano.</translation>
     </message>
     <message>
-        <location filename="../src/xml/TimersHandler.cpp" line="85"/>
-        <location filename="../src/xml/TimersHandler.cpp" line="153"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="86"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="154"/>
         <source>Active</source>
         <translation>V činnosti</translation>
     </message>
     <message>
-        <location filename="../src/xml/TimersHandler.cpp" line="102"/>
-        <location filename="../src/xml/TimersHandler.cpp" line="113"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="103"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="114"/>
         <source>Disabled or expired</source>
         <translation>Zakázáno nebo vypršelo</translation>
     </message>
@@ -1630,41 +1635,41 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
 <context>
     <name>Recorder</name>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="111"/>
+        <location filename="../src/recorder/Recorder.cpp" line="119"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="154"/>
+        <location filename="../src/recorder/Recorder.cpp" line="162"/>
         <source>No timer - press button to stop.</source>
         <translation>Žádný časovač - stiskněte tlačítko pro zastavení.</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="157"/>
+        <location filename="../src/recorder/Recorder.cpp" line="165"/>
         <source>Stop recording</source>
         <translation>Zastavit nahrávání</translation>
     </message>
     <message>
         <location filename="../src/ui/Recorder.ui" line="61"/>
-        <location filename="../src/recorder/Recorder.cpp" line="172"/>
+        <location filename="../src/recorder/Recorder.cpp" line="180"/>
         <source>Record</source>
         <translation>Nahrávat</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="128"/>
+        <location filename="../src/recorder/Recorder.cpp" line="136"/>
         <source>Cannot write to %1.</source>
         <translation>Nelze zapisovat do %1.</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="134"/>
+        <location filename="../src/recorder/Recorder.cpp" line="142"/>
         <source>Channel is not selected!</source>
         <translation>Není vybrán program!</translation>
     </message>
     <message>
         <location filename="../src/ui/Recorder.ui" line="14"/>
         <location filename="../src/ui/Recorder.ui" line="24"/>
-        <location filename="../src/recorder/Recorder.cpp" line="127"/>
-        <location filename="../src/recorder/Recorder.cpp" line="133"/>
+        <location filename="../src/recorder/Recorder.cpp" line="135"/>
+        <location filename="../src/recorder/Recorder.cpp" line="141"/>
         <source>Recorder</source>
         <translation>Nahrávání</translation>
     </message>
@@ -1828,70 +1833,70 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="56"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="57"/>
         <source>A new version of Tano is available!</source>
         <translation>Je dostupná nová verze programu Tano!</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="56"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="57"/>
         <source>Version:</source>
         <translation>Verze:</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="52"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="53"/>
         <source>Latest version</source>
         <translation>Poslední verze</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="56"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="57"/>
         <source>Update available</source>
         <translation>Aktualizace je dostupná</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="25"/>
-        <location filename="../src/ui/TrayIcon.cpp" line="71"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="26"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="73"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="50"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="51"/>
         <source>Recording</source>
         <translation>Nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="50"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="51"/>
         <source>Tano Recorder is recording %1 to
 %2.</source>
         <translation>Nahrávač Tano nahrává %1 do
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="52"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="53"/>
         <source>You are using the latest version of Tano.</source>
         <translation>Používáte poslední verzi programu Tano.</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="54"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="55"/>
         <source>Stable version:</source>
         <translation>Stálá verze:</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="54"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="55"/>
         <source>Development version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="54"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="55"/>
         <source>You are using development version:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="73"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="75"/>
         <source>Playing:</source>
         <translation>Přehrává se:</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="75"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="77"/>
         <source>Recording:</source>
         <translation>Nahrává se:</translation>
     </message>

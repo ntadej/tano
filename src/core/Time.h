@@ -34,7 +34,8 @@ public:
 signals:
 	void startTimer(Timer*);
 	void stopTimer(Timer*);
-	void timerStatus(Timer*, bool);
+	void timerStatus(Timer*,
+					 bool);
 
 private slots:
 	void check();

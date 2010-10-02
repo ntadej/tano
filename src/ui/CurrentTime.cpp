@@ -16,10 +16,10 @@
 #include <QtCore/QTime>
 #include <QtGui/QHBoxLayout>
 
-#include "CurrentTime.h"
+#include "ui/CurrentTime.h"
 
-CurrentTime::CurrentTime(QWidget *parent) :
-	QWidget(parent)
+CurrentTime::CurrentTime(QWidget *parent)
+	: QWidget(parent)
 {
 	_time = new QLabel(this);
 

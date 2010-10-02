@@ -22,8 +22,8 @@
 #include "core/Settings.h"
 #include "FirstRunWizard.h"
 
-PlaylistPage::PlaylistPage(QWidget *parent) :
-	QWizardPage(parent),
+PlaylistPage::PlaylistPage(QWidget *parent)
+	: QWizardPage(parent),
 	ui(new Ui::PlaylistPage),
 	_edit(new QLineEdit())
 {

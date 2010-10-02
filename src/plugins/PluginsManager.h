@@ -39,7 +39,9 @@ protected:
 private:
 	Ui::PluginsManager *ui;
 
-	void populateTreeWidget(const QString &file, const QString &name, const QString &type);
+	void populateTreeWidget(const QString &file,
+							const QString &name,
+							const QString &type);
 
 	QDir _pluginsDir;
 	QStringList _pluginFileNames;

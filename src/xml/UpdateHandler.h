@@ -30,9 +30,12 @@ public:
 	UpdateHandler();
 	~UpdateHandler();
 
-	bool startElement(const QString &namespaceURI, const QString &localName,
-					  const QString &qName, const QXmlAttributes &attributes);
-	bool endElement(const QString &namespaceURI, const QString &localName,
+	bool startElement(const QString &namespaceURI,
+					  const QString &localName,
+					  const QString &qName,
+					  const QXmlAttributes &attributes);
+	bool endElement(const QString &namespaceURI,
+					const QString &localName,
 					const QString &qName);
 	bool characters(const QString &str);
 	QString errorString() const { return _errorStr; }

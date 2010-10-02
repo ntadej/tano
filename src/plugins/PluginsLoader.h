@@ -21,8 +21,8 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
-#include "EpgPlugins.h"
-#include "RecorderPlugins.h"
+#include "plugins/EpgPlugins.h"
+#include "plugins/RecorderPlugins.h"
 
 class PluginsLoader
 {
@@ -30,19 +30,20 @@ public:
     PluginsLoader();
 	~PluginsLoader();
 
-	QList<QObject*> recorderPlugin() const {return _recorderPlugins;};
-	QStringList recorderFile() const {return _recorderFiles;};
-	QStringList recorderName() const {return _recorderNames;};
+	QList<QObject*> recorderPlugin() const {return _recorderPlugins;}
+	QStringList recorderFile() const {return _recorderFiles;}
+	QStringList recorderName() const {return _recorderNames;}
 	RecorderPlugin *recorder(QObject *plugin);
 
-	QList<QObject*> epgPlugin() const {return _epgPlugins;};
-	QStringList epgFile() const {return _epgFiles;};
-	QStringList epgName() const {return _epgNames;};
+	QList<QObject*> epgPlugin() const {return _epgPlugins;}
+	QStringList epgFile() const {return _epgFiles;}
+	QStringList epgName() const {return _epgNames;}
 	EpgPlugin *epg(QObject *plugin);
 
 private:
 	void processDir(QDir &dir);
-	void processPlugin(QObject *plugin, const QString &pluginFile);
+	void processPlugin(QObject *plugin,
+					   const QString &pluginFile);
 
 	QList<QObject*> _recorderPlugins;
 	QStringList _recorderFiles;

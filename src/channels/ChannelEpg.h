@@ -21,7 +21,9 @@
 class ChannelEpg
 {
 public:
-	ChannelEpg(const QString &time, const QString &url, const QString &title);
+	ChannelEpg(const QString &time,
+			   const QString &url,
+			   const QString &title);
 	~ChannelEpg();
 
 	QString time() const { return _time; }

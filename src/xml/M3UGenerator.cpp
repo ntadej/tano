@@ -16,17 +16,16 @@
 #include "M3UGenerator.h"
 
 M3UGenerator::M3UGenerator(QTreeWidget *treeWidget,
-						   const QString &n,
+						   const QString &name,
 						   const QString &epg,
 						   QMap<QTreeWidgetItem *,
-						   Channel *>map) :
-	_treeWidget(treeWidget),
-	_name(n),
+						   Channel *>map)
+	: _treeWidget(treeWidget),
+	_name(name),
 	_epgPlugin(epg),
-	_map(map)
-{
+	_map(map) { }
 
-}
+M3UGenerator::~M3UGenerator() { }
 
 bool M3UGenerator::write(QIODevice *device)
 {

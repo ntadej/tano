@@ -1,5 +1,5 @@
 /****************************************************************************
-* tanohandler.cpp: Old reader and handler of tano playlist format
+* TanoHandlerOld.cpp: Old reader and handler of tano playlist format
 * This file is also part of the example classes of the Qt Toolkit.
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
@@ -19,19 +19,20 @@
 
 #include <QtCore/QDebug>
 
-#include "tanohandler.h"
+#include "TanoHandlerOld.h"
 
-TanoHandler::TanoHandler()
-	: _num(0), _cat(0), _metTanoTag(false),
-	_playlistName(QObject::tr("Channel list")), _category("")
-{
+TanoHandlerOld::TanoHandlerOld()
+	: _num(0),
+	_cat(0),
+	_metTanoTag(false),
+	_playlistName(QObject::tr("Channel list")), _category("") { }
 
-}
+TanoHandlerOld::~TanoHandlerOld() { }
 
-bool TanoHandler::startElement(const QString & /* namespaceURI */,
-							   const QString & /* localName */,
-							   const QString &qName,
-							   const QXmlAttributes &attributes)
+bool TanoHandlerOld::startElement(const QString & /* namespaceURI */,
+								  const QString & /* localName */,
+								  const QString &qName,
+								  const QXmlAttributes &attributes)
 {
 	if (!_metTanoTag && qName != "tano") {
 		_errorStr = QObject::tr("The file is not a Tano TV channel list file.");
@@ -61,9 +62,9 @@ bool TanoHandler::startElement(const QString & /* namespaceURI */,
 	return true;
 }
 
-bool TanoHandler::endElement(const QString & /* namespaceURI */,
-							 const QString & /* localName */,
-							 const QString &qName)
+bool TanoHandlerOld::endElement(const QString & /* namespaceURI */,
+								const QString & /* localName */,
+								const QString &qName)
 {
 	if (qName == "title") {
 		if (_channel) {
@@ -90,13 +91,13 @@ bool TanoHandler::endElement(const QString & /* namespaceURI */,
 	return true;
 }
 
-bool TanoHandler::characters(const QString &str)
+bool TanoHandlerOld::characters(const QString &str)
 {
 	_currentText += str;
 	return true;
 }
 
-bool TanoHandler::fatalError(const QXmlParseException &exception)
+bool TanoHandlerOld::fatalError(const QXmlParseException &exception)
 {
 	qDebug() << QString("Parse error at line %1, column %2: %3")
 							 .arg(exception.lineNumber())
@@ -105,7 +106,7 @@ bool TanoHandler::fatalError(const QXmlParseException &exception)
 	return false;
 }
 
-int TanoHandler::channelNumSync(const int &c)
+int TanoHandlerOld::channelNumSync(const int &c)
 {
 	if(c>1) {
 		int i=c*100;

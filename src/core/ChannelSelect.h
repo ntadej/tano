@@ -24,7 +24,9 @@ class ChannelSelect : public QObject
 {
 Q_OBJECT
 public:
-	ChannelSelect(QWidget *parent, QLCDNumber *number, const QList<int> &list);
+	ChannelSelect(QWidget *parent,
+				  QLCDNumber *number,
+				  const QList<int> &list);
 	~ChannelSelect();
 
 public slots:

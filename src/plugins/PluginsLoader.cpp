@@ -19,7 +19,7 @@
 #include <QtGui/QApplication>
 
 #include "Config.h"
-#include "PluginsLoader.h"
+#include "plugins/PluginsLoader.h"
 
 PluginsLoader::PluginsLoader()
 {
@@ -30,10 +30,7 @@ PluginsLoader::PluginsLoader()
 	mobile = true;
 #endif
 
-	if(mobile) {
-		pluginsDir = QDir(qApp->applicationDirPath());
-		processDir(pluginsDir);
-	} else if(qApp->applicationDirPath().contains("src")) {
+	if(qApp->applicationDirPath().contains("src")) {
 		pluginsDir = QDir(qApp->applicationDirPath());
 		pluginsDir.cdUp();
 		pluginsDir.cd("plugins");
@@ -78,7 +75,8 @@ void PluginsLoader::processDir(QDir &dir)
 	}
 }
 
-void PluginsLoader::processPlugin(QObject *plugin, const QString &pluginFile)
+void PluginsLoader::processPlugin(QObject *plugin,
+								  const QString &pluginFile)
 {
 	RecorderPluginCreator *recorder = qobject_cast<RecorderPluginCreator *>(plugin);
 	if(recorder) {

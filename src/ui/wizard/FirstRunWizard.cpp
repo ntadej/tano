@@ -20,8 +20,9 @@
 #include "PlaylistPage.h"
 #include "SettingsPage.h"
 
-FirstRunWizard::FirstRunWizard(QWidget *parent) :
-	QWizard(parent), _locale(new LocaleManager())
+FirstRunWizard::FirstRunWizard(QWidget *parent)
+	: QWizard(parent),
+	_locale(new LocaleManager())
 {	
 	setPage(Intro, new IntroPage);
 	setPage(Settings, new SettingsPage);

@@ -1,5 +1,5 @@
 /****************************************************************************
-* tanohandler.h: Old reader and handler of tano playlist format
+* TanoHandlerOld.h: Old reader and handler of tano playlist format
 * This file is also part of the example classes of the Qt Toolkit.
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
@@ -17,28 +17,33 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_TANOHANDLER_H_
-#define TANO_TANOHANDLER_H_
+#ifndef TANO_TANOHANDLEROLD_H_
+#define TANO_TANOHANDLEROLD_H_
 
 #include <QtCore/QMap>
 #include <QtXml/QXmlDefaultHandler>
-#include "../channels/Channel.h"
 
-class TanoHandler : public QXmlDefaultHandler
+#include "channels/Channel.h"
+
+class TanoHandlerOld : public QXmlDefaultHandler
 {
 public:
-	TanoHandler();
+	TanoHandlerOld();
+	~TanoHandlerOld();
 
-    bool startElement(const QString &namespaceURI, const QString &localName,
-                      const QString &qName, const QXmlAttributes &attributes);
-    bool endElement(const QString &namespaceURI, const QString &localName,
+	bool startElement(const QString &namespaceURI,
+					  const QString &localName,
+					  const QString &qName,
+					  const QXmlAttributes &attributes);
+	bool endElement(const QString &namespaceURI,
+					const QString &localName,
                     const QString &qName);
     bool characters(const QString &str);
     bool fatalError(const QXmlParseException &exception);
 
-	QString errorString() const {return _errorStr;};
-	QString name() const {return _playlistName;};
-	QList<Channel*> channelList() const {return _channelList;};
+	QString errorString() const { return _errorStr; }
+	QString name() const { return _playlistName; }
+	QList<Channel*> channelList() const { return _channelList; }
 
 private:
 	int channelNumSync(const int &c);
@@ -57,4 +62,4 @@ private:
 	QString _category;
 };
 
-#endif // TANO_TANOHANDLER_H_
+#endif // TANO_TANOHANDLEROLD_H_
