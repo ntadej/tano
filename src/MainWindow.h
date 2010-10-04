@@ -31,13 +31,13 @@
 #include "core/LocaleManager.h"
 #include "core/Shortcuts.h"
 #include "core/Time.h"
-#include "core/UpdateManager.h"
 #include "epg/EpgManager.h"
 #include "epg/EpgShow.h"
 #include "ui/EditPlaylist.h"
 #include "ui/EditTimers.h"
 #include "ui/Schedule.h"
 #include "ui/TrayIcon.h"
+#include "ui/UpdateDialog.h"
 
 namespace Ui
 {
@@ -134,7 +134,6 @@ private:
 	bool _sessionVolumeEnabled;
 	bool _sessionAutoplayEnabled;
 	int _sessionVolume;
-	bool _updatesOnStart;
 	bool _videoSettings;
 	QString _wheelType;
 
@@ -143,7 +142,7 @@ private:
 	LocaleManager *_locale;
 	Shortcuts *_shortcuts;
 	Time *_time;
-	UpdateManager *_update;
+	UpdateDialog *_update;
 
 	//Backend
 	VlcAudioControl *_audioController;

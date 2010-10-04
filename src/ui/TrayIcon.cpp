@@ -47,14 +47,8 @@ void TrayIcon::iconActivated(const QSystemTrayIcon::ActivationReason reason)
 
 void TrayIcon::message(const QStringList &arg)
 {
-	if (arg.at(0) == "record")
-		this->showMessage(tr("Recording"), tr("Tano Recorder is recording %1 to\n%2.").arg(arg.at(1), arg.at(2)), QSystemTrayIcon::Information, 10000);
-	else if (arg.at(0) == "latest")
-		this->showMessage(tr("Latest version"), tr("You are using the latest version of Tano."), QSystemTrayIcon::Information, 10000);
-	else if (arg.at(0) == "development")
-		this->showMessage(tr("Development version"), tr("You are using development version:")+" "+arg.at(1)+"\n" + tr("Stable version:") + " " + arg.at(2), QSystemTrayIcon::Information, 10000);
-	else if (arg.at(0) == "update")
-		this->showMessage(tr("Update available"), tr("A new version of Tano is available!")+"\n" + tr("Version:") + " " + arg.at(1), QSystemTrayIcon::Information, 10000);
+	if (arg[0] == "record")
+		this->showMessage(tr("Recording"), tr("Tano Recorder is recording %1 to\n%2.").arg(arg[1], arg[2]), QSystemTrayIcon::Information, 10000);
 }
 
 void TrayIcon::changeToolTip(const QString &text,

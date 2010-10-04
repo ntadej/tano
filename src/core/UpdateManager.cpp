@@ -13,7 +13,6 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
@@ -59,15 +58,9 @@ void UpdateManager::readUpdates()
 
 	QStringList updatesList;
 	QList<UpdateInfo> list = _handler->updateInfo();
+	UpdateInfo info;
 
 	for(int i=0; i < list.size(); i++) {
-		qDebug() << list[i].name()
-				<< list[i].version()
-				<< list[i].date().toString(Qt::TextDate)
-				<< list[i].description()
-				<< list[i].url()
-				<< list[i].development();
-
 		if(Version::version() == list[i].version() && list[i].development()) {
 			updatesList << "development" << list[i].version();
 			continue;
@@ -81,9 +74,10 @@ void UpdateManager::readUpdates()
 				updatesList << list[i].version();
 			} else {
 				updatesList << "update" << list[i].version();
+				info = list[i];
 			}
 		}
 	}
 
-	emit updates(updatesList);
+	emit updateInfo(updatesList, info);
 }

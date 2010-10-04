@@ -18,17 +18,14 @@
 
 #include "EpgSloveniaPlugin.h"
 
-EpgSloveniaPlugin::EpgSloveniaPlugin()
-{
-}
+EpgSloveniaPlugin::EpgSloveniaPlugin() {}
 
-EpgSloveniaPlugin::~EpgSloveniaPlugin()
-{
-}
+EpgSloveniaPlugin::~EpgSloveniaPlugin() {}
 
 QString EpgSloveniaPlugin::host() const
 {
-	return QString("www.siol.net");
+	QString hostUrl("www.siol.net");
+	return hostUrl;
 }
 
 QHttpRequestHeader EpgSloveniaPlugin::httpHeader(const QString &url) const
@@ -59,7 +56,8 @@ bool EpgSloveniaPlugin::init(const QString &input)
 		return false;
 }
 
-QString EpgSloveniaPlugin::load(const QString &input, const int &arg) const
+QString EpgSloveniaPlugin::load(const QString &input,
+								const int &arg) const
 {
 	QString epg = input;
 

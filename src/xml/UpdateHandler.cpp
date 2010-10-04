@@ -58,8 +58,6 @@ bool UpdateHandler::endElement(const QString & /* namespaceURI */,
 		_update[_currentId].setDate(_currentText);
 	} else if (qName == "description") {
 		_update[_currentId].setDescription(_currentText);
-	} else if (qName == "url") {
-		_update[_currentId].setUrl(_currentText);
 	} else if (qName == "development") {
 		_update[_currentId].setDevelopment(_currentText.toInt());
 	}

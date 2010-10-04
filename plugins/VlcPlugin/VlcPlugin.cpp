@@ -14,11 +14,12 @@
 *****************************************************************************/
 
 #include <QtCore/QDateTime>
-#include <QDebug>
+#include <QtCore/QDebug>
+
 #include "VlcPlugin.h"
 
-VlcPlugin::VlcPlugin() :
-	_vlcProcess(new QProcess()),
+VlcPlugin::VlcPlugin()
+	: _vlcProcess(new QProcess()),
 	_output("")
 {
 #ifdef Q_WS_WIN
@@ -28,14 +29,11 @@ VlcPlugin::VlcPlugin() :
 #endif
 }
 
-VlcPlugin::~VlcPlugin()
-{
-
-}
+VlcPlugin::~VlcPlugin() { }
 
 void VlcPlugin::record(const QString &channelName,
-						const QString &channelUrl,
-						const QString &recordingDir)
+					   const QString &channelUrl,
+					   const QString &recordingDir)
 {
 	QString fileName = QString(recordingDir);
 	fileName.append(_slash);

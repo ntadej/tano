@@ -32,8 +32,8 @@ public:
 				const QString &recordingDir);
 	void stop();
 	bool isRecording() const;
-	bool isValid() const {return true;};
-	QString output() const {return _output;};
+	bool isValid() const { return true; }
+	QString output() const { return _output; }
 
 private:
 	QString _slash;

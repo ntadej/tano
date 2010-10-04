@@ -30,7 +30,8 @@ public:
 	QString host() const;
 	QHttpRequestHeader httpHeader(const QString &url) const;
 	bool init(const QString &text);
-	QString load(const QString &input, const int &arg = 0) const;
+	QString load(const QString &input,
+				 const int &arg = 0) const;
 	QStringList processSchedule(const QString &input) const;
 	QStringList processShow(const QString &input) const;
 

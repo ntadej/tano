@@ -1,5 +1,5 @@
 /****************************************************************************
-* UpdateManager.h: Update manager
+* UpdateDialog.h: Dialog for checking for updates
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,36 +13,49 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_UPDATEMANAGER_H_
-#define TANO_UPDATEMANAGER_H_
+#ifndef TANO_UPDATEDIALOG_H_
+#define TANO_UPDATEDIALOG_H_
 
-#include <QtCore/QString>
-#include <QtCore/QTextCodec>
-#include <QtNetwork/QHttp>
+#include <QtGui/QAbstractButton>
+#include <QtGui/QDialog>
 
-#include "xml/UpdateHandler.h"
+#include "core/UpdateInfo.h"
+#include "core/UpdateManager.h"
 
-class UpdateManager : public QHttp
+namespace Ui {
+	class UpdateDialog;
+}
+
+class UpdateDialog : public QDialog
 {
 Q_OBJECT
 public:
-	UpdateManager(QObject *parent = 0);
-	~UpdateManager();
+	UpdateDialog(QWidget *parent = 0);
+	~UpdateDialog();
 
 public slots:
-	void getUpdates();
+	void check();
+	void checkSilent();
+
+protected:
+	void changeEvent(QEvent *e);
 
 signals:
-	void updateInfo(const QStringList,
-					const UpdateInfo);
+	void newUpdate();
 
 private slots:
-	void readUpdates();
+	void action(QAbstractButton *button);
+	void processUpdate(const QStringList &update,
+					   const UpdateInfo &info);
 
 private:
-	QTextCodec *_codec;
+	Ui::UpdateDialog *ui;
 
-	UpdateHandler *_handler;
+	QString generateUrl(const QString &version);
+
+	UpdateManager *_update;
+
+	bool _silent;
 };
 
-#endif // TANO_UPDATEMANAGER_H_
+#endif // TANO_UPDATEDIALOG_H_

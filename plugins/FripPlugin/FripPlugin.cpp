@@ -22,8 +22,10 @@
 
 #include "FripPlugin.h"
 
-FripPlugin::FripPlugin() :
-	_fripProcess(new QProcess()), _fripPath(fripPath()), _output("")
+FripPlugin::FripPlugin()
+	: _fripProcess(new QProcess()),
+	_fripPath(fripPath()),
+	_output("")
 {
 #ifdef Q_WS_WIN
 	_slash = "\\";
@@ -32,10 +34,7 @@ FripPlugin::FripPlugin() :
 #endif
 }
 
-FripPlugin::~FripPlugin()
-{
-
-}
+FripPlugin::~FripPlugin() { }
 
 void FripPlugin::record(const QString &channelName,
 						const QString &channelUrl,

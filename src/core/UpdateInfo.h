@@ -16,7 +16,6 @@
 #ifndef TANO_UPDATEINFO_H_
 #define TANO_UPDATEINFO_H_
 
-#include <QtCore/QDate>
 #include <QtCore/QString>
 
 class UpdateInfo
@@ -29,21 +28,18 @@ public:
 	void setName(const QString &name) { _name = name; }
 	QString version() const { return _version; }
 	void setVersion(const QString &version) { _version = version; }
-	QDate date() const { return _date; }
-	void setDate(const QString &date) { _date = QDate::fromString(date, Qt::TextDate); }
+	QString date() const { return _date; }
+	void setDate(const QString &date) { _date = date; }
 	QString description() const { return _description; }
 	void setDescription(const QString &description) { _description = description; }
-	QString url() const { return _url;}
-	void setUrl(const QString &url) { _url = url; }
 	bool development() const { return _development;}
 	void setDevelopment(const bool &development) { _development = development; }
 
 private:
 	QString _name;
 	QString _version;
-	QDate _date;
+	QString _date;
 	QString _description;
-	QString _url;
 	bool _development;
 };
 

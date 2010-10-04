@@ -37,7 +37,7 @@ const QString MainWindow::IDENTIFIER = "main";
 
 MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()),
-	_time(new Time()), _update(new UpdateManager()),
+	_time(new Time()), _update(new UpdateDialog()),
 	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0),
 	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new Schedule())
 {
@@ -178,7 +178,6 @@ void MainWindow::createSettingsStartup()
 	_desktopHeight = QApplication::desktop()->height();
 
 	_defaultPlaylist = settings->playlist();
-	_updatesOnStart = settings->updatesCheck();
 
 	//Session
 	_sessionVolumeEnabled = settings->sessionVolume();
@@ -209,7 +208,7 @@ void MainWindow::createSettingsStartup()
 
 void MainWindow::createConnections()
 {
-	connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(getUpdates()));
+	connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
 	connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
 	connect(ui->actionAboutPlugins, SIGNAL(triggered()), this, SLOT(aboutPlugins()));
 	connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
@@ -249,7 +248,7 @@ void MainWindow::createConnections()
 	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
-	connect(_update, SIGNAL(updates(QStringList)), _trayIcon, SLOT(message(QStringList)));
+	//connect(_update, SIGNAL(updates(QStringList)), _trayIcon, SLOT(message(QStringList)));
 
 	connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMouseHide()));
 	connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMouseHide()));
@@ -354,8 +353,7 @@ void MainWindow::createSession()
 	if(_sessionAutoplayEnabled && _hasPlaylist)
 		playChannel(_sessionChannel);
 
-	if(_updatesOnStart)
-		_update->getUpdates();
+	_update->checkSilent();
 }
 
 void MainWindow::writeSession()

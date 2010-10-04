@@ -956,10 +956,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <location filename="../src/ui/MainWindow.ui" line="440"/>
         <location filename="../src/ui/MainWindow.ui" line="443"/>
         <location filename="../src/ui/MainWindow.ui" line="777"/>
+        <location filename="../src/MainWindow.cpp" line="442"/>
+        <location filename="../src/MainWindow.cpp" line="443"/>
         <location filename="../src/MainWindow.cpp" line="444"/>
         <location filename="../src/MainWindow.cpp" line="445"/>
-        <location filename="../src/MainWindow.cpp" line="446"/>
-        <location filename="../src/MainWindow.cpp" line="447"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
@@ -976,7 +976,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="705"/>
+        <location filename="../src/MainWindow.cpp" line="703"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
@@ -1170,50 +1170,50 @@ This will stop recording in progress.</source>
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
+        <location filename="../src/MainWindow.cpp" line="433"/>
+        <location filename="../src/MainWindow.cpp" line="434"/>
         <location filename="../src/MainWindow.cpp" line="435"/>
         <location filename="../src/MainWindow.cpp" line="436"/>
-        <location filename="../src/MainWindow.cpp" line="437"/>
-        <location filename="../src/MainWindow.cpp" line="438"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="556"/>
+        <location filename="../src/MainWindow.cpp" line="554"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="558"/>
+        <location filename="../src/MainWindow.cpp" line="556"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="586"/>
+        <location filename="../src/MainWindow.cpp" line="584"/>
         <source>Open File or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="588"/>
+        <location filename="../src/MainWindow.cpp" line="586"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="599"/>
+        <location filename="../src/MainWindow.cpp" line="597"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="600"/>
+        <location filename="../src/MainWindow.cpp" line="598"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="611"/>
+        <location filename="../src/MainWindow.cpp" line="609"/>
         <source>Open Subtitles file</source>
         <translation>Odpri datoteko s podnapisi</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="613"/>
+        <location filename="../src/MainWindow.cpp" line="611"/>
         <source>Subtitles files(*.sub *.srt *.txt)</source>
         <translation>Datoteke podnapisov(*.sub *.srt *.txt)</translation>
     </message>
@@ -1231,8 +1231,8 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
         <location filename="../src/MainWindow.cpp" line="77"/>
+        <location filename="../src/MainWindow.cpp" line="659"/>
         <location filename="../src/MainWindow.cpp" line="661"/>
-        <location filename="../src/MainWindow.cpp" line="663"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1256,7 +1256,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="807"/>
         <location filename="../src/ui/MainWindow.ui" line="810"/>
-        <location filename="../src/MainWindow.cpp" line="702"/>
+        <location filename="../src/MainWindow.cpp" line="700"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
@@ -1491,47 +1491,47 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Natisni</translation>
     </message>
     <message>
-        <location filename="../src/ui/PrintDialog.ui" line="34"/>
+        <location filename="../src/ui/PrintDialog.ui" line="24"/>
         <source>Print Channel List</source>
         <translation>Natisni Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/PrintDialog.ui" line="40"/>
+        <location filename="../src/ui/PrintDialog.ui" line="30"/>
         <source>Select information for printing:</source>
         <translation>Izberi informacije za tisk:</translation>
     </message>
     <message>
-        <location filename="../src/ui/PrintDialog.ui" line="47"/>
+        <location filename="../src/ui/PrintDialog.ui" line="37"/>
         <source>Channel number</source>
         <translation>Številka programa</translation>
     </message>
     <message>
-        <location filename="../src/ui/PrintDialog.ui" line="54"/>
+        <location filename="../src/ui/PrintDialog.ui" line="44"/>
         <source>Channel name</source>
         <translation>Ime programa</translation>
     </message>
     <message>
-        <location filename="../src/ui/PrintDialog.ui" line="61"/>
+        <location filename="../src/ui/PrintDialog.ui" line="51"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/PrintDialog.ui" line="68"/>
+        <location filename="../src/ui/PrintDialog.ui" line="58"/>
         <source>Categories</source>
         <translation>Kategorije</translation>
     </message>
     <message>
-        <location filename="../src/ui/PrintDialog.ui" line="75"/>
+        <location filename="../src/ui/PrintDialog.ui" line="65"/>
         <source>Language</source>
         <translation>Jezik</translation>
     </message>
     <message>
-        <location filename="../src/ui/PrintDialog.ui" line="82"/>
+        <location filename="../src/ui/PrintDialog.ui" line="72"/>
         <source>EPG</source>
         <translation>EPG</translation>
     </message>
     <message>
-        <location filename="../src/ui/PrintDialog.ui" line="89"/>
+        <location filename="../src/ui/PrintDialog.ui" line="79"/>
         <source>Logo</source>
         <translation>Slika</translation>
     </message>
@@ -1822,28 +1822,8 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="57"/>
-        <source>A new version of Tano is available!</source>
-        <translation>Nova različica programa Tano je na voljo!</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="57"/>
-        <source>Version:</source>
-        <translation>Različica:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="53"/>
-        <source>Latest version</source>
-        <translation>Zadnja različica</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="57"/>
-        <source>Update available</source>
-        <translation>Posodobitev je na voljo</translation>
-    </message>
-    <message>
         <location filename="../src/ui/TrayIcon.cpp" line="26"/>
-        <location filename="../src/ui/TrayIcon.cpp" line="73"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="67"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1860,34 +1840,65 @@ To bo ustavilo trenutno snemanje.</translation>
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="53"/>
-        <source>You are using the latest version of Tano.</source>
-        <translation>Uporabljaš zadno različico programa Tano.</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="55"/>
-        <source>Stable version:</source>
-        <translation>Stabilna različica:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="55"/>
-        <source>Development version</source>
-        <translation>Razvojna različica</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="55"/>
-        <source>You are using development version:</source>
-        <translation>Uporabljaš razvojno različico:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="75"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="69"/>
         <source>Playing:</source>
         <translation>Predvajam:</translation>
     </message>
     <message>
-        <location filename="../src/ui/TrayIcon.cpp" line="77"/>
+        <location filename="../src/ui/TrayIcon.cpp" line="71"/>
         <source>Recording:</source>
         <translation>Snemam:</translation>
+    </message>
+</context>
+<context>
+    <name>UpdateDialog</name>
+    <message>
+        <location filename="../src/ui/UpdateDialog.ui" line="14"/>
+        <source>Update Information</source>
+        <translation>Informacije o posodobitvah</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/UpdateDialog.ui" line="41"/>
+        <source>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Uporabljaš zadnjo različico programa Tano!&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/UpdateDialog.ui" line="51"/>
+        <location filename="../src/ui/UpdateDialog.ui" line="130"/>
+        <location filename="../src/ui/UpdateDialog.ui" line="196"/>
+        <source>Current version:</source>
+        <translation>Trenutna različica:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/UpdateDialog.ui" line="94"/>
+        <source>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Uporabljaš razvojno različico programa Tano!&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/UpdateDialog.ui" line="107"/>
+        <location filename="../src/ui/UpdateDialog.ui" line="210"/>
+        <source>Stable version:</source>
+        <translation>Stabilna različica:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/UpdateDialog.ui" line="183"/>
+        <source>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Tvoja različica programa Tano mora biti posodobljena!&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/UpdateDialog.ui" line="220"/>
+        <source>Date released:</source>
+        <translation>Datum izdaje:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/UpdateDialog.ui" line="227"/>
+        <source>Information:</source>
+        <translation>Informacije:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/UpdateDialog.cpp" line="100"/>
+        <source>Download now!</source>
+        <translation>Prenesi zdaj!</translation>
     </message>
 </context>
 </TS>
