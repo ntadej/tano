@@ -38,15 +38,7 @@ IF(MINGW)
 ENDIF(MINGW)
 
 IF(MINGW)
-OPTION(DEBUG_CONSOLE "Compile with debug console")
-	IF(${DEBUG_CONSOLE} MATCHES "ON")
-		SET(TANO_DEBUG_CONSOLE 1)
-	ELSE(${DEBUG_CONSOLE} MATCHES "ON")
-		SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
-		SET(TANO_DEBUG_CONSOLE 0)
-	ENDIF(${DEBUG_CONSOLE} MATCHES "ON")
-ELSE(MINGW)
-	SET(TANO_DEBUG_CONSOLE 0)
+	SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
 ENDIF(MINGW)
 
 # Search for Qt4 and other libraries
@@ -54,6 +46,10 @@ SET(QT_MIN_VERSION "4.5.0")
 
 FIND_PACKAGE(Qt4 REQUIRED)
 FIND_PACKAGE(LIBVLCQT REQUIRED)
+# MinGW needs some more packages
+IF(MINGW)
+	FIND_PACKAGE(LIBVLC REQUIRED)
+ENDIF(MINGW)
 
 # Set Qt4 bin dir to find QtCore4.dll and other libs to install
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
@@ -124,19 +120,46 @@ ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(plugins)
 
-SET (Tano_Files
+SET(Tano_Files
 	LICENSE.GPL
-	src/ui/images/tano.png
-	src/ui/images/tano-small.png
+	README
+	data/logo/64x64/logo.png
 )
 
-FILE (GLOB Tano_Playlists ${CMAKE_SOURCE_DIR}/playlists/*.m3u)
+FILE(GLOB Tano_Playlists ${CMAKE_SOURCE_DIR}/playlists/*.m3u)
 
+# Windows
+IF(MINGW)
+	STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
+	STRING(REGEX REPLACE "sdk/include" "" LIBVLC_BIN_DIR "${LIBVLC_INCLUDE_DIR}")
+	SET(Tano_Qt
+		${QT_BIN_DIR}/libgcc_s_dw2-1.dll
+		${QT_BIN_DIR}/mingwm10.dll
+		${QT_BIN_DIR}/QtCore4.dll
+		${QT_BIN_DIR}/QtGui4.dll
+		${QT_BIN_DIR}/QtNetwork4.dll
+		${QT_BIN_DIR}/QtSvg4.dll
+		${QT_BIN_DIR}/QtXml4.dll
+	)
+	SET(Tano_Libs
+		${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
+		${LIBVLC_BIN_DIR}/libvlc.dll
+		${LIBVLC_BIN_DIR}/libvlccore.dll
+	)
+	FILE(GLOB Tano_Vlc_Plugins ${LIBVLC_BIN_DIR}/plugins/*.dll)
+ENDIF(MINGW)
 
 ################
 # Installation #
 ################
 # Install data
-INSTALL( FILES ${Tano_Files} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+INSTALL(FILES ${Tano_Files} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
 # Install playlists
-INSTALL( FILES ${Tano_Playlists} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/playlists")
+INSTALL(FILES ${Tano_Playlists} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/playlists")
+
+# Windows Extra
+IF(MINGW)
+	INSTALL(FILES ${Tano_Qt} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+	INSTALL(FILES ${Tano_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+	INSTALL(FILES ${Tano_Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/vlc/plugins")
+ENDIF(MINGW)

@@ -45,17 +45,7 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
-           <widget class="QCheckBox" name="updatesCheck">
-            <property name="text">
-             <string>Check for updates on application start</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1" rowspan="4">
+          <item row="0" column="1" rowspan="3">
            <widget class="QLabel" name="labelLogo">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
@@ -71,7 +61,7 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
+          <item row="2" column="0">
            <spacer name="tanoBoxSpacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>

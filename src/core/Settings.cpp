@@ -28,7 +28,6 @@ const QString Settings::PLAYLIST_WORLDTV = "playlists/worldtv.m3u";
 
 // Define defaults - General
 const bool Settings::DEFAULT_CONFIGURED = false;
-const bool Settings::DEFAULT_UPDATES_CHECK = true;
 const bool Settings::DEFAULT_SESSION_VOLUME = true;
 const bool Settings::DEFAULT_SESSION_AUTOPLAY = true;
 const QString Settings::DEFAULT_LANGUAGE = "";
@@ -80,7 +79,6 @@ void Settings::writeSettings()
 {
 	setValue("general/version", configurationVersion());
 	setValue("general/configured", configured());
-	setValue("general/updatescheck", updatesCheck());
 	setValue("general/sessionvolume", sessionVolume());
 	setValue("general/sessionplay", sessionAutoplay());
 	setValue("general/language", language());
@@ -116,7 +114,6 @@ void Settings::readSettings()
 {
 	setConfigurationVersion(value("general/version", Version::version()).toString());
 	setConfigured(value("general/configured", DEFAULT_CONFIGURED).toBool());
-	setUpdatesCheck(value("general/updatescheck", DEFAULT_UPDATES_CHECK).toBool());
 	setSessionVolume(value("general/sessionvolume", DEFAULT_SESSION_VOLUME).toBool());
 	setSessionAutoplay(value("general/sessionplay", DEFAULT_SESSION_AUTOPLAY).toBool());
 	setLanguage(value("general/language", DEFAULT_LANGUAGE).toString());

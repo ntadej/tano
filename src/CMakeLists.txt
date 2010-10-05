@@ -21,13 +21,6 @@ CONFIGURE_FILE(
   "${CMAKE_BINARY_DIR}/src/Config.h"
 )
 
-# MinGW needs some more includes
-IF(MINGW)
-	FIND_PACKAGE(LIBVLC REQUIRED)
-	INCLUDE_DIRECTORIES(${LIBVLC_INCLUDE_DIR})
-ENDIF(MINGW)
-
-
 ###################
 # List of sources #
 ###################
@@ -222,6 +215,10 @@ INCLUDE_DIRECTORIES("${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src")
 # directory to the compiler include path
 INCLUDE(${QT_USE_FILE})
 INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
+# MinGW needs some more includes
+IF(MINGW)
+	INCLUDE_DIRECTORIES(${LIBVLC_INCLUDE_DIR})
+ENDIF(MINGW)
 
 IF(MINGW)
 	# CMake currently doesn't support windres yet. Add command manually

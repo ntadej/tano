@@ -9,12 +9,12 @@
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/About.ui" line="126"/>
+        <location filename="../src/ui/About.ui" line="123"/>
         <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
         <translation>&lt;h4&gt;Licencováno pod licencí GNU GPL&lt;/h4&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/About.ui" line="239"/>
+        <location filename="../src/ui/About.ui" line="236"/>
         <source>Back</source>
         <translation>Zpět</translation>
     </message>
@@ -240,35 +240,35 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     <name>EditSettings</name>
     <message>
         <location filename="../src/ui/EditSettings.ui" line="14"/>
-        <location filename="../src/ui/EditSettings.ui" line="877"/>
+        <location filename="../src/ui/EditSettings.ui" line="867"/>
         <location filename="../mobile/EditSettings.ui" line="14"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="1062"/>
+        <location filename="../src/ui/EditSettings.ui" line="1052"/>
         <source>Shortcuts</source>
         <translation>Zkratky</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="99"/>
+        <location filename="../src/ui/EditSettings.ui" line="89"/>
         <location filename="../mobile/EditSettings.ui" line="97"/>
         <source>System default language</source>
         <translation>Výchozí jazyk systému</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="109"/>
+        <location filename="../src/ui/EditSettings.ui" line="99"/>
         <location filename="../mobile/EditSettings.ui" line="107"/>
         <source>Custom language</source>
         <translation>Jazyk stanovený uživatelem</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="507"/>
+        <location filename="../src/ui/EditSettings.ui" line="497"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="514"/>
+        <location filename="../src/ui/EditSettings.ui" line="504"/>
         <source>Reset</source>
         <translation>Nastavit znovu</translation>
     </message>
@@ -278,17 +278,17 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Používáte verzi programu Tano:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="698"/>
+        <location filename="../src/ui/EditSettings.ui" line="688"/>
         <source>Action</source>
         <translation>Činnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="703"/>
+        <location filename="../src/ui/EditSettings.ui" line="693"/>
         <source>Key</source>
         <translation>Klávesa</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="708"/>
+        <location filename="../src/ui/EditSettings.ui" line="698"/>
         <source>Play</source>
         <translation>Přehrát</translation>
     </message>
@@ -298,172 +298,167 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="51"/>
-        <source>Check for updates on application start</source>
-        <translation>Při spuštění programu prověřit aktualizace</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/EditSettings.ui" line="1002"/>
+        <location filename="../src/ui/EditSettings.ui" line="992"/>
         <source>General</source>
         <translation>Obecné</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="1014"/>
+        <location filename="../src/ui/EditSettings.ui" line="1004"/>
         <source>Channels</source>
         <translation>Programy</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="254"/>
+        <location filename="../src/ui/EditSettings.ui" line="244"/>
         <source>Change channel</source>
         <translation>Změnit program</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="264"/>
+        <location filename="../src/ui/EditSettings.ui" line="254"/>
         <source>Change volume</source>
         <translation>Změnit hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="271"/>
+        <location filename="../src/ui/EditSettings.ui" line="261"/>
         <source>Minimise to tray</source>
         <translation>Zmenšit do oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="1026"/>
+        <location filename="../src/ui/EditSettings.ui" line="1016"/>
         <source>Interface</source>
         <translation>Rozhraní</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="209"/>
+        <location filename="../src/ui/EditSettings.ui" line="199"/>
         <source>Icon only</source>
         <translation>Pouze ikony</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="93"/>
+        <location filename="../src/ui/EditSettings.ui" line="83"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="138"/>
+        <location filename="../src/ui/EditSettings.ui" line="128"/>
         <source>Remember volume</source>
         <translation>Pamatovat si hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="145"/>
+        <location filename="../src/ui/EditSettings.ui" line="135"/>
         <source>Autoplay last channel</source>
         <translation>Automatické přehrávání posledního kanálu</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="214"/>
+        <location filename="../src/ui/EditSettings.ui" line="204"/>
         <source>Text only</source>
         <translation>Pouze text</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="219"/>
+        <location filename="../src/ui/EditSettings.ui" line="209"/>
         <source>Text beside icon</source>
         <translation>Text vedle ikon</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="224"/>
+        <location filename="../src/ui/EditSettings.ui" line="214"/>
         <source>Text under icon</source>
         <translation>Text pod ikonami</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="229"/>
+        <location filename="../src/ui/EditSettings.ui" line="219"/>
         <source>System default</source>
         <translation>Výchozí nastavení</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="290"/>
+        <location filename="../src/ui/EditSettings.ui" line="280"/>
         <source>Show splash screen</source>
         <translation>Ukázat úvodní obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="364"/>
+        <location filename="../src/ui/EditSettings.ui" line="354"/>
         <source>Version:</source>
         <translation>Verze:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="410"/>
+        <location filename="../src/ui/EditSettings.ui" line="400"/>
         <source>Remember Video settings between media</source>
         <translation>Zapamatovat si nastavení obrazu mezi médii</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="417"/>
+        <location filename="../src/ui/EditSettings.ui" line="407"/>
         <source>Default subtitle language:</source>
         <translation>Výchozí jazyk titulků:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="428"/>
+        <location filename="../src/ui/EditSettings.ui" line="418"/>
         <source>Disabled</source>
         <translation>Zakázáno</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="453"/>
+        <location filename="../src/ui/EditSettings.ui" line="443"/>
         <source>Other</source>
         <translation>Jiné</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="721"/>
+        <location filename="../src/ui/EditSettings.ui" line="711"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="734"/>
+        <location filename="../src/ui/EditSettings.ui" line="724"/>
         <source>Next channel</source>
         <translation>Další kanál</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="747"/>
+        <location filename="../src/ui/EditSettings.ui" line="737"/>
         <source>Previous channel</source>
         <translation>Předchozí kanál</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="760"/>
+        <location filename="../src/ui/EditSettings.ui" line="750"/>
         <source>Fullscreen</source>
         <translation>Na celou obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="589"/>
+        <location filename="../src/ui/EditSettings.ui" line="579"/>
         <source>Restore defaults</source>
         <translation>Obnovit výchozí nastavení</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="567"/>
+        <location filename="../src/ui/EditSettings.ui" line="557"/>
         <source>Set</source>
         <translation>Nastavit</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="531"/>
+        <location filename="../src/ui/EditSettings.ui" line="521"/>
         <source>Recorder backend</source>
         <translation>Jádro pro nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="537"/>
+        <location filename="../src/ui/EditSettings.ui" line="527"/>
         <source>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</source>
         <translation>&lt;i&gt;Vyberte, prosím, přídavný modul pro nahrávání ze seznamu níže:&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="773"/>
+        <location filename="../src/ui/EditSettings.ui" line="763"/>
         <source>Mute</source>
         <translation>Ztlumit</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="786"/>
+        <location filename="../src/ui/EditSettings.ui" line="776"/>
         <source>Volume up</source>
         <translation>Zvýšit hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="799"/>
+        <location filename="../src/ui/EditSettings.ui" line="789"/>
         <source>Volume down</source>
         <translation>Snížit hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="916"/>
+        <location filename="../src/ui/EditSettings.ui" line="906"/>
         <source>Hide to tray</source>
         <translation>Skrýt v oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="578"/>
+        <location filename="../src/ui/EditSettings.ui" line="568"/>
         <source>Clear Shortcut</source>
         <translation>Smazat klávesovou zkratku</translation>
     </message>
@@ -473,125 +468,125 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Po znovuspuštění spustit průvodce prvním spuštěním</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="192"/>
+        <location filename="../src/ui/EditSettings.ui" line="182"/>
         <source>General Interface Settings</source>
         <translation>Obecná nastavení rozhraní</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="198"/>
+        <location filename="../src/ui/EditSettings.ui" line="188"/>
         <source>Toolbar style:</source>
         <translation>Styl nástrojového pruhu:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="237"/>
+        <location filename="../src/ui/EditSettings.ui" line="227"/>
         <source>Enable OSD in Fullscreen mode</source>
         <translation>Povolit OSD v režimu celé obrazovky</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="247"/>
+        <location filename="../src/ui/EditSettings.ui" line="237"/>
         <source>Mouse wheel function:</source>
         <translation>Funkce kolečka myši:</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="284"/>
+        <location filename="../src/ui/EditSettings.ui" line="274"/>
         <source>Default options for startup</source>
         <translation>Výchozí volby pro začátek</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="311"/>
+        <location filename="../src/ui/EditSettings.ui" line="301"/>
         <source>Controls enabled</source>
         <translation>Ovládací prvky povoleny</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="321"/>
+        <location filename="../src/ui/EditSettings.ui" line="311"/>
         <source>Info panel enabled</source>
         <translation>Panel s podrobnostmi povolen</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="351"/>
+        <location filename="../src/ui/EditSettings.ui" line="341"/>
         <source>VLC-Qt Backend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="357"/>
+        <location filename="../src/ui/EditSettings.ui" line="347"/>
         <source>Curently using VLC-Qt Backend</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="371"/>
+        <location filename="../src/ui/EditSettings.ui" line="361"/>
         <source>Use global VLC settings (requires restart)</source>
         <translation>Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="394"/>
+        <location filename="../src/ui/EditSettings.ui" line="384"/>
         <source>Using Videolan VLC version:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="404"/>
-        <location filename="../src/ui/EditSettings.ui" line="1038"/>
+        <location filename="../src/ui/EditSettings.ui" line="394"/>
+        <location filename="../src/ui/EditSettings.ui" line="1028"/>
         <source>Playback</source>
         <translation>Přehrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="825"/>
+        <location filename="../src/ui/EditSettings.ui" line="815"/>
         <source>Open File</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="838"/>
+        <location filename="../src/ui/EditSettings.ui" line="828"/>
         <source>Open URL</source>
         <translation>Otevřít adresu (URL)</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="851"/>
+        <location filename="../src/ui/EditSettings.ui" line="841"/>
         <source>Open Channel list</source>
         <translation>Otevřít seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="864"/>
+        <location filename="../src/ui/EditSettings.ui" line="854"/>
         <source>Edit Channel list</source>
         <translation>Upravit seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="304"/>
-        <location filename="../src/ui/EditSettings.ui" line="890"/>
+        <location filename="../src/ui/EditSettings.ui" line="294"/>
+        <location filename="../src/ui/EditSettings.ui" line="880"/>
         <source>Always on top</source>
         <translation>Vždy nahoře</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="903"/>
+        <location filename="../src/ui/EditSettings.ui" line="893"/>
         <source>Simple Mode</source>
         <translation>Jednoduchý režim</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="132"/>
+        <location filename="../src/ui/EditSettings.ui" line="122"/>
         <source>Session store</source>
         <translation>Ukládání sezení</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="491"/>
+        <location filename="../src/ui/EditSettings.ui" line="481"/>
         <source>Default recording directory</source>
         <translation>Výchozí adresář pro nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="812"/>
-        <location filename="../src/ui/EditSettings.ui" line="1050"/>
+        <location filename="../src/ui/EditSettings.ui" line="802"/>
+        <location filename="../src/ui/EditSettings.ui" line="1040"/>
         <source>Recorder</source>
         <translation>Nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.cpp" line="222"/>
+        <location filename="../src/ui/EditSettings.cpp" line="220"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="481"/>
+        <location filename="../src/ui/EditSettings.ui" line="471"/>
         <source>Enable Recorder</source>
         <translation>Povolit nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/EditSettings.ui" line="297"/>
+        <location filename="../src/ui/EditSettings.ui" line="287"/>
         <source>Simple mode</source>
         <translation>Jednoduchý režim</translation>
     </message>
@@ -956,10 +951,10 @@ Vaše změny nebudou použity.</translation>
         <location filename="../src/ui/MainWindow.ui" line="440"/>
         <location filename="../src/ui/MainWindow.ui" line="443"/>
         <location filename="../src/ui/MainWindow.ui" line="777"/>
+        <location filename="../src/MainWindow.cpp" line="441"/>
         <location filename="../src/MainWindow.cpp" line="442"/>
         <location filename="../src/MainWindow.cpp" line="443"/>
         <location filename="../src/MainWindow.cpp" line="444"/>
-        <location filename="../src/MainWindow.cpp" line="445"/>
         <source>Play</source>
         <translation>Přehrát</translation>
     </message>
@@ -976,7 +971,7 @@ Vaše změny nebudou použity.</translation>
         <translation>Vždy nahoře</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="703"/>
+        <location filename="../src/MainWindow.cpp" line="702"/>
         <source>Restore</source>
         <translation>Obnovit</translation>
     </message>
@@ -1163,57 +1158,57 @@ Vaše změny nebudou použity.</translation>
         <translation>Zrušení prokládání</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="78"/>
+        <location filename="../src/MainWindow.cpp" line="77"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Chcete ukončit program Tano?
 Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
+        <location filename="../src/MainWindow.cpp" line="432"/>
         <location filename="../src/MainWindow.cpp" line="433"/>
         <location filename="../src/MainWindow.cpp" line="434"/>
         <location filename="../src/MainWindow.cpp" line="435"/>
-        <location filename="../src/MainWindow.cpp" line="436"/>
         <source>Pause</source>
         <translation>Pozastavit</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="554"/>
+        <location filename="../src/MainWindow.cpp" line="553"/>
         <source>Open Channel list File</source>
         <translation>Otevřít soubor se seznamem programů</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="556"/>
+        <location filename="../src/MainWindow.cpp" line="555"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Soubory Tano se seznamem programů TV (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="584"/>
+        <location filename="../src/MainWindow.cpp" line="583"/>
         <source>Open File or URL</source>
         <translation>Otevřít soubor nebo adresu (URL)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="586"/>
+        <location filename="../src/MainWindow.cpp" line="585"/>
         <source>Multimedia files(*)</source>
         <translation>Multimediální soubory (*)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="597"/>
+        <location filename="../src/MainWindow.cpp" line="596"/>
         <source>Open URL or stream</source>
         <translation>Otevřít adresu (URL) nebo datový proud</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="598"/>
+        <location filename="../src/MainWindow.cpp" line="597"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Zadejte adresu (URL) multimediálního souboru nebo datového proudu, jejž chcete přehrávat:</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="609"/>
+        <location filename="../src/MainWindow.cpp" line="608"/>
         <source>Open Subtitles file</source>
         <translation>Otevřít soubor s titulky</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="611"/>
+        <location filename="../src/MainWindow.cpp" line="610"/>
         <source>Subtitles files(*.sub *.srt *.txt)</source>
         <translation>Soubory s titulky (*.sub *.srt *.txt)</translation>
     </message>
@@ -1230,9 +1225,9 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
-        <location filename="../src/MainWindow.cpp" line="77"/>
-        <location filename="../src/MainWindow.cpp" line="659"/>
-        <location filename="../src/MainWindow.cpp" line="661"/>
+        <location filename="../src/MainWindow.cpp" line="76"/>
+        <location filename="../src/MainWindow.cpp" line="658"/>
+        <location filename="../src/MainWindow.cpp" line="660"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1256,7 +1251,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="807"/>
         <location filename="../src/ui/MainWindow.ui" line="810"/>
-        <location filename="../src/MainWindow.cpp" line="700"/>
+        <location filename="../src/MainWindow.cpp" line="699"/>
         <source>Hide to tray</source>
         <translation>Skrýt v oznamovací oblasti panelu</translation>
     </message>
@@ -1603,7 +1598,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation>Zakázáno nebo vypršelo</translation>
     </message>
     <message>
-        <location filename="../src/core/Settings.cpp" line="55"/>
+        <location filename="../src/core/Settings.cpp" line="54"/>
         <source>Disabled</source>
         <translation>Zakázáno</translation>
     </message>

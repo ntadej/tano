@@ -101,7 +101,6 @@ void EditSettings::apply()
 {
 	// General
 	_settings->setConfigured(!ui->wizardCheck->isChecked());
-	_settings->setUpdatesCheck(ui->updatesCheck->isChecked());
 	_settings->setSessionVolume(ui->sessionVolumeCheck->isChecked());
 	_settings->setSessionAutoplay(ui->sessionAutoplayCheck->isChecked());
 	if(ui->customLanguageRadio->isChecked())
@@ -156,7 +155,6 @@ void EditSettings::read()
 {
 	// General
 	ui->wizardCheck->setChecked(!_settings->configured());
-	ui->updatesCheck->setChecked(_settings->updatesCheck());
 	ui->sessionVolumeCheck->setChecked(_settings->sessionVolume());
 	ui->sessionAutoplayCheck->setChecked(_settings->sessionAutoplay());
 	if(_settings->language() != "") {

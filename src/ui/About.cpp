@@ -18,7 +18,6 @@
 
 #include <QtCore/QDate>
 
-#include "Config.h"
 #include "core/Version.h"
 
 About::About(QWidget *parent)
@@ -37,13 +36,6 @@ About::About(QWidget *parent)
 	ui->labelQVlc->setText("<h3>libvlc-qt "+Version::libVlcqt()+"</h3>");
 	ui->labelVlc->setText("<h3>libvlc "+Version::libVlc().split(" ")[0]+"</h3>");
 	ui->labelQt->setText("<h3>Qt "+Version::qt()+"</h3>");
-
-#if DESKTOP
-	ui->labelExtra->setText("<h3>Desktop Edition</h3>");
-#endif
-#if DEBUG_CONSOLE
-	ui->labelExtra->setText("<h3>Debug Edition</h3>");
-#endif
 
 	connect(ui->buttonLicense, SIGNAL(clicked()), this, SLOT(license()));
 	connect(ui->labelLicense, SIGNAL(linkActivated(QString)), this, SLOT(license()));

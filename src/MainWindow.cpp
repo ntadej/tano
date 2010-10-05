@@ -25,7 +25,6 @@
 #include <QtGui/QMessageBox>
 #include <QtGui/QSplashScreen>
 
-#include "Config.h"
 #include <vlc-qt/Config.h>
 
 #include "core/Common.h"

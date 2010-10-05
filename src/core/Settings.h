@@ -41,9 +41,6 @@ public:
 	bool configured() const { return _configured; }
 	void setConfigured(const bool &b) { _configured = b; }
 	static const bool DEFAULT_CONFIGURED;
-	bool updatesCheck() const { return _updatesCheck; }
-	void setUpdatesCheck(const bool &b) { _updatesCheck = b; }
-	static const bool DEFAULT_UPDATES_CHECK;
 	bool sessionVolume() const { return _sessionVolume; }
 	void setSessionVolume(const bool &b) { _sessionVolume = b; }
 	static const bool DEFAULT_SESSION_VOLUME;
