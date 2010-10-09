@@ -36,7 +36,11 @@ UpdateManager::~UpdateManager()
 
 void UpdateManager::getUpdates()
 {
-	get("/update.xml");
+	QHttpRequestHeader header("GET", "http://update.tanoplayer.co.cc/update.xml");
+	header.setValue("User-Agent", "Firefox");
+
+	request(header);
+
 	connect(this, SIGNAL(done(bool)), this, SLOT(readUpdates()));
 }
 

@@ -130,7 +130,9 @@ void MainWindow::createGui()
 	openPlaylist(true);
 	setState(false);
 	ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
+	ui->statusBar->addPermanentWidget(ui->buttonUpdate);
 	ui->statusBar->addPermanentWidget(ui->timeWidget);
+	ui->buttonUpdate->hide();
 }
 
 void MainWindow::createBackend()
@@ -247,7 +249,9 @@ void MainWindow::createConnections()
 	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
 	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
-	//connect(_update, SIGNAL(updates(QStringList)), _trayIcon, SLOT(message(QStringList)));
+
+	connect(_update, SIGNAL(newUpdate()), ui->buttonUpdate, SLOT(show()));
+	connect(ui->buttonUpdate, SIGNAL(clicked()), _update, SLOT(check()));
 
 	connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMouseHide()));
 	connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMouseHide()));

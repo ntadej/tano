@@ -24,11 +24,10 @@
      </attribute>
      <column>
       <property name="text">
-       <string> </string>
+       <string notr="true">#</string>
       </property>
-      <property name="icon">
-       <iconset resource="../../data/icons.qrc">
-        <normaloff>:/icons/22x22/number.png</normaloff>:/icons/22x22/number.png</iconset>
+      <property name="textAlignment">
+       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
      </column>
      <column>

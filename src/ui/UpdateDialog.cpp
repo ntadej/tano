@@ -99,6 +99,8 @@ void UpdateDialog::processUpdate(const QStringList &update,
 		ui->labelInfo->setText(info.description());
 		ui->labelDownload->setText("<a href=\""+generateUrl(info.version())+"\"><b>"+tr("Download now!")+"</b></a>");
 		ui->main->setCurrentIndex(2);
+
+		emit newUpdate();
 	}
 
 	if(!_silent)

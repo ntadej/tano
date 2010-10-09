@@ -311,7 +311,7 @@
           <x>0</x>
           <y>0</y>
           <width>340</width>
-          <height>339</height>
+          <height>304</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -335,8 +335,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>339</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -355,6 +355,29 @@
          </item>
         </layout>
        </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="CurrentTime" name="timeWidget" native="true"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonUpdate">
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="icon">
+        <iconset resource="../../data/icons.qrc">
+         <normaloff>:/icons/32x32/update_alert.png</normaloff>:/icons/32x32/update_alert.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>22</width>
+         <height>22</height>
+        </size>
+       </property>
       </widget>
      </item>
     </layout>
@@ -611,17 +634,14 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="7">
+     <item row="0" column="7" colspan="4">
       <widget class="VlcVolumeSlider" name="volumeSlider" native="true"/>
      </item>
-     <item row="2" column="0" colspan="9">
+     <item row="2" column="0" colspan="11">
       <widget class="VlcSeekWidget" name="seekWidget" native="true"/>
      </item>
-     <item row="3" column="0" colspan="9">
+     <item row="3" column="0" colspan="11">
       <widget class="InfoBar" name="infoBarWidget" native="true"/>
-     </item>
-     <item row="0" column="8">
-      <widget class="CurrentTime" name="timeWidget" native="true"/>
      </item>
     </layout>
    </widget>
