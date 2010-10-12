@@ -58,11 +58,6 @@ IF(QT_LUPDATE_EXECUTABLE)
 	FILE(GLOB_RECURSE translate_HDRS ${CMAKE_SOURCE_DIR}/src/*.h)
 	FILE(GLOB_RECURSE translate_UIS ${CMAKE_SOURCE_DIR}/src/*.ui)
 
-	## Search for all translatable strings in the mobile directory
-	FILE(GLOB_RECURSE translate_mobile_SRCS ${CMAKE_SOURCE_DIR}/mobile/*.cpp)
-	FILE(GLOB_RECURSE translate_mobile_HDRS ${CMAKE_SOURCE_DIR}/mobile/*.h)
-	FILE(GLOB_RECURSE translate_mobile_UIS ${CMAKE_SOURCE_DIR}/mobile/*.ui)
-
 	SET(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS} ${translate_mobile_SRCS} ${translate_mobile_HDRS} ${translate_mobile_UIS})
 
 	## Create a target that runs lupdate for all the sources and UI files

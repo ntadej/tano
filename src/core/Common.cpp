@@ -22,16 +22,12 @@
 #include "core/Common.h"
 #include "core/Settings.h"
 
-#if DESKTOP
-	#include "ui/About.h"
-#endif
+#include "ui/About.h"
 
 void Common::about(QWidget *parent)
 {
-#if DESKTOP
 	About about(parent);
 	about.exec();
-#endif
 }
 
 QString Common::locateResource(const QString &file)
@@ -61,11 +57,6 @@ QString Common::locateResource(const QString &file)
 #ifdef DEFAULT_DATA_DIR
 	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
 		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
-#endif
-
-#if MOBILE
-	else if (QFileInfo("/usr/local/share/tano/" + file).exists())
-		path = QFileInfo("/usr/local/share/tano/" + file).absoluteFilePath();
 #endif
 
 	return path;

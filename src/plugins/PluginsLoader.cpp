@@ -24,11 +24,6 @@
 PluginsLoader::PluginsLoader()
 {
 	QDir pluginsDir;
-	bool mobile = false;
-
-#if MOBILE
-	mobile = true;
-#endif
 
 	if(qApp->applicationDirPath().contains("src")) {
 		pluginsDir = QDir(qApp->applicationDirPath());
