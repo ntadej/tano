@@ -122,7 +122,6 @@ ADD_SUBDIRECTORY(plugins)
 
 SET(Tano_Files
 	LICENSE.GPL
-	README
 	data/logo/64x64/logo.png
 )
 

@@ -1,0 +1,43 @@
+0.7.3 (2010-10-14)
+  * VLC-Qt library support
+  * New Updates manager
+  * Major code cleanup
+  * Resources updated
+  * [WINDOWS] Installation scripts updated
+
+0.7.2 (2010-09-17)
+  * Settings backend changed
+  * Czech language
+  * World TV playlist
+  * Schedule for all channels independent from playback
+  * Channel logo support
+  * Channel list printing
+  * Playlist channels scan
+  * Epg fixes
+  * Maximise/minimise updates
+  * Overall improvements and GUI updates
+  * [FIX] Bug #2979690 - Channel Logos
+  * [FIX] Bug #2969835 - Thread termination error
+  * [FIX] Bug #2979976 - Channel Editor wont close mroe
+  * [FIX] Bug #2979977 - Channel Editor Button for Up/Down
+  * [WINDOWS] VLC updated to 1.1.4
+
+0.7.1 (2010-03-21)
+  * EPG backend with plugin support
+  * Minor GUI updates and fixes
+  * [FIX] Bug #2960715 - channel list
+  * [FIX] Bug #2960314 - Doesn't remember volume
+  * [FIX] Bug #2960315 - Windows compatibility
+
+0.7.0 (2010-02-25)
+  * Timers support
+  * New modified M3U format
+  * New OSD
+  * Playlist filters added
+  * Default subtitle language setting
+  * Ability to store video settings when changing media
+  * Tuš Telekom support (SLO)
+  * Plugins support (currently only for recorder, EPG support comming)
+  * Code cleanup and optimisation
+  * Updated About dialog
+  * Updated playlist editor

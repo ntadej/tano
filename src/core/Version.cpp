@@ -38,7 +38,7 @@ QString Version::changeset()
 	QString version;
 
 #ifdef VERSION_PATCH
-	if(QString(VERSION_PATCH) != "0") {
+	if(QString(VERSION_PATCH) != "0" && QString(VERSION_PATCH) != "") {
 		version.append("("+QString(VERSION_PATCH)+")");
 	}
 #endif
