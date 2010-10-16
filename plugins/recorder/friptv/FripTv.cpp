@@ -1,5 +1,5 @@
 /****************************************************************************
-* FripPlugin.cpp: Recorder Plugin using friptv
+* FripTv.cpp: Recorder Plugin using friptv
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -20,9 +20,9 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QTextStream>
 
-#include "FripPlugin.h"
+#include "FripTv.h"
 
-FripPlugin::FripPlugin()
+FripTv::FripTv()
 	: _fripProcess(new QProcess()),
 	_fripPath(fripPath()),
 	_output("")
@@ -34,11 +34,11 @@ FripPlugin::FripPlugin()
 #endif
 }
 
-FripPlugin::~FripPlugin() { }
+FripTv::~FripTv() { }
 
-void FripPlugin::record(const QString &channelName,
-						const QString &channelUrl,
-						const QString &recordingDir)
+void FripTv::record(const QString &channelName,
+					const QString &channelUrl,
+					const QString &recordingDir)
 {
 	QFile file(QDir::tempPath()+"/tano.txt");
 	if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
@@ -74,12 +74,12 @@ void FripPlugin::record(const QString &channelName,
 	_fripProcess->start(_fripPath, arguments);
 }
 
-void FripPlugin::stop()
+void FripTv::stop()
 {
 	_fripProcess->kill();
 }
 
-bool FripPlugin::isRecording() const
+bool FripTv::isRecording() const
 {
 	if(_fripProcess->state() == QProcess::Running || _fripProcess->state() == QProcess::Starting)
 		return true;
@@ -87,7 +87,7 @@ bool FripPlugin::isRecording() const
 		return false;
 }
 
-bool FripPlugin::fripExists() const
+bool FripTv::fripExists() const
 {
 	if (QFileInfo(fripPath()).exists())
 		return true;
@@ -95,7 +95,7 @@ bool FripPlugin::fripExists() const
 		return false;
 }
 
-QString FripPlugin::fripPath() const
+QString FripTv::fripPath() const
 {
 #ifdef Q_WS_X11
 	return "friptv";

@@ -1,5 +1,5 @@
 /****************************************************************************
-* VlcPluginCreator.h: VlcPlugin Creator Class
+* EpgSlovenia.h: EPG info for Slovenia
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,23 +13,29 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_VLCPLUGINCREATOR_H_
-#define TANO_VLCPLUGINCREATOR_H_
+#ifndef TANO_EPGSLOVENIA_H_
+#define TANO_EPGSLOVENIA_H_
 
-#include <QtCore/QObject>
-#include <QtCore/QtPlugin>
+#include <QtCore/QProcess>
+#include <QtCore/QString>
+#include <QtNetwork/QHttpRequestHeader>
 
-#include "plugins/RecorderPlugins.h"
-
-class VlcPluginCreator : public QObject, public RecorderPluginCreator
+class EpgSlovenia
 {
-Q_OBJECT;
-Q_INTERFACES( RecorderPluginCreator );
-Q_CLASSINFO("PLUGINTYPE", "Recorder");
-Q_CLASSINFO("PLUGINNAME", "Vlc");
-
 public:
-	RecorderPlugin *createRecorderPluginInstance();
+	EpgSlovenia();
+	~EpgSlovenia();
+
+	QString host() const;
+	QHttpRequestHeader httpHeader(const QString &url) const;
+	bool init(const QString &text);
+	QString load(const QString &input,
+				 const int &arg = 0) const;
+	QStringList processSchedule(const QString &input) const;
+	QStringList processShow(const QString &input) const;
+
+private:
+	QString _flag;
 };
 
-#endif // TANO_VLCPLUGINCREATOR_H_
+#endif // TANO_EPGSLOVENIA_H_

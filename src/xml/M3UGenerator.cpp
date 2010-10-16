@@ -22,7 +22,7 @@ M3UGenerator::M3UGenerator(QTreeWidget *treeWidget,
 						   Channel *>map)
 	: _treeWidget(treeWidget),
 	_name(name),
-	_epgPlugin(epg),
+	_epgType(epg),
 	_map(map) { }
 
 M3UGenerator::~M3UGenerator() { }
@@ -36,7 +36,7 @@ bool M3UGenerator::write(QIODevice *device)
 		<< _name
 		<< "\n"
 		<< "#EXTEPG:"
-		<< _epgPlugin
+		<< _epgType
 		<< "\n\n";
 	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i)
 		generateItem(_map[_treeWidget->topLevelItem(i)]);

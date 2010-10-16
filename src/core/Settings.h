@@ -118,7 +118,7 @@ public:
 	static const int DEFAULT_VOLUME;
 
 	// Misc
-	static const QString DEFAULT_EPG_PLUGIN;
+	static const QString DEFAULT_EPG_TYPE;
 
 private:
 	// General variables

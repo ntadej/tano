@@ -1,5 +1,5 @@
 /****************************************************************************
-* FripPlugin.h: Recorder Plugin using friptv
+* Vlc.h: Recorder Plugin using VLC
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,37 +13,33 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_FRIPPLUGIN_H_
-#define TANO_FRIPPLUGIN_H_
+#ifndef TANOPLUGIN_VLC_H_
+#define TANOPLUGIN_VLC_H_
 
 #include <QtCore/QProcess>
 #include <QtCore/QString>
 
 #include "plugins/RecorderPlugins.h"
 
-class FripPlugin : public RecorderPlugin
+class Vlc : public RecorderPlugin
 {
 public:
-	FripPlugin();
-	~FripPlugin();
+	Vlc();
+	~Vlc();
 
 	void record(const QString &channelName,
 				const QString &channelUrl,
 				const QString &recordingDir);
 	void stop();
 	bool isRecording() const;
-	bool isValid() const { return fripExists(); }
+	bool isValid() const { return true; }
 	QString output() const { return _output; }
 
 private:
-	bool fripExists() const;
-	QString fripPath() const;
-
-	QProcess *_fripProcess;
-	QString _fripPath;
-
 	QString _slash;
 	QString _output;
+
+	QProcess *_vlcProcess;
 };
 
-#endif // TANO_FRIPPLUGIN_H_
+#endif // TANOPLUGIN_VLC_H_

@@ -1,5 +1,5 @@
 /****************************************************************************
-* EpgSloveniaPlugin.cpp: EPG plugin for Slovenia
+* EpgSlovenia.cpp: EPG info for Slovenia
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -16,19 +16,19 @@
 #include <QtCore/QDebug>
 #include <QtGui/QTextEdit>
 
-#include "EpgSloveniaPlugin.h"
+#include "EpgSlovenia.h"
 
-EpgSloveniaPlugin::EpgSloveniaPlugin() {}
+EpgSlovenia::EpgSlovenia() {}
 
-EpgSloveniaPlugin::~EpgSloveniaPlugin() {}
+EpgSlovenia::~EpgSlovenia() {}
 
-QString EpgSloveniaPlugin::host() const
+QString EpgSlovenia::host() const
 {
 	QString hostUrl("www.siol.net");
 	return hostUrl;
 }
 
-QHttpRequestHeader EpgSloveniaPlugin::httpHeader(const QString &url) const
+QHttpRequestHeader EpgSlovenia::httpHeader(const QString &url) const
 {
 	QHttpRequestHeader header;
 	if(url == "init")
@@ -42,7 +42,7 @@ QHttpRequestHeader EpgSloveniaPlugin::httpHeader(const QString &url) const
 	return header;
 }
 
-bool EpgSloveniaPlugin::init(const QString &input)
+bool EpgSlovenia::init(const QString &input)
 {
 	QRegExp flag("flag\\s*=\\s*(\\w{10,30})");
 	flag.indexIn(input);
@@ -56,7 +56,7 @@ bool EpgSloveniaPlugin::init(const QString &input)
 		return false;
 }
 
-QString EpgSloveniaPlugin::load(const QString &input,
+QString EpgSlovenia::load(const QString &input,
 								const int &arg) const
 {
 	QString epg = input;
@@ -73,7 +73,7 @@ QString EpgSloveniaPlugin::load(const QString &input,
 	return epg;
 }
 
-QStringList EpgSloveniaPlugin::processSchedule(const QString &input) const
+QStringList EpgSlovenia::processSchedule(const QString &input) const
 {
 	if(!input.contains("schedule_title"))
 		return QStringList() << "error";
@@ -108,7 +108,7 @@ QStringList EpgSloveniaPlugin::processSchedule(const QString &input) const
 	return mainList;
 }
 
-QStringList EpgSloveniaPlugin::processShow(const QString &input) const
+QStringList EpgSlovenia::processShow(const QString &input) const
 {
 	if(!input.contains("schedule_title"))
 		return QStringList() << "error";

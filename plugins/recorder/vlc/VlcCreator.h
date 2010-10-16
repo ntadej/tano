@@ -1,5 +1,5 @@
 /****************************************************************************
-* FripPluginCreator.cpp: FripPlugin Creator Class
+* VlcCreator.h: Vlc Creator Class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,12 +13,23 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "FripPlugin.h"
-#include "FripPluginCreator.h"
+#ifndef TANOPLUGIN_VLCCREATOR_H_
+#define TANOPLUGIN_VLCCREATOR_H_
 
-RecorderPlugin *FripPluginCreator::createRecorderPluginInstance()
+#include <QtCore/QObject>
+#include <QtCore/QtPlugin>
+
+#include "plugins/RecorderPlugins.h"
+
+class VlcCreator : public QObject, public RecorderPluginCreator
 {
-	return new FripPlugin();
-}
+Q_OBJECT;
+Q_INTERFACES( RecorderPluginCreator );
+Q_CLASSINFO("PLUGINTYPE", "Recorder");
+Q_CLASSINFO("PLUGINNAME", "Vlc");
 
-Q_EXPORT_PLUGIN2(recorder-frip, FripPluginCreator)
+public:
+	RecorderPlugin *createInstance();
+};
+
+#endif // TANOPLUGIN_VLCCREATOR_H_

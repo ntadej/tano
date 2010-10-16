@@ -37,10 +37,10 @@ class RecorderPluginCreator
 {
 public:
 	virtual ~RecorderPluginCreator() {};
-	virtual RecorderPlugin* createRecorderPluginInstance() = 0;
+	virtual RecorderPlugin* createInstance() = 0;
 };
 
-Q_DECLARE_INTERFACE(RecorderPluginCreator, "RecorderPluginCreator/0.2")
+Q_DECLARE_INTERFACE(RecorderPluginCreator, "RecorderPluginCreator/0.8")
 
 #endif // TANO_RECORDERPLUGINS_H_
 

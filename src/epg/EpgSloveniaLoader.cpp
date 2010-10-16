@@ -1,5 +1,5 @@
 /****************************************************************************
-* EpgLoader.cpp: EPG loader and processer
+* EpgSloveniaLoader.cpp: EPG loader and processer for Slovenian providers
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -15,20 +15,22 @@
 
 #include <QtCore/QTime>
 
-#include "epg/EpgLoader.h"
-#include "plugins/PluginsLoader.h"
+#include "epg/EpgSloveniaLoader.h"
 
-EpgLoader::EpgLoader(QObject *parent)
+EpgSloveniaLoader::EpgSloveniaLoader(QObject *parent)
 	: QHttp(parent),
 	_init(false),
-	_plugin(0),
 	_currentArgument(""),
 	_currentRequest(""),
-	_codec(QTextCodec::codecForName("UTF-8")) { }
+	_codec(QTextCodec::codecForName("UTF-8"))
+{
+	_slovenia = new EpgSlovenia();
+	setHost(_slovenia->host());
+}
 
-EpgLoader::~EpgLoader() { }
+EpgSloveniaLoader::~EpgSloveniaLoader() { }
 
-void EpgLoader::getSchedule(const QString &arg,
+void EpgSloveniaLoader::getSchedule(const QString &arg,
 							const int &day)
 {
 	_currentArgument = arg;
@@ -38,38 +40,24 @@ void EpgLoader::getSchedule(const QString &arg,
 		return;
 	}
 
-	_currentRequest = _plugin->load(arg, day);
+	_currentRequest = _slovenia->load(arg, day);
 
-	int r =	request(_plugin->httpHeader(_currentRequest));
+	int r =	request(_slovenia->httpHeader(_currentRequest));
 	_mapArg.insert(r, arg);
 	_mapStep.insert(r, day);
 	connect(this, SIGNAL(requestFinished(int, bool)), this, SLOT(processSchedule(int, bool)));
 }
 
-void EpgLoader::getShow(const QString &arg)
+void EpgSloveniaLoader::getShow(const QString &arg)
 {
 	_currentArgument = arg;
-	_currentRequest = _plugin->load(arg);
+	_currentRequest = _slovenia->load(arg);
 
-	request(_plugin->httpHeader(_currentRequest));
+	request(_slovenia->httpHeader(_currentRequest));
 	connect(this, SIGNAL(done(bool)), this, SLOT(processShow(bool)));
 }
 
-void EpgLoader::loadPlugin(const QString &plugin)
-{
-	if(_plugin != 0)
-		delete _plugin;
-
-	PluginsLoader *loader = new PluginsLoader();
-	for(int i=0; i < loader->epgPlugin().size(); i++)
-		if(loader->epgName()[i] == plugin)
-			_plugin = loader->epg(loader->epgPlugin()[i]);
-	delete loader;
-
-	setHost(_plugin->host());
-}
-
-void EpgLoader::stop()
+void EpgSloveniaLoader::stop()
 {
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(initDone(bool)));
 	disconnect(this, SIGNAL(requestFinished(int, bool)), this, SLOT(processSchedule(int, bool)));
@@ -77,13 +65,13 @@ void EpgLoader::stop()
 	abort();
 }
 
-void EpgLoader::init()
+void EpgSloveniaLoader::init()
 {
-	request(_plugin->httpHeader("init"));
+	request(_slovenia->httpHeader("init"));
 	connect(this, SIGNAL(done(bool)), this, SLOT(initDone(bool)));
 }
 
-void EpgLoader::initDone(const bool &error)
+void EpgSloveniaLoader::initDone(const bool &error)
 {
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(initDone(bool)));
 
@@ -92,13 +80,13 @@ void EpgLoader::initDone(const bool &error)
 
 	QByteArray httpResponse = readAll();
 
-	_init = _plugin->init(_codec->toUnicode(httpResponse));
+	_init = _slovenia->init(_codec->toUnicode(httpResponse));
 
 	if(_currentArgument != "")
 		getSchedule(_currentArgument);
 }
 
-void EpgLoader::processSchedule(const int &req,
+void EpgSloveniaLoader::processSchedule(const int &req,
 								const bool &error)
 {
 	disconnect(this, SIGNAL(requestFinished(int, bool)), this, SLOT(processSchedule(int, bool)));
@@ -107,7 +95,7 @@ void EpgLoader::processSchedule(const int &req,
 		return;
 
 	QByteArray httpResponse = readAll();
-	QStringList list = _plugin->processSchedule(_codec->toUnicode(httpResponse));
+	QStringList list = _slovenia->processSchedule(_codec->toUnicode(httpResponse));
 
 	if(list[0] == "error")
 		return;
@@ -122,7 +110,7 @@ void EpgLoader::processSchedule(const int &req,
 		getSchedule(_currentArgument, 3);
 }
 
-void EpgLoader::processShow(const bool &error)
+void EpgSloveniaLoader::processShow(const bool &error)
 {
 	disconnect(this, SIGNAL(done(bool)), this, SLOT(processShow(bool)));
 
@@ -130,7 +118,7 @@ void EpgLoader::processShow(const bool &error)
 		return;
 
 	QByteArray httpResponse = readAll();
-	QStringList list = _plugin->processShow(_codec->toUnicode(httpResponse));
+	QStringList list = _slovenia->processShow(_codec->toUnicode(httpResponse));
 
 	if(list[0] == "error")
 		return;

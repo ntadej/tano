@@ -44,7 +44,7 @@ public:
 	void deleteItem();
 
 	QString name() const { return _handler->name(); }
-	QString epgPlugin() const { return _handler->epgPlugin(); }
+	QString epgType() const { return _handler->epgType(); }
 	QStringList epg() const { return _handler->epg(); }
 	QString fileName() const { return _fileName; }
 	QList<int> nums() const { return _handler->nums(); }

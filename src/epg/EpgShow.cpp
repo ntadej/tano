@@ -22,7 +22,7 @@ EpgShow::EpgShow(QWidget *parent)
 	: QStackedWidget(parent),
 	ui(new Ui::EpgShow),
 	_image(new GetFile()),
-	_loader(new EpgLoader()),
+	_loader(new EpgSloveniaLoader()),
 	_epgNext(""),
 	_epgPrevious("")
 {
@@ -70,9 +70,9 @@ void EpgShow::open(const QString &url)
 	_loader->getShow(processUrl(url));
 }
 
-void EpgShow::loadPlugin(const QString &plugin)
+void EpgShow::setEpgType(const QString &type)
 {
-	_loader->loadPlugin(plugin);
+
 }
 
 void EpgShow::display(const QStringList &list)

@@ -578,8 +578,8 @@ void MainWindow::openPlaylist(const bool &start)
 	mouseWheel();
 
 	ui->channelToolBox->setItemText(0,ui->playlistWidget->name());
-	_epg->setEpg(ui->playlistWidget->epg(), ui->playlistWidget->epgPlugin());
-	_epgShow->loadPlugin(ui->playlistWidget->epgPlugin());
+	_epg->setEpg(ui->playlistWidget->epg(), ui->playlistWidget->epgType());
+	_epgShow->setEpgType(ui->playlistWidget->epgType());
 }
 void MainWindow::openFile()
 {

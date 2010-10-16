@@ -25,21 +25,16 @@ class EpgPlugin
 public:
 	virtual ~EpgPlugin() {};
 
-	virtual QString host() const = 0;
-	virtual QHttpRequestHeader httpHeader(const QString &url) const = 0;
-	virtual bool init(const QString &text) = 0;
-	virtual QString load(const QString &input, const int &arg = 0) const = 0;
-	virtual QStringList processSchedule(const QString &input) const = 0;
-	virtual QStringList processShow(const QString &input) const = 0;
+	/* CURRENTLY NOT IN USE! */
 };
 
 class EpgPluginCreator
 {
 public:
 	virtual ~EpgPluginCreator() {};
-	virtual EpgPlugin* createEpgPluginInstance() = 0;
+	virtual EpgPlugin* createInstance() = 0;
 };
 
-Q_DECLARE_INTERFACE(EpgPluginCreator, "EpgPluginCreator/0.1")
+Q_DECLARE_INTERFACE(EpgPluginCreator, "EpgPluginCreator/0.8")
 
 #endif // TANO_EPGPLUGINS_H_

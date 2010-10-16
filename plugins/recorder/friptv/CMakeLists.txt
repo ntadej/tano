@@ -1,5 +1,5 @@
 #############################################################################
-# Tano - FripPlugin
+# Tano - Frip recorder plugin
 #############################################################################
 # Copyright (C) 2008-2010 Tadej Novak
 #
@@ -13,21 +13,21 @@
 # included in the packaging of this file.
 #############################################################################
 
-PROJECT(FripPlugin)
+PROJECT(tanorecorder-friptv)
 
 INCLUDE(${QT_USE_FILE})
 INCLUDE_DIRECTORIES(
 	${QT_INCLUDE_DIR}
-	../../src
+	../../../src
 )
 
 SET(SOURCES_CPP
-	FripPluginCreator.cpp
-	FripPlugin.cpp
+	FripTvCreator.cpp
+	FripTv.cpp
 )
 
 SET(SOURCES_H
-	FripPluginCreator.h
+	FripTvCreator.h
 )
 
 QT4_WRAP_CPP(SOURCES_H_MOC ${SOURCES_H})
@@ -37,13 +37,13 @@ ADD_DEFINITIONS(-DQT_PLUGIN)
 ADD_DEFINITIONS(-DQT_NO_DEBUG)
 ADD_DEFINITIONS(-DQT_SHARED)
 
-ADD_LIBRARY(FripPlugin SHARED ${SOURCES_CPP} ${SOURCES_H_MOC})
-ADD_DEPENDENCIES(FripPlugin tano)
+ADD_LIBRARY(tanorecorder-friptv SHARED ${SOURCES_CPP} ${SOURCES_H_MOC})
+ADD_DEPENDENCIES(tanorecorder-friptv tano)
 
-TARGET_LINK_LIBRARIES(FripPlugin ${QT_LIBRARIES})
+TARGET_LINK_LIBRARIES(tanorecorder-friptv ${QT_LIBRARIES})
 
 IF(MINGW)
-INSTALL(TARGETS FripPlugin DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR})
+INSTALL(TARGETS tanorecorder-friptv DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR})
 ELSE(MINGW)
-INSTALL(TARGETS FripPlugin LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR})
+INSTALL(TARGETS tanorecorder-friptv LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR})
 ENDIF(MINGW)

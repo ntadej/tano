@@ -39,7 +39,7 @@ private:
 
 	QTreeWidget *_treeWidget;
 	QString _name;
-	QString _epgPlugin;
+	QString _epgType;
 	QTextStream _out;
 
 	QMap<QTreeWidgetItem*, Channel*> _map;

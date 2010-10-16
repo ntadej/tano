@@ -22,7 +22,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTimer>
 
-#include "epg/EpgLoader.h"
+#include "epg/EpgSloveniaLoader.h"
 
 class EpgManager : public QObject
 {
@@ -32,7 +32,7 @@ public:
 	~EpgManager();
 
 	void setEpg(const QStringList &epg,
-				const QString &epgPlugin);
+				const QString &epgType);
 	void stop();
 
 public slots:
@@ -63,12 +63,12 @@ private:
 	QString _currentLoadEpg;
 	QString _currentRequest;
 	QStringList _epgList;
-	QString _epgPlugin;
+	QString _epgType;
 	QString _path;
 
 	QMap<QString, QStringList> _day[4];
 
-	EpgLoader *_loader;
+	EpgSloveniaLoader *_loader;
 	QTimer *_timer;
 };
 

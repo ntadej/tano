@@ -1,5 +1,5 @@
 /****************************************************************************
-* VlcPlugin.cpp: Recorder Plugin using VLC
+* Vlc.cpp: Recorder Plugin using VLC
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -16,9 +16,9 @@
 #include <QtCore/QDateTime>
 #include <QtCore/QDebug>
 
-#include "VlcPlugin.h"
+#include "Vlc.h"
 
-VlcPlugin::VlcPlugin()
+Vlc::Vlc()
 	: _vlcProcess(new QProcess()),
 	_output("")
 {
@@ -29,11 +29,11 @@ VlcPlugin::VlcPlugin()
 #endif
 }
 
-VlcPlugin::~VlcPlugin() { }
+Vlc::~Vlc() { }
 
-void VlcPlugin::record(const QString &channelName,
-					   const QString &channelUrl,
-					   const QString &recordingDir)
+void Vlc::record(const QString &channelName,
+				 const QString &channelUrl,
+				 const QString &recordingDir)
 {
 	QString fileName = QString(recordingDir);
 	fileName.append(_slash);
@@ -48,12 +48,12 @@ void VlcPlugin::record(const QString &channelName,
 	_vlcProcess->start("vlc "+channelUrl+" :demux=dump :demuxdump-file=\""+fileName+"\"");
 }
 
-void VlcPlugin::stop()
+void Vlc::stop()
 {
 	_vlcProcess->kill();
 }
 
-bool VlcPlugin::isRecording() const
+bool Vlc::isRecording() const
 {
 	if(_vlcProcess->state() == QProcess::Running || _vlcProcess->state() == QProcess::Starting)
 		return true;

@@ -23,7 +23,6 @@
 
 #include "core/Common.h"
 #include "core/Settings.h"
-#include "plugins/PluginsLoader.h"
 #include "ui/PrintDialog.h"
 
 EditPlaylist::EditPlaylist(const QString &playlist,
@@ -52,12 +51,10 @@ EditPlaylist::EditPlaylist(const QString &playlist,
 	ui->editName->setText(ui->playlist->name());
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 
-	PluginsLoader *loader = new PluginsLoader();
-	for(int i=0; i < loader->epgPlugin().size(); i++)
-		ui->epgCombo->addItem(loader->epgName()[i]);
-	delete loader;
+	ui->epgCombo->addItem("slovenia");
+	ui->epgCombo->addItem("xmltv");
 	for(int i=0; i < ui->epgCombo->count(); i++) {
-		if(ui->epgCombo->itemText(i) == ui->playlist->epgPlugin()) {
+		if(ui->epgCombo->itemText(i) == ui->playlist->epgType()) {
 			ui->epgCombo->setCurrentIndex(i);
 			break;
 		}

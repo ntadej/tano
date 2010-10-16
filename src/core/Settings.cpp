@@ -60,7 +60,7 @@ const QString Settings::DEFAULT_RECORDER_PLUGIN = "Frip";
 const int Settings::DEFAULT_CHANNEL = 1;
 const int Settings::DEFAULT_VOLUME = 50;
 // Misc
-const QString Settings::DEFAULT_EPG_PLUGIN = "EpgSlovenia";
+const QString Settings::DEFAULT_EPG_TYPE = "slovenia";
 
 Settings::Settings(QObject *parent)
 	: QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Main", parent)

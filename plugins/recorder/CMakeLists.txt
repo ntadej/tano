@@ -1,5 +1,5 @@
 #############################################################################
-# Tano - An open IP TV player - Plugins
+# Tano - An open IP TV player - Recorder plugins
 #############################################################################
 # Copyright (C) 2008-2010 Tadej Novak
 #
@@ -13,5 +13,8 @@
 # included in the packaging of this file.
 #############################################################################
 
-ADD_SUBDIRECTORY(epg)
-ADD_SUBDIRECTORY(recorder)
+ADD_SUBDIRECTORY(friptv)
+ADD_SUBDIRECTORY(vlc)
+
+# Add your plugins here
+#ADD_SUBDIRECTORY(plugindir)

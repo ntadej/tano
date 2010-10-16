@@ -27,7 +27,7 @@ EpgManager::EpgManager(QObject *parent)
 	_currentLoadEpg(""),
 	_currentRequest("")
 {
-	_loader = new EpgLoader(this);
+	_loader = new EpgSloveniaLoader(this);
 	connect(_loader, SIGNAL(schedule(QString, int, QStringList)), this, SLOT(set(QString, int, QStringList)));
 
 	_timer = new QTimer(this);
@@ -41,12 +41,11 @@ EpgManager::~EpgManager()
 }
 
 void EpgManager::setEpg(const QStringList &epg,
-						const QString &epgPlugin)
+						const QString &epgType)
 {
 	_epgList = epg;
 
-	_epgPlugin = epgPlugin;
-	_loader->loadPlugin(epgPlugin);
+	_epgType = epgType;
 
 	load();
 }

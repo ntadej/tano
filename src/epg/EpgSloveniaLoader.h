@@ -1,5 +1,5 @@
 /****************************************************************************
-* EpgLoader.h: EPG loader and processer
+* EpgSloveniaLoader.h: EPG loader and processer for Slovenian providers
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,8 +13,8 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_EPGLOADER_H_
-#define TANO_EPGLOADER_H_
+#ifndef TANO_EPGSLOVENIALOADER_H_
+#define TANO_EPGSLOVENIALOADER_H_
 
 #include <QtCore/QMap>
 #include <QtCore/QString>
@@ -22,19 +22,18 @@
 #include <QtCore/QTimer>
 #include <QtNetwork/QHttp>
 
-#include "plugins/EpgPlugins.h"
+#include "epg/EpgSlovenia.h"
 
-class EpgLoader : public QHttp
+class EpgSloveniaLoader : public QHttp
 {
 Q_OBJECT
 public:
-	EpgLoader(QObject *parent = 0);
-	~EpgLoader();
+	EpgSloveniaLoader(QObject *parent = 0);
+	~EpgSloveniaLoader();
 
 	void getSchedule(const QString &arg,
 					 const int &day = 0);
 	void getShow(const QString &arg);
-	void loadPlugin(const QString &plugin);
 	void stop();
 
 signals:
@@ -53,7 +52,7 @@ private slots:
 private:
 	bool _init;
 
-	EpgPlugin *_plugin;
+	EpgSlovenia *_slovenia;
 
 	QString _currentArgument;
 	QString _currentRequest;
@@ -64,4 +63,4 @@ private:
 	QTextCodec *_codec;
 };
 
-#endif // TANO_EPGLOADER_H_
+#endif // TANO_EPGSLOVENIALOADER_H_

@@ -19,7 +19,7 @@
 #include <QtGui/QStackedWidget>
 
 #include "core/GetFile.h"
-#include "epg/EpgLoader.h"
+#include "epg/EpgSloveniaLoader.h"
 
 namespace Ui
 {
@@ -38,7 +38,7 @@ protected:
 
 public slots:
 	void open(const QString &url);
-	void loadPlugin(const QString &plugin);
+	void setEpgType(const QString &type);
 
 private slots:
 	void display(const QStringList &list);
@@ -52,7 +52,7 @@ private:
 	Ui::EpgShow *ui;
 
 	GetFile *_image;
-	EpgLoader *_loader;
+	EpgSloveniaLoader *_loader;
 
 	QString _epgNext;
 	QString _epgPrevious;

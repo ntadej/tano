@@ -1,5 +1,5 @@
 /****************************************************************************
-* EpgSloveniaPlugin.cpp: EPG plugin for Slovenia
+* FripTv.h: Recorder Plugin using friptv
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,30 +13,37 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_EPGSLOVENIAPLUGIN_H_
-#define TANO_EPGSLOVENIAPLUGIN_H_
+#ifndef TANOPLUGIN_FRIPTV_H_
+#define TANOPLUGIN_FRIPTV_H_
 
 #include <QtCore/QProcess>
 #include <QtCore/QString>
 
-#include "plugins/EpgPlugins.h"
+#include "plugins/RecorderPlugins.h"
 
-class EpgSloveniaPlugin : public EpgPlugin
+class FripTv : public RecorderPlugin
 {
 public:
-	EpgSloveniaPlugin();
-	~EpgSloveniaPlugin();
+	FripTv();
+	~FripTv();
 
-	QString host() const;
-	QHttpRequestHeader httpHeader(const QString &url) const;
-	bool init(const QString &text);
-	QString load(const QString &input,
-				 const int &arg = 0) const;
-	QStringList processSchedule(const QString &input) const;
-	QStringList processShow(const QString &input) const;
+	void record(const QString &channelName,
+				const QString &channelUrl,
+				const QString &recordingDir);
+	void stop();
+	bool isRecording() const;
+	bool isValid() const { return fripExists(); }
+	QString output() const { return _output; }
 
 private:
-	QString _flag;
+	bool fripExists() const;
+	QString fripPath() const;
+
+	QProcess *_fripProcess;
+	QString _fripPath;
+
+	QString _slash;
+	QString _output;
 };
 
-#endif // TANO_EPGSLOVENIAPLUGIN_H_
+#endif // TANOPLUGIN_FRIPTV_H_

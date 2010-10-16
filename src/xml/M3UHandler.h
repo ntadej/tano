@@ -41,7 +41,7 @@ public:
 	Channel *channelRead(const int &item) { return _nmap[item]; }
 
 	QString name() const { return _name; }
-	QString epgPlugin() const { return _epgPlugin; }
+	QString epgType() const { return _epgType; }
 	QStringList categories() const { return _categoryList; }
 	QStringList epg() const { return _epgList; }
 	QList<int> nums() const { return _channelNums; }
@@ -63,7 +63,7 @@ private:
 	QIcon _channelIcon;
 
 	QString _name;
-	QString _epgPlugin;
+	QString _epgType;
 	QStringList _m3uLineList;
 	QStringList _categoryList;
 	QStringList _epgList;

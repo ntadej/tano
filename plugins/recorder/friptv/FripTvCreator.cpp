@@ -1,5 +1,5 @@
 /****************************************************************************
-* EpgSloveniaPlugin.h: EPG Slovenia creator class
+* FripTvCreator.cpp: FripTv Creator Class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,23 +13,12 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_EPGSLOVENIAPLUGINCREATOR_H_
-#define TANO_EPGSLOVENIAPLUGINCREATOR_H_
+#include "FripTv.h"
+#include "FripTvCreator.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QtPlugin>
-
-#include "plugins/EpgPlugins.h"
-
-class EpgSloveniaPluginCreator : public QObject, public EpgPluginCreator
+RecorderPlugin *FripTvCreator::createInstance()
 {
-Q_OBJECT;
-Q_INTERFACES( EpgPluginCreator );
-Q_CLASSINFO("PLUGINTYPE", "EPG");
-Q_CLASSINFO("PLUGINNAME", "EpgSlovenia");
+	return new FripTv();
+}
 
-public:
-	EpgPlugin *createEpgPluginInstance();
-};
-
-#endif // TANO_EPGSLOVENIAPLUGINCREATOR_H_
+Q_EXPORT_PLUGIN2(tanorecorder-friptv, FripTvCreator)

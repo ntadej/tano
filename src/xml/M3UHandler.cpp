@@ -26,7 +26,7 @@ M3UHandler::M3UHandler(QTreeWidget *treeWidget)
 	: _treeWidget(treeWidget)
 {
 	_name = QObject::tr("Channel list");
-	_epgPlugin = Settings::DEFAULT_EPG_PLUGIN;
+	_epgType = Settings::DEFAULT_EPG_TYPE;
 	_channelIcon = QIcon(":/icons/128x128/video.png");
 }
 
@@ -115,8 +115,8 @@ void M3UHandler::processList()
 			_name = _m3uLineList[i];
 			_name.replace(QString("#EXTNAME:"),QString(""));
 		} else if(_m3uLineList[i].contains("#EXTEPG")) {
-			_epgPlugin = _m3uLineList[i];
-			_epgPlugin.replace(QString("#EXTEPG:"),QString(""));
+			_epgType = _m3uLineList[i];
+			_epgType.replace(QString("#EXTEPG:"),QString(""));
 		} else if(_m3uLineList[i].contains("#EXTINF")) {
 			tmp = _m3uLineList[i];
 			tmp.replace(QString("#EXTINF:"),QString(""));

@@ -55,10 +55,10 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	core/Time.h
 	core/UpdateManager.h
 	epg/EpgList.h
-	epg/EpgLoader.h
 	epg/EpgManager.h
 	epg/EpgSchedule.h
 	epg/EpgShow.h
+	epg/EpgSloveniaLoader.h
 	plugins/PluginsManager.h
 	recorder/Recorder.h
 	ui/About.h
@@ -110,10 +110,11 @@ SET(Tano_Core_Srcs
 )
 SET(Tano_Epg_Srcs
 	epg/EpgList.cpp
-	epg/EpgLoader.cpp
 	epg/EpgManager.cpp
 	epg/EpgSchedule.cpp
 	epg/EpgShow.cpp
+	epg/EpgSlovenia.cpp
+	epg/EpgSloveniaLoader.cpp
 )
 SET(Tano_Plugins_Srcs
 	plugins/PluginsLoader.cpp

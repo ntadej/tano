@@ -92,7 +92,7 @@ RecorderPlugin *PluginsLoader::recorder(QObject *plugin)
 {
 	RecorderPluginCreator *recorder = qobject_cast<RecorderPluginCreator *>(plugin);
 	if(recorder)
-		return recorder->createRecorderPluginInstance();
+		return recorder->createInstance();
 	else
 		return 0;
 }
@@ -101,7 +101,7 @@ EpgPlugin *PluginsLoader::epg(QObject *plugin)
 {
 	EpgPluginCreator *epg = qobject_cast<EpgPluginCreator *>(plugin);
 	if(epg)
-		return epg->createEpgPluginInstance();
+		return epg->createInstance();
 	else
 		return 0;
 }
