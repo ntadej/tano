@@ -13,6 +13,7 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
 #include <QtCore/QFile>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
@@ -293,4 +294,15 @@ void M3UHandler::moveDown(QTreeWidgetItem *channel)
 	} else {
 		processNewNum(channel, currentNum+1);
 	}
+}
+
+bool M3UHandler::validate() const
+{
+	for(int i=1; i<_channelNums.size(); i++) {
+		if(_channelNums[i-1] == _channelNums[i]) {
+			return false;
+		}
+	}
+
+	return true;
 }

@@ -60,6 +60,8 @@ public:
 	Channel *channelRead(QTreeWidgetItem* clickedChannel) {	return _handler->channelRead(clickedChannel); }
 	Channel *channelRead(const int &clickedChannel) { return _handler->channelRead(clickedChannel); }
 
+	bool validate() const { return _handler->validate(); }
+
 protected:
 	void changeEvent(QEvent *e);
 

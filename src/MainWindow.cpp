@@ -353,7 +353,7 @@ void MainWindow::createSession()
 {
 	ui->volumeSlider->setVolume(_sessionVolume);
 
-	if(_sessionAutoplayEnabled && _hasPlaylist)
+	if(_sessionAutoplayEnabled && _hasPlaylist && ui->playlistWidget->validate())
 		playChannel(_sessionChannel);
 
 	_update->checkSilent();

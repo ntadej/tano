@@ -52,6 +52,8 @@ public:
 	void moveUp(QTreeWidgetItem *channel);
 	void moveDown(QTreeWidgetItem *channel);
 
+	bool validate() const;
+
 private:
 	void processList();
 	QString processNum(const QString &num);

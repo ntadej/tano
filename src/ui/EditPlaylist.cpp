@@ -292,6 +292,11 @@ void EditPlaylist::setState(const bool &playing)
 
 void EditPlaylist::editItem(QTreeWidgetItem *item)
 {
+	if(item == 0) {
+		ui->editWidget->setEnabled(false);
+		return;
+	}
+
 	if(!ui->editWidget->isEnabled())
 		ui->editWidget->setEnabled(true);
 
