@@ -1,5 +1,5 @@
 /****************************************************************************
-* ChannelEpg.h: ChannelEpg class
+* Timer.cpp: Timer container class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,27 +13,24 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_CHANNELEPG_H_
-#define TANO_CHANNELEPG_H_
+#include "container/Timer.h"
 
-#include <QtCore/QString>
-
-class ChannelEpg
+Timer::Timer(const QString &name,
+			 const QString &channel,
+			 const QString &playlist,
+			 const int &num,
+			 const QString &url)
+	: _name(name),
+	_channel(channel),
+	_playlist(playlist),
+	_num(num),
+	_url(url)
 {
-public:
-	ChannelEpg(const QString &time,
-			   const QString &url,
-			   const QString &title);
-	~ChannelEpg();
+	_date = QDate::currentDate();
+	_startTime = QTime::currentTime().addSecs(300);
+	_endTime = QTime::currentTime().addSecs(3900);
+	_disabled = false;
+	_active = false;
+}
 
-	QString time() const { return _time; }
-	QString url() const { return _url; }
-	QString title() const { return _title; }
-
-private:
-	QString _time;
-	QString _url;
-	QString _title;
-};
-
-#endif // TANO_CHANNELEPG_H_
+Timer::~Timer() { }

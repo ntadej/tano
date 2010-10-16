@@ -16,7 +16,7 @@
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
-#include "core/UpdateInfo.h"
+#include "container/UpdateInfo.h"
 #include "core/UpdateManager.h"
 #include "core/Version.h"
 

@@ -1,5 +1,5 @@
 /****************************************************************************
-* Channel.cpp: Channel class
+* Channel.cpp: Channel container class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,7 +13,7 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "channels/Channel.h"
+#include "container/Channel.h"
 
 Channel::Channel(const QString &name,
 				 const int &number)

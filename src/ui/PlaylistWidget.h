@@ -18,7 +18,7 @@
 
 #include <QtGui/QWidget>
 
-#include "channels/Channel.h"
+#include "container/Channel.h"
 #include "xml/M3UHandler.h"
 
 namespace Ui

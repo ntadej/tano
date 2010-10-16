@@ -21,9 +21,9 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QTreeWidgetItem>
 
-#include "channels/Channel.h"
+#include "container/Channel.h"
+#include "container/Timer.h"
 #include "core/Time.h"
-#include "recorder/Timer.h"
 #include "xml/TimersHandler.h"
 
 namespace Ui

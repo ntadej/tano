@@ -20,7 +20,7 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
-#include "channels/Channel.h"
+#include "container/Channel.h"
 #include "core/Settings.h"
 #include "plugins/PluginsLoader.h"
 

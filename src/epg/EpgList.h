@@ -22,7 +22,7 @@
 #include <QtGui/QMouseEvent>
 #include <QtGui/QTableWidget>
 
-#include "channels/ChannelEpg.h"
+#include "container/EpgItem.h"
 
 class EpgList : public QTableWidget
 {
@@ -46,8 +46,8 @@ private slots:
 	void clicked(QTableWidgetItem *item = 0);
 
 private:
-	QMap<QTableWidgetItem*, ChannelEpg*> _map;
-	QMap<int, ChannelEpg*> _nmap;
+	QMap<QTableWidgetItem*, EpgItem*> _map;
+	QMap<int, EpgItem*> _nmap;
 
 	QAction *_info;
 	QAction *_record;

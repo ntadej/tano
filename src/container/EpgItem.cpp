@@ -1,5 +1,5 @@
 /****************************************************************************
-* Timer.cpp: Timer class
+* EpgItem.cpp: Epg item container class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,24 +13,13 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "Timer.h"
+#include "container/EpgItem.h"
 
-Timer::Timer(const QString &name,
-			 const QString &channel,
-			 const QString &playlist,
-			 const int &num,
-			 const QString &url)
-	: _name(name),
-	_channel(channel),
-	_playlist(playlist),
-	_num(num),
-	_url(url)
-{
-	_date = QDate::currentDate();
-	_startTime = QTime::currentTime().addSecs(300);
-	_endTime = QTime::currentTime().addSecs(3900);
-	_disabled = false;
-	_active = false;
-}
+EpgItem::EpgItem(const QString &time,
+				 const QString &url,
+				 const QString &title)
+	: _time(time),
+	_url(url),
+	_title(title) { }
 
-Timer::~Timer() { }
+EpgItem::~EpgItem() { }

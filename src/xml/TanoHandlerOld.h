@@ -23,7 +23,7 @@
 #include <QtCore/QMap>
 #include <QtXml/QXmlDefaultHandler>
 
-#include "channels/Channel.h"
+#include "container/Channel.h"
 
 class TanoHandlerOld : public QXmlDefaultHandler
 {

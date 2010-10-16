@@ -1,5 +1,5 @@
 /****************************************************************************
-* ChannelEpg.cpp: ChannelEpg class
+* EpgShowInfo.cpp: Epg show information container class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,13 +13,17 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "channels/ChannelEpg.h"
+#include "container/EpgShowInfo.h"
 
-ChannelEpg::ChannelEpg(const QString &time,
-					   const QString &url,
-					   const QString &title)
-	: _time(time),
-	_url(url),
-	_title(title) { }
+EpgShowInfo::EpgShowInfo(const QString &title)
+	: _title(title)
+{
+	_channel = "";
+	_info = "";
+	_description = "";
+	_image = "";
+	_previous = "";
+	_next = "";
+}
 
-ChannelEpg::~ChannelEpg() { }
+EpgShowInfo::~EpgShowInfo() { }

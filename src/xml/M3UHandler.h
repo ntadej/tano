@@ -21,7 +21,7 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
-#include "channels/Channel.h"
+#include "container/Channel.h"
 
 class M3UHandler
 {

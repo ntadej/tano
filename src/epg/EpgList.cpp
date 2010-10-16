@@ -64,7 +64,7 @@ void EpgList::setEpg(const QStringList &epg)
 
 	int r = 0;
 	for (int i = 1; i < epg.size(); i+=3) {
-		ChannelEpg *newEpg = new ChannelEpg(epg[i],epg[i+1],epg[i+2]);
+		EpgItem *newEpg = new EpgItem(epg[i],epg[i+1],epg[i+2]);
 		QTableWidgetItem *newItem = new QTableWidgetItem(QString(epg[i] + " - " + epg[i+2]));
 		newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
 		_map.insert(newItem, newEpg);

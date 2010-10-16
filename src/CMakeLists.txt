@@ -89,9 +89,12 @@ SET(Tano_Resrcs
 )
 
 # Define the C++ source files used by Tano
-SET(Tano_Channels_Srcs
-	channels/Channel.cpp
-	channels/ChannelEpg.cpp
+SET(Tano_Container_Srcs
+	container/Channel.cpp
+	container/EpgItem.cpp
+	container/EpgShowInfo.cpp
+	container/UpdateInfo.cpp
+	container/Timer.cpp
 )
 SET(Tano_Core_Srcs
 	core/ChannelSelect.cpp
@@ -102,7 +105,6 @@ SET(Tano_Core_Srcs
 	core/Settings.cpp
 	core/Shortcuts.cpp
 	core/Time.cpp
-	core/UpdateInfo.cpp
 	core/UpdateManager.cpp
 	core/Version.cpp
 )
@@ -119,7 +121,6 @@ SET(Tano_Plugins_Srcs
 )
 SET(Tano_Recorder_Srcs
 	recorder/Recorder.cpp
-	recorder/Timer.cpp
 )
 SET(Tano_UI_Srcs
 	ui/About.cpp
@@ -155,7 +156,7 @@ SET(Tano_Srcs
 	main.cpp
 	MainWindow.cpp
 
-	${Tano_Channels_Srcs}
+	${Tano_Container_Srcs}
 	${Tano_Core_Srcs}
 	${Tano_Epg_Srcs}
 	${Tano_Plugins_Srcs}

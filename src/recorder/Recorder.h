@@ -20,8 +20,8 @@
 #include <QtCore/QTimer>
 #include <QtGui/QMainWindow>
 
+#include "container/Timer.h"
 #include "plugins/RecorderPlugins.h"
-#include "recorder/Timer.h"
 #include "ui/TrayIcon.h"
 #include "xml/M3UHandler.h"
 

@@ -25,7 +25,7 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
-#include "recorder/Timer.h"
+#include "container/Timer.h"
 
 class TimersGenerator
 {

@@ -26,7 +26,7 @@
 #include <vlc-qt/MediaPlayer.h>
 #include <vlc-qt/VideoControl.h>
 
-#include "channels/Channel.h"
+#include "container/Channel.h"
 #include "core/ChannelSelect.h"
 #include "core/LocaleManager.h"
 #include "core/Shortcuts.h"

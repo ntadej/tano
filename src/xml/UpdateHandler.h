@@ -22,7 +22,7 @@
 
 #include <QtXml/QXmlDefaultHandler>
 
-#include "core/UpdateInfo.h"
+#include "container/UpdateInfo.h"
 
 class UpdateHandler : public QXmlDefaultHandler
 {

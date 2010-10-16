@@ -1,5 +1,5 @@
 /****************************************************************************
-* UpdateInfo.cpp: Update information class
+* UpdateInfo.cpp: Update information container class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,7 +13,7 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include "core/UpdateInfo.h"
+#include "container/UpdateInfo.h"
 
 UpdateInfo::UpdateInfo(const QString &name)
 	: _name(name) { }

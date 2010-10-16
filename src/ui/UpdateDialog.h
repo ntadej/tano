@@ -19,7 +19,7 @@
 #include <QtGui/QAbstractButton>
 #include <QtGui/QDialog>
 
-#include "core/UpdateInfo.h"
+#include "container/UpdateInfo.h"
 #include "core/UpdateManager.h"
 
 namespace Ui {

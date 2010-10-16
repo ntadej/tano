@@ -1,5 +1,5 @@
 /****************************************************************************
-* UpdateInfo.h: Update information class
+* UpdateInfo.h: Update information container class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *

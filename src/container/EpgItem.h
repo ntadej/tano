@@ -1,5 +1,5 @@
 /****************************************************************************
-* Time.h: Main time manager
+* EpgItem.cpp: Epg item container class
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,36 +13,27 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_TIME_H_
-#define TANO_TIME_H_
+#ifndef TANO_EPGITEM_H_
+#define TANO_EPGITEM_H_
 
-#include <QtCore/QList>
-#include <QtCore/QTimer>
+#include <QtCore/QString>
 
-#include "container/Timer.h"
-
-class Time : public QObject
+class EpgItem
 {
-Q_OBJECT
 public:
-	Time();
-	~Time();
+	EpgItem(const QString &time,
+			const QString &url,
+			const QString &title);
+	~EpgItem();
 
-	void addTimer(Timer *t);
-	void removeTimer(Timer *t);
-
-signals:
-	void startTimer(Timer*);
-	void stopTimer(Timer*);
-	void timerStatus(Timer*,
-					 bool);
-
-private slots:
-	void check();
+	QString time() const { return _time; }
+	QString url() const { return _url; }
+	QString title() const { return _title; }
 
 private:
-	QTimer *_timer;
-	QList<Timer*> _timersList;
+	QString _time;
+	QString _url;
+	QString _title;
 };
 
-#endif // TANO_TIME_H_
+#endif // TANO_EPGITEM_H_

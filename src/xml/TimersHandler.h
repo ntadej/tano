@@ -26,7 +26,7 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtXml/QXmlDefaultHandler>
 
-#include "recorder/Timer.h"
+#include "container/Timer.h"
 
 class TimersHandler : public QXmlDefaultHandler
 {
