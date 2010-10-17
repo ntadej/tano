@@ -1352,32 +1352,44 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Kategorija:</translation>
     </message>
     <message>
+        <location filename="../src/ui/PlaylistWidget.ui" line="84"/>
+        <source>Language:</source>
+        <translation>Jezik:</translation>
+    </message>
+    <message>
         <location filename="../src/ui/PlaylistWidget.ui" line="52"/>
         <source>Clear</source>
         <translation>Počisti</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="73"/>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="95"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="75"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="101"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="74"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="76"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="50"/>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="83"/>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="112"/>
-        <source>All channels</source>
-        <translation>Vsi programi</translation>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="52"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="89"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="123"/>
+        <source>All languages</source>
+        <translation>Vsi jeziki</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="96"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="51"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="85"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="118"/>
+        <source>All categories</source>
+        <translation>Vse kategorije</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="102"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne morem pisati datoteke %1:
@@ -1518,7 +1530,7 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Program s to številko že obstaja!</translation>
     </message>
     <message>
-        <location filename="../src/xml/M3UHandler.cpp" line="177"/>
+        <location filename="../src/xml/M3UHandler.cpp" line="181"/>
         <source>New channel</source>
         <translation>Nov program</translation>
     </message>

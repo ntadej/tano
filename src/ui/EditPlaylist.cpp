@@ -47,7 +47,7 @@ EditPlaylist::EditPlaylist(const QString &playlist,
 	connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
 
 	ui->editWidget->setEnabled(false);
-	ui->playlist->disableCategories();
+	ui->playlist->editMode();
 	ui->playlist->open(_playlist);
 	ui->editName->setText(ui->playlist->name());
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());

@@ -55,7 +55,7 @@ public:
 				   const int &num) const { return _handler->processNewNum(channel, num); }
 	void moveUp(QTreeWidgetItem *channel) { _handler->moveUp(channel); }
 	void moveDown(QTreeWidgetItem *channel) { _handler->moveDown(channel); }
-	void disableCategories();
+	void editMode();
 
 	Channel *channelRead(QTreeWidgetItem* clickedChannel) {	return _handler->channelRead(clickedChannel); }
 	Channel *channelRead(const int &clickedChannel) { return _handler->channelRead(clickedChannel); }

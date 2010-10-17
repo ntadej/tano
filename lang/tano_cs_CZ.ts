@@ -1352,32 +1352,44 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation>Skupina:</translation>
     </message>
     <message>
+        <location filename="../src/ui/PlaylistWidget.ui" line="84"/>
+        <source>Language:</source>
+        <translation type="unfinished">Jazyk:</translation>
+    </message>
+    <message>
         <location filename="../src/ui/PlaylistWidget.ui" line="52"/>
         <source>Clear</source>
         <translation>Smazat</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="73"/>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="95"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="75"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="101"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="74"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="76"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Nelze číst ze souboru %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="50"/>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="83"/>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="112"/>
-        <source>All channels</source>
-        <translation>Všechny programy</translation>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="52"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="89"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="123"/>
+        <source>All languages</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/PlaylistWidget.cpp" line="96"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="51"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="85"/>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="118"/>
+        <source>All categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/PlaylistWidget.cpp" line="102"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Nelze zapisovat soubor %1:
@@ -1518,7 +1530,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation>Program s tímto číslem již existuje!</translation>
     </message>
     <message>
-        <location filename="../src/xml/M3UHandler.cpp" line="177"/>
+        <location filename="../src/xml/M3UHandler.cpp" line="181"/>
         <source>New channel</source>
         <translation>Nový program</translation>
     </message>

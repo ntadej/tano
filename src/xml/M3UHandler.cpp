@@ -88,6 +88,7 @@ void M3UHandler::clear()
 	_m3uLineList.clear();
 	_channelNums.clear();
 	_categoryList.clear();
+	_languageList.clear();
 	_epgList.clear();
 
 	if(_treeWidget->topLevelItemCount()>0)
@@ -148,6 +149,9 @@ void M3UHandler::processList()
 						_categoryList << tmpCList[k];
 				_item->setText(2, tmpList[0]);
 				_channel->setLanguage(tmpList[1]);
+				if(!_languageList.contains(tmpList[1]))
+					_languageList << tmpList[1];
+				_item->setText(3, tmpList[1]);
 				_channel->setEpg(tmpList[2]);
 				if(!_epgList.contains(tmpList[2]) && !tmpList[2].isEmpty())
 					_epgList << tmpList[2];

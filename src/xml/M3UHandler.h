@@ -43,6 +43,7 @@ public:
 	QString name() const { return _name; }
 	QString epgPlugin() const { return _epgPlugin; }
 	QStringList categories() const { return _categoryList; }
+	QStringList languages() const { return _languageList; }
 	QStringList epg() const { return _epgList; }
 	QList<int> nums() const { return _channelNums; }
 	QMap<QTreeWidgetItem*, Channel*> channelMap() const { return _map; }
@@ -68,6 +69,7 @@ private:
 	QString _epgPlugin;
 	QStringList _m3uLineList;
 	QStringList _categoryList;
+	QStringList _languageList;
 	QStringList _epgList;
 
 	QList<Channel*> _channels;

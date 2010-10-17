@@ -32,6 +32,7 @@ PlaylistWidget::PlaylistWidget(QWidget *parent)
 
 	connect(ui->treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SIGNAL(itemClicked(QTreeWidgetItem*, int)));
 	connect(ui->categoryBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
+	connect(ui->languageBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
 	connect(ui->searchEdit, SIGNAL(textChanged(QString)), this, SLOT(processPlaylist()));
 }
 
@@ -47,7 +48,8 @@ void PlaylistWidget::changeEvent(QEvent *e)
 	switch (e->type()) {
 		case QEvent::LanguageChange:
 			ui->retranslateUi(this);
-			ui->categoryBox->setItemText(0, tr("All channels"));
+			ui->categoryBox->setItemText(0, tr("All categories"));
+			ui->languageBox->setItemText(0, tr("All languages"));
 			break;
 		default:
 			break;
@@ -80,8 +82,12 @@ void PlaylistWidget::open(const QString &file)
 	_handler->processFile(_fileName);
 
 	ui->categoryBox->clear();
-	ui->categoryBox->insertItem(0,tr("All channels"));
+	ui->categoryBox->insertItem(0,tr("All categories"));
 	ui->categoryBox->insertItems(1,_handler->categories());
+
+	ui->languageBox->clear();
+	ui->languageBox->insertItem(0,tr("All languages"));
+	ui->languageBox->insertItems(1,_handler->languages());
 
 	ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
@@ -109,9 +115,14 @@ void PlaylistWidget::processPlaylist()
 	for(int i=0; i<ui->treeWidget->topLevelItemCount(); i++)
 		ui->treeWidget->topLevelItem(i)->setHidden(false);
 
-	if(ui->categoryBox->currentText() != tr("All channels"))
+	if(ui->categoryBox->currentText() != tr("All categories"))
 		for(int i=0; i<ui->treeWidget->topLevelItemCount(); i++)
 			if(!ui->treeWidget->topLevelItem(i)->text(2).contains(ui->categoryBox->currentText(), Qt::CaseInsensitive))
+				ui->treeWidget->topLevelItem(i)->setHidden(true);
+
+	if(ui->languageBox->currentText() != tr("All languages"))
+		for(int i=0; i<ui->treeWidget->topLevelItemCount(); i++)
+			if(!ui->treeWidget->topLevelItem(i)->text(3).contains(ui->languageBox->currentText(), Qt::CaseInsensitive))
 				ui->treeWidget->topLevelItem(i)->setHidden(true);
 
 	if(ui->searchEdit->text() != "")
@@ -141,10 +152,12 @@ void PlaylistWidget::import(const QString &file)
 	_handler->importOldFormat(file);
 }
 
-void PlaylistWidget::disableCategories()
+void PlaylistWidget::editMode()
 {
 	ui->labelCategory->hide();
 	ui->categoryBox->hide();
+	ui->labelLanguage->hide();
+	ui->languageBox->hide();
 }
 
 QTreeWidget *PlaylistWidget::treeWidget()
