@@ -57,7 +57,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>26</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuRecorder">
@@ -159,6 +159,7 @@
      <addaction name="actionCrop5_3"/>
      <addaction name="actionCrop4_3"/>
      <addaction name="actionCrop1_1"/>
+     <addaction name="actionCropNext"/>
     </widget>
     <widget class="QMenu" name="menuSubtitles">
      <property name="title">
@@ -171,9 +172,6 @@
      <addaction name="actionOpenSubtitles"/>
     </widget>
     <widget class="QMenu" name="menuDeinterlacing">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
      <property name="title">
       <string>Deinterlacing</string>
      </property>
@@ -188,6 +186,7 @@
      <addaction name="actionFilterBob"/>
      <addaction name="actionFilterLinear"/>
      <addaction name="actionFilterX"/>
+     <addaction name="actionDeinterlaceNext"/>
     </widget>
     <widget class="QMenu" name="menuAspectRatio">
      <property name="title">
@@ -204,11 +203,12 @@
      <addaction name="actionRatio16_10"/>
      <addaction name="actionRatio2_21_1"/>
      <addaction name="actionRatio5_4"/>
+     <addaction name="actionRatioNext"/>
     </widget>
     <addaction name="menuVideoTrack"/>
+    <addaction name="menuSubtitles"/>
     <addaction name="menuAspectRatio"/>
     <addaction name="menuCrop"/>
-    <addaction name="menuSubtitles"/>
     <addaction name="menuDeinterlacing"/>
    </widget>
    <widget class="QMenu" name="menuFile">
@@ -311,7 +311,7 @@
           <x>0</x>
           <y>0</y>
           <width>340</width>
-          <height>304</height>
+          <height>319</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -1165,6 +1165,39 @@
    </property>
    <property name="text">
     <string>Schedule</string>
+   </property>
+  </action>
+  <action name="actionCropNext">
+   <property name="text">
+    <string>Next crop mode</string>
+   </property>
+   <property name="iconText">
+    <string>Next crop mode</string>
+   </property>
+   <property name="toolTip">
+    <string>Next crop mode</string>
+   </property>
+  </action>
+  <action name="actionRatioNext">
+   <property name="text">
+    <string>Next aspect ratio mode</string>
+   </property>
+   <property name="iconText">
+    <string>Next aspect ratio mode</string>
+   </property>
+   <property name="toolTip">
+    <string>Next aspect ratio mode</string>
+   </property>
+  </action>
+  <action name="actionDeinterlaceNext">
+   <property name="text">
+    <string>Next deinterlace mode</string>
+   </property>
+   <property name="iconText">
+    <string>Next deinterlace mode</string>
+   </property>
+   <property name="toolTip">
+    <string>Next deinterlace mode</string>
    </property>
   </action>
  </widget>

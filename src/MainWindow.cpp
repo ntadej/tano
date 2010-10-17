@@ -16,6 +16,7 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
+#include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtGui/QApplication>
 #include <QtGui/QBitmap>
@@ -266,6 +267,10 @@ void MainWindow::createConnections()
 
 	connect(_time, SIGNAL(startTimer(Timer*)), ui->recorder, SLOT(recordTimer(Timer*)));
 	connect(_time, SIGNAL(stopTimer(Timer*)), ui->recorder, SLOT(stopTimer(Timer*)));
+
+	connect(ui->actionCropNext, SIGNAL(triggered()), this, SLOT(nextCrop()));
+	connect(ui->actionDeinterlaceNext, SIGNAL(triggered()), this, SLOT(nextDeinterlace()));
+	connect(ui->actionRatioNext, SIGNAL(triggered()), this, SLOT(nextRatio()));
 }
 
 void MainWindow::createMenus()
@@ -329,22 +334,27 @@ void MainWindow::createMenus()
 void MainWindow::createShortcuts()
 {
 	_actions << ui->actionPlay
-		<< ui->actionStop
-		<< ui->actionNext
-		<< ui->actionBack
-		<< ui->actionFullscreen
-		<< ui->actionMute
-		<< ui->actionVolumeUp
-		<< ui->actionVolumeDown
-		<< ui->actionRecorder
-		<< ui->actionOpenFile
-		<< ui->actionOpenUrl
-		<< ui->actionOpen
-		<< ui->actionEditPlaylist
-		<< ui->actionSettings
-		<< ui->actionTop
-		<< ui->actionLite
-		<< ui->actionTray;
+			 << ui->actionStop
+			 << ui->actionNext
+			 << ui->actionBack
+			 << ui->actionFullscreen
+			 << ui->actionInfoPanel
+			 << ui->actionControls
+			 << ui->actionMute
+			 << ui->actionVolumeUp
+			 << ui->actionVolumeDown
+			 << ui->actionRecorder
+			 << ui->actionOpenFile
+			 << ui->actionOpenUrl
+			 << ui->actionOpen
+			 << ui->actionEditPlaylist
+			 << ui->actionSettings
+			 << ui->actionTop
+			 << ui->actionLite
+			 << ui->actionTray
+			 << ui->actionRatioNext
+			 << ui->actionCropNext
+			 << ui->actionDeinterlaceNext;
 
 	_shortcuts = new Shortcuts(_actions, this);
 }
@@ -753,5 +763,32 @@ void MainWindow::recorder(const bool &enabled)
 		ui->stackedWidget->setCurrentIndex(0);
 		ui->infoWidget->setVisible(true);
 		ui->osdWidget->setVisible(true);
+	}
+}
+
+void MainWindow::nextCrop()
+{
+	if(_cropGroup->actions().indexOf(_cropGroup->checkedAction()) == _cropGroup->actions().size()-1) {
+		_cropGroup->actions()[0]->trigger();;
+	} else {
+		_cropGroup->actions()[_cropGroup->actions().indexOf(_cropGroup->checkedAction())+1]->trigger();;
+	}
+}
+
+void MainWindow::nextDeinterlace()
+{
+	if(_filterGroup->actions().indexOf(_filterGroup->checkedAction()) == _filterGroup->actions().size()-1) {
+		_filterGroup->actions()[0]->trigger();;
+	} else {
+		_filterGroup->actions()[_filterGroup->actions().indexOf(_filterGroup->checkedAction())+1]->trigger();;
+	}
+}
+
+void MainWindow::nextRatio()
+{
+	if(_ratioGroup->actions().indexOf(_ratioGroup->checkedAction()) == _ratioGroup->actions().size()-1) {
+		_ratioGroup->actions()[0]->trigger();;
+	} else {
+		_ratioGroup->actions()[_ratioGroup->actions().indexOf(_ratioGroup->checkedAction())+1]->trigger();;
 	}
 }
