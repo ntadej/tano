@@ -43,6 +43,7 @@ public:
 	QString name() const { return _name; }
 	QString epgType() const { return _epgType; }
 	QStringList categories() const { return _categoryList; }
+	QStringList languages() const { return _languageList; }
 	QStringList epg() const { return _epgList; }
 	QList<int> nums() const { return _channelNums; }
 	QMap<QTreeWidgetItem*, Channel*> channelMap() const { return _map; }
@@ -51,6 +52,8 @@ public:
 					  const int &num);
 	void moveUp(QTreeWidgetItem *channel);
 	void moveDown(QTreeWidgetItem *channel);
+
+	bool validate() const;
 
 private:
 	void processList();
@@ -66,6 +69,7 @@ private:
 	QString _epgType;
 	QStringList _m3uLineList;
 	QStringList _categoryList;
+	QStringList _languageList;
 	QStringList _epgList;
 
 	QList<Channel*> _channels;

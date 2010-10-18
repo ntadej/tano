@@ -13,6 +13,7 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
 #include <QtCore/QFile>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
@@ -87,6 +88,7 @@ void M3UHandler::clear()
 	_m3uLineList.clear();
 	_channelNums.clear();
 	_categoryList.clear();
+	_languageList.clear();
 	_epgList.clear();
 
 	if(_treeWidget->topLevelItemCount()>0)
@@ -147,6 +149,9 @@ void M3UHandler::processList()
 						_categoryList << tmpCList[k];
 				_item->setText(2, tmpList[0]);
 				_channel->setLanguage(tmpList[1]);
+				if(!_languageList.contains(tmpList[1]))
+					_languageList << tmpList[1];
+				_item->setText(3, tmpList[1]);
 				_channel->setEpg(tmpList[2]);
 				if(!_epgList.contains(tmpList[2]) && !tmpList[2].isEmpty())
 					_epgList << tmpList[2];
@@ -293,4 +298,15 @@ void M3UHandler::moveDown(QTreeWidgetItem *channel)
 	} else {
 		processNewNum(channel, currentNum+1);
 	}
+}
+
+bool M3UHandler::validate() const
+{
+	for(int i=1; i<_channelNums.size(); i++) {
+		if(_channelNums[i-1] == _channelNums[i]) {
+			return false;
+		}
+	}
+
+	return true;
 }

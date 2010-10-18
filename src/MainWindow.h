@@ -101,6 +101,10 @@ private slots:
 	void recordNow();
 	void recorder(const bool &enabled);
 
+	void nextCrop();
+	void nextDeinterlace();
+	void nextRatio();
+
 signals:
 	void setVolume(int);
 

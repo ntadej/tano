@@ -683,6 +683,31 @@
            <string notr="true">0</string>
           </property>
          </row>
+         <row>
+          <property name="text">
+           <string notr="true">0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string notr="true">0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string notr="true">0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string notr="true">0</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string notr="true">0</string>
+          </property>
+         </row>
          <column>
           <property name="text">
            <string>Action</string>
@@ -760,10 +785,7 @@
          </item>
          <item row="5" column="0">
           <property name="text">
-           <string>Mute</string>
-          </property>
-          <property name="flags">
-           <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+           <string>Toggle Info Widget</string>
           </property>
          </item>
          <item row="5" column="1">
@@ -773,10 +795,7 @@
          </item>
          <item row="6" column="0">
           <property name="text">
-           <string>Volume up</string>
-          </property>
-          <property name="flags">
-           <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+           <string>Toggle Controls Widget</string>
           </property>
          </item>
          <item row="6" column="1">
@@ -786,7 +805,7 @@
          </item>
          <item row="7" column="0">
           <property name="text">
-           <string>Volume down</string>
+           <string>Mute</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -799,7 +818,7 @@
          </item>
          <item row="8" column="0">
           <property name="text">
-           <string>Recorder</string>
+           <string>Volume up</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -812,7 +831,7 @@
          </item>
          <item row="9" column="0">
           <property name="text">
-           <string>Open File</string>
+           <string>Volume down</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -825,7 +844,7 @@
          </item>
          <item row="10" column="0">
           <property name="text">
-           <string>Open URL</string>
+           <string>Recorder</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -838,7 +857,7 @@
          </item>
          <item row="11" column="0">
           <property name="text">
-           <string>Open Channel list</string>
+           <string>Open File</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -851,7 +870,7 @@
          </item>
          <item row="12" column="0">
           <property name="text">
-           <string>Edit Channel list</string>
+           <string>Open URL</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -864,7 +883,7 @@
          </item>
          <item row="13" column="0">
           <property name="text">
-           <string>Settings</string>
+           <string>Open Channel list</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -877,7 +896,7 @@
          </item>
          <item row="14" column="0">
           <property name="text">
-           <string>Always on top</string>
+           <string>Edit Channel list</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -890,7 +909,7 @@
          </item>
          <item row="15" column="0">
           <property name="text">
-           <string>Simple Mode</string>
+           <string>Settings</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -903,13 +922,69 @@
          </item>
          <item row="16" column="0">
           <property name="text">
-           <string>Hide to tray</string>
+           <string>Always on top</string>
           </property>
           <property name="flags">
            <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
           </property>
          </item>
          <item row="16" column="1">
+          <property name="text">
+           <string notr="true"/>
+          </property>
+         </item>
+         <item row="17" column="0">
+          <property name="text">
+           <string>Simple Mode</string>
+          </property>
+          <property name="flags">
+           <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+          </property>
+         </item>
+         <item row="17" column="1">
+          <property name="text">
+           <string notr="true"/>
+          </property>
+         </item>
+         <item row="18" column="0">
+          <property name="text">
+           <string>Hide to tray</string>
+          </property>
+          <property name="flags">
+           <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+          </property>
+         </item>
+         <item row="18" column="1">
+          <property name="text">
+           <string notr="true"/>
+          </property>
+         </item>
+         <item row="19" column="0">
+          <property name="text">
+           <string>Next aspect ratio mode</string>
+          </property>
+         </item>
+         <item row="19" column="1">
+          <property name="text">
+           <string notr="true"/>
+          </property>
+         </item>
+         <item row="20" column="0">
+          <property name="text">
+           <string>Next crop mode</string>
+          </property>
+         </item>
+         <item row="20" column="1">
+          <property name="text">
+           <string notr="true"/>
+          </property>
+         </item>
+         <item row="21" column="0">
+          <property name="text">
+           <string>Next deinterlace mode</string>
+          </property>
+         </item>
+         <item row="21" column="1">
           <property name="text">
            <string notr="true"/>
           </property>
