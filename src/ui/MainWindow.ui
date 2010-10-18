@@ -335,8 +335,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>100</width>
-          <height>30</height>
+          <width>340</width>
+          <height>319</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -1205,13 +1205,13 @@
   <customwidget>
    <class>PlaylistWidget</class>
    <extends>QWidget</extends>
-   <header>ui/PlaylistWidget.h</header>
+   <header>ui/playlist/PlaylistWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>EpgSchedule</class>
    <extends>QWidget</extends>
-   <header>epg/EpgSchedule.h</header>
+   <header>ui/epg/EpgSchedule.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -1234,7 +1234,7 @@
   <customwidget>
    <class>InfoBar</class>
    <extends>QWidget</extends>
-   <header>ui/InfoBar.h</header>
+   <header>ui/core/InfoBar.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -1275,13 +1275,13 @@
   <customwidget>
    <class>Recorder</class>
    <extends>QWidget</extends>
-   <header>recorder/Recorder.h</header>
+   <header>ui/recorder/Recorder.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>CurrentTime</class>
    <extends>QWidget</extends>
-   <header>ui/CurrentTime.h</header>
+   <header>ui/core/CurrentTime.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

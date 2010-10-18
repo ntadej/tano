@@ -30,8 +30,8 @@
 
 #include "core/Common.h"
 #include "core/Settings.h"
-#include "plugins/PluginsManager.h"
-#include "ui/EditSettings.h"
+#include "ui/dialogs/PluginsDialog.h"
+#include "ui/settings/SettingsEdit.h"
 
 const QString MainWindow::IDENTIFIER = "main";
 
@@ -39,7 +39,7 @@ MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()),
 	_time(new Time()), _update(new UpdateDialog()),
 	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0),
-	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new Schedule())
+	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new EpgFull())
 {
 	QPixmap pixmap(":/images/splash.png");
 	Settings *settings = new Settings(this);
@@ -389,7 +389,7 @@ void MainWindow::createRecorder()
 		ui->recorder->setGlobals(_trayIcon, ui->actionRecord);
 		ui->recorder->createSettings();
 		if(!_timersEditor)
-			_timersEditor = new EditTimers(_time, _playlistName, this);
+			_timersEditor = new TimersEdit(_time, _playlistName, this);
 		if(ui->buttonRecord->isHidden()) {
 			ui->buttonRecord->show();
 			ui->menuRecorder->setEnabled(true);
@@ -421,7 +421,7 @@ void MainWindow::aboutTano()
 }
 void MainWindow::aboutPlugins()
 {
-	PluginsManager p;
+	PluginsDialog p;
 	p.exec();
 }
 
@@ -638,7 +638,7 @@ void MainWindow::showSchedule()
 
 void MainWindow::showSettings()
 {
-	EditSettings s(_shortcuts, this);
+	SettingsEdit s(_shortcuts, this);
 	s.exec();
 	_locale->setLocale();
 	createSettings();
@@ -652,11 +652,11 @@ void MainWindow::showPlaylistEditor()
 			_playlistEditor->activateWindow();
 		} else {
 			delete _playlistEditor;
-			_playlistEditor = new EditPlaylist(_playlistName, ui->videoWidget->widgetId());
+			_playlistEditor = new PlaylistEdit(_playlistName, ui->videoWidget->widgetId());
 			_playlistEditor->show();
 		}
 	} else {
-		_playlistEditor = new EditPlaylist(_playlistName, ui->videoWidget->widgetId());
+		_playlistEditor = new PlaylistEdit(_playlistName, ui->videoWidget->widgetId());
 		_playlistEditor->show();
 	}
 }

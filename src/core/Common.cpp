@@ -22,11 +22,11 @@
 #include "core/Common.h"
 #include "core/Settings.h"
 
-#include "ui/About.h"
+#include "ui/dialogs/AboutDialog.h"
 
 void Common::about(QWidget *parent)
 {
-	About about(parent);
+	AboutDialog about(parent);
 	about.exec();
 }
 

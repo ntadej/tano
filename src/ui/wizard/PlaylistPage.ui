@@ -22,15 +22,15 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="SelectPlaylist" name="widgetSelectPlaylist" native="true"/>
+    <widget class="SettingsPlaylist" name="widgetSelectPlaylist" native="true"/>
    </item>
   </layout>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>SelectPlaylist</class>
+   <class>SettingsPlaylist</class>
    <extends>QWidget</extends>
-   <header>ui/SelectPlaylist.h</header>
+   <header>ui/settings/SettingsPlaylist.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

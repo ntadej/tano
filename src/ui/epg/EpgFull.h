@@ -1,5 +1,5 @@
 /****************************************************************************
-* main.cpp: Tano application main
+* EpgFull.h: Independent schedule widget
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,29 +13,43 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
-#include <QtGui/QApplication>
+#ifndef TANO_EPGFULL_H_
+#define TANO_EPGFULL_H_
 
-#include "MainWindow.h"
-#include "core/Settings.h"
-#include "core/Version.h"
-#include "ui/wizard/FirstRunWizard.h"
+#include <QtGui/QTreeWidgetItem>
+#include <QtGui/QWidget>
 
-int main(int argc, char *argv[])
+namespace Ui
 {
-    QApplication app(argc, argv);
-    QCoreApplication::setApplicationName("Tano");
-
-	Settings *settings = new Settings();
-	if(!settings->configured() || settings->configurationVersion() != Version::version()) {
-		FirstRunWizard *wizard = new FirstRunWizard();
-		wizard->exec();
-		delete wizard;
-	}
-	delete settings;
-
-	MainWindow mainWindow;
-    mainWindow.show();
-
-    return app.exec();
+	class EpgFull;
 }
+
+class EpgFull : public QWidget
+{
+Q_OBJECT
+public:
+	EpgFull(QWidget *parent = 0);
+	~EpgFull();
+
+	void openPlaylist(const QString &p);
+
+	static const QString IDENTIFIER;
+
+protected:
+	void changeEvent(QEvent *e);
+
+signals:
+	void requestEpg(QString, QString);
+	void urlClicked(QString);
+
+private slots:
+	void channel(QTreeWidgetItem *item);
+	void loadEpg(const QStringList &list,
+				 const int &day,
+				 const QString &identifier);
+
+private:
+	Ui::EpgFull *ui;
+};
+
+#endif // TANO_EPGFULL_H_

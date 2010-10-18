@@ -1,5 +1,5 @@
 /****************************************************************************
-* main.cpp: Tano application main
+* SettingsPlaylist.h: Common playlist selector widget
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,29 +13,35 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
-#include <QtGui/QApplication>
+#ifndef TANO_SETTINGSPLAYLIST_H_
+#define TANO_SETTINGSPLAYLIST_H_
 
-#include "MainWindow.h"
-#include "core/Settings.h"
-#include "core/Version.h"
-#include "ui/wizard/FirstRunWizard.h"
+#include <QtGui/QWidget>
 
-int main(int argc, char *argv[])
+namespace Ui
 {
-    QApplication app(argc, argv);
-    QCoreApplication::setApplicationName("Tano");
-
-	Settings *settings = new Settings();
-	if(!settings->configured() || settings->configurationVersion() != Version::version()) {
-		FirstRunWizard *wizard = new FirstRunWizard();
-		wizard->exec();
-		delete wizard;
-	}
-	delete settings;
-
-	MainWindow mainWindow;
-    mainWindow.show();
-
-    return app.exec();
+	class SettingsPlaylist;
 }
+
+class SettingsPlaylist : public QWidget
+{
+	Q_OBJECT
+public:
+	SettingsPlaylist(QWidget *parent = 0);
+	~SettingsPlaylist();
+
+	QString playlist() const;
+	void setPlaylist(const QString &playlist);
+
+protected:
+	void changeEvent(QEvent *e);
+
+private slots:
+	void playlistBrowse();
+	void playlistReset();
+
+private:
+	Ui::SettingsPlaylist *ui;
+};
+
+#endif // TANO_SETTINGSPLAYLIST_H_

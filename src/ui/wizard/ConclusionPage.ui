@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>409</width>
     <height>300</height>
    </rect>
   </property>
@@ -37,7 +37,7 @@
   <customwidget>
    <class>License</class>
    <extends>QWidget</extends>
-   <header>ui/License.h</header>
+   <header>ui/core/License.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

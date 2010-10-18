@@ -26,20 +26,21 @@ CONFIGURE_FILE(
 ###################
 # Define the UI source files used by Tano
 SET(Tano_UIs
-	ui/About.ui
-	ui/EditPlaylist.ui
-	ui/EditSettings.ui
-	ui/EditTimers.ui
-	ui/EpgSchedule.ui
-	ui/EpgShow.ui
 	ui/MainWindow.ui
-	ui/PlaylistWidget.ui
-	ui/PluginsManager.ui
-	ui/PrintDialog.ui
-	ui/Recorder.ui
-	ui/Schedule.ui
-	ui/SelectPlaylist.ui
-	ui/UpdateDialog.ui
+	ui/dialogs/AboutDialog.ui
+	ui/dialogs/PluginsDialog.ui
+	ui/dialogs/PrintDialog.ui
+	ui/dialogs/UpdateDialog.ui
+	ui/epg/EpgFull.ui
+	ui/epg/EpgShow.ui
+	ui/epg/EpgSchedule.ui
+	ui/playlist/PlaylistEdit.ui
+	ui/playlist/PlaylistWidget.ui
+	ui/recorder/Recorder.ui
+	ui/recorder/TimersEdit.ui
+	ui/settings/SettingsEdit.ui
+	ui/settings/SettingsPlaylist.ui
+	ui/settings/SettingsShortcuts.ui
 	ui/wizard/ConclusionPage.ui
 	ui/wizard/IntroPage.ui
 	ui/wizard/PlaylistPage.ui
@@ -56,25 +57,26 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	core/UpdateManager.h
 	epg/EpgList.h
 	epg/EpgManager.h
-	epg/EpgSchedule.h
-	epg/EpgShow.h
 	epg/EpgSloveniaLoader.h
-	plugins/PluginsManager.h
-	recorder/Recorder.h
-	ui/About.h
-	ui/CurrentTime.h
-	ui/EditPlaylist.h
-	ui/EditSettings.h
-	ui/EditTimers.h
-	ui/InfoBar.h
-	ui/License.h
-	ui/PlaylistWidget.h
-	ui/PrintDialog.h
-	ui/QtKeySequenceEdit.h
-	ui/Schedule.h
-	ui/SelectPlaylist.h
-	ui/TrayIcon.h
-	ui/UpdateDialog.h
+	ui/core/CurrentTime.h
+	ui/core/InfoBar.h
+	ui/core/License.h
+	ui/core/QtKeySequenceEdit.h
+	ui/core/TrayIcon.h
+	ui/dialogs/AboutDialog.h
+	ui/dialogs/PluginsDialog.h
+	ui/dialogs/PrintDialog.h
+	ui/dialogs/UpdateDialog.h
+	ui/epg/EpgFull.h
+	ui/epg/EpgSchedule.h
+	ui/epg/EpgShow.h
+	ui/playlist/PlaylistEdit.h
+	ui/playlist/PlaylistWidget.h
+	ui/recorder/Recorder.h
+	ui/recorder/TimersEdit.h
+	ui/settings/SettingsEdit.h
+	ui/settings/SettingsPlaylist.h
+	ui/settings/SettingsShortcuts.h
 	ui/wizard/ConclusionPage.h
 	ui/wizard/FirstRunWizard.h
 	ui/wizard/IntroPage.h
@@ -101,6 +103,7 @@ SET(Tano_Core_Srcs
 	core/Common.cpp
 	core/GetFile.cpp
 	core/LocaleManager.cpp
+	core/PluginsLoader.cpp
 	core/Print.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
@@ -111,33 +114,29 @@ SET(Tano_Core_Srcs
 SET(Tano_Epg_Srcs
 	epg/EpgList.cpp
 	epg/EpgManager.cpp
-	epg/EpgSchedule.cpp
-	epg/EpgShow.cpp
 	epg/EpgSlovenia.cpp
 	epg/EpgSloveniaLoader.cpp
 )
-SET(Tano_Plugins_Srcs
-	plugins/PluginsLoader.cpp
-	plugins/PluginsManager.cpp
-)
-SET(Tano_Recorder_Srcs
-	recorder/Recorder.cpp
-)
 SET(Tano_UI_Srcs
-	ui/About.cpp
-	ui/CurrentTime.cpp
-	ui/EditPlaylist.cpp
-	ui/EditSettings.cpp
-	ui/EditTimers.cpp
-	ui/InfoBar.cpp
-	ui/License.cpp
-	ui/PlaylistWidget.cpp
-	ui/PrintDialog.cpp
-	ui/QtKeySequenceEdit.cpp
-	ui/Schedule.cpp
-	ui/SelectPlaylist.cpp
-	ui/TrayIcon.cpp
-	ui/UpdateDialog.cpp
+	ui/core/CurrentTime.cpp
+	ui/core/InfoBar.cpp
+	ui/core/License.cpp
+	ui/core/QtKeySequenceEdit.cpp
+	ui/core/TrayIcon.cpp
+	ui/dialogs/AboutDialog.cpp
+	ui/dialogs/PluginsDialog.cpp
+	ui/dialogs/PrintDialog.cpp
+	ui/dialogs/UpdateDialog.cpp
+	ui/epg/EpgFull.cpp
+	ui/epg/EpgSchedule.cpp
+	ui/epg/EpgShow.cpp
+	ui/playlist/PlaylistEdit.cpp
+	ui/playlist/PlaylistWidget.cpp
+	ui/recorder/Recorder.cpp
+	ui/recorder/TimersEdit.cpp
+	ui/settings/SettingsEdit.cpp
+	ui/settings/SettingsPlaylist.cpp
+	ui/settings/SettingsShortcuts.cpp
 	ui/wizard/ConclusionPage.cpp
 	ui/wizard/FirstRunWizard.cpp
 	ui/wizard/IntroPage.cpp
@@ -160,13 +159,14 @@ SET(Tano_Srcs
 	${Tano_Container_Srcs}
 	${Tano_Core_Srcs}
 	${Tano_Epg_Srcs}
-	${Tano_Plugins_Srcs}
-	${Tano_Recorder_Srcs}
 	${Tano_UI_Srcs}
 	${Tano_XML_Srcs}
 )
 
-
+SET(Tano_Plugins_Headers
+	plugins/PluginsLoader.cpp
+	plugins/PluginsManager.cpp
+)
 ################
 # Qt4 settings #
 ################

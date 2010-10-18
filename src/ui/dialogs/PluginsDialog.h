@@ -1,5 +1,5 @@
 /****************************************************************************
-* Print.h: Main print class
+* PluginsDialog.h: A dialog that lists all available plugins
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,34 +13,44 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#ifndef TANO_PRINT_H_
-#define TANO_PRINT_H_
+#ifndef TANO_PLUGINSDIALOG_H_
+#define TANO_PLUGINSDIALOG_H_
 
-#include <QtGui/QTextEdit>
+#include <QtCore/QDir>
+#include <QtGui/QDialog>
+#include <QtGui/QIcon>
+#include <QtGui/QTreeWidgetItem>
 
-#include "ui/playlist/PlaylistWidget.h"
+namespace Ui
+{
+	class PluginsDialog;
+}
 
-class Print : public QTextEdit
+class PluginsDialog : public QDialog
 {
 Q_OBJECT
 public:
-	Print(QWidget *parent = 0);
-	~Print();
+	PluginsDialog(QWidget *parent = 0);
+	~PluginsDialog();
 
-	void channelList(const QString &name,
-					 PlaylistWidget *widget,
-					 const QList<int> &list);
-
-private slots:
-	void preview(QPrinter *printer);
+protected:
+	void changeEvent(QEvent *e);
 
 private:
-	void start();
+	Ui::PluginsDialog *ui;
 
-	QTextCharFormat _textFormat;
-	QTextCharFormat _boldFormat;
-	QTextCharFormat _titleFormat;
-	QTextTableFormat _tableFormat;
+	void populateTreeWidget(const QString &file,
+							const QString &name,
+							const QString &type);
+
+	QDir _pluginsDir;
+	QStringList _pluginFileNames;
+
+	QIcon _interfaceIcon;
+	QIcon _featureIcon;
+
+	QTreeWidgetItem *_epg;
+	QTreeWidgetItem *_recorder;
 };
 
-#endif // TANO_PRINT_H_
+#endif // TANO_PLUGINSDIALOG_H_

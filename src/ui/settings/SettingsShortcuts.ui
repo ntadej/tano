@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsShortcuts</class>
+ <widget class="QWidget" name="SettingsShortcuts">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <layout class="QGridLayout" name="layout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0" colspan="6">
+    <widget class="QTableWidget" name="shortcutsWidget">
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true">0</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>Action</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Key</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>Play</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>Stop</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string>Next channel</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="2" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="3" column="0">
+      <property name="text">
+       <string>Previous channel</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="3" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="4" column="0">
+      <property name="text">
+       <string>Fullscreen</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="4" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="5" column="0">
+      <property name="text">
+       <string>Toggle Info Widget</string>
+      </property>
+     </item>
+     <item row="5" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="6" column="0">
+      <property name="text">
+       <string>Toggle Controls Widget</string>
+      </property>
+     </item>
+     <item row="6" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="7" column="0">
+      <property name="text">
+       <string>Mute</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="7" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="8" column="0">
+      <property name="text">
+       <string>Volume up</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="8" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="9" column="0">
+      <property name="text">
+       <string>Volume down</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="9" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="10" column="0">
+      <property name="text">
+       <string>Recorder</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="10" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="11" column="0">
+      <property name="text">
+       <string>Open File</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="11" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="12" column="0">
+      <property name="text">
+       <string>Open URL</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="12" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="13" column="0">
+      <property name="text">
+       <string>Open Channel list</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="13" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="14" column="0">
+      <property name="text">
+       <string>Edit Channel list</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="14" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="15" column="0">
+      <property name="text">
+       <string>Settings</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="15" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="16" column="0">
+      <property name="text">
+       <string>Always on top</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="16" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="17" column="0">
+      <property name="text">
+       <string>Simple Mode</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="17" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="18" column="0">
+      <property name="text">
+       <string>Hide to tray</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="18" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="19" column="0">
+      <property name="text">
+       <string>Next aspect ratio mode</string>
+      </property>
+     </item>
+     <item row="19" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="20" column="0">
+      <property name="text">
+       <string>Next crop mode</string>
+      </property>
+     </item>
+     <item row="20" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+     <item row="21" column="0">
+      <property name="text">
+       <string>Next deinterlace mode</string>
+      </property>
+     </item>
+     <item row="21" column="1">
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="buttonClear">
+     <property name="text">
+      <string>Clear Shortcut</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../data/icons.qrc">
+       <normaloff>:/icons/32x32/clear.png</normaloff>:/icons/32x32/clear.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <spacer name="shortcutsSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="5">
+    <widget class="QPushButton" name="buttonDefaults">
+     <property name="text">
+      <string>Restore defaults</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../data/icons.qrc">
+       <normaloff>:/icons/32x32/reload.png</normaloff>:/icons/32x32/reload.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="buttonSet">
+     <property name="text">
+      <string>Set</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../data/icons.qrc">
+       <normaloff>:/icons/32x32/apply.png</normaloff>:/icons/32x32/apply.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QtKeySequenceEdit" name="keyEditor" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QtKeySequenceEdit</class>
+   <extends>QWidget</extends>
+   <header>ui/core/QtKeySequenceEdit.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../../data/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

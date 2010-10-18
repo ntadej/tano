@@ -1,5 +1,5 @@
 /****************************************************************************
-* main.cpp: Tano application main
+* CurrentTime.cpp: Displays time
 *****************************************************************************
 * Copyright (C) 2008-2010 Tadej Novak
 *
@@ -13,29 +13,35 @@
 * included in the packaging of this file.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
-#include <QtGui/QApplication>
+#include <QtCore/QTime>
+#include <QtGui/QHBoxLayout>
 
-#include "MainWindow.h"
-#include "core/Settings.h"
-#include "core/Version.h"
-#include "ui/wizard/FirstRunWizard.h"
+#include "ui/core/CurrentTime.h"
 
-int main(int argc, char *argv[])
+CurrentTime::CurrentTime(QWidget *parent)
+	: QWidget(parent)
 {
-    QApplication app(argc, argv);
-    QCoreApplication::setApplicationName("Tano");
+	_time = new QLabel(this);
 
-	Settings *settings = new Settings();
-	if(!settings->configured() || settings->configurationVersion() != Version::version()) {
-		FirstRunWizard *wizard = new FirstRunWizard();
-		wizard->exec();
-		delete wizard;
-	}
-	delete settings;
+	QHBoxLayout *layout = new QHBoxLayout;
+	layout->addWidget(_time);
+	layout->setSpacing(0);
+	layout->setMargin(0);
+	setLayout(layout);
 
-	MainWindow mainWindow;
-    mainWindow.show();
+	_timer = new QTimer(this);
+	connect(_timer, SIGNAL(timeout()), this, SLOT(updateTime()));
 
-    return app.exec();
+	_timer->start(1000);
+}
+
+CurrentTime::~CurrentTime()
+{
+	delete _time;
+	delete _timer;
+}
+
+void CurrentTime::updateTime()
+{
+	_time->setText("<b>"+QTime::currentTime().toString("hh:mm:ss")+"</b>");
 }

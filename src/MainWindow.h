@@ -32,12 +32,12 @@
 #include "core/Shortcuts.h"
 #include "core/Time.h"
 #include "epg/EpgManager.h"
-#include "epg/EpgShow.h"
-#include "ui/EditPlaylist.h"
-#include "ui/EditTimers.h"
-#include "ui/Schedule.h"
-#include "ui/TrayIcon.h"
-#include "ui/UpdateDialog.h"
+#include "ui/core/TrayIcon.h"
+#include "ui/dialogs/UpdateDialog.h"
+#include "ui/epg/EpgFull.h"
+#include "ui/epg/EpgShow.h"
+#include "ui/playlist/PlaylistEdit.h"
+#include "ui/recorder/TimersEdit.h"
 
 namespace Ui
 {
@@ -157,9 +157,9 @@ private:
 	//GUI
 	Ui::MainWindow *ui;
 	Qt::WindowFlags _flags;
-	Schedule *_schedule;
-	EditPlaylist *_playlistEditor;
-	EditTimers *_timersEditor;
+	EpgFull *_schedule;
+	PlaylistEdit *_playlistEditor;
+	TimersEdit *_timersEditor;
 
 	//Playback and channels
 	Channel *_channel;
