@@ -9,12 +9,17 @@
         <translation type="unfinished">O programu Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="129"/>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="124"/>
+        <source>&lt;h2&gt;An Open IP TV Player&lt;/h2&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="143"/>
         <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
         <translation type="unfinished">&lt;h4&gt;Licencováno pod licencí GNU GPL&lt;/h4&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="242"/>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="256"/>
         <source>Back</source>
         <translation type="unfinished">Zpět</translation>
     </message>

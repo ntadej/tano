@@ -26,7 +26,7 @@ IntroPage::IntroPage(QWidget *parent)
 {
 	ui->setupUi(this);
 
-	setPixmap(QWizard::WatermarkPixmap, QPixmap(":/images/wizard.bmp"));
+	setPixmap(QWizard::WatermarkPixmap, QPixmap(":/images/wizard.png"));
 
 	Settings *settings = new Settings();
 	if(settings->configurationVersion() != Version::version())
