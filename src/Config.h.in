@@ -22,6 +22,10 @@
 
 #define DESKTOP 1
 
+// Tano UI Type
+#define UI_BASIC @TANO_UI_BASIC@
+#define UI_QML @TANO_UI_QML@
+
 // Qt version
 #define QT_VERSION_MAJOR @QT_VERSION_MAJOR@
 #define QT_VERSION_MINOR @QT_VERSION_MINOR@

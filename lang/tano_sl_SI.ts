@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/ui/dialogs/AboutDialog.ui" line="20"/>
         <source>About Tano</source>
-        <translation type="unfinished">O programu Tano</translation>
+        <translation>O programu Tano</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/AboutDialog.ui" line="124"/>
@@ -16,12 +16,12 @@
     <message>
         <location filename="../src/ui/dialogs/AboutDialog.ui" line="143"/>
         <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
-        <translation type="unfinished">&lt;h4&gt;Licensirano pod licenco GNU GPL&lt;/h4&gt;</translation>
+        <translation>&lt;h4&gt;Licensirano pod licenco GNU GPL&lt;/h4&gt;</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/AboutDialog.ui" line="256"/>
         <source>Back</source>
-        <translation type="unfinished">Nazaj</translation>
+        <translation>Nazaj</translation>
     </message>
 </context>
 <context>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../src/ui/epg/EpgFull.ui" line="14"/>
         <source>Schedule</source>
-        <translation type="unfinished">Spored</translation>
+        <translation>Spored</translation>
     </message>
 </context>
 <context>
@@ -600,193 +600,193 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="14"/>
         <source>Edit Channel List</source>
-        <translation type="unfinished">Uredi Seznam programov</translation>
+        <translation>Uredi Seznam programov</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="28"/>
         <source>Playlist name:</source>
-        <translation type="unfinished">Ime seznama programov:</translation>
+        <translation>Ime seznama programov:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="38"/>
         <source>EPG Plugin:</source>
-        <translation type="unfinished">EPG Vtičnik:</translation>
+        <translation>EPG Vtičnik:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="48"/>
         <source>Channels number:</source>
-        <translation type="unfinished">Število programov:</translation>
+        <translation>Število programov:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="78"/>
         <source>Toolbar</source>
-        <translation type="unfinished">Orodna vrstica</translation>
+        <translation>Orodna vrstica</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="121"/>
         <source>Editor</source>
-        <translation type="unfinished">Urejevalnik</translation>
+        <translation>Urejevalnik</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="131"/>
         <source>Number:</source>
-        <translation type="unfinished">Število:</translation>
+        <translation>Število:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="138"/>
         <source>Name:</source>
-        <translation type="unfinished">Ime:</translation>
+        <translation>Ime:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="145"/>
         <source>Categories:</source>
-        <translation type="unfinished">Kategorije:</translation>
+        <translation>Kategorije:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="152"/>
         <source>Language:</source>
-        <translation type="unfinished">Jezik:</translation>
+        <translation>Jezik:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="159"/>
         <source>EPG:</source>
-        <translation type="unfinished">EPG:</translation>
+        <translation>EPG:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="201"/>
         <source>&lt;i&gt;You can separate categories with comma.&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;Kategorije lahko ločiš z vejico.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Kategorije lahko ločiš z vejico.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="208"/>
         <source>Url:</source>
-        <translation type="unfinished">Naslov:</translation>
+        <translation>Naslov:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="238"/>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;Zaporedno število moraš uveljaviti.&lt;br&gt;Vse druge vrednosti se avtomatsko spremenijo.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Zaporedno število moraš uveljaviti.&lt;br&gt;Vse druge vrednosti se avtomatsko spremenijo.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="245"/>
         <source>Logo</source>
-        <translation type="unfinished">Slika</translation>
+        <translation>Slika</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="252"/>
         <source>&lt;i&gt;Please provide full path or URL.&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;Prosim, določi polno pot ali URL.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Prosim, določi polno pot ali URL.&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="270"/>
         <source>Update Playlist</source>
-        <translation type="unfinished">Posodobi seznam programov</translation>
+        <translation>Posodobi seznam programov</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="280"/>
         <source>IP Range:</source>
-        <translation type="unfinished">IP območje:</translation>
+        <translation>IP območje:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="287"/>
         <source>Timeout:</source>
-        <translation type="unfinished">Čas iskanja:</translation>
+        <translation>Čas iskanja:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="294"/>
         <source>Scan and update</source>
-        <translation type="unfinished">Išči in posodobi</translation>
+        <translation>Išči in posodobi</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="328"/>
         <source> ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation>ms</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="347"/>
         <source>Port:</source>
-        <translation type="unfinished">Vrata:</translation>
+        <translation>Vrata:</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="386"/>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="389"/>
         <source>Add Channel</source>
-        <translation type="unfinished">Dodaj Program</translation>
+        <translation>Dodaj Program</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="398"/>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="401"/>
         <source>Delete Channel</source>
-        <translation type="unfinished">Izbriši Program</translation>
+        <translation>Izbriši Program</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="410"/>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="413"/>
         <source>Save and Close</source>
-        <translation type="unfinished">Shrani in zapri</translation>
+        <translation>Shrani in zapri</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="422"/>
         <source>Close</source>
-        <translation type="unfinished">Zapri</translation>
+        <translation>Zapri</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="431"/>
         <source>Import</source>
-        <translation type="unfinished">Uvozi</translation>
+        <translation>Uvozi</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="440"/>
         <source>Move Up</source>
-        <translation type="unfinished">Premakni gor</translation>
+        <translation>Premakni gor</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="449"/>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="452"/>
         <source>Move Down</source>
-        <translation type="unfinished">Premakni dol</translation>
+        <translation>Premakni dol</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="461"/>
         <source>Print</source>
-        <translation type="unfinished">Natisni</translation>
+        <translation>Natisni</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="155"/>
         <source>Save Channel list</source>
-        <translation type="unfinished">Shrani Seznam programov</translation>
+        <translation>Shrani Seznam programov</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="157"/>
         <source>Tano TV Channel list Files (*.m3u)</source>
-        <translation type="unfinished">Tano TV Seznam programov (*.m3u)</translation>
+        <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="170"/>
         <source>Open Channel list File</source>
-        <translation type="unfinished">Odpri Seznam programov</translation>
+        <translation>Odpri Seznam programov</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="172"/>
         <source>Tano TV Old Channel list Files(*.tano *.xml)</source>
-        <translation type="unfinished">Tano TV Star seznam programov(*.tano *.xml)</translation>
+        <translation>Tano TV Star seznam programov(*.tano *.xml)</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="188"/>
         <source>Playlist Editor</source>
-        <translation type="unfinished">Urejevalnik seznama programov</translation>
+        <translation>Urejevalnik seznama programov</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="189"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
-        <translation type="unfinished">Ali želiš zapreti urejevalnik?
+        <translation>Ali želiš zapreti urejevalnik?
 Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="261"/>
         <source>New channel from scan</source>
-        <translation type="unfinished">Nov program iz iskanja</translation>
+        <translation>Nov program iz iskanja</translation>
     </message>
 </context>
 <context>
@@ -869,22 +869,22 @@ Izgubil boš vse neshranjene spremembe.</translation>
     <message>
         <location filename="../src/ui/dialogs/PluginsDialog.ui" line="14"/>
         <source>About Plugins</source>
-        <translation type="unfinished">O vtičnikih</translation>
+        <translation>O vtičnikih</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/PluginsDialog.ui" line="24"/>
         <source>These plugins are currently available for Tano:</source>
-        <translation type="unfinished">Sledeči vtičniki so trenutno na voljo za Tano:</translation>
+        <translation>Sledeči vtičniki so trenutno na voljo za Tano:</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/PluginsDialog.cpp" line="32"/>
         <source>EPG Plugins</source>
-        <translation type="unfinished">Vtičniki za EPG</translation>
+        <translation>Vtičniki za EPG</translation>
     </message>
     <message>
         <location filename="../src/ui/dialogs/PluginsDialog.cpp" line="34"/>
         <source>Recorder Plugins</source>
-        <translation type="unfinished">Vtičniki za Snemalnik</translation>
+        <translation>Vtičniki za Snemalnik</translation>
     </message>
 </context>
 <context>
@@ -1155,253 +1155,253 @@ Izgubil boš vse neshranjene spremembe.</translation>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="14"/>
         <source>Settings</source>
-        <translation type="unfinished">Nastavitve</translation>
+        <translation>Nastavitve</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="73"/>
         <source>General</source>
-        <translation type="unfinished">Splošno</translation>
+        <translation>Splošno</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="85"/>
         <source>Channels</source>
-        <translation type="unfinished">Programi</translation>
+        <translation>Programi</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="97"/>
         <source>Interface</source>
-        <translation type="unfinished">Vmesnik</translation>
+        <translation>Vmesnik</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="109"/>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="518"/>
         <source>Playback</source>
-        <translation type="unfinished">Predvajanje</translation>
+        <translation>Predvajanje</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="121"/>
         <source>Recorder</source>
-        <translation type="unfinished">Snemalnik</translation>
+        <translation>Snemalnik</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="133"/>
         <source>Shortcuts</source>
-        <translation type="unfinished">Bližnjice</translation>
+        <translation>Bližnjice</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="155"/>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="168"/>
         <source>Run First run wizard after restart</source>
-        <translation type="unfinished">Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
+        <translation>Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="207"/>
         <source>Language</source>
-        <translation type="unfinished">Jezik</translation>
+        <translation>Jezik</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="213"/>
         <source>System default language</source>
-        <translation type="unfinished">Sistemsko privzet jezik</translation>
+        <translation>Sistemsko privzet jezik</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="223"/>
         <source>Custom language</source>
-        <translation type="unfinished">Poljuben jezik</translation>
+        <translation>Poljuben jezik</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="246"/>
         <source>Session store</source>
-        <translation type="unfinished">Shranjevanje sej</translation>
+        <translation>Shranjevanje sej</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="252"/>
         <source>Remember volume</source>
-        <translation type="unfinished">Zapomni si glasnost</translation>
+        <translation>Zapomni si glasnost</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="259"/>
         <source>Autoplay last channel</source>
-        <translation type="unfinished">Samodejno prični predvajanje zadnjega programa</translation>
+        <translation>Samodejno prični predvajanje zadnjega programa</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="306"/>
         <source>General Interface Settings</source>
-        <translation type="unfinished">Splošne nastavitve vmesnika</translation>
+        <translation>Splošne nastavitve vmesnika</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="312"/>
         <source>Toolbar style:</source>
-        <translation type="unfinished">Izgled orodnih vrstic:</translation>
+        <translation>Izgled orodnih vrstic:</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="323"/>
         <source>Icon only</source>
-        <translation type="unfinished">Samo ikona</translation>
+        <translation>Samo ikona</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="328"/>
         <source>Text only</source>
-        <translation type="unfinished">Samo besedilo</translation>
+        <translation>Samo besedilo</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="333"/>
         <source>Text beside icon</source>
-        <translation type="unfinished">Besedilo ob ikoni</translation>
+        <translation>Besedilo ob ikoni</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="338"/>
         <source>Text under icon</source>
-        <translation type="unfinished">Besedilo pod ikono</translation>
+        <translation>Besedilo pod ikono</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="343"/>
         <source>System default</source>
-        <translation type="unfinished">Sistemsko privzeto</translation>
+        <translation>Sistemsko privzeto</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="351"/>
         <source>Enable OSD in Fullscreen mode</source>
-        <translation type="unfinished">Vključi OSD v celozaslonskem načinu</translation>
+        <translation>Vključi OSD v celozaslonskem načinu</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="361"/>
         <source>Mouse wheel function:</source>
-        <translation type="unfinished">Funkcija miškinega koleščka:</translation>
+        <translation>Funkcija miškinega koleščka:</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="368"/>
         <source>Change channel</source>
-        <translation type="unfinished">Spremeni program</translation>
+        <translation>Spremeni program</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="378"/>
         <source>Change volume</source>
-        <translation type="unfinished">Spremeni glasnost</translation>
+        <translation>Spremeni glasnost</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="385"/>
         <source>Minimise to tray</source>
-        <translation type="unfinished">Skrij v sistemsko vrstico</translation>
+        <translation>Skrij v sistemsko vrstico</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="398"/>
         <source>Default options for startup</source>
-        <translation type="unfinished">Privzete nastavitve ob zagonu</translation>
+        <translation>Privzete nastavitve ob zagonu</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="404"/>
         <source>Show splash screen</source>
-        <translation type="unfinished">Prikaži pozdravni zaslon</translation>
+        <translation>Prikaži pozdravni zaslon</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="411"/>
         <source>Simple mode</source>
-        <translation type="unfinished">Enostaven način</translation>
+        <translation>Enostaven način</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="418"/>
         <source>Always on top</source>
-        <translation type="unfinished">Vedno na vrhu</translation>
+        <translation>Vedno na vrhu</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="425"/>
         <source>Controls enabled</source>
-        <translation type="unfinished">Vključen upravljalni pult</translation>
+        <translation>Vključen upravljalni pult</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="435"/>
         <source>Info panel enabled</source>
-        <translation type="unfinished">Vključen info pult</translation>
+        <translation>Vključen info pult</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="465"/>
         <source>VLC-Qt Backend</source>
-        <translation type="unfinished">VLC-Qt Hrbtenica</translation>
+        <translation>VLC-Qt Hrbtenica</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="471"/>
         <source>Curently using VLC-Qt Backend</source>
-        <translation type="unfinished">Trenutno uporabljaš VLC-Qt hrbtenico</translation>
+        <translation>Trenutno uporabljaš VLC-Qt hrbtenico</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="478"/>
         <source>Version:</source>
-        <translation type="unfinished">Različica:</translation>
+        <translation>Različica:</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="485"/>
         <source>Use global VLC settings (requires restart)</source>
-        <translation type="unfinished">Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
+        <translation>Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="508"/>
         <source>Using Videolan VLC version:</source>
-        <translation type="unfinished">Videolan VLC različice:</translation>
+        <translation>Videolan VLC različice:</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="524"/>
         <source>Remember Video settings between media</source>
-        <translation type="unfinished">Zapomni si nastavitve slike med preklapljanjem</translation>
+        <translation>Zapomni si nastavitve slike med preklapljanjem</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="531"/>
         <source>Default subtitle language:</source>
-        <translation type="unfinished">Privzet jezik podnapisov:</translation>
+        <translation>Privzet jezik podnapisov:</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="542"/>
         <source>Disabled</source>
-        <translation type="unfinished">Onemogočeno</translation>
+        <translation>Onemogočeno</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="567"/>
         <source>Other</source>
-        <translation type="unfinished">Drugo</translation>
+        <translation>Drugo</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="595"/>
         <source>Enable Recorder</source>
-        <translation type="unfinished">Vključi Snemalnik</translation>
+        <translation>Vključi Snemalnik</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="605"/>
         <source>Default recording directory</source>
-        <translation type="unfinished">Privzet imenik snemanja</translation>
+        <translation>Privzet imenik snemanja</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="621"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="628"/>
         <source>Reset</source>
-        <translation type="unfinished">Obnovi</translation>
+        <translation>Obnovi</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="645"/>
         <source>Recorder backend</source>
-        <translation type="unfinished">Hrbtenica snemalnika</translation>
+        <translation>Hrbtenica snemalnika</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="651"/>
         <source>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;Prosim, izberi vtičnik snemalnika s spodnjega seznama:&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Prosim, izberi vtičnik snemalnika s spodnjega seznama:&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.cpp" line="43"/>
         <source>You are using Tano version:</source>
-        <translation type="unfinished">Uporabljaš Tano različice:</translation>
+        <translation>Uporabljaš Tano različice:</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.cpp" line="212"/>
         <source>Open Directory</source>
-        <translation type="unfinished">Odpri imenik</translation>
+        <translation>Odpri imenik</translation>
     </message>
 </context>
 <context>
@@ -1447,52 +1447,52 @@ Izgubil boš vse neshranjene spremembe.</translation>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.ui" line="24"/>
         <source>Default Channel list</source>
-        <translation type="unfinished">Privzet Seznam programov</translation>
+        <translation>Privzet Seznam programov</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.ui" line="30"/>
         <source>Preset</source>
-        <translation type="unfinished">Prednastavljeno</translation>
+        <translation>Prednastavljeno</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.ui" line="58"/>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.ui" line="68"/>
         <source>Reset</source>
-        <translation type="unfinished">Obnovi</translation>
+        <translation>Obnovi</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.ui" line="81"/>
         <source>Custom</source>
-        <translation type="unfinished">Drugo</translation>
+        <translation>Drugo</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.ui" line="91"/>
         <source>Presets</source>
-        <translation type="unfinished">Prednastavljene sheme</translation>
+        <translation>Prednastavljene sheme</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.ui" line="124"/>
         <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Slovenija&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Slovenija&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.ui" line="131"/>
         <source>&lt;b&gt;Global&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Globalno&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Globalno&lt;/b&gt;</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="96"/>
         <source>Open Channel list File</source>
-        <translation type="unfinished">Odpri Seznam programov</translation>
+        <translation>Odpri Seznam programov</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="98"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
-        <translation type="unfinished">Tano TV Seznam programov (*.m3u)</translation>
+        <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
 </context>
 <context>
@@ -1500,137 +1500,137 @@ Izgubil boš vse neshranjene spremembe.</translation>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="140"/>
         <source>Action</source>
-        <translation type="unfinished">Ukaz</translation>
+        <translation>Ukaz</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="145"/>
         <source>Key</source>
-        <translation type="unfinished">Tipke</translation>
+        <translation>Tipke</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="150"/>
         <source>Play</source>
-        <translation type="unfinished">Predvajaj</translation>
+        <translation>Predvajaj</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="163"/>
         <source>Stop</source>
-        <translation type="unfinished">Ustavi</translation>
+        <translation>Ustavi</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="176"/>
         <source>Next channel</source>
-        <translation type="unfinished">Naslednii kanal</translation>
+        <translation>Naslednii kanal</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="189"/>
         <source>Previous channel</source>
-        <translation type="unfinished">Prejšnji kanal</translation>
+        <translation>Prejšnji kanal</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="202"/>
         <source>Fullscreen</source>
-        <translation type="unfinished">Celoten zaslon</translation>
+        <translation>Celoten zaslon</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="215"/>
         <source>Toggle Info Widget</source>
-        <translation type="unfinished">Preklopi Info pult</translation>
+        <translation>Preklopi Info pult</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="225"/>
         <source>Toggle Controls Widget</source>
-        <translation type="unfinished">Preklopi upravljalni pult</translation>
+        <translation>Preklopi upravljalni pult</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="235"/>
         <source>Mute</source>
-        <translation type="unfinished">Tiho</translation>
+        <translation>Tiho</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="248"/>
         <source>Volume up</source>
-        <translation type="unfinished">Povečaj glasnost</translation>
+        <translation>Povečaj glasnost</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="261"/>
         <source>Volume down</source>
-        <translation type="unfinished">Zmanjšaj glasnost</translation>
+        <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="274"/>
         <source>Recorder</source>
-        <translation type="unfinished">Snemalnik</translation>
+        <translation>Snemalnik</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="287"/>
         <source>Open File</source>
-        <translation type="unfinished">Odpri Datoteko</translation>
+        <translation>Odpri Datoteko</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="300"/>
         <source>Open URL</source>
-        <translation type="unfinished">Odpri URL</translation>
+        <translation>Odpri URL</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="313"/>
         <source>Open Channel list</source>
-        <translation type="unfinished">Odpri Seznam programov</translation>
+        <translation>Odpri Seznam programov</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="326"/>
         <source>Edit Channel list</source>
-        <translation type="unfinished">Uredi Seznam programov</translation>
+        <translation>Uredi Seznam programov</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="339"/>
         <source>Settings</source>
-        <translation type="unfinished">Nastavitve</translation>
+        <translation>Nastavitve</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="352"/>
         <source>Always on top</source>
-        <translation type="unfinished">Vedno na vrhu</translation>
+        <translation>Vedno na vrhu</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="365"/>
         <source>Simple Mode</source>
-        <translation type="unfinished">Enostaven način</translation>
+        <translation>Enostaven način</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="378"/>
         <source>Hide to tray</source>
-        <translation type="unfinished">Skrij v orodno vrstico</translation>
+        <translation>Skrij v orodno vrstico</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="391"/>
         <source>Next aspect ratio mode</source>
-        <translation type="unfinished">Naslednje razmerje slike</translation>
+        <translation>Naslednje razmerje slike</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="401"/>
         <source>Next crop mode</source>
-        <translation type="unfinished">Naslednja obrezava slike</translation>
+        <translation>Naslednja obrezava slike</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="411"/>
         <source>Next deinterlace mode</source>
-        <translation type="unfinished">Naslenje razpletanje</translation>
+        <translation>Naslenje razpletanje</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="424"/>
         <source>Clear Shortcut</source>
-        <translation type="unfinished">Počisti bližnjico</translation>
+        <translation>Počisti bližnjico</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="448"/>
         <source>Restore defaults</source>
-        <translation type="unfinished">Obnovi privzeto</translation>
+        <translation>Obnovi privzeto</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="459"/>
         <source>Set</source>
-        <translation type="unfinished">Nastavi</translation>
+        <translation>Nastavi</translation>
     </message>
 </context>
 <context>
@@ -1638,117 +1638,117 @@ Izgubil boš vse neshranjene spremembe.</translation>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="14"/>
         <source>Timers</source>
-        <translation type="unfinished">Timerji</translation>
+        <translation>Timerji</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="36"/>
         <source>Timer</source>
-        <translation type="unfinished">Timer</translation>
+        <translation>Timer</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="41"/>
         <source>Status</source>
-        <translation type="unfinished">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="53"/>
         <source>Create</source>
-        <translation type="unfinished">Ustvari</translation>
+        <translation>Ustvari</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="66"/>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="131"/>
         <source>Name:</source>
-        <translation type="unfinished">Ime:</translation>
+        <translation>Ime:</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="78"/>
         <source>Select a channel from the list below:</source>
-        <translation type="unfinished">Izberi program s spodnjega seznama:</translation>
+        <translation>Izberi program s spodnjega seznama:</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="121"/>
         <source>Editor</source>
-        <translation type="unfinished">Urejevalnik</translation>
+        <translation>Urejevalnik</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="138"/>
         <source>Channel:</source>
-        <translation type="unfinished">Program:</translation>
+        <translation>Program:</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="145"/>
         <source>Playlist:</source>
-        <translation type="unfinished">Seznam:</translation>
+        <translation>Seznam:</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="152"/>
         <source>Date:</source>
-        <translation type="unfinished">Datum:</translation>
+        <translation>Datum:</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="159"/>
         <source>Start time:</source>
-        <translation type="unfinished">Začetek:</translation>
+        <translation>Začetek:</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="166"/>
         <source>End time:</source>
-        <translation type="unfinished">Konec:</translation>
+        <translation>Konec:</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="183"/>
         <source>dd.MM.yyyy</source>
-        <translation type="unfinished">dd.MM.yyyy</translation>
+        <translation>dd.MM.yyyy</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="200"/>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="207"/>
         <source>hh:mm</source>
-        <translation type="unfinished">hh:mm</translation>
+        <translation>hh:mm</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="260"/>
         <source>Disabled:</source>
-        <translation type="unfinished">Izključen:</translation>
+        <translation>Izključen:</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="277"/>
         <source>Url:</source>
-        <translation type="unfinished">Naslov:</translation>
+        <translation>Naslov:</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="290"/>
         <source>New Task</source>
-        <translation type="unfinished">Novo opravilo</translation>
+        <translation>Novo opravilo</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="299"/>
         <source>Delete Task</source>
-        <translation type="unfinished">Izbriši opravilo</translation>
+        <translation>Izbriši opravilo</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="308"/>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="311"/>
         <source>Save and Close</source>
-        <translation type="unfinished">Shrani in zapri</translation>
+        <translation>Shrani in zapri</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="320"/>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="323"/>
         <source>Close</source>
-        <translation type="unfinished">Zapri</translation>
+        <translation>Zapri</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="114"/>
         <source>Timers Editor</source>
-        <translation type="unfinished">Urejevalnik timerjev</translation>
+        <translation>Urejevalnik timerjev</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="115"/>
         <source>Do you want close the editor?
 You changes will not be applied.</source>
-        <translation type="unfinished">Ali želiš zapreti urejevalnik?
+        <translation>Ali želiš zapreti urejevalnik?
 Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
@@ -1758,47 +1758,47 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="264"/>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="300"/>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="158"/>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation type="unfinished">Prosim vnesi ime in izberi program s seznama.</translation>
+        <translation>Prosim vnesi ime in izberi program s seznama.</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="164"/>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="214"/>
         <source>Timer with this name already exists. Please select another name.</source>
-        <translation type="unfinished">Timer z enakim imenom že obstaja. Prosim izberi drugo ime.</translation>
+        <translation>Timer z enakim imenom že obstaja. Prosim izberi drugo ime.</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="265"/>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Ne morem prebrati %1:
+        <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="301"/>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Ne morem pisati datoteke %1:
+        <translation>Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="324"/>
         <source>Recording</source>
-        <translation type="unfinished">Snemanje</translation>
+        <translation>Snemanje</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="340"/>
         <source>Disabled or expired</source>
-        <translation type="unfinished">Izključen ali pretečen</translation>
+        <translation>Izključen ali pretečen</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="344"/>
         <source>Active</source>
-        <translation type="unfinished">Aktiven</translation>
+        <translation>Aktiven</translation>
     </message>
 </context>
 <context>

@@ -16,7 +16,14 @@
 #include <QtCore/QCoreApplication>
 #include <QtGui/QApplication>
 
-#include "MainWindow.h"
+#include "Config.h"
+
+#if UI_BASIC
+	#include "MainWindow.h"
+#elif UI_QML
+	#include "qml/MainQml.h"
+#endif
+
 #include "core/Settings.h"
 #include "core/Version.h"
 #include "ui/wizard/FirstRunWizard.h"
@@ -34,8 +41,13 @@ int main(int argc, char *argv[])
 	}
 	delete settings;
 
+#if UI_BASIC
 	MainWindow mainWindow;
     mainWindow.show();
+#elif UI_QML
+	MainQml mainWindow;
+	mainWindow.show();
+#endif
 
     return app.exec();
 }

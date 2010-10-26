@@ -57,6 +57,7 @@ IF(QT_LUPDATE_EXECUTABLE)
 	FILE(GLOB_RECURSE translate_SRCS ${CMAKE_SOURCE_DIR}/src/*.cpp)
 	FILE(GLOB_RECURSE translate_HDRS ${CMAKE_SOURCE_DIR}/src/*.h)
 	FILE(GLOB_RECURSE translate_UIS ${CMAKE_SOURCE_DIR}/src/*.ui)
+	FILE(GLOB_RECURSE translate_QMLS ${CMAKE_SOURCE_DIR}/src/*.qml)
 
 	SET(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS} ${translate_mobile_SRCS} ${translate_mobile_HDRS} ${translate_mobile_UIS})
 

@@ -21,6 +21,7 @@ CONFIGURE_FILE(
   "${CMAKE_BINARY_DIR}/src/Config.h"
 )
 
+
 ###################
 # List of sources #
 ###################
@@ -88,6 +89,8 @@ SET(Tano_Resrcs
 	../data/icons.qrc
 	../data/images.qrc
 	../data/logo.qrc
+
+	qml/ui/qml.qrc
 )
 
 # Define the C++ source files used by Tano
@@ -116,6 +119,9 @@ SET(Tano_Epg_Srcs
 	epg/EpgManager.cpp
 	epg/EpgSlovenia.cpp
 	epg/EpgSloveniaLoader.cpp
+)
+SET(Tano_QML_Srcs
+	qml/MainQml.cpp
 )
 SET(Tano_UI_Srcs
 	ui/core/CurrentTime.cpp
@@ -159,6 +165,7 @@ SET(Tano_Srcs
 	${Tano_Container_Srcs}
 	${Tano_Core_Srcs}
 	${Tano_Epg_Srcs}
+	${Tano_QML_Srcs}
 	${Tano_UI_Srcs}
 	${Tano_XML_Srcs}
 )
@@ -174,6 +181,7 @@ SET(Tano_Plugins_Headers
 # loaded when linking Tano
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
+SET(QT_USE_QTDECLARATIVE True)
 
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
