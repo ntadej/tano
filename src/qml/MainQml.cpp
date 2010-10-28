@@ -2,18 +2,19 @@
 #include <QtDeclarative/qdeclarative.h>
 
 #include "MainQml.h"
+#include "Video.h"
 
 MainQml::MainQml()
 {
 	//qmlRegisterInterface<QGraphicsLayoutItem>("QGraphicsLayoutItem");
-	//qmlRegisterType<GraphicsGridLayoutObject>("GridLayouts", 4, 7, "GraphicsGridLayout");
+	qmlRegisterType<VideoDisplay>("VideoDisplay", 0, 1, "VideoDisplay");
 
-	view.setSource(QUrl("qrc:/qml/Main.qml"));
+	_view.setSource(QUrl("qrc:/qml/Main.qml"));
 }
 
 MainQml::~MainQml() { }
 
 void MainQml::show()
 {
-	view.show();
+	_view.show();
 }

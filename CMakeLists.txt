@@ -47,9 +47,9 @@ SET(QT_MIN_VERSION "4.5.0")
 FIND_PACKAGE(Qt4 REQUIRED)
 FIND_PACKAGE(LIBVLCQT REQUIRED)
 # MinGW needs some more packages
-IF(MINGW)
+#IF(MINGW)
 	FIND_PACKAGE(LIBVLC REQUIRED)
-ENDIF(MINGW)
+#ENDIF(MINGW)
 
 # Set Qt4 bin dir to find QtCore4.dll and other libs to install
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")

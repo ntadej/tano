@@ -1,5 +1,5 @@
-#ifndef TANO_MAINQML_H_
-#define TANO_MAINQML_H_
+#ifndef TANOQML_MAINQML_H_
+#define TANOQML_MAINQML_H_
 
 #include <QtDeclarative/QDeclarativeView>
 
@@ -12,7 +12,7 @@ public:
 	void show();
 
 private:
-	QDeclarativeView view;
+	QDeclarativeView _view;
 };
 
-#endif // TANO_MAINQML_H_
+#endif // TANOQML_MAINQML_H_

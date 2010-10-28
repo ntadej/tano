@@ -59,6 +59,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	epg/EpgList.h
 	epg/EpgManager.h
 	epg/EpgSloveniaLoader.h
+	qml/Video.h
 	ui/core/CurrentTime.h
 	ui/core/InfoBar.h
 	ui/core/License.h
@@ -122,6 +123,7 @@ SET(Tano_Epg_Srcs
 )
 SET(Tano_QML_Srcs
 	qml/MainQml.cpp
+	qml/Video.cpp
 )
 SET(Tano_UI_Srcs
 	ui/core/CurrentTime.cpp
@@ -252,7 +254,7 @@ ENDIF(MINGW)
 ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs_Srcs})
 
 # Here the needed Qt Libraries are added to the link command.
-TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
+TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY} ${LIBVLC_LIBRARY})
 
 
 ################
