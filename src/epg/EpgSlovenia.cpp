@@ -1,16 +1,19 @@
 /****************************************************************************
-* EpgSlovenia.cpp: EPG info for Slovenia
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QDebug>
@@ -73,6 +76,20 @@ QString EpgSlovenia::load(const QString &input,
 	return epg;
 }
 
+QString EpgSlovenia::processDate(const QString &input) const
+{
+	QString date = input;
+	date = date.replace(", ponedeljek ", "");
+	date = date.replace(", torek ", "");
+	date = date.replace(", sreda ", "");
+	date = date.replace(", četrtek ", "");
+	date = date.replace(", petek ", "");
+	date = date.replace(", sobota ", "");
+	date = date.replace(", nedelja ", "");
+
+	return date;
+}
+
 QStringList EpgSlovenia::processSchedule(const QString &input) const
 {
 	if(!input.contains("schedule_title"))
@@ -108,38 +125,61 @@ QStringList EpgSlovenia::processSchedule(const QString &input) const
 	return mainList;
 }
 
-QStringList EpgSlovenia::processShow(const QString &input) const
+EpgShowInfo EpgSlovenia::processShow(const QString &input) const
 {
 	if(!input.contains("schedule_title"))
-		return QStringList() << "error";
+		return EpgShowInfo(false);
 
-	QStringList show;
+	EpgShowInfo info;
 
 	QRegExp exp[9];
-	exp[0].setPattern("<h4>(.*)</h4>"); //Title
-	exp[1].setPattern("class=\"title\">([^<]*)"); //Channel
-	exp[2].setPattern("class=\"time\">([^<]*)"); //Time
-	exp[3].setPattern("class=\"duration\">([^<]*)</span>"); //Duration
+	// Title
+	exp[0].setPattern("<h4>(.*)</h4>");
+	exp[0].indexIn(input);
+	info.setTitle(exp[0].cap(1).replace(QRegExp("(<.*>)"), ""));
+
+	// Channel
+	exp[1].setPattern("class=\"title\">([^<]*)");
+	exp[1].indexIn(input);
+	info.setChannel(exp[1].cap(1));
+
+	// Start and end time
+	exp[2].setPattern("class=\"time\">([^<]*)");
+	exp[3].setPattern("class=\"duration\">([^<]*)</span>");
+	exp[2].indexIn(input);
+	QString date = processDate(exp[2].cap(1));
+	exp[3].indexIn(input);
+	QStringList time = exp[3].cap(1).split(" - ");
+	info.setStartTime(QDateTime::fromString(date + " " + time[0], "dd.MM.yyyy hh:mm"));
+	info.setEndTime(QDateTime::fromString(date + " " +time[1], "dd.MM.yyyy hh:mm"));
+
+	// Info
 	exp[4].setPattern("class=\"sub\">([^<]*)"); //Info
-	exp[5].setPattern("class=\"desc\">(.*)</p><p class=\"prevnext\""); //Description
-	exp[6].setPattern("<h4><img src='([^']*)"); //Image
-	exp[7].setPattern("href=\"([^\"]*)\" title=\"Prej"); //Previous
-	exp[8].setPattern("href=\"([^\"]*)\" title=\"Naslednja"); //Next
+	exp[4].indexIn(input);
+	info.setInfo(exp[4].cap(1));
 
-	for(int i=0; i<9; i++) {
-		exp[i].indexIn(input);
-		if(i==0)
-			show << exp[i].cap(1).replace(QRegExp("(<.*>)"), "");
-		else if(i==5)
-			if(!exp[i].cap(1).contains("<br /><br />"))
-				show << exp[i].cap(1).replace("</p>","");
-			else
-				show << exp[i].cap(1).remove(exp[i].cap(1).size()-12, 12).prepend("<p>");
-		else if(i==7 || i==8)
-			show << exp[i].cap(1).prepend("http://www.siol.net/");
-		else
-			show << exp[i].cap(1);
-	}
+	// Description
+	exp[5].setPattern("class=\"desc\">(.*)</p><p class=\"prevnext\"");
+	exp[5].indexIn(input);
+	if(!exp[5].cap(1).contains("<br /><br />"))
+		info.setDescription(exp[5].cap(1).replace("</p>",""));
+	else
+		info.setDescription(exp[5].cap(1).remove(exp[5].cap(1).size()-12, 12).prepend("<p>"));
 
-	return show;
+	// Image
+	exp[6].setPattern("<h4><img src='([^']*)");
+	exp[6].indexIn(input);
+	info.setImage(exp[6].cap(1));
+
+	// Previous
+	exp[7].setPattern("href=\"([^\"]*)\" title=\"Prej");
+	exp[7].indexIn(input);
+	info.setPrevious(exp[7].cap(1).prepend("http://www.siol.net/").replace("&amp;","&"));
+
+	// Next
+	exp[8].setPattern("href=\"([^\"]*)\" title=\"Naslednja");
+	exp[8].indexIn(input);
+	info.setNext(exp[8].cap(1).prepend("http://www.siol.net/").replace("&amp;","&"));
+
+	return info;
 }

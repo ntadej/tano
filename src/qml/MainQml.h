@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,17 +20,16 @@
 #define TANOQML_MAINQML_H_
 
 #include <QtDeclarative/QDeclarativeView>
+#include <QtGui/QWidget>
 
-class MainQml
+class MainQml : public QWidget
 {
 public:
-	MainQml();
+	MainQml(QWidget *parent = 0);
 	~MainQml();
 
-	void show();
-
 private:
-	QDeclarativeView _view;
+	QDeclarativeView *_view;
 };
 
 #endif // TANOQML_MAINQML_H_

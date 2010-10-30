@@ -1,16 +1,19 @@
 /****************************************************************************
-* EpgManager.h: EPG manager
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_EPGMANAGER_H_
@@ -22,6 +25,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTimer>
 
+#include "core/Common.h"
 #include "epg/EpgSloveniaLoader.h"
 
 class EpgManager : public QObject
@@ -32,7 +36,7 @@ public:
 	~EpgManager();
 
 	void setEpg(const QStringList &epg,
-				const QString &epgType);
+				const Tano::EpgType &epgType);
 	void stop();
 
 public slots:
@@ -63,7 +67,7 @@ private:
 	QString _currentLoadEpg;
 	QString _currentRequest;
 	QStringList _epgList;
-	QString _epgType;
+	Tano::EpgType _epgType;
 	QString _path;
 
 	QMap<QString, QStringList> _day[4];

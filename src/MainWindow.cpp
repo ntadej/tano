@@ -247,9 +247,9 @@ void MainWindow::createConnections()
 	connect(_epg, SIGNAL(epg(QStringList, int, QString)), this, SLOT(showEpg(QStringList, int, QString)));
 	connect(_epg, SIGNAL(epg(QStringList, int, QString)), _schedule, SLOT(loadEpg(QStringList, int, QString)));
 	connect(_schedule, SIGNAL(requestEpg(QString, QString)), _epg, SLOT(request(QString, QString)));
-	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
-	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(open(QString)));
-	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(open(QString)));
+	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(get(QString)));
+	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(get(QString)));
+	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(get(QString)));
 
 	connect(_update, SIGNAL(newUpdate()), ui->buttonUpdate, SLOT(show()));
 	connect(ui->buttonUpdate, SIGNAL(clicked()), _update, SLOT(check()));

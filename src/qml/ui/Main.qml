@@ -24,7 +24,6 @@ import "Playback"
 Rectangle {
 	id: window
 
-	width: 800; height: 600
 	color: "#3E606F"
 
 	FocusScope {
@@ -32,11 +31,6 @@ Rectangle {
 
 		width: parent.width; height: parent.height
 		focus: true
-
-		Video {
-			id: video
-			width: parent.width; height: parent.height
-		}
 
 		Rectangle {
 			id: shade
@@ -62,6 +56,11 @@ Rectangle {
 			when: osd.activeFocus
 			PropertyChanges { target: osd; y: parent.height-osd.height; }
 			PropertyChanges { target: shade; opacity: 0.25 }
+			PropertyChanges {
+				target: parent; height: 300
+
+			}
+
 		}
 	]
 

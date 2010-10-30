@@ -1,16 +1,19 @@
 #############################################################################
-# Tano - An open IP TV player
-#############################################################################
-# Copyright (C) 2008-2010 Tadej Novak
+# Tano - An Open IP TV Player
+# Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
-# This file may be used under the terms of the
-# GNU General Public License version 3.0 as published by the
-# Free Software Foundation and appearing in the file LICENSE.GPL
-# included in the packaging of this file.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 # The name of our project is "Tano". CMakeLists files in this project can
 # refer to the root source directory of the project as ${TANO_SOURCE_DIR}
@@ -47,9 +50,9 @@ SET(QT_MIN_VERSION "4.5.0")
 FIND_PACKAGE(Qt4 REQUIRED)
 FIND_PACKAGE(LIBVLCQT REQUIRED)
 # MinGW needs some more packages
-#IF(MINGW)
+IF(MINGW)
 	FIND_PACKAGE(LIBVLC REQUIRED)
-#ENDIF(MINGW)
+ENDIF(MINGW)
 
 # Set Qt4 bin dir to find QtCore4.dll and other libs to install
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
@@ -112,15 +115,7 @@ ENDIF(QT_VERSION_MINOR MATCHES 5)
 OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile")
 MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
 
-OPTION(QML_USER_INTERFACE "QML User Interface")
-IF(QML_USER_INTERFACE)
-	SET(TANO_UI_BASIC 0)
-	SET(TANO_UI_QML 1)
-ELSE(QML_USER_INTERFACE)
-	SET(TANO_UI_BASIC 1)
-	SET(TANO_UI_QML 0)
-ENDIF(QML_USER_INTERFACE)
-
+SET(TANO_UI_BASIC 1)
 
 ###################
 # Compile and set #

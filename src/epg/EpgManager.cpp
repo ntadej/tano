@@ -41,10 +41,9 @@ EpgManager::~EpgManager()
 }
 
 void EpgManager::setEpg(const QStringList &epg,
-						const QString &epgType)
+						const Tano::EpgType &epgType)
 {
 	_epgList = epg;
-
 	_epgType = epgType;
 
 	load();

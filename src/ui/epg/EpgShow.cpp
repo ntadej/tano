@@ -1,35 +1,35 @@
 /****************************************************************************
-* EpgShow.cpp: EPG show information
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include "EpgShow.h"
 #include "ui_EpgShow.h"
 
-#include <QtCore/QDebug>
-
 EpgShow::EpgShow(QWidget *parent)
 	: QStackedWidget(parent),
 	ui(new Ui::EpgShow),
 	_image(new GetFile()),
-	_loader(new EpgSloveniaLoader()),
+	_slovenia(new EpgSloveniaLoader()),
 	_epgNext(""),
 	_epgPrevious("")
 {
 	ui->setupUi(this);
 
 	connect(_image, SIGNAL(image(QString)), this, SLOT(image(QString)));
-	connect(_loader, SIGNAL(show(QStringList)), this, SLOT(display(QStringList)));
 
 	connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
 	connect(ui->buttonNext, SIGNAL(clicked()), this, SLOT(next()));
@@ -39,7 +39,7 @@ EpgShow::~EpgShow()
 {
 	delete ui;
 	delete _image;
-	delete _loader;
+	delete _slovenia;
 }
 
 void EpgShow::changeEvent(QEvent *e)
@@ -54,7 +54,7 @@ void EpgShow::changeEvent(QEvent *e)
 	}
 }
 
-void EpgShow::open(const QString &url)
+void EpgShow::get(const QString &id)
 {
 	setCurrentIndex(0);
 
@@ -67,26 +67,33 @@ void EpgShow::open(const QString &url)
 
 	show();
 
-	_loader->getShow(processUrl(url));
+	if(_type == Tano::Slovenia)
+		_slovenia->getShowInfo(processUrl(id));
 }
 
-void EpgShow::setEpgType(const QString &type)
+void EpgShow::setEpgType(const Tano::EpgType type)
 {
+	disconnect(_slovenia, SIGNAL(showInfo(EpgShowInfo)), this, SLOT(display(EpgShowInfo)));
 
+	_type = type;
+
+	if(_type == Tano::Slovenia) {
+		connect(_slovenia, SIGNAL(showInfo(EpgShowInfo)), this, SLOT(display(EpgShowInfo)));
+	}
 }
 
-void EpgShow::display(const QStringList &list)
+void EpgShow::display(const EpgShowInfo &info)
 {
-	setWindowTitle(list[0]);
-	ui->labelTitle->setText("<h1>" + list[0] + "</h1>");
-	ui->labelTime->setText("<h2>" + list[3] + " (" + list[1] + list[2] + ")</h2>");
-	ui->labelInfo->setText("<h3>" + list[4] + "</h3>");
-	ui->labelDescription->setText(list[5]);
+	setWindowTitle(info.title());
+	ui->labelTitle->setText("<h1>" + info.title() + "</h1>");
+	ui->labelTime->setText("<h2>" + info.startTime().toString("dddd, d.M.yyyy") + " (" + info.startTime().toString("hh:mm") + " - " + info.endTime().toString("hh:mm") + ")</h2>");
+	ui->labelInfo->setText("<h3>" + info.info() + "</h3>");
+	ui->labelDescription->setText(info.description());
 
-	_image->getFile(list[6]);
+	_image->getFile(info.image());
 
-	_epgPrevious = list[7];
-	_epgNext = list[8];
+	_epgPrevious = info.previous();
+	_epgNext = info.next();
 
 	setCurrentIndex(1);
 }
@@ -101,7 +108,7 @@ void EpgShow::next()
 	if(_epgNext.isEmpty())
 		return;
 
-	open(_epgNext);
+	get(_epgNext);
 }
 
 void EpgShow::previous()
@@ -109,7 +116,7 @@ void EpgShow::previous()
 	if(_epgPrevious.isEmpty())
 		return;
 
-	open(_epgPrevious);
+	get(_epgPrevious);
 }
 
 QString EpgShow::processUrl(const QString &url) const

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 import Qt 4.7
-import VideoDisplay 0.2
+import Qt.multimedia 1.0
 
 FocusScope {
 	id: container
@@ -27,12 +27,20 @@ FocusScope {
 		anchors.fill: parent
 		width: parent.width; height: parent.height
 
-		VideoDisplay {
-			anchors.fill: parent
-			width: parent.width; height: parent.height
-			//videoWidth: parent.width; videoHeight: parent.height
+		Video {
+			id: video
+			width : 800
+			height : 600
+			source: "udp://@239.255.0.1:5002"
 
-			Keys.onDownPressed: osd.focus = true
+			MouseArea {
+				anchors.fill: parent
+				onClicked: {
+					video.play()
+				}
+			}
+
+			focus: true
 		}
 	}
 }

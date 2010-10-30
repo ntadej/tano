@@ -35,7 +35,7 @@
     <item row="1" column="0">
      <widget class="QLabel" name="labelEpgPlugin">
       <property name="text">
-       <string>EPG Plugin:</string>
+       <string>EPG Type:</string>
       </property>
      </widget>
     </item>

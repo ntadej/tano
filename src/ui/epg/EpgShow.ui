@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../data/icons.qrc">
+   <iconset resource="../../../data/icons.qrc">
     <normaloff>:/icons/128x128/schedule.png</normaloff>:/icons/128x128/schedule.png</iconset>
   </property>
   <property name="currentIndex">
@@ -130,7 +130,7 @@
        <string>Previous</string>
       </property>
       <property name="icon">
-       <iconset resource="../../data/icons.qrc">
+       <iconset resource="../../../data/icons.qrc">
         <normaloff>:/icons/32x32/left.png</normaloff>:/icons/32x32/left.png</iconset>
       </property>
       <property name="iconSize">
@@ -152,7 +152,7 @@
          <x>0</x>
          <y>0</y>
          <width>586</width>
-         <height>355</height>
+         <height>364</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -201,7 +201,7 @@
        <string>Next</string>
       </property>
       <property name="icon">
-       <iconset resource="../../data/icons.qrc">
+       <iconset resource="../../../data/icons.qrc">
         <normaloff>:/icons/32x32/right.png</normaloff>:/icons/32x32/right.png</iconset>
       </property>
       <property name="iconSize">
@@ -230,7 +230,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../../data/icons.qrc"/>
+  <include location="../../../data/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

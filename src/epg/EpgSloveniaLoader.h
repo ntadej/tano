@@ -1,16 +1,19 @@
 /****************************************************************************
-* EpgSloveniaLoader.h: EPG loader and processer for Slovenian providers
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_EPGSLOVENIALOADER_H_
@@ -22,6 +25,7 @@
 #include <QtCore/QTimer>
 #include <QtNetwork/QHttp>
 
+#include "container/EpgShowInfo.h"
 #include "epg/EpgSlovenia.h"
 
 class EpgSloveniaLoader : public QHttp
@@ -33,34 +37,34 @@ public:
 
 	void getSchedule(const QString &arg,
 					 const int &day = 0);
-	void getShow(const QString &arg);
+	void getShowInfo(const QString &arg);
 	void stop();
 
 signals:
 	void schedule(QString,
 				  int,
 				  QStringList);
-	void show(QStringList);
+	void showInfo(EpgShowInfo);
 
 private slots:
-	void processSchedule(const int &req,
-						 const bool &error);
-	void processShow(const bool &error);
 	void init();
 	void initDone(const bool &error);
+	void processSchedule(const int &req,
+						 const bool &error);
+	void processShowInfo(const bool &error);
 
 private:
-	bool _init;
-
-	EpgSlovenia *_slovenia;
+	QTextCodec *_codec;
 
 	QString _currentArgument;
 	QString _currentRequest;
 
+	bool _init;
+
 	QMap<int, QString> _mapArg;
 	QMap<int, int> _mapStep;
 
-	QTextCodec *_codec;
+	EpgSlovenia *_slovenia;
 };
 
 #endif // TANO_EPGSLOVENIALOADER_H_

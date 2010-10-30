@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,14 +21,9 @@
 
 #include "Config.h"
 
-#if UI_BASIC
-	#include "MainWindow.h"
-#elif UI_QML
-	#include "qml/MainQml.h"
-#endif
-
 #include "core/Settings.h"
 #include "core/Version.h"
+#include "MainWindow.h"
 #include "ui/wizard/FirstRunWizard.h"
 
 int main(int argc, char *argv[])
@@ -44,13 +39,8 @@ int main(int argc, char *argv[])
 	}
 	delete settings;
 
-#if UI_BASIC
 	MainWindow mainWindow;
 	mainWindow.show();
-#elif UI_QML
-	MainQml mainWindow;
-	mainWindow.show();
-#endif
 
 	return app.exec();
 }

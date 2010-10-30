@@ -1,16 +1,19 @@
 /****************************************************************************
-* M3UHandler.h: Reader and handler of modified m3u format
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_M3UHANDLER_H_
@@ -22,6 +25,7 @@
 #include <QtGui/QTreeWidgetItem>
 
 #include "container/Channel.h"
+#include "core/Common.h"
 
 class M3UHandler
 {
@@ -41,7 +45,7 @@ public:
 	Channel *channelRead(const int &item) { return _nmap[item]; }
 
 	QString name() const { return _name; }
-	QString epgType() const { return _epgType; }
+	Tano::EpgType epgType() const { return _epgType; }
 	QStringList categories() const { return _categoryList; }
 	QStringList languages() const { return _languageList; }
 	QStringList epg() const { return _epgList; }
@@ -66,7 +70,7 @@ private:
 	QIcon _channelIcon;
 
 	QString _name;
-	QString _epgType;
+	Tano::EpgType _epgType;
 	QStringList _m3uLineList;
 	QStringList _categoryList;
 	QStringList _languageList;

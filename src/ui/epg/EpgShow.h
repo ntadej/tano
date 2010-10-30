@@ -1,16 +1,19 @@
 /****************************************************************************
-* EpgShow.h: EPG show information
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_EPGSHOW_H_
@@ -18,6 +21,8 @@
 
 #include <QtGui/QStackedWidget>
 
+#include "container/EpgShowInfo.h"
+#include "core/Common.h"
 #include "core/GetFile.h"
 #include "epg/EpgSloveniaLoader.h"
 
@@ -37,11 +42,11 @@ protected:
 	void changeEvent(QEvent *e);
 
 public slots:
-	void open(const QString &url);
-	void setEpgType(const QString &type);
+	void get(const QString &id);
+	void setEpgType(const Tano::EpgType type);
 
 private slots:
-	void display(const QStringList &list);
+	void display(const EpgShowInfo &info);
 	void image(const QString &image);
 	void next();
 	void previous();
@@ -51,11 +56,11 @@ private:
 
 	Ui::EpgShow *ui;
 
-	GetFile *_image;
-	EpgSloveniaLoader *_loader;
-
 	QString _epgNext;
 	QString _epgPrevious;
+	GetFile *_image;
+	EpgSloveniaLoader *_slovenia;
+	Tano::EpgType _type;
 };
 
 #endif // TANO_EPGSHOW_H_

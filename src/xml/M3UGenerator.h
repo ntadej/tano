@@ -1,16 +1,19 @@
 /****************************************************************************
-* M3UGenerator.h: Generator and writer of modified m3u format
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_M3UGENERATOR_H_
@@ -21,15 +24,15 @@
 #include <QtGui/QTreeWidgetItem>
 
 #include "container/Channel.h"
+#include "core/Common.h"
 
 class M3UGenerator
 {
 public:
 	M3UGenerator(QTreeWidget *treeWidget,
 				 const QString &name,
-				 const QString &epg,
-				 QMap<QTreeWidgetItem*,
-				 Channel*> map);
+				 const QString &epgType,
+				 QMap<QTreeWidgetItem*, Channel*> map);
 	~M3UGenerator();
 
 	bool write(QIODevice *device);
@@ -39,7 +42,7 @@ private:
 
 	QTreeWidget *_treeWidget;
 	QString _name;
-	QString _epgType;
+	Tano::EpgType _epgType;
 	QTextStream _out;
 
 	QMap<QTreeWidgetItem*, Channel*> _map;
