@@ -31,7 +31,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../../data/icons.qrc">:/icons/32x32/remove.png</pixmap>
+       <pixmap resource="../../../data/icons.qrc">:/icons/32x32/remove.png</pixmap>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -149,12 +149,12 @@
   <customwidget>
    <class>EpgList</class>
    <extends>QWidget</extends>
-   <header>epg/EpgList.h</header>
+   <header>ui/epg/EpgList.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../data/icons.qrc"/>
+  <include location="../../../data/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

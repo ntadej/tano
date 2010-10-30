@@ -59,7 +59,6 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	core/Print.h
 	core/Time.h
 	core/UpdateManager.h
-	epg/EpgList.h
 	epg/EpgManager.h
 	epg/EpgSloveniaLoader.h
 	ui/core/CurrentTime.h
@@ -72,6 +71,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/dialogs/PrintDialog.h
 	ui/dialogs/UpdateDialog.h
 	ui/epg/EpgFull.h
+	ui/epg/EpgList.h
 	ui/epg/EpgSchedule.h
 	ui/epg/EpgShow.h
 	ui/playlist/PlaylistEdit.h
@@ -97,6 +97,7 @@ SET(Tano_Resrcs
 # Define the C++ source files used by Tano
 SET(Tano_Container_Srcs
 	container/Channel.cpp
+	container/EpgDayList.cpp
 	container/EpgItem.cpp
 	container/EpgShowInfo.cpp
 	container/UpdateInfo.cpp
@@ -116,7 +117,6 @@ SET(Tano_Core_Srcs
 	core/Version.cpp
 )
 SET(Tano_Epg_Srcs
-	epg/EpgList.cpp
 	epg/EpgManager.cpp
 	epg/EpgSlovenia.cpp
 	epg/EpgSloveniaLoader.cpp
@@ -132,6 +132,7 @@ SET(Tano_UI_Srcs
 	ui/dialogs/PrintDialog.cpp
 	ui/dialogs/UpdateDialog.cpp
 	ui/epg/EpgFull.cpp
+	ui/epg/EpgList.cpp
 	ui/epg/EpgSchedule.cpp
 	ui/epg/EpgShow.cpp
 	ui/playlist/PlaylistEdit.cpp

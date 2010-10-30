@@ -16,13 +16,15 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/EpgItem.h"
+#include "EpgDayList.h"
 
-EpgItem::EpgItem(const QTime &time,
-				 const QString &url,
-				 const QString &title)
-	: _time(time),
-	_url(url),
-	_title(title) { }
+EpgDayList::EpgDayList(const QString &channel, const int &day)
+	: _channel(channel),
+	_day(day),
+	_valid(true)
+{
+	_date = QDate::currentDate();
+	_date.addDays(_day);
+}
 
-EpgItem::~EpgItem() { }
+EpgDayList::~EpgDayList() { }

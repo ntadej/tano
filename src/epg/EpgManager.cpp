@@ -1,16 +1,19 @@
 /****************************************************************************
-* EpgManager.cpp: EPG manager
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QDate>
@@ -18,6 +21,8 @@
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
+#include "container/EpgDayList.h"
+#include "container/EpgItem.h"
 #include "epg/EpgManager.h"
 
 EpgManager::EpgManager(QObject *parent)
@@ -27,16 +32,14 @@ EpgManager::EpgManager(QObject *parent)
 	_currentLoadEpg(""),
 	_currentRequest("")
 {
-	_loader = new EpgSloveniaLoader(this);
-	connect(_loader, SIGNAL(schedule(QString, int, QStringList)), this, SLOT(set(QString, int, QStringList)));
-
+	_slovenia = new EpgSloveniaLoader(this);
 	_timer = new QTimer(this);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(now()));
 }
 
 EpgManager::~EpgManager()
 {
-	delete _loader;
+	delete _slovenia;
 	delete _timer;
 }
 
@@ -45,6 +48,8 @@ void EpgManager::setEpg(const QStringList &epg,
 {
 	_epgList = epg;
 	_epgType = epgType;
+	if(_epgType == Tano::Slovenia)
+		connect(_slovenia, SIGNAL(schedule(QString, int, QStringList)), this, SLOT(set(QString, int, QStringList)));
 
 	load();
 }
@@ -78,12 +83,12 @@ void EpgManager::load()
 	if(_currentRequest != "") {
 		_currentLoadEpg = _currentRequest;
 		qDebug() << "Request:" << _currentLoadEpg;
-		_loader->getSchedule(_currentLoadEpg);
+		_slovenia->getSchedule(_currentLoadEpg);
 	} else {
 		for(int i=0; i<_epgList.size(); i++) {
 			if(!_day[0].contains(_epgList[i])) {
 				_currentLoadEpg = _epgList[i];
-				_loader->getSchedule(_epgList[i]);
+				_slovenia->getSchedule(_epgList[i]);
 				break;
 			} else if(i == _epgList.size()-1) {
 				_ready = true;
@@ -92,14 +97,12 @@ void EpgManager::load()
 	}
 }
 
-void EpgManager::set(const QString &channel,
-					 const int &day,
-					 const QStringList &epg)
+void EpgManager::set(const EpgDayList &list)
 {
-	_day[day].insert(channel, epg);
+	_day[list.day()].insert(list.channel(), list);
 
-	if(day == 3) {
-		qDebug() << channel << "loaded";
+	if(list.day() == 3) {
+		qDebug() << list.channel() << "loaded";
 		if(_currentLoadEpg == _currentRequest) {
 			_currentRequest = "";
 			post(_currentLoadEpg);
@@ -114,33 +117,32 @@ void EpgManager::post(const QString &e)
 
 	if(_currentIdentifier == "main") {
 		_currentEpgNow = e;
-		now();
+		current();
 	}
-	emit epg(_day[0][e], 1, _currentIdentifier);
-	emit epg(_day[1][e], 2, _currentIdentifier);
-	emit epg(_day[2][e], 3, _currentIdentifier);
-	emit epg(_day[3][e], 4, _currentIdentifier);
+	emit epgSchedule(_day[0][e], _currentIdentifier);
+	emit epgSchedule(_day[1][e], _currentIdentifier);
+	emit epgSchedule(_day[2][e], _currentIdentifier);
+	emit epgSchedule(_day[3][e], _currentIdentifier);
 }
 
-void EpgManager::now()
+void EpgManager::current()
 {
 	int k;
 	QStringList now;
-	for(int i = 4; i < _day[0][_currentEpgNow].size(); i+=3) {
-		if(QTime::fromString(_day[0][_currentEpgNow][i-3], "hh:mm") >=
-		   QTime::fromString(_day[0][_currentEpgNow][i], "hh:mm")) {
+	for(int i = 0; i < _day[0][_currentEpgNow].size(); i++) {
+		if(_day[0][_currentEpgNow][i-1]->time() >= _day[0][_currentEpgNow][i]->time()) {
 			k = i;
 			break;
-		} else if(QTime::currentTime() > QTime::fromString(_day[0][_currentEpgNow][i-3], "hh:mm") &&
-				  QTime::currentTime() < QTime::fromString(_day[0][_currentEpgNow][i], "hh:mm")) {
+		} else if(QTime::currentTime() > _day[0][_currentEpgNow][i-1]->time() &&
+				  QTime::currentTime() < _day[0][_currentEpgNow][i]->time()) {
 			k = i;
 			break;
 		}
 	}
 
-	now << "<a href=\"" + _day[0][_currentEpgNow][k-2] + "\">" + _day[0][_currentEpgNow][k-3] + " - " + _day[0][_currentEpgNow][k-1] + "</a>"
-		<< "<a href=\"" + _day[0][_currentEpgNow][k+1] + "\">" + _day[0][_currentEpgNow][k] + " - " + _day[0][_currentEpgNow][k+2] + "</a>";
-	emit epg(now, 0, "main");
+	now << "<a href=\"" + _day[0][_currentEpgNow][k-1]->url() + "\">" + _day[0][_currentEpgNow][k-1]->time().toString("hh:mm") + " - " + _day[0][_currentEpgNow][k-1]->title() + "</a>"
+		<< "<a href=\"" + _day[0][_currentEpgNow][k]->url() + "\">" + _day[0][_currentEpgNow][k]->time().toString("hh:mm") + " - " + _day[0][_currentEpgNow][k]->title() + "</a>";
+	emit epgCurrent(now, "main");
 
 	_timer->start(60000);
 }

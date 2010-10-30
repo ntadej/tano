@@ -25,6 +25,7 @@
 #include <QtCore/QTimer>
 #include <QtNetwork/QHttp>
 
+#include "container/EpgDayList.h"
 #include "container/EpgShowInfo.h"
 #include "epg/EpgSlovenia.h"
 
@@ -41,9 +42,7 @@ public:
 	void stop();
 
 signals:
-	void schedule(QString,
-				  int,
-				  QStringList);
+	void schedule(EpgDayList);
 	void showInfo(EpgShowInfo);
 
 private slots:

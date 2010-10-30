@@ -44,15 +44,14 @@ public slots:
 				 const QString &identifier);
 
 signals:
-	void epg(QStringList,
-			 int,
-			 QString);
+	void epgCurrent(const QStringList,
+					const QString);
+	void epgSchedule(const EpgDayList,
+					 const QString);
 
 private slots:
-	void now();
-	void set(const QString &channel,
-			 const int &day,
-			 const QStringList &epg);
+	void current();
+	void set(const EpgDayList &list);
 
 private:
 	void clear();
@@ -70,9 +69,9 @@ private:
 	Tano::EpgType _epgType;
 	QString _path;
 
-	QMap<QString, QStringList> _day[4];
+	QMap<QString, EpgDayList> _day[4];
 
-	EpgSloveniaLoader *_loader;
+	EpgSloveniaLoader *_slovenia;
 	QTimer *_timer;
 };
 

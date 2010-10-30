@@ -98,12 +98,12 @@ void EpgSloveniaLoader::processSchedule(const int &req,
 		return;
 
 	QByteArray httpResponse = readAll();
-	QStringList list = _slovenia->processSchedule(_codec->toUnicode(httpResponse));
+	EpgDayList list = _slovenia->processSchedule(_mapArg[req], _mapStep[req], _codec->toUnicode(httpResponse));
 
-	if(list[0] == "error")
+	if(!list.isValid())
 		return;
 
-	emit schedule(_mapArg[req], _mapStep[req], list);
+	emit schedule(list);
 
 	if(_mapStep[req] == 0)
 		getSchedule(_currentArgument, 1);

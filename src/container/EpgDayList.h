@@ -16,13 +16,31 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#ifndef TANO_EPGDAYLIST_H_
+#define TANO_EPGDAYLIST_H_
+
+#include <QtCore/QDate>
+#include <QtCore/QList>
+
 #include "container/EpgItem.h"
 
-EpgItem::EpgItem(const QTime &time,
-				 const QString &url,
-				 const QString &title)
-	: _time(time),
-	_url(url),
-	_title(title) { }
+class EpgDayList : public QList<EpgItem*>
+{
+public:
+	EpgDayList(const QString &channel = 0, const int &day = 0);
+	~EpgDayList();
 
-EpgItem::~EpgItem() { }
+	QString channel() const { return _channel; }
+	QDate date() const { return _date; }
+	int day() const { return _day; }
+	bool isValid() const { return _valid; }
+	void setValid(const bool &valid) { _valid = valid; }
+
+private:
+	QString _channel;
+	QDate _date;
+	int _day;
+	bool _valid;
+};
+
+#endif // TANO_EPGDAYLIST_H_

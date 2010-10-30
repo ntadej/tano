@@ -90,17 +90,17 @@ QString EpgSlovenia::processDate(const QString &input) const
 	return date;
 }
 
-QStringList EpgSlovenia::processSchedule(const QString &input) const
+EpgDayList EpgSlovenia::processSchedule(const QString &channel,
+										const int &day,
+										const QString &input) const
 {
-	if(!input.contains("schedule_title"))
-		return QStringList() << "error";
+	EpgDayList schedule(channel, day);
+	if(!input.contains("schedule_title")) {
+		schedule.setValid(false);
+		return schedule;
+	}
 
-	QStringList mainList;
 	QStringList list[3];
-
-	QRegExp title("<div class=\"schedule_title\">\\t*\\s*<span class=\"title\">([^</span>]*)</span>\\t*\\s*<span class=\"time\">([^<]*)");
-	title.indexIn(input);
-	mainList << title.cap(1)+title.cap(2);
 
 	QRegExp exp[3];
 	exp[0].setPattern("class=\"time\">(\\d{2,2}.\\d{2,2})"); // Time
@@ -120,9 +120,9 @@ QStringList EpgSlovenia::processSchedule(const QString &input) const
 	}
 
 	for(int i=0; i<list[0].size(); i++)
-		mainList << list[0][i] << list[1][i].prepend("http://www.siol.net/") << list[2][i];
+		schedule << new EpgItem(QTime::fromString(list[0][i], "hh:mm"), list[1][i].prepend("http://www.siol.net/"), list[2][i]);
 
-	return mainList;
+	return schedule;
 }
 
 EpgShowInfo EpgSlovenia::processShow(const QString &input) const

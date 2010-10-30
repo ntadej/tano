@@ -23,6 +23,7 @@
 #include <QtCore/QString>
 #include <QtNetwork/QHttpRequestHeader>
 
+#include "container/EpgDayList.h"
 #include "container/EpgShowInfo.h"
 
 class EpgSlovenia
@@ -37,7 +38,9 @@ public:
 	QString load(const QString &input,
 				 const int &arg = 0) const;
 	QString processDate(const QString &input) const;
-	QStringList processSchedule(const QString &input) const;
+	EpgDayList processSchedule(const QString &channel,
+							   const int &day,
+							   const QString &input) const;
 	EpgShowInfo processShow(const QString &input) const;
 
 private:
