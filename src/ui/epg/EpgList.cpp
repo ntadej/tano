@@ -31,8 +31,8 @@ EpgList::EpgList(QWidget *parent)
 	verticalHeader()->hide();
 
 	_rightMenu = new QMenu();
-	_info = new QAction(QIcon(":/icons/128x128/schedule.png"), tr("Show information"), this);
-	_record = new QAction(QIcon(":/icons/22x22/record.png"), tr("Record"), this);
+	_info = new QAction(QIcon(":/icons/24x24/calendar.png"), tr("Show information"), this);
+	_record = new QAction(QIcon(":/icons/24x24/record.png"), tr("Record"), this);
 	_rightMenu->addAction(_info);
 	//_rightMenu->addAction(_record);
 

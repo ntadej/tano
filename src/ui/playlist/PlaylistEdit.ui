@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/128x128/edit.png</normaloff>:/icons/128x128/edit.png</iconset>
+    <normaloff>:/icons/24x24/edit.png</normaloff>:/icons/24x24/edit.png</iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -79,8 +79,8 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>22</width>
-     <height>22</height>
+     <width>24</width>
+     <height>24</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -110,6 +110,10 @@
      <horstretch>0</horstretch>
      <verstretch>0</verstretch>
     </sizepolicy>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/edit.png</normaloff>:/icons/24x24/edit.png</iconset>
    </property>
    <property name="features">
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
@@ -216,19 +220,25 @@
       <widget class="QPushButton" name="buttonApplyNum">
        <property name="minimumSize">
         <size>
-         <width>30</width>
-         <height>30</height>
+         <width>25</width>
+         <height>25</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>30</width>
-         <height>30</height>
+         <width>25</width>
+         <height>25</height>
         </size>
        </property>
        <property name="icon">
         <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/32x32/apply.png</normaloff>:/icons/32x32/apply.png</iconset>
+         <normaloff>:/icons/24x24/apply.png</normaloff>:/icons/24x24/apply.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -260,6 +270,10 @@
    </widget>
   </widget>
   <widget class="QDockWidget" name="updateWidget">
+   <property name="windowIcon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/refresh.png</normaloff>:/icons/24x24/refresh.png</iconset>
+   </property>
    <property name="features">
     <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
    </property>
@@ -295,7 +309,13 @@
        </property>
        <property name="icon">
         <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/32x32/find.png</normaloff>:/icons/32x32/find.png</iconset>
+         <normaloff>:/icons/24x24/refresh.png</normaloff>:/icons/24x24/refresh.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -380,7 +400,7 @@
   <action name="actionAdd">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/32x32/add.png</normaloff>:/icons/32x32/add.png</iconset>
+     <normaloff>:/icons/24x24/add.png</normaloff>:/icons/24x24/add.png</iconset>
    </property>
    <property name="text">
     <string>Add Channel</string>
@@ -392,7 +412,7 @@
   <action name="actionDelete">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/32x32/remove.png</normaloff>:/icons/32x32/remove.png</iconset>
+     <normaloff>:/icons/24x24/remove.png</normaloff>:/icons/24x24/remove.png</iconset>
    </property>
    <property name="text">
     <string>Delete Channel</string>
@@ -404,7 +424,7 @@
   <action name="actionSave">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/32x32/save.png</normaloff>:/icons/32x32/save.png</iconset>
+     <normaloff>:/icons/24x24/save.png</normaloff>:/icons/24x24/save.png</iconset>
    </property>
    <property name="text">
     <string>Save and Close</string>
@@ -416,7 +436,7 @@
   <action name="actionClose">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/32x32/close.png</normaloff>:/icons/32x32/close.png</iconset>
+     <normaloff>:/icons/24x24/close.png</normaloff>:/icons/24x24/close.png</iconset>
    </property>
    <property name="text">
     <string>Close</string>
@@ -425,7 +445,7 @@
   <action name="actionImport">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/32x32/import.png</normaloff>:/icons/32x32/import.png</iconset>
+     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
    </property>
    <property name="text">
     <string>Import</string>
@@ -434,7 +454,7 @@
   <action name="actionUp">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/32x32/up.png</normaloff>:/icons/32x32/up.png</iconset>
+     <normaloff>:/icons/24x24/go-up.png</normaloff>:/icons/24x24/go-up.png</iconset>
    </property>
    <property name="text">
     <string>Move Up</string>
@@ -443,7 +463,7 @@
   <action name="actionDown">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/32x32/down.png</normaloff>:/icons/32x32/down.png</iconset>
+     <normaloff>:/icons/24x24/go-down.png</normaloff>:/icons/24x24/go-down.png</iconset>
    </property>
    <property name="text">
     <string>Move Down</string>
@@ -455,7 +475,7 @@
   <action name="actionPrint">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/128x128/print.png</normaloff>:/icons/128x128/print.png</iconset>
+     <normaloff>:/icons/24x24/print.png</normaloff>:/icons/24x24/print.png</iconset>
    </property>
    <property name="text">
     <string>Print</string>

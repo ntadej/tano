@@ -12,7 +12,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/128x128/schedule.png</normaloff>:/icons/128x128/schedule.png</iconset>
+    <normaloff>:/icons/48x48/calendar.png</normaloff>:/icons/48x48/calendar.png</iconset>
   </property>
   <property name="currentIndex">
    <number>0</number>
@@ -131,12 +131,12 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/32x32/left.png</normaloff>:/icons/32x32/left.png</iconset>
+        <normaloff>:/icons/24x24/go-previous.png</normaloff>:/icons/24x24/go-previous.png</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>22</width>
-        <height>22</height>
+        <width>24</width>
+        <height>24</height>
        </size>
       </property>
      </widget>
@@ -151,8 +151,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>586</width>
-         <height>364</height>
+         <width>88</width>
+         <height>29</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -202,12 +202,12 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/32x32/right.png</normaloff>:/icons/32x32/right.png</iconset>
+        <normaloff>:/icons/24x24/go-next.png</normaloff>:/icons/24x24/go-next.png</iconset>
       </property>
       <property name="iconSize">
        <size>
-        <width>22</width>
-        <height>22</height>
+        <width>24</width>
+        <height>24</height>
        </size>
       </property>
      </widget>

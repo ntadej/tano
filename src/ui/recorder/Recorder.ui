@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/128x128/recorder.png</normaloff>:/icons/128x128/recorder.png</iconset>
+    <normaloff>:/icons/24x24/record.png</normaloff>:/icons/24x24/record.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -62,7 +62,13 @@
         </property>
         <property name="icon">
          <iconset resource="../../../data/icons.qrc">
-          <normaloff>:/icons/22x22/record.png</normaloff>:/icons/22x22/record.png</iconset>
+          <normaloff>:/icons/24x24/record.png</normaloff>:/icons/24x24/record.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
         </property>
         <property name="checkable">
          <bool>true</bool>

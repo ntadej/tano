@@ -30,7 +30,7 @@ M3UHandler::M3UHandler(QTreeWidget *treeWidget)
 {
 	_name = QObject::tr("Channel list");
 	_epgType = Tano::Slovenia;
-	_channelIcon = QIcon(":/icons/128x128/video.png");
+	_channelIcon = QIcon(":/icons/16x16/video.png");
 }
 
 M3UHandler::~M3UHandler()

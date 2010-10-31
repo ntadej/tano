@@ -65,7 +65,7 @@ void EpgShow::get(const QString &id)
 	ui->labelTime->setText("");
 	ui->labelInfo->setText("");
 	ui->labelDescription->setText("");
-	ui->labelPhoto->setPixmap(QPixmap(":/icons/128x128/image.png"));
+	ui->labelPhoto->setPixmap(QPixmap(":/icons/48x48/image.png"));
 
 	show();
 

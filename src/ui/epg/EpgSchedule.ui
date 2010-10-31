@@ -31,7 +31,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../../../data/icons.qrc">:/icons/32x32/remove.png</pixmap>
+       <pixmap resource="../../../data/icons.qrc">:/icons/24x24/remove.png</pixmap>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -41,7 +41,10 @@
     <item>
      <widget class="QLabel" name="labelNoEpg">
       <property name="text">
-       <string>&lt;center&gt;&lt;h1&gt;No EPG&lt;/h1&gt;&lt;/center&gt;</string>
+       <string>&lt;h2&gt;No EPG&lt;/h2&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>

@@ -12,7 +12,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/128x128/edit.png</normaloff>:/icons/128x128/edit.png</iconset>
+    <normaloff>:/icons/48x48/video.png</normaloff>:/icons/48x48/video.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
@@ -64,12 +64,24 @@
           <property name="enabled">
            <bool>false</bool>
           </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>25</height>
+           </size>
+          </property>
           <property name="text">
            <string>Reset</string>
           </property>
           <property name="icon">
            <iconset resource="../../../data/icons.qrc">
-            <normaloff>:/icons/32x32/reload.png</normaloff>:/icons/32x32/reload.png</iconset>
+            <normaloff>:/icons/24x24/refresh.png</normaloff>:/icons/24x24/refresh.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
           </property>
          </widget>
         </item>

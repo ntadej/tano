@@ -441,8 +441,8 @@ void MainWindow::playChannel(const int &clickedChannel)
 void MainWindow::setState(const bool &playing, const bool &audio, const bool &video)
 {
 	if(playing) {
-		ui->actionPlay->setIcon(QIcon(":/icons/32x32/player_pause.png"));
-		ui->buttonPlay->setIcon(QIcon(":/icons/32x32/player_pause.png"));
+		ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
+		ui->buttonPlay->setIcon(QIcon(":/icons/48x48/media-playback-pause.png"));
 		ui->actionPlay->setText(tr("Pause"));
 		ui->actionPlay->setToolTip(tr("Pause"));
 		ui->buttonPlay->setToolTip(tr("Pause"));
@@ -450,8 +450,8 @@ void MainWindow::setState(const bool &playing, const bool &audio, const bool &vi
 		ui->actionMute->setEnabled(true);
 		ui->buttonMute->setEnabled(true);
 	} else {
-		ui->actionPlay->setIcon(QIcon(":/icons/32x32/player_play.png"));
-		ui->buttonPlay->setIcon(QIcon(":/icons/32x32/player_play.png"));
+		ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
+		ui->buttonPlay->setIcon(QIcon(":/icons/48x48/media-playback-start.png"));
 		ui->actionPlay->setText(tr("Play"));
 		ui->actionPlay->setToolTip(tr("Play"));
 		ui->buttonPlay->setToolTip(tr("Play"));

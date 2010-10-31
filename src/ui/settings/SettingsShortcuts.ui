@@ -425,7 +425,13 @@
      </property>
      <property name="icon">
       <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/32x32/clear.png</normaloff>:/icons/32x32/clear.png</iconset>
+       <normaloff>:/icons/24x24/clear.png</normaloff>:/icons/24x24/clear.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>
@@ -449,7 +455,13 @@
      </property>
      <property name="icon">
       <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/32x32/reload.png</normaloff>:/icons/32x32/reload.png</iconset>
+       <normaloff>:/icons/24x24/refresh.png</normaloff>:/icons/24x24/refresh.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>
@@ -460,7 +472,13 @@
      </property>
      <property name="icon">
       <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/32x32/apply.png</normaloff>:/icons/32x32/apply.png</iconset>
+       <normaloff>:/icons/24x24/apply.png</normaloff>:/icons/24x24/apply.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
      </property>
     </widget>
    </item>

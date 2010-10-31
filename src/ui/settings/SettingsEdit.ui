@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/128x128/settings.png</normaloff>:/icons/128x128/settings.png</iconset>
+    <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
   </property>
   <layout class="QGridLayout" name="layout">
    <item row="0" column="0">
@@ -77,7 +77,7 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/128x128/settings.png</normaloff>:/icons/128x128/settings.png</iconset>
+        <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
       </property>
      </item>
      <item>
@@ -89,7 +89,7 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/128x128/edit.png</normaloff>:/icons/128x128/edit.png</iconset>
+        <normaloff>:/icons/48x48/video.png</normaloff>:/icons/48x48/video.png</iconset>
       </property>
      </item>
      <item>
@@ -101,7 +101,7 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/128x128/interface.png</normaloff>:/icons/128x128/interface.png</iconset>
+        <normaloff>:/icons/48x48/interface.png</normaloff>:/icons/48x48/interface.png</iconset>
       </property>
      </item>
      <item>
@@ -113,7 +113,7 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/128x128/playback.png</normaloff>:/icons/128x128/playback.png</iconset>
+        <normaloff>:/icons/48x48/playback.png</normaloff>:/icons/48x48/playback.png</iconset>
       </property>
      </item>
      <item>
@@ -125,7 +125,7 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/128x128/recorder.png</normaloff>:/icons/128x128/recorder.png</iconset>
+        <normaloff>:/icons/48x48/timer.png</normaloff>:/icons/48x48/timer.png</iconset>
       </property>
      </item>
      <item>
@@ -137,7 +137,7 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/128x128/keyboard.png</normaloff>:/icons/128x128/keyboard.png</iconset>
+        <normaloff>:/icons/48x48/shortcuts.png</normaloff>:/icons/48x48/shortcuts.png</iconset>
       </property>
      </item>
     </widget>
@@ -624,12 +624,24 @@
           </item>
           <item>
            <widget class="QPushButton" name="buttonResetRecorder">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>25</height>
+             </size>
+            </property>
             <property name="text">
              <string>Reset</string>
             </property>
             <property name="icon">
              <iconset resource="../../../data/icons.qrc">
-              <normaloff>:/icons/32x32/reload.png</normaloff>:/icons/32x32/reload.png</iconset>
+              <normaloff>:/icons/24x24/refresh.png</normaloff>:/icons/24x24/refresh.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
             </property>
            </widget>
           </item>

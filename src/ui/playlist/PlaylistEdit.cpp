@@ -16,9 +16,6 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "PlaylistEdit.h"
-#include "ui_PlaylistEdit.h"
-
 #include <QtCore/QDebug>
 #include <QtGui/QCloseEvent>
 #include <QtGui/QFileDialog>
@@ -28,14 +25,16 @@
 #include "core/Settings.h"
 #include "ui/dialogs/PrintDialog.h"
 
+#include "PlaylistEdit.h"
+#include "ui_PlaylistEdit.h"
+
 PlaylistEdit::PlaylistEdit(const QString &playlist,
 						   const WId &video,
 						   QWidget *parent)
 	: QMainWindow(parent),
 	ui(new Ui::PlaylistEdit),
 	_closeEnabled(false),
-	_playlist(playlist),
-	_channelIcon(QIcon(":/icons/128x128/video.png"))
+	_playlist(playlist)
 {
 	ui->setupUi(this);
 

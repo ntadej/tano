@@ -84,7 +84,6 @@ private:
 
 	bool _closeEnabled;
 	QString _playlist;
-	QIcon _channelIcon;
 
 	// Update playlist
 	VlcInstance *_instance;

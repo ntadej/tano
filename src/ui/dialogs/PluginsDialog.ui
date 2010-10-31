@@ -14,8 +14,8 @@
    <string>About Plugins</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/icons/images/plugin.png</normaloff>:/icons/images/plugin.png</iconset>
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/24x24/plugin.png</normaloff>:/icons/24x24/plugin.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

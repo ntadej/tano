@@ -137,14 +137,14 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="4" column="1">
         <widget class="QLabel" name="labelLicense">
          <property name="text">
           <string>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="5" column="1">
         <widget class="QLabel" name="labelLinks">
          <property name="text">
           <string notr="true">&lt;h4&gt;http://tanoplayer.co.cc&lt;br&gt;info@tanoplayer.co.cc&lt;/h4&gt;</string>
@@ -154,7 +154,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="6" column="1" colspan="3">
+       <item row="7" column="1" colspan="3">
         <widget class="QDialogButtonBox" name="buttonBox">
          <property name="standardButtons">
           <set>QDialogButtonBox::Ok</set>
@@ -164,7 +164,7 @@ p, li { white-space: pre-wrap; }
          </property>
         </widget>
        </item>
-       <item row="2" column="3" rowspan="3">
+       <item row="2" column="3" rowspan="4">
         <layout class="QGridLayout" name="libGridLayout">
          <item row="0" column="0">
           <widget class="QLabel" name="labelIconQt">
@@ -230,7 +230,7 @@ p, li { white-space: pre-wrap; }
          </item>
         </layout>
        </item>
-       <item row="2" column="2" rowspan="3">
+       <item row="2" column="2" rowspan="4">
         <spacer name="horizontalSpacer">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -242,6 +242,13 @@ p, li { white-space: pre-wrap; }
           </size>
          </property>
         </spacer>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLabel" name="labelIcons">
+         <property name="text">
+          <string notr="true">&lt;h4&gt;Icons by Matthieu James.&lt;/h4&gt;</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
