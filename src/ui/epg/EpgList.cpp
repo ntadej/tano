@@ -1,20 +1,25 @@
 /****************************************************************************
-* EpgList.cpp: EPG Schedule display
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtGui/QHeaderView>
 #include <QtGui/QTableWidget>
+
+#include "container/EpgItem.h"
 
 #include "EpgList.h"
 
@@ -53,32 +58,25 @@ void EpgList::mouseReleaseEvent(QMouseEvent *event)
 	}
 }
 
-void EpgList::setEpg(const QStringList &epg)
+void EpgList::setEpg(const EpgDayList &epg)
 {
 	clearList();
-	setRowCount((epg.size() - 1)/3);
+	_list = epg;
+
+	setRowCount(epg.size());
 
 	QStringList epgHeader;
-	epgHeader << epg[0];
+	epgHeader << epg.channel() + ", " + epg.date().addDays(epg.day()).toString("dd.MM.yyyy");
 	this->setHorizontalHeaderLabels(epgHeader);
 
-	int r = 0;
-	for (int i = 1; i < epg.size(); i+=3) {
-		//EpgItem *newEpg = new EpgItem(epg[i],epg[i+1],epg[i+2]);
-		QTableWidgetItem *newItem = new QTableWidgetItem(QString(epg[i] + " - " + epg[i+2]));
+	for (int i = 0; i < epg.size(); i++) {
+		QTableWidgetItem *newItem = new QTableWidgetItem(QString(epg[i].time().toString("hh:mm") + " - " + epg[i].title()));
 		newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-		//_map.insert(newItem, newEpg);
-		//_nmap.insert(r,newEpg);
-		setItem(r, 0, newItem);
-		r++;
+		setItem(i, 0, newItem);
 	}
 }
 
 void EpgList::clearList() {
-	for(int i=0; i<rowCount(); i++)
-		delete _nmap[i];
-	_map.clear();
-	_nmap.clear();
 	clear();
 	setRowCount(0);
 	setHorizontalHeaderLabels(QStringList() << tr("No EPG"));
@@ -86,7 +84,7 @@ void EpgList::clearList() {
 
 void EpgList::clicked(QTableWidgetItem *item) {
 	if(item == 0)
-		emit urlClicked(_map[currentItem()]->url());
+		emit urlClicked(_list[row(currentItem())].url());
 	else
-		emit urlClicked(_map[item]->url());
+		emit urlClicked(_list[row(item)].url());
 }

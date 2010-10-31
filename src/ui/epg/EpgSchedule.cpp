@@ -1,22 +1,27 @@
 /****************************************************************************
-* EpgShedule.cpp: EPG schedule GUI class
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
+
+#include <QtCore/QDate>
+
+#include "container/EpgDayList.h"
 
 #include "EpgSchedule.h"
 #include "ui_EpgSchedule.h"
-
-#include <QtCore/QDate>
 
 EpgSchedule::EpgSchedule(QWidget *parent)
 	: QStackedWidget(parent),
@@ -55,25 +60,29 @@ void EpgSchedule::clear()
 	ui->epgToday_4->clearList();
 }
 
-void EpgSchedule::setEpg(const QStringList &epgValue,
-						 const int &id)
+void EpgSchedule::setEpg(const EpgDayList &epg,
+						 const Tano::Id &id)
 {
-	switch (id) {
+	if(id != _id)
+		return;
+
+	switch (epg.day()) {
+		case 0:
+			ui->epgTabWidget->setTabText(0, tr("Today"));
+			ui->epgToday->setEpg(epg);
+			setPage(1);
+			break;
 		case 1:
-			ui->epgTabWidget->setTabText(0,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui->epgToday->setEpg(epgValue);
+			ui->epgTabWidget->setTabText(1, tr("Tomorrow"));
+			ui->epgToday_2->setEpg(epg);
 			break;
 		case 2:
-			ui->epgTabWidget->setTabText(1,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui->epgToday_2->setEpg(epgValue);
+			ui->epgTabWidget->setTabText(2, QDate::currentDate().addDays(epg.day()).toString("dddd"));
+			ui->epgToday_3->setEpg(epg);
 			break;
 		case 3:
-			ui->epgTabWidget->setTabText(2,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui->epgToday_3->setEpg(epgValue);
-			break;
-		case 4:
-			ui->epgTabWidget->setTabText(3,QDate::currentDate().addDays(id-1).toString("d.M."));
-			ui->epgToday_4->setEpg(epgValue);
+			ui->epgTabWidget->setTabText(3, QDate::currentDate().addDays(epg.day()).toString("dddd"));
+			ui->epgToday_4->setEpg(epg);
 			break;
 		default:
 			break;

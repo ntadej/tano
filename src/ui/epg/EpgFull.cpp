@@ -1,28 +1,30 @@
 /****************************************************************************
-* EpgFull.cpp: Independent schedule widget
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include "EpgFull.h"
 #include "ui_EpgFull.h"
-
-const QString EpgFull::IDENTIFIER = "schedule";
 
 EpgFull::EpgFull(QWidget *parent)
 	: QWidget(parent),
 	ui(new Ui::EpgFull)
 {
 	ui->setupUi(this);
+	ui->schedule->setIdentifier(Tano::Schedule);
 
 	connect(ui->playlist, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(channel(QTreeWidgetItem*)));
 	connect(ui->schedule, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
@@ -48,7 +50,7 @@ void EpgFull::changeEvent(QEvent *e)
 void EpgFull::channel(QTreeWidgetItem *item)
 {
 	ui->schedule->setPage(0);
-	emit requestEpg(ui->playlist->channelRead(item)->epg(), EpgFull::IDENTIFIER);
+	emit requestEpg(ui->playlist->channelRead(item)->epg(), Tano::Schedule);
 }
 
 void EpgFull::openPlaylist(const QString &p)
@@ -56,13 +58,8 @@ void EpgFull::openPlaylist(const QString &p)
 	ui->playlist->open(p);
 }
 
-void EpgFull::loadEpg(const QStringList &list,
-					   const int &day,
-					   const QString &identifier)
+void EpgFull::setEpg(const EpgDayList &list,
+					 const Tano::Id &identifier)
 {
-	if(identifier != EpgFull::IDENTIFIER)
-		return;
-
-	ui->schedule->setEpg(list, day);
-	ui->schedule->setPage(1);
+	ui->schedule->setEpg(list, identifier);
 }

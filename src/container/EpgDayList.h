@@ -24,7 +24,7 @@
 
 #include "container/EpgItem.h"
 
-class EpgDayList : public QList<EpgItem*>
+class EpgDayList : public QList<EpgItem>
 {
 public:
 	EpgDayList(const QString &channel = 0, const int &day = 0);

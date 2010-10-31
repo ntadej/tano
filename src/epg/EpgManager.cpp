@@ -21,7 +21,6 @@
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
-#include "container/EpgDayList.h"
 #include "container/EpgItem.h"
 #include "epg/EpgManager.h"
 
@@ -34,7 +33,7 @@ EpgManager::EpgManager(QObject *parent)
 {
 	_slovenia = new EpgSloveniaLoader(this);
 	_timer = new QTimer(this);
-	connect(_timer, SIGNAL(timeout()), this, SLOT(now()));
+	connect(_timer, SIGNAL(timeout()), this, SLOT(current()));
 }
 
 EpgManager::~EpgManager()
@@ -49,7 +48,7 @@ void EpgManager::setEpg(const QStringList &epg,
 	_epgList = epg;
 	_epgType = epgType;
 	if(_epgType == Tano::Slovenia)
-		connect(_slovenia, SIGNAL(schedule(QString, int, QStringList)), this, SLOT(set(QString, int, QStringList)));
+		connect(_slovenia, SIGNAL(schedule(EpgDayList)), this, SLOT(set(EpgDayList)));
 
 	load();
 }
@@ -63,7 +62,7 @@ void EpgManager::clear()
 }
 
 void EpgManager::request(const QString &epg,
-						 const QString &identifier)
+						 const Tano::Id &identifier)
 {
 	_currentIdentifier = identifier;
 
@@ -111,38 +110,36 @@ void EpgManager::set(const EpgDayList &list)
 	}
 }
 
-void EpgManager::post(const QString &e)
+void EpgManager::post(const QString &epg)
 {
-	_currentEpg = e;
+	_currentEpg = epg;
 
-	if(_currentIdentifier == "main") {
-		_currentEpgNow = e;
+	if(_currentIdentifier == Tano::Main) {
+		_currentEpgNow = epg;
 		current();
 	}
-	emit epgSchedule(_day[0][e], _currentIdentifier);
-	emit epgSchedule(_day[1][e], _currentIdentifier);
-	emit epgSchedule(_day[2][e], _currentIdentifier);
-	emit epgSchedule(_day[3][e], _currentIdentifier);
+	emit epgSchedule(_day[0][epg], _currentIdentifier);
+	emit epgSchedule(_day[1][epg], _currentIdentifier);
+	emit epgSchedule(_day[2][epg], _currentIdentifier);
+	emit epgSchedule(_day[3][epg], _currentIdentifier);
 }
 
 void EpgManager::current()
 {
 	int k;
-	QStringList now;
-	for(int i = 0; i < _day[0][_currentEpgNow].size(); i++) {
-		if(_day[0][_currentEpgNow][i-1]->time() >= _day[0][_currentEpgNow][i]->time()) {
+	for(int i = 1; i < _day[0][_currentEpgNow].size(); i++) {
+		if(_day[0][_currentEpgNow][i-1].time() >= _day[0][_currentEpgNow][i].time()) {
 			k = i;
 			break;
-		} else if(QTime::currentTime() > _day[0][_currentEpgNow][i-1]->time() &&
-				  QTime::currentTime() < _day[0][_currentEpgNow][i]->time()) {
+		} else if(QTime::currentTime() > _day[0][_currentEpgNow][i-1].time() &&
+				  QTime::currentTime() < _day[0][_currentEpgNow][i].time()) {
 			k = i;
 			break;
 		}
 	}
 
-	now << "<a href=\"" + _day[0][_currentEpgNow][k-1]->url() + "\">" + _day[0][_currentEpgNow][k-1]->time().toString("hh:mm") + " - " + _day[0][_currentEpgNow][k-1]->title() + "</a>"
-		<< "<a href=\"" + _day[0][_currentEpgNow][k]->url() + "\">" + _day[0][_currentEpgNow][k]->time().toString("hh:mm") + " - " + _day[0][_currentEpgNow][k]->title() + "</a>";
-	emit epgCurrent(now, "main");
+	emit epgCurrent("<a href=\"" + _day[0][_currentEpgNow][k-1].url() + "\">" + _day[0][_currentEpgNow][k-1].time().toString("hh:mm") + " - " + _day[0][_currentEpgNow][k-1].title() + "</a>",
+					"<a href=\"" + _day[0][_currentEpgNow][k].url() + "\">" + _day[0][_currentEpgNow][k].time().toString("hh:mm") + " - " + _day[0][_currentEpgNow][k].title() + "</a>");
 
 	_timer->start(60000);
 }

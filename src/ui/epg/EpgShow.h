@@ -21,7 +21,6 @@
 
 #include <QtGui/QStackedWidget>
 
-#include "container/EpgShowInfo.h"
 #include "core/Common.h"
 #include "core/GetFile.h"
 #include "epg/EpgSloveniaLoader.h"
@@ -30,6 +29,8 @@ namespace Ui
 {
 	class EpgShow;
 }
+
+class EpgShowInfo;
 
 class EpgShow : public QStackedWidget
 {

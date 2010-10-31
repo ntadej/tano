@@ -33,8 +33,6 @@
 #include "ui/dialogs/PluginsDialog.h"
 #include "ui/settings/SettingsEdit.h"
 
-const QString MainWindow::IDENTIFIER = "main";
-
 MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()),
 	_time(new Time()), _update(new UpdateDialog()),
@@ -134,6 +132,7 @@ void MainWindow::createGui()
 	ui->statusBar->addPermanentWidget(ui->buttonUpdate);
 	ui->statusBar->addPermanentWidget(ui->timeWidget);
 	ui->buttonUpdate->hide();
+	ui->scheduleWidget->setIdentifier(Tano::Main);
 }
 
 void MainWindow::createBackend()
@@ -244,9 +243,10 @@ void MainWindow::createConnections()
 	connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), ui->osdWidget, SLOT(show()));
 	connect(ui->videoWidget, SIGNAL(mouseHide()), ui->osdWidget, SLOT(hide()));
 
-	connect(_epg, SIGNAL(epg(QStringList, int, QString)), this, SLOT(showEpg(QStringList, int, QString)));
-	connect(_epg, SIGNAL(epg(QStringList, int, QString)), _schedule, SLOT(loadEpg(QStringList, int, QString)));
-	connect(_schedule, SIGNAL(requestEpg(QString, QString)), _epg, SLOT(request(QString, QString)));
+	connect(_epg, SIGNAL(epgCurrent(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
+	connect(_epg, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(EpgDayList, Tano::Id)));
+	connect(_epg, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), _schedule, SLOT(setEpg(EpgDayList, Tano::Id)));
+	connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _epg, SLOT(request(QString, Tano::Id)));
 	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(get(QString)));
 	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(get(QString)));
 	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(get(QString)));
@@ -472,7 +472,7 @@ void MainWindow::play(const QString &itemFile)
 		ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
 		ui->infoBarWidget->setLogo(_channel->logo());
 
-		_epg->request(_channel->epg(), MainWindow::IDENTIFIER);
+		_epg->request(_channel->epg(), Tano::Main);
 		ui->channelNumber->display(_channel->number());
 
 		_mediaPlayer->open(_channel->url());
@@ -507,27 +507,6 @@ void MainWindow::stop()
 
 	_audioController->reset();
 	_videoController->reset();
-}
-
-void MainWindow::showEpg(const QStringList &epgValue, const int &id, const QString &identifier)
-{
-	if(identifier != MainWindow::IDENTIFIER)
-		return;
-
-	switch (id) {
-		case 0:
-			ui->infoBarWidget->setEpg(epgValue[0], epgValue[1]);
-			break;
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-			ui->scheduleWidget->setEpg(epgValue, id);
-			ui->scheduleWidget->setPage(1);
-			break;
-		default:
-			break;
-	}
 }
 
 void MainWindow::processMenu(const QString &type, const QList<QAction *> &list)

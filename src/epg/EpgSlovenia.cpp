@@ -19,7 +19,10 @@
 #include <QtCore/QDebug>
 #include <QtGui/QTextEdit>
 
-#include "EpgSlovenia.h"
+#include "container/EpgDayList.h"
+#include "container/EpgItem.h"
+#include "container/EpgShowInfo.h"
+#include "epg/EpgSlovenia.h"
 
 EpgSlovenia::EpgSlovenia() {}
 
@@ -120,7 +123,7 @@ EpgDayList EpgSlovenia::processSchedule(const QString &channel,
 	}
 
 	for(int i=0; i<list[0].size(); i++)
-		schedule << new EpgItem(QTime::fromString(list[0][i], "hh:mm"), list[1][i].prepend("http://www.siol.net/"), list[2][i]);
+		schedule << EpgItem(QTime::fromString(list[0][i], "hh:mm"), list[1][i].prepend("http://www.siol.net/"), list[2][i]);
 
 	return schedule;
 }

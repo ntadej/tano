@@ -31,6 +31,12 @@ namespace Tano {
 
 	EpgType epgType(const QString &type);
 	QString epgType(const EpgType &type);
+
+	// Epg ID
+	enum Id {
+		Main,
+		Schedule
+	};
 };
 
 class Common

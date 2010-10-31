@@ -16,7 +16,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "EpgDayList.h"
+#include "container/EpgDayList.h"
 
 EpgDayList::EpgDayList(const QString &channel, const int &day)
 	: _channel(channel),

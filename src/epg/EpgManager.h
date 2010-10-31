@@ -25,6 +25,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTimer>
 
+#include "container/EpgDayList.h"
 #include "core/Common.h"
 #include "epg/EpgSloveniaLoader.h"
 
@@ -41,13 +42,13 @@ public:
 
 public slots:
 	void request(const QString &epg,
-				 const QString &identifier);
+				 const Tano::Id &identifier);
 
 signals:
-	void epgCurrent(const QStringList,
+	void epgCurrent(const QString,
 					const QString);
 	void epgSchedule(const EpgDayList,
-					 const QString);
+					 const Tano::Id);
 
 private slots:
 	void current();
@@ -56,13 +57,13 @@ private slots:
 private:
 	void clear();
 	void load();
-	void post(const QString &e);
+	void post(const QString &epg);
 
 	bool _ready;
 
 	QString _currentEpg;
 	QString _currentEpgNow;
-	QString _currentIdentifier;
+	Tano::Id _currentIdentifier;
 	QString _currentLoadEpg;
 	QString _currentRequest;
 	QStringList _epgList;

@@ -23,8 +23,8 @@
 #include <QtCore/QString>
 #include <QtNetwork/QHttpRequestHeader>
 
-#include "container/EpgDayList.h"
-#include "container/EpgShowInfo.h"
+class EpgDayList;
+class EpgShowInfo;
 
 class EpgSlovenia
 {
