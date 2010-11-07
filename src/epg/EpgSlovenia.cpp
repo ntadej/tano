@@ -153,8 +153,8 @@ EpgShowInfo EpgSlovenia::processShow(const QString &input) const
 	QString date = processDate(exp[2].cap(1));
 	exp[3].indexIn(input);
 	QStringList time = exp[3].cap(1).split(" - ");
-	info.setStartTime(QDateTime::fromString(date + " " + time[0], "dd.MM.yyyy hh:mm"));
-	info.setEndTime(QDateTime::fromString(date + " " +time[1], "dd.MM.yyyy hh:mm"));
+	info.setStartTime(QDateTime::fromString(date + " " + time[0], "d.M.yyyy hh:mm"));
+	info.setEndTime(QDateTime::fromString(date + " " +time[1], "d.M.yyyy hh:mm"));
 
 	// Info
 	exp[4].setPattern("class=\"sub\">([^<]*)"); //Info
