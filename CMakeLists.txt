@@ -15,9 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
-# The name of our project is "Tano". CMakeLists files in this project can
-# refer to the root source directory of the project as ${TANO_SOURCE_DIR}
-# and to the root binary directory of the project as ${TANO_BINARY_DIR}.
 
 PROJECT(Tano)
 cmake_minimum_required(VERSION 2.6)

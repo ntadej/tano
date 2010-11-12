@@ -140,7 +140,7 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
-	_mediaInstance = new VlcInstance(Common::libvlcArgs(), this);
+	_mediaInstance = new VlcInstance(Tano::vlcQtArgs(), this);
 	_mediaPlayer = new VlcMediaPlayer(ui->videoWidget->widgetId(), this);
 
 	_audioController = new VlcAudioControl();
@@ -421,7 +421,7 @@ void MainWindow::mouseWheel()
 
 void MainWindow::aboutTano()
 {
-	Common::about();
+	Tano::about();
 }
 void MainWindow::aboutPlugins()
 {
@@ -551,7 +551,7 @@ void MainWindow::openPlaylist(const bool &start)
 						QDir::homePath(),
 						tr("Tano TV Channel list Files(*.m3u)"));
 	else
-		_playlistName = Common::locateResource(_defaultPlaylist);
+		_playlistName = Tano::locateResource(_defaultPlaylist);
 
 	if (!_playlistName.isEmpty()) {
 		_schedule->openPlaylist(_playlistName);

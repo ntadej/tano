@@ -23,6 +23,16 @@
 #include <QtGui/QWidget>
 
 namespace Tano {
+	// About dialog
+	void about(QWidget *parent = 0 );
+
+	// Resources locators
+	QString locateResource(const QString &file,
+						   const bool &translation = false);
+
+	// Backend settings
+	QList<const char *> vlcQtArgs();
+
 	// Epg types
 	enum EpgType {
 		Slovenia,
@@ -37,18 +47,6 @@ namespace Tano {
 		Main,
 		Schedule
 	};
-};
-
-class Common
-{
-public:
-	// About dialog
-	static void about(QWidget *parent = 0 );
-	// Resources locators
-	static QString locateResource(const QString &file);
-	static QString locateTranslation(const QString &file);
-	// Backend settings
-	static QList<const char *> libvlcArgs();
 };
 
 #endif // TANO_COMMON_H_

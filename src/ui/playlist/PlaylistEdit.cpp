@@ -41,7 +41,7 @@ PlaylistEdit::PlaylistEdit(const QString &playlist,
 	createSettings();
 	createConnections();
 
-	_instance = new VlcInstance(Common::libvlcArgs(), this);
+	_instance = new VlcInstance(Tano::vlcQtArgs(), this);
 	_player = new VlcMediaPlayer(video, this);
 	_timer = new QTimer();
 	connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));

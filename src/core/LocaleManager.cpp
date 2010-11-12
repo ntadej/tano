@@ -46,7 +46,7 @@ QString LocaleManager::language(const QString &locale)
 
 QStringList LocaleManager::loadTranslations()
 {
-	QDir dir(Common::locateTranslation("tano_sl_SI.qm"));
+	QDir dir(Tano::locateResource("tano_sl_SI.qm", true));
 	QStringList list;
 	QLocale locale = QLocale::English;
 	list << QLocale::languageToString(locale.language());
@@ -71,6 +71,6 @@ void LocaleManager::setLocale()
 		locale = QLocale(settings->language()).name();
 	delete settings;
 
-	QString langPath = Common::locateTranslation("tano_" + locale + ".qm");
+	QString langPath = Tano::locateResource("tano_" + locale + ".qm", true);
 	_translator->load(QString("tano_" + locale), langPath);
 }

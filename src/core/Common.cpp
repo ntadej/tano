@@ -21,11 +21,71 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>
 
+#include <vlc-qt/Common.h>
+
 #include "Config.h"
 #include "core/Common.h"
 #include "core/Settings.h"
 
 #include "ui/dialogs/AboutDialog.h"
+
+void Tano::about(QWidget *parent)
+{
+	AboutDialog about(parent);
+	about.exec();
+}
+
+QString Tano::locateResource(const QString &file,
+							 const bool &translation)
+{
+	if(translation) {
+		return locateResource("lang/" + file).replace("/" + file, "");
+	} else {
+		QString path;
+
+		if (QFileInfo(file).exists())
+			path = QFileInfo(file).absoluteFilePath();
+
+		// Try application exe working path
+		else if (QFileInfo(QDir::currentPath() + "/" + file).exists())
+			path = QFileInfo(QDir::currentPath() + "/" + file).absoluteFilePath();
+
+		// Try application exe directory
+		else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
+			path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
+
+		// Try application exe directory without src for development
+		else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).exists())
+			path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).absoluteFilePath();
+
+#ifdef Q_WS_X11
+		else if (QFileInfo("/usr/bin/" + file).exists())
+			path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
+#endif
+
+#ifdef DEFAULT_DATA_DIR
+		else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
+			path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
+#endif
+
+		return path;
+	}
+}
+
+QList<const char *> Tano::vlcQtArgs()
+{
+	QList<const char *> args;
+
+	Settings *s = new Settings();
+	args = VlcCommon::libvlcArgs(s->globalSettings());
+	delete s;
+
+#ifdef Q_WS_WIN
+	args << "--plugin-path=vlc\\plugins\\";
+#endif
+
+	return args;
+}
 
 Tano::EpgType Tano::epgType(const QString &type)
 {
@@ -43,72 +103,4 @@ QString Tano::epgType(const EpgType &type)
 		return QString("slovenia");
 	else if(type == Tano::XMLTV)
 		return QString("xmltv");
-}
-
-void Common::about(QWidget *parent)
-{
-	AboutDialog about(parent);
-	about.exec();
-}
-
-QString Common::locateResource(const QString &file)
-{
-	QString path;
-
-	if (QFileInfo(file).exists())
-		path = QFileInfo(file).absoluteFilePath();
-
-	// Try application exe working path
-	else if (QFileInfo(QDir::currentPath() + "/" + file).exists())
-		path = QFileInfo(QDir::currentPath() + "/" + file).absoluteFilePath();
-
-	// Try application exe directory
-	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
-
-	// Try application exe directory without src for development
-	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).absoluteFilePath();
-
-#ifdef Q_WS_X11
-		else if (QFileInfo("/usr/bin/" + file).exists())
-			path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
-#endif
-
-#ifdef DEFAULT_DATA_DIR
-	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
-		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
-#endif
-
-	return path;
-}
-
-QString Common::locateTranslation(const QString &file)
-{
-	QString path = locateResource("/lang/" + file);
-
-	return path.replace(QString("/" + file), QString(""));
-}
-
-QList<const char *> Common::libvlcArgs()
-{
-	QList<const char *> args;
-
-	Settings *s = new Settings();
-	if(s->globalSettings())
-		args << "--ignore-config";
-	delete s;
-
-	args << "--intf=dummy"
-		 << "--no-media-library"
-		 << "--reset-plugins-cache"
-		 << "--no-stats"
-		 << "--no-osd"
-		 << "--no-video-title-show";
-
-#ifdef Q_WS_WIN
-	args << "--plugin-path=vlc\\plugins\\";
-#endif
-
-	return args;
 }
