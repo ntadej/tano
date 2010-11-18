@@ -82,13 +82,13 @@ QString EpgSlovenia::load(const QString &input,
 QString EpgSlovenia::processDate(const QString &input) const
 {
 	QString date = input;
-	date = date.replace(", ponedeljek ", "");
-	date = date.replace(", torek ", "");
-	date = date.replace(", sreda ", "");
-	date = date.replace(", četrtek ", "");
-	date = date.replace(", petek ", "");
-	date = date.replace(", sobota ", "");
-	date = date.replace(", nedelja ", "");
+	date = date.replace(QString(", ponedeljek "), "");
+	date = date.replace(QString(", torek "), "");
+	date = date.replace(QString(", sreda "), "");
+	date = date.replace(QString().fromUtf8(", četrtek "), "");
+	date = date.replace(QString(", petek "), "");
+	date = date.replace(QString(", sobota "), "");
+	date = date.replace(QString(", nedelja "), "");
 
 	return date;
 }
@@ -153,8 +153,8 @@ EpgShowInfo EpgSlovenia::processShow(const QString &input) const
 	QString date = processDate(exp[2].cap(1));
 	exp[3].indexIn(input);
 	QStringList time = exp[3].cap(1).split(" - ");
-	info.setStartTime(QDateTime::fromString(date + " " + time[0], "d.M.yyyy hh:mm"));
-	info.setEndTime(QDateTime::fromString(date + " " +time[1], "d.M.yyyy hh:mm"));
+	info.setStartTime(QDateTime::fromString(QString(date + " " + time[0]), "d.M.yyyy hh:mm"));
+	info.setEndTime(QDateTime::fromString(QString(date + " " + time[1]), "d.M.yyyy hh:mm"));
 
 	// Info
 	exp[4].setPattern("class=\"sub\">([^<]*)"); //Info
