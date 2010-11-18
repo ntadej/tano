@@ -161,32 +161,32 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="671"/>
+        <location filename="../src/ui/MainWindow.ui" line="619"/>
         <source>&amp;Exit</source>
         <translation>&amp;Ukončit</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="674"/>
+        <location filename="../src/ui/MainWindow.ui" line="622"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="683"/>
+        <location filename="../src/ui/MainWindow.ui" line="631"/>
         <source>&amp;Settings</source>
         <translation>&amp;Nastavení</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="695"/>
+        <location filename="../src/ui/MainWindow.ui" line="643"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Na celou obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="704"/>
+        <location filename="../src/ui/MainWindow.ui" line="652"/>
         <source>&amp;Open Channel list</source>
         <translation>&amp;Otevřít seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="713"/>
+        <location filename="../src/ui/MainWindow.ui" line="661"/>
         <source>Open &amp;File</source>
         <translation>Otevřít &amp;soubor</translation>
     </message>
@@ -196,109 +196,91 @@
         <translation>&amp;Nápověda</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="749"/>
+        <location filename="../src/ui/MainWindow.ui" line="697"/>
         <source>Open URL</source>
         <translation>Otevřít adresu (URL)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="758"/>
+        <location filename="../src/ui/MainWindow.ui" line="706"/>
         <source>Check for updates</source>
         <translation>Prověřit aktualizace</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="769"/>
-        <location filename="../src/ui/MainWindow.ui" line="963"/>
-        <source>Original</source>
-        <translation>Původní</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="777"/>
-        <location filename="../src/ui/MainWindow.ui" line="1035"/>
-        <source>4:3</source>
-        <translation>4:3</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="785"/>
-        <location filename="../src/ui/MainWindow.ui" line="971"/>
-        <source>16:9</source>
-        <translation>16:9</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="794"/>
+        <location filename="../src/ui/MainWindow.ui" line="715"/>
         <source>Open</source>
         <translation>Otevřít</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="463"/>
-        <location filename="../src/ui/MainWindow.ui" line="466"/>
-        <location filename="../src/ui/MainWindow.ui" line="803"/>
-        <location filename="../src/MainWindow.cpp" line="455"/>
-        <location filename="../src/MainWindow.cpp" line="456"/>
-        <location filename="../src/MainWindow.cpp" line="457"/>
-        <location filename="../src/MainWindow.cpp" line="458"/>
+        <location filename="../src/ui/MainWindow.ui" line="411"/>
+        <location filename="../src/ui/MainWindow.ui" line="414"/>
+        <location filename="../src/ui/MainWindow.ui" line="724"/>
+        <location filename="../src/MainWindow.cpp" line="430"/>
+        <location filename="../src/MainWindow.cpp" line="431"/>
+        <location filename="../src/MainWindow.cpp" line="432"/>
+        <location filename="../src/MainWindow.cpp" line="433"/>
         <source>Play</source>
         <translation>Přehrát</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="495"/>
-        <location filename="../src/ui/MainWindow.ui" line="498"/>
-        <location filename="../src/ui/MainWindow.ui" line="812"/>
+        <location filename="../src/ui/MainWindow.ui" line="443"/>
+        <location filename="../src/ui/MainWindow.ui" line="446"/>
+        <location filename="../src/ui/MainWindow.ui" line="733"/>
         <source>Stop</source>
         <translation>Zastavit</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="824"/>
+        <location filename="../src/ui/MainWindow.ui" line="745"/>
         <source>Always on top</source>
         <translation>Vždy nahoře</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="695"/>
+        <location filename="../src/MainWindow.cpp" line="670"/>
         <source>Restore</source>
         <translation>Obnovit</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="848"/>
+        <location filename="../src/ui/MainWindow.ui" line="769"/>
         <source>Simple Mode</source>
         <translation>Jednoduchý režim</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="238"/>
+        <location filename="../src/ui/MainWindow.ui" line="180"/>
         <source>Main Toolbar</source>
         <translation>Hlavní pruh s nástroji</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="559"/>
-        <location filename="../src/ui/MainWindow.ui" line="562"/>
-        <location filename="../src/ui/MainWindow.ui" line="857"/>
+        <location filename="../src/ui/MainWindow.ui" line="507"/>
+        <location filename="../src/ui/MainWindow.ui" line="510"/>
+        <location filename="../src/ui/MainWindow.ui" line="778"/>
         <source>Next</source>
         <translation>Další</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="527"/>
-        <location filename="../src/ui/MainWindow.ui" line="530"/>
-        <location filename="../src/ui/MainWindow.ui" line="866"/>
+        <location filename="../src/ui/MainWindow.ui" line="475"/>
+        <location filename="../src/ui/MainWindow.ui" line="478"/>
+        <location filename="../src/ui/MainWindow.ui" line="787"/>
         <source>Back</source>
         <translation>Zpět</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="623"/>
-        <location filename="../src/ui/MainWindow.ui" line="626"/>
-        <location filename="../src/ui/MainWindow.ui" line="878"/>
+        <location filename="../src/ui/MainWindow.ui" line="571"/>
+        <location filename="../src/ui/MainWindow.ui" line="574"/>
+        <location filename="../src/ui/MainWindow.ui" line="799"/>
         <source>Mute</source>
         <translation>Ztlumit</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="887"/>
+        <location filename="../src/ui/MainWindow.ui" line="808"/>
         <source>Volume up</source>
         <translation>Zvýšit hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="896"/>
+        <location filename="../src/ui/MainWindow.ui" line="817"/>
         <source>Volume down</source>
         <translation>Snížit hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="908"/>
+        <location filename="../src/ui/MainWindow.ui" line="829"/>
         <source>Recorder</source>
         <translation>Nahrávání</translation>
     </message>
@@ -313,210 +295,100 @@
         <translation>&amp;Přehrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="591"/>
-        <location filename="../src/ui/MainWindow.ui" line="594"/>
+        <location filename="../src/ui/MainWindow.ui" line="539"/>
+        <location filename="../src/ui/MainWindow.ui" line="542"/>
         <source>Record Now</source>
         <translation>Nahrávat nyní</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="928"/>
-        <location filename="../src/ui/MainWindow.ui" line="1043"/>
-        <source>1:1</source>
-        <translation>1:1</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="917"/>
-        <location filename="../src/ui/MainWindow.ui" line="920"/>
+        <location filename="../src/ui/MainWindow.ui" line="838"/>
+        <location filename="../src/ui/MainWindow.ui" line="841"/>
         <source>Record Current</source>
         <translation>Nahrávat současný</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="936"/>
-        <location filename="../src/ui/MainWindow.ui" line="979"/>
-        <source>16:10</source>
-        <translation>16:10</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="944"/>
-        <location filename="../src/ui/MainWindow.ui" line="995"/>
-        <source>2.21:1</source>
-        <translation>2.21:1</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="952"/>
-        <location filename="../src/ui/MainWindow.ui" line="1027"/>
-        <source>5:4</source>
-        <translation>5:4</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="987"/>
-        <source>1.85:1</source>
-        <translation>1.85:1</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1003"/>
-        <source>2.35:1</source>
-        <translation>2.35:1</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1011"/>
-        <source>2.39:1</source>
-        <translation>2.39:1</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1019"/>
-        <source>5:3</source>
-        <translation>5:3</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1054"/>
-        <source>Disabled</source>
-        <translation>Zakázáno</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1062"/>
-        <source>Blend</source>
-        <translation>Prolínání</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1070"/>
-        <source>Mean</source>
-        <translation>Střed</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1078"/>
-        <source>Bob</source>
-        <translation>Trhání</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1086"/>
-        <source>Linear</source>
-        <translation>Přímočarý</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1094"/>
-        <source>X</source>
-        <translation>X</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1102"/>
-        <source>Discard</source>
-        <translation>Zrušit</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1111"/>
+        <location filename="../src/ui/MainWindow.ui" line="850"/>
         <source>Timers</source>
         <translation>Časovače</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1120"/>
+        <location filename="../src/ui/MainWindow.ui" line="859"/>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1147"/>
+        <location filename="../src/ui/MainWindow.ui" line="886"/>
         <source>Controls panel</source>
         <translation>Ovládací panel</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1156"/>
+        <location filename="../src/ui/MainWindow.ui" line="895"/>
         <source>About Plugins</source>
         <translation>O přídavných modulech</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1178"/>
-        <location filename="../src/ui/MainWindow.ui" line="1181"/>
-        <location filename="../src/ui/MainWindow.ui" line="1184"/>
-        <source>Next crop mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1189"/>
-        <location filename="../src/ui/MainWindow.ui" line="1192"/>
-        <location filename="../src/ui/MainWindow.ui" line="1195"/>
-        <source>Next aspect ratio mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="1200"/>
-        <location filename="../src/ui/MainWindow.ui" line="1203"/>
-        <location filename="../src/ui/MainWindow.ui" line="1206"/>
-        <source>Next deinterlace mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="216"/>
+        <location filename="../src/ui/MainWindow.ui" line="158"/>
         <source>&amp;File</source>
         <translation>&amp;Soubor</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="193"/>
-        <source>Aspect ratio</source>
-        <translation>Poměr stran</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="176"/>
-        <source>Deinterlacing</source>
-        <translation>Zrušení prokládání</translation>
-    </message>
-    <message>
-        <location filename="../src/MainWindow.cpp" line="76"/>
+        <location filename="../src/MainWindow.cpp" line="79"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Chcete ukončit program Tano?
 Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="446"/>
-        <location filename="../src/MainWindow.cpp" line="447"/>
-        <location filename="../src/MainWindow.cpp" line="448"/>
-        <location filename="../src/MainWindow.cpp" line="449"/>
+        <location filename="../src/MainWindow.cpp" line="421"/>
+        <location filename="../src/MainWindow.cpp" line="422"/>
+        <location filename="../src/MainWindow.cpp" line="423"/>
+        <location filename="../src/MainWindow.cpp" line="424"/>
         <source>Pause</source>
         <translation>Pozastavit</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="546"/>
+        <location filename="../src/MainWindow.cpp" line="521"/>
         <source>Open Channel list File</source>
         <translation>Otevřít soubor se seznamem programů</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="548"/>
+        <location filename="../src/MainWindow.cpp" line="523"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Soubory Tano se seznamem programů TV (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="576"/>
+        <location filename="../src/MainWindow.cpp" line="551"/>
         <source>Open File or URL</source>
         <translation>Otevřít soubor nebo adresu (URL)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="578"/>
+        <location filename="../src/MainWindow.cpp" line="553"/>
         <source>Multimedia files(*)</source>
         <translation>Multimediální soubory (*)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="589"/>
+        <location filename="../src/MainWindow.cpp" line="564"/>
         <source>Open URL or stream</source>
         <translation>Otevřít adresu (URL) nebo datový proud</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="590"/>
+        <location filename="../src/MainWindow.cpp" line="565"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Zadejte adresu (URL) multimediálního souboru nebo datového proudu, jejž chcete přehrávat:</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="601"/>
+        <location filename="../src/MainWindow.cpp" line="576"/>
         <source>Open Subtitles file</source>
         <translation>Otevřít soubor s titulky</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="603"/>
+        <location filename="../src/MainWindow.cpp" line="578"/>
         <source>Subtitles files(*.sub *.srt *.txt)</source>
         <translation>Soubory s titulky (*.sub *.srt *.txt)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="347"/>
-        <location filename="../src/ui/MainWindow.ui" line="1173"/>
+        <location filename="../src/ui/MainWindow.ui" line="289"/>
+        <location filename="../src/ui/MainWindow.ui" line="912"/>
         <source>Schedule</source>
         <translation>Rozvrh</translation>
     </message>
@@ -527,45 +399,45 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
-        <location filename="../src/MainWindow.cpp" line="75"/>
-        <location filename="../src/MainWindow.cpp" line="651"/>
-        <location filename="../src/MainWindow.cpp" line="653"/>
+        <location filename="../src/MainWindow.cpp" line="78"/>
+        <location filename="../src/MainWindow.cpp" line="626"/>
+        <location filename="../src/MainWindow.cpp" line="628"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="662"/>
+        <location filename="../src/ui/MainWindow.ui" line="610"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="722"/>
-        <location filename="../src/ui/MainWindow.ui" line="725"/>
+        <location filename="../src/ui/MainWindow.ui" line="670"/>
+        <location filename="../src/ui/MainWindow.ui" line="673"/>
         <source>Edit Channels</source>
         <translation>Upravit programy</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="281"/>
-        <location filename="../src/ui/MainWindow.ui" line="740"/>
+        <location filename="../src/ui/MainWindow.ui" line="223"/>
+        <location filename="../src/ui/MainWindow.ui" line="688"/>
         <source>Info panel</source>
         <translation>Panel s podrobnostmi</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="833"/>
-        <location filename="../src/ui/MainWindow.ui" line="836"/>
-        <location filename="../src/MainWindow.cpp" line="692"/>
+        <location filename="../src/ui/MainWindow.ui" line="754"/>
+        <location filename="../src/ui/MainWindow.ui" line="757"/>
+        <location filename="../src/MainWindow.cpp" line="667"/>
         <source>Hide to tray</source>
         <translation>Skrýt v oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1132"/>
-        <location filename="../src/ui/MainWindow.ui" line="1135"/>
+        <location filename="../src/ui/MainWindow.ui" line="871"/>
+        <location filename="../src/ui/MainWindow.ui" line="874"/>
         <source>Stop recording</source>
         <translation>Zastavit nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="1161"/>
-        <location filename="../src/ui/MainWindow.ui" line="1164"/>
+        <location filename="../src/ui/MainWindow.ui" line="900"/>
+        <location filename="../src/ui/MainWindow.ui" line="903"/>
         <source>Open from file</source>
         <translation>Otevřít ze souboru</translation>
     </message>
@@ -596,13 +468,92 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="145"/>
-        <source>Crop video</source>
-        <translation>Ořezat obraz</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="166"/>
         <source>Subtitles</source>
         <translation>Titulky</translation>
+    </message>
+</context>
+<context>
+    <name>MenuAspectRatio</name>
+    <message>
+        <location filename="../src/ui/menu/MenuAspectRatio.cpp" line="26"/>
+        <source>Aspect ratio</source>
+        <translation type="unfinished">Poměr stran</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuAspectRatio.cpp" line="28"/>
+        <source>Next aspect ratio option</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuAspectRatio.cpp" line="30"/>
+        <source>Original</source>
+        <translation type="unfinished">Původní</translation>
+    </message>
+</context>
+<context>
+    <name>MenuCrop</name>
+    <message>
+        <location filename="../src/ui/menu/MenuCrop.cpp" line="26"/>
+        <source>Crop video</source>
+        <translation type="unfinished">Ořezat obraz</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuCrop.cpp" line="28"/>
+        <source>Next crop option</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuCrop.cpp" line="30"/>
+        <source>Original</source>
+        <translation type="unfinished">Původní</translation>
+    </message>
+</context>
+<context>
+    <name>MenuDeinterlacing</name>
+    <message>
+        <location filename="../src/ui/menu/MenuDeinterlacing.cpp" line="26"/>
+        <source>Deinterlacing</source>
+        <translation type="unfinished">Zrušení prokládání</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuDeinterlacing.cpp" line="28"/>
+        <source>Next deinterlacing option</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuDeinterlacing.cpp" line="30"/>
+        <source>Disabled</source>
+        <translation type="unfinished">Zakázáno</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuDeinterlacing.cpp" line="35"/>
+        <source>Discard</source>
+        <translation type="unfinished">Zrušit</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuDeinterlacing.cpp" line="39"/>
+        <source>Blend</source>
+        <translation type="unfinished">Prolínání</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuDeinterlacing.cpp" line="43"/>
+        <source>Mean</source>
+        <translation type="unfinished">Střed</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuDeinterlacing.cpp" line="47"/>
+        <source>Bob</source>
+        <translation type="unfinished">Trhání</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuDeinterlacing.cpp" line="51"/>
+        <source>Linear</source>
+        <translation type="unfinished">Přímočarý</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/menu/MenuDeinterlacing.cpp" line="55"/>
+        <source>X</source>
+        <translation type="unfinished">X</translation>
     </message>
 </context>
 <context>

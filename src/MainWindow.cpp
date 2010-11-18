@@ -136,6 +136,13 @@ void MainWindow::createGui()
 	ui->statusBar->addPermanentWidget(ui->buttonUpdate);
 	ui->buttonUpdate->hide();
 	ui->scheduleWidget->setIdentifier(Tano::Main);
+
+	_menuAspectRatio = new MenuAspectRatio(ui->videoWidget, ui->menuVideo);
+	ui->menuVideo->addMenu(_menuAspectRatio);
+	_menuCrop = new MenuCrop(ui->videoWidget, ui->menuVideo);
+	ui->menuVideo->addMenu(_menuCrop);
+	_menuDeinterlacing = new MenuDeinterlacing(ui->videoWidget, ui->menuVideo);
+	ui->menuVideo->addMenu(_menuDeinterlacing);
 }
 
 void MainWindow::createBackend()
@@ -147,7 +154,6 @@ void MainWindow::createBackend()
 	_videoController = new VlcVideoControl(_defaultSubtitleLanguage);
 
 	ui->seekWidget->setAutoHide(true);
-	ui->menuDeinterlacing->setEnabled(true);
 }
 
 void MainWindow::createSettings()
@@ -271,45 +277,10 @@ void MainWindow::createConnections()
 
 	connect(_time, SIGNAL(startTimer(Timer*)), ui->recorder, SLOT(recordTimer(Timer*)));
 	connect(_time, SIGNAL(stopTimer(Timer*)), ui->recorder, SLOT(stopTimer(Timer*)));
-
-	connect(ui->actionCropNext, SIGNAL(triggered()), this, SLOT(nextCrop()));
-	connect(ui->actionDeinterlaceNext, SIGNAL(triggered()), this, SLOT(nextDeinterlace()));
-	connect(ui->actionRatioNext, SIGNAL(triggered()), this, SLOT(nextRatio()));
 }
 
 void MainWindow::createMenus()
 {
-	_ratioGroup = new QActionGroup(this);
-	_ratioGroup->addAction(ui->actionRatioOriginal);
-	_ratioGroup->addAction(ui->actionRatio1_1);
-	_ratioGroup->addAction(ui->actionRatio4_3);
-	_ratioGroup->addAction(ui->actionRatio16_9);
-	_ratioGroup->addAction(ui->actionRatio16_10);
-	_ratioGroup->addAction(ui->actionRatio2_21_1);
-	_ratioGroup->addAction(ui->actionRatio5_4);
-
-	_cropGroup = new QActionGroup(this);
-	_cropGroup->addAction(ui->actionCropOriginal);
-	_cropGroup->addAction(ui->actionCrop1_1);
-	_cropGroup->addAction(ui->actionCrop4_3);
-	_cropGroup->addAction(ui->actionCrop16_9);
-	_cropGroup->addAction(ui->actionCrop16_10);
-	_cropGroup->addAction(ui->actionCrop1_85_1);
-	_cropGroup->addAction(ui->actionCrop2_21_1);
-	_cropGroup->addAction(ui->actionCrop2_35_1);
-	_cropGroup->addAction(ui->actionCrop2_39_1);
-	_cropGroup->addAction(ui->actionCrop5_4);
-	_cropGroup->addAction(ui->actionCrop5_3);
-
-	_filterGroup = new QActionGroup(this);
-	_filterGroup->addAction(ui->actionFilterDisabled);
-	_filterGroup->addAction(ui->actionFilterDiscard);
-	_filterGroup->addAction(ui->actionFilterBlend);
-	_filterGroup->addAction(ui->actionFilterMean);
-	_filterGroup->addAction(ui->actionFilterBob);
-	_filterGroup->addAction(ui->actionFilterLinear);
-	_filterGroup->addAction(ui->actionFilterX);
-
 	_rightMenu = new QMenu();
 	_rightMenu->addAction(ui->actionPlay);
 	_rightMenu->addAction(ui->actionStop);
@@ -356,9 +327,9 @@ void MainWindow::createShortcuts()
 			 << ui->actionTop
 			 << ui->actionLite
 			 << ui->actionTray
-			 << ui->actionRatioNext
-			 << ui->actionCropNext
-			 << ui->actionDeinterlaceNext;
+			 << _menuAspectRatio->actionNext()
+			 << _menuCrop->actionNext()
+			 << _menuDeinterlacing->actionNext();
 
 	_shortcuts = new Shortcuts(_actions, this);
 }
@@ -495,8 +466,8 @@ void MainWindow::play(const QString &itemFile)
 void MainWindow::stop()
 {
 	if(!_videoSettings) {
-		ui->actionRatioOriginal->trigger();
-		ui->actionCropOriginal->trigger();
+		_menuAspectRatio->original()->trigger();
+		_menuCrop->original()->trigger();
 	}
 
 	_epg->stop();
@@ -746,32 +717,5 @@ void MainWindow::recorder(const bool &enabled)
 		ui->stackedWidget->setCurrentIndex(0);
 		ui->infoWidget->setVisible(true);
 		ui->osdWidget->setVisible(true);
-	}
-}
-
-void MainWindow::nextCrop()
-{
-	if(_cropGroup->actions().indexOf(_cropGroup->checkedAction()) == _cropGroup->actions().size()-1) {
-		_cropGroup->actions()[0]->trigger();;
-	} else {
-		_cropGroup->actions()[_cropGroup->actions().indexOf(_cropGroup->checkedAction())+1]->trigger();;
-	}
-}
-
-void MainWindow::nextDeinterlace()
-{
-	if(_filterGroup->actions().indexOf(_filterGroup->checkedAction()) == _filterGroup->actions().size()-1) {
-		_filterGroup->actions()[0]->trigger();;
-	} else {
-		_filterGroup->actions()[_filterGroup->actions().indexOf(_filterGroup->checkedAction())+1]->trigger();;
-	}
-}
-
-void MainWindow::nextRatio()
-{
-	if(_ratioGroup->actions().indexOf(_ratioGroup->checkedAction()) == _ratioGroup->actions().size()-1) {
-		_ratioGroup->actions()[0]->trigger();;
-	} else {
-		_ratioGroup->actions()[_ratioGroup->actions().indexOf(_ratioGroup->checkedAction())+1]->trigger();;
 	}
 }

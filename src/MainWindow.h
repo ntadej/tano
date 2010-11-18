@@ -39,6 +39,9 @@
 #include "ui/dialogs/UpdateDialog.h"
 #include "ui/epg/EpgFull.h"
 #include "ui/epg/EpgShow.h"
+#include "ui/menu/MenuAspectRatio.h"
+#include "ui/menu/MenuCrop.h"
+#include "ui/menu/MenuDeinterlacing.h"
 #include "ui/playlist/PlaylistEdit.h"
 #include "ui/recorder/TimersEdit.h"
 
@@ -98,10 +101,6 @@ private slots:
 
 	void recordNow();
 	void recorder(const bool &enabled);
-
-	void nextCrop();
-	void nextDeinterlace();
-	void nextRatio();
 
 signals:
 	void setVolume(int);
@@ -167,10 +166,12 @@ private:
 
 	//Menus and actions
 	TrayIcon *_trayIcon;
+	MenuCrop *_menuCrop;
+	MenuDeinterlacing *_menuDeinterlacing;
+	MenuAspectRatio *_menuAspectRatio;
 	QMenu *_rightMenu;
 	QMenu *_openMenu;
 	QActionGroup *_ratioGroup;
-	QActionGroup *_cropGroup;
 	QActionGroup *_filterGroup;
 	QList<QAction*> _actions;
 };

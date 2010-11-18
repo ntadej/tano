@@ -35,41 +35,36 @@ void Tano::about(QWidget *parent)
 	about.exec();
 }
 
-QString Tano::locateResource(const QString &file,
-							 const bool &translation)
+QString Tano::locateResource(const QString &file)
 {
-	if(translation) {
-		return locateResource("lang/" + file).replace("/" + file, "");
-	} else {
-		QString path;
+	QString path;
 
-		if (QFileInfo(file).exists())
-			path = QFileInfo(file).absoluteFilePath();
+	if (QFileInfo(file).exists())
+		path = QFileInfo(file).absoluteFilePath();
 
-		// Try application exe working path
-		else if (QFileInfo(QDir::currentPath() + "/" + file).exists())
-			path = QFileInfo(QDir::currentPath() + "/" + file).absoluteFilePath();
+	// Try application exe working path
+	else if (QFileInfo(QDir::currentPath() + "/" + file).exists())
+		path = QFileInfo(QDir::currentPath() + "/" + file).absoluteFilePath();
 
-		// Try application exe directory
-		else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
-			path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
+	// Try application exe directory
+	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
 
-		// Try application exe directory without src for development
-		else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).exists())
-			path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).absoluteFilePath();
+	// Try application exe directory without src for development
+	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).absoluteFilePath();
 
 #ifdef Q_WS_X11
-		else if (QFileInfo("/usr/bin/" + file).exists())
-			path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
+	else if (QFileInfo("/usr/bin/" + file).exists())
+		path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
 #endif
 
 #ifdef DEFAULT_DATA_DIR
-		else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
-			path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
+	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
+		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
 #endif
 
-		return path;
-	}
+	return path;
 }
 
 QList<const char *> Tano::vlcQtArgs()

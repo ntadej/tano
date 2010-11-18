@@ -74,6 +74,10 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/epg/EpgList.h
 	ui/epg/EpgSchedule.h
 	ui/epg/EpgShow.h
+	ui/menu/MenuAspectRatio.h
+	ui/menu/MenuCore.h
+	ui/menu/MenuCrop.h
+	ui/menu/MenuDeinterlacing.h
 	ui/playlist/PlaylistEdit.h
 	ui/playlist/PlaylistWidget.h
 	ui/recorder/Recorder.h
@@ -135,6 +139,10 @@ SET(Tano_UI_Srcs
 	ui/epg/EpgList.cpp
 	ui/epg/EpgSchedule.cpp
 	ui/epg/EpgShow.cpp
+	ui/menu/MenuAspectRatio.cpp
+	ui/menu/MenuCore.cpp
+	ui/menu/MenuCrop.cpp
+	ui/menu/MenuDeinterlacing.cpp
 	ui/playlist/PlaylistEdit.cpp
 	ui/playlist/PlaylistWidget.cpp
 	ui/recorder/Recorder.cpp

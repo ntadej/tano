@@ -16,36 +16,27 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_MENUASPECTRATIO_H_
+#define TANO_MENUASPECTRATIO_H_
 
-#include <QtCore/QString>
-#include <QtGui/QWidget>
+#include <vlc-qt/VideoWidget.h>
 
-namespace Tano {
-	// About dialog
-	void about(QWidget *parent = 0 );
+#include "ui/menu/MenuCore.h"
 
-	// Resources locators
-	QString locateResource(const QString &file);
+class MenuAspectRatio : public MenuCore
+{
+Q_OBJECT
+public:
+	MenuAspectRatio(VlcVideoWidget *videoWidget,
+					QWidget *parent = 0);
+	~MenuAspectRatio();
 
-	// Backend settings
-	QList<const char *> vlcQtArgs();
+	QAction *original() { return _aspectRatioOriginal; }
 
-	// Epg types
-	enum EpgType {
-		Slovenia,
-		XMLTV
-	};
+private:
+	QAction *_aspectRatioOriginal;
 
-	EpgType epgType(const QString &type);
-	QString epgType(const EpgType &type);
-
-	// Epg ID
-	enum Id {
-		Main,
-		Schedule
-	};
+	VlcVideoWidget *_videoWidget;
 };
 
-#endif // TANO_COMMON_H_
+#endif // TANO_MENUASPECTRATIO_H_

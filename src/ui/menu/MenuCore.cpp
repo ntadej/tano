@@ -16,36 +16,39 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#include "MenuCore.h"
 
-#include <QtCore/QString>
-#include <QtGui/QWidget>
+MenuCore::MenuCore(QWidget *parent)
+	: QMenu(parent)
+{
+	_group = new QActionGroup(this);
+	_next = new QAction(this);
+	connect(_next, SIGNAL(triggered()), this, SLOT(next()));
 
-namespace Tano {
-	// About dialog
-	void about(QWidget *parent = 0 );
+	addAction(_next);
+}
 
-	// Resources locators
-	QString locateResource(const QString &file);
+MenuCore::~MenuCore()
+{
+	for(int i = 0; i < _group->actions().size(); i++)
+		delete _group->actions()[i];
 
-	// Backend settings
-	QList<const char *> vlcQtArgs();
+	delete _group;
+	delete _next;
+}
 
-	// Epg types
-	enum EpgType {
-		Slovenia,
-		XMLTV
-	};
+void MenuCore::addItem(QAction *action)
+{
+	action->setCheckable(true);
+	_group->addAction(action);
+	insertAction(_next, action);
+}
 
-	EpgType epgType(const QString &type);
-	QString epgType(const EpgType &type);
-
-	// Epg ID
-	enum Id {
-		Main,
-		Schedule
-	};
-};
-
-#endif // TANO_COMMON_H_
+void MenuCore::next()
+{
+	if(_group->actions().indexOf(_group->checkedAction()) == _group->actions().size()-1) {
+		_group->actions()[0]->trigger();
+	} else {
+		_group->actions()[_group->actions().indexOf(_group->checkedAction())+1]->trigger();
+	}
+}

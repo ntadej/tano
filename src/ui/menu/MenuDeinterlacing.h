@@ -16,36 +16,27 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_MENUDEINTERLACING_H_
+#define TANO_MENUDEINTERLACING_H_
 
-#include <QtCore/QString>
-#include <QtGui/QWidget>
+#include <vlc-qt/VideoWidget.h>
 
-namespace Tano {
-	// About dialog
-	void about(QWidget *parent = 0 );
+#include "ui/menu/MenuCore.h"
 
-	// Resources locators
-	QString locateResource(const QString &file);
+class MenuDeinterlacing : public MenuCore
+{
+Q_OBJECT
+public:
+	MenuDeinterlacing(VlcVideoWidget *videoWidget,
+					  QWidget *parent = 0);
+	~MenuDeinterlacing();
 
-	// Backend settings
-	QList<const char *> vlcQtArgs();
+	QAction *original() { return _dfOriginal; }
 
-	// Epg types
-	enum EpgType {
-		Slovenia,
-		XMLTV
-	};
+private:
+	QAction *_dfOriginal;
 
-	EpgType epgType(const QString &type);
-	QString epgType(const EpgType &type);
-
-	// Epg ID
-	enum Id {
-		Main,
-		Schedule
-	};
+	VlcVideoWidget *_videoWidget;
 };
 
-#endif // TANO_COMMON_H_
+#endif // TANO_MENUDEINTERLACING_H_

@@ -16,36 +16,27 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_MENUCORE_H_
+#define TANO_MENUCORE_H_
 
-#include <QtCore/QString>
-#include <QtGui/QWidget>
+#include <QtGui/QMenu>
 
-namespace Tano {
-	// About dialog
-	void about(QWidget *parent = 0 );
+class MenuCore : public QMenu
+{
+Q_OBJECT
+public:
+	MenuCore(QWidget *parent = 0);
+	~MenuCore();
 
-	// Resources locators
-	QString locateResource(const QString &file);
+	void addItem(QAction *action);
+	QAction *actionNext() { return _next; }
 
-	// Backend settings
-	QList<const char *> vlcQtArgs();
+private slots:
+	void next();
 
-	// Epg types
-	enum EpgType {
-		Slovenia,
-		XMLTV
-	};
-
-	EpgType epgType(const QString &type);
-	QString epgType(const EpgType &type);
-
-	// Epg ID
-	enum Id {
-		Main,
-		Schedule
-	};
+private:
+	QActionGroup *_group;
+	QAction *_next;
 };
 
-#endif // TANO_COMMON_H_
+#endif // TANO_MENUCORE_H_
