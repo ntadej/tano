@@ -42,6 +42,9 @@
 #include "ui/menu/MenuAspectRatio.h"
 #include "ui/menu/MenuCrop.h"
 #include "ui/menu/MenuDeinterlacing.h"
+#include "ui/menu/MenuTrackAudio.h"
+#include "ui/menu/MenuTrackSubtitles.h"
+#include "ui/menu/MenuTrackVideo.h"
 #include "ui/playlist/PlaylistEdit.h"
 #include "ui/recorder/TimersEdit.h"
 
@@ -85,10 +88,6 @@ private slots:
 	void openPlaylist(const bool &start = false);
 	void openFile();
 	void openUrl();
-	void openSubtitles();
-
-	void processMenu(const QString &type,
-					 const QList<QAction*> &list);
 
 	void tooltip(const QString &channelNow = "stop");
 	void showRightMenu(const QPoint &pos);
@@ -166,9 +165,12 @@ private:
 
 	//Menus and actions
 	TrayIcon *_trayIcon;
+	MenuAspectRatio *_menuAspectRatio;
 	MenuCrop *_menuCrop;
 	MenuDeinterlacing *_menuDeinterlacing;
-	MenuAspectRatio *_menuAspectRatio;
+	MenuTrackAudio *_menuTrackAudio;
+	MenuTrackSubtitles *_menuTrackSubtitles;
+	MenuTrackVideo *_menuTrackVideo;
 	QMenu *_rightMenu;
 	QMenu *_openMenu;
 	QActionGroup *_ratioGroup;

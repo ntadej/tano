@@ -78,6 +78,9 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/menu/MenuCore.h
 	ui/menu/MenuCrop.h
 	ui/menu/MenuDeinterlacing.h
+	ui/menu/MenuTrackAudio.h
+	ui/menu/MenuTrackSubtitles.h
+	ui/menu/MenuTrackVideo.h
 	ui/playlist/PlaylistEdit.h
 	ui/playlist/PlaylistWidget.h
 	ui/recorder/Recorder.h
@@ -143,6 +146,9 @@ SET(Tano_UI_Srcs
 	ui/menu/MenuCore.cpp
 	ui/menu/MenuCrop.cpp
 	ui/menu/MenuDeinterlacing.cpp
+	ui/menu/MenuTrackAudio.cpp
+	ui/menu/MenuTrackSubtitles.cpp
+	ui/menu/MenuTrackVideo.cpp
 	ui/playlist/PlaylistEdit.cpp
 	ui/playlist/PlaylistWidget.cpp
 	ui/recorder/Recorder.cpp

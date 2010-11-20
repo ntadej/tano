@@ -72,7 +72,7 @@ QList<const char *> Tano::vlcQtArgs()
 	QList<const char *> args;
 
 	Settings *s = new Settings();
-	args = VlcCommon::libvlcArgs(s->globalSettings());
+	args = Vlc::libvlcArgs(s->globalSettings());
 	delete s;
 
 #ifdef Q_WS_WIN

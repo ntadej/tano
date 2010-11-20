@@ -52,3 +52,19 @@ void MenuCore::next()
 		_group->actions()[_group->actions().indexOf(_group->checkedAction())+1]->trigger();
 	}
 }
+
+void MenuCore::setActions(const Vlc::ActionsType &type,
+						  const QList<QAction *> &actions)
+{
+	if(type != _type)
+		return;
+
+	if(actions.size() == 0) {
+		setDisabled(true);
+	} else {
+		setEnabled(true);
+		for(int i = 0; i < actions.size(); i++) {
+			addItem(actions[i]);
+		}
+	}
+}

@@ -29,6 +29,7 @@
 #include <QtGui/QMessageBox>
 #include <QtGui/QSplashScreen>
 
+#include <vlc-qt/Common.h>
 #include <vlc-qt/Config.h>
 
 #include "core/Common.h"
@@ -137,6 +138,14 @@ void MainWindow::createGui()
 	ui->buttonUpdate->hide();
 	ui->scheduleWidget->setIdentifier(Tano::Main);
 
+
+	_menuTrackAudio = new MenuTrackAudio(ui->menuAudio);
+	ui->menuAudio->addMenu(_menuTrackAudio);
+
+	_menuTrackVideo = new MenuTrackVideo(ui->menuVideo);
+	ui->menuVideo->addMenu(_menuTrackVideo);
+	_menuTrackSubtitles = new MenuTrackSubtitles(ui->menuVideo);
+	ui->menuVideo->addMenu(_menuTrackSubtitles);
 	_menuAspectRatio = new MenuAspectRatio(ui->videoWidget, ui->menuVideo);
 	ui->menuVideo->addMenu(_menuAspectRatio);
 	_menuCrop = new MenuCrop(ui->videoWidget, ui->menuVideo);
@@ -232,7 +241,6 @@ void MainWindow::createConnections()
 	connect(ui->actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
 	connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
 	connect(ui->actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
-	connect(ui->actionOpenSubtitles, SIGNAL(triggered()), this, SLOT(openSubtitles()));
 	connect(ui->actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
 
 	connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
@@ -267,8 +275,10 @@ void MainWindow::createConnections()
 	connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMouseHide()));
 	connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMouseHide()));
 
-	connect(_audioController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
-	connect(_videoController, SIGNAL(actions(QString, QList<QAction*>)), this, SLOT(processMenu(QString, QList<QAction*>)));
+	connect(_audioController, SIGNAL(actions(Vlc::ActionsType, QList<QAction*>)), _menuTrackAudio, SLOT(setActions(Vlc::ActionsType, QList<QAction*>)));
+	connect(_videoController, SIGNAL(actions(Vlc::ActionsType, QList<QAction*>)), _menuTrackSubtitles, SLOT(setActions(Vlc::ActionsType, QList<QAction*>)));
+	connect(_videoController, SIGNAL(actions(Vlc::ActionsType, QList<QAction*>)), _menuTrackVideo, SLOT(setActions(Vlc::ActionsType, QList<QAction*>)));
+	connect(_menuTrackSubtitles, SIGNAL(subtitles(QString)), _videoController, SLOT(loadSubtitle(QString)));
 	connect(_mediaPlayer, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool, bool, bool)));
 
 	connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
@@ -484,28 +494,6 @@ void MainWindow::stop()
 	_videoController->reset();
 }
 
-void MainWindow::processMenu(const QString &type, const QList<QAction *> &list)
-{
-	QMenu *menu;
-	if(type == "sub")
-		menu = ui->menuSubtitles;
-	else if(type == "audio")
-		menu = ui->menuAudioTrack;
-	else if(type == "video")
-		menu = ui->menuVideoTrack;
-
-	if(list.size()==0) {
-		menu->setDisabled(true);
-		ui->menuSubtitles->setDisabled(false);
-		return;
-	} else {
-		menu->setDisabled(false);
-	}
-
-	for(int i = 0; i < list.size(); ++i)
-		menu->addAction(list[i]);
-}
-
 // Open dialogs
 void MainWindow::openPlaylist(const bool &start)
 {
@@ -570,19 +558,6 @@ void MainWindow::openUrl()
 
 	play(file);
 }
-void MainWindow::openSubtitles()
-{
-	QString file =
-		QFileDialog::getOpenFileName(this, tr("Open Subtitles file"),
-						QDir::homePath(),
-						tr("Subtitles files(*.sub *.srt *.txt)"));
-
-	if (file.isEmpty())
-		return;
-
-	_videoController->loadSubtitle(file);
-}
-
 
 //GUI
 void MainWindow::showSchedule()

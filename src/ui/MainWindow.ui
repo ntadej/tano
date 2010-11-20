@@ -101,22 +101,9 @@
     <property name="title">
      <string>&amp;Audio</string>
     </property>
-    <widget class="QMenu" name="menuAudioTrack">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="title">
-      <string>Audio track</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../data/icons.qrc">
-       <normaloff>:/icons/24x24/audio.png</normaloff>:/icons/24x24/audio.png</iconset>
-     </property>
-    </widget>
     <addaction name="actionMute"/>
     <addaction name="actionVolumeUp"/>
     <addaction name="actionVolumeDown"/>
-    <addaction name="menuAudioTrack"/>
    </widget>
    <widget class="QMenu" name="menuMedia">
     <property name="title">
@@ -131,27 +118,6 @@
     <property name="title">
      <string>&amp;Video</string>
     </property>
-    <widget class="QMenu" name="menuVideoTrack">
-     <property name="title">
-      <string>Video track</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../data/icons.qrc">
-       <normaloff>:/icons/24x24/video.png</normaloff>:/icons/24x24/video.png</iconset>
-     </property>
-    </widget>
-    <widget class="QMenu" name="menuSubtitles">
-     <property name="title">
-      <string>Subtitles</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../data/icons.qrc">
-       <normaloff>:/icons/24x24/subtitle.png</normaloff>:/icons/24x24/subtitle.png</iconset>
-     </property>
-     <addaction name="actionOpenSubtitles"/>
-    </widget>
-    <addaction name="menuVideoTrack"/>
-    <addaction name="menuSubtitles"/>
    </widget>
    <widget class="QMenu" name="menuFile">
     <property name="title">
@@ -277,8 +243,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>309</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -888,19 +854,11 @@
   </action>
   <action name="actionAboutPlugins">
    <property name="icon">
-    <iconset>
-     <normaloff>:/icons/22x22/plugin.png</normaloff>:/icons/22x22/plugin.png</iconset>
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/plugin.png</normaloff>:/icons/24x24/plugin.png</iconset>
    </property>
    <property name="text">
     <string>About Plugins</string>
-   </property>
-  </action>
-  <action name="actionOpenSubtitles">
-   <property name="text">
-    <string>Open from file</string>
-   </property>
-   <property name="toolTip">
-    <string>Open from file</string>
    </property>
   </action>
   <action name="actionSchedule">

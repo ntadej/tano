@@ -16,37 +16,33 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MENUCORE_H_
-#define TANO_MENUCORE_H_
+#include <QtGui/QFileDialog>
 
-#include <QtGui/QMenu>
+#include "MenuTrackSubtitles.h"
 
-#include <vlc-qt/Common.h>
-
-class MenuCore : public QMenu
+MenuTrackSubtitles::MenuTrackSubtitles(QWidget *parent)
+	: MenuCore(parent)
 {
-Q_OBJECT
-public:
-	MenuCore(QWidget *parent = 0);
-	~MenuCore();
+	setTitle(tr("Subtitles"));
+	setIcon(QIcon(":/icons/24x24/subtitles.png"));
+	actionNext()->setText(tr("Next subtitles"));
+	setType(Vlc::Subtitles);
 
-	QAction *actionNext() { return _next; }
-	void addItem(QAction *action);
-	void setType(const Vlc::ActionsType &type) { _type = type; }
-	Vlc::ActionsType type() const { return _type; }
+	QAction *open = new QAction(tr("Open subtitle file"), this);
+	connect(open, SIGNAL(triggered()), this, SLOT(openSubtitles()));
+	addAction(open);
+}
 
-public slots:
-	void setActions(const Vlc::ActionsType &type,
-					const QList<QAction*> &actions);
+MenuTrackSubtitles::~MenuTrackSubtitles() { }
 
-private slots:
-	void next();
+void MenuTrackSubtitles::openSubtitles()
+{
+	QString file = QFileDialog::getOpenFileName(this, tr("Open Subtitles file"),
+												QDir::homePath(),
+												tr("Subtitles files(*.sub *.srt *.txt)"));
 
-private:
-	QActionGroup *_group;
-	QAction *_next;
+	if (file.isEmpty())
+		return;
 
-	Vlc::ActionsType _type;
-};
-
-#endif // TANO_MENUCORE_H_
+	emit subtitles(file);
+}

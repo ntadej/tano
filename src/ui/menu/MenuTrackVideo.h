@@ -16,37 +16,17 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MENUCORE_H_
-#define TANO_MENUCORE_H_
+#ifndef TANO_MENUTRACKVIDEO_H_
+#define TANO_MENUTRACKVIDEO_H_
 
-#include <QtGui/QMenu>
+#include "ui/menu/MenuCore.h"
 
-#include <vlc-qt/Common.h>
-
-class MenuCore : public QMenu
+class MenuTrackVideo : public MenuCore
 {
 Q_OBJECT
 public:
-	MenuCore(QWidget *parent = 0);
-	~MenuCore();
-
-	QAction *actionNext() { return _next; }
-	void addItem(QAction *action);
-	void setType(const Vlc::ActionsType &type) { _type = type; }
-	Vlc::ActionsType type() const { return _type; }
-
-public slots:
-	void setActions(const Vlc::ActionsType &type,
-					const QList<QAction*> &actions);
-
-private slots:
-	void next();
-
-private:
-	QActionGroup *_group;
-	QAction *_next;
-
-	Vlc::ActionsType _type;
+	MenuTrackVideo(QWidget *parent = 0);
+	~MenuTrackVideo();
 };
 
-#endif // TANO_MENUCORE_H_
+#endif // TANO_MENUTRACKVIDEO_H_

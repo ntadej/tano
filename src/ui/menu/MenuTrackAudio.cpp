@@ -16,37 +16,15 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MENUCORE_H_
-#define TANO_MENUCORE_H_
+#include "MenuTrackAudio.h"
 
-#include <QtGui/QMenu>
-
-#include <vlc-qt/Common.h>
-
-class MenuCore : public QMenu
+MenuTrackAudio::MenuTrackAudio(QWidget *parent)
+	: MenuCore(parent)
 {
-Q_OBJECT
-public:
-	MenuCore(QWidget *parent = 0);
-	~MenuCore();
+	setTitle(tr("Audio track"));
+	setIcon(QIcon(":/icons/24x24/audio.png"));
+	actionNext()->setText(tr("Next audio track"));
+	setType(Vlc::AudioTrack);
+}
 
-	QAction *actionNext() { return _next; }
-	void addItem(QAction *action);
-	void setType(const Vlc::ActionsType &type) { _type = type; }
-	Vlc::ActionsType type() const { return _type; }
-
-public slots:
-	void setActions(const Vlc::ActionsType &type,
-					const QList<QAction*> &actions);
-
-private slots:
-	void next();
-
-private:
-	QActionGroup *_group;
-	QAction *_next;
-
-	Vlc::ActionsType _type;
-};
-
-#endif // TANO_MENUCORE_H_
+MenuTrackAudio::~MenuTrackAudio() { }
