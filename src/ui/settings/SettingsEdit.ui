@@ -495,7 +495,7 @@
              </sizepolicy>
             </property>
             <property name="pixmap">
-             <pixmap resource="../../../data/icons.qrc">:/icons/other/vlcqt.png</pixmap>
+             <pixmap resource="../../../data/icons.qrc">:/icons/48x48/vlc-qt.png</pixmap>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

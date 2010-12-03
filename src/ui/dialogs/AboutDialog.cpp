@@ -30,8 +30,8 @@ AboutDialog::AboutDialog(QWidget *parent)
 	ui->labelChangeset->setText("<h2>"+Version::changeset()+"</h2>");
 	ui->labelCopy->setText(ui->labelCopy->text().replace("%1",QDate().currentDate().toString("yyyy")));
 	ui->labelLicense->setText(ui->labelLicense->text().replace("GNU GPL","<a href='#'>GNU GPL</a>"));
-	ui->labelLinks->setText(ui->labelLinks->text().replace("http://tanoplayer.co.cc","<a href='http://tanoplayer.co.cc'>http://tanoplayer.co.cc</a>"));
-	ui->labelLinks->setText(ui->labelLinks->text().replace("info@tanoplayer.co.cc","<a href='info@tanoplayer.co.cc'>info@tanoplayer.co.cc</a>"));
+	ui->labelLinks->setText(ui->labelLinks->text().replace("http://tano.si","<a href='http://tano.si'>http://tano.si</a>"));
+	ui->labelLinks->setText(ui->labelLinks->text().replace("info@tano.si","<a href='info@tano.si'>info@tano.si</a>"));
 
 	ui->labelQVlc->setText("<h3>libvlc-qt "+Version::libVlcqt()+"</h3>");
 	ui->labelVlc->setText("<h3>libvlc "+Version::libVlc().split(" ")[0]+"</h3>");

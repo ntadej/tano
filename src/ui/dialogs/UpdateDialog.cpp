@@ -1,16 +1,19 @@
 /****************************************************************************
-* UpdateDialog.cpp: Dialog for checking for updates
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <info@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QDebug>
@@ -109,7 +112,7 @@ void UpdateDialog::processUpdate(const QStringList &update,
 
 QString UpdateDialog::generateUrl(const QString &version)
 {
-	QString url("http://update.tanoplayer.co.cc/tano/");
+	QString url("http://update.tano.si/player/");
 	url.append(version);
 	url.append("/");
 
@@ -120,6 +123,8 @@ QString UpdateDialog::generateUrl(const QString &version)
 #else // Q_WS_X11
 	url.append("linux");
 #endif // Q_WS_*
+
+	url.append("/");
 
 	return url;
 }

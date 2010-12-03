@@ -243,8 +243,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>100</width>
-          <height>30</height>
+          <width>340</width>
+          <height>309</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -819,7 +819,7 @@
   <action name="actionAboutQt">
    <property name="icon">
     <iconset resource="../../data/icons.qrc">
-     <normaloff>:/icons/other/qt.png</normaloff>:/icons/other/qt.png</iconset>
+     <normaloff>:/icons/24x24/qt.png</normaloff>:/icons/24x24/qt.png</iconset>
    </property>
    <property name="text">
     <string>About Qt</string>

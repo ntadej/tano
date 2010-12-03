@@ -4,8 +4,6 @@
         <file>icons/24x24/apply.png</file>
         <file>icons/24x24/clear.png</file>
         <file>icons/24x24/remove.png</file>
-        <file>icons/other/qt.png</file>
-        <file>icons/other/vlcqt.png</file>
         <file>icons/24x24/print.png</file>
         <file>icons/24x24/development.png</file>
         <file>icons/24x24/calendar.png</file>
@@ -58,5 +56,9 @@
         <file>icons/16x16/video.png</file>
         <file>icons/24x24/plugin.png</file>
         <file>icons/16x16/calendar.png</file>
+        <file>icons/48x48/qt.png</file>
+        <file>icons/48x48/vlc-qt.png</file>
+        <file>icons/24x24/qt.png</file>
+        <file>icons/24x24/vlc-qt.png</file>
     </qresource>
 </RCC>

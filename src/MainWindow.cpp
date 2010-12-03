@@ -337,6 +337,9 @@ void MainWindow::createShortcuts()
 			 << ui->actionTop
 			 << ui->actionLite
 			 << ui->actionTray
+			 << _menuTrackAudio->actionNext()
+			 << _menuTrackVideo->actionNext()
+			 << _menuTrackSubtitles->actionNext()
 			 << _menuAspectRatio->actionNext()
 			 << _menuCrop->actionNext()
 			 << _menuDeinterlacing->actionNext();

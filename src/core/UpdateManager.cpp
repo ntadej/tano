@@ -1,16 +1,19 @@
 /****************************************************************************
-* UpdateManager.cpp: Update manager
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <info@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtXml/QXmlInputSource>
@@ -24,7 +27,7 @@ UpdateManager::UpdateManager(QObject *parent)
 	: QHttp(parent),
 	_codec(QTextCodec::codecForName("UTF-8"))
 {
-	setHost("update.tanoplayer.co.cc");
+	setHost("update.tano.si");
 
 	_handler = new UpdateHandler();
 }
@@ -36,10 +39,7 @@ UpdateManager::~UpdateManager()
 
 void UpdateManager::getUpdates()
 {
-	QHttpRequestHeader header("GET", "http://update.tanoplayer.co.cc/update.xml");
-	header.setValue("User-Agent", "Firefox");
-
-	request(header);
+	get("/player/update.xml");
 
 	connect(this, SIGNAL(done(bool)), this, SLOT(readUpdates()));
 }

@@ -19,7 +19,7 @@
         <translation type="unfinished">&lt;h4&gt;Licencováno pod licencí GNU GPL&lt;/h4&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="263"/>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="251"/>
         <source>Back</source>
         <translation type="unfinished">Zpět</translation>
     </message>
@@ -214,10 +214,10 @@
         <location filename="../src/ui/MainWindow.ui" line="377"/>
         <location filename="../src/ui/MainWindow.ui" line="380"/>
         <location filename="../src/ui/MainWindow.ui" line="690"/>
-        <location filename="../src/MainWindow.cpp" line="440"/>
-        <location filename="../src/MainWindow.cpp" line="441"/>
-        <location filename="../src/MainWindow.cpp" line="442"/>
         <location filename="../src/MainWindow.cpp" line="443"/>
+        <location filename="../src/MainWindow.cpp" line="444"/>
+        <location filename="../src/MainWindow.cpp" line="445"/>
+        <location filename="../src/MainWindow.cpp" line="446"/>
         <source>Play</source>
         <translation>Přehrát</translation>
     </message>
@@ -234,7 +234,7 @@
         <translation>Vždy nahoře</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="645"/>
+        <location filename="../src/MainWindow.cpp" line="648"/>
         <source>Restore</source>
         <translation>Obnovit</translation>
     </message>
@@ -339,40 +339,40 @@ This will stop recording in progress.</source>
 Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="431"/>
-        <location filename="../src/MainWindow.cpp" line="432"/>
-        <location filename="../src/MainWindow.cpp" line="433"/>
         <location filename="../src/MainWindow.cpp" line="434"/>
+        <location filename="../src/MainWindow.cpp" line="435"/>
+        <location filename="../src/MainWindow.cpp" line="436"/>
+        <location filename="../src/MainWindow.cpp" line="437"/>
         <source>Pause</source>
         <translation>Pozastavit</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="509"/>
+        <location filename="../src/MainWindow.cpp" line="512"/>
         <source>Open Channel list File</source>
         <translation>Otevřít soubor se seznamem programů</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="511"/>
+        <location filename="../src/MainWindow.cpp" line="514"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Soubory Tano se seznamem programů TV (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="539"/>
+        <location filename="../src/MainWindow.cpp" line="542"/>
         <source>Open File or URL</source>
         <translation>Otevřít soubor nebo adresu (URL)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="541"/>
+        <location filename="../src/MainWindow.cpp" line="544"/>
         <source>Multimedia files(*)</source>
         <translation>Multimediální soubory (*)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="552"/>
+        <location filename="../src/MainWindow.cpp" line="555"/>
         <source>Open URL or stream</source>
         <translation>Otevřít adresu (URL) nebo datový proud</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="553"/>
+        <location filename="../src/MainWindow.cpp" line="556"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Zadejte adresu (URL) multimediálního souboru nebo datového proudu, jejž chcete přehrávat:</translation>
     </message>
@@ -390,8 +390,8 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
         <location filename="../src/MainWindow.cpp" line="79"/>
-        <location filename="../src/MainWindow.cpp" line="601"/>
-        <location filename="../src/MainWindow.cpp" line="603"/>
+        <location filename="../src/MainWindow.cpp" line="604"/>
+        <location filename="../src/MainWindow.cpp" line="606"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -415,7 +415,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="720"/>
         <location filename="../src/ui/MainWindow.ui" line="723"/>
-        <location filename="../src/MainWindow.cpp" line="642"/>
+        <location filename="../src/MainWindow.cpp" line="645"/>
         <source>Hide to tray</source>
         <translation>Skrýt v oznamovací oblasti panelu</translation>
     </message>
@@ -1482,137 +1482,152 @@ Ztratíte tím všechna neuložená nastavení.</translation>
 <context>
     <name>SettingsShortcuts</name>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="140"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="155"/>
         <source>Action</source>
         <translation type="unfinished">Činnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="145"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="160"/>
         <source>Key</source>
         <translation type="unfinished">Klávesa</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="150"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="165"/>
         <source>Play</source>
         <translation type="unfinished">Přehrát</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="163"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="178"/>
         <source>Stop</source>
         <translation type="unfinished">Zastavit</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="176"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="191"/>
         <source>Next channel</source>
         <translation type="unfinished">Další kanál</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="189"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="204"/>
         <source>Previous channel</source>
         <translation type="unfinished">Předchozí kanál</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="202"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="217"/>
         <source>Fullscreen</source>
         <translation type="unfinished">Na celou obrazovku</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="215"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="230"/>
         <source>Toggle Info Widget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="225"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="240"/>
         <source>Toggle Controls Widget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="235"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="250"/>
         <source>Mute</source>
         <translation type="unfinished">Ztlumit</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="248"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="263"/>
         <source>Volume up</source>
         <translation type="unfinished">Zvýšit hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="261"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="276"/>
         <source>Volume down</source>
         <translation type="unfinished">Snížit hlasitost</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="274"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="289"/>
         <source>Recorder</source>
         <translation type="unfinished">Nahrávání</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="287"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="302"/>
         <source>Open File</source>
         <translation type="unfinished">Otevřít soubor</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="300"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="315"/>
         <source>Open URL</source>
         <translation type="unfinished">Otevřít adresu (URL)</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="313"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="328"/>
         <source>Open Channel list</source>
         <translation type="unfinished">Otevřít seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="326"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="341"/>
         <source>Edit Channel list</source>
         <translation type="unfinished">Upravit seznam programů</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="339"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="354"/>
         <source>Settings</source>
         <translation type="unfinished">Nastavení</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="352"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="367"/>
         <source>Always on top</source>
         <translation type="unfinished">Vždy nahoře</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="365"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="380"/>
         <source>Simple Mode</source>
         <translation type="unfinished">Jednoduchý režim</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="378"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="393"/>
         <source>Hide to tray</source>
         <translation type="unfinished">Skrýt v oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="391"/>
-        <source>Next aspect ratio mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="401"/>
-        <source>Next crop mode</source>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="406"/>
+        <source>Next audio track</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="411"/>
+        <source>Next video track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="416"/>
+        <source>Next subtitle track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="421"/>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="431"/>
+        <source>Next crop mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="441"/>
         <source>Next deinterlace mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="424"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="454"/>
         <source>Clear Shortcut</source>
         <translation type="unfinished">Smazat klávesovou zkratku</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="454"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="484"/>
         <source>Restore defaults</source>
         <translation type="unfinished">Obnovit výchozí nastavení</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="471"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="501"/>
         <source>Set</source>
         <translation type="unfinished">Nastavit</translation>
     </message>
@@ -1862,7 +1877,7 @@ Vaše změny nebudou použity.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/UpdateDialog.cpp" line="100"/>
+        <location filename="../src/ui/dialogs/UpdateDialog.cpp" line="103"/>
         <source>Download now!</source>
         <translation type="unfinished"></translation>
     </message>
