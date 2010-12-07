@@ -125,7 +125,7 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/48x48/timer.png</normaloff>:/icons/48x48/timer.png</iconset>
+        <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
       </property>
      </item>
      <item>

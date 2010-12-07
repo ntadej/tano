@@ -57,10 +57,11 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	core/ChannelSelect.h
 	core/GetFile.h
 	core/Print.h
-	core/Time.h
 	core/UpdateManager.h
 	epg/EpgManager.h
 	epg/EpgSloveniaLoader.h
+	recorder/Recorder.h
+	recorder/Time.h
 	ui/core/CurrentTime.h
 	ui/core/InfoBar.h
 	ui/core/License.h
@@ -83,7 +84,6 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/menu/MenuTrackVideo.h
 	ui/playlist/PlaylistEdit.h
 	ui/playlist/PlaylistWidget.h
-	ui/recorder/Recorder.h
 	ui/recorder/TimersEdit.h
 	ui/settings/SettingsEdit.h
 	ui/settings/SettingsPlaylist.h
@@ -119,7 +119,6 @@ SET(Tano_Core_Srcs
 	core/Print.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
-	core/Time.cpp
 	core/UpdateManager.cpp
 	core/Version.cpp
 )
@@ -127,6 +126,10 @@ SET(Tano_Epg_Srcs
 	epg/EpgManager.cpp
 	epg/EpgSlovenia.cpp
 	epg/EpgSloveniaLoader.cpp
+)
+SET(Tano_Recorder_Srcs
+	recorder/Recorder.cpp
+	recorder/Time.cpp
 )
 SET(Tano_UI_Srcs
 	ui/core/CurrentTime.cpp
@@ -151,7 +154,6 @@ SET(Tano_UI_Srcs
 	ui/menu/MenuTrackVideo.cpp
 	ui/playlist/PlaylistEdit.cpp
 	ui/playlist/PlaylistWidget.cpp
-	ui/recorder/Recorder.cpp
 	ui/recorder/TimersEdit.cpp
 	ui/settings/SettingsEdit.cpp
 	ui/settings/SettingsPlaylist.cpp
@@ -178,14 +180,11 @@ SET(Tano_Srcs
 	${Tano_Container_Srcs}
 	${Tano_Core_Srcs}
 	${Tano_Epg_Srcs}
+	${Tano_Recorder_Srcs}
 	${Tano_UI_Srcs}
 	${Tano_XML_Srcs}
 )
 
-SET(Tano_Plugins_Headers
-	plugins/PluginsLoader.cpp
-	plugins/PluginsManager.cpp
-)
 ################
 # Qt4 settings #
 ################

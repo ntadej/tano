@@ -33,7 +33,6 @@
 #include "core/ChannelSelect.h"
 #include "core/LocaleManager.h"
 #include "core/Shortcuts.h"
-#include "core/Time.h"
 #include "epg/EpgManager.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/dialogs/UpdateDialog.h"
@@ -46,7 +45,6 @@
 #include "ui/menu/MenuTrackSubtitles.h"
 #include "ui/menu/MenuTrackVideo.h"
 #include "ui/playlist/PlaylistEdit.h"
-#include "ui/recorder/TimersEdit.h"
 
 namespace Ui
 {
@@ -74,7 +72,6 @@ private slots:
 	void showSchedule();
 	void showSettings();
 	void showPlaylistEditor();
-	void showTimersEditor();
 
 	void play(const QString &itemFile = 0);
 	void stop();
@@ -141,7 +138,6 @@ private:
 	ChannelSelect *_select;
 	LocaleManager *_locale;
 	Shortcuts *_shortcuts;
-	Time *_time;
 	UpdateDialog *_update;
 
 	//Backend
@@ -155,7 +151,6 @@ private:
 	Qt::WindowFlags _flags;
 	EpgFull *_schedule;
 	PlaylistEdit *_playlistEditor;
-	TimersEdit *_timersEditor;
 
 	//Playback and channels
 	Channel *_channel;
@@ -173,8 +168,6 @@ private:
 	MenuTrackVideo *_menuTrackVideo;
 	QMenu *_rightMenu;
 	QMenu *_openMenu;
-	QActionGroup *_ratioGroup;
-	QActionGroup *_filterGroup;
 	QList<QAction*> _actions;
 };
 

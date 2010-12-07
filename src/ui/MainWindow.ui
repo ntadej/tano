@@ -243,8 +243,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>309</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -336,13 +336,13 @@
        <property name="minimumSize">
         <size>
          <width>70</width>
-         <height>40</height>
+         <height>48</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>70</width>
-         <height>40</height>
+         <height>48</height>
         </size>
        </property>
        <property name="frameShape">
@@ -509,7 +509,7 @@
        </property>
        <property name="icon">
         <iconset resource="../../data/icons.qrc">
-         <normaloff>:/icons/24x24/record.png</normaloff>:/icons/24x24/record.png</iconset>
+         <normaloff>:/icons/48x48/record.png</normaloff>:/icons/48x48/record.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -789,7 +789,7 @@
    </property>
    <property name="icon">
     <iconset resource="../../data/icons.qrc">
-     <normaloff>:/icons/24x24/record.png</normaloff>:/icons/24x24/record.png</iconset>
+     <normaloff>:/icons/24x24/recorder.png</normaloff>:/icons/24x24/recorder.png</iconset>
    </property>
    <property name="text">
     <string>Recorder</string>
@@ -920,7 +920,7 @@
   <customwidget>
    <class>Recorder</class>
    <extends>QWidget</extends>
-   <header>ui/recorder/Recorder.h</header>
+   <header>recorder/Recorder.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

@@ -38,10 +38,9 @@
 #include "ui/settings/SettingsEdit.h"
 
 MainWindow::MainWindow(QWidget *parent)	:
-	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()),
-	_time(new Time()), _update(new UpdateDialog()),
+	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()), _update(new UpdateDialog()),
 	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0),
-	_playlistEditor(0), _timersEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new EpgFull())
+	_playlistEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new EpgFull())
 {
 	QPixmap pixmap(":/images/splash.png");
 	Settings *settings = new Settings(this);
@@ -67,10 +66,7 @@ MainWindow::MainWindow(QWidget *parent)	:
 	delete splash;
 }
 
-MainWindow::~MainWindow()
-{
-
-}
+MainWindow::~MainWindow() { }
 
 void MainWindow::exit()
 {
@@ -284,9 +280,6 @@ void MainWindow::createConnections()
 	connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
 	connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
 	connect(ui->actionTimers, SIGNAL(triggered()), this, SLOT(showTimersEditor()));
-
-	connect(_time, SIGNAL(startTimer(Timer*)), ui->recorder, SLOT(recordTimer(Timer*)));
-	connect(_time, SIGNAL(stopTimer(Timer*)), ui->recorder, SLOT(stopTimer(Timer*)));
 }
 
 void MainWindow::createMenus()
@@ -374,10 +367,8 @@ void MainWindow::createRecorder()
 {
 	if(_recorderEnabled) {
 		ui->recorder->openPlaylist(_playlistName);
-		ui->recorder->setGlobals(_trayIcon, ui->actionRecord);
+		ui->recorder->setAction(ui->actionRecord);
 		ui->recorder->createSettings();
-		if(!_timersEditor)
-			_timersEditor = new TimersEdit(_time, _playlistName, this);
 		if(ui->buttonRecord->isHidden()) {
 			ui->buttonRecord->show();
 			ui->menuRecorder->setEnabled(true);
@@ -591,11 +582,6 @@ void MainWindow::showPlaylistEditor()
 		_playlistEditor = new PlaylistEdit(_playlistName, ui->videoWidget->widgetId());
 		_playlistEditor->show();
 	}
-}
-
-void MainWindow::showTimersEditor()
-{
-	_timersEditor->showTimersEditor();
 }
 
 void MainWindow::tooltip(const QString &channelNow)

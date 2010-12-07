@@ -1,16 +1,19 @@
 /****************************************************************************
-* Recorder.cpp: Class for recording management
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <info@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include "Recorder.h"
@@ -32,7 +35,7 @@ Recorder::Recorder(QWidget *parent)
 	_channelName(""),
 	_channelUrl(""),
 	_plugin(0),
-	_trayIcon(0),
+	_timeManager(new Time()),
 	_actionRecord(0),
 	_currentTimer(0)
 {
@@ -41,12 +44,17 @@ Recorder::Recorder(QWidget *parent)
 	//Init
 	_timer = new QTimer(this);
 
+	//_editor = new TimersEdit(_timeManager, _playlistName, this);
+
 	connect(_timer, SIGNAL(timeout()), this, SLOT(sec()));
 
 	connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
 	connect(ui->buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
 
 	connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
+
+	connect(_timeManager, SIGNAL(startTimer(Timer*)), this, SLOT(recordTimer(Timer*)));
+	connect(_timeManager, SIGNAL(stopTimer(Timer*)), this, SLOT(stopTimer(Timer*)));
 
 	createSettings();
 }
@@ -56,6 +64,7 @@ Recorder::~Recorder()
 	delete ui;
 	delete _timer;
 	delete _plugin;
+	delete _timeManager;
 }
 
 void Recorder::changeEvent(QEvent *e)
@@ -148,8 +157,7 @@ void Recorder::record(const bool &status)
 		QString fileName;
 		fileName = _plugin->output();
 
-		if(_trayIcon)
-			_trayIcon->changeToolTip(_channelName, "recorder");
+		//_trayIcon->changeToolTip(_channelName, "recorder");
 
 		_timer->start(1000);
 		_time = QTime(0,0);
@@ -166,7 +174,7 @@ void Recorder::record(const bool &status)
 		if(_actionRecord)
 			_actionRecord->setEnabled(true);
 
-		_trayIcon->message(QStringList() << "record" << _channelName << fileName);
+		//_trayIcon->message(QStringList() << "record" << _channelName << fileName);
 
 		_recording = true;
 	} else {
@@ -181,7 +189,7 @@ void Recorder::record(const bool &status)
 		if(_actionRecord)
 			_actionRecord->setEnabled(false);
 
-		_trayIcon->changeToolTip("stop", "recorder");
+		//_trayIcon->changeToolTip("stop", "recorder");
 
 		_recording = false;
 		_isTimer = false;
@@ -206,10 +214,8 @@ void Recorder::sec()
 	ui->valueTime->setText(_time.toString("hh:mm:ss"));
 }
 
-void Recorder::setGlobals(TrayIcon *icon,
-						  QAction *action)
+void Recorder::setAction(QAction *action)
 {
-	_trayIcon = icon;
 	_actionRecord = action;
 	connect(_actionRecord, SIGNAL(triggered()), ui->buttonRecord, SLOT(toggle()));
 }
@@ -235,4 +241,9 @@ void Recorder::stopTimer(Timer *timer)
 	if(_recording)
 		ui->buttonRecord->toggle();
 	_currentTimer = 0;
+}
+
+void Recorder::showTimersEditor()
+{
+
 }

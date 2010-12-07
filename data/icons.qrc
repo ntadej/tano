@@ -32,7 +32,6 @@
         <file>icons/48x48/settings.png</file>
         <file>icons/48x48/shortcuts.png</file>
         <file>icons/48x48/video.png</file>
-        <file>icons/48x48/timer.png</file>
         <file>icons/24x24/control.png</file>
         <file>icons/24x24/fullscreen.png</file>
         <file>icons/24x24/open.png</file>
@@ -52,7 +51,6 @@
         <file>icons/48x48/media-skip-forward.png</file>
         <file>icons/48x48/volume-muted.png</file>
         <file>icons/24x24/exit.png</file>
-        <file>icons/16x16/timer.png</file>
         <file>icons/16x16/video.png</file>
         <file>icons/24x24/plugin.png</file>
         <file>icons/16x16/calendar.png</file>
@@ -60,5 +58,9 @@
         <file>icons/48x48/vlc-qt.png</file>
         <file>icons/24x24/qt.png</file>
         <file>icons/24x24/vlc-qt.png</file>
+        <file>icons/48x48/record.png</file>
+        <file>icons/48x48/recorder.png</file>
+        <file>icons/24x24/recorder.png</file>
+        <file>icons/16x16/timer.png</file>
     </qresource>
 </RCC>

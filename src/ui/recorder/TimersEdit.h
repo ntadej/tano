@@ -23,7 +23,7 @@
 
 #include "container/Channel.h"
 #include "container/Timer.h"
-#include "core/Time.h"
+#include "recorder/Time.h"
 #include "xml/TimersHandler.h"
 
 namespace Ui
