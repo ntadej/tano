@@ -1,16 +1,19 @@
 /****************************************************************************
-* PluginsLoader.cpp: A class for loading plugins
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QMetaClassInfo>
@@ -46,8 +49,6 @@ PluginsLoader::~PluginsLoader()
 {
 	for(int i=0; i<_recorderPlugins.size(); i++)
 		delete _recorderPlugins[i];
-	for(int i=0; i<_epgPlugins.size(); i++)
-		delete _epgPlugins[i];
 }
 
 void PluginsLoader::processDir(QDir &dir)
@@ -79,13 +80,6 @@ void PluginsLoader::processPlugin(QObject *plugin,
 		_recorderFiles << pluginFile;
 		_recorderNames << plugin->metaObject()->classInfo(plugin->metaObject()->indexOfClassInfo( "PLUGINNAME" )).value();
 	}
-
-	EpgPluginCreator *epg = qobject_cast<EpgPluginCreator *>(plugin);
-	if(epg) {
-		_epgPlugins << plugin;
-		_epgFiles << pluginFile;
-		_epgNames << plugin->metaObject()->classInfo(plugin->metaObject()->indexOfClassInfo( "PLUGINNAME" )).value();
-	}
 }
 
 RecorderPlugin *PluginsLoader::recorder(QObject *plugin)
@@ -93,15 +87,6 @@ RecorderPlugin *PluginsLoader::recorder(QObject *plugin)
 	RecorderPluginCreator *recorder = qobject_cast<RecorderPluginCreator *>(plugin);
 	if(recorder)
 		return recorder->createInstance();
-	else
-		return 0;
-}
-
-EpgPlugin *PluginsLoader::epg(QObject *plugin)
-{
-	EpgPluginCreator *epg = qobject_cast<EpgPluginCreator *>(plugin);
-	if(epg)
-		return epg->createInstance();
 	else
 		return 0;
 }

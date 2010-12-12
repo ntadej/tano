@@ -165,7 +165,7 @@ QTreeWidgetItem *TimersHandler::newTimer(const QString &name, const QString &cha
 void TimersHandler::deleteItem(QTreeWidgetItem *item)
 {
 	Timer *tmp = _map[item];
-	_map.remove(_item);
+	_map.remove(item);
 	delete tmp;
-	delete _item;
+	delete item;
 }

@@ -279,7 +279,7 @@ void MainWindow::createConnections()
 
 	connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
 	connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
-	connect(ui->actionTimers, SIGNAL(triggered()), this, SLOT(showTimersEditor()));
+	connect(ui->actionTimers, SIGNAL(triggered()), ui->recorder, SLOT(showTimersEditor()));
 }
 
 void MainWindow::createMenus()

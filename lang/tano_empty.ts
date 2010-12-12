@@ -669,10 +669,6 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>EPG Plugins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Recorder Plugins</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1392,10 +1388,6 @@ You changes will not be applied.</source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recording</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

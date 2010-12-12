@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -31,24 +31,18 @@ PluginsDialog::PluginsDialog(QWidget *parent)
 	_interfaceIcon.addPixmap(style()->standardPixmap(QStyle::SP_DirClosedIcon), QIcon::Normal, QIcon::Off);
 	_featureIcon = QIcon(":/icons/24x24/plugin.png");
 
-	_epg = new QTreeWidgetItem(ui->pluginsWidget);
-	_epg->setText(0, tr("EPG Plugins"));
 	_recorder = new QTreeWidgetItem(ui->pluginsWidget);
 	_recorder->setText(0, tr("Recorder Plugins"));
-	ui->pluginsWidget->setItemExpanded(_epg, true);
 	ui->pluginsWidget->setItemExpanded(_recorder, true);
 
-	QFont font = _epg->font(0);
+	QFont font = _recorder->font(0);
 	font.setBold(true);
-	_epg->setFont(0, font);
 	_recorder->setFont(0, font);
 
 	PluginsLoader *loader = new PluginsLoader();
 
 	for(int i=0; i < loader->recorderPlugin().size(); i++)
 		populateTreeWidget(loader->recorderFile()[i], loader->recorderName()[i], "Recorder");
-	for(int i=0; i < loader->epgPlugin().size(); i++)
-		populateTreeWidget(loader->epgFile()[i], loader->epgName()[i], "EPG");
 
 	delete loader;
 }
@@ -71,13 +65,11 @@ void PluginsDialog::changeEvent(QEvent *e)
 }
 
 void PluginsDialog::populateTreeWidget(const QString &file,
-										const QString &name,
-										const QString &type)
+									   const QString &name,
+									   const QString &type)
 {
 	QTreeWidgetItem *pluginItem;
-	if(type == "EPG")
-		pluginItem = new QTreeWidgetItem(_epg);
-	else if(type == "Recorder")
+	if(type == "Recorder")
 		pluginItem = new QTreeWidgetItem(_recorder);
 	pluginItem->setText(0, file);
 	pluginItem->setIcon(0, _interfaceIcon);

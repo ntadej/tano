@@ -2,7 +2,7 @@
 # CMake module to search for VLC-Qt (Qt and libvlc connector library)
 #############################################################################
 # Authors: Rohit Yadav <rohityadav89@gmail.com>
-#          Tadej Novak <ntadej@users.sourceforge.net>
+#          Tadej Novak <tadej@tano.si>
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of

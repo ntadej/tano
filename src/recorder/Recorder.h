@@ -24,7 +24,7 @@
 #include <QtGui/QWidget>
 
 #include "container/Timer.h"
-#include "plugins/RecorderPlugins.h"
+#include "recorder/RecorderPlugins.h"
 #include "recorder/Time.h"
 #include "ui/recorder/TimersEdit.h"
 
@@ -70,6 +70,8 @@ private:
 
 	QString _channelName;
 	QString _channelUrl;
+
+	QString _playlist;
 
 	RecorderPlugin *_plugin;
 	Time *_timeManager;

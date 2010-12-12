@@ -26,6 +26,7 @@
 #include "container/Channel.h"
 #include "core/PluginsLoader.h"
 #include "core/Settings.h"
+#include "ui/recorder/TimersEdit.h"
 
 Recorder::Recorder(QWidget *parent)
 	: QWidget(parent),
@@ -43,8 +44,6 @@ Recorder::Recorder(QWidget *parent)
 
 	//Init
 	_timer = new QTimer(this);
-
-	//_editor = new TimersEdit(_timeManager, _playlistName, this);
 
 	connect(_timer, SIGNAL(timeout()), this, SLOT(sec()));
 
@@ -103,7 +102,8 @@ void Recorder::stop()
 
 void Recorder::openPlaylist(const QString &file)
 {
-	ui->playlistWidget->open(file);
+	_playlist = file;
+	ui->playlistWidget->open(_playlist);
 }
 
 void Recorder::playlist(QTreeWidgetItem* clickedChannel)
@@ -245,5 +245,16 @@ void Recorder::stopTimer(Timer *timer)
 
 void Recorder::showTimersEditor()
 {
-
+	if(_editor) {
+		if(_editor->isVisible()) {
+			_editor->activateWindow();
+		} else {
+			delete _editor;
+			_editor = new TimersEdit(_playlist, this);
+			_editor->show();
+		}
+	} else {
+		_editor = new TimersEdit(_playlist, this);
+		_editor->show();
+	}
 }

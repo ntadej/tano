@@ -1,16 +1,19 @@
 /****************************************************************************
-* TimersEdit.cpp: Timers editor and manager
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include "TimersEdit.h"
@@ -26,15 +29,12 @@
 #include "core/Settings.h"
 #include "xml/TimersGenerator.h"
 
-TimersEdit::TimersEdit(Time *t, const QString &playlist,
+TimersEdit::TimersEdit(const QString &playlist,
 					   QWidget *parent)
 	: QMainWindow(parent),
 	ui(new Ui::TimersEdit),
-	_time(t),
 	_channel(0),
-	_activeTimers(false),
-	_closeEnabled(false),
-	_path("")
+	_closeEnabled(false)
 {
 	ui->setupUi(this);
 	ui->timersWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
@@ -99,8 +99,6 @@ void TimersEdit::createConnections()
 	connect(ui->editStartTime, SIGNAL(timeChanged(QTime)), this, SLOT(editStartTime(QTime)));
 	connect(ui->editEndTime, SIGNAL(timeChanged(QTime)), this, SLOT(editEndTime(QTime)));
 	connect(ui->checkBoxDisabled, SIGNAL(clicked()), this, SLOT(validate()));
-
-	connect(_time, SIGNAL(timerStatus(Timer*, bool)), this, SLOT(changeStatus(Timer*, bool)));
 }
 
 void TimersEdit::exit()
@@ -110,13 +108,13 @@ void TimersEdit::exit()
 		return;
 	}
 
-	int ret;
-	ret = QMessageBox::warning(this, tr("Timers Editor"),
+	int c;
+	c = QMessageBox::warning(this, tr("Timers Editor"),
 								   tr("Do you want close the editor?\nYou changes will not be applied."),
 								   QMessageBox::Save | QMessageBox::Close | QMessageBox::Cancel,
 								   QMessageBox::Save);
 
-	switch (ret) {
+	switch (c) {
 		case QMessageBox::Save:
 			ui->actionSave->trigger();
 			break;
@@ -131,12 +129,6 @@ void TimersEdit::exit()
 	}
 }
 
-void TimersEdit::showTimersEditor()
-{
-	_closeEnabled = false;
-	show();
-}
-
 void TimersEdit::newItem()
 {
 	ui->toolBar->setDisabled(true);
@@ -146,7 +138,6 @@ void TimersEdit::newItem()
 
 void TimersEdit::deleteItem()
 {
-	_time->removeTimer(_handler->timerRead(ui->timersWidget->currentItem()));
 	ui->dockWidgetContents->setDisabled(true);
 	_handler->deleteItem(ui->timersWidget->currentItem());
 }
@@ -158,7 +149,7 @@ void TimersEdit::addItem()
 							tr("Please enter a name and select a channel from the list."));
 		return;
 	} else {
-		for(int i=0; i<ui->timersWidget->topLevelItemCount(); i++) {
+		for(int i = 0; i < ui->timersWidget->topLevelItemCount(); i++) {
 			if(ui->timersWidget->topLevelItem(i)->text(0) == ui->editNameNew->text()) {
 				QMessageBox::warning(this, tr("Tano"),
 									tr("Timer with this name already exists. Please select another name."));
@@ -167,7 +158,7 @@ void TimersEdit::addItem()
 		}
 	}
 
-	edit(_handler->newTimer(ui->editNameNew->text(),_channel->name(),ui->playlistWidget->fileName(),_channel->number(),_channel->url()));
+	edit(_handler->newTimer(ui->editNameNew->text(), _channel->name(), ui->playlistWidget->fileName(), _channel->number(), _channel->url()));
 
 	ui->dockWidgetContents->setDisabled(false);
 	ui->toolBar->setDisabled(false);
@@ -186,12 +177,10 @@ void TimersEdit::playlist(QTreeWidgetItem *item)
 
 void TimersEdit::edit(QTreeWidgetItem *item)
 {
-	ui->dockWidgetContents->setDisabled(false);
-
-	if(_handler->timerRead(item)->isActive()) {
-		ui->dockWidgetContents->setDisabled(true);
+	if(item == 0)
 		return;
-	}
+
+	ui->dockWidgetContents->setDisabled(false);
 
 	ui->timersWidget->setCurrentItem(item);
 
@@ -208,7 +197,7 @@ void TimersEdit::edit(QTreeWidgetItem *item)
 
 void TimersEdit::editName(const QString &name)
 {
-	for(int i=0; i<ui->timersWidget->topLevelItemCount(); i++)
+	for(int i = 0; i < ui->timersWidget->topLevelItemCount(); i++)
 		if(ui->timersWidget->topLevelItem(i)->text(0) == name && ui->timersWidget->topLevelItem(i) != ui->timersWidget->currentItem()) {
 			QMessageBox::warning(this, tr("Tano"),
 								tr("Timer with this name already exists. Please select another name."));
@@ -217,7 +206,7 @@ void TimersEdit::editName(const QString &name)
 			return;
 		}
 
-	ui->timersWidget->currentItem()->setText(0,name);
+	ui->timersWidget->currentItem()->setText(0, name);
 	_handler->timerRead(ui->timersWidget->currentItem())->setName(name);
 }
 
@@ -238,19 +227,9 @@ void TimersEdit::editEndTime(const QTime &time)
 	validate();
 }
 
-void TimersEdit::read(const QString &file)
+void TimersEdit::read()
 {
-	_activeTimers = false;
-
-	QString fileName;
-
-	if(file.isNull())
-		fileName = _path + "timers.tano.xml";
-	else
-		fileName = file;
-
-	if (fileName.isEmpty())
-		return;
+	QString fileName = _path + "timers.tano.xml";
 
 	QXmlSimpleReader reader;
 	reader.setContentHandler(_handler);
@@ -259,41 +238,23 @@ void TimersEdit::read(const QString &file)
 	if(!QFileInfo(fileName).exists())
 		return;
 
-	QFile fileR(fileName);
-	if (!fileR.open(QFile::ReadOnly | QFile::Text)) {
+	QFile file(fileName);
+	if (!file.open(QFile::ReadOnly | QFile::Text)) {
 		QMessageBox::warning(this, tr("Tano"),
 							tr("Cannot read file %1:\n%2.")
 							.arg(fileName)
-							.arg(fileR.errorString()));
+							.arg(file.errorString()));
 		return;
 	}
 
-	QXmlInputSource xmlInputSource(&fileR);
+	QXmlInputSource xmlInputSource(&file);
 	if (!reader.parse(xmlInputSource))
 		return;
-
-	for(int i=0; i<ui->timersWidget->topLevelItemCount(); i++) {
-		if(!_handler->timerRead(ui->timersWidget->topLevelItem(i))->isDisabled())
-			_time->addTimer(_handler->timerRead(ui->timersWidget->topLevelItem(i)));
-	}
-
-	_activeTimers = true;
 }
 
 void TimersEdit::write()
 {
-	QString fileName;
-
-	/*fileName =
-		QFileDialog::getSaveFileName(this, tr("Save Timers"),
-									QDir::homePath(),
-									tr("Tano Timers (*.tano.xml)"));
-	*/
-
-	fileName = _path + "timers.tano.xml";
-
-	if (fileName.isEmpty())
-		return;
+	QString fileName = _path + "timers.tano.xml";
 
 	QFile file(fileName);
 	if (!file.open(QFile::WriteOnly | QFile::Text)) {
@@ -308,39 +269,27 @@ void TimersEdit::write()
 	generator->write(&file);
 	delete generator;
 
-	for(int i=0; i<ui->timersWidget->topLevelItemCount(); i++) {
-		if(!_handler->timerRead(ui->timersWidget->topLevelItem(i))->isDisabled())
-			_time->addTimer(_handler->timerRead(ui->timersWidget->topLevelItem(i)));
+	for(int i = 0; i < ui->timersWidget->topLevelItemCount(); i++) {
+		if(!_handler->timerRead(ui->timersWidget->topLevelItem(i))->isDisabled()) {
+			//
+		}
 	}
 
 	_closeEnabled = true;
 	exit();
 }
 
-void TimersEdit::changeStatus(Timer *t,
-							  const bool &status)
-{
-	if(status) {
-		_handler->itemRead(t)->setText(1,tr("Recording"));
-		if(ui->timersWidget->currentItem() == _handler->itemRead(t))
-			ui->dockWidgetContents->setDisabled(true);
-	}
-}
-
 void TimersEdit::validate()
 {
-	if(!_activeTimers)
-		return;
-
 	if(ui->editDate->date() < QDate::currentDate() ||
 		ui->editEndTime->time() < QTime::currentTime() ||
 		ui->checkBoxDisabled->isChecked())
 	{
 		_handler->timerRead(ui->timersWidget->currentItem())->setDisabled(true);
-		ui->timersWidget->currentItem()->setText(1,tr("Disabled or expired"));
-		_time->removeTimer(_handler->timerRead(ui->timersWidget->currentItem()));
+		ui->timersWidget->currentItem()->setText(1, tr("Disabled or expired"));
+		ui->checkBoxDisabled->setChecked(true);
 	} else {
 		_handler->timerRead(ui->timersWidget->currentItem())->setDisabled(false);
-		ui->timersWidget->currentItem()->setText(1,tr("Active"));
+		ui->timersWidget->currentItem()->setText(1, tr("Active"));
 	}
 }

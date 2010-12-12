@@ -1,16 +1,19 @@
 /****************************************************************************
-* TimersEdit.h: Timers editor and manager
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_TIMERSEDIT_H_
@@ -35,34 +38,30 @@ class TimersEdit : public QMainWindow
 {
 Q_OBJECT
 public:
-	TimersEdit(Time *t, const QString &playlist,
+	TimersEdit(const QString &playlist,
 			   QWidget *parent = 0);
 	~TimersEdit();
-
-	void showTimersEditor();
 
 protected:
 	void changeEvent(QEvent *e);
 	void closeEvent(QCloseEvent *event);
 
 private slots:
-	void newItem();
 	void addItem();
 	void deleteItem();
+	void newItem();
 
 	void edit(QTreeWidgetItem *item);
 	void playlist(QTreeWidgetItem *item);
 
 	void validate();
-	void changeStatus(Timer* t,
-					  const bool &status);
 
 	void editName(const QString &name);
 	void editDate(const QDate &date);
 	void editStartTime(const QTime &time);
 	void editEndTime(const QTime &time);
 
-	void read(const QString &file = 0);
+	void read();
 	void write();
 	void exit();
 
@@ -72,16 +71,14 @@ private:
 
 	Ui::TimersEdit *ui;
 
-	bool _activeTimers;
+	Channel *_channel;
+
 	bool _closeEnabled;
 
-	QString _playlist;
-	QString _path;
-
-	Time *_time;
 	TimersHandler *_handler;
 
-	Channel *_channel;
+	QString _path;
+	QString _playlist;
 };
 
 #endif // TANO_TIMERSEDIT_H_
