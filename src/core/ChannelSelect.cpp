@@ -1,16 +1,19 @@
 /****************************************************************************
-* ChannelSelect.cpp: Channel selector
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include "core/ChannelSelect.h"
@@ -20,7 +23,7 @@ ChannelSelect::ChannelSelect(QWidget *parent,
 							 const QList<int> &list)
 	: _lcd(number),
 	_channels(list),
-	_num(1)
+	_digit(1)
 {
 	_timer = new QTimer(parent);
 
@@ -28,7 +31,7 @@ ChannelSelect::ChannelSelect(QWidget *parent,
 	_number[1] = 0;
 	_number[2] = 0;
 
-	for(int i=0; i<10; i++) {
+	for(int i = 0; i < 10; i++) {
 		_key.append(new QShortcut(QKeySequence(QString().number(i)), parent, 0, 0, Qt::ApplicationShortcut));
 		connect(_key[i], SIGNAL(activated()), this, SLOT(keyPressed()));
 	}
@@ -36,21 +39,22 @@ ChannelSelect::ChannelSelect(QWidget *parent,
 	connect(_timer, SIGNAL(timeout()), this, SLOT(display()));
 }
 
-ChannelSelect::~ChannelSelect() {
+ChannelSelect::~ChannelSelect()
+{
 	delete _timer;
-	for(int i=0; i<10; i++)
+	for(int i = 0; i < 10; i++)
 		delete _key[i];
 }
 
 void ChannelSelect::process(const int &key)
 {
-	if(_num == 1) {
+	if(_digit == 1) {
 		_old = _lcd->intValue();
 		_number[0] = key;
-	} else if(_num == 2) {
+	} else if(_digit == 2) {
 		_number[1] = _number[0];
 		_number[0] = key;
-	} else if(_num == 3) {
+	} else if(_digit == 3) {
 		_number[2] = _number[1];
 		_number[1] = _number[0];
 		_number[0] = key;
@@ -59,9 +63,9 @@ void ChannelSelect::process(const int &key)
 	_full = _number[2]*100 + _number[1]*10 + _number[0];
 	_lcd->display(_full);
 
-	if(_num < 3) {
+	if(_digit < 3) {
 		_timer->start(1000);
-		_num++;
+		_digit++;
 	} else {
 		display();
 	}
@@ -77,7 +81,7 @@ void ChannelSelect::display()
 	_number[0] = 0;
 	_number[1] = 0;
 	_number[2] = 0;
-	_num = 1;
+	_digit = 1;
 	_timer->stop();
 }
 
@@ -94,20 +98,10 @@ void ChannelSelect::channel(const bool &direction)
 		i = -1;
 	}
 
-	while(!_channels.contains(_full) && _full>0 && _full<=_channels.at(_channels.size()-1))
-		_full+=i;
+	while(!_channels.contains(_full) && _full > 0 && _full <= _channels.at(_channels.size()-1))
+		_full += i;
 
 	display();
-}
-
-void ChannelSelect::back()
-{
-	channel(false);
-}
-
-void ChannelSelect::next()
-{
-	channel(true);
 }
 
 void ChannelSelect::keyPressed()

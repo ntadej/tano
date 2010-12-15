@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This file is also part of the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -111,10 +111,10 @@ bool TanoHandlerOld::fatalError(const QXmlParseException &exception)
 
 int TanoHandlerOld::channelNumSync(const int &c)
 {
-	if(c>1) {
-		int i=c*100;
-		while(i<_num)
-			i+=100;
+	if(c > 1) {
+		int i = c*100;
+		while(i < _num)
+			i += 100;
 		return i-1;
 	} else {
 		return 0;

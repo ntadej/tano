@@ -47,7 +47,7 @@ PluginsLoader::PluginsLoader()
 
 PluginsLoader::~PluginsLoader()
 {
-	for(int i=0; i<_recorderPlugins.size(); i++)
+	for(int i = 0; i < _recorderPlugins.size(); i++)
 		delete _recorderPlugins[i];
 }
 

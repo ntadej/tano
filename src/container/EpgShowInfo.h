@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@
 class EpgShowInfo
 {
 public:
-	EpgShowInfo(const bool valid = true);
+	EpgShowInfo(const bool &valid = true);
 	~EpgShowInfo();
 
 	bool isValid() const { return _valid; }

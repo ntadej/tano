@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ M3UHandler::M3UHandler(QTreeWidget *treeWidget)
 
 M3UHandler::~M3UHandler()
 {
-	for(int i=0; i<_treeWidget->topLevelItemCount(); i++) {
+	for(int i = 0; i < _treeWidget->topLevelItemCount(); i++) {
 		delete _map.value(_treeWidget->topLevelItem(i));
 	}
 }
@@ -59,7 +59,7 @@ QString M3UHandler::processNum(const QString &num)
 {
 	QString newNum = "000";
 	newNum.append(num);
-	newNum.remove(0,num.size());
+	newNum.remove(0, num.size());
 
 	return newNum;
 }
@@ -77,7 +77,7 @@ int M3UHandler::processNewNum(QTreeWidgetItem *channel,
 	_channelNums.append(num);
 
 	channelRead(channel)->setNumber(num);
-	channel->setText(0,processNum(QString().number(num)));
+	channel->setText(0, processNum(QString().number(num)));
 
 	_treeWidget->sortByColumn(0, Qt::AscendingOrder);
 
@@ -93,8 +93,8 @@ void M3UHandler::clear()
 	_languageList.clear();
 	_epgList.clear();
 
-	if(_treeWidget->topLevelItemCount()>0)
-		for(int i=0; i<_treeWidget->topLevelItemCount(); i++)
+	if(_treeWidget->topLevelItemCount() > 0)
+		for(int i = 0; i < _treeWidget->topLevelItemCount(); i++)
 			delete _map.value(_treeWidget->topLevelItem(i));
 
 	_map.clear();
@@ -111,18 +111,18 @@ void M3UHandler::processList()
 	if(!_m3uLineList[0].contains("#EXTM3U"))
 		return;
 
-	for(int i=1; i<_m3uLineList.size(); i++) {
-		if(_m3uLineList[i]=="")
+	for(int i = 1; i < _m3uLineList.size(); i++) {
+		if(_m3uLineList[i] == "")
 			continue;
 
 		if(_m3uLineList[i].contains("#EXTNAME")) {
 			_name = _m3uLineList[i];
-			_name.replace(QString("#EXTNAME:"),QString(""));
+			_name.replace(QString("#EXTNAME:"), QString(""));
 		} else if(_m3uLineList[i].contains("#EXTEPG")) {
-			_epgType = Tano::epgType(_m3uLineList[i].replace("#EXTEPG:",""));
+			_epgType = Tano::epgType(_m3uLineList[i].replace("#EXTEPG:", ""));
 		} else if(_m3uLineList[i].contains("#EXTINF")) {
 			tmp = _m3uLineList[i];
-			tmp.replace(QString("#EXTINF:"),QString(""));
+			tmp.replace(QString("#EXTINF:"), QString(""));
 			tmpList = tmp.split(",");
 
 			_item = new QTreeWidgetItem(_treeWidget);
@@ -139,13 +139,13 @@ void M3UHandler::processList()
 			_channelNums << tmpList[0].toInt();
 		} else if(_m3uLineList[i].contains("#EXTTV")) {
 			tmp = _m3uLineList[i];
-			tmp.replace(QString("#EXTTV:"),QString(""));
+			tmp.replace(QString("#EXTTV:"), QString(""));
 			tmpList = tmp.split(";");
 
-			if(tmpList.size()!=0) {
+			if(tmpList.size() != 0) {
 				tmpCList = tmpList[0].split(",");
 				_channel->setCategories(tmpCList);
-				for(int k=0;k<tmpCList.size();k++)
+				for(int k = 0; k < tmpCList.size(); k++)
 					if(!_categoryList.contains(tmpCList[k]))
 						_categoryList << tmpCList[k];
 				_item->setText(2, tmpList[0]);
@@ -170,7 +170,7 @@ QTreeWidgetItem *M3UHandler::createChannel(const QString &name,
 										   const QString &url)
 {
 	int tmpNum;
-	for(int i=1; i<1000; i++) {
+	for(int i = 1; i < 1000; i++) {
 		if(!_channelNums.contains(i)) {
 			tmpNum = i;
 			break;
@@ -202,15 +202,15 @@ QTreeWidgetItem *M3UHandler::createChannel(const QString &name,
 	return _item;
 }
 
-void M3UHandler::deleteChannel(QTreeWidgetItem *i)
+void M3UHandler::deleteChannel(QTreeWidgetItem *channel)
 {
-	_channels.removeAll(_map[i]);
-	_channelNums.removeAll(_map[i]->number());
+	_channels.removeAll(_map[channel]);
+	_channelNums.removeAll(_map[channel]->number());
 
-	_nmap.remove(_map[i]->number());
-	delete _map[i];
-	_map.remove(i);
-	delete i;
+	_nmap.remove(_map[channel]->number());
+	delete _map[channel];
+	_map.remove(channel);
+	delete channel;
 }
 
 void M3UHandler::importOldFormat(const QString &tanoFile)
@@ -229,7 +229,7 @@ void M3UHandler::importOldFormat(const QString &tanoFile)
 	if (!reader.parse(xmlInputSource))
 		return;
 
-	for(int i=0; i<import->channelList().size(); i++) {
+	for(int i = 0; i < import->channelList().size(); i++) {
 		_channels << import->channelList()[i];
 		_channelNums << import->channelList()[i]->number();
 
@@ -259,7 +259,7 @@ void M3UHandler::moveUp(QTreeWidgetItem *channel)
 	int tmpNum;
 	int id = _treeWidget->indexOfTopLevelItem(channel);
 	QTreeWidgetItem *tmp = _treeWidget->topLevelItem(id-1);
-	for(int i=1; i<1000; i++) {
+	for(int i = 1; i < 1000; i++) {
 		if(!_channelNums.contains(i)) {
 			tmpNum = i;
 			break;
@@ -285,7 +285,7 @@ void M3UHandler::moveDown(QTreeWidgetItem *channel)
 	int tmpNum;
 	int id = _treeWidget->indexOfTopLevelItem(channel);
 	QTreeWidgetItem *tmp = _treeWidget->topLevelItem(id+1);
-	for(int i=1; i<1000; i++) {
+	for(int i = 1; i < 1000; i++) {
 		if(!_channelNums.contains(i)) {
 			tmpNum = i;
 			break;
@@ -303,7 +303,7 @@ void M3UHandler::moveDown(QTreeWidgetItem *channel)
 
 bool M3UHandler::validate() const
 {
-	for(int i=1; i<_channelNums.size(); i++) {
+	for(int i = 1; i < _channelNums.size(); i++) {
 		if(_channelNums[i-1] == _channelNums[i]) {
 			return false;
 		}

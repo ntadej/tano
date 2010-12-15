@@ -1,16 +1,19 @@
 /****************************************************************************
-* ChannelSelect.h: Channel selector
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_CHANNELSELECT_H_
@@ -30,13 +33,13 @@ public:
 	~ChannelSelect();
 
 public slots:
-	void back();
-	void next();
+	void back() { channel(false); }
 	void channel(const bool &direction);
+	void next() { channel(true); }
 
 private slots:
-	void keyPressed();
 	void display();
+	void keyPressed();
 
 signals:
 	void channelSelect(const int);
@@ -44,13 +47,14 @@ signals:
 private:
 	void process(const int &key);
 
-	QList<QShortcut*> _key;
 	QList<int> _channels;
+	QList<QShortcut *> _key;
 	QLCDNumber *_lcd;
 	QTimer *_timer;
-	int _num;
-	int _number[3];
+
+	int _digit;
 	int _full;
+	int _number[3];
 	int _old;
 };
 

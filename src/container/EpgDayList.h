@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,8 @@
 class EpgDayList : public QList<EpgItem>
 {
 public:
-	EpgDayList(const QString &channel = 0, const int &day = 0);
+	EpgDayList(const QString &channel = 0,
+			   const int &day = 0);
 	~EpgDayList();
 
 	QString channel() const { return _channel; }

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <info@tano.si>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -31,17 +31,17 @@ public:
 			  QObject *parent = 0);
 	~Shortcuts();
 
+	QStringList actionsNames() const { return _actionsName; }
 	void apply();
+	QStringList defaultKeys() const { return _defaultList; }
+	QStringList readKeys() const;
 	void restoreDefaults() { write(_defaultList); }
 	void write(const QStringList &keys);
-	QStringList defaultKeys() const { return _defaultList; }
-	QStringList actionsNames() const { return _actionsName; }
-	QStringList readKeys() const;
 
 private:
 	QList<QAction*> _actions;
-	QStringList _defaultList;
 	QStringList _actionsName;
+	QStringList _defaultList;
 };
 
 #endif // TANO_SHORTCUTS_H_

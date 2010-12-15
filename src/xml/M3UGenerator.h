@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ public:
 	M3UGenerator(QTreeWidget *treeWidget,
 				 const QString &name,
 				 const QString &epgType,
-				 QMap<QTreeWidgetItem*, Channel*> map);
+				 QMap<QTreeWidgetItem *, Channel *> map);
 	~M3UGenerator();
 
 	bool write(QIODevice *device);
@@ -45,7 +45,7 @@ private:
 	Tano::EpgType _epgType;
 	QTextStream _out;
 
-	QMap<QTreeWidgetItem*, Channel*> _map;
+	QMap<QTreeWidgetItem *, Channel *> _map;
 };
 
 #endif // TANO_M3UGENERATOR_H_

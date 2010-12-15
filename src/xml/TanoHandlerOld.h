@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This file is also part of the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -46,7 +46,7 @@ public:
 
 	QString errorString() const { return _errorStr; }
 	QString name() const { return _playlistName; }
-	QList<Channel*> channelList() const { return _channelList; }
+	QList<Channel *> channelList() const { return _channelList; }
 
 private:
 	int channelNumSync(const int &c);
@@ -59,7 +59,7 @@ private:
 	QString _errorStr;
 	bool _metTanoTag;
 
-	QList<Channel*> _channelList;
+	QList<Channel *> _channelList;
 
 	QString _playlistName;
 	QString _category;
