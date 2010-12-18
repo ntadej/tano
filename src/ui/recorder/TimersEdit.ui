@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>800</width>
     <height>600</height>
    </rect>
   </property>
@@ -14,7 +14,7 @@
    <string>Timers</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
+   <iconset>
     <normaloff>:/icons/48x48/timer.png</normaloff>:/icons/48x48/timer.png</iconset>
   </property>
   <property name="toolButtonStyle">
@@ -31,6 +31,9 @@
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <widget class="QTreeWidget" name="timersWidget">
+          <property name="columnCount">
+           <number>3</number>
+          </property>
           <column>
            <property name="text">
             <string>Timer</string>
@@ -38,7 +41,12 @@
           </column>
           <column>
            <property name="text">
-            <string>Status</string>
+            <string notr="true">Type</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string notr="true">Status</string>
            </property>
           </column>
          </widget>
@@ -65,7 +73,7 @@
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <layout class="QHBoxLayout" name="layoutName">
           <item>
            <widget class="QLabel" name="labelNameNew">
             <property name="text">
@@ -120,7 +128,7 @@
    <property name="minimumSize">
     <size>
      <width>300</width>
-     <height>307</height>
+     <height>318</height>
     </size>
    </property>
    <property name="windowIcon">
@@ -156,21 +164,21 @@
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
+     <item row="5" column="0">
       <widget class="QLabel" name="labelDate">
        <property name="text">
         <string>Date:</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="0">
+     <item row="6" column="0">
       <widget class="QLabel" name="labelStartTime">
        <property name="text">
         <string>Start time:</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="0">
+     <item row="7" column="0">
       <widget class="QLabel" name="labelEndTime">
        <property name="text">
         <string>End time:</string>
@@ -180,15 +188,14 @@
      <item row="0" column="1">
       <widget class="QLineEdit" name="editName"/>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="editChannel">
-       <property name="readOnly">
+     <item row="5" column="1">
+      <widget class="QDateEdit" name="editDate">
+       <property name="displayFormat">
+        <string>dd.MM.yyyy</string>
+       </property>
+       <property name="calendarPopup">
         <bool>true</bool>
        </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QDateEdit" name="editDate">
        <property name="date">
         <date>
          <year>2010</year>
@@ -196,30 +203,87 @@
          <day>1</day>
         </date>
        </property>
-       <property name="displayFormat">
-        <string>dd.MM.yyyy</string>
-       </property>
-       <property name="calendarPopup">
-        <bool>true</bool>
-       </property>
       </widget>
      </item>
-     <item row="5" column="1">
+     <item row="6" column="1">
       <widget class="QTimeEdit" name="editStartTime">
        <property name="displayFormat">
         <string>hh:mm</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
+     <item row="7" column="1">
       <widget class="QTimeEdit" name="editEndTime">
        <property name="displayFormat">
         <string>hh:mm</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <layout class="QHBoxLayout" name="horizontalLayout">
+     <item row="10" column="1">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="labelDisabled">
+       <property name="text">
+        <string>Disabled:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QCheckBox" name="checkBoxDisabled"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="editUrl">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="labelUrl">
+       <property name="text">
+        <string>Url:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="labelType">
+       <property name="text">
+        <string>Type:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="editType">
+       <item>
+        <property name="text">
+         <string>Once</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Daily</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Weekly</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <layout class="QHBoxLayout" name="layoutChannel">
        <item>
         <widget class="QLCDNumber" name="editNum">
          <property name="maximumSize">
@@ -243,7 +307,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="editPlaylist">
+        <widget class="QLineEdit" name="editChannel">
          <property name="readOnly">
           <bool>true</bool>
          </property>
@@ -251,40 +315,10 @@
        </item>
       </layout>
      </item>
-     <item row="8" column="1">
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="labelDisabled">
-       <property name="text">
-        <string>Disabled:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="7" column="1">
-      <widget class="QCheckBox" name="checkBoxDisabled"/>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="editUrl">
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="editPlaylist">
        <property name="readOnly">
         <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="labelUrl">
-       <property name="text">
-        <string>Url:</string>
        </property>
       </widget>
      </item>

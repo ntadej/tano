@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This file is also part of the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -34,7 +34,7 @@ class TimersGenerator
 {
 public:
 	TimersGenerator(QTreeWidget *treeWidget,
-					QMap<QTreeWidgetItem*,Timer*> map);
+					QMap<QTreeWidgetItem *, Timer *> map);
 	~TimersGenerator();
 
 	bool write(QIODevice *device);
@@ -44,12 +44,12 @@ private:
 	QString boolToString(const bool &b);
 	static QString escapedText(const QString &str);
 	static QString escapedAttribute(const QString &str);
-	void generateItem(QTreeWidgetItem *item, const int &depth);
+	void generateItem(QTreeWidgetItem *item);
 
 	QTreeWidget *_treeWidget;
 	QTextStream _out;
 
-	QMap<QTreeWidgetItem*,Timer*> _map;
+	QMap<QTreeWidgetItem *, Timer *> _map;
 };
 
 #endif // TANO_TIMERSGENERATOR_H_

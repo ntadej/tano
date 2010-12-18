@@ -26,7 +26,7 @@
 #include <QtCore/QTimer>
 
 #include "container/EpgDayList.h"
-#include "core/Common.h"
+#include "core/Enums.h"
 #include "epg/EpgSloveniaLoader.h"
 
 class EpgManager : public QObject

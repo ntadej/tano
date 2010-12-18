@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This file is also part of the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -26,12 +26,9 @@
 #include "TimersGenerator.h"
 
 TimersGenerator::TimersGenerator(QTreeWidget *treeWidget,
-							 QMap<QTreeWidgetItem*,Timer*> map)
+								 QMap<QTreeWidgetItem *, Timer *> map)
 	: _treeWidget(treeWidget),
-	_map(map)
-{
-
-}
+	_map(map) { }
 
 TimersGenerator::~TimersGenerator() { }
 
@@ -41,9 +38,9 @@ bool TimersGenerator::write(QIODevice *device)
 	_out.setCodec("UTF-8");
 	_out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 		<< "<!DOCTYPE tano>\n"
-		<< "<tano version=\"0.1\">\n";
+		<< "<tano version=\"0.8\">\n";
 	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i)
-		generateItem(_treeWidget->topLevelItem(i), 1);
+		generateItem(_treeWidget->topLevelItem(i));
 	_out << "</tano>\n";
 	return true;
 }
@@ -81,26 +78,21 @@ QString TimersGenerator::boolToString(const bool &b)
 	}
 }
 
-void TimersGenerator::generateItem(QTreeWidgetItem *item, const int &depth)
+void TimersGenerator::generateItem(QTreeWidgetItem *item)
 {
 	Timer *currentTimer = _map[item];
+	int depth = 1;
 
 	_out << indent(depth) << "<timer>\n"
-		<< indent(depth + 1) << "<name disabled=\"" << boolToString(currentTimer->isDisabled())
-							 << "\">" << escapedText(currentTimer->name())
-							 << "</name>\n"
-		<< indent(depth + 1) << "<channel>" << escapedText(currentTimer->channel())
-							 << "</channel>\n"
-		<< indent(depth + 1) << "<playlist channelId=\"" << escapedText(QString().number(currentTimer->num()))
-							 << "\">" << escapedText(currentTimer->playlist())
-							 << "</playlist>\n"
-		<< indent(depth + 1) << "<url>" << escapedText(currentTimer->url())
-							 << "</url>\n"
-		<< indent(depth + 1) << "<date>" << escapedText(currentTimer->date().toString(Qt::ISODate))
-							 << "</date>\n"
-		<< indent(depth + 1) << "<start>" << escapedText(currentTimer->startTime().toString(Qt::ISODate))
-							 << "</start>\n"
-		<< indent(depth + 1) << "<end>" << escapedText(currentTimer->endTime().toString(Qt::ISODate))
-							 << "</end>\n"
-		<< indent(depth) << "</timer>\n";
+		 << indent(depth + 1) << "<name>" << escapedText(currentTimer->name()) << "</name>\n"
+		 << indent(depth + 1) << "<playlist>" << escapedText(currentTimer->playlist()) << "</playlist>\n"
+		 << indent(depth + 1) << "<channelid>" << escapedText(QString().number(currentTimer->num())) << "</channelid>\n"
+		 << indent(depth + 1) << "<channel>" << escapedText(currentTimer->channel()) << "</channel>\n"
+		 << indent(depth + 1) << "<url>" << escapedText(currentTimer->url()) << "</url>\n"
+		 << indent(depth + 1) << "<type>" << escapedText(QString().number(Tano::timerType(currentTimer->type()))) << "</type>\n"
+		 << indent(depth + 1) << "<date>" << escapedText(currentTimer->date().toString(Qt::ISODate)) << "</date>\n"
+		 << indent(depth + 1) << "<starttime>" << escapedText(currentTimer->startTime().toString(Qt::ISODate)) << "</starttime>\n"
+		 << indent(depth + 1) << "<endtime>" << escapedText(currentTimer->endTime().toString(Qt::ISODate)) << "</endtime>\n"
+		 << indent(depth + 1) << "<disabled>" << boolToString(currentTimer->isDisabled()) << "</disabled>\n"
+		 << indent(depth) << "</timer>\n";
 }

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This file is also part of the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -33,13 +33,12 @@ TimersHandler::TimersHandler(QTreeWidget *treeWidget)
 
 TimersHandler::~TimersHandler()
 {
-	for(int i=0; i < _treeWidget->topLevelItemCount(); i++)
-		delete _map.value(_treeWidget->topLevelItem(i));
+	clear();
 }
 
 void TimersHandler::clear()
 {
-	for(int i=0; i < _treeWidget->topLevelItemCount(); i++)
+	for(int i = 0; i < _treeWidget->topLevelItemCount(); i++)
 		delete _map.value(_treeWidget->topLevelItem(i));
 
 	_treeWidget->clear();
@@ -47,9 +46,9 @@ void TimersHandler::clear()
 }
 
 bool TimersHandler::startElement(const QString & /* namespaceURI */,
-								const QString & /* localName */,
-								const QString &qName,
-								const QXmlAttributes &attributes)
+								 const QString & /* localName */,
+								 const QString &qName,
+								 const QXmlAttributes &attributes)
 {
 	if (!_metTanoTag && qName != "tano") {
 		_errorStr = QObject::tr("The file is not a Tano Timers list.");
@@ -63,16 +62,6 @@ bool TimersHandler::startElement(const QString & /* namespaceURI */,
 		_item->setIcon(0, _timerIcon);
 		_item->setText(0, QObject::tr("Unknown title"));
 		_timer = new Timer(QObject::tr("Unknown title"));
-	} else if(qName == "playlist") {
-		if(_item && _timer)
-			_timer->setNum(attributes.value("channelId").toInt());
-	} else if(qName == "name") {
-		if(_item && _timer) {
-			if(attributes.value("disabled") == "true")
-				_timer->setDisabled(true);
-			else
-				_timer->setDisabled(false);
-		}
 	}
 
 	_currentText.clear();
@@ -80,45 +69,67 @@ bool TimersHandler::startElement(const QString & /* namespaceURI */,
 }
 
 bool TimersHandler::endElement(const QString & /* namespaceURI */,
-							 const QString & /* localName */,
-							 const QString &qName)
+							   const QString & /* localName */,
+							   const QString &qName)
 {
 	if (qName == "name") {
 		if (_item && _timer) {
 			_item->setText(0, _currentText);
-			_item->setText(1, QObject::tr("Active"));
+			_item->setText(2, QObject::tr("Active"));
 			_timer->setName(_currentText);
 			_map.insert(_item, _timer);
 		}
-	} else if (qName == "channel") {
-		if (_item && _timer)
-			_timer->setChannel(_currentText);
 	} else if (qName == "playlist") {
-		if (_item && _timer)
+		if (_item && _timer) {
 			_timer->setPlaylist(_currentText);
+		}
+	} else if (qName == "channelid") {
+		if (_item && _timer) {
+			_timer->setNum(_currentText.toInt());
+		}
+	} else if (qName == "channel") {
+		if (_item && _timer) {
+			_timer->setChannel(_currentText);
+		}
 	} else if (qName == "url") {
-		if (_item && _timer)
+		if (_item && _timer) {
 			_timer->setUrl(_currentText);
+		}
+	} else if (qName == "type") {
+		if (_item && _timer) {
+			_timer->setType(Tano::timerType(_currentText.toInt()));
+			_item->setText(1, Tano::timerTypeString(_timer->type()));
+		}
 	} else if (qName == "date") {
 		if (_item && _timer) {
-			_timer->setDate(QDate::fromString(_currentText,Qt::ISODate));
-			if(QDate::fromString(_currentText,Qt::ISODate) < QDate::currentDate()) {
-				_item->setText(1, QObject::tr("Disabled or expired"));
+			_timer->setDate(QDate::fromString(_currentText, Qt::ISODate));
+			if(QDate::fromString(_currentText, Qt::ISODate) < QDate::currentDate()) {
+				_item->setText(2, QObject::tr("Disabled or expired"));
 				_timer->setDisabled(true);
 			}
 		}
-	} else if (qName == "start") {
-		if (_item && _timer)
-			_timer->setStartTime(QTime::fromString(_currentText,Qt::ISODate));
-	} else if (qName == "end") {
+	} else if (qName == "starttime") {
 		if (_item && _timer) {
-			_timer->setEndTime(QTime::fromString(_currentText,Qt::ISODate));
-			if(QTime::fromString(_currentText,Qt::ISODate) < QTime::currentTime()) {
-				_item->setText(1, QObject::tr("Disabled or expired"));
+			_timer->setStartTime(QTime::fromString(_currentText, Qt::ISODate));
+		}
+	} else if (qName == "endtime") {
+		if (_item && _timer) {
+			_timer->setEndTime(QTime::fromString(_currentText, Qt::ISODate));
+			if(QTime::fromString(_currentText, Qt::ISODate) < QTime::currentTime()) {
+				_item->setText(2, QObject::tr("Disabled or expired"));
 				_timer->setDisabled(true);
+			}
+		}
+	} else if (qName == "disabled") {
+		if (_item && _timer) {
+			if(_currentText == "true") {
+				_timer->setDisabled(true);
+			} else {
+				_timer->setDisabled(false);
 			}
 		}
 	}
+
 	return true;
 }
 
@@ -142,13 +153,15 @@ bool TimersHandler::fatalError(const QXmlParseException &exception)
 
 QTreeWidgetItem *TimersHandler::itemRead(Timer *item)
 {
-	for(int i=0; i<_treeWidget->topLevelItemCount(); i++)
+	for(int i = 0; i < _treeWidget->topLevelItemCount(); i++)
 		if(_treeWidget->topLevelItem(i)->text(0) == item->name())
 			return _treeWidget->topLevelItem(i);
 }
 
-QTreeWidgetItem *TimersHandler::newTimer(const QString &name, const QString &channel,
-										 const QString &playlist, const int &num,
+QTreeWidgetItem *TimersHandler::newTimer(const QString &name,
+										 const QString &channel,
+										 const QString &playlist,
+										 const int &num,
 										 const QString &url)
 {
 	_item = new QTreeWidgetItem(_treeWidget);

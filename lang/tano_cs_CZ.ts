@@ -869,42 +869,42 @@ Ztratíte tím všechna neuložená nastavení.</translation>
 <context>
     <name>Print</name>
     <message>
-        <location filename="../src/core/Print.cpp" line="53"/>
+        <location filename="../src/core/Print.cpp" line="58"/>
         <source>#</source>
         <translation>#</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="57"/>
+        <location filename="../src/core/Print.cpp" line="62"/>
         <source>Channel</source>
         <translation>Program</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="61"/>
+        <location filename="../src/core/Print.cpp" line="66"/>
         <source>Url</source>
         <translation>Adresa (URL)</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="65"/>
+        <location filename="../src/core/Print.cpp" line="70"/>
         <source>Categories</source>
         <translation>Skupiny</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="69"/>
+        <location filename="../src/core/Print.cpp" line="74"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="73"/>
+        <location filename="../src/core/Print.cpp" line="78"/>
         <source>EPG</source>
         <translation>EPG</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="77"/>
+        <location filename="../src/core/Print.cpp" line="82"/>
         <source>Logo</source>
         <translation>Značka</translation>
     </message>
     <message>
-        <location filename="../src/core/Print.cpp" line="118"/>
+        <location filename="../src/core/Print.cpp" line="123"/>
         <source>Exported with Tano on %1.</source>
         <translation>Vyvedeno programem Tano na %1.</translation>
     </message>
@@ -987,20 +987,20 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Soubor není Tano seznam programů TV 1.1 nebo pozdější.</translation>
     </message>
     <message>
+        <location filename="../src/xml/TimersHandler.cpp" line="63"/>
         <location filename="../src/xml/TimersHandler.cpp" line="64"/>
-        <location filename="../src/xml/TimersHandler.cpp" line="65"/>
         <location filename="../src/xml/TanoHandlerOld.cpp" line="60"/>
         <source>Unknown title</source>
         <translation>Neznámý název</translation>
     </message>
     <message>
         <location filename="../src/xml/M3UHandler.cpp" line="71"/>
-        <location filename="../src/xml/TimersHandler.cpp" line="133"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="144"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/xml/TimersHandler.cpp" line="134"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="145"/>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation>Chyba při zpracování na řádku %1, sloupec %2:
@@ -1012,19 +1012,19 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Soubor není souborem Tano seznam programů TV.</translation>
     </message>
     <message>
-        <location filename="../src/xml/TimersHandler.cpp" line="55"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="54"/>
         <source>The file is not a Tano Timers list.</source>
         <translation>Soubor není seznam časovačů Tano.</translation>
     </message>
     <message>
-        <location filename="../src/xml/TimersHandler.cpp" line="89"/>
-        <location filename="../src/xml/TimersHandler.cpp" line="157"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="78"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="170"/>
         <source>Active</source>
         <translation>V činnosti</translation>
     </message>
     <message>
-        <location filename="../src/xml/TimersHandler.cpp" line="106"/>
-        <location filename="../src/xml/TimersHandler.cpp" line="117"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="107"/>
+        <location filename="../src/xml/TimersHandler.cpp" line="119"/>
         <source>Disabled or expired</source>
         <translation>Zakázáno nebo vypršelo</translation>
     </message>
@@ -1036,6 +1036,21 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     <message>
         <location filename="../src/xml/UpdateHandler.cpp" line="36"/>
         <source>The file is not a Tano updates file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/Enums.cpp" line="70"/>
+        <source>Once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/Enums.cpp" line="72"/>
+        <source>Daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/core/Enums.cpp" line="74"/>
+        <source>Weekly</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1635,101 +1650,116 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation type="unfinished">Časovače</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="36"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="39"/>
         <source>Timer</source>
         <translation type="unfinished">Časovač</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="41"/>
-        <source>Status</source>
-        <translation type="unfinished">Stav</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="53"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="61"/>
         <source>Create</source>
         <translation type="unfinished">Vytvořit</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="72"/>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="141"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="80"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="149"/>
         <source>Name:</source>
         <translation type="unfinished">Název:</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="84"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="92"/>
         <source>Select a channel from the list below:</source>
         <translation type="unfinished">Vyberte program ze seznamu níže:</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="131"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="139"/>
         <source>Editor</source>
         <translation type="unfinished">Editor</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="148"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="156"/>
         <source>Channel:</source>
         <translation type="unfinished">Program:</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="155"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="163"/>
         <source>Playlist:</source>
         <translation type="unfinished">Seznam programů:</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="162"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="170"/>
         <source>Date:</source>
         <translation type="unfinished">Datum:</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="169"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="177"/>
         <source>Start time:</source>
         <translation type="unfinished">Začátek:</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="176"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="184"/>
         <source>End time:</source>
         <translation type="unfinished">Konec:</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="200"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="194"/>
         <source>dd.MM.yyyy</source>
         <translation type="unfinished">dd.mm.rrrr</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="210"/>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="217"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="211"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="218"/>
         <source>hh:mm</source>
         <translation type="unfinished">hh:mm</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="270"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="238"/>
         <source>Disabled:</source>
         <translation type="unfinished">Zakázáno:</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="287"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="255"/>
         <source>Url:</source>
         <translation type="unfinished">Adresa (URL):</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="300"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="262"/>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="270"/>
+        <source>Once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="275"/>
+        <source>Daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="280"/>
+        <source>Weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="334"/>
         <source>New Task</source>
         <translation type="unfinished">Nový úkol</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="309"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="343"/>
         <source>Delete Task</source>
         <translation type="unfinished">Smazat úkol</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="318"/>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="321"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="352"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="355"/>
         <source>Save and Close</source>
         <translation type="unfinished">Uložit a zavřít</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="330"/>
-        <location filename="../src/ui/recorder/TimersEdit.ui" line="333"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="364"/>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="367"/>
         <source>Close</source>
         <translation type="unfinished">Zavřít</translation>
     </message>
@@ -1748,9 +1778,9 @@ Vaše změny nebudou použity.</translation>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="148"/>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="154"/>
-        <location filename="../src/ui/recorder/TimersEdit.cpp" line="202"/>
-        <location filename="../src/ui/recorder/TimersEdit.cpp" line="243"/>
-        <location filename="../src/ui/recorder/TimersEdit.cpp" line="261"/>
+        <location filename="../src/ui/recorder/TimersEdit.cpp" line="198"/>
+        <location filename="../src/ui/recorder/TimersEdit.cpp" line="245"/>
+        <location filename="../src/ui/recorder/TimersEdit.cpp" line="263"/>
         <source>Tano</source>
         <translation type="unfinished">Tano</translation>
     </message>
@@ -1761,31 +1791,31 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.cpp" line="155"/>
-        <location filename="../src/ui/recorder/TimersEdit.cpp" line="203"/>
+        <location filename="../src/ui/recorder/TimersEdit.cpp" line="199"/>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="unfinished">Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název.</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.cpp" line="244"/>
+        <location filename="../src/ui/recorder/TimersEdit.cpp" line="246"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation type="unfinished">Nelze číst ze souboru %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.cpp" line="262"/>
+        <location filename="../src/ui/recorder/TimersEdit.cpp" line="264"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation type="unfinished">Nelze zapisovat soubor %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.cpp" line="289"/>
+        <location filename="../src/ui/recorder/TimersEdit.cpp" line="285"/>
         <source>Disabled or expired</source>
         <translation type="unfinished">Zakázáno nebo vypršelo</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/TimersEdit.cpp" line="293"/>
+        <location filename="../src/ui/recorder/TimersEdit.cpp" line="289"/>
         <source>Active</source>
         <translation type="unfinished">V činnosti</translation>
     </message>

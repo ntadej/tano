@@ -21,7 +21,7 @@
 
 #include <QtGui/QStackedWidget>
 
-#include "core/Common.h"
+#include "core/Enums.h"
 
 namespace Ui
 {

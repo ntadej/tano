@@ -25,7 +25,7 @@
 #include <QtGui/QTreeWidgetItem>
 
 #include "container/Channel.h"
-#include "core/Common.h"
+#include "core/Enums.h"
 
 class M3UHandler
 {

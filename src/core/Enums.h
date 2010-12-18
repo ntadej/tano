@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,44 +16,37 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_EPGFULL_H_
-#define TANO_EPGFULL_H_
+#ifndef TANO_ENUMS_H_
+#define TANO_ENUMS_H_
 
-#include <QtGui/QTreeWidgetItem>
-#include <QtGui/QWidget>
+#include <QtCore/QString>
 
-#include "core/Enums.h"
+namespace Tano {
+	// Epg types
+	enum EpgType {
+		Slovenia,
+		XMLTV
+	};
 
-namespace Ui
-{
-	class EpgFull;
-}
+	EpgType epgType(const QString &type);
+	QString epgType(const EpgType &type);
 
-class EpgDayList;
+	// Epg ID
+	enum Id {
+		Main,
+		Schedule
+	};
 
-class EpgFull : public QWidget
-{
-Q_OBJECT
-public:
-	EpgFull(QWidget *parent = 0);
-	~EpgFull();
+	// Timer types
+	enum TimerType {
+		Once,
+		Daily,
+		Weekly
+	};
 
-	void openPlaylist(const QString &p);
-
-protected:
-	void changeEvent(QEvent *e);
-
-signals:
-	void requestEpg(QString, Tano::Id);
-	void urlClicked(QString);
-
-private slots:
-	void channel(QTreeWidgetItem *item);
-	void setEpg(const EpgDayList &list,
-				const Tano::Id &identifier);
-
-private:
-	Ui::EpgFull *ui;
+	TimerType timerType(const int &type);
+	int timerType(const TimerType &type);
+	QString timerTypeString(const TimerType &type);
 };
 
-#endif // TANO_EPGFULL_H_
+#endif // TANO_ENUMS_H_

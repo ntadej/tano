@@ -113,6 +113,7 @@ SET(Tano_Container_Srcs
 SET(Tano_Core_Srcs
 	core/ChannelSelect.cpp
 	core/Common.cpp
+	core/Enums.cpp
 	core/GetFile.cpp
 	core/LocaleManager.cpp
 	core/PluginsLoader.cpp

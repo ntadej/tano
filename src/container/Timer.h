@@ -23,15 +23,10 @@
 #include <QtCore/QString>
 #include <QtCore/QTime>
 
+#include "core/Enums.h"
+
 class Timer
 {
-	// Timer types
-	enum TimerType {
-		Once,
-		Daily,
-		Weekly
-	};
-
 public:
 	Timer(const QString &name,
 		  const QString &channel = 0,
@@ -59,8 +54,8 @@ public:
 	void setEndTime(const QTime &endTime) { _endTime = endTime; }
 	bool isDisabled() const { return _disabled; }
 	void setDisabled(const bool &disabled) { _disabled = disabled; }
-	TimerType type() const { return _type; }
-	void setType(const TimerType &type) { _type = type; }
+	Tano::TimerType type() const { return _type; }
+	void setType(const Tano::TimerType &type) { _type = type; }
 
 private:
 	QString _name;
@@ -72,7 +67,7 @@ private:
 	QTime _startTime;
 	QTime _endTime;
 	bool _disabled;
-	TimerType _type;
+	Tano::TimerType _type;
 };
 
 #endif // TANO_TIMER_H_

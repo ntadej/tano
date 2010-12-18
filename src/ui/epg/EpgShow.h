@@ -21,7 +21,7 @@
 
 #include <QtGui/QStackedWidget>
 
-#include "core/Common.h"
+#include "core/Enums.h"
 #include "core/GetFile.h"
 #include "epg/EpgSloveniaLoader.h"
 

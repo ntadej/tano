@@ -22,7 +22,7 @@
 #include <QtGui/QWidget>
 
 #include "container/Channel.h"
-#include "core/Common.h"
+#include "core/Enums.h"
 #include "xml/M3UHandler.h"
 
 namespace Ui

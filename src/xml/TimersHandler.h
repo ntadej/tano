@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This file is also part of the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -50,12 +50,14 @@ public:
 
 	Timer *timerRead(QTreeWidgetItem *item) { return _map[item]; }
 	QTreeWidgetItem *itemRead(Timer *item);
-	QMap<QTreeWidgetItem*, Timer*> timersMap() { return _map; }
+	QMap<QTreeWidgetItem *, Timer *> timersMap() { return _map; }
 
 	void clear();
 
-	QTreeWidgetItem *newTimer(const QString &name, const QString &channel,
-							  const QString &playlist, const int &num,
+	QTreeWidgetItem *newTimer(const QString &name,
+							  const QString &channel,
+							  const QString &playlist,
+							  const int &num,
 							  const QString &url);
 	void deleteItem(QTreeWidgetItem *item);
 
@@ -69,7 +71,7 @@ private:
 	QString _errorStr;
 	bool _metTanoTag;
 
-	QMap<QTreeWidgetItem*, Timer*> _map;
+	QMap<QTreeWidgetItem *, Timer *> _map;
 
 	QIcon _timerIcon;
 };

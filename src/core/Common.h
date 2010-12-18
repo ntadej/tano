@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -31,21 +31,6 @@ namespace Tano {
 
 	// Backend settings
 	QList<const char *> vlcQtArgs();
-
-	// Epg types
-	enum EpgType {
-		Slovenia,
-		XMLTV
-	};
-
-	EpgType epgType(const QString &type);
-	QString epgType(const EpgType &type);
-
-	// Epg ID
-	enum Id {
-		Main,
-		Schedule
-	};
 };
 
 #endif // TANO_COMMON_H_
