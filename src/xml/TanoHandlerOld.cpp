@@ -22,6 +22,7 @@
 
 #include <QtCore/QDebug>
 
+#include "core/ConsoleOutput.h"
 #include "TanoHandlerOld.h"
 
 TanoHandlerOld::TanoHandlerOld()
@@ -102,10 +103,11 @@ bool TanoHandlerOld::characters(const QString &str)
 
 bool TanoHandlerOld::fatalError(const QXmlParseException &exception)
 {
-	qDebug() << QString("Parse error at line %1, column %2: %3")
-							 .arg(exception.lineNumber())
-							 .arg(exception.columnNumber())
-							 .arg(exception.message());
+	if(ConsoleOutput::debug())
+		qDebug() << QString("Parse error at line %1, column %2: %3")
+							.arg(exception.lineNumber())
+							.arg(exception.columnNumber())
+							.arg(exception.message());
 	return false;
 }
 

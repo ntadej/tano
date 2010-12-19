@@ -37,8 +37,8 @@ bool TimersGenerator::write(QIODevice *device)
 	_out.setDevice(device);
 	_out.setCodec("UTF-8");
 	_out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-		<< "<!DOCTYPE tano>\n"
-		<< "<tano version=\"0.8\">\n";
+		 << "<!DOCTYPE tano>\n"
+		 << "<tano version=\"0.8\">\n";
 	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i)
 		generateItem(_treeWidget->topLevelItem(i));
 	_out << "</tano>\n";

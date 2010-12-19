@@ -72,8 +72,20 @@ QList<const char *> Tano::vlcQtArgs()
 	QList<const char *> args;
 
 	Settings *s = new Settings();
-	args = Vlc::libvlcArgs(s->globalSettings());
+	args = Vlc::commonArgs(s->globalSettings());
 	delete s;
+
+#ifdef Q_WS_WIN
+	args << "--plugin-path=vlc\\plugins\\";
+#endif
+
+	return args;
+}
+
+QList<const char *> Tano::vlcQtRecorderArgs(const QString &file)
+{
+	QList<const char *> args;
+	args = Vlc::recorderArgs(file);
 
 #ifdef Q_WS_WIN
 	args << "--plugin-path=vlc\\plugins\\";

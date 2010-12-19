@@ -16,7 +16,6 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
 #include <QtGui/QDialogButtonBox>
 
 #include "core/Version.h"
@@ -82,12 +81,6 @@ void UpdateDialog::checkSilent()
 void UpdateDialog::processUpdate(const QStringList &update,
 								 const UpdateInfo &info)
 {
-	qDebug() << info.name()
-			<< info.version()
-			<< info.date()
-			<< info.description()
-			<< info.development();
-
 	if (update[0] == "latest") {
 		ui->labelVersionLatest->setText("<b>" + Version::version() + "</b>");
 		ui->main->setCurrentIndex(0);

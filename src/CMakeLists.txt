@@ -111,8 +111,10 @@ SET(Tano_Container_Srcs
 	container/Timer.cpp
 )
 SET(Tano_Core_Srcs
+	core/Arguments.cpp
 	core/ChannelSelect.cpp
 	core/Common.cpp
+	core/ConsoleOutput.cpp
 	core/Enums.cpp
 	core/GetFile.cpp
 	core/LocaleManager.cpp

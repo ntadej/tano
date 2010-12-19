@@ -16,44 +16,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
+#include "ConsoleOutput.h"
 
-#include "core/ConsoleOutput.h"
-#include "recorder/Time.h"
-
-Time::Time()
+bool ConsoleOutput::debug()
 {
-	_timer = new QTimer();
-	connect(_timer, SIGNAL(timeout()), this, SLOT(check()));
-	_timer->start(6000);
-}
-
-Time::~Time()
-{
-	delete _timer;
-}
-
-void Time::check()
-{
-	for(int i=0; i<_timersList.size(); i++) {
-		if(_timersList[i]->startTime() <= QTime::currentTime() && _timersList[i]->endTime() >= QTime::currentTime()) {
-			if(!_timersList[i]->isDisabled()) {
-				if(ConsoleOutput::debug())
-					qDebug() << "Timer starting:" << _timersList[i]->name();
-				emit startTimer(_timersList[i]);
-			}
-		}
-	}
-}
-
-void Time::addTimer(Timer *t)
-{
-	if(!_timersList.contains(t))
-		_timersList.append(t);
-}
-
-void Time::removeTimer(Timer *t)
-{
-	if(_timersList.contains(t))
-		_timersList.removeOne(t);
+	return true;
 }

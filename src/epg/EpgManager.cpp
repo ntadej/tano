@@ -16,11 +16,9 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDate>
 #include <QtCore/QDebug>
-#include <QtCore/QFile>
-#include <QtCore/QTextStream>
 
+#include "core/ConsoleOutput.h"
 #include "container/EpgItem.h"
 #include "epg/EpgManager.h"
 
@@ -81,8 +79,10 @@ void EpgManager::load()
 {
 	if(_currentRequest != "") {
 		_currentLoadEpg = _currentRequest;
-		qDebug() << "Request:" << _currentLoadEpg;
 		_slovenia->getSchedule(_currentLoadEpg);
+
+		if(ConsoleOutput::debug())
+			qDebug() << "EPG:" << "Request:" << _currentLoadEpg;
 	} else {
 		for(int i=0; i<_epgList.size(); i++) {
 			if(!_day[0].contains(_epgList[i])) {
@@ -101,7 +101,8 @@ void EpgManager::set(const EpgDayList &list)
 	_day[list.day()].insert(list.channel(), list);
 
 	if(list.day() == 3) {
-		qDebug() << list.channel() << "loaded";
+		if(ConsoleOutput::debug())
+			qDebug() << "EPG:" << "Channel" << list.channel() << "loaded";
 		if(_currentLoadEpg == _currentRequest) {
 			_currentRequest = "";
 			post(_currentLoadEpg);

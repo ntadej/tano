@@ -31,6 +31,7 @@ namespace Tano {
 
 	// Backend settings
 	QList<const char *> vlcQtArgs();
+	QList<const char *> vlcQtRecorderArgs(const QString &file);
 };
 
 #endif // TANO_COMMON_H_

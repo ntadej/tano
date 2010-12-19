@@ -22,6 +22,7 @@
 #include "container/EpgDayList.h"
 #include "container/EpgItem.h"
 #include "container/EpgShowInfo.h"
+#include "core/ConsoleOutput.h"
 #include "epg/EpgSlovenia.h"
 
 EpgSlovenia::EpgSlovenia() {}
@@ -54,9 +55,10 @@ bool EpgSlovenia::init(const QString &input)
 	flag.indexIn(input);
 
 	_flag = flag.cap(1);
-	qDebug() << "EPG: Flag:" << _flag;
+	if(ConsoleOutput::debug())
+		qDebug() << "EPG:" << "Flag:" << _flag;
 
-	if(_flag.size()>0)
+	if(_flag.size() > 0)
 		return true;
 	else
 		return false;

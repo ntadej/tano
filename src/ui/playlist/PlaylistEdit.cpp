@@ -22,6 +22,7 @@
 #include <QtGui/QMessageBox>
 
 #include "core/Common.h"
+#include "core/ConsoleOutput.h"
 #include "core/Settings.h"
 #include "ui/dialogs/PrintDialog.h"
 
@@ -222,7 +223,8 @@ void PlaylistEdit::refreshPlaylist(const bool &refresh)
 	} else {
 		ui->playlist->setEnabled(false);
 
-		qDebug() << ui->ipFrom->text() << ui->ipPort->value() << ui->ipTimeout->value();
+		if(ConsoleOutput::debug())
+			qDebug() << "Scanning:" << ui->ipFrom->text() << ui->ipPort->value() << ui->ipTimeout->value();
 
 		QStringList ipFrom = ui->ipFrom->text().split(".");
 		_currentIp[0] = ipFrom[0].toInt();
@@ -259,7 +261,8 @@ void PlaylistEdit::checkCurrentIp()
 		}
 
 		if(newChannel) {
-			qDebug() << "New";
+			if(ConsoleOutput::debug())
+				qDebug() << "Scanning:" << "Channel Found";
 			addItem(tr("New channel from scan"), currentIp());
 		}
 	}
