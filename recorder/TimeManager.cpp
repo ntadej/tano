@@ -18,7 +18,6 @@
 
 #include <QtCore/QDebug>
 
-#include "core/ConsoleOutput.h"
 #include "recorder/TimeManager.h"
 
 TimeManager::TimeManager()
@@ -38,8 +37,7 @@ void TimeManager::check()
 	for(int i=0; i<_timersList.size(); i++) {
 		if(_timersList[i]->startTime() <= QTime::currentTime() && _timersList[i]->endTime() >= QTime::currentTime()) {
 			if(!_timersList[i]->isDisabled()) {
-				if(ConsoleOutput::debug())
-					qDebug() << "Timer starting:" << _timersList[i]->name();
+				qDebug() << "Timer starting:" << _timersList[i]->name();
 				emit startTimer(_timersList[i]);
 			}
 		}

@@ -881,10 +881,6 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No timer - press button to stop.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Stop recording</source>
         <translation type="unfinished"></translation>
     </message>

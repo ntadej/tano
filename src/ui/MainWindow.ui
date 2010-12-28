@@ -920,7 +920,7 @@
   <customwidget>
    <class>Recorder</class>
    <extends>QWidget</extends>
-   <header>recorder/Recorder.h</header>
+   <header>ui/recorder/Recorder.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

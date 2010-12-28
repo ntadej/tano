@@ -214,10 +214,10 @@
         <location filename="../src/ui/MainWindow.ui" line="377"/>
         <location filename="../src/ui/MainWindow.ui" line="380"/>
         <location filename="../src/ui/MainWindow.ui" line="690"/>
-        <location filename="../src/MainWindow.cpp" line="434"/>
-        <location filename="../src/MainWindow.cpp" line="435"/>
-        <location filename="../src/MainWindow.cpp" line="436"/>
-        <location filename="../src/MainWindow.cpp" line="437"/>
+        <location filename="../src/ui/MainWindow.cpp" line="436"/>
+        <location filename="../src/ui/MainWindow.cpp" line="437"/>
+        <location filename="../src/ui/MainWindow.cpp" line="438"/>
+        <location filename="../src/ui/MainWindow.cpp" line="439"/>
         <source>Play</source>
         <translation>Přehrát</translation>
     </message>
@@ -234,7 +234,7 @@
         <translation>Vždy nahoře</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="634"/>
+        <location filename="../src/ui/MainWindow.cpp" line="636"/>
         <source>Restore</source>
         <translation>Obnovit</translation>
     </message>
@@ -332,47 +332,47 @@
         <translation>&amp;Soubor</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="76"/>
+        <location filename="../src/ui/MainWindow.cpp" line="77"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Chcete ukončit program Tano?
 Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="425"/>
-        <location filename="../src/MainWindow.cpp" line="426"/>
-        <location filename="../src/MainWindow.cpp" line="427"/>
-        <location filename="../src/MainWindow.cpp" line="428"/>
+        <location filename="../src/ui/MainWindow.cpp" line="427"/>
+        <location filename="../src/ui/MainWindow.cpp" line="428"/>
+        <location filename="../src/ui/MainWindow.cpp" line="429"/>
+        <location filename="../src/ui/MainWindow.cpp" line="430"/>
         <source>Pause</source>
         <translation>Pozastavit</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="503"/>
+        <location filename="../src/ui/MainWindow.cpp" line="505"/>
         <source>Open Channel list File</source>
         <translation>Otevřít soubor se seznamem programů</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="505"/>
+        <location filename="../src/ui/MainWindow.cpp" line="507"/>
         <source>Tano TV Channel list Files(*.m3u)</source>
         <translation>Soubory Tano se seznamem programů TV (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="533"/>
+        <location filename="../src/ui/MainWindow.cpp" line="535"/>
         <source>Open File or URL</source>
         <translation>Otevřít soubor nebo adresu (URL)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="535"/>
+        <location filename="../src/ui/MainWindow.cpp" line="537"/>
         <source>Multimedia files(*)</source>
         <translation>Multimediální soubory (*)</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="546"/>
+        <location filename="../src/ui/MainWindow.cpp" line="548"/>
         <source>Open URL or stream</source>
         <translation>Otevřít adresu (URL) nebo datový proud</translation>
     </message>
     <message>
-        <location filename="../src/MainWindow.cpp" line="547"/>
+        <location filename="../src/ui/MainWindow.cpp" line="549"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Zadejte adresu (URL) multimediálního souboru nebo datového proudu, jejž chcete přehrávat:</translation>
     </message>
@@ -389,9 +389,9 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
-        <location filename="../src/MainWindow.cpp" line="75"/>
-        <location filename="../src/MainWindow.cpp" line="590"/>
-        <location filename="../src/MainWindow.cpp" line="592"/>
+        <location filename="../src/ui/MainWindow.cpp" line="76"/>
+        <location filename="../src/ui/MainWindow.cpp" line="592"/>
+        <location filename="../src/ui/MainWindow.cpp" line="594"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -415,7 +415,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="720"/>
         <location filename="../src/ui/MainWindow.ui" line="723"/>
-        <location filename="../src/MainWindow.cpp" line="631"/>
+        <location filename="../src/ui/MainWindow.cpp" line="633"/>
         <source>Hide to tray</source>
         <translation>Skrýt v oznamovací oblasti panelu</translation>
     </message>
@@ -1065,41 +1065,36 @@ Ztratíte tím všechna neuložená nastavení.</translation>
 <context>
     <name>Recorder</name>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="112"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="108"/>
         <source>Open Directory</source>
         <translation>Otevřít adresář</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="143"/>
-        <source>No timer - press button to stop.</source>
-        <translation>Žádný časovač - stiskněte tlačítko pro zastavení.</translation>
-    </message>
-    <message>
-        <location filename="../src/recorder/Recorder.cpp" line="146"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="142"/>
         <source>Stop recording</source>
         <translation>Zastavit nahrávání</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="61"/>
-        <location filename="../src/recorder/Recorder.cpp" line="157"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="153"/>
         <source>Record</source>
         <translation>Nahrávat</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="127"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="123"/>
         <source>Cannot write to %1.</source>
         <translation>Nelze zapisovat do %1.</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="133"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="129"/>
         <source>Channel is not selected!</source>
         <translation>Není vybrán program!</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="14"/>
         <location filename="../src/ui/recorder/Recorder.ui" line="24"/>
-        <location filename="../src/recorder/Recorder.cpp" line="126"/>
-        <location filename="../src/recorder/Recorder.cpp" line="132"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="122"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="128"/>
         <source>Recorder</source>
         <translation>Nahrávání</translation>
     </message>

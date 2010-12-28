@@ -27,14 +27,6 @@
 #include "core/Common.h"
 #include "core/Settings.h"
 
-#include "ui/dialogs/AboutDialog.h"
-
-void Tano::about(QWidget *parent)
-{
-	AboutDialog about(parent);
-	about.exec();
-}
-
 QString Tano::locateResource(const QString &file)
 {
 	QString path;

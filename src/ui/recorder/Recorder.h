@@ -22,9 +22,7 @@
 #include <QtCore/QTime>
 #include <QtGui/QWidget>
 
-#include "container/Timer.h"
-#include "recorder/RecorderCore.h"
-#include "recorder/TimeManager.h"
+//#include "recorder/RecorderCore.h"
 #include "ui/recorder/TimersEdit.h"
 
 namespace Ui
@@ -40,7 +38,7 @@ public:
 	~Recorder();
 
 	void createSettings();
-	bool isRecording() const { return _core->isRecording(); }
+	bool isRecording() const;
 	void setAction(QAction *action);
 
 protected:
@@ -50,7 +48,6 @@ public slots:
 	void openPlaylist(const QString &file);
 	void recordNow(const QString &name,
 				   const QString &url);
-	void recordTimer(Timer *timer);
 	void showTimersEditor();
 	void stop();
 
@@ -68,11 +65,9 @@ private:
 	QString _channelName;
 	QString _channelUrl;
 
-	RecorderCore *_core;
-	Timer *_currentTimer;
+	//RecorderCore *_core;
 	TimersEdit *_editor;
 	QString _playlist;
-	TimeManager *_timeManager;
 };
 
 #endif // TANO_RECORDER_H_

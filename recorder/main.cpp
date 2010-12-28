@@ -16,35 +16,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLUGINSLOADER_H_
-#define TANO_PLUGINSLOADER_H_
+#include <QtCore/QCoreApplication>
 
-#include <QtCore/QDir>
-#include <QtCore/QList>
-#include <QtCore/QObject>
-#include <QtCore/QString>
-
-#include "recorder/plugins/RecorderPlugins.h"
-
-class PluginsLoader
+int main(int argc, char *argv[])
 {
-public:
-    PluginsLoader();
-	~PluginsLoader();
+	QCoreApplication a(argc, argv);
+	QCoreApplication::setApplicationName("Tano Recorder");
 
-	QList<QObject*> recorderPlugin() const { return _recorderPlugins; }
-	QStringList recorderFile() const { return _recorderFiles; }
-	QStringList recorderName() const { return _recorderNames; }
-	RecorderPlugin *recorder(QObject *plugin);
-
-private:
-	void processDir(QDir &dir);
-	void processPlugin(QObject *plugin,
-					   const QString &pluginFile);
-
-	QList<QObject*> _recorderPlugins;
-	QStringList _recorderFiles;
-	QStringList _recorderNames;
-};
-
-#endif // TANO_PLUGINSLOADER_H_
+	return a.exec();
+}

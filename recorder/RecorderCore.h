@@ -26,7 +26,7 @@
 #include <vlc-qt/MediaPlayer.h>
 
 #include "container/Timer.h"
-#include "recorder/RecorderPlugins.h"
+#include "recorder/plugins/RecorderPlugins.h"
 
 class RecorderCore : public QObject
 {

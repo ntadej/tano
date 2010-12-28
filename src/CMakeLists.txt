@@ -53,16 +53,13 @@ SET(Tano_UIs
 
 # Define the MOC source files used by Tano
 SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
-	MainWindow.h
 	core/ChannelSelect.h
 	core/GetFile.h
 	core/Print.h
 	core/UpdateManager.h
 	epg/EpgManager.h
 	epg/EpgSloveniaLoader.h
-	recorder/Recorder.h
-	recorder/RecorderCore.h
-	recorder/TimeManager.h
+	ui/MainWindow.h
 	ui/core/CurrentTime.h
 	ui/core/InfoBar.h
 	ui/core/License.h
@@ -85,6 +82,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/menu/MenuTrackVideo.h
 	ui/playlist/PlaylistEdit.h
 	ui/playlist/PlaylistWidget.h
+	ui/recorder/Recorder.h
 	ui/recorder/TimersEdit.h
 	ui/settings/SettingsEdit.h
 	ui/settings/SettingsPlaylist.h
@@ -131,12 +129,8 @@ SET(Tano_Epg_Srcs
 	epg/EpgSlovenia.cpp
 	epg/EpgSloveniaLoader.cpp
 )
-SET(Tano_Recorder_Srcs
-	recorder/Recorder.cpp
-	recorder/RecorderCore.cpp
-	recorder/TimeManager.cpp
-)
 SET(Tano_UI_Srcs
+	ui/MainWindow.cpp
 	ui/core/CurrentTime.cpp
 	ui/core/InfoBar.cpp
 	ui/core/License.cpp
@@ -159,6 +153,7 @@ SET(Tano_UI_Srcs
 	ui/menu/MenuTrackVideo.cpp
 	ui/playlist/PlaylistEdit.cpp
 	ui/playlist/PlaylistWidget.cpp
+	ui/recorder/Recorder.cpp
 	ui/recorder/TimersEdit.cpp
 	ui/settings/SettingsEdit.cpp
 	ui/settings/SettingsPlaylist.cpp
@@ -180,12 +175,10 @@ SET(Tano_XML_Srcs
 
 SET(Tano_Srcs
 	main.cpp
-	MainWindow.cpp
 
 	${Tano_Container_Srcs}
 	${Tano_Core_Srcs}
 	${Tano_Epg_Srcs}
-	${Tano_Recorder_Srcs}
 	${Tano_UI_Srcs}
 	${Tano_XML_Srcs}
 )
@@ -234,16 +227,12 @@ ENDIF(NOT MINGW)
 # Include paths and set up targets #
 ####################################
 # This needs to be added in order for #include to work inside .cpp files
-INCLUDE_DIRECTORIES("${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src")
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src")
 
 # This line adds the include path of the Qt
 # directory to the compiler include path
 INCLUDE(${QT_USE_FILE})
 INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
-# MinGW needs some more includes
-IF(MINGW)
-	INCLUDE_DIRECTORIES(${LIBVLC_INCLUDE_DIR})
-ENDIF(MINGW)
 
 IF(MINGW)
 	# CMake currently doesn't support windres yet. Add command manually

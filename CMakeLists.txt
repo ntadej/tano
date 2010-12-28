@@ -112,14 +112,12 @@ ENDIF(QT_VERSION_MINOR MATCHES 5)
 OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile")
 MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
 
-SET(TANO_UI_BASIC 1)
-
 ###################
 # Compile and set #
 ###################
 ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(plugins)
+ADD_SUBDIRECTORY(recorder)
 
 SET(Tano_Files
 	LICENSE.GPL

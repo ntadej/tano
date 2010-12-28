@@ -21,7 +21,7 @@ PROJECT(tanorecorder-friptv)
 INCLUDE(${QT_USE_FILE})
 INCLUDE_DIRECTORIES(
 	${QT_INCLUDE_DIR}
-	../../../src/recorder
+	../
 )
 
 SET(SOURCES_CPP

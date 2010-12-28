@@ -21,12 +21,8 @@
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>
-#include <QtGui/QWidget>
 
 namespace Tano {
-	// About dialog
-	void about(QWidget *parent = 0 );
-
 	// Resources locators
 	QString locateResource(const QString &file);
 
