@@ -736,39 +736,39 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Natisni</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="157"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="158"/>
         <source>Save Channel list</source>
         <translation>Shrani Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="159"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="160"/>
         <source>Tano TV Channel list Files (*.m3u)</source>
         <translation>Tano TV Seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="172"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="173"/>
         <source>Open Channel list File</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="174"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="175"/>
         <source>Tano TV Old Channel list Files(*.tano *.xml)</source>
         <translation>Tano TV Star seznam programov(*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="190"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="191"/>
         <source>Playlist Editor</source>
         <translation>Urejevalnik seznama programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="191"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="192"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation>Ali želiš zapreti urejevalnik?
 Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="263"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="266"/>
         <source>New channel from scan</source>
         <translation>Nov program iz iskanja</translation>
     </message>
@@ -967,7 +967,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
     <message>
         <location filename="../src/xml/M3UHandler.cpp" line="31"/>
         <location filename="../src/xml/M3UHandler.cpp" line="89"/>
-        <location filename="../src/xml/TanoHandlerOld.cpp" line="31"/>
+        <location filename="../src/xml/TanoHandlerOld.cpp" line="32"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
     </message>
@@ -982,14 +982,14 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Nov program</translation>
     </message>
     <message>
-        <location filename="../src/xml/TanoHandlerOld.cpp" line="48"/>
+        <location filename="../src/xml/TanoHandlerOld.cpp" line="49"/>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
         <translation>Datoteka ni Tano TV Seznam programov 1.1 ali novejša.</translation>
     </message>
     <message>
         <location filename="../src/xml/TimersHandler.cpp" line="63"/>
         <location filename="../src/xml/TimersHandler.cpp" line="64"/>
-        <location filename="../src/xml/TanoHandlerOld.cpp" line="60"/>
+        <location filename="../src/xml/TanoHandlerOld.cpp" line="61"/>
         <source>Unknown title</source>
         <translation>Neznan naslov</translation>
     </message>
@@ -1007,7 +1007,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
 %3</translation>
     </message>
     <message>
-        <location filename="../src/xml/TanoHandlerOld.cpp" line="41"/>
+        <location filename="../src/xml/TanoHandlerOld.cpp" line="42"/>
         <source>The file is not a Tano TV channel list file.</source>
         <translation>Datoteka ni Tano TV Seznam programov.</translation>
     </message>
@@ -1065,41 +1065,41 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>Recorder</name>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="128"/>
+        <location filename="../src/recorder/Recorder.cpp" line="112"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="170"/>
+        <location filename="../src/recorder/Recorder.cpp" line="143"/>
         <source>No timer - press button to stop.</source>
         <translation>Ni timerja - pritisni gumb in ustavi.</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="173"/>
+        <location filename="../src/recorder/Recorder.cpp" line="146"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="61"/>
-        <location filename="../src/recorder/Recorder.cpp" line="188"/>
+        <location filename="../src/recorder/Recorder.cpp" line="157"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="145"/>
+        <location filename="../src/recorder/Recorder.cpp" line="127"/>
         <source>Cannot write to %1.</source>
         <translation>Ne morem pisati v %1.</translation>
     </message>
     <message>
-        <location filename="../src/recorder/Recorder.cpp" line="151"/>
+        <location filename="../src/recorder/Recorder.cpp" line="133"/>
         <source>Channel is not selected!</source>
         <translation>Program ni izbran!</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="14"/>
         <location filename="../src/ui/recorder/Recorder.ui" line="24"/>
-        <location filename="../src/recorder/Recorder.cpp" line="144"/>
-        <location filename="../src/recorder/Recorder.cpp" line="150"/>
+        <location filename="../src/recorder/Recorder.cpp" line="126"/>
+        <location filename="../src/recorder/Recorder.cpp" line="132"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
@@ -1388,12 +1388,17 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>&lt;i&gt;Prosim, izberi vtičnik snemalnika s spodnjega seznama:&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="43"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="671"/>
+        <source>Integrated (default)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="46"/>
         <source>You are using Tano version:</source>
         <translation>Uporabljaš Tano različice:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="212"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="222"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>
@@ -1897,7 +1902,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Informacije:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/UpdateDialog.cpp" line="103"/>
+        <location filename="../src/ui/dialogs/UpdateDialog.cpp" line="96"/>
         <source>Download now!</source>
         <translation>Prenesi zdaj!</translation>
     </message>

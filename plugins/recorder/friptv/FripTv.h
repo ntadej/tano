@@ -1,16 +1,19 @@
 /****************************************************************************
-* FripTv.h: Recorder Plugin using friptv
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* FripTV - Tano Recorder Plugin
+* Copyright (C) 2010 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANOPLUGIN_FRIPTV_H_
@@ -29,11 +32,10 @@ public:
 
 	void record(const QString &channelName,
 				const QString &channelUrl,
-				const QString &recordingDir);
+				const QString &file);
 	void stop();
 	bool isRecording() const;
 	bool isValid() const { return fripExists(); }
-	QString output() const { return _output; }
 
 private:
 	bool fripExists() const;
@@ -41,9 +43,6 @@ private:
 
 	QProcess *_fripProcess;
 	QString _fripPath;
-
-	QString _slash;
-	QString _output;
 };
 
 #endif // TANOPLUGIN_FRIPTV_H_

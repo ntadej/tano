@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,11 +9,11 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QDir>
@@ -58,7 +58,7 @@ const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
 // Recorder
 const bool Settings::DEFAULT_RECORDER_ENABLED = true;
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath();
-const QString Settings::DEFAULT_RECORDER_PLUGIN = "Frip";
+const QString Settings::DEFAULT_RECORDER_BACKEND = "default";
 // Session
 const int Settings::DEFAULT_CHANNEL = 1;
 const int Settings::DEFAULT_VOLUME = 50;
@@ -106,7 +106,7 @@ void Settings::writeSettings()
 
 	setValue("recorder/enabled", recorderEnabled());
 	setValue("recorder/directory", recorderDirectory());
-	setValue("recorder/plugin", recorderPlugin());
+	setValue("recorder/backend", recorderBackend());
 
 	sync();
 }
@@ -138,7 +138,7 @@ void Settings::readSettings()
 
 	setRecorderEnabled(value("recorder/enabled", DEFAULT_RECORDER_ENABLED).toBool());
 	setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
-	setRecorderPlugin(value("recorder/plugin", DEFAULT_RECORDER_PLUGIN).toString());
+	setRecorderBackend(value("recorder/backend", DEFAULT_RECORDER_BACKEND).toString());
 
 	setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());
 	setVolume(value("session/volume", DEFAULT_VOLUME).toInt());

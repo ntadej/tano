@@ -9,11 +9,11 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QCoreApplication>
@@ -67,12 +67,12 @@ QString Tano::locateResource(const QString &file)
 	return path;
 }
 
-QList<const char *> Tano::vlcQtArgs()
+QStringList Tano::vlcQtArgs()
 {
-	QList<const char *> args;
+	QStringList args;
 
 	Settings *s = new Settings();
-	args = Vlc::commonArgs(s->globalSettings());
+	args = VlcCommon::args(s->globalSettings());
 	delete s;
 
 #ifdef Q_WS_WIN
@@ -82,10 +82,11 @@ QList<const char *> Tano::vlcQtArgs()
 	return args;
 }
 
-QList<const char *> Tano::vlcQtRecorderArgs(const QString &file)
+QStringList Tano::vlcQtRecorderArgs(const QString &file)
 {
-	QList<const char *> args;
-	args = Vlc::recorderArgs(file);
+	QStringList args;
+
+	args = VlcCommon::recorderArgs(file);
 
 #ifdef Q_WS_WIN
 	args << "--plugin-path=vlc\\plugins\\";

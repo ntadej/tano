@@ -1,16 +1,19 @@
 /****************************************************************************
-* SettingsEdit.cpp: Settings editor
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include "SettingsEdit.h"
@@ -125,7 +128,10 @@ void SettingsEdit::apply()
 	// Recorder
 	_settings->setRecorderEnabled(ui->enableRecorderCheck->isChecked());
 	_settings->setRecorderDirectory(ui->recorderDirectoryLineEdit->text());
-	_settings->setRecorderPlugin(ui->recorderPluginComboBox->currentText());
+	if(ui->recorderPluginComboBox->currentIndex() == 0)
+		_settings->setRecorderBackend(Settings::DEFAULT_RECORDER_BACKEND);
+	else
+		_settings->setRecorderBackend(ui->recorderPluginComboBox->currentText());
 
 	_settings->writeSettings();
 
@@ -151,9 +157,11 @@ void SettingsEdit::read()
 	ui->sessionAutoplayCheck->setChecked(_settings->sessionAutoplay());
 	if(_settings->language() != "") {
 		ui->customLanguageRadio->setChecked(true);
-		for(int i=0; i<_locale.size(); i++)
-			if(_settings->language() == _locale[i])
+		for(int i = 0; i < _locale.size(); i++) {
+			if(_settings->language() == _locale[i]) {
 				ui->languageComboBox->setCurrentIndex(i);
+			}
+		}
 	}
 
 	// Channels
@@ -176,7 +184,7 @@ void SettingsEdit::read()
 	// Playback
 	ui->vlcGlobalCheck->setChecked(_settings->globalSettings());
 	ui->checkVideoSettings->setChecked(_settings->rememberVideoSettings());
-	for(int i=0; i < ui->comboSub->count(); i++) {
+	for(int i = 0; i < ui->comboSub->count(); i++) {
 		if(ui->comboSub->itemText(i) == _settings->subtitleLanguage()) {
 			ui->comboSub->setCurrentIndex(i);
 			break;
@@ -189,8 +197,10 @@ void SettingsEdit::read()
 	// Recorder
 	ui->enableRecorderCheck->setChecked(_settings->recorderEnabled());
 	ui->recorderDirectoryLineEdit->setText(_settings->recorderDirectory());
-	for(int i=0; i < ui->recorderPluginComboBox->count(); i++) {
-		if(ui->recorderPluginComboBox->itemText(i) == _settings->recorderPlugin()) {
+	if(_settings->recorderBackend() == Settings::DEFAULT_RECORDER_BACKEND) {
+		ui->recorderPluginComboBox->setCurrentIndex(0);
+	} else for(int i = 1; i < ui->recorderPluginComboBox->count(); i++) {
+		if(ui->recorderPluginComboBox->itemText(i) == _settings->recorderBackend()) {
 			ui->recorderPluginComboBox->setCurrentIndex(i);
 			break;
 		}
@@ -218,14 +228,14 @@ void SettingsEdit::loadLocale()
 {
 	_locale = LocaleManager::loadTranslations();
 
-	for(int i=0; i<_locale.size(); i++)
+	for(int i = 0; i < _locale.size(); i++)
 		ui->languageComboBox->addItem(LocaleManager::language(_locale[i]));
 }
 
 void SettingsEdit::loadPlugins()
 {
 	PluginsLoader *loader = new PluginsLoader();
-	for(int i=0; i < loader->recorderPlugin().size(); i++)
+	for(int i = 0; i < loader->recorderPlugin().size(); ++i)
 		ui->recorderPluginComboBox->addItem(loader->recorderName()[i]);
 	delete loader;
 }

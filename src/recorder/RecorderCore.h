@@ -16,37 +16,54 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MENUCORE_H_
-#define TANO_MENUCORE_H_
+#ifndef TANO_RECORDERCORE_H_
+#define TANO_RECORDERCORE_H_
 
-#include <QtGui/QMenu>
+#include <QtCore/QObject>
+#include <QtCore/QTimer>
 
-#include <vlc-qt/Enums.h>
+#include <vlc-qt/Instance.h>
+#include <vlc-qt/MediaPlayer.h>
 
-class MenuCore : public QMenu
+#include "container/Timer.h"
+#include "recorder/RecorderPlugins.h"
+
+class RecorderCore : public QObject
 {
 Q_OBJECT
 public:
-	MenuCore(QWidget *parent = 0);
-	~MenuCore();
+	RecorderCore(QObject *parent = 0);
+	~RecorderCore();
 
-	QAction *actionNext() { return _next; }
-	void addItem(QAction *action);
-	void setType(const Vlc::ActionsType &type) { _type = type; }
-	Vlc::ActionsType type() const { return _type; }
+	bool isRecording() const { return _isRecording; }
+	bool isTimer() const { return _isTimer; }
+	QString output() const;
+	void record(const QString &channel,
+				const QString &url,
+				const QString &path);
+	void record(Timer *timer);
+	void setBackend(const QString &backend);
+	void stop();
 
-public slots:
-	void setActions(const Vlc::ActionsType &type,
-					const QList<QAction*> &actions);
+signals:
+	void elapsed(const QTime &);
 
 private slots:
-	void next();
+	void time();
 
 private:
-	QActionGroup *_group;
-	QAction *_next;
+	bool _coreBackend;
+	bool _isRecording;
+	bool _isTimer;
 
-	Vlc::ActionsType _type;
+	QString _output;
+
+	VlcInstance *_instance;
+	VlcMediaPlayer *_player;
+	RecorderPlugin *_plugin;
+
+	QTime _time;
+	QTimer *_timer;
 };
 
-#endif // TANO_MENUCORE_H_
+#endif // TANO_RECORDERCORE_H_

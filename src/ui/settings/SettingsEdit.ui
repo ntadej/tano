@@ -665,7 +665,13 @@
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="recorderPluginComboBox"/>
+           <widget class="QComboBox" name="recorderPluginComboBox">
+            <item>
+             <property name="text">
+              <string>Integrated (default)</string>
+             </property>
+            </item>
+           </widget>
           </item>
          </layout>
         </widget>

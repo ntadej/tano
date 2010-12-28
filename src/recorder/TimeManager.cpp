@@ -9,31 +9,31 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QDebug>
 
 #include "core/ConsoleOutput.h"
-#include "recorder/Time.h"
+#include "recorder/TimeManager.h"
 
-Time::Time()
+TimeManager::TimeManager()
 {
 	_timer = new QTimer();
 	connect(_timer, SIGNAL(timeout()), this, SLOT(check()));
 	_timer->start(6000);
 }
 
-Time::~Time()
+TimeManager::~TimeManager()
 {
 	delete _timer;
 }
 
-void Time::check()
+void TimeManager::check()
 {
 	for(int i=0; i<_timersList.size(); i++) {
 		if(_timersList[i]->startTime() <= QTime::currentTime() && _timersList[i]->endTime() >= QTime::currentTime()) {
@@ -46,13 +46,13 @@ void Time::check()
 	}
 }
 
-void Time::addTimer(Timer *t)
+void TimeManager::addTimer(Timer *t)
 {
 	if(!_timersList.contains(t))
 		_timersList.append(t);
 }
 
-void Time::removeTimer(Timer *t)
+void TimeManager::removeTimer(Timer *t)
 {
 	if(_timersList.contains(t))
 		_timersList.removeOne(t);

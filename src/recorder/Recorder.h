@@ -9,23 +9,22 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_RECORDER_H_
 #define TANO_RECORDER_H_
 
 #include <QtCore/QTime>
-#include <QtCore/QTimer>
 #include <QtGui/QWidget>
 
 #include "container/Timer.h"
-#include "recorder/RecorderPlugins.h"
-#include "recorder/Time.h"
+#include "recorder/RecorderCore.h"
+#include "recorder/TimeManager.h"
 #include "ui/recorder/TimersEdit.h"
 
 namespace Ui
@@ -41,7 +40,7 @@ public:
 	~Recorder();
 
 	void createSettings();
-	bool isRecording() const { return _recording; }
+	bool isRecording() const { return _core->isRecording(); }
 	void setAction(QAction *action);
 
 protected:
@@ -54,33 +53,26 @@ public slots:
 	void recordTimer(Timer *timer);
 	void showTimersEditor();
 	void stop();
-	void stopTimer(Timer *timer);
 
 private slots:
 	void fileBrowse();
 	void playlist(QTreeWidgetItem* clickedChannel);
 	void record(const bool &status);
-	void sec();
+	void time(const QTime &time);
 
 private:
 	Ui::Recorder *ui;
 
-	bool _recording;
-	bool _isTimer;
+	QAction *_actionRecord;
 
 	QString _channelName;
 	QString _channelUrl;
 
-	QString _playlist;
-
-	RecorderPlugin *_plugin;
-	Time *_timeManager;
+	RecorderCore *_core;
 	Timer *_currentTimer;
 	TimersEdit *_editor;
-
-	QTimer *_timer;
-	QTime _time;
-	QAction *_actionRecord;
+	QString _playlist;
+	TimeManager *_timeManager;
 };
 
 #endif // TANO_RECORDER_H_

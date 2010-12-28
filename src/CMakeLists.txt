@@ -9,11 +9,11 @@
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>./
+# along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
 #################
@@ -61,7 +61,8 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	epg/EpgManager.h
 	epg/EpgSloveniaLoader.h
 	recorder/Recorder.h
-	recorder/Time.h
+	recorder/RecorderCore.h
+	recorder/TimeManager.h
 	ui/core/CurrentTime.h
 	ui/core/InfoBar.h
 	ui/core/License.h
@@ -132,7 +133,8 @@ SET(Tano_Epg_Srcs
 )
 SET(Tano_Recorder_Srcs
 	recorder/Recorder.cpp
-	recorder/Time.cpp
+	recorder/RecorderCore.cpp
+	recorder/TimeManager.cpp
 )
 SET(Tano_UI_Srcs
 	ui/core/CurrentTime.cpp

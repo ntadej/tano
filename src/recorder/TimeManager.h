@@ -9,27 +9,27 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TIME_H_
-#define TANO_TIME_H_
+#ifndef TANO_TIMEMANAGER_H_
+#define TANO_TIMEMANAGER_H_
 
 #include <QtCore/QList>
 #include <QtCore/QTimer>
 
 #include "container/Timer.h"
 
-class Time : public QObject
+class TimeManager : public QObject
 {
 Q_OBJECT
 public:
-	Time();
-	~Time();
+	TimeManager();
+	~TimeManager();
 
 	void addTimer(Timer *t);
 	void removeTimer(Timer *t);
@@ -45,4 +45,4 @@ private:
 	QList<Timer *> _timersList;
 };
 
-#endif // TANO_TIME_H_
+#endif // TANO_TIMEMANAGER_H_

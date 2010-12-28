@@ -1091,6 +1091,10 @@ You will lose any unsaved settings.</source>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Integrated (default)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

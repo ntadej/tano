@@ -1,16 +1,19 @@
 /****************************************************************************
-* FripTv.cpp: Recorder Plugin using friptv
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* FripTV - Tano Recorder Plugin
+* Copyright (C) 2010 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QCoreApplication>
@@ -24,36 +27,24 @@
 
 FripTv::FripTv()
 	: _fripProcess(new QProcess()),
-	_fripPath(fripPath()),
-	_output("")
-{
-#ifdef Q_WS_WIN
-	_slash = "\\";
-#else
-	_slash = "/";
-#endif
-}
+	_fripPath(fripPath()) { }
 
 FripTv::~FripTv() { }
 
 void FripTv::record(const QString &channelName,
 					const QString &channelUrl,
-					const QString &recordingDir)
+					const QString &file)
 {
-	QFile file(QDir::tempPath()+"/tano.txt");
-	if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+	QFile f(QDir::tempPath()+"/tano.txt");
+	if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
 		return;
 
-	QTextStream out(&file);
+	QTextStream out(&f);
 	out << "#EXTM3U" << "\n"
 		<< "#EXTINF:0," << channelName << "\n"
 		<< channelUrl;
 
-	QString fileName = QString(recordingDir);
-	fileName.append(_slash);
-	fileName.append(QString(channelName).replace(" ","_"));
-	fileName.append(QDateTime::currentDateTime().toString("-dd_MM_yyyy-hh_mm_ss"));
-	fileName.append(".avi");
+	QString fileName = file;
 #ifdef Q_WS_WIN
 	fileName.replace("/","\\");
 #endif
@@ -62,15 +53,14 @@ void FripTv::record(const QString &channelName,
 	arguments << "-cl";
 
 #ifdef Q_WS_WIN
-	arguments << QString(QDir::tempPath()+_slash+"tano.txt").replace("/","\\");
+	arguments << QString(QDir::tempPath() + "/tano.txt").replace("/","\\");
 #else
-	arguments << QString(QDir::tempPath()+_slash+"tano.txt");
+	arguments << QString(QDir::tempPath() + "/tano.txt");
 #endif
 	arguments << "-s"
 			  << "-fi"
 			  << fileName;
 
-	_output = fileName;
 	_fripProcess->start(_fripPath, arguments);
 }
 

@@ -9,51 +9,44 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include "Recorder.h"
 #include "ui_Recorder.h"
 
-#include <QtCore/QPluginLoader>
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
 #include "container/Channel.h"
-#include "core/PluginsLoader.h"
 #include "core/Settings.h"
 #include "ui/recorder/TimersEdit.h"
 
 Recorder::Recorder(QWidget *parent)
 	: QWidget(parent),
 	ui(new Ui::Recorder),
-	_recording(false),
-	_isTimer(false),
 	_channelName(""),
 	_channelUrl(""),
-	_plugin(0),
-	_timeManager(new Time()),
+	_timeManager(new TimeManager()),
 	_actionRecord(0),
 	_currentTimer(0)
 {
 	ui->setupUi(this);
 
+	_core = new RecorderCore(this);
+
 	//Init
-	_timer = new QTimer(this);
-
-	connect(_timer, SIGNAL(timeout()), this, SLOT(sec()));
-
 	connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
 	connect(ui->buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
 
-	connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playlist(QTreeWidgetItem*)));
+	connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(playlist(QTreeWidgetItem *)));
 
-	connect(_timeManager, SIGNAL(startTimer(Timer*)), this, SLOT(recordTimer(Timer*)));
-	connect(_timeManager, SIGNAL(stopTimer(Timer*)), this, SLOT(stopTimer(Timer*)));
+	connect(_timeManager, SIGNAL(startTimer(Timer *)), this, SLOT(recordTimer(Timer *)));
+	connect(_core, SIGNAL(elapsed(QTime)), this, SLOT(time(QTime)));
 
 	createSettings();
 }
@@ -61,8 +54,7 @@ Recorder::Recorder(QWidget *parent)
 Recorder::~Recorder()
 {
 	delete ui;
-	delete _timer;
-	delete _plugin;
+	delete _core;
 	delete _timeManager;
 }
 
@@ -83,21 +75,14 @@ void Recorder::createSettings()
 	Settings *settings = new Settings(this);
 	ui->fileEdit->setText(settings->recorderDirectory());
 
-	if(_plugin)
-		delete _plugin;
-
-	PluginsLoader *loader = new PluginsLoader();
-	for(int i=0; i < loader->recorderPlugin().size(); i++)
-		if(loader->recorderName()[i] == settings->recorderPlugin())
-			_plugin = loader->recorder(loader->recorderPlugin()[i]);
-	delete loader;
+	_core->setBackend(settings->recorderBackend());
 
 	delete settings;
 }
 
 void Recorder::stop()
 {
-	_plugin->stop();
+	_core->stop();
 }
 
 void Recorder::openPlaylist(const QString &file)
@@ -106,7 +91,7 @@ void Recorder::openPlaylist(const QString &file)
 	ui->playlistWidget->open(_playlist);
 }
 
-void Recorder::playlist(QTreeWidgetItem* clickedChannel)
+void Recorder::playlist(QTreeWidgetItem *clickedChannel)
 {
 	Channel *channel = ui->playlistWidget->channelRead(clickedChannel);
 
@@ -114,8 +99,6 @@ void Recorder::playlist(QTreeWidgetItem* clickedChannel)
 	_channelUrl = channel->url();
 
 	ui->valueSelected->setText(channel->name());
-
-	delete channel;
 }
 
 void Recorder::fileBrowse()
@@ -125,10 +108,9 @@ void Recorder::fileBrowse()
 		dir = QDir::homePath();
 	else
 		dir = ui->fileEdit->text();
-	QString dfile = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
-							dir,
-							QFileDialog::ShowDirsOnly
-							| QFileDialog::DontResolveSymlinks);
+	QString dfile =
+			QFileDialog::getExistingDirectory(this, tr("Open Directory"), dir,
+											  QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	if(dfile != "")
 		ui->fileEdit->setText(dfile);
 }
@@ -152,34 +134,21 @@ void Recorder::record(const bool &status)
 			return;
 		}
 
-		_plugin->record(_channelName, _channelUrl, ui->fileEdit->text());
-
-		QString fileName;
-		fileName = _plugin->output();
-
-		//_trayIcon->changeToolTip(_channelName, "recorder");
-
-		_timer->start(1000);
-		_time = QTime(0,0);
+		_core->record(_channelName, _channelUrl, ui->fileEdit->text());
 
 		ui->valueCurrent->setText(_channelName);
-		ui->valueTime->setText(_time.toString("hh:mm:ss"));
-		if(_isTimer)
+		if(_core->isTimer())
 			ui->valueEndTime->setText(_currentTimer->endTime().toString("hh:mm"));
 		else
 			ui->valueEndTime->setText(tr("No timer - press button to stop."));
-		ui->valueFile->setText(fileName);
+		ui->valueFile->setText(_core->output());
 
 		ui->buttonRecord->setText(tr("Stop recording"));
 		if(_actionRecord)
 			_actionRecord->setEnabled(true);
-
-		//_trayIcon->message(QStringList() << "record" << _channelName << fileName);
-
-		_recording = true;
 	} else {
-		_plugin->stop();
-		_timer->stop();
+		_core->stop();
+
 		ui->valueCurrent->setText("");
 		ui->valueTime->setText("");
 		ui->valueEndTime->setText(tr(""));
@@ -188,11 +157,6 @@ void Recorder::record(const bool &status)
 		ui->buttonRecord->setText(tr("Record"));
 		if(_actionRecord)
 			_actionRecord->setEnabled(false);
-
-		//_trayIcon->changeToolTip("stop", "recorder");
-
-		_recording = false;
-		_isTimer = false;
 	}
 }
 
@@ -204,14 +168,13 @@ void Recorder::recordNow(const QString &name,
 
 	ui->valueSelected->setText(name);
 
-	if(!_recording)
+	if(!_core->isRecording())
 		ui->buttonRecord->toggle();
 }
 
-void Recorder::sec()
+void Recorder::time(const QTime &time)
 {
-	_time = _time.addSecs(1);
-	ui->valueTime->setText(_time.toString("hh:mm:ss"));
+	ui->valueTime->setText(time.toString("hh:mm:ss"));
 }
 
 void Recorder::setAction(QAction *action)
@@ -222,25 +185,14 @@ void Recorder::setAction(QAction *action)
 
 void Recorder::recordTimer(Timer *timer)
 {
-	_isTimer = true;
+	/*_isTimer = true;
 	_currentTimer = timer;
 	_channelName = timer->channel();
 	_channelUrl = timer->url();
 	ui->valueSelected->setText(timer->channel());
 
 	if(!_recording)
-		ui->buttonRecord->toggle();
-}
-
-void Recorder::stopTimer(Timer *timer)
-{
-	if(_currentTimer != timer)
-		return;
-
-	_isTimer = false;
-	if(_recording)
-		ui->buttonRecord->toggle();
-	_currentTimer = 0;
+		ui->buttonRecord->toggle();*/
 }
 
 void Recorder::showTimersEditor()
