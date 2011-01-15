@@ -16,22 +16,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
+#include <QtCore/QMetaObject>
 
-#include "recorder/RecorderDBusAdaptor.h"
-#include "recorder/RecorderMain.h"
+#include "RecorderDBusAdaptor.h"
 
-int main(int argc, char *argv[])
+RecorderDBusAdaptor::RecorderDBusAdaptor(QObject *parent)
+	: QDBusAbstractAdaptor(parent)
 {
-	QCoreApplication a(argc, argv);
-	QCoreApplication::setApplicationName("Tano Recorder");
+	setAutoRelaySignals(true);
+}
 
-	RecorderMain *recorder = new RecorderMain();
+RecorderDBusAdaptor::~RecorderDBusAdaptor() { }
 
-	new RecorderDBusAdaptor(recorder);
-	QDBusConnection connection = QDBusConnection::sessionBus();
-	connection.registerObject("/Recorder", recorder);
-	connection.registerService("si.tano.TanoPlayer");
-
-	return a.exec();
+void RecorderDBusAdaptor::record()
+{
+	//QMetaObject::invokeMethod(parent(), "record");
 }

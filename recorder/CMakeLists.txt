@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,6 +25,8 @@ cmake_minimum_required(VERSION 2.6)
 # Define the MOC source files used by Tano Recorder
 SET(Tano_Recorder_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
 	RecorderCore.h
+	RecorderDBusAdaptor.h
+	RecorderMain.h
 	TimeManager.h
 
 )
@@ -38,6 +40,8 @@ SET(Tano_Recorder_Srcs
 	main.cpp
 
 	RecorderCore.cpp
+	RecorderDBusAdaptor.cpp
+	RecorderMain.cpp
 	TimeManager.cpp
 
 	../src/container/Timer.cpp
@@ -52,11 +56,6 @@ SET(Tano_Recorder_Srcs
 ################
 # Qt4 settings #
 ################
-# This line adds the QtXML and QtNETWORK libraries to the Qt libraries
-# loaded when linking Tano
-#SET(QT_USE_QTXML True)
-#SET(QT_USE_QTNETWORK True)
-
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Recorder_Resrcs_Srcs ${Tano_Recorder_Resrcs})
 
@@ -127,7 +126,7 @@ TARGET_LINK_LIBRARIES(tano-recorder ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
 ################
 # Install tano-recorder exe
 INSTALL(TARGETS tano-recorder
-  RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
 )
 
 ###############################

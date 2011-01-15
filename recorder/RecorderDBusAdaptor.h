@@ -16,22 +16,25 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
+#ifndef TANO_RECORDERDBUSADAPTOR_H_
+#define TANO_RECORDERDBUSADAPTOR_H_
 
-#include "recorder/RecorderDBusAdaptor.h"
-#include "recorder/RecorderMain.h"
+#include <QtCore/QObject>
+#include <QtDBus/QtDBus>
 
-int main(int argc, char *argv[])
+class RecorderDBusAdaptor : public QDBusAbstractAdaptor
 {
-	QCoreApplication a(argc, argv);
-	QCoreApplication::setApplicationName("Tano Recorder");
+Q_OBJECT
+Q_CLASSINFO("D-Bus Interface", "si.tano.TanoPlayer.Recorder")
+public:
+	RecorderDBusAdaptor(QObject *parent);
+	~RecorderDBusAdaptor();
 
-	RecorderMain *recorder = new RecorderMain();
+public slots:
+	void record();
 
-	new RecorderDBusAdaptor(recorder);
-	QDBusConnection connection = QDBusConnection::sessionBus();
-	connection.registerObject("/Recorder", recorder);
-	connection.registerService("si.tano.TanoPlayer");
+signals:
+	void finished();
+};
 
-	return a.exec();
-}
+#endif // TANO_RECORDERDBUSADAPTOR_H_
