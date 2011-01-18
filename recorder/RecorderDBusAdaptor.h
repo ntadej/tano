@@ -22,19 +22,37 @@
 #include <QtCore/QObject>
 #include <QtDBus/QtDBus>
 
+#include "recorder/RecorderMain.h"
+
 class RecorderDBusAdaptor : public QDBusAbstractAdaptor
 {
 Q_OBJECT
 Q_CLASSINFO("D-Bus Interface", "si.tano.TanoPlayer.Recorder")
+Q_PROPERTY(bool recording READ recording)
+Q_PROPERTY(bool timer READ timer)
+Q_PROPERTY(QString output READ output)
+
 public:
-	RecorderDBusAdaptor(QObject *parent);
+	RecorderDBusAdaptor(RecorderMain *recorder);
 	~RecorderDBusAdaptor();
 
+	bool recording() const { return _main->isRecording(); }
+	bool timer() const { return _main->isTimer(); }
+	QString output() const { return _main->output(); }
+
 public slots:
-	void record();
+	void record(const QString &channel,
+				const QString &url,
+				const QString &path) { _main->record(channel, url, path); }
+	void refreshBackend() { _main->refreshBackend(); }
+	void refreshTimers() { _main->refreshTimers(); }
+	void stop() { _main->stop(); }
 
 signals:
-	void finished();
+	void elapsed(const int &);
+
+private:
+	RecorderMain *_main;
 };
 
 #endif // TANO_RECORDERDBUSADAPTOR_H_

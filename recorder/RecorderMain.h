@@ -21,6 +21,8 @@
 
 #include <QtCore/QObject>
 
+#include "recorder/RecorderCore.h"
+
 class RecorderMain : public QObject
 {
 Q_OBJECT
@@ -28,10 +30,22 @@ public:
 	RecorderMain(QObject *parent = 0);
 	~RecorderMain();
 
-signals:
-	void finished();
-public slots:
+	bool isRecording() const { return _core->isRecording(); }
+	bool isTimer() const { return _core->isTimer(); }
+	QString output() const { return _core->output(); }
+	void record(const QString &channel,
+				const QString &url,
+				const QString &path) { _core->record(channel, url, path); }
+	void record(Timer *timer) { _core->record(timer); }
+	void refreshBackend() { _core->refreshBackend(); }
+	void refreshTimers() { }
+	void stop() { _core->stop(); }
 
+signals:
+	void elapsed(const int &);
+
+private:
+	RecorderCore *_core;
 };
 
 #endif // TANO_RECORDERMAIN_H_

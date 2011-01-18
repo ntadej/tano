@@ -18,17 +18,13 @@
 
 #include <QtCore/QMetaObject>
 
-#include "RecorderDBusAdaptor.h"
+#include "recorder/RecorderDBusAdaptor.h"
 
-RecorderDBusAdaptor::RecorderDBusAdaptor(QObject *parent)
-	: QDBusAbstractAdaptor(parent)
+RecorderDBusAdaptor::RecorderDBusAdaptor(RecorderMain *recorder)
+	: QDBusAbstractAdaptor(recorder),
+	_main(recorder)
 {
 	setAutoRelaySignals(true);
 }
 
 RecorderDBusAdaptor::~RecorderDBusAdaptor() { }
-
-void RecorderDBusAdaptor::record()
-{
-	//QMetaObject::invokeMethod(parent(), "record");
-}

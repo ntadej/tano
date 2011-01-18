@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,8 +20,8 @@
 # Configuration #
 #################
 CONFIGURE_FILE(
-  "${CMAKE_SOURCE_DIR}/src/Config.h.in"
-  "${CMAKE_BINARY_DIR}/src/Config.h"
+	"${CMAKE_SOURCE_DIR}/src/Config.h.in"
+	"${CMAKE_BINARY_DIR}/src/Config.h"
 )
 
 
@@ -56,6 +56,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	core/ChannelSelect.h
 	core/GetFile.h
 	core/Print.h
+	core/RecorderController.h
 	core/UpdateManager.h
 	epg/EpgManager.h
 	epg/EpgSloveniaLoader.h
@@ -119,6 +120,7 @@ SET(Tano_Core_Srcs
 	core/LocaleManager.cpp
 	core/PluginsLoader.cpp
 	core/Print.cpp
+	core/RecorderController.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
 	core/UpdateManager.cpp
@@ -264,5 +266,5 @@ TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
 ################
 # Install tano exe
 INSTALL(TARGETS tano
-  RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
+	RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
 )

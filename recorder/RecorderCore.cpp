@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -18,10 +18,15 @@
 
 #include <QtCore/QPluginLoader>
 
+#include <vlc-qt/Instance.h>
+#include <vlc-qt/MediaPlayer.h>
+
+#include "container/Timer.h"
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "core/PluginsLoader.h"
 #include "recorder/RecorderCore.h"
+#include "recorder/plugins/RecorderPlugins.h"
 
 RecorderCore::RecorderCore(QObject *parent)
 	: QObject(parent),
@@ -84,7 +89,7 @@ void RecorderCore::record(const QString &channel,
 	_isRecording = true;
 	_isTimer = false;
 
-	_time = QTime(0, 0);
+	_time = 0;
 	_timer->start(500);
 }
 
@@ -93,8 +98,9 @@ void RecorderCore::record(Timer *timer)
 
 }
 
-void RecorderCore::setBackend(const QString &backend)
+void RecorderCore::refreshBackend()
 {
+	QString backend = "";
 	if(backend == Settings::DEFAULT_RECORDER_BACKEND) {
 		_coreBackend = true;
 	} else {
@@ -123,11 +129,11 @@ void RecorderCore::stop()
 	_isTimer = false;
 
 	_timer->stop();
-	emit elapsed(QTime(0, 0));
+	emit elapsed(0);
 }
 
 void RecorderCore::time()
 {
-	_time = _time.addMSecs(500);
+	_time += 500;
 	emit elapsed(_time);
 }

@@ -16,55 +16,38 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERCORE_H_
-#define TANO_RECORDERCORE_H_
+#ifndef TANO_RECORDERCONTROLLER_H_
+#define TANO_RECORDERCONTROLLER_H_
 
-#include <QtCore/QObject>
-#include <QtCore/QTimer>
+#include <QtDBus/QDBusAbstractInterface>
+#include <QtDBus/QDBusPendingReply>
 
-// VLC-Qt
-class VlcInstance;
-class VlcMediaPlayer;
-
-class RecorderPlugin;
-class Timer;
-
-class RecorderCore : public QObject
+class RecorderController : public QDBusAbstractInterface
 {
 Q_OBJECT
 public:
-	RecorderCore(QObject *parent = 0);
-	~RecorderCore();
+	RecorderController(const QString &service,
+					   const QString &path,
+					   const QDBusConnection &connection,
+					   QObject *parent = 0);
+	~RecorderController();
 
-	bool isRecording() const { return _isRecording; }
-	bool isTimer() const { return _isTimer; }
-	QString output() const;
-	void record(const QString &channel,
-				const QString &url,
-				const QString &path);
-	void record(Timer *timer);
-	void refreshBackend();
-	void stop();
+	static const char *staticInterfaceName() { return "si.tano.TanoPlayer.RecorderInterface"; }
+
+public slots:
+	QDBusPendingReply<bool> isRecording();
+	QDBusPendingReply<bool> isTimer();
+	QDBusPendingReply<QString> output();
+
+	QDBusPendingReply<> record(const QString &channel,
+							   const QString &url,
+							   const QString &path);
+	QDBusPendingReply<> refreshBackend();
+	QDBusPendingReply<> refreshTimers();
+	QDBusPendingReply<> stop();
 
 signals:
 	void elapsed(const int &);
-
-private slots:
-	void time();
-
-private:
-	bool _coreBackend;
-	bool _isRecording;
-	bool _isTimer;
-
-	QString _output;
-
-	VlcInstance *_instance;
-	VlcMediaPlayer *_player;
-	RecorderPlugin *_plugin;
-
-	int _time;
-	QTimer *_timer;
 };
 
-#endif // TANO_RECORDERCORE_H_
+#endif // TANO_RECORDERCONTROLLER_H_

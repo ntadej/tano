@@ -18,9 +18,14 @@
 
 #include "RecorderMain.h"
 
-RecorderMain::RecorderMain(QObject *parent) :
-    QObject(parent)
+RecorderMain::RecorderMain(QObject *parent)
+	: QObject(parent)
 {
+	_core = new RecorderCore(this);
+	connect(_core, SIGNAL(elapsed(int)), this, SIGNAL(elapsed(int)));
 }
 
-RecorderMain::~RecorderMain() { }
+RecorderMain::~RecorderMain()
+{
+	delete _core;
+}
