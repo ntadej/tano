@@ -884,6 +884,10 @@ You will lose any unsaved settings.</source>
         <source>Stop recording</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>No timer - press button to stop.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsEdit</name>
@@ -1089,6 +1093,10 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>Integrated (default)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

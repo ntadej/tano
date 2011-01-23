@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,9 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "MainWindow.h"
-#include "ui_MainWindow.h"
-
 #include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtGui/QApplication>
@@ -31,6 +28,9 @@
 
 #include <vlc-qt/Common.h>
 #include <vlc-qt/Config.h>
+
+#include "MainWindow.h"
+#include "ui_MainWindow.h"
 
 #include "core/Common.h"
 #include "core/Settings.h"
@@ -156,7 +156,7 @@ void MainWindow::createBackend()
 	_mediaInstance = new VlcInstance(Tano::vlcQtArgs(), this);
 	_mediaPlayer = new VlcMediaPlayer(ui->videoWidget->widgetId(), this);
 
-	_audioController = new VlcAudioControl();
+	_audioController = new VlcAudioControl(_defaultAudioLanguage);
 	_videoController = new VlcVideoControl(_defaultSubtitleLanguage);
 
 	ui->seekWidget->setAutoHide(true);
@@ -175,8 +175,11 @@ void MainWindow::createSettings()
 	mouseWheel();
 
 	//Playback settings
+	_defaultAudioLanguage = settings->audioLanguage();
 	_defaultSubtitleLanguage = settings->subtitleLanguage();
 	_videoSettings = settings->rememberVideoSettings();
+	if(_audioController)
+		_audioController->setDefaultAudioLanguage(_defaultAudioLanguage);
 	if(_videoController)
 		_videoController->setDefaultSubtitleLanguage(_defaultSubtitleLanguage);
 

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <info@tano.si>
+* Copyright (C) 2011 Tadej Novak <info@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,8 @@
 #include <QtGui/QMessageBox>
 
 #include "container/Channel.h"
+#include "core/RecorderController.h"
+#include "core/RecorderProcess.h"
 #include "core/Settings.h"
 #include "ui/recorder/TimersEdit.h"
 
@@ -35,7 +37,9 @@ Recorder::Recorder(QWidget *parent)
 {
 	ui->setupUi(this);
 
-	//_core = new RecorderCore(this);
+	_controller = new RecorderController("si.tano.TanoPlayer", "/Recorder",
+										 QDBusConnection::sessionBus(), this);
+	_recorder = new RecorderProcess(this);
 
 	//Init
 	connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
@@ -43,15 +47,13 @@ Recorder::Recorder(QWidget *parent)
 
 	connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(playlist(QTreeWidgetItem *)));
 
-	//connect(_core, SIGNAL(elapsed(QTime)), this, SLOT(time(QTime)));
-
-	createSettings();
+	connect(_controller, SIGNAL(elapsed(int)), this, SLOT(time(int)));
 }
 
 Recorder::~Recorder()
 {
 	delete ui;
-	//delete _core;
+	delete _controller;
 }
 
 void Recorder::changeEvent(QEvent *e)
@@ -70,15 +72,13 @@ void Recorder::createSettings()
 {
 	Settings *settings = new Settings(this);
 	ui->fileEdit->setText(settings->recorderDirectory());
-
-	//_core->setBackend(settings->recorderBackend());
-
+	_controller->refreshBackend();
 	delete settings;
 }
 
 void Recorder::stop()
 {
-	//_core->stop();
+	_controller->stop();
 }
 
 void Recorder::openPlaylist(const QString &file)
@@ -130,20 +130,20 @@ void Recorder::record(const bool &status)
 			return;
 		}
 
-		//_core->record(_channelName, _channelUrl, ui->fileEdit->text());
+		_controller->record(_channelName, _channelUrl, ui->fileEdit->text());
 
 		ui->valueCurrent->setText(_channelName);
-		/*if(_core->isTimer())
-			ui->valueEndTime->setText(_currentTimer->endTime().toString("hh:mm"));
+		if(_controller->isTimer().value())
+			ui->valueEndTime->setText(""); // TODO: Timer end time
 		else
 			ui->valueEndTime->setText(tr("No timer - press button to stop."));
-		ui->valueFile->setText(_core->output());*/
+		ui->valueFile->setText(_controller->output().value());
 
 		ui->buttonRecord->setText(tr("Stop recording"));
 		if(_actionRecord)
 			_actionRecord->setEnabled(true);
 	} else {
-		//_core->stop();
+		_controller->stop();
 
 		ui->valueCurrent->setText("");
 		ui->valueTime->setText("");
@@ -164,13 +164,13 @@ void Recorder::recordNow(const QString &name,
 
 	ui->valueSelected->setText(name);
 
-	//if(!_core->isRecording())
-	//	ui->buttonRecord->toggle();
+	if(!_controller->isRecording())
+		ui->buttonRecord->toggle();
 }
 
-void Recorder::time(const QTime &time)
+void Recorder::time(const int &time)
 {
-	ui->valueTime->setText(time.toString("hh:mm:ss"));
+	ui->valueTime->setText(QTime().addMSecs(time).toString("hh:mm:ss"));
 }
 
 void Recorder::setAction(QAction *action)
@@ -181,7 +181,7 @@ void Recorder::setAction(QAction *action)
 
 bool Recorder::isRecording() const
 {
-	return false;
+	return _controller->isRecording().value();
 }
 
 void Recorder::showTimersEditor()

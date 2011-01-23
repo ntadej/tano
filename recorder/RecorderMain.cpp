@@ -16,11 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "RecorderMain.h"
+#include "core/ConsoleOutput.h"
+#include "recorder/RecorderMain.h"
 
 RecorderMain::RecorderMain(QObject *parent)
 	: QObject(parent)
 {
+	ConsoleOutput::welcomeMessage();
+
 	_core = new RecorderCore(this);
 	connect(_core, SIGNAL(elapsed(int)), this, SIGNAL(elapsed(int)));
 }

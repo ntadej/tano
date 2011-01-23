@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,15 +16,17 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "SettingsEdit.h"
-#include "ui_SettingsEdit.h"
-
 #include <QtCore/QDir>
 #include <QtGui/QFileDialog>
+
+#include "SettingsEdit.h"
+#include "ui_SettingsEdit.h"
 
 #include "Config.h"
 #include "core/LocaleManager.h"
 #include "core/PluginsLoader.h"
+#include "core/Settings.h"
+#include "core/Shortcuts.h"
 #include "core/Version.h"
 
 SettingsEdit::SettingsEdit(Shortcuts *s,
@@ -123,6 +125,7 @@ void SettingsEdit::apply()
 	// Playback
 	_settings->setGlobalSettings(ui->vlcGlobalCheck->isChecked());
 	_settings->setRememberVideoSettings(ui->checkVideoSettings->isChecked());
+	_settings->setAudioLanguage(ui->comboAudio->currentText());
 	_settings->setSubtitleLanguage(ui->comboSub->currentText());
 
 	// Recorder
@@ -184,11 +187,20 @@ void SettingsEdit::read()
 	// Playback
 	ui->vlcGlobalCheck->setChecked(_settings->globalSettings());
 	ui->checkVideoSettings->setChecked(_settings->rememberVideoSettings());
+	for(int i = 0; i < ui->comboAudio->count(); i++) {
+		if(ui->comboAudio->itemText(i) == _settings->audioLanguage()) {
+			ui->comboAudio->setCurrentIndex(i);
+			break;
+		} else if(i == ui->comboAudio->count() - 1) {
+			ui->comboAudio->setItemText(i, _settings->audioLanguage());
+			ui->comboAudio->setCurrentIndex(i);
+		}
+	}
 	for(int i = 0; i < ui->comboSub->count(); i++) {
 		if(ui->comboSub->itemText(i) == _settings->subtitleLanguage()) {
 			ui->comboSub->setCurrentIndex(i);
 			break;
-		} else if(i == ui->comboSub->count()-1) {
+		} else if(i == ui->comboSub->count() - 1) {
 			ui->comboSub->setItemText(i, _settings->subtitleLanguage());
 			ui->comboSub->setCurrentIndex(i);
 		}

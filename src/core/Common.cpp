@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -43,8 +43,8 @@ QString Tano::locateResource(const QString &file)
 		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
 
 	// Try application exe directory without src for development
-	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src","") + file).absoluteFilePath();
+	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).absoluteFilePath();
 
 #ifdef Q_WS_X11
 	else if (QFileInfo("/usr/bin/" + file).exists())
@@ -55,6 +55,21 @@ QString Tano::locateResource(const QString &file)
 	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
 		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
 #endif
+
+	return path;
+}
+
+QString Tano::recorder()
+{
+	QString path;
+
+	// Try application exe directory
+	if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").absoluteFilePath();
+
+	// Try development directory
+	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").absoluteFilePath();
 
 	return path;
 }

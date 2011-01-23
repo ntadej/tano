@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -54,6 +54,7 @@ const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonFollowStyle;
 // Backend
 const bool Settings::DEFAULT_GLOBAL_SETTINGS = false;
 const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;
+const QString Settings::DEFAULT_AUDIO_LANGUAGE = QObject::tr("Disabled");
 const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
 // Recorder
 const bool Settings::DEFAULT_RECORDER_ENABLED = true;
@@ -102,7 +103,8 @@ void Settings::writeSettings()
 
 	setValue("backend/global", globalSettings());
 	setValue("backend/videosettings", rememberVideoSettings());
-	setValue("backend/language", subtitleLanguage());
+	setValue("backend/audio", audioLanguage());
+	setValue("backend/subtitles", subtitleLanguage());
 
 	setValue("recorder/enabled", recorderEnabled());
 	setValue("recorder/directory", recorderDirectory());
@@ -134,7 +136,8 @@ void Settings::readSettings()
 
 	setGlobalSettings(value("backend/global", DEFAULT_GLOBAL_SETTINGS).toBool());
 	setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
-	setSubtitleLanguage(value("backend/language", DEFAULT_SUBTITLE_LANGUAGE).toString());
+	setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
+	setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
 
 	setRecorderEnabled(value("recorder/enabled", DEFAULT_RECORDER_ENABLED).toBool());
 	setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());

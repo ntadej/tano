@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -97,6 +97,9 @@ public:
 	bool rememberVideoSettings() const { return _rememberVideoSettings; }
 	void setRememberVideoSettings(const bool &b) { _rememberVideoSettings = b; }
 	static const bool DEFAULT_REMEMBER_VIDEO_SETTINGS;
+	QString audioLanguage() const { return _audioLanguage; }
+	void setAudioLanguage(const QString &s) { _audioLanguage = s; }
+	static const QString DEFAULT_AUDIO_LANGUAGE;
 	QString subtitleLanguage() const { return _subtitleLanguage; }
 	void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
 	static const QString DEFAULT_SUBTITLE_LANGUAGE;
@@ -148,6 +151,7 @@ private:
 	// Backend
 	bool _globalSettings;
 	bool _rememberVideoSettings;
+	QString _audioLanguage;
 	QString _subtitleLanguage;
 
 	// Recorder

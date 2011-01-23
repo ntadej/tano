@@ -16,14 +16,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONSOLEOUTPUT_H_
-#define TANO_CONSOLEOUTPUT_H_
+#ifndef TANO_RECORDERPROCESS_H_
+#define TANO_RECORDERPROCESS_H_
 
-class ConsoleOutput
+#include <QtCore/QProcess>
+
+class RecorderProcess : public QProcess
 {
 public:
-	static bool debug();
-	static void welcomeMessage();
+	RecorderProcess(QObject *parent = 0);
+	~RecorderProcess();
 };
 
-#endif // TANO_CONSOLEOUTPUT_H_
+#endif // TANO_RECORDERPROCESS_H_

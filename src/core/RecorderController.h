@@ -32,7 +32,7 @@ public:
 					   QObject *parent = 0);
 	~RecorderController();
 
-	static const char *staticInterfaceName() { return "si.tano.TanoPlayer.RecorderInterface"; }
+	static const char *staticInterfaceName() { return "si.tano.TanoPlayer.Recorder"; }
 
 public slots:
 	QDBusPendingReply<bool> isRecording();

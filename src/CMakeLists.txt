@@ -121,6 +121,7 @@ SET(Tano_Core_Srcs
 	core/PluginsLoader.cpp
 	core/Print.cpp
 	core/RecorderController.cpp
+	core/RecorderProcess.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
 	core/UpdateManager.cpp

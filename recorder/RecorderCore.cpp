@@ -66,7 +66,7 @@ void RecorderCore::record(const QString &channel,
 	QString fileName = QString(path);
 	fileName.append("/");
 	fileName.append(QString(channel).replace(" ","_"));
-	fileName.append(QDateTime::currentDateTime().toString("-dd_MM_yyyy-hh_mm_ss"));
+	fileName.append(QDateTime::currentDateTime().toString("-yyyyMMdd-hhmmss"));
 	fileName.append(".ts");
 
 	_output = fileName;
@@ -100,7 +100,10 @@ void RecorderCore::record(Timer *timer)
 
 void RecorderCore::refreshBackend()
 {
-	QString backend = "";
+	Settings *settings = new Settings(this);
+	QString backend = settings->recorderBackend();
+	delete settings;
+
 	if(backend == Settings::DEFAULT_RECORDER_BACKEND) {
 		_coreBackend = true;
 	} else {

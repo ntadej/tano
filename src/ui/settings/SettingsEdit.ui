@@ -525,15 +525,59 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QLabel" name="labelLSub">
             <property name="text">
              <string>Default subtitle language:</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelLAudio">
+            <property name="text">
+             <string>Default audio language:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
            <widget class="QComboBox" name="comboSub">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Disabled</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">English</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Slovenščina / Slovenian </string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Deutsch / German</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Hrvatski / Croatian</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Other</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="comboAudio">
             <property name="editable">
              <bool>true</bool>
             </property>

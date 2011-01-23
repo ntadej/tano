@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -24,9 +24,9 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QTreeWidgetItem>
 
-#include "container/Channel.h"
-#include "container/Timer.h"
-#include "xml/TimersHandler.h"
+class Channel;
+class Timer;
+class TimersHandler;
 
 namespace Ui
 {

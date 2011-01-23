@@ -28,25 +28,21 @@ class RecorderDBusAdaptor : public QDBusAbstractAdaptor
 {
 Q_OBJECT
 Q_CLASSINFO("D-Bus Interface", "si.tano.TanoPlayer.Recorder")
-Q_PROPERTY(bool recording READ recording)
-Q_PROPERTY(bool timer READ timer)
-Q_PROPERTY(QString output READ output)
 
 public:
 	RecorderDBusAdaptor(RecorderMain *recorder);
 	~RecorderDBusAdaptor();
 
-	bool recording() const { return _main->isRecording(); }
-	bool timer() const { return _main->isTimer(); }
-	QString output() const { return _main->output(); }
-
 public slots:
+	QString output() const { return _main->output(); }
 	void record(const QString &channel,
 				const QString &url,
 				const QString &path) { _main->record(channel, url, path); }
+	bool recording() const { return _main->isRecording(); }
 	void refreshBackend() { _main->refreshBackend(); }
 	void refreshTimers() { _main->refreshTimers(); }
 	void stop() { _main->stop(); }
+	bool timer() const { return _main->isTimer(); }
 
 signals:
 	void elapsed(const int &);
