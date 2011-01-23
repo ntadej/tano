@@ -234,7 +234,7 @@ p, li { white-space: pre-wrap; }
        <item row="3" column="1">
         <widget class="QLabel" name="labelIcons">
          <property name="text">
-          <string notr="true">&lt;h4&gt;Icons by Matthieu James.&lt;/h4&gt;</string>
+          <string notr="true">&lt;h4&gt;Icons © Matthieu James.&lt;/h4&gt;</string>
          </property>
         </widget>
        </item>
