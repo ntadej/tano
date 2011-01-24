@@ -16,11 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/Channel.h"
+#ifndef TANO_JSGENERATOR_H_
+#define TANO_JSGENERATOR_H_
 
-Channel::Channel(const QString &name,
-				 const int &number)
-	: _name(name),
-	_number(number) { }
+class JsGenerator
+{
+public:
+	JsGenerator();
+	~JsGenerator();
+};
 
-Channel::~Channel() { }
+#endif // TANO_JSGENERATOR_H_

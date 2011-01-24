@@ -132,6 +132,12 @@ SET(Tano_Epg_Srcs
 	epg/EpgSlovenia.cpp
 	epg/EpgSloveniaLoader.cpp
 )
+SET(Tano_Playlist_Srcs
+	playlist/JsGenerator.cpp
+	playlist/JsHandler.cpp
+	playlist/M3UGenerator.cpp
+	playlist/M3UHandler.cpp
+)
 SET(Tano_UI_Srcs
 	ui/MainWindow.cpp
 	ui/core/CurrentTime.cpp
@@ -168,8 +174,6 @@ SET(Tano_UI_Srcs
 	ui/wizard/SettingsPage.cpp
 )
 SET(Tano_XML_Srcs
-	xml/M3UGenerator.cpp
-	xml/M3UHandler.cpp
 	xml/TanoHandlerOld.cpp
 	xml/TimersGenerator.cpp
 	xml/TimersHandler.cpp
@@ -182,6 +186,7 @@ SET(Tano_Srcs
 	${Tano_Container_Srcs}
 	${Tano_Core_Srcs}
 	${Tano_Epg_Srcs}
+	${Tano_Playlist_Srcs}
 	${Tano_UI_Srcs}
 	${Tano_XML_Srcs}
 )

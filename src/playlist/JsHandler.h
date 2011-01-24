@@ -16,11 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/Channel.h"
+#ifndef TANO_JSHANDLER_H_
+#define TANO_JSHANDLER_H_
 
-Channel::Channel(const QString &name,
-				 const int &number)
-	: _name(name),
-	_number(number) { }
+class JsHandler
+{
+public:
+	JsHandler();
+	~JsHandler();
+};
 
-Channel::~Channel() { }
+#endif // TANO_JSHANDLER_H_

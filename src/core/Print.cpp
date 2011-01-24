@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,11 +9,11 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QDate>
@@ -23,6 +23,8 @@
 #include <QtGui/QTextTable>
 
 #include "Print.h"
+#include "container/Channel.h"
+#include "ui/playlist/PlaylistWidget.h"
 
 Print::Print(QWidget *parent)
 	: QTextEdit(parent)
@@ -77,10 +79,6 @@ void Print::channelList(const QString &name,
 		cursor = channelsTable->cellAt(0, list[5]).firstCursorPosition();
 		cursor.insertText(tr("EPG"), _boldFormat);
 	}
-	if(list[6] >= 0) {
-		cursor = channelsTable->cellAt(0, list[6]).firstCursorPosition();
-		cursor.insertText(tr("Logo"), _boldFormat);
-	}
 
 	for (int i = 0; i < widget->treeWidget()->topLevelItemCount(); ++i) {
 		int row = channelsTable->rows();
@@ -109,10 +107,6 @@ void Print::channelList(const QString &name,
 		if(list[5] >= 0) {
 			cursor = channelsTable->cellAt(row, list[5]).firstCursorPosition();
 			cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->epg(), _textFormat);
-		}
-		if(list[6] >= 0) {
-			cursor = channelsTable->cellAt(row, list[6]).firstCursorPosition();
-			cursor.insertText(widget->channelRead(widget->treeWidget()->topLevelItem(i))->logo(), _textFormat);
 		}
 	}
 

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,11 +9,11 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtCore/QDebug>
@@ -21,6 +21,10 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
+#include <vlc-qt/Instance.h>
+#include <vlc-qt/MediaPlayer.h>
+
+#include "container/Channel.h"
 #include "core/Common.h"
 #include "core/ConsoleOutput.h"
 #include "core/Settings.h"
@@ -53,15 +57,6 @@ PlaylistEdit::PlaylistEdit(const QString &playlist,
 	ui->playlist->open(_playlist);
 	ui->editName->setText(ui->playlist->name());
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-
-	ui->epgCombo->addItem(Tano::epgType(Tano::Slovenia));
-	ui->epgCombo->addItem(Tano::epgType(Tano::XMLTV));
-	for(int i=0; i < ui->epgCombo->count(); i++) {
-		if(ui->epgCombo->itemText(i) == Tano::epgType(ui->playlist->epgType())) {
-			ui->epgCombo->setCurrentIndex(i);
-			break;
-		}
-	}
 }
 
 PlaylistEdit::~PlaylistEdit()
@@ -113,7 +108,6 @@ void PlaylistEdit::createConnections()
 	connect(ui->editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
 	connect(ui->editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
 	connect(ui->editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
-	connect(ui->editLogo, SIGNAL(textChanged(QString)), this, SLOT(editChannelLogo(QString)));
 
 	connect(ui->actionUp, SIGNAL(triggered()), this, SLOT(moveUp()));
 	connect(ui->actionDown, SIGNAL(triggered()), this, SLOT(moveDown()));
@@ -161,7 +155,7 @@ void PlaylistEdit::save()
 	if (fileName.isEmpty())
 		return;
 
-	ui->playlist->save(ui->editName->text(), ui->epgCombo->currentText(), fileName);
+	ui->playlist->save(ui->editName->text(), fileName);
 
 	_closeEnabled = true;
 	exit();
@@ -310,7 +304,6 @@ void PlaylistEdit::editItem(QTreeWidgetItem *item)
 	ui->editCategories->setText(ui->playlist->channelRead(item)->categories().join(","));
 	ui->editLanguage->setText(ui->playlist->channelRead(item)->language());
 	ui->editEpg->setText(ui->playlist->channelRead(item)->epg());
-	ui->editLogo->setText(ui->playlist->channelRead(item)->logo());
 }
 
 void PlaylistEdit::editChannelNumber()
@@ -345,11 +338,6 @@ void PlaylistEdit::editChannelLanguage(const QString &text)
 void PlaylistEdit::editChannelEpg(const QString &text)
 {
 	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setEpg(text);
-}
-
-void PlaylistEdit::editChannelLogo(const QString &text)
-{
-	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setLogo(text);
 }
 
 void PlaylistEdit::moveUp()

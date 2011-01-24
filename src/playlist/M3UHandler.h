@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,11 +9,11 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_M3UHANDLER_H_
@@ -24,8 +24,7 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
-#include "container/Channel.h"
-#include "core/Enums.h"
+class Channel;
 
 class M3UHandler
 {
@@ -45,12 +44,11 @@ public:
 	Channel *channelRead(const int &item) { return _nmap[item]; }
 
 	QString name() const { return _name; }
-	Tano::EpgType epgType() const { return _epgType; }
 	QStringList categories() const { return _categoryList; }
 	QStringList languages() const { return _languageList; }
 	QStringList epg() const { return _epgList; }
 	QList<int> nums() const { return _channelNums; }
-	QMap<QTreeWidgetItem*, Channel*> channelMap() const { return _map; }
+	QMap<QTreeWidgetItem *, Channel *> channelMap() const { return _map; }
 
 	int processNewNum(QTreeWidgetItem *channel,
 					  const int &num);
@@ -70,17 +68,16 @@ private:
 	QIcon _channelIcon;
 
 	QString _name;
-	Tano::EpgType _epgType;
 	QStringList _m3uLineList;
 	QStringList _categoryList;
 	QStringList _languageList;
 	QStringList _epgList;
 
-	QList<Channel*> _channels;
+	QList<Channel *> _channels;
 	QList<int> _channelNums;
 
-	QMap<QTreeWidgetItem*, Channel*> _map;
-	QMap<int, Channel*> _nmap;
+	QMap<QTreeWidgetItem *, Channel *> _map;
+	QMap<int, Channel *> _nmap;
 };
 
 #endif // TANO_M3UHANDLER_H_

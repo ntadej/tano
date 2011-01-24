@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,27 +9,26 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
 #include <QtCore/QFile>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 #include <QtGui/QMessageBox>
 
 #include "M3UHandler.h"
-#include "TanoHandlerOld.h"
+#include "container/Channel.h"
+#include "xml/TanoHandlerOld.h"
 
 M3UHandler::M3UHandler(QTreeWidget *treeWidget)
 	: _treeWidget(treeWidget)
 {
 	_name = QObject::tr("Channel list");
-	_epgType = Tano::Slovenia;
 	_channelIcon = QIcon(":/icons/16x16/video.png");
 }
 
@@ -119,7 +118,7 @@ void M3UHandler::processList()
 			_name = _m3uLineList[i];
 			_name.replace(QString("#EXTNAME:"), QString(""));
 		} else if(_m3uLineList[i].contains("#EXTEPG")) {
-			_epgType = Tano::epgType(_m3uLineList[i].replace("#EXTEPG:", ""));
+
 		} else if(_m3uLineList[i].contains("#EXTINF")) {
 			tmp = _m3uLineList[i];
 			tmp.replace(QString("#EXTINF:"), QString(""));
@@ -156,8 +155,6 @@ void M3UHandler::processList()
 				_channel->setEpg(tmpList[2]);
 				if(!_epgList.contains(tmpList[2]) && !tmpList[2].isEmpty())
 					_epgList << tmpList[2];
-				if(tmpList.size()==4)
-					_channel->setLogo(tmpList[3]);
 			}
 		} else {
 			tmp = _m3uLineList[i];

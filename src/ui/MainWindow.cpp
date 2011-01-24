@@ -454,7 +454,7 @@ void MainWindow::play(const QString &itemFile)
 
 	if(itemFile.isNull()) {
 		ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
-		ui->infoBarWidget->setLogo(_channel->logo());
+		//ui->infoBarWidget->setLogo(_channel->logo());
 
 		_epg->request(_channel->epg(), Tano::Main);
 		ui->channelNumber->display(_channel->number());
@@ -528,9 +528,10 @@ void MainWindow::openPlaylist(const bool &start)
 	connect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
 	mouseWheel();
 
+	Tano::EpgType epgType = Tano::Slovenia;
 	ui->channelToolBox->setItemText(0,ui->playlistWidget->name());
-	_epg->setEpg(ui->playlistWidget->epg(), ui->playlistWidget->epgType());
-	_epgShow->setEpgType(ui->playlistWidget->epgType());
+	_epg->setEpg(ui->playlistWidget->epg(), epgType);
+	_epgShow->setEpgType(epgType);
 }
 void MainWindow::openFile()
 {

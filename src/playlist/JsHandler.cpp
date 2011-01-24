@@ -16,11 +16,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/Channel.h"
+#include "playlist/JsHandler.h"
 
-Channel::Channel(const QString &name,
-				 const int &number)
-	: _name(name),
-	_number(number) { }
+JsHandler::JsHandler()
+{
+}
 
-Channel::~Channel() { }
+JsHandler::~JsHandler() { }

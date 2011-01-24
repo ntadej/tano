@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,19 +9,21 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
-#include "PlaylistWidget.h"
-#include "ui_PlaylistWidget.h"
 
 #include <QtCore/QFile>
 #include <QtGui/QMessageBox>
 
-#include "xml/M3UGenerator.h"
+#include "PlaylistWidget.h"
+#include "ui_PlaylistWidget.h"
+
+#include "container/Channel.h"
+#include "playlist/M3UGenerator.h"
 
 PlaylistWidget::PlaylistWidget(QWidget *parent)
 	: QWidget(parent),
@@ -95,7 +97,6 @@ void PlaylistWidget::open(const QString &file)
 }
 
 void PlaylistWidget::save(const QString &name,
-						  const QString &epg,
 						  const QString &file)
 {
 	QFile f(file);
@@ -107,7 +108,7 @@ void PlaylistWidget::save(const QString &name,
 		return;
 	}
 
-	M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, epg, _handler->channelMap());
+	M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, _handler->channelMap());
 	generator->write(&f);
 	delete generator;
 }

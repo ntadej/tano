@@ -461,10 +461,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>EPG Type:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Channels number:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -497,23 +493,11 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;You can separate categories with comma.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Url:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Logo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Please provide full path or URL.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -599,6 +583,18 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>New channel from scan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will interrupt your current playback.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -697,10 +693,6 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>EPG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Logo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
