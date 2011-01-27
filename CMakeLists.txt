@@ -118,6 +118,7 @@ MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
 ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(recorder)
+ADD_SUBDIRECTORY(editor)
 
 SET(Tano_Files
 	LICENSE.GPL

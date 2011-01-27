@@ -16,32 +16,24 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_JSGENERATOR_H_
-#define TANO_JSGENERATOR_H_
+#include <QtCore/QCoreApplication>
+#include <QtGui/QApplication>
+#include <QtGui/QFileDialog>
 
-#include <QtCore/QTextStream>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QTreeWidgetItem>
+#include "ui/playlist/PlaylistEdit.h"
 
-class Channel;
-
-class JsGenerator
+int main(int argc, char *argv[])
 {
-public:
-	JsGenerator(QTreeWidget *treeWidget,
-				QMap<QTreeWidgetItem *, Channel *> map);
-	~JsGenerator();
+	QApplication app(argc, argv);
+	QCoreApplication::setApplicationName("Tano Editor");
 
-	bool write(QIODevice *device);
+	QString playlistName =
+		QFileDialog::getOpenFileName(0, QObject::tr("Open channel list file"),
+						QDir::homePath(),
+						QObject::tr("Tano TV channel list files(*.m3u)"));
 
-private:
-	void generateItem(const int &id,
-					  Channel *channel);
+	PlaylistEdit mainWindow(playlistName, 0);
+	mainWindow.show();
 
-	QTreeWidget *_treeWidget;
-	QTextStream _out;
-
-	QMap<QTreeWidgetItem *, Channel *> _map;
-};
-
-#endif // TANO_JSGENERATOR_H_
+	return app.exec();
+}

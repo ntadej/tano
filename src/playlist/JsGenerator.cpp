@@ -16,10 +16,43 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "container/Channel.h"
 #include "playlist/JsGenerator.h"
 
-JsGenerator::JsGenerator()
-{
-}
+JsGenerator::JsGenerator(QTreeWidget *treeWidget,
+						 QMap<QTreeWidgetItem *, Channel *>map)
+	: _treeWidget(treeWidget),
+	_map(map) { }
 
 JsGenerator::~JsGenerator() { }
+
+bool JsGenerator::write(QIODevice *device)
+{
+	_out.setDevice(device);
+	_out.setCodec("UTF-8");
+	_out << "la=[";
+	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
+		generateItem(i+1, _map[_treeWidget->topLevelItem(i)]);
+		if(i != _treeWidget->topLevelItemCount()-1) {
+			_out << ",";
+		}
+	}
+	_out << "];";
+	return true;
+}
+
+void JsGenerator::generateItem(const int &id,
+							   Channel *channel)
+{
+	_out << "["
+		 << id << ","
+		 << "\"" << channel->name() << "\"" << ","
+		 << "\"" << channel->numberString() << "\"" << ","
+		 << "\"" << channel->url().replace(QRegExp("udp://@"), "").replace(QRegExp(":.*"), "") << "\"" << ","
+		 << "\"" << channel->url().replace(QRegExp("udp://@.*:"), "") << "\"" << ","
+		 << "\"" << channel->categories()[0] << "\"" << ","
+		 << "\"" << channel->language() << "\"" << ","
+		 << "\"" << channel->epg() << "\"" << ","
+		 << "\"" << "false" << "\""
+		 << "]";
+}

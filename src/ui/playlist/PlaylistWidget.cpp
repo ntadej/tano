@@ -23,6 +23,7 @@
 #include "ui_PlaylistWidget.h"
 
 #include "container/Channel.h"
+#include "playlist/JsGenerator.h"
 #include "playlist/M3UGenerator.h"
 
 PlaylistWidget::PlaylistWidget(QWidget *parent)
@@ -109,6 +110,22 @@ void PlaylistWidget::save(const QString &name,
 	}
 
 	M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, _handler->channelMap());
+	generator->write(&f);
+	delete generator;
+}
+
+void PlaylistWidget::exportJs(const QString &file)
+{
+	QFile f(file);
+	if (!f.open(QFile::WriteOnly | QFile::Text)) {
+		QMessageBox::warning(this, tr("Tano"),
+							tr("Cannot write file %1:\n%2.")
+							.arg(file)
+							.arg(f.errorString()));
+		return;
+	}
+
+	JsGenerator *generator = new JsGenerator(ui->treeWidget, _handler->channelMap());
 	generator->write(&f);
 	delete generator;
 }

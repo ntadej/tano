@@ -348,18 +348,18 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.cpp" line="508"/>
-        <source>Open Channel list File</source>
-        <translation>Otevřít soubor se seznamem programů</translation>
+        <source>Open channel list file</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.cpp" line="510"/>
-        <source>Tano TV Channel list Files(*.m3u)</source>
-        <translation>Soubory Tano se seznamem programů TV (*.m3u)</translation>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.cpp" line="539"/>
-        <source>Open File or URL</source>
-        <translation>Otevřít soubor nebo adresu (URL)</translation>
+        <source>Open file or URL</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.cpp" line="541"/>
@@ -602,168 +602,200 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation type="unfinished">Nástrojový pruh</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="127"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="128"/>
         <source>Editor</source>
         <translation type="unfinished">Editor</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="137"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="138"/>
         <source>Number:</source>
         <translation type="unfinished">Číslo:</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="144"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="145"/>
         <source>Name:</source>
         <translation type="unfinished">Název:</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="151"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="152"/>
         <source>Categories:</source>
         <translation type="unfinished">Skupiny:</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="158"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="159"/>
         <source>Language:</source>
         <translation type="unfinished">Jazyk:</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="165"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="166"/>
         <source>EPG:</source>
         <translation type="unfinished">EPG:</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="207"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="208"/>
         <source>Url:</source>
         <translation type="unfinished">Adresa (URL):</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="243"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="244"/>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="253"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="254"/>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</source>
         <translation type="unfinished">&lt;i&gt;Musíte použít číslo.&lt;br&gt;Všechny ostatní hodnoty jsou automaticky změněny.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="260"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="261"/>
         <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="292"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="293"/>
         <source>Update Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="302"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="303"/>
         <source>IP Range:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="309"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="310"/>
         <source>Timeout:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="316"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="317"/>
         <source>Scan and update</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="356"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="357"/>
         <source> ms</source>
         <translation type="unfinished">ms</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="375"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="376"/>
         <source>Port:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="408"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="409"/>
         <source>&lt;i&gt;This will interrupt your current playback.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="421"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="424"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="422"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="425"/>
         <source>Add Channel</source>
         <translation type="unfinished">Přidat program</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="433"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="436"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="434"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="437"/>
         <source>Delete Channel</source>
         <translation type="unfinished">Smazat program</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="445"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="448"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="446"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="449"/>
         <source>Save and Close</source>
         <translation type="unfinished">Uložit a zavřít</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="457"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="458"/>
         <source>Close</source>
         <translation type="unfinished">Zavřít</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="466"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="467"/>
         <source>Import</source>
         <translation type="unfinished">Zavést</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="475"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="476"/>
         <source>Move Up</source>
         <translation type="unfinished">Posunout nahoru</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="484"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="487"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="485"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="488"/>
         <source>Move Down</source>
         <translation type="unfinished">Posunout dolů</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="496"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="497"/>
         <source>Print</source>
         <translation type="unfinished">Tisk</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="152"/>
-        <source>Save Channel list</source>
-        <translation type="unfinished">Uložit seznam programů</translation>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="506"/>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="154"/>
-        <source>Tano TV Channel list Files (*.m3u)</source>
-        <translation type="unfinished">Soubory Tano se seznamem programů TV (*.m3u)</translation>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="515"/>
+        <source>Tano Old Playlist</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="167"/>
-        <source>Open Channel list File</source>
-        <translation type="unfinished">Otevřít soubor se seznamem programů</translation>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="524"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="533"/>
+        <source>Sagem JS</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="169"/>
-        <source>Tano TV Old Channel list Files(*.tano *.xml)</source>
-        <translation type="unfinished">Soubory Tano se starým seznamem programů (*.tano *.xml)</translation>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="174"/>
+        <source>Save channel list</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="185"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="176"/>
+        <source>Tano TV channel list files (*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="189"/>
+        <source>Export to Sagem JS channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="191"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="206"/>
+        <source>Sagem JS channel list files (*.js)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="204"/>
+        <source>Import Sagem JS channel list file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="217"/>
+        <source>Import Tano TV Old channel list file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="219"/>
+        <source>Tano TV Old channel list files(*.tano *.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="235"/>
         <source>Playlist Editor</source>
         <translation type="unfinished">Editor seznamu skladeb</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="186"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="236"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation type="unfinished">Chcete zavřít editor?
 Ztratíte tím všechna neuložená nastavení.</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="260"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="310"/>
         <source>New channel from scan</source>
         <translation type="unfinished">Nový program</translation>
     </message>
@@ -809,34 +841,36 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Smazat</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="79"/>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="104"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="80"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="105"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="121"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="80"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="81"/>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Nelze číst ze souboru %1:
 %2.</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="56"/>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="93"/>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="126"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="57"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="94"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="143"/>
         <source>All languages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="55"/>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="89"/>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="121"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="56"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="90"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="138"/>
         <source>All categories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="105"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="106"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="122"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Nelze zapisovat soubor %1:

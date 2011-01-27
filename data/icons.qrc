@@ -62,5 +62,6 @@
         <file>icons/48x48/recorder.png</file>
         <file>icons/24x24/recorder.png</file>
         <file>icons/16x16/timer.png</file>
+        <file>icons/24x24/export.png</file>
     </qresource>
 </RCC>

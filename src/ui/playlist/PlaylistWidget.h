@@ -42,6 +42,7 @@ public:
 	void open(const QString &file);
 	void save(const QString &name,
 			  const QString &file);
+	void exportJs(const QString &file);
 
 	QTreeWidgetItem* createItem(const QString &name = 0,
 								const QString &url = 0);

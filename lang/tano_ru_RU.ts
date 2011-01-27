@@ -308,18 +308,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Channel list File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV Channel list Files(*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open File or URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Multimedia files(*)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -333,6 +321,18 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Restore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open file or URL</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -557,22 +557,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save Channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV Channel list Files (*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Channel list File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV Old Channel list Files(*.tano *.xml)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Playlist Editor</source>
         <translation type="unfinished"></translation>
     </message>
@@ -595,6 +579,46 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>&lt;i&gt;This will interrupt your current playback.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files (*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to Sagem JS channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sagem JS channel list files (*.js)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Sagem JS channel list file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Tano TV Old channel list file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV Old channel list files(*.tano *.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Old Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sagem JS</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

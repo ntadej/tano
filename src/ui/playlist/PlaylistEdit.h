@@ -51,9 +51,13 @@ private slots:
 				 const QString &url);
 
 	void save();
-	void import();
+	void exportJs();
+	void importJs();
+	void importTanoOld();
 	void print();
 
+	void menuOpenExport();
+	void menuOpenImport();
 	void exit();
 
 	void editItem(QTreeWidgetItem *item);
@@ -82,6 +86,8 @@ private:
 	Ui::PlaylistEdit *ui;
 
 	bool _closeEnabled;
+	QMenu *_menuExport;
+	QMenu *_menuImport;
 	QString _playlist;
 
 	// Update playlist

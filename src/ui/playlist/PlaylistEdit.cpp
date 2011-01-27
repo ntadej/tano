@@ -19,6 +19,7 @@
 #include <QtCore/QDebug>
 #include <QtGui/QCloseEvent>
 #include <QtGui/QFileDialog>
+#include <QtGui/QMenu>
 #include <QtGui/QMessageBox>
 
 #include <vlc-qt/Instance.h>
@@ -51,6 +52,13 @@ PlaylistEdit::PlaylistEdit(const QString &playlist,
 	_timer = new QTimer();
 	connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
 	connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
+
+	_menuExport = new QMenu();
+	_menuExport->addAction(ui->actionExportJs);
+
+	_menuImport = new QMenu();
+	_menuImport->addAction(ui->actionImportJs);
+	_menuImport->addAction(ui->actionImportTanoOld);
 
 	ui->editWidget->setEnabled(false);
 	ui->playlist->editMode();
@@ -98,7 +106,11 @@ void PlaylistEdit::createConnections()
 	connect(ui->actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
 	connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
 	connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
-	connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(import()));
+	connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
+	connect(ui->actionExportJs, SIGNAL(triggered()), this, SLOT(exportJs()));
+	connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(menuOpenImport()));
+	connect(ui->actionImportJs, SIGNAL(triggered()), this, SLOT(importJs()));
+	connect(ui->actionImportTanoOld, SIGNAL(triggered()), this, SLOT(importTanoOld()));
 	connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
 
 	connect(ui->buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
@@ -115,6 +127,16 @@ void PlaylistEdit::createConnections()
 	connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
 
 	connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));
+}
+
+void PlaylistEdit::menuOpenExport()
+{
+	_menuExport->exec(QCursor::pos());
+}
+
+void PlaylistEdit::menuOpenImport()
+{
+	_menuImport->exec(QCursor::pos());
 }
 
 void PlaylistEdit::deleteItem()
@@ -149,9 +171,9 @@ void PlaylistEdit::addItem(const QString &name,
 void PlaylistEdit::save()
 {
 	QString fileName =
-		QFileDialog::getSaveFileName(this, tr("Save Channel list"),
+		QFileDialog::getSaveFileName(this, tr("Save channel list"),
 									QDir::homePath(),
-									tr("Tano TV Channel list Files (*.m3u)"));
+									tr("Tano TV channel list files (*.m3u)"));
 	if (fileName.isEmpty())
 		return;
 
@@ -161,12 +183,40 @@ void PlaylistEdit::save()
 	exit();
 }
 
-void PlaylistEdit::import()
+void PlaylistEdit::exportJs()
 {
 	QString fileName =
-			QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
+		QFileDialog::getSaveFileName(this, tr("Export to Sagem JS channel list"),
+									QDir::homePath(),
+									tr("Sagem JS channel list files (*.js)"));
+	if (fileName.isEmpty())
+		return;
+
+	ui->playlist->exportJs(fileName);
+
+	_closeEnabled = true;
+	exit();
+}
+
+void PlaylistEdit::importJs()
+{
+	QString fileName =
+			QFileDialog::getOpenFileName(this, tr("Import Sagem JS channel list file"),
 										QDir::homePath(),
-										tr("Tano TV Old Channel list Files(*.tano *.xml)"));
+										tr("Sagem JS channel list files (*.js)"));
+	if (fileName.isEmpty())
+		return;
+
+	//ui->playlist->import(fileName);
+	//ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+}
+
+void PlaylistEdit::importTanoOld()
+{
+	QString fileName =
+			QFileDialog::getOpenFileName(this, tr("Import Tano TV Old channel list file"),
+										QDir::homePath(),
+										tr("Tano TV Old channel list files(*.tano *.xml)"));
 	if (fileName.isEmpty())
 		return;
 

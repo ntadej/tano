@@ -505,9 +505,9 @@ void MainWindow::openPlaylist(const bool &start)
 
 	if (!start)
 	_playlistName =
-		QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
+		QFileDialog::getOpenFileName(this, tr("Open channel list file"),
 						QDir::homePath(),
-						tr("Tano TV Channel list Files(*.m3u)"));
+						tr("Tano TV channel list files(*.m3u)"));
 	else
 		_playlistName = Tano::locateResource(_defaultPlaylist);
 
@@ -536,7 +536,7 @@ void MainWindow::openPlaylist(const bool &start)
 void MainWindow::openFile()
 {
 	QString file =
-		QFileDialog::getOpenFileName(this, tr("Open File or URL"),
+		QFileDialog::getOpenFileName(this, tr("Open file or URL"),
 						QDir::homePath(),
 						tr("Multimedia files(*)"));
 

@@ -89,6 +89,7 @@
    <addaction name="actionDown"/>
    <addaction name="separator"/>
    <addaction name="actionImport"/>
+   <addaction name="actionExport"/>
    <addaction name="actionPrint"/>
    <addaction name="separator"/>
    <addaction name="actionSave"/>
@@ -494,6 +495,42 @@
    </property>
    <property name="text">
     <string>Print</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/export.png</normaloff>:/icons/24x24/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export</string>
+   </property>
+  </action>
+  <action name="actionImportTanoOld">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tano Old Playlist</string>
+   </property>
+  </action>
+  <action name="actionImportJs">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sagem JS</string>
+   </property>
+  </action>
+  <action name="actionExportJs">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/export.png</normaloff>:/icons/24x24/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sagem JS</string>
    </property>
   </action>
  </widget>
