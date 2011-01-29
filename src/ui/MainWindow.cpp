@@ -128,7 +128,7 @@ void MainWindow::showEvent(QShowEvent *event)
 void MainWindow::createGui()
 {
 	openPlaylist(true);
-	setState(false);
+	setPlayingState(false);
 	ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
 	ui->statusBar->addPermanentWidget(ui->timeWidget);
 	ui->statusBar->addPermanentWidget(ui->buttonUpdate);
@@ -279,7 +279,9 @@ void MainWindow::createConnections()
 	connect(_videoController, SIGNAL(actions(Vlc::ActionsType, QList<QAction*>)), _menuTrackSubtitles, SLOT(setActions(Vlc::ActionsType, QList<QAction*>)));
 	connect(_videoController, SIGNAL(actions(Vlc::ActionsType, QList<QAction*>)), _menuTrackVideo, SLOT(setActions(Vlc::ActionsType, QList<QAction*>)));
 	connect(_menuTrackSubtitles, SIGNAL(subtitles(QString)), _videoController, SLOT(loadSubtitle(QString)));
-	connect(_mediaPlayer, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool, bool, bool)));
+	connect(_mediaPlayer, SIGNAL(playing(bool, bool)), this, SLOT(setPlayingState(bool, bool)));
+	connect(_mediaPlayer, SIGNAL(hasAudio(bool)), ui->menuAudio, SLOT(setEnabled(bool)));
+	connect(_mediaPlayer, SIGNAL(hasVideo(bool)), ui->menuVideo, SLOT(setEnabled(bool)));
 
 	connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
 	connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
@@ -422,7 +424,8 @@ void MainWindow::playChannel(const int &clickedChannel)
 	play();
 }
 
-void MainWindow::setState(const bool &playing, const bool &audio, const bool &video)
+void MainWindow::setPlayingState(const bool &playing,
+								 const bool &buffering)
 {
 	if(playing) {
 		ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
@@ -444,8 +447,11 @@ void MainWindow::setState(const bool &playing, const bool &audio, const bool &vi
 		ui->buttonMute->setEnabled(false);
 	}
 
-	ui->menuAudio->setEnabled(audio);
-	ui->menuVideo->setEnabled(video);
+	if(buffering) {
+		ui->statusBar->showMessage(tr("Buffering..."));
+	} else {
+		ui->statusBar->clearMessage();
+	}
 }
 
 void MainWindow::play(const QString &itemFile)

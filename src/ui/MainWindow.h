@@ -75,9 +75,8 @@ private slots:
 
 	void play(const QString &itemFile = 0);
 	void stop();
-	void setState(const bool &playing,
-				  const bool &audio = false,
-				  const bool &video = false);
+	void setPlayingState(const bool &playing,
+						 const bool &buffering = false);
 
 	void playChannel(QTreeWidgetItem* clickedChannel);
 	void playChannel(const int &clickedChannel);

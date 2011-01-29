@@ -21,8 +21,16 @@
 #include "recorder/RecorderDBusAdaptor.h"
 #include "recorder/RecorderMain.h"
 
+#ifdef Q_WS_X11
+	#include <X11/Xlib.h>
+#endif
+
 int main(int argc, char *argv[])
 {
+#ifdef Q_WS_X11
+	XInitThreads();
+#endif
+
 	QCoreApplication a(argc, argv);
 	QCoreApplication::setApplicationName("Tano Recorder");
 
