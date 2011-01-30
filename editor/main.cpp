@@ -18,8 +18,10 @@
 
 #include <QtCore/QCoreApplication>
 #include <QtGui/QApplication>
-#include <QtGui/QFileDialog>
+#include <QtGui/QBitmap>
+#include <QtGui/QSplashScreen>
 
+#include "core/LocaleManager.h"
 #include "ui/playlist/PlaylistEdit.h"
 
 #ifdef Q_WS_X11
@@ -35,13 +37,19 @@ int main(int argc, char *argv[])
 	QApplication app(argc, argv);
 	QCoreApplication::setApplicationName("Tano Editor");
 
-	QString playlistName =
-		QFileDialog::getOpenFileName(0, QObject::tr("Open channel list file"),
-						QDir::homePath(),
-						QObject::tr("Tano TV channel list files(*.m3u)"));
+	LocaleManager manager;
 
-	PlaylistEdit mainWindow(playlistName, 0);
-	mainWindow.show();
+	QPixmap pixmap(":/images/splash.png");
+	QSplashScreen *splash = new QSplashScreen(pixmap);
+	splash->setMask(pixmap.mask());
+	splash->show();
+
+	PlaylistEdit main;
+	main.setStandalone(true);
+	main.show();
+
+	splash->hide();
+	delete splash;
 
 	return app.exec();
 }

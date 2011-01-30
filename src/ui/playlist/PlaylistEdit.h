@@ -35,10 +35,14 @@ class PlaylistEdit : public QMainWindow
 {
 Q_OBJECT
 public:
-	PlaylistEdit(const QString &playlist,
-				 const WId &video,
+	PlaylistEdit(const WId &video = 0,
 				 QWidget *parent = 0);
 	~PlaylistEdit();
+
+	void setStandalone(const bool &standalone);
+
+public slots:
+	void open(const QString &playlist = 0);
 
 protected:
 	void changeEvent(QEvent *e);
@@ -88,7 +92,8 @@ private:
 	bool _closeEnabled;
 	QMenu *_menuExport;
 	QMenu *_menuImport;
-	QString _playlist;
+
+	bool _standalone;
 
 	// Update playlist
 	VlcInstance *_instance;

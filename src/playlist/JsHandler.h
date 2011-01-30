@@ -19,11 +19,27 @@
 #ifndef TANO_JSHANDLER_H_
 #define TANO_JSHANDLER_H_
 
+#include <QtCore/QString>
+#include <QtCore/QStringList>
+
+class Channel;
+
 class JsHandler
 {
 public:
 	JsHandler();
 	~JsHandler();
+
+	void processFile(const QString &jsFile);
+
+	QList<Channel *> channelList() const { return _channelList; }
+
+private:
+	void processList();
+
+	QList<Channel *> _channelList;
+
+	QStringList _lineList;
 };
 
 #endif // TANO_JSHANDLER_H_

@@ -16,10 +16,57 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QFile>
+#include <QtCore/QTextCodec>
+#include <QtCore/QTextStream>
+
+#include "container/Channel.h"
 #include "playlist/JsHandler.h"
 
-JsHandler::JsHandler()
-{
-}
+JsHandler::JsHandler() { }
 
 JsHandler::~JsHandler() { }
+
+void JsHandler::processFile(const QString &jsFile)
+{
+	QFile file(jsFile);
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+		return;
+
+	QTextStream in(&file);
+	in.setCodec(QTextCodec::codecForName("UTF-8"));
+	while (!in.atEnd()) {
+		_lineList << in.readLine();
+	}
+
+	processList();
+}
+
+void JsHandler::processList()
+{
+	QString line;
+	for(int i = 0; i < _lineList.size(); i++) {
+		if(_lineList[i].contains("la=")) {
+			line = _lineList[i];
+			break;
+		}
+	}
+
+	line = line.replace("la=[[", "");
+	line = line.replace("]];", "");
+	line = line.replace("\"", "");
+
+	QStringList channels = line.split("],[");
+	QStringList currentChannel;
+	for(int i = 0; i < channels.size(); i++) {
+		currentChannel = channels[i].split(",");
+
+		Channel *channel = new Channel(currentChannel[1], currentChannel[2].toInt());
+		channel->setUrl("udp://@" + currentChannel[3] + ":" + currentChannel[4]);
+		channel->setCategories(QStringList() << currentChannel[5]);
+		channel->setLanguage(currentChannel[6]);
+		channel->setEpg(currentChannel[7]);
+
+		_channelList << channel;
+	}
+}

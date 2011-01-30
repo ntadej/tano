@@ -44,6 +44,7 @@ SET(Tano_Editor_Srcs
 
 	../src/core/Common.cpp
 	../src/core/ConsoleOutput.cpp
+	../src/core/LocaleManager.cpp
 	../src/core/Print.cpp
 	../src/core/Settings.cpp
 	../src/core/Version.cpp

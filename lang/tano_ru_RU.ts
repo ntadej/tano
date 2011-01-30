@@ -335,6 +335,10 @@ This will stop recording in progress.</source>
         <source>Open file or URL</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Buffering...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -621,6 +625,22 @@ You will lose any unsaved settings.</source>
         <source>Sagem JS</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistPage</name>
@@ -762,10 +782,6 @@ You will lose any unsaved settings.</source>
         <source>EPG</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Logo</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -832,6 +848,10 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>Weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sagem JS Imported Playlist</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

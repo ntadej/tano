@@ -130,6 +130,18 @@ void PlaylistWidget::exportJs(const QString &file)
 	delete generator;
 }
 
+void PlaylistWidget::importJs(const QString &file)
+{
+	_handler->clear();
+	_handler->importJsFormat(file);
+}
+
+void PlaylistWidget::importTanoOld(const QString &file)
+{
+	_handler->clear();
+	_handler->importOldFormat(file);
+}
+
 void PlaylistWidget::processPlaylist()
 {
 	for(int i=0; i<ui->treeWidget->topLevelItemCount(); i++)
@@ -164,12 +176,6 @@ void PlaylistWidget::deleteItem()
 {
 	_handler->deleteChannel(ui->treeWidget->currentItem());
 	ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
-}
-
-void PlaylistWidget::import(const QString &file)
-{
-	_handler->clear();
-	_handler->importOldFormat(file);
 }
 
 void PlaylistWidget::editMode()

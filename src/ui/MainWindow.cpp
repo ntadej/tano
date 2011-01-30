@@ -587,11 +587,13 @@ void MainWindow::showPlaylistEditor()
 			_playlistEditor->activateWindow();
 		} else {
 			delete _playlistEditor;
-			_playlistEditor = new PlaylistEdit(_playlistName, ui->videoWidget->widgetId());
+			_playlistEditor = new PlaylistEdit(ui->videoWidget->widgetId());
+			_playlistEditor->open(_playlistName);
 			_playlistEditor->show();
 		}
 	} else {
-		_playlistEditor = new PlaylistEdit(_playlistName, ui->videoWidget->widgetId());
+		_playlistEditor = new PlaylistEdit(ui->videoWidget->widgetId());
+		_playlistEditor->open(_playlistName);
 		_playlistEditor->show();
 	}
 }

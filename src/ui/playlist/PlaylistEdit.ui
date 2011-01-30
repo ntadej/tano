@@ -82,17 +82,19 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionPrint"/>
+   <addaction name="separator"/>
+   <addaction name="actionImport"/>
+   <addaction name="actionExport"/>
+   <addaction name="separator"/>
    <addaction name="actionAdd"/>
    <addaction name="actionDelete"/>
    <addaction name="separator"/>
    <addaction name="actionUp"/>
    <addaction name="actionDown"/>
    <addaction name="separator"/>
-   <addaction name="actionImport"/>
-   <addaction name="actionExport"/>
-   <addaction name="actionPrint"/>
-   <addaction name="separator"/>
-   <addaction name="actionSave"/>
    <addaction name="actionClose"/>
   </widget>
   <widget class="QDockWidget" name="editWidget">
@@ -531,6 +533,24 @@
    </property>
    <property name="text">
     <string>Sagem JS</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/open.png</normaloff>:/icons/24x24/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/information.png</normaloff>:/icons/24x24/information.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
    </property>
   </action>
  </widget>

@@ -34,15 +34,16 @@
 #include "PlaylistEdit.h"
 #include "ui_PlaylistEdit.h"
 
-PlaylistEdit::PlaylistEdit(const QString &playlist,
-						   const WId &video,
+PlaylistEdit::PlaylistEdit(const WId &video,
 						   QWidget *parent)
 	: QMainWindow(parent),
 	ui(new Ui::PlaylistEdit),
 	_closeEnabled(false),
-	_playlist(playlist)
+	_standalone(false)
 {
 	ui->setupUi(this);
+	ui->editWidget->setEnabled(false);
+	ui->playlist->editMode();
 
 	createSettings();
 	createConnections();
@@ -59,12 +60,6 @@ PlaylistEdit::PlaylistEdit(const QString &playlist,
 	_menuImport = new QMenu();
 	_menuImport->addAction(ui->actionImportJs);
 	_menuImport->addAction(ui->actionImportTanoOld);
-
-	ui->editWidget->setEnabled(false);
-	ui->playlist->editMode();
-	ui->playlist->open(_playlist);
-	ui->editName->setText(ui->playlist->name());
-	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
 PlaylistEdit::~PlaylistEdit()
@@ -102,6 +97,7 @@ void PlaylistEdit::createSettings()
 
 void PlaylistEdit::createConnections()
 {
+	connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(open()));
 	connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
 	connect(ui->actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
 	connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
@@ -137,6 +133,31 @@ void PlaylistEdit::menuOpenExport()
 void PlaylistEdit::menuOpenImport()
 {
 	_menuImport->exec(QCursor::pos());
+}
+
+void PlaylistEdit::setStandalone(const bool &standalone)
+{
+	_standalone = standalone;
+	if(_standalone) {
+		ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
+	}
+}
+
+void PlaylistEdit::open(const QString &playlist)
+{
+	QString p;
+	if(playlist == 0) {
+		p = QFileDialog::getOpenFileName(this, tr("Open channel list file"),
+										 QDir::homePath(),
+										 tr("Tano TV channel list files(*.m3u)"));
+	} else {
+		p = playlist;
+	}
+
+	ui->editWidget->setEnabled(false);
+	ui->playlist->open(p);
+	ui->editName->setText(ui->playlist->name());
+	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
 void PlaylistEdit::deleteItem()
@@ -207,8 +228,9 @@ void PlaylistEdit::importJs()
 	if (fileName.isEmpty())
 		return;
 
-	//ui->playlist->import(fileName);
-	//ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+	ui->playlist->importJs(fileName);
+	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+	ui->editName->setText(ui->playlist->name());
 }
 
 void PlaylistEdit::importTanoOld()
@@ -220,14 +242,17 @@ void PlaylistEdit::importTanoOld()
 	if (fileName.isEmpty())
 		return;
 
-	ui->playlist->import(fileName);
+	ui->playlist->importTanoOld(fileName);
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+	ui->editName->setText(ui->playlist->name());
 }
 
 void PlaylistEdit::exit()
 {
 	if(_closeEnabled) {
 		hide();
+		if(_standalone)
+			qApp->quit();
 		return;
 	}
 

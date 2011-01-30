@@ -33,6 +33,7 @@ public:
 	~M3UHandler();
 
 	void processFile(const QString &m3uFile);
+	void importJsFormat(const QString &jsFile);
 	void importOldFormat(const QString &tanoFile);
 
 	QTreeWidgetItem *createChannel(const QString &name = 0,

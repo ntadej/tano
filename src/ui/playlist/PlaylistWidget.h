@@ -43,6 +43,8 @@ public:
 	void save(const QString &name,
 			  const QString &file);
 	void exportJs(const QString &file);
+	void importJs(const QString &file);
+	void importTanoOld(const QString &file);
 
 	QTreeWidgetItem* createItem(const QString &name = 0,
 								const QString &url = 0);
@@ -54,7 +56,6 @@ public:
 	QList<int> nums() const { return _handler->nums(); }
 	QTreeWidget *treeWidget();
 
-	void import(const QString &file);
 	int processNum(QTreeWidgetItem *channel,
 				   const int &num) const { return _handler->processNewNum(channel, num); }
 	void moveUp(QTreeWidgetItem *channel) { _handler->moveUp(channel); }

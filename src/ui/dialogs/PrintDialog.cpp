@@ -1,16 +1,19 @@
 /****************************************************************************
-* PrintDialog.cpp: Dialog for printing settings
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtGui/QDialogButtonBox>
@@ -28,7 +31,7 @@ PrintDialog::PrintDialog(const QString &name,
 {
 	ui->setupUi(this);
 
-	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
+	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton *)), this, SLOT(action(QAbstractButton *)));
 
 	_print = new Print();
 }
@@ -69,7 +72,7 @@ void PrintDialog::action(QAbstractButton *button)
 void PrintDialog::print()
 {
 	QList<int> list;
-	QList<QCheckBox*> box;
+	QList<QCheckBox *> box;
 	int k = 0;
 
 	box << ui->checkNum
@@ -77,10 +80,9 @@ void PrintDialog::print()
 		<< ui->checkUrl
 		<< ui->checkCategories
 		<< ui->checkLanguage
-		<< ui->checkEpg
-		<< ui->checkLogo;
+		<< ui->checkEpg;
 
-	for(int i=0; i< box.size(); i++) {
+	for(int i = 0; i < box.size(); i++) {
 		if(box[i]->isChecked()) {
 			list << k;
 			k++;
@@ -88,6 +90,7 @@ void PrintDialog::print()
 			list << -1;
 		}
 	}
+
 	list << k;
 	_print->channelList(_name, _playlist, list);
 }

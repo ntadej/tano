@@ -23,6 +23,7 @@
 
 #include "M3UHandler.h"
 #include "container/Channel.h"
+#include "playlist/JsHandler.h"
 #include "xml/TanoHandlerOld.h"
 
 M3UHandler::M3UHandler(QTreeWidget *treeWidget)
@@ -208,6 +209,31 @@ void M3UHandler::deleteChannel(QTreeWidgetItem *channel)
 	delete _map[channel];
 	_map.remove(channel);
 	delete channel;
+}
+
+void M3UHandler::importJsFormat(const QString &jsFile)
+{
+	JsHandler *import = new JsHandler();
+	import->processFile(jsFile);
+
+	for(int i = 0; i < import->channelList().size(); i++) {
+		_channels << import->channelList()[i];
+		_channelNums << import->channelList()[i]->number();
+
+		_item = new QTreeWidgetItem(_treeWidget);
+		_item->setData(0, Qt::UserRole, "channel");
+		_item->setIcon(0, _channelIcon);
+		_item->setText(0, processNum(QString().number(import->channelList()[i]->number())));
+		_item->setText(1, import->channelList()[i]->name());
+		_item->setText(2, import->channelList()[i]->categories().join(","));
+
+		_map.insert(_item, import->channelList()[i]);
+		_nmap.insert(import->channelList()[i]->number(), import->channelList()[i]);
+	}
+
+	_name = QObject::tr("Sagem JS Imported Playlist");
+
+	delete import;
 }
 
 void M3UHandler::importOldFormat(const QString &tanoFile)
