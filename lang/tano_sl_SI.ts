@@ -5,23 +5,56 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../src/ui/dialogs/AboutDialog.ui" line="20"/>
-        <source>About Tano</source>
-        <translation>O programu Tano</translation>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="61"/>
+        <source>About</source>
+        <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="124"/>
-        <source>&lt;h2&gt;An Open IP TV Player&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Odprti IP TV Predvajalnik&lt;/h2&gt;</translation>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="74"/>
+        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
+</source>
+        <translation>Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom. Temelji na knjižnici VLC-Qt.
+</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="143"/>
-        <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
-        <translation>&lt;h4&gt;Licensirano pod licenco GNU GPL&lt;/h4&gt;</translation>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="85"/>
+        <source>This version of Tano was compiled on
+%1 running %2.
+Your Qt runtime version: %3
+Your VLC-Qt version: %4
+</source>
+        <translation>Ta različica programa Tano je bila kodno prevedena na
+%1 s sistemom %2.
+Tvoja različica Qt: %3
+Tvoja različica VLC-Qt %4
+</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="251"/>
-        <source>Back</source>
-        <translation>Nazaj</translation>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="163"/>
+        <source>Backend</source>
+        <translation>Hrbtenica</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="176"/>
+        <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
+</source>
+        <translation>VLC-Qt je brezplačna programska knjižnica, ki služi povezavi med knjižnicami Qt in libvlc. Vsebuje osnovne razrede za multimedijsko predvajanje in tudi nekaj razredov uporabniškega vmesnika za hitrejši razvoj multimedijskega predvajalnika.
+</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="187"/>
+        <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Uporabljaš Videolan VLC %1&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="262"/>
+        <source>Authors</source>
+        <translation>Avtorji</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="276"/>
+        <source>License</source>
+        <translation>Licenca</translation>
     </message>
 </context>
 <context>
@@ -112,7 +145,7 @@
 <context>
     <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/ui/wizard/FirstRunWizard.cpp" line="39"/>
+        <location filename="../src/ui/wizard/FirstRunWizard.cpp" line="43"/>
         <source>First Run Wizard</source>
         <translation>Čarovnik ob prvem zagonu</translation>
     </message>
@@ -148,12 +181,12 @@
         <translation>Ta čarovnik ti bo pomagal določiti osnovne nastavitve za program &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/ui/wizard/IntroPage.cpp" line="33"/>
+        <location filename="../src/ui/wizard/IntroPage.cpp" line="36"/>
         <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
         <translation>Uporabljal si &lt;i&gt;Tano&lt;/i&gt; različice %1.</translation>
     </message>
     <message>
-        <location filename="../src/ui/wizard/IntroPage.cpp" line="35"/>
+        <location filename="../src/ui/wizard/IntroPage.cpp" line="38"/>
         <source>Please re-set your settings.</source>
         <translation>Prosim, ponovno nastavi aplikacijo.</translation>
     </message>
@@ -337,6 +370,11 @@
 This will stop recording in progress.</source>
         <translation>Ali želiš zapreti Tano?
 To bo ustavilo trenutno snemanje.</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/MainWindow.cpp" line="405"/>
+        <source>Player</source>
+        <translation>Predvajalnik</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.cpp" line="433"/>
@@ -608,6 +646,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="130"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="150"/>
         <source>Editor</source>
         <translation>Urejevalnik</translation>
     </message>
@@ -762,65 +801,65 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>O urejevalniku</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="150"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="158"/>
         <source>Open channel list file</source>
         <translation>Odpri seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="152"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="160"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="195"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="203"/>
         <source>Save channel list</source>
         <translation>Shrani seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="197"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="205"/>
         <source>Tano TV channel list files (*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="210"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="218"/>
         <source>Export to Sagem JS channel list</source>
         <translation>Izvozi v Sagem JS seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="212"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="227"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="220"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="235"/>
         <source>Sagem JS channel list files (*.js)</source>
         <translation>Sagem JS seznam programov (*.js)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="225"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="233"/>
         <source>Import Sagem JS channel list file</source>
         <translation>Uvozi Sagem JS seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="239"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="247"/>
         <source>Import Tano TV Old channel list file</source>
         <translation>Uvozi Tano Star seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="241"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="249"/>
         <source>Tano TV Old channel list files(*.tano *.xml)</source>
         <translation>Tano TV star programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="260"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="268"/>
         <source>Playlist Editor</source>
         <translation>Urejevalnik seznama programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="261"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="269"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation>Ali želiš zapreti urejevalnik?
 Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="335"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="343"/>
         <source>New channel from scan</source>
         <translation>Nov program iz iskanja</translation>
     </message>
@@ -1450,12 +1489,12 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Integriran (privzeto)</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="48"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="50"/>
         <source>You are using Tano version:</source>
         <translation>Uporabljaš Tano različice:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="234"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="236"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>
@@ -1959,7 +1998,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Informacije:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/UpdateDialog.cpp" line="96"/>
+        <location filename="../src/ui/dialogs/UpdateDialog.cpp" line="98"/>
         <source>Download now!</source>
         <translation>Prenesi zdaj!</translation>
     </message>

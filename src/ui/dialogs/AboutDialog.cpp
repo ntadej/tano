@@ -1,44 +1,52 @@
 /****************************************************************************
-* AboutDialog.cpp: About dialog for Tano application
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+*
+* The UI layout was based on the VLMC About dialog
+* Copyright (C) 2008-2010 VideoLAN
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
+
+#include <QtCore/QDate>
+#include <QtCore/QFile>
+
+#include <vlc-qt/Instance.h>
 
 #include "AboutDialog.h"
 #include "ui_AboutDialog.h"
 
-#include <QtCore/QDate>
+#include "core/Common.h"
 
-#include "core/Version.h"
-
-AboutDialog::AboutDialog(QWidget *parent)
+AboutDialog::AboutDialog(const QString &type,
+						 QWidget *parent)
 	: QDialog(parent),
 	ui(new Ui::AboutDialog)
 {
 	ui->setupUi(this);
 
-	ui->labelVersion->setText("<h2>"+Version::version()+"</h2>");
-	ui->labelChangeset->setText("<h2>"+Version::changeset()+"</h2>");
-	ui->labelCopy->setText(ui->labelCopy->text().replace("%1",QDate().currentDate().toString("yyyy")));
-	ui->labelLicense->setText(ui->labelLicense->text().replace("GNU GPL","<a href='#'>GNU GPL</a>"));
-	ui->labelLinks->setText(ui->labelLinks->text().replace("http://tano.si","<a href='http://tano.si'>http://tano.si</a>"));
-	ui->labelLinks->setText(ui->labelLinks->text().replace("info@tano.si","<a href='info@tano.si'>info@tano.si</a>"));
+	ui->labelTitle->setText(ui->labelTitle->text().arg(type, Tano::version(), Tano::changeset()));
+	ui->labelBuild->setText(ui->labelBuild->text().arg(Tano::buildHostname(), Tano::buildSystem(), qVersion(), VlcInstance::libVersion()));
+	ui->labelCopyright->setText(ui->labelCopyright->text().arg(QDate::currentDate().toString("yyyy")));
+	ui->labelBackendInfo->setText(ui->labelBackendInfo->text().arg(VlcInstance::version()));
+	ui->labelBackendVersion->setText(ui->labelBackendVersion->text().arg(VlcInstance::libVersion()));
 
-	ui->labelQVlc->setText("<h3>libvlc-qt "+Version::libVlcqt()+"</h3>");
-	ui->labelVlc->setText("<h3>libvlc "+Version::libVlc().split(" ")[0]+"</h3>");
-	ui->labelQt->setText("<h3>Qt "+Version::qt()+"</h3>");
+	QFile file(":/info/AUTHORS");
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+		return;
 
-	connect(ui->buttonLicense, SIGNAL(clicked()), this, SLOT(license()));
-	connect(ui->labelLicense, SIGNAL(linkActivated(QString)), this, SLOT(license()));
+	ui->authors->setPlainText(QString::fromUtf8(file.readAll()));
 }
 
 AboutDialog::~AboutDialog()
@@ -56,12 +64,4 @@ void AboutDialog::changeEvent(QEvent *e)
 		default:
 			break;
 	}
-}
-
-void AboutDialog::license()
-{
-	if(ui->stackedWidget->currentIndex() == 1)
-		ui->stackedWidget->setCurrentIndex(0);
-	else
-		ui->stackedWidget->setCurrentIndex(1);
 }

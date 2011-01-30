@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <info@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,16 +9,18 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include <QtGui/QDialogButtonBox>
 
-#include "core/Version.h"
+#include "container/UpdateInfo.h"
+#include "core/Common.h"
+#include "core/UpdateManager.h"
 
 #include "UpdateDialog.h"
 #include "ui_UpdateDialog.h"
@@ -82,14 +84,14 @@ void UpdateDialog::processUpdate(const QStringList &update,
 								 const UpdateInfo &info)
 {
 	if (update[0] == "latest") {
-		ui->labelVersionLatest->setText("<b>" + Version::version() + "</b>");
+		ui->labelVersionLatest->setText("<b>" + Tano::version() + "</b>");
 		ui->main->setCurrentIndex(0);
 	} else if (update[0] == "development") {
 		ui->labelVersionDev->setText("<b>" + update[1] + "</b>");
 		ui->labelVersionStable->setText("<b>" + update[2] + "</b>");
 		ui->main->setCurrentIndex(1);
 	} else if (update[0] == "update") {
-		ui->labelVersionOld->setText("<b>" + Version::version() + "</b>");
+		ui->labelVersionOld->setText("<b>" + Tano::version() + "</b>");
 		ui->labelVersionNew->setText("<b>" + update[1] + "</b>");
 		ui->labelDate->setText("<b>" + info.date() + "</b>");
 		ui->labelInfo->setText(info.description());

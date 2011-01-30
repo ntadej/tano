@@ -19,6 +19,8 @@
 #include <QtCore/QDir>
 #include <QtGui/QFileDialog>
 
+#include <vlc-qt/Instance.h>
+
 #include "SettingsEdit.h"
 #include "ui_SettingsEdit.h"
 
@@ -45,9 +47,9 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
 
 	_settings = new Settings(this);
 
-	ui->labelVersion->setText(tr("You are using Tano version:")+" <b>"+Version::version()+"</b>");
-	ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text()+" <b>"+Version::libVlcqt()+"</b>");
-	ui->labelVlcVersion->setText(ui->labelVlcVersion->text()+" <b>"+Version::libVlc()+"</b>");
+	ui->labelVersion->setText(tr("You are using Tano version:")+" <b>"+Tano::version()+"</b>");
+	ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text()+" <b>"+VlcInstance::libVersion()+"</b>");
+	ui->labelVlcVersion->setText(ui->labelVlcVersion->text()+" <b>"+VlcInstance::version()+"</b>");
 
 	loadLocale();
 	loadPlugins();

@@ -96,6 +96,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 )
 
 SET(Tano_Resrcs
+	../info.qrc
 	../data/icons.qrc
 	../data/images.qrc
 	../data/logo.qrc
@@ -125,7 +126,6 @@ SET(Tano_Core_Srcs
 	core/Settings.cpp
 	core/Shortcuts.cpp
 	core/UpdateManager.cpp
-	core/Version.cpp
 )
 SET(Tano_Epg_Srcs
 	epg/EpgManager.cpp

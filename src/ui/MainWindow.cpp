@@ -402,7 +402,7 @@ void MainWindow::mouseWheel()
 
 void MainWindow::aboutTano()
 {
-	AboutDialog about(this);
+	AboutDialog about(tr("Player"), this);
 	about.exec();
 }
 void MainWindow::aboutPlugins()

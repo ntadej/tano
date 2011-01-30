@@ -4,19 +4,41 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Tano</source>
+        <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;h2&gt;An Open IP TV Player&lt;/h2&gt;</source>
+        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
+        <source>Authors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Back</source>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This version of Tano was compiled on
+%1 running %2.
+Your Qt runtime version: %3
+Your VLC-Qt version: %4
+</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -337,6 +359,10 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Buffering...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

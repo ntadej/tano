@@ -19,8 +19,8 @@
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
+#include "core/Common.h"
 #include "core/UpdateManager.h"
-#include "core/Version.h"
 #include "xml/UpdateHandler.h"
 
 UpdateManager::UpdateManager(QObject *parent)
@@ -64,16 +64,16 @@ void UpdateManager::readUpdates()
 	QList<UpdateInfo> list = _handler->updateInfo();
 	UpdateInfo info;
 
-	for(int i=0; i < list.size(); i++) {
-		if(Version::version() == list[i].version() && list[i].development()) {
+	for(int i = 0; i < list.size(); i++) {
+		if(Tano::version() == list[i].version() && list[i].development()) {
 			updatesList << "development" << list[i].version();
 			continue;
-		} else if(Version::version() == list[i].version() && !list[i].development()) {
+		} else if(Tano::version() == list[i].version() && !list[i].development()) {
 			updatesList << "latest";
 			break;
-		} else if(Version::version() != list[i].version() && list[i].development()) {
+		} else if(Tano::version() != list[i].version() && list[i].development()) {
 			continue;
-		} else if(Version::version() != list[i].version() && !list[i].development()) {
+		} else if(Tano::version() != list[i].version() && !list[i].development()) {
 			if(!updatesList.isEmpty()) {
 				updatesList << list[i].version();
 			} else {

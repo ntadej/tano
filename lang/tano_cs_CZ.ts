@@ -5,23 +5,50 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../src/ui/dialogs/AboutDialog.ui" line="20"/>
-        <source>About Tano</source>
-        <translation type="unfinished">O programu Tano</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="124"/>
-        <source>&lt;h2&gt;An Open IP TV Player&lt;/h2&gt;</source>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="61"/>
+        <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="143"/>
-        <source>&lt;h4&gt;Licensed under GNU GPL&lt;/h4&gt;</source>
-        <translation type="unfinished">&lt;h4&gt;Licencováno pod licencí GNU GPL&lt;/h4&gt;</translation>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="74"/>
+        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
+</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="251"/>
-        <source>Back</source>
-        <translation type="unfinished">Zpět</translation>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="85"/>
+        <source>This version of Tano was compiled on
+%1 running %2.
+Your Qt runtime version: %3
+Your VLC-Qt version: %4
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="163"/>
+        <source>Backend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="176"/>
+        <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="187"/>
+        <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="262"/>
+        <source>Authors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="276"/>
+        <source>License</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -112,7 +139,7 @@
 <context>
     <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/ui/wizard/FirstRunWizard.cpp" line="39"/>
+        <location filename="../src/ui/wizard/FirstRunWizard.cpp" line="43"/>
         <source>First Run Wizard</source>
         <translation>Průvodce prvním spuštěním</translation>
     </message>
@@ -148,12 +175,12 @@
         <translation>Tento průvodce vám pomůže se základním nastavením programu &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/ui/wizard/IntroPage.cpp" line="33"/>
+        <location filename="../src/ui/wizard/IntroPage.cpp" line="36"/>
         <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
         <translation>Předtím jste používal verzi %1 &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/ui/wizard/IntroPage.cpp" line="35"/>
+        <location filename="../src/ui/wizard/IntroPage.cpp" line="38"/>
         <source>Please re-set your settings.</source>
         <translation>Nastavte, prosím, svá nastavení znovu.</translation>
     </message>
@@ -337,6 +364,11 @@
 This will stop recording in progress.</source>
         <translation>Chcete ukončit program Tano?
 Tím se zastaví i právě probíhající nahrávání.</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/MainWindow.cpp" line="405"/>
+        <source>Player</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.cpp" line="433"/>
@@ -608,6 +640,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="130"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="150"/>
         <source>Editor</source>
         <translation type="unfinished">Editor</translation>
     </message>
@@ -762,65 +795,65 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="150"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="158"/>
         <source>Open channel list file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="152"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="160"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="195"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="203"/>
         <source>Save channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="197"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="205"/>
         <source>Tano TV channel list files (*.m3u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="210"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="218"/>
         <source>Export to Sagem JS channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="212"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="227"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="220"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="235"/>
         <source>Sagem JS channel list files (*.js)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="225"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="233"/>
         <source>Import Sagem JS channel list file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="239"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="247"/>
         <source>Import Tano TV Old channel list file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="241"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="249"/>
         <source>Tano TV Old channel list files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="260"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="268"/>
         <source>Playlist Editor</source>
         <translation type="unfinished">Editor seznamu skladeb</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="261"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="269"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation type="unfinished">Chcete zavřít editor?
 Ztratíte tím všechna neuložená nastavení.</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="335"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="343"/>
         <source>New channel from scan</source>
         <translation type="unfinished">Nový program</translation>
     </message>
@@ -1450,12 +1483,12 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="48"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="50"/>
         <source>You are using Tano version:</source>
         <translation type="unfinished">Používáte verzi programu Tano:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="234"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="236"/>
         <source>Open Directory</source>
         <translation type="unfinished">Otevřít adresář</translation>
     </message>
@@ -1959,7 +1992,7 @@ Vaše změny nebudou použity.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/UpdateDialog.cpp" line="96"/>
+        <location filename="../src/ui/dialogs/UpdateDialog.cpp" line="98"/>
         <source>Download now!</source>
         <translation type="unfinished"></translation>
     </message>

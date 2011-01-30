@@ -51,7 +51,6 @@ SET(Tano_Recorder_Srcs
 	../src/core/Enums.cpp
 	../src/core/PluginsLoader.cpp
 	../src/core/Settings.cpp
-	../src/core/Version.cpp
 )
 
 ################

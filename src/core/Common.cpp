@@ -27,6 +27,58 @@
 #include "core/Common.h"
 #include "core/Settings.h"
 
+QString Tano::version()
+{
+	QString version;
+
+#ifdef VERSION
+	version.append(QString(VERSION));
+#else
+	version.append("Unknown");
+#endif
+
+	return version;
+}
+
+QString Tano::changeset()
+{
+	QString version;
+
+#ifdef VERSION_PATCH
+	if(QString(VERSION_PATCH) != "0" && QString(VERSION_PATCH) != "") {
+		version.append("(" + QString(VERSION_PATCH) + ")");
+	}
+#endif
+
+	return version;
+}
+
+QString Tano::buildHostname()
+{
+	QString hostname;
+
+#ifdef HOSTNAME
+	hostname.append(QString(HOSTNAME));
+#else
+	hostname.append("Unknown");
+#endif
+
+	return hostname;
+}
+
+QString Tano::buildSystem()
+{
+	QString system;
+
+#ifdef SYSTEM
+	system.append(QString(SYSTEM));
+#else
+	system.append("Unknown");
+#endif
+
+	return system;
+}
+
 QString Tano::locateResource(const QString &file)
 {
 	QString path;
@@ -42,7 +94,13 @@ QString Tano::locateResource(const QString &file)
 	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
 
-	// Try application exe directory without src for development
+	// Try application exe directory without editor, recorder or src for development
+	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).absoluteFilePath();
+
+	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/recorder", "") + "/" + file).exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/recorder", "") + "/" + file).absoluteFilePath();
+
 	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).absoluteFilePath();
 

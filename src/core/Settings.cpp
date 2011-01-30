@@ -19,8 +19,8 @@
 #include <QtCore/QDir>
 
 #include "Config.h"
+#include "core/Common.h"
 #include "core/Settings.h"
-#include "core/Version.h"
 
 // Playlists
 const QString Settings::PLAYLIST_SIOL_MPEG2 = "playlists/siol-mpeg2.m3u";
@@ -115,7 +115,7 @@ void Settings::writeSettings()
 
 void Settings::readSettings()
 {
-	setConfigurationVersion(value("general/version", Version::version()).toString());
+	setConfigurationVersion(value("general/version", Tano::version()).toString());
 	setConfigured(value("general/configured", DEFAULT_CONFIGURED).toBool());
 	setSessionVolume(value("general/sessionvolume", DEFAULT_SESSION_VOLUME).toBool());
 	setSessionAutoplay(value("general/sessionplay", DEFAULT_SESSION_AUTOPLAY).toBool());

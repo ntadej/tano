@@ -29,6 +29,7 @@
 #include "core/Common.h"
 #include "core/ConsoleOutput.h"
 #include "core/Settings.h"
+#include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
 
 #include "PlaylistEdit.h"
@@ -97,6 +98,7 @@ void PlaylistEdit::createSettings()
 
 void PlaylistEdit::createConnections()
 {
+	connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
 	connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(open()));
 	connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
 	connect(ui->actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
@@ -141,6 +143,12 @@ void PlaylistEdit::setStandalone(const bool &standalone)
 	if(_standalone) {
 		ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
 	}
+}
+
+void PlaylistEdit::aboutTano()
+{
+	AboutDialog about(tr("Editor"), this);
+	about.exec();
 }
 
 void PlaylistEdit::open(const QString &playlist)

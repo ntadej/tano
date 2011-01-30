@@ -22,15 +22,26 @@ cmake_minimum_required(VERSION 2.6)
 ###################
 # List of sources #
 ###################
+# Define the UI source files used by Tano Editor
+SET(Tano_Editor_UIs
+	../src/ui/dialogs/AboutDialog.ui
+	../src/ui/dialogs/PrintDialog.ui
+	../src/ui/playlist/PlaylistEdit.ui
+	../src/ui/playlist/PlaylistWidget.ui
+)
+
 # Define the MOC source files used by Tano Editor
 SET(Tano_Editor_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
 	../src/core/Print.h
+	../src/ui/core/License.h
+	../src/ui/dialogs/AboutDialog.h
 	../src/ui/dialogs/PrintDialog.h
 	../src/ui/playlist/PlaylistEdit.h
 	../src/ui/playlist/PlaylistWidget.h
 )
 
 SET(Tano_Editor_Resrcs
+	../info.qrc
 	../data/icons.qrc
 	../data/images.qrc
 	../data/logo.qrc
@@ -47,13 +58,14 @@ SET(Tano_Editor_Srcs
 	../src/core/LocaleManager.cpp
 	../src/core/Print.cpp
 	../src/core/Settings.cpp
-	../src/core/Version.cpp
 
 	../src/playlist/JsGenerator.cpp
 	../src/playlist/JsHandler.cpp
 	../src/playlist/M3UGenerator.cpp
 	../src/playlist/M3UHandler.cpp
 
+	../src/ui/core/License.cpp
+	../src/ui/dialogs/AboutDialog.cpp
 	../src/ui/dialogs/PrintDialog.cpp
 	../src/ui/playlist/PlaylistEdit.cpp
 	../src/ui/playlist/PlaylistWidget.cpp
@@ -66,6 +78,9 @@ SET(Tano_Editor_Srcs
 ################
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Editor_Resrcs_Srcs ${Tano_Editor_Resrcs})
+
+# This scripts runs the user interface compiler uic.
+QT4_WRAP_UI(Tano_Editor_UIC_Srcs ${Tano_Editor_UIs})
 
 # This script runs the meta object compiler moc.
 QT4_WRAP_CPP(Tano_Editor_MOC_Srcs ${Tano_Editor_MOCs})
@@ -123,7 +138,7 @@ ENDIF(MINGW)
 
 
 # This line tells cmake to create the Tano Editor program.
-ADD_EXECUTABLE(tano-editor ${Tano_Editor_Srcs} ${Tano_Editor_MOC_Srcs} ${Tano_Editor_Resrcs_Srcs})
+ADD_EXECUTABLE(tano-editor ${Tano_Editor_UIC_Srcs} ${Tano_Editor_Srcs} ${Tano_Editor_MOC_Srcs} ${Tano_Editor_Resrcs_Srcs})
 
 # Here the needed Qt Libraries are added to the link command.
 TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})

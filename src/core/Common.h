@@ -23,6 +23,14 @@
 #include <QtCore/QStringList>
 
 namespace Tano {
+	// Version
+	QString version();
+	QString changeset();
+
+	// Build system information
+	QString buildHostname();
+	QString buildSystem();
+
 	// Resources locators
 	QString locateResource(const QString &file);
 	QString recorder();

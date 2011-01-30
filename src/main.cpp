@@ -19,8 +19,8 @@
 #include <QtCore/QCoreApplication>
 #include <QtGui/QApplication>
 
+#include "core/Common.h"
 #include "core/Settings.h"
-#include "core/Version.h"
 #include "ui/MainWindow.h"
 #include "ui/wizard/FirstRunWizard.h"
 
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	QCoreApplication::setApplicationName("Tano");
 
 	Settings *settings = new Settings();
-	if(!settings->configured() || settings->configurationVersion() != Version::version()) {
+	if(!settings->configured() || settings->configurationVersion() != Tano::version()) {
 		FirstRunWizard *wizard = new FirstRunWizard();
 		wizard->exec();
 		delete wizard;

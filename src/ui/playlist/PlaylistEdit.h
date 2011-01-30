@@ -49,6 +49,8 @@ protected:
 	void closeEvent(QCloseEvent *event);
 
 private slots:
+	void aboutTano();
+
 	void deleteItem();
 	void addItem();
 	void addItem(const QString &name,
