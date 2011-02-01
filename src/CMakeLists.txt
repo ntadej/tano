@@ -39,6 +39,7 @@ SET(Tano_UIs
 	ui/epg/EpgShow.ui
 	ui/epg/EpgSchedule.ui
 	ui/playlist/PlaylistEdit.ui
+	ui/playlist/PlaylistImportWeb.ui
 	ui/playlist/PlaylistWidget.ui
 	ui/recorder/Recorder.ui
 	ui/recorder/TimersEdit.ui
@@ -82,6 +83,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/menu/MenuTrackSubtitles.h
 	ui/menu/MenuTrackVideo.h
 	ui/playlist/PlaylistEdit.h
+	ui/playlist/PlaylistImportWeb.h
 	ui/playlist/PlaylistWidget.h
 	ui/recorder/Recorder.h
 	ui/recorder/TimersEdit.h
@@ -161,6 +163,7 @@ SET(Tano_UI_Srcs
 	ui/menu/MenuTrackSubtitles.cpp
 	ui/menu/MenuTrackVideo.cpp
 	ui/playlist/PlaylistEdit.cpp
+	ui/playlist/PlaylistImportWeb.cpp
 	ui/playlist/PlaylistWidget.cpp
 	ui/recorder/Recorder.cpp
 	ui/recorder/TimersEdit.cpp
@@ -178,6 +181,7 @@ SET(Tano_XML_Srcs
 	xml/TimersGenerator.cpp
 	xml/TimersHandler.cpp
 	xml/UpdateHandler.cpp
+	xml/WebPlaylistHandler.cpp
 )
 
 SET(Tano_Srcs

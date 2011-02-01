@@ -553,6 +553,15 @@
     <string>About</string>
    </property>
   </action>
+  <action name="actionImportDownload">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>Download from Web</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

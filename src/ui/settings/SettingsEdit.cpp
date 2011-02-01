@@ -25,11 +25,11 @@
 #include "ui_SettingsEdit.h"
 
 #include "Config.h"
+#include "core/Common.h"
 #include "core/LocaleManager.h"
 #include "core/PluginsLoader.h"
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
-#include "core/Version.h"
 
 SettingsEdit::SettingsEdit(Shortcuts *s,
 						   QWidget *parent)

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,14 +9,16 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include "container/EpgShowInfo.h"
+#include "core/GetFile.h"
+#include "epg/EpgSloveniaLoader.h"
 
 #include "EpgShow.h"
 #include "ui_EpgShow.h"
@@ -31,7 +33,7 @@ EpgShow::EpgShow(QWidget *parent)
 {
 	ui->setupUi(this);
 
-	connect(_image, SIGNAL(image(QString)), this, SLOT(image(QString)));
+	connect(_image, SIGNAL(file(QString)), this, SLOT(image(QString)));
 
 	connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
 	connect(ui->buttonNext, SIGNAL(clicked()), this, SLOT(next()));

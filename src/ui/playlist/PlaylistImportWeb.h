@@ -16,18 +16,47 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#ifndef TANO_PLAYLISTIMPORTWEB_H_
+#define TANO_PLAYLISTIMPORTWEB_H_
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+#include <QtCore/QTextCodec>
+#include <QtGui/QAbstractButton>
+#include <QtGui/QDialog>
 
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
+namespace Ui {
+	class PlaylistImportWeb;
+}
 
-// Qt version
-#define QT_OLD_VERSION @QT_OLD@
+class GetFile;
+class WebPlaylistHandler;
 
-#endif // TANO_CONFIG_H_
+class PlaylistImportWeb : public QDialog
+{
+Q_OBJECT
+public:
+	PlaylistImportWeb(QWidget *parent = 0);
+	~PlaylistImportWeb();
+
+	QString playlist() const { return _playlist; }
+
+protected:
+	void changeEvent(QEvent *e);
+
+private slots:
+	void action(QAbstractButton *button);
+	void getList(const int &id);
+	void readList(const QString &list);
+
+private:
+	Ui::PlaylistImportWeb *ui;
+
+	QTextCodec *_codec;
+	WebPlaylistHandler *_handler;
+	GetFile *_file;
+	QString _playlist;
+
+	QStringList _playlistName;
+	QStringList _playlistUrl;
+};
+
+#endif // TANO_PLAYLISTIMPORTWEB_H_

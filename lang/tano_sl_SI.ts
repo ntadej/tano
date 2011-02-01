@@ -122,7 +122,7 @@ Tvoja različica VLC-Qt %4
 <context>
     <name>EpgShow</name>
     <message>
-        <location filename="../src/ui/epg/EpgShow.cpp" line="63"/>
+        <location filename="../src/ui/epg/EpgShow.cpp" line="65"/>
         <source>Show info</source>
         <translation>Informacija o oddaji</translation>
     </message>
@@ -153,17 +153,17 @@ Tvoja različica VLC-Qt %4
 <context>
     <name>InfoBar</name>
     <message>
-        <location filename="../src/ui/core/InfoBar.cpp" line="94"/>
+        <location filename="../src/ui/core/InfoBar.cpp" line="99"/>
         <source>Language:</source>
         <translation>Jezik:</translation>
     </message>
     <message>
-        <location filename="../src/ui/core/InfoBar.cpp" line="100"/>
+        <location filename="../src/ui/core/InfoBar.cpp" line="105"/>
         <source>Now:</source>
         <translation>Trenutno:</translation>
     </message>
     <message>
-        <location filename="../src/ui/core/InfoBar.cpp" line="101"/>
+        <location filename="../src/ui/core/InfoBar.cpp" line="106"/>
         <source>Next:</source>
         <translation>Naslednje:</translation>
     </message>
@@ -646,7 +646,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="130"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="150"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="153"/>
         <source>Editor</source>
         <translation>Urejevalnik</translation>
     </message>
@@ -801,67 +801,116 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>O urejevalniku</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="158"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="562"/>
+        <source>Download from Web</source>
+        <translation>Prenesi s spleta</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="161"/>
         <source>Open channel list file</source>
         <translation>Odpri seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="160"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="163"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="203"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="206"/>
         <source>Save channel list</source>
         <translation>Shrani seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="205"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="208"/>
         <source>Tano TV channel list files (*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="218"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="221"/>
         <source>Export to Sagem JS channel list</source>
         <translation>Izvozi v Sagem JS seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="220"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="235"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="223"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="238"/>
         <source>Sagem JS channel list files (*.js)</source>
         <translation>Sagem JS seznam programov (*.js)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="233"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="236"/>
         <source>Import Sagem JS channel list file</source>
         <translation>Uvozi Sagem JS seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="247"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="250"/>
         <source>Import Tano TV Old channel list file</source>
         <translation>Uvozi Tano Star seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="249"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="252"/>
         <source>Tano TV Old channel list files(*.tano *.xml)</source>
         <translation>Tano TV star programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="268"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="279"/>
         <source>Playlist Editor</source>
         <translation>Urejevalnik seznama programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="269"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="280"/>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
         <translation>Ali želiš zapreti urejevalnik?
 Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="343"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="354"/>
         <source>New channel from scan</source>
         <translation>Nov program iz iskanja</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistImportWeb</name>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="14"/>
+        <source>Import playlist from Web</source>
+        <translation>Uvozi seznam programov s spleta</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="24"/>
+        <source>Select your playlist</source>
+        <translation>Izberi seznam programov</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="31"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="113"/>
+        <source>Select</source>
+        <translation>Izberi</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="36"/>
+        <source>Slovenia</source>
+        <translation>Slovenija</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="44"/>
+        <source>Country:</source>
+        <translation>Država:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="51"/>
+        <source>Select your country from the menu below.</source>
+        <translation>Izberi svojo državo s spodnjega menija.</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="58"/>
+        <source>&lt;i&gt;Note: Not all countries are available.&lt;/i&gt;</source>
+        <translation>&lt;i&gt;Opomba: Vse države niso na voljo.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="85"/>
+        <source>Playlist:</source>
+        <translation>Seznam programov:</translation>
     </message>
 </context>
 <context>
@@ -1141,6 +1190,11 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <location filename="../src/core/Enums.cpp" line="74"/>
         <source>Weekly</source>
         <translation>Tedensko</translation>
+    </message>
+    <message>
+        <location filename="../src/xml/WebPlaylistHandler.cpp" line="36"/>
+        <source>The file is not a Web playlist import file.</source>
+        <translation>Datoteka ni Uvoz seznamov programov.</translation>
     </message>
 </context>
 <context>

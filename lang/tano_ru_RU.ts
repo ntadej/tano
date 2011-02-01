@@ -667,6 +667,45 @@ You will lose any unsaved settings.</source>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Download from Web</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistImportWeb</name>
+    <message>
+        <source>Import playlist from Web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select your country from the menu below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: Not all countries are available.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Slovenia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select your playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistPage</name>
@@ -878,6 +917,10 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>Sagem JS Imported Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is not a Web playlist import file.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -60,6 +60,7 @@ private slots:
 	void exportJs();
 	void importJs();
 	void importTanoOld();
+	void importWeb();
 	void print();
 
 	void menuOpenExport();

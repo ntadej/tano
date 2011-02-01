@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "core/Common.h"
 #include "core/Settings.h"
-#include "core/Version.h"
 #include "FirstRunWizard.h"
 
 #include "IntroPage.h"

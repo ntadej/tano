@@ -27,16 +27,19 @@ SET(Tano_Editor_UIs
 	../src/ui/dialogs/AboutDialog.ui
 	../src/ui/dialogs/PrintDialog.ui
 	../src/ui/playlist/PlaylistEdit.ui
+	../src/ui/playlist/PlaylistImportWeb.ui
 	../src/ui/playlist/PlaylistWidget.ui
 )
 
 # Define the MOC source files used by Tano Editor
 SET(Tano_Editor_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
+	../src/core/GetFile.h
 	../src/core/Print.h
 	../src/ui/core/License.h
 	../src/ui/dialogs/AboutDialog.h
 	../src/ui/dialogs/PrintDialog.h
 	../src/ui/playlist/PlaylistEdit.h
+	../src/ui/playlist/PlaylistImportWeb.h
 	../src/ui/playlist/PlaylistWidget.h
 )
 
@@ -55,6 +58,7 @@ SET(Tano_Editor_Srcs
 
 	../src/core/Common.cpp
 	../src/core/ConsoleOutput.cpp
+	../src/core/GetFile.cpp
 	../src/core/LocaleManager.cpp
 	../src/core/Print.cpp
 	../src/core/Settings.cpp
@@ -68,14 +72,21 @@ SET(Tano_Editor_Srcs
 	../src/ui/dialogs/AboutDialog.cpp
 	../src/ui/dialogs/PrintDialog.cpp
 	../src/ui/playlist/PlaylistEdit.cpp
+	../src/ui/playlist/PlaylistImportWeb.cpp
 	../src/ui/playlist/PlaylistWidget.cpp
 
 	../src/xml/TanoHandlerOld.cpp
+	../src/xml/WebPlaylistHandler.cpp
 )
 
 ################
 # Qt4 settings #
 ################
+# This line adds the QtXML and QtNETWORK libraries to the Qt libraries
+# loaded when linking Tano Editor
+SET(QT_USE_QTXML True)
+SET(QT_USE_QTNETWORK True)
+
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Editor_Resrcs_Srcs ${Tano_Editor_Resrcs})
 

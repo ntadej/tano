@@ -31,6 +31,7 @@
 #include "core/Settings.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
+#include "ui/playlist/PlaylistImportWeb.h"
 
 #include "PlaylistEdit.h"
 #include "ui_PlaylistEdit.h"
@@ -59,6 +60,7 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 	_menuExport->addAction(ui->actionExportJs);
 
 	_menuImport = new QMenu();
+	_menuImport->addAction(ui->actionImportDownload);
 	_menuImport->addAction(ui->actionImportJs);
 	_menuImport->addAction(ui->actionImportTanoOld);
 }
@@ -107,6 +109,7 @@ void PlaylistEdit::createConnections()
 	connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
 	connect(ui->actionExportJs, SIGNAL(triggered()), this, SLOT(exportJs()));
 	connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(menuOpenImport()));
+	connect(ui->actionImportDownload, SIGNAL(triggered()), this, SLOT(importWeb()));
 	connect(ui->actionImportJs, SIGNAL(triggered()), this, SLOT(importJs()));
 	connect(ui->actionImportTanoOld, SIGNAL(triggered()), this, SLOT(importTanoOld()));
 	connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
@@ -253,6 +256,14 @@ void PlaylistEdit::importTanoOld()
 	ui->playlist->importTanoOld(fileName);
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 	ui->editName->setText(ui->playlist->name());
+}
+
+void PlaylistEdit::importWeb()
+{
+	PlaylistImportWeb web;
+	web.exec();
+
+	//open(web.playlist());
 }
 
 void PlaylistEdit::exit()
