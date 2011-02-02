@@ -20,9 +20,11 @@
 #define TANO_GETFILE_H_
 
 #include <QtCore/QFile>
-#include <QtNetwork/QHttp>
+#include <QtCore/QUrl>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
 
-class GetFile : public QHttp
+class GetFile : public QObject
 {
 Q_OBJECT
 public:
@@ -31,17 +33,22 @@ public:
 
 	void getFile(const QString &fileUrl,
 				 const QString &location = 0);
+	void startRequest(const QUrl &url);
 
 signals:
 	void file(const QString &);
 
 private slots:
-	void httpRequestFinished(const int &requestId,
-							 const bool &error);
+	void httpReadyRead();
+	void httpRequestFinished();
 
 private:
 	QFile *_file;
-	int _httpGetId;
+
+	QNetworkAccessManager _nam;
+	QNetworkReply *_nreply;
+
+	QUrl _url;
 };
 
 #endif // TANO_GETFILE_H_

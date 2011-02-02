@@ -20,7 +20,6 @@
 #include <QtGui/QDialogButtonBox>
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
-#include <QDebug>
 
 #include "core/GetFile.h"
 #include "xml/WebPlaylistHandler.h"
@@ -66,8 +65,8 @@ void PlaylistImportWeb::changeEvent(QEvent *e)
 void PlaylistImportWeb::action(QAbstractButton *button)
 {
 	switch(ui->buttonBox->standardButton(button)) {
-		case QDialogButtonBox::Save:
-			_playlist = "";
+		case QDialogButtonBox::Ok:
+			_playlist = _playlistUrl[ui->playlistBox->currentIndex()-1];
 			close();
 			break;
 		case QDialogButtonBox::Cancel:
@@ -81,9 +80,8 @@ void PlaylistImportWeb::action(QAbstractButton *button)
 
 void PlaylistImportWeb::getList(const int &id)
 {
-	qDebug() << id;
 	if(id == 1)
-		_file->getFile("http://sloiptv.tano.si/playlists/channel-lists-v2.xml?attredirects=0");
+		_file->getFile("http://sloiptv.tano.si/playlists/channel-lists-v2.xml");
 	else
 		return;
 }
@@ -94,8 +92,7 @@ void PlaylistImportWeb::readList(const QString &list)
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
 		return;
 
-	QString string = _codec->toUnicode(_file->readAll());
-	qDebug() << list << string;
+	QString string = _codec->toUnicode(file.readAll());
 
 	QXmlSimpleReader reader;
 	reader.setContentHandler(_handler);

@@ -16,90 +16,87 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QDebug>
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
-#include <QtCore/QUrl>
+#include <QtCore/QVariant>
+#include <QtGui/QMessageBox>
 
-#include "core/GetFile.h"
+#include "GetFile.h"
 
 GetFile::GetFile(QObject *parent)
-	: QHttp(parent),
-	_file(0),
-	_httpGetId(0)
-{
-	connect(this, SIGNAL(requestFinished(int, bool)), this, SLOT(httpRequestFinished(int, bool)));
-}
+	: QObject(parent),
+	_file(0) { }
 
 GetFile::~GetFile() { }
 
 void GetFile::getFile(const QString &fileUrl,
 					  const QString &location)
 {
-	if(fileUrl.isEmpty())
-		return;
+	_url = fileUrl;
 
-	QUrl url(fileUrl);
-	QFileInfo fileInfo(url.path());
-
-	qDebug() << fileUrl;
-
-	QString destination;
-	if(location.isNull()) {
+	QFileInfo fileInfo(_url.path());
+	QString path;
+	if(!location.isNull()) {
+		path = location;
+	} else {
 		QDir dir(QDir::tempPath());
 		dir.mkdir("tano");
-
-		destination = QDir::tempPath() + "/tano/" + fileInfo.fileName();
-	} else {
-		destination = location;
+		path = QDir::tempPath() + "/tano/";
 	}
+	QString fileName = path + fileInfo.fileName();
 
-	_file = new QFile(destination);
+	_file = new QFile(fileName);
 	if (!_file->open(QIODevice::WriteOnly)) {
+		QMessageBox::information(0, tr("Tano"),
+								 tr("Unable to save the file %1: %2.")
+								 .arg(fileName, _file->errorString()));
 		delete _file;
+		_file = 0;
 		return;
 	}
 
-	QHttp::ConnectionMode mode = url.scheme().toLower() == "https" ? QHttp::ConnectionModeHttps : QHttp::ConnectionModeHttp;
-	setHost(url.host(), mode, url.port() == -1 ? 0 : url.port());
-
-	if (!url.userName().isEmpty())
-		setUser(url.userName(), url.password());
-
-	QByteArray path = QUrl::toPercentEncoding(url.path(), "!$&'()*+,;=:@/");
-	if (path.isEmpty())
-		path = "/";
-
-	_httpGetId = get(path, _file);
+	startRequest(_url);
 }
 
-void GetFile::httpRequestFinished(const int &requestId,
-								  const bool &error)
+void GetFile::httpReadyRead()
 {
-	if (requestId != _httpGetId)
-		return;
+	if (_file)
+		_file->write(_nreply->readAll());
+}
 
+void GetFile::httpRequestFinished()
+{
+	_file->flush();
 	_file->close();
 
-	QString tmp;
-	if(lastResponse().statusCode() < 400 && lastResponse().statusCode() > 200) {
-		if (_file->open(QIODevice::ReadOnly | QIODevice::Text)) {
-			tmp = QString::fromUtf8(_file->readAll());
-			_file->close();
-			delete _file;
-			QRegExp newUrl("HREF=\"([^\"]*)");
-			newUrl.indexIn(tmp);
-			//qDebug() << newUrl.cap(1) << tmp;
-			getFile(newUrl.cap(1));
-		} else {
-			delete _file;
-		}
+	QVariant redirectionTarget = _nreply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+	if (_nreply->error()) {
+		_file->remove();
+		QMessageBox::information(0, tr("Tano"),
+								 tr("Download failed: %1.")
+								 .arg(_nreply->errorString()));
+	} else if (!redirectionTarget.isNull()) {
+		_url = _url.resolved(redirectionTarget.toUrl());
+		_nreply->deleteLater();
+		_file->open(QIODevice::WriteOnly);
+		_file->resize(0);
+		startRequest(_url);
 		return;
-	}
-
-	if (!error) {
+	} else {
 		emit file(_file->fileName());
 	}
 
+	disconnect(_nreply, SIGNAL(readyRead()), this, SLOT(httpReadyRead()));
+	disconnect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
+	_nreply->deleteLater();
+	_nreply = 0;
 	delete _file;
+	_file = 0;
+}
+
+void GetFile::startRequest(const QUrl &url)
+{
+	_nreply = _nam.get(QNetworkRequest(url));
+	connect(_nreply, SIGNAL(readyRead()), this, SLOT(httpReadyRead()));
+	connect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
 }
