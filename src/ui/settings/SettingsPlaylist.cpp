@@ -93,8 +93,8 @@ void SettingsPlaylist::playlistReset()
 
 void SettingsPlaylist::playlistBrowse()
 {
-	QString file = QFileDialog::getOpenFileName(this, tr("Open Channel list File"),
+	QString file = QFileDialog::getOpenFileName(this, tr("Open channel list file"),
 												QDir::homePath(),
-												tr("Tano TV Channel list Files(*.m3u)"));
+												tr("Tano TV channel list files(*.m3u)"));
 	ui->playlistLineEdit->setText(file);
 }

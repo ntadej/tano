@@ -35,20 +35,21 @@ void GetFile::getFile(const QString &fileUrl,
 	_url = fileUrl;
 
 	QFileInfo fileInfo(_url.path());
+	QString fileName;
 	QString path;
 	if(!location.isNull()) {
-		path = location;
+		fileName = location;
 	} else {
 		QDir dir(QDir::tempPath());
 		dir.mkdir("tano");
 		path = QDir::tempPath() + "/tano/";
+		fileName = path + fileInfo.fileName();
 	}
-	QString fileName = path + fileInfo.fileName();
 
 	_file = new QFile(fileName);
 	if (!_file->open(QIODevice::WriteOnly)) {
 		QMessageBox::information(0, tr("Tano"),
-								 tr("Unable to save the file %1: %2.")
+								 tr("Cannot write file %1:\n%2.")
 								 .arg(fileName, _file->errorString()));
 		delete _file;
 		_file = 0;

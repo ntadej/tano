@@ -105,7 +105,7 @@ void Recorder::fileBrowse()
 	else
 		dir = ui->fileEdit->text();
 	QString dfile =
-			QFileDialog::getExistingDirectory(this, tr("Open Directory"), dir,
+			QFileDialog::getExistingDirectory(this, tr("Open directory"), dir,
 											  QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	if(dfile != "")
 		ui->fileEdit->setText(dfile);

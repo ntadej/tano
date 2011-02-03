@@ -228,7 +228,7 @@ void SettingsEdit::recorderDirectoryBrowse()
 		dir = QDir::homePath();
 	else
 		dir = ui->recorderDirectoryLineEdit->text();
-	QString file = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+	QString file = QFileDialog::getExistingDirectory(this, tr("Open directory"),
 													dir, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
 	ui->recorderDirectoryLineEdit->setText(file);
 }

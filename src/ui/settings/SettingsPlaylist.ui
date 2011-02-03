@@ -21,7 +21,7 @@
    <item>
     <widget class="QGroupBox" name="defaultPlaylistBox">
      <property name="title">
-      <string>Default Channel list</string>
+      <string>Default channel list</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_4">
       <item row="0" column="0">

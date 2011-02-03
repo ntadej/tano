@@ -247,9 +247,9 @@ void PlaylistEdit::importJs()
 void PlaylistEdit::importTanoOld()
 {
 	QString fileName =
-			QFileDialog::getOpenFileName(this, tr("Import Tano TV Old channel list file"),
+			QFileDialog::getOpenFileName(this, tr("Import Tano TV old channel list file"),
 										QDir::homePath(),
-										tr("Tano TV Old channel list files(*.tano *.xml)"));
+										tr("Tano TV old channel list files(*.tano *.xml)"));
 	if (fileName.isEmpty())
 		return;
 

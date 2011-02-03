@@ -21,7 +21,7 @@
    <item>
     <widget class="QGroupBox" name="channelListBox">
      <property name="title">
-      <string>Print Channel List</string>
+      <string>Print channel List</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>

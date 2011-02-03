@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Edit Channel List</string>
+   <string>Edit channel list</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../../../data/icons.qrc">
@@ -421,10 +421,10 @@
      <normaloff>:/icons/24x24/add.png</normaloff>:/icons/24x24/add.png</iconset>
    </property>
    <property name="text">
-    <string>Add Channel</string>
+    <string>Add channel</string>
    </property>
    <property name="toolTip">
-    <string>Add Channel</string>
+    <string>Add channel</string>
    </property>
   </action>
   <action name="actionDelete">
@@ -433,10 +433,10 @@
      <normaloff>:/icons/24x24/remove.png</normaloff>:/icons/24x24/remove.png</iconset>
    </property>
    <property name="text">
-    <string>Delete Channel</string>
+    <string>Delete channel</string>
    </property>
    <property name="toolTip">
-    <string>Delete Channel</string>
+    <string>Delete channel</string>
    </property>
   </action>
   <action name="actionSave">
@@ -475,7 +475,10 @@
      <normaloff>:/icons/24x24/go-up.png</normaloff>:/icons/24x24/go-up.png</iconset>
    </property>
    <property name="text">
-    <string>Move Up</string>
+    <string>Move up</string>
+   </property>
+   <property name="toolTip">
+    <string>Move up</string>
    </property>
   </action>
   <action name="actionDown">
@@ -484,10 +487,10 @@
      <normaloff>:/icons/24x24/go-down.png</normaloff>:/icons/24x24/go-down.png</iconset>
    </property>
    <property name="text">
-    <string>Move Down</string>
+    <string>Move down</string>
    </property>
    <property name="toolTip">
-    <string>Move Down</string>
+    <string>Move down</string>
    </property>
   </action>
   <action name="actionPrint">

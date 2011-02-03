@@ -15,7 +15,7 @@
     <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
   </property>
   <property name="title">
-   <string>Select Playlist</string>
+   <string>Select playlist</string>
   </property>
   <property name="subTitle">
    <string>Please, select your IP TV provider or browse for custom playlist.</string>

@@ -614,7 +614,10 @@
      <normaloff>:/icons/24x24/open.png</normaloff>:/icons/24x24/open.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Open Channel list</string>
+    <string>&amp;Open channel list</string>
+   </property>
+   <property name="toolTip">
+    <string>Open channel list</string>
    </property>
   </action>
   <action name="actionOpenFile">

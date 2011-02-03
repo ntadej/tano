@@ -139,11 +139,12 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to save the file %1: %2.</source>
+        <source>Download failed: %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Download failed: %1.</source>
+        <source>Cannot write file %1:
+%2.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -276,10 +277,6 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Open Channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open &amp;File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -386,6 +383,14 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Player</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -506,10 +511,6 @@ This will stop recording in progress.</source>
 <context>
     <name>PlaylistEdit</name>
     <message>
-        <source>Edit Channel List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Playlist name:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -578,14 +579,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add Channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete Channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Save and Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -595,14 +588,6 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move Up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move Down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -655,14 +640,6 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Import Tano TV Old channel list file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV Old channel list files(*.tano *.xml)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
@@ -692,6 +669,34 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>Download from Web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Tano TV old channel list file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV old channel list files(*.tano *.xml)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -733,11 +738,11 @@ You will lose any unsaved settings.</source>
 <context>
     <name>PlaylistPage</name>
     <message>
-        <source>Select Playlist</source>
+        <source>Please, select your IP TV provider or browse for custom playlist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please, select your IP TV provider or browse for custom playlist.</source>
+        <source>Select playlist</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -824,10 +829,6 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Print Channel List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select information for printing:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -853,6 +854,10 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>EPG</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print channel List</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -982,10 +987,6 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cannot write to %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -999,6 +1000,10 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>No timer - press button to stop.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open directory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1201,15 +1206,15 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Integrated (default)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Default audio language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open directory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1247,10 +1252,6 @@ You will lose any unsaved settings.</source>
 <context>
     <name>SettingsPlaylist</name>
     <message>
-        <source>Default Channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Preset</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1279,11 +1280,15 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Channel list File</source>
+        <source>Open channel list file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano TV Channel list Files(*.m3u)</source>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
