@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ IF(MINGW)
 ENDIF(MINGW)
 
 # Search for Qt4 and other libraries
-SET(QT_MIN_VERSION "4.5.0")
+SET(QT_MIN_VERSION "4.6.0")
 
 FIND_PACKAGE(Qt4 REQUIRED)
 FIND_PACKAGE(LIBVLCQT REQUIRED)
@@ -100,19 +100,11 @@ IF(GIT)
 	MESSAGE(STATUS "Git Version Patch: ${GIT_OUT}")
 ELSE(GIT)
 	IF(GITBUILD)
-		SET(GIT_OUT GITBUILD)
+		SET(PROJECT_VERSION_PATCH "${GITBUILD}-git")
 	ELSE(GITBUILD)
 		SET(GIT_OUT 0)
 	ENDIF(GITBUILD)
 ENDIF(GIT)
-
-# Qt version check
-IF(QT_VERSION_MINOR MATCHES 5)
-    SET(QT_OLD 1)
-ELSE(QT_VERSION_MINOR MATCHES 5)
-    SET(QT_OLD 0)
-ENDIF(QT_VERSION_MINOR MATCHES 5)
-
 
 #################
 # Configuration #

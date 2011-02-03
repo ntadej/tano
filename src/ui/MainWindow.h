@@ -67,7 +67,6 @@ protected:
 private slots:
 	void exit();
 	void aboutTano();
-	void aboutPlugins();
 
 	void showSchedule();
 	void showSettings();

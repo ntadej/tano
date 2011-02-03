@@ -35,7 +35,6 @@
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "ui/dialogs/AboutDialog.h"
-#include "ui/dialogs/PluginsDialog.h"
 #include "ui/settings/SettingsEdit.h"
 
 MainWindow::MainWindow(QWidget *parent)	:
@@ -230,7 +229,6 @@ void MainWindow::createConnections()
 {
 	connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
 	connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
-	connect(ui->actionAboutPlugins, SIGNAL(triggered()), this, SLOT(aboutPlugins()));
 	connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(exit()));
 
@@ -404,11 +402,6 @@ void MainWindow::aboutTano()
 {
 	AboutDialog about(tr("Player"), this);
 	about.exec();
-}
-void MainWindow::aboutPlugins()
-{
-	PluginsDialog p;
-	p.exec();
 }
 
 

@@ -48,13 +48,28 @@ Tvoja različica VLC-Qt %4
     </message>
     <message>
         <location filename="../src/ui/dialogs/AboutDialog.ui" line="262"/>
+        <source>Plugins</source>
+        <translation>Vtičniki</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="268"/>
+        <source>These plugins are currently available for Tano:</source>
+        <translation>Trenutno so za Tano na voljo sledeči vtičniki:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="291"/>
         <source>Authors</source>
         <translation>Avtorji</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="276"/>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="305"/>
         <source>License</source>
         <translation>Licenca</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dialogs/AboutDialog.cpp" line="55"/>
+        <source>Recorder Plugins</source>
+        <translation>Vtičniki za Snemalnik</translation>
     </message>
 </context>
 <context>
@@ -151,6 +166,25 @@ Tvoja različica VLC-Qt %4
     </message>
 </context>
 <context>
+    <name>GetFile</name>
+    <message>
+        <location filename="../src/core/GetFile.cpp" line="50"/>
+        <location filename="../src/core/GetFile.cpp" line="75"/>
+        <source>Tano</source>
+        <translation>Tano</translation>
+    </message>
+    <message>
+        <location filename="../src/core/GetFile.cpp" line="51"/>
+        <source>Unable to save the file %1: %2.</source>
+        <translation>Ni mogoče shraniti datoteke %1: %2.</translation>
+    </message>
+    <message>
+        <location filename="../src/core/GetFile.cpp" line="76"/>
+        <source>Download failed: %1.</source>
+        <translation>Prenos ni uspel: %1.</translation>
+    </message>
+</context>
+<context>
     <name>InfoBar</name>
     <message>
         <location filename="../src/ui/core/InfoBar.cpp" line="99"/>
@@ -194,32 +228,32 @@ Tvoja različica VLC-Qt %4
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="585"/>
+        <location filename="../src/ui/MainWindow.ui" line="584"/>
         <source>&amp;Exit</source>
         <translation>&amp;Izhod</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="588"/>
+        <location filename="../src/ui/MainWindow.ui" line="587"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="597"/>
+        <location filename="../src/ui/MainWindow.ui" line="596"/>
         <source>&amp;Settings</source>
         <translation>&amp;Nastavitve</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="609"/>
+        <location filename="../src/ui/MainWindow.ui" line="608"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="618"/>
+        <location filename="../src/ui/MainWindow.ui" line="617"/>
         <source>&amp;Open Channel list</source>
         <translation>&amp;Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="627"/>
+        <location filename="../src/ui/MainWindow.ui" line="626"/>
         <source>Open &amp;File</source>
         <translation>Odpri &amp;Datoteko</translation>
     </message>
@@ -229,199 +263,194 @@ Tvoja različica VLC-Qt %4
         <translation>P&amp;omoč</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="663"/>
+        <location filename="../src/ui/MainWindow.ui" line="662"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="672"/>
+        <location filename="../src/ui/MainWindow.ui" line="671"/>
         <source>Check for updates</source>
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="681"/>
+        <location filename="../src/ui/MainWindow.ui" line="680"/>
         <source>Open</source>
         <translation>Odpri</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="377"/>
-        <location filename="../src/ui/MainWindow.ui" line="380"/>
-        <location filename="../src/ui/MainWindow.ui" line="690"/>
-        <location filename="../src/ui/MainWindow.cpp" line="442"/>
-        <location filename="../src/ui/MainWindow.cpp" line="443"/>
-        <location filename="../src/ui/MainWindow.cpp" line="444"/>
-        <location filename="../src/ui/MainWindow.cpp" line="445"/>
+        <location filename="../src/ui/MainWindow.ui" line="376"/>
+        <location filename="../src/ui/MainWindow.ui" line="379"/>
+        <location filename="../src/ui/MainWindow.ui" line="689"/>
+        <location filename="../src/ui/MainWindow.cpp" line="435"/>
+        <location filename="../src/ui/MainWindow.cpp" line="436"/>
+        <location filename="../src/ui/MainWindow.cpp" line="437"/>
+        <location filename="../src/ui/MainWindow.cpp" line="438"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="409"/>
-        <location filename="../src/ui/MainWindow.ui" line="412"/>
-        <location filename="../src/ui/MainWindow.ui" line="699"/>
+        <location filename="../src/ui/MainWindow.ui" line="408"/>
+        <location filename="../src/ui/MainWindow.ui" line="411"/>
+        <location filename="../src/ui/MainWindow.ui" line="698"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="711"/>
+        <location filename="../src/ui/MainWindow.ui" line="710"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="648"/>
+        <location filename="../src/ui/MainWindow.cpp" line="641"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="735"/>
+        <location filename="../src/ui/MainWindow.ui" line="734"/>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="146"/>
+        <location filename="../src/ui/MainWindow.ui" line="145"/>
         <source>Main Toolbar</source>
         <translation>Glavna orodna vrstica</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="473"/>
-        <location filename="../src/ui/MainWindow.ui" line="476"/>
-        <location filename="../src/ui/MainWindow.ui" line="744"/>
+        <location filename="../src/ui/MainWindow.ui" line="472"/>
+        <location filename="../src/ui/MainWindow.ui" line="475"/>
+        <location filename="../src/ui/MainWindow.ui" line="743"/>
         <source>Next</source>
         <translation>Naslednji</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="441"/>
-        <location filename="../src/ui/MainWindow.ui" line="444"/>
-        <location filename="../src/ui/MainWindow.ui" line="753"/>
+        <location filename="../src/ui/MainWindow.ui" line="440"/>
+        <location filename="../src/ui/MainWindow.ui" line="443"/>
+        <location filename="../src/ui/MainWindow.ui" line="752"/>
         <source>Back</source>
         <translation>Nazaj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="537"/>
-        <location filename="../src/ui/MainWindow.ui" line="540"/>
-        <location filename="../src/ui/MainWindow.ui" line="765"/>
+        <location filename="../src/ui/MainWindow.ui" line="536"/>
+        <location filename="../src/ui/MainWindow.ui" line="539"/>
+        <location filename="../src/ui/MainWindow.ui" line="764"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="774"/>
+        <location filename="../src/ui/MainWindow.ui" line="773"/>
         <source>Volume up</source>
         <translation>Povečaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="783"/>
+        <location filename="../src/ui/MainWindow.ui" line="782"/>
         <source>Volume down</source>
         <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="795"/>
+        <location filename="../src/ui/MainWindow.ui" line="794"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="102"/>
+        <location filename="../src/ui/MainWindow.ui" line="101"/>
         <source>&amp;Audio</source>
         <translation>&amp;Zvok</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="110"/>
+        <location filename="../src/ui/MainWindow.ui" line="109"/>
         <source>&amp;Playback</source>
         <translation>&amp;Predvajanje</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="505"/>
-        <location filename="../src/ui/MainWindow.ui" line="508"/>
+        <location filename="../src/ui/MainWindow.ui" line="504"/>
+        <location filename="../src/ui/MainWindow.ui" line="507"/>
         <source>Record Now</source>
         <translation>Snemaj takoj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="804"/>
-        <location filename="../src/ui/MainWindow.ui" line="807"/>
+        <location filename="../src/ui/MainWindow.ui" line="803"/>
+        <location filename="../src/ui/MainWindow.ui" line="806"/>
         <source>Record Current</source>
         <translation>Snemaj trenutno</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="816"/>
+        <location filename="../src/ui/MainWindow.ui" line="815"/>
         <source>Timers</source>
         <translation>Timerji</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="825"/>
+        <location filename="../src/ui/MainWindow.ui" line="824"/>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="852"/>
+        <location filename="../src/ui/MainWindow.ui" line="851"/>
         <source>Controls panel</source>
         <translation>Upravljalni pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="861"/>
-        <source>About Plugins</source>
-        <translation>O vtičnikih</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.ui" line="124"/>
+        <location filename="../src/ui/MainWindow.ui" line="123"/>
         <source>&amp;File</source>
         <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="77"/>
+        <location filename="../src/ui/MainWindow.cpp" line="76"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Ali želiš zapreti Tano?
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="405"/>
+        <location filename="../src/ui/MainWindow.cpp" line="403"/>
         <source>Player</source>
         <translation>Predvajalnik</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="433"/>
-        <location filename="../src/ui/MainWindow.cpp" line="434"/>
-        <location filename="../src/ui/MainWindow.cpp" line="435"/>
-        <location filename="../src/ui/MainWindow.cpp" line="436"/>
+        <location filename="../src/ui/MainWindow.cpp" line="426"/>
+        <location filename="../src/ui/MainWindow.cpp" line="427"/>
+        <location filename="../src/ui/MainWindow.cpp" line="428"/>
+        <location filename="../src/ui/MainWindow.cpp" line="429"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="451"/>
+        <location filename="../src/ui/MainWindow.cpp" line="444"/>
         <source>Buffering...</source>
         <translation>Nalagam...</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="514"/>
+        <location filename="../src/ui/MainWindow.cpp" line="507"/>
         <source>Open channel list file</source>
         <translation>Odpri seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="516"/>
+        <location filename="../src/ui/MainWindow.cpp" line="509"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="545"/>
+        <location filename="../src/ui/MainWindow.cpp" line="538"/>
         <source>Open file or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="547"/>
+        <location filename="../src/ui/MainWindow.cpp" line="540"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="558"/>
+        <location filename="../src/ui/MainWindow.cpp" line="551"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="559"/>
+        <location filename="../src/ui/MainWindow.cpp" line="552"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="255"/>
-        <location filename="../src/ui/MainWindow.ui" line="870"/>
+        <location filename="../src/ui/MainWindow.ui" line="254"/>
+        <location filename="../src/ui/MainWindow.ui" line="860"/>
         <source>Schedule</source>
         <translation>Spored</translation>
     </message>
@@ -432,39 +461,39 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
-        <location filename="../src/ui/MainWindow.cpp" line="76"/>
-        <location filename="../src/ui/MainWindow.cpp" line="604"/>
-        <location filename="../src/ui/MainWindow.cpp" line="606"/>
+        <location filename="../src/ui/MainWindow.cpp" line="75"/>
+        <location filename="../src/ui/MainWindow.cpp" line="597"/>
+        <location filename="../src/ui/MainWindow.cpp" line="599"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="576"/>
+        <location filename="../src/ui/MainWindow.ui" line="575"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="636"/>
-        <location filename="../src/ui/MainWindow.ui" line="639"/>
+        <location filename="../src/ui/MainWindow.ui" line="635"/>
+        <location filename="../src/ui/MainWindow.ui" line="638"/>
         <source>Edit Channels</source>
         <translation>Uredi programe</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="189"/>
-        <location filename="../src/ui/MainWindow.ui" line="654"/>
+        <location filename="../src/ui/MainWindow.ui" line="188"/>
+        <location filename="../src/ui/MainWindow.ui" line="653"/>
         <source>Info panel</source>
         <translation>Info pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="720"/>
-        <location filename="../src/ui/MainWindow.ui" line="723"/>
-        <location filename="../src/ui/MainWindow.cpp" line="645"/>
+        <location filename="../src/ui/MainWindow.ui" line="719"/>
+        <location filename="../src/ui/MainWindow.ui" line="722"/>
+        <location filename="../src/ui/MainWindow.cpp" line="638"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="837"/>
-        <location filename="../src/ui/MainWindow.ui" line="840"/>
+        <location filename="../src/ui/MainWindow.ui" line="836"/>
+        <location filename="../src/ui/MainWindow.ui" line="839"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
@@ -474,12 +503,12 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Sne&amp;malnik</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="91"/>
+        <location filename="../src/ui/MainWindow.ui" line="90"/>
         <source>Vie&amp;w</source>
         <translation>&amp;Videz</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="119"/>
+        <location filename="../src/ui/MainWindow.ui" line="118"/>
         <source>&amp;Video</source>
         <translation>&amp;Slika</translation>
     </message>
@@ -883,7 +912,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="31"/>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="113"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="110"/>
         <source>Select</source>
         <translation>Izberi</translation>
     </message>
@@ -988,24 +1017,6 @@ Izgubil boš vse neshranjene spremembe.</translation>
 %2.</source>
         <translation>Ne morem pisati datoteke %1:
 %2.</translation>
-    </message>
-</context>
-<context>
-    <name>PluginsDialog</name>
-    <message>
-        <location filename="../src/ui/dialogs/PluginsDialog.ui" line="14"/>
-        <source>About Plugins</source>
-        <translation>O vtičnikih</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/dialogs/PluginsDialog.ui" line="24"/>
-        <source>These plugins are currently available for Tano:</source>
-        <translation>Sledeči vtičniki so trenutno na voljo za Tano:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/dialogs/PluginsDialog.cpp" line="35"/>
-        <source>Recorder Plugins</source>
-        <translation>Vtičniki za Snemalnik</translation>
     </message>
 </context>
 <context>
@@ -1166,8 +1177,8 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Izključen ali pretečen</translation>
     </message>
     <message>
-        <location filename="../src/core/Settings.cpp" line="57"/>
-        <location filename="../src/core/Settings.cpp" line="58"/>
+        <location filename="../src/core/Settings.cpp" line="52"/>
+        <location filename="../src/core/Settings.cpp" line="53"/>
         <source>Disabled</source>
         <translation>Onemogočeno</translation>
     </message>
@@ -1543,12 +1554,12 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Integriran (privzeto)</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="50"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="45"/>
         <source>You are using Tano version:</source>
         <translation>Uporabljaš Tano različice:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="236"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="231"/>
         <source>Open Directory</source>
         <translation>Odpri imenik</translation>
     </message>

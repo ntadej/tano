@@ -24,7 +24,6 @@
 #include "SettingsEdit.h"
 #include "ui_SettingsEdit.h"
 
-#include "Config.h"
 #include "core/Common.h"
 #include "core/LocaleManager.h"
 #include "core/PluginsLoader.h"
@@ -38,10 +37,6 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
 {
 	ui->setupUi(this);
 	createActions();
-
-#if QT_OLD_VERSION
-	ui->toolbarLookComboBox->removeItem(4);
-#endif
 
 	ui->shortcutsWidget->setShortcuts(s);
 

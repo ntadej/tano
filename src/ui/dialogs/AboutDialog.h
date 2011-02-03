@@ -22,7 +22,9 @@
 #ifndef TANO_ABOUTDIALOG_H_
 #define TANO_ABOUTDIALOG_H_
 
+#include <QtCore/QDir>
 #include <QtGui/QDialog>
+#include <QtGui/QTreeWidgetItem>
 
 namespace Ui
 {
@@ -42,6 +44,17 @@ protected:
 
 private:
 	Ui::AboutDialog *ui;
+
+	void populatePluginsTreeWidget(const QString &file,
+								   const QString &name,
+								   const QString &type);
+
+	QDir _pluginsDir;
+	QStringList _pluginFileNames;
+
+	QIcon _icon;
+
+	QTreeWidgetItem *_recorder;
 };
 
 #endif // TANO_ABOUTDIALOG_H

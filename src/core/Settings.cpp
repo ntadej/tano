@@ -18,7 +18,6 @@
 
 #include <QtCore/QDir>
 
-#include "Config.h"
 #include "core/Common.h"
 #include "core/Settings.h"
 
@@ -46,11 +45,7 @@ const bool Settings::DEFAULT_START_INFO = true;
 const bool Settings::DEFAULT_OSD = true;
 const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
 const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
-#if QT_OLD_VERSION
-const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonTextBesideIcon;
-#else
 const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonFollowStyle;
-#endif
 // Backend
 const bool Settings::DEFAULT_GLOBAL_SETTINGS = false;
 const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;

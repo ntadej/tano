@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,8 +21,8 @@
 #include <QtCore/QPluginLoader>
 #include <QtGui/QApplication>
 
-#include "Config.h"
 #include "core/PluginsLoader.h"
+#include "recorder/plugins/RecorderPlugins.h"
 
 PluginsLoader::PluginsLoader()
 {

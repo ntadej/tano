@@ -27,7 +27,4 @@
 #define HOSTNAME "@HOSTNAME@"
 #define SYSTEM "@SYSNAME@"
 
-// Qt version
-#define QT_OLD_VERSION @QT_OLD@
-
 #endif // TANO_CONFIG_H_

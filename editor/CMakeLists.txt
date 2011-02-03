@@ -60,6 +60,7 @@ SET(Tano_Editor_Srcs
 	../src/core/ConsoleOutput.cpp
 	../src/core/GetFile.cpp
 	../src/core/LocaleManager.cpp
+	../src/core/PluginsLoader.cpp
 	../src/core/Print.cpp
 	../src/core/Settings.cpp
 

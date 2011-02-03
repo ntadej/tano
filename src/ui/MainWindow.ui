@@ -83,7 +83,6 @@
     </property>
     <addaction name="actionUpdate"/>
     <addaction name="actionAbout"/>
-    <addaction name="actionAboutPlugins"/>
     <addaction name="actionAboutQt"/>
    </widget>
    <widget class="QMenu" name="menuView">
@@ -850,15 +849,6 @@
    </property>
    <property name="text">
     <string>Controls panel</string>
-   </property>
-  </action>
-  <action name="actionAboutPlugins">
-   <property name="icon">
-    <iconset resource="../../data/icons.qrc">
-     <normaloff>:/icons/24x24/plugin.png</normaloff>:/icons/24x24/plugin.png</iconset>
-   </property>
-   <property name="text">
-    <string>About Plugins</string>
    </property>
   </action>
   <action name="actionSchedule">

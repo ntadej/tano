@@ -32,7 +32,6 @@ CONFIGURE_FILE(
 SET(Tano_UIs
 	ui/MainWindow.ui
 	ui/dialogs/AboutDialog.ui
-	ui/dialogs/PluginsDialog.ui
 	ui/dialogs/PrintDialog.ui
 	ui/dialogs/UpdateDialog.ui
 	ui/epg/EpgFull.ui
@@ -68,7 +67,6 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/core/QtKeySequenceEdit.h
 	ui/core/TrayIcon.h
 	ui/dialogs/AboutDialog.h
-	ui/dialogs/PluginsDialog.h
 	ui/dialogs/PrintDialog.h
 	ui/dialogs/UpdateDialog.h
 	ui/epg/EpgFull.h
@@ -148,7 +146,6 @@ SET(Tano_UI_Srcs
 	ui/core/QtKeySequenceEdit.cpp
 	ui/core/TrayIcon.cpp
 	ui/dialogs/AboutDialog.cpp
-	ui/dialogs/PluginsDialog.cpp
 	ui/dialogs/PrintDialog.cpp
 	ui/dialogs/UpdateDialog.cpp
 	ui/epg/EpgFull.cpp

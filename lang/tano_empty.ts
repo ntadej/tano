@@ -41,6 +41,18 @@ Your VLC-Qt version: %4
 </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Plugins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These plugins are currently available for Tano:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder Plugins</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConclusionPage</name>
@@ -117,6 +129,21 @@ Your VLC-Qt version: %4
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GetFile</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to save the file %1: %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download failed: %1.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -314,10 +341,6 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Controls panel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About Plugins</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -760,21 +783,6 @@ You will lose any unsaved settings.</source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PluginsDialog</name>
-    <message>
-        <source>About Plugins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>These plugins are currently available for Tano:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recorder Plugins</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

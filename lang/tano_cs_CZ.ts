@@ -46,6 +46,18 @@ Your VLC-Qt version: %4
 Verze vašeho Qt: %3
 Verze vašeho VLC-Qt: %4</translation>
     </message>
+    <message>
+        <source>Plugins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These plugins are currently available for Tano:</source>
+        <translation type="unfinished">Pro Tano jsou nyní dostupné tyto přídavné moduly:</translation>
+    </message>
+    <message>
+        <source>Recorder Plugins</source>
+        <translation type="unfinished">Přídavné moduly pro nahrávání</translation>
+    </message>
 </context>
 <context>
     <name>ConclusionPage</name>
@@ -123,6 +135,21 @@ Verze vašeho VLC-Qt: %4</translation>
     <message>
         <source>First Run Wizard</source>
         <translation>Průvodce prvním spuštěním</translation>
+    </message>
+</context>
+<context>
+    <name>GetFile</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Unable to save the file %1: %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download failed: %1.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -320,10 +347,6 @@ Verze vašeho VLC-Qt: %4</translation>
     <message>
         <source>Controls panel</source>
         <translation>Ovládací panel</translation>
-    </message>
-    <message>
-        <source>About Plugins</source>
-        <translation>O přídavných modulech</translation>
     </message>
     <message>
         <source>Do you want to exit Tano?
@@ -770,21 +793,6 @@ Ztratíte tím všechna neuložená nastavení.</translation>
 %2.</source>
         <translation>Nelze zapisovat soubor %1:
 %2.</translation>
-    </message>
-</context>
-<context>
-    <name>PluginsDialog</name>
-    <message>
-        <source>About Plugins</source>
-        <translation>O přídavných modulech</translation>
-    </message>
-    <message>
-        <source>These plugins are currently available for Tano:</source>
-        <translation>Pro Tano jsou nyní dostupné tyto přídavné moduly:</translation>
-    </message>
-    <message>
-        <source>Recorder Plugins</source>
-        <translation>Přídavné moduly pro nahrávání</translation>
     </message>
 </context>
 <context>
