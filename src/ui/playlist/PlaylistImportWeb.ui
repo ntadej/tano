@@ -48,14 +48,15 @@
       <item row="0" column="0" colspan="2">
        <widget class="QLabel" name="labelInfo">
         <property name="text">
-         <string>Select your country from the menu below.</string>
+         <string>Select your country from the menu below.
+Then select your playlist.</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0" colspan="2">
        <widget class="QLabel" name="labelNote">
         <property name="text">
-         <string>&lt;i&gt;Note: Not all countries are available.&lt;/i&gt;</string>
+         <string>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</string>
         </property>
        </widget>
       </item>

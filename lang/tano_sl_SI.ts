@@ -936,16 +936,18 @@ Izgubil boš vse neshranjene spremembe.</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="51"/>
-        <source>Select your country from the menu below.</source>
-        <translation>Izberi svojo državo s spodnjega menija.</translation>
+        <source>Select your country from the menu below.
+Then select your playlist.</source>
+        <translation>Izberi svojo državo s spodnjega seznama.
+Nato izberi želen seznam programov.</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="58"/>
-        <source>&lt;i&gt;Note: Not all countries are available.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Opomba: Vse države niso na voljo.&lt;/i&gt;</translation>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="59"/>
+        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
+        <translation>&lt;i&gt;Opomba: Vse države in ponudniki niso na voljo.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="85"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="86"/>
         <source>Playlist:</source>
         <translation>Seznam programov:</translation>
     </message>
@@ -1116,24 +1118,25 @@ Izgubil boš vse neshranjene spremembe.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/playlist/M3UHandler.cpp" line="32"/>
-        <location filename="../src/playlist/M3UHandler.cpp" line="89"/>
+        <location filename="../src/playlist/M3UHandler.cpp" line="29"/>
+        <location filename="../src/playlist/PlaylistHandler.cpp" line="33"/>
+        <location filename="../src/playlist/PlaylistHandler.cpp" line="75"/>
         <location filename="../src/xml/TanoHandlerOld.cpp" line="33"/>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/playlist/M3UHandler.cpp" line="72"/>
+        <location filename="../src/playlist/PlaylistHandler.cpp" line="58"/>
         <source>A channel with this number already exists!</source>
         <translation>Program s to številko že obstaja!</translation>
     </message>
     <message>
-        <location filename="../src/playlist/M3UHandler.cpp" line="180"/>
+        <location filename="../src/playlist/PlaylistHandler.cpp" line="103"/>
         <source>New channel</source>
         <translation>Nov program</translation>
     </message>
     <message>
-        <location filename="../src/playlist/M3UHandler.cpp" line="234"/>
+        <location filename="../src/playlist/PlaylistHandler.cpp" line="191"/>
         <source>Sagem JS Imported Playlist</source>
         <translation>Sagem JS uvožen seznam programov</translation>
     </message>
@@ -1150,7 +1153,7 @@ Izgubil boš vse neshranjene spremembe.</translation>
         <translation>Neznan naslov</translation>
     </message>
     <message>
-        <location filename="../src/playlist/M3UHandler.cpp" line="71"/>
+        <location filename="../src/playlist/PlaylistHandler.cpp" line="57"/>
         <location filename="../src/xml/TimersHandler.cpp" line="145"/>
         <source>Tano</source>
         <translation>Tano</translation>

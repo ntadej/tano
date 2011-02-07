@@ -68,6 +68,7 @@ SET(Tano_Editor_Srcs
 	../src/playlist/JsHandler.cpp
 	../src/playlist/M3UGenerator.cpp
 	../src/playlist/M3UHandler.cpp
+	../src/playlist/PlaylistHandler.cpp
 
 	../src/ui/core/License.cpp
 	../src/ui/dialogs/AboutDialog.cpp

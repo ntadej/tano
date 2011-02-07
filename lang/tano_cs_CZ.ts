@@ -719,14 +719,6 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select your country from the menu below.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Note: Not all countries are available.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Slovenia</source>
         <translation type="unfinished"></translation>
     </message>
@@ -741,6 +733,15 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     <message>
         <source>Playlist:</source>
         <translation type="unfinished">Seznam programů:</translation>
+    </message>
+    <message>
+        <source>Select your country from the menu below.
+Then select your playlist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

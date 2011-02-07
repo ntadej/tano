@@ -33,7 +33,7 @@ PlaylistWidget::PlaylistWidget(QWidget *parent)
 	ui->setupUi(this);
 	ui->treeWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
 
-	_handler = new M3UHandler(ui->treeWidget);
+	_handler = new PlaylistHandler(ui->treeWidget);
 
 	connect(ui->treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SIGNAL(itemClicked(QTreeWidgetItem*, int)));
 	connect(ui->categoryBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
@@ -84,7 +84,7 @@ void PlaylistWidget::open(const QString &file)
 		return;
 	}
 
-	_handler->processFile(_fileName);
+	_handler->openM3UFile(_fileName);
 
 	ui->categoryBox->clear();
 	ui->categoryBox->insertItem(0,tr("All categories"));

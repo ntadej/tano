@@ -22,7 +22,7 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QWidget>
 
-#include "playlist/M3UHandler.h"
+#include "playlist/PlaylistHandler.h"
 
 class Channel;
 
@@ -80,7 +80,7 @@ private slots:
 private:
 	Ui::PlaylistWidget *ui;
 
-	M3UHandler *_handler;
+	PlaylistHandler *_handler;
 	QString _fileName;
 };
 

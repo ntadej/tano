@@ -137,6 +137,7 @@ SET(Tano_Playlist_Srcs
 	playlist/JsHandler.cpp
 	playlist/M3UGenerator.cpp
 	playlist/M3UHandler.cpp
+	playlist/PlaylistHandler.cpp
 )
 SET(Tano_UI_Srcs
 	ui/MainWindow.cpp
