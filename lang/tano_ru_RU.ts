@@ -5,33 +5,35 @@
     <name>AboutDialog</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>О программе</translation>
     </message>
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Tano - кроссплатформенный IP TV проигрыватель с открытым исходным кодом, обеспечивающий воспроизведение IP TV с поддержкой EPG и записи. Проигрыватель использует VLC-Qt.
+</translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation type="unfinished"></translation>
+        <translation>Авторы</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Лицензия</translation>
     </message>
     <message>
         <source>Backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Бэкэнд</translation>
     </message>
     <message>
         <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>VLC-Qt - библиотека, используемая для подключения libvlc к Qt. Она содержит основные классы для воспроизведения видео и некоторые классы GUI для ускорения разработки медиапроигрывателей.
+</translation>
     </message>
     <message>
         <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Вы используете VideoLAN VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
         <source>This version of Tano was compiled on
@@ -39,7 +41,11 @@
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Эта версия Tano скомпилирована на
+%1 под %2.
+Ваша версия среды Qt: %3
+Ваша версия VLC-Qt: %4
+</translation>
     </message>
     <message>
         <source>Plugins</source>
@@ -47,104 +53,105 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>These plugins are currently available for Tano:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">В настоящий момент для Tano доступны эти плагины:</translation>
     </message>
     <message>
         <source>Recorder Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Плагины записи</translation>
     </message>
 </context>
 <context>
     <name>ConclusionPage</name>
     <message>
         <source>Complete Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершение работы мастера</translation>
     </message>
     <message>
         <source>Thank you for using &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Спасибо, что используете &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>I agree to the terms of the GNU General Public License</source>
-        <translation type="unfinished"></translation>
+        <translation>Я согласен с условиями открытого лицензионного соглашения GNU</translation>
     </message>
 </context>
 <context>
     <name>EpgFull</name>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Программа</translation>
     </message>
 </context>
 <context>
     <name>EpgList</name>
     <message>
         <source>Show information</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать информацию</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись</translation>
     </message>
     <message>
         <source>No EPG</source>
-        <translation type="unfinished"></translation>
+        <translation>EPG отсутствует</translation>
     </message>
 </context>
 <context>
     <name>EpgSchedule</name>
     <message>
         <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;EPG отсутствует&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>Сегодня</translation>
     </message>
     <message>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Завтра</translation>
     </message>
 </context>
 <context>
     <name>EpgShow</name>
     <message>
         <source>&lt;h1&gt;Loading...&lt;/h1&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h1&gt;Загрузка...&lt;/h1&gt;</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Пред.</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>След.</translation>
     </message>
     <message>
         <source>Show info</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать информацию</translation>
     </message>
 </context>
 <context>
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
-        <translation type="unfinished"></translation>
+        <translation>Мастер начальной настройки</translation>
     </message>
 </context>
 <context>
     <name>GetFile</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download failed: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tano</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
+        <translation type="unfinished">Невозможно записать файл %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Download failed: %1.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -152,238 +159,239 @@ Your VLC-Qt version: %4
     <name>InfoBar</name>
     <message>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык:</translation>
     </message>
     <message>
         <source>Now:</source>
-        <translation type="unfinished"></translation>
+        <translation>Сейчас:</translation>
     </message>
     <message>
         <source>Next:</source>
-        <translation type="unfinished"></translation>
+        <translation>След.:</translation>
     </message>
 </context>
 <context>
     <name>IntroPage</name>
     <message>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Добро пожаловать</translation>
     </message>
     <message>
         <source>This wizard will help you set basic settings for your copy of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот мастер поможет настроить основные параметры Вашей копии &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>До этого вы использовали &lt;i&gt;Tano&lt;/i&gt; версии %1.</translation>
     </message>
     <message>
         <source>Please re-set your settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста, установите Ваши параметры заново.</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>&amp;Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>З&amp;апись</translation>
     </message>
     <message>
         <source>&amp;Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Па&amp;раметры</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Помощь</translation>
     </message>
     <message>
         <source>Vie&amp;w</source>
-        <translation type="unfinished"></translation>
+        <translation>В&amp;ид</translation>
     </message>
     <message>
         <source>&amp;Audio</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Звук</translation>
     </message>
     <message>
         <source>&amp;Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Воспроизве&amp;дение</translation>
     </message>
     <message>
         <source>&amp;Video</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Видео</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Файл</translation>
     </message>
     <message>
         <source>Main Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Основная панель инструментов</translation>
     </message>
     <message>
         <source>Info panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель информации</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Программа</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Воспроизведение</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Стоп</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Вперед</translation>
     </message>
     <message>
         <source>Record Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить запись</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation type="unfinished"></translation>
+        <translation>Выключить звук</translation>
     </message>
     <message>
         <source>About Tano</source>
-        <translation type="unfinished"></translation>
+        <translation>О Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Выход</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Настройка</translation>
     </message>
     <message>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Полноэкранный режим</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Открыть файл</translation>
     </message>
     <message>
         <source>Edit Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактировать каналы</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть URL</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверить обновления</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Поверх всех окон</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Спрятать в трей</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Простой&quot; режим</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation type="unfinished"></translation>
+        <translation>Громче</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation type="unfinished"></translation>
+        <translation>Тише</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Рекордер</translation>
     </message>
     <message>
         <source>Record Current</source>
-        <translation type="unfinished"></translation>
+        <translation>Записать текущую программу</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation type="unfinished"></translation>
+        <translation>Таймеры</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>О Qt</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановить запись</translation>
     </message>
     <message>
         <source>Controls panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель элементов управления</translation>
     </message>
     <message>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы хотите закрыть Tano?
+Это прервет запись.</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Пауза</translation>
     </message>
     <message>
         <source>Multimedia files(*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы мультимедиа(*)</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть URL или поток</translation>
     </message>
     <message>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите URL файла мультимедиа или потока:</translation>
     </message>
     <message>
         <source>Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановить</translation>
     </message>
     <message>
         <source>Open channel list file</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл со списком каналов</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
     <message>
         <source>Open file or URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл или URL</translation>
     </message>
     <message>
         <source>Buffering...</source>
-        <translation type="unfinished"></translation>
+        <translation>Буферизация...</translation>
     </message>
     <message>
         <source>Player</source>
-        <translation type="unfinished"></translation>
+        <translation>Проигрыватель</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
@@ -398,285 +406,278 @@ This will stop recording in progress.</source>
     <name>MenuAspectRatio</name>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Соотношение сторон</translation>
     </message>
     <message>
         <source>Next aspect ratio option</source>
-        <translation type="unfinished"></translation>
+        <translation>След. соотношение сторон</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Оригинал</translation>
     </message>
 </context>
 <context>
     <name>MenuCrop</name>
     <message>
         <source>Crop video</source>
-        <translation type="unfinished"></translation>
+        <translation>Кадрирование</translation>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation type="unfinished"></translation>
+        <translation>След. параметр кадрирования</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Оригинал</translation>
     </message>
 </context>
 <context>
     <name>MenuDeinterlacing</name>
     <message>
         <source>Deinterlacing</source>
-        <translation type="unfinished"></translation>
+        <translation>Устранение чересстрочности</translation>
     </message>
     <message>
         <source>Next deinterlacing option</source>
-        <translation type="unfinished"></translation>
+        <translation>След. опция устранения чересстрочности</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Отключено</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation type="unfinished"></translation>
+        <translation>Не учитывать</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation type="unfinished"></translation>
+        <translation>Смешивать</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation type="unfinished"></translation>
+        <translation>Усреднять</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation type="unfinished"></translation>
+        <translation>Bob</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation>Линейное</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackAudio</name>
     <message>
         <source>Audio track</source>
-        <translation type="unfinished"></translation>
+        <translation>Звуковая дорожка</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation type="unfinished"></translation>
+        <translation>След. звуковая дорожка</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackSubtitles</name>
     <message>
         <source>Subtitles</source>
-        <translation type="unfinished"></translation>
+        <translation>Субтитры</translation>
     </message>
     <message>
         <source>Next subtitles</source>
-        <translation type="unfinished"></translation>
+        <translation>След. субтитры</translation>
     </message>
     <message>
         <source>Open subtitle file</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл субтитров</translation>
     </message>
     <message>
         <source>Open Subtitles file</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл субтитров</translation>
     </message>
     <message>
         <source>Subtitles files(*.sub *.srt *.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы субтитров(*.sub *.srt *.txt)</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackVideo</name>
     <message>
         <source>Video track</source>
-        <translation type="unfinished"></translation>
+        <translation>Видеодорожка</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation type="unfinished"></translation>
+        <translation>След. видеодорожка</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEdit</name>
     <message>
         <source>Playlist name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя списка каналов:</translation>
     </message>
     <message>
         <source>Channels number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кол-во каналов:</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель инструментов</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактор</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Название:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation type="unfinished"></translation>
+        <translation>Категории:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык:</translation>
     </message>
     <message>
         <source>EPG:</source>
-        <translation type="unfinished"></translation>
+        <translation>EPG:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation type="unfinished"></translation>
+        <translation>Url:</translation>
     </message>
     <message>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Вы должны ввести номер.&lt;/i&gt;Все остальные значения изменятся автоматически.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Update Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить список воспроизведения</translation>
     </message>
     <message>
         <source>IP Range:</source>
-        <translation type="unfinished"></translation>
+        <translation>Диапазон IP:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation type="unfinished"></translation>
+        <translation>Таймаут:</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation type="unfinished"></translation>
+        <translation>Просканировать и обновить</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation type="unfinished"></translation>
+        <translation>мс</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Порт:</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить и закрыть</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорт</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished"></translation>
+        <translation>Печать</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактор списка воспроизведения</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Хотите закрыть редактор?
+Все несохраненные изменения будут потеряны.</translation>
     </message>
     <message>
         <source>New channel from scan</source>
-        <translation type="unfinished"></translation>
+        <translation>Новый канал после сканирования</translation>
     </message>
     <message>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Вы можете разделять категории запятой.&lt;br&gt;При экспорте списка в формате Sagem Js будет записана только первая.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;&lt;i&gt;Инструкции:&lt;/i&gt;&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will interrupt your current playback.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Это прервет текущее воспроизведение.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Save channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить список каналов</translation>
     </message>
     <message>
         <source>Tano TV channel list files (*.m3u)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
     <message>
         <source>Export to Sagem JS channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорт в формате Sagem Js</translation>
     </message>
     <message>
         <source>Sagem JS channel list files (*.js)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы Sagem Js (*.js)</translation>
     </message>
     <message>
         <source>Import Sagem JS channel list file</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорт из файла в формате Sagem Js</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспорт</translation>
     </message>
     <message>
         <source>Tano Old Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Cписок каналов Tano пред. версий</translation>
     </message>
     <message>
         <source>Sagem JS</source>
-        <translation type="unfinished"></translation>
+        <translation>Sagem JS</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть</translation>
     </message>
     <message>
         <source>Open channel list file</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл со списком каналов</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>О программе</translation>
     </message>
     <message>
-        <source>Download from Web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import Tano TV old channel list file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV old channel list files(*.tano *.xml)</source>
+        <source>Edit channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -696,7 +697,15 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit channel list</source>
+        <source>Download from Web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Tano TV old channel list file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV old channel list files(*.tano *.xml)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -704,14 +713,6 @@ You will lose any unsaved settings.</source>
     <name>PlaylistImportWeb</name>
     <message>
         <source>Import playlist from Web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Country:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Slovenia</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -723,7 +724,11 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Playlist:</source>
+        <source>Slovenia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -735,12 +740,16 @@ Then select your playlist.</source>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Список каналов:</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistPage</name>
     <message>
         <source>Please, select your IP TV provider or browse for custom playlist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите, пожалуйста, Вашего оператора IP TV или укажите свой список воспроизведения.</translation>
     </message>
     <message>
         <source>Select playlist</source>
@@ -751,111 +760,113 @@ Then select your playlist.</source>
     <name>PlaylistWidget</name>
     <message>
         <source>Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Канал</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation type="unfinished"></translation>
+        <translation>Категория:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык:</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Все категории</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Все языки</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно прочитать файл %1:
+%2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно записать файл %1:
+%2.</translation>
     </message>
 </context>
 <context>
     <name>Print</name>
     <message>
         <source>#</source>
-        <translation type="unfinished"></translation>
+        <translation>#</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Канал</translation>
     </message>
     <message>
         <source>Url</source>
-        <translation type="unfinished"></translation>
+        <translation>Url</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Категории</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <source>EPG</source>
-        <translation type="unfinished"></translation>
+        <translation>EPG</translation>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Экспортирован Tano на %1.</translation>
     </message>
 </context>
 <context>
     <name>PrintDialog</name>
     <message>
         <source>Print</source>
-        <translation type="unfinished"></translation>
+        <translation>Печать</translation>
     </message>
     <message>
         <source>Select information for printing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите информацию для печати:</translation>
     </message>
     <message>
         <source>Channel number</source>
-        <translation type="unfinished"></translation>
+        <translation>Номер канала</translation>
     </message>
     <message>
         <source>Channel name</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя канала</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Категории</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <source>EPG</source>
-        <translation type="unfinished"></translation>
+        <translation>EPG</translation>
     </message>
     <message>
         <source>Print channel List</source>
@@ -866,72 +877,73 @@ Then select your playlist.</source>
     <name>QObject</name>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Откл.</translation>
     </message>
     <message>
         <source>Channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Список каналов</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation type="unfinished"></translation>
+        <translation>Канал с таким номером уже существует!</translation>
     </message>
     <message>
         <source>New channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Новый канал</translation>
     </message>
     <message>
         <source>The file is not a Tano Timers list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот файл не является списком таймеров Tano.</translation>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизв.</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Активен</translation>
     </message>
     <message>
         <source>Disabled or expired</source>
-        <translation type="unfinished"></translation>
+        <translation>Отключен или просрочен</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2:
 %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка синтаксического анализа в строке %1, столбец %2:
+%3</translation>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот файл не является обновлением Tano.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот файл не является списком ТВ каналов Tano.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот файл не является списком ТВ каналов Tano вер. 1.1 или выше.</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="unfinished"></translation>
+        <translation>Однократно</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Ежедневно</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Еженедельно</translation>
     </message>
     <message>
         <source>Sagem JS Imported Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Список, импортированный из Sagem JS</translation>
     </message>
     <message>
         <source>The file is not a Web playlist import file.</source>
@@ -942,66 +954,66 @@ Then select your playlist.</source>
     <name>QtKeySequenceEdit</name>
     <message>
         <source>Clear Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистить ярлык</translation>
     </message>
 </context>
 <context>
     <name>Recorder</name>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Рекордер</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбранный канал:</translation>
     </message>
     <message>
         <source>Directory:</source>
-        <translation type="unfinished"></translation>
+        <translation>Каталог:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Состояние</translation>
     </message>
     <message>
         <source>Recording to file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись в файл:</translation>
     </message>
     <message>
         <source>Currently recording:</source>
-        <translation type="unfinished"></translation>
+        <translation>Идет запись:</translation>
     </message>
     <message>
         <source>Time elapsed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Прошло времени:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Время окончания:</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно записать в %1.</translation>
     </message>
     <message>
         <source>Channel is not selected!</source>
-        <translation type="unfinished"></translation>
+        <translation>Не выбран канал!</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановить запись</translation>
     </message>
     <message>
         <source>No timer - press button to stop.</source>
-        <translation type="unfinished"></translation>
+        <translation>Таймер не определен - для останова нажмите кнопку</translation>
     </message>
     <message>
         <source>Open directory</source>
@@ -1012,207 +1024,207 @@ Then select your playlist.</source>
     <name>SettingsEdit</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Общие</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Каналы</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation type="unfinished"></translation>
+        <translation>Интерфейс</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation type="unfinished"></translation>
+        <translation>Воспроизведение</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Рекордер</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Ярлыки</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation type="unfinished"></translation>
+        <translation>Запустить мастер начальной настройки после перезапуска</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык системы</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать язык</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation type="unfinished"></translation>
+        <translation>Хранить сессию</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Запомнить громкость</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Автозапуск последнего канала</translation>
     </message>
     <message>
         <source>General Interface Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Общие настройки интерфейса</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Стиль панели инструментов:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation type="unfinished"></translation>
+        <translation>Только значки</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation type="unfinished"></translation>
+        <translation>Только текст</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст рядом со значками</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Текст под значками</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation type="unfinished"></translation>
+        <translation>Как в системе</translation>
     </message>
     <message>
         <source>Enable OSD in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить OSD в полноэкранном режиме</translation>
     </message>
     <message>
         <source>Mouse wheel function:</source>
-        <translation type="unfinished"></translation>
+        <translation>Колесо мыши:</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Сменить кнаал</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить громкость</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Свернуть в трей</translation>
     </message>
     <message>
         <source>Default options for startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Опции запуска</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать заставку</translation>
     </message>
     <message>
         <source>Simple mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Простой&quot; режим</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Поверх всех окон</translation>
     </message>
     <message>
         <source>Controls enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель управления вкл.</translation>
     </message>
     <message>
         <source>Info panel enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель информации вкл.</translation>
     </message>
     <message>
         <source>VLC-Qt Backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Бэкэнд VLC-Qt</translation>
     </message>
     <message>
         <source>Curently using VLC-Qt Backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Используемый бэкэнд VLC-Qt</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Версия:</translation>
     </message>
     <message>
         <source>Use global VLC settings (requires restart)</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать глобальные настройки VLC (необходим рестарт)</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Используется Videolan VLC версии:</translation>
     </message>
     <message>
         <source>Remember Video settings between media</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранять настройки видео между медиа</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык субтитров по умолчанию:</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Откл.</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Другой</translation>
     </message>
     <message>
         <source>Enable Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать рекордер</translation>
     </message>
     <message>
         <source>Default recording directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Каталог для записи</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Сброс</translation>
     </message>
     <message>
         <source>Recorder backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Бэкэнд рекордера</translation>
     </message>
     <message>
         <source>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Выберите плагин рекордера из списка:&lt;/i&gt;</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы используете Tano версии:</translation>
     </message>
     <message>
         <source>Integrated (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Встроенный (по умолчанию)</translation>
     </message>
     <message>
         <source>Default audio language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык звук. дорожки по умолчанию:</translation>
     </message>
     <message>
         <source>Open directory</source>
@@ -1223,394 +1235,398 @@ Then select your playlist.</source>
     <name>SettingsPage</name>
     <message>
         <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка &lt;i&gt;Tano&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Please select session, backend and other settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите сессию, бэкэнд и другие параметры.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Session settings&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Параметры сессии&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation type="unfinished"></translation>
+        <translation>Запомнить громкость</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Автозапуск последнего канала</translation>
     </message>
     <message>
         <source>Use global VLC settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать глобальные настройки VLC</translation>
     </message>
     <message>
         <source>Select or change playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать или изменить список воспроизведения</translation>
     </message>
 </context>
 <context>
     <name>SettingsPlaylist</name>
     <message>
         <source>Preset</source>
-        <translation type="unfinished"></translation>
+        <translation>Предустановленный</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished"></translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Сброс</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользовательский</translation>
     </message>
     <message>
         <source>Presets</source>
-        <translation type="unfinished"></translation>
+        <translation>Предустановленные списки</translation>
     </message>
     <message>
         <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Словения&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Global&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open channel list file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Глобальный&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Default channel list</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list file</source>
+        <translation type="unfinished">Открыть файл со списком каналов</translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
 </context>
 <context>
     <name>SettingsShortcuts</name>
     <message>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Действие</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Кнопка</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Воспроизведение</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Стоп</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation type="unfinished"></translation>
+        <translation>След. канал</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Пред. канал</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Полноэкранный режим</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкл./выкл. информационный виджет</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation type="unfinished"></translation>
+        <translation>Вкл./выкл. виджет управления</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation type="unfinished"></translation>
+        <translation>Убрать звук</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation type="unfinished"></translation>
+        <translation>Громче</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation type="unfinished"></translation>
+        <translation>Тише</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Рекордер</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть файл</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть URL</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть список каналов</translation>
     </message>
     <message>
         <source>Edit Channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактировать список каналов</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>Поверх всех окон</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Простой&quot; режим</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation type="unfinished"></translation>
+        <translation>Спрятать в трей</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation type="unfinished"></translation>
+        <translation>След. звуковая дорожка</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation type="unfinished"></translation>
+        <translation>След. видеодорожка</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation type="unfinished"></translation>
+        <translation>След. дорожка с субтитрами</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation type="unfinished"></translation>
+        <translation>След. соотношение сторон</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation type="unfinished"></translation>
+        <translation>След. кадрирование</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation type="unfinished"></translation>
+        <translation>След. режим устранения чересстрочности</translation>
     </message>
     <message>
         <source>Clear Shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистить ярлык</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановить параметры по умолчанию</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation type="unfinished"></translation>
+        <translation>Задать</translation>
     </message>
 </context>
 <context>
     <name>TimersEdit</name>
     <message>
         <source>Timers</source>
-        <translation type="unfinished"></translation>
+        <translation>Таймеры</translation>
     </message>
     <message>
         <source>Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Таймер</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Название:</translation>
     </message>
     <message>
         <source>Select a channel from the list below:</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите канал из списка:</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактор</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation>Канал:</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation type="unfinished"></translation>
+        <translation>Список каналов:</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Начало:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Окончание:</translation>
     </message>
     <message>
         <source>dd.MM.yyyy</source>
-        <translation type="unfinished"></translation>
+        <translation>дд.ММ.гггг</translation>
     </message>
     <message>
         <source>hh:mm</source>
-        <translation type="unfinished"></translation>
+        <translation>чч:мм</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation type="unfinished"></translation>
+        <translation>Откл.:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation type="unfinished"></translation>
+        <translation>Url:</translation>
     </message>
     <message>
         <source>New Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая задача</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить задачу</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить и закрыть</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <source>Timers Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактор таймеров</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You changes will not be applied.</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыть редактор?
+Изменения будут утеряны.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введите имя и выберите канал из списка.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Таймер с таким именем уже существует. Выберите другое имя.</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно прочитать файл %1:
+%2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно записать файл %1:
+%2.</translation>
     </message>
     <message>
         <source>Disabled or expired</source>
-        <translation type="unfinished"></translation>
+        <translation>Отключен или устарел</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation type="unfinished"></translation>
+        <translation>Активен</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="unfinished"></translation>
+        <translation>Однократно</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Ежедневно</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Еженедельно</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись</translation>
     </message>
     <message>
         <source>Tano Recorder is recording %1 to
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Рекордер Tano записывает %1 в
+%2.</translation>
     </message>
     <message>
         <source>Playing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Воспроизведение:</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись:</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
         <source>Update Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация об обновлении</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Вы используете последнюю версию Tano!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Current version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Текущая версия:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Вы используете опытную версию Tano!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Stable version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Стабильная версия:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Вашу версию Tano необходимо обновить!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Date released:</source>
-        <translation type="unfinished"></translation>
+        <translation>Дата выпуска:</translation>
     </message>
     <message>
         <source>Information:</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация:</translation>
     </message>
     <message>
         <source>Download now!</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузить сейчас!</translation>
     </message>
 </context>
 </TS>
