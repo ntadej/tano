@@ -18,6 +18,7 @@
 
 #include <QtCore/QFile>
 #include <QtGui/QDialogButtonBox>
+#include <QtGui/QFileDialog>
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
@@ -36,8 +37,6 @@ PlaylistImportWeb::PlaylistImportWeb(QWidget *parent)
 
 	_handler = new WebPlaylistHandler();
 	_file = new GetFile(this);
-
-	connect(_file, SIGNAL(file(QString)), this, SLOT(readList(QString)));
 
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 	connect(ui->countryBox, SIGNAL(currentIndexChanged(int)), this, SLOT(getList(int)));
@@ -66,11 +65,20 @@ void PlaylistImportWeb::action(QAbstractButton *button)
 {
 	switch(ui->buttonBox->standardButton(button)) {
 		case QDialogButtonBox::Ok:
-			_playlist = _playlistUrl[ui->playlistBox->currentIndex()-1];
-			close();
+			if(!_save) {
+				_file->getFile(_playlistUrl[ui->playlistBox->currentIndex()-1]);
+				_refresh = ui->radioRefresh->isChecked();
+			} else {
+				QString file = QFileDialog::getSaveFileName(this, tr("Save channel list"),
+															QDir::homePath(),
+															tr("Tano TV channel list files(*.m3u)"));
+				_file->getFile(_playlistUrl[ui->playlistBox->currentIndex()-1], file);
+			}
+			connect(_file, SIGNAL(file(QString)), this, SLOT(finish(QString)));
 			break;
 		case QDialogButtonBox::Cancel:
 			_playlist = "";
+			_refresh = false;
 			close();
 			break;
 		default:
@@ -78,16 +86,46 @@ void PlaylistImportWeb::action(QAbstractButton *button)
 	}
 }
 
+void PlaylistImportWeb::download()
+{
+	_save = false;
+	exec();
+}
+
+void PlaylistImportWeb::save()
+{
+	ui->radioOpen->hide();
+	ui->radioRefresh->hide();
+	ui->labelType->hide();
+
+	_save = true;
+	exec();
+}
+
+void PlaylistImportWeb::finish(const QString &playlist)
+{
+	disconnect(_file, SIGNAL(file(QString)), this, SLOT(finish(QString)));
+
+	_playlist = playlist;
+	close();
+}
+
 void PlaylistImportWeb::getList(const int &id)
 {
-	if(id == 1)
-		_file->getFile("http://sloiptv.tano.si/playlists/channel-lists-v2.xml");
-	else
-		return;
+	switch(id) {
+		case 1:
+			_file->getFile("http://sloiptv.tano.si/playlists/channel-lists-v2.xml");
+			connect(_file, SIGNAL(file(QString)), this, SLOT(readList(QString)));
+			break;
+		default:
+			break;
+	}
 }
 
 void PlaylistImportWeb::readList(const QString &list)
 {
+	disconnect(_file, SIGNAL(file(QString)), this, SLOT(readList(QString)));
+
 	QFile file(list);
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
 		return;

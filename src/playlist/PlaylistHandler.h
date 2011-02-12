@@ -39,6 +39,8 @@ public:
 	QTreeWidgetItem *createChannel(const QString &name = 0,
 								   const QString &url = 0);
 	void deleteChannel(QTreeWidgetItem *channel);
+	void processChannel(Channel *channel);
+
 	void clear();
 
 	Channel *channelRead(QTreeWidgetItem *item) { return _map[item]; }

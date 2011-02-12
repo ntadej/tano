@@ -154,11 +154,12 @@ void PlaylistEdit::aboutTano()
 	about.exec();
 }
 
-void PlaylistEdit::open(const QString &playlist)
+void PlaylistEdit::open(const QString &playlist,
+						const bool &refresh)
 {
 	QString p;
 	if(playlist == 0) {
-		p = QFileDialog::getOpenFileName(this, tr("Open channel list file"),
+		p = QFileDialog::getOpenFileName(this, tr("Open channel list"),
 										 QDir::homePath(),
 										 tr("Tano TV channel list files(*.m3u)"));
 	} else {
@@ -166,7 +167,7 @@ void PlaylistEdit::open(const QString &playlist)
 	}
 
 	ui->editWidget->setEnabled(false);
-	ui->playlist->open(p);
+	ui->playlist->open(p, refresh);
 	ui->editName->setText(ui->playlist->name());
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
@@ -233,7 +234,7 @@ void PlaylistEdit::exportJs()
 void PlaylistEdit::importJs()
 {
 	QString fileName =
-			QFileDialog::getOpenFileName(this, tr("Import Sagem JS channel list file"),
+			QFileDialog::getOpenFileName(this, tr("Import Sagem JS channel list"),
 										QDir::homePath(),
 										tr("Sagem JS channel list files (*.js)"));
 	if (fileName.isEmpty())
@@ -247,7 +248,7 @@ void PlaylistEdit::importJs()
 void PlaylistEdit::importTanoOld()
 {
 	QString fileName =
-			QFileDialog::getOpenFileName(this, tr("Import Tano TV old channel list file"),
+			QFileDialog::getOpenFileName(this, tr("Import Tano TV old channel list"),
 										QDir::homePath(),
 										tr("Tano TV old channel list files(*.tano *.xml)"));
 	if (fileName.isEmpty())
@@ -261,9 +262,10 @@ void PlaylistEdit::importTanoOld()
 void PlaylistEdit::importWeb()
 {
 	PlaylistImportWeb web;
-	web.exec();
+	web.download();
 
-	//open(web.playlist());
+	if(!web.playlist().isEmpty())
+		open(web.playlist(), web.refresh());
 }
 
 void PlaylistEdit::exit()

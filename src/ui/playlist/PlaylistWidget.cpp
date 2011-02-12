@@ -25,6 +25,7 @@
 #include "container/Channel.h"
 #include "playlist/JsGenerator.h"
 #include "playlist/M3UGenerator.h"
+#include "playlist/PlaylistHandler.h"
 
 PlaylistWidget::PlaylistWidget(QWidget *parent)
 	: QWidget(parent),
@@ -66,9 +67,11 @@ void PlaylistWidget::clear()
 	_handler->clear();
 }
 
-void PlaylistWidget::open(const QString &file)
+void PlaylistWidget::open(const QString &file,
+						  const bool &refresh)
 {
-	_handler->clear();
+	if(!refresh)
+		_handler->clear();
 
 	if (file.isEmpty())
 		return;
@@ -186,7 +189,53 @@ void PlaylistWidget::editMode()
 	ui->languageBox->hide();
 }
 
+QString PlaylistWidget::name() const
+{
+	return _handler->name();
+}
+
+QStringList PlaylistWidget::epg() const
+{
+	return _handler->epg();
+}
+
+QList<int> PlaylistWidget::nums() const
+{
+	return _handler->nums();
+}
+
 QTreeWidget *PlaylistWidget::treeWidget()
 {
 	return ui->treeWidget;
+}
+
+int PlaylistWidget::processNum(QTreeWidgetItem *channel,
+			   const int &num) const
+{
+	return _handler->processNewNum(channel, num);
+}
+
+void PlaylistWidget::moveUp(QTreeWidgetItem *channel)
+{
+	_handler->moveUp(channel);
+}
+
+void PlaylistWidget::moveDown(QTreeWidgetItem *channel)
+{
+	_handler->moveDown(channel);
+}
+
+Channel *PlaylistWidget::channelRead(QTreeWidgetItem* clickedChannel)
+{
+	return _handler->channelRead(clickedChannel);
+}
+
+Channel *PlaylistWidget::channelRead(const int &clickedChannel)
+{
+	return _handler->channelRead(clickedChannel);
+}
+
+bool PlaylistWidget::validate() const
+{
+	return _handler->validate();
 }

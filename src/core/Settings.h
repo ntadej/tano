@@ -32,6 +32,7 @@ public:
 	void writeSettings();
 
 	// Playlists
+	static const QString PLAYLIST_AMIS;
 	static const QString PLAYLIST_SIOL_MPEG2;
 	static const QString PLAYLIST_SIOL_MPEG4;
 	static const QString PLAYLIST_T2;

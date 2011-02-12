@@ -22,9 +22,8 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QWidget>
 
-#include "playlist/PlaylistHandler.h"
-
 class Channel;
+class PlaylistHandler;
 
 namespace Ui
 {
@@ -39,7 +38,8 @@ public:
 	~PlaylistWidget();
 
 	void clear();
-	void open(const QString &file);
+	void open(const QString &file,
+			  const bool &refresh = false);
 	void save(const QString &name,
 			  const QString &file);
 	void exportJs(const QString &file);
@@ -50,22 +50,22 @@ public:
 								const QString &url = 0);
 	void deleteItem();
 
-	QString name() const { return _handler->name(); }
-	QStringList epg() const { return _handler->epg(); }
+	QString name() const;
+	QStringList epg() const;
 	QString fileName() const { return _fileName; }
-	QList<int> nums() const { return _handler->nums(); }
+	QList<int> nums() const;
 	QTreeWidget *treeWidget();
 
 	int processNum(QTreeWidgetItem *channel,
-				   const int &num) const { return _handler->processNewNum(channel, num); }
-	void moveUp(QTreeWidgetItem *channel) { _handler->moveUp(channel); }
-	void moveDown(QTreeWidgetItem *channel) { _handler->moveDown(channel); }
+				   const int &num) const;
+	void moveUp(QTreeWidgetItem *channel);
+	void moveDown(QTreeWidgetItem *channel);
 	void editMode();
 
-	Channel *channelRead(QTreeWidgetItem* clickedChannel) {	return _handler->channelRead(clickedChannel); }
-	Channel *channelRead(const int &clickedChannel) { return _handler->channelRead(clickedChannel); }
+	Channel *channelRead(QTreeWidgetItem* clickedChannel);
+	Channel *channelRead(const int &clickedChannel);
 
-	bool validate() const { return _handler->validate(); }
+	bool validate() const;
 
 protected:
 	void changeEvent(QEvent *e);

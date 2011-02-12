@@ -1,652 +1,727 @@
 #EXTM3U
 #EXTNAME:SiOL MPEG-4
-#EXTEPG:EpgSlovenia
 
-#EXTINF:1,SLO 1
-#EXTTV:Nacionalni;slovenski;SLO1;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SLO1.gif
+#EXTINF:1,SLO1
+#EXTTV:nacionalni;slovenski;SLO1
 udp://@232.4.1.1:5002
 
-#EXTINF:2,SLO 2
-#EXTTV:Nacionalni;slovenski;SLO2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SLO2.gif
+#EXTINF:2,SLO2
+#EXTTV:nacionalni,športni;slovenski;SLO2
 udp://@232.4.1.2:5002
 
-#EXTINF:3,SLO 3
-#EXTTV:Nacionalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SLO3.gif
-udp://@232.4.1.41:5002
-
-#EXTINF:4,POP TV
-#EXTTV:Zabavni;slovenski;POPTV;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/POPTV.gif
+#EXTINF:3,Pop TV
+#EXTTV:zabavni;slovenski;POPTV
 udp://@232.4.1.3:5002
 
-#EXTINF:5,Kanal A
-#EXTTV:Zabavni;slovenski;AKANAL;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/AKANAL.gif
+#EXTINF:4,Kanal A
+#EXTTV:zabavni;slovenski;AKANAL
 udp://@232.4.1.4:5002
 
-#EXTINF:6,POP Brio
-#EXTTV:Zabavni;slovenski;BRIO;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/BRIO.png
-udp://@232.4.1.12:5002
-
-#EXTINF:7,TV3
-#EXTTV:Zabavni;slovenski;TV3;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TV3.gif
+#EXTINF:5,TV3
+#EXTTV:zabavni;slovenski;TV3
 udp://@232.4.1.5:5002
 
-#EXTINF:8,HBO
-#EXTTV:Zabavni;angleški;HBO;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/HBO.gif
-udp://@232.4.5.1:5002
-
-#EXTINF:9,HBO Comedy
-#EXTTV:Zabavni;angleški;HBOC;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/HBOC.gif
-udp://@232.4.5.2:5002
-
-#EXTINF:10,Cinemax 1
-#EXTTV:Zabavni;angleški;CINEMAX1;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/CINEMAX1.gif
-udp://@232.4.5.3:5002
-
-#EXTINF:11,Cinemax 2
-#EXTTV:Zabavni;angleški;CINEMAX2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/CINEMAX2.gif
-udp://@232.4.5.4:5002
-
-#EXTINF:12,MGM
-#EXTTV:Zabavni;angleški;MGM;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MGM.gif
-udp://@232.4.2.17:5002
-
-#EXTINF:13,TV 1000
-#EXTTV:Zabavni;angleški;TV1000;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TV1000.gif
-udp://@232.4.2.1:5002
-
-#EXTINF:14,Universal Channel
-#EXTTV:Zabavni;angleški;HALLMARK;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/UNIVERSAL.png
-udp://@232.4.3.1:5002
-
-#EXTINF:15,FOX Life
-#EXTTV:Zabavni;angleški;FOXLIFE;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/FOXLIFE.gif
-udp://@232.4.2.18:5002
-
-#EXTINF:16,FOX Crime
-#EXTTV:Zabavni;angleški;FOXCRIME;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/FOXCRIME.gif
-udp://@232.4.2.19:5002
-
-#EXTINF:17,Info TV
-#EXTTV:Informativni;slovenski;INFO;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/INFOTV.gif
-udp://@232.4.1.9:5002
-
-#EXTINF:18,CNN
-#EXTTV:Informativni;angleški;CNN;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/CNN.gif
-udp://@232.4.2.5:5002
-
-#EXTINF:19,BBC World
-#EXTTV:Informativni;angleški;BBCWORLD;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/BBCWORLD.gif
-udp://@232.4.2.7:5002
-
-#EXTINF:20,BBC Entertainment
-#EXTTV:Informativni,Zabavni;angleški;BBCPRIME;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/BBCPRIME.gif
-udp://@232.4.2.30:5002
-
-#EXTINF:21,Sky News
-#EXTTV:Informativni;angleški;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SKYNEWS.gif
-udp://@232.4.2.32:5002
-
-#EXTINF:22,EuroNews
-#EXTTV:Informativni;angleški;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/EURONEWS.gif
-udp://@232.4.3.29:5002
-
-#EXTINF:23,E!
-#EXTTV:Zabavni;angleški;EEUROPE;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/EEUROPE.gif
-udp://@232.4.2.23:5002
-
-#EXTINF:24,The Style Network
-#EXTTV:Zabavni;angleški;STYLENET;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/STYLENET.gif
-udp://@232.4.3.20:5002
-
-#EXTINF:25,Fashion TV
-#EXTTV:Zabavni;angleški;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/FASHIONTV.gif
-udp://@232.4.3.30:5002
-
-#EXTINF:26,FLN
-#EXTTV:Zabavni;angleški;CLUB;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/CLUB.gif
-udp://@239.255.4.132:5002
-
-#EXTINF:27,EWTN
-#EXTTV:Zabavni;angleški;EWTN;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/EWTN.gif
-udp://@232.4.2.31:5002
-
-#EXTINF:50,RAI 1
-#EXTTV:Nacionalni;italijanski;RAI1;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RAI1.gif
-udp://@232.4.1.28:5002
-
-#EXTINF:51,RAI 2
-#EXTTV:Nacionalni;italijanski;RAI2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RAI2.gif
-udp://@232.4.1.29:5002
-
-#EXTINF:52,RAI 3
-#EXTTV:Nacionalni;italijanski;RAI3;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RAI3.gif
-udp://@232.4.1.30:5002
-
-#EXTINF:53,FRANCE 24
-#EXTTV:Informativni;angleški;FRANCE24;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/FRANCE24.gif
-udp://@232.4.2.6:5002
-
-#EXTINF:54,TV5
-#EXTTV:Informativni;francoski;TV5;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TV5.gif
-udp://@232.4.1.33:5002
-
-#EXTINF:55,TVE
-#EXTTV:Nacionalni;španski;TVE;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TVE.gif
-udp://@232.4.1.32:5002
-
-#EXTINF:56,Zone Romantica
-#EXTTV:Zabavni;angleški;ROMANTICA;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/ROMANTICA.gif
-udp://@232.4.2.29:5002
-
-#EXTINF:57,Channel One Russia
-#EXTTV:Nacionalni;ruski;RUSSIA1;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RUSSIA1.gif
-udp://@232.4.2.39:5002
-
-#EXTINF:58,Duna TV
-#EXTTV:Nacionalni;madžarski;DUNA;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DUNATV.gif
-udp://@232.4.1.44:5002
-
-#EXTINF:100,Discovery Channel
-#EXTTV:Dokumentarni;angleški;DISCOVERY;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DISCOVERY.gif
-udp://@232.4.2.8:5002
-
-#EXTINF:101,Discovery Science
-#EXTTV:Dokumentarni;angleški;DISCSCI;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DISCSCI.gif
-udp://@232.4.3.12:5002
-
-#EXTINF:102,Discovery Investigation
-#EXTTV:Dokumentarni;angleški;DISCINV;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DISCINV.gif
-udp://@232.4.2.22:5002
-
-#EXTINF:103,Discovery World
-#EXTTV:Dokumentarni;angleški;DISCCI;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DISCCI.gif
-udp://@232.4.3.13:5002
-
-#EXTINF:104,Discovery Travel & Living
-#EXTTV:Dokumentarni;angleški;DISCTL;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DISCTL.gif
-udp://@232.4.3.15:5002
-
-#EXTINF:105,Viasat Explorer
-#EXTTV:Dokumentarni;angleški;EXPLORER;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/EXPLORER.gif
-udp://@232.4.3.14:5002
-
-#EXTINF:106,Viasat History
-#EXTTV:Dokumentarni;angleški;HISTORY;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/HISTORY.gif
-udp://@232.4.3.2:5002
-
-#EXTINF:107,National Geographic
-#EXTTV:Dokumentarni;angleški;NATGEO;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/NATGEO.gif
-udp://@232.4.2.9:5002
-
-#EXTINF:108,National Geographic Wild
-#EXTTV:Dokumentarni;angleški;NATGEOW;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/NATGEOW.gif
-udp://@232.4.3.16:5002
-
-#EXTINF:109,Animal Planet
-#EXTTV:Dokumentarni;angleški;ANIMAL;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/ANIMAL.gif
-udp://@232.4.2.10:5002
-
-#EXTINF:110,The History Channel
-#EXTTV:Dokumentarni;angleški;HISTORYCH;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/HISTORYCH.gif
-udp://@232.4.3.18:5002
-
-#EXTINF:111,Travel Channel
-#EXTTV:Dokumentarni;angleški;TRAVEL;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TRAVEL.gif
-udp://@232.4.2.20:5002
-
-#EXTINF:112,Zone Reality
-#EXTTV:Dokumentarni;angleški;REALITY;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/REALITY.gif
-udp://@232.4.2.21:5002
-
-#EXTINF:113,Da Vinci Learning
-#EXTTV:Dokumentarni;angleški;DAVINCILEAR;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DAVINCILEAR.gif
-udp://@232.4.3.17:5002
-
-#EXTINF:114,DoQ
-#EXTTV:Dokumentarni;angleški;DOQ;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DOQ.gif
-udp://@232.4.3.19:5002
-
-#EXTINF:200,Viva
-#EXTTV:Glasbeni;nemški;VIVA;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/VIVA.gif
-udp://@232.4.2.13:5002
-
-#EXTINF:201,MTV Adria
-#EXTTV:Glasbeni;slovenski;MTV;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MTV.gif
-udp://@239.255.4.84:5002
-
-#EXTINF:202,MTV Rocks
-#EXTTV:Glasbeni;angleški;MTV2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MTV2.gif
-udp://@232.4.3.8:5002
-
-#EXTINF:203,MTV Hits
-#EXTTV:Glasbeni;angleški;MTVH;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MTVH.gif
-udp://@232.4.3.9:5002
-
-#EXTINF:204,MTV Dance
-#EXTTV:Glasbeni;angleški;MTVDANCE;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MTVDANCE.gif
-udp://@232.4.3.7:5002
-
-#EXTINF:205,VH1
-#EXTTV:Glasbeni;angleški;VH1;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/VH1.gif
-udp://@232.4.2.14:5002
-
-#EXTINF:206,VH1 Classic
-#EXTTV:Glasbeni;angleški;VH1CLA;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/VH1CLA.gif
-udp://@232.4.3.10:5002
-
-#EXTINF:207,MCM Pop
-#EXTTV:Glasbeni;francoski;MCMPOP;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MCMPOP.png
-udp://@232.4.3.39:5002
-
-#EXTINF:208,Trace
-#EXTTV:Glasbeni;francoski;TRACE;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TRACE.gif
-udp://@232.4.3.28:5002
-
-#EXTINF:209,Mezzo
-#EXTTV:Glasbeni;francoski;MEZZO;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MEZZO.png
-udp://@232.4.3.41:5002
-
-#EXTINF:210,C Music
-#EXTTV:Glasbeni;angleški;CMUSICTV;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/CMUSICTV.gif
-udp://@232.4.2.15:5002
-
-#EXTINF:211,CMC
-#EXTTV:Glasbeni;hrvaški;CMC;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/CMC.gif
-udp://@232.4.2.16:5002
-
-#EXTINF:212,Planet TV
-#EXTTV:Glasbeni;slovenski;PLANETTV;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/PLANETTV.gif
-udp://@239.255.4.137:5002
-
-#EXTINF:213,Čarli TV
-#EXTTV:Glasbeni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/CARLITV.gif
-udp://@232.4.1.10:5002
-
-#EXTINF:214,Golica TV
-#EXTTV:Glasbeni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TVGOLICA.gif
-udp://@232.4.1.19:5002
-
-#EXTINF:215,TV Petelin
-#EXTTV:Glasbeni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TVPETELIN.gif
-udp://@232.4.1.36:5002
-
-#EXTINF:300,SportKlub
-#EXTTV:Športni;slovenski;SPORTKL;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SPORTKL.gif
-udp://@232.4.2.24:5002
-
-#EXTINF:301,SportKlub+
-#EXTTV:Športni;slovenski;SPORTKLUBP;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SPORTKLUBP.gif
-udp://@232.4.3.21:5002
-
-#EXTINF:302,Šport TV 1
-#EXTTV:Športni;slovenski;SPORTTV;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SPORTTV.gif
-udp://@232.4.2.4:5002
-
-#EXTINF:303,Šport TV 2
-#EXTTV:Športni;slovenski;SPORTTV2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SPORTTV2.gif
-udp://@232.4.3.24:5002
-
-#EXTINF:304,Eurosport
-#EXTTV:Športni;angleški;EUROSPORT;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/EUROSPORT.gif
-udp://@232.4.2.25:5002
-
-#EXTINF:305,Eurosport 2
-#EXTTV:Športni;angleški;EUROSPORT2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/EUROSPORT2.gif
-udp://@232.4.2.26:5002
-
-#EXTINF:306,Sport 1
-#EXTTV:Športni;nemški;DSF;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DSF.gif
-udp://@232.4.2.3:5002
-
-#EXTINF:306,Extreme
-#EXTTV:Športni;angleški;EXTREME;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/EXTREME.gif
-udp://@232.4.3.22:5002
-
-#EXTINF:308,ESPN America
-#EXTTV:Športni;angleški;NASN;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/NASN.gif
-udp://@239.255.4.164:5002
-
-#EXTINF:309,ESPN Classic
-#EXTTV:Športni;angleški;ESPN;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/ESPN.gif
-udp://@232.4.3.23:5002
-
-#EXTINF:310,Yacht & Sail
-#EXTTV:Športni;angleški;YACHTSAIL;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/YACHTSAIL.gif
-udp://@232.4.4.2:5002
-
-#EXTINF:311,Motors TV
-#EXTTV:Športni;angleški;MOTORS;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MOTORS.gif
-udp://@232.4.4.1:5002
-
-#EXTINF:312,Poker Channel
-#EXTTV:Športni;angleški;POKERCH;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/POKERCH.gif
-udp://@232.4.4.3:5002
-
-#EXTINF:400,ORF1
-#EXTTV:Nacionalni;nemški;ORF1;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/ORF1.gif
-udp://@232.4.1.26:5002
-
-#EXTINF:401,ORF2
-#EXTTV:Nacionalni;nemški;ORF2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/ORF2.gif
-udp://@232.4.1.27:5002
-
-#EXTINF:402,ARD
-#EXTTV:Nacionalni;nemški;ARD;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/ARD.gif
-udp://@232.4.1.11:5002
-
-#EXTINF:403,ZDF
-#EXTTV:Nacionalni;nemški;ZDF;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/ZDF.gif
-udp://@232.4.1.34:5002
-
-#EXTINF:404,N-TV
-#EXTTV:Informativni;nemški;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/NTV.gif
-udp://@232.4.3.33:5002
-
-#EXTINF:405,RTL
-#EXTTV:Zabavni;nemški;RTL;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RTL.gif
-udp://@232.4.2.34:5002
-
-#EXTINF:406,RTL II
-#EXTTV:Zabavni;nemški;RTL2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RTL2.gif
-udp://@232.4.2.35:5002
-
-#EXTINF:407,Super RTL
-#EXTTV:Zabavni;nemški;SUPERRTL;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SUPERRTL.gif
-udp://@232.4.2.36:5002
-
-#EXTINF:408,3sat
-#EXTTV:Nacionalni;nemški;3SAT;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/3SAT.gif
-udp://@232.4.1.45:5002
-
-#EXTINF:409,VOX
-#EXTTV:Zabavni;nemški;VOX;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/VOX.gif
-udp://@232.4.3.32:5002
-
-#EXTINF:410,Pro7
-#EXTTV:Zabavni;nemški;PRO7;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/PRO7.gif
-udp://@232.4.3.35:5002
-
-#EXTINF:411,Kabel1
-#EXTTV:Zabavni;nemški;KABEL1;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/KABEL1.gif
-udp://@232.4.2.37:5002
-
-#EXTINF:412,SAT1
-#EXTTV:Zabavni;nemški;SAT1;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SAT1.gif
-udp://@232.4.3.34:5002
-
-#EXTINF:500,Cartoon/TCM
-#EXTTV:Otroški;angleški;CARTOON;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/CARTOON.gif
-udp://@232.4.2.33:5002
-
-#EXTINF:501,Boomerang
-#EXTTV:Otroški;angleški;BOOMERANG;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/BOOMERANG.gif
-udp://@232.4.3.6:5002
-
-#EXTINF:502,Disney Channel
-#EXTTV:Otroški;angleški;DISNEY;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DISNEY.gif
-udp://@232.4.2.2:5002
-
-#EXTINF:503,Disney XD
-#EXTTV:Otroški;angleški;JETIX;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/JETIX.gif
-udp://@232.4.3.4:5002
-
-#EXTINF:504,Disney Playhouse
-#EXTTV:Otroški;angleški;DISNEYPLAYHOUSE;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DISNEYPLAY.gif
-udp://@232.4.3.42:5002
-
-#EXTINF:505,Nickelodeon
-#EXTTV:Otroški;angleški;NICKLEODEON;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/NICKLEODEON.gif
-udp://@232.4.3.11:5002
-
-#EXTINF:506,JimJam
-#EXTTV:Otroški;angleški;JIMJAM;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/JIMJAM.gif
-udp://@232.4.3.3:5002
-
-#EXTINF:507,Baby TV
-#EXTTV:Otroški;angleški;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/BABYTV.gif
-udp://@232.4.2.12:5002
-
-#EXTINF:508,KidsCo
-#EXTTV:Otroški;angleški;KIDSCO;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/KIDSCO.gif
-udp://@232.4.3.5:5002
-
-#EXTINF:600,TV Paprika
-#EXTTV:Lokalni;slovenski;PAPRIKA;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/PAPRIKA.gif
-udp://@232.4.1.13:5002
-
-#EXTINF:601,NET TV
-#EXTTV:Lokalni;slovenski;NET;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/NET.gif
-udp://@232.4.1.14:5002
-
-#EXTINF:602,RTS Maribor
-#EXTTV:Lokalni;slovenski;RTSM;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RTSM.gif
-udp://@232.4.1.15:5002
-
-#EXTINF:603,TV Koper Capodistria
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TVKOPER.gif
-udp://@239.255.4.30:5002
-
-#EXTINF:604,Vaš Kanal
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/VASKANAL.gif
-udp://@239.255.4.56:5002
-
-#EXTINF:605,TV Primorka
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TVPRIMORKA.gif
-udp://@239.255.4.67:5002
-
-#EXTINF:606,Vitel
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/VITEL.gif
-udp://@239.255.0.83:5002
-
-#EXTINF:607,Tele M
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TELEM.gif
-udp://@232.4.1.37:5002
-
-#EXTINF:608,SIP TV
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SIPTV.gif
-udp://@232.4.1.38:5002
-
-#EXTINF:609,AS TV
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TVAS.gif
-udp://@232.4.1.39:5002
-
-#EXTINF:610,Kanal 10 / Idea TV
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/IDEATV.gif
-udp://@232.4.1.40:5002
-
-#EXTINF:611,Astronet TV
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/ASTRONETTV.gif
-udp://@239.255.4.189:5002
-
-#EXTINF:612,SponkaTV
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SPONKATV.gif
-udp://@239.255.4.72:5002
-
-#EXTINF:613,VTV
-#EXTTV:Lokalni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/VTV.gif
-udp://@239.255.4.103:5002
-
-#EXTINF:614,TV Celje
-#EXTTV:Lokalni;Slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/TVCELJE.gif
-udp://@232.4.1.46:5002
-
-#EXTINF:615,Gea TV
-#EXTTV:Dokumentarni;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/GEATV.gif
-udp://@232.4.1.43:5002
-
-#EXTINF:700,HRT1
-#EXTTV:Nacionalni;hrvaški;HRT1;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/HRT1.gif
+#EXTINF:6,POP BRIO
+#EXTTV:ostali;slovenski;BRIO
+udp://@232.4.1.12:5002
+
+#EXTINF:7,HRT1
+#EXTTV:nacionalni;hrvaški;HRT1
 udp://@232.4.1.6:5002
 
-#EXTINF:701,HRT2
-#EXTTV:Nacionalni;hrvaški;HRT2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/HRT2.gif
+#EXTINF:8,HRT2
+#EXTTV:nacionalni;hrvaški;HRT2
 udp://@232.4.1.7:5002
 
-#EXTINF:702,RTS
-#EXTTV:Nacionalni;srbski;RTS;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RTS.gif
-udp://@232.4.1.22:5002
+#EXTINF:9,Pink Sl
+#EXTTV:zabavni;slovenski;PINKSI
+udp://@232.4.1.47:5002
 
-#EXTINF:703,RTCG
-#EXTTV:Nacionalni;srbski;RTCG;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RTCG.gif
-udp://@232.4.1.23:5002
+#EXTINF:10,HBO Comedy
+#EXTTV:zabavni,filmski;angleški;HBOC
+udp://@232.4.5.2:5002
 
-#EXTINF:704,RTK
-#EXTTV:Nacionalni;albanski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RTK.gif
-udp://@232.4.1.24:5002
+#EXTINF:11,Pink Sl
+#EXTTV:zabavni;slovenski;PINKSI
+udp://@232.4.1.47:5002
 
-#EXTINF:705,Hayat
-#EXTTV:Nacionalni;bosanski;HAYAT;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/HAYAT.gif
-udp://@232.4.1.21:5002
+#EXTINF:12,TV1000
+#EXTTV:filmski;angleški;TV1000
+udp://@232.4.2.1:5002
 
-#EXTINF:706,MKTV
-#EXTTV:Nacionalni;makedonski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MKTV.gif
-udp://@232.4.1.25:5002
+#EXTINF:13,HBO
+#EXTTV:filmski;angleški;HBO
+udp://@232.4.5.1:5002
 
-#EXTINF:707,Pink Plus
-#EXTTV:Balkanski;srbski;PINK;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/PINK.gif
-udp://@232.4.2.28:5002
+#EXTINF:14,Planet TV
+#EXTTV:zabavni,glasbeni;slovenski;PLANETTV
+udp://@239.255.4.137:5002
 
-#EXTINF:708,BN TV
-#EXTTV:Balkanski;srbski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/BNTV.gif
-udp://@232.4.3.26:5002
+#EXTINF:15,Disney Channel
+#EXTTV:otroški;angleški;DISNEY
+udp://@232.4.2.2:5002
 
-#EXTINF:709,Balkanika
-#EXTTV:Balkanski;srbski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/BALKANICA.gif
-udp://@232.4.3.27:5002
+#EXTINF:16,Disney Playhouse
+#EXTTV:otroški;angleški;DISNEYPLAYHOUSE
+udp://@232.4.3.42:5002
 
-#EXTINF:710,DM Sat
-#EXTTV:Balkanski;srbski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DMTV.gif
+#EXTINF:17,Šport TV 1
+#EXTTV:športni;slovenski;SPORTTV
+udp://@232.4.2.4:5002
+
+#EXTINF:18,Universal Channel
+#EXTTV:filmski;angleški;HALLMARK
+udp://@232.4.3.1:5002
+
+#EXTINF:19,CNN
+#EXTTV:informativni;angleški;CNN
+udp://@232.4.2.5:5002
+
+#EXTINF:20,France 24
+#EXTTV:informativni;angleški;
+udp://@232.4.2.6:5002
+
+#EXTINF:21,BBC World News
+#EXTTV:informativni;angleški;
+udp://@232.4.2.7:5002
+
+#EXTINF:23,TiJi
+#EXTTV:otroški;francoski;TIJI
+udp://@232.4.3.40:5002
+
+#EXTINF:24,JimJam
+#EXTTV:otroški;angleški;JIMJAM
+udp://@232.4.3.3:5002
+
+#EXTINF:25,Disney XD
+#EXTTV:otroški;angleški;JETIX
+udp://@232.4.3.4:5002
+
+#EXTINF:26,Kids CO
+#EXTTV:otroški;angleški;KIDSCO
+udp://@232.4.3.5:5002
+
+#EXTINF:28,Boomerang
+#EXTTV:otroški;angleški;BOOMERANG
+udp://@232.4.3.6:5002
+
+#EXTINF:29,Baby TV
+#EXTTV:otroški;angleški;
+udp://@232.4.2.12:5002
+
+#EXTINF:30,Viva
+#EXTTV:glasbeni;nemški;VIVA
+udp://@232.4.2.13:5002
+
+#EXTINF:31,MTV Dance
+#EXTTV:glasbeni;angleški;MTVDANCE
+udp://@232.4.3.7:5002
+
+#EXTINF:32,MTV Rocks
+#EXTTV:glasbeni;angleški;MTV2
+udp://@232.4.3.8:5002
+
+#EXTINF:33,VH1
+#EXTTV:glasbeni;angleški;VH1
+udp://@232.4.2.14:5002
+
+#EXTINF:34,C Music TV
+#EXTTV:glasbeni;angleški;CMUSICTV
+udp://@232.4.2.15:5002
+
+#EXTINF:35,MTV Hits
+#EXTTV:glasbeni;angleški;MTVH
+udp://@232.4.3.9:5002
+
+#EXTINF:36,VH1 Classic
+#EXTTV:glasbeni;angleški;VH1CLA
+udp://@232.4.3.10:5002
+
+#EXTINF:37,MCM POP
+#EXTTV:glasbeni;francoski;MCMPOP
+udp://@232.4.3.39:5002
+
+#EXTINF:38,MTV Adria
+#EXTTV:glasbeni;angleški;MTV
+udp://@239.255.4.84:5002
+
+#EXTINF:39,Mezzo
+#EXTTV:glasbeni;francoski;MEZZO
+udp://@232.4.3.41:5002
+
+#EXTINF:40,Čarli TV
+#EXTTV:glasbeni,zabavni;slovenski;
+udp://@232.4.1.10:5002
+
+#EXTINF:41,CMC
+#EXTTV:glasbeni;srbski;CMC
+udp://@232.4.2.16:5002
+
+#EXTINF:42,Nickelodeon
+#EXTTV:otroški;angleški;NICKLEODEON
+udp://@232.4.3.11:5002
+
+#EXTINF:45,Cinemax
+#EXTTV:filmski;angleški;CINEMAX1
+udp://@232.4.5.3:5002
+
+#EXTINF:46,Cinemax 2
+#EXTTV:filmski;angleški;CINEMAX2
+udp://@232.4.5.4:5002
+
+#EXTINF:47,MGM
+#EXTTV:filmski;angleški;MGM
+udp://@232.4.2.17:5002
+
+#EXTINF:48,FOX Life
+#EXTTV:zabavni,filmski;angleški;FOXLIFE
+udp://@232.4.2.18:5002
+
+#EXTINF:49,FOX Crime
+#EXTTV:zabavni,filmski;angleški;FOXCRIME
+udp://@232.4.2.19:5002
+
+#EXTINF:50,Discovery Channel
+#EXTTV:dokumentarni;angleški;DISCOVERY
+udp://@232.4.2.8:5002
+
+#EXTINF:51,Discovery Science
+#EXTTV:dokumentarni;angleški;DISCSCI
+udp://@232.4.3.12:5002
+
+#EXTINF:52,Discovery World
+#EXTTV:dokumentarni;angleški;DISCCI
+udp://@232.4.3.13:5002
+
+#EXTINF:53,Viasat History
+#EXTTV:dokumentarni;angleški;HISTORY
+udp://@232.4.3.2:5002
+
+#EXTINF:54,Viasat Explorer
+#EXTTV:dokumentarni;angleški;EXPLORER
+udp://@232.4.3.14:5002
+
+#EXTINF:55,National Geographic
+#EXTTV:dokumentarni;angleški;NATGEO
+udp://@232.4.2.9:5002
+
+#EXTINF:56,Animal Planet
+#EXTTV:dokumentarni;angleški;ANIMAL
+udp://@232.4.2.10:5002
+
+#EXTINF:57,Discovery T&L
+#EXTTV:dokumentarni;angleški;DISCTL
+udp://@232.4.3.15:5002
+
+#EXTINF:58,Travel Channel
+#EXTTV:informativni,dokumentarni;angleški;TRAVEL
+udp://@232.4.2.20:5002
+
+#EXTINF:59,National Geo. Wild
+#EXTTV:dokumentarni;angleški;NATGEOW
+udp://@232.4.3.16:5002
+
+#EXTINF:60,Zone Reality
+#EXTTV:dokumentarni;angleški;REALITY
+udp://@232.4.2.21:5002
+
+#EXTINF:61,Investigation Discovery
+#EXTTV:dokumentarni;angleški;DISCINV
+udp://@232.4.2.22:5002
+
+#EXTINF:62,ARD
+#EXTTV:nacionalni,zabavni;nemški;ARD
+udp://@232.4.1.11:5002
+
+#EXTINF:63,Da Vinci Learning
+#EXTTV:dokumentarni;angleški;DAVINCILEAR
+udp://@232.4.3.17:5002
+
+#EXTINF:64,The History Channel
+#EXTTV:dokumentarni;angleški;HISTORYCH
+udp://@232.4.3.18:5002
+
+#EXTINF:65,DoQ
+#EXTTV:ostali;angleški;DOQ
+udp://@232.4.3.19:5002
+
+#EXTINF:66,E!
+#EXTTV:ostali;angleški;EEUROPE
+udp://@232.4.2.23:5002
+
+#EXTINF:67,The Style Network
+#EXTTV:ostali;angleški;STYLENET
+udp://@232.4.3.20:5002
+
+#EXTINF:68,SportKlub
+#EXTTV:športni;slovenski;SPORTKL
+udp://@232.4.2.24:5002
+
+#EXTINF:69,Planet TV 2
+#EXTTV:glasbeni;slovenski;
+udp://@239.255.4.44:5002
+
+#EXTINF:70,SportKlub +
+#EXTTV:športni;slovenski;SPORTKLUBP
+udp://@232.4.3.21:5002
+
+#EXTINF:71,Eurosport
+#EXTTV:športni;angleški;EUROSPORT
+udp://@232.4.2.25:5002
+
+#EXTINF:72,Eurosport 2
+#EXTTV:informativni,športni;angleški;EUROSPORT2
+udp://@232.4.2.26:5002
+
+#EXTINF:73,Sport1
+#EXTTV:športni;nemški;DSF
+udp://@239.255.0.20:5002
+
+#EXTINF:74,Extreme
+#EXTTV:športni;angleški;EXTREME
+udp://@232.4.3.22:5002
+
+#EXTINF:75,ESPN America
+#EXTTV:športni;angleški;NASN
+udp://@239.255.4.164:5002
+
+#EXTINF:76,ESPN Classic
+#EXTTV:športni;angleški;ESPN
+udp://@232.4.3.23:5002
+
+#EXTINF:77,Šport TV 2
+#EXTTV:športni;slovenski;SPORTTV2
+udp://@232.4.3.24:5002
+
+#EXTINF:78,Motors TV
+#EXTTV:športni;angleški;MOTORS
+udp://@232.4.4.1:5002
+
+#EXTINF:79,Yacht & Sail
+#EXTTV:ostali,športni;angleški;YACHTSAIL
+udp://@232.4.4.2:5002
+
+#EXTINF:80,Poker Channel
+#EXTTV:športni;angleški;POKERCH
+udp://@232.4.4.3:5002
+
+#EXTINF:82,TV Paprika
+#EXTTV:zabavni;slovenski;PAPRIKA
+udp://@232.4.1.13:5002
+
+#EXTINF:83,NET TV
+#EXTTV:zabavni;slovenski;NET
+udp://@232.4.1.14:5002
+
+#EXTINF:84,RTS Maribor
+#EXTTV:zabavni;slovenski;RTSM
+udp://@232.4.1.15:5002
+
+#EXTINF:85,Sponka TV
+#EXTTV:zabavni;slovenski;
+udp://@239.255.4.72:5002
+
+#EXTINF:86,VTV
+#EXTTV:zabavni;slovenski;
+udp://@239.255.4.103:5002
+
+#EXTINF:87,TV Koper Capodistria
+#EXTTV:nacionalni,ostali;slovenski;
+udp://@239.255.4.30:5002
+
+#EXTINF:88,Golica TV
+#EXTTV:glasbeni;slovenski;
+udp://@232.4.1.19:5002
+
+#EXTINF:89,Vaš Kanal
+#EXTTV:informativni;slovenski;
+udp://@239.255.4.56:5002
+
+#EXTINF:90,DM Sat
+#EXTTV:ostali;srbski;
 udp://@232.4.3.25:5002
 
-#EXTINF:800,Radio Siol
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOSIOL.gif
-udp://@239.255.2.1:5002
+#EXTINF:91,NTV Hayat
+#EXTTV:nacionalni;bosanski;HAYAT
+udp://@232.4.1.21:5002
 
-#EXTINF:801,Radio Klub Siol
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOKLUBSIOL.gif
-udp://@239.255.2.2:5002
+#EXTINF:92,RT Srbija
+#EXTTV:nacionalni;srbski;RTS
+udp://@232.4.1.22:5002
 
-#EXTINF:802,Radio Hit
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOHIT.gif
-udp://@239.255.2.3:5002
+#EXTINF:93,Info TV
+#EXTTV:informativni;slovenski;INFO
+udp://@232.4.1.9:5002
 
-#EXTINF:803,Radio Ekspres
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOEKSPRES.gif
-udp://@239.255.2.4:5002
+#EXTINF:94,RT Crna gora
+#EXTTV:nacionalni;srbski;RTCG
+udp://@232.4.1.23:5002
 
-#EXTINF:804,Radio Antena
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOANTENA.gif
-udp://@239.255.2.5:5002
+#EXTINF:95,RTK
+#EXTTV:nacionalni;albanski;
+udp://@232.4.1.24:5002
 
-#EXTINF:805,Radio Kranj
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOKRANJ.gif
-udp://@239.255.2.10:5002
+#EXTINF:96,Madžarska TV 2
+#EXTTV:nacionalni;madžarski;
+udp://@239.255.4.6:5002
 
-#EXTINF:806,Radio Center
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOCENTER.gif
-udp://@239.255.2.19:5002
+#EXTINF:97,MKTV
+#EXTTV:nacionalni;makedonski;
+udp://@232.4.1.25:5002
 
-#EXTINF:807,Radio Aktual
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOAKTUAL.gif
-udp://@239.255.2.7:5002
+#EXTINF:98,ORF1
+#EXTTV:nacionalni,športni;nemški;ORF1
+udp://@232.4.1.26:5002
 
-#EXTINF:808,Radio 1
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIO1.gif
-udp://@239.255.2.8:5002
+#EXTINF:99,ORF2
+#EXTTV:nacionalni;nemški;ORF2
+udp://@232.4.1.27:5002
 
-#EXTINF:809,Radio Zeleni Val
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOZELENIVAL.gif
-udp://@239.255.2.9:5002
+#EXTINF:100,RAI Uno
+#EXTTV:nacionalni;italijanski;RAI1
+udp://@232.4.1.28:5002
 
-#EXTINF:810,Radio Ognjišče
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOOGNJISCE.gif
-udp://@239.255.2.11:5002
+#EXTINF:101,RAI Due
+#EXTTV:nacionalni;italijanski;RAI2
+udp://@232.4.1.29:5002
 
-#EXTINF:811,Radio City
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOCITY.gif
-udp://@239.255.2.6:5002
+#EXTINF:102,RAI Tre
+#EXTTV:nacionalni;italijanski;RAI3
+udp://@232.4.1.30:5002
 
-#EXTINF:812,Radio A1
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOA1.gif
-udp://@239.255.2.12:5002
+#EXTINF:103,TV Primorka
+#EXTTV:zabavni;slovenski;
+udp://@239.255.4.67:5002
 
-#EXTINF:813,Radio Val 202
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOVAL202.gif
-udp://@239.255.2.13:5002
+#EXTINF:104,Bijeljina
+#EXTTV:ostali;;
+udp://@232.4.3.26:5002
 
-#EXTINF:814,Radio ARS
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOARS.gif
-udp://@239.255.2.14:5002
+#EXTINF:105,Balkanika
+#EXTTV:glasbeni;hrvaški;
+udp://@232.4.3.27:5002
 
-#EXTINF:815,Radio Koper Capodistria
-#EXTTV:Radio;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOCAPODISTRIA.gif
-udp://@239.255.2.16
+#EXTINF:106,TVE
+#EXTTV:nacionalni;španski;TVE
+udp://@232.4.1.32:5002
 
-#EXTINF:816,Radio Slovenija International
-#EXTTV:Radio;angleški;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/RADIOSI.gif
-udp://@239.255.2.15:5002
+#EXTINF:107,Romantica
+#EXTTV:ostali;angleški;ROMANTICA
+udp://@232.4.2.29:5002
 
-#EXTINF:850,Playboy TV
-#EXTTV:Za odrasle;angleški;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/PLAYBOYTV.gif
-udp://@232.4.3.38:5002
+#EXTINF:108,TV5MONDE
+#EXTTV:informativni;francoski;TV5
+udp://@232.4.1.33:5002
 
-#EXTINF:851,Private Spice
-#EXTTV:Za odrasle;angleški;SPICE;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SPICE.gif
-udp://@232.4.4.4:5002
+#EXTINF:109,Trace TV
+#EXTTV:glasbeni,zabavni;francoski;TRACE
+udp://@232.4.3.28:5002
 
-#EXTINF:852,Free X TV
-#EXTTV:Za odrasle;angleški;FREEX;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/FREEX.gif
-udp://@232.4.3.36:5002
+#EXTINF:110,Pro7
+#EXTTV:opt;nemški;PRO7
+udp://@239.255.5.61:5002
 
-#EXTINF:853,Free X TV 2
-#EXTTV:Za odrasle;angleški;FREEX2;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/FREEX.gif
-udp://@232.4.3.37:5002
+#EXTINF:111,Duna TV
+#EXTTV:zabavni;madžarski;DUNA
+udp://@232.4.1.44:5002
 
-#EXTINF:854,X-Dream TV
-#EXTTV:Za odrasle;angleški;XDREAM;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/XDREAM.gif
-udp://@232.4.4.6:5002
+#EXTINF:112,Channel One Russia
+#EXTTV:ostali;ruski;RUSSIA1
+udp://@232.4.2.39:5002
 
-#EXTINF:855,Dorcel
-#EXTTV:Za odrasle;francoski;DORCEL;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/DORCEL.gif
-udp://@232.4.4.7:5002
+#EXTINF:113,BBC Entertainment
+#EXTTV:informativni,zabavni;angleški;BBCPRIME
+udp://@232.4.2.30:5002
 
-#EXTINF:856,SCT 1
-#EXTTV:Za odrasle;italijanski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SATISFACTIONTV.gif
-udp://@232.4.2.38:5002
+#EXTINF:114,EWTN
+#EXTTV:ostali;angleški;EWTN
+udp://@232.4.2.31:5002
 
-#EXTINF:857,SCT 2
-#EXTTV:Za odrasle;italijanski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SATISFACTIONTV.gif
-udp://@232.4.4.5:5002
+#EXTINF:115,Sky News
+#EXTTV:informativni;angleški;
+udp://@232.4.2.32:5002
 
-#EXTINF:858,SCT 3
-#EXTTV:Za odrasle;italijanski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SATISFACTIONTV.gif
-udp://@232.4.4.8:5002
+#EXTINF:116,EuroNews
+#EXTTV:informativni;angleški;
+udp://@232.4.3.29:5002
 
-#EXTINF:859,Hustler
-#EXTTV:Za odrasle;angleški;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/HUSTLER.gif
-udp://@232.4.4.9:5002
+#EXTINF:117,Fashion TV
+#EXTTV:ostali;angleški;
+udp://@232.4.3.30:5002
 
-#EXTINF:860,XXX Extreme
-#EXTTV:Za odrasle;angleški;XXXXTREME;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/XXXXTREME.gif
-udp://@232.4.4.10:5002
+#EXTINF:118,FLN
+#EXTTV:zabavni;angleški;
+udp://@239.255.4.132:5002
 
-#EXTINF:900,SLO HD Mini
-#EXTTV:HD,Nacionalni,Ostali;slovenski;SLOHDMINI;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SLOHD.gif
-udp://@239.255.4.206:5002
+#EXTINF:119,Cartoon/TCM
+#EXTTV:otroški;angleški;CARTOON
+udp://@232.4.2.33:5002
 
-#EXTINF:901,MyZenTV
-#EXTTV:HD,Ostali;angleški;MELODYZEN;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/MELODYZEN.gif
+#EXTINF:120,ZDF
+#EXTTV:nacionalni;nemški;ZDF
+udp://@232.4.1.34:5002
+
+#EXTINF:121,RTL
+#EXTTV:zabavni;nemški;RTL
+udp://@232.4.2.34:5002
+
+#EXTINF:122,RTL II
+#EXTTV:otroški,zabavni;nemški;RTL2
+udp://@232.4.2.35:5002
+
+#EXTINF:123,Super RTL
+#EXTTV:otroški,zabavni;nemški;SUPERRTL
+udp://@232.4.2.36:5002
+
+#EXTINF:124,VOX
+#EXTTV:zabavni;nemški;VOX
+udp://@232.4.3.32:5002
+
+#EXTINF:125,3Sat
+#EXTTV:zabavni;nemški;3SAT
+udp://@232.4.1.45:5002
+
+#EXTINF:126,N-tv
+#EXTTV:informativni;nemški;
+udp://@232.4.3.33:5002
+
+#EXTINF:127,SAT1
+#EXTTV:informativni;nemški;SAT1
+udp://@232.4.3.34:5002
+
+#EXTINF:128,Pro7
+#EXTTV:informativni;nemški;PRO7
+udp://@232.4.3.35:5002
+
+#EXTINF:129,Kabel 1
+#EXTTV:informativni;nemški;KABEL1
+udp://@232.4.2.37:5002
+
+#EXTINF:130,Pink Plus
+#EXTTV:glasbeni;srbski;PINK
+udp://@232.4.8.1:5002
+
+#EXTINF:131,Pink Music
+#EXTTV:glasbeni;srbski;PINKMUSIC
+udp://@232.4.2.40:5002
+
+#EXTINF:132,Pink Film
+#EXTTV:filmski;srbski;PINKFILM
+udp://@232.4.8.3:5002
+
+#EXTINF:133,Pink Ekstra
+#EXTTV:glasbeni;srbski;PINKEXTRA
+udp://@232.4.8.2:5002
+
+#EXTINF:134,Pink Folk
+#EXTTV:glasbeni;srbski;PINKFOLK
+udp://@232.4.8.4:5002
+
+#EXTINF:137,TV Arena plus
+#EXTTV:ostali;slovenski;
+udp://@239.255.4.189:5002
+
+#EXTINF:140,Vitel
+#EXTTV:zabavni;slovenski;
+udp://@239.255.4.83:5002
+
+#EXTINF:141,TV Petelin
+#EXTTV:zabavni;slovenski;
+udp://@232.4.1.36:5002
+
+#EXTINF:142,Tele M
+#EXTTV:zabavni;slovenski;
+udp://@232.4.1.37:5002
+
+#EXTINF:143,SIP TV
+#EXTTV:zabavni;slovenski;
+udp://@232.4.1.38:5002
+
+#EXTINF:144,As TV
+#EXTTV:zabavni;slovenski;
+udp://@232.4.1.39:5002
+
+#EXTINF:145,Kanal 10 / Idea TV
+#EXTTV:zabavni;slovenski;
+udp://@232.4.1.40:5002
+
+#EXTINF:146,TV Celje
+#EXTTV:zabavni;slovenski;
+udp://@232.4.1.46:5002
+
+#EXTINF:151,Gea TV
+#EXTTV:ostali;slovenski;
+udp://@232.4.1.43:5002
+
+#EXTINF:168,Pink Plus
+#EXTTV:zabavni;srbski;PINK
+udp://@232.4.2.28:5002
+
+#EXTINF:200,SLO3
+#EXTTV:ostali;slovenski;
+udp://@232.4.1.41:5002
+
+#EXTINF:201,MyZen TV
+#EXTTV:ostali,HD;angleški;MELODYZEN
 udp://@239.255.0.202:5002
 
-#EXTINF:920,PC - VLC
-#EXTTV:Ostali;slovenski;
-udp://@239.255.8.1:5002
+#EXTINF:202,Discovery HD Showcase
+#EXTTV:testni,HD;angleški;DISCOVERYHD
+udp://@239.255.4.207:5002
 
-#EXTINF:998,Mobitelov info kanal
-#EXTTV:Ostali;slovenski;
-udp://@239.255.3.10:5002
+#EXTINF:203,History Channel HD
+#EXTTV:testni,HD;angleški;HISTORYHD
+udp://@239.255.4.201:5002
+
+#EXTINF:204,National Geo. HD
+#EXTTV:testni,HD;angleški;NATGEOHD
+udp://@239.255.4.203:5002
+
+#EXTINF:205,EuroSport HD
+#EXTTV:testni,HD;angleški;EUROSPORTHD
+udp://@239.255.4.204:5002
+
+#EXTINF:207,RTV SLO HD
+#EXTTV:testni,HD,opt;angleški;SLOHD
+udp://@239.255.4.205:5002
+
+#EXTINF:208,RTV SLO HD mini
+#EXTTV:nacionalni,HD,testni;slovenski;SLOHD
+udp://@239.255.4.206:5002
+
+#EXTINF:222,Pop plus 1
+#EXTTV:zabavni;slovenski;
+udp://@232.4.9.1:5002
+
+#EXTINF:223,Pop plus 2
+#EXTTV:zabavni;slovenski;
+udp://@232.4.9.2:5002
+
+#EXTINF:224,Pop plus 3
+#EXTTV:zabavni;slovenski;
+udp://@232.4.9.3:5002
+
+#EXTINF:300,Radio Siol
+#EXTTV:radio;slovenski;
+udp://@239.255.2.1:5002
+
+#EXTINF:301,Radio Klub Siol
+#EXTTV:radio;slovenski;
+udp://@239.255.2.2:5002
+
+#EXTINF:302,Radio Hit
+#EXTTV:radio;slovenski;
+udp://@232.3.1.3:5002
+
+#EXTINF:303,Radio Ekspres
+#EXTTV:radio;slovenski;
+udp://@232.3.1.4:5002 
+
+#EXTINF:304,Radio Antena
+#EXTTV:radio;slovenski;
+udp://@232.3.1.5:5002
+
+#EXTINF:305,Radio Kranj
+#EXTTV:radio;slovenski;
+udp://@232.3.1.10:5002 
+
+#EXTINF:306,Radio Center
+#EXTTV:radio;slovenski;
+udp://@239.255.2.19:5002
+
+#EXTINF:307,Radio Aktual
+#EXTTV:radio;slovenski;
+udp://@232.3.1.7:5002
+
+#EXTINF:309,Radio 1
+#EXTTV:radio;slovenski;
+udp://@232.3.1.8:5002
+
+#EXTINF:310,Radio Zeleni Val
+#EXTTV:radio;slovenski;
+udp://@232.3.1.9:5002
+
+#EXTINF:311,Radio Slovenija International
+#EXTTV:radio;slovenski;
+udp://@239.255.23.15:5002
+
+#EXTINF:312,Radio City
+#EXTTV:radio;slovenski;
+udp://@232.3.1.12:5002
+
+#EXTINF:316,Radio SI
+#EXTTV:radio;slovenski;
+udp://@239.255.2.15:5002
+
+#EXTINF:331,Radio Net FM
+#EXTTV:radio;slovenski;
+udp://@239.255.2.21:5002
+
+#EXTINF:332,Murski Val
+#EXTTV:radio;slovenski;
+udp://@239.255.2.22:5002
+
+#EXTINF:333,Radio Plus
+#EXTTV:radio;slovenski;
+udp://@239.255.2.24:5002
+
+#EXTINF:334,Radio Maribor
+#EXTTV:radio;slovenski;
+udp://@239.255.2.25:5002
+
+#EXTINF:335,Radio Marš
+#EXTTV:radio;slovenski;
+udp://@239.255.2.26:5002
+
+#EXTINF:336,Radio Fantasy
+#EXTTV:radio;slovenski;
+udp://@239.255.2.27:5002
+
+#EXTINF:400,Free X TV
+#EXTTV:za odrasle;angleški;FREEX
+udp://@232.4.3.36:5002
+
+#EXTINF:401,Private Spice
+#EXTTV:za odrasle;angleški;SPICE
+udp://@232.4.4.4:5002
+
+#EXTINF:402,Free X TV2
+#EXTTV:za odrasle;francoski;FREEX2
+udp://@232.4.3.37:5002
+
+#EXTINF:403,Hustler TV
+#EXTTV:za odrasle;angleški;HUSTLER
+udp://@232.4.4.9:5002
+
+#EXTINF:404,Satisfaction TV 
+#EXTTV:za odrasle;italijanski;
+udp://@232.4.4.5:5002
+
+#EXTINF:405,X-Dream TV
+#EXTTV:za odrasle;angleški;XDREAM
+udp://@232.4.4.6:5002
+
+#EXTINF:406,Dorcel
+#EXTTV:za odrasle;francoski;DORCEL
+udp://@232.4.4.7:5002
+
+#EXTINF:407,Playboy TV
+#EXTTV:za odrasle;angleški;
+udp://@232.4.3.38:5002
+
+#EXTINF:408,Daring! TV
+#EXTTV:za odrasle;angleški;
+udp://@232.4.4.10:5002
+
+#EXTINF:409,Satisfaction Plus
+#EXTTV:za odrasle;angleški;
+udp://@232.4.2.38:5002
+
+#EXTINF:998,SiolTV mix
+#EXTTV:ostali;slovenski;
+udp://@232.4.7.200:5002
 
 #EXTINF:999,Siol Info
-#EXTTV:Ostali;slovenski;;http://box.siol.net/inc/programs/uploads/canals_logos/56_19/SIOLINFO.gif
+#EXTTV:ostali;slovenski;
 udp://@239.255.1.12:5002
 

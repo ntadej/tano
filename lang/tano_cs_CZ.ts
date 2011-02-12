@@ -373,10 +373,6 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation>Obnovit</translation>
     </message>
     <message>
-        <source>Open channel list file</source>
-        <translation>Otevřít soubor se seznamem programů</translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
@@ -644,10 +640,6 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Soubory se seznamy programů Sagem JS (*.js)</translation>
     </message>
     <message>
-        <source>Import Sagem JS channel list file</source>
-        <translation>Zavést soubor se seznamem programů Sagem JS</translation>
-    </message>
-    <message>
         <source>Export</source>
         <translation>Vyvést</translation>
     </message>
@@ -664,10 +656,6 @@ Ztratíte tím všechna neuložená nastavení.</translation>
         <translation>Otevřít</translation>
     </message>
     <message>
-        <source>Open channel list file</source>
-        <translation>Otevřít soubor se seznamem programů</translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
@@ -677,10 +665,6 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     </message>
     <message>
         <source>Download from Web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import Tano TV old channel list file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -705,6 +689,18 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     </message>
     <message>
         <source>Edit channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Sagem JS channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Tano TV old channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -742,6 +738,26 @@ Then select your playlist.</source>
     <message>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh current playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;If you chose &apos;&apos;Refresh&apos;&apos;, your current channel numbers will remain the same. Only new channels will be added.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save channel list</source>
+        <translation type="unfinished">Uložit seznam programů</translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished">Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
 </context>
 <context>
@@ -1292,15 +1308,27 @@ Then select your playlist.</source>
         <translation>&lt;b&gt;Všeobecný&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Open channel list file</source>
-        <translation type="unfinished">Otevřít soubor se seznamem programů</translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished">Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
     <message>
         <source>Default channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download from web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano will download the channel list to your desired location and automatically set it as custom channel list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -51,7 +51,7 @@ QString PlaylistHandler::processNum(const QString &num)
 }
 
 int PlaylistHandler::processNewNum(QTreeWidgetItem *channel,
-							  const int &num)
+								   const int &num)
 {
 	if(_channelNums.contains(num)) {
 		QMessageBox::warning(_treeWidget, QObject::tr("Tano"),
@@ -88,7 +88,7 @@ void PlaylistHandler::clear()
 }
 
 QTreeWidgetItem *PlaylistHandler::createChannel(const QString &name,
-										   const QString &url)
+												const QString &url)
 {
 	int tmpNum;
 	for(int i = 1; i < 1000; i++) {
@@ -134,33 +134,64 @@ void PlaylistHandler::deleteChannel(QTreeWidgetItem *channel)
 	delete channel;
 }
 
+void PlaylistHandler::processChannel(Channel *channel)
+{
+	bool exists = false;
+	for(int i = 0; i < _treeWidget->topLevelItemCount(); i++) {
+		if(_map[_treeWidget->topLevelItem(i)]->url() == channel->url()) {
+			exists = true;
+		}
+	}
+	if(!exists) {
+		for(int i = 0; i < _treeWidget->topLevelItemCount(); i++) {
+			if(_map[_treeWidget->topLevelItem(i)]->name() == channel->name()) {
+				_map[_treeWidget->topLevelItem(i)]->setUrl(channel->url());
+				return;
+			}
+		}
+	} else {
+		return;
+	}
+
+	_channels << channel;
+
+	if(_channelNums.contains(channel->number())) {
+		for(int i = channel->number(); i < 1000; i++) {
+			if(!_channelNums.contains(i)) {
+				channel->setNumber(i);
+				break;
+			}
+		}
+	}
+	_channelNums << channel->number();
+
+	for(int i = 0; i < channel->categories().size(); i++) {
+		if(!_categoryList.contains(channel->categories()[i]))
+			_categoryList << channel->categories()[i];
+	}
+	if(!_languageList.contains(channel->language()))
+		_languageList << channel->language();
+	if(!_epgList.contains(channel->epg()) && !channel->epg().isEmpty())
+		_epgList << channel->epg();
+
+	_item = new QTreeWidgetItem(_treeWidget);
+	_item->setData(0, Qt::UserRole, "channel");
+	_item->setIcon(0, _channelIcon);
+	_item->setText(0, processNum(QString().number(channel->number())));
+	_item->setText(1, channel->name());
+	_item->setText(2, channel->categories().join(","));
+
+	_map.insert(_item, channel);
+	_nmap.insert(channel->number(), channel);
+}
+
 void PlaylistHandler::openM3UFile(const QString &m3uFile)
 {
 	M3UHandler *import = new M3UHandler();
 	import->processFile(m3uFile);
 
 	for(int i = 0; i < import->channelList().size(); i++) {
-		_channels << import->channelList()[i];
-		_channelNums << import->channelList()[i]->number();
-
-		for(int k = 0; k < import->channelList()[i]->categories().size(); k++) {
-			if(!_categoryList.contains(import->channelList()[i]->categories()[k]))
-				_categoryList << import->channelList()[i]->categories()[k];
-		}
-		if(!_languageList.contains(import->channelList()[i]->language()))
-			_languageList << import->channelList()[i]->language();
-		if(!_epgList.contains(import->channelList()[i]->epg()) && !import->channelList()[i]->epg().isEmpty())
-			_epgList << import->channelList()[i]->epg();
-
-		_item = new QTreeWidgetItem(_treeWidget);
-		_item->setData(0, Qt::UserRole, "channel");
-		_item->setIcon(0, _channelIcon);
-		_item->setText(0, processNum(QString().number(import->channelList()[i]->number())));
-		_item->setText(1, import->channelList()[i]->name());
-		_item->setText(2, import->channelList()[i]->categories().join(","));
-
-		_map.insert(_item, import->channelList()[i]);
-		_nmap.insert(import->channelList()[i]->number(), import->channelList()[i]);
+		processChannel(import->channelList()[i]);
 	}
 
 	_name = import->name();
@@ -174,18 +205,7 @@ void PlaylistHandler::importJsFormat(const QString &jsFile)
 	import->processFile(jsFile);
 
 	for(int i = 0; i < import->channelList().size(); i++) {
-		_channels << import->channelList()[i];
-		_channelNums << import->channelList()[i]->number();
-
-		_item = new QTreeWidgetItem(_treeWidget);
-		_item->setData(0, Qt::UserRole, "channel");
-		_item->setIcon(0, _channelIcon);
-		_item->setText(0, processNum(QString().number(import->channelList()[i]->number())));
-		_item->setText(1, import->channelList()[i]->name());
-		_item->setText(2, import->channelList()[i]->categories().join(","));
-
-		_map.insert(_item, import->channelList()[i]);
-		_nmap.insert(import->channelList()[i]->number(), import->channelList()[i]);
+		processChannel(import->channelList()[i]);
 	}
 
 	_name = QObject::tr("Sagem JS Imported Playlist");
@@ -210,18 +230,7 @@ void PlaylistHandler::importOldFormat(const QString &tanoFile)
 		return;
 
 	for(int i = 0; i < import->channelList().size(); i++) {
-		_channels << import->channelList()[i];
-		_channelNums << import->channelList()[i]->number();
-
-		_item = new QTreeWidgetItem(_treeWidget);
-		_item->setData(0, Qt::UserRole, "channel");
-		_item->setIcon(0, _channelIcon);
-		_item->setText(0, processNum(QString().number(import->channelList()[i]->number())));
-		_item->setText(1, import->channelList()[i]->name());
-		_item->setText(2, import->channelList()[i]->categories().join(","));
-
-		_map.insert(_item, import->channelList()[i]);
-		_nmap.insert(import->channelList()[i]->number(), import->channelList()[i]);
+		processChannel(import->channelList()[i]);
 	}
 
 	_name = import->name();

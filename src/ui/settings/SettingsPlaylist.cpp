@@ -1,24 +1,28 @@
 /****************************************************************************
-* SettingsPlaylist.cpp: Common playlist selector widget
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
+
+#include <QtGui/QFileDialog>
 
 #include "SettingsPlaylist.h"
 #include "ui_SettingsPlaylist.h"
 
-#include <QtGui/QFileDialog>
-
 #include "core/Settings.h"
+#include "ui/playlist/PlaylistImportWeb.h"
 
 SettingsPlaylist::SettingsPlaylist(QWidget *parent)
 	: QWidget(parent),
@@ -27,6 +31,7 @@ SettingsPlaylist::SettingsPlaylist(QWidget *parent)
 	ui->setupUi(this);
 
 	connect(ui->browsePlaylistButton, SIGNAL(clicked()), this, SLOT(playlistBrowse()));
+	connect(ui->downloadButton, SIGNAL(clicked()), this, SLOT(playlistDownload()));
 	connect(ui->resetPlaylistButton, SIGNAL(clicked()), this, SLOT(playlistReset()));
 }
 
@@ -51,6 +56,8 @@ QString SettingsPlaylist::playlist() const
 {
 	if(ui->customPlaylistRadio->isChecked())
 		return ui->playlistLineEdit->text();
+	else if(ui->radioAmis->isChecked())
+		return Settings::PLAYLIST_AMIS;
 	else if(ui->radioSiol2->isChecked())
 		return Settings::PLAYLIST_SIOL_MPEG2;
 	else if(ui->radioSiol4->isChecked())
@@ -65,7 +72,10 @@ QString SettingsPlaylist::playlist() const
 
 void SettingsPlaylist::setPlaylist(const QString &playlist)
 {
-	if(playlist == Settings::PLAYLIST_SIOL_MPEG2) {
+	if(playlist == Settings::PLAYLIST_AMIS) {
+		ui->radioAmis->setChecked(true);
+		ui->playlistLineEdit->clear();
+	} else if(playlist == Settings::PLAYLIST_SIOL_MPEG2) {
 		ui->radioSiol2->setChecked(true);
 		ui->playlistLineEdit->clear();
 	} else if(playlist == Settings::PLAYLIST_SIOL_MPEG4) {
@@ -93,8 +103,20 @@ void SettingsPlaylist::playlistReset()
 
 void SettingsPlaylist::playlistBrowse()
 {
-	QString file = QFileDialog::getOpenFileName(this, tr("Open channel list file"),
+	QString file = QFileDialog::getOpenFileName(this, tr("Open channel list"),
 												QDir::homePath(),
 												tr("Tano TV channel list files(*.m3u)"));
 	ui->playlistLineEdit->setText(file);
+}
+
+void SettingsPlaylist::playlistDownload()
+{
+	PlaylistImportWeb web;
+	web.save();
+
+	if(web.playlist().isEmpty())
+		return;
+
+	ui->customPlaylistRadio->setChecked(true);
+	ui->playlistLineEdit->setText(web.playlist());
 }

@@ -366,10 +366,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open channel list file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -636,10 +632,6 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Import Sagem JS channel list file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export</source>
         <translation type="unfinished"></translation>
     </message>
@@ -656,10 +648,6 @@ You will lose any unsaved settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open channel list file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -669,10 +657,6 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>Download from Web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import Tano TV old channel list file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -697,6 +681,18 @@ You will lose any unsaved settings.</source>
     </message>
     <message>
         <source>Edit channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Sagem JS channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Tano TV old channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -733,6 +729,26 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh current playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;If you chose &apos;&apos;Refresh&apos;&apos;, your current channel numbers will remain the same. Only new channels will be added.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1281,15 +1297,27 @@ Then select your playlist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open channel list file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Default channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download from web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano will download the channel list to your desired location and automatically set it as custom channel list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

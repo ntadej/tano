@@ -42,7 +42,8 @@ public:
 	void setStandalone(const bool &standalone);
 
 public slots:
-	void open(const QString &playlist = 0);
+	void open(const QString &playlist = 0,
+			  const bool &refresh = false);
 
 protected:
 	void changeEvent(QEvent *e);

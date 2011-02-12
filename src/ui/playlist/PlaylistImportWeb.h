@@ -37,13 +37,18 @@ public:
 	PlaylistImportWeb(QWidget *parent = 0);
 	~PlaylistImportWeb();
 
+	void download();
+	void save();
+
 	QString playlist() const { return _playlist; }
+	bool refresh() const { return _refresh; }
 
 protected:
 	void changeEvent(QEvent *e);
 
 private slots:
 	void action(QAbstractButton *button);
+	void finish(const QString &playlist);
 	void getList(const int &id);
 	void readList(const QString &list);
 
@@ -57,6 +62,9 @@ private:
 
 	QStringList _playlistName;
 	QStringList _playlistUrl;
+
+	bool _refresh;
+	bool _save;
 };
 
 #endif // TANO_PLAYLISTIMPORTWEB_H_
