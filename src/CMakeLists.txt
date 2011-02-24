@@ -119,6 +119,7 @@ SET(Tano_Core_Srcs
 	core/Enums.cpp
 	core/GetFile.cpp
 	core/LocaleManager.cpp
+	core/Playlists.cpp
 	core/PluginsLoader.cpp
 	core/Print.cpp
 	core/RecorderController.cpp

@@ -49,6 +49,7 @@ SET(Tano_Recorder_Srcs
 	../src/core/Common.cpp
 	../src/core/ConsoleOutput.cpp
 	../src/core/Enums.cpp
+	../src/core/Playlists.cpp
 	../src/core/PluginsLoader.cpp
 	../src/core/Settings.cpp
 )

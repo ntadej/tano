@@ -64,5 +64,6 @@
         <file>icons/16x16/timer.png</file>
         <file>icons/24x24/export.png</file>
         <file>icons/128x128/vlc-qt.png</file>
+        <file>icons/24x24/new.png</file>
     </qresource>
 </RCC>

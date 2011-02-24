@@ -21,6 +21,7 @@
 #include "SettingsPlaylist.h"
 #include "ui_SettingsPlaylist.h"
 
+#include "core/Playlists.h"
 #include "core/Settings.h"
 #include "ui/playlist/PlaylistImportWeb.h"
 
@@ -56,39 +57,53 @@ QString SettingsPlaylist::playlist() const
 {
 	if(ui->customPlaylistRadio->isChecked())
 		return ui->playlistLineEdit->text();
-	else if(ui->radioAmis->isChecked())
-		return Settings::PLAYLIST_AMIS;
-	else if(ui->radioSiol2->isChecked())
-		return Settings::PLAYLIST_SIOL_MPEG2;
-	else if(ui->radioSiol4->isChecked())
-		return Settings::PLAYLIST_SIOL_MPEG4;
-	else if(ui->radioT2->isChecked())
-		return Settings::PLAYLIST_T2;
-	else if(ui->radioTus->isChecked())
-		return Settings::PLAYLIST_TUS;
+	// International
 	else if(ui->radioWorldTv->isChecked())
-		return Settings::PLAYLIST_WORLDTV;
+		return TanoPlaylists::International::WorldTv;
+	// Russia
+	else if(ui->radioDiselKrasnodar->isChecked())
+		return TanoPlaylists::Russia::DiselTvKrasnodar;
+	else if(ui->radioDiselRostov->isChecked())
+		return TanoPlaylists::Russia::DiselTvRostov;
+	// Slovenia
+	else if(ui->radioAmis->isChecked())
+		return TanoPlaylists::Slovenia::Amis;
+	else if(ui->radioSiol2->isChecked())
+		return TanoPlaylists::Slovenia::Siol2;
+	else if(ui->radioSiol4->isChecked())
+		return TanoPlaylists::Slovenia::Siol4;
+	else if(ui->radioT2->isChecked())
+		return TanoPlaylists::Slovenia::T2;
+	else if(ui->radioTus->isChecked())
+		return TanoPlaylists::Slovenia::Tus;
+
 }
 
 void SettingsPlaylist::setPlaylist(const QString &playlist)
 {
-	if(playlist == Settings::PLAYLIST_AMIS) {
+	if(playlist == TanoPlaylists::International::WorldTv) {
+		ui->radioWorldTv->setChecked(true);
+		ui->playlistLineEdit->clear();
+	} else if(playlist == TanoPlaylists::Russia::DiselTvKrasnodar) {
+		ui->radioDiselKrasnodar->setChecked(true);
+		ui->playlistLineEdit->clear();
+	}  else if(playlist == TanoPlaylists::Russia::DiselTvRostov) {
+		ui->radioDiselRostov->setChecked(true);
+		ui->playlistLineEdit->clear();
+	}  else if(playlist == TanoPlaylists::Slovenia::Amis) {
 		ui->radioAmis->setChecked(true);
 		ui->playlistLineEdit->clear();
-	} else if(playlist == Settings::PLAYLIST_SIOL_MPEG2) {
+	} else if(playlist == TanoPlaylists::Slovenia::Siol2) {
 		ui->radioSiol2->setChecked(true);
 		ui->playlistLineEdit->clear();
-	} else if(playlist == Settings::PLAYLIST_SIOL_MPEG4) {
+	} else if(playlist == TanoPlaylists::Slovenia::Siol4) {
 		ui->radioSiol4->setChecked(true);
 		ui->playlistLineEdit->clear();
-	} else if(playlist == Settings::PLAYLIST_T2) {
+	} else if(playlist == TanoPlaylists::Slovenia::T2) {
 		ui->radioT2->setChecked(true);
 		ui->playlistLineEdit->clear();
-	} else if(playlist == Settings::PLAYLIST_TUS) {
+	} else if(playlist == TanoPlaylists::Slovenia::Tus) {
 		ui->radioTus->setChecked(true);
-		ui->playlistLineEdit->clear();
-	} else if(playlist == Settings::PLAYLIST_WORLDTV) {
-		ui->radioWorldTv->setChecked(true);
 		ui->playlistLineEdit->clear();
 	} else {
 		ui->customPlaylistRadio->setChecked(true);

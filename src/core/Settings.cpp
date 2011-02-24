@@ -19,15 +19,8 @@
 #include <QtCore/QDir>
 
 #include "core/Common.h"
+#include "core/Playlists.h"
 #include "core/Settings.h"
-
-// Playlists
-const QString Settings::PLAYLIST_AMIS = "playlists/amis.m3u";
-const QString Settings::PLAYLIST_SIOL_MPEG2 = "playlists/siol-mpeg2.m3u";
-const QString Settings::PLAYLIST_SIOL_MPEG4 = "playlists/siol-mpeg4.m3u";
-const QString Settings::PLAYLIST_T2 = "playlists/t-2.m3u";
-const QString Settings::PLAYLIST_TUS = "playlists/tus.m3u";
-const QString Settings::PLAYLIST_WORLDTV = "playlists/worldtv.m3u";
 
 // Define defaults - General
 const bool Settings::DEFAULT_CONFIGURED = false;
@@ -35,7 +28,7 @@ const bool Settings::DEFAULT_SESSION_VOLUME = true;
 const bool Settings::DEFAULT_SESSION_AUTOPLAY = true;
 const QString Settings::DEFAULT_LANGUAGE = "";
 // Channels
-const QString Settings::DEFAULT_PLAYLIST = Settings::PLAYLIST_SIOL_MPEG4;
+const QString Settings::DEFAULT_PLAYLIST = "playlists/sl/siol-mpeg4.m3u";
 // GUI - start
 const bool Settings::DEFAULT_SPLASH = true;
 const bool Settings::DEFAULT_START_LITE = false;

@@ -102,6 +102,7 @@ void PlaylistEdit::createConnections()
 {
 	connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
 	connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(open()));
+	connect(ui->actionNew, SIGNAL(triggered()), this, SLOT(newPlaylist()));
 	connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
 	connect(ui->actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
 	connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
@@ -170,6 +171,39 @@ void PlaylistEdit::open(const QString &playlist,
 	ui->playlist->open(p, refresh);
 	ui->editName->setText(ui->playlist->name());
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+}
+
+void PlaylistEdit::newPlaylist()
+{
+	if(ui->playlist->treeWidget()->topLevelItemCount() == 0)
+		return;
+
+	int ret;
+	ret = QMessageBox::warning(this, tr("Playlist Editor"),
+								   tr("Do you want to create new playlist?\nYou will lose any unsaved changes."),
+								   QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel,
+								   QMessageBox::Discard);
+
+	switch (ret) {
+		case QMessageBox::Save:
+			ui->actionSave->trigger();
+
+			ui->editWidget->setEnabled(false);
+			ui->playlist->clear();
+			ui->editName->setText(tr("New playlist"));
+			ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+			break;
+		case QMessageBox::Discard:
+			ui->editWidget->setEnabled(false);
+			ui->playlist->clear();
+			ui->editName->setText(tr("New playlist"));
+			ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+			break;
+		case QMessageBox::Cancel:
+			break;
+		default:
+			break;
+	}
 }
 
 void PlaylistEdit::deleteItem()
@@ -279,7 +313,7 @@ void PlaylistEdit::exit()
 
 	int ret;
 	ret = QMessageBox::warning(this, tr("Playlist Editor"),
-								   tr("Do you want close the editor?\nYou will lose any unsaved settings."),
+								   tr("Do you want close the editor?\nYou will lose any unsaved changes."),
 								   QMessageBox::Save | QMessageBox::Close | QMessageBox::Cancel,
 								   QMessageBox::Close);
 

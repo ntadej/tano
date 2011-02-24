@@ -155,6 +155,10 @@ void PlaylistHandler::processChannel(Channel *channel)
 
 	_channels << channel;
 
+	if(channel->number() == 0) {
+		channel->setNumber(1);
+	}
+
 	if(_channelNums.contains(channel->number())) {
 		for(int i = channel->number(); i < 1000; i++) {
 			if(!_channelNums.contains(i)) {
@@ -281,10 +285,14 @@ void PlaylistHandler::moveDown(QTreeWidgetItem *channel)
 		}
 	}
 
-	if(channelRead(tmp)->number() == currentNum+1) {
-		processNewNum(tmp, tmpNum);
-		processNewNum(channel, currentNum+1);
-		processNewNum(tmp, currentNum);
+	if(tmp) {
+		if(channelRead(tmp)->number() == currentNum+1) {
+			processNewNum(tmp, tmpNum);
+			processNewNum(channel, currentNum+1);
+			processNewNum(tmp, currentNum);
+		} else {
+			processNewNum(channel, currentNum+1);
+		}
 	} else {
 		processNewNum(channel, currentNum+1);
 	}

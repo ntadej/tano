@@ -16,29 +16,21 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#include "core/Playlists.h"
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
-
-namespace Tano
+namespace TanoPlaylists
 {
-	// Version
-	QString version();
-	QString changeset();
+	// International
+	const QString International::WorldTv = "playlists/int/worldtv.m3u";
 
-	// Build system information
-	QString buildHostname();
-	QString buildSystem();
+	// Russia
+	const QString Russia::DiselTvKrasnodar = "playlists/ru/diseltv-krasnodar.m3u";
+	const QString Russia::DiselTvRostov = "playlists/ru/diseltv-rostov.m3u";
 
-	// Resources locators
-	QString locateResource(const QString &file);
-	QString recorder();
-
-	// Backend settings
-	QStringList vlcQtArgs();
-	QStringList vlcQtRecorderArgs(const QString &file);
-};
-
-#endif // TANO_COMMON_H_
+	// Slovenia
+	const QString Slovenia::Amis = "playlists/sl/amis.m3u";
+	const QString Slovenia::Siol2 = "playlists/sl/siol-mpeg2.m3u";
+	const QString Slovenia::Siol4 = "playlists/sl/siol-mpeg4.m3u";
+	const QString Slovenia::T2 = "playlists/sl/t-2.m3u";
+	const QString Slovenia::Tus = "playlists/sl/tus.m3u";
+}

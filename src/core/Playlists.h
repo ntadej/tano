@@ -16,29 +16,35 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_PLAYLISTS_H_
+#define TANO_PLAYLISTS_H_
 
 #include <QtCore/QString>
-#include <QtCore/QStringList>
 
-namespace Tano
+namespace TanoPlaylists
 {
-	// Version
-	QString version();
-	QString changeset();
+	// International
+	class International {
+	public:
+		static const QString WorldTv;
+	};
 
-	// Build system information
-	QString buildHostname();
-	QString buildSystem();
+	// Russia
+	class Russia {
+	public:
+		static const QString DiselTvKrasnodar;
+		static const QString DiselTvRostov;
+	};
 
-	// Resources locators
-	QString locateResource(const QString &file);
-	QString recorder();
-
-	// Backend settings
-	QStringList vlcQtArgs();
-	QStringList vlcQtRecorderArgs(const QString &file);
+	// Slovenia
+	class Slovenia {
+	public:
+		static const QString Amis;
+		static const QString Siol2;
+		static const QString Siol4;
+		static const QString T2;
+		static const QString Tus;
+	};
 };
 
-#endif // TANO_COMMON_H_
+#endif // TANO_PLAYLISTS_H_

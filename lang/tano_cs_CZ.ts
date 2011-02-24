@@ -602,12 +602,6 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation>Editor seznamu skladeb</translation>
     </message>
     <message>
-        <source>Do you want close the editor?
-You will lose any unsaved settings.</source>
-        <translation>Chcete zavřít editor?
-Ztratíte tím všechna neuložená nastavení.</translation>
-    </message>
-    <message>
         <source>New channel from scan</source>
         <translation>Nový program z prohledání</translation>
     </message>
@@ -701,6 +695,20 @@ Ztratíte tím všechna neuložená nastavení.</translation>
     </message>
     <message>
         <source>Import Tano TV old channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to create new playlist?
+You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1329,6 +1337,10 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Russia&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

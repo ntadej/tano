@@ -42,6 +42,7 @@ public:
 	void setStandalone(const bool &standalone);
 
 public slots:
+	void newPlaylist();
 	void open(const QString &playlist = 0,
 			  const bool &refresh = false);
 

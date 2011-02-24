@@ -165,6 +165,27 @@
         </property>
        </widget>
       </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="labelRussia">
+        <property name="text">
+         <string>&lt;b&gt;Russia&lt;/b&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QRadioButton" name="radioDiselKrasnodar">
+        <property name="text">
+         <string notr="true">Disel TV - Krasnodar</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QRadioButton" name="radioDiselRostov">
+        <property name="text">
+         <string notr="true">Disel TV - Rostov</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>

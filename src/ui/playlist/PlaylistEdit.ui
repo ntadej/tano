@@ -82,6 +82,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionNew"/>
    <addaction name="actionOpen"/>
    <addaction name="actionSave"/>
    <addaction name="actionPrint"/>
@@ -563,6 +564,15 @@
    </property>
    <property name="text">
     <string>Download from Web</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/new.png</normaloff>:/icons/24x24/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New playlist</string>
    </property>
   </action>
  </widget>

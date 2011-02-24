@@ -1,0 +1,91 @@
+#EXTM3U
+#EXTNAME:Disel TV - Krasnodar
+
+#EXTINF:0,1 kanal
+udp://@224.1.1.9:6000
+#EXTINF:0,Россия 1
+udp://@224.1.1.12:6000
+#EXTINF:0,Россия К
+udp://@224.1.1.120:6000
+#EXTINF:0,Россия 24
+udp://@224.1.1.52:6000
+#EXTINF:0,Бибигон
+udp://@224.1.1.66:6000
+#EXTINF:0,Россия 2
+udp://@224.1.1.125:6000
+#EXTINF:0,НТВ
+udp://@224.1.1.121:6000
+#EXTINF:0,5 kanal
+udp://@224.1.1.53:6000
+#EXTINF:0,TNT
+udp://@224.1.1.126:6000
+#EXTINF:0,CTC
+udp://@224.1.1.10:6000
+#EXTINF:0,Domashni
+udp://@224.1.1.123:6000
+#EXTINF:0,REN
+udp://@224.1.1.127:6000
+#EXTINF:0,DTV
+udp://@224.1.1.161:6000
+#EXTINF:0,TVC
+udp://@224.1.1.7:6000
+#EXTINF:0,NTK
+udp://@224.1.1.11:6000
+#EXTINF:0,TV3
+udp://@224.1.1.122:6000
+#EXTINF:0,TV 21
+udp://@224.1.1.54:6000
+#EXTINF:0,TV1000
+udp://@224.1.1.40:6000
+#EXTINF:0,Animal Planet
+udp://@224.1.1.180:6000
+#EXTINF:0,Explorer
+udp://@224.1.1.41:6000
+#EXTINF:0,History
+udp://@224.1.1.42:6000
+#EXTINF:0,Discovery Channel
+udp://@224.1.1.2:6000
+#EXTINF:0,TRAVEL
+udp://@224.1.1.20:6000
+#EXTINF:0,MCM TOP
+udp://@224.1.1.30:6000
+#EXTINF:0,MUZ TV
+udp://@224.1.1.124:6000
+#EXTINF:0,Music Box RU
+udp://@224.1.1.62:6000
+#EXTINF:0,A-One
+udp://@224.1.1.50:6000
+#EXTINF:0,Gameland
+udp://@224.1.1.240:6000
+#EXTINF:0,Первый игровой
+udp://@224.1.1.234:6000
+#EXTINF:0,Krasnodar+
+udp://@224.1.1.8:6000
+#EXTINF:0,EuroNews
+udp://@224.1.1.21:6000
+#EXTINF:0,Эксперт ТВ
+udp://@224.1.1.232:6000
+#EXTINF:0,RBC
+udp://@224.1.1.26:6000
+#EXTINF:0,PRO Деньги
+udp://@224.1.1.231:6000
+#EXTINF:0,Russia Today
+udp://@224.1.1.48:6000
+#EXTINF:0,Мир
+udp://@224.1.1.67:6000
+#EXTINF:0,Zvezda
+udp://@224.1.1.51:6000
+#EXTINF:0,JETIX
+udp://@224.1.1.3:6000
+#EXTINF:0,2x2
+udp://@224.1.1.233:6000
+#EXTINF:0,Humor TV
+udp://@224.1.1.64:6000
+#EXTINF:0,TDK
+udp://@224.1.1.24:6000
+#EXTINF:0,Знание
+udp://@224.1.1.6:6000
+#EXTINF:0,SGU TV
+udp://@224.1.1.5:6000
+#EXTINF:0,7 TV
+udp://@224.1.1.56:6000
