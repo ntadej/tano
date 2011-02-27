@@ -55,7 +55,6 @@ private slots:
 private:
 	void createActions();
 	void loadLocale();
-	void loadPlugins();
 	void read();
 
 	Ui::SettingsEdit *ui;

@@ -48,28 +48,13 @@ Tvoja različica VLC-Qt %4
     </message>
     <message>
         <location filename="../src/ui/dialogs/AboutDialog.ui" line="262"/>
-        <source>Plugins</source>
-        <translation>Vtičniki</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="268"/>
-        <source>These plugins are currently available for Tano:</source>
-        <translation>Trenutno so za Tano na voljo sledeči vtičniki:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="291"/>
         <source>Authors</source>
         <translation>Avtorji</translation>
     </message>
     <message>
-        <location filename="../src/ui/dialogs/AboutDialog.ui" line="305"/>
+        <location filename="../src/ui/dialogs/AboutDialog.ui" line="276"/>
         <source>License</source>
         <translation>Licenca</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/dialogs/AboutDialog.cpp" line="55"/>
-        <source>Recorder Plugins</source>
-        <translation>Vtičniki za Snemalnik</translation>
     </message>
 </context>
 <context>
@@ -899,6 +884,11 @@ You will lose any unsaved changes.</source>
 Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="390"/>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="182"/>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="315"/>
         <source>Playlist Editor</source>
@@ -910,11 +900,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
 You will lose any unsaved changes.</source>
         <translation>Ali želiš ustvariti nov seznam programov?
 Neshranjene spremembe ne bodo uveljavljene.</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="390"/>
-        <source>New channel from scan</source>
-        <translation>Nov program iz iskanja</translation>
     </message>
 </context>
 <context>
@@ -1266,41 +1251,41 @@ Nato izberi želen seznam programov.</translation>
 <context>
     <name>Recorder</name>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="108"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="107"/>
         <source>Open directory</source>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="139"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="138"/>
         <source>No timer - press button to stop.</source>
         <translation>Ni časovnika - pritisni gumb in ustavi.</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="142"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="141"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="61"/>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="153"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="152"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="123"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="122"/>
         <source>Cannot write to %1.</source>
         <translation>Ne morem pisati v %1.</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="129"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="128"/>
         <source>Channel is not selected!</source>
         <translation>Program ni izbran!</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="14"/>
         <location filename="../src/ui/recorder/Recorder.ui" line="24"/>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="122"/>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="128"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="121"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="127"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
@@ -1586,27 +1571,12 @@ Nato izberi želen seznam programov.</translation>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="701"/>
-        <source>Recorder backend</source>
-        <translation>Hrbtenica snemalnika</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="707"/>
-        <source>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Prosim, izberi vtičnik snemalnika s spodnjega seznama:&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="715"/>
-        <source>Integrated (default)</source>
-        <translation>Integriran (privzeto)</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="45"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="44"/>
         <source>You are using Tano version:</source>
         <translation>Uporabljaš Tano različice:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="231"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="217"/>
         <source>Open directory</source>
         <translation>Odpri imenik</translation>
     </message>

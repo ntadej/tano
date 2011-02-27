@@ -387,7 +387,7 @@ void PlaylistEdit::checkCurrentIp()
 		if(newChannel) {
 			if(ConsoleOutput::debug())
 				qDebug() << "Scanning:" << "Channel Found";
-			addItem(tr("New channel from scan"), currentIp());
+			addItem(tr("New channel from scan %1").arg(currentIp()), currentIp());
 		}
 	}
 

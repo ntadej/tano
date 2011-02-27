@@ -41,18 +41,6 @@ Your VLC-Qt version: %4
 </source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Plugins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>These plugins are currently available for Tano:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recorder Plugins</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>ConclusionPage</name>
@@ -595,10 +583,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New channel from scan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -702,6 +686,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1220,19 +1208,7 @@ Then select your playlist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Recorder backend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>You are using Tano version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Integrated (default)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

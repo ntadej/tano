@@ -42,7 +42,6 @@ public slots:
 	QDBusPendingReply<> record(const QString &channel,
 							   const QString &url,
 							   const QString &path);
-	QDBusPendingReply<> refreshBackend();
 	QDBusPendingReply<> refreshTimers();
 	QDBusPendingReply<> stop();
 

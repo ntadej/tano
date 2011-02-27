@@ -693,34 +693,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="recorderPluginBox">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="title">
-          <string>Recorder backend</string>
-         </property>
-         <layout class="QVBoxLayout" name="layoutRecorderPluginBox">
-          <item>
-           <widget class="QLabel" name="labelRecorderPlugin">
-            <property name="text">
-             <string>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="recorderPluginComboBox">
-            <item>
-             <property name="text">
-              <string>Integrated (default)</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
         <spacer name="recorderSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -804,22 +776,6 @@
     <hint type="destinationlabel">
      <x>402</x>
      <y>328</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>enableRecorderCheck</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>recorderPluginBox</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>203</x>
-     <y>15</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>203</x>
-     <y>25</y>
     </hint>
    </hints>
   </connection>

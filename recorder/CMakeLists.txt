@@ -50,7 +50,6 @@ SET(Tano_Recorder_Srcs
 	../src/core/ConsoleOutput.cpp
 	../src/core/Enums.cpp
 	../src/core/Playlists.cpp
-	../src/core/PluginsLoader.cpp
 	../src/core/Settings.cpp
 )
 
@@ -129,8 +128,3 @@ TARGET_LINK_LIBRARIES(tano-recorder ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
 INSTALL(TARGETS tano-recorder
 	RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
 )
-
-###############################
-# Compile and install plugins #
-###############################
-ADD_SUBDIRECTORY(plugins)

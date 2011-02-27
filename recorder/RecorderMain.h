@@ -37,7 +37,6 @@ public:
 				const QString &url,
 				const QString &path) { _core->record(channel, url, path); }
 	void record(Timer *timer) { _core->record(timer); }
-	void refreshBackend() { _core->refreshBackend(); }
 	void refreshTimers() { }
 	void stop() { _core->stop(); }
 

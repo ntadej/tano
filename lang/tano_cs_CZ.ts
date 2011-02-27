@@ -46,18 +46,6 @@ Your VLC-Qt version: %4
 Verze vašeho Qt: %3
 Verze vašeho VLC-Qt: %4</translation>
     </message>
-    <message>
-        <source>Plugins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>These plugins are currently available for Tano:</source>
-        <translation type="unfinished">Pro Tano jsou nyní dostupné tyto přídavné moduly:</translation>
-    </message>
-    <message>
-        <source>Recorder Plugins</source>
-        <translation type="unfinished">Přídavné moduly pro nahrávání</translation>
-    </message>
 </context>
 <context>
     <name>ConclusionPage</name>
@@ -602,10 +590,6 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation>Editor seznamu skladeb</translation>
     </message>
     <message>
-        <source>New channel from scan</source>
-        <translation>Nový program z prohledání</translation>
-    </message>
-    <message>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Skupiny můžete oddělit čárkou.&lt;br&gt;Uložena je při vyvedení do formátu seznamu programů Sagem Js jen první .&lt;/i&gt;</translation>
     </message>
@@ -709,6 +693,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1230,20 +1218,8 @@ Then select your playlist.</source>
         <translation>Nastavit znovu</translation>
     </message>
     <message>
-        <source>Recorder backend</source>
-        <translation>Jádro pro nahrávání</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Please select a recorder plugin from the list below:&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Vyberte, prosím, přídavný modul pro nahrávání ze seznamu níže:&lt;/i&gt;</translation>
-    </message>
-    <message>
         <source>You are using Tano version:</source>
         <translation>Používáte verzi programu Tano:</translation>
-    </message>
-    <message>
-        <source>Integrated (default)</source>
-        <translation>Začleněný (výchozí)</translation>
     </message>
     <message>
         <source>Default audio language:</source>

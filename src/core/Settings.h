@@ -104,9 +104,6 @@ public:
 	QString recorderDirectory() const { return _recorderDirectory; }
 	void setRecorderDirectory(const QString &s) { _recorderDirectory = s; }
 	static const QString DEFAULT_RECORDER_DIRECTORY;
-	QString recorderBackend() const { return _recorderBackend; }
-	void setRecorderBackend(const QString &s) { _recorderBackend = s; }
-	static const QString DEFAULT_RECORDER_BACKEND;
 
 	// Session
 	int channel() const { return _channel; }

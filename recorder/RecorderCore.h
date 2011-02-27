@@ -26,7 +26,6 @@
 class VlcInstance;
 class VlcMediaPlayer;
 
-class RecorderPlugin;
 class Timer;
 
 class RecorderCore : public QObject
@@ -43,7 +42,6 @@ public:
 				const QString &url,
 				const QString &path);
 	void record(Timer *timer);
-	void refreshBackend();
 	void stop();
 
 signals:
@@ -53,7 +51,6 @@ private slots:
 	void time();
 
 private:
-	bool _coreBackend;
 	bool _isRecording;
 	bool _isTimer;
 
@@ -61,7 +58,6 @@ private:
 
 	VlcInstance *_instance;
 	VlcMediaPlayer *_player;
-	RecorderPlugin *_plugin;
 
 	int _time;
 	QTimer *_timer;

@@ -28,7 +28,6 @@
 #include "ui_AboutDialog.h"
 
 #include "core/Common.h"
-#include "core/PluginsLoader.h"
 
 AboutDialog::AboutDialog(const QString &type,
 						 QWidget *parent)
@@ -48,21 +47,6 @@ AboutDialog::AboutDialog(const QString &type,
 		return;
 
 	ui->authors->setPlainText(QString::fromUtf8(file.readAll()));
-
-	_icon = QIcon(":/icons/24x24/plugin.png");
-
-	_recorder = new QTreeWidgetItem(ui->pluginsWidget);
-	_recorder->setText(0, tr("Recorder Plugins"));
-	ui->pluginsWidget->setItemExpanded(_recorder, true);
-
-	QFont font = _recorder->font(0);
-	font.setBold(true);
-	_recorder->setFont(0, font);
-
-	PluginsLoader *loader = new PluginsLoader();
-	for(int i = 0; i < loader->recorderPlugin().size(); i++)
-		populatePluginsTreeWidget(loader->recorderFile()[i], loader->recorderName()[i], "Recorder");
-	delete loader;
 }
 
 AboutDialog::~AboutDialog()
@@ -80,15 +64,4 @@ void AboutDialog::changeEvent(QEvent *e)
 		default:
 			break;
 	}
-}
-
-void AboutDialog::populatePluginsTreeWidget(const QString &file,
-											const QString &name,
-											const QString &type)
-{
-	QTreeWidgetItem *pluginItem;
-	if(type == "Recorder")
-		pluginItem = new QTreeWidgetItem(_recorder);
-	pluginItem->setText(0, name + " (" + file + ")");
-	pluginItem->setIcon(0, _icon);
 }

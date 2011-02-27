@@ -51,11 +51,6 @@ QDBusPendingReply<> RecorderController::record(const QString &channel,
 	return asyncCall(QLatin1String("record"), channel, url, path);
 }
 
-QDBusPendingReply<> RecorderController::refreshBackend()
-{
-	return asyncCall(QLatin1String("refreshBackend"));
-}
-
 QDBusPendingReply<> RecorderController::refreshTimers()
 {
 	return asyncCall(QLatin1String("refreshTimer"));

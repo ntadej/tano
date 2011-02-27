@@ -39,7 +39,6 @@ public slots:
 				const QString &url,
 				const QString &path) { _main->record(channel, url, path); }
 	bool recording() const { return _main->isRecording(); }
-	void refreshBackend() { _main->refreshBackend(); }
 	void refreshTimers() { _main->refreshTimers(); }
 	void stop() { _main->stop(); }
 	bool timer() const { return _main->isTimer(); }

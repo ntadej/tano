@@ -72,7 +72,6 @@ void Recorder::createSettings()
 {
 	Settings *settings = new Settings(this);
 	ui->fileEdit->setText(settings->recorderDirectory());
-	_controller->refreshBackend();
 	delete settings;
 }
 

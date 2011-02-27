@@ -26,7 +26,6 @@
 
 #include "core/Common.h"
 #include "core/LocaleManager.h"
-#include "core/PluginsLoader.h"
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
 
@@ -47,7 +46,6 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
 	ui->labelVlcVersion->setText(ui->labelVlcVersion->text()+" <b>"+VlcInstance::version()+"</b>");
 
 	loadLocale();
-	loadPlugins();
 	read();
 }
 
@@ -128,10 +126,6 @@ void SettingsEdit::apply()
 	// Recorder
 	_settings->setRecorderEnabled(ui->enableRecorderCheck->isChecked());
 	_settings->setRecorderDirectory(ui->recorderDirectoryLineEdit->text());
-	if(ui->recorderPluginComboBox->currentIndex() == 0)
-		_settings->setRecorderBackend(Settings::DEFAULT_RECORDER_BACKEND);
-	else
-		_settings->setRecorderBackend(ui->recorderPluginComboBox->currentText());
 
 	_settings->writeSettings();
 
@@ -206,14 +200,6 @@ void SettingsEdit::read()
 	// Recorder
 	ui->enableRecorderCheck->setChecked(_settings->recorderEnabled());
 	ui->recorderDirectoryLineEdit->setText(_settings->recorderDirectory());
-	if(_settings->recorderBackend() == Settings::DEFAULT_RECORDER_BACKEND) {
-		ui->recorderPluginComboBox->setCurrentIndex(0);
-	} else for(int i = 1; i < ui->recorderPluginComboBox->count(); i++) {
-		if(ui->recorderPluginComboBox->itemText(i) == _settings->recorderBackend()) {
-			ui->recorderPluginComboBox->setCurrentIndex(i);
-			break;
-		}
-	}
 }
 
 void SettingsEdit::recorderDirectoryReset()
@@ -239,12 +225,4 @@ void SettingsEdit::loadLocale()
 
 	for(int i = 0; i < _locale.size(); i++)
 		ui->languageComboBox->addItem(LocaleManager::language(_locale[i]));
-}
-
-void SettingsEdit::loadPlugins()
-{
-	PluginsLoader *loader = new PluginsLoader();
-	for(int i = 0; i < loader->recorderPlugin().size(); ++i)
-		ui->recorderPluginComboBox->addItem(loader->recorderName()[i]);
-	delete loader;
 }
