@@ -123,6 +123,8 @@ ADD_SUBDIRECTORY(editor)
 SET(Tano_Files
 	LICENSE.GPL
 	data/logo/64x64/logo.png
+	data/logo/64x64/logo-editor.png
+	data/logo/64x64/logo-recorder.png
 )
 
 FILE(GLOB Tano_Playlists_Int ${CMAKE_SOURCE_DIR}/playlists/int/*.m3u)
