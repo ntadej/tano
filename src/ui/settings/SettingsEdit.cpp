@@ -105,6 +105,7 @@ void SettingsEdit::apply()
 
 	// GUI
 	_settings->setOsd(ui->osdCheck->isChecked());
+	_settings->setPlaylistOsd(ui->playlistOsdCheck->isChecked());
 	_settings->setHideToTray(ui->trayCheck->isChecked());
 	if(ui->radioWheelVolume->isChecked())
 		_settings->setMouseWheel("volume");
@@ -163,6 +164,7 @@ void SettingsEdit::read()
 
 	// GUI
 	ui->osdCheck->setChecked(_settings->osd());
+	ui->playlistOsdCheck->setChecked(_settings->playlistOsd());
 	ui->trayCheck->setChecked(_settings->hideToTray());
 	if(_settings->mouseWheel() == "volume")
 		ui->radioWheelVolume->setChecked(true);

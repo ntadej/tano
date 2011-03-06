@@ -384,6 +384,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Enable Info panel in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1229,6 +1233,10 @@ Then select your playlist.</source>
         <source>Open directory</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -1329,10 +1337,6 @@ Then select your playlist.</source>
     <message>
         <source>Key</source>
         <translation>Klávesa</translation>
-    </message>
-    <message>
-        <source>Play</source>
-        <translation>Přehrát</translation>
     </message>
     <message>
         <source>Stop</source>
@@ -1441,6 +1445,14 @@ Then select your playlist.</source>
     <message>
         <source>Set</source>
         <translation>Nastavit</translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1578,6 +1590,10 @@ Vaše změny nebudou použity.</translation>
     <message>
         <source>Weekly</source>
         <translation>Týdně</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

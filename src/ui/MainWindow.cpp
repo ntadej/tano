@@ -170,6 +170,9 @@ void MainWindow::createSettings()
 	ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
 
 	_osdEnabled = settings->osd();
+	ui->actionPlaylistFullscreen->setEnabled(_osdEnabled);
+        ui->actionPlaylistFullscreen->setChecked(settings->playlistOsd());
+        showPlaylistFullscreen(settings->playlistOsd());
 	_wheelType = settings->mouseWheel();
 	mouseWheel();
 
@@ -235,6 +238,7 @@ void MainWindow::createConnections()
 	connect(ui->actionTop, SIGNAL(triggered()), this, SLOT(top()));
 	connect(ui->actionLite, SIGNAL(triggered()), this, SLOT(lite()));
 	connect(ui->actionFullscreen, SIGNAL(toggled(bool)), this, SLOT(fullscreen(bool)));
+	connect(ui->actionPlaylistFullscreen, SIGNAL(toggled(bool)), this, SLOT(showPlaylistFullscreen(bool)));
 
 	connect(ui->actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
 	connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
@@ -258,6 +262,8 @@ void MainWindow::createConnections()
 	connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), this, SLOT(showOsd(QPoint)));
 	connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), ui->osdWidget, SLOT(show()));
 	connect(ui->videoWidget, SIGNAL(mouseHide()), ui->osdWidget, SLOT(hide()));
+	connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), ui->infoWidget, SLOT(show()));
+	connect(ui->videoWidget, SIGNAL(mouseHide()), ui->infoWidget, SLOT(hide()));
 
 	connect(_epg, SIGNAL(epgCurrent(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
 	connect(_epg, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(EpgDayList, Tano::Id)));
@@ -334,6 +340,7 @@ void MainWindow::createShortcuts()
 			 << ui->actionTop
 			 << ui->actionLite
 			 << ui->actionTray
+			 << ui->actionPlaylistFullscreen
 			 << _menuTrackAudio->actionNext()
 			 << _menuTrackVideo->actionNext()
 			 << _menuTrackSubtitles->actionNext()
@@ -649,14 +656,25 @@ void MainWindow::fullscreen(const bool &on)
 		return;
 
 	if(on) {
-		ui->osdWidget->resize(2*_desktopWidth/3,ui->osdWidget->height());
+		ui->osdWidget->resize(2*_desktopWidth/3, ui->osdWidget->height());
 		ui->osdWidget->setFloating(true);
-		ui->osdWidget->move(_desktopWidth/6, _desktopHeight-ui->osdWidget->height());
+		ui->osdWidget->move(_desktopWidth/6, _desktopHeight - ui->osdWidget->height());
 		ui->osdWidget->show();
 		ui->osdWidget->setWindowFlags(Qt::ToolTip);
+
+		if(_playlistFullscreen) {
+			ui->infoWidget->resize(ui->infoWidget->width(), _desktopHeight - 3*ui->osdWidget->height());
+			ui->infoWidget->setFloating(true);
+			ui->infoWidget->move(_desktopWidth - ui->infoWidget->width(), ui->osdWidget->height());
+			ui->infoWidget->show();
+			ui->infoWidget->setWindowFlags(Qt::ToolTip);
+		}
 	} else {
 		ui->osdWidget->setFloating(false);
 		ui->osdWidget->show();
+
+		ui->infoWidget->setFloating(false);
+		ui->infoWidget->show();
 	}
 }
 
@@ -667,8 +685,30 @@ void MainWindow::showOsd(const QPoint &pos)
 	   (pos.y() < ui->osdWidget->pos().y()+ui->osdWidget->height()) &&
 	   (pos.y() > ui->osdWidget->pos().y())) {
 		ui->videoWidget->disableMouseHide();
+	} else if(_playlistFullscreen &&
+			  ((pos.x() < ui->infoWidget->pos().x()+ui->infoWidget->width()) &&
+			  (pos.x() > ui->infoWidget->pos().x()) &&
+			  (pos.y() < ui->infoWidget->pos().y()+ui->infoWidget->height()) &&
+			  (pos.y() > ui->infoWidget->pos().y()))) {
+		ui->videoWidget->disableMouseHide();
 	} else {
 		ui->videoWidget->enableMouseHide();
+	}
+}
+
+void MainWindow::showPlaylistFullscreen(const bool &on)
+{
+	_playlistFullscreen = on;
+
+	if(ui->actionFullscreen->isChecked() && on) {
+		ui->infoWidget->resize(ui->infoWidget->width(), _desktopHeight - 3*ui->osdWidget->height());
+		ui->infoWidget->setFloating(true);
+		ui->infoWidget->move(_desktopWidth - ui->infoWidget->width(), ui->osdWidget->height());
+		ui->infoWidget->show();
+		ui->infoWidget->setWindowFlags(Qt::ToolTip);
+	} else {
+		ui->infoWidget->setFloating(false);
+		ui->infoWidget->show();
 	}
 }
 

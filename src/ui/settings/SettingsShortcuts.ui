@@ -122,17 +122,22 @@
      </row>
      <row>
       <property name="text">
-       <string/>
+       <string notr="true"/>
       </property>
      </row>
      <row>
       <property name="text">
-       <string/>
+       <string notr="true"/>
       </property>
      </row>
      <row>
       <property name="text">
-       <string/>
+       <string notr="true"/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string notr="true"/>
       </property>
      </row>
      <row>
@@ -162,7 +167,7 @@
      </column>
      <item row="0" column="0">
       <property name="text">
-       <string>Play</string>
+       <string>Play / Pause</string>
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -170,7 +175,7 @@
      </item>
      <item row="0" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="1" column="0">
@@ -183,7 +188,7 @@
      </item>
      <item row="1" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="2" column="0">
@@ -196,7 +201,7 @@
      </item>
      <item row="2" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="3" column="0">
@@ -209,7 +214,7 @@
      </item>
      <item row="3" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="4" column="0">
@@ -222,7 +227,7 @@
      </item>
      <item row="4" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="5" column="0">
@@ -232,7 +237,7 @@
      </item>
      <item row="5" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="6" column="0">
@@ -242,7 +247,7 @@
      </item>
      <item row="6" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="7" column="0">
@@ -255,7 +260,7 @@
      </item>
      <item row="7" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="8" column="0">
@@ -268,7 +273,7 @@
      </item>
      <item row="8" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="9" column="0">
@@ -281,7 +286,7 @@
      </item>
      <item row="9" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="10" column="0">
@@ -294,7 +299,7 @@
      </item>
      <item row="10" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="11" column="0">
@@ -307,7 +312,7 @@
      </item>
      <item row="11" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="12" column="0">
@@ -320,7 +325,7 @@
      </item>
      <item row="12" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="13" column="0">
@@ -333,7 +338,7 @@
      </item>
      <item row="13" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="14" column="0">
@@ -346,7 +351,7 @@
      </item>
      <item row="14" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="15" column="0">
@@ -359,7 +364,7 @@
      </item>
      <item row="15" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="16" column="0">
@@ -372,7 +377,7 @@
      </item>
      <item row="16" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="17" column="0">
@@ -385,7 +390,7 @@
      </item>
      <item row="17" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="18" column="0">
@@ -398,52 +403,77 @@
      </item>
      <item row="18" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="19" column="0">
       <property name="text">
-       <string>Next audio track</string>
+       <string>Enable Info OSD in Fullscreen mode</string>
+      </property>
+     </item>
+     <item row="19" column="1">
+      <property name="text">
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="20" column="0">
       <property name="text">
-       <string>Next video track</string>
+       <string>Next audio track</string>
+      </property>
+     </item>
+     <item row="20" column="1">
+      <property name="text">
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="21" column="0">
       <property name="text">
-       <string>Next subtitle track</string>
+       <string>Next video track</string>
+      </property>
+     </item>
+     <item row="21" column="1">
+      <property name="text">
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="22" column="0">
       <property name="text">
-       <string>Next aspect ratio mode</string>
+       <string>Next subtitle track</string>
       </property>
      </item>
      <item row="22" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="23" column="0">
       <property name="text">
-       <string>Next crop mode</string>
+       <string>Next aspect ratio mode</string>
       </property>
      </item>
      <item row="23" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="24" column="0">
       <property name="text">
-       <string>Next deinterlace mode</string>
+       <string>Next crop mode</string>
       </property>
      </item>
      <item row="24" column="1">
       <property name="text">
-       <string notr="true"/>
+       <string notr="true">-</string>
+      </property>
+     </item>
+     <item row="25" column="0">
+      <property name="text">
+       <string>Next deinterlace mode</string>
+      </property>
+     </item>
+     <item row="25" column="1">
+      <property name="text">
+       <string notr="true">-</string>
       </property>
      </item>
     </widget>
@@ -513,7 +543,14 @@
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QtKeySequenceEdit" name="keyEditor" native="true"/>
+    <widget class="QtKeySequenceEdit" name="keyEditor" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

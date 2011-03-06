@@ -73,6 +73,9 @@ public:
 	bool osd() const { return _osd; }
 	void setOsd(const bool &b) { _osd = b; }
 	static const bool DEFAULT_OSD;
+	bool playlistOsd() const { return _playlistOsd; }
+	void setPlaylistOsd(const bool &b) { _playlistOsd = b; }
+	static const bool DEFAULT_PLAYLIST_OSD;
 	bool hideToTray() const { return _hideToTray; }
 	void setHideToTray(const bool &b) { _hideToTray = b; }
 	static const bool DEFAULT_HIDE_TO_TRAY;
@@ -134,6 +137,7 @@ private:
 
 	// GUI
 	bool _osd;
+	bool _playlistOsd;
 	bool _hideToTray;
 	QString _mouseWheel;
 	int _toolbarLook;

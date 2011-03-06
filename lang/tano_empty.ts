@@ -377,6 +377,10 @@ This will stop recording in progress.</source>
         <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Enable Info panel in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1219,6 +1223,10 @@ Then select your playlist.</source>
         <source>Open directory</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -1318,10 +1326,6 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1430,6 +1434,14 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable Info OSD in Fullscreen mode</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1564,6 +1576,10 @@ You changes will not be applied.</source>
     </message>
     <message>
         <source>Weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

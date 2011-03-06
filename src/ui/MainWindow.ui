@@ -93,8 +93,9 @@
     <addaction name="actionLite"/>
     <addaction name="actionFullscreen"/>
     <addaction name="separator"/>
-    <addaction name="actionInfoPanel"/>
     <addaction name="actionControls"/>
+    <addaction name="actionInfoPanel"/>
+    <addaction name="actionPlaylistFullscreen"/>
    </widget>
    <widget class="QMenu" name="menuAudio">
     <property name="title">
@@ -641,21 +642,6 @@
     <string>Edit Channels</string>
    </property>
   </action>
-  <action name="actionInfoPanel">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../data/icons.qrc">
-     <normaloff>:/icons/24x24/information.png</normaloff>:/icons/24x24/information.png</iconset>
-   </property>
-   <property name="text">
-    <string>Info panel</string>
-   </property>
-  </action>
   <action name="actionOpenUrl">
    <property name="icon">
     <iconset resource="../../data/icons.qrc">
@@ -861,6 +847,33 @@
    </property>
    <property name="text">
     <string>Schedule</string>
+   </property>
+  </action>
+  <action name="actionInfoPanel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/information.png</normaloff>:/icons/24x24/information.png</iconset>
+   </property>
+   <property name="text">
+    <string>Info panel</string>
+   </property>
+  </action>
+  <action name="actionPlaylistFullscreen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/fullscreen.png</normaloff>:/icons/24x24/fullscreen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Enable Info panel in Fullscreen mode</string>
    </property>
   </action>
  </widget>
@@ -1129,38 +1142,6 @@
     <hint type="sourcelabel">
      <x>318</x>
      <y>283</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionInfoPanel</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>infoWidget</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>821</x>
-     <y>326</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>infoWidget</sender>
-   <signal>visibilityChanged(bool)</signal>
-   <receiver>actionInfoPanel</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>821</x>
-     <y>326</y>
     </hint>
     <hint type="destinationlabel">
      <x>-1</x>

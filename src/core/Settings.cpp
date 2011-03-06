@@ -37,6 +37,7 @@ const bool Settings::DEFAULT_START_CONTROLS = true;
 const bool Settings::DEFAULT_START_INFO = true;
 // GUI
 const bool Settings::DEFAULT_OSD = true;
+const bool Settings::DEFAULT_PLAYLIST_OSD = false;
 const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
 const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
 const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonFollowStyle;
@@ -85,6 +86,7 @@ void Settings::writeSettings()
 	setValue("start/info", startInfo());
 
 	setValue("gui/osd", osd());
+	setValue("gui/playlistosd", playlistOsd());
 	setValue("gui/hidetotray", hideToTray());
 	setValue("gui/mousewheel", mouseWheel());
 	setValue("gui/toolbarlook", toolbarLook());
@@ -117,6 +119,7 @@ void Settings::readSettings()
 	setStartInfo(value("start/info", DEFAULT_START_INFO).toBool());
 
 	setOsd(value("gui/osd", DEFAULT_OSD).toBool());
+	setPlaylistOsd(value("gui/playlistosd", DEFAULT_PLAYLIST_OSD).toBool());
 	setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
 	setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
 	setToolbarLook(value("gui/toolbarlook", DEFAULT_TOOLBAR_LOOK).toInt());

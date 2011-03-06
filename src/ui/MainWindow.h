@@ -92,6 +92,7 @@ private slots:
 	void tray();
 	void fullscreen(const bool &on);
 	void showOsd(const QPoint &pos);
+	void showPlaylistFullscreen(const bool &on);
 
 	void recordNow();
 	void recorder(const bool &enabled);
@@ -125,6 +126,7 @@ private:
 	bool _infoWidgetVisible;
 	bool _isLite;
 	bool _osdEnabled;
+	bool _playlistFullscreen;
 	bool _recorderEnabled;
 	int _sessionChannel;
 	bool _sessionVolumeEnabled;
