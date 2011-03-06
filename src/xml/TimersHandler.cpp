@@ -39,10 +39,12 @@ TimersHandler::~TimersHandler()
 
 void TimersHandler::clear()
 {
-	for(int i = 0; i < _treeWidget->topLevelItemCount(); i++)
-		delete _map.value(_treeWidget->topLevelItem(i));
+	if(_treeWidget) {
+		for(int i = 0; i < _treeWidget->topLevelItemCount(); i++)
+			delete _map.value(_treeWidget->topLevelItem(i));
 
-	_treeWidget->clear();
+		_treeWidget->clear();
+	}
 	_map.clear();
 }
 
@@ -63,6 +65,7 @@ bool TimersHandler::startElement(const QString & /* namespaceURI */,
 		_item->setIcon(0, _timerIcon);
 		_item->setText(0, QObject::tr("Unknown title"));
 		_timer = new Timer(QObject::tr("Unknown title"));
+		_list << _timer;
 	}
 
 	_currentText.clear();
@@ -154,9 +157,13 @@ bool TimersHandler::fatalError(const QXmlParseException &exception)
 
 QTreeWidgetItem *TimersHandler::itemRead(Timer *item)
 {
-	for(int i = 0; i < _treeWidget->topLevelItemCount(); i++)
-		if(_treeWidget->topLevelItem(i)->text(0) == item->name())
-			return _treeWidget->topLevelItem(i);
+	if(_treeWidget) {
+		for(int i = 0; i < _treeWidget->topLevelItemCount(); i++)
+			if(_treeWidget->topLevelItem(i)->text(0) == item->name())
+				return _treeWidget->topLevelItem(i);
+	} else {
+		return new QTreeWidgetItem();
+	}
 }
 
 QTreeWidgetItem *TimersHandler::newTimer(const QString &name,
@@ -176,9 +183,19 @@ QTreeWidgetItem *TimersHandler::newTimer(const QString &name,
 	return _item;
 }
 
+void TimersHandler::deleteItem(Timer *item)
+{
+	QTreeWidgetItem *tmp = itemRead(item);
+	_list.removeAll(item);
+	_map.remove(tmp);
+	delete tmp;
+	delete item;
+}
+
 void TimersHandler::deleteItem(QTreeWidgetItem *item)
 {
 	Timer *tmp = _map[item];
+	_list.removeAll(tmp);
 	_map.remove(item);
 	delete tmp;
 	delete item;

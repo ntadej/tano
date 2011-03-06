@@ -65,6 +65,9 @@ private slots:
 	void write();
 	void exit();
 
+signals:
+	void updateTimers();
+
 private:
 	void createConnections();
 	void createSettings();

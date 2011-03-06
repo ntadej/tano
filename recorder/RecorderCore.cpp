@@ -84,7 +84,30 @@ void RecorderCore::record(const QString &channel,
 
 void RecorderCore::record(Timer *timer)
 {
+	QString fileName = QString(path);
+	fileName.append("/");
+	fileName.append(QString(channel).replace(" ","_"));
+	fileName.append(QDateTime::currentDateTime().toString("-yyyyMMdd-hhmmss"));
+	fileName.append(".ts");
 
+	_output = fileName;
+
+	if(_player)
+		delete _player;
+	if(_instance)
+		delete _instance;
+
+	_instance = new VlcInstance(Tano::vlcQtRecorderArgs(_output));
+	_player = new VlcMediaPlayer();
+
+	_player->open(url);
+	_player->play();
+
+	_isRecording = true;
+	_isTimer = true;
+
+	_time = 0;
+	_timer->start(500);
 }
 
 void RecorderCore::stop()

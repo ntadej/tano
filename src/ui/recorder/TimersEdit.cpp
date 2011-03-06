@@ -275,6 +275,7 @@ void TimersEdit::write()
 	delete generator;
 
 	_closeEnabled = true;
+	emit updateTimers();
 	exit();
 }
 

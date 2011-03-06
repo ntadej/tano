@@ -132,11 +132,11 @@ void Recorder::record(const bool &status)
 		_controller->record(_channelName, _channelUrl, ui->fileEdit->text());
 
 		ui->valueCurrent->setText(_channelName);
-		if(_controller->isTimer().value())
+		if(_controller->isTimer())
 			ui->valueEndTime->setText(""); // TODO: Timer end time
 		else
 			ui->valueEndTime->setText(tr("No timer - press button to stop."));
-		ui->valueFile->setText(_controller->output().value());
+		ui->valueFile->setText(_controller->output());
 
 		ui->buttonRecord->setText(tr("Stop recording"));
 		if(_actionRecord)
@@ -180,7 +180,7 @@ void Recorder::setAction(QAction *action)
 
 bool Recorder::isRecording() const
 {
-	return _controller->isRecording().value();
+	return _controller->isRecording();
 }
 
 void Recorder::showTimersEditor()
@@ -191,10 +191,12 @@ void Recorder::showTimersEditor()
 		} else {
 			delete _editor;
 			_editor = new TimersEdit(_playlist, this);
+			connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
 			_editor->show();
 		}
 	} else {
 		_editor = new TimersEdit(_playlist, this);
+		connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
 		_editor->show();
 	}
 }

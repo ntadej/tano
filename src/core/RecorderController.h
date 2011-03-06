@@ -35,15 +35,15 @@ public:
 	static const char *staticInterfaceName() { return "si.tano.TanoPlayer.Recorder"; }
 
 public slots:
-	QDBusPendingReply<bool> isRecording();
-	QDBusPendingReply<bool> isTimer();
-	QDBusPendingReply<QString> output();
+	bool isRecording();
+	bool isTimer();
+	QString output();
 
-	QDBusPendingReply<> record(const QString &channel,
+	void record(const QString &channel,
 							   const QString &url,
 							   const QString &path);
-	QDBusPendingReply<> refreshTimers();
-	QDBusPendingReply<> stop();
+	void refreshTimers();
+	void stop();
 
 signals:
 	void elapsed(const int &);

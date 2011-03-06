@@ -22,6 +22,7 @@
 #include <QtCore/QObject>
 
 #include "recorder/RecorderCore.h"
+#include "recorder/RecorderTimeManager.h"
 
 class RecorderMain : public QObject
 {
@@ -37,7 +38,7 @@ public:
 				const QString &url,
 				const QString &path) { _core->record(channel, url, path); }
 	void record(Timer *timer) { _core->record(timer); }
-	void refreshTimers() { }
+	void refreshTimers() { _time->updateTimers(); }
 	void stop() { _core->stop(); }
 
 signals:
@@ -45,6 +46,7 @@ signals:
 
 private:
 	RecorderCore *_core;
+	RecorderTimeManager *_time;
 };
 
 #endif // TANO_RECORDERMAIN_H_

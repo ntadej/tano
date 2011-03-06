@@ -29,34 +29,37 @@ RecorderController::RecorderController(const QString &service,
 							 parent) { }
 RecorderController::~RecorderController() { }
 
-QDBusPendingReply<bool> RecorderController::isRecording()
+bool RecorderController::isRecording()
 {
-	return asyncCall(QLatin1String("recording"));
+	QDBusPendingReply<bool> reply = asyncCall(QLatin1String("recording"));
+	return reply.value();
 }
 
-QDBusPendingReply<bool> RecorderController::isTimer()
+bool RecorderController::isTimer()
 {
-	return asyncCall(QLatin1String("timer"));
+	QDBusPendingReply<bool> reply = asyncCall(QLatin1String("timer"));
+	return reply.value();
 }
 
-QDBusPendingReply<QString> RecorderController::output()
+QString RecorderController::output()
 {
-	return asyncCall(QLatin1String("output"));
+	QDBusPendingReply<QString> reply = asyncCall(QLatin1String("output"));
+	return reply.value();
 }
 
-QDBusPendingReply<> RecorderController::record(const QString &channel,
-											   const QString &url,
-											   const QString &path)
+void RecorderController::record(const QString &channel,
+								const QString &url,
+								const QString &path)
 {
-	return asyncCall(QLatin1String("record"), channel, url, path);
+	asyncCall(QLatin1String("record"), channel, url, path);
 }
 
-QDBusPendingReply<> RecorderController::refreshTimers()
+void RecorderController::refreshTimers()
 {
-	return asyncCall(QLatin1String("refreshTimer"));
+	asyncCall(QLatin1String("refreshTimer"));
 }
 
-QDBusPendingReply<> RecorderController::stop()
+void RecorderController::stop()
 {
-	return asyncCall(QLatin1String("stop"));
+	asyncCall(QLatin1String("stop"));
 }

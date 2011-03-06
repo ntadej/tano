@@ -26,6 +26,9 @@ RecorderMain::RecorderMain(QObject *parent)
 
 	_core = new RecorderCore(this);
 	connect(_core, SIGNAL(elapsed(int)), this, SIGNAL(elapsed(int)));
+
+	_time = new RecorderTimeManager(this);
+	connect(_time, SIGNAL(timer(Timer *)), _core, SLOT(recordTimer(Timer *)));
 }
 
 RecorderMain::~RecorderMain()

@@ -34,7 +34,7 @@ class Timer;
 class TimersHandler : public QXmlDefaultHandler
 {
 public:
-	TimersHandler(QTreeWidget *treeWidget);
+	TimersHandler(QTreeWidget *treeWidget = 0);
 	~TimersHandler();
 
 	bool startElement(const QString &namespaceURI,
@@ -50,6 +50,7 @@ public:
 
 	Timer *timerRead(QTreeWidgetItem *item) { return _map[item]; }
 	QTreeWidgetItem *itemRead(Timer *item);
+	QList<Timer *> timersList() { return _list; }
 	QMap<QTreeWidgetItem *, Timer *> timersMap() { return _map; }
 
 	void clear();
@@ -59,6 +60,7 @@ public:
 							  const QString &playlist,
 							  const int &num,
 							  const QString &url);
+	void deleteItem(Timer *item);
 	void deleteItem(QTreeWidgetItem *item);
 
 private:
@@ -71,6 +73,7 @@ private:
 	QString _errorStr;
 	bool _metTanoTag;
 
+	QList<Timer *> _list;
 	QMap<QTreeWidgetItem *, Timer *> _map;
 
 	QIcon _timerIcon;

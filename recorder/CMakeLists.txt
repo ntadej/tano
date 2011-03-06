@@ -27,7 +27,7 @@ SET(Tano_Recorder_MOCs	# List of classes which Qt needs to produce MOCs for them
 	RecorderCore.h
 	RecorderDBusAdaptor.h
 	RecorderMain.h
-	TimeManager.h
+	RecorderTimeManager.h
 
 )
 
@@ -42,7 +42,7 @@ SET(Tano_Recorder_Srcs
 	RecorderCore.cpp
 	RecorderDBusAdaptor.cpp
 	RecorderMain.cpp
-	TimeManager.cpp
+	RecorderTimeManager.cpp
 
 	../src/container/Timer.cpp
 
@@ -51,6 +51,8 @@ SET(Tano_Recorder_Srcs
 	../src/core/Enums.cpp
 	../src/core/Playlists.cpp
 	../src/core/Settings.cpp
+
+	../src/xml/TimersHandler.cpp
 )
 
 ################

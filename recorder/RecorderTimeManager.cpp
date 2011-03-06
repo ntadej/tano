@@ -16,43 +16,67 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
+#include <QtCore/QFileInfo>
 
 #include "container/Timer.h"
-#include "recorder/TimeManager.h"
+#include "core/Settings.h"
+#include "recorder/RecorderTimeManager.h"
+#include "xml/TimersHandler.h"
 
-TimeManager::TimeManager()
+RecorderTimeManager::RecorderTimeManager(QObject *parent)
+	: QObject(parent)
 {
+	Settings *settings = new Settings(this);
+	_path = settings->path();
+	delete settings;
+
 	_timer = new QTimer();
 	connect(_timer, SIGNAL(timeout()), this, SLOT(check()));
 	_timer->start(6000);
+
+	_timersHandler = new TimersHandler();
+	updateTimers();
 }
 
-TimeManager::~TimeManager()
+RecorderTimeManager::~RecorderTimeManager()
 {
 	delete _timer;
+	delete _timersHandler;
 }
 
-void TimeManager::check()
+void RecorderTimeManager::check()
 {
-	for(int i=0; i<_timersList.size(); i++) {
+	for(int i = 0; i < _timersList.size(); i++) {
 		if(_timersList[i]->startTime() <= QTime::currentTime() && _timersList[i]->endTime() >= QTime::currentTime()) {
 			if(!_timersList[i]->isDisabled()) {
-				qDebug() << "Timer starting:" << _timersList[i]->name();
-				emit startTimer(_timersList[i]);
+				emit timer(_timersList[i]);
 			}
 		}
 	}
 }
 
-void TimeManager::addTimer(Timer *t)
+void RecorderTimeManager::readTimers()
 {
-	if(!_timersList.contains(t))
-		_timersList.append(t);
+	QString fileName = _path + "timers.tano.xml";
+
+	QXmlSimpleReader reader;
+	reader.setContentHandler(_timersHandler);
+	reader.setErrorHandler(_timersHandler);
+
+	if(!QFileInfo(fileName).exists())
+		return;
+
+	QFile file(fileName);
+	if (!file.open(QFile::ReadOnly | QFile::Text))
+		return;
+
+	QXmlInputSource xmlInputSource(&file);
+	if (!reader.parse(xmlInputSource))
+		return;
 }
 
-void TimeManager::removeTimer(Timer *t)
+void RecorderTimeManager::updateTimers()
 {
-	if(_timersList.contains(t))
-		_timersList.removeOne(t);
+	readTimers();
+	_timersList = _timersHandler->timersList();
 }
