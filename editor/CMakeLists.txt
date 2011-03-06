@@ -58,6 +58,7 @@ SET(Tano_Editor_Srcs
 
 	../src/core/Common.cpp
 	../src/core/ConsoleOutput.cpp
+	../src/core/Enums.cpp
 	../src/core/GetFile.cpp
 	../src/core/LocaleManager.cpp
 	../src/core/Playlists.cpp
@@ -140,13 +141,13 @@ IF(MINGW)
 		c:/MinGW/bin /MinGW/bin
 	)
 	ADD_CUSTOM_COMMAND(
-		OUTPUT ${CMAKE_BINARY_DIR}/src/tano.obj
+		OUTPUT ${CMAKE_BINARY_DIR}/editor/windows.obj
 		COMMAND ${WINDRES_PROGRAM}
-		-i ${CMAKE_SOURCE_DIR}/src/tano.rc
-		-o ${CMAKE_BINARY_DIR}/src/tano.obj
-		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src"
+		-i ${CMAKE_SOURCE_DIR}/editor/windows.rc
+		-o ${CMAKE_BINARY_DIR}/editor/windows.obj
+		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/editor"
 	)
-	SET(Tano_Editor_Srcs ${Tano_Editor_Srcs} ${CMAKE_BINARY_DIR}/src/tano.obj)
+	SET(Tano_Editor_Srcs ${Tano_Editor_Srcs} ${CMAKE_BINARY_DIR}/editor/windows.obj)
 ENDIF(MINGW)
 
 

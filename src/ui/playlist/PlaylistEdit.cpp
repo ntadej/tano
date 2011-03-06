@@ -28,6 +28,7 @@
 #include "container/Channel.h"
 #include "core/Common.h"
 #include "core/ConsoleOutput.h"
+#include "core/Enums.h"
 #include "core/Settings.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
@@ -115,6 +116,8 @@ void PlaylistEdit::createConnections()
 	connect(ui->actionImportTanoOld, SIGNAL(triggered()), this, SLOT(importTanoOld()));
 	connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
 
+	connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(setTitle(QString)));
+
 	connect(ui->buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
 	connect(ui->editNumber, SIGNAL(returnPressed()), ui->buttonApplyNum, SLOT(click()));
 	connect(ui->editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
@@ -149,9 +152,17 @@ void PlaylistEdit::setStandalone(const bool &standalone)
 	}
 }
 
+void PlaylistEdit::setTitle(const QString &title)
+{
+	if(title.isEmpty())
+		setWindowTitle(tr("Tano Editor"));
+	else
+		setWindowTitle(tr("%1 - Tano Editor").arg(title));
+}
+
 void PlaylistEdit::aboutTano()
 {
-	AboutDialog about(tr("Editor"), this);
+	AboutDialog about(Tano::Editor, this);
 	about.exec();
 }
 

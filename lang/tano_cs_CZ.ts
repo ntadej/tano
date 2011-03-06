@@ -46,6 +46,14 @@ Your VLC-Qt version: %4
 Verze vašeho Qt: %3
 Verze vašeho VLC-Qt: %4</translation>
     </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Editor</translation>
+    </message>
+    <message>
+        <source>Player</source>
+        <translation type="unfinished">Přehrávač</translation>
+    </message>
 </context>
 <context>
     <name>ConclusionPage</name>
@@ -373,10 +381,6 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation>Ukládá se do vyrovnávací paměti...</translation>
     </message>
     <message>
-        <source>Player</source>
-        <translation>Přehrávač</translation>
-    </message>
-    <message>
         <source>&amp;Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -670,10 +674,6 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -701,6 +701,14 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>New channel from scan %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Tano Editor</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

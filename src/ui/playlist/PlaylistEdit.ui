@@ -11,11 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Edit channel list</string>
+   <string>Tano Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/24x24/edit.png</normaloff>:/icons/24x24/edit.png</iconset>
+   <iconset resource="../../../data/logo.qrc">
+    <normaloff>:/logo/48x48/logo-editor.png</normaloff>:/logo/48x48/logo-editor.png</iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -587,23 +587,7 @@
  </customwidgets>
  <resources>
   <include location="../../../data/icons.qrc"/>
+  <include location="../../../data/logo.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>editName</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>PlaylistEdit</receiver>
-   <slot>setWindowTitle(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>199</x>
-     <y>82</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>127</x>
-     <y>-15</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

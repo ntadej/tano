@@ -23,6 +23,14 @@
 
 namespace Tano
 {
+	// App type
+	enum AppType
+	{
+		Player,
+		Editor,
+		Recorder
+	};
+
 	// Epg types
 	enum EpgType
 	{

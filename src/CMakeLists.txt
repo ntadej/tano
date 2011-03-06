@@ -252,13 +252,13 @@ IF(MINGW)
 		c:/MinGW/bin /MinGW/bin
 	)
 	ADD_CUSTOM_COMMAND(
-		OUTPUT ${CMAKE_BINARY_DIR}/src/tano.obj
+		OUTPUT ${CMAKE_BINARY_DIR}/src/windows.obj
 		COMMAND ${WINDRES_PROGRAM}
-		-i ${CMAKE_SOURCE_DIR}/src/tano.rc
-		-o ${CMAKE_BINARY_DIR}/src/tano.obj
+		-i ${CMAKE_SOURCE_DIR}/src/windows.rc
+		-o ${CMAKE_BINARY_DIR}/src/windows.obj
 		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src"
 	)
-	SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/tano.obj)
+	SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/windows.obj)
 ENDIF(MINGW)
 
 

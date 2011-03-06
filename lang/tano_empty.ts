@@ -41,6 +41,14 @@ Your VLC-Qt version: %4
 </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Player</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ConclusionPage</name>
@@ -366,10 +374,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Player</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -663,10 +667,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -694,6 +694,14 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>New channel from scan %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Tano Editor</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

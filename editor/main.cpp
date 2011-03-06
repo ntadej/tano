@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 
 	LocaleManager manager;
 
-	QPixmap pixmap(":/images/splash.png");
+	QPixmap pixmap(":/images/splash-editor.png");
 	QSplashScreen *splash = new QSplashScreen(pixmap);
 	splash->setMask(pixmap.mask());
 	splash->show();

@@ -106,13 +106,13 @@ IF(MINGW)
 		c:/MinGW/bin /MinGW/bin
 	)
 	ADD_CUSTOM_COMMAND(
-		OUTPUT ${CMAKE_BINARY_DIR}/src/tano.obj
+		OUTPUT ${CMAKE_BINARY_DIR}/recorder/windows.obj
 		COMMAND ${WINDRES_PROGRAM}
-		-i ${CMAKE_SOURCE_DIR}/src/tano.rc
-		-o ${CMAKE_BINARY_DIR}/src/tano.obj
-		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src"
+		-i ${CMAKE_SOURCE_DIR}/recorder/windows.rc
+		-o ${CMAKE_BINARY_DIR}/recorder/windows.obj
+		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/recorder"
 	)
-	SET(Tano_Recorder_Srcs ${Tano_Recorder_Srcs} ${CMAKE_BINARY_DIR}/src/tano.obj)
+	SET(Tano_Recorder_Srcs ${Tano_Recorder_Srcs} ${CMAKE_BINARY_DIR}/recorder/windows.obj)
 ENDIF(MINGW)
 
 

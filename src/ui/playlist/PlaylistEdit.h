@@ -52,6 +52,7 @@ protected:
 
 private slots:
 	void aboutTano();
+	void setTitle(const QString &title);
 
 	void deleteItem();
 	void addItem();
