@@ -45,6 +45,10 @@ public slots:
 
 signals:
 	void elapsed(const int &);
+	void stopTimer();
+	void timer(const QString &,
+			   const QString &,
+			   const QString &);
 
 private:
 	RecorderMain *_main;

@@ -273,10 +273,10 @@ Tvoja različica VLC-Qt: %4
         <location filename="../src/ui/MainWindow.ui" line="377"/>
         <location filename="../src/ui/MainWindow.ui" line="380"/>
         <location filename="../src/ui/MainWindow.ui" line="678"/>
-        <location filename="../src/ui/MainWindow.cpp" line="442"/>
         <location filename="../src/ui/MainWindow.cpp" line="443"/>
         <location filename="../src/ui/MainWindow.cpp" line="444"/>
         <location filename="../src/ui/MainWindow.cpp" line="445"/>
+        <location filename="../src/ui/MainWindow.cpp" line="446"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
@@ -293,7 +293,7 @@ Tvoja različica VLC-Qt: %4
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="648"/>
+        <location filename="../src/ui/MainWindow.cpp" line="649"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
@@ -366,7 +366,7 @@ Tvoja različica VLC-Qt: %4
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="621"/>
-        <location filename="../src/ui/MainWindow.cpp" line="514"/>
+        <location filename="../src/ui/MainWindow.cpp" line="515"/>
         <source>Open channel list</source>
         <translation>Odpri seznam programov</translation>
     </message>
@@ -409,40 +409,40 @@ This will stop recording in progress.</source>
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="433"/>
         <location filename="../src/ui/MainWindow.cpp" line="434"/>
         <location filename="../src/ui/MainWindow.cpp" line="435"/>
         <location filename="../src/ui/MainWindow.cpp" line="436"/>
+        <location filename="../src/ui/MainWindow.cpp" line="437"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="451"/>
+        <location filename="../src/ui/MainWindow.cpp" line="452"/>
         <source>Buffering...</source>
         <translation>Nalagam...</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="516"/>
+        <location filename="../src/ui/MainWindow.cpp" line="517"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="545"/>
+        <location filename="../src/ui/MainWindow.cpp" line="546"/>
         <source>Open file or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="547"/>
+        <location filename="../src/ui/MainWindow.cpp" line="548"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="558"/>
+        <location filename="../src/ui/MainWindow.cpp" line="559"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="559"/>
+        <location filename="../src/ui/MainWindow.cpp" line="560"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesi URL multimedijske datoteke ali vira, ki ga želiš predvajati:</translation>
     </message>
@@ -460,8 +460,8 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
         <location filename="../src/ui/MainWindow.cpp" line="75"/>
-        <location filename="../src/ui/MainWindow.cpp" line="604"/>
-        <location filename="../src/ui/MainWindow.cpp" line="606"/>
+        <location filename="../src/ui/MainWindow.cpp" line="605"/>
+        <location filename="../src/ui/MainWindow.cpp" line="607"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -485,7 +485,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="708"/>
         <location filename="../src/ui/MainWindow.ui" line="711"/>
-        <location filename="../src/ui/MainWindow.cpp" line="645"/>
+        <location filename="../src/ui/MainWindow.cpp" line="646"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
@@ -1266,41 +1266,41 @@ Nato izberi želen seznam programov.</translation>
 <context>
     <name>Recorder</name>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="107"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="110"/>
         <source>Open directory</source>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="138"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="141"/>
         <source>No timer - press button to stop.</source>
         <translation>Ni časovnika - pritisni gumb in ustavi.</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="141"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="144"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="61"/>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="152"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="160"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="122"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="125"/>
         <source>Cannot write to %1.</source>
         <translation>Ne morem pisati v %1.</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="128"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="131"/>
         <source>Channel is not selected!</source>
         <translation>Program ni izbran!</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="14"/>
         <location filename="../src/ui/recorder/Recorder.ui" line="24"/>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="121"/>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="127"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="124"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="130"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
@@ -2056,30 +2056,51 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/ui/core/TrayIcon.cpp" line="26"/>
-        <location filename="../src/ui/core/TrayIcon.cpp" line="67"/>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="29"/>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="86"/>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="88"/>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="90"/>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="92"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/core/TrayIcon.cpp" line="51"/>
-        <source>Recording</source>
-        <translation>Snemanje</translation>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="59"/>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="61"/>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="63"/>
+        <source>Recorder</source>
+        <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../src/ui/core/TrayIcon.cpp" line="51"/>
-        <source>Tano Recorder is recording %1 to
-%2.</source>
-        <translation>Tano Snemalnik sedaj snema %1 v
-%2.</translation>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="59"/>
+        <source>Tano stopped recording</source>
+        <translation>Tano je končal s snemanjem</translation>
     </message>
     <message>
-        <location filename="../src/ui/core/TrayIcon.cpp" line="69"/>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="61"/>
+        <source>Tano is recording %1 to
+%2
+Stop manually!</source>
+        <translation>Tano snema %1 v
+%2
+Ročno ustavi!</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="63"/>
+        <source>Tano is recording %1 to
+%2
+End time: %3</source>
+        <translation>Tano snema %1 v
+%2
+Končni čas: %3</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="73"/>
         <source>Playing:</source>
         <translation>Predvajam:</translation>
     </message>
     <message>
-        <location filename="../src/ui/core/TrayIcon.cpp" line="71"/>
+        <location filename="../src/ui/core/TrayIcon.cpp" line="79"/>
         <source>Recording:</source>
         <translation>Snemam:</translation>
     </message>

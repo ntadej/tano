@@ -379,6 +379,7 @@ void MainWindow::createRecorder()
 	if(_recorderEnabled) {
 		ui->recorder->openPlaylist(_playlistName);
 		ui->recorder->setAction(ui->actionRecord);
+		ui->recorder->setTrayIcon(_trayIcon);
 		ui->recorder->createSettings();
 		if(ui->buttonRecord->isHidden()) {
 			ui->buttonRecord->show();
@@ -467,7 +468,7 @@ void MainWindow::play(const QString &itemFile)
 
 		_mediaPlayer->open(_channel->url());
 		tooltip(_channel->name());
-		_trayIcon->changeToolTip(_channel->name());
+		_trayIcon->changeToolTip(Tano::Main, _channel->name());
 	} else {
 		ui->infoWidget->hide();
 		_mediaPlayer->open(itemFile);
@@ -493,7 +494,7 @@ void MainWindow::stop()
 	ui->scheduleWidget->setPage(0);
 
 	tooltip();
-	_trayIcon->changeToolTip();
+	_trayIcon->changeToolTip(Tano::Main);
 
 	_audioController->reset();
 	_videoController->reset();

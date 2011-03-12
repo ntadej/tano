@@ -58,6 +58,10 @@ SET(Tano_Recorder_Srcs
 ################
 # Qt4 settings #
 ################
+# This line adds the QtDBUS libraries to the Qt libraries
+# loaded when linking Tano
+SET(QT_USE_QTDBUS True)
+
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Recorder_Resrcs_Srcs ${Tano_Recorder_Resrcs})
 

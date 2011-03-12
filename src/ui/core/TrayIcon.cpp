@@ -1,16 +1,19 @@
 /****************************************************************************
-* TrayIcon.cpp: Tray icon class
-*****************************************************************************
-* Copyright (C) 2008-2010 Tadej Novak
+* Tano - An Open IP TV Player
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
 *
-* This file may be used under the terms of the
-* GNU General Public License version 3.0 as published by the
-* Free Software Foundation and appearing in the file LICENSE.GPL
-* included in the packaging of this file.
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #include "TrayIcon.h"
@@ -45,28 +48,46 @@ void TrayIcon::iconActivated(const QSystemTrayIcon::ActivationReason reason)
 	}
 }
 
-void TrayIcon::message(const QStringList &arg)
+void TrayIcon::message(const Tano::Id &type,
+					   const QStringList &arg)
 {
-	if (arg[0] == "record")
-		this->showMessage(tr("Recording"), tr("Tano Recorder is recording %1 to\n%2.").arg(arg[1], arg[2]), QSystemTrayIcon::Information, 10000);
+	if(arg.size() == 0)
+		return;
+
+	if(type == Tano::Record) {
+		if(arg.size() == 0) {
+			showMessage(tr("Recorder"), tr("Tano stopped recording").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
+		} else if(arg.size() == 2) {
+			showMessage(tr("Recorder"), tr("Tano is recording %1 to\n%2\nStop manually!").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
+		} else if(arg.size() == 3) {
+			showMessage(tr("Recorder"), tr("Tano is recording %1 to\n%2\nEnd time: %3").arg(arg[0], arg[1], arg[2]), QSystemTrayIcon::Information, 10000);
+		}
+	}
 }
 
-void TrayIcon::changeToolTip(const QString &text,
-							 const QString &type)
+void TrayIcon::changeToolTip(const Tano::Id &type,
+							 const QString &text)
 {
-	if(text != "stop" && type == "main") {
-		_currentlyPlaying = text;
-	} else if(text != "stop" && type == "recorder") {
-		_currentlyRecording = text;
-	} else if(text == "stop" && type == "main") {
-		_currentlyPlaying = "";
-	} else if(text == "stop" && type == "recorder") {
-		_currentlyRecording = "";
+	if(type == Tano::Main) {
+		if(!text.isEmpty()) {
+			_currentlyPlaying = tr("Playing:") + " " + text;
+		} else {
+			_currentlyPlaying = text;
+		}
+	} else if(type == Tano::Record) {
+		if(!text.isEmpty()) {
+			_currentlyRecording = tr("Recording:") + " " + text;
+		} else {
+			_currentlyPlaying = text;
+		}
 	}
 
-	this->setToolTip(tr("Tano"));
-	if(_currentlyPlaying != "")
-		this->setToolTip(this->toolTip().append(" - " + tr("Playing:") + " " + _currentlyPlaying));
-	if(_currentlyRecording != "")
-			this->setToolTip(this->toolTip().append(" - " + tr("Recording:") + " " + _currentlyRecording));
+	if(_currentlyPlaying.isEmpty() && _currentlyRecording.isEmpty())
+		setToolTip(tr("Tano"));
+	else if(!_currentlyPlaying.isEmpty() && _currentlyRecording.isEmpty())
+		setToolTip(tr("Tano") + "\n" + _currentlyPlaying);
+	else if(_currentlyPlaying.isEmpty() && !_currentlyRecording.isEmpty())
+		setToolTip(tr("Tano") + "\n" + _currentlyRecording);
+	else
+		setToolTip(tr("Tano") + "\n" + _currentlyPlaying + "\n" + _currentlyRecording);
 }

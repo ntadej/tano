@@ -1612,22 +1612,32 @@ You changes will not be applied.</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <source>Recording</source>
-        <translation>Запись</translation>
-    </message>
-    <message>
-        <source>Tano Recorder is recording %1 to
-%2.</source>
-        <translation>Рекордер Tano записывает %1 в
-%2.</translation>
-    </message>
-    <message>
         <source>Playing:</source>
         <translation>Воспроизведение:</translation>
     </message>
     <message>
         <source>Recording:</source>
         <translation>Запись:</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Рекордер</translation>
+    </message>
+    <message>
+        <source>Tano stopped recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to
+%2
+Stop manually!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to
+%2
+End time: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

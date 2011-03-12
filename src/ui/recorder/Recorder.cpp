@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <info@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -23,17 +23,20 @@
 #include <QtGui/QMessageBox>
 
 #include "container/Channel.h"
+#include "core/Enums.h"
 #include "core/RecorderController.h"
 #include "core/RecorderProcess.h"
 #include "core/Settings.h"
+#include "ui/core/TrayIcon.h"
 #include "ui/recorder/TimersEdit.h"
 
 Recorder::Recorder(QWidget *parent)
 	: QWidget(parent),
 	ui(new Ui::Recorder),
-	_channelName(""),
-	_channelUrl(""),
-	_actionRecord(0)
+	_name(""),
+	_url(""),
+	_actionRecord(0),
+	_trayIcon(0)
 {
 	ui->setupUi(this);
 
@@ -90,8 +93,8 @@ void Recorder::playlist(QTreeWidgetItem *clickedChannel)
 {
 	Channel *channel = ui->playlistWidget->channelRead(clickedChannel);
 
-	_channelName = channel->name();
-	_channelUrl = channel->url();
+	_name = channel->name();
+	_url = channel->url();
 
 	ui->valueSelected->setText(channel->name());
 }
@@ -99,21 +102,21 @@ void Recorder::playlist(QTreeWidgetItem *clickedChannel)
 void Recorder::fileBrowse()
 {
 	QString dir;
-	if(ui->fileEdit->text() == "")
+	if(ui->fileEdit->text().isEmpty())
 		dir = QDir::homePath();
 	else
 		dir = ui->fileEdit->text();
 	QString dfile =
 			QFileDialog::getExistingDirectory(this, tr("Open directory"), dir,
 											  QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-	if(dfile != "")
+	if(!dfile.isEmpty())
 		ui->fileEdit->setText(dfile);
 }
 
 void Recorder::record(const bool &status)
 {
 	if(status) {
-		if(ui->fileEdit->text() == "") {
+		if(ui->fileEdit->text().isEmpty()) {
 			ui->buttonRecord->setChecked(false);
 			return;
 		} else if(!QDir(ui->fileEdit->text()).exists()) {
@@ -122,16 +125,16 @@ void Recorder::record(const bool &status)
 						tr("Cannot write to %1.")
 						.arg(ui->fileEdit->text()));
 			return;
-		} else if(ui->valueSelected->text() == "") {
+		} else if(ui->valueSelected->text().isEmpty()) {
 			ui->buttonRecord->setChecked(false);
 			QMessageBox::critical(this, tr("Recorder"),
 						tr("Channel is not selected!"));
 			return;
 		}
 
-		_controller->record(_channelName, _channelUrl, ui->fileEdit->text());
+		_controller->record(_name, _url, ui->fileEdit->text());
 
-		ui->valueCurrent->setText(_channelName);
+		ui->valueCurrent->setText(_name);
 		if(_controller->isTimer())
 			ui->valueEndTime->setText(""); // TODO: Timer end time
 		else
@@ -141,6 +144,11 @@ void Recorder::record(const bool &status)
 		ui->buttonRecord->setText(tr("Stop recording"));
 		if(_actionRecord)
 			_actionRecord->setEnabled(true);
+
+		if(_trayIcon) {
+			_trayIcon->changeToolTip(Tano::Record, _name);
+			_trayIcon->message(Tano::Record, QStringList() << _name << _controller->output());
+		}
 	} else {
 		_controller->stop();
 
@@ -152,14 +160,19 @@ void Recorder::record(const bool &status)
 		ui->buttonRecord->setText(tr("Record"));
 		if(_actionRecord)
 			_actionRecord->setEnabled(false);
+
+		if(_trayIcon) {
+			_trayIcon->changeToolTip(Tano::Record);
+			_trayIcon->message(Tano::Record, QStringList());
+		}
 	}
 }
 
 void Recorder::recordNow(const QString &name,
 						 const QString &url)
 {
-	_channelName = name;
-	_channelUrl = url;
+	_name = name;
+	_url = url;
 
 	ui->valueSelected->setText(name);
 
@@ -176,6 +189,11 @@ void Recorder::setAction(QAction *action)
 {
 	_actionRecord = action;
 	connect(_actionRecord, SIGNAL(triggered()), ui->buttonRecord, SLOT(toggle()));
+}
+
+void Recorder::setTrayIcon(TrayIcon *icon)
+{
+	_trayIcon = icon;
 }
 
 bool Recorder::isRecording() const

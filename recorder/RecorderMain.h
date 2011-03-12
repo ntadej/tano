@@ -43,6 +43,10 @@ public:
 
 signals:
 	void elapsed(const int &);
+	void stopTimer();
+	void timer(const QString &,
+			   const QString &,
+			   const QString &);
 
 private:
 	RecorderCore *_core;

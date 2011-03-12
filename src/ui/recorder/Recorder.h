@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <info@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,6 +25,7 @@
 
 class RecorderController;
 class RecorderProcess;
+class TrayIcon;
 class TimersEdit;
 
 namespace Ui
@@ -42,6 +43,7 @@ public:
 	void createSettings();
 	bool isRecording() const;
 	void setAction(QAction *action);
+	void setTrayIcon(TrayIcon *icon);
 
 protected:
 	void changeEvent(QEvent *e);
@@ -64,13 +66,14 @@ private:
 
 	QAction *_actionRecord;
 
-	QString _channelName;
-	QString _channelUrl;
+	QString _name;
+	QString _url;
 
 	RecorderController *_controller;
 	TimersEdit *_editor;
 	QString _playlist;
 	RecorderProcess *_recorder;
+	TrayIcon *_trayIcon;
 };
 
 #endif // TANO_RECORDER_H_

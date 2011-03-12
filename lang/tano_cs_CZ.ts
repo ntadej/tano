@@ -1611,22 +1611,32 @@ Vaše změny nebudou použity.</translation>
         <translation>Tano</translation>
     </message>
     <message>
-        <source>Recording</source>
-        <translation>Nahrávání</translation>
-    </message>
-    <message>
-        <source>Tano Recorder is recording %1 to
-%2.</source>
-        <translation>Nahrávač Tano nahrává %1 do
-%2.</translation>
-    </message>
-    <message>
         <source>Playing:</source>
         <translation>Přehrává se:</translation>
     </message>
     <message>
         <source>Recording:</source>
         <translation>Nahrává se:</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano stopped recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to
+%2
+Stop manually!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to
+%2
+End time: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

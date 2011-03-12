@@ -196,10 +196,11 @@ SET(Tano_Srcs
 ################
 # Qt4 settings #
 ################
-# This line adds the QtXML and QtNETWORK libraries to the Qt libraries
+# This line adds the QtXML, QtNETWORK and QtDBUS libraries to the Qt libraries
 # loaded when linking Tano
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
+SET(QT_USE_QTDBUS True)
 
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})

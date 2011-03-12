@@ -20,6 +20,7 @@
 #define TANO_RECORDERCONTROLLER_H_
 
 #include <QtDBus/QDBusAbstractInterface>
+#include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusPendingReply>
 
 class RecorderController : public QDBusAbstractInterface
@@ -40,13 +41,17 @@ public slots:
 	QString output();
 
 	void record(const QString &channel,
-							   const QString &url,
-							   const QString &path);
+				const QString &url,
+				const QString &path);
 	void refreshTimers();
 	void stop();
 
 signals:
 	void elapsed(const int &);
+	void stopTimer();
+	void timer(const QString &,
+			   const QString &,
+			   const QString &);
 };
 
 #endif // TANO_RECORDERCONTROLLER_H_

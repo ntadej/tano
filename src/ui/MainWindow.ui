@@ -1181,5 +1181,37 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionInfoPanel</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>infoWidget</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>818</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>infoWidget</sender>
+   <signal>visibilityChanged(bool)</signal>
+   <receiver>actionInfoPanel</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>818</x>
+     <y>278</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>

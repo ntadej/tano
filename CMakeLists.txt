@@ -17,7 +17,7 @@
 #############################################################################
 
 PROJECT(Tano)
-cmake_minimum_required(VERSION 2.6)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
 CONFIGURE_FILE(
   "${CMAKE_SOURCE_DIR}/cmake_uninstall.cmake.in"
@@ -27,7 +27,7 @@ CONFIGURE_FILE(
 ADD_CUSTOM_TARGET(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake")
 
-set(CMAKE_MODULE_PATH
+SET(CMAKE_MODULE_PATH
     ${CMAKE_SOURCE_DIR}/cmake
 )
 

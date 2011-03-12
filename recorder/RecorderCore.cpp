@@ -21,7 +21,6 @@
 
 #include "container/Timer.h"
 #include "core/Common.h"
-#include "core/Settings.h"
 #include "recorder/RecorderCore.h"
 
 RecorderCore::RecorderCore(QObject *parent)

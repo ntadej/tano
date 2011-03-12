@@ -7,8 +7,9 @@ The latest version of Qt4, libvlc-qt, libvlc and CMake is prefered.
 
 - g++ >=4, make (http://gcc.gnu.org, http://www.mingw.org)
 - cmake >=2.6 (http://www.cmake.org)
-- Qt development package >=4.6 (http://qt.nokia.com)
-- libvlc-qt-dev >=0.4 (http://vlc-qt.sourceforge.net)
+- Qt development package >=4.6 (http://qt.nokia.com) - with dbus support on Windows
+- dbus >=1.4 (http://www.freedesktop.org/wiki/Software/dbus)
+- libvlc-qt-dev >=0.4 (http://tano.si/en/vlc-qt) and its dependencies
 - libvlc-dev >=1.1 (http://www.videolan.org)
 
 
