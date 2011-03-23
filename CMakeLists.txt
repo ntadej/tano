@@ -17,7 +17,7 @@
 #############################################################################
 
 PROJECT(Tano)
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+cmake_minimum_required(VERSION 2.6)
 
 CONFIGURE_FILE(
   "${CMAKE_SOURCE_DIR}/cmake_uninstall.cmake.in"
@@ -27,7 +27,7 @@ CONFIGURE_FILE(
 ADD_CUSTOM_TARGET(uninstall
   "${CMAKE_COMMAND}" -P "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake")
 
-SET(CMAKE_MODULE_PATH
+set(CMAKE_MODULE_PATH
     ${CMAKE_SOURCE_DIR}/cmake
 )
 
@@ -46,10 +46,6 @@ SET(QT_MIN_VERSION "4.6.0")
 
 FIND_PACKAGE(Qt4 REQUIRED)
 FIND_PACKAGE(LIBVLCQT REQUIRED)
-# MinGW needs some more packages
-IF(MINGW)
-	FIND_PACKAGE(LIBVLC REQUIRED)
-ENDIF(MINGW)
 
 # Set Qt4 bin dir to find QtCore4.dll and other libs to install
 STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
@@ -133,23 +129,41 @@ FILE(GLOB Tano_Playlists_Sl ${CMAKE_SOURCE_DIR}/playlists/sl/*.m3u)
 
 # Windows
 IF(MINGW)
+	STRING(REGEX REPLACE "\\\\" "/" LIBVLCQT_INCLUDE_DIR "${LIBVLCQT_INCLUDE_DIR}")
 	STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
-	STRING(REGEX REPLACE "sdk/include" "" LIBVLC_BIN_DIR "${LIBVLC_INCLUDE_DIR}")
-	SET(Tano_Qt
+	STRING(REGEX REPLACE "bin" "etc/dbus-1" DBUS_ETC_DIR "${QT_BIN_DIR}")
+
+	SET(Tano_Qt_Lib
 		${QT_BIN_DIR}/libgcc_s_dw2-1.dll
 		${QT_BIN_DIR}/mingwm10.dll
 		${QT_BIN_DIR}/QtCore4.dll
+		${QT_BIN_DIR}/QtDBus4.dll
 		${QT_BIN_DIR}/QtGui4.dll
 		${QT_BIN_DIR}/QtNetwork4.dll
 		${QT_BIN_DIR}/QtSvg4.dll
 		${QT_BIN_DIR}/QtXml4.dll
 	)
-	SET(Tano_Libs
-		${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
-		${LIBVLC_BIN_DIR}/libvlc.dll
-		${LIBVLC_BIN_DIR}/libvlccore.dll
+	SET(Tano_Dbus_Bin
+		${QT_BIN_DIR}/dbus-daemon.exe
+		${QT_BIN_DIR}/dbus-env.bat
+		${QT_BIN_DIR}/dbus-launch.exe
+		${QT_BIN_DIR}/dbus-monitor.exe
+		${QT_BIN_DIR}/dbus-send.exe
+		${QT_BIN_DIR}/libdbus-1.dll
+		${QT_BIN_DIR}/libeay32.dll
+		${QT_BIN_DIR}/libexpat.dll
+		${QT_BIN_DIR}/ssleay32.dll
 	)
-	FILE(GLOB Tano_Vlc_Plugins ${LIBVLC_BIN_DIR}/plugins/*.dll)
+	SET(Tano_Dbus_Config
+		${DBUS_ETC_DIR}/session.conf
+		${DBUS_ETC_DIR}/system.conf
+	)
+	SET(Tano_Vlc_Libs
+		${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
+		${LIBVLCQT_BIN_DIR}/libvlc.dll
+		${LIBVLCQT_BIN_DIR}/libvlccore.dll
+	)
+	FILE(GLOB Tano_Vlc_Plugins ${LIBVLCQT_BIN_DIR}/plugins/*.dll)
 ENDIF(MINGW)
 
 ################
@@ -164,7 +178,9 @@ INSTALL(FILES ${Tano_Playlists_Sl} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_I
 
 # Windows Extra
 IF(MINGW)
-	INSTALL(FILES ${Tano_Qt} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-	INSTALL(FILES ${Tano_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+	INSTALL(FILES ${Tano_Qt_Lib} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+	INSTALL(FILES ${Tano_Dbus_Bin} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+	INSTALL(FILES ${Tano_Dbus_Config} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/etc/dbus-1")
+	INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
 	INSTALL(FILES ${Tano_Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/vlc/plugins")
 ENDIF(MINGW)

@@ -16,6 +16,7 @@ The latest version of Qt4, libvlc-qt, libvlc and CMake is prefered.
 Runtime dependencies:
 =====================
 - Qt library, same version
+- dbus-daemon
 - libvlc-qt library, same version
 - libvlc library and plugins, same version
 
@@ -38,7 +39,10 @@ Installation
 Windows users
 =============
 Compilation process should not differ too much.
-If some libraries are not found, use cmake gui.
+If some libraaries are not found, use cmake gui.
+
+We recommend pre-compiled version of Qt with dbus support from KDE for Windows.
+See http://windows.kde.org/ for more information.
 
 
 Troubleshooting:
