@@ -67,6 +67,7 @@ protected:
 private slots:
 	void exit();
 	void aboutTano();
+	void donate();
 
 	void showSchedule();
 	void showSettings();

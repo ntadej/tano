@@ -82,6 +82,7 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="actionUpdate"/>
+    <addaction name="actionDonate"/>
     <addaction name="actionAbout"/>
     <addaction name="actionAboutQt"/>
    </widget>
@@ -509,7 +510,7 @@
        </property>
        <property name="icon">
         <iconset resource="../../data/icons.qrc">
-         <normaloff>:/icons/48x48/record.png</normaloff>:/icons/48x48/record.png</iconset>
+         <normaloff>:/icons/48x48/media-record.png</normaloff>:/icons/48x48/media-record.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -786,7 +787,7 @@
   <action name="actionRecordNow">
    <property name="icon">
     <iconset resource="../../data/icons.qrc">
-     <normaloff>:/icons/24x24/record.png</normaloff>:/icons/24x24/record.png</iconset>
+     <normaloff>:/icons/24x24/media-record.png</normaloff>:/icons/24x24/media-record.png</iconset>
    </property>
    <property name="text">
     <string>Record Current</string>
@@ -819,7 +820,7 @@
    </property>
    <property name="icon">
     <iconset resource="../../data/icons.qrc">
-     <normaloff>:/icons/24x24/record.png</normaloff>:/icons/24x24/record.png</iconset>
+     <normaloff>:/icons/24x24/media-record.png</normaloff>:/icons/24x24/media-record.png</iconset>
    </property>
    <property name="text">
     <string>Stop recording</string>
@@ -874,6 +875,15 @@
    </property>
    <property name="text">
     <string>Enable Info panel in Fullscreen mode</string>
+   </property>
+  </action>
+  <action name="actionDonate">
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/donate.png</normaloff>:/icons/24x24/donate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Donate</string>
    </property>
   </action>
  </widget>

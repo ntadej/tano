@@ -35,6 +35,7 @@
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "ui/dialogs/AboutDialog.h"
+#include "ui/dialogs/DonationDialog.h"
 #include "ui/settings/SettingsEdit.h"
 
 MainWindow::MainWindow(QWidget *parent)	:
@@ -231,6 +232,7 @@ void MainWindow::createSettingsStartup()
 void MainWindow::createConnections()
 {
 	connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
+	connect(ui->actionDonate, SIGNAL(triggered()), this, SLOT(donate()));
 	connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
 	connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(exit()));
@@ -410,6 +412,12 @@ void MainWindow::aboutTano()
 {
 	AboutDialog about(Tano::Player, this);
 	about.exec();
+}
+
+void MainWindow::donate()
+{
+	DonationDialog d(this);
+	d.exec();
 }
 
 

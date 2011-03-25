@@ -72,6 +72,21 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
+    <name>DonationDialog</name>
+    <message>
+        <source>Donate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Player project requires a lot of work and devotion. You can also support the development by donating some money. This money will be spent to cover all expenses and hosting costs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can read additional terms and information on Tano Player homepage.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>EpgFull</name>
     <message>
         <source>Schedule</source>
@@ -391,6 +406,10 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Enable Info panel in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
