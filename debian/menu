@@ -1,0 +1,8 @@
+?package(tano):\
+	needs="X11"\
+	section="Apps/Video"\
+	longtitle="Tano IP TV Player"\
+	hints="Video"\
+	title="Tano"\
+	icon="/usr/share/icons/tano.png"\
+	command="/usr/bin/tano"

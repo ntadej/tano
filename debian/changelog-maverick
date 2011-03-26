@@ -1,0 +1,24 @@
+tano (0.8.0~git20110326+3f8900f-1~maverick~ppa1) maverick; urgency=low
+
+  Git unstable revision package
+
+ -- Tadej Novak <tadej@tano.si>  Sat, 26 Mar 2011 16:56:05 +0100
+
+
+tano (0.7.3-0~maverick~ppa3) maverick; urgency=low
+
+  * [PPA] Dependency fix
+
+ -- Tadej Novak <ntadej@users.sourceforge.net>  Thu, 14 Oct 2010 20:24:28 +0200
+
+
+tano (0.7.3-0~maverick~ppa1) maverick; urgency=low
+
+  * VLC-Qt library support
+  * New Updates manager
+  * Major code cleanup
+  * Resources updated
+  * [WINDOWS] Installation scripts updated
+  * [PPA] Maverick support
+
+ -- Tadej Novak <ntadej@users.sourceforge.net>  Thu, 14 Oct 2010 15:21:41 +0200
