@@ -39,19 +39,20 @@ public slots:
 	bool isRecording();
 	bool isTimer();
 	QString output();
+	QString timerEndTime();
 
 	void record(const QString &channel,
 				const QString &url,
 				const QString &path);
+	void refreshSettings();
 	void refreshTimers();
 	void stop();
 
 signals:
 	void elapsed(const int &);
-	void stopTimer();
 	void timer(const QString &,
-			   const QString &,
 			   const QString &);
+	void timerStop();
 };
 
 #endif // TANO_RECORDERCONTROLLER_H_

@@ -47,6 +47,12 @@ QString RecorderController::output()
 	return reply.value();
 }
 
+QString RecorderController::timerEndTime()
+{
+	QDBusPendingReply<QString> reply = asyncCall(QLatin1String("timerEndTime"));
+	return reply.value();
+}
+
 void RecorderController::record(const QString &channel,
 								const QString &url,
 								const QString &path)
@@ -54,9 +60,14 @@ void RecorderController::record(const QString &channel,
 	asyncCall(QLatin1String("record"), channel, url, path);
 }
 
+void RecorderController::refreshSettings()
+{
+	asyncCall(QLatin1String("refreshSettings"));
+}
+
 void RecorderController::refreshTimers()
 {
-	asyncCall(QLatin1String("refreshTimer"));
+	asyncCall(QLatin1String("refreshTimers"));
 }
 
 void RecorderController::stop()

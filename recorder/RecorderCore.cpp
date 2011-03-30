@@ -21,6 +21,7 @@
 
 #include "container/Timer.h"
 #include "core/Common.h"
+#include "core/Settings.h"
 #include "recorder/RecorderCore.h"
 
 RecorderCore::RecorderCore(QObject *parent)
@@ -30,6 +31,8 @@ RecorderCore::RecorderCore(QObject *parent)
 	_instance(0),
 	_player(0)
 {
+	settings();
+
 	_timer = new QTimer(this);
 	connect(_timer, SIGNAL(timeout()), this, SLOT(time()));
 }
@@ -41,6 +44,23 @@ RecorderCore::~RecorderCore()
 	delete _player;
 	delete _instance;
 	delete _timer;
+}
+
+QString RecorderCore::fileName(const QString &channel,
+							   const QString &path,
+							   const QString &name) const
+{
+	QString f = QString(path);
+	f.append("/");
+	if(!name.isEmpty()) {
+		f.append(QString(name).replace(" ", "_"));
+		f.append("-");
+	}
+	f.append(QString(channel).replace(" ", "_"));
+	f.append(QDateTime::currentDateTime().toString("-yyyyMMdd-hhmmss"));
+	f.append(".ts");
+
+	return f;
 }
 
 QString RecorderCore::output() const
@@ -55,13 +75,7 @@ void RecorderCore::record(const QString &channel,
 						  const QString &url,
 						  const QString &path)
 {
-	QString fileName = QString(path);
-	fileName.append("/");
-	fileName.append(QString(channel).replace(" ","_"));
-	fileName.append(QDateTime::currentDateTime().toString("-yyyyMMdd-hhmmss"));
-	fileName.append(".ts");
-
-	_output = fileName;
+	_output = fileName(channel, path);
 
 	if(_player)
 		delete _player;
@@ -81,15 +95,46 @@ void RecorderCore::record(const QString &channel,
 	_timer->start(500);
 }
 
-void RecorderCore::record(Timer *timer)
+void RecorderCore::record(Timer *t)
 {
+	stop();
 
+	_output = fileName(t->channel(), _defaultPath, t->name());
+
+	if(_player)
+		delete _player;
+	if(_instance)
+		delete _instance;
+
+	_instance = new VlcInstance(Tano::vlcQtRecorderArgs(_output));
+	_player = new VlcMediaPlayer();
+
+	_player->open(t->url());
+	_player->play();
+
+	_isRecording = true;
+	_isTimer = true;
+	_currentEndTime = t->endTime().toString("hh:mm");
+	t->setRecording(true);
+
+	_time = 0;
+	_timer->start(500);
+
+	emit timer(t->name() + QString("(%1)").arg(t->channel()), t->url());
+}
+
+void RecorderCore::settings()
+{
+	Settings *settings = new Settings(this);
+	_defaultPath = settings->recorderDirectory();
+	delete settings;
 }
 
 void RecorderCore::stop()
 {
 	_player->stop();
 
+	_currentEndTime = "";
 	_isRecording = false;
 	_isTimer = false;
 
@@ -101,4 +146,8 @@ void RecorderCore::time()
 {
 	_time += 500;
 	emit elapsed(_time);
+
+	if(QTime::currentTime() >= QTime::fromString(_currentEndTime, "hh:mm")) {
+		emit timerStop();
+	}
 }

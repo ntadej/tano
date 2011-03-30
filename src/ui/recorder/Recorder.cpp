@@ -42,7 +42,7 @@ Recorder::Recorder(QWidget *parent)
 
 	_controller = new RecorderController("si.tano.TanoPlayer", "/Recorder",
 										 QDBusConnection::sessionBus(), this);
-	_recorder = new RecorderProcess(this);
+	//_recorder = new RecorderProcess(this);
 
 	//Init
 	connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
@@ -51,12 +51,15 @@ Recorder::Recorder(QWidget *parent)
 	connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(playlist(QTreeWidgetItem *)));
 
 	connect(_controller, SIGNAL(elapsed(int)), this, SLOT(time(int)));
+	connect(_controller, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
+	connect(_controller, SIGNAL(timerStop()), this, SLOT(timerStop()));
 }
 
 Recorder::~Recorder()
 {
 	delete ui;
 	delete _controller;
+	delete _recorder;
 }
 
 void Recorder::changeEvent(QEvent *e)
@@ -76,6 +79,8 @@ void Recorder::createSettings()
 	Settings *settings = new Settings(this);
 	ui->fileEdit->setText(settings->recorderDirectory());
 	delete settings;
+
+	_controller->refreshSettings();
 }
 
 void Recorder::stop()
@@ -125,18 +130,20 @@ void Recorder::record(const bool &status)
 						tr("Cannot write to %1.")
 						.arg(ui->fileEdit->text()));
 			return;
-		} else if(ui->valueSelected->text().isEmpty()) {
+		} else if(ui->valueSelected->text().isEmpty() && !_controller->isTimer()) {
 			ui->buttonRecord->setChecked(false);
 			QMessageBox::critical(this, tr("Recorder"),
 						tr("Channel is not selected!"));
 			return;
 		}
 
-		_controller->record(_name, _url, ui->fileEdit->text());
+		if(!_controller->isTimer()) {
+			_controller->record(_name, _url, ui->fileEdit->text());
+		}
 
 		ui->valueCurrent->setText(_name);
 		if(_controller->isTimer())
-			ui->valueEndTime->setText(""); // TODO: Timer end time
+			ui->valueEndTime->setText(_controller->timerEndTime());
 		else
 			ui->valueEndTime->setText(tr("No timer - press button to stop."));
 		ui->valueFile->setText(_controller->output());
@@ -217,4 +224,19 @@ void Recorder::showTimersEditor()
 		connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
 		_editor->show();
 	}
+}
+
+void Recorder::timerStart(const QString &name,
+						  const QString &url)
+{
+	_name = name;
+	_url = url;
+
+	ui->buttonRecord->toggle();
+}
+
+void Recorder::timerStop()
+{
+	if(isRecording())
+		ui->buttonRecord->toggle();
 }

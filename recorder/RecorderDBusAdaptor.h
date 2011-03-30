@@ -39,16 +39,17 @@ public slots:
 				const QString &url,
 				const QString &path) { _main->record(channel, url, path); }
 	bool recording() const { return _main->isRecording(); }
+	void refreshSettings() { _main->refreshSettings(); }
 	void refreshTimers() { _main->refreshTimers(); }
 	void stop() { _main->stop(); }
 	bool timer() const { return _main->isTimer(); }
+	QString timerEndTime() const { return _main->timerEndTime(); }
 
 signals:
 	void elapsed(const int &);
-	void stopTimer();
 	void timer(const QString &,
-			   const QString &,
 			   const QString &);
+	void timerStop();
 
 private:
 	RecorderMain *_main;

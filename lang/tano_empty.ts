@@ -1523,10 +1523,6 @@ Then select your playlist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>hh:mm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Disabled:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1607,6 +1603,18 @@ You changes will not be applied.</source>
     </message>
     <message>
         <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hh:mm:ss</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

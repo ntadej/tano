@@ -60,6 +60,9 @@ private slots:
 	void playlist(QTreeWidgetItem* clickedChannel);
 	void record(const bool &status);
 	void time(const int &time);
+	void timerStart(const QString &name,
+					const QString &url);
+	void timerStop();
 
 private:
 	Ui::Recorder *ui;

@@ -38,23 +38,33 @@ public:
 	bool isRecording() const { return _isRecording; }
 	bool isTimer() const { return _isTimer; }
 	QString output() const;
+	void settings();
+	void stop();
+	QString timerEndTime() const { return _currentEndTime; }
+
+public slots:
 	void record(const QString &channel,
 				const QString &url,
 				const QString &path);
-	void record(Timer *timer);
-	void stop();
+	void record(Timer *t);
 
 signals:
 	void elapsed(const int &);
-	void stopTimer();
 	void timer(const QString &,
-			   const QString &,
 			   const QString &);
+	void timerStop();
 
 private slots:
 	void time();
 
 private:
+	QString fileName(const QString &channel,
+					 const QString &path,
+					 const QString &name = 0) const;
+
+	QString _currentEndTime;
+	QString _defaultPath;
+
 	bool _isRecording;
 	bool _isTimer;
 

@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
 #include <QtCore/QFileInfo>
 
 #include "container/Timer.h"
@@ -24,7 +25,8 @@
 #include "xml/TimersHandler.h"
 
 RecorderTimeManager::RecorderTimeManager(QObject *parent)
-	: QObject(parent)
+	: QObject(parent),
+	_timersHandler(0)
 {
 	Settings *settings = new Settings(this);
 	_path = settings->path();
@@ -32,9 +34,8 @@ RecorderTimeManager::RecorderTimeManager(QObject *parent)
 
 	_timer = new QTimer();
 	connect(_timer, SIGNAL(timeout()), this, SLOT(check()));
-	_timer->start(6000);
+	_timer->start(3000);
 
-	_timersHandler = new TimersHandler();
 	updateTimers();
 }
 
@@ -48,8 +49,9 @@ void RecorderTimeManager::check()
 {
 	for(int i = 0; i < _timersList.size(); i++) {
 		if(_timersList[i]->startTime() <= QTime::currentTime() && _timersList[i]->endTime() >= QTime::currentTime()) {
-			if(!_timersList[i]->isDisabled()) {
+			if(!_timersList[i]->isDisabled() && !_timersList[i]->isRecording()) {
 				emit timer(_timersList[i]);
+				qDebug() << "Timer" << _timersList[i]->name() << "started";
 			}
 		}
 	}
@@ -57,7 +59,12 @@ void RecorderTimeManager::check()
 
 void RecorderTimeManager::readTimers()
 {
+	if(_timersHandler)
+		delete _timersHandler;
+
+	_timersHandler = new TimersHandler();
 	QString fileName = _path + "timers.tano.xml";
+	_timersHandler->clear();
 
 	QXmlSimpleReader reader;
 	reader.setContentHandler(_timersHandler);
@@ -73,10 +80,16 @@ void RecorderTimeManager::readTimers()
 	QXmlInputSource xmlInputSource(&file);
 	if (!reader.parse(xmlInputSource))
 		return;
+
+	file.close();
 }
 
 void RecorderTimeManager::updateTimers()
 {
 	readTimers();
+	_timersList.clear();
 	_timersList = _timersHandler->timersList();
+	qDebug() << _timersList.size() << "timers loaded";
+	for(int i = 0; i < _timersHandler->timersList().size(); i++)
+		qDebug() << _timersHandler->timersList()[i]->name();
 }

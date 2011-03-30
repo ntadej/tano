@@ -41,12 +41,12 @@
           </column>
           <column>
            <property name="text">
-            <string notr="true">Type</string>
+            <string>Type</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string notr="true">Status</string>
+            <string>Status</string>
            </property>
           </column>
          </widget>
@@ -208,14 +208,14 @@
      <item row="6" column="1">
       <widget class="QTimeEdit" name="editStartTime">
        <property name="displayFormat">
-        <string>hh:mm</string>
+        <string>hh:mm:ss</string>
        </property>
       </widget>
      </item>
      <item row="7" column="1">
       <widget class="QTimeEdit" name="editEndTime">
        <property name="displayFormat">
-        <string>hh:mm</string>
+        <string>hh:mm:ss</string>
        </property>
       </widget>
      </item>

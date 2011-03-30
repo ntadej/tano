@@ -38,15 +38,16 @@ public:
 				const QString &url,
 				const QString &path) { _core->record(channel, url, path); }
 	void record(Timer *timer) { _core->record(timer); }
+	void refreshSettings() { _core->settings(); }
 	void refreshTimers() { _time->updateTimers(); }
 	void stop() { _core->stop(); }
+	QString timerEndTime() const { return _core->timerEndTime(); }
 
 signals:
 	void elapsed(const int &);
-	void stopTimer();
 	void timer(const QString &,
-			   const QString &,
 			   const QString &);
+	void timerStop();
 
 private:
 	RecorderCore *_core;

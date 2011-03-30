@@ -1289,41 +1289,41 @@ Nato izberite želen seznam programov.</translation>
 <context>
     <name>Recorder</name>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="110"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="115"/>
         <source>Open directory</source>
         <translation>Odpri imenik</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="141"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="148"/>
         <source>No timer - press button to stop.</source>
         <translation>Ni časovnika - pritisnite gumb in ustavite.</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="144"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="151"/>
         <source>Stop recording</source>
         <translation>Prenehajte s snemanjem</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="61"/>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="160"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="167"/>
         <source>Record</source>
         <translation>Snemaj</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="125"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="130"/>
         <source>Cannot write to %1.</source>
         <translation>Ne morem pisati v %1.</translation>
     </message>
     <message>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="131"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="136"/>
         <source>Channel is not selected!</source>
         <translation>Program ni izbran!</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/Recorder.ui" line="14"/>
         <location filename="../src/ui/recorder/Recorder.ui" line="24"/>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="124"/>
-        <location filename="../src/ui/recorder/Recorder.cpp" line="130"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="129"/>
+        <location filename="../src/ui/recorder/Recorder.cpp" line="135"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
@@ -1906,6 +1906,16 @@ Nato izberite želen seznam programov.</translation>
         <translation>Časovnik</translation>
     </message>
     <message>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="44"/>
+        <source>Type</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/recorder/TimersEdit.ui" line="49"/>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="61"/>
         <source>Create</source>
         <translation>Ustvari</translation>
@@ -1959,8 +1969,8 @@ Nato izberite želen seznam programov.</translation>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="211"/>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="218"/>
-        <source>hh:mm</source>
-        <translation>hh:mm</translation>
+        <source>hh:mm:ss</source>
+        <translation>hh:mm:ss</translation>
     </message>
     <message>
         <location filename="../src/ui/recorder/TimersEdit.ui" line="238"/>
