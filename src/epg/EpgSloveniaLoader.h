@@ -25,8 +25,8 @@
 #include <QtCore/QTimer>
 #include <QtNetwork/QHttp>
 
-#include "container/EpgDayList.h"
-#include "container/EpgShowInfo.h"
+#include "container/epgold/EpgDayList.h"
+#include "container/epgold/EpgShowInfo.h"
 #include "epg/EpgSlovenia.h"
 
 class EpgSloveniaLoader : public QHttp

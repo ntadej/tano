@@ -16,7 +16,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/EpgItem.h"
+#include "container/epgold/EpgItem.h"
 
 EpgItem::EpgItem(const QTime &time,
 				 const QString &url,

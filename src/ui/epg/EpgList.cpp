@@ -19,7 +19,7 @@
 #include <QtGui/QHeaderView>
 #include <QtGui/QTableWidget>
 
-#include "container/EpgItem.h"
+#include "container/epgold/EpgItem.h"
 
 #include "EpgList.h"
 

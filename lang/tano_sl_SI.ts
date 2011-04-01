@@ -1277,6 +1277,11 @@ Nato izberite želen seznam programov.</translation>
         <source>The file is not a Web playlist import file.</source>
         <translation>Datoteka ni Uvoz seznamov programov.</translation>
     </message>
+    <message>
+        <location filename="../src/xml/XmltvHandler.cpp" line="43"/>
+        <source>The file is not a valid XMLTV file.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>

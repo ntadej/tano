@@ -19,9 +19,9 @@
 #include <QtCore/QDebug>
 #include <QtGui/QTextEdit>
 
-#include "container/EpgDayList.h"
-#include "container/EpgItem.h"
-#include "container/EpgShowInfo.h"
+#include "container/epgold/EpgDayList.h"
+#include "container/epgold/EpgItem.h"
+#include "container/epgold/EpgShowInfo.h"
 #include "core/ConsoleOutput.h"
 #include "epg/EpgSlovenia.h"
 

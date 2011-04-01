@@ -991,6 +991,10 @@ Then select your playlist.</source>
         <source>The file is not a Web playlist import file.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The file is not a valid XMLTV file.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>

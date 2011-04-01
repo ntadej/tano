@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,43 +16,16 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_EPGLIST_H_
-#define TANO_EPGLIST_H_
-
-#include <QtCore/QMap>
-#include <QtGui/QAction>
-#include <QtGui/QMenu>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QTableWidget>
-
 #include "container/epgold/EpgDayList.h"
 
-class EpgList : public QTableWidget
+EpgDayList::EpgDayList(const QString &channel,
+					   const int &day)
+	: _channel(channel),
+	_day(day),
+	_valid(true)
 {
-Q_OBJECT
-public:
-	EpgList(QWidget *parent = 0);
-	~EpgList();
+	_date = QDate::currentDate();
+	_date.addDays(_day);
+}
 
-	void clearList();
-
-public slots:
-	void setEpg(const EpgDayList &epg);
-
-signals:
-	void urlClicked(QString);
-
-protected:
-	void mouseReleaseEvent(QMouseEvent *event);
-
-private slots:
-	void clicked(QTableWidgetItem *item = 0);
-
-private:
-	QAction *_info;
-	EpgDayList _list;
-	QAction *_record;
-	QMenu *_rightMenu;
-};
-
-#endif // TANO_EPGLIST_H_
+EpgDayList::~EpgDayList() { }

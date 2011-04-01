@@ -18,7 +18,7 @@
 
 #include <QtCore/QDate>
 
-#include "container/EpgDayList.h"
+#include "container/epgold/EpgDayList.h"
 
 #include "EpgSchedule.h"
 #include "ui_EpgSchedule.h"

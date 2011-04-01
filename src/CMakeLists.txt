@@ -107,11 +107,12 @@ SET(Tano_Resrcs
 # Define the C++ source files used by Tano
 SET(Tano_Container_Srcs
 	container/Channel.cpp
-	container/EpgDayList.cpp
-	container/EpgItem.cpp
-	container/EpgShowInfo.cpp
 	container/UpdateInfo.cpp
 	container/Timer.cpp
+	container/epgold/EpgDayList.cpp
+	container/epgold/EpgItem.cpp
+	container/epgold/EpgShowInfo.cpp
+	container/xmltv/XmltvList.cpp
 )
 SET(Tano_Core_Srcs
 	core/Arguments.cpp
@@ -182,6 +183,7 @@ SET(Tano_XML_Srcs
 	xml/TimersGenerator.cpp
 	xml/TimersHandler.cpp
 	xml/UpdateHandler.cpp
+	xml/XmltvHandler.cpp
 	xml/WebPlaylistHandler.cpp
 )
 

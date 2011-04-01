@@ -25,7 +25,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QTimer>
 
-#include "container/EpgDayList.h"
+#include "container/epgold/EpgDayList.h"
 #include "core/Enums.h"
 #include "epg/EpgSloveniaLoader.h"
 

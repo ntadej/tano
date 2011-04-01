@@ -19,7 +19,7 @@
 #include <QtCore/QDebug>
 
 #include "core/ConsoleOutput.h"
-#include "container/EpgItem.h"
+#include "container/epgold/EpgItem.h"
 #include "epg/EpgManager.h"
 
 EpgManager::EpgManager(QObject *parent)
