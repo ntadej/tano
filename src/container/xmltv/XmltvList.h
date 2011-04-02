@@ -20,7 +20,10 @@
 #define TANO_XMLTVLIST_H_
 
 #include <QtCore/QDate>
+#include <QtCore/QList>
 #include <QtCore/QString>
+
+class XmltvChannel;
 
 class XmltvList
 {
@@ -40,6 +43,10 @@ public:
 	QString generatorInfoUrl() const { return _generatorInfoUrl; }
 	void setGeneratorInfoUrl(const QString &s) { _generatorInfoUrl = s; }
 
+	QList<XmltvChannel *> channels() const { return _channels; }
+	void addChannel(XmltvChannel *c);
+	XmltvChannel *channel(const QString &id);
+
 private:
 	QDate _date;
 	QString _sourceInfoUrl;
@@ -47,6 +54,8 @@ private:
 	QString _sourceDataUrl;
 	QString _generatorInfoName;
 	QString _generatorInfoUrl;
+
+	QList<XmltvChannel *> _channels;
 };
 
 #endif // TANO_XMLTVLIST_H_

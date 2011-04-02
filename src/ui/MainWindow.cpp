@@ -41,7 +41,7 @@
 MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()), _update(new UpdateDialog()),
 	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0),
-	_playlistEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new EpgFull())
+	_playlistEditor(0), _epg(new EpgManager()), _xmltv(new XmltvManager()), _epgShow(new EpgShow()), _schedule(new EpgFull())
 {
 	QPixmap pixmap(":/images/splash.png");
 	Settings *settings = new Settings(this);

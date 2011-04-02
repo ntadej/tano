@@ -1278,7 +1278,7 @@ Nato izberite želen seznam programov.</translation>
         <translation>Datoteka ni Uvoz seznamov programov.</translation>
     </message>
     <message>
-        <location filename="../src/xml/XmltvHandler.cpp" line="43"/>
+        <location filename="../src/xml/XmltvHandler.cpp" line="44"/>
         <source>The file is not a valid XMLTV file.</source>
         <translation type="unfinished"></translation>
     </message>

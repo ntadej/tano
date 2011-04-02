@@ -17,23 +17,8 @@
 *****************************************************************************/
 
 #include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvList.h"
 
-XmltvList::XmltvList(const QDate &date)
-	: _date(date) { }
+XmltvChannel::XmltvChannel(const QString &id)
+	: _id(id) { }
 
-XmltvList::~XmltvList() { }
-
-void XmltvList::addChannel(XmltvChannel *c)
-{
-	_channels.append(c);
-}
-
-XmltvChannel *XmltvList::channel(const QString &id)
-{
-	for(int i = 0; i < _channels.size(); i++) {
-		if(_channels[i]->id() == id) {
-			return _channels[i];
-		}
-	}
-}
+XmltvChannel::~XmltvChannel() { }

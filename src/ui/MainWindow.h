@@ -34,6 +34,7 @@
 #include "core/LocaleManager.h"
 #include "core/Shortcuts.h"
 #include "epg/EpgManager.h"
+#include "epg/XmltvManager.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/dialogs/UpdateDialog.h"
 #include "ui/epg/EpgFull.h"
@@ -157,6 +158,7 @@ private:
 	//Playback and channels
 	Channel *_channel;
 	EpgManager *_epg;
+	XmltvManager *_xmltv;
 	EpgShow *_epgShow;
 	QString _playlistName;
 

@@ -16,24 +16,46 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
+
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"
+#include "core/Common.h"
+#include "epg/XmltvManager.h"
+#include "xml/XmltvHandler.h"
 
-XmltvList::XmltvList(const QDate &date)
-	: _date(date) { }
-
-XmltvList::~XmltvList() { }
-
-void XmltvList::addChannel(XmltvChannel *c)
+XmltvManager::XmltvManager(QObject *parent)
+	: QObject(parent)
 {
-	_channels.append(c);
+	_handler = new XmltvHandler();
+	loadXmltv();
 }
 
-XmltvChannel *XmltvList::channel(const QString &id)
+XmltvManager::~XmltvManager()
 {
-	for(int i = 0; i < _channels.size(); i++) {
-		if(_channels[i]->id() == id) {
-			return _channels[i];
-		}
+	delete _handler;
+}
+
+void XmltvManager::loadXmltv()
+{
+	QXmlSimpleReader reader;
+	reader.setContentHandler(_handler);
+	reader.setErrorHandler(_handler);
+
+	QFile file(Tano::locateResource("xmltv.xml")); // Test file
+	if (!file.open(QFile::ReadOnly | QFile::Text))
+		return;
+
+	QXmlInputSource xmlInputSource(&file);
+	if (!reader.parse(xmlInputSource))
+		return;
+
+	// Debug
+	qDebug() << _handler->list()->sourceInfoName() << _handler->list()->sourceInfoUrl();
+	for(int i = 0; i < 5; i++) {
+		qDebug() << _handler->list()->channels()[i]->id()
+				 << _handler->list()->channels()[i]->displayName()
+				 << _handler->list()->channels()[i]->icon()
+				 << _handler->list()->channels()[i]->url();
 	}
 }

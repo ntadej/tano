@@ -16,24 +16,24 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvList.h"
+#ifndef TANO_XMLTVMANAGER_H_
+#define TANO_XMLTVMANAGER_H_
 
-XmltvList::XmltvList(const QDate &date)
-	: _date(date) { }
+#include <QtCore/QObject>
 
-XmltvList::~XmltvList() { }
+class XmltvHandler;
 
-void XmltvList::addChannel(XmltvChannel *c)
+class XmltvManager : public QObject
 {
-	_channels.append(c);
-}
+Q_OBJECT
+public:
+	XmltvManager(QObject *parent = 0);
+	~XmltvManager();
 
-XmltvChannel *XmltvList::channel(const QString &id)
-{
-	for(int i = 0; i < _channels.size(); i++) {
-		if(_channels[i]->id() == id) {
-			return _channels[i];
-		}
-	}
-}
+private:
+	void loadXmltv();
+
+	XmltvHandler *_handler;
+};
+
+#endif // TANO_XMLTVMANAGER_H_

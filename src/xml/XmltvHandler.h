@@ -25,6 +25,7 @@
 
 #include <QtXml/QXmlDefaultHandler>
 
+class XmltvChannel;
 class XmltvList;
 
 class XmltvHandler : public QXmlDefaultHandler
@@ -51,6 +52,7 @@ private:
 	QString _errorStr;
 	bool _metTag;
 
+	XmltvChannel *_currentChannel;
 	XmltvList *_list;
 };
 

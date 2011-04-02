@@ -22,6 +22,7 @@
 
 #include <QtCore/QDebug>
 
+#include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"
 #include "core/ConsoleOutput.h"
 #include "XmltvHandler.h"
@@ -44,7 +45,7 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
 		return false;
 	}
 
-	if (qName == "tv") {
+	if (qName == "tv") { // Main
 		_list = new XmltvList(QDate::fromString(attributes.value("date"), "YYYYMMDDhhmmss"));
 		_list->setSourceInfoUrl(attributes.value("source-info-url"));
 		_list->setSourceInfoName(attributes.value("source-info-name"));
@@ -52,9 +53,12 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
 		_list->setGeneratorInfoName(attributes.value("source-info-url"));
 		_list->setGeneratorInfoUrl(attributes.value("source-info-url"));
 		_metTag = true;
-	} else if (qName == "channel") {
-		// Channel
-	} else if (qName == "programme") {
+	} else if (qName == "channel") { // Channel
+		_currentChannel = new XmltvChannel(attributes.value("id"));
+		_list->addChannel(_currentChannel);
+	} else if (qName == "icon") {
+		_currentChannel->setIcon(attributes.value("src"));
+	} else if (qName == "programme") { // Programme
 		// Programme
 	}
 
@@ -63,12 +67,21 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
 }
 
 bool XmltvHandler::endElement(const QString & /* namespaceURI */,
-								const QString & /* localName */,
-								const QString &qName)
+							  const QString & /* localName */,
+							  const QString &qName)
 {
-	//if (qName == "title") {
-		//_currentText;
-	//}
+	// Channel
+	if(qName == "display-name") {
+		if(_list && _currentChannel) {
+			_currentChannel->setDisplayName(_currentText);
+		}
+	} else if(qName == "url") {
+		if(_list && _currentChannel) {
+			_currentChannel->setUrl(_currentText);
+		}
+	}
+
+	_currentText.clear();
 	return true;
 }
 

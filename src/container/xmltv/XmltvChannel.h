@@ -16,24 +16,30 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvList.h"
+#ifndef TANO_XMLTVCHANNEL_H_
+#define TANO_XMLTVCHANNEL_H_
 
-XmltvList::XmltvList(const QDate &date)
-	: _date(date) { }
+#include <QtCore/QString>
 
-XmltvList::~XmltvList() { }
-
-void XmltvList::addChannel(XmltvChannel *c)
+class XmltvChannel
 {
-	_channels.append(c);
-}
+public:
+	XmltvChannel(const QString &id);
+	~XmltvChannel();
 
-XmltvChannel *XmltvList::channel(const QString &id)
-{
-	for(int i = 0; i < _channels.size(); i++) {
-		if(_channels[i]->id() == id) {
-			return _channels[i];
-		}
-	}
-}
+	QString id() const { return _id; }
+	QString displayName() const { return _displayName; }
+	void setDisplayName(const QString &s) { _displayName = s; }
+	QString icon() const { return _icon; }
+	void setIcon(const QString &s) { _icon = s; }
+	QString url() const { return _url; }
+	void setUrl(const QString &s) { _url = s; }
+
+private:
+	QString _id;
+	QString _displayName;
+	QString _icon;
+	QString _url;
+};
+
+#endif // TANO_XMLTVCHANNEL_H_

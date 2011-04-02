@@ -61,6 +61,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	core/UpdateManager.h
 	epg/EpgManager.h
 	epg/EpgSloveniaLoader.h
+	epg/XmltvManager.h
 	ui/MainWindow.h
 	ui/core/CurrentTime.h
 	ui/core/InfoBar.h
@@ -112,6 +113,7 @@ SET(Tano_Container_Srcs
 	container/epgold/EpgDayList.cpp
 	container/epgold/EpgItem.cpp
 	container/epgold/EpgShowInfo.cpp
+	container/xmltv/XmltvChannel.cpp
 	container/xmltv/XmltvList.cpp
 )
 SET(Tano_Core_Srcs
@@ -134,6 +136,7 @@ SET(Tano_Epg_Srcs
 	epg/EpgManager.cpp
 	epg/EpgSlovenia.cpp
 	epg/EpgSloveniaLoader.cpp
+	epg/XmltvManager.cpp
 )
 SET(Tano_Playlist_Srcs
 	playlist/JsGenerator.cpp
