@@ -48,11 +48,11 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Editor</translation>
+        <translation>Editor</translation>
     </message>
     <message>
         <source>Player</source>
-        <translation type="unfinished">Přehrávač</translation>
+        <translation>Přehrávač</translation>
     </message>
 </context>
 <context>
@@ -74,15 +74,15 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>DonationDialog</name>
     <message>
         <source>Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Darovat</translation>
     </message>
     <message>
         <source>Tano Player project requires a lot of work and devotion. You can also support the development by donating some money. This money will be spent to cover all expenses and hosting costs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekt přehrávače Tano vyžaduje hodně práce a péče. Vývoj můžete podpořit i tak, že darujete nějaké peníze. Tyto peníze budou použity na pokrytí všech výdajů a poplatků za hostování programu.</translation>
     </message>
     <message>
         <source>You can read additional terms and information on Tano Player homepage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Doplňkové informace a podmínky si můžete přečíst na domovských stránkách přehrávače Tano.</translation>
     </message>
 </context>
 <context>
@@ -152,16 +152,16 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>GetFile</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Download failed: %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stažení se nezdařilo: %1.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Nelze zapisovat soubor %1:
+        <translation>Nelze zapisovat soubor %1:
 %2.</translation>
     </message>
 </context>
@@ -397,19 +397,19 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Otevřít seznam programů</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít seznam programů</translation>
     </message>
     <message>
         <source>Enable Info panel in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit informační panel v režimu celé obrazovky</translation>
     </message>
     <message>
         <source>Donate</source>
-        <translation type="unfinished"></translation>
+        <translation>Darovat</translation>
     </message>
 </context>
 <context>
@@ -614,7 +614,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Editor seznamu skladeb</translation>
+        <translation>Editor seznamu programů</translation>
     </message>
     <message>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
@@ -670,121 +670,124 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Download from Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Stáhnout z internetu</translation>
     </message>
     <message>
         <source>Tano TV old channel list files(*.tano *.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory se starými seznamy programů Tano TV (*.m3u)</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat program</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Smazat program</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation type="unfinished"></translation>
+        <translation>Posunout nahoru</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
+        <translation>Posunout dolů</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít seznam programů</translation>
     </message>
     <message>
         <source>Import Sagem JS channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavést seznam programů Sagem JS</translation>
     </message>
     <message>
         <source>Import Tano TV old channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavést starý seznam programů Tano TV</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcete zavřít editor?
+Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový seznam programů</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcete vytvořit nový seznam programů?
+Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový program z prohledání %1</translation>
     </message>
     <message>
         <source>Tano Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor Tano</translation>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - Editor Tano</translation>
     </message>
 </context>
 <context>
     <name>PlaylistImportWeb</name>
     <message>
         <source>Import playlist from Web</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavést seznam programů z internetu</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation type="unfinished"></translation>
+        <translation>Země:</translation>
     </message>
     <message>
         <source>Slovenia</source>
-        <translation type="unfinished"></translation>
+        <translation>Slovinsko</translation>
     </message>
     <message>
         <source>Select your playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte svůj seznam programů</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation type="unfinished">Seznam programů:</translation>
+        <translation>Seznam programů:</translation>
     </message>
     <message>
         <source>Select your country from the menu below.
 Then select your playlist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte svoji zemi z nabídky níže.
+Potom vyberte svůj seznam programů.</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Refresh current playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit současný seznam programů</translation>
     </message>
     <message>
         <source>Open playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít seznam programů</translation>
     </message>
     <message>
         <source>&lt;i&gt;If you chose &apos;&apos;Refresh&apos;&apos;, your current channel numbers will remain the same. Only new channels will be added.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Pokud zvolíte &apos;&apos;Obnovit&apos;&apos;, vaše nynější čísla programů zůstanou stejná. Budou přidány pouze nové programy.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Save channel list</source>
-        <translation type="unfinished">Uložit seznam programů</translation>
+        <translation>Uložit seznam programů</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished">Soubory se seznamy programů Tano TV (*.m3u)</translation>
+        <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
 </context>
 <context>
@@ -795,7 +798,7 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Select playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrat seznam programů</translation>
     </message>
 </context>
 <context>
@@ -912,7 +915,7 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Print channel List</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytisknout seznam programů</translation>
     </message>
 </context>
 <context>
@@ -989,7 +992,7 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>The file is not a Web playlist import file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor není souborem pro zavedení internetového seznamu programů.</translation>
     </message>
 </context>
 <context>
@@ -1059,7 +1062,7 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Open directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít adresář</translation>
     </message>
 </context>
 <context>
@@ -1258,11 +1261,11 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Open directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít adresář</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit informační OSD v režimu celé obrazovky</translation>
     </message>
 </context>
 <context>
@@ -1328,31 +1331,31 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished">Soubory se seznamy programů Tano TV (*.m3u)</translation>
+        <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
     <message>
         <source>Default channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí seznam programů</translation>
     </message>
     <message>
         <source>Download from web</source>
-        <translation type="unfinished"></translation>
+        <translation>Stáhnout z internetu</translation>
     </message>
     <message>
         <source>Tano will download the channel list to your desired location and automatically set it as custom channel list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano stáhne seznam programů do vámi požadovaného umístění a automaticky jej nastaví jako uživatelský seznam programů.</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Stáhnout</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít seznam programů</translation>
     </message>
     <message>
         <source>&lt;b&gt;Russia&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Rusko&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -1475,11 +1478,11 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Přehrát/Pozastavit</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit informační OSD v režimu celé obrazovky</translation>
     </message>
 </context>
 <context>
@@ -1616,19 +1619,19 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Časovače se nesmí překrývat! Toto bude v budoucnu ověřeno automaticky.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Stav</translation>
+        <translation>Stav</translation>
     </message>
     <message>
         <source>hh:mm:ss</source>
-        <translation type="unfinished"></translation>
+        <translation>hh:mm:ss</translation>
     </message>
 </context>
 <context>
@@ -1647,23 +1650,27 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávač</translation>
     </message>
     <message>
         <source>Tano stopped recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano zastavilo nahrávání</translation>
     </message>
     <message>
         <source>Tano is recording %1 to
 %2
 Stop manually!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano nahrává %1 do
+%2
+Zastavit ručně!</translation>
     </message>
     <message>
         <source>Tano is recording %1 to
 %2
 End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano nahrává %1 do
+%2
+Konečný čas: %3</translation>
     </message>
 </context>
 <context>
