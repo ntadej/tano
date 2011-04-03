@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/qml">
-        <file>Main.qml</file>
-        <file>Core/Osd.qml</file>
-        <file>Playback/Video.qml</file>
-    </qresource>
-</RCC>

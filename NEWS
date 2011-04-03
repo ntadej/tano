@@ -1,3 +1,21 @@
+0.8.0 (2011-04-03)
+  * Completely rewriten Recorder and Timers Manager
+  * Language filter for playlists
+  * Keyboard shortcuts for media controls
+  * Playlist / Info OSD in fullscreen
+  * Playlist export to Sagem JS format
+  * Web Playlist import
+  * EPG fixes
+  * New icon theme
+  * Russian language support + playlists
+  * GUI Updates
+  * [FIX] Bug #2960518 - Timers - errors
+  * [FIX] Bug #2980268 - Progress Buffer
+  * [FIX] Bug #2985475 - Recoding doesnt works under Windows
+  * [FIX] Bug #2995052 - Aspect Ratio
+  * [FIX] Bug #3088149 - Empty channel list -> crash
+  * [FIX] Bug #3088128 - Crash when starting with own playlist
+
 0.7.3 (2010-10-14)
   * VLC-Qt library support
   * New Updates manager

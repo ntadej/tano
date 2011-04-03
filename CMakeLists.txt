@@ -129,8 +129,32 @@ FILE(GLOB Tano_Playlists_Sl ${CMAKE_SOURCE_DIR}/playlists/sl/*.m3u)
 
 # Windows
 IF(MINGW)
+	SET(Tano_Installer
+		windows/LICENSE.GPL.TXT
+		windows/tano.nsi
+		windows/tano-editor.nsi
+		windows/tano-install.nsh
+		windows/tano-install-editor.nsh
+		windows/tano-language.nsh
+		windows/tano-ui.nsh
+		windows/tano-uninstall.nsh
+		windows/tano-uninstall-editor.nsh
+	)
+	SET(Tano_Installer_Theme
+		windows/installer-theme/header.bmp
+		windows/installer-theme/installer.ico
+		windows/installer-theme/installer-nopng.ico
+		windows/installer-theme/installer.png
+		windows/installer-theme/License.txt
+		windows/installer-theme/uninstaller.ico
+		windows/installer-theme/uninstaller-nopng.ico
+		windows/installer-theme/uninstaller.png
+		windows/installer-theme/wizard.bmp
+	)
+
 	STRING(REGEX REPLACE "\\\\" "/" LIBVLCQT_INCLUDE_DIR "${LIBVLCQT_INCLUDE_DIR}")
 	STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
+	STRING(REGEX REPLACE "bin" "plugins" QT_PLUGINS_DIR "${QT_BIN_DIR}")
 	STRING(REGEX REPLACE "bin" "etc/dbus-1" DBUS_ETC_DIR "${QT_BIN_DIR}")
 
 	SET(Tano_Qt_Lib
@@ -143,6 +167,7 @@ IF(MINGW)
 		${QT_BIN_DIR}/QtSvg4.dll
 		${QT_BIN_DIR}/QtXml4.dll
 	)
+	FILE(GLOB Tano_Qt_Plugins ${QT_PLUGINS_DIR}/imageformats/*.dll)
 	SET(Tano_Dbus_Bin
 		${QT_BIN_DIR}/dbus-daemon.exe
 		${QT_BIN_DIR}/dbus-env.bat
@@ -178,7 +203,10 @@ INSTALL(FILES ${Tano_Playlists_Sl} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_I
 
 # Windows Extra
 IF(MINGW)
+	INSTALL(FILES ${Tano_Installer} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows")
+	INSTALL(FILES ${Tano_Installer_Theme} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows/installer-theme")
 	INSTALL(FILES ${Tano_Qt_Lib} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+	INSTALL(FILES ${Tano_Qt_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
 	INSTALL(FILES ${Tano_Dbus_Bin} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
 	INSTALL(FILES ${Tano_Dbus_Config} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/etc/dbus-1")
 	INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
