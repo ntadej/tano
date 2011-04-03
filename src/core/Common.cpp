@@ -121,13 +121,19 @@ QString Tano::recorder()
 {
 	QString path;
 
-	// Try application exe directory
+	// Try application executable directory
 	if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").absoluteFilePath();
 
 	// Try development directory
 	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").exists())
 		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").absoluteFilePath();
+
+#ifdef Q_WS_WIN
+	// Try Windows directory
+	if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder.exe").exists())
+		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder.exe").absoluteFilePath();
+#endif
 
 	return path;
 }

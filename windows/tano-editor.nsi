@@ -16,9 +16,9 @@
   !define COMPANY "Copyright © Tadej Novak 2008-2011"
   !define URL http://www.tano.si
 
-  Name "Tano ${VERSION}"
-  OutFile "tano_${VERSION}_win32.exe"
-  InstallDir "$PROGRAMFILES\Tano"
+  Name "Tano Editor ${VERSION}"
+  OutFile "tano_editor_${VERSION}_win32.exe"
+  InstallDir "$PROGRAMFILES\Tano Editor"
 
   BrandingText "${COMPANY} | ${URL}"
 
@@ -28,7 +28,7 @@
   !include "tano-ui.nsh"
   
   ;Get installation folder from registry if available
-  InstallDirRegKey HKCU "Software\Tano Player" ""
+  InstallDirRegKey HKCU "Software\Tano Editor" ""
 
   SetCompressor lzma
   
@@ -47,7 +47,7 @@
 
   ;Remember the installer language
   !define MUI_LANGDLL_REGISTRY_ROOT "HKCU" 
-  !define MUI_LANGDLL_REGISTRY_KEY "Software\Tano Player" 
+  !define MUI_LANGDLL_REGISTRY_KEY "Software\Tano Editor" 
   !define MUI_LANGDLL_REGISTRY_VALUENAME "Installer Language"
 
 ;--------------------------------
@@ -60,13 +60,13 @@
   
   ;Start Menu Folder Page Configuration
   !define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKCU" 
-  !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\Tano Player" 
+  !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\Tano Editor" 
   !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "Start Menu Folder"
   
   !insertmacro MUI_PAGE_STARTMENU Application $StartMenuFolder
   
   !insertmacro MUI_PAGE_INSTFILES
-  !define MUI_FINISHPAGE_RUN "$INSTDIR\tano.exe"
+  !define MUI_FINISHPAGE_RUN "$INSTDIR\tano-editor.exe"
   !insertmacro MUI_PAGE_FINISH
   
   !insertmacro MUI_UNPAGE_WELCOME
@@ -93,14 +93,14 @@
 ;--------------------------------
 ;Installer Sections
 
-Section $(NAME_SecMain) SecMain
+Section $(NAME_SecEditor) SecEditor
   SectionIn 1 2 RO
 
-  !include "tano-install.nsh"
+  !include "tano-install-editor.nsh"
   
   
   ;Store installation folder
-  WriteRegStr HKCU "Software\Tano Player" "" $INSTDIR
+  WriteRegStr HKCU "Software\Tano Editor" "" $INSTDIR
   
   ;Create uninstaller
   WriteUninstaller "$INSTDIR\Uninstall.exe"
@@ -109,25 +109,24 @@ Section $(NAME_SecMain) SecMain
     
     ;Create shortcuts
     CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
-	CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Tano.lnk" "$INSTDIR\tano.exe"
 	CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Tano Editor.lnk" "$INSTDIR\tano-editor.exe"
     CreateShortCut "$SMPROGRAMS\$StartMenuFolder\Uninstall.lnk" "$INSTDIR\Uninstall.exe"
   
   !insertmacro MUI_STARTMENU_WRITE_END
   
-  WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Player" "DisplayName" "Tano ${VERSION} (remove only)"
-  WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Player" "UninstallString" '"$INSTDIR\Uninstall.exe"'
+  WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Editor" "DisplayName" "Tano Editor ${VERSION} (remove only)"
+  WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Editor" "UninstallString" '"$INSTDIR\Uninstall.exe"'
 
 SectionEnd
 
 Section $(NAME_SecDesk) SecDesk
   SectionIn 2
-  CreateShortCut "$DESKTOP\Tano.lnk" "$INSTDIR\tano.exe"
+  CreateShortCut "$DESKTOP\Tano Editor.lnk" "$INSTDIR\tano-editor.exe"
 SectionEnd
 
 Section $(NAME_SecQuick) SecQuick
   SectionIn 2
-  CreateShortCut "$QUICKLAUNCH\Tano.lnk" "$INSTDIR\tano.exe"
+  CreateShortCut "$QUICKLAUNCH\Tano Editor.lnk" "$INSTDIR\tano-editor.exe"
 SectionEnd
 
 ;--------------------------------
@@ -138,7 +137,7 @@ SectionEnd
 
   ;Assign language strings to sections
   !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-    !insertmacro MUI_DESCRIPTION_TEXT ${SecMain} $(DESC_SecMain)
+    !insertmacro MUI_DESCRIPTION_TEXT ${SecEditor} $(DESC_SecEditor)
     !insertmacro MUI_DESCRIPTION_TEXT ${SecDesk} $(DESC_SecDesk)
 	!insertmacro MUI_DESCRIPTION_TEXT ${SecQuick} $(DESC_SecQuick)
   !insertmacro MUI_FUNCTION_DESCRIPTION_END
@@ -150,10 +149,10 @@ Function .onInit
 
   !insertmacro MUI_LANGDLL_DISPLAY
   
-  ReadRegStr $0 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Player" "UninstallString"
+  ReadRegStr $0 HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Editor" "UninstallString"
   StrCmp $0 "" done
  
-  MessageBox MB_YESNO|MB_ICONEXCLAMATION $(PRE) IDNO done
+  MessageBox MB_YESNO|MB_ICONEXCLAMATION $(PRE_E) IDNO done
  
   ;Run the uninstaller
   ;uninst:
@@ -168,24 +167,23 @@ FunctionEnd
 
 Section "Uninstall"
 
-  !include "tano-uninstall.nsh"
+  !include "tano-uninstall-editor.nsh"
 
   Delete "$INSTDIR\Uninstall.exe"
 
   RMDir "$INSTDIR"
   
-  Delete "$DESKTOP\Tano.lnk"
-  Delete "$QUICKLAUNCH\Tano.lnk"
+  Delete "$DESKTOP\Tano Editor.lnk"
+  Delete "$QUICKLAUNCH\Tano Editor.lnk"
   
   !insertmacro MUI_STARTMENU_GETFOLDER Application $StartMenuFolder
     
-  Delete "$SMPROGRAMS\$StartMenuFolder\Tano.lnk"
   Delete "$SMPROGRAMS\$StartMenuFolder\Tano Editor.lnk"
   Delete "$SMPROGRAMS\$StartMenuFolder\Uninstall.lnk"
   RMDir "$SMPROGRAMS\$StartMenuFolder"
   
-  DeleteRegKey HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Player"
-  DeleteRegKey /ifempty HKCU "Software\Tano Player"
+  DeleteRegKey HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Editor"
+  DeleteRegKey /ifempty HKCU "Software\Tano Editor"
 
 SectionEnd
 

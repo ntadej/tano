@@ -1,8 +1,23 @@
-tano (0.8.0~git20110326+3f8900f-1~maverick~ppa1) maverick; urgency=low
+tano (0.8.0-0~maverick~ppa1) maverick; urgency=low
 
-  Git unstable revision package
+  * Completely rewriten Recorder and Timers Manager
+  * Language filter for playlists
+  * Keyboard shortcuts for media controls
+  * Playlist / Info OSD in fullscreen
+  * Playlist export to Sagem JS format
+  * Web Playlist import
+  * EPG fixes
+  * New icon theme
+  * Russian language support + playlists
+  * GUI Updates
+  * [FIX] Bug #2960518 - Timers - errors
+  * [FIX] Bug #2980268 - Progress Buffer
+  * [FIX] Bug #2985475 - Recoding doesnt works under Windows
+  * [FIX] Bug #2995052 - Aspect Ratio
+  * [FIX] Bug #3088149 - Empty channel list -> crash
+  * [FIX] Bug #3088128 - Crash when starting with own playlist
 
- -- Tadej Novak <tadej@tano.si>  Sat, 26 Mar 2011 16:56:05 +0100
+ -- Tadej Novak <tadej@tano.si>  Sun, 03 Apr 2011 17:54:35 +0200
 
 
 tano (0.7.3-0~maverick~ppa3) maverick; urgency=low

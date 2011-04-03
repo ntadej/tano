@@ -42,7 +42,7 @@ Recorder::Recorder(QWidget *parent)
 
 	_controller = new RecorderController("si.tano.TanoPlayer", "/Recorder",
 										 QDBusConnection::sessionBus(), this);
-	//_recorder = new RecorderProcess(this);
+	_recorder = new RecorderProcess(this);
 
 	//Init
 	connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
