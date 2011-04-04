@@ -1484,6 +1484,13 @@ Then select your playlist.</source>
     </message>
 </context>
 <context>
+    <name>Teletext</name>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TimersEdit</name>
     <message>
         <source>Timers</source>

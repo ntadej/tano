@@ -520,7 +520,7 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="6">
+     <item row="0" column="7">
       <widget class="QPushButton" name="buttonMute">
        <property name="minimumSize">
         <size>
@@ -555,14 +555,17 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="7" colspan="5">
+     <item row="0" column="8" colspan="5">
       <widget class="VlcVolumeSlider" name="volumeSlider" native="true"/>
      </item>
-     <item row="1" column="0" colspan="12">
+     <item row="1" column="0" colspan="13">
       <widget class="VlcSeekWidget" name="seekWidget" native="true"/>
      </item>
-     <item row="2" column="0" colspan="12">
+     <item row="2" column="0" colspan="13">
       <widget class="InfoBar" name="infoBarWidget" native="true"/>
+     </item>
+     <item row="0" column="6">
+      <widget class="Teletext" name="teletextWidget" native="true"/>
      </item>
     </layout>
    </widget>
@@ -943,6 +946,12 @@
    <class>CurrentTime</class>
    <extends>QWidget</extends>
    <header>ui/core/CurrentTime.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Teletext</class>
+   <extends>QWidget</extends>
+   <header>ui/core/Teletext.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

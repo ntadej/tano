@@ -66,6 +66,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/core/InfoBar.h
 	ui/core/License.h
 	ui/core/QtKeySequenceEdit.h
+	ui/core/Teletext.h
 	ui/core/TrayIcon.h
 	ui/dialogs/AboutDialog.h
 	ui/dialogs/DonationDialog.h
@@ -147,6 +148,7 @@ SET(Tano_UI_Srcs
 	ui/core/InfoBar.cpp
 	ui/core/License.cpp
 	ui/core/QtKeySequenceEdit.cpp
+	ui/core/Teletext.cpp
 	ui/core/TrayIcon.cpp
 	ui/dialogs/AboutDialog.cpp
 	ui/dialogs/DonationDialog.cpp
