@@ -114,6 +114,7 @@
     <addaction name="actionStop"/>
     <addaction name="actionBack"/>
     <addaction name="actionNext"/>
+    <addaction name="actionTeletext"/>
    </widget>
    <widget class="QMenu" name="menuVideo">
     <property name="title">
@@ -889,6 +890,18 @@
     <string>Donate</string>
    </property>
   </action>
+  <action name="actionTeletext">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/teletext.png</normaloff>:/icons/24x24/teletext.png</iconset>
+   </property>
+   <property name="text">
+    <string>Teletext</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -953,6 +966,9 @@
    <extends>QWidget</extends>
    <header>ui/core/Teletext.h</header>
    <container>1</container>
+   <slots>
+    <slot>toggleTeletext(bool)</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources>
@@ -1229,6 +1245,22 @@
     <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTeletext</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>teletextWidget</receiver>
+   <slot>toggleTeletext(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>408</x>
+     <y>528</y>
     </hint>
    </hints>
   </connection>

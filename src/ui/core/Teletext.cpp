@@ -37,6 +37,17 @@ Teletext::Teletext(QWidget *parent)
 	_button->setToolTip(tr("Teletext"));
 	_button->setStatusTip(tr("Teletext"));
 
+	_buttonTransparency = new QPushButton(this);
+	_buttonTransparency->setVisible(false);
+	_buttonTransparency->setCheckable(true);
+	_buttonTransparency->setChecked(false);
+	_buttonTransparency->setIcon(QIcon(":/icons/48x48/teletext-transparency.png"));
+	_buttonTransparency->setIconSize(QSize(48, 48));
+	_buttonTransparency->setMaximumSize(QSize(48, 48));
+	_buttonTransparency->setMinimumSize(QSize(48, 48));
+	_buttonTransparency->setToolTip(tr("Teletext Transparency"));
+	_buttonTransparency->setStatusTip(tr("Teletext Transparency"));
+
 	_page = new QSpinBox(this);
 	_page->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
 	_page->setVisible(false);
@@ -44,12 +55,15 @@ Teletext::Teletext(QWidget *parent)
 	_page->setMinimum(100);
 	_page->setMaximum(999);
 
+	//connect(_button, SIGNAL(toggled(bool)), _buttonTransparency, SLOT(setVisible(bool)));
 	connect(_button, SIGNAL(toggled(bool)), _page, SLOT(setVisible(bool)));
 	connect(_button, SIGNAL(toggled(bool)), this, SLOT(teletext(bool)));
+	connect(_buttonTransparency, SIGNAL(toggled(bool)), this, SLOT(teletextTransparency(bool)));
 	connect(_page, SIGNAL(valueChanged(int)), this, SLOT(page(int)));
 
 	QHBoxLayout *layout = new QHBoxLayout(this);
 	layout->addWidget(_button);
+	layout->addWidget(_buttonTransparency);
 	layout->addWidget(_page);
 	layout->setSpacing(0);
 	layout->setMargin(0);
@@ -69,5 +83,20 @@ void Teletext::page(const int &p)
 
 void Teletext::teletext(const bool &on)
 {
-	VlcVideo::toggleTeletext();
+	if(on) {
+		VlcVideo::setTeletextPage(100);
+		_page->setValue(100);
+	} else {
+		VlcVideo::setTeletextPage(99);
+	}
+}
+
+void Teletext::teletextTransparency(const bool &on)
+{
+	VlcVideo::toggleTeletextTransparency();
+}
+
+void Teletext::toggleTeletext(const bool &on)
+{
+	_button->setChecked(on);
 }

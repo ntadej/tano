@@ -30,12 +30,17 @@ public:
 	Teletext(QWidget *parent = 0);
 	~Teletext();
 
+public slots:
+	void toggleTeletext(const bool &on);
+
 private slots:
 	void page(const int &p);
 	void teletext(const bool &on);
+	void teletextTransparency(const bool &on);
 
 private:
 	QPushButton *_button;
+	QPushButton *_buttonTransparency;
 	QSpinBox *_page;
 };
 

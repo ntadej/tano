@@ -65,6 +65,8 @@
     <file>icons/24x24/export.png</file>
     <file>icons/128x128/vlc-qt.png</file>
     <file>icons/24x24/new.png</file>
+    <file>icons/24x24/teletext.png</file>
     <file>icons/48x48/teletext.png</file>
+    <file>icons/48x48/teletext-transparency.png</file>
   </qresource>
 </RCC>

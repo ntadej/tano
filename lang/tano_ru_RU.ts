@@ -412,6 +412,10 @@ This will stop recording in progress.</source>
         <source>Donate</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1482,11 +1486,19 @@ Then select your playlist.</source>
         <source>Enable Info OSD in Fullscreen mode</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Teletext</name>
     <message>
         <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext Transparency</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

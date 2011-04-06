@@ -243,27 +243,27 @@ Vaša različica VLC-Qt: %4
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="589"/>
+        <location filename="../src/ui/MainWindow.ui" line="590"/>
         <source>&amp;Exit</source>
         <translation>&amp;Izhod</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="592"/>
+        <location filename="../src/ui/MainWindow.ui" line="593"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="601"/>
+        <location filename="../src/ui/MainWindow.ui" line="602"/>
         <source>&amp;Settings</source>
         <translation>&amp;Nastavitve</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="613"/>
+        <location filename="../src/ui/MainWindow.ui" line="614"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="634"/>
+        <location filename="../src/ui/MainWindow.ui" line="635"/>
         <source>Open &amp;File</source>
         <translation>Odpri &amp;Datoteko</translation>
     </message>
@@ -273,91 +273,91 @@ Vaša različica VLC-Qt: %4
         <translation>P&amp;omoč</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="655"/>
+        <location filename="../src/ui/MainWindow.ui" line="656"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="664"/>
+        <location filename="../src/ui/MainWindow.ui" line="665"/>
         <source>Check for updates</source>
         <translation>Preveri za posodobitve</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="673"/>
+        <location filename="../src/ui/MainWindow.ui" line="674"/>
         <source>Open</source>
         <translation>Odpri</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="378"/>
-        <location filename="../src/ui/MainWindow.ui" line="381"/>
-        <location filename="../src/ui/MainWindow.ui" line="682"/>
-        <location filename="../src/ui/MainWindow.cpp" line="452"/>
-        <location filename="../src/ui/MainWindow.cpp" line="453"/>
+        <location filename="../src/ui/MainWindow.ui" line="379"/>
+        <location filename="../src/ui/MainWindow.ui" line="382"/>
+        <location filename="../src/ui/MainWindow.ui" line="683"/>
         <location filename="../src/ui/MainWindow.cpp" line="454"/>
         <location filename="../src/ui/MainWindow.cpp" line="455"/>
+        <location filename="../src/ui/MainWindow.cpp" line="456"/>
+        <location filename="../src/ui/MainWindow.cpp" line="457"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="410"/>
-        <location filename="../src/ui/MainWindow.ui" line="413"/>
-        <location filename="../src/ui/MainWindow.ui" line="691"/>
+        <location filename="../src/ui/MainWindow.ui" line="411"/>
+        <location filename="../src/ui/MainWindow.ui" line="414"/>
+        <location filename="../src/ui/MainWindow.ui" line="692"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="703"/>
+        <location filename="../src/ui/MainWindow.ui" line="704"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="659"/>
+        <location filename="../src/ui/MainWindow.cpp" line="663"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="727"/>
+        <location filename="../src/ui/MainWindow.ui" line="728"/>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="147"/>
+        <location filename="../src/ui/MainWindow.ui" line="148"/>
         <source>Main Toolbar</source>
         <translation>Glavna orodna vrstica</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="474"/>
-        <location filename="../src/ui/MainWindow.ui" line="477"/>
-        <location filename="../src/ui/MainWindow.ui" line="736"/>
+        <location filename="../src/ui/MainWindow.ui" line="475"/>
+        <location filename="../src/ui/MainWindow.ui" line="478"/>
+        <location filename="../src/ui/MainWindow.ui" line="737"/>
         <source>Next</source>
         <translation>Naslednji</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="442"/>
-        <location filename="../src/ui/MainWindow.ui" line="445"/>
-        <location filename="../src/ui/MainWindow.ui" line="745"/>
+        <location filename="../src/ui/MainWindow.ui" line="443"/>
+        <location filename="../src/ui/MainWindow.ui" line="446"/>
+        <location filename="../src/ui/MainWindow.ui" line="746"/>
         <source>Back</source>
         <translation>Nazaj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="538"/>
-        <location filename="../src/ui/MainWindow.ui" line="541"/>
-        <location filename="../src/ui/MainWindow.ui" line="757"/>
+        <location filename="../src/ui/MainWindow.ui" line="539"/>
+        <location filename="../src/ui/MainWindow.ui" line="542"/>
+        <location filename="../src/ui/MainWindow.ui" line="758"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="766"/>
+        <location filename="../src/ui/MainWindow.ui" line="767"/>
         <source>Volume up</source>
         <translation>Povečaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="775"/>
+        <location filename="../src/ui/MainWindow.ui" line="776"/>
         <source>Volume down</source>
         <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="787"/>
+        <location filename="../src/ui/MainWindow.ui" line="788"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
@@ -372,55 +372,60 @@ Vaša različica VLC-Qt: %4
         <translation>&amp;Predvajanje</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="506"/>
-        <location filename="../src/ui/MainWindow.ui" line="509"/>
+        <location filename="../src/ui/MainWindow.ui" line="507"/>
+        <location filename="../src/ui/MainWindow.ui" line="510"/>
         <source>Record Now</source>
         <translation>Snemaj takoj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="622"/>
+        <location filename="../src/ui/MainWindow.ui" line="623"/>
         <source>&amp;Open channel list</source>
         <translation>&amp;Odpri seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="625"/>
-        <location filename="../src/ui/MainWindow.cpp" line="525"/>
+        <location filename="../src/ui/MainWindow.ui" line="626"/>
+        <location filename="../src/ui/MainWindow.cpp" line="529"/>
         <source>Open channel list</source>
         <translation>Odpri seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="796"/>
-        <location filename="../src/ui/MainWindow.ui" line="799"/>
+        <location filename="../src/ui/MainWindow.ui" line="797"/>
+        <location filename="../src/ui/MainWindow.ui" line="800"/>
         <source>Record Current</source>
         <translation>Snemaj trenutno</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="808"/>
+        <location filename="../src/ui/MainWindow.ui" line="809"/>
         <source>Timers</source>
         <translation>Časovniki</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="817"/>
+        <location filename="../src/ui/MainWindow.ui" line="818"/>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="844"/>
+        <location filename="../src/ui/MainWindow.ui" line="845"/>
         <source>Controls panel</source>
         <translation>Upravljalni pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="880"/>
+        <location filename="../src/ui/MainWindow.ui" line="881"/>
         <source>Enable Info panel in Fullscreen mode</source>
         <translation>Vključi Info pult v celozaslonskem načinu</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="889"/>
+        <location filename="../src/ui/MainWindow.ui" line="890"/>
         <source>Donate</source>
         <translation>Doniraj</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="125"/>
+        <location filename="../src/ui/MainWindow.ui" line="902"/>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/MainWindow.ui" line="126"/>
         <source>&amp;File</source>
         <translation>&amp;Datoteka</translation>
     </message>
@@ -432,46 +437,46 @@ This will stop recording in progress.</source>
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="442"/>
         <location filename="../src/ui/MainWindow.cpp" line="443"/>
         <location filename="../src/ui/MainWindow.cpp" line="444"/>
         <location filename="../src/ui/MainWindow.cpp" line="445"/>
+        <location filename="../src/ui/MainWindow.cpp" line="446"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="462"/>
+        <location filename="../src/ui/MainWindow.cpp" line="465"/>
         <source>Buffering...</source>
         <translation>Nalagam...</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="527"/>
+        <location filename="../src/ui/MainWindow.cpp" line="531"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="556"/>
+        <location filename="../src/ui/MainWindow.cpp" line="560"/>
         <source>Open file or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="558"/>
+        <location filename="../src/ui/MainWindow.cpp" line="562"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="569"/>
+        <location filename="../src/ui/MainWindow.cpp" line="573"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="570"/>
+        <location filename="../src/ui/MainWindow.cpp" line="574"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="256"/>
-        <location filename="../src/ui/MainWindow.ui" line="853"/>
+        <location filename="../src/ui/MainWindow.ui" line="257"/>
+        <location filename="../src/ui/MainWindow.ui" line="854"/>
         <source>Schedule</source>
         <translation>Spored</translation>
     </message>
@@ -483,38 +488,38 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
         <location filename="../src/ui/MainWindow.cpp" line="76"/>
-        <location filename="../src/ui/MainWindow.cpp" line="615"/>
-        <location filename="../src/ui/MainWindow.cpp" line="617"/>
+        <location filename="../src/ui/MainWindow.cpp" line="619"/>
+        <location filename="../src/ui/MainWindow.cpp" line="621"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="580"/>
+        <location filename="../src/ui/MainWindow.ui" line="581"/>
         <source>About Tano</source>
         <translation>O programu Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="643"/>
-        <location filename="../src/ui/MainWindow.ui" line="646"/>
+        <location filename="../src/ui/MainWindow.ui" line="644"/>
+        <location filename="../src/ui/MainWindow.ui" line="647"/>
         <source>Edit Channels</source>
         <translation>Uredi programe</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="190"/>
-        <location filename="../src/ui/MainWindow.ui" line="868"/>
+        <location filename="../src/ui/MainWindow.ui" line="191"/>
+        <location filename="../src/ui/MainWindow.ui" line="869"/>
         <source>Info panel</source>
         <translation>Info pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="712"/>
-        <location filename="../src/ui/MainWindow.ui" line="715"/>
-        <location filename="../src/ui/MainWindow.cpp" line="656"/>
+        <location filename="../src/ui/MainWindow.ui" line="713"/>
+        <location filename="../src/ui/MainWindow.ui" line="716"/>
+        <location filename="../src/ui/MainWindow.cpp" line="660"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="829"/>
-        <location filename="../src/ui/MainWindow.ui" line="832"/>
+        <location filename="../src/ui/MainWindow.ui" line="830"/>
+        <location filename="../src/ui/MainWindow.ui" line="833"/>
         <source>Stop recording</source>
         <translation>Prenehaj s snemanjem</translation>
     </message>
@@ -529,7 +534,7 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>&amp;Videz</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.ui" line="120"/>
+        <location filename="../src/ui/MainWindow.ui" line="121"/>
         <source>&amp;Video</source>
         <translation>&amp;Slika</translation>
     </message>
@@ -1738,157 +1743,162 @@ Nato izberite želen seznam programov.</translation>
 <context>
     <name>SettingsShortcuts</name>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="160"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="165"/>
         <source>Action</source>
         <translation>Ukaz</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="165"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="170"/>
         <source>Key</source>
         <translation>Tipke</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="170"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="175"/>
         <source>Play / Pause</source>
         <translation>Predvajaj / Prekini</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="183"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="188"/>
         <source>Stop</source>
         <translation>Ustavi</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="196"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="201"/>
         <source>Next channel</source>
         <translation>Naslednii kanal</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="209"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="214"/>
         <source>Previous channel</source>
         <translation>Prejšnji kanal</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="222"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="227"/>
         <source>Fullscreen</source>
         <translation>Celoten zaslon</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="235"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="240"/>
         <source>Toggle Info Widget</source>
         <translation>Preklopi Info pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="245"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="250"/>
         <source>Toggle Controls Widget</source>
         <translation>Preklopi upravljalni pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="255"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="260"/>
         <source>Mute</source>
         <translation>Tiho</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="268"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="273"/>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="286"/>
         <source>Volume up</source>
         <translation>Povečaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="281"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="299"/>
         <source>Volume down</source>
         <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="294"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="312"/>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="307"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="325"/>
         <source>Open File</source>
         <translation>Odpri Datoteko</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="320"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="338"/>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="333"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="351"/>
         <source>Open Channel list</source>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="346"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="364"/>
         <source>Edit Channel list</source>
         <translation>Uredi Seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="359"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="377"/>
         <source>Settings</source>
         <translation>Nastavitve</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="372"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="390"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="385"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="403"/>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="398"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="416"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="411"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="429"/>
         <source>Enable Info OSD in Fullscreen mode</source>
         <translation>Vključi Info OSD v celozaslonskem načinu</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="421"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="439"/>
         <source>Next audio track</source>
         <translation>Naslednja zvočna sled</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="431"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="449"/>
         <source>Next video track</source>
         <translation>Naslednja slikovna sled</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="441"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="459"/>
         <source>Next subtitle track</source>
         <translation>Naslednji podnapisi</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="451"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="469"/>
         <source>Next aspect ratio mode</source>
         <translation>Naslednje razmerje slike</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="461"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="479"/>
         <source>Next crop mode</source>
         <translation>Naslednja obrezava slike</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="471"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="489"/>
         <source>Next deinterlace mode</source>
         <translation>Naslenje razpletanje</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="484"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="502"/>
         <source>Clear Shortcut</source>
         <translation>Počisti bližnjico</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="514"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="532"/>
         <source>Restore defaults</source>
         <translation>Obnovi privzeto</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="531"/>
+        <location filename="../src/ui/settings/SettingsShortcuts.ui" line="549"/>
         <source>Set</source>
         <translation>Nastavi</translation>
     </message>
@@ -1899,6 +1909,12 @@ Nato izberite želen seznam programov.</translation>
         <location filename="../src/ui/core/Teletext.cpp" line="37"/>
         <location filename="../src/ui/core/Teletext.cpp" line="38"/>
         <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/core/Teletext.cpp" line="48"/>
+        <location filename="../src/ui/core/Teletext.cpp" line="49"/>
+        <source>Teletext Transparency</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

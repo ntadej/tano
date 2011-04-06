@@ -411,6 +411,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Donate</source>
         <translation>Darovat</translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1484,11 +1488,19 @@ Potom vyberte svůj seznam programů.</translation>
         <source>Enable Info OSD in Fullscreen mode</source>
         <translation>Povolit informační OSD v režimu celé obrazovky</translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Teletext</name>
     <message>
         <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext Transparency</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

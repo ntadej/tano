@@ -331,6 +331,7 @@ void MainWindow::createShortcuts()
 			 << ui->actionInfoPanel
 			 << ui->actionControls
 			 << ui->actionMute
+			 << ui->actionTeletext
 			 << ui->actionVolumeUp
 			 << ui->actionVolumeDown
 			 << ui->actionRecorder
@@ -445,6 +446,7 @@ void MainWindow::setPlayingState(const bool &playing,
 		ui->buttonPlay->setStatusTip(tr("Pause"));
 		ui->actionMute->setEnabled(true);
 		ui->buttonMute->setEnabled(true);
+		ui->actionTeletext->setEnabled(true);
 		ui->teletextWidget->setEnabled(true);
 	} else {
 		ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
@@ -455,6 +457,7 @@ void MainWindow::setPlayingState(const bool &playing,
 		ui->buttonPlay->setStatusTip(tr("Play"));
 		ui->actionMute->setEnabled(false);
 		ui->buttonMute->setEnabled(false);
+		ui->actionTeletext->setEnabled(false);
 		ui->teletextWidget->setEnabled(false);
 	}
 
@@ -499,6 +502,7 @@ void MainWindow::stop()
 	_epg->stop();
 
 	ui->infoBarWidget->clear();
+	ui->actionTeletext->setChecked(false);
 
 	ui->scheduleWidget->clear();
 	ui->scheduleWidget->setPage(0);
