@@ -20,6 +20,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QLocale>
+
 #include "PlaylistListHandler.h"
 #include "container/PlaylistFile.h"
 
@@ -33,15 +35,20 @@ bool PlaylistListHandler::startElement(const QString & /* namespaceURI */,
 									   const QString &qName,
 									   const QXmlAttributes &attributes)
 {
-	if (!_metTanoTag && qName != "playlists") {
+	if (!_metTanoTag && (qName != "playlists" && qName != "channels")) {
 		_errorStr = QObject::tr("The file is not a playlist list file.");
 		return false;
 	}
 
-	if(qName == "playlists") {
+	if(qName == "playlists" || qName == "channels") {
 		_metTanoTag = true;
 		_playlistCountries.clear();
 		_playlistList.clear();
+
+		if(qName == "channels") {
+			QLocale country("sl");
+			_playlistCountries << country.countryToString(country.country());
+		}
 	} else if(qName == "playlist") {
 		PlaylistFile p(_playlistCountries.last());
 		_playlistList << p;
@@ -55,11 +62,18 @@ bool PlaylistListHandler::endElement(const QString & /* namespaceURI */,
 									 const QString & /* localName */,
 									 const QString &qName)
 {
-	if (qName == "name") {
-		_playlistCountries << _currentText;
+	if (qName == "id") {
+		if(_currentText == "int") {
+			_playlistCountries << "International";
+		} else {
+			QLocale country(_currentText);
+			_playlistCountries << country.countryToString(country.country());
+		}
 	} else if (qName == "title") {
 		_playlistList.last().setTitle(_currentText);
 	} else if (qName == "path") {
+		_playlistList.last().setPath(_currentText);
+	} else if (qName == "link") {
 		_playlistList.last().setPath(_currentText);
 	}
 

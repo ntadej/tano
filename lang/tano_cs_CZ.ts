@@ -744,36 +744,6 @@ Ztratíte všechny neuložené změny.</translation>
         <translation>Zavést seznam programů z internetu</translation>
     </message>
     <message>
-        <source>Country:</source>
-        <translation>Země:</translation>
-    </message>
-    <message>
-        <source>Slovenia</source>
-        <translation>Slovinsko</translation>
-    </message>
-    <message>
-        <source>Select your playlist</source>
-        <translation>Vyberte svůj seznam programů</translation>
-    </message>
-    <message>
-        <source>Select</source>
-        <translation>Vybrat</translation>
-    </message>
-    <message>
-        <source>Playlist:</source>
-        <translation>Seznam programů:</translation>
-    </message>
-    <message>
-        <source>Select your country from the menu below.
-Then select your playlist.</source>
-        <translation>Vyberte svoji zemi z nabídky níže.
-Potom vyberte svůj seznam programů.</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
-    </message>
-    <message>
         <source>Refresh current playlist</source>
         <translation>Obnovit současný seznam programů</translation>
     </message>
@@ -792,6 +762,10 @@ Potom vyberte svůj seznam programů.</translation>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
+    </message>
+    <message>
+        <source>Import type</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

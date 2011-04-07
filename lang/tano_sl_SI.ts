@@ -953,64 +953,32 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Uvozi seznam programov s spleta</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="24"/>
-        <source>Select your playlist</source>
-        <translation>Izberi seznam programov</translation>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="27"/>
+        <source>Import type</source>
+        <translation>Tip uvoza</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="31"/>
-        <source>Select</source>
-        <translation>Izberite</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="36"/>
-        <source>Slovenia</source>
-        <translation>Slovenija</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="44"/>
-        <source>Country:</source>
-        <translation>Država:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="51"/>
-        <source>Select your country from the menu below.
-Then select your playlist.</source>
-        <translation>Izberite svojo državo s spodnjega seznama.
-Nato izberite želen seznam programov.</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="59"/>
-        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Opomba: Vse države in ponudniki niso na voljo.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="86"/>
-        <source>Playlist:</source>
-        <translation>Seznam programov:</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="103"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="46"/>
         <source>Refresh current playlist</source>
         <translation>Osveži trenutni seznam</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="113"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="56"/>
         <source>Open playlist</source>
         <translation>Odpri seznam</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="120"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="63"/>
         <source>&lt;i&gt;If you chose &apos;&apos;Refresh&apos;&apos;, your current channel numbers will remain the same. Only new channels will be added.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Če izberete &apos;&apos;Osveži&apos;&apos;, bodo trenutno nastavljene številke ostale enake. Le novi programi bodo dodani.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="73"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="67"/>
         <source>Save channel list</source>
         <translation>Shrani seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="75"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="69"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
@@ -1036,8 +1004,9 @@ Nato izberite želen seznam programov.</translation>
         <translation>Izberi seznam programov</translation>
     </message>
     <message>
+        <location filename="../src/ui/playlist/PlaylistSelect.cpp" line="65"/>
         <location filename="../src/ui/playlist/PlaylistSelect.cpp" line="68"/>
-        <location filename="../src/ui/playlist/PlaylistSelect.cpp" line="108"/>
+        <location filename="../src/ui/playlist/PlaylistSelect.cpp" line="116"/>
         <source>Select</source>
         <translation>Izberite</translation>
     </message>
@@ -1313,7 +1282,7 @@ Nato izberite želen seznam programov.</translation>
         <translation>Tedensko</translation>
     </message>
     <message>
-        <location filename="../src/xml/PlaylistListHandler.cpp" line="37"/>
+        <location filename="../src/xml/PlaylistListHandler.cpp" line="39"/>
         <source>The file is not a playlist list file.</source>
         <translation>Ta datoteka ni seznam seznamov programov.</translation>
     </message>
@@ -1745,12 +1714,12 @@ Nato izberite želen seznam programov.</translation>
         <translation>Prenesi</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="79"/>
+        <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="80"/>
         <source>Open channel list</source>
         <translation>Odpri seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="81"/>
+        <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="82"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>

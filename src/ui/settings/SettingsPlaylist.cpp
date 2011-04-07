@@ -30,6 +30,7 @@ SettingsPlaylist::SettingsPlaylist(QWidget *parent)
 	ui(new Ui::SettingsPlaylist)
 {
 	ui->setupUi(this);
+	ui->select->open("playlists/playlists.xml");
 
 	connect(ui->browsePlaylistButton, SIGNAL(clicked()), this, SLOT(playlistBrowse()));
 	connect(ui->downloadButton, SIGNAL(clicked()), this, SLOT(playlistDownload()));

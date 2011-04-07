@@ -743,35 +743,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select your playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Slovenia</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Country:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select your country from the menu below.
-Then select your playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist:</source>
-        <translation type="unfinished">Список каналов:</translation>
-    </message>
-    <message>
         <source>Refresh current playlist</source>
         <translation type="unfinished"></translation>
     </message>
@@ -790,6 +761,10 @@ Then select your playlist.</source>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
+    </message>
+    <message>
+        <source>Import type</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -36,10 +36,6 @@ PlaylistSelect::PlaylistSelect(QWidget *parent)
 {
 	ui->setupUi(this);
 
-	_handler = new PlaylistListHandler();
-
-	readList(Tano::locateResource("playlists/playlists.xml"));
-
 	connect(ui->countryBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(list(QString)));
 	connect(ui->playlistBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(listP(QString)));
 }
@@ -47,7 +43,6 @@ PlaylistSelect::PlaylistSelect(QWidget *parent)
 PlaylistSelect::~PlaylistSelect()
 {
 	delete ui;
-	delete _handler;
 }
 
 void PlaylistSelect::changeEvent(QEvent *e)
@@ -65,6 +60,11 @@ void PlaylistSelect::changeEvent(QEvent *e)
 void PlaylistSelect::list(const QString &id)
 {
 	ui->playlistBox->clear();
+	ui->playlistBox->setEnabled(false);
+
+	if(id == tr("Select"))
+		return;
+
 	ui->playlistBox->addItem(tr("Select"));
 	for(int i = 0; i < _playlistList.size(); i++) {
 		if(_playlistList[i].country() == id) {
@@ -84,6 +84,11 @@ void PlaylistSelect::listP(const QString &id)
 	}
 }
 
+void PlaylistSelect::open(const QString &list)
+{
+	readList(Tano::locateResource(list));
+}
+
 void PlaylistSelect::readList(const QString &list)
 {
 	QFile file(list);
@@ -92,17 +97,20 @@ void PlaylistSelect::readList(const QString &list)
 
 	QString string = _codec->toUnicode(file.readAll());
 
+	PlaylistListHandler *handler = new PlaylistListHandler();
 	QXmlSimpleReader reader;
-	reader.setContentHandler(_handler);
-	reader.setErrorHandler(_handler);
+	reader.setContentHandler(handler);
+	reader.setErrorHandler(handler);
 
 	QXmlInputSource xmlInputSource;
 	xmlInputSource.setData(string);
 	if (!reader.parse(xmlInputSource))
 		return;
 
-	_playlistCountries = _handler->playlistCountries();
-	_playlistList = _handler->playlistList();
+	_playlistCountries = handler->playlistCountries();
+	_playlistList = handler->playlistList();
+
+	delete handler;
 
 	ui->countryBox->clear();
 	ui->countryBox->addItem(tr("Select"));

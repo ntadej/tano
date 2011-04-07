@@ -1,26 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <playlists>
-  <country>
-	<name>sl</name>
-	<playlist>
-		<title>SiOL - MPEG-2</title>
-		<path>playlists/sl/siol-mpeg2.m3u</path>
-	</playlist>
-	<playlist>
-		<title>SiOL - MPEG-4</title>
-		<path>playlists/sl/siol-mpeg4.m3u</path>
-	</playlist>
-	<playlist>
-		<title>T-2</title>
-		<path>playlists/sl/t-2.m3u</path>
-	</playlist>
-	<playlist>
-		<title>Tuš</title>
-		<path>playlists/sl/tus.m3u</path>
-	</playlist>
-	<playlist>
-		<title>Amis</title>
-		<path>playlists/sl/amis.m3u</path>
-	</playlist>
-  </country>
+	<country>
+		<id>int</id>
+		<playlist>
+			<title>World TV</title>
+			<path>playlists/int/worldtv.m3u</path>
+		</playlist>
+	</country>
+	<country>
+		<id>ru</id>
+		<playlist>
+			<title>Disel TV - Krasnodar</title>
+			<path>playlists/ru/diseltv-krasnodar.m3u</path>
+		</playlist>
+		<playlist>
+			<title>Disel TV - Rostov</title>
+			<path>playlists/ru/diseltv-rostov.m3u</path>
+		</playlist>
+	</country>
+	<country>
+		<id>sl</id>
+		<playlist>
+				<title>SiOL - MPEG-2</title>
+				<path>playlists/sl/siol-mpeg2.m3u</path>
+		</playlist>
+		<playlist>
+				<title>SiOL - MPEG-4</title>
+				<path>playlists/sl/siol-mpeg4.m3u</path>
+		</playlist>
+		<playlist>
+				<title>T-2</title>
+				<path>playlists/sl/t-2.m3u</path>
+		</playlist>
+		<playlist>
+				<title>Tuš</title>
+				<path>playlists/sl/tus.m3u</path>
+		</playlist>
+		<playlist>
+				<title>Amis</title>
+				<path>playlists/sl/amis.m3u</path>
+		</playlist>
+	</country>
 </playlists>

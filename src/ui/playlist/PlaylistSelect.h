@@ -28,7 +28,6 @@ namespace Ui {
 }
 
 class PlaylistFile;
-class PlaylistListHandler;
 
 class PlaylistSelect : public QWidget
 {
@@ -36,6 +35,8 @@ Q_OBJECT
 public:
 	PlaylistSelect(QWidget *parent = 0);
 	~PlaylistSelect();
+
+	void open(const QString &list);
 
 	QString playlist() const { return _playlist; }
 	bool setPlaylist(const QString &playlist) const;
@@ -52,7 +53,6 @@ private:
 	Ui::PlaylistSelect *ui;
 
 	QTextCodec *_codec;
-	PlaylistListHandler *_handler;
 	QString _playlist;
 
 	QStringList _playlistCountries;
