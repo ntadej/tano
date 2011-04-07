@@ -28,7 +28,7 @@ namespace Ui {
 }
 
 class GetFile;
-class WebPlaylistHandler;
+class PlaylistListHandler;
 
 class PlaylistImportWeb : public QDialog
 {
@@ -56,7 +56,7 @@ private:
 	Ui::PlaylistImportWeb *ui;
 
 	QTextCodec *_codec;
-	WebPlaylistHandler *_handler;
+	PlaylistListHandler *_handler;
 	GetFile *_file;
 	QString _playlist;
 

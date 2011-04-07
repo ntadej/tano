@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2001 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,35 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTS_H_
-#define TANO_PLAYLISTS_H_
+#include "container/PlaylistFile.h"
 
-#include <QtCore/QString>
+PlaylistFile::PlaylistFile(const QString &country)
+	: _country(country) { }
 
-namespace TanoPlaylists
-{
-	// International
-	class International {
-	public:
-		static const QString WorldTv;
-	};
-
-	// Russia
-	class Russia {
-	public:
-		static const QString DiselTvKrasnodar;
-		static const QString DiselTvRostov;
-	};
-
-	// Slovenia
-	class Slovenia {
-	public:
-		static const QString Amis;
-		static const QString Siol2;
-		static const QString Siol4;
-		static const QString T2;
-		static const QString Tus;
-	};
-};
-
-#endif // TANO_PLAYLISTS_H_
+PlaylistFile::~PlaylistFile() { }

@@ -16,21 +16,47 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Playlists.h"
+#ifndef TANO_PLAYLISTSELECT_H_
+#define TANO_PLAYLISTSELECT_H_
 
-namespace TanoPlaylists
-{
-	// International
-	const QString International::WorldTv = "playlists/int/worldtv.m3u";
+#include <QtCore/QTextCodec>
+#include <QtGui/QAbstractButton>
+#include <QtGui/QWidget>
 
-	// Russia
-	const QString Russia::DiselTvKrasnodar = "playlists/ru/diseltv-krasnodar.m3u";
-	const QString Russia::DiselTvRostov = "playlists/ru/diseltv-rostov.m3u";
-
-	// Slovenia
-	const QString Slovenia::Amis = "playlists/sl/amis.m3u";
-	const QString Slovenia::Siol2 = "playlists/sl/siol-mpeg2.m3u";
-	const QString Slovenia::Siol4 = "playlists/sl/siol-mpeg4.m3u";
-	const QString Slovenia::T2 = "playlists/sl/t-2.m3u";
-	const QString Slovenia::Tus = "playlists/sl/tus.m3u";
+namespace Ui {
+	class PlaylistSelect;
 }
+
+class PlaylistFile;
+class PlaylistListHandler;
+
+class PlaylistSelect : public QWidget
+{
+Q_OBJECT
+public:
+	PlaylistSelect(QWidget *parent = 0);
+	~PlaylistSelect();
+
+	QString playlist() const { return _playlist; }
+	bool setPlaylist(const QString &playlist) const;
+
+protected:
+	void changeEvent(QEvent *e);
+
+private slots:
+	void list(const QString &id);
+	void listP(const QString &id);
+	void readList(const QString &list);
+
+private:
+	Ui::PlaylistSelect *ui;
+
+	QTextCodec *_codec;
+	PlaylistListHandler *_handler;
+	QString _playlist;
+
+	QStringList _playlistCountries;
+	QList<PlaylistFile> _playlistList;
+};
+
+#endif // TANO_PLAYLISTSELECT_H_

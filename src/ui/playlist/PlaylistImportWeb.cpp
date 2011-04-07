@@ -22,8 +22,9 @@
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
+#include "container/PlaylistFile.h"
 #include "core/GetFile.h"
-#include "xml/WebPlaylistHandler.h"
+#include "xml/PlaylistListHandler.h"
 
 #include "PlaylistImportWeb.h"
 #include "ui_PlaylistImportWeb.h"
@@ -35,7 +36,7 @@ PlaylistImportWeb::PlaylistImportWeb(QWidget *parent)
 {
 	ui->setupUi(this);
 
-	_handler = new WebPlaylistHandler();
+	_handler = new PlaylistListHandler();
 	_file = new GetFile(this);
 
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
@@ -126,7 +127,7 @@ void PlaylistImportWeb::readList(const QString &list)
 {
 	disconnect(_file, SIGNAL(file(QString)), this, SLOT(readList(QString)));
 
-	QFile file(list);
+	/*QFile file(list);
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
 		return;
 
@@ -141,11 +142,11 @@ void PlaylistImportWeb::readList(const QString &list)
 	if (!reader.parse(xmlInputSource))
 		return;
 
-	_playlistName = _handler->playlistName();
-	_playlistUrl = _handler->playlistUrl();
+	//_playlistName = _handler->playlistName();
+	//_playlistUrl = _handler->playlistUrl();
 
 	ui->playlistBox->clear();
 	ui->playlistBox->addItem(tr("Select"));
 	ui->playlistBox->addItems(_playlistName);
-	ui->playlistBox->setEnabled(true);
+	ui->playlistBox->setEnabled(true);*/
 }

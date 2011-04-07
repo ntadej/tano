@@ -20,47 +20,54 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "WebPlaylistHandler.h"
+#include "PlaylistListHandler.h"
+#include "container/PlaylistFile.h"
 
-WebPlaylistHandler::WebPlaylistHandler()
+PlaylistListHandler::PlaylistListHandler()
 	: _metTanoTag(false) { }
 
-WebPlaylistHandler::~WebPlaylistHandler() { }
+PlaylistListHandler::~PlaylistListHandler() { }
 
-bool WebPlaylistHandler::startElement(const QString & /* namespaceURI */,
-									  const QString & /* localName */,
-									  const QString &qName,
-									  const QXmlAttributes &attributes)
+bool PlaylistListHandler::startElement(const QString & /* namespaceURI */,
+									   const QString & /* localName */,
+									   const QString &qName,
+									   const QXmlAttributes &attributes)
 {
-	if (!_metTanoTag && qName != "channels") {
-		_errorStr = QObject::tr("The file is not a Web playlist import file.");
+	if (!_metTanoTag && qName != "playlists") {
+		_errorStr = QObject::tr("The file is not a playlist list file.");
 		return false;
 	}
 
-	if(qName == "channels") {
+	if(qName == "playlists") {
 		_metTanoTag = true;
-		_playlistName.clear();
-		_playlistUrl.clear();
+		_playlistCountries.clear();
+		_playlistList.clear();
+	} else if(qName == "playlist") {
+		PlaylistFile p(_playlistCountries.last());
+		_playlistList << p;
 	}
 
 	_currentText.clear();
 	return true;
 }
 
-bool WebPlaylistHandler::endElement(const QString & /* namespaceURI */,
-									const QString & /* localName */,
-									const QString &qName)
+bool PlaylistListHandler::endElement(const QString & /* namespaceURI */,
+									 const QString & /* localName */,
+									 const QString &qName)
 {
-	if (qName == "title") {
-		_playlistName << _currentText;
-	} else if (qName == "link") {
-		_playlistUrl << _currentText;
+	if (qName == "name") {
+		_playlistCountries << _currentText;
+	} else if (qName == "title") {
+		_playlistList.last().setTitle(_currentText);
+	} else if (qName == "path") {
+		_playlistList.last().setPath(_currentText);
 	}
 
+	_currentText.clear();
 	return true;
 }
 
-bool WebPlaylistHandler::characters(const QString &str)
+bool PlaylistListHandler::characters(const QString &str)
 {
 	_currentText += str;
 	return true;

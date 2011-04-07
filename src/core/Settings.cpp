@@ -19,7 +19,6 @@
 #include <QtCore/QDir>
 
 #include "core/Common.h"
-#include "core/Playlists.h"
 #include "core/Settings.h"
 
 // Define defaults - General

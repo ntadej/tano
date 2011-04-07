@@ -422,7 +422,7 @@ Vaša različica VLC-Qt: %4
     <message>
         <location filename="../src/ui/MainWindow.ui" line="902"/>
         <source>Teletext</source>
-        <translation type="unfinished"></translation>
+        <translation>Teletekst</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="126"/>
@@ -959,7 +959,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistImportWeb.ui" line="31"/>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="148"/>
         <source>Select</source>
         <translation>Izberite</translation>
     </message>
@@ -1006,12 +1005,12 @@ Nato izberite želen seznam programov.</translation>
         <translation>&lt;i&gt;Če izberete &apos;&apos;Osveži&apos;&apos;, bodo trenutno nastavljene številke ostale enake. Le novi programi bodo dodani.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="72"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="73"/>
         <source>Save channel list</source>
         <translation>Shrani seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="74"/>
+        <location filename="../src/ui/playlist/PlaylistImportWeb.cpp" line="75"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
@@ -1027,6 +1026,42 @@ Nato izberite želen seznam programov.</translation>
         <location filename="../src/ui/wizard/PlaylistPage.ui" line="21"/>
         <source>Please, select your IP TV provider or browse for custom playlist.</source>
         <translation>Prosim, izberite svojega IP TV ponudnika ali pa prebrskajte za svoj seznam programov.</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistSelect</name>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistSelect.ui" line="20"/>
+        <source>Select your playlist</source>
+        <translation>Izberi seznam programov</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistSelect.cpp" line="68"/>
+        <location filename="../src/ui/playlist/PlaylistSelect.cpp" line="108"/>
+        <source>Select</source>
+        <translation>Izberite</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistSelect.ui" line="29"/>
+        <source>Country:</source>
+        <translation>Država:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistSelect.ui" line="36"/>
+        <source>Select your country from the menu below.
+Then select your playlist.</source>
+        <translation>Izberite svojo državo s spodnjega seznama.
+Nato izberite želen seznam programov.</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistSelect.ui" line="44"/>
+        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
+        <translation>&lt;i&gt;Opomba: Vse države in ponudniki niso na voljo.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistSelect.ui" line="71"/>
+        <source>Playlist:</source>
+        <translation>Seznam:</translation>
     </message>
 </context>
 <context>
@@ -1252,8 +1287,8 @@ Nato izberite želen seznam programov.</translation>
         <translation>Izključen ali pretečen</translation>
     </message>
     <message>
+        <location filename="../src/core/Settings.cpp" line="46"/>
         <location filename="../src/core/Settings.cpp" line="47"/>
-        <location filename="../src/core/Settings.cpp" line="48"/>
         <source>Disabled</source>
         <translation>Onemogočeno</translation>
     </message>
@@ -1278,9 +1313,9 @@ Nato izberite želen seznam programov.</translation>
         <translation>Tedensko</translation>
     </message>
     <message>
-        <location filename="../src/xml/WebPlaylistHandler.cpp" line="36"/>
-        <source>The file is not a Web playlist import file.</source>
-        <translation>Datoteka ni Uvoz seznamov programov.</translation>
+        <location filename="../src/xml/PlaylistListHandler.cpp" line="37"/>
+        <source>The file is not a playlist list file.</source>
+        <translation>Ta datoteka ni seznam seznamov programov.</translation>
     </message>
 </context>
 <context>
@@ -1695,47 +1730,27 @@ Nato izberite želen seznam programov.</translation>
         <translation>Drugo</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="103"/>
-        <source>Presets</source>
-        <translation>Prednastavljene sheme</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="136"/>
-        <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Slovenija&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="143"/>
-        <source>&lt;b&gt;Global&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Globalno&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="171"/>
-        <source>&lt;b&gt;Russia&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Rusija&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="195"/>
+        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="106"/>
         <source>Download from web</source>
         <translation>Prenesi s spleta</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="201"/>
+        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="112"/>
         <source>Tano will download the channel list to your desired location and automatically set it as custom channel list.</source>
         <translation>Tano bo prenesel seznam programov na želeno lokacijo in ga avtomatsko nastavil za seznam programov.</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="211"/>
+        <location filename="../src/ui/settings/SettingsPlaylist.ui" line="122"/>
         <source>Download</source>
         <translation>Prenesi</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="121"/>
+        <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="79"/>
         <source>Open channel list</source>
         <translation>Odpri seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="123"/>
+        <location filename="../src/ui/settings/SettingsPlaylist.cpp" line="81"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
@@ -1795,7 +1810,7 @@ Nato izberite želen seznam programov.</translation>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="273"/>
         <source>Teletext</source>
-        <translation type="unfinished"></translation>
+        <translation>Teletekst</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsShortcuts.ui" line="286"/>
@@ -1909,13 +1924,13 @@ Nato izberite želen seznam programov.</translation>
         <location filename="../src/ui/core/Teletext.cpp" line="37"/>
         <location filename="../src/ui/core/Teletext.cpp" line="38"/>
         <source>Teletext</source>
-        <translation type="unfinished"></translation>
+        <translation>Teletekst</translation>
     </message>
     <message>
         <location filename="../src/ui/core/Teletext.cpp" line="48"/>
         <location filename="../src/ui/core/Teletext.cpp" line="49"/>
         <source>Teletext Transparency</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosojnost teleteksta</translation>
     </message>
 </context>
 <context>

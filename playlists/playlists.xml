@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlists>
+  <country>
+	<name>sl</name>
+	<playlist>
+		<title>SiOL - MPEG-2</title>
+		<path>playlists/sl/siol-mpeg2.m3u</path>
+	</playlist>
+	<playlist>
+		<title>SiOL - MPEG-4</title>
+		<path>playlists/sl/siol-mpeg4.m3u</path>
+	</playlist>
+	<playlist>
+		<title>T-2</title>
+		<path>playlists/sl/t-2.m3u</path>
+	</playlist>
+	<playlist>
+		<title>Tuš</title>
+		<path>playlists/sl/tus.m3u</path>
+	</playlist>
+	<playlist>
+		<title>Amis</title>
+		<path>playlists/sl/amis.m3u</path>
+	</playlist>
+  </country>
+</playlists>

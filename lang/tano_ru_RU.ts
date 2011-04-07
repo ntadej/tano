@@ -804,6 +804,34 @@ Then select your playlist.</source>
     </message>
 </context>
 <context>
+    <name>PlaylistSelect</name>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select your playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select your country from the menu below.
+Then select your playlist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Список каналов:</translation>
+    </message>
+</context>
+<context>
     <name>PlaylistWidget</name>
     <message>
         <source>Channel</source>
@@ -993,7 +1021,7 @@ Then select your playlist.</source>
         <translation>Список, импортированный из Sagem JS</translation>
     </message>
     <message>
-        <source>The file is not a Web playlist import file.</source>
+        <source>The file is not a playlist list file.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1320,18 +1348,6 @@ Then select your playlist.</source>
         <translation>Пользовательский</translation>
     </message>
     <message>
-        <source>Presets</source>
-        <translation>Предустановленные списки</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Словения&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Global&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Глобальный&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Default channel list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1353,10 +1369,6 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Russia&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

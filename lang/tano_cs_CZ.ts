@@ -806,6 +806,35 @@ Potom vyberte svůj seznam programů.</translation>
     </message>
 </context>
 <context>
+    <name>PlaylistSelect</name>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished">Vybrat</translation>
+    </message>
+    <message>
+        <source>Select your playlist</source>
+        <translation type="unfinished">Vyberte svůj seznam programů</translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation type="unfinished">Země:</translation>
+    </message>
+    <message>
+        <source>Select your country from the menu below.
+Then select your playlist.</source>
+        <translation type="unfinished">Vyberte svoji zemi z nabídky níže.
+Potom vyberte svůj seznam programů.</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Seznam programů:</translation>
+    </message>
+</context>
+<context>
     <name>PlaylistWidget</name>
     <message>
         <source>Channel</source>
@@ -995,8 +1024,8 @@ Potom vyberte svůj seznam programů.</translation>
         <translation>Zavedený seznam programů Sagem JS</translation>
     </message>
     <message>
-        <source>The file is not a Web playlist import file.</source>
-        <translation>Soubor není souborem pro zavedení internetového seznamu programů.</translation>
+        <source>The file is not a playlist list file.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1322,18 +1351,6 @@ Potom vyberte svůj seznam programů.</translation>
         <translation>Stanovený uživatelem</translation>
     </message>
     <message>
-        <source>Presets</source>
-        <translation>Přednastavení</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Slovinsko&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Global&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Všeobecný&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
@@ -1356,10 +1373,6 @@ Potom vyberte svůj seznam programů.</translation>
     <message>
         <source>Open channel list</source>
         <translation>Otevřít seznam programů</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Russia&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Rusko&lt;/b&gt;</translation>
     </message>
 </context>
 <context>

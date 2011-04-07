@@ -55,13 +55,13 @@ SET(Tano_Editor_Srcs
 	main.cpp
 
 	../src/container/Channel.cpp
+	../src/container/PlaylistFile.cpp
 
 	../src/core/Common.cpp
 	../src/core/ConsoleOutput.cpp
 	../src/core/Enums.cpp
 	../src/core/GetFile.cpp
 	../src/core/LocaleManager.cpp
-	../src/core/Playlists.cpp
 	../src/core/Print.cpp
 	../src/core/Settings.cpp
 
@@ -78,8 +78,8 @@ SET(Tano_Editor_Srcs
 	../src/ui/playlist/PlaylistImportWeb.cpp
 	../src/ui/playlist/PlaylistWidget.cpp
 
+	../src/xml/PlaylistListHandler.cpp
 	../src/xml/TanoHandlerOld.cpp
-	../src/xml/WebPlaylistHandler.cpp
 )
 
 ################
