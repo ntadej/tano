@@ -42,6 +42,9 @@ public:
 			  const bool &refresh = false);
 	void save(const QString &name,
 			  const QString &file);
+	void exportM3UClean(const QString &file);
+	void exportCSV(const QString &file);
+	void importCSV(const QString &file);
 	void exportJs(const QString &file);
 	void importJs(const QString &file);
 	void importTanoOld(const QString &file);

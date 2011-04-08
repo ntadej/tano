@@ -681,7 +681,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <name>PlaylistEdit</name>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="14"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="158"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="164"/>
         <source>Tano Editor</source>
         <translation>Tano Urejevalnik</translation>
     </message>
@@ -811,10 +811,23 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="575"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="204"/>
         <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="210"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="216"/>
         <source>New playlist</source>
         <translation>Nov seznam programov</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="584"/>
+        <source>M3U (Original)</source>
+        <translation>M3U (Originalno)</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="593"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="596"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="605"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.ui" line="608"/>
+        <source>CSV</source>
+        <translation>CSV</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="449"/>
@@ -869,76 +882,102 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Prenesi s spleta</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="174"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="180"/>
         <source>Open channel list</source>
         <translation>Odpri seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="176"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="182"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="252"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="258"/>
         <source>Save channel list</source>
         <translation>Shrani seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="254"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="260"/>
         <source>Tano TV channel list files (*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="267"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="273"/>
+        <source>Export to original M3U format</source>
+        <translation>Izvozi v originalen M3U format</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="275"/>
+        <source>M3U (original) list files (*.m3u)</source>
+        <translation>M3U (originalen) datoteka seznama (*.m3u)</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="285"/>
+        <source>Export to Comma-separated values file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="287"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="299"/>
+        <source>Comma-separated values file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="297"/>
+        <source>Import Comma-separated values file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="313"/>
         <source>Export to Sagem JS channel list</source>
         <translation>Izvozi v Sagem JS seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="269"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="284"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="315"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="327"/>
         <source>Sagem JS channel list files (*.js)</source>
         <translation>Sagem JS seznam programov (*.js)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="282"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="325"/>
         <source>Import Sagem JS channel list</source>
         <translation>Uvozi Sagem JS seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="296"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="339"/>
         <source>Import Tano TV old channel list</source>
         <translation>Uvozi Tano TV star seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="298"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="341"/>
         <source>Tano TV old channel list files(*.tano *.xml)</source>
         <translation>Tano TV star seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="327"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="370"/>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
         <translation>Ali želite zapreti urejevalnik?
 Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="401"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="444"/>
         <source>New channel from scan %1</source>
         <translation>Nov najden program %1</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="193"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="326"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="199"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="369"/>
         <source>Playlist Editor</source>
         <translation>Urejevalnik seznama programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="160"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="166"/>
         <source>%1 - Tano Editor</source>
         <translation>%1 - Tano Urejevalnik</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="194"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="200"/>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
         <translation>Ali želite ustvariti nov seznam programov?
@@ -1064,6 +1103,8 @@ Nato izberite želen seznam programov.</translation>
         <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="83"/>
         <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="108"/>
         <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="124"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="140"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="162"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -1077,20 +1118,22 @@ Nato izberite želen seznam programov.</translation>
     <message>
         <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="58"/>
         <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="97"/>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="158"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="200"/>
         <source>All languages</source>
         <translation>Vsi jeziki</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="57"/>
         <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="93"/>
-        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="153"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="192"/>
         <source>All categories</source>
         <translation>Vse kategorije</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="109"/>
         <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="125"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="141"/>
+        <location filename="../src/ui/playlist/PlaylistWidget.cpp" line="163"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne morem pisati datoteke %1:

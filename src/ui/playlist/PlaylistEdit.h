@@ -60,6 +60,9 @@ private slots:
 				 const QString &url);
 
 	void save();
+	void exportM3UClean();
+	void exportCSV();
+	void importCSV();
 	void exportJs();
 	void importJs();
 	void importTanoOld();

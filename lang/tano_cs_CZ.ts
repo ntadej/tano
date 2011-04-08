@@ -736,6 +736,34 @@ Ztratíte všechny neuložené změny.</translation>
         <source>%1 - Tano Editor</source>
         <translation>%1 - Editor Tano</translation>
     </message>
+    <message>
+        <source>M3U (Original)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to original M3U format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (original) list files (*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to Comma-separated values file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma-separated values file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Comma-separated values file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistImportWeb</name>

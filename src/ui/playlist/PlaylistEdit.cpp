@@ -58,10 +58,13 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 	connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
 
 	_menuExport = new QMenu();
+	_menuExport->addAction(ui->actionExportM3UClean);
+	_menuExport->addAction(ui->actionExportCSV);
 	_menuExport->addAction(ui->actionExportJs);
 
 	_menuImport = new QMenu();
 	_menuImport->addAction(ui->actionImportDownload);
+	_menuImport->addAction(ui->actionImportCSV);
 	_menuImport->addAction(ui->actionImportJs);
 	_menuImport->addAction(ui->actionImportTanoOld);
 }
@@ -109,9 +112,12 @@ void PlaylistEdit::createConnections()
 	connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
 	connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 	connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
+	connect(ui->actionExportM3UClean, SIGNAL(triggered()), this, SLOT(exportM3UClean()));
+	connect(ui->actionExportCSV, SIGNAL(triggered()), this, SLOT(exportCSV()));
 	connect(ui->actionExportJs, SIGNAL(triggered()), this, SLOT(exportJs()));
 	connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(menuOpenImport()));
 	connect(ui->actionImportDownload, SIGNAL(triggered()), this, SLOT(importWeb()));
+	connect(ui->actionImportCSV, SIGNAL(triggered()), this, SLOT(importCSV()));
 	connect(ui->actionImportJs, SIGNAL(triggered()), this, SLOT(importJs()));
 	connect(ui->actionImportTanoOld, SIGNAL(triggered()), this, SLOT(importTanoOld()));
 	connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
@@ -261,6 +267,46 @@ void PlaylistEdit::save()
 	exit();
 }
 
+void PlaylistEdit::exportM3UClean()
+{
+	QString fileName =
+		QFileDialog::getSaveFileName(this, tr("Export to original M3U format"),
+									QDir::homePath(),
+									tr("M3U (original) list files (*.m3u)"));
+	if (fileName.isEmpty())
+		return;
+
+	ui->playlist->exportM3UClean(fileName);
+}
+
+void PlaylistEdit::exportCSV()
+{
+	QString fileName =
+		QFileDialog::getSaveFileName(this, tr("Export to Comma-separated values file"),
+									QDir::homePath(),
+									tr("Comma-separated values file (*.csv)"));
+	if (fileName.isEmpty())
+		return;
+
+	ui->playlist->exportCSV(fileName);
+}
+
+void PlaylistEdit::importCSV()
+{
+	QString fileName =
+			QFileDialog::getOpenFileName(this, tr("Import Comma-separated values file"),
+										QDir::homePath(),
+										tr("Comma-separated values file (*.csv)"));
+	if (fileName.isEmpty())
+		return;
+
+	// DIALOG
+
+	ui->playlist->importCSV(fileName);
+	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+	ui->editName->setText(ui->playlist->name());
+}
+
 void PlaylistEdit::exportJs()
 {
 	QString fileName =
@@ -271,9 +317,6 @@ void PlaylistEdit::exportJs()
 		return;
 
 	ui->playlist->exportJs(fileName);
-
-	_closeEnabled = true;
-	exit();
 }
 
 void PlaylistEdit::importJs()

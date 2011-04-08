@@ -21,10 +21,12 @@
 
 M3UGenerator::M3UGenerator(QTreeWidget *treeWidget,
 						   const QString &name,
-						   QMap<QTreeWidgetItem *, Channel *>map)
+						   QMap<QTreeWidgetItem *, Channel *> map,
+						   const bool &clean)
 	: _treeWidget(treeWidget),
 	_name(name),
-	_map(map) { }
+	_map(map),
+	_clean(clean) { }
 
 M3UGenerator::~M3UGenerator() { }
 
@@ -32,12 +34,19 @@ bool M3UGenerator::write(QIODevice *device)
 {
 	_out.setDevice(device);
 	_out.setCodec("UTF-8");
-	_out << "#EXTM3U\n"
-		<< "#EXTNAME:"
-		<< _name
-		<< "\n\n";
-	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i)
-		generateItem(_map[_treeWidget->topLevelItem(i)]);
+	_out << "#EXTM3U\n";
+	if(!_clean) {
+		_out << "#EXTNAME:"
+			 << _name
+			 << "\n\n";
+	}
+	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
+		if(_clean) {
+			generateItemClean(_map[_treeWidget->topLevelItem(i)]);
+		} else {
+			generateItem(_map[_treeWidget->topLevelItem(i)]);
+		}
+	}
 	return true;
 }
 
@@ -56,3 +65,14 @@ void M3UGenerator::generateItem(Channel *channel)
 	_out << channel->url();
 	_out << "\n\n";
 }
+
+void M3UGenerator::generateItemClean(Channel *channel)
+{
+	_out << "#EXTINF:"
+		<< channel->numberString() << ","
+		<< channel->name() << "\n";
+
+	_out << channel->url();
+	_out << "\n\n";
+}
+

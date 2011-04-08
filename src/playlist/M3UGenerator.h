@@ -30,13 +30,17 @@ class M3UGenerator
 public:
 	M3UGenerator(QTreeWidget *treeWidget,
 				 const QString &name,
-				 QMap<QTreeWidgetItem *, Channel *> map);
+				 QMap<QTreeWidgetItem *, Channel *> map,
+				 const bool &clean = false);
 	~M3UGenerator();
 
 	bool write(QIODevice *device);
 
 private:
 	void generateItem(Channel *channel);
+	void generateItemClean(Channel *channel);
+
+	bool _clean;
 
 	QTreeWidget *_treeWidget;
 	QString _name;
