@@ -21,7 +21,15 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>
 
-#include <vlc-qt/Common.h>
+#ifdef EDITOR
+	#if WITH_EDITOR_VLCQT
+		#include <vlc-qt/Common.h>
+		#include <vlc-qt/Instance.h>
+	#endif
+#else
+	#include <vlc-qt/Common.h>
+	#include <vlc-qt/Instance.h>
+#endif
 
 #include "Config.h"
 #include "core/Common.h"
@@ -143,7 +151,13 @@ QStringList Tano::vlcQtArgs()
 	QStringList args;
 
 	Settings *s = new Settings();
+#ifdef EDITOR
+#if WITH_EDITOR_VLCQT
 	args = VlcCommon::args(s->globalSettings());
+#endif
+#else
+	args = VlcCommon::args(s->globalSettings());
+#endif
 	delete s;
 
 #ifdef Q_WS_WIN
@@ -157,11 +171,58 @@ QStringList Tano::vlcQtRecorderArgs(const QString &file)
 {
 	QStringList args;
 
+#ifdef EDITOR
+#if WITH_EDITOR_VLCQT
 	args = VlcCommon::recorderArgs(file);
+#endif
+#else
+	args = VlcCommon::recorderArgs(file);
+#endif
 
 #ifdef Q_WS_WIN
 	args << "--plugin-path=vlc\\plugins\\";
 #endif
 
 	return args;
+}
+
+QString Tano::vlcQtVersionCore()
+{
+	QString version = "/";
+#ifdef EDITOR
+#if WITH_EDITOR_VLCQT
+	version = VlcInstance::version();
+#endif
+#else
+	version = VlcInstance::version();
+#endif
+
+	return version;
+}
+
+QString Tano::vlcQtVersionLibrary()
+{
+	QString version = "/";
+#ifdef EDITOR
+#if WITH_EDITOR_VLCQT
+	version = VlcInstance::libVersion();
+#endif
+#else
+	version = VlcInstance::libVersion();
+#endif
+
+	return version;
+}
+
+bool Tano::vlcQtDisabled()
+{
+	bool disabled = false;
+#ifdef EDITOR
+#if WITH_EDITOR_VLCQT
+#else
+	disabled = true;
+#endif
+#endif
+
+	return disabled;
 }

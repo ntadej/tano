@@ -22,9 +22,7 @@
 #include <QtGui/QMenu>
 #include <QtGui/QMessageBox>
 
-#include <vlc-qt/Instance.h>
-#include <vlc-qt/MediaPlayer.h>
-
+#include "Config.h"
 #include "container/Channel.h"
 #include "core/Common.h"
 #include "core/ConsoleOutput.h"
@@ -34,6 +32,11 @@
 #include "ui/dialogs/PrintDialog.h"
 #include "ui/playlist/PlaylistImportCSV.h"
 #include "ui/playlist/PlaylistImportWeb.h"
+
+#if WITH_EDITOR_VLCQT
+	#include <vlc-qt/Instance.h>
+	#include <vlc-qt/MediaPlayer.h>
+#endif
 
 #include "PlaylistEdit.h"
 #include "ui_PlaylistEdit.h"
@@ -52,11 +55,15 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 	createSettings();
 	createConnections();
 
+#if WITH_EDITOR_VLCQT
 	_instance = new VlcInstance(Tano::vlcQtArgs(), this);
 	_player = new VlcMediaPlayer(video, this);
 	_timer = new QTimer();
 	connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
 	connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
+#else
+	ui->updateWidget->hide();
+#endif
 
 	_menuExport = new QMenu();
 	_menuExport->addAction(ui->actionExportM3UClean);
@@ -73,9 +80,12 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 PlaylistEdit::~PlaylistEdit()
 {
 	delete ui;
+
+#if WITH_EDITOR_VLCQT
 	delete _instance;
 	delete _player;
 	delete _timer;
+#endif
 }
 
 void PlaylistEdit::changeEvent(QEvent *e)
@@ -138,7 +148,9 @@ void PlaylistEdit::createConnections()
 
 	connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
 
+#if WITH_EDITOR_VLCQT
 	connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));
+#endif
 }
 
 void PlaylistEdit::menuOpenExport()
@@ -396,6 +408,7 @@ void PlaylistEdit::print()
 	dialog.exec();
 }
 
+#if WITH_EDITOR_VLCQT
 void PlaylistEdit::refreshPlaylist(const bool &refresh)
 {
 	if(!refresh) {
@@ -473,6 +486,7 @@ void PlaylistEdit::setState(const bool &playing)
 {
 	_currentIpPlaying = playing;
 }
+#endif
 
 void PlaylistEdit::editItem(QTreeWidgetItem *item)
 {
