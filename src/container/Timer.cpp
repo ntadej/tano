@@ -29,8 +29,7 @@ Timer::Timer(const QString &name,
 	_num(num),
 	_url(url)
 {
-	_date = QDate::currentDate();
-	_startTime = QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0);
+	_startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
 	_endTime = _startTime.addSecs(3600);
 	_disabled = false;
 	_recording = false;

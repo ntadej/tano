@@ -172,8 +172,8 @@ void MainWindow::createSettings()
 
 	_osdEnabled = settings->osd();
 	ui->actionPlaylistFullscreen->setEnabled(_osdEnabled);
-        ui->actionPlaylistFullscreen->setChecked(settings->playlistOsd());
-        showPlaylistFullscreen(settings->playlistOsd());
+	ui->actionPlaylistFullscreen->setChecked(settings->playlistOsd());
+	showPlaylistFullscreen(settings->playlistOsd());
 	_wheelType = settings->mouseWheel();
 	mouseWheel();
 
@@ -723,7 +723,7 @@ void MainWindow::showPlaylistFullscreen(const bool &on)
 		ui->infoWidget->setWindowFlags(Qt::ToolTip);
 	} else {
 		ui->infoWidget->setFloating(false);
-		ui->infoWidget->show();
+		//ui->infoWidget->show();
 	}
 }
 

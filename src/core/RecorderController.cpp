@@ -74,3 +74,8 @@ void RecorderController::stop()
 {
 	asyncCall(QLatin1String("stop"));
 }
+
+void RecorderController::timerInfo()
+{
+	asyncCall(QLatin1String("timerInfo"));
+}

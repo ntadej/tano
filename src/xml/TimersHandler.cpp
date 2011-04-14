@@ -104,25 +104,17 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
 			_timer->setType(Tano::timerType(_currentText.toInt()));
 			_item->setText(1, Tano::timerTypeString(_timer->type()));
 		}
-	} else if (qName == "date") {
-		if (_item && _timer) {
-			_timer->setDate(QDate::fromString(_currentText, Qt::ISODate));
-			if(QDate::fromString(_currentText, Qt::ISODate) < QDate::currentDate()) {
-				_item->setText(2, QObject::tr("Disabled or expired"));
-				_timer->setDisabled(true);
-			}
-		}
 	} else if (qName == "starttime") {
 		if (_item && _timer) {
-			_timer->setStartTime(QTime::fromString(_currentText, Qt::ISODate));
+			_timer->setStartTime(QDateTime::fromString(_currentText, Qt::ISODate));
 		}
 	} else if (qName == "endtime") {
 		if (_item && _timer) {
-			_timer->setEndTime(QTime::fromString(_currentText, Qt::ISODate));
-			if(QTime::fromString(_currentText, Qt::ISODate) < QTime::currentTime()) {
+			_timer->setEndTime(QDateTime::fromString(_currentText, Qt::ISODate));
+			/*if(_timer->endTime() < QDateTime::currentDateTime()) {
 				_item->setText(2, QObject::tr("Disabled or expired"));
-				_timer->setDisabled(true);
-			}
+				//_timer->setDisabled(true);
+			}*/
 		}
 	} else if (qName == "disabled") {
 		if (_item && _timer) {

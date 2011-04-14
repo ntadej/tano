@@ -16,34 +16,38 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_M3UHANDLER_H_
-#define TANO_M3UHANDLER_H_
+#ifndef TANO_PLAYLISTIMPORTCSV_H_
+#define TANO_PLAYLISTIMPORTCSV_H_
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+#include <QtGui/QAbstractButton>
+#include <QtGui/QDialog>
 
-class Channel;
+namespace Ui {
+	class PlaylistImportCSV;
+}
 
-class M3UHandler
+class PlaylistImportCSV : public QDialog
 {
+Q_OBJECT
 public:
-	M3UHandler();
-	~M3UHandler();
+	PlaylistImportCSV(QWidget *parent = 0);
+	~PlaylistImportCSV();
 
-	void processFile(const QString &m3uFile);
+	QList<int> columns() const;
+	bool header() const;
+	bool proceed() const { return _proceed; }
+	QString separator() const;
 
-	QString name() const { return _name; }
-	QList<Channel *> channelList() const { return _channels; }
+protected:
+	void changeEvent(QEvent *e);
+
+private slots:
+	void action(QAbstractButton *button);
 
 private:
-	void processList();
+	Ui::PlaylistImportCSV *ui;
 
-	Channel *_channel;
-
-	QString _name;
-	QStringList _m3uLineList;
-
-	QList<Channel *> _channels;
+	bool _proceed;
 };
 
-#endif // TANO_M3UHANDLER_H_
+#endif // TANO_PLAYLISTIMPORTCSV_H_

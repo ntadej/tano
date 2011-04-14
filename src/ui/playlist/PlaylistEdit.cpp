@@ -32,6 +32,7 @@
 #include "core/Settings.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
+#include "ui/playlist/PlaylistImportCSV.h"
 #include "ui/playlist/PlaylistImportWeb.h"
 
 #include "PlaylistEdit.h"
@@ -284,7 +285,7 @@ void PlaylistEdit::exportCSV()
 	QString fileName =
 		QFileDialog::getSaveFileName(this, tr("Export to Comma-separated values file"),
 									QDir::homePath(),
-									tr("Comma-separated values file (*.csv)"));
+									tr("Comma-separated values file (*.csv *.txt)"));
 	if (fileName.isEmpty())
 		return;
 
@@ -296,13 +297,16 @@ void PlaylistEdit::importCSV()
 	QString fileName =
 			QFileDialog::getOpenFileName(this, tr("Import Comma-separated values file"),
 										QDir::homePath(),
-										tr("Comma-separated values file (*.csv)"));
+										tr("Comma-separated values file (*.csv *.txt)"));
 	if (fileName.isEmpty())
 		return;
 
-	// DIALOG
+	PlaylistImportCSV dialog;
+	dialog.exec();
+	if(!dialog.proceed())
+		return;
 
-	ui->playlist->importCSV(fileName);
+	ui->playlist->importCSV(fileName, dialog.separator(), dialog.header(), dialog.columns());
 	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 	ui->editName->setText(ui->playlist->name());
 }

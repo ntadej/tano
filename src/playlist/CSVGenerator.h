@@ -16,34 +16,34 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_M3UHANDLER_H_
-#define TANO_M3UHANDLER_H_
+#ifndef TANO_CSVGENERATOR_H_
+#define TANO_CSVGENERATOR_H_
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+#include <QtCore/QTextStream>
+#include <QtGui/QTreeWidget>
+#include <QtGui/QTreeWidgetItem>
 
 class Channel;
 
-class M3UHandler
+class CSVGenerator
 {
 public:
-	M3UHandler();
-	~M3UHandler();
+	CSVGenerator(QTreeWidget *treeWidget,
+				 QMap<QTreeWidgetItem *, Channel *> map,
+				 const bool &header = true);
+	~CSVGenerator();
 
-	void processFile(const QString &m3uFile);
-
-	QString name() const { return _name; }
-	QList<Channel *> channelList() const { return _channels; }
+	bool write(QIODevice *device);
 
 private:
-	void processList();
+	void generateItem(Channel *channel);
 
-	Channel *_channel;
+	bool _header;
 
-	QString _name;
-	QStringList _m3uLineList;
+	QTreeWidget *_treeWidget;
+	QTextStream _out;
 
-	QList<Channel *> _channels;
+	QMap<QTreeWidgetItem *, Channel *> _map;
 };
 
-#endif // TANO_M3UHANDLER_H_
+#endif // TANO_CSVGENERATOR_H_

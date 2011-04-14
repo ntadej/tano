@@ -27,6 +27,7 @@ SET(Tano_Editor_UIs
 	../src/ui/dialogs/AboutDialog.ui
 	../src/ui/dialogs/PrintDialog.ui
 	../src/ui/playlist/PlaylistEdit.ui
+	../src/ui/playlist/PlaylistImportCSV.ui
 	../src/ui/playlist/PlaylistImportWeb.ui
 	../src/ui/playlist/PlaylistSelect.ui
 	../src/ui/playlist/PlaylistWidget.ui
@@ -40,6 +41,7 @@ SET(Tano_Editor_MOCs	# List of classes which Qt needs to produce MOCs for them (
 	../src/ui/dialogs/AboutDialog.h
 	../src/ui/dialogs/PrintDialog.h
 	../src/ui/playlist/PlaylistEdit.h
+	../src/ui/playlist/PlaylistImportCSV.h
 	../src/ui/playlist/PlaylistImportWeb.h
 	../src/ui/playlist/PlaylistSelect.h
 	../src/ui/playlist/PlaylistWidget.h
@@ -67,6 +69,8 @@ SET(Tano_Editor_Srcs
 	../src/core/Print.cpp
 	../src/core/Settings.cpp
 
+	../src/playlist/CSVGenerator.cpp
+	../src/playlist/CSVHandler.cpp
 	../src/playlist/JsGenerator.cpp
 	../src/playlist/JsHandler.cpp
 	../src/playlist/M3UGenerator.cpp
@@ -77,6 +81,7 @@ SET(Tano_Editor_Srcs
 	../src/ui/dialogs/AboutDialog.cpp
 	../src/ui/dialogs/PrintDialog.cpp
 	../src/ui/playlist/PlaylistEdit.cpp
+	../src/ui/playlist/PlaylistImportCSV.cpp
 	../src/ui/playlist/PlaylistImportWeb.cpp
 	../src/ui/playlist/PlaylistSelect.cpp
 	../src/ui/playlist/PlaylistWidget.cpp

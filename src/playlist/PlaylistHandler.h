@@ -33,6 +33,10 @@ public:
 	~PlaylistHandler();
 
 	void openM3UFile(const QString &m3uFile);
+	void importCSVFormat(const QString &csvFile,
+						 const QString &separator,
+						 const bool &header,
+						 const QList<int> &columns);
 	void importJsFormat(const QString &jsFile);
 	void importOldFormat(const QString &tanoFile);
 

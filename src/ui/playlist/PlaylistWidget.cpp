@@ -23,6 +23,7 @@
 #include "ui_PlaylistWidget.h"
 
 #include "container/Channel.h"
+#include "playlist/CSVGenerator.h"
 #include "playlist/JsGenerator.h"
 #include "playlist/M3UGenerator.h"
 #include "playlist/PlaylistHandler.h"
@@ -144,15 +145,18 @@ void PlaylistWidget::exportCSV(const QString &file)
 		return;
 	}
 
-	//JsGenerator *generator = new JsGenerator(ui->treeWidget, _handler->channelMap());
-	//generator->write(&f);
-	//delete generator;
+	CSVGenerator *generator = new CSVGenerator(ui->treeWidget, _handler->channelMap());
+	generator->write(&f);
+	delete generator;
 }
 
-void PlaylistWidget::importCSV(const QString &file)
+void PlaylistWidget::importCSV(const QString &file,
+							   const QString &separator,
+							   const bool &header,
+							   const QList<int> &columns)
 {
-	//_handler->clear();
-	//_handler->importJsFormat(file);
+	_handler->clear();
+	_handler->importCSVFormat(file, separator, header, columns);
 }
 
 void PlaylistWidget::exportJs(const QString &file)

@@ -19,9 +19,8 @@
 #ifndef TANO_TIMER_H_
 #define TANO_TIMER_H_
 
-#include <QtCore/QDate>
+#include <QtCore/QDateTime>
 #include <QtCore/QString>
-#include <QtCore/QTime>
 
 #include "core/Enums.h"
 
@@ -46,12 +45,10 @@ public:
 	void setUrl(const QString &url) { _url = url; }
 	int num() const { return _num; }
 	void setNum(const int &num) { _num = num; }
-	QDate date() const { return _date; }
-	void setDate(const QDate &date) { _date = date; }
-	QTime startTime() const { return _startTime; }
-	void setStartTime(const QTime &startTime) { _startTime = startTime; }
-	QTime endTime() const { return _endTime; }
-	void setEndTime(const QTime &endTime) { _endTime = endTime; }
+	QDateTime startTime() const { return _startTime; }
+	void setStartTime(const QDateTime &startTime) { _startTime = startTime; }
+	QDateTime endTime() const { return _endTime; }
+	void setEndTime(const QDateTime &endTime) { _endTime = endTime; }
 	bool isDisabled() const { return _disabled; }
 	void setDisabled(const bool &disabled) { _disabled = disabled; }
 	Tano::TimerType type() const { return _type; }
@@ -65,9 +62,8 @@ private:
 	QString _playlist;
 	QString _url;
 	int _num;
-	QDate _date;
-	QTime _startTime;
-	QTime _endTime;
+	QDateTime _startTime;
+	QDateTime _endTime;
 	bool _disabled;
 	Tano::TimerType _type;
 	bool _recording;

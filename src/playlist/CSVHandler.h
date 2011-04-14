@@ -16,34 +16,45 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_M3UHANDLER_H_
-#define TANO_M3UHANDLER_H_
+#ifndef TANO_CSVHANDLER_H_
+#define TANO_CSVHANDLER_H_
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
 class Channel;
 
-class M3UHandler
+class CSVHandler
 {
 public:
-	M3UHandler();
-	~M3UHandler();
+	CSVHandler();
+	~CSVHandler();
 
-	void processFile(const QString &m3uFile);
+	void processFile(const QString &csvFile);
+	void setParameters(const QString &separator,
+					   const bool &header,
+					   const QList<int> &columns);
 
-	QString name() const { return _name; }
 	QList<Channel *> channelList() const { return _channels; }
 
 private:
+	void processChannel(const QStringList &list);
 	void processList();
 
 	Channel *_channel;
-
-	QString _name;
-	QStringList _m3uLineList;
-
 	QList<Channel *> _channels;
+	QStringList _csvLineList;
+
+	// Parameters
+	QString _separator;
+	bool _header;
+
+	int _number;
+	int _name;
+	int _url;
+	int _categories;
+	int _language;
+	int _epg;
 };
 
-#endif // TANO_M3UHANDLER_H_
+#endif // TANO_CSVHANDLER_H_

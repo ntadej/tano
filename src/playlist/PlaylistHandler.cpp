@@ -23,6 +23,7 @@
 
 #include "PlaylistHandler.h"
 #include "container/Channel.h"
+#include "playlist/CSVHandler.h"
 #include "playlist/JsHandler.h"
 #include "playlist/M3UHandler.h"
 #include "xml/TanoHandlerOld.h"
@@ -184,6 +185,7 @@ void PlaylistHandler::processChannel(Channel *channel)
 	_item->setText(0, processNum(QString().number(channel->number())));
 	_item->setText(1, channel->name());
 	_item->setText(2, channel->categories().join(","));
+	_item->setText(3, channel->language());
 
 	_map.insert(_item, channel);
 	_nmap.insert(channel->number(), channel);
@@ -199,6 +201,24 @@ void PlaylistHandler::openM3UFile(const QString &m3uFile)
 	}
 
 	_name = import->name();
+
+	delete import;
+}
+
+void PlaylistHandler::importCSVFormat(const QString &csvFile,
+									  const QString &separator,
+									  const bool &header,
+									  const QList<int> &columns)
+{
+	CSVHandler *import = new CSVHandler();
+	import->setParameters(separator, header, columns);
+	import->processFile(csvFile);
+
+	for(int i = 0; i < import->channelList().size(); i++) {
+		processChannel(import->channelList()[i]);
+	}
+
+	_name = QObject::tr("CSV Imported Playlist");
 
 	delete import;
 }

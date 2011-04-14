@@ -42,6 +42,7 @@ public:
 	void refreshTimers() { _time->updateTimers(); }
 	void stop() { _core->stop(); }
 	QString timerEndTime() const { return _core->timerEndTime(); }
+	void timerInfo() { _core->timerInfo(); }
 
 signals:
 	void elapsed(const int &);

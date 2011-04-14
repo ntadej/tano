@@ -154,7 +154,10 @@ void Recorder::record(const bool &status)
 
 		if(_trayIcon) {
 			_trayIcon->changeToolTip(Tano::Record, _name);
-			_trayIcon->message(Tano::Record, QStringList() << _name << _controller->output());
+			if(_controller->isTimer())
+				_trayIcon->message(Tano::Record, QStringList() << _name << _controller->output() << ui->valueEndTime->text());
+			else
+				_trayIcon->message(Tano::Record, QStringList() << _name << _controller->output());
 		}
 	} else {
 		_controller->stop();
@@ -190,6 +193,10 @@ void Recorder::recordNow(const QString &name,
 void Recorder::time(const int &time)
 {
 	ui->valueTime->setText(QTime().addMSecs(time).toString("hh:mm:ss"));
+
+	if(ui->valueCurrent->text().isEmpty()) {
+		_controller->timerInfo();
+	}
 }
 
 void Recorder::setAction(QAction *action)

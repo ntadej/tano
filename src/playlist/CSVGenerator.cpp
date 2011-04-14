@@ -17,62 +17,42 @@
 *****************************************************************************/
 
 #include "container/Channel.h"
-#include "playlist/M3UGenerator.h"
+#include "CSVGenerator.h"
 
-M3UGenerator::M3UGenerator(QTreeWidget *treeWidget,
-						   const QString &name,
+CSVGenerator::CSVGenerator(QTreeWidget *treeWidget,
 						   QMap<QTreeWidgetItem *, Channel *> map,
-						   const bool &clean)
+						   const bool &header)
 	: _treeWidget(treeWidget),
-	_name(name),
 	_map(map),
-	_clean(clean) { }
+	_header(header) { }
 
-M3UGenerator::~M3UGenerator() { }
+CSVGenerator::~CSVGenerator() { }
 
-bool M3UGenerator::write(QIODevice *device)
+bool CSVGenerator::write(QIODevice *device)
 {
 	_out.setDevice(device);
 	_out.setCodec("UTF-8");
-	_out << "#EXTM3U\n";
-	if(!_clean) {
-		_out << "#EXTNAME:"
-			 << _name
-			 << "\n\n";
+	if(_header) {
+		_out << QObject::tr("Number") << ";"
+			 << QObject::tr("Channel") << ";"
+			 << QObject::tr("URL") << ";"
+			 << QObject::tr("Categories") << ";"
+			 << QObject::tr("Language") << ";"
+			 << QObject::tr("EPG ID") << "\n";
 	}
 	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
-		if(_clean) {
-			generateItemClean(_map[_treeWidget->topLevelItem(i)]);
-		} else {
-			generateItem(_map[_treeWidget->topLevelItem(i)]);
-		}
+		generateItem(_map[_treeWidget->topLevelItem(i)]);
 	}
 	return true;
 }
 
-void M3UGenerator::generateItem(Channel *channel)
+void CSVGenerator::generateItem(Channel *channel)
 {
-	_out << "#EXTINF:"
-		 << channel->numberString() << ","
-		 << channel->name() << "\n";
-
-	_out << "#EXTTV:"
+	_out << channel->numberString() << ";"
+		 << channel->name() << ";"
+		 << channel->url() << ";"
 		 << channel->categories().join(",") << ";"
 		 << channel->language() << ";"
 		 << channel->epg();
 	_out << "\n";
-
-	_out << channel->url();
-	_out << "\n\n";
 }
-
-void M3UGenerator::generateItemClean(Channel *channel)
-{
-	_out << "#EXTINF:"
-		 << channel->numberString() << ","
-		 << channel->name() << "\n";
-
-	_out << channel->url();
-	_out << "\n\n";
-}
-

@@ -189,9 +189,9 @@ void TimersEdit::edit(QTreeWidgetItem *item)
 	ui->editPlaylist->setText(_handler->timerRead(item)->playlist());
 	ui->editUrl->setText(_handler->timerRead(item)->url());
 	ui->editType->setCurrentIndex(Tano::timerType(_handler->timerRead(item)->type()));
-	ui->editDate->setDate(_handler->timerRead(item)->date());
-	ui->editStartTime->setTime(_handler->timerRead(item)->startTime());
-	ui->editEndTime->setTime(_handler->timerRead(item)->endTime());
+	ui->editDate->setDate(_handler->timerRead(item)->startTime().date());
+	ui->editStartTime->setTime(_handler->timerRead(item)->startTime().time());
+	ui->editEndTime->setTime(_handler->timerRead(item)->endTime().time());
 }
 
 void TimersEdit::editName(const QString &name)
@@ -217,18 +217,27 @@ void TimersEdit::editType(const int &type)
 
 void TimersEdit::editDate(const QDate &date)
 {
-	_handler->timerRead(ui->timersWidget->currentItem())->setDate(date);
+	QDateTime start = _handler->timerRead(ui->timersWidget->currentItem())->startTime();
+	QDateTime end = _handler->timerRead(ui->timersWidget->currentItem())->endTime();
+	start.setDate(date);
+	end.setDate(date);
+	_handler->timerRead(ui->timersWidget->currentItem())->setStartTime(start);
+	_handler->timerRead(ui->timersWidget->currentItem())->setEndTime(end);
 }
 
 void TimersEdit::editStartTime(const QTime &time)
 {
-	_handler->timerRead(ui->timersWidget->currentItem())->setStartTime(time);
+	QDateTime start = _handler->timerRead(ui->timersWidget->currentItem())->startTime();
+	start.setTime(time);
+	_handler->timerRead(ui->timersWidget->currentItem())->setStartTime(start);
 	validate();
 }
 
 void TimersEdit::editEndTime(const QTime &time)
 {
-	_handler->timerRead(ui->timersWidget->currentItem())->setEndTime(time);
+	QDateTime end = _handler->timerRead(ui->timersWidget->currentItem())->endTime();
+	end.setTime(time);
+	_handler->timerRead(ui->timersWidget->currentItem())->setEndTime(end);
 	validate();
 }
 
@@ -281,8 +290,7 @@ void TimersEdit::write()
 
 void TimersEdit::validate()
 {
-	if(ui->editDate->date() < QDate::currentDate() ||
-	   (ui->editDate->date() == QDate::currentDate() && ui->editEndTime->time() < QTime::currentTime()) ||
+	if((QDateTime(ui->editDate->date(), ui->editEndTime->time()) < QDateTime::currentDateTime()) ||
 	   ui->checkBoxDisabled->isChecked())
 	{
 		_handler->timerRead(ui->timersWidget->currentItem())->setDisabled(true);

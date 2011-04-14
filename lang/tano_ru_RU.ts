@@ -752,16 +752,75 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Comma-separated values file (*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Import Comma-separated values file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>CSV</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma-separated values file (*.csv *.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistImportCSV</name>
+    <message>
+        <source>CSV file structure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Separator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line contains column names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line does not contain column names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column list:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Канал</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished">Категории</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Язык</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">URL</translation>
     </message>
 </context>
 <context>
@@ -986,10 +1045,6 @@ Then select your playlist.</source>
         <translation>Активен</translation>
     </message>
     <message>
-        <source>Disabled or expired</source>
-        <translation>Отключен или просрочен</translation>
-    </message>
-    <message>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation>Ошибка синтаксического анализа в строке %1, столбец %2:
@@ -1025,6 +1080,34 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>The file is not a playlist list file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Канал</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">URL</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished">Категории</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Язык</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV Imported Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -44,6 +44,7 @@ public slots:
 	void stop() { _main->stop(); }
 	bool timer() const { return _main->isTimer(); }
 	QString timerEndTime() const { return _main->timerEndTime(); }
+	void timerInfo() { _main->timerInfo(); }
 
 signals:
 	void elapsed(const int &);

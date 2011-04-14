@@ -41,6 +41,7 @@ public:
 	void settings();
 	void stop();
 	QString timerEndTime() const { return _currentEndTime; }
+	void timerInfo();
 
 public slots:
 	void record(const QString &channel,
@@ -63,6 +64,8 @@ private:
 					 const QString &name = 0) const;
 
 	QString _currentEndTime;
+	QString _currentName;
+	QString _currentUrl;
 	QString _defaultPath;
 
 	bool _isRecording;
