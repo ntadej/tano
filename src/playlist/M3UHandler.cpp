@@ -19,7 +19,6 @@
 #include <QtCore/QFile>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
-#include <QtGui/QMessageBox>
 
 #include "M3UHandler.h"
 #include "container/Channel.h"

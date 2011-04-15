@@ -412,6 +412,10 @@ This will stop recording in progress.</source>
         <source>Donate</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -731,41 +735,99 @@ You will lose any unsaved changes.</source>
         <source>%1 - Tano Editor</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>M3U (Original)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to original M3U format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (original) list files (*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to Comma-separated values file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Comma-separated values file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma-separated values file (*.csv *.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistImportCSV</name>
+    <message>
+        <source>CSV file structure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Separator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line contains column names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line does not contain column names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column list:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Канал</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished">Категории</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Язык</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">URL</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistImportWeb</name>
     <message>
         <source>Import playlist from Web</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select your playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Slovenia</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Country:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select your country from the menu below.
-Then select your playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist:</source>
-        <translation type="unfinished">Список каналов:</translation>
     </message>
     <message>
         <source>Refresh current playlist</source>
@@ -787,6 +849,10 @@ Then select your playlist.</source>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
+    <message>
+        <source>Import type</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistPage</name>
@@ -797,6 +863,34 @@ Then select your playlist.</source>
     <message>
         <source>Select playlist</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistSelect</name>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select your playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select your country from the menu below.
+Then select your playlist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Список каналов:</translation>
     </message>
 </context>
 <context>
@@ -951,10 +1045,6 @@ Then select your playlist.</source>
         <translation>Активен</translation>
     </message>
     <message>
-        <source>Disabled or expired</source>
-        <translation>Отключен или просрочен</translation>
-    </message>
-    <message>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation>Ошибка синтаксического анализа в строке %1, столбец %2:
@@ -989,7 +1079,35 @@ Then select your playlist.</source>
         <translation>Список, импортированный из Sagem JS</translation>
     </message>
     <message>
-        <source>The file is not a Web playlist import file.</source>
+        <source>The file is not a playlist list file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Канал</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">URL</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished">Категории</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Язык</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV Imported Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1238,10 +1356,6 @@ Then select your playlist.</source>
         <translation>Другой</translation>
     </message>
     <message>
-        <source>Enable Recorder</source>
-        <translation>Использовать рекордер</translation>
-    </message>
-    <message>
         <source>Default recording directory</source>
         <translation>Каталог для записи</translation>
     </message>
@@ -1267,6 +1381,26 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1320,18 +1454,6 @@ Then select your playlist.</source>
         <translation>Пользовательский</translation>
     </message>
     <message>
-        <source>Presets</source>
-        <translation>Предустановленные списки</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Словения&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Global&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Глобальный&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Default channel list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1353,10 +1475,6 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Russia&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1484,6 +1602,21 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Teletext</name>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext Transparency</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

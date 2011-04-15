@@ -27,7 +27,9 @@ SET(Tano_Editor_UIs
 	../src/ui/dialogs/AboutDialog.ui
 	../src/ui/dialogs/PrintDialog.ui
 	../src/ui/playlist/PlaylistEdit.ui
+	../src/ui/playlist/PlaylistImportCSV.ui
 	../src/ui/playlist/PlaylistImportWeb.ui
+	../src/ui/playlist/PlaylistSelect.ui
 	../src/ui/playlist/PlaylistWidget.ui
 )
 
@@ -39,7 +41,9 @@ SET(Tano_Editor_MOCs	# List of classes which Qt needs to produce MOCs for them (
 	../src/ui/dialogs/AboutDialog.h
 	../src/ui/dialogs/PrintDialog.h
 	../src/ui/playlist/PlaylistEdit.h
+	../src/ui/playlist/PlaylistImportCSV.h
 	../src/ui/playlist/PlaylistImportWeb.h
+	../src/ui/playlist/PlaylistSelect.h
 	../src/ui/playlist/PlaylistWidget.h
 )
 
@@ -55,16 +59,18 @@ SET(Tano_Editor_Srcs
 	main.cpp
 
 	../src/container/Channel.cpp
+	../src/container/PlaylistFile.cpp
 
 	../src/core/Common.cpp
 	../src/core/ConsoleOutput.cpp
 	../src/core/Enums.cpp
 	../src/core/GetFile.cpp
 	../src/core/LocaleManager.cpp
-	../src/core/Playlists.cpp
 	../src/core/Print.cpp
 	../src/core/Settings.cpp
 
+	../src/playlist/CSVGenerator.cpp
+	../src/playlist/CSVHandler.cpp
 	../src/playlist/JsGenerator.cpp
 	../src/playlist/JsHandler.cpp
 	../src/playlist/M3UGenerator.cpp
@@ -75,11 +81,13 @@ SET(Tano_Editor_Srcs
 	../src/ui/dialogs/AboutDialog.cpp
 	../src/ui/dialogs/PrintDialog.cpp
 	../src/ui/playlist/PlaylistEdit.cpp
+	../src/ui/playlist/PlaylistImportCSV.cpp
 	../src/ui/playlist/PlaylistImportWeb.cpp
+	../src/ui/playlist/PlaylistSelect.cpp
 	../src/ui/playlist/PlaylistWidget.cpp
 
+	../src/xml/PlaylistListHandler.cpp
 	../src/xml/TanoHandlerOld.cpp
-	../src/xml/WebPlaylistHandler.cpp
 )
 
 ################
@@ -103,6 +111,9 @@ QT4_WRAP_CPP(Tano_Editor_MOC_Srcs ${Tano_Editor_MOCs})
 #########################
 # Compiler Define flags #
 #########################
+# Define we are compiling editor
+ADD_DEFINITIONS(-DEDITOR="1")
+
 # Define default data dir, if under POSIX systems.
 IF(NOT MINGW)
 	IF (NOT DEFAULT_DATA_DIR)
@@ -131,7 +142,11 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURC
 # This line adds the include path of the Qt
 # directory to the compiler include path
 INCLUDE(${QT_USE_FILE})
-INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
+
+IF(EDITOR_WITHOUT_VLCQT)
+ELSE(EDITOR_WITHOUT_VLCQT)
+	INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
+ENDIF(EDITOR_WITHOUT_VLCQT)
 
 IF(MINGW)
 	# CMake currently doesn't support windres yet. Add command manually
@@ -155,7 +170,11 @@ ENDIF(MINGW)
 ADD_EXECUTABLE(tano-editor ${Tano_Editor_UIC_Srcs} ${Tano_Editor_Srcs} ${Tano_Editor_MOC_Srcs} ${Tano_Editor_Resrcs_Srcs})
 
 # Here the needed Qt Libraries are added to the link command.
-TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
+IF(EDITOR_WITHOUT_VLCQT)
+	TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES})
+ELSE(EDITOR_WITHOUT_VLCQT)
+	TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
+ENDIF(EDITOR_WITHOUT_VLCQT)
 
 
 ################

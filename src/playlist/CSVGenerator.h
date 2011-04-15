@@ -16,35 +16,34 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTS_H_
-#define TANO_PLAYLISTS_H_
+#ifndef TANO_CSVGENERATOR_H_
+#define TANO_CSVGENERATOR_H_
 
-#include <QtCore/QString>
+#include <QtCore/QTextStream>
+#include <QtGui/QTreeWidget>
+#include <QtGui/QTreeWidgetItem>
 
-namespace TanoPlaylists
+class Channel;
+
+class CSVGenerator
 {
-	// International
-	class International {
-	public:
-		static const QString WorldTv;
-	};
+public:
+	CSVGenerator(QTreeWidget *treeWidget,
+				 QMap<QTreeWidgetItem *, Channel *> map,
+				 const bool &header = true);
+	~CSVGenerator();
 
-	// Russia
-	class Russia {
-	public:
-		static const QString DiselTvKrasnodar;
-		static const QString DiselTvRostov;
-	};
+	bool write(QIODevice *device);
 
-	// Slovenia
-	class Slovenia {
-	public:
-		static const QString Amis;
-		static const QString Siol2;
-		static const QString Siol4;
-		static const QString T2;
-		static const QString Tus;
-	};
+private:
+	void generateItem(Channel *channel);
+
+	bool _header;
+
+	QTreeWidget *_treeWidget;
+	QTextStream _out;
+
+	QMap<QTreeWidgetItem *, Channel *> _map;
 };
 
-#endif // TANO_PLAYLISTS_H_
+#endif // TANO_CSVGENERATOR_H_

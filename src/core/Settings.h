@@ -99,11 +99,17 @@ public:
 	QString subtitleLanguage() const { return _subtitleLanguage; }
 	void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
 	static const QString DEFAULT_SUBTITLE_LANGUAGE;
+	bool udpxy() const { return _udpxy; }
+	void setUdpxy(const bool &b) { _udpxy = b; }
+	static const bool DEFAULT_UDPXY;
+	QString udpxyUrl() const { return _udpxyUrl; }
+	void setUdpxyUrl(const QString &s) { _udpxyUrl = s; }
+	static const QString DEFAULT_UDPXY_URL;
+	int udpxyPort() const { return _udpxyPort; }
+	void setUdpxyPort(const int &i) { _udpxyPort = i; }
+	static const int DEFAULT_UDPXY_PORT;
 
 	// Recorder
-	bool recorderEnabled() const { return _recorderEnabled; }
-	void setRecorderEnabled(const bool &b) { _recorderEnabled = b; }
-	static const bool DEFAULT_RECORDER_ENABLED;
 	QString recorderDirectory() const { return _recorderDirectory; }
 	void setRecorderDirectory(const QString &s) { _recorderDirectory = s; }
 	static const QString DEFAULT_RECORDER_DIRECTORY;
@@ -147,11 +153,12 @@ private:
 	bool _rememberVideoSettings;
 	QString _audioLanguage;
 	QString _subtitleLanguage;
+	bool _udpxy;
+	QString _udpxyUrl;
+	int _udpxyPort;
 
 	// Recorder
-	bool _recorderEnabled;
 	QString _recorderDirectory;
-	QString _recorderBackend;
 
 	// Session
 	int _channel;

@@ -47,6 +47,7 @@ public slots:
 	void refreshSettings();
 	void refreshTimers();
 	void stop();
+	void timerInfo();
 
 signals:
 	void elapsed(const int &);

@@ -23,8 +23,12 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QTreeWidgetItem>
 
+#include "Config.h"
+
+#if WITH_EDITOR_VLCQT
 class VlcInstance;
 class VlcMediaPlayer;
+#endif
 
 namespace Ui
 {
@@ -60,6 +64,9 @@ private slots:
 				 const QString &url);
 
 	void save();
+	void exportM3UClean();
+	void exportCSV();
+	void importCSV();
 	void exportJs();
 	void importJs();
 	void importTanoOld();
@@ -91,8 +98,6 @@ private:
 	void createConnections();
 	void createSettings();
 
-	QString currentIp();
-
 	Ui::PlaylistEdit *ui;
 
 	bool _closeEnabled;
@@ -101,7 +106,10 @@ private:
 
 	bool _standalone;
 
+#if WITH_EDITOR_VLCQT
 	// Update playlist
+	QString currentIp();
+
 	VlcInstance *_instance;
 	VlcMediaPlayer *_player;
 	int _refresh;
@@ -110,6 +118,7 @@ private:
 	int _currentTimeout;
 	bool _currentIpPlaying;
 	QTimer *_timer;
+#endif
 };
 
 #endif // TANO_PLAYLISTEDIT_H_

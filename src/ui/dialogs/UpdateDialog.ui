@@ -248,7 +248,7 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="1" colspan="2">
+       <item row="6" column="0" colspan="3">
         <widget class="QScrollArea" name="scrollArea">
          <property name="widgetResizable">
           <bool>true</bool>
@@ -258,8 +258,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>43</width>
-            <height>25</height>
+            <width>382</width>
+            <height>143</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -267,6 +267,9 @@
             <widget class="QLabel" name="labelInfo">
              <property name="text">
               <string/>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
              </property>
             </widget>
            </item>

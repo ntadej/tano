@@ -33,6 +33,7 @@
 #include "core/ChannelSelect.h"
 #include "core/LocaleManager.h"
 #include "core/Shortcuts.h"
+#include "core/Udpxy.h"
 #include "epg/EpgManager.h"
 #include "epg/XmltvManager.h"
 #include "ui/core/TrayIcon.h"
@@ -129,11 +130,11 @@ private:
 	bool _isLite;
 	bool _osdEnabled;
 	bool _playlistFullscreen;
-	bool _recorderEnabled;
 	int _sessionChannel;
 	bool _sessionVolumeEnabled;
 	bool _sessionAutoplayEnabled;
 	int _sessionVolume;
+	bool _udpxyEnabled;
 	bool _videoSettings;
 	QString _wheelType;
 
@@ -161,6 +162,7 @@ private:
 	XmltvManager *_xmltv;
 	EpgShow *_epgShow;
 	QString _playlistName;
+	Udpxy *_udpxy;
 
 	//Menus and actions
 	TrayIcon *_trayIcon;

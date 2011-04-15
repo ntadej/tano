@@ -20,6 +20,7 @@
 #define TANO_M3UHANDLER_H_
 
 #include <QtCore/QString>
+#include <QtCore/QStringList>
 
 class Channel;
 

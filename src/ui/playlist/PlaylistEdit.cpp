@@ -22,9 +22,7 @@
 #include <QtGui/QMenu>
 #include <QtGui/QMessageBox>
 
-#include <vlc-qt/Instance.h>
-#include <vlc-qt/MediaPlayer.h>
-
+#include "Config.h"
 #include "container/Channel.h"
 #include "core/Common.h"
 #include "core/ConsoleOutput.h"
@@ -32,7 +30,13 @@
 #include "core/Settings.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
+#include "ui/playlist/PlaylistImportCSV.h"
 #include "ui/playlist/PlaylistImportWeb.h"
+
+#if WITH_EDITOR_VLCQT
+	#include <vlc-qt/Instance.h>
+	#include <vlc-qt/MediaPlayer.h>
+#endif
 
 #include "PlaylistEdit.h"
 #include "ui_PlaylistEdit.h"
@@ -51,17 +55,24 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 	createSettings();
 	createConnections();
 
+#if WITH_EDITOR_VLCQT
 	_instance = new VlcInstance(Tano::vlcQtArgs(), this);
 	_player = new VlcMediaPlayer(video, this);
 	_timer = new QTimer();
 	connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
 	connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
+#else
+	ui->updateWidget->hide();
+#endif
 
 	_menuExport = new QMenu();
+	_menuExport->addAction(ui->actionExportM3UClean);
+	_menuExport->addAction(ui->actionExportCSV);
 	_menuExport->addAction(ui->actionExportJs);
 
 	_menuImport = new QMenu();
 	_menuImport->addAction(ui->actionImportDownload);
+	_menuImport->addAction(ui->actionImportCSV);
 	_menuImport->addAction(ui->actionImportJs);
 	_menuImport->addAction(ui->actionImportTanoOld);
 }
@@ -69,9 +80,12 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 PlaylistEdit::~PlaylistEdit()
 {
 	delete ui;
+
+#if WITH_EDITOR_VLCQT
 	delete _instance;
 	delete _player;
 	delete _timer;
+#endif
 }
 
 void PlaylistEdit::changeEvent(QEvent *e)
@@ -109,9 +123,12 @@ void PlaylistEdit::createConnections()
 	connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
 	connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
 	connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
+	connect(ui->actionExportM3UClean, SIGNAL(triggered()), this, SLOT(exportM3UClean()));
+	connect(ui->actionExportCSV, SIGNAL(triggered()), this, SLOT(exportCSV()));
 	connect(ui->actionExportJs, SIGNAL(triggered()), this, SLOT(exportJs()));
 	connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(menuOpenImport()));
 	connect(ui->actionImportDownload, SIGNAL(triggered()), this, SLOT(importWeb()));
+	connect(ui->actionImportCSV, SIGNAL(triggered()), this, SLOT(importCSV()));
 	connect(ui->actionImportJs, SIGNAL(triggered()), this, SLOT(importJs()));
 	connect(ui->actionImportTanoOld, SIGNAL(triggered()), this, SLOT(importTanoOld()));
 	connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
@@ -131,7 +148,9 @@ void PlaylistEdit::createConnections()
 
 	connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
 
+#if WITH_EDITOR_VLCQT
 	connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));
+#endif
 }
 
 void PlaylistEdit::menuOpenExport()
@@ -261,6 +280,49 @@ void PlaylistEdit::save()
 	exit();
 }
 
+void PlaylistEdit::exportM3UClean()
+{
+	QString fileName =
+		QFileDialog::getSaveFileName(this, tr("Export to original M3U format"),
+									QDir::homePath(),
+									tr("M3U (original) list files (*.m3u)"));
+	if (fileName.isEmpty())
+		return;
+
+	ui->playlist->exportM3UClean(fileName);
+}
+
+void PlaylistEdit::exportCSV()
+{
+	QString fileName =
+		QFileDialog::getSaveFileName(this, tr("Export to Comma-separated values file"),
+									QDir::homePath(),
+									tr("Comma-separated values file (*.csv *.txt)"));
+	if (fileName.isEmpty())
+		return;
+
+	ui->playlist->exportCSV(fileName);
+}
+
+void PlaylistEdit::importCSV()
+{
+	QString fileName =
+			QFileDialog::getOpenFileName(this, tr("Import Comma-separated values file"),
+										QDir::homePath(),
+										tr("Comma-separated values file (*.csv *.txt)"));
+	if (fileName.isEmpty())
+		return;
+
+	PlaylistImportCSV dialog;
+	dialog.exec();
+	if(!dialog.proceed())
+		return;
+
+	ui->playlist->importCSV(fileName, dialog.separator(), dialog.header(), dialog.columns());
+	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+	ui->editName->setText(ui->playlist->name());
+}
+
 void PlaylistEdit::exportJs()
 {
 	QString fileName =
@@ -271,9 +333,6 @@ void PlaylistEdit::exportJs()
 		return;
 
 	ui->playlist->exportJs(fileName);
-
-	_closeEnabled = true;
-	exit();
 }
 
 void PlaylistEdit::importJs()
@@ -351,6 +410,7 @@ void PlaylistEdit::print()
 
 void PlaylistEdit::refreshPlaylist(const bool &refresh)
 {
+#if WITH_EDITOR_VLCQT
 	if(!refresh) {
 		_timer->stop();
 		ui->progressBar->setValue(1);
@@ -372,18 +432,22 @@ void PlaylistEdit::refreshPlaylist(const bool &refresh)
 
 		checkIp();
 	}
+#endif
 }
 
 void PlaylistEdit::checkIp()
 {
+#if WITH_EDITOR_VLCQT
 	ui->progressBar->setValue(_currentIp[3]);
 	_player->open(currentIp());
 
 	_timer->start(_currentTimeout);
+#endif
 }
 
 void PlaylistEdit::checkCurrentIp()
 {
+#if WITH_EDITOR_VLCQT
 	if(_currentIpPlaying) {
 		_player->stop();
 
@@ -408,10 +472,12 @@ void PlaylistEdit::checkCurrentIp()
 	} else {
 		ui->buttonUpdate->setChecked(false);
 	}
+#endif
 }
 
 QString PlaylistEdit::currentIp()
 {
+#if WITH_EDITOR_VLCQT
 	QString ip = "udp://@";
 	ip.append(QString().number(_currentIp[0])+".");
 	ip.append(QString().number(_currentIp[1])+".");
@@ -420,11 +486,14 @@ QString PlaylistEdit::currentIp()
 	ip.append(QString().number(_currentPort));
 
 	return ip;
+#endif
 }
 
 void PlaylistEdit::setState(const bool &playing)
 {
+#if WITH_EDITOR_VLCQT
 	_currentIpPlaying = playing;
+#endif
 }
 
 void PlaylistEdit::editItem(QTreeWidgetItem *item)

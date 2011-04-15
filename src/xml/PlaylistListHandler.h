@@ -25,11 +25,13 @@
 
 #include <QtXml/QXmlDefaultHandler>
 
-class WebPlaylistHandler : public QXmlDefaultHandler
+class PlaylistFile;
+
+class PlaylistListHandler : public QXmlDefaultHandler
 {
 public:
-	WebPlaylistHandler();
-	~WebPlaylistHandler();
+	PlaylistListHandler();
+	~PlaylistListHandler();
 
 	bool startElement(const QString &namespaceURI,
 					  const QString &localName,
@@ -41,16 +43,16 @@ public:
 	bool characters(const QString &str);
 	QString errorString() const { return _errorStr; }
 
-	QStringList playlistName() { return _playlistName; }
-	QStringList playlistUrl() { return _playlistUrl; }
+	QStringList playlistCountries() const { return _playlistCountries; }
+	QList<PlaylistFile> playlistList() const { return _playlistList; }
 
 private:
 	QString _currentText;
 	QString _errorStr;
 	bool _metTanoTag;
 
-	QStringList _playlistName;
-	QStringList _playlistUrl;
+	QStringList _playlistCountries;
+	QList<PlaylistFile> _playlistList;
 };
 
 #endif // TANO_WEBPLAYLISTHANDLER_H_

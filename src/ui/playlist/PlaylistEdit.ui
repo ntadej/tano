@@ -108,7 +108,7 @@
    <property name="minimumSize">
     <size>
      <width>350</width>
-     <height>312</height>
+     <height>329</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -266,17 +266,11 @@
       </widget>
      </item>
      <item row="8" column="0" colspan="3">
-      <spacer name="verticalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
+      <widget class="QLabel" name="labelSeparator">
+       <property name="text">
+        <string/>
        </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -515,7 +509,7 @@
   <action name="actionImportTanoOld">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
+     <normaloff>:/icons/24x24/file-old.png</normaloff>:/icons/24x24/file-old.png</iconset>
    </property>
    <property name="text">
     <string>Tano Old Playlist</string>
@@ -524,7 +518,7 @@
   <action name="actionImportJs">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
+     <normaloff>:/icons/24x24/file-js.png</normaloff>:/icons/24x24/file-js.png</iconset>
    </property>
    <property name="text">
     <string>Sagem JS</string>
@@ -533,7 +527,7 @@
   <action name="actionExportJs">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/export.png</normaloff>:/icons/24x24/export.png</iconset>
+     <normaloff>:/icons/24x24/file-js.png</normaloff>:/icons/24x24/file-js.png</iconset>
    </property>
    <property name="text">
     <string>Sagem JS</string>
@@ -560,7 +554,7 @@
   <action name="actionImportDownload">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
+     <normaloff>:/icons/24x24/file-web.png</normaloff>:/icons/24x24/file-web.png</iconset>
    </property>
    <property name="text">
     <string>Download from Web</string>
@@ -573,6 +567,39 @@
    </property>
    <property name="text">
     <string>New playlist</string>
+   </property>
+  </action>
+  <action name="actionExportM3UClean">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/file-m3u.png</normaloff>:/icons/24x24/file-m3u.png</iconset>
+   </property>
+   <property name="text">
+    <string>M3U (Original)</string>
+   </property>
+  </action>
+  <action name="actionImportCSV">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/file-csv.png</normaloff>:/icons/24x24/file-csv.png</iconset>
+   </property>
+   <property name="text">
+    <string>CSV</string>
+   </property>
+   <property name="toolTip">
+    <string>CSV</string>
+   </property>
+  </action>
+  <action name="actionExportCSV">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/file-csv.png</normaloff>:/icons/24x24/file-csv.png</iconset>
+   </property>
+   <property name="text">
+    <string>CSV</string>
+   </property>
+   <property name="toolTip">
+    <string>CSV</string>
    </property>
   </action>
  </widget>

@@ -23,6 +23,7 @@
 #include "ui_PlaylistWidget.h"
 
 #include "container/Channel.h"
+#include "playlist/CSVGenerator.h"
 #include "playlist/JsGenerator.h"
 #include "playlist/M3UGenerator.h"
 #include "playlist/PlaylistHandler.h"
@@ -117,6 +118,47 @@ void PlaylistWidget::save(const QString &name,
 	delete generator;
 }
 
+void PlaylistWidget::exportM3UClean(const QString &file)
+{
+	QFile f(file);
+	if (!f.open(QFile::WriteOnly | QFile::Text)) {
+		QMessageBox::warning(this, tr("Tano"),
+							tr("Cannot write file %1:\n%2.")
+							.arg(file)
+							.arg(f.errorString()));
+		return;
+	}
+
+	M3UGenerator *generator = new M3UGenerator(ui->treeWidget, "", _handler->channelMap(), true);
+	generator->write(&f);
+	delete generator;
+}
+
+void PlaylistWidget::exportCSV(const QString &file)
+{
+	QFile f(file);
+	if (!f.open(QFile::WriteOnly | QFile::Text)) {
+		QMessageBox::warning(this, tr("Tano"),
+							tr("Cannot write file %1:\n%2.")
+							.arg(file)
+							.arg(f.errorString()));
+		return;
+	}
+
+	CSVGenerator *generator = new CSVGenerator(ui->treeWidget, _handler->channelMap());
+	generator->write(&f);
+	delete generator;
+}
+
+void PlaylistWidget::importCSV(const QString &file,
+							   const QString &separator,
+							   const bool &header,
+							   const QList<int> &columns)
+{
+	_handler->clear();
+	_handler->importCSVFormat(file, separator, header, columns);
+}
+
 void PlaylistWidget::exportJs(const QString &file)
 {
 	QFile f(file);
@@ -147,23 +189,33 @@ void PlaylistWidget::importTanoOld(const QString &file)
 
 void PlaylistWidget::processPlaylist()
 {
-	for(int i=0; i<ui->treeWidget->topLevelItemCount(); i++)
+	for(int i = 0; i < ui->treeWidget->topLevelItemCount(); i++) {
 		ui->treeWidget->topLevelItem(i)->setHidden(false);
+	}
 
-	if(ui->categoryBox->currentText() != tr("All categories"))
-		for(int i=0; i<ui->treeWidget->topLevelItemCount(); i++)
-			if(!ui->treeWidget->topLevelItem(i)->text(2).contains(ui->categoryBox->currentText(), Qt::CaseInsensitive))
+	if(ui->categoryBox->currentText() != tr("All categories")) {
+		for(int i = 0; i<ui->treeWidget->topLevelItemCount(); i++) {
+			if(!ui->treeWidget->topLevelItem(i)->text(2).contains(ui->categoryBox->currentText(), Qt::CaseInsensitive)) {
 				ui->treeWidget->topLevelItem(i)->setHidden(true);
+			}
+		}
+	}
 
-	if(ui->languageBox->currentText() != tr("All languages"))
-		for(int i=0; i<ui->treeWidget->topLevelItemCount(); i++)
-			if(!ui->treeWidget->topLevelItem(i)->text(3).contains(ui->languageBox->currentText(), Qt::CaseInsensitive))
+	if(ui->languageBox->currentText() != tr("All languages")) {
+		for(int i = 0; i<ui->treeWidget->topLevelItemCount(); i++) {
+			if(!ui->treeWidget->topLevelItem(i)->text(3).contains(ui->languageBox->currentText(), Qt::CaseInsensitive)) {
 				ui->treeWidget->topLevelItem(i)->setHidden(true);
+			}
+		}
+	}
 
-	if(ui->searchEdit->text() != "")
-			for(int i=0; i<ui->treeWidget->topLevelItemCount(); i++)
-				if(!ui->treeWidget->topLevelItem(i)->text(1).contains(ui->searchEdit->text(), Qt::CaseInsensitive))
+	if(ui->searchEdit->text() != "") {
+		for(int i  =0; i<ui->treeWidget->topLevelItemCount(); i++) {
+			if(!ui->treeWidget->topLevelItem(i)->text(1).contains(ui->searchEdit->text(), Qt::CaseInsensitive)) {
 					ui->treeWidget->topLevelItem(i)->setHidden(true);
+				}
+		}
+	}
 
 }
 

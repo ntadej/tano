@@ -16,21 +16,33 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Playlists.h"
+#include "core/Settings.h"
+#include "core/Udpxy.h"
 
-namespace TanoPlaylists
+Udpxy::Udpxy()
 {
-	// International
-	const QString International::WorldTv = "playlists/int/worldtv.m3u";
+	createSettings();
+}
 
-	// Russia
-	const QString Russia::DiselTvKrasnodar = "playlists/ru/diseltv-krasnodar.m3u";
-	const QString Russia::DiselTvRostov = "playlists/ru/diseltv-rostov.m3u";
+Udpxy::~Udpxy() { }
 
-	// Slovenia
-	const QString Slovenia::Amis = "playlists/sl/amis.m3u";
-	const QString Slovenia::Siol2 = "playlists/sl/siol-mpeg2.m3u";
-	const QString Slovenia::Siol4 = "playlists/sl/siol-mpeg4.m3u";
-	const QString Slovenia::T2 = "playlists/sl/t-2.m3u";
-	const QString Slovenia::Tus = "playlists/sl/tus.m3u";
+void Udpxy::createSettings()
+{
+	Settings *settings = new Settings();
+	_enabled = settings->udpxy();
+	_url = settings->udpxyUrl();
+	_port = QString::number(settings->udpxyPort());
+	delete settings;
+}
+
+QString Udpxy::processUrl(const QString &url) const
+{
+	QString u = url;
+	if(_enabled && url.contains("udp://@")) {
+		QString newUrl = "http://%1:%2/udp/%3";
+		newUrl = newUrl.arg(_url, _port, u.replace("udp://@", ""));
+		return newUrl;
+	} else {
+		return u;
+	}
 }

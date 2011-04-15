@@ -22,8 +22,6 @@
 #include <QtCore/QDate>
 #include <QtCore/QFile>
 
-#include <vlc-qt/Instance.h>
-
 #include "AboutDialog.h"
 #include "ui_AboutDialog.h"
 
@@ -43,16 +41,20 @@ AboutDialog::AboutDialog(const Tano::AppType &type,
 		ui->labelTitle->setText(ui->labelTitle->text().arg(tr("Player"), Tano::version(), Tano::changeset()));
 	}
 
-	ui->labelBuild->setText(ui->labelBuild->text().arg(Tano::buildHostname(), Tano::buildSystem(), qVersion(), VlcInstance::libVersion()));
+	ui->labelBuild->setText(ui->labelBuild->text().arg(Tano::buildHostname(), Tano::buildSystem(), qVersion(), Tano::vlcQtVersionLibrary()));
 	ui->labelCopyright->setText(ui->labelCopyright->text().arg(QDate::currentDate().toString("yyyy")));
-	ui->labelBackendInfo->setText(ui->labelBackendInfo->text().arg(VlcInstance::version()));
-	ui->labelBackendVersion->setText(ui->labelBackendVersion->text().arg(VlcInstance::libVersion()));
+	ui->labelBackendInfo->setText(ui->labelBackendInfo->text().arg(Tano::vlcQtVersionCore()));
+	ui->labelBackendVersion->setText(ui->labelBackendVersion->text().arg(Tano::vlcQtVersionLibrary()));
 
 	QFile file(":/info/AUTHORS");
 	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
 		return;
 
 	ui->authors->setPlainText(QString::fromUtf8(file.readAll()));
+
+	if(Tano::vlcQtDisabled()) {
+		ui->tabWidget->removeTab(1);
+	}
 }
 
 AboutDialog::~AboutDialog()

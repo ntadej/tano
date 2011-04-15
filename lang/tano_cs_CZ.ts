@@ -411,6 +411,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Donate</source>
         <translation>Darovat</translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -732,42 +736,99 @@ Ztratíte všechny neuložené změny.</translation>
         <source>%1 - Tano Editor</source>
         <translation>%1 - Editor Tano</translation>
     </message>
+    <message>
+        <source>M3U (Original)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to original M3U format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (original) list files (*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to Comma-separated values file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import Comma-separated values file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma-separated values file (*.csv *.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistImportCSV</name>
+    <message>
+        <source>CSV file structure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Separator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line contains column names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line does not contain column names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column list:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Program</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished">Skupiny</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">Adresa (URL)</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistImportWeb</name>
     <message>
         <source>Import playlist from Web</source>
         <translation>Zavést seznam programů z internetu</translation>
-    </message>
-    <message>
-        <source>Country:</source>
-        <translation>Země:</translation>
-    </message>
-    <message>
-        <source>Slovenia</source>
-        <translation>Slovinsko</translation>
-    </message>
-    <message>
-        <source>Select your playlist</source>
-        <translation>Vyberte svůj seznam programů</translation>
-    </message>
-    <message>
-        <source>Select</source>
-        <translation>Vybrat</translation>
-    </message>
-    <message>
-        <source>Playlist:</source>
-        <translation>Seznam programů:</translation>
-    </message>
-    <message>
-        <source>Select your country from the menu below.
-Then select your playlist.</source>
-        <translation>Vyberte svoji zemi z nabídky níže.
-Potom vyberte svůj seznam programů.</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Refresh current playlist</source>
@@ -789,6 +850,10 @@ Potom vyberte svůj seznam programů.</translation>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
+    <message>
+        <source>Import type</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistPage</name>
@@ -799,6 +864,35 @@ Potom vyberte svůj seznam programů.</translation>
     <message>
         <source>Select playlist</source>
         <translation>Vybrat seznam programů</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistSelect</name>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished">Vybrat</translation>
+    </message>
+    <message>
+        <source>Select your playlist</source>
+        <translation type="unfinished">Vyberte svůj seznam programů</translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation type="unfinished">Země:</translation>
+    </message>
+    <message>
+        <source>Select your country from the menu below.
+Then select your playlist.</source>
+        <translation type="unfinished">Vyberte svoji zemi z nabídky níže.
+Potom vyberte svůj seznam programů.</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Seznam programů:</translation>
     </message>
 </context>
 <context>
@@ -953,10 +1047,6 @@ Potom vyberte svůj seznam programů.</translation>
         <translation>V činnosti</translation>
     </message>
     <message>
-        <source>Disabled or expired</source>
-        <translation>Zakázáno nebo vypršelo</translation>
-    </message>
-    <message>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation>Chyba při zpracování na řádku %1, sloupec %2:
@@ -991,8 +1081,36 @@ Potom vyberte svůj seznam programů.</translation>
         <translation>Zavedený seznam programů Sagem JS</translation>
     </message>
     <message>
-        <source>The file is not a Web playlist import file.</source>
-        <translation>Soubor není souborem pro zavedení internetového seznamu programů.</translation>
+        <source>The file is not a playlist list file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Program</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">Adresa (URL)</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished">Skupiny</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV Imported Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The file is not a valid XMLTV file.</source>
@@ -1240,10 +1358,6 @@ Potom vyberte svůj seznam programů.</translation>
         <translation>Jiné</translation>
     </message>
     <message>
-        <source>Enable Recorder</source>
-        <translation>Povolit nahrávání</translation>
-    </message>
-    <message>
         <source>Default recording directory</source>
         <translation>Výchozí adresář pro nahrávání</translation>
     </message>
@@ -1270,6 +1384,26 @@ Potom vyberte svůj seznam programů.</translation>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
         <translation>Povolit informační OSD v režimu celé obrazovky</translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1322,18 +1456,6 @@ Potom vyberte svůj seznam programů.</translation>
         <translation>Stanovený uživatelem</translation>
     </message>
     <message>
-        <source>Presets</source>
-        <translation>Přednastavení</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Slovenia&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Slovinsko&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Global&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Všeobecný&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
@@ -1356,10 +1478,6 @@ Potom vyberte svůj seznam programů.</translation>
     <message>
         <source>Open channel list</source>
         <translation>Otevřít seznam programů</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Russia&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Rusko&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -1487,6 +1605,21 @@ Potom vyberte svůj seznam programů.</translation>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
         <translation>Povolit informační OSD v režimu celé obrazovky</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Teletext</name>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext Transparency</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

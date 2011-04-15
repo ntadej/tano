@@ -105,23 +105,40 @@ ENDIF(GIT)
 #################
 # Configuration #
 #################
+SET(DBUS_FOUND ${QT_QTDBUS_FOUND})
+MESSAGE("Compile Tano with recorder (DBus found): ${DBUS_FOUND}")
+OPTION(EDITOR_WITHOUT_VLCQT "Compile Tano Editor without VLC-Qt")
+MESSAGE("Compile Tano Editor without VLC-Qt: ${EDITOR_WITHOUT_VLCQT}")
 OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile")
 MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
+
+IF(EDITOR_WITHOUT_VLCQT)
+	SET(EDITOR_VLCQT 0)
+ELSE(EDITOR_WITHOUT_VLCQT)
+	SET(EDITOR_VLCQT 1)
+ENDIF(EDITOR_WITHOUT_VLCQT)
 
 ###################
 # Compile and set #
 ###################
 ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(recorder)
+IF(DBUS_FOUND)
+	ADD_SUBDIRECTORY(recorder)
+ENDIF(DBUS_FOUND)
 ADD_SUBDIRECTORY(editor)
 
 SET(Tano_Files
 	LICENSE.GPL
 	data/logo/64x64/logo.png
 	data/logo/64x64/logo-editor.png
-	data/logo/64x64/logo-recorder.png
 )
+IF(DBUS_FOUND)
+	SET(Tano_Files
+		${Tano_Files}
+		data/logo/64x64/logo-recorder.png
+	)
+ENDIF(DBUS_FOUND)
 
 FILE(GLOB Tano_Playlists_Int ${CMAKE_SOURCE_DIR}/playlists/int/*.m3u)
 FILE(GLOB Tano_Playlists_Ru ${CMAKE_SOURCE_DIR}/playlists/ru/*.m3u)
@@ -155,34 +172,43 @@ IF(MINGW)
 	STRING(REGEX REPLACE "\\\\" "/" LIBVLCQT_INCLUDE_DIR "${LIBVLCQT_INCLUDE_DIR}")
 	STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
 	STRING(REGEX REPLACE "bin" "plugins" QT_PLUGINS_DIR "${QT_BIN_DIR}")
-	STRING(REGEX REPLACE "bin" "etc/dbus-1" DBUS_ETC_DIR "${QT_BIN_DIR}")
+	IF(DBUS_FOUND)
+		STRING(REGEX REPLACE "bin" "etc/dbus-1" DBUS_ETC_DIR "${QT_BIN_DIR}")
+	ENDIF(DBUS_FOUND)
 
 	SET(Tano_Qt_Lib
 		${QT_BIN_DIR}/libgcc_s_dw2-1.dll
 		${QT_BIN_DIR}/mingwm10.dll
 		${QT_BIN_DIR}/QtCore4.dll
-		${QT_BIN_DIR}/QtDBus4.dll
 		${QT_BIN_DIR}/QtGui4.dll
 		${QT_BIN_DIR}/QtNetwork4.dll
 		${QT_BIN_DIR}/QtSvg4.dll
 		${QT_BIN_DIR}/QtXml4.dll
 	)
+	IF(DBUS_FOUND)
+		SET(Tano_Qt_Lib
+			${Tano_Qt_Lib}
+			${QT_BIN_DIR}/QtDBus4.dll
+		)
+	ENDIF(DBUS_FOUND)
 	FILE(GLOB Tano_Qt_Plugins ${QT_PLUGINS_DIR}/imageformats/*.dll)
-	SET(Tano_Dbus_Bin
-		${QT_BIN_DIR}/dbus-daemon.exe
-		${QT_BIN_DIR}/dbus-env.bat
-		${QT_BIN_DIR}/dbus-launch.exe
-		${QT_BIN_DIR}/dbus-monitor.exe
-		${QT_BIN_DIR}/dbus-send.exe
-		${QT_BIN_DIR}/libdbus-1.dll
-		${QT_BIN_DIR}/libeay32.dll
-		${QT_BIN_DIR}/libexpat.dll
-		${QT_BIN_DIR}/ssleay32.dll
-	)
-	SET(Tano_Dbus_Config
-		${DBUS_ETC_DIR}/session.conf
-		${DBUS_ETC_DIR}/system.conf
-	)
+	IF(DBUS_FOUND)
+		SET(Tano_Dbus_Bin
+			${QT_BIN_DIR}/dbus-daemon.exe
+			${QT_BIN_DIR}/dbus-env.bat
+			${QT_BIN_DIR}/dbus-launch.exe
+			${QT_BIN_DIR}/dbus-monitor.exe
+			${QT_BIN_DIR}/dbus-send.exe
+			${QT_BIN_DIR}/libdbus-1.dll
+			${QT_BIN_DIR}/libeay32.dll
+			${QT_BIN_DIR}/libexpat.dll
+			${QT_BIN_DIR}/ssleay32.dll
+		)
+		SET(Tano_Dbus_Config
+			${DBUS_ETC_DIR}/session.conf
+			${DBUS_ETC_DIR}/system.conf
+		)
+	ENDIF(DBUS_FOUND)
 	SET(Tano_Vlc_Libs
 		${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
 		${LIBVLCQT_BIN_DIR}/libvlc.dll
@@ -207,8 +233,10 @@ IF(MINGW)
 	INSTALL(FILES ${Tano_Installer_Theme} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows/installer-theme")
 	INSTALL(FILES ${Tano_Qt_Lib} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
 	INSTALL(FILES ${Tano_Qt_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
-	INSTALL(FILES ${Tano_Dbus_Bin} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-	INSTALL(FILES ${Tano_Dbus_Config} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/etc/dbus-1")
+	IF(DBUS_FOUND)
+		INSTALL(FILES ${Tano_Dbus_Bin} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+		INSTALL(FILES ${Tano_Dbus_Config} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/etc/dbus-1")
+	ENDIF(DBUS_FOUND)
 	INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
 	INSTALL(FILES ${Tano_Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/vlc/plugins")
 ENDIF(MINGW)

@@ -16,19 +16,22 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Recorder.h"
-#include "ui_Recorder.h"
-
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
+#include "Config.h"
 #include "container/Channel.h"
 #include "core/Enums.h"
-#include "core/RecorderController.h"
-#include "core/RecorderProcess.h"
+#if WITH_RECORDER
+	#include "core/RecorderController.h"
+	#include "core/RecorderProcess.h"
+#endif
 #include "core/Settings.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/recorder/TimersEdit.h"
+
+#include "Recorder.h"
+#include "ui_Recorder.h"
 
 Recorder::Recorder(QWidget *parent)
 	: QWidget(parent),
@@ -40,6 +43,7 @@ Recorder::Recorder(QWidget *parent)
 {
 	ui->setupUi(this);
 
+#if WITH_RECORDER
 	_controller = new RecorderController("si.tano.TanoPlayer", "/Recorder",
 										 QDBusConnection::sessionBus(), this);
 	_recorder = new RecorderProcess(this);
@@ -53,13 +57,17 @@ Recorder::Recorder(QWidget *parent)
 	connect(_controller, SIGNAL(elapsed(int)), this, SLOT(time(int)));
 	connect(_controller, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
 	connect(_controller, SIGNAL(timerStop()), this, SLOT(timerStop()));
+#endif
 }
 
 Recorder::~Recorder()
 {
 	delete ui;
+
+#if WITH_RECORDER
 	delete _controller;
 	delete _recorder;
+#endif
 }
 
 void Recorder::changeEvent(QEvent *e)
@@ -80,12 +88,16 @@ void Recorder::createSettings()
 	ui->fileEdit->setText(settings->recorderDirectory());
 	delete settings;
 
+#if WITH_RECORDER
 	_controller->refreshSettings();
+#endif
 }
 
 void Recorder::stop()
 {
+#if WITH_RECORDER
 	_controller->stop();
+#endif
 }
 
 void Recorder::openPlaylist(const QString &file)
@@ -120,6 +132,7 @@ void Recorder::fileBrowse()
 
 void Recorder::record(const bool &status)
 {
+#if WITH_RECORDER
 	if(status) {
 		if(ui->fileEdit->text().isEmpty()) {
 			ui->buttonRecord->setChecked(false);
@@ -154,7 +167,10 @@ void Recorder::record(const bool &status)
 
 		if(_trayIcon) {
 			_trayIcon->changeToolTip(Tano::Record, _name);
-			_trayIcon->message(Tano::Record, QStringList() << _name << _controller->output());
+			if(_controller->isTimer())
+				_trayIcon->message(Tano::Record, QStringList() << _name << _controller->output() << ui->valueEndTime->text());
+			else
+				_trayIcon->message(Tano::Record, QStringList() << _name << _controller->output());
 		}
 	} else {
 		_controller->stop();
@@ -173,11 +189,13 @@ void Recorder::record(const bool &status)
 			_trayIcon->message(Tano::Record, QStringList());
 		}
 	}
+#endif
 }
 
 void Recorder::recordNow(const QString &name,
 						 const QString &url)
 {
+#if WITH_RECORDER
 	_name = name;
 	_url = url;
 
@@ -185,11 +203,18 @@ void Recorder::recordNow(const QString &name,
 
 	if(!_controller->isRecording())
 		ui->buttonRecord->toggle();
+#endif
 }
 
 void Recorder::time(const int &time)
 {
 	ui->valueTime->setText(QTime().addMSecs(time).toString("hh:mm:ss"));
+
+#if WITH_RECORDER
+	if(ui->valueCurrent->text().isEmpty()) {
+		_controller->timerInfo();
+	}
+#endif
 }
 
 void Recorder::setAction(QAction *action)
@@ -205,11 +230,16 @@ void Recorder::setTrayIcon(TrayIcon *icon)
 
 bool Recorder::isRecording() const
 {
+#if WITH_RECORDER
 	return _controller->isRecording();
+#else
+	return false;
+#endif
 }
 
 void Recorder::showTimersEditor()
 {
+#if WITH_RECORDER
 	if(_editor) {
 		if(_editor->isVisible()) {
 			_editor->activateWindow();
@@ -224,6 +254,7 @@ void Recorder::showTimersEditor()
 		connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
 		_editor->show();
 	}
+#endif
 }
 
 void Recorder::timerStart(const QString &name,

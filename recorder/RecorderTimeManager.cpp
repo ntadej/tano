@@ -48,7 +48,7 @@ RecorderTimeManager::~RecorderTimeManager()
 void RecorderTimeManager::check()
 {
 	for(int i = 0; i < _timersList.size(); i++) {
-		if(_timersList[i]->startTime() <= QTime::currentTime() && _timersList[i]->endTime() >= QTime::currentTime()) {
+		if(_timersList[i]->startTime() <= QDateTime::currentDateTime() && _timersList[i]->endTime() >= QDateTime::currentDateTime()) {
 			if(!_timersList[i]->isDisabled() && !_timersList[i]->isRecording()) {
 				emit timer(_timersList[i]);
 				qDebug() << "Timer" << _timersList[i]->name() << "started";

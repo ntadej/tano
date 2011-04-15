@@ -98,96 +98,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="presetsBox">
-     <property name="title">
-      <string>Presets</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_8">
-      <item row="2" column="1">
-       <widget class="QRadioButton" name="radioSiol2">
-        <property name="text">
-         <string notr="true">SiOL - MPEG-2</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QRadioButton" name="radioT2">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="text">
-         <string notr="true">T-2</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QRadioButton" name="radioTus">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="text">
-         <string notr="true">Tuš Telekom</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="labelSlovenia">
-        <property name="text">
-         <string>&lt;b&gt;Slovenia&lt;/b&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="labelGlobal">
-        <property name="text">
-         <string>&lt;b&gt;Global&lt;/b&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QRadioButton" name="radioSiol4">
-        <property name="text">
-         <string notr="true">SiOL - MPEG-4</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QRadioButton" name="radioWorldTv">
-        <property name="text">
-         <string notr="true">World TV</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="1">
-       <widget class="QRadioButton" name="radioAmis">
-        <property name="text">
-         <string notr="true">Amis</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="labelRussia">
-        <property name="text">
-         <string>&lt;b&gt;Russia&lt;/b&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QRadioButton" name="radioDiselKrasnodar">
-        <property name="text">
-         <string notr="true">Disel TV - Krasnodar</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="0">
-       <widget class="QRadioButton" name="radioDiselRostov">
-        <property name="text">
-         <string notr="true">Disel TV - Rostov</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+    <widget class="PlaylistSelect" name="select" native="true"/>
    </item>
    <item>
     <widget class="QGroupBox" name="webBox">
@@ -217,26 +128,18 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlaylistSelect</class>
+   <extends>QWidget</extends>
+   <header>ui/playlist/PlaylistSelect.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../../data/icons.qrc"/>
  </resources>
  <connections>
-  <connection>
-   <sender>customPlaylistRadio</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>presetsBox</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>240</x>
-     <y>44</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>236</x>
-     <y>124</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>customPlaylistRadio</sender>
    <signal>toggled(bool)</signal>
@@ -282,6 +185,22 @@
     <hint type="destinationlabel">
      <x>257</x>
      <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>customPlaylistRadio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>select</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>199</y>
     </hint>
    </hints>
   </connection>

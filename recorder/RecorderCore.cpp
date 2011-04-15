@@ -114,13 +114,15 @@ void RecorderCore::record(Timer *t)
 
 	_isRecording = true;
 	_isTimer = true;
-	_currentEndTime = t->endTime().toString("hh:mm");
+	_currentEndTime = t->endTime().time().toString("hh:mm");
+	_currentName = t->name() + QString(" (%1)").arg(t->channel());
+	_currentUrl = t->url();
 	t->setRecording(true);
 
 	_time = 0;
 	_timer->start(500);
 
-	emit timer(t->name() + QString("(%1)").arg(t->channel()), t->url());
+	emit timer(_currentName, _currentUrl);
 }
 
 void RecorderCore::settings()
@@ -135,6 +137,8 @@ void RecorderCore::stop()
 	_player->stop();
 
 	_currentEndTime = "";
+	_currentName = "";
+	_currentUrl = "";
 	_isRecording = false;
 	_isTimer = false;
 
@@ -150,4 +154,10 @@ void RecorderCore::time()
 	if(QTime::currentTime() >= QTime::fromString(_currentEndTime, "hh:mm")) {
 		emit timerStop();
 	}
+}
+
+void RecorderCore::timerInfo()
+{
+	if(!_currentName.isEmpty())
+		emit timer(_currentName, _currentUrl);
 }

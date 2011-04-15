@@ -19,7 +19,6 @@
 #include <QtCore/QDir>
 
 #include "core/Common.h"
-#include "core/Playlists.h"
 #include "core/Settings.h"
 
 // Define defaults - General
@@ -46,8 +45,10 @@ const bool Settings::DEFAULT_GLOBAL_SETTINGS = false;
 const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;
 const QString Settings::DEFAULT_AUDIO_LANGUAGE = QObject::tr("Disabled");
 const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
+const bool Settings::DEFAULT_UDPXY = false;
+const QString Settings::DEFAULT_UDPXY_URL = "";
+const int Settings::DEFAULT_UDPXY_PORT = 1234;
 // Recorder
-const bool Settings::DEFAULT_RECORDER_ENABLED = true;
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath();
 // Session
 const int Settings::DEFAULT_CHANNEL = 1;
@@ -63,7 +64,7 @@ Settings::~Settings() { }
 
 QString Settings::path() const
 {
-	return fileName().replace("Main.ini","");
+	return fileName().replace("Main.ini", "");
 }
 
 void Settings::writeSettings()
@@ -95,8 +96,10 @@ void Settings::writeSettings()
 	setValue("backend/videosettings", rememberVideoSettings());
 	setValue("backend/audio", audioLanguage());
 	setValue("backend/subtitles", subtitleLanguage());
+	setValue("backend/udpxy", udpxy());
+	setValue("backend/udpxyurl", udpxyUrl());
+	setValue("backend/udpxyport", udpxyPort());
 
-	setValue("recorder/enabled", recorderEnabled());
 	setValue("recorder/directory", recorderDirectory());
 
 	sync();
@@ -128,8 +131,10 @@ void Settings::readSettings()
 	setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
 	setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
 	setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
+	setUdpxy(value("backend/udpxy", DEFAULT_UDPXY).toBool());
+	setUdpxyUrl(value("backend/udpxyurl", DEFAULT_UDPXY_URL).toString());
+	setUdpxyPort(value("backend/udpxyport", DEFAULT_UDPXY_PORT).toInt());
 
-	setRecorderEnabled(value("recorder/enabled", DEFAULT_RECORDER_ENABLED).toBool());
 	setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
 
 	setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());

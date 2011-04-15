@@ -28,7 +28,6 @@ namespace Ui {
 }
 
 class GetFile;
-class WebPlaylistHandler;
 
 class PlaylistImportWeb : public QDialog
 {
@@ -49,19 +48,14 @@ protected:
 private slots:
 	void action(QAbstractButton *button);
 	void finish(const QString &playlist);
-	void getList(const int &id);
 	void readList(const QString &list);
 
 private:
 	Ui::PlaylistImportWeb *ui;
 
 	QTextCodec *_codec;
-	WebPlaylistHandler *_handler;
 	GetFile *_file;
 	QString _playlist;
-
-	QStringList _playlistName;
-	QStringList _playlistUrl;
 
 	bool _refresh;
 	bool _save;

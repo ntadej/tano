@@ -39,7 +39,9 @@ SET(Tano_UIs
 	ui/epg/EpgShow.ui
 	ui/epg/EpgSchedule.ui
 	ui/playlist/PlaylistEdit.ui
+	ui/playlist/PlaylistImportCSV.ui
 	ui/playlist/PlaylistImportWeb.ui
+	ui/playlist/PlaylistSelect.ui
 	ui/playlist/PlaylistWidget.ui
 	ui/recorder/Recorder.ui
 	ui/recorder/TimersEdit.ui
@@ -57,7 +59,6 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	core/ChannelSelect.h
 	core/GetFile.h
 	core/Print.h
-	core/RecorderController.h
 	core/UpdateManager.h
 	epg/EpgManager.h
 	epg/EpgSloveniaLoader.h
@@ -67,6 +68,7 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/core/InfoBar.h
 	ui/core/License.h
 	ui/core/QtKeySequenceEdit.h
+	ui/core/Teletext.h
 	ui/core/TrayIcon.h
 	ui/dialogs/AboutDialog.h
 	ui/dialogs/DonationDialog.h
@@ -84,7 +86,9 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/menu/MenuTrackSubtitles.h
 	ui/menu/MenuTrackVideo.h
 	ui/playlist/PlaylistEdit.h
+	ui/playlist/PlaylistImportCSV.h
 	ui/playlist/PlaylistImportWeb.h
+	ui/playlist/PlaylistSelect.h
 	ui/playlist/PlaylistWidget.h
 	ui/recorder/Recorder.h
 	ui/recorder/TimersEdit.h
@@ -98,6 +102,13 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/wizard/SettingsPage.h
 )
 
+IF(DBUS_FOUND)
+	SET(Tano_MOCs
+		${Tano_MOCs}
+		core/RecorderController.h
+	)
+ENDIF(DBUS_FOUND)
+
 SET(Tano_Resrcs
 	../info.qrc
 	../data/icons.qrc
@@ -108,6 +119,7 @@ SET(Tano_Resrcs
 # Define the C++ source files used by Tano
 SET(Tano_Container_Srcs
 	container/Channel.cpp
+	container/PlaylistFile.cpp
 	container/UpdateInfo.cpp
 	container/Timer.cpp
 	container/epgold/EpgDayList.cpp
@@ -124,14 +136,19 @@ SET(Tano_Core_Srcs
 	core/Enums.cpp
 	core/GetFile.cpp
 	core/LocaleManager.cpp
-	core/Playlists.cpp
 	core/Print.cpp
-	core/RecorderController.cpp
-	core/RecorderProcess.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
+	core/Udpxy.cpp
 	core/UpdateManager.cpp
 )
+IF(DBUS_FOUND)
+	SET(Tano_Core_Srcs
+		${Tano_Core_Srcs}
+		core/RecorderController.cpp
+		core/RecorderProcess.cpp
+	)
+ENDIF(DBUS_FOUND)
 SET(Tano_Epg_Srcs
 	epg/EpgManager.cpp
 	epg/EpgSlovenia.cpp
@@ -139,6 +156,8 @@ SET(Tano_Epg_Srcs
 	epg/XmltvManager.cpp
 )
 SET(Tano_Playlist_Srcs
+	playlist/CSVGenerator.cpp
+	playlist/CSVHandler.cpp
 	playlist/JsGenerator.cpp
 	playlist/JsHandler.cpp
 	playlist/M3UGenerator.cpp
@@ -151,6 +170,7 @@ SET(Tano_UI_Srcs
 	ui/core/InfoBar.cpp
 	ui/core/License.cpp
 	ui/core/QtKeySequenceEdit.cpp
+	ui/core/Teletext.cpp
 	ui/core/TrayIcon.cpp
 	ui/dialogs/AboutDialog.cpp
 	ui/dialogs/DonationDialog.cpp
@@ -168,7 +188,9 @@ SET(Tano_UI_Srcs
 	ui/menu/MenuTrackSubtitles.cpp
 	ui/menu/MenuTrackVideo.cpp
 	ui/playlist/PlaylistEdit.cpp
+	ui/playlist/PlaylistImportCSV.cpp
 	ui/playlist/PlaylistImportWeb.cpp
+	ui/playlist/PlaylistSelect.cpp
 	ui/playlist/PlaylistWidget.cpp
 	ui/recorder/Recorder.cpp
 	ui/recorder/TimersEdit.cpp
@@ -182,12 +204,12 @@ SET(Tano_UI_Srcs
 	ui/wizard/SettingsPage.cpp
 )
 SET(Tano_XML_Srcs
+	xml/PlaylistListHandler.cpp
 	xml/TanoHandlerOld.cpp
 	xml/TimersGenerator.cpp
 	xml/TimersHandler.cpp
 	xml/UpdateHandler.cpp
 	xml/XmltvHandler.cpp
-	xml/WebPlaylistHandler.cpp
 )
 
 SET(Tano_Srcs
@@ -208,7 +230,9 @@ SET(Tano_Srcs
 # loaded when linking Tano
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
-SET(QT_USE_QTDBUS True)
+IF(DBUS_FOUND)
+	SET(QT_USE_QTDBUS True)
+ENDIF(DBUS_FOUND)
 
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})

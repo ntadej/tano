@@ -40,7 +40,7 @@
 
 MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()), _update(new UpdateDialog()),
-	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0),
+	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0), _udpxy(new Udpxy()),
 	_playlistEditor(0), _epg(new EpgManager()), _xmltv(new XmltvManager()), _epgShow(new EpgShow()), _schedule(new EpgFull())
 {
 	QPixmap pixmap(":/images/splash.png");
@@ -172,8 +172,8 @@ void MainWindow::createSettings()
 
 	_osdEnabled = settings->osd();
 	ui->actionPlaylistFullscreen->setEnabled(_osdEnabled);
-        ui->actionPlaylistFullscreen->setChecked(settings->playlistOsd());
-        showPlaylistFullscreen(settings->playlistOsd());
+	ui->actionPlaylistFullscreen->setChecked(settings->playlistOsd());
+	showPlaylistFullscreen(settings->playlistOsd());
 	_wheelType = settings->mouseWheel();
 	mouseWheel();
 
@@ -185,9 +185,8 @@ void MainWindow::createSettings()
 		_audioController->setDefaultAudioLanguage(_defaultAudioLanguage);
 	if(_videoController)
 		_videoController->setDefaultSubtitleLanguage(_defaultSubtitleLanguage);
+	_udpxy->createSettings();
 
-	//Recorder settings
-	_recorderEnabled = settings->recorderEnabled();
 	_sessionVolumeEnabled = settings->sessionVolume();
 	_sessionAutoplayEnabled = settings->sessionAutoplay();
 
@@ -331,6 +330,7 @@ void MainWindow::createShortcuts()
 			 << ui->actionInfoPanel
 			 << ui->actionControls
 			 << ui->actionMute
+			 << ui->actionTeletext
 			 << ui->actionVolumeUp
 			 << ui->actionVolumeDown
 			 << ui->actionRecorder
@@ -378,23 +378,17 @@ void MainWindow::writeSession()
 
 void MainWindow::createRecorder()
 {
-	if(_recorderEnabled) {
-		ui->recorder->openPlaylist(_playlistName);
-		ui->recorder->setAction(ui->actionRecord);
-		ui->recorder->setTrayIcon(_trayIcon);
-		ui->recorder->createSettings();
-		if(ui->buttonRecord->isHidden()) {
-			ui->buttonRecord->show();
-			ui->menuRecorder->setEnabled(true);
-		}
-		ui->toolBar->insertAction(ui->actionEditPlaylist, ui->actionRecorder);
-		ui->toolBar->insertAction(ui->actionEditPlaylist, ui->actionTimers);
-	} else {
-		ui->buttonRecord->hide();
-		ui->menuRecorder->setEnabled(false);
-		ui->toolBar->removeAction(ui->actionRecorder);
-		ui->toolBar->removeAction(ui->actionTimers);
-	}
+#if WITH_RECORDER
+	ui->recorder->openPlaylist(_playlistName);
+	ui->recorder->setAction(ui->actionRecord);
+	ui->recorder->setTrayIcon(_trayIcon);
+	ui->recorder->createSettings();
+#else
+	ui->buttonRecord->hide();
+	ui->menubar->removeAction(ui->menuRecorder->menuAction());
+	ui->toolBar->removeAction(ui->actionRecorder);
+	ui->toolBar->removeAction(ui->actionTimers);
+#endif
 }
 void MainWindow::mouseWheel()
 {
@@ -445,6 +439,8 @@ void MainWindow::setPlayingState(const bool &playing,
 		ui->buttonPlay->setStatusTip(tr("Pause"));
 		ui->actionMute->setEnabled(true);
 		ui->buttonMute->setEnabled(true);
+		ui->actionTeletext->setEnabled(true);
+		ui->teletextWidget->setEnabled(true);
 	} else {
 		ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
 		ui->buttonPlay->setIcon(QIcon(":/icons/48x48/media-playback-start.png"));
@@ -454,6 +450,8 @@ void MainWindow::setPlayingState(const bool &playing,
 		ui->buttonPlay->setStatusTip(tr("Play"));
 		ui->actionMute->setEnabled(false);
 		ui->buttonMute->setEnabled(false);
+		ui->actionTeletext->setEnabled(false);
+		ui->teletextWidget->setEnabled(false);
 	}
 
 	if(buffering) {
@@ -474,7 +472,7 @@ void MainWindow::play(const QString &itemFile)
 		_epg->request(_channel->epg(), Tano::Main);
 		ui->channelNumber->display(_channel->number());
 
-		_mediaPlayer->open(_channel->url());
+		_mediaPlayer->open(_udpxy->processUrl(_channel->url()));
 		tooltip(_channel->name());
 		_trayIcon->changeToolTip(Tano::Main, _channel->name());
 	} else {
@@ -497,6 +495,7 @@ void MainWindow::stop()
 	_epg->stop();
 
 	ui->infoBarWidget->clear();
+	ui->actionTeletext->setChecked(false);
 
 	ui->scheduleWidget->clear();
 	ui->scheduleWidget->setPage(0);
@@ -717,7 +716,7 @@ void MainWindow::showPlaylistFullscreen(const bool &on)
 		ui->infoWidget->setWindowFlags(Qt::ToolTip);
 	} else {
 		ui->infoWidget->setFloating(false);
-		ui->infoWidget->show();
+		//ui->infoWidget->show();
 	}
 }
 
