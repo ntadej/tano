@@ -408,9 +408,9 @@ void PlaylistEdit::print()
 	dialog.exec();
 }
 
-#if WITH_EDITOR_VLCQT
 void PlaylistEdit::refreshPlaylist(const bool &refresh)
 {
+#if WITH_EDITOR_VLCQT
 	if(!refresh) {
 		_timer->stop();
 		ui->progressBar->setValue(1);
@@ -432,18 +432,22 @@ void PlaylistEdit::refreshPlaylist(const bool &refresh)
 
 		checkIp();
 	}
+#endif
 }
 
 void PlaylistEdit::checkIp()
 {
+#if WITH_EDITOR_VLCQT
 	ui->progressBar->setValue(_currentIp[3]);
 	_player->open(currentIp());
 
 	_timer->start(_currentTimeout);
+#endif
 }
 
 void PlaylistEdit::checkCurrentIp()
 {
+#if WITH_EDITOR_VLCQT
 	if(_currentIpPlaying) {
 		_player->stop();
 
@@ -468,10 +472,12 @@ void PlaylistEdit::checkCurrentIp()
 	} else {
 		ui->buttonUpdate->setChecked(false);
 	}
+#endif
 }
 
 QString PlaylistEdit::currentIp()
 {
+#if WITH_EDITOR_VLCQT
 	QString ip = "udp://@";
 	ip.append(QString().number(_currentIp[0])+".");
 	ip.append(QString().number(_currentIp[1])+".");
@@ -480,13 +486,15 @@ QString PlaylistEdit::currentIp()
 	ip.append(QString().number(_currentPort));
 
 	return ip;
+#endif
 }
 
 void PlaylistEdit::setState(const bool &playing)
 {
+#if WITH_EDITOR_VLCQT
 	_currentIpPlaying = playing;
-}
 #endif
+}
 
 void PlaylistEdit::editItem(QTreeWidgetItem *item)
 {

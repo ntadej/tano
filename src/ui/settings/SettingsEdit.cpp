@@ -24,6 +24,7 @@
 #include "SettingsEdit.h"
 #include "ui_SettingsEdit.h"
 
+#include "Config.h"
 #include "core/Common.h"
 #include "core/LocaleManager.h"
 #include "core/Settings.h"
@@ -47,6 +48,11 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
 
 	loadLocale();
 	read();
+
+#if WITH_RECORDER
+#else
+	ui->setttingsListWidget->item(5)->setHidden(true);
+#endif
 }
 
 SettingsEdit::~SettingsEdit()
@@ -125,7 +131,6 @@ void SettingsEdit::apply()
 	_settings->setSubtitleLanguage(ui->comboSub->currentText());
 
 	// Recorder
-	_settings->setRecorderEnabled(ui->enableRecorderCheck->isChecked());
 	_settings->setRecorderDirectory(ui->recorderDirectoryLineEdit->text());
 
 	_settings->writeSettings();
@@ -200,7 +205,6 @@ void SettingsEdit::read()
 	}
 
 	// Recorder
-	ui->enableRecorderCheck->setChecked(_settings->recorderEnabled());
 	ui->recorderDirectoryLineEdit->setText(_settings->recorderDirectory());
 }
 

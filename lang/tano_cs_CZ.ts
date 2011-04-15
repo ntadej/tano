@@ -1354,10 +1354,6 @@ Potom vyberte svůj seznam programů.</translation>
         <translation>Jiné</translation>
     </message>
     <message>
-        <source>Enable Recorder</source>
-        <translation>Povolit nahrávání</translation>
-    </message>
-    <message>
         <source>Default recording directory</source>
         <translation>Výchozí adresář pro nahrávání</translation>
     </message>

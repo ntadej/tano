@@ -101,9 +101,6 @@ public:
 	static const QString DEFAULT_SUBTITLE_LANGUAGE;
 
 	// Recorder
-	bool recorderEnabled() const { return _recorderEnabled; }
-	void setRecorderEnabled(const bool &b) { _recorderEnabled = b; }
-	static const bool DEFAULT_RECORDER_ENABLED;
 	QString recorderDirectory() const { return _recorderDirectory; }
 	void setRecorderDirectory(const QString &s) { _recorderDirectory = s; }
 	static const QString DEFAULT_RECORDER_DIRECTORY;
@@ -149,9 +146,7 @@ private:
 	QString _subtitleLanguage;
 
 	// Recorder
-	bool _recorderEnabled;
 	QString _recorderDirectory;
-	QString _recorderBackend;
 
 	// Session
 	int _channel;

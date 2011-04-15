@@ -21,6 +21,10 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>
 
+#include "Config.h"
+#include "core/Common.h"
+#include "core/Settings.h"
+
 #ifdef EDITOR
 	#if WITH_EDITOR_VLCQT
 		#include <vlc-qt/Common.h>
@@ -30,10 +34,6 @@
 	#include <vlc-qt/Common.h>
 	#include <vlc-qt/Instance.h>
 #endif
-
-#include "Config.h"
-#include "core/Common.h"
-#include "core/Settings.h"
 
 QString Tano::version()
 {

@@ -24,7 +24,7 @@
 #define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
 
 // Options
-#define WITH_RECORDER @QT_QTDBUS_FOUND@
+#define WITH_RECORDER @DBUS_FOUND@
 #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
 
 // System information

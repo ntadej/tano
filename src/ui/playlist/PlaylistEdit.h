@@ -89,12 +89,10 @@ private slots:
 	void moveUp();
 	void moveDown();
 
-#if WITH_EDITOR_VLCQT
 	void refreshPlaylist(const bool &refresh);
 	void checkIp();
 	void checkCurrentIp();
 	void setState(const bool &playing);
-#endif
 
 private:
 	void createConnections();

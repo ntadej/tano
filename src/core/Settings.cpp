@@ -46,7 +46,6 @@ const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;
 const QString Settings::DEFAULT_AUDIO_LANGUAGE = QObject::tr("Disabled");
 const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
 // Recorder
-const bool Settings::DEFAULT_RECORDER_ENABLED = true;
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath();
 // Session
 const int Settings::DEFAULT_CHANNEL = 1;
@@ -95,7 +94,6 @@ void Settings::writeSettings()
 	setValue("backend/audio", audioLanguage());
 	setValue("backend/subtitles", subtitleLanguage());
 
-	setValue("recorder/enabled", recorderEnabled());
 	setValue("recorder/directory", recorderDirectory());
 
 	sync();
@@ -128,7 +126,6 @@ void Settings::readSettings()
 	setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
 	setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
 
-	setRecorderEnabled(value("recorder/enabled", DEFAULT_RECORDER_ENABLED).toBool());
 	setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
 
 	setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());

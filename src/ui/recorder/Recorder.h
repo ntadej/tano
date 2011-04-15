@@ -23,8 +23,13 @@
 #include <QtGui/QWidget>
 #include <QtGui/QTreeWidgetItem>
 
-class RecorderController;
-class RecorderProcess;
+#include "Config.h"
+
+#if WITH_RECORDER
+	class RecorderController;
+	class RecorderProcess;
+#endif
+
 class TrayIcon;
 class TimersEdit;
 
@@ -72,10 +77,12 @@ private:
 	QString _name;
 	QString _url;
 
+#if WITH_RECORDER
 	RecorderController *_controller;
+	RecorderProcess *_recorder;
+#endif
 	TimersEdit *_editor;
 	QString _playlist;
-	RecorderProcess *_recorder;
 	TrayIcon *_trayIcon;
 };
 

@@ -221,7 +221,7 @@
           <x>0</x>
           <y>0</y>
           <width>340</width>
-          <height>309</height>
+          <height>293</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -245,8 +245,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>100</width>
-          <height>30</height>
+          <width>340</width>
+          <height>309</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -317,256 +317,245 @@
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
-    <layout class="QGridLayout" name="osdLayout">
-     <property name="leftMargin">
-      <number>4</number>
-     </property>
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <property name="rightMargin">
-      <number>4</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <property name="verticalSpacing">
-      <number>1</number>
-     </property>
-     <item row="0" column="0">
-      <widget class="QLCDNumber" name="channelNumber">
-       <property name="minimumSize">
-        <size>
-         <width>70</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>70</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="numDigits">
-        <number>3</number>
-       </property>
-       <property name="segmentStyle">
-        <enum>QLCDNumber::Flat</enum>
-       </property>
-       <property name="value" stdset="0">
-        <double>1.000000000000000</double>
-       </property>
-      </widget>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLCDNumber" name="channelNumber">
+         <property name="minimumSize">
+          <size>
+           <width>70</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>70</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="numDigits">
+          <number>3</number>
+         </property>
+         <property name="segmentStyle">
+          <enum>QLCDNumber::Flat</enum>
+         </property>
+         <property name="value" stdset="0">
+          <double>1.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonPlay">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Play</string>
+         </property>
+         <property name="statusTip">
+          <string>Play</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../data/icons.qrc">
+           <normaloff>:/icons/48x48/media-playback-start.png</normaloff>:/icons/48x48/media-playback-start.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonStop">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Stop</string>
+         </property>
+         <property name="statusTip">
+          <string>Stop</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../data/icons.qrc">
+           <normaloff>:/icons/48x48/media-playback-stop.png</normaloff>:/icons/48x48/media-playback-stop.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonBack">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Back</string>
+         </property>
+         <property name="statusTip">
+          <string>Back</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../data/icons.qrc">
+           <normaloff>:/icons/48x48/media-skip-backward.png</normaloff>:/icons/48x48/media-skip-backward.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonNext">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Next</string>
+         </property>
+         <property name="statusTip">
+          <string>Next</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../data/icons.qrc">
+           <normaloff>:/icons/48x48/media-skip-forward.png</normaloff>:/icons/48x48/media-skip-forward.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonRecord">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Record Now</string>
+         </property>
+         <property name="statusTip">
+          <string>Record Now</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../data/icons.qrc">
+           <normaloff>:/icons/48x48/media-record.png</normaloff>:/icons/48x48/media-record.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Teletext" name="teletextWidget" native="true"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonMute">
+         <property name="minimumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Mute</string>
+         </property>
+         <property name="statusTip">
+          <string>Mute</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../../data/icons.qrc">
+           <normaloff>:/icons/48x48/volume-muted.png</normaloff>:/icons/48x48/volume-muted.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>48</width>
+           <height>48</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="VlcVolumeSlider" name="volumeSlider" native="true"/>
+       </item>
+      </layout>
      </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="buttonPlay">
-       <property name="minimumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Play</string>
-       </property>
-       <property name="statusTip">
-        <string>Play</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-playback-start.png</normaloff>:/icons/48x48/media-playback-start.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="buttonStop">
-       <property name="minimumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Stop</string>
-       </property>
-       <property name="statusTip">
-        <string>Stop</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-playback-stop.png</normaloff>:/icons/48x48/media-playback-stop.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QPushButton" name="buttonBack">
-       <property name="minimumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Back</string>
-       </property>
-       <property name="statusTip">
-        <string>Back</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-skip-backward.png</normaloff>:/icons/48x48/media-skip-backward.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="4">
-      <widget class="QPushButton" name="buttonNext">
-       <property name="minimumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Next</string>
-       </property>
-       <property name="statusTip">
-        <string>Next</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-skip-forward.png</normaloff>:/icons/48x48/media-skip-forward.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="5">
-      <widget class="QPushButton" name="buttonRecord">
-       <property name="minimumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Record Now</string>
-       </property>
-       <property name="statusTip">
-        <string>Record Now</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-record.png</normaloff>:/icons/48x48/media-record.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="7">
-      <widget class="QPushButton" name="buttonMute">
-       <property name="minimumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Mute</string>
-       </property>
-       <property name="statusTip">
-        <string>Mute</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../data/icons.qrc">
-         <normaloff>:/icons/48x48/volume-muted.png</normaloff>:/icons/48x48/volume-muted.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="checkable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="8" colspan="5">
-      <widget class="VlcVolumeSlider" name="volumeSlider" native="true"/>
-     </item>
-     <item row="1" column="0" colspan="13">
+     <item>
       <widget class="VlcSeekWidget" name="seekWidget" native="true"/>
      </item>
-     <item row="2" column="0" colspan="13">
+     <item>
       <widget class="InfoBar" name="infoBarWidget" native="true"/>
-     </item>
-     <item row="0" column="6">
-      <widget class="Teletext" name="teletextWidget" native="true"/>
      </item>
     </layout>
    </widget>

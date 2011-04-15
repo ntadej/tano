@@ -1341,10 +1341,6 @@ Then select your playlist.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enable Recorder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Default recording directory</source>
         <translation type="unfinished"></translation>
     </message>

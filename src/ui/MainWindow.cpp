@@ -186,8 +186,6 @@ void MainWindow::createSettings()
 	if(_videoController)
 		_videoController->setDefaultSubtitleLanguage(_defaultSubtitleLanguage);
 
-	//Recorder settings
-	_recorderEnabled = settings->recorderEnabled();
 	_sessionVolumeEnabled = settings->sessionVolume();
 	_sessionAutoplayEnabled = settings->sessionAutoplay();
 
@@ -379,23 +377,17 @@ void MainWindow::writeSession()
 
 void MainWindow::createRecorder()
 {
-	if(_recorderEnabled) {
-		ui->recorder->openPlaylist(_playlistName);
-		ui->recorder->setAction(ui->actionRecord);
-		ui->recorder->setTrayIcon(_trayIcon);
-		ui->recorder->createSettings();
-		if(ui->buttonRecord->isHidden()) {
-			ui->buttonRecord->show();
-			ui->menuRecorder->setEnabled(true);
-		}
-		ui->toolBar->insertAction(ui->actionEditPlaylist, ui->actionRecorder);
-		ui->toolBar->insertAction(ui->actionEditPlaylist, ui->actionTimers);
-	} else {
-		ui->buttonRecord->hide();
-		ui->menuRecorder->setEnabled(false);
-		ui->toolBar->removeAction(ui->actionRecorder);
-		ui->toolBar->removeAction(ui->actionTimers);
-	}
+#if WITH_RECORDER
+	ui->recorder->openPlaylist(_playlistName);
+	ui->recorder->setAction(ui->actionRecord);
+	ui->recorder->setTrayIcon(_trayIcon);
+	ui->recorder->createSettings();
+#else
+	ui->buttonRecord->hide();
+	ui->menubar->removeAction(ui->menuRecorder->menuAction());
+	ui->toolBar->removeAction(ui->actionRecorder);
+	ui->toolBar->removeAction(ui->actionTimers);
+#endif
 }
 void MainWindow::mouseWheel()
 {

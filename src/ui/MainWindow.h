@@ -128,7 +128,6 @@ private:
 	bool _isLite;
 	bool _osdEnabled;
 	bool _playlistFullscreen;
-	bool _recorderEnabled;
 	int _sessionChannel;
 	bool _sessionVolumeEnabled;
 	bool _sessionAutoplayEnabled;

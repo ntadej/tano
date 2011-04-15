@@ -1352,10 +1352,6 @@ Then select your playlist.</source>
         <translation>Другой</translation>
     </message>
     <message>
-        <source>Enable Recorder</source>
-        <translation>Использовать рекордер</translation>
-    </message>
-    <message>
         <source>Default recording directory</source>
         <translation>Каталог для записи</translation>
     </message>

@@ -118,18 +118,6 @@
      </item>
      <item>
       <property name="text">
-       <string>Recorder</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
-      </property>
-      <property name="icon">
-       <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
-      </property>
-     </item>
-     <item>
-      <property name="text">
        <string>Shortcuts</string>
       </property>
       <property name="textAlignment">
@@ -138,6 +126,18 @@
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
         <normaloff>:/icons/48x48/shortcuts.png</normaloff>:/icons/48x48/shortcuts.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Recorder</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../data/icons.qrc">
+        <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
       </property>
      </item>
     </widget>
@@ -638,20 +638,17 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="pageShortcuts">
+      <layout class="QVBoxLayout" name="layoutShortcuts">
+       <item>
+        <widget class="SettingsShortcuts" name="shortcutsWidget" native="true"/>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="pageRecorder">
       <layout class="QVBoxLayout" name="layoutRecorder">
        <item>
-        <widget class="QCheckBox" name="enableRecorderCheck">
-         <property name="text">
-          <string>Enable Recorder</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QGroupBox" name="defaultDirBox">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
          <property name="title">
           <string>Default recording directory</string>
          </property>
@@ -714,13 +711,6 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="pageShortcuts">
-      <layout class="QVBoxLayout" name="layoutShortcuts">
-       <item>
-        <widget class="SettingsShortcuts" name="shortcutsWidget" native="true"/>
-       </item>
-      </layout>
-     </widget>
     </widget>
    </item>
    <item row="1" column="0" colspan="2">
@@ -754,22 +744,6 @@
   <include location="../../../data/logo.qrc"/>
  </resources>
  <connections>
-  <connection>
-   <sender>enableRecorderCheck</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>defaultDirBox</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>203</x>
-     <y>14</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>203</x>
-     <y>20</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>setttingsListWidget</sender>
    <signal>currentRowChanged(int)</signal>
