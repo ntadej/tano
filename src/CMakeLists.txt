@@ -136,6 +136,7 @@ SET(Tano_Core_Srcs
 	core/Print.cpp
 	core/Settings.cpp
 	core/Shortcuts.cpp
+	core/Udpxy.cpp
 	core/UpdateManager.cpp
 )
 IF(DBUS_FOUND)

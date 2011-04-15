@@ -45,6 +45,7 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
 	ui->labelVersion->setText(tr("You are using Tano version:")+" <b>"+Tano::version()+"</b>");
 	ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text()+" <b>"+VlcInstance::libVersion()+"</b>");
 	ui->labelVlcVersion->setText(ui->labelVlcVersion->text()+" <b>"+VlcInstance::version()+"</b>");
+	ui->labelUdpxyInfo->setText(ui->labelUdpxyInfo->text().arg("</i>udp://@232.4.1.1:5002<i>", "</i>http://router:port/udp/232.4.1.1:5002<i>"));
 
 	loadLocale();
 	read();
@@ -129,6 +130,9 @@ void SettingsEdit::apply()
 	_settings->setRememberVideoSettings(ui->checkVideoSettings->isChecked());
 	_settings->setAudioLanguage(ui->comboAudio->currentText());
 	_settings->setSubtitleLanguage(ui->comboSub->currentText());
+	_settings->setUdpxy(ui->checkUdpxy->isChecked());
+	_settings->setUdpxyUrl(ui->udpxyUrl->text());
+	_settings->setUdpxyPort(ui->udpxyPort->value());
 
 	// Recorder
 	_settings->setRecorderDirectory(ui->recorderDirectoryLineEdit->text());
@@ -203,6 +207,9 @@ void SettingsEdit::read()
 			ui->comboSub->setCurrentIndex(i);
 		}
 	}
+	ui->checkUdpxy->setChecked(_settings->udpxy());
+	ui->udpxyUrl->setText(_settings->udpxyUrl());
+	ui->udpxyPort->setValue(_settings->udpxyPort());
 
 	// Recorder
 	ui->recorderDirectoryLineEdit->setText(_settings->recorderDirectory());

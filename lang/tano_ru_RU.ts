@@ -1379,6 +1379,26 @@ Then select your playlist.</source>
         <source>Enable Info OSD in Fullscreen mode</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

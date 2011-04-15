@@ -624,6 +624,81 @@
         </widget>
        </item>
        <item>
+        <widget class="QGroupBox" name="udpxyBox">
+         <property name="title">
+          <string>UDPXY support</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0" colspan="2">
+           <widget class="QCheckBox" name="checkUdpxy">
+            <property name="text">
+             <string>Enable UDPXY support</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="udpxyUrl">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="udpxyPort">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="maximum">
+             <number>9999</number>
+            </property>
+            <property name="value">
+             <number>1234</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelUdpxyUrl">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Router IP or name:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="labelUdpxyPort">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Router port:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QLabel" name="labelUdpxyInfo">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <spacer name="playbackSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -783,12 +858,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>223</x>
-     <y>51</y>
+     <x>196</x>
+     <y>39</y>
     </hint>
     <hint type="destinationlabel">
-     <x>229</x>
-     <y>71</y>
+     <x>196</x>
+     <y>35</y>
     </hint>
    </hints>
   </connection>
@@ -799,12 +874,92 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>311</x>
-     <y>56</y>
+     <x>196</x>
+     <y>39</y>
     </hint>
     <hint type="destinationlabel">
-     <x>318</x>
-     <y>75</y>
+     <x>196</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelUdpxyUrl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>224</x>
+     <y>306</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>315</x>
+     <y>330</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelUdpxyPort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>251</x>
+     <y>365</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelUdpxyInfo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>458</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>391</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>udpxyUrl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>500</x>
+     <y>308</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>udpxyPort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>573</x>
+     <y>305</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>578</x>
+     <y>358</y>
     </hint>
    </hints>
   </connection>

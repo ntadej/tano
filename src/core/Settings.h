@@ -99,6 +99,15 @@ public:
 	QString subtitleLanguage() const { return _subtitleLanguage; }
 	void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
 	static const QString DEFAULT_SUBTITLE_LANGUAGE;
+	bool udpxy() const { return _udpxy; }
+	void setUdpxy(const bool &b) { _udpxy = b; }
+	static const bool DEFAULT_UDPXY;
+	QString udpxyUrl() const { return _udpxyUrl; }
+	void setUdpxyUrl(const QString &s) { _udpxyUrl = s; }
+	static const QString DEFAULT_UDPXY_URL;
+	int udpxyPort() const { return _udpxyPort; }
+	void setUdpxyPort(const int &i) { _udpxyPort = i; }
+	static const int DEFAULT_UDPXY_PORT;
 
 	// Recorder
 	QString recorderDirectory() const { return _recorderDirectory; }
@@ -144,6 +153,9 @@ private:
 	bool _rememberVideoSettings;
 	QString _audioLanguage;
 	QString _subtitleLanguage;
+	bool _udpxy;
+	QString _udpxyUrl;
+	int _udpxyPort;
 
 	// Recorder
 	QString _recorderDirectory;

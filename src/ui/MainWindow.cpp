@@ -40,7 +40,7 @@
 
 MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()), _update(new UpdateDialog()),
-	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0),
+	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0), _udpxy(new Udpxy()),
 	_playlistEditor(0), _epg(new EpgManager()), _epgShow(new EpgShow()), _schedule(new EpgFull())
 {
 	QPixmap pixmap(":/images/splash.png");
@@ -185,6 +185,7 @@ void MainWindow::createSettings()
 		_audioController->setDefaultAudioLanguage(_defaultAudioLanguage);
 	if(_videoController)
 		_videoController->setDefaultSubtitleLanguage(_defaultSubtitleLanguage);
+	_udpxy->createSettings();
 
 	_sessionVolumeEnabled = settings->sessionVolume();
 	_sessionAutoplayEnabled = settings->sessionAutoplay();
@@ -471,7 +472,7 @@ void MainWindow::play(const QString &itemFile)
 		_epg->request(_channel->epg(), Tano::Main);
 		ui->channelNumber->display(_channel->number());
 
-		_mediaPlayer->open(_channel->url());
+		_mediaPlayer->open(_udpxy->processUrl(_channel->url()));
 		tooltip(_channel->name());
 		_trayIcon->changeToolTip(Tano::Main, _channel->name());
 	} else {

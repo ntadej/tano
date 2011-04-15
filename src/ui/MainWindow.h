@@ -33,6 +33,7 @@
 #include "core/ChannelSelect.h"
 #include "core/LocaleManager.h"
 #include "core/Shortcuts.h"
+#include "core/Udpxy.h"
 #include "epg/EpgManager.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/dialogs/UpdateDialog.h"
@@ -132,6 +133,7 @@ private:
 	bool _sessionVolumeEnabled;
 	bool _sessionAutoplayEnabled;
 	int _sessionVolume;
+	bool _udpxyEnabled;
 	bool _videoSettings;
 	QString _wheelType;
 
@@ -158,6 +160,7 @@ private:
 	EpgManager *_epg;
 	EpgShow *_epgShow;
 	QString _playlistName;
+	Udpxy *_udpxy;
 
 	//Menus and actions
 	TrayIcon *_trayIcon;

@@ -291,10 +291,10 @@ Vaša različica VLC-Qt: %4
         <location filename="../src/ui/MainWindow.ui" line="366"/>
         <location filename="../src/ui/MainWindow.ui" line="369"/>
         <location filename="../src/ui/MainWindow.ui" line="672"/>
-        <location filename="../src/ui/MainWindow.cpp" line="446"/>
         <location filename="../src/ui/MainWindow.cpp" line="447"/>
         <location filename="../src/ui/MainWindow.cpp" line="448"/>
         <location filename="../src/ui/MainWindow.cpp" line="449"/>
+        <location filename="../src/ui/MainWindow.cpp" line="450"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
@@ -311,7 +311,7 @@ Vaša različica VLC-Qt: %4
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="655"/>
+        <location filename="../src/ui/MainWindow.cpp" line="656"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
@@ -384,7 +384,7 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="615"/>
-        <location filename="../src/ui/MainWindow.cpp" line="521"/>
+        <location filename="../src/ui/MainWindow.cpp" line="522"/>
         <source>Open channel list</source>
         <translation>Odpri seznam programov</translation>
     </message>
@@ -437,40 +437,40 @@ This will stop recording in progress.</source>
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="435"/>
         <location filename="../src/ui/MainWindow.cpp" line="436"/>
         <location filename="../src/ui/MainWindow.cpp" line="437"/>
         <location filename="../src/ui/MainWindow.cpp" line="438"/>
+        <location filename="../src/ui/MainWindow.cpp" line="439"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="457"/>
+        <location filename="../src/ui/MainWindow.cpp" line="458"/>
         <source>Buffering...</source>
         <translation>Nalagam...</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="523"/>
+        <location filename="../src/ui/MainWindow.cpp" line="524"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="552"/>
+        <location filename="../src/ui/MainWindow.cpp" line="553"/>
         <source>Open file or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="554"/>
+        <location filename="../src/ui/MainWindow.cpp" line="555"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="565"/>
+        <location filename="../src/ui/MainWindow.cpp" line="566"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="566"/>
+        <location filename="../src/ui/MainWindow.cpp" line="567"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:</translation>
     </message>
@@ -488,8 +488,8 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
         <location filename="../src/ui/MainWindow.cpp" line="76"/>
-        <location filename="../src/ui/MainWindow.cpp" line="611"/>
-        <location filename="../src/ui/MainWindow.cpp" line="613"/>
+        <location filename="../src/ui/MainWindow.cpp" line="612"/>
+        <location filename="../src/ui/MainWindow.cpp" line="614"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -513,7 +513,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="702"/>
         <location filename="../src/ui/MainWindow.ui" line="705"/>
-        <location filename="../src/ui/MainWindow.cpp" line="652"/>
+        <location filename="../src/ui/MainWindow.cpp" line="653"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
@@ -1755,17 +1755,42 @@ Nato izberite želen seznam programov.</translation>
         <translation>Drugo</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="653"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="629"/>
+        <source>UDPXY support</source>
+        <translation>UDPXY podpora</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="635"/>
+        <source>Enable UDPXY support</source>
+        <translation>Vključi podporo UDPXY</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="671"/>
+        <source>Router IP or name:</source>
+        <translation>IP ali ime usmerjevalnika:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="681"/>
+        <source>Router port:</source>
+        <translation>Vrata usmerjevalnika:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="691"/>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation>&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="728"/>
         <source>Default recording directory</source>
         <translation>Privzet imenik snemanja</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="669"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="744"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="682"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="757"/>
         <source>Reset</source>
         <translation>Obnovi</translation>
     </message>
@@ -1775,7 +1800,7 @@ Nato izberite želen seznam programov.</translation>
         <translation>Uporabljate Tano različice:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="223"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="230"/>
         <source>Open directory</source>
         <translation>Odpri imenik</translation>
     </message>
