@@ -20,8 +20,14 @@
 #define TANO_XMLTVMANAGER_H_
 
 #include <QtCore/QObject>
+#include <QtCore/QTimer>
 
+#include "core/Enums.h"
+
+class XmltvChannel;
 class XmltvHandler;
+class XmltvList;
+class XmltvProgramme;
 
 class XmltvManager : public QObject
 {
@@ -30,10 +36,30 @@ public:
 	XmltvManager(QObject *parent = 0);
 	~XmltvManager();
 
+public slots:
+	void request(const QString &id,
+				 const Tano::Id &identifier);
+	void stop();
+
+signals:
+	void epgCurrent(const QString,
+					const QString);
+	void epgSchedule(XmltvChannel *,
+					 const Tano::Id);
+
+private slots:
+	void current();
+
 private:
 	void loadXmltv();
+	QString processCurrentString(XmltvProgramme *programme) const;
+
+	Tano::Id _currentIdentifier;
+	QString _currentXmltvId;
 
 	XmltvHandler *_handler;
+	QTimer *_timer;
+	XmltvList *_xmltv;
 };
 
 #endif // TANO_XMLTVMANAGER_H_

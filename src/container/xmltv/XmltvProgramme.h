@@ -16,26 +16,31 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QStringList>
+#ifndef TANO_XMLTVPROGRAMME_H_
+#define TANO_XMLTVPROGRAMME_H_
 
-#include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvList.h"
+#include <QtCore/QDateTime>
+#include <QtCore/QString>
 
-XmltvList::XmltvList(const QDate &date)
-	: _date(date) { }
-
-XmltvList::~XmltvList() { }
-
-void XmltvList::addChannel(XmltvChannel *c)
+class XmltvProgramme
 {
-	_channels.append(c);
-}
+public:
+	XmltvProgramme(const QString &channel);
+	~XmltvProgramme();
 
-XmltvChannel *XmltvList::channel(const QString &id)
-{
-	for(int i = 0; i < _channels.size(); i++) {
-		if(_channels[i]->id() == id || _channels[i]->id().split(".")[0] == id) {
-			return _channels[i];
-		}
-	}
-}
+	QString channel() const { return _channel; }
+	QString title() const { return _title; }
+	void setTitle(const QString &s) { _title = s; }
+	QDateTime start() const { return _start; }
+	void setStart(const QDateTime &d) { _start = d; }
+	QDateTime stop() const { return _stop; }
+	void setStop(const QDateTime &d) { _stop = d; }
+
+private:
+	QString _channel;
+	QString _title;
+	QDateTime _start;
+	QDateTime _stop;
+};
+
+#endif // TANO_XMLTVPROGRAMME_H_

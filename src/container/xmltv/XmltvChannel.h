@@ -19,7 +19,10 @@
 #ifndef TANO_XMLTVCHANNEL_H_
 #define TANO_XMLTVCHANNEL_H_
 
+#include <QtCore/QList>
 #include <QtCore/QString>
+
+class XmltvProgramme;
 
 class XmltvChannel
 {
@@ -35,11 +38,16 @@ public:
 	QString url() const { return _url; }
 	void setUrl(const QString &s) { _url = s; }
 
+	QList<XmltvProgramme *> programme() const { return _programme; }
+	void addProgramme(XmltvProgramme *p);
+
 private:
 	QString _id;
 	QString _displayName;
 	QString _icon;
 	QString _url;
+
+	QList<XmltvProgramme *> _programme;
 };
 
 #endif // TANO_XMLTVCHANNEL_H_

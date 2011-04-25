@@ -16,26 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QStringList>
+#include "container/xmltv/XmltvProgramme.h"
 
-#include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvList.h"
+XmltvProgramme::XmltvProgramme(const QString &channel)
+	: _channel(channel) { }
 
-XmltvList::XmltvList(const QDate &date)
-	: _date(date) { }
-
-XmltvList::~XmltvList() { }
-
-void XmltvList::addChannel(XmltvChannel *c)
-{
-	_channels.append(c);
-}
-
-XmltvChannel *XmltvList::channel(const QString &id)
-{
-	for(int i = 0; i < _channels.size(); i++) {
-		if(_channels[i]->id() == id || _channels[i]->id().split(".")[0] == id) {
-			return _channels[i];
-		}
-	}
-}
+XmltvProgramme::~XmltvProgramme() { }

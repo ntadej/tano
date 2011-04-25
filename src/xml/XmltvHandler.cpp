@@ -24,7 +24,9 @@
 
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"
+#include "container/xmltv/XmltvProgramme.h"
 #include "core/ConsoleOutput.h"
+#include "epg/XmltvCommon.h"
 #include "XmltvHandler.h"
 
 XmltvHandler::XmltvHandler()
@@ -46,7 +48,7 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
 	}
 
 	if (qName == "tv") { // Main
-		_list = new XmltvList(QDate::fromString(attributes.value("date"), "YYYYMMDDhhmmss"));
+		_list = new XmltvList(QDate::fromString(attributes.value("date"), Tano::Xmltv::dateFormat()));
 		_list->setSourceInfoUrl(attributes.value("source-info-url"));
 		_list->setSourceInfoName(attributes.value("source-info-name"));
 		_list->setSourceDataUrl(attributes.value("source-data-url"));
@@ -54,12 +56,23 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
 		_list->setGeneratorInfoUrl(attributes.value("source-info-url"));
 		_metTag = true;
 	} else if (qName == "channel") { // Channel
-		_currentChannel = new XmltvChannel(attributes.value("id"));
-		_list->addChannel(_currentChannel);
+		if(_list) {
+			_currentChannel = new XmltvChannel(attributes.value("id"));
+			_list->addChannel(_currentChannel);
+		}
 	} else if (qName == "icon") {
-		_currentChannel->setIcon(attributes.value("src"));
+		if(_list && _currentChannel) {
+			_currentChannel->setIcon(attributes.value("src"));
+		}
 	} else if (qName == "programme") { // Programme
-		// Programme
+		if(_list) {
+			QString start = attributes.value("start").replace(Tano::Xmltv::dateRegExp(), "");
+			QString stop = attributes.value("stop").replace(Tano::Xmltv::dateRegExp(), "");
+			_currentProgramme = new XmltvProgramme(attributes.value("channel"));
+			_currentProgramme->setStart(QDateTime::fromString(start, Tano::Xmltv::dateFormat()));
+			_currentProgramme->setStop(QDateTime::fromString(stop, Tano::Xmltv::dateFormat()));
+			_list->channel(attributes.value("channel"))->addProgramme(_currentProgramme);
+		}
 	}
 
 	_currentText.clear();
@@ -78,6 +91,10 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
 	} else if(qName == "url") {
 		if(_list && _currentChannel) {
 			_currentChannel->setUrl(_currentText);
+		}
+	} else if(qName == "title") { // Programme
+		if(_list && _currentProgramme) {
+			_currentProgramme->setTitle(_currentText);
 		}
 	}
 

@@ -127,6 +127,7 @@ SET(Tano_Container_Srcs
 	container/epgold/EpgShowInfo.cpp
 	container/xmltv/XmltvChannel.cpp
 	container/xmltv/XmltvList.cpp
+	container/xmltv/XmltvProgramme.cpp
 )
 SET(Tano_Core_Srcs
 	core/Arguments.cpp
@@ -153,6 +154,7 @@ SET(Tano_Epg_Srcs
 	epg/EpgManager.cpp
 	epg/EpgSlovenia.cpp
 	epg/EpgSloveniaLoader.cpp
+	epg/XmltvCommon.cpp
 	epg/XmltvManager.cpp
 )
 SET(Tano_Playlist_Srcs

@@ -20,20 +20,40 @@
 
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"
+#include "container/xmltv/XmltvProgramme.h"
 #include "core/Common.h"
+#include "epg/XmltvCommon.h"
 #include "epg/XmltvManager.h"
 #include "xml/XmltvHandler.h"
 
 XmltvManager::XmltvManager(QObject *parent)
-	: QObject(parent)
+	: QObject(parent),
+	_currentXmltvId("")
 {
 	_handler = new XmltvHandler();
 	loadXmltv();
+
+	_timer = new QTimer(this);
+	connect(_timer, SIGNAL(timeout()), this, SLOT(current()));
 }
 
 XmltvManager::~XmltvManager()
 {
 	delete _handler;
+	delete _timer;
+}
+
+void XmltvManager::current()
+{
+	for(int i = 1; i < _xmltv->channel(_currentXmltvId)->programme().size(); i++) {
+		if(QDateTime::currentDateTime() < _xmltv->channel(_currentXmltvId)->programme()[i]->start()) {
+			emit epgCurrent(processCurrentString(_xmltv->channel(_currentXmltvId)->programme()[i-1]),
+							processCurrentString(_xmltv->channel(_currentXmltvId)->programme()[i]));
+			break;
+		}
+	}
+
+	_timer->start(60000);
 }
 
 void XmltvManager::loadXmltv()
@@ -50,12 +70,44 @@ void XmltvManager::loadXmltv()
 	if (!reader.parse(xmlInputSource))
 		return;
 
+	_xmltv = _handler->list();
+
 	// Debug
 	qDebug() << _handler->list()->sourceInfoName() << _handler->list()->sourceInfoUrl();
-	for(int i = 0; i < 5; i++) {
+	for(int i = 0; i < 2; i++) {
 		qDebug() << _handler->list()->channels()[i]->id()
 				 << _handler->list()->channels()[i]->displayName()
 				 << _handler->list()->channels()[i]->icon()
 				 << _handler->list()->channels()[i]->url();
+		for(int k = 0; k < 5; k++) {
+			qDebug() << _handler->list()->channels()[i]->programme()[k]->channel()
+					 << _handler->list()->channels()[i]->programme()[k]->start()
+					 << _handler->list()->channels()[i]->programme()[k]->stop();
+		}
 	}
+}
+
+QString XmltvManager::processCurrentString(XmltvProgramme *programme) const
+{
+	QString output = "<a href=\"%1\">%2 - %3</a>";
+	output = output.arg(programme->start().toString(Tano::Xmltv::dateFormat()), programme->start().toString("HH:mm"), programme->title());
+	return output;
+}
+
+void XmltvManager::request(const QString &id,
+						   const Tano::Id &identifier)
+{
+	if(id.isEmpty())
+		return;
+
+	_currentIdentifier = identifier;
+	if(_currentIdentifier == Tano::Main) {
+		_currentXmltvId = id;
+		current();
+	}
+}
+
+void XmltvManager::stop()
+{
+	_timer->stop();
 }

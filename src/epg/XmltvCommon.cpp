@@ -16,26 +16,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QStringList>
+#include "epg/XmltvCommon.h"
 
-#include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvList.h"
-
-XmltvList::XmltvList(const QDate &date)
-	: _date(date) { }
-
-XmltvList::~XmltvList() { }
-
-void XmltvList::addChannel(XmltvChannel *c)
+QString Tano::Xmltv::dateFormat()
 {
-	_channels.append(c);
+	QString format = "yyyyMMddHHmmss";
+	return format;
 }
 
-XmltvChannel *XmltvList::channel(const QString &id)
+QRegExp Tano::Xmltv::dateRegExp()
 {
-	for(int i = 0; i < _channels.size(); i++) {
-		if(_channels[i]->id() == id || _channels[i]->id().split(".")[0] == id) {
-			return _channels[i];
-		}
-	}
+	QRegExp exp = QRegExp(" .[0-9][0-9][0-9][0-9]");
+	return exp;
 }

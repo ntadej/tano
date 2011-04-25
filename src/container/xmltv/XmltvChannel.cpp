@@ -17,8 +17,14 @@
 *****************************************************************************/
 
 #include "container/xmltv/XmltvChannel.h"
+#include "container/xmltv/XmltvProgramme.h"
 
 XmltvChannel::XmltvChannel(const QString &id)
 	: _id(id) { }
 
 XmltvChannel::~XmltvChannel() { }
+
+void XmltvChannel::addProgramme(XmltvProgramme *p)
+{
+	_programme.append(p);
+}

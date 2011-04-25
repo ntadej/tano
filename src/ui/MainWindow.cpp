@@ -266,10 +266,15 @@ void MainWindow::createConnections()
 	connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), ui->infoWidget, SLOT(show()));
 	connect(ui->videoWidget, SIGNAL(mouseHide()), ui->infoWidget, SLOT(hide()));
 
-	connect(_epg, SIGNAL(epgCurrent(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
+	connect(_xmltv, SIGNAL(epgCurrent(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
+	connect(_xmltv, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(EpgDayList, Tano::Id)));
+	connect(_xmltv, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), _schedule, SLOT(setEpg(EpgDayList, Tano::Id)));
+	connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _xmltv, SLOT(request(QString, Tano::Id)));
+
+	/*connect(_epg, SIGNAL(epgCurrent(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
 	connect(_epg, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(EpgDayList, Tano::Id)));
 	connect(_epg, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), _schedule, SLOT(setEpg(EpgDayList, Tano::Id)));
-	connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _epg, SLOT(request(QString, Tano::Id)));
+	connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _epg, SLOT(request(QString, Tano::Id)));*/
 	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(get(QString)));
 	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(get(QString)));
 	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(get(QString)));
@@ -469,7 +474,8 @@ void MainWindow::play(const QString &itemFile)
 		ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
 		//ui->infoBarWidget->setLogo(_channel->logo());
 
-		_epg->request(_channel->epg(), Tano::Main);
+		//_epg->request(_channel->epg(), Tano::Main);
+		_xmltv->request(_channel->epg(), Tano::Main);
 		ui->channelNumber->display(_channel->number());
 
 		_mediaPlayer->open(_udpxy->processUrl(_channel->url()));
@@ -493,6 +499,7 @@ void MainWindow::stop()
 	}
 
 	_epg->stop();
+	_xmltv->stop();
 
 	ui->infoBarWidget->clear();
 	ui->actionTeletext->setChecked(false);

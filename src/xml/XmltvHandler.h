@@ -27,6 +27,7 @@
 
 class XmltvChannel;
 class XmltvList;
+class XmltvProgramme;
 
 class XmltvHandler : public QXmlDefaultHandler
 {
@@ -53,6 +54,7 @@ private:
 	bool _metTag;
 
 	XmltvChannel *_currentChannel;
+	XmltvProgramme *_currentProgramme;
 	XmltvList *_list;
 };
 
