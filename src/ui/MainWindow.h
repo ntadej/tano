@@ -34,11 +34,10 @@
 #include "core/LocaleManager.h"
 #include "core/Shortcuts.h"
 #include "core/Udpxy.h"
-#include "epg/EpgManager.h"
 #include "epg/XmltvManager.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/dialogs/UpdateDialog.h"
-#include "ui/epg/EpgFull.h"
+#include "ui/epg/EpgScheduleFull.h"
 #include "ui/epg/EpgShow.h"
 #include "ui/menu/MenuAspectRatio.h"
 #include "ui/menu/MenuCrop.h"
@@ -153,14 +152,13 @@ private:
 	//GUI
 	Ui::MainWindow *ui;
 	Qt::WindowFlags _flags;
-	EpgFull *_schedule;
+	EpgScheduleFull *_schedule;
+	EpgShow *_epgShow;
 	PlaylistEdit *_playlistEditor;
 
 	//Playback and channels
 	Channel *_channel;
-	EpgManager *_epg;
 	XmltvManager *_xmltv;
-	EpgShow *_epgShow;
 	QString _playlistName;
 	Udpxy *_udpxy;
 

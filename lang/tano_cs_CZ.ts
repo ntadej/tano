@@ -86,13 +86,6 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
 </context>
 <context>
-    <name>EpgFull</name>
-    <message>
-        <source>Schedule</source>
-        <translation>Rozvrh</translation>
-    </message>
-</context>
-<context>
     <name>EpgList</name>
     <message>
         <source>Show information</source>
@@ -102,32 +95,23 @@ Verze vašeho VLC-Qt: %4</translation>
         <source>Record</source>
         <translation>Nahrávat</translation>
     </message>
+</context>
+<context>
+    <name>EpgScheduleChannel</name>
     <message>
-        <source>No EPG</source>
-        <translation>Žádné EPG</translation>
+        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
+        <translation type="unfinished">&lt;h2&gt;Žádné EPG&lt;/h2&gt;</translation>
     </message>
 </context>
 <context>
-    <name>EpgSchedule</name>
+    <name>EpgScheduleFull</name>
     <message>
-        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Žádné EPG&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <source>Today</source>
-        <translation>Dnes</translation>
-    </message>
-    <message>
-        <source>Tomorrow</source>
-        <translation>Zítra</translation>
+        <source>Schedule</source>
+        <translation type="unfinished">Rozvrh</translation>
     </message>
 </context>
 <context>
     <name>EpgShow</name>
-    <message>
-        <source>&lt;h1&gt;Loading...&lt;/h1&gt;</source>
-        <translation>&lt;h1&gt;Nahrává se...&lt;/h1&gt;</translation>
-    </message>
     <message>
         <source>Previous</source>
         <translation>Předchozí</translation>
@@ -135,10 +119,6 @@ Verze vašeho VLC-Qt: %4</translation>
     <message>
         <source>Next</source>
         <translation>Další</translation>
-    </message>
-    <message>
-        <source>Show info</source>
-        <translation>Ukázat podrobnosti</translation>
     </message>
 </context>
 <context>
@@ -364,38 +344,6 @@ This will stop recording in progress.</source>
 Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
-        <source>Pause</source>
-        <translation>Pozastavit</translation>
-    </message>
-    <message>
-        <source>Multimedia files(*)</source>
-        <translation>Multimediální soubory (*)</translation>
-    </message>
-    <message>
-        <source>Open URL or stream</source>
-        <translation>Otevřít adresu (URL) nebo datový proud</translation>
-    </message>
-    <message>
-        <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation>Zadejte adresu (URL) multimediálního souboru nebo datového proudu, jejž chcete přehrávat:</translation>
-    </message>
-    <message>
-        <source>Restore</source>
-        <translation>Obnovit</translation>
-    </message>
-    <message>
-        <source>Tano TV channel list files(*.m3u)</source>
-        <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
-    </message>
-    <message>
-        <source>Open file or URL</source>
-        <translation>Otevřít soubor nebo adresu (URL)</translation>
-    </message>
-    <message>
-        <source>Buffering...</source>
-        <translation>Ukládá se do vyrovnávací paměti...</translation>
-    </message>
-    <message>
         <source>&amp;Open channel list</source>
         <translation>&amp;Otevřít seznam programů</translation>
     </message>
@@ -414,6 +362,38 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <source>Teletext</source>
         <translation>Teletext</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Buffering...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished">Soubory se seznamy programů Tano TV (*.m3u)</translation>
+    </message>
+    <message>
+        <source>Open file or URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multimedia files(*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open URL or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the URL of multimedia file or stream you want to play:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -100,10 +100,36 @@ void XmltvManager::request(const QString &id,
 	if(id.isEmpty())
 		return;
 
+	emit epgSchedule(_xmltv->channel(id), identifier);
+
 	_currentIdentifier = identifier;
 	if(_currentIdentifier == Tano::Main) {
 		_currentXmltvId = id;
 		current();
+	}
+}
+
+void XmltvManager::requestProgramme(const QString &programme)
+{
+	for(int i = 1; i < _xmltv->channel(_currentXmltvId)->programme().size(); i++) {
+		if(_xmltv->channel(_currentXmltvId)->programme()[i]->start() == QDateTime::fromString(programme, Tano::Xmltv::dateFormat())) {
+			emit epgProgramme(_xmltv->channel(_currentXmltvId)->programme()[i]);
+			break;
+		}
+	}
+}
+
+void XmltvManager::requestProgrammeNext(XmltvProgramme *programme)
+{
+	if(_xmltv->channel(programme->channel())->programme().indexOf(programme) != _xmltv->channel(programme->channel())->programme().size()-1) {
+		emit epgProgramme(_xmltv->channel(programme->channel())->programme()[_xmltv->channel(programme->channel())->programme().indexOf(programme)+1]);
+	}
+}
+
+void XmltvManager::requestProgrammePrevious(XmltvProgramme *programme)
+{
+	if(_xmltv->channel(programme->channel())->programme().indexOf(programme) != 0) {
+		emit epgProgramme(_xmltv->channel(programme->channel())->programme()[_xmltv->channel(programme->channel())->programme().indexOf(programme)-1]);
 	}
 }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>EpgSchedule</class>
- <widget class="QStackedWidget" name="EpgSchedule">
+ <class>EpgScheduleChannel</class>
+ <widget class="QStackedWidget" name="EpgScheduleChannel">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -9,6 +9,9 @@
     <width>400</width>
     <height>300</height>
    </rect>
+  </property>
+  <property name="currentIndex">
+   <number>0</number>
   </property>
   <widget class="QWidget" name="pageNoEpg">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -79,19 +82,23 @@
       <property name="usesScrollButtons">
        <bool>false</bool>
       </property>
-      <widget class="QWidget" name="tabToday">
+      <widget class="QWidget" name="tabDay0">
        <attribute name="title">
         <string/>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
         <item>
-         <widget class="EpgList" name="epgToday" native="true"/>
+         <widget class="EpgList" name="day0" native="true"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabDay1">
+       <attribute name="title">
+        <string/>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="EpgList" name="day1" native="true"/>
         </item>
        </layout>
       </widget>
@@ -100,14 +107,8 @@
         <string/>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_5">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
         <item>
-         <widget class="EpgList" name="epgToday_2" native="true"/>
+         <widget class="EpgList" name="day2" native="true"/>
         </item>
        </layout>
       </widget>
@@ -116,14 +117,8 @@
         <string/>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_6">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
         <item>
-         <widget class="EpgList" name="epgToday_3" native="true"/>
+         <widget class="EpgList" name="day3" native="true"/>
         </item>
        </layout>
       </widget>
@@ -131,15 +126,9 @@
        <attribute name="title">
         <string/>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_8">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
-         <widget class="EpgList" name="epgToday_4" native="true"/>
+         <widget class="EpgList" name="day4" native="true"/>
         </item>
        </layout>
       </widget>

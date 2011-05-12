@@ -35,9 +35,9 @@ SET(Tano_UIs
 	ui/dialogs/DonationDialog.ui
 	ui/dialogs/PrintDialog.ui
 	ui/dialogs/UpdateDialog.ui
-	ui/epg/EpgFull.ui
 	ui/epg/EpgShow.ui
-	ui/epg/EpgSchedule.ui
+	ui/epg/EpgScheduleChannel.ui
+	ui/epg/EpgScheduleFull.ui
 	ui/playlist/PlaylistEdit.ui
 	ui/playlist/PlaylistImportCSV.ui
 	ui/playlist/PlaylistImportWeb.ui
@@ -60,8 +60,6 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	core/GetFile.h
 	core/Print.h
 	core/UpdateManager.h
-	epg/EpgManager.h
-	epg/EpgSloveniaLoader.h
 	epg/XmltvManager.h
 	ui/MainWindow.h
 	ui/core/CurrentTime.h
@@ -74,9 +72,9 @@ SET(Tano_MOCs	# List of classes which Qt needs to produce MOCs for them (in orde
 	ui/dialogs/DonationDialog.h
 	ui/dialogs/PrintDialog.h
 	ui/dialogs/UpdateDialog.h
-	ui/epg/EpgFull.h
 	ui/epg/EpgList.h
-	ui/epg/EpgSchedule.h
+	ui/epg/EpgScheduleChannel.h
+	ui/epg/EpgScheduleFull.h
 	ui/epg/EpgShow.h
 	ui/menu/MenuAspectRatio.h
 	ui/menu/MenuCore.h
@@ -122,9 +120,6 @@ SET(Tano_Container_Srcs
 	container/PlaylistFile.cpp
 	container/UpdateInfo.cpp
 	container/Timer.cpp
-	container/epgold/EpgDayList.cpp
-	container/epgold/EpgItem.cpp
-	container/epgold/EpgShowInfo.cpp
 	container/xmltv/XmltvChannel.cpp
 	container/xmltv/XmltvList.cpp
 	container/xmltv/XmltvProgramme.cpp
@@ -151,9 +146,6 @@ IF(DBUS_FOUND)
 	)
 ENDIF(DBUS_FOUND)
 SET(Tano_Epg_Srcs
-	epg/EpgManager.cpp
-	epg/EpgSlovenia.cpp
-	epg/EpgSloveniaLoader.cpp
 	epg/XmltvCommon.cpp
 	epg/XmltvManager.cpp
 )
@@ -178,9 +170,9 @@ SET(Tano_UI_Srcs
 	ui/dialogs/DonationDialog.cpp
 	ui/dialogs/PrintDialog.cpp
 	ui/dialogs/UpdateDialog.cpp
-	ui/epg/EpgFull.cpp
 	ui/epg/EpgList.cpp
-	ui/epg/EpgSchedule.cpp
+	ui/epg/EpgScheduleChannel.cpp
+	ui/epg/EpgScheduleFull.cpp
 	ui/epg/EpgShow.cpp
 	ui/menu/MenuAspectRatio.cpp
 	ui/menu/MenuCore.cpp

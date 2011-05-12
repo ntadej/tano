@@ -81,13 +81,6 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
-    <name>EpgFull</name>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>EpgList</name>
     <message>
         <source>Show information</source>
@@ -97,42 +90,29 @@ Your VLC-Qt version: %4
         <source>Record</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>No EPG</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
-    <name>EpgSchedule</name>
+    <name>EpgScheduleChannel</name>
     <message>
         <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>EpgScheduleFull</name>
     <message>
-        <source>Today</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tomorrow</source>
+        <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>EpgShow</name>
     <message>
-        <source>&lt;h1&gt;Loading...&lt;/h1&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Previous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show info</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -357,38 +337,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Pause</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Multimedia files(*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open URL or stream</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Restore</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open file or URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Buffering...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -406,6 +354,38 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Buffering...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open file or URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multimedia files(*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open URL or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the URL of multimedia file or stream you want to play:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

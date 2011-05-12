@@ -39,6 +39,9 @@ public:
 public slots:
 	void request(const QString &id,
 				 const Tano::Id &identifier);
+	void requestProgramme(const QString &programme);
+	void requestProgrammeNext(XmltvProgramme *programme);
+	void requestProgrammePrevious(XmltvProgramme *programme);
 	void stop();
 
 signals:
@@ -46,6 +49,7 @@ signals:
 					const QString);
 	void epgSchedule(XmltvChannel *,
 					 const Tano::Id);
+	void epgProgramme(XmltvProgramme *);
 
 private slots:
 	void current();

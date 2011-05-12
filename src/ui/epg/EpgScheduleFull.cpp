@@ -16,28 +16,30 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "EpgFull.h"
-#include "ui_EpgFull.h"
+#include "EpgScheduleFull.h"
+#include "ui_EpgScheduleFull.h"
 
 #include "container/Channel.h"
+#include "container/xmltv/XmltvChannel.h"
+#include "container/xmltv/XmltvProgramme.h"
 
-EpgFull::EpgFull(QWidget *parent)
+EpgScheduleFull::EpgScheduleFull(QWidget *parent)
 	: QWidget(parent),
-	ui(new Ui::EpgFull)
+	ui(new Ui::EpgScheduleFull)
 {
 	ui->setupUi(this);
 	ui->schedule->setIdentifier(Tano::Schedule);
 
-	connect(ui->playlist, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(channel(QTreeWidgetItem*)));
-	connect(ui->schedule, SIGNAL(urlClicked(QString)), this, SIGNAL(urlClicked(QString)));
+	connect(ui->playlist, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(channel(QTreeWidgetItem *)));
+	connect(ui->schedule, SIGNAL(itemClicked(XmltvProgramme *)), this, SIGNAL(itemClicked(XmltvProgramme *)));
 }
 
-EpgFull::~EpgFull()
+EpgScheduleFull::~EpgScheduleFull()
 {
 	delete ui;
 }
 
-void EpgFull::changeEvent(QEvent *e)
+void EpgScheduleFull::changeEvent(QEvent *e)
 {
 	QWidget::changeEvent(e);
 	switch (e->type()) {
@@ -49,19 +51,18 @@ void EpgFull::changeEvent(QEvent *e)
 	}
 }
 
-void EpgFull::channel(QTreeWidgetItem *item)
+void EpgScheduleFull::channel(QTreeWidgetItem *item)
 {
 	ui->schedule->setPage(0);
 	emit requestEpg(ui->playlist->channelRead(item)->epg(), Tano::Schedule);
 }
 
-void EpgFull::openPlaylist(const QString &p)
+void EpgScheduleFull::openPlaylist(const QString &p)
 {
 	ui->playlist->open(p);
 }
 
-void EpgFull::setEpg(const EpgDayList &list,
-					 const Tano::Id &identifier)
+EpgScheduleChannel *EpgScheduleFull::schedule()
 {
-	ui->schedule->setEpg(list, identifier);
+	return ui->schedule;
 }

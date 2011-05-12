@@ -104,68 +104,43 @@ Vaša različica VLC-Qt: %4
     </message>
 </context>
 <context>
-    <name>EpgFull</name>
+    <name>EpgList</name>
     <message>
-        <location filename="../src/ui/epg/EpgFull.ui" line="14"/>
+        <location filename="../src/ui/epg/EpgList.cpp" line="28"/>
+        <source>Show information</source>
+        <translation>Pokaži podrobnosti</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/epg/EpgList.cpp" line="29"/>
+        <source>Record</source>
+        <translation>Snemaj</translation>
+    </message>
+</context>
+<context>
+    <name>EpgScheduleChannel</name>
+    <message>
+        <location filename="../src/ui/epg/EpgScheduleChannel.ui" line="47"/>
+        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
+        <translation>&lt;h2&gt;EPG ni na voljo&lt;/h2&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>EpgScheduleFull</name>
+    <message>
+        <location filename="../src/ui/epg/EpgScheduleFull.ui" line="14"/>
         <source>Schedule</source>
         <translation>Spored</translation>
     </message>
 </context>
 <context>
-    <name>EpgList</name>
-    <message>
-        <location filename="../src/ui/epg/EpgList.cpp" line="34"/>
-        <source>Show information</source>
-        <translation>Pokaži podrobnosti</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/epg/EpgList.cpp" line="35"/>
-        <source>Record</source>
-        <translation>Snemaj</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/epg/EpgList.cpp" line="82"/>
-        <source>No EPG</source>
-        <translation>EPG ni na voljo</translation>
-    </message>
-</context>
-<context>
-    <name>EpgSchedule</name>
-    <message>
-        <location filename="../src/ui/epg/EpgSchedule.ui" line="44"/>
-        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;EPG ni na voljo&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/epg/EpgSchedule.cpp" line="71"/>
-        <source>Today</source>
-        <translation>danes</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/epg/EpgSchedule.cpp" line="76"/>
-        <source>Tomorrow</source>
-        <translation>jutri</translation>
-    </message>
-</context>
-<context>
     <name>EpgShow</name>
     <message>
-        <location filename="../src/ui/epg/EpgShow.cpp" line="65"/>
-        <source>Show info</source>
-        <translation>Informacija o oddaji</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/epg/EpgShow.ui" line="38"/>
-        <source>&lt;h1&gt;Loading...&lt;/h1&gt;</source>
-        <translation>&lt;h1&gt;Nalagam...&lt;/h1&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/epg/EpgShow.ui" line="130"/>
+        <location filename="../src/ui/epg/EpgShow.ui" line="105"/>
         <source>Previous</source>
         <translation>Prejšnja oddaja</translation>
     </message>
     <message>
-        <location filename="../src/ui/epg/EpgShow.ui" line="201"/>
+        <location filename="../src/ui/epg/EpgShow.ui" line="134"/>
         <source>Next</source>
         <translation>Naslednja oddaja</translation>
     </message>
@@ -291,10 +266,10 @@ Vaša različica VLC-Qt: %4
         <location filename="../src/ui/MainWindow.ui" line="366"/>
         <location filename="../src/ui/MainWindow.ui" line="369"/>
         <location filename="../src/ui/MainWindow.ui" line="672"/>
-        <location filename="../src/ui/MainWindow.cpp" line="447"/>
-        <location filename="../src/ui/MainWindow.cpp" line="448"/>
-        <location filename="../src/ui/MainWindow.cpp" line="449"/>
         <location filename="../src/ui/MainWindow.cpp" line="450"/>
+        <location filename="../src/ui/MainWindow.cpp" line="451"/>
+        <location filename="../src/ui/MainWindow.cpp" line="452"/>
+        <location filename="../src/ui/MainWindow.cpp" line="453"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
@@ -309,11 +284,6 @@ Vaša različica VLC-Qt: %4
         <location filename="../src/ui/MainWindow.ui" line="693"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/MainWindow.cpp" line="656"/>
-        <source>Restore</source>
-        <translation>Obnovi</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="717"/>
@@ -384,7 +354,7 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="615"/>
-        <location filename="../src/ui/MainWindow.cpp" line="522"/>
+        <location filename="../src/ui/MainWindow.cpp" line="524"/>
         <source>Open channel list</source>
         <translation>Odpri seznam programov</translation>
     </message>
@@ -437,42 +407,47 @@ This will stop recording in progress.</source>
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="436"/>
-        <location filename="../src/ui/MainWindow.cpp" line="437"/>
-        <location filename="../src/ui/MainWindow.cpp" line="438"/>
         <location filename="../src/ui/MainWindow.cpp" line="439"/>
+        <location filename="../src/ui/MainWindow.cpp" line="440"/>
+        <location filename="../src/ui/MainWindow.cpp" line="441"/>
+        <location filename="../src/ui/MainWindow.cpp" line="442"/>
         <source>Pause</source>
-        <translation>Premor</translation>
+        <translation>Prekini</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="458"/>
+        <location filename="../src/ui/MainWindow.cpp" line="461"/>
         <source>Buffering...</source>
         <translation>Nalagam...</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="524"/>
+        <location filename="../src/ui/MainWindow.cpp" line="526"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="553"/>
+        <location filename="../src/ui/MainWindow.cpp" line="552"/>
         <source>Open file or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="555"/>
+        <location filename="../src/ui/MainWindow.cpp" line="554"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="566"/>
+        <location filename="../src/ui/MainWindow.cpp" line="565"/>
         <source>Open URL or stream</source>
-        <translation>Odpri URL ali spletni vir</translation>
+        <translation>Odpri URL ali drug pretočni vir</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="567"/>
+        <location filename="../src/ui/MainWindow.cpp" line="566"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/MainWindow.cpp" line="655"/>
+        <source>Restore</source>
+        <translation>Obnovi</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="257"/>
@@ -488,8 +463,8 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
         <location filename="../src/ui/MainWindow.cpp" line="76"/>
-        <location filename="../src/ui/MainWindow.cpp" line="612"/>
-        <location filename="../src/ui/MainWindow.cpp" line="614"/>
+        <location filename="../src/ui/MainWindow.cpp" line="611"/>
+        <location filename="../src/ui/MainWindow.cpp" line="613"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -513,7 +488,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="702"/>
         <location filename="../src/ui/MainWindow.ui" line="705"/>
-        <location filename="../src/ui/MainWindow.cpp" line="653"/>
+        <location filename="../src/ui/MainWindow.cpp" line="652"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
@@ -1439,9 +1414,9 @@ Nato izberite želen seznam programov.</translation>
         <translation>EPG ID</translation>
     </message>
     <message>
-        <location filename="../src/xml/XmltvHandler.cpp" line="44"/>
+        <location filename="../src/xml/XmltvHandler.cpp" line="46"/>
         <source>The file is not a valid XMLTV file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteka ni veljavna XMLTV datoteka.</translation>
     </message>
 </context>
 <context>

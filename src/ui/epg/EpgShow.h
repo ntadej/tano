@@ -19,7 +19,7 @@
 #ifndef TANO_EPGSHOW_H_
 #define TANO_EPGSHOW_H_
 
-#include <QtGui/QStackedWidget>
+#include <QtGui/QWidget>
 
 #include "core/Enums.h"
 
@@ -28,11 +28,10 @@ namespace Ui
 	class EpgShow;
 }
 
-class EpgShowInfo;
-class EpgSloveniaLoader;
 class GetFile;
+class XmltvProgramme;
 
-class EpgShow : public QStackedWidget
+class EpgShow : public QWidget
 {
 Q_OBJECT
 public:
@@ -43,25 +42,23 @@ protected:
 	void changeEvent(QEvent *e);
 
 public slots:
-	void get(const QString &id);
-	void setEpgType(const Tano::EpgType type);
+	void display(XmltvProgramme *programme);
+
+signals:
+	void requestNext(XmltvProgramme *);
+	void requestPrevious(XmltvProgramme *);
 
 private slots:
-	void display(const EpgShowInfo &info);
 	void image(const QString &image);
 	void next();
 	void previous();
 
 private:
-	QString processUrl(const QString &url) const;
-
 	Ui::EpgShow *ui;
 
-	QString _epgNext;
-	QString _epgPrevious;
+	XmltvProgramme *_current;
+
 	GetFile *_image;
-	EpgSloveniaLoader *_slovenia;
-	Tano::EpgType _type;
 };
 
 #endif // TANO_EPGSHOW_H_

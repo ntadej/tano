@@ -16,20 +16,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/epgold/EpgShowInfo.h"
+#include "container/xmltv/XmltvProgramme.h"
 #include "core/GetFile.h"
-#include "epg/EpgSloveniaLoader.h"
 
 #include "EpgShow.h"
 #include "ui_EpgShow.h"
 
 EpgShow::EpgShow(QWidget *parent)
-	: QStackedWidget(parent),
+	: QWidget(parent),
 	ui(new Ui::EpgShow),
-	_image(new GetFile()),
-	_slovenia(new EpgSloveniaLoader()),
-	_epgNext(""),
-	_epgPrevious("")
+	_image(new GetFile())
 {
 	ui->setupUi(this);
 
@@ -43,12 +39,11 @@ EpgShow::~EpgShow()
 {
 	delete ui;
 	delete _image;
-	delete _slovenia;
 }
 
 void EpgShow::changeEvent(QEvent *e)
 {
-	QStackedWidget::changeEvent(e);
+	QWidget::changeEvent(e);
 	switch (e->type()) {
 		case QEvent::LanguageChange:
 			ui->retranslateUi(this);
@@ -58,48 +53,20 @@ void EpgShow::changeEvent(QEvent *e)
 	}
 }
 
-void EpgShow::get(const QString &id)
+void EpgShow::display(XmltvProgramme *programme)
 {
-	setCurrentIndex(0);
+	_current = programme;
 
-	setWindowTitle(tr("Show info"));
-	ui->labelTitle->setText("");
-	ui->labelTime->setText("");
-	ui->labelInfo->setText("");
+	setWindowTitle(programme->title());
+	ui->labelTitle->setText("<h1>" + programme->title() + "</h1>");
+	ui->labelTime->setText("<h2>" + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</h2>");
+	ui->labelInfo->setText("<h3>" + programme->channel() + "</h3>");
 	ui->labelDescription->setText("");
 	ui->labelPhoto->setPixmap(QPixmap(":/icons/48x48/image.png"));
 
+	//_image->getFile(info.image());
+
 	show();
-
-	if(_type == Tano::Slovenia)
-		_slovenia->getShowInfo(processUrl(id));
-}
-
-void EpgShow::setEpgType(const Tano::EpgType type)
-{
-	disconnect(_slovenia, SIGNAL(showInfo(EpgShowInfo)), this, SLOT(display(EpgShowInfo)));
-
-	_type = type;
-
-	if(_type == Tano::Slovenia) {
-		connect(_slovenia, SIGNAL(showInfo(EpgShowInfo)), this, SLOT(display(EpgShowInfo)));
-	}
-}
-
-void EpgShow::display(const EpgShowInfo &info)
-{
-	setWindowTitle(info.title());
-	ui->labelTitle->setText("<h1>" + info.title() + "</h1>");
-	ui->labelTime->setText("<h2>" + info.startTime().toString("dddd, d.M.yyyy") + " (" + info.startTime().toString("hh:mm") + " - " + info.endTime().toString("hh:mm") + ")</h2>");
-	ui->labelInfo->setText("<h3>" + info.info() + "</h3>");
-	ui->labelDescription->setText(info.description());
-
-	_image->getFile(info.image());
-
-	_epgPrevious = info.previous();
-	_epgNext = info.next();
-
-	setCurrentIndex(1);
 }
 
 void EpgShow::image(const QString &image)
@@ -109,21 +76,16 @@ void EpgShow::image(const QString &image)
 
 void EpgShow::next()
 {
-	if(_epgNext.isEmpty())
-		return;
+	//if(_epgNext.isEmpty())
+	//	return;
 
-	get(_epgNext);
+	emit requestNext(_current);
 }
 
 void EpgShow::previous()
 {
-	if(_epgPrevious.isEmpty())
-		return;
+	//if(_epgPrevious.isEmpty())
+	//	return;
 
-	get(_epgPrevious);
-}
-
-QString EpgShow::processUrl(const QString &url) const
-{
-	return QString(url).replace(QRegExp("day=.&amp;"), "");
+	emit requestPrevious(_current);
 }

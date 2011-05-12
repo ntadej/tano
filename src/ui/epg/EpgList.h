@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,11 +9,11 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_EPGLIST_H_
@@ -21,36 +21,35 @@
 
 #include <QtCore/QMap>
 #include <QtGui/QAction>
+#include <QtGui/QListWidget>
 #include <QtGui/QMenu>
 #include <QtGui/QMouseEvent>
-#include <QtGui/QTableWidget>
 
-#include "container/epgold/EpgDayList.h"
+class XmltvProgramme;
 
-class EpgList : public QTableWidget
+class EpgList : public QListWidget
 {
 Q_OBJECT
 public:
 	EpgList(QWidget *parent = 0);
 	~EpgList();
 
-	void clearList();
-
 public slots:
-	void setEpg(const EpgDayList &epg);
+	void setEpg(const QList<XmltvProgramme *> &epg);
 
 signals:
-	void urlClicked(QString);
+	void itemClicked(XmltvProgramme *);
 
 protected:
 	void mouseReleaseEvent(QMouseEvent *event);
 
 private slots:
-	void clicked(QTableWidgetItem *item = 0);
+	void clicked(QListWidgetItem *item = 0);
 
 private:
+	QMap<QListWidgetItem *, XmltvProgramme *> _list;
+
 	QAction *_info;
-	EpgDayList _list;
 	QAction *_record;
 	QMenu *_rightMenu;
 };

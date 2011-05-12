@@ -41,7 +41,7 @@
 MainWindow::MainWindow(QWidget *parent)	:
 	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()), _update(new UpdateDialog()),
 	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0), _udpxy(new Udpxy()),
-	_playlistEditor(0), _epg(new EpgManager()), _xmltv(new XmltvManager()), _epgShow(new EpgShow()), _schedule(new EpgFull())
+	_playlistEditor(0), _xmltv(new XmltvManager()), _epgShow(new EpgShow()), _schedule(new EpgScheduleFull())
 {
 	QPixmap pixmap(":/images/splash.png");
 	Settings *settings = new Settings(this);
@@ -267,17 +267,15 @@ void MainWindow::createConnections()
 	connect(ui->videoWidget, SIGNAL(mouseHide()), ui->infoWidget, SLOT(hide()));
 
 	connect(_xmltv, SIGNAL(epgCurrent(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
-	connect(_xmltv, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(EpgDayList, Tano::Id)));
-	connect(_xmltv, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), _schedule, SLOT(setEpg(EpgDayList, Tano::Id)));
+	connect(_xmltv, SIGNAL(epgSchedule(XmltvChannel *, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(XmltvChannel *, Tano::Id)));
+	connect(_xmltv, SIGNAL(epgSchedule(XmltvChannel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvChannel *, Tano::Id)));
 	connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _xmltv, SLOT(request(QString, Tano::Id)));
-
-	/*connect(_epg, SIGNAL(epgCurrent(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
-	connect(_epg, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(EpgDayList, Tano::Id)));
-	connect(_epg, SIGNAL(epgSchedule(EpgDayList, Tano::Id)), _schedule, SLOT(setEpg(EpgDayList, Tano::Id)));
-	connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _epg, SLOT(request(QString, Tano::Id)));*/
-	connect(_schedule, SIGNAL(urlClicked(QString)), _epgShow, SLOT(get(QString)));
-	connect(ui->scheduleWidget, SIGNAL(urlClicked(QString)), _epgShow, SLOT(get(QString)));
-	connect(ui->infoBarWidget, SIGNAL(open(QString)), _epgShow, SLOT(get(QString)));
+	connect(_schedule, SIGNAL(itemClicked(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
+	connect(_xmltv, SIGNAL(epgProgramme(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
+	connect(ui->scheduleWidget, SIGNAL(itemClicked(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
+	connect(ui->infoBarWidget, SIGNAL(open(QString)), _xmltv, SLOT(requestProgramme(QString)));
+	connect(_epgShow, SIGNAL(requestNext(XmltvProgramme *)), _xmltv, SLOT(requestProgrammeNext(XmltvProgramme*)));
+	connect(_epgShow, SIGNAL(requestPrevious(XmltvProgramme *)), _xmltv, SLOT(requestProgrammePrevious(XmltvProgramme*)));
 
 	connect(_update, SIGNAL(newUpdate()), ui->buttonUpdate, SLOT(show()));
 	connect(ui->buttonUpdate, SIGNAL(clicked()), _update, SLOT(check()));
@@ -474,7 +472,6 @@ void MainWindow::play(const QString &itemFile)
 		ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
 		//ui->infoBarWidget->setLogo(_channel->logo());
 
-		//_epg->request(_channel->epg(), Tano::Main);
 		_xmltv->request(_channel->epg(), Tano::Main);
 		ui->channelNumber->display(_channel->number());
 
@@ -498,13 +495,11 @@ void MainWindow::stop()
 		_menuCrop->original()->trigger();
 	}
 
-	_epg->stop();
 	_xmltv->stop();
 
 	ui->infoBarWidget->clear();
 	ui->actionTeletext->setChecked(false);
 
-	ui->scheduleWidget->clear();
 	ui->scheduleWidget->setPage(0);
 
 	tooltip();
@@ -549,10 +544,7 @@ void MainWindow::openPlaylist(const bool &start)
 	connect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
 	mouseWheel();
 
-	Tano::EpgType epgType = Tano::Slovenia;
 	ui->channelToolBox->setItemText(0,ui->playlistWidget->name());
-	_epg->setEpg(ui->playlistWidget->epg(), epgType);
-	_epgShow->setEpgType(epgType);
 }
 void MainWindow::openFile()
 {

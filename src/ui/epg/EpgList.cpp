@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,34 +9,26 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QHeaderView>
-#include <QtGui/QTableWidget>
-
-#include "container/epgold/EpgItem.h"
-
+#include "container/xmltv/XmltvProgramme.h"
 #include "EpgList.h"
 
 EpgList::EpgList(QWidget *parent)
-    : QTableWidget(parent)
+	: QListWidget(parent)
 {
-	setColumnCount(1);
-	horizontalHeader()->setStretchLastSection(true);
-	verticalHeader()->hide();
+	setAlternatingRowColors(true);
 
 	_rightMenu = new QMenu();
 	_info = new QAction(QIcon(":/icons/24x24/calendar.png"), tr("Show information"), this);
 	_record = new QAction(QIcon(":/icons/24x24/record.png"), tr("Record"), this);
 	_rightMenu->addAction(_info);
 	//_rightMenu->addAction(_record);
-
-	clearList();
 
 	connect(_info, SIGNAL(triggered()), this, SLOT(clicked()));
 }
@@ -58,33 +50,22 @@ void EpgList::mouseReleaseEvent(QMouseEvent *event)
 	}
 }
 
-void EpgList::setEpg(const EpgDayList &epg)
+void EpgList::setEpg(const QList<XmltvProgramme *> &epg)
 {
-	clearList();
-	_list = epg;
+	clear();
+	_list.clear();
 
-	setRowCount(epg.size());
-
-	QStringList epgHeader;
-	epgHeader << epg.channel() + ", " + epg.date().addDays(epg.day()).toString("dd.MM.yyyy");
-	this->setHorizontalHeaderLabels(epgHeader);
-
-	for (int i = 0; i < epg.size(); i++) {
-		QTableWidgetItem *newItem = new QTableWidgetItem(QString(epg[i].time().toString("hh:mm") + " - " + epg[i].title()));
-		newItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
-		setItem(i, 0, newItem);
+	for(int i = 0; i < epg.size(); i++) {
+		addItem(QString("%1 - %2").arg(epg[i]->start().toString("hh:mm"), epg[i]->title()));
+		_list.insert(item(count() - 1), epg[i]);
+		item(count() - 1)->setIcon(QIcon(":/icons/16x16/calendar.png"));
 	}
 }
 
-void EpgList::clearList() {
-	clear();
-	setRowCount(0);
-	setHorizontalHeaderLabels(QStringList() << tr("No EPG"));
-}
-
-void EpgList::clicked(QTableWidgetItem *item) {
+void EpgList::clicked(QListWidgetItem *item)
+{
 	if(item == 0)
-		emit urlClicked(_list[row(currentItem())].url());
+		emit itemClicked(_list[currentItem()]);
 	else
-		emit urlClicked(_list[row(item)].url());
+		emit itemClicked(_list[item]);
 }

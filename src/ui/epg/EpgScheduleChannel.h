@@ -16,44 +16,44 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_EPGFULL_H_
-#define TANO_EPGFULL_H_
+#ifndef TANO_EPGSCHEDULECHANNEL_H_
+#define TANO_EPGSCHEDULECHANNEL_H_
 
-#include <QtGui/QTreeWidgetItem>
-#include <QtGui/QWidget>
+#include <QtGui/QStackedWidget>
 
 #include "core/Enums.h"
 
 namespace Ui
 {
-	class EpgFull;
+	class EpgScheduleChannel;
 }
 
-class EpgDayList;
+class XmltvChannel;
+class XmltvProgramme;
 
-class EpgFull : public QWidget
+class EpgScheduleChannel : public QStackedWidget
 {
 Q_OBJECT
 public:
-	EpgFull(QWidget *parent = 0);
-	~EpgFull();
+	EpgScheduleChannel(QWidget *parent = 0);
+	~EpgScheduleChannel();
 
-	void openPlaylist(const QString &p);
+public slots:
+	void setEpg(XmltvChannel *epg,
+				const Tano::Id &id);
+	void setIdentifier(const Tano::Id &identifier) { _id = identifier; }
+	void setPage(const int &id);
 
 protected:
 	void changeEvent(QEvent *e);
 
 signals:
-	void requestEpg(QString, Tano::Id);
-	void urlClicked(QString);
-
-private slots:
-	void channel(QTreeWidgetItem *item);
-	void setEpg(const EpgDayList &list,
-				const Tano::Id &identifier);
+	void itemClicked(XmltvProgramme *);
 
 private:
-	Ui::EpgFull *ui;
+	Ui::EpgScheduleChannel *ui;
+
+	Tano::Id _id;
 };
 
-#endif // TANO_EPGFULL_H_
+#endif // EPGSCHEDULECHANNEL_H_

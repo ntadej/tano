@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,52 +9,52 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_EPGSCHEDULE_H_
-#define TANO_EPGSCHEDULE_H_
+#ifndef TANO_EPGSCHEDULEFULL_H_
+#define TANO_EPGSCHEDULEFULL_H_
 
-#include <QtGui/QStackedWidget>
+#include <QtGui/QTreeWidgetItem>
+#include <QtGui/QWidget>
 
 #include "core/Enums.h"
 
 namespace Ui
 {
-	class EpgSchedule;
+	class EpgScheduleFull;
 }
 
-class EpgDayList;
+class EpgScheduleChannel;
+class XmltvChannel;
+class XmltvProgramme;
 
-class EpgSchedule : public QStackedWidget
+class EpgScheduleFull : public QWidget
 {
 Q_OBJECT
 public:
-	EpgSchedule(QWidget *parent = 0);
-	~EpgSchedule();
+	EpgScheduleFull(QWidget *parent = 0);
+	~EpgScheduleFull();
 
-	void clear();
-
-public slots:
-	void setEpg(const EpgDayList &epg,
-				const Tano::Id &id);
-	void setIdentifier(const Tano::Id &identifier) { _id = identifier; }
-	void setPage(const int &id);
+	void openPlaylist(const QString &p);
+	EpgScheduleChannel *schedule();
 
 protected:
 	void changeEvent(QEvent *e);
 
 signals:
-	void urlClicked(const QString);
+	void itemClicked(XmltvProgramme *);
+	void requestEpg(QString, Tano::Id);
+
+private slots:
+	void channel(QTreeWidgetItem *item);
 
 private:
-	Ui::EpgSchedule *ui;
-
-	Tano::Id _id;
+	Ui::EpgScheduleFull *ui;
 };
 
-#endif // EPGSCHEDULE_H_
+#endif // TANO_EPGSCHEDULEFULL_H_
