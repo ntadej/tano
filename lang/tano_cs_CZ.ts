@@ -413,7 +413,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation type="unfinished"></translation>
+        <translation>Teletext</translation>
     </message>
 </context>
 <context>
@@ -738,90 +738,90 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>M3U (Original)</source>
-        <translation type="unfinished"></translation>
+        <translation>M3U (původní)</translation>
     </message>
     <message>
         <source>Export to original M3U format</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyvést do původního formátu M3U</translation>
     </message>
     <message>
         <source>M3U (original) list files (*.m3u)</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory s (původními) seznamy M3U (*.m3u)</translation>
     </message>
     <message>
         <source>Export to Comma-separated values file</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyvést do souboru s hodnotami oddělenými čárkou</translation>
     </message>
     <message>
         <source>Import Comma-separated values file</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavést soubor s hodnotami oddělenými čárkou</translation>
     </message>
     <message>
         <source>CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV</translation>
     </message>
     <message>
         <source>Comma-separated values file (*.csv *.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor s hodnotami oddělenými čárkou (*.csv *.txt)</translation>
     </message>
 </context>
 <context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
-        <translation type="unfinished"></translation>
+        <translation>Stavba souboru s hodnotami oddělenými čárkou (CSV)</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Oddělovač:</translation>
     </message>
     <message>
         <source>;</source>
-        <translation type="unfinished"></translation>
+        <translation>;</translation>
     </message>
     <message>
         <source>First line:</source>
-        <translation type="unfinished"></translation>
+        <translation>První řádek:</translation>
     </message>
     <message>
         <source>First line contains column names</source>
-        <translation type="unfinished"></translation>
+        <translation>První řádek obsahuje názvy sloupců</translation>
     </message>
     <message>
         <source>First line does not contain column names</source>
-        <translation type="unfinished"></translation>
+        <translation>První řádek neobsahuje názvy sloupců</translation>
     </message>
     <message>
         <source>Column list:</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam sloupců:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Řaďte, prosím, své sloupce od prvního po poslední.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Číslo</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation type="unfinished">Program</translation>
+        <translation>Program</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation type="unfinished">Skupiny</translation>
+        <translation>Skupiny</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Jazyk</translation>
+        <translation>Jazyk</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation type="unfinished"></translation>
+        <translation>ID EPG</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation type="unfinished">Adresa (URL)</translation>
+        <translation>Adresa (URL)</translation>
     </message>
 </context>
 <context>
@@ -852,7 +852,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Import type</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavést typ</translation>
     </message>
 </context>
 <context>
@@ -870,29 +870,29 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistSelect</name>
     <message>
         <source>Select</source>
-        <translation type="unfinished">Vybrat</translation>
+        <translation>Vybrat</translation>
     </message>
     <message>
         <source>Select your playlist</source>
-        <translation type="unfinished">Vyberte svůj seznam programů</translation>
+        <translation>Vyberte svůj seznam programů</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation type="unfinished">Země:</translation>
+        <translation>Země:</translation>
     </message>
     <message>
         <source>Select your country from the menu below.
 Then select your playlist.</source>
-        <translation type="unfinished">Vyberte svoji zemi z nabídky níže.
+        <translation>Vyberte svoji zemi z nabídky níže.
 Potom vyberte svůj seznam programů.</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation type="unfinished">Seznam programů:</translation>
+        <translation>Seznam programů:</translation>
     </message>
 </context>
 <context>
@@ -1082,35 +1082,35 @@ Potom vyberte svůj seznam programů.</translation>
     </message>
     <message>
         <source>The file is not a playlist list file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor není souborem se seznamem programů.</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation type="unfinished">Program</translation>
+        <translation>Program</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation type="unfinished">Adresa (URL)</translation>
+        <translation>Adresa (URL)</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation type="unfinished">Skupiny</translation>
+        <translation>Skupiny</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Jazyk</translation>
+        <translation>Jazyk</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation type="unfinished"></translation>
+        <translation>ID EPG</translation>
     </message>
     <message>
         <source>CSV Imported Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavedený seznam programů CSV</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Číslo</translation>
     </message>
 </context>
 <context>
@@ -1383,23 +1383,23 @@ Potom vyberte svůj seznam programů.</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpora UDPXY</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit podporu UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation type="unfinished"></translation>
+        <translation>IP nebo název směrovače:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Přípojka směrovače:</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
@@ -1604,18 +1604,18 @@ Potom vyberte svůj seznam programů.</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation type="unfinished"></translation>
+        <translation>Teletext</translation>
     </message>
 </context>
 <context>
     <name>Teletext</name>
     <message>
         <source>Teletext</source>
-        <translation type="unfinished"></translation>
+        <translation>Teletext</translation>
     </message>
     <message>
         <source>Teletext Transparency</source>
-        <translation type="unfinished"></translation>
+        <translation>Průhlednost teletextu</translation>
     </message>
 </context>
 <context>

@@ -139,7 +139,7 @@ IF(DBUS_FOUND)
 		data/logo/64x64/logo-recorder.png
 	)
 ENDIF(DBUS_FOUND)
-
+SET(Tano_Playlists ${CMAKE_SOURCE_DIR}/playlists/playlists.xml)
 FILE(GLOB Tano_Playlists_Int ${CMAKE_SOURCE_DIR}/playlists/int/*.m3u)
 FILE(GLOB Tano_Playlists_Ru ${CMAKE_SOURCE_DIR}/playlists/ru/*.m3u)
 FILE(GLOB Tano_Playlists_Sl ${CMAKE_SOURCE_DIR}/playlists/sl/*.m3u)
@@ -223,6 +223,7 @@ ENDIF(MINGW)
 # Install data
 INSTALL(FILES ${Tano_Files} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
 # Install playlists
+INSTALL(FILES ${Tano_Playlists} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/playlists")
 INSTALL(FILES ${Tano_Playlists_Int} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/playlists/int")
 INSTALL(FILES ${Tano_Playlists_Ru} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/playlists/ru")
 INSTALL(FILES ${Tano_Playlists_Sl} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/playlists/sl")
