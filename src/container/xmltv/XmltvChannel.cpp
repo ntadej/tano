@@ -24,7 +24,11 @@ XmltvChannel::XmltvChannel(const QString &id)
 
 XmltvChannel::~XmltvChannel() { }
 
-void XmltvChannel::addProgramme(XmltvProgramme *p)
+void XmltvChannel::setDisplayName(const QString &s)
 {
-	_programme.append(p);
+	_displayName = s;
+
+	for(int i = 0; i < _programme.size(); i++) {
+		_programme[i]->setChannelDisplayName(s);
+	}
 }

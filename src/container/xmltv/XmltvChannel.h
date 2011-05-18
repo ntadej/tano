@@ -32,14 +32,14 @@ public:
 
 	QString id() const { return _id; }
 	QString displayName() const { return _displayName; }
-	void setDisplayName(const QString &s) { _displayName = s; }
+	void setDisplayName(const QString &s);
 	QString icon() const { return _icon; }
 	void setIcon(const QString &s) { _icon = s; }
 	QString url() const { return _url; }
 	void setUrl(const QString &s) { _url = s; }
 
 	QList<XmltvProgramme *> programme() const { return _programme; }
-	void addProgramme(XmltvProgramme *p);
+	void addProgramme(XmltvProgramme *p) { _programme << p; }
 
 private:
 	QString _id;

@@ -69,6 +69,7 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
 			QString start = attributes.value("start").replace(Tano::Xmltv::dateRegExp(), "");
 			QString stop = attributes.value("stop").replace(Tano::Xmltv::dateRegExp(), "");
 			_currentProgramme = new XmltvProgramme(attributes.value("channel"));
+			_currentProgramme->setChannelDisplayName(_list->channel(attributes.value("channel"))->displayName());
 			_currentProgramme->setStart(QDateTime::fromString(start, Tano::Xmltv::dateFormat()));
 			_currentProgramme->setStop(QDateTime::fromString(stop, Tano::Xmltv::dateFormat()));
 			_list->channel(attributes.value("channel"))->addProgramme(_currentProgramme);
@@ -95,6 +96,63 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
 	} else if(qName == "title") { // Programme
 		if(_list && _currentProgramme) {
 			_currentProgramme->setTitle(_currentText);
+		}
+	} else if(qName == "sub-title") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->setSubTitle(_currentText);
+		}
+	} else if(qName == "desc") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->setDesc(_currentText);
+		}
+	} else if(qName == "director") { // Programme credits
+		if(_list && _currentProgramme) {
+			_currentProgramme->addDirector(_currentText);
+		}
+	} else if(qName == "actor") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addActor(_currentText);
+		}
+	} else if(qName == "writer") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addWriter(_currentText);
+		}
+	} else if(qName == "adapter") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addAdapter(_currentText);
+		}
+	} else if(qName == "producer") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addProducer(_currentText);
+		}
+	} else if(qName == "composer") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addComposer(_currentText);
+		}
+	} else if(qName == "editor") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addEditor(_currentText);
+		}
+	} else if(qName == "presenter") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addPresenter(_currentText);
+		}
+	} else if(qName == "commentator") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addCommentator(_currentText);
+		}
+	} else if(qName == "guest") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addGuest(_currentText);
+		}
+	} else if(qName == "date") { // Programme - continuation
+		if(_list && _currentProgramme) {
+			QString date = _currentText.replace(Tano::Xmltv::dateRegExp(), "");
+			_currentProgramme->setDate(QDateTime::fromString(date, Tano::Xmltv::dateFormat()));
+		}
+	} else if(qName == "category") {
+		if(_list && _currentProgramme) {
+			_currentProgramme->addCategory(_currentText);
 		}
 	}
 
