@@ -30,6 +30,7 @@
 #include "core/Settings.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
+#include "ui/playlist/PlaylistExportTvheadend.h"
 #include "ui/playlist/PlaylistImportCSV.h"
 #include "ui/playlist/PlaylistImportWeb.h"
 
@@ -302,6 +303,16 @@ void PlaylistEdit::exportCSV()
 		return;
 
 	ui->playlist->exportCSV(fileName);
+}
+
+void PlaylistEdit::exportTvheadend()
+{
+	PlaylistExportTvheadend dialog;
+	dialog.exec();
+	if(!dialog.proceed())
+		return;
+
+	ui->playlist->exportTvheadend(dialog.location(), dialog.interface(), dialog.xmltv());
 }
 
 void PlaylistEdit::importCSV()

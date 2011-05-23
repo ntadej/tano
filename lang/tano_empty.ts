@@ -737,6 +737,29 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>PlaylistExportTvheadend</name>
+    <message>
+        <source>Export to Tvheadend IP TV services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network interface:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV suffix:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>

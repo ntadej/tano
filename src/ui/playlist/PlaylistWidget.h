@@ -51,6 +51,9 @@ public:
 	void exportJs(const QString &file);
 	void importJs(const QString &file);
 	void importTanoOld(const QString &file);
+	void exportTvheadend(const QString &location,
+						 const QString &interface,
+						 const QString &xmltv);
 
 	QTreeWidgetItem* createItem(const QString &name = 0,
 								const QString &url = 0);

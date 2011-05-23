@@ -27,6 +27,7 @@
 #include "playlist/JsGenerator.h"
 #include "playlist/M3UGenerator.h"
 #include "playlist/PlaylistHandler.h"
+#include "playlist/TvheadendGenerator.h"
 
 PlaylistWidget::PlaylistWidget(QWidget *parent)
 	: QWidget(parent),
@@ -185,6 +186,15 @@ void PlaylistWidget::importTanoOld(const QString &file)
 {
 	_handler->clear();
 	_handler->importOldFormat(file);
+}
+
+void PlaylistWidget::exportTvheadend(const QString &location,
+									 const QString &interface,
+									 const QString &xmltv)
+{
+	TvheadendGenerator *generator = new TvheadendGenerator(ui->treeWidget, _handler->channelMap(), location, interface, xmltv);
+	generator->write();
+	delete generator;
 }
 
 void PlaylistWidget::processPlaylist()

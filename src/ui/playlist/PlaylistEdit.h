@@ -71,6 +71,7 @@ private slots:
 	void importJs();
 	void importTanoOld();
 	void importWeb();
+	void exportTvheadend();
 	void print();
 
 	void menuOpenExport();
