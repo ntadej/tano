@@ -16,6 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QDir>
+#include <QtGui/QFileDialog>
+
 #include "PlaylistExportTvheadend.h"
 #include "ui_PlaylistExportTvheadend.h"
 
@@ -27,6 +30,7 @@ PlaylistExportTvheadend::PlaylistExportTvheadend(QWidget *parent)
 	ui->setupUi(this);
 
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton *)), this, SLOT(action(QAbstractButton *)));
+    connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(browse()));
 }
 
 PlaylistExportTvheadend::~PlaylistExportTvheadend()
@@ -59,6 +63,18 @@ void PlaylistExportTvheadend::action(QAbstractButton *button)
 		default:
 			break;
 	}
+}
+
+void PlaylistExportTvheadend::browse()
+{
+    QString dir;
+    if(ui->editLocation->text().isEmpty())
+        dir = QDir::homePath();
+    else
+        dir = ui->editLocation->text();
+    QString file = QFileDialog::getExistingDirectory(this, tr("Open directory"),
+                                                    dir, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    ui->editLocation->setText(file);
 }
 
 QString PlaylistExportTvheadend::interface() const

@@ -735,6 +735,10 @@ You will lose any unsaved changes.</source>
         <source>Comma-separated values file (*.csv *.txt)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Tvheadend</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
@@ -756,6 +760,14 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>XMLTV suffix:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1104,6 +1116,11 @@ Then select your playlist.</source>
     </message>
     <message>
         <source>The file is not a valid XMLTV file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

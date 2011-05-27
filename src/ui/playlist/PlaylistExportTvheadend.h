@@ -43,6 +43,7 @@ protected:
 
 private slots:
 	void action(QAbstractButton *button);
+    void browse();
 
 private:
 	Ui::PlaylistExportTvheadend *ui;

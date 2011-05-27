@@ -602,6 +602,15 @@
     <string>CSV</string>
    </property>
   </action>
+  <action name="actionExportTvheadend">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/export.png</normaloff>:/icons/24x24/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tvheadend</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

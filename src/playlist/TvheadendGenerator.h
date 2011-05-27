@@ -19,7 +19,6 @@
 #ifndef TANO_TVHEADENDGENERATOR_H_
 #define TANO_TVHEADENDGENERATOR_H_
 
-#include <QtCore/QTextStream>
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
@@ -38,12 +37,14 @@ public:
 	bool write();
 
 private:
+    QString fileChannel(const int &number) const;
+    QString fileIpService(const int &number) const;
 	void generateItem(Channel *channel);
+    QString indent(const int &indentLevel) const;
 
 	bool _header;
 
 	QTreeWidget *_treeWidget;
-	QTextStream _out;
 
 	QMap<QTreeWidgetItem *, Channel *> _map;
 

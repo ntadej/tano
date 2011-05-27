@@ -70,6 +70,7 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 	_menuExport->addAction(ui->actionExportM3UClean);
 	_menuExport->addAction(ui->actionExportCSV);
 	_menuExport->addAction(ui->actionExportJs);
+    _menuExport->addAction(ui->actionExportTvheadend);
 
 	_menuImport = new QMenu();
 	_menuImport->addAction(ui->actionImportDownload);
@@ -127,6 +128,7 @@ void PlaylistEdit::createConnections()
 	connect(ui->actionExportM3UClean, SIGNAL(triggered()), this, SLOT(exportM3UClean()));
 	connect(ui->actionExportCSV, SIGNAL(triggered()), this, SLOT(exportCSV()));
 	connect(ui->actionExportJs, SIGNAL(triggered()), this, SLOT(exportJs()));
+    connect(ui->actionExportTvheadend, SIGNAL(triggered()), this, SLOT(exportTvheadend()));
 	connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(menuOpenImport()));
 	connect(ui->actionImportDownload, SIGNAL(triggered()), this, SLOT(importWeb()));
 	connect(ui->actionImportCSV, SIGNAL(triggered()), this, SLOT(importCSV()));
