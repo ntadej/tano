@@ -88,13 +88,10 @@ void TvheadendGenerator::generateItem(Channel *channel)
          << indent(1) << "]," << "\n"
          << indent(1) << "\"dvr_extra_time_pre\": 0," << "\n"
          << indent(1) << "\"dvr_extra_time_post\": 0," << "\n"
-         << indent(1) << "\"channel_number\": " << channel->number() << "," << "\n"
+         << indent(1) << "\"channel_number\": " << channel->number() << "\n"
          << "}" << "\n";
 
-    fChannel.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner |
-                            QFile::ReadUser | QFile::WriteUser | QFile::ExeUser |
-                            QFile::ReadGroup | QFile::WriteGroup | QFile::ExeGroup |
-                            QFile::ReadOther | QFile::WriteOther | QFile::ExeOther);
+    fChannel.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
 
 
     QFile fIpService(fileIpService(channel->number()));
@@ -115,17 +112,13 @@ void TvheadendGenerator::generateItem(Channel *channel)
           << indent(1) << "\"channelname\": \"" << channel->name() << "\"," << "\n"
           << indent(1) << "\"mapped\": 1," << "\n"
           << indent(1) << "\"pcr\": 0," << "\n"
-          << indent(1) << "\"disabled\": 0," << "\n"
+          << indent(1) << "\"disabled\": 0" << "\n"
           << "}" << "\n";
 
-    fIpService.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner |
-                              QFile::ReadUser | QFile::WriteUser | QFile::ExeUser |
-                              QFile::ReadGroup | QFile::WriteGroup | QFile::ExeGroup |
-                              QFile::ReadOther | QFile::WriteOther | QFile::ExeOther);
+    fIpService.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
 }
 
 QString TvheadendGenerator::indent(const int &indentLevel) const
 {
-    const int IndentSize = 4;
-    return QString(IndentSize * indentLevel, ' ');
+    return QString(indentLevel, '\t');
 }

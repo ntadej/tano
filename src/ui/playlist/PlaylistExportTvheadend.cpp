@@ -31,6 +31,9 @@ PlaylistExportTvheadend::PlaylistExportTvheadend(QWidget *parent)
 
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton *)), this, SLOT(action(QAbstractButton *)));
     connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(browse()));
+
+    ui->editLocation->setText(QDir::homePath() + "/.hts/tvheadend");
+    ui->editInterface->setText("eth0");
 }
 
 PlaylistExportTvheadend::~PlaylistExportTvheadend()
