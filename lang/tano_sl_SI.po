@@ -116,57 +116,32 @@ msgstr ""
 "Dodatne pogoje in informacije si lahko preberete na spletni strani "
 "predvajalnika Tano."
 
-#: ../src/ui/epg/EpgFull.ui:14
-msgctxt "EpgFull|"
-msgid "Schedule"
-msgstr "Spored"
-
-#: ../src/ui/epg/EpgList.cpp:34
+#: ../src/ui/epg/EpgList.cpp:28
 msgctxt "EpgList|"
 msgid "Show information"
 msgstr "Pokaži podrobnosti"
 
-#: ../src/ui/epg/EpgList.cpp:35
+#: ../src/ui/epg/EpgList.cpp:29
 msgctxt "EpgList|"
 msgid "Record"
 msgstr "Snemaj"
 
-#: ../src/ui/epg/EpgList.cpp:82
-msgctxt "EpgList|"
-msgid "No EPG"
-msgstr "EPG ni na voljo"
-
-#: ../src/ui/epg/EpgSchedule.ui:44
-msgctxt "EpgSchedule|"
+#: ../src/ui/epg/EpgScheduleChannel.ui:47
+msgctxt "EpgScheduleChannel|"
 msgid "<h2>No EPG</h2>"
 msgstr "<h2>EPG ni na voljo</h2>"
 
-#: ../src/ui/epg/EpgSchedule.cpp:71
-msgctxt "EpgSchedule|"
-msgid "Today"
-msgstr "danes"
+#: ../src/ui/epg/EpgScheduleFull.ui:14
+msgctxt "EpgScheduleFull|"
+msgid "Schedule"
+msgstr "Spored"
 
-#: ../src/ui/epg/EpgSchedule.cpp:76
-msgctxt "EpgSchedule|"
-msgid "Tomorrow"
-msgstr "jutri"
-
-#: ../src/ui/epg/EpgShow.cpp:65
-msgctxt "EpgShow|"
-msgid "Show info"
-msgstr "Informacija o oddaji"
-
-#: ../src/ui/epg/EpgShow.ui:38
-msgctxt "EpgShow|"
-msgid "<h1>Loading...</h1>"
-msgstr "<h1>Nalagam...</h1>"
-
-#: ../src/ui/epg/EpgShow.ui:130
+#: ../src/ui/epg/EpgShow.ui:105
 msgctxt "EpgShow|"
 msgid "Previous"
 msgstr "Prejšnja oddaja"
 
-#: ../src/ui/epg/EpgShow.ui:201
+#: ../src/ui/epg/EpgShow.ui:134
 msgctxt "EpgShow|"
 msgid "Next"
 msgstr "Naslednja oddaja"
@@ -282,9 +257,9 @@ msgid "Open"
 msgstr "Odpri"
 
 #: ../src/ui/MainWindow.ui:366 ../src/ui/MainWindow.ui:369
-#: ../src/ui/MainWindow.ui:672 ../src/ui/MainWindow.cpp:447
-#: ../src/ui/MainWindow.cpp:448 ../src/ui/MainWindow.cpp:449
-#: ../src/ui/MainWindow.cpp:450
+#: ../src/ui/MainWindow.ui:672 ../src/ui/MainWindow.cpp:450
+#: ../src/ui/MainWindow.cpp:451 ../src/ui/MainWindow.cpp:452
+#: ../src/ui/MainWindow.cpp:453
 msgctxt "MainWindow|"
 msgid "Play"
 msgstr "Predvajaj"
@@ -299,11 +274,6 @@ msgstr "Ustavi"
 msgctxt "MainWindow|"
 msgid "Always on top"
 msgstr "Vedno na vrhu"
-
-#: ../src/ui/MainWindow.cpp:656
-msgctxt "MainWindow|"
-msgid "Restore"
-msgstr "Obnovi"
 
 #: ../src/ui/MainWindow.ui:717
 msgctxt "MainWindow|"
@@ -368,7 +338,7 @@ msgctxt "MainWindow|"
 msgid "&Open channel list"
 msgstr "&Odpri seznam programov"
 
-#: ../src/ui/MainWindow.ui:615 ../src/ui/MainWindow.cpp:522
+#: ../src/ui/MainWindow.ui:615 ../src/ui/MainWindow.cpp:524
 msgctxt "MainWindow|"
 msgid "Open channel list"
 msgstr "Odpri seznam programov"
@@ -422,41 +392,46 @@ msgstr ""
 "Ali želite zapreti Tano?\n"
 "To bo ustavilo trenutno snemanje."
 
-#: ../src/ui/MainWindow.cpp:436 ../src/ui/MainWindow.cpp:437
-#: ../src/ui/MainWindow.cpp:438 ../src/ui/MainWindow.cpp:439
+#: ../src/ui/MainWindow.cpp:439 ../src/ui/MainWindow.cpp:440
+#: ../src/ui/MainWindow.cpp:441 ../src/ui/MainWindow.cpp:442
 msgctxt "MainWindow|"
 msgid "Pause"
-msgstr "Premor"
+msgstr "Prekini"
 
-#: ../src/ui/MainWindow.cpp:458
+#: ../src/ui/MainWindow.cpp:461
 msgctxt "MainWindow|"
 msgid "Buffering..."
 msgstr "Nalagam..."
 
-#: ../src/ui/MainWindow.cpp:524
+#: ../src/ui/MainWindow.cpp:526
 msgctxt "MainWindow|"
 msgid "Tano TV channel list files(*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/MainWindow.cpp:553
+#: ../src/ui/MainWindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Open file or URL"
 msgstr "Odpri datoteko ali URL"
 
-#: ../src/ui/MainWindow.cpp:555
+#: ../src/ui/MainWindow.cpp:554
 msgctxt "MainWindow|"
 msgid "Multimedia files(*)"
 msgstr "Multimedijske datoteke(*)"
 
-#: ../src/ui/MainWindow.cpp:566
+#: ../src/ui/MainWindow.cpp:565
 msgctxt "MainWindow|"
 msgid "Open URL or stream"
-msgstr "Odpri URL ali spletni vir"
+msgstr "Odpri URL ali drug pretočni vir"
 
-#: ../src/ui/MainWindow.cpp:567
+#: ../src/ui/MainWindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Enter the URL of multimedia file or stream you want to play:"
 msgstr "Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:"
+
+#: ../src/ui/MainWindow.cpp:655
+msgctxt "MainWindow|"
+msgid "Restore"
+msgstr "Obnovi"
 
 #: ../src/ui/MainWindow.ui:257 ../src/ui/MainWindow.ui:843
 msgctxt "MainWindow|"
@@ -469,7 +444,7 @@ msgid "&Options"
 msgstr "&Možnosti"
 
 #: ../src/ui/MainWindow.ui:14 ../src/ui/MainWindow.cpp:76
-#: ../src/ui/MainWindow.cpp:612 ../src/ui/MainWindow.cpp:614
+#: ../src/ui/MainWindow.cpp:611 ../src/ui/MainWindow.cpp:613
 msgctxt "MainWindow|"
 msgid "Tano"
 msgstr "Tano"
@@ -490,7 +465,7 @@ msgid "Info panel"
 msgstr "Info pult"
 
 #: ../src/ui/MainWindow.ui:702 ../src/ui/MainWindow.ui:705
-#: ../src/ui/MainWindow.cpp:653
+#: ../src/ui/MainWindow.cpp:652
 msgctxt "MainWindow|"
 msgid "Hide to tray"
 msgstr "Skrij v orodno vrstico"
@@ -635,7 +610,7 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Naslednja slikovna sled"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:14 ../src/ui/playlist/PlaylistEdit.cpp:177
+#: ../src/ui/playlist/PlaylistEdit.ui:14 ../src/ui/playlist/PlaylistEdit.cpp:180
 msgctxt "PlaylistEdit|"
 msgid "Tano Editor"
 msgstr "Tano Urejevalnik"
@@ -769,8 +744,8 @@ msgid "Move down"
 msgstr "Premakni navzdol"
 
 #: ../src/ui/playlist/PlaylistEdit.ui:569
-#: ../src/ui/playlist/PlaylistEdit.cpp:223
-#: ../src/ui/playlist/PlaylistEdit.cpp:229
+#: ../src/ui/playlist/PlaylistEdit.cpp:226
+#: ../src/ui/playlist/PlaylistEdit.cpp:232
 msgctxt "PlaylistEdit|"
 msgid "New playlist"
 msgstr "Nov seznam programov"
@@ -786,6 +761,11 @@ msgstr "M3U (Originalno)"
 msgctxt "PlaylistEdit|"
 msgid "CSV"
 msgstr "CSV"
+
+#: ../src/ui/playlist/PlaylistEdit.ui:611
+msgctxt "PlaylistEdit|"
+msgid "Tvheadend"
+msgstr "Tvheadend"
 
 #: ../src/ui/playlist/PlaylistEdit.ui:443 ../src/ui/playlist/PlaylistEdit.ui:446
 msgctxt "PlaylistEdit|"
@@ -837,79 +817,79 @@ msgctxt "PlaylistEdit|"
 msgid "Download from Web"
 msgstr "Prenesi s spleta"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:193
+#: ../src/ui/playlist/PlaylistEdit.cpp:196
 msgctxt "PlaylistEdit|"
 msgid "Open channel list"
 msgstr "Odpri seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:195
+#: ../src/ui/playlist/PlaylistEdit.cpp:198
 msgctxt "PlaylistEdit|"
 msgid "Tano TV channel list files(*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:271
+#: ../src/ui/playlist/PlaylistEdit.cpp:274
 msgctxt "PlaylistEdit|"
 msgid "Save channel list"
 msgstr "Shrani seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:273
+#: ../src/ui/playlist/PlaylistEdit.cpp:276
 msgctxt "PlaylistEdit|"
 msgid "Tano TV channel list files (*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:286
+#: ../src/ui/playlist/PlaylistEdit.cpp:289
 msgctxt "PlaylistEdit|"
 msgid "Export to original M3U format"
 msgstr "Izvozi v originalen M3U format"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:288
+#: ../src/ui/playlist/PlaylistEdit.cpp:291
 msgctxt "PlaylistEdit|"
 msgid "M3U (original) list files (*.m3u)"
 msgstr "M3U (originalen) datoteka seznama (*.m3u)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:298
+#: ../src/ui/playlist/PlaylistEdit.cpp:301
 msgctxt "PlaylistEdit|"
 msgid "Export to Comma-separated values file"
 msgstr "Izvozi v datoteko CSV"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:300
-#: ../src/ui/playlist/PlaylistEdit.cpp:312
+#: ../src/ui/playlist/PlaylistEdit.cpp:303
+#: ../src/ui/playlist/PlaylistEdit.cpp:325
 msgctxt "PlaylistEdit|"
 msgid "Comma-separated values file (*.csv *.txt)"
 msgstr "CSV datoteka (*.csv *.txt)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:310
+#: ../src/ui/playlist/PlaylistEdit.cpp:323
 msgctxt "PlaylistEdit|"
 msgid "Import Comma-separated values file"
 msgstr "Uvozi datoteko CSV"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:329
+#: ../src/ui/playlist/PlaylistEdit.cpp:342
 msgctxt "PlaylistEdit|"
 msgid "Export to Sagem JS channel list"
 msgstr "Izvozi v Sagem JS seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:331
-#: ../src/ui/playlist/PlaylistEdit.cpp:343
+#: ../src/ui/playlist/PlaylistEdit.cpp:344
+#: ../src/ui/playlist/PlaylistEdit.cpp:356
 msgctxt "PlaylistEdit|"
 msgid "Sagem JS channel list files (*.js)"
 msgstr "Sagem JS seznam programov (*.js)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:341
+#: ../src/ui/playlist/PlaylistEdit.cpp:354
 msgctxt "PlaylistEdit|"
 msgid "Import Sagem JS channel list"
 msgstr "Uvozi Sagem JS seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:355
+#: ../src/ui/playlist/PlaylistEdit.cpp:368
 msgctxt "PlaylistEdit|"
 msgid "Import Tano TV old channel list"
 msgstr "Uvozi Tano TV star seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:357
+#: ../src/ui/playlist/PlaylistEdit.cpp:370
 msgctxt "PlaylistEdit|"
 msgid "Tano TV old channel list files(*.tano *.xml)"
 msgstr "Tano TV star seznam programov (*.tano *.xml)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:386
+#: ../src/ui/playlist/PlaylistEdit.cpp:399
 msgctxt "PlaylistEdit|"
 msgid ""
 "Do you want close the editor?\n"
@@ -918,25 +898,25 @@ msgstr ""
 "Ali želite zapreti urejevalnik?\n"
 "Neshranjene spremembe ne bodo uveljavljene."
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:465
+#: ../src/ui/playlist/PlaylistEdit.cpp:478
 #, qt-format
 msgctxt "PlaylistEdit|"
 msgid "New channel from scan %1"
 msgstr "Nov najden program %1"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:212
-#: ../src/ui/playlist/PlaylistEdit.cpp:385
+#: ../src/ui/playlist/PlaylistEdit.cpp:215
+#: ../src/ui/playlist/PlaylistEdit.cpp:398
 msgctxt "PlaylistEdit|"
 msgid "Playlist Editor"
 msgstr "Urejevalnik seznama programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:179
+#: ../src/ui/playlist/PlaylistEdit.cpp:182
 #, qt-format
 msgctxt "PlaylistEdit|"
 msgid "%1 - Tano Editor"
 msgstr "%1 - Tano Urejevalnik"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:213
+#: ../src/ui/playlist/PlaylistEdit.cpp:216
 msgctxt "PlaylistEdit|"
 msgid ""
 "Do you want to create new playlist?\n"
@@ -944,6 +924,42 @@ msgid ""
 msgstr ""
 "Ali želite ustvariti nov seznam programov?\n"
 "Neshranjene spremembe ne bodo uveljavljene."
+
+#: ../src/ui/playlist/PlaylistExportTvheadend.ui:14
+#: ../src/ui/playlist/PlaylistExportTvheadend.ui:24
+msgctxt "PlaylistExportTvheadend|"
+msgid "Export to Tvheadend IP TV services"
+msgstr "Izvozi kot Tvheadend IP TV storitve"
+
+#: ../src/ui/playlist/PlaylistExportTvheadend.ui:30
+msgctxt "PlaylistExportTvheadend|"
+msgid "Output location:"
+msgstr "Izhodna lokacija:"
+
+#: ../src/ui/playlist/PlaylistExportTvheadend.ui:40
+msgctxt "PlaylistExportTvheadend|"
+msgid "..."
+msgstr "..."
+
+#: ../src/ui/playlist/PlaylistExportTvheadend.ui:47
+msgctxt "PlaylistExportTvheadend|"
+msgid "Network interface:"
+msgstr "Omrežna povezava:"
+
+#: ../src/ui/playlist/PlaylistExportTvheadend.ui:57
+msgctxt "PlaylistExportTvheadend|"
+msgid "XMLTV suffix:"
+msgstr "XMLTV končnica:"
+
+#: ../src/ui/playlist/PlaylistExportTvheadend.ui:80
+msgctxt "PlaylistExportTvheadend|"
+msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
+msgstr "<i><b>Opozorilo: To bo izbrisalo vse obstoječe programe!</b></i>"
+
+#: ../src/ui/playlist/PlaylistExportTvheadend.cpp:78
+msgctxt "PlaylistExportTvheadend|"
+msgid "Open directory"
+msgstr "Odpri imenik"
 
 #: ../src/ui/playlist/PlaylistImportCSV.ui:14
 #: ../src/ui/playlist/PlaylistImportCSV.ui:24
@@ -1134,16 +1150,16 @@ msgctxt "PlaylistWidget|"
 msgid "Clear"
 msgstr "Počisti"
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:84
-#: ../src/ui/playlist/PlaylistWidget.cpp:109
-#: ../src/ui/playlist/PlaylistWidget.cpp:125
-#: ../src/ui/playlist/PlaylistWidget.cpp:141
-#: ../src/ui/playlist/PlaylistWidget.cpp:166
+#: ../src/ui/playlist/PlaylistWidget.cpp:85
+#: ../src/ui/playlist/PlaylistWidget.cpp:110
+#: ../src/ui/playlist/PlaylistWidget.cpp:126
+#: ../src/ui/playlist/PlaylistWidget.cpp:142
+#: ../src/ui/playlist/PlaylistWidget.cpp:167
 msgctxt "PlaylistWidget|"
 msgid "Tano"
 msgstr "Tano"
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:85
+#: ../src/ui/playlist/PlaylistWidget.cpp:86
 #, qt-format
 msgctxt "PlaylistWidget|"
 msgid ""
@@ -1153,24 +1169,24 @@ msgstr ""
 "Ne morem prebrati %1:\n"
 "%2."
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:59
-#: ../src/ui/playlist/PlaylistWidget.cpp:98
-#: ../src/ui/playlist/PlaylistWidget.cpp:204
+#: ../src/ui/playlist/PlaylistWidget.cpp:60
+#: ../src/ui/playlist/PlaylistWidget.cpp:99
+#: ../src/ui/playlist/PlaylistWidget.cpp:214
 msgctxt "PlaylistWidget|"
 msgid "All languages"
 msgstr "Vsi jeziki"
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:58
-#: ../src/ui/playlist/PlaylistWidget.cpp:94
-#: ../src/ui/playlist/PlaylistWidget.cpp:196
+#: ../src/ui/playlist/PlaylistWidget.cpp:59
+#: ../src/ui/playlist/PlaylistWidget.cpp:95
+#: ../src/ui/playlist/PlaylistWidget.cpp:206
 msgctxt "PlaylistWidget|"
 msgid "All categories"
 msgstr "Vse kategorije"
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:110
-#: ../src/ui/playlist/PlaylistWidget.cpp:126
-#: ../src/ui/playlist/PlaylistWidget.cpp:142
-#: ../src/ui/playlist/PlaylistWidget.cpp:167
+#: ../src/ui/playlist/PlaylistWidget.cpp:111
+#: ../src/ui/playlist/PlaylistWidget.cpp:127
+#: ../src/ui/playlist/PlaylistWidget.cpp:143
+#: ../src/ui/playlist/PlaylistWidget.cpp:168
 #, qt-format
 msgctxt "PlaylistWidget|"
 msgid ""
@@ -1298,7 +1314,9 @@ msgctxt "QObject|"
 msgid "Unknown title"
 msgstr "Neznan naslov"
 
-#: ../src/playlist/PlaylistHandler.cpp:58 ../src/xml/TimersHandler.cpp:140
+#: ../src/playlist/PlaylistHandler.cpp:58
+#: ../src/playlist/TvheadendGenerator.cpp:76
+#: ../src/playlist/TvheadendGenerator.cpp:99 ../src/xml/TimersHandler.cpp:140
 msgctxt "QObject|"
 msgid "Tano"
 msgstr "Tano"
@@ -1387,6 +1405,22 @@ msgstr "Jezik"
 msgctxt "QObject|"
 msgid "EPG ID"
 msgstr "EPG ID"
+
+#: ../src/xml/XmltvHandler.cpp:46
+msgctxt "QObject|"
+msgid "The file is not a valid XMLTV file."
+msgstr "Datoteka ni veljavna XMLTV datoteka."
+
+#: ../src/playlist/TvheadendGenerator.cpp:77
+#: ../src/playlist/TvheadendGenerator.cpp:100
+#, qt-format
+msgctxt "QObject|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+"Ne morem pisati datoteke %1:\n"
+"%2."
 
 #: ../src/ui/core/QtKeySequenceEdit.cpp:57
 msgctxt "QtKeySequenceEdit|"

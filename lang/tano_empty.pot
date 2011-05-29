@@ -83,10 +83,6 @@ msgctxt "DonationDialog|"
 msgid "You can read additional terms and information on Tano Player homepage."
 msgstr ""
 
-msgctxt "EpgFull|"
-msgid "Schedule"
-msgstr ""
-
 msgctxt "EpgList|"
 msgid "Show information"
 msgstr ""
@@ -95,24 +91,12 @@ msgctxt "EpgList|"
 msgid "Record"
 msgstr ""
 
-msgctxt "EpgList|"
-msgid "No EPG"
-msgstr ""
-
-msgctxt "EpgSchedule|"
+msgctxt "EpgScheduleChannel|"
 msgid "<h2>No EPG</h2>"
 msgstr ""
 
-msgctxt "EpgSchedule|"
-msgid "Today"
-msgstr ""
-
-msgctxt "EpgSchedule|"
-msgid "Tomorrow"
-msgstr ""
-
-msgctxt "EpgShow|"
-msgid "<h1>Loading...</h1>"
+msgctxt "EpgScheduleFull|"
+msgid "Schedule"
 msgstr ""
 
 msgctxt "EpgShow|"
@@ -121,10 +105,6 @@ msgstr ""
 
 msgctxt "EpgShow|"
 msgid "Next"
-msgstr ""
-
-msgctxt "EpgShow|"
-msgid "Show info"
 msgstr ""
 
 msgctxt "FirstRunWizard|"
@@ -340,38 +320,6 @@ msgid ""
 msgstr ""
 
 msgctxt "MainWindow|"
-msgid "Pause"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Multimedia files(*)"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Open URL or stream"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Enter the URL of multimedia file or stream you want to play:"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Restore"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Open file or URL"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Buffering..."
-msgstr ""
-
-msgctxt "MainWindow|"
 msgid "&Open channel list"
 msgstr ""
 
@@ -389,6 +337,38 @@ msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Teletext"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Pause"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Buffering..."
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Tano TV channel list files(*.m3u)"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Open file or URL"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Multimedia files(*)"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Open URL or stream"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Enter the URL of multimedia file or stream you want to play:"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Restore"
 msgstr ""
 
 msgctxt "MenuAspectRatio|"
@@ -725,6 +705,38 @@ msgctxt "PlaylistEdit|"
 msgid "Comma-separated values file (*.csv *.txt)"
 msgstr ""
 
+msgctxt "PlaylistEdit|"
+msgid "Tvheadend"
+msgstr ""
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "Export to Tvheadend IP TV services"
+msgstr ""
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "Output location:"
+msgstr ""
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "..."
+msgstr ""
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "Network interface:"
+msgstr ""
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "XMLTV suffix:"
+msgstr ""
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "Open directory"
+msgstr ""
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
+msgstr ""
+
 msgctxt "PlaylistImportCSV|"
 msgid "CSV file structure"
 msgstr ""
@@ -1053,6 +1065,17 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "Number"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "The file is not a valid XMLTV file."
+msgstr ""
+
+#, qt-format
+msgctxt "QObject|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
 msgstr ""
 
 msgctxt "QtKeySequenceEdit|"
