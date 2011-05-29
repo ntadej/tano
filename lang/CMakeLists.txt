@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,17 +24,48 @@ IF(NOT QT_LRELEASE_EXECUTABLE)
 	MESSAGE(WARNING "Tano could not find lrelease. Your build won't contain translations.")
 ENDIF(NOT QT_LRELEASE_EXECUTABLE)
 
+STRING(REGEX REPLACE "lupdate" "lconvert" QT_LCONVERT_EXECUTABLE "${QT_LUPDATE_EXECUTABLE}")
+STRING(REGEX REPLACE "-qt4" "" QT_LCONVERT_EXECUTABLE "${QT_LCONVERT_EXECUTABLE}")
+
+## Wraps the supplied .ts files in lconvert commands
+MACRO(QT4_CREATE_PO outfiles)
+    FOREACH (it ${ARGN})
+        GET_FILENAME_COMPONENT(it ${it} ABSOLUTE)
+        GET_FILENAME_COMPONENT(outfile ${it} NAME_WE)
+        IF(${outfile} STREQUAL "tano_empty")
+            SET(outfile ${CMAKE_SOURCE_DIR}/lang/${outfile}.pot)
+
+            ADD_CUSTOM_COMMAND(
+                OUTPUT ${outfile}
+                COMMAND ${QT_LCONVERT_EXECUTABLE}
+                ARGS -if ts -i ${it} -of pot -o ${outfile}
+                MAIN_DEPENDENCY ${it}
+            )
+        ELSE(${outfile} STREQUAL "tano_empty")
+            SET(outfile ${CMAKE_SOURCE_DIR}/lang/${outfile}.po)
+
+            ADD_CUSTOM_COMMAND(
+                OUTPUT ${outfile}
+                COMMAND ${QT_LCONVERT_EXECUTABLE}
+                ARGS -if ts -i ${it} -of po -o ${outfile}
+                MAIN_DEPENDENCY ${it}
+            )
+        ENDIF(${outfile} STREQUAL "tano_empty")
+
+        SET(${outfiles} ${${outfiles}} ${outfile})
+    ENDFOREACH(it)
+ENDMACRO(QT4_CREATE_PO)
+
 ## Wraps the supplied .ts files in lrelease commands
 MACRO(QT4_ADD_TRANSLATIONS outfiles)
 	FOREACH (it ${ARGN})
 		GET_FILENAME_COMPONENT(it ${it} ABSOLUTE)
 		GET_FILENAME_COMPONENT(outfile ${it} NAME_WE)
-
-		SET(outfile ${CMAKE_BINARY_DIR}/lang/${outfile}.qm)
+        SET(outfile ${CMAKE_BINARY_DIR}/lang/${outfile}.qm)
 
 		ADD_CUSTOM_COMMAND(
 			OUTPUT ${outfile}
-			COMMAND ${QT_LRELEASE_EXECUTABLE}
+            COMMAND ${QT_LRELEASE_EXECUTABLE}
 			ARGS -compress -silent -nounfinished ${it} -qm ${outfile}
 			MAIN_DEPENDENCY ${it}
 		)
@@ -44,7 +75,7 @@ MACRO(QT4_ADD_TRANSLATIONS outfiles)
 ENDMACRO(QT4_ADD_TRANSLATIONS)
 
 ## Collect all translations files
-FILE (GLOB Tano_TS ${CMAKE_SOURCE_DIR}/lang/*.ts)
+FILE(GLOB Tano_TS ${CMAKE_SOURCE_DIR}/lang/*.ts)
 
 IF(QT_LRELEASE_EXECUTABLE)
 	## Wraps the collected translations
@@ -61,15 +92,13 @@ IF(QT_LUPDATE_EXECUTABLE)
 	FILE(GLOB_RECURSE translate_HDRS ${CMAKE_SOURCE_DIR}/src/*.h)
 	FILE(GLOB_RECURSE translate_UIS ${CMAKE_SOURCE_DIR}/src/*.ui)
 
-	SET(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS} ${translate_mobile_SRCS} ${translate_mobile_HDRS} ${translate_mobile_UIS})
+    SET(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS})
 
 	## Create a target that runs lupdate for all the sources and UI files
 	IF(REFRESH_TRANSLATIONS)
-		ADD_CUSTOM_TARGET(lupdate ALL
-			COMMAND ${QT_LUPDATE_EXECUTABLE} -no-obsolete ${translate_SRCS} -ts ${Tano_TS} )
-	ELSE(REFRESH_TRANSLATIONS)
-		ADD_CUSTOM_TARGET(lupdate
-			COMMAND ${QT_LUPDATE_EXECUTABLE} -no-obsolete ${translate_SRCS} -ts ${Tano_TS} )
+        ADD_CUSTOM_TARGET(lupdate ALL COMMAND ${QT_LUPDATE_EXECUTABLE} -no-obsolete ${translate_SRCS} -ts ${Tano_TS} )
+        QT4_CREATE_PO(Tano_POS ${Tano_TS})
+        ADD_CUSTOM_TARGET(pos ALL DEPENDS ${Tano_POS})
 	ENDIF(REFRESH_TRANSLATIONS)
 ENDIF(QT_LUPDATE_EXECUTABLE)
 
