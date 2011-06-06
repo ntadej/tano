@@ -48,9 +48,6 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1" colspan="2">
-       <widget class="QLineEdit" name="editInterface"/>
-      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="labelXmltv">
         <property name="text">
@@ -86,6 +83,38 @@
         <property name="text">
          <string/>
         </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QComboBox" name="editInterface">
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string notr="true">eth0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">eth1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">vlan3999</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">wlan0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">wlan1</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>

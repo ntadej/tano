@@ -33,7 +33,6 @@ PlaylistExportTvheadend::PlaylistExportTvheadend(QWidget *parent)
     connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(browse()));
 
     ui->editLocation->setText(QDir::homePath() + "/.hts/tvheadend");
-    ui->editInterface->setText("eth0");
 }
 
 PlaylistExportTvheadend::~PlaylistExportTvheadend()
@@ -82,7 +81,7 @@ void PlaylistExportTvheadend::browse()
 
 QString PlaylistExportTvheadend::interface() const
 {
-	return ui->editInterface->text();
+    return ui->editInterface->currentText();
 }
 
 QString PlaylistExportTvheadend::location() const

@@ -946,17 +946,17 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "Network interface:"
 msgstr "Omrežna povezava:"
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.ui:57
+#: ../src/ui/playlist/PlaylistExportTvheadend.ui:54
 msgctxt "PlaylistExportTvheadend|"
 msgid "XMLTV suffix:"
 msgstr "XMLTV končnica:"
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.ui:80
+#: ../src/ui/playlist/PlaylistExportTvheadend.ui:77
 msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
 msgstr "<i><b>Opozorilo: To bo izbrisalo vse obstoječe programe!</b></i>"
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.cpp:78
+#: ../src/ui/playlist/PlaylistExportTvheadend.cpp:77
 msgctxt "PlaylistExportTvheadend|"
 msgid "Open directory"
 msgstr "Odpri imenik"
@@ -1315,8 +1315,9 @@ msgid "Unknown title"
 msgstr "Neznan naslov"
 
 #: ../src/playlist/PlaylistHandler.cpp:58
-#: ../src/playlist/TvheadendGenerator.cpp:76
-#: ../src/playlist/TvheadendGenerator.cpp:99 ../src/xml/TimersHandler.cpp:140
+#: ../src/playlist/TvheadendGenerator.cpp:88
+#: ../src/playlist/TvheadendGenerator.cpp:111
+#: ../src/playlist/TvheadendGenerator.cpp:135 ../src/xml/TimersHandler.cpp:140
 msgctxt "QObject|"
 msgid "Tano"
 msgstr "Tano"
@@ -1411,8 +1412,9 @@ msgctxt "QObject|"
 msgid "The file is not a valid XMLTV file."
 msgstr "Datoteka ni veljavna XMLTV datoteka."
 
-#: ../src/playlist/TvheadendGenerator.cpp:77
-#: ../src/playlist/TvheadendGenerator.cpp:100
+#: ../src/playlist/TvheadendGenerator.cpp:89
+#: ../src/playlist/TvheadendGenerator.cpp:112
+#: ../src/playlist/TvheadendGenerator.cpp:136
 #, qt-format
 msgctxt "QObject|"
 msgid ""

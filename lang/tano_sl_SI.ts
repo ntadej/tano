@@ -988,17 +988,17 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Omrežna povezava:</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistExportTvheadend.ui" line="57"/>
+        <location filename="../src/ui/playlist/PlaylistExportTvheadend.ui" line="54"/>
         <source>XMLTV suffix:</source>
         <translation>XMLTV končnica:</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistExportTvheadend.ui" line="80"/>
+        <location filename="../src/ui/playlist/PlaylistExportTvheadend.ui" line="77"/>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
         <translation>&lt;i&gt;&lt;b&gt;Opozorilo: To bo izbrisalo vse obstoječe programe!&lt;/b&gt;&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistExportTvheadend.cpp" line="78"/>
+        <location filename="../src/ui/playlist/PlaylistExportTvheadend.cpp" line="77"/>
         <source>Open directory</source>
         <translation>Odpri imenik</translation>
     </message>
@@ -1369,8 +1369,9 @@ Nato izberite želen seznam programov.</translation>
     </message>
     <message>
         <location filename="../src/playlist/PlaylistHandler.cpp" line="58"/>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="76"/>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="99"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="88"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="111"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="135"/>
         <location filename="../src/xml/TimersHandler.cpp" line="140"/>
         <source>Tano</source>
         <translation>Tano</translation>
@@ -1465,8 +1466,9 @@ Nato izberite želen seznam programov.</translation>
         <translation>Datoteka ni veljavna XMLTV datoteka.</translation>
     </message>
     <message>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="77"/>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="100"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="89"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="112"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="136"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne morem pisati datoteke %1:

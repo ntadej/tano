@@ -39,6 +39,7 @@ public:
 private:
     QString fileChannel(const int &number) const;
     QString fileIpService(const int &number) const;
+    QString fileIpTransport(const int &number) const;
 	void generateItem(Channel *channel);
     QString indent(const int &indentLevel) const;
 

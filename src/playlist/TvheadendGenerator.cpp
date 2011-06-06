@@ -47,6 +47,10 @@ bool TvheadendGenerator::write()
         QDir(_location).rmdir("iptvservices");
     }
 
+    if(!QDir(_location + "/iptvtransports/").exists()) {
+        QDir(_location).rmdir("iptvtransports");
+    }
+
 	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
 		generateItem(_map[_treeWidget->topLevelItem(i)]);
 	}
@@ -67,6 +71,14 @@ QString TvheadendGenerator::fileIpService(const int &number) const
         QDir(_location).mkdir("iptvservices");
     }
     return QString(_location + "/iptvservices/" + "iptv_" + QString::number(number));
+}
+
+QString TvheadendGenerator::fileIpTransport(const int &number) const
+{
+    if(!QDir(_location + "/iptvtransports/").exists()) {
+        QDir(_location).mkdir("iptvtransports");
+    }
+    return QString(_location + "/iptvtransports/" + "iptv_" + QString::number(number));
 }
 
 void TvheadendGenerator::generateItem(Channel *channel)
@@ -116,6 +128,30 @@ void TvheadendGenerator::generateItem(Channel *channel)
           << "}" << "\n";
 
     fIpService.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
+
+
+    QFile fIpTransport(fileIpTransport(channel->number()));
+    if (!fIpTransport.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(_treeWidget, QObject::tr("Tano"),
+                            QObject::tr("Cannot write file %1:\n%2.")
+                            .arg(fileIpTransport(channel->number()))
+                            .arg(fIpTransport.errorString()));
+        return;
+    }
+
+    QTextStream outIT(&fIpTransport);
+    outIT << "{" << "\n"
+          << indent(1) << "\"pmt\": 0," << "\n"
+          << indent(1) << "\"port\": " << channel->url().replace(QRegExp("udp://@.*:"), "") << "," << "\n"
+          << indent(1) << "\"interface\": \"" << _interface << "\"," << "\n"
+          << indent(1) << "\"group\": \"" << channel->url().replace(QRegExp("udp://@"), "").replace(QRegExp(":.*"), "") << "\"," << "\n"
+          << indent(1) << "\"channelname\": \"" << channel->name() << "\"," << "\n"
+          << indent(1) << "\"mapped\": 1," << "\n"
+          << indent(1) << "\"pcr\": 0," << "\n"
+          << indent(1) << "\"disabled\": 0" << "\n"
+          << "}" << "\n";
+
+    fIpTransport.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
 }
 
 QString TvheadendGenerator::indent(const int &indentLevel) const
