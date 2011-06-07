@@ -25,7 +25,13 @@
 
 // Options
 #define WITH_RECORDER @DBUS_FOUND@
-#define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
+
+// Editor VLC-Qt support
+#if EDITOR
+    #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
+#else
+    #define WITH_EDITOR_VLCQT 1
+#endif
 
 // System information
 #define HOSTNAME "@HOSTNAME@"

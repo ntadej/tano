@@ -112,7 +112,7 @@ QT4_WRAP_CPP(Tano_Editor_MOC_Srcs ${Tano_Editor_MOCs})
 # Compiler Define flags #
 #########################
 # Define we are compiling editor
-ADD_DEFINITIONS(-DEDITOR="1")
+ADD_DEFINITIONS(-DEDITOR=1)
 
 # Define default data dir, if under POSIX systems.
 IF(NOT MINGW)
@@ -143,10 +143,9 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURC
 # directory to the compiler include path
 INCLUDE(${QT_USE_FILE})
 
-IF(EDITOR_WITHOUT_VLCQT)
-ELSE(EDITOR_WITHOUT_VLCQT)
-	INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
-ENDIF(EDITOR_WITHOUT_VLCQT)
+IF(EDITOR_WITH_VLCQT)
+    INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
+ENDIF(EDITOR_WITH_VLCQT)
 
 IF(MINGW)
 	# CMake currently doesn't support windres yet. Add command manually
@@ -170,11 +169,11 @@ ENDIF(MINGW)
 ADD_EXECUTABLE(tano-editor ${Tano_Editor_UIC_Srcs} ${Tano_Editor_Srcs} ${Tano_Editor_MOC_Srcs} ${Tano_Editor_Resrcs_Srcs})
 
 # Here the needed Qt Libraries are added to the link command.
-IF(EDITOR_WITHOUT_VLCQT)
-	TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES})
-ELSE(EDITOR_WITHOUT_VLCQT)
-	TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
-ENDIF(EDITOR_WITHOUT_VLCQT)
+IF(EDITOR_WITH_VLCQT)
+    TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
+ELSE(EDITOR_WITH_VLCQT)
+    TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES})
+ENDIF(EDITOR_WITH_VLCQT)
 
 
 ################
