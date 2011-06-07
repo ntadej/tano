@@ -107,10 +107,10 @@ private:
 
 	bool _standalone;
 
-#if WITH_EDITOR_VLCQT
 	// Update playlist
 	QString currentIp();
 
+#if WITH_EDITOR_VLCQT
 	VlcInstance *_instance;
 	VlcMediaPlayer *_player;
 	int _refresh;

@@ -107,16 +107,16 @@ ENDIF(GIT)
 #################
 SET(DBUS_FOUND ${QT_QTDBUS_FOUND})
 MESSAGE("Compile Tano with recorder (DBus found): ${DBUS_FOUND}")
-OPTION(EDITOR_WITHOUT_VLCQT "Compile Tano Editor without VLC-Qt")
-MESSAGE("Compile Tano Editor without VLC-Qt: ${EDITOR_WITHOUT_VLCQT}")
+OPTION(EDITOR_WITH_VLCQT "Compile Tano Editor with VLC-Qt")
+MESSAGE("Compile Tano Editor with VLC-Qt: ${EDITOR_WITH_VLCQT}")
 OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile")
 MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
 
-IF(EDITOR_WITHOUT_VLCQT)
-	SET(EDITOR_VLCQT 0)
-ELSE(EDITOR_WITHOUT_VLCQT)
-	SET(EDITOR_VLCQT 1)
-ENDIF(EDITOR_WITHOUT_VLCQT)
+IF(EDITOR_WITH_VLCQT)
+    SET(EDITOR_VLCQT 1)
+ELSE(EDITOR_WITH_VLCQT)
+    SET(EDITOR_VLCQT 0)
+ENDIF(EDITOR_WITH_VLCQT)
 
 ###################
 # Compile and set #
