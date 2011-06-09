@@ -23,43 +23,41 @@
 
 namespace Tano
 {
-	// App type
-	enum AppType
-	{
-		Player,
-		Editor,
-		Recorder
-	};
+    // App type
+    enum AppType
+    {
+        Player,
+        Editor,
+        Recorder
+    };
 
-	// Epg types
-	enum EpgType
-	{
-		Slovenia,
-		XMLTV
-	};
+    // ID
+    enum Id
+    {
+        Main,
+        Record,
+        Schedule
+    };
 
-	EpgType epgType(const QString &type);
-	QString epgType(const EpgType &type);
+    // M3U types
+    enum M3UType
+    {
+        M3UNormal,
+        M3UClean,
+        M3UUdpxy
+    };
 
-	// ID
-	enum Id
-	{
-		Main,
-		Record,
-		Schedule
-	};
+    // Timer types
+    enum TimerType
+    {
+        Once,
+        Daily,
+        Weekly
+    };
 
-	// Timer types
-	enum TimerType
-	{
-		Once,
-		Daily,
-		Weekly
-	};
-
-	TimerType timerType(const int &type);
-	int timerType(const TimerType &type);
-	QString timerTypeString(const TimerType &type);
+    TimerType timerType(const int &type);
+    int timerType(const TimerType &type);
+    QString timerTypeString(const TimerType &type);
 };
 
 #endif // TANO_ENUMS_H_

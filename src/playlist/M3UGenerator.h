@@ -23,30 +23,36 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
+#include "core/Enums.h"
+
 class Channel;
+class Udpxy;
 
 class M3UGenerator
 {
 public:
-	M3UGenerator(QTreeWidget *treeWidget,
-				 const QString &name,
-				 QMap<QTreeWidgetItem *, Channel *> map,
-				 const bool &clean = false);
-	~M3UGenerator();
+    M3UGenerator(QTreeWidget *treeWidget,
+                 const QString &name,
+                 QMap<QTreeWidgetItem *, Channel *> map,
+                 const Tano::M3UType &type = Tano::M3UNormal);
+    ~M3UGenerator();
 
-	bool write(QIODevice *device);
+    bool write(QIODevice *device);
 
 private:
-	void generateItem(Channel *channel);
-	void generateItemClean(Channel *channel);
+    void generateItemNormal(Channel *channel);
+    void generateItemClean(Channel *channel);
+    void generateItemUdpxy(Channel *channel);
 
-	bool _clean;
+    Tano::M3UType _type;
 
-	QTreeWidget *_treeWidget;
-	QString _name;
-	QTextStream _out;
+    QTreeWidget *_treeWidget;
+    QString _name;
+    QTextStream _out;
 
-	QMap<QTreeWidgetItem *, Channel *> _map;
+    QMap<QTreeWidgetItem *, Channel *> _map;
+
+    Udpxy *_udpxy;
 };
 
 #endif // TANO_M3UGENERATOR_H_

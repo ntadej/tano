@@ -20,58 +20,38 @@
 
 #include "Enums.h"
 
-Tano::EpgType Tano::epgType(const QString &type)
-{
-	if(type == "slovenia")
-		return Tano::Slovenia;
-	else if(type == "xmltv")
-		return Tano::XMLTV;
-	else
-		return Tano::Slovenia;
-}
-
-QString Tano::epgType(const EpgType &type)
-{
-	if(type == Tano::Slovenia)
-		return QString("slovenia");
-	else if(type == Tano::XMLTV)
-		return QString("xmltv");
-	else
-		return QString("error");
-}
-
 Tano::TimerType Tano::timerType(const int &type)
 {
-	if(type == 0)
-		return Tano::Once;
-	else if(type == 1)
-		return Tano::Daily;
-	else if(type == 2)
-		return Tano::Weekly;
-	else
-		return Tano::Once;
+    if(type == 0)
+        return Tano::Once;
+    else if(type == 1)
+        return Tano::Daily;
+    else if(type == 2)
+        return Tano::Weekly;
+    else
+        return Tano::Once;
 }
 
 int Tano::timerType(const TimerType &type)
 {
-	if(type == Tano::Once)
-		return 0;
-	else if(type == Tano::Daily)
-		return 1;
-	else if(type == Tano::Weekly)
-		return 2;
-	else
-		return -1;
+    if(type == Tano::Once)
+        return 0;
+    else if(type == Tano::Daily)
+        return 1;
+    else if(type == Tano::Weekly)
+        return 2;
+    else
+        return -1;
 }
 
 QString Tano::timerTypeString(const TimerType &type)
 {
-	if(type == Tano::Once)
-		return QString(QObject::tr("Once"));
-	else if(type == Tano::Daily)
-		return QString(QObject::tr("Daily"));
-	else if(type == Tano::Weekly)
-		return QString(QObject::tr("Weekly"));
-	else
-		return QString("error");
+    if(type == Tano::Once)
+        return QString(QObject::tr("Once"));
+    else if(type == Tano::Daily)
+        return QString(QObject::tr("Daily"));
+    else if(type == Tano::Weekly)
+        return QString(QObject::tr("Weekly"));
+    else
+        return QString("error");
 }

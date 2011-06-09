@@ -709,6 +709,28 @@ msgctxt "PlaylistEdit|"
 msgid "Tvheadend"
 msgstr ""
 
+msgctxt "PlaylistEdit|"
+msgid "M3U (Udpxy URL)"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "Settings"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "Export to M3U format with Udpxy URLs"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "M3U (Udpxy URL) list files (*.m3u)"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"You need to have valid Udpxy settings or the exported playlist will contain "
+"classic URLs."
+msgstr ""
+
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
 msgstr ""

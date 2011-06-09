@@ -19,30 +19,35 @@
 #include "core/Settings.h"
 #include "core/Udpxy.h"
 
-Udpxy::Udpxy()
+Udpxy::Udpxy(const bool &generate)
+    : _generate()
 {
-	createSettings();
+    createSettings();
 }
 
 Udpxy::~Udpxy() { }
 
 void Udpxy::createSettings()
 {
-	Settings *settings = new Settings();
-	_enabled = settings->udpxy();
-	_url = settings->udpxyUrl();
-	_port = QString::number(settings->udpxyPort());
-	delete settings;
+    Settings *settings = new Settings();
+    _enabled = settings->udpxy();
+    _url = settings->udpxyUrl();
+    _port = QString::number(settings->udpxyPort());
+    delete settings;
 }
 
 QString Udpxy::processUrl(const QString &url) const
 {
-	QString u = url;
-	if(_enabled && url.contains("udp://@")) {
-		QString newUrl = "http://%1:%2/udp/%3";
-		newUrl = newUrl.arg(_url, _port, u.replace("udp://@", ""));
-		return newUrl;
-	} else {
-		return u;
-	}
+    QString u = url;
+    if(_enabled || _generate) {
+        if(url.contains("udp://@") && !_url.isEmpty()) {
+           QString newUrl = "http://%1:%2/udp/%3";
+           newUrl = newUrl.arg(_url, _port, u.replace("udp://@", ""));
+           return newUrl;
+        } else {
+            return u;
+        }
+    } else {
+        return u;
+    }
 }

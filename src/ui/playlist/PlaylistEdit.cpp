@@ -35,542 +35,570 @@
 #include "ui/playlist/PlaylistImportWeb.h"
 
 #if WITH_EDITOR_VLCQT
-	#include <vlc-qt/Instance.h>
-	#include <vlc-qt/MediaPlayer.h>
+    #include <vlc-qt/Instance.h>
+    #include <vlc-qt/MediaPlayer.h>
 #endif
 
 #include "PlaylistEdit.h"
 #include "ui_PlaylistEdit.h"
 
 PlaylistEdit::PlaylistEdit(const WId &video,
-						   QWidget *parent)
-	: QMainWindow(parent),
-	ui(new Ui::PlaylistEdit),
-	_closeEnabled(false),
-	_standalone(false)
+                           QWidget *parent)
+    : QMainWindow(parent),
+      ui(new Ui::PlaylistEdit),
+      _closeEnabled(false),
+      _standalone(false)
 {
-	ui->setupUi(this);
-	ui->editWidget->setEnabled(false);
-	ui->playlist->editMode();
+    ui->setupUi(this);
+    ui->editWidget->setEnabled(false);
+    ui->playlist->editMode();
 
-	createSettings();
-	createConnections();
+    createSettings();
+    createConnections();
 
 #if WITH_EDITOR_VLCQT
-	_instance = new VlcInstance(Tano::vlcQtArgs(), this);
-	_player = new VlcMediaPlayer(video, this);
-	_timer = new QTimer();
-	connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
-	connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
+    _instance = new VlcInstance(Tano::vlcQtArgs(), this);
+    _player = new VlcMediaPlayer(video, this);
+    _timer = new QTimer();
+    connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
+    connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
 #else
-	ui->updateWidget->hide();
+    ui->updateWidget->hide();
 #endif
 
-	_menuExport = new QMenu();
-	_menuExport->addAction(ui->actionExportM3UClean);
-	_menuExport->addAction(ui->actionExportCSV);
-	_menuExport->addAction(ui->actionExportJs);
+    _menuExport = new QMenu();
+    _menuExport->addAction(ui->actionExportM3UClean);
+    _menuExport->addAction(ui->actionExportM3UUdpxy);
+    _menuExport->addAction(ui->actionExportCSV);
+    _menuExport->addAction(ui->actionExportJs);
     _menuExport->addAction(ui->actionExportTvheadend);
 
-	_menuImport = new QMenu();
-	_menuImport->addAction(ui->actionImportDownload);
-	_menuImport->addAction(ui->actionImportCSV);
-	_menuImport->addAction(ui->actionImportJs);
-	_menuImport->addAction(ui->actionImportTanoOld);
+    _menuImport = new QMenu();
+    _menuImport->addAction(ui->actionImportDownload);
+    _menuImport->addAction(ui->actionImportCSV);
+    _menuImport->addAction(ui->actionImportJs);
+    _menuImport->addAction(ui->actionImportTanoOld);
 }
 
 PlaylistEdit::~PlaylistEdit()
 {
-	delete ui;
+    delete ui;
 
 #if WITH_EDITOR_VLCQT
-	delete _instance;
-	delete _player;
-	delete _timer;
+    delete _instance;
+    delete _player;
+    delete _timer;
 #endif
 }
 
 void PlaylistEdit::changeEvent(QEvent *e)
 {
-	QMainWindow::changeEvent(e);
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			ui->retranslateUi(this);
-			break;
-		default:
-			break;
-	}
+    QMainWindow::changeEvent(e);
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+        default:
+            break;
+    }
 }
 
 void PlaylistEdit::closeEvent(QCloseEvent *event)
 {
-	event->ignore();
-	exit();
+    event->ignore();
+    exit();
 }
 
 void PlaylistEdit::createSettings()
 {
-	Settings *settings = new Settings(this);
-	ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
-	delete settings;
+    Settings *settings = new Settings(this);
+    ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
+    delete settings;
 }
 
 void PlaylistEdit::createConnections()
 {
-	connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
-	connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(open()));
-	connect(ui->actionNew, SIGNAL(triggered()), this, SLOT(newPlaylist()));
-	connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
-	connect(ui->actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
-	connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
-	connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
-	connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
-	connect(ui->actionExportM3UClean, SIGNAL(triggered()), this, SLOT(exportM3UClean()));
-	connect(ui->actionExportCSV, SIGNAL(triggered()), this, SLOT(exportCSV()));
-	connect(ui->actionExportJs, SIGNAL(triggered()), this, SLOT(exportJs()));
+    connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
+    connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(open()));
+    connect(ui->actionNew, SIGNAL(triggered()), this, SLOT(newPlaylist()));
+    connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
+    connect(ui->actionAdd, SIGNAL(triggered()), this, SLOT(addItem()));
+    connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
+    connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
+    connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
+    connect(ui->actionExportM3UClean, SIGNAL(triggered()), this, SLOT(exportM3UClean()));
+    connect(ui->actionExportM3UUdpxy, SIGNAL(triggered()), this, SLOT(exportM3UUdpxy()));
+    connect(ui->actionExportCSV, SIGNAL(triggered()), this, SLOT(exportCSV()));
+    connect(ui->actionExportJs, SIGNAL(triggered()), this, SLOT(exportJs()));
     connect(ui->actionExportTvheadend, SIGNAL(triggered()), this, SLOT(exportTvheadend()));
-	connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(menuOpenImport()));
-	connect(ui->actionImportDownload, SIGNAL(triggered()), this, SLOT(importWeb()));
-	connect(ui->actionImportCSV, SIGNAL(triggered()), this, SLOT(importCSV()));
-	connect(ui->actionImportJs, SIGNAL(triggered()), this, SLOT(importJs()));
-	connect(ui->actionImportTanoOld, SIGNAL(triggered()), this, SLOT(importTanoOld()));
-	connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
+    connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(menuOpenImport()));
+    connect(ui->actionImportDownload, SIGNAL(triggered()), this, SLOT(importWeb()));
+    connect(ui->actionImportCSV, SIGNAL(triggered()), this, SLOT(importCSV()));
+    connect(ui->actionImportJs, SIGNAL(triggered()), this, SLOT(importJs()));
+    connect(ui->actionImportTanoOld, SIGNAL(triggered()), this, SLOT(importTanoOld()));
+    connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
 
-	connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(setTitle(QString)));
+    connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(setTitle(QString)));
 
-	connect(ui->buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
-	connect(ui->editNumber, SIGNAL(returnPressed()), ui->buttonApplyNum, SLOT(click()));
-	connect(ui->editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
-	connect(ui->editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
-	connect(ui->editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
-	connect(ui->editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
-	connect(ui->editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
+    connect(ui->buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
+    connect(ui->editNumber, SIGNAL(returnPressed()), ui->buttonApplyNum, SLOT(click()));
+    connect(ui->editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
+    connect(ui->editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
+    connect(ui->editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
+    connect(ui->editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
+    connect(ui->editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
 
-	connect(ui->actionUp, SIGNAL(triggered()), this, SLOT(moveUp()));
-	connect(ui->actionDown, SIGNAL(triggered()), this, SLOT(moveDown()));
+    connect(ui->actionUp, SIGNAL(triggered()), this, SLOT(moveUp()));
+    connect(ui->actionDown, SIGNAL(triggered()), this, SLOT(moveDown()));
 
-	connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
+    connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
 
 #if WITH_EDITOR_VLCQT
-	connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));
+    connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));
 #endif
 }
 
 void PlaylistEdit::menuOpenExport()
 {
-	_menuExport->exec(QCursor::pos());
+    _menuExport->exec(QCursor::pos());
 }
 
 void PlaylistEdit::menuOpenImport()
 {
-	_menuImport->exec(QCursor::pos());
+    _menuImport->exec(QCursor::pos());
 }
 
 void PlaylistEdit::setStandalone(const bool &standalone)
 {
-	_standalone = standalone;
-	if(_standalone) {
-		ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
-	}
+    _standalone = standalone;
+    if(_standalone) {
+        ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
+    }
 }
 
 void PlaylistEdit::setTitle(const QString &title)
 {
-	if(title.isEmpty())
-		setWindowTitle(tr("Tano Editor"));
-	else
-		setWindowTitle(tr("%1 - Tano Editor").arg(title));
+    if(title.isEmpty())
+        setWindowTitle(tr("Tano Editor"));
+    else
+        setWindowTitle(tr("%1 - Tano Editor").arg(title));
 }
 
 void PlaylistEdit::aboutTano()
 {
-	AboutDialog about(Tano::Editor, this);
-	about.exec();
+    AboutDialog about(Tano::Editor, this);
+    about.exec();
 }
 
 void PlaylistEdit::open(const QString &playlist,
-						const bool &refresh)
+                        const bool &refresh)
 {
-	QString p;
-	if(playlist == 0) {
-		p = QFileDialog::getOpenFileName(this, tr("Open channel list"),
-										 QDir::homePath(),
-										 tr("Tano TV channel list files(*.m3u)"));
-	} else {
-		p = playlist;
-	}
+    QString p;
+    if(playlist == 0) {
+        p = QFileDialog::getOpenFileName(this, tr("Open channel list"),
+                                         QDir::homePath(),
+                                         tr("Tano TV channel list files(*.m3u)"));
+    } else {
+        p = playlist;
+    }
 
-	ui->editWidget->setEnabled(false);
-	ui->playlist->open(p, refresh);
-	ui->editName->setText(ui->playlist->name());
-	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    ui->editWidget->setEnabled(false);
+    ui->playlist->open(p, refresh);
+    ui->editName->setText(ui->playlist->name());
+    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
 void PlaylistEdit::newPlaylist()
 {
-	if(ui->playlist->treeWidget()->topLevelItemCount() == 0)
-		return;
+    if(ui->playlist->treeWidget()->topLevelItemCount() == 0)
+        return;
 
-	int ret;
-	ret = QMessageBox::warning(this, tr("Playlist Editor"),
-								   tr("Do you want to create new playlist?\nYou will lose any unsaved changes."),
-								   QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel,
-								   QMessageBox::Discard);
+    int ret;
+    ret = QMessageBox::warning(this, tr("Playlist Editor"),
+                                   tr("Do you want to create new playlist?\nYou will lose any unsaved changes."),
+                                   QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel,
+                                   QMessageBox::Discard);
 
-	switch (ret) {
-		case QMessageBox::Save:
-			ui->actionSave->trigger();
+    switch (ret) {
+        case QMessageBox::Save:
+            ui->actionSave->trigger();
 
-			ui->editWidget->setEnabled(false);
-			ui->playlist->clear();
-			ui->editName->setText(tr("New playlist"));
-			ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-			break;
-		case QMessageBox::Discard:
-			ui->editWidget->setEnabled(false);
-			ui->playlist->clear();
-			ui->editName->setText(tr("New playlist"));
-			ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-			break;
-		case QMessageBox::Cancel:
-			break;
-		default:
-			break;
-	}
+            ui->editWidget->setEnabled(false);
+            ui->playlist->clear();
+            ui->editName->setText(tr("New playlist"));
+            ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+            break;
+        case QMessageBox::Discard:
+            ui->editWidget->setEnabled(false);
+            ui->playlist->clear();
+            ui->editName->setText(tr("New playlist"));
+            ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+            break;
+        case QMessageBox::Cancel:
+            break;
+        default:
+            break;
+    }
 }
 
 void PlaylistEdit::deleteItem()
 {
-	ui->editNumber->setText("");
-	ui->editChannelName->setText("");
-	ui->editUrl->setText("");
-	ui->editCategories->setText("");
-	ui->editLanguage->setText("");
-	ui->editEpg->setText("");
+    ui->editNumber->setText("");
+    ui->editChannelName->setText("");
+    ui->editUrl->setText("");
+    ui->editCategories->setText("");
+    ui->editLanguage->setText("");
+    ui->editEpg->setText("");
 
-	ui->editWidget->setEnabled(false);
+    ui->editWidget->setEnabled(false);
 
-	ui->playlist->deleteItem();
+    ui->playlist->deleteItem();
 
-	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
 void PlaylistEdit::addItem()
 {
-	editItem(ui->playlist->createItem());
-	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    editItem(ui->playlist->createItem());
+    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
 void PlaylistEdit::addItem(const QString &name,
-						   const QString &url)
+                           const QString &url)
 {
-	ui->playlist->createItem(name, url);
-	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    ui->playlist->createItem(name, url);
+    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
 
 void PlaylistEdit::save()
 {
-	QString fileName =
-		QFileDialog::getSaveFileName(this, tr("Save channel list"),
-									QDir::homePath(),
-									tr("Tano TV channel list files (*.m3u)"));
-	if (fileName.isEmpty())
-		return;
+    QString fileName =
+        QFileDialog::getSaveFileName(this, tr("Save channel list"),
+                                    QDir::homePath(),
+                                    tr("Tano TV channel list files (*.m3u)"));
+    if (fileName.isEmpty())
+        return;
 
-	ui->playlist->save(ui->editName->text(), fileName);
+    ui->playlist->save(ui->editName->text(), fileName);
 
-	_closeEnabled = true;
-	exit();
+    _closeEnabled = true;
+    exit();
 }
 
 void PlaylistEdit::exportM3UClean()
 {
-	QString fileName =
-		QFileDialog::getSaveFileName(this, tr("Export to original M3U format"),
-									QDir::homePath(),
-									tr("M3U (original) list files (*.m3u)"));
-	if (fileName.isEmpty())
-		return;
+    QString fileName =
+        QFileDialog::getSaveFileName(this, tr("Export to original M3U format"),
+                                    QDir::homePath(),
+                                    tr("M3U (original) list files (*.m3u)"));
+    if (fileName.isEmpty())
+        return;
 
-	ui->playlist->exportM3UClean(fileName);
+    ui->playlist->exportM3UClean(fileName);
+}
+
+void PlaylistEdit::exportM3UUdpxy()
+{
+    QString fileName =
+        QFileDialog::getSaveFileName(this, tr("Export to M3U format with Udpxy URLs"),
+                                    QDir::homePath(),
+                                    tr("M3U (Udpxy URL) list files (*.m3u)"));
+    if (fileName.isEmpty())
+        return;
+
+    int s;
+    s = QMessageBox::warning(this, tr("Export to M3U format with Udpxy URLs"),
+                                   tr("You need to have valid Udpxy settings or the exported playlist will contain classic URLs."),
+                                   QMessageBox::Save | QMessageBox::Cancel,
+                                   QMessageBox::Cancel);
+
+    switch (s) {
+        case QMessageBox::Save:
+            ui->playlist->exportM3UUdpxy(ui->editName->text(), fileName);
+            break;
+        case QMessageBox::Cancel:
+            break;
+        default:
+            break;
+    }
 }
 
 void PlaylistEdit::exportCSV()
 {
-	QString fileName =
-		QFileDialog::getSaveFileName(this, tr("Export to Comma-separated values file"),
-									QDir::homePath(),
-									tr("Comma-separated values file (*.csv *.txt)"));
-	if (fileName.isEmpty())
-		return;
+    QString fileName =
+        QFileDialog::getSaveFileName(this, tr("Export to Comma-separated values file"),
+                                    QDir::homePath(),
+                                    tr("Comma-separated values file (*.csv *.txt)"));
+    if (fileName.isEmpty())
+        return;
 
-	ui->playlist->exportCSV(fileName);
+    ui->playlist->exportCSV(fileName);
 }
 
 void PlaylistEdit::exportTvheadend()
 {
-	PlaylistExportTvheadend dialog;
-	dialog.exec();
-	if(!dialog.proceed())
-		return;
+    PlaylistExportTvheadend dialog;
+    dialog.exec();
+    if(!dialog.proceed())
+        return;
 
-	ui->playlist->exportTvheadend(dialog.location(), dialog.interface(), dialog.xmltv());
+    ui->playlist->exportTvheadend(dialog.location(), dialog.interface(), dialog.xmltv());
 }
 
 void PlaylistEdit::importCSV()
 {
-	QString fileName =
-			QFileDialog::getOpenFileName(this, tr("Import Comma-separated values file"),
-										QDir::homePath(),
-										tr("Comma-separated values file (*.csv *.txt)"));
-	if (fileName.isEmpty())
-		return;
+    QString fileName =
+            QFileDialog::getOpenFileName(this, tr("Import Comma-separated values file"),
+                                        QDir::homePath(),
+                                        tr("Comma-separated values file (*.csv *.txt)"));
+    if (fileName.isEmpty())
+        return;
 
-	PlaylistImportCSV dialog;
-	dialog.exec();
-	if(!dialog.proceed())
-		return;
+    PlaylistImportCSV dialog;
+    dialog.exec();
+    if(!dialog.proceed())
+        return;
 
-	ui->playlist->importCSV(fileName, dialog.separator(), dialog.header(), dialog.columns());
-	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-	ui->editName->setText(ui->playlist->name());
+    ui->playlist->importCSV(fileName, dialog.separator(), dialog.header(), dialog.columns());
+    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    ui->editName->setText(ui->playlist->name());
 }
 
 void PlaylistEdit::exportJs()
 {
-	QString fileName =
-		QFileDialog::getSaveFileName(this, tr("Export to Sagem JS channel list"),
-									QDir::homePath(),
-									tr("Sagem JS channel list files (*.js)"));
-	if (fileName.isEmpty())
-		return;
+    QString fileName =
+        QFileDialog::getSaveFileName(this, tr("Export to Sagem JS channel list"),
+                                    QDir::homePath(),
+                                    tr("Sagem JS channel list files (*.js)"));
+    if (fileName.isEmpty())
+        return;
 
-	ui->playlist->exportJs(fileName);
+    ui->playlist->exportJs(fileName);
 }
 
 void PlaylistEdit::importJs()
 {
-	QString fileName =
-			QFileDialog::getOpenFileName(this, tr("Import Sagem JS channel list"),
-										QDir::homePath(),
-										tr("Sagem JS channel list files (*.js)"));
-	if (fileName.isEmpty())
-		return;
+    QString fileName =
+            QFileDialog::getOpenFileName(this, tr("Import Sagem JS channel list"),
+                                        QDir::homePath(),
+                                        tr("Sagem JS channel list files (*.js)"));
+    if (fileName.isEmpty())
+        return;
 
-	ui->playlist->importJs(fileName);
-	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-	ui->editName->setText(ui->playlist->name());
+    ui->playlist->importJs(fileName);
+    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    ui->editName->setText(ui->playlist->name());
 }
 
 void PlaylistEdit::importTanoOld()
 {
-	QString fileName =
-			QFileDialog::getOpenFileName(this, tr("Import Tano TV old channel list"),
-										QDir::homePath(),
-										tr("Tano TV old channel list files(*.tano *.xml)"));
-	if (fileName.isEmpty())
-		return;
+    QString fileName =
+            QFileDialog::getOpenFileName(this, tr("Import Tano TV old channel list"),
+                                        QDir::homePath(),
+                                        tr("Tano TV old channel list files(*.tano *.xml)"));
+    if (fileName.isEmpty())
+        return;
 
-	ui->playlist->importTanoOld(fileName);
-	ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-	ui->editName->setText(ui->playlist->name());
+    ui->playlist->importTanoOld(fileName);
+    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    ui->editName->setText(ui->playlist->name());
 }
 
 void PlaylistEdit::importWeb()
 {
-	PlaylistImportWeb web;
-	web.download();
+    PlaylistImportWeb web;
+    web.download();
 
-	if(!web.playlist().isEmpty())
-		open(web.playlist(), web.refresh());
+    if(!web.playlist().isEmpty())
+        open(web.playlist(), web.refresh());
 }
 
 void PlaylistEdit::exit()
 {
-	if(_closeEnabled) {
-		hide();
-		if(_standalone)
-			qApp->quit();
-		return;
-	}
+    if(_closeEnabled) {
+        hide();
+        if(_standalone)
+            qApp->quit();
+        return;
+    }
 
-	int ret;
-	ret = QMessageBox::warning(this, tr("Playlist Editor"),
-								   tr("Do you want close the editor?\nYou will lose any unsaved changes."),
-								   QMessageBox::Save | QMessageBox::Close | QMessageBox::Cancel,
-								   QMessageBox::Close);
+    int ret;
+    ret = QMessageBox::warning(this, tr("Playlist Editor"),
+                                   tr("Do you want close the editor?\nYou will lose any unsaved changes."),
+                                   QMessageBox::Save | QMessageBox::Close | QMessageBox::Cancel,
+                                   QMessageBox::Close);
 
-	switch (ret) {
-		case QMessageBox::Save:
-			ui->actionSave->trigger();
-			break;
-		case QMessageBox::Close:
-			_closeEnabled = true;
-			ui->actionClose->trigger();
-			break;
-		case QMessageBox::Cancel:
-			break;
-		default:
-			break;
-	}
+    switch (ret) {
+        case QMessageBox::Save:
+            ui->actionSave->trigger();
+            break;
+        case QMessageBox::Close:
+            _closeEnabled = true;
+            ui->actionClose->trigger();
+            break;
+        case QMessageBox::Cancel:
+            break;
+        default:
+            break;
+    }
 }
 
 void PlaylistEdit::print()
 {
-	PrintDialog dialog(ui->editName->text(), ui->playlist);
-	dialog.exec();
+    PrintDialog dialog(ui->editName->text(), ui->playlist);
+    dialog.exec();
 }
 
 void PlaylistEdit::refreshPlaylist(const bool &refresh)
 {
 #if WITH_EDITOR_VLCQT
-	if(!refresh) {
-		_timer->stop();
-		ui->progressBar->setValue(1);
-		ui->playlist->setEnabled(true);
-	} else {
-		ui->playlist->setEnabled(false);
+    if(!refresh) {
+        _timer->stop();
+        ui->progressBar->setValue(1);
+        ui->playlist->setEnabled(true);
+    } else {
+        ui->playlist->setEnabled(false);
 
-		if(ConsoleOutput::debug())
-			qDebug() << "Scanning:" << ui->ipFrom->text() << ui->ipPort->value() << ui->ipTimeout->value();
+        if(ConsoleOutput::debug())
+            qDebug() << "Scanning:" << ui->ipFrom->text() << ui->ipPort->value() << ui->ipTimeout->value();
 
-		QStringList ipFrom = ui->ipFrom->text().split(".");
-		_currentIp[0] = ipFrom[0].toInt();
-		_currentIp[1] = ipFrom[1].toInt();
-		_currentIp[2] = ipFrom[2].toInt();
-		_currentIp[3] = 1;
+        QStringList ipFrom = ui->ipFrom->text().split(".");
+        _currentIp[0] = ipFrom[0].toInt();
+        _currentIp[1] = ipFrom[1].toInt();
+        _currentIp[2] = ipFrom[2].toInt();
+        _currentIp[3] = 1;
 
-		_currentPort = ui->ipPort->value();
-		_currentTimeout = ui->ipTimeout->value();
+        _currentPort = ui->ipPort->value();
+        _currentTimeout = ui->ipTimeout->value();
 
-		checkIp();
-	}
+        checkIp();
+    }
 #endif
 }
 
 void PlaylistEdit::checkIp()
 {
 #if WITH_EDITOR_VLCQT
-	ui->progressBar->setValue(_currentIp[3]);
-	_player->open(currentIp());
+    ui->progressBar->setValue(_currentIp[3]);
+    _player->open(currentIp());
 
-	_timer->start(_currentTimeout);
+    _timer->start(_currentTimeout);
 #endif
 }
 
 void PlaylistEdit::checkCurrentIp()
 {
 #if WITH_EDITOR_VLCQT
-	if(_currentIpPlaying) {
-		_player->stop();
+    if(_currentIpPlaying) {
+        _player->stop();
 
-		bool newChannel = true;
-		for(int i=0; i<ui->playlist->treeWidget()->topLevelItemCount(); i++) {
-			if(ui->playlist->channelRead(ui->playlist->treeWidget()->topLevelItem(i))->url() == currentIp()) {
-				newChannel = false;
-				break;
-			}
-		}
+        bool newChannel = true;
+        for(int i=0; i<ui->playlist->treeWidget()->topLevelItemCount(); i++) {
+            if(ui->playlist->channelRead(ui->playlist->treeWidget()->topLevelItem(i))->url() == currentIp()) {
+                newChannel = false;
+                break;
+            }
+        }
 
-		if(newChannel) {
-			if(ConsoleOutput::debug())
-				qDebug() << "Scanning:" << "Channel Found";
-			addItem(tr("New channel from scan %1").arg(currentIp()), currentIp());
-		}
-	}
+        if(newChannel) {
+            if(ConsoleOutput::debug())
+                qDebug() << "Scanning:" << "Channel Found";
+            addItem(tr("New channel from scan %1").arg(currentIp()), currentIp());
+        }
+    }
 
-	if(_currentIp[3] != 255) {
-		_currentIp[3]++;
-		checkIp();
-	} else {
-		ui->buttonUpdate->setChecked(false);
-	}
+    if(_currentIp[3] != 255) {
+        _currentIp[3]++;
+        checkIp();
+    } else {
+        ui->buttonUpdate->setChecked(false);
+    }
 #endif
 }
 
 QString PlaylistEdit::currentIp()
 {
 #if WITH_EDITOR_VLCQT
-	QString ip = "udp://@";
-	ip.append(QString().number(_currentIp[0])+".");
-	ip.append(QString().number(_currentIp[1])+".");
-	ip.append(QString().number(_currentIp[2])+".");
-	ip.append(QString().number(_currentIp[3])+":");
-	ip.append(QString().number(_currentPort));
+    QString ip = "udp://@";
+    ip.append(QString().number(_currentIp[0])+".");
+    ip.append(QString().number(_currentIp[1])+".");
+    ip.append(QString().number(_currentIp[2])+".");
+    ip.append(QString().number(_currentIp[3])+":");
+    ip.append(QString().number(_currentPort));
 
-	return ip;
+    return ip;
 #endif
 }
 
 void PlaylistEdit::setState(const bool &playing)
 {
 #if WITH_EDITOR_VLCQT
-	_currentIpPlaying = playing;
+    _currentIpPlaying = playing;
 #endif
 }
 
 void PlaylistEdit::editItem(QTreeWidgetItem *item)
 {
-	if(item == 0) {
-		ui->editWidget->setEnabled(false);
-		return;
-	}
+    if(item == 0) {
+        ui->editWidget->setEnabled(false);
+        return;
+    }
 
-	if(!ui->editWidget->isEnabled())
-		ui->editWidget->setEnabled(true);
+    if(!ui->editWidget->isEnabled())
+        ui->editWidget->setEnabled(true);
 
-	ui->playlist->treeWidget()->setCurrentItem(item);
+    ui->playlist->treeWidget()->setCurrentItem(item);
 
-	ui->editNumber->setText(ui->playlist->channelRead(item)->numberString());
-	ui->editChannelName->setText(ui->playlist->channelRead(item)->name());
-	ui->editUrl->setText(ui->playlist->channelRead(item)->url());
-	ui->editCategories->setText(ui->playlist->channelRead(item)->categories().join(","));
-	ui->editLanguage->setText(ui->playlist->channelRead(item)->language());
-	ui->editEpg->setText(ui->playlist->channelRead(item)->epg());
+    ui->editNumber->setText(ui->playlist->channelRead(item)->numberString());
+    ui->editChannelName->setText(ui->playlist->channelRead(item)->name());
+    ui->editUrl->setText(ui->playlist->channelRead(item)->url());
+    ui->editCategories->setText(ui->playlist->channelRead(item)->categories().join(","));
+    ui->editLanguage->setText(ui->playlist->channelRead(item)->language());
+    ui->editEpg->setText(ui->playlist->channelRead(item)->epg());
 }
 
 void PlaylistEdit::editChannelNumber()
 {
-	QString text = ui->editNumber->text();
-	if(text.toInt() != ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->number())
-		ui->editNumber->setText(QString().number(ui->playlist->processNum(ui->playlist->treeWidget()->currentItem(), text.toInt())));
-	ui->playlist->treeWidget()->sortByColumn(0, Qt::AscendingOrder);
+    QString text = ui->editNumber->text();
+    if(text.toInt() != ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->number())
+        ui->editNumber->setText(QString().number(ui->playlist->processNum(ui->playlist->treeWidget()->currentItem(), text.toInt())));
+    ui->playlist->treeWidget()->sortByColumn(0, Qt::AscendingOrder);
 }
 
 void PlaylistEdit::editChannelName(const QString &text)
 {
-	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setName(text);
-	ui->playlist->treeWidget()->currentItem()->setText(1, text);
+    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setName(text);
+    ui->playlist->treeWidget()->currentItem()->setText(1, text);
 }
 
 void PlaylistEdit::editChannelUrl(const QString &text)
 {
-	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setUrl(text);
+    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setUrl(text);
 }
 
 void PlaylistEdit::editChannelCategories(const QString &text)
 {
-	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setCategories(text.split(","));
+    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setCategories(text.split(","));
 }
 
 void PlaylistEdit::editChannelLanguage(const QString &text)
 {
-	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setLanguage(text);
+    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setLanguage(text);
 }
 
 void PlaylistEdit::editChannelEpg(const QString &text)
 {
-	ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setEpg(text);
+    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setEpg(text);
 }
 
 void PlaylistEdit::moveUp()
 {
-	ui->playlist->moveUp(ui->playlist->treeWidget()->currentItem());
-	ui->editNumber->setText(ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->numberString());
+    ui->playlist->moveUp(ui->playlist->treeWidget()->currentItem());
+    ui->editNumber->setText(ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->numberString());
 }
 
 void PlaylistEdit::moveDown()
 {
-	ui->playlist->moveDown(ui->playlist->treeWidget()->currentItem());
-	ui->editNumber->setText(ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->numberString());
+    ui->playlist->moveDown(ui->playlist->treeWidget()->currentItem());
+    ui->editNumber->setText(ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->numberString());
 }

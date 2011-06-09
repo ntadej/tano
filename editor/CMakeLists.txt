@@ -24,74 +24,75 @@ cmake_minimum_required(VERSION 2.6)
 ###################
 # Define the UI source files used by Tano Editor
 SET(Tano_Editor_UIs
-	../src/ui/dialogs/AboutDialog.ui
-	../src/ui/dialogs/PrintDialog.ui
-	../src/ui/playlist/PlaylistEdit.ui
-	../src/ui/playlist/PlaylistExportTvheadend.ui
-	../src/ui/playlist/PlaylistImportCSV.ui
-	../src/ui/playlist/PlaylistImportWeb.ui
-	../src/ui/playlist/PlaylistSelect.ui
-	../src/ui/playlist/PlaylistWidget.ui
+    ../src/ui/dialogs/AboutDialog.ui
+    ../src/ui/dialogs/PrintDialog.ui
+    ../src/ui/playlist/PlaylistEdit.ui
+    ../src/ui/playlist/PlaylistExportTvheadend.ui
+    ../src/ui/playlist/PlaylistImportCSV.ui
+    ../src/ui/playlist/PlaylistImportWeb.ui
+    ../src/ui/playlist/PlaylistSelect.ui
+    ../src/ui/playlist/PlaylistWidget.ui
 )
 
 # Define the MOC source files used by Tano Editor
-SET(Tano_Editor_MOCs	# List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
-	../src/core/GetFile.h
-	../src/core/Print.h
-	../src/ui/core/License.h
-	../src/ui/dialogs/AboutDialog.h
-	../src/ui/dialogs/PrintDialog.h
-	../src/ui/playlist/PlaylistEdit.h
-	../src/ui/playlist/PlaylistExportTvheadend.h
-	../src/ui/playlist/PlaylistImportCSV.h
-	../src/ui/playlist/PlaylistImportWeb.h
-	../src/ui/playlist/PlaylistSelect.h
-	../src/ui/playlist/PlaylistWidget.h
+SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
+    ../src/core/GetFile.h
+    ../src/core/Print.h
+    ../src/ui/core/License.h
+    ../src/ui/dialogs/AboutDialog.h
+    ../src/ui/dialogs/PrintDialog.h
+    ../src/ui/playlist/PlaylistEdit.h
+    ../src/ui/playlist/PlaylistExportTvheadend.h
+    ../src/ui/playlist/PlaylistImportCSV.h
+    ../src/ui/playlist/PlaylistImportWeb.h
+    ../src/ui/playlist/PlaylistSelect.h
+    ../src/ui/playlist/PlaylistWidget.h
 )
 
 SET(Tano_Editor_Resrcs
-	../info.qrc
-	../data/icons.qrc
-	../data/images.qrc
-	../data/logo.qrc
+    ../info.qrc
+    ../data/icons.qrc
+    ../data/images.qrc
+    ../data/logo.qrc
 )
 
 # Define the C++ source files used by Tano
 SET(Tano_Editor_Srcs
-	main.cpp
+    main.cpp
 
-	../src/container/Channel.cpp
-	../src/container/PlaylistFile.cpp
+    ../src/container/Channel.cpp
+    ../src/container/PlaylistFile.cpp
 
-	../src/core/Common.cpp
-	../src/core/ConsoleOutput.cpp
-	../src/core/Enums.cpp
-	../src/core/GetFile.cpp
-	../src/core/LocaleManager.cpp
-	../src/core/Print.cpp
-	../src/core/Settings.cpp
+    ../src/core/Common.cpp
+    ../src/core/ConsoleOutput.cpp
+    ../src/core/Enums.cpp
+    ../src/core/GetFile.cpp
+    ../src/core/LocaleManager.cpp
+    ../src/core/Print.cpp
+    ../src/core/Settings.cpp
+    ../src/core/Udpxy.cpp
 
-	../src/playlist/CSVGenerator.cpp
-	../src/playlist/CSVHandler.cpp
-	../src/playlist/JsGenerator.cpp
-	../src/playlist/JsHandler.cpp
-	../src/playlist/M3UGenerator.cpp
-	../src/playlist/M3UHandler.cpp
-	../src/playlist/PlaylistHandler.cpp
-	../src/playlist/TvheadendGenerator.cpp
+    ../src/playlist/CSVGenerator.cpp
+    ../src/playlist/CSVHandler.cpp
+    ../src/playlist/JsGenerator.cpp
+    ../src/playlist/JsHandler.cpp
+    ../src/playlist/M3UGenerator.cpp
+    ../src/playlist/M3UHandler.cpp
+    ../src/playlist/PlaylistHandler.cpp
+    ../src/playlist/TvheadendGenerator.cpp
 
-	../src/ui/core/License.cpp
-	../src/ui/dialogs/AboutDialog.cpp
-	../src/ui/dialogs/PrintDialog.cpp
-	../src/ui/playlist/PlaylistEdit.cpp
-	../src/ui/playlist/PlaylistExportTvheadend.cpp
-	../src/ui/playlist/PlaylistImportCSV.cpp
-	../src/ui/playlist/PlaylistImportWeb.cpp
-	../src/ui/playlist/PlaylistSelect.cpp
-	../src/ui/playlist/PlaylistWidget.cpp
+    ../src/ui/core/License.cpp
+    ../src/ui/dialogs/AboutDialog.cpp
+    ../src/ui/dialogs/PrintDialog.cpp
+    ../src/ui/playlist/PlaylistEdit.cpp
+    ../src/ui/playlist/PlaylistExportTvheadend.cpp
+    ../src/ui/playlist/PlaylistImportCSV.cpp
+    ../src/ui/playlist/PlaylistImportWeb.cpp
+    ../src/ui/playlist/PlaylistSelect.cpp
+    ../src/ui/playlist/PlaylistWidget.cpp
 
-	../src/xml/PlaylistListHandler.cpp
-	../src/xml/TanoHandlerOld.cpp
+    ../src/xml/PlaylistListHandler.cpp
+    ../src/xml/TanoHandlerOld.cpp
 )
 
 ################
@@ -120,20 +121,20 @@ ADD_DEFINITIONS(-DEDITOR=1)
 
 # Define default data dir, if under POSIX systems.
 IF(NOT MINGW)
-	IF (NOT DEFAULT_DATA_DIR)
-		ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-	ELSE (NOT DEFAULT_DATA_DIR)
-		ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${DEFAULT_DATA_DIR}")
-	ENDIF (NOT DEFAULT_DATA_DIR)
+    IF (NOT DEFAULT_DATA_DIR)
+        ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+    ELSE (NOT DEFAULT_DATA_DIR)
+        ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${DEFAULT_DATA_DIR}")
+    ENDIF (NOT DEFAULT_DATA_DIR)
 ENDIF(NOT MINGW)
 
 # Define default plugin dir, if under POSIX systems.
 IF(NOT MINGW)
-	IF (NOT DEFAULT_PLUGIN_DIR)
-		ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR}")
-	ELSE (NOT DEFAULT_PLUGIN_DIR)
-		ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${DEFAULT_PLUGIN_DIR}")
-	ENDIF (NOT DEFAULT_PLUGIN_DIR)
+    IF (NOT DEFAULT_PLUGIN_DIR)
+        ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR}")
+    ELSE (NOT DEFAULT_PLUGIN_DIR)
+        ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${DEFAULT_PLUGIN_DIR}")
+    ENDIF (NOT DEFAULT_PLUGIN_DIR)
 ENDIF(NOT MINGW)
 
 
@@ -152,20 +153,20 @@ IF(EDITOR_WITH_VLCQT)
 ENDIF(EDITOR_WITH_VLCQT)
 
 IF(MINGW)
-	# CMake currently doesn't support windres yet. Add command manually
-	FIND_PROGRAM(
-		WINDRES_PROGRAM windres.exe PATHS
-		"[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MinGW;InstallLocation]/bin"
-		c:/MinGW/bin /MinGW/bin
-	)
-	ADD_CUSTOM_COMMAND(
-		OUTPUT ${CMAKE_BINARY_DIR}/editor/windows.obj
-		COMMAND ${WINDRES_PROGRAM}
-		-i ${CMAKE_SOURCE_DIR}/editor/windows.rc
-		-o ${CMAKE_BINARY_DIR}/editor/windows.obj
-		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/editor"
-	)
-	SET(Tano_Editor_Srcs ${Tano_Editor_Srcs} ${CMAKE_BINARY_DIR}/editor/windows.obj)
+    # CMake currently doesn't support windres yet. Add command manually
+    FIND_PROGRAM(
+        WINDRES_PROGRAM windres.exe PATHS
+        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MinGW;InstallLocation]/bin"
+        c:/MinGW/bin /MinGW/bin
+    )
+    ADD_CUSTOM_COMMAND(
+        OUTPUT ${CMAKE_BINARY_DIR}/editor/windows.obj
+        COMMAND ${WINDRES_PROGRAM}
+        -i ${CMAKE_SOURCE_DIR}/editor/windows.rc
+        -o ${CMAKE_BINARY_DIR}/editor/windows.obj
+        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/editor"
+    )
+    SET(Tano_Editor_Srcs ${Tano_Editor_Srcs} ${CMAKE_BINARY_DIR}/editor/windows.obj)
 ENDIF(MINGW)
 
 
@@ -185,6 +186,6 @@ ENDIF(EDITOR_WITH_VLCQT)
 ################
 # Install tano-editor exe
 INSTALL(TARGETS tano-editor
-	RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
 )
 

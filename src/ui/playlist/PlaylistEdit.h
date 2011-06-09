@@ -32,93 +32,94 @@ class VlcMediaPlayer;
 
 namespace Ui
 {
-	class PlaylistEdit;
+    class PlaylistEdit;
 }
 
 class PlaylistEdit : public QMainWindow
 {
 Q_OBJECT
 public:
-	PlaylistEdit(const WId &video = 0,
-				 QWidget *parent = 0);
-	~PlaylistEdit();
+    PlaylistEdit(const WId &video = 0,
+                 QWidget *parent = 0);
+    ~PlaylistEdit();
 
-	void setStandalone(const bool &standalone);
+    void setStandalone(const bool &standalone);
 
 public slots:
-	void newPlaylist();
-	void open(const QString &playlist = 0,
-			  const bool &refresh = false);
+    void newPlaylist();
+    void open(const QString &playlist = 0,
+              const bool &refresh = false);
 
 protected:
-	void changeEvent(QEvent *e);
-	void closeEvent(QCloseEvent *event);
+    void changeEvent(QEvent *e);
+    void closeEvent(QCloseEvent *event);
 
 private slots:
-	void aboutTano();
-	void setTitle(const QString &title);
+    void aboutTano();
+    void setTitle(const QString &title);
 
-	void deleteItem();
-	void addItem();
-	void addItem(const QString &name,
-				 const QString &url);
+    void deleteItem();
+    void addItem();
+    void addItem(const QString &name,
+                 const QString &url);
 
-	void save();
-	void exportM3UClean();
-	void exportCSV();
-	void importCSV();
-	void exportJs();
-	void importJs();
-	void importTanoOld();
-	void importWeb();
-	void exportTvheadend();
-	void print();
+    void save();
+    void exportM3UClean();
+    void exportM3UUdpxy();
+    void exportCSV();
+    void importCSV();
+    void exportJs();
+    void importJs();
+    void importTanoOld();
+    void importWeb();
+    void exportTvheadend();
+    void print();
 
-	void menuOpenExport();
-	void menuOpenImport();
-	void exit();
+    void menuOpenExport();
+    void menuOpenImport();
+    void exit();
 
-	void editItem(QTreeWidgetItem *item);
+    void editItem(QTreeWidgetItem *item);
 
-	void editChannelNumber();
-	void editChannelName(const QString &text);
-	void editChannelUrl(const QString &text);
-	void editChannelCategories(const QString &text);
-	void editChannelLanguage(const QString &text);
-	void editChannelEpg(const QString &text);
+    void editChannelNumber();
+    void editChannelName(const QString &text);
+    void editChannelUrl(const QString &text);
+    void editChannelCategories(const QString &text);
+    void editChannelLanguage(const QString &text);
+    void editChannelEpg(const QString &text);
 
-	void moveUp();
-	void moveDown();
+    void moveUp();
+    void moveDown();
 
-	void refreshPlaylist(const bool &refresh);
-	void checkIp();
-	void checkCurrentIp();
-	void setState(const bool &playing);
+    void refreshPlaylist(const bool &refresh);
+    void checkIp();
+    void checkCurrentIp();
+    void setState(const bool &playing);
 
 private:
-	void createConnections();
-	void createSettings();
+    void createConnections();
+    void createSettings();
 
-	Ui::PlaylistEdit *ui;
+    Ui::PlaylistEdit *ui;
 
-	bool _closeEnabled;
-	QMenu *_menuExport;
-	QMenu *_menuImport;
+    bool _closeEnabled;
+    QMenu *_menuExport;
+    QMenu *_menuImport;
 
-	bool _standalone;
+    bool _standalone;
 
-	// Update playlist
-	QString currentIp();
+    // Update playlist
+    QString currentIp();
 
 #if WITH_EDITOR_VLCQT
-	VlcInstance *_instance;
-	VlcMediaPlayer *_player;
-	int _refresh;
-	int _currentIp[4];
-	int _currentPort;
-	int _currentTimeout;
-	bool _currentIpPlaying;
-	QTimer *_timer;
+    VlcInstance *_instance;
+    VlcMediaPlayer *_player;
+    int _refresh;
+    int _currentIp[4];
+    int _currentPort;
+    int _currentTimeout;
+    bool _currentIpPlaying;
+    QTimer *_timer;
 #endif
 };
 

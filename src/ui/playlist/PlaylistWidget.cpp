@@ -23,6 +23,7 @@
 #include "ui_PlaylistWidget.h"
 
 #include "container/Channel.h"
+#include "core/Enums.h"
 #include "playlist/CSVGenerator.h"
 #include "playlist/JsGenerator.h"
 #include "playlist/M3UGenerator.h"
@@ -30,274 +31,291 @@
 #include "playlist/TvheadendGenerator.h"
 
 PlaylistWidget::PlaylistWidget(QWidget *parent)
-	: QWidget(parent),
-	ui(new Ui::PlaylistWidget)
+    : QWidget(parent),
+      ui(new Ui::PlaylistWidget)
 {
-	ui->setupUi(this);
-	ui->treeWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
+    ui->setupUi(this);
+    ui->treeWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
 
-	_handler = new PlaylistHandler(ui->treeWidget);
+    _handler = new PlaylistHandler(ui->treeWidget);
 
-	connect(ui->treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SIGNAL(itemClicked(QTreeWidgetItem*, int)));
-	connect(ui->categoryBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
-	connect(ui->languageBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
-	connect(ui->searchEdit, SIGNAL(textChanged(QString)), this, SLOT(processPlaylist()));
+    connect(ui->treeWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SIGNAL(itemClicked(QTreeWidgetItem*, int)));
+    connect(ui->categoryBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
+    connect(ui->languageBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
+    connect(ui->searchEdit, SIGNAL(textChanged(QString)), this, SLOT(processPlaylist()));
 }
 
 PlaylistWidget::~PlaylistWidget()
 {
-	delete ui;
-	delete _handler;
+    delete ui;
+    delete _handler;
 }
 
 void PlaylistWidget::changeEvent(QEvent *e)
 {
-	QWidget::changeEvent(e);
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			ui->retranslateUi(this);
-			ui->categoryBox->setItemText(0, tr("All categories"));
-			ui->languageBox->setItemText(0, tr("All languages"));
-			break;
-		default:
-			break;
-	}
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            ui->categoryBox->setItemText(0, tr("All categories"));
+            ui->languageBox->setItemText(0, tr("All languages"));
+            break;
+        default:
+            break;
+    }
 }
 
 void PlaylistWidget::clear()
 {
-	_handler->clear();
+    _handler->clear();
 }
 
 void PlaylistWidget::open(const QString &file,
-						  const bool &refresh)
+                          const bool &refresh)
 {
-	if(!refresh)
-		_handler->clear();
+    if(!refresh)
+        _handler->clear();
 
-	if (file.isEmpty())
-		return;
+    if (file.isEmpty())
+        return;
 
-	_fileName = file;
+    _fileName = file;
 
-	QFile f(_fileName);
-	if (!f.open(QFile::ReadOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano"),
-							tr("Cannot read file %1:\n%2.")
-							.arg(_fileName)
-							.arg(f.errorString()));
-		return;
-	}
+    QFile f(_fileName);
+    if (!f.open(QFile::ReadOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot read file %1:\n%2.")
+                            .arg(_fileName)
+                            .arg(f.errorString()));
+        return;
+    }
 
-	_handler->openM3UFile(_fileName);
+    _handler->openM3UFile(_fileName);
 
-	ui->categoryBox->clear();
-	ui->categoryBox->insertItem(0,tr("All categories"));
-	ui->categoryBox->insertItems(1,_handler->categories());
+    ui->categoryBox->clear();
+    ui->categoryBox->insertItem(0,tr("All categories"));
+    ui->categoryBox->insertItems(1,_handler->categories());
 
-	ui->languageBox->clear();
-	ui->languageBox->insertItem(0,tr("All languages"));
-	ui->languageBox->insertItems(1,_handler->languages());
+    ui->languageBox->clear();
+    ui->languageBox->insertItem(0,tr("All languages"));
+    ui->languageBox->insertItems(1,_handler->languages());
 
-	ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
+    ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
 void PlaylistWidget::save(const QString &name,
-						  const QString &file)
+                          const QString &file)
 {
-	QFile f(file);
-	if (!f.open(QFile::WriteOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano"),
-							tr("Cannot write file %1:\n%2.")
-							.arg(file)
-							.arg(f.errorString()));
-		return;
-	}
+    QFile f(file);
+    if (!f.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot write file %1:\n%2.")
+                            .arg(file)
+                            .arg(f.errorString()));
+        return;
+    }
 
-	M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, _handler->channelMap());
-	generator->write(&f);
-	delete generator;
+    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, _handler->channelMap());
+    generator->write(&f);
+    delete generator;
 }
 
 void PlaylistWidget::exportM3UClean(const QString &file)
 {
-	QFile f(file);
-	if (!f.open(QFile::WriteOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano"),
-							tr("Cannot write file %1:\n%2.")
-							.arg(file)
-							.arg(f.errorString()));
-		return;
-	}
+    QFile f(file);
+    if (!f.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot write file %1:\n%2.")
+                            .arg(file)
+                            .arg(f.errorString()));
+        return;
+    }
 
-	M3UGenerator *generator = new M3UGenerator(ui->treeWidget, "", _handler->channelMap(), true);
-	generator->write(&f);
-	delete generator;
+    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, "", _handler->channelMap(), Tano::M3UClean);
+    generator->write(&f);
+    delete generator;
+}
+
+void PlaylistWidget::exportM3UUdpxy(const QString &name,
+                                    const QString &file)
+{
+    QFile f(file);
+    if (!f.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot write file %1:\n%2.")
+                            .arg(file)
+                            .arg(f.errorString()));
+        return;
+    }
+
+    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, _handler->channelMap(), Tano::M3UUdpxy);
+    generator->write(&f);
+    delete generator;
 }
 
 void PlaylistWidget::exportCSV(const QString &file)
 {
-	QFile f(file);
-	if (!f.open(QFile::WriteOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano"),
-							tr("Cannot write file %1:\n%2.")
-							.arg(file)
-							.arg(f.errorString()));
-		return;
-	}
+    QFile f(file);
+    if (!f.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot write file %1:\n%2.")
+                            .arg(file)
+                            .arg(f.errorString()));
+        return;
+    }
 
-	CSVGenerator *generator = new CSVGenerator(ui->treeWidget, _handler->channelMap());
-	generator->write(&f);
-	delete generator;
+    CSVGenerator *generator = new CSVGenerator(ui->treeWidget, _handler->channelMap());
+    generator->write(&f);
+    delete generator;
 }
 
 void PlaylistWidget::importCSV(const QString &file,
-							   const QString &separator,
-							   const bool &header,
-							   const QList<int> &columns)
+                               const QString &separator,
+                               const bool &header,
+                               const QList<int> &columns)
 {
-	_handler->clear();
-	_handler->importCSVFormat(file, separator, header, columns);
+    _handler->clear();
+    _handler->importCSVFormat(file, separator, header, columns);
 }
 
 void PlaylistWidget::exportJs(const QString &file)
 {
-	QFile f(file);
-	if (!f.open(QFile::WriteOnly | QFile::Text)) {
-		QMessageBox::warning(this, tr("Tano"),
-							tr("Cannot write file %1:\n%2.")
-							.arg(file)
-							.arg(f.errorString()));
-		return;
-	}
+    QFile f(file);
+    if (!f.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot write file %1:\n%2.")
+                            .arg(file)
+                            .arg(f.errorString()));
+        return;
+    }
 
-	JsGenerator *generator = new JsGenerator(ui->treeWidget, _handler->channelMap());
-	generator->write(&f);
-	delete generator;
+    JsGenerator *generator = new JsGenerator(ui->treeWidget, _handler->channelMap());
+    generator->write(&f);
+    delete generator;
 }
 
 void PlaylistWidget::importJs(const QString &file)
 {
-	_handler->clear();
-	_handler->importJsFormat(file);
+    _handler->clear();
+    _handler->importJsFormat(file);
 }
 
 void PlaylistWidget::importTanoOld(const QString &file)
 {
-	_handler->clear();
-	_handler->importOldFormat(file);
+    _handler->clear();
+    _handler->importOldFormat(file);
 }
 
 void PlaylistWidget::exportTvheadend(const QString &location,
-									 const QString &interface,
-									 const QString &xmltv)
+                                     const QString &interface,
+                                     const QString &xmltv)
 {
-	TvheadendGenerator *generator = new TvheadendGenerator(ui->treeWidget, _handler->channelMap(), location, interface, xmltv);
-	generator->write();
-	delete generator;
+    TvheadendGenerator *generator = new TvheadendGenerator(ui->treeWidget, _handler->channelMap(), location, interface, xmltv);
+    generator->write();
+    delete generator;
 }
 
 void PlaylistWidget::processPlaylist()
 {
-	for(int i = 0; i < ui->treeWidget->topLevelItemCount(); i++) {
-		ui->treeWidget->topLevelItem(i)->setHidden(false);
-	}
+    for(int i = 0; i < ui->treeWidget->topLevelItemCount(); i++) {
+        ui->treeWidget->topLevelItem(i)->setHidden(false);
+    }
 
-	if(ui->categoryBox->currentText() != tr("All categories")) {
-		for(int i = 0; i<ui->treeWidget->topLevelItemCount(); i++) {
-			if(!ui->treeWidget->topLevelItem(i)->text(2).contains(ui->categoryBox->currentText(), Qt::CaseInsensitive)) {
-				ui->treeWidget->topLevelItem(i)->setHidden(true);
-			}
-		}
-	}
+    if(ui->categoryBox->currentText() != tr("All categories")) {
+        for(int i = 0; i<ui->treeWidget->topLevelItemCount(); i++) {
+            if(!ui->treeWidget->topLevelItem(i)->text(2).contains(ui->categoryBox->currentText(), Qt::CaseInsensitive)) {
+                ui->treeWidget->topLevelItem(i)->setHidden(true);
+            }
+        }
+    }
 
-	if(ui->languageBox->currentText() != tr("All languages")) {
-		for(int i = 0; i<ui->treeWidget->topLevelItemCount(); i++) {
-			if(!ui->treeWidget->topLevelItem(i)->text(3).contains(ui->languageBox->currentText(), Qt::CaseInsensitive)) {
-				ui->treeWidget->topLevelItem(i)->setHidden(true);
-			}
-		}
-	}
+    if(ui->languageBox->currentText() != tr("All languages")) {
+        for(int i = 0; i<ui->treeWidget->topLevelItemCount(); i++) {
+            if(!ui->treeWidget->topLevelItem(i)->text(3).contains(ui->languageBox->currentText(), Qt::CaseInsensitive)) {
+                ui->treeWidget->topLevelItem(i)->setHidden(true);
+            }
+        }
+    }
 
-	if(ui->searchEdit->text() != "") {
-		for(int i  =0; i<ui->treeWidget->topLevelItemCount(); i++) {
-			if(!ui->treeWidget->topLevelItem(i)->text(1).contains(ui->searchEdit->text(), Qt::CaseInsensitive)) {
-					ui->treeWidget->topLevelItem(i)->setHidden(true);
-				}
-		}
-	}
+    if(ui->searchEdit->text() != "") {
+        for(int i  =0; i<ui->treeWidget->topLevelItemCount(); i++) {
+            if(!ui->treeWidget->topLevelItem(i)->text(1).contains(ui->searchEdit->text(), Qt::CaseInsensitive)) {
+                    ui->treeWidget->topLevelItem(i)->setHidden(true);
+                }
+        }
+    }
 
 }
 
 QTreeWidgetItem *PlaylistWidget::createItem(const QString &name,
-											const QString &url)
+                                            const QString &url)
 {
-	QTreeWidgetItem *newI = _handler->createChannel(name, url);
-	ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
-	return newI;
+    QTreeWidgetItem *newI = _handler->createChannel(name, url);
+    ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
+    return newI;
 }
 
 void PlaylistWidget::deleteItem()
 {
-	_handler->deleteChannel(ui->treeWidget->currentItem());
-	ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
+    _handler->deleteChannel(ui->treeWidget->currentItem());
+    ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
 void PlaylistWidget::editMode()
 {
-	ui->labelCategory->hide();
-	ui->categoryBox->hide();
-	ui->labelLanguage->hide();
-	ui->languageBox->hide();
+    ui->labelCategory->hide();
+    ui->categoryBox->hide();
+    ui->labelLanguage->hide();
+    ui->languageBox->hide();
 }
 
 QString PlaylistWidget::name() const
 {
-	return _handler->name();
+    return _handler->name();
 }
 
 QStringList PlaylistWidget::epg() const
 {
-	return _handler->epg();
+    return _handler->epg();
 }
 
 QList<int> PlaylistWidget::nums() const
 {
-	return _handler->nums();
+    return _handler->nums();
 }
 
 QTreeWidget *PlaylistWidget::treeWidget()
 {
-	return ui->treeWidget;
+    return ui->treeWidget;
 }
 
 int PlaylistWidget::processNum(QTreeWidgetItem *channel,
-			   const int &num) const
+               const int &num) const
 {
-	return _handler->processNewNum(channel, num);
+    return _handler->processNewNum(channel, num);
 }
 
 void PlaylistWidget::moveUp(QTreeWidgetItem *channel)
 {
-	_handler->moveUp(channel);
+    _handler->moveUp(channel);
 }
 
 void PlaylistWidget::moveDown(QTreeWidgetItem *channel)
 {
-	_handler->moveDown(channel);
+    _handler->moveDown(channel);
 }
 
 Channel *PlaylistWidget::channelRead(QTreeWidgetItem* clickedChannel)
 {
-	return _handler->channelRead(clickedChannel);
+    return _handler->channelRead(clickedChannel);
 }
 
 Channel *PlaylistWidget::channelRead(const int &clickedChannel)
 {
-	return _handler->channelRead(clickedChannel);
+    return _handler->channelRead(clickedChannel);
 }
 
 bool PlaylistWidget::validate() const
 {
-	return _handler->validate();
+    return _handler->validate();
 }

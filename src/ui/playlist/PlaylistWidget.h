@@ -43,6 +43,8 @@ public:
 	void save(const QString &name,
 			  const QString &file);
 	void exportM3UClean(const QString &file);
+    void exportM3UUdpxy(const QString &name,
+                        const QString &file);
 	void exportCSV(const QString &file);
 	void importCSV(const QString &file,
 				   const QString &separator,

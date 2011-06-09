@@ -24,16 +24,17 @@
 class Udpxy
 {
 public:
-	Udpxy();
-	~Udpxy();
+    Udpxy(const bool &generate = false);
+    ~Udpxy();
 
-	void createSettings();
-	QString processUrl(const QString &url) const;
+    void createSettings();
+    QString processUrl(const QString &url) const;
 
 private:
-	bool _enabled;
-	QString _url;
-	QString _port;
+    bool _enabled;
+    bool _generate;
+    QString _url;
+    QString _port;
 };
 
 #endif // TANO_UDPXY_H_

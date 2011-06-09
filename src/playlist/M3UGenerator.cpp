@@ -17,62 +17,83 @@
 *****************************************************************************/
 
 #include "container/Channel.h"
+#include "core/Udpxy.h"
 #include "playlist/M3UGenerator.h"
 
 M3UGenerator::M3UGenerator(QTreeWidget *treeWidget,
-						   const QString &name,
-						   QMap<QTreeWidgetItem *, Channel *> map,
-						   const bool &clean)
-	: _treeWidget(treeWidget),
-	_name(name),
-	_map(map),
-	_clean(clean) { }
+                           const QString &name,
+                           QMap<QTreeWidgetItem *, Channel *> map,
+                           const Tano::M3UType &type)
+    : _treeWidget(treeWidget),
+      _name(name),
+      _map(map),
+      _type(type)
+{
+    _udpxy = new Udpxy();
+}
 
 M3UGenerator::~M3UGenerator() { }
 
 bool M3UGenerator::write(QIODevice *device)
 {
-	_out.setDevice(device);
-	_out.setCodec("UTF-8");
-	_out << "#EXTM3U\n";
-	if(!_clean) {
-		_out << "#EXTNAME:"
-			 << _name
-			 << "\n\n";
-	}
-	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
-		if(_clean) {
-			generateItemClean(_map[_treeWidget->topLevelItem(i)]);
-		} else {
-			generateItem(_map[_treeWidget->topLevelItem(i)]);
-		}
-	}
-	return true;
+    _out.setDevice(device);
+    _out.setCodec("UTF-8");
+    _out << "#EXTM3U\n";
+    if(_type != Tano::M3UClean) {
+        _out << "#EXTNAME:"
+             << _name
+             << "\n\n";
+    }
+    for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
+        if(_type == Tano::M3UClean) {
+            generateItemClean(_map[_treeWidget->topLevelItem(i)]);
+        } else if(_type == Tano::M3UUdpxy) {
+            generateItemUdpxy(_map[_treeWidget->topLevelItem(i)]);
+        } else {
+            generateItemNormal(_map[_treeWidget->topLevelItem(i)]);
+        }
+    }
+    return true;
 }
 
-void M3UGenerator::generateItem(Channel *channel)
+void M3UGenerator::generateItemNormal(Channel *channel)
 {
-	_out << "#EXTINF:"
-		 << channel->numberString() << ","
-		 << channel->name() << "\n";
+    _out << "#EXTINF:"
+         << channel->numberString() << ","
+         << channel->name() << "\n";
 
-	_out << "#EXTTV:"
-		 << channel->categories().join(",") << ";"
-		 << channel->language() << ";"
-		 << channel->epg();
-	_out << "\n";
+    _out << "#EXTTV:"
+         << channel->categories().join(",") << ";"
+         << channel->language() << ";"
+         << channel->epg();
+    _out << "\n";
 
-	_out << channel->url();
-	_out << "\n\n";
+    _out << channel->url();
+    _out << "\n\n";
 }
 
 void M3UGenerator::generateItemClean(Channel *channel)
 {
-	_out << "#EXTINF:"
-		 << channel->numberString() << ","
-		 << channel->name() << "\n";
+    _out << "#EXTINF:"
+         << channel->numberString() << ","
+         << channel->name() << "\n";
 
-	_out << channel->url();
-	_out << "\n\n";
+    _out << channel->url();
+    _out << "\n\n";
 }
 
+void M3UGenerator::generateItemUdpxy(Channel *channel)
+{
+    _out << "#EXTINF:"
+         << channel->numberString() << ","
+         << channel->name() << "\n";
+
+    _out << "#EXTTV:"
+         << channel->categories().join(",") << ";"
+         << channel->language() << ";"
+         << channel->epg();
+    _out << "\n";
+
+    _out << _udpxy->processUrl(channel->url());
+    _out << "\n\n";
+}
