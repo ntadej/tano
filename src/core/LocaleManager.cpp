@@ -26,54 +26,54 @@
 
 LocaleManager::LocaleManager()
 {
-	_translator = new QTranslator();
-	QCoreApplication::installTranslator(_translator);
-	setLocale();
+    _translator = new QTranslator();
+    QCoreApplication::installTranslator(_translator);
+    setLocale();
 }
 
 LocaleManager::~LocaleManager()
 {
-	QCoreApplication::removeTranslator(_translator);
-	delete _translator;
+    QCoreApplication::removeTranslator(_translator);
+    delete _translator;
 }
 
 QString LocaleManager::language(const QString &locale)
 {
-	QString language = QLocale::languageToString(QLocale(locale).language());
+    QString language = QLocale::languageToString(QLocale(locale).language());
 
-	if(language == "C")
-		return "English";
-	else
-		return language;
+    if(language == "C")
+        return "English";
+    else
+        return language;
 }
 
 QStringList LocaleManager::loadTranslations()
 {
-	QDir dir(Tano::locateResource("/lang/tano_sl_SI.qm").replace("/tano_sl_SI.qm", ""));
-	QStringList list;
-	QLocale locale = QLocale::English;
-	list << QLocale::languageToString(locale.language());
+    QDir dir(Tano::locateResource("/lang/sl_SI.qm").replace("/sl_SI.qm", ""));
+    QStringList list;
+    QLocale locale = QLocale::English;
+    list << QLocale::languageToString(locale.language());
 
-	foreach (QString fileName, dir.entryList(QDir::Files)) {
-		if(fileName.contains(".qm") && !fileName.contains("empty")) {
-			locale = QLocale(fileName.replace("tano_", ""));
-			list << locale.name();
-		}
-	}
+    foreach (QString fileName, dir.entryList(QDir::Files)) {
+        if(fileName.contains(".qm") && !fileName.contains("empty")) {
+            locale = QLocale(fileName);
+            list << locale.name();
+        }
+    }
 
-	return list;
+    return list;
 }
 
 void LocaleManager::setLocale()
 {
-	QString locale;
-	Settings *settings = new Settings();
-	if(settings->language().isEmpty())
-		locale = QLocale::system().name();
-	else
-		locale = QLocale(settings->language()).name();
-	delete settings;
+    QString locale;
+    Settings *settings = new Settings();
+    if(settings->language().isEmpty())
+        locale = QLocale::system().name();
+    else
+        locale = QLocale(settings->language()).name();
+    delete settings;
 
-	QString langPath = Tano::locateResource("/lang/tano_" + locale + ".qm").replace("/tano_" + locale + ".qm", "");
-	_translator->load(QString("tano_" + locale), langPath);
+    QString langPath = Tano::locateResource("/lang/" + locale + ".qm").replace("/" + locale + ".qm", "");
+    _translator->load(QString(locale), langPath);
 }
