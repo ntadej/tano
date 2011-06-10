@@ -632,6 +632,18 @@
     <string>Settings</string>
    </property>
   </action>
+  <action name="actionExportXmltvId">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/export.png</normaloff>:/icons/24x24/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>XMLTV IDs</string>
+   </property>
+   <property name="toolTip">
+    <string>XMLTV IDs</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

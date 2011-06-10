@@ -765,6 +765,18 @@ msgid ""
 "classic URLs."
 msgstr ""
 
+msgctxt "PlaylistEdit|"
+msgid "XMLTV IDs"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "Export XMLTV IDs"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "Plain text file (*.txt)"
+msgstr ""
+
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
 msgstr ""

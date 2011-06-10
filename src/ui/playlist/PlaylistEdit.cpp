@@ -80,6 +80,7 @@ PlaylistEdit::PlaylistEdit(const WId &video,
     _menuExport->addAction(ui->actionExportCSV);
     _menuExport->addAction(ui->actionExportJs);
     _menuExport->addAction(ui->actionExportTvheadend);
+    _menuExport->addAction(ui->actionExportXmltvId);
 
     _menuImport = new QMenu();
     _menuImport->addAction(ui->actionImportDownload);
@@ -145,6 +146,7 @@ void PlaylistEdit::createConnections()
     connect(ui->actionExportCSV, SIGNAL(triggered()), this, SLOT(exportCSV()));
     connect(ui->actionExportJs, SIGNAL(triggered()), this, SLOT(exportJs()));
     connect(ui->actionExportTvheadend, SIGNAL(triggered()), this, SLOT(exportTvheadend()));
+    connect(ui->actionExportXmltvId, SIGNAL(triggered()), this, SLOT(exportXmltvId()));
     connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(menuOpenImport()));
     connect(ui->actionImportDownload, SIGNAL(triggered()), this, SLOT(importWeb()));
     connect(ui->actionImportCSV, SIGNAL(triggered()), this, SLOT(importCSV()));
@@ -352,16 +354,6 @@ void PlaylistEdit::exportCSV()
     ui->playlist->exportCSV(fileName);
 }
 
-void PlaylistEdit::exportTvheadend()
-{
-    PlaylistExportTvheadend dialog;
-    dialog.exec();
-    if(!dialog.proceed())
-        return;
-
-    ui->playlist->exportTvheadend(dialog.location(), dialog.interface(), dialog.xmltv());
-}
-
 void PlaylistEdit::importCSV()
 {
     QString fileName =
@@ -405,6 +397,28 @@ void PlaylistEdit::importJs()
     ui->playlist->importJs(fileName);
     ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
     ui->editName->setText(ui->playlist->name());
+}
+
+void PlaylistEdit::exportTvheadend()
+{
+    PlaylistExportTvheadend dialog;
+    dialog.exec();
+    if(!dialog.proceed())
+        return;
+
+    ui->playlist->exportTvheadend(dialog.location(), dialog.interface(), dialog.xmltv());
+}
+
+void PlaylistEdit::exportXmltvId()
+{
+    QString fileName =
+        QFileDialog::getSaveFileName(this, tr("Export XMLTV IDs"),
+                                    QDir::homePath(),
+                                    tr("Plain text file (*.txt)"));
+    if (fileName.isEmpty())
+        return;
+
+    ui->playlist->exportXmltvId(fileName);
 }
 
 void PlaylistEdit::importTanoOld()

@@ -88,6 +88,7 @@ SET(Tano_Editor_Srcs
     ../src/playlist/M3UHandler.cpp
     ../src/playlist/PlaylistHandler.cpp
     ../src/playlist/TvheadendGenerator.cpp
+    ../src/playlist/XmltvIdGenerator.cpp
 
     ../src/ui/core/License.cpp
     ../src/ui/core/QtKeySequenceEdit.cpp

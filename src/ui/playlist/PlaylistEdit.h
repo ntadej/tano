@@ -76,6 +76,7 @@ private slots:
     void importTanoOld();
     void importWeb();
     void exportTvheadend();
+    void exportXmltvId();
     void print();
 
     void menuOpenExport();

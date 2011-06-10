@@ -767,6 +767,18 @@ You will lose any unsaved changes.</source>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>XMLTV IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export XMLTV IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plain text file (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>

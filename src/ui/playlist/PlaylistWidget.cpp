@@ -29,6 +29,7 @@
 #include "playlist/M3UGenerator.h"
 #include "playlist/PlaylistHandler.h"
 #include "playlist/TvheadendGenerator.h"
+#include "playlist/XmltvIdGenerator.h"
 
 PlaylistWidget::PlaylistWidget(QWidget *parent)
     : QWidget(parent),
@@ -212,6 +213,22 @@ void PlaylistWidget::exportTvheadend(const QString &location,
 {
     TvheadendGenerator *generator = new TvheadendGenerator(ui->treeWidget, _handler->channelMap(), location, interface, xmltv);
     generator->write();
+    delete generator;
+}
+
+void PlaylistWidget::exportXmltvId(const QString &file)
+{
+    QFile f(file);
+    if (!f.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot write file %1:\n%2.")
+                            .arg(file)
+                            .arg(f.errorString()));
+        return;
+    }
+
+    XmltvIdGenerator *generator = new XmltvIdGenerator(ui->treeWidget, _handler->channelMap());
+    generator->write(&f);
     delete generator;
 }
 

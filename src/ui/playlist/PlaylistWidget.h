@@ -27,72 +27,73 @@ class PlaylistHandler;
 
 namespace Ui
 {
-	class PlaylistWidget;
+    class PlaylistWidget;
 }
 
 class PlaylistWidget : public QWidget
 {
 Q_OBJECT
 public:
-	PlaylistWidget(QWidget *parent = 0);
-	~PlaylistWidget();
+    PlaylistWidget(QWidget *parent = 0);
+    ~PlaylistWidget();
 
-	void clear();
-	void open(const QString &file,
-			  const bool &refresh = false);
-	void save(const QString &name,
-			  const QString &file);
-	void exportM3UClean(const QString &file);
+    void clear();
+    void open(const QString &file,
+              const bool &refresh = false);
+    void save(const QString &name,
+              const QString &file);
+    void exportM3UClean(const QString &file);
     void exportM3UUdpxy(const QString &name,
                         const QString &file);
-	void exportCSV(const QString &file);
-	void importCSV(const QString &file,
-				   const QString &separator,
-				   const bool &header,
-				   const QList<int> &columns);
-	void exportJs(const QString &file);
-	void importJs(const QString &file);
-	void importTanoOld(const QString &file);
-	void exportTvheadend(const QString &location,
-						 const QString &interface,
-						 const QString &xmltv);
+    void exportCSV(const QString &file);
+    void importCSV(const QString &file,
+                   const QString &separator,
+                   const bool &header,
+                   const QList<int> &columns);
+    void exportJs(const QString &file);
+    void importJs(const QString &file);
+    void importTanoOld(const QString &file);
+    void exportTvheadend(const QString &location,
+                         const QString &interface,
+                         const QString &xmltv);
+    void exportXmltvId(const QString &file);
 
-	QTreeWidgetItem* createItem(const QString &name = 0,
-								const QString &url = 0);
-	void deleteItem();
+    QTreeWidgetItem* createItem(const QString &name = 0,
+                                const QString &url = 0);
+    void deleteItem();
 
-	QString name() const;
-	QStringList epg() const;
-	QString fileName() const { return _fileName; }
-	QList<int> nums() const;
-	QTreeWidget *treeWidget();
+    QString name() const;
+    QStringList epg() const;
+    QString fileName() const { return _fileName; }
+    QList<int> nums() const;
+    QTreeWidget *treeWidget();
 
-	int processNum(QTreeWidgetItem *channel,
-				   const int &num) const;
-	void moveUp(QTreeWidgetItem *channel);
-	void moveDown(QTreeWidgetItem *channel);
-	void editMode();
+    int processNum(QTreeWidgetItem *channel,
+                   const int &num) const;
+    void moveUp(QTreeWidgetItem *channel);
+    void moveDown(QTreeWidgetItem *channel);
+    void editMode();
 
-	Channel *channelRead(QTreeWidgetItem* clickedChannel);
-	Channel *channelRead(const int &clickedChannel);
+    Channel *channelRead(QTreeWidgetItem* clickedChannel);
+    Channel *channelRead(const int &clickedChannel);
 
-	bool validate() const;
+    bool validate() const;
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 signals:
-	void itemClicked(QTreeWidgetItem*,
-					 const int);
+    void itemClicked(QTreeWidgetItem*,
+                     const int);
 
 private slots:
-	void processPlaylist();
+    void processPlaylist();
 
 private:
-	Ui::PlaylistWidget *ui;
+    Ui::PlaylistWidget *ui;
 
-	PlaylistHandler *_handler;
-	QString _fileName;
+    PlaylistHandler *_handler;
+    QString _fileName;
 };
 
 #endif // TANO_PLAYLISTWIDGET_H_
