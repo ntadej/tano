@@ -25,6 +25,10 @@
 
 #include "Config.h"
 
+#if EDITOR
+class LocaleManager;
+#endif
+
 #if WITH_EDITOR_VLCQT
 class VlcInstance;
 class VlcMediaPlayer;
@@ -43,8 +47,6 @@ public:
                  QWidget *parent = 0);
     ~PlaylistEdit();
 
-    void setStandalone(const bool &standalone);
-
 public slots:
     void newPlaylist();
     void open(const QString &playlist = 0,
@@ -56,6 +58,7 @@ protected:
 
 private slots:
     void aboutTano();
+    void settings();
     void setTitle(const QString &title);
 
     void deleteItem();
@@ -102,11 +105,13 @@ private:
 
     Ui::PlaylistEdit *ui;
 
+#if EDITOR
+    LocaleManager *_locale;
+#endif
+
     bool _closeEnabled;
     QMenu *_menuExport;
     QMenu *_menuImport;
-
-    bool _standalone;
 
     // Update playlist
     QString currentIp();

@@ -656,7 +656,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <name>PlaylistEdit</name>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="14"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="182"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="188"/>
         <source>Tano Editor</source>
         <translation>Tano Urejevalnik</translation>
     </message>
@@ -786,8 +786,8 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../src/ui/playlist/PlaylistEdit.ui" line="569"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="228"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="234"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="245"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="251"/>
         <source>New playlist</source>
         <translation>Nov seznam programov</translation>
     </message>
@@ -873,118 +873,118 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Prenesi s spleta</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="198"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="215"/>
         <source>Open channel list</source>
         <translation>Odpri seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="200"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="217"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="276"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="293"/>
         <source>Save channel list</source>
         <translation>Shrani seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="278"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="295"/>
         <source>Tano TV channel list files (*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="291"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="308"/>
         <source>Export to original M3U format</source>
         <translation>Izvozi v originalen M3U format</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="293"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="310"/>
         <source>M3U (original) list files (*.m3u)</source>
         <translation>M3U (originalen) datoteka seznama (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="303"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="310"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="320"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="327"/>
         <source>Export to M3U format with Udpxy URLs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="305"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="322"/>
         <source>M3U (Udpxy URL) list files (*.m3u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="311"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="328"/>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="329"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="346"/>
         <source>Export to Comma-separated values file</source>
         <translation>Izvozi v datoteko CSV</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="331"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="353"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="348"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="370"/>
         <source>Comma-separated values file (*.csv *.txt)</source>
         <translation>CSV datoteka (*.csv *.txt)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="351"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="368"/>
         <source>Import Comma-separated values file</source>
         <translation>Uvozi datoteko CSV</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="370"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="387"/>
         <source>Export to Sagem JS channel list</source>
         <translation>Izvozi v Sagem JS seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="372"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="384"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="389"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="401"/>
         <source>Sagem JS channel list files (*.js)</source>
         <translation>Sagem JS seznam programov (*.js)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="382"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="399"/>
         <source>Import Sagem JS channel list</source>
         <translation>Uvozi Sagem JS seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="396"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="413"/>
         <source>Import Tano TV old channel list</source>
         <translation>Uvozi Tano TV star seznam programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="398"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="415"/>
         <source>Tano TV old channel list files(*.tano *.xml)</source>
         <translation>Tano TV star seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="427"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="445"/>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
         <translation>Ali želite zapreti urejevalnik?
 Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="506"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="524"/>
         <source>New channel from scan %1</source>
         <translation>Nov najden program %1</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="217"/>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="426"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="234"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="444"/>
         <source>Playlist Editor</source>
         <translation>Urejevalnik seznama programov</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="184"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="190"/>
         <source>%1 - Tano Editor</source>
         <translation>%1 - Tano Urejevalnik</translation>
     </message>
     <message>
-        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="218"/>
+        <location filename="../src/ui/playlist/PlaylistEdit.cpp" line="235"/>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
         <translation>Ali želite ustvariti nov seznam programov?
@@ -1618,7 +1618,7 @@ Nato izberite želen seznam programov.</translation>
     </message>
     <message>
         <location filename="../src/ui/settings/SettingsEdit.ui" line="109"/>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="525"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="542"/>
         <source>Playback</source>
         <translation>Predvajanje</translation>
     </message>
@@ -1633,239 +1633,249 @@ Nato izberite želen seznam programov.</translation>
         <translation>Bližnjice</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="155"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="165"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="168"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="178"/>
         <source>Run First run wizard after restart</source>
         <translation>Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="207"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="214"/>
+        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="224"/>
         <source>Language</source>
         <translation>Jezik</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="213"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="230"/>
         <source>System default language</source>
         <translation>Sistemsko privzet jezik</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="223"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="240"/>
         <source>Custom language</source>
         <translation>Poljuben jezik</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="246"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="263"/>
         <source>Session store</source>
         <translation>Shranjevanje sej</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="252"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="269"/>
         <source>Remember volume</source>
         <translation>Zapomni si glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="259"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="276"/>
         <source>Autoplay last channel</source>
         <translation>Samodejno prični predvajanje zadnjega programa</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="306"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="323"/>
         <source>General Interface Settings</source>
         <translation>Splošne nastavitve vmesnika</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="312"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="329"/>
         <source>Toolbar style:</source>
         <translation>Izgled orodnih vrstic:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="323"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="340"/>
         <source>Icon only</source>
         <translation>Samo ikona</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="328"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="345"/>
         <source>Text only</source>
         <translation>Samo besedilo</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="333"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="350"/>
         <source>Text beside icon</source>
         <translation>Besedilo ob ikoni</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="338"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="355"/>
         <source>Text under icon</source>
         <translation>Besedilo pod ikono</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="343"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="360"/>
         <source>System default</source>
         <translation>Sistemsko privzeto</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="351"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="368"/>
         <source>Enable OSD in Fullscreen mode</source>
         <translation>Vključi OSD v celozaslonskem načinu</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="361"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="378"/>
         <source>Mouse wheel function:</source>
         <translation>Funkcija miškinega koleščka:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="368"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="385"/>
         <source>Change channel</source>
         <translation>Spremeni program</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="378"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="395"/>
         <source>Change volume</source>
         <translation>Spremeni glasnost</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="385"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="402"/>
         <source>Minimise to tray</source>
         <translation>Skrij v sistemsko vrstico</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="395"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="412"/>
         <source>Enable Info OSD in Fullscreen mode</source>
         <translation>Vključi Info OSD v celozaslonskem načinu</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="405"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="422"/>
         <source>Default options for startup</source>
         <translation>Privzete nastavitve ob zagonu</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="411"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="428"/>
         <source>Show splash screen</source>
         <translation>Prikaži pozdravni zaslon</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="418"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="435"/>
         <source>Simple mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="425"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="442"/>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="432"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="449"/>
         <source>Controls enabled</source>
         <translation>Vključen upravljalni pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="442"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="459"/>
         <source>Info panel enabled</source>
         <translation>Vključen info pult</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="472"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="489"/>
         <source>VLC-Qt Backend</source>
         <translation>VLC-Qt Hrbtenica</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="478"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="495"/>
         <source>Curently using VLC-Qt Backend</source>
         <translation>Trenutno uporabljaš VLC-Qt hrbtenico</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="485"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="502"/>
         <source>Version:</source>
         <translation>Različica:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="492"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="509"/>
         <source>Use global VLC settings (requires restart)</source>
         <translation>Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="515"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="532"/>
         <source>Using Videolan VLC version:</source>
         <translation>Videolan VLC različice:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="531"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="548"/>
         <source>Remember Video settings between media</source>
         <translation>Zapomni si nastavitve slike med preklapljanjem</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="538"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="555"/>
         <source>Default subtitle language:</source>
         <translation>Privzet jezik podnapisov:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="545"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="562"/>
         <source>Default audio language:</source>
         <translation>Privzet jezik zvoka:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="556"/>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="593"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="573"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="610"/>
         <source>Disabled</source>
         <translation>Onemogočeno</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="581"/>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="618"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="598"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="635"/>
         <source>Other</source>
         <translation>Drugo</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="629"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="646"/>
         <source>UDPXY support</source>
         <translation>UDPXY podpora</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="635"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="652"/>
         <source>Enable UDPXY support</source>
         <translation>Vključi podporo UDPXY</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="671"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="688"/>
         <source>Router IP or name:</source>
         <translation>IP ali ime usmerjevalnika:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="681"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="698"/>
         <source>Router port:</source>
         <translation>Vrata usmerjevalnika:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="691"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="708"/>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
         <translation>&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="728"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="745"/>
         <source>Default recording directory</source>
         <translation>Privzet imenik snemanja</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="744"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="761"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.ui" line="757"/>
+        <location filename="../src/ui/settings/SettingsEdit.ui" line="774"/>
         <source>Reset</source>
         <translation>Obnovi</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="45"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="46"/>
+        <source>You are using Tano Editor version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="48"/>
         <source>You are using Tano version:</source>
         <translation>Uporabljate Tano različice:</translation>
     </message>
     <message>
-        <location filename="../src/ui/settings/SettingsEdit.cpp" line="230"/>
+        <location filename="../src/ui/settings/SettingsEdit.cpp" line="253"/>
         <source>Open directory</source>
         <translation>Odpri imenik</translation>
     </message>

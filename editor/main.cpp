@@ -21,35 +21,31 @@
 #include <QtGui/QBitmap>
 #include <QtGui/QSplashScreen>
 
-#include "core/LocaleManager.h"
 #include "ui/playlist/PlaylistEdit.h"
 
 #ifdef Q_WS_X11
-	#include <X11/Xlib.h>
+    #include <X11/Xlib.h>
 #endif
 
 int main(int argc, char *argv[])
 {
 #ifdef Q_WS_X11
-	XInitThreads();
+    XInitThreads();
 #endif
 
-	QApplication app(argc, argv);
-	QCoreApplication::setApplicationName("Tano Editor");
+    QApplication app(argc, argv);
+    QCoreApplication::setApplicationName("Tano Editor");
 
-	LocaleManager manager;
+    QPixmap pixmap(":/images/splash-editor.png");
+    QSplashScreen *splash = new QSplashScreen(pixmap);
+    splash->setMask(pixmap.mask());
+    splash->show();
 
-	QPixmap pixmap(":/images/splash-editor.png");
-	QSplashScreen *splash = new QSplashScreen(pixmap);
-	splash->setMask(pixmap.mask());
-	splash->show();
+    PlaylistEdit main;
+    main.show();
 
-	PlaylistEdit main;
-	main.setStandalone(true);
-	main.show();
+    splash->hide();
+    delete splash;
 
-	splash->hide();
-	delete splash;
-
-	return app.exec();
+    return app.exec();
 }

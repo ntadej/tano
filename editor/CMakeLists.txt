@@ -32,6 +32,9 @@ SET(Tano_Editor_UIs
     ../src/ui/playlist/PlaylistImportWeb.ui
     ../src/ui/playlist/PlaylistSelect.ui
     ../src/ui/playlist/PlaylistWidget.ui
+    ../src/ui/settings/SettingsEdit.ui
+    ../src/ui/settings/SettingsPlaylist.ui
+    ../src/ui/settings/SettingsShortcuts.ui
 )
 
 # Define the MOC source files used by Tano Editor
@@ -39,6 +42,7 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/core/GetFile.h
     ../src/core/Print.h
     ../src/ui/core/License.h
+    ../src/ui/core/QtKeySequenceEdit.h
     ../src/ui/dialogs/AboutDialog.h
     ../src/ui/dialogs/PrintDialog.h
     ../src/ui/playlist/PlaylistEdit.h
@@ -47,6 +51,9 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/ui/playlist/PlaylistImportWeb.h
     ../src/ui/playlist/PlaylistSelect.h
     ../src/ui/playlist/PlaylistWidget.h
+    ../src/ui/settings/SettingsEdit.h
+    ../src/ui/settings/SettingsPlaylist.h
+    ../src/ui/settings/SettingsShortcuts.h
 )
 
 SET(Tano_Editor_Resrcs
@@ -70,6 +77,7 @@ SET(Tano_Editor_Srcs
     ../src/core/LocaleManager.cpp
     ../src/core/Print.cpp
     ../src/core/Settings.cpp
+    ../src/core/Shortcuts.cpp
     ../src/core/Udpxy.cpp
 
     ../src/playlist/CSVGenerator.cpp
@@ -82,6 +90,7 @@ SET(Tano_Editor_Srcs
     ../src/playlist/TvheadendGenerator.cpp
 
     ../src/ui/core/License.cpp
+    ../src/ui/core/QtKeySequenceEdit.cpp
     ../src/ui/dialogs/AboutDialog.cpp
     ../src/ui/dialogs/PrintDialog.cpp
     ../src/ui/playlist/PlaylistEdit.cpp
@@ -90,6 +99,9 @@ SET(Tano_Editor_Srcs
     ../src/ui/playlist/PlaylistImportWeb.cpp
     ../src/ui/playlist/PlaylistSelect.cpp
     ../src/ui/playlist/PlaylistWidget.cpp
+    ../src/ui/settings/SettingsEdit.cpp
+    ../src/ui/settings/SettingsPlaylist.cpp
+    ../src/ui/settings/SettingsShortcuts.cpp
 
     ../src/xml/PlaylistListHandler.cpp
     ../src/xml/TanoHandlerOld.cpp

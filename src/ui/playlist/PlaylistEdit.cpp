@@ -34,6 +34,11 @@
 #include "ui/playlist/PlaylistImportCSV.h"
 #include "ui/playlist/PlaylistImportWeb.h"
 
+#if EDITOR
+    #include "core/LocaleManager.h"
+    #include "ui/settings/SettingsEdit.h"
+#endif
+
 #if WITH_EDITOR_VLCQT
     #include <vlc-qt/Instance.h>
     #include <vlc-qt/MediaPlayer.h>
@@ -46,9 +51,12 @@ PlaylistEdit::PlaylistEdit(const WId &video,
                            QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::PlaylistEdit),
-      _closeEnabled(false),
-      _standalone(false)
+      _closeEnabled(false)
 {
+#if EDITOR
+    _locale = new LocaleManager();
+#endif
+
     ui->setupUi(this);
     ui->editWidget->setEnabled(false);
     ui->playlist->editMode();
@@ -78,6 +86,11 @@ PlaylistEdit::PlaylistEdit(const WId &video,
     _menuImport->addAction(ui->actionImportCSV);
     _menuImport->addAction(ui->actionImportJs);
     _menuImport->addAction(ui->actionImportTanoOld);
+
+#if EDITOR
+    ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
+    ui->toolBar->insertAction(ui->actionAbout, ui->actionSettings);
+#endif
 }
 
 PlaylistEdit::~PlaylistEdit()
@@ -119,6 +132,7 @@ void PlaylistEdit::createSettings()
 void PlaylistEdit::createConnections()
 {
     connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
+    connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(settings()));
     connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(open()));
     connect(ui->actionNew, SIGNAL(triggered()), this, SLOT(newPlaylist()));
     connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
@@ -168,14 +182,6 @@ void PlaylistEdit::menuOpenImport()
     _menuImport->exec(QCursor::pos());
 }
 
-void PlaylistEdit::setStandalone(const bool &standalone)
-{
-    _standalone = standalone;
-    if(_standalone) {
-        ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
-    }
-}
-
 void PlaylistEdit::setTitle(const QString &title)
 {
     if(title.isEmpty())
@@ -184,10 +190,21 @@ void PlaylistEdit::setTitle(const QString &title)
         setWindowTitle(tr("%1 - Tano Editor").arg(title));
 }
 
+
 void PlaylistEdit::aboutTano()
 {
     AboutDialog about(Tano::Editor, this);
     about.exec();
+}
+
+void PlaylistEdit::settings()
+{
+#if EDITOR
+    SettingsEdit s(0, this);
+    s.exec();
+    _locale->setLocale();
+    createSettings();
+#endif
 }
 
 void PlaylistEdit::open(const QString &playlist,
@@ -417,8 +434,9 @@ void PlaylistEdit::exit()
 {
     if(_closeEnabled) {
         hide();
-        if(_standalone)
-            qApp->quit();
+#if EDITOR
+        qApp->quit();
+#endif
         return;
     }
 

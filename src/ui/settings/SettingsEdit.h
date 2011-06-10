@@ -29,39 +29,39 @@ class Shortcuts;
 
 namespace Ui
 {
-	class SettingsEdit;
+    class SettingsEdit;
 }
 
 class SettingsEdit : public QDialog
 {
 Q_OBJECT
 public:
-	SettingsEdit(Shortcuts *s = 0,
-				 QWidget *parent = 0);
-	~SettingsEdit();
+    SettingsEdit(Shortcuts *s = 0,
+                 QWidget *parent = 0);
+    ~SettingsEdit();
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 private slots:
-	void action(QAbstractButton *button);
-	void apply();
-	void cancel();
-	void save();
+    void action(QAbstractButton *button);
+    void apply();
+    void cancel();
+    void save();
 
-	void recorderDirectoryBrowse();
-	void recorderDirectoryReset();
+    void recorderDirectoryBrowse();
+    void recorderDirectoryReset();
 
 private:
-	void createActions();
-	void loadLocale();
-	void read();
+    void createActions();
+    void loadLocale();
+    void read();
 
-	Ui::SettingsEdit *ui;
+    Ui::SettingsEdit *ui;
 
-	Settings *_settings;
+    Settings *_settings;
 
-	QStringList _locale;
+    QStringList _locale;
 };
 
 #endif // TANO_SETTINGSEDIT_H_

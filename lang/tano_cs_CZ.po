@@ -1432,6 +1432,14 @@ msgctxt "SettingsEdit|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
 
+msgctxt "SettingsEdit|"
+msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+msgstr ""
+
+msgctxt "SettingsEdit|"
+msgid "You are using Tano Editor version:"
+msgstr ""
+
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Nastavit <i>Tano</i>"

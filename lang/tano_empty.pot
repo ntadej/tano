@@ -1382,6 +1382,14 @@ msgctxt "SettingsEdit|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr ""
 
+msgctxt "SettingsEdit|"
+msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+msgstr ""
+
+msgctxt "SettingsEdit|"
+msgid "You are using Tano Editor version:"
+msgstr ""
+
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr ""
