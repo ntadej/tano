@@ -610,7 +610,7 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Naslednja slikovna sled"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:14 ../src/ui/playlist/PlaylistEdit.cpp:190
+#: ../src/ui/playlist/PlaylistEdit.ui:14 ../src/ui/playlist/PlaylistEdit.cpp:191
 msgctxt "PlaylistEdit|"
 msgid "Tano Editor"
 msgstr "Tano Urejevalnik"
@@ -674,266 +674,269 @@ msgstr ""
 "<i>Kategorije lahko ločite z vejico.<br>Samo prva je shranjena pri izvozu v "
 "Sagem JS format seznama programov.</i>"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:257
-msgctxt "PlaylistEdit|"
-msgid ""
-"<i>You need to apply the number.<br>All other values are automatically "
-"changed.</i>"
-msgstr ""
-"<i>Zaporedno število morate uveljaviti.<br>Vse druge vrednosti se avtomatsko "
-"spremenijo.</i>"
-
 #: ../src/ui/playlist/PlaylistEdit.ui:264
 msgctxt "PlaylistEdit|"
 msgid "<b><i>Instructions:</i></b>"
 msgstr "<b><i>Navodila:</i></b>"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:290
+#: ../src/ui/playlist/PlaylistEdit.ui:278
+msgctxt "PlaylistEdit|"
+msgid "Logo:"
+msgstr ""
+
+#: ../src/ui/playlist/PlaylistEdit.ui:300
 msgctxt "PlaylistEdit|"
 msgid "Update Playlist"
 msgstr "Posodobi seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:300
+#: ../src/ui/playlist/PlaylistEdit.ui:310
 msgctxt "PlaylistEdit|"
 msgid "IP Range:"
 msgstr "IP območje:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:307
+#: ../src/ui/playlist/PlaylistEdit.ui:317
 msgctxt "PlaylistEdit|"
 msgid "Timeout:"
 msgstr "Čas iskanja:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:314
+#: ../src/ui/playlist/PlaylistEdit.ui:324
 msgctxt "PlaylistEdit|"
 msgid "Scan and update"
 msgstr "Išči in posodobi"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:354
+#: ../src/ui/playlist/PlaylistEdit.ui:364
 msgctxt "PlaylistEdit|"
 msgid " ms"
 msgstr "ms"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:373
+#: ../src/ui/playlist/PlaylistEdit.ui:383
 msgctxt "PlaylistEdit|"
 msgid "Port:"
 msgstr "Vrata:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:406
+#: ../src/ui/playlist/PlaylistEdit.ui:416
 msgctxt "PlaylistEdit|"
 msgid "<i>This will interrupt your current playback.</i>"
 msgstr "<i>S tem boste prekinili trenutno predvajanje.</i>"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:419 ../src/ui/playlist/PlaylistEdit.ui:422
+#: ../src/ui/playlist/PlaylistEdit.ui:429 ../src/ui/playlist/PlaylistEdit.ui:432
 msgctxt "PlaylistEdit|"
 msgid "Add channel"
 msgstr "Dodaj program"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:431 ../src/ui/playlist/PlaylistEdit.ui:434
+#: ../src/ui/playlist/PlaylistEdit.ui:441 ../src/ui/playlist/PlaylistEdit.ui:444
 msgctxt "PlaylistEdit|"
 msgid "Delete channel"
 msgstr "Izbriši program"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:473 ../src/ui/playlist/PlaylistEdit.ui:476
+#: ../src/ui/playlist/PlaylistEdit.ui:483 ../src/ui/playlist/PlaylistEdit.ui:486
 msgctxt "PlaylistEdit|"
 msgid "Move up"
 msgstr "Premakni navzgor"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:485 ../src/ui/playlist/PlaylistEdit.ui:488
+#: ../src/ui/playlist/PlaylistEdit.ui:495 ../src/ui/playlist/PlaylistEdit.ui:498
 msgctxt "PlaylistEdit|"
 msgid "Move down"
 msgstr "Premakni navzdol"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:569
-#: ../src/ui/playlist/PlaylistEdit.cpp:247
-#: ../src/ui/playlist/PlaylistEdit.cpp:253
+#: ../src/ui/playlist/PlaylistEdit.ui:579
+#: ../src/ui/playlist/PlaylistEdit.cpp:248
+#: ../src/ui/playlist/PlaylistEdit.cpp:254
 msgctxt "PlaylistEdit|"
 msgid "New playlist"
 msgstr "Nov seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:578
+#: ../src/ui/playlist/PlaylistEdit.ui:588
 msgctxt "PlaylistEdit|"
 msgid "M3U (Original)"
 msgstr "M3U (Originalno)"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:587
-#: ../src/ui/playlist/PlaylistEdit.ui:590
-#: ../src/ui/playlist/PlaylistEdit.ui:599 ../src/ui/playlist/PlaylistEdit.ui:602
+#: ../src/ui/playlist/PlaylistEdit.ui:597
+#: ../src/ui/playlist/PlaylistEdit.ui:600
+#: ../src/ui/playlist/PlaylistEdit.ui:609 ../src/ui/playlist/PlaylistEdit.ui:612
 msgctxt "PlaylistEdit|"
 msgid "CSV"
 msgstr "CSV"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:611
+#: ../src/ui/playlist/PlaylistEdit.ui:621
 msgctxt "PlaylistEdit|"
 msgid "Tvheadend"
 msgstr "Tvheadend"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:620 ../src/ui/playlist/PlaylistEdit.ui:623
+#: ../src/ui/playlist/PlaylistEdit.ui:630 ../src/ui/playlist/PlaylistEdit.ui:633
 msgctxt "PlaylistEdit|"
 msgid "M3U (Udpxy URL)"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.ui:632
+#: ../src/ui/playlist/PlaylistEdit.ui:642
 #, fuzzy
 msgctxt "PlaylistEdit|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:641 ../src/ui/playlist/PlaylistEdit.ui:644
+#: ../src/ui/playlist/PlaylistEdit.ui:651 ../src/ui/playlist/PlaylistEdit.ui:654
 msgctxt "PlaylistEdit|"
 msgid "XMLTV IDs"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.ui:443 ../src/ui/playlist/PlaylistEdit.ui:446
+#: ../src/ui/playlist/PlaylistEdit.ui:453 ../src/ui/playlist/PlaylistEdit.ui:456
 msgctxt "PlaylistEdit|"
 msgid "Save and Close"
 msgstr "Shrani in zapri"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:455
+#: ../src/ui/playlist/PlaylistEdit.ui:257
+msgctxt "PlaylistEdit|"
+msgid ""
+"<i>You need to apply the number.<br>All other values are automatically "
+"changed.<br>You need to provide full URL for logo.</i>"
+msgstr ""
+
+#: ../src/ui/playlist/PlaylistEdit.ui:465
 msgctxt "PlaylistEdit|"
 msgid "Close"
 msgstr "Zapri"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:464
+#: ../src/ui/playlist/PlaylistEdit.ui:474
 msgctxt "PlaylistEdit|"
 msgid "Import"
 msgstr "Uvozi"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:497
+#: ../src/ui/playlist/PlaylistEdit.ui:507
 msgctxt "PlaylistEdit|"
 msgid "Print"
 msgstr "Natisni"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:506
+#: ../src/ui/playlist/PlaylistEdit.ui:516
 msgctxt "PlaylistEdit|"
 msgid "Export"
 msgstr "Izvozi"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:515
+#: ../src/ui/playlist/PlaylistEdit.ui:525
 msgctxt "PlaylistEdit|"
 msgid "Tano Old Playlist"
 msgstr "Tano Star seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:524 ../src/ui/playlist/PlaylistEdit.ui:533
+#: ../src/ui/playlist/PlaylistEdit.ui:534 ../src/ui/playlist/PlaylistEdit.ui:543
 msgctxt "PlaylistEdit|"
 msgid "Sagem JS"
 msgstr "Sagem JS"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:542
+#: ../src/ui/playlist/PlaylistEdit.ui:552
 msgctxt "PlaylistEdit|"
 msgid "Open"
 msgstr "Odpri"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:551
+#: ../src/ui/playlist/PlaylistEdit.ui:561
 msgctxt "PlaylistEdit|"
 msgid "About"
 msgstr "O urejevalniku"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:560
+#: ../src/ui/playlist/PlaylistEdit.ui:570
 msgctxt "PlaylistEdit|"
 msgid "Download from Web"
 msgstr "Prenesi s spleta"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:217
+#: ../src/ui/playlist/PlaylistEdit.cpp:218
 msgctxt "PlaylistEdit|"
 msgid "Open channel list"
 msgstr "Odpri seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:219
+#: ../src/ui/playlist/PlaylistEdit.cpp:220
 msgctxt "PlaylistEdit|"
 msgid "Tano TV channel list files(*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:295
+#: ../src/ui/playlist/PlaylistEdit.cpp:297
 msgctxt "PlaylistEdit|"
 msgid "Save channel list"
 msgstr "Shrani seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:297
+#: ../src/ui/playlist/PlaylistEdit.cpp:299
 msgctxt "PlaylistEdit|"
 msgid "Tano TV channel list files (*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:310
+#: ../src/ui/playlist/PlaylistEdit.cpp:312
 msgctxt "PlaylistEdit|"
 msgid "Export to original M3U format"
 msgstr "Izvozi v originalen M3U format"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:312
+#: ../src/ui/playlist/PlaylistEdit.cpp:314
 msgctxt "PlaylistEdit|"
 msgid "M3U (original) list files (*.m3u)"
 msgstr "M3U (originalen) datoteka seznama (*.m3u)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:322
-#: ../src/ui/playlist/PlaylistEdit.cpp:329
+#: ../src/ui/playlist/PlaylistEdit.cpp:324
+#: ../src/ui/playlist/PlaylistEdit.cpp:331
 msgctxt "PlaylistEdit|"
 msgid "Export to M3U format with Udpxy URLs"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:324
+#: ../src/ui/playlist/PlaylistEdit.cpp:326
 msgctxt "PlaylistEdit|"
 msgid "M3U (Udpxy URL) list files (*.m3u)"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:330
+#: ../src/ui/playlist/PlaylistEdit.cpp:332
 msgctxt "PlaylistEdit|"
 msgid ""
 "You need to have valid Udpxy settings or the exported playlist will contain "
 "classic URLs."
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:348
+#: ../src/ui/playlist/PlaylistEdit.cpp:350
 msgctxt "PlaylistEdit|"
 msgid "Export to Comma-separated values file"
 msgstr "Izvozi v datoteko CSV"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:350
-#: ../src/ui/playlist/PlaylistEdit.cpp:362
+#: ../src/ui/playlist/PlaylistEdit.cpp:352
+#: ../src/ui/playlist/PlaylistEdit.cpp:364
 msgctxt "PlaylistEdit|"
 msgid "Comma-separated values file (*.csv *.txt)"
 msgstr "CSV datoteka (*.csv *.txt)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:360
+#: ../src/ui/playlist/PlaylistEdit.cpp:362
 msgctxt "PlaylistEdit|"
 msgid "Import Comma-separated values file"
 msgstr "Uvozi datoteko CSV"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:379
+#: ../src/ui/playlist/PlaylistEdit.cpp:381
 msgctxt "PlaylistEdit|"
 msgid "Export to Sagem JS channel list"
 msgstr "Izvozi v Sagem JS seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:381
-#: ../src/ui/playlist/PlaylistEdit.cpp:393
+#: ../src/ui/playlist/PlaylistEdit.cpp:383
+#: ../src/ui/playlist/PlaylistEdit.cpp:395
 msgctxt "PlaylistEdit|"
 msgid "Sagem JS channel list files (*.js)"
 msgstr "Sagem JS seznam programov (*.js)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:391
+#: ../src/ui/playlist/PlaylistEdit.cpp:393
 msgctxt "PlaylistEdit|"
 msgid "Import Sagem JS channel list"
 msgstr "Uvozi Sagem JS seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:415
+#: ../src/ui/playlist/PlaylistEdit.cpp:417
 msgctxt "PlaylistEdit|"
 msgid "Export XMLTV IDs"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:417
+#: ../src/ui/playlist/PlaylistEdit.cpp:419
 msgctxt "PlaylistEdit|"
 msgid "Plain text file (*.txt)"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:427
+#: ../src/ui/playlist/PlaylistEdit.cpp:429
 msgctxt "PlaylistEdit|"
 msgid "Import Tano TV old channel list"
 msgstr "Uvozi Tano TV star seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:429
+#: ../src/ui/playlist/PlaylistEdit.cpp:431
 msgctxt "PlaylistEdit|"
 msgid "Tano TV old channel list files(*.tano *.xml)"
 msgstr "Tano TV star seznam programov (*.tano *.xml)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:459
+#: ../src/ui/playlist/PlaylistEdit.cpp:461
 msgctxt "PlaylistEdit|"
 msgid ""
 "Do you want close the editor?\n"
@@ -942,25 +945,25 @@ msgstr ""
 "Ali želite zapreti urejevalnik?\n"
 "Neshranjene spremembe ne bodo uveljavljene."
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:538
+#: ../src/ui/playlist/PlaylistEdit.cpp:540
 #, qt-format
 msgctxt "PlaylistEdit|"
 msgid "New channel from scan %1"
 msgstr "Nov najden program %1"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:236
-#: ../src/ui/playlist/PlaylistEdit.cpp:458
+#: ../src/ui/playlist/PlaylistEdit.cpp:237
+#: ../src/ui/playlist/PlaylistEdit.cpp:460
 msgctxt "PlaylistEdit|"
 msgid "Playlist Editor"
 msgstr "Urejevalnik seznama programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:192
+#: ../src/ui/playlist/PlaylistEdit.cpp:193
 #, qt-format
 msgctxt "PlaylistEdit|"
 msgid "%1 - Tano Editor"
 msgstr "%1 - Tano Urejevalnik"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:237
+#: ../src/ui/playlist/PlaylistEdit.cpp:238
 msgctxt "PlaylistEdit|"
 msgid ""
 "Do you want to create new playlist?\n"
@@ -1364,8 +1367,8 @@ msgstr "Neznan naslov"
 
 #: ../src/playlist/PlaylistHandler.cpp:58
 #: ../src/playlist/TvheadendGenerator.cpp:88
-#: ../src/playlist/TvheadendGenerator.cpp:111
-#: ../src/playlist/TvheadendGenerator.cpp:135 ../src/xml/TimersHandler.cpp:140
+#: ../src/playlist/TvheadendGenerator.cpp:112
+#: ../src/playlist/TvheadendGenerator.cpp:136 ../src/xml/TimersHandler.cpp:140
 msgctxt "QObject|"
 msgid "Tano"
 msgstr "Tano"
@@ -1461,8 +1464,8 @@ msgid "The file is not a valid XMLTV file."
 msgstr "Datoteka ni veljavna XMLTV datoteka."
 
 #: ../src/playlist/TvheadendGenerator.cpp:89
-#: ../src/playlist/TvheadendGenerator.cpp:112
-#: ../src/playlist/TvheadendGenerator.cpp:136
+#: ../src/playlist/TvheadendGenerator.cpp:113
+#: ../src/playlist/TvheadendGenerator.cpp:137
 #, qt-format
 msgctxt "QObject|"
 msgid ""

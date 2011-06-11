@@ -108,7 +108,7 @@
    <property name="minimumSize">
     <size>
      <width>350</width>
-     <height>329</height>
+     <height>375</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -192,7 +192,7 @@
      <item row="7" column="1" colspan="2">
       <widget class="QLineEdit" name="editEpg"/>
      </item>
-     <item row="12" column="0" colspan="3">
+     <item row="13" column="0" colspan="3">
       <spacer name="verticalSpacer">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -241,7 +241,7 @@
        </property>
       </widget>
      </item>
-     <item row="11" column="0" colspan="3">
+     <item row="12" column="0" colspan="3">
       <widget class="QLabel" name="labelCategoriesInfo">
        <property name="text">
         <string>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</string>
@@ -251,26 +251,36 @@
        </property>
       </widget>
      </item>
-     <item row="10" column="0" colspan="3">
+     <item row="11" column="0" colspan="3">
       <widget class="QLabel" name="labelNumberInfo">
        <property name="text">
-        <string>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</string>
+        <string>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</string>
        </property>
       </widget>
      </item>
-     <item row="9" column="0">
+     <item row="10" column="0">
       <widget class="QLabel" name="labelInfo">
        <property name="text">
         <string>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="0" colspan="3">
+     <item row="9" column="0" colspan="3">
       <widget class="QLabel" name="labelSeparator">
        <property name="text">
         <string/>
        </property>
       </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="labelLogo">
+       <property name="text">
+        <string>Logo:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1" colspan="2">
+      <widget class="QLineEdit" name="editLogo"/>
      </item>
     </layout>
    </widget>

@@ -68,6 +68,12 @@ void M3UGenerator::generateItemNormal(Channel *channel)
          << channel->epg();
     _out << "\n";
 
+    if(!channel->logo().isEmpty()) {
+        _out << "#EXTLOGO:"
+             << channel->logo();
+        _out << "\n";
+    }
+
     _out << channel->url();
     _out << "\n\n";
 }
@@ -93,6 +99,13 @@ void M3UGenerator::generateItemUdpxy(Channel *channel)
          << channel->language() << ";"
          << channel->epg();
     _out << "\n";
+
+
+    if(!channel->logo().isEmpty()) {
+        _out << "#EXTLOGO:"
+             << channel->logo();
+        _out << "\n";
+    }
 
     _out << _udpxy->processUrl(channel->url());
     _out << "\n\n";

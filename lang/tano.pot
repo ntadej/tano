@@ -508,12 +508,6 @@ msgid "Url:"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid ""
-"<i>You need to apply the number.<br>All other values are automatically "
-"changed.</i>"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "Update Playlist"
 msgstr ""
 
@@ -741,6 +735,16 @@ msgstr ""
 
 msgctxt "PlaylistEdit|"
 msgid "Plain text file (*.txt)"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"<i>You need to apply the number.<br>All other values are automatically "
+"changed.<br>You need to provide full URL for logo.</i>"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "Logo:"
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"

@@ -96,6 +96,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
     outC << "{" << "\n"
          << indent(1) << "\"name\": \"" << channel->name() << "\"," << "\n"
          << indent(1) << "\"xmltv-channel\": \"" << channel->epg() << _xmltv << "\"," << "\n"
+         << indent(1) << "\"icon\": \"" << channel->logo() << "\"," << "\n"
          << indent(1) << "\"tags\": [" << "\n"
          << indent(1) << "]," << "\n"
          << indent(1) << "\"dvr_extra_time_pre\": 0," << "\n"

@@ -61,9 +61,7 @@ void M3UHandler::processList()
 		if(_m3uLineList[i].contains("#EXTNAME")) {
 			_name = _m3uLineList[i];
 			_name.replace(QString("#EXTNAME:"), QString(""));
-		} else if(_m3uLineList[i].contains("#EXTEPG")) {
-
-		} else if(_m3uLineList[i].contains("#EXTINF")) {
+        } else if(_m3uLineList[i].contains("#EXTINF")) {
 			tmp = _m3uLineList[i];
 			tmp.replace(QString("#EXTINF:"), QString(""));
 			tmpList = tmp.split(",");
@@ -81,7 +79,11 @@ void M3UHandler::processList()
 				_channel->setLanguage(tmpList[1]);
 				_channel->setEpg(tmpList[2]);
 			}
-		} else {
+        } else if(_m3uLineList[i].contains("#EXTLOGO")) {
+            tmp = _m3uLineList[i];
+            tmp.replace(QString("#EXTLOGO:"), QString(""));
+            _channel->setLogo(tmp);
+        } else {
 			tmp = _m3uLineList[i];
 			_channel->setUrl(tmp);
 		}

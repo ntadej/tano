@@ -553,10 +553,6 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation>Adresa (URL):</translation>
     </message>
     <message>
-        <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Musíte použít číslo.&lt;br&gt;Všechny ostatní hodnoty jsou automaticky změněny.&lt;/i&gt;</translation>
-    </message>
-    <message>
         <source>Update Playlist</source>
         <translation>Obnovit seznam programů</translation>
     </message>
@@ -778,6 +774,14 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Plain text file (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

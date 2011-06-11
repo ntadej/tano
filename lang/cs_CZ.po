@@ -533,14 +533,6 @@ msgid "Url:"
 msgstr "Adresa (URL):"
 
 msgctxt "PlaylistEdit|"
-msgid ""
-"<i>You need to apply the number.<br>All other values are automatically "
-"changed.</i>"
-msgstr ""
-"<i>Musíte použít číslo.<br>Všechny ostatní hodnoty jsou automaticky "
-"změněny.</i>"
-
-msgctxt "PlaylistEdit|"
 msgid "Update Playlist"
 msgstr "Obnovit seznam programů"
 
@@ -775,6 +767,16 @@ msgstr ""
 
 msgctxt "PlaylistEdit|"
 msgid "Plain text file (*.txt)"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"<i>You need to apply the number.<br>All other values are automatically "
+"changed.<br>You need to provide full URL for logo.</i>"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "Logo:"
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
