@@ -28,6 +28,8 @@
 
 #include <vlc-qt/Common.h>
 #include <vlc-qt/Config.h>
+#include <vlc-qt/AudioControl.h>
+#include <vlc-qt/VideoControl.h>
 
 #include "MainWindow.h"
 #include "ui_MainWindow.h"

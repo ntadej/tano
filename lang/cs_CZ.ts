@@ -764,6 +764,10 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Comma-separated values file (*.csv *.txt)</source>
         <translation>Soubor s hodnotami oddělenými čárkou (*.csv *.txt)</translation>
     </message>
+    <message>
+        <source>Update Information</source>
+        <translation>Informace o aktualizacích</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistImportCSV</name>
@@ -881,18 +885,20 @@ Ztratíte všechny neuložené změny.</translation>
         <translation>Země:</translation>
     </message>
     <message>
-        <source>Select your country from the menu below.
-Then select your playlist.</source>
-        <translation>Vyberte svoji zemi z nabídky níže.
-Potom vyberte svůj seznam programů.</translation>
-    </message>
-    <message>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Playlist:</source>
         <translation>Seznam programů:</translation>
+    </message>
+    <message>
+        <source>1. Select your country from the menu below.</source>
+        <translation>1. Vyberte svoji zemi z nabídky níže.</translation>
+    </message>
+    <message>
+        <source>2. Select your playlist.</source>
+        <translation>2. Vyberte svůj seznam programů.</translation>
     </message>
 </context>
 <context>

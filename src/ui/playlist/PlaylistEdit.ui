@@ -602,6 +602,18 @@
     <string>CSV</string>
    </property>
   </action>
+  <action name="actionUpdate">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/update_alert.png</normaloff>:/icons/24x24/update_alert.png</iconset>
+   </property>
+   <property name="text">
+    <string>Update Information</string>
+   </property>
+   <property name="toolTip">
+    <string>Update Information</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

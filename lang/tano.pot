@@ -725,6 +725,10 @@ msgctxt "PlaylistEdit|"
 msgid "Comma-separated values file (*.csv *.txt)"
 msgstr ""
 
+msgctxt "PlaylistEdit|"
+msgid "Update Information"
+msgstr ""
+
 msgctxt "PlaylistImportCSV|"
 msgid "CSV file structure"
 msgstr ""
@@ -832,17 +836,19 @@ msgid "Country:"
 msgstr ""
 
 msgctxt "PlaylistSelect|"
-msgid ""
-"Select your country from the menu below.\n"
-"Then select your playlist."
-msgstr ""
-
-msgctxt "PlaylistSelect|"
 msgid "<i>Note: Not all countries and providers are available.</i>"
 msgstr ""
 
 msgctxt "PlaylistSelect|"
 msgid "Playlist:"
+msgstr ""
+
+msgctxt "PlaylistSelect|"
+msgid "1. Select your country from the menu below."
+msgstr ""
+
+msgctxt "PlaylistSelect|"
+msgid "2. Select your playlist."
 msgstr ""
 
 msgctxt "PlaylistWidget|"

@@ -33,6 +33,10 @@
 #include "ui/playlist/PlaylistImportCSV.h"
 #include "ui/playlist/PlaylistImportWeb.h"
 
+#if EDITOR
+    #include "ui/dialogs/UpdateDialog.h"
+#endif
+
 #if WITH_EDITOR_VLCQT
 	#include <vlc-qt/Instance.h>
 	#include <vlc-qt/MediaPlayer.h>
@@ -51,6 +55,11 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 	ui->setupUi(this);
 	ui->editWidget->setEnabled(false);
 	ui->playlist->editMode();
+
+#if EDITOR
+    _update = new UpdateDialog();
+    _update->checkSilent();
+#endif
 
 	createSettings();
 	createConnections();
@@ -148,6 +157,11 @@ void PlaylistEdit::createConnections()
 
 	connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
 
+#if EDITOR
+    connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
+    connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
+#endif
+
 #if WITH_EDITOR_VLCQT
 	connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));
 #endif
@@ -183,6 +197,13 @@ void PlaylistEdit::aboutTano()
 {
 	AboutDialog about(Tano::Editor, this);
 	about.exec();
+}
+
+void PlaylistEdit::updateAvailable()
+{
+#if EDITOR
+    ui->toolBar->insertAction(ui->actionAbout, ui->actionUpdate);
+#endif
 }
 
 void PlaylistEdit::open(const QString &playlist,

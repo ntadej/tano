@@ -25,6 +25,10 @@
 
 #include "Config.h"
 
+#if EDITOR
+class UpdateDialog;
+#endif
+
 #if WITH_EDITOR_VLCQT
 class VlcInstance;
 class VlcMediaPlayer;
@@ -94,6 +98,8 @@ private slots:
 	void checkCurrentIp();
 	void setState(const bool &playing);
 
+    void updateAvailable();
+
 private:
 	void createConnections();
 	void createSettings();
@@ -105,6 +111,10 @@ private:
 	QMenu *_menuImport;
 
 	bool _standalone;
+
+#if EDITOR
+    UpdateDialog *_update;
+#endif
 
 	// Update playlist
 	QString currentIp();

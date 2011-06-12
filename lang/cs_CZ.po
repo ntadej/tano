@@ -757,6 +757,10 @@ msgctxt "PlaylistEdit|"
 msgid "Comma-separated values file (*.csv *.txt)"
 msgstr "Soubor s hodnotami oddělenými čárkou (*.csv *.txt)"
 
+msgctxt "PlaylistEdit|"
+msgid "Update Information"
+msgstr "Informace o aktualizacích"
+
 msgctxt "PlaylistImportCSV|"
 msgid "CSV file structure"
 msgstr "Stavba souboru s hodnotami oddělenými čárkou (CSV)"
@@ -868,20 +872,20 @@ msgid "Country:"
 msgstr "Země:"
 
 msgctxt "PlaylistSelect|"
-msgid ""
-"Select your country from the menu below.\n"
-"Then select your playlist."
-msgstr ""
-"Vyberte svoji zemi z nabídky níže.\n"
-"Potom vyberte svůj seznam programů."
-
-msgctxt "PlaylistSelect|"
 msgid "<i>Note: Not all countries and providers are available.</i>"
 msgstr "<i>Poznámka: Ne všechny země a poskytovatelé jsou dostupní.</i>"
 
 msgctxt "PlaylistSelect|"
 msgid "Playlist:"
 msgstr "Seznam programů:"
+
+msgctxt "PlaylistSelect|"
+msgid "1. Select your country from the menu below."
+msgstr "1. Vyberte svoji zemi z nabídky níže."
+
+msgctxt "PlaylistSelect|"
+msgid "2. Select your playlist."
+msgstr "2. Vyberte svůj seznam programů."
 
 msgctxt "PlaylistWidget|"
 msgid "Channel"
