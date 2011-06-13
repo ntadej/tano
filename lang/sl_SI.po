@@ -282,9 +282,9 @@ msgid "Open"
 msgstr "Odpri"
 
 #: ../src/ui/MainWindow.ui:366 ../src/ui/MainWindow.ui:369
-#: ../src/ui/MainWindow.ui:672 ../src/ui/MainWindow.cpp:449
-#: ../src/ui/MainWindow.cpp:450 ../src/ui/MainWindow.cpp:451
-#: ../src/ui/MainWindow.cpp:452
+#: ../src/ui/MainWindow.ui:672 ../src/ui/MainWindow.cpp:447
+#: ../src/ui/MainWindow.cpp:448 ../src/ui/MainWindow.cpp:449
+#: ../src/ui/MainWindow.cpp:450
 msgctxt "MainWindow|"
 msgid "Play"
 msgstr "Predvajaj"
@@ -300,7 +300,7 @@ msgctxt "MainWindow|"
 msgid "Always on top"
 msgstr "Vedno na vrhu"
 
-#: ../src/ui/MainWindow.cpp:658
+#: ../src/ui/MainWindow.cpp:656
 msgctxt "MainWindow|"
 msgid "Restore"
 msgstr "Obnovi"
@@ -368,7 +368,7 @@ msgctxt "MainWindow|"
 msgid "&Open channel list"
 msgstr "&Odpri seznam programov"
 
-#: ../src/ui/MainWindow.ui:615 ../src/ui/MainWindow.cpp:524
+#: ../src/ui/MainWindow.ui:615 ../src/ui/MainWindow.cpp:522
 msgctxt "MainWindow|"
 msgid "Open channel list"
 msgstr "Odpri seznam programov"
@@ -413,7 +413,7 @@ msgctxt "MainWindow|"
 msgid "&File"
 msgstr "&Datoteka"
 
-#: ../src/ui/MainWindow.cpp:79
+#: ../src/ui/MainWindow.cpp:77
 msgctxt "MainWindow|"
 msgid ""
 "Do you want to exit Tano?\n"
@@ -422,38 +422,38 @@ msgstr ""
 "Ali želite zapreti Tano?\n"
 "To bo ustavilo trenutno snemanje."
 
+#: ../src/ui/MainWindow.cpp:436 ../src/ui/MainWindow.cpp:437
 #: ../src/ui/MainWindow.cpp:438 ../src/ui/MainWindow.cpp:439
-#: ../src/ui/MainWindow.cpp:440 ../src/ui/MainWindow.cpp:441
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Premor"
 
-#: ../src/ui/MainWindow.cpp:460
+#: ../src/ui/MainWindow.cpp:458
 msgctxt "MainWindow|"
 msgid "Buffering..."
 msgstr "Nalagam..."
 
-#: ../src/ui/MainWindow.cpp:526
+#: ../src/ui/MainWindow.cpp:524
 msgctxt "MainWindow|"
 msgid "Tano TV channel list files(*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/MainWindow.cpp:555
+#: ../src/ui/MainWindow.cpp:553
 msgctxt "MainWindow|"
 msgid "Open file or URL"
 msgstr "Odpri datoteko ali URL"
 
-#: ../src/ui/MainWindow.cpp:557
+#: ../src/ui/MainWindow.cpp:555
 msgctxt "MainWindow|"
 msgid "Multimedia files(*)"
 msgstr "Multimedijske datoteke(*)"
 
-#: ../src/ui/MainWindow.cpp:568
+#: ../src/ui/MainWindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Open URL or stream"
 msgstr "Odpri URL ali spletni vir"
 
-#: ../src/ui/MainWindow.cpp:569
+#: ../src/ui/MainWindow.cpp:567
 msgctxt "MainWindow|"
 msgid "Enter the URL of multimedia file or stream you want to play:"
 msgstr "Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:"
@@ -468,8 +468,8 @@ msgctxt "MainWindow|"
 msgid "&Options"
 msgstr "&Možnosti"
 
-#: ../src/ui/MainWindow.ui:14 ../src/ui/MainWindow.cpp:78
-#: ../src/ui/MainWindow.cpp:614 ../src/ui/MainWindow.cpp:616
+#: ../src/ui/MainWindow.ui:14 ../src/ui/MainWindow.cpp:76
+#: ../src/ui/MainWindow.cpp:612 ../src/ui/MainWindow.cpp:614
 msgctxt "MainWindow|"
 msgid "Tano"
 msgstr "Tano"
@@ -490,7 +490,7 @@ msgid "Info panel"
 msgstr "Info pult"
 
 #: ../src/ui/MainWindow.ui:702 ../src/ui/MainWindow.ui:705
-#: ../src/ui/MainWindow.cpp:655
+#: ../src/ui/MainWindow.cpp:653
 msgctxt "MainWindow|"
 msgid "Hide to tray"
 msgstr "Skrij v orodno vrstico"

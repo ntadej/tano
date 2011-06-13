@@ -291,10 +291,10 @@ Vaša različica VLC-Qt: %4
         <location filename="../src/ui/MainWindow.ui" line="366"/>
         <location filename="../src/ui/MainWindow.ui" line="369"/>
         <location filename="../src/ui/MainWindow.ui" line="672"/>
+        <location filename="../src/ui/MainWindow.cpp" line="447"/>
+        <location filename="../src/ui/MainWindow.cpp" line="448"/>
         <location filename="../src/ui/MainWindow.cpp" line="449"/>
         <location filename="../src/ui/MainWindow.cpp" line="450"/>
-        <location filename="../src/ui/MainWindow.cpp" line="451"/>
-        <location filename="../src/ui/MainWindow.cpp" line="452"/>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
@@ -311,7 +311,7 @@ Vaša različica VLC-Qt: %4
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="658"/>
+        <location filename="../src/ui/MainWindow.cpp" line="656"/>
         <source>Restore</source>
         <translation>Obnovi</translation>
     </message>
@@ -384,7 +384,7 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="615"/>
-        <location filename="../src/ui/MainWindow.cpp" line="524"/>
+        <location filename="../src/ui/MainWindow.cpp" line="522"/>
         <source>Open channel list</source>
         <translation>Odpri seznam programov</translation>
     </message>
@@ -430,47 +430,47 @@ Vaša različica VLC-Qt: %4
         <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="79"/>
+        <location filename="../src/ui/MainWindow.cpp" line="77"/>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Ali želite zapreti Tano?
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
+        <location filename="../src/ui/MainWindow.cpp" line="436"/>
+        <location filename="../src/ui/MainWindow.cpp" line="437"/>
         <location filename="../src/ui/MainWindow.cpp" line="438"/>
         <location filename="../src/ui/MainWindow.cpp" line="439"/>
-        <location filename="../src/ui/MainWindow.cpp" line="440"/>
-        <location filename="../src/ui/MainWindow.cpp" line="441"/>
         <source>Pause</source>
         <translation>Premor</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="460"/>
+        <location filename="../src/ui/MainWindow.cpp" line="458"/>
         <source>Buffering...</source>
         <translation>Nalagam...</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="526"/>
+        <location filename="../src/ui/MainWindow.cpp" line="524"/>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="555"/>
+        <location filename="../src/ui/MainWindow.cpp" line="553"/>
         <source>Open file or URL</source>
         <translation>Odpri datoteko ali URL</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="557"/>
+        <location filename="../src/ui/MainWindow.cpp" line="555"/>
         <source>Multimedia files(*)</source>
         <translation>Multimedijske datoteke(*)</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="568"/>
+        <location filename="../src/ui/MainWindow.cpp" line="566"/>
         <source>Open URL or stream</source>
         <translation>Odpri URL ali spletni vir</translation>
     </message>
     <message>
-        <location filename="../src/ui/MainWindow.cpp" line="569"/>
+        <location filename="../src/ui/MainWindow.cpp" line="567"/>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
         <translation>Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:</translation>
     </message>
@@ -487,9 +487,9 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="14"/>
-        <location filename="../src/ui/MainWindow.cpp" line="78"/>
+        <location filename="../src/ui/MainWindow.cpp" line="76"/>
+        <location filename="../src/ui/MainWindow.cpp" line="612"/>
         <location filename="../src/ui/MainWindow.cpp" line="614"/>
-        <location filename="../src/ui/MainWindow.cpp" line="616"/>
         <source>Tano</source>
         <translation>Tano</translation>
     </message>
@@ -513,7 +513,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <location filename="../src/ui/MainWindow.ui" line="702"/>
         <location filename="../src/ui/MainWindow.ui" line="705"/>
-        <location filename="../src/ui/MainWindow.cpp" line="655"/>
+        <location filename="../src/ui/MainWindow.cpp" line="653"/>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
     </message>
