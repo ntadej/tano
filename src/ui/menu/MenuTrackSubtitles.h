@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,11 +9,11 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program. If not, see <http://www.gnu.org/licenses/>.
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_MENUTRACKSUBTITLES_H_
@@ -25,17 +25,14 @@ class MenuTrackSubtitles : public MenuCore
 {
 Q_OBJECT
 public:
-    MenuTrackSubtitles(QWidget *parent = 0);
-    ~MenuTrackSubtitles();
-
-public slots:
-    void setActions(const QList<QAction *> &actions) { MenuCore::setActions(actions, Vlc::Subtitles); }
+	MenuTrackSubtitles(QWidget *parent = 0);
+	~MenuTrackSubtitles();
 
 private slots:
-    void openSubtitles();
+	void openSubtitles();
 
 signals:
-    void subtitles(const QString);
+	void subtitles(const QString);
 };
 
 #endif // TANO_MENUTRACKSUBTITLES_H_

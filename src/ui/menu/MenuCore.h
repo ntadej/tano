@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -27,26 +27,26 @@ class MenuCore : public QMenu
 {
 Q_OBJECT
 public:
-    MenuCore(QWidget *parent = 0);
-    ~MenuCore();
+	MenuCore(QWidget *parent = 0);
+	~MenuCore();
 
-    QAction *actionNext() { return _next; }
-    void addItem(QAction *action);
-    void setType(const Vlc::ActionsType &type) { _type = type; }
-    Vlc::ActionsType type() const { return _type; }
+	QAction *actionNext() { return _next; }
+	void addItem(QAction *action);
+	void setType(const Vlc::ActionsType &type) { _type = type; }
+	Vlc::ActionsType type() const { return _type; }
 
 public slots:
-    void setActions(const QList<QAction*> &actions,
-                    const Vlc::ActionsType &type);
+	void setActions(const Vlc::ActionsType &type,
+					const QList<QAction*> &actions);
 
 private slots:
-    void next();
+	void next();
 
 private:
-    QActionGroup *_group;
-    QAction *_next;
+	QActionGroup *_group;
+	QAction *_next;
 
-    Vlc::ActionsType _type;
+	Vlc::ActionsType _type;
 };
 
 #endif // TANO_MENUCORE_H_
