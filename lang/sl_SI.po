@@ -1366,9 +1366,10 @@ msgid "Unknown title"
 msgstr "Neznan naslov"
 
 #: ../src/playlist/PlaylistHandler.cpp:58
-#: ../src/playlist/TvheadendGenerator.cpp:88
-#: ../src/playlist/TvheadendGenerator.cpp:112
-#: ../src/playlist/TvheadendGenerator.cpp:136 ../src/xml/TimersHandler.cpp:140
+#: ../src/playlist/TvheadendGenerator.cpp:106
+#: ../src/playlist/TvheadendGenerator.cpp:134
+#: ../src/playlist/TvheadendGenerator.cpp:156
+#: ../src/playlist/TvheadendGenerator.cpp:181 ../src/xml/TimersHandler.cpp:140
 msgctxt "QObject|"
 msgid "Tano"
 msgstr "Tano"
@@ -1463,9 +1464,10 @@ msgctxt "QObject|"
 msgid "The file is not a valid XMLTV file."
 msgstr "Datoteka ni veljavna XMLTV datoteka."
 
-#: ../src/playlist/TvheadendGenerator.cpp:89
-#: ../src/playlist/TvheadendGenerator.cpp:113
-#: ../src/playlist/TvheadendGenerator.cpp:137
+#: ../src/playlist/TvheadendGenerator.cpp:107
+#: ../src/playlist/TvheadendGenerator.cpp:135
+#: ../src/playlist/TvheadendGenerator.cpp:157
+#: ../src/playlist/TvheadendGenerator.cpp:182
 #, qt-format
 msgctxt "QObject|"
 msgid ""

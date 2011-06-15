@@ -37,10 +37,14 @@ TvheadendGenerator::TvheadendGenerator(QTreeWidget *treeWidget,
 
 TvheadendGenerator::~TvheadendGenerator() { }
 
-bool TvheadendGenerator::write()
+void TvheadendGenerator::clean()
 {
     if(!QDir(_location + "/channels/").exists()) {
         QDir(_location).rmdir("channels");
+    }
+
+    if(!QDir(_location + "/channeltags/").exists()) {
+        QDir(_location).rmdir("channeltags");
     }
 
     if(!QDir(_location + "/iptvservices/").exists()) {
@@ -50,6 +54,12 @@ bool TvheadendGenerator::write()
     if(!QDir(_location + "/iptvtransports/").exists()) {
         QDir(_location).rmdir("iptvtransports");
     }
+}
+
+bool TvheadendGenerator::write()
+{
+    clean();
+    processTags();
 
 	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
 		generateItem(_map[_treeWidget->topLevelItem(i)]);
@@ -81,6 +91,14 @@ QString TvheadendGenerator::fileIpTransport(const int &number) const
     return QString(_location + "/iptvtransports/" + "iptv_" + QString::number(number));
 }
 
+QString TvheadendGenerator::fileTag(const int &number) const
+{
+    if(!QDir(_location + "/channeltags/").exists()) {
+        QDir(_location).mkdir("channeltags");
+    }
+    return QString(_location + "/channeltags/" + QString::number(number));
+}
+
 void TvheadendGenerator::generateItem(Channel *channel)
 {
     QFile fChannel(fileChannel(channel->number()));
@@ -97,14 +115,18 @@ void TvheadendGenerator::generateItem(Channel *channel)
          << indent(1) << "\"name\": \"" << channel->name() << "\"," << "\n"
          << indent(1) << "\"xmltv-channel\": \"" << channel->epg() << _xmltv << "\"," << "\n"
          << indent(1) << "\"icon\": \"" << channel->logo() << "\"," << "\n"
-         << indent(1) << "\"tags\": [" << "\n"
-         << indent(1) << "]," << "\n"
+         << indent(1) << "\"tags\": [" << "\n";
+    for(int i = 0; i < channel->categories().size(); i++) {
+        outC << indent(2) << _tags[channel->categories()[i]];
+        if(i != channel->categories().size()-1)
+            outC << ",";
+        outC << "\n";
+    }
+    outC << indent(1) << "]," << "\n"
          << indent(1) << "\"dvr_extra_time_pre\": 0," << "\n"
          << indent(1) << "\"dvr_extra_time_post\": 0," << "\n"
          << indent(1) << "\"channel_number\": " << channel->number() << "\n"
          << "}" << "\n";
-
-    fChannel.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
 
 
     QFile fIpService(fileIpService(channel->number()));
@@ -128,8 +150,6 @@ void TvheadendGenerator::generateItem(Channel *channel)
           << indent(1) << "\"disabled\": 0" << "\n"
           << "}" << "\n";
 
-    fIpService.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
-
 
     QFile fIpTransport(fileIpTransport(channel->number()));
     if (!fIpTransport.open(QFile::WriteOnly | QFile::Text)) {
@@ -151,11 +171,56 @@ void TvheadendGenerator::generateItem(Channel *channel)
           << indent(1) << "\"pcr\": 0," << "\n"
           << indent(1) << "\"disabled\": 0" << "\n"
           << "}" << "\n";
+}
 
-    fIpTransport.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
+void TvheadendGenerator::generateTag(const int &id,
+                                     const QString &name)
+{
+    QFile fTag(fileTag(id));
+    if (!fTag.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(_treeWidget, QObject::tr("Tano"),
+                            QObject::tr("Cannot write file %1:\n%2.")
+                            .arg(fileTag(id))
+                            .arg(fTag.errorString()));
+        return;
+    }
+
+    QTextStream outF(&fTag);
+    outF << "{" << "\n"
+         << indent(1) << "\"enabled\": 1," << "\n"
+         << indent(1) << "\"internal\": 0," << "\n"
+         << indent(1) << "\"titledIcon\": 0," << "\n"
+         << indent(1) << "\"name\": \"" << name << "\"," << "\n"
+         << indent(1) << "\"comment\": \"\"," << "\n"
+         << indent(1) << "\"icon\": \"\"," << "\n"
+         << indent(1) << "\"id\": " << id << "\n"
+         << "}" << "\n";
 }
 
 QString TvheadendGenerator::indent(const int &indentLevel) const
 {
     return QString(indentLevel, '\t');
+}
+
+void TvheadendGenerator::processTags()
+{
+    int id = 1;
+    for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
+        for(int c = 0; c < _map[_treeWidget->topLevelItem(i)]->categories().size(); c++) {
+            if(!_tags.contains(_map[_treeWidget->topLevelItem(i)]->categories()[c])) {
+                _tags.insert(_map[_treeWidget->topLevelItem(i)]->categories()[c], id);
+                _tagsName.insert(id, _map[_treeWidget->topLevelItem(i)]->categories()[c]);
+                id++;
+            }
+        }
+    }
+
+    for(int i = 1; i < id; i++) {
+        generateTag(i, _tagsName[i]);
+    }
+}
+
+int TvheadendGenerator::tag(const QString &name) const
+{
+    return _tags[name];
 }

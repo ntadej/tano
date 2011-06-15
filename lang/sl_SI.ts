@@ -1421,9 +1421,10 @@ Nato izberite želen seznam programov.</translation>
     </message>
     <message>
         <location filename="../src/playlist/PlaylistHandler.cpp" line="58"/>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="88"/>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="112"/>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="136"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="106"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="134"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="156"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="181"/>
         <location filename="../src/xml/TimersHandler.cpp" line="140"/>
         <source>Tano</source>
         <translation>Tano</translation>
@@ -1518,9 +1519,10 @@ Nato izberite želen seznam programov.</translation>
         <translation>Datoteka ni veljavna XMLTV datoteka.</translation>
     </message>
     <message>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="89"/>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="113"/>
-        <location filename="../src/playlist/TvheadendGenerator.cpp" line="137"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="107"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="135"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="157"/>
+        <location filename="../src/playlist/TvheadendGenerator.cpp" line="182"/>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne morem pisati datoteke %1:

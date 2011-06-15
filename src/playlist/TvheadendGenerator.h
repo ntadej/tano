@@ -37,17 +37,25 @@ public:
 	bool write();
 
 private:
+    void clean();
     QString fileChannel(const int &number) const;
     QString fileIpService(const int &number) const;
     QString fileIpTransport(const int &number) const;
+    QString fileTag(const int &number) const;
 	void generateItem(Channel *channel);
+    void generateTag(const int &id,
+                     const QString &name);
     QString indent(const int &indentLevel) const;
+    void processTags();
+    int tag(const QString &name) const;
 
 	bool _header;
 
 	QTreeWidget *_treeWidget;
 
 	QMap<QTreeWidgetItem *, Channel *> _map;
+    QMap<QString, int> _tags;
+    QMap<int, QString> _tagsName;
 
 	QString _location;
 	QString _interface;
