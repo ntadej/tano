@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <info@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,14 +9,13 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Config.h"
 #include "SettingsShortcuts.h"
 #include "ui_SettingsShortcuts.h"
 
@@ -28,11 +27,6 @@ SettingsShortcuts::SettingsShortcuts(QWidget *parent)
 	createActions();
 
 	ui->shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
-
-#if WITH_RECORDER
-#else
-	ui->shortcutsWidget->removeRow(11);
-#endif
 }
 
 SettingsShortcuts::~SettingsShortcuts()
@@ -85,7 +79,6 @@ void SettingsShortcuts::shortcutEdit(QTableWidgetItem *titem)
 void SettingsShortcuts::shortcutRead()
 {
 	QStringList keys = _shortcuts->readKeys();
-#if WITH_RECORDER
 	for(int i = 0; i < ui->shortcutsWidget->rowCount(); i++) {
 		if(ui->shortcutsWidget->item(i, 1)) {
 			ui->shortcutsWidget->item(i, 1)->setText(keys[i]);
@@ -93,23 +86,6 @@ void SettingsShortcuts::shortcutRead()
 			ui->shortcutsWidget->setItem(i, 1, new QTableWidgetItem(keys[i]));
 		}
 	}
-#else
-	for(int i = 0; i < ui->shortcutsWidget->rowCount(); i++) {
-		if(i < 11) {
-			if(ui->shortcutsWidget->item(i, 1)) {
-				ui->shortcutsWidget->item(i, 1)->setText(keys[i]);
-			} else {
-				ui->shortcutsWidget->setItem(i, 1, new QTableWidgetItem(keys[i]));
-			}
-		} else if(i >= 11) {
-			if(ui->shortcutsWidget->item(i, 1)) {
-				ui->shortcutsWidget->item(i, 1)->setText(keys[i+1]);
-			} else {
-				ui->shortcutsWidget->setItem(i, 1, new QTableWidgetItem(keys[i+1]));
-			}
-		}
-	}
-#endif
 }
 
 void SettingsShortcuts::shortcutRestore()
@@ -133,21 +109,10 @@ void SettingsShortcuts::shortcutSet()
 void SettingsShortcuts::shortcutWrite()
 {
 	QStringList keys;
-#if WITH_RECORDER
+
 	for(int i = 0; i < ui->shortcutsWidget->rowCount(); i++) {
 		keys << ui->shortcutsWidget->item(i,1)->text();
 	}
-#else
-	for(int i = 0; i < ui->shortcutsWidget->rowCount() + 1; i++) {
-		if(i > 11) {
-			keys << ui->shortcutsWidget->item(i-1,1)->text();
-		} else if(i == 11) {
-			keys << "Ctrl+R";
-		} else {
-			keys << ui->shortcutsWidget->item(i,1)->text();
-		}
-	}
-#endif
 
 	_shortcuts->write(keys);
 	_shortcuts->apply();

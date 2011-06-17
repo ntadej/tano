@@ -23,9 +23,6 @@
 #define VERSION "@TANO_VERSION@"
 #define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
 
-// Options
-#define WITH_RECORDER @DBUS_FOUND@
-
 // Editor VLC-Qt support
 #if EDITOR
     #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@

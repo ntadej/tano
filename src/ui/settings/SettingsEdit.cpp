@@ -62,11 +62,6 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
     loadLocale();
     read();
 
-#if WITH_RECORDER
-#else
-    ui->setttingsListWidget->item(5)->setHidden(true);
-#endif
-
 #if EDITOR
     ui->setttingsListWidget->item(1)->setHidden(true);
     ui->setttingsListWidget->item(2)->setHidden(true);

@@ -60,6 +60,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     core/ChannelSelect.h
     core/GetFile.h
     core/Print.h
+    core/RecorderController.h
     core/UpdateManager.h
     epg/XmltvManager.h
     ui/MainWindow.h
@@ -102,13 +103,6 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/wizard/SettingsPage.h
 )
 
-IF(DBUS_FOUND)
-    SET(Tano_MOCs
-        ${Tano_MOCs}
-        core/RecorderController.h
-    )
-ENDIF(DBUS_FOUND)
-
 SET(Tano_Resrcs
     ../info.qrc
     ../data/icons.qrc
@@ -135,18 +129,13 @@ SET(Tano_Core_Srcs
     core/GetFile.cpp
     core/LocaleManager.cpp
     core/Print.cpp
+    core/RecorderController.cpp
+    core/RecorderProcess.cpp
     core/Settings.cpp
     core/Shortcuts.cpp
     core/Udpxy.cpp
     core/UpdateManager.cpp
 )
-IF(DBUS_FOUND)
-    SET(Tano_Core_Srcs
-        ${Tano_Core_Srcs}
-        core/RecorderController.cpp
-        core/RecorderProcess.cpp
-    )
-ENDIF(DBUS_FOUND)
 SET(Tano_Epg_Srcs
     epg/XmltvCommon.cpp
     epg/XmltvManager.cpp
@@ -229,9 +218,7 @@ SET(Tano_Srcs
 # loaded when linking Tano
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
-IF(DBUS_FOUND)
-    SET(QT_USE_QTDBUS True)
-ENDIF(DBUS_FOUND)
+SET(QT_USE_QTDBUS True)
 
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})

@@ -25,204 +25,179 @@
 #include "core/Common.h"
 #include "core/Settings.h"
 
-#ifdef EDITOR
-	#if WITH_EDITOR_VLCQT
-		#include <vlc-qt/Common.h>
-		#include <vlc-qt/Instance.h>
-	#endif
-#else
-	#include <vlc-qt/Common.h>
-	#include <vlc-qt/Instance.h>
+#if WITH_EDITOR_VLCQT
+    #include <vlc-qt/Common.h>
+    #include <vlc-qt/Instance.h>
 #endif
 
 QString Tano::version()
 {
-	QString version;
+    QString version;
 
 #ifdef VERSION
-	version.append(QString(VERSION));
+    version.append(QString(VERSION));
 #else
-	version.append("Unknown");
+    version.append("Unknown");
 #endif
 
-	return version;
+    return version;
 }
 
 QString Tano::changeset()
 {
-	QString version;
+    QString version;
 
 #ifdef VERSION_PATCH
-	if(QString(VERSION_PATCH) != "0" && QString(VERSION_PATCH) != "") {
-		version.append("(" + QString(VERSION_PATCH) + ")");
-	}
+    if(QString(VERSION_PATCH) != "0" && QString(VERSION_PATCH) != "") {
+        version.append("(" + QString(VERSION_PATCH) + ")");
+    }
 #endif
 
-	return version;
+    return version;
 }
 
 QString Tano::buildHostname()
 {
-	QString hostname;
+    QString hostname;
 
 #ifdef HOSTNAME
-	hostname.append(QString(HOSTNAME));
+    hostname.append(QString(HOSTNAME));
 #else
-	hostname.append("Unknown");
+    hostname.append("Unknown");
 #endif
 
-	return hostname;
+    return hostname;
 }
 
 QString Tano::buildSystem()
 {
-	QString system;
+    QString system;
 
 #ifdef SYSTEM
-	system.append(QString(SYSTEM));
+    system.append(QString(SYSTEM));
 #else
-	system.append("Unknown");
+    system.append("Unknown");
 #endif
 
-	return system;
+    return system;
 }
 
 QString Tano::locateResource(const QString &file)
 {
-	QString path;
+    QString path;
 
-	if (QFileInfo(file).exists())
-		path = QFileInfo(file).absoluteFilePath();
+    if (QFileInfo(file).exists())
+        path = QFileInfo(file).absoluteFilePath();
 
-	// Try application exe working path
-	else if (QFileInfo(QDir::currentPath() + "/" + file).exists())
-		path = QFileInfo(QDir::currentPath() + "/" + file).absoluteFilePath();
+    // Try application exe working path
+    else if (QFileInfo(QDir::currentPath() + "/" + file).exists())
+        path = QFileInfo(QDir::currentPath() + "/" + file).absoluteFilePath();
 
-	// Try application exe directory
-	else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
+    // Try application exe directory
+    else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
 
-	// Try application exe directory without editor, recorder or src for development
-	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).absoluteFilePath();
+    // Try application exe directory without editor, recorder or src for development
+    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).absoluteFilePath();
 
-	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/recorder", "") + "/" + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/recorder", "") + "/" + file).absoluteFilePath();
+    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/recorder", "") + "/" + file).exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/recorder", "") + "/" + file).absoluteFilePath();
 
-	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).absoluteFilePath();
+    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).absoluteFilePath();
 
 #ifdef Q_WS_X11
-	else if (QFileInfo("/usr/bin/" + file).exists())
-		path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
+    else if (QFileInfo("/usr/bin/" + file).exists())
+        path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
 #endif
 
 #ifdef DEFAULT_DATA_DIR
-	else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
-		path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
+    else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
+        path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
 #endif
 
-	return path;
+    return path;
 }
 
 QString Tano::recorder()
 {
-	QString path;
+    QString path;
 
-	// Try application executable directory
-	if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").absoluteFilePath();
+    // Try application executable directory
+    if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").absoluteFilePath();
 
-	// Try development directory
-	else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").absoluteFilePath();
+    // Try development directory
+    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").absoluteFilePath();
 
 #ifdef Q_WS_WIN
-	// Try Windows directory
-	if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder.exe").exists())
-		path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder.exe").absoluteFilePath();
+    // Try Windows directory
+    if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder.exe").exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder.exe").absoluteFilePath();
 #endif
 
-	return path;
+    return path;
 }
 
 QStringList Tano::vlcQtArgs()
 {
-	QStringList args;
+    QStringList args;
 
-	Settings *s = new Settings();
-#ifdef EDITOR
+    Settings *s = new Settings();
 #if WITH_EDITOR_VLCQT
-	args = VlcCommon::args(s->globalSettings());
+    args = VlcCommon::args(s->globalSettings());
 #endif
-#else
-	args = VlcCommon::args(s->globalSettings());
-#endif
-	delete s;
+    delete s;
 
 #ifdef Q_WS_WIN
-	args << "--plugin-path=vlc\\plugins\\";
+    args << "--plugin-path=vlc\\plugins\\";
 #endif
 
-	return args;
+    return args;
 }
 
 QStringList Tano::vlcQtRecorderArgs(const QString &file)
 {
-	QStringList args;
-
-#ifdef EDITOR
+    QStringList args;
 #if WITH_EDITOR_VLCQT
-	args = VlcCommon::recorderArgs(file);
-#endif
-#else
-	args = VlcCommon::recorderArgs(file);
+    args = VlcCommon::recorderArgs(file);
 #endif
 
 #ifdef Q_WS_WIN
-	args << "--plugin-path=vlc\\plugins\\";
+    args << "--plugin-path=vlc\\plugins\\";
 #endif
 
-	return args;
+    return args;
 }
 
 QString Tano::vlcQtVersionCore()
 {
-	QString version = "/";
-#ifdef EDITOR
+    QString version = "/";
 #if WITH_EDITOR_VLCQT
-	version = VlcInstance::version();
-#endif
-#else
-	version = VlcInstance::version();
+    version = VlcInstance::version();
 #endif
 
-	return version;
+    return version;
 }
 
 QString Tano::vlcQtVersionLibrary()
 {
-	QString version = "/";
-#ifdef EDITOR
+    QString version = "/";
 #if WITH_EDITOR_VLCQT
-	version = VlcInstance::libVersion();
-#endif
-#else
-	version = VlcInstance::libVersion();
+    version = VlcInstance::libVersion();
 #endif
 
-	return version;
+    return version;
 }
 
 bool Tano::vlcQtDisabled()
 {
-	bool disabled = false;
-#ifdef EDITOR
+    bool disabled = true;
 #if WITH_EDITOR_VLCQT
-#else
-	disabled = true;
-#endif
+    disabled = false;
 #endif
 
-	return disabled;
+    return disabled;
 }

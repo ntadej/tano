@@ -24,24 +24,24 @@
 
 namespace Tano
 {
-	// Version
-	QString version();
-	QString changeset();
+    // Version
+    QString version();
+    QString changeset();
 
-	// Build system information
-	QString buildHostname();
-	QString buildSystem();
+    // Build system information
+    QString buildHostname();
+    QString buildSystem();
 
-	// Resources locators
-	QString locateResource(const QString &file);
-	QString recorder();
+    // Resources locators
+    QString locateResource(const QString &file);
+    QString recorder();
 
-	// Backend settings
-	QStringList vlcQtArgs();
-	QStringList vlcQtRecorderArgs(const QString &file);
-	QString vlcQtVersionCore();
-	QString vlcQtVersionLibrary();
-	bool vlcQtDisabled();
+    // Backend settings
+    QStringList vlcQtArgs();
+    QStringList vlcQtRecorderArgs(const QString &file);
+    QString vlcQtVersionCore();
+    QString vlcQtVersionLibrary();
+    bool vlcQtDisabled();
 };
 
 #endif // TANO_COMMON_H_

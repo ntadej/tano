@@ -383,17 +383,10 @@ void MainWindow::writeSession()
 
 void MainWindow::createRecorder()
 {
-#if WITH_RECORDER
 	ui->recorder->openPlaylist(_playlistName);
 	ui->recorder->setAction(ui->actionRecord);
 	ui->recorder->setTrayIcon(_trayIcon);
 	ui->recorder->createSettings();
-#else
-	ui->buttonRecord->hide();
-	ui->menubar->removeAction(ui->menuRecorder->menuAction());
-	ui->toolBar->removeAction(ui->actionRecorder);
-	ui->toolBar->removeAction(ui->actionTimers);
-#endif
 }
 void MainWindow::mouseWheel()
 {
