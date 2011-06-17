@@ -60,7 +60,6 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     core/ChannelSelect.h
     core/GetFile.h
     core/Print.h
-    core/RecorderController.h
     core/UpdateManager.h
     epg/XmltvManager.h
     ui/MainWindow.h
@@ -92,6 +91,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/playlist/PlaylistSelect.h
     ui/playlist/PlaylistWidget.h
     ui/recorder/Recorder.h
+    ui/recorder/RecorderController.h
     ui/recorder/TimersEdit.h
     ui/settings/SettingsEdit.h
     ui/settings/SettingsPlaylist.h
@@ -125,12 +125,11 @@ SET(Tano_Core_Srcs
     core/ChannelSelect.cpp
     core/Common.cpp
     core/ConsoleOutput.cpp
+    core/DaemonManager.cpp
     core/Enums.cpp
     core/GetFile.cpp
     core/LocaleManager.cpp
     core/Print.cpp
-    core/RecorderController.cpp
-    core/RecorderProcess.cpp
     core/Settings.cpp
     core/Shortcuts.cpp
     core/Udpxy.cpp
@@ -181,6 +180,7 @@ SET(Tano_UI_Srcs
     ui/playlist/PlaylistSelect.cpp
     ui/playlist/PlaylistWidget.cpp
     ui/recorder/Recorder.cpp
+    ui/recorder/RecorderController.cpp
     ui/recorder/TimersEdit.cpp
     ui/settings/SettingsEdit.cpp
     ui/settings/SettingsPlaylist.cpp
@@ -209,6 +209,8 @@ SET(Tano_Srcs
     ${Tano_Playlist_Srcs}
     ${Tano_UI_Srcs}
     ${Tano_XML_Srcs}
+
+    ../daemon/DaemonCommon.cpp
 )
 
 ################

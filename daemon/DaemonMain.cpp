@@ -16,22 +16,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
-#include <QtCore/QFileInfo>
+#include "core/ConsoleOutput.h"
+#include "daemon/DaemonMain.h"
+#include "daemon/recorder/RecorderCore.h"
 
-#include "core/Common.h"
-#include "core/RecorderProcess.h"
-
-RecorderProcess::RecorderProcess(QObject *parent)
-	: QProcess(parent)
+DaemonMain::DaemonMain(QObject *parent)
+    : QObject(parent)
 {
-	QString application = Tano::recorder();
-	QStringList arguments;
+    ConsoleOutput::welcomeMessage();
 
-	start(application, arguments);
+    _core = new RecorderCore(this);
 }
 
-RecorderProcess::~RecorderProcess()
+DaemonMain::~DaemonMain()
 {
-	close();
+    delete _core;
 }

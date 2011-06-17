@@ -16,15 +16,22 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QMetaObject>
+#ifndef TANO_XMLTVCOMMON_H_
+#define TANO_XMLTVCOMMON_H_
 
-#include "recorder/RecorderDBusAdaptor.h"
+#include <QtCore/QString>
 
-RecorderDBusAdaptor::RecorderDBusAdaptor(RecorderMain *recorder)
-	: QDBusAbstractAdaptor(recorder),
-	_main(recorder)
+namespace Tano
 {
-	setAutoRelaySignals(true);
-}
+    namespace Daemon
+    {
+        QString interfaceRecorder();
+        const char * interfaceRecorderCString();
+        QString interfaceXmltv();
+        const char * interfaceXmltvCString();
+        QString path();
+        QString service();
+    };
+};
 
-RecorderDBusAdaptor::~RecorderDBusAdaptor() { }
+#endif // TANO_XMLTVCOMMON_H_

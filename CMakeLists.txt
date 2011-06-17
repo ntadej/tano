@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-PROJECT(Tano)
+PROJECT(tano)
 cmake_minimum_required(VERSION 2.6)
 
 CONFIGURE_FILE(
@@ -121,7 +121,7 @@ ENDIF(EDITOR_WITH_VLCQT)
 ###################
 ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(recorder)
+ADD_SUBDIRECTORY(daemon)
 ADD_SUBDIRECTORY(editor)
 
 SET(Tano_Files

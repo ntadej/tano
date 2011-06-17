@@ -16,44 +16,38 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERCONTROLLER_H_
-#define TANO_RECORDERCONTROLLER_H_
+#ifndef TANO_RECORDERTIMEMANAGER_H_
+#define TANO_RECORDERTIMEMANAGER_H_
 
-#include <QtDBus/QDBusAbstractInterface>
-#include <QtDBus/QDBusConnection>
-#include <QtDBus/QDBusPendingReply>
+#include <QtCore/QList>
+#include <QtCore/QTimer>
 
-class RecorderController : public QDBusAbstractInterface
+class Timer;
+class TimersHandler;
+
+class RecorderTimeManager : public QObject
 {
 Q_OBJECT
 public:
-	RecorderController(const QString &service,
-					   const QString &path,
-					   const QDBusConnection &connection,
-					   QObject *parent = 0);
-	~RecorderController();
+    RecorderTimeManager(QObject *parent = 0);
+    ~RecorderTimeManager();
 
-	static const char *staticInterfaceName() { return "si.tano.TanoPlayer.Recorder"; }
-
-public slots:
-	bool isRecording();
-	bool isTimer();
-	QString output();
-	QString timerEndTime();
-
-	void record(const QString &channel,
-				const QString &url,
-				const QString &path);
-	void refreshSettings();
-	void refreshTimers();
-	void stop();
-	void timerInfo();
+    void updateTimers();
 
 signals:
-	void elapsed(const int &);
-	void timer(const QString &,
-			   const QString &);
-	void timerStop();
+    void timer(Timer *);
+
+private slots:
+    void check();
+
+private:
+    void readTimers();
+
+    QString _path;
+
+    QTimer *_timer;
+    TimersHandler *_timersHandler;
+    QList<Timer *> _timersList;
 };
 
-#endif // TANO_RECORDERCONTROLLER_H_
+#endif // TANO_RECORDERTIMEMANAGER_H_

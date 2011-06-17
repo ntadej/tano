@@ -16,32 +16,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#include <QtCore/QMetaObject>
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+#include "daemon/DBusAdaptorRecorder.h"
+#include "daemon/DaemonMain.h"
 
-namespace Tano
+DBusAdaptorRecorder::DBusAdaptorRecorder(RecorderCore *recorder,
+                                         DaemonMain *daemon)
+    : QDBusAbstractAdaptor(daemon),
+    _core(recorder)
 {
-    // Version
-    QString version();
-    QString changeset();
+    connect(_core, SIGNAL(elapsed(int)), this, SIGNAL(elapsed(int)));
+    connect(_core, SIGNAL(timer(QString, QString)), this, SIGNAL(timer(QString, QString)));
+    connect(_core, SIGNAL(timerStop()), this, SIGNAL(timerStop()));
+}
 
-    // Build system information
-    QString buildHostname();
-    QString buildSystem();
-
-    // Resources locators
-    QString daemon();
-    QString locateResource(const QString &file);
-
-    // Backend settings
-    QStringList vlcQtArgs();
-    QStringList vlcQtRecorderArgs(const QString &file);
-    QString vlcQtVersionCore();
-    QString vlcQtVersionLibrary();
-    bool vlcQtDisabled();
-};
-
-#endif // TANO_COMMON_H_
+DBusAdaptorRecorder::~DBusAdaptorRecorder() { }

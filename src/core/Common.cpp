@@ -120,22 +120,23 @@ QString Tano::locateResource(const QString &file)
     return path;
 }
 
-QString Tano::recorder()
+QString Tano::daemon()
 {
+    QString app = "tano-daemon";
     QString path;
 
     // Try application executable directory
-    if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").exists())
-        path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder").absoluteFilePath();
+    if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + app).exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + app).absoluteFilePath();
 
     // Try development directory
-    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").exists())
-        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/recorder") + "/" + "tano-recorder").absoluteFilePath();
+    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/daemon") + "/" + app).exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/daemon") + "/" + app).absoluteFilePath();
 
 #ifdef Q_WS_WIN
     // Try Windows directory
-    if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder.exe").exists())
-        path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + "tano-recorder.exe").absoluteFilePath();
+    if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + app.append("exe")).exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + app.append("exe")).absoluteFilePath();
 #endif
 
     return path;

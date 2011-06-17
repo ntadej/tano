@@ -16,30 +16,40 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
+#include "daemon/DaemonCommon.h"
 
-#include "recorder/RecorderDBusAdaptor.h"
-#include "recorder/RecorderMain.h"
-
-#ifdef Q_WS_X11
-	#include <X11/Xlib.h>
-#endif
-
-int main(int argc, char *argv[])
+QString Tano::Daemon::interfaceRecorder()
 {
-#ifdef Q_WS_X11
-	XInitThreads();
-#endif
+    QString interface = "si.Tano.Recorder";
+    return interface;
+}
 
-	QCoreApplication a(argc, argv);
-	QCoreApplication::setApplicationName("Tano Recorder");
+const char * Tano::Daemon::interfaceRecorderCString()
+{
+    std::string stdString = interfaceRecorder().toStdString();
+    return stdString.c_str();
+}
 
-	RecorderMain *recorder = new RecorderMain();
+QString Tano::Daemon::interfaceXmltv()
+{
+    QString interface = "si.Tano.Xmltv";
+    return interface;
+}
 
-	new RecorderDBusAdaptor(recorder);
-	QDBusConnection connection = QDBusConnection::sessionBus();
-	connection.registerObject("/Recorder", recorder);
-	connection.registerService("si.tano.TanoPlayer");
+const char * Tano::Daemon::interfaceXmltvCString()
+{
+    std::string stdString = interfaceXmltv().toStdString();
+    return stdString.c_str();
+}
 
-	return a.exec();
+QString Tano::Daemon::path()
+{
+    QString path = "/Daemon";
+    return path;
+}
+
+QString Tano::Daemon::service()
+{
+    QString service = "si.Tano";
+    return service;
 }

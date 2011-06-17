@@ -16,38 +16,30 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMEMANAGER_H_
-#define TANO_RECORDERTIMEMANAGER_H_
+#include <QtCore/QCoreApplication>
 
-#include <QtCore/QList>
-#include <QtCore/QTimer>
+#include "daemon/DBusAdaptorRecorder.h"
+#include "daemon/DaemonMain.h"
 
-class Timer;
-class TimersHandler;
+#ifdef Q_WS_X11
+    #include <X11/Xlib.h>
+#endif
 
-class RecorderTimeManager : public QObject
+int main(int argc, char *argv[])
 {
-Q_OBJECT
-public:
-	RecorderTimeManager(QObject *parent = 0);
-	~RecorderTimeManager();
+#ifdef Q_WS_X11
+    XInitThreads();
+#endif
 
-	void updateTimers();
+    QCoreApplication a(argc, argv);
+    QCoreApplication::setApplicationName("Tano Daemon");
 
-signals:
-	void timer(Timer *);
+    DaemonMain *daemon = new DaemonMain();
 
-private slots:
-	void check();
+    new DBusAdaptorRecorder(daemon->recorderCore(), daemon);
+    QDBusConnection connection = QDBusConnection::sessionBus();
+    connection.registerObject("/Daemon", daemon);
+    connection.registerService("si.Tano");
 
-private:
-	void readTimers();
-
-	QString _path;
-
-	QTimer *_timer;
-	TimersHandler *_timersHandler;
-	QList<Timer *> _timersList;
-};
-
-#endif // TANO_RECORDERTIMEMANAGER_H_
+    return a.exec();
+}

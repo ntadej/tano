@@ -16,16 +16,24 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERPROCESS_H_
-#define TANO_RECORDERPROCESS_H_
+#ifndef TANO_DAEMONMAIN_H_
+#define TANO_DAEMONMAIN_H_
 
-#include <QtCore/QProcess>
+#include <QtCore/QObject>
 
-class RecorderProcess : public QProcess
+class RecorderCore;
+
+class DaemonMain : public QObject
 {
+Q_OBJECT
 public:
-	RecorderProcess(QObject *parent = 0);
-	~RecorderProcess();
+    DaemonMain(QObject *parent = 0);
+    ~DaemonMain();
+
+    RecorderCore *recorderCore() { return _core; }
+
+private:
+    RecorderCore *_core;
 };
 
-#endif // TANO_RECORDERPROCESS_H_
+#endif // TANO_DAEMONMAIN_H_

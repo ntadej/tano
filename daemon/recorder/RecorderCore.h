@@ -26,58 +26,62 @@
 class VlcInstance;
 class VlcMediaPlayer;
 
+class RecorderTimeManager;
 class Timer;
 
 class RecorderCore : public QObject
 {
 Q_OBJECT
 public:
-	RecorderCore(QObject *parent = 0);
-	~RecorderCore();
+    RecorderCore(QObject *parent = 0);
+    ~RecorderCore();
 
-	bool isRecording() const { return _isRecording; }
-	bool isTimer() const { return _isTimer; }
-	QString output() const;
-	void settings();
-	void stop();
-	QString timerEndTime() const { return _currentEndTime; }
-	void timerInfo();
+    bool isRecording() const { return _isRecording; }
+    bool isTimer() const { return _isTimer; }
+    QString output() const;
+    void settings();
+    void stop();
+    QString timerEndTime() const { return _currentEndTime; }
+    void timerInfo();
+    void updateTimers();
 
 public slots:
-	void record(const QString &channel,
-				const QString &url,
-				const QString &path);
-	void record(Timer *t);
+    void record(const QString &channel,
+                const QString &url,
+                const QString &path);
+    void record(Timer *t);
 
 signals:
-	void elapsed(const int &);
-	void timer(const QString &,
-			   const QString &);
-	void timerStop();
+    void elapsed(const int &);
+    void timer(const QString &,
+               const QString &);
+    void timerStop();
 
 private slots:
-	void time();
+    void time();
 
 private:
-	QString fileName(const QString &channel,
-					 const QString &path,
-					 const QString &name = 0) const;
+    QString fileName(const QString &channel,
+                     const QString &path,
+                     const QString &name = 0) const;
 
-	QString _currentEndTime;
-	QString _currentName;
-	QString _currentUrl;
-	QString _defaultPath;
+    QString _currentEndTime;
+    QString _currentName;
+    QString _currentUrl;
+    QString _defaultPath;
 
-	bool _isRecording;
-	bool _isTimer;
+    bool _isRecording;
+    bool _isTimer;
 
-	QString _output;
+    QString _output;
 
-	VlcInstance *_instance;
-	VlcMediaPlayer *_player;
+    VlcInstance *_instance;
+    VlcMediaPlayer *_player;
 
-	int _time;
-	QTimer *_timer;
+    int _time;
+    QTimer *_timer;
+
+    RecorderTimeManager *_manager;
 };
 
 #endif // TANO_RECORDERCORE_H_

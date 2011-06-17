@@ -16,32 +16,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_DAEMONMANAGER_H_
+#define TANO_DAEMONMANAGER_H_
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+#include <QtCore/QProcess>
 
-namespace Tano
+class DaemonManager : public QProcess
 {
-    // Version
-    QString version();
-    QString changeset();
-
-    // Build system information
-    QString buildHostname();
-    QString buildSystem();
-
-    // Resources locators
-    QString daemon();
-    QString locateResource(const QString &file);
-
-    // Backend settings
-    QStringList vlcQtArgs();
-    QStringList vlcQtRecorderArgs(const QString &file);
-    QString vlcQtVersionCore();
-    QString vlcQtVersionLibrary();
-    bool vlcQtDisabled();
+public:
+    DaemonManager(QObject *parent = 0);
+    ~DaemonManager();
 };
 
-#endif // TANO_COMMON_H_
+#endif // TANO_DAEMONMANAGER_H_

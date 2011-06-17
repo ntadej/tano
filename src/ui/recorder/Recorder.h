@@ -23,62 +23,60 @@
 #include <QtGui/QWidget>
 #include <QtGui/QTreeWidgetItem>
 
-#include "Config.h"
-
+class DaemonManager;
 class RecorderController;
-class RecorderProcess;
 class TrayIcon;
 class TimersEdit;
 
 namespace Ui
 {
-	class Recorder;
+    class Recorder;
 }
 
 class Recorder : public QWidget
 {
 Q_OBJECT
 public:
-	Recorder(QWidget *parent = 0);
-	~Recorder();
+    Recorder(QWidget *parent = 0);
+    ~Recorder();
 
-	void createSettings();
-	bool isRecording() const;
-	void setAction(QAction *action);
-	void setTrayIcon(TrayIcon *icon);
+    void createSettings();
+    bool isRecording() const;
+    void setAction(QAction *action);
+    void setTrayIcon(TrayIcon *icon);
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 public slots:
-	void openPlaylist(const QString &file);
-	void recordNow(const QString &name,
-				   const QString &url);
-	void showTimersEditor();
-	void stop();
+    void openPlaylist(const QString &file);
+    void recordNow(const QString &name,
+                   const QString &url);
+    void showTimersEditor();
+    void stop();
 
 private slots:
-	void fileBrowse();
-	void playlist(QTreeWidgetItem* clickedChannel);
-	void record(const bool &status);
-	void time(const int &time);
-	void timerStart(const QString &name,
-					const QString &url);
-	void timerStop();
+    void fileBrowse();
+    void playlist(QTreeWidgetItem* clickedChannel);
+    void record(const bool &status);
+    void time(const int &time);
+    void timerStart(const QString &name,
+                    const QString &url);
+    void timerStop();
 
 private:
-	Ui::Recorder *ui;
+    Ui::Recorder *ui;
 
-	QAction *_actionRecord;
+    QAction *_actionRecord;
 
-	QString _name;
-	QString _url;
+    QString _name;
+    QString _url;
 
-	RecorderController *_controller;
-	RecorderProcess *_recorder;
-	TimersEdit *_editor;
-	QString _playlist;
-	TrayIcon *_trayIcon;
+    DaemonManager *_daemon;
+    RecorderController *_controller;
+    TimersEdit *_editor;
+    QString _playlist;
+    TrayIcon *_trayIcon;
 };
 
 #endif // TANO_RECORDER_H_

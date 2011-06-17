@@ -20,231 +20,231 @@
 #include <QtGui/QMessageBox>
 
 #include "container/Channel.h"
+#include "core/DaemonManager.h"
 #include "core/Enums.h"
-#include "core/RecorderController.h"
-#include "core/RecorderProcess.h"
 #include "core/Settings.h"
 #include "ui/core/TrayIcon.h"
+#include "ui/recorder/RecorderController.h"
 #include "ui/recorder/TimersEdit.h"
 
 #include "Recorder.h"
 #include "ui_Recorder.h"
 
 Recorder::Recorder(QWidget *parent)
-	: QWidget(parent),
-	ui(new Ui::Recorder),
-	_name(""),
-	_url(""),
-	_actionRecord(0),
-	_trayIcon(0)
+    : QWidget(parent),
+    ui(new Ui::Recorder),
+    _name(""),
+    _url(""),
+    _editor(0),
+    _actionRecord(0),
+    _trayIcon(0)
 {
-	ui->setupUi(this);
+    ui->setupUi(this);
 
-	_controller = new RecorderController("si.tano.TanoPlayer", "/Recorder",
-										 QDBusConnection::sessionBus(), this);
-	_recorder = new RecorderProcess(this);
+    _controller = new RecorderController(this);
+    _daemon = new DaemonManager(this);
 
-	//Init
-	connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
-	connect(ui->buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
+    //Init
+    connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
+    connect(ui->buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
 
-	connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(playlist(QTreeWidgetItem *)));
+    connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(playlist(QTreeWidgetItem *)));
 
-	connect(_controller, SIGNAL(elapsed(int)), this, SLOT(time(int)));
-	connect(_controller, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
-	connect(_controller, SIGNAL(timerStop()), this, SLOT(timerStop()));
+    connect(_controller, SIGNAL(elapsed(int)), this, SLOT(time(int)));
+    connect(_controller, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
+    connect(_controller, SIGNAL(timerStop()), this, SLOT(timerStop()));
 }
 
 Recorder::~Recorder()
 {
-	delete ui;
+    delete ui;
 
-	delete _controller;
-	delete _recorder;
+    delete _controller;
+    delete _daemon;
 }
 
 void Recorder::changeEvent(QEvent *e)
 {
-	QWidget::changeEvent(e);
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			ui->retranslateUi(this);
-			break;
-		default:
-			break;
-	}
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+        default:
+            break;
+    }
 }
 
 void Recorder::createSettings()
 {
-	Settings *settings = new Settings(this);
-	ui->fileEdit->setText(settings->recorderDirectory());
-	delete settings;
+    Settings *settings = new Settings(this);
+    ui->fileEdit->setText(settings->recorderDirectory());
+    delete settings;
 
-	_controller->refreshSettings();
+    _controller->refreshSettings();
 }
 
 void Recorder::stop()
 {
-	_controller->stop();
+    _controller->stop();
 }
 
 void Recorder::openPlaylist(const QString &file)
 {
-	_playlist = file;
-	ui->playlistWidget->open(_playlist);
+    _playlist = file;
+    ui->playlistWidget->open(_playlist);
 }
 
 void Recorder::playlist(QTreeWidgetItem *clickedChannel)
 {
-	Channel *channel = ui->playlistWidget->channelRead(clickedChannel);
+    Channel *channel = ui->playlistWidget->channelRead(clickedChannel);
 
-	_name = channel->name();
-	_url = channel->url();
+    _name = channel->name();
+    _url = channel->url();
 
-	ui->valueSelected->setText(channel->name());
+    ui->valueSelected->setText(channel->name());
 }
 
 void Recorder::fileBrowse()
 {
-	QString dir;
-	if(ui->fileEdit->text().isEmpty())
-		dir = QDir::homePath();
-	else
-		dir = ui->fileEdit->text();
-	QString dfile =
-			QFileDialog::getExistingDirectory(this, tr("Open directory"), dir,
-											  QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-	if(!dfile.isEmpty())
-		ui->fileEdit->setText(dfile);
+    QString dir;
+    if(ui->fileEdit->text().isEmpty())
+        dir = QDir::homePath();
+    else
+        dir = ui->fileEdit->text();
+    QString dfile =
+            QFileDialog::getExistingDirectory(this, tr("Open directory"), dir,
+                                              QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    if(!dfile.isEmpty())
+        ui->fileEdit->setText(dfile);
 }
 
 void Recorder::record(const bool &status)
 {
-	if(status) {
-		if(ui->fileEdit->text().isEmpty()) {
-			ui->buttonRecord->setChecked(false);
-			return;
-		} else if(!QDir(ui->fileEdit->text()).exists()) {
-			ui->buttonRecord->setChecked(false);
-			QMessageBox::critical(this, tr("Recorder"),
-						tr("Cannot write to %1.")
-						.arg(ui->fileEdit->text()));
-			return;
-		} else if(ui->valueSelected->text().isEmpty() && !_controller->isTimer()) {
-			ui->buttonRecord->setChecked(false);
-			QMessageBox::critical(this, tr("Recorder"),
-						tr("Channel is not selected!"));
-			return;
-		}
+    if(status) {
+        if(ui->fileEdit->text().isEmpty()) {
+            ui->buttonRecord->setChecked(false);
+            return;
+        } else if(!QDir(ui->fileEdit->text()).exists()) {
+            ui->buttonRecord->setChecked(false);
+            QMessageBox::critical(this, tr("Recorder"),
+                        tr("Cannot write to %1.")
+                        .arg(ui->fileEdit->text()));
+            return;
+        } else if(ui->valueSelected->text().isEmpty() && !_controller->isTimer()) {
+            ui->buttonRecord->setChecked(false);
+            QMessageBox::critical(this, tr("Recorder"),
+                        tr("Channel is not selected!"));
+            return;
+        }
 
-		if(!_controller->isTimer()) {
-			_controller->record(_name, _url, ui->fileEdit->text());
-		}
+        if(!_controller->isTimer()) {
+            _controller->record(_name, _url, ui->fileEdit->text());
+        }
 
-		ui->valueCurrent->setText(_name);
-		if(_controller->isTimer())
-			ui->valueEndTime->setText(_controller->timerEndTime());
-		else
-			ui->valueEndTime->setText(tr("No timer - press button to stop."));
-		ui->valueFile->setText(_controller->output());
+        ui->valueCurrent->setText(_name);
+        if(_controller->isTimer())
+            ui->valueEndTime->setText(_controller->timerEndTime());
+        else
+            ui->valueEndTime->setText(tr("No timer - press button to stop."));
+        ui->valueFile->setText(_controller->output());
 
-		ui->buttonRecord->setText(tr("Stop recording"));
-		if(_actionRecord)
-			_actionRecord->setEnabled(true);
+        ui->buttonRecord->setText(tr("Stop recording"));
+        if(_actionRecord)
+            _actionRecord->setEnabled(true);
 
-		if(_trayIcon) {
-			_trayIcon->changeToolTip(Tano::Record, _name);
-			if(_controller->isTimer())
-				_trayIcon->message(Tano::Record, QStringList() << _name << _controller->output() << ui->valueEndTime->text());
-			else
-				_trayIcon->message(Tano::Record, QStringList() << _name << _controller->output());
-		}
-	} else {
-		_controller->stop();
+        if(_trayIcon) {
+            _trayIcon->changeToolTip(Tano::Record, _name);
+            if(_controller->isTimer())
+                _trayIcon->message(Tano::Record, QStringList() << _name << _controller->output() << ui->valueEndTime->text());
+            else
+                _trayIcon->message(Tano::Record, QStringList() << _name << _controller->output());
+        }
+    } else {
+        _controller->stop();
 
-		ui->valueCurrent->setText("");
-		ui->valueTime->setText("");
-		ui->valueEndTime->setText(tr(""));
-		ui->valueFile->setText("");
+        ui->valueCurrent->setText("");
+        ui->valueTime->setText("");
+        ui->valueEndTime->setText(tr(""));
+        ui->valueFile->setText("");
 
-		ui->buttonRecord->setText(tr("Record"));
-		if(_actionRecord)
-			_actionRecord->setEnabled(false);
+        ui->buttonRecord->setText(tr("Record"));
+        if(_actionRecord)
+            _actionRecord->setEnabled(false);
 
-		if(_trayIcon) {
-			_trayIcon->changeToolTip(Tano::Record);
-			_trayIcon->message(Tano::Record, QStringList());
-		}
-	}
+        if(_trayIcon) {
+            _trayIcon->changeToolTip(Tano::Record);
+            _trayIcon->message(Tano::Record, QStringList());
+        }
+    }
 }
 
 void Recorder::recordNow(const QString &name,
-						 const QString &url)
+                         const QString &url)
 {
-	_name = name;
-	_url = url;
+    _name = name;
+    _url = url;
 
-	ui->valueSelected->setText(name);
+    ui->valueSelected->setText(name);
 
-	if(!_controller->isRecording())
-		ui->buttonRecord->toggle();
+    if(!_controller->isRecording())
+        ui->buttonRecord->toggle();
 }
 
 void Recorder::time(const int &time)
 {
-	ui->valueTime->setText(QTime().addMSecs(time).toString("hh:mm:ss"));
+    ui->valueTime->setText(QTime().addMSecs(time).toString("hh:mm:ss"));
 
-	if(ui->valueCurrent->text().isEmpty()) {
-		_controller->timerInfo();
-	}
+    if(ui->valueCurrent->text().isEmpty()) {
+        _controller->timerInfo();
+    }
 }
 
 void Recorder::setAction(QAction *action)
 {
-	_actionRecord = action;
-	connect(_actionRecord, SIGNAL(triggered()), ui->buttonRecord, SLOT(toggle()));
+    _actionRecord = action;
+    connect(_actionRecord, SIGNAL(triggered()), ui->buttonRecord, SLOT(toggle()));
 }
 
 void Recorder::setTrayIcon(TrayIcon *icon)
 {
-	_trayIcon = icon;
+    _trayIcon = icon;
 }
 
 bool Recorder::isRecording() const
 {
-	return _controller->isRecording();
+    return _controller->isRecording();
 }
 
 void Recorder::showTimersEditor()
 {
-	if(_editor) {
-		if(_editor->isVisible()) {
-			_editor->activateWindow();
-		} else {
-			delete _editor;
-			_editor = new TimersEdit(_playlist, this);
-			connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
-			_editor->show();
-		}
-	} else {
-		_editor = new TimersEdit(_playlist, this);
-		connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
-		_editor->show();
-	}
+    if(_editor) {
+        if(_editor->isVisible()) {
+            _editor->activateWindow();
+        } else {
+            delete _editor;
+            _editor = new TimersEdit(_playlist, this);
+            connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
+            _editor->show();
+        }
+    } else {
+        _editor = new TimersEdit(_playlist, this);
+        connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
+        _editor->show();
+    }
 }
 
 void Recorder::timerStart(const QString &name,
-						  const QString &url)
+                          const QString &url)
 {
-	_name = name;
-	_url = url;
+    _name = name;
+    _url = url;
 
-	ui->buttonRecord->toggle();
+    ui->buttonRecord->toggle();
 }
 
 void Recorder::timerStop()
 {
-	if(isRecording())
-		ui->buttonRecord->toggle();
+    if(isRecording())
+        ui->buttonRecord->toggle();
 }

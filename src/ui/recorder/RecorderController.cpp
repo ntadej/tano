@@ -16,16 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "RecorderController.h"
+#include "daemon/DaemonCommon.h"
+#include "ui/recorder/RecorderController.h"
 
-RecorderController::RecorderController(const QString &service,
-									   const QString &path,
-									   const QDBusConnection &connection,
-									   QObject *parent)
-	: QDBusAbstractInterface(service,
-							 path,
-							 staticInterfaceName(),
-							 connection,
+RecorderController::RecorderController(QObject *parent)
+    : QDBusAbstractInterface(Tano::Daemon::service(),
+                             Tano::Daemon::path(),
+                             staticInterfaceName(),
+                             QDBusConnection::sessionBus(),
 							 parent) { }
 RecorderController::~RecorderController() { }
 

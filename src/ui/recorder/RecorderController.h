@@ -16,44 +16,41 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERDBUSADAPTOR_H_
-#define TANO_RECORDERDBUSADAPTOR_H_
+#ifndef TANO_RECORDERCONTROLLER_H_
+#define TANO_RECORDERCONTROLLER_H_
 
-#include <QtCore/QObject>
-#include <QtDBus/QtDBus>
+#include <QtDBus/QDBusAbstractInterface>
+#include <QtDBus/QDBusConnection>
+#include <QtDBus/QDBusPendingReply>
 
-#include "recorder/RecorderMain.h"
-
-class RecorderDBusAdaptor : public QDBusAbstractAdaptor
+class RecorderController : public QDBusAbstractInterface
 {
 Q_OBJECT
-Q_CLASSINFO("D-Bus Interface", "si.tano.TanoPlayer.Recorder")
-
 public:
-	RecorderDBusAdaptor(RecorderMain *recorder);
-	~RecorderDBusAdaptor();
+    RecorderController(QObject *parent = 0);
+	~RecorderController();
+
+    static const char *staticInterfaceName() { return "si.Tano.Recorder"; }
 
 public slots:
-	QString output() const { return _main->output(); }
+	bool isRecording();
+	bool isTimer();
+	QString output();
+	QString timerEndTime();
+
 	void record(const QString &channel,
 				const QString &url,
-				const QString &path) { _main->record(channel, url, path); }
-	bool recording() const { return _main->isRecording(); }
-	void refreshSettings() { _main->refreshSettings(); }
-	void refreshTimers() { _main->refreshTimers(); }
-	void stop() { _main->stop(); }
-	bool timer() const { return _main->isTimer(); }
-	QString timerEndTime() const { return _main->timerEndTime(); }
-	void timerInfo() { _main->timerInfo(); }
+				const QString &path);
+	void refreshSettings();
+	void refreshTimers();
+	void stop();
+	void timerInfo();
 
 signals:
 	void elapsed(const int &);
 	void timer(const QString &,
 			   const QString &);
 	void timerStop();
-
-private:
-	RecorderMain *_main;
 };
 
-#endif // TANO_RECORDERDBUSADAPTOR_H_
+#endif // TANO_RECORDERCONTROLLER_H_
