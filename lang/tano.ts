@@ -775,6 +775,10 @@ You will lose any unsaved changes.</source>
         <source>Logo:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Update Information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
@@ -804,7 +808,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -923,16 +927,19 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select your country from the menu below.
-Then select your playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Playlist:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1. Select your country from the menu below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2. Select your playlist.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

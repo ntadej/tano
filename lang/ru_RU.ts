@@ -783,6 +783,10 @@ You will lose any unsaved changes.</source>
         <source>Logo:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Update Information</source>
+        <translation type="unfinished">Информация об обновлении</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
@@ -931,17 +935,20 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select your country from the menu below.
-Then select your playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Playlist:</source>
         <translation type="unfinished">Список каналов:</translation>
+    </message>
+    <message>
+        <source>1. Select your country from the menu below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2. Select your playlist.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

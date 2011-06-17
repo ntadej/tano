@@ -7,12 +7,10 @@ msgstr ""
 "X-Language: sl\n"
 "X-Qt-Contexts: true\n"
 
-#: ../src/ui/dialogs/AboutDialog.ui:20 ../src/ui/dialogs/AboutDialog.ui:61
 msgctxt "AboutDialog|"
 msgid "About"
 msgstr "O programu"
 
-#: ../src/ui/dialogs/AboutDialog.ui:74
 msgctxt "AboutDialog|"
 msgid ""
 "Tano is an open-source cross-platform IP TV player which features full IP TV "
@@ -21,7 +19,6 @@ msgstr ""
 "Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV "
 "predvajanje z EPG in snemalnikom. Temelji na knjižnici VLC-Qt.\n"
 
-#: ../src/ui/dialogs/AboutDialog.ui:85
 #, qt-format
 msgctxt "AboutDialog|"
 msgid ""
@@ -35,12 +32,10 @@ msgstr ""
 "Vaša različica Qt: %3\n"
 "Vaša različica VLC-Qt: %4\n"
 
-#: ../src/ui/dialogs/AboutDialog.ui:163
 msgctxt "AboutDialog|"
 msgid "Backend"
 msgstr "Hrbtenica"
 
-#: ../src/ui/dialogs/AboutDialog.ui:176
 msgctxt "AboutDialog|"
 msgid ""
 "VLC-Qt is a free library used to connect Qt and libvlc libraries. It "
@@ -52,53 +47,43 @@ msgstr ""
 "nekaj razredov uporabniškega vmesnika za hitrejši razvoj multimedijskega "
 "predvajalnika.\n"
 
-#: ../src/ui/dialogs/AboutDialog.ui:187
 #, qt-format
 msgctxt "AboutDialog|"
 msgid "<b>You are using VideoLAN VLC %1</b>"
 msgstr "<b>Uporabljate Videolan VLC %1</b>"
 
-#: ../src/ui/dialogs/AboutDialog.ui:262
 msgctxt "AboutDialog|"
 msgid "Authors"
 msgstr "Avtorji"
 
-#: ../src/ui/dialogs/AboutDialog.ui:276
 msgctxt "AboutDialog|"
 msgid "License"
 msgstr "Licenca"
 
-#: ../src/ui/dialogs/AboutDialog.cpp:39
 msgctxt "AboutDialog|"
 msgid "Editor"
 msgstr "Urejevalnik"
 
-#: ../src/ui/dialogs/AboutDialog.cpp:41
 msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Predvajalnik"
 
-#: ../src/ui/wizard/ConclusionPage.ui:30
 msgctxt "ConclusionPage|"
 msgid "I agree to the terms of the GNU General Public License"
 msgstr "Strinjam se s pogoji GNU General Public License"
 
-#: ../src/ui/wizard/ConclusionPage.ui:18
 msgctxt "ConclusionPage|"
 msgid "Complete Wizard"
 msgstr "Zaključite čarovnika"
 
-#: ../src/ui/wizard/ConclusionPage.ui:21
 msgctxt "ConclusionPage|"
 msgid "Thank you for using <i>Tano</i>."
 msgstr "Hvala, da uporabljate <i>Tano</i>."
 
-#: ../src/ui/dialogs/DonationDialog.ui:14
 msgctxt "DonationDialog|"
 msgid "Donate"
 msgstr "Doniraj"
 
-#: ../src/ui/dialogs/DonationDialog.ui:24
 msgctxt "DonationDialog|"
 msgid ""
 "Tano Player project requires a lot of work and devotion. You can also "
@@ -109,54 +94,44 @@ msgstr ""
 "tudi z doniranjem denarja. Ta denar bo porabljen za kritje vseh stroškov in "
 "cene gostovanja."
 
-#: ../src/ui/dialogs/DonationDialog.ui:63
 msgctxt "DonationDialog|"
 msgid "You can read additional terms and information on Tano Player homepage."
 msgstr ""
 "Dodatne pogoje in informacije si lahko preberete na spletni strani "
 "predvajalnika Tano."
 
-#: ../src/ui/epg/EpgList.cpp:28
 msgctxt "EpgList|"
 msgid "Show information"
 msgstr "Pokaži podrobnosti"
 
-#: ../src/ui/epg/EpgList.cpp:29
 msgctxt "EpgList|"
 msgid "Record"
 msgstr "Snemaj"
 
-#: ../src/ui/epg/EpgScheduleChannel.ui:47
 msgctxt "EpgScheduleChannel|"
 msgid "<h2>No EPG</h2>"
 msgstr "<h2>EPG ni na voljo</h2>"
 
-#: ../src/ui/epg/EpgScheduleFull.ui:14
 msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Spored"
 
-#: ../src/ui/epg/EpgShow.ui:105
 msgctxt "EpgShow|"
 msgid "Previous"
 msgstr "Prejšnja oddaja"
 
-#: ../src/ui/epg/EpgShow.ui:134
 msgctxt "EpgShow|"
 msgid "Next"
 msgstr "Naslednja oddaja"
 
-#: ../src/ui/wizard/FirstRunWizard.cpp:43
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Čarovnik ob prvem zagonu"
 
-#: ../src/core/GetFile.cpp:51 ../src/core/GetFile.cpp:76
 msgctxt "GetFile|"
 msgid "Tano"
 msgstr "Tano"
 
-#: ../src/core/GetFile.cpp:52
 #, qt-format
 msgctxt "GetFile|"
 msgid ""
@@ -166,33 +141,27 @@ msgstr ""
 "Ne morem pisati datoteke %1:\n"
 "%2."
 
-#: ../src/core/GetFile.cpp:77
 #, qt-format
 msgctxt "GetFile|"
 msgid "Download failed: %1."
 msgstr "Prenos ni uspel: %1."
 
-#: ../src/ui/core/InfoBar.cpp:99
 msgctxt "InfoBar|"
 msgid "Language:"
 msgstr "Jezik:"
 
-#: ../src/ui/core/InfoBar.cpp:105
 msgctxt "InfoBar|"
 msgid "Now:"
 msgstr "Trenutno:"
 
-#: ../src/ui/core/InfoBar.cpp:106
 msgctxt "InfoBar|"
 msgid "Next:"
 msgstr "Naslednje:"
 
-#: ../src/ui/wizard/IntroPage.ui:18
 msgctxt "IntroPage|"
 msgid "Welcome"
 msgstr "Pozdravljeni"
 
-#: ../src/ui/wizard/IntroPage.ui:21
 msgctxt "IntroPage|"
 msgid ""
 "This wizard will help you set basic settings for your copy of <i>Tano</i>."
@@ -200,190 +169,151 @@ msgstr ""
 "Ta čarovnik vam bo pomagal določiti osnovne nastavitve za program "
 "<i>Tano</i>."
 
-#: ../src/ui/wizard/IntroPage.cpp:36
 #, qt-format
 msgctxt "IntroPage|"
 msgid "You previously used version %1 of <i>Tano</i>."
 msgstr "Uporabljali ste <i>Tano</i> različice %1."
 
-#: ../src/ui/wizard/IntroPage.cpp:38
 msgctxt "IntroPage|"
 msgid "Please re-set your settings."
 msgstr "Prosim, ponovno nastavite aplikacijo."
 
-#: ../src/ui/MainWindow.ui:579
 msgctxt "MainWindow|"
 msgid "&Exit"
 msgstr "&Izhod"
 
-#: ../src/ui/MainWindow.ui:582
 msgctxt "MainWindow|"
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: ../src/ui/MainWindow.ui:591
 msgctxt "MainWindow|"
 msgid "&Settings"
 msgstr "&Nastavitve"
 
-#: ../src/ui/MainWindow.ui:603
 msgctxt "MainWindow|"
 msgid "&Fullscreen"
 msgstr "&Celoten zaslon"
 
-#: ../src/ui/MainWindow.ui:624
 msgctxt "MainWindow|"
 msgid "Open &File"
 msgstr "Odpri &Datoteko"
 
-#: ../src/ui/MainWindow.ui:82
 msgctxt "MainWindow|"
 msgid "&Help"
 msgstr "P&omoč"
 
-#: ../src/ui/MainWindow.ui:645
 msgctxt "MainWindow|"
 msgid "Open URL"
 msgstr "Odpri URL"
 
-#: ../src/ui/MainWindow.ui:654
 msgctxt "MainWindow|"
 msgid "Check for updates"
 msgstr "Preveri za posodobitve"
 
-#: ../src/ui/MainWindow.ui:663
 msgctxt "MainWindow|"
 msgid "Open"
 msgstr "Odpri"
 
-#: ../src/ui/MainWindow.ui:366 ../src/ui/MainWindow.ui:369
-#: ../src/ui/MainWindow.ui:672 ../src/ui/MainWindow.cpp:450
-#: ../src/ui/MainWindow.cpp:451 ../src/ui/MainWindow.cpp:452
-#: ../src/ui/MainWindow.cpp:453
 msgctxt "MainWindow|"
 msgid "Play"
 msgstr "Predvajaj"
 
-#: ../src/ui/MainWindow.ui:398 ../src/ui/MainWindow.ui:401
-#: ../src/ui/MainWindow.ui:681
 msgctxt "MainWindow|"
 msgid "Stop"
 msgstr "Ustavi"
 
-#: ../src/ui/MainWindow.ui:693
 msgctxt "MainWindow|"
 msgid "Always on top"
 msgstr "Vedno na vrhu"
 
-#: ../src/ui/MainWindow.ui:717
+msgctxt "MainWindow|"
+msgid "Restore"
+msgstr "Obnovi"
+
 msgctxt "MainWindow|"
 msgid "Simple Mode"
 msgstr "Enostaven način"
 
-#: ../src/ui/MainWindow.ui:148
 msgctxt "MainWindow|"
 msgid "Main Toolbar"
 msgstr "Glavna orodna vrstica"
 
-#: ../src/ui/MainWindow.ui:462 ../src/ui/MainWindow.ui:465
-#: ../src/ui/MainWindow.ui:726
 msgctxt "MainWindow|"
 msgid "Next"
 msgstr "Naslednji"
 
-#: ../src/ui/MainWindow.ui:430 ../src/ui/MainWindow.ui:433
-#: ../src/ui/MainWindow.ui:735
 msgctxt "MainWindow|"
 msgid "Back"
 msgstr "Nazaj"
 
-#: ../src/ui/MainWindow.ui:529 ../src/ui/MainWindow.ui:532
-#: ../src/ui/MainWindow.ui:747
 msgctxt "MainWindow|"
 msgid "Mute"
 msgstr "Tiho"
 
-#: ../src/ui/MainWindow.ui:756
 msgctxt "MainWindow|"
 msgid "Volume up"
 msgstr "Povečaj glasnost"
 
-#: ../src/ui/MainWindow.ui:765
 msgctxt "MainWindow|"
 msgid "Volume down"
 msgstr "Zmanjšaj glasnost"
 
-#: ../src/ui/MainWindow.ui:777
 msgctxt "MainWindow|"
 msgid "Recorder"
 msgstr "Snemalnik"
 
-#: ../src/ui/MainWindow.ui:103
 msgctxt "MainWindow|"
 msgid "&Audio"
 msgstr "&Zvok"
 
-#: ../src/ui/MainWindow.ui:111
 msgctxt "MainWindow|"
 msgid "&Playback"
 msgstr "&Predvajanje"
 
-#: ../src/ui/MainWindow.ui:494 ../src/ui/MainWindow.ui:497
 msgctxt "MainWindow|"
 msgid "Record Now"
 msgstr "Snemaj takoj"
 
-#: ../src/ui/MainWindow.ui:612
 msgctxt "MainWindow|"
 msgid "&Open channel list"
 msgstr "&Odpri seznam programov"
 
-#: ../src/ui/MainWindow.ui:615 ../src/ui/MainWindow.cpp:524
 msgctxt "MainWindow|"
 msgid "Open channel list"
 msgstr "Odpri seznam programov"
 
-#: ../src/ui/MainWindow.ui:786 ../src/ui/MainWindow.ui:789
 msgctxt "MainWindow|"
 msgid "Record Current"
 msgstr "Snemaj trenutno"
 
-#: ../src/ui/MainWindow.ui:798
 msgctxt "MainWindow|"
 msgid "Timers"
 msgstr "Časovniki"
 
-#: ../src/ui/MainWindow.ui:807
 msgctxt "MainWindow|"
 msgid "About Qt"
 msgstr "O Qt"
 
-#: ../src/ui/MainWindow.ui:834
 msgctxt "MainWindow|"
 msgid "Controls panel"
 msgstr "Upravljalni pult"
 
-#: ../src/ui/MainWindow.ui:870
 msgctxt "MainWindow|"
 msgid "Enable Info panel in Fullscreen mode"
 msgstr "Vključi Info pult v celozaslonskem načinu"
 
-#: ../src/ui/MainWindow.ui:879
 msgctxt "MainWindow|"
 msgid "Donate"
 msgstr "Doniraj"
 
-#: ../src/ui/MainWindow.ui:891
 msgctxt "MainWindow|"
 msgid "Teletext"
 msgstr "Teletekst"
 
-#: ../src/ui/MainWindow.ui:126
 msgctxt "MainWindow|"
 msgid "&File"
 msgstr "&Datoteka"
 
-#: ../src/ui/MainWindow.cpp:77
 msgctxt "MainWindow|"
 msgid ""
 "Do you want to exit Tano?\n"
@@ -392,280 +322,218 @@ msgstr ""
 "Ali želite zapreti Tano?\n"
 "To bo ustavilo trenutno snemanje."
 
-#: ../src/ui/MainWindow.cpp:439 ../src/ui/MainWindow.cpp:440
-#: ../src/ui/MainWindow.cpp:441 ../src/ui/MainWindow.cpp:442
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Prekini"
 
-#: ../src/ui/MainWindow.cpp:461
 msgctxt "MainWindow|"
 msgid "Buffering..."
 msgstr "Nalagam..."
 
-#: ../src/ui/MainWindow.cpp:526
 msgctxt "MainWindow|"
 msgid "Tano TV channel list files(*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/MainWindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Open file or URL"
 msgstr "Odpri datoteko ali URL"
 
-#: ../src/ui/MainWindow.cpp:554
 msgctxt "MainWindow|"
 msgid "Multimedia files(*)"
 msgstr "Multimedijske datoteke(*)"
 
-#: ../src/ui/MainWindow.cpp:565
 msgctxt "MainWindow|"
 msgid "Open URL or stream"
 msgstr "Odpri URL ali drug pretočni vir"
 
-#: ../src/ui/MainWindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Enter the URL of multimedia file or stream you want to play:"
 msgstr "Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:"
 
-#: ../src/ui/MainWindow.cpp:655
-msgctxt "MainWindow|"
-msgid "Restore"
-msgstr "Obnovi"
-
-#: ../src/ui/MainWindow.ui:257 ../src/ui/MainWindow.ui:843
 msgctxt "MainWindow|"
 msgid "Schedule"
 msgstr "Spored"
 
-#: ../src/ui/MainWindow.ui:75
 msgctxt "MainWindow|"
 msgid "&Options"
 msgstr "&Možnosti"
 
-#: ../src/ui/MainWindow.ui:14 ../src/ui/MainWindow.cpp:76
-#: ../src/ui/MainWindow.cpp:611 ../src/ui/MainWindow.cpp:613
 msgctxt "MainWindow|"
 msgid "Tano"
 msgstr "Tano"
 
-#: ../src/ui/MainWindow.ui:570
 msgctxt "MainWindow|"
 msgid "About Tano"
 msgstr "O programu Tano"
 
-#: ../src/ui/MainWindow.ui:633 ../src/ui/MainWindow.ui:636
 msgctxt "MainWindow|"
 msgid "Edit Channels"
 msgstr "Uredi programe"
 
-#: ../src/ui/MainWindow.ui:191 ../src/ui/MainWindow.ui:858
 msgctxt "MainWindow|"
 msgid "Info panel"
 msgstr "Info pult"
 
-#: ../src/ui/MainWindow.ui:702 ../src/ui/MainWindow.ui:705
-#: ../src/ui/MainWindow.cpp:652
 msgctxt "MainWindow|"
 msgid "Hide to tray"
 msgstr "Skrij v orodno vrstico"
 
-#: ../src/ui/MainWindow.ui:819 ../src/ui/MainWindow.ui:822
 msgctxt "MainWindow|"
 msgid "Stop recording"
 msgstr "Prenehaj s snemanjem"
 
-#: ../src/ui/MainWindow.ui:65
 msgctxt "MainWindow|"
 msgid "&Recorder"
 msgstr "Sne&malnik"
 
-#: ../src/ui/MainWindow.ui:91
 msgctxt "MainWindow|"
 msgid "Vie&w"
 msgstr "&Videz"
 
-#: ../src/ui/MainWindow.ui:121
 msgctxt "MainWindow|"
 msgid "&Video"
 msgstr "&Slika"
 
-#: ../src/ui/menu/MenuAspectRatio.cpp:26
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Razmerje slike"
 
-#: ../src/ui/menu/MenuAspectRatio.cpp:28
 msgctxt "MenuAspectRatio|"
 msgid "Next aspect ratio option"
 msgstr "Naslednje razmerje slike"
 
-#: ../src/ui/menu/MenuAspectRatio.cpp:30
 msgctxt "MenuAspectRatio|"
 msgid "Original"
 msgstr "Originalno"
 
-#: ../src/ui/menu/MenuCrop.cpp:26
 msgctxt "MenuCrop|"
 msgid "Crop video"
 msgstr "Obreži sliko"
 
-#: ../src/ui/menu/MenuCrop.cpp:28
 msgctxt "MenuCrop|"
 msgid "Next crop option"
 msgstr "Naslednja obrezava slike"
 
-#: ../src/ui/menu/MenuCrop.cpp:30
 msgctxt "MenuCrop|"
 msgid "Original"
 msgstr "Originalno"
 
-#: ../src/ui/menu/MenuDeinterlacing.cpp:26
 msgctxt "MenuDeinterlacing|"
 msgid "Deinterlacing"
 msgstr "Razpletanje"
 
-#: ../src/ui/menu/MenuDeinterlacing.cpp:28
 msgctxt "MenuDeinterlacing|"
 msgid "Next deinterlacing option"
 msgstr "Naslenje razpletanje"
 
-#: ../src/ui/menu/MenuDeinterlacing.cpp:30
 msgctxt "MenuDeinterlacing|"
 msgid "Disabled"
 msgstr "Onemogočeno"
 
-#: ../src/ui/menu/MenuDeinterlacing.cpp:35
 msgctxt "MenuDeinterlacing|"
 msgid "Discard"
 msgstr "Zavrzi"
 
-#: ../src/ui/menu/MenuDeinterlacing.cpp:39
 msgctxt "MenuDeinterlacing|"
 msgid "Blend"
 msgstr "Prelivanje"
 
-#: ../src/ui/menu/MenuDeinterlacing.cpp:43
 msgctxt "MenuDeinterlacing|"
 msgid "Mean"
 msgstr "Sredina"
 
-#: ../src/ui/menu/MenuDeinterlacing.cpp:47
 msgctxt "MenuDeinterlacing|"
 msgid "Bob"
 msgstr "Bob"
 
-#: ../src/ui/menu/MenuDeinterlacing.cpp:51
 msgctxt "MenuDeinterlacing|"
 msgid "Linear"
 msgstr "Linearno"
 
-#: ../src/ui/menu/MenuDeinterlacing.cpp:55
 msgctxt "MenuDeinterlacing|"
 msgid "X"
 msgstr "X"
 
-#: ../src/ui/menu/MenuTrackAudio.cpp:24
 msgctxt "MenuTrackAudio|"
 msgid "Audio track"
 msgstr "Zvočna sled"
 
-#: ../src/ui/menu/MenuTrackAudio.cpp:26
 msgctxt "MenuTrackAudio|"
 msgid "Next audio track"
 msgstr "Naslednja zvočna sled"
 
-#: ../src/ui/menu/MenuTrackSubtitles.cpp:26
 msgctxt "MenuTrackSubtitles|"
 msgid "Subtitles"
 msgstr "Podnapisi"
 
-#: ../src/ui/menu/MenuTrackSubtitles.cpp:28
 msgctxt "MenuTrackSubtitles|"
 msgid "Next subtitles"
 msgstr "Naslednji podnapisi"
 
-#: ../src/ui/menu/MenuTrackSubtitles.cpp:31
 msgctxt "MenuTrackSubtitles|"
 msgid "Open subtitle file"
 msgstr "Odpri datoteko s podnapisi"
 
-#: ../src/ui/menu/MenuTrackSubtitles.cpp:40
 msgctxt "MenuTrackSubtitles|"
 msgid "Open Subtitles file"
 msgstr "Odpri datoteko s podnapisi"
 
-#: ../src/ui/menu/MenuTrackSubtitles.cpp:42
 msgctxt "MenuTrackSubtitles|"
 msgid "Subtitles files(*.sub *.srt *.txt)"
 msgstr "Datoteke podnapisov(*.sub *.srt *.txt)"
 
-#: ../src/ui/menu/MenuTrackVideo.cpp:24
 msgctxt "MenuTrackVideo|"
 msgid "Video track"
 msgstr "Slikovna sled"
 
-#: ../src/ui/menu/MenuTrackVideo.cpp:26
 msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Naslednja slikovna sled"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:14 ../src/ui/playlist/PlaylistEdit.cpp:191
 msgctxt "PlaylistEdit|"
 msgid "Tano Editor"
 msgstr "Tano Urejevalnik"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:28
 msgctxt "PlaylistEdit|"
 msgid "Playlist name:"
 msgstr "Ime seznama programov:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:38
 msgctxt "PlaylistEdit|"
 msgid "Channels number:"
 msgstr "Število programov:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:68
 msgctxt "PlaylistEdit|"
 msgid "Toolbar"
 msgstr "Orodna vrstica"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:131
 msgctxt "PlaylistEdit|"
 msgid "Editor"
 msgstr "Urejevalnik"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:141
 msgctxt "PlaylistEdit|"
 msgid "Number:"
 msgstr "Število:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:148
 msgctxt "PlaylistEdit|"
 msgid "Name:"
 msgstr "Ime:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:155
 msgctxt "PlaylistEdit|"
 msgid "Categories:"
 msgstr "Kategorije:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:162
 msgctxt "PlaylistEdit|"
 msgid "Language:"
 msgstr "Jezik:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:169
 msgctxt "PlaylistEdit|"
 msgid "EPG:"
 msgstr "EPG:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:211
 msgctxt "PlaylistEdit|"
 msgid "Url:"
 msgstr "Naslov:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:247
 msgctxt "PlaylistEdit|"
 msgid ""
 "<i>You can separate categories with comma.<br>Only first one is saved when "
@@ -674,269 +542,219 @@ msgstr ""
 "<i>Kategorije lahko ločite z vejico.<br>Samo prva je shranjena pri izvozu v "
 "Sagem JS format seznama programov.</i>"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:264
 msgctxt "PlaylistEdit|"
 msgid "<b><i>Instructions:</i></b>"
 msgstr "<b><i>Navodila:</i></b>"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:278
 msgctxt "PlaylistEdit|"
 msgid "Logo:"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.ui:300
 msgctxt "PlaylistEdit|"
 msgid "Update Playlist"
 msgstr "Posodobi seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:310
 msgctxt "PlaylistEdit|"
 msgid "IP Range:"
 msgstr "IP območje:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:317
 msgctxt "PlaylistEdit|"
 msgid "Timeout:"
 msgstr "Čas iskanja:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:324
 msgctxt "PlaylistEdit|"
 msgid "Scan and update"
 msgstr "Išči in posodobi"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:364
 msgctxt "PlaylistEdit|"
 msgid " ms"
 msgstr "ms"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:383
 msgctxt "PlaylistEdit|"
 msgid "Port:"
 msgstr "Vrata:"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:416
 msgctxt "PlaylistEdit|"
 msgid "<i>This will interrupt your current playback.</i>"
 msgstr "<i>S tem boste prekinili trenutno predvajanje.</i>"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:429 ../src/ui/playlist/PlaylistEdit.ui:432
 msgctxt "PlaylistEdit|"
 msgid "Add channel"
 msgstr "Dodaj program"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:441 ../src/ui/playlist/PlaylistEdit.ui:444
 msgctxt "PlaylistEdit|"
 msgid "Delete channel"
 msgstr "Izbriši program"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:483 ../src/ui/playlist/PlaylistEdit.ui:486
 msgctxt "PlaylistEdit|"
 msgid "Move up"
 msgstr "Premakni navzgor"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:495 ../src/ui/playlist/PlaylistEdit.ui:498
 msgctxt "PlaylistEdit|"
 msgid "Move down"
 msgstr "Premakni navzdol"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:579
-#: ../src/ui/playlist/PlaylistEdit.cpp:248
-#: ../src/ui/playlist/PlaylistEdit.cpp:254
 msgctxt "PlaylistEdit|"
 msgid "New playlist"
 msgstr "Nov seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:588
 msgctxt "PlaylistEdit|"
 msgid "M3U (Original)"
 msgstr "M3U (Originalno)"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:597
-#: ../src/ui/playlist/PlaylistEdit.ui:600
-#: ../src/ui/playlist/PlaylistEdit.ui:609 ../src/ui/playlist/PlaylistEdit.ui:612
 msgctxt "PlaylistEdit|"
 msgid "CSV"
 msgstr "CSV"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:621
 msgctxt "PlaylistEdit|"
 msgid "Tvheadend"
 msgstr "Tvheadend"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:630 ../src/ui/playlist/PlaylistEdit.ui:633
 msgctxt "PlaylistEdit|"
 msgid "M3U (Udpxy URL)"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.ui:642
 #, fuzzy
 msgctxt "PlaylistEdit|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:651 ../src/ui/playlist/PlaylistEdit.ui:654
 msgctxt "PlaylistEdit|"
 msgid "XMLTV IDs"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.ui:453 ../src/ui/playlist/PlaylistEdit.ui:456
+msgctxt "PlaylistEdit|"
+msgid ""
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "Update Information"
+msgstr "Informacije o posodobitvah"
+
 msgctxt "PlaylistEdit|"
 msgid "Save and Close"
 msgstr "Shrani in zapri"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:257
 msgctxt "PlaylistEdit|"
 msgid ""
 "<i>You need to apply the number.<br>All other values are automatically "
 "changed.<br>You need to provide full URL for logo.</i>"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.ui:465
 msgctxt "PlaylistEdit|"
 msgid "Close"
 msgstr "Zapri"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:474
 msgctxt "PlaylistEdit|"
 msgid "Import"
 msgstr "Uvozi"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:507
 msgctxt "PlaylistEdit|"
 msgid "Print"
 msgstr "Natisni"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:516
 msgctxt "PlaylistEdit|"
 msgid "Export"
 msgstr "Izvozi"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:525
 msgctxt "PlaylistEdit|"
 msgid "Tano Old Playlist"
 msgstr "Tano Star seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:534 ../src/ui/playlist/PlaylistEdit.ui:543
 msgctxt "PlaylistEdit|"
 msgid "Sagem JS"
 msgstr "Sagem JS"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:552
 msgctxt "PlaylistEdit|"
 msgid "Open"
 msgstr "Odpri"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:561
 msgctxt "PlaylistEdit|"
 msgid "About"
 msgstr "O urejevalniku"
 
-#: ../src/ui/playlist/PlaylistEdit.ui:570
 msgctxt "PlaylistEdit|"
 msgid "Download from Web"
 msgstr "Prenesi s spleta"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:218
 msgctxt "PlaylistEdit|"
 msgid "Open channel list"
 msgstr "Odpri seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:220
 msgctxt "PlaylistEdit|"
 msgid "Tano TV channel list files(*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:297
 msgctxt "PlaylistEdit|"
 msgid "Save channel list"
 msgstr "Shrani seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:299
 msgctxt "PlaylistEdit|"
 msgid "Tano TV channel list files (*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:312
 msgctxt "PlaylistEdit|"
 msgid "Export to original M3U format"
 msgstr "Izvozi v originalen M3U format"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:314
 msgctxt "PlaylistEdit|"
 msgid "M3U (original) list files (*.m3u)"
 msgstr "M3U (originalen) datoteka seznama (*.m3u)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:324
-#: ../src/ui/playlist/PlaylistEdit.cpp:331
 msgctxt "PlaylistEdit|"
 msgid "Export to M3U format with Udpxy URLs"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:326
 msgctxt "PlaylistEdit|"
 msgid "M3U (Udpxy URL) list files (*.m3u)"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:332
 msgctxt "PlaylistEdit|"
 msgid ""
 "You need to have valid Udpxy settings or the exported playlist will contain "
 "classic URLs."
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:350
 msgctxt "PlaylistEdit|"
 msgid "Export to Comma-separated values file"
 msgstr "Izvozi v datoteko CSV"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:352
-#: ../src/ui/playlist/PlaylistEdit.cpp:364
 msgctxt "PlaylistEdit|"
 msgid "Comma-separated values file (*.csv *.txt)"
 msgstr "CSV datoteka (*.csv *.txt)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:362
 msgctxt "PlaylistEdit|"
 msgid "Import Comma-separated values file"
 msgstr "Uvozi datoteko CSV"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:381
 msgctxt "PlaylistEdit|"
 msgid "Export to Sagem JS channel list"
 msgstr "Izvozi v Sagem JS seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:383
-#: ../src/ui/playlist/PlaylistEdit.cpp:395
 msgctxt "PlaylistEdit|"
 msgid "Sagem JS channel list files (*.js)"
 msgstr "Sagem JS seznam programov (*.js)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:393
 msgctxt "PlaylistEdit|"
 msgid "Import Sagem JS channel list"
 msgstr "Uvozi Sagem JS seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:417
 msgctxt "PlaylistEdit|"
 msgid "Export XMLTV IDs"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:419
 msgctxt "PlaylistEdit|"
 msgid "Plain text file (*.txt)"
 msgstr ""
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:429
 msgctxt "PlaylistEdit|"
 msgid "Import Tano TV old channel list"
 msgstr "Uvozi Tano TV star seznam programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:431
 msgctxt "PlaylistEdit|"
 msgid "Tano TV old channel list files(*.tano *.xml)"
 msgstr "Tano TV star seznam programov (*.tano *.xml)"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:461
 msgctxt "PlaylistEdit|"
 msgid ""
 "Do you want close the editor?\n"
@@ -945,25 +763,20 @@ msgstr ""
 "Ali želite zapreti urejevalnik?\n"
 "Neshranjene spremembe ne bodo uveljavljene."
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:540
 #, qt-format
 msgctxt "PlaylistEdit|"
 msgid "New channel from scan %1"
 msgstr "Nov najden program %1"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:237
-#: ../src/ui/playlist/PlaylistEdit.cpp:460
 msgctxt "PlaylistEdit|"
 msgid "Playlist Editor"
 msgstr "Urejevalnik seznama programov"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:193
 #, qt-format
 msgctxt "PlaylistEdit|"
 msgid "%1 - Tano Editor"
 msgstr "%1 - Tano Urejevalnik"
 
-#: ../src/ui/playlist/PlaylistEdit.cpp:238
 msgctxt "PlaylistEdit|"
 msgid ""
 "Do you want to create new playlist?\n"
@@ -972,140 +785,106 @@ msgstr ""
 "Ali želite ustvariti nov seznam programov?\n"
 "Neshranjene spremembe ne bodo uveljavljene."
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.ui:14
-#: ../src/ui/playlist/PlaylistExportTvheadend.ui:24
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
 msgstr "Izvozi kot Tvheadend IP TV storitve"
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.ui:30
 msgctxt "PlaylistExportTvheadend|"
 msgid "Output location:"
 msgstr "Izhodna lokacija:"
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.ui:40
 msgctxt "PlaylistExportTvheadend|"
 msgid "..."
 msgstr "..."
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.ui:47
 msgctxt "PlaylistExportTvheadend|"
 msgid "Network interface:"
 msgstr "Omrežna povezava:"
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.ui:54
 msgctxt "PlaylistExportTvheadend|"
 msgid "XMLTV suffix:"
 msgstr "XMLTV končnica:"
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.ui:77
 msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
 msgstr "<i><b>Opozorilo: To bo izbrisalo vse obstoječe programe!</b></i>"
 
-#: ../src/ui/playlist/PlaylistExportTvheadend.cpp:77
 msgctxt "PlaylistExportTvheadend|"
 msgid "Open directory"
 msgstr "Odpri imenik"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:14
-#: ../src/ui/playlist/PlaylistImportCSV.ui:24
 msgctxt "PlaylistImportCSV|"
 msgid "CSV file structure"
 msgstr "Struktura datoteke CSV"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:30
 msgctxt "PlaylistImportCSV|"
 msgid "Separator:"
 msgstr "Ločitelj:"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:37
 msgctxt "PlaylistImportCSV|"
 msgid ";"
 msgstr ";"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:44
 msgctxt "PlaylistImportCSV|"
 msgid "First line:"
 msgstr "Prva vrstica:"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:51
 msgctxt "PlaylistImportCSV|"
 msgid "First line contains column names"
 msgstr "Prva vrstica vsebuje imena stolpcev"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:61
 msgctxt "PlaylistImportCSV|"
 msgid "First line does not contain column names"
 msgstr "Prva vrstica ne vsebuje imen stolpcev"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:68
 msgctxt "PlaylistImportCSV|"
 msgid "Column list:"
 msgstr "Seznam stolpcev:"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:75
 msgctxt "PlaylistImportCSV|"
 msgid "<i>Please sort your columns from first to last.</i>"
 msgstr "<i>Uredite stolpce po vrstnem redu, ki ustreza datoteki.</i>"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:92
-#: ../src/ui/playlist/PlaylistImportCSV.cpp:76
 msgctxt "PlaylistImportCSV|"
 msgid "Number"
 msgstr "Število"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:97
-#: ../src/ui/playlist/PlaylistImportCSV.cpp:78
 msgctxt "PlaylistImportCSV|"
 msgid "Channel"
 msgstr "Program"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:102
-#: ../src/ui/playlist/PlaylistImportCSV.cpp:80
 msgctxt "PlaylistImportCSV|"
 msgid "URL"
 msgstr "URL"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:107
-#: ../src/ui/playlist/PlaylistImportCSV.cpp:82
 msgctxt "PlaylistImportCSV|"
 msgid "Categories"
 msgstr "Kategorije"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:112
-#: ../src/ui/playlist/PlaylistImportCSV.cpp:84
 msgctxt "PlaylistImportCSV|"
 msgid "Language"
 msgstr "Jezik"
 
-#: ../src/ui/playlist/PlaylistImportCSV.ui:117
-#: ../src/ui/playlist/PlaylistImportCSV.cpp:86
 msgctxt "PlaylistImportCSV|"
 msgid "EPG ID"
 msgstr "EPG ID"
 
-#: ../src/ui/playlist/PlaylistImportWeb.ui:14
 msgctxt "PlaylistImportWeb|"
 msgid "Import playlist from Web"
 msgstr "Uvozi seznam programov s spleta"
 
-#: ../src/ui/playlist/PlaylistImportWeb.ui:27
 msgctxt "PlaylistImportWeb|"
 msgid "Import type"
 msgstr "Tip uvoza"
 
-#: ../src/ui/playlist/PlaylistImportWeb.ui:46
 msgctxt "PlaylistImportWeb|"
 msgid "Refresh current playlist"
 msgstr "Osveži trenutni seznam"
 
-#: ../src/ui/playlist/PlaylistImportWeb.ui:56
 msgctxt "PlaylistImportWeb|"
 msgid "Open playlist"
 msgstr "Odpri seznam"
 
-#: ../src/ui/playlist/PlaylistImportWeb.ui:63
 msgctxt "PlaylistImportWeb|"
 msgid ""
 "<i>If you chose ''Refresh'', your current channel numbers will remain the "
@@ -1114,101 +893,76 @@ msgstr ""
 "<i>Če izberete ''Osveži'', bodo trenutno nastavljene številke ostale enake. "
 "Le novi programi bodo dodani.</i>"
 
-#: ../src/ui/playlist/PlaylistImportWeb.cpp:67
 msgctxt "PlaylistImportWeb|"
 msgid "Save channel list"
 msgstr "Shrani seznam programov"
 
-#: ../src/ui/playlist/PlaylistImportWeb.cpp:69
 msgctxt "PlaylistImportWeb|"
 msgid "Tano TV channel list files(*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/wizard/PlaylistPage.ui:18
 msgctxt "PlaylistPage|"
 msgid "Select playlist"
 msgstr "Izberite seznam programov"
 
-#: ../src/ui/wizard/PlaylistPage.ui:21
 msgctxt "PlaylistPage|"
 msgid "Please, select your IP TV provider or browse for custom playlist."
 msgstr ""
 "Prosim, izberite svojega IP TV ponudnika ali pa prebrskajte za svoj seznam "
 "programov."
 
-#: ../src/ui/playlist/PlaylistSelect.ui:20
 msgctxt "PlaylistSelect|"
 msgid "Select your playlist"
 msgstr "Izberi seznam programov"
 
-#: ../src/ui/playlist/PlaylistSelect.cpp:65
-#: ../src/ui/playlist/PlaylistSelect.cpp:68
-#: ../src/ui/playlist/PlaylistSelect.cpp:116
 msgctxt "PlaylistSelect|"
 msgid "Select"
 msgstr "Izberite"
 
-#: ../src/ui/playlist/PlaylistSelect.ui:29
 msgctxt "PlaylistSelect|"
 msgid "Country:"
 msgstr "Država:"
 
-#: ../src/ui/playlist/PlaylistSelect.ui:36
 msgctxt "PlaylistSelect|"
-msgid ""
-"Select your country from the menu below.\n"
-"Then select your playlist."
-msgstr ""
-"Izberite svojo državo s spodnjega seznama.\n"
-"Nato izberite želen seznam programov."
+msgid "1. Select your country from the menu below."
+msgstr "1. Izberite vašo državo s spodnjega seznama."
 
-#: ../src/ui/playlist/PlaylistSelect.ui:44
 msgctxt "PlaylistSelect|"
 msgid "<i>Note: Not all countries and providers are available.</i>"
 msgstr "<i>Opomba: Vse države in ponudniki niso na voljo.</i>"
 
-#: ../src/ui/playlist/PlaylistSelect.ui:71
 msgctxt "PlaylistSelect|"
 msgid "Playlist:"
 msgstr "Seznam:"
 
-#: ../src/ui/playlist/PlaylistWidget.ui:41
+msgctxt "PlaylistSelect|"
+msgid "2. Select your playlist."
+msgstr "2. Izberite vaš seznam programov."
+
 msgctxt "PlaylistWidget|"
 msgid "Channel"
 msgstr "Program"
 
-#: ../src/ui/playlist/PlaylistWidget.ui:82
 msgctxt "PlaylistWidget|"
 msgid "Search:"
 msgstr "Išči:"
 
-#: ../src/ui/playlist/PlaylistWidget.ui:89
 msgctxt "PlaylistWidget|"
 msgid "Category:"
 msgstr "Kategorija:"
 
-#: ../src/ui/playlist/PlaylistWidget.ui:96
 msgctxt "PlaylistWidget|"
 msgid "Language:"
 msgstr "Jezik:"
 
-#: ../src/ui/playlist/PlaylistWidget.ui:58
 msgctxt "PlaylistWidget|"
 msgid "Clear"
 msgstr "Počisti"
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:87
-#: ../src/ui/playlist/PlaylistWidget.cpp:112
-#: ../src/ui/playlist/PlaylistWidget.cpp:128
-#: ../src/ui/playlist/PlaylistWidget.cpp:145
-#: ../src/ui/playlist/PlaylistWidget.cpp:161
-#: ../src/ui/playlist/PlaylistWidget.cpp:186
-#: ../src/ui/playlist/PlaylistWidget.cpp:223
 msgctxt "PlaylistWidget|"
 msgid "Tano"
 msgstr "Tano"
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:88
 #, qt-format
 msgctxt "PlaylistWidget|"
 msgid ""
@@ -1218,26 +972,14 @@ msgstr ""
 "Ne morem prebrati %1:\n"
 "%2."
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:62
-#: ../src/ui/playlist/PlaylistWidget.cpp:101
-#: ../src/ui/playlist/PlaylistWidget.cpp:249
 msgctxt "PlaylistWidget|"
 msgid "All languages"
 msgstr "Vsi jeziki"
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:61
-#: ../src/ui/playlist/PlaylistWidget.cpp:97
-#: ../src/ui/playlist/PlaylistWidget.cpp:241
 msgctxt "PlaylistWidget|"
 msgid "All categories"
 msgstr "Vse kategorije"
 
-#: ../src/ui/playlist/PlaylistWidget.cpp:113
-#: ../src/ui/playlist/PlaylistWidget.cpp:129
-#: ../src/ui/playlist/PlaylistWidget.cpp:146
-#: ../src/ui/playlist/PlaylistWidget.cpp:162
-#: ../src/ui/playlist/PlaylistWidget.cpp:187
-#: ../src/ui/playlist/PlaylistWidget.cpp:224
 #, qt-format
 msgctxt "PlaylistWidget|"
 msgid ""
@@ -1247,134 +989,103 @@ msgstr ""
 "Ne morem pisati datoteke %1:\n"
 "%2."
 
-#: ../src/core/Print.cpp:60
 msgctxt "Print|"
 msgid "#"
 msgstr "#"
 
-#: ../src/core/Print.cpp:64
 msgctxt "Print|"
 msgid "Channel"
 msgstr "Program"
 
-#: ../src/core/Print.cpp:68
 msgctxt "Print|"
 msgid "Url"
 msgstr "Url"
 
-#: ../src/core/Print.cpp:72
 msgctxt "Print|"
 msgid "Categories"
 msgstr "Kategorije"
 
-#: ../src/core/Print.cpp:76
 msgctxt "Print|"
 msgid "Language"
 msgstr "Jezik"
 
-#: ../src/core/Print.cpp:80
 msgctxt "Print|"
 msgid "EPG"
 msgstr "EPG"
 
-#: ../src/core/Print.cpp:117
 #, qt-format
 msgctxt "Print|"
 msgid "Exported with Tano on %1."
 msgstr "Izpisano s programom Tano dne %1."
 
-#: ../src/ui/dialogs/PrintDialog.ui:14
 msgctxt "PrintDialog|"
 msgid "Print"
 msgstr "Natisni"
 
-#: ../src/ui/dialogs/PrintDialog.ui:24
 msgctxt "PrintDialog|"
 msgid "Print channel List"
 msgstr "Natisni seznam programov"
 
-#: ../src/ui/dialogs/PrintDialog.ui:30
 msgctxt "PrintDialog|"
 msgid "Select information for printing:"
 msgstr "Izberite informacije za tisk:"
 
-#: ../src/ui/dialogs/PrintDialog.ui:37
 msgctxt "PrintDialog|"
 msgid "Channel number"
 msgstr "Številka programa"
 
-#: ../src/ui/dialogs/PrintDialog.ui:44
 msgctxt "PrintDialog|"
 msgid "Channel name"
 msgstr "Ime programa"
 
-#: ../src/ui/dialogs/PrintDialog.ui:51
 msgctxt "PrintDialog|"
 msgid "URL"
 msgstr "URL"
 
-#: ../src/ui/dialogs/PrintDialog.ui:58
 msgctxt "PrintDialog|"
 msgid "Categories"
 msgstr "Kategorije"
 
-#: ../src/ui/dialogs/PrintDialog.ui:65
 msgctxt "PrintDialog|"
 msgid "Language"
 msgstr "Jezik"
 
-#: ../src/ui/dialogs/PrintDialog.ui:72
 msgctxt "PrintDialog|"
 msgid "EPG"
 msgstr "EPG"
 
-#: ../src/playlist/M3UHandler.cpp:28 ../src/playlist/PlaylistHandler.cpp:34
-#: ../src/playlist/PlaylistHandler.cpp:76 ../src/xml/TanoHandlerOld.cpp:33
 msgctxt "QObject|"
 msgid "Channel list"
 msgstr "Seznam programov"
 
-#: ../src/playlist/PlaylistHandler.cpp:59
 msgctxt "QObject|"
 msgid "A channel with this number already exists!"
 msgstr "Program s to številko že obstaja!"
 
-#: ../src/playlist/PlaylistHandler.cpp:104
 msgctxt "QObject|"
 msgid "New channel"
 msgstr "Nov program"
 
-#: ../src/playlist/PlaylistHandler.cpp:221
 msgctxt "QObject|"
 msgid "CSV Imported Playlist"
 msgstr "CSV uvožen seznam programov"
 
-#: ../src/playlist/PlaylistHandler.cpp:235
 msgctxt "QObject|"
 msgid "Sagem JS Imported Playlist"
 msgstr "Sagem JS uvožen seznam programov"
 
-#: ../src/xml/TanoHandlerOld.cpp:50
 msgctxt "QObject|"
 msgid "The file is not a Tano TV channel list 1.1 or later."
 msgstr "Datoteka ni Tano TV Seznam programov 1.1 ali novejša."
 
-#: ../src/xml/TimersHandler.cpp:66 ../src/xml/TimersHandler.cpp:67
-#: ../src/xml/TanoHandlerOld.cpp:62
 msgctxt "QObject|"
 msgid "Unknown title"
 msgstr "Neznan naslov"
 
-#: ../src/playlist/PlaylistHandler.cpp:58
-#: ../src/playlist/TvheadendGenerator.cpp:106
-#: ../src/playlist/TvheadendGenerator.cpp:134
-#: ../src/playlist/TvheadendGenerator.cpp:156
-#: ../src/playlist/TvheadendGenerator.cpp:181 ../src/xml/TimersHandler.cpp:140
 msgctxt "QObject|"
 msgid "Tano"
 msgstr "Tano"
 
-#: ../src/xml/TimersHandler.cpp:141
 #, qt-format
 msgctxt "QObject|"
 msgid ""
@@ -1384,90 +1095,70 @@ msgstr ""
 "Napaka branja na vrstici %1, stolpec %2:\n"
 "%3"
 
-#: ../src/xml/TanoHandlerOld.cpp:43
 msgctxt "QObject|"
 msgid "The file is not a Tano TV channel list file."
 msgstr "Datoteka ni Tano TV Seznam programov."
 
-#: ../src/xml/TimersHandler.cpp:57
 msgctxt "QObject|"
 msgid "The file is not a Tano Timers list."
 msgstr "Datoteka ni Tano seznam časovnikov."
 
-#: ../src/xml/TimersHandler.cpp:82 ../src/xml/TimersHandler.cpp:170
 msgctxt "QObject|"
 msgid "Active"
 msgstr "Aktiven"
 
-#: ../src/core/Settings.cpp:46 ../src/core/Settings.cpp:47
 msgctxt "QObject|"
 msgid "Disabled"
 msgstr "Onemogočeno"
 
-#: ../src/xml/UpdateHandler.cpp:37
 msgctxt "QObject|"
 msgid "The file is not a Tano updates file."
 msgstr "Datoteka ni Tano posodobitvene informacije."
 
-#: ../src/core/Enums.cpp:50
 msgctxt "QObject|"
 msgid "Once"
 msgstr "Enkratno"
 
-#: ../src/core/Enums.cpp:52
 msgctxt "QObject|"
 msgid "Daily"
 msgstr "Dnevno"
 
-#: ../src/core/Enums.cpp:54
 msgctxt "QObject|"
 msgid "Weekly"
 msgstr "Tedensko"
 
-#: ../src/xml/PlaylistListHandler.cpp:39
 msgctxt "QObject|"
 msgid "The file is not a playlist list file."
 msgstr "Ta datoteka ni seznam seznamov programov."
 
-#: ../src/playlist/CSVGenerator.cpp:36
 msgctxt "QObject|"
 msgid "Number"
 msgstr "Število"
 
-#: ../src/playlist/CSVGenerator.cpp:37
 msgctxt "QObject|"
 msgid "Channel"
 msgstr "Program"
 
-#: ../src/playlist/CSVGenerator.cpp:38
 msgctxt "QObject|"
 msgid "URL"
 msgstr "URL"
 
-#: ../src/playlist/CSVGenerator.cpp:39
 msgctxt "QObject|"
 msgid "Categories"
 msgstr "Kategorije"
 
-#: ../src/playlist/CSVGenerator.cpp:40
 msgctxt "QObject|"
 msgid "Language"
 msgstr "Jezik"
 
-#: ../src/playlist/CSVGenerator.cpp:41
 msgctxt "QObject|"
 msgid "EPG ID"
 msgstr "EPG ID"
 
-#: ../src/xml/XmltvHandler.cpp:46
 msgctxt "QObject|"
 msgid "The file is not a valid XMLTV file."
 msgstr "Datoteka ni veljavna XMLTV datoteka."
 
-#: ../src/playlist/TvheadendGenerator.cpp:107
-#: ../src/playlist/TvheadendGenerator.cpp:135
-#: ../src/playlist/TvheadendGenerator.cpp:157
-#: ../src/playlist/TvheadendGenerator.cpp:182
 #, qt-format
 msgctxt "QObject|"
 msgid ""
@@ -1477,435 +1168,348 @@ msgstr ""
 "Ne morem pisati datoteke %1:\n"
 "%2."
 
-#: ../src/ui/core/QtKeySequenceEdit.cpp:57
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Počisti bližnjico"
 
-#: ../src/ui/recorder/Recorder.cpp:127
 msgctxt "Recorder|"
 msgid "Open directory"
 msgstr "Odpri imenik"
 
-#: ../src/ui/recorder/Recorder.cpp:161
 msgctxt "Recorder|"
 msgid "No timer - press button to stop."
 msgstr "Ni časovnika - pritisnite gumb in ustavite."
 
-#: ../src/ui/recorder/Recorder.cpp:164
 msgctxt "Recorder|"
 msgid "Stop recording"
 msgstr "Prenehajte s snemanjem"
 
-#: ../src/ui/recorder/Recorder.ui:61 ../src/ui/recorder/Recorder.cpp:183
 msgctxt "Recorder|"
 msgid "Record"
 msgstr "Snemaj"
 
-#: ../src/ui/recorder/Recorder.cpp:143
 #, qt-format
 msgctxt "Recorder|"
 msgid "Cannot write to %1."
 msgstr "Ne morem pisati v %1."
 
-#: ../src/ui/recorder/Recorder.cpp:149
 msgctxt "Recorder|"
 msgid "Channel is not selected!"
 msgstr "Program ni izbran!"
 
-#: ../src/ui/recorder/Recorder.ui:14 ../src/ui/recorder/Recorder.ui:24
-#: ../src/ui/recorder/Recorder.cpp:142 ../src/ui/recorder/Recorder.cpp:148
 msgctxt "Recorder|"
 msgid "Recorder"
 msgstr "Snemalnik"
 
-#: ../src/ui/recorder/Recorder.ui:30
 msgctxt "Recorder|"
 msgid "Selected channel:"
 msgstr "Izbran kanal:"
 
-#: ../src/ui/recorder/Recorder.ui:44
 msgctxt "Recorder|"
 msgid "Directory:"
 msgstr "Imenik:"
 
-#: ../src/ui/recorder/Recorder.ui:54
 msgctxt "Recorder|"
 msgid "..."
 msgstr "..."
 
-#: ../src/ui/recorder/Recorder.ui:97
 msgctxt "Recorder|"
 msgid "Status"
 msgstr "Status"
 
-#: ../src/ui/recorder/Recorder.ui:117
 msgctxt "Recorder|"
 msgid "Currently recording:"
 msgstr "Trenutno snemam:"
 
-#: ../src/ui/recorder/Recorder.ui:131
 msgctxt "Recorder|"
 msgid "Time elapsed:"
 msgstr "Pretečen čas:"
 
-#: ../src/ui/recorder/Recorder.ui:145
 msgctxt "Recorder|"
 msgid "End time:"
 msgstr "Konec:"
 
-#: ../src/ui/recorder/Recorder.ui:103
 msgctxt "Recorder|"
 msgid "Recording to file:"
 msgstr "Snemam v datoteko:"
 
-#: ../src/ui/settings/SettingsEdit.ui:14
 msgctxt "SettingsEdit|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: ../src/ui/settings/SettingsEdit.ui:73
 msgctxt "SettingsEdit|"
 msgid "General"
 msgstr "Splošno"
 
-#: ../src/ui/settings/SettingsEdit.ui:85
 msgctxt "SettingsEdit|"
 msgid "Channels"
 msgstr "Programi"
 
-#: ../src/ui/settings/SettingsEdit.ui:97
 msgctxt "SettingsEdit|"
 msgid "Interface"
 msgstr "Vmesnik"
 
-#: ../src/ui/settings/SettingsEdit.ui:109 ../src/ui/settings/SettingsEdit.ui:542
 msgctxt "SettingsEdit|"
 msgid "Playback"
 msgstr "Predvajanje"
 
-#: ../src/ui/settings/SettingsEdit.ui:133
 msgctxt "SettingsEdit|"
 msgid "Recorder"
 msgstr "Snemalnik"
 
-#: ../src/ui/settings/SettingsEdit.ui:121
 msgctxt "SettingsEdit|"
 msgid "Shortcuts"
 msgstr "Bližnjice"
 
-#: ../src/ui/settings/SettingsEdit.ui:165
 msgctxt "SettingsEdit|"
 msgid "Tano"
 msgstr "Tano"
 
-#: ../src/ui/settings/SettingsEdit.ui:178
 msgctxt "SettingsEdit|"
 msgid "Run First run wizard after restart"
 msgstr "Zaženi 'Čarovnik ob prvem zagonu' ob novem zagonu"
 
-#: ../src/ui/settings/SettingsEdit.ui:214
 msgctxt "SettingsEdit|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
 msgstr ""
 
-#: ../src/ui/settings/SettingsEdit.ui:224
 msgctxt "SettingsEdit|"
 msgid "Language"
 msgstr "Jezik"
 
-#: ../src/ui/settings/SettingsEdit.ui:230
 msgctxt "SettingsEdit|"
 msgid "System default language"
 msgstr "Sistemsko privzet jezik"
 
-#: ../src/ui/settings/SettingsEdit.ui:240
 msgctxt "SettingsEdit|"
 msgid "Custom language"
 msgstr "Poljuben jezik"
 
-#: ../src/ui/settings/SettingsEdit.ui:263
 msgctxt "SettingsEdit|"
 msgid "Session store"
 msgstr "Shranjevanje sej"
 
-#: ../src/ui/settings/SettingsEdit.ui:269
 msgctxt "SettingsEdit|"
 msgid "Remember volume"
 msgstr "Zapomni si glasnost"
 
-#: ../src/ui/settings/SettingsEdit.ui:276
 msgctxt "SettingsEdit|"
 msgid "Autoplay last channel"
 msgstr "Samodejno prični predvajanje zadnjega programa"
 
-#: ../src/ui/settings/SettingsEdit.ui:323
 msgctxt "SettingsEdit|"
 msgid "General Interface Settings"
 msgstr "Splošne nastavitve vmesnika"
 
-#: ../src/ui/settings/SettingsEdit.ui:329
 msgctxt "SettingsEdit|"
 msgid "Toolbar style:"
 msgstr "Izgled orodnih vrstic:"
 
-#: ../src/ui/settings/SettingsEdit.ui:340
 msgctxt "SettingsEdit|"
 msgid "Icon only"
 msgstr "Samo ikona"
 
-#: ../src/ui/settings/SettingsEdit.ui:345
 msgctxt "SettingsEdit|"
 msgid "Text only"
 msgstr "Samo besedilo"
 
-#: ../src/ui/settings/SettingsEdit.ui:350
 msgctxt "SettingsEdit|"
 msgid "Text beside icon"
 msgstr "Besedilo ob ikoni"
 
-#: ../src/ui/settings/SettingsEdit.ui:355
 msgctxt "SettingsEdit|"
 msgid "Text under icon"
 msgstr "Besedilo pod ikono"
 
-#: ../src/ui/settings/SettingsEdit.ui:360
 msgctxt "SettingsEdit|"
 msgid "System default"
 msgstr "Sistemsko privzeto"
 
-#: ../src/ui/settings/SettingsEdit.ui:368
 msgctxt "SettingsEdit|"
 msgid "Enable OSD in Fullscreen mode"
 msgstr "Vključi OSD v celozaslonskem načinu"
 
-#: ../src/ui/settings/SettingsEdit.ui:378
 msgctxt "SettingsEdit|"
 msgid "Mouse wheel function:"
 msgstr "Funkcija miškinega koleščka:"
 
-#: ../src/ui/settings/SettingsEdit.ui:385
 msgctxt "SettingsEdit|"
 msgid "Change channel"
 msgstr "Spremeni program"
 
-#: ../src/ui/settings/SettingsEdit.ui:395
 msgctxt "SettingsEdit|"
 msgid "Change volume"
 msgstr "Spremeni glasnost"
 
-#: ../src/ui/settings/SettingsEdit.ui:402
 msgctxt "SettingsEdit|"
 msgid "Minimise to tray"
 msgstr "Skrij v sistemsko vrstico"
 
-#: ../src/ui/settings/SettingsEdit.ui:412
 msgctxt "SettingsEdit|"
 msgid "Enable Info OSD in Fullscreen mode"
 msgstr "Vključi Info OSD v celozaslonskem načinu"
 
-#: ../src/ui/settings/SettingsEdit.ui:422
 msgctxt "SettingsEdit|"
 msgid "Default options for startup"
 msgstr "Privzete nastavitve ob zagonu"
 
-#: ../src/ui/settings/SettingsEdit.ui:428
 msgctxt "SettingsEdit|"
 msgid "Show splash screen"
 msgstr "Prikaži pozdravni zaslon"
 
-#: ../src/ui/settings/SettingsEdit.ui:435
 msgctxt "SettingsEdit|"
 msgid "Simple mode"
 msgstr "Enostaven način"
 
-#: ../src/ui/settings/SettingsEdit.ui:442
 msgctxt "SettingsEdit|"
 msgid "Always on top"
 msgstr "Vedno na vrhu"
 
-#: ../src/ui/settings/SettingsEdit.ui:449
 msgctxt "SettingsEdit|"
 msgid "Controls enabled"
 msgstr "Vključen upravljalni pult"
 
-#: ../src/ui/settings/SettingsEdit.ui:459
 msgctxt "SettingsEdit|"
 msgid "Info panel enabled"
 msgstr "Vključen info pult"
 
-#: ../src/ui/settings/SettingsEdit.ui:489
 msgctxt "SettingsEdit|"
 msgid "VLC-Qt Backend"
 msgstr "VLC-Qt Hrbtenica"
 
-#: ../src/ui/settings/SettingsEdit.ui:495
 msgctxt "SettingsEdit|"
 msgid "Curently using VLC-Qt Backend"
 msgstr "Trenutno uporabljaš VLC-Qt hrbtenico"
 
-#: ../src/ui/settings/SettingsEdit.ui:502
 msgctxt "SettingsEdit|"
 msgid "Version:"
 msgstr "Različica:"
 
-#: ../src/ui/settings/SettingsEdit.ui:509
 msgctxt "SettingsEdit|"
 msgid "Use global VLC settings (requires restart)"
 msgstr "Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)"
 
-#: ../src/ui/settings/SettingsEdit.ui:532
 msgctxt "SettingsEdit|"
 msgid "Using Videolan VLC version:"
 msgstr "Videolan VLC različice:"
 
-#: ../src/ui/settings/SettingsEdit.ui:548
 msgctxt "SettingsEdit|"
 msgid "Remember Video settings between media"
 msgstr "Zapomni si nastavitve slike med preklapljanjem"
 
-#: ../src/ui/settings/SettingsEdit.ui:555
 msgctxt "SettingsEdit|"
 msgid "Default subtitle language:"
 msgstr "Privzet jezik podnapisov:"
 
-#: ../src/ui/settings/SettingsEdit.ui:562
 msgctxt "SettingsEdit|"
 msgid "Default audio language:"
 msgstr "Privzet jezik zvoka:"
 
-#: ../src/ui/settings/SettingsEdit.ui:573 ../src/ui/settings/SettingsEdit.ui:610
 msgctxt "SettingsEdit|"
 msgid "Disabled"
 msgstr "Onemogočeno"
 
-#: ../src/ui/settings/SettingsEdit.ui:598 ../src/ui/settings/SettingsEdit.ui:635
 msgctxt "SettingsEdit|"
 msgid "Other"
 msgstr "Drugo"
 
-#: ../src/ui/settings/SettingsEdit.ui:646
 msgctxt "SettingsEdit|"
 msgid "UDPXY support"
 msgstr "UDPXY podpora"
 
-#: ../src/ui/settings/SettingsEdit.ui:652
 msgctxt "SettingsEdit|"
 msgid "Enable UDPXY support"
 msgstr "Vključi podporo UDPXY"
 
-#: ../src/ui/settings/SettingsEdit.ui:688
 msgctxt "SettingsEdit|"
 msgid "Router IP or name:"
 msgstr "IP ali ime usmerjevalnika:"
 
-#: ../src/ui/settings/SettingsEdit.ui:698
 msgctxt "SettingsEdit|"
 msgid "Router port:"
 msgstr "Vrata usmerjevalnika:"
 
-#: ../src/ui/settings/SettingsEdit.ui:708
 #, qt-format
 msgctxt "SettingsEdit|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
 
-#: ../src/ui/settings/SettingsEdit.ui:745
 msgctxt "SettingsEdit|"
 msgid "Default recording directory"
 msgstr "Privzet imenik snemanja"
 
-#: ../src/ui/settings/SettingsEdit.ui:761
 msgctxt "SettingsEdit|"
 msgid "..."
 msgstr "..."
 
-#: ../src/ui/settings/SettingsEdit.ui:774
 msgctxt "SettingsEdit|"
 msgid "Reset"
 msgstr "Obnovi"
 
-#: ../src/ui/settings/SettingsEdit.cpp:46
 msgctxt "SettingsEdit|"
 msgid "You are using Tano Editor version:"
 msgstr ""
 
-#: ../src/ui/settings/SettingsEdit.cpp:48
 msgctxt "SettingsEdit|"
 msgid "You are using Tano version:"
 msgstr "Uporabljate Tano različice:"
 
-#: ../src/ui/settings/SettingsEdit.cpp:253
 msgctxt "SettingsEdit|"
 msgid "Open directory"
 msgstr "Odpri imenik"
 
-#: ../src/ui/wizard/SettingsPage.ui:18
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Nastavi <i>Tano</i>"
 
-#: ../src/ui/wizard/SettingsPage.ui:21
 msgctxt "SettingsPage|"
 msgid "Please select session, backend and other settings."
 msgstr "Prosim, izberite nastavitve seje, hrbtenice in drugo."
 
-#: ../src/ui/wizard/SettingsPage.ui:27
 msgctxt "SettingsPage|"
 msgid "<b>Session settings</b>"
 msgstr "<b>Nastavitve seje</b>"
 
-#: ../src/ui/wizard/SettingsPage.ui:34
 msgctxt "SettingsPage|"
 msgid "Remember volume"
 msgstr "Zapomni si glasnost"
 
-#: ../src/ui/wizard/SettingsPage.ui:41
 msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Samodejno prični predvajanje zadnjega programa"
 
-#: ../src/ui/wizard/SettingsPage.ui:55
 msgctxt "SettingsPage|"
 msgid "Use global VLC settings"
 msgstr "Uporabi globalne VLC nastavitve"
 
-#: ../src/ui/wizard/SettingsPage.ui:75
 msgctxt "SettingsPage|"
 msgid "Select or change playlist"
 msgstr "Izberi ali zamenjaj seznam programov"
 
-#: ../src/ui/settings/SettingsPlaylist.ui:24
 msgctxt "SettingsPlaylist|"
 msgid "Default channel list"
 msgstr "Privzet seznam programov"
 
-#: ../src/ui/settings/SettingsPlaylist.ui:30
 msgctxt "SettingsPlaylist|"
 msgid "Preset"
 msgstr "Prednastavljeno"
 
-#: ../src/ui/settings/SettingsPlaylist.ui:58
 msgctxt "SettingsPlaylist|"
 msgid "..."
 msgstr "..."
 
-#: ../src/ui/settings/SettingsPlaylist.ui:74
 msgctxt "SettingsPlaylist|"
 msgid "Reset"
 msgstr "Obnovi"
 
-#: ../src/ui/settings/SettingsPlaylist.ui:93
 msgctxt "SettingsPlaylist|"
 msgid "Custom"
 msgstr "Drugo"
 
-#: ../src/ui/settings/SettingsPlaylist.ui:106
 msgctxt "SettingsPlaylist|"
 msgid "Download from web"
 msgstr "Prenesi s spleta"
 
-#: ../src/ui/settings/SettingsPlaylist.ui:112
 msgctxt "SettingsPlaylist|"
 msgid ""
 "Tano will download the channel list to your desired location and "
@@ -1914,297 +1518,238 @@ msgstr ""
 "Tano bo prenesel seznam programov na želeno lokacijo in ga avtomatsko "
 "nastavil za seznam programov."
 
-#: ../src/ui/settings/SettingsPlaylist.ui:122
 msgctxt "SettingsPlaylist|"
 msgid "Download"
 msgstr "Prenesi"
 
-#: ../src/ui/settings/SettingsPlaylist.cpp:80
 msgctxt "SettingsPlaylist|"
 msgid "Open channel list"
 msgstr "Odpri seznam programov"
 
-#: ../src/ui/settings/SettingsPlaylist.cpp:82
 msgctxt "SettingsPlaylist|"
 msgid "Tano TV channel list files(*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:165
 msgctxt "SettingsShortcuts|"
 msgid "Action"
 msgstr "Ukaz"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:170
 msgctxt "SettingsShortcuts|"
 msgid "Key"
 msgstr "Tipke"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:175
 msgctxt "SettingsShortcuts|"
 msgid "Play / Pause"
 msgstr "Predvajaj / Prekini"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:188
 msgctxt "SettingsShortcuts|"
 msgid "Stop"
 msgstr "Ustavi"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:201
 msgctxt "SettingsShortcuts|"
 msgid "Next channel"
 msgstr "Naslednii kanal"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:214
 msgctxt "SettingsShortcuts|"
 msgid "Previous channel"
 msgstr "Prejšnji kanal"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:227
 msgctxt "SettingsShortcuts|"
 msgid "Fullscreen"
 msgstr "Celoten zaslon"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:240
 msgctxt "SettingsShortcuts|"
 msgid "Toggle Info Widget"
 msgstr "Preklopi Info pult"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:250
 msgctxt "SettingsShortcuts|"
 msgid "Toggle Controls Widget"
 msgstr "Preklopi upravljalni pult"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:260
 msgctxt "SettingsShortcuts|"
 msgid "Mute"
 msgstr "Tiho"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:273
 msgctxt "SettingsShortcuts|"
 msgid "Teletext"
 msgstr "Teletekst"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:286
 msgctxt "SettingsShortcuts|"
 msgid "Volume up"
 msgstr "Povečaj glasnost"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:299
 msgctxt "SettingsShortcuts|"
 msgid "Volume down"
 msgstr "Zmanjšaj glasnost"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:312
 msgctxt "SettingsShortcuts|"
 msgid "Recorder"
 msgstr "Snemalnik"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:325
 msgctxt "SettingsShortcuts|"
 msgid "Open File"
 msgstr "Odpri Datoteko"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:338
 msgctxt "SettingsShortcuts|"
 msgid "Open URL"
 msgstr "Odpri URL"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:351
 msgctxt "SettingsShortcuts|"
 msgid "Open Channel list"
 msgstr "Odpri Seznam programov"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:364
 msgctxt "SettingsShortcuts|"
 msgid "Edit Channel list"
 msgstr "Uredi Seznam programov"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:377
 msgctxt "SettingsShortcuts|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:390
 msgctxt "SettingsShortcuts|"
 msgid "Always on top"
 msgstr "Vedno na vrhu"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:403
 msgctxt "SettingsShortcuts|"
 msgid "Simple Mode"
 msgstr "Enostaven način"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:416
 msgctxt "SettingsShortcuts|"
 msgid "Hide to tray"
 msgstr "Skrij v orodno vrstico"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:429
 msgctxt "SettingsShortcuts|"
 msgid "Enable Info OSD in Fullscreen mode"
 msgstr "Vključi Info OSD v celozaslonskem načinu"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:439
 msgctxt "SettingsShortcuts|"
 msgid "Next audio track"
 msgstr "Naslednja zvočna sled"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:449
 msgctxt "SettingsShortcuts|"
 msgid "Next video track"
 msgstr "Naslednja slikovna sled"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:459
 msgctxt "SettingsShortcuts|"
 msgid "Next subtitle track"
 msgstr "Naslednji podnapisi"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:469
 msgctxt "SettingsShortcuts|"
 msgid "Next aspect ratio mode"
 msgstr "Naslednje razmerje slike"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:479
 msgctxt "SettingsShortcuts|"
 msgid "Next crop mode"
 msgstr "Naslednja obrezava slike"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:489
 msgctxt "SettingsShortcuts|"
 msgid "Next deinterlace mode"
 msgstr "Naslenje razpletanje"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:502
 msgctxt "SettingsShortcuts|"
 msgid "Clear Shortcut"
 msgstr "Počisti bližnjico"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:532
 msgctxt "SettingsShortcuts|"
 msgid "Restore defaults"
 msgstr "Obnovi privzeto"
 
-#: ../src/ui/settings/SettingsShortcuts.ui:549
 msgctxt "SettingsShortcuts|"
 msgid "Set"
 msgstr "Nastavi"
 
-#: ../src/ui/core/Teletext.cpp:37 ../src/ui/core/Teletext.cpp:38
 msgctxt "Teletext|"
 msgid "Teletext"
 msgstr "Teletekst"
 
-#: ../src/ui/core/Teletext.cpp:48 ../src/ui/core/Teletext.cpp:49
 msgctxt "Teletext|"
 msgid "Teletext Transparency"
 msgstr "Prosojnost teleteksta"
 
-#: ../src/ui/recorder/TimersEdit.ui:14
 msgctxt "TimersEdit|"
 msgid "Timers"
 msgstr "Časovniki"
 
-#: ../src/ui/recorder/TimersEdit.ui:39
 msgctxt "TimersEdit|"
 msgid "Timer"
 msgstr "Časovnik"
 
-#: ../src/ui/recorder/TimersEdit.ui:44
 msgctxt "TimersEdit|"
 msgid "Type"
 msgstr "Tip"
 
-#: ../src/ui/recorder/TimersEdit.ui:49
 msgctxt "TimersEdit|"
 msgid "Status"
 msgstr "Status"
 
-#: ../src/ui/recorder/TimersEdit.ui:61
 msgctxt "TimersEdit|"
 msgid "Create"
 msgstr "Ustvari"
 
-#: ../src/ui/recorder/TimersEdit.ui:80 ../src/ui/recorder/TimersEdit.ui:149
 msgctxt "TimersEdit|"
 msgid "Name:"
 msgstr "Ime:"
 
-#: ../src/ui/recorder/TimersEdit.ui:92
 msgctxt "TimersEdit|"
 msgid "Select a channel from the list below:"
 msgstr "Izberi program s spodnjega seznama:"
 
-#: ../src/ui/recorder/TimersEdit.ui:139
 msgctxt "TimersEdit|"
 msgid "Editor"
 msgstr "Urejevalnik"
 
-#: ../src/ui/recorder/TimersEdit.ui:156
 msgctxt "TimersEdit|"
 msgid "Channel:"
 msgstr "Program:"
 
-#: ../src/ui/recorder/TimersEdit.ui:163
 msgctxt "TimersEdit|"
 msgid "Playlist:"
 msgstr "Seznam:"
 
-#: ../src/ui/recorder/TimersEdit.ui:170
 msgctxt "TimersEdit|"
 msgid "Date:"
 msgstr "Datum:"
 
-#: ../src/ui/recorder/TimersEdit.ui:177
 msgctxt "TimersEdit|"
 msgid "Start time:"
 msgstr "Začetek:"
 
-#: ../src/ui/recorder/TimersEdit.ui:184
 msgctxt "TimersEdit|"
 msgid "End time:"
 msgstr "Konec:"
 
-#: ../src/ui/recorder/TimersEdit.ui:194
 msgctxt "TimersEdit|"
 msgid "dd.MM.yyyy"
 msgstr "dd.MM.yyyy"
 
-#: ../src/ui/recorder/TimersEdit.ui:211 ../src/ui/recorder/TimersEdit.ui:218
 msgctxt "TimersEdit|"
 msgid "hh:mm:ss"
 msgstr "hh:mm:ss"
 
-#: ../src/ui/recorder/TimersEdit.ui:238
 msgctxt "TimersEdit|"
 msgid "Disabled:"
 msgstr "Izključen:"
 
-#: ../src/ui/recorder/TimersEdit.ui:255
 msgctxt "TimersEdit|"
 msgid "Url:"
 msgstr "Naslov:"
 
-#: ../src/ui/recorder/TimersEdit.ui:262
 msgctxt "TimersEdit|"
 msgid "Type:"
 msgstr "Tip:"
 
-#: ../src/ui/recorder/TimersEdit.ui:273
 msgctxt "TimersEdit|"
 msgid "Once"
 msgstr "Enkratno"
 
-#: ../src/ui/recorder/TimersEdit.ui:278
 msgctxt "TimersEdit|"
 msgid "Daily"
 msgstr "Dnevno"
 
-#: ../src/ui/recorder/TimersEdit.ui:283
 msgctxt "TimersEdit|"
 msgid "Weekly"
 msgstr "Tedensko"
 
-#: ../src/ui/recorder/TimersEdit.ui:331
 msgctxt "TimersEdit|"
 msgid ""
 "<i>Timers must not overlap! This will be automatically checked in the "
@@ -2213,32 +1758,26 @@ msgstr ""
 "<i>Časovniki se ne smejo časovno prekrivati! To bo avtomatsko preverjeno v "
 "naslednjih različicah.</i>"
 
-#: ../src/ui/recorder/TimersEdit.ui:347
 msgctxt "TimersEdit|"
 msgid "New Task"
 msgstr "Novo opravilo"
 
-#: ../src/ui/recorder/TimersEdit.ui:356
 msgctxt "TimersEdit|"
 msgid "Delete Task"
 msgstr "Izbriši opravilo"
 
-#: ../src/ui/recorder/TimersEdit.ui:365 ../src/ui/recorder/TimersEdit.ui:368
 msgctxt "TimersEdit|"
 msgid "Save and Close"
 msgstr "Shrani in zapri"
 
-#: ../src/ui/recorder/TimersEdit.ui:377 ../src/ui/recorder/TimersEdit.ui:380
 msgctxt "TimersEdit|"
 msgid "Close"
 msgstr "Zapri"
 
-#: ../src/ui/recorder/TimersEdit.cpp:115
 msgctxt "TimersEdit|"
 msgid "Timers Editor"
 msgstr "Urejevalnik časovnikov"
 
-#: ../src/ui/recorder/TimersEdit.cpp:116
 msgctxt "TimersEdit|"
 msgid ""
 "Do you want close the editor?\n"
@@ -2247,24 +1786,18 @@ msgstr ""
 "Ali želiš zapreti urejevalnik?\n"
 "Neshranjene spremembe ne bodo uveljavljene."
 
-#: ../src/ui/recorder/TimersEdit.cpp:151 ../src/ui/recorder/TimersEdit.cpp:157
-#: ../src/ui/recorder/TimersEdit.cpp:201 ../src/ui/recorder/TimersEdit.cpp:257
-#: ../src/ui/recorder/TimersEdit.cpp:275
 msgctxt "TimersEdit|"
 msgid "Tano"
 msgstr "Tano"
 
-#: ../src/ui/recorder/TimersEdit.cpp:152
 msgctxt "TimersEdit|"
 msgid "Please enter a name and select a channel from the list."
 msgstr "Prosim vnesi ime in izberi program s seznama."
 
-#: ../src/ui/recorder/TimersEdit.cpp:158 ../src/ui/recorder/TimersEdit.cpp:202
 msgctxt "TimersEdit|"
 msgid "Timer with this name already exists. Please select another name."
 msgstr "Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime."
 
-#: ../src/ui/recorder/TimersEdit.cpp:258
 #, qt-format
 msgctxt "TimersEdit|"
 msgid ""
@@ -2274,7 +1807,6 @@ msgstr ""
 "Ne morem prebrati %1:\n"
 "%2."
 
-#: ../src/ui/recorder/TimersEdit.cpp:276
 #, qt-format
 msgctxt "TimersEdit|"
 msgid ""
@@ -2284,35 +1816,26 @@ msgstr ""
 "Ne morem pisati datoteke %1:\n"
 "%2."
 
-#: ../src/ui/recorder/TimersEdit.cpp:297
 msgctxt "TimersEdit|"
 msgid "Disabled or expired"
 msgstr "Izključen ali pretečen"
 
-#: ../src/ui/recorder/TimersEdit.cpp:301
 msgctxt "TimersEdit|"
 msgid "Active"
 msgstr "Aktiven"
 
-#: ../src/ui/core/TrayIcon.cpp:29 ../src/ui/core/TrayIcon.cpp:86
-#: ../src/ui/core/TrayIcon.cpp:88 ../src/ui/core/TrayIcon.cpp:90
-#: ../src/ui/core/TrayIcon.cpp:92
 msgctxt "TrayIcon|"
 msgid "Tano"
 msgstr "Tano"
 
-#: ../src/ui/core/TrayIcon.cpp:59 ../src/ui/core/TrayIcon.cpp:61
-#: ../src/ui/core/TrayIcon.cpp:63
 msgctxt "TrayIcon|"
 msgid "Recorder"
 msgstr "Snemalnik"
 
-#: ../src/ui/core/TrayIcon.cpp:59
 msgctxt "TrayIcon|"
 msgid "Tano stopped recording"
 msgstr "Tano je končal s snemanjem"
 
-#: ../src/ui/core/TrayIcon.cpp:61
 #, qt-format
 msgctxt "TrayIcon|"
 msgid ""
@@ -2324,7 +1847,6 @@ msgstr ""
 "%2\n"
 "Ročno ustavi!"
 
-#: ../src/ui/core/TrayIcon.cpp:63
 #, qt-format
 msgctxt "TrayIcon|"
 msgid ""
@@ -2336,58 +1858,46 @@ msgstr ""
 "%2\n"
 "Končni čas: %3"
 
-#: ../src/ui/core/TrayIcon.cpp:73
 msgctxt "TrayIcon|"
 msgid "Playing:"
 msgstr "Predvajam:"
 
-#: ../src/ui/core/TrayIcon.cpp:79
 msgctxt "TrayIcon|"
 msgid "Recording:"
 msgstr "Snemam:"
 
-#: ../src/ui/dialogs/UpdateDialog.ui:14
 msgctxt "UpdateDialog|"
 msgid "Update Information"
 msgstr "Informacije o posodobitvah"
 
-#: ../src/ui/dialogs/UpdateDialog.ui:41
 msgctxt "UpdateDialog|"
 msgid "<h3>You are using latest version of Tano!</h3>"
 msgstr "<h3>Uporabljate zadnjo različico programa Tano!</h3>"
 
-#: ../src/ui/dialogs/UpdateDialog.ui:51 ../src/ui/dialogs/UpdateDialog.ui:130
-#: ../src/ui/dialogs/UpdateDialog.ui:196
 msgctxt "UpdateDialog|"
 msgid "Current version:"
 msgstr "Trenutna različica:"
 
-#: ../src/ui/dialogs/UpdateDialog.ui:94
 msgctxt "UpdateDialog|"
 msgid "<h3>You are using development version of Tano!</h3>"
 msgstr "<h3>Uporabljate razvojno različico programa Tano!</h3>"
 
-#: ../src/ui/dialogs/UpdateDialog.ui:107 ../src/ui/dialogs/UpdateDialog.ui:210
 msgctxt "UpdateDialog|"
 msgid "Stable version:"
 msgstr "Stabilna različica:"
 
-#: ../src/ui/dialogs/UpdateDialog.ui:183
 msgctxt "UpdateDialog|"
 msgid "<h3>Your version of Tano needs to be updated!</h3>"
 msgstr "<h3>Vaša različica programa Tano mora biti posodobljena!</h3>"
 
-#: ../src/ui/dialogs/UpdateDialog.ui:220
 msgctxt "UpdateDialog|"
 msgid "Date released:"
 msgstr "Datum izdaje:"
 
-#: ../src/ui/dialogs/UpdateDialog.ui:227
 msgctxt "UpdateDialog|"
 msgid "Information:"
 msgstr "Informacije:"
 
-#: ../src/ui/dialogs/UpdateDialog.cpp:98
 msgctxt "UpdateDialog|"
 msgid "Download now!"
 msgstr "Prenesi zdaj!"

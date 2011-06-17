@@ -36,6 +36,7 @@
 
 #if EDITOR
     #include "core/LocaleManager.h"
+    #include "ui/dialogs/UpdateDialog.h"
     #include "ui/settings/SettingsEdit.h"
 #endif
 
@@ -61,8 +62,13 @@ PlaylistEdit::PlaylistEdit(const WId &video,
     ui->editWidget->setEnabled(false);
     ui->playlist->editMode();
 
-    createSettings();
-    createConnections();
+#if EDITOR
+    _update = new UpdateDialog();
+    _update->checkSilent();
+#endif
+
+	createSettings();
+	createConnections();
 
 #if WITH_EDITOR_VLCQT
     _instance = new VlcInstance(Tano::vlcQtArgs(), this);
@@ -170,6 +176,11 @@ void PlaylistEdit::createConnections()
 
     connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
 
+#if EDITOR
+    connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
+    connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
+#endif
+
 #if WITH_EDITOR_VLCQT
     connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));
 #endif
@@ -207,6 +218,13 @@ void PlaylistEdit::settings()
     s.exec();
     _locale->setLocale();
     createSettings();
+#endif
+}
+
+void PlaylistEdit::updateAvailable()
+{
+#if EDITOR
+    ui->toolBar->insertAction(ui->actionAbout, ui->actionUpdate);
 #endif
 }
 

@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
-    <height>400</height>
+    <width>650</width>
+    <height>402</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>560</width>
+    <width>650</width>
     <height>400</height>
    </size>
   </property>
@@ -63,6 +63,12 @@ p, li { white-space: pre-wrap; }
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="1" column="0" rowspan="3">
         <widget class="QLabel" name="labelIconBig">
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="pixmap">
           <pixmap resource="../../../data/logo.qrc">:/logo/128x128/logo.png</pixmap>
          </property>

@@ -28,6 +28,8 @@
 
 #include <vlc-qt/Common.h>
 #include <vlc-qt/Config.h>
+#include <vlc-qt/AudioControl.h>
+#include <vlc-qt/VideoControl.h>
 
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
@@ -283,9 +285,9 @@ void MainWindow::createConnections()
 	connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMouseHide()));
 	connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMouseHide()));
 
-	connect(_audioController, SIGNAL(actions(Vlc::ActionsType, QList<QAction*>)), _menuTrackAudio, SLOT(setActions(Vlc::ActionsType, QList<QAction*>)));
-	connect(_videoController, SIGNAL(actions(Vlc::ActionsType, QList<QAction*>)), _menuTrackSubtitles, SLOT(setActions(Vlc::ActionsType, QList<QAction*>)));
-	connect(_videoController, SIGNAL(actions(Vlc::ActionsType, QList<QAction*>)), _menuTrackVideo, SLOT(setActions(Vlc::ActionsType, QList<QAction*>)));
+    connect(_audioController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackAudio, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
+    connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackSubtitles, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
+    connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackVideo, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
 	connect(_menuTrackSubtitles, SIGNAL(subtitles(QString)), _videoController, SLOT(loadSubtitle(QString)));
 	connect(_mediaPlayer, SIGNAL(playing(bool, bool)), this, SLOT(setPlayingState(bool, bool)));
 	connect(_mediaPlayer, SIGNAL(hasAudio(bool)), ui->menuAudio, SLOT(setEnabled(bool)));

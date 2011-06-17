@@ -27,6 +27,7 @@
 
 #if EDITOR
 class LocaleManager;
+class UpdateDialog;
 #endif
 
 #if WITH_EDITOR_VLCQT
@@ -101,6 +102,8 @@ private slots:
     void checkCurrentIp();
     void setState(const bool &playing);
 
+    void updateAvailable();
+
 private:
     void createConnections();
     void createSettings();
@@ -115,8 +118,12 @@ private:
     QMenu *_menuExport;
     QMenu *_menuImport;
 
-    // Update playlist
-    QString currentIp();
+#if EDITOR
+    UpdateDialog *_update;
+#endif
+
+	// Update playlist
+	QString currentIp();
 
 #if WITH_EDITOR_VLCQT
     VlcInstance *_instance;

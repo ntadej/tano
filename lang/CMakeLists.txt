@@ -98,7 +98,7 @@ IF(QT_LUPDATE_EXECUTABLE)
 
     ## Create a target that runs lupdate for all the sources and UI files
     IF(REFRESH_TRANSLATIONS)
-        ADD_CUSTOM_TARGET(lupdate ALL COMMAND ${QT_LUPDATE_EXECUTABLE} -no-obsolete ${translate_SRCS} -ts ${Tano_TS} )
+        ADD_CUSTOM_TARGET(lupdate ALL COMMAND ${QT_LUPDATE_EXECUTABLE} -locations none -no-obsolete ${translate_SRCS} -ts ${Tano_TS} )
         QT4_CREATE_PO(Tano_POS ${Tano_TS})
         ADD_CUSTOM_TARGET(pos ALL DEPENDS ${Tano_POS})
     ENDIF(REFRESH_TRANSLATIONS)

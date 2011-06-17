@@ -26,6 +26,7 @@ cmake_minimum_required(VERSION 2.6)
 SET(Tano_Editor_UIs
     ../src/ui/dialogs/AboutDialog.ui
     ../src/ui/dialogs/PrintDialog.ui
+    ../src/ui/dialogs/UpdateDialog.ui
     ../src/ui/playlist/PlaylistEdit.ui
     ../src/ui/playlist/PlaylistExportTvheadend.ui
     ../src/ui/playlist/PlaylistImportCSV.ui
@@ -41,10 +42,12 @@ SET(Tano_Editor_UIs
 SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
     ../src/core/GetFile.h
     ../src/core/Print.h
+    ../src/core/UpdateManager.h
     ../src/ui/core/License.h
     ../src/ui/core/QtKeySequenceEdit.h
     ../src/ui/dialogs/AboutDialog.h
     ../src/ui/dialogs/PrintDialog.h
+    ../src/ui/dialogs/UpdateDialog.h
     ../src/ui/playlist/PlaylistEdit.h
     ../src/ui/playlist/PlaylistExportTvheadend.h
     ../src/ui/playlist/PlaylistImportCSV.h
@@ -69,6 +72,7 @@ SET(Tano_Editor_Srcs
 
     ../src/container/Channel.cpp
     ../src/container/PlaylistFile.cpp
+    ../src/container/UpdateInfo.cpp
 
     ../src/core/Common.cpp
     ../src/core/ConsoleOutput.cpp
@@ -79,6 +83,7 @@ SET(Tano_Editor_Srcs
     ../src/core/Settings.cpp
     ../src/core/Shortcuts.cpp
     ../src/core/Udpxy.cpp
+    ../src/core/UpdateManager.cpp
 
     ../src/playlist/CSVGenerator.cpp
     ../src/playlist/CSVHandler.cpp
@@ -94,6 +99,7 @@ SET(Tano_Editor_Srcs
     ../src/ui/core/QtKeySequenceEdit.cpp
     ../src/ui/dialogs/AboutDialog.cpp
     ../src/ui/dialogs/PrintDialog.cpp
+    ../src/ui/dialogs/UpdateDialog.cpp
     ../src/ui/playlist/PlaylistEdit.cpp
     ../src/ui/playlist/PlaylistExportTvheadend.cpp
     ../src/ui/playlist/PlaylistImportCSV.cpp
@@ -106,6 +112,7 @@ SET(Tano_Editor_Srcs
 
     ../src/xml/PlaylistListHandler.cpp
     ../src/xml/TanoHandlerOld.cpp
+    ../src/xml/UpdateHandler.cpp
 )
 
 ################
