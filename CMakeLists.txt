@@ -20,12 +20,12 @@ PROJECT(tano)
 cmake_minimum_required(VERSION 2.6)
 
 CONFIGURE_FILE(
-  "${CMAKE_SOURCE_DIR}/cmake_uninstall.cmake.in"
-  "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake"
-  IMMEDIATE @ONLY)
+    "${CMAKE_SOURCE_DIR}/cmake_uninstall.cmake.in"
+    "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake"
+    IMMEDIATE @ONLY)
 
 ADD_CUSTOM_TARGET(uninstall
-  "${CMAKE_COMMAND}" -P "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake")
+    "${CMAKE_COMMAND}" -P "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake")
 
 set(CMAKE_MODULE_PATH
     ${CMAKE_SOURCE_DIR}/cmake

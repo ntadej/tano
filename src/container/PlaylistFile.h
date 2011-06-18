@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2001 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -24,20 +24,20 @@
 class PlaylistFile
 {
 public:
-	PlaylistFile(const QString &country = 0);
-	~PlaylistFile();
+    PlaylistFile(const QString &country = 0);
+    ~PlaylistFile();
 
-	QString country() const { return _country; }
-	void setCountry(const QString &s) { _country = s; }
-	QString path() const { return _path; }
-	void setPath(const QString &s) { _path = s; }
-	QString title() const { return _title; }
-	void setTitle(const QString &s) { _title = s; }
+    QString country() const { return _country; }
+    void setCountry(const QString &s) { _country = s; }
+    QString path() const { return _path; }
+    void setPath(const QString &s) { _path = s; }
+    QString title() const { return _title; }
+    void setTitle(const QString &s) { _title = s; }
 
 private:
-	QString _country;
-	QString _path;
-	QString _title;
+    QString _country;
+    QString _path;
+    QString _title;
 };
 
 #endif // TANO_PLAYLISTFILE_H_

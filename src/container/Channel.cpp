@@ -19,8 +19,8 @@
 #include "container/Channel.h"
 
 Channel::Channel(const QString &name,
-				 const int &number)
-	: _name(name),
-	_number(number) { }
+                 const int &number)
+    : _name(name),
+    _number(number) { }
 
 Channel::~Channel() { }

@@ -19,20 +19,20 @@
 #include "container/Timer.h"
 
 Timer::Timer(const QString &name,
-			 const QString &channel,
-			 const QString &playlist,
-			 const int &num,
-			 const QString &url)
-	: _name(name),
-	_channel(channel),
-	_playlist(playlist),
-	_num(num),
-	_url(url)
+             const QString &channel,
+             const QString &playlist,
+             const int &num,
+             const QString &url)
+    : _name(name),
+    _channel(channel),
+    _playlist(playlist),
+    _num(num),
+    _url(url)
 {
-	_startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
-	_endTime = _startTime.addSecs(3600);
-	_disabled = false;
-	_recording = false;
+    _startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
+    _endTime = _startTime.addSecs(3600);
+    _disabled = false;
+    _recording = false;
 }
 
 Timer::~Timer() { }
