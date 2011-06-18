@@ -22,20 +22,20 @@
 #include "container/xmltv/XmltvList.h"
 
 XmltvList::XmltvList(const QDate &date)
-	: _date(date) { }
+    : _date(date) { }
 
 XmltvList::~XmltvList() { }
 
 void XmltvList::addChannel(XmltvChannel *c)
 {
-	_channels.append(c);
+    _channels.append(c);
 }
 
 XmltvChannel *XmltvList::channel(const QString &id)
 {
-	for(int i = 0; i < _channels.size(); i++) {
-		if(_channels[i]->id() == id || _channels[i]->id().split(".")[0] == id) {
-			return _channels[i];
-		}
-	}
+    for(int i = 0; i < _channels.size(); i++) {
+        if(_channels[i]->id() == id || _channels[i]->id().split(".")[0] == id) {
+            return _channels[i];
+        }
+    }
 }

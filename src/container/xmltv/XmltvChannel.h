@@ -27,27 +27,27 @@ class XmltvProgramme;
 class XmltvChannel
 {
 public:
-	XmltvChannel(const QString &id);
-	~XmltvChannel();
+    XmltvChannel(const QString &id);
+    ~XmltvChannel();
 
-	QString id() const { return _id; }
-	QString displayName() const { return _displayName; }
-	void setDisplayName(const QString &s);
-	QString icon() const { return _icon; }
-	void setIcon(const QString &s) { _icon = s; }
-	QString url() const { return _url; }
-	void setUrl(const QString &s) { _url = s; }
+    QString id() const { return _id; }
+    QString displayName() const { return _displayName; }
+    void setDisplayName(const QString &s);
+    QString icon() const { return _icon; }
+    void setIcon(const QString &s) { _icon = s; }
+    QString url() const { return _url; }
+    void setUrl(const QString &s) { _url = s; }
 
-	QList<XmltvProgramme *> programme() const { return _programme; }
-	void addProgramme(XmltvProgramme *p) { _programme << p; }
+    QList<XmltvProgramme *> programme() const { return _programme; }
+    void addProgramme(XmltvProgramme *p) { _programme << p; }
 
 private:
-	QString _id;
-	QString _displayName;
-	QString _icon;
-	QString _url;
+    QString _id;
+    QString _displayName;
+    QString _icon;
+    QString _url;
 
-	QList<XmltvProgramme *> _programme;
+    QList<XmltvProgramme *> _programme;
 };
 
 #endif // TANO_XMLTVCHANNEL_H_

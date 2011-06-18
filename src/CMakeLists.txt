@@ -137,6 +137,7 @@ SET(Tano_Core_Srcs
 )
 SET(Tano_Epg_Srcs
     epg/XmltvCommon.cpp
+    epg/XmltvEnums.cpp
     epg/XmltvManager.cpp
 )
 SET(Tano_Playlist_Srcs

@@ -19,6 +19,6 @@
 #include "container/xmltv/XmltvProgramme.h"
 
 XmltvProgramme::XmltvProgramme(const QString &channel)
-	: _channel(channel) { }
+    : _channel(channel) { }
 
 XmltvProgramme::~XmltvProgramme() { }

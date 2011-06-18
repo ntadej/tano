@@ -23,75 +23,69 @@
 #include "ui_EpgShow.h"
 
 EpgShow::EpgShow(QWidget *parent)
-	: QWidget(parent),
-	ui(new Ui::EpgShow),
-	_image(new GetFile())
+    : QWidget(parent),
+    ui(new Ui::EpgShow),
+    _image(new GetFile())
 {
-	ui->setupUi(this);
+    ui->setupUi(this);
 
-	connect(_image, SIGNAL(file(QString)), this, SLOT(image(QString)));
+    connect(_image, SIGNAL(file(QString)), this, SLOT(image(QString)));
 
-	connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
-	connect(ui->buttonNext, SIGNAL(clicked()), this, SLOT(next()));
+    connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
+    connect(ui->buttonNext, SIGNAL(clicked()), this, SLOT(next()));
 }
 
 EpgShow::~EpgShow()
 {
-	delete ui;
-	delete _image;
+    delete ui;
+    delete _image;
 }
 
 void EpgShow::changeEvent(QEvent *e)
 {
-	QWidget::changeEvent(e);
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			ui->retranslateUi(this);
-			break;
-		default:
-			break;
-	}
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+        default:
+            break;
+    }
 }
 
 void EpgShow::display(XmltvProgramme *programme)
 {
-	_current = programme;
+    _current = programme;
 
-	setWindowTitle(programme->channelDisplayName() + ": " + programme->title());
-	ui->labelTitle->setText("<h1>" + programme->title() + "</h1>");
-	ui->labelTime->setText("<h2>" + programme->channelDisplayName()+ ", " + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</h2>");
-	QString categories;
-	for(int i = 0; i < programme->category().size(); i++) {
-		if(i != 0)
-			categories.append(" / ");
-		categories.append(programme->category()[i]);
-	}
-	ui->labelInfo->setText("<h3>" + categories + "</h3>");
-	ui->labelDescription->setText(programme->desc());
-	ui->labelPhoto->setPixmap(QPixmap(":/icons/48x48/image.png"));
+    setWindowTitle(programme->channelDisplayName() + ": " + programme->title());
+    ui->labelTitle->setText("<h1>" + programme->title() + "</h1>");
+    ui->labelTime->setText("<h2>" + programme->channelDisplayName()+ ", " + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</h2>");
+    QString categories;
+    for(int i = 0; i < programme->category().size(); i++) {
+        if(i != 0)
+            categories.append(" / ");
+        categories.append(programme->category()[i]);
+    }
+    ui->labelInfo->setText("<h3>" + categories + "</h3>");
+    ui->labelDescription->setText(programme->desc());
+    ui->labelPhoto->setPixmap(QPixmap(":/icons/48x48/image.png"));
 
-	//_image->getFile(info.image());
+    _image->getFile(programme->icon());
 
-	show();
+    show();
 }
 
 void EpgShow::image(const QString &image)
 {
-	ui->labelPhoto->setPixmap(QPixmap(image));
+    ui->labelPhoto->setPixmap(QPixmap(image));
 }
 
 void EpgShow::next()
 {
-	//if(_epgNext.isEmpty())
-	//	return;
-
-	emit requestNext(_current);
+    emit requestNext(_current);
 }
 
 void EpgShow::previous()
 {
-	//if(_epgPrevious.isEmpty())
-	//	return;
-
-	emit requestPrevious(_current);
+    emit requestPrevious(_current);
 }

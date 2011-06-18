@@ -24,80 +24,83 @@
 #include "GetFile.h"
 
 GetFile::GetFile(QObject *parent)
-	: QObject(parent),
-	_file(0) { }
+    : QObject(parent),
+    _file(0) { }
 
 GetFile::~GetFile() { }
 
 void GetFile::getFile(const QString &fileUrl,
-					  const QString &location)
+                      const QString &location)
 {
-	_url = fileUrl;
+    if(fileUrl.isEmpty())
+        return;
 
-	QFileInfo fileInfo(_url.path());
-	QString fileName;
-	QString path;
-	if(!location.isNull()) {
-		fileName = location;
-	} else {
-		QDir dir(QDir::tempPath());
-		dir.mkdir("tano");
-		path = QDir::tempPath() + "/tano/";
-		fileName = path + fileInfo.fileName();
-	}
+    _url = fileUrl;
 
-	_file = new QFile(fileName);
-	if (!_file->open(QIODevice::WriteOnly)) {
-		QMessageBox::information(0, tr("Tano"),
-								 tr("Cannot write file %1:\n%2.")
-								 .arg(fileName, _file->errorString()));
-		delete _file;
-		_file = 0;
-		return;
-	}
+    QFileInfo fileInfo(_url.path());
+    QString fileName;
+    QString path;
+    if(!location.isNull()) {
+        fileName = location;
+    } else {
+        QDir dir(QDir::tempPath());
+        dir.mkdir("tano");
+        path = QDir::tempPath() + "/tano/";
+        fileName = path + fileInfo.fileName();
+    }
 
-	startRequest(_url);
+    _file = new QFile(fileName);
+    if (!_file->open(QIODevice::WriteOnly)) {
+        QMessageBox::information(0, tr("Tano"),
+                                 tr("Cannot write file %1:\n%2.")
+                                 .arg(fileName, _file->errorString()));
+        delete _file;
+        _file = 0;
+        return;
+    }
+
+    startRequest(_url);
 }
 
 void GetFile::httpReadyRead()
 {
-	if (_file)
-		_file->write(_nreply->readAll());
+    if (_file)
+        _file->write(_nreply->readAll());
 }
 
 void GetFile::httpRequestFinished()
 {
-	_file->flush();
-	_file->close();
+    _file->flush();
+    _file->close();
 
-	QVariant redirectionTarget = _nreply->attribute(QNetworkRequest::RedirectionTargetAttribute);
-	if (_nreply->error()) {
-		_file->remove();
-		QMessageBox::information(0, tr("Tano"),
-								 tr("Download failed: %1.")
-								 .arg(_nreply->errorString()));
-	} else if (!redirectionTarget.isNull()) {
-		_url = _url.resolved(redirectionTarget.toUrl());
-		_nreply->deleteLater();
-		_file->open(QIODevice::WriteOnly);
-		_file->resize(0);
-		startRequest(_url);
-		return;
-	} else {
-		emit file(_file->fileName());
-	}
+    QVariant redirectionTarget = _nreply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+    if (_nreply->error()) {
+        _file->remove();
+        QMessageBox::information(0, tr("Tano"),
+                                 tr("Download failed: %1.")
+                                 .arg(_nreply->errorString()));
+    } else if (!redirectionTarget.isNull()) {
+        _url = _url.resolved(redirectionTarget.toUrl());
+        _nreply->deleteLater();
+        _file->open(QIODevice::WriteOnly);
+        _file->resize(0);
+        startRequest(_url);
+        return;
+    } else {
+        emit file(_file->fileName());
+    }
 
-	disconnect(_nreply, SIGNAL(readyRead()), this, SLOT(httpReadyRead()));
-	disconnect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
-	_nreply->deleteLater();
-	_nreply = 0;
-	delete _file;
-	_file = 0;
+    disconnect(_nreply, SIGNAL(readyRead()), this, SLOT(httpReadyRead()));
+    disconnect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
+    _nreply->deleteLater();
+    _nreply = 0;
+    delete _file;
+    _file = 0;
 }
 
 void GetFile::startRequest(const QUrl &url)
 {
-	_nreply = _nam.get(QNetworkRequest(url));
-	connect(_nreply, SIGNAL(readyRead()), this, SLOT(httpReadyRead()));
-	connect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
+    _nreply = _nam.get(QNetworkRequest(url));
+    connect(_nreply, SIGNAL(readyRead()), this, SLOT(httpReadyRead()));
+    connect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
 }

@@ -16,19 +16,27 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvProgramme.h"
+#ifndef TANO_XMLTVENUMS_H_
+#define TANO_XMLTVENUMS_H_
 
-XmltvChannel::XmltvChannel(const QString &id)
-    : _id(id) { }
+#include <QtCore/QString>
 
-XmltvChannel::~XmltvChannel() { }
-
-void XmltvChannel::setDisplayName(const QString &s)
+namespace Tano
 {
-    _displayName = s;
+    namespace Xmltv
+    {
+        // Lenght units
+        enum LenghtUnits
+        {
+            Seconds,
+            Minutes,
+            Hours
+        };
 
-    for(int i = 0; i < _programme.size(); i++) {
-        _programme[i]->setChannelDisplayName(s);
+        LenghtUnits lenghtUnits(const QString &type);
+        QString lenghtUnits(const LenghtUnits &type);
+        QString lenghtUnitsShort(const LenghtUnits &type);
     }
-}
+};
+
+#endif // TANO_ENUMS_H_

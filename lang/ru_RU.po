@@ -1171,6 +1171,30 @@ msgstr ""
 "Невозможно записать файл %1:\n"
 "%2."
 
+msgctxt "QObject|"
+msgid "seconds"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "minutes"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "hours"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "s"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "min"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "h"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Очистить ярлык"

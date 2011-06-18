@@ -32,30 +32,30 @@ class XmltvProgramme;
 class XmltvHandler : public QXmlDefaultHandler
 {
 public:
-	XmltvHandler();
-	~XmltvHandler();
+    XmltvHandler();
+    ~XmltvHandler();
 
-	bool startElement(const QString &namespaceURI,
-					  const QString &localName,
-					  const QString &qName,
-					  const QXmlAttributes &attributes);
-	bool endElement(const QString &namespaceURI,
-					const QString &localName,
+    bool startElement(const QString &namespaceURI,
+                      const QString &localName,
+                      const QString &qName,
+                      const QXmlAttributes &attributes);
+    bool endElement(const QString &namespaceURI,
+                    const QString &localName,
                     const QString &qName);
     bool characters(const QString &str);
     bool fatalError(const QXmlParseException &exception);
 
-	QString errorString() const { return _errorStr; }
-	XmltvList *list() { return _list; }
+    QString errorString() const { return _errorStr; }
+    XmltvList *list() { return _list; }
 
 private:
-	QString _currentText;
-	QString _errorStr;
-	bool _metTag;
+    QString _currentText;
+    QString _errorStr;
+    bool _metTag;
 
-	XmltvChannel *_currentChannel;
-	XmltvProgramme *_currentProgramme;
-	XmltvList *_list;
+    XmltvChannel *_currentChannel;
+    XmltvProgramme *_currentProgramme;
+    XmltvList *_list;
 };
 
 #endif // TANO_XMLTVHANDLER_H_

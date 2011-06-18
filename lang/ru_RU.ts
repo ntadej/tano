@@ -1178,6 +1178,30 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished">Невозможно записать файл %1:
 %2.</translation>
     </message>
+    <message>
+        <source>seconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>minutes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>h</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>

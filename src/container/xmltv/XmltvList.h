@@ -28,34 +28,34 @@ class XmltvChannel;
 class XmltvList
 {
 public:
-	XmltvList(const QDate &date = QDate());
-	~XmltvList();
+    XmltvList(const QDate &date = QDate());
+    ~XmltvList();
 
-	QDate date() const { return _date; }
-	QString sourceInfoUrl() const { return _sourceInfoUrl; }
-	void setSourceInfoUrl(const QString &s) { _sourceInfoUrl = s; }
-	QString sourceInfoName() const { return _sourceInfoName; }
-	void setSourceInfoName(const QString &s) { _sourceInfoName = s; }
-	QString sourceDataUrl() const { return _sourceDataUrl; }
-	void setSourceDataUrl(const QString &s) { _sourceDataUrl = s; }
-	QString generatorInfoName() const { return _generatorInfoName; }
-	void setGeneratorInfoName(const QString &s) { _generatorInfoName = s; }
-	QString generatorInfoUrl() const { return _generatorInfoUrl; }
-	void setGeneratorInfoUrl(const QString &s) { _generatorInfoUrl = s; }
+    QDate date() const { return _date; }
+    QString sourceInfoUrl() const { return _sourceInfoUrl; }
+    void setSourceInfoUrl(const QString &s) { _sourceInfoUrl = s; }
+    QString sourceInfoName() const { return _sourceInfoName; }
+    void setSourceInfoName(const QString &s) { _sourceInfoName = s; }
+    QString sourceDataUrl() const { return _sourceDataUrl; }
+    void setSourceDataUrl(const QString &s) { _sourceDataUrl = s; }
+    QString generatorInfoName() const { return _generatorInfoName; }
+    void setGeneratorInfoName(const QString &s) { _generatorInfoName = s; }
+    QString generatorInfoUrl() const { return _generatorInfoUrl; }
+    void setGeneratorInfoUrl(const QString &s) { _generatorInfoUrl = s; }
 
-	QList<XmltvChannel *> channels() const { return _channels; }
-	void addChannel(XmltvChannel *c);
-	XmltvChannel *channel(const QString &id);
+    QList<XmltvChannel *> channels() const { return _channels; }
+    void addChannel(XmltvChannel *c);
+    XmltvChannel *channel(const QString &id);
 
 private:
-	QDate _date;
-	QString _sourceInfoUrl;
-	QString _sourceInfoName;
-	QString _sourceDataUrl;
-	QString _generatorInfoName;
-	QString _generatorInfoUrl;
+    QDate _date;
+    QString _sourceInfoUrl;
+    QString _sourceInfoName;
+    QString _sourceDataUrl;
+    QString _generatorInfoName;
+    QString _generatorInfoUrl;
 
-	QList<XmltvChannel *> _channels;
+    QList<XmltvChannel *> _channels;
 };
 
 #endif // TANO_XMLTVLIST_H_
