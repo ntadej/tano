@@ -151,7 +151,7 @@ void RecorderCore::time()
 	_time += 500;
 	emit elapsed(_time);
 
-	if(QTime::currentTime() >= QTime::fromString(_currentEndTime, "hh:mm")) {
+    if(QTime::currentTime() >= QTime::fromString(_currentEndTime, "hh:mm") && isTimer()) {
 		emit timerStop();
 	}
 }

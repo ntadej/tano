@@ -27,6 +27,7 @@
 	#include "core/RecorderProcess.h"
 #endif
 #include "core/Settings.h"
+#include "core/Udpxy.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/recorder/TimersEdit.h"
 
@@ -47,6 +48,8 @@ Recorder::Recorder(QWidget *parent)
 	_controller = new RecorderController("si.tano.TanoPlayer", "/Recorder",
 										 QDBusConnection::sessionBus(), this);
 	_recorder = new RecorderProcess(this);
+
+    _udpxy = new Udpxy();
 
 	//Init
 	connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
@@ -88,6 +91,8 @@ void Recorder::createSettings()
 	ui->fileEdit->setText(settings->recorderDirectory());
 	delete settings;
 
+    _udpxy->createSettings();
+
 #if WITH_RECORDER
 	_controller->refreshSettings();
 #endif
@@ -111,7 +116,7 @@ void Recorder::playlist(QTreeWidgetItem *clickedChannel)
 	Channel *channel = ui->playlistWidget->channelRead(clickedChannel);
 
 	_name = channel->name();
-	_url = channel->url();
+    _url = _udpxy->processUrl(channel->url());
 
 	ui->valueSelected->setText(channel->name());
 }
@@ -197,7 +202,7 @@ void Recorder::recordNow(const QString &name,
 {
 #if WITH_RECORDER
 	_name = name;
-	_url = url;
+    _url = _udpxy->processUrl(url);
 
 	ui->valueSelected->setText(name);
 

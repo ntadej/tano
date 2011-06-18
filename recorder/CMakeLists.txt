@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 ###############################################################################
 
-PROJECT(Tano-Recorder)
+PROJECT(tano-recorder)
 cmake_minimum_required(VERSION 2.6)
 
 ###################

@@ -32,6 +32,7 @@
 
 class TrayIcon;
 class TimersEdit;
+class Udpxy;
 
 namespace Ui
 {
@@ -84,6 +85,7 @@ private:
 	TimersEdit *_editor;
 	QString _playlist;
 	TrayIcon *_trayIcon;
+    Udpxy *_udpxy;
 };
 
 #endif // TANO_RECORDER_H_
