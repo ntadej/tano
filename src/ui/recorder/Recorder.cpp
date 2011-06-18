@@ -23,6 +23,7 @@
 #include "core/DaemonManager.h"
 #include "core/Enums.h"
 #include "core/Settings.h"
+#include "core/Udpxy.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/recorder/RecorderController.h"
 #include "ui/recorder/TimersEdit.h"
@@ -44,9 +45,11 @@ Recorder::Recorder(QWidget *parent)
     _controller = new RecorderController(this);
     _daemon = new DaemonManager(this);
 
-    //Init
-    connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
-    connect(ui->buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
+    _udpxy = new Udpxy();
+
+	//Init
+	connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
+	connect(ui->buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
 
     connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(playlist(QTreeWidgetItem *)));
 
@@ -82,6 +85,7 @@ void Recorder::createSettings()
     delete settings;
 
     _controller->refreshSettings();
+    _udpxy->createSettings();
 }
 
 void Recorder::stop()
@@ -99,8 +103,8 @@ void Recorder::playlist(QTreeWidgetItem *clickedChannel)
 {
     Channel *channel = ui->playlistWidget->channelRead(clickedChannel);
 
-    _name = channel->name();
-    _url = channel->url();
+	_name = channel->name();
+    _url = _udpxy->processUrl(channel->url());
 
     ui->valueSelected->setText(channel->name());
 }
@@ -182,8 +186,8 @@ void Recorder::record(const bool &status)
 void Recorder::recordNow(const QString &name,
                          const QString &url)
 {
-    _name = name;
-    _url = url;
+	_name = name;
+    _url = _udpxy->processUrl(url);
 
     ui->valueSelected->setText(name);
 
