@@ -19,6 +19,7 @@
 #include <QtCore/QCoreApplication>
 
 #include "daemon/DBusAdaptorRecorder.h"
+#include "daemon/DBusAdaptorXmltv.h"
 #include "daemon/DaemonMain.h"
 
 #ifdef Q_WS_X11
@@ -36,7 +37,8 @@ int main(int argc, char *argv[])
 
     DaemonMain *daemon = new DaemonMain();
 
-    new DBusAdaptorRecorder(daemon->recorderCore(), daemon);
+    new DBusAdaptorRecorder(daemon->recorder(), daemon);
+    new DBusAdaptorXmltv(daemon->xmltv(), daemon);
     QDBusConnection connection = QDBusConnection::sessionBus();
     connection.registerObject("/Daemon", daemon);
     connection.registerService("si.Tano");

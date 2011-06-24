@@ -16,27 +16,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_DAEMONMAIN_H_
-#define TANO_DAEMONMAIN_H_
+#ifndef TANO_XMLTVCORE_H_
+#define TANO_XMLTVCORE_H_
 
 #include <QtCore/QObject>
 
-class RecorderCore;
-class XmltvCore;
-
-class DaemonMain : public QObject
+class XmltvCore : public QObject
 {
 Q_OBJECT
 public:
-    DaemonMain(QObject *parent = 0);
-    ~DaemonMain();
+    XmltvCore(QObject *parent = 0);
+    ~XmltvCore();
 
-    RecorderCore *recorder() { return _recorder; }
-    XmltvCore *xmltv() { return _xmltv; }
-
-private:
-    RecorderCore *_recorder;
-    XmltvCore *_xmltv;
+    void settings();
 };
 
-#endif // TANO_DAEMONMAIN_H_
+#endif // TANO_XMLTVCORE_H_

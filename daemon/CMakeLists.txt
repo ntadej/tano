@@ -25,9 +25,11 @@ cmake_minimum_required(VERSION 2.6)
 # Define the MOC source files used by Tano Daemon
 SET(Tano_Daemon_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
     DBusAdaptorRecorder.h
+    DBusAdaptorXmltv.h
     DaemonMain.h
     recorder/RecorderCore.h
     recorder/RecorderTimeManager.h
+    xmltv/XmltvCore.h
 )
 
 SET(Tano_Daemon_Resrcs
@@ -50,12 +52,13 @@ SET(Tano_Daemon_Recorder_Srcs
     recorder/RecorderTimeManager.cpp
 )
 SET(Tano_Daemon_Xmltv_Srcs
-
+    xmltv/XmltvCore.cpp
 )
 SET(Tano_Daemon_Srcs
     main.cpp
 
     DBusAdaptorRecorder.cpp
+    DBusAdaptorXmltv.cpp
     DaemonCommon.cpp
     DaemonMain.cpp
 

@@ -19,16 +19,19 @@
 #include "core/ConsoleOutput.h"
 #include "daemon/DaemonMain.h"
 #include "daemon/recorder/RecorderCore.h"
+#include "daemon/xmltv/XmltvCore.h"
 
 DaemonMain::DaemonMain(QObject *parent)
     : QObject(parent)
 {
     ConsoleOutput::welcomeMessage();
 
-    _core = new RecorderCore(this);
+    _recorder = new RecorderCore(this);
+    _xmltv = new XmltvCore(this);
 }
 
 DaemonMain::~DaemonMain()
 {
-    delete _core;
+    delete _recorder;
+    delete _xmltv;
 }

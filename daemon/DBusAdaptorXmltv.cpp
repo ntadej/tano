@@ -16,27 +16,17 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_DAEMONMAIN_H_
-#define TANO_DAEMONMAIN_H_
+#include <QtCore/QMetaObject>
 
-#include <QtCore/QObject>
+#include "daemon/DBusAdaptorXmltv.h"
+#include "daemon/DaemonMain.h"
 
-class RecorderCore;
-class XmltvCore;
-
-class DaemonMain : public QObject
+DBusAdaptorXmltv::DBusAdaptorXmltv(XmltvCore *xmltv,
+                                   DaemonMain *daemon)
+    : QDBusAbstractAdaptor(daemon),
+    _core(xmltv)
 {
-Q_OBJECT
-public:
-    DaemonMain(QObject *parent = 0);
-    ~DaemonMain();
 
-    RecorderCore *recorder() { return _recorder; }
-    XmltvCore *xmltv() { return _xmltv; }
+}
 
-private:
-    RecorderCore *_recorder;
-    XmltvCore *_xmltv;
-};
-
-#endif // TANO_DAEMONMAIN_H_
+DBusAdaptorXmltv::~DBusAdaptorXmltv() { }
