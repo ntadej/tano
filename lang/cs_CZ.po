@@ -68,6 +68,16 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Přehrávač"
 
+#, fuzzy
+msgctxt "BrowseDirectory|"
+msgid "Reset"
+msgstr "Nastavit znovu"
+
+#, fuzzy
+msgctxt "BrowseDirectory|"
+msgid "Open directory"
+msgstr "Otevřít adresář"
+
 msgctxt "ConclusionPage|"
 msgid "Complete Wizard"
 msgstr "Dokončit průvodce"
@@ -1258,6 +1268,86 @@ msgctxt "Recorder|"
 msgid "Open directory"
 msgstr "Otevřít adresář"
 
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "VLC-Qt Backend"
+msgstr "Jádro VLC-Qt"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Curently using VLC-Qt Backend"
+msgstr "Nyní se používá jádro VLC-Qt"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Version:"
+msgstr "Verze:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Use global VLC settings (requires restart)"
+msgstr "Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Using Videolan VLC version:"
+msgstr "Používá se verze VLC Videolan:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Playback"
+msgstr "Přehrávání"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Remember Video settings between media"
+msgstr "Zapamatovat si nastavení obrazu mezi médii"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Default subtitle language:"
+msgstr "Výchozí jazyk titulků:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Default audio language:"
+msgstr "Výchozí jazyk pro zvuk:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Disabled"
+msgstr "Zakázáno"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Other"
+msgstr "Jiné"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "UDPXY support"
+msgstr "Podpora UDPXY"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Enable UDPXY support"
+msgstr "Povolit podporu UDPXY"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Router IP or name:"
+msgstr "IP nebo název směrovače:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Router port:"
+msgstr "Přípojka směrovače:"
+
+#, fuzzy, qt-format
+msgctxt "SettingsBackend|"
+msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+msgstr "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
+
 msgctxt "SettingsEdit|"
 msgid "Settings"
 msgstr "Nastavení"
@@ -1286,202 +1376,191 @@ msgctxt "SettingsEdit|"
 msgid "Shortcuts"
 msgstr "Zkratky"
 
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Run First run wizard after restart"
+#~ msgstr "Po znovuspuštění spustit průvodce prvním spuštěním"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Language"
+#~ msgstr "Jazyk"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "System default language"
+#~ msgstr "Výchozí jazyk systému"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Custom language"
+#~ msgstr "Jazyk stanovený uživatelem"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Session store"
+#~ msgstr "Ukládání sezení"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Remember volume"
+#~ msgstr "Pamatovat si hlasitost"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Autoplay last channel"
+#~ msgstr "Automatické přehrávání posledního kanálu"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "General Interface Settings"
+#~ msgstr "Obecná nastavení rozhraní"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Toolbar style:"
+#~ msgstr "Styl nástrojového pruhu:"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Icon only"
+#~ msgstr "Pouze ikony"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Text only"
+#~ msgstr "Pouze text"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Text beside icon"
+#~ msgstr "Text vedle ikon"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Text under icon"
+#~ msgstr "Text pod ikonami"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "System default"
+#~ msgstr "Výchozí nastavení"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Enable OSD in Fullscreen mode"
+#~ msgstr "Povolit OSD v režimu celé obrazovky"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Mouse wheel function:"
+#~ msgstr "Funkce kolečka myši:"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Change channel"
+#~ msgstr "Změnit program"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Change volume"
+#~ msgstr "Změnit hlasitost"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Minimise to tray"
+#~ msgstr "Zmenšit do oznamovací oblasti panelu"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Default options for startup"
+#~ msgstr "Výchozí volby pro začátek"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Show splash screen"
+#~ msgstr "Ukázat úvodní obrazovku"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Simple mode"
+#~ msgstr "Jednoduchý režim"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Always on top"
+#~ msgstr "Vždy nahoře"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Controls enabled"
+#~ msgstr "Ovládací prvky povoleny"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Info panel enabled"
+#~ msgstr "Panel s podrobnostmi povolen"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Default recording directory"
+#~ msgstr "Výchozí adresář pro nahrávání"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Reset"
+#~ msgstr "Nastavit znovu"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "You are using Tano version:"
+#~ msgstr "Používáte verzi programu Tano:"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Open directory"
+#~ msgstr "Otevřít adresář"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Enable Info OSD in Fullscreen mode"
+#~ msgstr "Povolit informační OSD v režimu celé obrazovky"
+
+#, fuzzy
 msgctxt "SettingsEdit|"
+msgid "Schedule"
+msgstr "Rozvrh"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Run First run wizard after restart"
 msgstr "Po znovuspuštění spustit průvodce prvním spuštěním"
 
-msgctxt "SettingsEdit|"
-msgid "Language"
-msgstr "Jazyk"
-
-msgctxt "SettingsEdit|"
-msgid "System default language"
-msgstr "Výchozí jazyk systému"
-
-msgctxt "SettingsEdit|"
-msgid "Custom language"
-msgstr "Jazyk stanovený uživatelem"
-
-msgctxt "SettingsEdit|"
-msgid "Session store"
-msgstr "Ukládání sezení"
-
-msgctxt "SettingsEdit|"
-msgid "Remember volume"
-msgstr "Pamatovat si hlasitost"
-
-msgctxt "SettingsEdit|"
-msgid "Autoplay last channel"
-msgstr "Automatické přehrávání posledního kanálu"
-
-msgctxt "SettingsEdit|"
-msgid "General Interface Settings"
-msgstr "Obecná nastavení rozhraní"
-
-msgctxt "SettingsEdit|"
-msgid "Toolbar style:"
-msgstr "Styl nástrojového pruhu:"
-
-msgctxt "SettingsEdit|"
-msgid "Icon only"
-msgstr "Pouze ikony"
-
-msgctxt "SettingsEdit|"
-msgid "Text only"
-msgstr "Pouze text"
-
-msgctxt "SettingsEdit|"
-msgid "Text beside icon"
-msgstr "Text vedle ikon"
-
-msgctxt "SettingsEdit|"
-msgid "Text under icon"
-msgstr "Text pod ikonami"
-
-msgctxt "SettingsEdit|"
-msgid "System default"
-msgstr "Výchozí nastavení"
-
-msgctxt "SettingsEdit|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr "Povolit OSD v režimu celé obrazovky"
-
-msgctxt "SettingsEdit|"
-msgid "Mouse wheel function:"
-msgstr "Funkce kolečka myši:"
-
-msgctxt "SettingsEdit|"
-msgid "Change channel"
-msgstr "Změnit program"
-
-msgctxt "SettingsEdit|"
-msgid "Change volume"
-msgstr "Změnit hlasitost"
-
-msgctxt "SettingsEdit|"
-msgid "Minimise to tray"
-msgstr "Zmenšit do oznamovací oblasti panelu"
-
-msgctxt "SettingsEdit|"
-msgid "Default options for startup"
-msgstr "Výchozí volby pro začátek"
-
-msgctxt "SettingsEdit|"
-msgid "Show splash screen"
-msgstr "Ukázat úvodní obrazovku"
-
-msgctxt "SettingsEdit|"
-msgid "Simple mode"
-msgstr "Jednoduchý režim"
-
-msgctxt "SettingsEdit|"
-msgid "Always on top"
-msgstr "Vždy nahoře"
-
-msgctxt "SettingsEdit|"
-msgid "Controls enabled"
-msgstr "Ovládací prvky povoleny"
-
-msgctxt "SettingsEdit|"
-msgid "Info panel enabled"
-msgstr "Panel s podrobnostmi povolen"
-
-msgctxt "SettingsEdit|"
-msgid "VLC-Qt Backend"
-msgstr "Jádro VLC-Qt"
-
-msgctxt "SettingsEdit|"
-msgid "Curently using VLC-Qt Backend"
-msgstr "Nyní se používá jádro VLC-Qt"
-
-msgctxt "SettingsEdit|"
-msgid "Version:"
-msgstr "Verze:"
-
-msgctxt "SettingsEdit|"
-msgid "Use global VLC settings (requires restart)"
-msgstr "Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)"
-
-msgctxt "SettingsEdit|"
-msgid "Using Videolan VLC version:"
-msgstr "Používá se verze VLC Videolan:"
-
-msgctxt "SettingsEdit|"
-msgid "Remember Video settings between media"
-msgstr "Zapamatovat si nastavení obrazu mezi médii"
-
-msgctxt "SettingsEdit|"
-msgid "Default subtitle language:"
-msgstr "Výchozí jazyk titulků:"
-
-msgctxt "SettingsEdit|"
-msgid "Disabled"
-msgstr "Zakázáno"
-
-msgctxt "SettingsEdit|"
-msgid "Other"
-msgstr "Jiné"
-
-msgctxt "SettingsEdit|"
-msgid "Default recording directory"
-msgstr "Výchozí adresář pro nahrávání"
-
-msgctxt "SettingsEdit|"
-msgid "..."
-msgstr "..."
-
-msgctxt "SettingsEdit|"
-msgid "Reset"
-msgstr "Nastavit znovu"
-
-msgctxt "SettingsEdit|"
-msgid "You are using Tano version:"
-msgstr "Používáte verzi programu Tano:"
-
-msgctxt "SettingsEdit|"
-msgid "Default audio language:"
-msgstr "Výchozí jazyk pro zvuk:"
-
-msgctxt "SettingsEdit|"
-msgid "Open directory"
-msgstr "Otevřít adresář"
-
-msgctxt "SettingsEdit|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr "Povolit informační OSD v režimu celé obrazovky"
-
-msgctxt "SettingsEdit|"
-msgid "UDPXY support"
-msgstr "Podpora UDPXY"
-
-msgctxt "SettingsEdit|"
-msgid "Enable UDPXY support"
-msgstr "Povolit podporu UDPXY"
-
-msgctxt "SettingsEdit|"
-msgid "Router IP or name:"
-msgstr "IP nebo název směrovače:"
-
-msgctxt "SettingsEdit|"
-msgid "Router port:"
-msgstr "Přípojka směrovače:"
-
-#, qt-format
-msgctxt "SettingsEdit|"
-msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
-msgstr "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
-
-msgctxt "SettingsEdit|"
+msgctxt "SettingsGeneral|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Language"
+msgstr "Jazyk"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "System default language"
+msgstr "Výchozí jazyk systému"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Custom language"
+msgstr "Jazyk stanovený uživatelem"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Session store"
+msgstr "Ukládání sezení"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Remember volume"
+msgstr "Pamatovat si hlasitost"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Autoplay last channel"
+msgstr "Automatické přehrávání posledního kanálu"
+
+msgctxt "SettingsGeneral|"
 msgid "You are using Tano Editor version:"
 msgstr ""
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "You are using Tano version:"
+msgstr "Používáte verzi programu Tano:"
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
@@ -1554,6 +1633,104 @@ msgstr "Stáhnout"
 msgctxt "SettingsPlaylist|"
 msgid "Open channel list"
 msgstr "Otevřít seznam programů"
+
+#, fuzzy
+msgctxt "SettingsRecorder|"
+msgid "Default recording directory"
+msgstr "Výchozí adresář pro nahrávání"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "VLC-Qt Backend"
+#~ msgstr "Jádro VLC-Qt"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Curently using VLC-Qt Backend"
+#~ msgstr "Nyní se používá jádro VLC-Qt"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Version:"
+#~ msgstr "Verze:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Use global VLC settings (requires restart)"
+#~ msgstr "Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Using Videolan VLC version:"
+#~ msgstr "Používá se verze VLC Videolan:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Playback"
+#~ msgstr "Přehrávání"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Remember Video settings between media"
+#~ msgstr "Zapamatovat si nastavení obrazu mezi médii"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Default subtitle language:"
+#~ msgstr "Výchozí jazyk titulků:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Default audio language:"
+#~ msgstr "Výchozí jazyk pro zvuk:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Disabled"
+#~ msgstr "Zakázáno"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Other"
+#~ msgstr "Jiné"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "UDPXY support"
+#~ msgstr "Podpora UDPXY"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Povolit podporu UDPXY"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Router IP or name:"
+#~ msgstr "IP nebo název směrovače:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Router port:"
+#~ msgstr "Přípojka směrovače:"
+
+#, qt-format
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr ""
+#~ "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV Grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Select desired XMLTV grabber from the list below:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber settings"
+msgstr ""
+
+#, qt-format
+msgctxt "SettingsSchedule|"
+msgid ""
+"Your custom grabber must output to:\n"
+"%1"
+msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Action"
@@ -1659,13 +1836,13 @@ msgctxt "SettingsShortcuts|"
 msgid "Next deinterlace mode"
 msgstr "Další režim pro zrušení prokládání"
 
-msgctxt "SettingsShortcuts|"
-msgid "Clear Shortcut"
-msgstr "Smazat klávesovou zkratku"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Clear Shortcut"
+#~ msgstr "Smazat klávesovou zkratku"
 
-msgctxt "SettingsShortcuts|"
-msgid "Restore defaults"
-msgstr "Obnovit výchozí nastavení"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Restore defaults"
+#~ msgstr "Obnovit výchozí nastavení"
 
 msgctxt "SettingsShortcuts|"
 msgid "Set"
@@ -1682,6 +1859,105 @@ msgstr "Povolit informační OSD v režimu celé obrazovky"
 msgctxt "SettingsShortcuts|"
 msgid "Teletext"
 msgstr "Teletext"
+
+msgctxt "SettingsShortcuts|"
+msgid "Defaults"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "General Interface Settings"
+msgstr "Obecná nastavení rozhraní"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Toolbar style:"
+msgstr "Styl nástrojového pruhu:"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Icon only"
+msgstr "Pouze ikony"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Text only"
+msgstr "Pouze text"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Text beside icon"
+msgstr "Text vedle ikon"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Text under icon"
+msgstr "Text pod ikonami"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "System default"
+msgstr "Výchozí nastavení"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Enable OSD in Fullscreen mode"
+msgstr "Povolit OSD v režimu celé obrazovky"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Mouse wheel function:"
+msgstr "Funkce kolečka myši:"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Change channel"
+msgstr "Změnit program"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Change volume"
+msgstr "Změnit hlasitost"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Minimise to tray"
+msgstr "Zmenšit do oznamovací oblasti panelu"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Enable Info OSD in Fullscreen mode"
+msgstr "Povolit informační OSD v režimu celé obrazovky"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Default options for startup"
+msgstr "Výchozí volby pro začátek"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Show splash screen"
+msgstr "Ukázat úvodní obrazovku"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Simple mode"
+msgstr "Jednoduchý režim"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Always on top"
+msgstr "Vždy nahoře"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Controls enabled"
+msgstr "Ovládací prvky povoleny"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Info panel enabled"
+msgstr "Panel s podrobnostmi povolen"
 
 msgctxt "Teletext|"
 msgid "Teletext"

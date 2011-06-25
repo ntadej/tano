@@ -22,44 +22,44 @@
 #include <QtGui/QTableWidgetItem>
 #include <QtGui/QWidget>
 
-#include "core/Shortcuts.h"
+class Shortcuts;
 
 namespace Ui
 {
-	class SettingsShortcuts;
+    class SettingsShortcuts;
 }
 
 class SettingsShortcuts : public QWidget
 {
 Q_OBJECT
 public:
-	SettingsShortcuts(QWidget *parent = 0);
-	~SettingsShortcuts();
+    SettingsShortcuts(QWidget *parent = 0);
+    ~SettingsShortcuts();
 
-	void setShortcuts(Shortcuts *s);
-	void shortcutWrite();
+    void setShortcuts(Shortcuts *s);
+    void shortcutWrite();
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 private slots:
-	void shortcutClear();
-	void shortcutEdit(QTableWidgetItem *titem);
-	void shortcutRestore();
-	void shortcutSequence(const QKeySequence &s);
-	void shortcutSet();
+    void shortcutClear();
+    void shortcutEdit(QTableWidgetItem *titem);
+    void shortcutRestore();
+    void shortcutSequence(const QKeySequence &s);
+    void shortcutSet();
 
 private:
-	void createActions();
-	void shortcutRead();
+    void createActions();
+    void shortcutRead();
 
-	Ui::SettingsShortcuts *ui;
+    Ui::SettingsShortcuts *ui;
 
-	Shortcuts *_shortcuts;
+    Shortcuts *_shortcuts;
 
-	QTableWidgetItem *_item;
-	QKeySequence _sequence;
-	bool _success;
+    QTableWidgetItem *_item;
+    QKeySequence _sequence;
+    bool _success;
 };
 
 #endif // TANO_SETTINGSSHORTCUTS_H_

@@ -16,43 +16,50 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#ifndef TANO_SETTINGSUI_H_
+#define TANO_SETTINGSUI_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
-class Settings;
-class Shortcuts;
+#include <QtGui/QWidget>
 
 namespace Ui
 {
-    class SettingsEdit;
+    class SettingsUi;
 }
 
-class SettingsEdit : public QDialog
+class SettingsUi : public QWidget
 {
 Q_OBJECT
 public:
-    SettingsEdit(Shortcuts *s = 0,
-                 QWidget *parent = 0);
-    ~SettingsEdit();
+    SettingsUi(QWidget *parent = 0);
+    ~SettingsUi();
+
+    bool osd() const;
+    void setOsd(const bool &enabled);
+    bool osdPlaylist() const;
+    void setOsdPlaylist(const bool &enabled);
+    bool tray() const;
+    void setTray(const bool &enabled);
+    QString wheel() const;
+    void setWheel(const QString &wheel);
+    int toolbar() const;
+    void setToolbar(const int &id);
+
+    bool splash() const;
+    void setSplash(const bool &enabled);
+    bool lite() const;
+    void setLite(const bool &enabled);
+    bool top() const;
+    void setTop(const bool &enabled);
+    bool controls() const;
+    void setControls(const bool &enabled);
+    bool info() const;
+    void setInfo(const bool &enabled);
 
 protected:
     void changeEvent(QEvent *e);
 
-private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void cancel();
-    void save();
-
 private:
-    void read();
-
-    Ui::SettingsEdit *ui;
-
-    Settings *_settings;
+    Ui::SettingsUi *ui;
 };
 
-#endif // TANO_SETTINGSEDIT_H_
+#endif // TANO_SETTINGSUI_H_

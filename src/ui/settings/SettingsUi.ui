@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsUi</class>
+ <widget class="QWidget" name="SettingsUi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>443</width>
+    <height>329</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupGeneral">
+     <property name="title">
+      <string>General Interface Settings</string>
+     </property>
+     <layout class="QGridLayout" name="layoutMainGuiBox">
+      <item row="4" column="0">
+       <widget class="QLabel" name="labelToolbarStyle">
+        <property name="text">
+         <string>Toolbar style:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" colspan="2">
+       <widget class="QComboBox" name="comboToolbarLook">
+        <property name="currentIndex">
+         <number>4</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>Icon only</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Text only</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Text beside icon</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Text under icon</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>System default</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QCheckBox" name="checkOsd">
+        <property name="text">
+         <string>Enable OSD in Fullscreen mode</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="labelMouseWheel">
+        <property name="text">
+         <string>Mouse wheel function:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QRadioButton" name="radioWheelChannel">
+        <property name="text">
+         <string>Change channel</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QRadioButton" name="radioWheelVolume">
+        <property name="text">
+         <string>Change volume</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3">
+       <widget class="QCheckBox" name="checkTray">
+        <property name="text">
+         <string>Minimise to tray</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="3">
+       <widget class="QCheckBox" name="checkOsdPlaylist">
+        <property name="text">
+         <string>Enable Info OSD in Fullscreen mode</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="startupGuiBox">
+     <property name="title">
+      <string>Default options for startup</string>
+     </property>
+     <layout class="QVBoxLayout" name="layoutStartupGuiBox">
+      <item>
+       <widget class="QCheckBox" name="checkSplash">
+        <property name="text">
+         <string>Show splash screen</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkLite">
+        <property name="text">
+         <string>Simple mode</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkTop">
+        <property name="text">
+         <string>Always on top</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkControls">
+        <property name="text">
+         <string>Controls enabled</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkInfo">
+        <property name="text">
+         <string>Info panel enabled</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

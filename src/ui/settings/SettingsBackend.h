@@ -16,43 +16,45 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#ifndef TANO_SETTINGSBACKEND_H_
+#define TANO_SETTINGSBACKEND_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
-class Settings;
-class Shortcuts;
+#include <QtGui/QWidget>
 
 namespace Ui
 {
-    class SettingsEdit;
+    class SettingsBackend;
 }
 
-class SettingsEdit : public QDialog
+class SettingsBackend : public QWidget
 {
 Q_OBJECT
 public:
-    SettingsEdit(Shortcuts *s = 0,
-                 QWidget *parent = 0);
-    ~SettingsEdit();
+    SettingsBackend(QWidget *parent = 0);
+    ~SettingsBackend();
+
+    bool globalSettings() const;
+    void setGlobalSettings(const bool &global);
+
+    bool rememberChannelSettings() const;
+    void setRememberChannelSettings(const bool &remember);
+    QString audio() const;
+    void setAudio(const QString &audio);
+    QString sub() const;
+    void setSub(const QString &sub);
+
+    bool udpxy() const;
+    void setUdpxy(const bool &enabled);
+    QString udpxyUrl() const;
+    void setUdpxyUrl(const QString &url);
+    int udpxyPort() const;
+    void setUdpxyPort(const int &port);
 
 protected:
     void changeEvent(QEvent *e);
 
-private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void cancel();
-    void save();
-
 private:
-    void read();
-
-    Ui::SettingsEdit *ui;
-
-    Settings *_settings;
+    Ui::SettingsBackend *ui;
 };
 
-#endif // TANO_SETTINGSEDIT_H_
+#endif // TANO_SETTINGSBACKEND_H_

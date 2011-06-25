@@ -16,43 +16,33 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#ifndef TANO_SETTINGSSCHEDULE_H_
+#define TANO_SETTINGSSCHEDULE_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
-class Settings;
-class Shortcuts;
+#include <QtGui/QWidget>
 
 namespace Ui
 {
-    class SettingsEdit;
+    class SettingsSchedule;
 }
 
-class SettingsEdit : public QDialog
+class SettingsSchedule : public QWidget
 {
 Q_OBJECT
 public:
-    SettingsEdit(Shortcuts *s = 0,
-                 QWidget *parent = 0);
-    ~SettingsEdit();
+    SettingsSchedule(QWidget *parent = 0);
+    ~SettingsSchedule();
+
+    bool xmltv() const;
+    void setXmltv(const bool &enabled);
+    QString grabber() const;
+    void setGrabber(const QString &grabber);
 
 protected:
     void changeEvent(QEvent *e);
 
-private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void cancel();
-    void save();
-
 private:
-    void read();
-
-    Ui::SettingsEdit *ui;
-
-    Settings *_settings;
+    Ui::SettingsSchedule *ui;
 };
 
-#endif // TANO_SETTINGSEDIT_H_
+#endif // TANO_SETTINGSSCHEDULE_H_

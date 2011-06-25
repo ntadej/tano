@@ -24,145 +24,157 @@
 class Settings : public QSettings
 {
 public:
-	Settings(QObject * parent = 0);
-	~Settings();
+    Settings(QObject * parent = 0);
+    ~Settings();
 
-	QString path() const;
-	void readSettings();
-	void writeSettings();
+    QString path() const;
+    void readSettings();
+    void writeSettings();
 
-	// General
-	QString configurationVersion() { return _configurationVersion; }
-	void setConfigurationVersion(const QString &s) { _configurationVersion = s; }
-	bool configured() const { return _configured; }
-	void setConfigured(const bool &b) { _configured = b; }
-	static const bool DEFAULT_CONFIGURED;
-	bool sessionVolume() const { return _sessionVolume; }
-	void setSessionVolume(const bool &b) { _sessionVolume = b; }
-	static const bool DEFAULT_SESSION_VOLUME;
-	bool sessionAutoplay() const { return _sessionAutoplay; }
-	void setSessionAutoplay(const bool &b) { _sessionAutoplay = b; }
-	static const bool DEFAULT_SESSION_AUTOPLAY;
-	QString language() const { return _language; }
-	void setLanguage(const QString &s) { _language = s; }
-	static const QString DEFAULT_LANGUAGE;
+    // General
+    QString configurationVersion() { return _configurationVersion; }
+    void setConfigurationVersion(const QString &s) { _configurationVersion = s; }
+    bool configured() const { return _configured; }
+    void setConfigured(const bool &b) { _configured = b; }
+    static const bool DEFAULT_CONFIGURED;
+    bool sessionVolume() const { return _sessionVolume; }
+    void setSessionVolume(const bool &b) { _sessionVolume = b; }
+    static const bool DEFAULT_SESSION_VOLUME;
+    bool sessionAutoplay() const { return _sessionAutoplay; }
+    void setSessionAutoplay(const bool &b) { _sessionAutoplay = b; }
+    static const bool DEFAULT_SESSION_AUTOPLAY;
+    QString language() const { return _language; }
+    void setLanguage(const QString &s) { _language = s; }
+    static const QString DEFAULT_LANGUAGE;
 
-	// Channels
-	QString playlist() const { return _playlist; }
-	void setPlaylist(const QString &s) { _playlist = s; }
-	static const QString DEFAULT_PLAYLIST;
+    // Channels
+    QString playlist() const { return _playlist; }
+    void setPlaylist(const QString &s) { _playlist = s; }
+    static const QString DEFAULT_PLAYLIST;
 
-	// GUI - start
-	bool splash() const { return _splash; }
-	void setSplash(const bool &b) { _splash = b; }
-	static const bool DEFAULT_SPLASH;
-	bool startLite() const { return _startLite; }
-	void setStartLite(const bool &b) { _startLite = b; }
-	static const bool DEFAULT_START_LITE;
-	bool startOnTop() const { return _startOnTop; }
-	void setStartOnTop(const bool &b) { _startOnTop = b; }
-	static const bool DEFAULT_START_ON_TOP;
-	bool startControls() const { return _startControls; }
-	void setStartControls(const bool &b) { _startControls = b; }
-	static const bool DEFAULT_START_CONTROLS;
-	bool startInfo() const { return _startInfo; }
-	void setStartInfo(const bool &b) { _startInfo = b; }
-	static const bool DEFAULT_START_INFO;
+    // GUI - start
+    bool splash() const { return _splash; }
+    void setSplash(const bool &b) { _splash = b; }
+    static const bool DEFAULT_SPLASH;
+    bool startLite() const { return _startLite; }
+    void setStartLite(const bool &b) { _startLite = b; }
+    static const bool DEFAULT_START_LITE;
+    bool startOnTop() const { return _startOnTop; }
+    void setStartOnTop(const bool &b) { _startOnTop = b; }
+    static const bool DEFAULT_START_ON_TOP;
+    bool startControls() const { return _startControls; }
+    void setStartControls(const bool &b) { _startControls = b; }
+    static const bool DEFAULT_START_CONTROLS;
+    bool startInfo() const { return _startInfo; }
+    void setStartInfo(const bool &b) { _startInfo = b; }
+    static const bool DEFAULT_START_INFO;
 
-	// GUI
-	bool osd() const { return _osd; }
-	void setOsd(const bool &b) { _osd = b; }
-	static const bool DEFAULT_OSD;
-	bool playlistOsd() const { return _playlistOsd; }
-	void setPlaylistOsd(const bool &b) { _playlistOsd = b; }
-	static const bool DEFAULT_PLAYLIST_OSD;
-	bool hideToTray() const { return _hideToTray; }
-	void setHideToTray(const bool &b) { _hideToTray = b; }
-	static const bool DEFAULT_HIDE_TO_TRAY;
-	QString mouseWheel() const { return _mouseWheel; }
-	void setMouseWheel(const QString &s) { _mouseWheel = s; }
-	static const QString DEFAULT_MOUSE_WHEEL;
-	int toolbarLook() const { return _toolbarLook; }
-	void setToolbarLook(const int &i) { _toolbarLook = i; }
-	static const int DEFAULT_TOOLBAR_LOOK;
+    // GUI
+    bool osd() const { return _osd; }
+    void setOsd(const bool &b) { _osd = b; }
+    static const bool DEFAULT_OSD;
+    bool osdPlaylist() const { return _osdPlaylist; }
+    void setOsdPlaylist(const bool &b) { _osdPlaylist = b; }
+    static const bool DEFAULT_OSD_PLAYLIST;
+    bool hideToTray() const { return _hideToTray; }
+    void setHideToTray(const bool &b) { _hideToTray = b; }
+    static const bool DEFAULT_HIDE_TO_TRAY;
+    QString mouseWheel() const { return _mouseWheel; }
+    void setMouseWheel(const QString &s) { _mouseWheel = s; }
+    static const QString DEFAULT_MOUSE_WHEEL;
+    int toolbarLook() const { return _toolbarLook; }
+    void setToolbarLook(const int &i) { _toolbarLook = i; }
+    static const int DEFAULT_TOOLBAR_LOOK;
 
-	// Backend
-	bool globalSettings() const { return _globalSettings; }
-	void setGlobalSettings(const bool &b) { _globalSettings = b; }
-	static const bool DEFAULT_GLOBAL_SETTINGS;
-	bool rememberVideoSettings() const { return _rememberVideoSettings; }
-	void setRememberVideoSettings(const bool &b) { _rememberVideoSettings = b; }
-	static const bool DEFAULT_REMEMBER_VIDEO_SETTINGS;
-	QString audioLanguage() const { return _audioLanguage; }
-	void setAudioLanguage(const QString &s) { _audioLanguage = s; }
-	static const QString DEFAULT_AUDIO_LANGUAGE;
-	QString subtitleLanguage() const { return _subtitleLanguage; }
-	void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
-	static const QString DEFAULT_SUBTITLE_LANGUAGE;
-	bool udpxy() const { return _udpxy; }
-	void setUdpxy(const bool &b) { _udpxy = b; }
-	static const bool DEFAULT_UDPXY;
-	QString udpxyUrl() const { return _udpxyUrl; }
-	void setUdpxyUrl(const QString &s) { _udpxyUrl = s; }
-	static const QString DEFAULT_UDPXY_URL;
-	int udpxyPort() const { return _udpxyPort; }
-	void setUdpxyPort(const int &i) { _udpxyPort = i; }
-	static const int DEFAULT_UDPXY_PORT;
+    // Backend
+    bool globalSettings() const { return _globalSettings; }
+    void setGlobalSettings(const bool &b) { _globalSettings = b; }
+    static const bool DEFAULT_GLOBAL_SETTINGS;
+    bool rememberVideoSettings() const { return _rememberVideoSettings; }
+    void setRememberVideoSettings(const bool &b) { _rememberVideoSettings = b; }
+    static const bool DEFAULT_REMEMBER_VIDEO_SETTINGS;
+    QString audioLanguage() const { return _audioLanguage; }
+    void setAudioLanguage(const QString &s) { _audioLanguage = s; }
+    static const QString DEFAULT_AUDIO_LANGUAGE;
+    QString subtitleLanguage() const { return _subtitleLanguage; }
+    void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
+    static const QString DEFAULT_SUBTITLE_LANGUAGE;
+    bool udpxy() const { return _udpxy; }
+    void setUdpxy(const bool &b) { _udpxy = b; }
+    static const bool DEFAULT_UDPXY;
+    QString udpxyUrl() const { return _udpxyUrl; }
+    void setUdpxyUrl(const QString &s) { _udpxyUrl = s; }
+    static const QString DEFAULT_UDPXY_URL;
+    int udpxyPort() const { return _udpxyPort; }
+    void setUdpxyPort(const int &i) { _udpxyPort = i; }
+    static const int DEFAULT_UDPXY_PORT;
 
-	// Recorder
-	QString recorderDirectory() const { return _recorderDirectory; }
-	void setRecorderDirectory(const QString &s) { _recorderDirectory = s; }
-	static const QString DEFAULT_RECORDER_DIRECTORY;
+    // Recorder
+    QString recorderDirectory() const { return _recorderDirectory; }
+    void setRecorderDirectory(const QString &s) { _recorderDirectory = s; }
+    static const QString DEFAULT_RECORDER_DIRECTORY;
 
-	// Session
-	int channel() const { return _channel; }
-	void setChannel(const int &i) { _channel = i; }
-	static const int DEFAULT_CHANNEL;
-	int volume() const { return _volume; }
-	void setVolume(const int &i) { _volume = i; }
-	static const int DEFAULT_VOLUME;
+    // Session
+    int channel() const { return _channel; }
+    void setChannel(const int &i) { _channel = i; }
+    static const int DEFAULT_CHANNEL;
+    int volume() const { return _volume; }
+    void setVolume(const int &i) { _volume = i; }
+    static const int DEFAULT_VOLUME;
+
+    // Schedule
+    bool xmltv() const { return _xmltv; }
+    void setXmltv(const bool &b) { _xmltv = b; }
+    static const bool DEFAULT_XMLTV;
+    QString grabber() const { return _grabber; }
+    void setGrabber(const QString &s) { _grabber = s; }
+    static const QString DEFAULT_GRABBER;
 
 private:
-	// General variables
-	QString _configurationVersion;
-	bool _configured;
-	bool _updatesCheck;
-	bool _sessionVolume;
-	bool _sessionAutoplay;
-	QString _language;
+    // General variables
+    QString _configurationVersion;
+    bool _configured;
+    bool _updatesCheck;
+    bool _sessionVolume;
+    bool _sessionAutoplay;
+    QString _language;
 
-	// Channels
-	QString _playlist;
+    // Channels
+    QString _playlist;
 
-	// GUI - start
-	bool _splash;
-	bool _startLite;
-	bool _startOnTop;
-	bool _startControls;
-	bool _startInfo;
+    // GUI - start
+    bool _splash;
+    bool _startLite;
+    bool _startOnTop;
+    bool _startControls;
+    bool _startInfo;
 
-	// GUI
-	bool _osd;
-	bool _playlistOsd;
-	bool _hideToTray;
-	QString _mouseWheel;
-	int _toolbarLook;
+    // GUI
+    bool _osd;
+    bool _osdPlaylist;
+    bool _hideToTray;
+    QString _mouseWheel;
+    int _toolbarLook;
 
-	// Backend
-	bool _globalSettings;
-	bool _rememberVideoSettings;
-	QString _audioLanguage;
-	QString _subtitleLanguage;
-	bool _udpxy;
-	QString _udpxyUrl;
-	int _udpxyPort;
+    // Backend
+    bool _globalSettings;
+    bool _rememberVideoSettings;
+    QString _audioLanguage;
+    QString _subtitleLanguage;
+    bool _udpxy;
+    QString _udpxyUrl;
+    int _udpxyPort;
 
-	// Recorder
-	QString _recorderDirectory;
+    // Recorder
+    QString _recorderDirectory;
 
-	// Session
-	int _channel;
-	int _volume;
+    // Session
+    int _channel;
+    int _volume;
+
+    // Schedule
+    bool _xmltv;
+    QString _grabber;
 };
 
 #endif // TANO_SETTINGS_H_

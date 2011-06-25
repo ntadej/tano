@@ -51,6 +51,17 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
+    <name>BrowseDirectory</name>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConclusionPage</name>
     <message>
         <source>Complete Wizard</source>
@@ -1262,6 +1273,73 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>SettingsBackend</name>
+    <message>
+        <source>VLC-Qt Backend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curently using VLC-Qt Backend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use global VLC settings (requires restart)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Using Videolan VLC version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember Video settings between media</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SettingsEdit</name>
     <message>
         <source>Settings</source>
@@ -1292,11 +1370,22 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsGeneral</name>
+    <message>
         <source>Tano</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1324,167 +1413,11 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>General Interface Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Toolbar style:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable OSD in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mouse wheel function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Change channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Change volume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Minimise to tray</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default options for startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show splash screen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Simple mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Controls enabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Info panel enabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>VLC-Qt Backend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curently using VLC-Qt Backend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use global VLC settings (requires restart)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Using Videolan VLC version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember Video settings between media</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default subtitle language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default recording directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset</source>
+        <source>You are using Tano Editor version:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default audio language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable Info OSD in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You are using Tano Editor version:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1559,6 +1492,41 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsRecorder</name>
+    <message>
+        <source>Default recording directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSchedule</name>
+    <message>
+        <source>XMLTV Grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select desired XMLTV grabber from the list below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your custom grabber must output to:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1669,14 +1637,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Clear Shortcut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Restore defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Set</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1690,6 +1650,89 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsUi</name>
+    <message>
+        <source>General Interface Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable OSD in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mouse wheel function:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default options for startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Simple mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controls enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info panel enabled</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

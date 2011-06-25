@@ -16,43 +16,35 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#ifndef TANO_BROWSEDIRECTORY_H_
+#define TANO_BROWSEDIRECTORY_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
+#include <QtGui/QLineEdit>
+#include <QtGui/QPushButton>
+#include <QtGui/QToolButton>
+#include <QtGui/QWidget>
 
-class Settings;
-class Shortcuts;
-
-namespace Ui
-{
-    class SettingsEdit;
-}
-
-class SettingsEdit : public QDialog
+class BrowseDirectory : public QWidget
 {
 Q_OBJECT
 public:
-    SettingsEdit(Shortcuts *s = 0,
-                 QWidget *parent = 0);
-    ~SettingsEdit();
+    BrowseDirectory(QWidget *parent = 0);
+    ~BrowseDirectory();
 
-protected:
-    void changeEvent(QEvent *e);
+    void setResetValue(const QString &value) { _resetValue = value; }
+    void setValue(const QString &value);
+    QString value() const;
 
 private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void cancel();
-    void save();
+    void browse();
+    void reset();
 
 private:
-    void read();
+    QString _resetValue;
 
-    Ui::SettingsEdit *ui;
-
-    Settings *_settings;
+    QLineEdit *_edit;
+    QPushButton *_reset;
+    QToolButton *_browse;
 };
 
-#endif // TANO_SETTINGSEDIT_H_
+#endif // TANO_BROWSEDIRECTORY_H_

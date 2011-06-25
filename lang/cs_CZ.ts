@@ -56,6 +56,17 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
 </context>
 <context>
+    <name>BrowseDirectory</name>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished">Nastavit znovu</translation>
+    </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="unfinished">Otevřít adresář</translation>
+    </message>
+</context>
+<context>
     <name>ConclusionPage</name>
     <message>
         <source>Complete Wizard</source>
@@ -1275,6 +1286,73 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
 </context>
 <context>
+    <name>SettingsBackend</name>
+    <message>
+        <source>VLC-Qt Backend</source>
+        <translation type="unfinished">Jádro VLC-Qt</translation>
+    </message>
+    <message>
+        <source>Curently using VLC-Qt Backend</source>
+        <translation type="unfinished">Nyní se používá jádro VLC-Qt</translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="unfinished">Verze:</translation>
+    </message>
+    <message>
+        <source>Use global VLC settings (requires restart)</source>
+        <translation type="unfinished">Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)</translation>
+    </message>
+    <message>
+        <source>Using Videolan VLC version:</source>
+        <translation type="unfinished">Používá se verze VLC Videolan:</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="unfinished">Přehrávání</translation>
+    </message>
+    <message>
+        <source>Remember Video settings between media</source>
+        <translation type="unfinished">Zapamatovat si nastavení obrazu mezi médii</translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="unfinished">Výchozí jazyk titulků:</translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="unfinished">Výchozí jazyk pro zvuk:</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished">Zakázáno</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished">Jiné</translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished">Podpora UDPXY</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Povolit podporu UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">IP nebo název směrovače:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Přípojka směrovače:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
+    </message>
+</context>
+<context>
     <name>SettingsEdit</name>
     <message>
         <source>Settings</source>
@@ -1306,199 +1384,182 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation>Po znovuspuštění spustit průvodce prvním spuštěním</translation>
+        <translation type="obsolete">Po znovuspuštění spustit průvodce prvním spuštěním</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation type="obsolete">Jazyk</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Výchozí jazyk systému</translation>
+        <translation type="obsolete">Výchozí jazyk systému</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>Jazyk stanovený uživatelem</translation>
+        <translation type="obsolete">Jazyk stanovený uživatelem</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation>Ukládání sezení</translation>
+        <translation type="obsolete">Ukládání sezení</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Pamatovat si hlasitost</translation>
+        <translation type="obsolete">Pamatovat si hlasitost</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Automatické přehrávání posledního kanálu</translation>
+        <translation type="obsolete">Automatické přehrávání posledního kanálu</translation>
     </message>
     <message>
         <source>General Interface Settings</source>
-        <translation>Obecná nastavení rozhraní</translation>
+        <translation type="obsolete">Obecná nastavení rozhraní</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation>Styl nástrojového pruhu:</translation>
+        <translation type="obsolete">Styl nástrojového pruhu:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation>Pouze ikony</translation>
+        <translation type="obsolete">Pouze ikony</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation>Pouze text</translation>
+        <translation type="obsolete">Pouze text</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation>Text vedle ikon</translation>
+        <translation type="obsolete">Text vedle ikon</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation>Text pod ikonami</translation>
+        <translation type="obsolete">Text pod ikonami</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation>Výchozí nastavení</translation>
+        <translation type="obsolete">Výchozí nastavení</translation>
     </message>
     <message>
         <source>Enable OSD in Fullscreen mode</source>
-        <translation>Povolit OSD v režimu celé obrazovky</translation>
+        <translation type="obsolete">Povolit OSD v režimu celé obrazovky</translation>
     </message>
     <message>
         <source>Mouse wheel function:</source>
-        <translation>Funkce kolečka myši:</translation>
+        <translation type="obsolete">Funkce kolečka myši:</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation>Změnit program</translation>
+        <translation type="obsolete">Změnit program</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation>Změnit hlasitost</translation>
+        <translation type="obsolete">Změnit hlasitost</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation>Zmenšit do oznamovací oblasti panelu</translation>
+        <translation type="obsolete">Zmenšit do oznamovací oblasti panelu</translation>
     </message>
     <message>
         <source>Default options for startup</source>
-        <translation>Výchozí volby pro začátek</translation>
+        <translation type="obsolete">Výchozí volby pro začátek</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Ukázat úvodní obrazovku</translation>
+        <translation type="obsolete">Ukázat úvodní obrazovku</translation>
     </message>
     <message>
         <source>Simple mode</source>
-        <translation>Jednoduchý režim</translation>
+        <translation type="obsolete">Jednoduchý režim</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Vždy nahoře</translation>
+        <translation type="obsolete">Vždy nahoře</translation>
     </message>
     <message>
         <source>Controls enabled</source>
-        <translation>Ovládací prvky povoleny</translation>
+        <translation type="obsolete">Ovládací prvky povoleny</translation>
     </message>
     <message>
         <source>Info panel enabled</source>
-        <translation>Panel s podrobnostmi povolen</translation>
-    </message>
-    <message>
-        <source>VLC-Qt Backend</source>
-        <translation>Jádro VLC-Qt</translation>
-    </message>
-    <message>
-        <source>Curently using VLC-Qt Backend</source>
-        <translation>Nyní se používá jádro VLC-Qt</translation>
-    </message>
-    <message>
-        <source>Version:</source>
-        <translation>Verze:</translation>
-    </message>
-    <message>
-        <source>Use global VLC settings (requires restart)</source>
-        <translation>Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)</translation>
-    </message>
-    <message>
-        <source>Using Videolan VLC version:</source>
-        <translation>Používá se verze VLC Videolan:</translation>
-    </message>
-    <message>
-        <source>Remember Video settings between media</source>
-        <translation>Zapamatovat si nastavení obrazu mezi médii</translation>
-    </message>
-    <message>
-        <source>Default subtitle language:</source>
-        <translation>Výchozí jazyk titulků:</translation>
-    </message>
-    <message>
-        <source>Disabled</source>
-        <translation>Zakázáno</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation>Jiné</translation>
+        <translation type="obsolete">Panel s podrobnostmi povolen</translation>
     </message>
     <message>
         <source>Default recording directory</source>
-        <translation>Výchozí adresář pro nahrávání</translation>
+        <translation type="obsolete">Výchozí adresář pro nahrávání</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Nastavit znovu</translation>
+        <translation type="obsolete">Nastavit znovu</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation>Používáte verzi programu Tano:</translation>
-    </message>
-    <message>
-        <source>Default audio language:</source>
-        <translation>Výchozí jazyk pro zvuk:</translation>
+        <translation type="obsolete">Používáte verzi programu Tano:</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>Otevřít adresář</translation>
+        <translation type="obsolete">Otevřít adresář</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation>Povolit informační OSD v režimu celé obrazovky</translation>
+        <translation type="obsolete">Povolit informační OSD v režimu celé obrazovky</translation>
     </message>
     <message>
-        <source>UDPXY support</source>
-        <translation>Podpora UDPXY</translation>
+        <source>Schedule</source>
+        <translation type="unfinished">Rozvrh</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsGeneral</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
     </message>
     <message>
-        <source>Enable UDPXY support</source>
-        <translation>Povolit podporu UDPXY</translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation>IP nebo název směrovače:</translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation>Přípojka směrovače:</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
+        <source>Run First run wizard after restart</source>
+        <translation type="unfinished">Po znovuspuštění spustit průvodce prvním spuštěním</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Language</source>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="unfinished">Výchozí jazyk systému</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="unfinished">Jazyk stanovený uživatelem</translation>
+    </message>
+    <message>
+        <source>Session store</source>
+        <translation type="unfinished">Ukládání sezení</translation>
+    </message>
+    <message>
+        <source>Remember volume</source>
+        <translation type="unfinished">Pamatovat si hlasitost</translation>
+    </message>
+    <message>
+        <source>Autoplay last channel</source>
+        <translation type="unfinished">Automatické přehrávání posledního kanálu</translation>
+    </message>
+    <message>
         <source>You are using Tano Editor version:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using Tano version:</source>
+        <translation type="unfinished">Používáte verzi programu Tano:</translation>
     </message>
 </context>
 <context>
@@ -1573,6 +1634,105 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Open channel list</source>
         <translation>Otevřít seznam programů</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsRecorder</name>
+    <message>
+        <source>Default recording directory</source>
+        <translation type="unfinished">Výchozí adresář pro nahrávání</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSchedule</name>
+    <message>
+        <source>VLC-Qt Backend</source>
+        <translation type="obsolete">Jádro VLC-Qt</translation>
+    </message>
+    <message>
+        <source>Curently using VLC-Qt Backend</source>
+        <translation type="obsolete">Nyní se používá jádro VLC-Qt</translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="obsolete">Verze:</translation>
+    </message>
+    <message>
+        <source>Use global VLC settings (requires restart)</source>
+        <translation type="obsolete">Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)</translation>
+    </message>
+    <message>
+        <source>Using Videolan VLC version:</source>
+        <translation type="obsolete">Používá se verze VLC Videolan:</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="obsolete">Přehrávání</translation>
+    </message>
+    <message>
+        <source>Remember Video settings between media</source>
+        <translation type="obsolete">Zapamatovat si nastavení obrazu mezi médii</translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="obsolete">Výchozí jazyk titulků:</translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="obsolete">Výchozí jazyk pro zvuk:</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="obsolete">Zakázáno</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="obsolete">Jiné</translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="obsolete">Podpora UDPXY</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="obsolete">Povolit podporu UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="obsolete">IP nebo název směrovače:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="obsolete">Přípojka směrovače:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>XMLTV Grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select desired XMLTV grabber from the list below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your custom grabber must output to:
+%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1683,11 +1843,11 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Clear Shortcut</source>
-        <translation>Smazat klávesovou zkratku</translation>
+        <translation type="obsolete">Smazat klávesovou zkratku</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Obnovit výchozí nastavení</translation>
+        <translation type="obsolete">Obnovit výchozí nastavení</translation>
     </message>
     <message>
         <source>Set</source>
@@ -1704,6 +1864,89 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Teletext</source>
         <translation>Teletext</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsUi</name>
+    <message>
+        <source>General Interface Settings</source>
+        <translation type="unfinished">Obecná nastavení rozhraní</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished">Styl nástrojového pruhu:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished">Pouze ikony</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished">Pouze text</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished">Text vedle ikon</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished">Text pod ikonami</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished">Výchozí nastavení</translation>
+    </message>
+    <message>
+        <source>Enable OSD in Fullscreen mode</source>
+        <translation type="unfinished">Povolit OSD v režimu celé obrazovky</translation>
+    </message>
+    <message>
+        <source>Mouse wheel function:</source>
+        <translation type="unfinished">Funkce kolečka myši:</translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="unfinished">Změnit program</translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="unfinished">Změnit hlasitost</translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="unfinished">Zmenšit do oznamovací oblasti panelu</translation>
+    </message>
+    <message>
+        <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="unfinished">Povolit informační OSD v režimu celé obrazovky</translation>
+    </message>
+    <message>
+        <source>Default options for startup</source>
+        <translation type="unfinished">Výchozí volby pro začátek</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished">Ukázat úvodní obrazovku</translation>
+    </message>
+    <message>
+        <source>Simple mode</source>
+        <translation type="unfinished">Jednoduchý režim</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Vždy nahoře</translation>
+    </message>
+    <message>
+        <source>Controls enabled</source>
+        <translation type="unfinished">Ovládací prvky povoleny</translation>
+    </message>
+    <message>
+        <source>Info panel enabled</source>
+        <translation type="unfinished">Panel s podrobnostmi povolen</translation>
     </message>
 </context>
 <context>

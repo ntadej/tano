@@ -174,8 +174,8 @@ void MainWindow::createSettings()
 
 	_osdEnabled = settings->osd();
 	ui->actionPlaylistFullscreen->setEnabled(_osdEnabled);
-	ui->actionPlaylistFullscreen->setChecked(settings->playlistOsd());
-	showPlaylistFullscreen(settings->playlistOsd());
+    ui->actionPlaylistFullscreen->setChecked(settings->osdPlaylist());
+    showPlaylistFullscreen(settings->osdPlaylist());
 	_wheelType = settings->mouseWheel();
 	mouseWheel();
 

@@ -68,6 +68,16 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Predvajalnik"
 
+#, fuzzy
+msgctxt "BrowseDirectory|"
+msgid "Reset"
+msgstr "Obnovi"
+
+#, fuzzy
+msgctxt "BrowseDirectory|"
+msgid "Open directory"
+msgstr "Odpri imenik"
+
 msgctxt "ConclusionPage|"
 msgid "I agree to the terms of the GNU General Public License"
 msgstr "Strinjam se s pogoji GNU General Public License"
@@ -1257,6 +1267,86 @@ msgctxt "Recorder|"
 msgid "Recording to file:"
 msgstr "Snemam v datoteko:"
 
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "VLC-Qt Backend"
+msgstr "VLC-Qt Hrbtenica"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Curently using VLC-Qt Backend"
+msgstr "Trenutno uporabljaš VLC-Qt hrbtenico"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Version:"
+msgstr "Različica:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Use global VLC settings (requires restart)"
+msgstr "Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Using Videolan VLC version:"
+msgstr "Videolan VLC različice:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Playback"
+msgstr "Predvajanje"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Remember Video settings between media"
+msgstr "Zapomni si nastavitve slike med preklapljanjem"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Default subtitle language:"
+msgstr "Privzet jezik podnapisov:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Default audio language:"
+msgstr "Privzet jezik zvoka:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Disabled"
+msgstr "Onemogočeno"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Other"
+msgstr "Drugo"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "UDPXY support"
+msgstr "UDPXY podpora"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Enable UDPXY support"
+msgstr "Vključi podporo UDPXY"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Router IP or name:"
+msgstr "IP ali ime usmerjevalnika:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Router port:"
+msgstr "Vrata usmerjevalnika:"
+
+#, fuzzy, qt-format
+msgctxt "SettingsBackend|"
+msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
+
 msgctxt "SettingsEdit|"
 msgid "Settings"
 msgstr "Nastavitve"
@@ -1285,202 +1375,191 @@ msgctxt "SettingsEdit|"
 msgid "Shortcuts"
 msgstr "Bližnjice"
 
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Run First run wizard after restart"
+#~ msgstr "Zaženi 'Čarovnik ob prvem zagonu' ob novem zagonu"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Language"
+#~ msgstr "Jezik"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "System default language"
+#~ msgstr "Sistemsko privzet jezik"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Custom language"
+#~ msgstr "Poljuben jezik"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Session store"
+#~ msgstr "Shranjevanje sej"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Remember volume"
+#~ msgstr "Zapomni si glasnost"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Autoplay last channel"
+#~ msgstr "Samodejno prični predvajanje zadnjega programa"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "General Interface Settings"
+#~ msgstr "Splošne nastavitve vmesnika"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Toolbar style:"
+#~ msgstr "Izgled orodnih vrstic:"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Icon only"
+#~ msgstr "Samo ikona"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Text only"
+#~ msgstr "Samo besedilo"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Text beside icon"
+#~ msgstr "Besedilo ob ikoni"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Text under icon"
+#~ msgstr "Besedilo pod ikono"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "System default"
+#~ msgstr "Sistemsko privzeto"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Enable OSD in Fullscreen mode"
+#~ msgstr "Vključi OSD v celozaslonskem načinu"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Mouse wheel function:"
+#~ msgstr "Funkcija miškinega koleščka:"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Change channel"
+#~ msgstr "Spremeni program"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Change volume"
+#~ msgstr "Spremeni glasnost"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Minimise to tray"
+#~ msgstr "Skrij v sistemsko vrstico"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Enable Info OSD in Fullscreen mode"
+#~ msgstr "Vključi Info OSD v celozaslonskem načinu"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Default options for startup"
+#~ msgstr "Privzete nastavitve ob zagonu"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Show splash screen"
+#~ msgstr "Prikaži pozdravni zaslon"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Simple mode"
+#~ msgstr "Enostaven način"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Always on top"
+#~ msgstr "Vedno na vrhu"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Controls enabled"
+#~ msgstr "Vključen upravljalni pult"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Info panel enabled"
+#~ msgstr "Vključen info pult"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Default recording directory"
+#~ msgstr "Privzet imenik snemanja"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Reset"
+#~ msgstr "Obnovi"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "You are using Tano version:"
+#~ msgstr "Uporabljate Tano različice:"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Open directory"
+#~ msgstr "Odpri imenik"
+
+#, fuzzy
 msgctxt "SettingsEdit|"
+msgid "Schedule"
+msgstr "Spored"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Run First run wizard after restart"
 msgstr "Zaženi 'Čarovnik ob prvem zagonu' ob novem zagonu"
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsGeneral|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Language"
 msgstr "Jezik"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "System default language"
 msgstr "Sistemsko privzet jezik"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Custom language"
 msgstr "Poljuben jezik"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Session store"
 msgstr "Shranjevanje sej"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Remember volume"
 msgstr "Zapomni si glasnost"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Autoplay last channel"
 msgstr "Samodejno prični predvajanje zadnjega programa"
 
-msgctxt "SettingsEdit|"
-msgid "General Interface Settings"
-msgstr "Splošne nastavitve vmesnika"
-
-msgctxt "SettingsEdit|"
-msgid "Toolbar style:"
-msgstr "Izgled orodnih vrstic:"
-
-msgctxt "SettingsEdit|"
-msgid "Icon only"
-msgstr "Samo ikona"
-
-msgctxt "SettingsEdit|"
-msgid "Text only"
-msgstr "Samo besedilo"
-
-msgctxt "SettingsEdit|"
-msgid "Text beside icon"
-msgstr "Besedilo ob ikoni"
-
-msgctxt "SettingsEdit|"
-msgid "Text under icon"
-msgstr "Besedilo pod ikono"
-
-msgctxt "SettingsEdit|"
-msgid "System default"
-msgstr "Sistemsko privzeto"
-
-msgctxt "SettingsEdit|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr "Vključi OSD v celozaslonskem načinu"
-
-msgctxt "SettingsEdit|"
-msgid "Mouse wheel function:"
-msgstr "Funkcija miškinega koleščka:"
-
-msgctxt "SettingsEdit|"
-msgid "Change channel"
-msgstr "Spremeni program"
-
-msgctxt "SettingsEdit|"
-msgid "Change volume"
-msgstr "Spremeni glasnost"
-
-msgctxt "SettingsEdit|"
-msgid "Minimise to tray"
-msgstr "Skrij v sistemsko vrstico"
-
-msgctxt "SettingsEdit|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr "Vključi Info OSD v celozaslonskem načinu"
-
-msgctxt "SettingsEdit|"
-msgid "Default options for startup"
-msgstr "Privzete nastavitve ob zagonu"
-
-msgctxt "SettingsEdit|"
-msgid "Show splash screen"
-msgstr "Prikaži pozdravni zaslon"
-
-msgctxt "SettingsEdit|"
-msgid "Simple mode"
-msgstr "Enostaven način"
-
-msgctxt "SettingsEdit|"
-msgid "Always on top"
-msgstr "Vedno na vrhu"
-
-msgctxt "SettingsEdit|"
-msgid "Controls enabled"
-msgstr "Vključen upravljalni pult"
-
-msgctxt "SettingsEdit|"
-msgid "Info panel enabled"
-msgstr "Vključen info pult"
-
-msgctxt "SettingsEdit|"
-msgid "VLC-Qt Backend"
-msgstr "VLC-Qt Hrbtenica"
-
-msgctxt "SettingsEdit|"
-msgid "Curently using VLC-Qt Backend"
-msgstr "Trenutno uporabljaš VLC-Qt hrbtenico"
-
-msgctxt "SettingsEdit|"
-msgid "Version:"
-msgstr "Različica:"
-
-msgctxt "SettingsEdit|"
-msgid "Use global VLC settings (requires restart)"
-msgstr "Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)"
-
-msgctxt "SettingsEdit|"
-msgid "Using Videolan VLC version:"
-msgstr "Videolan VLC različice:"
-
-msgctxt "SettingsEdit|"
-msgid "Remember Video settings between media"
-msgstr "Zapomni si nastavitve slike med preklapljanjem"
-
-msgctxt "SettingsEdit|"
-msgid "Default subtitle language:"
-msgstr "Privzet jezik podnapisov:"
-
-msgctxt "SettingsEdit|"
-msgid "Default audio language:"
-msgstr "Privzet jezik zvoka:"
-
-msgctxt "SettingsEdit|"
-msgid "Disabled"
-msgstr "Onemogočeno"
-
-msgctxt "SettingsEdit|"
-msgid "Other"
-msgstr "Drugo"
-
-msgctxt "SettingsEdit|"
-msgid "UDPXY support"
-msgstr "UDPXY podpora"
-
-msgctxt "SettingsEdit|"
-msgid "Enable UDPXY support"
-msgstr "Vključi podporo UDPXY"
-
-msgctxt "SettingsEdit|"
-msgid "Router IP or name:"
-msgstr "IP ali ime usmerjevalnika:"
-
-msgctxt "SettingsEdit|"
-msgid "Router port:"
-msgstr "Vrata usmerjevalnika:"
-
-#, qt-format
-msgctxt "SettingsEdit|"
-msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
-msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
-
-msgctxt "SettingsEdit|"
-msgid "Default recording directory"
-msgstr "Privzet imenik snemanja"
-
-msgctxt "SettingsEdit|"
-msgid "..."
-msgstr "..."
-
-msgctxt "SettingsEdit|"
-msgid "Reset"
-msgstr "Obnovi"
-
-msgctxt "SettingsEdit|"
+msgctxt "SettingsGeneral|"
 msgid "You are using Tano Editor version:"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr "Uporabljate Tano različice:"
-
-msgctxt "SettingsEdit|"
-msgid "Open directory"
-msgstr "Odpri imenik"
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
@@ -1553,6 +1632,103 @@ msgstr "Odpri seznam programov"
 msgctxt "SettingsPlaylist|"
 msgid "Tano TV channel list files(*.m3u)"
 msgstr "Tano TV seznam programov (*.m3u)"
+
+#, fuzzy
+msgctxt "SettingsRecorder|"
+msgid "Default recording directory"
+msgstr "Privzet imenik snemanja"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "VLC-Qt Backend"
+#~ msgstr "VLC-Qt Hrbtenica"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Curently using VLC-Qt Backend"
+#~ msgstr "Trenutno uporabljaš VLC-Qt hrbtenico"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Version:"
+#~ msgstr "Različica:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Use global VLC settings (requires restart)"
+#~ msgstr "Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Using Videolan VLC version:"
+#~ msgstr "Videolan VLC različice:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Playback"
+#~ msgstr "Predvajanje"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Remember Video settings between media"
+#~ msgstr "Zapomni si nastavitve slike med preklapljanjem"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Default subtitle language:"
+#~ msgstr "Privzet jezik podnapisov:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Default audio language:"
+#~ msgstr "Privzet jezik zvoka:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Disabled"
+#~ msgstr "Onemogočeno"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Other"
+#~ msgstr "Drugo"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "UDPXY support"
+#~ msgstr "UDPXY podpora"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Vključi podporo UDPXY"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Router IP or name:"
+#~ msgstr "IP ali ime usmerjevalnika:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Router port:"
+#~ msgstr "Vrata usmerjevalnika:"
+
+#, qt-format
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV Grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Select desired XMLTV grabber from the list below:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber settings"
+msgstr ""
+
+#, qt-format
+msgctxt "SettingsSchedule|"
+msgid ""
+"Your custom grabber must output to:\n"
+"%1"
+msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Action"
@@ -1670,17 +1846,116 @@ msgctxt "SettingsShortcuts|"
 msgid "Next deinterlace mode"
 msgstr "Naslenje razpletanje"
 
-msgctxt "SettingsShortcuts|"
-msgid "Clear Shortcut"
-msgstr "Počisti bližnjico"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Clear Shortcut"
+#~ msgstr "Počisti bližnjico"
 
-msgctxt "SettingsShortcuts|"
-msgid "Restore defaults"
-msgstr "Obnovi privzeto"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Restore defaults"
+#~ msgstr "Obnovi privzeto"
 
 msgctxt "SettingsShortcuts|"
 msgid "Set"
 msgstr "Nastavi"
+
+msgctxt "SettingsShortcuts|"
+msgid "Defaults"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "General Interface Settings"
+msgstr "Splošne nastavitve vmesnika"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Toolbar style:"
+msgstr "Izgled orodnih vrstic:"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Icon only"
+msgstr "Samo ikona"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Text only"
+msgstr "Samo besedilo"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Text beside icon"
+msgstr "Besedilo ob ikoni"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Text under icon"
+msgstr "Besedilo pod ikono"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "System default"
+msgstr "Sistemsko privzeto"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Enable OSD in Fullscreen mode"
+msgstr "Vključi OSD v celozaslonskem načinu"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Mouse wheel function:"
+msgstr "Funkcija miškinega koleščka:"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Change channel"
+msgstr "Spremeni program"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Change volume"
+msgstr "Spremeni glasnost"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Minimise to tray"
+msgstr "Skrij v sistemsko vrstico"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Enable Info OSD in Fullscreen mode"
+msgstr "Vključi Info OSD v celozaslonskem načinu"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Default options for startup"
+msgstr "Privzete nastavitve ob zagonu"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Show splash screen"
+msgstr "Prikaži pozdravni zaslon"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Simple mode"
+msgstr "Enostaven način"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Always on top"
+msgstr "Vedno na vrhu"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Controls enabled"
+msgstr "Vključen upravljalni pult"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Info panel enabled"
+msgstr "Vključen info pult"
 
 msgctxt "Teletext|"
 msgid "Teletext"

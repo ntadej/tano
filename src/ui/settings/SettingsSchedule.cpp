@@ -16,43 +16,49 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#include "SettingsSchedule.h"
+#include "ui_SettingsSchedule.h"
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
-class Settings;
-class Shortcuts;
-
-namespace Ui
+SettingsSchedule::SettingsSchedule(QWidget *parent)
+    : QWidget(parent),
+      ui(new Ui::SettingsSchedule)
 {
-    class SettingsEdit;
+    ui->setupUi(this);
 }
 
-class SettingsEdit : public QDialog
+SettingsSchedule::~SettingsSchedule()
 {
-Q_OBJECT
-public:
-    SettingsEdit(Shortcuts *s = 0,
-                 QWidget *parent = 0);
-    ~SettingsEdit();
+    delete ui;
+}
 
-protected:
-    void changeEvent(QEvent *e);
+void SettingsSchedule::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+        default:
+            break;
+    }
+}
 
-private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void cancel();
-    void save();
+bool SettingsSchedule::xmltv() const
+{
+    return ui->radioXmltv->isChecked();
+}
 
-private:
-    void read();
+void SettingsSchedule::setXmltv(const bool &enabled)
+{
+    ui->radioXmltv->setChecked(enabled);
+}
 
-    Ui::SettingsEdit *ui;
+QString SettingsSchedule::grabber() const
+{
+    return ui->comboGrabber->currentText();
+}
 
-    Settings *_settings;
-};
+void SettingsSchedule::setGrabber(const QString &grabber)
+{
 
-#endif // TANO_SETTINGSEDIT_H_
+}

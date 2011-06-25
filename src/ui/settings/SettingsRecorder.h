@@ -16,43 +16,31 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#ifndef TANO_SETTINGSRECORDER_H_
+#define TANO_SETTINGSRECORDER_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
-class Settings;
-class Shortcuts;
+#include <QtGui/QWidget>
 
 namespace Ui
 {
-    class SettingsEdit;
+    class SettingsRecorder;
 }
 
-class SettingsEdit : public QDialog
+class SettingsRecorder : public QWidget
 {
 Q_OBJECT
 public:
-    SettingsEdit(Shortcuts *s = 0,
-                 QWidget *parent = 0);
-    ~SettingsEdit();
+    SettingsRecorder(QWidget *parent = 0);
+    ~SettingsRecorder();
+
+    QString directory() const;
+    void setDirectory(const QString &value);
 
 protected:
     void changeEvent(QEvent *e);
 
-private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void cancel();
-    void save();
-
 private:
-    void read();
-
-    Ui::SettingsEdit *ui;
-
-    Settings *_settings;
+    Ui::SettingsRecorder *ui;
 };
 
-#endif // TANO_SETTINGSEDIT_H_
+#endif // TANO_SETTINGSRECORDER_H_

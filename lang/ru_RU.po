@@ -70,6 +70,15 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Проигрыватель"
 
+#, fuzzy
+msgctxt "BrowseDirectory|"
+msgid "Reset"
+msgstr "Сброс"
+
+msgctxt "BrowseDirectory|"
+msgid "Open directory"
+msgstr ""
+
 msgctxt "ConclusionPage|"
 msgid "Complete Wizard"
 msgstr "Завершение работы мастера"
@@ -1260,6 +1269,81 @@ msgctxt "Recorder|"
 msgid "Open directory"
 msgstr ""
 
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "VLC-Qt Backend"
+msgstr "Бэкэнд VLC-Qt"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Curently using VLC-Qt Backend"
+msgstr "Используемый бэкэнд VLC-Qt"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Version:"
+msgstr "Версия:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Use global VLC settings (requires restart)"
+msgstr "Использовать глобальные настройки VLC (необходим рестарт)"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Using Videolan VLC version:"
+msgstr "Используется Videolan VLC версии:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Playback"
+msgstr "Воспроизведение"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Remember Video settings between media"
+msgstr "Сохранять настройки видео между медиа"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Default subtitle language:"
+msgstr "Язык субтитров по умолчанию:"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Default audio language:"
+msgstr "Язык звук. дорожки по умолчанию:"
+
+msgctxt "SettingsBackend|"
+msgid "Disabled"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Other"
+msgstr "Другой"
+
+msgctxt "SettingsBackend|"
+msgid "UDPXY support"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Enable UDPXY support"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Router IP or name:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Router port:"
+msgstr ""
+
+#, qt-format
+msgctxt "SettingsBackend|"
+msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+msgstr ""
+
 msgctxt "SettingsEdit|"
 msgid "Settings"
 msgstr "Настройка"
@@ -1288,202 +1372,183 @@ msgctxt "SettingsEdit|"
 msgid "Shortcuts"
 msgstr "Ярлыки"
 
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Run First run wizard after restart"
+#~ msgstr "Запустить мастер начальной настройки после перезапуска"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Language"
+#~ msgstr "Язык"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "System default language"
+#~ msgstr "Язык системы"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Custom language"
+#~ msgstr "Выбрать язык"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Session store"
+#~ msgstr "Хранить сессию"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Remember volume"
+#~ msgstr "Запомнить громкость"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Autoplay last channel"
+#~ msgstr "Автозапуск последнего канала"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "General Interface Settings"
+#~ msgstr "Общие настройки интерфейса"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Toolbar style:"
+#~ msgstr "Стиль панели инструментов:"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Icon only"
+#~ msgstr "Только значки"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Text only"
+#~ msgstr "Только текст"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Text beside icon"
+#~ msgstr "Текст рядом со значками"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Text under icon"
+#~ msgstr "Текст под значками"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "System default"
+#~ msgstr "Как в системе"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Enable OSD in Fullscreen mode"
+#~ msgstr "Включить OSD в полноэкранном режиме"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Mouse wheel function:"
+#~ msgstr "Колесо мыши:"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Change channel"
+#~ msgstr "Сменить кнаал"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Change volume"
+#~ msgstr "Изменить громкость"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Minimise to tray"
+#~ msgstr "Свернуть в трей"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Default options for startup"
+#~ msgstr "Опции запуска"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Show splash screen"
+#~ msgstr "Показать заставку"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Simple mode"
+#~ msgstr "\"Простой\" режим"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Always on top"
+#~ msgstr "Поверх всех окон"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Controls enabled"
+#~ msgstr "Панель управления вкл."
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Info panel enabled"
+#~ msgstr "Панель информации вкл."
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Default recording directory"
+#~ msgstr "Каталог для записи"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Reset"
+#~ msgstr "Сброс"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "You are using Tano version:"
+#~ msgstr "Вы используете Tano версии:"
+
+#, fuzzy
 msgctxt "SettingsEdit|"
+msgid "Schedule"
+msgstr "Программа"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
 msgid "Run First run wizard after restart"
 msgstr "Запустить мастер начальной настройки после перезапуска"
 
-msgctxt "SettingsEdit|"
-msgid "Language"
-msgstr "Язык"
-
-msgctxt "SettingsEdit|"
-msgid "System default language"
-msgstr "Язык системы"
-
-msgctxt "SettingsEdit|"
-msgid "Custom language"
-msgstr "Выбрать язык"
-
-msgctxt "SettingsEdit|"
-msgid "Session store"
-msgstr "Хранить сессию"
-
-msgctxt "SettingsEdit|"
-msgid "Remember volume"
-msgstr "Запомнить громкость"
-
-msgctxt "SettingsEdit|"
-msgid "Autoplay last channel"
-msgstr "Автозапуск последнего канала"
-
-msgctxt "SettingsEdit|"
-msgid "General Interface Settings"
-msgstr "Общие настройки интерфейса"
-
-msgctxt "SettingsEdit|"
-msgid "Toolbar style:"
-msgstr "Стиль панели инструментов:"
-
-msgctxt "SettingsEdit|"
-msgid "Icon only"
-msgstr "Только значки"
-
-msgctxt "SettingsEdit|"
-msgid "Text only"
-msgstr "Только текст"
-
-msgctxt "SettingsEdit|"
-msgid "Text beside icon"
-msgstr "Текст рядом со значками"
-
-msgctxt "SettingsEdit|"
-msgid "Text under icon"
-msgstr "Текст под значками"
-
-msgctxt "SettingsEdit|"
-msgid "System default"
-msgstr "Как в системе"
-
-msgctxt "SettingsEdit|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr "Включить OSD в полноэкранном режиме"
-
-msgctxt "SettingsEdit|"
-msgid "Mouse wheel function:"
-msgstr "Колесо мыши:"
-
-msgctxt "SettingsEdit|"
-msgid "Change channel"
-msgstr "Сменить кнаал"
-
-msgctxt "SettingsEdit|"
-msgid "Change volume"
-msgstr "Изменить громкость"
-
-msgctxt "SettingsEdit|"
-msgid "Minimise to tray"
-msgstr "Свернуть в трей"
-
-msgctxt "SettingsEdit|"
-msgid "Default options for startup"
-msgstr "Опции запуска"
-
-msgctxt "SettingsEdit|"
-msgid "Show splash screen"
-msgstr "Показать заставку"
-
-msgctxt "SettingsEdit|"
-msgid "Simple mode"
-msgstr "\"Простой\" режим"
-
-msgctxt "SettingsEdit|"
-msgid "Always on top"
-msgstr "Поверх всех окон"
-
-msgctxt "SettingsEdit|"
-msgid "Controls enabled"
-msgstr "Панель управления вкл."
-
-msgctxt "SettingsEdit|"
-msgid "Info panel enabled"
-msgstr "Панель информации вкл."
-
-msgctxt "SettingsEdit|"
-msgid "VLC-Qt Backend"
-msgstr "Бэкэнд VLC-Qt"
-
-msgctxt "SettingsEdit|"
-msgid "Curently using VLC-Qt Backend"
-msgstr "Используемый бэкэнд VLC-Qt"
-
-msgctxt "SettingsEdit|"
-msgid "Version:"
-msgstr "Версия:"
-
-msgctxt "SettingsEdit|"
-msgid "Use global VLC settings (requires restart)"
-msgstr "Использовать глобальные настройки VLC (необходим рестарт)"
-
-msgctxt "SettingsEdit|"
-msgid "Using Videolan VLC version:"
-msgstr "Используется Videolan VLC версии:"
-
-msgctxt "SettingsEdit|"
-msgid "Remember Video settings between media"
-msgstr "Сохранять настройки видео между медиа"
-
-msgctxt "SettingsEdit|"
-msgid "Default subtitle language:"
-msgstr "Язык субтитров по умолчанию:"
-
-msgctxt "SettingsEdit|"
-msgid "Disabled"
-msgstr "Откл."
-
-msgctxt "SettingsEdit|"
-msgid "Other"
-msgstr "Другой"
-
-msgctxt "SettingsEdit|"
-msgid "Default recording directory"
-msgstr "Каталог для записи"
-
-msgctxt "SettingsEdit|"
-msgid "..."
-msgstr "..."
-
-msgctxt "SettingsEdit|"
-msgid "Reset"
-msgstr "Сброс"
-
-msgctxt "SettingsEdit|"
-msgid "You are using Tano version:"
-msgstr "Вы используете Tano версии:"
-
-msgctxt "SettingsEdit|"
-msgid "Default audio language:"
-msgstr "Язык звук. дорожки по умолчанию:"
-
-msgctxt "SettingsEdit|"
-msgid "Open directory"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "UDPXY support"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Enable UDPXY support"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Router IP or name:"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Router port:"
-msgstr ""
-
-#, qt-format
-msgctxt "SettingsEdit|"
-msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
-msgstr ""
-
-msgctxt "SettingsEdit|"
+msgctxt "SettingsGeneral|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Language"
+msgstr "Язык"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "System default language"
+msgstr "Язык системы"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Custom language"
+msgstr "Выбрать язык"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Session store"
+msgstr "Хранить сессию"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Remember volume"
+msgstr "Запомнить громкость"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Autoplay last channel"
+msgstr "Автозапуск последнего канала"
+
+msgctxt "SettingsGeneral|"
 msgid "You are using Tano Editor version:"
 msgstr ""
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "You are using Tano version:"
+msgstr "Вы используете Tano версии:"
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
@@ -1554,6 +1619,78 @@ msgstr ""
 
 msgctxt "SettingsPlaylist|"
 msgid "Open channel list"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsRecorder|"
+msgid "Default recording directory"
+msgstr "Каталог для записи"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "VLC-Qt Backend"
+#~ msgstr "Бэкэнд VLC-Qt"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Curently using VLC-Qt Backend"
+#~ msgstr "Используемый бэкэнд VLC-Qt"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Version:"
+#~ msgstr "Версия:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Use global VLC settings (requires restart)"
+#~ msgstr "Использовать глобальные настройки VLC (необходим рестарт)"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Using Videolan VLC version:"
+#~ msgstr "Используется Videolan VLC версии:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Playback"
+#~ msgstr "Воспроизведение"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Remember Video settings between media"
+#~ msgstr "Сохранять настройки видео между медиа"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Default subtitle language:"
+#~ msgstr "Язык субтитров по умолчанию:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Default audio language:"
+#~ msgstr "Язык звук. дорожки по умолчанию:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Other"
+#~ msgstr "Другой"
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV Grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Select desired XMLTV grabber from the list below:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber settings"
+msgstr ""
+
+#, qt-format
+msgctxt "SettingsSchedule|"
+msgid ""
+"Your custom grabber must output to:\n"
+"%1"
 msgstr ""
 
 msgctxt "SettingsShortcuts|"
@@ -1660,13 +1797,13 @@ msgctxt "SettingsShortcuts|"
 msgid "Next deinterlace mode"
 msgstr "След. режим устранения чересстрочности"
 
-msgctxt "SettingsShortcuts|"
-msgid "Clear Shortcut"
-msgstr "Очистить ярлык"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Clear Shortcut"
+#~ msgstr "Очистить ярлык"
 
-msgctxt "SettingsShortcuts|"
-msgid "Restore defaults"
-msgstr "Восстановить параметры по умолчанию"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Restore defaults"
+#~ msgstr "Восстановить параметры по умолчанию"
 
 msgctxt "SettingsShortcuts|"
 msgid "Set"
@@ -1683,6 +1820,104 @@ msgstr ""
 msgctxt "SettingsShortcuts|"
 msgid "Teletext"
 msgstr ""
+
+msgctxt "SettingsShortcuts|"
+msgid "Defaults"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "General Interface Settings"
+msgstr "Общие настройки интерфейса"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Toolbar style:"
+msgstr "Стиль панели инструментов:"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Icon only"
+msgstr "Только значки"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Text only"
+msgstr "Только текст"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Text beside icon"
+msgstr "Текст рядом со значками"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Text under icon"
+msgstr "Текст под значками"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "System default"
+msgstr "Как в системе"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Enable OSD in Fullscreen mode"
+msgstr "Включить OSD в полноэкранном режиме"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Mouse wheel function:"
+msgstr "Колесо мыши:"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Change channel"
+msgstr "Сменить кнаал"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Change volume"
+msgstr "Изменить громкость"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Minimise to tray"
+msgstr "Свернуть в трей"
+
+msgctxt "SettingsUi|"
+msgid "Enable Info OSD in Fullscreen mode"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Default options for startup"
+msgstr "Опции запуска"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Show splash screen"
+msgstr "Показать заставку"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Simple mode"
+msgstr "\"Простой\" режим"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Always on top"
+msgstr "Поверх всех окон"
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Controls enabled"
+msgstr "Панель управления вкл."
+
+#, fuzzy
+msgctxt "SettingsUi|"
+msgid "Info panel enabled"
+msgstr "Панель информации вкл."
 
 msgctxt "Teletext|"
 msgid "Teletext"

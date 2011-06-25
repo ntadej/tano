@@ -23,29 +23,29 @@
 
 namespace Ui
 {
-	class SettingsPlaylist;
+    class SettingsPlaylist;
 }
 
 class SettingsPlaylist : public QWidget
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	SettingsPlaylist(QWidget *parent = 0);
-	~SettingsPlaylist();
+    SettingsPlaylist(QWidget *parent = 0);
+    ~SettingsPlaylist();
 
-	QString playlist() const;
-	void setPlaylist(const QString &playlist);
+    QString playlist() const;
+    void setPlaylist(const QString &playlist);
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 private slots:
-	void playlistBrowse();
-	void playlistDownload();
-	void playlistReset();
+    void playlistBrowse();
+    void playlistDownload();
+    void playlistReset();
 
 private:
-	Ui::SettingsPlaylist *ui;
+    Ui::SettingsPlaylist *ui;
 };
 
 #endif // TANO_SETTINGSPLAYLIST_H_

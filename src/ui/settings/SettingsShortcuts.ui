@@ -14,13 +14,16 @@
    <property name="margin">
     <number>0</number>
    </property>
-   <item row="0" column="0" colspan="6">
+   <item row="0" column="0" colspan="7">
     <widget class="QTableWidget" name="shortcutsWidget">
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
      </property>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
@@ -145,11 +148,11 @@
        <string notr="true"/>
       </property>
      </row>
-	 <row>
-	  <property name="text">
-	   <string notr="true"/>
-	  </property>
-	 </row>
+     <row>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+     </row>
      <row>
       <property name="text">
        <string notr="true"/>
@@ -268,20 +271,20 @@
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="8" column="0">
-	  <property name="text">
-	   <string>Teletext</string>
-	  </property>
-	  <property name="flags">
-	   <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-	  </property>
-	 </item>
-	 <item row="8" column="1">
-	  <property name="text">
-	   <string notr="true">-</string>
-	  </property>
-	 </item>
-	 <item row="9" column="0">
+     <item row="8" column="0">
+      <property name="text">
+       <string>Teletext</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+      </property>
+     </item>
+     <item row="8" column="1">
+      <property name="text">
+       <string notr="true">-</string>
+      </property>
+     </item>
+     <item row="9" column="0">
       <property name="text">
        <string>Volume up</string>
       </property>
@@ -289,12 +292,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="9" column="1">
+     <item row="9" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="10" column="0">
+     <item row="10" column="0">
       <property name="text">
        <string>Volume down</string>
       </property>
@@ -302,12 +305,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="10" column="1">
+     <item row="10" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="11" column="0">
+     <item row="11" column="0">
       <property name="text">
        <string>Recorder</string>
       </property>
@@ -315,12 +318,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="11" column="1">
+     <item row="11" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="12" column="0">
+     <item row="12" column="0">
       <property name="text">
        <string>Open File</string>
       </property>
@@ -328,12 +331,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="12" column="1">
+     <item row="12" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="13" column="0">
+     <item row="13" column="0">
       <property name="text">
        <string>Open URL</string>
       </property>
@@ -341,12 +344,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="13" column="1">
+     <item row="13" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="14" column="0">
+     <item row="14" column="0">
       <property name="text">
        <string>Open Channel list</string>
       </property>
@@ -354,12 +357,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="14" column="1">
+     <item row="14" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="15" column="0">
+     <item row="15" column="0">
       <property name="text">
        <string>Edit Channel list</string>
       </property>
@@ -367,12 +370,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="15" column="1">
+     <item row="15" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="16" column="0">
+     <item row="16" column="0">
       <property name="text">
        <string>Settings</string>
       </property>
@@ -380,12 +383,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="16" column="1">
+     <item row="16" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="17" column="0">
+     <item row="17" column="0">
       <property name="text">
        <string>Always on top</string>
       </property>
@@ -393,12 +396,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="17" column="1">
+     <item row="17" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="18" column="0">
+     <item row="18" column="0">
       <property name="text">
        <string>Simple Mode</string>
       </property>
@@ -406,12 +409,12 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="18" column="1">
+     <item row="18" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="19" column="0">
+     <item row="19" column="0">
       <property name="text">
        <string>Hide to tray</string>
       </property>
@@ -419,101 +422,84 @@
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
-	 <item row="19" column="1">
+     <item row="19" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="20" column="0">
+     <item row="20" column="0">
       <property name="text">
        <string>Enable Info OSD in Fullscreen mode</string>
       </property>
      </item>
-	 <item row="20" column="1">
+     <item row="20" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="21" column="0">
+     <item row="21" column="0">
       <property name="text">
        <string>Next audio track</string>
       </property>
      </item>
-	 <item row="21" column="1">
+     <item row="21" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="22" column="0">
+     <item row="22" column="0">
       <property name="text">
        <string>Next video track</string>
       </property>
      </item>
-	 <item row="22" column="1">
+     <item row="22" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="23" column="0">
+     <item row="23" column="0">
       <property name="text">
        <string>Next subtitle track</string>
       </property>
      </item>
-	 <item row="23" column="1">
+     <item row="23" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="24" column="0">
+     <item row="24" column="0">
       <property name="text">
        <string>Next aspect ratio mode</string>
       </property>
      </item>
-	 <item row="24" column="1">
+     <item row="24" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="25" column="0">
+     <item row="25" column="0">
       <property name="text">
        <string>Next crop mode</string>
       </property>
      </item>
-	 <item row="25" column="1">
+     <item row="25" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
-	 <item row="26" column="0">
+     <item row="26" column="0">
       <property name="text">
        <string>Next deinterlace mode</string>
       </property>
      </item>
-	 <item row="26" column="1">
+     <item row="26" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
      </item>
     </widget>
    </item>
-   <item row="1" column="2">
-    <widget class="QPushButton" name="buttonClear">
-     <property name="text">
-      <string>Clear Shortcut</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/24x24/clear.png</normaloff>:/icons/24x24/clear.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>24</width>
-       <height>24</height>
-      </size>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="4">
+   <item row="1" column="5">
     <spacer name="shortcutsSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -526,10 +512,10 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="5">
+   <item row="1" column="6">
     <widget class="QPushButton" name="buttonDefaults">
      <property name="text">
-      <string>Restore defaults</string>
+      <string>Defaults</string>
      </property>
      <property name="icon">
       <iconset resource="../../../data/icons.qrc">
@@ -543,7 +529,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
+   <item row="1" column="2">
     <widget class="QPushButton" name="buttonSet">
      <property name="text">
       <string>Set</string>
@@ -564,8 +550,28 @@
     <widget class="QtKeySequenceEdit" name="keyEditor" native="true">
      <property name="minimumSize">
       <size>
-       <width>0</width>
+       <width>150</width>
        <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="buttonClear">
+     <property name="maximumSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../data/icons.qrc">
+       <normaloff>:/icons/24x24/clear.png</normaloff>:/icons/24x24/clear.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
       </size>
      </property>
     </widget>

@@ -33,9 +33,14 @@ SET(Tano_Editor_UIs
     ../src/ui/playlist/PlaylistImportWeb.ui
     ../src/ui/playlist/PlaylistSelect.ui
     ../src/ui/playlist/PlaylistWidget.ui
+    ../src/ui/settings/SettingsBackend.ui
     ../src/ui/settings/SettingsEdit.ui
+    ../src/ui/settings/SettingsGeneral.ui
     ../src/ui/settings/SettingsPlaylist.ui
+    ../src/ui/settings/SettingsRecorder.ui
+    ../src/ui/settings/SettingsSchedule.ui
     ../src/ui/settings/SettingsShortcuts.ui
+    ../src/ui/settings/SettingsUi.ui
 )
 
 # Define the MOC source files used by Tano Editor
@@ -43,6 +48,7 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/core/GetFile.h
     ../src/core/Print.h
     ../src/core/UpdateManager.h
+    ../src/ui/core/BrowseDirectory.h
     ../src/ui/core/License.h
     ../src/ui/core/QtKeySequenceEdit.h
     ../src/ui/dialogs/AboutDialog.h
@@ -54,9 +60,14 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/ui/playlist/PlaylistImportWeb.h
     ../src/ui/playlist/PlaylistSelect.h
     ../src/ui/playlist/PlaylistWidget.h
+    ../src/ui/settings/SettingsBackend.h
     ../src/ui/settings/SettingsEdit.h
+    ../src/ui/settings/SettingsGeneral.h
     ../src/ui/settings/SettingsPlaylist.h
+    ../src/ui/settings/SettingsRecorder.h
+    ../src/ui/settings/SettingsSchedule.h
     ../src/ui/settings/SettingsShortcuts.h
+    ../src/ui/settings/SettingsUi.h
 )
 
 SET(Tano_Editor_Resrcs
@@ -95,6 +106,7 @@ SET(Tano_Editor_Srcs
     ../src/playlist/TvheadendGenerator.cpp
     ../src/playlist/XmltvIdGenerator.cpp
 
+    ../src/ui/core/BrowseDirectory.cpp
     ../src/ui/core/License.cpp
     ../src/ui/core/QtKeySequenceEdit.cpp
     ../src/ui/dialogs/AboutDialog.cpp
@@ -106,9 +118,14 @@ SET(Tano_Editor_Srcs
     ../src/ui/playlist/PlaylistImportWeb.cpp
     ../src/ui/playlist/PlaylistSelect.cpp
     ../src/ui/playlist/PlaylistWidget.cpp
+    ../src/ui/settings/SettingsBackend.cpp
     ../src/ui/settings/SettingsEdit.cpp
+    ../src/ui/settings/SettingsGeneral.cpp
     ../src/ui/settings/SettingsPlaylist.cpp
+    ../src/ui/settings/SettingsRecorder.cpp
+    ../src/ui/settings/SettingsSchedule.cpp
     ../src/ui/settings/SettingsShortcuts.cpp
+    ../src/ui/settings/SettingsUi.cpp
 
     ../src/xml/PlaylistListHandler.cpp
     ../src/xml/TanoHandlerOld.cpp

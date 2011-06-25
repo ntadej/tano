@@ -57,6 +57,17 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
+    <name>BrowseDirectory</name>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished">Сброс</translation>
+    </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConclusionPage</name>
     <message>
         <source>Complete Wizard</source>
@@ -1274,6 +1285,73 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>SettingsBackend</name>
+    <message>
+        <source>VLC-Qt Backend</source>
+        <translation type="unfinished">Бэкэнд VLC-Qt</translation>
+    </message>
+    <message>
+        <source>Curently using VLC-Qt Backend</source>
+        <translation type="unfinished">Используемый бэкэнд VLC-Qt</translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="unfinished">Версия:</translation>
+    </message>
+    <message>
+        <source>Use global VLC settings (requires restart)</source>
+        <translation type="unfinished">Использовать глобальные настройки VLC (необходим рестарт)</translation>
+    </message>
+    <message>
+        <source>Using Videolan VLC version:</source>
+        <translation type="unfinished">Используется Videolan VLC версии:</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="unfinished">Воспроизведение</translation>
+    </message>
+    <message>
+        <source>Remember Video settings between media</source>
+        <translation type="unfinished">Сохранять настройки видео между медиа</translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="unfinished">Язык субтитров по умолчанию:</translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="unfinished">Язык звук. дорожки по умолчанию:</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished">Другой</translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SettingsEdit</name>
     <message>
         <source>Settings</source>
@@ -1305,199 +1383,174 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation>Запустить мастер начальной настройки после перезапуска</translation>
+        <translation type="obsolete">Запустить мастер начальной настройки после перезапуска</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Язык</translation>
+        <translation type="obsolete">Язык</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Язык системы</translation>
+        <translation type="obsolete">Язык системы</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>Выбрать язык</translation>
+        <translation type="obsolete">Выбрать язык</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation>Хранить сессию</translation>
+        <translation type="obsolete">Хранить сессию</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Запомнить громкость</translation>
+        <translation type="obsolete">Запомнить громкость</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Автозапуск последнего канала</translation>
+        <translation type="obsolete">Автозапуск последнего канала</translation>
     </message>
     <message>
         <source>General Interface Settings</source>
-        <translation>Общие настройки интерфейса</translation>
+        <translation type="obsolete">Общие настройки интерфейса</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation>Стиль панели инструментов:</translation>
+        <translation type="obsolete">Стиль панели инструментов:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation>Только значки</translation>
+        <translation type="obsolete">Только значки</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation>Только текст</translation>
+        <translation type="obsolete">Только текст</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation>Текст рядом со значками</translation>
+        <translation type="obsolete">Текст рядом со значками</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation>Текст под значками</translation>
+        <translation type="obsolete">Текст под значками</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation>Как в системе</translation>
+        <translation type="obsolete">Как в системе</translation>
     </message>
     <message>
         <source>Enable OSD in Fullscreen mode</source>
-        <translation>Включить OSD в полноэкранном режиме</translation>
+        <translation type="obsolete">Включить OSD в полноэкранном режиме</translation>
     </message>
     <message>
         <source>Mouse wheel function:</source>
-        <translation>Колесо мыши:</translation>
+        <translation type="obsolete">Колесо мыши:</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation>Сменить кнаал</translation>
+        <translation type="obsolete">Сменить кнаал</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation>Изменить громкость</translation>
+        <translation type="obsolete">Изменить громкость</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation>Свернуть в трей</translation>
+        <translation type="obsolete">Свернуть в трей</translation>
     </message>
     <message>
         <source>Default options for startup</source>
-        <translation>Опции запуска</translation>
+        <translation type="obsolete">Опции запуска</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Показать заставку</translation>
+        <translation type="obsolete">Показать заставку</translation>
     </message>
     <message>
         <source>Simple mode</source>
-        <translation>&quot;Простой&quot; режим</translation>
+        <translation type="obsolete">&quot;Простой&quot; режим</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Поверх всех окон</translation>
+        <translation type="obsolete">Поверх всех окон</translation>
     </message>
     <message>
         <source>Controls enabled</source>
-        <translation>Панель управления вкл.</translation>
+        <translation type="obsolete">Панель управления вкл.</translation>
     </message>
     <message>
         <source>Info panel enabled</source>
-        <translation>Панель информации вкл.</translation>
-    </message>
-    <message>
-        <source>VLC-Qt Backend</source>
-        <translation>Бэкэнд VLC-Qt</translation>
-    </message>
-    <message>
-        <source>Curently using VLC-Qt Backend</source>
-        <translation>Используемый бэкэнд VLC-Qt</translation>
-    </message>
-    <message>
-        <source>Version:</source>
-        <translation>Версия:</translation>
-    </message>
-    <message>
-        <source>Use global VLC settings (requires restart)</source>
-        <translation>Использовать глобальные настройки VLC (необходим рестарт)</translation>
-    </message>
-    <message>
-        <source>Using Videolan VLC version:</source>
-        <translation>Используется Videolan VLC версии:</translation>
-    </message>
-    <message>
-        <source>Remember Video settings between media</source>
-        <translation>Сохранять настройки видео между медиа</translation>
-    </message>
-    <message>
-        <source>Default subtitle language:</source>
-        <translation>Язык субтитров по умолчанию:</translation>
-    </message>
-    <message>
-        <source>Disabled</source>
-        <translation>Откл.</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation>Другой</translation>
+        <translation type="obsolete">Панель информации вкл.</translation>
     </message>
     <message>
         <source>Default recording directory</source>
-        <translation>Каталог для записи</translation>
+        <translation type="obsolete">Каталог для записи</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Сброс</translation>
+        <translation type="obsolete">Сброс</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation>Вы используете Tano версии:</translation>
+        <translation type="obsolete">Вы используете Tano версии:</translation>
     </message>
     <message>
-        <source>Default audio language:</source>
-        <translation>Язык звук. дорожки по умолчанию:</translation>
+        <source>Schedule</source>
+        <translation type="unfinished">Программа</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsGeneral</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
     </message>
     <message>
-        <source>Open directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable Info OSD in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>Run First run wizard after restart</source>
+        <translation type="unfinished">Запустить мастер начальной настройки после перезапуска</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Language</source>
+        <translation type="unfinished">Язык</translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="unfinished">Язык системы</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="unfinished">Выбрать язык</translation>
+    </message>
+    <message>
+        <source>Session store</source>
+        <translation type="unfinished">Хранить сессию</translation>
+    </message>
+    <message>
+        <source>Remember volume</source>
+        <translation type="unfinished">Запомнить громкость</translation>
+    </message>
+    <message>
+        <source>Autoplay last channel</source>
+        <translation type="unfinished">Автозапуск последнего канала</translation>
+    </message>
+    <message>
         <source>You are using Tano Editor version:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using Tano version:</source>
+        <translation type="unfinished">Вы используете Tano версии:</translation>
     </message>
 </context>
 <context>
@@ -1571,6 +1624,81 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsRecorder</name>
+    <message>
+        <source>Default recording directory</source>
+        <translation type="unfinished">Каталог для записи</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSchedule</name>
+    <message>
+        <source>VLC-Qt Backend</source>
+        <translation type="obsolete">Бэкэнд VLC-Qt</translation>
+    </message>
+    <message>
+        <source>Curently using VLC-Qt Backend</source>
+        <translation type="obsolete">Используемый бэкэнд VLC-Qt</translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="obsolete">Версия:</translation>
+    </message>
+    <message>
+        <source>Use global VLC settings (requires restart)</source>
+        <translation type="obsolete">Использовать глобальные настройки VLC (необходим рестарт)</translation>
+    </message>
+    <message>
+        <source>Using Videolan VLC version:</source>
+        <translation type="obsolete">Используется Videolan VLC версии:</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="obsolete">Воспроизведение</translation>
+    </message>
+    <message>
+        <source>Remember Video settings between media</source>
+        <translation type="obsolete">Сохранять настройки видео между медиа</translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="obsolete">Язык субтитров по умолчанию:</translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="obsolete">Язык звук. дорожки по умолчанию:</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="obsolete">Другой</translation>
+    </message>
+    <message>
+        <source>XMLTV Grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select desired XMLTV grabber from the list below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your custom grabber must output to:
+%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1682,11 +1810,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Clear Shortcut</source>
-        <translation>Очистить ярлык</translation>
+        <translation type="obsolete">Очистить ярлык</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Восстановить параметры по умолчанию</translation>
+        <translation type="obsolete">Восстановить параметры по умолчанию</translation>
     </message>
     <message>
         <source>Set</source>
@@ -1703,6 +1831,89 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Teletext</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsUi</name>
+    <message>
+        <source>General Interface Settings</source>
+        <translation type="unfinished">Общие настройки интерфейса</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished">Стиль панели инструментов:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished">Только значки</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished">Только текст</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished">Текст рядом со значками</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished">Текст под значками</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished">Как в системе</translation>
+    </message>
+    <message>
+        <source>Enable OSD in Fullscreen mode</source>
+        <translation type="unfinished">Включить OSD в полноэкранном режиме</translation>
+    </message>
+    <message>
+        <source>Mouse wheel function:</source>
+        <translation type="unfinished">Колесо мыши:</translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="unfinished">Сменить кнаал</translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="unfinished">Изменить громкость</translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="unfinished">Свернуть в трей</translation>
+    </message>
+    <message>
+        <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default options for startup</source>
+        <translation type="unfinished">Опции запуска</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished">Показать заставку</translation>
+    </message>
+    <message>
+        <source>Simple mode</source>
+        <translation type="unfinished">&quot;Простой&quot; режим</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Поверх всех окон</translation>
+    </message>
+    <message>
+        <source>Controls enabled</source>
+        <translation type="unfinished">Панель управления вкл.</translation>
+    </message>
+    <message>
+        <source>Info panel enabled</source>
+        <translation type="unfinished">Панель информации вкл.</translation>
     </message>
 </context>
 <context>

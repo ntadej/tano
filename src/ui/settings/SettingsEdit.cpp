@@ -16,21 +16,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDir>
-#include <QtGui/QFileDialog>
-
 #include "SettingsEdit.h"
 #include "ui_SettingsEdit.h"
 
 #include "Config.h"
-#include "core/Common.h"
-#include "core/LocaleManager.h"
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
-
-#if WITH_EDITOR_VLCQT
-    #include <vlc-qt/Instance.h>
-#endif
 
 SettingsEdit::SettingsEdit(Shortcuts *s,
                            QWidget *parent)
@@ -38,28 +29,9 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
       ui(new Ui::SettingsEdit)
 {
     ui->setupUi(this);
-    createActions();
 
     _settings = new Settings(this);
 
-#if EDITOR
-    ui->labelVersion->setText(tr("You are using Tano Editor version:") + " <b>" + Tano::version() + "</b>");
-#else
-    ui->labelVersion->setText(tr("You are using Tano version:") + " <b>" + Tano::version() + "</b>");
-    ui->shortcutsWidget->setShortcuts(s);
-#endif
-
- #if WITH_EDITOR_VLCQT
-    ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " <b>" + VlcInstance::libVersion() + "</b>");
-    ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " <b>" + VlcInstance::version() + "</b>");
-#else
-    ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " /");
-    ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " /");
-    ui->vlcGlobalCheck->setDisabled(true);
-#endif
-    ui->labelUdpxyInfo->setText(ui->labelUdpxyInfo->text().arg("</i>udp://@232.4.1.1:5002<i>", "</i>http://router:port/udp/232.4.1.1:5002<i>"));
-
-    loadLocale();
     read();
 
 #if EDITOR
@@ -67,11 +39,12 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
     ui->setttingsListWidget->item(2)->setHidden(true);
     ui->setttingsListWidget->item(4)->setHidden(true);
     ui->setttingsListWidget->item(5)->setHidden(true);
-
-    ui->wizardCheck->hide();
-    ui->sessionBox->hide();
-    ui->playbackBox->hide();
+    ui->setttingsListWidget->item(6)->setHidden(true);
+#else
+    ui->shortcuts->setShortcuts(s);
 #endif
+
+    connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 }
 
 SettingsEdit::~SettingsEdit()
@@ -92,14 +65,6 @@ void SettingsEdit::changeEvent(QEvent *e)
     }
 }
 
-void SettingsEdit::createActions()
-{
-    connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
-
-    connect(ui->buttonBrowseRecorder, SIGNAL(clicked()), this, SLOT(recorderDirectoryBrowse()));
-    connect(ui->buttonResetRecorder, SIGNAL(clicked()), this, SLOT(recorderDirectoryReset()));
-}
-
 void SettingsEdit::action(QAbstractButton *button)
 {
     switch(ui->buttonBox->standardButton(button)) {
@@ -117,53 +82,49 @@ void SettingsEdit::action(QAbstractButton *button)
 void SettingsEdit::apply()
 {
     // General
-    _settings->setConfigured(!ui->wizardCheck->isChecked());
-    _settings->setSessionVolume(ui->sessionVolumeCheck->isChecked());
-    _settings->setSessionAutoplay(ui->sessionAutoplayCheck->isChecked());
-    if(ui->customLanguageRadio->isChecked())
-        _settings->setLanguage(_locale[ui->languageComboBox->currentIndex()]);
-    else
-        _settings->setLanguage("");
+    _settings->setConfigured(!ui->general->wizard());
+    _settings->setSessionVolume(ui->general->sessionVolume());
+    _settings->setSessionAutoplay(ui->general->sessionAutoplay());
+    _settings->setLanguage(ui->general->language());
 
     // Channels
-    _settings->setPlaylist(ui->widgetSelectPlaylist->playlist());
+    _settings->setPlaylist(ui->channels->playlist());
 
     // GUI
-    _settings->setOsd(ui->osdCheck->isChecked());
-    _settings->setPlaylistOsd(ui->playlistOsdCheck->isChecked());
-    _settings->setHideToTray(ui->trayCheck->isChecked());
-    if(ui->radioWheelVolume->isChecked())
-        _settings->setMouseWheel("volume");
-    else if(ui->radioWheelChannel->isChecked())
-        _settings->setMouseWheel("channel");
-    _settings->setToolbarLook(ui->toolbarLookComboBox->currentIndex());
-    _settings->setSplash(ui->checkSplash->isChecked());
-    _settings->setStartOnTop(ui->checkTop->isChecked());
-    _settings->setStartLite(ui->checkLite->isChecked());
-    _settings->setStartControls(ui->checkControls->isChecked());
-    _settings->setStartInfo(ui->checkInfo->isChecked());
+    _settings->setOsd(ui->gui->osd());
+    _settings->setOsdPlaylist(ui->gui->osdPlaylist());
+    _settings->setHideToTray(ui->gui->tray());
+    _settings->setMouseWheel(ui->gui->wheel());
+    _settings->setToolbarLook(ui->gui->toolbar());
+    _settings->setSplash(ui->gui->splash());
+    _settings->setStartLite(ui->gui->lite());
+    _settings->setStartOnTop(ui->gui->top());
+    _settings->setStartControls(ui->gui->controls());
+    _settings->setStartInfo(ui->gui->info());
 
     // Playback
-    _settings->setGlobalSettings(ui->vlcGlobalCheck->isChecked());
-    _settings->setRememberVideoSettings(ui->checkVideoSettings->isChecked());
-    _settings->setAudioLanguage(ui->comboAudio->currentText());
-    _settings->setSubtitleLanguage(ui->comboSub->currentText());
-    _settings->setUdpxy(ui->checkUdpxy->isChecked());
-    _settings->setUdpxyUrl(ui->udpxyUrl->text());
-    _settings->setUdpxyPort(ui->udpxyPort->value());
+    _settings->setGlobalSettings(ui->backend->globalSettings());
+    _settings->setRememberVideoSettings(ui->backend->rememberChannelSettings());
+    _settings->setAudioLanguage(ui->backend->audio());
+    _settings->setSubtitleLanguage(ui->backend->sub());
+    _settings->setUdpxy(ui->backend->udpxy());
+    _settings->setUdpxyUrl(ui->backend->udpxyUrl());
+    _settings->setUdpxyPort(ui->backend->udpxyPort());
+
+    // Schedule
+    _settings->setXmltv(ui->schedule->xmltv());
+    _settings->setGrabber(ui->schedule->grabber());
 
     // Recorder
-    _settings->setRecorderDirectory(ui->recorderDirectoryLineEdit->text());
+    _settings->setRecorderDirectory(ui->recorder->directory());
 
     _settings->writeSettings();
 
-    ui->shortcutsWidget->shortcutWrite();
-}
-
-void SettingsEdit::save()
-{
-    apply();
-    hide();
+    // Shortcuts
+#if EDITOR
+#else
+    ui->shortcuts->shortcutWrite();
+#endif
 }
 
 void SettingsEdit::cancel()
@@ -174,86 +135,45 @@ void SettingsEdit::cancel()
 void SettingsEdit::read()
 {
     // General
-    ui->wizardCheck->setChecked(!_settings->configured());
-    ui->sessionVolumeCheck->setChecked(_settings->sessionVolume());
-    ui->sessionAutoplayCheck->setChecked(_settings->sessionAutoplay());
-    if(_settings->language() != "") {
-        ui->customLanguageRadio->setChecked(true);
-        for(int i = 0; i < _locale.size(); i++) {
-            if(_settings->language() == _locale[i]) {
-                ui->languageComboBox->setCurrentIndex(i);
-            }
-        }
-    }
+    ui->general->setWizard(!_settings->configured());
+    ui->general->setSessionVolume(_settings->sessionVolume());
+    ui->general->setSessionAutoplay(_settings->sessionAutoplay());
+    ui->general->setLanguage(_settings->language());
 
     // Channels
-    ui->widgetSelectPlaylist->setPlaylist(_settings->playlist());
+    ui->channels->setPlaylist(_settings->playlist());
 
     // GUI
-    ui->osdCheck->setChecked(_settings->osd());
-    ui->playlistOsdCheck->setChecked(_settings->playlistOsd());
-    ui->trayCheck->setChecked(_settings->hideToTray());
-    if(_settings->mouseWheel() == "volume")
-        ui->radioWheelVolume->setChecked(true);
-    else if(_settings->mouseWheel() == "channel")
-        ui->radioWheelChannel->setChecked(true);
-    ui->toolbarLookComboBox->setCurrentIndex(_settings->toolbarLook());
-    ui->checkSplash->setChecked(_settings->splash());
-    ui->checkTop->setChecked(_settings->startOnTop());
-    ui->checkLite->setChecked(_settings->startLite());
-    ui->checkControls->setChecked(_settings->startControls());
-    ui->checkInfo->setChecked(_settings->startInfo());
+    ui->gui->setOsd(_settings->osd());
+    ui->gui->setOsdPlaylist(_settings->osdPlaylist());
+    ui->gui->setTray(_settings->hideToTray());
+    ui->gui->setWheel(_settings->mouseWheel());
+    ui->gui->setToolbar(_settings->toolbarLook());
+    ui->gui->setSplash(_settings->splash());
+    ui->gui->setLite(_settings->startLite());
+    ui->gui->setTop(_settings->startOnTop());
+    ui->gui->setControls(_settings->startControls());
+    ui->gui->setInfo(_settings->startInfo());
 
     // Playback
-    ui->vlcGlobalCheck->setChecked(_settings->globalSettings());
-    ui->checkVideoSettings->setChecked(_settings->rememberVideoSettings());
-    for(int i = 0; i < ui->comboAudio->count(); i++) {
-        if(ui->comboAudio->itemText(i) == _settings->audioLanguage()) {
-            ui->comboAudio->setCurrentIndex(i);
-            break;
-        } else if(i == ui->comboAudio->count() - 1) {
-            ui->comboAudio->setItemText(i, _settings->audioLanguage());
-            ui->comboAudio->setCurrentIndex(i);
-        }
-    }
-    for(int i = 0; i < ui->comboSub->count(); i++) {
-        if(ui->comboSub->itemText(i) == _settings->subtitleLanguage()) {
-            ui->comboSub->setCurrentIndex(i);
-            break;
-        } else if(i == ui->comboSub->count() - 1) {
-            ui->comboSub->setItemText(i, _settings->subtitleLanguage());
-            ui->comboSub->setCurrentIndex(i);
-        }
-    }
-    ui->checkUdpxy->setChecked(_settings->udpxy());
-    ui->udpxyUrl->setText(_settings->udpxyUrl());
-    ui->udpxyPort->setValue(_settings->udpxyPort());
+    ui->backend->setGlobalSettings(_settings->globalSettings());
+    ui->backend->setRememberChannelSettings(_settings->rememberVideoSettings());
+    ui->backend->setAudio(_settings->audioLanguage());
+    ui->backend->setSub(_settings->subtitleLanguage());
+    ui->backend->setUdpxy(_settings->udpxy());
+    ui->backend->setUdpxyUrl(_settings->udpxyUrl());
+    ui->backend->setUdpxyPort(_settings->udpxyPort());
+
+    // Schedule
+    ui->schedule->setXmltv(_settings->xmltv());
+    ui->schedule->setGrabber(_settings->grabber());
 
     // Recorder
-    ui->recorderDirectoryLineEdit->setText(_settings->recorderDirectory());
+    ui->recorder->setDirectory(_settings->recorderDirectory());
 }
 
-void SettingsEdit::recorderDirectoryReset()
+void SettingsEdit::save()
 {
-    ui->recorderDirectoryLineEdit->setText(Settings::DEFAULT_RECORDER_DIRECTORY);
-}
-
-void SettingsEdit::recorderDirectoryBrowse()
-{
-    QString dir;
-    if(ui->recorderDirectoryLineEdit->text().isEmpty())
-        dir = QDir::homePath();
-    else
-        dir = ui->recorderDirectoryLineEdit->text();
-    QString file = QFileDialog::getExistingDirectory(this, tr("Open directory"),
-                                                    dir, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-    ui->recorderDirectoryLineEdit->setText(file);
-}
-
-void SettingsEdit::loadLocale()
-{
-    _locale = LocaleManager::loadTranslations();
-
-    for(int i = 0; i < _locale.size(); i++)
-        ui->languageComboBox->addItem(LocaleManager::language(_locale[i]));
+    apply();
+    hide();
 }

@@ -36,7 +36,7 @@ const bool Settings::DEFAULT_START_CONTROLS = true;
 const bool Settings::DEFAULT_START_INFO = true;
 // GUI
 const bool Settings::DEFAULT_OSD = true;
-const bool Settings::DEFAULT_PLAYLIST_OSD = false;
+const bool Settings::DEFAULT_OSD_PLAYLIST = false;
 const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
 const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
 const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonFollowStyle;
@@ -53,90 +53,103 @@ const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath();
 // Session
 const int Settings::DEFAULT_CHANNEL = 1;
 const int Settings::DEFAULT_VOLUME = 50;
+// Schedule
+const bool Settings::DEFAULT_XMLTV = true;
+const QString Settings::DEFAULT_GRABBER = "";
 
 Settings::Settings(QObject *parent)
-	: QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Main", parent)
+    : QSettings(QSettings::IniFormat,
+                QSettings::UserScope,
+                "Tano",
+                "Main",
+                parent)
 {
-	readSettings();
+    readSettings();
 }
 
 Settings::~Settings() { }
 
 QString Settings::path() const
 {
-	return fileName().replace("Main.ini", "");
+    return fileName().replace("Main.ini", "");
 }
 
 void Settings::writeSettings()
 {
-	setValue("general/version", configurationVersion());
-	setValue("general/configured", configured());
-	setValue("general/sessionvolume", sessionVolume());
-	setValue("general/sessionplay", sessionAutoplay());
-	setValue("general/language", language());
+    setValue("general/version", configurationVersion());
+    setValue("general/configured", configured());
+    setValue("general/sessionvolume", sessionVolume());
+    setValue("general/sessionplay", sessionAutoplay());
+    setValue("general/language", language());
 
-	setValue("session/channel", channel());
-	setValue("session/volume", volume());
+    setValue("channels/playlist", playlist());
 
-	setValue("channels/playlist", playlist());
+    setValue("start/splash", splash());
+    setValue("start/lite", startLite());
+    setValue("start/ontop", startOnTop());
+    setValue("start/controls", startControls());
+    setValue("start/info", startInfo());
 
-	setValue("start/splash", splash());
-	setValue("start/lite", startLite());
-	setValue("start/ontop", startOnTop());
-	setValue("start/controls", startControls());
-	setValue("start/info", startInfo());
+    setValue("gui/osd", osd());
+    setValue("gui/osdplaylist", osdPlaylist());
+    setValue("gui/hidetotray", hideToTray());
+    setValue("gui/mousewheel", mouseWheel());
+    setValue("gui/toolbarlook", toolbarLook());
 
-	setValue("gui/osd", osd());
-	setValue("gui/playlistosd", playlistOsd());
-	setValue("gui/hidetotray", hideToTray());
-	setValue("gui/mousewheel", mouseWheel());
-	setValue("gui/toolbarlook", toolbarLook());
+    setValue("backend/global", globalSettings());
+    setValue("backend/videosettings", rememberVideoSettings());
+    setValue("backend/audio", audioLanguage());
+    setValue("backend/subtitles", subtitleLanguage());
+    setValue("backend/udpxy", udpxy());
+    setValue("backend/udpxyurl", udpxyUrl());
+    setValue("backend/udpxyport", udpxyPort());
 
-	setValue("backend/global", globalSettings());
-	setValue("backend/videosettings", rememberVideoSettings());
-	setValue("backend/audio", audioLanguage());
-	setValue("backend/subtitles", subtitleLanguage());
-	setValue("backend/udpxy", udpxy());
-	setValue("backend/udpxyurl", udpxyUrl());
-	setValue("backend/udpxyport", udpxyPort());
+    setValue("recorder/directory", recorderDirectory());
 
-	setValue("recorder/directory", recorderDirectory());
+    setValue("session/channel", channel());
+    setValue("session/volume", volume());
 
-	sync();
+    setValue("schedule/xmltv", xmltv());
+    setValue("schedule/grabber", grabber());
+
+    sync();
 }
 
 void Settings::readSettings()
 {
-	setConfigurationVersion(value("general/version", Tano::version()).toString());
-	setConfigured(value("general/configured", DEFAULT_CONFIGURED).toBool());
-	setSessionVolume(value("general/sessionvolume", DEFAULT_SESSION_VOLUME).toBool());
-	setSessionAutoplay(value("general/sessionplay", DEFAULT_SESSION_AUTOPLAY).toBool());
-	setLanguage(value("general/language", DEFAULT_LANGUAGE).toString());
+    setConfigurationVersion(value("general/version", Tano::version()).toString());
+    setConfigured(value("general/configured", DEFAULT_CONFIGURED).toBool());
+    setSessionVolume(value("general/sessionvolume", DEFAULT_SESSION_VOLUME).toBool());
+    setSessionAutoplay(value("general/sessionplay", DEFAULT_SESSION_AUTOPLAY).toBool());
+    setLanguage(value("general/language", DEFAULT_LANGUAGE).toString());
 
-	setPlaylist(value("channels/playlist", DEFAULT_PLAYLIST).toString());
+    setPlaylist(value("channels/playlist", DEFAULT_PLAYLIST).toString());
 
-	setSplash(value("start/splash", DEFAULT_SPLASH).toBool());
-	setStartLite(value("start/lite", DEFAULT_START_LITE).toBool());
-	setStartOnTop(value("start/ontop", DEFAULT_START_ON_TOP).toBool());
-	setStartControls(value("start/controls", DEFAULT_START_CONTROLS).toBool());
-	setStartInfo(value("start/info", DEFAULT_START_INFO).toBool());
+    setSplash(value("start/splash", DEFAULT_SPLASH).toBool());
+    setStartLite(value("start/lite", DEFAULT_START_LITE).toBool());
+    setStartOnTop(value("start/ontop", DEFAULT_START_ON_TOP).toBool());
+    setStartControls(value("start/controls", DEFAULT_START_CONTROLS).toBool());
+    setStartInfo(value("start/info", DEFAULT_START_INFO).toBool());
 
-	setOsd(value("gui/osd", DEFAULT_OSD).toBool());
-	setPlaylistOsd(value("gui/playlistosd", DEFAULT_PLAYLIST_OSD).toBool());
-	setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
-	setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
-	setToolbarLook(value("gui/toolbarlook", DEFAULT_TOOLBAR_LOOK).toInt());
+    setOsd(value("gui/osd", DEFAULT_OSD).toBool());
+    setOsdPlaylist(value("gui/osdplaylist", DEFAULT_OSD_PLAYLIST).toBool());
+    setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
+    setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
+    setToolbarLook(value("gui/toolbarlook", DEFAULT_TOOLBAR_LOOK).toInt());
 
-	setGlobalSettings(value("backend/global", DEFAULT_GLOBAL_SETTINGS).toBool());
-	setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
-	setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
-	setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
-	setUdpxy(value("backend/udpxy", DEFAULT_UDPXY).toBool());
-	setUdpxyUrl(value("backend/udpxyurl", DEFAULT_UDPXY_URL).toString());
-	setUdpxyPort(value("backend/udpxyport", DEFAULT_UDPXY_PORT).toInt());
+    setGlobalSettings(value("backend/global", DEFAULT_GLOBAL_SETTINGS).toBool());
+    setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
+    setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
+    setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
+    setUdpxy(value("backend/udpxy", DEFAULT_UDPXY).toBool());
+    setUdpxyUrl(value("backend/udpxyurl", DEFAULT_UDPXY_URL).toString());
+    setUdpxyPort(value("backend/udpxyport", DEFAULT_UDPXY_PORT).toInt());
 
-	setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
+    setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
 
-	setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());
-	setVolume(value("session/volume", DEFAULT_VOLUME).toInt());
+    setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());
+    setVolume(value("session/volume", DEFAULT_VOLUME).toInt());
+
+    setXmltv(value("schedule/xmltv", DEFAULT_XMLTV).toBool());
+    setGrabber(value("schedule/grabber", DEFAULT_GRABBER).toString());
 }

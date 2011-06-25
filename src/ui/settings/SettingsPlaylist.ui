@@ -2,18 +2,6 @@
 <ui version="4.0">
  <class>SettingsPlaylist</class>
  <widget class="QWidget" name="SettingsPlaylist">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>400</width>
-    <height>400</height>
-   </rect>
-  </property>
-  <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/video.png</normaloff>:/icons/48x48/video.png</iconset>
-  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
     <number>0</number>

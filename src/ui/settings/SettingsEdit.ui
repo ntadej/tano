@@ -7,8 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>550</height>
+    <height>640</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>640</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Settings</string>
@@ -118,14 +124,14 @@
      </item>
      <item>
       <property name="text">
-       <string>Shortcuts</string>
+       <string>Schedule</string>
       </property>
       <property name="textAlignment">
        <set>AlignHCenter|AlignVCenter|AlignCenter</set>
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/48x48/shortcuts.png</normaloff>:/icons/48x48/shortcuts.png</iconset>
+        <normaloff>:/icons/48x48/calendar.png</normaloff>:/icons/48x48/calendar.png</iconset>
       </property>
      </item>
      <item>
@@ -138,6 +144,18 @@
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
         <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Shortcuts</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../data/icons.qrc">
+        <normaloff>:/icons/48x48/shortcuts.png</normaloff>:/icons/48x48/shortcuts.png</iconset>
       </property>
      </item>
     </widget>
@@ -157,131 +175,13 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="pageMain">
+     <widget class="QWidget" name="pageGeneral">
       <layout class="QVBoxLayout" name="layoutMain">
        <item>
-        <widget class="QGroupBox" name="tanoBox">
-         <property name="title">
-          <string>Tano</string>
-         </property>
-         <layout class="QGridLayout" name="layoutTanoBox">
-          <item row="0" column="0">
-           <widget class="QLabel" name="labelVersion">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QCheckBox" name="wizardCheck">
-            <property name="text">
-             <string>Run First run wizard after restart</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1" rowspan="3">
-           <widget class="QLabel" name="labelLogo">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../../data/logo.qrc">:/logo/64x64/logo.png</pixmap>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <spacer name="tanoBoxSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="3" column="0" colspan="2">
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
+        <widget class="SettingsGeneral" name="general" native="true"/>
        </item>
        <item>
-        <widget class="QGroupBox" name="langBox">
-         <property name="title">
-          <string>Language</string>
-         </property>
-         <layout class="QVBoxLayout" name="layoutLangBox">
-          <item>
-           <widget class="QRadioButton" name="defaultLanguageRadio">
-            <property name="text">
-             <string>System default language</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="customLanguageRadio">
-            <property name="text">
-             <string>Custom language</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="languageComboBox">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>25</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="sessionBox">
-         <property name="title">
-          <string>Session store</string>
-         </property>
-         <layout class="QVBoxLayout" name="layoutSessionBox">
-          <item>
-           <widget class="QCheckBox" name="sessionVolumeCheck">
-            <property name="text">
-             <string>Remember volume</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="sessionAutoplayCheck">
-            <property name="text">
-             <string>Autoplay last channel</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="generalSpacer">
+        <spacer name="spacerGeneral">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -298,10 +198,10 @@
      <widget class="QWidget" name="pageChannels">
       <layout class="QVBoxLayout" name="layoutChannels">
        <item>
-        <widget class="SettingsPlaylist" name="widgetSelectPlaylist" native="true"/>
+        <widget class="SettingsPlaylist" name="channels" native="true"/>
        </item>
        <item>
-        <spacer name="channelsSpacer">
+        <spacer name="spacerChannels">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -315,159 +215,13 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="pageInterface">
+     <widget class="QWidget" name="pageGui">
       <layout class="QVBoxLayout" name="layoutInterface">
        <item>
-        <widget class="QGroupBox" name="mainGuiBox">
-         <property name="title">
-          <string>General Interface Settings</string>
-         </property>
-         <layout class="QGridLayout" name="layoutMainGuiBox">
-          <item row="4" column="0">
-           <widget class="QLabel" name="labelToolbarStyle">
-            <property name="text">
-             <string>Toolbar style:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1" colspan="2">
-           <widget class="QComboBox" name="toolbarLookComboBox">
-            <property name="currentIndex">
-             <number>4</number>
-            </property>
-            <item>
-             <property name="text">
-              <string>Icon only</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Text only</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Text beside icon</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Text under icon</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>System default</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="0" column="0" colspan="3">
-           <widget class="QCheckBox" name="osdCheck">
-            <property name="text">
-             <string>Enable OSD in Fullscreen mode</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="labelMouseWheel">
-            <property name="text">
-             <string>Mouse wheel function:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QRadioButton" name="radioWheelChannel">
-            <property name="text">
-             <string>Change channel</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2">
-           <widget class="QRadioButton" name="radioWheelVolume">
-            <property name="text">
-             <string>Change volume</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0" colspan="3">
-           <widget class="QCheckBox" name="trayCheck">
-            <property name="text">
-             <string>Minimise to tray</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="3">
-           <widget class="QCheckBox" name="playlistOsdCheck">
-            <property name="text">
-             <string>Enable Info OSD in Fullscreen mode</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
+        <widget class="SettingsUi" name="gui" native="true"/>
        </item>
        <item>
-        <widget class="QGroupBox" name="startupGuiBox">
-         <property name="title">
-          <string>Default options for startup</string>
-         </property>
-         <layout class="QVBoxLayout" name="layoutStartupGuiBox">
-          <item>
-           <widget class="QCheckBox" name="checkSplash">
-            <property name="text">
-             <string>Show splash screen</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkLite">
-            <property name="text">
-             <string>Simple mode</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkTop">
-            <property name="text">
-             <string>Always on top</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkControls">
-            <property name="text">
-             <string>Controls enabled</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkInfo">
-            <property name="text">
-             <string>Info panel enabled</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="guiSpacer">
+        <spacer name="spacerGui">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -481,315 +235,13 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="pagePlayback">
+     <widget class="QWidget" name="pageBackend">
       <layout class="QVBoxLayout" name="layoutPlayback">
        <item>
-        <widget class="QGroupBox" name="vlcqtBox">
-         <property name="title">
-          <string>VLC-Qt Backend</string>
-         </property>
-         <layout class="QGridLayout" name="layoutVlcqtBox">
-          <item row="0" column="0">
-           <widget class="QLabel" name="labelVlcqt">
-            <property name="text">
-             <string>Curently using VLC-Qt Backend</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="labelVlcqtVersion">
-            <property name="text">
-             <string>Version:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QCheckBox" name="vlcGlobalCheck">
-            <property name="text">
-             <string>Use global VLC settings (requires restart)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1" rowspan="5">
-           <widget class="QLabel" name="labelVlcqtIcon">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../../data/icons.qrc">:/icons/48x48/vlc-qt.png</pixmap>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="labelVlcVersion">
-            <property name="text">
-             <string>Using Videolan VLC version:</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
+        <widget class="SettingsBackend" name="backend" native="true"/>
        </item>
        <item>
-        <widget class="QGroupBox" name="playbackBox">
-         <property name="title">
-          <string>Playback</string>
-         </property>
-         <layout class="QGridLayout" name="layoutPlaybackBox">
-          <item row="0" column="0" colspan="2">
-           <widget class="QCheckBox" name="checkVideoSettings">
-            <property name="text">
-             <string>Remember Video settings between media</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="labelLSub">
-            <property name="text">
-             <string>Default subtitle language:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="labelLAudio">
-            <property name="text">
-             <string>Default audio language:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QComboBox" name="comboSub">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <item>
-             <property name="text">
-              <string>Disabled</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">English</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">Slovenščina / Slovenian </string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">Deutsch / German</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">Hrvatski / Croatian</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Other</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QComboBox" name="comboAudio">
-            <property name="editable">
-             <bool>true</bool>
-            </property>
-            <item>
-             <property name="text">
-              <string>Disabled</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">English</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">Slovenščina / Slovenian </string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">Deutsch / German</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string notr="true">Hrvatski / Croatian</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Other</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="udpxyBox">
-         <property name="title">
-          <string>UDPXY support</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0" colspan="2">
-           <widget class="QCheckBox" name="checkUdpxy">
-            <property name="text">
-             <string>Enable UDPXY support</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="udpxyUrl">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QSpinBox" name="udpxyPort">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="maximum">
-             <number>9999</number>
-            </property>
-            <property name="value">
-             <number>1234</number>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="labelUdpxyUrl">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>Router IP or name:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="labelUdpxyPort">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>Router port:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0" colspan="2">
-           <widget class="QLabel" name="labelUdpxyInfo">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</string>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="playbackSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>320</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="pageShortcuts">
-      <layout class="QVBoxLayout" name="layoutShortcuts">
-       <item>
-        <widget class="SettingsShortcuts" name="shortcutsWidget" native="true"/>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="pageRecorder">
-      <layout class="QVBoxLayout" name="layoutRecorder">
-       <item>
-        <widget class="QGroupBox" name="defaultDirBox">
-         <property name="title">
-          <string>Default recording directory</string>
-         </property>
-         <layout class="QHBoxLayout" name="layoutDefaultDirBox">
-          <item>
-           <widget class="QLineEdit" name="recorderDirectoryLineEdit">
-            <property name="text">
-             <string/>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="buttonBrowseRecorder">
-            <property name="text">
-             <string>...</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="buttonResetRecorder">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>25</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Reset</string>
-            </property>
-            <property name="icon">
-             <iconset resource="../../../data/icons.qrc">
-              <normaloff>:/icons/24x24/refresh.png</normaloff>:/icons/24x24/refresh.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>24</width>
-              <height>24</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer name="recorderSpacer">
+        <spacer name="spacerBackend">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -800,6 +252,53 @@
           </size>
          </property>
         </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageSchedule">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="SettingsSchedule" name="schedule" native="true"/>
+       </item>
+       <item>
+        <spacer name="spacerSchedule">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageRecorder">
+      <layout class="QVBoxLayout" name="layoutRecorder">
+       <item>
+        <widget class="SettingsRecorder" name="recorder" native="true"/>
+       </item>
+       <item>
+        <spacer name="spacerRecorder">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageShortcuts">
+      <layout class="QVBoxLayout" name="layoutShortcuts">
+       <item>
+        <widget class="SettingsShortcuts" name="shortcuts" native="true"/>
        </item>
       </layout>
      </widget>
@@ -820,10 +319,39 @@
    <header>ui/settings/SettingsShortcuts.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>SettingsBackend</class>
+   <extends>QWidget</extends>
+   <header>ui/settings/SettingsBackend.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsUi</class>
+   <extends>QWidget</extends>
+   <header>ui/settings/SettingsUi.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsGeneral</class>
+   <extends>QWidget</extends>
+   <header>ui/settings/SettingsGeneral.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsRecorder</class>
+   <extends>QWidget</extends>
+   <header>ui/settings/SettingsRecorder.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsSchedule</class>
+   <extends>QWidget</extends>
+   <header>ui/settings/SettingsSchedule.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <resources>
   <include location="../../../data/icons.qrc"/>
-  <include location="../../../data/logo.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -839,134 +367,6 @@
     <hint type="destinationlabel">
      <x>402</x>
      <y>328</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>customLanguageRadio</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>languageComboBox</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>388</x>
-     <y>225</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>477</x>
-     <y>255</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>osdCheck</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>playlistOsdCheck</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>196</x>
-     <y>39</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>196</x>
-     <y>35</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>osdCheck</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>playlistOsdCheck</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>196</x>
-     <y>39</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>196</x>
-     <y>35</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkUdpxy</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>labelUdpxyUrl</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>224</x>
-     <y>306</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>315</x>
-     <y>330</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkUdpxy</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>labelUdpxyPort</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>272</x>
-     <y>302</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>251</x>
-     <y>365</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkUdpxy</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>labelUdpxyInfo</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>458</x>
-     <y>310</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>401</x>
-     <y>391</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkUdpxy</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>udpxyUrl</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>500</x>
-     <y>308</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>506</x>
-     <y>333</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkUdpxy</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>udpxyPort</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>573</x>
-     <y>305</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>578</x>
-     <y>358</y>
     </hint>
    </hints>
   </connection>

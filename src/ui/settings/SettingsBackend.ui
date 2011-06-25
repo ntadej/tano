@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsBackend</class>
+ <widget class="QWidget" name="SettingsBackend">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>393</width>
+    <height>392</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBackend">
+     <property name="title">
+      <string>VLC-Qt Backend</string>
+     </property>
+     <layout class="QGridLayout" name="layoutVlcqtBox">
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelVlcqt">
+        <property name="text">
+         <string>Curently using VLC-Qt Backend</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelVlcqtVersion">
+        <property name="text">
+         <string>Version:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="checkGlobal">
+        <property name="text">
+         <string>Use global VLC settings (requires restart)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" rowspan="5">
+       <widget class="QLabel" name="labelVlcqtIcon">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../../../data/icons.qrc">:/icons/48x48/vlc-qt.png</pixmap>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelVlcVersion">
+        <property name="text">
+         <string>Using Videolan VLC version:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupPlayback">
+     <property name="title">
+      <string>Playback</string>
+     </property>
+     <layout class="QGridLayout" name="layoutPlaybackBox">
+      <item row="0" column="0" colspan="2">
+       <widget class="QCheckBox" name="checkVideoSettings">
+        <property name="text">
+         <string>Remember Video settings between media</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelSub">
+        <property name="text">
+         <string>Default subtitle language:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelAudio">
+        <property name="text">
+         <string>Default audio language:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="comboSub">
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>Disabled</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">English</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">Slovenščina / Slovenian </string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">Deutsch / German</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">Hrvatski / Croatian</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Other</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="comboAudio">
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>Disabled</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">English</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">Slovenščina / Slovenian </string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">Deutsch / German</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string notr="true">Hrvatski / Croatian</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Other</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupUdpxy">
+     <property name="title">
+      <string>UDPXY support</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0" colspan="2">
+       <widget class="QCheckBox" name="checkUdpxy">
+        <property name="text">
+         <string>Enable UDPXY support</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="editUdpxyUrl">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSpinBox" name="editUdpxyPort">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="maximum">
+         <number>9999</number>
+        </property>
+        <property name="value">
+         <number>1234</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelUdpxyUrl">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Router IP or name:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelUdpxyPort">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Router port:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QLabel" name="labelUdpxyInfo">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../../data/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelUdpxyUrl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>293</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>134</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>editUdpxyUrl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>192</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>314</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelUdpxyPort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>298</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>350</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>editUdpxyPort</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>183</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>282</x>
+     <y>355</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkUdpxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelUdpxyInfo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>257</x>
+     <y>375</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

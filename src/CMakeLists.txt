@@ -46,9 +46,14 @@ SET(Tano_UIs
     ui/playlist/PlaylistWidget.ui
     ui/recorder/Recorder.ui
     ui/recorder/TimersEdit.ui
+    ui/settings/SettingsBackend.ui
     ui/settings/SettingsEdit.ui
+    ui/settings/SettingsGeneral.ui
     ui/settings/SettingsPlaylist.ui
+    ui/settings/SettingsRecorder.ui
+    ui/settings/SettingsSchedule.ui
     ui/settings/SettingsShortcuts.ui
+    ui/settings/SettingsUi.ui
     ui/wizard/ConclusionPage.ui
     ui/wizard/IntroPage.ui
     ui/wizard/PlaylistPage.ui
@@ -61,8 +66,10 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     core/GetFile.h
     core/Print.h
     core/UpdateManager.h
+    epg/XmltvController.h
     epg/XmltvManager.h
     ui/MainWindow.h
+    ui/core/BrowseDirectory.h
     ui/core/CurrentTime.h
     ui/core/InfoBar.h
     ui/core/License.h
@@ -93,9 +100,14 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/recorder/Recorder.h
     ui/recorder/RecorderController.h
     ui/recorder/TimersEdit.h
+    ui/settings/SettingsBackend.h
     ui/settings/SettingsEdit.h
+    ui/settings/SettingsGeneral.h
     ui/settings/SettingsPlaylist.h
+    ui/settings/SettingsRecorder.h
+    ui/settings/SettingsSchedule.h
     ui/settings/SettingsShortcuts.h
+    ui/settings/SettingsUi.h
     ui/wizard/ConclusionPage.h
     ui/wizard/FirstRunWizard.h
     ui/wizard/IntroPage.h
@@ -137,6 +149,7 @@ SET(Tano_Core_Srcs
 )
 SET(Tano_Epg_Srcs
     epg/XmltvCommon.cpp
+    epg/XmltvController.cpp
     epg/XmltvEnums.cpp
     epg/XmltvManager.cpp
 )
@@ -153,6 +166,7 @@ SET(Tano_Playlist_Srcs
 )
 SET(Tano_UI_Srcs
     ui/MainWindow.cpp
+    ui/core/BrowseDirectory.cpp
     ui/core/CurrentTime.cpp
     ui/core/InfoBar.cpp
     ui/core/License.cpp
@@ -183,9 +197,14 @@ SET(Tano_UI_Srcs
     ui/recorder/Recorder.cpp
     ui/recorder/RecorderController.cpp
     ui/recorder/TimersEdit.cpp
+    ui/settings/SettingsBackend.cpp
     ui/settings/SettingsEdit.cpp
+    ui/settings/SettingsGeneral.cpp
     ui/settings/SettingsPlaylist.cpp
+    ui/settings/SettingsRecorder.cpp
+    ui/settings/SettingsSchedule.cpp
     ui/settings/SettingsShortcuts.cpp
+    ui/settings/SettingsUi.cpp
     ui/wizard/ConclusionPage.cpp
     ui/wizard/FirstRunWizard.cpp
     ui/wizard/IntroPage.cpp

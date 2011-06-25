@@ -56,6 +56,14 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr ""
 
+msgctxt "BrowseDirectory|"
+msgid "Reset"
+msgstr ""
+
+msgctxt "BrowseDirectory|"
+msgid "Open directory"
+msgstr ""
+
 msgctxt "ConclusionPage|"
 msgid "Complete Wizard"
 msgstr ""
@@ -1211,6 +1219,71 @@ msgctxt "Recorder|"
 msgid "Open directory"
 msgstr ""
 
+msgctxt "SettingsBackend|"
+msgid "VLC-Qt Backend"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Curently using VLC-Qt Backend"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Version:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Use global VLC settings (requires restart)"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Using Videolan VLC version:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Playback"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Remember Video settings between media"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default subtitle language:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default audio language:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Disabled"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Other"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "UDPXY support"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Enable UDPXY support"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Router IP or name:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Router port:"
+msgstr ""
+
+#, qt-format
+msgctxt "SettingsBackend|"
+msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+msgstr ""
+
 msgctxt "SettingsEdit|"
 msgid "Settings"
 msgstr ""
@@ -1240,200 +1313,51 @@ msgid "Shortcuts"
 msgstr ""
 
 msgctxt "SettingsEdit|"
+msgid "Schedule"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsGeneral|"
 msgid "Run First run wizard after restart"
 msgstr ""
 
-msgctxt "SettingsEdit|"
-msgid "Language"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "System default language"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Custom language"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Session store"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Remember volume"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Autoplay last channel"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "General Interface Settings"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Toolbar style:"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Icon only"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Text only"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Text beside icon"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Text under icon"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "System default"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Mouse wheel function:"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Change channel"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Change volume"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Minimise to tray"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Default options for startup"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Show splash screen"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Simple mode"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Always on top"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Controls enabled"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Info panel enabled"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "VLC-Qt Backend"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Curently using VLC-Qt Backend"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Version:"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Use global VLC settings (requires restart)"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Using Videolan VLC version:"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Remember Video settings between media"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Default subtitle language:"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Disabled"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Other"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Default recording directory"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "..."
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Reset"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "You are using Tano version:"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Default audio language:"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Open directory"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "UDPXY support"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Enable UDPXY support"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Router IP or name:"
-msgstr ""
-
-msgctxt "SettingsEdit|"
-msgid "Router port:"
-msgstr ""
-
-#, qt-format
-msgctxt "SettingsEdit|"
-msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
-msgstr ""
-
-msgctxt "SettingsEdit|"
+msgctxt "SettingsGeneral|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsGeneral|"
+msgid "Language"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid "System default language"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid "Custom language"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid "Session store"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid "Remember volume"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid "Autoplay last channel"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
 msgid "You are using Tano Editor version:"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid "You are using Tano version:"
 msgstr ""
 
 msgctxt "SettingsPage|"
@@ -1504,6 +1428,37 @@ msgstr ""
 
 msgctxt "SettingsPlaylist|"
 msgid "Open channel list"
+msgstr ""
+
+msgctxt "SettingsRecorder|"
+msgid "Default recording directory"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV Grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Select desired XMLTV grabber from the list below:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber settings"
+msgstr ""
+
+#, qt-format
+msgctxt "SettingsSchedule|"
+msgid ""
+"Your custom grabber must output to:\n"
+"%1"
 msgstr ""
 
 msgctxt "SettingsShortcuts|"
@@ -1611,14 +1566,6 @@ msgid "Next deinterlace mode"
 msgstr ""
 
 msgctxt "SettingsShortcuts|"
-msgid "Clear Shortcut"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Restore defaults"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
 msgid "Set"
 msgstr ""
 
@@ -1632,6 +1579,86 @@ msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Teletext"
+msgstr ""
+
+msgctxt "SettingsShortcuts|"
+msgid "Defaults"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "General Interface Settings"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Toolbar style:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Icon only"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Text only"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Text beside icon"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Text under icon"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "System default"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Enable OSD in Fullscreen mode"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Mouse wheel function:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Change channel"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Change volume"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Minimise to tray"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Enable Info OSD in Fullscreen mode"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Default options for startup"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Show splash screen"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Simple mode"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Always on top"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Controls enabled"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Info panel enabled"
 msgstr ""
 
 msgctxt "Teletext|"

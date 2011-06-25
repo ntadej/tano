@@ -57,6 +57,17 @@ Vaša različica VLC-Qt: %4
     </message>
 </context>
 <context>
+    <name>BrowseDirectory</name>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished">Obnovi</translation>
+    </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="unfinished">Odpri imenik</translation>
+    </message>
+</context>
+<context>
     <name>ConclusionPage</name>
     <message>
         <source>I agree to the terms of the GNU General Public License</source>
@@ -1280,6 +1291,73 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
 </context>
 <context>
+    <name>SettingsBackend</name>
+    <message>
+        <source>VLC-Qt Backend</source>
+        <translation type="unfinished">VLC-Qt Hrbtenica</translation>
+    </message>
+    <message>
+        <source>Curently using VLC-Qt Backend</source>
+        <translation type="unfinished">Trenutno uporabljaš VLC-Qt hrbtenico</translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="unfinished">Različica:</translation>
+    </message>
+    <message>
+        <source>Use global VLC settings (requires restart)</source>
+        <translation type="unfinished">Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
+    </message>
+    <message>
+        <source>Using Videolan VLC version:</source>
+        <translation type="unfinished">Videolan VLC različice:</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="unfinished">Predvajanje</translation>
+    </message>
+    <message>
+        <source>Remember Video settings between media</source>
+        <translation type="unfinished">Zapomni si nastavitve slike med preklapljanjem</translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="unfinished">Privzet jezik podnapisov:</translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="unfinished">Privzet jezik zvoka:</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished">Onemogočeno</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished">Drugo</translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished">UDPXY podpora</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Vključi podporo UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">IP ali ime usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Vrata usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
+    </message>
+</context>
+<context>
     <name>SettingsEdit</name>
     <message>
         <source>Settings</source>
@@ -1311,11 +1389,146 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation>Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
+        <translation type="obsolete">Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="obsolete">Jezik</translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="obsolete">Sistemsko privzet jezik</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="obsolete">Poljuben jezik</translation>
+    </message>
+    <message>
+        <source>Session store</source>
+        <translation type="obsolete">Shranjevanje sej</translation>
+    </message>
+    <message>
+        <source>Remember volume</source>
+        <translation type="obsolete">Zapomni si glasnost</translation>
+    </message>
+    <message>
+        <source>Autoplay last channel</source>
+        <translation type="obsolete">Samodejno prični predvajanje zadnjega programa</translation>
+    </message>
+    <message>
+        <source>General Interface Settings</source>
+        <translation type="obsolete">Splošne nastavitve vmesnika</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="obsolete">Izgled orodnih vrstic:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="obsolete">Samo ikona</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="obsolete">Samo besedilo</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="obsolete">Besedilo ob ikoni</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="obsolete">Besedilo pod ikono</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="obsolete">Sistemsko privzeto</translation>
+    </message>
+    <message>
+        <source>Enable OSD in Fullscreen mode</source>
+        <translation type="obsolete">Vključi OSD v celozaslonskem načinu</translation>
+    </message>
+    <message>
+        <source>Mouse wheel function:</source>
+        <translation type="obsolete">Funkcija miškinega koleščka:</translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="obsolete">Spremeni program</translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="obsolete">Spremeni glasnost</translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="obsolete">Skrij v sistemsko vrstico</translation>
+    </message>
+    <message>
+        <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="obsolete">Vključi Info OSD v celozaslonskem načinu</translation>
+    </message>
+    <message>
+        <source>Default options for startup</source>
+        <translation type="obsolete">Privzete nastavitve ob zagonu</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="obsolete">Prikaži pozdravni zaslon</translation>
+    </message>
+    <message>
+        <source>Simple mode</source>
+        <translation type="obsolete">Enostaven način</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="obsolete">Vedno na vrhu</translation>
+    </message>
+    <message>
+        <source>Controls enabled</source>
+        <translation type="obsolete">Vključen upravljalni pult</translation>
+    </message>
+    <message>
+        <source>Info panel enabled</source>
+        <translation type="obsolete">Vključen info pult</translation>
+    </message>
+    <message>
+        <source>Default recording directory</source>
+        <translation type="obsolete">Privzet imenik snemanja</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="obsolete">...</translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="obsolete">Obnovi</translation>
+    </message>
+    <message>
+        <source>You are using Tano version:</source>
+        <translation type="obsolete">Uporabljate Tano različice:</translation>
+    </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="obsolete">Odpri imenik</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Spored</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsGeneral</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Run First run wizard after restart</source>
+        <translation type="unfinished">Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
@@ -1323,175 +1536,27 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jezik</translation>
+        <translation type="unfinished">Jezik</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Sistemsko privzet jezik</translation>
+        <translation type="unfinished">Sistemsko privzet jezik</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>Poljuben jezik</translation>
+        <translation type="unfinished">Poljuben jezik</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation>Shranjevanje sej</translation>
+        <translation type="unfinished">Shranjevanje sej</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Zapomni si glasnost</translation>
+        <translation type="unfinished">Zapomni si glasnost</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Samodejno prični predvajanje zadnjega programa</translation>
-    </message>
-    <message>
-        <source>General Interface Settings</source>
-        <translation>Splošne nastavitve vmesnika</translation>
-    </message>
-    <message>
-        <source>Toolbar style:</source>
-        <translation>Izgled orodnih vrstic:</translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation>Samo ikona</translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation>Samo besedilo</translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation>Besedilo ob ikoni</translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation>Besedilo pod ikono</translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation>Sistemsko privzeto</translation>
-    </message>
-    <message>
-        <source>Enable OSD in Fullscreen mode</source>
-        <translation>Vključi OSD v celozaslonskem načinu</translation>
-    </message>
-    <message>
-        <source>Mouse wheel function:</source>
-        <translation>Funkcija miškinega koleščka:</translation>
-    </message>
-    <message>
-        <source>Change channel</source>
-        <translation>Spremeni program</translation>
-    </message>
-    <message>
-        <source>Change volume</source>
-        <translation>Spremeni glasnost</translation>
-    </message>
-    <message>
-        <source>Minimise to tray</source>
-        <translation>Skrij v sistemsko vrstico</translation>
-    </message>
-    <message>
-        <source>Enable Info OSD in Fullscreen mode</source>
-        <translation>Vključi Info OSD v celozaslonskem načinu</translation>
-    </message>
-    <message>
-        <source>Default options for startup</source>
-        <translation>Privzete nastavitve ob zagonu</translation>
-    </message>
-    <message>
-        <source>Show splash screen</source>
-        <translation>Prikaži pozdravni zaslon</translation>
-    </message>
-    <message>
-        <source>Simple mode</source>
-        <translation>Enostaven način</translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation>Vedno na vrhu</translation>
-    </message>
-    <message>
-        <source>Controls enabled</source>
-        <translation>Vključen upravljalni pult</translation>
-    </message>
-    <message>
-        <source>Info panel enabled</source>
-        <translation>Vključen info pult</translation>
-    </message>
-    <message>
-        <source>VLC-Qt Backend</source>
-        <translation>VLC-Qt Hrbtenica</translation>
-    </message>
-    <message>
-        <source>Curently using VLC-Qt Backend</source>
-        <translation>Trenutno uporabljaš VLC-Qt hrbtenico</translation>
-    </message>
-    <message>
-        <source>Version:</source>
-        <translation>Različica:</translation>
-    </message>
-    <message>
-        <source>Use global VLC settings (requires restart)</source>
-        <translation>Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
-    </message>
-    <message>
-        <source>Using Videolan VLC version:</source>
-        <translation>Videolan VLC različice:</translation>
-    </message>
-    <message>
-        <source>Remember Video settings between media</source>
-        <translation>Zapomni si nastavitve slike med preklapljanjem</translation>
-    </message>
-    <message>
-        <source>Default subtitle language:</source>
-        <translation>Privzet jezik podnapisov:</translation>
-    </message>
-    <message>
-        <source>Default audio language:</source>
-        <translation>Privzet jezik zvoka:</translation>
-    </message>
-    <message>
-        <source>Disabled</source>
-        <translation>Onemogočeno</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation>Drugo</translation>
-    </message>
-    <message>
-        <source>UDPXY support</source>
-        <translation>UDPXY podpora</translation>
-    </message>
-    <message>
-        <source>Enable UDPXY support</source>
-        <translation>Vključi podporo UDPXY</translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation>IP ali ime usmerjevalnika:</translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation>Vrata usmerjevalnika:</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>Default recording directory</source>
-        <translation>Privzet imenik snemanja</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation>...</translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation>Obnovi</translation>
+        <translation type="unfinished">Samodejno prični predvajanje zadnjega programa</translation>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
@@ -1499,11 +1564,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation>Uporabljate Tano različice:</translation>
-    </message>
-    <message>
-        <source>Open directory</source>
-        <translation>Odpri imenik</translation>
+        <translation type="unfinished">Uporabljate Tano različice:</translation>
     </message>
 </context>
 <context>
@@ -1578,6 +1639,105 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation>Tano TV seznam programov (*.m3u)</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsRecorder</name>
+    <message>
+        <source>Default recording directory</source>
+        <translation type="unfinished">Privzet imenik snemanja</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSchedule</name>
+    <message>
+        <source>VLC-Qt Backend</source>
+        <translation type="obsolete">VLC-Qt Hrbtenica</translation>
+    </message>
+    <message>
+        <source>Curently using VLC-Qt Backend</source>
+        <translation type="obsolete">Trenutno uporabljaš VLC-Qt hrbtenico</translation>
+    </message>
+    <message>
+        <source>Version:</source>
+        <translation type="obsolete">Različica:</translation>
+    </message>
+    <message>
+        <source>Use global VLC settings (requires restart)</source>
+        <translation type="obsolete">Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
+    </message>
+    <message>
+        <source>Using Videolan VLC version:</source>
+        <translation type="obsolete">Videolan VLC različice:</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="obsolete">Predvajanje</translation>
+    </message>
+    <message>
+        <source>Remember Video settings between media</source>
+        <translation type="obsolete">Zapomni si nastavitve slike med preklapljanjem</translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="obsolete">Privzet jezik podnapisov:</translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="obsolete">Privzet jezik zvoka:</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="obsolete">Onemogočeno</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="obsolete">Drugo</translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="obsolete">UDPXY podpora</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="obsolete">Vključi podporo UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="obsolete">IP ali ime usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="obsolete">Vrata usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>XMLTV Grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select desired XMLTV grabber from the list below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your custom grabber must output to:
+%1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1700,15 +1860,98 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Clear Shortcut</source>
-        <translation>Počisti bližnjico</translation>
+        <translation type="obsolete">Počisti bližnjico</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Obnovi privzeto</translation>
+        <translation type="obsolete">Obnovi privzeto</translation>
     </message>
     <message>
         <source>Set</source>
         <translation>Nastavi</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsUi</name>
+    <message>
+        <source>General Interface Settings</source>
+        <translation type="unfinished">Splošne nastavitve vmesnika</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished">Izgled orodnih vrstic:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished">Samo ikona</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished">Samo besedilo</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished">Besedilo ob ikoni</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished">Besedilo pod ikono</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished">Sistemsko privzeto</translation>
+    </message>
+    <message>
+        <source>Enable OSD in Fullscreen mode</source>
+        <translation type="unfinished">Vključi OSD v celozaslonskem načinu</translation>
+    </message>
+    <message>
+        <source>Mouse wheel function:</source>
+        <translation type="unfinished">Funkcija miškinega koleščka:</translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="unfinished">Spremeni program</translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="unfinished">Spremeni glasnost</translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="unfinished">Skrij v sistemsko vrstico</translation>
+    </message>
+    <message>
+        <source>Enable Info OSD in Fullscreen mode</source>
+        <translation type="unfinished">Vključi Info OSD v celozaslonskem načinu</translation>
+    </message>
+    <message>
+        <source>Default options for startup</source>
+        <translation type="unfinished">Privzete nastavitve ob zagonu</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished">Prikaži pozdravni zaslon</translation>
+    </message>
+    <message>
+        <source>Simple mode</source>
+        <translation type="unfinished">Enostaven način</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Vedno na vrhu</translation>
+    </message>
+    <message>
+        <source>Controls enabled</source>
+        <translation type="unfinished">Vključen upravljalni pult</translation>
+    </message>
+    <message>
+        <source>Info panel enabled</source>
+        <translation type="unfinished">Vključen info pult</translation>
     </message>
 </context>
 <context>

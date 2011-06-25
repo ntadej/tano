@@ -16,43 +16,41 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#include "core/Settings.h"
+#include "SettingsRecorder.h"
+#include "ui_SettingsRecorder.h"
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
-class Settings;
-class Shortcuts;
-
-namespace Ui
+SettingsRecorder::SettingsRecorder(QWidget *parent)
+    : QWidget(parent),
+      ui(new Ui::SettingsRecorder)
 {
-    class SettingsEdit;
+    ui->setupUi(this);
+    ui->edit->setResetValue(Settings::DEFAULT_RECORDER_DIRECTORY);
 }
 
-class SettingsEdit : public QDialog
+SettingsRecorder::~SettingsRecorder()
 {
-Q_OBJECT
-public:
-    SettingsEdit(Shortcuts *s = 0,
-                 QWidget *parent = 0);
-    ~SettingsEdit();
+    delete ui;
+}
 
-protected:
-    void changeEvent(QEvent *e);
+void SettingsRecorder::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+        default:
+            break;
+    }
+}
 
-private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void cancel();
-    void save();
+QString SettingsRecorder::directory() const
+{
+    return ui->edit->value();
+}
 
-private:
-    void read();
-
-    Ui::SettingsEdit *ui;
-
-    Settings *_settings;
-};
-
-#endif // TANO_SETTINGSEDIT_H_
+void SettingsRecorder::setDirectory(const QString &value)
+{
+    ui->edit->setValue(value);
+}

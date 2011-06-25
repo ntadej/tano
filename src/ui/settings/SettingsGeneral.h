@@ -16,43 +16,40 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#ifndef TANO_SETTINGSGENERAL_H_
+#define TANO_SETTINGSGENERAL_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
-class Settings;
-class Shortcuts;
+#include <QtGui/QWidget>
 
 namespace Ui
 {
-    class SettingsEdit;
+    class SettingsGeneral;
 }
 
-class SettingsEdit : public QDialog
+class SettingsGeneral : public QWidget
 {
 Q_OBJECT
 public:
-    SettingsEdit(Shortcuts *s = 0,
-                 QWidget *parent = 0);
-    ~SettingsEdit();
+    SettingsGeneral(QWidget *parent = 0);
+    ~SettingsGeneral();
+
+    bool wizard() const;
+    void setWizard(const bool &enabled);
+    QString language() const;
+    void setLanguage(const QString &language);
+    bool sessionAutoplay() const;
+    void setSessionAutoplay(const bool &enabled);
+    bool sessionVolume() const;
+    void setSessionVolume(const bool &enabled);
 
 protected:
     void changeEvent(QEvent *e);
 
-private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void cancel();
-    void save();
-
 private:
-    void read();
+    Ui::SettingsGeneral *ui;
 
-    Ui::SettingsEdit *ui;
-
-    Settings *_settings;
+    void loadLocale();
+    QStringList _locale;
 };
 
-#endif // TANO_SETTINGSEDIT_H_
+#endif // TANO_SETTINGSGENERAL_H_
