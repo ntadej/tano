@@ -16,6 +16,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
+
+#include <QtCore/QProcess>
+#include <QtCore/QTextCodec>
+#include <QtCore/QTextStream>
+
 #include "core/Settings.h"
 #include "daemon/xmltv/XmltvCore.h"
 
@@ -28,6 +34,22 @@ XmltvCore::XmltvCore(QObject *parent)
 XmltvCore::~XmltvCore()
 {
 
+}
+
+QStringList XmltvCore::grabbers()
+{
+    QProcess p;
+    p.start("tv_find_grabbers");
+    p.waitForFinished(-1);
+
+    QStringList list;
+    QTextStream in(&p);
+    in.setCodec(QTextCodec::codecForName("UTF-8"));
+    while (!in.atEnd()) {
+        list << in.readLine();
+    }
+
+    return list;
 }
 
 void XmltvCore::settings()

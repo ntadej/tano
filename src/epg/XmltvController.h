@@ -16,20 +16,26 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_XMLTVCORE_H_
-#define TANO_XMLTVCORE_H_
+#ifndef TANO_XMLTVCONTROLLER_H_
+#define TANO_XMLTVCONTROLLER_H_
 
-#include <QtCore/QObject>
+#include <QtDBus/QDBusAbstractInterface>
+#include <QtDBus/QDBusConnection>
+#include <QtDBus/QDBusPendingReply>
 
-class XmltvCore : public QObject
+class XmltvController : public QDBusAbstractInterface
 {
 Q_OBJECT
 public:
-    XmltvCore(QObject *parent = 0);
-    ~XmltvCore();
+    XmltvController(QObject *parent = 0);
+    ~XmltvController();
 
+    static const char *staticInterfaceName() { return "si.Tano.Xmltv"; }
+
+public slots:
     QStringList grabbers();
-    void settings();
+
+    void refreshSettings();
 };
 
-#endif // TANO_XMLTVCORE_H_
+#endif // TANO_XMLTVCONTROLLER_H_

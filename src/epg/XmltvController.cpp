@@ -16,20 +16,24 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_XMLTVCORE_H_
-#define TANO_XMLTVCORE_H_
+#include "daemon/DaemonCommon.h"
+#include "epg/XmltvController.h"
 
-#include <QtCore/QObject>
+XmltvController::XmltvController(QObject *parent)
+    : QDBusAbstractInterface(Tano::Daemon::service(),
+                             Tano::Daemon::path(),
+                             staticInterfaceName(),
+                             QDBusConnection::sessionBus(),
+                             parent) { }
+XmltvController::~XmltvController() { }
 
-class XmltvCore : public QObject
+QStringList XmltvController::grabbers()
 {
-Q_OBJECT
-public:
-    XmltvCore(QObject *parent = 0);
-    ~XmltvCore();
+    QDBusPendingReply<QStringList> reply = asyncCall(QLatin1String("grabbers"));
+    return reply.value();
+}
 
-    QStringList grabbers();
-    void settings();
-};
-
-#endif // TANO_XMLTVCORE_H_
+void XmltvController::refreshSettings()
+{
+    asyncCall(QLatin1String("refreshSettings"));
+}

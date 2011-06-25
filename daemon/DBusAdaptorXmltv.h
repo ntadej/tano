@@ -36,7 +36,8 @@ public:
     ~DBusAdaptorXmltv();
 
 public slots:
-    void refreshSettings() const { return _core->settings(); }
+    QStringList grabbers() { return _core->grabbers(); }
+    void refreshSettings() { return _core->settings(); }
 
 private:
     XmltvCore *_core;
