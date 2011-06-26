@@ -70,14 +70,13 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Проигрыватель"
 
-#, fuzzy
-msgctxt "BrowseDirectory|"
-msgid "Reset"
-msgstr "Сброс"
+#~ msgctxt "BrowseDirectory|"
+#~ msgid "Reset"
+#~ msgstr "Сброс"
 
-msgctxt "BrowseDirectory|"
-msgid "Open directory"
-msgstr ""
+#~ msgctxt "BrowseWidget|"
+#~ msgid "Reset"
+#~ msgstr "Сброс"
 
 msgctxt "ConclusionPage|"
 msgid "Complete Wizard"
@@ -132,6 +131,10 @@ msgctxt "EpgShow|"
 msgid "Next"
 msgstr "След."
 
+#~ msgctxt "FileDialogs|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
+
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Мастер начальной настройки"
@@ -155,17 +158,32 @@ msgctxt "GetFile|"
 msgid "Download failed: %1."
 msgstr ""
 
-msgctxt "InfoBar|"
-msgid "Language:"
-msgstr "Язык:"
+#~ msgctxt "InfoBar|"
+#~ msgid "Language:"
+#~ msgstr "Язык:"
 
-msgctxt "InfoBar|"
-msgid "Now:"
-msgstr "Сейчас:"
+#~ msgctxt "InfoBar|"
+#~ msgid "Now:"
+#~ msgstr "Сейчас:"
 
-msgctxt "InfoBar|"
-msgid "Next:"
-msgstr "След.:"
+#~ msgctxt "InfoBar|"
+#~ msgid "Next:"
+#~ msgstr "След.:"
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Language: %1"
+msgstr ""
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Now: %1"
+msgstr ""
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Next: %1"
+msgstr ""
 
 msgctxt "IntroPage|"
 msgid "Welcome"
@@ -1204,6 +1222,19 @@ msgctxt "QObject|"
 msgid "h"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Open directory"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Open channel list"
+msgstr ""
+
+#, fuzzy
+msgctxt "QObject|"
+msgid "Tano TV channel list files(*.m3u)"
+msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Очистить ярлык"
@@ -1220,9 +1251,9 @@ msgctxt "Recorder|"
 msgid "Directory:"
 msgstr "Каталог:"
 
-msgctxt "Recorder|"
-msgid "..."
-msgstr "..."
+#~ msgctxt "Recorder|"
+#~ msgid "..."
+#~ msgstr "..."
 
 msgctxt "Recorder|"
 msgid "Record"
@@ -1264,10 +1295,6 @@ msgstr "Остановить запись"
 msgctxt "Recorder|"
 msgid "No timer - press button to stop."
 msgstr "Таймер не определен - для останова нажмите кнопку"
-
-msgctxt "Recorder|"
-msgid "Open directory"
-msgstr ""
 
 #, fuzzy
 msgctxt "SettingsBackend|"
@@ -1582,13 +1609,13 @@ msgctxt "SettingsPlaylist|"
 msgid "Preset"
 msgstr "Предустановленный"
 
-msgctxt "SettingsPlaylist|"
-msgid "..."
-msgstr "..."
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "..."
+#~ msgstr "..."
 
-msgctxt "SettingsPlaylist|"
-msgid "Reset"
-msgstr "Сброс"
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Reset"
+#~ msgstr "Сброс"
 
 msgctxt "SettingsPlaylist|"
 msgid "Custom"
@@ -1598,10 +1625,9 @@ msgctxt "SettingsPlaylist|"
 msgid "Default channel list"
 msgstr ""
 
-#, fuzzy
-msgctxt "SettingsPlaylist|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
 
 msgctxt "SettingsPlaylist|"
 msgid "Download from web"
@@ -1615,10 +1641,6 @@ msgstr ""
 
 msgctxt "SettingsPlaylist|"
 msgid "Download"
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid "Open channel list"
 msgstr ""
 
 #, fuzzy
@@ -1919,12 +1941,12 @@ msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Панель информации вкл."
 
-msgctxt "Teletext|"
-msgid "Teletext"
+msgctxt "TeletextWidget|"
+msgid "TeletextWidget"
 msgstr ""
 
-msgctxt "Teletext|"
-msgid "Teletext Transparency"
+msgctxt "TeletextWidget|"
+msgid "TeletextWidget Transparency"
 msgstr ""
 
 msgctxt "TimersEdit|"

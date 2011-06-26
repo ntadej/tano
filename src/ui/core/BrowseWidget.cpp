@@ -20,9 +20,9 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QHBoxLayout>
 
-#include "BrowseDirectory.h"
+#include "BrowseWidget.h"
 
-BrowseDirectory::BrowseDirectory(QWidget *parent)
+BrowseWidget::BrowseWidget(QWidget *parent)
     : QWidget(parent),
       _resetValue("")
 {
@@ -30,12 +30,12 @@ BrowseDirectory::BrowseDirectory(QWidget *parent)
     _browse = new QToolButton(this);
     _browse->setText("...");
     _reset = new QPushButton(this);
-    _reset->setText(tr("Reset"));
     _reset->setIconSize(QSize(24, 24));
     _reset->setIcon(QIcon(":/icons/24x24/refresh.png"));
-    _reset->setMaximumHeight(24);
+    _reset->setMaximumSize(24, 24);
 
     QHBoxLayout *layout = new QHBoxLayout;
+    layout->setMargin(0);
     layout->addWidget(_edit);
     layout->addWidget(_browse);
     layout->addWidget(_reset);
@@ -45,39 +45,40 @@ BrowseDirectory::BrowseDirectory(QWidget *parent)
     connect(_reset, SIGNAL(clicked()), this, SLOT(reset()));
 }
 
-BrowseDirectory::~BrowseDirectory()
+BrowseWidget::~BrowseWidget()
 {
     delete _edit;
     delete _browse;
     delete _reset;
 }
 
-void BrowseDirectory::browse()
+void BrowseWidget::browse()
 {
-    QString dir;
+    QString b;
     if(_edit->text().isEmpty())
-        dir = QDir::homePath();
+        b = QDir::homePath();
     else
-        dir = _edit->text();
-    QString file = QFileDialog::getExistingDirectory(this, tr("Open directory"),
-                                                    dir, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+        b = _edit->text();
+
+    QString file = FileDialogs::openByType(_type, b);
+
     if(file.isEmpty())
         return;
 
     _edit->setText(file);
 }
 
-void BrowseDirectory::reset()
+void BrowseWidget::reset()
 {
     _edit->setText(_resetValue);
 }
 
-void BrowseDirectory::setValue(const QString &value)
+void BrowseWidget::setValue(const QString &value)
 {
     _edit->setText(value);
 }
 
-QString BrowseDirectory::value() const
+QString BrowseWidget::value() const
 {
     return _edit->text();
 }

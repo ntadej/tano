@@ -16,32 +16,18 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TELETEXT_H_
-#define TANO_TELETEXT_H_
+#include <QtCore/QFile>
 
-#include <QtGui/QPushButton>
-#include <QtGui/QSpinBox>
-#include <QtGui/QWidget>
+#include "ui/core/LicenseWidget.h"
 
-class Teletext : public QWidget
+LicenseWidget::LicenseWidget(QWidget *parent)
+    : QTextBrowser(parent)
 {
-Q_OBJECT
-public:
-	Teletext(QWidget *parent = 0);
-	~Teletext();
+    QFile file(":/info/LICENSE");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
 
-public slots:
-	void toggleTeletext(const bool &on);
+    setPlainText(QString::fromUtf8(file.readAll()));
+}
 
-private slots:
-	void page(const int &p);
-	void teletext(const bool &on);
-	void teletextTransparency(const bool &on);
-
-private:
-	QPushButton *_button;
-	QPushButton *_buttonTransparency;
-	QSpinBox *_page;
-};
-
-#endif // TANO_TELETEXT_H_
+LicenseWidget::~LicenseWidget() { }

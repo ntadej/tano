@@ -51,17 +51,6 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
-    <name>BrowseDirectory</name>
-    <message>
-        <source>Reset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ConclusionPage</name>
     <message>
         <source>Complete Wizard</source>
@@ -151,17 +140,17 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
-    <name>InfoBar</name>
+    <name>InfoBarWidget</name>
     <message>
-        <source>Language:</source>
+        <source>Language: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Now:</source>
+        <source>Now: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Next:</source>
+        <source>Next: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1201,6 +1190,18 @@ You will lose any unsaved changes.</source>
         <source>h</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1221,10 +1222,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Directory:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1265,10 +1262,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>No timer - press button to stop.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open directory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1459,19 +1452,7 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1488,10 +1469,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1737,13 +1714,13 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>Teletext</name>
+    <name>TeletextWidget</name>
     <message>
-        <source>Teletext</source>
+        <source>TeletextWidget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Teletext Transparency</source>
+        <source>TeletextWidget Transparency</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

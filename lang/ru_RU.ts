@@ -60,11 +60,14 @@ Your VLC-Qt version: %4
     <name>BrowseDirectory</name>
     <message>
         <source>Reset</source>
-        <translation type="unfinished">Сброс</translation>
+        <translation type="obsolete">Сброс</translation>
     </message>
+</context>
+<context>
+    <name>BrowseWidget</name>
     <message>
-        <source>Open directory</source>
-        <translation type="unfinished"></translation>
+        <source>Reset</source>
+        <translation type="obsolete">Сброс</translation>
     </message>
 </context>
 <context>
@@ -134,6 +137,13 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
+    <name>FileDialogs</name>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="obsolete">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
+    </message>
+</context>
+<context>
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
@@ -161,15 +171,30 @@ Your VLC-Qt version: %4
     <name>InfoBar</name>
     <message>
         <source>Language:</source>
-        <translation>Язык:</translation>
+        <translation type="obsolete">Язык:</translation>
     </message>
     <message>
         <source>Now:</source>
-        <translation>Сейчас:</translation>
+        <translation type="obsolete">Сейчас:</translation>
     </message>
     <message>
         <source>Next:</source>
-        <translation>След.:</translation>
+        <translation type="obsolete">След.:</translation>
+    </message>
+</context>
+<context>
+    <name>InfoBarWidget</name>
+    <message>
+        <source>Language: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1213,6 +1238,18 @@ You will lose any unsaved changes.</source>
         <source>h</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1237,7 +1274,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Record</source>
@@ -1278,10 +1315,6 @@ You will lose any unsaved changes.</source>
     <message>
         <source>No timer - press button to stop.</source>
         <translation>Таймер не определен - для останова нажмите кнопку</translation>
-    </message>
-    <message>
-        <source>Open directory</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1592,11 +1625,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Сброс</translation>
+        <translation type="obsolete">Сброс</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -1608,7 +1641,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
+        <translation type="obsolete">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
     <message>
         <source>Download from web</source>
@@ -1620,10 +1653,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1917,13 +1946,13 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>Teletext</name>
+    <name>TeletextWidget</name>
     <message>
-        <source>Teletext</source>
+        <source>TeletextWidget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Teletext Transparency</source>
+        <source>TeletextWidget Transparency</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

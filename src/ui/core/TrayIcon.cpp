@@ -19,75 +19,75 @@
 #include "TrayIcon.h"
 
 TrayIcon::TrayIcon(QMenu *menu,
-				   QObject *parent)
-	: QSystemTrayIcon(parent),
-	_currentlyRecording(""),
-	_currentlyPlaying("")
+                   QObject *parent)
+    : QSystemTrayIcon(parent),
+      _currentlyRecording(""),
+      _currentlyPlaying("")
 {
-	setContextMenu(menu);
-	setIcon(QIcon(":/logo/48x48/logo.png"));
-	setToolTip(tr("Tano"));
+    setContextMenu(menu);
+    setIcon(QIcon(":/logo/48x48/logo.png"));
+    setToolTip(tr("Tano"));
 
-	connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-			this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+    connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+            this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 }
 
 TrayIcon::~TrayIcon() { }
 
 void TrayIcon::iconActivated(const QSystemTrayIcon::ActivationReason reason)
 {
-	switch (reason) {
-	case QSystemTrayIcon::Trigger:
-	case QSystemTrayIcon::DoubleClick:
-		emit restoreClick();
-		break;
-	case QSystemTrayIcon::MiddleClick:
-		break;
-	default:
-		break;
-	}
+    switch (reason) {
+    case QSystemTrayIcon::Trigger:
+    case QSystemTrayIcon::DoubleClick:
+        emit restoreClick();
+        break;
+    case QSystemTrayIcon::MiddleClick:
+        break;
+    default:
+        break;
+    }
 }
 
 void TrayIcon::message(const Tano::Id &type,
-					   const QStringList &arg)
+                       const QStringList &arg)
 {
-	if(arg.size() == 0)
-		return;
+    if(arg.size() == 0)
+        return;
 
-	if(type == Tano::Record) {
-		if(arg.size() == 0) {
-			showMessage(tr("Recorder"), tr("Tano stopped recording").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
-		} else if(arg.size() == 2) {
-			showMessage(tr("Recorder"), tr("Tano is recording %1 to\n%2\nStop manually!").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
-		} else if(arg.size() == 3) {
-			showMessage(tr("Recorder"), tr("Tano is recording %1 to\n%2\nEnd time: %3").arg(arg[0], arg[1], arg[2]), QSystemTrayIcon::Information, 10000);
-		}
-	}
+    if(type == Tano::Record) {
+        if(arg.size() == 0) {
+            showMessage(tr("Recorder"), tr("Tano stopped recording").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
+        } else if(arg.size() == 2) {
+            showMessage(tr("Recorder"), tr("Tano is recording %1 to\n%2\nStop manually!").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
+        } else if(arg.size() == 3) {
+            showMessage(tr("Recorder"), tr("Tano is recording %1 to\n%2\nEnd time: %3").arg(arg[0], arg[1], arg[2]), QSystemTrayIcon::Information, 10000);
+        }
+    }
 }
 
 void TrayIcon::changeToolTip(const Tano::Id &type,
-							 const QString &text)
+                             const QString &text)
 {
-	if(type == Tano::Main) {
-		if(!text.isEmpty()) {
-			_currentlyPlaying = tr("Playing:") + " " + text;
-		} else {
-			_currentlyPlaying = text;
-		}
-	} else if(type == Tano::Record) {
-		if(!text.isEmpty()) {
-			_currentlyRecording = tr("Recording:") + " " + text;
-		} else {
-			_currentlyPlaying = text;
-		}
-	}
+    if(type == Tano::Main) {
+        if(!text.isEmpty()) {
+            _currentlyPlaying = tr("Playing:") + " " + text;
+        } else {
+            _currentlyPlaying = text;
+        }
+    } else if(type == Tano::Record) {
+        if(!text.isEmpty()) {
+            _currentlyRecording = tr("Recording:") + " " + text;
+        } else {
+            _currentlyPlaying = text;
+        }
+    }
 
-	if(_currentlyPlaying.isEmpty() && _currentlyRecording.isEmpty())
-		setToolTip(tr("Tano"));
-	else if(!_currentlyPlaying.isEmpty() && _currentlyRecording.isEmpty())
-		setToolTip(tr("Tano") + "\n" + _currentlyPlaying);
-	else if(_currentlyPlaying.isEmpty() && !_currentlyRecording.isEmpty())
-		setToolTip(tr("Tano") + "\n" + _currentlyRecording);
-	else
-		setToolTip(tr("Tano") + "\n" + _currentlyPlaying + "\n" + _currentlyRecording);
+    if(_currentlyPlaying.isEmpty() && _currentlyRecording.isEmpty())
+        setToolTip(tr("Tano"));
+    else if(!_currentlyPlaying.isEmpty() && _currentlyRecording.isEmpty())
+        setToolTip(tr("Tano") + "\n" + _currentlyPlaying);
+    else if(_currentlyPlaying.isEmpty() && !_currentlyRecording.isEmpty())
+        setToolTip(tr("Tano") + "\n" + _currentlyRecording);
+    else
+        setToolTip(tr("Tano") + "\n" + _currentlyPlaying + "\n" + _currentlyRecording);
 }

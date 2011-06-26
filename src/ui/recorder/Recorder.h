@@ -57,7 +57,6 @@ public slots:
     void stop();
 
 private slots:
-    void fileBrowse();
     void playlist(QTreeWidgetItem* clickedChannel);
     void record(const bool &status);
     void time(const int &time);

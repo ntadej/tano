@@ -16,35 +16,17 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_BROWSEDIRECTORY_H_
-#define TANO_BROWSEDIRECTORY_H_
+#ifndef TANO_LICENSEWIDGET_H_
+#define TANO_LICENSEWIDGET_H_
 
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QToolButton>
-#include <QtGui/QWidget>
+#include <QtGui/QTextBrowser>
 
-class BrowseDirectory : public QWidget
+class LicenseWidget : public QTextBrowser
 {
 Q_OBJECT
 public:
-    BrowseDirectory(QWidget *parent = 0);
-    ~BrowseDirectory();
-
-    void setResetValue(const QString &value) { _resetValue = value; }
-    void setValue(const QString &value);
-    QString value() const;
-
-private slots:
-    void browse();
-    void reset();
-
-private:
-    QString _resetValue;
-
-    QLineEdit *_edit;
-    QPushButton *_reset;
-    QToolButton *_browse;
+    LicenseWidget(QWidget *parent = 0);
+    ~LicenseWidget();
 };
 
-#endif // TANO_BROWSEDIRECTORY_H_
+#endif // TANO_LICENSEWIDGET_H_

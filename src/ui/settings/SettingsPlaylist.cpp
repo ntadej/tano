@@ -21,6 +21,7 @@
 #include "SettingsPlaylist.h"
 #include "ui_SettingsPlaylist.h"
 
+#include "ui/core/FileDialogs.h"
 #include "ui/playlist/PlaylistImportWeb.h"
 #include "ui/playlist/PlaylistSelect.h"
 
@@ -29,11 +30,10 @@ SettingsPlaylist::SettingsPlaylist(QWidget *parent)
     ui(new Ui::SettingsPlaylist)
 {
     ui->setupUi(this);
+    ui->browseCustom->setType(FileDialogs::M3U);
     ui->select->open("playlists/playlists.xml");
 
-    connect(ui->browsePlaylistButton, SIGNAL(clicked()), this, SLOT(playlistBrowse()));
-    connect(ui->downloadButton, SIGNAL(clicked()), this, SLOT(playlistDownload()));
-    connect(ui->resetPlaylistButton, SIGNAL(clicked()), this, SLOT(playlistReset()));
+    connect(ui->buttonDownload, SIGNAL(clicked()), this, SLOT(playlistDownload()));
 }
 
 SettingsPlaylist::~SettingsPlaylist()
@@ -55,8 +55,8 @@ void SettingsPlaylist::changeEvent(QEvent *e)
 
 QString SettingsPlaylist::playlist() const
 {
-    if(ui->customPlaylistRadio->isChecked())
-        return ui->playlistLineEdit->text();
+    if(ui->radioCustom->isChecked())
+        return ui->browseCustom->value();
     else
         return ui->select->playlist();
 }
@@ -64,22 +64,9 @@ QString SettingsPlaylist::playlist() const
 void SettingsPlaylist::setPlaylist(const QString &playlist)
 {
     if(!ui->select->setPlaylist(playlist)) {
-        ui->customPlaylistRadio->setChecked(true);
-        ui->playlistLineEdit->setText(playlist);
+        ui->radioCustom->setChecked(true);
+        ui->browseCustom->setValue(playlist);
     }
-}
-
-void SettingsPlaylist::playlistReset()
-{
-    ui->playlistLineEdit->setText("");
-}
-
-void SettingsPlaylist::playlistBrowse()
-{
-    QString file = QFileDialog::getOpenFileName(this, tr("Open channel list"),
-                                                QDir::homePath(),
-                                                tr("Tano TV channel list files(*.m3u)"));
-    ui->playlistLineEdit->setText(file);
 }
 
 void SettingsPlaylist::playlistDownload()
@@ -90,6 +77,6 @@ void SettingsPlaylist::playlistDownload()
     if(web.playlist().isEmpty())
         return;
 
-    ui->customPlaylistRadio->setChecked(true);
-    ui->playlistLineEdit->setText(web.playlist());
+    ui->radioCustom->setChecked(true);
+    ui->browseCustom->setValue(web.playlist());
 }

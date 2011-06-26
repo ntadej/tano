@@ -22,7 +22,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="License" name="license" native="true"/>
+    <widget class="LicenseWidget" name="license" native="true"/>
    </item>
    <item>
     <widget class="QCheckBox" name="agreeCheckBox">
@@ -35,9 +35,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>License</class>
+   <class>LicenseWidget</class>
    <extends>QWidget</extends>
-   <header>ui/core/License.h</header>
+   <header>ui/core/LicenseWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

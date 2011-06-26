@@ -60,11 +60,18 @@ Vaša različica VLC-Qt: %4
     <name>BrowseDirectory</name>
     <message>
         <source>Reset</source>
-        <translation type="unfinished">Obnovi</translation>
+        <translation type="obsolete">Obnovi</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation type="unfinished">Odpri imenik</translation>
+        <translation type="obsolete">Odpri imenik</translation>
+    </message>
+</context>
+<context>
+    <name>BrowseWidget</name>
+    <message>
+        <source>Reset</source>
+        <translation type="obsolete">Obnovi</translation>
     </message>
 </context>
 <context>
@@ -134,6 +141,21 @@ Vaša različica VLC-Qt: %4
     </message>
 </context>
 <context>
+    <name>FileDialogs</name>
+    <message>
+        <source>Open directory</source>
+        <translation type="obsolete">Odpri imenik</translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="obsolete">Odpri seznam programov</translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="obsolete">Tano TV seznam programov (*.m3u)</translation>
+    </message>
+</context>
+<context>
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
@@ -161,15 +183,30 @@ Vaša različica VLC-Qt: %4
     <name>InfoBar</name>
     <message>
         <source>Language:</source>
-        <translation>Jezik:</translation>
+        <translation type="obsolete">Jezik:</translation>
     </message>
     <message>
         <source>Now:</source>
-        <translation>Trenutno:</translation>
+        <translation type="obsolete">Trenutno:</translation>
     </message>
     <message>
         <source>Next:</source>
-        <translation>Naslednje:</translation>
+        <translation type="obsolete">Naslednje:</translation>
+    </message>
+</context>
+<context>
+    <name>InfoBarWidget</name>
+    <message>
+        <source>Language: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1219,6 +1256,18 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>h</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="unfinished">Odpri imenik</translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="unfinished">Odpri seznam programov</translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished">Tano TV seznam programov (*.m3u)</translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1231,7 +1280,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>Recorder</name>
     <message>
         <source>Open directory</source>
-        <translation>Odpri imenik</translation>
+        <translation type="obsolete">Odpri imenik</translation>
     </message>
     <message>
         <source>No timer - press button to stop.</source>
@@ -1267,7 +1316,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Status</source>
@@ -1610,11 +1659,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Obnovi</translation>
+        <translation type="obsolete">Obnovi</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -1634,11 +1683,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Odpri seznam programov</translation>
+        <translation type="obsolete">Odpri seznam programov</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation>Tano TV seznam programov (*.m3u)</translation>
+        <translation type="obsolete">Tano TV seznam programov (*.m3u)</translation>
     </message>
 </context>
 <context>
@@ -1958,11 +2007,22 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>Teletext</name>
     <message>
         <source>Teletext</source>
-        <translation>Teletekst</translation>
+        <translation type="obsolete">Teletekst</translation>
     </message>
     <message>
         <source>Teletext Transparency</source>
-        <translation>Prosojnost teleteksta</translation>
+        <translation type="obsolete">Prosojnost teleteksta</translation>
+    </message>
+</context>
+<context>
+    <name>TeletextWidget</name>
+    <message>
+        <source>TeletextWidget</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TeletextWidget Transparency</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

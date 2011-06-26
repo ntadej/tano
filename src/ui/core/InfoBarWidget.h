@@ -16,43 +16,47 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Settings.h"
-#include "ui/core/FileDialogs.h"
-#include "SettingsRecorder.h"
-#include "ui_SettingsRecorder.h"
+#ifndef TANO_INFOBARWIDGET_H_
+#define TANO_INFOBARWIDGET_H_
 
-SettingsRecorder::SettingsRecorder(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::SettingsRecorder)
-{
-    ui->setupUi(this);
-    ui->edit->setType(FileDialogs::Directory);
-    ui->edit->setResetValue(Settings::DEFAULT_RECORDER_DIRECTORY);
-}
+#include <QtCore/QTimer>
+#include <QtGui/QLabel>
+#include <QtGui/QScrollArea>
 
-SettingsRecorder::~SettingsRecorder()
-{
-    delete ui;
-}
+class GetFile;
 
-void SettingsRecorder::changeEvent(QEvent *e)
+class InfoBarWidget : public QScrollArea
 {
-    QWidget::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            break;
-        default:
-            break;
-    }
-}
+Q_OBJECT
+public:
+    InfoBarWidget(QWidget *parent = 0);
+    ~InfoBarWidget();
 
-QString SettingsRecorder::directory() const
-{
-    return ui->edit->value();
-}
+public slots:
+    void clear();
+    void setInfo(const QString &channel,
+                 const QString &language);
+    void setEpg(const QString &now,
+                const QString &next);
+    void setLogo(const QString &logo);
 
-void SettingsRecorder::setDirectory(const QString &value)
-{
-    ui->edit->setValue(value);
-}
+signals:
+    void open(const QString);
+
+private slots:
+    void image(const QString &image);
+    void scroll();
+
+private:
+    bool _direction;
+    GetFile *_image;
+    QTimer *_timer;
+
+    QLabel *_labelChannel;
+    QLabel *_labelLanguage;
+    QLabel *_labelLogo;
+    QLabel *_labelNext;
+    QLabel *_labelNow;
+};
+
+#endif // TANO_INFOBARWIDGET_H_

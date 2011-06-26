@@ -16,17 +16,40 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_LICENSE_H_
-#define TANO_LICENSE_H_
+#ifndef TANO_BROWSEWIDGET_H_
+#define TANO_BROWSEWIDGET_H_
 
-#include <QtGui/QTextBrowser>
+#include <QtGui/QLineEdit>
+#include <QtGui/QPushButton>
+#include <QtGui/QToolButton>
+#include <QtGui/QWidget>
 
-class License : public QTextBrowser
+#include "ui/core/FileDialogs.h"
+
+class BrowseWidget : public QWidget
 {
 Q_OBJECT
 public:
-	License(QWidget *parent = 0);
-	~License();
+    BrowseWidget(QWidget *parent = 0);
+    ~BrowseWidget();
+
+    void setResetValue(const QString &value) { _resetValue = value; }
+    void setType(const FileDialogs::Type &type) { _type = type; }
+    void setValue(const QString &value);
+    QString value() const;
+
+private slots:
+    void browse();
+    void reset();
+
+private:
+    QString _resetValue;
+
+    QLineEdit *_edit;
+    QPushButton *_reset;
+    QToolButton *_browse;
+
+    FileDialogs::Type _type;
 };
 
-#endif // TANO_LICENSE_H_
+#endif // TANO_BROWSEWIDGET_H_

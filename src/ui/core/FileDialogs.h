@@ -16,18 +16,24 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QFile>
+#ifndef TANO_FILEDIALOGS_H_
+#define TANO_FILEDIALOGS_H_
 
-#include "ui/core/License.h"
+#include <QtCore/QDir>
+#include <QtCore/QString>
 
-License::License(QWidget *parent)
-	: QTextBrowser(parent)
+namespace FileDialogs
 {
-	QFile file(":/info/LICENSE");
-	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-		return;
+    enum Type
+    {
+        Directory,
+        M3U
+    };
 
-	setPlainText(QString::fromUtf8(file.readAll()));
-}
+    QString openByType(const Type &type,
+                       const QString &arg = "");
+    QString openDirectory(const QString &dir = QDir::homePath());
+    QString openM3U();
+};
 
-License::~License() { }
+#endif // TANO_FILEDIALOGS_H_

@@ -40,9 +40,7 @@ protected:
     void changeEvent(QEvent *e);
 
 private slots:
-    void playlistBrowse();
     void playlistDownload();
-    void playlistReset();
 
 private:
     Ui::SettingsPlaylist *ui;

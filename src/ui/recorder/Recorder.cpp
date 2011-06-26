@@ -24,6 +24,7 @@
 #include "core/Enums.h"
 #include "core/Settings.h"
 #include "core/Udpxy.h"
+#include "ui/core/FileDialogs.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/recorder/RecorderController.h"
 #include "ui/recorder/TimersEdit.h"
@@ -33,14 +34,15 @@
 
 Recorder::Recorder(QWidget *parent)
     : QWidget(parent),
-    ui(new Ui::Recorder),
-    _name(""),
-    _url(""),
-    _editor(0),
-    _actionRecord(0),
-    _trayIcon(0)
+      ui(new Ui::Recorder),
+      _name(""),
+      _url(""),
+      _editor(0),
+      _actionRecord(0),
+      _trayIcon(0)
 {
     ui->setupUi(this);
+    ui->browseDirectory->setType(FileDialogs::Directory);
 
     _controller = new RecorderController(this);
     _daemon = new DaemonManager(this);
@@ -48,7 +50,6 @@ Recorder::Recorder(QWidget *parent)
     _udpxy = new Udpxy();
 
 	//Init
-	connect(ui->buttonBrowse, SIGNAL(clicked()), this, SLOT(fileBrowse()));
 	connect(ui->buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
 
     connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(playlist(QTreeWidgetItem *)));
@@ -81,7 +82,8 @@ void Recorder::changeEvent(QEvent *e)
 void Recorder::createSettings()
 {
     Settings *settings = new Settings(this);
-    ui->fileEdit->setText(settings->recorderDirectory());
+    ui->browseDirectory->setResetValue(settings->recorderDirectory());
+    ui->browseDirectory->setValue(settings->recorderDirectory());
     delete settings;
 
     _controller->refreshSettings();
@@ -106,34 +108,20 @@ void Recorder::playlist(QTreeWidgetItem *clickedChannel)
 	_name = channel->name();
     _url = _udpxy->processUrl(channel->url());
 
-    ui->valueSelected->setText(channel->name());
-}
-
-void Recorder::fileBrowse()
-{
-    QString dir;
-    if(ui->fileEdit->text().isEmpty())
-        dir = QDir::homePath();
-    else
-        dir = ui->fileEdit->text();
-    QString dfile =
-            QFileDialog::getExistingDirectory(this, tr("Open directory"), dir,
-                                              QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-    if(!dfile.isEmpty())
-        ui->fileEdit->setText(dfile);
+    ui->valueSelected->setText("<b>" + channel->name() + "</b>");
 }
 
 void Recorder::record(const bool &status)
 {
     if(status) {
-        if(ui->fileEdit->text().isEmpty()) {
+        if(ui->browseDirectory->value().isEmpty()) {
             ui->buttonRecord->setChecked(false);
             return;
-        } else if(!QDir(ui->fileEdit->text()).exists()) {
+        } else if(!QDir(ui->browseDirectory->value()).exists()) {
             ui->buttonRecord->setChecked(false);
             QMessageBox::critical(this, tr("Recorder"),
                         tr("Cannot write to %1.")
-                        .arg(ui->fileEdit->text()));
+                        .arg(ui->browseDirectory->value()));
             return;
         } else if(ui->valueSelected->text().isEmpty() && !_controller->isTimer()) {
             ui->buttonRecord->setChecked(false);
@@ -143,7 +131,7 @@ void Recorder::record(const bool &status)
         }
 
         if(!_controller->isTimer()) {
-            _controller->record(_name, _url, ui->fileEdit->text());
+            _controller->record(_name, _url, ui->browseDirectory->value());
         }
 
         ui->valueCurrent->setText(_name);
@@ -189,7 +177,7 @@ void Recorder::recordNow(const QString &name,
 	_name = name;
     _url = _udpxy->processUrl(url);
 
-    ui->valueSelected->setText(name);
+    ui->valueSelected->setText("<b>" + name + "</b>");
 
     if(!_controller->isRecording())
         ui->buttonRecord->toggle();

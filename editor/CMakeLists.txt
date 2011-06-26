@@ -48,8 +48,8 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/core/GetFile.h
     ../src/core/Print.h
     ../src/core/UpdateManager.h
-    ../src/ui/core/BrowseDirectory.h
-    ../src/ui/core/License.h
+    ../src/ui/core/BrowseWidget.h
+    ../src/ui/core/LicenseWidget.h
     ../src/ui/core/QtKeySequenceEdit.h
     ../src/ui/dialogs/AboutDialog.h
     ../src/ui/dialogs/PrintDialog.h
@@ -106,8 +106,9 @@ SET(Tano_Editor_Srcs
     ../src/playlist/TvheadendGenerator.cpp
     ../src/playlist/XmltvIdGenerator.cpp
 
-    ../src/ui/core/BrowseDirectory.cpp
-    ../src/ui/core/License.cpp
+    ../src/ui/core/BrowseWidget.cpp
+    ../src/ui/core/FileDialogs.cpp
+    ../src/ui/core/LicenseWidget.cpp
     ../src/ui/core/QtKeySequenceEdit.cpp
     ../src/ui/dialogs/AboutDialog.cpp
     ../src/ui/dialogs/PrintDialog.cpp

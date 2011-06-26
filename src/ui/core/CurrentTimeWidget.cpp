@@ -16,47 +16,35 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_INFOBAR_H_
-#define TANO_INFOBAR_H_
+#include <QtCore/QDateTime>
+#include <QtGui/QHBoxLayout>
 
-#include <QtCore/QTimer>
-#include <QtGui/QLabel>
-#include <QtGui/QScrollArea>
+#include "ui/core/CurrentTimeWidget.h"
 
-class GetFile;
-
-class InfoBar : public QScrollArea
+CurrentTimeWidget::CurrentTimeWidget(QWidget *parent)
+     : QWidget(parent)
 {
-Q_OBJECT
-public:
-	InfoBar(QWidget *parent = 0);
-	~InfoBar();
+     _time = new QLabel(this);
 
-public slots:
-	void clear();
-	void setInfo(const QString &channel,
-				 const QString &language);
-	void setEpg(const QString &now,
-				const QString &next);
-	void setLogo(const QString &logo);
+     QHBoxLayout *layout = new QHBoxLayout;
+     layout->addWidget(_time);
+     layout->setSpacing(0);
+     layout->setMargin(0);
+     setLayout(layout);
 
-signals:
-	void open(const QString);
+     _timer = new QTimer(this);
+     connect(_timer, SIGNAL(timeout()), this, SLOT(updateTime()));
 
-private slots:
-	void image(const QString &image);
-	void scroll();
+     _timer->start(500);
+}
 
-private:
-	bool _direction;
-	GetFile *_image;
-	QTimer *_timer;
+CurrentTimeWidget::~CurrentTimeWidget()
+{
+     delete _time;
+     delete _timer;
+}
 
-	QLabel *_labelChannel;
-	QLabel *_labelLanguage;
-	QLabel *_labelLogo;
-	QLabel *_labelNext;
-	QLabel *_labelNow;
-};
-
-#endif // TANO_INFOBAR_H_
+void CurrentTimeWidget::updateTime()
+{
+     _time->setText("<b>" + QDateTime::currentDateTime().toString("dddd, d.M.yyyy, hh:mm:ss") + "</b>");
+}

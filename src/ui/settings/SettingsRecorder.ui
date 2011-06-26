@@ -21,7 +21,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="BrowseDirectory" name="edit" native="true"/>
+       <widget class="BrowseWidget" name="edit" native="true"/>
       </item>
      </layout>
     </widget>
@@ -30,9 +30,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>BrowseDirectory</class>
+   <class>BrowseWidget</class>
    <extends>QWidget</extends>
-   <header>ui/core/BrowseDirectory.h</header>
+   <header>ui/core/BrowseWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

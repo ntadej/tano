@@ -245,8 +245,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>340</width>
-          <height>299</height>
+          <width>100</width>
+          <height>30</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -268,7 +268,7 @@
       </widget>
      </item>
      <item>
-      <widget class="CurrentTime" name="timeWidget" native="true"/>
+      <widget class="CurrentTimeWidget" name="timeWidget" native="true"/>
      </item>
      <item>
       <widget class="QPushButton" name="buttonUpdate">
@@ -509,7 +509,7 @@
         </widget>
        </item>
        <item>
-        <widget class="Teletext" name="teletextWidget" native="true"/>
+        <widget class="TeletextWidget" name="teletextWidget" native="true"/>
        </item>
        <item>
         <widget class="QPushButton" name="buttonMute">
@@ -555,7 +555,7 @@
       <widget class="VlcSeekWidget" name="seekWidget" native="true"/>
      </item>
      <item>
-      <widget class="InfoBar" name="infoBarWidget" native="true"/>
+      <widget class="InfoBarWidget" name="infoBarWidget" native="true"/>
      </item>
     </layout>
    </widget>
@@ -923,9 +923,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>InfoBar</class>
+   <class>InfoBarWidget</class>
    <extends>QWidget</extends>
-   <header>ui/core/InfoBar.h</header>
+   <header>ui/core/InfoBarWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -945,15 +945,15 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>CurrentTime</class>
+   <class>CurrentTimeWidget</class>
    <extends>QWidget</extends>
-   <header>ui/core/CurrentTime.h</header>
+   <header>ui/core/CurrentTimeWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>Teletext</class>
+   <class>TeletextWidget</class>
    <extends>QWidget</extends>
-   <header>ui/core/Teletext.h</header>
+   <header>ui/core/TeletextWidget.h</header>
    <container>1</container>
    <slots>
     <slot>toggleTeletext(bool)</slot>

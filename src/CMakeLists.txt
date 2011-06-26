@@ -69,12 +69,12 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     epg/XmltvController.h
     epg/XmltvManager.h
     ui/MainWindow.h
-    ui/core/BrowseDirectory.h
-    ui/core/CurrentTime.h
-    ui/core/InfoBar.h
-    ui/core/License.h
+    ui/core/BrowseWidget.h
+    ui/core/CurrentTimeWidget.h
+    ui/core/InfoBarWidget.h
+    ui/core/LicenseWidget.h
     ui/core/QtKeySequenceEdit.h
-    ui/core/Teletext.h
+    ui/core/TeletextWidget.h
     ui/core/TrayIcon.h
     ui/dialogs/AboutDialog.h
     ui/dialogs/DonationDialog.h
@@ -166,12 +166,13 @@ SET(Tano_Playlist_Srcs
 )
 SET(Tano_UI_Srcs
     ui/MainWindow.cpp
-    ui/core/BrowseDirectory.cpp
-    ui/core/CurrentTime.cpp
-    ui/core/InfoBar.cpp
-    ui/core/License.cpp
+    ui/core/BrowseWidget.cpp
+    ui/core/CurrentTimeWidget.cpp
+    ui/core/FileDialogs.cpp
+    ui/core/InfoBarWidget.cpp
+    ui/core/LicenseWidget.cpp
     ui/core/QtKeySequenceEdit.cpp
-    ui/core/Teletext.cpp
+    ui/core/TeletextWidget.cpp
     ui/core/TrayIcon.cpp
     ui/dialogs/AboutDialog.cpp
     ui/dialogs/DonationDialog.cpp

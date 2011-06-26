@@ -16,43 +16,32 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Settings.h"
-#include "ui/core/FileDialogs.h"
-#include "SettingsRecorder.h"
-#include "ui_SettingsRecorder.h"
+#ifndef TANO_TELETEXTWIDGET_H_
+#define TANO_TELETEXTWIDGET_H_
 
-SettingsRecorder::SettingsRecorder(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::SettingsRecorder)
-{
-    ui->setupUi(this);
-    ui->edit->setType(FileDialogs::Directory);
-    ui->edit->setResetValue(Settings::DEFAULT_RECORDER_DIRECTORY);
-}
+#include <QtGui/QPushButton>
+#include <QtGui/QSpinBox>
+#include <QtGui/QWidget>
 
-SettingsRecorder::~SettingsRecorder()
+class TeletextWidget : public QWidget
 {
-    delete ui;
-}
+Q_OBJECT
+public:
+    TeletextWidget(QWidget *parent = 0);
+    ~TeletextWidget();
 
-void SettingsRecorder::changeEvent(QEvent *e)
-{
-    QWidget::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            break;
-        default:
-            break;
-    }
-}
+public slots:
+    void toggleTeletext(const bool &on);
 
-QString SettingsRecorder::directory() const
-{
-    return ui->edit->value();
-}
+private slots:
+    void page(const int &p);
+    void teletext(const bool &on);
+    void teletextTransparency(const bool &on);
 
-void SettingsRecorder::setDirectory(const QString &value)
-{
-    ui->edit->setValue(value);
-}
+private:
+    QPushButton *_button;
+    QPushButton *_buttonTransparency;
+    QSpinBox *_page;
+};
+
+#endif // TANO_TELETEXTWIDGET_H_

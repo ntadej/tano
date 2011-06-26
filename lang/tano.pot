@@ -56,14 +56,6 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr ""
 
-msgctxt "BrowseDirectory|"
-msgid "Reset"
-msgstr ""
-
-msgctxt "BrowseDirectory|"
-msgid "Open directory"
-msgstr ""
-
 msgctxt "ConclusionPage|"
 msgid "Complete Wizard"
 msgstr ""
@@ -135,16 +127,19 @@ msgid ""
 "%2."
 msgstr ""
 
-msgctxt "InfoBar|"
-msgid "Language:"
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Language: %1"
 msgstr ""
 
-msgctxt "InfoBar|"
-msgid "Now:"
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Now: %1"
 msgstr ""
 
-msgctxt "InfoBar|"
-msgid "Next:"
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Next: %1"
 msgstr ""
 
 msgctxt "IntroPage|"
@@ -1154,6 +1149,18 @@ msgctxt "QObject|"
 msgid "h"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Open directory"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Open channel list"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Tano TV channel list files(*.m3u)"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr ""
@@ -1168,10 +1175,6 @@ msgstr ""
 
 msgctxt "Recorder|"
 msgid "Directory:"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "..."
 msgstr ""
 
 msgctxt "Recorder|"
@@ -1213,10 +1216,6 @@ msgstr ""
 
 msgctxt "Recorder|"
 msgid "No timer - press button to stop."
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Open directory"
 msgstr ""
 
 msgctxt "SettingsBackend|"
@@ -1393,19 +1392,7 @@ msgid "Preset"
 msgstr ""
 
 msgctxt "SettingsPlaylist|"
-msgid "..."
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid "Reset"
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
 msgid "Custom"
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid "Tano TV channel list files(*.m3u)"
 msgstr ""
 
 msgctxt "SettingsPlaylist|"
@@ -1424,10 +1411,6 @@ msgstr ""
 
 msgctxt "SettingsPlaylist|"
 msgid "Download"
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid "Open channel list"
 msgstr ""
 
 msgctxt "SettingsRecorder|"
@@ -1661,12 +1644,12 @@ msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr ""
 
-msgctxt "Teletext|"
-msgid "Teletext"
+msgctxt "TeletextWidget|"
+msgid "TeletextWidget"
 msgstr ""
 
-msgctxt "Teletext|"
-msgid "Teletext Transparency"
+msgctxt "TeletextWidget|"
+msgid "TeletextWidget Transparency"
 msgstr ""
 
 msgctxt "TimersEdit|"

@@ -29,25 +29,25 @@ class TrayIcon : public QSystemTrayIcon
 {
 Q_OBJECT
 public:
-	TrayIcon(QMenu *menu,
-			 QObject *parent = 0);
-	~TrayIcon();
+    TrayIcon(QMenu *menu,
+             QObject *parent = 0);
+    ~TrayIcon();
 
 public slots:
-	void message(const Tano::Id &type,
-				 const QStringList &arg);
-	void changeToolTip(const Tano::Id &type,
-					   const QString &text = 0);
+    void message(const Tano::Id &type,
+                 const QStringList &arg);
+    void changeToolTip(const Tano::Id &type,
+                       const QString &text = 0);
 
 signals:
-	void restoreClick();
+    void restoreClick();
 
 private slots:
-	void iconActivated(const QSystemTrayIcon::ActivationReason reason);
+    void iconActivated(const QSystemTrayIcon::ActivationReason reason);
 
 private:
-	QString _currentlyPlaying;
-	QString _currentlyRecording;
+    QString _currentlyPlaying;
+    QString _currentlyRecording;
 };
 
 #endif // TANO_TRAYICON_H_

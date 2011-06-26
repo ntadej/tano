@@ -59,11 +59,18 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>BrowseDirectory</name>
     <message>
         <source>Reset</source>
-        <translation type="unfinished">Nastavit znovu</translation>
+        <translation type="obsolete">Nastavit znovu</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation type="unfinished">Otevřít adresář</translation>
+        <translation type="obsolete">Otevřít adresář</translation>
+    </message>
+</context>
+<context>
+    <name>BrowseWidget</name>
+    <message>
+        <source>Reset</source>
+        <translation type="obsolete">Nastavit znovu</translation>
     </message>
 </context>
 <context>
@@ -133,6 +140,21 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
 </context>
 <context>
+    <name>FileDialogs</name>
+    <message>
+        <source>Open directory</source>
+        <translation type="obsolete">Otevřít adresář</translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="obsolete">Otevřít seznam programů</translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="obsolete">Soubory se seznamy programů Tano TV (*.m3u)</translation>
+    </message>
+</context>
+<context>
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
@@ -160,15 +182,30 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>InfoBar</name>
     <message>
         <source>Language:</source>
-        <translation>Jazyk:</translation>
+        <translation type="obsolete">Jazyk:</translation>
     </message>
     <message>
         <source>Now:</source>
-        <translation>Nyní:</translation>
+        <translation type="obsolete">Nyní:</translation>
     </message>
     <message>
         <source>Next:</source>
-        <translation>Další:</translation>
+        <translation type="obsolete">Další:</translation>
+    </message>
+</context>
+<context>
+    <name>InfoBarWidget</name>
+    <message>
+        <source>Language: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next: %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1214,6 +1251,18 @@ Ztratíte všechny neuložené změny.</translation>
         <source>h</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open directory</source>
+        <translation type="unfinished">Otevřít adresář</translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="unfinished">Otevřít seznam programů</translation>
+    </message>
+    <message>
+        <source>Tano TV channel list files(*.m3u)</source>
+        <translation type="unfinished">Soubory se seznamy programů Tano TV (*.m3u)</translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1238,7 +1287,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Record</source>
@@ -1282,7 +1331,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>Otevřít adresář</translation>
+        <translation type="obsolete">Otevřít adresář</translation>
     </message>
 </context>
 <context>
@@ -1601,11 +1650,11 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Nastavit znovu</translation>
+        <translation type="obsolete">Nastavit znovu</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -1613,7 +1662,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
+        <translation type="obsolete">Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
     <message>
         <source>Default channel list</source>
@@ -1633,7 +1682,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Otevřít seznam programů</translation>
+        <translation type="obsolete">Otevřít seznam programů</translation>
     </message>
 </context>
 <context>
@@ -1953,11 +2002,22 @@ Ztratíte všechny neuložené změny.</translation>
     <name>Teletext</name>
     <message>
         <source>Teletext</source>
-        <translation>Teletext</translation>
+        <translation type="obsolete">Teletext</translation>
     </message>
     <message>
         <source>Teletext Transparency</source>
-        <translation>Průhlednost teletextu</translation>
+        <translation type="obsolete">Průhlednost teletextu</translation>
+    </message>
+</context>
+<context>
+    <name>TeletextWidget</name>
+    <message>
+        <source>TeletextWidget</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TeletextWidget Transparency</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

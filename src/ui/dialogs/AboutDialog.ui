@@ -283,7 +283,7 @@ p, li { white-space: pre-wrap; }
       </attribute>
       <layout class="QGridLayout" name="gridLayout_5">
        <item row="0" column="0">
-        <widget class="License" name="widgetLicense" native="true"/>
+        <widget class="LicenseWidget" name="widgetLicense" native="true"/>
        </item>
       </layout>
      </widget>
@@ -303,9 +303,9 @@ p, li { white-space: pre-wrap; }
  </widget>
  <customwidgets>
   <customwidget>
-   <class>License</class>
+   <class>LicenseWidget</class>
    <extends>QWidget</extends>
-   <header>ui/core/License.h</header>
+   <header>ui/core/LicenseWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

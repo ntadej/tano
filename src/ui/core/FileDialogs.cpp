@@ -16,43 +16,31 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Settings.h"
-#include "ui/core/FileDialogs.h"
-#include "SettingsRecorder.h"
-#include "ui_SettingsRecorder.h"
+#include <QtCore/QObject>
+#include <QtGui/QFileDialog>
 
-SettingsRecorder::SettingsRecorder(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::SettingsRecorder)
+#include "FileDialogs.h"
+
+QString FileDialogs::openByType(const Type &type,
+                                const QString &arg)
 {
-    ui->setupUi(this);
-    ui->edit->setType(FileDialogs::Directory);
-    ui->edit->setResetValue(Settings::DEFAULT_RECORDER_DIRECTORY);
+    if(type == Directory)
+        return openDirectory(arg);
+    else if(type == M3U)
+        return openM3U();
 }
 
-SettingsRecorder::~SettingsRecorder()
+QString FileDialogs::openDirectory(const QString &dir)
 {
-    delete ui;
+    QString file = QFileDialog::getExistingDirectory(0, QObject::tr("Open directory"),
+                                                    dir, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    return file;
 }
 
-void SettingsRecorder::changeEvent(QEvent *e)
+QString FileDialogs::openM3U()
 {
-    QWidget::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            break;
-        default:
-            break;
-    }
-}
-
-QString SettingsRecorder::directory() const
-{
-    return ui->edit->value();
-}
-
-void SettingsRecorder::setDirectory(const QString &value)
-{
-    ui->edit->setValue(value);
+    QString file = QFileDialog::getOpenFileName(0, QObject::tr("Open channel list"),
+                                                QDir::homePath(),
+                                                QObject::tr("Tano TV channel list files(*.m3u)"));
+    return file;
 }

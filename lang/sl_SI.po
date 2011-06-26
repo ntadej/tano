@@ -68,15 +68,17 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Predvajalnik"
 
-#, fuzzy
-msgctxt "BrowseDirectory|"
-msgid "Reset"
-msgstr "Obnovi"
+#~ msgctxt "BrowseDirectory|"
+#~ msgid "Reset"
+#~ msgstr "Obnovi"
 
-#, fuzzy
-msgctxt "BrowseDirectory|"
-msgid "Open directory"
-msgstr "Odpri imenik"
+#~ msgctxt "BrowseDirectory|"
+#~ msgid "Open directory"
+#~ msgstr "Odpri imenik"
+
+#~ msgctxt "BrowseWidget|"
+#~ msgid "Reset"
+#~ msgstr "Obnovi"
 
 msgctxt "ConclusionPage|"
 msgid "I agree to the terms of the GNU General Public License"
@@ -134,6 +136,18 @@ msgctxt "EpgShow|"
 msgid "Next"
 msgstr "Naslednja oddaja"
 
+#~ msgctxt "FileDialogs|"
+#~ msgid "Open directory"
+#~ msgstr "Odpri imenik"
+
+#~ msgctxt "FileDialogs|"
+#~ msgid "Open channel list"
+#~ msgstr "Odpri seznam programov"
+
+#~ msgctxt "FileDialogs|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Tano TV seznam programov (*.m3u)"
+
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Čarovnik ob prvem zagonu"
@@ -156,17 +170,32 @@ msgctxt "GetFile|"
 msgid "Download failed: %1."
 msgstr "Prenos ni uspel: %1."
 
-msgctxt "InfoBar|"
-msgid "Language:"
-msgstr "Jezik:"
+#~ msgctxt "InfoBar|"
+#~ msgid "Language:"
+#~ msgstr "Jezik:"
 
-msgctxt "InfoBar|"
-msgid "Now:"
-msgstr "Trenutno:"
+#~ msgctxt "InfoBar|"
+#~ msgid "Now:"
+#~ msgstr "Trenutno:"
 
-msgctxt "InfoBar|"
-msgid "Next:"
-msgstr "Naslednje:"
+#~ msgctxt "InfoBar|"
+#~ msgid "Next:"
+#~ msgstr "Naslednje:"
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Language: %1"
+msgstr ""
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Now: %1"
+msgstr ""
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Next: %1"
+msgstr ""
 
 msgctxt "IntroPage|"
 msgid "Welcome"
@@ -1202,13 +1231,28 @@ msgctxt "QObject|"
 msgid "h"
 msgstr ""
 
+#, fuzzy
+msgctxt "QObject|"
+msgid "Open directory"
+msgstr "Odpri imenik"
+
+#, fuzzy
+msgctxt "QObject|"
+msgid "Open channel list"
+msgstr "Odpri seznam programov"
+
+#, fuzzy
+msgctxt "QObject|"
+msgid "Tano TV channel list files(*.m3u)"
+msgstr "Tano TV seznam programov (*.m3u)"
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Počisti bližnjico"
 
-msgctxt "Recorder|"
-msgid "Open directory"
-msgstr "Odpri imenik"
+#~ msgctxt "Recorder|"
+#~ msgid "Open directory"
+#~ msgstr "Odpri imenik"
 
 msgctxt "Recorder|"
 msgid "No timer - press button to stop."
@@ -1243,9 +1287,9 @@ msgctxt "Recorder|"
 msgid "Directory:"
 msgstr "Imenik:"
 
-msgctxt "Recorder|"
-msgid "..."
-msgstr "..."
+#~ msgctxt "Recorder|"
+#~ msgid "..."
+#~ msgstr "..."
 
 msgctxt "Recorder|"
 msgid "Status"
@@ -1597,13 +1641,13 @@ msgctxt "SettingsPlaylist|"
 msgid "Preset"
 msgstr "Prednastavljeno"
 
-msgctxt "SettingsPlaylist|"
-msgid "..."
-msgstr "..."
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "..."
+#~ msgstr "..."
 
-msgctxt "SettingsPlaylist|"
-msgid "Reset"
-msgstr "Obnovi"
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Reset"
+#~ msgstr "Obnovi"
 
 msgctxt "SettingsPlaylist|"
 msgid "Custom"
@@ -1625,13 +1669,13 @@ msgctxt "SettingsPlaylist|"
 msgid "Download"
 msgstr "Prenesi"
 
-msgctxt "SettingsPlaylist|"
-msgid "Open channel list"
-msgstr "Odpri seznam programov"
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Open channel list"
+#~ msgstr "Odpri seznam programov"
 
-msgctxt "SettingsPlaylist|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr "Tano TV seznam programov (*.m3u)"
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Tano TV seznam programov (*.m3u)"
 
 #, fuzzy
 msgctxt "SettingsRecorder|"
@@ -1957,13 +2001,21 @@ msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Vključen info pult"
 
-msgctxt "Teletext|"
-msgid "Teletext"
-msgstr "Teletekst"
+#~ msgctxt "Teletext|"
+#~ msgid "Teletext"
+#~ msgstr "Teletekst"
 
-msgctxt "Teletext|"
-msgid "Teletext Transparency"
-msgstr "Prosojnost teleteksta"
+#~ msgctxt "Teletext|"
+#~ msgid "Teletext Transparency"
+#~ msgstr "Prosojnost teleteksta"
+
+msgctxt "TeletextWidget|"
+msgid "TeletextWidget"
+msgstr ""
+
+msgctxt "TeletextWidget|"
+msgid "TeletextWidget Transparency"
+msgstr ""
 
 msgctxt "TimersEdit|"
 msgid "Timers"

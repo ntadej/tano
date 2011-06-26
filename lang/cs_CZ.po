@@ -68,15 +68,17 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Přehrávač"
 
-#, fuzzy
-msgctxt "BrowseDirectory|"
-msgid "Reset"
-msgstr "Nastavit znovu"
+#~ msgctxt "BrowseDirectory|"
+#~ msgid "Reset"
+#~ msgstr "Nastavit znovu"
 
-#, fuzzy
-msgctxt "BrowseDirectory|"
-msgid "Open directory"
-msgstr "Otevřít adresář"
+#~ msgctxt "BrowseDirectory|"
+#~ msgid "Open directory"
+#~ msgstr "Otevřít adresář"
+
+#~ msgctxt "BrowseWidget|"
+#~ msgid "Reset"
+#~ msgstr "Nastavit znovu"
 
 msgctxt "ConclusionPage|"
 msgid "Complete Wizard"
@@ -136,6 +138,18 @@ msgctxt "EpgShow|"
 msgid "Next"
 msgstr "Další"
 
+#~ msgctxt "FileDialogs|"
+#~ msgid "Open directory"
+#~ msgstr "Otevřít adresář"
+
+#~ msgctxt "FileDialogs|"
+#~ msgid "Open channel list"
+#~ msgstr "Otevřít seznam programů"
+
+#~ msgctxt "FileDialogs|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Soubory se seznamy programů Tano TV (*.m3u)"
+
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Průvodce prvním spuštěním"
@@ -158,17 +172,32 @@ msgstr ""
 "Nelze zapisovat soubor %1:\n"
 "%2."
 
-msgctxt "InfoBar|"
-msgid "Language:"
-msgstr "Jazyk:"
+#~ msgctxt "InfoBar|"
+#~ msgid "Language:"
+#~ msgstr "Jazyk:"
 
-msgctxt "InfoBar|"
-msgid "Now:"
-msgstr "Nyní:"
+#~ msgctxt "InfoBar|"
+#~ msgid "Now:"
+#~ msgstr "Nyní:"
 
-msgctxt "InfoBar|"
-msgid "Next:"
-msgstr "Další:"
+#~ msgctxt "InfoBar|"
+#~ msgid "Next:"
+#~ msgstr "Další:"
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Language: %1"
+msgstr ""
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Now: %1"
+msgstr ""
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Next: %1"
+msgstr ""
 
 msgctxt "IntroPage|"
 msgid "Welcome"
@@ -1203,6 +1232,21 @@ msgctxt "QObject|"
 msgid "h"
 msgstr ""
 
+#, fuzzy
+msgctxt "QObject|"
+msgid "Open directory"
+msgstr "Otevřít adresář"
+
+#, fuzzy
+msgctxt "QObject|"
+msgid "Open channel list"
+msgstr "Otevřít seznam programů"
+
+#, fuzzy
+msgctxt "QObject|"
+msgid "Tano TV channel list files(*.m3u)"
+msgstr "Soubory se seznamy programů Tano TV (*.m3u)"
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Smazat klávesovou zkratku"
@@ -1219,9 +1263,9 @@ msgctxt "Recorder|"
 msgid "Directory:"
 msgstr "Adresář:"
 
-msgctxt "Recorder|"
-msgid "..."
-msgstr "..."
+#~ msgctxt "Recorder|"
+#~ msgid "..."
+#~ msgstr "..."
 
 msgctxt "Recorder|"
 msgid "Record"
@@ -1264,9 +1308,9 @@ msgctxt "Recorder|"
 msgid "No timer - press button to stop."
 msgstr "Žádný časovač - stiskněte tlačítko pro zastavení."
 
-msgctxt "Recorder|"
-msgid "Open directory"
-msgstr "Otevřít adresář"
+#~ msgctxt "Recorder|"
+#~ msgid "Open directory"
+#~ msgstr "Otevřít adresář"
 
 #, fuzzy
 msgctxt "SettingsBackend|"
@@ -1594,21 +1638,21 @@ msgctxt "SettingsPlaylist|"
 msgid "Preset"
 msgstr "Přednastavení"
 
-msgctxt "SettingsPlaylist|"
-msgid "..."
-msgstr "..."
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "..."
+#~ msgstr "..."
 
-msgctxt "SettingsPlaylist|"
-msgid "Reset"
-msgstr "Nastavit znovu"
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Reset"
+#~ msgstr "Nastavit znovu"
 
 msgctxt "SettingsPlaylist|"
 msgid "Custom"
 msgstr "Stanovený uživatelem"
 
-msgctxt "SettingsPlaylist|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr "Soubory se seznamy programů Tano TV (*.m3u)"
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Soubory se seznamy programů Tano TV (*.m3u)"
 
 msgctxt "SettingsPlaylist|"
 msgid "Default channel list"
@@ -1630,9 +1674,9 @@ msgctxt "SettingsPlaylist|"
 msgid "Download"
 msgstr "Stáhnout"
 
-msgctxt "SettingsPlaylist|"
-msgid "Open channel list"
-msgstr "Otevřít seznam programů"
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Open channel list"
+#~ msgstr "Otevřít seznam programů"
 
 #, fuzzy
 msgctxt "SettingsRecorder|"
@@ -1959,13 +2003,21 @@ msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Panel s podrobnostmi povolen"
 
-msgctxt "Teletext|"
-msgid "Teletext"
-msgstr "Teletext"
+#~ msgctxt "Teletext|"
+#~ msgid "Teletext"
+#~ msgstr "Teletext"
 
-msgctxt "Teletext|"
-msgid "Teletext Transparency"
-msgstr "Průhlednost teletextu"
+#~ msgctxt "Teletext|"
+#~ msgid "Teletext Transparency"
+#~ msgstr "Průhlednost teletextu"
+
+msgctxt "TeletextWidget|"
+msgid "TeletextWidget"
+msgstr ""
+
+msgctxt "TeletextWidget|"
+msgid "TeletextWidget Transparency"
+msgstr ""
 
 msgctxt "TimersEdit|"
 msgid "Timers"
