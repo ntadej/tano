@@ -1,3 +1,13 @@
+0.8.1 (2011-06-27)
+  * Teletext support
+  * CSV playlist export/import
+  * UDPXY support (Issue #24)
+  * Recorder stabilisation
+  * Standalone Tano Editor improvements
+  * [LINUX] Qt 4.6 support
+  * [LINUX] Ubuntu 10.04 support
+  * [WINDOWS] VLC 1.1.10
+
 0.8.0 (2011-04-03)
   * Completely rewriten Recorder and Timers Manager
   * Language filter for playlists
