@@ -1,4 +1,18 @@
-tano (0.8.0-0~maverick~ppa2) maverick; urgency=low
+tano (0.8.1-1~ppa1~natty) natty; urgency=low
+
+  * Teletext support
+  * CSV playlist export/import
+  * UDPXY support (Issue #24)
+  * Recorder stabilisation
+  * Standalone Tano Editor improvements
+  * [LINUX] Qt 4.6 support
+  * [LINUX] Ubuntu 10.04 support
+  * [WINDOWS] VLC 1.1.10
+
+ -- Tadej Novak <tadej@tano.si>  Mon, 27 Jun 2011 10:56:27 +0200
+
+
+tano (0.8.0-1~ppa1~natty) natty; urgency=low
 
   * Completely rewriten Recorder and Timers Manager
   * Language filter for playlists
@@ -18,22 +32,3 @@ tano (0.8.0-0~maverick~ppa2) maverick; urgency=low
   * [FIX] Bug #3088128 - Crash when starting with own playlist
 
  -- Tadej Novak <tadej@tano.si>  Sun, 03 Apr 2011 17:54:35 +0200
-
-
-tano (0.7.3-0~maverick~ppa3) maverick; urgency=low
-
-  * [PPA] Dependency fix
-
- -- Tadej Novak <ntadej@users.sourceforge.net>  Thu, 14 Oct 2010 20:24:28 +0200
-
-
-tano (0.7.3-0~maverick~ppa1) maverick; urgency=low
-
-  * VLC-Qt library support
-  * New Updates manager
-  * Major code cleanup
-  * Resources updated
-  * [WINDOWS] Installation scripts updated
-  * [PPA] Maverick support
-
- -- Tadej Novak <ntadej@users.sourceforge.net>  Thu, 14 Oct 2010 15:21:41 +0200

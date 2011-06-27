@@ -10,9 +10,9 @@ LangString NAME_SecMain ${LANG_ENGLISH} "Tano Player and Recorder"
 LangString NAME_SecMain ${LANG_SLOVENIAN} "Tano Predvajalnik in Snemalnik"
 LangString NAME_SecMain ${LANG_CZECH} "Přehrávač a nahrávač Tano"
 
-LangString DESC_SecEditor ${LANG_ENGLISH} "Main Tano Editor section with VLC backend."
-LangString DESC_SecEditor ${LANG_SLOVENIAN} "Glavna Tano Urejevalnik sekcija z VLC hrbtenico."
-LangString DESC_SecEditor ${LANG_CZECH} "Hlavní část Editor Tano s jádrem VLC."
+LangString DESC_SecEditor ${LANG_ENGLISH} "Main Tano Editor section."
+LangString DESC_SecEditor ${LANG_SLOVENIAN} "Glavna Tano Urejevalnik sekcija."
+LangString DESC_SecEditor ${LANG_CZECH} "Hlavní část Editor Tano."
 
 LangString NAME_SecEditor ${LANG_ENGLISH} "Tano Editor"
 LangString NAME_SecEditor ${LANG_SLOVENIAN} "Tano Urejevalnik"
