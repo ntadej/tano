@@ -12,9 +12,9 @@
 ;General
 
   ;Name and file
-  !define VERSION 0.8.0
-  !define COMPANY "Copyright © Tadej Novak 2008-2011"
-  !define URL http://www.tano.si
+  !define VERSION 0.8.1
+  !define COMPANY "Copyright (C) Tadej Novak 2008-2011"
+  !define URL http://projects.tano.si
 
   Name "Tano ${VERSION}"
   OutFile "tano_${VERSION}_win32.exe"
