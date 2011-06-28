@@ -135,6 +135,14 @@ msgstr "След."
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
 
+#~ msgctxt "FileDialogs|"
+#~ msgid "Open Subtitles file"
+#~ msgstr "Открыть файл субтитров"
+
+#~ msgctxt "FileDialogs|"
+#~ msgid "Subtitles files(*.sub *.srt *.txt)"
+#~ msgstr "Файлы субтитров(*.sub *.srt *.txt)"
+
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Мастер начальной настройки"
@@ -396,26 +404,9 @@ msgctxt "MainWindow|"
 msgid "Buffering..."
 msgstr ""
 
-#, fuzzy
-msgctxt "MainWindow|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
-
-msgctxt "MainWindow|"
-msgid "Open file or URL"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Multimedia files(*)"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Open URL or stream"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Enter the URL of multimedia file or stream you want to play:"
-msgstr ""
+#~ msgctxt "MainWindow|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
 
 msgctxt "MainWindow|"
 msgid "Restore"
@@ -501,13 +492,13 @@ msgctxt "MenuTrackSubtitles|"
 msgid "Open subtitle file"
 msgstr "Открыть файл субтитров"
 
-msgctxt "MenuTrackSubtitles|"
-msgid "Open Subtitles file"
-msgstr "Открыть файл субтитров"
+#~ msgctxt "MenuTrackSubtitles|"
+#~ msgid "Open Subtitles file"
+#~ msgstr "Открыть файл субтитров"
 
-msgctxt "MenuTrackSubtitles|"
-msgid "Subtitles files(*.sub *.srt *.txt)"
-msgstr "Файлы субтитров(*.sub *.srt *.txt)"
+#~ msgctxt "MenuTrackSubtitles|"
+#~ msgid "Subtitles files(*.sub *.srt *.txt)"
+#~ msgstr "Файлы субтитров(*.sub *.srt *.txt)"
 
 msgctxt "MenuTrackVideo|"
 msgid "Video track"
@@ -589,9 +580,9 @@ msgctxt "PlaylistEdit|"
 msgid "Close"
 msgstr "Закрыть"
 
-msgctxt "PlaylistEdit|"
-msgid "Import"
-msgstr "Импорт"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Import"
+#~ msgstr "Импорт"
 
 msgctxt "PlaylistEdit|"
 msgid "Print"
@@ -617,13 +608,13 @@ msgctxt "PlaylistEdit|"
 msgid "<i>This will interrupt your current playback.</i>"
 msgstr "<i>Это прервет текущее воспроизведение.</i>"
 
-msgctxt "PlaylistEdit|"
-msgid "Save channel list"
-msgstr "Сохранить список каналов"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Save channel list"
+#~ msgstr "Сохранить список каналов"
 
-msgctxt "PlaylistEdit|"
-msgid "Tano TV channel list files (*.m3u)"
-msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Tano TV channel list files (*.m3u)"
+#~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
 
 msgctxt "PlaylistEdit|"
 msgid "Export to Sagem JS channel list"
@@ -637,21 +628,21 @@ msgctxt "PlaylistEdit|"
 msgid "Export"
 msgstr "Экспорт"
 
-msgctxt "PlaylistEdit|"
-msgid "Tano Old Playlist"
-msgstr "Cписок каналов Tano пред. версий"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Tano Old Playlist"
+#~ msgstr "Cписок каналов Tano пред. версий"
 
-msgctxt "PlaylistEdit|"
-msgid "Sagem JS"
-msgstr "Sagem JS"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Sagem JS"
+#~ msgstr "Sagem JS"
 
 msgctxt "PlaylistEdit|"
 msgid "Open"
 msgstr "Открыть"
 
-msgctxt "PlaylistEdit|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
 
 msgctxt "PlaylistEdit|"
 msgid "About"
@@ -679,10 +670,6 @@ msgstr ""
 
 msgctxt "PlaylistEdit|"
 msgid "Tano TV old channel list files(*.tano *.xml)"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Open channel list"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
@@ -724,27 +711,11 @@ msgid "%1 - Tano Editor"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "M3U (Original)"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Export to original M3U format"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "M3U (original) list files (*.m3u)"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "Export to Comma-separated values file"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
 msgid "Import Comma-separated values file"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "CSV"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
@@ -755,39 +726,13 @@ msgctxt "PlaylistEdit|"
 msgid "Tvheadend"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "M3U (Udpxy URL)"
-msgstr ""
-
 #, fuzzy
 msgctxt "PlaylistEdit|"
 msgid "Settings"
 msgstr "Настройка"
 
 msgctxt "PlaylistEdit|"
-msgid "Export to M3U format with Udpxy URLs"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "M3U (Udpxy URL) list files (*.m3u)"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid ""
-"You need to have valid Udpxy settings or the exported playlist will contain "
-"classic URLs."
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "XMLTV IDs"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Export XMLTV IDs"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Plain text file (*.txt)"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
@@ -804,6 +749,16 @@ msgstr ""
 msgctxt "PlaylistEdit|"
 msgid "Update Information"
 msgstr "Информация об обновлении"
+
+msgctxt "PlaylistEdit|"
+msgid "Export to M3U format with Udpxy URLs"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"You need to have valid Udpxy settings or the exported playlist will contain "
+"classic URLs."
+msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
@@ -1230,10 +1185,65 @@ msgctxt "QObject|"
 msgid "Open channel list"
 msgstr ""
 
-#, fuzzy
+#~ msgctxt "QObject|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
+
 msgctxt "QObject|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
+msgid "Open URL or stream"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Enter the URL of multimedia file or stream you want to play:"
+msgstr ""
+
+#~ msgctxt "QObject|"
+#~ msgid "Open Subtitles file"
+#~ msgstr "Открыть файл субтитров"
+
+#~ msgctxt "QObject|"
+#~ msgid "Subtitles files(*.sub *.srt *.txt)"
+#~ msgstr "Файлы субтитров(*.sub *.srt *.txt)"
+
+msgctxt "QObject|"
+msgid "Tano M3U channel list files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "M3U (original) list files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "M3U (Udpxy URL) list files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Comma-separated values files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Multimedia files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Subtitles files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Plain text files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Open file"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Open subtitles"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Export XMLTV IDs"
+msgstr ""
 
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"

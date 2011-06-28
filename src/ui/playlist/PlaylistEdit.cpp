@@ -24,10 +24,12 @@
 
 #include "Config.h"
 #include "container/Channel.h"
+#include "container/File.h"
 #include "core/Common.h"
 #include "core/ConsoleOutput.h"
 #include "core/Enums.h"
 #include "core/Settings.h"
+#include "ui/core/FileDialogs.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
 #include "ui/playlist/PlaylistExportTvheadend.h"
@@ -81,18 +83,8 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 #endif
 
     _menuExport = new QMenu();
-    _menuExport->addAction(ui->actionExportM3UClean);
-    _menuExport->addAction(ui->actionExportM3UUdpxy);
-    _menuExport->addAction(ui->actionExportCSV);
-    _menuExport->addAction(ui->actionExportJs);
     _menuExport->addAction(ui->actionExportTvheadend);
     _menuExport->addAction(ui->actionExportXmltvId);
-
-    _menuImport = new QMenu();
-    _menuImport->addAction(ui->actionImportDownload);
-    _menuImport->addAction(ui->actionImportCSV);
-    _menuImport->addAction(ui->actionImportJs);
-    _menuImport->addAction(ui->actionImportTanoOld);
 
 #if EDITOR
     ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
@@ -147,17 +139,8 @@ void PlaylistEdit::createConnections()
     connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
     connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
     connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
-    connect(ui->actionExportM3UClean, SIGNAL(triggered()), this, SLOT(exportM3UClean()));
-    connect(ui->actionExportM3UUdpxy, SIGNAL(triggered()), this, SLOT(exportM3UUdpxy()));
-    connect(ui->actionExportCSV, SIGNAL(triggered()), this, SLOT(exportCSV()));
-    connect(ui->actionExportJs, SIGNAL(triggered()), this, SLOT(exportJs()));
     connect(ui->actionExportTvheadend, SIGNAL(triggered()), this, SLOT(exportTvheadend()));
     connect(ui->actionExportXmltvId, SIGNAL(triggered()), this, SLOT(exportXmltvId()));
-    connect(ui->actionImport, SIGNAL(triggered()), this, SLOT(menuOpenImport()));
-    connect(ui->actionImportDownload, SIGNAL(triggered()), this, SLOT(importWeb()));
-    connect(ui->actionImportCSV, SIGNAL(triggered()), this, SLOT(importCSV()));
-    connect(ui->actionImportJs, SIGNAL(triggered()), this, SLOT(importJs()));
-    connect(ui->actionImportTanoOld, SIGNAL(triggered()), this, SLOT(importTanoOld()));
     connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
 
     connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(setTitle(QString)));
@@ -189,11 +172,6 @@ void PlaylistEdit::createConnections()
 void PlaylistEdit::menuOpenExport()
 {
     _menuExport->exec(QCursor::pos());
-}
-
-void PlaylistEdit::menuOpenImport()
-{
-    _menuImport->exec(QCursor::pos());
 }
 
 void PlaylistEdit::setTitle(const QString &title)
@@ -233,9 +211,7 @@ void PlaylistEdit::open(const QString &playlist,
 {
     QString p;
     if(playlist == 0) {
-        p = QFileDialog::getOpenFileName(this, tr("Open channel list"),
-                                         QDir::homePath(),
-                                         tr("Tano TV channel list files(*.m3u)"));
+        p = FileDialogs::openPlaylist();
     } else {
         p = playlist;
     }
@@ -311,51 +287,36 @@ void PlaylistEdit::addItem(const QString &name,
 
 void PlaylistEdit::save()
 {
-    QString fileName =
-        QFileDialog::getSaveFileName(this, tr("Save channel list"),
-                                    QDir::homePath(),
-                                    tr("Tano TV channel list files (*.m3u)"));
-    if (fileName.isEmpty())
+    File file = FileDialogs::savePlaylist();
+
+    if (file.path().isEmpty() || file.type() == -1)
         return;
 
-    ui->playlist->save(ui->editName->text(), fileName);
+    qDebug() << file.path() << file.type();
 
-    _closeEnabled = true;
-    exit();
-}
-
-void PlaylistEdit::exportM3UClean()
-{
-    QString fileName =
-        QFileDialog::getSaveFileName(this, tr("Export to original M3U format"),
-                                    QDir::homePath(),
-                                    tr("M3U (original) list files (*.m3u)"));
-    if (fileName.isEmpty())
-        return;
-
-    ui->playlist->exportM3UClean(fileName);
-}
-
-void PlaylistEdit::exportM3UUdpxy()
-{
-    QString fileName =
-        QFileDialog::getSaveFileName(this, tr("Export to M3U format with Udpxy URLs"),
-                                    QDir::homePath(),
-                                    tr("M3U (Udpxy URL) list files (*.m3u)"));
-    if (fileName.isEmpty())
-        return;
-
-    int s;
-    s = QMessageBox::warning(this, tr("Export to M3U format with Udpxy URLs"),
-                                   tr("You need to have valid Udpxy settings or the exported playlist will contain classic URLs."),
-                                   QMessageBox::Save | QMessageBox::Cancel,
-                                   QMessageBox::Cancel);
-
-    switch (s) {
-        case QMessageBox::Save:
-            ui->playlist->exportM3UUdpxy(ui->editName->text(), fileName);
+    switch(file.type()) {
+        case FileDialogs::M3U:
+            ui->playlist->save(ui->editName->text(), file.path());
             break;
-        case QMessageBox::Cancel:
+        case FileDialogs::M3UClean:
+            ui->playlist->exportM3UClean(file.path());
+            break;
+        case FileDialogs::M3UUdpxy:
+            int s;
+            s = QMessageBox::warning(this, tr("Export to M3U format with Udpxy URLs"),
+                                     tr("You need to have valid Udpxy settings or the exported playlist will contain classic URLs."),
+                                     QMessageBox::Save | QMessageBox::Cancel,
+                                     QMessageBox::Cancel);
+
+            switch (s) {
+                case QMessageBox::Save:
+                    ui->playlist->exportM3UUdpxy(ui->editName->text(), file.path());
+                    break;
+                case QMessageBox::Cancel:
+                    break;
+                default:
+                    break;
+            }
             break;
         default:
             break;
@@ -431,10 +392,8 @@ void PlaylistEdit::exportTvheadend()
 
 void PlaylistEdit::exportXmltvId()
 {
-    QString fileName =
-        QFileDialog::getSaveFileName(this, tr("Export XMLTV IDs"),
-                                    QDir::homePath(),
-                                    tr("Plain text file (*.txt)"));
+    QString fileName = FileDialogs::saveXmltv();
+
     if (fileName.isEmpty())
         return;
 

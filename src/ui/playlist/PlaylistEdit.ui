@@ -85,10 +85,8 @@
    <addaction name="actionNew"/>
    <addaction name="actionOpen"/>
    <addaction name="actionSave"/>
-   <addaction name="actionPrint"/>
-   <addaction name="separator"/>
-   <addaction name="actionImport"/>
    <addaction name="actionExport"/>
+   <addaction name="actionPrint"/>
    <addaction name="separator"/>
    <addaction name="actionAdd"/>
    <addaction name="actionDelete"/>
@@ -465,15 +463,6 @@
     <string>Close</string>
    </property>
   </action>
-  <action name="actionImport">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
-   </property>
-   <property name="text">
-    <string>Import</string>
-   </property>
-  </action>
   <action name="actionUp">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
@@ -516,33 +505,6 @@
     <string>Export</string>
    </property>
   </action>
-  <action name="actionImportTanoOld">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/file-old.png</normaloff>:/icons/24x24/file-old.png</iconset>
-   </property>
-   <property name="text">
-    <string>Tano Old Playlist</string>
-   </property>
-  </action>
-  <action name="actionImportJs">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/file-js.png</normaloff>:/icons/24x24/file-js.png</iconset>
-   </property>
-   <property name="text">
-    <string>Sagem JS</string>
-   </property>
-  </action>
-  <action name="actionExportJs">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/file-js.png</normaloff>:/icons/24x24/file-js.png</iconset>
-   </property>
-   <property name="text">
-    <string>Sagem JS</string>
-   </property>
-  </action>
   <action name="actionOpen">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
@@ -579,39 +541,6 @@
     <string>New playlist</string>
    </property>
   </action>
-  <action name="actionExportM3UClean">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/file-m3u.png</normaloff>:/icons/24x24/file-m3u.png</iconset>
-   </property>
-   <property name="text">
-    <string>M3U (Original)</string>
-   </property>
-  </action>
-  <action name="actionImportCSV">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/file-csv.png</normaloff>:/icons/24x24/file-csv.png</iconset>
-   </property>
-   <property name="text">
-    <string>CSV</string>
-   </property>
-   <property name="toolTip">
-    <string>CSV</string>
-   </property>
-  </action>
-  <action name="actionExportCSV">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/file-csv.png</normaloff>:/icons/24x24/file-csv.png</iconset>
-   </property>
-   <property name="text">
-    <string>CSV</string>
-   </property>
-   <property name="toolTip">
-    <string>CSV</string>
-   </property>
-  </action>
   <action name="actionExportTvheadend">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
@@ -619,18 +548,6 @@
    </property>
    <property name="text">
     <string>Tvheadend</string>
-   </property>
-  </action>
-  <action name="actionExportM3UUdpxy">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/file-m3u.png</normaloff>:/icons/24x24/file-m3u.png</iconset>
-   </property>
-   <property name="text">
-    <string>M3U (Udpxy URL)</string>
-   </property>
-   <property name="toolTip">
-    <string>M3U (Udpxy URL)</string>
    </property>
   </action>
   <action name="actionSettings">

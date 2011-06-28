@@ -17,12 +17,9 @@
 *****************************************************************************/
 
 #include <QtCore/QDebug>
-#include <QtCore/QDir>
 #include <QtGui/QApplication>
 #include <QtGui/QBitmap>
 #include <QtGui/QDesktopWidget>
-#include <QtGui/QFileDialog>
-#include <QtGui/QInputDialog>
 #include <QtGui/QMessageBox>
 #include <QtGui/QSplashScreen>
 
@@ -36,6 +33,7 @@
 
 #include "core/Common.h"
 #include "core/Settings.h"
+#include "ui/core/FileDialogs.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/DonationDialog.h"
 #include "ui/settings/SettingsEdit.h"
@@ -515,10 +513,7 @@ void MainWindow::openPlaylist(const bool &start)
 	}
 
 	if (!start)
-	_playlistName =
-		QFileDialog::getOpenFileName(this, tr("Open channel list"),
-						QDir::homePath(),
-						tr("Tano TV channel list files(*.m3u)"));
+    _playlistName = FileDialogs::openPlaylist();
 	else
 		_playlistName = Tano::locateResource(_defaultPlaylist);
 
@@ -543,10 +538,7 @@ void MainWindow::openPlaylist(const bool &start)
 }
 void MainWindow::openFile()
 {
-	QString file =
-		QFileDialog::getOpenFileName(this, tr("Open file or URL"),
-						QDir::homePath(),
-						tr("Multimedia files(*)"));
+    QString file = FileDialogs::openFile();
 
 	if (file.isEmpty())
 		return;
@@ -555,13 +547,9 @@ void MainWindow::openFile()
 }
 void MainWindow::openUrl()
 {
-	bool ok;
-	QString file =
-		QInputDialog::getText(this, tr("Open URL or stream"),
-							 tr("Enter the URL of multimedia file or stream you want to play:"),
-							 QLineEdit::Normal, "", &ok);
+    QString file = FileDialogs::openUrl();
 
-	if (!ok && file.isEmpty())
+    if (file.isEmpty())
 		return;
 
 	play(file);

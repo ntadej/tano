@@ -125,6 +125,7 @@ SET(Tano_Resrcs
 # Define the C++ source files used by Tano
 SET(Tano_Container_Srcs
     container/Channel.cpp
+    container/File.cpp
     container/PlaylistFile.cpp
     container/UpdateInfo.cpp
     container/Timer.cpp

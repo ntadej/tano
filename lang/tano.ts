@@ -365,26 +365,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open file or URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Multimedia files(*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open URL or stream</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
@@ -483,14 +463,6 @@ This will stop recording in progress.</source>
         <source>Open subtitle file</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Open Subtitles file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Subtitles files(*.sub *.srt *.txt)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MenuTrackVideo</name>
@@ -578,10 +550,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Import</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Print</source>
         <translation type="unfinished"></translation>
     </message>
@@ -602,14 +570,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV channel list files (*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export to Sagem JS channel list</source>
         <translation type="unfinished"></translation>
     </message>
@@ -622,19 +582,7 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano Old Playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sagem JS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV channel list files(*.m3u)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -663,10 +611,6 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -704,27 +648,11 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M3U (Original)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export to original M3U format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M3U (original) list files (*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export to Comma-separated values file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Import Comma-separated values file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CSV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -736,35 +664,11 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M3U (Udpxy URL)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Export to M3U format with Udpxy URLs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M3U (Udpxy URL) list files (*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>XMLTV IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export XMLTV IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Plain text file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -777,6 +681,14 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Update Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1199,7 +1111,51 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano TV channel list files(*.m3u)</source>
+        <source>Open URL or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the URL of multimedia file or stream you want to play:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano M3U channel list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (original) list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (Udpxy URL) list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma-separated values files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multimedia files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtitles files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plain text files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open subtitles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export XMLTV IDs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

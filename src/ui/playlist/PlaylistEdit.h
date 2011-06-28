@@ -68,8 +68,6 @@ private slots:
                  const QString &url);
 
     void save();
-    void exportM3UClean();
-    void exportM3UUdpxy();
     void exportCSV();
     void importCSV();
     void exportJs();
@@ -81,7 +79,6 @@ private slots:
     void print();
 
     void menuOpenExport();
-    void menuOpenImport();
     void exit();
 
     void editItem(QTreeWidgetItem *item);
@@ -116,7 +113,6 @@ private:
 
     bool _closeEnabled;
     QMenu *_menuExport;
-    QMenu *_menuImport;
 
 #if EDITOR
     UpdateDialog *_update;

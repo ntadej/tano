@@ -82,6 +82,7 @@ SET(Tano_Editor_Srcs
     main.cpp
 
     ../src/container/Channel.cpp
+    ../src/container/File.cpp
     ../src/container/PlaylistFile.cpp
     ../src/container/UpdateInfo.cpp
 

@@ -351,26 +351,6 @@ msgid "Buffering..."
 msgstr ""
 
 msgctxt "MainWindow|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Open file or URL"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Multimedia files(*)"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Open URL or stream"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Enter the URL of multimedia file or stream you want to play:"
-msgstr ""
-
-msgctxt "MainWindow|"
 msgid "Restore"
 msgstr ""
 
@@ -454,14 +434,6 @@ msgctxt "MenuTrackSubtitles|"
 msgid "Open subtitle file"
 msgstr ""
 
-msgctxt "MenuTrackSubtitles|"
-msgid "Open Subtitles file"
-msgstr ""
-
-msgctxt "MenuTrackSubtitles|"
-msgid "Subtitles files(*.sub *.srt *.txt)"
-msgstr ""
-
 msgctxt "MenuTrackVideo|"
 msgid "Video track"
 msgstr ""
@@ -543,10 +515,6 @@ msgid "Close"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "Import"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "Print"
 msgstr ""
 
@@ -569,14 +537,6 @@ msgid "<i>This will interrupt your current playback.</i>"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "Save channel list"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Tano TV channel list files (*.m3u)"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "Export to Sagem JS channel list"
 msgstr ""
 
@@ -589,19 +549,7 @@ msgid "Export"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "Tano Old Playlist"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Sagem JS"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "Open"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Tano TV channel list files(*.m3u)"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
@@ -630,10 +578,6 @@ msgstr ""
 
 msgctxt "PlaylistEdit|"
 msgid "Move down"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Open channel list"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
@@ -675,27 +619,11 @@ msgid "%1 - Tano Editor"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "M3U (Original)"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Export to original M3U format"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "M3U (original) list files (*.m3u)"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "Export to Comma-separated values file"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
 msgid "Import Comma-separated values file"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "CSV"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
@@ -707,37 +635,11 @@ msgid "Tvheadend"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "M3U (Udpxy URL)"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "Settings"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "Export to M3U format with Udpxy URLs"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "M3U (Udpxy URL) list files (*.m3u)"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid ""
-"You need to have valid Udpxy settings or the exported playlist will contain "
-"classic URLs."
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "XMLTV IDs"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Export XMLTV IDs"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Plain text file (*.txt)"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
@@ -752,6 +654,16 @@ msgstr ""
 
 msgctxt "PlaylistEdit|"
 msgid "Update Information"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "Export to M3U format with Udpxy URLs"
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"You need to have valid Udpxy settings or the exported playlist will contain "
+"classic URLs."
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
@@ -1158,7 +1070,51 @@ msgid "Open channel list"
 msgstr ""
 
 msgctxt "QObject|"
-msgid "Tano TV channel list files(*.m3u)"
+msgid "Open URL or stream"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Enter the URL of multimedia file or stream you want to play:"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Tano M3U channel list files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "M3U (original) list files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "M3U (Udpxy URL) list files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Comma-separated values files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Multimedia files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Subtitles files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Plain text files"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Open file"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Open subtitles"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Export XMLTV IDs"
 msgstr ""
 
 msgctxt "QtKeySequenceEdit|"

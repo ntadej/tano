@@ -18,16 +18,44 @@
 
 #include <QtCore/QObject>
 #include <QtGui/QFileDialog>
+#include <QtGui/QInputDialog>
 
+#include "container/File.h"
 #include "FileDialogs.h"
+
+QString FileDialogs::filterByType(const Type &type)
+{
+    switch(type) {
+        case Files:
+            return QObject::tr("Multimedia files") + "(*)";
+        case Subtitles:
+            return QObject::tr("Subtitles files") + "(*.sub *.srt *.txt)";
+        case M3U:
+            return QObject::tr("Tano M3U channel list files") + "(*.m3u)";
+        case M3UClean:
+            return QObject::tr("M3U (original) list files") + "(*.m3u tano11461)";
+        case M3UUdpxy:
+            return QObject::tr("M3U (Udpxy URL) list files") + "(*.m3u tano63848)";
+        case CSV:
+            return QObject::tr("Comma-separated values files") + "(*.csv *.txt)";
+        case Xmltv:
+            return QObject::tr("Plain text files") + "(*.txt)";
+        default:
+            return QString();
+    }
+}
 
 QString FileDialogs::openByType(const Type &type,
                                 const QString &arg)
 {
-    if(type == Directory)
-        return openDirectory(arg);
-    else if(type == M3U)
-        return openM3U();
+    switch(type) {
+        case Directory:
+            return openDirectory(arg);
+        case M3U:
+            return openPlaylist();
+        default:
+            return QString();
+    }
 }
 
 QString FileDialogs::openDirectory(const QString &dir)
@@ -37,10 +65,78 @@ QString FileDialogs::openDirectory(const QString &dir)
     return file;
 }
 
-QString FileDialogs::openM3U()
+QString FileDialogs::openFile()
+{
+    QString file = QFileDialog::getOpenFileName(0, QObject::tr("Open file"),
+                                                QDir::homePath(), filterByType(Files));
+    return file;
+}
+
+QString FileDialogs::openPlaylist()
 {
     QString file = QFileDialog::getOpenFileName(0, QObject::tr("Open channel list"),
-                                                QDir::homePath(),
-                                                QObject::tr("Tano TV channel list files(*.m3u)"));
+                                                QDir::homePath(), filterByType(M3U));
+    return file;
+}
+
+File FileDialogs::openPlaylistFull()
+{
+    QString file = QFileDialog::getOpenFileName(0, QObject::tr("Open channel list"),
+                                                QDir::homePath(), filterByType(M3U));
+    return File(file, 10);
+}
+
+QString FileDialogs::openSubtitles(const QString &dir)
+{
+    QString file = QFileDialog::getOpenFileName(0, QObject::tr("Open subtitles"),
+                                                dir, filterByType(Subtitles));
+    return file;
+}
+
+QString FileDialogs::openUrl()
+{
+    bool ok;
+    QString file = QInputDialog::getText(0, QObject::tr("Open URL or stream"),
+                                         QObject::tr("Enter the URL of multimedia file or stream you want to play:"),
+                                         QLineEdit::Normal, "", &ok);
+    if(!ok)
+        return QString("");
+    else
+        return file;
+}
+
+File FileDialogs::savePlaylist()
+{
+    QStringList filters;
+    filters << filterByType(M3U)
+            << filterByType(M3UClean)
+            << filterByType(M3UUdpxy)
+            << filterByType(CSV);
+
+    QFileDialog dialog;
+    dialog.setAcceptMode(QFileDialog::AcceptSave);
+    dialog.setFileMode(QFileDialog::AnyFile);
+    dialog.setConfirmOverwrite(true);
+    dialog.setNameFilters(filters);
+
+    QString fileName;
+    int type = -1;
+    if(dialog.exec()) {
+        fileName = dialog.selectedFiles()[0];
+
+        for(int i = 0; i < 50; i++) {
+            if(dialog.selectedNameFilter() == filterByType(Type(i))) {
+                type = i;
+            }
+        }
+    }
+
+    return File(fileName, type);
+}
+
+QString FileDialogs::saveXmltv()
+{
+    QString file =  QFileDialog::getSaveFileName(0, QObject::tr("Export XMLTV IDs"),
+                                                 QDir::homePath(), filterByType(Xmltv));
     return file;
 }

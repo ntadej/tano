@@ -16,30 +16,24 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "ui/core/FileDialogs.h"
-#include "MenuTrackSubtitles.h"
+#ifndef TANO_FILE_H_
+#define TANO_FILE_H_
 
-MenuTrackSubtitles::MenuTrackSubtitles(QWidget *parent)
-    : MenuCore(parent)
+#include <QtCore/QString>
+
+class File
 {
-    setTitle(tr("Subtitles"));
-    setIcon(QIcon(":/icons/24x24/subtitle.png"));
-    actionNext()->setText(tr("Next subtitles"));
-    setType(Vlc::Subtitles);
+public:
+    File(const QString &path,
+         const int &type);
+    ~File();
 
-    QAction *open = new QAction(tr("Open subtitle file"), this);
-    connect(open, SIGNAL(triggered()), this, SLOT(openSubtitles()));
-    addAction(open);
-}
+    QString path() const { return _path; }
+    int type() const { return _type; }
 
-MenuTrackSubtitles::~MenuTrackSubtitles() { }
+private:
+    QString _path;
+    int _type;
+};
 
-void MenuTrackSubtitles::openSubtitles()
-{
-    QString file = FileDialogs::openSubtitles();
-
-    if (file.isEmpty())
-        return;
-
-    emit subtitles(file);
-}
+#endif // FILE_H

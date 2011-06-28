@@ -153,6 +153,14 @@ Verze vašeho VLC-Qt: %4</translation>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="obsolete">Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
+    <message>
+        <source>Open Subtitles file</source>
+        <translation type="obsolete">Otevřít soubor s titulky</translation>
+    </message>
+    <message>
+        <source>Subtitles files(*.sub *.srt *.txt)</source>
+        <translation type="obsolete">Soubory s titulky (*.sub *.srt *.txt)</translation>
+    </message>
 </context>
 <context>
     <name>FirstRunWizard</name>
@@ -421,23 +429,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished">Soubory se seznamy programů Tano TV (*.m3u)</translation>
-    </message>
-    <message>
-        <source>Open file or URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Multimedia files(*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open URL or stream</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
     <message>
         <source>Restore</source>
@@ -540,11 +532,11 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Open Subtitles file</source>
-        <translation>Otevřít soubor s titulky</translation>
+        <translation type="obsolete">Otevřít soubor s titulky</translation>
     </message>
     <message>
         <source>Subtitles files(*.sub *.srt *.txt)</source>
-        <translation>Soubory s titulky (*.sub *.srt *.txt)</translation>
+        <translation type="obsolete">Soubory s titulky (*.sub *.srt *.txt)</translation>
     </message>
 </context>
 <context>
@@ -634,7 +626,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation>Zavést</translation>
+        <translation type="obsolete">Zavést</translation>
     </message>
     <message>
         <source>Print</source>
@@ -658,11 +650,11 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Save channel list</source>
-        <translation>Uložit seznam programů</translation>
+        <translation type="obsolete">Uložit seznam programů</translation>
     </message>
     <message>
         <source>Tano TV channel list files (*.m3u)</source>
-        <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
+        <translation type="obsolete">Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
     <message>
         <source>Export to Sagem JS channel list</source>
@@ -678,11 +670,11 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Tano Old Playlist</source>
-        <translation>Seznam programů Tano Old</translation>
+        <translation type="obsolete">Seznam programů Tano Old</translation>
     </message>
     <message>
         <source>Sagem JS</source>
-        <translation>Sagem JS</translation>
+        <translation type="obsolete">Sagem JS</translation>
     </message>
     <message>
         <source>Open</source>
@@ -690,7 +682,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
+        <translation type="obsolete">Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
     <message>
         <source>About</source>
@@ -722,7 +714,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Otevřít seznam programů</translation>
+        <translation type="obsolete">Otevřít seznam programů</translation>
     </message>
     <message>
         <source>Import Sagem JS channel list</source>
@@ -762,15 +754,15 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>M3U (Original)</source>
-        <translation>M3U (původní)</translation>
+        <translation type="obsolete">M3U (původní)</translation>
     </message>
     <message>
         <source>Export to original M3U format</source>
-        <translation>Vyvést do původního formátu M3U</translation>
+        <translation type="obsolete">Vyvést do původního formátu M3U</translation>
     </message>
     <message>
         <source>M3U (original) list files (*.m3u)</source>
-        <translation>Soubory s (původními) seznamy M3U (*.m3u)</translation>
+        <translation type="obsolete">Soubory s (původními) seznamy M3U (*.m3u)</translation>
     </message>
     <message>
         <source>Export to Comma-separated values file</source>
@@ -782,7 +774,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>CSV</source>
-        <translation>CSV</translation>
+        <translation type="obsolete">CSV</translation>
     </message>
     <message>
         <source>Comma-separated values file (*.csv *.txt)</source>
@@ -793,35 +785,11 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M3U (Udpxy URL)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished">Nastavení</translation>
     </message>
     <message>
-        <source>Export to M3U format with Udpxy URLs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M3U (Udpxy URL) list files (*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>XMLTV IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export XMLTV IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Plain text file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -835,6 +803,14 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Update Information</source>
         <translation type="unfinished">Informace o aktualizacích</translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1261,7 +1237,67 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished">Soubory se seznamy programů Tano TV (*.m3u)</translation>
+        <translation type="obsolete">Soubory se seznamy programů Tano TV (*.m3u)</translation>
+    </message>
+    <message>
+        <source>Open URL or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the URL of multimedia file or stream you want to play:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (original) list files (*.m3u)</source>
+        <translation type="obsolete">Soubory s (původními) seznamy M3U (*.m3u)</translation>
+    </message>
+    <message>
+        <source>Open Subtitles file</source>
+        <translation type="obsolete">Otevřít soubor s titulky</translation>
+    </message>
+    <message>
+        <source>Subtitles files(*.sub *.srt *.txt)</source>
+        <translation type="obsolete">Soubory s titulky (*.sub *.srt *.txt)</translation>
+    </message>
+    <message>
+        <source>Tano M3U channel list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (original) list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (Udpxy URL) list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma-separated values files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multimedia files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtitles files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plain text files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open subtitles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export XMLTV IDs</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

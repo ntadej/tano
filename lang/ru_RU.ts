@@ -142,6 +142,14 @@ Your VLC-Qt version: %4
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="obsolete">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
+    <message>
+        <source>Open Subtitles file</source>
+        <translation type="obsolete">Открыть файл субтитров</translation>
+    </message>
+    <message>
+        <source>Subtitles files(*.sub *.srt *.txt)</source>
+        <translation type="obsolete">Файлы субтитров(*.sub *.srt *.txt)</translation>
+    </message>
 </context>
 <context>
     <name>FirstRunWizard</name>
@@ -410,23 +418,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
-    </message>
-    <message>
-        <source>Open file or URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Multimedia files(*)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open URL or stream</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
     <message>
         <source>Restore</source>
@@ -529,11 +521,11 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Open Subtitles file</source>
-        <translation>Открыть файл субтитров</translation>
+        <translation type="obsolete">Открыть файл субтитров</translation>
     </message>
     <message>
         <source>Subtitles files(*.sub *.srt *.txt)</source>
-        <translation>Файлы субтитров(*.sub *.srt *.txt)</translation>
+        <translation type="obsolete">Файлы субтитров(*.sub *.srt *.txt)</translation>
     </message>
 </context>
 <context>
@@ -623,7 +615,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Import</source>
-        <translation>Импорт</translation>
+        <translation type="obsolete">Импорт</translation>
     </message>
     <message>
         <source>Print</source>
@@ -647,11 +639,11 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Save channel list</source>
-        <translation>Сохранить список каналов</translation>
+        <translation type="obsolete">Сохранить список каналов</translation>
     </message>
     <message>
         <source>Tano TV channel list files (*.m3u)</source>
-        <translation>Файлы со списком ТВ каналов Tano(*.m3u)</translation>
+        <translation type="obsolete">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
     <message>
         <source>Export to Sagem JS channel list</source>
@@ -667,11 +659,11 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Tano Old Playlist</source>
-        <translation>Cписок каналов Tano пред. версий</translation>
+        <translation type="obsolete">Cписок каналов Tano пред. версий</translation>
     </message>
     <message>
         <source>Sagem JS</source>
-        <translation>Sagem JS</translation>
+        <translation type="obsolete">Sagem JS</translation>
     </message>
     <message>
         <source>Open</source>
@@ -679,7 +671,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation>Файлы со списком ТВ каналов Tano(*.m3u)</translation>
+        <translation type="obsolete">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
     <message>
         <source>About</source>
@@ -707,10 +699,6 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Tano TV old channel list files(*.tano *.xml)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -748,27 +736,11 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M3U (Original)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export to original M3U format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M3U (original) list files (*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Export to Comma-separated values file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Import Comma-separated values file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CSV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -780,35 +752,11 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M3U (Udpxy URL)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished">Настройка</translation>
     </message>
     <message>
-        <source>Export to M3U format with Udpxy URLs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M3U (Udpxy URL) list files (*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>XMLTV IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export XMLTV IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Plain text file (*.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -822,6 +770,14 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Update Information</source>
         <translation type="unfinished">Информация об обновлении</translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1248,7 +1204,63 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
+        <translation type="obsolete">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
+    </message>
+    <message>
+        <source>Open URL or stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter the URL of multimedia file or stream you want to play:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Subtitles file</source>
+        <translation type="obsolete">Открыть файл субтитров</translation>
+    </message>
+    <message>
+        <source>Subtitles files(*.sub *.srt *.txt)</source>
+        <translation type="obsolete">Файлы субтитров(*.sub *.srt *.txt)</translation>
+    </message>
+    <message>
+        <source>Tano M3U channel list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (original) list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (Udpxy URL) list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma-separated values files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multimedia files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtitles files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Plain text files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open subtitles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export XMLTV IDs</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
