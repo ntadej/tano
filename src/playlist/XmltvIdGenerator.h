@@ -23,8 +23,6 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
-#include "core/Enums.h"
-
 class Channel;
 class Udpxy;
 

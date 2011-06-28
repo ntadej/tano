@@ -90,7 +90,7 @@ void TimersGenerator::generateItem(QTreeWidgetItem *item)
 		 << indent(depth + 1) << "<channelid>" << escapedText(QString().number(currentTimer->num())) << "</channelid>\n"
 		 << indent(depth + 1) << "<channel>" << escapedText(currentTimer->channel()) << "</channel>\n"
 		 << indent(depth + 1) << "<url>" << escapedText(currentTimer->url()) << "</url>\n"
-		 << indent(depth + 1) << "<type>" << escapedText(QString().number(Tano::timerType(currentTimer->type()))) << "</type>\n"
+         << indent(depth + 1) << "<type>" << escapedText(QString().number(currentTimer->type())) << "</type>\n"
 		 << indent(depth + 1) << "<starttime>" << escapedText(currentTimer->startTime().toString(Qt::ISODate)) << "</starttime>\n"
 		 << indent(depth + 1) << "<endtime>" << escapedText(currentTimer->endTime().toString(Qt::ISODate)) << "</endtime>\n"
 		 << indent(depth + 1) << "<disabled>" << boolToString(currentTimer->isDisabled()) << "</disabled>\n"

@@ -23,7 +23,6 @@
 #include "ui_PlaylistWidget.h"
 
 #include "container/Channel.h"
-#include "core/Enums.h"
 #include "playlist/CSVGenerator.h"
 #include "playlist/JsGenerator.h"
 #include "playlist/M3UGenerator.h"
@@ -132,7 +131,7 @@ void PlaylistWidget::exportM3UClean(const QString &file)
         return;
     }
 
-    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, "", _handler->channelMap(), Tano::M3UClean);
+    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, "", _handler->channelMap(), FileDialogs::M3UClean);
     generator->write(&f);
     delete generator;
 }
@@ -149,7 +148,7 @@ void PlaylistWidget::exportM3UUdpxy(const QString &name,
         return;
     }
 
-    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, _handler->channelMap(), Tano::M3UUdpxy);
+    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, _handler->channelMap(), FileDialogs::M3UUdpxy);
     generator->write(&f);
     delete generator;
 }

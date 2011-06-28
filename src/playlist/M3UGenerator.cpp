@@ -23,7 +23,7 @@
 M3UGenerator::M3UGenerator(QTreeWidget *treeWidget,
                            const QString &name,
                            QMap<QTreeWidgetItem *, Channel *> map,
-                           const Tano::M3UType &type)
+                           const FileDialogs::Type &type)
     : _treeWidget(treeWidget),
       _name(name),
       _map(map),
@@ -39,18 +39,24 @@ bool M3UGenerator::write(QIODevice *device)
     _out.setDevice(device);
     _out.setCodec("UTF-8");
     _out << "#EXTM3U\n";
-    if(_type != Tano::M3UClean) {
+    if(_type != FileDialogs::M3UClean) {
         _out << "#EXTNAME:"
              << _name
              << "\n\n";
     }
     for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
-        if(_type == Tano::M3UClean) {
-            generateItemClean(_map[_treeWidget->topLevelItem(i)]);
-        } else if(_type == Tano::M3UUdpxy) {
-            generateItemUdpxy(_map[_treeWidget->topLevelItem(i)]);
-        } else {
-            generateItemNormal(_map[_treeWidget->topLevelItem(i)]);
+        switch(_type) {
+            case FileDialogs::M3U:
+                generateItemNormal(_map[_treeWidget->topLevelItem(i)]);
+                break;
+            case FileDialogs::M3UClean:
+                generateItemClean(_map[_treeWidget->topLevelItem(i)]);
+                break;
+            case FileDialogs::M3UUdpxy:
+                generateItemUdpxy(_map[_treeWidget->topLevelItem(i)]);
+                break;
+            default:
+                break;
         }
     }
     return true;

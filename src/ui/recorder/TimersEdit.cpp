@@ -188,7 +188,7 @@ void TimersEdit::edit(QTreeWidgetItem *item)
 	ui->editNum->display(_handler->timerRead(item)->num());
 	ui->editPlaylist->setText(_handler->timerRead(item)->playlist());
 	ui->editUrl->setText(_handler->timerRead(item)->url());
-	ui->editType->setCurrentIndex(Tano::timerType(_handler->timerRead(item)->type()));
+    ui->editType->setCurrentIndex(_handler->timerRead(item)->type());
 	ui->editDate->setDate(_handler->timerRead(item)->startTime().date());
 	ui->editStartTime->setTime(_handler->timerRead(item)->startTime().time());
 	ui->editEndTime->setTime(_handler->timerRead(item)->endTime().time());
@@ -211,8 +211,8 @@ void TimersEdit::editName(const QString &name)
 
 void TimersEdit::editType(const int &type)
 {
-	_handler->timerRead(ui->timersWidget->currentItem())->setType(Tano::timerType(type));
-	ui->timersWidget->currentItem()->setText(1, Tano::timerTypeString(Tano::timerType(type)));
+    _handler->timerRead(ui->timersWidget->currentItem())->setType(Tano::TimerType(type));
+    ui->timersWidget->currentItem()->setText(1, Tano::timerTypeString(Tano::TimerType(type)));
 }
 
 void TimersEdit::editDate(const QDate &date)

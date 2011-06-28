@@ -101,7 +101,7 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
 		}
 	} else if (qName == "type") {
 		if (_item && _timer) {
-			_timer->setType(Tano::timerType(_currentText.toInt()));
+            _timer->setType(Tano::TimerType(_currentText.toInt()));
 			_item->setText(1, Tano::timerTypeString(_timer->type()));
 		}
 	} else if (qName == "starttime") {

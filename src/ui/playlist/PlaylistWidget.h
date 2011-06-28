@@ -22,6 +22,8 @@
 #include <QtGui/QTreeWidgetItem>
 #include <QtGui/QWidget>
 
+#include "ui/core/FileDialogs.h"
+
 class Channel;
 class PlaylistHandler;
 

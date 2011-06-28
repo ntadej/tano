@@ -20,38 +20,16 @@
 
 #include "Enums.h"
 
-Tano::TimerType Tano::timerType(const int &type)
-{
-    if(type == 0)
-        return Tano::Once;
-    else if(type == 1)
-        return Tano::Daily;
-    else if(type == 2)
-        return Tano::Weekly;
-    else
-        return Tano::Once;
-}
-
-int Tano::timerType(const TimerType &type)
-{
-    if(type == Tano::Once)
-        return 0;
-    else if(type == Tano::Daily)
-        return 1;
-    else if(type == Tano::Weekly)
-        return 2;
-    else
-        return -1;
-}
-
 QString Tano::timerTypeString(const TimerType &type)
 {
-    if(type == Tano::Once)
-        return QString(QObject::tr("Once"));
-    else if(type == Tano::Daily)
-        return QString(QObject::tr("Daily"));
-    else if(type == Tano::Weekly)
-        return QString(QObject::tr("Weekly"));
-    else
-        return QString("error");
+    switch(type) {
+        case Tano::Once:
+            return QString(QObject::tr("Once"));
+        case Tano::Daily:
+            return QString(QObject::tr("Daily"));
+        case Tano::Weekly:
+            return QString(QObject::tr("Weekly"));
+        default:
+            return QString("error");
+    }
 }

@@ -23,7 +23,7 @@
 #include <QtGui/QTreeWidget>
 #include <QtGui/QTreeWidgetItem>
 
-#include "core/Enums.h"
+#include "ui/core/FileDialogs.h"
 
 class Channel;
 class Udpxy;
@@ -34,7 +34,7 @@ public:
     M3UGenerator(QTreeWidget *treeWidget,
                  const QString &name,
                  QMap<QTreeWidgetItem *, Channel *> map,
-                 const Tano::M3UType &type = Tano::M3UNormal);
+                 const FileDialogs::Type &type = FileDialogs::M3U);
     ~M3UGenerator();
 
     bool write(QIODevice *device);
@@ -44,7 +44,7 @@ private:
     void generateItemClean(Channel *channel);
     void generateItemUdpxy(Channel *channel);
 
-    Tano::M3UType _type;
+    FileDialogs::Type _type;
 
     QTreeWidget *_treeWidget;
     QString _name;

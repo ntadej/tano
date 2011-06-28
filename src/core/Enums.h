@@ -39,14 +39,6 @@ namespace Tano
         Schedule
     };
 
-    // M3U types
-    enum M3UType
-    {
-        M3UNormal,
-        M3UClean,
-        M3UUdpxy
-    };
-
     // Timer types
     enum TimerType
     {
@@ -55,8 +47,6 @@ namespace Tano
         Weekly
     };
 
-    TimerType timerType(const int &type);
-    int timerType(const TimerType &type);
     QString timerTypeString(const TimerType &type);
 };
 
