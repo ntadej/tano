@@ -21,6 +21,13 @@
 
 #include <QtGui/QWidget>
 
+#include "Config.h"
+
+#if EDITOR
+#else
+class XmltvController;
+#endif
+
 namespace Ui
 {
     class SettingsSchedule;
@@ -42,7 +49,14 @@ protected:
     void changeEvent(QEvent *e);
 
 private:
+    void listGrabbers();
+
     Ui::SettingsSchedule *ui;
+
+#if EDITOR
+#else
+    XmltvController *_controller;
+#endif
 };
 
 #endif // TANO_SETTINGSSCHEDULE_H_

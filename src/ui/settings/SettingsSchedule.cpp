@@ -16,6 +16,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#if EDITOR
+#else
+    #include "epg/XmltvController.h"
+#endif
+
 #include "SettingsSchedule.h"
 #include "ui_SettingsSchedule.h"
 
@@ -24,11 +29,21 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
       ui(new Ui::SettingsSchedule)
 {
     ui->setupUi(this);
+
+#if EDITOR
+#else
+    _controller = new XmltvController(this);
+    listGrabbers();
+#endif
 }
 
 SettingsSchedule::~SettingsSchedule()
 {
     delete ui;
+#if EDITOR
+#else
+    delete _controller;
+#endif
 }
 
 void SettingsSchedule::changeEvent(QEvent *e)
@@ -43,6 +58,20 @@ void SettingsSchedule::changeEvent(QEvent *e)
     }
 }
 
+void SettingsSchedule::listGrabbers()
+{
+#if EDITOR
+#else
+    QStringList grabbers = _controller->grabbers();
+
+    ui->comboGrabber->clear();
+
+    for(int i = 0; i < grabbers.size(); i++) {
+        ui->comboGrabber->addItem(grabbers[i].split("|")[1], grabbers[i].split("|")[0]);
+    }
+#endif
+}
+
 bool SettingsSchedule::xmltv() const
 {
     return ui->radioXmltv->isChecked();
@@ -55,10 +84,10 @@ void SettingsSchedule::setXmltv(const bool &enabled)
 
 QString SettingsSchedule::grabber() const
 {
-    return ui->comboGrabber->currentText();
+    return ui->comboGrabber->itemData(ui->comboGrabber->currentIndex()).toString();
 }
 
 void SettingsSchedule::setGrabber(const QString &grabber)
 {
-
+    ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(grabber));
 }
