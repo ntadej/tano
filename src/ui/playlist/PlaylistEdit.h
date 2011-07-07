@@ -68,11 +68,6 @@ private slots:
                  const QString &url);
 
     void save();
-    void exportCSV();
-    void importCSV();
-    void exportJs();
-    void importJs();
-    void importTanoOld();
     void importWeb();
     void exportTvheadend();
     void exportXmltvId();

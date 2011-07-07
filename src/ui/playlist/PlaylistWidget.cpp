@@ -54,14 +54,15 @@ PlaylistWidget::~PlaylistWidget()
 void PlaylistWidget::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            ui->categoryBox->setItemText(0, tr("All categories"));
-            ui->languageBox->setItemText(0, tr("All languages"));
-            break;
-        default:
-            break;
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        ui->categoryBox->setItemText(0, tr("All categories"));
+        ui->languageBox->setItemText(0, tr("All languages"));
+        break;
+    default:
+        break;
     }
 }
 
@@ -71,7 +72,8 @@ void PlaylistWidget::clear()
 }
 
 void PlaylistWidget::open(const QString &file,
-                          const bool &refresh)
+                          const bool &refresh,
+                          const FileDialogs::Type &type)
 {
     if(!refresh)
         _handler->clear();
@@ -79,18 +81,30 @@ void PlaylistWidget::open(const QString &file,
     if (file.isEmpty())
         return;
 
-    _fileName = file;
-
-    QFile f(_fileName);
+    QFile f(file);
     if (!f.open(QFile::ReadOnly | QFile::Text)) {
         QMessageBox::warning(this, tr("Tano"),
                             tr("Cannot read file %1:\n%2.")
-                            .arg(_fileName)
+                            .arg(file)
                             .arg(f.errorString()));
         return;
     }
 
-    _handler->openM3UFile(_fileName);
+    switch (type)
+    {
+    case FileDialogs::M3U:
+        _handler->openM3UFile(file);
+        _fileName = file;
+        break;
+    case FileDialogs::JS:
+        _handler->openJsFile(file);
+        break;
+    case FileDialogs::TanoOld:
+        _handler->openOldFormatFile(file);
+        break;
+    default:
+        break;
+    }
 
     ui->categoryBox->clear();
     ui->categoryBox->insertItem(0,tr("All categories"));
@@ -103,8 +117,9 @@ void PlaylistWidget::open(const QString &file,
     ui->treeWidget->sortByColumn(0, Qt::AscendingOrder);
 }
 
-void PlaylistWidget::save(const QString &name,
-                          const QString &file)
+void PlaylistWidget::save(const QString &file,
+                          const QString &name,
+                          const FileDialogs::Type &type)
 {
     QFile f(file);
     if (!f.open(QFile::WriteOnly | QFile::Text)) {
@@ -115,95 +130,41 @@ void PlaylistWidget::save(const QString &name,
         return;
     }
 
-    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, _handler->channelMap());
-    generator->write(&f);
-    delete generator;
-}
+    M3UGenerator *generatorM3U;
+    CSVGenerator *generatorCSV;
+    JsGenerator *generatorJS;
 
-void PlaylistWidget::exportM3UClean(const QString &file)
-{
-    QFile f(file);
-    if (!f.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano"),
-                            tr("Cannot write file %1:\n%2.")
-                            .arg(file)
-                            .arg(f.errorString()));
-        return;
+    switch (type)
+    {
+    case FileDialogs::M3U:
+    case FileDialogs::M3UClean:
+    case FileDialogs::M3UUdpxy:
+        generatorM3U = new M3UGenerator(ui->treeWidget, name, _handler->channelMap(), type);
+        generatorM3U->write(&f);
+        delete generatorM3U;
+        break;
+    case FileDialogs::CSV:
+        generatorCSV = new CSVGenerator(ui->treeWidget, _handler->channelMap());
+        generatorCSV->write(&f);
+        delete generatorCSV;
+        break;
+    case FileDialogs::JS:
+        generatorJS = new JsGenerator(ui->treeWidget, _handler->channelMap());
+        generatorJS->write(&f);
+        delete generatorJS;
+        break;
+    default:
+        break;
     }
-
-    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, "", _handler->channelMap(), FileDialogs::M3UClean);
-    generator->write(&f);
-    delete generator;
 }
 
-void PlaylistWidget::exportM3UUdpxy(const QString &name,
-                                    const QString &file)
-{
-    QFile f(file);
-    if (!f.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano"),
-                            tr("Cannot write file %1:\n%2.")
-                            .arg(file)
-                            .arg(f.errorString()));
-        return;
-    }
-
-    M3UGenerator *generator = new M3UGenerator(ui->treeWidget, name, _handler->channelMap(), FileDialogs::M3UUdpxy);
-    generator->write(&f);
-    delete generator;
-}
-
-void PlaylistWidget::exportCSV(const QString &file)
-{
-    QFile f(file);
-    if (!f.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano"),
-                            tr("Cannot write file %1:\n%2.")
-                            .arg(file)
-                            .arg(f.errorString()));
-        return;
-    }
-
-    CSVGenerator *generator = new CSVGenerator(ui->treeWidget, _handler->channelMap());
-    generator->write(&f);
-    delete generator;
-}
-
-void PlaylistWidget::importCSV(const QString &file,
+void PlaylistWidget::openCSV(const QString &file,
                                const QString &separator,
                                const bool &header,
                                const QList<int> &columns)
 {
     _handler->clear();
-    _handler->importCSVFormat(file, separator, header, columns);
-}
-
-void PlaylistWidget::exportJs(const QString &file)
-{
-    QFile f(file);
-    if (!f.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano"),
-                            tr("Cannot write file %1:\n%2.")
-                            .arg(file)
-                            .arg(f.errorString()));
-        return;
-    }
-
-    JsGenerator *generator = new JsGenerator(ui->treeWidget, _handler->channelMap());
-    generator->write(&f);
-    delete generator;
-}
-
-void PlaylistWidget::importJs(const QString &file)
-{
-    _handler->clear();
-    _handler->importJsFormat(file);
-}
-
-void PlaylistWidget::importTanoOld(const QString &file)
-{
-    _handler->clear();
-    _handler->importOldFormat(file);
+    _handler->openCSVFile(file, separator, header, columns);
 }
 
 void PlaylistWidget::exportTvheadend(const QString &location,

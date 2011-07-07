@@ -193,17 +193,17 @@ msgstr "Prenos ni uspel: %1."
 #, qt-format
 msgctxt "InfoBarWidget|"
 msgid "Language: %1"
-msgstr ""
+msgstr "Jezik: %1"
 
 #, qt-format
 msgctxt "InfoBarWidget|"
 msgid "Now: %1"
-msgstr ""
+msgstr "Trenutno: %1"
 
 #, qt-format
 msgctxt "InfoBarWidget|"
 msgid "Next: %1"
-msgstr ""
+msgstr "Naslednje: %1"
 
 msgctxt "IntroPage|"
 msgid "Welcome"
@@ -596,7 +596,7 @@ msgstr "<b><i>Navodila:</i></b>"
 
 msgctxt "PlaylistEdit|"
 msgid "Logo:"
-msgstr ""
+msgstr "Logo:"
 
 msgctxt "PlaylistEdit|"
 msgid "Update Playlist"
@@ -658,14 +658,13 @@ msgctxt "PlaylistEdit|"
 msgid "Tvheadend"
 msgstr "Tvheadend"
 
-#, fuzzy
 msgctxt "PlaylistEdit|"
 msgid "Settings"
 msgstr "Nastavitve"
 
 msgctxt "PlaylistEdit|"
 msgid "XMLTV IDs"
-msgstr ""
+msgstr "XMLTV oznake"
 
 msgctxt "PlaylistEdit|"
 msgid ""
@@ -675,15 +674,17 @@ msgctxt "PlaylistEdit|"
 msgid "Update Information"
 msgstr "Informacije o posodobitvah"
 
-msgctxt "PlaylistEdit|"
-msgid "Save and Close"
-msgstr "Shrani in zapri"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Save and Close"
+#~ msgstr "Shrani in zapri"
 
 msgctxt "PlaylistEdit|"
 msgid ""
 "<i>You need to apply the number.<br>All other values are automatically "
 "changed.<br>You need to provide full URL for logo.</i>"
 msgstr ""
+"<i>Število programa mora biti potrjeno.<br>Vse druge vrednosti se samodejno "
+"shranijo.<br>Potrebna je polna pot do loga.</i>"
 
 msgctxt "PlaylistEdit|"
 msgid "Close"
@@ -745,37 +746,37 @@ msgstr "Prenesi s spleta"
 #~ msgid "M3U (original) list files (*.m3u)"
 #~ msgstr "M3U (originalen) datoteka seznama (*.m3u)"
 
-msgctxt "PlaylistEdit|"
-msgid "Export to Comma-separated values file"
-msgstr "Izvozi v datoteko CSV"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Export to Comma-separated values file"
+#~ msgstr "Izvozi v datoteko CSV"
 
-msgctxt "PlaylistEdit|"
-msgid "Comma-separated values file (*.csv *.txt)"
-msgstr "CSV datoteka (*.csv *.txt)"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Comma-separated values file (*.csv *.txt)"
+#~ msgstr "CSV datoteka (*.csv *.txt)"
 
-msgctxt "PlaylistEdit|"
-msgid "Import Comma-separated values file"
-msgstr "Uvozi datoteko CSV"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Import Comma-separated values file"
+#~ msgstr "Uvozi datoteko CSV"
 
-msgctxt "PlaylistEdit|"
-msgid "Export to Sagem JS channel list"
-msgstr "Izvozi v Sagem JS seznam programov"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Export to Sagem JS channel list"
+#~ msgstr "Izvozi v Sagem JS seznam programov"
 
-msgctxt "PlaylistEdit|"
-msgid "Sagem JS channel list files (*.js)"
-msgstr "Sagem JS seznam programov (*.js)"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Sagem JS channel list files (*.js)"
+#~ msgstr "Sagem JS seznam programov (*.js)"
 
-msgctxt "PlaylistEdit|"
-msgid "Import Sagem JS channel list"
-msgstr "Uvozi Sagem JS seznam programov"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Import Sagem JS channel list"
+#~ msgstr "Uvozi Sagem JS seznam programov"
 
-msgctxt "PlaylistEdit|"
-msgid "Import Tano TV old channel list"
-msgstr "Uvozi Tano TV star seznam programov"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Import Tano TV old channel list"
+#~ msgstr "Uvozi Tano TV star seznam programov"
 
-msgctxt "PlaylistEdit|"
-msgid "Tano TV old channel list files(*.tano *.xml)"
-msgstr "Tano TV star seznam programov (*.tano *.xml)"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Tano TV old channel list files(*.tano *.xml)"
+#~ msgstr "Tano TV star seznam programov (*.tano *.xml)"
 
 msgctxt "PlaylistEdit|"
 msgid ""
@@ -809,13 +810,23 @@ msgstr ""
 
 msgctxt "PlaylistEdit|"
 msgid "Export to M3U format with Udpxy URLs"
-msgstr ""
+msgstr "Izvozi v M3U format z Udpxy URLji"
 
 msgctxt "PlaylistEdit|"
 msgid ""
 "You need to have valid Udpxy settings or the exported playlist will contain "
 "classic URLs."
 msgstr ""
+"Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam "
+"programov vseboval običajne URLje."
+
+msgctxt "PlaylistEdit|"
+msgid "Import from Web"
+msgstr "Uvozi iz spleta"
+
+msgctxt "PlaylistEdit|"
+msgid "Save"
+msgstr "Shrani"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
@@ -1098,13 +1109,13 @@ msgctxt "QObject|"
 msgid "New channel"
 msgstr "Nov program"
 
-msgctxt "QObject|"
-msgid "CSV Imported Playlist"
-msgstr "CSV uvožen seznam programov"
+#~ msgctxt "QObject|"
+#~ msgid "CSV Imported Playlist"
+#~ msgstr "CSV uvožen seznam programov"
 
-msgctxt "QObject|"
-msgid "Sagem JS Imported Playlist"
-msgstr "Sagem JS uvožen seznam programov"
+#~ msgctxt "QObject|"
+#~ msgid "Sagem JS Imported Playlist"
+#~ msgstr "Sagem JS uvožen seznam programov"
 
 msgctxt "QObject|"
 msgid "The file is not a Tano TV channel list 1.1 or later."
@@ -1202,34 +1213,32 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "seconds"
-msgstr ""
+msgstr "sekund"
 
 msgctxt "QObject|"
 msgid "minutes"
-msgstr ""
+msgstr "minut"
 
 msgctxt "QObject|"
 msgid "hours"
-msgstr ""
+msgstr "ur"
 
 msgctxt "QObject|"
 msgid "s"
-msgstr ""
+msgstr "s"
 
 msgctxt "QObject|"
 msgid "min"
-msgstr ""
+msgstr "min"
 
 msgctxt "QObject|"
 msgid "h"
-msgstr ""
+msgstr "h"
 
-#, fuzzy
 msgctxt "QObject|"
 msgid "Open directory"
 msgstr "Odpri imenik"
 
-#, fuzzy
 msgctxt "QObject|"
 msgid "Open channel list"
 msgstr "Odpri seznam programov"
@@ -1246,12 +1255,10 @@ msgstr "Odpri seznam programov"
 #~ msgid "Multimedia files(*)"
 #~ msgstr "Multimedijske datoteke(*)"
 
-#, fuzzy
 msgctxt "QObject|"
 msgid "Open URL or stream"
 msgstr "Odpri URL ali drug pretočni vir"
 
-#, fuzzy
 msgctxt "QObject|"
 msgid "Enter the URL of multimedia file or stream you want to play:"
 msgstr "Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:"
@@ -1270,43 +1277,59 @@ msgstr "Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:"
 
 msgctxt "QObject|"
 msgid "Tano M3U channel list files"
-msgstr ""
-
-msgctxt "QObject|"
-msgid "M3U (original) list files"
-msgstr ""
-
-msgctxt "QObject|"
-msgid "M3U (Udpxy URL) list files"
-msgstr ""
+msgstr "Tano M3U seznami programov"
 
 msgctxt "QObject|"
 msgid "Comma-separated values files"
-msgstr ""
+msgstr "CSV datoteke"
 
 msgctxt "QObject|"
 msgid "Multimedia files"
-msgstr ""
+msgstr "Multimedijske datoteke"
 
 msgctxt "QObject|"
 msgid "Subtitles files"
-msgstr ""
+msgstr "Datoteke s podnapisi"
 
 msgctxt "QObject|"
 msgid "Plain text files"
-msgstr ""
+msgstr "Besedilne datoteke"
 
 msgctxt "QObject|"
 msgid "Open file"
-msgstr ""
+msgstr "Odpri datoteko"
 
 msgctxt "QObject|"
 msgid "Open subtitles"
-msgstr ""
+msgstr "Odpri podnapise"
 
 msgctxt "QObject|"
 msgid "Export XMLTV IDs"
-msgstr ""
+msgstr "Izvozi oznake XMLTV"
+
+msgctxt "QObject|"
+msgid "M3U (original) files"
+msgstr "M3U (originalne) datoteke"
+
+msgctxt "QObject|"
+msgid "M3U (Udpxy URL) files"
+msgstr "M3U (Udpxy URLji) datoteke"
+
+msgctxt "QObject|"
+msgid "Tano TV old channel list files"
+msgstr "Tano TV stari seznami programov"
+
+msgctxt "QObject|"
+msgid "Sagem STB channel list files"
+msgstr "Sagem STB seznami programov"
+
+msgctxt "QObject|"
+msgid "CSV channel list"
+msgstr "CSV seznam programov"
+
+msgctxt "QObject|"
+msgid "Sagem STB channel list"
+msgstr "Sagem STB seznam programov"
 
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
@@ -1373,82 +1396,67 @@ msgctxt "Recorder|"
 msgid "Recording to file:"
 msgstr "Snemam v datoteko:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr "VLC-Qt Hrbtenica"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Curently using VLC-Qt Backend"
 msgstr "Trenutno uporabljaš VLC-Qt hrbtenico"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Version:"
 msgstr "Različica:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Use global VLC settings (requires restart)"
 msgstr "Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Using Videolan VLC version:"
 msgstr "Videolan VLC različice:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Playback"
 msgstr "Predvajanje"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Remember Video settings between media"
 msgstr "Zapomni si nastavitve slike med preklapljanjem"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Default subtitle language:"
 msgstr "Privzet jezik podnapisov:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Default audio language:"
 msgstr "Privzet jezik zvoka:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Disabled"
 msgstr "Onemogočeno"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Other"
 msgstr "Drugo"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "UDPXY support"
 msgstr "UDPXY podpora"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Enable UDPXY support"
 msgstr "Vključi podporo UDPXY"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Router IP or name:"
 msgstr "IP ali ime usmerjevalnika:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Router port:"
 msgstr "Vrata usmerjevalnika:"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "SettingsBackend|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
@@ -1609,60 +1617,50 @@ msgstr "Bližnjice"
 #~ msgid "Open directory"
 #~ msgstr "Odpri imenik"
 
-#, fuzzy
 msgctxt "SettingsEdit|"
 msgid "Schedule"
 msgstr "Spored"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Run First run wizard after restart"
 msgstr "Zaženi 'Čarovnik ob prvem zagonu' ob novem zagonu"
 
 msgctxt "SettingsGeneral|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr ""
+msgstr "<i>Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.</i>"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Language"
 msgstr "Jezik"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "System default language"
 msgstr "Sistemsko privzet jezik"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Custom language"
 msgstr "Poljuben jezik"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Session store"
 msgstr "Shranjevanje sej"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Remember volume"
 msgstr "Zapomni si glasnost"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Autoplay last channel"
 msgstr "Samodejno prični predvajanje zadnjega programa"
 
 msgctxt "SettingsGeneral|"
 msgid "You are using Tano Editor version:"
-msgstr ""
+msgstr "Uporabljate Tano Urejevalnik različice:"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr "Uporabljate Tano različice:"
@@ -1739,7 +1737,6 @@ msgstr "Prenesi"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Tano TV seznam programov (*.m3u)"
 
-#, fuzzy
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
 msgstr "Privzet imenik snemanja"
@@ -1811,23 +1808,23 @@ msgstr "Privzet imenik snemanja"
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV Grabber"
-msgstr ""
+msgstr "XMLTV Grabber"
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV"
-msgstr ""
+msgstr "XMLTV"
 
 msgctxt "SettingsSchedule|"
 msgid "Custom grabber"
-msgstr ""
+msgstr "Poljuben grabber"
 
 msgctxt "SettingsSchedule|"
 msgid "Select desired XMLTV grabber from the list below:"
-msgstr ""
+msgstr "Izberite željen XMLTV grabber s spodnjega seznama:"
 
 msgctxt "SettingsSchedule|"
 msgid "Custom grabber settings"
-msgstr ""
+msgstr "Nastavitve poljubnega grabberja"
 
 #, qt-format
 msgctxt "SettingsSchedule|"
@@ -1835,6 +1832,8 @@ msgid ""
 "Your custom grabber must output to:\n"
 "%1"
 msgstr ""
+"Vaš poljuben grabber mora shraniti v:\n"
+"%1"
 
 msgctxt "SettingsShortcuts|"
 msgid "Action"
@@ -1966,99 +1965,80 @@ msgstr "Nastavi"
 
 msgctxt "SettingsShortcuts|"
 msgid "Defaults"
-msgstr ""
+msgstr "Privzeto"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "General Interface Settings"
 msgstr "Splošne nastavitve vmesnika"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Toolbar style:"
 msgstr "Izgled orodnih vrstic:"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Icon only"
 msgstr "Samo ikona"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Text only"
 msgstr "Samo besedilo"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Text beside icon"
 msgstr "Besedilo ob ikoni"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Text under icon"
 msgstr "Besedilo pod ikono"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "System default"
 msgstr "Sistemsko privzeto"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Enable OSD in Fullscreen mode"
 msgstr "Vključi OSD v celozaslonskem načinu"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Mouse wheel function:"
 msgstr "Funkcija miškinega koleščka:"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Change channel"
 msgstr "Spremeni program"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Change volume"
 msgstr "Spremeni glasnost"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Minimise to tray"
 msgstr "Skrij v sistemsko vrstico"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Enable Info OSD in Fullscreen mode"
 msgstr "Vključi Info OSD v celozaslonskem načinu"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Default options for startup"
 msgstr "Privzete nastavitve ob zagonu"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Show splash screen"
 msgstr "Prikaži pozdravni zaslon"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Simple mode"
 msgstr "Enostaven način"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Always on top"
 msgstr "Vedno na vrhu"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Controls enabled"
 msgstr "Vključen upravljalni pult"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Vključen info pult"
@@ -2072,12 +2052,12 @@ msgstr "Vključen info pult"
 #~ msgstr "Prosojnost teleteksta"
 
 msgctxt "TeletextWidget|"
-msgid "TeletextWidget"
-msgstr ""
+msgid "Teletext"
+msgstr "Teletekst"
 
 msgctxt "TeletextWidget|"
-msgid "TeletextWidget Transparency"
-msgstr ""
+msgid "Teletext Transparency"
+msgstr "Prosojnost teleteksta"
 
 msgctxt "TimersEdit|"
 msgid "Timers"

@@ -618,7 +618,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation>Uložit a zavřít</translation>
+        <translation type="obsolete">Uložit a zavřít</translation>
     </message>
     <message>
         <source>Close</source>
@@ -658,11 +658,11 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Export to Sagem JS channel list</source>
-        <translation>Vyvést do seznamu programů Sagem JS</translation>
+        <translation type="obsolete">Vyvést do seznamu programů Sagem JS</translation>
     </message>
     <message>
         <source>Sagem JS channel list files (*.js)</source>
-        <translation>Soubory se seznamy programů Sagem JS (*.js)</translation>
+        <translation type="obsolete">Soubory se seznamy programů Sagem JS (*.js)</translation>
     </message>
     <message>
         <source>Export</source>
@@ -694,7 +694,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Tano TV old channel list files(*.tano *.xml)</source>
-        <translation>Soubory se starými seznamy programů Tano TV (*.m3u)</translation>
+        <translation type="obsolete">Soubory se starými seznamy programů Tano TV (*.m3u)</translation>
     </message>
     <message>
         <source>Add channel</source>
@@ -718,11 +718,11 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Import Sagem JS channel list</source>
-        <translation>Zavést seznam programů Sagem JS</translation>
+        <translation type="obsolete">Zavést seznam programů Sagem JS</translation>
     </message>
     <message>
         <source>Import Tano TV old channel list</source>
-        <translation>Zavést starý seznam programů Tano TV</translation>
+        <translation type="obsolete">Zavést starý seznam programů Tano TV</translation>
     </message>
     <message>
         <source>Do you want close the editor?
@@ -766,11 +766,11 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Export to Comma-separated values file</source>
-        <translation>Vyvést do souboru s hodnotami oddělenými čárkou</translation>
+        <translation type="obsolete">Vyvést do souboru s hodnotami oddělenými čárkou</translation>
     </message>
     <message>
         <source>Import Comma-separated values file</source>
-        <translation>Zavést soubor s hodnotami oddělenými čárkou</translation>
+        <translation type="obsolete">Zavést soubor s hodnotami oddělenými čárkou</translation>
     </message>
     <message>
         <source>CSV</source>
@@ -778,7 +778,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Comma-separated values file (*.csv *.txt)</source>
-        <translation>Soubor s hodnotami oddělenými čárkou (*.csv *.txt)</translation>
+        <translation type="obsolete">Soubor s hodnotami oddělenými čárkou (*.csv *.txt)</translation>
     </message>
     <message>
         <source>Tvheadend</source>
@@ -810,6 +810,14 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import from Web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1159,7 +1167,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Sagem JS Imported Playlist</source>
-        <translation>Zavedený seznam programů Sagem JS</translation>
+        <translation type="obsolete">Zavedený seznam programů Sagem JS</translation>
     </message>
     <message>
         <source>The file is not a playlist list file.</source>
@@ -1187,7 +1195,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>CSV Imported Playlist</source>
-        <translation>Zavedený seznam programů CSV</translation>
+        <translation type="obsolete">Zavedený seznam programů CSV</translation>
     </message>
     <message>
         <source>Number</source>
@@ -1264,14 +1272,6 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M3U (original) list files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M3U (Udpxy URL) list files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Comma-separated values files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1297,6 +1297,30 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Export XMLTV IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (original) files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (Udpxy URL) files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV old channel list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sagem STB channel list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sagem STB channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2048,12 +2072,12 @@ Ztratíte všechny neuložené změny.</translation>
 <context>
     <name>TeletextWidget</name>
     <message>
-        <source>TeletextWidget</source>
-        <translation type="unfinished"></translation>
+        <source>Teletext</source>
+        <translation type="unfinished">Teletext</translation>
     </message>
     <message>
-        <source>TeletextWidget Transparency</source>
-        <translation type="unfinished"></translation>
+        <source>Teletext Transparency</source>
+        <translation type="unfinished">Průhlednost teletextu</translation>
     </message>
 </context>
 <context>

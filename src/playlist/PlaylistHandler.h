@@ -29,60 +29,60 @@ class Channel;
 class PlaylistHandler
 {
 public:
-	PlaylistHandler(QTreeWidget *treeWidget);
-	~PlaylistHandler();
+    PlaylistHandler(QTreeWidget *treeWidget);
+    ~PlaylistHandler();
 
-	void openM3UFile(const QString &m3uFile);
-	void importCSVFormat(const QString &csvFile,
-						 const QString &separator,
-						 const bool &header,
-						 const QList<int> &columns);
-	void importJsFormat(const QString &jsFile);
-	void importOldFormat(const QString &tanoFile);
+    void openM3UFile(const QString &m3uFile);
+    void openCSVFile(const QString &csvFile,
+                         const QString &separator,
+                         const bool &header,
+                         const QList<int> &columns);
+    void openJsFile(const QString &jsFile);
+    void openOldFormatFile(const QString &tanoFile);
 
-	QTreeWidgetItem *createChannel(const QString &name = 0,
-								   const QString &url = 0);
-	void deleteChannel(QTreeWidgetItem *channel);
-	void processChannel(Channel *channel);
+    QTreeWidgetItem *createChannel(const QString &name = 0,
+                                   const QString &url = 0);
+    void deleteChannel(QTreeWidgetItem *channel);
+    void processChannel(Channel *channel);
 
-	void clear();
+    void clear();
 
-	Channel *channelRead(QTreeWidgetItem *item) { return _map[item]; }
-	Channel *channelRead(const int &item) { return _nmap[item]; }
+    Channel *channelRead(QTreeWidgetItem *item) { return _map[item]; }
+    Channel *channelRead(const int &item) { return _nmap[item]; }
 
-	QString name() const { return _name; }
-	QStringList categories() const { return _categoryList; }
-	QStringList languages() const { return _languageList; }
-	QStringList epg() const { return _epgList; }
-	QList<int> nums() const { return _channelNums; }
-	QMap<QTreeWidgetItem *, Channel *> channelMap() const { return _map; }
+    QString name() const { return _name; }
+    QStringList categories() const { return _categoryList; }
+    QStringList languages() const { return _languageList; }
+    QStringList epg() const { return _epgList; }
+    QList<int> nums() const { return _channelNums; }
+    QMap<QTreeWidgetItem *, Channel *> channelMap() const { return _map; }
 
-	int processNewNum(QTreeWidgetItem *channel,
-					  const int &num);
-	void moveUp(QTreeWidgetItem *channel);
-	void moveDown(QTreeWidgetItem *channel);
+    int processNewNum(QTreeWidgetItem *channel,
+                      const int &num);
+    void moveUp(QTreeWidgetItem *channel);
+    void moveDown(QTreeWidgetItem *channel);
 
-	bool validate() const;
+    bool validate() const;
 
 private:
-	QString processNum(const QString &num);
+    QString processNum(const QString &num);
 
-	QTreeWidget *_treeWidget;
-	QTreeWidgetItem *_item;
-	Channel *_channel;
+    QTreeWidget *_treeWidget;
+    QTreeWidgetItem *_item;
+    Channel *_channel;
 
-	QIcon _channelIcon;
+    QIcon _channelIcon;
 
-	QString _name;
-	QStringList _categoryList;
-	QStringList _languageList;
-	QStringList _epgList;
+    QString _name;
+    QStringList _categoryList;
+    QStringList _languageList;
+    QStringList _epgList;
 
-	QList<Channel *> _channels;
-	QList<int> _channelNums;
+    QList<Channel *> _channels;
+    QList<int> _channelNums;
 
-	QMap<QTreeWidgetItem *, Channel *> _map;
-	QMap<int, Channel *> _nmap;
+    QMap<QTreeWidgetItem *, Channel *> _map;
+    QMap<int, Channel *> _nmap;
 };
 
 #endif // TANO_PLAYLISTHANDLER_H_

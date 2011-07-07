@@ -47,8 +47,8 @@ namespace FileDialogs
                        const QString &arg = "");
     QString openDirectory(const QString &dir = QDir::homePath());
     QString openFile();
-    QString openPlaylist();
-    File openPlaylistFull();
+    File openPlaylist();
+    QString openPlaylistSimple();
     QString openSubtitles(const QString &dir = QDir::homePath());
     QString openUrl();
 

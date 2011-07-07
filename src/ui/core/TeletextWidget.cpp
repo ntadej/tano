@@ -34,8 +34,8 @@ TeletextWidget::TeletextWidget(QWidget *parent)
     _button->setIconSize(QSize(48, 48));
     _button->setMaximumSize(QSize(48, 48));
     _button->setMinimumSize(QSize(48, 48));
-    _button->setToolTip(tr("TeletextWidget"));
-    _button->setStatusTip(tr("TeletextWidget"));
+    _button->setToolTip(tr("Teletext"));
+    _button->setStatusTip(tr("Teletext"));
 
     _buttonTransparency = new QPushButton(this);
     _buttonTransparency->setVisible(false);
@@ -45,8 +45,8 @@ TeletextWidget::TeletextWidget(QWidget *parent)
     _buttonTransparency->setIconSize(QSize(48, 48));
     _buttonTransparency->setMaximumSize(QSize(48, 48));
     _buttonTransparency->setMinimumSize(QSize(48, 48));
-    _buttonTransparency->setToolTip(tr("TeletextWidget Transparency"));
-    _buttonTransparency->setStatusTip(tr("TeletextWidget Transparency"));
+    _buttonTransparency->setToolTip(tr("Teletext Transparency"));
+    _buttonTransparency->setStatusTip(tr("Teletext Transparency"));
 
     _page = new QSpinBox(this);
     _page->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);

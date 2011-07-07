@@ -206,15 +206,15 @@ Vaša različica VLC-Qt: %4
     <name>InfoBarWidget</name>
     <message>
         <source>Language: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Jezik: %1</translation>
     </message>
     <message>
         <source>Now: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Trenutno: %1</translation>
     </message>
     <message>
         <source>Next: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Naslednje: %1</translation>
     </message>
 </context>
 <context>
@@ -623,7 +623,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation type="unfinished"></translation>
+        <translation>Logo:</translation>
     </message>
     <message>
         <source>Update Playlist</source>
@@ -687,11 +687,11 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavitve</translation>
+        <translation>Nastavitve</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation type="unfinished"></translation>
+        <translation>XMLTV oznake</translation>
     </message>
     <message>
         <source></source>
@@ -703,11 +703,11 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation>Shrani in zapri</translation>
+        <translation type="obsolete">Shrani in zapri</translation>
     </message>
     <message>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Število programa mora biti potrjeno.&lt;br&gt;Vse druge vrednosti se samodejno shranijo.&lt;br&gt;Potrebna je polna pot do loga.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Close</source>
@@ -771,35 +771,35 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Export to Comma-separated values file</source>
-        <translation>Izvozi v datoteko CSV</translation>
+        <translation type="obsolete">Izvozi v datoteko CSV</translation>
     </message>
     <message>
         <source>Comma-separated values file (*.csv *.txt)</source>
-        <translation>CSV datoteka (*.csv *.txt)</translation>
+        <translation type="obsolete">CSV datoteka (*.csv *.txt)</translation>
     </message>
     <message>
         <source>Import Comma-separated values file</source>
-        <translation>Uvozi datoteko CSV</translation>
+        <translation type="obsolete">Uvozi datoteko CSV</translation>
     </message>
     <message>
         <source>Export to Sagem JS channel list</source>
-        <translation>Izvozi v Sagem JS seznam programov</translation>
+        <translation type="obsolete">Izvozi v Sagem JS seznam programov</translation>
     </message>
     <message>
         <source>Sagem JS channel list files (*.js)</source>
-        <translation>Sagem JS seznam programov (*.js)</translation>
+        <translation type="obsolete">Sagem JS seznam programov (*.js)</translation>
     </message>
     <message>
         <source>Import Sagem JS channel list</source>
-        <translation>Uvozi Sagem JS seznam programov</translation>
+        <translation type="obsolete">Uvozi Sagem JS seznam programov</translation>
     </message>
     <message>
         <source>Import Tano TV old channel list</source>
-        <translation>Uvozi Tano TV star seznam programov</translation>
+        <translation type="obsolete">Uvozi Tano TV star seznam programov</translation>
     </message>
     <message>
         <source>Tano TV old channel list files(*.tano *.xml)</source>
-        <translation>Tano TV star seznam programov (*.tano *.xml)</translation>
+        <translation type="obsolete">Tano TV star seznam programov (*.tano *.xml)</translation>
     </message>
     <message>
         <source>Do you want close the editor?
@@ -827,11 +827,19 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvozi v M3U format z Udpxy URLji</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam programov vseboval običajne URLje.</translation>
+    </message>
+    <message>
+        <source>Import from Web</source>
+        <translation>Uvozi iz spleta</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Shrani</translation>
     </message>
 </context>
 <context>
@@ -1130,11 +1138,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>CSV Imported Playlist</source>
-        <translation>CSV uvožen seznam programov</translation>
+        <translation type="obsolete">CSV uvožen seznam programov</translation>
     </message>
     <message>
         <source>Sagem JS Imported Playlist</source>
-        <translation>Sagem JS uvožen seznam programov</translation>
+        <translation type="obsolete">Sagem JS uvožen seznam programov</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
@@ -1226,35 +1234,35 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>sekund</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>minut</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>ur</translation>
     </message>
     <message>
         <source>s</source>
-        <translation type="unfinished"></translation>
+        <translation>s</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>h</source>
-        <translation type="unfinished"></translation>
+        <translation>h</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation type="unfinished">Odpri imenik</translation>
+        <translation>Odpri imenik</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation type="unfinished">Odpri seznam programov</translation>
+        <translation>Odpri seznam programov</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
@@ -1270,11 +1278,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
-        <translation type="unfinished">Odpri URL ali drug pretočni vir</translation>
+        <translation>Odpri URL ali drug pretočni vir</translation>
     </message>
     <message>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation type="unfinished">Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:</translation>
+        <translation>Vnesite URL multimedijske datoteke ali vira, ki ga želite predvajati:</translation>
     </message>
     <message>
         <source>M3U (original) list files (*.m3u)</source>
@@ -1290,43 +1298,59 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Tano M3U channel list files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M3U (original) list files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M3U (Udpxy URL) list files</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano M3U seznami programov</translation>
     </message>
     <message>
         <source>Comma-separated values files</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV datoteke</translation>
     </message>
     <message>
         <source>Multimedia files</source>
-        <translation type="unfinished"></translation>
+        <translation>Multimedijske datoteke</translation>
     </message>
     <message>
         <source>Subtitles files</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteke s podnapisi</translation>
     </message>
     <message>
         <source>Plain text files</source>
-        <translation type="unfinished"></translation>
+        <translation>Besedilne datoteke</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpri datoteko</translation>
     </message>
     <message>
         <source>Open subtitles</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpri podnapise</translation>
     </message>
     <message>
         <source>Export XMLTV IDs</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvozi oznake XMLTV</translation>
+    </message>
+    <message>
+        <source>M3U (original) files</source>
+        <translation>M3U (originalne) datoteke</translation>
+    </message>
+    <message>
+        <source>M3U (Udpxy URL) files</source>
+        <translation>M3U (Udpxy URLji) datoteke</translation>
+    </message>
+    <message>
+        <source>Tano TV old channel list files</source>
+        <translation>Tano TV stari seznami programov</translation>
+    </message>
+    <message>
+        <source>Sagem STB channel list files</source>
+        <translation>Sagem STB seznami programov</translation>
+    </message>
+    <message>
+        <source>CSV channel list</source>
+        <translation>CSV seznam programov</translation>
+    </message>
+    <message>
+        <source>Sagem STB channel list</source>
+        <translation>Sagem STB seznam programov</translation>
     </message>
 </context>
 <context>
@@ -1403,67 +1427,67 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
-        <translation type="unfinished">VLC-Qt Hrbtenica</translation>
+        <translation>VLC-Qt Hrbtenica</translation>
     </message>
     <message>
         <source>Curently using VLC-Qt Backend</source>
-        <translation type="unfinished">Trenutno uporabljaš VLC-Qt hrbtenico</translation>
+        <translation>Trenutno uporabljaš VLC-Qt hrbtenico</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation type="unfinished">Različica:</translation>
+        <translation>Različica:</translation>
     </message>
     <message>
         <source>Use global VLC settings (requires restart)</source>
-        <translation type="unfinished">Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
+        <translation>Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
-        <translation type="unfinished">Videolan VLC različice:</translation>
+        <translation>Videolan VLC različice:</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation type="unfinished">Predvajanje</translation>
+        <translation>Predvajanje</translation>
     </message>
     <message>
         <source>Remember Video settings between media</source>
-        <translation type="unfinished">Zapomni si nastavitve slike med preklapljanjem</translation>
+        <translation>Zapomni si nastavitve slike med preklapljanjem</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
-        <translation type="unfinished">Privzet jezik podnapisov:</translation>
+        <translation>Privzet jezik podnapisov:</translation>
     </message>
     <message>
         <source>Default audio language:</source>
-        <translation type="unfinished">Privzet jezik zvoka:</translation>
+        <translation>Privzet jezik zvoka:</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished">Onemogočeno</translation>
+        <translation>Onemogočeno</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished">Drugo</translation>
+        <translation>Drugo</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation type="unfinished">UDPXY podpora</translation>
+        <translation>UDPXY podpora</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation type="unfinished">Vključi podporo UDPXY</translation>
+        <translation>Vključi podporo UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation type="unfinished">IP ali ime usmerjevalnika:</translation>
+        <translation>IP ali ime usmerjevalnika:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation type="unfinished">Vrata usmerjevalnika:</translation>
+        <translation>Vrata usmerjevalnika:</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
@@ -1626,54 +1650,54 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Spored</translation>
+        <translation>Spored</translation>
     </message>
 </context>
 <context>
     <name>SettingsGeneral</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation type="unfinished">Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
+        <translation>Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Jezik</translation>
+        <translation>Jezik</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation type="unfinished">Sistemsko privzet jezik</translation>
+        <translation>Sistemsko privzet jezik</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation type="unfinished">Poljuben jezik</translation>
+        <translation>Poljuben jezik</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation type="unfinished">Shranjevanje sej</translation>
+        <translation>Shranjevanje sej</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation type="unfinished">Zapomni si glasnost</translation>
+        <translation>Zapomni si glasnost</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation type="unfinished">Samodejno prični predvajanje zadnjega programa</translation>
+        <translation>Samodejno prični predvajanje zadnjega programa</translation>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uporabljate Tano Urejevalnik različice:</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation type="unfinished">Uporabljate Tano različice:</translation>
+        <translation>Uporabljate Tano različice:</translation>
     </message>
 </context>
 <context>
@@ -1754,7 +1778,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>SettingsRecorder</name>
     <message>
         <source>Default recording directory</source>
-        <translation type="unfinished">Privzet imenik snemanja</translation>
+        <translation>Privzet imenik snemanja</translation>
     </message>
 </context>
 <context>
@@ -1825,28 +1849,29 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>XMLTV Grabber</source>
-        <translation type="unfinished"></translation>
+        <translation>XMLTV Grabber</translation>
     </message>
     <message>
         <source>XMLTV</source>
-        <translation type="unfinished"></translation>
+        <translation>XMLTV</translation>
     </message>
     <message>
         <source>Custom grabber</source>
-        <translation type="unfinished"></translation>
+        <translation>Poljuben grabber</translation>
     </message>
     <message>
         <source>Select desired XMLTV grabber from the list below:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite željen XMLTV grabber s spodnjega seznama:</translation>
     </message>
     <message>
         <source>Custom grabber settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitve poljubnega grabberja</translation>
     </message>
     <message>
         <source>Your custom grabber must output to:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaš poljuben grabber mora shraniti v:
+%1</translation>
     </message>
 </context>
 <context>
@@ -1981,86 +2006,86 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Privzeto</translation>
     </message>
 </context>
 <context>
     <name>SettingsUi</name>
     <message>
         <source>General Interface Settings</source>
-        <translation type="unfinished">Splošne nastavitve vmesnika</translation>
+        <translation>Splošne nastavitve vmesnika</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation type="unfinished">Izgled orodnih vrstic:</translation>
+        <translation>Izgled orodnih vrstic:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation type="unfinished">Samo ikona</translation>
+        <translation>Samo ikona</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation type="unfinished">Samo besedilo</translation>
+        <translation>Samo besedilo</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation type="unfinished">Besedilo ob ikoni</translation>
+        <translation>Besedilo ob ikoni</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation type="unfinished">Besedilo pod ikono</translation>
+        <translation>Besedilo pod ikono</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation type="unfinished">Sistemsko privzeto</translation>
+        <translation>Sistemsko privzeto</translation>
     </message>
     <message>
         <source>Enable OSD in Fullscreen mode</source>
-        <translation type="unfinished">Vključi OSD v celozaslonskem načinu</translation>
+        <translation>Vključi OSD v celozaslonskem načinu</translation>
     </message>
     <message>
         <source>Mouse wheel function:</source>
-        <translation type="unfinished">Funkcija miškinega koleščka:</translation>
+        <translation>Funkcija miškinega koleščka:</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation type="unfinished">Spremeni program</translation>
+        <translation>Spremeni program</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation type="unfinished">Spremeni glasnost</translation>
+        <translation>Spremeni glasnost</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation type="unfinished">Skrij v sistemsko vrstico</translation>
+        <translation>Skrij v sistemsko vrstico</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation type="unfinished">Vključi Info OSD v celozaslonskem načinu</translation>
+        <translation>Vključi Info OSD v celozaslonskem načinu</translation>
     </message>
     <message>
         <source>Default options for startup</source>
-        <translation type="unfinished">Privzete nastavitve ob zagonu</translation>
+        <translation>Privzete nastavitve ob zagonu</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation type="unfinished">Prikaži pozdravni zaslon</translation>
+        <translation>Prikaži pozdravni zaslon</translation>
     </message>
     <message>
         <source>Simple mode</source>
-        <translation type="unfinished">Enostaven način</translation>
+        <translation>Enostaven način</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation type="unfinished">Vedno na vrhu</translation>
+        <translation>Vedno na vrhu</translation>
     </message>
     <message>
         <source>Controls enabled</source>
-        <translation type="unfinished">Vključen upravljalni pult</translation>
+        <translation>Vključen upravljalni pult</translation>
     </message>
     <message>
         <source>Info panel enabled</source>
-        <translation type="unfinished">Vključen info pult</translation>
+        <translation>Vključen info pult</translation>
     </message>
 </context>
 <context>
@@ -2077,12 +2102,12 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
 <context>
     <name>TeletextWidget</name>
     <message>
-        <source>TeletextWidget</source>
-        <translation type="unfinished"></translation>
+        <source>Teletext</source>
+        <translation>Teletekst</translation>
     </message>
     <message>
-        <source>TeletextWidget Transparency</source>
-        <translation type="unfinished"></translation>
+        <source>Teletext Transparency</source>
+        <translation>Prosojnost teleteksta</translation>
     </message>
 </context>
 <context>

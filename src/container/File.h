@@ -24,8 +24,8 @@
 class File
 {
 public:
-    File(const QString &path,
-         const int &type);
+    File(const QString &path = 0,
+         const int &type = 10);
     ~File();
 
     QString path() const { return _path; }

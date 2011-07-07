@@ -84,6 +84,7 @@
    </attribute>
    <addaction name="actionNew"/>
    <addaction name="actionOpen"/>
+   <addaction name="actionImportWeb"/>
    <addaction name="actionSave"/>
    <addaction name="actionExport"/>
    <addaction name="actionPrint"/>
@@ -448,10 +449,10 @@
      <normaloff>:/icons/24x24/save.png</normaloff>:/icons/24x24/save.png</iconset>
    </property>
    <property name="text">
-    <string>Save and Close</string>
+    <string>Save</string>
    </property>
    <property name="toolTip">
-    <string>Save and Close</string>
+    <string>Save</string>
    </property>
   </action>
   <action name="actionClose">
@@ -581,6 +582,15 @@
    </property>
    <property name="toolTip">
     <string>Update Information</string>
+   </property>
+  </action>
+  <action name="actionImportWeb">
+   <property name="icon">
+    <iconset resource="../../../data/icons.qrc">
+     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import from Web</string>
    </property>
   </action>
  </widget>

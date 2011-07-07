@@ -41,20 +41,15 @@ public:
 
     void clear();
     void open(const QString &file,
-              const bool &refresh = false);
-    void save(const QString &name,
-              const QString &file);
-    void exportM3UClean(const QString &file);
-    void exportM3UUdpxy(const QString &name,
-                        const QString &file);
-    void exportCSV(const QString &file);
-    void importCSV(const QString &file,
-                   const QString &separator,
-                   const bool &header,
-                   const QList<int> &columns);
-    void exportJs(const QString &file);
-    void importJs(const QString &file);
-    void importTanoOld(const QString &file);
+              const bool &refresh = false,
+              const FileDialogs::Type &type = FileDialogs::M3U);
+    void openCSV(const QString &file,
+                 const QString &separator,
+                 const bool &header,
+                 const QList<int> &columns);
+    void save(const QString &file,
+              const QString &name,
+              const FileDialogs::Type &type);
     void exportTvheadend(const QString &location,
                          const QString &interface,
                          const QString &xmltv);

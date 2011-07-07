@@ -106,12 +106,13 @@ PlaylistEdit::~PlaylistEdit()
 void PlaylistEdit::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            break;
-        default:
-            break;
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
     }
 }
 
@@ -141,6 +142,7 @@ void PlaylistEdit::createConnections()
     connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
     connect(ui->actionExportTvheadend, SIGNAL(triggered()), this, SLOT(exportTvheadend()));
     connect(ui->actionExportXmltvId, SIGNAL(triggered()), this, SLOT(exportXmltvId()));
+    connect(ui->actionImportWeb, SIGNAL(triggered()), this, SLOT(importWeb()));
     connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
 
     connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(setTitle(QString)));
@@ -209,15 +211,34 @@ void PlaylistEdit::updateAvailable()
 void PlaylistEdit::open(const QString &playlist,
                         const bool &refresh)
 {
-    QString p;
-    if(playlist == 0) {
-        p = FileDialogs::openPlaylist();
+    File file;
+    PlaylistImportCSV dialog;
+    if(playlist.isNull()) {
+        file = FileDialogs::openPlaylist();
     } else {
-        p = playlist;
+        file = File(playlist, FileDialogs::M3U);
     }
 
     ui->editWidget->setEnabled(false);
-    ui->playlist->open(p, refresh);
+
+    switch (file.type())
+    {
+    case FileDialogs::M3U:
+    case FileDialogs::JS:
+    case FileDialogs::TanoOld:
+        ui->playlist->open(file.path(), refresh, FileDialogs::Type(file.type()));
+        break;
+    case FileDialogs::CSV:
+        dialog.exec();
+        if(!dialog.proceed())
+            return;
+
+        ui->playlist->openCSV(file.path(), dialog.separator(), dialog.header(), dialog.columns());
+        break;
+    default:
+        break;
+    }
+
     ui->editName->setText(ui->playlist->name());
     ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
 }
@@ -233,25 +254,25 @@ void PlaylistEdit::newPlaylist()
                                    QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel,
                                    QMessageBox::Discard);
 
-    switch (ret) {
-        case QMessageBox::Save:
-            ui->actionSave->trigger();
+    switch (ret)
+    {
+    case QMessageBox::Save:
+        ui->actionSave->trigger();
 
-            ui->editWidget->setEnabled(false);
-            ui->playlist->clear();
-            ui->editName->setText(tr("New playlist"));
-            ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-            break;
-        case QMessageBox::Discard:
-            ui->editWidget->setEnabled(false);
-            ui->playlist->clear();
-            ui->editName->setText(tr("New playlist"));
-            ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-            break;
-        case QMessageBox::Cancel:
-            break;
-        default:
-            break;
+        ui->editWidget->setEnabled(false);
+        ui->playlist->clear();
+        ui->editName->setText(tr("New playlist"));
+        ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+        break;
+    case QMessageBox::Discard:
+        ui->editWidget->setEnabled(false);
+        ui->playlist->clear();
+        ui->editName->setText(tr("New playlist"));
+        ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+        break;
+    case QMessageBox::Cancel:
+    default:
+        break;
     }
 }
 
@@ -294,90 +315,34 @@ void PlaylistEdit::save()
 
     qDebug() << file.path() << file.type();
 
-    switch(file.type()) {
-        case FileDialogs::M3U:
-            ui->playlist->save(ui->editName->text(), file.path());
-            break;
-        case FileDialogs::M3UClean:
-            ui->playlist->exportM3UClean(file.path());
-            break;
-        case FileDialogs::M3UUdpxy:
-            int s;
-            s = QMessageBox::warning(this, tr("Export to M3U format with Udpxy URLs"),
-                                     tr("You need to have valid Udpxy settings or the exported playlist will contain classic URLs."),
-                                     QMessageBox::Save | QMessageBox::Cancel,
-                                     QMessageBox::Cancel);
+    switch (file.type())
+    {
+    case FileDialogs::M3U:
+    case FileDialogs::M3UClean:
+    case FileDialogs::CSV:
+    case FileDialogs::JS:
+        ui->playlist->save(file.path(), ui->editName->text(), FileDialogs::Type(file.type()));
+        break;
+    case FileDialogs::M3UUdpxy:
+        int s;
+        s = QMessageBox::warning(this, tr("Export to M3U format with Udpxy URLs"),
+                                 tr("You need to have valid Udpxy settings or the exported playlist will contain classic URLs."),
+                                 QMessageBox::Save | QMessageBox::Cancel,
+                                 QMessageBox::Cancel);
 
-            switch (s) {
-                case QMessageBox::Save:
-                    ui->playlist->exportM3UUdpxy(ui->editName->text(), file.path());
-                    break;
-                case QMessageBox::Cancel:
-                    break;
-                default:
-                    break;
-            }
+        switch (s)
+        {
+        case QMessageBox::Save:
+            ui->playlist->save(file.path(), ui->editName->text(), FileDialogs::Type(file.type()));
             break;
+        case QMessageBox::Cancel:
         default:
             break;
+        }
+        break;
+    default:
+        break;
     }
-}
-
-void PlaylistEdit::exportCSV()
-{
-    QString fileName =
-        QFileDialog::getSaveFileName(this, tr("Export to Comma-separated values file"),
-                                    QDir::homePath(),
-                                    tr("Comma-separated values file (*.csv *.txt)"));
-    if (fileName.isEmpty())
-        return;
-
-    ui->playlist->exportCSV(fileName);
-}
-
-void PlaylistEdit::importCSV()
-{
-    QString fileName =
-            QFileDialog::getOpenFileName(this, tr("Import Comma-separated values file"),
-                                        QDir::homePath(),
-                                        tr("Comma-separated values file (*.csv *.txt)"));
-    if (fileName.isEmpty())
-        return;
-
-    PlaylistImportCSV dialog;
-    dialog.exec();
-    if(!dialog.proceed())
-        return;
-
-    ui->playlist->importCSV(fileName, dialog.separator(), dialog.header(), dialog.columns());
-    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-    ui->editName->setText(ui->playlist->name());
-}
-
-void PlaylistEdit::exportJs()
-{
-    QString fileName =
-        QFileDialog::getSaveFileName(this, tr("Export to Sagem JS channel list"),
-                                    QDir::homePath(),
-                                    tr("Sagem JS channel list files (*.js)"));
-    if (fileName.isEmpty())
-        return;
-
-    ui->playlist->exportJs(fileName);
-}
-
-void PlaylistEdit::importJs()
-{
-    QString fileName =
-            QFileDialog::getOpenFileName(this, tr("Import Sagem JS channel list"),
-                                        QDir::homePath(),
-                                        tr("Sagem JS channel list files (*.js)"));
-    if (fileName.isEmpty())
-        return;
-
-    ui->playlist->importJs(fileName);
-    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-    ui->editName->setText(ui->playlist->name());
 }
 
 void PlaylistEdit::exportTvheadend()
@@ -398,20 +363,6 @@ void PlaylistEdit::exportXmltvId()
         return;
 
     ui->playlist->exportXmltvId(fileName);
-}
-
-void PlaylistEdit::importTanoOld()
-{
-    QString fileName =
-            QFileDialog::getOpenFileName(this, tr("Import Tano TV old channel list"),
-                                        QDir::homePath(),
-                                        tr("Tano TV old channel list files(*.tano *.xml)"));
-    if (fileName.isEmpty())
-        return;
-
-    ui->playlist->importTanoOld(fileName);
-    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-    ui->editName->setText(ui->playlist->name());
 }
 
 void PlaylistEdit::importWeb()
@@ -439,18 +390,18 @@ void PlaylistEdit::exit()
                                    QMessageBox::Save | QMessageBox::Close | QMessageBox::Cancel,
                                    QMessageBox::Close);
 
-    switch (ret) {
-        case QMessageBox::Save:
-            ui->actionSave->trigger();
-            break;
-        case QMessageBox::Close:
-            _closeEnabled = true;
-            ui->actionClose->trigger();
-            break;
-        case QMessageBox::Cancel:
-            break;
-        default:
-            break;
+    switch (ret)
+    {
+    case QMessageBox::Save:
+        ui->actionSave->trigger();
+        break;
+    case QMessageBox::Close:
+        _closeEnabled = true;
+        ui->actionClose->trigger();
+        break;
+    case QMessageBox::Cancel:
+    default:
+        break;
     }
 }
 

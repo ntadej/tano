@@ -513,7 +513,7 @@ void MainWindow::openPlaylist(const bool &start)
 	}
 
 	if (!start)
-    _playlistName = FileDialogs::openPlaylist();
+    _playlistName = FileDialogs::openPlaylistSimple();
 	else
 		_playlistName = Tano::locateResource(_defaultPlaylist);
 

@@ -607,7 +607,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation>Сохранить и закрыть</translation>
+        <translation type="obsolete">Сохранить и закрыть</translation>
     </message>
     <message>
         <source>Close</source>
@@ -647,11 +647,11 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Export to Sagem JS channel list</source>
-        <translation>Экспорт в формате Sagem Js</translation>
+        <translation type="obsolete">Экспорт в формате Sagem Js</translation>
     </message>
     <message>
         <source>Sagem JS channel list files (*.js)</source>
-        <translation>Файлы Sagem Js (*.js)</translation>
+        <translation type="obsolete">Файлы Sagem Js (*.js)</translation>
     </message>
     <message>
         <source>Export</source>
@@ -698,18 +698,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano TV old channel list files(*.tano *.xml)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import Sagem JS channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import Tano TV old channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
@@ -733,18 +721,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export to Comma-separated values file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import Comma-separated values file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Comma-separated values file (*.csv *.txt)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -777,6 +753,14 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import from Web</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1126,7 +1110,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Sagem JS Imported Playlist</source>
-        <translation>Список, импортированный из Sagem JS</translation>
+        <translation type="obsolete">Список, импортированный из Sagem JS</translation>
     </message>
     <message>
         <source>The file is not a playlist list file.</source>
@@ -1150,10 +1134,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CSV Imported Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1227,14 +1207,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M3U (original) list files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M3U (Udpxy URL) list files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Comma-separated values files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1260,6 +1232,30 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Export XMLTV IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (original) files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M3U (Udpxy URL) files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano TV old channel list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sagem STB channel list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sagem STB channel list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1960,11 +1956,11 @@ You will lose any unsaved changes.</source>
 <context>
     <name>TeletextWidget</name>
     <message>
-        <source>TeletextWidget</source>
+        <source>Teletext</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>TeletextWidget Transparency</source>
+        <source>Teletext Transparency</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
