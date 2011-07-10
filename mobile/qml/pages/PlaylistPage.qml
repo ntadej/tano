@@ -25,41 +25,17 @@ import com.meego 1.0
 import "../js/core.js" as Tano
 
 Page {
-    id: listPage
+    id: playlistPage
     anchors.margins: UiConstants.DefaultMargin
+    tools: commonTools
 
-    tools:
-        ToolBarLayout {
-            ToolIcon {
-               iconId: "toolbar-view-menu"
-               onClicked: (myMenu.status == DialogStatus.Closed) ? myMenu.open() : myMenu.close()
-               anchors.right: parent === undefined ? undefined : parent.right
-            }
-        }
-
-    ListModel {
-        id: pagesModel
-        ListElement {
-            page: "PlaybackPage.qml"
-            title: "Play live TV"
-            subtitle: ""
-        }
-        ListElement {
-            page: "SchedulePage.qml"
-            title: "Schedule"
-            subtitle: "Description"
-        }
-        ListElement {
-            page: "../test/TestListPage.qml"
-            title: "Tests"
-            subtitle: "Description"
-        }
-    }
+    function test() {}
+    signal channel(string name)
 
     ListView {
         id: listView
         anchors.fill: parent
-        model: pagesModel
+        model: channelsModel
         pressDelay: 140
 
         delegate:  Item {
@@ -71,8 +47,8 @@ Page {
                 id: background
                 anchors.fill: parent
                 // Fill page porders
-                anchors.leftMargin: -listPage.anchors.leftMargin
-                anchors.rightMargin: -listPage.anchors.rightMargin
+                anchors.leftMargin: -playlistPage.anchors.leftMargin
+                anchors.rightMargin: -playlistPage.anchors.rightMargin
                 visible: mouseArea.pressed
                 source: "image://theme/meegotouch-list-background-pressed-center"
             }
@@ -85,13 +61,13 @@ Page {
 
                     Label {
                         id: mainText
-                        text: model.title
+                        text: model.number + " - " + model.name
                         font: UiConstants.TitleFont
                     }
 
                     Label {
                         id: subText
-                        text: model.subtitle
+                        text: model.language + model.categories
                         font: UiConstants.SubtitleFont
                         color: "#cc6633"
 
@@ -100,17 +76,18 @@ Page {
                 }
             }
 
-            Image {
+            /*Image {
                 source: "image://theme/icon-m-common-drilldown-arrow" + (theme.inverted ? "-inverse" : "")
                 anchors.right: parent.right;
                 anchors.verticalCenter: parent.verticalCenter
-            }
+            }*/
 
             MouseArea {
                 id: mouseArea
                 anchors.fill: background
                 onClicked: {
-                    Tano.addPage(page)
+                    playlistPage.channel(url)
+                    pageStack.pop()
                 }
             }
         }

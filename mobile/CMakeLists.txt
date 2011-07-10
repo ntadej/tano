@@ -25,6 +25,9 @@ cmake_minimum_required(VERSION 2.6)
 # Define the MOC source files used by Tano Mobile
 # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
 SET(Tano_Mobile_MOCs
+    ../src/container/Channel.h
+    ../src/core/ListModel.h
+    ../src/ui/playlist/PlaylistWidget.h
 )
 
 SET(Tano_Mobile_Resrcs
@@ -34,6 +37,30 @@ SET(Tano_Mobile_Resrcs
 # Define the C++ source files used by Tano
 SET(Tano_Mobile_Srcs
     main.cpp
+
+    ../src/container/Channel.cpp
+
+    ../src/core/Common.cpp
+    ../src/core/ConsoleOutput.cpp
+    ../src/core/Enums.cpp
+    ../src/core/ListModel.cpp
+    ../src/core/LocaleManager.cpp
+    ../src/core/Settings.cpp
+    ../src/core/Shortcuts.cpp
+    ../src/core/Udpxy.cpp
+
+    ../src/playlist/CSVGenerator.cpp
+    ../src/playlist/CSVHandler.cpp
+    ../src/playlist/JsGenerator.cpp
+    ../src/playlist/JsHandler.cpp
+    ../src/playlist/M3UGenerator.cpp
+    ../src/playlist/M3UHandler.cpp
+    ../src/playlist/PlaylistHandler.cpp
+    ../src/playlist/TvheadendGenerator.cpp
+    ../src/playlist/XmltvIdGenerator.cpp
+
+    ../src/ui/playlist/PlaylistWidget.cpp
+    ../src/xml/TanoHandlerOld.cpp
 )
 
 # Define QML files

@@ -22,11 +22,14 @@
 
 import QtQuick 1.0
 import com.meego 1.0
+import "../js/core.js" as Tano
 
 Page {
     id: labelsPage
     anchors.margins: UiConstants.DefaultMargin
     tools: commonTools
+
+    PlaylistPage { id: playlist; onChannel: setChannel(name) }
     
     Flickable {        
         contentWidth: childrenRect.width
@@ -35,7 +38,17 @@ Page {
 
         anchors.fill: parent
         Column {
-            Label { text: "Schedule page" }
+            Label { id: l; text: "Schedule page" }
+            Button { id: buttonSelect; text: "Select channel"; onClicked: labelsPage.selectChannel(labelsPage)}
         }
+    }
+
+    function selectChannel() {
+        pageStack.push(playlist)
+
+    }
+
+    function setChannel(channel) {
+        l.text = channel;
     }
 }

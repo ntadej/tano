@@ -19,8 +19,102 @@
 #include "container/Channel.h"
 
 Channel::Channel(const QString &name,
-                 const int &number)
-    : _name(name),
-    _number(number) { }
+                 const int &number,
+                 QObject *parent)
+    : ListItem(parent),
+      _name(name),
+      _number(number) { }
 
 Channel::~Channel() { }
+
+QHash<int, QByteArray> Channel::roleNames() const
+{
+    QHash<int, QByteArray> names;
+    names[NameRole] = "name";
+    names[NumberRole] = "number";
+    names[LanguageRole] = "language";
+    names[UrlRole] = "url";
+    names[EpgRole] = "epg";
+    names[CategoriesRole] = "categories";
+    names[LogoRole] = "logo";
+    return names;
+}
+
+QVariant Channel::data(int role) const
+{
+    switch (role)
+    {
+    case NameRole:
+        return name();
+    case NumberRole:
+        return number();
+    case LanguageRole:
+        return language();
+    case UrlRole:
+        return url();
+    case EpgRole:
+        return epg();
+    case CategoriesRole:
+        return categories();
+    case LogoRole:
+        return logo();
+    default:
+        return QVariant();
+    }
+}
+
+void Channel::setNumber(const int &number)
+{
+    if(_number != number) {
+        _number = number;
+        emit dataChanged();
+    }
+}
+
+void Channel::setName(const QString &name)
+{
+    if(_name != name) {
+        _name = name;
+        emit dataChanged();
+    }
+}
+
+void Channel::setLanguage(const QString &language)
+{
+    if(_language != language) {
+        _language = language;
+        emit dataChanged();
+    }
+}
+
+void Channel::setUrl(const QString &url)
+{
+    if(_url != url) {
+        _url = url;
+        emit dataChanged();
+    }
+}
+
+void Channel::setEpg(const QString &epg)
+{
+    if(_epg != epg) {
+        _epg = epg;
+        emit dataChanged();
+    }
+}
+
+void Channel::setCategories(const QStringList &categories)
+{
+    if(_categories != categories) {
+        _categories = categories;
+        emit dataChanged();
+    }
+}
+
+void Channel::setLogo(const QString &logo)
+{
+    if(_logo != logo) {
+        _logo = logo;
+        emit dataChanged();
+    }
+}

@@ -55,6 +55,31 @@ Your VLC-Qt version: %4
         <source>Player</source>
         <translation type="unfinished">Проигрыватель</translation>
     </message>
+    <message>
+        <source>About Tano Mobile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is an open-source cross-platform IP TV player which features
+full IP TV playback with EPG and recorder.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is based on VLC-Qt.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using the mobile version which is currently in
+an experimental stage.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Закрыть</translation>
+    </message>
 </context>
 <context>
     <name>BrowseDirectory</name>
@@ -931,7 +956,7 @@ You will lose any unsaved changes.</source>
     <name>PlaylistWidget</name>
     <message>
         <source>Channel</source>
-        <translation>Канал</translation>
+        <translation type="unfinished">Канал</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -2185,6 +2210,21 @@ End time: %3</source>
     <message>
         <source>Download now!</source>
         <translation>Загрузить сейчас!</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Настройка</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">О программе</translation>
     </message>
 </context>
 </TS>

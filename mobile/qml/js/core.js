@@ -1,3 +1,4 @@
+// Main
 function addPage(file) {
     var component = Qt.createComponent(file)
 

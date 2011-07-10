@@ -62,8 +62,10 @@ SET(Tano_UIs
 
 # Define the MOC source files used by Tano
 SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
+    container/Channel.h
     core/ChannelSelect.h
     core/GetFile.h
+    core/ListModel.h
     core/Print.h
     core/UpdateManager.h
     epg/XmltvController.h
@@ -141,6 +143,7 @@ SET(Tano_Core_Srcs
     core/DaemonManager.cpp
     core/Enums.cpp
     core/GetFile.cpp
+    core/ListModel.cpp
     core/LocaleManager.cpp
     core/Print.cpp
     core/Settings.cpp

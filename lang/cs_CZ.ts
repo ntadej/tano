@@ -54,6 +54,31 @@ Verze vašeho VLC-Qt: %4</translation>
         <source>Player</source>
         <translation>Přehrávač</translation>
     </message>
+    <message>
+        <source>About Tano Mobile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is an open-source cross-platform IP TV player which features
+full IP TV playback with EPG and recorder.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is based on VLC-Qt.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using the mobile version which is currently in
+an experimental stage.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zavřít</translation>
+    </message>
 </context>
 <context>
     <name>BrowseDirectory</name>
@@ -988,7 +1013,7 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistWidget</name>
     <message>
         <source>Channel</source>
-        <translation>Program</translation>
+        <translation type="unfinished">Program</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -2305,6 +2330,21 @@ Konečný čas: %3</translation>
     <message>
         <source>Download now!</source>
         <translation>Stáhnout teď!</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavení</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -18,8 +18,14 @@
 
 #include <QtCore/QCoreApplication>
 #include <QtCore/QDir>
+#include <QtDeclarative/QDeclarativeContext>
 #include <QtDeclarative/QDeclarativeView>
 #include <QtGui/QApplication>
+
+#include "container/Channel.h"
+#include "core/Common.h"
+#include "core/ListModel.h"
+#include "ui/playlist/PlaylistWidget.h"
 
 int main(int argc, char *argv[])
 {
@@ -31,7 +37,17 @@ int main(int argc, char *argv[])
 
     QDir::setCurrent(app.applicationDirPath());
 
+    PlaylistWidget *playlist = new PlaylistWidget();
+    playlist->hide();
+    playlist->open(Tano::locateResource("playlists/sl/siol-mpeg4.m3u"));
+
+    ListModel *model = new ListModel(new Channel, qApp);
+    for(int i = 0; i < playlist->channels().size(); i++) {
+        model->insertRow(playlist->channels()[i]->number(), playlist->channels()[i]);
+    }
+
     QDeclarativeView window;
+    window.rootContext()->setContextProperty("channelsModel",  model);
     window.setSource(QUrl("qrc:/main.qml"));
 
 #ifdef __arm__

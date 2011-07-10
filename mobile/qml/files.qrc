@@ -12,5 +12,6 @@
         <file>test/VisibilityPage.qml</file>
         <file>main.qml</file>
         <file>js/core.js</file>
+        <file>pages/PlaylistPage.qml</file>
     </qresource>
 </RCC>

@@ -54,6 +54,7 @@ public:
     QStringList categories() const { return _categoryList; }
     QStringList languages() const { return _languageList; }
     QStringList epg() const { return _epgList; }
+    QList<Channel *> channels() const { return _channels; }
     QList<int> nums() const { return _channelNums; }
     QMap<QTreeWidgetItem *, Channel *> channelMap() const { return _map; }
 

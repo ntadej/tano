@@ -56,6 +56,32 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr ""
 
+msgctxt "AboutDialog|"
+msgid "About Tano Mobile"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid ""
+"Tano is an open-source cross-platform IP TV player which features\n"
+"full IP TV playback with EPG and recorder.\n"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid ""
+"It is based on VLC-Qt.\n"
+"\n"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid ""
+"You are using the mobile version which is currently in\n"
+"an experimental stage."
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid "Close"
+msgstr ""
+
 msgctxt "ConclusionPage|"
 msgid "Complete Wizard"
 msgstr ""
@@ -789,10 +815,6 @@ msgid "2. Select your playlist."
 msgstr ""
 
 msgctxt "PlaylistWidget|"
-msgid "Channel"
-msgstr ""
-
-msgctxt "PlaylistWidget|"
 msgid "Clear"
 msgstr ""
 
@@ -832,6 +854,10 @@ msgctxt "PlaylistWidget|"
 msgid ""
 "Cannot write file %1:\n"
 "%2."
+msgstr ""
+
+msgctxt "PlaylistWidget|"
+msgid "Channel"
 msgstr ""
 
 msgctxt "Print|"
@@ -1808,4 +1834,16 @@ msgstr ""
 
 msgctxt "UpdateDialog|"
 msgid "Download now!"
+msgstr ""
+
+msgctxt "main|"
+msgid "Settings"
+msgstr ""
+
+msgctxt "main|"
+msgid "Help"
+msgstr ""
+
+msgctxt "main|"
+msgid "About"
 msgstr ""

@@ -70,6 +70,33 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Проигрыватель"
 
+msgctxt "AboutDialog|"
+msgid "About Tano Mobile"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid ""
+"Tano is an open-source cross-platform IP TV player which features\n"
+"full IP TV playback with EPG and recorder.\n"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid ""
+"It is based on VLC-Qt.\n"
+"\n"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid ""
+"You are using the mobile version which is currently in\n"
+"an experimental stage."
+msgstr ""
+
+#, fuzzy
+msgctxt "AboutDialog|"
+msgid "Close"
+msgstr "Закрыть"
+
 #~ msgctxt "BrowseDirectory|"
 #~ msgid "Reset"
 #~ msgstr "Сброс"
@@ -904,6 +931,7 @@ msgctxt "PlaylistSelect|"
 msgid "2. Select your playlist."
 msgstr ""
 
+#, fuzzy
 msgctxt "PlaylistWidget|"
 msgid "Channel"
 msgstr "Канал"
@@ -2184,3 +2212,17 @@ msgstr "Информация:"
 msgctxt "UpdateDialog|"
 msgid "Download now!"
 msgstr "Загрузить сейчас!"
+
+#, fuzzy
+msgctxt "main|"
+msgid "Settings"
+msgstr "Настройка"
+
+msgctxt "main|"
+msgid "Help"
+msgstr ""
+
+#, fuzzy
+msgctxt "main|"
+msgid "About"
+msgstr "О программе"

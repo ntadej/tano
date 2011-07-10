@@ -256,6 +256,11 @@ QStringList PlaylistWidget::epg() const
     return _handler->epg();
 }
 
+QList<Channel *> PlaylistWidget::channels() const
+{
+    return _handler->channels();
+}
+
 QList<int> PlaylistWidget::nums() const
 {
     return _handler->nums();

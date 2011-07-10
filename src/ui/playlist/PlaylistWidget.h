@@ -62,6 +62,7 @@ public:
     QString name() const;
     QStringList epg() const;
     QString fileName() const { return _fileName; }
+    QList<Channel *> channels() const;
     QList<int> nums() const;
     QTreeWidget *treeWidget();
 

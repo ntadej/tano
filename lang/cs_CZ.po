@@ -68,6 +68,33 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Přehrávač"
 
+msgctxt "AboutDialog|"
+msgid "About Tano Mobile"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid ""
+"Tano is an open-source cross-platform IP TV player which features\n"
+"full IP TV playback with EPG and recorder.\n"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid ""
+"It is based on VLC-Qt.\n"
+"\n"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid ""
+"You are using the mobile version which is currently in\n"
+"an experimental stage."
+msgstr ""
+
+#, fuzzy
+msgctxt "AboutDialog|"
+msgid "Close"
+msgstr "Zavřít"
+
 #~ msgctxt "BrowseDirectory|"
 #~ msgid "Reset"
 #~ msgstr "Nastavit znovu"
@@ -962,6 +989,7 @@ msgctxt "PlaylistSelect|"
 msgid "2. Select your playlist."
 msgstr "2. Vyberte svůj seznam programů."
 
+#, fuzzy
 msgctxt "PlaylistWidget|"
 msgid "Channel"
 msgstr "Program"
@@ -2313,3 +2341,16 @@ msgstr "Informace:"
 msgctxt "UpdateDialog|"
 msgid "Download now!"
 msgstr "Stáhnout teď!"
+
+#, fuzzy
+msgctxt "main|"
+msgid "Settings"
+msgstr "Nastavení"
+
+msgctxt "main|"
+msgid "Help"
+msgstr ""
+
+msgctxt "main|"
+msgid "About"
+msgstr ""

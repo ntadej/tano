@@ -22,28 +22,46 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
-class Channel
+#include "core/ListModel.h"
+
+class Channel : public ListItem
 {
+Q_OBJECT
 public:
-    Channel(const QString &name,
-            const int &number);
+    enum Roles {
+        NameRole = Qt::UserRole + 1,
+        NumberRole,
+        LanguageRole,
+        UrlRole,
+        EpgRole,
+        CategoriesRole,
+        LogoRole
+    };
+
+    Channel(const QString &name = 0,
+            const int &number = 0,
+            QObject *parent = 0);
     ~Channel();
 
+    inline QString id() const { return _url; }
+    QVariant data(int role) const;
+    QHash<int, QByteArray> roleNames() const;
+
     int number() const { return _number; }
-    QString numberString() const {return QString().number(_number); }
-    void setNumber(const int &number) { _number = number; }
-    QString name() const { return _name; }
-    void setName(const QString &name) { _name = name; }
-    QString language() const { return _language; }
-    void setLanguage(const QString &language) { _language = language; }
-    QString url() const { return _url; }
-    void setUrl(const QString &url) { _url = url; }
-    QString epg() const { return _epg; }
-    void setEpg(const QString &epg) { _epg = epg; }
-    QStringList categories() const { return _categories; }
-    void setCategories(const QStringList &categories) { _categories = categories; }
-    QString logo() const { return _logo; }
-    void setLogo(const QString &logo) { _logo = logo; }
+    inline QString numberString() const { return QString().number(_number); }
+    void setNumber(const int &number);
+    inline QString name() const { return _name; }
+    void setName(const QString &name);
+    inline QString language() const { return _language; }
+    void setLanguage(const QString &language);
+    inline QString url() const { return _url; }
+    void setUrl(const QString &url);
+    inline QString epg() const { return _epg; }
+    void setEpg(const QString &epg);
+    inline QStringList categories() const { return _categories; }
+    void setCategories(const QStringList &categories);
+    inline QString logo() const { return _logo; }
+    void setLogo(const QString &logo);
 
 private:
     QString _name;

@@ -26,6 +26,8 @@
 // Editor VLC-Qt support
 #if EDITOR
     #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
+#elif MOBILE
+    #define WITH_EDITOR_VLCQT 0
 #else
     #define WITH_EDITOR_VLCQT 1
 #endif
