@@ -22,12 +22,15 @@
 
 import QtQuick 1.0
 import com.meego 1.0
+
+import "../common"
+
 import "../js/core.js" as Tano
 
 Page {
     id: labelsPage
     anchors.margins: UiConstants.DefaultMargin
-    tools: commonTools
+    tools: ToolBarLayoutCommon {}
 
     PlaylistPage { id: playlist; onChannel: setChannel(name) }
     

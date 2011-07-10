@@ -981,6 +981,14 @@ msgstr ""
 "Prosim, izberite svojega IP TV ponudnika ali pa prebrskajte za svoj seznam "
 "programov."
 
+#~ msgctxt "PlaylistPage|"
+#~ msgid "Language"
+#~ msgstr "Jezik"
+
+#~ msgctxt "PlaylistPage|"
+#~ msgid "Categories"
+#~ msgstr "Kategorije"
+
 msgctxt "PlaylistSelect|"
 msgid "Select your playlist"
 msgstr "Izberi seznam programov"
@@ -2323,15 +2331,6 @@ msgctxt "UpdateDialog|"
 msgid "Download now!"
 msgstr "Prenesi zdaj!"
 
-#, fuzzy
-msgctxt "main|"
-msgid "Settings"
-msgstr "Nastavitve"
-
-msgctxt "main|"
-msgid "Help"
-msgstr ""
-
-msgctxt "main|"
-msgid "About"
-msgstr ""
+#~ msgctxt "main|"
+#~ msgid "Settings"
+#~ msgstr "Nastavitve"

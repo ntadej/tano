@@ -22,19 +22,15 @@
 
 import QtQuick 1.0
 import com.meego 1.0
+
+import "../common"
+
 import "../js/core.js" as Tano
 
 Page {
     id: listPage
     anchors.margins: UiConstants.DefaultMargin
-
-    tools:
-        ToolBarLayout {
-            id: pageStackWindowTools
-            visible: false
-            ToolIcon { iconId: "toolbar-back"; onClicked: { myMenu.close(); pageStack.pop(); } }
-            ToolIcon { iconId: "toolbar-view-menu"; onClicked: (myMenu.status == DialogStatus.Closed) ? myMenu.open() : myMenu.close() }
-        }
+    tools: ToolBarLayoutCommon {}
 
     ListModel {
         id: pagesModel

@@ -35,7 +35,8 @@ public:
         UrlRole,
         EpgRole,
         CategoriesRole,
-        LogoRole
+        LogoRole,
+        HiddenRole
     };
 
     Channel(const QString &name = 0,
@@ -62,6 +63,8 @@ public:
     void setCategories(const QStringList &categories);
     inline QString logo() const { return _logo; }
     void setLogo(const QString &logo);
+    inline bool hidden() const { return _hidden; }
+    void setHidden(const bool &hidden);
 
 private:
     QString _name;
@@ -71,6 +74,7 @@ private:
     QString _epg;
     QStringList _categories;
     QString _logo;
+    bool _hidden;
 };
 
 #endif // TANO_CHANNEL_H_

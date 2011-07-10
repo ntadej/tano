@@ -22,14 +22,17 @@
 
 import QtQuick 1.0
 import com.meego 1.0
+
+import "../common"
+import "../dialogs"
+
 import "../js/core.js" as Tano
 
 Page {
     id: playlistPage
     anchors.margins: UiConstants.DefaultMargin
-    tools: commonTools
+    tools: ToolBarLayoutPlaylist { }
 
-    function test() {}
     signal channel(string name)
 
     ListView {
@@ -43,6 +46,8 @@ Page {
             height: 88
             width: parent.width
 
+            visible: model.hidden !== true
+
             BorderImage {
                 id: background
                 anchors.fill: parent
@@ -53,6 +58,12 @@ Page {
                 source: "image://theme/meegotouch-list-background-pressed-center"
             }
 
+            Image {
+                source: "image://theme/icon-m-content-video"
+                anchors.right: parent.right;
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
             Row {
                 anchors.fill: parent
 
@@ -61,26 +72,11 @@ Page {
 
                     Label {
                         id: mainText
-                        text: model.number + " - " + model.name
+                        text: model.number + ". " + model.name
                         font: UiConstants.TitleFont
-                    }
-
-                    Label {
-                        id: subText
-                        text: model.language + model.categories
-                        font: UiConstants.SubtitleFont
-                        color: "#cc6633"
-
-                        visible: text != ""
                     }
                 }
             }
-
-            /*Image {
-                source: "image://theme/icon-m-common-drilldown-arrow" + (theme.inverted ? "-inverse" : "")
-                anchors.right: parent.right;
-                anchors.verticalCenter: parent.verticalCenter
-            }*/
 
             MouseArea {
                 id: mouseArea

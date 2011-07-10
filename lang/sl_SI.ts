@@ -998,6 +998,14 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Please, select your IP TV provider or browse for custom playlist.</source>
         <translation>Prosim, izberite svojega IP TV ponudnika ali pa prebrskajte za svoj seznam programov.</translation>
     </message>
+    <message>
+        <source>Language</source>
+        <translation type="obsolete">Jezik</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="obsolete">Kategorije</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistSelect</name>
@@ -2366,15 +2374,7 @@ Končni čas: %3</translation>
     <name>main</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavitve</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Nastavitve</translation>
     </message>
 </context>
 </TS>

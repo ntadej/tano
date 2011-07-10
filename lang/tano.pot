@@ -1835,15 +1835,3 @@ msgstr ""
 msgctxt "UpdateDialog|"
 msgid "Download now!"
 msgstr ""
-
-msgctxt "main|"
-msgid "Settings"
-msgstr ""
-
-msgctxt "main|"
-msgid "Help"
-msgstr ""
-
-msgctxt "main|"
-msgid "About"
-msgstr ""

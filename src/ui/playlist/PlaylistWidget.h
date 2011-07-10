@@ -64,6 +64,8 @@ public:
     QString fileName() const { return _fileName; }
     QList<Channel *> channels() const;
     QList<int> nums() const;
+    QStringList categories() const;
+    QStringList languages() const;
     QTreeWidget *treeWidget();
 
     int processNum(QTreeWidgetItem *channel,

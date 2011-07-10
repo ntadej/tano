@@ -977,6 +977,14 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Select playlist</source>
         <translation>Vybrat seznam programů</translation>
     </message>
+    <message>
+        <source>Language</source>
+        <translation type="obsolete">Jazyk</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="obsolete">Skupiny</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistSelect</name>
@@ -2336,15 +2344,7 @@ Konečný čas: %3</translation>
     <name>main</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Nastavení</translation>
     </message>
 </context>
 </TS>

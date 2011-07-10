@@ -22,6 +22,10 @@
 
 import QtQuick 1.0
 import com.meego 1.0
+
+import "../common"
+import "../data"
+
 import "../js/core.js" as Tano
 
 Page {
@@ -29,37 +33,12 @@ Page {
     anchors.margins: UiConstants.DefaultMargin
 
     tools:
-        ToolBarLayout {
-            ToolIcon {
-               iconId: "toolbar-view-menu"
-               onClicked: (myMenu.status == DialogStatus.Closed) ? myMenu.open() : myMenu.close()
-               anchors.right: parent === undefined ? undefined : parent.right
-            }
-        }
-
-    ListModel {
-        id: pagesModel
-        ListElement {
-            page: "PlaybackPage.qml"
-            title: "Play live TV"
-            subtitle: ""
-        }
-        ListElement {
-            page: "SchedulePage.qml"
-            title: "Schedule"
-            subtitle: "Description"
-        }
-        ListElement {
-            page: "../test/TestListPage.qml"
-            title: "Tests"
-            subtitle: "Description"
-        }
-    }
+        ToolBarLayoutHome { }
 
     ListView {
         id: listView
         anchors.fill: parent
-        model: pagesModel
+        model: HomeList { }
         pressDelay: 140
 
         delegate:  Item {

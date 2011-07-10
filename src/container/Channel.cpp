@@ -23,7 +23,15 @@ Channel::Channel(const QString &name,
                  QObject *parent)
     : ListItem(parent),
       _name(name),
-      _number(number) { }
+      _number(number)
+{
+    _language = "";
+    _url = "";
+    _epg = "";
+    _categories = QStringList();
+    _logo = "";
+    _hidden = false;
+}
 
 Channel::~Channel() { }
 
@@ -37,6 +45,7 @@ QHash<int, QByteArray> Channel::roleNames() const
     names[EpgRole] = "epg";
     names[CategoriesRole] = "categories";
     names[LogoRole] = "logo";
+    names[HiddenRole] = "hidden";
     return names;
 }
 
@@ -58,6 +67,8 @@ QVariant Channel::data(int role) const
         return categories();
     case LogoRole:
         return logo();
+    case HiddenRole:
+        return hidden();
     default:
         return QVariant();
     }
@@ -115,6 +126,14 @@ void Channel::setLogo(const QString &logo)
 {
     if(_logo != logo) {
         _logo = logo;
+        emit dataChanged();
+    }
+}
+
+void Channel::setHidden(const bool &hidden)
+{
+    if(_hidden != hidden) {
+        _hidden = hidden;
         emit dataChanged();
     }
 }

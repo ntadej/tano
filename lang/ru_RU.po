@@ -902,6 +902,14 @@ msgctxt "PlaylistPage|"
 msgid "Select playlist"
 msgstr ""
 
+#~ msgctxt "PlaylistPage|"
+#~ msgid "Language"
+#~ msgstr "Язык"
+
+#~ msgctxt "PlaylistPage|"
+#~ msgid "Categories"
+#~ msgstr "Категории"
+
 msgctxt "PlaylistSelect|"
 msgid "Select"
 msgstr ""
@@ -2213,16 +2221,10 @@ msgctxt "UpdateDialog|"
 msgid "Download now!"
 msgstr "Загрузить сейчас!"
 
-#, fuzzy
-msgctxt "main|"
-msgid "Settings"
-msgstr "Настройка"
+#~ msgctxt "main|"
+#~ msgid "Settings"
+#~ msgstr "Настройка"
 
-msgctxt "main|"
-msgid "Help"
-msgstr ""
-
-#, fuzzy
-msgctxt "main|"
-msgid "About"
-msgstr "О программе"
+#~ msgctxt "main|"
+#~ msgid "About"
+#~ msgstr "О программе"

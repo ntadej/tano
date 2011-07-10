@@ -920,6 +920,14 @@ You will lose any unsaved changes.</source>
         <source>Select playlist</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Language</source>
+        <translation type="obsolete">Язык</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="obsolete">Категории</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistSelect</name>
@@ -2216,15 +2224,11 @@ End time: %3</source>
     <name>main</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Настройка</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Настройка</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">О программе</translation>
+        <translation type="obsolete">О программе</translation>
     </message>
 </context>
 </TS>

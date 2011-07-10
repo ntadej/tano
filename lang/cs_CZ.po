@@ -961,6 +961,14 @@ msgctxt "PlaylistPage|"
 msgid "Select playlist"
 msgstr "Vybrat seznam programů"
 
+#~ msgctxt "PlaylistPage|"
+#~ msgid "Language"
+#~ msgstr "Jazyk"
+
+#~ msgctxt "PlaylistPage|"
+#~ msgid "Categories"
+#~ msgstr "Skupiny"
+
 msgctxt "PlaylistSelect|"
 msgid "Select"
 msgstr "Vybrat"
@@ -2342,15 +2350,6 @@ msgctxt "UpdateDialog|"
 msgid "Download now!"
 msgstr "Stáhnout teď!"
 
-#, fuzzy
-msgctxt "main|"
-msgid "Settings"
-msgstr "Nastavení"
-
-msgctxt "main|"
-msgid "Help"
-msgstr ""
-
-msgctxt "main|"
-msgid "About"
-msgstr ""
+#~ msgctxt "main|"
+#~ msgid "Settings"
+#~ msgstr "Nastavení"

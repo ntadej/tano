@@ -23,6 +23,7 @@
 import QtQuick 1.0
 import com.meego 1.0
 
+import "common"
 import "dialogs"
 import "pages"
 
@@ -32,8 +33,6 @@ PageStackWindow {
     id: rootWindow
 
     platformStyle: defaultStyle;
-
-    AboutDialog { id: about }
 
     PageStackWindowStyle { id: defaultStyle }
     PageStackWindowStyle {
@@ -45,22 +44,10 @@ PageStackWindow {
     // HomeListPage is what we see when the app starts
     initialPage: HomeListPage { }
 
-    // These tools are shared by most sub-pages by assigning the id to a page's tools property
-    ToolBarLayout {
-        id: commonTools
-        visible: false
-        ToolIcon { iconId: "toolbar-back"; onClicked: { myMenu.close(); pageStack.pop(); } }
-        ToolIcon { iconId: "toolbar-view-menu"; onClicked: (myMenu.status == DialogStatus.Closed) ? myMenu.open() : myMenu.close() }
-    }
+    // Main menu
+    MainMenu { id: mainMenu }
 
-    Menu {
-        id: myMenu
-//        visualParent: pageStack
-        MenuLayout {
-            MenuItem { text: qsTr("Settings"); onClicked: Tano.addPage("pages/SettingsPage.qml") }
-            MenuItem { text: qsTr("Help"); onClicked: Tano.addPage("pages/HelpPage.qml") }
-            MenuItem { text: qsTr("About"); onClicked: about.open() }
-        }
-    }
+    // Common
+    FilterDialog { id: filter; objectName: "filter" }
 }
 

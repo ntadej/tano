@@ -23,17 +23,12 @@
 import QtQuick 1.0
 import com.meego 1.0
 
+import "../common"
+
 Page {
     id: pageStackWindowPage
-    tools: pageStackWindowTools
+    tools: ToolBarLayoutCommon {}
     anchors.margins: UiConstants.DefaultMargin
-
-    ToolBarLayout {
-        id: pageStackWindowTools
-        visible: false
-        ToolIcon { iconId: "toolbar-back"; onClicked: { myMenu.close(); pageStack.pop(); } }
-        ToolIcon { iconId: "toolbar-view-menu"; onClicked: (myMenu.status == DialogStatus.Closed) ? myMenu.open() : myMenu.close() }
-    }
 
     Flickable {
         id: flickable

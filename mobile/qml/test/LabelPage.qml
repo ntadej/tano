@@ -23,10 +23,12 @@
 import QtQuick 1.0
 import com.meego 1.0
 
+import "../common"
+
 Page {
     id: labelsPage
     anchors.margins: UiConstants.DefaultMargin
-    tools: commonTools
+    tools: ToolBarLayoutCommon {}
     
     Flickable {        
         contentWidth: childrenRect.width

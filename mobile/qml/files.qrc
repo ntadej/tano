@@ -13,5 +13,11 @@
         <file>main.qml</file>
         <file>js/core.js</file>
         <file>pages/PlaylistPage.qml</file>
+        <file>common/MainMenu.qml</file>
+        <file>common/ToolBarLayoutCommon.qml</file>
+        <file>common/ToolBarLayoutHome.qml</file>
+        <file>common/ToolBarLayoutPlaylist.qml</file>
+        <file>data/HomeList.qml</file>
+        <file>dialogs/FilterDialog.qml</file>
     </qresource>
 </RCC>

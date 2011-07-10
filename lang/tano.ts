@@ -1905,19 +1905,4 @@ End time: %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
-<context>
-    <name>main</name>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
 </TS>

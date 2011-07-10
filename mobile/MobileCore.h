@@ -2,10 +2,6 @@
 * Tano - An Open IP TV Player
 * Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
-* This file was based on the examples of the Qt Toolkit.
-* Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
-* Contact: Qt Software Information (qt-info@nokia.com)
-*
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
@@ -20,24 +16,29 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-import QtQuick 1.0
-import com.meego 1.0
+#ifndef TANO_MOBILECORE_H_
+#define TANO_MOBILECORE_H_
 
-import "../common"
+#include <QtCore/QObject>
+#include <QtDeclarative/QDeclarativeView>
 
-Page {
-    id: labelsPage
-    anchors.margins: UiConstants.DefaultMargin
-    tools: ToolBarLayoutCommon {}
-    
-    Flickable {        
-        contentWidth: childrenRect.width
-        contentHeight: childrenRect.height
-        flickableDirection: Flickable.VerticalFlick
+class LocaleManager;
+class MobilePlaylistHandler;
 
-        anchors.fill: parent
-        Column {
-            Label { text: "Help page" }
-        }
-    }
-}
+class MobileCore : public QObject
+{
+Q_OBJECT
+public:
+    MobileCore(QObject *parent = 0);
+    ~MobileCore();
+
+    Q_INVOKABLE void populateFilterDialog();
+
+private:
+    LocaleManager *_locale;
+    MobilePlaylistHandler *_playlist;
+
+    QDeclarativeView *_window;
+};
+
+#endif // TANO_MOBILECORE_H_

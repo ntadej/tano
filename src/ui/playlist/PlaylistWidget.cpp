@@ -266,6 +266,16 @@ QList<int> PlaylistWidget::nums() const
     return _handler->nums();
 }
 
+QStringList PlaylistWidget::categories() const
+{
+    return _handler->categories();
+}
+
+QStringList PlaylistWidget::languages() const
+{
+    return _handler->languages();
+}
+
 QTreeWidget *PlaylistWidget::treeWidget()
 {
     return ui->treeWidget;
