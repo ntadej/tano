@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>dialogs/AboutDialog.qml</file>
+        <file>pages/HelpPage.qml</file>
+        <file>pages/HomeListPage.qml</file>
+        <file>pages/PlaybackPage.qml</file>
+        <file>pages/SchedulePage.qml</file>
+        <file>pages/SettingsPage.qml</file>
+        <file>test/LabelPage.qml</file>
+        <file>test/PageStackWindowPage.qml</file>
+        <file>test/TestListPage.qml</file>
+        <file>test/VisibilityPage.qml</file>
+        <file>main.qml</file>
+        <file>js/core.js</file>
+    </qresource>
+</RCC>
