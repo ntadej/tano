@@ -21,6 +21,7 @@
 
 #include <QtCore/QString>
 #include <QtCore/QStringList>
+#include <QtGui/QIcon>
 
 #include "core/ListModel.h"
 
@@ -29,14 +30,15 @@ class Channel : public ListItem
 Q_OBJECT
 public:
     enum Roles {
+        DisplayRole = Qt::DisplayRole,
+        DisplayIconRole = Qt::DecorationRole,
         NameRole = Qt::UserRole + 1,
         NumberRole,
         LanguageRole,
         UrlRole,
         EpgRole,
         CategoriesRole,
-        LogoRole,
-        HiddenRole
+        LogoRole
     };
 
     Channel(const QString &name = 0,
@@ -47,6 +49,9 @@ public:
     inline QString id() const { return _url; }
     QVariant data(int role) const;
     QHash<int, QByteArray> roleNames() const;
+
+    QString display() const;
+    QIcon displayIcon() const;
 
     int number() const { return _number; }
     inline QString numberString() const { return QString().number(_number); }
@@ -63,8 +68,6 @@ public:
     void setCategories(const QStringList &categories);
     inline QString logo() const { return _logo; }
     void setLogo(const QString &logo);
-    inline bool hidden() const { return _hidden; }
-    void setHidden(const bool &hidden);
 
 private:
     QString _name;
@@ -74,7 +77,6 @@ private:
     QString _epg;
     QStringList _categories;
     QString _logo;
-    bool _hidden;
 };
 
 #endif // TANO_CHANNEL_H_

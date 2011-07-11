@@ -188,6 +188,25 @@ an experimental stage.</source>
     </message>
 </context>
 <context>
+    <name>FilterDialog</name>
+    <message>
+        <source>Filter playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Jazyk:</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished">Skupiny:</translation>
+    </message>
+</context>
+<context>
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
@@ -258,6 +277,25 @@ an experimental stage.</source>
     <message>
         <source>Please re-set your settings.</source>
         <translation>Nastavte, prosím, svá nastavení znovu.</translation>
+    </message>
+</context>
+<context>
+    <name>MainMenu</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavení</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -573,6 +611,33 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <source>Next video track</source>
         <translation>Další obrazová stopa</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistDisplayWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Smazat</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="unfinished">Hledat:</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation type="unfinished">Skupina:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Jazyk:</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Všechny skupiny</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Všechny jazyky</translation>
     </message>
 </context>
 <context>

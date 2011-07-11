@@ -33,13 +33,14 @@
 
 #include "core/Common.h"
 #include "core/Settings.h"
+#include "playlist/PlaylistModel.h"
 #include "ui/core/FileDialogs.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/DonationDialog.h"
 #include "ui/settings/SettingsEdit.h"
 
 MainWindow::MainWindow(QWidget *parent)	:
-	QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()), _update(new UpdateDialog()),
+    QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()), _model(new PlaylistModel(this)), _update(new UpdateDialog()),
 	_audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0), _udpxy(new Udpxy()),
 	_playlistEditor(0), _xmltv(new XmltvManager()), _epgShow(new EpgShow()), _schedule(new EpgScheduleFull())
 {
@@ -127,6 +128,7 @@ void MainWindow::showEvent(QShowEvent *event)
 // Init functions
 void MainWindow::createGui()
 {
+    ui->playlistWidget->setModel(_model);
 	openPlaylist(true);
 	setPlayingState(false);
 	ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
@@ -254,7 +256,7 @@ void MainWindow::createConnections()
 	connect(ui->actionStop, SIGNAL(triggered()), _mediaPlayer, SLOT(stop()));
 	connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 
-	connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem*, int)), this, SLOT(playChannel(QTreeWidgetItem*)));
+    connect(ui->playlistWidget, SIGNAL(itemClicked(Channel *)), this, SLOT(playChannel(Channel *)));
 
 	connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
 	connect(ui->actionTray, SIGNAL(triggered()), this, SLOT(tray()));
@@ -360,7 +362,7 @@ void MainWindow::createSession()
 {
 	ui->volumeSlider->setVolume(_sessionVolume);
 
-	if(_sessionAutoplayEnabled && _hasPlaylist && ui->playlistWidget->validate())
+    if(_sessionAutoplayEnabled && _hasPlaylist && _model->validate())
 		playChannel(_sessionChannel);
 
 	_update->checkSilent();
@@ -412,15 +414,15 @@ void MainWindow::donate()
 
 
 //Media controls
-void MainWindow::playChannel(QTreeWidgetItem* clickedChannel)
+void MainWindow::playChannel(Channel *clickedChannel)
 {
-	_channel = ui->playlistWidget->channelRead(clickedChannel);
+    _channel = clickedChannel;
 	play();
 }
 void MainWindow::playChannel(const int &clickedChannel)
 {
-	_channel = ui->playlistWidget->channelRead(clickedChannel);
-	play();
+    //_channel = ui->playlistWidget->channelRead(clickedChannel);
+    //play();
 }
 
 void MainWindow::setPlayingState(const bool &playing,
@@ -524,17 +526,17 @@ void MainWindow::openPlaylist(const bool &start)
 		return;
 	}
 
-	ui->playlistWidget->open(_playlistName);
+    _model->openM3UFile(_playlistName);
 
 	_hasPlaylist = true;
 
-	_select = new ChannelSelect(this, ui->channelNumber, ui->playlistWidget->nums());
+    _select = new ChannelSelect(this, ui->channelNumber, _model->numbers());
 	connect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
 	connect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
 	connect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
 	mouseWheel();
 
-	ui->channelToolBox->setItemText(0,ui->playlistWidget->name());
+    ui->channelToolBox->setItemText(0, _model->name());
 }
 void MainWindow::openFile()
 {

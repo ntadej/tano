@@ -51,6 +51,7 @@ public:
     void insertRow(const int &row, ListItem *item);
     bool removeRow(const int &row, const QModelIndex &parent = QModelIndex());
     bool removeRows(const int &row, const int &count, const QModelIndex &parent = QModelIndex());
+    ListItem *row(const int &row);
     ListItem *takeRow(const int &row);
     ListItem *find(const QString &id) const;
     QModelIndex indexFromItem(const ListItem *item) const;

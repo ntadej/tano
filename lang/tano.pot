@@ -133,6 +133,22 @@ msgctxt "EpgShow|"
 msgid "Next"
 msgstr ""
 
+msgctxt "FilterDialog|"
+msgid "Filter playlist"
+msgstr ""
+
+msgctxt "FilterDialog|"
+msgid "Language:"
+msgstr ""
+
+msgctxt "FilterDialog|"
+msgid "All"
+msgstr ""
+
+msgctxt "FilterDialog|"
+msgid "Categories:"
+msgstr ""
+
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr ""
@@ -184,6 +200,22 @@ msgstr ""
 
 msgctxt "IntroPage|"
 msgid "Please re-set your settings."
+msgstr ""
+
+msgctxt "MainMenu|"
+msgid "Settings"
+msgstr ""
+
+msgctxt "MainMenu|"
+msgid "Help"
+msgstr ""
+
+msgctxt "MainMenu|"
+msgid "About"
+msgstr ""
+
+msgctxt "MainMenu|"
+msgid "Exit"
 msgstr ""
 
 msgctxt "MainWindow|"
@@ -466,6 +498,30 @@ msgstr ""
 
 msgctxt "MenuTrackVideo|"
 msgid "Next video track"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Clear"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Search:"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Category:"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Language:"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "All categories"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "All languages"
 msgstr ""
 
 msgctxt "PlaylistEdit|"

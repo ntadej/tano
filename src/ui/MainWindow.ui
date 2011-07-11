@@ -236,7 +236,7 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="PlaylistWidget" name="playlistWidget" native="true"/>
+          <widget class="PlaylistDisplayWidget" name="playlistWidget" native="true"/>
          </item>
         </layout>
        </widget>
@@ -894,9 +894,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PlaylistWidget</class>
+   <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
-   <header>ui/playlist/PlaylistWidget.h</header>
+   <header>ui/playlist/PlaylistDisplayWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

@@ -16,37 +16,33 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QStyledItemDelegate>
+
 #include "MobilePlaylistHandler.h"
 
 #include "container/Channel.h"
 #include "core/Common.h"
-#include "core/ListModel.h"
 #include "core/LocaleManager.h"
-#include "ui/playlist/PlaylistWidget.h"
+#include "playlist/PlaylistModel.h"
 
 MobilePlaylistHandler::MobilePlaylistHandler(QObject *parent)
     : QObject(parent)
 {
-    _playlist = new PlaylistWidget();
-    _playlist->hide();
+    _model = new PlaylistModel(this);
     openPlaylist();
-
-    _model = new ListModel(new Channel, this);
-    _model->appendRows(_items);
 }
 
 MobilePlaylistHandler::~MobilePlaylistHandler()
 {
     delete _model;
-    delete _playlist;
 }
 
 QVariantList MobilePlaylistHandler::categories()
 {
     QVariantList list;
-    for(int i = 0; i < _playlist->categories().size(); i++) {
-        if(!_playlist->categories()[i].isEmpty())
-            list << _playlist->categories()[i];
+    for(int i = 0; i < _model->categories().size(); i++) {
+        if(!_model->categories()[i].isEmpty())
+            list << _model->categories()[i];
     }
     return list;
 }
@@ -54,24 +50,16 @@ QVariantList MobilePlaylistHandler::categories()
 QVariantList MobilePlaylistHandler::languages()
 {
     QVariantList list;
-    for(int i = 0; i < _playlist->languages().size(); i++) {
-        if(!_playlist->languages()[i].isEmpty())
-            list << _playlist->languages()[i];
+    for(int i = 0; i < _model->languages().size(); i++) {
+        if(!_model->languages()[i].isEmpty())
+            list << _model->languages()[i];
     }
     return list;
 }
 
 void MobilePlaylistHandler::openPlaylist()
 {
-    _channels.clear();
-    _items.clear();
-
-    _playlist->open(Tano::locateResource("playlists/sl/siol-mpeg4.m3u"));
-    _channels = _playlist->channels();
-
-    for(int i = 0; i < _channels.size(); i++) {
-        _items << _channels[i];
-    }
+    _model->openM3UFile(Tano::locateResource("playlists/sl/siol-mpeg4.m3u"));
 }
 
 void MobilePlaylistHandler::processPlaylist()

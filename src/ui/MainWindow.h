@@ -47,6 +47,8 @@
 #include "ui/menu/MenuTrackVideo.h"
 #include "ui/playlist/PlaylistEdit.h"
 
+class PlaylistModel;
+
 namespace Ui
 {
 	class MainWindow;
@@ -79,7 +81,7 @@ private slots:
 	void setPlayingState(const bool &playing,
 						 const bool &buffering = false);
 
-	void playChannel(QTreeWidgetItem* clickedChannel);
+    void playChannel(Channel* clickedChannel);
 	void playChannel(const int &clickedChannel);
 
 	void openPlaylist(const bool &start = false);
@@ -140,6 +142,7 @@ private:
 	//Main
 	ChannelSelect *_select;
 	LocaleManager *_locale;
+    PlaylistModel *_model;
 	Shortcuts *_shortcuts;
 	UpdateDialog *_update;
 

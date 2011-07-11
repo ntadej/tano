@@ -122,6 +122,12 @@ bool ListModel::removeRows(const int &row, const int &count, const QModelIndex &
     return true;
 }
 
+ListItem *ListModel::row(const int &row)
+{
+    ListItem* item = _list[row];
+    return item;
+}
+
 ListItem *ListModel::takeRow(const int &row)
 {
     beginRemoveRows(QModelIndex(), row, row);

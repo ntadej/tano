@@ -30,7 +30,6 @@ Channel::Channel(const QString &name,
     _epg = "";
     _categories = QStringList();
     _logo = "";
-    _hidden = false;
 }
 
 Channel::~Channel() { }
@@ -38,6 +37,8 @@ Channel::~Channel() { }
 QHash<int, QByteArray> Channel::roleNames() const
 {
     QHash<int, QByteArray> names;
+    names[DisplayRole] = "display";
+    names[DisplayIconRole] = "displayIcon";
     names[NameRole] = "name";
     names[NumberRole] = "number";
     names[LanguageRole] = "language";
@@ -45,7 +46,6 @@ QHash<int, QByteArray> Channel::roleNames() const
     names[EpgRole] = "epg";
     names[CategoriesRole] = "categories";
     names[LogoRole] = "logo";
-    names[HiddenRole] = "hidden";
     return names;
 }
 
@@ -53,6 +53,10 @@ QVariant Channel::data(int role) const
 {
     switch (role)
     {
+    case DisplayRole:
+        return display();
+    case DisplayIconRole:
+        return displayIcon();
     case NameRole:
         return name();
     case NumberRole:
@@ -67,11 +71,19 @@ QVariant Channel::data(int role) const
         return categories();
     case LogoRole:
         return logo();
-    case HiddenRole:
-        return hidden();
     default:
         return QVariant();
     }
+}
+
+QString Channel::display() const
+{
+    return numberString() + ". " + name();
+}
+
+QIcon Channel::displayIcon() const
+{
+    return QIcon(":/icons/16x16/video.png");
 }
 
 void Channel::setNumber(const int &number)
@@ -126,14 +138,6 @@ void Channel::setLogo(const QString &logo)
 {
     if(_logo != logo) {
         _logo = logo;
-        emit dataChanged();
-    }
-}
-
-void Channel::setHidden(const bool &hidden)
-{
-    if(_hidden != hidden) {
-        _hidden = hidden;
         emit dataChanged();
     }
 }

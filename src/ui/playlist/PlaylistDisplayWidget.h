@@ -16,31 +16,45 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MOBILEPLAYLISTHANDLER_H_
-#define TANO_MOBILEPLAYLISTHANDLER_H_
+#ifndef TANO_PLAYLISTWIDGET_H_
+#define TANO_PLAYLISTWIDGET_H_
 
-#include <QtCore/QObject>
-#include <QtCore/QVariantList>
+#include <QtCore/QModelIndex>
+#include <QtGui/QWidget>
+
+#include "ui/core/FileDialogs.h"
 
 class Channel;
 class PlaylistModel;
 
-class MobilePlaylistHandler : public QObject
+namespace Ui
+{
+    class PlaylistDisplayWidget;
+}
+
+class PlaylistDisplayWidget : public QWidget
 {
 Q_OBJECT
 public:
-    MobilePlaylistHandler(QObject *parent = 0);
-    ~MobilePlaylistHandler();
+    PlaylistDisplayWidget(QWidget *parent = 0);
+    ~PlaylistDisplayWidget();
 
-    PlaylistModel *model() { return _model; }
-    QVariantList categories();
-    QVariantList languages();
+    void setModel(PlaylistModel *model);
+
+protected:
+    void changeEvent(QEvent *e);
+
+signals:
+    void itemClicked(Channel *);
+
+private slots:
+    void channelClicked(const QModelIndex &index);
 
 private:
-    void openPlaylist();
-    void processPlaylist();
+    Ui::PlaylistDisplayWidget *ui;
 
     PlaylistModel *_model;
+    QString _fileName;
 };
 
-#endif // TANO_MOBILEPLAYLISTHANDLER_H_
+#endif // TANO_PLAYLISTWIDGET_H_

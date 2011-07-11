@@ -177,6 +177,25 @@ an experimental stage.</source>
     </message>
 </context>
 <context>
+    <name>FilterDialog</name>
+    <message>
+        <source>Filter playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Язык:</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished">Категории:</translation>
+    </message>
+</context>
+<context>
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
@@ -247,6 +266,25 @@ an experimental stage.</source>
     <message>
         <source>Please re-set your settings.</source>
         <translation>Пожалуйста, установите Ваши параметры заново.</translation>
+    </message>
+</context>
+<context>
+    <name>MainMenu</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Настройка</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">О программе</translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -562,6 +600,33 @@ This will stop recording in progress.</source>
     <message>
         <source>Next video track</source>
         <translation>След. видеодорожка</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistDisplayWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Закрыть</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="unfinished">Поиск:</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation type="unfinished">Категория:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Язык:</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Все категории</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Все языки</translation>
     </message>
 </context>
 <context>

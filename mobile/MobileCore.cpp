@@ -24,8 +24,8 @@
 #include "MobileCore.h"
 #include "MobilePlaylistHandler.h"
 
-#include "core/ListModel.h"
 #include "core/LocaleManager.h"
+#include "playlist/PlaylistModel.h"
 
 MobileCore::MobileCore(QObject *parent)
     : QObject(parent)
@@ -33,7 +33,7 @@ MobileCore::MobileCore(QObject *parent)
     _locale = new LocaleManager();
 
     _playlist = new MobilePlaylistHandler(this);
-    ListModel *model = _playlist->model();
+    PlaylistModel *model = _playlist->model();
 
     _window = new QDeclarativeView();
     _window->rootContext()->setContextProperty("channelsModel", model);
