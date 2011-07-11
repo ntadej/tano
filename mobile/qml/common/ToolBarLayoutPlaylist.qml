@@ -37,7 +37,7 @@ ToolBarLayout {
     ToolIcon {
         iconId: "toolbar-filter"
         onClicked: {
-            core.populateFilterDialog()
+            filter.populate()
             filter.open()
         }
     }

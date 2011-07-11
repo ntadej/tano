@@ -35,6 +35,8 @@ Page {
 
     signal channel(string name)
 
+    FilterDialog { id: filter }
+
     ListView {
         id: listView
         anchors {left: parent.left; right: parent.right; top: searchBox.bottom; bottom: parent.bottom}

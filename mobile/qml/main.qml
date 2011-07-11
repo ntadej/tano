@@ -24,7 +24,6 @@ import QtQuick 1.0
 import com.meego 1.0
 
 import "common"
-import "dialogs"
 import "pages"
 
 import "js/core.js" as Tano
@@ -46,8 +45,5 @@ PageStackWindow {
 
     // Main menu
     MainMenu { id: mainMenu }
-
-    // Common
-    FilterDialog { id: filter; objectName: "filter" }
 }
 

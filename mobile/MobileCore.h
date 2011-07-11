@@ -32,8 +32,6 @@ public:
     MobileCore(QObject *parent = 0);
     ~MobileCore();
 
-    Q_INVOKABLE void populateFilterDialog();
-
 private:
     LocaleManager *_locale;
     MobilePlaylistHandler *_playlist;

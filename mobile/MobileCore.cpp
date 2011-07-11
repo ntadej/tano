@@ -37,7 +37,6 @@ MobileCore::MobileCore(QObject *parent)
 
     _window = new QDeclarativeView();
     _window->rootContext()->setContextProperty("channelsModel", model);
-    _window->rootContext()->setContextProperty("core", this);
     _window->rootContext()->setContextProperty("playlistManager", _playlist);
     _window->setSource(QUrl("qrc:/main.qml"));
 
@@ -55,15 +54,4 @@ MobileCore::~MobileCore()
     delete _locale;
     delete _playlist;
     delete _window;
-}
-
-void MobileCore::populateFilterDialog()
-{
-    QGraphicsObject *object = _window->rootObject();
-    QObject *filter = object->findChild<QObject *>("filter");
-
-    if(filter)
-        QMetaObject::invokeMethod(filter, "populate",
-                                  Q_ARG(QVariant, QVariant::fromValue(_playlist->languages())),
-                                  Q_ARG(QVariant, QVariant::fromValue(_playlist->categories())));
 }

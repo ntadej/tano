@@ -4,7 +4,15 @@ import com.meego 1.0
 Sheet {
     id: sheet
 
-    function populate(languages, categories) {
+    property bool populated: false
+
+    function populate() {
+        if(sheet.populated)
+            return;
+
+        var languages = playlistManager.languages()
+        var categories = playlistManager.categories()
+
         for (var i = 0; i < languages.length; i++) {
             Qt.createQmlObject("import com.meego 1.0; Button { text: \"" + languages[i] + "\"; checkable: true }", buttonsLanguage);
         }
@@ -12,6 +20,8 @@ Sheet {
         for (var j = 0; j < categories.length; j++) {
             Qt.createQmlObject("import com.meego 1.0; Button { text: \"" + categories[j] + "\"; checkable: true }", buttonsCategories);
         }
+
+        sheet.populated = true
     }
 
     acceptButtonText: "Apply"

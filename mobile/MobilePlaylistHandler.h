@@ -34,8 +34,8 @@ public:
     ~MobilePlaylistHandler();
 
     PlaylistFilterModel *model() { return _filterModel; }
-    QVariantList categories();
-    QVariantList languages();
+    Q_INVOKABLE QVariantList categories();
+    Q_INVOKABLE QVariantList languages();
 
     Q_INVOKABLE void processGroups(const QString &category,
                                    const QString &language);
