@@ -192,14 +192,20 @@ msgctxt "FilterDialog|"
 msgid "Language:"
 msgstr "Jezik:"
 
-msgctxt "FilterDialog|"
-msgid "All"
-msgstr ""
-
 #, fuzzy
 msgctxt "FilterDialog|"
 msgid "Categories:"
 msgstr "Kategorije:"
+
+#, fuzzy
+msgctxt "FilterDialog|"
+msgid "All languages"
+msgstr "Vsi jeziki"
+
+#, fuzzy
+msgctxt "FilterDialog|"
+msgid "All categories"
+msgstr "Vse kategorije"
 
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
@@ -948,6 +954,16 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "Open directory"
 msgstr "Odpri imenik"
 
+#, fuzzy
+msgctxt "PlaylistFilterModel|"
+msgid "All categories"
+msgstr "Vse kategorije"
+
+#, fuzzy
+msgctxt "PlaylistFilterModel|"
+msgid "All languages"
+msgstr "Vsi jeziki"
+
 msgctxt "PlaylistImportCSV|"
 msgid "CSV file structure"
 msgstr "Struktura datoteke CSV"
@@ -1053,6 +1069,10 @@ msgstr ""
 #~ msgctxt "PlaylistPage|"
 #~ msgid "Categories"
 #~ msgstr "Kategorije"
+
+msgctxt "PlaylistPage|"
+msgid "Search ..."
+msgstr ""
 
 msgctxt "PlaylistSelect|"
 msgid "Select your playlist"

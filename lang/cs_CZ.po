@@ -194,14 +194,20 @@ msgctxt "FilterDialog|"
 msgid "Language:"
 msgstr "Jazyk:"
 
-msgctxt "FilterDialog|"
-msgid "All"
-msgstr ""
-
 #, fuzzy
 msgctxt "FilterDialog|"
 msgid "Categories:"
 msgstr "Skupiny:"
+
+#, fuzzy
+msgctxt "FilterDialog|"
+msgid "All languages"
+msgstr "Všechny jazyky"
+
+#, fuzzy
+msgctxt "FilterDialog|"
+msgid "All categories"
+msgstr "Všechny skupiny"
 
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
@@ -928,6 +934,16 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
 msgstr ""
 
+#, fuzzy
+msgctxt "PlaylistFilterModel|"
+msgid "All categories"
+msgstr "Všechny skupiny"
+
+#, fuzzy
+msgctxt "PlaylistFilterModel|"
+msgid "All languages"
+msgstr "Všechny jazyky"
+
 msgctxt "PlaylistImportCSV|"
 msgid "CSV file structure"
 msgstr "Stavba souboru s hodnotami oddělenými čárkou (CSV)"
@@ -1033,6 +1049,10 @@ msgstr "Vybrat seznam programů"
 #~ msgctxt "PlaylistPage|"
 #~ msgid "Categories"
 #~ msgstr "Skupiny"
+
+msgctxt "PlaylistPage|"
+msgid "Search ..."
+msgstr ""
 
 msgctxt "PlaylistSelect|"
 msgid "Select"

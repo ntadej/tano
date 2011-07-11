@@ -37,7 +37,7 @@ Page {
 
     ListView {
         id: listView
-        anchors.fill: parent
+        anchors {left: parent.left; right: parent.right; top: searchBox.bottom; bottom: parent.bottom}
         model: channelsModel
         pressDelay: 140
 
@@ -62,6 +62,7 @@ Page {
                 source: "image://theme/icon-m-content-video"
                 anchors.right: parent.right;
                 anchors.verticalCenter: parent.verticalCenter
+                anchors.rightMargin: 32;
             }
 
             Row {
@@ -90,5 +91,45 @@ Page {
     }
     ScrollDecorator {
         flickableItem: listView
+    }
+
+    Rectangle {
+        id: searchBox
+        radius: 10
+        color: "lightgrey"
+        anchors {left: parent.left; right: parent.right; top: parent.top}
+        anchors.leftMargin: -playlistPage.anchors.leftMargin
+        anchors.rightMargin: -playlistPage.anchors.rightMargin
+        anchors.topMargin: -playlistPage.anchors.topMargin
+        anchors.bottomMargin: -playlistPage.anchors.bottomMargin
+        height: 72
+
+        visible: true
+
+        TextField {
+            id: search
+            height: 40
+            anchors.fill: parent
+            anchors.margins: UiConstants.DefaultMargin
+
+            platformSipAttributes: SipAttributes { actionKeyHighlighted: true }
+
+            placeholderText: qsTr("Search ...")
+            platformStyle: TextFieldStyle { paddingRight: clearButton.width }
+            Image {
+                id: clearButton
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                source: "image://theme/icon-m-input-clear"
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        search.text = "";
+                    }
+                }
+            }
+
+            onTextChanged: playlistManager.processSearch(search.text)
+        }
     }
 }

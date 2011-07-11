@@ -152,11 +152,15 @@ an experimental stage.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All</source>
+        <source>Categories:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Categories:</source>
+        <source>All languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -786,6 +790,17 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>PlaylistFilterModel</name>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
@@ -883,6 +898,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Select playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search ...</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

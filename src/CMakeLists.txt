@@ -71,6 +71,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     core/UpdateManager.h
     epg/XmltvController.h
     epg/XmltvManager.h
+    playlist/PlaylistFilterModel.h
     playlist/PlaylistModel.h
     ui/MainWindow.h
     ui/core/BrowseWidget.h
@@ -167,6 +168,7 @@ SET(Tano_Playlist_Srcs
     playlist/JsHandler.cpp
     playlist/M3UGenerator.cpp
     playlist/M3UHandler.cpp
+    playlist/PlaylistFilterModel.cpp
     playlist/PlaylistHandler.cpp
     playlist/PlaylistModel.cpp
     playlist/TvheadendGenerator.cpp

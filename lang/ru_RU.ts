@@ -187,12 +187,16 @@ an experimental stage.</source>
         <translation type="unfinished">Язык:</translation>
     </message>
     <message>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Categories:</source>
         <translation type="unfinished">Категории:</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Все языки</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Все категории</translation>
     </message>
 </context>
 <context>
@@ -886,6 +890,17 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>PlaylistFilterModel</name>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Все категории</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Все языки</translation>
+    </message>
+</context>
+<context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
@@ -992,6 +1007,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Categories</source>
         <translation type="obsolete">Категории</translation>
+    </message>
+    <message>
+        <source>Search ...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

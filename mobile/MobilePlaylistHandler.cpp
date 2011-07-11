@@ -16,25 +16,29 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
 #include <QtGui/QStyledItemDelegate>
 
 #include "MobilePlaylistHandler.h"
 
-#include "container/Channel.h"
 #include "core/Common.h"
-#include "core/LocaleManager.h"
+#include "playlist/PlaylistFilterModel.h"
 #include "playlist/PlaylistModel.h"
 
 MobilePlaylistHandler::MobilePlaylistHandler(QObject *parent)
     : QObject(parent)
 {
     _model = new PlaylistModel(this);
+    _filterModel = new PlaylistFilterModel(this);
+    _filterModel->setDynamicSortFilter(true);
+    _filterModel->setSourceModel(_model);
     openPlaylist();
 }
 
 MobilePlaylistHandler::~MobilePlaylistHandler()
 {
     delete _model;
+    delete _filterModel;
 }
 
 QVariantList MobilePlaylistHandler::categories()
@@ -62,34 +66,17 @@ void MobilePlaylistHandler::openPlaylist()
     _model->openM3UFile(Tano::locateResource("playlists/sl/siol-mpeg4.m3u"));
 }
 
-void MobilePlaylistHandler::processPlaylist()
+void MobilePlaylistHandler::processGroups(const QString &category,
+                                          const QString &language)
 {
-    /*for(int i = 0; i < ui->treeWidget->topLevelItemCount(); i++) {
-        ui->treeWidget->topLevelItem(i)->setHidden(false);
-    }
+    _filterModel->setCategory(category);
+    _filterModel->setLanguage(language);
 
-    if(ui->categoryBox->currentText() != tr("All categories")) {
-        for(int i = 0; i<ui->treeWidget->topLevelItemCount(); i++) {
-            if(!ui->treeWidget->topLevelItem(i)->text(2).contains(ui->categoryBox->currentText(), Qt::CaseInsensitive)) {
-                ui->treeWidget->topLevelItem(i)->setHidden(true);
-            }
-        }
-    }
+    qDebug() << category << language;
+}
 
-    if(ui->languageBox->currentText() != tr("All languages")) {
-        for(int i = 0; i<ui->treeWidget->topLevelItemCount(); i++) {
-            if(!ui->treeWidget->topLevelItem(i)->text(3).contains(ui->languageBox->currentText(), Qt::CaseInsensitive)) {
-                ui->treeWidget->topLevelItem(i)->setHidden(true);
-            }
-        }
-    }
-
-    if(ui->searchEdit->text() != "") {
-        for(int i  =0; i<ui->treeWidget->topLevelItemCount(); i++) {
-            if(!ui->treeWidget->topLevelItem(i)->text(1).contains(ui->searchEdit->text(), Qt::CaseInsensitive)) {
-                    ui->treeWidget->topLevelItem(i)->setHidden(true);
-                }
-        }
-    }
-*/
+void MobilePlaylistHandler::processSearch(const QString &name)
+{
+    QRegExp regExp(name, Qt::CaseInsensitive);
+    _filterModel->setFilterRegExp(regExp);
 }

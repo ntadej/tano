@@ -20,6 +20,7 @@
 #include "ui_PlaylistDisplayWidget.h"
 
 #include "container/Channel.h"
+#include "playlist/PlaylistFilterModel.h"
 #include "playlist/PlaylistModel.h"
 /*#include "playlist/CSVGenerator.h"
 #include "playlist/JsGenerator.h"
@@ -33,17 +34,22 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
       ui(new Ui::PlaylistDisplayWidget)
 {
     ui->setupUi(this);
-    //ui->treeWidget->header()->setResizeMode(QHeaderView::ResizeToContents);
+
+    _filterModel = new PlaylistFilterModel(this);
+    _filterModel->setDynamicSortFilter(true);
+
+    ui->playlistView->setModel(_filterModel);
 
     connect(ui->playlistView, SIGNAL(clicked(QModelIndex)), this, SLOT(channelClicked(QModelIndex)));
-    //connect(ui->categoryBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
-    //connect(ui->languageBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(processPlaylist()));
-    //connect(ui->searchEdit, SIGNAL(textChanged(QString)), this, SLOT(processPlaylist()));
+    connect(ui->comboCategory, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
+    connect(ui->comboLanguage, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
+    connect(ui->editSearch, SIGNAL(textChanged(QString)), this, SLOT(processFilters()));
 }
 
 PlaylistDisplayWidget::~PlaylistDisplayWidget()
 {
     delete ui;
+    delete _filterModel;
 }
 
 void PlaylistDisplayWidget::changeEvent(QEvent *e)
@@ -66,8 +72,27 @@ void PlaylistDisplayWidget::channelClicked(const QModelIndex &index)
     emit itemClicked(_model->row(index.row()));
 }
 
+void PlaylistDisplayWidget::processFilters()
+{
+    QRegExp regExp(ui->editSearch->text(), Qt::CaseInsensitive);
+    _filterModel->setFilterRegExp(regExp);
+    _filterModel->setCategory(ui->comboCategory->currentText());
+    _filterModel->setLanguage(ui->comboLanguage->currentText());
+}
+
+void PlaylistDisplayWidget::refreshModel()
+{
+    ui->comboCategory->clear();
+    ui->comboCategory->insertItem(0, tr("All categories"));
+    ui->comboCategory->insertItems(1, _model->categories());
+
+    ui->comboLanguage->clear();
+    ui->comboLanguage->insertItem(0, tr("All languages"));
+    ui->comboLanguage->insertItems(1, _model->languages());
+}
+
 void PlaylistDisplayWidget::setModel(PlaylistModel *model)
 {
     _model = model;
-    ui->playlistView->setModel(model);
+    _filterModel->setSourceModel(model);
 }

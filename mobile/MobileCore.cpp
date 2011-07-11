@@ -25,7 +25,7 @@
 #include "MobilePlaylistHandler.h"
 
 #include "core/LocaleManager.h"
-#include "playlist/PlaylistModel.h"
+#include "playlist/PlaylistFilterModel.h"
 
 MobileCore::MobileCore(QObject *parent)
     : QObject(parent)
@@ -33,11 +33,12 @@ MobileCore::MobileCore(QObject *parent)
     _locale = new LocaleManager();
 
     _playlist = new MobilePlaylistHandler(this);
-    PlaylistModel *model = _playlist->model();
+    PlaylistFilterModel *model =  _playlist->model();
 
     _window = new QDeclarativeView();
     _window->rootContext()->setContextProperty("channelsModel", model);
     _window->rootContext()->setContextProperty("core", this);
+    _window->rootContext()->setContextProperty("playlistManager", _playlist);
     _window->setSource(QUrl("qrc:/main.qml"));
 
     connect(_window->engine(), SIGNAL(quit()), qApp, SLOT(quit()));

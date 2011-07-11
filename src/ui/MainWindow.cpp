@@ -519,12 +519,8 @@ void MainWindow::openPlaylist(const bool &start)
 	else
 		_playlistName = Tano::locateResource(_defaultPlaylist);
 
-	if (!_playlistName.isEmpty()) {
-		_schedule->openPlaylist(_playlistName);
-		ui->recorder->openPlaylist(_playlistName);
-	} else {
+    if (_playlistName.isEmpty())
 		return;
-	}
 
     _model->openM3UFile(_playlistName);
 
@@ -537,6 +533,10 @@ void MainWindow::openPlaylist(const bool &start)
 	mouseWheel();
 
     ui->channelToolBox->setItemText(0, _model->name());
+
+    ui->playlistWidget->refreshModel();
+    _schedule->openPlaylist(_playlistName);
+    ui->recorder->openPlaylist(_playlistName);
 }
 void MainWindow::openFile()
 {

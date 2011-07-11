@@ -179,14 +179,20 @@ msgctxt "FilterDialog|"
 msgid "Language:"
 msgstr "Язык:"
 
-msgctxt "FilterDialog|"
-msgid "All"
-msgstr ""
-
 #, fuzzy
 msgctxt "FilterDialog|"
 msgid "Categories:"
 msgstr "Категории:"
+
+#, fuzzy
+msgctxt "FilterDialog|"
+msgid "All languages"
+msgstr "Все языки"
+
+#, fuzzy
+msgctxt "FilterDialog|"
+msgid "All categories"
+msgstr "Все категории"
 
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
@@ -866,6 +872,16 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
 msgstr ""
 
+#, fuzzy
+msgctxt "PlaylistFilterModel|"
+msgid "All categories"
+msgstr "Все категории"
+
+#, fuzzy
+msgctxt "PlaylistFilterModel|"
+msgid "All languages"
+msgstr "Все языки"
+
 msgctxt "PlaylistImportCSV|"
 msgid "CSV file structure"
 msgstr ""
@@ -975,6 +991,10 @@ msgstr ""
 #~ msgctxt "PlaylistPage|"
 #~ msgid "Categories"
 #~ msgstr "Категории"
+
+msgctxt "PlaylistPage|"
+msgid "Search ..."
+msgstr ""
 
 msgctxt "PlaylistSelect|"
 msgid "Select"

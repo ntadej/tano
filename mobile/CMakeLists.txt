@@ -30,6 +30,7 @@ SET(Tano_Mobile_MOCs
 
     ../src/container/Channel.h
     ../src/core/ListModel.h
+    ../src/playlist/PlaylistFilterModel.h
     ../src/playlist/PlaylistModel.h
 )
 
@@ -55,6 +56,7 @@ SET(Tano_Mobile_Srcs
     ../src/core/Udpxy.cpp
 
     ../src/playlist/M3UHandler.cpp
+    ../src/playlist/PlaylistFilterModel.cpp
     ../src/playlist/PlaylistModel.cpp
 )
 

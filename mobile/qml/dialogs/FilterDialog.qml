@@ -15,7 +15,7 @@ Sheet {
     }
 
     acceptButtonText: "Apply"
-    rejectButtonText: "Cancel"
+    rejectButtonText: "Reset"
 
     title: Label {
         id: titleLabel
@@ -40,31 +40,37 @@ Sheet {
                 Column {
                     Text {
                         id: labelLanguage
-                        font.pixelSize: 22
+                        font: UiConstants.TitleFont
                         text: qsTr("Language:")
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
                     ButtonColumn {
                         id: buttonsLanguage
-                        Button { text: qsTr("All") }
+                        Button { id: la; text: qsTr("All languages") }
                     }
                 }
                 Column {
                     Text {
                         id: labelCategories
-                        font.pixelSize: 22
+                        font: UiConstants.TitleFont
                         text: qsTr("Categories:")
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
                     ButtonColumn {
                         id: buttonsCategories
-                        Button { text: qsTr("All") }
+                        Button { id: ca; text: qsTr("All categories") }
                     }
                 }
             }
         }
 
     }
-   // onAccepted: label.text = "Accepted!"
-   // onRejected: label.text = "Rejected!"
+   onAccepted: {
+       playlistManager.processGroups(buttonsCategories.checkedButton.text, buttonsLanguage.checkedButton.text)
+   }
+   onRejected: {
+       la.checked = true
+       ca.checked = true
+       playlistManager.processGroups(buttonsCategories.checkedButton.text, buttonsLanguage.checkedButton.text)
+   }
 }

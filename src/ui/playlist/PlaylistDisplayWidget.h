@@ -25,6 +25,7 @@
 #include "ui/core/FileDialogs.h"
 
 class Channel;
+class PlaylistFilterModel;
 class PlaylistModel;
 
 namespace Ui
@@ -39,6 +40,7 @@ public:
     PlaylistDisplayWidget(QWidget *parent = 0);
     ~PlaylistDisplayWidget();
 
+    void refreshModel();
     void setModel(PlaylistModel *model);
 
 protected:
@@ -49,11 +51,13 @@ signals:
 
 private slots:
     void channelClicked(const QModelIndex &index);
+    void processFilters();
 
 private:
     Ui::PlaylistDisplayWidget *ui;
 
     PlaylistModel *_model;
+    PlaylistFilterModel *_filterModel;
     QString _fileName;
 };
 

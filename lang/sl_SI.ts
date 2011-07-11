@@ -199,12 +199,16 @@ an experimental stage.</source>
         <translation type="unfinished">Jezik:</translation>
     </message>
     <message>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Categories:</source>
         <translation type="unfinished">Kategorije:</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Vsi jeziki</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Vse kategorije</translation>
     </message>
 </context>
 <context>
@@ -964,6 +968,17 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
 </context>
 <context>
+    <name>PlaylistFilterModel</name>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Vse kategorije</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Vsi jeziki</translation>
+    </message>
+</context>
+<context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
@@ -1070,6 +1085,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Categories</source>
         <translation type="obsolete">Kategorije</translation>
+    </message>
+    <message>
+        <source>Search ...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

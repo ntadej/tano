@@ -198,12 +198,16 @@ an experimental stage.</source>
         <translation type="unfinished">Jazyk:</translation>
     </message>
     <message>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Categories:</source>
         <translation type="unfinished">Skupiny:</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Všechny jazyky</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Všechny skupiny</translation>
     </message>
 </context>
 <context>
@@ -943,6 +947,17 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
 </context>
 <context>
+    <name>PlaylistFilterModel</name>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Všechny skupiny</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Všechny jazyky</translation>
+    </message>
+</context>
+<context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
@@ -1049,6 +1064,10 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Categories</source>
         <translation type="obsolete">Skupiny</translation>
+    </message>
+    <message>
+        <source>Search ...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

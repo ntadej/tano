@@ -16,36 +16,30 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MOBILEPLAYLISTHANDLER_H_
-#define TANO_MOBILEPLAYLISTHANDLER_H_
+#ifndef TANO_PLAYLISTFILTERMODEL_H_
+#define TANO_PLAYLISTFILTERMODEL_H_
 
-#include <QtCore/QObject>
-#include <QtCore/QVariantList>
+#include <QtGui/QSortFilterProxyModel>
 
-class Channel;
-class PlaylistFilterModel;
-class PlaylistModel;
-
-class MobilePlaylistHandler : public QObject
+class PlaylistFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 public:
-    MobilePlaylistHandler(QObject *parent = 0);
-    ~MobilePlaylistHandler();
+    PlaylistFilterModel(QObject *parent = 0);
+    ~PlaylistFilterModel();
 
-    PlaylistFilterModel *model() { return _filterModel; }
-    QVariantList categories();
-    QVariantList languages();
+    QString category() const { return _category; }
+    void setCategory(const QString &category);
 
-    Q_INVOKABLE void processGroups(const QString &category,
-                                   const QString &language);
-    Q_INVOKABLE void processSearch(const QString &name);
+    QString language() const { return _language; }
+    void setLanguage(const QString &language);
+
+protected:
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
 
 private:
-    void openPlaylist();
-
-    PlaylistModel *_model;
-    PlaylistFilterModel *_filterModel;
+    QString _category;
+    QString _language;
 };
 
-#endif // TANO_MOBILEPLAYLISTHANDLER_H_
+#endif // TANO_PLAYLISTFILTERMODEL_H_
