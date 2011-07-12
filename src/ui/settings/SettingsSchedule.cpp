@@ -30,8 +30,7 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
 {
     ui->setupUi(this);
 
-#if EDITOR
-#else
+#if !EDITOR
     _controller = new XmltvController(this);
     listGrabbers();
 #endif
@@ -40,8 +39,7 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
 SettingsSchedule::~SettingsSchedule()
 {
     delete ui;
-#if EDITOR
-#else
+#if !EDITOR
     delete _controller;
 #endif
 }
@@ -60,8 +58,7 @@ void SettingsSchedule::changeEvent(QEvent *e)
 
 void SettingsSchedule::listGrabbers()
 {
-#if EDITOR
-#else
+#if !EDITOR
     QStringList grabbers = _controller->grabbers();
 
     ui->comboGrabber->clear();

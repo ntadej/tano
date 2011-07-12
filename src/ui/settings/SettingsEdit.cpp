@@ -121,8 +121,7 @@ void SettingsEdit::apply()
     _settings->writeSettings();
 
     // Shortcuts
-#if EDITOR
-#else
+#if !EDITOR
     ui->shortcuts->shortcutWrite();
 #endif
 }

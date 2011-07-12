@@ -23,8 +23,7 @@
 
 #include "Config.h"
 
-#if EDITOR
-#else
+#if !EDITOR
 class XmltvController;
 #endif
 
@@ -53,8 +52,7 @@ private:
 
     Ui::SettingsSchedule *ui;
 
-#if EDITOR
-#else
+#if !EDITOR
     XmltvController *_controller;
 #endif
 };
