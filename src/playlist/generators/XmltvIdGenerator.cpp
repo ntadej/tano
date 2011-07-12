@@ -16,42 +16,36 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PRINTDIALOG_H_
-#define TANO_PRINTDIALOG_H_
+#include "container/Channel.h"
+#include "playlist/PlaylistModel.h"
+#include "playlist/generators/XmltvIdGenerator.h"
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
-#include "core/Print.h"
-
-namespace Ui {
-    class PrintDialog;
+XmltvIdGenerator::XmltvIdGenerator(const QString &file)
+{
+    _file = new QFile(file);
 }
 
-class PrintDialog : public QDialog
+XmltvIdGenerator::~XmltvIdGenerator()
 {
-Q_OBJECT
-public:
-    PrintDialog(const QString &name,
-                PlaylistModel *model,
-                QWidget *parent = 0);
-    ~PrintDialog();
+    delete _file;
+}
 
-protected:
-    void changeEvent(QEvent *e);
+bool XmltvIdGenerator::write(PlaylistModel *model)
+{
+    if (!_file->open(QFile::WriteOnly | QFile::Text))
+        return false;
 
-private slots:
-    void action(QAbstractButton *button);
+    _out.setDevice(_file);
+    _out.setCodec("UTF-8");
 
-private:
-    void print();
+    for (int i = 0; i < model->rowCount(); i++) {
+        generateItem(model->row(i));
+    }
+    return true;
+}
 
-    Ui::PrintDialog *ui;
-
-    Print *_print;
-
-    QString _name;
-    PlaylistModel *_model;
-};
-
-#endif // TANO_PRINTDIALOG_H_
+void XmltvIdGenerator::generateItem(Channel *channel)
+{
+    if(!channel->epg().isEmpty())
+        _out << channel->name() << "=" << channel->epg() << "\n";
+}

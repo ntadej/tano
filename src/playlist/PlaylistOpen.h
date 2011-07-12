@@ -16,32 +16,32 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_XMLTVIDGENERATOR_H_
-#define TANO_XMLTVIDGENERATOR_H_
+#ifndef TANO_PLAYLISTOPEN_H_
+#define TANO_PLAYLISTOPEN_H_
 
-#include <QtCore/QTextStream>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QTreeWidgetItem>
+#include <QtCore/QList>
+#include <QtCore/QString>
 
 class Channel;
-class Udpxy;
+class CSVInfo;
 
-class XmltvIdGenerator
+class PlaylistOpen
 {
 public:
-    XmltvIdGenerator(QTreeWidget *treeWidget,
-                     QMap<QTreeWidgetItem *, Channel *> map);
-    ~XmltvIdGenerator();
+    PlaylistOpen();
+    ~PlaylistOpen();
 
-    bool write(QIODevice *device);
+    inline QString name() const { return _name; }
+    inline QList<Channel *> list() const { return _list; }
+    void openCSVFile(const QString &file,
+                     const CSVInfo &info);
+    void openJsFile(const QString &file);
+    void openM3UFile(const QString &file);
+    void openTanoOldFile(const QString &file);
 
 private:
-    void generateItem(Channel *channel);
-
-    QTreeWidget *_treeWidget;
-    QTextStream _out;
-
-    QMap<QTreeWidgetItem *, Channel *> _map;
+    QList<Channel *> _list;
+    QString _name;
 };
 
-#endif // TANO_XMLTVIDGENERATOR_H_
+#endif // PLAYLISTOPEN_H

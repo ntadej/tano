@@ -18,45 +18,50 @@
 
 #include "container/Channel.h"
 #include "core/Udpxy.h"
-#include "playlist/M3UGenerator.h"
+#include "playlist/PlaylistModel.h"
+#include "playlist/generators/M3UGenerator.h"
 
-M3UGenerator::M3UGenerator(QTreeWidget *treeWidget,
-                           const QString &name,
-                           QMap<QTreeWidgetItem *, Channel *> map,
-                           const FileDialogs::Type &type)
-    : _treeWidget(treeWidget),
-      _name(name),
-      _map(map),
-      _type(type)
+M3UGenerator::M3UGenerator(const QString &file,
+                           const Tano::FileType &type)
+    : _type(type)
 {
+    _file = new QFile(file);
     _udpxy = new Udpxy();
 }
 
-M3UGenerator::~M3UGenerator() { }
-
-bool M3UGenerator::write(QIODevice *device)
+M3UGenerator::~M3UGenerator()
 {
-    _out.setDevice(device);
+    delete _file;
+    delete _udpxy;
+}
+
+bool M3UGenerator::write(PlaylistModel *model)
+{
+    if (!_file->open(QFile::WriteOnly | QFile::Text))
+        return false;
+
+    _out.setDevice(_file);
     _out.setCodec("UTF-8");
     _out << "#EXTM3U\n";
-    if(_type != FileDialogs::M3UClean) {
+    if(_type != Tano::M3UClean) {
         _out << "#EXTNAME:"
-             << _name
+             << model->name()
              << "\n\n";
     }
-    for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
-        switch(_type) {
-            case FileDialogs::M3U:
-                generateItemNormal(_map[_treeWidget->topLevelItem(i)]);
-                break;
-            case FileDialogs::M3UClean:
-                generateItemClean(_map[_treeWidget->topLevelItem(i)]);
-                break;
-            case FileDialogs::M3UUdpxy:
-                generateItemUdpxy(_map[_treeWidget->topLevelItem(i)]);
-                break;
-            default:
-                break;
+    for (int i = 0; i < model->rowCount(); i++) {
+        switch (_type)
+        {
+        case Tano::M3U:
+            generateItemNormal(model->row(i));
+            break;
+        case Tano::M3UClean:
+            generateItemClean(model->row(i));
+            break;
+        case Tano::M3UUdpxy:
+            generateItemUdpxy(model->row(i));
+            break;
+        default:
+            break;
         }
     }
     return true;

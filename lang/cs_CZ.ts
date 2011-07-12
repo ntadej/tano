@@ -502,6 +502,12 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Nelze číst ze souboru %1:
+%2.</translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -914,6 +920,26 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Nelze číst ze souboru %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished">Nelze zapisovat soubor %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished">Program s tímto číslem již existuje!</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
@@ -1105,46 +1131,46 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistWidget</name>
     <message>
         <source>Channel</source>
-        <translation type="unfinished">Program</translation>
+        <translation type="obsolete">Program</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Smazat</translation>
+        <translation type="obsolete">Smazat</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Hledat:</translation>
+        <translation type="obsolete">Hledat:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation>Skupina:</translation>
+        <translation type="obsolete">Skupina:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Jazyk:</translation>
+        <translation type="obsolete">Jazyk:</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Všechny skupiny</translation>
+        <translation type="obsolete">Všechny skupiny</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Všechny jazyky</translation>
+        <translation type="obsolete">Všechny jazyky</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Nelze číst ze souboru %1:
+        <translation type="obsolete">Nelze číst ze souboru %1:
 %2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Nelze zapisovat soubor %1:
+        <translation type="obsolete">Nelze zapisovat soubor %1:
 %2.</translation>
     </message>
 </context>
@@ -1234,7 +1260,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Program s tímto číslem již existuje!</translation>
+        <translation type="obsolete">Program s tímto číslem již existuje!</translation>
     </message>
     <message>
         <source>New channel</source>

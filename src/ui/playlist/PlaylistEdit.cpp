@@ -24,11 +24,13 @@
 
 #include "Config.h"
 #include "container/Channel.h"
+#include "container/CSVInfo.h"
 #include "container/File.h"
 #include "core/Common.h"
 #include "core/ConsoleOutput.h"
 #include "core/Enums.h"
 #include "core/Settings.h"
+#include "playlist/PlaylistModel.h"
 #include "ui/core/FileDialogs.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
@@ -63,6 +65,9 @@ PlaylistEdit::PlaylistEdit(const WId &video,
     ui->setupUi(this);
     ui->editWidget->setEnabled(false);
     ui->playlist->editMode();
+
+    _model = new PlaylistModel(this);
+    ui->playlist->setModel(_model);
 
 #if EDITOR
     _update = new UpdateDialog();
@@ -159,7 +164,7 @@ void PlaylistEdit::createConnections()
     connect(ui->actionUp, SIGNAL(triggered()), this, SLOT(moveUp()));
     connect(ui->actionDown, SIGNAL(triggered()), this, SLOT(moveDown()));
 
-    connect(ui->playlist->treeWidget(), SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), this, SLOT(editItem(QTreeWidgetItem*)));
+    connect(ui->playlist, SIGNAL(itemClicked(Channel *)), this, SLOT(editItem(Channel *)));
 
 #if EDITOR
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
@@ -216,59 +221,66 @@ void PlaylistEdit::open(const QString &playlist,
     if(playlist.isNull()) {
         file = FileDialogs::openPlaylist();
     } else {
-        file = File(playlist, FileDialogs::M3U);
+        file = File(playlist, Tano::M3U);
     }
+
+    if(file.path().isEmpty() || file.type() == -1)
+        return;
 
     ui->editWidget->setEnabled(false);
 
+    QFile f(file.path());
+    if (!f.open(QFile::ReadOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot read file %1:\n%2.")
+                            .arg(file.path())
+                            .arg(f.errorString()));
+        return;
+    }
+    f.close();
+
     switch (file.type())
     {
-    case FileDialogs::M3U:
-    case FileDialogs::JS:
-    case FileDialogs::TanoOld:
-        ui->playlist->open(file.path(), refresh, FileDialogs::Type(file.type()));
+    case Tano::M3U:
+    case Tano::JS:
+    case Tano::TanoOld:
+        _model->open(file.path(), refresh, Tano::FileType(file.type()));
         break;
-    case FileDialogs::CSV:
+    case Tano::CSV:
         dialog.exec();
         if(!dialog.proceed())
             return;
 
-        ui->playlist->openCSV(file.path(), dialog.separator(), dialog.header(), dialog.columns());
+        _model->open(file.path(), refresh, Tano::FileType(file.type()), CSVInfo(dialog.separator(), dialog.header(), dialog.columns()));
         break;
     default:
         break;
     }
 
-    ui->editName->setText(ui->playlist->name());
-    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    ui->editName->setText(_model->name());
+    ui->number->display(_model->rowCount());
 }
 
 void PlaylistEdit::newPlaylist()
 {
-    if(ui->playlist->treeWidget()->topLevelItemCount() == 0)
+    if(_model->rowCount() == 0)
         return;
 
     int ret;
     ret = QMessageBox::warning(this, tr("Playlist Editor"),
-                                   tr("Do you want to create new playlist?\nYou will lose any unsaved changes."),
-                                   QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel,
-                                   QMessageBox::Discard);
+                               tr("Do you want to create new playlist?\nYou will lose any unsaved changes."),
+                               QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel,
+                               QMessageBox::Discard);
 
     switch (ret)
     {
     case QMessageBox::Save:
         ui->actionSave->trigger();
-
-        ui->editWidget->setEnabled(false);
-        ui->playlist->clear();
-        ui->editName->setText(tr("New playlist"));
-        ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
-        break;
     case QMessageBox::Discard:
         ui->editWidget->setEnabled(false);
-        ui->playlist->clear();
+        _model->clear();
         ui->editName->setText(tr("New playlist"));
-        ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+        ui->number->display(_model->rowCount());
         break;
     case QMessageBox::Cancel:
     default:
@@ -288,22 +300,22 @@ void PlaylistEdit::deleteItem()
 
     ui->editWidget->setEnabled(false);
 
-    ui->playlist->deleteItem();
+    _model->deleteChannel(ui->playlist->currentChannel());
 
-    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    ui->number->display(_model->rowCount());
 }
 
 void PlaylistEdit::addItem()
 {
-    editItem(ui->playlist->createItem());
-    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    editItem(_model->createChannel());
+    ui->number->display(_model->rowCount());
 }
 
 void PlaylistEdit::addItem(const QString &name,
                            const QString &url)
 {
-    ui->playlist->createItem(name, url);
-    ui->number->display(ui->playlist->treeWidget()->topLevelItemCount());
+    _model->createChannel(name, url);
+    ui->number->display(_model->rowCount());
 }
 
 void PlaylistEdit::save()
@@ -313,17 +325,25 @@ void PlaylistEdit::save()
     if (file.path().isEmpty() || file.type() == -1)
         return;
 
-    qDebug() << file.path() << file.type();
+    QFile f(file.path());
+    if (!f.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot write file %1:\n%2.")
+                            .arg(file.path())
+                            .arg(f.errorString()));
+        return;
+    }
+    f.close();
 
     switch (file.type())
     {
-    case FileDialogs::M3U:
-    case FileDialogs::M3UClean:
-    case FileDialogs::CSV:
-    case FileDialogs::JS:
-        ui->playlist->save(file.path(), ui->editName->text(), FileDialogs::Type(file.type()));
+    case Tano::M3U:
+    case Tano::M3UClean:
+    case Tano::CSV:
+    case Tano::JS:
+        _model->save(file.path(), ui->editName->text(), Tano::FileType(file.type()));
         break;
-    case FileDialogs::M3UUdpxy:
+    case Tano::M3UUdpxy:
         int s;
         s = QMessageBox::warning(this, tr("Export to M3U format with Udpxy URLs"),
                                  tr("You need to have valid Udpxy settings or the exported playlist will contain classic URLs."),
@@ -333,7 +353,7 @@ void PlaylistEdit::save()
         switch (s)
         {
         case QMessageBox::Save:
-            ui->playlist->save(file.path(), ui->editName->text(), FileDialogs::Type(file.type()));
+            _model->save(file.path(), ui->editName->text(), Tano::FileType(file.type()));
             break;
         case QMessageBox::Cancel:
         default:
@@ -352,17 +372,17 @@ void PlaylistEdit::exportTvheadend()
     if(!dialog.proceed())
         return;
 
-    ui->playlist->exportTvheadend(dialog.location(), dialog.interface(), dialog.xmltv());
+    _model->exportTvheadend(dialog.location(), dialog.interface(), dialog.xmltv());
 }
 
 void PlaylistEdit::exportXmltvId()
 {
-    QString fileName = FileDialogs::saveXmltv();
+    QString file = FileDialogs::saveXmltv();
 
-    if (fileName.isEmpty())
+    if (file.isEmpty())
         return;
 
-    ui->playlist->exportXmltvId(fileName);
+    _model->save(file, "", Tano::XmltvId);
 }
 
 void PlaylistEdit::importWeb()
@@ -407,7 +427,7 @@ void PlaylistEdit::exit()
 
 void PlaylistEdit::print()
 {
-    PrintDialog dialog(ui->editName->text(), ui->playlist);
+    PrintDialog dialog(ui->editName->text(), _model);
     dialog.exec();
 }
 
@@ -455,8 +475,8 @@ void PlaylistEdit::checkCurrentIp()
         _player->stop();
 
         bool newChannel = true;
-        for(int i=0; i<ui->playlist->treeWidget()->topLevelItemCount(); i++) {
-            if(ui->playlist->channelRead(ui->playlist->treeWidget()->topLevelItem(i))->url() == currentIp()) {
+        for(int i = 0; i < _model->rowCount(); i++) {
+            if(_model->row(i)->url() == currentIp()) {
                 newChannel = false;
                 break;
             }
@@ -499,9 +519,9 @@ void PlaylistEdit::setState(const bool &playing)
 #endif
 }
 
-void PlaylistEdit::editItem(QTreeWidgetItem *item)
+void PlaylistEdit::editItem(Channel *channel)
 {
-    if(item == 0) {
+    if(channel == 0) {
         ui->editWidget->setEnabled(false);
         return;
     }
@@ -509,64 +529,66 @@ void PlaylistEdit::editItem(QTreeWidgetItem *item)
     if(!ui->editWidget->isEnabled())
         ui->editWidget->setEnabled(true);
 
-    ui->playlist->treeWidget()->setCurrentItem(item);
+    ui->playlist->setCurrentChannel(channel);
 
-    ui->editNumber->setText(ui->playlist->channelRead(item)->numberString());
-    ui->editChannelName->setText(ui->playlist->channelRead(item)->name());
-    ui->editUrl->setText(ui->playlist->channelRead(item)->url());
-    ui->editCategories->setText(ui->playlist->channelRead(item)->categories().join(","));
-    ui->editLanguage->setText(ui->playlist->channelRead(item)->language());
-    ui->editEpg->setText(ui->playlist->channelRead(item)->epg());
-    ui->editLogo->setText(ui->playlist->channelRead(item)->logo());
+    ui->editNumber->setText(channel->numberString());
+    ui->editChannelName->setText(channel->name());
+    ui->editUrl->setText(channel->url());
+    ui->editCategories->setText(channel->categories().join(","));
+    ui->editLanguage->setText(channel->language());
+    ui->editEpg->setText(channel->epg());
+    ui->editLogo->setText(channel->logo());
 }
 
 void PlaylistEdit::editChannelNumber()
 {
     QString text = ui->editNumber->text();
-    if(text.toInt() != ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->number())
-        ui->editNumber->setText(QString().number(ui->playlist->processNum(ui->playlist->treeWidget()->currentItem(), text.toInt())));
-    ui->playlist->treeWidget()->sortByColumn(0, Qt::AscendingOrder);
+    if(text.toInt() != ui->playlist->currentChannel()->number())
+        _model->processNumber(ui->playlist->currentChannel(), text.toInt());
+    else
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("A channel with this number already exists!"));
+    ui->editNumber->setText(QString().number(ui->playlist->currentChannel()->number()));
 }
 
 void PlaylistEdit::editChannelName(const QString &text)
 {
-    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setName(text);
-    ui->playlist->treeWidget()->currentItem()->setText(1, text);
+    ui->playlist->currentChannel()->setName(text);
 }
 
 void PlaylistEdit::editChannelUrl(const QString &text)
 {
-    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setUrl(text);
+    ui->playlist->currentChannel()->setUrl(text);
 }
 
 void PlaylistEdit::editChannelCategories(const QString &text)
 {
-    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setCategories(text.split(","));
+    ui->playlist->currentChannel()->setCategories(text.split(","));
 }
 
 void PlaylistEdit::editChannelLanguage(const QString &text)
 {
-    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setLanguage(text);
+    ui->playlist->currentChannel()->setLanguage(text);
 }
 
 void PlaylistEdit::editChannelEpg(const QString &text)
 {
-    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setEpg(text);
+    ui->playlist->currentChannel()->setEpg(text);
 }
 
 void PlaylistEdit::editChannelLogo(const QString &text)
 {
-    ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->setLogo(text);
+    ui->playlist->currentChannel()->setLogo(text);
 }
 
 void PlaylistEdit::moveUp()
 {
-    ui->playlist->moveUp(ui->playlist->treeWidget()->currentItem());
-    ui->editNumber->setText(ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->numberString());
+    _model->moveUp(ui->playlist->currentChannel());
+    ui->editNumber->setText(ui->playlist->currentChannel()->numberString());
 }
 
 void PlaylistEdit::moveDown()
 {
-    ui->playlist->moveDown(ui->playlist->treeWidget()->currentItem());
-    ui->editNumber->setText(ui->playlist->channelRead(ui->playlist->treeWidget()->currentItem())->numberString());
+    _model->moveDown(ui->playlist->currentChannel());
+    ui->editNumber->setText(ui->playlist->currentChannel()->numberString());
 }

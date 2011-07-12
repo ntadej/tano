@@ -27,23 +27,23 @@ class Channel;
 class M3UHandler
 {
 public:
-	M3UHandler();
-	~M3UHandler();
+    M3UHandler();
+    ~M3UHandler();
 
-	void processFile(const QString &m3uFile);
+    void processFile(const QString &m3uFile);
 
-	QString name() const { return _name; }
-	QList<Channel *> channelList() const { return _channels; }
+    QString name() const { return _name; }
+    QList<Channel *> channelList() const { return _channels; }
 
 private:
-	void processList();
+    void processList();
 
-	Channel *_channel;
+    Channel *_channel;
 
-	QString _name;
-	QStringList _m3uLineList;
+    QString _name;
+    QStringList _m3uLineList;
 
-	QList<Channel *> _channels;
+    QList<Channel *> _channels;
 };
 
 #endif // TANO_M3UHANDLER_H_

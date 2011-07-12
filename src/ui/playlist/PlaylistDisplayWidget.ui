@@ -76,7 +76,14 @@
     </widget>
    </item>
    <item row="0" column="0" colspan="3">
-    <widget class="QListView" name="playlistView"/>
+    <widget class="QListView" name="playlistView">
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

@@ -519,6 +519,12 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>&amp;Video</source>
         <translation>&amp;Slika</translation>
     </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Ne morem prebrati %1:
+%2.</translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -935,6 +941,26 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Save</source>
         <translation>Shrani</translation>
     </message>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Ne morem prebrati %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished">Ne morem pisati datoteke %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished">Program s to številko že obstaja!</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
@@ -1126,46 +1152,46 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>PlaylistWidget</name>
     <message>
         <source>Channel</source>
-        <translation type="unfinished">Program</translation>
+        <translation type="obsolete">Program</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Išči:</translation>
+        <translation type="obsolete">Išči:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation>Kategorija:</translation>
+        <translation type="obsolete">Kategorija:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Jezik:</translation>
+        <translation type="obsolete">Jezik:</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Počisti</translation>
+        <translation type="obsolete">Počisti</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Ne morem prebrati %1:
+        <translation type="obsolete">Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Vsi jeziki</translation>
+        <translation type="obsolete">Vsi jeziki</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Vse kategorije</translation>
+        <translation type="obsolete">Vse kategorije</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Ne morem pisati datoteke %1:
+        <translation type="obsolete">Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
 </context>
@@ -1247,7 +1273,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Program s to številko že obstaja!</translation>
+        <translation type="obsolete">Program s to številko že obstaja!</translation>
     </message>
     <message>
         <source>New channel</source>

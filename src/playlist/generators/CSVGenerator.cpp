@@ -17,42 +17,46 @@
 *****************************************************************************/
 
 #include "container/Channel.h"
+#include "playlist/PlaylistModel.h"
 #include "CSVGenerator.h"
 
-CSVGenerator::CSVGenerator(QTreeWidget *treeWidget,
-						   QMap<QTreeWidgetItem *, Channel *> map,
-						   const bool &header)
-	: _treeWidget(treeWidget),
-	_map(map),
-	_header(header) { }
-
-CSVGenerator::~CSVGenerator() { }
-
-bool CSVGenerator::write(QIODevice *device)
+CSVGenerator::CSVGenerator(const QString &file)
 {
-	_out.setDevice(device);
-	_out.setCodec("UTF-8");
-	if(_header) {
-		_out << QObject::tr("Number") << ";"
-			 << QObject::tr("Channel") << ";"
-			 << QObject::tr("URL") << ";"
-			 << QObject::tr("Categories") << ";"
-			 << QObject::tr("Language") << ";"
-			 << QObject::tr("EPG ID") << "\n";
-	}
-	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
-		generateItem(_map[_treeWidget->topLevelItem(i)]);
-	}
-	return true;
+    _file = new QFile(file);
+}
+
+CSVGenerator::~CSVGenerator()
+{
+    delete _file;
+}
+
+bool CSVGenerator::write(PlaylistModel *model)
+{
+    if (!_file->open(QFile::WriteOnly | QFile::Text))
+        return false;
+
+    _out.setDevice(_file);
+    _out.setCodec("UTF-8");
+    _out << QObject::tr("Number") << ";"
+         << QObject::tr("Channel") << ";"
+         << QObject::tr("URL") << ";"
+         << QObject::tr("Categories") << ";"
+         << QObject::tr("Language") << ";"
+         << QObject::tr("EPG ID") << "\n";
+
+    for (int i = 0; i < model->rowCount(); i++) {
+        generateItem(model->row(i));
+    }
+    return true;
 }
 
 void CSVGenerator::generateItem(Channel *channel)
 {
-	_out << channel->numberString() << ";"
-		 << channel->name() << ";"
-		 << channel->url() << ";"
-		 << channel->categories().join(",") << ";"
-		 << channel->language() << ";"
-		 << channel->epg();
-	_out << "\n";
+    _out << channel->numberString() << ";"
+         << channel->name() << ";"
+         << channel->url() << ";"
+         << channel->categories().join(",") << ";"
+         << channel->language() << ";"
+         << channel->epg();
+    _out << "\n";
 }

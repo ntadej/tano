@@ -25,63 +25,65 @@
 #include <QtGui/QTreeWidgetItem>
 
 class Channel;
+class PlaylistModel;
 class Timer;
 class TimersHandler;
 
 namespace Ui
 {
-	class TimersEdit;
+    class TimersEdit;
 }
 
 class TimersEdit : public QMainWindow
 {
 Q_OBJECT
 public:
-	TimersEdit(const QString &playlist,
-			   QWidget *parent = 0);
-	~TimersEdit();
+    TimersEdit(PlaylistModel *playlist,
+               QWidget *parent = 0);
+    ~TimersEdit();
 
 protected:
-	void changeEvent(QEvent *e);
-	void closeEvent(QCloseEvent *event);
+    void changeEvent(QEvent *e);
+    void closeEvent(QCloseEvent *event);
 
 private slots:
-	void addItem();
-	void deleteItem();
-	void newItem();
+    void addItem();
+    void deleteItem();
+    void newItem();
 
-	void edit(QTreeWidgetItem *item);
-	void playlist(QTreeWidgetItem *item);
+    void edit(QTreeWidgetItem *item);
+    void playlist(Channel *channel);
 
-	void validate();
+    void validate();
 
-	void editName(const QString &name);
-	void editType(const int &type);
-	void editDate(const QDate &date);
-	void editStartTime(const QTime &time);
-	void editEndTime(const QTime &time);
+    void editName(const QString &name);
+    void editType(const int &type);
+    void editDate(const QDate &date);
+    void editStartTime(const QTime &time);
+    void editEndTime(const QTime &time);
 
-	void read();
-	void write();
-	void exit();
+    void read();
+    void write();
+    void exit();
 
 signals:
-	void updateTimers();
+    void updateTimers();
 
 private:
-	void createConnections();
-	void createSettings();
+    void createConnections();
+    void createSettings();
 
-	Ui::TimersEdit *ui;
+    Ui::TimersEdit *ui;
 
-	Channel *_channel;
+    Channel *_channel;
 
-	bool _closeEnabled;
+    bool _closeEnabled;
 
-	TimersHandler *_handler;
+    TimersHandler *_handler;
+    PlaylistModel *_model;
 
-	QString _path;
-	QString _playlist;
+    QString _path;
+    QString _playlist;
 };
 
 #endif // TANO_TIMERSEDIT_H_

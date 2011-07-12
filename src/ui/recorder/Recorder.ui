@@ -19,7 +19,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="1" rowspan="3">
-    <widget class="PlaylistWidget" name="playlistWidget" native="true">
+    <widget class="PlaylistDisplayWidget" name="playlistWidget" native="true">
      <property name="minimumSize">
       <size>
        <width>200</width>
@@ -179,9 +179,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>PlaylistWidget</class>
+   <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
-   <header>ui/playlist/PlaylistWidget.h</header>
+   <header>ui/playlist/PlaylistDisplayWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

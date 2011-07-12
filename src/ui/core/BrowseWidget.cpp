@@ -21,6 +21,7 @@
 #include <QtGui/QHBoxLayout>
 
 #include "BrowseWidget.h"
+#include "ui/core/FileDialogs.h"
 
 BrowseWidget::BrowseWidget(QWidget *parent)
     : QWidget(parent),

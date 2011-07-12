@@ -63,7 +63,7 @@ QVariantList MobilePlaylistHandler::languages()
 
 void MobilePlaylistHandler::openPlaylist()
 {
-    _model->openM3UFile(Tano::locateResource("playlists/sl/siol-mpeg4.m3u"));
+    _model->open(Tano::locateResource("playlists/sl/siol-mpeg4.m3u"));
 }
 
 void MobilePlaylistHandler::processGroups(const QString &category,

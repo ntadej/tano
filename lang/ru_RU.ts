@@ -491,6 +491,12 @@ This will stop recording in progress.</source>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Невозможно прочитать файл %1:
+%2.</translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -857,6 +863,26 @@ You will lose any unsaved changes.</source>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Невозможно прочитать файл %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished">Невозможно записать файл %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished">Канал с таким номером уже существует!</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
@@ -1048,46 +1074,46 @@ You will lose any unsaved changes.</source>
     <name>PlaylistWidget</name>
     <message>
         <source>Channel</source>
-        <translation type="unfinished">Канал</translation>
+        <translation type="obsolete">Канал</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Закрыть</translation>
+        <translation type="obsolete">Закрыть</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Поиск:</translation>
+        <translation type="obsolete">Поиск:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation>Категория:</translation>
+        <translation type="obsolete">Категория:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Язык:</translation>
+        <translation type="obsolete">Язык:</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Все категории</translation>
+        <translation type="obsolete">Все категории</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Все языки</translation>
+        <translation type="obsolete">Все языки</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Невозможно прочитать файл %1:
+        <translation type="obsolete">Невозможно прочитать файл %1:
 %2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Невозможно записать файл %1:
+        <translation type="obsolete">Невозможно записать файл %1:
 %2.</translation>
     </message>
 </context>
@@ -1177,7 +1203,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Канал с таким номером уже существует!</translation>
+        <translation type="obsolete">Канал с таким номером уже существует!</translation>
     </message>
     <message>
         <source>New channel</source>

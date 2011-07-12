@@ -31,7 +31,8 @@
 
 PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
     : QWidget(parent),
-      ui(new Ui::PlaylistDisplayWidget)
+      ui(new Ui::PlaylistDisplayWidget),
+      _current(0)
 {
     ui->setupUi(this);
 
@@ -40,7 +41,7 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
 
     ui->playlistView->setModel(_filterModel);
 
-    connect(ui->playlistView, SIGNAL(clicked(QModelIndex)), this, SLOT(channelClicked(QModelIndex)));
+    connect(ui->playlistView, SIGNAL(activated(QModelIndex)), this, SLOT(channelClicked(QModelIndex)));
     connect(ui->comboCategory, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
     connect(ui->comboLanguage, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
     connect(ui->editSearch, SIGNAL(textChanged(QString)), this, SLOT(processFilters()));
@@ -69,7 +70,16 @@ void PlaylistDisplayWidget::changeEvent(QEvent *e)
 
 void PlaylistDisplayWidget::channelClicked(const QModelIndex &index)
 {
-    emit itemClicked(_model->row(index.row()));
+    _current = _model->row(index.row());
+    emit itemClicked(_current);
+}
+
+void PlaylistDisplayWidget::editMode()
+{
+    ui->comboCategory->hide();
+    ui->labelCategory->hide();
+    ui->comboLanguage->hide();
+    ui->labelLanguage->hide();
 }
 
 void PlaylistDisplayWidget::processFilters()
@@ -89,6 +99,12 @@ void PlaylistDisplayWidget::refreshModel()
     ui->comboLanguage->clear();
     ui->comboLanguage->insertItem(0, tr("All languages"));
     ui->comboLanguage->insertItems(1, _model->languages());
+}
+
+void PlaylistDisplayWidget::setCurrentChannel(Channel *channel)
+{
+    _current = channel;
+    ui->playlistView->setCurrentIndex(_model->indexFromItem(channel));
 }
 
 void PlaylistDisplayWidget::setModel(PlaylistModel *model)

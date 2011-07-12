@@ -16,43 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_M3UGENERATOR_H_
-#define TANO_M3UGENERATOR_H_
+#ifndef TANO_CSVINFO_H_
+#define TANO_CSVINFO_H_
 
-#include <QtCore/QTextStream>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QTreeWidgetItem>
+#include <QtCore/QList>
+#include <QtCore/QString>
 
-#include "ui/core/FileDialogs.h"
-
-class Channel;
-class Udpxy;
-
-class M3UGenerator
+class CSVInfo
 {
 public:
-    M3UGenerator(QTreeWidget *treeWidget,
-                 const QString &name,
-                 QMap<QTreeWidgetItem *, Channel *> map,
-                 const FileDialogs::Type &type = FileDialogs::M3U);
-    ~M3UGenerator();
+    CSVInfo(const QString &separator = 0,
+            const bool &header = false,
+            const QList<int> &columns = QList<int>());
+    ~CSVInfo();
 
-    bool write(QIODevice *device);
+    inline QString separator() const { return _separator; }
+    inline bool header() const { return _header; }
+    inline QList<int> columns() const { return _columns; }
 
 private:
-    void generateItemNormal(Channel *channel);
-    void generateItemClean(Channel *channel);
-    void generateItemUdpxy(Channel *channel);
-
-    FileDialogs::Type _type;
-
-    QTreeWidget *_treeWidget;
-    QString _name;
-    QTextStream _out;
-
-    QMap<QTreeWidgetItem *, Channel *> _map;
-
-    Udpxy *_udpxy;
+    QString _separator;
+    bool _header;
+    QList<int> _columns;
 };
 
-#endif // TANO_M3UGENERATOR_H_
+#endif // TANO_CSVINFO_H_

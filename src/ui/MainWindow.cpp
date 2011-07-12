@@ -129,6 +129,7 @@ void MainWindow::showEvent(QShowEvent *event)
 void MainWindow::createGui()
 {
     ui->playlistWidget->setModel(_model);
+    _schedule->setPlaylistModel(_model);
 	openPlaylist(true);
 	setPlayingState(false);
 	ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
@@ -383,7 +384,7 @@ void MainWindow::writeSession()
 
 void MainWindow::createRecorder()
 {
-	ui->recorder->openPlaylist(_playlistName);
+    ui->recorder->setPlaylistModel(_model);
 	ui->recorder->setAction(ui->actionRecord);
 	ui->recorder->setTrayIcon(_trayIcon);
 	ui->recorder->createSettings();
@@ -522,7 +523,17 @@ void MainWindow::openPlaylist(const bool &start)
     if (_playlistName.isEmpty())
 		return;
 
-    _model->openM3UFile(_playlistName);
+    QFile f(_playlistName);
+    if (!f.open(QFile::ReadOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Cannot read file %1:\n%2.")
+                            .arg(_playlistName)
+                            .arg(f.errorString()));
+        return;
+    }
+    f.close();
+
+    _model->open(_playlistName);
 
 	_hasPlaylist = true;
 
@@ -535,8 +546,8 @@ void MainWindow::openPlaylist(const bool &start)
     ui->channelToolBox->setItemText(0, _model->name());
 
     ui->playlistWidget->refreshModel();
-    _schedule->openPlaylist(_playlistName);
-    ui->recorder->openPlaylist(_playlistName);
+    _schedule->refreshPlaylistModel();
+    ui->recorder->refreshPlaylistModel();
 }
 void MainWindow::openFile()
 {

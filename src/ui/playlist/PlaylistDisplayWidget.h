@@ -40,6 +40,10 @@ public:
     PlaylistDisplayWidget(QWidget *parent = 0);
     ~PlaylistDisplayWidget();
 
+    Channel *currentChannel() { return _current; }
+    void setCurrentChannel(Channel *channel);
+
+    void editMode();
     void refreshModel();
     void setModel(PlaylistModel *model);
 
@@ -56,6 +60,7 @@ private slots:
 private:
     Ui::PlaylistDisplayWidget *ui;
 
+    Channel *_current;
     PlaylistModel *_model;
     PlaylistFilterModel *_filterModel;
     QString _fileName;

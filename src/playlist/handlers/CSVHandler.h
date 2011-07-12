@@ -16,42 +16,45 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PRINTDIALOG_H_
-#define TANO_PRINTDIALOG_H_
+#ifndef TANO_CSVHANDLER_H_
+#define TANO_CSVHANDLER_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
+#include <QtCore/QString>
+#include <QtCore/QStringList>
 
-#include "core/Print.h"
+class Channel;
 
-namespace Ui {
-    class PrintDialog;
-}
-
-class PrintDialog : public QDialog
+class CSVHandler
 {
-Q_OBJECT
 public:
-    PrintDialog(const QString &name,
-                PlaylistModel *model,
-                QWidget *parent = 0);
-    ~PrintDialog();
+    CSVHandler();
+    ~CSVHandler();
 
-protected:
-    void changeEvent(QEvent *e);
+    void processFile(const QString &csvFile);
+    void setParameters(const QString &separator,
+                       const bool &header,
+                       const QList<int> &columns);
 
-private slots:
-    void action(QAbstractButton *button);
+    QList<Channel *> channelList() const { return _channels; }
 
 private:
-    void print();
+    void processChannel(const QStringList &list);
+    void processList();
 
-    Ui::PrintDialog *ui;
+    Channel *_channel;
+    QList<Channel *> _channels;
+    QStringList _csvLineList;
 
-    Print *_print;
+    // Parameters
+    QString _separator;
+    bool _header;
 
-    QString _name;
-    PlaylistModel *_model;
+    int _number;
+    int _name;
+    int _url;
+    int _categories;
+    int _language;
+    int _epg;
 };
 
-#endif // TANO_PRINTDIALOG_H_
+#endif // TANO_CSVHANDLER_H_

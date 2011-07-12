@@ -23,7 +23,7 @@
 #include <QtCore/QStringList>
 #include <QtGui/QIcon>
 
-#include "core/ListModel.h"
+#include "core/ListItem.h"
 
 class Channel : public ListItem
 {

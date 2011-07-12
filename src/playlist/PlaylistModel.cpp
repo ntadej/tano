@@ -16,8 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#ifndef HARMATTAN
+    #include "Config.h"
+#endif
 #include "container/Channel.h"
-#include "playlist/M3UHandler.h"
+#include "playlist/PlaylistOpen.h"
+#if !MOBILE
+    #include "playlist/PlaylistSave.h"
+#endif
 
 #include "PlaylistModel.h"
 
@@ -25,9 +31,20 @@ PlaylistModel::PlaylistModel(QObject *parent)
     : ListModel(new Channel, parent)
 {
     _name = QObject::tr("Channel list");
+
+    _open = new PlaylistOpen();
+#if !MOBILE
+    _save = new PlaylistSave(this);
+#endif
 }
 
-PlaylistModel::~PlaylistModel() { }
+PlaylistModel::~PlaylistModel()
+{
+    delete _open;
+#if !MOBILE
+    delete _save;
+#endif
+}
 
 Channel *PlaylistModel::find(const QString &id) const
 {
@@ -44,18 +61,129 @@ Channel *PlaylistModel::takeRow(const int &row)
     return qobject_cast<Channel *>(ListModel::takeRow(row));
 }
 
-void PlaylistModel::openM3UFile(const QString &file)
+Channel *PlaylistModel::createChannel(const QString &name,
+                                      const QString &url)
 {
-    M3UHandler *open = new M3UHandler();
-    open->processFile(file);
-
-    for(int i = 0; i < open->channelList().size(); i++) {
-        processChannel(open->channelList()[i]);
+    int tmpNum, previous = 1;
+    for(int i = 1; i < 1000; i++) {
+        if(!_channelNumbers.contains(i)) {
+            tmpNum = i;
+            if(i != 1)
+                previous = i-1;
+            break;
+        }
     }
 
-    _name = open->name();
+    QString cname;
+    if(name.isEmpty())
+        cname = QObject::tr("New channel");
+    else
+        cname = name;
 
-    delete open;
+    Channel *channel = new Channel(cname, tmpNum);
+    if(!url.isEmpty())
+        channel->setUrl(url);
+
+    _numbers.insert(channel->number(), channel);
+    _channelNumbers << channel->number();
+
+    insertRow(indexFromItem(_numbers[previous]).row()+1, channel);
+    return channel;
+}
+
+void PlaylistModel::deleteChannel(Channel *channel)
+{
+    _channelNumbers.removeAll(channel->number());
+
+    _numbers.remove(channel->number());
+
+    removeRow(indexFromItem(channel).row());
+}
+
+void PlaylistModel::exportTvheadend(const QString &location,
+                                    const QString &interface,
+                                    const QString &xmltv)
+{
+#if !MOBILE
+    _save->saveTvheadend(location, interface, xmltv);
+#endif
+}
+
+void PlaylistModel::moveDown(Channel *channel)
+{
+    if(_channelNumbers.contains(channel->number()+1) && channel->number()+1 < 1000) {
+        if(moveRow(indexFromItem(channel).row()+1, indexFromItem(channel).row())) {
+            _numbers.remove(channel->number());
+            _numbers[channel->number()+1]->setNumber(channel->number());
+            _numbers.insert(channel->number(), _numbers[channel->number()+1]);
+            _numbers.remove(channel->number()+1);
+            channel->setNumber(channel->number()+1);
+            _numbers.insert(channel->number(), channel);
+        }
+    } else if(channel->number()+1 < 1000) {
+        _channelNumbers.removeAll(channel->number());
+        _numbers.remove(channel->number());
+        channel->setNumber(channel->number()+1);
+        _numbers.insert(channel->number(), channel);
+        _channelNumbers << channel->number();
+    }
+}
+
+void PlaylistModel::moveUp(Channel *channel)
+{
+    if(_channelNumbers.contains(channel->number()-1) && channel->number()-1 > 0) {
+        if(moveRow(indexFromItem(channel).row(), indexFromItem(channel).row()-1)) {
+            _numbers.remove(channel->number());
+            _numbers[channel->number()-1]->setNumber(channel->number());
+            _numbers.insert(channel->number(), _numbers[channel->number()-1]);
+            _numbers.remove(channel->number()-1);
+            channel->setNumber(channel->number()-1);
+            _numbers.insert(channel->number(), channel);
+        }
+    } else if(channel->number()-1 > 0) {
+        _channelNumbers.removeAll(channel->number());
+        _numbers.remove(channel->number());
+        channel->setNumber(channel->number()-1);
+        _numbers.insert(channel->number(), channel);
+        _channelNumbers << channel->number();
+    }
+}
+
+void PlaylistModel::open(const QString &file,
+                         const bool &refresh,
+                         const Tano::FileType &type,
+                         const CSVInfo &info)
+{
+    if(!refresh)
+        clear();
+
+    _fileName = file;
+
+    QList<Channel *> channels;
+    switch (type)
+    {
+    case Tano::CSV:
+        _open->openCSVFile(file, info);
+        break;
+    case Tano::JS:
+        _open->openJsFile(file);
+        break;
+    case Tano::M3U:
+        _open->openM3UFile(file);
+        break;
+    case Tano::TanoOld:
+        _open->openTanoOldFile(file);
+        break;
+    default:
+        break;
+    }
+
+    channels = _open->list();
+    _name = _open->name();
+
+    for(int i = 0; i < channels.size(); i++) {
+        processChannel(channels[i]);
+    }
 }
 
 void PlaylistModel::processChannel(Channel *channel)
@@ -97,6 +225,57 @@ void PlaylistModel::processChannel(Channel *channel)
 
     _numbers.insert(channel->number(), channel);
     appendRow(channel);
+}
+
+bool PlaylistModel::processNumber(Channel *channel,
+                                  const int &number)
+{
+    if(_channelNumbers.contains(number))
+        return false;
+
+    _channelNumbers.removeAll(channel->number());
+    _channelNumbers.append(number);
+
+    _numbers.remove(channel->number());
+    channel->setNumber(number);
+    _numbers.insert(channel->number(), channel);
+
+    takeRow(indexFromItem(channel).row());
+    for(int i = channel->number()-1; i > 0; i--) {
+        if(_channelNumbers.contains(i)) {
+            insertRow(indexFromItem(_numbers[i]).row()+1, channel);
+            break;
+        }
+    }
+
+    return true;
+}
+
+void PlaylistModel::save(const QString &file,
+                         const QString &name,
+                         const Tano::FileType &type)
+{
+#if !MOBILE
+    _name = name;
+
+    switch (type)
+    {
+    case Tano::CSV:
+        _save->saveCSVFile(file);
+        break;
+    case Tano::JS:
+        _save->saveJsFile(file);
+        break;
+    case Tano::M3U:
+        _save->saveM3UFile(file);
+        break;
+    case Tano::XmltvId:
+        _save->saveXmltvId(file);
+        break;
+    default:
+        break;
+    }
+#endif
 }
 
 bool PlaylistModel::validate() const

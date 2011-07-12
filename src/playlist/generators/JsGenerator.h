@@ -16,42 +16,29 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PRINTDIALOG_H_
-#define TANO_PRINTDIALOG_H_
+#ifndef TANO_JSGENERATOR_H_
+#define TANO_JSGENERATOR_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
 
-#include "core/Print.h"
+class Channel;
+class PlaylistModel;
 
-namespace Ui {
-    class PrintDialog;
-}
-
-class PrintDialog : public QDialog
+class JsGenerator
 {
-Q_OBJECT
 public:
-    PrintDialog(const QString &name,
-                PlaylistModel *model,
-                QWidget *parent = 0);
-    ~PrintDialog();
+    JsGenerator(const QString &file);
+    ~JsGenerator();
 
-protected:
-    void changeEvent(QEvent *e);
-
-private slots:
-    void action(QAbstractButton *button);
+    bool write(PlaylistModel *model);
 
 private:
-    void print();
+    void generateItem(const int &id,
+                      Channel *channel);
 
-    Ui::PrintDialog *ui;
-
-    Print *_print;
-
-    QString _name;
-    PlaylistModel *_model;
+    QFile *_file;
+    QTextStream _out;
 };
 
-#endif // TANO_PRINTDIALOG_H_
+#endif // TANO_JSGENERATOR_H_

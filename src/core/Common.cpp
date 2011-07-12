@@ -21,7 +21,9 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>
 
-#include "Config.h"
+#ifndef HARMATTAN
+    #include "Config.h"
+#endif
 #include "core/Common.h"
 #include "core/Settings.h"
 
@@ -164,6 +166,8 @@ QStringList Tano::vlcQtRecorderArgs(const QString &file)
     QStringList args;
 #if WITH_EDITOR_VLCQT
     args = VlcCommon::recorderArgs(file);
+#else
+    Q_UNUSED(file)
 #endif
 
 #ifdef Q_WS_WIN

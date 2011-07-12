@@ -16,34 +16,44 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CSVGENERATOR_H_
-#define TANO_CSVGENERATOR_H_
+#ifndef TANO_TVHEADENDGENERATOR_H_
+#define TANO_TVHEADENDGENERATOR_H_
 
-#include <QtCore/QTextStream>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QTreeWidgetItem>
+#include <QtCore/QMap>
+#include <QtCore/QString>
 
 class Channel;
+class PlaylistModel;
 
-class CSVGenerator
+class TvheadendGenerator
 {
 public:
-	CSVGenerator(QTreeWidget *treeWidget,
-				 QMap<QTreeWidgetItem *, Channel *> map,
-				 const bool &header = true);
-	~CSVGenerator();
+    TvheadendGenerator(const QString &location,
+					   const QString &interface,
+					   const QString &xmltv);
+	~TvheadendGenerator();
 
-	bool write(QIODevice *device);
+    bool write(PlaylistModel *model);
 
 private:
+    void clean();
+    QString fileChannel(const int &number) const;
+    QString fileIpService(const int &number) const;
+    QString fileIpTransport(const int &number) const;
+    QString fileTag(const int &number) const;
 	void generateItem(Channel *channel);
+    void generateTag(const int &id,
+                     const QString &name);
+    QString indent(const int &indentLevel) const;
+    void processTags(PlaylistModel *model);
+    int tag(const QString &name) const;
 
-	bool _header;
+    QMap<QString, int> _tags;
+    QMap<int, QString> _tagsName;
 
-	QTreeWidget *_treeWidget;
-	QTextStream _out;
-
-	QMap<QTreeWidgetItem *, Channel *> _map;
+	QString _location;
+	QString _interface;
+	QString _xmltv;
 };
 
-#endif // TANO_CSVGENERATOR_H_
+#endif // TANO_TVHEADENDGENERATOR_H_

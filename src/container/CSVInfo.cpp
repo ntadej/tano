@@ -16,30 +16,13 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_JSHANDLER_H_
-#define TANO_JSHANDLER_H_
+#include "container/CSVInfo.h"
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+CSVInfo::CSVInfo(const QString &separator,
+                 const bool &header,
+                 const QList<int> &columns)
+    : _separator(separator),
+      _header(header),
+      _columns(columns) { }
 
-class Channel;
-
-class JsHandler
-{
-public:
-	JsHandler();
-	~JsHandler();
-
-	void processFile(const QString &jsFile);
-
-	QList<Channel *> channelList() const { return _channelList; }
-
-private:
-	void processList();
-
-	QList<Channel *> _channelList;
-
-	QStringList _lineList;
-};
-
-#endif // TANO_JSHANDLER_H_
+CSVInfo::~CSVInfo() { }

@@ -16,42 +16,30 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PRINTDIALOG_H_
-#define TANO_PRINTDIALOG_H_
+#ifndef TANO_JSHANDLER_H_
+#define TANO_JSHANDLER_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
+#include <QtCore/QString>
+#include <QtCore/QStringList>
 
-#include "core/Print.h"
+class Channel;
 
-namespace Ui {
-    class PrintDialog;
-}
-
-class PrintDialog : public QDialog
+class JsHandler
 {
-Q_OBJECT
 public:
-    PrintDialog(const QString &name,
-                PlaylistModel *model,
-                QWidget *parent = 0);
-    ~PrintDialog();
+    JsHandler();
+    ~JsHandler();
 
-protected:
-    void changeEvent(QEvent *e);
+    void processFile(const QString &jsFile);
 
-private slots:
-    void action(QAbstractButton *button);
+    QList<Channel *> channelList() const { return _channelList; }
 
 private:
-    void print();
+    void processList();
 
-    Ui::PrintDialog *ui;
+    QList<Channel *> _channelList;
 
-    Print *_print;
-
-    QString _name;
-    PlaylistModel *_model;
+    QStringList _lineList;
 };
 
-#endif // TANO_PRINTDIALOG_H_
+#endif // TANO_JSHANDLER_H_

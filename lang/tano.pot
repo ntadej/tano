@@ -416,6 +416,13 @@ msgctxt "MainWindow|"
 msgid "Restore"
 msgstr ""
 
+#, qt-format
+msgctxt "MainWindow|"
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr ""
@@ -724,6 +731,28 @@ msgctxt "PlaylistEdit|"
 msgid "Save"
 msgstr ""
 
+msgctxt "PlaylistEdit|"
+msgid "Tano"
+msgstr ""
+
+#, qt-format
+msgctxt "PlaylistEdit|"
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+
+#, qt-format
+msgctxt "PlaylistEdit|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+
+msgctxt "PlaylistEdit|"
+msgid "A channel with this number already exists!"
+msgstr ""
+
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
 msgstr ""
@@ -886,52 +915,6 @@ msgctxt "PlaylistSelect|"
 msgid "2. Select your playlist."
 msgstr ""
 
-msgctxt "PlaylistWidget|"
-msgid "Clear"
-msgstr ""
-
-msgctxt "PlaylistWidget|"
-msgid "Search:"
-msgstr ""
-
-msgctxt "PlaylistWidget|"
-msgid "Category:"
-msgstr ""
-
-msgctxt "PlaylistWidget|"
-msgid "Language:"
-msgstr ""
-
-msgctxt "PlaylistWidget|"
-msgid "All categories"
-msgstr ""
-
-msgctxt "PlaylistWidget|"
-msgid "All languages"
-msgstr ""
-
-msgctxt "PlaylistWidget|"
-msgid "Tano"
-msgstr ""
-
-#, qt-format
-msgctxt "PlaylistWidget|"
-msgid ""
-"Cannot read file %1:\n"
-"%2."
-msgstr ""
-
-#, qt-format
-msgctxt "PlaylistWidget|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr ""
-
-msgctxt "PlaylistWidget|"
-msgid "Channel"
-msgstr ""
-
 msgctxt "Print|"
 msgid "#"
 msgstr ""
@@ -1007,10 +990,6 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "Tano"
-msgstr ""
-
-msgctxt "QObject|"
-msgid "A channel with this number already exists!"
 msgstr ""
 
 msgctxt "QObject|"

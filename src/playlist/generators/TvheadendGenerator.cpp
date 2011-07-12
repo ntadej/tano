@@ -22,18 +22,15 @@
 #include <QtGui/QMessageBox>
 
 #include "container/Channel.h"
+#include "playlist/PlaylistModel.h"
 #include "TvheadendGenerator.h"
 
-TvheadendGenerator::TvheadendGenerator(QTreeWidget *treeWidget,
-									   QMap<QTreeWidgetItem *, Channel *> map,
-									   const QString &location,
-									   const QString &interface,
-									   const QString &xmltv)
-	: _treeWidget(treeWidget),
-	_map(map),
-	_location(location),
-	_interface(interface),
-	_xmltv(xmltv) { }
+TvheadendGenerator::TvheadendGenerator(const QString &location,
+                                       const QString &interface,
+                                       const QString &xmltv)
+    : _location(location),
+     _interface(interface),
+     _xmltv(xmltv) { }
 
 TvheadendGenerator::~TvheadendGenerator() { }
 
@@ -56,13 +53,27 @@ void TvheadendGenerator::clean()
     }
 }
 
-bool TvheadendGenerator::write()
+bool TvheadendGenerator::write(PlaylistModel *model)
 {
     clean();
-    processTags();
 
-	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
-		generateItem(_map[_treeWidget->topLevelItem(i)]);
+    int id = 1;
+    for (int i = 0; i < model->rowCount(); i++) {
+        for(int c = 0; c < model->row(i)->categories().size(); c++) {
+            if(!_tags.contains(model->row(i)->categories()[c])) {
+                _tags.insert(model->row(i)->categories()[c], id);
+                _tagsName.insert(id, model->row(i)->categories()[c]);
+                id++;
+            }
+        }
+    }
+
+    for(int i = 1; i < id; i++) {
+        generateTag(i, _tagsName[i]);
+    }
+
+    for (int i = 0; i < model->rowCount(); i++) {
+        generateItem(model->row(i));
 	}
 	return true;
 }
@@ -103,7 +114,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
 {
     QFile fChannel(fileChannel(channel->number()));
     if (!fChannel.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(_treeWidget, QObject::tr("Tano"),
+        QMessageBox::warning(0, QObject::tr("Tano"),
                             QObject::tr("Cannot write file %1:\n%2.")
                             .arg(fileChannel(channel->number()))
                             .arg(fChannel.errorString()));
@@ -131,7 +142,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
 
     QFile fIpService(fileIpService(channel->number()));
     if (!fIpService.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(_treeWidget, QObject::tr("Tano"),
+        QMessageBox::warning(0, QObject::tr("Tano"),
                             QObject::tr("Cannot write file %1:\n%2.")
                             .arg(fileIpService(channel->number()))
                             .arg(fIpService.errorString()));
@@ -153,7 +164,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
 
     QFile fIpTransport(fileIpTransport(channel->number()));
     if (!fIpTransport.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(_treeWidget, QObject::tr("Tano"),
+        QMessageBox::warning(0, QObject::tr("Tano"),
                             QObject::tr("Cannot write file %1:\n%2.")
                             .arg(fileIpTransport(channel->number()))
                             .arg(fIpTransport.errorString()));
@@ -178,7 +189,7 @@ void TvheadendGenerator::generateTag(const int &id,
 {
     QFile fTag(fileTag(id));
     if (!fTag.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(_treeWidget, QObject::tr("Tano"),
+        QMessageBox::warning(0, QObject::tr("Tano"),
                             QObject::tr("Cannot write file %1:\n%2.")
                             .arg(fileTag(id))
                             .arg(fTag.errorString()));
@@ -200,24 +211,6 @@ void TvheadendGenerator::generateTag(const int &id,
 QString TvheadendGenerator::indent(const int &indentLevel) const
 {
     return QString(indentLevel, '\t');
-}
-
-void TvheadendGenerator::processTags()
-{
-    int id = 1;
-    for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
-        for(int c = 0; c < _map[_treeWidget->topLevelItem(i)]->categories().size(); c++) {
-            if(!_tags.contains(_map[_treeWidget->topLevelItem(i)]->categories()[c])) {
-                _tags.insert(_map[_treeWidget->topLevelItem(i)]->categories()[c], id);
-                _tagsName.insert(id, _map[_treeWidget->topLevelItem(i)]->categories()[c]);
-                id++;
-            }
-        }
-    }
-
-    for(int i = 1; i < id; i++) {
-        generateTag(i, _tagsName[i]);
-    }
 }
 
 int TvheadendGenerator::tag(const QString &name) const

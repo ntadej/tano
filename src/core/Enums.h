@@ -39,6 +39,22 @@ namespace Tano
         Schedule
     };
 
+    // FileTypes
+    enum FileType
+    {
+        CSV = 20,
+        Directory = 0,
+        Files = 1,
+        JS = 21,
+        M3U = 10,
+        M3UClean = 11,
+        M3UUdpxy = 12,
+        Subtitles = 3,
+        TanoOld = 40,
+        Url = 2,
+        XmltvId = 30
+    };
+
     // Timer types
     enum TimerType
     {
@@ -48,6 +64,6 @@ namespace Tano
     };
 
     QString timerTypeString(const TimerType &type);
-};
+}
 
 #endif // TANO_ENUMS_H_

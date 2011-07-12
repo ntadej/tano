@@ -510,6 +510,15 @@ msgctxt "MainWindow|"
 msgid "&Video"
 msgstr "&Slika"
 
+#, fuzzy, qt-format
+msgctxt "MainWindow|"
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+"Ne morem prebrati %1:\n"
+"%2."
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Razmerje slike"
@@ -926,6 +935,34 @@ msgctxt "PlaylistEdit|"
 msgid "Save"
 msgstr "Shrani"
 
+#, fuzzy
+msgctxt "PlaylistEdit|"
+msgid "Tano"
+msgstr "Tano"
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEdit|"
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+"Ne morem prebrati %1:\n"
+"%2."
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEdit|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+"Ne morem pisati datoteke %1:\n"
+"%2."
+
+#, fuzzy
+msgctxt "PlaylistEdit|"
+msgid "A channel with this number already exists!"
+msgstr "Program s to številko že obstaja!"
+
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
 msgstr "Izvozi kot Tvheadend IP TV storitve"
@@ -1102,56 +1139,55 @@ msgctxt "PlaylistSelect|"
 msgid "2. Select your playlist."
 msgstr "2. Izberite vaš seznam programov."
 
-#, fuzzy
-msgctxt "PlaylistWidget|"
-msgid "Channel"
-msgstr "Program"
+#~ msgctxt "PlaylistWidget|"
+#~ msgid "Channel"
+#~ msgstr "Program"
 
-msgctxt "PlaylistWidget|"
-msgid "Search:"
-msgstr "Išči:"
+#~ msgctxt "PlaylistWidget|"
+#~ msgid "Search:"
+#~ msgstr "Išči:"
 
-msgctxt "PlaylistWidget|"
-msgid "Category:"
-msgstr "Kategorija:"
+#~ msgctxt "PlaylistWidget|"
+#~ msgid "Category:"
+#~ msgstr "Kategorija:"
 
-msgctxt "PlaylistWidget|"
-msgid "Language:"
-msgstr "Jezik:"
+#~ msgctxt "PlaylistWidget|"
+#~ msgid "Language:"
+#~ msgstr "Jezik:"
 
-msgctxt "PlaylistWidget|"
-msgid "Clear"
-msgstr "Počisti"
+#~ msgctxt "PlaylistWidget|"
+#~ msgid "Clear"
+#~ msgstr "Počisti"
 
-msgctxt "PlaylistWidget|"
-msgid "Tano"
-msgstr "Tano"
-
-#, qt-format
-msgctxt "PlaylistWidget|"
-msgid ""
-"Cannot read file %1:\n"
-"%2."
-msgstr ""
-"Ne morem prebrati %1:\n"
-"%2."
-
-msgctxt "PlaylistWidget|"
-msgid "All languages"
-msgstr "Vsi jeziki"
-
-msgctxt "PlaylistWidget|"
-msgid "All categories"
-msgstr "Vse kategorije"
+#~ msgctxt "PlaylistWidget|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
 
 #, qt-format
-msgctxt "PlaylistWidget|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr ""
-"Ne morem pisati datoteke %1:\n"
-"%2."
+#~ msgctxt "PlaylistWidget|"
+#~ msgid ""
+#~ "Cannot read file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Ne morem prebrati %1:\n"
+#~ "%2."
+
+#~ msgctxt "PlaylistWidget|"
+#~ msgid "All languages"
+#~ msgstr "Vsi jeziki"
+
+#~ msgctxt "PlaylistWidget|"
+#~ msgid "All categories"
+#~ msgstr "Vse kategorije"
+
+#, qt-format
+#~ msgctxt "PlaylistWidget|"
+#~ msgid ""
+#~ "Cannot write file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Ne morem pisati datoteke %1:\n"
+#~ "%2."
 
 msgctxt "Print|"
 msgid "#"
@@ -1222,9 +1258,9 @@ msgctxt "QObject|"
 msgid "Channel list"
 msgstr "Seznam programov"
 
-msgctxt "QObject|"
-msgid "A channel with this number already exists!"
-msgstr "Program s to številko že obstaja!"
+#~ msgctxt "QObject|"
+#~ msgid "A channel with this number already exists!"
+#~ msgstr "Program s to številko že obstaja!"
 
 msgctxt "QObject|"
 msgid "New channel"

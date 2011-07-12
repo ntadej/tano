@@ -24,19 +24,7 @@
 #include <QtCore/QList>
 #include <QtCore/QVariant>
 
-class ListItem: public QObject
-{
-Q_OBJECT
-public:
-    ListItem(QObject* parent = 0) : QObject(parent) {}
-    virtual ~ListItem() {}
-    virtual QString id() const = 0;
-    virtual QVariant data(int role) const = 0;
-    virtual QHash<int, QByteArray> roleNames() const = 0;
-
-signals:
-    void dataChanged();
-};
+class ListItem;
 
 class ListModel : public QAbstractListModel
 {
@@ -49,6 +37,7 @@ public:
     void appendRow(ListItem *item);
     void appendRows(const QList<ListItem *> &items);
     void insertRow(const int &row, ListItem *item);
+    bool moveRow(const int &oldRow, const int &newRow, const QModelIndex &parent = QModelIndex());
     bool removeRow(const int &row, const QModelIndex &parent = QModelIndex());
     bool removeRows(const int &row, const int &count, const QModelIndex &parent = QModelIndex());
     ListItem *row(const int &row);

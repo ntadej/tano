@@ -28,8 +28,8 @@ public:
          const int &type = 10);
     ~File();
 
-    QString path() const { return _path; }
-    int type() const { return _type; }
+    inline QString path() const { return _path; }
+    inline int type() const { return _type; }
 
 private:
     QString _path;

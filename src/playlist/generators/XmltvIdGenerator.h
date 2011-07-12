@@ -16,29 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/Channel.h"
-#include "playlist/XmltvIdGenerator.h"
+#ifndef TANO_XMLTVIDGENERATOR_H_
+#define TANO_XMLTVIDGENERATOR_H_
 
-XmltvIdGenerator::XmltvIdGenerator(QTreeWidget *treeWidget,
-                                   QMap<QTreeWidgetItem *, Channel *> map)
-    : _treeWidget(treeWidget),
-      _map(map) { }
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
 
-XmltvIdGenerator::~XmltvIdGenerator() { }
+class Channel;
+class PlaylistModel;
 
-bool XmltvIdGenerator::write(QIODevice *device)
+class XmltvIdGenerator
 {
-    _out.setDevice(device);
-    _out.setCodec("UTF-8");
+public:
+    XmltvIdGenerator(const QString &file);
+    ~XmltvIdGenerator();
 
-    for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
-        generateItem(_map[_treeWidget->topLevelItem(i)]);
-    }
-    return true;
-}
+    bool write(PlaylistModel *model);
 
-void XmltvIdGenerator::generateItem(Channel *channel)
-{
-    if(!channel->epg().isEmpty())
-        _out << channel->name() << "=" << channel->epg() << "\n";
-}
+private:
+    void generateItem(Channel *channel);
+
+    QFile *_file;
+    QTextStream _out;
+};
+
+#endif // TANO_XMLTVIDGENERATOR_H_

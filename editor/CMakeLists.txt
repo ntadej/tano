@@ -32,7 +32,6 @@ SET(Tano_Editor_UIs
     ../src/ui/playlist/PlaylistImportCSV.ui
     ../src/ui/playlist/PlaylistImportWeb.ui
     ../src/ui/playlist/PlaylistSelect.ui
-    ../src/ui/playlist/PlaylistWidget.ui
     ../src/ui/settings/SettingsBackend.ui
     ../src/ui/settings/SettingsEdit.ui
     ../src/ui/settings/SettingsGeneral.ui
@@ -47,21 +46,24 @@ SET(Tano_Editor_UIs
 SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
     ../src/container/Channel.h
     ../src/core/GetFile.h
+    ../src/core/ListItem.h
     ../src/core/ListModel.h
     ../src/core/Print.h
     ../src/core/UpdateManager.h
+    ../src/playlist/PlaylistFilterModel.h
+    ../src/playlist/PlaylistModel.h
     ../src/ui/core/BrowseWidget.h
     ../src/ui/core/LicenseWidget.h
     ../src/ui/core/QtKeySequenceEdit.h
     ../src/ui/dialogs/AboutDialog.h
     ../src/ui/dialogs/PrintDialog.h
     ../src/ui/dialogs/UpdateDialog.h
+    ../src/ui/playlist/PlaylistDisplayWidget.h
     ../src/ui/playlist/PlaylistEdit.h
     ../src/ui/playlist/PlaylistExportTvheadend.h
     ../src/ui/playlist/PlaylistImportCSV.h
     ../src/ui/playlist/PlaylistImportWeb.h
     ../src/ui/playlist/PlaylistSelect.h
-    ../src/ui/playlist/PlaylistWidget.h
     ../src/ui/settings/SettingsBackend.h
     ../src/ui/settings/SettingsEdit.h
     ../src/ui/settings/SettingsGeneral.h
@@ -84,6 +86,7 @@ SET(Tano_Editor_Srcs
     main.cpp
 
     ../src/container/Channel.cpp
+    ../src/container/CSVInfo.cpp
     ../src/container/File.cpp
     ../src/container/PlaylistFile.cpp
     ../src/container/UpdateInfo.cpp
@@ -100,15 +103,19 @@ SET(Tano_Editor_Srcs
     ../src/core/Udpxy.cpp
     ../src/core/UpdateManager.cpp
 
-    ../src/playlist/CSVGenerator.cpp
-    ../src/playlist/CSVHandler.cpp
-    ../src/playlist/JsGenerator.cpp
-    ../src/playlist/JsHandler.cpp
-    ../src/playlist/M3UGenerator.cpp
-    ../src/playlist/M3UHandler.cpp
-    ../src/playlist/PlaylistHandler.cpp
-    ../src/playlist/TvheadendGenerator.cpp
-    ../src/playlist/XmltvIdGenerator.cpp
+    ../src/playlist/PlaylistFilterModel.cpp
+    ../src/playlist/PlaylistModel.cpp
+    ../src/playlist/PlaylistOpen.cpp
+    ../src/playlist/PlaylistSave.cpp
+    ../src/playlist/generators/CSVGenerator.cpp
+    ../src/playlist/generators/JsGenerator.cpp
+    ../src/playlist/generators/M3UGenerator.cpp
+    ../src/playlist/generators/TvheadendGenerator.cpp
+    ../src/playlist/generators/XmltvIdGenerator.cpp
+    ../src/playlist/handlers/CSVHandler.cpp
+    ../src/playlist/handlers/JsHandler.cpp
+    ../src/playlist/handlers/M3UHandler.cpp
+    ../src/playlist/handlers/TanoHandlerOld.cpp
 
     ../src/ui/core/BrowseWidget.cpp
     ../src/ui/core/FileDialogs.cpp
@@ -117,12 +124,12 @@ SET(Tano_Editor_Srcs
     ../src/ui/dialogs/AboutDialog.cpp
     ../src/ui/dialogs/PrintDialog.cpp
     ../src/ui/dialogs/UpdateDialog.cpp
+    ../src/ui/playlist/PlaylistDisplayWidget.cpp
     ../src/ui/playlist/PlaylistEdit.cpp
     ../src/ui/playlist/PlaylistExportTvheadend.cpp
     ../src/ui/playlist/PlaylistImportCSV.cpp
     ../src/ui/playlist/PlaylistImportWeb.cpp
     ../src/ui/playlist/PlaylistSelect.cpp
-    ../src/ui/playlist/PlaylistWidget.cpp
     ../src/ui/settings/SettingsBackend.cpp
     ../src/ui/settings/SettingsEdit.cpp
     ../src/ui/settings/SettingsGeneral.cpp
@@ -133,7 +140,6 @@ SET(Tano_Editor_Srcs
     ../src/ui/settings/SettingsUi.cpp
 
     ../src/xml/PlaylistListHandler.cpp
-    ../src/xml/TanoHandlerOld.cpp
     ../src/xml/UpdateHandler.cpp
 )
 

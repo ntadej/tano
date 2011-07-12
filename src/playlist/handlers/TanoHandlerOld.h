@@ -31,38 +31,38 @@ class Channel;
 class TanoHandlerOld : public QXmlDefaultHandler
 {
 public:
-	TanoHandlerOld();
-	~TanoHandlerOld();
+    TanoHandlerOld();
+    ~TanoHandlerOld();
 
-	bool startElement(const QString &namespaceURI,
-					  const QString &localName,
-					  const QString &qName,
-					  const QXmlAttributes &attributes);
-	bool endElement(const QString &namespaceURI,
-					const QString &localName,
+    bool startElement(const QString &namespaceURI,
+                      const QString &localName,
+                      const QString &qName,
+                      const QXmlAttributes &attributes);
+    bool endElement(const QString &namespaceURI,
+                    const QString &localName,
                     const QString &qName);
     bool characters(const QString &str);
     bool fatalError(const QXmlParseException &exception);
 
-	QString errorString() const { return _errorStr; }
-	QString name() const { return _playlistName; }
-	QList<Channel *> channelList() const { return _channelList; }
+    QString errorString() const { return _errorStr; }
+    QString name() const { return _playlistName; }
+    QList<Channel *> channelList() const { return _channelList; }
 
 private:
-	int channelNumSync(const int &c);
+    int channelNumSync(const int &c);
 
-	int _num;
-	int _cat;
+    int _num;
+    int _cat;
 
-	Channel *_channel;
-	QString _currentText;
-	QString _errorStr;
-	bool _metTanoTag;
+    Channel *_channel;
+    QString _currentText;
+    QString _errorStr;
+    bool _metTanoTag;
 
-	QList<Channel *> _channelList;
+    QList<Channel *> _channelList;
 
-	QString _playlistName;
-	QString _category;
+    QString _playlistName;
+    QString _category;
 };
 
 #endif // TANO_TANOHANDLEROLD_H_

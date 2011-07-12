@@ -19,42 +19,44 @@
 #ifndef TANO_EPGSCHEDULEFULL_H_
 #define TANO_EPGSCHEDULEFULL_H_
 
-#include <QtGui/QTreeWidgetItem>
 #include <QtGui/QWidget>
 
 #include "core/Enums.h"
 
 namespace Ui
 {
-	class EpgScheduleFull;
+    class EpgScheduleFull;
 }
 
+class Channel;
 class EpgScheduleChannel;
-class XmltvChannel;
+class PlaylistModel;
 class XmltvProgramme;
 
 class EpgScheduleFull : public QWidget
 {
 Q_OBJECT
 public:
-	EpgScheduleFull(QWidget *parent = 0);
-	~EpgScheduleFull();
+    EpgScheduleFull(QWidget *parent = 0);
+    ~EpgScheduleFull();
 
-	void openPlaylist(const QString &p);
-	EpgScheduleChannel *schedule();
+    void refreshPlaylistModel();
+    void setPlaylistModel(PlaylistModel *model);
+    EpgScheduleChannel *schedule();
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 signals:
-	void itemClicked(XmltvProgramme *);
-	void requestEpg(QString, Tano::Id);
+    void itemClicked(XmltvProgramme *);
+    void requestEpg(QString,
+                    Tano::Id);
 
 private slots:
-	void channel(QTreeWidgetItem *item);
+    void channel(Channel *channel);
 
 private:
-	Ui::EpgScheduleFull *ui;
+    Ui::EpgScheduleFull *ui;
 };
 
 #endif // TANO_EPGSCHEDULEFULL_H_

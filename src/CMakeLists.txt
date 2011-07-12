@@ -44,7 +44,6 @@ SET(Tano_UIs
     ui/playlist/PlaylistImportCSV.ui
     ui/playlist/PlaylistImportWeb.ui
     ui/playlist/PlaylistSelect.ui
-    ui/playlist/PlaylistWidget.ui
     ui/recorder/Recorder.ui
     ui/recorder/TimersEdit.ui
     ui/settings/SettingsBackend.ui
@@ -66,6 +65,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     container/Channel.h
     core/ChannelSelect.h
     core/GetFile.h
+    core/ListItem.h
     core/ListModel.h
     core/Print.h
     core/UpdateManager.h
@@ -102,7 +102,6 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/playlist/PlaylistImportCSV.h
     ui/playlist/PlaylistImportWeb.h
     ui/playlist/PlaylistSelect.h
-    ui/playlist/PlaylistWidget.h
     ui/recorder/Recorder.h
     ui/recorder/RecorderController.h
     ui/recorder/TimersEdit.h
@@ -131,6 +130,7 @@ SET(Tano_Resrcs
 # Define the C++ source files used by Tano
 SET(Tano_Container_Srcs
     container/Channel.cpp
+    container/CSVInfo.cpp
     container/File.cpp
     container/PlaylistFile.cpp
     container/UpdateInfo.cpp
@@ -147,6 +147,7 @@ SET(Tano_Core_Srcs
     core/DaemonManager.cpp
     core/Enums.cpp
     core/GetFile.cpp
+    core/ListItem.h
     core/ListModel.cpp
     core/LocaleManager.cpp
     core/Print.cpp
@@ -162,17 +163,19 @@ SET(Tano_Epg_Srcs
     epg/XmltvManager.cpp
 )
 SET(Tano_Playlist_Srcs
-    playlist/CSVGenerator.cpp
-    playlist/CSVHandler.cpp
-    playlist/JsGenerator.cpp
-    playlist/JsHandler.cpp
-    playlist/M3UGenerator.cpp
-    playlist/M3UHandler.cpp
     playlist/PlaylistFilterModel.cpp
-    playlist/PlaylistHandler.cpp
     playlist/PlaylistModel.cpp
-    playlist/TvheadendGenerator.cpp
-    playlist/XmltvIdGenerator.cpp
+    playlist/PlaylistOpen.cpp
+    playlist/PlaylistSave.cpp
+    playlist/generators/CSVGenerator.cpp
+    playlist/generators/JsGenerator.cpp
+    playlist/generators/M3UGenerator.cpp
+    playlist/generators/TvheadendGenerator.cpp
+    playlist/generators/XmltvIdGenerator.cpp
+    playlist/handlers/CSVHandler.cpp
+    playlist/handlers/JsHandler.cpp
+    playlist/handlers/M3UHandler.cpp
+    playlist/handlers/TanoHandlerOld.cpp
 )
 SET(Tano_UI_Srcs
     ui/MainWindow.cpp
@@ -205,7 +208,6 @@ SET(Tano_UI_Srcs
     ui/playlist/PlaylistImportCSV.cpp
     ui/playlist/PlaylistImportWeb.cpp
     ui/playlist/PlaylistSelect.cpp
-    ui/playlist/PlaylistWidget.cpp
     ui/recorder/Recorder.cpp
     ui/recorder/RecorderController.cpp
     ui/recorder/TimersEdit.cpp
@@ -225,7 +227,6 @@ SET(Tano_UI_Srcs
 )
 SET(Tano_XML_Srcs
     xml/PlaylistListHandler.cpp
-    xml/TanoHandlerOld.cpp
     xml/TimersGenerator.cpp
     xml/TimersHandler.cpp
     xml/UpdateHandler.cpp

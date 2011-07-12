@@ -21,29 +21,29 @@
 
 #include <QtGui/QTextEdit>
 
-class PlaylistWidget;
+class PlaylistModel;
 
 class Print : public QTextEdit
 {
 Q_OBJECT
 public:
-	Print(QWidget *parent = 0);
-	~Print();
+    Print(QWidget *parent = 0);
+    ~Print();
 
-	void channelList(const QString &name,
-					 PlaylistWidget *widget,
-					 const QList<int> &list);
+    void channelList(const QString &name,
+                     PlaylistModel *model,
+                     const QList<int> &list);
 
 private slots:
-	void preview(QPrinter *printer);
+    void preview(QPrinter *printer);
 
 private:
-	void start();
+    void start();
 
-	QTextCharFormat _boldFormat;
-	QTextTableFormat _tableFormat;
-	QTextCharFormat _textFormat;
-	QTextCharFormat _titleFormat;
+    QTextCharFormat _boldFormat;
+    QTextTableFormat _tableFormat;
+    QTextCharFormat _textFormat;
+    QTextCharFormat _titleFormat;
 };
 
 #endif // TANO_PRINT_H_

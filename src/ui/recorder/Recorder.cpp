@@ -24,7 +24,7 @@
 #include "core/Enums.h"
 #include "core/Settings.h"
 #include "core/Udpxy.h"
-#include "ui/core/FileDialogs.h"
+#include "playlist/PlaylistModel.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/recorder/RecorderController.h"
 #include "ui/recorder/TimersEdit.h"
@@ -42,7 +42,7 @@ Recorder::Recorder(QWidget *parent)
       _trayIcon(0)
 {
     ui->setupUi(this);
-    ui->browseDirectory->setType(FileDialogs::Directory);
+    ui->browseDirectory->setType(Tano::Directory);
 
     _controller = new RecorderController(this);
     _daemon = new DaemonManager(this);
@@ -52,7 +52,7 @@ Recorder::Recorder(QWidget *parent)
 	//Init
 	connect(ui->buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
 
-    connect(ui->playlistWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(playlist(QTreeWidgetItem *)));
+    connect(ui->playlistWidget, SIGNAL(itemClicked(Channel *)), this, SLOT(playlist(Channel *)));
 
     connect(_controller, SIGNAL(elapsed(int)), this, SLOT(time(int)));
     connect(_controller, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
@@ -95,16 +95,8 @@ void Recorder::stop()
     _controller->stop();
 }
 
-void Recorder::openPlaylist(const QString &file)
+void Recorder::playlist(Channel *channel)
 {
-    _playlist = file;
-    ui->playlistWidget->open(_playlist);
-}
-
-void Recorder::playlist(QTreeWidgetItem *clickedChannel)
-{
-    Channel *channel = ui->playlistWidget->channelRead(clickedChannel);
-
 	_name = channel->name();
     _url = _udpxy->processUrl(channel->url());
 
@@ -192,10 +184,21 @@ void Recorder::time(const int &time)
     }
 }
 
+void Recorder::refreshPlaylistModel()
+{
+    ui->playlistWidget->refreshModel();
+}
+
 void Recorder::setAction(QAction *action)
 {
     _actionRecord = action;
     connect(_actionRecord, SIGNAL(triggered()), ui->buttonRecord, SLOT(toggle()));
+}
+
+void Recorder::setPlaylistModel(PlaylistModel *model)
+{
+    _model = model;
+    ui->playlistWidget->setModel(_model);
 }
 
 void Recorder::setTrayIcon(TrayIcon *icon)
@@ -215,12 +218,12 @@ void Recorder::showTimersEditor()
             _editor->activateWindow();
         } else {
             delete _editor;
-            _editor = new TimersEdit(_playlist, this);
+            _editor = new TimersEdit(_model, this);
             connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
             _editor->show();
         }
     } else {
-        _editor = new TimersEdit(_playlist, this);
+        _editor = new TimersEdit(_model, this);
         connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
         _editor->show();
     }

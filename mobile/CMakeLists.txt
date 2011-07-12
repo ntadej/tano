@@ -29,6 +29,7 @@ SET(Tano_Mobile_MOCs
     MobilePlaylistHandler.h
 
     ../src/container/Channel.h
+    ../src/core/ListItem.h
     ../src/core/ListModel.h
     ../src/playlist/PlaylistFilterModel.h
     ../src/playlist/PlaylistModel.h
@@ -45,6 +46,7 @@ SET(Tano_Mobile_Srcs
     MobilePlaylistHandler.cpp
 
     ../src/container/Channel.cpp
+    ../src/container/CSVInfo.cpp
 
     ../src/core/Common.cpp
     ../src/core/ConsoleOutput.cpp
@@ -55,9 +57,10 @@ SET(Tano_Mobile_Srcs
     ../src/core/Shortcuts.cpp
     ../src/core/Udpxy.cpp
 
-    ../src/playlist/M3UHandler.cpp
+    ../src/playlist/handlers/M3UHandler.cpp
     ../src/playlist/PlaylistFilterModel.cpp
     ../src/playlist/PlaylistModel.cpp
+    ../src/playlist/PlaylistOpen.cpp
 )
 
 # Define QML files

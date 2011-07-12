@@ -21,7 +21,7 @@
 #include "SettingsPlaylist.h"
 #include "ui_SettingsPlaylist.h"
 
-#include "ui/core/FileDialogs.h"
+#include "core/Enums.h"
 #include "ui/playlist/PlaylistImportWeb.h"
 #include "ui/playlist/PlaylistSelect.h"
 
@@ -30,7 +30,7 @@ SettingsPlaylist::SettingsPlaylist(QWidget *parent)
     ui(new Ui::SettingsPlaylist)
 {
     ui->setupUi(this);
-    ui->browseCustom->setType(FileDialogs::M3U);
+    ui->browseCustom->setType(Tano::M3U);
     ui->select->open("playlists/playlists.xml");
 
     connect(ui->buttonDownload, SIGNAL(clicked()), this, SLOT(playlistDownload()));

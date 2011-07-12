@@ -21,9 +21,10 @@
 
 #include <QtCore/QTime>
 #include <QtGui/QWidget>
-#include <QtGui/QTreeWidgetItem>
 
+class Channel;
 class DaemonManager;
+class PlaylistModel;
 class RecorderController;
 class TrayIcon;
 class TimersEdit;
@@ -43,21 +44,23 @@ public:
 
     void createSettings();
     bool isRecording() const;
+    void refreshPlaylistModel();
     void setAction(QAction *action);
+    void setPlaylistModel(PlaylistModel *model);
     void setTrayIcon(TrayIcon *icon);
 
 protected:
     void changeEvent(QEvent *e);
 
 public slots:
-    void openPlaylist(const QString &file);
+
     void recordNow(const QString &name,
                    const QString &url);
     void showTimersEditor();
     void stop();
 
 private slots:
-    void playlist(QTreeWidgetItem* clickedChannel);
+    void playlist(Channel* channel);
     void record(const bool &status);
     void time(const int &time);
     void timerStart(const QString &name,
@@ -72,10 +75,10 @@ private:
     QString _name;
     QString _url;
 
-    DaemonManager *_daemon;
     RecorderController *_controller;
+    DaemonManager *_daemon;
     TimersEdit *_editor;
-    QString _playlist;
+    PlaylistModel *_model;
     TrayIcon *_trayIcon;
     Udpxy *_udpxy;
 };

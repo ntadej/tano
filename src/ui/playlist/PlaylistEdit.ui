@@ -59,7 +59,7 @@
      </widget>
     </item>
     <item row="2" column="0" colspan="2">
-     <widget class="PlaylistWidget" name="playlist" native="true"/>
+     <widget class="PlaylistDisplayWidget" name="playlist" native="true"/>
     </item>
    </layout>
   </widget>
@@ -597,9 +597,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>PlaylistWidget</class>
+   <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
-   <header>ui/playlist/PlaylistWidget.h</header>
+   <header>ui/playlist/PlaylistDisplayWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

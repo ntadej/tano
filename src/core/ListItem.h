@@ -1,6 +1,7 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
 * Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Based on ListModel by Christophe Dumez <dchris@gmail.com>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,45 +17,25 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CSVHANDLER_H_
-#define TANO_CSVHANDLER_H_
+#ifndef TANO_LISTITEM_H_
+#define TANO_LISTITEM_H_
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+#include <QtCore/QHash>
+#include <QtCore/QObject>
+#include <QtCore/QVariant>
 
-class Channel;
-
-class CSVHandler
+class ListItem : public QObject
 {
+Q_OBJECT
 public:
-	CSVHandler();
-	~CSVHandler();
+    ListItem(QObject* parent = 0) : QObject(parent) {}
+    virtual ~ListItem() {}
+    virtual QString id() const = 0;
+    virtual QVariant data(int role) const = 0;
+    virtual QHash<int, QByteArray> roleNames() const = 0;
 
-	void processFile(const QString &csvFile);
-	void setParameters(const QString &separator,
-					   const bool &header,
-					   const QList<int> &columns);
-
-	QList<Channel *> channelList() const { return _channels; }
-
-private:
-	void processChannel(const QStringList &list);
-	void processList();
-
-	Channel *_channel;
-	QList<Channel *> _channels;
-	QStringList _csvLineList;
-
-	// Parameters
-	QString _separator;
-	bool _header;
-
-	int _number;
-	int _name;
-	int _url;
-	int _categories;
-	int _language;
-	int _epg;
+signals:
+    void dataChanged();
 };
 
-#endif // TANO_CSVHANDLER_H_
+#endif // TANO_LISTITEM_H_

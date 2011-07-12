@@ -16,42 +16,38 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PRINTDIALOG_H_
-#define TANO_PRINTDIALOG_H_
+#ifndef TANO_M3UGENERATOR_H_
+#define TANO_M3UGENERATOR_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
 
-#include "core/Print.h"
+#include "core/Enums.h"
 
-namespace Ui {
-    class PrintDialog;
-}
+class Channel;
+class PlaylistModel;
+class Udpxy;
 
-class PrintDialog : public QDialog
+class M3UGenerator
 {
-Q_OBJECT
 public:
-    PrintDialog(const QString &name,
-                PlaylistModel *model,
-                QWidget *parent = 0);
-    ~PrintDialog();
+    M3UGenerator(const QString &file,
+                 const Tano::FileType &type = Tano::M3U);
+    ~M3UGenerator();
 
-protected:
-    void changeEvent(QEvent *e);
-
-private slots:
-    void action(QAbstractButton *button);
+    bool write(PlaylistModel *model);
 
 private:
-    void print();
+    void generateItemNormal(Channel *channel);
+    void generateItemClean(Channel *channel);
+    void generateItemUdpxy(Channel *channel);
 
-    Ui::PrintDialog *ui;
+    Tano::FileType _type;
 
-    Print *_print;
+    QFile *_file;
+    QTextStream _out;
 
-    QString _name;
-    PlaylistModel *_model;
+    Udpxy *_udpxy;
 };
 
-#endif // TANO_PRINTDIALOG_H_
+#endif // TANO_M3UGENERATOR_H_

@@ -21,9 +21,11 @@
 
 #include <QtCore/QTimer>
 #include <QtGui/QMainWindow>
-#include <QtGui/QTreeWidgetItem>
 
 #include "Config.h"
+
+class Channel;
+class PlaylistModel;
 
 #if EDITOR
 class LocaleManager;
@@ -76,7 +78,7 @@ private slots:
     void menuOpenExport();
     void exit();
 
-    void editItem(QTreeWidgetItem *item);
+    void editItem(Channel *channel);
 
     void editChannelNumber();
     void editChannelName(const QString &text);
@@ -101,6 +103,8 @@ private:
     void createSettings();
 
     Ui::PlaylistEdit *ui;
+
+    PlaylistModel *_model;
 
 #if EDITOR
     LocaleManager *_locale;

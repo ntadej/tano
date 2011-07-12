@@ -21,9 +21,13 @@
 
 #include <QtCore/QStringList>
 
+#include "container/CSVInfo.h"
+#include "core/Enums.h"
 #include "core/ListModel.h"
 
 class Channel;
+class PlaylistOpen;
+class PlaylistSave;
 
 class PlaylistModel : public ListModel
 {
@@ -36,18 +40,40 @@ public:
     Channel *row(const int &row);
     Channel *takeRow(const int &row);
 
+    Channel *createChannel(const QString &name = 0,
+                           const QString &url = 0);
+    void deleteChannel(Channel *channel);
+
+    void moveDown(Channel *channel);
+    void moveUp(Channel *channel);
+    bool processNumber(Channel *channel,
+                       const int &number);
+
     QStringList categories() const { return _categoryList; }
     QStringList epg() const { return _epgList; }
+    QString fileName() const { return _fileName; }
     QStringList languages() const { return _languageList; }
     QString name() const { return _name; }
     QList<int> numbers() const { return _channelNumbers; }
 
-    void openM3UFile(const QString &file);
+    void open(const QString &file,
+              const bool &refresh = false,
+              const Tano::FileType &type = Tano::M3U,
+              const CSVInfo &info = CSVInfo());
+    void save(const QString &file,
+              const QString &name,
+              const Tano::FileType &type = Tano::M3U);
+    void exportTvheadend(const QString &location,
+                         const QString &interface,
+                         const QString &xmltv);
 
     bool validate() const;
 
 private:
     void processChannel(Channel *channel);
+
+    PlaylistOpen *_open;
+    PlaylistSave *_save;
 
     QList<int> _channelNumbers;
     QStringList _categoryList;
@@ -55,6 +81,7 @@ private:
     QStringList _languageList;
     QMap<int, Channel *> _numbers;
 
+    QString _fileName;
     QString _name;
 };
 

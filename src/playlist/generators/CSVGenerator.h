@@ -16,32 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_JSGENERATOR_H_
-#define TANO_JSGENERATOR_H_
+#ifndef TANO_CSVGENERATOR_H_
+#define TANO_CSVGENERATOR_H_
 
+#include <QtCore/QFile>
 #include <QtCore/QTextStream>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QTreeWidgetItem>
 
 class Channel;
+class PlaylistModel;
 
-class JsGenerator
+class CSVGenerator
 {
 public:
-	JsGenerator(QTreeWidget *treeWidget,
-				QMap<QTreeWidgetItem *, Channel *> map);
-	~JsGenerator();
+    CSVGenerator(const QString &file);
+    ~CSVGenerator();
 
-	bool write(QIODevice *device);
+    bool write(PlaylistModel *model);
 
 private:
-	void generateItem(const int &id,
-					  Channel *channel);
+    void generateItem(Channel *channel);
 
-	QTreeWidget *_treeWidget;
-	QTextStream _out;
-
-	QMap<QTreeWidgetItem *, Channel *> _map;
+    QFile *_file;
+    QTextStream _out;
 };
 
-#endif // TANO_JSGENERATOR_H_
+#endif // TANO_CSVGENERATOR_H_

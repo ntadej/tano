@@ -17,6 +17,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "core/ListItem.h"
 #include "core/ListModel.h"
 
 ListModel::ListModel(ListItem *prototype,
@@ -98,6 +99,16 @@ void ListModel::clear()
 {
     qDeleteAll(_list);
     _list.clear();
+}
+
+bool ListModel::moveRow(const int &oldRow, const int &newRow, const QModelIndex &parent)
+{
+    Q_UNUSED(parent);
+    if(oldRow < 0 || oldRow >= _list.size() || newRow < 0 || newRow >= _list.size()) return false;
+    beginMoveRows(QModelIndex(), oldRow, oldRow, QModelIndex(), newRow);
+    _list.move(oldRow, newRow);
+    endMoveRows();
+    return true;
 }
 
 bool ListModel::removeRow(const int &row, const QModelIndex &parent)

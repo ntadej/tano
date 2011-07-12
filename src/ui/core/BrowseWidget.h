@@ -24,7 +24,7 @@
 #include <QtGui/QToolButton>
 #include <QtGui/QWidget>
 
-#include "ui/core/FileDialogs.h"
+#include "core/Enums.h"
 
 class BrowseWidget : public QWidget
 {
@@ -34,7 +34,7 @@ public:
     ~BrowseWidget();
 
     void setResetValue(const QString &value) { _resetValue = value; }
-    void setType(const FileDialogs::Type &type) { _type = type; }
+    void setType(const Tano::FileType &type) { _type = type; }
     void setValue(const QString &value);
     QString value() const;
 
@@ -49,7 +49,7 @@ private:
     QPushButton *_reset;
     QToolButton *_browse;
 
-    FileDialogs::Type _type;
+    Tano::FileType _type;
 };
 
 #endif // TANO_BROWSEWIDGET_H_

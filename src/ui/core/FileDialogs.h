@@ -22,28 +22,15 @@
 #include <QtCore/QDir>
 #include <QtCore/QString>
 
+#include "core/Enums.h"
+
 class File;
 
 namespace FileDialogs
 {
-    enum Type
-    {
-        CSV = 20,
-        Directory = 0,
-        Files = 1,
-        JS = 21,
-        M3U = 10,
-        M3UClean = 11,
-        M3UUdpxy = 12,
-        Subtitles = 3,
-        TanoOld = 40,
-        Url = 2,
-        Xmltv = 30
-    };
+    QString filterByType(const Tano::FileType &type);
 
-    QString filterByType(const Type &type);
-
-    QString openByType(const Type &type,
+    QString openByType(const Tano::FileType &type,
                        const QString &arg = "");
     QString openDirectory(const QString &dir = QDir::homePath());
     QString openFile();
@@ -52,7 +39,7 @@ namespace FileDialogs
     QString openSubtitles(const QString &dir = QDir::homePath());
     QString openUrl();
 
-    QString saveByType(const Type &type,
+    QString saveByType(const Tano::FileType &type,
                        const QString &arg = "");
     File savePlaylist();
     QString saveXmltv();

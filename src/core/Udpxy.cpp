@@ -20,7 +20,7 @@
 #include "core/Udpxy.h"
 
 Udpxy::Udpxy(const bool &generate)
-    : _generate()
+    : _generate(generate)
 {
     createSettings();
 }

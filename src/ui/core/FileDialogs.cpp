@@ -23,41 +23,41 @@
 #include "container/File.h"
 #include "FileDialogs.h"
 
-QString FileDialogs::filterByType(const Type &type)
+QString FileDialogs::filterByType(const Tano::FileType &type)
 {
     switch (type)
     {
-    case Files:
+    case Tano::Files:
         return QObject::tr("Multimedia files") + "(*)";
-    case Subtitles:
+    case Tano::Subtitles:
         return QObject::tr("Subtitles files") + "(*.sub *.srt *.txt)";
-    case M3U:
+    case Tano::M3U:
         return QObject::tr("Tano M3U channel list files") + "(*.m3u)";
-    case M3UClean:
+    case Tano::M3UClean:
         return QObject::tr("M3U (original) files") + "(*.m3u tano11461)";
-    case M3UUdpxy:
+    case Tano::M3UUdpxy:
         return QObject::tr("M3U (Udpxy URL) files") + "(*.m3u tano63848)";
-    case CSV:
+    case Tano::CSV:
         return QObject::tr("Comma-separated values files") + "(*.csv *.txt)";
-    case JS:
+    case Tano::JS:
         return QObject::tr("Sagem STB channel list files") + "(*.js)";
-    case Xmltv:
+    case Tano::XmltvId:
         return QObject::tr("Plain text files") + "(*.txt)";
-    case TanoOld:
+    case Tano::TanoOld:
         return QObject::tr("Tano TV old channel list files") + "(*.tano *.xml)";
     default:
         return QString();
     }
 }
 
-QString FileDialogs::openByType(const Type &type,
+QString FileDialogs::openByType(const Tano::FileType &type,
                                 const QString &arg)
 {
     switch (type)
     {
-    case Directory:
+    case Tano::Directory:
         return openDirectory(arg);
-    case M3U:
+    case Tano::M3U:
         return openPlaylistSimple();
     default:
         return QString();
@@ -74,17 +74,17 @@ QString FileDialogs::openDirectory(const QString &dir)
 QString FileDialogs::openFile()
 {
     QString file = QFileDialog::getOpenFileName(0, QObject::tr("Open file"),
-                                                QDir::homePath(), filterByType(Files));
+                                                QDir::homePath(), filterByType(Tano::Files));
     return file;
 }
 
 File FileDialogs::openPlaylist()
 {
     QStringList filters;
-    filters << filterByType(M3U)
-            << filterByType(CSV)
-            << filterByType(JS)
-            << filterByType(TanoOld);
+    filters << filterByType(Tano::M3U)
+            << filterByType(Tano::CSV)
+            << filterByType(Tano::JS)
+            << filterByType(Tano::TanoOld);
 
     QFileDialog dialog;
     dialog.setAcceptMode(QFileDialog::AcceptOpen);
@@ -97,7 +97,7 @@ File FileDialogs::openPlaylist()
         fileName = dialog.selectedFiles()[0];
 
         for(int i = 0; i < 50; i++) {
-            if(dialog.selectedNameFilter() == filterByType(Type(i))) {
+            if(dialog.selectedNameFilter() == filterByType(Tano::FileType(i))) {
                 type = i;
             }
         }
@@ -109,14 +109,14 @@ File FileDialogs::openPlaylist()
 QString FileDialogs::openPlaylistSimple()
 {
     QString file = QFileDialog::getOpenFileName(0, QObject::tr("Open channel list"),
-                                                QDir::homePath(), filterByType(M3U));
+                                                QDir::homePath(), filterByType(Tano::M3U));
     return file;
 }
 
 QString FileDialogs::openSubtitles(const QString &dir)
 {
     QString file = QFileDialog::getOpenFileName(0, QObject::tr("Open subtitles"),
-                                                dir, filterByType(Subtitles));
+                                                dir, filterByType(Tano::Subtitles));
     return file;
 }
 
@@ -135,11 +135,11 @@ QString FileDialogs::openUrl()
 File FileDialogs::savePlaylist()
 {
     QStringList filters;
-    filters << filterByType(M3U)
-            << filterByType(M3UClean)
-            << filterByType(M3UUdpxy)
-            << filterByType(CSV)
-            << filterByType(JS);
+    filters << filterByType(Tano::M3U)
+            << filterByType(Tano::M3UClean)
+            << filterByType(Tano::M3UUdpxy)
+            << filterByType(Tano::CSV)
+            << filterByType(Tano::JS);
 
     QFileDialog dialog;
     dialog.setAcceptMode(QFileDialog::AcceptSave);
@@ -153,7 +153,7 @@ File FileDialogs::savePlaylist()
         fileName = dialog.selectedFiles()[0];
 
         for(int i = 0; i < 50; i++) {
-            if(dialog.selectedNameFilter() == filterByType(Type(i))) {
+            if(dialog.selectedNameFilter() == filterByType(Tano::FileType(i))) {
                 type = i;
             }
         }
@@ -165,6 +165,6 @@ File FileDialogs::savePlaylist()
 QString FileDialogs::saveXmltv()
 {
     QString file =  QFileDialog::getSaveFileName(0, QObject::tr("Export XMLTV IDs"),
-                                                 QDir::homePath(), filterByType(Xmltv));
+                                                 QDir::homePath(), filterByType(Tano::XmltvId));
     return file;
 }

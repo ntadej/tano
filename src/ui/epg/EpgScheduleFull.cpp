@@ -22,47 +22,53 @@
 #include "container/Channel.h"
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvProgramme.h"
+#include "playlist/PlaylistModel.h"
 
 EpgScheduleFull::EpgScheduleFull(QWidget *parent)
-	: QWidget(parent),
-	ui(new Ui::EpgScheduleFull)
+    : QWidget(parent),
+      ui(new Ui::EpgScheduleFull)
 {
-	ui->setupUi(this);
-	ui->schedule->setIdentifier(Tano::Schedule);
+    ui->setupUi(this);
+    ui->schedule->setIdentifier(Tano::Schedule);
 
-	connect(ui->playlist, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(channel(QTreeWidgetItem *)));
-	connect(ui->schedule, SIGNAL(itemClicked(XmltvProgramme *)), this, SIGNAL(itemClicked(XmltvProgramme *)));
+    connect(ui->playlist, SIGNAL(itemClicked(Channel *)), this, SLOT(channel(Channel *)));
+    connect(ui->schedule, SIGNAL(itemClicked(XmltvProgramme *)), this, SIGNAL(itemClicked(XmltvProgramme *)));
 }
 
 EpgScheduleFull::~EpgScheduleFull()
 {
-	delete ui;
+    delete ui;
 }
 
 void EpgScheduleFull::changeEvent(QEvent *e)
 {
-	QWidget::changeEvent(e);
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			ui->retranslateUi(this);
-			break;
-		default:
-			break;
-	}
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+        default:
+            break;
+    }
 }
 
-void EpgScheduleFull::channel(QTreeWidgetItem *item)
+void EpgScheduleFull::channel(Channel *channel)
 {
-	ui->schedule->setPage(0);
-	emit requestEpg(ui->playlist->channelRead(item)->epg(), Tano::Schedule);
+    ui->schedule->setPage(0);
+    emit requestEpg(channel->epg(), Tano::Schedule);
 }
 
-void EpgScheduleFull::openPlaylist(const QString &p)
+void EpgScheduleFull::refreshPlaylistModel()
 {
-	ui->playlist->open(p);
+    ui->playlist->refreshModel();
 }
 
 EpgScheduleChannel *EpgScheduleFull::schedule()
 {
-	return ui->schedule;
+    return ui->schedule;
+}
+
+void EpgScheduleFull::setPlaylistModel(PlaylistModel *model)
+{
+    ui->playlist->setModel(model);
 }

@@ -16,42 +16,32 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PRINTDIALOG_H_
-#define TANO_PRINTDIALOG_H_
+#ifndef TANO_PLAYLISTSAVE_H_
+#define TANO_PLAYLISTSAVE_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
+#include <QtCore/QString>
 
-#include "core/Print.h"
+#include "core/Enums.h"
 
-namespace Ui {
-    class PrintDialog;
-}
+class PlaylistModel;
 
-class PrintDialog : public QDialog
+class PlaylistSave
 {
-Q_OBJECT
 public:
-    PrintDialog(const QString &name,
-                PlaylistModel *model,
-                QWidget *parent = 0);
-    ~PrintDialog();
+    PlaylistSave(PlaylistModel *model);
+    ~PlaylistSave();
 
-protected:
-    void changeEvent(QEvent *e);
-
-private slots:
-    void action(QAbstractButton *button);
+    void saveCSVFile(const QString &file);
+    void saveJsFile(const QString &file);
+    void saveM3UFile(const QString &file,
+                     const Tano::FileType &type = Tano::M3U);
+    void saveTvheadend(const QString &location,
+                       const QString &interface,
+                       const QString &xmltv);
+    void saveXmltvId(const QString &file);
 
 private:
-    void print();
-
-    Ui::PrintDialog *ui;
-
-    Print *_print;
-
-    QString _name;
     PlaylistModel *_model;
 };
 
-#endif // TANO_PRINTDIALOG_H_
+#endif // TANO_PLAYLISTSAVE_H_

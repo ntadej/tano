@@ -17,23 +17,30 @@
 *****************************************************************************/
 
 #include "container/Channel.h"
-#include "playlist/JsGenerator.h"
+#include "playlist/PlaylistModel.h"
+#include "playlist/generators/JsGenerator.h"
 
-JsGenerator::JsGenerator(QTreeWidget *treeWidget,
-						 QMap<QTreeWidgetItem *, Channel *>map)
-	: _treeWidget(treeWidget),
-	_map(map) { }
-
-JsGenerator::~JsGenerator() { }
-
-bool JsGenerator::write(QIODevice *device)
+JsGenerator::JsGenerator(const QString &file)
 {
-	_out.setDevice(device);
+    _file = new QFile(file);
+}
+
+JsGenerator::~JsGenerator()
+{
+    delete _file;
+}
+
+bool JsGenerator::write(PlaylistModel *model)
+{
+    if (!_file->open(QFile::WriteOnly | QFile::Text))
+        return false;
+
+    _out.setDevice(_file);
 	_out.setCodec("UTF-8");
 	_out << "la=[";
-	for (int i = 0; i < _treeWidget->topLevelItemCount(); ++i) {
-		generateItem(i+1, _map[_treeWidget->topLevelItem(i)]);
-		if(i != _treeWidget->topLevelItemCount()-1) {
+    for (int i = 0; i < model->rowCount(); i++) {
+        generateItem(i+1, model->row(i));
+        if(i != model->rowCount()-1) {
 			_out << ",";
 		}
 	}
