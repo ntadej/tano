@@ -114,6 +114,11 @@ QString Tano::locateResource(const QString &file)
         path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
 #endif
 
+#if MOBILE
+    else if (QFileInfo("/opt/tanomobile/share/" + file).exists())
+        path = QFileInfo("/opt/tanomobile/share/" + file).absoluteFilePath();
+#endif
+
 #ifdef DEFAULT_DATA_DIR
     else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
         path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
