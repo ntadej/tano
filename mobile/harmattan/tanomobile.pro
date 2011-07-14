@@ -1,22 +1,29 @@
+#############################################################################
+# Tano - An Open IP TV Player
+# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>./
+#############################################################################
+
 INCLUDEPATH += ../../src/ \
     ../../
 
-DEFINES += HARMATTAN=1 \
+DEFINES += MM=1 \
     MOBILE=1 \
     WITH_EDITOR_VLCQT=0
 
 QT+= declarative
-symbian:TARGET.UID3 = 0xEE6F98BA
-
-# Smart Installer package's UID
-# This UID is from the protected range and therefore the package will
-# fail to install if self-signed. By default qmake uses the unprotected
-# range value if unprotected UID is defined for the application and
-# 0x2002CCCF value if protected UID is given to the application
-#symbian:DEPLOYMENT.installer_header = 0x2002CCCF
-
-# Allow network access on Symbian
-symbian:TARGET.CAPABILITY += NetworkServices
 
 # If your application uses the Qt Mobility libraries, uncomment the following
 # lines and add the respective components to the MOBILITY variable.
@@ -25,23 +32,44 @@ symbian:TARGET.CAPABILITY += NetworkServices
 
 HEADERS += ../MobileCore.h \
     ../MobilePlaylistHandler.h \
-    ../../src/container/Channel.h \
+    ../MobileXmltvHandler.h \
+    ../../src/container/core/Channel.h \
+    ../../src/container/playlist/CSVInfo.h \
+    ../../src/container/xmltv/XmltvChannel.h \
+    ../../src/container/xmltv/XmltvCrewMember.h \
+    ../../src/container/xmltv/XmltvList.h \
+    ../../src/container/xmltv/XmltvProgramme.h \
     ../../src/core/Common.h \
     ../../src/core/ConsoleOutput.h \
     ../../src/core/Enums.h \
+    ../../src/core/ListItem.h \
     ../../src/core/ListModel.h \
     ../../src/core/LocaleManager.h \
     ../../src/core/Settings.h \
     ../../src/core/Shortcuts.h \
     ../../src/core/Udpxy.h \
-    ../../src/playlist/M3UHandler.h \
+    ../../src/epg/XmltvCommon.h \
+    ../../src/epg/XmltvCrewModel.h \
+    ../../src/epg/XmltvEnums.h \
+    ../../src/epg/XmltvManager.h \
+    ../../src/epg/XmltvProgrammeFilterModel.h \
+    ../../src/epg/XmltvProgrammeModel.h \
     ../../src/playlist/PlaylistFilterModel.h \
-    ../../src/playlist/PlaylistModel.h
+    ../../src/playlist/PlaylistModel.h \
+    ../../src/playlist/PlaylistOpen.h \
+    ../../src/playlist/handlers/M3UHandler.h \
+    ../../src/xml/XmltvHandler.h
 
 SOURCES += ../main.cpp \
     ../MobileCore.cpp \
     ../MobilePlaylistHandler.cpp \
-    ../../src/container/Channel.cpp \
+    ../MobileXmltvHandler.cpp \
+    ../../src/container/core/Channel.cpp \
+    ../../src/container/playlist/CSVInfo.cpp \
+    ../../src/container/xmltv/XmltvChannel.cpp \
+    ../../src/container/xmltv/XmltvCrewMember.cpp \
+    ../../src/container/xmltv/XmltvList.cpp \
+    ../../src/container/xmltv/XmltvProgramme.cpp \
     ../../src/core/Common.cpp \
     ../../src/core/ConsoleOutput.cpp \
     ../../src/core/Enums.cpp \
@@ -50,9 +78,17 @@ SOURCES += ../main.cpp \
     ../../src/core/Settings.cpp \
     ../../src/core/Shortcuts.cpp \
     ../../src/core/Udpxy.cpp \
-    ../../src/playlist/M3UHandler.cpp \
+    ../../src/epg/XmltvCommon.cpp \
+    ../../src/epg/XmltvCrewModel.cpp \
+    ../../src/epg/XmltvEnums.cpp \
+    ../../src/epg/XmltvManager.cpp \
+    ../../src/epg/XmltvProgrammeFilterModel.cpp \
+    ../../src/epg/XmltvProgrammeModel.cpp \
     ../../src/playlist/PlaylistFilterModel.cpp \
-    ../../src/playlist/PlaylistModel.cpp
+    ../../src/playlist/PlaylistModel.cpp \
+    ../../src/playlist/PlaylistOpen.cpp \
+    ../../src/playlist/handlers/M3UHandler.cpp \
+    ../../src/xml/XmltvHandler.cpp
 
 OTHER_FILES += \
     tanomobile.desktop \

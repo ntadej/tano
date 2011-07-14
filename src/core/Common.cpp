@@ -21,7 +21,7 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>
 
-#ifndef HARMATTAN
+#ifndef MM
     #include "Config.h"
 #endif
 #include "core/Common.h"

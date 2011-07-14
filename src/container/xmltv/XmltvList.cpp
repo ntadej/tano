@@ -38,4 +38,6 @@ XmltvChannel *XmltvList::channel(const QString &id)
             return _channels[i];
         }
     }
+
+    return 0;
 }

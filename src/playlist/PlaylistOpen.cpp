@@ -16,7 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Config.h"
+#ifndef MM
+    #include "Config.h"
+#endif
 #include "PlaylistOpen.h"
 #include "container/playlist/CSVInfo.h"
 #include "playlist/handlers/M3UHandler.h"

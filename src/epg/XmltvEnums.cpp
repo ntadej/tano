@@ -28,6 +28,8 @@ Tano::Xmltv::LenghtUnits Tano::Xmltv::lenghtUnits(const QString &type)
         return Tano::Xmltv::Minutes;
     else if(type == "hours")
         return Tano::Xmltv::Hours;
+    else
+        return Tano::Xmltv::Seconds;
 }
 
 QString Tano::Xmltv::lenghtUnits(const LenghtUnits &type)
@@ -38,6 +40,8 @@ QString Tano::Xmltv::lenghtUnits(const LenghtUnits &type)
         return QString(QObject::tr("minutes"));
     else if(type == Tano::Xmltv::Hours)
         return QString(QObject::tr("hours"));
+    else
+        return QString();
 }
 
 QString Tano::Xmltv::lenghtUnitsShort(const LenghtUnits &type)
@@ -48,4 +52,6 @@ QString Tano::Xmltv::lenghtUnitsShort(const LenghtUnits &type)
         return QString(QObject::tr("min"));
     else if(type == Tano::Xmltv::Hours)
         return QString(QObject::tr("h"));
+    else
+        return QString();
 }

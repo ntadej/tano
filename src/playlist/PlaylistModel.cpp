@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef HARMATTAN
+#ifndef MM
     #include "Config.h"
 #endif
 #include "container/core/Channel.h"
@@ -106,6 +106,10 @@ void PlaylistModel::exportTvheadend(const QString &location,
 {
 #if !MOBILE
     _save->saveTvheadend(location, interface, xmltv);
+#else
+    Q_UNUSED(location)
+    Q_UNUSED(interface)
+    Q_UNUSED(xmltv)
 #endif
 }
 
@@ -275,6 +279,10 @@ void PlaylistModel::save(const QString &file,
     default:
         break;
     }
+#else
+    Q_UNUSED(file)
+    Q_UNUSED(name)
+    Q_UNUSED(type)
 #endif
 }
 
