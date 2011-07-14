@@ -75,76 +75,21 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QTabWidget" name="epgTabWidget">
-      <property name="currentIndex">
-       <number>0</number>
+     <widget class="QListView" name="view">
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
       </property>
-      <property name="usesScrollButtons">
-       <bool>false</bool>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
       </property>
-      <widget class="QWidget" name="tabDay0">
-       <attribute name="title">
-        <string/>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <item>
-         <widget class="EpgList" name="day0" native="true"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tabDay1">
-       <attribute name="title">
-        <string/>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item>
-         <widget class="EpgList" name="day1" native="true"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tabDay2">
-       <attribute name="title">
-        <string/>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_5">
-        <item>
-         <widget class="EpgList" name="day2" native="true"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tabDay3">
-       <attribute name="title">
-        <string/>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_6">
-        <item>
-         <widget class="EpgList" name="day3" native="true"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tabDay4">
-       <attribute name="title">
-        <string/>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_7">
-        <item>
-         <widget class="EpgList" name="day4" native="true"/>
-        </item>
-       </layout>
-      </widget>
      </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="comboDate"/>
     </item>
    </layout>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>EpgList</class>
-   <extends>QWidget</extends>
-   <header>ui/epg/EpgList.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="../../../data/icons.qrc"/>
  </resources>

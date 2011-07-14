@@ -23,6 +23,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QObject>
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 
 class ListItem : public QObject
 {
@@ -32,6 +33,8 @@ public:
     virtual ~ListItem() {}
     virtual QString id() const = 0;
     virtual QVariant data(int role) const = 0;
+    virtual QString display() const = 0;
+    virtual QIcon displayIcon() const = 0;
     virtual QHash<int, QByteArray> roleNames() const = 0;
 
 signals:

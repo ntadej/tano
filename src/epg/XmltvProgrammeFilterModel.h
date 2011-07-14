@@ -16,31 +16,27 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvProgramme.h"
-#include "epg/XmltvProgrammeModel.h"
+#ifndef TANO_XMLTVPROGRAMMEFILTERMODEL_H_
+#define TANO_XMLTVPROGRAMMEFILTERMODEL_H_
 
-XmltvChannel::XmltvChannel(const QString &id)
-    : _id(id)
+#include <QtCore/QDate>
+#include <QtGui/QSortFilterProxyModel>
+
+class XmltvProgrammeFilterModel : public QSortFilterProxyModel
 {
-    _programme = new XmltvProgrammeModel();
-}
+Q_OBJECT
+public:
+    XmltvProgrammeFilterModel(QObject *parent = 0);
+    ~XmltvProgrammeFilterModel();
 
-XmltvChannel::~XmltvChannel()
-{
-    delete _programme;
-}
+    QDate date() const { return _date; }
+    void setDate(const QDate &date);
 
-void XmltvChannel::addProgramme(XmltvProgramme *p)
-{
-    _programme->appendRow(p);
-}
+protected:
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
 
-void XmltvChannel::setDisplayName(const QString &s)
-{
-    _displayName = s;
+private:
+    QDate _date;
+};
 
-    for(int i = 0; i < _programme->rowCount(); i++) {
-        _programme->row(i)->setChannelDisplayName(s);
-    }
-}
+#endif // TANO_XMLTVPROGRAMMEFILTERMODEL_H_

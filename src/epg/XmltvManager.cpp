@@ -24,6 +24,7 @@
 #include "core/Common.h"
 #include "epg/XmltvCommon.h"
 #include "epg/XmltvManager.h"
+#include "epg/XmltvProgrammeModel.h"
 #include "xml/XmltvHandler.h"
 
 XmltvManager::XmltvManager(QObject *parent)
@@ -45,10 +46,10 @@ XmltvManager::~XmltvManager()
 
 void XmltvManager::current()
 {
-	for(int i = 1; i < _xmltv->channel(_currentXmltvId)->programme().size(); i++) {
-		if(QDateTime::currentDateTime() < _xmltv->channel(_currentXmltvId)->programme()[i]->start()) {
-			emit epgCurrent(processCurrentString(_xmltv->channel(_currentXmltvId)->programme()[i-1]),
-							processCurrentString(_xmltv->channel(_currentXmltvId)->programme()[i]));
+    for(int i = 1; i < _xmltv->channel(_currentXmltvId)->programme()->rowCount(); i++) {
+        if(QDateTime::currentDateTime() < _xmltv->channel(_currentXmltvId)->programme()->row(i)->start()) {
+            emit epgCurrent(processCurrentString(_xmltv->channel(_currentXmltvId)->programme()->row(i-1)),
+                            processCurrentString(_xmltv->channel(_currentXmltvId)->programme()->row(i)));
 			break;
 		}
 	}
@@ -80,9 +81,9 @@ void XmltvManager::loadXmltv()
 				 << _handler->list()->channels()[i]->icon()
 				 << _handler->list()->channels()[i]->url();
 		for(int k = 0; k < 5; k++) {
-			qDebug() << _handler->list()->channels()[i]->programme()[k]->channel()
-					 << _handler->list()->channels()[i]->programme()[k]->start()
-					 << _handler->list()->channels()[i]->programme()[k]->stop();
+            qDebug() << _handler->list()->channels()[i]->programme()->row(k)->channel()
+                     << _handler->list()->channels()[i]->programme()->row(k)->start()
+                     << _handler->list()->channels()[i]->programme()->row(k)->stop();
 		}
 	}
 }
@@ -100,7 +101,7 @@ void XmltvManager::request(const QString &id,
 	if(id.isEmpty())
 		return;
 
-	emit epgSchedule(_xmltv->channel(id), identifier);
+    emit epgSchedule(_xmltv->channel(id)->programme(), identifier);
 
 	_currentIdentifier = identifier;
 	if(_currentIdentifier == Tano::Main) {
@@ -111,9 +112,9 @@ void XmltvManager::request(const QString &id,
 
 void XmltvManager::requestProgramme(const QString &programme)
 {
-	for(int i = 1; i < _xmltv->channel(_currentXmltvId)->programme().size(); i++) {
-		if(_xmltv->channel(_currentXmltvId)->programme()[i]->start() == QDateTime::fromString(programme, Tano::Xmltv::dateFormat())) {
-			emit epgProgramme(_xmltv->channel(_currentXmltvId)->programme()[i]);
+    for(int i = 1; i < _xmltv->channel(_currentXmltvId)->programme()->rowCount(); i++) {
+        if(_xmltv->channel(_currentXmltvId)->programme()->row(i)->start() == QDateTime::fromString(programme, Tano::Xmltv::dateFormat())) {
+            emit epgProgramme(_xmltv->channel(_currentXmltvId)->programme()->row(i));
 			break;
 		}
 	}
@@ -121,15 +122,15 @@ void XmltvManager::requestProgramme(const QString &programme)
 
 void XmltvManager::requestProgrammeNext(XmltvProgramme *programme)
 {
-	if(_xmltv->channel(programme->channel())->programme().indexOf(programme) != _xmltv->channel(programme->channel())->programme().size()-1) {
-		emit epgProgramme(_xmltv->channel(programme->channel())->programme()[_xmltv->channel(programme->channel())->programme().indexOf(programme)+1]);
+    if(_xmltv->channel(programme->channel())->programme()->indexFromItem(programme).row() != _xmltv->channel(programme->channel())->programme()->rowCount()-1) {
+        emit epgProgramme(_xmltv->channel(programme->channel())->programme()->row(_xmltv->channel(programme->channel())->programme()->indexFromItem(programme).row()+1));
 	}
 }
 
 void XmltvManager::requestProgrammePrevious(XmltvProgramme *programme)
 {
-	if(_xmltv->channel(programme->channel())->programme().indexOf(programme) != 0) {
-		emit epgProgramme(_xmltv->channel(programme->channel())->programme()[_xmltv->channel(programme->channel())->programme().indexOf(programme)-1]);
+    if(_xmltv->channel(programme->channel())->programme()->indexFromItem(programme).row() != 0) {
+        emit epgProgramme(_xmltv->channel(programme->channel())->programme()->row(_xmltv->channel(programme->channel())->programme()->indexFromItem(programme).row()-1));
 	}
 }
 

@@ -61,7 +61,6 @@ MainWindow::MainWindow(QWidget *parent)	:
 	createMenus();
 	createShortcuts();
 	createSession();
-	createRecorder();
 	createConnections();
 
 	splash->close();
@@ -130,6 +129,10 @@ void MainWindow::createGui()
 {
     ui->playlistWidget->setModel(_model);
     _schedule->setPlaylistModel(_model);
+    ui->recorder->setPlaylistModel(_model);
+    ui->recorder->setAction(ui->actionRecord);
+    ui->recorder->setTrayIcon(_trayIcon);
+
 	openPlaylist(true);
 	setPlayingState(false);
 	ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
@@ -192,6 +195,8 @@ void MainWindow::createSettings()
 
 	_sessionVolumeEnabled = settings->sessionVolume();
 	_sessionAutoplayEnabled = settings->sessionAutoplay();
+
+    ui->recorder->createSettings();
 
 	delete settings;
 }
@@ -270,8 +275,8 @@ void MainWindow::createConnections()
 	connect(ui->videoWidget, SIGNAL(mouseHide()), ui->infoWidget, SLOT(hide()));
 
 	connect(_xmltv, SIGNAL(epgCurrent(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
-	connect(_xmltv, SIGNAL(epgSchedule(XmltvChannel *, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(XmltvChannel *, Tano::Id)));
-	connect(_xmltv, SIGNAL(epgSchedule(XmltvChannel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvChannel *, Tano::Id)));
+    connect(_xmltv, SIGNAL(epgSchedule(XmltvProgrammeModel *, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
+    connect(_xmltv, SIGNAL(epgSchedule(XmltvProgrammeModel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
 	connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _xmltv, SLOT(request(QString, Tano::Id)));
 	connect(_schedule, SIGNAL(itemClicked(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
 	connect(_xmltv, SIGNAL(epgProgramme(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
@@ -382,13 +387,6 @@ void MainWindow::writeSession()
 	delete settings;
 }
 
-void MainWindow::createRecorder()
-{
-    ui->recorder->setPlaylistModel(_model);
-	ui->recorder->setAction(ui->actionRecord);
-	ui->recorder->setTrayIcon(_trayIcon);
-	ui->recorder->createSettings();
-}
 void MainWindow::mouseWheel()
 {
 	if(_wheelType == "volume") {
@@ -580,7 +578,6 @@ void MainWindow::showSettings()
 	s.exec();
 	_locale->setLocale();
 	createSettings();
-	createRecorder();
 }
 
 void MainWindow::showPlaylistEditor()

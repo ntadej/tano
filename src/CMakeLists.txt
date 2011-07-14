@@ -63,6 +63,8 @@ SET(Tano_UIs
 # Define the MOC source files used by Tano
 SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
     container/Channel.h
+    container/xmltv/XmltvCrewMember.h
+    container/xmltv/XmltvProgramme.h
     core/ChannelSelect.h
     core/GetFile.h
     core/ListItem.h
@@ -70,7 +72,10 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     core/Print.h
     core/UpdateManager.h
     epg/XmltvController.h
+    epg/XmltvCrewModel.h
     epg/XmltvManager.h
+    epg/XmltvProgrammeFilterModel.h
+    epg/XmltvProgrammeModel.h
     playlist/PlaylistFilterModel.h
     playlist/PlaylistModel.h
     ui/MainWindow.h
@@ -136,6 +141,7 @@ SET(Tano_Container_Srcs
     container/UpdateInfo.cpp
     container/Timer.cpp
     container/xmltv/XmltvChannel.cpp
+    container/xmltv/XmltvCrewMember.cpp
     container/xmltv/XmltvList.cpp
     container/xmltv/XmltvProgramme.cpp
 )
@@ -159,8 +165,11 @@ SET(Tano_Core_Srcs
 SET(Tano_Epg_Srcs
     epg/XmltvCommon.cpp
     epg/XmltvController.cpp
+    epg/XmltvCrewModel.cpp
     epg/XmltvEnums.cpp
     epg/XmltvManager.cpp
+    epg/XmltvProgrammeFilterModel.cpp
+    epg/XmltvProgrammeModel.cpp
 )
 SET(Tano_Playlist_Srcs
     playlist/PlaylistFilterModel.cpp

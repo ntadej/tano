@@ -23,6 +23,7 @@
 #include <QtCore/QString>
 
 class XmltvProgramme;
+class XmltvProgrammeModel;
 
 class XmltvChannel
 {
@@ -30,16 +31,16 @@ public:
     XmltvChannel(const QString &id);
     ~XmltvChannel();
 
-    QString id() const { return _id; }
-    QString displayName() const { return _displayName; }
+    inline QString id() const { return _id; }
+    inline QString displayName() const { return _displayName; }
     void setDisplayName(const QString &s);
-    QString icon() const { return _icon; }
+    inline QString icon() const { return _icon; }
     void setIcon(const QString &s) { _icon = s; }
-    QString url() const { return _url; }
+    inline QString url() const { return _url; }
     void setUrl(const QString &s) { _url = s; }
 
-    QList<XmltvProgramme *> programme() const { return _programme; }
-    void addProgramme(XmltvProgramme *p) { _programme << p; }
+    XmltvProgrammeModel *programme() const { return _programme; }
+    void addProgramme(XmltvProgramme *p);
 
 private:
     QString _id;
@@ -47,7 +48,7 @@ private:
     QString _icon;
     QString _url;
 
-    QList<XmltvProgramme *> _programme;
+    XmltvProgrammeModel *_programme;
 };
 
 #endif // TANO_XMLTVCHANNEL_H_

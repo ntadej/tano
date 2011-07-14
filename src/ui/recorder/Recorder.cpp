@@ -198,7 +198,7 @@ void Recorder::setAction(QAction *action)
 void Recorder::setPlaylistModel(PlaylistModel *model)
 {
     _model = model;
-    ui->playlistWidget->setModel(_model);
+    ui->playlistWidget->setModel(model);
 }
 
 void Recorder::setTrayIcon(TrayIcon *icon)

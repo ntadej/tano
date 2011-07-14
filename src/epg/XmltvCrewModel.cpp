@@ -16,31 +16,31 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvProgramme.h"
-#include "epg/XmltvProgrammeModel.h"
+#include "container/xmltv/XmltvCrewMember.h"
+#include "epg/XmltvCrewModel.h"
 
-XmltvChannel::XmltvChannel(const QString &id)
-    : _id(id)
+XmltvCrewModel::XmltvCrewModel(QObject *parent)
+    : ListModel(new XmltvCrewMember, parent)
 {
-    _programme = new XmltvProgrammeModel();
+
 }
 
-XmltvChannel::~XmltvChannel()
+XmltvCrewModel::~XmltvCrewModel()
 {
-    delete _programme;
+
 }
 
-void XmltvChannel::addProgramme(XmltvProgramme *p)
+XmltvCrewMember *XmltvCrewModel::find(const QString &id) const
 {
-    _programme->appendRow(p);
+    return qobject_cast<XmltvCrewMember *>(ListModel::find(id));
 }
 
-void XmltvChannel::setDisplayName(const QString &s)
+XmltvCrewMember *XmltvCrewModel::row(const int &row)
 {
-    _displayName = s;
+    return qobject_cast<XmltvCrewMember *>(ListModel::row(row));
+}
 
-    for(int i = 0; i < _programme->rowCount(); i++) {
-        _programme->row(i)->setChannelDisplayName(s);
-    }
+XmltvCrewMember *XmltvCrewModel::takeRow(const int &row)
+{
+    return qobject_cast<XmltvCrewMember *>(ListModel::takeRow(row));
 }

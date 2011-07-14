@@ -19,6 +19,8 @@
 #ifndef TANO_EPGSCHEDULECHANNEL_H_
 #define TANO_EPGSCHEDULECHANNEL_H_
 
+#include <QtCore/QDate>
+#include <QtCore/QModelIndex>
 #include <QtGui/QStackedWidget>
 
 #include "core/Enums.h"
@@ -28,8 +30,9 @@ namespace Ui
 	class EpgScheduleChannel;
 }
 
-class XmltvChannel;
 class XmltvProgramme;
+class XmltvProgrammeFilterModel;
+class XmltvProgrammeModel;
 
 class EpgScheduleChannel : public QStackedWidget
 {
@@ -39,7 +42,7 @@ public:
 	~EpgScheduleChannel();
 
 public slots:
-	void setEpg(XmltvChannel *epg,
+    void setEpg(XmltvProgrammeModel *epg,
 				const Tano::Id &id);
 	void setIdentifier(const Tano::Id &identifier) { _id = identifier; }
 	void setPage(const int &id);
@@ -50,10 +53,16 @@ protected:
 signals:
 	void itemClicked(XmltvProgramme *);
 
+private slots:
+    void programmeClicked(const QModelIndex &index);
+    void processFilters();
+
 private:
 	Ui::EpgScheduleChannel *ui;
 
 	Tano::Id _id;
+    XmltvProgrammeModel *_model;
+    XmltvProgrammeFilterModel *_filterModel;
 };
 
 #endif // EPGSCHEDULECHANNEL_H_

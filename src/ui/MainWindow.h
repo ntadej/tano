@@ -110,7 +110,6 @@ private:
 	void createConnections();
 	void createGui();
 	void createMenus();
-	void createRecorder();
 	void createSettings();
 	void createSettingsStartup();
 	void createSession();

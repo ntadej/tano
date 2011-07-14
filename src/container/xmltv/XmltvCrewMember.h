@@ -16,15 +16,15 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CHANNEL_H_
-#define TANO_CHANNEL_H_
+#ifndef TANO_XMLTVCREWMEMBER_H_
+#define TANO_XMLTVCREWMEMBER_H_
 
+#include <QtCore/QList>
 #include <QtCore/QString>
-#include <QtCore/QStringList>
 
 #include "core/ListItem.h"
 
-class Channel : public ListItem
+class XmltvCrewMember : public ListItem
 {
 Q_OBJECT
 public:
@@ -32,49 +32,26 @@ public:
         DisplayRole = Qt::DisplayRole,
         DisplayIconRole = Qt::DecorationRole,
         NameRole = Qt::UserRole + 1,
-        NumberRole,
-        LanguageRole,
-        UrlRole,
-        EpgRole,
-        CategoriesRole,
-        LogoRole
+        TypeRole
     };
 
-    Channel(const QString &name = 0,
-            const int &number = 0,
-            QObject *parent = 0);
-    ~Channel();
+    XmltvCrewMember(const QString &name = 0,
+                    const QString &type = 0,
+                    QObject *parent = 0);
+    ~XmltvCrewMember();
 
-    inline QString id() const { return _url; }
+    inline QString id() const { return _name; }
     QVariant data(int role) const;
     QString display() const;
     QIcon displayIcon() const;
     QHash<int, QByteArray> roleNames() const;
 
-    int number() const { return _number; }
-    inline QString numberString() const { return QString().number(_number); }
-    void setNumber(const int &number);
     inline QString name() const { return _name; }
-    void setName(const QString &name);
-    inline QString language() const { return _language; }
-    void setLanguage(const QString &language);
-    inline QString url() const { return _url; }
-    void setUrl(const QString &url);
-    inline QString epg() const { return _epg; }
-    void setEpg(const QString &epg);
-    inline QStringList categories() const { return _categories; }
-    void setCategories(const QStringList &categories);
-    inline QString logo() const { return _logo; }
-    void setLogo(const QString &logo);
+    inline QString type() const { return _type; }
 
 private:
     QString _name;
-    int _number;
-    QString _language;
-    QString _url;
-    QString _epg;
-    QStringList _categories;
-    QString _logo;
+    QString _type;
 };
 
-#endif // TANO_CHANNEL_H_
+#endif // TANO_XMLTVCREWMEMBER_H_

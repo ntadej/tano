@@ -24,11 +24,12 @@
 
 namespace Tano
 {
-	namespace Xmltv
-	{
-		QString dateFormat();
-		QRegExp dateRegExp();
-	};
-};
+    namespace Xmltv
+    {
+        QString dateFormat();
+        QString dateFormatDisplay();
+        QRegExp dateRegExp();
+    }
+}
 
 #endif // TANO_XMLTVCOMMON_H_

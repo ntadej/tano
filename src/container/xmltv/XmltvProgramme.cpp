@@ -17,8 +17,213 @@
 *****************************************************************************/
 
 #include "container/xmltv/XmltvProgramme.h"
+#include "epg/XmltvCrewModel.h"
 
-XmltvProgramme::XmltvProgramme(const QString &channel)
-    : _channel(channel) { }
+XmltvProgramme::XmltvProgramme(const QString &channel, QObject *parent)
+    : ListItem(parent),
+      _channel(channel)
+{
+    _crew = new XmltvCrewModel(this);
+}
 
-XmltvProgramme::~XmltvProgramme() { }
+XmltvProgramme::~XmltvProgramme()
+{
+    delete _crew;
+}
+
+QHash<int, QByteArray> XmltvProgramme::roleNames() const
+{
+    QHash<int, QByteArray> names;
+    names[DisplayRole] = "display";
+    names[DisplayIconRole] = "displayIcon";
+    names[TitleRole] = "title";
+    names[ChannelRole] = "channel";
+    names[StartRole] = "start";
+    names[StopRole] = "stop";
+    names[SubTitleRole] = "subtitle";
+    names[DescRole] = "desc";
+    names[DateRole] = "date";
+    names[CategoryRole] = "category";
+    names[LanguageRole] = "language";
+    names[OriginalLanguageRole] = "originallanguage";
+    names[LenghtRole] = "lenght";
+    names[LenghtUnitsRole] = "lenghtunits";
+    names[IconRole] = "icon";
+    names[IconSizeRole] = "iconsize";
+    return names;
+}
+
+QVariant XmltvProgramme::data(int role) const
+{
+    switch (role)
+    {
+    case DisplayRole:
+        return display();
+    case DisplayIconRole:
+        return displayIcon();
+    case TitleRole:
+        return title();
+    case ChannelRole:
+        return channelDisplayName();
+    case StartRole:
+        return start();
+    case StopRole:
+        return stop();
+    case SubTitleRole:
+        return subTitle();
+    case DescRole:
+        return desc();
+    case DateRole:
+        return date();
+    case CategoryRole:
+        return category();
+    case LanguageRole:
+        return language();
+    case OriginalLanguageRole:
+        return originalLanguage();
+    case LenghtRole:
+        return lenght();
+    case LenghtUnitsRole:
+        return lenghtUnits();
+    case IconRole:
+        return icon();
+    case IconSizeRole:
+        return iconSize();
+    default:
+        return QVariant();
+    }
+}
+
+QString XmltvProgramme::display() const
+{
+    return start().toString("hh:mm") + " - " + title();
+}
+
+QIcon XmltvProgramme::displayIcon() const
+{
+    return QIcon(":/icons/16x16/calendar.png");
+}
+
+void XmltvProgramme::setChannelDisplayName(const QString &s)
+{
+    if(_channelDisplayName != s) {
+        _channelDisplayName = s;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setTitle(const QString &s)
+{
+    if(_title != s) {
+        _title = s;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setStart(const QDateTime &d)
+{
+    if(_start != d) {
+        _start = d;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setStop(const QDateTime &d)
+{
+    if(_stop != d) {
+        _stop = d;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setSubTitle(const QString &s)
+{
+    if(_subTitle != s) {
+        _subTitle = s;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setDesc(const QString &s)
+{
+    if(_desc != s) {
+        _desc = s;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setDate(const QDateTime &d)
+{
+    if(_date != d) {
+        _date = d;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::addCategory(const QString &s)
+{
+    if(!_category.contains(s)) {
+        _category << s;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setLanguage(const QString &s)
+{
+    if(_language != s) {
+        _language = s;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setOriginalLanguage(const QString &s)
+{
+    if(_originalLanguage != s) {
+        _originalLanguage = s;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setLenght(const QString &s)
+{
+    if(_lenght != s) {
+        _lenght = s;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setLenghtUnits(const Tano::Xmltv::LenghtUnits &e)
+{
+    if(_lenghtUnits != e) {
+        _lenghtUnits = e;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setIcon(const QString &s)
+{
+    if(_icon != s) {
+        _icon = s;
+        emit dataChanged();
+    }
+}
+
+void XmltvProgramme::setIconSize(const QSize &s)
+{
+    if(_iconSize != s) {
+        _iconSize = s;
+        emit dataChanged();
+    }
+}
+
+
+void XmltvProgramme::addDirector(const QString &s) { }
+void XmltvProgramme::addActor(const QString &s) { }
+void XmltvProgramme::addWriter(const QString &s) { }
+void XmltvProgramme::addAdapter(const QString &s) { }
+void XmltvProgramme::addProducer(const QString &s) { }
+void XmltvProgramme::addComposer(const QString &s) { }
+void XmltvProgramme::addEditor(const QString &s) { }
+void XmltvProgramme::addPresenter(const QString &s) { }
+void XmltvProgramme::addCommentator(const QString &s) { }
+void XmltvProgramme::addGuest(const QString &s) { }

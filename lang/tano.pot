@@ -1231,6 +1231,10 @@ msgctxt "Recorder|"
 msgid "No timer - press button to stop."
 msgstr ""
 
+msgctxt "ScheduleListPage|"
+msgid "Search ..."
+msgstr ""
+
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr ""

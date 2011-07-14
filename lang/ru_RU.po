@@ -1460,6 +1460,10 @@ msgctxt "Recorder|"
 msgid "No timer - press button to stop."
 msgstr "Таймер не определен - для останова нажмите кнопку"
 
+msgctxt "ScheduleListPage|"
+msgid "Search ..."
+msgstr ""
+
 #, fuzzy
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"

@@ -46,6 +46,7 @@ TimersEdit::TimersEdit(PlaylistModel *playlist,
     ui->dockWidgetContents->setDisabled(true);
     _model = playlist;
     ui->playlistWidget->setModel(playlist);
+    ui->playlistWidget->refreshModel();
 
     createSettings();
     createConnections();

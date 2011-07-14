@@ -16,31 +16,27 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvProgramme.h"
-#include "epg/XmltvProgrammeModel.h"
+#include "epg/XmltvCommon.h"
+#include "epg/XmltvProgrammeFilterModel.h"
 
-XmltvChannel::XmltvChannel(const QString &id)
-    : _id(id)
+XmltvProgrammeFilterModel::XmltvProgrammeFilterModel(QObject *parent)
+    : QSortFilterProxyModel(parent) { }
+
+XmltvProgrammeFilterModel::~XmltvProgrammeFilterModel() { }
+
+void XmltvProgrammeFilterModel::setDate(const QDate &date)
 {
-    _programme = new XmltvProgrammeModel();
+    _date = date;
+    invalidateFilter();
 }
 
-XmltvChannel::~XmltvChannel()
+bool XmltvProgrammeFilterModel::filterAcceptsRow(int sourceRow,
+                                           const QModelIndex &sourceParent) const
 {
-    delete _programme;
-}
+    QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
-void XmltvChannel::addProgramme(XmltvProgramme *p)
-{
-    _programme->appendRow(p);
-}
+    bool language = (sourceModel()->data(index, XmltvProgramme::StartRole).toDateTime().date() == _date);
 
-void XmltvChannel::setDisplayName(const QString &s)
-{
-    _displayName = s;
-
-    for(int i = 0; i < _programme->rowCount(); i++) {
-        _programme->row(i)->setChannelDisplayName(s);
-    }
+    return language;
 }

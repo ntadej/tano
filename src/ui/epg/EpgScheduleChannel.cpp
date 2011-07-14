@@ -20,6 +20,9 @@
 
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvProgramme.h"
+#include "epg/XmltvCommon.h"
+#include "epg/XmltvProgrammeFilterModel.h"
+#include "epg/XmltvProgrammeModel.h"
 
 #include "EpgScheduleChannel.h"
 #include "ui_EpgScheduleChannel.h"
@@ -30,16 +33,17 @@ EpgScheduleChannel::EpgScheduleChannel(QWidget *parent)
 {
 	ui->setupUi(this);
 
-	connect(ui->day0, SIGNAL(itemClicked(XmltvProgramme*)), this, SIGNAL(itemClicked(XmltvProgramme*)));
-	connect(ui->day1, SIGNAL(itemClicked(XmltvProgramme*)), this, SIGNAL(itemClicked(XmltvProgramme*)));
-	connect(ui->day2, SIGNAL(itemClicked(XmltvProgramme*)), this, SIGNAL(itemClicked(XmltvProgramme*)));
-	connect(ui->day3, SIGNAL(itemClicked(XmltvProgramme*)), this, SIGNAL(itemClicked(XmltvProgramme*)));
-	connect(ui->day4, SIGNAL(itemClicked(XmltvProgramme*)), this, SIGNAL(itemClicked(XmltvProgramme*)));
+    _filterModel = new XmltvProgrammeFilterModel(this);
+    ui->view->setModel(_filterModel);
+
+    connect(ui->view, SIGNAL(clicked(QModelIndex)), this, SLOT(programmeClicked(QModelIndex)));
+    connect(ui->comboDate, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
 }
 
 EpgScheduleChannel::~EpgScheduleChannel()
 {
 	delete ui;
+    delete _filterModel;
 }
 
 void EpgScheduleChannel::changeEvent(QEvent *e)
@@ -54,36 +58,40 @@ void EpgScheduleChannel::changeEvent(QEvent *e)
 	}
 }
 
-void EpgScheduleChannel::setEpg(XmltvChannel *epg,
-								const Tano::Id &id)
+void EpgScheduleChannel::processFilters()
+{
+    _filterModel->setDate(QDate::fromString(ui->comboDate->currentText(), Tano::Xmltv::dateFormatDisplay()));
+}
+
+void EpgScheduleChannel::programmeClicked(const QModelIndex &index)
+{
+    emit itemClicked(_model->row(index.row()));
+}
+
+void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
+                                const Tano::Id &id)
 {
 	if(id != _id)
 		return;
 
-	QList<XmltvProgramme *> day[5];
-	for(int i = 0; i < epg->programme().size(); i++) {
-		for(int k = 0; k < 5; k++) {
-			if(epg->programme()[i]->start().date() == QDate::currentDate().addDays(k)) {
-				day[k] << epg->programme()[i];
-			}
-		}
-	}
+    if(epg->rowCount() == 0)
+        return;
 
-	ui->day0->setEpg(day[0]);
-	ui->day1->setEpg(day[1]);
-	ui->day2->setEpg(day[2]);
-	ui->day3->setEpg(day[3]);
-	ui->day4->setEpg(day[4]);
+    _model = epg;
+    _filterModel->setSourceModel(_model);
 
-	for(int k = 4; k >= 0; k--) {
-		ui->epgTabWidget->setTabText(k, QDate::currentDate().addDays(k).toString("d.M."));
+    QList<QDate> date;
+    for(int i = 0; i < _model->rowCount(); i++) {
+        if(!date.contains(_model->row(i)->start().date())) {
+            date << _model->row(i)->start().date();
+        }
+    }
 
-		if(day[k].isEmpty()) {
-			ui->epgTabWidget->removeTab(k);
-		}
-	}
+    for(int i = 0; i < date.size(); i++) {
+        ui->comboDate->addItem(date[i].toString(Tano::Xmltv::dateFormatDisplay()));
+    }
 
-	setPage(1);
+    setPage(1);
 }
 
 void EpgScheduleChannel::setPage(const int &id)

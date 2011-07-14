@@ -1553,6 +1553,10 @@ msgctxt "Recorder|"
 msgid "Recording to file:"
 msgstr "Snemam v datoteko:"
 
+msgctxt "ScheduleListPage|"
+msgid "Search ..."
+msgstr ""
+
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr "VLC-Qt Hrbtenica"

@@ -20,12 +20,18 @@
 
 QString Tano::Xmltv::dateFormat()
 {
-	QString format = "yyyyMMddHHmmss";
-	return format;
+    QString format = "yyyyMMddHHmmss";
+    return format;
+}
+
+QString Tano::Xmltv::dateFormatDisplay()
+{
+    QString format = "dd.MM.yyyy";
+    return format;
 }
 
 QRegExp Tano::Xmltv::dateRegExp()
 {
-	QRegExp exp = QRegExp(" .[0-9][0-9][0-9][0-9]");
-	return exp;
+    QRegExp exp = QRegExp(" .[0-9][0-9][0-9][0-9]");
+    return exp;
 }

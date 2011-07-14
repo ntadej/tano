@@ -16,31 +16,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvChannel.h"
-#include "container/xmltv/XmltvProgramme.h"
-#include "epg/XmltvProgrammeModel.h"
+#ifndef TANO_XMLTVCREWMODEL_H_
+#define TANO_XMLTVCREWMODEL_H_
 
-XmltvChannel::XmltvChannel(const QString &id)
-    : _id(id)
+#include "core/ListModel.h"
+
+class XmltvCrewMember;
+
+class XmltvCrewModel : public ListModel
 {
-    _programme = new XmltvProgrammeModel();
-}
+Q_OBJECT
+public:
+    XmltvCrewModel(QObject *parent = 0);
+    ~XmltvCrewModel();
 
-XmltvChannel::~XmltvChannel()
-{
-    delete _programme;
-}
+    XmltvCrewMember *find(const QString &id) const;
+    XmltvCrewMember *row(const int &row);
+    XmltvCrewMember *takeRow(const int &row);
+};
 
-void XmltvChannel::addProgramme(XmltvProgramme *p)
-{
-    _programme->appendRow(p);
-}
-
-void XmltvChannel::setDisplayName(const QString &s)
-{
-    _displayName = s;
-
-    for(int i = 0; i < _programme->rowCount(); i++) {
-        _programme->row(i)->setChannelDisplayName(s);
-    }
-}
+#endif // TANO_XMLTVCREWMODEL_H_

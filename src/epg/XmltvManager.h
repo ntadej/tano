@@ -28,6 +28,7 @@ class XmltvChannel;
 class XmltvHandler;
 class XmltvList;
 class XmltvProgramme;
+class XmltvProgrammeModel;
 
 class XmltvManager : public QObject
 {
@@ -47,7 +48,7 @@ public slots:
 signals:
 	void epgCurrent(const QString,
 					const QString);
-	void epgSchedule(XmltvChannel *,
+    void epgSchedule(XmltvProgrammeModel *,
 					 const Tano::Id);
 	void epgProgramme(XmltvProgramme *);
 

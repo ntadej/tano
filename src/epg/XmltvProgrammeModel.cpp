@@ -16,31 +16,31 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvProgramme.h"
 #include "epg/XmltvProgrammeModel.h"
 
-XmltvChannel::XmltvChannel(const QString &id)
-    : _id(id)
+XmltvProgrammeModel::XmltvProgrammeModel(QObject *parent)
+    : ListModel(new XmltvProgramme, parent)
 {
-    _programme = new XmltvProgrammeModel();
+
 }
 
-XmltvChannel::~XmltvChannel()
+XmltvProgrammeModel::~XmltvProgrammeModel()
 {
-    delete _programme;
+
 }
 
-void XmltvChannel::addProgramme(XmltvProgramme *p)
+XmltvProgramme *XmltvProgrammeModel::find(const QString &id) const
 {
-    _programme->appendRow(p);
+    return qobject_cast<XmltvProgramme *>(ListModel::find(id));
 }
 
-void XmltvChannel::setDisplayName(const QString &s)
+XmltvProgramme *XmltvProgrammeModel::row(const int &row)
 {
-    _displayName = s;
+    return qobject_cast<XmltvProgramme *>(ListModel::row(row));
+}
 
-    for(int i = 0; i < _programme->rowCount(); i++) {
-        _programme->row(i)->setChannelDisplayName(s);
-    }
+XmltvProgramme *XmltvProgrammeModel::takeRow(const int &row)
+{
+    return qobject_cast<XmltvProgramme *>(ListModel::takeRow(row));
 }

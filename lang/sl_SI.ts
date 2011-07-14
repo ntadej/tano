@@ -1567,6 +1567,13 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
 </context>
 <context>
+    <name>ScheduleListPage</name>
+    <message>
+        <source>Search ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>

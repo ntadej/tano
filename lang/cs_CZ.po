@@ -1527,6 +1527,10 @@ msgstr "Žádný časovač - stiskněte tlačítko pro zastavení."
 #~ msgid "Open directory"
 #~ msgstr "Otevřít adresář"
 
+msgctxt "ScheduleListPage|"
+msgid "Search ..."
+msgstr ""
+
 #, fuzzy
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
