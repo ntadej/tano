@@ -16,25 +16,42 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvCrewMember.h"
-#include "epg/XmltvCrewModel.h"
+#ifndef TANO_MOBILEXMLTVHANDLER_H_
+#define TANO_MOBILEXMLTVHANDLER_H_
 
-XmltvCrewModel::XmltvCrewModel(QObject *parent)
-    : ListModel(new XmltvCrewMember, parent) { }
+#include <QtCore/QObject>
+#include <QtCore/QStringList>
+#include <QtCore/QVariantList>
 
-XmltvCrewModel::~XmltvCrewModel() { }
+#include "core/Enums.h"
 
-XmltvCrewMember *XmltvCrewModel::find(const QString &id) const
+class Channel;
+class XmltvManager;
+class XmltvProgrammeFilterModel;
+class XmltvProgrammeModel;
+
+class MobileXmltvHandler : public QObject
 {
-    return qobject_cast<XmltvCrewMember *>(ListModel::find(id));
-}
+Q_OBJECT
+public:
+    MobileXmltvHandler(QObject *parent = 0);
+    ~MobileXmltvHandler();
 
-XmltvCrewMember *XmltvCrewModel::row(const int &row)
-{
-    return qobject_cast<XmltvCrewMember *>(ListModel::row(row));
-}
+    XmltvProgrammeFilterModel *model() { return _filterModel; }
+    Q_INVOKABLE QVariantList dates();
 
-XmltvCrewMember *XmltvCrewModel::takeRow(const int &row)
-{
-    return qobject_cast<XmltvCrewMember *>(ListModel::takeRow(row));
-}
+    Q_INVOKABLE void openXmltv(const QString &id);
+    Q_INVOKABLE void processDate(const QString &date);
+
+private slots:
+    void epgSchedule(XmltvProgrammeModel *model,
+                     const Tano::Id &id);
+
+private:
+    XmltvManager *_xmltv;
+    XmltvProgrammeFilterModel *_filterModel;
+
+    QStringList _dates;
+};
+
+#endif // TANO_MOBILEXMLTVHANDLER_H_

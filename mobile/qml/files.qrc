@@ -19,5 +19,6 @@
         <file>common/ToolBarLayoutPlaylist.qml</file>
         <file>data/HomeList.qml</file>
         <file>dialogs/FilterDialog.qml</file>
+        <file>pages/ScheduleListPage.qml</file>
     </qresource>
 </RCC>

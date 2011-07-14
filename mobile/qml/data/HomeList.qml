@@ -27,7 +27,7 @@ ListModel {
         subtitle: ""
     }
     ListElement {
-        page: "SchedulePage.qml"
+        page: "PlaylistPage.qml"
         title: "Schedule"
         subtitle: "Description"
     }

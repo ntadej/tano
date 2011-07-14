@@ -21,7 +21,10 @@
 #include "epg/XmltvProgrammeFilterModel.h"
 
 XmltvProgrammeFilterModel::XmltvProgrammeFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent) { }
+    : QSortFilterProxyModel(parent)
+{
+    _date = QDate::currentDate();
+}
 
 XmltvProgrammeFilterModel::~XmltvProgrammeFilterModel() { }
 

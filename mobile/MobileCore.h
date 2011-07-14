@@ -24,6 +24,7 @@
 
 class LocaleManager;
 class MobilePlaylistHandler;
+class MobileXmltvHandler;
 
 class MobileCore : public QObject
 {
@@ -35,6 +36,7 @@ public:
 private:
     LocaleManager *_locale;
     MobilePlaylistHandler *_playlist;
+    MobileXmltvHandler *_xmltv;
 
     QDeclarativeView *_window;
 };

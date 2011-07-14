@@ -27,10 +27,17 @@ cmake_minimum_required(VERSION 2.6)
 SET(Tano_Mobile_MOCs
     MobileCore.h
     MobilePlaylistHandler.h
+    MobileXmltvHandler.h
 
     ../src/container/Channel.h
+    ../src/container/xmltv/XmltvCrewMember.h
+    ../src/container/xmltv/XmltvProgramme.h
     ../src/core/ListItem.h
     ../src/core/ListModel.h
+    ../src/epg/XmltvCrewModel.h
+    ../src/epg/XmltvManager.h
+    ../src/epg/XmltvProgrammeFilterModel.h
+    ../src/epg/XmltvProgrammeModel.h
     ../src/playlist/PlaylistFilterModel.h
     ../src/playlist/PlaylistModel.h
 )
@@ -44,9 +51,14 @@ SET(Tano_Mobile_Srcs
     main.cpp
     MobileCore.cpp
     MobilePlaylistHandler.cpp
+    MobileXmltvHandler.cpp
 
     ../src/container/Channel.cpp
     ../src/container/CSVInfo.cpp
+    ../src/container/xmltv/XmltvChannel.cpp
+    ../src/container/xmltv/XmltvCrewMember.cpp
+    ../src/container/xmltv/XmltvList.cpp
+    ../src/container/xmltv/XmltvProgramme.cpp
 
     ../src/core/Common.cpp
     ../src/core/ConsoleOutput.cpp
@@ -57,10 +69,19 @@ SET(Tano_Mobile_Srcs
     ../src/core/Shortcuts.cpp
     ../src/core/Udpxy.cpp
 
+    ../src/epg/XmltvCommon.cpp
+    ../src/epg/XmltvCrewModel.cpp
+    ../src/epg/XmltvEnums.cpp
+    ../src/epg/XmltvManager.cpp
+    ../src/epg/XmltvProgrammeFilterModel.cpp
+    ../src/epg/XmltvProgrammeModel.cpp
+
     ../src/playlist/handlers/M3UHandler.cpp
     ../src/playlist/PlaylistFilterModel.cpp
     ../src/playlist/PlaylistModel.cpp
     ../src/playlist/PlaylistOpen.cpp
+
+    ../src/xml/XmltvHandler.cpp
 )
 
 # Define QML files

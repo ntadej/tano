@@ -28,11 +28,9 @@ import "../common"
 import "../js/core.js" as Tano
 
 Page {
-    id: labelsPage
+    id: schedulePage
     anchors.margins: UiConstants.DefaultMargin
     tools: ToolBarLayoutCommon {}
-
-    PlaylistPage { id: playlist; onChannel: setChannel(name) }
     
     Flickable {        
         contentWidth: childrenRect.width
@@ -42,13 +40,7 @@ Page {
         anchors.fill: parent
         Column {
             Label { id: l; text: "Schedule page" }
-            Button { id: buttonSelect; text: "Select channel"; onClicked: labelsPage.selectChannel(labelsPage)}
         }
-    }
-
-    function selectChannel() {
-        pageStack.push(playlist)
-
     }
 
     function setChannel(channel) {

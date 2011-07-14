@@ -23,8 +23,10 @@
 
 #include "MobileCore.h"
 #include "MobilePlaylistHandler.h"
+#include "MobileXmltvHandler.h"
 
 #include "core/LocaleManager.h"
+#include "epg/XmltvProgrammeFilterModel.h"
 #include "playlist/PlaylistFilterModel.h"
 
 MobileCore::MobileCore(QObject *parent)
@@ -33,11 +35,16 @@ MobileCore::MobileCore(QObject *parent)
     _locale = new LocaleManager();
 
     _playlist = new MobilePlaylistHandler(this);
-    PlaylistFilterModel *model =  _playlist->model();
+    PlaylistFilterModel *pm =  _playlist->model();
+
+    _xmltv = new MobileXmltvHandler(this);
+    XmltvProgrammeFilterModel *xm = _xmltv->model();
 
     _window = new QDeclarativeView();
-    _window->rootContext()->setContextProperty("channelsModel", model);
+    _window->rootContext()->setContextProperty("channelsModel", pm);
+    _window->rootContext()->setContextProperty("xmltvModel", xm);
     _window->rootContext()->setContextProperty("playlistManager", _playlist);
+    _window->rootContext()->setContextProperty("xmltvManager", _xmltv);
     _window->setSource(QUrl("qrc:/main.qml"));
 
     connect(_window->engine(), SIGNAL(quit()), qApp, SLOT(quit()));
@@ -54,4 +61,5 @@ MobileCore::~MobileCore()
     delete _locale;
     delete _playlist;
     delete _window;
+    delete _xmltv;
 }

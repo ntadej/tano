@@ -34,6 +34,7 @@ EpgScheduleChannel::EpgScheduleChannel(QWidget *parent)
 	ui->setupUi(this);
 
     _filterModel = new XmltvProgrammeFilterModel(this);
+    _filterModel->setDynamicSortFilter(true);
     ui->view->setModel(_filterModel);
 
     connect(ui->view, SIGNAL(clicked(QModelIndex)), this, SLOT(programmeClicked(QModelIndex)));

@@ -20,15 +20,9 @@
 #include "epg/XmltvProgrammeModel.h"
 
 XmltvProgrammeModel::XmltvProgrammeModel(QObject *parent)
-    : ListModel(new XmltvProgramme, parent)
-{
+    : ListModel(new XmltvProgramme, parent) { }
 
-}
-
-XmltvProgrammeModel::~XmltvProgrammeModel()
-{
-
-}
+XmltvProgrammeModel::~XmltvProgrammeModel() { }
 
 XmltvProgramme *XmltvProgrammeModel::find(const QString &id) const
 {

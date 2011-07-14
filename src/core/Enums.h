@@ -28,7 +28,8 @@ namespace Tano
     {
         Player,
         Editor,
-        Recorder
+        Daemon,
+        Mobile
     };
 
     // ID

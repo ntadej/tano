@@ -24,27 +24,28 @@ import QtQuick 1.0
 import com.meego 1.0
 
 import "../common"
-import "../dialogs"
 
 import "../js/core.js" as Tano
 
 Page {
-    id: playlistPage
+    id: scheduleListPage
     anchors.margins: UiConstants.DefaultMargin
-    tools: ToolBarLayoutPlaylist { }
+    tools: ToolBarLayoutCommon { }
 
-    function channel(id) {
-        Tano.addPage("ScheduleListPage.qml")
-        var page = pageStack.currentPage
-        page.setChannel(id)
+    function item(name) {
+        //Tano.addPage("SchedulePage.qml")
+        //var page = pageStack.currentPage
+        //page.setChannel(name)
     }
 
-    FilterDialog { id: filter }
+    function setChannel(epg) {
+        xmltvManager.openXmltv(epg)
+    }
 
     ListView {
         id: listView
-        anchors {left: parent.left; right: parent.right; top: searchBox.bottom; bottom: parent.bottom}
-        model: channelsModel
+        anchors {left: parent.left; right: parent.right; top: dateBox.bottom; bottom: parent.bottom}
+        model: xmltvModel
         pressDelay: 140
 
         delegate:  Item {
@@ -56,50 +57,48 @@ Page {
                 id: background
                 anchors.fill: parent
                 // Fill page porders
-                anchors.leftMargin: -playlistPage.anchors.leftMargin
-                anchors.rightMargin: -playlistPage.anchors.rightMargin
+                anchors.leftMargin: -scheduleListPage.anchors.leftMargin
+                anchors.rightMargin: -scheduleListPage.anchors.rightMargin
                 visible: mouseArea.pressed
                 source: "image://theme/meegotouch-list-background-pressed-center"
             }
 
             Image {
                 id: icon
-                source: "image://theme/icon-m-content-video"
+                source: "image://theme/icon-m-content-event"
                 anchors.left: parent.left;
                 anchors.verticalCenter: parent.verticalCenter
-                anchors.rightMargin: 32;
             }
 
             Label {
-                id: numberText
+                id: timeText
                 anchors.left: icon.right;
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.leftMargin: 16;
-                text: model.number + "."
+                text: Qt.formatDateTime(model.start, "HH:mm")
                 font: UiConstants.SubtitleFont
                 color: "#cc6633"
             }
 
             Row {
-                anchors { left: numberText.right; right: parent.right; top: parent.top; bottom: parent.bottom }
+                anchors { left: timeText.right; right: parent.right; top: parent.top; bottom: parent.bottom }
                 anchors.leftMargin: 10;
 
                  Label {
                      id: mainText
                      anchors.verticalCenter: parent.verticalCenter
-                     text: model.name
+                     text: model.title
                      font: UiConstants.TitleFont
                      wrapMode: Text.WordWrap
                      width: parent.width
                  }
             }
 
-
             MouseArea {
                 id: mouseArea
                 anchors.fill: background
                 onClicked: {
-                    playlistPage.channel(epg)
+                    //scheduleListPage.channel(url)
                 }
             }
         }
@@ -109,19 +108,19 @@ Page {
     }
 
     Rectangle {
-        id: searchBox
+        id: dateBox
         radius: 10
         color: "lightgrey"
         anchors {left: parent.left; right: parent.right; top: parent.top}
-        anchors.leftMargin: -playlistPage.anchors.leftMargin
-        anchors.rightMargin: -playlistPage.anchors.rightMargin
-        anchors.topMargin: -playlistPage.anchors.topMargin
-        anchors.bottomMargin: -playlistPage.anchors.bottomMargin
+        anchors.leftMargin: -scheduleListPage.anchors.leftMargin
+        anchors.rightMargin: -scheduleListPage.anchors.rightMargin
+        anchors.topMargin: -scheduleListPage.anchors.topMargin
+        anchors.bottomMargin: -scheduleListPage.anchors.bottomMargin
         height: 72
 
         visible: true
 
-        TextField {
+        /*TextField {
             id: search
             height: 40
             anchors.fill: parent
@@ -144,7 +143,7 @@ Page {
                 }
             }
 
-            onTextChanged: playlistManager.processSearch(search.text)
-        }
+            //onTextChanged: playlistManager.processSearch(search.text)
+        }ž*/
     }
 }
