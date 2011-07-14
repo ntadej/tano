@@ -29,7 +29,7 @@ SET(Tano_Mobile_MOCs
     MobilePlaylistHandler.h
     MobileXmltvHandler.h
 
-    ../src/container/Channel.h
+    ../src/container/core/Channel.h
     ../src/container/xmltv/XmltvCrewMember.h
     ../src/container/xmltv/XmltvProgramme.h
     ../src/core/ListItem.h
@@ -53,8 +53,8 @@ SET(Tano_Mobile_Srcs
     MobilePlaylistHandler.cpp
     MobileXmltvHandler.cpp
 
-    ../src/container/Channel.cpp
-    ../src/container/CSVInfo.cpp
+    ../src/container/core/Channel.cpp
+    ../src/container/playlist/CSVInfo.cpp
     ../src/container/xmltv/XmltvChannel.cpp
     ../src/container/xmltv/XmltvCrewMember.cpp
     ../src/container/xmltv/XmltvList.cpp

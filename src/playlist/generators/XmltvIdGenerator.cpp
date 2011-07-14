@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "playlist/PlaylistModel.h"
 #include "playlist/generators/XmltvIdGenerator.h"
 

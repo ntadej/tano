@@ -62,7 +62,7 @@ SET(Tano_UIs
 
 # Define the MOC source files used by Tano
 SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
-    container/Channel.h
+    container/core/Channel.h
     container/xmltv/XmltvCrewMember.h
     container/xmltv/XmltvProgramme.h
     core/ChannelSelect.h
@@ -134,12 +134,12 @@ SET(Tano_Resrcs
 
 # Define the C++ source files used by Tano
 SET(Tano_Container_Srcs
-    container/Channel.cpp
-    container/CSVInfo.cpp
-    container/File.cpp
-    container/PlaylistFile.cpp
-    container/UpdateInfo.cpp
-    container/Timer.cpp
+    container/core/Channel.cpp
+    container/core/File.cpp
+    container/core/UpdateInfo.cpp
+    container/core/Timer.cpp
+    container/playlist/CSVInfo.cpp
+    container/playlist/PlaylistInfo.cpp
     container/xmltv/XmltvChannel.cpp
     container/xmltv/XmltvCrewMember.cpp
     container/xmltv/XmltvList.cpp

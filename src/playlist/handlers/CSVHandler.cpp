@@ -20,7 +20,7 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "playlist/handlers/CSVHandler.h"
 
 CSVHandler::CSVHandler() { }

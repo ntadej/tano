@@ -19,7 +19,7 @@
 #include "PlaylistDisplayWidget.h"
 #include "ui_PlaylistDisplayWidget.h"
 
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "playlist/PlaylistFilterModel.h"
 #include "playlist/PlaylistModel.h"
 /*#include "playlist/CSVGenerator.h"

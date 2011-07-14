@@ -19,7 +19,7 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QMessageBox>
 
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "core/DaemonManager.h"
 #include "core/Enums.h"
 #include "core/Settings.h"

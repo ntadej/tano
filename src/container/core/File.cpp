@@ -16,13 +16,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/CSVInfo.h"
+#include "container/core/File.h"
 
-CSVInfo::CSVInfo(const QString &separator,
-                 const bool &header,
-                 const QList<int> &columns)
-    : _separator(separator),
-      _header(header),
-      _columns(columns) { }
+File::File(const QString &path,
+           const int &type)
+    : _path(path),
+      _type(type) { }
 
-CSVInfo::~CSVInfo() { }
+File::~File() { }

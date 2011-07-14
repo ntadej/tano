@@ -16,9 +16,13 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/PlaylistFile.h"
+#include "container/playlist/CSVInfo.h"
 
-PlaylistFile::PlaylistFile(const QString &country)
-    : _country(country) { }
+CSVInfo::CSVInfo(const QString &separator,
+                 const bool &header,
+                 const QList<int> &columns)
+    : _separator(separator),
+      _header(header),
+      _columns(columns) { }
 
-PlaylistFile::~PlaylistFile() { }
+CSVInfo::~CSVInfo() { }

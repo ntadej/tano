@@ -21,7 +21,7 @@
 #include <QtCore/QTextStream>
 #include <QtGui/QMessageBox>
 
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "playlist/PlaylistModel.h"
 #include "TvheadendGenerator.h"
 

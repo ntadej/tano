@@ -16,11 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/File.h"
+#include "container/playlist/PlaylistInfo.h"
 
-File::File(const QString &path,
-           const int &type)
-    : _path(path),
-      _type(type) { }
+PlaylistInfo::PlaylistInfo(const QString &country)
+    : _country(country) { }
 
-File::~File() { }
+PlaylistInfo::~PlaylistInfo() { }

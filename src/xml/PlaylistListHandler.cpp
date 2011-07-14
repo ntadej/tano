@@ -23,7 +23,7 @@
 #include <QtCore/QLocale>
 
 #include "PlaylistListHandler.h"
-#include "container/PlaylistFile.h"
+#include "container/playlist/PlaylistInfo.h"
 
 PlaylistListHandler::PlaylistListHandler()
 	: _metTanoTag(false) { }
@@ -50,7 +50,7 @@ bool PlaylistListHandler::startElement(const QString & /* namespaceURI */,
 			_playlistCountries << country.countryToString(country.country());
 		}
 	} else if(qName == "playlist") {
-		PlaylistFile p(_playlistCountries.last());
+        PlaylistInfo p(_playlistCountries.last());
 		_playlistList << p;
 	}
 

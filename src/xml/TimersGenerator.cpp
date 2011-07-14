@@ -24,7 +24,7 @@
 #include <QtCore/QTime>
 
 #include "TimersGenerator.h"
-#include "container/Timer.h"
+#include "container/core/Timer.h"
 
 TimersGenerator::TimersGenerator(QTreeWidget *treeWidget,
 								 QMap<QTreeWidgetItem *, Timer *> map)

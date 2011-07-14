@@ -19,7 +19,7 @@
 #include <vlc-qt/Instance.h>
 #include <vlc-qt/MediaPlayer.h>
 
-#include "container/Timer.h"
+#include "container/core/Timer.h"
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "daemon/recorder/RecorderCore.h"

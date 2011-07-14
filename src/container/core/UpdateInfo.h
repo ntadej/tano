@@ -27,15 +27,15 @@ public:
     UpdateInfo(const QString &name = 0);
     ~UpdateInfo();
 
-    QString name() const { return _name; }
+    inline QString name() const { return _name; }
     void setName(const QString &name) { _name = name; }
-    QString version() const { return _version; }
+    inline QString version() const { return _version; }
     void setVersion(const QString &version) { _version = version; }
-    QString date() const { return _date; }
+    inline QString date() const { return _date; }
     void setDate(const QString &date) { _date = date; }
-    QString description() const { return _description; }
+    inline QString description() const { return _description; }
     void setDescription(const QString &description) { _description = description; }
-    bool development() const { return _development;}
+    inline bool development() const { return _development;}
     void setDevelopment(const bool &development) { _development = development; }
 
 private:

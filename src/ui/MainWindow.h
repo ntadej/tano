@@ -29,7 +29,7 @@
 #include <vlc-qt/MediaPlayer.h>
 #include <vlc-qt/VideoControl.h>
 
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "core/ChannelSelect.h"
 #include "core/LocaleManager.h"
 #include "core/Shortcuts.h"

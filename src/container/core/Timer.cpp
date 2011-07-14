@@ -16,28 +16,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTFILE_H_
-#define TANO_PLAYLISTFILE_H_
+#include "container/core/Timer.h"
 
-#include <QtCore/QString>
-
-class PlaylistFile
+Timer::Timer(const QString &name,
+             const QString &channel,
+             const QString &playlist,
+             const int &num,
+             const QString &url)
+    : _name(name),
+    _channel(channel),
+    _playlist(playlist),
+    _num(num),
+    _url(url)
 {
-public:
-    PlaylistFile(const QString &country = 0);
-    ~PlaylistFile();
+    _startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
+    _endTime = _startTime.addSecs(3600);
+    _disabled = false;
+    _recording = false;
+}
 
-    QString country() const { return _country; }
-    void setCountry(const QString &s) { _country = s; }
-    QString path() const { return _path; }
-    void setPath(const QString &s) { _path = s; }
-    QString title() const { return _title; }
-    void setTitle(const QString &s) { _title = s; }
-
-private:
-    QString _country;
-    QString _path;
-    QString _title;
-};
-
-#endif // TANO_PLAYLISTFILE_H_
+Timer::~Timer() { }

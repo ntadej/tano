@@ -20,7 +20,7 @@
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
-#include "container/PlaylistFile.h"
+#include "container/playlist/PlaylistInfo.h"
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "xml/PlaylistListHandler.h"

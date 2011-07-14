@@ -23,9 +23,9 @@
 #include <QtGui/QMessageBox>
 
 #include "Config.h"
-#include "container/Channel.h"
-#include "container/CSVInfo.h"
-#include "container/File.h"
+#include "container/core/Channel.h"
+#include "container/core/File.h"
+#include "container/playlist/CSVInfo.h"
 #include "core/Common.h"
 #include "core/ConsoleOutput.h"
 #include "core/Enums.h"

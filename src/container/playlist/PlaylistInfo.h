@@ -16,9 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/UpdateInfo.h"
+#ifndef TANO_PLAYLISTFILE_H_
+#define TANO_PLAYLISTFILE_H_
 
-UpdateInfo::UpdateInfo(const QString &name)
-    : _name(name) { }
+#include <QtCore/QString>
 
-UpdateInfo::~UpdateInfo() { }
+class PlaylistInfo
+{
+public:
+    PlaylistInfo(const QString &country = 0);
+    ~PlaylistInfo();
+
+    inline QString country() const { return _country; }
+    void setCountry(const QString &s) { _country = s; }
+    inline QString path() const { return _path; }
+    void setPath(const QString &s) { _path = s; }
+    inline QString title() const { return _title; }
+    void setTitle(const QString &s) { _title = s; }
+
+private:
+    QString _country;
+    QString _path;
+    QString _title;
+};
+
+#endif // TANO_PLAYLISTFILE_H_

@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 
 Channel::Channel(const QString &name,
                  const int &number,

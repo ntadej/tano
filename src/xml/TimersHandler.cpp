@@ -23,7 +23,7 @@
 #include <QtGui/QMessageBox>
 
 #include "TimersHandler.h"
-#include "container/Timer.h"
+#include "container/core/Timer.h"
 
 TimersHandler::TimersHandler(QTreeWidget *treeWidget)
 	: _treeWidget(treeWidget),

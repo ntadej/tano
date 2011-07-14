@@ -19,7 +19,7 @@
 #ifndef HARMATTAN
     #include "Config.h"
 #endif
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "playlist/PlaylistOpen.h"
 #if !MOBILE
     #include "playlist/PlaylistSave.h"

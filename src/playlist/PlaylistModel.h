@@ -21,7 +21,7 @@
 
 #include <QtCore/QStringList>
 
-#include "container/CSVInfo.h"
+#include "container/playlist/CSVInfo.h"
 #include "core/Enums.h"
 #include "core/ListModel.h"
 

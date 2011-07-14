@@ -25,7 +25,7 @@
 
 #include <QtXml/QXmlDefaultHandler>
 
-class PlaylistFile;
+class PlaylistInfo;
 
 class PlaylistListHandler : public QXmlDefaultHandler
 {
@@ -44,7 +44,7 @@ public:
 	QString errorString() const { return _errorStr; }
 
 	QStringList playlistCountries() const { return _playlistCountries; }
-	QList<PlaylistFile> playlistList() const { return _playlistList; }
+    QList<PlaylistInfo> playlistList() const { return _playlistList; }
 
 private:
 	QString _currentText;
@@ -52,7 +52,7 @@ private:
 	bool _metTanoTag;
 
 	QStringList _playlistCountries;
-	QList<PlaylistFile> _playlistList;
+    QList<PlaylistInfo> _playlistList;
 };
 
 #endif // TANO_WEBPLAYLISTHANDLER_H_

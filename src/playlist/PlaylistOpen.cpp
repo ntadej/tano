@@ -18,7 +18,7 @@
 
 #include "Config.h"
 #include "PlaylistOpen.h"
-#include "container/CSVInfo.h"
+#include "container/playlist/CSVInfo.h"
 #include "playlist/handlers/M3UHandler.h"
 #if !MOBILE
     #include "playlist/handlers/CSVHandler.h"

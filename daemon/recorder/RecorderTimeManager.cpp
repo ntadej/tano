@@ -19,7 +19,7 @@
 #include <QtCore/QDebug>
 #include <QtCore/QFileInfo>
 
-#include "container/Timer.h"
+#include "container/core/Timer.h"
 #include "core/Settings.h"
 #include "daemon/recorder/RecorderTimeManager.h"
 #include "xml/TimersHandler.h"

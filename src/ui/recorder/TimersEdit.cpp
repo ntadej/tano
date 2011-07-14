@@ -26,8 +26,8 @@
 #include "TimersEdit.h"
 #include "ui_TimersEdit.h"
 
-#include "container/Channel.h"
-#include "container/Timer.h"
+#include "container/core/Channel.h"
+#include "container/core/Timer.h"
 #include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "xml/TimersGenerator.h"

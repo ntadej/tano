@@ -19,7 +19,7 @@
 #include "EpgScheduleFull.h"
 #include "ui_EpgScheduleFull.h"
 
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvProgramme.h"
 #include "playlist/PlaylistModel.h"

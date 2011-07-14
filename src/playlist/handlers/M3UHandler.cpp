@@ -21,7 +21,7 @@
 #include <QtCore/QTextStream>
 
 #include "M3UHandler.h"
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 
 M3UHandler::M3UHandler()
 {

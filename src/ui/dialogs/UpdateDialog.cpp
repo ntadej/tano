@@ -18,7 +18,7 @@
 
 #include <QtGui/QDialogButtonBox>
 
-#include "container/UpdateInfo.h"
+#include "container/core/UpdateInfo.h"
 #include "core/Common.h"
 #include "core/UpdateManager.h"
 

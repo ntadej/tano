@@ -21,7 +21,7 @@
 *****************************************************************************/
 
 #include "UpdateHandler.h"
-#include "container/UpdateInfo.h"
+#include "container/core/UpdateInfo.h"
 
 UpdateHandler::UpdateHandler()
 	: _metTanoTag(false) { }

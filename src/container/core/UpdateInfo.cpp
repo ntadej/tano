@@ -16,23 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/Timer.h"
+#include "container/core/UpdateInfo.h"
 
-Timer::Timer(const QString &name,
-             const QString &channel,
-             const QString &playlist,
-             const int &num,
-             const QString &url)
-    : _name(name),
-    _channel(channel),
-    _playlist(playlist),
-    _num(num),
-    _url(url)
-{
-    _startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
-    _endTime = _startTime.addSecs(3600);
-    _disabled = false;
-    _recording = false;
-}
+UpdateInfo::UpdateInfo(const QString &name)
+    : _name(name) { }
 
-Timer::~Timer() { }
+UpdateInfo::~UpdateInfo() { }

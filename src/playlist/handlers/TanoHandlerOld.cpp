@@ -22,7 +22,7 @@
 
 #include <QtCore/QDebug>
 
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "core/ConsoleOutput.h"
 #include "TanoHandlerOld.h"
 

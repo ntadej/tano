@@ -38,7 +38,7 @@ SET(Tano_Daemon_Resrcs
 
 # Define the C++ source files used by Tano Daemon
 SET(Tano_Daemon_Core_Srcs
-    ../src/container/Timer.cpp
+    ../src/container/core/Timer.cpp
 
     ../src/core/Common.cpp
     ../src/core/ConsoleOutput.cpp

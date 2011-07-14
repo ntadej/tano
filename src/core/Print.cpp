@@ -23,7 +23,7 @@
 #include <QtGui/QTextTable>
 
 #include "Print.h"
-#include "container/Channel.h"
+#include "container/core/Channel.h"
 #include "playlist/PlaylistModel.h"
 
 Print::Print(QWidget *parent)

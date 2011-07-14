@@ -23,7 +23,7 @@
 #include <QtCore/QTextCodec>
 #include <QtNetwork/QHttp>
 
-#include "container/UpdateInfo.h"
+#include "container/core/UpdateInfo.h"
 
 class UpdateHandler;
 

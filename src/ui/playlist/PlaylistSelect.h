@@ -27,7 +27,7 @@ namespace Ui {
 	class PlaylistSelect;
 }
 
-class PlaylistFile;
+class PlaylistInfo;
 
 class PlaylistSelect : public QWidget
 {
@@ -56,7 +56,7 @@ private:
 	QString _playlist;
 
 	QStringList _playlistCountries;
-	QList<PlaylistFile> _playlistList;
+    QList<PlaylistInfo> _playlistList;
 };
 
 #endif // TANO_PLAYLISTSELECT_H_

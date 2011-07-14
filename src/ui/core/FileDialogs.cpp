@@ -20,7 +20,7 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QInputDialog>
 
-#include "container/File.h"
+#include "container/core/File.h"
 #include "FileDialogs.h"
 
 QString FileDialogs::filterByType(const Tano::FileType &type)
