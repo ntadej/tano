@@ -66,7 +66,7 @@ void EpgScheduleChannel::processFilters()
 
 void EpgScheduleChannel::programmeClicked(const QModelIndex &index)
 {
-    emit itemClicked(_model->row(index.row()));
+    emit itemClicked(_model->row(_filterModel->mapToSource(index).row()));
 }
 
 void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
@@ -83,11 +83,12 @@ void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
 
     QList<QDate> date;
     for(int i = 0; i < _model->rowCount(); i++) {
-        if(!date.contains(_model->row(i)->start().date())) {
+        if(!date.contains(_model->row(i)->start().date()) && _model->row(i)->start().date() >= QDate::currentDate()) {
             date << _model->row(i)->start().date();
         }
     }
 
+    ui->comboDate->clear();
     for(int i = 0; i < date.size(); i++) {
         ui->comboDate->addItem(date[i].toString(Tano::Xmltv::dateFormatDisplay()));
     }

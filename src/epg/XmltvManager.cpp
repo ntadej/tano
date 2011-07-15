@@ -46,6 +46,9 @@ XmltvManager::~XmltvManager()
 
 void XmltvManager::current()
 {
+    if(_xmltv->channel(_currentXmltvId)->programme()->rowCount() < 2)
+        return;
+
     for(int i = 1; i < _xmltv->channel(_currentXmltvId)->programme()->rowCount(); i++) {
         if(QDateTime::currentDateTime() < _xmltv->channel(_currentXmltvId)->programme()->row(i)->start()) {
             emit epgCurrent(processCurrentString(_xmltv->channel(_currentXmltvId)->programme()->row(i-1)),
