@@ -52,6 +52,7 @@ private:
     XmltvProgrammeFilterModel *_filterModel;
 
     QStringList _dates;
+    QMap<QString, QDate> _dateMap;
 };
 
 #endif // TANO_MOBILEXMLTVHANDLER_H_

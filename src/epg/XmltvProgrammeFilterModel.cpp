@@ -17,7 +17,6 @@
 *****************************************************************************/
 
 #include "container/xmltv/XmltvProgramme.h"
-#include "epg/XmltvCommon.h"
 #include "epg/XmltvProgrammeFilterModel.h"
 
 XmltvProgrammeFilterModel::XmltvProgrammeFilterModel(QObject *parent)

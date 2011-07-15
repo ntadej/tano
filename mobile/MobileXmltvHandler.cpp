@@ -68,9 +68,11 @@ void MobileXmltvHandler::epgSchedule(XmltvProgrammeModel *model,
     _filterModel->setDate(model->row(0)->start().date());
 
     _dates.clear();
+    _dateMap.clear();
     for(int i = 0; i < model->rowCount(); i++) {
-        if(!_dates.contains(model->row(i)->start().date().toString(Tano::Xmltv::dateFormatDisplay()))) {
-            _dates << model->row(i)->start().date().toString(Tano::Xmltv::dateFormatDisplay());
+        if(!_dates.contains(model->row(i)->start().date().toString(Tano::Xmltv::dateFormatMobile()))) {
+            _dates << model->row(i)->start().date().toString(Tano::Xmltv::dateFormatMobile());
+            _dateMap.insert(model->row(i)->start().date().toString(Tano::Xmltv::dateFormatMobile()), model->row(i)->start().date());
         }
     }
 }
@@ -82,5 +84,5 @@ void MobileXmltvHandler::openXmltv(const QString &id)
 
 void MobileXmltvHandler::processDate(const QString &date)
 {
-    _filterModel->setDate(QDate::fromString(date, Tano::Xmltv::dateFormatDisplay()));
+    _filterModel->setDate(_dateMap[date]);
 }

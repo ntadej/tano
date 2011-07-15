@@ -28,6 +28,7 @@ namespace Tano
     {
         QString dateFormat();
         QString dateFormatDisplay();
+        QString dateFormatMobile();
         QRegExp dateRegExp();
     }
 }

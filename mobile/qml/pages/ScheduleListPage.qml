@@ -39,7 +39,16 @@ Page {
     }
 
     function setChannel(epg) {
+        for (var i = 0; i < buttonsDate.children.length; i++) {
+            buttonsDate.children[i].destroy()
+        }
+
         xmltvManager.openXmltv(epg)
+
+        var dates = xmltvManager.dates()
+        for (var j = 0; j < dates.length; j++) {
+            Qt.createQmlObject("import com.meego 1.0; Button { text: \"" + dates[j] + "\"; checkable: true }", buttonsDate);
+        }
     }
 
     ListView {
@@ -98,7 +107,7 @@ Page {
                 id: mouseArea
                 anchors.fill: background
                 onClicked: {
-                    //scheduleListPage.channel(url)
+                    scheduleListPage.item(start)
                 }
             }
         }
@@ -116,34 +125,17 @@ Page {
         anchors.rightMargin: -scheduleListPage.anchors.rightMargin
         anchors.topMargin: -scheduleListPage.anchors.topMargin
         anchors.bottomMargin: -scheduleListPage.anchors.bottomMargin
-        height: 72
+        height: 50 + 2*16
 
         visible: true
 
-        /*TextField {
-            id: search
-            height: 40
+        ButtonRow {
+            id: buttonsDate
+
             anchors.fill: parent
             anchors.margins: UiConstants.DefaultMargin
 
-            platformSipAttributes: SipAttributes { actionKeyHighlighted: true }
-
-            placeholderText: qsTr("Search ...")
-            platformStyle: TextFieldStyle { paddingRight: clearButton.width }
-            Image {
-                id: clearButton
-                anchors.right: parent.right
-                anchors.verticalCenter: parent.verticalCenter
-                source: "image://theme/icon-m-input-clear"
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        search.text = "";
-                    }
-                }
-            }
-
-            //onTextChanged: playlistManager.processSearch(search.text)
-        }ž*/
+            onCheckedButtonChanged: xmltvManager.processDate(buttonsDate.checkedButton.text)
+        }
     }
 }

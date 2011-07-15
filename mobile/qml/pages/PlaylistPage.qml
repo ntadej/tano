@@ -117,7 +117,7 @@ Page {
         anchors.rightMargin: -playlistPage.anchors.rightMargin
         anchors.topMargin: -playlistPage.anchors.topMargin
         anchors.bottomMargin: -playlistPage.anchors.bottomMargin
-        height: 72
+        height: search.height + 2*16
 
         visible: true
 
