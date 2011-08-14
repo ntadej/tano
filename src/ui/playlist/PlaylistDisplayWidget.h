@@ -16,13 +16,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTWIDGET_H_
-#define TANO_PLAYLISTWIDGET_H_
+#ifndef TANO_PLAYLISTDISPLAYWIDGET_H_
+#define TANO_PLAYLISTDISPLAYWIDGET_H_
 
 #include <QtCore/QModelIndex>
 #include <QtGui/QWidget>
-
-#include "ui/core/FileDialogs.h"
 
 class Channel;
 class PlaylistFilterModel;
@@ -63,7 +61,6 @@ private:
     Channel *_current;
     PlaylistModel *_model;
     PlaylistFilterModel *_filterModel;
-    QString _fileName;
 };
 
-#endif // TANO_PLAYLISTWIDGET_H_
+#endif // TANO_PLAYLISTDISPLAYWIDGET_H_

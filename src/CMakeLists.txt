@@ -45,6 +45,7 @@ SET(Tano_UIs
     ui/playlist/PlaylistImportWeb.ui
     ui/playlist/PlaylistSelect.ui
     ui/recorder/Recorder.ui
+    ui/recorder/TimersDisplayWidget.ui
     ui/recorder/TimersEdit.ui
     ui/settings/SettingsBackend.ui
     ui/settings/SettingsEdit.ui
@@ -63,6 +64,7 @@ SET(Tano_UIs
 # Define the MOC source files used by Tano
 SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
     container/core/Channel.h
+    container/core/Timer.h
     container/xmltv/XmltvCrewMember.h
     container/xmltv/XmltvProgramme.h
     core/ChannelSelect.h
@@ -78,6 +80,9 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     epg/XmltvProgrammeModel.h
     playlist/PlaylistFilterModel.h
     playlist/PlaylistModel.h
+    recorder/RecorderController.h
+    recorder/TimersFilterModel.h
+    recorder/TimersModel.h
     ui/MainWindow.h
     ui/core/BrowseWidget.h
     ui/core/CurrentTimeWidget.h
@@ -108,7 +113,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/playlist/PlaylistImportWeb.h
     ui/playlist/PlaylistSelect.h
     ui/recorder/Recorder.h
-    ui/recorder/RecorderController.h
+    ui/recorder/TimersDisplayWidget.h
     ui/recorder/TimersEdit.h
     ui/settings/SettingsBackend.h
     ui/settings/SettingsEdit.h
@@ -186,6 +191,13 @@ SET(Tano_Playlist_Srcs
     playlist/handlers/M3UHandler.cpp
     playlist/handlers/TanoHandlerOld.cpp
 )
+SET(Tano_Recorder_Srcs
+    recorder/RecorderController.cpp
+    recorder/TimersGenerator.cpp
+    recorder/TimersHandler.cpp
+    recorder/TimersFilterModel.cpp
+    recorder/TimersModel.cpp
+)
 SET(Tano_UI_Srcs
     ui/MainWindow.cpp
     ui/core/BrowseWidget.cpp
@@ -218,7 +230,7 @@ SET(Tano_UI_Srcs
     ui/playlist/PlaylistImportWeb.cpp
     ui/playlist/PlaylistSelect.cpp
     ui/recorder/Recorder.cpp
-    ui/recorder/RecorderController.cpp
+    ui/recorder/TimersDisplayWidget.cpp
     ui/recorder/TimersEdit.cpp
     ui/settings/SettingsBackend.cpp
     ui/settings/SettingsEdit.cpp
@@ -236,8 +248,6 @@ SET(Tano_UI_Srcs
 )
 SET(Tano_XML_Srcs
     xml/PlaylistListHandler.cpp
-    xml/TimersGenerator.cpp
-    xml/TimersHandler.cpp
     xml/UpdateHandler.cpp
     xml/XmltvHandler.cpp
 )
@@ -249,6 +259,7 @@ SET(Tano_Srcs
     ${Tano_Core_Srcs}
     ${Tano_Epg_Srcs}
     ${Tano_Playlist_Srcs}
+    ${Tano_Recorder_Srcs}
     ${Tano_UI_Srcs}
     ${Tano_XML_Srcs}
 

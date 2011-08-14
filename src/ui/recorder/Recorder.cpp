@@ -25,8 +25,8 @@
 #include "core/Settings.h"
 #include "core/Udpxy.h"
 #include "playlist/PlaylistModel.h"
+#include "recorder/RecorderController.h"
 #include "ui/core/TrayIcon.h"
-#include "ui/recorder/RecorderController.h"
 #include "ui/recorder/TimersEdit.h"
 
 #include "Recorder.h"

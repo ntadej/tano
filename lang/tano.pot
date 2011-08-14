@@ -1004,10 +1004,6 @@ msgctxt "QObject|"
 msgid "Unknown title"
 msgstr ""
 
-msgctxt "QObject|"
-msgid "Active"
-msgstr ""
-
 #, qt-format
 msgctxt "QObject|"
 msgid ""
@@ -1665,12 +1661,16 @@ msgctxt "TeletextWidget|"
 msgid "Teletext Transparency"
 msgstr ""
 
-msgctxt "TimersEdit|"
-msgid "Timers"
+msgctxt "TimersDisplayWidget|"
+msgid "Clear"
+msgstr ""
+
+msgctxt "TimersDisplayWidget|"
+msgid "Search:"
 msgstr ""
 
 msgctxt "TimersEdit|"
-msgid "Timer"
+msgid "Timers"
 msgstr ""
 
 msgctxt "TimersEdit|"
@@ -1752,10 +1752,6 @@ msgid "Tano"
 msgstr ""
 
 msgctxt "TimersEdit|"
-msgid "Please enter a name and select a channel from the list."
-msgstr ""
-
-msgctxt "TimersEdit|"
 msgid "Timer with this name already exists. Please select another name."
 msgstr ""
 
@@ -1771,14 +1767,6 @@ msgctxt "TimersEdit|"
 msgid ""
 "Cannot write file %1:\n"
 "%2."
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid "Disabled or expired"
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid "Active"
 msgstr ""
 
 msgctxt "TimersEdit|"
@@ -1804,15 +1792,11 @@ msgid ""
 msgstr ""
 
 msgctxt "TimersEdit|"
-msgid "Type"
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid "Status"
-msgstr ""
-
-msgctxt "TimersEdit|"
 msgid "hh:mm:ss"
+msgstr ""
+
+msgctxt "TimersEdit|"
+msgid "Please enter a name and select a channel from the list."
 msgstr ""
 
 msgctxt "TrayIcon|"

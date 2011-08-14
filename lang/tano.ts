@@ -1056,10 +1056,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation type="unfinished"></translation>
@@ -1744,13 +1740,20 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>TimersEdit</name>
+    <name>TimersDisplayWidget</name>
     <message>
-        <source>Timers</source>
+        <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Timer</source>
+        <source>Search:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TimersEdit</name>
+    <message>
+        <source>Timers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1831,10 +1834,6 @@ You changes will not be applied.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please enter a name and select a channel from the list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1846,14 +1845,6 @@ You changes will not be applied.</source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disabled or expired</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Active</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1877,15 +1868,11 @@ You changes will not be applied.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>hh:mm:ss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enter a name and select a channel from the list.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

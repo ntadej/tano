@@ -33,26 +33,7 @@
       <widget class="QWidget" name="pageMain">
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QTreeWidget" name="timersWidget">
-          <property name="columnCount">
-           <number>3</number>
-          </property>
-          <column>
-           <property name="text">
-            <string>Timer</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Type</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Status</string>
-           </property>
-          </column>
-         </widget>
+         <widget class="TimersDisplayWidget" name="timersWidget" native="true"/>
         </item>
        </layout>
       </widget>
@@ -389,6 +370,12 @@
    <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
    <header>ui/playlist/PlaylistDisplayWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TimersDisplayWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/recorder/TimersDisplayWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

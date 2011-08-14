@@ -16,37 +16,21 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMEMANAGER_H_
-#define TANO_RECORDERTIMEMANAGER_H_
+#include "container/core/Timer.h"
 
-#include <QtCore/QList>
-#include <QtCore/QTimer>
+#include "TimersFilterModel.h"
 
-class Timer;
-class TimersModel;
+TimersFilterModel::TimersFilterModel(QObject *parent)
+    : QSortFilterProxyModel(parent) { }
 
-class RecorderTimeManager : public QObject
+TimersFilterModel::~TimersFilterModel() { }
+
+bool TimersFilterModel::filterAcceptsRow(int sourceRow,
+                                         const QModelIndex &sourceParent) const
 {
-Q_OBJECT
-public:
-    RecorderTimeManager(QObject *parent = 0);
-    ~RecorderTimeManager();
+    QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
-    void updateTimers();
+    bool name = sourceModel()->data(index, Timer::NameRole).toString().contains(filterRegExp());
 
-signals:
-    void timer(Timer *);
-
-private slots:
-    void check();
-
-private:
-    void readTimers();
-
-    QString _path;
-
-    QTimer *_timer;
-    TimersModel *_model;
-};
-
-#endif // TANO_RECORDERTIMEMANAGER_H_
+    return name;
+}

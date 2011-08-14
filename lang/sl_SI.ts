@@ -1315,7 +1315,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation>Aktiven</translation>
+        <translation type="obsolete">Aktiven</translation>
     </message>
     <message>
         <source>Disabled</source>
@@ -2254,6 +2254,17 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
 </context>
 <context>
+    <name>TimersDisplayWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Počisti</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="unfinished">Išči:</translation>
+    </message>
+</context>
+<context>
     <name>TimersEdit</name>
     <message>
         <source>Timers</source>
@@ -2261,15 +2272,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Timer</source>
-        <translation>Časovnik</translation>
+        <translation type="obsolete">Časovnik</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tip</translation>
+        <translation type="obsolete">Tip</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Status</translation>
+        <translation type="obsolete">Status</translation>
     </message>
     <message>
         <source>Create</source>
@@ -2375,7 +2386,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation>Prosim vnesi ime in izberi program s seznama.</translation>
+        <translation type="unfinished">Prosim vnesi ime in izberi program s seznama.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
@@ -2395,11 +2406,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Disabled or expired</source>
-        <translation>Izključen ali pretečen</translation>
+        <translation type="obsolete">Izključen ali pretečen</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation>Aktiven</translation>
+        <translation type="obsolete">Aktiven</translation>
     </message>
 </context>
 <context>

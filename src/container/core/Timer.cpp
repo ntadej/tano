@@ -22,12 +22,14 @@ Timer::Timer(const QString &name,
              const QString &channel,
              const QString &playlist,
              const int &num,
-             const QString &url)
-    : _name(name),
-    _channel(channel),
-    _playlist(playlist),
-    _num(num),
-    _url(url)
+             const QString &url,
+             QObject *parent)
+    : ListItem(parent),
+      _name(name),
+     _channel(channel),
+     _playlist(playlist),
+     _num(num),
+     _url(url)
 {
     _startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
     _endTime = _startTime.addSecs(3600);
@@ -36,3 +38,144 @@ Timer::Timer(const QString &name,
 }
 
 Timer::~Timer() { }
+
+QHash<int, QByteArray> Timer::roleNames() const
+{
+    QHash<int, QByteArray> names;
+    names[DisplayRole] = "display";
+    names[DisplayIconRole] = "displayIcon";
+    names[NameRole] = "name";
+    names[ChannelRole] = "channel";
+    names[PlaylistRole] = "playlist";
+    names[UrlRole] = "url";
+    names[NumRole] = "num";
+    names[StartTimeRole] = "start";
+    names[EndTimeRole] = "end";
+    names[DisabledRole] = "disabled";
+    names[TypeRole] = "type";
+    names[RecordingRole] = "recording";
+    return names;
+}
+
+QVariant Timer::data(int role) const
+{
+    switch (role)
+    {
+    case DisplayRole:
+        return display();
+    case DisplayIconRole:
+        return displayIcon();
+    case NameRole:
+        return name();
+    case ChannelRole:
+        return channel();
+    case PlaylistRole:
+        return playlist();
+    case UrlRole:
+        return url();
+    case NumRole:
+        return num();
+    case StartTimeRole:
+        return startTime();
+    case EndTimeRole:
+        return endTime();
+    case DisabledRole:
+        return isDisabled();
+    case TypeRole:
+        return type();
+    case RecordingRole:
+        return isRecording();
+    default:
+        return QVariant();
+    }
+}
+
+QString Timer::display() const
+{
+    return name();
+}
+
+QIcon Timer::displayIcon() const
+{
+    return QIcon(":/icons/16x16/timer.png");
+}
+
+void Timer::setName(const QString &name)
+{
+    if(_name != name) {
+        _name = name;
+        emit dataChanged();
+    }
+}
+
+void Timer::setChannel(const QString &channel)
+{
+    if(_channel != channel) {
+        _channel = channel;
+        emit dataChanged();
+    }
+}
+
+void Timer::setPlaylist(const QString &playlist)
+{
+    if(_playlist != playlist) {
+        _playlist = playlist;
+        emit dataChanged();
+    }
+}
+
+void Timer::setUrl(const QString &url)
+{
+    if(_url != url) {
+        _url = url;
+        emit dataChanged();
+    }
+}
+
+void Timer::setNum(const int &num)
+{
+    if(_num != num) {
+        _num = num;
+        emit dataChanged();
+    }
+}
+
+void Timer::setStartTime(const QDateTime &startTime)
+{
+    if(_startTime != startTime) {
+        _startTime = startTime;
+        emit dataChanged();
+    }
+}
+
+void Timer::setEndTime(const QDateTime &endTime)
+{
+    if(_endTime != endTime) {
+        _endTime = endTime;
+        emit dataChanged();
+    }
+}
+
+void Timer::setDisabled(const bool &disabled)
+{
+    if(_disabled != disabled) {
+        _disabled = disabled;
+        emit dataChanged();
+    }
+}
+
+void Timer::setType(const Tano::TimerType &type)
+{
+    if(_type != type) {
+        _type = type;
+        emit dataChanged();
+    }
+}
+
+void Timer::setRecording(const bool &recording)
+{
+    if(_recording != recording) {
+        _recording = recording;
+        emit dataChanged();
+    }
+}

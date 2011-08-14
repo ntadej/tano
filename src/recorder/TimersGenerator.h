@@ -2,6 +2,10 @@
 * Tano - An Open IP TV Player
 * Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
+* This file was based on the example classes of the Qt Toolkit.
+* Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* Contact: Qt Software Information (qt-info@nokia.com)
+*
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
@@ -16,37 +20,32 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMEMANAGER_H_
-#define TANO_RECORDERTIMEMANAGER_H_
+#ifndef TANO_TIMERSGENERATOR_H_
+#define TANO_TIMERSGENERATOR_H_
 
-#include <QtCore/QList>
-#include <QtCore/QTimer>
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
 
 class Timer;
 class TimersModel;
 
-class RecorderTimeManager : public QObject
+class TimersGenerator
 {
-Q_OBJECT
 public:
-    RecorderTimeManager(QObject *parent = 0);
-    ~RecorderTimeManager();
+    TimersGenerator(const QString &file);
+    ~TimersGenerator();
 
-    void updateTimers();
-
-signals:
-    void timer(Timer *);
-
-private slots:
-    void check();
+    bool write(TimersModel *model);
 
 private:
-    void readTimers();
+    static QString indent(const int &indentLevel);
+    QString boolToString(const bool &b);
+    static QString escapedText(const QString &str);
+    static QString escapedAttribute(const QString &str);
+    void generateItem(Timer *timer);
 
-    QString _path;
-
-    QTimer *_timer;
-    TimersModel *_model;
+    QFile *_file;
+    QTextStream _out;
 };
 
-#endif // TANO_RECORDERTIMEMANAGER_H_
+#endif // TANO_TIMERSGENERATOR_H_

@@ -23,38 +23,62 @@
 #include <QtCore/QString>
 
 #include "core/Enums.h"
+#include "core/ListItem.h"
 
-class Timer
+class Timer : public ListItem
 {
+Q_OBJECT
 public:
-    Timer(const QString &name,
+    enum Roles {
+        DisplayRole = Qt::DisplayRole,
+        DisplayIconRole = Qt::DecorationRole,
+        NameRole = Qt::UserRole + 1,
+        ChannelRole,
+        PlaylistRole,
+        UrlRole,
+        NumRole,
+        StartTimeRole,
+        EndTimeRole,
+        DisabledRole,
+        TypeRole,
+        RecordingRole
+    };
+
+    Timer(const QString &name = 0,
           const QString &channel = 0,
           const QString &playlist = 0,
           const int &num = 0,
-          const QString &url = 0);
+          const QString &url = 0,
+          QObject *parent = 0);
     ~Timer();
 
-public:
-    QString name() const { return _name; }
-    void setName(const QString &name) { _name = name; }
-    QString channel() const { return _channel; }
-    void setChannel(const QString &channel) { _channel = channel; }
-    QString playlist() const { return _playlist; }
-    void setPlaylist(const QString &playlist) { _playlist = playlist; }
-    QString url() const { return _url; }
-    void setUrl(const QString &url) { _url = url; }
-    int num() const { return _num; }
-    void setNum(const int &num) { _num = num; }
-    QDateTime startTime() const { return _startTime; }
-    void setStartTime(const QDateTime &startTime) { _startTime = startTime; }
-    QDateTime endTime() const { return _endTime; }
-    void setEndTime(const QDateTime &endTime) { _endTime = endTime; }
-    bool isDisabled() const { return _disabled; }
-    void setDisabled(const bool &disabled) { _disabled = disabled; }
-    Tano::TimerType type() const { return _type; }
-    void setType(const Tano::TimerType &type) { _type = type; }
-    bool isRecording() const { return _recording; }
-    void setRecording(const bool &recording) { _recording = recording; }
+
+    inline QString id() const { return _name; }
+    QVariant data(int role) const;
+    QString display() const;
+    QIcon displayIcon() const;
+    QHash<int, QByteArray> roleNames() const;
+
+    inline QString name() const { return _name; }
+    void setName(const QString &name);
+    inline QString channel() const { return _channel; }
+    void setChannel(const QString &channel);
+    inline QString playlist() const { return _playlist; }
+    void setPlaylist(const QString &playlist);
+    inline QString url() const { return _url; }
+    void setUrl(const QString &url);
+    inline int num() const { return _num; }
+    void setNum(const int &num);
+    inline QDateTime startTime() const { return _startTime; }
+    void setStartTime(const QDateTime &startTime);
+    inline QDateTime endTime() const { return _endTime; }
+    void setEndTime(const QDateTime &endTime);
+    inline bool isDisabled() const { return _disabled; }
+    void setDisabled(const bool &disabled);
+    inline Tano::TimerType type() const { return _type; }
+    void setType(const Tano::TimerType &type);
+    inline bool isRecording() const { return _recording; }
+    void setRecording(const bool &recording);
 
 private:
     QString _name;

@@ -1219,7 +1219,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Active</source>
-        <translation>Активен</translation>
+        <translation type="obsolete">Активен</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2:
@@ -2108,6 +2108,17 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>TimersDisplayWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Закрыть</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="unfinished">Поиск:</translation>
+    </message>
+</context>
+<context>
     <name>TimersEdit</name>
     <message>
         <source>Timers</source>
@@ -2115,7 +2126,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Timer</source>
-        <translation>Таймер</translation>
+        <translation type="obsolete">Таймер</translation>
     </message>
     <message>
         <source>Create</source>
@@ -2197,7 +2208,7 @@ You changes will not be applied.</source>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation>Введите имя и выберите канал из списка.</translation>
+        <translation type="unfinished">Введите имя и выберите канал из списка.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
@@ -2217,11 +2228,11 @@ You changes will not be applied.</source>
     </message>
     <message>
         <source>Disabled or expired</source>
-        <translation>Отключен или устарел</translation>
+        <translation type="obsolete">Отключен или устарел</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation>Активен</translation>
+        <translation type="obsolete">Активен</translation>
     </message>
     <message>
         <source>Type:</source>
@@ -2244,12 +2255,8 @@ You changes will not be applied.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Status</source>
-        <translation type="unfinished">Состояние</translation>
+        <translation type="obsolete">Состояние</translation>
     </message>
     <message>
         <source>hh:mm:ss</source>

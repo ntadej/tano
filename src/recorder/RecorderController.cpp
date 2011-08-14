@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 #include "daemon/DaemonCommon.h"
-#include "ui/recorder/RecorderController.h"
+#include "recorder/RecorderController.h"
 
 RecorderController::RecorderController(QObject *parent)
     : QDBusAbstractInterface(Tano::Daemon::service(),

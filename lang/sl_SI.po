@@ -1303,9 +1303,9 @@ msgctxt "QObject|"
 msgid "The file is not a Tano Timers list."
 msgstr "Datoteka ni Tano seznam časovnikov."
 
-msgctxt "QObject|"
-msgid "Active"
-msgstr "Aktiven"
+#~ msgctxt "QObject|"
+#~ msgid "Active"
+#~ msgstr "Aktiven"
 
 msgctxt "QObject|"
 msgid "Disabled"
@@ -2216,21 +2216,31 @@ msgctxt "TeletextWidget|"
 msgid "Teletext Transparency"
 msgstr "Prosojnost teleteksta"
 
+#, fuzzy
+msgctxt "TimersDisplayWidget|"
+msgid "Clear"
+msgstr "Počisti"
+
+#, fuzzy
+msgctxt "TimersDisplayWidget|"
+msgid "Search:"
+msgstr "Išči:"
+
 msgctxt "TimersEdit|"
 msgid "Timers"
 msgstr "Časovniki"
 
-msgctxt "TimersEdit|"
-msgid "Timer"
-msgstr "Časovnik"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Timer"
+#~ msgstr "Časovnik"
 
-msgctxt "TimersEdit|"
-msgid "Type"
-msgstr "Tip"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Type"
+#~ msgstr "Tip"
 
-msgctxt "TimersEdit|"
-msgid "Status"
-msgstr "Status"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Status"
+#~ msgstr "Status"
 
 msgctxt "TimersEdit|"
 msgid "Create"
@@ -2340,6 +2350,7 @@ msgctxt "TimersEdit|"
 msgid "Tano"
 msgstr "Tano"
 
+#, fuzzy
 msgctxt "TimersEdit|"
 msgid "Please enter a name and select a channel from the list."
 msgstr "Prosim vnesi ime in izberi program s seznama."
@@ -2366,13 +2377,13 @@ msgstr ""
 "Ne morem pisati datoteke %1:\n"
 "%2."
 
-msgctxt "TimersEdit|"
-msgid "Disabled or expired"
-msgstr "Izključen ali pretečen"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Disabled or expired"
+#~ msgstr "Izključen ali pretečen"
 
-msgctxt "TimersEdit|"
-msgid "Active"
-msgstr "Aktiven"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Active"
+#~ msgstr "Aktiven"
 
 msgctxt "TrayIcon|"
 msgid "Tano"

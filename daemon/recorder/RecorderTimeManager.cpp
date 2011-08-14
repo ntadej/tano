@@ -22,11 +22,10 @@
 #include "container/core/Timer.h"
 #include "core/Settings.h"
 #include "daemon/recorder/RecorderTimeManager.h"
-#include "xml/TimersHandler.h"
+#include "recorder/TimersModel.h"
 
 RecorderTimeManager::RecorderTimeManager(QObject *parent)
-    : QObject(parent),
-    _timersHandler(0)
+    : QObject(parent)
 {
     Settings *settings = new Settings(this);
     _path = settings->path();
@@ -36,22 +35,24 @@ RecorderTimeManager::RecorderTimeManager(QObject *parent)
     connect(_timer, SIGNAL(timeout()), this, SLOT(check()));
     _timer->start(3000);
 
+    _model = new TimersModel(this);
+
     updateTimers();
 }
 
 RecorderTimeManager::~RecorderTimeManager()
 {
     delete _timer;
-    delete _timersHandler;
+    delete _model;
 }
 
 void RecorderTimeManager::check()
 {
-    for(int i = 0; i < _timersList.size(); i++) {
-        if(_timersList[i]->startTime() <= QDateTime::currentDateTime() && _timersList[i]->endTime() >= QDateTime::currentDateTime()) {
-            if(!_timersList[i]->isDisabled() && !_timersList[i]->isRecording()) {
-                emit timer(_timersList[i]);
-                qDebug() << "Timer" << _timersList[i]->name() << "started";
+    for(int i = 0; i < _model->rowCount(); i++) {
+        if(_model->row(i)->startTime() <= QDateTime::currentDateTime() && _model->row(i)->endTime() >= QDateTime::currentDateTime()) {
+            if(!_model->row(i)->isDisabled() && !_model->row(i)->isRecording()) {
+                emit timer(_model->row(i));
+                qDebug() << "Timer" << _model->row(i)->name() << "started";
             }
         }
     }
@@ -59,37 +60,22 @@ void RecorderTimeManager::check()
 
 void RecorderTimeManager::readTimers()
 {
-    if(_timersHandler)
-        delete _timersHandler;
-
-    _timersHandler = new TimersHandler();
     QString fileName = _path + "timers.tano.xml";
-    _timersHandler->clear();
-
-    QXmlSimpleReader reader;
-    reader.setContentHandler(_timersHandler);
-    reader.setErrorHandler(_timersHandler);
-
-    if(!QFileInfo(fileName).exists())
-        return;
 
     QFile file(fileName);
     if (!file.open(QFile::ReadOnly | QFile::Text))
         return;
-
-    QXmlInputSource xmlInputSource(&file);
-    if (!reader.parse(xmlInputSource))
-        return;
-
     file.close();
+
+    _model->clear();
+    _model->readTimers(fileName);
 }
 
 void RecorderTimeManager::updateTimers()
 {
     readTimers();
-    _timersList.clear();
-    _timersList = _timersHandler->timersList();
-    qDebug() << _timersList.size() << "timers loaded";
-    for(int i = 0; i < _timersHandler->timersList().size(); i++)
-        qDebug() << _timersHandler->timersList()[i]->name();
+
+    qDebug() << _model->rowCount() << "timers loaded";
+    for(int i = 0; i < _model->rowCount(); i++)
+        qDebug() << _model->row(i)->name();
 }

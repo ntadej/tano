@@ -20,36 +20,39 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TIMERSGENERATOR_H_
-#define TANO_TIMERSGENERATOR_H_
+#ifndef TANO_TIMERSHANDLER_H_
+#define TANO_TIMERSHANDLER_H_
 
-#include <QtCore/QMap>
-#include <QtCore/QTextStream>
-#include <QtGui/QTreeWidget>
-#include <QtGui/QTreeWidgetItem>
+#include <QtXml/QXmlDefaultHandler>
 
 class Timer;
 
-class TimersGenerator
+class TimersHandler : public QXmlDefaultHandler
 {
 public:
-	TimersGenerator(QTreeWidget *treeWidget,
-					QMap<QTreeWidgetItem *, Timer *> map);
-	~TimersGenerator();
+    TimersHandler();
+    ~TimersHandler();
 
-	bool write(QIODevice *device);
+    bool startElement(const QString &namespaceURI,
+                      const QString &localName,
+                      const QString &qName,
+                      const QXmlAttributes &attributes);
+    bool endElement(const QString &namespaceURI,
+                    const QString &localName,
+                    const QString &qName);
+    bool characters(const QString &str);
+    bool fatalError(const QXmlParseException &exception);
+    QString errorString() const { return _errorStr; }
+
+    QList<Timer *> timersList() { return _list; }
 
 private:
-	static QString indent(const int &indentLevel);
-	QString boolToString(const bool &b);
-	static QString escapedText(const QString &str);
-	static QString escapedAttribute(const QString &str);
-	void generateItem(QTreeWidgetItem *item);
+    Timer *_timer;
+    QString _currentText;
+    QString _errorStr;
+    bool _metTanoTag;
 
-	QTreeWidget *_treeWidget;
-	QTextStream _out;
-
-	QMap<QTreeWidgetItem *, Timer *> _map;
+    QList<Timer *> _list;
 };
 
-#endif // TANO_TIMERSGENERATOR_H_
+#endif // TANO_TIMERSHANDLER_H_

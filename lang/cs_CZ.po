@@ -1262,9 +1262,9 @@ msgctxt "QObject|"
 msgid "Unknown title"
 msgstr "Neznámý název"
 
-msgctxt "QObject|"
-msgid "Active"
-msgstr "V činnosti"
+#~ msgctxt "QObject|"
+#~ msgid "Active"
+#~ msgstr "V činnosti"
 
 #, qt-format
 msgctxt "QObject|"
@@ -2236,13 +2236,23 @@ msgctxt "TeletextWidget|"
 msgid "Teletext Transparency"
 msgstr "Průhlednost teletextu"
 
+#, fuzzy
+msgctxt "TimersDisplayWidget|"
+msgid "Clear"
+msgstr "Smazat"
+
+#, fuzzy
+msgctxt "TimersDisplayWidget|"
+msgid "Search:"
+msgstr "Hledat:"
+
 msgctxt "TimersEdit|"
 msgid "Timers"
 msgstr "Časovače"
 
-msgctxt "TimersEdit|"
-msgid "Timer"
-msgstr "Časovač"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Timer"
+#~ msgstr "Časovač"
 
 msgctxt "TimersEdit|"
 msgid "Create"
@@ -2324,6 +2334,7 @@ msgctxt "TimersEdit|"
 msgid "Tano"
 msgstr "Tano"
 
+#, fuzzy
 msgctxt "TimersEdit|"
 msgid "Please enter a name and select a channel from the list."
 msgstr "Zadejte, prosím, název a vyberte program ze seznamu."
@@ -2350,13 +2361,13 @@ msgstr ""
 "Nelze zapisovat soubor %1:\n"
 "%2."
 
-msgctxt "TimersEdit|"
-msgid "Disabled or expired"
-msgstr "Zakázáno nebo vypršelo"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Disabled or expired"
+#~ msgstr "Zakázáno nebo vypršelo"
 
-msgctxt "TimersEdit|"
-msgid "Active"
-msgstr "V činnosti"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Active"
+#~ msgstr "V činnosti"
 
 msgctxt "TimersEdit|"
 msgid "Type:"
@@ -2381,13 +2392,13 @@ msgid ""
 msgstr ""
 "<i>Časovače se nesmí překrývat! Toto bude v budoucnu ověřeno automaticky.</i>"
 
-msgctxt "TimersEdit|"
-msgid "Type"
-msgstr "Typ"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Type"
+#~ msgstr "Typ"
 
-msgctxt "TimersEdit|"
-msgid "Status"
-msgstr "Stav"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Status"
+#~ msgstr "Stav"
 
 msgctxt "TimersEdit|"
 msgid "hh:mm:ss"

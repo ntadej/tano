@@ -22,12 +22,6 @@
 #include "container/core/Channel.h"
 #include "playlist/PlaylistFilterModel.h"
 #include "playlist/PlaylistModel.h"
-/*#include "playlist/CSVGenerator.h"
-#include "playlist/JsGenerator.h"
-#include "playlist/M3UGenerator.h"
-#include "playlist/PlaylistHandler.h"
-#include "playlist/TvheadendGenerator.h"
-#include "playlist/XmltvIdGenerator.h"*/
 
 PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
     : QWidget(parent),

@@ -16,37 +16,33 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMEMANAGER_H_
-#define TANO_RECORDERTIMEMANAGER_H_
+#ifndef TANO_TIMERSMODEL_H_
+#define TANO_TIMERSMODEL_H_
 
-#include <QtCore/QList>
-#include <QtCore/QTimer>
+#include "core/ListModel.h"
 
 class Timer;
-class TimersModel;
 
-class RecorderTimeManager : public QObject
+class TimersModel : public ListModel
 {
 Q_OBJECT
 public:
-    RecorderTimeManager(QObject *parent = 0);
-    ~RecorderTimeManager();
+    TimersModel(QObject *parent = 0);
+    ~TimersModel();
 
-    void updateTimers();
+    Timer *find(const QString &id) const;
+    Timer *row(const int &row);
+    Timer *takeRow(const int &row);
 
-signals:
-    void timer(Timer *);
+    Timer *createTimer(const QString &name,
+                       const QString &channel,
+                       const QString &playlist,
+                       const int &num,
+                       const QString &url);
+    void deleteTimer(Timer *timer);
 
-private slots:
-    void check();
-
-private:
-    void readTimers();
-
-    QString _path;
-
-    QTimer *_timer;
-    TimersModel *_model;
+    void readTimers(const QString &file);
+    void writeTimers(const QString &file);
 };
 
-#endif // TANO_RECORDERTIMEMANAGER_H_
+#endif // TANO_TIMERSMODEL_H_

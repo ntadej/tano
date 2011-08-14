@@ -1276,7 +1276,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation>V činnosti</translation>
+        <translation type="obsolete">V činnosti</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2:
@@ -2224,6 +2224,17 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
 </context>
 <context>
+    <name>TimersDisplayWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Smazat</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="unfinished">Hledat:</translation>
+    </message>
+</context>
+<context>
     <name>TimersEdit</name>
     <message>
         <source>Timers</source>
@@ -2231,7 +2242,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Timer</source>
-        <translation>Časovač</translation>
+        <translation type="obsolete">Časovač</translation>
     </message>
     <message>
         <source>Create</source>
@@ -2313,7 +2324,7 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation>Zadejte, prosím, název a vyberte program ze seznamu.</translation>
+        <translation type="unfinished">Zadejte, prosím, název a vyberte program ze seznamu.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
@@ -2333,11 +2344,11 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Disabled or expired</source>
-        <translation>Zakázáno nebo vypršelo</translation>
+        <translation type="obsolete">Zakázáno nebo vypršelo</translation>
     </message>
     <message>
         <source>Active</source>
-        <translation>V činnosti</translation>
+        <translation type="obsolete">V činnosti</translation>
     </message>
     <message>
         <source>Type:</source>
@@ -2361,11 +2372,11 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation type="obsolete">Typ</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Stav</translation>
+        <translation type="obsolete">Stav</translation>
     </message>
     <message>
         <source>hh:mm:ss</source>

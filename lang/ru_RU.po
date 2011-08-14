@@ -1205,9 +1205,9 @@ msgctxt "QObject|"
 msgid "Unknown title"
 msgstr "Неизв."
 
-msgctxt "QObject|"
-msgid "Active"
-msgstr "Активен"
+#~ msgctxt "QObject|"
+#~ msgid "Active"
+#~ msgstr "Активен"
 
 #, qt-format
 msgctxt "QObject|"
@@ -2113,13 +2113,23 @@ msgctxt "TeletextWidget|"
 msgid "Teletext Transparency"
 msgstr ""
 
+#, fuzzy
+msgctxt "TimersDisplayWidget|"
+msgid "Clear"
+msgstr "Закрыть"
+
+#, fuzzy
+msgctxt "TimersDisplayWidget|"
+msgid "Search:"
+msgstr "Поиск:"
+
 msgctxt "TimersEdit|"
 msgid "Timers"
 msgstr "Таймеры"
 
-msgctxt "TimersEdit|"
-msgid "Timer"
-msgstr "Таймер"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Timer"
+#~ msgstr "Таймер"
 
 msgctxt "TimersEdit|"
 msgid "Create"
@@ -2201,6 +2211,7 @@ msgctxt "TimersEdit|"
 msgid "Tano"
 msgstr "Tano"
 
+#, fuzzy
 msgctxt "TimersEdit|"
 msgid "Please enter a name and select a channel from the list."
 msgstr "Введите имя и выберите канал из списка."
@@ -2227,13 +2238,13 @@ msgstr ""
 "Невозможно записать файл %1:\n"
 "%2."
 
-msgctxt "TimersEdit|"
-msgid "Disabled or expired"
-msgstr "Отключен или устарел"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Disabled or expired"
+#~ msgstr "Отключен или устарел"
 
-msgctxt "TimersEdit|"
-msgid "Active"
-msgstr "Активен"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Active"
+#~ msgstr "Активен"
 
 msgctxt "TimersEdit|"
 msgid "Type:"
@@ -2257,14 +2268,9 @@ msgid ""
 "future.</i>"
 msgstr ""
 
-msgctxt "TimersEdit|"
-msgid "Type"
-msgstr ""
-
-#, fuzzy
-msgctxt "TimersEdit|"
-msgid "Status"
-msgstr "Состояние"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Status"
+#~ msgstr "Состояние"
 
 msgctxt "TimersEdit|"
 msgid "hh:mm:ss"

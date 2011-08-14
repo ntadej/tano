@@ -16,37 +16,49 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMEMANAGER_H_
-#define TANO_RECORDERTIMEMANAGER_H_
+#ifndef TANO_TIMERSDISPLAYWIDGET_H_
+#define TANO_TIMERSDISPLAYWIDGET_H_
 
-#include <QtCore/QList>
-#include <QtCore/QTimer>
+#include <QtCore/QModelIndex>
+#include <QtGui/QWidget>
 
 class Timer;
+class TimersFilterModel;
 class TimersModel;
 
-class RecorderTimeManager : public QObject
+namespace Ui
+{
+    class TimersDisplayWidget;
+}
+
+class TimersDisplayWidget : public QWidget
 {
 Q_OBJECT
 public:
-    RecorderTimeManager(QObject *parent = 0);
-    ~RecorderTimeManager();
+    TimersDisplayWidget(QWidget *parent = 0);
+    ~TimersDisplayWidget();
 
-    void updateTimers();
+    Timer *currentTimer() { return _current; }
+    void setCurrentTimer(Timer *timer);
+
+    void setModel(TimersModel *model);
+
+protected:
+    void changeEvent(QEvent *e);
 
 signals:
-    void timer(Timer *);
+    void itemClicked(Timer *);
 
 private slots:
-    void check();
+    void processFilters();
+    void timerClicked(const QModelIndex &index);
 
 private:
-    void readTimers();
+    Ui::TimersDisplayWidget *ui;
 
-    QString _path;
-
-    QTimer *_timer;
+    Timer *_current;
     TimersModel *_model;
+    TimersFilterModel *_filterModel;
 };
 
-#endif // TANO_RECORDERTIMEMANAGER_H_
+#endif // TANO_TIMERSDISPLAYWIDGET_H_

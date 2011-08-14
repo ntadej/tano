@@ -19,15 +19,13 @@
 #ifndef TANO_TIMERSEDIT_H_
 #define TANO_TIMERSEDIT_H_
 
-#include <QtCore/QMap>
-#include <QtCore/QSettings>
+#include <QtCore/QDate>
 #include <QtGui/QMainWindow>
-#include <QtGui/QTreeWidgetItem>
 
 class Channel;
 class PlaylistModel;
 class Timer;
-class TimersHandler;
+class TimersModel;
 
 namespace Ui
 {
@@ -51,7 +49,7 @@ private slots:
     void deleteItem();
     void newItem();
 
-    void edit(QTreeWidgetItem *item);
+    void edit(Timer *item);
     void playlist(Channel *channel);
 
     void validate();
@@ -79,8 +77,8 @@ private:
 
     bool _closeEnabled;
 
-    TimersHandler *_handler;
-    PlaylistModel *_model;
+    TimersModel *_timersModel;
+    PlaylistModel *_playlistModel;
 
     QString _path;
     QString _playlist;

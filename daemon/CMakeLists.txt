@@ -30,6 +30,11 @@ SET(Tano_Daemon_MOCs    # List of classes which Qt needs to produce MOCs for the
     recorder/RecorderCore.h
     recorder/RecorderTimeManager.h
     xmltv/XmltvCore.h
+
+    ../src/container/core/Timer.h
+    ../src/core/ListItem.h
+    ../src/core/ListModel.h
+    ../src/recorder/TimersModel.h
 )
 
 SET(Tano_Daemon_Resrcs
@@ -43,9 +48,12 @@ SET(Tano_Daemon_Core_Srcs
     ../src/core/Common.cpp
     ../src/core/ConsoleOutput.cpp
     ../src/core/Enums.cpp
+    ../src/core/ListModel.cpp
     ../src/core/Settings.cpp
 
-    ../src/xml/TimersHandler.cpp
+    ../src/recorder/TimersGenerator.cpp
+    ../src/recorder/TimersHandler.cpp
+    ../src/recorder/TimersModel.cpp
 )
 SET(Tano_Daemon_Recorder_Srcs
     recorder/RecorderCore.cpp
