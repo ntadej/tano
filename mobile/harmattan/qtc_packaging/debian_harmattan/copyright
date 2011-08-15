@@ -1,17 +1,15 @@
-This package was debianized by Tadej Novak <tadej@unknown> on
+This package was debianized by Tadej Novak <tadej@tano.si> on
 Tue, 12 Jul 2011 10:13:48 +0200.
 
-It was downloaded from <url://example.com>
+It was downloaded from http://projects.tano.si
 
 Upstream Author(s):
 
-    <put author's name and email here>
-    <likewise for another author>
+    Tadej Novak <tadej@tano.si>
 
 Copyright:
 
-    <Copyright (C) YYYY Name OfAuthor>
-    <likewise for another author>
+    Copyright (C) 2011 Tadej Novak
 
 License:
 
@@ -32,9 +30,5 @@ License:
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
 
-The Debian packaging is (C) 2011, Tadej Novak <tadej@unknown> and
+The Debian packaging is (C) 2011, Tadej Novak <tadej@tano.si> and
 is licensed under the GPL, see above.
-
-
-# Please also look if there are files or directories which have a
-# different copyright/license attached and list them here.

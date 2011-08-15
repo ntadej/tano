@@ -3,8 +3,8 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 Terminal=false
-Name=tanomobile
-Exec=invoker --single-instance --type=d /opt/tanomobile/bin/tanomobile
+Name=Tano Mobile
+Exec=/usr/bin/single-instance /opt/tanomobile/bin/tanomobile
 Icon=/usr/share/icons/hicolor/scalable/apps/tanomobile.svg
 X-Window-Icon=
 X-HildonDesk-ShowInToolbar=true
