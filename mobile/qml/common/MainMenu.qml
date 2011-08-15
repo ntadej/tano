@@ -19,6 +19,8 @@
 import QtQuick 1.0
 import com.meego 1.0
 
+import "../js/core.js" as Tano
+
 import "../dialogs"
 
 Menu {
@@ -26,8 +28,8 @@ Menu {
 
     AboutDialog { id: about }
     MenuLayout {
-        MenuItem { text: qsTr("Settings"); onClicked: Tano.addPage("pages/SettingsPage.qml") }
-        MenuItem { text: qsTr("Help"); onClicked: Tano.addPage("pages/HelpPage.qml") }
+        MenuItem { text: qsTr("Settings"); onClicked: Tano.addPage("../pages/SettingsPage.qml") }
+        MenuItem { text: qsTr("Help"); onClicked: Tano.addPage("../pages/HelpPage.qml") }
         MenuItem { text: qsTr("About"); onClicked: about.open() }
         MenuItem { text: qsTr("Exit"); onClicked: Qt.quit() }
     }

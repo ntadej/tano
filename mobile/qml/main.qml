@@ -31,13 +31,10 @@ import "js/core.js" as Tano
 PageStackWindow {
     id: rootWindow
 
-    platformStyle: defaultStyle;
+    platformStyle: defaultStyle
 
-    PageStackWindowStyle { id: defaultStyle }
     PageStackWindowStyle {
-        id: customStyle;
-        background: "image://theme/meegotouch-wallpaper-portrait";
-        backgroundFillMode: Image.PreserveAspectCrop
+        id: defaultStyle
     }
 
     // HomeListPage is what we see when the app starts

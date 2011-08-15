@@ -30,7 +30,7 @@ import "../js/core.js" as Tano
 
 Page {
     id: playlistPage
-    anchors.margins: UiConstants.DefaultMargin
+    anchors.margins: TanoUi.DefaultMargin
     tools: ToolBarLayoutPlaylist { }
 
     function channel(id) {
@@ -76,8 +76,8 @@ Page {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.leftMargin: 16;
                 text: model.number + "."
-                font: UiConstants.SubtitleFont
-                color: "#cc6633"
+                font: TanoUi.SubtitleFont
+                color: TanoUi.HighlightColor
             }
 
             Row {
@@ -88,7 +88,7 @@ Page {
                      id: mainText
                      anchors.verticalCenter: parent.verticalCenter
                      text: model.name
-                     font: UiConstants.TitleFont
+                     font: TanoUi.TitleFont
                      wrapMode: Text.WordWrap
                      width: parent.width
                  }
@@ -108,24 +108,34 @@ Page {
         flickableItem: listView
     }
 
+    PageHeader {
+        id: playlistHeader
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.topMargin: -homeListPage.anchors.topMargin
+        anchors.leftMargin: -homeListPage.anchors.leftMargin
+        anchors.rightMargin: -homeListPage.anchors.rightMargin
+
+        title: qsTr("Select channel")
+    }
+
     Rectangle {
         id: searchBox
-        radius: 10
-        color: "lightgrey"
-        anchors {left: parent.left; right: parent.right; top: parent.top}
+        //radius: 10
+        color: TanoUi.FieldLabelColor
+        anchors {left: parent.left; right: parent.right; top: playlistHeader.bottom}
         anchors.leftMargin: -playlistPage.anchors.leftMargin
         anchors.rightMargin: -playlistPage.anchors.rightMargin
-        anchors.topMargin: -playlistPage.anchors.topMargin
-        anchors.bottomMargin: -playlistPage.anchors.bottomMargin
         height: search.height + 2*16
 
         visible: true
 
         TextField {
             id: search
-            height: 40
+            height: 60
             anchors.fill: parent
-            anchors.margins: UiConstants.DefaultMargin
+            anchors.margins: TanoUi.DefaultMargin
 
             platformSipAttributes: SipAttributes { actionKeyHighlighted: true }
 

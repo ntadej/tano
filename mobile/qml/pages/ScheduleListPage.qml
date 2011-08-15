@@ -29,13 +29,13 @@ import "../js/core.js" as Tano
 
 Page {
     id: scheduleListPage
-    anchors.margins: UiConstants.DefaultMargin
+    anchors.margins: TanoUi.DefaultMargin
     tools: ToolBarLayoutCommon { }
 
     function item(name) {
-        //Tano.addPage("SchedulePage.qml")
-        //var page = pageStack.currentPage
-        //page.setChannel(name)
+        Tano.addPage("SchedulePage.qml")
+        var page = pageStack.currentPage
+        page.setChannel(name)
     }
 
     function setChannel(epg) {
@@ -65,7 +65,7 @@ Page {
             BorderImage {
                 id: background
                 anchors.fill: parent
-                // Fill page porders
+                // Fill page borders
                 anchors.leftMargin: -scheduleListPage.anchors.leftMargin
                 anchors.rightMargin: -scheduleListPage.anchors.rightMargin
                 visible: mouseArea.pressed
@@ -85,8 +85,8 @@ Page {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.leftMargin: 16;
                 text: Qt.formatDateTime(model.start, "HH:mm")
-                font: UiConstants.SubtitleFont
-                color: "#cc6633"
+                font: TanoUi.SubtitleFont
+                color: TanoUi.HighlightColor
             }
 
             Row {
@@ -97,7 +97,7 @@ Page {
                      id: mainText
                      anchors.verticalCenter: parent.verticalCenter
                      text: model.title
-                     font: UiConstants.TitleFont
+                     font: TanoUi.TitleFont
                      wrapMode: Text.WordWrap
                      width: parent.width
                  }
@@ -116,15 +116,25 @@ Page {
         flickableItem: listView
     }
 
-    Rectangle {
-        id: dateBox
-        radius: 10
-        color: "lightgrey"
-        anchors {left: parent.left; right: parent.right; top: parent.top}
+    PageHeader {
+        id: scheduleListHeader
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.topMargin: -scheduleListPage.anchors.topMargin
         anchors.leftMargin: -scheduleListPage.anchors.leftMargin
         anchors.rightMargin: -scheduleListPage.anchors.rightMargin
-        anchors.topMargin: -scheduleListPage.anchors.topMargin
-        anchors.bottomMargin: -scheduleListPage.anchors.bottomMargin
+
+        title: qsTr("Schedule")
+    }
+
+    Rectangle {
+        id: dateBox
+        //radius: 10
+        color: TanoUi.FieldLabelColor
+        anchors {left: parent.left; right: parent.right; top: scheduleListHeader.bottom}
+        anchors.leftMargin: -scheduleListPage.anchors.leftMargin
+        anchors.rightMargin: -scheduleListPage.anchors.rightMargin
         height: 50 + 2*16
 
         visible: true
@@ -133,7 +143,7 @@ Page {
             id: buttonsDate
 
             anchors.fill: parent
-            anchors.margins: UiConstants.DefaultMargin
+            anchors.margins: TanoUi.DefaultMargin
 
             onCheckedButtonChanged: xmltvManager.processDate(buttonsDate.checkedButton.text)
         }

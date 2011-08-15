@@ -16,23 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-// Main
-function addPage(file) {
-    var component = Qt.createComponent(file)
+#ifndef TANO_MOBILECONSTANTS_H_
+#define TANO_MOBILECONSTANTS_H_
 
-    if (component.status == Component.Ready) {
-        pageStack.push(component);
-    } else {
-        console.log("Error loading component:", component.errorString());
-    }
+#include <QtDeclarative/QDeclarativePropertyMap>
+
+namespace MobileConstants
+{
+    QDeclarativePropertyMap *uiConstants();
 }
 
-function replacePage(file) {
-    var component = Qt.createComponent(file)
-
-    if (component.status == Component.Ready) {
-        pageStack.replace(component);
-    } else {
-        console.log("Error loading component:", component.errorString());
-    }
-}
+#endif // TANO_MOBILECONSTANTS_H_

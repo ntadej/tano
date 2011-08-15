@@ -29,7 +29,7 @@ import "../js/core.js" as Tano
 
 Page {
     id: schedulePage
-    anchors.margins: UiConstants.DefaultMargin
+    anchors.margins: TanoUi.DefaultMargin
     tools: ToolBarLayoutCommon {}
     
     Flickable {        
@@ -37,10 +37,26 @@ Page {
         contentHeight: childrenRect.height
         flickableDirection: Flickable.VerticalFlick
 
-        anchors.fill: parent
+        anchors.top: scheduleHeader.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+
         Column {
             Label { id: l; text: "Schedule page" }
         }
+    }
+
+    PageHeader {
+        id: scheduleHeader
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.topMargin: -schedulePage.anchors.topMargin
+        anchors.leftMargin: -schedulePage.anchors.leftMargin
+        anchors.rightMargin: -schedulePage.anchors.rightMargin
+
+        title: qsTr("Schedule")
     }
 
     function setChannel(channel) {

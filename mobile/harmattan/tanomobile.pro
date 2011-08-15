@@ -30,7 +30,8 @@ QT+= declarative
 # CONFIG += mobility
 # MOBILITY +=
 
-HEADERS += ../MobileCore.h \
+HEADERS += ../MobileConstants.cpp \
+     ../MobileCore.h \
     ../MobilePlaylistHandler.h \
     ../MobileXmltvHandler.h \
     ../../src/container/core/Channel.h \
@@ -61,6 +62,7 @@ HEADERS += ../MobileCore.h \
     ../../src/xml/XmltvHandler.h
 
 SOURCES += ../main.cpp \
+    ../MobileConstants.cpp \
     ../MobileCore.cpp \
     ../MobilePlaylistHandler.cpp \
     ../MobileXmltvHandler.cpp \

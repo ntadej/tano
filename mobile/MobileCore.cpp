@@ -21,6 +21,7 @@
 #include <QtGui/QApplication>
 #include <QtGui/QGraphicsObject>
 
+#include "MobileConstants.h"
 #include "MobileCore.h"
 #include "MobilePlaylistHandler.h"
 #include "MobileXmltvHandler.h"
@@ -30,30 +31,26 @@
 #include "playlist/PlaylistFilterModel.h"
 
 MobileCore::MobileCore(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      _playlist(0),
+      _xmltv(0)
 {
     _locale = new LocaleManager();
-
-    _playlist = new MobilePlaylistHandler(this);
-    PlaylistFilterModel *pm =  _playlist->model();
-
-    _xmltv = new MobileXmltvHandler(this);
-    XmltvProgrammeFilterModel *xm = _xmltv->model();
-
     _window = new QDeclarativeView();
-    _window->rootContext()->setContextProperty("channelsModel", pm);
-    _window->rootContext()->setContextProperty("xmltvModel", xm);
-    _window->rootContext()->setContextProperty("playlistManager", _playlist);
-    _window->rootContext()->setContextProperty("xmltvManager", _xmltv);
+    _window->rootContext()->setContextProperty("TanoUi", MobileConstants::uiConstants());
+    _window->rootContext()->setContextProperty("core", this);
     _window->setSource(QUrl("qrc:/main.qml"));
-
-    connect(_window->engine(), SIGNAL(quit()), qApp, SLOT(quit()));
 
 #ifdef __arm__
     _window->showFullScreen();
 #else
     _window->show();
 #endif
+
+    createPlaylist();
+    createXmltv();
+
+    connect(_window->engine(), SIGNAL(quit()), qApp, SLOT(quit()));
 }
 
 MobileCore::~MobileCore()
@@ -62,4 +59,28 @@ MobileCore::~MobileCore()
     delete _playlist;
     delete _window;
     delete _xmltv;
+}
+
+void MobileCore::createPlaylist()
+{
+    if(_playlist)
+        return;
+
+    _playlist = new MobilePlaylistHandler(this);
+    PlaylistFilterModel *pm =  _playlist->model();
+
+    _window->rootContext()->setContextProperty("channelsModel", pm);
+    _window->rootContext()->setContextProperty("playlistManager", _playlist);
+}
+
+void MobileCore::createXmltv()
+{
+    if(_xmltv)
+        return;
+
+    _xmltv = new MobileXmltvHandler(this);
+    XmltvProgrammeFilterModel *xm = _xmltv->model();
+
+    _window->rootContext()->setContextProperty("xmltvModel", xm);
+    _window->rootContext()->setContextProperty("xmltvManager", _xmltv);
 }

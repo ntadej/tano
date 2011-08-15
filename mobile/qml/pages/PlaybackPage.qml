@@ -26,8 +26,8 @@ import com.meego 1.0
 import "../common"
 
 Page {
-    id: labelsPage
-    anchors.margins: UiConstants.DefaultMargin
+    id: playbackPage
+    anchors.margins: TanoUi.DefaultMargin
     tools: ToolBarLayoutCommon {}
     
     Flickable {        
@@ -35,9 +35,25 @@ Page {
         contentHeight: childrenRect.height
         flickableDirection: Flickable.VerticalFlick
 
-        anchors.fill: parent
+        anchors.top: playbackHeader.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+
         Column {
             Label { text: "Playback page" }
         }
+    }
+
+    PageHeader {
+        id: playbackHeader
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.topMargin: -playbackPage.anchors.topMargin
+        anchors.leftMargin: -playbackPage.anchors.leftMargin
+        anchors.rightMargin: -playbackPage.anchors.rightMargin
+
+        title: "Playback"
     }
 }

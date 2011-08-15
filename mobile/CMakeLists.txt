@@ -49,6 +49,7 @@ SET(Tano_Mobile_Resrcs
 # Define the C++ source files used by Tano
 SET(Tano_Mobile_Srcs
     main.cpp
+    MobileConstants.cpp
     MobileCore.cpp
     MobilePlaylistHandler.cpp
     MobileXmltvHandler.cpp

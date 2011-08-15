@@ -60,25 +60,23 @@ Vaša različica VLC-Qt: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano is an open-source cross-platform IP TV player which features
-full IP TV playback with EPG and recorder.
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>It is based on VLC-Qt.
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are using the mobile version which is currently in
-an experimental stage.</source>
+        <source>Close</source>
+        <translation type="obsolete">Zapri</translation>
+    </message>
+    <message>
+        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.
+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Close</source>
-        <translation type="unfinished">Zapri</translation>
+        <source>You are using the mobile version which is currently in an experimental stage.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -191,10 +189,6 @@ an experimental stage.</source>
 <context>
     <name>FilterDialog</name>
     <message>
-        <source>Filter playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Language:</source>
         <translation type="unfinished">Jezik:</translation>
     </message>
@@ -209,6 +203,18 @@ an experimental stage.</source>
     <message>
         <source>All categories</source>
         <translation type="unfinished">Vse kategorije</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
+        <translation type="unfinished">Obnovi</translation>
     </message>
 </context>
 <context>
@@ -1116,6 +1122,14 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Search ...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="obsolete">Spored</translation>
+    </message>
+    <message>
+        <source>Select channel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistSelect</name>
@@ -1564,6 +1578,20 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Recording to file:</source>
         <translation>Snemam v datoteko:</translation>
+    </message>
+</context>
+<context>
+    <name>ScheduleListPage</name>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Spored</translation>
+    </message>
+</context>
+<context>
+    <name>SchedulePage</name>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Spored</translation>
     </message>
 </context>
 <context>

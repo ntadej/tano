@@ -29,15 +29,14 @@ import "../data"
 import "../js/core.js" as Tano
 
 Page {
-    id: listPage
-    anchors.margins: UiConstants.DefaultMargin
+    id: homeListPage
+    anchors.margins: TanoUi.DefaultMargin
 
-    tools:
-        ToolBarLayoutHome { }
+    tools: ToolBarLayoutHome { }
 
     ListView {
         id: listView
-        anchors.fill: parent
+        anchors {left: parent.left; right: parent.right; top: header.bottom; bottom: parent.bottom}
         model: HomeList { }
         pressDelay: 140
 
@@ -50,8 +49,8 @@ Page {
                 id: background
                 anchors.fill: parent
                 // Fill page porders
-                anchors.leftMargin: -listPage.anchors.leftMargin
-                anchors.rightMargin: -listPage.anchors.rightMargin
+                anchors.leftMargin: -homeListPage.anchors.leftMargin
+                anchors.rightMargin: -homeListPage.anchors.rightMargin
                 visible: mouseArea.pressed
                 source: "image://theme/meegotouch-list-background-pressed-center"
             }
@@ -65,14 +64,14 @@ Page {
                     Label {
                         id: mainText
                         text: model.title
-                        font: UiConstants.TitleFont
+                        font: TanoUi.TitleFont
                     }
 
                     Label {
                         id: subText
                         text: model.subtitle
-                        font: UiConstants.SubtitleFont
-                        color: "#cc6633"
+                        font: TanoUi.SubtitleFont
+                        color: TanoUi.HighlightColor
 
                         visible: text != ""
                     }
@@ -94,6 +93,19 @@ Page {
             }
         }
     }
+
+    PageHeader {
+        id: header
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.topMargin: -homeListPage.anchors.topMargin
+        anchors.leftMargin: -homeListPage.anchors.leftMargin
+        anchors.rightMargin: -homeListPage.anchors.rightMargin
+
+        title: "Tano Mobile"
+    }
+
     ScrollDecorator {
         flickableItem: listView
     }

@@ -1,3 +1,21 @@
+/****************************************************************************
+* Tano - An Open IP TV Player
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************/
+
 import QtQuick 1.0
 import com.meego 1.0
 
@@ -24,14 +42,14 @@ Sheet {
         sheet.populated = true
     }
 
-    acceptButtonText: "Apply"
-    rejectButtonText: "Reset"
+    acceptButtonText: qsTr("Apply")
+    rejectButtonText: qsTr("Reset")
 
     title: Label {
         id: titleLabel
         anchors.centerIn: parent
-        font: UiConstants.TitleFont
-        text: qsTr("Filter playlist")
+        font: TanoUi.TitleFont
+        text: qsTr("Filter")
     }
 
     content: Flickable {
@@ -50,24 +68,26 @@ Sheet {
                 Column {
                     Text {
                         id: labelLanguage
-                        font: UiConstants.TitleFont
+                        font: TanoUi.TitleFont
                         text: qsTr("Language:")
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
                     ButtonColumn {
                         id: buttonsLanguage
+                        width: screen.currentOrientation == Screen.Landscape ? 300 : 225
                         Button { id: la; text: qsTr("All languages") }
                     }
                 }
                 Column {
                     Text {
                         id: labelCategories
-                        font: UiConstants.TitleFont
+                        font: TanoUi.TitleFont
                         text: qsTr("Categories:")
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
                     ButtonColumn {
                         id: buttonsCategories
+                        width: screen.currentOrientation == Screen.Landscape ? 300 : 225
                         Button { id: ca; text: qsTr("All categories") }
                     }
                 }

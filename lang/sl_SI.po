@@ -74,26 +74,24 @@ msgstr ""
 
 msgctxt "AboutDialog|"
 msgid ""
-"Tano is an open-source cross-platform IP TV player which features\n"
-"full IP TV playback with EPG and recorder.\n"
-msgstr ""
-
-msgctxt "AboutDialog|"
-msgid ""
 "It is based on VLC-Qt.\n"
 "\n"
 msgstr ""
 
+#~ msgctxt "AboutDialog|"
+#~ msgid "Close"
+#~ msgstr "Zapri"
+
 msgctxt "AboutDialog|"
 msgid ""
-"You are using the mobile version which is currently in\n"
-"an experimental stage."
+"Tano is an open-source cross-platform IP TV player which features full IP TV "
+"playback with EPG and recorder.\n"
 msgstr ""
 
-#, fuzzy
 msgctxt "AboutDialog|"
-msgid "Close"
-msgstr "Zapri"
+msgid ""
+"You are using the mobile version which is currently in an experimental stage."
+msgstr ""
 
 #~ msgctxt "BrowseDirectory|"
 #~ msgid "Reset"
@@ -183,10 +181,6 @@ msgstr "Naslednja oddaja"
 #~ msgid "Subtitles files(*.sub *.srt *.txt)"
 #~ msgstr "Datoteke podnapisov(*.sub *.srt *.txt)"
 
-msgctxt "FilterDialog|"
-msgid "Filter playlist"
-msgstr ""
-
 #, fuzzy
 msgctxt "FilterDialog|"
 msgid "Language:"
@@ -206,6 +200,19 @@ msgstr "Vsi jeziki"
 msgctxt "FilterDialog|"
 msgid "All categories"
 msgstr "Vse kategorije"
+
+msgctxt "FilterDialog|"
+msgid "Filter"
+msgstr ""
+
+msgctxt "FilterDialog|"
+msgid "Apply"
+msgstr ""
+
+#, fuzzy
+msgctxt "FilterDialog|"
+msgid "Reset"
+msgstr "Obnovi"
 
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
@@ -1111,6 +1118,14 @@ msgctxt "PlaylistPage|"
 msgid "Search ..."
 msgstr ""
 
+#~ msgctxt "PlaylistPage|"
+#~ msgid "Schedule"
+#~ msgstr "Spored"
+
+msgctxt "PlaylistPage|"
+msgid "Select channel"
+msgstr ""
+
 msgctxt "PlaylistSelect|"
 msgid "Select your playlist"
 msgstr "Izberi seznam programov"
@@ -1552,6 +1567,16 @@ msgstr "Konec:"
 msgctxt "Recorder|"
 msgid "Recording to file:"
 msgstr "Snemam v datoteko:"
+
+#, fuzzy
+msgctxt "ScheduleListPage|"
+msgid "Schedule"
+msgstr "Spored"
+
+#, fuzzy
+msgctxt "SchedulePage|"
+msgid "Schedule"
+msgstr "Spored"
 
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"

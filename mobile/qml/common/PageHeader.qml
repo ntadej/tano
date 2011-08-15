@@ -16,23 +16,29 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-// Main
-function addPage(file) {
-    var component = Qt.createComponent(file)
+import QtQuick 1.0
+import com.meego 1.0
 
-    if (component.status == Component.Ready) {
-        pageStack.push(component);
-    } else {
-        console.log("Error loading component:", component.errorString());
+Rectangle {
+    property alias title: heading.text
+    color: TanoUi.HighlightColor
+    height: TanoUi.HeaderDefaultHeight
+    //height: screen.currentOrientation == Screen.Landscape ?
+    //            TanoUi.HeaderDefaultHeightLandscape :
+    //            TanoUi.HeaderDefaultHeightPortrait
+    width: parent.width
+
+    Text {
+        id: heading
+        color: TanoUi.HeaderColor
+        font: TanoUi.HeaderFont
+        anchors.fill: parent
+        anchors.topMargin: TanoUi.HeaderDefaultTopSpacing
+        anchors.rightMargin: TanoUi.DefaultMargin
+        anchors.leftMargin: TanoUi.DefaultMargin
     }
-}
 
-function replacePage(file) {
-    var component = Qt.createComponent(file)
-
-    if (component.status == Component.Ready) {
-        pageStack.replace(component);
-    } else {
-        console.log("Error loading component:", component.errorString());
+    MouseArea {
+        anchors.fill: parent
     }
 }

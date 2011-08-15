@@ -76,26 +76,24 @@ msgstr ""
 
 msgctxt "AboutDialog|"
 msgid ""
-"Tano is an open-source cross-platform IP TV player which features\n"
-"full IP TV playback with EPG and recorder.\n"
-msgstr ""
-
-msgctxt "AboutDialog|"
-msgid ""
 "It is based on VLC-Qt.\n"
 "\n"
 msgstr ""
 
+#~ msgctxt "AboutDialog|"
+#~ msgid "Close"
+#~ msgstr "Закрыть"
+
 msgctxt "AboutDialog|"
 msgid ""
-"You are using the mobile version which is currently in\n"
-"an experimental stage."
+"Tano is an open-source cross-platform IP TV player which features full IP TV "
+"playback with EPG and recorder.\n"
 msgstr ""
 
-#, fuzzy
 msgctxt "AboutDialog|"
-msgid "Close"
-msgstr "Закрыть"
+msgid ""
+"You are using the mobile version which is currently in an experimental stage."
+msgstr ""
 
 #~ msgctxt "BrowseDirectory|"
 #~ msgid "Reset"
@@ -170,10 +168,6 @@ msgstr "След."
 #~ msgid "Subtitles files(*.sub *.srt *.txt)"
 #~ msgstr "Файлы субтитров(*.sub *.srt *.txt)"
 
-msgctxt "FilterDialog|"
-msgid "Filter playlist"
-msgstr ""
-
 #, fuzzy
 msgctxt "FilterDialog|"
 msgid "Language:"
@@ -193,6 +187,19 @@ msgstr "Все языки"
 msgctxt "FilterDialog|"
 msgid "All categories"
 msgstr "Все категории"
+
+msgctxt "FilterDialog|"
+msgid "Filter"
+msgstr ""
+
+msgctxt "FilterDialog|"
+msgid "Apply"
+msgstr ""
+
+#, fuzzy
+msgctxt "FilterDialog|"
+msgid "Reset"
+msgstr "Сброс"
 
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
@@ -1033,6 +1040,14 @@ msgctxt "PlaylistPage|"
 msgid "Search ..."
 msgstr ""
 
+#~ msgctxt "PlaylistPage|"
+#~ msgid "Schedule"
+#~ msgstr "Программа"
+
+msgctxt "PlaylistPage|"
+msgid "Select channel"
+msgstr ""
+
 msgctxt "PlaylistSelect|"
 msgid "Select"
 msgstr ""
@@ -1459,6 +1474,16 @@ msgstr "Остановить запись"
 msgctxt "Recorder|"
 msgid "No timer - press button to stop."
 msgstr "Таймер не определен - для останова нажмите кнопку"
+
+#, fuzzy
+msgctxt "ScheduleListPage|"
+msgid "Schedule"
+msgstr "Программа"
+
+#, fuzzy
+msgctxt "SchedulePage|"
+msgid "Schedule"
+msgstr "Программа"
 
 #, fuzzy
 msgctxt "SettingsBackend|"

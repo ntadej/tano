@@ -35,8 +35,6 @@ MobileXmltvHandler::MobileXmltvHandler(QObject *parent)
     _filterModel->setDynamicSortFilter(true);
 
     connect(_xmltv, SIGNAL(epgSchedule(XmltvProgrammeModel*, Tano::Id)), this, SLOT(epgSchedule(XmltvProgrammeModel*, Tano::Id)));
-
-    openXmltv("SLO1");
 }
 
 MobileXmltvHandler::~MobileXmltvHandler()

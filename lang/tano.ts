@@ -54,24 +54,18 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano is an open-source cross-platform IP TV player which features
-full IP TV playback with EPG and recorder.
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>It is based on VLC-Qt.
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are using the mobile version which is currently in
-an experimental stage.</source>
+        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.
+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Close</source>
+        <source>You are using the mobile version which is currently in an experimental stage.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -144,10 +138,6 @@ an experimental stage.</source>
 <context>
     <name>FilterDialog</name>
     <message>
-        <source>Filter playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -161,6 +151,18 @@ an experimental stage.</source>
     </message>
     <message>
         <source>All categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -927,6 +929,10 @@ You will lose any unsaved changes.</source>
         <source>Search ...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select channel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistSelect</name>
@@ -1277,6 +1283,20 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>No timer - press button to stop.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ScheduleListPage</name>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SchedulePage</name>
+    <message>
+        <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

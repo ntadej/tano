@@ -20,5 +20,6 @@
         <file>data/HomeList.qml</file>
         <file>dialogs/FilterDialog.qml</file>
         <file>pages/ScheduleListPage.qml</file>
+        <file>common/PageHeader.qml</file>
     </qresource>
 </RCC>

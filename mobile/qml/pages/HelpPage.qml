@@ -26,8 +26,8 @@ import com.meego 1.0
 import "../common"
 
 Page {
-    id: labelsPage
-    anchors.margins: UiConstants.DefaultMargin
+    id: helpPage
+    anchors.margins: TanoUi.DefaultMargin
     tools: ToolBarLayoutCommon {}
     
     Flickable {        
@@ -35,9 +35,25 @@ Page {
         contentHeight: childrenRect.height
         flickableDirection: Flickable.VerticalFlick
 
-        anchors.fill: parent
+        anchors.top: helpHeader.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+
         Column {
             Label { text: "Help page" }
         }
+    }
+
+    PageHeader {
+        id: helpHeader
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.topMargin: -helpPage.anchors.topMargin
+        anchors.leftMargin: -helpPage.anchors.leftMargin
+        anchors.rightMargin: -helpPage.anchors.rightMargin
+
+        title: "Help"
     }
 }
