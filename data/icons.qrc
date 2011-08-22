@@ -73,5 +73,6 @@
         <file>icons/24x24/file-old.png</file>
         <file>icons/24x24/file-web.png</file>
         <file>icons/24x24/file-m3u.png</file>
+        <file>icons/16x16/plugin.png</file>
     </qresource>
 </RCC>

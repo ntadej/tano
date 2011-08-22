@@ -1,9 +1,6 @@
 /****************************************************************************
-* Tano - An Open IP TV Player
+* Slovenian EPG - Tano EPG Plugin
 * Copyright (C) 2011 Tadej Novak <tadej@tano.si>
-*
-* The UI layout was based on the VLMC About dialog
-* Copyright (C) 2008-2010 VideoLAN
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,33 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_ABOUTDIALOG_H_
-#define TANO_ABOUTDIALOG_H_
+#ifndef TANOPLUGIN_SLOVENIA_H_
+#define TANOPLUGIN_SLOVENIA_H_
 
-#include <QtCore/QDir>
-#include <QtGui/QDialog>
-#include <QtGui/QTreeWidgetItem>
+#include <QtCore/QString>
 
-#include "core/Enums.h"
+#include "EpgPlugin.h"
 
-namespace Ui
+class Slovenia : public EpgPlugin
 {
-    class AboutDialog;
-}
-
-class AboutDialog : public QDialog
-{
-Q_OBJECT
 public:
-    AboutDialog(const Tano::AppType &type,
-                QWidget *parent = 0);
-    ~AboutDialog();
+	Slovenia();
+	~Slovenia();
 
-protected:
-    void changeEvent(QEvent *e);
+    QString copyright() const;
+    QString link() const;
+    QString logo() const;
+
+    void getChannel(const QString &id);
+    void getProgramme(const QString &id);
 
 private:
-    Ui::AboutDialog *ui;
+
 };
 
-#endif // TANO_ABOUTDIALOG_H
+#endif // TANOPLUGIN_SLOVENIA_H_

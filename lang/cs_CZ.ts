@@ -77,6 +77,18 @@ Verze vašeho VLC-Qt: %4</translation>
         <source>You are using the mobile version which is currently in an experimental stage.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Plugins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>These plugins are currently available for Tano:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EPG Plugins</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BrowseDirectory</name>

@@ -2,9 +2,6 @@
 * Tano - An Open IP TV Player
 * Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
-* The UI layout was based on the VLMC About dialog
-* Copyright (C) 2008-2010 VideoLAN
-*
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
@@ -19,33 +16,33 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_ABOUTDIALOG_H_
-#define TANO_ABOUTDIALOG_H_
+#ifndef TANO_EPGPLUGIN_H_
+#define TANO_EPGPLUGIN_H_
 
-#include <QtCore/QDir>
-#include <QtGui/QDialog>
-#include <QtGui/QTreeWidgetItem>
+#include <QtCore/QtPlugin>
+#include <QtCore/QString>
 
-#include "core/Enums.h"
-
-namespace Ui
+class EpgPlugin
 {
-    class AboutDialog;
-}
-
-class AboutDialog : public QDialog
-{
-Q_OBJECT
 public:
-    AboutDialog(const Tano::AppType &type,
-                QWidget *parent = 0);
-    ~AboutDialog();
+    virtual ~EpgPlugin() {}
 
-protected:
-    void changeEvent(QEvent *e);
+    virtual QString copyright() const = 0;
+    virtual QString link() const = 0;
+    virtual QString logo() const = 0;
 
-private:
-    Ui::AboutDialog *ui;
+    virtual void getChannel(const QString &id) = 0;
+    virtual void getProgramme(const QString &id) = 0;
 };
 
-#endif // TANO_ABOUTDIALOG_H
+class EpgPluginCreator
+{
+public:
+    virtual ~EpgPluginCreator() {}
+    virtual EpgPlugin* createInstance() = 0;
+};
+
+Q_DECLARE_INTERFACE(EpgPluginCreator, "EpgPlugin/0.9")
+
+#endif // TANO_EPGPLUGIN_H_
+

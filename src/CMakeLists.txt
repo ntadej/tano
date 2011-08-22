@@ -161,6 +161,7 @@ SET(Tano_Core_Srcs
     core/ListItem.h
     core/ListModel.cpp
     core/LocaleManager.cpp
+    core/PluginLoader.cpp
     core/Print.cpp
     core/Settings.cpp
     core/Shortcuts.cpp
@@ -264,6 +265,7 @@ SET(Tano_Srcs
     ${Tano_XML_Srcs}
 
     ../daemon/DaemonCommon.cpp
+    ../plugins/EpgPlugin.h
 )
 
 ################

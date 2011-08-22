@@ -93,6 +93,18 @@ msgid ""
 "You are using the mobile version which is currently in an experimental stage."
 msgstr ""
 
+msgctxt "AboutDialog|"
+msgid "Plugins"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid "These plugins are currently available for Tano:"
+msgstr ""
+
+msgctxt "AboutDialog|"
+msgid "EPG Plugins"
+msgstr ""
+
 #~ msgctxt "BrowseDirectory|"
 #~ msgid "Reset"
 #~ msgstr "Obnovi"
