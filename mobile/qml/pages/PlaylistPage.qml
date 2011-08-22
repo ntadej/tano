@@ -33,11 +33,7 @@ Page {
     anchors.margins: TanoUi.DefaultMargin
     tools: ToolBarLayoutPlaylist { }
 
-    function channel(id) {
-        Tano.addPage("ScheduleListPage.qml")
-        var page = pageStack.currentPage
-        page.setChannel(id)
-    }
+    property string type: TanoType.Playback
 
     FilterDialog { id: filter }
 
@@ -99,7 +95,15 @@ Page {
                 id: mouseArea
                 anchors.fill: background
                 onClicked: {
-                    playlistPage.channel(epg)
+                    if(type == TanoType.Playback) {
+                        Tano.addPage("PlaybackPage.qml")
+                        var page = pageStack.currentPage
+                        page.setChannel(name)
+                    } else if(type == TanoType.Schedule) {
+                        Tano.addPage("ScheduleListPage.qml")
+                        var page = pageStack.currentPage
+                        page.setChannel(epg)
+                    }
                 }
             }
         }

@@ -21,29 +21,33 @@
 *****************************************************************************/
 
 import QtQuick 1.0
+import QtMultimediaKit 1.1
 import com.meego 1.0
 
 import "../common"
 
 Page {
     id: playbackPage
-    anchors.margins: TanoUi.DefaultMargin
     tools: ToolBarLayoutCommon {}
-    
-    Flickable {        
-        contentWidth: childrenRect.width
-        contentHeight: childrenRect.height
-        flickableDirection: Flickable.VerticalFlick
 
-        anchors.top: playbackHeader.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-
-        Column {
-            Label { text: "Playback page" }
-        }
+    function setChannel(channel) {
+        playbackHeader.title = channel
     }
+    
+    Video {
+        id: video
+        width : parent.width
+        height : parent.height
+        source: "http://192.168.1.50:1234/udp/232.4.1.1:5002"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                video.play()
+            }
+        }
+        focus: true
+     }
 
     PageHeader {
         id: playbackHeader

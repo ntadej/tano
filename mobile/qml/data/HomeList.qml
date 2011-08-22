@@ -22,16 +22,19 @@ import com.meego 1.0
 ListModel {
     id: homePagesModel
     ListElement {
-        page: "PlaybackPage.qml"
+        type: "playback"
+        page: "PlaylistPage.qml"
         title: "Play live TV"
         subtitle: ""
     }
     ListElement {
+        type: "schedule"
         page: "PlaylistPage.qml"
         title: "Schedule"
         subtitle: "Description"
     }
     ListElement {
+        type: "test"
         page: "../test/TestListPage.qml"
         title: "Tests"
         subtitle: "Description"

@@ -37,6 +37,7 @@ MobileCore::MobileCore(QObject *parent)
 {
     _locale = new LocaleManager();
     _window = new QDeclarativeView();
+    _window->rootContext()->setContextProperty("TanoType", MobileConstants::typeConstants());
     _window->rootContext()->setContextProperty("TanoUi", MobileConstants::uiConstants());
     _window->rootContext()->setContextProperty("core", this);
     _window->setSource(QUrl("qrc:/main.qml"));
@@ -48,7 +49,7 @@ MobileCore::MobileCore(QObject *parent)
 #endif
 
     createPlaylist();
-    createXmltv();
+    //createXmltv();
 
     connect(_window->engine(), SIGNAL(quit()), qApp, SLOT(quit()));
 }

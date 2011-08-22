@@ -89,6 +89,8 @@ Page {
                 anchors.fill: background
                 onClicked: {
                     Tano.addPage(page)
+                    var p = pageStack.currentPage
+                    p.type = type
                 }
             }
         }

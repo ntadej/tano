@@ -33,8 +33,8 @@ public:
     MobileCore(QObject *parent = 0);
     ~MobileCore();
 
-    Q_INVOKABLE void createPlaylist();
-    Q_INVOKABLE void createXmltv();
+    void createPlaylist();
+    void createXmltv();
 
 private:
     LocaleManager *_locale;

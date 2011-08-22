@@ -23,6 +23,7 @@
 
 namespace MobileConstants
 {
+    QDeclarativePropertyMap *typeConstants();
     QDeclarativePropertyMap *uiConstants();
 }
 
