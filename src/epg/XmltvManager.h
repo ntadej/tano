@@ -19,13 +19,17 @@
 #ifndef TANO_XMLTVMANAGER_H_
 #define TANO_XMLTVMANAGER_H_
 
+#include <QtCore/QFutureWatcher>
 #include <QtCore/QObject>
 #include <QtCore/QTimer>
 
 #include "core/Enums.h"
+#include "xml/XmltvHandler.h"
+
+extern bool loadXmltvStart(XmltvHandler *handler,
+                           const QString &location);
 
 class XmltvChannel;
-class XmltvHandler;
 class XmltvList;
 class XmltvProgramme;
 class XmltvProgrammeModel;
@@ -57,6 +61,7 @@ signals:
 
 private slots:
     void current();
+    void loadXmltvFinish();
 
 private:
     void loadXmltv();
@@ -70,6 +75,7 @@ private:
 
     XmltvHandler *_handler;
     QTimer *_timer;
+    QFutureWatcher<bool> *_watcher;
     XmltvList *_xmltv;
 };
 

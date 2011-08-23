@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include <QtCore/QDebug>
+#include <QtCore/QtConcurrentRun>
 
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"
@@ -36,12 +37,16 @@ XmltvManager::XmltvManager(QObject *parent)
 
     _timer = new QTimer(this);
     connect(_timer, SIGNAL(timeout()), this, SLOT(current()));
+
+    _watcher = new QFutureWatcher<bool>(this);
+    connect(_watcher, SIGNAL(finished()), this, SLOT(loadXmltvFinish()));
 }
 
 XmltvManager::~XmltvManager()
 {
     delete _handler;
     delete _timer;
+    delete _watcher;
 }
 
 void XmltvManager::current()
@@ -62,16 +67,29 @@ void XmltvManager::current()
 
 void XmltvManager::loadXmltv()
 {
-    QXmlSimpleReader reader;
-    reader.setContentHandler(_handler);
-    reader.setErrorHandler(_handler);
+    QFuture<bool> future = QtConcurrent::run(loadXmltvStart, _handler, _location);
+    _watcher->setFuture(future);
+}
 
-    QFile file(Tano::locateResource(_location));
+bool loadXmltvStart(XmltvHandler *handler,
+                    const QString &location)
+{
+    QXmlSimpleReader reader;
+    reader.setContentHandler(handler);
+    reader.setErrorHandler(handler);
+
+    QFile file(Tano::locateResource(location));
     if (!file.open(QFile::ReadOnly | QFile::Text))
-        return;
+        return false;
 
     QXmlInputSource xmlInputSource(&file);
-    if (!reader.parse(xmlInputSource))
+
+    return reader.parse(xmlInputSource);
+}
+
+void XmltvManager::loadXmltvFinish()
+{
+    if(!_watcher->result())
         return;
 
     _xmltv = _handler->list();
