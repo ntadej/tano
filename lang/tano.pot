@@ -1189,6 +1189,14 @@ msgctxt "QObject|"
 msgid "Sagem STB channel list"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "XMLTV file"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Open XMLTV"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr ""
@@ -1454,15 +1462,7 @@ msgid "Default recording directory"
 msgstr ""
 
 msgctxt "SettingsSchedule|"
-msgid "XMLTV Grabber"
-msgstr ""
-
-msgctxt "SettingsSchedule|"
 msgid "XMLTV"
-msgstr ""
-
-msgctxt "SettingsSchedule|"
-msgid "Custom grabber"
 msgstr ""
 
 msgctxt "SettingsSchedule|"
@@ -1470,14 +1470,31 @@ msgid "Select desired XMLTV grabber from the list below:"
 msgstr ""
 
 msgctxt "SettingsSchedule|"
-msgid "Custom grabber settings"
+msgid "EPG source"
 msgstr ""
 
-#, qt-format
 msgctxt "SettingsSchedule|"
-msgid ""
-"Your custom grabber must output to:\n"
-"%1"
+msgid "EPG plugin"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV settings"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber output:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "EPG plugin settings"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Select desired EPG plugin from the list below:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Custom"
 msgstr ""
 
 msgctxt "SettingsShortcuts|"

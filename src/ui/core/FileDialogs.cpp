@@ -41,6 +41,8 @@ QString FileDialogs::filterByType(const Tano::FileType &type)
         return QObject::tr("Comma-separated values files") + "(*.csv *.txt)";
     case Tano::JS:
         return QObject::tr("Sagem STB channel list files") + "(*.js)";
+    case Tano::XmltvFile:
+        return QObject::tr("XMLTV file") + "(*.xml)";
     case Tano::XmltvId:
         return QObject::tr("Plain text files") + "(*.txt)";
     case Tano::TanoOld:
@@ -59,6 +61,8 @@ QString FileDialogs::openByType(const Tano::FileType &type,
         return openDirectory(arg);
     case Tano::M3U:
         return openPlaylistSimple();
+    case Tano::XmltvFile:
+        return openXmltvFile(arg);
     default:
         return QString();
     }
@@ -130,6 +134,13 @@ QString FileDialogs::openUrl()
         return QString("");
     else
         return file;
+}
+
+QString FileDialogs::openXmltvFile(const QString &file)
+{
+    QString f = QFileDialog::getOpenFileName(0, QObject::tr("Open XMLTV"),
+                                                file, filterByType(Tano::XmltvFile));
+    return f;
 }
 
 File FileDialogs::savePlaylist()

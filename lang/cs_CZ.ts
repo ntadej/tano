@@ -1492,6 +1492,14 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Sagem STB channel list</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>XMLTV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -2002,15 +2010,7 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="obsolete">&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
     </message>
     <message>
-        <source>XMLTV Grabber</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>XMLTV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom grabber</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2018,13 +2018,32 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Custom grabber settings</source>
+        <source>EPG source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Your custom grabber must output to:
-%1</source>
+        <source>EPG plugin</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EPG plugin settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select desired EPG plugin from the list below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Stanovený uživatelem</translation>
     </message>
 </context>
 <context>

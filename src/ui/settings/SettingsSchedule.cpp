@@ -16,8 +16,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if EDITOR
-#else
+#include "core/Settings.h"
+
+#if !EDITOR
+    #include "core/PluginLoader.h"
     #include "epg/XmltvController.h"
 #endif
 
@@ -30,9 +32,15 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->location->setType(Tano::XmltvFile);
+    ui->location->setResetValue(Settings::DEFAULT_LOCATION);
+
+    connect(ui->comboGrabber, SIGNAL(currentIndexChanged(QString)), this, SLOT(processGrabber(QString)));
+
 #if !EDITOR
     _controller = new XmltvController(this);
     listGrabbers();
+    listPlugins();
 #endif
 }
 
@@ -66,17 +74,45 @@ void SettingsSchedule::listGrabbers()
     for(int i = 0; i < grabbers.size(); i++) {
         ui->comboGrabber->addItem(grabbers[i].split("|")[1], grabbers[i].split("|")[0]);
     }
+
+    ui->comboGrabber->addItem(tr("Custom"), "custom");
 #endif
 }
 
-bool SettingsSchedule::xmltv() const
+void SettingsSchedule::listPlugins()
 {
-    return ui->radioXmltv->isChecked();
+#if !EDITOR
+    PluginLoader *loader = new PluginLoader();
+    for(int i = 0; i < loader->epgPlugin().size(); i++) {
+        ui->comboPlugin->addItem(loader->epgName()[i]);
+    }
+    delete loader;
+#endif
 }
 
-void SettingsSchedule::setXmltv(const bool &enabled)
+void SettingsSchedule::processGrabber(const QString &grabber)
 {
-    ui->radioXmltv->setChecked(enabled);
+    ui->labelCustom->setEnabled(grabber == tr("Custom"));
+    ui->location->setEnabled(grabber == tr("Custom"));
+
+    if(grabber != tr("Custom"))
+        ui->location->reset();
+}
+
+Tano::EpgType SettingsSchedule::epgType() const
+{
+    if(ui->radioXmltv->isChecked())
+        return Tano::EpgXmltv;
+    else if(ui->radioPlugin->isChecked())
+        return Tano::EpgPlugin;
+}
+
+void SettingsSchedule::setEpgType(const Tano::EpgType &type)
+{
+    if(type == Tano::EpgXmltv)
+        ui->radioXmltv->setChecked(true);
+    else if(type == Tano::EpgPlugin)
+        ui->radioPlugin->setChecked(true);
 }
 
 QString SettingsSchedule::grabber() const
@@ -87,4 +123,24 @@ QString SettingsSchedule::grabber() const
 void SettingsSchedule::setGrabber(const QString &grabber)
 {
     ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(grabber));
+}
+
+QString SettingsSchedule::location() const
+{
+    return ui->location->value();
+}
+
+void SettingsSchedule::setLocation(const QString &location)
+{
+    ui->location->setValue(location);
+}
+
+QString SettingsSchedule::plugin() const
+{
+    return ui->comboPlugin->currentText();
+}
+
+void SettingsSchedule::setPlugin(const QString &plugin)
+{
+    ui->comboPlugin->setCurrentIndex(ui->comboPlugin->findText(plugin));
 }

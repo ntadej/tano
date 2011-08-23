@@ -40,6 +40,13 @@ namespace Tano
         Schedule
     };
 
+    // EPG types
+    enum EpgType
+    {
+        EpgXmltv,
+        EpgPlugin
+    };
+
     // FileTypes
     enum FileType
     {
@@ -53,7 +60,8 @@ namespace Tano
         Subtitles = 3,
         TanoOld = 40,
         Url = 2,
-        XmltvId = 30
+        XmltvFile = 30,
+        XmltvId = 31
     };
 
     // Timer types

@@ -28,20 +28,20 @@
 #include "xml/XmltvHandler.h"
 
 XmltvManager::XmltvManager(QObject *parent)
-	: QObject(parent),
-	_currentXmltvId("")
+    : QObject(parent),
+      _type(Tano::EpgXmltv),
+      _currentXmltvId("")
 {
-	_handler = new XmltvHandler();
-	loadXmltv();
+    _handler = new XmltvHandler();
 
-	_timer = new QTimer(this);
-	connect(_timer, SIGNAL(timeout()), this, SLOT(current()));
+    _timer = new QTimer(this);
+    connect(_timer, SIGNAL(timeout()), this, SLOT(current()));
 }
 
 XmltvManager::~XmltvManager()
 {
-	delete _handler;
-	delete _timer;
+    delete _handler;
+    delete _timer;
 }
 
 void XmltvManager::current()
@@ -53,64 +53,64 @@ void XmltvManager::current()
         if(QDateTime::currentDateTime() < _xmltv->channel(_currentXmltvId)->programme()->row(i)->start()) {
             emit epgCurrent(processCurrentString(_xmltv->channel(_currentXmltvId)->programme()->row(i-1)),
                             processCurrentString(_xmltv->channel(_currentXmltvId)->programme()->row(i)));
-			break;
-		}
-	}
+            break;
+        }
+    }
 
-	_timer->start(60000);
+    _timer->start(60000);
 }
 
 void XmltvManager::loadXmltv()
 {
-	QXmlSimpleReader reader;
-	reader.setContentHandler(_handler);
-	reader.setErrorHandler(_handler);
+    QXmlSimpleReader reader;
+    reader.setContentHandler(_handler);
+    reader.setErrorHandler(_handler);
 
-	QFile file(Tano::locateResource("xmltv.xml")); // Test file
-	if (!file.open(QFile::ReadOnly | QFile::Text))
-		return;
+    QFile file(Tano::locateResource(_location));
+    if (!file.open(QFile::ReadOnly | QFile::Text))
+        return;
 
-	QXmlInputSource xmlInputSource(&file);
-	if (!reader.parse(xmlInputSource))
-		return;
+    QXmlInputSource xmlInputSource(&file);
+    if (!reader.parse(xmlInputSource))
+        return;
 
-	_xmltv = _handler->list();
+    _xmltv = _handler->list();
 
-	// Debug
-	qDebug() << _handler->list()->sourceInfoName() << _handler->list()->sourceInfoUrl();
-	for(int i = 0; i < 2; i++) {
-		qDebug() << _handler->list()->channels()[i]->id()
-				 << _handler->list()->channels()[i]->displayName()
-				 << _handler->list()->channels()[i]->icon()
-				 << _handler->list()->channels()[i]->url();
-		for(int k = 0; k < 5; k++) {
+    // Debug
+    qDebug() << _handler->list()->sourceInfoName() << _handler->list()->sourceInfoUrl();
+    for(int i = 0; i < 2; i++) {
+        qDebug() << _handler->list()->channels()[i]->id()
+                 << _handler->list()->channels()[i]->displayName()
+                 << _handler->list()->channels()[i]->icon()
+                 << _handler->list()->channels()[i]->url();
+        for(int k = 0; k < 5; k++) {
             qDebug() << _handler->list()->channels()[i]->programme()->row(k)->channel()
                      << _handler->list()->channels()[i]->programme()->row(k)->start()
                      << _handler->list()->channels()[i]->programme()->row(k)->stop();
-		}
-	}
+        }
+    }
 }
 
 QString XmltvManager::processCurrentString(XmltvProgramme *programme) const
 {
-	QString output = "<a href=\"%1\">%2 - %3</a>";
-	output = output.arg(programme->start().toString(Tano::Xmltv::dateFormat()), programme->start().toString("HH:mm"), programme->title());
-	return output;
+    QString output = "<a href=\"%1\">%2 - %3</a>";
+    output = output.arg(programme->start().toString(Tano::Xmltv::dateFormat()), programme->start().toString("HH:mm"), programme->title());
+    return output;
 }
 
 void XmltvManager::request(const QString &id,
-						   const Tano::Id &identifier)
+                           const Tano::Id &identifier)
 {
-	if(id.isEmpty())
-		return;
+    if(id.isEmpty())
+        return;
 
     emit epgSchedule(_xmltv->channel(id)->programme(), identifier);
 
-	_currentIdentifier = identifier;
-	if(_currentIdentifier == Tano::Main) {
-		_currentXmltvId = id;
-		current();
-	}
+    _currentIdentifier = identifier;
+    if(_currentIdentifier == Tano::Main) {
+        _currentXmltvId = id;
+        current();
+    }
 }
 
 void XmltvManager::requestProgramme(const QString &programme)
@@ -118,26 +118,35 @@ void XmltvManager::requestProgramme(const QString &programme)
     for(int i = 1; i < _xmltv->channel(_currentXmltvId)->programme()->rowCount(); i++) {
         if(_xmltv->channel(_currentXmltvId)->programme()->row(i)->start() == QDateTime::fromString(programme, Tano::Xmltv::dateFormat())) {
             emit epgProgramme(_xmltv->channel(_currentXmltvId)->programme()->row(i));
-			break;
-		}
-	}
+            break;
+        }
+    }
 }
 
 void XmltvManager::requestProgrammeNext(XmltvProgramme *programme)
 {
     if(_xmltv->channel(programme->channel())->programme()->indexFromItem(programme).row() != _xmltv->channel(programme->channel())->programme()->rowCount()-1) {
         emit epgProgramme(_xmltv->channel(programme->channel())->programme()->row(_xmltv->channel(programme->channel())->programme()->indexFromItem(programme).row()+1));
-	}
+    }
 }
 
 void XmltvManager::requestProgrammePrevious(XmltvProgramme *programme)
 {
     if(_xmltv->channel(programme->channel())->programme()->indexFromItem(programme).row() != 0) {
         emit epgProgramme(_xmltv->channel(programme->channel())->programme()->row(_xmltv->channel(programme->channel())->programme()->indexFromItem(programme).row()-1));
-	}
+    }
+}
+
+void XmltvManager::setSource(const Tano::EpgType &type,
+                             const QString &location)
+{
+    _type = type;
+    _location = location;
+
+    loadXmltv();
 }
 
 void XmltvManager::stop()
 {
-	_timer->stop();
+    _timer->stop();
 }

@@ -2,6 +2,14 @@
 <ui version="4.0">
  <class>SettingsSchedule</class>
  <widget class="QWidget" name="SettingsSchedule">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>366</width>
+    <height>335</height>
+   </rect>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
     <number>0</number>
@@ -9,10 +17,10 @@
    <item>
     <widget class="QGroupBox" name="groupGrabber">
      <property name="title">
-      <string>XMLTV Grabber</string>
+      <string>EPG source</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
        <widget class="QRadioButton" name="radioXmltv">
         <property name="text">
          <string>XMLTV</string>
@@ -22,30 +30,10 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QRadioButton" name="radioCustom">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
+      <item>
+       <widget class="QRadioButton" name="radioPlugin">
         <property name="text">
-         <string>Custom grabber</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="2">
-       <widget class="QComboBox" name="comboGrabber"/>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="QLabel" name="labelSpacer">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="2">
-       <widget class="QLabel" name="labelSelect">
-        <property name="text">
-         <string>Select desired XMLTV grabber from the list below:</string>
+         <string>EPG plugin</string>
         </property>
        </widget>
       </item>
@@ -53,27 +41,106 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupCustom">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
+    <widget class="QGroupBox" name="groupXmltv">
      <property name="title">
-      <string>Custom grabber settings</string>
+      <string>XMLTV settings</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QLabel" name="labelSelect">
+        <property name="text">
+         <string>Select desired XMLTV grabber from the list below:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboGrabber"/>
+      </item>
       <item>
        <widget class="QLabel" name="labelCustom">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
-         <string>Your custom grabber must output to:
-%1</string>
+         <string>Custom grabber output:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="BrowseWidget" name="location" native="true">
+        <property name="enabled">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
+   <item>
+    <widget class="QGroupBox" name="groupPlugin">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>EPG plugin settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="labelSelectPlugin">
+        <property name="text">
+         <string>Select desired EPG plugin from the list below:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboPlugin"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BrowseWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/core/BrowseWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>radioXmltv</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupXmltv</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>163</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioPlugin</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupPlugin</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>258</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>278</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -20,16 +20,14 @@
 #include <QtCore/QFileInfo>
 
 #include "container/core/Timer.h"
-#include "core/Settings.h"
+#include "core/Common.h"
 #include "daemon/recorder/RecorderTimeManager.h"
 #include "recorder/TimersModel.h"
 
 RecorderTimeManager::RecorderTimeManager(QObject *parent)
     : QObject(parent)
 {
-    Settings *settings = new Settings(this);
-    _path = settings->path();
-    delete settings;
+    _path = Tano::settingsPath();
 
     _timer = new QTimer();
     connect(_timer, SIGNAL(timeout()), this, SLOT(check()));

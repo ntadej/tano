@@ -27,7 +27,6 @@ public:
     Settings(QObject * parent = 0);
     ~Settings();
 
-    QString path() const;
     void readSettings();
     void writeSettings();
 
@@ -123,12 +122,18 @@ public:
     static const int DEFAULT_VOLUME;
 
     // Schedule
-    bool xmltv() const { return _xmltv; }
-    void setXmltv(const bool &b) { _xmltv = b; }
-    static const bool DEFAULT_XMLTV;
+    int epgType() const { return _epgType; }
+    void setEpgType(const int &i) { _epgType = i; }
+    static const int DEFAULT_EPG_TYPE;
     QString grabber() const { return _grabber; }
     void setGrabber(const QString &s) { _grabber = s; }
     static const QString DEFAULT_GRABBER;
+    QString location() const { return _location; }
+    void setLocation(const QString &s) { _location = s; }
+    static const QString DEFAULT_LOCATION;
+    QString plugin() const { return _plugin; }
+    void setPlugin(const QString &s) { _plugin = s; }
+    static const QString DEFAULT_PLUGIN;
 
 private:
     // General variables
@@ -173,8 +178,10 @@ private:
     int _volume;
 
     // Schedule
-    bool _xmltv;
+    int _epgType;
     QString _grabber;
+    QString _location;
+    QString _plugin;
 };
 
 #endif // TANO_SETTINGS_H_

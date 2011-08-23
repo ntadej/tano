@@ -35,13 +35,13 @@ namespace Tano
     // Resources locators
     QString daemon();
     QString locateResource(const QString &file);
+    QString settingsPath();
 
     // Backend settings
     QStringList vlcQtArgs();
     QStringList vlcQtRecorderArgs(const QString &file);
     QString vlcQtVersionCore();
     QString vlcQtVersionLibrary();
-    bool vlcQtDisabled();
-};
+}
 
 #endif // TANO_COMMON_H_

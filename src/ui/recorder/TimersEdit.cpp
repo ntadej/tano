@@ -25,6 +25,7 @@
 
 #include "container/core/Channel.h"
 #include "container/core/Timer.h"
+#include "core/Common.h"
 #include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "recorder/TimersModel.h"
@@ -37,6 +38,8 @@ TimersEdit::TimersEdit(PlaylistModel *playlist,
       _closeEnabled(false)
 {
     ui->setupUi(this);
+
+    _path = Tano::settingsPath();
 
     ui->dockWidgetContents->setDisabled(true);
     _playlistModel = playlist;
@@ -81,7 +84,6 @@ void TimersEdit::createSettings()
 {
     Settings *settings = new Settings(this);
     ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
-    _path = settings->path();
     delete settings;
 }
 

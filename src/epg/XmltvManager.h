@@ -34,37 +34,43 @@ class XmltvManager : public QObject
 {
 Q_OBJECT
 public:
-	XmltvManager(QObject *parent = 0);
-	~XmltvManager();
+    XmltvManager(QObject *parent = 0);
+    ~XmltvManager();
+
+    void setSource(const Tano::EpgType &type,
+                   const QString &location = 0);
 
 public slots:
-	void request(const QString &id,
-				 const Tano::Id &identifier);
-	void requestProgramme(const QString &programme);
-	void requestProgrammeNext(XmltvProgramme *programme);
-	void requestProgrammePrevious(XmltvProgramme *programme);
-	void stop();
+    void request(const QString &id,
+                 const Tano::Id &identifier);
+    void requestProgramme(const QString &programme);
+    void requestProgrammeNext(XmltvProgramme *programme);
+    void requestProgrammePrevious(XmltvProgramme *programme);
+    void stop();
 
 signals:
-	void epgCurrent(const QString,
-					const QString);
+    void epgCurrent(const QString,
+                    const QString);
     void epgSchedule(XmltvProgrammeModel *,
-					 const Tano::Id);
-	void epgProgramme(XmltvProgramme *);
+                     const Tano::Id);
+    void epgProgramme(XmltvProgramme *);
 
 private slots:
-	void current();
+    void current();
 
 private:
-	void loadXmltv();
-	QString processCurrentString(XmltvProgramme *programme) const;
+    void loadXmltv();
+    QString processCurrentString(XmltvProgramme *programme) const;
 
-	Tano::Id _currentIdentifier;
-	QString _currentXmltvId;
+    Tano::EpgType _type;
+    QString _location;
 
-	XmltvHandler *_handler;
-	QTimer *_timer;
-	XmltvList *_xmltv;
+    Tano::Id _currentIdentifier;
+    QString _currentXmltvId;
+
+    XmltvHandler *_handler;
+    QTimer *_timer;
+    XmltvList *_xmltv;
 };
 
 #endif // TANO_XMLTVMANAGER_H_

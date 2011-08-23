@@ -38,6 +38,7 @@ namespace FileDialogs
     QString openPlaylistSimple();
     QString openSubtitles(const QString &dir = QDir::homePath());
     QString openUrl();
+    QString openXmltvFile(const QString &file = QDir::homePath()+"xmltv.xml");
 
     QString saveByType(const Tano::FileType &type,
                        const QString &arg = "");

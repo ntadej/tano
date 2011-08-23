@@ -38,9 +38,11 @@ public:
     void setValue(const QString &value);
     QString value() const;
 
+public slots:
+    void reset();
+
 private slots:
     void browse();
-    void reset();
 
 private:
     QString _resetValue;

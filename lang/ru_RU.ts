@@ -1427,6 +1427,14 @@ You will lose any unsaved changes.</source>
         <source>Sagem STB channel list</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>XMLTV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1897,15 +1905,7 @@ You will lose any unsaved changes.</source>
         <translation type="obsolete">Другой</translation>
     </message>
     <message>
-        <source>XMLTV Grabber</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>XMLTV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom grabber</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1913,13 +1913,32 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Custom grabber settings</source>
+        <source>EPG source</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Your custom grabber must output to:
-%1</source>
+        <source>EPG plugin</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EPG plugin settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select desired EPG plugin from the list below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Пользовательский</translation>
     </message>
 </context>
 <context>

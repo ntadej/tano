@@ -149,6 +149,18 @@ QString Tano::daemon()
     return path;
 }
 
+QString Tano::settingsPath()
+{
+    QSettings *settings = new QSettings(QSettings::IniFormat,
+                                        QSettings::UserScope,
+                                        "Tano",
+                                        "Main");
+    QString path = settings->fileName().replace("Main.ini", "");
+    delete settings;
+
+    return path;
+}
+
 QStringList Tano::vlcQtArgs()
 {
     QStringList args;
@@ -200,14 +212,4 @@ QString Tano::vlcQtVersionLibrary()
 #endif
 
     return version;
-}
-
-bool Tano::vlcQtDisabled()
-{
-    bool disabled = true;
-#if WITH_EDITOR_VLCQT
-    disabled = false;
-#endif
-
-    return disabled;
 }

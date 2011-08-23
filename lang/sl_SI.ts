@@ -1521,6 +1521,14 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Sagem STB channel list</source>
         <translation>Sagem STB seznam programov</translation>
     </message>
+    <message>
+        <source>XMLTV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -2032,7 +2040,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>XMLTV Grabber</source>
-        <translation>XMLTV Grabber</translation>
+        <translation type="obsolete">XMLTV Grabber</translation>
     </message>
     <message>
         <source>XMLTV</source>
@@ -2040,7 +2048,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Custom grabber</source>
-        <translation>Poljuben grabber</translation>
+        <translation type="obsolete">Poljuben grabber</translation>
     </message>
     <message>
         <source>Select desired XMLTV grabber from the list below:</source>
@@ -2048,13 +2056,41 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Custom grabber settings</source>
-        <translation>Nastavitve poljubnega grabberja</translation>
+        <translation type="obsolete">Nastavitve poljubnega grabberja</translation>
     </message>
     <message>
         <source>Your custom grabber must output to:
 %1</source>
-        <translation>Vaš poljuben grabber mora shraniti v:
+        <translation type="obsolete">Vaš poljuben grabber mora shraniti v:
 %1</translation>
+    </message>
+    <message>
+        <source>EPG source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EPG plugin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom grabber output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EPG plugin settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select desired EPG plugin from the list below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Drugo</translation>
     </message>
 </context>
 <context>
