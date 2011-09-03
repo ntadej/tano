@@ -73,6 +73,7 @@ SET(Tano_Mobile_Srcs
     ../src/epg/XmltvCommon.cpp
     ../src/epg/XmltvCrewModel.cpp
     ../src/epg/XmltvEnums.cpp
+    ../src/epg/XmltvHandler.cpp
     ../src/epg/XmltvManager.cpp
     ../src/epg/XmltvProgrammeFilterModel.cpp
     ../src/epg/XmltvProgrammeModel.cpp
@@ -81,8 +82,6 @@ SET(Tano_Mobile_Srcs
     ../src/playlist/PlaylistFilterModel.cpp
     ../src/playlist/PlaylistModel.cpp
     ../src/playlist/PlaylistOpen.cpp
-
-    ../src/xml/XmltvHandler.cpp
 )
 
 # Define QML files

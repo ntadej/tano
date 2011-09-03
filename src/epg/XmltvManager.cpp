@@ -24,9 +24,9 @@
 #include "container/xmltv/XmltvProgramme.h"
 #include "core/Common.h"
 #include "epg/XmltvCommon.h"
+#include "epg/XmltvHandler.h"
 #include "epg/XmltvManager.h"
 #include "epg/XmltvProgrammeModel.h"
-#include "xml/XmltvHandler.h"
 
 XmltvManager::XmltvManager(QObject *parent)
     : QObject(parent),

@@ -21,8 +21,8 @@
 
 #include "container/core/UpdateInfo.h"
 #include "core/Common.h"
+#include "core/UpdateHandler.h"
 #include "core/UpdateManager.h"
-#include "xml/UpdateHandler.h"
 
 UpdateManager::UpdateManager(QObject *parent)
 	: QHttp(parent),

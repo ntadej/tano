@@ -24,7 +24,7 @@
 #include <QtCore/QTimer>
 
 #include "core/Enums.h"
-#include "xml/XmltvHandler.h"
+#include "epg/XmltvHandler.h"
 
 extern bool loadXmltvStart(XmltvHandler *handler,
                            const QString &location);

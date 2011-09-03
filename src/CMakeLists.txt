@@ -158,6 +158,7 @@ SET(Tano_Core_Srcs
     core/Settings.cpp
     core/Shortcuts.cpp
     core/Udpxy.cpp
+    core/UpdateHandler.cpp
     core/UpdateManager.cpp
 )
 SET(Tano_Epg_Srcs
@@ -165,6 +166,7 @@ SET(Tano_Epg_Srcs
     epg/XmltvController.cpp
     epg/XmltvCrewModel.cpp
     epg/XmltvEnums.cpp
+    epg/XmltvHandler.cpp
     epg/XmltvManager.cpp
     epg/XmltvProgrammeFilterModel.cpp
     epg/XmltvProgrammeModel.cpp
@@ -235,10 +237,6 @@ SET(Tano_UI_Srcs
     ui/wizard/IntroPage.cpp
     ui/wizard/SettingsPage.cpp
 )
-SET(Tano_XML_Srcs
-    xml/UpdateHandler.cpp
-    xml/XmltvHandler.cpp
-)
 
 SET(Tano_Srcs
     main.cpp
@@ -249,7 +247,6 @@ SET(Tano_Srcs
     ${Tano_Playlist_Srcs}
     ${Tano_Recorder_Srcs}
     ${Tano_UI_Srcs}
-    ${Tano_XML_Srcs}
 
     ../daemon/DaemonCommon.cpp
     ../plugins/EpgPlugin.h

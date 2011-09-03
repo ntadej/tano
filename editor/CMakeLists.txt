@@ -95,6 +95,7 @@ SET(Tano_Editor_Srcs
     ../src/core/Settings.cpp
     ../src/core/Shortcuts.cpp
     ../src/core/Udpxy.cpp
+    ../src/core/UpdateHandler.cpp
     ../src/core/UpdateManager.cpp
 
     ../src/playlist/PlaylistFilterModel.cpp
@@ -129,8 +130,6 @@ SET(Tano_Editor_Srcs
     ../src/ui/settings/SettingsSchedule.cpp
     ../src/ui/settings/SettingsShortcuts.cpp
     ../src/ui/settings/SettingsUi.cpp
-
-    ../src/xml/UpdateHandler.cpp
 )
 
 ################
