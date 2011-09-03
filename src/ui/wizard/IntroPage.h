@@ -23,23 +23,23 @@
 
 namespace Ui
 {
-	class IntroPage;
+    class IntroPage;
 }
 
 class IntroPage : public QWizardPage
 {
 Q_OBJECT
 public:
-	IntroPage(QWidget *parent = 0);
-	~IntroPage();
+    IntroPage(QWidget *parent = 0);
+    ~IntroPage();
 
-	int nextId() const;
+    int nextId() const;
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 private:
-	Ui::IntroPage *ui;
+    Ui::IntroPage *ui;
 };
 
 #endif // TANO_INTROPAGE_H_

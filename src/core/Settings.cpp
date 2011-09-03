@@ -27,7 +27,7 @@ const bool Settings::DEFAULT_SESSION_VOLUME = true;
 const bool Settings::DEFAULT_SESSION_AUTOPLAY = true;
 const QString Settings::DEFAULT_LANGUAGE = "";
 // Channels
-const QString Settings::DEFAULT_PLAYLIST = "playlists/sl/siol-mpeg4.m3u";
+const QString Settings::DEFAULT_PLAYLIST = "";
 // GUI - start
 const bool Settings::DEFAULT_SPLASH = true;
 const bool Settings::DEFAULT_START_LITE = false;

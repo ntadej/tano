@@ -37,10 +37,9 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
 
 #if EDITOR
     ui->setttingsListWidget->item(1)->setHidden(true);
-    ui->setttingsListWidget->item(2)->setHidden(true);
+    ui->setttingsListWidget->item(3)->setHidden(true);
     ui->setttingsListWidget->item(4)->setHidden(true);
     ui->setttingsListWidget->item(5)->setHidden(true);
-    ui->setttingsListWidget->item(6)->setHidden(true);
 #else
     ui->shortcuts->setShortcuts(s);
 #endif
@@ -87,9 +86,7 @@ void SettingsEdit::apply()
     _settings->setSessionVolume(ui->general->sessionVolume());
     _settings->setSessionAutoplay(ui->general->sessionAutoplay());
     _settings->setLanguage(ui->general->language());
-
-    // Channels
-    _settings->setPlaylist(ui->channels->playlist());
+    _settings->setPlaylist(ui->general->playlist());
 
     // GUI
     _settings->setOsd(ui->gui->osd());
@@ -141,9 +138,7 @@ void SettingsEdit::read()
     ui->general->setSessionVolume(_settings->sessionVolume());
     ui->general->setSessionAutoplay(_settings->sessionAutoplay());
     ui->general->setLanguage(_settings->language());
-
-    // Channels
-    ui->channels->setPlaylist(_settings->playlist());
+    ui->general->setPlaylist(_settings->playlist());
 
     // GUI
     ui->gui->setOsd(_settings->osd());

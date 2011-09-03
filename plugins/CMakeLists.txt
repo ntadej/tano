@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-ADD_SUBDIRECTORY(slovenia)
+ADD_SUBDIRECTORY(sample)
 
 # Add your plugins here
 #ADD_SUBDIRECTORY(plugindir)

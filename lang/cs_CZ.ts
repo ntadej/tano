@@ -808,7 +808,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Download from Web</source>
-        <translation>Stáhnout z internetu</translation>
+        <translation type="obsolete">Stáhnout z internetu</translation>
     </message>
     <message>
         <source>Tano TV old channel list files(*.tano *.xml)</source>
@@ -928,10 +928,6 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import from Web</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1064,42 +1060,42 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistImportWeb</name>
     <message>
         <source>Import playlist from Web</source>
-        <translation>Zavést seznam programů z internetu</translation>
+        <translation type="obsolete">Zavést seznam programů z internetu</translation>
     </message>
     <message>
         <source>Refresh current playlist</source>
-        <translation>Obnovit současný seznam programů</translation>
+        <translation type="obsolete">Obnovit současný seznam programů</translation>
     </message>
     <message>
         <source>Open playlist</source>
-        <translation>Otevřít seznam programů</translation>
+        <translation type="obsolete">Otevřít seznam programů</translation>
     </message>
     <message>
         <source>&lt;i&gt;If you chose &apos;&apos;Refresh&apos;&apos;, your current channel numbers will remain the same. Only new channels will be added.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Pokud zvolíte &apos;&apos;Obnovit&apos;&apos;, vaše nynější čísla programů zůstanou stejná. Budou přidány pouze nové programy.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Pokud zvolíte &apos;&apos;Obnovit&apos;&apos;, vaše nynější čísla programů zůstanou stejná. Budou přidány pouze nové programy.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Save channel list</source>
-        <translation>Uložit seznam programů</translation>
+        <translation type="obsolete">Uložit seznam programů</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation>Soubory se seznamy programů Tano TV (*.m3u)</translation>
+        <translation type="obsolete">Soubory se seznamy programů Tano TV (*.m3u)</translation>
     </message>
     <message>
         <source>Import type</source>
-        <translation>Zavést typ</translation>
+        <translation type="obsolete">Zavést typ</translation>
     </message>
 </context>
 <context>
     <name>PlaylistPage</name>
     <message>
         <source>Please, select your IP TV provider or browse for custom playlist.</source>
-        <translation>Vyberte, prosím, svého poskytovatele IP TV, nebo se podívejte po vlastním seznamu programů.</translation>
+        <translation type="obsolete">Vyberte, prosím, svého poskytovatele IP TV, nebo se podívejte po vlastním seznamu programů.</translation>
     </message>
     <message>
         <source>Select playlist</source>
-        <translation>Vybrat seznam programů</translation>
+        <translation type="obsolete">Vybrat seznam programů</translation>
     </message>
     <message>
         <source>Language</source>
@@ -1126,31 +1122,31 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistSelect</name>
     <message>
         <source>Select</source>
-        <translation>Vybrat</translation>
+        <translation type="obsolete">Vybrat</translation>
     </message>
     <message>
         <source>Select your playlist</source>
-        <translation>Vyberte svůj seznam programů</translation>
+        <translation type="obsolete">Vyberte svůj seznam programů</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation>Země:</translation>
+        <translation type="obsolete">Země:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Poznámka: Ne všechny země a poskytovatelé jsou dostupní.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation>Seznam programů:</translation>
+        <translation type="obsolete">Seznam programů:</translation>
     </message>
     <message>
         <source>1. Select your country from the menu below.</source>
-        <translation>1. Vyberte svoji zemi z nabídky níže.</translation>
+        <translation type="obsolete">1. Vyberte svoji zemi z nabídky níže.</translation>
     </message>
     <message>
         <source>2. Select your playlist.</source>
-        <translation>2. Vyberte svůj seznam programů.</translation>
+        <translation type="obsolete">2. Vyberte svůj seznam programů.</translation>
     </message>
 </context>
 <context>
@@ -1340,7 +1336,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>The file is not a playlist list file.</source>
-        <translation>Soubor není souborem se seznamem programů.</translation>
+        <translation type="obsolete">Soubor není souborem se seznamem programů.</translation>
     </message>
     <message>
         <source>Channel</source>
@@ -1664,7 +1660,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation>Programy</translation>
+        <translation type="obsolete">Programy</translation>
     </message>
     <message>
         <source>Interface</source>
@@ -1861,6 +1857,10 @@ Ztratíte všechny neuložené změny.</translation>
         <source>You are using Tano version:</source>
         <translation type="unfinished">Používáte verzi programu Tano:</translation>
     </message>
+    <message>
+        <source>Default channel list</source>
+        <translation type="unfinished">Výchozí seznam programů</translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -1890,14 +1890,22 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Select or change playlist</source>
-        <translation>Vybrat nebo změnit seznam programů</translation>
+        <translation type="obsolete">Vybrat nebo změnit seznam programů</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Playback&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SettingsPlaylist</name>
     <message>
         <source>Preset</source>
-        <translation>Přednastavení</translation>
+        <translation type="obsolete">Přednastavení</translation>
     </message>
     <message>
         <source>...</source>
@@ -1909,7 +1917,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Stanovený uživatelem</translation>
+        <translation type="obsolete">Stanovený uživatelem</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
@@ -1917,19 +1925,19 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Default channel list</source>
-        <translation>Výchozí seznam programů</translation>
+        <translation type="obsolete">Výchozí seznam programů</translation>
     </message>
     <message>
         <source>Download from web</source>
-        <translation>Stáhnout z internetu</translation>
+        <translation type="obsolete">Stáhnout z internetu</translation>
     </message>
     <message>
         <source>Tano will download the channel list to your desired location and automatically set it as custom channel list.</source>
-        <translation>Tano stáhne seznam programů do vámi požadovaného umístění a automaticky jej nastaví jako uživatelský seznam programů.</translation>
+        <translation type="obsolete">Tano stáhne seznam programů do vámi požadovaného umístění a automaticky jej nastaví jako uživatelský seznam programů.</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Stáhnout</translation>
+        <translation type="obsolete">Stáhnout</translation>
     </message>
     <message>
         <source>Open channel list</source>

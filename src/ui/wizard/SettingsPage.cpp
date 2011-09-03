@@ -23,43 +23,42 @@
 #include "core/Settings.h"
 
 SettingsPage::SettingsPage(QWidget *parent)
-	: QWizardPage(parent),
-	ui(new Ui::SettingsPage)
+    : QWizardPage(parent),
+      ui(new Ui::SettingsPage)
 {
-	ui->setupUi(this);
+    ui->setupUi(this);
 
-	Settings *settings = new Settings();
-	ui->sessionVolumeCheckBox->setChecked(settings->sessionVolume());
-	ui->sessionAutoplayCheckBox->setChecked(settings->sessionAutoplay());
-	ui->vlcCheckBox->setChecked(settings->globalSettings());
-	delete settings;
+    Settings *settings = new Settings();
+    ui->sessionVolumeCheckBox->setChecked(settings->sessionVolume());
+    ui->sessionAutoplayCheckBox->setChecked(settings->sessionAutoplay());
+    ui->playlist->setValue(settings->playlist());
+    ui->vlcCheckBox->setChecked(settings->globalSettings());
+    delete settings;
 
-	registerField("sessionvolume", ui->sessionVolumeCheckBox);
-	registerField("sessionplay", ui->sessionAutoplayCheckBox);
-	registerField("vlc", ui->vlcCheckBox);
+    registerField("sessionvolume", ui->sessionVolumeCheckBox);
+    registerField("sessionplay", ui->sessionAutoplayCheckBox);
+    registerField("playlist", ui->playlist->edit());
+    registerField("vlc", ui->vlcCheckBox);
 }
 
 SettingsPage::~SettingsPage()
 {
-	delete ui;
+    delete ui;
 }
 
 void SettingsPage::changeEvent(QEvent *e)
 {
-	QWizardPage::changeEvent(e);
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			ui->retranslateUi(this);
-			break;
-		default:
-			break;
-	}
+    QWizardPage::changeEvent(e);
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+        default:
+            break;
+    }
 }
 
 int SettingsPage::nextId() const
 {
-	if(ui->playlistCheckBox->isChecked())
-		return FirstRunWizard::Playlist;
-	else
-		return FirstRunWizard::Conclusion;
+    return FirstRunWizard::Conclusion;
 }

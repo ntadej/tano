@@ -691,10 +691,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Download from Web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Add channel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -766,10 +762,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import from Web</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -897,83 +889,13 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>PlaylistImportWeb</name>
-    <message>
-        <source>Import playlist from Web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh current playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;If you chose &apos;&apos;Refresh&apos;&apos;, your current channel numbers will remain the same. Only new channels will be added.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV channel list files(*.m3u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import type</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>PlaylistPage</name>
-    <message>
-        <source>Please, select your IP TV provider or browse for custom playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Search ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistSelect</name>
-    <message>
-        <source>Select</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select your playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Country:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>1. Select your country from the menu below.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>2. Select your playlist.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1100,10 +1022,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The file is not a playlist list file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1398,10 +1316,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Interface</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1468,6 +1382,10 @@ You will lose any unsaved changes.</source>
         <source>You are using Tano version:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Default channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -1496,34 +1414,11 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select or change playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsPlaylist</name>
-    <message>
-        <source>Preset</source>
+        <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Custom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download from web</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano will download the channel list to your desired location and automatically set it as custom channel list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download</source>
+        <source>&lt;b&gt;Playback&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

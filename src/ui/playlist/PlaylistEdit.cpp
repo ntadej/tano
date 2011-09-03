@@ -36,7 +36,6 @@
 #include "ui/dialogs/PrintDialog.h"
 #include "ui/playlist/PlaylistExportTvheadend.h"
 #include "ui/playlist/PlaylistImportCSV.h"
-#include "ui/playlist/PlaylistImportWeb.h"
 
 #if EDITOR
     #include "core/LocaleManager.h"
@@ -147,7 +146,6 @@ void PlaylistEdit::createConnections()
     connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
     connect(ui->actionExportTvheadend, SIGNAL(triggered()), this, SLOT(exportTvheadend()));
     connect(ui->actionExportXmltvId, SIGNAL(triggered()), this, SLOT(exportXmltvId()));
-    connect(ui->actionImportWeb, SIGNAL(triggered()), this, SLOT(importWeb()));
     connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
 
     connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(setTitle(QString)));
@@ -383,15 +381,6 @@ void PlaylistEdit::exportXmltvId()
         return;
 
     _model->save(file, "", Tano::XmltvId);
-}
-
-void PlaylistEdit::importWeb()
-{
-    PlaylistImportWeb web;
-    web.download();
-
-    if(!web.playlist().isEmpty())
-        open(web.playlist(), web.refresh());
 }
 
 void PlaylistEdit::exit()

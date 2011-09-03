@@ -30,12 +30,9 @@ SET(Tano_Editor_UIs
     ../src/ui/playlist/PlaylistEdit.ui
     ../src/ui/playlist/PlaylistExportTvheadend.ui
     ../src/ui/playlist/PlaylistImportCSV.ui
-    ../src/ui/playlist/PlaylistImportWeb.ui
-    ../src/ui/playlist/PlaylistSelect.ui
     ../src/ui/settings/SettingsBackend.ui
     ../src/ui/settings/SettingsEdit.ui
     ../src/ui/settings/SettingsGeneral.ui
-    ../src/ui/settings/SettingsPlaylist.ui
     ../src/ui/settings/SettingsRecorder.ui
     ../src/ui/settings/SettingsSchedule.ui
     ../src/ui/settings/SettingsShortcuts.ui
@@ -62,12 +59,9 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/ui/playlist/PlaylistEdit.h
     ../src/ui/playlist/PlaylistExportTvheadend.h
     ../src/ui/playlist/PlaylistImportCSV.h
-    ../src/ui/playlist/PlaylistImportWeb.h
-    ../src/ui/playlist/PlaylistSelect.h
     ../src/ui/settings/SettingsBackend.h
     ../src/ui/settings/SettingsEdit.h
     ../src/ui/settings/SettingsGeneral.h
-    ../src/ui/settings/SettingsPlaylist.h
     ../src/ui/settings/SettingsRecorder.h
     ../src/ui/settings/SettingsSchedule.h
     ../src/ui/settings/SettingsShortcuts.h
@@ -128,18 +122,14 @@ SET(Tano_Editor_Srcs
     ../src/ui/playlist/PlaylistEdit.cpp
     ../src/ui/playlist/PlaylistExportTvheadend.cpp
     ../src/ui/playlist/PlaylistImportCSV.cpp
-    ../src/ui/playlist/PlaylistImportWeb.cpp
-    ../src/ui/playlist/PlaylistSelect.cpp
     ../src/ui/settings/SettingsBackend.cpp
     ../src/ui/settings/SettingsEdit.cpp
     ../src/ui/settings/SettingsGeneral.cpp
-    ../src/ui/settings/SettingsPlaylist.cpp
     ../src/ui/settings/SettingsRecorder.cpp
     ../src/ui/settings/SettingsSchedule.cpp
     ../src/ui/settings/SettingsShortcuts.cpp
     ../src/ui/settings/SettingsUi.cpp
 
-    ../src/xml/PlaylistListHandler.cpp
     ../src/xml/UpdateHandler.cpp
 )
 

@@ -23,23 +23,23 @@
 
 namespace Ui
 {
-	class SettingsPage;
+    class SettingsPage;
 }
 
 class SettingsPage : public QWizardPage
 {
 Q_OBJECT
 public:
-	SettingsPage(QWidget *parent = 0);
-	~SettingsPage();
+    SettingsPage(QWidget *parent = 0);
+    ~SettingsPage();
 
-	int nextId() const;
+    int nextId() const;
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 private:
-	Ui::SettingsPage *ui;
+    Ui::SettingsPage *ui;
 };
 
 #endif // TANO_SETTINGSPAGE_H_

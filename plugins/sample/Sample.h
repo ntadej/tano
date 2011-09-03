@@ -1,5 +1,5 @@
 /****************************************************************************
-* Tano - An Open IP TV Player
+* Sample EPG - Tano EPG Plugin
 * Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -16,49 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTIMPORTWEB_H_
-#define TANO_PLAYLISTIMPORTWEB_H_
+#ifndef TANOPLUGIN_SAMPLE_H_
+#define TANOPLUGIN_SAMPLE_H_
 
-#include <QtCore/QTextCodec>
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
+#include <QtCore/QString>
 
-namespace Ui {
-	class PlaylistImportWeb;
-}
+#include "EpgPlugin.h"
 
-class GetFile;
-
-class PlaylistImportWeb : public QDialog
+class Sample : public EpgPlugin
 {
-Q_OBJECT
 public:
-	PlaylistImportWeb(QWidget *parent = 0);
-	~PlaylistImportWeb();
+	Sample();
+	~Sample();
 
-	void download();
-	void save();
+    QString copyright() const;
+    QString link() const;
+    QString logo() const;
 
-	QString playlist() const { return _playlist; }
-	bool refresh() const { return _refresh; }
-
-protected:
-	void changeEvent(QEvent *e);
-
-private slots:
-	void action(QAbstractButton *button);
-	void finish(const QString &playlist);
-	void readList(const QString &list);
+    void getChannel(const QString &id);
+    void getProgramme(const QString &id);
 
 private:
-	Ui::PlaylistImportWeb *ui;
 
-	QTextCodec *_codec;
-	GetFile *_file;
-	QString _playlist;
-
-	bool _refresh;
-	bool _save;
 };
 
-#endif // TANO_PLAYLISTIMPORTWEB_H_
+#endif // TANOPLUGIN_SAMPLE_H_

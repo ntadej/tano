@@ -21,29 +21,27 @@
 #include "ConclusionPage.h"
 #include "FirstRunWizard.h"
 #include "IntroPage.h"
-#include "PlaylistPage.h"
 #include "SettingsPage.h"
 
 FirstRunWizard::FirstRunWizard(QWidget *parent)
-	: QWizard(parent),
-	_locale(new LocaleManager())
-{	
-	setPage(Intro, new IntroPage);
-	setPage(Settings, new SettingsPage);
-	setPage(Playlist, new PlaylistPage);
-	setPage(Conclusion, new ConclusionPage);
+    : QWizard(parent),
+    _locale(new LocaleManager())
+{
+    setPage(Intro, new IntroPage);
+    setPage(Settings, new SettingsPage);
+    setPage(Conclusion, new ConclusionPage);
 
-	setStartId(Intro);
+    setStartId(Intro);
 
 #ifndef Q_WS_MAC
-	setWizardStyle(ModernStyle);
+    setWizardStyle(ModernStyle);
 #endif
 
-	setPixmap(QWizard::LogoPixmap, QPixmap(":/logo/48x48/logo.png"));
-	setWindowTitle(tr("First Run Wizard"));
+    setPixmap(QWizard::LogoPixmap, QPixmap(":/logo/48x48/logo.png"));
+    setWindowTitle(tr("First Run Wizard"));
 }
 
 FirstRunWizard::~FirstRunWizard()
 {
-	delete _locale;
+    delete _locale;
 }

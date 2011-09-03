@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>640</height>
+    <height>540</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>640</width>
-    <height>640</height>
+    <height>540</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -84,18 +84,6 @@
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
         <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Channels</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
-      </property>
-      <property name="icon">
-       <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/48x48/video.png</normaloff>:/icons/48x48/video.png</iconset>
       </property>
      </item>
      <item>
@@ -195,26 +183,6 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="pageChannels">
-      <layout class="QVBoxLayout" name="layoutChannels">
-       <item>
-        <widget class="SettingsPlaylist" name="channels" native="true"/>
-       </item>
-       <item>
-        <spacer name="spacerChannels">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>273</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
      <widget class="QWidget" name="pageGui">
       <layout class="QVBoxLayout" name="layoutInterface">
        <item>
@@ -307,12 +275,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>SettingsPlaylist</class>
-   <extends>QWidget</extends>
-   <header>ui/settings/SettingsPlaylist.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>SettingsShortcuts</class>
    <extends>QWidget</extends>

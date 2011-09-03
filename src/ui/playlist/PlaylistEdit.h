@@ -70,7 +70,6 @@ private slots:
                  const QString &url);
 
     void save();
-    void importWeb();
     void exportTvheadend();
     void exportXmltvId();
     void print();

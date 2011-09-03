@@ -24,41 +24,41 @@
 #include "ui_IntroPage.h"
 
 IntroPage::IntroPage(QWidget *parent)
-	: QWizardPage(parent),
-	ui(new Ui::IntroPage)
+    : QWizardPage(parent),
+    ui(new Ui::IntroPage)
 {
-	ui->setupUi(this);
+    ui->setupUi(this);
 
-	setPixmap(QWizard::WatermarkPixmap, QPixmap(":/images/wizard.png"));
+    setPixmap(QWizard::WatermarkPixmap, QPixmap(":/images/wizard.png"));
 
-	Settings *settings = new Settings();
-	if(settings->configurationVersion() != Tano::version())
-		ui->labelVersion->setText(tr("You previously used version %1 of <i>Tano</i>.")
-								  .arg(settings->configurationVersion()) +"<br>"+
-								  tr("Please re-set your settings."));
-	else
-		ui->labelVersion->clear();
-	delete settings;
+    Settings *settings = new Settings();
+    if(settings->configurationVersion() != Tano::version())
+        ui->labelVersion->setText(tr("You previously used version %1 of <i>Tano</i>.")
+                                  .arg(settings->configurationVersion()) +"<br>"+
+                                  tr("Please re-set your settings."));
+    else
+        ui->labelVersion->clear();
+    delete settings;
 }
 
 IntroPage::~IntroPage()
 {
-	delete ui;
+    delete ui;
 }
 
 void IntroPage::changeEvent(QEvent *e)
 {
-	QWizardPage::changeEvent(e);
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			ui->retranslateUi(this);
-			break;
-		default:
-			break;
-	}
+    QWizardPage::changeEvent(e);
+    switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+        default:
+            break;
+    }
 }
 
 int IntroPage::nextId() const
 {
-	return FirstRunWizard::Settings;
+    return FirstRunWizard::Settings;
 }

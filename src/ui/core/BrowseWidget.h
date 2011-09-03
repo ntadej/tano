@@ -33,6 +33,7 @@ public:
     BrowseWidget(QWidget *parent = 0);
     ~BrowseWidget();
 
+    QLineEdit *edit() { return _edit; }
     void setResetValue(const QString &value) { _resetValue = value; }
     void setType(const Tano::FileType &type) { _type = type; }
     void setValue(const QString &value);

@@ -27,13 +27,13 @@ class FirstRunWizard : public QWizard
 {
 Q_OBJECT
 public:
-	enum { Intro, Settings, Playlist, Conclusion };
+    enum { Intro, Settings, Conclusion };
 
-	FirstRunWizard(QWidget *parent = 0);
-	~FirstRunWizard();
+    FirstRunWizard(QWidget *parent = 0);
+    ~FirstRunWizard();
 
 private:
-	LocaleManager *_locale;
+    LocaleManager *_locale;
 };
 
 #endif // TANO_FIRSTRUNWIZARD_H_

@@ -18,6 +18,7 @@
 
 #include "Config.h"
 #include "core/Common.h"
+#include "core/Enums.h"
 #include "core/LocaleManager.h"
 #include "SettingsGeneral.h"
 #include "ui_SettingsGeneral.h"
@@ -27,6 +28,7 @@ SettingsGeneral::SettingsGeneral(QWidget *parent)
       ui(new Ui::SettingsGeneral)
 {
     ui->setupUi(this);
+    ui->playlist->setType(Tano::M3U);
     loadLocale();
 
 #if EDITOR
@@ -34,6 +36,7 @@ SettingsGeneral::SettingsGeneral(QWidget *parent)
     ui->checkWizard->hide();
     ui->groupSession->hide();
     ui->labelLogoPlayer->hide();
+    ui->groupDefaultPlaylist->hide();
 #else
     ui->labelVersion->setText(tr("You are using Tano version:") + " <b>" + Tano::version() + "</b>");
     ui->labelLogoEditor->hide();
@@ -85,6 +88,16 @@ void SettingsGeneral::setLanguage(const QString &language)
             }
         }
     }
+}
+
+QString SettingsGeneral::playlist() const
+{
+    return ui->playlist->value();
+}
+
+void SettingsGeneral::setPlaylist(const QString &playlist)
+{
+    ui->playlist->setValue(playlist);
 }
 
 bool SettingsGeneral::sessionAutoplay() const

@@ -1,5 +1,5 @@
 /****************************************************************************
-* Slovenian EPG - Tano EPG Plugin
+* Sample EPG - Tano EPG Plugin
 * Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -16,28 +16,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANOPLUGIN_SLOVENIA_H_
-#define TANOPLUGIN_SLOVENIA_H_
+#include "Sample.h"
+#include "SampleCreator.h"
 
-#include <QtCore/QString>
-
-#include "EpgPlugin.h"
-
-class Slovenia : public EpgPlugin
+EpgPlugin *SampleCreator::createInstance()
 {
-public:
-	Slovenia();
-	~Slovenia();
+    return new Sample();
+}
 
-    QString copyright() const;
-    QString link() const;
-    QString logo() const;
-
-    void getChannel(const QString &id);
-    void getProgramme(const QString &id);
-
-private:
-
-};
-
-#endif // TANOPLUGIN_SLOVENIA_H_
+Q_EXPORT_PLUGIN2(tanoepg-sample, SampleCreator)

@@ -50,6 +50,30 @@
     </widget>
    </item>
    <item>
+    <widget class="QLabel" name="labelPlaylist">
+     <property name="text">
+      <string>&lt;b&gt;Default channel list&lt;/b&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="BrowseWidget" name="playlist" native="true"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelBreak2">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelPlayback">
+     <property name="text">
+      <string>&lt;b&gt;Playback&lt;/b&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QCheckBox" name="vlcCheckBox">
      <property name="text">
       <string>Use global VLC settings</string>
@@ -69,15 +93,16 @@
      </property>
     </spacer>
    </item>
-   <item>
-    <widget class="QCheckBox" name="playlistCheckBox">
-     <property name="text">
-      <string>Select or change playlist</string>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BrowseWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/core/BrowseWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../../data/logo.qrc"/>
  </resources>

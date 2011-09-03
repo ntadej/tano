@@ -42,22 +42,18 @@ SET(Tano_UIs
     ui/playlist/PlaylistEdit.ui
     ui/playlist/PlaylistExportTvheadend.ui
     ui/playlist/PlaylistImportCSV.ui
-    ui/playlist/PlaylistImportWeb.ui
-    ui/playlist/PlaylistSelect.ui
     ui/recorder/Recorder.ui
     ui/recorder/TimersDisplayWidget.ui
     ui/recorder/TimersEdit.ui
     ui/settings/SettingsBackend.ui
     ui/settings/SettingsEdit.ui
     ui/settings/SettingsGeneral.ui
-    ui/settings/SettingsPlaylist.ui
     ui/settings/SettingsRecorder.ui
     ui/settings/SettingsSchedule.ui
     ui/settings/SettingsShortcuts.ui
     ui/settings/SettingsUi.ui
     ui/wizard/ConclusionPage.ui
     ui/wizard/IntroPage.ui
-    ui/wizard/PlaylistPage.ui
     ui/wizard/SettingsPage.ui
 )
 
@@ -110,15 +106,12 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/playlist/PlaylistEdit.h
     ui/playlist/PlaylistExportTvheadend.h
     ui/playlist/PlaylistImportCSV.h
-    ui/playlist/PlaylistImportWeb.h
-    ui/playlist/PlaylistSelect.h
     ui/recorder/Recorder.h
     ui/recorder/TimersDisplayWidget.h
     ui/recorder/TimersEdit.h
     ui/settings/SettingsBackend.h
     ui/settings/SettingsEdit.h
     ui/settings/SettingsGeneral.h
-    ui/settings/SettingsPlaylist.h
     ui/settings/SettingsRecorder.h
     ui/settings/SettingsSchedule.h
     ui/settings/SettingsShortcuts.h
@@ -126,7 +119,6 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/wizard/ConclusionPage.h
     ui/wizard/FirstRunWizard.h
     ui/wizard/IntroPage.h
-    ui/wizard/PlaylistPage.h
     ui/wizard/SettingsPage.h
 )
 
@@ -228,15 +220,12 @@ SET(Tano_UI_Srcs
     ui/playlist/PlaylistEdit.cpp
     ui/playlist/PlaylistExportTvheadend.cpp
     ui/playlist/PlaylistImportCSV.cpp
-    ui/playlist/PlaylistImportWeb.cpp
-    ui/playlist/PlaylistSelect.cpp
     ui/recorder/Recorder.cpp
     ui/recorder/TimersDisplayWidget.cpp
     ui/recorder/TimersEdit.cpp
     ui/settings/SettingsBackend.cpp
     ui/settings/SettingsEdit.cpp
     ui/settings/SettingsGeneral.cpp
-    ui/settings/SettingsPlaylist.cpp
     ui/settings/SettingsRecorder.cpp
     ui/settings/SettingsSchedule.cpp
     ui/settings/SettingsShortcuts.cpp
@@ -244,11 +233,9 @@ SET(Tano_UI_Srcs
     ui/wizard/ConclusionPage.cpp
     ui/wizard/FirstRunWizard.cpp
     ui/wizard/IntroPage.cpp
-    ui/wizard/PlaylistPage.cpp
     ui/wizard/SettingsPage.cpp
 )
 SET(Tano_XML_Srcs
-    xml/PlaylistListHandler.cpp
     xml/UpdateHandler.cpp
     xml/XmltvHandler.cpp
 )

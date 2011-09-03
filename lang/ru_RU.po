@@ -792,10 +792,6 @@ msgid "Move down"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "Download from Web"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid ""
 "Do you want close the editor?\n"
 "You will lose any unsaved changes."
@@ -861,10 +857,6 @@ msgctxt "PlaylistEdit|"
 msgid ""
 "You need to have valid Udpxy settings or the exported playlist will contain "
 "classic URLs."
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Import from Web"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
@@ -998,47 +990,19 @@ msgctxt "PlaylistImportCSV|"
 msgid "URL"
 msgstr "URL"
 
-msgctxt "PlaylistImportWeb|"
-msgid "Import playlist from Web"
-msgstr ""
+#~ msgctxt "PlaylistImportWeb|"
+#~ msgid "Save channel list"
+#~ msgstr "Сохранить список каналов"
 
-msgctxt "PlaylistImportWeb|"
-msgid "Refresh current playlist"
-msgstr ""
+#~ msgctxt "PlaylistImportWeb|"
+#~ msgid "Tano TV channel list files(*.m3u)"
+#~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
 
-msgctxt "PlaylistImportWeb|"
-msgid "Open playlist"
-msgstr ""
-
-msgctxt "PlaylistImportWeb|"
-msgid ""
-"<i>If you chose ''Refresh'', your current channel numbers will remain the "
-"same. Only new channels will be added.</i>"
-msgstr ""
-
-#, fuzzy
-msgctxt "PlaylistImportWeb|"
-msgid "Save channel list"
-msgstr "Сохранить список каналов"
-
-#, fuzzy
-msgctxt "PlaylistImportWeb|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
-
-msgctxt "PlaylistImportWeb|"
-msgid "Import type"
-msgstr ""
-
-msgctxt "PlaylistPage|"
-msgid "Please, select your IP TV provider or browse for custom playlist."
-msgstr ""
-"Выберите, пожалуйста, Вашего оператора IP TV или укажите свой список "
-"воспроизведения."
-
-msgctxt "PlaylistPage|"
-msgid "Select playlist"
-msgstr ""
+#~ msgctxt "PlaylistPage|"
+#~ msgid "Please, select your IP TV provider or browse for custom playlist."
+#~ msgstr ""
+#~ "Выберите, пожалуйста, Вашего оператора IP TV или укажите свой список "
+#~ "воспроизведения."
 
 #~ msgctxt "PlaylistPage|"
 #~ msgid "Language"
@@ -1060,34 +1024,9 @@ msgctxt "PlaylistPage|"
 msgid "Select channel"
 msgstr ""
 
-msgctxt "PlaylistSelect|"
-msgid "Select"
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "Select your playlist"
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "Country:"
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "<i>Note: Not all countries and providers are available.</i>"
-msgstr ""
-
-#, fuzzy
-msgctxt "PlaylistSelect|"
-msgid "Playlist:"
-msgstr "Список каналов:"
-
-msgctxt "PlaylistSelect|"
-msgid "1. Select your country from the menu below."
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "2. Select your playlist."
-msgstr ""
+#~ msgctxt "PlaylistSelect|"
+#~ msgid "Playlist:"
+#~ msgstr "Список каналов:"
 
 #~ msgctxt "PlaylistWidget|"
 #~ msgid "Channel"
@@ -1272,10 +1211,6 @@ msgstr "Еженедельно"
 #~ msgctxt "QObject|"
 #~ msgid "Sagem JS Imported Playlist"
 #~ msgstr "Список, импортированный из Sagem JS"
-
-msgctxt "QObject|"
-msgid "The file is not a playlist list file."
-msgstr ""
 
 #, fuzzy
 msgctxt "QObject|"
@@ -1588,9 +1523,9 @@ msgctxt "SettingsEdit|"
 msgid "General"
 msgstr "Общие"
 
-msgctxt "SettingsEdit|"
-msgid "Channels"
-msgstr "Каналы"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Channels"
+#~ msgstr "Каналы"
 
 msgctxt "SettingsEdit|"
 msgid "Interface"
@@ -1786,6 +1721,10 @@ msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr "Вы используете Tano версии:"
 
+msgctxt "SettingsGeneral|"
+msgid "Default channel list"
+msgstr ""
+
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Настройка <i>Tano</i>"
@@ -1810,13 +1749,21 @@ msgctxt "SettingsPage|"
 msgid "Use global VLC settings"
 msgstr "Использовать глобальные настройки VLC"
 
-msgctxt "SettingsPage|"
-msgid "Select or change playlist"
-msgstr "Выбрать или изменить список воспроизведения"
+#~ msgctxt "SettingsPage|"
+#~ msgid "Select or change playlist"
+#~ msgstr "Выбрать или изменить список воспроизведения"
 
-msgctxt "SettingsPlaylist|"
-msgid "Preset"
-msgstr "Предустановленный"
+msgctxt "SettingsPage|"
+msgid "<b>Default channel list</b>"
+msgstr ""
+
+msgctxt "SettingsPage|"
+msgid "<b>Playback</b>"
+msgstr ""
+
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Preset"
+#~ msgstr "Предустановленный"
 
 #~ msgctxt "SettingsPlaylist|"
 #~ msgid "..."
@@ -1826,31 +1773,13 @@ msgstr "Предустановленный"
 #~ msgid "Reset"
 #~ msgstr "Сброс"
 
-msgctxt "SettingsPlaylist|"
-msgid "Custom"
-msgstr "Пользовательский"
-
-msgctxt "SettingsPlaylist|"
-msgid "Default channel list"
-msgstr ""
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "Custom"
+#~ msgstr "Пользовательский"
 
 #~ msgctxt "SettingsPlaylist|"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
-
-msgctxt "SettingsPlaylist|"
-msgid "Download from web"
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid ""
-"Tano will download the channel list to your desired location and "
-"automatically set it as custom channel list."
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid "Download"
-msgstr ""
 
 #, fuzzy
 msgctxt "SettingsRecorder|"

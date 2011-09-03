@@ -84,7 +84,6 @@
    </attribute>
    <addaction name="actionNew"/>
    <addaction name="actionOpen"/>
-   <addaction name="actionImportWeb"/>
    <addaction name="actionSave"/>
    <addaction name="actionExport"/>
    <addaction name="actionPrint"/>
@@ -524,15 +523,6 @@
     <string>About</string>
    </property>
   </action>
-  <action name="actionImportDownload">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/file-web.png</normaloff>:/icons/24x24/file-web.png</iconset>
-   </property>
-   <property name="text">
-    <string>Download from Web</string>
-   </property>
-  </action>
   <action name="actionNew">
    <property name="icon">
     <iconset resource="../../../data/icons.qrc">
@@ -582,15 +572,6 @@
    </property>
    <property name="toolTip">
     <string>Update Information</string>
-   </property>
-  </action>
-  <action name="actionImportWeb">
-   <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/import.png</normaloff>:/icons/24x24/import.png</iconset>
-   </property>
-   <property name="text">
-    <string>Import from Web</string>
    </property>
   </action>
  </widget>

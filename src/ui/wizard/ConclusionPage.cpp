@@ -23,45 +23,44 @@
 #include "ui_ConclusionPage.h"
 
 ConclusionPage::ConclusionPage(QWidget *parent)
-	: QWizardPage(parent),
-	ui(new Ui::ConclusionPage)
+    : QWizardPage(parent),
+    ui(new Ui::ConclusionPage)
 {
-	ui->setupUi(this);
+    ui->setupUi(this);
 
-	registerField("agree*", ui->agreeCheckBox);
+    registerField("agree*", ui->agreeCheckBox);
 }
 
 ConclusionPage::~ConclusionPage()
 {
-	delete ui;
+    delete ui;
 }
 
 void ConclusionPage::changeEvent(QEvent *e)
 {
-	QWizardPage::changeEvent(e);
-		switch (e->type()) {
-		case QEvent::LanguageChange:
-			ui->retranslateUi(this);
-			break;
-		default:
-			break;
-	}
+    QWizardPage::changeEvent(e);
+        switch (e->type()) {
+        case QEvent::LanguageChange:
+            ui->retranslateUi(this);
+            break;
+        default:
+            break;
+    }
 }
 
 int ConclusionPage::nextId() const
 {
-	Settings *settings = new Settings();
-	settings->setConfigurationVersion(Tano::version());
-	settings->setConfigured(true);
-	if(!field("playlist").toString().isEmpty())
-		settings->setPlaylist(field("playlist").toString());
-	settings->setSessionVolume(field("sessionvolume").toBool());
-	settings->setSessionAutoplay(field("sessionplay").toBool());
-	settings->setGlobalSettings(field("vlc").toBool());
+    Settings *settings = new Settings();
+    settings->setConfigurationVersion(Tano::version());
+    settings->setConfigured(true);
+    settings->setPlaylist(field("playlist").toString());
+    settings->setSessionVolume(field("sessionvolume").toBool());
+    settings->setSessionAutoplay(field("sessionplay").toBool());
+    settings->setGlobalSettings(field("vlc").toBool());
 
-	settings->writeSettings();
+    settings->writeSettings();
 
-	delete settings;
+    delete settings;
 
-	return -1;
+    return -1;
 }

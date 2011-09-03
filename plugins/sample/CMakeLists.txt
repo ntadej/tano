@@ -1,5 +1,5 @@
 #############################################################################
-# Slovenian EPG - Tano EPG Plugin
+# Sample EPG - Tano EPG Plugin
 # Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-PROJECT(tano-epgslovenia)
+PROJECT(tano-epgsample)
 
 INCLUDE(${QT_USE_FILE})
 INCLUDE_DIRECTORIES(
@@ -25,12 +25,12 @@ INCLUDE_DIRECTORIES(
 )
 
 SET(SOURCES_CPP
-    SloveniaCreator.cpp
-    Slovenia.cpp
+    SampleCreator.cpp
+    Sample.cpp
 )
 
 SET(SOURCES_H
-    SloveniaCreator.h
+    SampleCreator.h
 )
 
 QT4_WRAP_CPP(SOURCES_H_MOC ${SOURCES_H})
@@ -40,13 +40,13 @@ ADD_DEFINITIONS(-DQT_PLUGIN)
 #ADD_DEFINITIONS(-DQT_NO_DEBUG)
 ADD_DEFINITIONS(-DQT_SHARED)
 
-ADD_LIBRARY(tano-epgslovenia SHARED ${SOURCES_CPP} ${SOURCES_H_MOC})
-ADD_DEPENDENCIES(tano-epgslovenia tano)
+ADD_LIBRARY(tano-epgsample SHARED ${SOURCES_CPP} ${SOURCES_H_MOC})
+ADD_DEPENDENCIES(tano-epgsample tano)
 
-TARGET_LINK_LIBRARIES(tano-epgslovenia ${QT_LIBRARIES})
+TARGET_LINK_LIBRARIES(tano-epgsample ${QT_LIBRARIES})
 
 IF(MINGW)
-    INSTALL(TARGETS tano-epgslovenia DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR})
+    INSTALL(TARGETS tano-epgsample DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR})
 ELSE(MINGW)
-    INSTALL(TARGETS tano-epgslovenia LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR})
+    INSTALL(TARGETS tano-epgsample LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR})
 ENDIF(MINGW)

@@ -23,23 +23,23 @@
 
 namespace Ui
 {
-	class ConclusionPage;
+    class ConclusionPage;
 }
 
 class ConclusionPage : public QWizardPage
 {
 Q_OBJECT
 public:
-	ConclusionPage(QWidget *parent = 0);
-	~ConclusionPage();
+    ConclusionPage(QWidget *parent = 0);
+    ~ConclusionPage();
 
-	int nextId() const;
+    int nextId() const;
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 private:
-	Ui::ConclusionPage *ui;
+    Ui::ConclusionPage *ui;
 };
 
 #endif // TANO_CONCLUSIONPAGE_H_

@@ -653,10 +653,6 @@ msgid "About"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "Download from Web"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "Add channel"
 msgstr ""
 
@@ -736,10 +732,6 @@ msgctxt "PlaylistEdit|"
 msgid ""
 "You need to have valid Udpxy settings or the exported playlist will contain "
 "classic URLs."
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Import from Web"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
@@ -860,78 +852,12 @@ msgctxt "PlaylistImportCSV|"
 msgid "URL"
 msgstr ""
 
-msgctxt "PlaylistImportWeb|"
-msgid "Import playlist from Web"
-msgstr ""
-
-msgctxt "PlaylistImportWeb|"
-msgid "Refresh current playlist"
-msgstr ""
-
-msgctxt "PlaylistImportWeb|"
-msgid "Open playlist"
-msgstr ""
-
-msgctxt "PlaylistImportWeb|"
-msgid ""
-"<i>If you chose ''Refresh'', your current channel numbers will remain the "
-"same. Only new channels will be added.</i>"
-msgstr ""
-
-msgctxt "PlaylistImportWeb|"
-msgid "Save channel list"
-msgstr ""
-
-msgctxt "PlaylistImportWeb|"
-msgid "Tano TV channel list files(*.m3u)"
-msgstr ""
-
-msgctxt "PlaylistImportWeb|"
-msgid "Import type"
-msgstr ""
-
-msgctxt "PlaylistPage|"
-msgid "Please, select your IP TV provider or browse for custom playlist."
-msgstr ""
-
-msgctxt "PlaylistPage|"
-msgid "Select playlist"
-msgstr ""
-
 msgctxt "PlaylistPage|"
 msgid "Search ..."
 msgstr ""
 
 msgctxt "PlaylistPage|"
 msgid "Select channel"
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "Select"
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "Select your playlist"
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "Country:"
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "<i>Note: Not all countries and providers are available.</i>"
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "Playlist:"
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "1. Select your country from the menu below."
-msgstr ""
-
-msgctxt "PlaylistSelect|"
-msgid "2. Select your playlist."
 msgstr ""
 
 msgctxt "Print|"
@@ -1052,10 +978,6 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "Weekly"
-msgstr ""
-
-msgctxt "QObject|"
-msgid "The file is not a playlist list file."
 msgstr ""
 
 msgctxt "QObject|"
@@ -1336,10 +1258,6 @@ msgid "General"
 msgstr ""
 
 msgctxt "SettingsEdit|"
-msgid "Channels"
-msgstr ""
-
-msgctxt "SettingsEdit|"
 msgid "Interface"
 msgstr ""
 
@@ -1403,6 +1321,10 @@ msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr ""
 
+msgctxt "SettingsGeneral|"
+msgid "Default channel list"
+msgstr ""
+
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr ""
@@ -1428,33 +1350,11 @@ msgid "Use global VLC settings"
 msgstr ""
 
 msgctxt "SettingsPage|"
-msgid "Select or change playlist"
+msgid "<b>Default channel list</b>"
 msgstr ""
 
-msgctxt "SettingsPlaylist|"
-msgid "Preset"
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid "Custom"
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid "Default channel list"
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid "Download from web"
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid ""
-"Tano will download the channel list to your desired location and "
-"automatically set it as custom channel list."
-msgstr ""
-
-msgctxt "SettingsPlaylist|"
-msgid "Download"
+msgctxt "SettingsPage|"
+msgid "<b>Playback</b>"
 msgstr ""
 
 msgctxt "SettingsRecorder|"

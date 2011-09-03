@@ -1,5 +1,5 @@
 /****************************************************************************
-* Tano - An Open IP TV Player
+* Sample EPG - Tano EPG Plugin
 * Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -16,33 +16,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTPAGE_H_
-#define TANO_PLAYLISTPAGE_H_
+#ifndef TANOPLUGIN_SAMPLECREATOR_H_
+#define TANOPLUGIN_SAMPLECREATOR_H_
 
-#include <QtGui/QLineEdit>
-#include <QtGui/QWizardPage>
+#include <QtCore/QObject>
+#include <QtCore/QtPlugin>
 
-namespace Ui
-{
-	class PlaylistPage;
-}
+#include "EpgPlugin.h"
 
-class PlaylistPage : public QWizardPage
+class SampleCreator : public QObject, public EpgPluginCreator
 {
 Q_OBJECT
+Q_INTERFACES(EpgPluginCreator)
+Q_CLASSINFO("PLUGINTYPE", "Epg")
+Q_CLASSINFO("PLUGINNAME", "Sample")
+
 public:
-	PlaylistPage(QWidget *parent = 0);
-	~PlaylistPage();
-
-	int nextId() const;
-
-protected:
-	void changeEvent(QEvent *e);
-
-private:
-	Ui::PlaylistPage *ui;
-
-	QLineEdit *_edit;
+    EpgPlugin *createInstance();
 };
 
-#endif // TANO_PLAYLISTPAGE_H_
+#endif // TANOPLUGIN_SAMPLECREATOR_H_

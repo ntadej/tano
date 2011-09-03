@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>390</width>
-    <height>354</height>
+    <height>423</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -146,6 +146,18 @@
     </widget>
    </item>
    <item>
+    <widget class="QGroupBox" name="groupDefaultPlaylist">
+     <property name="title">
+      <string>Default channel list</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="BrowseWidget" name="playlist" native="true"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
     <widget class="QGroupBox" name="groupSession">
      <property name="title">
       <string>Session store</string>
@@ -170,6 +182,14 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BrowseWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/core/BrowseWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../../data/logo.qrc"/>
  </resources>

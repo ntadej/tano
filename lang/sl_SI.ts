@@ -861,7 +861,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Download from Web</source>
-        <translation>Prenesi s spleta</translation>
+        <translation type="obsolete">Prenesi s spleta</translation>
     </message>
     <message>
         <source>Open channel list</source>
@@ -953,7 +953,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Import from Web</source>
-        <translation>Uvozi iz spleta</translation>
+        <translation type="obsolete">Uvozi iz spleta</translation>
     </message>
     <message>
         <source>Save</source>
@@ -1085,42 +1085,42 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>PlaylistImportWeb</name>
     <message>
         <source>Import playlist from Web</source>
-        <translation>Uvozi seznam programov s spleta</translation>
+        <translation type="obsolete">Uvozi seznam programov s spleta</translation>
     </message>
     <message>
         <source>Import type</source>
-        <translation>Tip uvoza</translation>
+        <translation type="obsolete">Tip uvoza</translation>
     </message>
     <message>
         <source>Refresh current playlist</source>
-        <translation>Osveži trenutni seznam</translation>
+        <translation type="obsolete">Osveži trenutni seznam</translation>
     </message>
     <message>
         <source>Open playlist</source>
-        <translation>Odpri seznam</translation>
+        <translation type="obsolete">Odpri seznam</translation>
     </message>
     <message>
         <source>&lt;i&gt;If you chose &apos;&apos;Refresh&apos;&apos;, your current channel numbers will remain the same. Only new channels will be added.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Če izberete &apos;&apos;Osveži&apos;&apos;, bodo trenutno nastavljene številke ostale enake. Le novi programi bodo dodani.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Če izberete &apos;&apos;Osveži&apos;&apos;, bodo trenutno nastavljene številke ostale enake. Le novi programi bodo dodani.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Save channel list</source>
-        <translation>Shrani seznam programov</translation>
+        <translation type="obsolete">Shrani seznam programov</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
-        <translation>Tano TV seznam programov (*.m3u)</translation>
+        <translation type="obsolete">Tano TV seznam programov (*.m3u)</translation>
     </message>
 </context>
 <context>
     <name>PlaylistPage</name>
     <message>
         <source>Select playlist</source>
-        <translation>Izberite seznam programov</translation>
+        <translation type="obsolete">Izberite seznam programov</translation>
     </message>
     <message>
         <source>Please, select your IP TV provider or browse for custom playlist.</source>
-        <translation>Prosim, izberite svojega IP TV ponudnika ali pa prebrskajte za svoj seznam programov.</translation>
+        <translation type="obsolete">Prosim, izberite svojega IP TV ponudnika ali pa prebrskajte za svoj seznam programov.</translation>
     </message>
     <message>
         <source>Language</source>
@@ -1147,31 +1147,31 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>PlaylistSelect</name>
     <message>
         <source>Select your playlist</source>
-        <translation>Izberi seznam programov</translation>
+        <translation type="obsolete">Izberi seznam programov</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Izberite</translation>
+        <translation type="obsolete">Izberite</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation>Država:</translation>
+        <translation type="obsolete">Država:</translation>
     </message>
     <message>
         <source>1. Select your country from the menu below.</source>
-        <translation>1. Izberite vašo državo s spodnjega seznama.</translation>
+        <translation type="obsolete">1. Izberite vašo državo s spodnjega seznama.</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: Not all countries and providers are available.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Opomba: Vse države in ponudniki niso na voljo.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Opomba: Vse države in ponudniki niso na voljo.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation>Seznam:</translation>
+        <translation type="obsolete">Seznam:</translation>
     </message>
     <message>
         <source>2. Select your playlist.</source>
-        <translation>2. Izberite vaš seznam programov.</translation>
+        <translation type="obsolete">2. Izberite vaš seznam programov.</translation>
     </message>
 </context>
 <context>
@@ -1365,7 +1365,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>The file is not a playlist list file.</source>
-        <translation>Ta datoteka ni seznam seznamov programov.</translation>
+        <translation type="obsolete">Ta datoteka ni seznam seznamov programov.</translation>
     </message>
     <message>
         <source>Number</source>
@@ -1693,7 +1693,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation>Programi</translation>
+        <translation type="obsolete">Programi</translation>
     </message>
     <message>
         <source>Interface</source>
@@ -1890,6 +1890,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>You are using Tano version:</source>
         <translation>Uporabljate Tano različice:</translation>
     </message>
+    <message>
+        <source>Default channel list</source>
+        <translation type="unfinished">Privzet seznam programov</translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -1919,18 +1923,26 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Select or change playlist</source>
-        <translation>Izberi ali zamenjaj seznam programov</translation>
+        <translation type="obsolete">Izberi ali zamenjaj seznam programov</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Playback&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SettingsPlaylist</name>
     <message>
         <source>Default channel list</source>
-        <translation>Privzet seznam programov</translation>
+        <translation type="obsolete">Privzet seznam programov</translation>
     </message>
     <message>
         <source>Preset</source>
-        <translation>Prednastavljeno</translation>
+        <translation type="obsolete">Prednastavljeno</translation>
     </message>
     <message>
         <source>...</source>
@@ -1942,19 +1954,19 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Drugo</translation>
+        <translation type="obsolete">Drugo</translation>
     </message>
     <message>
         <source>Download from web</source>
-        <translation>Prenesi s spleta</translation>
+        <translation type="obsolete">Prenesi s spleta</translation>
     </message>
     <message>
         <source>Tano will download the channel list to your desired location and automatically set it as custom channel list.</source>
-        <translation>Tano bo prenesel seznam programov na želeno lokacijo in ga avtomatsko nastavil za seznam programov.</translation>
+        <translation type="obsolete">Tano bo prenesel seznam programov na želeno lokacijo in ga avtomatsko nastavil za seznam programov.</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Prenesi</translation>
+        <translation type="obsolete">Prenesi</translation>
     </message>
     <message>
         <source>Open channel list</source>

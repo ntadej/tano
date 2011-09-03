@@ -37,6 +37,8 @@ public:
     void setWizard(const bool &enabled);
     QString language() const;
     void setLanguage(const QString &language);
+    QString playlist() const;
+    void setPlaylist(const QString &playlist);
     bool sessionAutoplay() const;
     void setSessionAutoplay(const bool &enabled);
     bool sessionVolume() const;
