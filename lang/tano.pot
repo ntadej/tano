@@ -57,27 +57,6 @@ msgid "Player"
 msgstr ""
 
 msgctxt "AboutDialog|"
-msgid "About Tano Mobile"
-msgstr ""
-
-msgctxt "AboutDialog|"
-msgid ""
-"It is based on VLC-Qt.\n"
-"\n"
-msgstr ""
-
-msgctxt "AboutDialog|"
-msgid ""
-"Tano is an open-source cross-platform IP TV player which features full IP TV "
-"playback with EPG and recorder.\n"
-msgstr ""
-
-msgctxt "AboutDialog|"
-msgid ""
-"You are using the mobile version which is currently in an experimental stage."
-msgstr ""
-
-msgctxt "AboutDialog|"
 msgid "Plugins"
 msgstr ""
 
@@ -140,34 +119,6 @@ msgctxt "EpgShow|"
 msgid "Next"
 msgstr ""
 
-msgctxt "FilterDialog|"
-msgid "Language:"
-msgstr ""
-
-msgctxt "FilterDialog|"
-msgid "Categories:"
-msgstr ""
-
-msgctxt "FilterDialog|"
-msgid "All languages"
-msgstr ""
-
-msgctxt "FilterDialog|"
-msgid "All categories"
-msgstr ""
-
-msgctxt "FilterDialog|"
-msgid "Filter"
-msgstr ""
-
-msgctxt "FilterDialog|"
-msgid "Apply"
-msgstr ""
-
-msgctxt "FilterDialog|"
-msgid "Reset"
-msgstr ""
-
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr ""
@@ -219,22 +170,6 @@ msgstr ""
 
 msgctxt "IntroPage|"
 msgid "Please re-set your settings."
-msgstr ""
-
-msgctxt "MainMenu|"
-msgid "Settings"
-msgstr ""
-
-msgctxt "MainMenu|"
-msgid "Help"
-msgstr ""
-
-msgctxt "MainMenu|"
-msgid "About"
-msgstr ""
-
-msgctxt "MainMenu|"
-msgid "Exit"
 msgstr ""
 
 msgctxt "MainWindow|"
@@ -852,14 +787,6 @@ msgctxt "PlaylistImportCSV|"
 msgid "URL"
 msgstr ""
 
-msgctxt "PlaylistPage|"
-msgid "Search ..."
-msgstr ""
-
-msgctxt "PlaylistPage|"
-msgid "Select channel"
-msgstr ""
-
 msgctxt "Print|"
 msgid "#"
 msgstr ""
@@ -1174,14 +1101,6 @@ msgstr ""
 
 msgctxt "Recorder|"
 msgid "No timer - press button to stop."
-msgstr ""
-
-msgctxt "ScheduleListPage|"
-msgid "Schedule"
-msgstr ""
-
-msgctxt "SchedulePage|"
-msgid "Schedule"
 msgstr ""
 
 msgctxt "SettingsBackend|"

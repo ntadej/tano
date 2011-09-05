@@ -25,37 +25,35 @@ cmake_minimum_required(VERSION 2.6)
 # Define the MOC source files used by Tano Mobile
 # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
 SET(Tano_Mobile_MOCs
-    MobileCore.h
-    MobilePlaylistHandler.h
-    MobileXmltvHandler.h
+    src/MobileCore.h
+    src/MobileXmltvHandler.h
 
-    ../src/container/core/Channel.h
+    qmlapplicationviewer/qmlapplicationviewer.h
+
+    ../src/container/xmltv/XmltvChannel.h
     ../src/container/xmltv/XmltvCrewMember.h
+    ../src/container/xmltv/XmltvList.h
     ../src/container/xmltv/XmltvProgramme.h
     ../src/core/ListItem.h
     ../src/core/ListModel.h
+    ../src/epg/XmltvChannelsFilterModel.h
+    ../src/epg/XmltvChannelsModel.h
+    ../src/epg/XmltvCrewFilterModel.h
     ../src/epg/XmltvCrewModel.h
     ../src/epg/XmltvManager.h
     ../src/epg/XmltvProgrammeFilterModel.h
     ../src/epg/XmltvProgrammeModel.h
-    ../src/playlist/PlaylistFilterModel.h
-    ../src/playlist/PlaylistModel.h
-)
-
-SET(Tano_Mobile_Resrcs
-    qml/files.qrc
 )
 
 # Define the C++ source files used by Tano
 SET(Tano_Mobile_Srcs
-    main.cpp
-    MobileConstants.cpp
-    MobileCore.cpp
-    MobilePlaylistHandler.cpp
-    MobileXmltvHandler.cpp
+    src/main.cpp
+    src/MobileConstants.cpp
+    src/MobileCore.cpp
+    src/MobileXmltvHandler.cpp
 
-    ../src/container/core/Channel.cpp
-    ../src/container/playlist/CSVInfo.cpp
+    qmlapplicationviewer/qmlapplicationviewer.cpp
+
     ../src/container/xmltv/XmltvChannel.cpp
     ../src/container/xmltv/XmltvCrewMember.cpp
     ../src/container/xmltv/XmltvList.cpp
@@ -67,26 +65,21 @@ SET(Tano_Mobile_Srcs
     ../src/core/ListModel.cpp
     ../src/core/LocaleManager.cpp
     ../src/core/Settings.cpp
-    ../src/core/Shortcuts.cpp
-    ../src/core/Udpxy.cpp
 
     ../src/epg/XmltvCommon.cpp
+    ../src/epg/XmltvChannelsFilterModel.cpp
+    ../src/epg/XmltvChannelsModel.cpp
+    ../src/epg/XmltvCrewFilterModel.cpp
     ../src/epg/XmltvCrewModel.cpp
     ../src/epg/XmltvEnums.cpp
     ../src/epg/XmltvHandler.cpp
     ../src/epg/XmltvManager.cpp
     ../src/epg/XmltvProgrammeFilterModel.cpp
     ../src/epg/XmltvProgrammeModel.cpp
-
-    ../src/playlist/handlers/M3UHandler.cpp
-    ../src/playlist/PlaylistFilterModel.cpp
-    ../src/playlist/PlaylistModel.cpp
-    ../src/playlist/PlaylistOpen.cpp
 )
 
-# Define QML files
-SET(Tano_Mobile_QML
-    qml/main.qml
+SET(Tano_Mobile_Resrcs
+
 )
 
 ################
@@ -132,7 +125,7 @@ ENDIF(NOT MINGW)
 # Include paths and set up targets #
 ####################################
 # This needs to be added in order for #include to work inside .cpp files
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src")
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src" "${CMAKE_SOURCE_DIR}/mobile")
 
 # This line adds the include path of the Qt
 # directory to the compiler include path

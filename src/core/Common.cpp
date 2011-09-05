@@ -21,7 +21,7 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>
 
-#ifndef MM
+#if !MOBILE
     #include "Config.h"
 #endif
 #include "core/Common.h"

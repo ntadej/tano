@@ -68,30 +68,9 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr "Přehrávač"
 
-msgctxt "AboutDialog|"
-msgid "About Tano Mobile"
-msgstr ""
-
-msgctxt "AboutDialog|"
-msgid ""
-"It is based on VLC-Qt.\n"
-"\n"
-msgstr ""
-
 #~ msgctxt "AboutDialog|"
 #~ msgid "Close"
 #~ msgstr "Zavřít"
-
-msgctxt "AboutDialog|"
-msgid ""
-"Tano is an open-source cross-platform IP TV player which features full IP TV "
-"playback with EPG and recorder.\n"
-msgstr ""
-
-msgctxt "AboutDialog|"
-msgid ""
-"You are using the mobile version which is currently in an experimental stage."
-msgstr ""
 
 msgctxt "AboutDialog|"
 msgid "Plugins"
@@ -195,38 +174,25 @@ msgstr "Další"
 #~ msgid "Subtitles files(*.sub *.srt *.txt)"
 #~ msgstr "Soubory s titulky (*.sub *.srt *.txt)"
 
-#, fuzzy
-msgctxt "FilterDialog|"
-msgid "Language:"
-msgstr "Jazyk:"
+#~ msgctxt "FilterDialog|"
+#~ msgid "Language:"
+#~ msgstr "Jazyk:"
 
-#, fuzzy
-msgctxt "FilterDialog|"
-msgid "Categories:"
-msgstr "Skupiny:"
+#~ msgctxt "FilterDialog|"
+#~ msgid "Categories:"
+#~ msgstr "Skupiny:"
 
-#, fuzzy
-msgctxt "FilterDialog|"
-msgid "All languages"
-msgstr "Všechny jazyky"
+#~ msgctxt "FilterDialog|"
+#~ msgid "All languages"
+#~ msgstr "Všechny jazyky"
 
-#, fuzzy
-msgctxt "FilterDialog|"
-msgid "All categories"
-msgstr "Všechny skupiny"
+#~ msgctxt "FilterDialog|"
+#~ msgid "All categories"
+#~ msgstr "Všechny skupiny"
 
-msgctxt "FilterDialog|"
-msgid "Filter"
-msgstr ""
-
-msgctxt "FilterDialog|"
-msgid "Apply"
-msgstr ""
-
-#, fuzzy
-msgctxt "FilterDialog|"
-msgid "Reset"
-msgstr "Nastavit znovu"
+#~ msgctxt "FilterDialog|"
+#~ msgid "Reset"
+#~ msgstr "Nastavit znovu"
 
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
@@ -296,22 +262,9 @@ msgctxt "IntroPage|"
 msgid "Please re-set your settings."
 msgstr "Nastavte, prosím, svá nastavení znovu."
 
-#, fuzzy
-msgctxt "MainMenu|"
-msgid "Settings"
-msgstr "Nastavení"
-
-msgctxt "MainMenu|"
-msgid "Help"
-msgstr ""
-
-msgctxt "MainMenu|"
-msgid "About"
-msgstr ""
-
-msgctxt "MainMenu|"
-msgid "Exit"
-msgstr ""
+#~ msgctxt "MainMenu|"
+#~ msgid "Settings"
+#~ msgstr "Nastavení"
 
 msgctxt "MainWindow|"
 msgid "Tano"
@@ -1102,17 +1055,9 @@ msgstr "Adresa (URL)"
 #~ msgid "Categories"
 #~ msgstr "Skupiny"
 
-msgctxt "PlaylistPage|"
-msgid "Search ..."
-msgstr ""
-
 #~ msgctxt "PlaylistPage|"
 #~ msgid "Schedule"
 #~ msgstr "Rozvrh"
-
-msgctxt "PlaylistPage|"
-msgid "Select channel"
-msgstr ""
 
 #~ msgctxt "PlaylistSelect|"
 #~ msgid "Select"
@@ -1558,15 +1503,13 @@ msgstr "Žádný časovač - stiskněte tlačítko pro zastavení."
 #~ msgid "Open directory"
 #~ msgstr "Otevřít adresář"
 
-#, fuzzy
-msgctxt "ScheduleListPage|"
-msgid "Schedule"
-msgstr "Rozvrh"
+#~ msgctxt "ScheduleListPage|"
+#~ msgid "Schedule"
+#~ msgstr "Rozvrh"
 
-#, fuzzy
-msgctxt "SchedulePage|"
-msgid "Schedule"
-msgstr "Rozvrh"
+#~ msgctxt "SchedulePage|"
+#~ msgid "Schedule"
+#~ msgstr "Rozvrh"
 
 #, fuzzy
 msgctxt "SettingsBackend|"

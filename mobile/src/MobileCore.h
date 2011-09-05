@@ -16,23 +16,32 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
-#include <QtCore/QDir>
-#include <QtGui/QApplication>
+#ifndef TANO_MOBILECORE_H_
+#define TANO_MOBILECORE_H_
 
-#include "mobile/MobileCore.h"
+#include <QtCore/QObject>
 
-int main(int argc, char *argv[])
+class QmlApplicationViewer;
+
+class LocaleManager;
+class MobilePlaylistHandler;
+class MobileXmltvHandler;
+
+class MobileCore : public QObject
 {
-    QApplication app(argc, argv);
-    QCoreApplication::setApplicationName("Tano Mobile");
+Q_OBJECT
+public:
+    MobileCore(QObject *parent = 0);
+    ~MobileCore();
 
-    //std::string property = "NoMStyle";
-    //app.setProperty(property.c_str(), true);
+    void createPlaylist();
+    void createXmltv();
 
-    QDir::setCurrent(app.applicationDirPath());
+private:
+    LocaleManager *_locale;
+    MobileXmltvHandler *_xmltv;
 
-    MobileCore core;
+    QmlApplicationViewer *_viewer;
+};
 
-    return app.exec();
-}
+#endif // TANO_MOBILECORE_H_

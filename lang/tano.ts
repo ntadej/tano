@@ -50,25 +50,6 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>About Tano Mobile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>It is based on VLC-Qt.
-
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You are using the mobile version which is currently in an experimental stage.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Plugins</source>
         <translation type="unfinished"></translation>
     </message>
@@ -148,37 +129,6 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
-    <name>FilterDialog</name>
-    <message>
-        <source>Language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Categories:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Filter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Apply</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
@@ -232,25 +182,6 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Please re-set your settings.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MainMenu</name>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -889,17 +820,6 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>PlaylistPage</name>
-    <message>
-        <source>Search ...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Print</name>
     <message>
         <source>#</source>
@@ -1221,20 +1141,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>No timer - press button to stop.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ScheduleListPage</name>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SchedulePage</name>
-    <message>
-        <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

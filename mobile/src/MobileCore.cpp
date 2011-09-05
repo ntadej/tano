@@ -21,57 +21,39 @@
 #include <QtGui/QApplication>
 #include <QtGui/QGraphicsObject>
 
+#include "qmlapplicationviewer/qmlapplicationviewer.h"
+
 #include "MobileConstants.h"
 #include "MobileCore.h"
-#include "MobilePlaylistHandler.h"
 #include "MobileXmltvHandler.h"
 
 #include "core/LocaleManager.h"
 #include "epg/XmltvProgrammeFilterModel.h"
-#include "playlist/PlaylistFilterModel.h"
 
 MobileCore::MobileCore(QObject *parent)
     : QObject(parent),
-      _playlist(0),
       _xmltv(0)
 {
     _locale = new LocaleManager();
-    _window = new QDeclarativeView();
-    _window->rootContext()->setContextProperty("TanoType", MobileConstants::typeConstants());
-    _window->rootContext()->setContextProperty("TanoUi", MobileConstants::uiConstants());
-    _window->rootContext()->setContextProperty("core", this);
-    _window->setSource(QUrl("qrc:/main.qml"));
+    _viewer = new QmlApplicationViewer();
+    _viewer->setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
+    _viewer->rootContext()->setContextProperty("TanoType", MobileConstants::typeConstants());
+    _viewer->rootContext()->setContextProperty("TanoUi", MobileConstants::uiConstants());
+    _viewer->rootContext()->setContextProperty("core", this);
+    _viewer->setMainQmlFile(QLatin1String("qml/main.qml"));
 
-#ifdef __arm__
-    _window->showFullScreen();
-#else
-    _window->show();
-#endif
+    _viewer->showExpanded();
 
-    createPlaylist();
     //createXmltv();
 
-    connect(_window->engine(), SIGNAL(quit()), qApp, SLOT(quit()));
+    connect(_viewer->engine(), SIGNAL(quit()), qApp, SLOT(quit()));
 }
 
 MobileCore::~MobileCore()
 {
     delete _locale;
-    delete _playlist;
-    delete _window;
+    delete _viewer;
     delete _xmltv;
-}
-
-void MobileCore::createPlaylist()
-{
-    if(_playlist)
-        return;
-
-    _playlist = new MobilePlaylistHandler(this);
-    PlaylistFilterModel *pm =  _playlist->model();
-
-    _window->rootContext()->setContextProperty("channelsModel", pm);
-    _window->rootContext()->setContextProperty("playlistManager", _playlist);
 }
 
 void MobileCore::createXmltv()
@@ -82,6 +64,6 @@ void MobileCore::createXmltv()
     _xmltv = new MobileXmltvHandler(this);
     XmltvProgrammeFilterModel *xm = _xmltv->model();
 
-    _window->rootContext()->setContextProperty("xmltvModel", xm);
-    _window->rootContext()->setContextProperty("xmltvManager", _xmltv);
+    _viewer->rootContext()->setContextProperty("xmltvModel", xm);
+    _viewer->rootContext()->setContextProperty("xmltvManager", _xmltv);
 }

@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/core/Timer.h"
+#include "Timer.h"
 
 Timer::Timer(const QString &name,
              const QString &channel,

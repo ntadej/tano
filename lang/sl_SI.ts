@@ -57,13 +57,13 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <source>About Tano Mobile</source>
-        <translation>O programu Tano Mobile</translation>
+        <translation type="obsolete">O programu Tano Mobile</translation>
     </message>
     <message>
         <source>It is based on VLC-Qt.
 
 </source>
-        <translation>Temelji na knjižnici VLC-Qt.
+        <translation type="obsolete">Temelji na knjižnici VLC-Qt.
 
 </translation>
     </message>
@@ -74,12 +74,12 @@ Vaša različica VLC-Qt: %4
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.
 </source>
-        <translation>Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom.
+        <translation type="obsolete">Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom.
 </translation>
     </message>
     <message>
         <source>You are using the mobile version which is currently in an experimental stage.</source>
-        <translation>Trenutno uporabljate mobilno različico, ki je v eksperimentalni fazi.</translation>
+        <translation type="obsolete">Trenutno uporabljate mobilno različico, ki je v eksperimentalni fazi.</translation>
     </message>
     <message>
         <source>Plugins</source>
@@ -205,31 +205,31 @@ Vaša različica VLC-Qt: %4
     <name>FilterDialog</name>
     <message>
         <source>Language:</source>
-        <translation>Jezik:</translation>
+        <translation type="obsolete">Jezik:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Kategorije:</translation>
+        <translation type="obsolete">Kategorije:</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Vsi jeziki</translation>
+        <translation type="obsolete">Vsi jeziki</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Vse kategorije</translation>
+        <translation type="obsolete">Vse kategorije</translation>
     </message>
     <message>
         <source>Filter</source>
-        <translation>Filtriraj</translation>
+        <translation type="obsolete">Filtriraj</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation>Uveljavi</translation>
+        <translation type="obsolete">Uveljavi</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Obnovi</translation>
+        <translation type="obsolete">Obnovi</translation>
     </message>
 </context>
 <context>
@@ -309,19 +309,19 @@ Vaša različica VLC-Qt: %4
     <name>MainMenu</name>
     <message>
         <source>Settings</source>
-        <translation>Nastavitve</translation>
+        <translation type="obsolete">Nastavitve</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Pomoč</translation>
+        <translation type="obsolete">Pomoč</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>O programu</translation>
+        <translation type="obsolete">O programu</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Izhod</translation>
+        <translation type="obsolete">Izhod</translation>
     </message>
 </context>
 <context>
@@ -1135,7 +1135,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Search ...</source>
-        <translation>Išči ...</translation>
+        <translation type="obsolete">Išči ...</translation>
     </message>
     <message>
         <source>Schedule</source>
@@ -1143,7 +1143,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Select channel</source>
-        <translation>Izberi program</translation>
+        <translation type="obsolete">Izberi program</translation>
     </message>
 </context>
 <context>
@@ -1607,14 +1607,14 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>ScheduleListPage</name>
     <message>
         <source>Schedule</source>
-        <translation>Spored</translation>
+        <translation type="obsolete">Spored</translation>
     </message>
 </context>
 <context>
     <name>SchedulePage</name>
     <message>
         <source>Schedule</source>
-        <translation>Spored</translation>
+        <translation type="obsolete">Spored</translation>
     </message>
 </context>
 <context>

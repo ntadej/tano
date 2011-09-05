@@ -16,36 +16,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MOBILEPLAYLISTHANDLER_H_
-#define TANO_MOBILEPLAYLISTHANDLER_H_
+#include <QtCore/QCoreApplication>
+#include <QtCore/QDir>
+#include <QtGui/QApplication>
 
-#include <QtCore/QObject>
-#include <QtCore/QVariantList>
+#include "MobileCore.h"
 
-class Channel;
-class PlaylistFilterModel;
-class PlaylistModel;
-
-class MobilePlaylistHandler : public QObject
+int main(int argc, char *argv[])
 {
-Q_OBJECT
-public:
-    MobilePlaylistHandler(QObject *parent = 0);
-    ~MobilePlaylistHandler();
+    QApplication app(argc, argv);
+    QCoreApplication::setApplicationName("Tano Mobile");
 
-    PlaylistFilterModel *model() { return _filterModel; }
-    Q_INVOKABLE QVariantList categories();
-    Q_INVOKABLE QVariantList languages();
+    //std::string property = "NoMStyle";
+    //app.setProperty(property.c_str(), true);
 
-    Q_INVOKABLE void processGroups(const QString &category,
-                                   const QString &language);
-    Q_INVOKABLE void processSearch(const QString &name);
+    QDir::setCurrent(app.applicationDirPath());
 
-private:
-    void openPlaylist();
+    MobileCore core;
 
-    PlaylistModel *_model;
-    PlaylistFilterModel *_filterModel;
-};
-
-#endif // TANO_MOBILEPLAYLISTHANDLER_H_
+    return app.exec();
+}

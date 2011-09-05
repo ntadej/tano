@@ -28,7 +28,7 @@ build-stamp: configure-stamp
 
 	# Add here commands to compile the package.
 	# $(MAKE) # Uncomment this line for use without Qt Creator
-	#docbook-to-man debian/tanomobile.sgml > tanomobileharmattan.1
+	#docbook-to-man debian/tanomobile.sgml > tanomobile.1
 
 	touch $@
 

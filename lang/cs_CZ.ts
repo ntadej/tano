@@ -55,27 +55,8 @@ Verze vašeho VLC-Qt: %4</translation>
         <translation>Přehrávač</translation>
     </message>
     <message>
-        <source>About Tano Mobile</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>It is based on VLC-Qt.
-
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Close</source>
         <translation type="obsolete">Zavřít</translation>
-    </message>
-    <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You are using the mobile version which is currently in an experimental stage.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Plugins</source>
@@ -201,31 +182,23 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>FilterDialog</name>
     <message>
         <source>Language:</source>
-        <translation type="unfinished">Jazyk:</translation>
+        <translation type="obsolete">Jazyk:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation type="unfinished">Skupiny:</translation>
+        <translation type="obsolete">Skupiny:</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Všechny jazyky</translation>
+        <translation type="obsolete">Všechny jazyky</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Všechny skupiny</translation>
-    </message>
-    <message>
-        <source>Filter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Všechny skupiny</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished">Nastavit znovu</translation>
+        <translation type="obsolete">Nastavit znovu</translation>
     </message>
 </context>
 <context>
@@ -305,19 +278,7 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>MainMenu</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Nastavení</translation>
     </message>
 </context>
 <context>
@@ -1106,16 +1067,8 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="obsolete">Skupiny</translation>
     </message>
     <message>
-        <source>Search ...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Schedule</source>
         <translation type="obsolete">Rozvrh</translation>
-    </message>
-    <message>
-        <source>Select channel</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1571,14 +1524,14 @@ Ztratíte všechny neuložené změny.</translation>
     <name>ScheduleListPage</name>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Rozvrh</translation>
+        <translation type="obsolete">Rozvrh</translation>
     </message>
 </context>
 <context>
     <name>SchedulePage</name>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Rozvrh</translation>
+        <translation type="obsolete">Rozvrh</translation>
     </message>
 </context>
 <context>
