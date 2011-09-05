@@ -1605,6 +1605,14 @@ msgctxt "TeletextWidget|"
 msgid "Teletext Transparency"
 msgstr ""
 
+msgctxt "Timer|"
+msgid "Active"
+msgstr ""
+
+msgctxt "Timer|"
+msgid "Disabled or expired"
+msgstr ""
+
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr ""

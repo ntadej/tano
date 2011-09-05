@@ -24,11 +24,14 @@
 #include <QtCore/QString>
 
 class XmltvChannel;
+class XmltvChannelsModel;
 
-class XmltvList
+class XmltvList : public QObject
 {
+Q_OBJECT
 public:
-    XmltvList(const QDate &date = QDate());
+    XmltvList(const QDate &date = QDate(),
+              QObject *parent = 0);
     ~XmltvList();
 
     QDate date() const { return _date; }
@@ -43,9 +46,8 @@ public:
     QString generatorInfoUrl() const { return _generatorInfoUrl; }
     void setGeneratorInfoUrl(const QString &s) { _generatorInfoUrl = s; }
 
-    QList<XmltvChannel *> channels() const { return _channels; }
+    XmltvChannelsModel *channels() const { return _channels; }
     void addChannel(XmltvChannel *c);
-    XmltvChannel *channel(const QString &id);
 
 private:
     QDate _date;
@@ -55,7 +57,7 @@ private:
     QString _generatorInfoName;
     QString _generatorInfoUrl;
 
-    QList<XmltvChannel *> _channels;
+    XmltvChannelsModel *_channels;
 };
 
 #endif // TANO_XMLTVLIST_H_

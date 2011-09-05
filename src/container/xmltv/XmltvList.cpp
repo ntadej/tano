@@ -20,24 +20,22 @@
 
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"
+#include "epg/XmltvChannelsModel.h"
 
-XmltvList::XmltvList(const QDate &date)
-    : _date(date) { }
+XmltvList::XmltvList(const QDate &date,
+                     QObject *parent)
+    : QObject(parent),
+      _date(date)
+{
+    _channels = new XmltvChannelsModel(this);
+}
 
-XmltvList::~XmltvList() { }
+XmltvList::~XmltvList()
+{
+    delete _channels;
+}
 
 void XmltvList::addChannel(XmltvChannel *c)
 {
-    _channels.append(c);
-}
-
-XmltvChannel *XmltvList::channel(const QString &id)
-{
-    for(int i = 0; i < _channels.size(); i++) {
-        if(_channels[i]->id() == id || _channels[i]->id().split(".")[0] == id) {
-            return _channels[i];
-        }
-    }
-
-    return 0;
+    _channels->appendRow(c);
 }

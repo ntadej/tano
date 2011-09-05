@@ -20,6 +20,7 @@
 #include "ui_SettingsPage.h"
 
 #include "FirstRunWizard.h"
+#include "core/Enums.h"
 #include "core/Settings.h"
 
 SettingsPage::SettingsPage(QWidget *parent)
@@ -31,6 +32,7 @@ SettingsPage::SettingsPage(QWidget *parent)
     Settings *settings = new Settings();
     ui->sessionVolumeCheckBox->setChecked(settings->sessionVolume());
     ui->sessionAutoplayCheckBox->setChecked(settings->sessionAutoplay());
+    ui->playlist->setType(Tano::M3U);
     ui->playlist->setValue(settings->playlist());
     ui->vlcCheckBox->setChecked(settings->globalSettings());
     delete settings;

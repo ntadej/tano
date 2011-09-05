@@ -2103,6 +2103,17 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>Timer</name>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished">Активен</translation>
+    </message>
+    <message>
+        <source>Disabled or expired</source>
+        <translation type="unfinished">Отключен или устарел</translation>
+    </message>
+</context>
+<context>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>

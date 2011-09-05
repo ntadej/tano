@@ -2301,6 +2301,16 @@ msgid "Teletext Transparency"
 msgstr "Průhlednost teletextu"
 
 #, fuzzy
+msgctxt "Timer|"
+msgid "Active"
+msgstr "V činnosti"
+
+#, fuzzy
+msgctxt "Timer|"
+msgid "Disabled or expired"
+msgstr "Zakázáno nebo vypršelo"
+
+#, fuzzy
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Smazat"

@@ -70,13 +70,15 @@ msgstr "Predvajalnik"
 
 msgctxt "AboutDialog|"
 msgid "About Tano Mobile"
-msgstr ""
+msgstr "O programu Tano Mobile"
 
 msgctxt "AboutDialog|"
 msgid ""
 "It is based on VLC-Qt.\n"
 "\n"
 msgstr ""
+"Temelji na knjižnici VLC-Qt.\n"
+"\n"
 
 #~ msgctxt "AboutDialog|"
 #~ msgid "Close"
@@ -87,23 +89,25 @@ msgid ""
 "Tano is an open-source cross-platform IP TV player which features full IP TV "
 "playback with EPG and recorder.\n"
 msgstr ""
+"Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV "
+"predvajanje z EPG in snemalnikom.\n"
 
 msgctxt "AboutDialog|"
 msgid ""
 "You are using the mobile version which is currently in an experimental stage."
-msgstr ""
+msgstr "Trenutno uporabljate mobilno različico, ki je v eksperimentalni fazi."
 
 msgctxt "AboutDialog|"
 msgid "Plugins"
-msgstr ""
+msgstr "Vtičniki"
 
 msgctxt "AboutDialog|"
 msgid "These plugins are currently available for Tano:"
-msgstr ""
+msgstr "Trenutno so na voljo sledeči vtičniki:"
 
 msgctxt "AboutDialog|"
 msgid "EPG Plugins"
-msgstr ""
+msgstr "Vtičniki EPG"
 
 #~ msgctxt "BrowseDirectory|"
 #~ msgid "Reset"
@@ -193,35 +197,30 @@ msgstr "Naslednja oddaja"
 #~ msgid "Subtitles files(*.sub *.srt *.txt)"
 #~ msgstr "Datoteke podnapisov(*.sub *.srt *.txt)"
 
-#, fuzzy
 msgctxt "FilterDialog|"
 msgid "Language:"
 msgstr "Jezik:"
 
-#, fuzzy
 msgctxt "FilterDialog|"
 msgid "Categories:"
 msgstr "Kategorije:"
 
-#, fuzzy
 msgctxt "FilterDialog|"
 msgid "All languages"
 msgstr "Vsi jeziki"
 
-#, fuzzy
 msgctxt "FilterDialog|"
 msgid "All categories"
 msgstr "Vse kategorije"
 
 msgctxt "FilterDialog|"
 msgid "Filter"
-msgstr ""
+msgstr "Filtriraj"
 
 msgctxt "FilterDialog|"
 msgid "Apply"
-msgstr ""
+msgstr "Uveljavi"
 
-#, fuzzy
 msgctxt "FilterDialog|"
 msgid "Reset"
 msgstr "Obnovi"
@@ -295,22 +294,21 @@ msgctxt "IntroPage|"
 msgid "Please re-set your settings."
 msgstr "Prosim, ponovno nastavite aplikacijo."
 
-#, fuzzy
 msgctxt "MainMenu|"
 msgid "Settings"
 msgstr "Nastavitve"
 
 msgctxt "MainMenu|"
 msgid "Help"
-msgstr ""
+msgstr "Pomoč"
 
 msgctxt "MainMenu|"
 msgid "About"
-msgstr ""
+msgstr "O programu"
 
 msgctxt "MainMenu|"
 msgid "Exit"
-msgstr ""
+msgstr "Izhod"
 
 msgctxt "MainWindow|"
 msgid "&Exit"
@@ -529,7 +527,7 @@ msgctxt "MainWindow|"
 msgid "&Video"
 msgstr "&Slika"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -634,32 +632,26 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Naslednja slikovna sled"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Clear"
 msgstr "Počisti"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Search:"
 msgstr "Išči:"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Category:"
 msgstr "Kategorija:"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Language:"
 msgstr "Jezik:"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "All categories"
 msgstr "Vse kategorije"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "All languages"
 msgstr "Vsi jeziki"
@@ -954,12 +946,11 @@ msgctxt "PlaylistEdit|"
 msgid "Save"
 msgstr "Shrani"
 
-#, fuzzy
 msgctxt "PlaylistEdit|"
 msgid "Tano"
 msgstr "Tano"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEdit|"
 msgid ""
 "Cannot read file %1:\n"
@@ -968,7 +959,7 @@ msgstr ""
 "Ne morem prebrati %1:\n"
 "%2."
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEdit|"
 msgid ""
 "Cannot write file %1:\n"
@@ -977,7 +968,6 @@ msgstr ""
 "Ne morem pisati datoteke %1:\n"
 "%2."
 
-#, fuzzy
 msgctxt "PlaylistEdit|"
 msgid "A channel with this number already exists!"
 msgstr "Program s to številko že obstaja!"
@@ -1010,12 +1000,10 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "Open directory"
 msgstr "Odpri imenik"
 
-#, fuzzy
 msgctxt "PlaylistFilterModel|"
 msgid "All categories"
 msgstr "Vse kategorije"
 
-#, fuzzy
 msgctxt "PlaylistFilterModel|"
 msgid "All languages"
 msgstr "Vsi jeziki"
@@ -1128,7 +1116,7 @@ msgstr "EPG ID"
 
 msgctxt "PlaylistPage|"
 msgid "Search ..."
-msgstr ""
+msgstr "Išči ..."
 
 #~ msgctxt "PlaylistPage|"
 #~ msgid "Schedule"
@@ -1136,7 +1124,7 @@ msgstr ""
 
 msgctxt "PlaylistPage|"
 msgid "Select channel"
-msgstr ""
+msgstr "Izberi program"
 
 #~ msgctxt "PlaylistSelect|"
 #~ msgid "Select your playlist"
@@ -1517,11 +1505,11 @@ msgstr "Sagem STB seznam programov"
 
 msgctxt "QObject|"
 msgid "XMLTV file"
-msgstr ""
+msgstr "Datoteka XMLTV"
 
 msgctxt "QObject|"
 msgid "Open XMLTV"
-msgstr ""
+msgstr "Odpri XMLTV"
 
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
@@ -1588,12 +1576,10 @@ msgctxt "Recorder|"
 msgid "Recording to file:"
 msgstr "Snemam v datoteko:"
 
-#, fuzzy
 msgctxt "ScheduleListPage|"
 msgid "Schedule"
 msgstr "Spored"
 
-#, fuzzy
 msgctxt "SchedulePage|"
 msgid "Schedule"
 msgstr "Spored"
@@ -1867,7 +1853,6 @@ msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr "Uporabljate Tano različice:"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Default channel list"
 msgstr "Privzet seznam programov"
@@ -1902,11 +1887,11 @@ msgstr "Uporabi globalne VLC nastavitve"
 
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
-msgstr ""
+msgstr "<b>Privzet seznam programov</b>"
 
 msgctxt "SettingsPage|"
 msgid "<b>Playback</b>"
-msgstr ""
+msgstr "<b>Predvajanje</b>"
 
 #~ msgctxt "SettingsPlaylist|"
 #~ msgid "Default channel list"
@@ -2035,7 +2020,7 @@ msgstr "XMLTV"
 
 msgctxt "SettingsSchedule|"
 msgid "Select desired XMLTV grabber from the list below:"
-msgstr "Izberite željen XMLTV grabber s spodnjega seznama:"
+msgstr "Izberite željen odjemalec XMLTV s spodnjega seznama:"
 
 #~ msgctxt "SettingsSchedule|"
 #~ msgid "Custom grabber settings"
@@ -2052,29 +2037,28 @@ msgstr "Izberite željen XMLTV grabber s spodnjega seznama:"
 
 msgctxt "SettingsSchedule|"
 msgid "EPG source"
-msgstr ""
+msgstr "Vir EPG"
 
 msgctxt "SettingsSchedule|"
 msgid "EPG plugin"
-msgstr ""
+msgstr "Vtičnik EPG"
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV settings"
-msgstr ""
+msgstr "Nastavitve XMLTV"
 
 msgctxt "SettingsSchedule|"
 msgid "Custom grabber output:"
-msgstr ""
+msgstr "Izhod poljubnega odjemalca:"
 
 msgctxt "SettingsSchedule|"
 msgid "EPG plugin settings"
-msgstr ""
+msgstr "Nastavitve vtičnika EPG"
 
 msgctxt "SettingsSchedule|"
 msgid "Select desired EPG plugin from the list below:"
-msgstr ""
+msgstr "Izberite željen vtičnik EPG s spodnjega seznama:"
 
-#, fuzzy
 msgctxt "SettingsSchedule|"
 msgid "Custom"
 msgstr "Drugo"
@@ -2304,11 +2288,19 @@ msgid "Teletext Transparency"
 msgstr "Prosojnost teleteksta"
 
 #, fuzzy
+msgctxt "Timer|"
+msgid "Active"
+msgstr "Aktiven"
+
+#, fuzzy
+msgctxt "Timer|"
+msgid "Disabled or expired"
+msgstr "Izključen ali pretečen"
+
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Počisti"
 
-#, fuzzy
 msgctxt "TimersDisplayWidget|"
 msgid "Search:"
 msgstr "Išči:"
@@ -2437,10 +2429,9 @@ msgctxt "TimersEdit|"
 msgid "Tano"
 msgstr "Tano"
 
-#, fuzzy
 msgctxt "TimersEdit|"
 msgid "Please enter a name and select a channel from the list."
-msgstr "Prosim vnesi ime in izberi program s seznama."
+msgstr "Vnesite ime in izberite program s seznama."
 
 msgctxt "TimersEdit|"
 msgid "Timer with this name already exists. Please select another name."

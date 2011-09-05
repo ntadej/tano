@@ -19,7 +19,8 @@
 #include "container/xmltv/XmltvProgramme.h"
 #include "epg/XmltvCrewModel.h"
 
-XmltvProgramme::XmltvProgramme(const QString &channel, QObject *parent)
+XmltvProgramme::XmltvProgramme(const QString &channel,
+                               QObject *parent)
     : ListItem(parent),
       _channel(channel)
 {

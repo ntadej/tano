@@ -92,7 +92,7 @@ QVariant Timer::data(int role) const
 
 QString Timer::display() const
 {
-    return name();
+    return name() + " " + "(" + (isDisabled() ? tr("Disabled or expired") : tr("Active")) + ")";
 }
 
 QIcon Timer::displayIcon() const

@@ -16,30 +16,20 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvProgramme.h"
-#include "epg/XmltvProgrammeFilterModel.h"
+#ifndef TANO_XMLTVCREWFILTERMODEL_H_
+#define TANO_XMLTVCREWFILTERMODEL_H_
 
-XmltvProgrammeFilterModel::XmltvProgrammeFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent)
+#include <QtGui/QSortFilterProxyModel>
+
+class XmltvCrewFilterModel : public QSortFilterProxyModel
 {
-    _date = QDate::currentDate();
-}
+Q_OBJECT
+public:
+    XmltvCrewFilterModel(QObject *parent = 0);
+    ~XmltvCrewFilterModel();
 
-XmltvProgrammeFilterModel::~XmltvProgrammeFilterModel() { }
+protected:
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
+};
 
-void XmltvProgrammeFilterModel::setDate(const QDate &date)
-{
-    _date = date;
-    invalidateFilter();
-}
-
-bool XmltvProgrammeFilterModel::filterAcceptsRow(int sourceRow,
-                                           const QModelIndex &sourceParent) const
-{
-    QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
-
-    bool name = sourceModel()->data(index, XmltvProgramme::TitleRole).toString().contains(filterRegExp());
-    bool start = (sourceModel()->data(index, XmltvProgramme::StartRole).toDateTime().date() == _date);
-
-    return (name && start);
-}
+#endif // TANO_XMLTVCREWFILTERMODEL_H_

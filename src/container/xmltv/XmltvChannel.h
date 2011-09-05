@@ -22,22 +22,40 @@
 #include <QtCore/QList>
 #include <QtCore/QString>
 
+#include "core/ListItem.h"
+
 class XmltvProgramme;
 class XmltvProgrammeModel;
 
-class XmltvChannel
+class XmltvChannel : public ListItem
 {
+Q_OBJECT
 public:
-    XmltvChannel(const QString &id);
+    enum Roles {
+        DisplayRole = Qt::DisplayRole,
+        DisplayIconRole = Qt::DecorationRole,
+        IdRole = Qt::UserRole + 1,
+        DisplayNameRole,
+        IconRole,
+        UrlRole
+    };
+
+    XmltvChannel(const QString &id = 0,
+                 QObject *parent = 0);
     ~XmltvChannel();
 
     inline QString id() const { return _id; }
+    QVariant data(int role) const;
+    QString display() const;
+    QIcon displayIcon() const;
+    QHash<int, QByteArray> roleNames() const;
+
     inline QString displayName() const { return _displayName; }
     void setDisplayName(const QString &s);
     inline QString icon() const { return _icon; }
-    void setIcon(const QString &s) { _icon = s; }
+    void setIcon(const QString &s);
     inline QString url() const { return _url; }
-    void setUrl(const QString &s) { _url = s; }
+    void setUrl(const QString &s);
 
     XmltvProgrammeModel *programme() const { return _programme; }
     void addProgramme(XmltvProgramme *p);

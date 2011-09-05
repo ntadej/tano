@@ -2291,6 +2291,17 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
 </context>
 <context>
+    <name>Timer</name>
+    <message>
+        <source>Active</source>
+        <translation type="unfinished">V činnosti</translation>
+    </message>
+    <message>
+        <source>Disabled or expired</source>
+        <translation type="unfinished">Zakázáno nebo vypršelo</translation>
+    </message>
+</context>
+<context>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>

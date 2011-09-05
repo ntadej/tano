@@ -20,8 +20,10 @@
 #include "container/xmltv/XmltvProgramme.h"
 #include "epg/XmltvProgrammeModel.h"
 
-XmltvChannel::XmltvChannel(const QString &id)
-    : _id(id)
+XmltvChannel::XmltvChannel(const QString &id,
+                           QObject *parent)
+    : ListItem(parent),
+      _id(id)
 {
     _programme = new XmltvProgrammeModel();
 }
@@ -31,6 +33,49 @@ XmltvChannel::~XmltvChannel()
     delete _programme;
 }
 
+QHash<int, QByteArray> XmltvChannel::roleNames() const
+{
+    QHash<int, QByteArray> names;
+    names[DisplayRole] = "display";
+    names[DisplayIconRole] = "displayIcon";
+    names[IdRole] = "id";
+    names[DisplayNameRole] = "displayName";
+    names[IconRole] = "icon";
+    names[UrlRole] = "url";
+    return names;
+}
+
+QVariant XmltvChannel::data(int role) const
+{
+    switch (role)
+    {
+    case DisplayRole:
+        return display();
+    case DisplayIconRole:
+        return displayIcon();
+    case IdRole:
+        return id();
+    case DisplayNameRole:
+        return displayName();
+    case IconRole:
+        return icon();
+    case UrlRole:
+        return url();
+    default:
+        return QVariant();
+    }
+}
+
+QString XmltvChannel::display() const
+{
+    return displayName();
+}
+
+QIcon XmltvChannel::displayIcon() const
+{
+    return QIcon(":/icons/16x16/video.png");
+}
+
 void XmltvChannel::addProgramme(XmltvProgramme *p)
 {
     _programme->appendRow(p);
@@ -38,9 +83,28 @@ void XmltvChannel::addProgramme(XmltvProgramme *p)
 
 void XmltvChannel::setDisplayName(const QString &s)
 {
-    _displayName = s;
+    if(_displayName != s) {
+        _displayName = s;
+        emit dataChanged();
 
-    for(int i = 0; i < _programme->rowCount(); i++) {
-        _programme->row(i)->setChannelDisplayName(s);
+        for(int i = 0; i < _programme->rowCount(); i++) {
+            _programme->row(i)->setChannelDisplayName(s);
+        }
+    }
+}
+
+void XmltvChannel::setIcon(const QString &s)
+{
+    if(_icon != s) {
+        _icon = s;
+        emit dataChanged();
+    }
+}
+
+void XmltvChannel::setUrl(const QString &s)
+{
+    if(_url != s) {
+        _url = s;
+        emit dataChanged();
     }
 }

@@ -57,13 +57,15 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <source>About Tano Mobile</source>
-        <translation type="unfinished"></translation>
+        <translation>O programu Tano Mobile</translation>
     </message>
     <message>
         <source>It is based on VLC-Qt.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Temelji na knjižnici VLC-Qt.
+
+</translation>
     </message>
     <message>
         <source>Close</source>
@@ -72,23 +74,24 @@ Vaša različica VLC-Qt: %4
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom.
+</translation>
     </message>
     <message>
         <source>You are using the mobile version which is currently in an experimental stage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trenutno uporabljate mobilno različico, ki je v eksperimentalni fazi.</translation>
     </message>
     <message>
         <source>Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Vtičniki</translation>
     </message>
     <message>
         <source>These plugins are currently available for Tano:</source>
-        <translation type="unfinished"></translation>
+        <translation>Trenutno so na voljo sledeči vtičniki:</translation>
     </message>
     <message>
         <source>EPG Plugins</source>
-        <translation type="unfinished"></translation>
+        <translation>Vtičniki EPG</translation>
     </message>
 </context>
 <context>
@@ -202,31 +205,31 @@ Vaša različica VLC-Qt: %4
     <name>FilterDialog</name>
     <message>
         <source>Language:</source>
-        <translation type="unfinished">Jezik:</translation>
+        <translation>Jezik:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation type="unfinished">Kategorije:</translation>
+        <translation>Kategorije:</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Vsi jeziki</translation>
+        <translation>Vsi jeziki</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Vse kategorije</translation>
+        <translation>Vse kategorije</translation>
     </message>
     <message>
         <source>Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtriraj</translation>
     </message>
     <message>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Uveljavi</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation type="unfinished">Obnovi</translation>
+        <translation>Obnovi</translation>
     </message>
 </context>
 <context>
@@ -306,19 +309,19 @@ Vaša različica VLC-Qt: %4
     <name>MainMenu</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavitve</translation>
+        <translation>Nastavitve</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomoč</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>O programu</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Izhod</translation>
     </message>
 </context>
 <context>
@@ -540,7 +543,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Ne morem prebrati %1:
+        <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
 </context>
@@ -662,27 +665,27 @@ To bo ustavilo trenutno snemanje.</translation>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Počisti</translation>
+        <translation>Počisti</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="unfinished">Išči:</translation>
+        <translation>Išči:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation type="unfinished">Kategorija:</translation>
+        <translation>Kategorija:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished">Jezik:</translation>
+        <translation>Jezik:</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Vse kategorije</translation>
+        <translation>Vse kategorije</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Vsi jeziki</translation>
+        <translation>Vsi jeziki</translation>
     </message>
 </context>
 <context>
@@ -961,23 +964,23 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Ne morem prebrati %1:
+        <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Ne morem pisati datoteke %1:
+        <translation>Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation type="unfinished">Program s to številko že obstaja!</translation>
+        <translation>Program s to številko že obstaja!</translation>
     </message>
 </context>
 <context>
@@ -1015,11 +1018,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>PlaylistFilterModel</name>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Vse kategorije</translation>
+        <translation>Vse kategorije</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Vsi jeziki</translation>
+        <translation>Vsi jeziki</translation>
     </message>
 </context>
 <context>
@@ -1132,7 +1135,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Search ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Išči ...</translation>
     </message>
     <message>
         <source>Schedule</source>
@@ -1140,7 +1143,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Select channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberi program</translation>
     </message>
 </context>
 <context>
@@ -1523,11 +1526,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>XMLTV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Datoteka XMLTV</translation>
     </message>
     <message>
         <source>Open XMLTV</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpri XMLTV</translation>
     </message>
 </context>
 <context>
@@ -1604,14 +1607,14 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>ScheduleListPage</name>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Spored</translation>
+        <translation>Spored</translation>
     </message>
 </context>
 <context>
     <name>SchedulePage</name>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Spored</translation>
+        <translation>Spored</translation>
     </message>
 </context>
 <context>
@@ -1892,7 +1895,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Default channel list</source>
-        <translation type="unfinished">Privzet seznam programov</translation>
+        <translation>Privzet seznam programov</translation>
     </message>
 </context>
 <context>
@@ -1927,11 +1930,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Privzet seznam programov&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Playback&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Predvajanje&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -2064,7 +2067,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Select desired XMLTV grabber from the list below:</source>
-        <translation>Izberite željen XMLTV grabber s spodnjega seznama:</translation>
+        <translation>Izberite željen odjemalec XMLTV s spodnjega seznama:</translation>
     </message>
     <message>
         <source>Custom grabber settings</source>
@@ -2078,31 +2081,31 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>EPG source</source>
-        <translation type="unfinished"></translation>
+        <translation>Vir EPG</translation>
     </message>
     <message>
         <source>EPG plugin</source>
-        <translation type="unfinished"></translation>
+        <translation>Vtičnik EPG</translation>
     </message>
     <message>
         <source>XMLTV settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitve XMLTV</translation>
     </message>
     <message>
         <source>Custom grabber output:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izhod poljubnega odjemalca:</translation>
     </message>
     <message>
         <source>EPG plugin settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitve vtičnika EPG</translation>
     </message>
     <message>
         <source>Select desired EPG plugin from the list below:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberite željen vtičnik EPG s spodnjega seznama:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished">Drugo</translation>
+        <translation>Drugo</translation>
     </message>
 </context>
 <context>
@@ -2342,14 +2345,25 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
 </context>
 <context>
+    <name>Timer</name>
+    <message>
+        <source>Active</source>
+        <translation>Aktiven</translation>
+    </message>
+    <message>
+        <source>Disabled or expired</source>
+        <translation>Izključen ali pretečen</translation>
+    </message>
+</context>
+<context>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Počisti</translation>
+        <translation>Počisti</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="unfinished">Išči:</translation>
+        <translation>Išči:</translation>
     </message>
 </context>
 <context>
@@ -2474,7 +2488,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation type="unfinished">Prosim vnesi ime in izberi program s seznama.</translation>
+        <translation>Vnesite ime in izberite program s seznama.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>

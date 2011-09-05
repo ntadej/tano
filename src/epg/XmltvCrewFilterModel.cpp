@@ -16,30 +16,20 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvProgramme.h"
-#include "epg/XmltvProgrammeFilterModel.h"
+#include "container/xmltv/XmltvCrewMember.h"
+#include "epg/XmltvCrewFilterModel.h"
 
-XmltvProgrammeFilterModel::XmltvProgrammeFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent)
-{
-    _date = QDate::currentDate();
-}
+XmltvCrewFilterModel::XmltvCrewFilterModel(QObject *parent)
+    : QSortFilterProxyModel(parent) { }
 
-XmltvProgrammeFilterModel::~XmltvProgrammeFilterModel() { }
+XmltvCrewFilterModel::~XmltvCrewFilterModel() { }
 
-void XmltvProgrammeFilterModel::setDate(const QDate &date)
-{
-    _date = date;
-    invalidateFilter();
-}
-
-bool XmltvProgrammeFilterModel::filterAcceptsRow(int sourceRow,
-                                           const QModelIndex &sourceParent) const
+bool XmltvCrewFilterModel::filterAcceptsRow(int sourceRow,
+                                            const QModelIndex &sourceParent) const
 {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
-    bool name = sourceModel()->data(index, XmltvProgramme::TitleRole).toString().contains(filterRegExp());
-    bool start = (sourceModel()->data(index, XmltvProgramme::StartRole).toDateTime().date() == _date);
+    bool name = sourceModel()->data(index, XmltvCrewMember::NameRole).toString().contains(filterRegExp());
 
-    return (name && start);
+    return name;
 }

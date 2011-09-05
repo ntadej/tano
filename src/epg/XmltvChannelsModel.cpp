@@ -16,30 +16,25 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvProgramme.h"
-#include "epg/XmltvProgrammeFilterModel.h"
+#include "container/xmltv/XmltvChannel.h"
+#include "epg/XmltvChannelsModel.h"
 
-XmltvProgrammeFilterModel::XmltvProgrammeFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent)
+XmltvChannelsModel::XmltvChannelsModel(QObject *parent)
+    : ListModel(new XmltvChannel, parent) { }
+
+XmltvChannelsModel::~XmltvChannelsModel() { }
+
+XmltvChannel *XmltvChannelsModel::find(const QString &id) const
 {
-    _date = QDate::currentDate();
+    return qobject_cast<XmltvChannel *>(ListModel::find(id));
 }
 
-XmltvProgrammeFilterModel::~XmltvProgrammeFilterModel() { }
-
-void XmltvProgrammeFilterModel::setDate(const QDate &date)
+XmltvChannel *XmltvChannelsModel::row(const int &row)
 {
-    _date = date;
-    invalidateFilter();
+    return qobject_cast<XmltvChannel *>(ListModel::row(row));
 }
 
-bool XmltvProgrammeFilterModel::filterAcceptsRow(int sourceRow,
-                                           const QModelIndex &sourceParent) const
+XmltvChannel *XmltvChannelsModel::takeRow(const int &row)
 {
-    QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
-
-    bool name = sourceModel()->data(index, XmltvProgramme::TitleRole).toString().contains(filterRegExp());
-    bool start = (sourceModel()->data(index, XmltvProgramme::StartRole).toDateTime().date() == _date);
-
-    return (name && start);
+    return qobject_cast<XmltvChannel *>(ListModel::takeRow(row));
 }

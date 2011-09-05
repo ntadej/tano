@@ -139,7 +139,10 @@ void TimersEdit::read()
     QString fileName = _path + "timers.tano.xml";
 
     QFile file(fileName);
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+    if(!file.exists())
+        return;
+
+    if(!file.open(QFile::ReadOnly | QFile::Text)) {
         QMessageBox::warning(this, tr("Tano"),
                             tr("Cannot read file %1:\n%2.")
                             .arg(fileName)

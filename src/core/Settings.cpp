@@ -55,7 +55,7 @@ const int Settings::DEFAULT_CHANNEL = 1;
 const int Settings::DEFAULT_VOLUME = 50;
 // Schedule
 const int Settings::DEFAULT_EPG_TYPE = 0;
-const QString Settings::DEFAULT_GRABBER = "";
+const QString Settings::DEFAULT_GRABBER = "custom";
 const QString Settings::DEFAULT_LOCATION = Tano::settingsPath() + "xmltv.xml";
 const QString Settings::DEFAULT_PLUGIN = "";
 

@@ -2098,6 +2098,16 @@ msgid "Teletext Transparency"
 msgstr ""
 
 #, fuzzy
+msgctxt "Timer|"
+msgid "Active"
+msgstr "Активен"
+
+#, fuzzy
+msgctxt "Timer|"
+msgid "Disabled or expired"
+msgstr "Отключен или устарел"
+
+#, fuzzy
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Закрыть"

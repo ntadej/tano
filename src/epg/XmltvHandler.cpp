@@ -28,6 +28,7 @@
 #include "core/ConsoleOutput.h"
 #include "epg/XmltvCommon.h"
 #include "epg/XmltvEnums.h"
+#include "epg/XmltvChannelsModel.h"
 #include "XmltvHandler.h"
 
 XmltvHandler::XmltvHandler()
@@ -73,10 +74,10 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
             QString start = attributes.value("start").replace(Tano::Xmltv::dateRegExp(), "");
             QString stop = attributes.value("stop").replace(Tano::Xmltv::dateRegExp(), "");
             _currentProgramme = new XmltvProgramme(attributes.value("channel"));
-            _currentProgramme->setChannelDisplayName(_list->channel(attributes.value("channel"))->displayName());
+            _currentProgramme->setChannelDisplayName(_list->channels()->find(attributes.value("channel"))->displayName());
             _currentProgramme->setStart(QDateTime::fromString(start, Tano::Xmltv::dateFormat()));
             _currentProgramme->setStop(QDateTime::fromString(stop, Tano::Xmltv::dateFormat()));
-            _list->channel(attributes.value("channel"))->addProgramme(_currentProgramme);
+            _list->channels()->find(attributes.value("channel"))->addProgramme(_currentProgramme);
         }
     } else if (qName == "lenght") {
         if(_list && _currentProgramme) {
