@@ -24,11 +24,17 @@ import QtQuick 1.0
 import com.meego 1.0
 
 import "../common"
+import "../test"
 
 Page {
     id: helpPage
     anchors.margins: TanoUi.DefaultMargin
-    tools: ToolBarLayoutCommon {}
+    tools: ToolBarLayout {
+        id: toolBarHelp
+        ToolIconBack { }
+        ButtonOrientation { }
+        ToolIconMenu { }
+    }
     
     Flickable {        
         contentWidth: childrenRect.width
@@ -47,12 +53,6 @@ Page {
 
     PageHeader {
         id: helpHeader
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.topMargin: -helpPage.anchors.topMargin
-        anchors.leftMargin: -helpPage.anchors.leftMargin
-        anchors.rightMargin: -helpPage.anchors.rightMargin
 
         title: "Help"
     }

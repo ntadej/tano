@@ -20,20 +20,26 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-import QtQuick 1.0
-import com.meego 1.0
+import QtQuick 1.1
+import com.nokia.meego 1.0
 
 import "../common"
+import "../test"
 
-import "../js/core.js" as Tano
+import "../js/core.js" as TanoJsCore
 
 Page {
     id: scheduleListPage
     anchors.margins: TanoUi.DefaultMargin
-    tools: ToolBarLayoutCommon { }
+    tools: ToolBarLayout {
+        id: toolBarScheduleList
+        ToolIconBack { }
+        ButtonOrientation { }
+        ToolIconMenu { }
+    }
 
     function item(name) {
-        Tano.addPage("SchedulePage.qml")
+        TanoJsCore.addPage("SchedulePage.qml")
         var page = pageStack.currentPage
         page.setChannel(name)
     }
@@ -118,12 +124,6 @@ Page {
 
     PageHeader {
         id: scheduleListHeader
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.topMargin: -scheduleListPage.anchors.topMargin
-        anchors.leftMargin: -scheduleListPage.anchors.leftMargin
-        anchors.rightMargin: -scheduleListPage.anchors.rightMargin
 
         title: qsTr("Schedule")
     }

@@ -16,27 +16,18 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-import QtQuick 1.0
-import com.meego 1.0
+import QtQuick 1.1
 
 ListModel {
     id: homePagesModel
     ListElement {
-        type: "playback"
-        page: "PlaylistPage.qml"
+        page: "ChannelsPage.qml"
         title: "Play live TV"
         subtitle: ""
     }
     ListElement {
-        type: "schedule"
-        page: "PlaylistPage.qml"
-        title: "Schedule"
-        subtitle: "Description"
-    }
-    ListElement {
-        type: "test"
-        page: "../test/TestListPage.qml"
-        title: "Tests"
+        page: "SettingsPage.qml"
+        title: "Settings"
         subtitle: "Description"
     }
 }

@@ -16,19 +16,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-import QtQuick 1.0
-import com.meego 1.0
+import QtQuick 1.1
+import com.nokia.meego 1.0
 
-ToolBarLayout {
-    id: toolBarLayoutCommon
-    visible: false
-    ToolButton {
-        text: "Change orientation";
-        onClicked: orientationLock = (screen.currentOrientation == Screen.Portrait) ?
-                       PageOrientation.LockLandscape : PageOrientation.LockPortrait
-    }
-    ToolIcon {
-        iconId: "toolbar-view-menu"
-        onClicked: (mainMenu.status == DialogStatus.Closed) ? mainMenu.open() : mainMenu.close()
-    }
+ToolButton {
+    text: "Change orientation";
+    visible: mainWindow.devel;
+    onClicked: orientationLock = (screen.currentOrientation == Screen.Portrait) ?
+                   PageOrientation.LockLandscape : PageOrientation.LockPortrait
 }

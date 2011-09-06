@@ -21,15 +21,6 @@
 
 #include "MobileConstants.h"
 
-QDeclarativePropertyMap *MobileConstants::typeConstants()
-{
-    QDeclarativePropertyMap *typeConstantsData = new QDeclarativePropertyMap();
-    typeConstantsData->insert("Playback", QVariant("playback"));
-    typeConstantsData->insert("Schedule", QVariant("schedule"));
-
-    return typeConstantsData;
-}
-
 QDeclarativePropertyMap *MobileConstants::uiConstants()
 {
     QDeclarativePropertyMap *uiConstantsData = new QDeclarativePropertyMap();

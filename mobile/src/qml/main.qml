@@ -20,8 +20,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-import QtQuick 1.0
-import com.meego 1.0
+import QtQuick 1.1
+import com.nokia.meego 1.0
 
 import "common"
 import "pages"
@@ -29,13 +29,9 @@ import "pages"
 import "js/core.js" as Tano
 
 PageStackWindow {
-    id: rootWindow
+    id: mainWindow
 
-    platformStyle: defaultStyle
-
-    PageStackWindowStyle {
-        id: defaultStyle
-    }
+    property bool devel: false;
 
     // HomeListPage is what we see when the app starts
     initialPage: HomeListPage { }

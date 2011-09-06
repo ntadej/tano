@@ -20,15 +20,21 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-import QtQuick 1.0
-import com.meego 1.0
+import QtQuick 1.1
+import com.nokia.meego 1.0
 
 import "../common"
+import "../test"
 
 Page {
     id: settingsPage
     anchors.margins: TanoUi.DefaultMargin
-    tools: ToolBarLayoutCommon {}
+    tools: ToolBarLayout {
+        id: toolBarSettings
+        ToolIconBack { }
+        ButtonOrientation { }
+        ToolIconMenu { }
+    }
     
     Flickable {        
         contentWidth: childrenRect.width
@@ -47,12 +53,6 @@ Page {
 
     PageHeader {
         id: settingsHeader
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.topMargin: -settingsPage.anchors.topMargin
-        anchors.leftMargin: -settingsPage.anchors.leftMargin
-        anchors.rightMargin: -settingsPage.anchors.rightMargin
 
         title: "Settings"
     }

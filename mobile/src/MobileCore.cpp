@@ -37,9 +37,8 @@ MobileCore::MobileCore(QObject *parent)
     _locale = new LocaleManager();
     _viewer = new QmlApplicationViewer();
     _viewer->setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
-    _viewer->rootContext()->setContextProperty("TanoType", MobileConstants::typeConstants());
     _viewer->rootContext()->setContextProperty("TanoUi", MobileConstants::uiConstants());
-    _viewer->rootContext()->setContextProperty("core", this);
+    _viewer->rootContext()->setContextProperty("TanoCore", this);
     _viewer->setMainQmlFile(QLatin1String("qml/main.qml"));
 
     _viewer->showExpanded();
@@ -64,6 +63,6 @@ void MobileCore::createXmltv()
     _xmltv = new MobileXmltvHandler(this);
     XmltvProgrammeFilterModel *xm = _xmltv->model();
 
-    _viewer->rootContext()->setContextProperty("xmltvModel", xm);
-    _viewer->rootContext()->setContextProperty("xmltvManager", _xmltv);
+    _viewer->rootContext()->setContextProperty("XmltvProgramme", xm);
+    _viewer->rootContext()->setContextProperty("XmltvManager", _xmltv);
 }

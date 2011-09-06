@@ -20,19 +20,25 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-import QtQuick 1.0
-import com.meego 1.0
+import QtQuick 1.1
+import com.nokia.meego 1.0
 
 import "../common"
 import "../data"
+import "../test"
 
-import "../js/core.js" as Tano
+import "../js/core.js" as TanoJsCore
 
 Page {
     id: homeListPage
     anchors.margins: TanoUi.DefaultMargin
 
-    tools: ToolBarLayoutHome { }
+    tools: ToolBarLayout {
+        id: toolBarHomeList
+        ToolIcon { visible: false }
+        ButtonOrientation { }
+        ToolIconMenu { }
+    }
 
     ListView {
         id: listView
@@ -88,9 +94,7 @@ Page {
                 id: mouseArea
                 anchors.fill: background
                 onClicked: {
-                    Tano.addPage(page)
-                    var p = pageStack.currentPage
-                    p.type = type
+                    TanoJsCore.addPage(page)
                 }
             }
         }
@@ -98,12 +102,6 @@ Page {
 
     PageHeader {
         id: header
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.topMargin: -homeListPage.anchors.topMargin
-        anchors.leftMargin: -homeListPage.anchors.leftMargin
-        anchors.rightMargin: -homeListPage.anchors.rightMargin
 
         title: "Tano Mobile"
     }
