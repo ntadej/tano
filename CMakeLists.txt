@@ -124,7 +124,9 @@ ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(plugins)
 ADD_SUBDIRECTORY(daemon)
 ADD_SUBDIRECTORY(editor)
-ADD_SUBDIRECTORY(mobile)
+IF(!MINGW)
+    ADD_SUBDIRECTORY(mobile)
+ENDIF(!MINGW)
 
 SET(Tano_Files
     LICENSE.GPL
@@ -164,26 +166,20 @@ IF(MINGW)
     STRING(REGEX REPLACE "bin" "etc/dbus-1" DBUS_ETC_DIR "${QT_BIN_DIR}")
 
     SET(Tano_Qt_Lib
-        ${QT_BIN_DIR}/libgcc_s_dw2-1.dll
-        ${QT_BIN_DIR}/mingwm10.dll
         ${QT_BIN_DIR}/QtCore4.dll
         ${QT_BIN_DIR}/QtDBus4.dll
         ${QT_BIN_DIR}/QtGui4.dll
         ${QT_BIN_DIR}/QtNetwork4.dll
         ${QT_BIN_DIR}/QtSvg4.dll
         ${QT_BIN_DIR}/QtXml4.dll
+        ${QT_BIN_DIR}/libeay32.dll
+        ${QT_BIN_DIR}/ssleay32.dll
     )
     FILE(GLOB Tano_Qt_Plugins ${QT_PLUGINS_DIR}/imageformats/*.dll)
     SET(Tano_Dbus_Bin
         ${QT_BIN_DIR}/dbus-daemon.exe
-        ${QT_BIN_DIR}/dbus-env.bat
-        ${QT_BIN_DIR}/dbus-launch.exe
-        ${QT_BIN_DIR}/dbus-monitor.exe
-        ${QT_BIN_DIR}/dbus-send.exe
         ${QT_BIN_DIR}/libdbus-1.dll
-        ${QT_BIN_DIR}/libeay32.dll
         ${QT_BIN_DIR}/libexpat.dll
-        ${QT_BIN_DIR}/ssleay32.dll
     )
     SET(Tano_Dbus_Config
         ${DBUS_ETC_DIR}/session.conf

@@ -129,7 +129,12 @@ QString Tano::locateResource(const QString &file)
 
 QString Tano::daemon()
 {
-    QString app = "tano-daemon";
+    QString app;
+#ifdef Q_WS_WIN
+    app = "tano-daemon.exe";
+#else
+    app = "tano-daemon";
+#endif
     QString path;
 
     // Try application executable directory
@@ -139,12 +144,6 @@ QString Tano::daemon()
     // Try development directory
     else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/daemon") + "/" + app).exists())
         path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/daemon") + "/" + app).absoluteFilePath();
-
-#ifdef Q_WS_WIN
-    // Try Windows directory
-    if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + app.append("exe")).exists())
-        path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + app.append("exe")).absoluteFilePath();
-#endif
 
     return path;
 }
