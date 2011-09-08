@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>600</height>
+    <width>894</width>
+    <height>509</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,7 +56,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1000</width>
+     <width>894</width>
      <height>23</height>
     </rect>
    </property>
@@ -178,12 +178,6 @@
     <iconset resource="../../data/icons.qrc">
      <normaloff>:/icons/24x24/information.png</normaloff>:/icons/24x24/information.png</iconset>
    </property>
-   <property name="floating">
-    <bool>false</bool>
-   </property>
-   <property name="features">
-    <set>QDockWidget::AllDockWidgetFeatures</set>
-   </property>
    <property name="allowedAreas">
     <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
@@ -205,7 +199,7 @@
       <widget class="QToolBox" name="channelToolBox">
        <property name="minimumSize">
         <size>
-         <width>350</width>
+         <width>250</width>
          <height>0</height>
         </size>
        </property>
@@ -221,7 +215,7 @@
           <x>0</x>
           <y>0</y>
           <width>340</width>
-          <height>299</height>
+          <height>208</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -245,8 +239,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>100</width>
-          <height>30</height>
+          <width>340</width>
+          <height>208</height>
          </rect>
         </property>
         <attribute name="icon">
