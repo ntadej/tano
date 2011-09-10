@@ -54,12 +54,12 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
         _list->setSourceInfoUrl(attributes.value("source-info-url"));
         _list->setSourceInfoName(attributes.value("source-info-name"));
         _list->setSourceDataUrl(attributes.value("source-data-url"));
-        _list->setGeneratorInfoName(attributes.value("source-info-url"));
-        _list->setGeneratorInfoUrl(attributes.value("source-info-url"));
+        _list->setGeneratorInfoName(attributes.value("generator-info-name"));
+        _list->setGeneratorInfoUrl(attributes.value("generator-info-url"));
         _metTag = true;
     } else if (qName == "channel") { // Channel
         if(_list) {
-            _currentChannel = new XmltvChannel(attributes.value("id"));
+            _currentChannel = new XmltvChannel(attributes.value("id"), _list);
             _list->addChannel(_currentChannel);
         }
     } else if (qName == "icon") {
@@ -73,7 +73,7 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
         if(_list) {
             QString start = attributes.value("start").replace(Tano::Xmltv::dateRegExp(), "");
             QString stop = attributes.value("stop").replace(Tano::Xmltv::dateRegExp(), "");
-            _currentProgramme = new XmltvProgramme(attributes.value("channel"));
+            _currentProgramme = new XmltvProgramme(attributes.value("channel"), _currentChannel);
             _currentProgramme->setChannelDisplayName(_list->channels()->find(attributes.value("channel"))->displayName());
             _currentProgramme->setStart(QDateTime::fromString(start, Tano::Xmltv::dateFormat()));
             _currentProgramme->setStop(QDateTime::fromString(stop, Tano::Xmltv::dateFormat()));

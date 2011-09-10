@@ -25,7 +25,7 @@ XmltvChannel::XmltvChannel(const QString &id,
     : ListItem(parent),
       _id(id)
 {
-    _programme = new XmltvProgrammeModel();
+    _programme = new XmltvProgrammeModel(this);
 }
 
 XmltvChannel::~XmltvChannel()

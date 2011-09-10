@@ -131,10 +131,16 @@ void XmltvManager::request(const QString &id,
     if(!_xmltv)
         return;
 
-    if(!_xmltv->channels()->find(id)->programme()->rowCount())
+    XmltvProgrammeModel *currentProgramme;
+    if(_xmltv->channels()->find(id))
+        currentProgramme = _xmltv->channels()->find(id)->programme();
+    else
         return;
 
-    emit epgSchedule(_xmltv->channels()->find(id)->programme(), identifier);
+    if(!currentProgramme->rowCount())
+        return;
+
+    emit epgSchedule(currentProgramme, identifier);
 
     _currentIdentifier = identifier;
     if(_currentIdentifier == Tano::Main) {
