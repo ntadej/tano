@@ -31,23 +31,23 @@ class UpdateManager : public QHttp
 {
 Q_OBJECT
 public:
-	UpdateManager(QObject *parent = 0);
-	~UpdateManager();
+    UpdateManager(QObject *parent = 0);
+    ~UpdateManager();
 
 public slots:
-	void getUpdates();
+    void getUpdates();
 
 signals:
-	void updateInfo(const QStringList,
-					const UpdateInfo);
+    void updateInfo(const QStringList,
+                    const UpdateInfo);
 
 private slots:
-	void readUpdates();
+    void readUpdates();
 
 private:
-	QTextCodec *_codec;
+    QTextCodec *_codec;
 
-	UpdateHandler *_handler;
+    UpdateHandler *_handler;
 };
 
 #endif // TANO_UPDATEMANAGER_H_

@@ -141,7 +141,6 @@ SET(Tano_Container_Srcs
     container/core/UpdateInfo.cpp
     container/core/Timer.cpp
     container/playlist/CSVInfo.cpp
-    container/playlist/PlaylistInfo.cpp
     container/xmltv/XmltvChannel.cpp
     container/xmltv/XmltvCrewMember.cpp
     container/xmltv/XmltvList.cpp
@@ -151,7 +150,6 @@ SET(Tano_Core_Srcs
     core/Arguments.cpp
     core/ChannelSelect.cpp
     core/Common.cpp
-    core/ConsoleOutput.cpp
     core/DaemonManager.cpp
     core/Enums.cpp
     core/GetFile.cpp

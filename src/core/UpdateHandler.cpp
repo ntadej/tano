@@ -24,53 +24,53 @@
 #include "container/core/UpdateInfo.h"
 
 UpdateHandler::UpdateHandler()
-	: _metTanoTag(false) { }
+    : _metTanoTag(false) { }
 
 UpdateHandler::~UpdateHandler() { }
 
 bool UpdateHandler::startElement(const QString & /* namespaceURI */,
-								const QString & /* localName */,
-								const QString &qName,
-								const QXmlAttributes &attributes)
+                                 const QString & /* localName */,
+                                 const QString &qName,
+                                 const QXmlAttributes &attributes)
 {
-	if (!_metTanoTag && qName != "tanoupdates") {
-		_errorStr = QObject::tr("The file is not a Tano updates file.");
-		return false;
-	}
+    if (!_metTanoTag && qName != "tanoupdates") {
+        _errorStr = QObject::tr("The file is not a Tano updates file.");
+        return false;
+    }
 
-	if(qName == "tanoupdates") {
-		_metTanoTag = true;
-		_update.clear();
-	} else if(qName == "application") {
-		_update.append(UpdateInfo());
-		_currentId = _update.size()-1;
-	}
+    if(qName == "tanoupdates") {
+        _metTanoTag = true;
+        _update.clear();
+    } else if(qName == "application") {
+        _update.append(UpdateInfo());
+        _currentId = _update.size()-1;
+    }
 
-	_currentText.clear();
-	return true;
+    _currentText.clear();
+    return true;
 }
 
 bool UpdateHandler::endElement(const QString & /* namespaceURI */,
-							 const QString & /* localName */,
-							 const QString &qName)
+                               const QString & /* localName */,
+                               const QString &qName)
 {
-	if (qName == "name") {
-		_update[_currentId].setName(_currentText);
-	} else if (qName == "version") {
-		_update[_currentId].setVersion(_currentText);
-	} else if (qName == "date") {
-		_update[_currentId].setDate(_currentText);
-	} else if (qName == "description") {
-		_update[_currentId].setDescription(_currentText);
-	} else if (qName == "development") {
-		_update[_currentId].setDevelopment(_currentText.toInt());
-	}
+    if (qName == "name") {
+        _update[_currentId].setName(_currentText);
+    } else if (qName == "version") {
+        _update[_currentId].setVersion(_currentText);
+    } else if (qName == "date") {
+        _update[_currentId].setDate(_currentText);
+    } else if (qName == "description") {
+        _update[_currentId].setDescription(_currentText);
+    } else if (qName == "development") {
+        _update[_currentId].setDevelopment(_currentText.toInt());
+    }
 
-	return true;
+    return true;
 }
 
 bool UpdateHandler::characters(const QString &str)
 {
-	_currentText += str;
-	return true;
+    _currentText += str;
+    return true;
 }

@@ -31,7 +31,8 @@ namespace Tano
         const char * interfaceXmltvCString();
         QString path();
         QString service();
-    };
-};
+        void welcomeMessage();
+    }
+}
 
 #endif // TANO_XMLTVCOMMON_H_

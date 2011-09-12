@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/ConsoleOutput.h"
+#include "daemon/DaemonCommon.h"
 #include "daemon/DaemonMain.h"
 #include "daemon/recorder/RecorderCore.h"
 #include "daemon/xmltv/XmltvCore.h"
@@ -24,7 +24,7 @@
 DaemonMain::DaemonMain(QObject *parent)
     : QObject(parent)
 {
-    ConsoleOutput::welcomeMessage();
+    Tano::Daemon::welcomeMessage();
 
     _recorder = new RecorderCore(this);
     _xmltv = new XmltvCore(this);

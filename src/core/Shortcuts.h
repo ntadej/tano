@@ -27,21 +27,21 @@
 class Shortcuts : public QSettings
 {
 public:
-	Shortcuts(const QList<QAction*> &list,
-			  QObject *parent = 0);
-	~Shortcuts();
+    Shortcuts(const QList<QAction*> &list,
+              QObject *parent = 0);
+    ~Shortcuts();
 
-	QStringList actionsNames() const { return _actionsName; }
-	void apply();
-	QStringList defaultKeys() const { return _defaultList; }
-	QStringList readKeys() const;
-	void restoreDefaults() { write(_defaultList); }
-	void write(const QStringList &keys);
+    inline QStringList actionsNames() const { return _actionsName; }
+    void apply();
+    inline QStringList defaultKeys() const { return _defaultList; }
+    QStringList readKeys() const;
+    inline void restoreDefaults() { write(_defaultList); }
+    void write(const QStringList &keys);
 
 private:
-	QList<QAction*> _actions;
-	QStringList _actionsName;
-	QStringList _defaultList;
+    QList<QAction*> _actions;
+    QStringList _actionsName;
+    QStringList _defaultList;
 };
 
 #endif // TANO_SHORTCUTS_H_

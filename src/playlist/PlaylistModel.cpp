@@ -153,6 +153,15 @@ void PlaylistModel::moveUp(Channel *channel)
     }
 }
 
+Channel *PlaylistModel::number(const int &number)
+{
+    for(int i = 0; i < rowCount(); i++) {
+        if(row(i)->number() == number) {
+            return row(i);
+        }
+    }
+}
+
 void PlaylistModel::open(const QString &file,
                          const bool &refresh,
                          const Tano::FileType &type,

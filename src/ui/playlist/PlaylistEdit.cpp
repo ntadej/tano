@@ -27,7 +27,6 @@
 #include "container/core/File.h"
 #include "container/playlist/CSVInfo.h"
 #include "core/Common.h"
-#include "core/ConsoleOutput.h"
 #include "core/Enums.h"
 #include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
@@ -430,8 +429,7 @@ void PlaylistEdit::refreshPlaylist(const bool &refresh)
     } else {
         ui->playlist->setEnabled(false);
 
-        if(ConsoleOutput::debug())
-            qDebug() << "Scanning:" << ui->ipFrom->text() << ui->ipPort->value() << ui->ipTimeout->value();
+        qDebug() << "Scanning:" << ui->ipFrom->text() << ui->ipPort->value() << ui->ipTimeout->value();
 
         QStringList ipFrom = ui->ipFrom->text().split(".");
         _currentIp[0] = ipFrom[0].toInt();
@@ -472,8 +470,7 @@ void PlaylistEdit::checkCurrentIp()
         }
 
         if(newChannel) {
-            if(ConsoleOutput::debug())
-                qDebug() << "Scanning:" << "Channel Found";
+            qDebug() << "Scanning:" << "Channel Found";
             addItem(tr("New channel from scan %1").arg(currentIp()), currentIp());
         }
     }

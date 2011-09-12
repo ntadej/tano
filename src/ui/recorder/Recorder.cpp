@@ -52,7 +52,7 @@ Recorder::Recorder(QWidget *parent)
 	//Init
 	connect(ui->buttonRecord, SIGNAL(toggled(bool)), this, SLOT(record(bool)));
 
-    connect(ui->playlistWidget, SIGNAL(itemClicked(Channel *)), this, SLOT(playlist(Channel *)));
+	connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
 
     connect(_controller, SIGNAL(elapsed(int)), this, SLOT(time(int)));
     connect(_controller, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));

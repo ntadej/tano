@@ -25,7 +25,7 @@
 
 GetFile::GetFile(QObject *parent)
     : QObject(parent),
-    _file(0) { }
+      _file(0) { }
 
 GetFile::~GetFile() { }
 

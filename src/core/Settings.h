@@ -31,108 +31,108 @@ public:
     void writeSettings();
 
     // General
-    QString configurationVersion() { return _configurationVersion; }
-    void setConfigurationVersion(const QString &s) { _configurationVersion = s; }
-    bool configured() const { return _configured; }
-    void setConfigured(const bool &b) { _configured = b; }
+    inline QString configurationVersion() { return _configurationVersion; }
+    inline void setConfigurationVersion(const QString &s) { _configurationVersion = s; }
+    inline bool configured() const { return _configured; }
+    inline void setConfigured(const bool &b) { _configured = b; }
     static const bool DEFAULT_CONFIGURED;
-    bool sessionVolume() const { return _sessionVolume; }
-    void setSessionVolume(const bool &b) { _sessionVolume = b; }
+    inline bool sessionVolume() const { return _sessionVolume; }
+    inline void setSessionVolume(const bool &b) { _sessionVolume = b; }
     static const bool DEFAULT_SESSION_VOLUME;
-    bool sessionAutoplay() const { return _sessionAutoplay; }
-    void setSessionAutoplay(const bool &b) { _sessionAutoplay = b; }
+    inline bool sessionAutoplay() const { return _sessionAutoplay; }
+    inline void setSessionAutoplay(const bool &b) { _sessionAutoplay = b; }
     static const bool DEFAULT_SESSION_AUTOPLAY;
-    QString language() const { return _language; }
-    void setLanguage(const QString &s) { _language = s; }
+    inline QString language() const { return _language; }
+    inline void setLanguage(const QString &s) { _language = s; }
     static const QString DEFAULT_LANGUAGE;
 
     // Channels
-    QString playlist() const { return _playlist; }
-    void setPlaylist(const QString &s) { _playlist = s; }
+    inline QString playlist() const { return _playlist; }
+    inline void setPlaylist(const QString &s) { _playlist = s; }
     static const QString DEFAULT_PLAYLIST;
 
     // GUI - start
-    bool splash() const { return _splash; }
-    void setSplash(const bool &b) { _splash = b; }
+    inline bool splash() const { return _splash; }
+    inline void setSplash(const bool &b) { _splash = b; }
     static const bool DEFAULT_SPLASH;
-    bool startLite() const { return _startLite; }
-    void setStartLite(const bool &b) { _startLite = b; }
+    inline bool startLite() const { return _startLite; }
+    inline void setStartLite(const bool &b) { _startLite = b; }
     static const bool DEFAULT_START_LITE;
-    bool startOnTop() const { return _startOnTop; }
-    void setStartOnTop(const bool &b) { _startOnTop = b; }
+    inline bool startOnTop() const { return _startOnTop; }
+    inline void setStartOnTop(const bool &b) { _startOnTop = b; }
     static const bool DEFAULT_START_ON_TOP;
-    bool startControls() const { return _startControls; }
-    void setStartControls(const bool &b) { _startControls = b; }
+    inline bool startControls() const { return _startControls; }
+    inline void setStartControls(const bool &b) { _startControls = b; }
     static const bool DEFAULT_START_CONTROLS;
-    bool startInfo() const { return _startInfo; }
-    void setStartInfo(const bool &b) { _startInfo = b; }
+    inline bool startInfo() const { return _startInfo; }
+    inline void setStartInfo(const bool &b) { _startInfo = b; }
     static const bool DEFAULT_START_INFO;
 
     // GUI
-    bool osd() const { return _osd; }
-    void setOsd(const bool &b) { _osd = b; }
+    inline bool osd() const { return _osd; }
+    inline void setOsd(const bool &b) { _osd = b; }
     static const bool DEFAULT_OSD;
-    bool osdPlaylist() const { return _osdPlaylist; }
-    void setOsdPlaylist(const bool &b) { _osdPlaylist = b; }
+    inline bool osdPlaylist() const { return _osdPlaylist; }
+    inline void setOsdPlaylist(const bool &b) { _osdPlaylist = b; }
     static const bool DEFAULT_OSD_PLAYLIST;
-    bool hideToTray() const { return _hideToTray; }
-    void setHideToTray(const bool &b) { _hideToTray = b; }
+    inline bool hideToTray() const { return _hideToTray; }
+    inline void setHideToTray(const bool &b) { _hideToTray = b; }
     static const bool DEFAULT_HIDE_TO_TRAY;
-    QString mouseWheel() const { return _mouseWheel; }
-    void setMouseWheel(const QString &s) { _mouseWheel = s; }
+    inline QString mouseWheel() const { return _mouseWheel; }
+    inline void setMouseWheel(const QString &s) { _mouseWheel = s; }
     static const QString DEFAULT_MOUSE_WHEEL;
-    int toolbarLook() const { return _toolbarLook; }
-    void setToolbarLook(const int &i) { _toolbarLook = i; }
+    inline int toolbarLook() const { return _toolbarLook; }
+    inline void setToolbarLook(const int &i) { _toolbarLook = i; }
     static const int DEFAULT_TOOLBAR_LOOK;
 
     // Backend
-    bool globalSettings() const { return _globalSettings; }
-    void setGlobalSettings(const bool &b) { _globalSettings = b; }
+    inline bool globalSettings() const { return _globalSettings; }
+    inline void setGlobalSettings(const bool &b) { _globalSettings = b; }
     static const bool DEFAULT_GLOBAL_SETTINGS;
-    bool rememberVideoSettings() const { return _rememberVideoSettings; }
-    void setRememberVideoSettings(const bool &b) { _rememberVideoSettings = b; }
+    inline bool rememberVideoSettings() const { return _rememberVideoSettings; }
+    inline void setRememberVideoSettings(const bool &b) { _rememberVideoSettings = b; }
     static const bool DEFAULT_REMEMBER_VIDEO_SETTINGS;
-    QString audioLanguage() const { return _audioLanguage; }
-    void setAudioLanguage(const QString &s) { _audioLanguage = s; }
+    inline QString audioLanguage() const { return _audioLanguage; }
+    inline void setAudioLanguage(const QString &s) { _audioLanguage = s; }
     static const QString DEFAULT_AUDIO_LANGUAGE;
-    QString subtitleLanguage() const { return _subtitleLanguage; }
-    void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
+    inline QString subtitleLanguage() const { return _subtitleLanguage; }
+    inline void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
     static const QString DEFAULT_SUBTITLE_LANGUAGE;
-    bool udpxy() const { return _udpxy; }
-    void setUdpxy(const bool &b) { _udpxy = b; }
+    inline bool udpxy() const { return _udpxy; }
+    inline void setUdpxy(const bool &b) { _udpxy = b; }
     static const bool DEFAULT_UDPXY;
-    QString udpxyUrl() const { return _udpxyUrl; }
-    void setUdpxyUrl(const QString &s) { _udpxyUrl = s; }
+    inline QString udpxyUrl() const { return _udpxyUrl; }
+    inline void setUdpxyUrl(const QString &s) { _udpxyUrl = s; }
     static const QString DEFAULT_UDPXY_URL;
-    int udpxyPort() const { return _udpxyPort; }
-    void setUdpxyPort(const int &i) { _udpxyPort = i; }
+    inline int udpxyPort() const { return _udpxyPort; }
+    inline void setUdpxyPort(const int &i) { _udpxyPort = i; }
     static const int DEFAULT_UDPXY_PORT;
 
     // Recorder
-    QString recorderDirectory() const { return _recorderDirectory; }
-    void setRecorderDirectory(const QString &s) { _recorderDirectory = s; }
+    inline QString recorderDirectory() const { return _recorderDirectory; }
+    inline void setRecorderDirectory(const QString &s) { _recorderDirectory = s; }
     static const QString DEFAULT_RECORDER_DIRECTORY;
 
     // Session
-    int channel() const { return _channel; }
-    void setChannel(const int &i) { _channel = i; }
+    inline int channel() const { return _channel; }
+    inline void setChannel(const int &i) { _channel = i; }
     static const int DEFAULT_CHANNEL;
-    int volume() const { return _volume; }
-    void setVolume(const int &i) { _volume = i; }
+    inline int volume() const { return _volume; }
+    inline void setVolume(const int &i) { _volume = i; }
     static const int DEFAULT_VOLUME;
 
     // Schedule
-    int epgType() const { return _epgType; }
-    void setEpgType(const int &i) { _epgType = i; }
+    inline int epgType() const { return _epgType; }
+    inline void setEpgType(const int &i) { _epgType = i; }
     static const int DEFAULT_EPG_TYPE;
-    QString grabber() const { return _grabber; }
-    void setGrabber(const QString &s) { _grabber = s; }
+    inline QString grabber() const { return _grabber; }
+    inline void setGrabber(const QString &s) { _grabber = s; }
     static const QString DEFAULT_GRABBER;
-    QString location() const { return _location; }
-    void setLocation(const QString &s) { _location = s; }
+    inline QString location() const { return _location; }
+    inline void setLocation(const QString &s) { _location = s; }
     static const QString DEFAULT_LOCATION;
-    QString plugin() const { return _plugin; }
-    void setPlugin(const QString &s) { _plugin = s; }
+    inline QString plugin() const { return _plugin; }
+    inline void setPlugin(const QString &s) { _plugin = s; }
     static const QString DEFAULT_PLUGIN;
 
 private:

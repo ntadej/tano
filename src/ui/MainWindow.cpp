@@ -26,17 +26,36 @@
 #include <vlc-qt/Common.h>
 #include <vlc-qt/Config.h>
 #include <vlc-qt/AudioControl.h>
+#include <vlc-qt/Instance.h>
+#include <vlc-qt/MediaPlayer.h>
 #include <vlc-qt/VideoControl.h>
 
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
+#include "container/core/Channel.h"
+#include "core/ChannelSelect.h"
 #include "core/Common.h"
+#include "core/LocaleManager.h"
 #include "core/Settings.h"
+#include "core/Shortcuts.h"
+#include "core/Udpxy.h"
+#include "epg/XmltvManager.h"
 #include "playlist/PlaylistModel.h"
 #include "ui/core/FileDialogs.h"
+#include "ui/core/TrayIcon.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/DonationDialog.h"
+#include "ui/dialogs/UpdateDialog.h"
+#include "ui/epg/EpgScheduleFull.h"
+#include "ui/epg/EpgShow.h"
+#include "ui/menu/MenuAspectRatio.h"
+#include "ui/menu/MenuCrop.h"
+#include "ui/menu/MenuDeinterlacing.h"
+#include "ui/menu/MenuTrackAudio.h"
+#include "ui/menu/MenuTrackSubtitles.h"
+#include "ui/menu/MenuTrackVideo.h"
+#include "ui/playlist/PlaylistEdit.h"
 #include "ui/settings/SettingsEdit.h"
 
 MainWindow::MainWindow(QWidget *parent)    :
@@ -144,7 +163,6 @@ void MainWindow::createGui()
 
     _menuTrackAudio = new MenuTrackAudio(ui->menuAudio);
     ui->menuAudio->addMenu(_menuTrackAudio);
-
     _menuTrackVideo = new MenuTrackVideo(ui->menuVideo);
     ui->menuVideo->addMenu(_menuTrackVideo);
     _menuTrackSubtitles = new MenuTrackSubtitles(ui->menuVideo);
@@ -263,7 +281,7 @@ void MainWindow::createConnections()
     connect(ui->actionStop, SIGNAL(triggered()), _mediaPlayer, SLOT(stop()));
     connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 
-    connect(ui->playlistWidget, SIGNAL(itemClicked(Channel *)), this, SLOT(playChannel(Channel *)));
+    connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playChannel(Channel *)));
 
     connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
     connect(ui->actionTray, SIGNAL(triggered()), this, SLOT(tray()));
@@ -279,9 +297,9 @@ void MainWindow::createConnections()
     connect(_xmltv, SIGNAL(epgSchedule(XmltvProgrammeModel *, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
     connect(_xmltv, SIGNAL(epgSchedule(XmltvProgrammeModel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
     connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _xmltv, SLOT(request(QString, Tano::Id)));
-    connect(_schedule, SIGNAL(itemClicked(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
+    connect(_schedule, SIGNAL(itemSelected(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
     connect(_xmltv, SIGNAL(epgProgramme(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
-    connect(ui->scheduleWidget, SIGNAL(itemClicked(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
+    connect(ui->scheduleWidget, SIGNAL(itemSelected(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
     connect(ui->infoBarWidget, SIGNAL(open(QString)), _xmltv, SLOT(requestProgramme(QString)));
     connect(_epgShow, SIGNAL(requestNext(XmltvProgramme *)), _xmltv, SLOT(requestProgrammeNext(XmltvProgramme*)));
     connect(_epgShow, SIGNAL(requestPrevious(XmltvProgramme *)), _xmltv, SLOT(requestProgrammePrevious(XmltvProgramme*)));
@@ -370,7 +388,7 @@ void MainWindow::createSession()
     ui->volumeSlider->setVolume(_sessionVolume);
 
     if(_sessionAutoplayEnabled && _hasPlaylist && _model->validate())
-        playChannel(_sessionChannel);
+        ui->playlistWidget->channelSelected(_sessionChannel);
 
     _update->checkSilent();
 }
@@ -414,15 +432,10 @@ void MainWindow::donate()
 
 
 //Media controls
-void MainWindow::playChannel(Channel *clickedChannel)
+void MainWindow::playChannel(Channel *channel)
 {
-    _channel = clickedChannel;
+    _channel = channel;
     play();
-}
-void MainWindow::playChannel(const int &clickedChannel)
-{
-    //_channel = ui->playlistWidget->channelRead(clickedChannel);
-    //play();
 }
 
 void MainWindow::setPlayingState(const bool &playing,
@@ -510,7 +523,7 @@ void MainWindow::openPlaylist(const bool &start)
     if(_select != 0) {
         disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
         disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-        disconnect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
+        disconnect(_select, SIGNAL(channelSelect(int)), ui->playlistWidget, SLOT(channelSelected(int)));
         delete _select;
     }
 
@@ -541,7 +554,7 @@ void MainWindow::openPlaylist(const bool &start)
     _select = new ChannelSelect(this, ui->channelNumber, _model->numbers());
     connect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
     connect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-    connect(_select, SIGNAL(channelSelect(int)), this, SLOT(playChannel(int)));
+    connect(_select, SIGNAL(channelSelect(int)), ui->playlistWidget, SLOT(channelSelected(int)));
     mouseWheel();
 
     ui->channelToolBox->setItemText(0, _model->name());

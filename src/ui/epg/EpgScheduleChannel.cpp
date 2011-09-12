@@ -66,7 +66,7 @@ void EpgScheduleChannel::processFilters()
 
 void EpgScheduleChannel::programmeClicked(const QModelIndex &index)
 {
-    emit itemClicked(_model->row(_filterModel->mapToSource(index).row()));
+    emit itemSelected(_model->row(_filterModel->mapToSource(index).row()));
 }
 
 void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,

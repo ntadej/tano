@@ -60,7 +60,6 @@ SET(Tano_Mobile_Srcs
     ../src/container/xmltv/XmltvProgramme.cpp
 
     ../src/core/Common.cpp
-    ../src/core/ConsoleOutput.cpp
     ../src/core/Enums.cpp
     ../src/core/ListModel.cpp
     ../src/core/LocaleManager.cpp

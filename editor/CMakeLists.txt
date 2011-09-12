@@ -42,7 +42,6 @@ SET(Tano_Editor_UIs
 # Define the MOC source files used by Tano Editor
 SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
     ../src/container/core/Channel.h
-    ../src/core/GetFile.h
     ../src/core/ListItem.h
     ../src/core/ListModel.h
     ../src/core/Print.h
@@ -83,12 +82,9 @@ SET(Tano_Editor_Srcs
     ../src/container/core/File.cpp
     ../src/container/core/UpdateInfo.cpp
     ../src/container/playlist/CSVInfo.cpp
-    ../src/container/playlist/PlaylistInfo.cpp
 
     ../src/core/Common.cpp
-    ../src/core/ConsoleOutput.cpp
     ../src/core/Enums.cpp
-    ../src/core/GetFile.cpp
     ../src/core/ListModel.cpp
     ../src/core/LocaleManager.cpp
     ../src/core/Print.cpp

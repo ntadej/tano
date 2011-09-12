@@ -25,7 +25,6 @@
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"
 #include "container/xmltv/XmltvProgramme.h"
-#include "core/ConsoleOutput.h"
 #include "epg/XmltvCommon.h"
 #include "epg/XmltvEnums.h"
 #include "epg/XmltvChannelsModel.h"
@@ -197,10 +196,9 @@ bool XmltvHandler::characters(const QString &str)
 
 bool XmltvHandler::fatalError(const QXmlParseException &exception)
 {
-    if(ConsoleOutput::debug())
-        qDebug() << QString("Parse error at line %1, column %2: %3")
-                            .arg(exception.lineNumber())
-                            .arg(exception.columnNumber())
-                            .arg(exception.message());
+    qDebug() << QString("Parse error at line %1, column %2: %3")
+                        .arg(exception.lineNumber())
+                        .arg(exception.columnNumber())
+                        .arg(exception.message());
     return false;
 }

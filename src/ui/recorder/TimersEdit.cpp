@@ -89,11 +89,11 @@ void TimersEdit::createSettings()
 
 void TimersEdit::createConnections()
 {
-    connect(ui->timersWidget, SIGNAL(itemClicked(Timer *)), this, SLOT(edit(Timer *)));
+    connect(ui->timersWidget, SIGNAL(itemSelected(Timer *)), this, SLOT(edit(Timer *)));
     connect(ui->actionNew, SIGNAL(triggered()), this, SLOT(newItem()));
     connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
     connect(ui->buttonCreate, SIGNAL(clicked()), this, SLOT(addItem()));
-    connect(ui->playlistWidget, SIGNAL(itemClicked(Channel *)), this, SLOT(playlist(Channel *)));
+    connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
 
     connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(write()));
     connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));

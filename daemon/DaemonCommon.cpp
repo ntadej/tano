@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
+
 #include "daemon/DaemonCommon.h"
 
 QString Tano::Daemon::interfaceRecorder()
@@ -52,4 +54,12 @@ QString Tano::Daemon::service()
 {
     QString service = "si.Tano";
     return service;
+}
+
+void Tano::Daemon::welcomeMessage()
+{
+    qDebug() << "Tano Daemon - Copyright (C) 2008-2011 Tadej Novak";
+    qDebug() << "This program comes with ABSOLUTELY NO WARRANTY.";
+    qDebug() << "This is free software, and you are welcome to redistribute it under certain conditions.";
+    qDebug() << "";
 }

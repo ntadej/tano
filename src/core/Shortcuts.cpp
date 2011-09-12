@@ -19,94 +19,94 @@
 #include "core/Shortcuts.h"
 
 Shortcuts::Shortcuts(const QList<QAction *> &list,
-					 QObject *parent)
-	: QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Shortcuts", parent),
-	_actions(list)
+                     QObject *parent)
+    : QSettings(QSettings::IniFormat, QSettings::UserScope, "Tano", "Shortcuts", parent),
+      _actions(list)
 {
-	_defaultList << "Space"
-				 << "S"
-				 << "N"
-				 << "P"
-				 << "F"
-				 << "I"
-				 << "C"
-				 << "M"
-				 << "T"
-				 << "Ctrl+Up"
-				 << "Ctrl+Down"
-				 << "Ctrl+R"
-				 << "Ctrl+O"
-				 << "Ctrl+U"
-				 << "Ctrl+P"
-				 << "Ctrl+E"
-				 << "Ctrl+S"
-				 << "Ctrl+T"
-				 << "Ctrl+L"
-				 << "Ctrl+H"
-				 << "Ctrl+I"
-				 << "Ctrl+Shift+A"
-				 << "Ctrl+Shift+V"
-				 << "Ctrl+Shift+S"
-				 << "Ctrl+Shift+R"
-				 << "Ctrl+Shift+C"
-				 << "Ctrl+Shift+D";
+    _defaultList << "Space"
+                 << "S"
+                 << "N"
+                 << "B"
+                 << "F"
+                 << "I"
+                 << "C"
+                 << "M"
+                 << "T"
+                 << "Ctrl+Up"
+                 << "Ctrl+Down"
+                 << "Ctrl+R"
+                 << "Ctrl+O"
+                 << "Ctrl+U"
+                 << "Ctrl+P"
+                 << "Ctrl+E"
+                 << "Ctrl+S"
+                 << "Ctrl+T"
+                 << "Ctrl+L"
+                 << "Ctrl+H"
+                 << "Ctrl+I"
+                 << "Ctrl+Shift+A"
+                 << "Ctrl+Shift+V"
+                 << "Ctrl+Shift+S"
+                 << "Ctrl+Shift+R"
+                 << "Ctrl+Shift+C"
+                 << "Ctrl+Shift+D";
 
-	_actionsName << "Play"
-				 << "Stop"
-				 << "Next"
-				 << "Back"
-				 << "Fullscreen"
-				 << "ToggleInfo"
-				 << "ToggleControls"
-				 << "Mute"
-				 << "Teletext"
-				 << "VolumeUp"
-				 << "VolumeDown"
-				 << "Recorder"
-				 << "OpenFile"
-				 << "OpenUrl"
-				 << "OpenPlaylist"
-				 << "EditPlaylist"
-				 << "Settings"
-				 << "Top"
-				 << "Lite"
-				 << "Tray"
-				 << "PlaylistFullscreen"
-				 << "NextAudioTrack"
-				 << "NextVideoTrack"
-				 << "NextSubtitleTrack"
-				 << "NextRatio"
-				 << "NextCrop"
-				 << "NextDeinterlace";
+    _actionsName << "Play"
+                 << "Stop"
+                 << "Next"
+                 << "Back"
+                 << "Fullscreen"
+                 << "ToggleInfo"
+                 << "ToggleControls"
+                 << "Mute"
+                 << "Teletext"
+                 << "VolumeUp"
+                 << "VolumeDown"
+                 << "Recorder"
+                 << "OpenFile"
+                 << "OpenUrl"
+                 << "OpenPlaylist"
+                 << "EditPlaylist"
+                 << "Settings"
+                 << "Top"
+                 << "Lite"
+                 << "Tray"
+                 << "PlaylistFullscreen"
+                 << "NextAudioTrack"
+                 << "NextVideoTrack"
+                 << "NextSubtitleTrack"
+                 << "NextRatio"
+                 << "NextCrop"
+                 << "NextDeinterlace";
 
-	apply();
+    apply();
 }
 
 Shortcuts::~Shortcuts() { }
 
 void Shortcuts::apply()
 {
-	QStringList currentKeys = readKeys();
+    QStringList currentKeys = readKeys();
 
-	for(int i = 0; i < _actions.size(); i++) {
-		_actions[i]->setShortcut(QKeySequence(currentKeys[i]));
-		_actions[i]->setShortcutContext(Qt::ApplicationShortcut);
-	}
+    for(int i = 0; i < _actions.size(); i++) {
+        _actions[i]->setShortcut(QKeySequence(currentKeys[i]));
+        _actions[i]->setShortcutContext(Qt::ApplicationShortcut);
+    }
 }
 
 QStringList Shortcuts::readKeys() const
 {
-	QStringList list;
-	for(int i = 0; i < _actions.size(); i++)
-		list << value(_actionsName[i], _defaultList[i]).toString();
+    QStringList list;
+    for(int i = 0; i < _actions.size(); i++)
+        list << value(_actionsName[i], _defaultList[i]).toString();
 
-	return list;
+    return list;
 }
 
 void Shortcuts::write(const QStringList &keys)
 {
-	for(int i = 0; i < _actions.size(); i++)
-		setValue(_actionsName[i], keys[i]);
+    for(int i = 0; i < _actions.size(); i++)
+        setValue(_actionsName[i], keys[i]);
 
-	sync();
+    sync();
 }

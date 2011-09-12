@@ -25,64 +25,64 @@
 #include "core/UpdateManager.h"
 
 UpdateManager::UpdateManager(QObject *parent)
-	: QHttp(parent),
-	_codec(QTextCodec::codecForName("UTF-8"))
+    : QHttp(parent),
+     _codec(QTextCodec::codecForName("UTF-8"))
 {
-	setHost("update.tano.si");
+    setHost("update.tano.si");
 
-	_handler = new UpdateHandler();
+    _handler = new UpdateHandler();
 }
 
 UpdateManager::~UpdateManager()
 {
-	delete _handler;
+    delete _handler;
 }
 
 void UpdateManager::getUpdates()
 {
-	get("/player/update.xml");
+    get("/player/update.xml");
 
-	connect(this, SIGNAL(done(bool)), this, SLOT(readUpdates()));
+    connect(this, SIGNAL(done(bool)), this, SLOT(readUpdates()));
 }
 
 void UpdateManager::readUpdates()
 {
-	disconnect(this, SIGNAL(done(bool)), this, SLOT(readUpdates()));
+    disconnect(this, SIGNAL(done(bool)), this, SLOT(readUpdates()));
 
-	QByteArray httpResponse = readAll();
-	QString string = _codec->toUnicode(httpResponse);
+    QByteArray httpResponse = readAll();
+    QString string = _codec->toUnicode(httpResponse);
 
-	QXmlSimpleReader reader;
-	reader.setContentHandler(_handler);
-	reader.setErrorHandler(_handler);
+    QXmlSimpleReader reader;
+    reader.setContentHandler(_handler);
+    reader.setErrorHandler(_handler);
 
-	QXmlInputSource xmlInputSource;
-	xmlInputSource.setData(string);
-	if (!reader.parse(xmlInputSource))
-		return;
+    QXmlInputSource xmlInputSource;
+    xmlInputSource.setData(string);
+    if (!reader.parse(xmlInputSource))
+        return;
 
-	QStringList updatesList;
-	QList<UpdateInfo> list = _handler->updateInfo();
-	UpdateInfo info;
+    QStringList updatesList;
+    QList<UpdateInfo> list = _handler->updateInfo();
+    UpdateInfo info;
 
-	for(int i = 0; i < list.size(); i++) {
-		if(Tano::version() == list[i].version() && list[i].development()) {
-			updatesList << "development" << list[i].version();
-			continue;
-		} else if(Tano::version() == list[i].version() && !list[i].development()) {
-			updatesList << "latest";
-			break;
-		} else if(Tano::version() != list[i].version() && list[i].development()) {
-			continue;
-		} else if(Tano::version() != list[i].version() && !list[i].development()) {
-			if(!updatesList.isEmpty()) {
-				updatesList << list[i].version();
-			} else {
-				updatesList << "update" << list[i].version();
-				info = list[i];
-			}
-		}
-	}
+    for(int i = 0; i < list.size(); i++) {
+        if(Tano::version() == list[i].version() && list[i].development()) {
+            updatesList << "development" << list[i].version();
+            continue;
+        } else if(Tano::version() == list[i].version() && !list[i].development()) {
+            updatesList << "latest";
+            break;
+        } else if(Tano::version() != list[i].version() && list[i].development()) {
+            continue;
+        } else if(Tano::version() != list[i].version() && !list[i].development()) {
+            if(!updatesList.isEmpty()) {
+                updatesList << list[i].version();
+            } else {
+                updatesList << "update" << list[i].version();
+                info = list[i];
+            }
+        }
+    }
 
-	emit updateInfo(updatesList, info);
+    emit updateInfo(updatesList, info);
 }

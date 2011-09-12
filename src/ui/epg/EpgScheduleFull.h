@@ -48,7 +48,7 @@ protected:
     void changeEvent(QEvent *e);
 
 signals:
-    void itemClicked(XmltvProgramme *);
+    void itemSelected(XmltvProgramme *);
     void requestEpg(QString,
                     Tano::Id);
 

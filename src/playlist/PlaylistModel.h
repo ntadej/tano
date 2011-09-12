@@ -44,6 +44,8 @@ public:
                            const QString &url = 0);
     void deleteChannel(Channel *channel);
 
+    Channel *number(const int &number);
+
     void moveDown(Channel *channel);
     void moveUp(Channel *channel);
     bool processNumber(Channel *channel,

@@ -51,7 +51,7 @@ protected:
 	void changeEvent(QEvent *e);
 
 signals:
-	void itemClicked(XmltvProgramme *);
+	void itemSelected(XmltvProgramme *);
 
 private slots:
     void programmeClicked(const QModelIndex &index);

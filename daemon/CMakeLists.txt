@@ -46,7 +46,6 @@ SET(Tano_Daemon_Core_Srcs
     ../src/container/core/Timer.cpp
 
     ../src/core/Common.cpp
-    ../src/core/ConsoleOutput.cpp
     ../src/core/Enums.cpp
     ../src/core/ListModel.cpp
     ../src/core/Settings.cpp

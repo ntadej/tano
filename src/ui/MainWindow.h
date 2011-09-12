@@ -24,30 +24,29 @@
 #include <QtGui/QShowEvent>
 #include <QtGui/QMainWindow>
 
-#include <vlc-qt/AudioControl.h>
-#include <vlc-qt/Instance.h>
-#include <vlc-qt/MediaPlayer.h>
-#include <vlc-qt/VideoControl.h>
+class VlcAudioControl;
+class VlcInstance;
+class VlcMediaPlayer;
+class VlcVideoControl;
 
-#include "container/core/Channel.h"
-#include "core/ChannelSelect.h"
-#include "core/LocaleManager.h"
-#include "core/Shortcuts.h"
-#include "core/Udpxy.h"
-#include "epg/XmltvManager.h"
-#include "ui/core/TrayIcon.h"
-#include "ui/dialogs/UpdateDialog.h"
-#include "ui/epg/EpgScheduleFull.h"
-#include "ui/epg/EpgShow.h"
-#include "ui/menu/MenuAspectRatio.h"
-#include "ui/menu/MenuCrop.h"
-#include "ui/menu/MenuDeinterlacing.h"
-#include "ui/menu/MenuTrackAudio.h"
-#include "ui/menu/MenuTrackSubtitles.h"
-#include "ui/menu/MenuTrackVideo.h"
-#include "ui/playlist/PlaylistEdit.h"
-
+class Channel;
+class ChannelSelect;
+class EpgScheduleFull;
+class EpgShow;
+class LocaleManager;
+class MenuAspectRatio;
+class MenuCrop;
+class MenuDeinterlacing;
+class MenuTrackAudio;
+class MenuTrackSubtitles;
+class MenuTrackVideo;
+class Shortcuts;
+class PlaylistEdit;
 class PlaylistModel;
+class TrayIcon;
+class Udpxy;
+class UpdateDialog;
+class XmltvManager;
 
 namespace Ui
 {
@@ -81,8 +80,7 @@ private slots:
     void setPlayingState(const bool &playing,
                          const bool &buffering = false);
 
-    void playChannel(Channel* clickedChannel);
-    void playChannel(const int &clickedChannel);
+    void playChannel(Channel* channel);
 
     void openPlaylist(const bool &start = false);
     void openFile();

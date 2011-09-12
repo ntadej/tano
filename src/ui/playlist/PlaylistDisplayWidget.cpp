@@ -65,7 +65,13 @@ void PlaylistDisplayWidget::changeEvent(QEvent *e)
 void PlaylistDisplayWidget::channelClicked(const QModelIndex &index)
 {
     _current = _model->row(_filterModel->mapToSource(index).row());
-    emit itemClicked(_current);
+    emit itemSelected(_current);
+}
+
+void PlaylistDisplayWidget::channelSelected(const int &channel)
+{
+    _current = _model->number(channel);
+    emit itemSelected(_current);
 }
 
 void PlaylistDisplayWidget::editMode()

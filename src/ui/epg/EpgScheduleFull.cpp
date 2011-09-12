@@ -31,8 +31,8 @@ EpgScheduleFull::EpgScheduleFull(QWidget *parent)
     ui->setupUi(this);
     ui->schedule->setIdentifier(Tano::Schedule);
 
-    connect(ui->playlist, SIGNAL(itemClicked(Channel *)), this, SLOT(channel(Channel *)));
-    connect(ui->schedule, SIGNAL(itemClicked(XmltvProgramme *)), this, SIGNAL(itemClicked(XmltvProgramme *)));
+    connect(ui->playlist, SIGNAL(itemSelected(Channel *)), this, SLOT(channel(Channel *)));
+    connect(ui->schedule, SIGNAL(itemSelected(XmltvProgramme *)), this, SIGNAL(itemSelected(XmltvProgramme *)));
 }
 
 EpgScheduleFull::~EpgScheduleFull()

@@ -49,7 +49,10 @@ protected:
     void changeEvent(QEvent *e);
 
 signals:
-    void itemClicked(Channel *);
+    void itemSelected(Channel *);
+
+public slots:
+    void channelSelected(const int &channel);
 
 private slots:
     void channelClicked(const QModelIndex &index);

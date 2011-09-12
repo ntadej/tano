@@ -30,28 +30,28 @@ class UpdateInfo;
 class UpdateHandler : public QXmlDefaultHandler
 {
 public:
-	UpdateHandler();
-	~UpdateHandler();
+    UpdateHandler();
+    ~UpdateHandler();
 
-	bool startElement(const QString &namespaceURI,
-					  const QString &localName,
-					  const QString &qName,
-					  const QXmlAttributes &attributes);
-	bool endElement(const QString &namespaceURI,
-					const QString &localName,
-					const QString &qName);
-	bool characters(const QString &str);
-	QString errorString() const { return _errorStr; }
+    bool startElement(const QString &namespaceURI,
+                      const QString &localName,
+                      const QString &qName,
+                      const QXmlAttributes &attributes);
+    bool endElement(const QString &namespaceURI,
+                    const QString &localName,
+                    const QString &qName);
+    bool characters(const QString &str);
+    inline QString errorString() const { return _errorStr; }
 
-	QList<UpdateInfo> updateInfo() { return _update; }
+    inline QList<UpdateInfo> updateInfo() { return _update; }
 
 private:
-	QString _currentText;
-	QString _errorStr;
-	bool _metTanoTag;
-	int _currentId;
+    QString _currentText;
+    QString _errorStr;
+    bool _metTanoTag;
+    int _currentId;
 
-	QList<UpdateInfo> _update;
+    QList<UpdateInfo> _update;
 };
 
 #endif // TANO_UPDATEHANDLER_H_

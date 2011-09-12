@@ -32,9 +32,9 @@ public:
     PluginLoader();
     ~PluginLoader();
 
-    QList<QObject *> epgPlugin() const { return _epgPlugins; }
-    QStringList epgFile() const { return _epgFiles; }
-    QStringList epgName() const { return _epgNames; }
+    inline QList<QObject *> epgPlugin() const { return _epgPlugins; }
+    inline QStringList epgFile() const { return _epgFiles; }
+    inline QStringList epgName() const { return _epgNames; }
     EpgPlugin *epg(QObject *plugin);
 
 private:
