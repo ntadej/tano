@@ -105,10 +105,14 @@ ENDIF(GIT)
 #################
 # Configuration #
 #################
-OPTION(EDITOR_WITH_VLCQT "Compile Tano Editor with VLC-Qt")
+OPTION(EDITOR_WITH_VLCQT "Compile Tano Editor with VLC-Qt" OFF)
 MESSAGE("Compile Tano Editor with VLC-Qt: ${EDITOR_WITH_VLCQT}")
-OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile")
+OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile" OFF)
 MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
+OPTION(BUILD_SAMPLES_TESTS "Build samples and tests" OFF)
+MESSAGE("Build samples and tests: ${BUILD_SAMPLES_TESTS}")
+OPTION(BUILD_MOBILE "Build Mobile app for desktop" OFF)
+MESSAGE("Build Mobile app for desktop: ${BUILD_MOBILE}")
 
 IF(EDITOR_WITH_VLCQT)
     SET(EDITOR_VLCQT 1)
@@ -124,9 +128,9 @@ ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(plugins)
 ADD_SUBDIRECTORY(daemon)
 ADD_SUBDIRECTORY(editor)
-IF(NOT MINGW)
+IF(BUILD_MOBILE)
     ADD_SUBDIRECTORY(mobile)
-ENDIF(NOT MINGW)
+ENDIF(BUILD_MOBILE)
 
 SET(Tano_Files
     LICENSE.GPL

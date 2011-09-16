@@ -16,7 +16,10 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-ADD_SUBDIRECTORY(sample)
+# Sample plugin
+IF(BUILD_SAMPLES_TESTS)
+    ADD_SUBDIRECTORY(sample)
+ENDIF(BUILD_SAMPLES_TESTS)
 
 # Add your plugins here
 #ADD_SUBDIRECTORY(plugindir)
