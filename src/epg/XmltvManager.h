@@ -30,6 +30,7 @@ extern bool loadXmltvStart(XmltvHandler *handler,
                            const QString &location);
 
 class XmltvChannel;
+class XmltvChannelsModel;
 class XmltvList;
 class XmltvProgramme;
 class XmltvProgrammeModel;
@@ -47,17 +48,18 @@ public:
 public slots:
     void request(const QString &id,
                  const Tano::Id &identifier);
-    void requestProgramme(const QString &programme);
-    void requestProgrammeNext(XmltvProgramme *programme);
-    void requestProgrammePrevious(XmltvProgramme *programme);
+    void requestProgramme(const QString &id);
+    void requestProgrammeNext(XmltvProgramme *current);
+    void requestProgrammePrevious(XmltvProgramme *current);
     void stop();
 
 signals:
-    void epgCurrent(const QString,
-                    const QString);
-    void epgSchedule(XmltvProgrammeModel *,
-                     const Tano::Id);
-    void epgProgramme(XmltvProgramme *);
+    void channels(XmltvChannelsModel *);
+    void current(const QString,
+                 const QString);
+    void schedule(XmltvProgrammeModel *,
+                  const Tano::Id);
+    void programme(XmltvProgramme *);
 
 private slots:
     void current();
@@ -69,6 +71,8 @@ private:
 
     Tano::EpgType _type;
     QString _location;
+
+    bool _loading;
 
     Tano::Id _currentIdentifier;
     QString _currentXmltvId;

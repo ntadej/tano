@@ -26,6 +26,8 @@
 #include "core/Enums.h"
 
 class Channel;
+class XmltvChannelsFilterModel;
+class XmltvChannelsModel;
 class XmltvManager;
 class XmltvProgrammeFilterModel;
 class XmltvProgrammeModel;
@@ -37,19 +39,22 @@ public:
     MobileXmltvHandler(QObject *parent = 0);
     ~MobileXmltvHandler();
 
-    XmltvProgrammeFilterModel *model() { return _filterModel; }
+    XmltvChannelsFilterModel *channels() { return _channelsFilterModel; }
+    XmltvProgrammeFilterModel *schedule() { return _scheduleFilterModel; }
     Q_INVOKABLE QVariantList dates();
 
     Q_INVOKABLE void openXmltv(const QString &id);
     Q_INVOKABLE void processDate(const QString &date);
 
 private slots:
-    void epgSchedule(XmltvProgrammeModel *model,
-                     const Tano::Id &id);
+    void channelsModel(XmltvChannelsModel *model);
+    void scheduleModel(XmltvProgrammeModel *model,
+                       const Tano::Id &id);
 
 private:
     XmltvManager *_xmltv;
-    XmltvProgrammeFilterModel *_filterModel;
+    XmltvChannelsFilterModel *_channelsFilterModel;
+    XmltvProgrammeFilterModel *_scheduleFilterModel;
 
     QStringList _dates;
     QMap<QString, QDate> _dateMap;

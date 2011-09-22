@@ -22,8 +22,8 @@ ListModel {
     id: homePagesModel
     ListElement {
         page: "ChannelsPage.qml"
-        title: "Play live TV"
-        subtitle: ""
+        title: "Schedule"
+        subtitle: "Description"
     }
     ListElement {
         page: "SettingsPage.qml"

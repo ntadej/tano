@@ -28,6 +28,7 @@
 #include "MobileXmltvHandler.h"
 
 #include "core/LocaleManager.h"
+#include "epg/XmltvChannelsFilterModel.h"
 #include "epg/XmltvProgrammeFilterModel.h"
 
 MobileCore::MobileCore(QObject *parent)
@@ -43,7 +44,7 @@ MobileCore::MobileCore(QObject *parent)
 
     _viewer->showExpanded();
 
-    //createXmltv();
+    createXmltv();
 
     connect(_viewer->engine(), SIGNAL(quit()), qApp, SLOT(quit()));
 }
@@ -61,8 +62,10 @@ void MobileCore::createXmltv()
         return;
 
     _xmltv = new MobileXmltvHandler(this);
-    XmltvProgrammeFilterModel *xm = _xmltv->model();
+    XmltvChannelsFilterModel *channels = _xmltv->channels();
+    XmltvProgrammeFilterModel *schedule = _xmltv->schedule();
 
-    _viewer->rootContext()->setContextProperty("XmltvProgramme", xm);
+    _viewer->rootContext()->setContextProperty("XmltvChannels", channels);
+    _viewer->rootContext()->setContextProperty("XmltvProgramme", schedule);
     _viewer->rootContext()->setContextProperty("XmltvManager", _xmltv);
 }

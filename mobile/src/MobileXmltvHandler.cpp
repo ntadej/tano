@@ -22,6 +22,8 @@
 #include "MobileXmltvHandler.h"
 
 #include "container/xmltv/XmltvProgramme.h"
+#include "epg/XmltvChannelsFilterModel.h"
+#include "epg/XmltvChannelsModel.h"
 #include "epg/XmltvCommon.h"
 #include "epg/XmltvManager.h"
 #include "epg/XmltvProgrammeFilterModel.h"
@@ -31,16 +33,20 @@ MobileXmltvHandler::MobileXmltvHandler(QObject *parent)
     : QObject(parent)
 {
     _xmltv = new XmltvManager(this);
-    _filterModel = new XmltvProgrammeFilterModel(this);
-    _filterModel->setDynamicSortFilter(true);
+    _channelsFilterModel = new XmltvChannelsFilterModel(this);
+    _channelsFilterModel->setDynamicSortFilter(true);
+    _scheduleFilterModel = new XmltvProgrammeFilterModel(this);
+    _scheduleFilterModel->setDynamicSortFilter(true);
 
-    connect(_xmltv, SIGNAL(epgSchedule(XmltvProgrammeModel*, Tano::Id)), this, SLOT(epgSchedule(XmltvProgrammeModel*, Tano::Id)));
+    connect(_xmltv, SIGNAL(channels(XmltvChannelsModel *)), this, SLOT(channels(XmltvChannelsModel *)));
+    connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), this, SLOT(schedule(XmltvProgrammeModel *, Tano::Id)));
 }
 
 MobileXmltvHandler::~MobileXmltvHandler()
 {
     delete _xmltv;
-    delete _filterModel;
+    delete _channelsFilterModel;
+    delete _scheduleFilterModel;
 }
 
 QVariantList MobileXmltvHandler::dates()
@@ -53,26 +59,9 @@ QVariantList MobileXmltvHandler::dates()
     return list;
 }
 
-void MobileXmltvHandler::epgSchedule(XmltvProgrammeModel *model,
-                                     const Tano::Id &id)
+void MobileXmltvHandler::channelsModel(XmltvChannelsModel *model)
 {
-    Q_UNUSED(id)
-    qDebug() << model->rowCount();
-    if(model->rowCount() == 0)
-        return;
-
-    qDebug() << model->row(0)->channel();
-    _filterModel->setSourceModel(model);
-    _filterModel->setDate(model->row(0)->start().date());
-
-    _dates.clear();
-    _dateMap.clear();
-    for(int i = 0; i < model->rowCount(); i++) {
-        if(!_dates.contains(model->row(i)->start().date().toString(Tano::Xmltv::dateFormatMobile()))) {
-            _dates << model->row(i)->start().date().toString(Tano::Xmltv::dateFormatMobile());
-            _dateMap.insert(model->row(i)->start().date().toString(Tano::Xmltv::dateFormatMobile()), model->row(i)->start().date());
-        }
-    }
+    _channelsFilterModel->setSourceModel(model);
 }
 
 void MobileXmltvHandler::openXmltv(const QString &id)
@@ -82,5 +71,27 @@ void MobileXmltvHandler::openXmltv(const QString &id)
 
 void MobileXmltvHandler::processDate(const QString &date)
 {
-    _filterModel->setDate(_dateMap[date]);
+    _scheduleFilterModel->setDate(_dateMap[date]);
+}
+
+void MobileXmltvHandler::scheduleModel(XmltvProgrammeModel *model,
+                                       const Tano::Id &id)
+{
+    Q_UNUSED(id)
+    qDebug() << model->rowCount();
+    if(model->rowCount() == 0)
+        return;
+
+    qDebug() << model->row(0)->channel();
+    _scheduleFilterModel->setSourceModel(model);
+    _scheduleFilterModel->setDate(model->row(0)->start().date());
+
+    _dates.clear();
+    _dateMap.clear();
+    for(int i = 0; i < model->rowCount(); i++) {
+        if(!_dates.contains(model->row(i)->start().date().toString(Tano::Xmltv::dateFormatMobile()))) {
+            _dates << model->row(i)->start().date().toString(Tano::Xmltv::dateFormatMobile());
+            _dateMap.insert(model->row(i)->start().date().toString(Tano::Xmltv::dateFormatMobile()), model->row(i)->start().date());
+        }
+    }
 }

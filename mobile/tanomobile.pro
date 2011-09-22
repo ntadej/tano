@@ -66,7 +66,6 @@ SOURCES += \
     ../src/container/xmltv/XmltvList.cpp \
     ../src/container/xmltv/XmltvProgramme.cpp \
     ../src/core/Common.cpp \
-    ../src/core/ConsoleOutput.cpp \
     ../src/core/Enums.cpp \
     ../src/core/ListModel.cpp \
     ../src/core/LocaleManager.cpp \
@@ -93,7 +92,6 @@ HEADERS += \
     ../src/container/xmltv/XmltvList.h \
     ../src/container/xmltv/XmltvProgramme.h \
     ../src/core/Common.h \
-    ../src/core/ConsoleOutput.h \
     ../src/core/Enums.h \
     ../src/core/ListItem.h \
     ../src/core/ListModel.h \

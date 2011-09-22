@@ -41,7 +41,7 @@ Page {
     ListView {
         id: listView
         anchors {left: parent.left; right: parent.right; top: searchBox.bottom; bottom: parent.bottom}
-        model: channelsModel
+        model: XmltvChannels
         pressDelay: 140
 
         delegate:  Item {
@@ -84,7 +84,7 @@ Page {
                  Label {
                      id: mainText
                      anchors.verticalCenter: parent.verticalCenter
-                     text: model.name
+                     text: model.display
                      font: TanoUi.TitleFont
                      wrapMode: Text.WordWrap
                      width: parent.width
