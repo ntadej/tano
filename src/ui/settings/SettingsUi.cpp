@@ -79,6 +79,8 @@ QString SettingsUi::wheel() const
         return("channel");
     else if(ui->radioWheelVolume->isChecked())
         return("volume");
+    else
+        return("error");
 }
 
 void SettingsUi::setWheel(const QString &wheel)

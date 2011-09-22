@@ -33,6 +33,8 @@ bool UpdateHandler::startElement(const QString & /* namespaceURI */,
                                  const QString &qName,
                                  const QXmlAttributes &attributes)
 {
+    Q_UNUSED(attributes)
+
     if (!_metTanoTag && qName != "tanoupdates") {
         _errorStr = QObject::tr("The file is not a Tano updates file.");
         return false;

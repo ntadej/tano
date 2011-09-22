@@ -40,10 +40,10 @@ QString Sample::logo() const
 
 void Sample::getChannel(const QString &id)
 {
-
+    Q_UNUSED(id)
 }
 
 void Sample::getProgramme(const QString &id)
 {
-
+    Q_UNUSED(id)
 }

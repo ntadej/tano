@@ -24,7 +24,7 @@
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
 
-SettingsEdit::SettingsEdit(Shortcuts *s,
+SettingsEdit::SettingsEdit(Shortcuts *shortcuts,
                            QWidget *parent)
     : QDialog(parent),
       ui(new Ui::SettingsEdit)
@@ -36,12 +36,14 @@ SettingsEdit::SettingsEdit(Shortcuts *s,
     read();
 
 #if EDITOR
+    Q_UNUSED(shortcuts)
+
     ui->setttingsListWidget->item(1)->setHidden(true);
     ui->setttingsListWidget->item(3)->setHidden(true);
     ui->setttingsListWidget->item(4)->setHidden(true);
     ui->setttingsListWidget->item(5)->setHidden(true);
 #else
-    ui->shortcuts->setShortcuts(s);
+    ui->shortcuts->setShortcuts(shortcuts);
 #endif
 
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));

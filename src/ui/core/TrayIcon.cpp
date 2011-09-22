@@ -21,8 +21,8 @@
 TrayIcon::TrayIcon(QMenu *menu,
                    QObject *parent)
     : QSystemTrayIcon(parent),
-      _currentlyRecording(""),
-      _currentlyPlaying("")
+      _currentlyPlaying(""),
+      _currentlyRecording("")
 {
     setContextMenu(menu);
     setIcon(QIcon(":/logo/48x48/logo.png"));

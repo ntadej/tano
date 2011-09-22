@@ -160,6 +160,8 @@ Channel *PlaylistModel::number(const int &number)
             return row(i);
         }
     }
+
+    return new Channel("error");
 }
 
 void PlaylistModel::open(const QString &file,

@@ -36,6 +36,8 @@ bool TimersHandler::startElement(const QString & /* namespaceURI */,
                                  const QString &qName,
                                  const QXmlAttributes &attributes)
 {
+    Q_UNUSED(attributes)
+
     if (!_metTanoTag && qName != "tano") {
         _errorStr = QObject::tr("The file is not a Tano Timers list.");
         return false;

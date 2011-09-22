@@ -105,6 +105,8 @@ Tano::EpgType SettingsSchedule::epgType() const
         return Tano::EpgXmltv;
     else if(ui->radioPlugin->isChecked())
         return Tano::EpgPlugin;
+    else
+        return Tano::EpgXmltv;
 }
 
 void SettingsSchedule::setEpgType(const Tano::EpgType &type)

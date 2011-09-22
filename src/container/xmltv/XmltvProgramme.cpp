@@ -218,13 +218,13 @@ void XmltvProgramme::setIconSize(const QSize &s)
 }
 
 
-void XmltvProgramme::addDirector(const QString &s) { }
-void XmltvProgramme::addActor(const QString &s) { }
-void XmltvProgramme::addWriter(const QString &s) { }
-void XmltvProgramme::addAdapter(const QString &s) { }
-void XmltvProgramme::addProducer(const QString &s) { }
-void XmltvProgramme::addComposer(const QString &s) { }
-void XmltvProgramme::addEditor(const QString &s) { }
-void XmltvProgramme::addPresenter(const QString &s) { }
-void XmltvProgramme::addCommentator(const QString &s) { }
-void XmltvProgramme::addGuest(const QString &s) { }
+void XmltvProgramme::addDirector(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addActor(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addWriter(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addAdapter(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addProducer(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addComposer(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addEditor(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addPresenter(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addCommentator(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addGuest(const QString &s) { Q_UNUSED(s) }

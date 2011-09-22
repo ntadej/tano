@@ -82,6 +82,8 @@ PlaylistEdit::PlaylistEdit(const WId &video,
     connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
     connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
 #else
+    Q_UNUSED(video)
+
     ui->updateWidget->hide();
 #endif
 
@@ -442,6 +444,8 @@ void PlaylistEdit::refreshPlaylist(const bool &refresh)
 
         checkIp();
     }
+#else
+    Q_UNUSED(refresh)
 #endif
 }
 
@@ -495,6 +499,8 @@ QString PlaylistEdit::currentIp()
     ip.append(QString().number(_currentPort));
 
     return ip;
+#else
+    return(0);
 #endif
 }
 
@@ -502,6 +508,8 @@ void PlaylistEdit::setState(const bool &playing)
 {
 #if WITH_EDITOR_VLCQT
     _currentIpPlaying = playing;
+#else
+    Q_UNUSED(playing)
 #endif
 }
 

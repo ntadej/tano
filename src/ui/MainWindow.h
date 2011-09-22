@@ -103,6 +103,9 @@ signals:
     void setVolume(int);
 
 private:
+    Ui::MainWindow *ui;
+    Qt::WindowFlags _flags;
+
     //Initialising functions
     void createBackend();
     void createConnections();
@@ -149,18 +152,16 @@ private:
     VlcMediaPlayer *_mediaPlayer;
     VlcVideoControl *_videoController;
 
-    //GUI
-    Ui::MainWindow *ui;
-    Qt::WindowFlags _flags;
-    EpgScheduleFull *_schedule;
-    EpgShow *_epgShow;
-    PlaylistEdit *_playlistEditor;
-
     //Playback and channels
     Channel *_channel;
     XmltvManager *_xmltv;
     QString _playlistName;
     Udpxy *_udpxy;
+
+    //GUI
+    EpgScheduleFull *_schedule;
+    EpgShow *_epgShow;
+    PlaylistEdit *_playlistEditor;
 
     //Menus and actions
     TrayIcon *_trayIcon;

@@ -21,9 +21,9 @@
 ChannelSelect::ChannelSelect(QWidget *parent,
                              QLCDNumber *number,
                              const QList<int> &list)
-    : _lcd(number),
-     _channels(list),
-     _digit(1)
+    : _channels(list),
+      _lcd(number),
+      _digit(1)
 {
     _timer = new QTimer(parent);
 

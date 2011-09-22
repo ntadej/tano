@@ -51,7 +51,10 @@ Timer *TimersModel::createTimer(const QString &name,
                                 const int &num,
                                 const QString &url)
 {
-    appendRow(new Timer(name, channel, playlist, num, url, this));
+    Timer *timer = new Timer(name, channel, playlist, num, url, this);
+    appendRow(timer);
+
+    return timer;
 }
 
 void TimersModel::deleteTimer(Timer *timer)

@@ -93,6 +93,8 @@ void TeletextWidget::teletext(const bool &on)
 
 void TeletextWidget::teletextTransparency(const bool &on)
 {
+    Q_UNUSED(on)
+
     VlcVideo::toggleTeletextTransparency();
 }
 

@@ -35,10 +35,10 @@
 Recorder::Recorder(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::Recorder),
+      _actionRecord(0),
       _name(""),
       _url(""),
       _editor(0),
-      _actionRecord(0),
       _trayIcon(0)
 {
     ui->setupUi(this);

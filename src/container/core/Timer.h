@@ -65,10 +65,10 @@ public:
     void setChannel(const QString &channel);
     inline QString playlist() const { return _playlist; }
     void setPlaylist(const QString &playlist);
-    inline QString url() const { return _url; }
-    void setUrl(const QString &url);
     inline int num() const { return _num; }
     void setNum(const int &num);
+    inline QString url() const { return _url; }
+    void setUrl(const QString &url);
     inline QDateTime startTime() const { return _startTime; }
     void setStartTime(const QDateTime &startTime);
     inline QDateTime endTime() const { return _endTime; }
@@ -84,8 +84,8 @@ private:
     QString _name;
     QString _channel;
     QString _playlist;
-    QString _url;
     int _num;
+    QString _url;
     QDateTime _startTime;
     QDateTime _endTime;
     bool _disabled;

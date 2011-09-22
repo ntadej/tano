@@ -58,10 +58,22 @@
 #include "ui/playlist/PlaylistEdit.h"
 #include "ui/settings/SettingsEdit.h"
 
-MainWindow::MainWindow(QWidget *parent)    :
-    QMainWindow(parent), ui(new Ui::MainWindow), _select(0), _locale(new LocaleManager()), _model(new PlaylistModel(this)), _update(new UpdateDialog()),
-    _audioController(0), _mediaInstance(0), _mediaPlayer(0), _videoController(0), _udpxy(new Udpxy()),
-    _playlistEditor(0), _xmltv(new XmltvManager()), _epgShow(new EpgShow()), _schedule(new EpgScheduleFull())
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent),
+      ui(new Ui::MainWindow),
+      _select(0),
+      _locale(new LocaleManager()),
+      _model(new PlaylistModel(this)),
+      _update(new UpdateDialog()),
+      _audioController(0),
+      _mediaInstance(0),
+      _mediaPlayer(0),
+      _videoController(0),
+      _xmltv(new XmltvManager()),
+      _udpxy(new Udpxy()),
+      _schedule(new EpgScheduleFull()),
+      _epgShow(new EpgShow()),
+      _playlistEditor(0)
 {
     QPixmap pixmap(":/images/splash.png");
     Settings *settings = new Settings(this);
@@ -134,11 +146,15 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 void MainWindow::hideEvent(QHideEvent *event)
 {
+    Q_UNUSED(event)
+
     _controlsVisible = ui->osdWidget->isVisible();
     _infoWidgetVisible = ui->infoWidget->isVisible();
 }
 void MainWindow::showEvent(QShowEvent *event)
 {
+    Q_UNUSED(event)
+
     ui->osdWidget->setVisible(_controlsVisible);
     ui->infoWidget->setVisible(_infoWidgetVisible);
 }
@@ -293,12 +309,12 @@ void MainWindow::createConnections()
     connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), ui->infoWidget, SLOT(show()));
     connect(ui->videoWidget, SIGNAL(mouseHide()), ui->infoWidget, SLOT(hide()));
 
-    connect(_xmltv, SIGNAL(epgCurrent(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
-    connect(_xmltv, SIGNAL(epgSchedule(XmltvProgrammeModel *, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
-    connect(_xmltv, SIGNAL(epgSchedule(XmltvProgrammeModel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
+    connect(_xmltv, SIGNAL(current(QString, QString)), ui->infoBarWidget, SLOT(setEpg(QString, QString)));
+    connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
+    connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
     connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _xmltv, SLOT(request(QString, Tano::Id)));
     connect(_schedule, SIGNAL(itemSelected(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
-    connect(_xmltv, SIGNAL(epgProgramme(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
+    connect(_xmltv, SIGNAL(programme(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
     connect(ui->scheduleWidget, SIGNAL(itemSelected(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
     connect(ui->infoBarWidget, SIGNAL(open(QString)), _xmltv, SLOT(requestProgramme(QString)));
     connect(_epgShow, SIGNAL(requestNext(XmltvProgramme *)), _xmltv, SLOT(requestProgrammeNext(XmltvProgramme*)));
