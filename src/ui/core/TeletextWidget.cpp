@@ -18,12 +18,14 @@
 
 #include <QtGui/QHBoxLayout>
 
+#include <vlc-qt/MediaPlayer.h>
 #include <vlc-qt/Video.h>
 
 #include "TeletextWidget.h"
 
 TeletextWidget::TeletextWidget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      _backend(0)
 {
     setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
 
@@ -76,24 +78,36 @@ TeletextWidget::~TeletextWidget()
     delete _page;
 }
 
+void TeletextWidget::setBackend(VlcMediaPlayer *player)
+{
+    _backend = player->video();
+}
+
 void TeletextWidget::page(const int &p)
 {
-    VlcVideo::setTeletextPage(p);
+    if(_backend)
+        _backend->setTeletextPage(p);
 }
 
 void TeletextWidget::teletext(const bool &on)
 {
     if(on) {
-        VlcVideo::setTeletextPage(100);
-        _page->setValue(100);
+        if(_backend) {
+            _backend->setTeletextPage(100);
+            _page->setValue(100);
+        } else {
+            _button->setChecked(false);
+        }
     } else {
-        VlcVideo::setTeletextPage(99);
+        if(_backend)
+            _backend->setTeletextPage(99);
     }
 }
 
 void TeletextWidget::teletextTransparency(const bool &on)
 {
-    VlcVideo::toggleTeletextTransparency();
+    if(_backend)
+        _backend->toggleTeletextTransparency();
 }
 
 void TeletextWidget::toggleTeletext(const bool &on)

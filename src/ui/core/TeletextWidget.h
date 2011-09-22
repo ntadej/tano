@@ -23,12 +23,17 @@
 #include <QtGui/QSpinBox>
 #include <QtGui/QWidget>
 
+class VlcMediaPlayer;
+class VlcVideo;
+
 class TeletextWidget : public QWidget
 {
 Q_OBJECT
 public:
     TeletextWidget(QWidget *parent = 0);
     ~TeletextWidget();
+
+    void setBackend(VlcMediaPlayer *player);
 
 public slots:
     void toggleTeletext(const bool &on);
@@ -39,6 +44,8 @@ private slots:
     void teletextTransparency(const bool &on);
 
 private:
+    VlcVideo *_backend;
+
     QPushButton *_button;
     QPushButton *_buttonTransparency;
     QSpinBox *_page;

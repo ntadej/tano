@@ -24,6 +24,7 @@
 
 // VLC-Qt
 class VlcInstance;
+class VlcMedia;
 class VlcMediaPlayer;
 
 class RecorderTimeManager;
@@ -61,6 +62,7 @@ private slots:
     void time();
 
 private:
+    void recordBackend(const QString &url);
     QString fileName(const QString &channel,
                      const QString &path,
                      const QString &name = 0) const;
@@ -76,6 +78,7 @@ private:
     QString _output;
 
     VlcInstance *_instance;
+    VlcMedia *_media;
     VlcMediaPlayer *_player;
 
     int _time;
