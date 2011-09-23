@@ -27,6 +27,7 @@
 #include <vlc-qt/Config.h>
 #include <vlc-qt/AudioControl.h>
 #include <vlc-qt/Instance.h>
+#include <vlc-qt/Media.h>
 #include <vlc-qt/MediaPlayer.h>
 #include <vlc-qt/VideoControl.h>
 
@@ -66,8 +67,6 @@ MainWindow::MainWindow(QWidget *parent)
       _model(new PlaylistModel(this)),
       _update(new UpdateDialog()),
       _audioController(0),
-      _mediaInstance(0),
-      _mediaPlayer(0),
       _videoController(0),
       _xmltv(new XmltvManager()),
       _udpxy(new Udpxy()),
@@ -194,12 +193,18 @@ void MainWindow::createGui()
 void MainWindow::createBackend()
 {
     _mediaInstance = new VlcInstance(Tano::vlcQtArgs(), this);
-    _mediaPlayer = new VlcMediaPlayer(ui->videoWidget->widgetId(), this);
+    _mediaItem = 0;
+    _mediaPlayer = new VlcMediaPlayer(_mediaInstance);
+    _mediaPlayer->setVideoWidgetId(ui->videoWidget->widgetId());
 
-    _audioController = new VlcAudioControl(_defaultAudioLanguage);
-    _videoController = new VlcVideoControl(_defaultSubtitleLanguage);
+    _audioController = new VlcAudioControl(_mediaPlayer, _defaultAudioLanguage, this);
+    _videoController = new VlcVideoControl(_mediaPlayer, _defaultSubtitleLanguage, this);
 
+    ui->videoWidget->setMediaPlayer(_mediaPlayer);
+    ui->volumeSlider->setMediaPlayer(_mediaPlayer);
+    ui->seekWidget->setMediaPlayer(_mediaPlayer);
     ui->seekWidget->setAutoHide(true);
+    ui->teletextWidget->setBackend(_mediaPlayer);
 }
 
 void MainWindow::createSettings()
@@ -499,12 +504,18 @@ void MainWindow::play(const QString &itemFile)
         _xmltv->request(_channel->epg(), Tano::Main);
         ui->channelNumber->display(_channel->number());
 
-        _mediaPlayer->open(_udpxy->processUrl(_channel->url()));
+        if(_mediaItem)
+            delete _mediaItem;
+        _mediaItem = new VlcMedia(_udpxy->processUrl(_channel->url()), _mediaInstance);
+        _mediaPlayer->open(_mediaItem);
         tooltip(_channel->name());
         _trayIcon->changeToolTip(Tano::Main, _channel->name());
     } else {
         ui->infoWidget->hide();
-        _mediaPlayer->open(itemFile);
+        if(_mediaItem)
+            delete _mediaItem;
+        _mediaItem = new VlcMedia(itemFile, _mediaInstance);
+        _mediaPlayer->open(_mediaItem);
         tooltip(itemFile);
     }
 

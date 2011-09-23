@@ -34,6 +34,7 @@ class UpdateDialog;
 
 #if WITH_EDITOR_VLCQT
 class VlcInstance;
+class VlcMedia;
 class VlcMediaPlayer;
 #endif
 
@@ -121,6 +122,7 @@ private:
 
 #if WITH_EDITOR_VLCQT
     VlcInstance *_instance;
+    VlcMedia *_media;
     VlcMediaPlayer *_player;
     int _refresh;
     int _currentIp[4];

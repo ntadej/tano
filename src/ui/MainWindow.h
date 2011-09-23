@@ -26,6 +26,7 @@
 
 class VlcAudioControl;
 class VlcInstance;
+class VlcMedia;
 class VlcMediaPlayer;
 class VlcVideoControl;
 
@@ -149,6 +150,7 @@ private:
     //Backend
     VlcAudioControl *_audioController;
     VlcInstance *_mediaInstance;
+    VlcMedia *_mediaItem;
     VlcMediaPlayer *_mediaPlayer;
     VlcVideoControl *_videoController;
 

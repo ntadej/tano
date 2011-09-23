@@ -44,6 +44,7 @@
 
 #if WITH_EDITOR_VLCQT
     #include <vlc-qt/Instance.h>
+    #include <vlc-qt/Media.h>
     #include <vlc-qt/MediaPlayer.h>
 #endif
 
@@ -77,7 +78,9 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 
 #if WITH_EDITOR_VLCQT
     _instance = new VlcInstance(Tano::vlcQtArgs(), this);
-    _player = new VlcMediaPlayer(video, this);
+    _media = 0;
+    _player = new VlcMediaPlayer(_instance);
+    _player->setVideoWidgetId(video);
     _timer = new QTimer();
     connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
     connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
@@ -103,6 +106,7 @@ PlaylistEdit::~PlaylistEdit()
 
 #if WITH_EDITOR_VLCQT
     delete _instance;
+    delete _media;
     delete _player;
     delete _timer;
 #endif
@@ -453,7 +457,10 @@ void PlaylistEdit::checkIp()
 {
 #if WITH_EDITOR_VLCQT
     ui->progressBar->setValue(_currentIp[3]);
-    _player->open(currentIp());
+    if(_media)
+        delete _media;
+    _media = new VlcMedia(currentIp(), _instance);
+    _player->open(_media);
 
     _timer->start(_currentTimeout);
 #endif
