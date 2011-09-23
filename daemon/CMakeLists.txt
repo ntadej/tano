@@ -77,9 +77,11 @@ SET(Tano_Daemon_Srcs
 ################
 # Qt4 settings #
 ################
-# This line adds the QtDBUS libraries to the Qt libraries
-# loaded when linking Tano
+# This line adds the QtXML, QtNETWORK and QtDBUS libraries to the Qt libraries and removes QtGUI
+SET(QT_USE_QTXML True)
+SET(QT_USE_QTNETWORK True)
 SET(QT_USE_QTDBUS True)
+SET(QT_DONT_USE_QTGUI True)
 
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Daemon_Resrcs_Srcs ${Tano_Daemon_Resrcs})
@@ -146,7 +148,7 @@ ENDIF(MINGW)
 ADD_EXECUTABLE(tano-daemon ${Tano_Daemon_Srcs} ${Tano_Daemon_MOC_Srcs} ${Tano_Daemon_Resrcs_Srcs})
 
 # Here the needed Qt Libraries are added to the link command.
-TARGET_LINK_LIBRARIES(tano-daemon ${QT_LIBRARIES} ${QT_SINGLE_APPLICATION} ${LIBVLCQT_LIBRARY})
+TARGET_LINK_LIBRARIES(tano-daemon ${QT_SINGLE_APPLICATION} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
 
 
 ################

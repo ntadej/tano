@@ -16,8 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
-#include <QtGui/QApplication>
+#include <QtSingleApplication>
 
 #include "core/Common.h"
 #include "core/Settings.h"
@@ -34,8 +33,11 @@ int main(int argc, char *argv[])
 	XInitThreads();
 #endif
 
-	QApplication app(argc, argv);
-	QCoreApplication::setApplicationName("Tano");
+    QtSingleApplication instance(argc, argv);
+    if(instance.sendMessage(""))
+        return 0;
+
+    QCoreApplication::setApplicationName("Tano");
 
 	Settings *settings = new Settings();
 	if(!settings->configured() || settings->configurationVersion() != Tano::version()) {
@@ -46,7 +48,9 @@ int main(int argc, char *argv[])
 	delete settings;
 
 	MainWindow mainWindow;
+	instance.setActivationWindow(&mainWindow);
+
 	mainWindow.show();
 
-	return app.exec();
+	return instance.exec();
 }

@@ -127,6 +127,8 @@ ELSE(EDITOR_WITH_VLCQT)
     SET(EDITOR_VLCQT 0)
 ENDIF(EDITOR_WITH_VLCQT)
 
+SET(QT_SINGLE_APPLICATION "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/libqtsingleapplication.a")
+
 ###################
 # Compile and set #
 ###################

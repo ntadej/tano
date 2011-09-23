@@ -18,28 +18,31 @@
 
 PROJECT(qtsingleapplication)
 
+# This line adds the include path of the Qt
+# directory to the compiler include path
 INCLUDE(${QT_USE_FILE})
 INCLUDE_DIRECTORIES(${QT_INCLUDE_DIR})
 
-SET(QTSA_SOURCES_CPP
-    src/qtlocalpeer.cpp
-    src/qtsingleapplication.cpp
-    src/qtsinglecoreapplication.cpp
-)
-
-SET(QTSA_SOURCES_H
+# Define the MOC source files used by QtSingleApplication
+SET(QtSA_MOCs
     src/qtlocalpeer.h
     src/qtsingleapplication.h
     src/qtsinglecoreapplication.h
 )
 
-QT4_WRAP_CPP(QTSA_SOURCES_H_MOC ${QTSA_SOURCES_H})
+# Define the C++ source files used by QtSingleApplication
+SET(QtSA_Srcs
+    src/qtlocalpeer.cpp
+    src/qtsingleapplication.cpp
+    src/qtsinglecoreapplication.cpp
+)
+
+# This script runs the meta object compiler moc.
+QT4_WRAP_CPP(QtSA_MOCs_Srcs ${QtSA_MOCs})
 
 ADD_DEFINITIONS(${QT_DEFINITIONS})
 ADD_DEFINITIONS(-DQT_STATIC)
 
-ADD_LIBRARY(qtsingleapplication STATIC ${QTSA_SOURCES_CPP} ${QTSA_SOURCES_H_MOC})
+ADD_LIBRARY(qtsingleapplication STATIC ${QtSA_Srcs} ${QtSA_MOCs_Srcs})
 
 TARGET_LINK_LIBRARIES(qtsingleapplication)
-
-SET(QT_SINGLE_APPLICATION "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/src/libqtsingleapplication.a")

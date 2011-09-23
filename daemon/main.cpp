@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
+#include <QtSingleCoreApplication>
 
 #include "daemon/DBusAdaptorRecorder.h"
 #include "daemon/DBusAdaptorXmltv.h"
@@ -32,8 +32,11 @@ int main(int argc, char *argv[])
     XInitThreads();
 #endif
 
-    QCoreApplication a(argc, argv);
+    QtSingleCoreApplication a(argc, argv);
     QCoreApplication::setApplicationName("Tano Daemon");
+
+    if(a.isRunning())
+        return 0;
 
     DaemonMain *daemon = new DaemonMain();
 
