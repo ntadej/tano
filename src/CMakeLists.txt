@@ -303,7 +303,7 @@ ENDIF(NOT MINGW)
 # Include paths and set up targets #
 ####################################
 # This needs to be added in order for #include to work inside .cpp files
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src")
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src" "${CMAKE_SOURCE_DIR}/lib/qtsingleapplication/src")
 
 # This line adds the include path of the Qt
 # directory to the compiler include path
@@ -330,9 +330,10 @@ ENDIF(MINGW)
 
 # This line tells cmake to create the Tano program.
 ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs_Srcs})
+ADD_DEPENDENCIES(tano qtsingleapplication)
 
 # Here the needed Qt Libraries are added to the link command.
-TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
+TARGET_LINK_LIBRARIES(tano ${QT_LIBRARIES} ${QT_SINGLE_APPLICATION} ${LIBVLCQT_LIBRARY})
 
 
 ################

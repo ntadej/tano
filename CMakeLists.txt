@@ -131,6 +131,7 @@ ENDIF(EDITOR_WITH_VLCQT)
 # Compile and set #
 ###################
 ADD_SUBDIRECTORY(lang)
+ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(plugins)
 ADD_SUBDIRECTORY(daemon)

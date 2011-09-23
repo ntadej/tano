@@ -117,7 +117,7 @@ ENDIF(NOT MINGW)
 # Include paths and set up targets #
 ####################################
 # This needs to be added in order for #include to work inside .cpp files
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src")
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src" "${CMAKE_SOURCE_DIR}/lib/qtsingleapplication/src")
 
 # This line adds the include path of the Qt
 # directory to the compiler include path
@@ -146,7 +146,7 @@ ENDIF(MINGW)
 ADD_EXECUTABLE(tano-daemon ${Tano_Daemon_Srcs} ${Tano_Daemon_MOC_Srcs} ${Tano_Daemon_Resrcs_Srcs})
 
 # Here the needed Qt Libraries are added to the link command.
-TARGET_LINK_LIBRARIES(tano-daemon ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
+TARGET_LINK_LIBRARIES(tano-daemon ${QT_LIBRARIES} ${QT_SINGLE_APPLICATION} ${LIBVLCQT_LIBRARY})
 
 
 ################
