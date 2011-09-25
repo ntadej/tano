@@ -32,7 +32,8 @@
 XmltvManager::XmltvManager(QObject *parent)
     : QObject(parent),
       _loading(true),
-      _currentXmltvId("")
+      _currentXmltvId(""),
+      _xmltv(0)
 {
     _handler = new XmltvHandler();
 

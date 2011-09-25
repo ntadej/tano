@@ -166,7 +166,7 @@ void PlaylistEdit::createConnections()
     connect(ui->actionUp, SIGNAL(triggered()), this, SLOT(moveUp()));
     connect(ui->actionDown, SIGNAL(triggered()), this, SLOT(moveDown()));
 
-    connect(ui->playlist, SIGNAL(itemClicked(Channel *)), this, SLOT(editItem(Channel *)));
+    connect(ui->playlist, SIGNAL(itemSelected(Channel *)), this, SLOT(editItem(Channel *)));
 
 #if EDITOR
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
