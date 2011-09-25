@@ -15,32 +15,6 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QGroupBox" name="groupGrabber">
-     <property name="title">
-      <string>EPG source</string>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QRadioButton" name="radioXmltv">
-        <property name="text">
-         <string>XMLTV</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="radioPlugin">
-        <property name="text">
-         <string>EPG plugin</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
     <widget class="QGroupBox" name="groupXmltv">
      <property name="title">
       <string>XMLTV settings</string>
@@ -77,26 +51,17 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupPlugin">
-     <property name="enabled">
-      <bool>false</bool>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="title">
-      <string>EPG plugin settings</string>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="labelSelectPlugin">
-        <property name="text">
-         <string>Select desired EPG plugin from the list below:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="comboPlugin"/>
-      </item>
-     </layout>
-    </widget>
+    </spacer>
    </item>
   </layout>
  </widget>
@@ -109,38 +74,5 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>radioXmltv</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>groupXmltv</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>65</x>
-     <y>59</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>163</x>
-     <y>117</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>radioPlugin</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>groupPlugin</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>258</x>
-     <y>60</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>278</x>
-     <y>263</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

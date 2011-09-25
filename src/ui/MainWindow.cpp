@@ -210,7 +210,7 @@ void MainWindow::createBackend()
 void MainWindow::createSettings()
 {
     Settings *settings = new Settings(this);
-    _xmltv->setSource(Tano::EpgType(settings->epgType()), settings->location());
+    _xmltv->setSource(Tano::EpgXmltv, settings->location());
     _hideToTray = settings->hideToTray();
 
     //GUI Settings

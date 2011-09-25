@@ -19,7 +19,6 @@
 #include "core/Settings.h"
 
 #if !EDITOR
-    #include "core/PluginLoader.h"
     #include "epg/XmltvController.h"
 #endif
 
@@ -40,7 +39,6 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
 #if !EDITOR
     _controller = new XmltvController(this);
     listGrabbers();
-    listPlugins();
 #endif
 }
 
@@ -79,17 +77,6 @@ void SettingsSchedule::listGrabbers()
 #endif
 }
 
-void SettingsSchedule::listPlugins()
-{
-#if !EDITOR
-    PluginLoader *loader = new PluginLoader();
-    for(int i = 0; i < loader->epgPlugin().size(); i++) {
-        ui->comboPlugin->addItem(loader->epgName()[i]);
-    }
-    delete loader;
-#endif
-}
-
 void SettingsSchedule::processGrabber(const QString &grabber)
 {
     ui->labelCustom->setEnabled(grabber == tr("Custom"));
@@ -97,24 +84,6 @@ void SettingsSchedule::processGrabber(const QString &grabber)
 
     if(grabber != tr("Custom"))
         ui->location->reset();
-}
-
-Tano::EpgType SettingsSchedule::epgType() const
-{
-    if(ui->radioXmltv->isChecked())
-        return Tano::EpgXmltv;
-    else if(ui->radioPlugin->isChecked())
-        return Tano::EpgPlugin;
-    else
-        return Tano::EpgXmltv;
-}
-
-void SettingsSchedule::setEpgType(const Tano::EpgType &type)
-{
-    if(type == Tano::EpgXmltv)
-        ui->radioXmltv->setChecked(true);
-    else if(type == Tano::EpgPlugin)
-        ui->radioPlugin->setChecked(true);
 }
 
 QString SettingsSchedule::grabber() const
@@ -135,14 +104,4 @@ QString SettingsSchedule::location() const
 void SettingsSchedule::setLocation(const QString &location)
 {
     ui->location->setValue(location);
-}
-
-QString SettingsSchedule::plugin() const
-{
-    return ui->comboPlugin->currentText();
-}
-
-void SettingsSchedule::setPlugin(const QString &plugin)
-{
-    ui->comboPlugin->setCurrentIndex(ui->comboPlugin->findText(plugin));
 }

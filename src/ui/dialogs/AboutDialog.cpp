@@ -27,9 +27,6 @@
 
 #include "Config.h"
 #include "core/Common.h"
-#if !EDITOR
-    #include "core/PluginLoader.h"
-#endif
 
 AboutDialog::AboutDialog(const Tano::AppType &type,
                          QWidget *parent)
@@ -56,26 +53,6 @@ AboutDialog::AboutDialog(const Tano::AppType &type,
 
     ui->authors->setPlainText(QString::fromUtf8(file.readAll()));
 
-#if EDITOR
-    ui->tabWidget->removeTab(2);
-#else
-    QTreeWidgetItem *epg = new QTreeWidgetItem(ui->pluginsWidget);
-    epg->setText(0, tr("EPG Plugins"));
-    ui->pluginsWidget->setItemExpanded(epg, true);
-
-    QFont font = epg->font(0);
-    font.setBold(true);
-    epg->setFont(0, font);
-
-    PluginLoader *loader = new PluginLoader();
-    for(int i = 0; i < loader->epgPlugin().size(); i++) {
-        QTreeWidgetItem *pluginItem = new QTreeWidgetItem(epg);
-        pluginItem->setText(0, loader->epgName()[i] + " (" + loader->epgFile()[i] + ")");
-        pluginItem->setIcon(0, QIcon(":/icons/16x16/plugin.png"));
-    }
-    delete loader;
-#endif
-
 #if !WITH_EDITOR_VLCQT
     ui->tabWidget->removeTab(1);
 #endif
@@ -83,7 +60,6 @@ AboutDialog::AboutDialog(const Tano::AppType &type,
 
 AboutDialog::~AboutDialog()
 {
-    ui->pluginsWidget->clear();
     delete ui;
 }
 

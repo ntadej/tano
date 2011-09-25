@@ -112,10 +112,8 @@ void SettingsEdit::apply()
     _settings->setUdpxyPort(ui->backend->udpxyPort());
 
     // Schedule
-    _settings->setEpgType(ui->schedule->epgType());
     _settings->setGrabber(ui->schedule->grabber());
     _settings->setLocation(ui->schedule->location());
-    _settings->setPlugin(ui->schedule->plugin());
 
     // Recorder
     _settings->setRecorderDirectory(ui->recorder->directory());
@@ -164,10 +162,8 @@ void SettingsEdit::read()
     ui->backend->setUdpxyPort(_settings->udpxyPort());
 
     // Schedule
-    ui->schedule->setEpgType(Tano::EpgType(_settings->epgType()));
     ui->schedule->setGrabber(_settings->grabber());
     ui->schedule->setLocation(_settings->location());
-    ui->schedule->setPlugin(_settings->plugin());
 
     // Recorder
     ui->recorder->setDirectory(_settings->recorderDirectory());

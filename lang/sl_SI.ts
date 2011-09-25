@@ -83,15 +83,15 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <source>Plugins</source>
-        <translation>Vtičniki</translation>
+        <translation type="obsolete">Vtičniki</translation>
     </message>
     <message>
         <source>These plugins are currently available for Tano:</source>
-        <translation>Trenutno so na voljo sledeči vtičniki:</translation>
+        <translation type="obsolete">Trenutno so na voljo sledeči vtičniki:</translation>
     </message>
     <message>
         <source>EPG Plugins</source>
-        <translation>Vtičniki EPG</translation>
+        <translation type="obsolete">Vtičniki EPG</translation>
     </message>
 </context>
 <context>
@@ -2059,7 +2059,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>XMLTV</source>
-        <translation>XMLTV</translation>
+        <translation type="obsolete">XMLTV</translation>
     </message>
     <message>
         <source>Custom grabber</source>
@@ -2081,11 +2081,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>EPG source</source>
-        <translation>Vir EPG</translation>
+        <translation type="obsolete">Vir EPG</translation>
     </message>
     <message>
         <source>EPG plugin</source>
-        <translation>Vtičnik EPG</translation>
+        <translation type="obsolete">Vtičnik EPG</translation>
     </message>
     <message>
         <source>XMLTV settings</source>
@@ -2097,11 +2097,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>EPG plugin settings</source>
-        <translation>Nastavitve vtičnika EPG</translation>
+        <translation type="obsolete">Nastavitve vtičnika EPG</translation>
     </message>
     <message>
         <source>Select desired EPG plugin from the list below:</source>
-        <translation>Izberite željen vtičnik EPG s spodnjega seznama:</translation>
+        <translation type="obsolete">Izberite željen vtičnik EPG s spodnjega seznama:</translation>
     </message>
     <message>
         <source>Custom</source>

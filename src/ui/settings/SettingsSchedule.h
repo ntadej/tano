@@ -40,14 +40,10 @@ public:
     SettingsSchedule(QWidget *parent = 0);
     ~SettingsSchedule();
 
-    Tano::EpgType epgType() const;
-    void setEpgType(const Tano::EpgType &type);
     QString grabber() const;
     void setGrabber(const QString &grabber);
     QString location() const;
     void setLocation(const QString &location);
-    QString plugin() const;
-    void setPlugin(const QString &plugin);
 
 protected:
     void changeEvent(QEvent *e);
@@ -57,7 +53,6 @@ private slots:
 
 private:
     void listGrabbers();
-    void listPlugins();
 
     Ui::SettingsSchedule *ui;
 

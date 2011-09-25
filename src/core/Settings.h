@@ -122,18 +122,12 @@ public:
     static const int DEFAULT_VOLUME;
 
     // Schedule
-    inline int epgType() const { return _epgType; }
-    inline void setEpgType(const int &i) { _epgType = i; }
-    static const int DEFAULT_EPG_TYPE;
     inline QString grabber() const { return _grabber; }
     inline void setGrabber(const QString &s) { _grabber = s; }
     static const QString DEFAULT_GRABBER;
     inline QString location() const { return _location; }
     inline void setLocation(const QString &s) { _location = s; }
     static const QString DEFAULT_LOCATION;
-    inline QString plugin() const { return _plugin; }
-    inline void setPlugin(const QString &s) { _plugin = s; }
-    static const QString DEFAULT_PLUGIN;
 
 private:
     // General variables

@@ -116,10 +116,8 @@ OPTION(EDITOR_WITH_VLCQT "Compile Tano Editor with VLC-Qt" OFF)
 MESSAGE("Compile Tano Editor with VLC-Qt: ${EDITOR_WITH_VLCQT}")
 OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile" OFF)
 MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
-OPTION(BUILD_SAMPLES_TESTS "Build samples and tests" OFF)
-MESSAGE("Build samples and tests: ${BUILD_SAMPLES_TESTS}")
-OPTION(BUILD_MOBILE "Build Mobile app for desktop" OFF)
-MESSAGE("Build Mobile app for desktop: ${BUILD_MOBILE}")
+OPTION(BUILD_TESTS "Build tests" OFF)
+MESSAGE("Build tests: ${BUILD_SAMPLES_TESTS}")
 
 IF(EDITOR_WITH_VLCQT)
     SET(EDITOR_VLCQT 1)
@@ -132,15 +130,14 @@ SET(QT_SINGLE_APPLICATION "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/libqtsing
 ###################
 # Compile and set #
 ###################
-ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(lib)
+ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(plugins)
 ADD_SUBDIRECTORY(daemon)
 ADD_SUBDIRECTORY(editor)
-IF(BUILD_MOBILE)
+IF(BUILD_TESTS)
     ADD_SUBDIRECTORY(mobile)
-ENDIF(BUILD_MOBILE)
+ENDIF(BUILD_TESTS)
 
 SET(Tano_Files
     LICENSE.GPL

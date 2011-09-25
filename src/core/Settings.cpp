@@ -54,10 +54,8 @@ const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath();
 const int Settings::DEFAULT_CHANNEL = 1;
 const int Settings::DEFAULT_VOLUME = 50;
 // Schedule
-const int Settings::DEFAULT_EPG_TYPE = 0;
 const QString Settings::DEFAULT_GRABBER = "custom";
 const QString Settings::DEFAULT_LOCATION = Tano::settingsPath() + "xmltv.xml";
-const QString Settings::DEFAULT_PLUGIN = "";
 
 Settings::Settings(QObject *parent)
     : QSettings(QSettings::IniFormat,
@@ -106,10 +104,8 @@ void Settings::writeSettings()
     setValue("session/channel", channel());
     setValue("session/volume", volume());
 
-    setValue("schedule/epgtype", epgType());
     setValue("schedule/grabber", grabber());
     setValue("schedule/location", location());
-    setValue("schedule/plugin", plugin());
 
     sync();
 }
@@ -149,8 +145,6 @@ void Settings::readSettings()
     setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());
     setVolume(value("session/volume", DEFAULT_VOLUME).toInt());
 
-    setEpgType(value("schedule/epgtype", DEFAULT_EPG_TYPE).toInt());
     setGrabber(value("schedule/grabber", DEFAULT_GRABBER).toString());
     setLocation(value("schedule/location", DEFAULT_LOCATION).toString());
-    setPlugin(value("schedule/plugin", DEFAULT_PLUGIN).toString());
 }

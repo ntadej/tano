@@ -58,18 +58,6 @@ Verze vašeho VLC-Qt: %4</translation>
         <source>Close</source>
         <translation type="obsolete">Zavřít</translation>
     </message>
-    <message>
-        <source>Plugins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>These plugins are currently available for Tano:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EPG Plugins</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>BrowseDirectory</name>
@@ -1971,19 +1959,7 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="obsolete">&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
     </message>
     <message>
-        <source>XMLTV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select desired XMLTV grabber from the list below:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EPG source</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EPG plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1992,14 +1968,6 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Custom grabber output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EPG plugin settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select desired EPG plugin from the list below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

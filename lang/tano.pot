@@ -56,18 +56,6 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr ""
 
-msgctxt "AboutDialog|"
-msgid "Plugins"
-msgstr ""
-
-msgctxt "AboutDialog|"
-msgid "These plugins are currently available for Tano:"
-msgstr ""
-
-msgctxt "AboutDialog|"
-msgid "EPG Plugins"
-msgstr ""
-
 msgctxt "ConclusionPage|"
 msgid "Complete Wizard"
 msgstr ""
@@ -1281,19 +1269,7 @@ msgid "Default recording directory"
 msgstr ""
 
 msgctxt "SettingsSchedule|"
-msgid "XMLTV"
-msgstr ""
-
-msgctxt "SettingsSchedule|"
 msgid "Select desired XMLTV grabber from the list below:"
-msgstr ""
-
-msgctxt "SettingsSchedule|"
-msgid "EPG source"
-msgstr ""
-
-msgctxt "SettingsSchedule|"
-msgid "EPG plugin"
 msgstr ""
 
 msgctxt "SettingsSchedule|"
@@ -1302,14 +1278,6 @@ msgstr ""
 
 msgctxt "SettingsSchedule|"
 msgid "Custom grabber output:"
-msgstr ""
-
-msgctxt "SettingsSchedule|"
-msgid "EPG plugin settings"
-msgstr ""
-
-msgctxt "SettingsSchedule|"
-msgid "Select desired EPG plugin from the list below:"
 msgstr ""
 
 msgctxt "SettingsSchedule|"

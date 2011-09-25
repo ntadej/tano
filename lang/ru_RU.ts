@@ -59,18 +59,6 @@ Your VLC-Qt version: %4
         <source>Close</source>
         <translation type="obsolete">Закрыть</translation>
     </message>
-    <message>
-        <source>Plugins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>These plugins are currently available for Tano:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EPG Plugins</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>BrowseDirectory</name>
@@ -1798,19 +1786,7 @@ You will lose any unsaved changes.</source>
         <translation type="obsolete">Другой</translation>
     </message>
     <message>
-        <source>XMLTV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select desired XMLTV grabber from the list below:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EPG source</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EPG plugin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1819,14 +1795,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Custom grabber output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EPG plugin settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select desired EPG plugin from the list below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
