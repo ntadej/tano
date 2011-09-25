@@ -27,7 +27,6 @@
 #include "container/core/File.h"
 #include "container/playlist/CSVInfo.h"
 #include "core/Common.h"
-#include "core/Enums.h"
 #include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "ui/core/FileDialogs.h"
@@ -195,7 +194,7 @@ void PlaylistEdit::setTitle(const QString &title)
 
 void PlaylistEdit::aboutTano()
 {
-    AboutDialog about(Tano::Editor, this);
+    AboutDialog about(this);
     about.exec();
 }
 

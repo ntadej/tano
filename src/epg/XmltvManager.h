@@ -42,8 +42,7 @@ public:
     XmltvManager(QObject *parent = 0);
     ~XmltvManager();
 
-    void setSource(const Tano::EpgType &type,
-                   const QString &location = 0);
+    void loadXmltv(const QString &location);
 
 public slots:
     void request(const QString &id,
@@ -66,10 +65,8 @@ private slots:
     void loadXmltvFinish();
 
 private:
-    void loadXmltv();
     QString processCurrentString(XmltvProgramme *programme) const;
 
-    Tano::EpgType _type;
     QString _location;
 
     bool _loading;

@@ -28,19 +28,18 @@
 #include "Config.h"
 #include "core/Common.h"
 
-AboutDialog::AboutDialog(const Tano::AppType &type,
-                         QWidget *parent)
+AboutDialog::AboutDialog(QWidget *parent)
     : QDialog(parent),
     ui(new Ui::AboutDialog)
 {
     ui->setupUi(this);
 
-    if(type == Tano::Editor) {
-        ui->labelIcon->setPixmap(QPixmap(":/logo/64x64/logo-editor.png"));
-        ui->labelTitle->setText(ui->labelTitle->text().arg(tr("Editor"), Tano::version(), Tano::changeset()));
-    } else {
-        ui->labelTitle->setText(ui->labelTitle->text().arg(tr("Player"), Tano::version(), Tano::changeset()));
-    }
+#if EDITOR
+    ui->labelIcon->setPixmap(QPixmap(":/logo/64x64/logo-editor.png"));
+    ui->labelTitle->setText(ui->labelTitle->text().arg(tr("Editor"), Tano::version(), Tano::changeset()));
+#else
+    ui->labelTitle->setText(ui->labelTitle->text().arg(tr("Player"), Tano::version(), Tano::changeset()));
+#endif
 
     ui->labelBuild->setText(ui->labelBuild->text().arg(Tano::buildHostname(), Tano::buildSystem(), qVersion(), Tano::vlcQtVersionLibrary()));
     ui->labelCopyright->setText(ui->labelCopyright->text().arg(QDate::currentDate().toString("yyyy")));

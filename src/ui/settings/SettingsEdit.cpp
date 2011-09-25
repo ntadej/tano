@@ -112,8 +112,8 @@ void SettingsEdit::apply()
     _settings->setUdpxyPort(ui->backend->udpxyPort());
 
     // Schedule
-    _settings->setGrabber(ui->schedule->grabber());
-    _settings->setLocation(ui->schedule->location());
+    _settings->setXmltvGrabber(ui->schedule->xmltvGrabber());
+    _settings->setXmltvLocation(ui->schedule->xmltvLocation());
 
     // Recorder
     _settings->setRecorderDirectory(ui->recorder->directory());
@@ -162,8 +162,8 @@ void SettingsEdit::read()
     ui->backend->setUdpxyPort(_settings->udpxyPort());
 
     // Schedule
-    ui->schedule->setGrabber(_settings->grabber());
-    ui->schedule->setLocation(_settings->location());
+    ui->schedule->setXmltvGrabber(_settings->xmltvGrabber());
+    ui->schedule->setXmltvLocation(_settings->xmltvLocation());
 
     // Recorder
     ui->recorder->setDirectory(_settings->recorderDirectory());

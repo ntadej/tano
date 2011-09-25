@@ -40,10 +40,10 @@ public:
     SettingsSchedule(QWidget *parent = 0);
     ~SettingsSchedule();
 
-    QString grabber() const;
-    void setGrabber(const QString &grabber);
-    QString location() const;
-    void setLocation(const QString &location);
+    QString xmltvGrabber() const;
+    void setXmltvGrabber(const QString &grabber);
+    QString xmltvLocation() const;
+    void setXmltvLocation(const QString &location);
 
 protected:
     void changeEvent(QEvent *e);

@@ -122,12 +122,12 @@ public:
     static const int DEFAULT_VOLUME;
 
     // Schedule
-    inline QString grabber() const { return _grabber; }
-    inline void setGrabber(const QString &s) { _grabber = s; }
-    static const QString DEFAULT_GRABBER;
-    inline QString location() const { return _location; }
-    inline void setLocation(const QString &s) { _location = s; }
-    static const QString DEFAULT_LOCATION;
+    inline QString xmltvGrabber() const { return _xmltvGrabber; }
+    inline void setXmltvGrabber(const QString &s) { _xmltvGrabber = s; }
+    static const QString DEFAULT_XMLTV_GRABBER;
+    inline QString xmltvLocation() const { return _xmltvLocation; }
+    inline void setXmltvLocation(const QString &s) { _xmltvLocation = s; }
+    static const QString DEFAULT_XMLTV_LOCATION;
 
 private:
     // General variables
@@ -172,10 +172,8 @@ private:
     int _volume;
 
     // Schedule
-    int _epgType;
-    QString _grabber;
-    QString _location;
-    QString _plugin;
+    QString _xmltvGrabber;
+    QString _xmltvLocation;
 };
 
 #endif // TANO_SETTINGS_H_

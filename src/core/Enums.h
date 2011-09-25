@@ -23,28 +23,12 @@
 
 namespace Tano
 {
-    // App type
-    enum AppType
-    {
-        Player,
-        Editor,
-        Daemon,
-        Mobile
-    };
-
     // ID
     enum Id
     {
         Main,
         Record,
         Schedule
-    };
-
-    // EPG types
-    enum EpgType
-    {
-        EpgXmltv,
-        EpgPlugin
     };
 
     // FileTypes

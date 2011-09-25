@@ -32,7 +32,7 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
     ui->setupUi(this);
 
     ui->location->setType(Tano::XmltvFile);
-    ui->location->setResetValue(Settings::DEFAULT_LOCATION);
+    ui->location->setResetValue(Settings::DEFAULT_XMLTV_LOCATION);
 
     connect(ui->comboGrabber, SIGNAL(currentIndexChanged(QString)), this, SLOT(processGrabber(QString)));
 
@@ -86,22 +86,22 @@ void SettingsSchedule::processGrabber(const QString &grabber)
         ui->location->reset();
 }
 
-QString SettingsSchedule::grabber() const
+QString SettingsSchedule::xmltvGrabber() const
 {
     return ui->comboGrabber->itemData(ui->comboGrabber->currentIndex()).toString();
 }
 
-void SettingsSchedule::setGrabber(const QString &grabber)
+void SettingsSchedule::setXmltvGrabber(const QString &grabber)
 {
     ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(grabber));
 }
 
-QString SettingsSchedule::location() const
+QString SettingsSchedule::xmltvLocation() const
 {
     return ui->location->value();
 }
 
-void SettingsSchedule::setLocation(const QString &location)
+void SettingsSchedule::setXmltvLocation(const QString &location)
 {
     ui->location->setValue(location);
 }

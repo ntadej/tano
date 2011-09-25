@@ -210,7 +210,7 @@ void MainWindow::createBackend()
 void MainWindow::createSettings()
 {
     Settings *settings = new Settings(this);
-    _xmltv->setSource(Tano::EpgXmltv, settings->location());
+    _xmltv->loadXmltv(settings->xmltvLocation());
     _hideToTray = settings->hideToTray();
 
     //GUI Settings
@@ -441,7 +441,7 @@ void MainWindow::mouseWheel()
 
 void MainWindow::aboutTano()
 {
-    AboutDialog about(Tano::Player, this);
+    AboutDialog about(this);
     about.exec();
 }
 

@@ -54,8 +54,8 @@ const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath();
 const int Settings::DEFAULT_CHANNEL = 1;
 const int Settings::DEFAULT_VOLUME = 50;
 // Schedule
-const QString Settings::DEFAULT_GRABBER = "custom";
-const QString Settings::DEFAULT_LOCATION = Tano::settingsPath() + "xmltv.xml";
+const QString Settings::DEFAULT_XMLTV_GRABBER = "custom";
+const QString Settings::DEFAULT_XMLTV_LOCATION = Tano::settingsPath() + "xmltv.xml";
 
 Settings::Settings(QObject *parent)
     : QSettings(QSettings::IniFormat,
@@ -104,8 +104,8 @@ void Settings::writeSettings()
     setValue("session/channel", channel());
     setValue("session/volume", volume());
 
-    setValue("schedule/grabber", grabber());
-    setValue("schedule/location", location());
+    setValue("xmltv/grabber", xmltvGrabber());
+    setValue("xmltv/location", xmltvLocation());
 
     sync();
 }
@@ -145,6 +145,6 @@ void Settings::readSettings()
     setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());
     setVolume(value("session/volume", DEFAULT_VOLUME).toInt());
 
-    setGrabber(value("schedule/grabber", DEFAULT_GRABBER).toString());
-    setLocation(value("schedule/location", DEFAULT_LOCATION).toString());
+    setXmltvGrabber(value("xmltv/grabber", DEFAULT_XMLTV_GRABBER).toString());
+    setXmltvLocation(value("xmltv/location", DEFAULT_XMLTV_LOCATION).toString());
 }

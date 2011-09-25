@@ -26,8 +26,6 @@
 #include <QtGui/QDialog>
 #include <QtGui/QTreeWidgetItem>
 
-#include "core/Enums.h"
-
 namespace Ui
 {
     class AboutDialog;
@@ -37,8 +35,7 @@ class AboutDialog : public QDialog
 {
 Q_OBJECT
 public:
-    AboutDialog(const Tano::AppType &type,
-                QWidget *parent = 0);
+    AboutDialog(QWidget *parent = 0);
     ~AboutDialog();
 
 protected:

@@ -31,7 +31,6 @@
 
 XmltvManager::XmltvManager(QObject *parent)
     : QObject(parent),
-      _type(Tano::EpgXmltv),
       _loading(true),
       _currentXmltvId("")
 {
@@ -67,10 +66,12 @@ void XmltvManager::current()
     _timer->start(60000);
 }
 
-void XmltvManager::loadXmltv()
+void XmltvManager::loadXmltv(const QString &location)
 {
     if(_location.isEmpty())
         return;
+
+    _location = location;
 
     QFuture<bool> future = QtConcurrent::run(loadXmltvStart, _handler, _location);
     _watcher->setFuture(future);
@@ -175,15 +176,6 @@ void XmltvManager::requestProgrammePrevious(XmltvProgramme *current)
     if(_xmltv->channels()->find(current->channel())->programme()->indexFromItem(current).row() != 0) {
         emit programme(_xmltv->channels()->find(current->channel())->programme()->row(_xmltv->channels()->find(current->channel())->programme()->indexFromItem(current).row()-1));
     }
-}
-
-void XmltvManager::setSource(const Tano::EpgType &type,
-                             const QString &location)
-{
-    _type = type;
-    _location = location;
-
-    loadXmltv();
 }
 
 void XmltvManager::stop()
