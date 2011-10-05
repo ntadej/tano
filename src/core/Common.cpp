@@ -103,8 +103,8 @@ QString Tano::locateResource(const QString &file)
     else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).exists())
         path = QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).absoluteFilePath();
 
-    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/recorder", "") + "/" + file).exists())
-        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/recorder", "") + "/" + file).absoluteFilePath();
+    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/daemon", "") + "/" + file).exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/daemon", "") + "/" + file).absoluteFilePath();
 
     else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).exists())
         path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).absoluteFilePath();

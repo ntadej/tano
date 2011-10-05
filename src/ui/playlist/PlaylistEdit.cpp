@@ -45,6 +45,8 @@
     #include <vlc-qt/Instance.h>
     #include <vlc-qt/Media.h>
     #include <vlc-qt/MediaPlayer.h>
+
+    #include "core/Udpxy.h"
 #endif
 
 #include "PlaylistEdit.h"
@@ -80,8 +82,9 @@ PlaylistEdit::PlaylistEdit(const WId &video,
     _media = 0;
     _player = new VlcMediaPlayer(_instance);
     _player->setVideoWidgetId(video);
+    _udpxy = new Udpxy();
     _timer = new QTimer();
-    connect(_player, SIGNAL(state(bool, bool, bool)), this, SLOT(setState(bool)));
+    connect(_player, SIGNAL(playing(bool, bool)), this, SLOT(setState(bool)));
     connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
 #else
     Q_UNUSED(video)
@@ -504,7 +507,7 @@ QString PlaylistEdit::currentIp()
     ip.append(QString().number(_currentIp[3])+":");
     ip.append(QString().number(_currentPort));
 
-    return ip;
+    return _udpxy->processUrl(ip);
 #else
     return(0);
 #endif

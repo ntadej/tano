@@ -79,5 +79,5 @@ void TimersDisplayWidget::setModel(TimersModel *model)
 void TimersDisplayWidget::timerClicked(const QModelIndex &index)
 {
     _current = _model->row(_filterModel->mapToSource(index).row());
-    emit itemClicked(_current);
+    emit itemSelected(_current);
 }

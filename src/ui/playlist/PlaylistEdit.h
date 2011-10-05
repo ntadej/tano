@@ -36,6 +36,7 @@ class UpdateDialog;
 class VlcInstance;
 class VlcMedia;
 class VlcMediaPlayer;
+class Udpxy;
 #endif
 
 namespace Ui
@@ -124,6 +125,7 @@ private:
     VlcInstance *_instance;
     VlcMedia *_media;
     VlcMediaPlayer *_player;
+    Udpxy  *_udpxy;
     int _refresh;
     int _currentIp[4];
     int _currentPort;

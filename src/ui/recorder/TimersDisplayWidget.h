@@ -47,7 +47,7 @@ protected:
     void changeEvent(QEvent *e);
 
 signals:
-    void itemClicked(Timer *);
+    void itemSelected(Timer *);
 
 private slots:
     void processFilters();
