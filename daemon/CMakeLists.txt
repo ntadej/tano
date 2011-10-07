@@ -77,11 +77,10 @@ SET(Tano_Daemon_Srcs
 ################
 # Qt4 settings #
 ################
-# This line adds the QtXML, QtNETWORK and QtDBUS libraries to the Qt libraries and removes QtGUI
+# This line adds the QtXML, QtNETWORK and QtDBUS libraries to the Qt libraries
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
 SET(QT_USE_QTDBUS True)
-SET(QT_DONT_USE_QTGUI True)
 
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Daemon_Resrcs_Srcs ${Tano_Daemon_Resrcs})
