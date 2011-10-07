@@ -685,9 +685,9 @@ msgctxt "PlaylistEdit|"
 msgid "<b><i>Instructions:</i></b>"
 msgstr "<b><i>Pokyny:</i></b>"
 
-msgctxt "PlaylistEdit|"
-msgid "<i>This will interrupt your current playback.</i>"
-msgstr "<i>Tímto se přeruší vaše současné přehrávání.</i>"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "<i>This will interrupt your current playback.</i>"
+#~ msgstr "<i>Tímto se přeruší vaše současné přehrávání.</i>"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Save channel list"

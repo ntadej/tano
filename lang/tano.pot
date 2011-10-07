@@ -560,10 +560,6 @@ msgid "<b><i>Instructions:</i></b>"
 msgstr ""
 
 msgctxt "PlaylistEdit|"
-msgid "<i>This will interrupt your current playback.</i>"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
 msgid "Export"
 msgstr ""
 

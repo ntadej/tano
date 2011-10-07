@@ -48,8 +48,7 @@ class PlaylistEdit : public QMainWindow
 {
 Q_OBJECT
 public:
-    PlaylistEdit(const WId &video = 0,
-                 QWidget *parent = 0);
+    PlaylistEdit(QWidget *parent = 0);
     ~PlaylistEdit();
 
 public slots:

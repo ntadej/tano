@@ -772,7 +772,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will interrupt your current playback.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;S tem boste prekinili trenutno predvajanje.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;S tem boste prekinili trenutno predvajanje.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Add channel</source>

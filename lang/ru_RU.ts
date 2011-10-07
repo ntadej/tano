@@ -706,7 +706,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>&lt;i&gt;This will interrupt your current playback.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Это прервет текущее воспроизведение.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Это прервет текущее воспроизведение.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Save channel list</source>

@@ -52,8 +52,7 @@
 #include "PlaylistEdit.h"
 #include "ui_PlaylistEdit.h"
 
-PlaylistEdit::PlaylistEdit(const WId &video,
-                           QWidget *parent)
+PlaylistEdit::PlaylistEdit(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::PlaylistEdit),
       _closeEnabled(false)
@@ -78,17 +77,14 @@ PlaylistEdit::PlaylistEdit(const WId &video,
 	createConnections();
 
 #if WITH_EDITOR_VLCQT
-    _instance = new VlcInstance(Tano::vlcQtArgs(), this);
+    _instance = new VlcInstance(Tano::vlcQtRecorderArgs(QDir::tempPath() + "/tano-test.ts"), this);
     _media = 0;
     _player = new VlcMediaPlayer(_instance);
-    _player->setVideoWidgetId(video);
     _udpxy = new Udpxy();
     _timer = new QTimer();
     connect(_player, SIGNAL(playing(bool, bool)), this, SLOT(setState(bool)));
     connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
 #else
-    Q_UNUSED(video)
-
     ui->updateWidget->hide();
 #endif
 
@@ -434,6 +430,8 @@ void PlaylistEdit::refreshPlaylist(const bool &refresh)
         _timer->stop();
         ui->progressBar->setValue(1);
         ui->playlist->setEnabled(true);
+
+        QFile::remove(QDir::tempPath() + "/tano-test.ts");
     } else {
         ui->playlist->setEnabled(false);
 
@@ -461,7 +459,8 @@ void PlaylistEdit::checkIp()
     ui->progressBar->setValue(_currentIp[3]);
     if(_media)
         delete _media;
-    _media = new VlcMedia(currentIp(), _instance);
+
+    _media = new VlcMedia(_udpxy->processUrl(currentIp()), _instance);
     _player->open(_media);
 
     _timer->start(_currentTimeout);
@@ -507,7 +506,7 @@ QString PlaylistEdit::currentIp()
     ip.append(QString().number(_currentIp[3])+":");
     ip.append(QString().number(_currentPort));
 
-    return _udpxy->processUrl(ip);
+    return ip;
 #else
     return(0);
 #endif

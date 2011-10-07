@@ -742,9 +742,9 @@ msgctxt "PlaylistEdit|"
 msgid "Port:"
 msgstr "Vrata:"
 
-msgctxt "PlaylistEdit|"
-msgid "<i>This will interrupt your current playback.</i>"
-msgstr "<i>S tem boste prekinili trenutno predvajanje.</i>"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "<i>This will interrupt your current playback.</i>"
+#~ msgstr "<i>S tem boste prekinili trenutno predvajanje.</i>"
 
 msgctxt "PlaylistEdit|"
 msgid "Add channel"

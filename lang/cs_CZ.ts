@@ -713,7 +713,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will interrupt your current playback.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Tímto se přeruší vaše současné přehrávání.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Tímto se přeruší vaše současné přehrávání.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Save channel list</source>
