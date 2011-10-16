@@ -34,6 +34,7 @@ class Channel;
 class ChannelSelect;
 class EpgScheduleFull;
 class EpgShow;
+class GetFile;
 class LocaleManager;
 class MenuAspectRatio;
 class MenuCrop;
@@ -94,6 +95,7 @@ private slots:
     void lite();
     void tray();
     void fullscreen(const bool &on);
+    void showLogo(const QString &logo);
     void showOsd(const QPoint &pos);
     void showPlaylistFullscreen(const bool &on);
 
@@ -142,6 +144,7 @@ private:
 
     //Main
     ChannelSelect *_select;
+    GetFile *_file;
     LocaleManager *_locale;
     PlaylistModel *_model;
     Shortcuts *_shortcuts;

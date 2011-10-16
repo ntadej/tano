@@ -23,8 +23,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QScrollArea>
 
-class GetFile;
-
 class InfoBarWidget : public QScrollArea
 {
 Q_OBJECT
@@ -38,23 +36,19 @@ public slots:
                  const QString &language);
     void setEpg(const QString &now,
                 const QString &next);
-    void setLogo(const QString &logo);
 
 signals:
     void open(const QString);
 
 private slots:
-    void image(const QString &image);
     void scroll();
 
 private:
     bool _direction;
-    GetFile *_image;
     QTimer *_timer;
 
     QLabel *_labelChannel;
     QLabel *_labelLanguage;
-    QLabel *_labelLogo;
     QLabel *_labelNext;
     QLabel *_labelNow;
 };

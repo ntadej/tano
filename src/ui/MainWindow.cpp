@@ -37,6 +37,7 @@
 #include "container/core/Channel.h"
 #include "core/ChannelSelect.h"
 #include "core/Common.h"
+#include "core/GetFile.h"
 #include "core/LocaleManager.h"
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
@@ -63,6 +64,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::MainWindow),
       _select(0),
+      _file(new GetFile()),
       _locale(new LocaleManager()),
       _model(new PlaylistModel(this)),
       _update(new UpdateDialog()),
@@ -174,7 +176,7 @@ void MainWindow::createGui()
     ui->statusBar->addPermanentWidget(ui->buttonUpdate);
     ui->buttonUpdate->hide();
     ui->scheduleWidget->setIdentifier(Tano::Main);
-
+    ui->logo->hide();
 
     _menuTrackAudio = new MenuTrackAudio(ui->menuAudio);
     ui->menuAudio->addMenu(_menuTrackAudio);
@@ -327,6 +329,8 @@ void MainWindow::createConnections()
 
     connect(_update, SIGNAL(newUpdate()), ui->buttonUpdate, SLOT(show()));
     connect(ui->buttonUpdate, SIGNAL(clicked()), _update, SLOT(check()));
+
+    connect(_file, SIGNAL(file(QString)), this, SLOT(showLogo(QString)));
 
     connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMouseHide()));
     connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMouseHide()));
@@ -495,11 +499,14 @@ void MainWindow::setPlayingState(const bool &playing,
 
 void MainWindow::play(const QString &itemFile)
 {
-    this->stop();
+    stop();
 
     if(itemFile.isNull()) {
         ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
-        //ui->infoBarWidget->setLogo(_channel->logo());
+        if(_channel->logo().contains("http"))
+            _file->getFile(_channel->logo());
+        else if(!_channel->logo().isEmpty())
+            showLogo(_channel->logo());
 
         _xmltv->request(_channel->epg(), Tano::Main);
         ui->channelNumber->display(_channel->number());
@@ -539,6 +546,8 @@ void MainWindow::stop()
 
     tooltip();
     _trayIcon->changeToolTip(Tano::Main);
+
+    ui->logo->hide();
 
     _audioController->reset();
     _videoController->reset();
@@ -664,11 +673,11 @@ void MainWindow::top()
     Qt::WindowFlags top = _flags;
     top |= Qt::WindowStaysOnTopHint;
     if(ui->actionTop->isChecked())
-        this->setWindowFlags(top);
+        setWindowFlags(top);
     else
-        this->setWindowFlags(_flags);
+        setWindowFlags(_flags);
 
-    this->show();
+    show();
 }
 
 void MainWindow::lite()
@@ -684,7 +693,7 @@ void MainWindow::tray()
     if (!_trayIcon->isVisible())
         return;
 
-    if(this->isHidden()) {
+    if(isHidden()) {
         ui->actionTray->setText(tr("Hide to tray"));
         show();
     } else {
@@ -719,6 +728,13 @@ void MainWindow::fullscreen(const bool &on)
         ui->infoWidget->setFloating(false);
         ui->infoWidget->show();
     }
+}
+
+void MainWindow::showLogo(const QString &logo)
+{
+    QPixmap pixmap(logo);
+    ui->logo->setPixmap(pixmap.scaledToHeight(ui->osdContents->height(), Qt::SmoothTransformation));
+    ui->logo->show();
 }
 
 void MainWindow::showOsd(const QPoint &pos)

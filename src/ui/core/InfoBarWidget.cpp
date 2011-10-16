@@ -19,26 +19,22 @@
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QScrollBar>
 
-#include "core/GetFile.h"
 #include "InfoBarWidget.h"
 
 InfoBarWidget::InfoBarWidget(QWidget *parent)
     : QScrollArea(parent),
-      _direction(true),
-      _image(new GetFile())
+      _direction(true)
 {
     _timer = new QTimer(this);
 
     QWidget *widget = new QWidget(this);
     _labelChannel = new QLabel(widget);
     _labelLanguage = new QLabel(widget);
-    _labelLogo = new QLabel(widget);
     _labelNext = new QLabel(widget);
     _labelNow = new QLabel(widget);
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setContentsMargins(4,0,4,0);
     layout->setSpacing(10);
-    layout->addWidget(_labelLogo);
     layout->addWidget(_labelChannel);
     layout->addWidget(_labelLanguage);
     layout->addWidget(_labelNow);
@@ -54,7 +50,6 @@ InfoBarWidget::InfoBarWidget(QWidget *parent)
 
     connect(_labelNow, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
     connect(_labelNext, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
-    connect(_image, SIGNAL(file(QString)), this, SLOT(image(QString)));
     connect(_timer, SIGNAL(timeout()), this, SLOT(scroll()));
 
     _timer->start(50);
@@ -62,7 +57,6 @@ InfoBarWidget::InfoBarWidget(QWidget *parent)
 
 InfoBarWidget::~InfoBarWidget()
 {
-    delete _image;
     delete _timer;
 }
 
@@ -87,8 +81,6 @@ void InfoBarWidget::clear()
     _labelNext->setText("");
     _labelChannel->setText("");
     _labelLanguage->setText("");
-    _labelLogo->clear();
-    _labelLogo->hide();
 }
 
 void InfoBarWidget::setInfo(const QString &channel,
@@ -104,21 +96,4 @@ void InfoBarWidget::setEpg(const QString &now,
 {
     _labelNow->setText(tr("Now: %1").arg(now));
     _labelNext->setText(tr("Next: %1").arg(next));
-}
-
-void InfoBarWidget::setLogo(const QString &logo)
-{
-    if(logo.isEmpty())
-        return;
-
-    if(logo.contains("http"))
-        _image->getFile(logo);
-    else
-        image(logo);
-}
-
-void InfoBarWidget::image(const QString &image)
-{
-    _labelLogo->setPixmap(QPixmap(image));
-    _labelLogo->show();
 }
