@@ -914,10 +914,6 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "Network interface:"
 msgstr ""
 
-msgctxt "PlaylistExportTvheadend|"
-msgid "XMLTV suffix:"
-msgstr ""
-
 #, fuzzy
 msgctxt "PlaylistExportTvheadend|"
 msgid "Open directory"

@@ -36,8 +36,7 @@ public:
     void saveM3UFile(const QString &file,
                      const Tano::FileType &type = Tano::M3U);
     void saveTvheadend(const QString &location,
-                       const QString &interface,
-                       const QString &xmltv);
+                       const QString &interface);
     void saveXmltvId(const QString &file);
 
 private:

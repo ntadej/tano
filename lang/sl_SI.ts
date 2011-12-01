@@ -1003,7 +1003,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>XMLTV suffix:</source>
-        <translation>XMLTV končnica:</translation>
+        <translation type="obsolete">XMLTV končnica:</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>

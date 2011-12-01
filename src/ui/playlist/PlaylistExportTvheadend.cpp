@@ -88,8 +88,3 @@ QString PlaylistExportTvheadend::location() const
 {
 	return ui->editLocation->text();
 }
-
-QString PlaylistExportTvheadend::xmltv() const
-{
-	return ui->editXmltv->text();
-}

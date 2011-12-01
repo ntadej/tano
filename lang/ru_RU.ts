@@ -866,10 +866,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>XMLTV suffix:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open directory</source>
         <translation type="unfinished"></translation>
     </message>

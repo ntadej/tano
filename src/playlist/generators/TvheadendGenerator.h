@@ -29,8 +29,7 @@ class TvheadendGenerator
 {
 public:
     TvheadendGenerator(const QString &location,
-					   const QString &interface,
-					   const QString &xmltv);
+                       const QString &interface);
 	~TvheadendGenerator();
 
     bool write(PlaylistModel *model);
@@ -53,7 +52,6 @@ private:
 
 	QString _location;
 	QString _interface;
-	QString _xmltv;
 };
 
 #endif // TANO_TVHEADENDGENERATOR_H_

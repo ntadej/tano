@@ -990,9 +990,9 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "Network interface:"
 msgstr "Omrežna povezava:"
 
-msgctxt "PlaylistExportTvheadend|"
-msgid "XMLTV suffix:"
-msgstr "XMLTV končnica:"
+#~ msgctxt "PlaylistExportTvheadend|"
+#~ msgid "XMLTV suffix:"
+#~ msgstr "XMLTV končnica:"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"

@@ -103,9 +103,9 @@ PlaylistEdit::~PlaylistEdit()
     delete ui;
 
 #if WITH_EDITOR_VLCQT
-    delete _instance;
     delete _media;
     delete _player;
+    delete _instance;
     delete _timer;
 #endif
 }
@@ -373,7 +373,7 @@ void PlaylistEdit::exportTvheadend()
     if(!dialog.proceed())
         return;
 
-    _model->exportTvheadend(dialog.location(), dialog.interface(), dialog.xmltv());
+    _model->exportTvheadend(dialog.location(), dialog.interface());
 }
 
 void PlaylistEdit::exportXmltvId()

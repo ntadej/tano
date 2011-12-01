@@ -101,15 +101,13 @@ void PlaylistModel::deleteChannel(Channel *channel)
 }
 
 void PlaylistModel::exportTvheadend(const QString &location,
-                                    const QString &interface,
-                                    const QString &xmltv)
+                                    const QString &interface)
 {
 #if !MOBILE
-    _save->saveTvheadend(location, interface, xmltv);
+    _save->saveTvheadend(location, interface);
 #else
     Q_UNUSED(location)
     Q_UNUSED(interface)
-    Q_UNUSED(xmltv)
 #endif
 }
 

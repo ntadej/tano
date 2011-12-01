@@ -26,11 +26,9 @@
 #include "TvheadendGenerator.h"
 
 TvheadendGenerator::TvheadendGenerator(const QString &location,
-                                       const QString &interface,
-                                       const QString &xmltv)
+                                       const QString &interface)
     : _location(location),
-     _interface(interface),
-     _xmltv(xmltv) { }
+     _interface(interface) { }
 
 TvheadendGenerator::~TvheadendGenerator() { }
 
@@ -124,7 +122,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
     QTextStream outC(&fChannel);
     outC << "{" << "\n"
          << indent(1) << "\"name\": \"" << channel->name() << "\"," << "\n"
-         << indent(1) << "\"xmltv-channel\": \"" << channel->epg() << _xmltv << "\"," << "\n"
+         << indent(1) << "\"xmltv-channel\": \"" << channel->epg() << "\"," << "\n"
          << indent(1) << "\"icon\": \"" << channel->logo() << "\"," << "\n"
          << indent(1) << "\"tags\": [" << "\n";
     for(int i = 0; i < channel->categories().size(); i++) {

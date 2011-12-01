@@ -923,10 +923,6 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>XMLTV suffix:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open directory</source>
         <translation type="unfinished">Otevřít adresář</translation>
     </message>

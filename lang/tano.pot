@@ -696,10 +696,6 @@ msgid "Network interface:"
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
-msgid "XMLTV suffix:"
-msgstr ""
-
-msgctxt "PlaylistExportTvheadend|"
 msgid "Open directory"
 msgstr ""
 

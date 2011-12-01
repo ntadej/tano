@@ -51,10 +51,9 @@ void PlaylistSave::saveM3UFile(const QString &file,
 }
 
 void PlaylistSave::saveTvheadend(const QString &location,
-                                 const QString &interface,
-                                 const QString &xmltv)
+                                 const QString &interface)
 {
-    TvheadendGenerator *generator = new TvheadendGenerator(location, interface, xmltv);
+    TvheadendGenerator *generator = new TvheadendGenerator(location, interface);
     generator->write(_model);
     delete generator;
 }

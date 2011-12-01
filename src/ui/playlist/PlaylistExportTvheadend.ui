@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>200</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,17 +48,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="labelXmltv">
-        <property name="text">
-         <string>XMLTV suffix:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1" colspan="2">
-       <widget class="QLineEdit" name="editXmltv"/>
-      </item>
-      <item row="5" column="1">
+      <item row="4" column="0" colspan="3">
        <spacer name="verticalSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -71,14 +61,14 @@
         </property>
        </spacer>
       </item>
-      <item row="4" column="0" colspan="3">
+      <item row="3" column="0" colspan="3">
        <widget class="QLabel" name="labelWarning">
         <property name="text">
          <string>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0" colspan="3">
+      <item row="2" column="0" colspan="3">
        <widget class="QLabel" name="labelSpacer">
         <property name="text">
          <string/>

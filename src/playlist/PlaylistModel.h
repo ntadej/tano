@@ -66,8 +66,7 @@ public:
               const QString &name,
               const Tano::FileType &type = Tano::M3U);
     void exportTvheadend(const QString &location,
-                         const QString &interface,
-                         const QString &xmltv);
+                         const QString &interface);
 
     bool validate() const;
 

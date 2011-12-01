@@ -36,7 +36,6 @@ public:
 	QString interface() const;
 	QString location() const;
 	bool proceed() const { return _proceed; }
-	QString xmltv() const;
 
 protected:
 	void changeEvent(QEvent *e);
