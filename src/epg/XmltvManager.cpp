@@ -69,7 +69,7 @@ void XmltvManager::current()
 
 void XmltvManager::loadXmltv(const QString &location)
 {
-    if(_location.isEmpty())
+    if(location.isEmpty())
         return;
 
     _location = location;

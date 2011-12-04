@@ -193,5 +193,22 @@
  <resources>
   <include location="../../../data/logo.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>radioCustom</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboLanguage</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>229</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>128</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
