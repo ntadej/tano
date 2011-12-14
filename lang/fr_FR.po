@@ -1,0 +1,1760 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Language: fr_FR\n"
+"X-Qt-Contexts: true\n"
+
+msgctxt "AboutDialog|"
+msgid "About"
+msgstr "À propos"
+
+msgctxt "AboutDialog|"
+msgid ""
+"Tano is an open-source cross-platform IP TV player which features full IP TV "
+"playback with EPG and recorder. It is based on VLC-Qt.\n"
+msgstr ""
+"Tano est une plateforme open-source de TV qui permet un accès complet de "
+"télévision par IP avec EPG et enregistrement. Il est basé sur VLC-Qt."
+
+msgctxt "AboutDialog|"
+msgid "Authors"
+msgstr "Auteurs"
+
+msgctxt "AboutDialog|"
+msgid "License"
+msgstr "Licence"
+
+msgctxt "AboutDialog|"
+msgid "Backend"
+msgstr "Interpréteur"
+
+msgctxt "AboutDialog|"
+msgid ""
+"VLC-Qt is a free library used to connect Qt and libvlc libraries. It "
+"contains core classes for main media playback and also some GUI classes for "
+"faster media player developement.\n"
+msgstr ""
+"VLC-Qt est une librairie libre utilisée pour faire le lien entre les "
+"librairies Qt et libvlc. Il contient les classes fondamentales pour regarder "
+"la télé à partir des principaux media and quelques classes graphiques pour "
+"un développement plus rapide de ce lecteur."
+
+#, qt-format
+msgctxt "AboutDialog|"
+msgid "<b>You are using VideoLAN VLC %1</b>"
+msgstr "<b>Vous utilisez VideoLAN VLC %1</b>"
+
+#, qt-format
+msgctxt "AboutDialog|"
+msgid ""
+"This version of Tano was compiled on\n"
+"%1 running %2.\n"
+"Your Qt runtime version: %3\n"
+"Your VLC-Qt version: %4\n"
+msgstr ""
+"Cette version de Tano a été compilé sur\n"
+"%1 utilisant un noyau %2.\n"
+"Votre version de Qt-runtime : %3\n"
+"Votre version de VLC-Qt : %4"
+
+msgctxt "AboutDialog|"
+msgid "Editor"
+msgstr "Éditeur"
+
+msgctxt "AboutDialog|"
+msgid "Player"
+msgstr "Lecteur"
+
+msgctxt "ConclusionPage|"
+msgid "Complete Wizard"
+msgstr "Assistant complet"
+
+msgctxt "ConclusionPage|"
+msgid "Thank you for using <i>Tano</i>."
+msgstr "Merci d'utiliser <i>Tano</i>."
+
+msgctxt "ConclusionPage|"
+msgid "I agree to the terms of the GNU General Public License"
+msgstr "J'accepte les termes de la Licence GNU General Public License"
+
+msgctxt "DonationDialog|"
+msgid "Donate"
+msgstr "Dons"
+
+msgctxt "DonationDialog|"
+msgid ""
+"Tano Player project requires a lot of work and devotion. You can also "
+"support the development by donating some money. This money will be spent to "
+"cover all expenses and hosting costs."
+msgstr ""
+"Le projet Tano nécessite beaucoup de travail et de dévotion. Vous pouvez "
+"aider le développement par une donation financière. Cet argent servira à "
+"couvrir les coûts d'hébergement."
+
+msgctxt "DonationDialog|"
+msgid "You can read additional terms and information on Tano Player homepage."
+msgstr ""
+"Vous pouvez lire d'autres informations sur la homepage du lecteur Tano."
+
+msgctxt "EpgList|"
+msgid "Show information"
+msgstr "Montrer les informations"
+
+msgctxt "EpgList|"
+msgid "Record"
+msgstr "Enregistrer"
+
+msgctxt "EpgScheduleChannel|"
+msgid "<h2>No EPG</h2>"
+msgstr "<h2>Pas d'EPG</h2>"
+
+msgctxt "EpgScheduleFull|"
+msgid "Schedule"
+msgstr "Calendrier"
+
+msgctxt "EpgShow|"
+msgid "Previous"
+msgstr "Précédent"
+
+msgctxt "EpgShow|"
+msgid "Next"
+msgstr "Suivant"
+
+msgctxt "FirstRunWizard|"
+msgid "First Run Wizard"
+msgstr "Relancer l'assistant"
+
+msgctxt "GetFile|"
+msgid "Tano"
+msgstr "Tano"
+
+#, qt-format
+msgctxt "GetFile|"
+msgid "Download failed: %1."
+msgstr "Téléchargement en échec : %1."
+
+#, qt-format
+msgctxt "GetFile|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr "Ne peut écrire le fichier %1 : %2."
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Language: %1"
+msgstr "Langue : %1"
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Now: %1"
+msgstr "À présent : %1"
+
+#, qt-format
+msgctxt "InfoBarWidget|"
+msgid "Next: %1"
+msgstr "Prochain : %1"
+
+msgctxt "IntroPage|"
+msgid "Welcome"
+msgstr "Bienvenue"
+
+msgctxt "IntroPage|"
+msgid ""
+"This wizard will help you set basic settings for your copy of <i>Tano</i>."
+msgstr ""
+"Cet assistant vous aidera à choisir les préférences de votre copie de "
+"<i>Tano</i>."
+
+#, qt-format
+msgctxt "IntroPage|"
+msgid "You previously used version %1 of <i>Tano</i>."
+msgstr "Vous avez utilisé précédemment la version %1 de <i>Tano</i>."
+
+msgctxt "IntroPage|"
+msgid "Please re-set your settings."
+msgstr "Veuillez repositionner vos options."
+
+msgctxt "MainWindow|"
+msgid "Tano"
+msgstr "Tano"
+
+msgctxt "MainWindow|"
+msgid "&Recorder"
+msgstr "En&registrement"
+
+msgctxt "MainWindow|"
+msgid "&Options"
+msgstr "&Options"
+
+msgctxt "MainWindow|"
+msgid "&Help"
+msgstr "&Aide"
+
+msgctxt "MainWindow|"
+msgid "Vie&w"
+msgstr "Afficha&ge"
+
+msgctxt "MainWindow|"
+msgid "&Audio"
+msgstr "&Audio"
+
+msgctxt "MainWindow|"
+msgid "&Playback"
+msgstr "&Regarder"
+
+msgctxt "MainWindow|"
+msgid "&Video"
+msgstr "&Video"
+
+msgctxt "MainWindow|"
+msgid "&File"
+msgstr "&Fichier"
+
+msgctxt "MainWindow|"
+msgid "Main Toolbar"
+msgstr "Barre d'outil principale"
+
+msgctxt "MainWindow|"
+msgid "Info panel"
+msgstr "Panneau d'information"
+
+msgctxt "MainWindow|"
+msgid "Schedule"
+msgstr "Calendrier"
+
+msgctxt "MainWindow|"
+msgid "Play"
+msgstr "Lire"
+
+msgctxt "MainWindow|"
+msgid "Stop"
+msgstr "Arreter"
+
+msgctxt "MainWindow|"
+msgid "Back"
+msgstr "Arrière"
+
+msgctxt "MainWindow|"
+msgid "Next"
+msgstr "Suivant"
+
+msgctxt "MainWindow|"
+msgid "Record Now"
+msgstr "Enregistrer maintenant"
+
+msgctxt "MainWindow|"
+msgid "Mute"
+msgstr "Couper le son"
+
+msgctxt "MainWindow|"
+msgid "About Tano"
+msgstr "À propos de Tano"
+
+msgctxt "MainWindow|"
+msgid "&Exit"
+msgstr "&Quitter"
+
+msgctxt "MainWindow|"
+msgid "Ctrl+Q"
+msgstr "Ctrl+Q"
+
+msgctxt "MainWindow|"
+msgid "&Settings"
+msgstr "&Préférences"
+
+msgctxt "MainWindow|"
+msgid "&Fullscreen"
+msgstr "&Plein écran"
+
+msgctxt "MainWindow|"
+msgid "Open &File"
+msgstr "&Ouvrir"
+
+msgctxt "MainWindow|"
+msgid "Edit Channels"
+msgstr "Modifier les chaînes"
+
+msgctxt "MainWindow|"
+msgid "Open URL"
+msgstr "Ouvrir une URL"
+
+msgctxt "MainWindow|"
+msgid "Check for updates"
+msgstr "Vérifier les mis-à-jours"
+
+msgctxt "MainWindow|"
+msgid "Open"
+msgstr "Ouvrir"
+
+msgctxt "MainWindow|"
+msgid "Always on top"
+msgstr "Toujours au premier plan"
+
+msgctxt "MainWindow|"
+msgid "Hide to tray"
+msgstr "Minimiser dans le tableau de bord"
+
+msgctxt "MainWindow|"
+msgid "Simple Mode"
+msgstr "Mode simplifié"
+
+msgctxt "MainWindow|"
+msgid "Volume up"
+msgstr "Augmenter le volume"
+
+msgctxt "MainWindow|"
+msgid "Volume down"
+msgstr "Diminuer le volume"
+
+msgctxt "MainWindow|"
+msgid "Recorder"
+msgstr "Enregistreur"
+
+msgctxt "MainWindow|"
+msgid "Record Current"
+msgstr "Enregistrer l'émission"
+
+msgctxt "MainWindow|"
+msgid "Timers"
+msgstr "Programmateurs"
+
+msgctxt "MainWindow|"
+msgid "About Qt"
+msgstr "À propos de Qt"
+
+msgctxt "MainWindow|"
+msgid "Stop recording"
+msgstr "Arréter l'enregistrement"
+
+msgctxt "MainWindow|"
+msgid "Controls panel"
+msgstr "panneau des contrôles"
+
+msgctxt "MainWindow|"
+msgid ""
+"Do you want to exit Tano?\n"
+"This will stop recording in progress."
+msgstr "Voulez-vous quitter Tano ? L'enregistrement en cours s'arrétera."
+
+msgctxt "MainWindow|"
+msgid "&Open channel list"
+msgstr "&Ouvrir une liste de chaînes"
+
+msgctxt "MainWindow|"
+msgid "Open channel list"
+msgstr "Ouvrir une liste de chaînes"
+
+msgctxt "MainWindow|"
+msgid "Enable Info panel in Fullscreen mode"
+msgstr "Panneau d'information en mode plein écran"
+
+msgctxt "MainWindow|"
+msgid "Donate"
+msgstr "Dons"
+
+msgctxt "MainWindow|"
+msgid "Teletext"
+msgstr "Teletexte"
+
+msgctxt "MainWindow|"
+msgid "Pause"
+msgstr "Pause"
+
+msgctxt "MainWindow|"
+msgid "Buffering..."
+msgstr "Mémorisation..."
+
+msgctxt "MainWindow|"
+msgid "Restore"
+msgstr "Restituer"
+
+#, qt-format
+msgctxt "MainWindow|"
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+"Ne peut pas lire le fichier %1 :\n"
+"%2."
+
+msgctxt "MenuAspectRatio|"
+msgid "Aspect ratio"
+msgstr "Proportion de l'image"
+
+msgctxt "MenuAspectRatio|"
+msgid "Next aspect ratio option"
+msgstr "Option de proportion suivante"
+
+msgctxt "MenuAspectRatio|"
+msgid "Original"
+msgstr "Original"
+
+msgctxt "MenuCrop|"
+msgid "Crop video"
+msgstr "Découpage vidéo"
+
+msgctxt "MenuCrop|"
+msgid "Next crop option"
+msgstr "Option de découpage suivante"
+
+msgctxt "MenuCrop|"
+msgid "Original"
+msgstr "Original"
+
+msgctxt "MenuDeinterlacing|"
+msgid "Deinterlacing"
+msgstr "Désentrelacement"
+
+msgctxt "MenuDeinterlacing|"
+msgid "Next deinterlacing option"
+msgstr "Option de désentrelacement suivante"
+
+msgctxt "MenuDeinterlacing|"
+msgid "Disabled"
+msgstr "Dévalidé"
+
+msgctxt "MenuDeinterlacing|"
+msgid "Discard"
+msgstr "Ignorer"
+
+msgctxt "MenuDeinterlacing|"
+msgid "Blend"
+msgstr "Fondu"
+
+msgctxt "MenuDeinterlacing|"
+msgid "Mean"
+msgstr "Moyenne"
+
+msgctxt "MenuDeinterlacing|"
+msgid "Bob"
+msgstr "Bob"
+
+msgctxt "MenuDeinterlacing|"
+msgid "Linear"
+msgstr "Linéaire"
+
+msgctxt "MenuDeinterlacing|"
+msgid "X"
+msgstr "X"
+
+msgctxt "MenuTrackAudio|"
+msgid "Audio track"
+msgstr "Piste audio"
+
+msgctxt "MenuTrackAudio|"
+msgid "Next audio track"
+msgstr "Piste audio suivante"
+
+msgctxt "MenuTrackSubtitles|"
+msgid "Subtitles"
+msgstr "Sous-titres"
+
+msgctxt "MenuTrackSubtitles|"
+msgid "Next subtitles"
+msgstr "Sous-titres suivants"
+
+msgctxt "MenuTrackSubtitles|"
+msgid "Open subtitle file"
+msgstr "Ouvrir le fichier de sous-titres"
+
+msgctxt "MenuTrackVideo|"
+msgid "Video track"
+msgstr "Piste vidéo"
+
+msgctxt "MenuTrackVideo|"
+msgid "Next video track"
+msgstr "Piste vidéo suivante"
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Clear"
+msgstr "Éffacer"
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Search:"
+msgstr "Rechercher :"
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Category:"
+msgstr "Catégorie :"
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Language:"
+msgstr "Langue :"
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "All categories"
+msgstr "Toutes catégories"
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "All languages"
+msgstr "Toutes les langues"
+
+msgctxt "PlaylistEdit|"
+msgid "Playlist name:"
+msgstr "Nom de la liste :"
+
+msgctxt "PlaylistEdit|"
+msgid "Channels number:"
+msgstr "Numéro de la chaîne :"
+
+msgctxt "PlaylistEdit|"
+msgid "Toolbar"
+msgstr "Barre d'outils"
+
+msgctxt "PlaylistEdit|"
+msgid "Editor"
+msgstr "Éditeur"
+
+msgctxt "PlaylistEdit|"
+msgid "Number:"
+msgstr "Numéro :"
+
+msgctxt "PlaylistEdit|"
+msgid "Name:"
+msgstr "Nom :"
+
+msgctxt "PlaylistEdit|"
+msgid "Categories:"
+msgstr "Catégories :"
+
+msgctxt "PlaylistEdit|"
+msgid "Language:"
+msgstr "Langue :"
+
+msgctxt "PlaylistEdit|"
+msgid "EPG:"
+msgstr "EPG :"
+
+msgctxt "PlaylistEdit|"
+msgid "Url:"
+msgstr "Url :"
+
+msgctxt "PlaylistEdit|"
+msgid "Update Playlist"
+msgstr "Mise à jour de la liste de lecture"
+
+msgctxt "PlaylistEdit|"
+msgid "IP Range:"
+msgstr "Plage des adresses IP :"
+
+msgctxt "PlaylistEdit|"
+msgid "Timeout:"
+msgstr "Temporisation :"
+
+msgctxt "PlaylistEdit|"
+msgid "Scan and update"
+msgstr "Scanner et actualiser"
+
+msgctxt "PlaylistEdit|"
+msgid " ms"
+msgstr "ms"
+
+msgctxt "PlaylistEdit|"
+msgid "Port:"
+msgstr "Port :"
+
+msgctxt "PlaylistEdit|"
+msgid "Close"
+msgstr "Fermer"
+
+msgctxt "PlaylistEdit|"
+msgid "Print"
+msgstr "Imprimer"
+
+msgctxt "PlaylistEdit|"
+msgid "Playlist Editor"
+msgstr "Éditeur de la liste"
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"<i>You can separate categories with comma.<br>Only first one is saved when "
+"exporting to Sagem Js playlist format.</i>"
+msgstr ""
+"<i>Vous pouvez séparer les catégories avec des virgules.<br>Seule la "
+"première est sauvegardée lors de l'import au format de liste Sagem Js.</i>"
+
+msgctxt "PlaylistEdit|"
+msgid "<b><i>Instructions:</i></b>"
+msgstr "<b><i>instructions :</i></b>"
+
+msgctxt "PlaylistEdit|"
+msgid "Export"
+msgstr "Export"
+
+msgctxt "PlaylistEdit|"
+msgid "Open"
+msgstr "Ouvrir"
+
+msgctxt "PlaylistEdit|"
+msgid "About"
+msgstr "À propos"
+
+msgctxt "PlaylistEdit|"
+msgid "Add channel"
+msgstr "Ajouter une chaîne"
+
+msgctxt "PlaylistEdit|"
+msgid "Delete channel"
+msgstr "Supprimer une chaîne"
+
+msgctxt "PlaylistEdit|"
+msgid "Move up"
+msgstr "Vers le haut"
+
+msgctxt "PlaylistEdit|"
+msgid "Move down"
+msgstr "Vers le bas"
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"Do you want close the editor?\n"
+"You will lose any unsaved changes."
+msgstr ""
+"Voulez-vous fermer l'éditeur ?\n"
+"Vous perdrez tous les changements non sauvegardés."
+
+msgctxt "PlaylistEdit|"
+msgid "New playlist"
+msgstr "Nouvelle liste"
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"Do you want to create new playlist?\n"
+"You will lose any unsaved changes."
+msgstr ""
+"Voulez-vouscréer une nouvelle liste ?\n"
+"Vous perdrez tous les changements non sauvegardés."
+
+#, qt-format
+msgctxt "PlaylistEdit|"
+msgid "New channel from scan %1"
+msgstr "Nouvelle chaîne issue du scan %1"
+
+msgctxt "PlaylistEdit|"
+msgid "Tano Editor"
+msgstr "Éditeur de Tano"
+
+#, qt-format
+msgctxt "PlaylistEdit|"
+msgid "%1 - Tano Editor"
+msgstr "%1 - Éditeur de Tano"
+
+msgctxt "PlaylistEdit|"
+msgid "Tvheadend"
+msgstr "Tvheadend"
+
+msgctxt "PlaylistEdit|"
+msgid "Settings"
+msgstr "Préférences"
+
+msgctxt "PlaylistEdit|"
+msgid "XMLTV IDs"
+msgstr "Identifiants XMLTV"
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"<i>You need to apply the number.<br>All other values are automatically "
+"changed.<br>You need to provide full URL for logo.</i>"
+msgstr ""
+"<i>Vous devez appliquer le numéro.<br>Toutes les autres valeurs seront "
+"automatiquement modifiées.<br>Vous devez fournir une URL complète du "
+"logo.</i>"
+
+msgctxt "PlaylistEdit|"
+msgid "Logo:"
+msgstr "Logo :"
+
+msgctxt "PlaylistEdit|"
+msgid "Update Information"
+msgstr "Mise à jour des informations"
+
+msgctxt "PlaylistEdit|"
+msgid "Export to M3U format with Udpxy URLs"
+msgstr "Export vers le format M3U avec des Urls Udpxy"
+
+msgctxt "PlaylistEdit|"
+msgid ""
+"You need to have valid Udpxy settings or the exported playlist will contain "
+"classic URLs."
+msgstr ""
+"Vous devez avoir des options Udpxy valides ou alors, la liste exportée "
+"contiendra des URLs classiques."
+
+msgctxt "PlaylistEdit|"
+msgid "Save"
+msgstr "Sauvegarder"
+
+msgctxt "PlaylistEdit|"
+msgid "Tano"
+msgstr "Tano"
+
+#, qt-format
+msgctxt "PlaylistEdit|"
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+"Ne peut pas lire le fichier %1 :\n"
+"%2."
+
+#, qt-format
+msgctxt "PlaylistEdit|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr "Ne peut écrire le fichier %1 : %2."
+
+msgctxt "PlaylistEdit|"
+msgid "A channel with this number already exists!"
+msgstr "Une chaîne avec ce numéro existe déjà !"
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "Export to Tvheadend IP TV services"
+msgstr "Exporter vers les services IP de Tvheadend"
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "Output location:"
+msgstr "Emplacement de sortie :"
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "..."
+msgstr "..."
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "Network interface:"
+msgstr "Interface réseau :"
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "Open directory"
+msgstr "Ouvrir le répertoire"
+
+msgctxt "PlaylistExportTvheadend|"
+msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
+msgstr ""
+"<i><b>Attention : Ceci effacera toutes les chaînes éxistantes !</b></a>"
+
+msgctxt "PlaylistFilterModel|"
+msgid "All categories"
+msgstr "Toutes catégories"
+
+msgctxt "PlaylistFilterModel|"
+msgid "All languages"
+msgstr "Toutes les langues"
+
+msgctxt "PlaylistImportCSV|"
+msgid "CSV file structure"
+msgstr "Structure en fichier CSV"
+
+msgctxt "PlaylistImportCSV|"
+msgid "Separator:"
+msgstr "Séparateur :"
+
+msgctxt "PlaylistImportCSV|"
+msgid ";"
+msgstr ";"
+
+msgctxt "PlaylistImportCSV|"
+msgid "First line:"
+msgstr "Première ligne :"
+
+msgctxt "PlaylistImportCSV|"
+msgid "First line contains column names"
+msgstr "La première ligne contient les noms de colonnes"
+
+msgctxt "PlaylistImportCSV|"
+msgid "First line does not contain column names"
+msgstr "La première ligne ne contient pas les noms de colonnes"
+
+msgctxt "PlaylistImportCSV|"
+msgid "Column list:"
+msgstr "Liste des colonnes :"
+
+msgctxt "PlaylistImportCSV|"
+msgid "<i>Please sort your columns from first to last.</i>"
+msgstr "<i> Veuillez trier vos colonnes du premier au dernier.</i>"
+
+msgctxt "PlaylistImportCSV|"
+msgid "Number"
+msgstr "Nombre"
+
+msgctxt "PlaylistImportCSV|"
+msgid "Channel"
+msgstr "Chaîne"
+
+msgctxt "PlaylistImportCSV|"
+msgid "Categories"
+msgstr "Catégorie"
+
+msgctxt "PlaylistImportCSV|"
+msgid "Language"
+msgstr "Langue"
+
+msgctxt "PlaylistImportCSV|"
+msgid "EPG ID"
+msgstr "Identifiant EPG"
+
+msgctxt "PlaylistImportCSV|"
+msgid "URL"
+msgstr "URL"
+
+msgctxt "Print|"
+msgid "#"
+msgstr "N°"
+
+msgctxt "Print|"
+msgid "Channel"
+msgstr "Chaîne"
+
+msgctxt "Print|"
+msgid "Url"
+msgstr "Url"
+
+msgctxt "Print|"
+msgid "Categories"
+msgstr "Catégories"
+
+msgctxt "Print|"
+msgid "Language"
+msgstr "Langue"
+
+msgctxt "Print|"
+msgid "EPG"
+msgstr "Identifiant EPG"
+
+#, qt-format
+msgctxt "Print|"
+msgid "Exported with Tano on %1."
+msgstr "Exporter avec Tano sur %1."
+
+msgctxt "PrintDialog|"
+msgid "Print"
+msgstr "Imprimer"
+
+msgctxt "PrintDialog|"
+msgid "Select information for printing:"
+msgstr "Données à imprimer :"
+
+msgctxt "PrintDialog|"
+msgid "Channel number"
+msgstr "Numéro de chaîne"
+
+msgctxt "PrintDialog|"
+msgid "Channel name"
+msgstr "Nom de chaîne"
+
+msgctxt "PrintDialog|"
+msgid "URL"
+msgstr "URL"
+
+msgctxt "PrintDialog|"
+msgid "Categories"
+msgstr "Catégories"
+
+msgctxt "PrintDialog|"
+msgid "Language"
+msgstr "Langue"
+
+msgctxt "PrintDialog|"
+msgid "EPG"
+msgstr "EPG"
+
+msgctxt "PrintDialog|"
+msgid "Print channel List"
+msgstr "Imprimer la liste des chaînes"
+
+msgctxt "QObject|"
+msgid "Disabled"
+msgstr "Invalidé"
+
+msgctxt "QObject|"
+msgid "Channel list"
+msgstr "Liste des chaînes"
+
+msgctxt "QObject|"
+msgid "Tano"
+msgstr "Tano"
+
+msgctxt "QObject|"
+msgid "New channel"
+msgstr "Nouvelle chaîne"
+
+msgctxt "QObject|"
+msgid "The file is not a Tano Timers list."
+msgstr "Ce fichier n'est pas une liste de programmations Tano."
+
+msgctxt "QObject|"
+msgid "Unknown title"
+msgstr "Titre inconnu"
+
+#, qt-format
+msgctxt "QObject|"
+msgid ""
+"Parse error at line %1, column %2:\n"
+"%3"
+msgstr ""
+"Erreur de lecture à la ligne %1, colonne %2 :\n"
+"%3"
+
+msgctxt "QObject|"
+msgid "The file is not a Tano updates file."
+msgstr "Ce fichier n'est pas un fichier de mis-à-jours Tano."
+
+msgctxt "QObject|"
+msgid "The file is not a Tano TV channel list file."
+msgstr "Ce fichier n'est pas un fichier de liste de chaînes Tano."
+
+msgctxt "QObject|"
+msgid "The file is not a Tano TV channel list 1.1 or later."
+msgstr "Ce fichier n'est pas un fichier de liste de chaînes 1.1 ou supérieur."
+
+msgctxt "QObject|"
+msgid "Once"
+msgstr "Une fois"
+
+msgctxt "QObject|"
+msgid "Daily"
+msgstr "Tous les jours"
+
+msgctxt "QObject|"
+msgid "Weekly"
+msgstr "Toutes les semaines"
+
+msgctxt "QObject|"
+msgid "Channel"
+msgstr "Chaîne"
+
+msgctxt "QObject|"
+msgid "URL"
+msgstr "URL"
+
+msgctxt "QObject|"
+msgid "Categories"
+msgstr "Catégories"
+
+msgctxt "QObject|"
+msgid "Language"
+msgstr "Langue"
+
+msgctxt "QObject|"
+msgid "EPG ID"
+msgstr "Identifiant EPG"
+
+msgctxt "QObject|"
+msgid "Number"
+msgstr "Nombre"
+
+msgctxt "QObject|"
+msgid "The file is not a valid XMLTV file."
+msgstr "Ce fichier n'est pas un fichier XMLTV valide."
+
+#, qt-format
+msgctxt "QObject|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+"Ne peut pas écrire le fichier %1 :\n"
+"%2."
+
+msgctxt "QObject|"
+msgid "seconds"
+msgstr "secondes"
+
+msgctxt "QObject|"
+msgid "minutes"
+msgstr "minutes"
+
+msgctxt "QObject|"
+msgid "hours"
+msgstr "heures"
+
+msgctxt "QObject|"
+msgid "s"
+msgstr "s"
+
+msgctxt "QObject|"
+msgid "min"
+msgstr "min"
+
+msgctxt "QObject|"
+msgid "h"
+msgstr "h"
+
+msgctxt "QObject|"
+msgid "Open directory"
+msgstr "Ouvrir le répertoire"
+
+msgctxt "QObject|"
+msgid "Open channel list"
+msgstr "Ouvrir la liste de chaînes"
+
+msgctxt "QObject|"
+msgid "Open URL or stream"
+msgstr "Ouvrir une URL ou un flux"
+
+msgctxt "QObject|"
+msgid "Enter the URL of multimedia file or stream you want to play:"
+msgstr ""
+"Donnez l'URL du fichier multimedia ou du flux que vous voulez visualiser :"
+
+msgctxt "QObject|"
+msgid "Tano M3U channel list files"
+msgstr "Fichiers de chaînes Tano M3U"
+
+msgctxt "QObject|"
+msgid "Comma-separated values files"
+msgstr "Fichier de valeurs séparées par des virgules"
+
+msgctxt "QObject|"
+msgid "Multimedia files"
+msgstr "Fichiers multimedia"
+
+msgctxt "QObject|"
+msgid "Subtitles files"
+msgstr "Fichiers de sous-titres"
+
+msgctxt "QObject|"
+msgid "Plain text files"
+msgstr "Fichiers texte"
+
+msgctxt "QObject|"
+msgid "Open file"
+msgstr "Ouvrir le fichier"
+
+msgctxt "QObject|"
+msgid "Open subtitles"
+msgstr "Ouvrir sous-titres"
+
+msgctxt "QObject|"
+msgid "Export XMLTV IDs"
+msgstr "Exporter les identifiants XMLTV"
+
+msgctxt "QObject|"
+msgid "M3U (original) files"
+msgstr "Fichiers M3U (originaux)"
+
+msgctxt "QObject|"
+msgid "M3U (Udpxy URL) files"
+msgstr "Fichier M3U (udpxy URL)"
+
+msgctxt "QObject|"
+msgid "Tano TV old channel list files"
+msgstr "Anciens fichier de listes de chaînes Tano TV"
+
+msgctxt "QObject|"
+msgid "Sagem STB channel list files"
+msgstr "Fichiers de listes de chaînes Sagem STB"
+
+msgctxt "QObject|"
+msgid "CSV channel list"
+msgstr "Liste de chaînes CSV"
+
+msgctxt "QObject|"
+msgid "Sagem STB channel list"
+msgstr "Liste de chaînes Sagem STB"
+
+msgctxt "QObject|"
+msgid "XMLTV file"
+msgstr "Fichier XMLTV"
+
+msgctxt "QObject|"
+msgid "Open XMLTV"
+msgstr "Ouvrir XMLTV"
+
+msgctxt "QtKeySequenceEdit|"
+msgid "Clear Shortcut"
+msgstr "Effacer les raccourcis clavier"
+
+msgctxt "Recorder|"
+msgid "Recorder"
+msgstr "Enregistreur"
+
+msgctxt "Recorder|"
+msgid "Selected channel:"
+msgstr "Chaîne sélectionnée :"
+
+msgctxt "Recorder|"
+msgid "Directory:"
+msgstr "Répertoire :"
+
+msgctxt "Recorder|"
+msgid "Record"
+msgstr "Enregistrement"
+
+msgctxt "Recorder|"
+msgid "Status"
+msgstr "État"
+
+msgctxt "Recorder|"
+msgid "Recording to file:"
+msgstr "Enregistrer dans :"
+
+msgctxt "Recorder|"
+msgid "Currently recording:"
+msgstr "Enregistrement actuel :"
+
+msgctxt "Recorder|"
+msgid "Time elapsed:"
+msgstr "Temps passé :"
+
+msgctxt "Recorder|"
+msgid "End time:"
+msgstr "Temps écoulé :"
+
+#, qt-format
+msgctxt "Recorder|"
+msgid "Cannot write to %1."
+msgstr "Ne peut pas écrire dans %1."
+
+msgctxt "Recorder|"
+msgid "Channel is not selected!"
+msgstr "La chaîne n'est pas sélectionnée !"
+
+msgctxt "Recorder|"
+msgid "Stop recording"
+msgstr "Arréter l'enregistrement"
+
+msgctxt "Recorder|"
+msgid "No timer - press button to stop."
+msgstr "Pas de programmateur - appuyer sur un bouton pour arréter."
+
+msgctxt "SettingsBackend|"
+msgid "VLC-Qt Backend"
+msgstr "Lecteur VLC-Qt"
+
+msgctxt "SettingsBackend|"
+msgid "Curently using VLC-Qt Backend"
+msgstr "Utilise actuellement le lecteur VLC-Qt"
+
+msgctxt "SettingsBackend|"
+msgid "Version:"
+msgstr "Version :"
+
+msgctxt "SettingsBackend|"
+msgid "Use global VLC settings (requires restart)"
+msgstr "Utiliser les préférences globales VLC (Redémarrage)"
+
+msgctxt "SettingsBackend|"
+msgid "Using Videolan VLC version:"
+msgstr "Utilise la version de VideoLan VLC :"
+
+msgctxt "SettingsBackend|"
+msgid "Playback"
+msgstr "Relire"
+
+msgctxt "SettingsBackend|"
+msgid "Remember Video settings between media"
+msgstr "Mémoriser les préférences vidéo des média"
+
+msgctxt "SettingsBackend|"
+msgid "Default subtitle language:"
+msgstr "Langue des sous-titres par défaut :"
+
+msgctxt "SettingsBackend|"
+msgid "Default audio language:"
+msgstr "Langue audio par défaut :"
+
+msgctxt "SettingsBackend|"
+msgid "Disabled"
+msgstr "Invalidé"
+
+msgctxt "SettingsBackend|"
+msgid "Other"
+msgstr "Autre"
+
+msgctxt "SettingsBackend|"
+msgid "UDPXY support"
+msgstr "Support UDPXY"
+
+msgctxt "SettingsBackend|"
+msgid "Enable UDPXY support"
+msgstr "Autoriser le support UDPXY"
+
+msgctxt "SettingsBackend|"
+msgid "Router IP or name:"
+msgstr "Nom ou IP du routeur :"
+
+msgctxt "SettingsBackend|"
+msgid "Router port:"
+msgstr "Port du routeur :"
+
+#, qt-format
+msgctxt "SettingsBackend|"
+msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+msgstr "<i>Ceci convertira les URLs dans le fichier de liste de %1 en %2.</i>"
+
+msgctxt "SettingsEdit|"
+msgid "Settings"
+msgstr "Préférences"
+
+msgctxt "SettingsEdit|"
+msgid "General"
+msgstr "Général"
+
+msgctxt "SettingsEdit|"
+msgid "Interface"
+msgstr "Interface"
+
+msgctxt "SettingsEdit|"
+msgid "Playback"
+msgstr "Relecture"
+
+msgctxt "SettingsEdit|"
+msgid "Recorder"
+msgstr "Enregistreur"
+
+msgctxt "SettingsEdit|"
+msgid "Shortcuts"
+msgstr "Raccourcis"
+
+msgctxt "SettingsEdit|"
+msgid "Schedule"
+msgstr "Calendrier"
+
+msgctxt "SettingsGeneral|"
+msgid "Tano"
+msgstr "Tano"
+
+msgctxt "SettingsGeneral|"
+msgid "Run First run wizard after restart"
+msgstr "Relancer l'assistant après le redémarrage"
+
+msgctxt "SettingsGeneral|"
+msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+msgstr ""
+"<i>Remarque : Ces préférences sont partagées avec toutes les applications "
+"Tano.</i>"
+
+msgctxt "SettingsGeneral|"
+msgid "Language"
+msgstr "Langue"
+
+msgctxt "SettingsGeneral|"
+msgid "System default language"
+msgstr "Langue du système"
+
+msgctxt "SettingsGeneral|"
+msgid "Custom language"
+msgstr "langue personnalisée"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Session store"
+msgstr "Pour la prochaine session"
+
+msgctxt "SettingsGeneral|"
+msgid "Remember volume"
+msgstr "Mémoriser le volume"
+
+msgctxt "SettingsGeneral|"
+msgid "Autoplay last channel"
+msgstr "Lire la dernière chaîne"
+
+msgctxt "SettingsGeneral|"
+msgid "You are using Tano Editor version:"
+msgstr "Vous utilisez la version de l'éditeurt de Tano :"
+
+msgctxt "SettingsGeneral|"
+msgid "You are using Tano version:"
+msgstr "Vous utilisez la version de Tano :"
+
+msgctxt "SettingsGeneral|"
+msgid "Default channel list"
+msgstr "Liste de chaînes par défaut"
+
+msgctxt "SettingsPage|"
+msgid "Set <i>Tano</i>"
+msgstr "Positionner <i>Tano</i>"
+
+msgctxt "SettingsPage|"
+msgid "Please select session, backend and other settings."
+msgstr "Veuillez sélectionner la session, le lecteur et d'autres préférences."
+
+msgctxt "SettingsPage|"
+msgid "<b>Session settings</b>"
+msgstr "Préférences de session</b>"
+
+msgctxt "SettingsPage|"
+msgid "Remember volume"
+msgstr "Mémoriser le volume"
+
+msgctxt "SettingsPage|"
+msgid "Autoplay last channel"
+msgstr "Lire la dernière chaîne"
+
+msgctxt "SettingsPage|"
+msgid "Use global VLC settings"
+msgstr "Utiliser les préférences globales VLC"
+
+msgctxt "SettingsPage|"
+msgid "<b>Default channel list</b>"
+msgstr "<b>Liste de chaînes par défaut</b>"
+
+msgctxt "SettingsPage|"
+msgid "<b>Playback</b>"
+msgstr "<b>Relecture</b>"
+
+msgctxt "SettingsRecorder|"
+msgid "Default recording directory"
+msgstr "Répertoire des enregistrments par défaut"
+
+msgctxt "SettingsSchedule|"
+msgid "Select desired XMLTV grabber from the list below:"
+msgstr "Sélectionnez le grabber XMLTV dans la liste ci-dessous :"
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV settings"
+msgstr "Préférences XMLTV"
+
+msgctxt "SettingsSchedule|"
+msgid "Custom grabber output:"
+msgstr "Sortie grabber personnalisée :"
+
+msgctxt "SettingsSchedule|"
+msgid "Custom"
+msgstr "Personnalisé"
+
+msgctxt "SettingsShortcuts|"
+msgid "Action"
+msgstr "Action"
+
+msgctxt "SettingsShortcuts|"
+msgid "Key"
+msgstr "Raccourci"
+
+msgctxt "SettingsShortcuts|"
+msgid "Stop"
+msgstr "Stop"
+
+msgctxt "SettingsShortcuts|"
+msgid "Next channel"
+msgstr "Chaîne suivante"
+
+msgctxt "SettingsShortcuts|"
+msgid "Previous channel"
+msgstr "Chaîne précédente"
+
+msgctxt "SettingsShortcuts|"
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+msgctxt "SettingsShortcuts|"
+msgid "Toggle Info Widget"
+msgstr "Basculer vers l'information du widget"
+
+msgctxt "SettingsShortcuts|"
+msgid "Toggle Controls Widget"
+msgstr "Basculer vers le contrôle du widget"
+
+msgctxt "SettingsShortcuts|"
+msgid "Mute"
+msgstr "Couper"
+
+msgctxt "SettingsShortcuts|"
+msgid "Volume up"
+msgstr "Augmenter le volume"
+
+msgctxt "SettingsShortcuts|"
+msgid "Volume down"
+msgstr "Diminuer le volume"
+
+msgctxt "SettingsShortcuts|"
+msgid "Recorder"
+msgstr "Enregistreur"
+
+msgctxt "SettingsShortcuts|"
+msgid "Open File"
+msgstr "Ouvrir le fichier"
+
+msgctxt "SettingsShortcuts|"
+msgid "Open URL"
+msgstr "Ouvrir une URL"
+
+msgctxt "SettingsShortcuts|"
+msgid "Open Channel list"
+msgstr "Ouvrir une liste de chaînes"
+
+msgctxt "SettingsShortcuts|"
+msgid "Edit Channel list"
+msgstr "Modifier la liste de chaînes"
+
+msgctxt "SettingsShortcuts|"
+msgid "Settings"
+msgstr "Préférences"
+
+msgctxt "SettingsShortcuts|"
+msgid "Always on top"
+msgstr "Toujours au premier plan"
+
+msgctxt "SettingsShortcuts|"
+msgid "Simple Mode"
+msgstr "Mode simplifié"
+
+msgctxt "SettingsShortcuts|"
+msgid "Hide to tray"
+msgstr "Minimiser dans le tableau de bord"
+
+msgctxt "SettingsShortcuts|"
+msgid "Next audio track"
+msgstr "Piste audio suivante"
+
+msgctxt "SettingsShortcuts|"
+msgid "Next video track"
+msgstr "Piste vidéo suivante"
+
+msgctxt "SettingsShortcuts|"
+msgid "Next subtitle track"
+msgstr "Piste de sous-titres suivante"
+
+msgctxt "SettingsShortcuts|"
+msgid "Next aspect ratio mode"
+msgstr "Mode de proportion suivante"
+
+msgctxt "SettingsShortcuts|"
+msgid "Next crop mode"
+msgstr "Mode de découpage suivant"
+
+msgctxt "SettingsShortcuts|"
+msgid "Next deinterlace mode"
+msgstr "Mode de désentrelacement suivant"
+
+msgctxt "SettingsShortcuts|"
+msgid "Set"
+msgstr "Positionner"
+
+msgctxt "SettingsShortcuts|"
+msgid "Play / Pause"
+msgstr "Lire / pause"
+
+msgctxt "SettingsShortcuts|"
+msgid "Enable Info OSD in Fullscreen mode"
+msgstr "Panneau d'information OSD en mode plein écran"
+
+msgctxt "SettingsShortcuts|"
+msgid "Teletext"
+msgstr "Teletexte"
+
+msgctxt "SettingsShortcuts|"
+msgid "Defaults"
+msgstr "Defauts"
+
+msgctxt "SettingsUi|"
+msgid "General Interface Settings"
+msgstr "Préférences de l'interface"
+
+msgctxt "SettingsUi|"
+msgid "Toolbar style:"
+msgstr "Style de la barre d'outil :"
+
+msgctxt "SettingsUi|"
+msgid "Icon only"
+msgstr "Icone seulement"
+
+msgctxt "SettingsUi|"
+msgid "Text only"
+msgstr "Texte seulement"
+
+msgctxt "SettingsUi|"
+msgid "Text beside icon"
+msgstr "Texte à coté de l'icone"
+
+msgctxt "SettingsUi|"
+msgid "Text under icon"
+msgstr "Texte sous l'icone"
+
+msgctxt "SettingsUi|"
+msgid "System default"
+msgstr "Par défaut"
+
+msgctxt "SettingsUi|"
+msgid "Enable OSD in Fullscreen mode"
+msgstr "Permettre l'OSD en mode plein écran"
+
+msgctxt "SettingsUi|"
+msgid "Mouse wheel function:"
+msgstr "Fonction de la molette :"
+
+msgctxt "SettingsUi|"
+msgid "Change channel"
+msgstr "Changement de chaîne"
+
+msgctxt "SettingsUi|"
+msgid "Change volume"
+msgstr "Changement du volume"
+
+msgctxt "SettingsUi|"
+msgid "Minimise to tray"
+msgstr "Minimiser dans le tableau de bord"
+
+msgctxt "SettingsUi|"
+msgid "Enable Info OSD in Fullscreen mode"
+msgstr "Panneau d'information OSD en mode plein écran"
+
+msgctxt "SettingsUi|"
+msgid "Default options for startup"
+msgstr "Options par défaut au démarrage"
+
+msgctxt "SettingsUi|"
+msgid "Show splash screen"
+msgstr "Afficher le pré-écran"
+
+msgctxt "SettingsUi|"
+msgid "Simple mode"
+msgstr "Mode simplifié"
+
+msgctxt "SettingsUi|"
+msgid "Always on top"
+msgstr "Toujours au premier plan"
+
+msgctxt "SettingsUi|"
+msgid "Controls enabled"
+msgstr "Contrôles"
+
+msgctxt "SettingsUi|"
+msgid "Info panel enabled"
+msgstr "Panneau d'information"
+
+msgctxt "TeletextWidget|"
+msgid "Teletext"
+msgstr "Télétexte"
+
+msgctxt "TeletextWidget|"
+msgid "Teletext Transparency"
+msgstr "Transparence du télétexte"
+
+msgctxt "Timer|"
+msgid "Active"
+msgstr "Actif"
+
+msgctxt "Timer|"
+msgid "Disabled or expired"
+msgstr "Invalide ou expiré"
+
+msgctxt "TimersDisplayWidget|"
+msgid "Clear"
+msgstr "Éffacer"
+
+msgctxt "TimersDisplayWidget|"
+msgid "Search:"
+msgstr "Rechercher :"
+
+msgctxt "TimersEdit|"
+msgid "Timers"
+msgstr "Programmateurs"
+
+msgctxt "TimersEdit|"
+msgid "Create"
+msgstr "Créé"
+
+msgctxt "TimersEdit|"
+msgid "Name:"
+msgstr "Nom :"
+
+msgctxt "TimersEdit|"
+msgid "Select a channel from the list below:"
+msgstr "Sélectionnez une chaîne dans la liste ci-dessous :"
+
+msgctxt "TimersEdit|"
+msgid "Editor"
+msgstr "Éditeur"
+
+msgctxt "TimersEdit|"
+msgid "Channel:"
+msgstr "Chaîne :"
+
+msgctxt "TimersEdit|"
+msgid "Playlist:"
+msgstr "Liste de lecture :"
+
+msgctxt "TimersEdit|"
+msgid "Date:"
+msgstr "Date :"
+
+msgctxt "TimersEdit|"
+msgid "Start time:"
+msgstr "Début :"
+
+msgctxt "TimersEdit|"
+msgid "End time:"
+msgstr "Fin :"
+
+msgctxt "TimersEdit|"
+msgid "dd.MM.yyyy"
+msgstr "jj.MM.aaaa"
+
+msgctxt "TimersEdit|"
+msgid "Disabled:"
+msgstr "Dévalidé :"
+
+msgctxt "TimersEdit|"
+msgid "Url:"
+msgstr "Url :"
+
+msgctxt "TimersEdit|"
+msgid "New Task"
+msgstr "Nouvelle tâche"
+
+msgctxt "TimersEdit|"
+msgid "Delete Task"
+msgstr "Supprimer la tâche"
+
+msgctxt "TimersEdit|"
+msgid "Save and Close"
+msgstr "Enregistrer et fermer"
+
+msgctxt "TimersEdit|"
+msgid "Close"
+msgstr "Fermer"
+
+msgctxt "TimersEdit|"
+msgid "Timers Editor"
+msgstr "Éditeur de programmation"
+
+msgctxt "TimersEdit|"
+msgid ""
+"Do you want close the editor?\n"
+"You changes will not be applied."
+msgstr ""
+"Voulez-vous fermer l'éditeur ?\n"
+"Vos changements ne seront pas appliqués."
+
+msgctxt "TimersEdit|"
+msgid "Tano"
+msgstr "Tano"
+
+msgctxt "TimersEdit|"
+msgid "Timer with this name already exists. Please select another name."
+msgstr ""
+"Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom."
+
+#, qt-format
+msgctxt "TimersEdit|"
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+"Ne peut lire le fichier %1 :\n"
+"%2."
+
+#, qt-format
+msgctxt "TimersEdit|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+"Ne peut écrire le fichier %1 :\n"
+"%2."
+
+msgctxt "TimersEdit|"
+msgid "Type:"
+msgstr "Type :"
+
+msgctxt "TimersEdit|"
+msgid "Once"
+msgstr "Une fois"
+
+msgctxt "TimersEdit|"
+msgid "Daily"
+msgstr "Tous les jours"
+
+msgctxt "TimersEdit|"
+msgid "Weekly"
+msgstr "Toutes les semaines"
+
+msgctxt "TimersEdit|"
+msgid ""
+"<i>Timers must not overlap! This will be automatically checked in the "
+"future.</i>"
+msgstr ""
+"<i>Les programmations ne doivent pas se chevaucher ! Ceci sera "
+"automatiquement vérifié prochainement.</i>"
+
+msgctxt "TimersEdit|"
+msgid "hh:mm:ss"
+msgstr "hh:mm:ss"
+
+msgctxt "TimersEdit|"
+msgid "Please enter a name and select a channel from the list."
+msgstr "Veuillez donner un nom et sélectionner une chaîne de la liste."
+
+msgctxt "TrayIcon|"
+msgid "Tano"
+msgstr "Tano"
+
+msgctxt "TrayIcon|"
+msgid "Playing:"
+msgstr "Lecture :"
+
+msgctxt "TrayIcon|"
+msgid "Recording:"
+msgstr "Enregistrement :"
+
+msgctxt "TrayIcon|"
+msgid "Recorder"
+msgstr "Enregistreur"
+
+msgctxt "TrayIcon|"
+msgid "Tano stopped recording"
+msgstr "Arret de l'enregistrement"
+
+#, qt-format
+msgctxt "TrayIcon|"
+msgid ""
+"Tano is recording %1 to\n"
+"%2\n"
+"Stop manually!"
+msgstr ""
+"Enregistrement de %1 vers\n"
+"%2\n"
+"Arrétez manuellement !"
+
+#, qt-format
+msgctxt "TrayIcon|"
+msgid ""
+"Tano is recording %1 to\n"
+"%2\n"
+"End time: %3"
+msgstr ""
+"Enregistrement de %1 vers\n"
+"%2\n"
+"Fin de l'enregistrement : %3"
+
+msgctxt "UpdateDialog|"
+msgid "Update Information"
+msgstr "Mise à jour des informations"
+
+msgctxt "UpdateDialog|"
+msgid "<h3>You are using latest version of Tano!</h3>"
+msgstr "<h3>Vous avez la dernière version de Tano ! </h3>"
+
+msgctxt "UpdateDialog|"
+msgid "Current version:"
+msgstr "Version actuelle :"
+
+msgctxt "UpdateDialog|"
+msgid "<h3>You are using development version of Tano!</h3>"
+msgstr "<h3>Vous utilisez une version de développement de Tano !</h3>"
+
+msgctxt "UpdateDialog|"
+msgid "Stable version:"
+msgstr "Version stable :"
+
+msgctxt "UpdateDialog|"
+msgid "<h3>Your version of Tano needs to be updated!</h3>"
+msgstr "<h3>Votre version de Tano a besoin d'être mise à jour !</h3>"
+
+msgctxt "UpdateDialog|"
+msgid "Date released:"
+msgstr "Date de la version :"
+
+msgctxt "UpdateDialog|"
+msgid "Information:"
+msgstr "Information :"
+
+msgctxt "UpdateDialog|"
+msgid "Download now!"
+msgstr "Téléchargement maintenant !"
