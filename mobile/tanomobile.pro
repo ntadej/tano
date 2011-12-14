@@ -42,10 +42,16 @@ symbian:TARGET.UID3 = 0xEBABAB0D
 # Allow network access on Symbian
 symbian:TARGET.CAPABILITY += NetworkServices
 
+# Add Qt modules
+QT += network
+
 # If your application uses the Qt Mobility libraries, uncomment the following
 # lines and add the respective components to the MOBILITY variable.
 # CONFIG += mobility
 # MOBILITY +=
+
+# Speed up launching on MeeGo/Harmattan when using applauncherd daemon
+CONFIG += qdeclarative-boostable
 
 # Add dependency to symbian components
 # CONFIG += qtquickcomponents
@@ -120,4 +126,5 @@ OTHER_FILES += \
     qtc_packaging/debian_harmattan/copyright \
     qtc_packaging/debian_harmattan/control \
     qtc_packaging/debian_harmattan/compat \
-    qtc_packaging/debian_harmattan/changelog
+    qtc_packaging/debian_harmattan/changelog \
+    qtc_packaging/debian_harmattan/tanomobile.aegis

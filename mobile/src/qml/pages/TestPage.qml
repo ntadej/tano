@@ -2,6 +2,10 @@
 * Tano - An Open IP TV Player
 * Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
+* This file was based on the examples of the Qt Toolkit.
+* Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
+* Contact: Qt Software Information (qt-info@nokia.com)
+*
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
@@ -17,22 +21,34 @@
 *****************************************************************************/
 
 import QtQuick 1.1
+import Qt 4.7
+import QtMultimediaKit 1.1
+import com.nokia.meego 1.0
 
-ListModel {
-    id: homePagesModel
-    ListElement {
-        page: "ChannelsPage.qml"
-        title: "Schedule"
-        subtitle: "Description"
+import "../common"
+import "../test"
+
+Page {
+    id: settingsPage
+    anchors.topMargin: settingsHeader.height
+    tools: ToolBarLayout {
+        id: toolBarSettings
+        ToolIconBack { }
+        ButtonOrientation { }
+        ToolIconMenu { }
     }
-    ListElement {
-        page: "SettingsPage.qml"
+    
+    Video {
+         id: video
+         anchors.fill: parent
+         width: parent.width
+         height: parent.height - settingsHeader.height
+         source: "http://192.168.1.50:1234/udp/232.4.1.1:5002"
+    }
+
+    PageHeader {
+        id: settingsHeader
+
         title: "Settings"
-        subtitle: "Description"
-    }
-    ListElement {
-        page: "TestPage.qml"
-        title: "Test Page"
-        subtitle: "Test"
     }
 }

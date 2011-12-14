@@ -1,0 +1,7 @@
+<aegis>
+    <request>
+        <credential name="GRP::video" />
+        <credential name="GRP::pulse-access" />
+        <for path="/opt/tanomobile/bin/tanomobile" />
+    </request>
+</aegis>
