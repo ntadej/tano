@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,9 +21,7 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>
 
-#if !MOBILE
-    #include "Config.h"
-#endif
+#include "Config.h"
 #include "core/Common.h"
 #include "core/Settings.h"
 
@@ -112,11 +110,6 @@ QString Tano::locateResource(const QString &file)
 #ifdef Q_WS_X11
     else if (QFileInfo("/usr/bin/" + file).exists())
         path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
-#endif
-
-#if MOBILE
-    else if (QFileInfo("/opt/tanomobile/share/" + file).exists())
-        path = QFileInfo("/opt/tanomobile/share/" + file).absoluteFilePath();
 #endif
 
 #ifdef DEFAULT_DATA_DIR

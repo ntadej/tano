@@ -30,12 +30,6 @@ QString Tano::Xmltv::dateFormatDisplay()
     return format;
 }
 
-QString Tano::Xmltv::dateFormatMobile()
-{
-    QString format = "dd.MM.";
-    return format;
-}
-
 QRegExp Tano::Xmltv::dateRegExp()
 {
     QRegExp exp = QRegExp(" .[0-9][0-9][0-9][0-9]");

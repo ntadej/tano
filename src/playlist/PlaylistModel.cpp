@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if !MOBILE
-    #include "Config.h"
-#endif
+#include "Config.h"
 #include "container/core/Channel.h"
 #include "playlist/PlaylistOpen.h"
-#if !MOBILE
-    #include "playlist/PlaylistSave.h"
-#endif
+#include "playlist/PlaylistSave.h"
 
 #include "PlaylistModel.h"
 

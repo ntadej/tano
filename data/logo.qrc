@@ -1,28 +1,14 @@
 <RCC>
     <qresource prefix="/">
-        <file>logo/14x14/logo-daemon.png</file>
         <file>logo/14x14/logo-editor.png</file>
-        <file>logo/14x14/logo-mobile.png</file>
         <file>logo/14x14/logo.png</file>
-        <file>logo/48x48/logo-daemon.png</file>
         <file>logo/48x48/logo-editor.png</file>
-        <file>logo/48x48/logo-mobile.png</file>
         <file>logo/48x48/logo.png</file>
-        <file>logo/64x64/logo-daemon.png</file>
         <file>logo/64x64/logo-editor.png</file>
-        <file>logo/64x64/logo-mobile.png</file>
         <file>logo/64x64/logo.png</file>
-        <file>logo/80x80/logo-daemon.png</file>
-        <file>logo/80x80/logo-editor.png</file>
-        <file>logo/80x80/logo-mobile.png</file>
-        <file>logo/80x80/logo.png</file>
-        <file>logo/128x128/logo-daemon.png</file>
         <file>logo/128x128/logo-editor.png</file>
-        <file>logo/128x128/logo-mobile.png</file>
         <file>logo/128x128/logo.png</file>
-        <file>logo/256x256/logo-daemon.png</file>
         <file>logo/256x256/logo-editor.png</file>
-        <file>logo/256x256/logo-mobile.png</file>
         <file>logo/256x256/logo.png</file>
     </qresource>
 </RCC>
