@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -131,13 +131,11 @@ SET(QT_SINGLE_APPLICATION "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/libqtsing
 ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(daemon)
 ADD_SUBDIRECTORY(editor)
 
 SET(Tano_Files
     LICENSE.GPL
     data/logo/64x64/logo.png
-    data/logo/64x64/logo-daemon.png
     data/logo/64x64/logo-editor.png
 )
 
@@ -169,11 +167,9 @@ IF(MINGW)
     STRING(REGEX REPLACE "\\\\" "/" LIBVLCQT_INCLUDE_DIR "${LIBVLCQT_INCLUDE_DIR}")
     STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
     STRING(REGEX REPLACE "bin" "plugins" QT_PLUGINS_DIR "${QT_BIN_DIR}")
-    STRING(REGEX REPLACE "bin" "etc/dbus-1" DBUS_ETC_DIR "${QT_BIN_DIR}")
 
     SET(Tano_Qt_Lib
         ${QT_BIN_DIR}/QtCore4.dll
-        ${QT_BIN_DIR}/QtDBus4.dll
         ${QT_BIN_DIR}/QtGui4.dll
         ${QT_BIN_DIR}/QtNetwork4.dll
         ${QT_BIN_DIR}/QtSvg4.dll
@@ -182,15 +178,6 @@ IF(MINGW)
         ${QT_BIN_DIR}/ssleay32.dll
     )
     FILE(GLOB Tano_Qt_Plugins ${QT_PLUGINS_DIR}/imageformats/*.dll)
-    SET(Tano_Dbus_Bin
-        ${QT_BIN_DIR}/dbus-daemon.exe
-        ${QT_BIN_DIR}/libdbus-1.dll
-        ${QT_BIN_DIR}/libexpat.dll
-    )
-    SET(Tano_Dbus_Config
-        ${DBUS_ETC_DIR}/session.conf
-        ${DBUS_ETC_DIR}/system.conf
-    )
     SET(Tano_Vlc_Libs
         ${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
         ${LIBVLCQT_BIN_DIR}/libvlc.dll
@@ -211,8 +198,6 @@ IF(MINGW)
     INSTALL(FILES ${Tano_Installer_Theme} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows/installer-theme")
     INSTALL(FILES ${Tano_Qt_Lib} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
     INSTALL(FILES ${Tano_Qt_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
-    INSTALL(FILES ${Tano_Dbus_Bin} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-    INSTALL(FILES ${Tano_Dbus_Config} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/etc/dbus-1")
     INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
     INSTALL(FILES ${Tano_Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/vlc/plugins")
 ENDIF(MINGW)

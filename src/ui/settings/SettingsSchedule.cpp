@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 #include "core/Settings.h"
 
 #if !EDITOR
-    #include "epg/XmltvController.h"
+    #include "xmltv/XmltvSystem.h"
 #endif
 
 #include "SettingsSchedule.h"
@@ -37,7 +37,7 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
     connect(ui->comboGrabber, SIGNAL(currentIndexChanged(QString)), this, SLOT(processGrabber(QString)));
 
 #if !EDITOR
-    _controller = new XmltvController(this);
+    _xmltv = new XmltvSystem();
     listGrabbers();
 #endif
 }
@@ -46,7 +46,7 @@ SettingsSchedule::~SettingsSchedule()
 {
     delete ui;
 #if !EDITOR
-    delete _controller;
+    delete _xmltv;
 #endif
 }
 
@@ -65,7 +65,7 @@ void SettingsSchedule::changeEvent(QEvent *e)
 void SettingsSchedule::listGrabbers()
 {
 #if !EDITOR
-    QStringList grabbers = _controller->grabbers();
+    QStringList grabbers = _xmltv->grabbers();
 
     ui->comboGrabber->clear();
 

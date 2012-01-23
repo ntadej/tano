@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,22 +16,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#ifndef TANO_XMLTVCHANNELSMODEL_H_
+#define TANO_XMLTVCHANNELSMODEL_H_
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+#include "core/ListModel.h"
 
-// Editor VLC-Qt support
-#if EDITOR
-    #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
-#else
-    #define WITH_EDITOR_VLCQT 1
-#endif
+class XmltvChannel;
 
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
+class XmltvChannelsModel : public ListModel
+{
+Q_OBJECT
+public:
+    XmltvChannelsModel(QObject *parent = 0);
+    ~XmltvChannelsModel();
 
-#endif // TANO_CONFIG_H_
+    XmltvChannel *find(const QString &id) const;
+    XmltvChannel *row(const int &row);
+    XmltvChannel *takeRow(const int &row);
+};
+
+#endif // TANO_XMLTVCHANNELSMODEL_H_

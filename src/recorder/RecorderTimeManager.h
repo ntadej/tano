@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,22 +16,37 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#ifndef TANO_RECORDERTIMEMANAGER_H_
+#define TANO_RECORDERTIMEMANAGER_H_
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+#include <QtCore/QList>
+#include <QtCore/QTimer>
 
-// Editor VLC-Qt support
-#if EDITOR
-    #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
-#else
-    #define WITH_EDITOR_VLCQT 1
-#endif
+class Timer;
+class TimersModel;
 
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
+class RecorderTimeManager : public QObject
+{
+Q_OBJECT
+public:
+    RecorderTimeManager(QObject *parent = 0);
+    ~RecorderTimeManager();
 
-#endif // TANO_CONFIG_H_
+    void updateTimers();
+
+signals:
+    void timer(Timer *);
+
+private slots:
+    void check();
+
+private:
+    void readTimers();
+
+    QString _path;
+
+    QTimer *_timer;
+    TimersModel *_model;
+};
+
+#endif // TANO_RECORDERTIMEMANAGER_H_

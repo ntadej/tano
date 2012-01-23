@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,12 +20,11 @@
 #include <QtGui/QMessageBox>
 
 #include "container/core/Channel.h"
-#include "core/DaemonManager.h"
 #include "core/Enums.h"
 #include "core/Settings.h"
 #include "core/Udpxy.h"
 #include "playlist/PlaylistModel.h"
-#include "recorder/RecorderController.h"
+#include "recorder/RecorderCore.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/recorder/TimersEdit.h"
 
@@ -44,8 +43,7 @@ Recorder::Recorder(QWidget *parent)
     ui->setupUi(this);
     ui->browseDirectory->setType(Tano::Directory);
 
-    _controller = new RecorderController(this);
-    _daemon = new DaemonManager(this);
+    _core = new RecorderCore(this);
 
     _udpxy = new Udpxy();
 
@@ -54,17 +52,16 @@ Recorder::Recorder(QWidget *parent)
 
 	connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
 
-    connect(_controller, SIGNAL(elapsed(int)), this, SLOT(time(int)));
-    connect(_controller, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
-    connect(_controller, SIGNAL(timerStop()), this, SLOT(timerStop()));
+    connect(_core, SIGNAL(elapsed(int)), this, SLOT(time(int)));
+    connect(_core, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
+    connect(_core, SIGNAL(timerStop()), this, SLOT(timerStop()));
 }
 
 Recorder::~Recorder()
 {
     delete ui;
 
-    delete _controller;
-    delete _daemon;
+    delete _core;
 }
 
 void Recorder::changeEvent(QEvent *e)
@@ -86,13 +83,13 @@ void Recorder::createSettings()
     ui->browseDirectory->setValue(settings->recorderDirectory());
     delete settings;
 
-    _controller->refreshSettings();
+    _core->settings();
     _udpxy->createSettings();
 }
 
 void Recorder::stop()
 {
-    _controller->stop();
+    _core->stop();
 }
 
 void Recorder::playlist(Channel *channel)
@@ -115,23 +112,23 @@ void Recorder::record(const bool &status)
                         tr("Cannot write to %1.")
                         .arg(ui->browseDirectory->value()));
             return;
-        } else if(ui->valueSelected->text().isEmpty() && !_controller->isTimer()) {
+        } else if(ui->valueSelected->text().isEmpty() && !_core->isTimer()) {
             ui->buttonRecord->setChecked(false);
             QMessageBox::critical(this, tr("Recorder"),
                         tr("Channel is not selected!"));
             return;
         }
 
-        if(!_controller->isTimer()) {
-            _controller->record(_name, _url, ui->browseDirectory->value());
+        if(!_core->isTimer()) {
+            _core->record(_name, _url, ui->browseDirectory->value());
         }
 
         ui->valueCurrent->setText(_name);
-        if(_controller->isTimer())
-            ui->valueEndTime->setText(_controller->timerEndTime());
+        if(_core->isTimer())
+            ui->valueEndTime->setText(_core->timerEndTime());
         else
             ui->valueEndTime->setText(tr("No timer - press button to stop."));
-        ui->valueFile->setText(_controller->output());
+        ui->valueFile->setText(_core->output());
 
         ui->buttonRecord->setText(tr("Stop recording"));
         if(_actionRecord)
@@ -139,13 +136,13 @@ void Recorder::record(const bool &status)
 
         if(_trayIcon) {
             _trayIcon->changeToolTip(Tano::Record, _name);
-            if(_controller->isTimer())
-                _trayIcon->message(Tano::Record, QStringList() << _name << _controller->output() << ui->valueEndTime->text());
+            if(_core->isTimer())
+                _trayIcon->message(Tano::Record, QStringList() << _name << _core->output() << ui->valueEndTime->text());
             else
-                _trayIcon->message(Tano::Record, QStringList() << _name << _controller->output());
+                _trayIcon->message(Tano::Record, QStringList() << _name << _core->output());
         }
     } else {
-        _controller->stop();
+        _core->stop();
 
         ui->valueCurrent->setText("");
         ui->valueTime->setText("");
@@ -171,7 +168,7 @@ void Recorder::recordNow(const QString &name,
 
     ui->valueSelected->setText("<b>" + name + "</b>");
 
-    if(!_controller->isRecording())
+    if(!_core->isRecording())
         ui->buttonRecord->toggle();
 }
 
@@ -180,7 +177,7 @@ void Recorder::time(const int &time)
     ui->valueTime->setText(QTime().addMSecs(time).toString("hh:mm:ss"));
 
     if(ui->valueCurrent->text().isEmpty()) {
-        _controller->timerInfo();
+        _core->timerInfo();
     }
 }
 
@@ -208,7 +205,7 @@ void Recorder::setTrayIcon(TrayIcon *icon)
 
 bool Recorder::isRecording() const
 {
-    return _controller->isRecording();
+    return _core->isRecording();
 }
 
 void Recorder::showTimersEditor()
@@ -219,12 +216,12 @@ void Recorder::showTimersEditor()
         } else {
             delete _editor;
             _editor = new TimersEdit(_model, this);
-            connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
+            connect(_editor, SIGNAL(updateTimers()), _core, SLOT(refreshTimers()));
             _editor->show();
         }
     } else {
         _editor = new TimersEdit(_model, this);
-        connect(_editor, SIGNAL(updateTimers()), _controller, SLOT(refreshTimers()));
+        connect(_editor, SIGNAL(updateTimers()), _core, SLOT(refreshTimers()));
         _editor->show();
     }
 }

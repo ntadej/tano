@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,22 +16,20 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#ifndef TANO_XMLTVCREWFILTERMODEL_H_
+#define TANO_XMLTVCREWFILTERMODEL_H_
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+#include <QtGui/QSortFilterProxyModel>
 
-// Editor VLC-Qt support
-#if EDITOR
-    #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
-#else
-    #define WITH_EDITOR_VLCQT 1
-#endif
+class XmltvCrewFilterModel : public QSortFilterProxyModel
+{
+Q_OBJECT
+public:
+    XmltvCrewFilterModel(QObject *parent = 0);
+    ~XmltvCrewFilterModel();
 
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
+protected:
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
+};
 
-#endif // TANO_CONFIG_H_
+#endif // TANO_XMLTVCREWFILTERMODEL_H_

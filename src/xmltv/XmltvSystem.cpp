@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,22 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#include <QtCore/QProcess>
+#include <QtCore/QTextCodec>
+#include <QtCore/QTextStream>
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+#include "xmltv/XmltvSystem.h"
 
-// Editor VLC-Qt support
-#if EDITOR
-    #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
-#else
-    #define WITH_EDITOR_VLCQT 1
-#endif
+XmltvSystem::XmltvSystem() { }
 
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
+XmltvSystem::~XmltvSystem() { }
 
-#endif // TANO_CONFIG_H_
+QStringList XmltvSystem::grabbers() const
+{
+    QProcess p;
+    p.start("tv_find_grabbers");
+    p.waitForFinished(-1);
+
+    QStringList list;
+    QTextStream in(&p);
+    in.setCodec(QTextCodec::codecForName("UTF-8"));
+    while (!in.atEnd()) {
+        list << in.readLine();
+    }
+
+    return list;
+}

@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -71,17 +71,10 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     core/ListModel.h
     core/Print.h
     core/UpdateManager.h
-    epg/XmltvChannelsFilterModel.h
-    epg/XmltvChannelsModel.h
-    epg/XmltvController.h
-    epg/XmltvCrewFilterModel.h
-    epg/XmltvCrewModel.h
-    epg/XmltvManager.h
-    epg/XmltvProgrammeFilterModel.h
-    epg/XmltvProgrammeModel.h
     playlist/PlaylistFilterModel.h
     playlist/PlaylistModel.h
-    recorder/RecorderController.h
+    recorder/RecorderCore.h
+    recorder/RecorderTimeManager.h
     recorder/TimersFilterModel.h
     recorder/TimersModel.h
     ui/MainWindow.h
@@ -125,6 +118,13 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/wizard/FirstRunWizard.h
     ui/wizard/IntroPage.h
     ui/wizard/SettingsPage.h
+    xmltv/XmltvChannelsFilterModel.h
+    xmltv/XmltvChannelsModel.h
+    xmltv/XmltvCrewFilterModel.h
+    xmltv/XmltvCrewModel.h
+    xmltv/XmltvManager.h
+    xmltv/XmltvProgrammeFilterModel.h
+    xmltv/XmltvProgrammeModel.h
 )
 
 SET(Tano_Resrcs
@@ -150,7 +150,6 @@ SET(Tano_Core_Srcs
     core/Arguments.cpp
     core/ChannelSelect.cpp
     core/Common.cpp
-    core/DaemonManager.cpp
     core/Enums.cpp
     core/GetFile.cpp
     core/ListItem.h
@@ -162,19 +161,6 @@ SET(Tano_Core_Srcs
     core/Udpxy.cpp
     core/UpdateHandler.cpp
     core/UpdateManager.cpp
-)
-SET(Tano_Epg_Srcs
-    epg/XmltvChannelsFilterModel.cpp
-    epg/XmltvChannelsModel.cpp
-    epg/XmltvCommon.cpp
-    epg/XmltvController.cpp
-    epg/XmltvCrewFilterModel.cpp
-    epg/XmltvCrewModel.cpp
-    epg/XmltvEnums.cpp
-    epg/XmltvHandler.cpp
-    epg/XmltvManager.cpp
-    epg/XmltvProgrammeFilterModel.cpp
-    epg/XmltvProgrammeModel.cpp
 )
 SET(Tano_Playlist_Srcs
     playlist/PlaylistFilterModel.cpp
@@ -192,7 +178,8 @@ SET(Tano_Playlist_Srcs
     playlist/handlers/TanoHandlerOld.cpp
 )
 SET(Tano_Recorder_Srcs
-    recorder/RecorderController.cpp
+    recorder/RecorderCore.cpp
+    recorder/RecorderTimeManager.cpp
     recorder/TimersGenerator.cpp
     recorder/TimersHandler.cpp
     recorder/TimersFilterModel.cpp
@@ -242,27 +229,37 @@ SET(Tano_UI_Srcs
     ui/wizard/IntroPage.cpp
     ui/wizard/SettingsPage.cpp
 )
+SET(Tano_Xmltv_Srcs
+    xmltv/XmltvChannelsFilterModel.cpp
+    xmltv/XmltvChannelsModel.cpp
+    xmltv/XmltvCommon.cpp
+    xmltv/XmltvCrewFilterModel.cpp
+    xmltv/XmltvCrewModel.cpp
+    xmltv/XmltvEnums.cpp
+    xmltv/XmltvHandler.cpp
+    xmltv/XmltvManager.cpp
+    xmltv/XmltvProgrammeFilterModel.cpp
+    xmltv/XmltvProgrammeModel.cpp
+    xmltv/XmltvSystem.cpp
+)
 
 SET(Tano_Srcs
     main.cpp
 
     ${Tano_Container_Srcs}
     ${Tano_Core_Srcs}
-    ${Tano_Epg_Srcs}
     ${Tano_Playlist_Srcs}
     ${Tano_Recorder_Srcs}
     ${Tano_UI_Srcs}
-
-    ../daemon/DaemonCommon.cpp
+    ${Tano_Xmltv_Srcs}
 )
 
 ################
 # Qt4 settings #
 ################
-# This line adds the QtXML, QtNETWORK and QtDBUS libraries to the Qt libraries
+# This line adds the QtXML and QtNETWORK libraries to the Qt libraries
 SET(QT_USE_QTXML True)
 SET(QT_USE_QTNETWORK True)
-SET(QT_USE_QTDBUS True)
 
 # This scripts runs the resource compiler rcc.
 QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})

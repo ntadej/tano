@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,6 @@
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
 #include "core/Udpxy.h"
-#include "epg/XmltvManager.h"
 #include "playlist/PlaylistModel.h"
 #include "ui/core/FileDialogs.h"
 #include "ui/core/TrayIcon.h"
@@ -59,6 +58,7 @@
 #include "ui/menu/MenuTrackVideo.h"
 #include "ui/playlist/PlaylistEdit.h"
 #include "ui/settings/SettingsEdit.h"
+#include "xmltv/XmltvManager.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,22 +16,25 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#include "container/xmltv/XmltvProgramme.h"
+#include "xmltv/XmltvProgrammeModel.h"
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+XmltvProgrammeModel::XmltvProgrammeModel(QObject *parent)
+    : ListModel(new XmltvProgramme, parent) { }
 
-// Editor VLC-Qt support
-#if EDITOR
-    #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
-#else
-    #define WITH_EDITOR_VLCQT 1
-#endif
+XmltvProgrammeModel::~XmltvProgrammeModel() { }
 
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
+XmltvProgramme *XmltvProgrammeModel::find(const QString &id) const
+{
+    return qobject_cast<XmltvProgramme *>(ListModel::find(id));
+}
 
-#endif // TANO_CONFIG_H_
+XmltvProgramme *XmltvProgrammeModel::row(const int &row)
+{
+    return qobject_cast<XmltvProgramme *>(ListModel::row(row));
+}
+
+XmltvProgramme *XmltvProgrammeModel::takeRow(const int &row)
+{
+    return qobject_cast<XmltvProgramme *>(ListModel::takeRow(row));
+}

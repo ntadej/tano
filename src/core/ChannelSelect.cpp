@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,7 +21,8 @@
 ChannelSelect::ChannelSelect(QWidget *parent,
                              QLCDNumber *number,
                              const QList<int> &list)
-    : _channels(list),
+    : QObject(parent),
+      _channels(list),
       _lcd(number),
       _digit(1)
 {

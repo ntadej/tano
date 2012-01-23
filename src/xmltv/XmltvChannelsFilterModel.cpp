@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,22 +16,20 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#include "container/xmltv/XmltvChannel.h"
+#include "xmltv/XmltvChannelsFilterModel.h"
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+XmltvChannelsFilterModel::XmltvChannelsFilterModel(QObject *parent)
+    : QSortFilterProxyModel(parent) { }
 
-// Editor VLC-Qt support
-#if EDITOR
-    #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
-#else
-    #define WITH_EDITOR_VLCQT 1
-#endif
+XmltvChannelsFilterModel::~XmltvChannelsFilterModel() { }
 
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
+bool XmltvChannelsFilterModel::filterAcceptsRow(int sourceRow,
+                                                const QModelIndex &sourceParent) const
+{
+    QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
-#endif // TANO_CONFIG_H_
+    bool name = sourceModel()->data(index, XmltvChannel::DisplayNameRole).toString().contains(filterRegExp());
+
+    return name;
+}
