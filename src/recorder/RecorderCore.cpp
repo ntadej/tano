@@ -139,7 +139,8 @@ void RecorderCore::settings()
 
 void RecorderCore::stop()
 {
-    _player->stop();
+    if(_player)
+        _player->stop();
 
     _currentEndTime = "";
     _currentName = "";
