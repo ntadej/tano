@@ -1,5 +1,6 @@
-0.9.0 (git)
-  * Single instance support for Tano and Tano Daemon
+1.0.0 (git)
+  * Single instance support for Tano
+  * Recorder (Daemon) merged with main application
   * XMLTV support (Issue #20)
   * Rewritten data models
   * Updated channels scan
