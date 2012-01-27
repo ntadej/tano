@@ -175,6 +175,9 @@ IF(MINGW)
         ${QT_BIN_DIR}/QtSvg4.dll
         ${QT_BIN_DIR}/QtXml4.dll
         ${QT_BIN_DIR}/libeay32.dll
+        ${QT_BIN_DIR}/libgcc_s_dw2-1.dll
+        ${QT_BIN_DIR}/libssl32.dll
+        ${QT_BIN_DIR}/mingwm10.dll
         ${QT_BIN_DIR}/ssleay32.dll
     )
     FILE(GLOB Tano_Qt_Plugins ${QT_PLUGINS_DIR}/imageformats/*.dll)
