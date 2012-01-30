@@ -5,14 +5,14 @@ It was downloaded from http://tano.si
 
 Upstream Author(s):
 
-      Tadej Novak <tadej@tano.si>
+    Tadej Novak <tadej@tano.si>
 
 Copyright:
 
-    Copyright (C) 2008-2011 Tadej Novak
+    Copyright (C) 2008-2012 Tadej Novak
 
 License:
 
-Tano and the Debian packaging are (C) 2008-2011, Tadej Novak <tadej@tano.si> and
-is licensed under the GPL version 3, see `/usr/share/common-licenses/GPL-3'
+Tano and the Debian packaging are (C) 2008-2012, Tadej Novak <tadej@tano.si> and
+are licensed under the GPL version 3, see `/usr/share/common-licenses/GPL-3'
 or `LICENSE.GPL' provided with the source package.

@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -43,7 +43,7 @@ MACRO(QT4_CREATE_PO outfiles)
                 ARGS -if ts -i ${it} -of pot -o ${outfile}
                 MAIN_DEPENDENCY ${it}
             )
-        ELSE(${outfile} STREQUAL "${TEMPLATE}")
+        ELSE(${outfile} STREQUAL ${TEMPLATE})
             SET(outfile ${CMAKE_SOURCE_DIR}/lang/${outfile}.po)
 
             ADD_CUSTOM_COMMAND(
@@ -63,16 +63,19 @@ MACRO(QT4_ADD_TRANSLATIONS outfiles)
     FOREACH (it ${ARGN})
         GET_FILENAME_COMPONENT(it ${it} ABSOLUTE)
         GET_FILENAME_COMPONENT(outfile ${it} NAME_WE)
-        SET(outfile ${CMAKE_BINARY_DIR}/lang/${outfile}.qm)
 
-        ADD_CUSTOM_COMMAND(
-            OUTPUT ${outfile}
-            COMMAND ${QT_LRELEASE_EXECUTABLE}
-            ARGS -compress -silent -nounfinished ${it} -qm ${outfile}
-            MAIN_DEPENDENCY ${it}
-        )
+        IF(NOT ${outfile} STREQUAL ${TEMPLATE})
+            SET(outfile ${CMAKE_BINARY_DIR}/lang/${outfile}.qm)
 
-        SET(${outfiles} ${${outfiles}} ${outfile})
+            ADD_CUSTOM_COMMAND(
+                OUTPUT ${outfile}
+                COMMAND ${QT_LRELEASE_EXECUTABLE}
+                ARGS -compress -silent -nounfinished ${it} -qm ${outfile}
+                MAIN_DEPENDENCY ${it}
+            )
+
+            SET(${outfiles} ${${outfiles}} ${outfile})
+        ENDIF(NOT ${outfile} STREQUAL ${TEMPLATE})
     ENDFOREACH(it)
 ENDMACRO(QT4_ADD_TRANSLATIONS)
 
