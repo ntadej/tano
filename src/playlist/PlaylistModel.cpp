@@ -16,7 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Config.h"
 #include "container/core/Channel.h"
 #include "playlist/PlaylistOpen.h"
 #include "playlist/PlaylistSave.h"
@@ -29,17 +28,13 @@ PlaylistModel::PlaylistModel(QObject *parent)
     _name = QObject::tr("Channel list");
 
     _open = new PlaylistOpen();
-#if !MOBILE
     _save = new PlaylistSave(this);
-#endif
 }
 
 PlaylistModel::~PlaylistModel()
 {
     delete _open;
-#if !MOBILE
     delete _save;
-#endif
 }
 
 Channel *PlaylistModel::find(const QString &id) const
@@ -87,24 +82,22 @@ Channel *PlaylistModel::createChannel(const QString &name,
     return channel;
 }
 
-void PlaylistModel::deleteChannel(Channel *channel)
+Channel *PlaylistModel::deleteChannel(Channel *channel)
 {
     _channelNumbers.removeAll(channel->number());
 
     _numbers.remove(channel->number());
 
-    removeRow(indexFromItem(channel).row());
+    int r = indexFromItem(channel).row();
+    removeRow(r);
+
+    return row(r);
 }
 
 void PlaylistModel::exportTvheadend(const QString &location,
                                     const QString &interface)
 {
-#if !MOBILE
     _save->saveTvheadend(location, interface);
-#else
-    Q_UNUSED(location)
-    Q_UNUSED(interface)
-#endif
 }
 
 void PlaylistModel::moveDown(Channel *channel)
@@ -264,7 +257,6 @@ void PlaylistModel::save(const QString &file,
                          const QString &name,
                          const Tano::FileType &type)
 {
-#if !MOBILE
     _name = name;
 
     switch (type)
@@ -284,11 +276,6 @@ void PlaylistModel::save(const QString &file,
     default:
         break;
     }
-#else
-    Q_UNUSED(file)
-    Q_UNUSED(name)
-    Q_UNUSED(type)
-#endif
 }
 
 bool PlaylistModel::validate() const

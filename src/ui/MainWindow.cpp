@@ -56,7 +56,7 @@
 #include "ui/menu/MenuTrackAudio.h"
 #include "ui/menu/MenuTrackSubtitles.h"
 #include "ui/menu/MenuTrackVideo.h"
-#include "ui/playlist/PlaylistEdit.h"
+#include "ui/playlist/PlaylistEditor.h"
 #include "ui/settings/SettingsEdit.h"
 #include "xmltv/XmltvManager.h"
 
@@ -639,12 +639,12 @@ void MainWindow::showPlaylistEditor()
             _playlistEditor->activateWindow();
         } else {
             delete _playlistEditor;
-            _playlistEditor = new PlaylistEdit(this);
+            _playlistEditor = new PlaylistEditor(this);
             _playlistEditor->open(_playlistName);
             _playlistEditor->show();
         }
     } else {
-        _playlistEditor = new PlaylistEdit(this);
+        _playlistEditor = new PlaylistEditor(this);
         _playlistEditor->open(_playlistName);
         _playlistEditor->show();
     }

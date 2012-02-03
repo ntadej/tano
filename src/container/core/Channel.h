@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -33,6 +33,7 @@ public:
         DisplayIconRole = Qt::DecorationRole,
         NameRole = Qt::UserRole + 1,
         NumberRole,
+        RadioRole,
         LanguageRole,
         UrlRole,
         EpgRole,
@@ -54,6 +55,8 @@ public:
     int number() const { return _number; }
     inline QString numberString() const { return QString().number(_number); }
     void setNumber(const int &number);
+    inline bool radio() const { return _radio; }
+    void setRadio(const bool &radio);
     inline QString name() const { return _name; }
     void setName(const QString &name);
     inline QString language() const { return _language; }
@@ -70,6 +73,7 @@ public:
 private:
     QString _name;
     int _number;
+    bool _radio;
     QString _language;
     QString _url;
     QString _epg;

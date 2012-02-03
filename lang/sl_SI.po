@@ -658,113 +658,134 @@ msgctxt "PlaylistDisplayWidget|"
 msgid "All languages"
 msgstr "Vsi jeziki"
 
-msgctxt "PlaylistEdit|"
-msgid "Tano Editor"
-msgstr "Tano Urejevalnik"
+#, fuzzy
+msgctxt "PlaylistDisplayWidget|"
+msgid "Type:"
+msgstr "Tip:"
 
-msgctxt "PlaylistEdit|"
-msgid "Playlist name:"
-msgstr "Ime seznama programov:"
-
-msgctxt "PlaylistEdit|"
-msgid "Channels number:"
-msgstr "Število programov:"
-
-msgctxt "PlaylistEdit|"
-msgid "Toolbar"
-msgstr "Orodna vrstica"
-
-msgctxt "PlaylistEdit|"
-msgid "Editor"
-msgstr "Urejevalnik"
-
-msgctxt "PlaylistEdit|"
-msgid "Number:"
-msgstr "Število:"
-
-msgctxt "PlaylistEdit|"
-msgid "Name:"
-msgstr "Ime:"
-
-msgctxt "PlaylistEdit|"
-msgid "Categories:"
-msgstr "Kategorije:"
-
-msgctxt "PlaylistEdit|"
-msgid "Language:"
-msgstr "Jezik:"
-
-msgctxt "PlaylistEdit|"
-msgid "EPG:"
-msgstr "EPG:"
-
-msgctxt "PlaylistEdit|"
-msgid "Url:"
-msgstr "Naslov:"
-
-msgctxt "PlaylistEdit|"
-msgid ""
-"<i>You can separate categories with comma.<br>Only first one is saved when "
-"exporting to Sagem Js playlist format.</i>"
+msgctxt "PlaylistDisplayWidget|"
+msgid "TV + Radio"
 msgstr ""
-"<i>Kategorije lahko ločite z vejico.<br>Samo prva je shranjena pri izvozu v "
-"Sagem JS format seznama programov.</i>"
 
-msgctxt "PlaylistEdit|"
-msgid "<b><i>Instructions:</i></b>"
-msgstr "<b><i>Navodila:</i></b>"
+msgctxt "PlaylistDisplayWidget|"
+msgid "TV only"
+msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Logo:"
-msgstr "Logo:"
+msgctxt "PlaylistDisplayWidget|"
+msgid "Radio only"
+msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Update Playlist"
-msgstr "Posodobi seznam programov"
+msgctxt "PlaylistDisplayWidget|"
+msgid "Search and filter"
+msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "IP Range:"
-msgstr "IP območje:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Tano Editor"
+#~ msgstr "Tano Urejevalnik"
 
-msgctxt "PlaylistEdit|"
-msgid "Timeout:"
-msgstr "Čas iskanja:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Playlist name:"
+#~ msgstr "Ime seznama programov:"
 
-msgctxt "PlaylistEdit|"
-msgid "Scan and update"
-msgstr "Išči in posodobi"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Channels number:"
+#~ msgstr "Število programov:"
 
-msgctxt "PlaylistEdit|"
-msgid " ms"
-msgstr "ms"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Toolbar"
+#~ msgstr "Orodna vrstica"
 
-msgctxt "PlaylistEdit|"
-msgid "Port:"
-msgstr "Vrata:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Editor"
+#~ msgstr "Urejevalnik"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Number:"
+#~ msgstr "Število:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Name:"
+#~ msgstr "Ime:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Categories:"
+#~ msgstr "Kategorije:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Language:"
+#~ msgstr "Jezik:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "EPG:"
+#~ msgstr "EPG:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Url:"
+#~ msgstr "Naslov:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "<i>You can separate categories with comma.<br>Only first one is saved "
+#~ "when exporting to Sagem Js playlist format.</i>"
+#~ msgstr ""
+#~ "<i>Kategorije lahko ločite z vejico.<br>Samo prva je shranjena pri izvozu "
+#~ "v Sagem JS format seznama programov.</i>"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "<b><i>Instructions:</i></b>"
+#~ msgstr "<b><i>Navodila:</i></b>"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Logo:"
+#~ msgstr "Logo:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Update Playlist"
+#~ msgstr "Posodobi seznam programov"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "IP Range:"
+#~ msgstr "IP območje:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Timeout:"
+#~ msgstr "Čas iskanja:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Scan and update"
+#~ msgstr "Išči in posodobi"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid " ms"
+#~ msgstr "ms"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Port:"
+#~ msgstr "Vrata:"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "<i>This will interrupt your current playback.</i>"
 #~ msgstr "<i>S tem boste prekinili trenutno predvajanje.</i>"
 
-msgctxt "PlaylistEdit|"
-msgid "Add channel"
-msgstr "Dodaj program"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Add channel"
+#~ msgstr "Dodaj program"
 
-msgctxt "PlaylistEdit|"
-msgid "Delete channel"
-msgstr "Izbriši program"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Delete channel"
+#~ msgstr "Izbriši program"
 
-msgctxt "PlaylistEdit|"
-msgid "Move up"
-msgstr "Premakni navzgor"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Move up"
+#~ msgstr "Premakni navzgor"
 
-msgctxt "PlaylistEdit|"
-msgid "Move down"
-msgstr "Premakni navzdol"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Move down"
+#~ msgstr "Premakni navzdol"
 
-msgctxt "PlaylistEdit|"
-msgid "New playlist"
-msgstr "Nov seznam programov"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "New playlist"
+#~ msgstr "Nov seznam programov"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "M3U (Original)"
@@ -774,53 +795,53 @@ msgstr "Nov seznam programov"
 #~ msgid "CSV"
 #~ msgstr "CSV"
 
-msgctxt "PlaylistEdit|"
-msgid "Tvheadend"
-msgstr "Tvheadend"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Tvheadend"
+#~ msgstr "Tvheadend"
 
-msgctxt "PlaylistEdit|"
-msgid "Settings"
-msgstr "Nastavitve"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Settings"
+#~ msgstr "Nastavitve"
 
-msgctxt "PlaylistEdit|"
-msgid "XMLTV IDs"
-msgstr "XMLTV oznake"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "XMLTV IDs"
+#~ msgstr "XMLTV oznake"
 
 msgctxt "PlaylistEdit|"
 msgid ""
 msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Update Information"
-msgstr "Informacije o posodobitvah"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Update Information"
+#~ msgstr "Informacije o posodobitvah"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Save and Close"
 #~ msgstr "Shrani in zapri"
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"<i>You need to apply the number.<br>All other values are automatically "
-"changed.<br>You need to provide full URL for logo.</i>"
-msgstr ""
-"<i>Število programa mora biti potrjeno.<br>Vse druge vrednosti se samodejno "
-"shranijo.<br>Potrebna je polna pot do loga.</i>"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "<i>You need to apply the number.<br>All other values are automatically "
+#~ "changed.<br>You need to provide full URL for logo.</i>"
+#~ msgstr ""
+#~ "<i>Število programa mora biti potrjeno.<br>Vse druge vrednosti se "
+#~ "samodejno shranijo.<br>Potrebna je polna pot do loga.</i>"
 
-msgctxt "PlaylistEdit|"
-msgid "Close"
-msgstr "Zapri"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Close"
+#~ msgstr "Zapri"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Import"
 #~ msgstr "Uvozi"
 
-msgctxt "PlaylistEdit|"
-msgid "Print"
-msgstr "Natisni"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Print"
+#~ msgstr "Natisni"
 
-msgctxt "PlaylistEdit|"
-msgid "Export"
-msgstr "Izvozi"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Export"
+#~ msgstr "Izvozi"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Tano Old Playlist"
@@ -830,13 +851,13 @@ msgstr "Izvozi"
 #~ msgid "Sagem JS"
 #~ msgstr "Sagem JS"
 
-msgctxt "PlaylistEdit|"
-msgid "Open"
-msgstr "Odpri"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Open"
+#~ msgstr "Odpri"
 
-msgctxt "PlaylistEdit|"
-msgid "About"
-msgstr "O urejevalniku"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "About"
+#~ msgstr "O urejevalniku"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Download from Web"
@@ -898,62 +919,280 @@ msgstr "O urejevalniku"
 #~ msgid "Tano TV old channel list files(*.tano *.xml)"
 #~ msgstr "Tano TV star seznam programov (*.tano *.xml)"
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"Do you want close the editor?\n"
-"You will lose any unsaved changes."
-msgstr ""
-"Ali želite zapreti urejevalnik?\n"
-"Neshranjene spremembe ne bodo uveljavljene."
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "Do you want close the editor?\n"
+#~ "You will lose any unsaved changes."
+#~ msgstr ""
+#~ "Ali želite zapreti urejevalnik?\n"
+#~ "Neshranjene spremembe ne bodo uveljavljene."
 
 #, qt-format
-msgctxt "PlaylistEdit|"
-msgid "New channel from scan %1"
-msgstr "Nov najden program %1"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "New channel from scan %1"
+#~ msgstr "Nov najden program %1"
 
-msgctxt "PlaylistEdit|"
-msgid "Playlist Editor"
-msgstr "Urejevalnik seznama programov"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Playlist Editor"
+#~ msgstr "Urejevalnik seznama programov"
 
 #, qt-format
-msgctxt "PlaylistEdit|"
-msgid "%1 - Tano Editor"
-msgstr "%1 - Tano Urejevalnik"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "%1 - Tano Editor"
+#~ msgstr "%1 - Tano Urejevalnik"
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"Do you want to create new playlist?\n"
-"You will lose any unsaved changes."
-msgstr ""
-"Ali želite ustvariti nov seznam programov?\n"
-"Neshranjene spremembe ne bodo uveljavljene."
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "Do you want to create new playlist?\n"
+#~ "You will lose any unsaved changes."
+#~ msgstr ""
+#~ "Ali želite ustvariti nov seznam programov?\n"
+#~ "Neshranjene spremembe ne bodo uveljavljene."
 
-msgctxt "PlaylistEdit|"
-msgid "Export to M3U format with Udpxy URLs"
-msgstr "Izvozi v M3U format z Udpxy URLji"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Export to M3U format with Udpxy URLs"
+#~ msgstr "Izvozi v M3U format z Udpxy URLji"
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"You need to have valid Udpxy settings or the exported playlist will contain "
-"classic URLs."
-msgstr ""
-"Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam "
-"programov vseboval običajne URLje."
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "You need to have valid Udpxy settings or the exported playlist will "
+#~ "contain classic URLs."
+#~ msgstr ""
+#~ "Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen "
+#~ "seznam programov vseboval običajne URLje."
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Import from Web"
 #~ msgstr "Uvozi iz spleta"
 
-msgctxt "PlaylistEdit|"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Save"
+#~ msgstr "Shrani"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#, qt-format
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "Cannot read file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Ne morem prebrati %1:\n"
+#~ "%2."
+
+#, qt-format
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "Cannot write file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Ne morem pisati datoteke %1:\n"
+#~ "%2."
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "A channel with this number already exists!"
+#~ msgstr "Program s to številko že obstaja!"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Tano Editor"
+msgstr "Tano Urejevalnik"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Playlist name:"
+msgstr "Ime seznama programov:"
+
+msgctxt "PlaylistEditor|"
+msgid "Number of channels:"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Help"
+msgstr "Pomoč"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Toolbar"
+msgstr "Orodna vrstica"
+
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Editor"
+#~ msgstr "Urejevalnik"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Number:"
+msgstr "Število:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Name:"
+msgstr "Ime:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Categories:"
+msgstr "Kategorije:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Language:"
+msgstr "Jezik:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "EPG:"
+msgstr "EPG:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Url:"
+msgstr "Naslov:"
+
+#~ msgctxt "PlaylistEditor|"
+#~ msgid ""
+#~ "<i>You can separate categories with comma.<br>Only first one is saved "
+#~ "when exporting to Sagem Js playlist format.</i>"
+#~ msgstr ""
+#~ "<i>Kategorije lahko ločite z vejico.<br>Samo prva je shranjena pri izvozu "
+#~ "v Sagem JS format seznama programov.</i>"
+
+#~ msgctxt "PlaylistEditor|"
+#~ msgid ""
+#~ "<i>You need to apply the number.<br>All other values are automatically "
+#~ "changed.<br>You need to provide full URL for logo.</i>"
+#~ msgstr ""
+#~ "<i>Število programa mora biti potrjeno.<br>Vse druge vrednosti se "
+#~ "samodejno shranijo.<br>Potrebna je polna pot do loga.</i>"
+
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "<b><i>Instructions:</i></b>"
+#~ msgstr "<b><i>Navodila:</i></b>"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Logo:"
+msgstr "Logo:"
+
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Update Playlist"
+#~ msgstr "Posodobi seznam programov"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "IP Range:"
+msgstr "IP območje:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Timeout:"
+msgstr "Čas iskanja:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Scan and update"
+msgstr "Išči in posodobi"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid " ms"
+msgstr "ms"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Port:"
+msgstr "Vrata:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Add channel"
+msgstr "Dodaj program"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Delete channel"
+msgstr "Izbriši program"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
 msgid "Save"
 msgstr "Shrani"
 
-msgctxt "PlaylistEdit|"
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Close"
+msgstr "Zapri"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Move up"
+msgstr "Premakni navzgor"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Move down"
+msgstr "Premakni navzdol"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Print"
+msgstr "Natisni"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Export"
+msgstr "Izvozi"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Open"
+msgstr "Odpri"
+
+msgctxt "PlaylistEditor|"
+msgid "About"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "New playlist"
+msgstr "Nov seznam programov"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Tvheadend"
+msgstr "Tvheadend"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Settings"
+msgstr "Nastavitve"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "XMLTV IDs"
+msgstr "XMLTV oznake"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Update Information"
+msgstr "Informacije o posodobitvah"
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEditor|"
+msgid "%1 - Tano Editor"
+msgstr "%1 - Tano Urejevalnik"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
 msgid "Tano"
 msgstr "Tano"
 
-#, qt-format
-msgctxt "PlaylistEdit|"
+#, fuzzy, qt-format
+msgctxt "PlaylistEditor|"
 msgid ""
 "Cannot read file %1:\n"
 "%2."
@@ -961,8 +1200,22 @@ msgstr ""
 "Ne morem prebrati %1:\n"
 "%2."
 
-#, qt-format
-msgctxt "PlaylistEdit|"
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Playlist Editor"
+msgstr "Urejevalnik seznama programov"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid ""
+"Do you want to create new playlist?\n"
+"You will lose any unsaved changes."
+msgstr ""
+"Ali želite ustvariti nov seznam programov?\n"
+"Neshranjene spremembe ne bodo uveljavljene."
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEditor|"
 msgid ""
 "Cannot write file %1:\n"
 "%2."
@@ -970,9 +1223,110 @@ msgstr ""
 "Ne morem pisati datoteke %1:\n"
 "%2."
 
-msgctxt "PlaylistEdit|"
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Export to M3U format with Udpxy URLs"
+msgstr "Izvozi v M3U format z Udpxy URLji"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid ""
+"You need to have valid Udpxy settings or the exported playlist will contain "
+"classic URLs."
+msgstr ""
+"Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam "
+"programov vseboval običajne URLje."
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid ""
+"Do you want close the editor?\n"
+"You will lose any unsaved changes."
+msgstr ""
+"Ali želite zapreti urejevalnik?\n"
+"Neshranjene spremembe ne bodo uveljavljene."
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEditor|"
+msgid "New channel from scan %1"
+msgstr "Nov najden program %1"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
 msgid "A channel with this number already exists!"
 msgstr "Program s to številko že obstaja!"
+
+msgctxt "PlaylistEditor|"
+msgid "Edit channel"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Radio:"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Scan for new channels"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "Tano Editor - Help"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h2>Tano Editor - Help</h2>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"<b>You can edit your IP TV playlist, print it or export it to desired "
+"format.</b>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h3>Editing channels</h3>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"The number of a channel needs to be applied. All other values are "
+"automatically changed. You can set any channel as radio. Categories can be "
+"sepparated by comma (,)."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"Full URL needs to be provided for the channel logo. Pictures will be scaled "
+"to fit the interface."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h3>Formats and export</h3>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and "
+"Sagem JS files. Beside these formats you can also save/export to M3U with "
+"Udpxy URLs and Tvheadend configuration files."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h3>Scan for channels</h3>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"You can scan for new channels using built in channels scanner. Please set "
+"valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 "
+"IPs in this range. A channel is added if it is detected before timeout."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"You can set custom radio category in settings (defaults to Radio) for "
+"exporting to Sagem JS and CSV. Only the first category or radio category "
+"will be exported to Sagem JS."
+msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
@@ -1855,9 +2209,13 @@ msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr "Uporabljate Tano različice:"
 
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Default channel list"
+#~ msgstr "Privzet seznam programov"
+
 msgctxt "SettingsGeneral|"
-msgid "Default channel list"
-msgstr "Privzet seznam programov"
+msgid "Channel list settings"
+msgstr ""
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -28,6 +28,8 @@ const bool Settings::DEFAULT_SESSION_AUTOPLAY = true;
 const QString Settings::DEFAULT_LANGUAGE = "";
 // Channels
 const QString Settings::DEFAULT_PLAYLIST = "";
+const QString Settings::DEFAULT_PLAYLIST_UPDATE_URL = "";
+const QString Settings::DEFAULT_RADIO_CATEGORY = "Radio";
 // GUI - start
 const bool Settings::DEFAULT_SPLASH = true;
 const bool Settings::DEFAULT_START_LITE = false;
@@ -78,6 +80,8 @@ void Settings::writeSettings()
     setValue("general/language", language());
 
     setValue("channels/playlist", playlist());
+    setValue("channels/update", playlistUpdateUrl());
+    setValue("channels/radio", radioCategory());
 
     setValue("start/splash", splash());
     setValue("start/lite", startLite());
@@ -119,6 +123,8 @@ void Settings::readSettings()
     setLanguage(value("general/language", DEFAULT_LANGUAGE).toString());
 
     setPlaylist(value("channels/playlist", DEFAULT_PLAYLIST).toString());
+    setPlaylistUpdateUrl(value("channels/update", DEFAULT_PLAYLIST_UPDATE_URL).toString());
+    setRadioCategory(value("channels/radio", DEFAULT_RADIO_CATEGORY).toString());
 
     setSplash(value("start/splash", DEFAULT_SPLASH).toBool());
     setStartLite(value("start/lite", DEFAULT_START_LITE).toBool());

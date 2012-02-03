@@ -50,6 +50,12 @@ public:
     inline QString playlist() const { return _playlist; }
     inline void setPlaylist(const QString &s) { _playlist = s; }
     static const QString DEFAULT_PLAYLIST;
+    inline QString playlistUpdateUrl() const { return _playlistUpdateUrl; }
+    inline void setPlaylistUpdateUrl(const QString &s) { _playlistUpdateUrl = s; }
+    static const QString DEFAULT_PLAYLIST_UPDATE_URL;
+    inline QString radioCategory() const { return _radioCategory; }
+    inline void setRadioCategory(const QString &s) { _radioCategory = s; }
+    static const QString DEFAULT_RADIO_CATEGORY;
 
     // GUI - start
     inline bool splash() const { return _splash; }
@@ -140,6 +146,8 @@ private:
 
     // Channels
     QString _playlist;
+    QString _playlistUpdateUrl;
+    QString _radioCategory;
 
     // GUI - start
     bool _splash;

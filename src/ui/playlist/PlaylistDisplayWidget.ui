@@ -14,10 +14,10 @@
    <property name="margin">
     <number>0</number>
    </property>
-   <item row="1" column="1">
+   <item row="2" column="1">
     <widget class="QLineEdit" name="editSearch"/>
    </item>
-   <item row="1" column="2">
+   <item row="2" column="2">
     <widget class="QPushButton" name="buttonClear">
      <property name="maximumSize">
       <size>
@@ -40,35 +40,35 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1" colspan="2">
+   <item row="4" column="1" colspan="2">
     <widget class="QComboBox" name="comboCategory">
      <property name="maxVisibleItems">
       <number>50</number>
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
+   <item row="2" column="0">
     <widget class="QLabel" name="labelSearch">
      <property name="text">
       <string>Search:</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
+   <item row="4" column="0">
     <widget class="QLabel" name="labelCategory">
      <property name="text">
       <string>Category:</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="5" column="0">
     <widget class="QLabel" name="labelLanguage">
      <property name="text">
       <string>Language:</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="1" colspan="2">
+   <item row="5" column="1" colspan="2">
     <widget class="QComboBox" name="comboLanguage">
      <property name="maxVisibleItems">
       <number>50</number>
@@ -81,6 +81,67 @@
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>
      <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="labelType">
+     <property name="text">
+      <string>Type:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="2">
+    <widget class="QComboBox" name="comboType">
+     <item>
+      <property name="text">
+       <string>TV + Radio</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>TV only</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Radio only</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="QPushButton" name="buttonSearch">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Search and filter</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../data/icons.qrc">
+       <normaloff>:/icons/24x24/search.png</normaloff>:/icons/24x24/search.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="flat">
       <bool>true</bool>
      </property>
     </widget>
@@ -98,12 +159,156 @@
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>246</x>
-     <y>209</y>
+     <x>263</x>
+     <y>167</y>
     </hint>
     <hint type="destinationlabel">
-     <x>202</x>
+     <x>234</x>
+     <y>167</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSearch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelSearch</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>53</x>
+     <y>152</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSearch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>editSearch</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>169</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>191</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSearch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>buttonClear</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>134</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>258</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSearch</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>labelType</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSearch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboType</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>138</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>126</x>
+     <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSearch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelCategory</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>49</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>48</x>
      <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSearch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboCategory</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>25</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>166</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSearch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelLanguage</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>10</x>
+     <y>122</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonSearch</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>comboLanguage</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>6</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>179</x>
+     <y>252</y>
     </hint>
    </hints>
   </connection>

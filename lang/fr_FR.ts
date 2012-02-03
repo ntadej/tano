@@ -510,203 +510,483 @@ This will stop recording in progress.</source>
         <source>All languages</source>
         <translation>Toutes les langues</translation>
     </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Type :</translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistEdit</name>
     <message>
         <source>Playlist name:</source>
-        <translation>Nom de la liste :</translation>
+        <translation type="obsolete">Nom de la liste :</translation>
     </message>
     <message>
         <source>Channels number:</source>
-        <translation>Numéro de la chaîne :</translation>
+        <translation type="obsolete">Numéro de la chaîne :</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Barre d&apos;outils</translation>
+        <translation type="obsolete">Barre d&apos;outils</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Éditeur</translation>
+        <translation type="obsolete">Éditeur</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>Numéro :</translation>
+        <translation type="obsolete">Numéro :</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Nom :</translation>
+        <translation type="obsolete">Nom :</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Catégories :</translation>
+        <translation type="obsolete">Catégories :</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Langue :</translation>
+        <translation type="obsolete">Langue :</translation>
     </message>
     <message>
         <source>EPG:</source>
-        <translation>EPG :</translation>
+        <translation type="obsolete">EPG :</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Url :</translation>
+        <translation type="obsolete">Url :</translation>
     </message>
     <message>
         <source>Update Playlist</source>
-        <translation>Mise à jour de la liste de lecture</translation>
+        <translation type="obsolete">Mise à jour de la liste de lecture</translation>
     </message>
     <message>
         <source>IP Range:</source>
-        <translation>Plage des adresses IP :</translation>
+        <translation type="obsolete">Plage des adresses IP :</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>Temporisation :</translation>
+        <translation type="obsolete">Temporisation :</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Scanner et actualiser</translation>
+        <translation type="obsolete">Scanner et actualiser</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation>ms</translation>
+        <translation type="obsolete">ms</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Port :</translation>
+        <translation type="obsolete">Port :</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Fermer</translation>
+        <translation type="obsolete">Fermer</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Imprimer</translation>
+        <translation type="obsolete">Imprimer</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Éditeur de la liste</translation>
+        <translation type="obsolete">Éditeur de la liste</translation>
     </message>
     <message>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Vous pouvez séparer les catégories avec des virgules.&lt;br&gt;Seule la première est sauvegardée lors de l&apos;import au format de liste Sagem Js.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Vous pouvez séparer les catégories avec des virgules.&lt;br&gt;Seule la première est sauvegardée lors de l&apos;import au format de liste Sagem Js.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
-        <translation>&lt;b&gt;&lt;i&gt;instructions :&lt;/i&gt;&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;&lt;i&gt;instructions :&lt;/i&gt;&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Export</translation>
+        <translation type="obsolete">Export</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Ouvrir</translation>
+        <translation type="obsolete">Ouvrir</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>À propos</translation>
+        <translation type="obsolete">À propos</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>Ajouter une chaîne</translation>
+        <translation type="obsolete">Ajouter une chaîne</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>Supprimer une chaîne</translation>
+        <translation type="obsolete">Supprimer une chaîne</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Vers le haut</translation>
+        <translation type="obsolete">Vers le haut</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Vers le bas</translation>
+        <translation type="obsolete">Vers le bas</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>Voulez-vous fermer l&apos;éditeur ?
+        <translation type="obsolete">Voulez-vous fermer l&apos;éditeur ?
 Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>Nouvelle liste</translation>
+        <translation type="obsolete">Nouvelle liste</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>Voulez-vouscréer une nouvelle liste ?
+        <translation type="obsolete">Voulez-vouscréer une nouvelle liste ?
 Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>Nouvelle chaîne issue du scan %1</translation>
+        <translation type="obsolete">Nouvelle chaîne issue du scan %1</translation>
     </message>
     <message>
         <source>Tano Editor</source>
-        <translation>Éditeur de Tano</translation>
+        <translation type="obsolete">Éditeur de Tano</translation>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation>%1 - Éditeur de Tano</translation>
+        <translation type="obsolete">%1 - Éditeur de Tano</translation>
     </message>
     <message>
         <source>Tvheadend</source>
-        <translation>Tvheadend</translation>
+        <translation type="obsolete">Tvheadend</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Préférences</translation>
+        <translation type="obsolete">Préférences</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>Identifiants XMLTV</translation>
+        <translation type="obsolete">Identifiants XMLTV</translation>
     </message>
     <message>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Vous devez appliquer le numéro.&lt;br&gt;Toutes les autres valeurs seront automatiquement modifiées.&lt;br&gt;Vous devez fournir une URL complète du logo.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Vous devez appliquer le numéro.&lt;br&gt;Toutes les autres valeurs seront automatiquement modifiées.&lt;br&gt;Vous devez fournir une URL complète du logo.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>Logo :</translation>
+        <translation type="obsolete">Logo :</translation>
     </message>
     <message>
         <source>Update Information</source>
-        <translation>Mise à jour des informations</translation>
+        <translation type="obsolete">Mise à jour des informations</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation>Export vers le format M3U avec des Urls Udpxy</translation>
+        <translation type="obsolete">Export vers le format M3U avec des Urls Udpxy</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>Vous devez avoir des options Udpxy valides ou alors, la liste exportée contiendra des URLs classiques.</translation>
+        <translation type="obsolete">Vous devez avoir des options Udpxy valides ou alors, la liste exportée contiendra des URLs classiques.</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Sauvegarder</translation>
+        <translation type="obsolete">Sauvegarder</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Ne peut pas lire le fichier %1 :
+        <translation type="obsolete">Ne peut pas lire le fichier %1 :
 %2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Ne peut écrire le fichier %1 : %2.</translation>
+        <translation type="obsolete">Ne peut écrire le fichier %1 : %2.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Une chaîne avec ce numéro existe déjà !</translation>
+        <translation type="obsolete">Une chaîne avec ce numéro existe déjà !</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditor</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Éditeur de Tano</translation>
+    </message>
+    <message>
+        <source>Playlist name:</source>
+        <translation type="unfinished">Nom de la liste :</translation>
+    </message>
+    <message>
+        <source>Number of channels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation type="unfinished">Barre d&apos;outils</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="obsolete">Éditeur</translation>
+    </message>
+    <message>
+        <source>Number:</source>
+        <translation type="unfinished">Numéro :</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nom :</translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished">Catégories :</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Langue :</translation>
+    </message>
+    <message>
+        <source>EPG:</source>
+        <translation type="unfinished">EPG :</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Url :</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Vous pouvez séparer les catégories avec des virgules.&lt;br&gt;Seule la première est sauvegardée lors de l&apos;import au format de liste Sagem Js.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Vous devez appliquer le numéro.&lt;br&gt;Toutes les autres valeurs seront automatiquement modifiées.&lt;br&gt;Vous devez fournir une URL complète du logo.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;&lt;i&gt;instructions :&lt;/i&gt;&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Logo:</source>
+        <translation type="unfinished">Logo :</translation>
+    </message>
+    <message>
+        <source>Update Playlist</source>
+        <translation type="obsolete">Mise à jour de la liste de lecture</translation>
+    </message>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">Plage des adresses IP :</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">Temporisation :</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Scanner et actualiser</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished">ms</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Port :</translation>
+    </message>
+    <message>
+        <source>Add channel</source>
+        <translation type="unfinished">Ajouter une chaîne</translation>
+    </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished">Supprimer une chaîne</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Sauvegarder</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished">Vers le haut</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished">Vers le bas</translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">Imprimer</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">Export</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Ouvrir</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">À propos</translation>
+    </message>
+    <message>
+        <source>New playlist</source>
+        <translation type="unfinished">Nouvelle liste</translation>
+    </message>
+    <message>
+        <source>Tvheadend</source>
+        <translation type="unfinished">Tvheadend</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Préférences</translation>
+    </message>
+    <message>
+        <source>XMLTV IDs</source>
+        <translation type="unfinished">Identifiants XMLTV</translation>
+    </message>
+    <message>
+        <source>Update Information</source>
+        <translation type="unfinished">Mise à jour des informations</translation>
+    </message>
+    <message>
+        <source>%1 - Tano Editor</source>
+        <translation type="unfinished">%1 - Éditeur de Tano</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist Editor</source>
+        <translation type="unfinished">Éditeur de la liste</translation>
+    </message>
+    <message>
+        <source>Do you want to create new playlist?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished">Voulez-vouscréer une nouvelle liste ?
+Vous perdrez tous les changements non sauvegardés.</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished">Export vers le format M3U avec des Urls Udpxy</translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
+        <translation type="unfinished">Vous devez avoir des options Udpxy valides ou alors, la liste exportée contiendra des URLs classiques.</translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished">Voulez-vous fermer l&apos;éditeur ?
+Vous perdrez tous les changements non sauvegardés.</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished">Nouvelle chaîne issue du scan %1</translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished">Une chaîne avec ce numéro existe déjà !</translation>
+    </message>
+    <message>
+        <source>Edit channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan for new channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditorHelp</name>
+    <message>
+        <source>Tano Editor - Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be sepparated by comma (,).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1279,7 +1559,11 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Default channel list</source>
-        <translation>Liste de chaînes par défaut</translation>
+        <translation type="obsolete">Liste de chaînes par défaut</translation>
+    </message>
+    <message>
+        <source>Channel list settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -589,101 +589,122 @@ msgctxt "PlaylistDisplayWidget|"
 msgid "All languages"
 msgstr "Všechny jazyky"
 
-msgctxt "PlaylistEdit|"
-msgid "Playlist name:"
-msgstr "Název seznamu programů:"
+#, fuzzy
+msgctxt "PlaylistDisplayWidget|"
+msgid "Type:"
+msgstr "Typ:"
 
-msgctxt "PlaylistEdit|"
-msgid "Channels number:"
-msgstr "Číslo programu:"
+msgctxt "PlaylistDisplayWidget|"
+msgid "TV + Radio"
+msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Toolbar"
-msgstr "Nástrojový pruh"
+msgctxt "PlaylistDisplayWidget|"
+msgid "TV only"
+msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Editor"
-msgstr "Editor"
+msgctxt "PlaylistDisplayWidget|"
+msgid "Radio only"
+msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Number:"
-msgstr "Číslo:"
+msgctxt "PlaylistDisplayWidget|"
+msgid "Search and filter"
+msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Name:"
-msgstr "Název:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Playlist name:"
+#~ msgstr "Název seznamu programů:"
 
-msgctxt "PlaylistEdit|"
-msgid "Categories:"
-msgstr "Skupiny:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Channels number:"
+#~ msgstr "Číslo programu:"
 
-msgctxt "PlaylistEdit|"
-msgid "Language:"
-msgstr "Jazyk:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Toolbar"
+#~ msgstr "Nástrojový pruh"
 
-msgctxt "PlaylistEdit|"
-msgid "EPG:"
-msgstr "EPG:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Editor"
+#~ msgstr "Editor"
 
-msgctxt "PlaylistEdit|"
-msgid "Url:"
-msgstr "Adresa (URL):"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Number:"
+#~ msgstr "Číslo:"
 
-msgctxt "PlaylistEdit|"
-msgid "Update Playlist"
-msgstr "Obnovit seznam programů"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Name:"
+#~ msgstr "Název:"
 
-msgctxt "PlaylistEdit|"
-msgid "IP Range:"
-msgstr "Rozsah IP:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Categories:"
+#~ msgstr "Skupiny:"
 
-msgctxt "PlaylistEdit|"
-msgid "Timeout:"
-msgstr "Překročení času:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Language:"
+#~ msgstr "Jazyk:"
 
-msgctxt "PlaylistEdit|"
-msgid "Scan and update"
-msgstr "Prohledat a obnovit"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "EPG:"
+#~ msgstr "EPG:"
 
-msgctxt "PlaylistEdit|"
-msgid " ms"
-msgstr " ms"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Url:"
+#~ msgstr "Adresa (URL):"
 
-msgctxt "PlaylistEdit|"
-msgid "Port:"
-msgstr "Přípojka:"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Update Playlist"
+#~ msgstr "Obnovit seznam programů"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "IP Range:"
+#~ msgstr "Rozsah IP:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Timeout:"
+#~ msgstr "Překročení času:"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Scan and update"
+#~ msgstr "Prohledat a obnovit"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid " ms"
+#~ msgstr " ms"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Port:"
+#~ msgstr "Přípojka:"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Save and Close"
 #~ msgstr "Uložit a zavřít"
 
-msgctxt "PlaylistEdit|"
-msgid "Close"
-msgstr "Zavřít"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Close"
+#~ msgstr "Zavřít"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Import"
 #~ msgstr "Zavést"
 
-msgctxt "PlaylistEdit|"
-msgid "Print"
-msgstr "Tisk"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Print"
+#~ msgstr "Tisk"
 
-msgctxt "PlaylistEdit|"
-msgid "Playlist Editor"
-msgstr "Editor seznamu programů"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Playlist Editor"
+#~ msgstr "Editor seznamu programů"
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"<i>You can separate categories with comma.<br>Only first one is saved when "
-"exporting to Sagem Js playlist format.</i>"
-msgstr ""
-"<i>Skupiny můžete oddělit čárkou.<br>Uložena je při vyvedení do formátu "
-"seznamu programů Sagem Js jen první .</i>"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "<i>You can separate categories with comma.<br>Only first one is saved "
+#~ "when exporting to Sagem Js playlist format.</i>"
+#~ msgstr ""
+#~ "<i>Skupiny můžete oddělit čárkou.<br>Uložena je při vyvedení do formátu "
+#~ "seznamu programů Sagem Js jen první .</i>"
 
-msgctxt "PlaylistEdit|"
-msgid "<b><i>Instructions:</i></b>"
-msgstr "<b><i>Pokyny:</i></b>"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "<b><i>Instructions:</i></b>"
+#~ msgstr "<b><i>Pokyny:</i></b>"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "<i>This will interrupt your current playback.</i>"
@@ -705,9 +726,9 @@ msgstr "<b><i>Pokyny:</i></b>"
 #~ msgid "Sagem JS channel list files (*.js)"
 #~ msgstr "Soubory se seznamy programů Sagem JS (*.js)"
 
-msgctxt "PlaylistEdit|"
-msgid "Export"
-msgstr "Vyvést"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Export"
+#~ msgstr "Vyvést"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Tano Old Playlist"
@@ -717,17 +738,17 @@ msgstr "Vyvést"
 #~ msgid "Sagem JS"
 #~ msgstr "Sagem JS"
 
-msgctxt "PlaylistEdit|"
-msgid "Open"
-msgstr "Otevřít"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Open"
+#~ msgstr "Otevřít"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Soubory se seznamy programů Tano TV (*.m3u)"
 
-msgctxt "PlaylistEdit|"
-msgid "About"
-msgstr "O"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "About"
+#~ msgstr "O"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Download from Web"
@@ -737,21 +758,21 @@ msgstr "O"
 #~ msgid "Tano TV old channel list files(*.tano *.xml)"
 #~ msgstr "Soubory se starými seznamy programů Tano TV (*.m3u)"
 
-msgctxt "PlaylistEdit|"
-msgid "Add channel"
-msgstr "Přidat program"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Add channel"
+#~ msgstr "Přidat program"
 
-msgctxt "PlaylistEdit|"
-msgid "Delete channel"
-msgstr "Smazat program"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Delete channel"
+#~ msgstr "Smazat program"
 
-msgctxt "PlaylistEdit|"
-msgid "Move up"
-msgstr "Posunout nahoru"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Move up"
+#~ msgstr "Posunout nahoru"
 
-msgctxt "PlaylistEdit|"
-msgid "Move down"
-msgstr "Posunout dolů"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Move down"
+#~ msgstr "Posunout dolů"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Open channel list"
@@ -765,39 +786,39 @@ msgstr "Posunout dolů"
 #~ msgid "Import Tano TV old channel list"
 #~ msgstr "Zavést starý seznam programů Tano TV"
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"Do you want close the editor?\n"
-"You will lose any unsaved changes."
-msgstr ""
-"Chcete zavřít editor?\n"
-"Ztratíte všechny neuložené změny."
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "Do you want close the editor?\n"
+#~ "You will lose any unsaved changes."
+#~ msgstr ""
+#~ "Chcete zavřít editor?\n"
+#~ "Ztratíte všechny neuložené změny."
 
-msgctxt "PlaylistEdit|"
-msgid "New playlist"
-msgstr "Nový seznam programů"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "New playlist"
+#~ msgstr "Nový seznam programů"
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"Do you want to create new playlist?\n"
-"You will lose any unsaved changes."
-msgstr ""
-"Chcete vytvořit nový seznam programů?\n"
-"Ztratíte všechny neuložené změny."
-
-#, qt-format
-msgctxt "PlaylistEdit|"
-msgid "New channel from scan %1"
-msgstr "Nový program z prohledání %1"
-
-msgctxt "PlaylistEdit|"
-msgid "Tano Editor"
-msgstr "Editor Tano"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "Do you want to create new playlist?\n"
+#~ "You will lose any unsaved changes."
+#~ msgstr ""
+#~ "Chcete vytvořit nový seznam programů?\n"
+#~ "Ztratíte všechny neuložené změny."
 
 #, qt-format
-msgctxt "PlaylistEdit|"
-msgid "%1 - Tano Editor"
-msgstr "%1 - Editor Tano"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "New channel from scan %1"
+#~ msgstr "Nový program z prohledání %1"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Tano Editor"
+#~ msgstr "Editor Tano"
+
+#, qt-format
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "%1 - Tano Editor"
+#~ msgstr "%1 - Editor Tano"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "M3U (Original)"
@@ -827,55 +848,225 @@ msgstr "%1 - Editor Tano"
 #~ msgid "Comma-separated values file (*.csv *.txt)"
 #~ msgstr "Soubor s hodnotami oddělenými čárkou (*.csv *.txt)"
 
-msgctxt "PlaylistEdit|"
-msgid "Tvheadend"
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Settings"
+#~ msgstr "Nastavení"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Update Information"
+#~ msgstr "Informace o aktualizacích"
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#, qt-format
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "Cannot read file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Nelze číst ze souboru %1:\n"
+#~ "%2."
+
+#, qt-format
+#~ msgctxt "PlaylistEdit|"
+#~ msgid ""
+#~ "Cannot write file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Nelze zapisovat soubor %1:\n"
+#~ "%2."
+
+#~ msgctxt "PlaylistEdit|"
+#~ msgid "A channel with this number already exists!"
+#~ msgstr "Program s tímto číslem již existuje!"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Tano Editor"
+msgstr "Editor Tano"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Playlist name:"
+msgstr "Název seznamu programů:"
+
+msgctxt "PlaylistEditor|"
+msgid "Number of channels:"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Help"
 msgstr ""
 
 #, fuzzy
-msgctxt "PlaylistEdit|"
-msgid "Settings"
-msgstr "Nastavení"
+msgctxt "PlaylistEditor|"
+msgid "Toolbar"
+msgstr "Nástrojový pruh"
 
-msgctxt "PlaylistEdit|"
-msgid "XMLTV IDs"
-msgstr ""
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Editor"
+#~ msgstr "Editor"
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"<i>You need to apply the number.<br>All other values are automatically "
-"changed.<br>You need to provide full URL for logo.</i>"
-msgstr ""
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Number:"
+msgstr "Číslo:"
 
-msgctxt "PlaylistEdit|"
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Name:"
+msgstr "Název:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Categories:"
+msgstr "Skupiny:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Language:"
+msgstr "Jazyk:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "EPG:"
+msgstr "EPG:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Url:"
+msgstr "Adresa (URL):"
+
+#~ msgctxt "PlaylistEditor|"
+#~ msgid ""
+#~ "<i>You can separate categories with comma.<br>Only first one is saved "
+#~ "when exporting to Sagem Js playlist format.</i>"
+#~ msgstr ""
+#~ "<i>Skupiny můžete oddělit čárkou.<br>Uložena je při vyvedení do formátu "
+#~ "seznamu programů Sagem Js jen první .</i>"
+
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "<b><i>Instructions:</i></b>"
+#~ msgstr "<b><i>Pokyny:</i></b>"
+
+msgctxt "PlaylistEditor|"
 msgid "Logo:"
 msgstr ""
 
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Update Playlist"
+#~ msgstr "Obnovit seznam programů"
+
 #, fuzzy
-msgctxt "PlaylistEdit|"
-msgid "Update Information"
-msgstr "Informace o aktualizacích"
+msgctxt "PlaylistEditor|"
+msgid "IP Range:"
+msgstr "Rozsah IP:"
 
-msgctxt "PlaylistEdit|"
-msgid "Export to M3U format with Udpxy URLs"
-msgstr ""
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Timeout:"
+msgstr "Překročení času:"
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"You need to have valid Udpxy settings or the exported playlist will contain "
-"classic URLs."
-msgstr ""
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Scan and update"
+msgstr "Prohledat a obnovit"
 
-msgctxt "PlaylistEdit|"
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid " ms"
+msgstr " ms"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Port:"
+msgstr "Přípojka:"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Add channel"
+msgstr "Přidat program"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Delete channel"
+msgstr "Smazat program"
+
+msgctxt "PlaylistEditor|"
 msgid "Save"
 msgstr ""
 
 #, fuzzy
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
+msgid "Close"
+msgstr "Zavřít"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Move up"
+msgstr "Posunout nahoru"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Move down"
+msgstr "Posunout dolů"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Print"
+msgstr "Tisk"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Export"
+msgstr "Vyvést"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Open"
+msgstr "Otevřít"
+
+msgctxt "PlaylistEditor|"
+msgid "About"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "New playlist"
+msgstr "Nový seznam programů"
+
+msgctxt "PlaylistEditor|"
+msgid "Tvheadend"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Settings"
+msgstr "Nastavení"
+
+msgctxt "PlaylistEditor|"
+msgid "XMLTV IDs"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Update Information"
+msgstr "Informace o aktualizacích"
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEditor|"
+msgid "%1 - Tano Editor"
+msgstr "%1 - Editor Tano"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
 msgid "Tano"
 msgstr "Tano"
 
 #, fuzzy, qt-format
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid ""
 "Cannot read file %1:\n"
 "%2."
@@ -883,8 +1074,22 @@ msgstr ""
 "Nelze číst ze souboru %1:\n"
 "%2."
 
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid "Playlist Editor"
+msgstr "Editor seznamu programů"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
+msgid ""
+"Do you want to create new playlist?\n"
+"You will lose any unsaved changes."
+msgstr ""
+"Chcete vytvořit nový seznam programů?\n"
+"Ztratíte všechny neuložené změny."
+
 #, fuzzy, qt-format
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid ""
 "Cannot write file %1:\n"
 "%2."
@@ -892,10 +1097,106 @@ msgstr ""
 "Nelze zapisovat soubor %1:\n"
 "%2."
 
+msgctxt "PlaylistEditor|"
+msgid "Export to M3U format with Udpxy URLs"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid ""
+"You need to have valid Udpxy settings or the exported playlist will contain "
+"classic URLs."
+msgstr ""
+
 #, fuzzy
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
+msgid ""
+"Do you want close the editor?\n"
+"You will lose any unsaved changes."
+msgstr ""
+"Chcete zavřít editor?\n"
+"Ztratíte všechny neuložené změny."
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEditor|"
+msgid "New channel from scan %1"
+msgstr "Nový program z prohledání %1"
+
+#, fuzzy
+msgctxt "PlaylistEditor|"
 msgid "A channel with this number already exists!"
 msgstr "Program s tímto číslem již existuje!"
+
+msgctxt "PlaylistEditor|"
+msgid "Edit channel"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Radio:"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Scan for new channels"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "Tano Editor - Help"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h2>Tano Editor - Help</h2>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"<b>You can edit your IP TV playlist, print it or export it to desired "
+"format.</b>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h3>Editing channels</h3>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"The number of a channel needs to be applied. All other values are "
+"automatically changed. You can set any channel as radio. Categories can be "
+"sepparated by comma (,)."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"Full URL needs to be provided for the channel logo. Pictures will be scaled "
+"to fit the interface."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h3>Formats and export</h3>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and "
+"Sagem JS files. Beside these formats you can also save/export to M3U with "
+"Udpxy URLs and Tvheadend configuration files."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h3>Scan for channels</h3>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"You can scan for new channels using built in channels scanner. Please set "
+"valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 "
+"IPs in this range. A channel is added if it is detected before timeout."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"You can set custom radio category in settings (defaults to Radio) for "
+"exporting to Sagem JS and CSV. Only the first category or radio category "
+"will be exported to Sagem JS."
+msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
@@ -1789,10 +2090,13 @@ msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr "Používáte verzi programu Tano:"
 
-#, fuzzy
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Default channel list"
+#~ msgstr "Výchozí seznam programů"
+
 msgctxt "SettingsGeneral|"
-msgid "Default channel list"
-msgstr "Výchozí seznam programů"
+msgid "Channel list settings"
+msgstr ""
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"

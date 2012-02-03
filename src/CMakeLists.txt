@@ -39,7 +39,8 @@ SET(Tano_UIs
     ui/epg/EpgScheduleChannel.ui
     ui/epg/EpgScheduleFull.ui
     ui/playlist/PlaylistDisplayWidget.ui
-    ui/playlist/PlaylistEdit.ui
+    ui/playlist/PlaylistEditor.ui
+    ui/playlist/PlaylistEditorHelp.ui
     ui/playlist/PlaylistExportTvheadend.ui
     ui/playlist/PlaylistImportCSV.ui
     ui/recorder/Recorder.ui
@@ -101,7 +102,8 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/menu/MenuTrackSubtitles.h
     ui/menu/MenuTrackVideo.h
     ui/playlist/PlaylistDisplayWidget.h
-    ui/playlist/PlaylistEdit.h
+    ui/playlist/PlaylistEditor.h
+    ui/playlist/PlaylistEditorHelp.h
     ui/playlist/PlaylistExportTvheadend.h
     ui/playlist/PlaylistImportCSV.h
     ui/recorder/Recorder.h
@@ -211,7 +213,8 @@ SET(Tano_UI_Srcs
     ui/menu/MenuTrackSubtitles.cpp
     ui/menu/MenuTrackVideo.cpp
     ui/playlist/PlaylistDisplayWidget.cpp
-    ui/playlist/PlaylistEdit.cpp
+    ui/playlist/PlaylistEditor.cpp
+    ui/playlist/PlaylistEditorHelp.cpp
     ui/playlist/PlaylistExportTvheadend.cpp
     ui/playlist/PlaylistImportCSV.cpp
     ui/recorder/Recorder.cpp

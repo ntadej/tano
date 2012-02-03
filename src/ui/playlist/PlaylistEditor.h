@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTEDIT_H_
-#define TANO_PLAYLISTEDIT_H_
+#ifndef TANO_PLAYLISTEDITOR_H_
+#define TANO_PLAYLISTEDITOR_H_
 
 #include <QtCore/QTimer>
 #include <QtGui/QMainWindow>
@@ -41,15 +41,15 @@ class Udpxy;
 
 namespace Ui
 {
-    class PlaylistEdit;
+    class PlaylistEditor;
 }
 
-class PlaylistEdit : public QMainWindow
+class PlaylistEditor : public QMainWindow
 {
 Q_OBJECT
 public:
-    PlaylistEdit(QWidget *parent = 0);
-    ~PlaylistEdit();
+    PlaylistEditor(QWidget *parent = 0);
+    ~PlaylistEditor();
 
 public slots:
     void newPlaylist();
@@ -62,6 +62,7 @@ protected:
 
 private slots:
     void aboutTano();
+    void help();
     void settings();
     void setTitle(const QString &title);
 
@@ -81,6 +82,7 @@ private slots:
     void editItem(Channel *channel);
 
     void editChannelNumber();
+    void editChannelRadio(const bool &radio);
     void editChannelName(const QString &text);
     void editChannelUrl(const QString &text);
     void editChannelCategories(const QString &text);
@@ -102,7 +104,7 @@ private:
     void createConnections();
     void createSettings();
 
-    Ui::PlaylistEdit *ui;
+    Ui::PlaylistEditor *ui;
 
     PlaylistModel *_model;
 
@@ -134,4 +136,4 @@ private:
 #endif
 };
 
-#endif // TANO_PLAYLISTEDIT_H_
+#endif // TANO_PLAYLISTEDITOR_H_

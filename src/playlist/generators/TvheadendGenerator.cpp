@@ -155,6 +155,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
           << indent(1) << "\"group\": \"" << channel->url().replace(QRegExp("udp://@"), "").replace(QRegExp(":.*"), "") << "\"," << "\n"
           << indent(1) << "\"channelname\": \"" << channel->name() << "\"," << "\n"
           << indent(1) << "\"mapped\": 1," << "\n"
+          << indent(1) << "\"radio\": " << channel->radio() << "," << "\n"
           << indent(1) << "\"pcr\": 0," << "\n"
           << indent(1) << "\"disabled\": 0" << "\n"
           << "}" << "\n";
@@ -177,6 +178,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
           << indent(1) << "\"group\": \"" << channel->url().replace(QRegExp("udp://@"), "").replace(QRegExp(":.*"), "") << "\"," << "\n"
           << indent(1) << "\"channelname\": \"" << channel->name() << "\"," << "\n"
           << indent(1) << "\"mapped\": 1," << "\n"
+          << indent(1) << "\"radio\": " << channel->radio() << "," << "\n"
           << indent(1) << "\"pcr\": 0," << "\n"
           << indent(1) << "\"disabled\": 0" << "\n"
           << "}" << "\n";

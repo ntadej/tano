@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -32,6 +32,7 @@
 #include "ui/core/FileDialogs.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
+#include "ui/playlist/PlaylistEditorHelp.h"
 #include "ui/playlist/PlaylistExportTvheadend.h"
 #include "ui/playlist/PlaylistImportCSV.h"
 
@@ -49,12 +50,12 @@
     #include "core/Udpxy.h"
 #endif
 
-#include "PlaylistEdit.h"
-#include "ui_PlaylistEdit.h"
+#include "PlaylistEditor.h"
+#include "ui_PlaylistEditor.h"
 
-PlaylistEdit::PlaylistEdit(QWidget *parent)
+PlaylistEditor::PlaylistEditor(QWidget *parent)
     : QMainWindow(parent),
-      ui(new Ui::PlaylistEdit),
+      ui(new Ui::PlaylistEditor),
       _closeEnabled(false)
 {
 #if EDITOR
@@ -94,11 +95,11 @@ PlaylistEdit::PlaylistEdit(QWidget *parent)
 
 #if EDITOR
     ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
-    ui->toolBar->insertAction(ui->actionAbout, ui->actionSettings);
+    ui->toolBar->insertAction(ui->actionHelp, ui->actionSettings);
 #endif
 }
 
-PlaylistEdit::~PlaylistEdit()
+PlaylistEditor::~PlaylistEditor()
 {
     delete ui;
 
@@ -110,7 +111,7 @@ PlaylistEdit::~PlaylistEdit()
 #endif
 }
 
-void PlaylistEdit::changeEvent(QEvent *e)
+void PlaylistEditor::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
     switch (e->type())
@@ -123,22 +124,23 @@ void PlaylistEdit::changeEvent(QEvent *e)
     }
 }
 
-void PlaylistEdit::closeEvent(QCloseEvent *event)
+void PlaylistEditor::closeEvent(QCloseEvent *event)
 {
     event->ignore();
     exit();
 }
 
-void PlaylistEdit::createSettings()
+void PlaylistEditor::createSettings()
 {
     Settings *settings = new Settings(this);
     ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
     delete settings;
 }
 
-void PlaylistEdit::createConnections()
+void PlaylistEditor::createConnections()
 {
     connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
+    connect(ui->actionHelp, SIGNAL(triggered()), this, SLOT(help()));
     connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(settings()));
     connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(open()));
     connect(ui->actionNew, SIGNAL(triggered()), this, SLOT(newPlaylist()));
@@ -155,6 +157,7 @@ void PlaylistEdit::createConnections()
 
     connect(ui->buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
     connect(ui->editNumber, SIGNAL(returnPressed()), ui->buttonApplyNum, SLOT(click()));
+    connect(ui->editRadio, SIGNAL(toggled(bool)), this, SLOT(editChannelRadio(bool)));
     connect(ui->editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
     connect(ui->editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
     connect(ui->editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
@@ -177,12 +180,12 @@ void PlaylistEdit::createConnections()
 #endif
 }
 
-void PlaylistEdit::menuOpenExport()
+void PlaylistEditor::menuOpenExport()
 {
     _menuExport->exec(QCursor::pos());
 }
 
-void PlaylistEdit::setTitle(const QString &title)
+void PlaylistEditor::setTitle(const QString &title)
 {
     if(title.isEmpty())
         setWindowTitle(tr("Tano Editor"));
@@ -191,13 +194,19 @@ void PlaylistEdit::setTitle(const QString &title)
 }
 
 
-void PlaylistEdit::aboutTano()
+void PlaylistEditor::aboutTano()
 {
     AboutDialog about(this);
     about.exec();
 }
 
-void PlaylistEdit::settings()
+void PlaylistEditor::help()
+{
+    PlaylistEditorHelp help(this);
+    help.exec();
+}
+
+void PlaylistEditor::settings()
 {
 #if EDITOR
     SettingsEdit s(0, this);
@@ -207,15 +216,15 @@ void PlaylistEdit::settings()
 #endif
 }
 
-void PlaylistEdit::updateAvailable()
+void PlaylistEditor::updateAvailable()
 {
 #if EDITOR
     ui->toolBar->insertAction(ui->actionAbout, ui->actionUpdate);
 #endif
 }
 
-void PlaylistEdit::open(const QString &playlist,
-                        const bool &refresh)
+void PlaylistEditor::open(const QString &playlist,
+                          const bool &refresh)
 {
     File file;
     PlaylistImportCSV dialog;
@@ -262,7 +271,7 @@ void PlaylistEdit::open(const QString &playlist,
     ui->number->display(_model->rowCount());
 }
 
-void PlaylistEdit::newPlaylist()
+void PlaylistEditor::newPlaylist()
 {
     if(_model->rowCount() == 0)
         return;
@@ -289,9 +298,10 @@ void PlaylistEdit::newPlaylist()
     }
 }
 
-void PlaylistEdit::deleteItem()
+void PlaylistEditor::deleteItem()
 {
     ui->editNumber->setText("");
+    ui->editRadio->setChecked(false);
     ui->editChannelName->setText("");
     ui->editUrl->setText("");
     ui->editCategories->setText("");
@@ -301,25 +311,25 @@ void PlaylistEdit::deleteItem()
 
     ui->editWidget->setEnabled(false);
 
-    _model->deleteChannel(ui->playlist->currentChannel());
+    ui->playlist->channelSelected(_model->deleteChannel(ui->playlist->currentChannel()));
 
     ui->number->display(_model->rowCount());
 }
 
-void PlaylistEdit::addItem()
+void PlaylistEditor::addItem()
 {
     editItem(_model->createChannel());
     ui->number->display(_model->rowCount());
 }
 
-void PlaylistEdit::addItem(const QString &name,
-                           const QString &url)
+void PlaylistEditor::addItem(const QString &name,
+                             const QString &url)
 {
     _model->createChannel(name, url);
     ui->number->display(_model->rowCount());
 }
 
-void PlaylistEdit::save()
+void PlaylistEditor::save()
 {
     File file = FileDialogs::savePlaylist();
 
@@ -366,7 +376,7 @@ void PlaylistEdit::save()
     }
 }
 
-void PlaylistEdit::exportTvheadend()
+void PlaylistEditor::exportTvheadend()
 {
     PlaylistExportTvheadend dialog;
     dialog.exec();
@@ -376,7 +386,7 @@ void PlaylistEdit::exportTvheadend()
     _model->exportTvheadend(dialog.location(), dialog.interface());
 }
 
-void PlaylistEdit::exportXmltvId()
+void PlaylistEditor::exportXmltvId()
 {
     QString file = FileDialogs::saveXmltv();
 
@@ -386,7 +396,7 @@ void PlaylistEdit::exportXmltvId()
     _model->save(file, "", Tano::XmltvId);
 }
 
-void PlaylistEdit::exit()
+void PlaylistEditor::exit()
 {
     if(_closeEnabled) {
         hide();
@@ -417,13 +427,13 @@ void PlaylistEdit::exit()
     }
 }
 
-void PlaylistEdit::print()
+void PlaylistEditor::print()
 {
     PrintDialog dialog(ui->editName->text(), _model);
     dialog.exec();
 }
 
-void PlaylistEdit::refreshPlaylist(const bool &refresh)
+void PlaylistEditor::refreshPlaylist(const bool &refresh)
 {
 #if WITH_EDITOR_VLCQT
     if(!refresh) {
@@ -453,7 +463,7 @@ void PlaylistEdit::refreshPlaylist(const bool &refresh)
 #endif
 }
 
-void PlaylistEdit::checkIp()
+void PlaylistEditor::checkIp()
 {
 #if WITH_EDITOR_VLCQT
     ui->progressBar->setValue(_currentIp[3]);
@@ -467,7 +477,7 @@ void PlaylistEdit::checkIp()
 #endif
 }
 
-void PlaylistEdit::checkCurrentIp()
+void PlaylistEditor::checkCurrentIp()
 {
 #if WITH_EDITOR_VLCQT
     if(_currentIpPlaying) {
@@ -496,7 +506,7 @@ void PlaylistEdit::checkCurrentIp()
 #endif
 }
 
-QString PlaylistEdit::currentIp()
+QString PlaylistEditor::currentIp()
 {
 #if WITH_EDITOR_VLCQT
     QString ip = "udp://@";
@@ -512,7 +522,7 @@ QString PlaylistEdit::currentIp()
 #endif
 }
 
-void PlaylistEdit::setState(const bool &playing)
+void PlaylistEditor::setState(const bool &playing)
 {
 #if WITH_EDITOR_VLCQT
     _currentIpPlaying = playing;
@@ -521,7 +531,7 @@ void PlaylistEdit::setState(const bool &playing)
 #endif
 }
 
-void PlaylistEdit::editItem(Channel *channel)
+void PlaylistEditor::editItem(Channel *channel)
 {
     if(channel == 0) {
         ui->editWidget->setEnabled(false);
@@ -531,9 +541,8 @@ void PlaylistEdit::editItem(Channel *channel)
     if(!ui->editWidget->isEnabled())
         ui->editWidget->setEnabled(true);
 
-    ui->playlist->setCurrentChannel(channel);
-
     ui->editNumber->setText(channel->numberString());
+    ui->editRadio->setChecked(channel->radio());
     ui->editChannelName->setText(channel->name());
     ui->editUrl->setText(channel->url());
     ui->editCategories->setText(channel->categories().join(","));
@@ -542,7 +551,7 @@ void PlaylistEdit::editItem(Channel *channel)
     ui->editLogo->setText(channel->logo());
 }
 
-void PlaylistEdit::editChannelNumber()
+void PlaylistEditor::editChannelNumber()
 {
     QString text = ui->editNumber->text();
     if(text.toInt() != ui->playlist->currentChannel()->number())
@@ -553,43 +562,48 @@ void PlaylistEdit::editChannelNumber()
     ui->editNumber->setText(QString().number(ui->playlist->currentChannel()->number()));
 }
 
-void PlaylistEdit::editChannelName(const QString &text)
+void PlaylistEditor::editChannelRadio(const bool &radio)
+{
+    ui->playlist->currentChannel()->setRadio(radio);
+}
+
+void PlaylistEditor::editChannelName(const QString &text)
 {
     ui->playlist->currentChannel()->setName(text);
 }
 
-void PlaylistEdit::editChannelUrl(const QString &text)
+void PlaylistEditor::editChannelUrl(const QString &text)
 {
     ui->playlist->currentChannel()->setUrl(text);
 }
 
-void PlaylistEdit::editChannelCategories(const QString &text)
+void PlaylistEditor::editChannelCategories(const QString &text)
 {
     ui->playlist->currentChannel()->setCategories(text.split(","));
 }
 
-void PlaylistEdit::editChannelLanguage(const QString &text)
+void PlaylistEditor::editChannelLanguage(const QString &text)
 {
     ui->playlist->currentChannel()->setLanguage(text);
 }
 
-void PlaylistEdit::editChannelEpg(const QString &text)
+void PlaylistEditor::editChannelEpg(const QString &text)
 {
     ui->playlist->currentChannel()->setEpg(text);
 }
 
-void PlaylistEdit::editChannelLogo(const QString &text)
+void PlaylistEditor::editChannelLogo(const QString &text)
 {
     ui->playlist->currentChannel()->setLogo(text);
 }
 
-void PlaylistEdit::moveUp()
+void PlaylistEditor::moveUp()
 {
     _model->moveUp(ui->playlist->currentChannel());
     ui->editNumber->setText(ui->playlist->currentChannel()->numberString());
 }
 
-void PlaylistEdit::moveDown()
+void PlaylistEditor::moveDown()
 {
     _model->moveDown(ui->playlist->currentChannel());
     ui->editNumber->setText(ui->playlist->currentChannel()->numberString());

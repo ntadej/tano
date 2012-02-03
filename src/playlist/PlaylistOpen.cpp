@@ -16,7 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Config.h"
 #include "PlaylistOpen.h"
 #include "container/playlist/CSVInfo.h"
 #include "playlist/handlers/CSVHandler.h"
@@ -31,7 +30,6 @@ PlaylistOpen::~PlaylistOpen() { }
 void PlaylistOpen::openCSVFile(const QString &file,
                                const CSVInfo &info)
 {
-#if !MOBILE
     CSVHandler *open = new CSVHandler();
     open->setParameters(info.separator(), info.header(), info.columns());
     open->processFile(file);
@@ -40,15 +38,10 @@ void PlaylistOpen::openCSVFile(const QString &file,
     _name = QObject::tr("CSV channel list");
 
     delete open;
-#else
-    Q_UNUSED(file)
-    Q_UNUSED(info)
-#endif
 }
 
 void PlaylistOpen::openJsFile(const QString &file)
 {
-#if !MOBILE
     JsHandler *open = new JsHandler();
     open->processFile(file);
 
@@ -56,9 +49,6 @@ void PlaylistOpen::openJsFile(const QString &file)
     _name = QObject::tr("Sagem STB channel list");
 
     delete open;
-#else
-    Q_UNUSED(file)
-#endif
 }
 
 void PlaylistOpen::openM3UFile(const QString &file)
@@ -74,7 +64,6 @@ void PlaylistOpen::openM3UFile(const QString &file)
 
 void PlaylistOpen::openTanoOldFile(const QString &file)
 {
-#if !MOBILE
     TanoHandlerOld *open = new TanoHandlerOld();
 
     QXmlSimpleReader reader;
@@ -93,7 +82,4 @@ void PlaylistOpen::openTanoOldFile(const QString &file)
     _name = open->name();
 
     delete open;
-#else
-    Q_UNUSED(file)
-#endif
 }

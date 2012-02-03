@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -22,10 +22,15 @@
 
 #include "M3UHandler.h"
 #include "container/core/Channel.h"
+#include "core/Settings.h"
 
 M3UHandler::M3UHandler()
 {
     _name = QObject::tr("Channel list");
+
+    Settings *settings = new Settings();
+    _radio = settings->radioCategory();
+    delete settings;
 }
 
 M3UHandler::~M3UHandler() { }
@@ -51,35 +56,39 @@ void M3UHandler::processList()
     QStringList tmpList;
     QStringList tmpCList;
 
-    if(!_m3uLineList[0].contains("#EXTM3U"))
+    if (!_m3uLineList[0].contains("#EXTM3U"))
         return;
 
-    for(int i = 1; i < _m3uLineList.size(); i++) {
-        if(_m3uLineList[i] == "")
+    for (int i = 1; i < _m3uLineList.size(); i++) {
+        if (_m3uLineList[i] == "")
             continue;
 
-        if(_m3uLineList[i].contains("#EXTNAME")) {
+        if (_m3uLineList[i].contains("#EXTNAME")) {
             _name = _m3uLineList[i];
             _name.replace(QString("#EXTNAME:"), QString(""));
-        } else if(_m3uLineList[i].contains("#EXTINF")) {
+        } else if (_m3uLineList[i].contains("#EXTINF")) {
             tmp = _m3uLineList[i];
             tmp.replace(QString("#EXTINF:"), QString(""));
             tmpList = tmp.split(",");
 
             _channel = new Channel(tmpList[1], tmpList[0].toInt());
             _channels << _channel;
-        } else if(_m3uLineList[i].contains("#EXTTV")) {
+        } else if (_m3uLineList[i].contains("#EXTTV")) {
             tmp = _m3uLineList[i];
             tmp.replace(QString("#EXTTV:"), QString(""));
             tmpList = tmp.split(";");
 
-            if(tmpList.size() != 0) {
+            if (tmpList.size() != 0) {
                 tmpCList = tmpList[0].split(",");
+                if (tmpCList.contains(_radio)) {
+                    _channel->setRadio(true);
+                    tmpCList.removeAll(_radio);
+                }
                 _channel->setCategories(tmpCList);
                 _channel->setLanguage(tmpList[1]);
                 _channel->setEpg(tmpList[2]);
             }
-        } else if(_m3uLineList[i].contains("#EXTLOGO")) {
+        } else if (_m3uLineList[i].contains("#EXTLOGO")) {
             tmp = _m3uLineList[i];
             tmp.replace(QString("#EXTLOGO:"), QString(""));
             _channel->setLogo(tmp);

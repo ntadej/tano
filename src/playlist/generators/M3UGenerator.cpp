@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include "container/core/Channel.h"
+#include "core/Settings.h"
 #include "core/Udpxy.h"
 #include "playlist/PlaylistModel.h"
 #include "playlist/generators/M3UGenerator.h"
@@ -27,6 +28,10 @@ M3UGenerator::M3UGenerator(const QString &file,
 {
     _file = new QFile(file);
     _udpxy = new Udpxy();
+
+    Settings *settings = new Settings();
+    _radio = settings->radioCategory();
+    delete settings;
 }
 
 M3UGenerator::~M3UGenerator()
@@ -73,9 +78,15 @@ void M3UGenerator::generateItemNormal(Channel *channel)
          << channel->numberString() << ","
          << channel->name() << "\n";
 
-    _out << "#EXTTV:"
-         << channel->categories().join(",") << ";"
-         << channel->language() << ";"
+    _out << "#EXTTV:";
+    if (channel->radio()) {
+        _out << _radio;
+
+        if (channel->categories().count())
+            _out << ",";
+    }
+    _out << channel->categories().join(",") << ";";
+    _out << channel->language() << ";"
          << channel->epg();
     _out << "\n";
 
@@ -105,9 +116,15 @@ void M3UGenerator::generateItemUdpxy(Channel *channel)
          << channel->numberString() << ","
          << channel->name() << "\n";
 
-    _out << "#EXTTV:"
-         << channel->categories().join(",") << ";"
-         << channel->language() << ";"
+    _out << "#EXTTV:";
+    if (channel->radio()) {
+        _out << _radio;
+
+        if (channel->categories().count())
+            _out << ",";
+    }
+    _out << channel->categories().join(",") << ";";
+    _out << channel->language() << ";"
          << channel->epg();
     _out << "\n";
 

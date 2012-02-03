@@ -43,7 +43,7 @@ class MenuTrackAudio;
 class MenuTrackSubtitles;
 class MenuTrackVideo;
 class Shortcuts;
-class PlaylistEdit;
+class PlaylistEditor;
 class PlaylistModel;
 class TrayIcon;
 class Udpxy;
@@ -166,7 +166,7 @@ private:
     //GUI
     EpgScheduleFull *_schedule;
     EpgShow *_epgShow;
-    PlaylistEdit *_playlistEditor;
+    PlaylistEditor *_playlistEditor;
 
     //Menus and actions
     TrayIcon *_trayIcon;

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,12 +17,17 @@
 *****************************************************************************/
 
 #include "container/core/Channel.h"
+#include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "CSVGenerator.h"
 
 CSVGenerator::CSVGenerator(const QString &file)
 {
     _file = new QFile(file);
+
+    Settings *settings = new Settings();
+    _radio = settings->radioCategory();
+    delete settings;
 }
 
 CSVGenerator::~CSVGenerator()
@@ -54,8 +59,13 @@ void CSVGenerator::generateItem(Channel *channel)
 {
     _out << channel->numberString() << ";"
          << channel->name() << ";"
-         << channel->url() << ";"
-         << channel->categories().join(",") << ";"
+         << channel->url() << ";";
+    if (channel->radio()) {
+        _out << _radio;
+        if (channel->categories().count())
+            _out << ",";
+    }
+    _out << channel->categories().join(",") << ";"
          << channel->language() << ";"
          << channel->epg();
     _out << "\n";

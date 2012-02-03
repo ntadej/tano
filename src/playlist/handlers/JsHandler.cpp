@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,9 +21,15 @@
 #include <QtCore/QTextStream>
 
 #include "container/core/Channel.h"
+#include "core/Settings.h"
 #include "playlist/handlers/JsHandler.h"
 
-JsHandler::JsHandler() { }
+JsHandler::JsHandler()
+{
+    Settings *settings = new Settings();
+    _radio = settings->radioCategory();
+    delete settings;
+}
 
 JsHandler::~JsHandler() { }
 
@@ -63,7 +69,10 @@ void JsHandler::processList()
 
         Channel *channel = new Channel(currentChannel[1], currentChannel[2].toInt());
         channel->setUrl("udp://@" + currentChannel[3] + ":" + currentChannel[4]);
-        channel->setCategories(QStringList() << currentChannel[5]);
+        if (currentChannel[5] == _radio)
+            channel->setRadio(true);
+        else
+            channel->setCategories(QStringList() << currentChannel[5]);
         channel->setLanguage(currentChannel[6]);
         channel->setEpg(currentChannel[7]);
 

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,12 +17,17 @@
 *****************************************************************************/
 
 #include "container/core/Channel.h"
+#include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "playlist/generators/JsGenerator.h"
 
 JsGenerator::JsGenerator(const QString &file)
 {
     _file = new QFile(file);
+
+    Settings *settings = new Settings();
+    _radio = settings->radioCategory();
+    delete settings;
 }
 
 JsGenerator::~JsGenerator()
@@ -36,30 +41,33 @@ bool JsGenerator::write(PlaylistModel *model)
         return false;
 
     _out.setDevice(_file);
-	_out.setCodec("UTF-8");
-	_out << "la=[";
+    _out.setCodec("UTF-8");
+    _out << "la=[";
     for (int i = 0; i < model->rowCount(); i++) {
         generateItem(i+1, model->row(i));
         if(i != model->rowCount()-1) {
-			_out << ",";
-		}
-	}
-	_out << "];";
-	return true;
+            _out << ",";
+        }
+    }
+    _out << "];";
+    return true;
 }
 
 void JsGenerator::generateItem(const int &id,
-							   Channel *channel)
+                               Channel *channel)
 {
-	_out << "["
-		 << id << ","
-		 << "\"" << channel->name() << "\"" << ","
-		 << "\"" << channel->numberString() << "\"" << ","
-		 << "\"" << channel->url().replace(QRegExp("udp://@"), "").replace(QRegExp(":.*"), "") << "\"" << ","
-		 << "\"" << channel->url().replace(QRegExp("udp://@.*:"), "") << "\"" << ","
-		 << "\"" << channel->categories()[0] << "\"" << ","
-		 << "\"" << channel->language() << "\"" << ","
-		 << "\"" << channel->epg() << "\"" << ","
-		 << "\"" << "false" << "\""
-		 << "]";
+    _out << "["
+         << id << ","
+         << "\"" << channel->name() << "\"" << ","
+         << "\"" << channel->numberString() << "\"" << ","
+         << "\"" << channel->url().replace(QRegExp("udp://@"), "").replace(QRegExp(":.*"), "") << "\"" << ","
+         << "\"" << channel->url().replace(QRegExp("udp://@.*:"), "") << "\"" << ",";
+    if (channel->radio())
+        _out << "\"" << _radio << "\"" << ",";
+    else
+        _out << "\"" << channel->categories()[0] << "\"" << ",";
+    _out << "\"" << channel->language() << "\"" << ","
+         << "\"" << channel->epg() << "\"" << ","
+         << "\"" << "false" << "\""
+         << "]";
 }

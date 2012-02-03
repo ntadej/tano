@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,9 +21,15 @@
 #include <QtCore/QTextStream>
 
 #include "container/core/Channel.h"
+#include "core/Settings.h"
 #include "playlist/handlers/CSVHandler.h"
 
-CSVHandler::CSVHandler() { }
+CSVHandler::CSVHandler()
+{
+    Settings *settings = new Settings();
+    _radio = settings->radioCategory();
+    delete settings;
+}
 
 CSVHandler::~CSVHandler() { }
 
@@ -46,16 +52,22 @@ void CSVHandler::processChannel(const QStringList &list)
 {
     _channel = new Channel(list[_name], list[_number].toInt());
     _channel->setUrl(list[_url]);
-    _channel->setCategories(list[_categories].split(","));
     _channel->setLanguage(list[_language]);
     _channel->setEpg(list[_epg]);
+
+    QStringList categories = list[_categories].split(",");
+    if (categories.contains(_radio)) {
+        categories.removeAll(_radio);
+        _channel->setRadio(true);
+    }
+    _channel->setCategories(categories);
 
     _channels << _channel;
 }
 
 void CSVHandler::processList()
 {
-    if(_header) {
+    if (_header) {
         for(int i = 1; i < _csvLineList.size(); i++) {
             processChannel(_csvLineList[i].split(_separator));
         }

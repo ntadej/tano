@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,6 +21,8 @@
 
 #include <QtGui/QSortFilterProxyModel>
 
+#include "core/Enums.h"
+
 class PlaylistFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
@@ -34,12 +36,16 @@ public:
     QString language() const { return _language; }
     void setLanguage(const QString &language);
 
+    Tano::ChannelType type() const { return _type; }
+    void setType(const Tano::ChannelType &type);
+
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
 
 private:
     QString _category;
     QString _language;
+    Tano::ChannelType _type;
 };
 
 #endif // TANO_PLAYLISTFILTERMODEL_H_

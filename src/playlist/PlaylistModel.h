@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ public:
 
     Channel *createChannel(const QString &name = 0,
                            const QString &url = 0);
-    void deleteChannel(Channel *channel);
+    Channel *deleteChannel(Channel *channel);
 
     Channel *number(const int &number);
 

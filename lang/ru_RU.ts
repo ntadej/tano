@@ -609,72 +609,92 @@ This will stop recording in progress.</source>
         <source>All languages</source>
         <translation type="unfinished">Все языки</translation>
     </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Тип:</translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistEdit</name>
     <message>
         <source>Playlist name:</source>
-        <translation>Имя списка каналов:</translation>
+        <translation type="obsolete">Имя списка каналов:</translation>
     </message>
     <message>
         <source>Channels number:</source>
-        <translation>Кол-во каналов:</translation>
+        <translation type="obsolete">Кол-во каналов:</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Панель инструментов</translation>
+        <translation type="obsolete">Панель инструментов</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Редактор</translation>
+        <translation type="obsolete">Редактор</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>Номер:</translation>
+        <translation type="obsolete">Номер:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Название:</translation>
+        <translation type="obsolete">Название:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Категории:</translation>
+        <translation type="obsolete">Категории:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Язык:</translation>
+        <translation type="obsolete">Язык:</translation>
     </message>
     <message>
         <source>EPG:</source>
-        <translation>EPG:</translation>
+        <translation type="obsolete">EPG:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Url:</translation>
+        <translation type="obsolete">Url:</translation>
     </message>
     <message>
         <source>Update Playlist</source>
-        <translation>Обновить список воспроизведения</translation>
+        <translation type="obsolete">Обновить список воспроизведения</translation>
     </message>
     <message>
         <source>IP Range:</source>
-        <translation>Диапазон IP:</translation>
+        <translation type="obsolete">Диапазон IP:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>Таймаут:</translation>
+        <translation type="obsolete">Таймаут:</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Просканировать и обновить</translation>
+        <translation type="obsolete">Просканировать и обновить</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation>мс</translation>
+        <translation type="obsolete">мс</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Порт:</translation>
+        <translation type="obsolete">Порт:</translation>
     </message>
     <message>
         <source>Save and Close</source>
@@ -682,7 +702,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Close</source>
-        <translation>Закрыть</translation>
+        <translation type="obsolete">Закрыть</translation>
     </message>
     <message>
         <source>Import</source>
@@ -690,19 +710,19 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Print</source>
-        <translation>Печать</translation>
+        <translation type="obsolete">Печать</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Редактор списка воспроизведения</translation>
+        <translation type="obsolete">Редактор списка воспроизведения</translation>
     </message>
     <message>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Вы можете разделять категории запятой.&lt;br&gt;При экспорте списка в формате Sagem Js будет записана только первая.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Вы можете разделять категории запятой.&lt;br&gt;При экспорте списка в формате Sagem Js будет записана только первая.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
-        <translation>&lt;b&gt;&lt;i&gt;Инструкции:&lt;/i&gt;&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;&lt;i&gt;Инструкции:&lt;/i&gt;&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will interrupt your current playback.&lt;/i&gt;</source>
@@ -726,7 +746,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Export</source>
-        <translation>Экспорт</translation>
+        <translation type="obsolete">Экспорт</translation>
     </message>
     <message>
         <source>Tano Old Playlist</source>
@@ -738,7 +758,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Open</source>
-        <translation>Открыть</translation>
+        <translation type="obsolete">Открыть</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
@@ -746,7 +766,122 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>About</source>
-        <translation>О программе</translation>
+        <translation type="obsolete">О программе</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="obsolete">Настройка</translation>
+    </message>
+    <message>
+        <source>Update Information</source>
+        <translation type="obsolete">Информация об обновлении</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="obsolete">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="obsolete">Невозможно прочитать файл %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="obsolete">Невозможно записать файл %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="obsolete">Канал с таким номером уже существует!</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditor</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist name:</source>
+        <translation type="unfinished">Имя списка каналов:</translation>
+    </message>
+    <message>
+        <source>Number of channels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation type="unfinished">Панель инструментов</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="obsolete">Редактор</translation>
+    </message>
+    <message>
+        <source>Number:</source>
+        <translation type="unfinished">Номер:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Название:</translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished">Категории:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Язык:</translation>
+    </message>
+    <message>
+        <source>EPG:</source>
+        <translation type="unfinished">EPG:</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Url:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Вы можете разделять категории запятой.&lt;br&gt;При экспорте списка в формате Sagem Js будет записана только первая.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;&lt;i&gt;Инструкции:&lt;/i&gt;&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Logo:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Update Playlist</source>
+        <translation type="obsolete">Обновить список воспроизведения</translation>
+    </message>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">Диапазон IP:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">Таймаут:</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Просканировать и обновить</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished">мс</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Порт:</translation>
     </message>
     <message>
         <source>Add channel</source>
@@ -757,6 +892,14 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Закрыть</translation>
+    </message>
+    <message>
         <source>Move up</source>
         <translation type="unfinished"></translation>
     </message>
@@ -765,29 +908,23 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Do you want close the editor?
-You will lose any unsaved changes.</source>
-        <translation type="unfinished"></translation>
+        <source>Print</source>
+        <translation type="unfinished">Печать</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">Экспорт</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Открыть</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">О программе</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do you want to create new playlist?
-You will lose any unsaved changes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New channel from scan %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - Tano Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -803,27 +940,11 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Logo:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Update Information</source>
         <translation type="unfinished">Информация об обновлении</translation>
     </message>
     <message>
-        <source>Export to M3U format with Udpxy URLs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save</source>
+        <source>%1 - Tano Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -837,14 +958,99 @@ You will lose any unsaved changes.</source>
 %2.</translation>
     </message>
     <message>
+        <source>Playlist Editor</source>
+        <translation type="unfinished">Редактор списка воспроизведения</translation>
+    </message>
+    <message>
+        <source>Do you want to create new playlist?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Cannot write file %1:
 %2.</source>
         <translation type="unfinished">Невозможно записать файл %1:
 %2.</translation>
     </message>
     <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>A channel with this number already exists!</source>
         <translation type="unfinished">Канал с таким номером уже существует!</translation>
+    </message>
+    <message>
+        <source>Edit channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan for new channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditorHelp</name>
+    <message>
+        <source>Tano Editor - Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be sepparated by comma (,).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1666,7 +1872,7 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished">Вы используете Tano версии:</translation>
     </message>
     <message>
-        <source>Default channel list</source>
+        <source>Channel list settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

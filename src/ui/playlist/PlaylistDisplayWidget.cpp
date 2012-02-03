@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -30,14 +30,25 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->labelSearch->hide();
+    ui->editSearch->hide();
+    ui->buttonClear->hide();
+    ui->comboType->hide();
+    ui->labelType->hide();
+    ui->comboCategory->hide();
+    ui->labelCategory->hide();
+    ui->comboLanguage->hide();
+    ui->labelLanguage->hide();
+
     _filterModel = new PlaylistFilterModel(this);
     _filterModel->setDynamicSortFilter(true);
 
     ui->playlistView->setModel(_filterModel);
 
-    connect(ui->playlistView, SIGNAL(activated(QModelIndex)), this, SLOT(channelClicked(QModelIndex)));
+    connect(ui->playlistView, SIGNAL(activated(QModelIndex)), this, SLOT(channelSelected(QModelIndex)));
     connect(ui->comboCategory, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
     connect(ui->comboLanguage, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
+    connect(ui->comboType, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
     connect(ui->editSearch, SIGNAL(textChanged(QString)), this, SLOT(processFilters()));
 }
 
@@ -62,7 +73,13 @@ void PlaylistDisplayWidget::changeEvent(QEvent *e)
     }
 }
 
-void PlaylistDisplayWidget::channelClicked(const QModelIndex &index)
+void PlaylistDisplayWidget::channelSelected(Channel *channel)
+{
+    _current = channel;
+    emit itemSelected(_current);
+}
+
+void PlaylistDisplayWidget::channelSelected(const QModelIndex &index)
 {
     _current = _model->row(_filterModel->mapToSource(index).row());
     emit itemSelected(_current);
@@ -76,10 +93,11 @@ void PlaylistDisplayWidget::channelSelected(const int &channel)
 
 void PlaylistDisplayWidget::editMode()
 {
-    ui->comboCategory->hide();
-    ui->labelCategory->hide();
-    ui->comboLanguage->hide();
-    ui->labelLanguage->hide();
+    ui->buttonSearch->hide();
+
+    ui->labelSearch->show();
+    ui->editSearch->show();
+    ui->buttonClear->show();
 }
 
 void PlaylistDisplayWidget::processFilters()
@@ -88,6 +106,7 @@ void PlaylistDisplayWidget::processFilters()
     _filterModel->setFilterRegExp(regExp);
     _filterModel->setCategory(ui->comboCategory->currentText());
     _filterModel->setLanguage(ui->comboLanguage->currentText());
+    _filterModel->setType(Tano::ChannelType(ui->comboType->currentIndex()));
 }
 
 void PlaylistDisplayWidget::refreshModel()
@@ -99,12 +118,6 @@ void PlaylistDisplayWidget::refreshModel()
     ui->comboLanguage->clear();
     ui->comboLanguage->insertItem(0, tr("All languages"));
     ui->comboLanguage->insertItems(1, _model->languages());
-}
-
-void PlaylistDisplayWidget::setCurrentChannel(Channel *channel)
-{
-    _current = channel;
-    ui->playlistView->setCurrentIndex(_model->indexFromItem(channel));
 }
 
 void PlaylistDisplayWidget::setModel(PlaylistModel *model)

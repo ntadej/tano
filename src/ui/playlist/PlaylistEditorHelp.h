@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,36 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QCoreApplication>
-#include <QtGui/QApplication>
-#include <QtGui/QBitmap>
-#include <QtGui/QSplashScreen>
+#ifndef TANO_PLAYLISTEDITORHELP_H_
+#define TANO_PLAYLISTEDITORHELP_H_
 
-#include "ui/playlist/PlaylistEditor.h"
+#include <QtGui/QDialog>
 
-#ifdef Q_WS_X11
-    #include <X11/Xlib.h>
-#endif
-
-int main(int argc, char *argv[])
+namespace Ui
 {
-#ifdef Q_WS_X11
-    XInitThreads();
-#endif
-
-    QApplication app(argc, argv);
-    QCoreApplication::setApplicationName("Tano Editor");
-
-    QPixmap pixmap(":/images/splash-editor.png");
-    QSplashScreen *splash = new QSplashScreen(pixmap);
-    splash->setMask(pixmap.mask());
-    splash->show();
-
-    PlaylistEditor main;
-    main.show();
-
-    splash->hide();
-    delete splash;
-
-    return app.exec();
+    class PlaylistEditorHelp;
 }
+
+class PlaylistEditorHelp : public QDialog
+{
+Q_OBJECT
+public:
+    PlaylistEditorHelp(QWidget *parent = 0);
+    ~PlaylistEditorHelp();
+
+protected:
+	void changeEvent(QEvent *e);
+
+private:
+    Ui::PlaylistEditorHelp *ui;
+};
+
+#endif // TANO_PLAYLISTEDITORHELP_H_

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -43,6 +43,12 @@ void PlaylistFilterModel::setLanguage(const QString &language)
     invalidateFilter();
 }
 
+void PlaylistFilterModel::setType(const Tano::ChannelType &type)
+{
+    _type = type;
+    invalidateFilter();
+}
+
 bool PlaylistFilterModel::filterAcceptsRow(int sourceRow,
                                            const QModelIndex &sourceParent) const
 {
@@ -51,6 +57,16 @@ bool PlaylistFilterModel::filterAcceptsRow(int sourceRow,
     bool name = sourceModel()->data(index, Channel::NameRole).toString().contains(filterRegExp());
     bool category = sourceModel()->data(index, Channel::CategoriesRole).toStringList().join("|").contains(_category, Qt::CaseInsensitive);
     bool language = sourceModel()->data(index, Channel::LanguageRole).toString().contains(_language, Qt::CaseInsensitive);
+    bool radio = sourceModel()->data(index, Channel::RadioRole).toBool();
 
-    return (name && category && language);
+    switch(_type)
+    {
+    case Tano::TV:
+        return (name && category && language && !radio);
+    case Tano::Radio:
+        return (name && category && language && radio);
+    case Tano::All:
+    default:
+        return (name && category && language);
+    }
 }

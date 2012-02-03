@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,6 @@ public:
     ~PlaylistDisplayWidget();
 
     Channel *currentChannel() { return _current; }
-    void setCurrentChannel(Channel *channel);
 
     void editMode();
     void refreshModel();
@@ -52,10 +51,11 @@ signals:
     void itemSelected(Channel *);
 
 public slots:
+    void channelSelected(Channel *channel);
     void channelSelected(const int &channel);
 
 private slots:
-    void channelClicked(const QModelIndex &index);
+    void channelSelected(const QModelIndex &index);
     void processFilters();
 
 private:

@@ -473,210 +473,282 @@ msgctxt "PlaylistDisplayWidget|"
 msgid "All languages"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistDisplayWidget|"
+msgid "Type:"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "TV + Radio"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "TV only"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Radio only"
+msgstr ""
+
+msgctxt "PlaylistDisplayWidget|"
+msgid "Search and filter"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Tano Editor"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
 msgid "Playlist name:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Channels number:"
+msgctxt "PlaylistEditor|"
+msgid "Number of channels:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
+msgid "Help"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
 msgid "Toolbar"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Editor"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Number:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Name:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Categories:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Language:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "EPG:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Url:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Update Playlist"
+msgctxt "PlaylistEditor|"
+msgid "Logo:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "IP Range:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Timeout:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Scan and update"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid " ms"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Port:"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid "Close"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Print"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Playlist Editor"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid ""
-"<i>You can separate categories with comma.<br>Only first one is saved when "
-"exporting to Sagem Js playlist format.</i>"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "<b><i>Instructions:</i></b>"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Export"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Open"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "About"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Add channel"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Delete channel"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
+msgid "Save"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Close"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
 msgid "Move up"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid "Move down"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
-msgid ""
-"Do you want close the editor?\n"
-"You will lose any unsaved changes."
+msgctxt "PlaylistEditor|"
+msgid "Print"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
+msgid "Export"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Open"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "About"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
 msgid "New playlist"
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
+msgid "Tvheadend"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Settings"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "XMLTV IDs"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Update Information"
+msgstr ""
+
+#, qt-format
+msgctxt "PlaylistEditor|"
+msgid "%1 - Tano Editor"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Tano"
+msgstr ""
+
+#, qt-format
+msgctxt "PlaylistEditor|"
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Playlist Editor"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
 msgid ""
 "Do you want to create new playlist?\n"
 "You will lose any unsaved changes."
 msgstr ""
 
 #, qt-format
-msgctxt "PlaylistEdit|"
-msgid "New channel from scan %1"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Tano Editor"
-msgstr ""
-
-#, qt-format
-msgctxt "PlaylistEdit|"
-msgid "%1 - Tano Editor"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Tvheadend"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Settings"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "XMLTV IDs"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid ""
-"<i>You need to apply the number.<br>All other values are automatically "
-"changed.<br>You need to provide full URL for logo.</i>"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Logo:"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Update Information"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Export to M3U format with Udpxy URLs"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid ""
-"You need to have valid Udpxy settings or the exported playlist will contain "
-"classic URLs."
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Save"
-msgstr ""
-
-msgctxt "PlaylistEdit|"
-msgid "Tano"
-msgstr ""
-
-#, qt-format
-msgctxt "PlaylistEdit|"
-msgid ""
-"Cannot read file %1:\n"
-"%2."
-msgstr ""
-
-#, qt-format
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
 msgid ""
 "Cannot write file %1:\n"
 "%2."
 msgstr ""
 
-msgctxt "PlaylistEdit|"
+msgctxt "PlaylistEditor|"
+msgid "Export to M3U format with Udpxy URLs"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid ""
+"You need to have valid Udpxy settings or the exported playlist will contain "
+"classic URLs."
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid ""
+"Do you want close the editor?\n"
+"You will lose any unsaved changes."
+msgstr ""
+
+#, qt-format
+msgctxt "PlaylistEditor|"
+msgid "New channel from scan %1"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
 msgid "A channel with this number already exists!"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Edit channel"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Radio:"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "Scan for new channels"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "Tano Editor - Help"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h2>Tano Editor - Help</h2>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"<b>You can edit your IP TV playlist, print it or export it to desired "
+"format.</b>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h3>Editing channels</h3>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"The number of a channel needs to be applied. All other values are "
+"automatically changed. You can set any channel as radio. Categories can be "
+"sepparated by comma (,)."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"Full URL needs to be provided for the channel logo. Pictures will be scaled "
+"to fit the interface."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h3>Formats and export</h3>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and "
+"Sagem JS files. Beside these formats you can also save/export to M3U with "
+"Udpxy URLs and Tvheadend configuration files."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid "<h3>Scan for channels</h3>"
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"You can scan for new channels using built in channels scanner. Please set "
+"valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 "
+"IPs in this range. A channel is added if it is detected before timeout."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"You can set custom radio category in settings (defaults to Radio) for "
+"exporting to Sagem JS and CSV. Only the first category or radio category "
+"will be exported to Sagem JS."
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
@@ -1221,7 +1293,7 @@ msgid "You are using Tano version:"
 msgstr ""
 
 msgctxt "SettingsGeneral|"
-msgid "Default channel list"
+msgid "Channel list settings"
 msgstr ""
 
 msgctxt "SettingsPage|"

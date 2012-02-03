@@ -513,204 +513,486 @@ This will stop recording in progress.</source>
         <source>All languages</source>
         <translation>Усі мови</translation>
     </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Тип:</translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistEdit</name>
     <message>
         <source>Playlist name:</source>
-        <translation>Назва переліку каналів:</translation>
+        <translation type="obsolete">Назва переліку каналів:</translation>
     </message>
     <message>
         <source>Channels number:</source>
-        <translation>Номера каналів:</translation>
+        <translation type="obsolete">Номера каналів:</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Панель</translation>
+        <translation type="obsolete">Панель</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Редактор</translation>
+        <translation type="obsolete">Редактор</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>Номер:</translation>
+        <translation type="obsolete">Номер:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Назва:</translation>
+        <translation type="obsolete">Назва:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Категорії:</translation>
+        <translation type="obsolete">Категорії:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Мова:</translation>
+        <translation type="obsolete">Мова:</translation>
     </message>
     <message>
         <source>EPG:</source>
-        <translation>EPG:</translation>
+        <translation type="obsolete">EPG:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Url:</translation>
+        <translation type="obsolete">Url:</translation>
     </message>
     <message>
         <source>Update Playlist</source>
-        <translation>Оновити перелік каналів</translation>
+        <translation type="obsolete">Оновити перелік каналів</translation>
     </message>
     <message>
         <source>IP Range:</source>
-        <translation>Діапазон IP:</translation>
+        <translation type="obsolete">Діапазон IP:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>Час що залишився:</translation>
+        <translation type="obsolete">Час що залишився:</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Сканувати та оновити</translation>
+        <translation type="obsolete">Сканувати та оновити</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation>мс</translation>
+        <translation type="obsolete">мс</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Порт:</translation>
+        <translation type="obsolete">Порт:</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Закрити</translation>
+        <translation type="obsolete">Закрити</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Надрукувати</translation>
+        <translation type="obsolete">Надрукувати</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Редактор переліку каналів</translation>
+        <translation type="obsolete">Редактор переліку каналів</translation>
     </message>
     <message>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Ви можете відокремити категорії комою.&lt;br&gt;Лише перший збережений коли експортуєте в формат переліку каналів Sagem Js.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Ви можете відокремити категорії комою.&lt;br&gt;Лише перший збережений коли експортуєте в формат переліку каналів Sagem Js.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
-        <translation>&lt;b&gt;&lt;i&gt;Інструкції:&lt;/i&gt;&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;&lt;i&gt;Інструкції:&lt;/i&gt;&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Експортувати</translation>
+        <translation type="obsolete">Експортувати</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Відкрити</translation>
+        <translation type="obsolete">Відкрити</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>Про</translation>
+        <translation type="obsolete">Про</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>Додати канал</translation>
+        <translation type="obsolete">Додати канал</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>Видалити канал</translation>
+        <translation type="obsolete">Видалити канал</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Перемістити вгору</translation>
+        <translation type="obsolete">Перемістити вгору</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Перемістити вниз</translation>
+        <translation type="obsolete">Перемістити вниз</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>Ви бажаєте закрити редактор?
+        <translation type="obsolete">Ви бажаєте закрити редактор?
 Ви втратите усі незбережені зміни.</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>Новий перелік каналів</translation>
+        <translation type="obsolete">Новий перелік каналів</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>Ви бажаєте створити новий перелік каналів?
+        <translation type="obsolete">Ви бажаєте створити новий перелік каналів?
 Ви втратите усі незбережені зміни.</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>Новий канал з відсканованого %1</translation>
+        <translation type="obsolete">Новий канал з відсканованого %1</translation>
     </message>
     <message>
         <source>Tano Editor</source>
-        <translation>Tano Редактор</translation>
+        <translation type="obsolete">Tano Редактор</translation>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation>%1 - Tano Редактор</translation>
+        <translation type="obsolete">%1 - Tano Редактор</translation>
     </message>
     <message>
         <source>Tvheadend</source>
-        <translation>Tvheadend</translation>
+        <translation type="obsolete">Tvheadend</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Налаштування</translation>
+        <translation type="obsolete">Налаштування</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>XMLTV ідентифікатор</translation>
+        <translation type="obsolete">XMLTV ідентифікатор</translation>
     </message>
     <message>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Ви повинні застосувати номер.&lt;br&gt;Усі інші значення автоматично змінені.&lt;br&gt;Вам потрібно ввести повне посилання URL для логитипу.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Ви повинні застосувати номер.&lt;br&gt;Усі інші значення автоматично змінені.&lt;br&gt;Вам потрібно ввести повне посилання URL для логитипу.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>Логотип:</translation>
+        <translation type="obsolete">Логотип:</translation>
     </message>
     <message>
         <source>Update Information</source>
-        <translation>Оновити інформацію</translation>
+        <translation type="obsolete">Оновити інформацію</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation>Експортувати в формат M3U з Udxpy посиланнями URL</translation>
+        <translation type="obsolete">Експортувати в формат M3U з Udxpy посиланнями URL</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>Вам потрібно мати дійсні налаштування Udpxy чи перелік каналів що експортовано повинен містити класичні посилання URL.</translation>
+        <translation type="obsolete">Вам потрібно мати дійсні налаштування Udpxy чи перелік каналів що експортовано повинен містити класичні посилання URL.</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Зберігти</translation>
+        <translation type="obsolete">Зберігти</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Неможливо прочитати файл %1:
+        <translation type="obsolete">Неможливо прочитати файл %1:
 %2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Неможливо записати файл %1:
+        <translation type="obsolete">Неможливо записати файл %1:
 %2.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Канал з таким номером вже існує!</translation>
+        <translation type="obsolete">Канал з таким номером вже існує!</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditor</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Tano Редактор</translation>
+    </message>
+    <message>
+        <source>Playlist name:</source>
+        <translation type="unfinished">Назва переліку каналів:</translation>
+    </message>
+    <message>
+        <source>Number of channels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation type="unfinished">Панель</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="obsolete">Редактор</translation>
+    </message>
+    <message>
+        <source>Number:</source>
+        <translation type="unfinished">Номер:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Назва:</translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished">Категорії:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Мова:</translation>
+    </message>
+    <message>
+        <source>EPG:</source>
+        <translation type="unfinished">EPG:</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Ви можете відокремити категорії комою.&lt;br&gt;Лише перший збережений коли експортуєте в формат переліку каналів Sagem Js.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Ви повинні застосувати номер.&lt;br&gt;Усі інші значення автоматично змінені.&lt;br&gt;Вам потрібно ввести повне посилання URL для логитипу.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;&lt;i&gt;Інструкції:&lt;/i&gt;&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Logo:</source>
+        <translation type="unfinished">Логотип:</translation>
+    </message>
+    <message>
+        <source>Update Playlist</source>
+        <translation type="obsolete">Оновити перелік каналів</translation>
+    </message>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">Діапазон IP:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">Час що залишився:</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Сканувати та оновити</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished">мс</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Порт:</translation>
+    </message>
+    <message>
+        <source>Add channel</source>
+        <translation type="unfinished">Додати канал</translation>
+    </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished">Видалити канал</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Зберігти</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Закрити</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished">Перемістити вгору</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished">Перемістити вниз</translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">Експортувати</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Відкрити</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New playlist</source>
+        <translation type="unfinished">Новий перелік каналів</translation>
+    </message>
+    <message>
+        <source>Tvheadend</source>
+        <translation type="unfinished">Tvheadend</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Налаштування</translation>
+    </message>
+    <message>
+        <source>XMLTV IDs</source>
+        <translation type="unfinished">XMLTV ідентифікатор</translation>
+    </message>
+    <message>
+        <source>Update Information</source>
+        <translation type="unfinished">Оновити інформацію</translation>
+    </message>
+    <message>
+        <source>%1 - Tano Editor</source>
+        <translation type="unfinished">%1 - Tano Редактор</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Неможливо прочитати файл %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Playlist Editor</source>
+        <translation type="unfinished">Редактор переліку каналів</translation>
+    </message>
+    <message>
+        <source>Do you want to create new playlist?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished">Ви бажаєте створити новий перелік каналів?
+Ви втратите усі незбережені зміни.</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished">Неможливо записати файл %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished">Експортувати в формат M3U з Udxpy посиланнями URL</translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
+        <translation type="unfinished">Вам потрібно мати дійсні налаштування Udpxy чи перелік каналів що експортовано повинен містити класичні посилання URL.</translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished">Ви бажаєте закрити редактор?
+Ви втратите усі незбережені зміни.</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished">Новий канал з відсканованого %1</translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished">Канал з таким номером вже існує!</translation>
+    </message>
+    <message>
+        <source>Edit channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan for new channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditorHelp</name>
+    <message>
+        <source>Tano Editor - Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be sepparated by comma (,).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1283,7 +1565,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Default channel list</source>
-        <translation>Перелік каналів за замовчуванням</translation>
+        <translation type="obsolete">Перелік каналів за замовчуванням</translation>
+    </message>
+    <message>
+        <source>Channel list settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

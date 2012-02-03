@@ -687,88 +687,108 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>All languages</source>
         <translation>Vsi jeziki</translation>
     </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Tip:</translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistEdit</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Tano Urejevalnik</translation>
+        <translation type="obsolete">Tano Urejevalnik</translation>
     </message>
     <message>
         <source>Playlist name:</source>
-        <translation>Ime seznama programov:</translation>
+        <translation type="obsolete">Ime seznama programov:</translation>
     </message>
     <message>
         <source>Channels number:</source>
-        <translation>Število programov:</translation>
+        <translation type="obsolete">Število programov:</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Orodna vrstica</translation>
+        <translation type="obsolete">Orodna vrstica</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Urejevalnik</translation>
+        <translation type="obsolete">Urejevalnik</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>Število:</translation>
+        <translation type="obsolete">Število:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ime:</translation>
+        <translation type="obsolete">Ime:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Kategorije:</translation>
+        <translation type="obsolete">Kategorije:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Jezik:</translation>
+        <translation type="obsolete">Jezik:</translation>
     </message>
     <message>
         <source>EPG:</source>
-        <translation>EPG:</translation>
+        <translation type="obsolete">EPG:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Naslov:</translation>
+        <translation type="obsolete">Naslov:</translation>
     </message>
     <message>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Kategorije lahko ločite z vejico.&lt;br&gt;Samo prva je shranjena pri izvozu v Sagem JS format seznama programov.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Kategorije lahko ločite z vejico.&lt;br&gt;Samo prva je shranjena pri izvozu v Sagem JS format seznama programov.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
-        <translation>&lt;b&gt;&lt;i&gt;Navodila:&lt;/i&gt;&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;&lt;i&gt;Navodila:&lt;/i&gt;&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>Logo:</translation>
+        <translation type="obsolete">Logo:</translation>
     </message>
     <message>
         <source>Update Playlist</source>
-        <translation>Posodobi seznam programov</translation>
+        <translation type="obsolete">Posodobi seznam programov</translation>
     </message>
     <message>
         <source>IP Range:</source>
-        <translation>IP območje:</translation>
+        <translation type="obsolete">IP območje:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>Čas iskanja:</translation>
+        <translation type="obsolete">Čas iskanja:</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Išči in posodobi</translation>
+        <translation type="obsolete">Išči in posodobi</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation>ms</translation>
+        <translation type="obsolete">ms</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Vrata:</translation>
+        <translation type="obsolete">Vrata:</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will interrupt your current playback.&lt;/i&gt;</source>
@@ -776,23 +796,23 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>Dodaj program</translation>
+        <translation type="obsolete">Dodaj program</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>Izbriši program</translation>
+        <translation type="obsolete">Izbriši program</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Premakni navzgor</translation>
+        <translation type="obsolete">Premakni navzgor</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Premakni navzdol</translation>
+        <translation type="obsolete">Premakni navzdol</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>Nov seznam programov</translation>
+        <translation type="obsolete">Nov seznam programov</translation>
     </message>
     <message>
         <source>M3U (Original)</source>
@@ -804,15 +824,15 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Tvheadend</source>
-        <translation>Tvheadend</translation>
+        <translation type="obsolete">Tvheadend</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Nastavitve</translation>
+        <translation type="obsolete">Nastavitve</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>XMLTV oznake</translation>
+        <translation type="obsolete">XMLTV oznake</translation>
     </message>
     <message>
         <source></source>
@@ -820,7 +840,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Update Information</source>
-        <translation>Informacije o posodobitvah</translation>
+        <translation type="obsolete">Informacije o posodobitvah</translation>
     </message>
     <message>
         <source>Save and Close</source>
@@ -828,11 +848,11 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Število programa mora biti potrjeno.&lt;br&gt;Vse druge vrednosti se samodejno shranijo.&lt;br&gt;Potrebna je polna pot do loga.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Število programa mora biti potrjeno.&lt;br&gt;Vse druge vrednosti se samodejno shranijo.&lt;br&gt;Potrebna je polna pot do loga.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zapri</translation>
+        <translation type="obsolete">Zapri</translation>
     </message>
     <message>
         <source>Import</source>
@@ -840,11 +860,11 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Natisni</translation>
+        <translation type="obsolete">Natisni</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Izvozi</translation>
+        <translation type="obsolete">Izvozi</translation>
     </message>
     <message>
         <source>Tano Old Playlist</source>
@@ -856,11 +876,11 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Odpri</translation>
+        <translation type="obsolete">Odpri</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>O urejevalniku</translation>
+        <translation type="obsolete">O urejevalniku</translation>
     </message>
     <message>
         <source>Download from Web</source>
@@ -925,34 +945,34 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>Ali želite zapreti urejevalnik?
+        <translation type="obsolete">Ali želite zapreti urejevalnik?
 Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>Nov najden program %1</translation>
+        <translation type="obsolete">Nov najden program %1</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Urejevalnik seznama programov</translation>
+        <translation type="obsolete">Urejevalnik seznama programov</translation>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation>%1 - Tano Urejevalnik</translation>
+        <translation type="obsolete">%1 - Tano Urejevalnik</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>Ali želite ustvariti nov seznam programov?
+        <translation type="obsolete">Ali želite ustvariti nov seznam programov?
 Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation>Izvozi v M3U format z Udpxy URLji</translation>
+        <translation type="obsolete">Izvozi v M3U format z Udpxy URLji</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam programov vseboval običajne URLje.</translation>
+        <translation type="obsolete">Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam programov vseboval običajne URLje.</translation>
     </message>
     <message>
         <source>Import from Web</source>
@@ -960,27 +980,289 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Shrani</translation>
+        <translation type="obsolete">Shrani</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Ne morem prebrati %1:
+        <translation type="obsolete">Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Ne morem pisati datoteke %1:
+        <translation type="obsolete">Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Program s to številko že obstaja!</translation>
+        <translation type="obsolete">Program s to številko že obstaja!</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditor</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Tano Urejevalnik</translation>
+    </message>
+    <message>
+        <source>Playlist name:</source>
+        <translation type="unfinished">Ime seznama programov:</translation>
+    </message>
+    <message>
+        <source>Number of channels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">Pomoč</translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation type="unfinished">Orodna vrstica</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="obsolete">Urejevalnik</translation>
+    </message>
+    <message>
+        <source>Number:</source>
+        <translation type="unfinished">Število:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Ime:</translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished">Kategorije:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Jezik:</translation>
+    </message>
+    <message>
+        <source>EPG:</source>
+        <translation type="unfinished">EPG:</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Naslov:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Kategorije lahko ločite z vejico.&lt;br&gt;Samo prva je shranjena pri izvozu v Sagem JS format seznama programov.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;You need to apply the number.&lt;br&gt;All other values are automatically changed.&lt;br&gt;You need to provide full URL for logo.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Število programa mora biti potrjeno.&lt;br&gt;Vse druge vrednosti se samodejno shranijo.&lt;br&gt;Potrebna je polna pot do loga.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;&lt;i&gt;Instructions:&lt;/i&gt;&lt;/b&gt;</source>
+        <translation type="obsolete">&lt;b&gt;&lt;i&gt;Navodila:&lt;/i&gt;&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Logo:</source>
+        <translation type="unfinished">Logo:</translation>
+    </message>
+    <message>
+        <source>Update Playlist</source>
+        <translation type="obsolete">Posodobi seznam programov</translation>
+    </message>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">IP območje:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">Čas iskanja:</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Išči in posodobi</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished">ms</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Vrata:</translation>
+    </message>
+    <message>
+        <source>Add channel</source>
+        <translation type="unfinished">Dodaj program</translation>
+    </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished">Izbriši program</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Shrani</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zapri</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished">Premakni navzgor</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished">Premakni navzdol</translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">Natisni</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">Izvozi</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Odpri</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New playlist</source>
+        <translation type="unfinished">Nov seznam programov</translation>
+    </message>
+    <message>
+        <source>Tvheadend</source>
+        <translation type="unfinished">Tvheadend</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavitve</translation>
+    </message>
+    <message>
+        <source>XMLTV IDs</source>
+        <translation type="unfinished">XMLTV oznake</translation>
+    </message>
+    <message>
+        <source>Update Information</source>
+        <translation type="unfinished">Informacije o posodobitvah</translation>
+    </message>
+    <message>
+        <source>%1 - Tano Editor</source>
+        <translation type="unfinished">%1 - Tano Urejevalnik</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Ne morem prebrati %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Playlist Editor</source>
+        <translation type="unfinished">Urejevalnik seznama programov</translation>
+    </message>
+    <message>
+        <source>Do you want to create new playlist?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished">Ali želite ustvariti nov seznam programov?
+Neshranjene spremembe ne bodo uveljavljene.</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished">Ne morem pisati datoteke %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished">Izvozi v M3U format z Udpxy URLji</translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
+        <translation type="unfinished">Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam programov vseboval običajne URLje.</translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished">Ali želite zapreti urejevalnik?
+Neshranjene spremembe ne bodo uveljavljene.</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished">Nov najden program %1</translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished">Program s to številko že obstaja!</translation>
+    </message>
+    <message>
+        <source>Edit channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan for new channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditorHelp</name>
+    <message>
+        <source>Tano Editor - Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be sepparated by comma (,).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1895,7 +2177,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Default channel list</source>
-        <translation>Privzet seznam programov</translation>
+        <translation type="obsolete">Privzet seznam programov</translation>
+    </message>
+    <message>
+        <source>Channel list settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
