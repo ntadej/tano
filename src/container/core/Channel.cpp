@@ -82,7 +82,7 @@ QVariant Channel::data(int role) const
 
 QString Channel::display() const
 {
-    return numberString() + ". " + name();
+    return QString("%1. %2").arg(numberString(), name());
 }
 
 QIcon Channel::displayIcon() const

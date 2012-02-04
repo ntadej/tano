@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -22,14 +22,15 @@
 
 QString Tano::timerTypeString(const TimerType &type)
 {
-    switch(type) {
-        case Tano::Once:
-            return QString(QObject::tr("Once"));
-        case Tano::Daily:
-            return QString(QObject::tr("Daily"));
-        case Tano::Weekly:
-            return QString(QObject::tr("Weekly"));
-        default:
-            return QString("error");
+    switch (type)
+    {
+    case Tano::Once:
+        return QObject::tr("Once");
+    case Tano::Daily:
+        return QObject::tr("Daily");
+    case Tano::Weekly:
+        return QObject::tr("Weekly");
+    default:
+        return QString("error");
     }
 }

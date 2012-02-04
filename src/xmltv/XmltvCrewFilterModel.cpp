@@ -24,12 +24,19 @@ XmltvCrewFilterModel::XmltvCrewFilterModel(QObject *parent)
 
 XmltvCrewFilterModel::~XmltvCrewFilterModel() { }
 
+void XmltvCrewFilterModel::setType(const Tano::Xmltv::CrewMemberType &type)
+{
+    _type = type;
+    invalidateFilter();
+}
+
 bool XmltvCrewFilterModel::filterAcceptsRow(int sourceRow,
                                             const QModelIndex &sourceParent) const
 {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
     bool name = sourceModel()->data(index, XmltvCrewMember::NameRole).toString().contains(filterRegExp());
+    bool type = (sourceModel()->data(index, XmltvCrewMember::TypeRole).toInt() == _type) || !_type;
 
-    return name;
+    return name && type;
 }

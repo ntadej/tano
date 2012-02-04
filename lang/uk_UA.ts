@@ -118,6 +118,58 @@ Your VLC-Qt version: %4
         <source>Next</source>
         <translation>Наступний</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Crew&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Description&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Crew members: All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Director</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Writer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adapter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Producer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Редактор</translation>
+    </message>
+    <message>
+        <source>Presenter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Commentator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guest</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstRunWizard</name>
@@ -1356,6 +1408,46 @@ You will lose any unsaved changes.</source>
         <source>Open XMLTV</source>
         <translation>Відкрити XMLTV</translation>
     </message>
+    <message>
+        <source>Director</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Writer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adapter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Producer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Редактор</translation>
+    </message>
+    <message>
+        <source>Presenter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Commentator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guest</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1837,6 +1929,13 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Info panel enabled</source>
         <translation>Інформаційна панель увімкнена</translation>
+    </message>
+</context>
+<context>
+    <name>Tano::Xmltv</name>
+    <message>
+        <source>Editor</source>
+        <translation type="obsolete">Редактор</translation>
     </message>
 </context>
 <context>

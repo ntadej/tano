@@ -36,7 +36,26 @@ namespace Tano
         LenghtUnits lenghtUnits(const QString &type);
         QString lenghtUnits(const LenghtUnits &type);
         QString lenghtUnitsShort(const LenghtUnits &type);
-    }
-};
 
-#endif // TANO_ENUMS_H_
+        // Crew member types
+        enum CrewMemberType
+        {
+            All,
+            Director,
+            Actor,
+            Writer,
+            Adapter,
+            Producer,
+            Composer,
+            Editor,
+            Presenter,
+            Commentator,
+            Guest
+        };
+
+        CrewMemberType crewMemberType(const QString &type);
+        QString crewMemberType(const CrewMemberType &type);
+    }
+}
+
+#endif // TANO_XMLTVENUMS_H_

@@ -123,6 +123,59 @@ msgctxt "EpgShow|"
 msgid "Next"
 msgstr "Suivant"
 
+msgctxt "EpgShow|"
+msgid "<b>Crew</b>"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "<b>Description</b>"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Crew members: All"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Director"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Actor"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Writer"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Adapter"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Producer"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Composer"
+msgstr ""
+
+#, fuzzy
+msgctxt "EpgShow|"
+msgid "Editor"
+msgstr "Éditeur"
+
+msgctxt "EpgShow|"
+msgid "Presenter"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Commentator"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Guest"
+msgstr ""
+
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Relancer l'assistant"
@@ -1416,6 +1469,47 @@ msgctxt "QObject|"
 msgid "Open XMLTV"
 msgstr "Ouvrir XMLTV"
 
+msgctxt "QObject|"
+msgid "Director"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Actor"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Writer"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Adapter"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Producer"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Composer"
+msgstr ""
+
+#, fuzzy
+msgctxt "QObject|"
+msgid "Editor"
+msgstr "Éditeur"
+
+msgctxt "QObject|"
+msgid "Presenter"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Commentator"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Guest"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Effacer les raccourcis clavier"
@@ -1872,6 +1966,10 @@ msgstr "Contrôles"
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Panneau d'information"
+
+#~ msgctxt "Tano::Xmltv|"
+#~ msgid "Editor"
+#~ msgstr "Éditeur"
 
 msgctxt "TeletextWidget|"
 msgid "Teletext"

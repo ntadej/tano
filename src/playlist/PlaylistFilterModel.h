@@ -30,13 +30,13 @@ public:
     PlaylistFilterModel(QObject *parent = 0);
     ~PlaylistFilterModel();
 
-    QString category() const { return _category; }
+    inline QString category() const { return _category; }
     void setCategory(const QString &category);
 
-    QString language() const { return _language; }
+    inline QString language() const { return _language; }
     void setLanguage(const QString &language);
 
-    Tano::ChannelType type() const { return _type; }
+    inline Tano::ChannelType type() const { return _type; }
     void setType(const Tano::ChannelType &type);
 
 protected:

@@ -43,7 +43,7 @@ public:
         SubTitleRole,
         DescRole,
         DateRole,
-        CategoryRole,
+        CategoriesRole,
         LanguageRole,
         OriginalLanguageRole,
         LenghtRole,
@@ -77,7 +77,7 @@ public:
     void setDesc(const QString &s);
     inline QDateTime date() const { return _date; }
     void setDate(const QDateTime &d);
-    inline QStringList category() const { return _category; }
+    inline QStringList categories() const { return _categories; }
     void addCategory(const QString &s);
     inline QString language() const { return _language; }
     void setLanguage(const QString &s);
@@ -104,6 +104,8 @@ public:
     void addCommentator(const QString &s);
     void addGuest(const QString &s);
 
+    XmltvCrewModel *crew() { return _crew; }
+
 private:
     QString _channel;
     QString _channelDisplayName;
@@ -113,7 +115,7 @@ private:
     QString _subTitle;
     QString _desc;
     QDateTime _date;
-    QStringList _category;
+    QStringList _categories;
     QString _language;
     QString _originalLanguage;
     QString _lenght;

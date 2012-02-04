@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -18,6 +18,8 @@
 
 #include "container/xmltv/XmltvProgramme.h"
 #include "core/GetFile.h"
+#include "xmltv/XmltvCrewFilterModel.h"
+#include "xmltv/XmltvCrewModel.h"
 
 #include "EpgShow.h"
 #include "ui_EpgShow.h"
@@ -29,10 +31,16 @@ EpgShow::EpgShow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    _crew = new XmltvCrewFilterModel(this);
+    _crew->setDynamicSortFilter(true);
+    ui->crew->setModel(_crew);
+
     connect(_image, SIGNAL(file(QString)), this, SLOT(image(QString)));
 
     connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
     connect(ui->buttonNext, SIGNAL(clicked()), this, SLOT(next()));
+
+    connect(ui->comboCrewType, SIGNAL(currentIndexChanged(int)), this, SLOT(processFilters(int)));
 }
 
 EpgShow::~EpgShow()
@@ -44,12 +52,13 @@ EpgShow::~EpgShow()
 void EpgShow::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            break;
-        default:
-            break;
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
     }
 }
 
@@ -60,15 +69,16 @@ void EpgShow::display(XmltvProgramme *programme)
     setWindowTitle(programme->channelDisplayName() + ": " + programme->title());
     ui->labelTitle->setText("<h1>" + programme->title() + "</h1>");
     ui->labelTime->setText("<h2>" + programme->channelDisplayName()+ ", " + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</h2>");
-    QString categories;
-    for(int i = 0; i < programme->category().size(); i++) {
-        if(i != 0)
-            categories.append(" / ");
-        categories.append(programme->category()[i]);
-    }
-    ui->labelInfo->setText("<h3>" + categories + "</h3>");
+    ui->labelInfo->setText("<h3>" + programme->categories().join(" / ") + "</h3>");
     ui->labelDescription->setText(programme->desc());
     ui->labelPhoto->setPixmap(QPixmap(":/icons/48x48/image.png"));
+
+    _crew->setSourceModel(programme->crew());
+
+    ui->crew->setVisible(programme->crew()->rowCount());
+    ui->labelCrew->setVisible(programme->crew()->rowCount());
+    ui->labelCrewIcon->setVisible(programme->crew()->rowCount());
+    ui->comboCrewType->setVisible(programme->crew()->rowCount());
 
     _image->getFile(programme->icon());
 
@@ -88,4 +98,9 @@ void EpgShow::next()
 void EpgShow::previous()
 {
     emit requestPrevious(_current);
+}
+
+void EpgShow::processFilters(const int &type)
+{
+    _crew->setType(Tano::Xmltv::CrewMemberType(type));
 }

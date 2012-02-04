@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "container/xmltv/XmltvCrewMember.h"
 #include "container/xmltv/XmltvProgramme.h"
 #include "xmltv/XmltvCrewModel.h"
 
@@ -44,7 +45,7 @@ QHash<int, QByteArray> XmltvProgramme::roleNames() const
     names[SubTitleRole] = "subtitle";
     names[DescRole] = "desc";
     names[DateRole] = "date";
-    names[CategoryRole] = "category";
+    names[CategoriesRole] = "categories";
     names[LanguageRole] = "language";
     names[OriginalLanguageRole] = "originallanguage";
     names[LenghtRole] = "lenght";
@@ -76,8 +77,8 @@ QVariant XmltvProgramme::data(int role) const
         return desc();
     case DateRole:
         return date();
-    case CategoryRole:
-        return category();
+    case CategoriesRole:
+        return categories();
     case LanguageRole:
         return language();
     case OriginalLanguageRole:
@@ -97,7 +98,7 @@ QVariant XmltvProgramme::data(int role) const
 
 QString XmltvProgramme::display() const
 {
-    return start().toString("hh:mm") + " - " + title();
+    return QString("%1 - %2").arg(start().toString("hh:mm"), title());
 }
 
 QIcon XmltvProgramme::displayIcon() const
@@ -107,7 +108,7 @@ QIcon XmltvProgramme::displayIcon() const
 
 void XmltvProgramme::setChannelDisplayName(const QString &s)
 {
-    if(_channelDisplayName != s) {
+    if (_channelDisplayName != s) {
         _channelDisplayName = s;
         emit dataChanged();
     }
@@ -115,7 +116,7 @@ void XmltvProgramme::setChannelDisplayName(const QString &s)
 
 void XmltvProgramme::setTitle(const QString &s)
 {
-    if(_title != s) {
+    if (_title != s) {
         _title = s;
         emit dataChanged();
     }
@@ -123,7 +124,7 @@ void XmltvProgramme::setTitle(const QString &s)
 
 void XmltvProgramme::setStart(const QDateTime &d)
 {
-    if(_start != d) {
+    if (_start != d) {
         _start = d;
         emit dataChanged();
     }
@@ -131,7 +132,7 @@ void XmltvProgramme::setStart(const QDateTime &d)
 
 void XmltvProgramme::setStop(const QDateTime &d)
 {
-    if(_stop != d) {
+    if (_stop != d) {
         _stop = d;
         emit dataChanged();
     }
@@ -139,7 +140,7 @@ void XmltvProgramme::setStop(const QDateTime &d)
 
 void XmltvProgramme::setSubTitle(const QString &s)
 {
-    if(_subTitle != s) {
+    if (_subTitle != s) {
         _subTitle = s;
         emit dataChanged();
     }
@@ -147,7 +148,7 @@ void XmltvProgramme::setSubTitle(const QString &s)
 
 void XmltvProgramme::setDesc(const QString &s)
 {
-    if(_desc != s) {
+    if (_desc != s) {
         _desc = s;
         emit dataChanged();
     }
@@ -155,7 +156,7 @@ void XmltvProgramme::setDesc(const QString &s)
 
 void XmltvProgramme::setDate(const QDateTime &d)
 {
-    if(_date != d) {
+    if (_date != d) {
         _date = d;
         emit dataChanged();
     }
@@ -163,15 +164,15 @@ void XmltvProgramme::setDate(const QDateTime &d)
 
 void XmltvProgramme::addCategory(const QString &s)
 {
-    if(!_category.contains(s)) {
-        _category << s;
+    if (!_categories.contains(s)) {
+        _categories << s;
         emit dataChanged();
     }
 }
 
 void XmltvProgramme::setLanguage(const QString &s)
 {
-    if(_language != s) {
+    if (_language != s) {
         _language = s;
         emit dataChanged();
     }
@@ -179,7 +180,7 @@ void XmltvProgramme::setLanguage(const QString &s)
 
 void XmltvProgramme::setOriginalLanguage(const QString &s)
 {
-    if(_originalLanguage != s) {
+    if (_originalLanguage != s) {
         _originalLanguage = s;
         emit dataChanged();
     }
@@ -187,7 +188,7 @@ void XmltvProgramme::setOriginalLanguage(const QString &s)
 
 void XmltvProgramme::setLenght(const QString &s)
 {
-    if(_lenght != s) {
+    if (_lenght != s) {
         _lenght = s;
         emit dataChanged();
     }
@@ -195,7 +196,7 @@ void XmltvProgramme::setLenght(const QString &s)
 
 void XmltvProgramme::setLenghtUnits(const Tano::Xmltv::LenghtUnits &e)
 {
-    if(_lenghtUnits != e) {
+    if (_lenghtUnits != e) {
         _lenghtUnits = e;
         emit dataChanged();
     }
@@ -203,7 +204,7 @@ void XmltvProgramme::setLenghtUnits(const Tano::Xmltv::LenghtUnits &e)
 
 void XmltvProgramme::setIcon(const QString &s)
 {
-    if(_icon != s) {
+    if (_icon != s) {
         _icon = s;
         emit dataChanged();
     }
@@ -211,20 +212,68 @@ void XmltvProgramme::setIcon(const QString &s)
 
 void XmltvProgramme::setIconSize(const QSize &s)
 {
-    if(_iconSize != s) {
+    if (_iconSize != s) {
         _iconSize = s;
         emit dataChanged();
     }
 }
 
+void XmltvProgramme::addDirector(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Director, this);
+    _crew->appendRow(crew);
+}
 
-void XmltvProgramme::addDirector(const QString &s) { Q_UNUSED(s) }
-void XmltvProgramme::addActor(const QString &s) { Q_UNUSED(s) }
-void XmltvProgramme::addWriter(const QString &s) { Q_UNUSED(s) }
-void XmltvProgramme::addAdapter(const QString &s) { Q_UNUSED(s) }
-void XmltvProgramme::addProducer(const QString &s) { Q_UNUSED(s) }
-void XmltvProgramme::addComposer(const QString &s) { Q_UNUSED(s) }
-void XmltvProgramme::addEditor(const QString &s) { Q_UNUSED(s) }
-void XmltvProgramme::addPresenter(const QString &s) { Q_UNUSED(s) }
-void XmltvProgramme::addCommentator(const QString &s) { Q_UNUSED(s) }
-void XmltvProgramme::addGuest(const QString &s) { Q_UNUSED(s) }
+void XmltvProgramme::addActor(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Actor, this);
+    _crew->appendRow(crew);
+}
+
+void XmltvProgramme::addWriter(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Writer, this);
+    _crew->appendRow(crew);
+}
+
+void XmltvProgramme::addAdapter(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Adapter, this);
+    _crew->appendRow(crew);
+}
+
+void XmltvProgramme::addProducer(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Producer, this);
+    _crew->appendRow(crew);
+}
+
+void XmltvProgramme::addComposer(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Composer, this);
+    _crew->appendRow(crew);
+}
+
+void XmltvProgramme::addEditor(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Editor, this);
+    _crew->appendRow(crew);
+}
+
+void XmltvProgramme::addPresenter(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Presenter, this);
+    _crew->appendRow(crew);
+}
+
+void XmltvProgramme::addCommentator(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Commentator, this);
+    _crew->appendRow(crew);
+}
+
+void XmltvProgramme::addGuest(const QString &s)
+{
+    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Guest, this);
+    _crew->appendRow(crew);
+}

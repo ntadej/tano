@@ -83,7 +83,7 @@ void XmltvChannel::addProgramme(XmltvProgramme *p)
 
 void XmltvChannel::setDisplayName(const QString &s)
 {
-    if(_displayName != s) {
+    if (_displayName != s) {
         _displayName = s;
         emit dataChanged();
 
@@ -95,7 +95,7 @@ void XmltvChannel::setDisplayName(const QString &s)
 
 void XmltvChannel::setIcon(const QString &s)
 {
-    if(_icon != s) {
+    if (_icon != s) {
         _icon = s;
         emit dataChanged();
     }
@@ -103,7 +103,7 @@ void XmltvChannel::setIcon(const QString &s)
 
 void XmltvChannel::setUrl(const QString &s)
 {
-    if(_url != s) {
+    if (_url != s) {
         _url = s;
         emit dataChanged();
     }

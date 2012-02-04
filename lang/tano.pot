@@ -107,6 +107,58 @@ msgctxt "EpgShow|"
 msgid "Next"
 msgstr ""
 
+msgctxt "EpgShow|"
+msgid "<b>Crew</b>"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "<b>Description</b>"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Crew members: All"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Director"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Actor"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Writer"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Adapter"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Producer"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Composer"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Editor"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Presenter"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Commentator"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Guest"
+msgstr ""
+
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr ""
@@ -1096,6 +1148,46 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "Open XMLTV"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Director"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Actor"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Writer"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Adapter"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Producer"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Composer"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Editor"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Presenter"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Commentator"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Guest"
 msgstr ""
 
 msgctxt "QtKeySequenceEdit|"

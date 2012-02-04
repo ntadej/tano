@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -92,7 +92,7 @@ QVariant Timer::data(int role) const
 
 QString Timer::display() const
 {
-    return name() + " " + "(" + (isDisabled() ? tr("Disabled or expired") : tr("Active")) + ")";
+    return QString("%1 (%2)").arg(name(), (isDisabled() ? tr("Disabled or expired") : tr("Active")));
 }
 
 QIcon Timer::displayIcon() const
@@ -102,7 +102,7 @@ QIcon Timer::displayIcon() const
 
 void Timer::setName(const QString &name)
 {
-    if(_name != name) {
+    if (_name != name) {
         _name = name;
         emit dataChanged();
     }
@@ -110,7 +110,7 @@ void Timer::setName(const QString &name)
 
 void Timer::setChannel(const QString &channel)
 {
-    if(_channel != channel) {
+    if (_channel != channel) {
         _channel = channel;
         emit dataChanged();
     }
@@ -118,7 +118,7 @@ void Timer::setChannel(const QString &channel)
 
 void Timer::setPlaylist(const QString &playlist)
 {
-    if(_playlist != playlist) {
+    if (_playlist != playlist) {
         _playlist = playlist;
         emit dataChanged();
     }
@@ -126,7 +126,7 @@ void Timer::setPlaylist(const QString &playlist)
 
 void Timer::setUrl(const QString &url)
 {
-    if(_url != url) {
+    if (_url != url) {
         _url = url;
         emit dataChanged();
     }
@@ -134,7 +134,7 @@ void Timer::setUrl(const QString &url)
 
 void Timer::setNum(const int &num)
 {
-    if(_num != num) {
+    if (_num != num) {
         _num = num;
         emit dataChanged();
     }
@@ -142,7 +142,7 @@ void Timer::setNum(const int &num)
 
 void Timer::setStartTime(const QDateTime &startTime)
 {
-    if(_startTime != startTime) {
+    if (_startTime != startTime) {
         _startTime = startTime;
         emit dataChanged();
     }
@@ -150,7 +150,7 @@ void Timer::setStartTime(const QDateTime &startTime)
 
 void Timer::setEndTime(const QDateTime &endTime)
 {
-    if(_endTime != endTime) {
+    if (_endTime != endTime) {
         _endTime = endTime;
         emit dataChanged();
     }
@@ -158,7 +158,7 @@ void Timer::setEndTime(const QDateTime &endTime)
 
 void Timer::setDisabled(const bool &disabled)
 {
-    if(_disabled != disabled) {
+    if (_disabled != disabled) {
         _disabled = disabled;
         emit dataChanged();
     }
@@ -166,7 +166,7 @@ void Timer::setDisabled(const bool &disabled)
 
 void Timer::setType(const Tano::TimerType &type)
 {
-    if(_type != type) {
+    if (_type != type) {
         _type = type;
         emit dataChanged();
     }
@@ -174,7 +174,7 @@ void Timer::setType(const Tano::TimerType &type)
 
 void Timer::setRecording(const bool &recording)
 {
-    if(_recording != recording) {
+    if (_recording != recording) {
         _recording = recording;
         emit dataChanged();
     }

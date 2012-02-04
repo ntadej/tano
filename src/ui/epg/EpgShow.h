@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,14 +21,13 @@
 
 #include <QtGui/QWidget>
 
-#include "core/Enums.h"
-
 namespace Ui
 {
 	class EpgShow;
 }
 
 class GetFile;
+class XmltvCrewFilterModel;
 class XmltvProgramme;
 
 class EpgShow : public QWidget
@@ -52,11 +51,13 @@ private slots:
 	void image(const QString &image);
 	void next();
 	void previous();
+	void processFilters(const int &type);
 
 private:
 	Ui::EpgShow *ui;
 
 	XmltvProgramme *_current;
+	XmltvCrewFilterModel *_crew;
 
 	GetFile *_image;
 };

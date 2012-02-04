@@ -29,7 +29,7 @@ public:
     XmltvProgrammeFilterModel(QObject *parent = 0);
     ~XmltvProgrammeFilterModel();
 
-    QDate date() const { return _date; }
+    inline QDate date() const { return _date; }
     void setDate(const QDate &date);
 
 protected:

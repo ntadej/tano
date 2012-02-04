@@ -119,6 +119,24 @@ void XmltvManager::loadXmltvFinish()
                      << _handler->list()->channels()->row(i)->programme()->row(k)->stop();
         }
     }
+
+    QFile file("xmltv-cat");
+    QTextStream out;
+    file.open(QFile::WriteOnly | QFile::Text);
+
+    out.setDevice(&file);
+    out.setCodec("UTF-8");
+    QStringList cat;
+    for (int i = 0; i < _handler->list()->channels()->rowCount(); i++) {
+        for (int k = 0; k < _handler->list()->channels()->row(i)->programme()->rowCount(); k++) {
+            if (!cat.contains(_handler->list()->channels()->row(i)->programme()->row(k)->categories().join(" / "))) {
+                cat << _handler->list()->channels()->row(i)->programme()->row(k)->categories().join(" / ");
+                out << _handler->list()->channels()->row(i)->programme()->row(k)->categories().join(" / ") << "\n";
+            }
+        }
+    }
+    qDebug() << "Cat:" << cat.count();
+    file.close();
 }
 
 QString XmltvManager::processCurrentString(XmltvProgramme *programme) const

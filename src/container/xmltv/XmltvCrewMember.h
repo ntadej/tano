@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@
 #include <QtCore/QString>
 
 #include "core/ListItem.h"
+#include "xmltv/XmltvEnums.h"
 
 class XmltvCrewMember : public ListItem
 {
@@ -36,7 +37,7 @@ public:
     };
 
     XmltvCrewMember(const QString &name = 0,
-                    const QString &type = 0,
+                    const Tano::Xmltv::CrewMemberType &type = Tano::Xmltv::Actor,
                     QObject *parent = 0);
     ~XmltvCrewMember();
 
@@ -47,11 +48,11 @@ public:
     QHash<int, QByteArray> roleNames() const;
 
     inline QString name() const { return _name; }
-    inline QString type() const { return _type; }
+    inline Tano::Xmltv::CrewMemberType type() const { return _type; }
 
 private:
     QString _name;
-    QString _type;
+    Tano::Xmltv::CrewMemberType _type;
 };
 
 #endif // TANO_XMLTVCREWMEMBER_H_

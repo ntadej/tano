@@ -135,6 +135,59 @@ msgctxt "EpgShow|"
 msgid "Next"
 msgstr "След."
 
+msgctxt "EpgShow|"
+msgid "<b>Crew</b>"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "<b>Description</b>"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Crew members: All"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Director"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Actor"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Writer"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Adapter"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Producer"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Composer"
+msgstr ""
+
+#, fuzzy
+msgctxt "EpgShow|"
+msgid "Editor"
+msgstr "Редактор"
+
+msgctxt "EpgShow|"
+msgid "Presenter"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Commentator"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Guest"
+msgstr ""
+
 #~ msgctxt "FileDialogs|"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
@@ -1545,6 +1598,47 @@ msgctxt "QObject|"
 msgid "Open XMLTV"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Director"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Actor"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Writer"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Adapter"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Producer"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Composer"
+msgstr ""
+
+#, fuzzy
+msgctxt "QObject|"
+msgid "Editor"
+msgstr "Редактор"
+
+msgctxt "QObject|"
+msgid "Presenter"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Commentator"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Guest"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Очистить ярлык"
@@ -2242,6 +2336,10 @@ msgstr "Панель управления вкл."
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Панель информации вкл."
+
+#~ msgctxt "Tano::Xmltv|"
+#~ msgid "Editor"
+#~ msgstr "Редактор"
 
 msgctxt "TeletextWidget|"
 msgid "Teletext"

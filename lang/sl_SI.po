@@ -179,6 +179,59 @@ msgctxt "EpgShow|"
 msgid "Next"
 msgstr "Naslednja oddaja"
 
+msgctxt "EpgShow|"
+msgid "<b>Crew</b>"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "<b>Description</b>"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Crew members: All"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Director"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Actor"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Writer"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Adapter"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Producer"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Composer"
+msgstr ""
+
+#, fuzzy
+msgctxt "EpgShow|"
+msgid "Editor"
+msgstr "Urejevalnik"
+
+msgctxt "EpgShow|"
+msgid "Presenter"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Commentator"
+msgstr ""
+
+msgctxt "EpgShow|"
+msgid "Guest"
+msgstr ""
+
 #~ msgctxt "FileDialogs|"
 #~ msgid "Open directory"
 #~ msgstr "Odpri imenik"
@@ -1867,6 +1920,47 @@ msgctxt "QObject|"
 msgid "Open XMLTV"
 msgstr "Odpri XMLTV"
 
+msgctxt "QObject|"
+msgid "Director"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Actor"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Writer"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Adapter"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Producer"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Composer"
+msgstr ""
+
+#, fuzzy
+msgctxt "QObject|"
+msgid "Editor"
+msgstr "Urejevalnik"
+
+msgctxt "QObject|"
+msgid "Presenter"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Commentator"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Guest"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Počisti bližnjico"
@@ -2630,6 +2724,10 @@ msgstr "Vključen upravljalni pult"
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Vključen info pult"
+
+#~ msgctxt "Tano::Xmltv|"
+#~ msgid "Editor"
+#~ msgstr "Urejevalnik"
 
 #~ msgctxt "Teletext|"
 #~ msgid "Teletext"
