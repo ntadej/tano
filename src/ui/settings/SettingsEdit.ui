@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>540</height>
+    <width>650</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -37,6 +37,9 @@
        <width>100</width>
        <height>16777215</height>
       </size>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
      </property>
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -84,6 +87,18 @@
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
         <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Playlist</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../data/icons.qrc">
+        <normaloff>:/icons/48x48/video.png</normaloff>:/icons/48x48/video.png</iconset>
       </property>
      </item>
      <item>
@@ -177,6 +192,26 @@
           <size>
            <width>20</width>
            <height>156</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pagePlaylist">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="SettingsPlaylist" name="playlist" native="true"/>
+       </item>
+       <item>
+        <spacer name="spacerPlaylist">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>547</height>
           </size>
          </property>
         </spacer>
@@ -309,6 +344,12 @@
    <class>SettingsSchedule</class>
    <extends>QWidget</extends>
    <header>ui/settings/SettingsSchedule.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsPlaylist</class>
+   <extends>QWidget</extends>
+   <header>ui/settings/SettingsPlaylist.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

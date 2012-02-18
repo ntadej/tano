@@ -1286,15 +1286,7 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Curently using VLC-Qt Backend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use global VLC settings (requires restart)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1345,6 +1337,50 @@ You will lose any unsaved changes.</source>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Default aspect ratio:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default crop:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default deinterlacing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>16:9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Blend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mean</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bob</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Linear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsEdit</name>
@@ -1374,6 +1410,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1423,10 +1463,6 @@ You will lose any unsaved changes.</source>
         <source>You are using Tano version:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Channel list settings</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -1451,15 +1487,42 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use global VLC settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;b&gt;Playback&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use global VLC settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPlaylist</name>
+    <message>
+        <source>Default playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh playlist on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1481,11 +1544,35 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Custom grabber output:</source>
+        <source>XMLTV file location:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Custom</source>
+        <source>Refresh XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh XMLTV file on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV source url:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grabber</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1692,6 +1779,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Info panel enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tray icon</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

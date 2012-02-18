@@ -80,17 +80,17 @@ MainWindow::MainWindow(QWidget *parent)
     Settings *settings = new Settings(this);
     QSplashScreen *splash = new QSplashScreen(pixmap);
     splash->setMask(pixmap.mask());
-    if(settings->splash())
+    if (settings->splash())
         splash->show();
     delete settings;
 
     ui->setupUi(this);
 
+    createMenus();
     createSettingsStartup();
     createSettings();
     createBackend();
     createGui();
-    createMenus();
     createShortcuts();
     createSession();
     createConnections();
@@ -104,7 +104,7 @@ MainWindow::~MainWindow() { }
 void MainWindow::exit()
 {
     int ret;
-    if(ui->recorder->isRecording()) {
+    if (ui->recorder->isRecording()) {
         ret = QMessageBox::warning(this, tr("Tano"),
                       tr("Do you want to exit Tano?\nThis will stop recording in progress."),
                       QMessageBox::Close | QMessageBox::Cancel,
@@ -113,16 +113,18 @@ void MainWindow::exit()
         ret = QMessageBox::Close;
     }
 
-    switch (ret) {
-        case QMessageBox::Close:
-            ui->recorder->stop();
-            writeSession();
-            qApp->quit();
-            break;
-        case QMessageBox::Cancel:
-            break;
-        default:
-            break;
+    switch (ret)
+    {
+    case QMessageBox::Close:
+        ui->recorder->stop();
+        _trayIcon->hide();
+        writeSession();
+        qApp->quit();
+        break;
+    case QMessageBox::Cancel:
+        break;
+    default:
+        break;
     }
 }
 
@@ -140,7 +142,7 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
-    if(_hideToTray) {
+    if (_hideToTray) {
         tray();
         event->ignore();
     }
@@ -213,10 +215,15 @@ void MainWindow::createSettings()
 {
     Settings *settings = new Settings(this);
     _xmltv->loadXmltv(settings->xmltvLocation());
-    _hideToTray = settings->hideToTray();
+    _hideToTray = settings->trayEnabled() ? settings->hideToTray() : false;
 
     //GUI Settings
     ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
+
+    if (settings->trayEnabled())
+        _trayIcon->show();
+    else
+        _trayIcon->hide();
 
     _osdEnabled = settings->osd();
     ui->actionPlaylistFullscreen->setEnabled(_osdEnabled);
@@ -229,9 +236,9 @@ void MainWindow::createSettings()
     _defaultAudioLanguage = settings->audioLanguage();
     _defaultSubtitleLanguage = settings->subtitleLanguage();
     _videoSettings = settings->rememberVideoSettings();
-    if(_audioController)
+    if (_audioController)
         _audioController->setDefaultAudioLanguage(_defaultAudioLanguage);
-    if(_videoController)
+    if (_videoController)
         _videoController->setDefaultSubtitleLanguage(_defaultSubtitleLanguage);
     _udpxy->createSettings();
 
@@ -258,13 +265,13 @@ void MainWindow::createSettingsStartup()
     _sessionChannel = settings->channel();
 
     // GUI
-    if(settings->startLite()) {
+    if (settings->startLite()) {
         ui->actionLite->setChecked(true);
         lite();
     } else
         _isLite = false;
 
-    if(settings->startOnTop()) {
+    if (settings->startOnTop()) {
         ui->actionTop->setChecked(true);;
         top();
     }
@@ -372,7 +379,6 @@ void MainWindow::createMenus()
     _openMenu->addAction(ui->actionOpen);
 
     _trayIcon = new TrayIcon(_rightMenu);
-    _trayIcon->show();
 }
 
 void MainWindow::createShortcuts()
@@ -412,7 +418,7 @@ void MainWindow::createSession()
 {
     ui->volumeSlider->setVolume(_sessionVolume);
 
-    if(_sessionAutoplayEnabled && _hasPlaylist && _model->validate())
+    if (_sessionAutoplayEnabled && _hasPlaylist && _model->validate())
         ui->playlistWidget->channelSelected(_sessionChannel);
 
     _update->checkSilent();
@@ -421,11 +427,11 @@ void MainWindow::createSession()
 void MainWindow::writeSession()
 {
     Settings *settings = new Settings(this);
-    if(_sessionVolumeEnabled)
+    if (_sessionVolumeEnabled)
         settings->setVolume(ui->volumeSlider->volume());
     else
         settings->setVolume(Settings::DEFAULT_VOLUME);
-    if(_sessionAutoplayEnabled)
+    if (_sessionAutoplayEnabled)
         settings->setChannel(ui->channelNumber->value());
     settings->writeSettings();
     delete settings;
@@ -433,11 +439,11 @@ void MainWindow::writeSession()
 
 void MainWindow::mouseWheel()
 {
-    if(_wheelType == "volume") {
-        if(_select)
+    if (_wheelType == "volume") {
+        if (_select)
             disconnect(ui->videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
         connect(ui->videoWidget, SIGNAL(wheel(bool)), ui->volumeSlider, SLOT(volumeControl(bool)));
-    } else if(_select) {
+    } else if (_select) {
         disconnect(ui->videoWidget, SIGNAL(wheel(bool)), ui->volumeSlider, SLOT(volumeControl(bool)));
         connect(ui->videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
     }
@@ -466,7 +472,7 @@ void MainWindow::playChannel(Channel *channel)
 void MainWindow::setPlayingState(const bool &playing,
                                  const bool &buffering)
 {
-    if(playing) {
+    if (playing) {
         ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
         ui->buttonPlay->setIcon(QIcon(":/icons/48x48/media-playback-pause.png"));
         ui->actionPlay->setText(tr("Pause"));
@@ -490,7 +496,7 @@ void MainWindow::setPlayingState(const bool &playing,
         ui->teletextWidget->setEnabled(false);
     }
 
-    if(buffering) {
+    if (buffering) {
         ui->statusBar->showMessage(tr("Buffering..."));
     } else {
         ui->statusBar->clearMessage();
@@ -501,17 +507,17 @@ void MainWindow::play(const QString &itemFile)
 {
     stop();
 
-    if(itemFile.isNull()) {
+    if (itemFile.isNull()) {
         ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
-        if(_channel->logo().contains("http"))
+        if (_channel->logo().contains("http"))
             _file->getFile(_channel->logo());
-        else if(!_channel->logo().isEmpty())
+        else if (!_channel->logo().isEmpty())
             showLogo(_channel->logo());
 
         _xmltv->request(_channel->epg(), Tano::Main);
         ui->channelNumber->display(_channel->number());
 
-        if(_mediaItem)
+        if (_mediaItem)
             delete _mediaItem;
         _mediaItem = new VlcMedia(_udpxy->processUrl(_channel->url()), _mediaInstance);
         _mediaPlayer->open(_mediaItem);
@@ -519,20 +525,20 @@ void MainWindow::play(const QString &itemFile)
         _trayIcon->changeToolTip(Tano::Main, _channel->name());
     } else {
         ui->infoWidget->hide();
-        if(_mediaItem)
+        if (_mediaItem)
             delete _mediaItem;
         _mediaItem = new VlcMedia(itemFile, _mediaInstance);
         _mediaPlayer->open(_mediaItem);
         tooltip(itemFile);
     }
 
-    if(_videoSettings)
+    if (_videoSettings)
         ui->videoWidget->setPreviousSettings();
 }
 
 void MainWindow::stop()
 {
-    if(!_videoSettings) {
+    if (!_videoSettings) {
         _menuAspectRatio->original()->trigger();
         _menuCrop->original()->trigger();
     }
@@ -556,7 +562,7 @@ void MainWindow::stop()
 // Open dialogs
 void MainWindow::openPlaylist(const bool &start)
 {
-    if(_select != 0) {
+    if (_select != 0) {
         disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
         disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
         disconnect(_select, SIGNAL(channelSelect(int)), ui->playlistWidget, SLOT(channelSelected(int)));
@@ -566,7 +572,7 @@ void MainWindow::openPlaylist(const bool &start)
     if (!start) {
         _playlistName = FileDialogs::openPlaylistSimple();
     } else {
-        if(!_defaultPlaylist.isEmpty())
+        if (!_defaultPlaylist.isEmpty())
             _playlistName = Tano::locateResource(_defaultPlaylist);
     }
 
@@ -634,8 +640,8 @@ void MainWindow::showSettings()
 
 void MainWindow::showPlaylistEditor()
 {
-    if(_playlistEditor) {
-        if(_playlistEditor->isVisible()) {
+    if (_playlistEditor) {
+        if (_playlistEditor->isVisible()) {
             _playlistEditor->activateWindow();
         } else {
             delete _playlistEditor;
@@ -672,7 +678,7 @@ void MainWindow::top()
 {
     Qt::WindowFlags top = _flags;
     top |= Qt::WindowStaysOnTopHint;
-    if(ui->actionTop->isChecked())
+    if (ui->actionTop->isChecked())
         setWindowFlags(top);
     else
         setWindowFlags(_flags);
@@ -693,7 +699,7 @@ void MainWindow::tray()
     if (!_trayIcon->isVisible())
         return;
 
-    if(isHidden()) {
+    if (isHidden()) {
         ui->actionTray->setText(tr("Hide to tray"));
         show();
     } else {
@@ -704,17 +710,17 @@ void MainWindow::tray()
 
 void MainWindow::fullscreen(const bool &on)
 {
-    if(!_osdEnabled)
+    if (!_osdEnabled)
         return;
 
-    if(on) {
+    if (on) {
         ui->osdWidget->resize(2*_desktopWidth/3, ui->osdWidget->height());
         ui->osdWidget->setFloating(true);
         ui->osdWidget->move(_desktopWidth/6, _desktopHeight - ui->osdWidget->height());
         ui->osdWidget->show();
         ui->osdWidget->setWindowFlags(Qt::ToolTip);
 
-        if(_playlistFullscreen) {
+        if (_playlistFullscreen) {
             ui->infoWidget->resize(ui->infoWidget->width(), _desktopHeight - 3*ui->osdWidget->height());
             ui->infoWidget->setFloating(true);
             ui->infoWidget->move(_desktopWidth - ui->infoWidget->width(), ui->osdWidget->height());
@@ -739,12 +745,12 @@ void MainWindow::showLogo(const QString &logo)
 
 void MainWindow::showOsd(const QPoint &pos)
 {
-    if((pos.x() < ui->osdWidget->pos().x()+ui->osdWidget->width()) &&
+    if ((pos.x() < ui->osdWidget->pos().x()+ui->osdWidget->width()) &&
        (pos.x() > ui->osdWidget->pos().x()) &&
        (pos.y() < ui->osdWidget->pos().y()+ui->osdWidget->height()) &&
        (pos.y() > ui->osdWidget->pos().y())) {
         ui->videoWidget->disableMouseHide();
-    } else if(_playlistFullscreen &&
+    } else if (_playlistFullscreen &&
               ((pos.x() < ui->infoWidget->pos().x()+ui->infoWidget->width()) &&
               (pos.x() > ui->infoWidget->pos().x()) &&
               (pos.y() < ui->infoWidget->pos().y()+ui->infoWidget->height()) &&
@@ -759,7 +765,7 @@ void MainWindow::showPlaylistFullscreen(const bool &on)
 {
     _playlistFullscreen = on;
 
-    if(ui->actionFullscreen->isChecked() && on) {
+    if (ui->actionFullscreen->isChecked() && on) {
         ui->infoWidget->resize(ui->infoWidget->width(), _desktopHeight - 3*ui->osdWidget->height());
         ui->infoWidget->setFloating(true);
         ui->infoWidget->move(_desktopWidth - ui->infoWidget->width(), ui->osdWidget->height());
@@ -779,7 +785,7 @@ void MainWindow::recordNow()
 
 void MainWindow::recorder(const bool &enabled)
 {
-    if(enabled) {
+    if (enabled) {
         ui->stackedWidget->setCurrentIndex(1);
         ui->infoWidget->setVisible(false);
         ui->osdWidget->setVisible(false);

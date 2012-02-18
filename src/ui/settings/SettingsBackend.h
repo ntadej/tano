@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -33,11 +33,14 @@ public:
     SettingsBackend(QWidget *parent = 0);
     ~SettingsBackend();
 
-    bool globalSettings() const;
-    void setGlobalSettings(const bool &global);
-
     bool rememberChannelSettings() const;
     void setRememberChannelSettings(const bool &remember);
+    int aspectRatio() const;
+    void setAspectRatio(const int &id);
+    int crop() const;
+    void setCrop(const int &id);
+    int deinterlacing() const;
+    void setDeinterlacing(const int &id);
     QString audio() const;
     void setAudio(const QString &audio);
     QString sub() const;

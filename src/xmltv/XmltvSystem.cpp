@@ -16,28 +16,56 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QtConcurrentRun>
 #include <QtCore/QProcess>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 
 #include "xmltv/XmltvSystem.h"
 
-XmltvSystem::XmltvSystem() { }
+XmltvSystem::XmltvSystem(QObject *parent)
+    : QObject(parent)
+{
+    _watcher = new QFutureWatcher< QList<XmltvGrabber> >(this);
+    connect(_watcher, SIGNAL(finished()), this, SLOT(processGrabbers()));
+}
 
-XmltvSystem::~XmltvSystem() { }
+XmltvSystem::~XmltvSystem()
+{
+    delete _watcher;
+}
 
-QStringList XmltvSystem::grabbers() const
+extern QList<XmltvGrabber> loadGrabbers()
 {
     QProcess p;
     p.start("tv_find_grabbers");
     p.waitForFinished(-1);
 
-    QStringList list;
+    QList<XmltvGrabber> list;
     QTextStream in(&p);
     in.setCodec(QTextCodec::codecForName("UTF-8"));
     while (!in.atEnd()) {
-        list << in.readLine();
+        XmltvGrabber grabber;
+        QStringList tmp = in.readLine().split("|");
+        grabber.name = tmp[1];
+        grabber.path = tmp[0];
+        list << grabber;
     }
 
     return list;
+}
+
+void XmltvSystem::processGrabbers()
+{
+    QList<XmltvGrabber> result = _watcher->result();
+    if(result.isEmpty())
+        return;
+
+    emit grabbers(result);
+}
+
+void XmltvSystem::requestGrabbers()
+{
+    QFuture< QList<XmltvGrabber> > future = QtConcurrent::run(loadGrabbers);
+    _watcher->setFuture(future);
 }

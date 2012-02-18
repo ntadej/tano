@@ -97,12 +97,9 @@ QString Tano::locateResource(const QString &file)
     else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
         path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
 
-    // Try application exe directory without editor, recorder or src for development
+    // Try application exe directory without editor or src for development
     else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).exists())
         path = QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).absoluteFilePath();
-
-    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/daemon", "") + "/" + file).exists())
-        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/daemon", "") + "/" + file).absoluteFilePath();
 
     else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).exists())
         path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).absoluteFilePath();
@@ -116,27 +113,6 @@ QString Tano::locateResource(const QString &file)
     else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
         path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
 #endif
-
-    return path;
-}
-
-QString Tano::daemon()
-{
-    QString app;
-#ifdef Q_WS_WIN
-    app = "tano-daemon.exe";
-#else
-    app = "tano-daemon";
-#endif
-    QString path;
-
-    // Try application executable directory
-    if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + app).exists())
-        path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + app).absoluteFilePath();
-
-    // Try development directory
-    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/daemon") + "/" + app).exists())
-        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "/daemon") + "/" + app).absoluteFilePath();
 
     return path;
 }
@@ -156,15 +132,11 @@ QString Tano::settingsPath()
 QStringList Tano::vlcQtArgs()
 {
     QStringList args;
-
-    Settings *s = new Settings();
 #if WITH_EDITOR_VLCQT
-    args = VlcCommon::args(s->globalSettings());
-#endif
-    delete s;
-
+    args = VlcCommon::args();
 #ifdef Q_WS_WIN
     args << "--plugin-path=vlc\\plugins\\";
+#endif
 #endif
 
     return args;
@@ -175,12 +147,11 @@ QStringList Tano::vlcQtRecorderArgs(const QString &file)
     QStringList args;
 #if WITH_EDITOR_VLCQT
     args = VlcCommon::recorderArgs(file);
-#else
-    Q_UNUSED(file)
-#endif
-
 #ifdef Q_WS_WIN
     args << "--plugin-path=vlc\\plugins\\";
+#endif
+#else
+    Q_UNUSED(file)
 #endif
 
     return args;

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -34,12 +34,13 @@ SettingsUi::~SettingsUi()
 void SettingsUi::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            break;
-        default:
-            break;
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
     }
 }
 
@@ -71,6 +72,16 @@ bool SettingsUi::tray() const
 void SettingsUi::setTray(const bool &enabled)
 {
     ui->checkTray->setChecked(enabled);
+}
+
+bool SettingsUi::trayHide() const
+{
+    return ui->checkTrayHide->isChecked();
+}
+
+void SettingsUi::setTrayHide(const bool &enabled)
+{
+    ui->checkTrayHide->setChecked(enabled);
 }
 
 QString SettingsUi::wheel() const

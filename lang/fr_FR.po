@@ -1571,17 +1571,17 @@ msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr "Lecteur VLC-Qt"
 
-msgctxt "SettingsBackend|"
-msgid "Curently using VLC-Qt Backend"
-msgstr "Utilise actuellement le lecteur VLC-Qt"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Curently using VLC-Qt Backend"
+#~ msgstr "Utilise actuellement le lecteur VLC-Qt"
 
 msgctxt "SettingsBackend|"
 msgid "Version:"
 msgstr "Version :"
 
-msgctxt "SettingsBackend|"
-msgid "Use global VLC settings (requires restart)"
-msgstr "Utiliser les préférences globales VLC (Redémarrage)"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Use global VLC settings (requires restart)"
+#~ msgstr "Utiliser les préférences globales VLC (Redémarrage)"
 
 msgctxt "SettingsBackend|"
 msgid "Using Videolan VLC version:"
@@ -1632,6 +1632,57 @@ msgctxt "SettingsBackend|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr "<i>Ceci convertira les URLs dans le fichier de liste de %1 en %2.</i>"
 
+msgctxt "SettingsBackend|"
+msgid "Default aspect ratio:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default crop:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default deinterlacing:"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Original"
+msgstr "Original"
+
+msgctxt "SettingsBackend|"
+msgid "16:9"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Discard"
+msgstr "Ignorer"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Blend"
+msgstr "Fondu"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Mean"
+msgstr "Moyenne"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Bob"
+msgstr "Bob"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Linear"
+msgstr "Linéaire"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "X"
+msgstr "X"
+
 msgctxt "SettingsEdit|"
 msgid "Settings"
 msgstr "Préférences"
@@ -1659,6 +1710,10 @@ msgstr "Raccourcis"
 msgctxt "SettingsEdit|"
 msgid "Schedule"
 msgstr "Calendrier"
+
+msgctxt "SettingsEdit|"
+msgid "Playlist"
+msgstr ""
 
 msgctxt "SettingsGeneral|"
 msgid "Tano"
@@ -1711,10 +1766,6 @@ msgstr "Vous utilisez la version de Tano :"
 #~ msgid "Default channel list"
 #~ msgstr "Liste de chaînes par défaut"
 
-msgctxt "SettingsGeneral|"
-msgid "Channel list settings"
-msgstr ""
-
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Positionner <i>Tano</i>"
@@ -1735,21 +1786,52 @@ msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Lire la dernière chaîne"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "Use global VLC settings"
 msgstr "Utiliser les préférences globales VLC"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
 msgstr "<b>Liste de chaînes par défaut</b>"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "<b>Playback</b>"
 msgstr "<b>Relecture</b>"
 
+msgctxt "SettingsPlaylist|"
+msgid "Default playlist"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Network refresh"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Refresh playlist on startup"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Playlist URL:"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Radio"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Default radio category:"
+msgstr ""
+
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
 msgstr "Répertoire des enregistrments par défaut"
+
+#~ msgctxt "SettingsRecorder|"
+#~ msgid "Recorder"
+#~ msgstr "Enregistreur"
 
 msgctxt "SettingsSchedule|"
 msgid "Select desired XMLTV grabber from the list below:"
@@ -1759,13 +1841,45 @@ msgctxt "SettingsSchedule|"
 msgid "XMLTV settings"
 msgstr "Préférences XMLTV"
 
-msgctxt "SettingsSchedule|"
-msgid "Custom grabber output:"
-msgstr "Sortie grabber personnalisée :"
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Custom grabber output:"
+#~ msgstr "Sortie grabber personnalisée :"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Custom"
+#~ msgstr "Personnalisé"
 
 msgctxt "SettingsSchedule|"
-msgid "Custom"
-msgstr "Personnalisé"
+msgid "XMLTV file location:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Refresh XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Refresh XMLTV file on startup"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Download file"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Run grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Network"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV source url:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Grabber"
+msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Action"
@@ -1966,6 +2080,10 @@ msgstr "Contrôles"
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Panneau d'information"
+
+msgctxt "SettingsUi|"
+msgid "Show tray icon"
+msgstr ""
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"

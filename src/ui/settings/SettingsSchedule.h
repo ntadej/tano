@@ -21,9 +21,7 @@
 
 #include <QtGui/QWidget>
 
-#include "Config.h"
-#include "core/Enums.h"
-
+struct XmltvGrabber;
 #if !EDITOR
 class XmltvSystem;
 #endif
@@ -40,21 +38,28 @@ public:
     SettingsSchedule(QWidget *parent = 0);
     ~SettingsSchedule();
 
-    QString xmltvGrabber() const;
-    void setXmltvGrabber(const QString &grabber);
-    QString xmltvLocation() const;
-    void setXmltvLocation(const QString &location);
+    QString location() const;
+    void setLocation(const QString &location);
+    bool update() const;
+    void setUpdate(const bool &enabled);
+    bool updateGrabber() const;
+    void setUpdateGrabber(const bool &enabled);
+    QString updateUrl() const;
+    void setUpdateUrl(const QString &url);
+    QString grabber() const;
+    QString grabberPath() const;
+    void setGrabber(const QString &grabber);
 
 protected:
     void changeEvent(QEvent *e);
 
 private slots:
-    void processGrabber(const QString &grabber);
+    void listGrabbers(const QList<XmltvGrabber> &list);
 
 private:
-    void listGrabbers();
-
     Ui::SettingsSchedule *ui;
+
+    QString _grabber;
 
 #if !EDITOR
     XmltvSystem *_xmltv;

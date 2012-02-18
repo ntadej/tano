@@ -1254,15 +1254,7 @@ msgid "VLC-Qt Backend"
 msgstr ""
 
 msgctxt "SettingsBackend|"
-msgid "Curently using VLC-Qt Backend"
-msgstr ""
-
-msgctxt "SettingsBackend|"
 msgid "Version:"
-msgstr ""
-
-msgctxt "SettingsBackend|"
-msgid "Use global VLC settings (requires restart)"
 msgstr ""
 
 msgctxt "SettingsBackend|"
@@ -1314,6 +1306,50 @@ msgctxt "SettingsBackend|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr ""
 
+msgctxt "SettingsBackend|"
+msgid "Default aspect ratio:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default crop:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default deinterlacing:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Original"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "16:9"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Discard"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Blend"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Mean"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Bob"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Linear"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "X"
+msgstr ""
+
 msgctxt "SettingsEdit|"
 msgid "Settings"
 msgstr ""
@@ -1340,6 +1376,10 @@ msgstr ""
 
 msgctxt "SettingsEdit|"
 msgid "Schedule"
+msgstr ""
+
+msgctxt "SettingsEdit|"
+msgid "Playlist"
 msgstr ""
 
 msgctxt "SettingsGeneral|"
@@ -1386,10 +1426,6 @@ msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr ""
 
-msgctxt "SettingsGeneral|"
-msgid "Channel list settings"
-msgstr ""
-
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr ""
@@ -1411,15 +1447,39 @@ msgid "Autoplay last channel"
 msgstr ""
 
 msgctxt "SettingsPage|"
-msgid "Use global VLC settings"
-msgstr ""
-
-msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
 msgstr ""
 
 msgctxt "SettingsPage|"
 msgid "<b>Playback</b>"
+msgstr ""
+
+msgctxt "SettingsPage|"
+msgid "Use global VLC settings"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Default playlist"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Network refresh"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Refresh playlist on startup"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Playlist URL:"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Radio"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Default radio category:"
 msgstr ""
 
 msgctxt "SettingsRecorder|"
@@ -1435,11 +1495,35 @@ msgid "XMLTV settings"
 msgstr ""
 
 msgctxt "SettingsSchedule|"
-msgid "Custom grabber output:"
+msgid "XMLTV file location:"
 msgstr ""
 
 msgctxt "SettingsSchedule|"
-msgid "Custom"
+msgid "Refresh XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Refresh XMLTV file on startup"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Download file"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Run grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Network"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV source url:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Grabber"
 msgstr ""
 
 msgctxt "SettingsShortcuts|"
@@ -1640,6 +1724,10 @@ msgstr ""
 
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Show tray icon"
 msgstr ""
 
 msgctxt "TeletextWidget|"

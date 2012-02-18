@@ -49,6 +49,7 @@ SET(Tano_UIs
     ui/settings/SettingsBackend.ui
     ui/settings/SettingsEdit.ui
     ui/settings/SettingsGeneral.ui
+    ui/settings/SettingsPlaylist.ui
     ui/settings/SettingsRecorder.ui
     ui/settings/SettingsSchedule.ui
     ui/settings/SettingsShortcuts.ui
@@ -112,6 +113,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/settings/SettingsBackend.h
     ui/settings/SettingsEdit.h
     ui/settings/SettingsGeneral.h
+    ui/settings/SettingsPlaylist.h
     ui/settings/SettingsRecorder.h
     ui/settings/SettingsSchedule.h
     ui/settings/SettingsShortcuts.h
@@ -127,6 +129,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     xmltv/XmltvManager.h
     xmltv/XmltvProgrammeFilterModel.h
     xmltv/XmltvProgrammeModel.h
+    xmltv/XmltvSystem.h
 )
 
 SET(Tano_Resrcs
@@ -223,6 +226,7 @@ SET(Tano_UI_Srcs
     ui/settings/SettingsBackend.cpp
     ui/settings/SettingsEdit.cpp
     ui/settings/SettingsGeneral.cpp
+    ui/settings/SettingsPlaylist.cpp
     ui/settings/SettingsRecorder.cpp
     ui/settings/SettingsSchedule.cpp
     ui/settings/SettingsShortcuts.cpp

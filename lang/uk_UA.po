@@ -1577,17 +1577,18 @@ msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr "VLC-Qt Backend"
 
-msgctxt "SettingsBackend|"
-msgid "Curently using VLC-Qt Backend"
-msgstr "Зараз викристовується VLC-Qt Backend"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Curently using VLC-Qt Backend"
+#~ msgstr "Зараз викристовується VLC-Qt Backend"
 
 msgctxt "SettingsBackend|"
 msgid "Version:"
 msgstr "Версія:"
 
-msgctxt "SettingsBackend|"
-msgid "Use global VLC settings (requires restart)"
-msgstr "Використати загальні налаштування VLC (вимагає перезапуску програми)"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Use global VLC settings (requires restart)"
+#~ msgstr ""
+#~ "Використати загальні налаштування VLC (вимагає перезапуску програми)"
 
 msgctxt "SettingsBackend|"
 msgid "Using Videolan VLC version:"
@@ -1638,6 +1639,57 @@ msgctxt "SettingsBackend|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr "<i>Це сконвертує посилання URL в переілку каналів з %1 по %2.</i>"
 
+msgctxt "SettingsBackend|"
+msgid "Default aspect ratio:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default crop:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default deinterlacing:"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Original"
+msgstr "Оригінал"
+
+msgctxt "SettingsBackend|"
+msgid "16:9"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Discard"
+msgstr "Скасувати"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Blend"
+msgstr "Змішати"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Mean"
+msgstr "Mean"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Bob"
+msgstr "Bob"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Linear"
+msgstr "Лінейний"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "X"
+msgstr "Х"
+
 msgctxt "SettingsEdit|"
 msgid "Settings"
 msgstr "Налаштування"
@@ -1665,6 +1717,10 @@ msgstr "Скорочення"
 msgctxt "SettingsEdit|"
 msgid "Schedule"
 msgstr "Розклад"
+
+msgctxt "SettingsEdit|"
+msgid "Playlist"
+msgstr ""
 
 msgctxt "SettingsGeneral|"
 msgid "Tano"
@@ -1715,10 +1771,6 @@ msgstr "Ви використовуєте версію Tano:"
 #~ msgid "Default channel list"
 #~ msgstr "Перелік каналів за замовчуванням"
 
-msgctxt "SettingsGeneral|"
-msgid "Channel list settings"
-msgstr ""
-
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Встановити <i>Tano</i>"
@@ -1739,21 +1791,52 @@ msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Автовідтворення останнього каналу"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "Use global VLC settings"
 msgstr "Використати загальні налаштування VLC"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
 msgstr "<b>Перелік каналів за замовчуванням</b>"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "<b>Playback</b>"
 msgstr "<b>Відтворення</b>"
 
+msgctxt "SettingsPlaylist|"
+msgid "Default playlist"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Network refresh"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Refresh playlist on startup"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Playlist URL:"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Radio"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Default radio category:"
+msgstr ""
+
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
 msgstr "Тека для запису за замовчуванням"
+
+#~ msgctxt "SettingsRecorder|"
+#~ msgid "Recorder"
+#~ msgstr "Записувач"
 
 msgctxt "SettingsSchedule|"
 msgid "Select desired XMLTV grabber from the list below:"
@@ -1763,13 +1846,45 @@ msgctxt "SettingsSchedule|"
 msgid "XMLTV settings"
 msgstr "XMLTV налаштування"
 
-msgctxt "SettingsSchedule|"
-msgid "Custom grabber output:"
-msgstr "Користувацький вихід грабберу:"
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Custom grabber output:"
+#~ msgstr "Користувацький вихід грабберу:"
+
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Custom"
+#~ msgstr "Користувацький"
 
 msgctxt "SettingsSchedule|"
-msgid "Custom"
-msgstr "Користувацький"
+msgid "XMLTV file location:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Refresh XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Refresh XMLTV file on startup"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Download file"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Run grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Network"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV source url:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Grabber"
+msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Action"
@@ -1970,6 +2085,10 @@ msgstr "Контрольна панель увімкнена"
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Інформаційна панель увімкнена"
+
+msgctxt "SettingsUi|"
+msgid "Show tray icon"
+msgstr ""
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"

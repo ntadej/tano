@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsPlaylist</class>
+ <widget class="QWidget" name="SettingsPlaylist">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>425</width>
+    <height>231</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupDefaultPlaylist">
+     <property name="title">
+      <string>Default playlist</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="BrowseWidget" name="playlist" native="true"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupPlaylistRefresh">
+     <property name="title">
+      <string>Network refresh</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QCheckBox" name="checkRefresh">
+        <property name="text">
+         <string>Refresh playlist on startup</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelRefresh">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Playlist URL:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="editUrl">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupRadio">
+     <property name="title">
+      <string>Radio</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="labelRadio">
+        <property name="text">
+         <string>Default radio category:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="editRadio"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>BrowseWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/core/BrowseWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>checkRefresh</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelRefresh</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>102</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>94</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkRefresh</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>editUrl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>226</x>
+     <y>142</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

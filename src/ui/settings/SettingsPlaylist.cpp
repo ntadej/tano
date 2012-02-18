@@ -16,27 +16,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Enums.h"
-#include "core/Settings.h"
+#include "SettingsPlaylist.h"
+#include "ui_SettingsPlaylist.h"
 
-#include "SettingsRecorder.h"
-#include "ui_SettingsRecorder.h"
-
-SettingsRecorder::SettingsRecorder(QWidget *parent)
+SettingsPlaylist::SettingsPlaylist(QWidget *parent)
     : QWidget(parent),
-      ui(new Ui::SettingsRecorder)
+      ui(new Ui::SettingsPlaylist)
 {
     ui->setupUi(this);
-    ui->edit->setType(Tano::Directory);
-    ui->edit->setResetValue(Settings::DEFAULT_RECORDER_DIRECTORY);
+    ui->playlist->setType(Tano::M3U);
 }
 
-SettingsRecorder::~SettingsRecorder()
+SettingsPlaylist::~SettingsPlaylist()
 {
     delete ui;
 }
 
-void SettingsRecorder::changeEvent(QEvent *e)
+void SettingsPlaylist::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
     switch (e->type())
@@ -49,12 +45,42 @@ void SettingsRecorder::changeEvent(QEvent *e)
     }
 }
 
-QString SettingsRecorder::directory() const
+QString SettingsPlaylist::playlist() const
 {
-    return ui->edit->value();
+    return ui->playlist->value();
 }
 
-void SettingsRecorder::setDirectory(const QString &value)
+void SettingsPlaylist::setPlaylist(const QString &playlist)
 {
-    ui->edit->setValue(value);
+    ui->playlist->setValue(playlist);
+}
+
+bool SettingsPlaylist::playlistUpdate() const
+{
+    return ui->checkRefresh->isChecked();
+}
+
+void SettingsPlaylist::setPlaylistUpdate(const bool &enabled)
+{
+    ui->checkRefresh->setChecked(enabled);
+}
+
+QString SettingsPlaylist::playlistUpdateUrl() const
+{
+    return ui->editUrl->text();
+}
+
+void SettingsPlaylist::setPlaylistUpdateUrl(const QString &playlist)
+{
+    ui->editUrl->setText(playlist);
+}
+
+QString SettingsPlaylist::radioCategory() const
+{
+    return ui->editRadio->text();
+}
+
+void SettingsPlaylist::setRadioCategory(const QString &category)
+{
+    ui->editRadio->setText(category);
 }

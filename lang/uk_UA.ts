@@ -1519,7 +1519,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Curently using VLC-Qt Backend</source>
-        <translation>Зараз викристовується VLC-Qt Backend</translation>
+        <translation type="obsolete">Зараз викристовується VLC-Qt Backend</translation>
     </message>
     <message>
         <source>Version:</source>
@@ -1527,7 +1527,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Use global VLC settings (requires restart)</source>
-        <translation>Використати загальні налаштування VLC (вимагає перезапуску програми)</translation>
+        <translation type="obsolete">Використати загальні налаштування VLC (вимагає перезапуску програми)</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
@@ -1577,6 +1577,50 @@ You will lose any unsaved changes.</source>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Це сконвертує посилання URL в переілку каналів з %1 по %2.&lt;/i&gt;</translation>
     </message>
+    <message>
+        <source>Default aspect ratio:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default crop:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default deinterlacing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished">Оригінал</translation>
+    </message>
+    <message>
+        <source>16:9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation type="unfinished">Скасувати</translation>
+    </message>
+    <message>
+        <source>Blend</source>
+        <translation type="unfinished">Змішати</translation>
+    </message>
+    <message>
+        <source>Mean</source>
+        <translation type="unfinished">Mean</translation>
+    </message>
+    <message>
+        <source>Bob</source>
+        <translation type="unfinished">Bob</translation>
+    </message>
+    <message>
+        <source>Linear</source>
+        <translation type="unfinished">Лінейний</translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation type="unfinished">Х</translation>
+    </message>
 </context>
 <context>
     <name>SettingsEdit</name>
@@ -1607,6 +1651,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Schedule</source>
         <translation>Розклад</translation>
+    </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1659,10 +1707,6 @@ You will lose any unsaved changes.</source>
         <source>Default channel list</source>
         <translation type="obsolete">Перелік каналів за замовчуванням</translation>
     </message>
-    <message>
-        <source>Channel list settings</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -1688,15 +1732,42 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Use global VLC settings</source>
-        <translation>Використати загальні налаштування VLC</translation>
+        <translation type="unfinished">Використати загальні налаштування VLC</translation>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Перелік каналів за замовчуванням&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Перелік каналів за замовчуванням&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Playback&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Відтворення&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Відтворення&lt;/b&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPlaylist</name>
+    <message>
+        <source>Default playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh playlist on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1704,6 +1775,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Default recording directory</source>
         <translation>Тека для запису за замовчуванням</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="obsolete">Записувач</translation>
     </message>
 </context>
 <context>
@@ -1718,11 +1793,43 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Custom grabber output:</source>
-        <translation>Користувацький вихід грабберу:</translation>
+        <translation type="obsolete">Користувацький вихід грабберу:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Користувацький</translation>
+        <translation type="obsolete">Користувацький</translation>
+    </message>
+    <message>
+        <source>XMLTV file location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh XMLTV file on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV source url:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grabber</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1929,6 +2036,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Info panel enabled</source>
         <translation>Інформаційна панель увімкнена</translation>
+    </message>
+    <message>
+        <source>Show tray icon</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

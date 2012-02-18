@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -34,13 +34,11 @@ SettingsPage::SettingsPage(QWidget *parent)
     ui->sessionAutoplayCheckBox->setChecked(settings->sessionAutoplay());
     ui->playlist->setType(Tano::M3U);
     ui->playlist->setValue(settings->playlist());
-    ui->vlcCheckBox->setChecked(settings->globalSettings());
     delete settings;
 
     registerField("sessionvolume", ui->sessionVolumeCheckBox);
     registerField("sessionplay", ui->sessionAutoplayCheckBox);
     registerField("playlist", ui->playlist->edit());
-    registerField("vlc", ui->vlcCheckBox);
 }
 
 SettingsPage::~SettingsPage()
@@ -51,12 +49,13 @@ SettingsPage::~SettingsPage()
 void SettingsPage::changeEvent(QEvent *e)
 {
     QWizardPage::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            break;
-        default:
-            break;
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
     }
 }
 

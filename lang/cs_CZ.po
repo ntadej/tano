@@ -1895,20 +1895,18 @@ msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr "Jádro VLC-Qt"
 
-#, fuzzy
-msgctxt "SettingsBackend|"
-msgid "Curently using VLC-Qt Backend"
-msgstr "Nyní se používá jádro VLC-Qt"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Curently using VLC-Qt Backend"
+#~ msgstr "Nyní se používá jádro VLC-Qt"
 
 #, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Version:"
 msgstr "Verze:"
 
-#, fuzzy
-msgctxt "SettingsBackend|"
-msgid "Use global VLC settings (requires restart)"
-msgstr "Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Use global VLC settings (requires restart)"
+#~ msgstr "Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)"
 
 #, fuzzy
 msgctxt "SettingsBackend|"
@@ -1969,6 +1967,57 @@ msgstr "Přípojka směrovače:"
 msgctxt "SettingsBackend|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
+
+msgctxt "SettingsBackend|"
+msgid "Default aspect ratio:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default crop:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default deinterlacing:"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Original"
+msgstr "Původní"
+
+msgctxt "SettingsBackend|"
+msgid "16:9"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Discard"
+msgstr "Zrušit"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Blend"
+msgstr "Prolínání"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Mean"
+msgstr "Střed"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Bob"
+msgstr "Trhání"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Linear"
+msgstr "Přímočarý"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "X"
+msgstr "X"
 
 msgctxt "SettingsEdit|"
 msgid "Settings"
@@ -2131,6 +2180,10 @@ msgctxt "SettingsEdit|"
 msgid "Schedule"
 msgstr "Rozvrh"
 
+msgctxt "SettingsEdit|"
+msgid "Playlist"
+msgstr ""
+
 #, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Tano"
@@ -2188,10 +2241,6 @@ msgstr "Používáte verzi programu Tano:"
 #~ msgid "Default channel list"
 #~ msgstr "Výchozí seznam programů"
 
-msgctxt "SettingsGeneral|"
-msgid "Channel list settings"
-msgstr ""
-
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Nastavit <i>Tano</i>"
@@ -2212,6 +2261,7 @@ msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Automatické přehrávání posledního kanálu"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "Use global VLC settings"
 msgstr "Použít všeobecná nastavení VLC"
@@ -2271,6 +2321,30 @@ msgstr ""
 #~ msgctxt "SettingsPlaylist|"
 #~ msgid "Open channel list"
 #~ msgstr "Otevřít seznam programů"
+
+msgctxt "SettingsPlaylist|"
+msgid "Default playlist"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Network refresh"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Refresh playlist on startup"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Playlist URL:"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Radio"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Default radio category:"
+msgstr ""
 
 #, fuzzy
 msgctxt "SettingsRecorder|"
@@ -2351,14 +2425,41 @@ msgctxt "SettingsSchedule|"
 msgid "XMLTV settings"
 msgstr ""
 
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Custom"
+#~ msgstr "Stanovený uživatelem"
+
 msgctxt "SettingsSchedule|"
-msgid "Custom grabber output:"
+msgid "XMLTV file location:"
 msgstr ""
 
-#, fuzzy
 msgctxt "SettingsSchedule|"
-msgid "Custom"
-msgstr "Stanovený uživatelem"
+msgid "Refresh XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Refresh XMLTV file on startup"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Download file"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Run grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Network"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV source url:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Grabber"
+msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Action"
@@ -2586,6 +2687,10 @@ msgstr "Ovládací prvky povoleny"
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Panel s podrobnostmi povolen"
+
+msgctxt "SettingsUi|"
+msgid "Show tray icon"
+msgstr ""
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"

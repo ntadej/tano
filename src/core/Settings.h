@@ -46,10 +46,13 @@ public:
     inline void setLanguage(const QString &s) { _language = s; }
     static const QString DEFAULT_LANGUAGE;
 
-    // Channels
+    // Playlist
     inline QString playlist() const { return _playlist; }
     inline void setPlaylist(const QString &s) { _playlist = s; }
     static const QString DEFAULT_PLAYLIST;
+    inline bool playlistUpdate() const { return _playlistUpdate; }
+    inline void setPlaylistUpdate(const bool &b) { _playlistUpdate = b; }
+    static const bool DEFAULT_PLAYLIST_UPDATE;
     inline QString playlistUpdateUrl() const { return _playlistUpdateUrl; }
     inline void setPlaylistUpdateUrl(const QString &s) { _playlistUpdateUrl = s; }
     static const QString DEFAULT_PLAYLIST_UPDATE_URL;
@@ -81,6 +84,9 @@ public:
     inline bool osdPlaylist() const { return _osdPlaylist; }
     inline void setOsdPlaylist(const bool &b) { _osdPlaylist = b; }
     static const bool DEFAULT_OSD_PLAYLIST;
+    inline bool trayEnabled() const { return _trayEnabled; }
+    inline void setTrayEnabled(const bool &b) { _trayEnabled = b; }
+    static const bool DEFAULT_TRAY_ENABLED;
     inline bool hideToTray() const { return _hideToTray; }
     inline void setHideToTray(const bool &b) { _hideToTray = b; }
     static const bool DEFAULT_HIDE_TO_TRAY;
@@ -92,12 +98,18 @@ public:
     static const int DEFAULT_TOOLBAR_LOOK;
 
     // Backend
-    inline bool globalSettings() const { return _globalSettings; }
-    inline void setGlobalSettings(const bool &b) { _globalSettings = b; }
-    static const bool DEFAULT_GLOBAL_SETTINGS;
     inline bool rememberVideoSettings() const { return _rememberVideoSettings; }
     inline void setRememberVideoSettings(const bool &b) { _rememberVideoSettings = b; }
     static const bool DEFAULT_REMEMBER_VIDEO_SETTINGS;
+    inline int aspectRatio() const { return _aspectRatio; }
+    inline void setAspectRatio(const int &i) { _aspectRatio = i; }
+    static const int DEFAULT_ASPECT_RATIO;
+    inline int crop() const { return _crop; }
+    inline void setCrop(const int &i) { _crop = i; }
+    static const int DEFAULT_CROP;
+    inline int deinterlacing() const { return _deinterlacing; }
+    inline void setDeinterlacing(const int &i) { _deinterlacing = i; }
+    static const int DEFAULT_DEINTERLACING;
     inline QString audioLanguage() const { return _audioLanguage; }
     inline void setAudioLanguage(const QString &s) { _audioLanguage = s; }
     static const QString DEFAULT_AUDIO_LANGUAGE;
@@ -128,12 +140,24 @@ public:
     static const int DEFAULT_VOLUME;
 
     // Schedule
-    inline QString xmltvGrabber() const { return _xmltvGrabber; }
-    inline void setXmltvGrabber(const QString &s) { _xmltvGrabber = s; }
-    static const QString DEFAULT_XMLTV_GRABBER;
     inline QString xmltvLocation() const { return _xmltvLocation; }
     inline void setXmltvLocation(const QString &s) { _xmltvLocation = s; }
     static const QString DEFAULT_XMLTV_LOCATION;
+    inline bool xmltvUpdate() const { return _xmltvUpdate; }
+    inline void setXmltvUpdate(const bool &b) { _xmltvUpdate = b; }
+    static const bool DEFAULT_XMLTV_UPDATE;
+    inline bool xmltvUpdateGrabber() const { return _xmltvUpdateGrabber; }
+    inline void setXmltvUpdateGrabber(const bool &b) { _xmltvUpdateGrabber = b; }
+    static const bool DEFAULT_XMLTV_UPDATE_GRABBER;
+    inline QString xmltvUpdateUrl() const { return _xmltvUpdateUrl; }
+    inline void setXmltvUpdateUrl(const QString &s) { _xmltvUpdateUrl = s; }
+    static const QString DEFAULT_XMLTV_UPDATE_URL;
+    inline QString xmltvGrabber() const { return _xmltvGrabber; }
+    inline void setXmltvGrabber(const QString &s) { _xmltvGrabber = s; }
+    static const QString DEFAULT_XMLTV_GRABBER;
+    inline QString xmltvGrabberPath() const { return _xmltvGrabberPath; }
+    inline void setXmltvGrabberPath(const QString &s) { _xmltvGrabberPath = s; }
+    static const QString DEFAULT_XMLTV_GRABBER_PATH;
 
 private:
     // General variables
@@ -146,6 +170,7 @@ private:
 
     // Channels
     QString _playlist;
+    bool _playlistUpdate;
     QString _playlistUpdateUrl;
     QString _radioCategory;
 
@@ -159,13 +184,16 @@ private:
     // GUI
     bool _osd;
     bool _osdPlaylist;
+    bool _trayEnabled;
     bool _hideToTray;
     QString _mouseWheel;
     int _toolbarLook;
 
     // Backend
-    bool _globalSettings;
     bool _rememberVideoSettings;
+    int _aspectRatio;
+    int _crop;
+    int _deinterlacing;
     QString _audioLanguage;
     QString _subtitleLanguage;
     bool _udpxy;
@@ -180,8 +208,12 @@ private:
     int _volume;
 
     // Schedule
-    QString _xmltvGrabber;
     QString _xmltvLocation;
+    bool _xmltvUpdate;
+    bool _xmltvUpdateGrabber;
+    QString _xmltvUpdateUrl;
+    QString _xmltvGrabber;
+    QString _xmltvGrabberPath;
 };
 
 #endif // TANO_SETTINGS_H_

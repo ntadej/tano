@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>366</width>
-    <height>335</height>
+    <height>338</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -21,6 +21,86 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
+       <widget class="QLabel" name="labelLocation">
+        <property name="text">
+         <string>XMLTV file location:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="BrowseWidget" name="location" native="true"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupRefresh">
+     <property name="title">
+      <string>Refresh XMLTV</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0" colspan="2">
+       <widget class="QCheckBox" name="checkRefresh">
+        <property name="text">
+         <string>Refresh XMLTV file on startup</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QRadioButton" name="radioNetwork">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Download file</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QRadioButton" name="radioGrabber">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Run grabber</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupUrl">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Network</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="labelUrl">
+        <property name="text">
+         <string>XMLTV source url:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="editUrl"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupGrabber">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Grabber</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
        <widget class="QLabel" name="labelSelect">
         <property name="text">
          <string>Select desired XMLTV grabber from the list below:</string>
@@ -30,38 +110,8 @@
       <item>
        <widget class="QComboBox" name="comboGrabber"/>
       </item>
-      <item>
-       <widget class="QLabel" name="labelCustom">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>Custom grabber output:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="BrowseWidget" name="location" native="true">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>
@@ -74,5 +124,70 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>checkRefresh</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>radioNetwork</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>125</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>81</x>
+     <y>139</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkRefresh</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>radioGrabber</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>208</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>271</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkRefresh</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupUrl</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>142</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkRefresh</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupGrabber</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>267</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

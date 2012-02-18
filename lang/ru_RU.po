@@ -1713,20 +1713,18 @@ msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr "Бэкэнд VLC-Qt"
 
-#, fuzzy
-msgctxt "SettingsBackend|"
-msgid "Curently using VLC-Qt Backend"
-msgstr "Используемый бэкэнд VLC-Qt"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Curently using VLC-Qt Backend"
+#~ msgstr "Используемый бэкэнд VLC-Qt"
 
 #, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Version:"
 msgstr "Версия:"
 
-#, fuzzy
-msgctxt "SettingsBackend|"
-msgid "Use global VLC settings (requires restart)"
-msgstr "Использовать глобальные настройки VLC (необходим рестарт)"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Use global VLC settings (requires restart)"
+#~ msgstr "Использовать глобальные настройки VLC (необходим рестарт)"
 
 #, fuzzy
 msgctxt "SettingsBackend|"
@@ -1782,6 +1780,57 @@ msgstr ""
 msgctxt "SettingsBackend|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default aspect ratio:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default crop:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default deinterlacing:"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Original"
+msgstr "Оригинал"
+
+msgctxt "SettingsBackend|"
+msgid "16:9"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Discard"
+msgstr "Не учитывать"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Blend"
+msgstr "Смешивать"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Mean"
+msgstr "Усреднять"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Bob"
+msgstr "Bob"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Linear"
+msgstr "Линейное"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "X"
+msgstr "X"
 
 msgctxt "SettingsEdit|"
 msgid "Settings"
@@ -1936,6 +1985,10 @@ msgctxt "SettingsEdit|"
 msgid "Schedule"
 msgstr "Программа"
 
+msgctxt "SettingsEdit|"
+msgid "Playlist"
+msgstr ""
+
 #, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Tano"
@@ -1989,10 +2042,6 @@ msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr "Вы используете Tano версии:"
 
-msgctxt "SettingsGeneral|"
-msgid "Channel list settings"
-msgstr ""
-
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Настройка <i>Tano</i>"
@@ -2013,6 +2062,7 @@ msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Автозапуск последнего канала"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "Use global VLC settings"
 msgstr "Использовать глобальные настройки VLC"
@@ -2049,10 +2099,38 @@ msgstr ""
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
 
+msgctxt "SettingsPlaylist|"
+msgid "Default playlist"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Network refresh"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Refresh playlist on startup"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Playlist URL:"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Radio"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Default radio category:"
+msgstr ""
+
 #, fuzzy
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
 msgstr "Каталог для записи"
+
+#~ msgctxt "SettingsRecorder|"
+#~ msgid "Recorder"
+#~ msgstr "Рекордер"
 
 #~ msgctxt "SettingsSchedule|"
 #~ msgid "VLC-Qt Backend"
@@ -2102,14 +2180,41 @@ msgctxt "SettingsSchedule|"
 msgid "XMLTV settings"
 msgstr ""
 
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Custom"
+#~ msgstr "Пользовательский"
+
 msgctxt "SettingsSchedule|"
-msgid "Custom grabber output:"
+msgid "XMLTV file location:"
 msgstr ""
 
-#, fuzzy
 msgctxt "SettingsSchedule|"
-msgid "Custom"
-msgstr "Пользовательский"
+msgid "Refresh XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Refresh XMLTV file on startup"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Download file"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Run grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Network"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV source url:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Grabber"
+msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Action"
@@ -2336,6 +2441,10 @@ msgstr "Панель управления вкл."
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Панель информации вкл."
+
+msgctxt "SettingsUi|"
+msgid "Show tray icon"
+msgstr ""
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"

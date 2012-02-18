@@ -62,7 +62,7 @@ void CSVGenerator::generateItem(Channel *channel)
          << channel->url() << ";";
     if (channel->radio()) {
         _out << _radio;
-        if (channel->categories().count())
+        if (!channel->categories().isEmpty())
             _out << ",";
     }
     _out << channel->categories().join(",") << ";"

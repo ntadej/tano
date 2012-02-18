@@ -19,13 +19,33 @@
 #ifndef TANO_XMLTVSYSTEM_H_
 #define TANO_XMLTVSYSTEM_H_
 
-class XmltvSystem
+#include <QtCore/QFutureWatcher>
+
+struct XmltvGrabber
 {
+    QString name;
+    QString path;
+};
+
+extern QList<XmltvGrabber> loadGrabbers();
+
+class XmltvSystem : public QObject
+{
+Q_OBJECT
 public:
-    XmltvSystem();
+    XmltvSystem(QObject *parent = 0);
     ~XmltvSystem();
 
-    QStringList grabbers() const;
+    void requestGrabbers();
+
+signals:
+    void grabbers(const QList<XmltvGrabber> &);
+
+private slots:
+    void processGrabbers();
+
+private:
+    QFutureWatcher< QList<XmltvGrabber> > *_watcher;
 };
 
 #endif // TANO_XMLTVSYSTEM_H_

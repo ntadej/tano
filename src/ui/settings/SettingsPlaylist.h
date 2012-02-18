@@ -16,31 +16,37 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_SETTINGSPLAYLIST_H_
+#define TANO_SETTINGSPLAYLIST_H_
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+#include <QtGui/QWidget>
 
-namespace Tano
+namespace Ui
 {
-    // Version
-    QString version();
-    QString changeset();
-
-    // Build system information
-    QString buildHostname();
-    QString buildSystem();
-
-    // Resources locators
-    QString locateResource(const QString &file);
-    QString settingsPath();
-
-    // Backend settings
-    QStringList vlcQtArgs();
-    QStringList vlcQtRecorderArgs(const QString &file);
-    QString vlcQtVersionCore();
-    QString vlcQtVersionLibrary();
+    class SettingsPlaylist;
 }
 
-#endif // TANO_COMMON_H_
+class SettingsPlaylist : public QWidget
+{
+Q_OBJECT
+public:
+    SettingsPlaylist(QWidget *parent = 0);
+    ~SettingsPlaylist();
+
+    QString playlist() const;
+    void setPlaylist(const QString &playlist);
+    bool playlistUpdate() const;
+    void setPlaylistUpdate(const bool &enabled);
+    QString playlistUpdateUrl() const;
+    void setPlaylistUpdateUrl(const QString &playlist);
+    QString radioCategory() const;
+    void setRadioCategory(const QString &category);
+
+protected:
+    void changeEvent(QEvent *e);
+
+private:
+    Ui::SettingsPlaylist *ui;
+};
+
+#endif // TANO_SETTINGSPLAYLIST_H_

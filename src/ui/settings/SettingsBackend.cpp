@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,6 @@ SettingsBackend::SettingsBackend(QWidget *parent)
 #else
    ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " /");
    ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " /");
-   ui->checkGlobal->setDisabled(true);
 #endif
    ui->labelUdpxyInfo->setText(ui->labelUdpxyInfo->text().arg("</i>udp://@232.4.1.1:5002<i>", "</i>http://router:port/udp/232.4.1.1:5002<i>"));
 }
@@ -53,28 +52,49 @@ SettingsBackend::~SettingsBackend()
 void SettingsBackend::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            break;
-        default:
-            break;
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
     }
-}
-
-bool SettingsBackend::globalSettings() const
-{
-    return ui->checkGlobal->isChecked();
-}
-
-void SettingsBackend::setGlobalSettings(const bool &global)
-{
-    ui->checkGlobal->setChecked(global);
 }
 
 bool SettingsBackend::rememberChannelSettings() const
 {
     return ui->checkVideoSettings->isChecked();
+}
+
+int SettingsBackend::aspectRatio() const
+{
+    return ui->comboAspectRatio->currentIndex();
+}
+
+void SettingsBackend::setAspectRatio(const int &id)
+{
+    ui->comboAspectRatio->setCurrentIndex(id);
+}
+
+int SettingsBackend::crop() const
+{
+    return ui->comboCrop->currentIndex();
+}
+
+void SettingsBackend::setCrop(const int &id)
+{
+    ui->comboCrop->setCurrentIndex(id);
+}
+
+int SettingsBackend::deinterlacing() const
+{
+    return ui->comboDeinterlacing->currentIndex();
+}
+
+void SettingsBackend::setDeinterlacing(const int &id)
+{
+    ui->comboDeinterlacing->setCurrentIndex(id);
 }
 
 void SettingsBackend::setRememberChannelSettings(const bool &remember)

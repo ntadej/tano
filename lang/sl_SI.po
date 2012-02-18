@@ -2038,17 +2038,17 @@ msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr "VLC-Qt Hrbtenica"
 
-msgctxt "SettingsBackend|"
-msgid "Curently using VLC-Qt Backend"
-msgstr "Trenutno uporabljaš VLC-Qt hrbtenico"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Curently using VLC-Qt Backend"
+#~ msgstr "Trenutno uporabljaš VLC-Qt hrbtenico"
 
 msgctxt "SettingsBackend|"
 msgid "Version:"
 msgstr "Različica:"
 
-msgctxt "SettingsBackend|"
-msgid "Use global VLC settings (requires restart)"
-msgstr "Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Use global VLC settings (requires restart)"
+#~ msgstr "Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)"
 
 msgctxt "SettingsBackend|"
 msgid "Using Videolan VLC version:"
@@ -2098,6 +2098,57 @@ msgstr "Vrata usmerjevalnika:"
 msgctxt "SettingsBackend|"
 msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
+
+msgctxt "SettingsBackend|"
+msgid "Default aspect ratio:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default crop:"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Default deinterlacing:"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Original"
+msgstr "Originalno"
+
+msgctxt "SettingsBackend|"
+msgid "16:9"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Discard"
+msgstr "Zavrzi"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Blend"
+msgstr "Prelivanje"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Mean"
+msgstr "Sredina"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Bob"
+msgstr "Bob"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "Linear"
+msgstr "Linearno"
+
+#, fuzzy
+msgctxt "SettingsBackend|"
+msgid "X"
+msgstr "X"
 
 msgctxt "SettingsEdit|"
 msgid "Settings"
@@ -2259,6 +2310,10 @@ msgctxt "SettingsEdit|"
 msgid "Schedule"
 msgstr "Spored"
 
+msgctxt "SettingsEdit|"
+msgid "Playlist"
+msgstr ""
+
 msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
@@ -2307,10 +2362,6 @@ msgstr "Uporabljate Tano različice:"
 #~ msgid "Default channel list"
 #~ msgstr "Privzet seznam programov"
 
-msgctxt "SettingsGeneral|"
-msgid "Channel list settings"
-msgstr ""
-
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Nastavi <i>Tano</i>"
@@ -2331,6 +2382,7 @@ msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Samodejno prični predvajanje zadnjega programa"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "Use global VLC settings"
 msgstr "Uporabi globalne VLC nastavitve"
@@ -2339,10 +2391,12 @@ msgstr "Uporabi globalne VLC nastavitve"
 #~ msgid "Select or change playlist"
 #~ msgstr "Izberi ali zamenjaj seznam programov"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
 msgstr "<b>Privzet seznam programov</b>"
 
+#, fuzzy
 msgctxt "SettingsPage|"
 msgid "<b>Playback</b>"
 msgstr "<b>Predvajanje</b>"
@@ -2391,9 +2445,37 @@ msgstr "<b>Predvajanje</b>"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Tano TV seznam programov (*.m3u)"
 
+msgctxt "SettingsPlaylist|"
+msgid "Default playlist"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Network refresh"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Refresh playlist on startup"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Playlist URL:"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Radio"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Default radio category:"
+msgstr ""
+
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
 msgstr "Privzet imenik snemanja"
+
+#~ msgctxt "SettingsRecorder|"
+#~ msgid "Recorder"
+#~ msgstr "Snemalnik"
 
 #~ msgctxt "SettingsSchedule|"
 #~ msgid "VLC-Qt Backend"
@@ -2501,9 +2583,9 @@ msgctxt "SettingsSchedule|"
 msgid "XMLTV settings"
 msgstr "Nastavitve XMLTV"
 
-msgctxt "SettingsSchedule|"
-msgid "Custom grabber output:"
-msgstr "Izhod poljubnega odjemalca:"
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Custom grabber output:"
+#~ msgstr "Izhod poljubnega odjemalca:"
 
 #~ msgctxt "SettingsSchedule|"
 #~ msgid "EPG plugin settings"
@@ -2513,9 +2595,41 @@ msgstr "Izhod poljubnega odjemalca:"
 #~ msgid "Select desired EPG plugin from the list below:"
 #~ msgstr "Izberite željen vtičnik EPG s spodnjega seznama:"
 
+#~ msgctxt "SettingsSchedule|"
+#~ msgid "Custom"
+#~ msgstr "Drugo"
+
 msgctxt "SettingsSchedule|"
-msgid "Custom"
-msgstr "Drugo"
+msgid "XMLTV file location:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Refresh XMLTV"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Refresh XMLTV file on startup"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Download file"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Run grabber"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Network"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "XMLTV source url:"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "Grabber"
+msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Action"
@@ -2724,6 +2838,10 @@ msgstr "Vključen upravljalni pult"
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Vključen info pult"
+
+msgctxt "SettingsUi|"
+msgid "Show tray icon"
+msgstr ""
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"

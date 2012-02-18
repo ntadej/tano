@@ -1999,7 +1999,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Curently using VLC-Qt Backend</source>
-        <translation>Trenutno uporabljaš VLC-Qt hrbtenico</translation>
+        <translation type="obsolete">Trenutno uporabljaš VLC-Qt hrbtenico</translation>
     </message>
     <message>
         <source>Version:</source>
@@ -2007,7 +2007,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Use global VLC settings (requires restart)</source>
-        <translation>Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
+        <translation type="obsolete">Uporabi globalne VLC nastavitve (zahtevan ponovni zagon)</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
@@ -2056,6 +2056,50 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
         <translation>&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Default aspect ratio:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default crop:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default deinterlacing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished">Originalno</translation>
+    </message>
+    <message>
+        <source>16:9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation type="unfinished">Zavrzi</translation>
+    </message>
+    <message>
+        <source>Blend</source>
+        <translation type="unfinished">Prelivanje</translation>
+    </message>
+    <message>
+        <source>Mean</source>
+        <translation type="unfinished">Sredina</translation>
+    </message>
+    <message>
+        <source>Bob</source>
+        <translation type="unfinished">Bob</translation>
+    </message>
+    <message>
+        <source>Linear</source>
+        <translation type="unfinished">Linearno</translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation type="unfinished">X</translation>
     </message>
 </context>
 <context>
@@ -2220,6 +2264,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Schedule</source>
         <translation>Spored</translation>
     </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsGeneral</name>
@@ -2271,10 +2319,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Default channel list</source>
         <translation type="obsolete">Privzet seznam programov</translation>
     </message>
-    <message>
-        <source>Channel list settings</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SettingsPage</name>
@@ -2300,7 +2344,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Use global VLC settings</source>
-        <translation>Uporabi globalne VLC nastavitve</translation>
+        <translation type="unfinished">Uporabi globalne VLC nastavitve</translation>
     </message>
     <message>
         <source>Select or change playlist</source>
@@ -2308,11 +2352,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Privzet seznam programov&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Privzet seznam programov&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Playback&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Predvajanje&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Predvajanje&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -2357,12 +2401,40 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="obsolete">Tano TV seznam programov (*.m3u)</translation>
     </message>
+    <message>
+        <source>Default playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh playlist on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsRecorder</name>
     <message>
         <source>Default recording directory</source>
         <translation>Privzet imenik snemanja</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="obsolete">Snemalnik</translation>
     </message>
 </context>
 <context>
@@ -2471,7 +2543,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Custom grabber output:</source>
-        <translation>Izhod poljubnega odjemalca:</translation>
+        <translation type="obsolete">Izhod poljubnega odjemalca:</translation>
     </message>
     <message>
         <source>EPG plugin settings</source>
@@ -2483,7 +2555,39 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Drugo</translation>
+        <translation type="obsolete">Drugo</translation>
+    </message>
+    <message>
+        <source>XMLTV file location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh XMLTV file on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV source url:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grabber</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2698,6 +2802,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Info panel enabled</source>
         <translation>Vključen info pult</translation>
+    </message>
+    <message>
+        <source>Show tray icon</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

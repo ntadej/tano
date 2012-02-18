@@ -34,11 +34,10 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
     ui->location->setType(Tano::XmltvFile);
     ui->location->setResetValue(Settings::DEFAULT_XMLTV_LOCATION);
 
-    connect(ui->comboGrabber, SIGNAL(currentIndexChanged(QString)), this, SLOT(processGrabber(QString)));
-
 #if !EDITOR
     _xmltv = new XmltvSystem();
-    listGrabbers();
+    connect(_xmltv, SIGNAL(grabbers(QList<XmltvGrabber>)), this, SLOT(listGrabbers(QList<XmltvGrabber>)));
+    _xmltv->requestGrabbers();
 #endif
 }
 
@@ -53,55 +52,84 @@ SettingsSchedule::~SettingsSchedule()
 void SettingsSchedule::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
-    switch (e->type()) {
-        case QEvent::LanguageChange:
-            ui->retranslateUi(this);
-            break;
-        default:
-            break;
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
     }
 }
 
-void SettingsSchedule::listGrabbers()
+void SettingsSchedule::listGrabbers(const QList<XmltvGrabber> &list)
 {
 #if !EDITOR
-    QStringList grabbers = _xmltv->grabbers();
-
     ui->comboGrabber->clear();
 
-    for(int i = 0; i < grabbers.size(); i++) {
-        ui->comboGrabber->addItem(grabbers[i].split("|")[1], grabbers[i].split("|")[0]);
+    for(int i = 0; i < list.size(); i++) {
+        ui->comboGrabber->addItem(list[i].name, list[i].path);
     }
 
-    ui->comboGrabber->addItem(tr("Custom"), "custom");
+    ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(_grabber));
+#else
+    Q_UNUSED(list)
 #endif
 }
 
-void SettingsSchedule::processGrabber(const QString &grabber)
-{
-    ui->labelCustom->setEnabled(grabber == tr("Custom"));
-    ui->location->setEnabled(grabber == tr("Custom"));
-
-    if(grabber != tr("Custom"))
-        ui->location->reset();
-}
-
-QString SettingsSchedule::xmltvGrabber() const
-{
-    return ui->comboGrabber->itemData(ui->comboGrabber->currentIndex()).toString();
-}
-
-void SettingsSchedule::setXmltvGrabber(const QString &grabber)
-{
-    ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(grabber));
-}
-
-QString SettingsSchedule::xmltvLocation() const
+QString SettingsSchedule::location() const
 {
     return ui->location->value();
 }
 
-void SettingsSchedule::setXmltvLocation(const QString &location)
+void SettingsSchedule::setLocation(const QString &location)
 {
     ui->location->setValue(location);
+}
+
+bool SettingsSchedule::update() const
+{
+    return ui->checkRefresh->isChecked();
+}
+
+void SettingsSchedule::setUpdate(const bool &enabled)
+{
+    ui->checkRefresh->setChecked(enabled);
+}
+
+bool SettingsSchedule::updateGrabber() const
+{
+    return ui->radioGrabber->isChecked();
+}
+
+void SettingsSchedule::setUpdateGrabber(const bool &enabled)
+{
+    ui->radioGrabber->setChecked(enabled);
+    ui->radioNetwork->setChecked(!enabled);
+}
+
+QString SettingsSchedule::updateUrl() const
+{
+    return ui->editUrl->text();
+}
+
+void SettingsSchedule::setUpdateUrl(const QString &url)
+{
+    ui->editUrl->setText(url);
+}
+
+QString SettingsSchedule::grabber() const
+{
+    return ui->comboGrabber->currentText();
+}
+
+QString SettingsSchedule::grabberPath() const
+{
+    return ui->comboGrabber->itemData(ui->comboGrabber->currentIndex()).toString();
+}
+
+void SettingsSchedule::setGrabber(const QString &grabber)
+{
+    _grabber = grabber;
+    ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(_grabber));
 }
