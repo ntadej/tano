@@ -528,15 +528,30 @@ msgctxt "MenuAspectRatio|"
 msgid "Original"
 msgstr "Původní"
 
-msgctxt "MenuCrop|"
+#~ msgctxt "MenuCrop|"
+#~ msgid "Crop video"
+#~ msgstr "Ořezat obraz"
+
+#~ msgctxt "MenuCrop|"
+#~ msgid "Next crop option"
+#~ msgstr "Další volba pro ořez"
+
+#~ msgctxt "MenuCrop|"
+#~ msgid "Original"
+#~ msgstr "Původní"
+
+#, fuzzy
+msgctxt "MenuCropRatio|"
 msgid "Crop video"
 msgstr "Ořezat obraz"
 
-msgctxt "MenuCrop|"
+#, fuzzy
+msgctxt "MenuCropRatio|"
 msgid "Next crop option"
 msgstr "Další volba pro ořez"
 
-msgctxt "MenuCrop|"
+#, fuzzy
+msgctxt "MenuCropRatio|"
 msgid "Original"
 msgstr "Původní"
 
@@ -1984,10 +1999,6 @@ msgstr ""
 msgctxt "SettingsBackend|"
 msgid "Original"
 msgstr "Původní"
-
-msgctxt "SettingsBackend|"
-msgid "16:9"
-msgstr ""
 
 #, fuzzy
 msgctxt "SettingsBackend|"

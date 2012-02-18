@@ -19,42 +19,68 @@
 #include "MenuDeinterlacing.h"
 
 MenuDeinterlacing::MenuDeinterlacing(VlcVideoWidget *videoWidget,
-									 QWidget *parent)
-	: MenuCore(parent),
-	_videoWidget(videoWidget)
+                                     QWidget *parent)
+    : MenuCore(parent),
+    _videoWidget(videoWidget)
 {
-	setTitle(tr("Deinterlacing"));
-	setIcon(QIcon(":/icons/24x24/video.png"));
-	actionNext()->setText(tr("Next deinterlacing option"));
+    setTitle(tr("Deinterlacing"));
+    setIcon(QIcon(":/icons/24x24/video.png"));
+    actionNext()->setText(tr("Next deinterlacing option"));
 
-	_dfOriginal = new QAction(tr("Disabled"), this);
-	connect(_dfOriginal, SIGNAL(triggered()), _videoWidget, SLOT(setFilterDisabled()));
-	addItem(_dfOriginal);
-	_dfOriginal->setChecked(true);
+    QAction *dfDisabled = new QAction(tr("Disabled"), this);
+    _map1.insert(dfDisabled, Vlc::Disabled);
+    _map2.insert(Vlc::Disabled, dfDisabled);
+    connect(dfDisabled, SIGNAL(triggered()), this, SLOT(apply()));
+    addItem(dfDisabled);
 
-	QAction *dfDiscard = new QAction(tr("Discard"), this);
-	connect(dfDiscard, SIGNAL(triggered()), _videoWidget, SLOT(setFilterDiscard()));
-	addItem(dfDiscard);
+    QAction *dfDiscard = new QAction(tr("Discard"), this);
+    _map1.insert(dfDiscard, Vlc::Discard);
+    _map2.insert(Vlc::Discard, dfDiscard);
+    connect(dfDiscard, SIGNAL(triggered()), this, SLOT(apply()));
+    addItem(dfDiscard);
 
-	QAction *dfBlend = new QAction(tr("Blend"), this);
-	connect(dfBlend, SIGNAL(triggered()), _videoWidget, SLOT(setFilterBlend()));
-	addItem(dfBlend);
+    QAction *dfBlend = new QAction(tr("Blend"), this);
+    _map1.insert(dfBlend, Vlc::Blend);
+    _map2.insert(Vlc::Blend, dfBlend);
+    connect(dfBlend, SIGNAL(triggered()), this, SLOT(apply()));
+    addItem(dfBlend);
 
-	QAction *dfMean = new QAction(tr("Mean"), this);
-	connect(dfMean, SIGNAL(triggered()), _videoWidget, SLOT(setFilterMean()));
-	addItem(dfMean);
+    QAction *dfMean = new QAction(tr("Mean"), this);
+    _map1.insert(dfMean, Vlc::Mean);
+    _map2.insert(Vlc::Mean, dfMean);
+    connect(dfMean, SIGNAL(triggered()), this, SLOT(apply()));
+    addItem(dfMean);
 
-	QAction *dfBob = new QAction(tr("Bob"), this);
-	connect(dfBob, SIGNAL(triggered()), _videoWidget, SLOT(setFilterBob()));
-	addItem(dfBob);
+    QAction *dfBob = new QAction(tr("Bob"), this);
+    _map1.insert(dfBob, Vlc::Bob);
+    _map2.insert(Vlc::Bob, dfBob);
+    connect(dfBob, SIGNAL(triggered()), this, SLOT(apply()));
+    addItem(dfBob);
 
-	QAction *dfLinear = new QAction(tr("Linear"), this);
-	connect(dfLinear, SIGNAL(triggered()), _videoWidget, SLOT(setFilterLinear()));
-	addItem(dfLinear);
+    QAction *dfLinear = new QAction(tr("Linear"), this);
+    _map1.insert(dfLinear, Vlc::Linear);
+    _map2.insert(Vlc::Linear, dfLinear);
+    connect(dfLinear, SIGNAL(triggered()), this, SLOT(apply()));
+    addItem(dfLinear);
 
-	QAction *dfX = new QAction(tr("X"), this);
-	connect(dfX, SIGNAL(triggered()), _videoWidget, SLOT(setFilterX()));
-	addItem(dfX);
+    QAction *dfX = new QAction(tr("X"), this);
+    _map1.insert(dfX, Vlc::X);
+    _map2.insert(Vlc::X, dfX);
+    connect(dfX, SIGNAL(triggered()), this, SLOT(apply()));
+    addItem(dfX);
 }
 
 MenuDeinterlacing::~MenuDeinterlacing() { }
+
+void MenuDeinterlacing::apply()
+{
+    QAction *action = qobject_cast<QAction *>(sender());
+
+    if (action)
+        _videoWidget->setDeinterlacing(_map1[action]);
+}
+
+void MenuDeinterlacing::setDefault(const Vlc::Deinterlacing &deinterlacing)
+{
+    _map2[deinterlacing]->setChecked(true);
+}

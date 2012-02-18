@@ -78,7 +78,7 @@ void M3UHandler::processList()
             tmp.replace(QString("#EXTTV:"), QString(""));
             tmpList = tmp.split(";");
 
-            if (tmpList.size() != 0) {
+            if (!tmpList.isEmpty()) {
                 tmpCList = tmpList[0].split(",");
                 if (tmpCList.contains(_radio)) {
                     _channel->setRadio(true);

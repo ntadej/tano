@@ -37,8 +37,8 @@ public:
     void setRememberChannelSettings(const bool &remember);
     int aspectRatio() const;
     void setAspectRatio(const int &id);
-    int crop() const;
-    void setCrop(const int &id);
+    int cropRatio() const;
+    void setCropRatio(const int &id);
     int deinterlacing() const;
     void setDeinterlacing(const int &id);
     QString audio() const;

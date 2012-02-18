@@ -547,15 +547,30 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <name>MenuCrop</name>
     <message>
         <source>Crop video</source>
-        <translation>Ořezat obraz</translation>
+        <translation type="obsolete">Ořezat obraz</translation>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation>Další volba pro ořez</translation>
+        <translation type="obsolete">Další volba pro ořez</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Původní</translation>
+        <translation type="obsolete">Původní</translation>
+    </message>
+</context>
+<context>
+    <name>MenuCropRatio</name>
+    <message>
+        <source>Crop video</source>
+        <translation type="unfinished">Ořezat obraz</translation>
+    </message>
+    <message>
+        <source>Next crop option</source>
+        <translation type="unfinished">Další volba pro ořez</translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished">Původní</translation>
     </message>
 </context>
 <context>
@@ -1941,10 +1956,6 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Original</source>
         <translation type="unfinished">Původní</translation>
-    </message>
-    <message>
-        <source>16:9</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Discard</source>

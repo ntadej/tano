@@ -16,17 +16,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "MenuAspectRatio.h"
+#include "MenuCropRatio.h"
 
-MenuAspectRatio::MenuAspectRatio(VlcVideoWidget *videoWidget,
-                                 QWidget *parent)
+MenuCropRatio::MenuCropRatio(VlcVideoWidget *videoWidget,
+                   QWidget *parent)
     : MenuCore(parent),
     _videoWidget(videoWidget)
 {
-    setTitle(tr("Aspect ratio"));
+    setTitle(tr("Crop video"));
     setIcon(QIcon(":/icons/24x24/interface.png"));
-    actionNext()->setText(tr("Next aspect ratio option"));
-    setType(Vlc::Other);
+    actionNext()->setText(tr("Next crop option"));
 
     QAction *original = new QAction(tr("Original"), this);
     _map1.insert(original, Vlc::Original);
@@ -43,17 +42,17 @@ MenuAspectRatio::MenuAspectRatio(VlcVideoWidget *videoWidget,
     }
 }
 
-MenuAspectRatio::~MenuAspectRatio() { }
+MenuCropRatio::~MenuCropRatio() { }
 
-void MenuAspectRatio::apply()
+void MenuCropRatio::apply()
 {
     QAction *action = qobject_cast<QAction *>(sender());
 
     if (action)
-        _videoWidget->setAspectRatio(_map1[action]);
+        _videoWidget->setCropRatio(_map1[action]);
 }
 
-void MenuAspectRatio::setDefault(const Vlc::Ratio &ratio)
+void MenuCropRatio::setDefault(const Vlc::Ratio &ratio)
 {
     _map2[ratio]->setChecked(true);
 }

@@ -47,7 +47,7 @@ const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonFollowStyle;
 // Backend
 const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;
 const int Settings::DEFAULT_ASPECT_RATIO = 0;
-const int Settings::DEFAULT_CROP = 0;
+const int Settings::DEFAULT_CROP_RATIO = 0;
 const int Settings::DEFAULT_DEINTERLACING = 0;
 const QString Settings::DEFAULT_AUDIO_LANGUAGE = QObject::tr("Disabled");
 const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
@@ -107,7 +107,7 @@ void Settings::writeSettings()
 
     setValue("backend/videosettings", rememberVideoSettings());
     setValue("backend/aspectratio", aspectRatio());
-    setValue("backend/crop", crop());
+    setValue("backend/cropratio", cropRatio());
     setValue("backend/deinterlacing", deinterlacing());
     setValue("backend/audio", audioLanguage());
     setValue("backend/subtitles", subtitleLanguage());
@@ -158,7 +158,7 @@ void Settings::readSettings()
 
     setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
     setAspectRatio(value("backend/aspectratio", DEFAULT_ASPECT_RATIO).toInt());
-    setCrop(value("backend/crop", DEFAULT_CROP).toInt());
+    setCropRatio(value("backend/cropratio", DEFAULT_CROP_RATIO).toInt());
     setDeinterlacing(value("backend/deinterlacing", DEFAULT_DEINTERLACING).toInt());
     setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
     setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());

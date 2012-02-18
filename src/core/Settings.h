@@ -104,9 +104,9 @@ public:
     inline int aspectRatio() const { return _aspectRatio; }
     inline void setAspectRatio(const int &i) { _aspectRatio = i; }
     static const int DEFAULT_ASPECT_RATIO;
-    inline int crop() const { return _crop; }
-    inline void setCrop(const int &i) { _crop = i; }
-    static const int DEFAULT_CROP;
+    inline int cropRatio() const { return _cropRatio; }
+    inline void setCropRatio(const int &i) { _cropRatio = i; }
+    static const int DEFAULT_CROP_RATIO;
     inline int deinterlacing() const { return _deinterlacing; }
     inline void setDeinterlacing(const int &i) { _deinterlacing = i; }
     static const int DEFAULT_DEINTERLACING;
@@ -192,7 +192,7 @@ private:
     // Backend
     bool _rememberVideoSettings;
     int _aspectRatio;
-    int _crop;
+    int _cropRatio;
     int _deinterlacing;
     QString _audioLanguage;
     QString _subtitleLanguage;

@@ -21,6 +21,7 @@
 #include "ui_SettingsBackend.h"
 
 #if WITH_EDITOR_VLCQT
+    #include <vlc-qt/Enums.h>
     #include <vlc-qt/Instance.h>
 #endif
 
@@ -35,13 +36,20 @@ SettingsBackend::SettingsBackend(QWidget *parent)
 #endif
 
 #if WITH_EDITOR_VLCQT
-   ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " <b>" + VlcInstance::libVersion() + "</b>");
-   ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " <b>" + VlcInstance::version() + "</b>");
+    ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " <b>" + VlcInstance::libVersion() + "</b>");
+    ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " <b>" + VlcInstance::version() + "</b>");
 #else
-   ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " /");
-   ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " /");
+    ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " /");
+    ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " /");
 #endif
-   ui->labelUdpxyInfo->setText(ui->labelUdpxyInfo->text().arg("</i>udp://@232.4.1.1:5002<i>", "</i>http://router:port/udp/232.4.1.1:5002<i>"));
+    ui->labelUdpxyInfo->setText(ui->labelUdpxyInfo->text().arg("</i>udp://@232.4.1.1:5002<i>", "</i>http://router:port/udp/232.4.1.1:5002<i>"));
+
+#if WITH_EDITOR_VLCQT
+    for (int i = 1; i < Vlc::ratioHuman().size(); i++) {
+        ui->comboAspectRatio->addItem(Vlc::ratioHuman()[i]);
+        ui->comboCropRatio->addItem(Vlc::ratioHuman()[i]);
+    }
+#endif
 }
 
 SettingsBackend::~SettingsBackend()
@@ -77,14 +85,14 @@ void SettingsBackend::setAspectRatio(const int &id)
     ui->comboAspectRatio->setCurrentIndex(id);
 }
 
-int SettingsBackend::crop() const
+int SettingsBackend::cropRatio() const
 {
-    return ui->comboCrop->currentIndex();
+    return ui->comboCropRatio->currentIndex();
 }
 
-void SettingsBackend::setCrop(const int &id)
+void SettingsBackend::setCropRatio(const int &id)
 {
-    ui->comboCrop->setCurrentIndex(id);
+    ui->comboCropRatio->setCurrentIndex(id);
 }
 
 int SettingsBackend::deinterlacing() const

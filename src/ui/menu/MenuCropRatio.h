@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,27 +16,31 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MENUCROP_H_
-#define TANO_MENUCROP_H_
+#ifndef TANO_MENUCROPRATIO_H_
+#define TANO_MENUCROPRATIO_H_
 
 #include <vlc-qt/VideoWidget.h>
 
 #include "ui/menu/MenuCore.h"
 
-class MenuCrop : public MenuCore
+class MenuCropRatio : public MenuCore
 {
 Q_OBJECT
 public:
-	MenuCrop(VlcVideoWidget *videoWidget,
-			 QWidget *parent = 0);
-	~MenuCrop();
+    MenuCropRatio(VlcVideoWidget *videoWidget,
+                  QWidget *parent = 0);
+    ~MenuCropRatio();
 
-	QAction *original() { return _cropOriginal; }
+    void setDefault(const Vlc::Ratio &ratio);
+
+private slots:
+    void apply();
 
 private:
-	QAction *_cropOriginal;
+    VlcVideoWidget *_videoWidget;
 
-	VlcVideoWidget *_videoWidget;
+    QMap<QAction *, Vlc::Ratio> _map1;
+    QMap<Vlc::Ratio, QAction *> _map2;
 };
 
-#endif // TANO_MENUCROP_H_
+#endif // TANO_MENUCROPRATIO_H_

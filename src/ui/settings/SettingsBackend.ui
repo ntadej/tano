@@ -195,93 +195,13 @@
           <string>Original</string>
          </property>
         </item>
-        <item>
-         <property name="text">
-          <string notr="true">16:9</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">16:10</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">2.21:1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">4:3</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">5:4</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">1:1</string>
-         </property>
-        </item>
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="comboCrop">
+       <widget class="QComboBox" name="comboCropRatio">
         <item>
          <property name="text">
           <string>Original</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>16:9</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">16:10</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">1.85:1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">2.21:1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">2.35:1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">2.39:1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">4:3</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">5:4</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">5:3</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">1:1</string>
          </property>
         </item>
        </widget>

@@ -618,15 +618,30 @@ To bo ustavilo trenutno snemanje.</translation>
     <name>MenuCrop</name>
     <message>
         <source>Crop video</source>
-        <translation>Obreži sliko</translation>
+        <translation type="obsolete">Obreži sliko</translation>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation>Naslednja obrezava slike</translation>
+        <translation type="obsolete">Naslednja obrezava slike</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Originalno</translation>
+        <translation type="obsolete">Originalno</translation>
+    </message>
+</context>
+<context>
+    <name>MenuCropRatio</name>
+    <message>
+        <source>Crop video</source>
+        <translation type="unfinished">Obreži sliko</translation>
+    </message>
+    <message>
+        <source>Next crop option</source>
+        <translation type="unfinished">Naslednja obrezava slike</translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished">Originalno</translation>
     </message>
 </context>
 <context>
@@ -2072,10 +2087,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Original</source>
         <translation type="unfinished">Originalno</translation>
-    </message>
-    <message>
-        <source>16:9</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Discard</source>

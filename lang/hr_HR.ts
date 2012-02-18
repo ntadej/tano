@@ -442,7 +442,7 @@ This will stop recording in progress.</source>
     </message>
 </context>
 <context>
-    <name>MenuCrop</name>
+    <name>MenuCropRatio</name>
     <message>
         <source>Crop video</source>
         <translation type="unfinished"></translation>
@@ -1351,10 +1351,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>16:9</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

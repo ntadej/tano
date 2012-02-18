@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ void MenuCore::addItem(QAction *action)
 
 void MenuCore::next()
 {
-    if(_group->actions().indexOf(_group->checkedAction()) == _group->actions().size()-1) {
+    if (_group->actions().indexOf(_group->checkedAction()) == _group->actions().size()-1) {
         _group->actions()[0]->trigger();
     } else {
         _group->actions()[_group->actions().indexOf(_group->checkedAction())+1]->trigger();
@@ -56,10 +56,10 @@ void MenuCore::next()
 void MenuCore::setActions(const QList<QAction *> &actions,
                           const Vlc::ActionsType &type)
 {
-    if(type != _type)
+    if (type != _type)
         return;
 
-    if(actions.size() == 0) {
+    if (actions.isEmpty()) {
         setDisabled(true);
     } else {
         setEnabled(true);

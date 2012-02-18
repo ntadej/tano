@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <ntadej@users.sourceforge.net>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -27,16 +27,20 @@ class MenuDeinterlacing : public MenuCore
 {
 Q_OBJECT
 public:
-	MenuDeinterlacing(VlcVideoWidget *videoWidget,
-					  QWidget *parent = 0);
-	~MenuDeinterlacing();
+    MenuDeinterlacing(VlcVideoWidget *videoWidget,
+                      QWidget *parent = 0);
+    ~MenuDeinterlacing();
 
-	QAction *original() { return _dfOriginal; }
+    void setDefault(const Vlc::Deinterlacing &deinterlacing);
+
+private slots:
+    void apply();
 
 private:
-	QAction *_dfOriginal;
+    VlcVideoWidget *_videoWidget;
 
-	VlcVideoWidget *_videoWidget;
+    QMap<QAction *, Vlc::Deinterlacing> _map1;
+    QMap<Vlc::Deinterlacing, QAction *> _map2;
 };
 
 #endif // TANO_MENUDEINTERLACING_H_

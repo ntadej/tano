@@ -518,15 +518,30 @@ msgctxt "MenuAspectRatio|"
 msgid "Original"
 msgstr "Оригинал"
 
-msgctxt "MenuCrop|"
+#~ msgctxt "MenuCrop|"
+#~ msgid "Crop video"
+#~ msgstr "Кадрирование"
+
+#~ msgctxt "MenuCrop|"
+#~ msgid "Next crop option"
+#~ msgstr "След. параметр кадрирования"
+
+#~ msgctxt "MenuCrop|"
+#~ msgid "Original"
+#~ msgstr "Оригинал"
+
+#, fuzzy
+msgctxt "MenuCropRatio|"
 msgid "Crop video"
 msgstr "Кадрирование"
 
-msgctxt "MenuCrop|"
+#, fuzzy
+msgctxt "MenuCropRatio|"
 msgid "Next crop option"
 msgstr "След. параметр кадрирования"
 
-msgctxt "MenuCrop|"
+#, fuzzy
+msgctxt "MenuCropRatio|"
 msgid "Original"
 msgstr "Оригинал"
 
@@ -1797,10 +1812,6 @@ msgstr ""
 msgctxt "SettingsBackend|"
 msgid "Original"
 msgstr "Оригинал"
-
-msgctxt "SettingsBackend|"
-msgid "16:9"
-msgstr ""
 
 #, fuzzy
 msgctxt "SettingsBackend|"

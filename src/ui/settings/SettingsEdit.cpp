@@ -112,7 +112,7 @@ void SettingsEdit::apply()
     // Playback
     _settings->setRememberVideoSettings(ui->backend->rememberChannelSettings());
     _settings->setAspectRatio(ui->backend->aspectRatio());
-    _settings->setCrop(ui->backend->crop());
+    _settings->setCropRatio(ui->backend->cropRatio());
     _settings->setDeinterlacing(ui->backend->deinterlacing());
     _settings->setAudioLanguage(ui->backend->audio());
     _settings->setSubtitleLanguage(ui->backend->sub());
@@ -174,7 +174,7 @@ void SettingsEdit::read()
     // Playback
     ui->backend->setRememberChannelSettings(_settings->rememberVideoSettings());
     ui->backend->setAspectRatio(_settings->aspectRatio());
-    ui->backend->setCrop(_settings->crop());
+    ui->backend->setCropRatio(_settings->cropRatio());
     ui->backend->setDeinterlacing(_settings->deinterlacing());
     ui->backend->setAudio(_settings->audioLanguage());
     ui->backend->setSub(_settings->subtitleLanguage());

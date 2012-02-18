@@ -603,15 +603,30 @@ msgctxt "MenuAspectRatio|"
 msgid "Original"
 msgstr "Originalno"
 
-msgctxt "MenuCrop|"
+#~ msgctxt "MenuCrop|"
+#~ msgid "Crop video"
+#~ msgstr "Obreži sliko"
+
+#~ msgctxt "MenuCrop|"
+#~ msgid "Next crop option"
+#~ msgstr "Naslednja obrezava slike"
+
+#~ msgctxt "MenuCrop|"
+#~ msgid "Original"
+#~ msgstr "Originalno"
+
+#, fuzzy
+msgctxt "MenuCropRatio|"
 msgid "Crop video"
 msgstr "Obreži sliko"
 
-msgctxt "MenuCrop|"
+#, fuzzy
+msgctxt "MenuCropRatio|"
 msgid "Next crop option"
 msgstr "Naslednja obrezava slike"
 
-msgctxt "MenuCrop|"
+#, fuzzy
+msgctxt "MenuCropRatio|"
 msgid "Original"
 msgstr "Originalno"
 
@@ -2115,10 +2130,6 @@ msgstr ""
 msgctxt "SettingsBackend|"
 msgid "Original"
 msgstr "Originalno"
-
-msgctxt "SettingsBackend|"
-msgid "16:9"
-msgstr ""
 
 #, fuzzy
 msgctxt "SettingsBackend|"

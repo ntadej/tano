@@ -51,7 +51,7 @@
 #include "ui/epg/EpgScheduleFull.h"
 #include "ui/epg/EpgShow.h"
 #include "ui/menu/MenuAspectRatio.h"
-#include "ui/menu/MenuCrop.h"
+#include "ui/menu/MenuCropRatio.h"
 #include "ui/menu/MenuDeinterlacing.h"
 #include "ui/menu/MenuTrackAudio.h"
 #include "ui/menu/MenuTrackSubtitles.h"
@@ -179,19 +179,6 @@ void MainWindow::createGui()
     ui->buttonUpdate->hide();
     ui->scheduleWidget->setIdentifier(Tano::Main);
     ui->logo->hide();
-
-    _menuTrackAudio = new MenuTrackAudio(ui->menuAudio);
-    ui->menuAudio->addMenu(_menuTrackAudio);
-    _menuTrackVideo = new MenuTrackVideo(ui->menuVideo);
-    ui->menuVideo->addMenu(_menuTrackVideo);
-    _menuTrackSubtitles = new MenuTrackSubtitles(ui->menuVideo);
-    ui->menuVideo->addMenu(_menuTrackSubtitles);
-    _menuAspectRatio = new MenuAspectRatio(ui->videoWidget, ui->menuVideo);
-    ui->menuVideo->addMenu(_menuAspectRatio);
-    _menuCrop = new MenuCrop(ui->videoWidget, ui->menuVideo);
-    ui->menuVideo->addMenu(_menuCrop);
-    _menuDeinterlacing = new MenuDeinterlacing(ui->videoWidget, ui->menuVideo);
-    ui->menuVideo->addMenu(_menuDeinterlacing);
 }
 
 void MainWindow::createBackend()
@@ -233,6 +220,17 @@ void MainWindow::createSettings()
     mouseWheel();
 
     //Playback settings
+    _defaultAspectRatio = settings->aspectRatio();
+    _defaultCropRatio = settings->cropRatio();
+    _defaultDeinterlacing = settings->deinterlacing();
+    ui->videoWidget->setDefaultAspectRatio(Vlc::Ratio(_defaultAspectRatio));
+    ui->videoWidget->setDefaultCropRatio(Vlc::Ratio(_defaultCropRatio));
+    ui->videoWidget->setDefaultDeinterlacing(Vlc::Deinterlacing(_defaultDeinterlacing));
+    ui->videoWidget->enableDefaultSettings();
+    _menuAspectRatio->setDefault(Vlc::Ratio(_defaultAspectRatio));
+    _menuCropRatio->setDefault(Vlc::Ratio(_defaultCropRatio));
+    _menuDeinterlacing->setDefault(Vlc::Deinterlacing(_defaultDeinterlacing));
+
     _defaultAudioLanguage = settings->audioLanguage();
     _defaultSubtitleLanguage = settings->subtitleLanguage();
     _videoSettings = settings->rememberVideoSettings();
@@ -379,6 +377,19 @@ void MainWindow::createMenus()
     _openMenu->addAction(ui->actionOpen);
 
     _trayIcon = new TrayIcon(_rightMenu);
+
+    _menuTrackAudio = new MenuTrackAudio(ui->menuAudio);
+    ui->menuAudio->addMenu(_menuTrackAudio);
+    _menuTrackVideo = new MenuTrackVideo(ui->menuVideo);
+    ui->menuVideo->addMenu(_menuTrackVideo);
+    _menuTrackSubtitles = new MenuTrackSubtitles(ui->menuVideo);
+    ui->menuVideo->addMenu(_menuTrackSubtitles);
+    _menuAspectRatio = new MenuAspectRatio(ui->videoWidget, ui->menuVideo);
+    ui->menuVideo->addMenu(_menuAspectRatio);
+    _menuCropRatio = new MenuCropRatio(ui->videoWidget, ui->menuVideo);
+    ui->menuVideo->addMenu(_menuCropRatio);
+    _menuDeinterlacing = new MenuDeinterlacing(ui->videoWidget, ui->menuVideo);
+    ui->menuVideo->addMenu(_menuDeinterlacing);
 }
 
 void MainWindow::createShortcuts()
@@ -408,7 +419,7 @@ void MainWindow::createShortcuts()
              << _menuTrackVideo->actionNext()
              << _menuTrackSubtitles->actionNext()
              << _menuAspectRatio->actionNext()
-             << _menuCrop->actionNext()
+             << _menuCropRatio->actionNext()
              << _menuDeinterlacing->actionNext();
 
     _shortcuts = new Shortcuts(_actions, this);
@@ -533,15 +544,17 @@ void MainWindow::play(const QString &itemFile)
     }
 
     if (_videoSettings)
-        ui->videoWidget->setPreviousSettings();
+        ui->videoWidget->enablePreviousSettings();
+    else
+        ui->videoWidget->enableDefaultSettings();
 }
 
 void MainWindow::stop()
 {
-    if (!_videoSettings) {
+    /*if (!_videoSettings) {
         _menuAspectRatio->original()->trigger();
-        _menuCrop->original()->trigger();
-    }
+        _menuCropRatio->original()->trigger();
+    }*/
 
     _xmltv->stop();
 

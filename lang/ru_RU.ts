@@ -540,15 +540,30 @@ This will stop recording in progress.</source>
     <name>MenuCrop</name>
     <message>
         <source>Crop video</source>
-        <translation>Кадрирование</translation>
+        <translation type="obsolete">Кадрирование</translation>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation>След. параметр кадрирования</translation>
+        <translation type="obsolete">След. параметр кадрирования</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Оригинал</translation>
+        <translation type="obsolete">Оригинал</translation>
+    </message>
+</context>
+<context>
+    <name>MenuCropRatio</name>
+    <message>
+        <source>Crop video</source>
+        <translation type="unfinished">Кадрирование</translation>
+    </message>
+    <message>
+        <source>Next crop option</source>
+        <translation type="unfinished">След. параметр кадрирования</translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished">Оригинал</translation>
     </message>
 </context>
 <context>
@@ -1776,10 +1791,6 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Original</source>
         <translation type="unfinished">Оригинал</translation>
-    </message>
-    <message>
-        <source>16:9</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Discard</source>

@@ -449,15 +449,30 @@ This will stop recording in progress.</source>
     <name>MenuCrop</name>
     <message>
         <source>Crop video</source>
-        <translation>Découpage vidéo</translation>
+        <translation type="obsolete">Découpage vidéo</translation>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation>Option de découpage suivante</translation>
+        <translation type="obsolete">Option de découpage suivante</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Original</translation>
+        <translation type="obsolete">Original</translation>
+    </message>
+</context>
+<context>
+    <name>MenuCropRatio</name>
+    <message>
+        <source>Crop video</source>
+        <translation type="unfinished">Découpage vidéo</translation>
+    </message>
+    <message>
+        <source>Next crop option</source>
+        <translation type="unfinished">Option de découpage suivante</translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished">Original</translation>
     </message>
 </context>
 <context>
@@ -1586,10 +1601,6 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>Original</source>
         <translation type="unfinished">Original</translation>
-    </message>
-    <message>
-        <source>16:9</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Discard</source>

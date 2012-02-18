@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ class EpgShow;
 class GetFile;
 class LocaleManager;
 class MenuAspectRatio;
-class MenuCrop;
+class MenuCropRatio;
 class MenuDeinterlacing;
 class MenuTrackAudio;
 class MenuTrackSubtitles;
@@ -123,7 +123,10 @@ private:
 
     //Settings
     bool _controlsVisible;
+    int _defaultAspectRatio;
     QString _defaultAudioLanguage;
+    int _defaultCropRatio;
+    int _defaultDeinterlacing;
     QString _defaultPlaylist;
     QString _defaultSubtitleLanguage;
     int _desktopWidth;
@@ -171,7 +174,7 @@ private:
     //Menus and actions
     TrayIcon *_trayIcon;
     MenuAspectRatio *_menuAspectRatio;
-    MenuCrop *_menuCrop;
+    MenuCropRatio *_menuCropRatio;
     MenuDeinterlacing *_menuDeinterlacing;
     MenuTrackAudio *_menuTrackAudio;
     MenuTrackSubtitles *_menuTrackSubtitles;
