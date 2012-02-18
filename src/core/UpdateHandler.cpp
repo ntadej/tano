@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This file was based on the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -21,7 +21,6 @@
 *****************************************************************************/
 
 #include "UpdateHandler.h"
-#include "container/core/UpdateInfo.h"
 
 UpdateHandler::UpdateHandler()
     : _metTanoTag(false) { }
@@ -40,10 +39,10 @@ bool UpdateHandler::startElement(const QString & /* namespaceURI */,
         return false;
     }
 
-    if(qName == "tanoupdates") {
+    if (qName == "tanoupdates") {
         _metTanoTag = true;
         _update.clear();
-    } else if(qName == "application") {
+    } else if (qName == "application") {
         _update.append(UpdateInfo());
         _currentId = _update.size()-1;
     }
@@ -57,15 +56,15 @@ bool UpdateHandler::endElement(const QString & /* namespaceURI */,
                                const QString &qName)
 {
     if (qName == "name") {
-        _update[_currentId].setName(_currentText);
+        _update[_currentId].name =_currentText;
     } else if (qName == "version") {
-        _update[_currentId].setVersion(_currentText);
+        _update[_currentId].version = _currentText;
     } else if (qName == "date") {
-        _update[_currentId].setDate(_currentText);
+        _update[_currentId].date = _currentText;
     } else if (qName == "description") {
-        _update[_currentId].setDescription(_currentText);
+        _update[_currentId].description = _currentText;
     } else if (qName == "development") {
-        _update[_currentId].setDevelopment(_currentText.toInt());
+        _update[_currentId].development = _currentText.toInt();
     }
 
     return true;

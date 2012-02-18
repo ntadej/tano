@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -84,8 +84,8 @@ void PrintDialog::print()
         << ui->checkLanguage
         << ui->checkEpg;
 
-    for(int i = 0; i < box.size(); i++) {
-        if(box[i]->isChecked()) {
+    foreach (QCheckBox *check, box) {
+        if (check->isChecked()) {
             list << k;
             k++;
         } else {

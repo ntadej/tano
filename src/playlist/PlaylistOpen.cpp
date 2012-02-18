@@ -17,7 +17,6 @@
 *****************************************************************************/
 
 #include "PlaylistOpen.h"
-#include "container/playlist/CSVInfo.h"
 #include "playlist/handlers/CSVHandler.h"
 #include "playlist/handlers/JsHandler.h"
 #include "playlist/handlers/M3UHandler.h"
@@ -31,7 +30,7 @@ void PlaylistOpen::openCSVFile(const QString &file,
                                const CSVInfo &info)
 {
     CSVHandler *open = new CSVHandler();
-    open->setParameters(info.separator(), info.header(), info.columns());
+    open->setParameters(info.separator, info.header, info.columns);
     open->processFile(file);
 
     _list = open->channelList();

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -34,19 +34,19 @@ TvheadendGenerator::~TvheadendGenerator() { }
 
 void TvheadendGenerator::clean()
 {
-    if(!QDir(_location + "/channels/").exists()) {
+    if (!QDir(_location + "/channels/").exists()) {
         QDir(_location).rmdir("channels");
     }
 
-    if(!QDir(_location + "/channeltags/").exists()) {
+    if (!QDir(_location + "/channeltags/").exists()) {
         QDir(_location).rmdir("channeltags");
     }
 
-    if(!QDir(_location + "/iptvservices/").exists()) {
+    if (!QDir(_location + "/iptvservices/").exists()) {
         QDir(_location).rmdir("iptvservices");
     }
 
-    if(!QDir(_location + "/iptvtransports/").exists()) {
+    if (!QDir(_location + "/iptvtransports/").exists()) {
         QDir(_location).rmdir("iptvtransports");
     }
 }
@@ -57,16 +57,16 @@ bool TvheadendGenerator::write(PlaylistModel *model)
 
     int id = 1;
     for (int i = 0; i < model->rowCount(); i++) {
-        for(int c = 0; c < model->row(i)->categories().size(); c++) {
-            if(!_tags.contains(model->row(i)->categories()[c])) {
-                _tags.insert(model->row(i)->categories()[c], id);
-                _tagsName.insert(id, model->row(i)->categories()[c]);
+        foreach (QString category, model->row(i)->categories()) {
+            if (!_tags.contains(category)) {
+                _tags.insert(category, id);
+                _tagsName.insert(id, category);
                 id++;
             }
         }
     }
 
-    for(int i = 1; i < id; i++) {
+    for (int i = 1; i < id; i++) {
         generateTag(i, _tagsName[i]);
     }
 
@@ -78,7 +78,7 @@ bool TvheadendGenerator::write(PlaylistModel *model)
 
 QString TvheadendGenerator::fileChannel(const int &number) const
 {
-    if(!QDir(_location + "/channels/").exists()) {
+    if (!QDir(_location + "/channels/").exists()) {
         QDir(_location).mkdir("channels");
     }
     return QString(_location + "/channels/" + QString::number(number));
@@ -86,7 +86,7 @@ QString TvheadendGenerator::fileChannel(const int &number) const
 
 QString TvheadendGenerator::fileIpService(const int &number) const
 {
-    if(!QDir(_location + "/iptvservices/").exists()) {
+    if (!QDir(_location + "/iptvservices/").exists()) {
         QDir(_location).mkdir("iptvservices");
     }
     return QString(_location + "/iptvservices/" + "iptv_" + QString::number(number));
@@ -94,7 +94,7 @@ QString TvheadendGenerator::fileIpService(const int &number) const
 
 QString TvheadendGenerator::fileIpTransport(const int &number) const
 {
-    if(!QDir(_location + "/iptvtransports/").exists()) {
+    if (!QDir(_location + "/iptvtransports/").exists()) {
         QDir(_location).mkdir("iptvtransports");
     }
     return QString(_location + "/iptvtransports/" + "iptv_" + QString::number(number));
@@ -102,7 +102,7 @@ QString TvheadendGenerator::fileIpTransport(const int &number) const
 
 QString TvheadendGenerator::fileTag(const int &number) const
 {
-    if(!QDir(_location + "/channeltags/").exists()) {
+    if (!QDir(_location + "/channeltags/").exists()) {
         QDir(_location).mkdir("channeltags");
     }
     return QString(_location + "/channeltags/" + QString::number(number));
@@ -125,9 +125,9 @@ void TvheadendGenerator::generateItem(Channel *channel)
          << indent(1) << "\"xmltv-channel\": \"" << channel->epg() << "\"," << "\n"
          << indent(1) << "\"icon\": \"" << channel->logo() << "\"," << "\n"
          << indent(1) << "\"tags\": [" << "\n";
-    for(int i = 0; i < channel->categories().size(); i++) {
-        outC << indent(2) << _tags[channel->categories()[i]];
-        if(i != channel->categories().size()-1)
+    foreach (QString category, channel->categories()) {
+        outC << indent(2) << _tags[category];
+        if (category != channel->categories().last())
             outC << ",";
         outC << "\n";
     }

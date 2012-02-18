@@ -83,9 +83,6 @@ SET(Tano_Editor_Srcs
     main.cpp
 
     ../src/container/core/Channel.cpp
-    ../src/container/core/File.cpp
-    ../src/container/core/UpdateInfo.cpp
-    ../src/container/playlist/CSVInfo.cpp
 
     ../src/core/Common.cpp
     ../src/core/Enums.cpp

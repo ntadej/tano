@@ -67,8 +67,8 @@ void SettingsSchedule::listGrabbers(const QList<XmltvGrabber> &list)
 #if !EDITOR
     ui->comboGrabber->clear();
 
-    for(int i = 0; i < list.size(); i++) {
-        ui->comboGrabber->addItem(list[i].name, list[i].path);
+    foreach (XmltvGrabber item, list) {
+        ui->comboGrabber->addItem(item.name, item.path);
     }
 
     ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(_grabber));

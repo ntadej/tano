@@ -71,7 +71,7 @@ void SettingsGeneral::setWizard(const bool &enabled)
 
 QString SettingsGeneral::language() const
 {
-    if(ui->radioCustom->isChecked())
+    if (ui->radioCustom->isChecked())
         return _locale[ui->comboLanguage->currentIndex()];
     else
         return QString("");
@@ -79,10 +79,10 @@ QString SettingsGeneral::language() const
 
 void SettingsGeneral::setLanguage(const QString &language)
 {
-    if(!language.isEmpty()) {
+    if (!language.isEmpty()) {
         ui->radioCustom->setChecked(true);
-        for(int i = 0; i < _locale.size(); i++) {
-            if(language == _locale[i]) {
+        for (int i = 0; i < _locale.size(); i++) {
+            if (language == _locale[i]) {
                 ui->comboLanguage->setCurrentIndex(i);
             }
         }
@@ -113,6 +113,6 @@ void SettingsGeneral::loadLocale()
 {
     _locale = LocaleManager::loadTranslations();
 
-    for(int i = 0; i < _locale.size(); i++)
-        ui->comboLanguage->addItem(LocaleManager::language(_locale[i]));
+    foreach (QString language, _locale)
+        ui->comboLanguage->addItem(LocaleManager::language(language));
 }

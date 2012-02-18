@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -22,43 +22,42 @@
 #include <QtGui/QAbstractButton>
 #include <QtGui/QDialog>
 
-class UpdateInfo;
-class UpdateManager;
+#include "core/UpdateManager.h"
 
 namespace Ui {
-	class UpdateDialog;
+    class UpdateDialog;
 }
 
 class UpdateDialog : public QDialog
 {
 Q_OBJECT
 public:
-	UpdateDialog(QWidget *parent = 0);
-	~UpdateDialog();
+    UpdateDialog(QWidget *parent = 0);
+    ~UpdateDialog();
 
 public slots:
-	void check();
-	void checkSilent();
+    void check();
+    void checkSilent();
 
 protected:
-	void changeEvent(QEvent *e);
+    void changeEvent(QEvent *e);
 
 signals:
-	void newUpdate();
+    void newUpdate();
 
 private slots:
-	void action(QAbstractButton *button);
-	void processUpdate(const QStringList &update,
-					   const UpdateInfo &info);
+    void action(QAbstractButton *button);
+    void processUpdate(const QStringList &update,
+                       const UpdateInfo &info);
 
 private:
-	Ui::UpdateDialog *ui;
+    Ui::UpdateDialog *ui;
 
-	QString generateUrl(const QString &version);
+    QString generateUrl(const QString &version);
 
-	UpdateManager *_update;
+    UpdateManager *_update;
 
-	bool _silent;
+    bool _silent;
 };
 
 #endif // TANO_UPDATEDIALOG_H_

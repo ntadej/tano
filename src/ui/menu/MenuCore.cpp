@@ -30,8 +30,8 @@ MenuCore::MenuCore(QWidget *parent)
 
 MenuCore::~MenuCore()
 {
-    for(int i = 0; i < _group->actions().size(); i++)
-        delete _group->actions()[i];
+    foreach (QAction *action, _group->actions())
+        delete action;
 
     delete _group;
     delete _next;
@@ -63,8 +63,8 @@ void MenuCore::setActions(const QList<QAction *> &actions,
         setDisabled(true);
     } else {
         setEnabled(true);
-        for(int i = 0; i < actions.size(); i++) {
-            addItem(actions[i]);
+        foreach (QAction *action, actions) {
+            addItem(action);
         }
     }
 }

@@ -24,6 +24,13 @@
 
 class Channel;
 
+struct CSVInfo
+{
+    QString separator;
+    bool header;
+    QList<int> columns;
+};
+
 class CSVHandler
 {
 public:

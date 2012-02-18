@@ -51,9 +51,9 @@ void JsHandler::processFile(const QString &jsFile)
 void JsHandler::processList()
 {
     QString line;
-    for(int i = 0; i < _lineList.size(); i++) {
-        if(_lineList[i].contains("la=")) {
-            line = _lineList[i];
+    foreach (QString l, _lineList) {
+        if (l.contains("la=")) {
+            line = l;
             break;
         }
     }
@@ -64,8 +64,8 @@ void JsHandler::processList()
 
     QStringList channels = line.split("],[");
     QStringList currentChannel;
-    for(int i = 0; i < channels.size(); i++) {
-        currentChannel = channels[i].split(",");
+    foreach (QString c, channels) {
+        currentChannel = c.split(",");
 
         Channel *channel = new Channel(currentChannel[1], currentChannel[2].toInt());
         channel->setUrl("udp://@" + currentChannel[3] + ":" + currentChannel[4]);

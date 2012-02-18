@@ -142,10 +142,7 @@ SET(Tano_Resrcs
 # Define the C++ source files used by Tano
 SET(Tano_Container_Srcs
     container/core/Channel.cpp
-    container/core/File.cpp
-    container/core/UpdateInfo.cpp
     container/core/Timer.cpp
-    container/playlist/CSVInfo.cpp
     container/xmltv/XmltvChannel.cpp
     container/xmltv/XmltvCrewMember.cpp
     container/xmltv/XmltvList.cpp

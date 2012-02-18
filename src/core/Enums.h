@@ -34,6 +34,7 @@ namespace Tano
     // FileTypes
     enum FileType
     {
+        Unknown = -1,
         CSV = 20,
         Directory = 0,
         Files = 1,

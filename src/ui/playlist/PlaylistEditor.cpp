@@ -24,11 +24,10 @@
 
 #include "Config.h"
 #include "container/core/Channel.h"
-#include "container/core/File.h"
-#include "container/playlist/CSVInfo.h"
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
+#include "playlist/handlers/CSVHandler.h"
 #include "ui/core/FileDialogs.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
@@ -187,7 +186,7 @@ void PlaylistEditor::menuOpenExport()
 
 void PlaylistEditor::setTitle(const QString &title)
 {
-    if(title.isEmpty())
+    if (title.isEmpty())
         setWindowTitle(tr("Tano Editor"));
     else
         setWindowTitle(tr("%1 - Tano Editor").arg(title));
@@ -227,41 +226,46 @@ void PlaylistEditor::open(const QString &playlist,
                           const bool &refresh)
 {
     File file;
+    CSVInfo info;
     PlaylistImportCSV dialog;
-    if(playlist.isNull()) {
+    if (playlist.isNull()) {
         file = FileDialogs::openPlaylist();
     } else {
-        file = File(playlist, Tano::M3U);
+        file.path = playlist;
+        file.type = Tano::M3U;
     }
 
-    if(file.path().isEmpty() || file.type() == -1)
+    if (file.path.isEmpty() || file.type == Tano::Unknown)
         return;
 
     ui->editWidget->setEnabled(false);
 
-    QFile f(file.path());
+    QFile f(file.path);
     if (!f.open(QFile::ReadOnly | QFile::Text)) {
         QMessageBox::warning(this, tr("Tano"),
                             tr("Cannot read file %1:\n%2.")
-                            .arg(file.path())
+                            .arg(file.path)
                             .arg(f.errorString()));
         return;
     }
     f.close();
 
-    switch (file.type())
+    switch (file.type)
     {
     case Tano::M3U:
     case Tano::JS:
     case Tano::TanoOld:
-        _model->open(file.path(), refresh, Tano::FileType(file.type()));
+        _model->open(file.path, refresh, file.type);
         break;
     case Tano::CSV:
         dialog.exec();
-        if(!dialog.proceed())
+        if (!dialog.proceed())
             return;
 
-        _model->open(file.path(), refresh, Tano::FileType(file.type()), CSVInfo(dialog.separator(), dialog.header(), dialog.columns()));
+        info.separator = dialog.separator();
+        info.header = dialog.header();
+        info.columns = dialog.columns();
+        _model->open(file.path, refresh, file.type, info);
         break;
     default:
         break;
@@ -273,7 +277,7 @@ void PlaylistEditor::open(const QString &playlist,
 
 void PlaylistEditor::newPlaylist()
 {
-    if(_model->rowCount() == 0)
+    if (_model->rowCount() == 0)
         return;
 
     int ret;
@@ -333,26 +337,26 @@ void PlaylistEditor::save()
 {
     File file = FileDialogs::savePlaylist();
 
-    if (file.path().isEmpty() || file.type() == -1)
+    if (file.path.isEmpty() || file.type == Tano::Unknown)
         return;
 
-    QFile f(file.path());
+    QFile f(file.path);
     if (!f.open(QFile::WriteOnly | QFile::Text)) {
         QMessageBox::warning(this, tr("Tano"),
                             tr("Cannot write file %1:\n%2.")
-                            .arg(file.path())
+                            .arg(file.path)
                             .arg(f.errorString()));
         return;
     }
     f.close();
 
-    switch (file.type())
+    switch (file.type)
     {
     case Tano::M3U:
     case Tano::M3UClean:
     case Tano::CSV:
     case Tano::JS:
-        _model->save(file.path(), ui->editName->text(), Tano::FileType(file.type()));
+        _model->save(file.path, ui->editName->text(), file.type);
         break;
     case Tano::M3UUdpxy:
         int s;
@@ -364,7 +368,7 @@ void PlaylistEditor::save()
         switch (s)
         {
         case QMessageBox::Save:
-            _model->save(file.path(), ui->editName->text(), Tano::FileType(file.type()));
+            _model->save(file.path, ui->editName->text(), file.type);
             break;
         case QMessageBox::Cancel:
         default:
@@ -380,7 +384,7 @@ void PlaylistEditor::exportTvheadend()
 {
     PlaylistExportTvheadend dialog;
     dialog.exec();
-    if(!dialog.proceed())
+    if (!dialog.proceed())
         return;
 
     _model->exportTvheadend(dialog.location(), dialog.interface());
@@ -398,7 +402,7 @@ void PlaylistEditor::exportXmltvId()
 
 void PlaylistEditor::exit()
 {
-    if(_closeEnabled) {
+    if (_closeEnabled) {
         hide();
 #if EDITOR
         qApp->quit();
@@ -436,7 +440,7 @@ void PlaylistEditor::print()
 void PlaylistEditor::refreshPlaylist(const bool &refresh)
 {
 #if WITH_EDITOR_VLCQT
-    if(!refresh) {
+    if (!refresh) {
         _timer->stop();
         ui->progressBar->setValue(1);
         ui->playlist->setEnabled(true);
@@ -467,7 +471,7 @@ void PlaylistEditor::checkIp()
 {
 #if WITH_EDITOR_VLCQT
     ui->progressBar->setValue(_currentIp[3]);
-    if(_media)
+    if (_media)
         delete _media;
 
     _media = new VlcMedia(_udpxy->processUrl(currentIp()), _instance);
@@ -480,24 +484,24 @@ void PlaylistEditor::checkIp()
 void PlaylistEditor::checkCurrentIp()
 {
 #if WITH_EDITOR_VLCQT
-    if(_currentIpPlaying) {
+    if (_currentIpPlaying) {
         _player->stop();
 
         bool newChannel = true;
-        for(int i = 0; i < _model->rowCount(); i++) {
-            if(_model->row(i)->url() == currentIp()) {
+        for (int i = 0; i < _model->rowCount(); i++) {
+            if (_model->row(i)->url() == currentIp()) {
                 newChannel = false;
                 break;
             }
         }
 
-        if(newChannel) {
+        if (newChannel) {
             qDebug() << "Scanning:" << "Channel Found";
             addItem(tr("New channel from scan %1").arg(currentIp()), currentIp());
         }
     }
 
-    if(_currentIp[3] != 255) {
+    if (_currentIp[3] != 255) {
         _currentIp[3]++;
         checkIp();
     } else {
@@ -533,12 +537,12 @@ void PlaylistEditor::setState(const bool &playing)
 
 void PlaylistEditor::editItem(Channel *channel)
 {
-    if(channel == 0) {
+    if (channel == 0) {
         ui->editWidget->setEnabled(false);
         return;
     }
 
-    if(!ui->editWidget->isEnabled())
+    if (!ui->editWidget->isEnabled())
         ui->editWidget->setEnabled(true);
 
     ui->editNumber->setText(channel->numberString());
@@ -554,7 +558,7 @@ void PlaylistEditor::editItem(Channel *channel)
 void PlaylistEditor::editChannelNumber()
 {
     QString text = ui->editNumber->text();
-    if(text.toInt() != ui->playlist->currentChannel()->number())
+    if (text.toInt() != ui->playlist->currentChannel()->number())
         _model->processNumber(ui->playlist->currentChannel(), text.toInt());
     else
         QMessageBox::warning(this, tr("Tano"),

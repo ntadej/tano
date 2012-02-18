@@ -190,6 +190,9 @@
       </item>
       <item row="1" column="1">
        <widget class="QComboBox" name="comboAspectRatio">
+        <property name="maxVisibleItems">
+         <number>15</number>
+        </property>
         <item>
          <property name="text">
           <string>Original</string>
@@ -199,6 +202,9 @@
       </item>
       <item row="2" column="1">
        <widget class="QComboBox" name="comboCropRatio">
+        <property name="maxVisibleItems">
+         <number>15</number>
+        </property>
         <item>
          <property name="text">
           <string>Original</string>

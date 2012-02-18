@@ -56,23 +56,23 @@ Channel *PlaylistModel::createChannel(const QString &name,
                                       const QString &url)
 {
     int tmpNum, previous = 1;
-    for(int i = 1; i < 1000; i++) {
-        if(!_channelNumbers.contains(i)) {
+    for (int i = 1; i < 1000; i++) {
+        if (!_channelNumbers.contains(i)) {
             tmpNum = i;
-            if(i != 1)
+            if (i != 1)
                 previous = i-1;
             break;
         }
     }
 
     QString cname;
-    if(name.isEmpty())
+    if (name.isEmpty())
         cname = QObject::tr("New channel");
     else
         cname = name;
 
     Channel *channel = new Channel(cname, tmpNum);
-    if(!url.isEmpty())
+    if (!url.isEmpty())
         channel->setUrl(url);
 
     _numbers.insert(channel->number(), channel);
@@ -102,8 +102,8 @@ void PlaylistModel::exportTvheadend(const QString &location,
 
 void PlaylistModel::moveDown(Channel *channel)
 {
-    if(_channelNumbers.contains(channel->number()+1) && channel->number()+1 < 1000) {
-        if(moveRow(indexFromItem(channel).row()+1, indexFromItem(channel).row())) {
+    if (_channelNumbers.contains(channel->number()+1) && channel->number()+1 < 1000) {
+        if (moveRow(indexFromItem(channel).row()+1, indexFromItem(channel).row())) {
             _numbers.remove(channel->number());
             _numbers[channel->number()+1]->setNumber(channel->number());
             _numbers.insert(channel->number(), _numbers[channel->number()+1]);
@@ -111,7 +111,7 @@ void PlaylistModel::moveDown(Channel *channel)
             channel->setNumber(channel->number()+1);
             _numbers.insert(channel->number(), channel);
         }
-    } else if(channel->number()+1 < 1000) {
+    } else if (channel->number()+1 < 1000) {
         _channelNumbers.removeAll(channel->number());
         _numbers.remove(channel->number());
         channel->setNumber(channel->number()+1);
@@ -122,8 +122,8 @@ void PlaylistModel::moveDown(Channel *channel)
 
 void PlaylistModel::moveUp(Channel *channel)
 {
-    if(_channelNumbers.contains(channel->number()-1) && channel->number()-1 > 0) {
-        if(moveRow(indexFromItem(channel).row(), indexFromItem(channel).row()-1)) {
+    if (_channelNumbers.contains(channel->number()-1) && channel->number()-1 > 0) {
+        if (moveRow(indexFromItem(channel).row(), indexFromItem(channel).row()-1)) {
             _numbers.remove(channel->number());
             _numbers[channel->number()-1]->setNumber(channel->number());
             _numbers.insert(channel->number(), _numbers[channel->number()-1]);
@@ -131,7 +131,7 @@ void PlaylistModel::moveUp(Channel *channel)
             channel->setNumber(channel->number()-1);
             _numbers.insert(channel->number(), channel);
         }
-    } else if(channel->number()-1 > 0) {
+    } else if (channel->number()-1 > 0) {
         _channelNumbers.removeAll(channel->number());
         _numbers.remove(channel->number());
         channel->setNumber(channel->number()-1);
@@ -142,8 +142,8 @@ void PlaylistModel::moveUp(Channel *channel)
 
 Channel *PlaylistModel::number(const int &number)
 {
-    for(int i = 0; i < rowCount(); i++) {
-        if(row(i)->number() == number) {
+    for (int i = 0; i < rowCount(); i++) {
+        if (row(i)->number() == number) {
             return row(i);
         }
     }
@@ -156,7 +156,7 @@ void PlaylistModel::open(const QString &file,
                          const Tano::FileType &type,
                          const CSVInfo &info)
 {
-    if(!refresh)
+    if (!refresh)
         clear();
 
     _fileName = file;
@@ -183,17 +183,17 @@ void PlaylistModel::open(const QString &file,
     channels = _open->list();
     _name = _open->name();
 
-    for(int i = 0; i < channels.size(); i++) {
-        processChannel(channels[i]);
+    foreach (Channel *channel, channels) {
+        processChannel(channel);
     }
 }
 
 void PlaylistModel::processChannel(Channel *channel)
 {
     bool exists = find(channel->id());
-    if(!exists) {
-        for(int i = 0; i < rowCount(); i++) {
-            if(row(i)->name() == channel->name()) {
+    if (!exists) {
+        for (int i = 0; i < rowCount(); i++) {
+            if (row(i)->name() == channel->name()) {
                 row(i)->setUrl(channel->url());
                 return;
             }
@@ -202,13 +202,13 @@ void PlaylistModel::processChannel(Channel *channel)
         return;
     }
 
-    if(channel->number() == 0) {
+    if (channel->number() == 0) {
         channel->setNumber(1);
     }
 
-    if(_channelNumbers.contains(channel->number())) {
-        for(int i = channel->number(); i < 1000; i++) {
-            if(!_channelNumbers.contains(i)) {
+    if (_channelNumbers.contains(channel->number())) {
+        for (int i = channel->number(); i < 1000; i++) {
+            if (!_channelNumbers.contains(i)) {
                 channel->setNumber(i);
                 break;
             }
@@ -216,13 +216,13 @@ void PlaylistModel::processChannel(Channel *channel)
     }
     _channelNumbers << channel->number();
 
-    for(int i = 0; i < channel->categories().size(); i++) {
-        if(!_categoryList.contains(channel->categories()[i]))
-            _categoryList << channel->categories()[i];
+    foreach (QString category, channel->categories()) {
+        if (!_categoryList.contains(category))
+            _categoryList << category;
     }
-    if(!_languageList.contains(channel->language()))
+    if (!_languageList.contains(channel->language()))
         _languageList << channel->language();
-    if(!_epgList.contains(channel->epg()) && !channel->epg().isEmpty())
+    if (!_epgList.contains(channel->epg()) && !channel->epg().isEmpty())
         _epgList << channel->epg();
 
     _numbers.insert(channel->number(), channel);
@@ -232,7 +232,7 @@ void PlaylistModel::processChannel(Channel *channel)
 bool PlaylistModel::processNumber(Channel *channel,
                                   const int &number)
 {
-    if(_channelNumbers.contains(number))
+    if (_channelNumbers.contains(number))
         return false;
 
     _channelNumbers.removeAll(channel->number());
@@ -243,8 +243,8 @@ bool PlaylistModel::processNumber(Channel *channel,
     _numbers.insert(channel->number(), channel);
 
     takeRow(indexFromItem(channel).row());
-    for(int i = channel->number()-1; i > 0; i--) {
-        if(_channelNumbers.contains(i)) {
+    for (int i = channel->number()-1; i > 0; i--) {
+        if (_channelNumbers.contains(i)) {
             insertRow(indexFromItem(_numbers[i]).row()+1, channel);
             break;
         }
@@ -280,8 +280,8 @@ void PlaylistModel::save(const QString &file,
 
 bool PlaylistModel::validate() const
 {
-    for(int i = 1; i < _channelNumbers.size(); i++) {
-        if(_channelNumbers[i-1] == _channelNumbers[i]) {
+    for (int i = 1; i < _channelNumbers.size(); i++) {
+        if (_channelNumbers[i-1] == _channelNumbers[i]) {
             return false;
         }
     }

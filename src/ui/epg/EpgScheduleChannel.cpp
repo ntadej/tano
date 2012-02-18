@@ -72,25 +72,25 @@ void EpgScheduleChannel::programmeClicked(const QModelIndex &index)
 void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
                                 const Tano::Id &id)
 {
-	if(id != _id)
+	if (id != _id)
 		return;
 
-    if(epg->rowCount() == 0)
+    if (epg->rowCount() == 0)
         return;
 
     _model = epg;
     _filterModel->setSourceModel(_model);
 
     QList<QDate> date;
-    for(int i = 0; i < _model->rowCount(); i++) {
-        if(!date.contains(_model->row(i)->start().date()) && _model->row(i)->start().date() >= QDate::currentDate()) {
+    for (int i = 0; i < _model->rowCount(); i++) {
+        if (!date.contains(_model->row(i)->start().date()) && _model->row(i)->start().date() >= QDate::currentDate()) {
             date << _model->row(i)->start().date();
         }
     }
 
     ui->comboDate->clear();
-    for(int i = 0; i < date.size(); i++) {
-        ui->comboDate->addItem(date[i].toString(Tano::Xmltv::dateFormatDisplay()));
+    foreach (QDate d, date) {
+        ui->comboDate->addItem(d.toString(Tano::Xmltv::dateFormatDisplay()));
     }
 
     setPage(1);

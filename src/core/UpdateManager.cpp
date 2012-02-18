@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,9 +19,7 @@
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
-#include "container/core/UpdateInfo.h"
 #include "core/Common.h"
-#include "core/UpdateHandler.h"
 #include "core/UpdateManager.h"
 
 UpdateManager::UpdateManager(QObject *parent)
@@ -65,21 +63,21 @@ void UpdateManager::readUpdates()
     QList<UpdateInfo> list = _handler->updateInfo();
     UpdateInfo info;
 
-    for(int i = 0; i < list.size(); i++) {
-        if(Tano::version() == list[i].version() && list[i].development()) {
-            updatesList << "development" << list[i].version();
+    foreach (UpdateInfo item, list) {
+        if(Tano::version() == item.version && item.development) {
+            updatesList << "development" << item.version;
             continue;
-        } else if(Tano::version() == list[i].version() && !list[i].development()) {
+        } else if(Tano::version() == item.version && !item.development) {
             updatesList << "latest";
             break;
-        } else if(Tano::version() != list[i].version() && list[i].development()) {
+        } else if(Tano::version() != item.version && item.development) {
             continue;
-        } else if(Tano::version() != list[i].version() && !list[i].development()) {
+        } else if(Tano::version() != item.version && !item.development) {
             if(!updatesList.isEmpty()) {
-                updatesList << list[i].version();
+                updatesList << item.version;
             } else {
-                updatesList << "update" << list[i].version();
-                info = list[i];
+                updatesList << "update" << item.version;
+                info = item;
             }
         }
     }

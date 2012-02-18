@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,6 @@
 #include <QtGui/QFileDialog>
 #include <QtGui/QInputDialog>
 
-#include "container/core/File.h"
 #include "FileDialogs.h"
 
 QString FileDialogs::filterByType(const Tano::FileType &type)
@@ -96,18 +95,21 @@ File FileDialogs::openPlaylist()
     dialog.setNameFilters(filters);
 
     QString fileName;
-    int type = -1;
-    if(dialog.exec()) {
+    Tano::FileType type = Tano::Unknown;
+    if (dialog.exec()) {
         fileName = dialog.selectedFiles()[0];
 
-        for(int i = 0; i < 50; i++) {
-            if(dialog.selectedNameFilter() == filterByType(Tano::FileType(i))) {
-                type = i;
+        for (int i = 0; i < 50; i++) {
+            if (dialog.selectedNameFilter() == filterByType(Tano::FileType(i))) {
+                type = Tano::FileType(i);
             }
         }
     }
 
-    return File(fileName, type);
+    File file;
+    file.path = fileName;
+    file.type = type;
+    return file;
 }
 
 QString FileDialogs::openPlaylistSimple()
@@ -130,7 +132,7 @@ QString FileDialogs::openUrl()
     QString file = QInputDialog::getText(0, QObject::tr("Open URL or stream"),
                                          QObject::tr("Enter the URL of multimedia file or stream you want to play:"),
                                          QLineEdit::Normal, "", &ok);
-    if(!ok)
+    if (!ok)
         return QString("");
     else
         return file;
@@ -159,18 +161,21 @@ File FileDialogs::savePlaylist()
     dialog.setNameFilters(filters);
 
     QString fileName;
-    int type = -1;
-    if(dialog.exec()) {
+    Tano::FileType type = Tano::Unknown;
+    if (dialog.exec()) {
         fileName = dialog.selectedFiles()[0];
 
-        for(int i = 0; i < 50; i++) {
-            if(dialog.selectedNameFilter() == filterByType(Tano::FileType(i))) {
-                type = i;
+        for (int i = 0; i < 50; i++) {
+            if (dialog.selectedNameFilter() == filterByType(Tano::FileType(i))) {
+                type = Tano::FileType(i);
             }
         }
     }
 
-    return File(fileName, type);
+    File file;
+    file.path = fileName;
+    file.type = type;
+    return file;
 }
 
 QString FileDialogs::saveXmltv()

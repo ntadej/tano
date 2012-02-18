@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -79,8 +79,8 @@ void TimersModel::readTimers(const QString &file)
         return;
 
     QList<Timer *> timers = handler->timersList();
-    for(int i = 0; i < timers.size(); i++) {
-        appendRow(timers[i]);
+    foreach (Timer* timer, timers) {
+        appendRow(timer);
     }
 
     delete handler;

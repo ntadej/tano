@@ -21,9 +21,9 @@
 
 #include <QtCore/QStringList>
 
-#include "container/playlist/CSVInfo.h"
 #include "core/Enums.h"
 #include "core/ListModel.h"
+#include "playlist/handlers/CSVHandler.h"
 
 class Channel;
 class PlaylistOpen;
