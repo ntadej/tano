@@ -156,6 +156,7 @@ SET(Tano_Core_Srcs
     core/LocaleManager.cpp
     core/Print.cpp
     core/Settings.cpp
+    core/SettingsDefaults.cpp
     core/Shortcuts.cpp
     core/Udpxy.cpp
 )

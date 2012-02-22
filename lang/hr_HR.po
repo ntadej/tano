@@ -1422,6 +1422,20 @@ msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr ""
 
+msgctxt "SettingsGeneral|"
+msgid "Defaults"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid "Restore defaults"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr ""

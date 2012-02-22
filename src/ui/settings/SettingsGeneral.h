@@ -45,6 +45,9 @@ public:
 protected:
     void changeEvent(QEvent *e);
 
+signals:
+    void resetDefaults();
+
 private:
     Ui::SettingsGeneral *ui;
 

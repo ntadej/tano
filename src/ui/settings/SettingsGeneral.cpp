@@ -30,6 +30,8 @@ SettingsGeneral::SettingsGeneral(QWidget *parent)
     ui->setupUi(this);
     loadLocale();
 
+    connect(ui->buttonDefaults, SIGNAL(clicked()), this, SIGNAL(resetDefaults()));
+
 #if EDITOR
     ui->labelVersion->setText(tr("You are using Tano Editor version:") + " <b>" + Tano::version() + "</b>");
     ui->checkWizard->hide();
@@ -86,6 +88,8 @@ void SettingsGeneral::setLanguage(const QString &language)
                 ui->comboLanguage->setCurrentIndex(i);
             }
         }
+    } else {
+        ui->radioDefault->setChecked(true);
     }
 }
 

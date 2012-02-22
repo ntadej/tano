@@ -16,56 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDir>
-
 #include "core/Common.h"
 #include "core/Settings.h"
-
-// Define defaults - General
-const bool Settings::DEFAULT_CONFIGURED = false;
-const bool Settings::DEFAULT_SESSION_VOLUME = true;
-const bool Settings::DEFAULT_SESSION_AUTOPLAY = true;
-const QString Settings::DEFAULT_LANGUAGE = "";
-// Playlist
-const QString Settings::DEFAULT_PLAYLIST = "";
-const bool Settings::DEFAULT_PLAYLIST_UPDATE = false;
-const QString Settings::DEFAULT_PLAYLIST_UPDATE_URL = "";
-const QString Settings::DEFAULT_RADIO_CATEGORY = "Radio";
-// GUI - start
-const bool Settings::DEFAULT_SPLASH = true;
-const bool Settings::DEFAULT_START_LITE = false;
-const bool Settings::DEFAULT_START_ON_TOP = false;
-const bool Settings::DEFAULT_START_CONTROLS = true;
-const bool Settings::DEFAULT_START_INFO = true;
-// GUI
-const bool Settings::DEFAULT_OSD = true;
-const bool Settings::DEFAULT_OSD_PLAYLIST = false;
-const bool Settings::DEFAULT_TRAY_ENABLED = true;
-const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
-const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
-const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonFollowStyle;
-// Backend
-const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;
-const int Settings::DEFAULT_ASPECT_RATIO = 0;
-const int Settings::DEFAULT_CROP_RATIO = 0;
-const int Settings::DEFAULT_DEINTERLACING = 0;
-const QString Settings::DEFAULT_AUDIO_LANGUAGE = QObject::tr("Disabled");
-const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
-const bool Settings::DEFAULT_UDPXY = false;
-const QString Settings::DEFAULT_UDPXY_URL = "";
-const int Settings::DEFAULT_UDPXY_PORT = 1234;
-// Recorder
-const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath();
-// Session
-const int Settings::DEFAULT_CHANNEL = 1;
-const int Settings::DEFAULT_VOLUME = 50;
-// Schedule
-const QString Settings::DEFAULT_XMLTV_LOCATION = Tano::settingsPath() + "xmltv.xml";
-const bool Settings::DEFAULT_XMLTV_UPDATE = false;
-const bool Settings::DEFAULT_XMLTV_UPDATE_GRABBER = true;
-const QString Settings::DEFAULT_XMLTV_UPDATE_URL = "";
-const QString Settings::DEFAULT_XMLTV_GRABBER = "";
-const QString Settings::DEFAULT_XMLTV_GRABBER_PATH = "";
 
 Settings::Settings(QObject *parent)
     : QSettings(QSettings::IniFormat,

@@ -87,6 +87,7 @@ SET(Tano_Editor_Srcs
     ../src/core/LocaleManager.cpp
     ../src/core/Print.cpp
     ../src/core/Settings.cpp
+    ../src/core/SettingsDefaults.cpp
     ../src/core/Shortcuts.cpp
     ../src/core/Udpxy.cpp
 

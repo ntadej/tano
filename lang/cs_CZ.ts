@@ -2199,6 +2199,18 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Default channel list</source>
         <translation type="obsolete">Výchozí seznam programů</translation>
     </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore defaults</source>
+        <translation type="unfinished">Obnovit výchozí nastavení</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

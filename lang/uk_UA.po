@@ -1782,6 +1782,21 @@ msgstr "Ви використовуєте версію Tano:"
 #~ msgid "Default channel list"
 #~ msgstr "Перелік каналів за замовчуванням"
 
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Defaults"
+msgstr "За замовчуванням"
+
+msgctxt "SettingsGeneral|"
+msgid "Restore defaults"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Встановити <i>Tano</i>"

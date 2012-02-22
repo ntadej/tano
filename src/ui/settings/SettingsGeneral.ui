@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>417</width>
-    <height>333</height>
+    <height>423</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -162,6 +162,32 @@
        <widget class="QCheckBox" name="checkAutoplay">
         <property name="text">
          <string>Autoplay last channel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupDefaults">
+     <property name="title">
+      <string>Defaults</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QPushButton" name="buttonDefaults">
+        <property name="text">
+         <string>Restore defaults</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelDefaults">
+        <property name="text">
+         <string>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

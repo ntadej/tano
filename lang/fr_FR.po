@@ -1777,6 +1777,21 @@ msgstr "Vous utilisez la version de Tano :"
 #~ msgid "Default channel list"
 #~ msgstr "Liste de chaînes par défaut"
 
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Defaults"
+msgstr "Defauts"
+
+msgctxt "SettingsGeneral|"
+msgid "Restore defaults"
+msgstr ""
+
+msgctxt "SettingsGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Positionner <i>Tano</i>"

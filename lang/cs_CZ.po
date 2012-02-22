@@ -2252,6 +2252,21 @@ msgstr "Používáte verzi programu Tano:"
 #~ msgid "Default channel list"
 #~ msgstr "Výchozí seznam programů"
 
+msgctxt "SettingsGeneral|"
+msgid "Defaults"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Restore defaults"
+msgstr "Obnovit výchozí nastavení"
+
+msgctxt "SettingsGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Nastavit <i>Tano</i>"

@@ -2373,6 +2373,22 @@ msgstr "Uporabljate Tano različice:"
 #~ msgid "Default channel list"
 #~ msgstr "Privzet seznam programov"
 
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Defaults"
+msgstr "Privzeto"
+
+#, fuzzy
+msgctxt "SettingsGeneral|"
+msgid "Restore defaults"
+msgstr "Obnovi privzeto"
+
+msgctxt "SettingsGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
 msgstr "Nastavi <i>Tano</i>"

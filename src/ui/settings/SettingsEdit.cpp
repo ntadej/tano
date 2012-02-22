@@ -45,6 +45,7 @@ SettingsEdit::SettingsEdit(Shortcuts *shortcuts,
     ui->shortcuts->setShortcuts(shortcuts);
 #endif
 
+    connect(ui->general, SIGNAL(resetDefaults()), this, SLOT(defaults()));
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 }
 
@@ -142,6 +143,54 @@ void SettingsEdit::apply()
 void SettingsEdit::cancel()
 {
     hide();
+}
+
+void SettingsEdit::defaults()
+{
+    // General
+    ui->general->setSessionVolume(Settings::DEFAULT_SESSION_VOLUME);
+    ui->general->setSessionAutoplay(Settings::DEFAULT_SESSION_AUTOPLAY);
+    ui->general->setLanguage(Settings::DEFAULT_LANGUAGE);
+
+    // Playlist
+    ui->playlist->setPlaylist(Settings::DEFAULT_PLAYLIST);
+    ui->playlist->setPlaylistUpdate(Settings::DEFAULT_PLAYLIST_UPDATE);
+    ui->playlist->setPlaylistUpdateUrl(Settings::DEFAULT_PLAYLIST_UPDATE_URL);
+    ui->playlist->setRadioCategory(Settings::DEFAULT_RADIO_CATEGORY);
+
+    // GUI
+    ui->gui->setOsd(Settings::DEFAULT_OSD);
+    ui->gui->setOsdPlaylist(Settings::DEFAULT_OSD_PLAYLIST);
+    ui->gui->setTray(Settings::DEFAULT_TRAY_ENABLED);
+    ui->gui->setTrayHide(Settings::DEFAULT_HIDE_TO_TRAY);
+    ui->gui->setWheel(Settings::DEFAULT_MOUSE_WHEEL);
+    ui->gui->setToolbar(Settings::DEFAULT_TOOLBAR_LOOK);
+    ui->gui->setSplash(Settings::DEFAULT_SPLASH);
+    ui->gui->setLite(Settings::DEFAULT_START_LITE);
+    ui->gui->setTop(Settings::DEFAULT_START_ON_TOP);
+    ui->gui->setControls(Settings::DEFAULT_START_CONTROLS);
+    ui->gui->setInfo(Settings::DEFAULT_START_INFO);
+
+    // Playback
+    ui->backend->setRememberChannelSettings(Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS);
+    ui->backend->setAspectRatio(Settings::DEFAULT_ASPECT_RATIO);
+    ui->backend->setCropRatio(Settings::DEFAULT_CROP_RATIO);
+    ui->backend->setDeinterlacing(Settings::DEFAULT_DEINTERLACING);
+    ui->backend->setAudio(Settings::DEFAULT_AUDIO_LANGUAGE);
+    ui->backend->setSub(Settings::DEFAULT_SUBTITLE_LANGUAGE);
+    ui->backend->setUdpxy(Settings::DEFAULT_UDPXY);
+    ui->backend->setUdpxyUrl(Settings::DEFAULT_UDPXY_URL);
+    ui->backend->setUdpxyPort(Settings::DEFAULT_UDPXY_PORT);
+
+    // Schedule
+    ui->schedule->setLocation(Settings::DEFAULT_XMLTV_LOCATION);
+    ui->schedule->setUpdate(Settings::DEFAULT_XMLTV_UPDATE);
+    ui->schedule->setUpdateGrabber(Settings::DEFAULT_XMLTV_UPDATE_GRABBER);
+    ui->schedule->setUpdateUrl(Settings::DEFAULT_XMLTV_UPDATE_URL);
+    ui->schedule->setGrabber(Settings::DEFAULT_XMLTV_GRABBER_PATH);
+
+    // Recorder
+    ui->recorder->setDirectory(Settings::DEFAULT_RECORDER_DIRECTORY);
 }
 
 void SettingsEdit::read()
