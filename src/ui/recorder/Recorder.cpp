@@ -53,7 +53,7 @@ Recorder::Recorder(QWidget *parent)
 	connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
 
     connect(_core, SIGNAL(elapsed(int)), this, SLOT(time(int)));
-    connect(_core, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
+    connect(_core, SIGNAL(timer(QString, QUrl)), this, SLOT(timerStart(QString, QUrl)));
     connect(_core, SIGNAL(timerStop()), this, SLOT(timerStop()));
 }
 
@@ -102,41 +102,41 @@ void Recorder::playlist(Channel *channel)
 
 void Recorder::record(const bool &status)
 {
-    if(status) {
-        if(ui->browseDirectory->value().isEmpty()) {
+    if (status) {
+        if (ui->browseDirectory->value().isEmpty()) {
             ui->buttonRecord->setChecked(false);
             return;
-        } else if(!QDir(ui->browseDirectory->value()).exists()) {
+        } else if (!QDir(ui->browseDirectory->value()).exists()) {
             ui->buttonRecord->setChecked(false);
             QMessageBox::critical(this, tr("Recorder"),
                         tr("Cannot write to %1.")
                         .arg(ui->browseDirectory->value()));
             return;
-        } else if(ui->valueSelected->text().isEmpty() && !_core->isTimer()) {
+        } else if (ui->valueSelected->text().isEmpty() && !_core->isTimer()) {
             ui->buttonRecord->setChecked(false);
             QMessageBox::critical(this, tr("Recorder"),
                         tr("Channel is not selected!"));
             return;
         }
 
-        if(!_core->isTimer()) {
+        if (!_core->isTimer()) {
             _core->record(_name, _url, ui->browseDirectory->value());
         }
 
         ui->valueCurrent->setText(_name);
-        if(_core->isTimer())
+        if (_core->isTimer())
             ui->valueEndTime->setText(_core->timerEndTime());
         else
             ui->valueEndTime->setText(tr("No timer - press button to stop."));
         ui->valueFile->setText(_core->output());
 
         ui->buttonRecord->setText(tr("Stop recording"));
-        if(_actionRecord)
+        if (_actionRecord)
             _actionRecord->setEnabled(true);
 
-        if(_trayIcon) {
+        if (_trayIcon) {
             _trayIcon->changeToolTip(Tano::Record, _name);
-            if(_core->isTimer())
+            if (_core->isTimer())
                 _trayIcon->message(Tano::Record, QStringList() << _name << _core->output() << ui->valueEndTime->text());
             else
                 _trayIcon->message(Tano::Record, QStringList() << _name << _core->output());
@@ -150,10 +150,10 @@ void Recorder::record(const bool &status)
         ui->valueFile->setText("");
 
         ui->buttonRecord->setText(tr("Record"));
-        if(_actionRecord)
+        if (_actionRecord)
             _actionRecord->setEnabled(false);
 
-        if(_trayIcon) {
+        if (_trayIcon) {
             _trayIcon->changeToolTip(Tano::Record);
             _trayIcon->message(Tano::Record, QStringList());
         }
@@ -168,7 +168,7 @@ void Recorder::recordNow(const QString &name,
 
     ui->valueSelected->setText("<b>" + name + "</b>");
 
-    if(!_core->isRecording())
+    if (!_core->isRecording())
         ui->buttonRecord->toggle();
 }
 
@@ -176,7 +176,7 @@ void Recorder::time(const int &time)
 {
     ui->valueTime->setText(QTime().addMSecs(time).toString("hh:mm:ss"));
 
-    if(ui->valueCurrent->text().isEmpty()) {
+    if (ui->valueCurrent->text().isEmpty()) {
         _core->timerInfo();
     }
 }
@@ -210,8 +210,8 @@ bool Recorder::isRecording() const
 
 void Recorder::showTimersEditor()
 {
-    if(_editor) {
-        if(_editor->isVisible()) {
+    if (_editor) {
+        if (_editor->isVisible()) {
             _editor->activateWindow();
         } else {
             delete _editor;
@@ -227,7 +227,7 @@ void Recorder::showTimersEditor()
 }
 
 void Recorder::timerStart(const QString &name,
-                          const QString &url)
+                          const QUrl &url)
 {
     _name = name;
     _url = url;
@@ -237,6 +237,6 @@ void Recorder::timerStart(const QString &name,
 
 void Recorder::timerStop()
 {
-    if(isRecording())
+    if (isRecording())
         ui->buttonRecord->toggle();
 }

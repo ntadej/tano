@@ -172,7 +172,7 @@ void MainWindow::createGui()
     ui->recorder->setTrayIcon(_trayIcon);
 
     openPlaylist(true);
-    setPlayingState(false);
+    setPlayingState(Vlc::Idle);
     ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
     ui->statusBar->addPermanentWidget(ui->timeWidget);
     ui->statusBar->addPermanentWidget(ui->buttonUpdate);
@@ -192,6 +192,7 @@ void MainWindow::createBackend()
     _videoController = new VlcVideoControl(_mediaPlayer, _defaultSubtitleLanguage, this);
 
     ui->videoWidget->setMediaPlayer(_mediaPlayer);
+    ui->videoWidget->initDefaultSettings();
     ui->volumeSlider->setMediaPlayer(_mediaPlayer);
     ui->seekWidget->setMediaPlayer(_mediaPlayer);
     ui->seekWidget->setAutoHide(true);
@@ -226,7 +227,6 @@ void MainWindow::createSettings()
     ui->videoWidget->setDefaultAspectRatio(Vlc::Ratio(_defaultAspectRatio));
     ui->videoWidget->setDefaultCropRatio(Vlc::Ratio(_defaultCropRatio));
     ui->videoWidget->setDefaultDeinterlacing(Vlc::Deinterlacing(_defaultDeinterlacing));
-    ui->videoWidget->enableDefaultSettings();
     _menuAspectRatio->setDefault(Vlc::Ratio(_defaultAspectRatio));
     _menuCropRatio->setDefault(Vlc::Ratio(_defaultCropRatio));
     _menuDeinterlacing->setDefault(Vlc::Deinterlacing(_defaultDeinterlacing));
@@ -344,7 +344,7 @@ void MainWindow::createConnections()
     connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackSubtitles, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
     connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackVideo, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
     connect(_menuTrackSubtitles, SIGNAL(subtitles(QString)), _videoController, SLOT(loadSubtitle(QString)));
-    connect(_mediaPlayer, SIGNAL(playing(bool, bool)), this, SLOT(setPlayingState(bool, bool)));
+    connect(_mediaPlayer, SIGNAL(currentState(Vlc::State)), this, SLOT(setPlayingState(Vlc::State)));
     connect(_mediaPlayer, SIGNAL(hasAudio(bool)), ui->menuAudio, SLOT(setEnabled(bool)));
     connect(_mediaPlayer, SIGNAL(hasVideo(bool)), ui->menuVideo, SLOT(setEnabled(bool)));
 
@@ -474,16 +474,11 @@ void MainWindow::donate()
 
 
 //Media controls
-void MainWindow::playChannel(Channel *channel)
+void MainWindow::setPlayingState(const Vlc::State &state)
 {
-    _channel = channel;
-    play();
-}
-
-void MainWindow::setPlayingState(const bool &playing,
-                                 const bool &buffering)
-{
-    if (playing) {
+    switch (state)
+    {
+    case Vlc::Playing:
         ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
         ui->buttonPlay->setIcon(QIcon(":/icons/48x48/media-playback-pause.png"));
         ui->actionPlay->setText(tr("Pause"));
@@ -494,7 +489,8 @@ void MainWindow::setPlayingState(const bool &playing,
         ui->buttonMute->setEnabled(true);
         ui->actionTeletext->setEnabled(true);
         ui->teletextWidget->setEnabled(true);
-    } else {
+        break;
+    default:
         ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
         ui->buttonPlay->setIcon(QIcon(":/icons/48x48/media-playback-start.png"));
         ui->actionPlay->setText(tr("Play"));
@@ -507,41 +503,16 @@ void MainWindow::setPlayingState(const bool &playing,
         ui->teletextWidget->setEnabled(false);
     }
 
-    if (buffering) {
+    if (state == Vlc::Buffering) {
         ui->statusBar->showMessage(tr("Buffering..."));
     } else {
         ui->statusBar->clearMessage();
     }
 }
 
-void MainWindow::play(const QString &itemFile)
+void MainWindow::play()
 {
-    stop();
-
-    if (itemFile.isNull()) {
-        ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
-        if (_channel->logo().contains("http"))
-            _file->getFile(_channel->logo());
-        else if (!_channel->logo().isEmpty())
-            showLogo(_channel->logo());
-
-        _xmltv->request(_channel->epg(), Tano::Main);
-        ui->channelNumber->display(_channel->number());
-
-        if (_mediaItem)
-            delete _mediaItem;
-        _mediaItem = new VlcMedia(_udpxy->processUrl(_channel->url()), _mediaInstance);
-        _mediaPlayer->open(_mediaItem);
-        tooltip(_channel->name());
-        _trayIcon->changeToolTip(Tano::Main, _channel->name());
-    } else {
-        ui->infoWidget->hide();
-        if (_mediaItem)
-            delete _mediaItem;
-        _mediaItem = new VlcMedia(itemFile, _mediaInstance);
-        _mediaPlayer->open(_mediaItem);
-        tooltip(itemFile);
-    }
+    _mediaPlayer->open(_mediaItem);
 
     if (_videoSettings)
         ui->videoWidget->enablePreviousSettings();
@@ -549,12 +520,62 @@ void MainWindow::play(const QString &itemFile)
         ui->videoWidget->enableDefaultSettings();
 }
 
+void MainWindow::playChannel(Channel *channel)
+{
+    _channel = channel;
+
+    ui->infoBarWidget->setInfo(_channel->name(), _channel->language());
+    if (_channel->logo().contains("http"))
+        _file->getFile(_channel->logo());
+    else if (!_channel->logo().isEmpty())
+        showLogo(_channel->logo());
+
+    _xmltv->request(_channel->epg(), Tano::Main);
+    ui->channelNumber->display(_channel->number());
+
+    playUrl(_udpxy->processUrl(_channel->url()));
+
+    tooltip(_channel->name());
+    _trayIcon->changeToolTip(Tano::Main, _channel->name());
+}
+
+void MainWindow::playLocal(const QString &path)
+{
+    if (path.isEmpty())
+        return;
+
+    stop();
+
+    if (_mediaItem)
+        delete _mediaItem;
+    _mediaItem = new VlcMedia(path, _mediaInstance);
+    tooltip(path);
+
+    play();
+}
+
+void MainWindow::playUrl(const QUrl &url)
+{
+    if (url.isEmpty())
+        return;
+
+    stop();
+
+    if (_mediaItem)
+        delete _mediaItem;
+    _mediaItem = new VlcMedia(url, _mediaInstance);
+    tooltip(url.toString());
+
+    play();
+}
+
 void MainWindow::stop()
 {
-    /*if (!_videoSettings) {
-        _menuAspectRatio->original()->trigger();
-        _menuCropRatio->original()->trigger();
-    }*/
+    if (!_videoSettings) {
+        _menuAspectRatio->setDefault(Vlc::Ratio(_defaultAspectRatio));
+        _menuCropRatio->setDefault(Vlc::Ratio(_defaultCropRatio));
+        _menuDeinterlacing->setDefault(Vlc::Deinterlacing(_defaultDeinterlacing));
+    }
 
     _xmltv->stop();
 
@@ -625,16 +646,16 @@ void MainWindow::openFile()
     if (file.isEmpty())
         return;
 
-    play(file);
+    playLocal(file);
 }
 void MainWindow::openUrl()
 {
-    QString file = FileDialogs::openUrl();
+    QUrl url = FileDialogs::openUrl();
 
-    if (file.isEmpty())
+    if (url.isEmpty())
         return;
 
-    play(file);
+    playUrl(url);
 }
 
 //GUI

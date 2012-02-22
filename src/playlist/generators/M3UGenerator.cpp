@@ -135,6 +135,6 @@ void M3UGenerator::generateItemUdpxy(Channel *channel)
         _out << "\n";
     }
 
-    _out << _udpxy->processUrl(channel->url());
+    _out << _udpxy->processUrl(channel->url()).toString();
     _out << "\n\n";
 }

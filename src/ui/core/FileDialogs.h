@@ -21,6 +21,7 @@
 
 #include <QtCore/QDir>
 #include <QtCore/QString>
+#include <QtCore/QUrl>
 
 #include "core/Enums.h"
 
@@ -41,7 +42,7 @@ namespace FileDialogs
     File openPlaylist();
     QString openPlaylistSimple();
     QString openSubtitles(const QString &dir = QDir::homePath());
-    QString openUrl();
+    QUrl openUrl();
     QString openXmltvFile(const QString &file = QDir::homePath() + "xmltv.xml");
 
     QString saveByType(const Tano::FileType &type,

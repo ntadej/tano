@@ -20,6 +20,7 @@
 #define TANO_RECORDER_H_
 
 #include <QtCore/QTime>
+#include <QtCore/QUrl>
 #include <QtGui/QWidget>
 
 class Channel;
@@ -63,7 +64,7 @@ private slots:
     void record(const bool &status);
     void time(const int &time);
     void timerStart(const QString &name,
-                    const QString &url);
+                    const QUrl &url);
     void timerStop();
 
 private:
@@ -72,7 +73,7 @@ private:
     QAction *_actionRecord;
 
     QString _name;
-    QString _url;
+    QUrl _url;
 
     RecorderCore *_core;
     TimersEdit *_editor;

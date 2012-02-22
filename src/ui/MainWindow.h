@@ -24,6 +24,8 @@
 #include <QtGui/QShowEvent>
 #include <QtGui/QMainWindow>
 
+#include <vlc-qt/Enums.h>
+
 class VlcAudioControl;
 class VlcInstance;
 class VlcMedia;
@@ -77,12 +79,11 @@ private slots:
     void showSettings();
     void showPlaylistEditor();
 
-    void play(const QString &itemFile = 0);
-    void stop();
-    void setPlayingState(const bool &playing,
-                         const bool &buffering = false);
-
     void playChannel(Channel* channel);
+    void playLocal(const QString &path);
+    void playUrl(const QUrl &url);
+    void stop();
+    void setPlayingState(const Vlc::State &state);
 
     void openPlaylist(const bool &start = false);
     void openFile();
@@ -120,6 +121,9 @@ private:
     void createShortcuts();
     void mouseWheel();
     void writeSession();
+
+    // Functions
+    void play();
 
     //Settings
     bool _controlsVisible;

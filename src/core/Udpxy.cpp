@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -36,18 +36,18 @@ void Udpxy::createSettings()
     delete settings;
 }
 
-QString Udpxy::processUrl(const QString &url) const
+QUrl Udpxy::processUrl(const QString &url) const
 {
     QString u = url;
-    if(_enabled || _generate) {
-        if(url.contains("udp://@") && !_url.isEmpty()) {
+    if (_enabled || _generate) {
+        if (!_url.isEmpty() && url.contains("udp://@")) {
            QString newUrl = "http://%1:%2/udp/%3";
            newUrl = newUrl.arg(_url, _port, u.replace("udp://@", ""));
-           return newUrl;
+           return QUrl(newUrl);
         } else {
-            return u;
+            return QUrl(u);
         }
     } else {
-        return u;
+        return QUrl(u);
     }
 }

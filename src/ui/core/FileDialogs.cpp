@@ -126,16 +126,16 @@ QString FileDialogs::openSubtitles(const QString &dir)
     return file;
 }
 
-QString FileDialogs::openUrl()
+QUrl FileDialogs::openUrl()
 {
     bool ok;
     QString file = QInputDialog::getText(0, QObject::tr("Open URL or stream"),
                                          QObject::tr("Enter the URL of multimedia file or stream you want to play:"),
                                          QLineEdit::Normal, "", &ok);
     if (!ok)
-        return QString("");
+        return QUrl();
     else
-        return file;
+        return QUrl(file);
 }
 
 QString FileDialogs::openXmltvFile(const QString &file)
