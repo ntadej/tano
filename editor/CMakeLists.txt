@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,7 +26,6 @@ cmake_minimum_required(VERSION 2.6)
 SET(Tano_Editor_UIs
     ../src/ui/dialogs/AboutDialog.ui
     ../src/ui/dialogs/PrintDialog.ui
-    ../src/ui/dialogs/UpdateDialog.ui
     ../src/ui/playlist/PlaylistEditor.ui
     ../src/ui/playlist/PlaylistEditorHelp.ui
     ../src/ui/playlist/PlaylistExportTvheadend.ui
@@ -47,7 +46,6 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/core/ListItem.h
     ../src/core/ListModel.h
     ../src/core/Print.h
-    ../src/core/UpdateManager.h
     ../src/playlist/PlaylistFilterModel.h
     ../src/playlist/PlaylistModel.h
     ../src/ui/core/BrowseWidget.h
@@ -55,7 +53,6 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/ui/core/QtKeySequenceEdit.h
     ../src/ui/dialogs/AboutDialog.h
     ../src/ui/dialogs/PrintDialog.h
-    ../src/ui/dialogs/UpdateDialog.h
     ../src/ui/playlist/PlaylistDisplayWidget.h
     ../src/ui/playlist/PlaylistEditor.h
     ../src/ui/playlist/PlaylistEditorHelp.h
@@ -92,8 +89,6 @@ SET(Tano_Editor_Srcs
     ../src/core/Settings.cpp
     ../src/core/Shortcuts.cpp
     ../src/core/Udpxy.cpp
-    ../src/core/UpdateHandler.cpp
-    ../src/core/UpdateManager.cpp
 
     ../src/playlist/PlaylistFilterModel.cpp
     ../src/playlist/PlaylistModel.cpp
@@ -115,7 +110,6 @@ SET(Tano_Editor_Srcs
     ../src/ui/core/QtKeySequenceEdit.cpp
     ../src/ui/dialogs/AboutDialog.cpp
     ../src/ui/dialogs/PrintDialog.cpp
-    ../src/ui/dialogs/UpdateDialog.cpp
     ../src/ui/playlist/PlaylistDisplayWidget.cpp
     ../src/ui/playlist/PlaylistEditor.cpp
     ../src/ui/playlist/PlaylistEditorHelp.cpp
@@ -130,6 +124,27 @@ SET(Tano_Editor_Srcs
     ../src/ui/settings/SettingsShortcuts.cpp
     ../src/ui/settings/SettingsUi.cpp
 )
+
+IF(UPDATE)
+    SET(Tano_Editor_UIs
+        ${Tano_Editor_UIs}
+
+        ../src/ui/dialogs/UpdateDialog.ui
+    )
+    SET(Tano_Editor_MOCs
+        ${Tano_Editor_MOCs}
+
+        ../src/core/UpdateManager.h
+        ../src/ui/dialogs/UpdateDialog.h
+    )
+    SET(Tano_Editor_Srcs
+        ${Tano_Editor_Srcs}
+
+        ../src/core/UpdateHandler.cpp
+        ../src/core/UpdateManager.cpp
+        ../src/ui/dialogs/UpdateDialog.cpp
+    )
+ENDIF(UPDATE)
 
 ################
 # Qt4 settings #

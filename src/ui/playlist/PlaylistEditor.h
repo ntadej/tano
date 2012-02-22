@@ -29,7 +29,9 @@ class PlaylistModel;
 
 #if EDITOR
 class LocaleManager;
+#if UPDATE
 class UpdateDialog;
+#endif
 #endif
 
 #if WITH_EDITOR_VLCQT
@@ -115,7 +117,7 @@ private:
     bool _closeEnabled;
     QMenu *_menuExport;
 
-#if EDITOR
+#if EDITOR && UPDATE
     UpdateDialog *_update;
 #endif
 

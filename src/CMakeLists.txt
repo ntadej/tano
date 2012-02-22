@@ -34,7 +34,6 @@ SET(Tano_UIs
     ui/dialogs/AboutDialog.ui
     ui/dialogs/DonationDialog.ui
     ui/dialogs/PrintDialog.ui
-    ui/dialogs/UpdateDialog.ui
     ui/epg/EpgShow.ui
     ui/epg/EpgScheduleChannel.ui
     ui/epg/EpgScheduleFull.ui
@@ -72,7 +71,6 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     core/ListItem.h
     core/ListModel.h
     core/Print.h
-    core/UpdateManager.h
     playlist/PlaylistFilterModel.h
     playlist/PlaylistModel.h
     recorder/RecorderCore.h
@@ -90,7 +88,6 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/dialogs/AboutDialog.h
     ui/dialogs/DonationDialog.h
     ui/dialogs/PrintDialog.h
-    ui/dialogs/UpdateDialog.h
     ui/epg/EpgList.h
     ui/epg/EpgScheduleChannel.h
     ui/epg/EpgScheduleFull.h
@@ -161,8 +158,6 @@ SET(Tano_Core_Srcs
     core/Settings.cpp
     core/Shortcuts.cpp
     core/Udpxy.cpp
-    core/UpdateHandler.cpp
-    core/UpdateManager.cpp
 )
 SET(Tano_Playlist_Srcs
     playlist/PlaylistFilterModel.cpp
@@ -200,7 +195,6 @@ SET(Tano_UI_Srcs
     ui/dialogs/AboutDialog.cpp
     ui/dialogs/DonationDialog.cpp
     ui/dialogs/PrintDialog.cpp
-    ui/dialogs/UpdateDialog.cpp
     ui/epg/EpgList.cpp
     ui/epg/EpgScheduleChannel.cpp
     ui/epg/EpgScheduleFull.cpp
@@ -257,6 +251,27 @@ SET(Tano_Srcs
     ${Tano_UI_Srcs}
     ${Tano_Xmltv_Srcs}
 )
+
+IF(UPDATE)
+    SET(Tano_UIs
+        ${Tano_UIs}
+
+        ui/dialogs/UpdateDialog.ui
+    )
+    SET(Tano_MOCs
+        ${Tano_MOCs}
+
+        core/UpdateManager.h
+        ui/dialogs/UpdateDialog.h
+    )
+    SET(Tano_Srcs
+        ${Tano_Srcs}
+
+        core/UpdateHandler.cpp
+        core/UpdateManager.cpp
+        ui/dialogs/UpdateDialog.cpp
+    )
+ENDIF(UPDATE)
 
 ################
 # Qt4 settings #

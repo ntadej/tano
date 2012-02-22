@@ -26,6 +26,8 @@
 
 #include <vlc-qt/Enums.h>
 
+#include "Config.h"
+
 class VlcAudioControl;
 class VlcInstance;
 class VlcMedia;
@@ -49,8 +51,11 @@ class PlaylistEditor;
 class PlaylistModel;
 class TrayIcon;
 class Udpxy;
-class UpdateDialog;
 class XmltvManager;
+
+#if UPDATE
+class UpdateDialog;
+#endif
 
 namespace Ui
 {
@@ -155,7 +160,10 @@ private:
     LocaleManager *_locale;
     PlaylistModel *_model;
     Shortcuts *_shortcuts;
+
+#if UPDATE
     UpdateDialog *_update;
+#endif
 
     //Backend
     VlcAudioControl *_audioController;

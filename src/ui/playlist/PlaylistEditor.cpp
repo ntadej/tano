@@ -37,8 +37,10 @@
 
 #if EDITOR
     #include "core/LocaleManager.h"
-    #include "ui/dialogs/UpdateDialog.h"
     #include "ui/settings/SettingsEdit.h"
+#if UPDATE
+    #include "ui/dialogs/UpdateDialog.h"
+#endif
 #endif
 
 #if WITH_EDITOR_VLCQT
@@ -68,7 +70,7 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
     _model = new PlaylistModel(this);
     ui->playlist->setModel(_model);
 
-#if EDITOR
+#if EDITOR && UPDATE
     _update = new UpdateDialog();
     _update->checkSilent();
 #endif
@@ -169,7 +171,7 @@ void PlaylistEditor::createConnections()
 
     connect(ui->playlist, SIGNAL(itemSelected(Channel *)), this, SLOT(editItem(Channel *)));
 
-#if EDITOR
+#if EDITOR && UPDATE
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
     connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
 #endif
@@ -217,7 +219,7 @@ void PlaylistEditor::settings()
 
 void PlaylistEditor::updateAvailable()
 {
-#if EDITOR
+#if EDITOR && UPDATE
     ui->toolBar->insertAction(ui->actionAbout, ui->actionUpdate);
 #endif
 }

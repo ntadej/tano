@@ -47,7 +47,6 @@
 #include "ui/core/TrayIcon.h"
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/DonationDialog.h"
-#include "ui/dialogs/UpdateDialog.h"
 #include "ui/epg/EpgScheduleFull.h"
 #include "ui/epg/EpgShow.h"
 #include "ui/menu/MenuAspectRatio.h"
@@ -60,6 +59,10 @@
 #include "ui/settings/SettingsEdit.h"
 #include "xmltv/XmltvManager.h"
 
+#if UPDATE
+    #include "ui/dialogs/UpdateDialog.h"
+#endif
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::MainWindow),
@@ -67,7 +70,6 @@ MainWindow::MainWindow(QWidget *parent)
       _file(new GetFile()),
       _locale(new LocaleManager()),
       _model(new PlaylistModel(this)),
-      _update(new UpdateDialog()),
       _audioController(0),
       _videoController(0),
       _xmltv(new XmltvManager()),
@@ -85,6 +87,13 @@ MainWindow::MainWindow(QWidget *parent)
     delete settings;
 
     ui->setupUi(this);
+
+#if UPDATE
+    _update = new UpdateDialog(this);
+#else
+    ui->menuAbout->removeAction(ui->actionUpdate);
+    ui->buttonUpdate->hide();
+#endif
 
     createMenus();
     createSettingsStartup();
@@ -285,7 +294,6 @@ void MainWindow::createSettingsStartup()
 
 void MainWindow::createConnections()
 {
-    connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
     connect(ui->actionDonate, SIGNAL(triggered()), this, SLOT(donate()));
     connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
     connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
@@ -332,8 +340,11 @@ void MainWindow::createConnections()
     connect(_epgShow, SIGNAL(requestNext(XmltvProgramme *)), _xmltv, SLOT(requestProgrammeNext(XmltvProgramme*)));
     connect(_epgShow, SIGNAL(requestPrevious(XmltvProgramme *)), _xmltv, SLOT(requestProgrammePrevious(XmltvProgramme*)));
 
+#if UPDATE
+    connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
     connect(_update, SIGNAL(newUpdate()), ui->buttonUpdate, SLOT(show()));
     connect(ui->buttonUpdate, SIGNAL(clicked()), _update, SLOT(check()));
+#endif
 
     connect(_file, SIGNAL(file(QString)), this, SLOT(showLogo(QString)));
 
@@ -432,7 +443,9 @@ void MainWindow::createSession()
     if (_sessionAutoplayEnabled && _hasPlaylist && _model->validate())
         ui->playlistWidget->channelSelected(_sessionChannel);
 
+#if UPDATE
     _update->checkSilent();
+#endif
 }
 
 void MainWindow::writeSession()
