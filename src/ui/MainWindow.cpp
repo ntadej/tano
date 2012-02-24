@@ -562,11 +562,12 @@ void MainWindow::playLocal(const QString &path)
     if (_mediaItem)
         delete _mediaItem;
     _mediaItem = new VlcMedia(path, true, _mediaInstance);
-#if Q_WS_WIN
-    tooltip(path.replace("/", "\\"));
-#else
-    tooltip(path);
+
+    QString t = path;
+#if defined(Q_WS_WIN)
+    t.replace("/", "\\");
 #endif
+    tooltip(t);
 
     play();
 }
