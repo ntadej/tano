@@ -36,18 +36,18 @@ void Udpxy::createSettings()
     delete settings;
 }
 
-QUrl Udpxy::processUrl(const QString &url) const
+QString Udpxy::processUrl(const QString &url) const
 {
     QString u = url;
     if (_enabled || _generate) {
         if (!_url.isEmpty() && url.contains("udp://@")) {
            QString newUrl = "http://%1:%2/udp/%3";
            newUrl = newUrl.arg(_url, _port, u.replace("udp://@", ""));
-           return QUrl(newUrl);
+           return newUrl;
         } else {
-            return QUrl(u);
+            return u;
         }
     } else {
-        return QUrl(u);
+        return u;
     }
 }

@@ -561,13 +561,17 @@ void MainWindow::playLocal(const QString &path)
 
     if (_mediaItem)
         delete _mediaItem;
-    _mediaItem = new VlcMedia(path, _mediaInstance);
+    _mediaItem = new VlcMedia(path, true, _mediaInstance);
+#if Q_WS_WIN
+    tooltip(path.replace("/", "\\"));
+#else
     tooltip(path);
+#endif
 
     play();
 }
 
-void MainWindow::playUrl(const QUrl &url)
+void MainWindow::playUrl(const QString &url)
 {
     if (url.isEmpty())
         return;
@@ -577,7 +581,7 @@ void MainWindow::playUrl(const QUrl &url)
     if (_mediaItem)
         delete _mediaItem;
     _mediaItem = new VlcMedia(url, _mediaInstance);
-    tooltip(url.toString());
+    tooltip(url);
 
     play();
 }
@@ -663,7 +667,7 @@ void MainWindow::openFile()
 }
 void MainWindow::openUrl()
 {
-    QUrl url = FileDialogs::openUrl();
+    QString url = FileDialogs::openUrl();
 
     if (url.isEmpty())
         return;

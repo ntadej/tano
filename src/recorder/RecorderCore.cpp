@@ -78,7 +78,7 @@ QString RecorderCore::output() const
 }
 
 void RecorderCore::record(const QString &channel,
-                          const QUrl &url,
+                          const QString &url,
                           const QString &path)
 {
     _output = fileName(channel, path);
@@ -113,7 +113,7 @@ void RecorderCore::record(Timer *t)
     emit timer(_currentName, _currentUrl);
 }
 
-void RecorderCore::recordBackend(const QUrl &url)
+void RecorderCore::recordBackend(const QString &url)
 {
     if (_media)
         delete _media;

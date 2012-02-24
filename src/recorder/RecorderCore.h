@@ -21,7 +21,6 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QTimer>
-#include <QtCore/QUrl>
 
 // VLC-Qt
 class VlcInstance;
@@ -49,28 +48,28 @@ public:
 
 public slots:
     void record(const QString &channel,
-                const QUrl &url,
+                const QString &url,
                 const QString &path);
     void record(Timer *t);
 
 signals:
     void elapsed(const int &);
     void timer(const QString &,
-               const QUrl &);
+               const QString &);
     void timerStop();
 
 private slots:
     void time();
 
 private:
-    void recordBackend(const QUrl &url);
+    void recordBackend(const QString &url);
     QString fileName(const QString &channel,
                      const QString &path,
                      const QString &name = 0) const;
 
     QString _currentEndTime;
     QString _currentName;
-    QUrl _currentUrl;
+    QString _currentUrl;
     QString _defaultPath;
 
     bool _isRecording;

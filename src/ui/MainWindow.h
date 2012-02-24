@@ -86,7 +86,7 @@ private slots:
 
     void playChannel(Channel* channel);
     void playLocal(const QString &path);
-    void playUrl(const QUrl &url);
+    void playUrl(const QString &url);
     void stop();
     void setPlayingState(const Vlc::State &state);
 

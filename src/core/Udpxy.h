@@ -20,7 +20,6 @@
 #define TANO_UDPXY_H_
 
 #include <QtCore/QObject>
-#include <QtCore/QUrl>
 
 class Udpxy
 {
@@ -29,7 +28,7 @@ public:
     ~Udpxy();
 
     void createSettings();
-    QUrl processUrl(const QString &url) const;
+    QString processUrl(const QString &url) const;
 
 private:
     bool _enabled;

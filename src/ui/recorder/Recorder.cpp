@@ -53,7 +53,7 @@ Recorder::Recorder(QWidget *parent)
 	connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
 
     connect(_core, SIGNAL(elapsed(int)), this, SLOT(time(int)));
-    connect(_core, SIGNAL(timer(QString, QUrl)), this, SLOT(timerStart(QString, QUrl)));
+    connect(_core, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
     connect(_core, SIGNAL(timerStop()), this, SLOT(timerStop()));
 }
 
@@ -227,7 +227,7 @@ void Recorder::showTimersEditor()
 }
 
 void Recorder::timerStart(const QString &name,
-                          const QUrl &url)
+                          const QString &url)
 {
     _name = name;
     _url = url;
