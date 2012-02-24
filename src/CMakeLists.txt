@@ -73,6 +73,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     core/Print.h
     playlist/PlaylistFilterModel.h
     playlist/PlaylistModel.h
+    playlist/PlaylistUpdate.h
     recorder/RecorderCore.h
     recorder/RecorderTimeManager.h
     recorder/TimersFilterModel.h
@@ -165,6 +166,7 @@ SET(Tano_Playlist_Srcs
     playlist/PlaylistModel.cpp
     playlist/PlaylistOpen.cpp
     playlist/PlaylistSave.cpp
+    playlist/PlaylistUpdate.cpp
     playlist/generators/CSVGenerator.cpp
     playlist/generators/JsGenerator.cpp
     playlist/generators/M3UGenerator.cpp

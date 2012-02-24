@@ -1490,6 +1490,12 @@ msgctxt "SettingsPlaylist|"
 msgid "Default radio category:"
 msgstr ""
 
+msgctxt "SettingsPlaylist|"
+msgid ""
+"<i>Updating will not change your playlist order. Any other information will "
+"be updated.</i>"
+msgstr ""
+
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
 msgstr ""

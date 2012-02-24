@@ -49,6 +49,7 @@ class MenuTrackVideo;
 class Shortcuts;
 class PlaylistEditor;
 class PlaylistModel;
+class PlaylistUpdate;
 class TrayIcon;
 class Udpxy;
 class XmltvManager;
@@ -66,7 +67,7 @@ class MainWindow : public QMainWindow
 {
 Q_OBJECT
 public:
-    MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 protected:
@@ -159,6 +160,7 @@ private:
     GetFile *_file;
     LocaleManager *_locale;
     PlaylistModel *_model;
+    PlaylistUpdate *_modelUpdate;
     Shortcuts *_shortcuts;
 
 #if UPDATE

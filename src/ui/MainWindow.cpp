@@ -43,6 +43,7 @@
 #include "core/Shortcuts.h"
 #include "core/Udpxy.h"
 #include "playlist/PlaylistModel.h"
+#include "playlist/PlaylistUpdate.h"
 #include "ui/core/FileDialogs.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/dialogs/AboutDialog.h"
@@ -70,6 +71,7 @@ MainWindow::MainWindow(QWidget *parent)
       _file(new GetFile()),
       _locale(new LocaleManager()),
       _model(new PlaylistModel(this)),
+      _modelUpdate(new PlaylistUpdate(_model)),
       _audioController(0),
       _videoController(0),
       _xmltv(new XmltvManager()),
@@ -641,7 +643,10 @@ void MainWindow::openPlaylist(const bool &start)
     }
     f.close();
 
-    _model->open(_playlistName);
+    if (start)
+        _modelUpdate->update(_playlistName);
+    else
+        _model->open(_playlistName);
 
     _hasPlaylist = true;
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>425</width>
-    <height>231</height>
+    <height>281</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -53,6 +53,19 @@
        <widget class="QLineEdit" name="editUrl">
         <property name="enabled">
          <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelRefreshInfo">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>&lt;i&gt;Updating will not change your playlist order. Any other information will be updated.&lt;/i&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -102,7 +115,7 @@
     </hint>
     <hint type="destinationlabel">
      <x>94</x>
-     <y>117</y>
+     <y>129</y>
     </hint>
    </hints>
   </connection>
@@ -118,7 +131,23 @@
     </hint>
     <hint type="destinationlabel">
      <x>226</x>
-     <y>142</y>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkRefresh</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>labelRefreshInfo</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>39</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>53</x>
+     <y>180</y>
     </hint>
    </hints>
   </connection>

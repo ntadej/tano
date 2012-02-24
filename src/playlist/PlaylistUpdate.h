@@ -16,40 +16,32 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_GETFILE_H_
-#define TANO_GETFILE_H_
+#ifndef TANO_PLAYLISTUPDATE_H_
+#define TANO_PLAYLISTUPDATE_H_
 
-#include <QtCore/QFile>
-#include <QtCore/QUrl>
-#include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkReply>
+#include <QtCore/QObject>
+#include <QtCore/QString>
 
-class GetFile : public QObject
+class GetFile;
+class PlaylistModel;
+
+class PlaylistUpdate : public QObject
 {
 Q_OBJECT
 public:
-	GetFile(QObject *parent = 0);
-	~GetFile();
+    explicit PlaylistUpdate(PlaylistModel *model);
+    ~PlaylistUpdate();
 
-	void getFile(const QString &fileUrl,
-				 const QString &location = 0);
-
-signals:
-	void file(const QString &);
+    void update(const QString &playlist);
 
 private slots:
-	void httpReadyRead();
-	void httpRequestFinished();
+    void processPlaylist(const QString &playlist);
 
 private:
-    void startRequest(const QUrl &url);
+    PlaylistModel *_model;
+    QString _playlist;
 
-	QFile *_file;
-
-	QNetworkAccessManager _nam;
-	QNetworkReply *_nreply;
-
-	QUrl _url;
+    GetFile *_downloader;
 };
 
-#endif // TANO_GETFILE_H_
+#endif // TANO_PLAYLISTUPDATE_H_

@@ -211,7 +211,7 @@ void PlaylistModel::open(const QString &file,
 
 void PlaylistModel::processChannel(Channel *channel)
 {
-    bool exists = find(channel->id());
+    Channel *exists = find(channel->id());
     if (!exists) {
         for (int i = 0; i < rowCount(); i++) {
             if (row(i)->name() == channel->name()) {
@@ -220,6 +220,14 @@ void PlaylistModel::processChannel(Channel *channel)
             }
         }
     } else {
+        exists->setCategories(channel->categories());
+        exists->setEpg(channel->epg());
+        exists->setLanguage(channel->language());
+        exists->setLogo(channel->logo());
+        exists->setName(channel->name());
+        exists->setRadio(channel->radio());
+        exists->setUrl(channel->url());
+
         return;
     }
 

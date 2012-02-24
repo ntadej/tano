@@ -1786,6 +1786,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <source>Default radio category:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;i&gt;Updating will not change your playlist order. Any other information will be updated.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsRecorder</name>
