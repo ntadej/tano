@@ -58,6 +58,7 @@ public:
     QString name() const { return _name; }
     QList<int> numbers() const { return _channelNumbers; }
 
+    void clear();
     void open(const QString &file,
               const bool &refresh = false,
               const Tano::FileType &type = Tano::M3U,

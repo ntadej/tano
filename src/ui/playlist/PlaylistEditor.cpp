@@ -279,7 +279,7 @@ void PlaylistEditor::open(const QString &playlist,
 
 void PlaylistEditor::newPlaylist()
 {
-    if (_model->rowCount() == 0)
+    if (!_model->rowCount())
         return;
 
     int ret;
@@ -324,7 +324,8 @@ void PlaylistEditor::deleteItem()
 
 void PlaylistEditor::addItem()
 {
-    editItem(_model->createChannel());
+    Channel *channel = _model->createChannel();
+    ui->playlist->channelSelected(channel);
     ui->number->display(_model->rowCount());
 }
 
@@ -539,7 +540,7 @@ void PlaylistEditor::setState(const bool &playing)
 
 void PlaylistEditor::editItem(Channel *channel)
 {
-    if (channel == 0) {
+    if (!channel) {
         ui->editWidget->setEnabled(false);
         return;
     }

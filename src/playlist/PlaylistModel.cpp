@@ -52,10 +52,21 @@ Channel *PlaylistModel::takeRow(const int &row)
     return qobject_cast<Channel *>(ListModel::takeRow(row));
 }
 
+void PlaylistModel::clear()
+{
+    _channelNumbers.clear();
+    _categoryList.clear();
+    _epgList.clear();
+    _languageList.clear();
+    _numbers.clear();
+
+    ListModel::clear();
+}
+
 Channel *PlaylistModel::createChannel(const QString &name,
                                       const QString &url)
 {
-    int tmpNum, previous = 1;
+    int tmpNum, previous = 0;
     for (int i = 1; i < 1000; i++) {
         if (!_channelNumbers.contains(i)) {
             tmpNum = i;
@@ -78,8 +89,12 @@ Channel *PlaylistModel::createChannel(const QString &name,
     _numbers.insert(channel->number(), channel);
     _channelNumbers << channel->number();
 
-    insertRow(indexFromItem(_numbers[previous]).row()+1, channel);
-    return channel;
+    if (previous)
+        insertRow(indexFromItem(_numbers[previous]).row()+1, channel);
+    else
+        appendRow(channel);
+
+    return row(indexFromItem(channel).row());
 }
 
 Channel *PlaylistModel::deleteChannel(Channel *channel)
@@ -91,7 +106,13 @@ Channel *PlaylistModel::deleteChannel(Channel *channel)
     int r = indexFromItem(channel).row();
     removeRow(r);
 
-    return row(r);
+    while (r >= rowCount())
+        r--;
+
+    if (r < 0)
+        return 0;
+    else
+        return row(r);
 }
 
 void PlaylistModel::exportTvheadend(const QString &location,
