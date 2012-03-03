@@ -64,7 +64,6 @@ private slots:
 private:
     void recordBackend(const QString &url);
     QString fileName(const QString &channel,
-                     const QString &path,
                      const QString &name = 0) const;
 
     QString _currentEndTime;
@@ -76,6 +75,8 @@ private:
     bool _isTimer;
 
     QString _output;
+    QString _outputName;
+    QString _outputPath;
 
     VlcInstance *_instance;
     VlcMedia *_media;

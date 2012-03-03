@@ -53,11 +53,9 @@ RecorderCore::~RecorderCore()
 }
 
 QString RecorderCore::fileName(const QString &channel,
-                               const QString &path,
                                const QString &name) const
 {
-    QString f = QString(path);
-    f.append("/");
+    QString f;
     if (!name.isEmpty()) {
         f.append(QString(name).replace(" ", "_"));
         f.append("-");
@@ -81,7 +79,8 @@ void RecorderCore::record(const QString &channel,
                           const QString &url,
                           const QString &path)
 {
-    _output = fileName(channel, path);
+    _outputName = fileName(channel);
+    _outputPath = path;
 
     recordBackend(url);
 
@@ -96,7 +95,8 @@ void RecorderCore::record(Timer *t)
 {
     stop();
 
-    _output = fileName(t->channel(), _defaultPath, t->name());
+    _outputName = fileName(t->channel(), t->name());
+    _outputPath = _defaultPath;
 
     recordBackend(t->url());
 
@@ -122,9 +122,10 @@ void RecorderCore::recordBackend(const QString &url)
     if (_instance)
         delete _instance;
 
-    _instance = new VlcInstance(Tano::vlcQtRecorderArgs(_output), this);
+    _instance = new VlcInstance(Tano::vlcQtArgs(), this);
     _player = new VlcMediaPlayer(_instance);
     _media = new VlcMedia(url, _instance);
+    _output = _media->record(_outputName, _outputPath);
 
     _player->open(_media);
     _player->play();

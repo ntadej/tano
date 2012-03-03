@@ -134,24 +134,6 @@ QStringList Tano::vlcQtArgs()
     QStringList args;
 #if WITH_EDITOR_VLCQT
     args = VlcCommon::args();
-#ifdef Q_WS_WIN
-    args << "--plugin-path=vlc\\plugins\\";
-#endif
-#endif
-
-    return args;
-}
-
-QStringList Tano::vlcQtRecorderArgs(const QString &file)
-{
-    QStringList args;
-#if WITH_EDITOR_VLCQT
-    args = VlcCommon::recorderArgs(file);
-#ifdef Q_WS_WIN
-    args << "--plugin-path=vlc\\plugins\\";
-#endif
-#else
-    Q_UNUSED(file)
 #endif
 
     return args;

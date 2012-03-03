@@ -79,7 +79,7 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
 	createConnections();
 
 #if WITH_EDITOR_VLCQT
-    _instance = new VlcInstance(Tano::vlcQtRecorderArgs(QDir::tempPath() + "/tano-test.ts"), this);
+    _instance = new VlcInstance(Tano::vlcQtArgs(), this);
     _media = 0;
     _player = new VlcMediaPlayer(_instance);
     _udpxy = new Udpxy();
@@ -478,6 +478,7 @@ void PlaylistEditor::checkIp()
         delete _media;
 
     _media = new VlcMedia(_udpxy->processUrl(currentIp()), _instance);
+    _media->record("test", QDir::tempPath());
     _player->open(_media);
 
     _timer->start(_currentTimeout);
