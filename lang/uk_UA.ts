@@ -297,7 +297,7 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Record Now</source>
-        <translation>Записати зараз</translation>
+        <translation type="obsolete">Записати зараз</translation>
     </message>
     <message>
         <source>Mute</source>
@@ -552,6 +552,41 @@ This will stop recording in progress.</source>
     <message>
         <source>Next video track</source>
         <translation>Наступна відео доріжка</translation>
+    </message>
+</context>
+<context>
+    <name>OsdWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Відтворити</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Зупинити</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Назад</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record Now</source>
+        <translation type="unfinished">Записати зараз</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished">Вимкнути звук</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished">Пауза</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Телетекст</translation>
     </message>
 </context>
 <context>
@@ -1975,7 +2010,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation>Увімкнути інформацію OSD у повноекранному режимі</translation>
+        <translation type="obsolete">Увімкнути інформацію OSD у повноекранному режимі</translation>
     </message>
     <message>
         <source>Teletext</source>
@@ -2038,7 +2073,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation>Увімкнути інформацію OSD у повноекранному режимі</translation>
+        <translation type="obsolete">Увімкнути інформацію OSD у повноекранному режимі</translation>
     </message>
     <message>
         <source>Default options for startup</source>
@@ -2080,11 +2115,11 @@ You will lose any unsaved changes.</source>
     <name>TeletextWidget</name>
     <message>
         <source>Teletext</source>
-        <translation>Телетекст</translation>
+        <translation type="obsolete">Телетекст</translation>
     </message>
     <message>
         <source>Teletext Transparency</source>
-        <translation>Прозорість телетексту</translation>
+        <translation type="obsolete">Прозорість телетексту</translation>
     </message>
 </context>
 <context>

@@ -389,7 +389,7 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
     <message>
         <source>Record Now</source>
-        <translation>Nahrávat nyní</translation>
+        <translation type="obsolete">Nahrávat nyní</translation>
     </message>
     <message>
         <source>Mute</source>
@@ -655,6 +655,41 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <source>Next video track</source>
         <translation>Další obrazová stopa</translation>
+    </message>
+</context>
+<context>
+    <name>OsdWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Přehrát</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Stop</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Zpět</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished">Další</translation>
+    </message>
+    <message>
+        <source>Record Now</source>
+        <translation type="unfinished">Nahrávat nyní</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished">Ztlumit</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Teletext</translation>
     </message>
 </context>
 <context>
@@ -2564,7 +2599,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation>Povolit informační OSD v režimu celé obrazovky</translation>
+        <translation type="obsolete">Povolit informační OSD v režimu celé obrazovky</translation>
     </message>
     <message>
         <source>Teletext</source>
@@ -2627,7 +2662,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation type="unfinished">Povolit informační OSD v režimu celé obrazovky</translation>
+        <translation type="obsolete">Povolit informační OSD v režimu celé obrazovky</translation>
     </message>
     <message>
         <source>Default options for startup</source>
@@ -2680,11 +2715,11 @@ Ztratíte všechny neuložené změny.</translation>
     <name>TeletextWidget</name>
     <message>
         <source>Teletext</source>
-        <translation type="unfinished">Teletext</translation>
+        <translation type="obsolete">Teletext</translation>
     </message>
     <message>
         <source>Teletext Transparency</source>
-        <translation type="unfinished">Průhlednost teletextu</translation>
+        <translation type="obsolete">Průhlednost teletextu</translation>
     </message>
 </context>
 <context>

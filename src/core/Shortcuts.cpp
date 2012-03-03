@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -43,7 +43,6 @@ Shortcuts::Shortcuts(const QList<QAction *> &list,
                  << "Ctrl+T"
                  << "Ctrl+L"
                  << "Ctrl+H"
-                 << "Ctrl+I"
                  << "Ctrl+Shift+A"
                  << "Ctrl+Shift+V"
                  << "Ctrl+Shift+S"
@@ -71,7 +70,6 @@ Shortcuts::Shortcuts(const QList<QAction *> &list,
                  << "Top"
                  << "Lite"
                  << "Tray"
-                 << "PlaylistFullscreen"
                  << "NextAudioTrack"
                  << "NextVideoTrack"
                  << "NextSubtitleTrack"
@@ -88,7 +86,7 @@ void Shortcuts::apply()
 {
     QStringList currentKeys = readKeys();
 
-    for(int i = 0; i < _actions.size(); i++) {
+    for (int i = 0; i < _actions.size(); i++) {
         _actions[i]->setShortcut(QKeySequence(currentKeys[i]));
         _actions[i]->setShortcutContext(Qt::ApplicationShortcut);
     }
@@ -97,7 +95,7 @@ void Shortcuts::apply()
 QStringList Shortcuts::readKeys() const
 {
     QStringList list;
-    for(int i = 0; i < _actions.size(); i++)
+    for (int i = 0; i < _actions.size(); i++)
         list << value(_actionsName[i], _defaultList[i]).toString();
 
     return list;
@@ -105,7 +103,7 @@ QStringList Shortcuts::readKeys() const
 
 void Shortcuts::write(const QStringList &keys)
 {
-    for(int i = 0; i < _actions.size(); i++)
+    for (int i = 0; i < _actions.size(); i++)
         setValue(_actionsName[i], keys[i]);
 
     sync();

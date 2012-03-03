@@ -296,7 +296,7 @@ Votre version de VLC-Qt : %4</translation>
     </message>
     <message>
         <source>Record Now</source>
-        <translation>Enregistrer maintenant</translation>
+        <translation type="obsolete">Enregistrer maintenant</translation>
     </message>
     <message>
         <source>Mute</source>
@@ -549,6 +549,41 @@ This will stop recording in progress.</source>
     <message>
         <source>Next video track</source>
         <translation>Piste vidéo suivante</translation>
+    </message>
+</context>
+<context>
+    <name>OsdWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Lire</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Arrière</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished">Suivant</translation>
+    </message>
+    <message>
+        <source>Record Now</source>
+        <translation type="unfinished">Enregistrer maintenant</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished">Pause</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1969,7 +2004,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation>Panneau d&apos;information OSD en mode plein écran</translation>
+        <translation type="obsolete">Panneau d&apos;information OSD en mode plein écran</translation>
     </message>
     <message>
         <source>Teletext</source>
@@ -2032,7 +2067,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation>Panneau d&apos;information OSD en mode plein écran</translation>
+        <translation type="obsolete">Panneau d&apos;information OSD en mode plein écran</translation>
     </message>
     <message>
         <source>Default options for startup</source>
@@ -2074,11 +2109,11 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <name>TeletextWidget</name>
     <message>
         <source>Teletext</source>
-        <translation>Télétexte</translation>
+        <translation type="obsolete">Télétexte</translation>
     </message>
     <message>
         <source>Teletext Transparency</source>
-        <translation>Transparence du télétexte</translation>
+        <translation type="obsolete">Transparence du télétexte</translation>
     </message>
 </context>
 <context>

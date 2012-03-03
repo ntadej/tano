@@ -295,9 +295,9 @@ msgctxt "MainWindow|"
 msgid "Next"
 msgstr "Suivant"
 
-msgctxt "MainWindow|"
-msgid "Record Now"
-msgstr "Enregistrer maintenant"
+#~ msgctxt "MainWindow|"
+#~ msgid "Record Now"
+#~ msgstr "Enregistrer maintenant"
 
 msgctxt "MainWindow|"
 msgid "Mute"
@@ -536,6 +536,43 @@ msgstr "Piste vidéo"
 msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Piste vidéo suivante"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Play"
+msgstr "Lire"
+
+msgctxt "OsdWidget|"
+msgid "Stop"
+msgstr ""
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Back"
+msgstr "Arrière"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Next"
+msgstr "Suivant"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Record Now"
+msgstr "Enregistrer maintenant"
+
+msgctxt "OsdWidget|"
+msgid "Mute"
+msgstr ""
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Pause"
+msgstr "Pause"
+
+msgctxt "OsdWidget|"
+msgid "Teletext"
+msgstr ""
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "Clear"
@@ -2025,9 +2062,9 @@ msgctxt "SettingsShortcuts|"
 msgid "Play / Pause"
 msgstr "Lire / pause"
 
-msgctxt "SettingsShortcuts|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr "Panneau d'information OSD en mode plein écran"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Enable Info OSD in Fullscreen mode"
+#~ msgstr "Panneau d'information OSD en mode plein écran"
 
 msgctxt "SettingsShortcuts|"
 msgid "Teletext"
@@ -2085,9 +2122,9 @@ msgctxt "SettingsUi|"
 msgid "Minimise to tray"
 msgstr "Minimiser dans le tableau de bord"
 
-msgctxt "SettingsUi|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr "Panneau d'information OSD en mode plein écran"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Enable Info OSD in Fullscreen mode"
+#~ msgstr "Panneau d'information OSD en mode plein écran"
 
 msgctxt "SettingsUi|"
 msgid "Default options for startup"
@@ -2121,13 +2158,13 @@ msgstr ""
 #~ msgid "Editor"
 #~ msgstr "Éditeur"
 
-msgctxt "TeletextWidget|"
-msgid "Teletext"
-msgstr "Télétexte"
+#~ msgctxt "TeletextWidget|"
+#~ msgid "Teletext"
+#~ msgstr "Télétexte"
 
-msgctxt "TeletextWidget|"
-msgid "Teletext Transparency"
-msgstr "Transparence du télétexte"
+#~ msgctxt "TeletextWidget|"
+#~ msgid "Teletext Transparency"
+#~ msgstr "Transparence du télétexte"
 
 msgctxt "Timer|"
 msgid "Active"

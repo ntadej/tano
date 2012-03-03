@@ -56,12 +56,12 @@ void SettingsUi::setOsd(const bool &enabled)
 
 bool SettingsUi::osdPlaylist() const
 {
-    return ui->checkOsdPlaylist->isChecked();
+    return false;
 }
 
 void SettingsUi::setOsdPlaylist(const bool &enabled)
 {
-    ui->checkOsdPlaylist->setChecked(enabled);
+    Q_UNUSED(enabled);
 }
 
 bool SettingsUi::tray() const

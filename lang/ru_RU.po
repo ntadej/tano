@@ -361,9 +361,9 @@ msgctxt "MainWindow|"
 msgid "Next"
 msgstr "Вперед"
 
-msgctxt "MainWindow|"
-msgid "Record Now"
-msgstr "Включить запись"
+#~ msgctxt "MainWindow|"
+#~ msgid "Record Now"
+#~ msgstr "Включить запись"
 
 msgctxt "MainWindow|"
 msgid "Mute"
@@ -616,6 +616,42 @@ msgstr "Видеодорожка"
 msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "След. видеодорожка"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Play"
+msgstr "Воспроизведение"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Stop"
+msgstr "Стоп"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Back"
+msgstr "Назад"
+
+msgctxt "OsdWidget|"
+msgid "Next"
+msgstr ""
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Record Now"
+msgstr "Включить запись"
+
+msgctxt "OsdWidget|"
+msgid "Mute"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Pause"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Teletext"
+msgstr ""
 
 #, fuzzy
 msgctxt "PlaylistDisplayWidget|"
@@ -2369,10 +2405,6 @@ msgid "Play / Pause"
 msgstr ""
 
 msgctxt "SettingsShortcuts|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
 msgid "Teletext"
 msgstr ""
 
@@ -2440,10 +2472,6 @@ msgctxt "SettingsUi|"
 msgid "Minimise to tray"
 msgstr "Свернуть в трей"
 
-msgctxt "SettingsUi|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr ""
-
 #, fuzzy
 msgctxt "SettingsUi|"
 msgid "Default options for startup"
@@ -2481,14 +2509,6 @@ msgstr ""
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"
 #~ msgstr "Редактор"
-
-msgctxt "TeletextWidget|"
-msgid "Teletext"
-msgstr ""
-
-msgctxt "TeletextWidget|"
-msgid "Teletext Transparency"
-msgstr ""
 
 #, fuzzy
 msgctxt "Timer|"

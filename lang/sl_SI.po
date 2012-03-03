@@ -457,9 +457,9 @@ msgctxt "MainWindow|"
 msgid "&Playback"
 msgstr "&Predvajanje"
 
-msgctxt "MainWindow|"
-msgid "Record Now"
-msgstr "Snemaj takoj"
+#~ msgctxt "MainWindow|"
+#~ msgid "Record Now"
+#~ msgstr "Snemaj takoj"
 
 msgctxt "MainWindow|"
 msgid "&Open channel list"
@@ -701,6 +701,45 @@ msgstr "Slikovna sled"
 msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Naslednja slikovna sled"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Play"
+msgstr "Predvajaj"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Stop"
+msgstr "Ustavi"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Back"
+msgstr "Nazaj"
+
+msgctxt "OsdWidget|"
+msgid "Next"
+msgstr ""
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Record Now"
+msgstr "Snemaj takoj"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Mute"
+msgstr "Tiho"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Pause"
+msgstr "Prekini"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Teletext"
+msgstr "Teletekst"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "Clear"
@@ -2752,9 +2791,9 @@ msgctxt "SettingsShortcuts|"
 msgid "Hide to tray"
 msgstr "Skrij v orodno vrstico"
 
-msgctxt "SettingsShortcuts|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr "Vključi Info OSD v celozaslonskem načinu"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Enable Info OSD in Fullscreen mode"
+#~ msgstr "Vključi Info OSD v celozaslonskem načinu"
 
 msgctxt "SettingsShortcuts|"
 msgid "Next audio track"
@@ -2844,9 +2883,9 @@ msgctxt "SettingsUi|"
 msgid "Minimise to tray"
 msgstr "Skrij v sistemsko vrstico"
 
-msgctxt "SettingsUi|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr "Vključi Info OSD v celozaslonskem načinu"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Enable Info OSD in Fullscreen mode"
+#~ msgstr "Vključi Info OSD v celozaslonskem načinu"
 
 msgctxt "SettingsUi|"
 msgid "Default options for startup"
@@ -2888,13 +2927,13 @@ msgstr ""
 #~ msgid "Teletext Transparency"
 #~ msgstr "Prosojnost teleteksta"
 
-msgctxt "TeletextWidget|"
-msgid "Teletext"
-msgstr "Teletekst"
+#~ msgctxt "TeletextWidget|"
+#~ msgid "Teletext"
+#~ msgstr "Teletekst"
 
-msgctxt "TeletextWidget|"
-msgid "Teletext Transparency"
-msgstr "Prosojnost teleteksta"
+#~ msgctxt "TeletextWidget|"
+#~ msgid "Teletext Transparency"
+#~ msgstr "Prosojnost teleteksta"
 
 msgctxt "Timer|"
 msgid "Active"

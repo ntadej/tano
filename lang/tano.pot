@@ -277,10 +277,6 @@ msgid "Next"
 msgstr ""
 
 msgctxt "MainWindow|"
-msgid "Record Now"
-msgstr ""
-
-msgctxt "MainWindow|"
 msgid "Mute"
 msgstr ""
 
@@ -499,6 +495,38 @@ msgstr ""
 
 msgctxt "MenuTrackVideo|"
 msgid "Next video track"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Play"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Stop"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Back"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Next"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Record Now"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Mute"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Pause"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Teletext"
 msgstr ""
 
 msgctxt "PlaylistDisplayWidget|"
@@ -1653,10 +1681,6 @@ msgid "Play / Pause"
 msgstr ""
 
 msgctxt "SettingsShortcuts|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
 msgid "Teletext"
 msgstr ""
 
@@ -1713,10 +1737,6 @@ msgid "Minimise to tray"
 msgstr ""
 
 msgctxt "SettingsUi|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr ""
-
-msgctxt "SettingsUi|"
 msgid "Default options for startup"
 msgstr ""
 
@@ -1742,14 +1762,6 @@ msgstr ""
 
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
-msgstr ""
-
-msgctxt "TeletextWidget|"
-msgid "Teletext"
-msgstr ""
-
-msgctxt "TeletextWidget|"
-msgid "Teletext Transparency"
 msgstr ""
 
 msgctxt "Timer|"

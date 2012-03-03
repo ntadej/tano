@@ -47,6 +47,7 @@ class MenuTrackAudio;
 class MenuTrackSubtitles;
 class MenuTrackVideo;
 class Shortcuts;
+class OsdWidget;
 class PlaylistEditor;
 class PlaylistModel;
 class PlaylistUpdate;
@@ -101,10 +102,9 @@ private slots:
     void top();
     void lite();
     void tray();
-    void fullscreen(const bool &on);
-    void showLogo(const QString &logo);
     void showOsd(const QPoint &pos);
-    void showPlaylistFullscreen(const bool &on);
+    void teletext(const bool &enabled);
+    void teletext(const int &page);
 
     void recordNow();
     void recorder(const bool &enabled);
@@ -146,7 +146,6 @@ private:
     bool _infoWidgetVisible;
     bool _isLite;
     bool _osdEnabled;
-    bool _playlistFullscreen;
     int _sessionChannel;
     bool _sessionVolumeEnabled;
     bool _sessionAutoplayEnabled;
@@ -183,6 +182,8 @@ private:
     //GUI
     EpgScheduleFull *_schedule;
     EpgShow *_epgShow;
+    OsdWidget *_osdMain;
+    OsdWidget *_osdFloat;
     PlaylistEditor *_playlistEditor;
 
     //Menus and actions

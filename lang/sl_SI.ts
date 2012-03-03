@@ -472,7 +472,7 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <source>Record Now</source>
-        <translation>Snemaj takoj</translation>
+        <translation type="obsolete">Snemaj takoj</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
@@ -726,6 +726,41 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Next video track</source>
         <translation>Naslednja slikovna sled</translation>
+    </message>
+</context>
+<context>
+    <name>OsdWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Predvajaj</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Ustavi</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Nazaj</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record Now</source>
+        <translation type="unfinished">Snemaj takoj</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished">Tiho</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished">Prekini</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Teletekst</translation>
     </message>
 </context>
 <context>
@@ -2709,7 +2744,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation>Vključi Info OSD v celozaslonskem načinu</translation>
+        <translation type="obsolete">Vključi Info OSD v celozaslonskem načinu</translation>
     </message>
     <message>
         <source>Next audio track</source>
@@ -2804,7 +2839,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
-        <translation>Vključi Info OSD v celozaslonskem načinu</translation>
+        <translation type="obsolete">Vključi Info OSD v celozaslonskem načinu</translation>
     </message>
     <message>
         <source>Default options for startup</source>
@@ -2857,11 +2892,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>TeletextWidget</name>
     <message>
         <source>Teletext</source>
-        <translation>Teletekst</translation>
+        <translation type="obsolete">Teletekst</translation>
     </message>
     <message>
         <source>Teletext Transparency</source>
-        <translation>Prosojnost teleteksta</translation>
+        <translation type="obsolete">Prosojnost teleteksta</translation>
     </message>
 </context>
 <context>

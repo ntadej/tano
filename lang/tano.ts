@@ -292,10 +292,6 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Record Now</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
@@ -529,6 +525,41 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Next video track</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OsdWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record Now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1703,10 +1734,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enable Info OSD in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Teletext</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1766,10 +1793,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enable Info OSD in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Default options for startup</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1795,17 +1818,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Show tray icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>TeletextWidget</name>
-    <message>
-        <source>Teletext</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Teletext Transparency</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

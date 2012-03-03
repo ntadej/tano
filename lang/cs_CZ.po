@@ -371,9 +371,9 @@ msgctxt "MainWindow|"
 msgid "Next"
 msgstr "Další"
 
-msgctxt "MainWindow|"
-msgid "Record Now"
-msgstr "Nahrávat nyní"
+#~ msgctxt "MainWindow|"
+#~ msgid "Record Now"
+#~ msgstr "Nahrávat nyní"
 
 msgctxt "MainWindow|"
 msgid "Mute"
@@ -626,6 +626,45 @@ msgstr "Obrazová stopa"
 msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Další obrazová stopa"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Play"
+msgstr "Přehrát"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Stop"
+msgstr "Stop"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Back"
+msgstr "Zpět"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Next"
+msgstr "Další"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Record Now"
+msgstr "Nahrávat nyní"
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Mute"
+msgstr "Ztlumit"
+
+msgctxt "OsdWidget|"
+msgid "Pause"
+msgstr ""
+
+#, fuzzy
+msgctxt "OsdWidget|"
+msgid "Teletext"
+msgstr "Teletext"
 
 #, fuzzy
 msgctxt "PlaylistDisplayWidget|"
@@ -2613,9 +2652,9 @@ msgctxt "SettingsShortcuts|"
 msgid "Play / Pause"
 msgstr "Přehrát/Pozastavit"
 
-msgctxt "SettingsShortcuts|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr "Povolit informační OSD v režimu celé obrazovky"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Enable Info OSD in Fullscreen mode"
+#~ msgstr "Povolit informační OSD v režimu celé obrazovky"
 
 msgctxt "SettingsShortcuts|"
 msgid "Teletext"
@@ -2685,10 +2724,9 @@ msgctxt "SettingsUi|"
 msgid "Minimise to tray"
 msgstr "Zmenšit do oznamovací oblasti panelu"
 
-#, fuzzy
-msgctxt "SettingsUi|"
-msgid "Enable Info OSD in Fullscreen mode"
-msgstr "Povolit informační OSD v režimu celé obrazovky"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Enable Info OSD in Fullscreen mode"
+#~ msgstr "Povolit informační OSD v režimu celé obrazovky"
 
 #, fuzzy
 msgctxt "SettingsUi|"
@@ -2736,15 +2774,13 @@ msgstr ""
 #~ msgid "Teletext Transparency"
 #~ msgstr "Průhlednost teletextu"
 
-#, fuzzy
-msgctxt "TeletextWidget|"
-msgid "Teletext"
-msgstr "Teletext"
+#~ msgctxt "TeletextWidget|"
+#~ msgid "Teletext"
+#~ msgstr "Teletext"
 
-#, fuzzy
-msgctxt "TeletextWidget|"
-msgid "Teletext Transparency"
-msgstr "Průhlednost teletextu"
+#~ msgctxt "TeletextWidget|"
+#~ msgid "Teletext Transparency"
+#~ msgstr "Průhlednost teletextu"
 
 #, fuzzy
 msgctxt "Timer|"

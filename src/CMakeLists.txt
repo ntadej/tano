@@ -31,6 +31,7 @@ CONFIGURE_FILE(
 # Define the UI source files used by Tano
 SET(Tano_UIs
     ui/MainWindow.ui
+    ui/core/OsdWidget.ui
     ui/dialogs/AboutDialog.ui
     ui/dialogs/DonationDialog.ui
     ui/dialogs/PrintDialog.ui
@@ -83,8 +84,8 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/core/CurrentTimeWidget.h
     ui/core/InfoBarWidget.h
     ui/core/LicenseWidget.h
+    ui/core/OsdWidget.h
     ui/core/QtKeySequenceEdit.h
-    ui/core/TeletextWidget.h
     ui/core/TrayIcon.h
     ui/dialogs/AboutDialog.h
     ui/dialogs/DonationDialog.h
@@ -192,8 +193,8 @@ SET(Tano_UI_Srcs
     ui/core/FileDialogs.cpp
     ui/core/InfoBarWidget.cpp
     ui/core/LicenseWidget.cpp
+    ui/core/OsdWidget.cpp
     ui/core/QtKeySequenceEdit.cpp
-    ui/core/TeletextWidget.cpp
     ui/core/TrayIcon.cpp
     ui/dialogs/AboutDialog.cpp
     ui/dialogs/DonationDialog.cpp
