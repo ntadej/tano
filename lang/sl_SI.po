@@ -181,56 +181,55 @@ msgstr "Naslednja oddaja"
 
 msgctxt "EpgShow|"
 msgid "<b>Crew</b>"
-msgstr ""
+msgstr "<b>Ekipa</b>"
 
 msgctxt "EpgShow|"
 msgid "<b>Description</b>"
-msgstr ""
+msgstr "<b>Opis</b>"
 
 msgctxt "EpgShow|"
 msgid "Crew members: All"
-msgstr ""
+msgstr "Člani ekipe: Vsi"
 
 msgctxt "EpgShow|"
 msgid "Director"
-msgstr ""
+msgstr "Režiser"
 
 msgctxt "EpgShow|"
 msgid "Actor"
-msgstr ""
+msgstr "Igralec"
 
 msgctxt "EpgShow|"
 msgid "Writer"
-msgstr ""
+msgstr "Scenarist"
 
 msgctxt "EpgShow|"
 msgid "Adapter"
-msgstr ""
+msgstr "Aranžer"
 
 msgctxt "EpgShow|"
 msgid "Producer"
-msgstr ""
+msgstr "Producent"
 
 msgctxt "EpgShow|"
 msgid "Composer"
-msgstr ""
+msgstr "Skladatelj"
 
-#, fuzzy
 msgctxt "EpgShow|"
 msgid "Editor"
-msgstr "Urejevalnik"
+msgstr "Montažer"
 
 msgctxt "EpgShow|"
 msgid "Presenter"
-msgstr ""
+msgstr "Voditelj"
 
 msgctxt "EpgShow|"
 msgid "Commentator"
-msgstr ""
+msgstr "Komentator"
 
 msgctxt "EpgShow|"
 msgid "Guest"
-msgstr ""
+msgstr "Gost"
 
 #~ msgctxt "FileDialogs|"
 #~ msgid "Open directory"
@@ -593,7 +592,7 @@ msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Controls"
-msgstr ""
+msgstr "Upravljanje"
 
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
@@ -619,17 +618,14 @@ msgstr "Originalno"
 #~ msgid "Original"
 #~ msgstr "Originalno"
 
-#, fuzzy
 msgctxt "MenuCropRatio|"
 msgid "Crop video"
 msgstr "Obreži sliko"
 
-#, fuzzy
 msgctxt "MenuCropRatio|"
 msgid "Next crop option"
 msgstr "Naslednja obrezava slike"
 
-#, fuzzy
 msgctxt "MenuCropRatio|"
 msgid "Original"
 msgstr "Originalno"
@@ -706,41 +702,34 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Naslednja slikovna sled"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Play"
 msgstr "Predvajaj"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Stop"
 msgstr "Ustavi"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Back"
 msgstr "Nazaj"
 
 msgctxt "OsdWidget|"
 msgid "Next"
-msgstr ""
+msgstr "Naprej"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Record Now"
-msgstr "Snemaj takoj"
+msgstr "Takojšnje snemanje"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Mute"
 msgstr "Tiho"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Pause"
 msgstr "Prekini"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Teletext"
 msgstr "Teletekst"
@@ -769,26 +758,25 @@ msgctxt "PlaylistDisplayWidget|"
 msgid "All languages"
 msgstr "Vsi jeziki"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Type:"
 msgstr "Tip:"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "TV + Radio"
-msgstr ""
+msgstr "TV + Radio"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "TV only"
-msgstr ""
+msgstr "Samo TV"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "Radio only"
-msgstr ""
+msgstr "Samo radio"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "Search and filter"
-msgstr ""
+msgstr "Išči in filtriraj"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Tano Editor"
@@ -1106,26 +1094,22 @@ msgstr ""
 #~ msgid "A channel with this number already exists!"
 #~ msgstr "Program s to številko že obstaja!"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Tano Editor"
 msgstr "Tano Urejevalnik"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Playlist name:"
 msgstr "Ime seznama programov:"
 
 msgctxt "PlaylistEditor|"
 msgid "Number of channels:"
-msgstr ""
+msgstr "Število programov:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Help"
 msgstr "Pomoč"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Toolbar"
 msgstr "Orodna vrstica"
@@ -1134,32 +1118,26 @@ msgstr "Orodna vrstica"
 #~ msgid "Editor"
 #~ msgstr "Urejevalnik"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Number:"
 msgstr "Število:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Name:"
 msgstr "Ime:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Categories:"
 msgstr "Kategorije:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Language:"
 msgstr "Jezik:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "EPG:"
 msgstr "EPG:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Url:"
 msgstr "Naslov:"
@@ -1184,7 +1162,6 @@ msgstr "Naslov:"
 #~ msgid "<b><i>Instructions:</i></b>"
 #~ msgstr "<b><i>Navodila:</i></b>"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Logo:"
 msgstr "Logo:"
@@ -1193,116 +1170,96 @@ msgstr "Logo:"
 #~ msgid "Update Playlist"
 #~ msgstr "Posodobi seznam programov"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "IP Range:"
-msgstr "IP območje:"
+msgstr "Območje IP:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Timeout:"
 msgstr "Čas iskanja:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Scan and update"
 msgstr "Išči in posodobi"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid " ms"
 msgstr "ms"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Port:"
 msgstr "Vrata:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Add channel"
 msgstr "Dodaj program"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Delete channel"
 msgstr "Izbriši program"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Save"
 msgstr "Shrani"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Close"
 msgstr "Zapri"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Move up"
 msgstr "Premakni navzgor"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Move down"
 msgstr "Premakni navzdol"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Print"
 msgstr "Natisni"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Export"
 msgstr "Izvozi"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Open"
 msgstr "Odpri"
 
 msgctxt "PlaylistEditor|"
 msgid "About"
-msgstr ""
+msgstr "O urejevalniku"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "New playlist"
 msgstr "Nov seznam programov"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Tvheadend"
 msgstr "Tvheadend"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "XMLTV IDs"
 msgstr "XMLTV oznake"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Update Information"
 msgstr "Informacije o posodobitvah"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditor|"
 msgid "%1 - Tano Editor"
 msgstr "%1 - Tano Urejevalnik"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Tano"
 msgstr "Tano"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditor|"
 msgid ""
 "Cannot read file %1:\n"
@@ -1311,12 +1268,10 @@ msgstr ""
 "Ne morem prebrati %1:\n"
 "%2."
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Playlist Editor"
 msgstr "Urejevalnik seznama programov"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid ""
 "Do you want to create new playlist?\n"
@@ -1325,7 +1280,7 @@ msgstr ""
 "Ali želite ustvariti nov seznam programov?\n"
 "Neshranjene spremembe ne bodo uveljavljene."
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditor|"
 msgid ""
 "Cannot write file %1:\n"
@@ -1334,12 +1289,10 @@ msgstr ""
 "Ne morem pisati datoteke %1:\n"
 "%2."
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Export to M3U format with Udpxy URLs"
 msgstr "Izvozi v M3U format z Udpxy URLji"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid ""
 "You need to have valid Udpxy settings or the exported playlist will contain "
@@ -1348,7 +1301,6 @@ msgstr ""
 "Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam "
 "programov vseboval običajne URLje."
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid ""
 "Do you want close the editor?\n"
@@ -1357,45 +1309,46 @@ msgstr ""
 "Ali želite zapreti urejevalnik?\n"
 "Neshranjene spremembe ne bodo uveljavljene."
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditor|"
 msgid "New channel from scan %1"
 msgstr "Nov najden program %1"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "A channel with this number already exists!"
 msgstr "Program s to številko že obstaja!"
 
 msgctxt "PlaylistEditor|"
 msgid "Edit channel"
-msgstr ""
+msgstr "Uredi program"
 
 msgctxt "PlaylistEditor|"
 msgid "Radio:"
-msgstr ""
+msgstr "Radio:"
 
 msgctxt "PlaylistEditor|"
 msgid "Scan for new channels"
-msgstr ""
+msgstr "Preišči za nove programe"
 
 msgctxt "PlaylistEditorHelp|"
 msgid "Tano Editor - Help"
-msgstr ""
+msgstr "Tano Urejevalnik - Pomoč"
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h2>Tano Editor - Help</h2>"
-msgstr ""
+msgstr "<h2>Tano Urejevalnik - Pomoč</h2>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
 "<b>You can edit your IP TV playlist, print it or export it to desired "
 "format.</b>"
 msgstr ""
+"<b>Lahko uredite vaš seznam programov, ga natisnete ali izvozite v želen "
+"format.</b>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h3>Editing channels</h3>"
-msgstr ""
+msgstr "<h3>Urejanje programov</h3>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1403,16 +1356,21 @@ msgid ""
 "automatically changed. You can set any channel as radio. Categories can be "
 "sepparated by comma (,)."
 msgstr ""
+"Zaporedna številka programa mora biti potrjena. Vse druge vrednosti se "
+"samodejno spremenijo. Katerikoli program je lahko nastavljen kot radio. "
+"Kategorije se ločijo z vejico (,)."
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
 "Full URL needs to be provided for the channel logo. Pictures will be scaled "
 "to fit the interface."
 msgstr ""
+"Poln URL mora biti nastavljen za logotip programa. Slike bodo pomanjšane, da "
+"bodo ustrezale velikosti vmesnika."
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h3>Formats and export</h3>"
-msgstr ""
+msgstr "<h3>Formati in izvoz</h3>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1420,10 +1378,14 @@ msgid ""
 "Sagem JS files. Beside these formats you can also save/export to M3U with "
 "Udpxy URLs and Tvheadend configuration files."
 msgstr ""
+"Tano Urejevalnik podpira svoj lasten, prilagojen format M3U, poleg tega pa "
+"še običajen M3U, CSV in datoteke Sagem JS. Seznam programov lahko "
+"shranite/izvozite še kot M3U z naslovi Udpxy in kot nastavitvene datoteke za "
+"Tvheadend."
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h3>Scan for channels</h3>"
-msgstr ""
+msgstr "<h3>Iskanje novih programov</h3>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1431,6 +1393,10 @@ msgid ""
 "valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 "
 "IPs in this range. A channel is added if it is detected before timeout."
 msgstr ""
+"Nove programe lahko poiščete z vgrajenim iskalnikom programov. Nastavite "
+"veljavno območje IP (npr. 232.4.1) in vrata (npr. 5000). Tano bo samodejno "
+"preiskal vseh 255 IP-jev v tem območju. Program bo dodan, če bo zaznan v "
+"nastavljenem času."
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1438,6 +1404,9 @@ msgid ""
 "exporting to Sagem JS and CSV. Only the first category or radio category "
 "will be exported to Sagem JS."
 msgstr ""
+"V nastavitvah lahko nastavite svoje ime kategorije za radio (privzeto je "
+"Radio), ki bo vidno pri izvažanju v Sagem JS in CSV. Samo prva kategorija bo "
+"izvožena v Sagem JS."
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
@@ -1980,44 +1949,43 @@ msgstr "Odpri XMLTV"
 
 msgctxt "QObject|"
 msgid "Director"
-msgstr ""
+msgstr "Režiser"
 
 msgctxt "QObject|"
 msgid "Actor"
-msgstr ""
+msgstr "Igralec"
 
 msgctxt "QObject|"
 msgid "Writer"
-msgstr ""
+msgstr "Scenarist"
 
 msgctxt "QObject|"
 msgid "Adapter"
-msgstr ""
+msgstr "Aranžer"
 
 msgctxt "QObject|"
 msgid "Producer"
-msgstr ""
+msgstr "Producent"
 
 msgctxt "QObject|"
 msgid "Composer"
-msgstr ""
+msgstr "Skladatelj"
 
-#, fuzzy
 msgctxt "QObject|"
 msgid "Editor"
-msgstr "Urejevalnik"
+msgstr "Montažer"
 
 msgctxt "QObject|"
 msgid "Presenter"
-msgstr ""
+msgstr "Voditelj"
 
 msgctxt "QObject|"
 msgid "Commentator"
-msgstr ""
+msgstr "Komentator"
 
 msgctxt "QObject|"
 msgid "Guest"
-msgstr ""
+msgstr "Gost"
 
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
@@ -2159,47 +2127,40 @@ msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
 
 msgctxt "SettingsBackend|"
 msgid "Default aspect ratio:"
-msgstr ""
+msgstr "Privzeto razmerje slike:"
 
 msgctxt "SettingsBackend|"
 msgid "Default crop:"
-msgstr ""
+msgstr "Privzeta obrezava slike:"
 
 msgctxt "SettingsBackend|"
 msgid "Default deinterlacing:"
-msgstr ""
+msgstr "Privzeto razpletanje:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Original"
 msgstr "Originalno"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Discard"
 msgstr "Zavrzi"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Blend"
 msgstr "Prelivanje"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Mean"
 msgstr "Sredina"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Bob"
 msgstr "Bob"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Linear"
 msgstr "Linearno"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "X"
@@ -2366,7 +2327,7 @@ msgstr "Spored"
 
 msgctxt "SettingsEdit|"
 msgid "Playlist"
-msgstr ""
+msgstr "Programi"
 
 msgctxt "SettingsGeneral|"
 msgid "Tano"
@@ -2416,12 +2377,10 @@ msgstr "Uporabljate Tano različice:"
 #~ msgid "Default channel list"
 #~ msgstr "Privzet seznam programov"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Defaults"
 msgstr "Privzeto"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Restore defaults"
 msgstr "Obnovi privzeto"
@@ -2431,6 +2390,8 @@ msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
 "changes, before they will take effect.</i>"
 msgstr ""
+"<i>To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo "
+"biti potrjene, preden bodo uveljavljene.</i>"
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
@@ -2452,24 +2413,21 @@ msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Samodejno prični predvajanje zadnjega programa"
 
-#, fuzzy
-msgctxt "SettingsPage|"
-msgid "Use global VLC settings"
-msgstr "Uporabi globalne VLC nastavitve"
+#~ msgctxt "SettingsPage|"
+#~ msgid "Use global VLC settings"
+#~ msgstr "Uporabi globalne VLC nastavitve"
 
 #~ msgctxt "SettingsPage|"
 #~ msgid "Select or change playlist"
 #~ msgstr "Izberi ali zamenjaj seznam programov"
 
-#, fuzzy
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
 msgstr "<b>Privzet seznam programov</b>"
 
-#, fuzzy
-msgctxt "SettingsPage|"
-msgid "<b>Playback</b>"
-msgstr "<b>Predvajanje</b>"
+#~ msgctxt "SettingsPage|"
+#~ msgid "<b>Playback</b>"
+#~ msgstr "<b>Predvajanje</b>"
 
 #~ msgctxt "SettingsPlaylist|"
 #~ msgid "Default channel list"
@@ -2517,33 +2475,35 @@ msgstr "<b>Predvajanje</b>"
 
 msgctxt "SettingsPlaylist|"
 msgid "Default playlist"
-msgstr ""
+msgstr "Privzet seznam programov"
 
 msgctxt "SettingsPlaylist|"
 msgid "Network refresh"
-msgstr ""
+msgstr "Osvežitev s spleta"
 
 msgctxt "SettingsPlaylist|"
 msgid "Refresh playlist on startup"
-msgstr ""
+msgstr "Osveži seznam programov ob zagonu"
 
 msgctxt "SettingsPlaylist|"
 msgid "Playlist URL:"
-msgstr ""
+msgstr "URL seznama:"
 
 msgctxt "SettingsPlaylist|"
 msgid "Radio"
-msgstr ""
+msgstr "Radio"
 
 msgctxt "SettingsPlaylist|"
 msgid "Default radio category:"
-msgstr ""
+msgstr "Privzeta kategorija za radio:"
 
 msgctxt "SettingsPlaylist|"
 msgid ""
 "<i>Updating will not change your playlist order. Any other information will "
 "be updated.</i>"
 msgstr ""
+"<i>Osvežitev ne bo spremenila vašega zaporedja programov. Vse druge "
+"informacije bodo posodobljene.</i>"
 
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
@@ -2677,35 +2637,35 @@ msgstr "Nastavitve XMLTV"
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV file location:"
-msgstr ""
+msgstr "Lokacija datoteke XMLTV:"
 
 msgctxt "SettingsSchedule|"
 msgid "Refresh XMLTV"
-msgstr ""
+msgstr "Osveži XMLTV"
 
 msgctxt "SettingsSchedule|"
 msgid "Refresh XMLTV file on startup"
-msgstr ""
+msgstr "Osveži datoteko XMLTV ob zagonu"
 
 msgctxt "SettingsSchedule|"
 msgid "Download file"
-msgstr ""
+msgstr "Prenesi datoteko"
 
 msgctxt "SettingsSchedule|"
 msgid "Run grabber"
-msgstr ""
+msgstr "Zaženi grabber"
 
 msgctxt "SettingsSchedule|"
 msgid "Network"
-msgstr ""
+msgstr "Omrežje"
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV source url:"
-msgstr ""
+msgstr "XMLTV vir:"
 
 msgctxt "SettingsSchedule|"
 msgid "Grabber"
-msgstr ""
+msgstr "Grabber"
 
 msgctxt "SettingsShortcuts|"
 msgid "Action"
@@ -2917,7 +2877,7 @@ msgstr "Vključen info pult"
 
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
-msgstr ""
+msgstr "Pokaži ikono v sistemski vrstici"
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"
