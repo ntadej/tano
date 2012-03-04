@@ -41,8 +41,8 @@ public:
 
     void enableFloat();
 
+    QWidget *blank();
     QLCDNumber *lcd();
-    QWidget *logo();
     void setBackend(VlcMediaPlayer *player);
     void setChannel(const int &number = 0,
                     const QString &name = 0,

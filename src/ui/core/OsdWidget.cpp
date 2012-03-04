@@ -33,7 +33,7 @@ OsdWidget::OsdWidget(QWidget *parent)
     ui->setupUi(this);
 
     ui->logo->hide();
-    ui->logoWidget->hide();
+    ui->blank->hide();
     ui->teletext->hide();
 
     _slowHideTimer = new QTimer(this);
@@ -73,11 +73,14 @@ void OsdWidget::changeEvent(QEvent *e)
     }
 }
 
+QWidget *OsdWidget::blank()
+{
+    return ui->blank;
+}
+
 void OsdWidget::enableFloat()
 {
     _float = true;
-
-    ui->logoLayout->setMargin(0);
 
     _defaultHeight = height();
     _desktopWidth = QApplication::desktop()->width();
@@ -132,11 +135,6 @@ QLCDNumber *OsdWidget::lcd()
     return ui->number;
 }
 
-QWidget *OsdWidget::logo()
-{
-    return ui->logoWidget;
-}
-
 void OsdWidget::mute(const bool &enabled)
 {
     ui->volume->setMute(enabled);
@@ -162,7 +160,6 @@ void OsdWidget::setChannel(const int &number,
     } else {
         ui->info->clear();
         ui->logo->hide();
-        ui->logoWidget->hide();
     }
 }
 
@@ -177,7 +174,6 @@ void OsdWidget::setLogo(const QString &logo)
     QPixmap pixmap(logo);
     ui->logo->setPixmap(pixmap.scaledToHeight(height(), Qt::SmoothTransformation));
     ui->logo->show();
-    ui->logoWidget->show();
 }
 
 void OsdWidget::setPlayingState(const Vlc::State &state)
