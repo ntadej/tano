@@ -87,12 +87,16 @@ void OsdWidget::enableFloat()
 
 void OsdWidget::floatHide()
 {
-#ifdef Q_WS_X11
+#if defined(Q_WS_X11)
     if (QX11Info::isCompositingManagerRunning())
         _slowHideTimer->start(5);
     else
-#endif
         hide();
+#elif defined(Q_WS_WIN)
+    _slowHideTimer->start(5);
+#else
+    hide();
+#endif
 }
 
 void OsdWidget::floatShow()
@@ -102,12 +106,16 @@ void OsdWidget::floatShow()
     resize(2*_desktopWidth/3, _defaultHeight);
     move(_desktopWidth/6, _desktopHeight-height());
 
-#ifdef Q_WS_X11
+#if defined(Q_WS_X11)
     if (QX11Info::isCompositingManagerRunning())
         _slowShowTimer->start(5);
     else
-#endif
+        show();
+#elif defined(Q_WS_WIN)
+    _slowShowTimer->start(5);
+#else
     show();
+#endif
 }
 
 QLCDNumber *OsdWidget::lcd()
@@ -184,7 +192,7 @@ void OsdWidget::setTeletextPage(const int &page)
 
 void OsdWidget::slowHide()
 {
-    setWindowOpacity(windowOpacity() - 0.02);
+    setWindowOpacity(windowOpacity() - 0.04);
 
     if (windowOpacity() <= 0) {
         _slowHideTimer->stop();
@@ -193,7 +201,7 @@ void OsdWidget::slowHide()
 
 void OsdWidget::slowShow()
 {
-    setWindowOpacity(windowOpacity() + 0.04);
+    setWindowOpacity(windowOpacity() + 0.08);
 
     if (windowOpacity() == 1) {
         _slowShowTimer->stop();

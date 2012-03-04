@@ -6,11 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>521</width>
-    <height>90</height>
+    <width>533</width>
+    <height>100</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <property name="spacing">
+    <number>4</number>
+   </property>
    <item row="2" column="2">
     <widget class="VlcSeekWidget" name="seek" native="true"/>
    </item>
@@ -22,18 +28,21 @@
    </item>
    <item row="1" column="2">
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>4</number>
+     </property>
      <item>
       <widget class="QLCDNumber" name="number">
        <property name="minimumSize">
         <size>
          <width>70</width>
-         <height>48</height>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>70</width>
-         <height>48</height>
+         <height>40</height>
         </size>
        </property>
        <property name="frameShape">
@@ -54,14 +63,14 @@
       <widget class="QPushButton" name="buttonPlay">
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -76,8 +85,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -86,14 +95,14 @@
       <widget class="QPushButton" name="buttonStop">
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -108,8 +117,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -118,14 +127,14 @@
       <widget class="QPushButton" name="buttonBack">
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -140,8 +149,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -150,14 +159,14 @@
       <widget class="QPushButton" name="buttonNext">
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -172,8 +181,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -182,14 +191,14 @@
       <widget class="QPushButton" name="buttonRecordNow">
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -204,8 +213,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -214,14 +223,14 @@
       <widget class="QPushButton" name="buttonTeletext">
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -236,8 +245,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
        <property name="checkable">
@@ -250,13 +259,13 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>48</height>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>48</height>
+         <height>40</height>
         </size>
        </property>
        <property name="minimum">
@@ -271,14 +280,14 @@
       <widget class="QPushButton" name="buttonMute">
        <property name="minimumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -293,8 +302,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
        <property name="checkable">
