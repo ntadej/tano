@@ -516,6 +516,10 @@ msgstr ""
 "Nelze číst ze souboru %1:\n"
 "%2."
 
+msgctxt "MainWindow|"
+msgid "Controls"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Poměr stran"
@@ -2326,10 +2330,9 @@ msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Automatické přehrávání posledního kanálu"
 
-#, fuzzy
-msgctxt "SettingsPage|"
-msgid "Use global VLC settings"
-msgstr "Použít všeobecná nastavení VLC"
+#~ msgctxt "SettingsPage|"
+#~ msgid "Use global VLC settings"
+#~ msgstr "Použít všeobecná nastavení VLC"
 
 #~ msgctxt "SettingsPage|"
 #~ msgid "Select or change playlist"
@@ -2337,10 +2340,6 @@ msgstr "Použít všeobecná nastavení VLC"
 
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "<b>Playback</b>"
 msgstr ""
 
 #~ msgctxt "SettingsPlaylist|"

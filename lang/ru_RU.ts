@@ -520,6 +520,10 @@ This will stop recording in progress.</source>
         <translation type="unfinished">Невозможно прочитать файл %1:
 %2.</translation>
     </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -2094,7 +2098,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Use global VLC settings</source>
-        <translation type="unfinished">Использовать глобальные настройки VLC</translation>
+        <translation type="obsolete">Использовать глобальные настройки VLC</translation>
     </message>
     <message>
         <source>Select or change playlist</source>
@@ -2102,10 +2106,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Playback&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

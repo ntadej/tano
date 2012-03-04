@@ -591,6 +591,10 @@ msgstr ""
 "Ne morem prebrati %1:\n"
 "%2."
 
+msgctxt "MainWindow|"
+msgid "Controls"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Razmerje slike"

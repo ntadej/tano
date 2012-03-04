@@ -506,6 +506,10 @@ msgstr ""
 "Невозможно прочитать файл %1:\n"
 "%2."
 
+msgctxt "MainWindow|"
+msgid "Controls"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Соотношение сторон"
@@ -2124,10 +2128,9 @@ msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Автозапуск последнего канала"
 
-#, fuzzy
-msgctxt "SettingsPage|"
-msgid "Use global VLC settings"
-msgstr "Использовать глобальные настройки VLC"
+#~ msgctxt "SettingsPage|"
+#~ msgid "Use global VLC settings"
+#~ msgstr "Использовать глобальные настройки VLC"
 
 #~ msgctxt "SettingsPage|"
 #~ msgid "Select or change playlist"
@@ -2135,10 +2138,6 @@ msgstr "Использовать глобальные настройки VLC"
 
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "<b>Playback</b>"
 msgstr ""
 
 #~ msgctxt "SettingsPlaylist|"

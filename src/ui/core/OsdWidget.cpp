@@ -33,6 +33,7 @@ OsdWidget::OsdWidget(QWidget *parent)
     ui->setupUi(this);
 
     ui->logo->hide();
+    ui->logoWidget->hide();
     ui->teletext->hide();
 
     _slowHideTimer = new QTimer(this);
@@ -76,13 +77,18 @@ void OsdWidget::enableFloat()
 {
     _float = true;
 
+    ui->logoLayout->setMargin(0);
+
     _defaultHeight = height();
     _desktopWidth = QApplication::desktop()->width();
     _desktopHeight = QApplication::desktop()->height();
 
-    setWindowFlags(Qt::ToolTip | Qt::X11BypassWindowManagerHint);
-    resize(2*_desktopWidth/3, height());
-    move(_desktopWidth/6, _desktopHeight-height());
+    setWindowFlags(Qt::ToolTip);
+    if (_desktopWidth > 1366)
+        resize(2*1366/3, height());
+    else
+        resize(2*_desktopWidth/3, height());
+    move((_desktopWidth-width())/2, _desktopHeight-height());
 }
 
 void OsdWidget::floatHide()
@@ -103,8 +109,11 @@ void OsdWidget::floatShow()
 {
     _slowHideTimer->stop();
 
-    resize(2*_desktopWidth/3, _defaultHeight);
-    move(_desktopWidth/6, _desktopHeight-height());
+    if (_desktopWidth > 1366)
+        resize(2*1366/3, height());
+    else
+        resize(2*_desktopWidth/3, height());
+    move((_desktopWidth-width())/2, _desktopHeight-height());
 
 #if defined(Q_WS_X11)
     if (QX11Info::isCompositingManagerRunning())
@@ -121,6 +130,11 @@ void OsdWidget::floatShow()
 QLCDNumber *OsdWidget::lcd()
 {
     return ui->number;
+}
+
+QWidget *OsdWidget::logo()
+{
+    return ui->logoWidget;
 }
 
 void OsdWidget::mute(const bool &enabled)
@@ -148,6 +162,7 @@ void OsdWidget::setChannel(const int &number,
     } else {
         ui->info->clear();
         ui->logo->hide();
+        ui->logoWidget->hide();
     }
 }
 
@@ -162,6 +177,7 @@ void OsdWidget::setLogo(const QString &logo)
     QPixmap pixmap(logo);
     ui->logo->setPixmap(pixmap.scaledToHeight(height(), Qt::SmoothTransformation));
     ui->logo->show();
+    ui->logoWidget->show();
 }
 
 void OsdWidget::setPlayingState(const Vlc::State &state)
@@ -169,14 +185,14 @@ void OsdWidget::setPlayingState(const Vlc::State &state)
     switch (state)
     {
     case Vlc::Playing:
-        ui->buttonPlay->setIcon(QIcon(":/icons/48x48/media-playback-pause.png"));
+        ui->buttonPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
         ui->buttonPlay->setToolTip(tr("Pause"));
         ui->buttonPlay->setStatusTip(tr("Pause"));
         ui->buttonMute->setEnabled(true);
         ui->buttonTeletext->setEnabled(true);
         break;
     default:
-        ui->buttonPlay->setIcon(QIcon(":/icons/48x48/media-playback-start.png"));
+        ui->buttonPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
         ui->buttonPlay->setToolTip(tr("Play"));
         ui->buttonPlay->setStatusTip(tr("Play"));
         ui->buttonMute->setEnabled(false);

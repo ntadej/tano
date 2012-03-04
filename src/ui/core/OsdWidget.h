@@ -20,6 +20,7 @@
 #define TANO_OSDWIDGET_H_
 
 #include <QtGui/QFrame>
+#include <QtGui/QLabel>
 #include <QtGui/QLCDNumber>
 
 #include <vlc-qt/Enums.h>
@@ -41,6 +42,7 @@ public:
     void enableFloat();
 
     QLCDNumber *lcd();
+    QWidget *logo();
     void setBackend(VlcMediaPlayer *player);
     void setChannel(const int &number = 0,
                     const QString &name = 0,

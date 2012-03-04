@@ -411,6 +411,10 @@ msgid ""
 "%2."
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Controls"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr ""
@@ -1486,14 +1490,6 @@ msgstr ""
 
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "<b>Playback</b>"
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "Use global VLC settings"
 msgstr ""
 
 msgctxt "SettingsPlaylist|"

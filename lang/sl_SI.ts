@@ -598,6 +598,10 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>

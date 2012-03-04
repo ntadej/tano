@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>650</width>
-    <height>650</height>
+    <width>600</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -28,13 +28,13 @@
     <widget class="QListWidget" name="setttingsListWidget">
      <property name="minimumSize">
       <size>
-       <width>85</width>
+       <width>90</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>85</width>
+       <width>90</width>
        <height>16777215</height>
       </size>
      </property>
@@ -302,6 +302,22 @@
       <layout class="QVBoxLayout" name="layoutShortcuts">
        <item>
         <widget class="SettingsShortcuts" name="shortcuts" native="true"/>
+       </item>
+       <item>
+        <spacer name="spacerShortcuts">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Maximum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </widget>

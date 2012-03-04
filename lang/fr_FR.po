@@ -434,6 +434,10 @@ msgstr ""
 "Ne peut pas lire le fichier %1 :\n"
 "%2."
 
+msgctxt "MainWindow|"
+msgid "Controls"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Proportion de l'image"
@@ -1849,20 +1853,18 @@ msgctxt "SettingsPage|"
 msgid "Autoplay last channel"
 msgstr "Lire la dernière chaîne"
 
-#, fuzzy
-msgctxt "SettingsPage|"
-msgid "Use global VLC settings"
-msgstr "Utiliser les préférences globales VLC"
+#~ msgctxt "SettingsPage|"
+#~ msgid "Use global VLC settings"
+#~ msgstr "Utiliser les préférences globales VLC"
 
 #, fuzzy
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
 msgstr "<b>Liste de chaînes par défaut</b>"
 
-#, fuzzy
-msgctxt "SettingsPage|"
-msgid "<b>Playback</b>"
-msgstr "<b>Relecture</b>"
+#~ msgctxt "SettingsPage|"
+#~ msgid "<b>Playback</b>"
+#~ msgstr "<b>Relecture</b>"
 
 msgctxt "SettingsPlaylist|"
 msgid "Default playlist"

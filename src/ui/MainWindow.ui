@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>894</width>
-    <height>509</height>
+    <width>800</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,7 +56,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>894</width>
+     <width>800</width>
      <height>23</height>
     </rect>
    </property>
@@ -214,7 +214,7 @@
           <x>0</x>
           <y>0</y>
           <width>240</width>
-          <height>249</height>
+          <height>260</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -287,18 +287,14 @@
    </widget>
   </widget>
   <widget class="QDockWidget" name="osdWidget">
-   <property name="windowIcon">
-    <iconset resource="../../data/icons.qrc">
-     <normaloff>:/icons/24x24/control.png</normaloff>:/icons/24x24/control.png</iconset>
-   </property>
    <property name="features">
-    <set>QDockWidget::DockWidgetFeatureMask</set>
+    <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetVerticalTitleBar</set>
    </property>
    <property name="allowedAreas">
     <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
    </property>
    <property name="windowTitle">
-    <string notr="true">OSD</string>
+    <string>Controls</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
@@ -310,7 +306,11 @@
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
-    <layout class="QVBoxLayout" name="osdLayout"/>
+    <layout class="QVBoxLayout" name="osdLayout">
+     <property name="margin">
+      <number>0</number>
+     </property>
+    </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

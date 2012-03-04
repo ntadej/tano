@@ -432,6 +432,10 @@ This will stop recording in progress.</source>
         <translation>Неможливо прочитати файл %1:
 %2.</translation>
     </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1790,7 +1794,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Use global VLC settings</source>
-        <translation type="unfinished">Використати загальні налаштування VLC</translation>
+        <translation type="obsolete">Використати загальні налаштування VLC</translation>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
@@ -1798,7 +1802,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>&lt;b&gt;Playback&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Відтворення&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Відтворення&lt;/b&gt;</translation>
     </message>
 </context>
 <context>

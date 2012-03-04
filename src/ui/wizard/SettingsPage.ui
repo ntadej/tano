@@ -60,27 +60,6 @@
     <widget class="BrowseWidget" name="playlist" native="true"/>
    </item>
    <item>
-    <widget class="QLabel" name="labelBreak2">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="labelPlayback">
-     <property name="text">
-      <string>&lt;b&gt;Playback&lt;/b&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QCheckBox" name="vlcCheckBox">
-     <property name="text">
-      <string>Use global VLC settings</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>

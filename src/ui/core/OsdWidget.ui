@@ -6,27 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>533</width>
-    <height>100</height>
+    <width>874</width>
+    <height>70</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <property name="horizontalSpacing">
+    <number>4</number>
+   </property>
+   <property name="verticalSpacing">
+    <number>0</number>
+   </property>
    <property name="margin">
     <number>4</number>
    </property>
-   <property name="spacing">
-    <number>4</number>
-   </property>
-   <item row="2" column="2">
+   <item row="2" column="3">
     <widget class="VlcSeekWidget" name="seek" native="true"/>
    </item>
-   <item row="3" column="2">
+   <item row="3" column="3">
     <widget class="InfoBarWidget" name="info" native="true"/>
    </item>
-   <item row="1" column="0" rowspan="3">
-    <widget class="QLabel" name="logo"/>
-   </item>
-   <item row="1" column="2">
+   <item row="1" column="3">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <property name="spacing">
       <number>4</number>
@@ -81,12 +81,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-playback-start.png</normaloff>:/icons/48x48/media-playback-start.png</iconset>
+         <normaloff>:/icons/24x24/media-playback-start.png</normaloff>:/icons/24x24/media-playback-start.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -113,12 +113,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-playback-stop.png</normaloff>:/icons/48x48/media-playback-stop.png</iconset>
+         <normaloff>:/icons/24x24/media-playback-stop.png</normaloff>:/icons/24x24/media-playback-stop.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -145,12 +145,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-skip-backward.png</normaloff>:/icons/48x48/media-skip-backward.png</iconset>
+         <normaloff>:/icons/24x24/media-skip-backward.png</normaloff>:/icons/24x24/media-skip-backward.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -177,12 +177,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-skip-forward.png</normaloff>:/icons/48x48/media-skip-forward.png</iconset>
+         <normaloff>:/icons/24x24/media-skip-forward.png</normaloff>:/icons/24x24/media-skip-forward.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -209,12 +209,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/media-record.png</normaloff>:/icons/48x48/media-record.png</iconset>
+         <normaloff>:/icons/24x24/media-record.png</normaloff>:/icons/24x24/media-record.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -241,12 +241,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/teletext.png</normaloff>:/icons/48x48/teletext.png</iconset>
+         <normaloff>:/icons/24x24/teletext.png</normaloff>:/icons/24x24/teletext.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
        <property name="checkable">
@@ -277,6 +277,16 @@
       </widget>
      </item>
      <item>
+      <widget class="VlcVolumeSlider" name="volume" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>400</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="buttonMute">
        <property name="minimumSize">
         <size>
@@ -298,12 +308,12 @@
        </property>
        <property name="icon">
         <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/volume-muted.png</normaloff>:/icons/48x48/volume-muted.png</iconset>
+         <normaloff>:/icons/24x24/volume-muted.png</normaloff>:/icons/24x24/volume-muted.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
        <property name="checkable">
@@ -311,10 +321,28 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="VlcVolumeSlider" name="volume" native="true"/>
-     </item>
     </layout>
+   </item>
+   <item row="1" column="0" rowspan="3">
+    <widget class="QWidget" name="logoWidget" native="true">
+     <layout class="QGridLayout" name="logoLayout">
+      <property name="leftMargin">
+       <number>5</number>
+      </property>
+      <property name="topMargin">
+       <number>4</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="logo"/>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

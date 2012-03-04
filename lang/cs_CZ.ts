@@ -527,6 +527,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <translation type="unfinished">Nelze číst ze souboru %1:
 %2.</translation>
     </message>
+    <message>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -2271,7 +2275,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Use global VLC settings</source>
-        <translation type="unfinished">Použít všeobecná nastavení VLC</translation>
+        <translation type="obsolete">Použít všeobecná nastavení VLC</translation>
     </message>
     <message>
         <source>Select or change playlist</source>
@@ -2279,10 +2283,6 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Playback&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
