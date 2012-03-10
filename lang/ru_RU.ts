@@ -2261,6 +2261,14 @@ You will lose any unsaved changes.</source>
         <source>Grabber</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsShortcuts</name>

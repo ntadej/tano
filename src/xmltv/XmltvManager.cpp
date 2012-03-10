@@ -16,13 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
 #include <QtCore/QtConcurrentRun>
 
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"
 #include "container/xmltv/XmltvProgramme.h"
 #include "core/Common.h"
+#include "core/GetFile.h"
+#include "core/Settings.h"
 #include "xmltv/XmltvCommon.h"
 #include "xmltv/XmltvChannelsModel.h"
 #include "xmltv/XmltvHandler.h"
@@ -33,6 +34,7 @@ XmltvManager::XmltvManager(QObject *parent)
     : QObject(parent),
       _loading(true),
       _currentXmltvId(""),
+      _downloader(0),
       _xmltv(0)
 {
     _handler = new XmltvHandler();
@@ -46,6 +48,8 @@ XmltvManager::XmltvManager(QObject *parent)
 
 XmltvManager::~XmltvManager()
 {
+    if (_downloader)
+        delete _downloader;
     delete _handler;
     delete _timer;
     delete _watcher;
@@ -53,11 +57,11 @@ XmltvManager::~XmltvManager()
 
 void XmltvManager::current()
 {
-    if(_xmltv->channels()->find(_currentXmltvId)->programme()->rowCount() < 2)
+    if (_xmltv->channels()->find(_currentXmltvId)->programme()->rowCount() < 2)
         return;
 
-    for(int i = 1; i < _xmltv->channels()->find(_currentXmltvId)->programme()->rowCount(); i++) {
-        if(QDateTime::currentDateTime() < _xmltv->channels()->find(_currentXmltvId)->programme()->row(i)->start()) {
+    for (int i = 1; i < _xmltv->channels()->find(_currentXmltvId)->programme()->rowCount(); i++) {
+        if (QDateTime::currentDateTime() < _xmltv->channels()->find(_currentXmltvId)->programme()->row(i)->start()) {
             emit current(processCurrentString(_xmltv->channels()->find(_currentXmltvId)->programme()->row(i-1)),
                          processCurrentString(_xmltv->channels()->find(_currentXmltvId)->programme()->row(i)));
             break;
@@ -67,12 +71,24 @@ void XmltvManager::current()
     _timer->start(60000);
 }
 
-void XmltvManager::loadXmltv(const QString &location)
+void XmltvManager::loadXmltv()
 {
-    if(location.isEmpty())
-        return;
+    Settings *settings = new Settings(this);
+    _location = settings->xmltvLocation();
 
-    _location = location;
+    if (settings->xmltvUpdate()) {
+        updateWeb(settings->xmltvLocation(), settings->xmltvUpdateUrl());
+    } else {
+        loadXmltvInit();
+    }
+
+    delete settings;
+}
+
+void XmltvManager::loadXmltvInit()
+{
+    if (_downloader)
+        disconnect(_downloader, SIGNAL(file(QString)), this, SLOT(loadXmltvInit()));
 
     QFuture<bool> future = QtConcurrent::run(loadXmltvStart, _handler, _location);
     _watcher->setFuture(future);
@@ -86,7 +102,7 @@ bool loadXmltvStart(XmltvHandler *handler,
     reader.setErrorHandler(handler);
 
     QFile file(Tano::locateResource(location));
-    if(!file.exists())
+    if (!file.exists())
         return false;
     if (!file.open(QFile::ReadOnly | QFile::Text))
         return false;
@@ -98,45 +114,13 @@ bool loadXmltvStart(XmltvHandler *handler,
 
 void XmltvManager::loadXmltvFinish()
 {
-    if(!_watcher->result())
+    if (!_watcher->result())
         return;
 
     _xmltv = _handler->list();
     _loading = false;
 
     emit channels(_xmltv->channels());
-
-    // Debug
-    qDebug() << _handler->list()->sourceInfoName() << _handler->list()->sourceInfoUrl();
-    for(int i = 0; i < 2; i++) {
-        qDebug() << _handler->list()->channels()->row(i)->id()
-                 << _handler->list()->channels()->row(i)->displayName()
-                 << _handler->list()->channels()->row(i)->icon()
-                 << _handler->list()->channels()->row(i)->url();
-        for(int k = 0; k < 5; k++) {
-            qDebug() << _handler->list()->channels()->row(i)->programme()->row(k)->channel()
-                     << _handler->list()->channels()->row(i)->programme()->row(k)->start()
-                     << _handler->list()->channels()->row(i)->programme()->row(k)->stop();
-        }
-    }
-
-    QFile file("xmltv-cat");
-    QTextStream out;
-    file.open(QFile::WriteOnly | QFile::Text);
-
-    out.setDevice(&file);
-    out.setCodec("UTF-8");
-    QStringList cat;
-    for (int i = 0; i < _handler->list()->channels()->rowCount(); i++) {
-        for (int k = 0; k < _handler->list()->channels()->row(i)->programme()->rowCount(); k++) {
-            if (!cat.contains(_handler->list()->channels()->row(i)->programme()->row(k)->categories().join(" / "))) {
-                cat << _handler->list()->channels()->row(i)->programme()->row(k)->categories().join(" / ");
-                out << _handler->list()->channels()->row(i)->programme()->row(k)->categories().join(" / ") << "\n";
-            }
-        }
-    }
-    qDebug() << "Cat:" << cat.count();
-    file.close();
 }
 
 QString XmltvManager::processCurrentString(XmltvProgramme *programme) const
@@ -149,25 +133,25 @@ QString XmltvManager::processCurrentString(XmltvProgramme *programme) const
 void XmltvManager::request(const QString &id,
                            const Tano::Id &identifier)
 {
-    if(id.isEmpty())
+    if (id.isEmpty())
         return;
 
-    if(!_xmltv)
+    if (!_xmltv)
         return;
 
     XmltvProgrammeModel *currentProgramme;
-    if(_xmltv->channels()->find(id))
+    if (_xmltv->channels()->find(id))
         currentProgramme = _xmltv->channels()->find(id)->programme();
     else
         return;
 
-    if(!currentProgramme->rowCount())
+    if (!currentProgramme->rowCount())
         return;
 
     emit schedule(currentProgramme, identifier);
 
     _currentIdentifier = identifier;
-    if(_currentIdentifier == Tano::Main) {
+    if (_currentIdentifier == Tano::Main) {
         _currentXmltvId = id;
         current();
     }
@@ -175,8 +159,8 @@ void XmltvManager::request(const QString &id,
 
 void XmltvManager::requestProgramme(const QString &id)
 {
-    for(int i = 1; i < _xmltv->channels()->find(_currentXmltvId)->programme()->rowCount(); i++) {
-        if(_xmltv->channels()->find(_currentXmltvId)->programme()->row(i)->start() == QDateTime::fromString(id, Tano::Xmltv::dateFormat())) {
+    for (int i = 1; i < _xmltv->channels()->find(_currentXmltvId)->programme()->rowCount(); i++) {
+        if (_xmltv->channels()->find(_currentXmltvId)->programme()->row(i)->start() == QDateTime::fromString(id, Tano::Xmltv::dateFormat())) {
             emit programme(_xmltv->channels()->find(_currentXmltvId)->programme()->row(i));
             break;
         }
@@ -185,14 +169,14 @@ void XmltvManager::requestProgramme(const QString &id)
 
 void XmltvManager::requestProgrammeNext(XmltvProgramme *current)
 {
-    if(_xmltv->channels()->find(current->channel())->programme()->indexFromItem(current).row() != _xmltv->channels()->find(current->channel())->programme()->rowCount()-1) {
+    if (_xmltv->channels()->find(current->channel())->programme()->indexFromItem(current).row() != _xmltv->channels()->find(current->channel())->programme()->rowCount()-1) {
         emit programme(_xmltv->channels()->find(current->channel())->programme()->row(_xmltv->channels()->find(current->channel())->programme()->indexFromItem(current).row()+1));
     }
 }
 
 void XmltvManager::requestProgrammePrevious(XmltvProgramme *current)
 {
-    if(_xmltv->channels()->find(current->channel())->programme()->indexFromItem(current).row() != 0) {
+    if (_xmltv->channels()->find(current->channel())->programme()->indexFromItem(current).row() != 0) {
         emit programme(_xmltv->channels()->find(current->channel())->programme()->row(_xmltv->channels()->find(current->channel())->programme()->indexFromItem(current).row()-1));
     }
 }
@@ -200,4 +184,16 @@ void XmltvManager::requestProgrammePrevious(XmltvProgramme *current)
 void XmltvManager::stop()
 {
     _timer->stop();
+}
+
+void XmltvManager::updateWeb(const QString &location,
+                             const QString &url)
+{
+    QFile file(location);
+    if (file.exists())
+        file.remove();
+
+    _downloader = new GetFile(this);
+    connect(_downloader, SIGNAL(file(QString)), this, SLOT(loadXmltvInit()));
+    _downloader->getFile(url, location);
 }

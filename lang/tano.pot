@@ -1564,6 +1564,14 @@ msgctxt "SettingsSchedule|"
 msgid "Grabber"
 msgstr ""
 
+msgctxt "SettingsSchedule|"
+msgid "<i>All XMLTV settings require restart.</i>"
+msgstr ""
+
+msgctxt "SettingsSchedule|"
+msgid "<i>Grabber running is not available yet.</i>"
+msgstr ""
+
 msgctxt "SettingsShortcuts|"
 msgid "Action"
 msgstr ""

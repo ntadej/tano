@@ -29,6 +29,8 @@
 extern bool loadXmltvStart(XmltvHandler *handler,
                            const QString &location);
 
+class GetFile;
+
 class XmltvChannel;
 class XmltvChannelsModel;
 class XmltvList;
@@ -39,10 +41,10 @@ class XmltvManager : public QObject
 {
 Q_OBJECT
 public:
-    XmltvManager(QObject *parent = 0);
+    explicit XmltvManager(QObject *parent = 0);
     ~XmltvManager();
 
-    void loadXmltv(const QString &location);
+    void loadXmltv();
 
 public slots:
     void request(const QString &id,
@@ -62,10 +64,13 @@ signals:
 
 private slots:
     void current();
+    void loadXmltvInit();
     void loadXmltvFinish();
 
 private:
     QString processCurrentString(XmltvProgramme *programme) const;
+    void updateWeb(const QString &location,
+                   const QString &url);
 
     QString _location;
 
@@ -74,6 +79,7 @@ private:
     Tano::Id _currentIdentifier;
     QString _currentXmltvId;
 
+    GetFile *_downloader;
     XmltvHandler *_handler;
     QTimer *_timer;
     QFutureWatcher<bool> *_watcher;

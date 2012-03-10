@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>366</width>
-    <height>338</height>
+    <height>380</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -29,6 +29,13 @@
       </item>
       <item>
        <widget class="BrowseWidget" name="location" native="true"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -54,6 +61,9 @@
         <property name="text">
          <string>Download file</string>
         </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
        </widget>
       </item>
       <item row="1" column="1">
@@ -63,6 +73,16 @@
         </property>
         <property name="text">
          <string>Run grabber</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QLabel" name="labelRefresh">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</string>
         </property>
        </widget>
       </item>
@@ -132,28 +152,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>79</x>
-     <y>125</y>
+     <x>86</x>
+     <y>147</y>
     </hint>
     <hint type="destinationlabel">
-     <x>81</x>
-     <y>139</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkRefresh</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>radioGrabber</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>208</x>
-     <y>119</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>271</x>
-     <y>151</y>
+     <x>88</x>
+     <y>172</y>
     </hint>
    </hints>
   </connection>
@@ -164,28 +168,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>160</x>
-     <y>119</y>
+     <x>240</x>
+     <y>145</y>
     </hint>
     <hint type="destinationlabel">
-     <x>142</x>
-     <y>194</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkRefresh</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>groupGrabber</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>202</x>
-     <y>121</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>249</x>
-     <y>267</y>
+     <x>246</x>
+     <y>223</y>
     </hint>
    </hints>
   </connection>

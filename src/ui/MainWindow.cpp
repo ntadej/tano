@@ -205,6 +205,8 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
+    _xmltv->loadXmltv();
+
     _mediaInstance = new VlcInstance(Tano::vlcQtArgs(), this);
     _mediaItem = 0;
     _mediaPlayer = new VlcMediaPlayer(_mediaInstance);
@@ -220,7 +222,6 @@ void MainWindow::createBackend()
 void MainWindow::createSettings()
 {
     Settings *settings = new Settings(this);
-    _xmltv->loadXmltv(settings->xmltvLocation());
     _hideToTray = settings->trayEnabled() ? settings->hideToTray() : false;
 
     //GUI Settings

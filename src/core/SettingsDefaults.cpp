@@ -62,7 +62,7 @@ const int Settings::DEFAULT_VOLUME = 50;
 // Schedule
 const QString Settings::DEFAULT_XMLTV_LOCATION = Tano::settingsPath() + "xmltv.xml";
 const bool Settings::DEFAULT_XMLTV_UPDATE = false;
-const bool Settings::DEFAULT_XMLTV_UPDATE_GRABBER = true;
+const bool Settings::DEFAULT_XMLTV_UPDATE_GRABBER = false;
 const QString Settings::DEFAULT_XMLTV_UPDATE_URL = "";
 const QString Settings::DEFAULT_XMLTV_GRABBER = "";
 const QString Settings::DEFAULT_XMLTV_GRABBER_PATH = "";
