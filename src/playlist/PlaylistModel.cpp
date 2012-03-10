@@ -169,7 +169,7 @@ Channel *PlaylistModel::number(const int &number)
         }
     }
 
-    return new Channel("error");
+    return 0;
 }
 
 void PlaylistModel::open(const QString &file,

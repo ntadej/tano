@@ -18,6 +18,9 @@
 
 #include "container/xmltv/XmltvCrewMember.h"
 
+XmltvCrewMember::XmltvCrewMember(QObject *parent)
+    : ListItem(parent) { }
+
 XmltvCrewMember::XmltvCrewMember(const QString &name,
                                  const Tano::Xmltv::CrewMemberType &type,
                                  QObject *parent)

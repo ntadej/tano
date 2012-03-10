@@ -36,9 +36,10 @@ public:
         TypeRole
     };
 
-    XmltvCrewMember(const QString &name = 0,
-                    const Tano::Xmltv::CrewMemberType &type = Tano::Xmltv::Actor,
-                    QObject *parent = 0);
+    explicit XmltvCrewMember(QObject *parent = 0);
+    explicit XmltvCrewMember(const QString &name,
+                             const Tano::Xmltv::CrewMemberType &type,
+                             QObject *parent = 0);
     ~XmltvCrewMember();
 
     inline QString id() const { return _name; }

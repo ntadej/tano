@@ -41,9 +41,10 @@ public:
         LogoRole
     };
 
-    Channel(const QString &name = 0,
-            const int &number = 0,
-            QObject *parent = 0);
+    explicit Channel(QObject *parent = 0);
+    explicit Channel(const QString &name,
+                     const int &number,
+                     QObject *parent = 0);
     ~Channel();
 
     inline QString id() const { return _url; }

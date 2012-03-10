@@ -20,6 +20,9 @@
 #include "container/xmltv/XmltvProgramme.h"
 #include "xmltv/XmltvProgrammeModel.h"
 
+XmltvChannel::XmltvChannel(QObject *parent)
+    : ListItem(parent) { }
+
 XmltvChannel::XmltvChannel(const QString &id,
                            QObject *parent)
     : ListItem(parent),

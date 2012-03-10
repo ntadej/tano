@@ -52,8 +52,9 @@ public:
         IconSizeRole
     };
 
-    XmltvProgramme(const QString &channel = 0,
-                   QObject *parent = 0);
+    explicit XmltvProgramme(QObject *parent = 0);
+    explicit XmltvProgramme(const QString &channel,
+                            QObject *parent = 0);
     ~XmltvProgramme();
 
     inline QString id() const { return _start.toString(); }

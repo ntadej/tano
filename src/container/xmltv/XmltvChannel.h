@@ -40,8 +40,9 @@ public:
         UrlRole
     };
 
-    XmltvChannel(const QString &id = 0,
-                 QObject *parent = 0);
+    explicit XmltvChannel(QObject *parent = 0);
+    explicit XmltvChannel(const QString &id,
+                          QObject *parent = 0);
     ~XmltvChannel();
 
     inline QString id() const { return _id; }

@@ -18,6 +18,9 @@
 
 #include "container/core/Channel.h"
 
+Channel::Channel(QObject *parent)
+    : ListItem(parent) { }
+
 Channel::Channel(const QString &name,
                  const int &number,
                  QObject *parent)
