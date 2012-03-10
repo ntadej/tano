@@ -1506,6 +1506,26 @@ You will lose any unsaved changes.</source>
         <source>Guest</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -2146,11 +2166,11 @@ You will lose any unsaved changes.</source>
     <name>Timer</name>
     <message>
         <source>Active</source>
-        <translation>Активний</translation>
+        <translation type="obsolete">Активний</translation>
     </message>
     <message>
         <source>Disabled or expired</source>
-        <translation>Вимкнений або минув</translation>
+        <translation type="obsolete">Вимкнений або минув</translation>
     </message>
 </context>
 <context>

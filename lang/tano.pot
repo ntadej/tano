@@ -1226,6 +1226,26 @@ msgctxt "QObject|"
 msgid "Guest"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Enabled"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Recording"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Finished"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Expired"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Weekdays"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr ""
@@ -1770,14 +1790,6 @@ msgstr ""
 
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
-msgstr ""
-
-msgctxt "Timer|"
-msgid "Active"
-msgstr ""
-
-msgctxt "Timer|"
-msgid "Disabled or expired"
 msgstr ""
 
 msgctxt "TimersDisplayWidget|"

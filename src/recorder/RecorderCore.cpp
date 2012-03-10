@@ -105,7 +105,7 @@ void RecorderCore::record(Timer *t)
     _currentEndTime = t->endTime().time().toString("hh:mm");
     _currentName = t->name() + QString(" (%1)").arg(t->channel());
     _currentUrl = t->url();
-    t->setRecording(true);
+    t->setState(Tano::Recording);
 
     _time = 0;
     _timer->start(500);

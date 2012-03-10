@@ -16,7 +16,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Timer.h"
+#include "container/core/Timer.h"
+
+Timer::Timer(QObject *parent)
+    : ListItem(parent) { }
 
 Timer::Timer(const QString &name,
              const QString &channel,
@@ -33,8 +36,8 @@ Timer::Timer(const QString &name,
 {
     _startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
     _endTime = _startTime.addSecs(3600);
-    _disabled = false;
-    _recording = false;
+    _type = Tano::Once;
+    _state = Tano::Enabled;
 }
 
 Timer::~Timer() { }
@@ -51,9 +54,8 @@ QHash<int, QByteArray> Timer::roleNames() const
     names[NumRole] = "num";
     names[StartTimeRole] = "start";
     names[EndTimeRole] = "end";
-    names[DisabledRole] = "disabled";
     names[TypeRole] = "type";
-    names[RecordingRole] = "recording";
+    names[StateRole] = "state";
     return names;
 }
 
@@ -79,12 +81,10 @@ QVariant Timer::data(int role) const
         return startTime();
     case EndTimeRole:
         return endTime();
-    case DisabledRole:
-        return isDisabled();
     case TypeRole:
         return type();
-    case RecordingRole:
-        return isRecording();
+    case StateRole:
+        return state();
     default:
         return QVariant();
     }
@@ -92,7 +92,7 @@ QVariant Timer::data(int role) const
 
 QString Timer::display() const
 {
-    return QString("%1 (%2)").arg(name(), (isDisabled() ? tr("Disabled or expired") : tr("Active")));
+    return QString("%1 (%2)").arg(name(), Tano::timerStates()[state()]);
 }
 
 QIcon Timer::displayIcon() const
@@ -156,14 +156,6 @@ void Timer::setEndTime(const QDateTime &endTime)
     }
 }
 
-void Timer::setDisabled(const bool &disabled)
-{
-    if (_disabled != disabled) {
-        _disabled = disabled;
-        emit dataChanged();
-    }
-}
-
 void Timer::setType(const Tano::TimerType &type)
 {
     if (_type != type) {
@@ -172,10 +164,10 @@ void Timer::setType(const Tano::TimerType &type)
     }
 }
 
-void Timer::setRecording(const bool &recording)
+void Timer::setState(const Tano::TimerState &state)
 {
-    if (_recording != recording) {
-        _recording = recording;
+    if (_state != state) {
+        _state = state;
         emit dataChanged();
     }
 }

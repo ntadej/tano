@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -108,7 +108,7 @@ void TimersEdit::createConnections()
 
 void TimersEdit::exit()
 {
-    if(_closeEnabled) {
+    if (_closeEnabled) {
         hide();
         return;
     }
@@ -139,10 +139,10 @@ void TimersEdit::read()
     QString fileName = _path + "timers.tano.xml";
 
     QFile file(fileName);
-    if(!file.exists())
+    if (!file.exists())
         return;
 
-    if(!file.open(QFile::ReadOnly | QFile::Text)) {
+    if (!file.open(QFile::ReadOnly | QFile::Text)) {
         QMessageBox::warning(this, tr("Tano"),
                             tr("Cannot read file %1:\n%2.")
                             .arg(fileName)
@@ -189,13 +189,13 @@ void TimersEdit::deleteItem()
 
 void TimersEdit::addItem()
 {
-    if(!_channel || ui->editNameNew->text().isEmpty()) {
+    if (!_channel || ui->editNameNew->text().isEmpty()) {
         QMessageBox::warning(this, tr("Tano"),
                             tr("Please enter a name and select a channel from the list."));
         return;
     } else {
-        for(int i = 0; i < _timersModel->rowCount(); i++) {
-            if(_timersModel->row(i)->name() == ui->editNameNew->text()) {
+        for (int i = 0; i < _timersModel->rowCount(); i++) {
+            if (_timersModel->row(i)->name() == ui->editNameNew->text()) {
                 QMessageBox::warning(this, tr("Tano"),
                                     tr("Timer with this name already exists. Please select another name."));
                 return;
@@ -217,14 +217,14 @@ void TimersEdit::playlist(Channel *channel)
 
 void TimersEdit::edit(Timer *item)
 {
-    if(item == 0)
+    if (item == 0)
         return;
 
     ui->dockWidgetContents->setDisabled(false);
 
     ui->timersWidget->setCurrentTimer(item);
 
-    ui->checkBoxDisabled->setChecked(ui->timersWidget->currentTimer()->isDisabled());
+    ui->checkBoxDisabled->setChecked(ui->timersWidget->currentTimer()->state() == Tano::Disabled);
     ui->editName->setText(ui->timersWidget->currentTimer()->name());
     ui->editChannel->setText(ui->timersWidget->currentTimer()->channel());
     ui->editNum->display(ui->timersWidget->currentTimer()->num());
@@ -238,8 +238,8 @@ void TimersEdit::edit(Timer *item)
 
 void TimersEdit::editName(const QString &name)
 {
-    for(int i = 0; i < _timersModel->rowCount(); i++)
-        if(_timersModel->row(i)->name() == name && _timersModel->row(i) != ui->timersWidget->currentTimer()) {
+    for (int i = 0; i < _timersModel->rowCount(); i++)
+        if (_timersModel->row(i)->name() == name && _timersModel->row(i) != ui->timersWidget->currentTimer()) {
             QMessageBox::warning(this, tr("Tano"),
                                 tr("Timer with this name already exists. Please select another name."));
             ui->editName->setText(ui->timersWidget->currentTimer()->name());
@@ -282,12 +282,11 @@ void TimersEdit::editEndTime(const QTime &time)
 
 void TimersEdit::validate()
 {
-    if((QDateTime(ui->editDate->date(), ui->editEndTime->time()) < QDateTime::currentDateTime()) ||
-       ui->checkBoxDisabled->isChecked())
-    {
-        ui->timersWidget->currentTimer()->setDisabled(true);
-        ui->checkBoxDisabled->setChecked(true);
+    if (QDateTime(ui->editDate->date(), ui->editEndTime->time()) < QDateTime::currentDateTime()) {
+        ui->timersWidget->currentTimer()->setState(Tano::Expired);
+    } else if (ui->checkBoxDisabled->isChecked()) {
+        ui->timersWidget->currentTimer()->setState(Tano::Disabled);
     } else {
-        ui->timersWidget->currentTimer()->setDisabled(false);
+        ui->timersWidget->currentTimer()->setState(Tano::Enabled);
     }
 }

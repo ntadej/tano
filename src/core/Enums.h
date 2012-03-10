@@ -19,7 +19,7 @@
 #ifndef TANO_ENUMS_H_
 #define TANO_ENUMS_H_
 
-#include <QtCore/QString>
+#include <QtCore/QStringList>
 
 namespace Tano
 {
@@ -57,15 +57,27 @@ namespace Tano
         Radio
     };
 
+    // Timer states
+    enum TimerState
+    {
+        Enabled,
+        Disabled,
+        Recording,
+        Finished,
+        Expired
+    };
+
     // Timer types
     enum TimerType
     {
         Once,
         Daily,
-        Weekly
+        Weekly,
+        Weekdays
     };
 
-    QString timerTypeString(const TimerType &type);
+    QStringList timerStates();
+    QStringList timerTypes();
 }
 
 #endif // TANO_ENUMS_H_

@@ -1964,6 +1964,26 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Guest</source>
         <translation>Gost</translation>
     </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -2923,11 +2943,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>Timer</name>
     <message>
         <source>Active</source>
-        <translation>Aktiven</translation>
+        <translation type="obsolete">Aktiven</translation>
     </message>
     <message>
         <source>Disabled or expired</source>
-        <translation>Izključen ali pretečen</translation>
+        <translation type="obsolete">Izključen ali pretečen</translation>
     </message>
 </context>
 <context>

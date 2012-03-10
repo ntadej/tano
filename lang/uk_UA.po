@@ -1578,6 +1578,26 @@ msgctxt "QObject|"
 msgid "Guest"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Enabled"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Recording"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Finished"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Expired"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Weekdays"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Спорожнити скорочення"
@@ -2191,13 +2211,13 @@ msgstr ""
 #~ msgid "Teletext Transparency"
 #~ msgstr "Прозорість телетексту"
 
-msgctxt "Timer|"
-msgid "Active"
-msgstr "Активний"
+#~ msgctxt "Timer|"
+#~ msgid "Active"
+#~ msgstr "Активний"
 
-msgctxt "Timer|"
-msgid "Disabled or expired"
-msgstr "Вимкнений або минув"
+#~ msgctxt "Timer|"
+#~ msgid "Disabled or expired"
+#~ msgstr "Вимкнений або минув"
 
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"

@@ -20,17 +20,25 @@
 
 #include "Enums.h"
 
-QString Tano::timerTypeString(const TimerType &type)
+QStringList Tano::timerStates()
 {
-    switch (type)
-    {
-    case Tano::Once:
-        return QObject::tr("Once");
-    case Tano::Daily:
-        return QObject::tr("Daily");
-    case Tano::Weekly:
-        return QObject::tr("Weekly");
-    default:
-        return QString("error");
-    }
+    QStringList list;
+    list << QObject::tr("Enabled")
+         << QObject::tr("Disabled")
+         << QObject::tr("Recording")
+         << QObject::tr("Finished")
+         << QObject::tr("Expired");
+
+    return list;
+}
+
+QStringList Tano::timerTypes()
+{
+    QStringList list;
+    list << QObject::tr("Once")
+         << QObject::tr("Daily")
+         << QObject::tr("Weekly")
+         << QObject::tr("Weekdays");
+
+    return list;
 }

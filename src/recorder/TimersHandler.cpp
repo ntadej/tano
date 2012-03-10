@@ -46,7 +46,7 @@ bool TimersHandler::startElement(const QString & /* namespaceURI */,
     if(qName == "tano") {
         _metTanoTag = true;
     } else if(qName == "timer") {
-        _timer = new Timer(QObject::tr("Unknown title"));
+        _timer = new Timer();
         _list << _timer;
     }
 
@@ -78,10 +78,6 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
         if (_timer) {
             _timer->setUrl(_currentText);
         }
-    } else if (qName == "type") {
-        if (_timer) {
-            _timer->setType(Tano::TimerType(_currentText.toInt()));
-        }
     } else if (qName == "starttime") {
         if (_timer) {
             _timer->setStartTime(QDateTime::fromString(_currentText, Qt::ISODate));
@@ -90,13 +86,13 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
         if (_timer) {
             _timer->setEndTime(QDateTime::fromString(_currentText, Qt::ISODate));
         }
-    } else if (qName == "disabled") {
+    } else if (qName == "type") {
         if (_timer) {
-            if(_currentText == "true") {
-                _timer->setDisabled(true);
-            } else {
-                _timer->setDisabled(false);
-            }
+            _timer->setType(Tano::TimerType(_currentText.toInt()));
+        }
+    } else if (qName == "state") {
+        if (_timer) {
+            _timer->setState(Tano::TimerState(_currentText.toInt()));
         }
     }
 

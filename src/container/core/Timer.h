@@ -39,17 +39,17 @@ public:
         NumRole,
         StartTimeRole,
         EndTimeRole,
-        DisabledRole,
         TypeRole,
-        RecordingRole
+        StateRole
     };
 
-    Timer(const QString &name = 0,
-          const QString &channel = 0,
-          const QString &playlist = 0,
-          const int &num = 0,
-          const QString &url = 0,
-          QObject *parent = 0);
+    explicit Timer(QObject *parent = 0);
+    explicit Timer(const QString &name,
+                   const QString &channel,
+                   const QString &playlist,
+                   const int &num,
+                   const QString &url,
+                   QObject *parent = 0);
     ~Timer();
 
 
@@ -73,12 +73,10 @@ public:
     void setStartTime(const QDateTime &startTime);
     inline QDateTime endTime() const { return _endTime; }
     void setEndTime(const QDateTime &endTime);
-    inline bool isDisabled() const { return _disabled; }
-    void setDisabled(const bool &disabled);
     inline Tano::TimerType type() const { return _type; }
     void setType(const Tano::TimerType &type);
-    inline bool isRecording() const { return _recording; }
-    void setRecording(const bool &recording);
+    inline Tano::TimerState state() const { return _state; }
+    void setState(const Tano::TimerState &state);
 
 private:
     QString _name;
@@ -88,9 +86,8 @@ private:
     QString _url;
     QDateTime _startTime;
     QDateTime _endTime;
-    bool _disabled;
     Tano::TimerType _type;
-    bool _recording;
+    Tano::TimerState _state;
 };
 
 #endif // TANO_TIMER_H_

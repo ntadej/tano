@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This file was based on the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -46,7 +46,7 @@ bool TimersGenerator::write(TimersModel *model)
     _out.setCodec("UTF-8");
     _out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
          << "<!DOCTYPE tano>\n"
-         << "<tano version=\"0.8\">\n";
+         << "<tano version=\"1.0\">\n";
     for (int i = 0; i < model->rowCount(); ++i)
         generateItem(model->row(i));
     _out << "</tano>\n";
@@ -77,15 +77,6 @@ QString TimersGenerator::escapedAttribute(const QString &str)
     return result;
 }
 
-QString TimersGenerator::boolToString(const bool &b)
-{
-    if(b) {
-        return QString("true");
-    } else {
-        return QString("false");
-    }
-}
-
 void TimersGenerator::generateItem(Timer *timer)
 {
     int depth = 1;
@@ -96,9 +87,9 @@ void TimersGenerator::generateItem(Timer *timer)
          << indent(depth + 1) << "<channelid>" << escapedText(QString().number(timer->num())) << "</channelid>\n"
          << indent(depth + 1) << "<channel>" << escapedText(timer->channel()) << "</channel>\n"
          << indent(depth + 1) << "<url>" << escapedText(timer->url()) << "</url>\n"
-         << indent(depth + 1) << "<type>" << escapedText(QString().number(timer->type())) << "</type>\n"
          << indent(depth + 1) << "<starttime>" << escapedText(timer->startTime().toString(Qt::ISODate)) << "</starttime>\n"
          << indent(depth + 1) << "<endtime>" << escapedText(timer->endTime().toString(Qt::ISODate)) << "</endtime>\n"
-         << indent(depth + 1) << "<disabled>" << boolToString(timer->isDisabled()) << "</disabled>\n"
+         << indent(depth + 1) << "<type>" << escapedText(QString().number(timer->type())) << "</type>\n"
+         << indent(depth + 1) << "<state>" << escapedText(QString().number(timer->state())) << "</state>\n"
          << indent(depth) << "</timer>\n";
 }

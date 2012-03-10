@@ -1255,6 +1255,26 @@ You will lose any unsaved changes.</source>
         <source>Guest</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1826,17 +1846,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Show tray icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Timer</name>
-    <message>
-        <source>Active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disabled or expired</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

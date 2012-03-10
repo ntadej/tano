@@ -1991,6 +1991,26 @@ msgctxt "QObject|"
 msgid "Guest"
 msgstr "Gost"
 
+msgctxt "QObject|"
+msgid "Enabled"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Recording"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Finished"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Expired"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Weekdays"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Počisti bližnjico"
@@ -2915,13 +2935,13 @@ msgstr "Pokaži ikono v sistemski vrstici"
 #~ msgid "Teletext Transparency"
 #~ msgstr "Prosojnost teleteksta"
 
-msgctxt "Timer|"
-msgid "Active"
-msgstr "Aktiven"
+#~ msgctxt "Timer|"
+#~ msgid "Active"
+#~ msgstr "Aktiven"
 
-msgctxt "Timer|"
-msgid "Disabled or expired"
-msgstr "Izključen ali pretečen"
+#~ msgctxt "Timer|"
+#~ msgid "Disabled or expired"
+#~ msgstr "Izključen ali pretečen"
 
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"

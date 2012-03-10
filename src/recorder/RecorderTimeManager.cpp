@@ -46,9 +46,9 @@ RecorderTimeManager::~RecorderTimeManager()
 
 void RecorderTimeManager::check()
 {
-    for(int i = 0; i < _model->rowCount(); i++) {
-        if(_model->row(i)->startTime() <= QDateTime::currentDateTime() && _model->row(i)->endTime() >= QDateTime::currentDateTime()) {
-            if(!_model->row(i)->isDisabled() && !_model->row(i)->isRecording()) {
+    for (int i = 0; i < _model->rowCount(); i++) {
+        if (_model->row(i)->startTime() <= QDateTime::currentDateTime() && _model->row(i)->endTime() >= QDateTime::currentDateTime()) {
+            if (_model->row(i)->state() == Tano::Enabled) {
                 emit timer(_model->row(i));
                 qDebug() << "Timer" << _model->row(i)->name() << "started";
             }
@@ -74,6 +74,6 @@ void RecorderTimeManager::updateTimers()
     readTimers();
 
     qDebug() << _model->rowCount() << "timers loaded";
-    for(int i = 0; i < _model->rowCount(); i++)
+    for (int i = 0; i < _model->rowCount(); i++)
         qDebug() << _model->row(i)->name();
 }

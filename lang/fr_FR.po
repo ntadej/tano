@@ -1570,6 +1570,26 @@ msgctxt "QObject|"
 msgid "Guest"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Enabled"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Recording"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Finished"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Expired"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Weekdays"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Effacer les raccourcis clavier"
@@ -2184,13 +2204,13 @@ msgstr ""
 #~ msgid "Teletext Transparency"
 #~ msgstr "Transparence du télétexte"
 
-msgctxt "Timer|"
-msgid "Active"
-msgstr "Actif"
+#~ msgctxt "Timer|"
+#~ msgid "Active"
+#~ msgstr "Actif"
 
-msgctxt "Timer|"
-msgid "Disabled or expired"
-msgstr "Invalide ou expiré"
+#~ msgctxt "Timer|"
+#~ msgid "Disabled or expired"
+#~ msgstr "Invalide ou expiré"
 
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"

@@ -1879,6 +1879,26 @@ msgctxt "QObject|"
 msgid "Guest"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Enabled"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Recording"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Finished"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Expired"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Weekdays"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Smazat klávesovou zkratku"
@@ -2797,15 +2817,13 @@ msgstr ""
 #~ msgid "Teletext Transparency"
 #~ msgstr "Průhlednost teletextu"
 
-#, fuzzy
-msgctxt "Timer|"
-msgid "Active"
-msgstr "V činnosti"
+#~ msgctxt "Timer|"
+#~ msgid "Active"
+#~ msgstr "V činnosti"
 
-#, fuzzy
-msgctxt "Timer|"
-msgid "Disabled or expired"
-msgstr "Zakázáno nebo vypršelo"
+#~ msgctxt "Timer|"
+#~ msgid "Disabled or expired"
+#~ msgstr "Zakázáno nebo vypršelo"
 
 #, fuzzy
 msgctxt "TimersDisplayWidget|"

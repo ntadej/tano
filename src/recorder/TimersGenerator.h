@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This file was based on the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -39,7 +39,6 @@ public:
 
 private:
     static QString indent(const int &indentLevel);
-    QString boolToString(const bool &b);
     static QString escapedText(const QString &str);
     static QString escapedAttribute(const QString &str);
     void generateItem(Timer *timer);

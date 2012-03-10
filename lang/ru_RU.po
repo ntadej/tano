@@ -1698,6 +1698,26 @@ msgctxt "QObject|"
 msgid "Guest"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Enabled"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Recording"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Finished"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Expired"
+msgstr ""
+
+msgctxt "QObject|"
+msgid "Weekdays"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Очистить ярлык"
@@ -2525,15 +2545,13 @@ msgstr ""
 #~ msgid "Editor"
 #~ msgstr "Редактор"
 
-#, fuzzy
-msgctxt "Timer|"
-msgid "Active"
-msgstr "Активен"
+#~ msgctxt "Timer|"
+#~ msgid "Active"
+#~ msgstr "Активен"
 
-#, fuzzy
-msgctxt "Timer|"
-msgid "Disabled or expired"
-msgstr "Отключен или устарел"
+#~ msgctxt "Timer|"
+#~ msgid "Disabled or expired"
+#~ msgstr "Отключен или устарел"
 
 #, fuzzy
 msgctxt "TimersDisplayWidget|"
