@@ -58,6 +58,7 @@
 #include "ui/menu/MenuTrackVideo.h"
 #include "ui/playlist/PlaylistEditor.h"
 #include "ui/settings/SettingsEdit.h"
+#include "ui/settings/SettingsShortcuts.h"
 #include "xmltv/XmltvManager.h"
 
 #if UPDATE
@@ -311,6 +312,7 @@ void MainWindow::createConnections()
 
     connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
     connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
+    connect(ui->actionSettingsShortcuts, SIGNAL(triggered()), this, SLOT(showSettingsShortcuts()));
     connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
     connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(pause()));
@@ -455,6 +457,7 @@ void MainWindow::createShortcuts()
              << ui->actionOpen
              << ui->actionEditPlaylist
              << ui->actionSettings
+             << ui->actionSettingsShortcuts
              << ui->actionTop
              << ui->actionLite
              << ui->actionTray
@@ -715,10 +718,16 @@ void MainWindow::showSchedule()
 
 void MainWindow::showSettings()
 {
-    SettingsEdit s(_shortcuts, this);
+    SettingsEdit s(this);
     s.exec();
     _locale->setLocale();
     createSettings();
+}
+
+void MainWindow::showSettingsShortcuts()
+{
+    SettingsShortcuts s(_shortcuts, this);
+    s.exec();
 }
 
 void MainWindow::showPlaylistEditor()

@@ -23,7 +23,6 @@
 #include <QtGui/QDialog>
 
 class Settings;
-class Shortcuts;
 
 namespace Ui
 {
@@ -34,8 +33,7 @@ class SettingsEdit : public QDialog
 {
 Q_OBJECT
 public:
-    SettingsEdit(Shortcuts *shortcuts = 0,
-                 QWidget *parent = 0);
+    explicit SettingsEdit(QWidget *parent = 0);
     ~SettingsEdit();
 
 protected:
@@ -44,7 +42,6 @@ protected:
 private slots:
     void action(QAbstractButton *button);
     void apply();
-    void cancel();
     void defaults();
     void save();
 

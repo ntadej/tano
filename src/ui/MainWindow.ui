@@ -76,6 +76,7 @@
     </property>
     <addaction name="actionEditPlaylist"/>
     <addaction name="actionSettings"/>
+    <addaction name="actionSettingsShortcuts"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -642,6 +643,15 @@
    </property>
    <property name="text">
     <string>Teletext</string>
+   </property>
+  </action>
+  <action name="actionSettingsShortcuts">
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/shortcuts.png</normaloff>:/icons/24x24/shortcuts.png</iconset>
+   </property>
+   <property name="text">
+    <string>Keyboard shortcuts</string>
    </property>
   </action>
  </widget>

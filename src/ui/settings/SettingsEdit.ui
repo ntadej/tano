@@ -13,7 +13,7 @@
   <property name="minimumSize">
    <size>
     <width>600</width>
-    <height>450</height>
+    <height>500</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -28,13 +28,13 @@
     <widget class="QListWidget" name="setttingsListWidget">
      <property name="minimumSize">
       <size>
-       <width>90</width>
+       <width>85</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>90</width>
+       <width>85</width>
        <height>16777215</height>
       </size>
      </property>
@@ -147,18 +147,6 @@
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
         <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Shortcuts</string>
-      </property>
-      <property name="textAlignment">
-       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
-      </property>
-      <property name="icon">
-       <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/48x48/shortcuts.png</normaloff>:/icons/48x48/shortcuts.png</iconset>
       </property>
      </item>
     </widget>
@@ -298,40 +286,11 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="pageShortcuts">
-      <layout class="QVBoxLayout" name="layoutShortcuts">
-       <item>
-        <widget class="SettingsShortcuts" name="shortcuts" native="true"/>
-       </item>
-       <item>
-        <spacer name="spacerShortcuts">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Maximum</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>0</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
     </widget>
    </item>
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>SettingsShortcuts</class>
-   <extends>QWidget</extends>
-   <header>ui/settings/SettingsShortcuts.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>SettingsBackend</class>
    <extends>QWidget</extends>

@@ -23,8 +23,7 @@
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
 
-SettingsEdit::SettingsEdit(Shortcuts *shortcuts,
-                           QWidget *parent)
+SettingsEdit::SettingsEdit(QWidget *parent)
     : QDialog(parent),
       ui(new Ui::SettingsEdit)
 {
@@ -35,14 +34,9 @@ SettingsEdit::SettingsEdit(Shortcuts *shortcuts,
     read();
 
 #if EDITOR
-    Q_UNUSED(shortcuts)
-
     ui->setttingsListWidget->item(1)->setHidden(true);
     ui->setttingsListWidget->item(4)->setHidden(true);
     ui->setttingsListWidget->item(5)->setHidden(true);
-    ui->setttingsListWidget->item(6)->setHidden(true);
-#else
-    ui->shortcuts->setShortcuts(shortcuts);
 #endif
 
     connect(ui->general, SIGNAL(resetDefaults()), this, SLOT(defaults()));
@@ -76,7 +70,7 @@ void SettingsEdit::action(QAbstractButton *button)
         save();
         break;
     case QDialogButtonBox::Cancel:
-        cancel();
+        close();
         break;
     default:
         break;
@@ -133,16 +127,6 @@ void SettingsEdit::apply()
     _settings->setRecorderDirectory(ui->recorder->directory());
 
     _settings->writeSettings();
-
-    // Shortcuts
-#if !EDITOR
-    ui->shortcuts->shortcutWrite();
-#endif
-}
-
-void SettingsEdit::cancel()
-{
-    hide();
 }
 
 void SettingsEdit::defaults()

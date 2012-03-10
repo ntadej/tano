@@ -413,6 +413,10 @@ msgctxt "MainWindow|"
 msgid "Controls"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Keyboard shortcuts"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr ""
@@ -1397,10 +1401,6 @@ msgid "Recorder"
 msgstr ""
 
 msgctxt "SettingsEdit|"
-msgid "Shortcuts"
-msgstr ""
-
-msgctxt "SettingsEdit|"
 msgid "Schedule"
 msgstr ""
 
@@ -1682,6 +1682,10 @@ msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Defaults"
+msgstr ""
+
+msgctxt "SettingsShortcuts|"
+msgid "Keyboard shortcuts"
 msgstr ""
 
 msgctxt "SettingsUi|"

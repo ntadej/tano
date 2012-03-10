@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <info@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,8 +19,9 @@
 #ifndef TANO_SETTINGSSHORTCUTS_H_
 #define TANO_SETTINGSSHORTCUTS_H_
 
+#include <QtGui/QAbstractButton>
+#include <QtGui/QDialog>
 #include <QtGui/QTableWidgetItem>
-#include <QtGui/QWidget>
 
 class Shortcuts;
 
@@ -29,25 +30,26 @@ namespace Ui
     class SettingsShortcuts;
 }
 
-class SettingsShortcuts : public QWidget
+class SettingsShortcuts : public QDialog
 {
 Q_OBJECT
 public:
-    SettingsShortcuts(QWidget *parent = 0);
+    explicit SettingsShortcuts(Shortcuts *shortcuts,
+                               QWidget *parent = 0);
     ~SettingsShortcuts();
-
-    void setShortcuts(Shortcuts *s);
-    void shortcutWrite();
 
 protected:
     void changeEvent(QEvent *e);
 
 private slots:
+    void action(QAbstractButton *button);
+
     void shortcutClear();
     void shortcutEdit(QTableWidgetItem *titem);
     void shortcutRestore();
     void shortcutSequence(const QKeySequence &s);
     void shortcutSet();
+    void shortcutWrite();
 
 private:
     void createActions();

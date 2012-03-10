@@ -84,6 +84,7 @@ private slots:
 
     void showSchedule();
     void showSettings();
+    void showSettingsShortcuts();
     void showPlaylistEditor();
 
     void playChannel(Channel* channel);

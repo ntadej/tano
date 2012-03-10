@@ -520,6 +520,10 @@ msgctxt "MainWindow|"
 msgid "Controls"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Keyboard shortcuts"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Poměr stran"
@@ -2097,9 +2101,9 @@ msgctxt "SettingsEdit|"
 msgid "Recorder"
 msgstr "Nahrávání"
 
-msgctxt "SettingsEdit|"
-msgid "Shortcuts"
-msgstr "Zkratky"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Shortcuts"
+#~ msgstr "Zkratky"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Tano"
@@ -2661,6 +2665,10 @@ msgstr "Teletext"
 
 msgctxt "SettingsShortcuts|"
 msgid "Defaults"
+msgstr ""
+
+msgctxt "SettingsShortcuts|"
+msgid "Keyboard shortcuts"
 msgstr ""
 
 #, fuzzy

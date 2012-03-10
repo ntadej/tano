@@ -602,6 +602,10 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>Controls</source>
         <translation>Upravljanje</translation>
     </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -2180,7 +2184,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>Bližnjice</translation>
+        <translation type="obsolete">Bližnjice</translation>
     </message>
     <message>
         <source>Tano</source>
@@ -2789,6 +2793,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Defaults</source>
         <translation>Privzeto</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

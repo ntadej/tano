@@ -179,6 +179,10 @@
         <property name="text">
          <string>Restore defaults</string>
         </property>
+        <property name="icon">
+         <iconset resource="../../../data/icons.qrc">
+          <normaloff>:/icons/16x16/refresh.png</normaloff>:/icons/16x16/refresh.png</iconset>
+        </property>
        </widget>
       </item>
       <item>
@@ -197,6 +201,7 @@
   </layout>
  </widget>
  <resources>
+  <include location="../../../data/icons.qrc"/>
   <include location="../../../data/logo.qrc"/>
  </resources>
  <connections>

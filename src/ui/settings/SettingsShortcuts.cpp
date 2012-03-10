@@ -21,14 +21,19 @@
 #include "SettingsShortcuts.h"
 #include "ui_SettingsShortcuts.h"
 
-SettingsShortcuts::SettingsShortcuts(QWidget *parent)
-    : QWidget(parent),
+SettingsShortcuts::SettingsShortcuts(Shortcuts *shortcuts,
+                                     QWidget *parent)
+    : QDialog(parent),
       ui(new Ui::SettingsShortcuts)
 {
     ui->setupUi(this);
     createActions();
 
     ui->shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+
+    _shortcuts = shortcuts;
+
+    shortcutRead();
 }
 
 SettingsShortcuts::~SettingsShortcuts()
@@ -49,20 +54,30 @@ void SettingsShortcuts::changeEvent(QEvent *e)
     }
 }
 
+void SettingsShortcuts::action(QAbstractButton *button)
+{
+    switch(ui->buttonBox->standardButton(button))
+    {
+    case QDialogButtonBox::Save:
+        shortcutWrite();
+        close();
+        break;
+    case QDialogButtonBox::Cancel:
+        close();
+        break;
+    default:
+        break;
+    }
+}
+
 void SettingsShortcuts::createActions()
 {
+    connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
     connect(ui->shortcutsWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(shortcutEdit(QTableWidgetItem*)));
     connect(ui->keyEditor, SIGNAL(keySequenceChanged(const QKeySequence)), this, SLOT(shortcutSequence(const QKeySequence)));
     connect(ui->buttonDefaults, SIGNAL(clicked()), this, SLOT(shortcutRestore()));
     connect(ui->buttonSet, SIGNAL(clicked()), this, SLOT(shortcutSet()));
     connect(ui->buttonClear, SIGNAL(clicked()), this, SLOT(shortcutClear()));
-}
-
-void SettingsShortcuts::setShortcuts(Shortcuts *s)
-{
-    _shortcuts = s;
-
-    shortcutRead();
 }
 
 void SettingsShortcuts::shortcutClear()

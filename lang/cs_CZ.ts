@@ -531,6 +531,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Controls</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -2049,7 +2053,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>Zkratky</translation>
+        <translation type="obsolete">Zkratky</translation>
     </message>
     <message>
         <source>Tano</source>
@@ -2607,6 +2611,10 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

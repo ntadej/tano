@@ -425,6 +425,10 @@ This will stop recording in progress.</source>
         <source>Controls</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1436,10 +1440,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1735,6 +1735,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

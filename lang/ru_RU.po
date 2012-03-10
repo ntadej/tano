@@ -510,6 +510,10 @@ msgctxt "MainWindow|"
 msgid "Controls"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Keyboard shortcuts"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Соотношение сторон"
@@ -1907,9 +1911,9 @@ msgctxt "SettingsEdit|"
 msgid "Recorder"
 msgstr "Рекордер"
 
-msgctxt "SettingsEdit|"
-msgid "Shortcuts"
-msgstr "Ярлыки"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Shortcuts"
+#~ msgstr "Ярлыки"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Tano"
@@ -2409,6 +2413,10 @@ msgstr ""
 
 msgctxt "SettingsShortcuts|"
 msgid "Defaults"
+msgstr ""
+
+msgctxt "SettingsShortcuts|"
+msgid "Keyboard shortcuts"
 msgstr ""
 
 #, fuzzy

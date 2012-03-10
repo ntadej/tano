@@ -436,6 +436,10 @@ This will stop recording in progress.</source>
         <source>Controls</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1696,7 +1700,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>Скорочення</translation>
+        <translation type="obsolete">Скорочення</translation>
     </message>
     <message>
         <source>Schedule</source>
@@ -2023,6 +2027,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Defaults</source>
         <translation>За замовчуванням</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

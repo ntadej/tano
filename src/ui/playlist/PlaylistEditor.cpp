@@ -210,7 +210,7 @@ void PlaylistEditor::help()
 void PlaylistEditor::settings()
 {
 #if EDITOR
-    SettingsEdit s(0, this);
+    SettingsEdit s(this);
     s.exec();
     _locale->setLocale();
     createSettings();

@@ -36,7 +36,6 @@ SET(Tano_Editor_UIs
     ../src/ui/settings/SettingsPlaylist.ui
     ../src/ui/settings/SettingsRecorder.ui
     ../src/ui/settings/SettingsSchedule.ui
-    ../src/ui/settings/SettingsShortcuts.ui
     ../src/ui/settings/SettingsUi.ui
 )
 
@@ -64,7 +63,6 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/ui/settings/SettingsPlaylist.h
     ../src/ui/settings/SettingsRecorder.h
     ../src/ui/settings/SettingsSchedule.h
-    ../src/ui/settings/SettingsShortcuts.h
     ../src/ui/settings/SettingsUi.h
 )
 
@@ -88,7 +86,6 @@ SET(Tano_Editor_Srcs
     ../src/core/Print.cpp
     ../src/core/Settings.cpp
     ../src/core/SettingsDefaults.cpp
-    ../src/core/Shortcuts.cpp
     ../src/core/Udpxy.cpp
 
     ../src/playlist/PlaylistFilterModel.cpp
@@ -122,7 +119,6 @@ SET(Tano_Editor_Srcs
     ../src/ui/settings/SettingsPlaylist.cpp
     ../src/ui/settings/SettingsRecorder.cpp
     ../src/ui/settings/SettingsSchedule.cpp
-    ../src/ui/settings/SettingsShortcuts.cpp
     ../src/ui/settings/SettingsUi.cpp
 )
 

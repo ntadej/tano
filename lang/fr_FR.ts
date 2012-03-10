@@ -433,6 +433,10 @@ This will stop recording in progress.</source>
         <source>Controls</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1690,7 +1694,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>Raccourcis</translation>
+        <translation type="obsolete">Raccourcis</translation>
     </message>
     <message>
         <source>Schedule</source>
@@ -2017,6 +2021,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>Defaults</source>
         <translation>Defauts</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

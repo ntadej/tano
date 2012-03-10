@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>SettingsShortcuts</class>
- <widget class="QWidget" name="SettingsShortcuts">
+ <widget class="QDialog" name="SettingsShortcuts">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>438</width>
-    <height>274</height>
+    <width>450</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -16,11 +16,15 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <layout class="QGridLayout" name="layout">
-   <property name="margin">
-    <number>0</number>
-   </property>
-   <item row="0" column="0" colspan="7">
+  <property name="windowTitle">
+   <string>Keyboard shortcuts</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/16x16/shortcuts.png</normaloff>:/icons/16x16/shortcuts.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="5">
     <widget class="QTableWidget" name="shortcutsWidget">
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -490,59 +494,12 @@
      </item>
     </widget>
    </item>
-   <item row="1" column="5">
-    <spacer name="shortcutsSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="6">
-    <widget class="QPushButton" name="buttonDefaults">
-     <property name="text">
-      <string>Defaults</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/24x24/refresh.png</normaloff>:/icons/24x24/refresh.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>24</width>
-       <height>24</height>
-      </size>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2">
-    <widget class="QPushButton" name="buttonSet">
-     <property name="text">
-      <string>Set</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/24x24/apply.png</normaloff>:/icons/24x24/apply.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>24</width>
-       <height>24</height>
-      </size>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0">
     <widget class="QtKeySequenceEdit" name="keyEditor" native="true">
      <property name="minimumSize">
       <size>
        <width>150</width>
-       <height>30</height>
+       <height>0</height>
       </size>
      </property>
     </widget>
@@ -564,6 +521,51 @@
        <width>24</width>
        <height>24</height>
       </size>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="buttonSet">
+     <property name="text">
+      <string>Set</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../data/icons.qrc">
+       <normaloff>:/icons/16x16/apply.png</normaloff>:/icons/16x16/apply.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <spacer name="shortcutsSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="4">
+    <widget class="QPushButton" name="buttonDefaults">
+     <property name="text">
+      <string>Defaults</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../../data/icons.qrc">
+       <normaloff>:/icons/16x16/refresh.png</normaloff>:/icons/16x16/refresh.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="5">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

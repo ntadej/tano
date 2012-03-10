@@ -79,5 +79,11 @@
         <file>icons/16x16/audio.png</file>
         <file>icons/16x16/person.png</file>
         <file>icons/24x24/crew.png</file>
+        <file>icons/16x16/apply.png</file>
+        <file>icons/16x16/refresh.png</file>
+        <file>icons/16x16/shortcuts.png</file>
+        <file>icons/24x24/shortcuts.png</file>
+        <file>icons/16x16/go-next.png</file>
+        <file>icons/16x16/go-previous.png</file>
     </qresource>
 </RCC>

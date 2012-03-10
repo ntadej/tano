@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>480</height>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowIcon">
@@ -47,13 +47,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/24x24/go-previous.png</normaloff>:/icons/24x24/go-previous.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>24</width>
-       <height>24</height>
-      </size>
+       <normaloff>:/icons/16x16/go-previous.png</normaloff>:/icons/16x16/go-previous.png</iconset>
      </property>
     </widget>
    </item>
@@ -105,13 +99,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/24x24/go-next.png</normaloff>:/icons/24x24/go-next.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>24</width>
-       <height>24</height>
-      </size>
+       <normaloff>:/icons/16x16/go-next.png</normaloff>:/icons/16x16/go-next.png</iconset>
      </property>
     </widget>
    </item>
@@ -234,7 +222,7 @@
             <x>0</x>
             <y>0</y>
             <width>285</width>
-            <height>300</height>
+            <height>277</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
