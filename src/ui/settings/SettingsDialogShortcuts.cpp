@@ -18,13 +18,13 @@
 
 #include "core/Shortcuts.h"
 
-#include "SettingsShortcuts.h"
-#include "ui_SettingsShortcuts.h"
+#include "SettingsDialogShortcuts.h"
+#include "ui_SettingsDialogShortcuts.h"
 
-SettingsShortcuts::SettingsShortcuts(Shortcuts *shortcuts,
+SettingsDialogShortcuts::SettingsDialogShortcuts(Shortcuts *shortcuts,
                                      QWidget *parent)
     : QDialog(parent),
-      ui(new Ui::SettingsShortcuts)
+      ui(new Ui::SettingsDialogShortcuts)
 {
     ui->setupUi(this);
     createActions();
@@ -36,12 +36,12 @@ SettingsShortcuts::SettingsShortcuts(Shortcuts *shortcuts,
     shortcutRead();
 }
 
-SettingsShortcuts::~SettingsShortcuts()
+SettingsDialogShortcuts::~SettingsDialogShortcuts()
 {
     delete ui;
 }
 
-void SettingsShortcuts::changeEvent(QEvent *e)
+void SettingsDialogShortcuts::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
     switch (e->type())
@@ -54,7 +54,7 @@ void SettingsShortcuts::changeEvent(QEvent *e)
     }
 }
 
-void SettingsShortcuts::action(QAbstractButton *button)
+void SettingsDialogShortcuts::action(QAbstractButton *button)
 {
     switch(ui->buttonBox->standardButton(button))
     {
@@ -70,7 +70,7 @@ void SettingsShortcuts::action(QAbstractButton *button)
     }
 }
 
-void SettingsShortcuts::createActions()
+void SettingsDialogShortcuts::createActions()
 {
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
     connect(ui->shortcutsWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this, SLOT(shortcutEdit(QTableWidgetItem*)));
@@ -80,12 +80,12 @@ void SettingsShortcuts::createActions()
     connect(ui->buttonClear, SIGNAL(clicked()), this, SLOT(shortcutClear()));
 }
 
-void SettingsShortcuts::shortcutClear()
+void SettingsDialogShortcuts::shortcutClear()
 {
     ui->keyEditor->setKeySequence(QKeySequence(""));
 }
 
-void SettingsShortcuts::shortcutEdit(QTableWidgetItem *titem)
+void SettingsDialogShortcuts::shortcutEdit(QTableWidgetItem *titem)
 {
     if(titem->column() == 1) {
         ui->buttonSet->setEnabled(true);
@@ -94,7 +94,7 @@ void SettingsShortcuts::shortcutEdit(QTableWidgetItem *titem)
     }
 }
 
-void SettingsShortcuts::shortcutRead()
+void SettingsDialogShortcuts::shortcutRead()
 {
     QStringList keys = _shortcuts->readKeys();
     for(int i = 0; i < ui->shortcutsWidget->rowCount(); i++) {
@@ -106,25 +106,25 @@ void SettingsShortcuts::shortcutRead()
     }
 }
 
-void SettingsShortcuts::shortcutRestore()
+void SettingsDialogShortcuts::shortcutRestore()
 {
     _shortcuts->restoreDefaults();
 
     shortcutRead();
 }
 
-void SettingsShortcuts::shortcutSequence(const QKeySequence &s)
+void SettingsDialogShortcuts::shortcutSequence(const QKeySequence &s)
 {
     _sequence = s;
 }
 
-void SettingsShortcuts::shortcutSet()
+void SettingsDialogShortcuts::shortcutSet()
 {
     _item->setText(_sequence.toString());
     shortcutClear();
 }
 
-void SettingsShortcuts::shortcutWrite()
+void SettingsDialogShortcuts::shortcutWrite()
 {
     QStringList keys;
 

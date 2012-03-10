@@ -20,27 +20,27 @@
 #include "core/Common.h"
 #include "core/Enums.h"
 #include "core/LocaleManager.h"
-#include "SettingsGeneral.h"
-#include "ui_SettingsGeneral.h"
+#include "SettingsEditorGeneral.h"
+#include "ui_SettingsEditorGeneral.h"
 
-SettingsGeneral::SettingsGeneral(QWidget *parent)
+SettingsEditorGeneral::SettingsEditorGeneral(QWidget *parent)
     : QWidget(parent),
-      ui(new Ui::SettingsGeneral)
+      ui(new Ui::SettingsEditorGeneral)
 {
     ui->setupUi(this);
     loadLocale();
 
     connect(ui->buttonDefaults, SIGNAL(clicked()), this, SIGNAL(resetDefaults()));
 
-    ui->labelVersion->setText(tr("You are using Tano version:") + " <b>" + Tano::version() + "</b>");
+    ui->labelVersion->setText(tr("You are using Tano Editor version:") + " <b>" + Tano::version() + "</b>");
 }
 
-SettingsGeneral::~SettingsGeneral()
+SettingsEditorGeneral::~SettingsEditorGeneral()
 {
     delete ui;
 }
 
-void SettingsGeneral::changeEvent(QEvent *e)
+void SettingsEditorGeneral::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
     switch (e->type())
@@ -53,17 +53,7 @@ void SettingsGeneral::changeEvent(QEvent *e)
     }
 }
 
-bool SettingsGeneral::wizard() const
-{
-    return ui->checkWizard->isChecked();
-}
-
-void SettingsGeneral::setWizard(const bool &enabled)
-{
-    ui->checkWizard->setChecked(enabled);
-}
-
-QString SettingsGeneral::language() const
+QString SettingsEditorGeneral::language() const
 {
     if (ui->radioCustom->isChecked())
         return _locale[ui->comboLanguage->currentIndex()];
@@ -71,7 +61,7 @@ QString SettingsGeneral::language() const
         return QString("");
 }
 
-void SettingsGeneral::setLanguage(const QString &language)
+void SettingsEditorGeneral::setLanguage(const QString &language)
 {
     if (!language.isEmpty()) {
         ui->radioCustom->setChecked(true);
@@ -85,27 +75,7 @@ void SettingsGeneral::setLanguage(const QString &language)
     }
 }
 
-bool SettingsGeneral::sessionAutoplay() const
-{
-    return ui->checkAutoplay->isChecked();
-}
-
-void SettingsGeneral::setSessionAutoplay(const bool &enabled)
-{
-    ui->checkAutoplay->setChecked(enabled);
-}
-
-bool SettingsGeneral::sessionVolume() const
-{
-    return ui->checkVolume->isChecked();
-}
-
-void SettingsGeneral::setSessionVolume(const bool &enabled)
-{
-    ui->checkVolume->setChecked(enabled);
-}
-
-void SettingsGeneral::loadLocale()
+void SettingsEditorGeneral::loadLocale()
 {
     _locale = LocaleManager::loadTranslations();
 

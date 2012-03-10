@@ -1700,26 +1700,26 @@ msgctxt "SettingsBackend|"
 msgid "Other"
 msgstr "Інші"
 
-msgctxt "SettingsBackend|"
-msgid "UDPXY support"
-msgstr "UDPXY підтримка"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "UDPXY support"
+#~ msgstr "UDPXY підтримка"
 
-msgctxt "SettingsBackend|"
-msgid "Enable UDPXY support"
-msgstr "Увімкнути UDPXY підтримку"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Увімкнути UDPXY підтримку"
 
-msgctxt "SettingsBackend|"
-msgid "Router IP or name:"
-msgstr "IP роутера чи ім’я:"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Router IP or name:"
+#~ msgstr "IP роутера чи ім’я:"
 
-msgctxt "SettingsBackend|"
-msgid "Router port:"
-msgstr "Порт роутера:"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Router port:"
+#~ msgstr "Порт роутера:"
 
 #, qt-format
-msgctxt "SettingsBackend|"
-msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
-msgstr "<i>Це сконвертує посилання URL в переілку каналів з %1 по %2.</i>"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr "<i>Це сконвертує посилання URL в переілку каналів з %1 по %2.</i>"
 
 msgctxt "SettingsBackend|"
 msgid "Default aspect ratio:"
@@ -1768,37 +1768,411 @@ msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "Х"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr "Налаштування"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Загальні"
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsDialog|"
+msgid "Playlist"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "Interface"
 msgstr "Інтерфейс"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "Playback"
 msgstr "Відтворення"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Schedule"
+msgstr "Розклад"
+
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "Recorder"
 msgstr "Записувач"
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Keyboard shortcuts"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Action"
+msgstr "Дія"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Key"
+msgstr "Кнопка"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Play / Pause"
+msgstr "Відтворити / Пауза"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Stop"
+msgstr "Зупинити"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next channel"
+msgstr "Наступний канал"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Previous channel"
+msgstr "Попередній канал"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Fullscreen"
+msgstr "На повний екран"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Info Widget"
+msgstr "Перемикач інформаційної панелі"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Controls Widget"
+msgstr "Перемикач контрольної панелі"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Mute"
+msgstr "Вимкнути звук"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Teletext"
+msgstr "Телетекст"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume up"
+msgstr "Збільшити гучність"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume down"
+msgstr "Зменшити гучність"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Recorder"
+msgstr "Записувач"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open File"
+msgstr "Відкрити файл"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open URL"
+msgstr "Відкрити посилання URL"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open Channel list"
+msgstr "Відкрити перелік каналів"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Edit Channel list"
+msgstr "Редагувати перелік каналів"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Settings"
+msgstr "Налаштування"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Always on top"
+msgstr "Завжди поверх інших вікон"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Simple Mode"
+msgstr "Простий режим"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Hide to tray"
+msgstr "Сховати до трею"
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next audio track"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next video track"
+msgstr "Наступна відео доріжка"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next subtitle track"
+msgstr "Наступна доріжка субтитрів"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next aspect ratio mode"
+msgstr "Наступний режим співвідношення сторін"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next crop mode"
+msgstr "Наступний режим обрізання зображення"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next deinterlace mode"
+msgstr "Наступний режим деінтерлейсінгу"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Set"
+msgstr "Встановити"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Defaults"
+msgstr "За замовчуванням"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Settings"
+#~ msgstr "Налаштування"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "General"
+#~ msgstr "Загальні"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Interface"
+#~ msgstr "Інтерфейс"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Playback"
+#~ msgstr "Відтворення"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Recorder"
+#~ msgstr "Записувач"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Shortcuts"
 #~ msgstr "Скорочення"
 
-msgctxt "SettingsEdit|"
-msgid "Schedule"
-msgstr "Розклад"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Schedule"
+#~ msgstr "Розклад"
 
-msgctxt "SettingsEdit|"
-msgid "Playlist"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Editor"
+#~ msgstr "Редактор"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "UDPXY support"
+#~ msgstr "UDPXY підтримка"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Увімкнути UDPXY підтримку"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Router IP or name:"
+#~ msgstr "IP роутера чи ім’я:"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Router port:"
+#~ msgstr "Порт роутера:"
+
+#, qt-format
+#~ msgctxt "SettingsEditor|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr "<i>Це сконвертує посилання URL в переілку каналів з %1 по %2.</i>"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Interface"
+#~ msgstr "Інтерфейс"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Toolbar style:"
+#~ msgstr "Стиль панелі:"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Icon only"
+#~ msgstr "Лише іконки"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text only"
+#~ msgstr "Лише текст"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text beside icon"
+#~ msgstr "Текст рядом з іконками"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text under icon"
+#~ msgstr "Текст під іконками"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "System default"
+#~ msgstr "За замовчуванням системи"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Show splash screen"
+#~ msgstr "Показати заставку під час запуску"
+
+msgctxt "SettingsEditorCommon|"
+msgid "Radio"
 msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Default radio category:"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "UDPXY support"
+msgstr "UDPXY підтримка"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Enable UDPXY support"
+msgstr "Увімкнути UDPXY підтримку"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Router IP or name:"
+msgstr "IP роутера чи ім’я:"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Router port:"
+msgstr "Порт роутера:"
+
+#, qt-format
+#~ msgctxt "SettingsEditorCommon|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr "<i>Це сконвертує посилання URL в переілку каналів з %1 по %2.</i>"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Interface"
+msgstr "Інтерфейс"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Toolbar style:"
+msgstr "Стиль панелі:"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Icon only"
+msgstr "Лише іконки"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text only"
+msgstr "Лише текст"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text beside icon"
+msgstr "Текст рядом з іконками"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text under icon"
+msgstr "Текст під іконками"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "System default"
+msgstr "За замовчуванням системи"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Show splash screen"
+msgstr "Показати заставку під час запуску"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "Settings"
+msgstr "Налаштування"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "General"
+msgstr "Загальні"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "Editor"
+msgstr "Редактор"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Tano Editor"
+msgstr "Tano Редактор"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+msgstr ""
+"<i>Інформація: Ці налаштування будуть застосовані в усіх програмах Tano.</i>"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Language"
+msgstr "Мова"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "System default language"
+msgstr "Системна мова за замовчуванням"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Custom language"
+msgstr "Користувацька мова"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Defaults"
+msgstr "За замовчуванням"
+
+msgctxt "SettingsEditorGeneral|"
+msgid "Restore defaults"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "You are using Tano Editor version:"
+msgstr "Ви використовуєте версію Tano Редактора:"
 
 msgctxt "SettingsGeneral|"
 msgid "Tano"
@@ -1837,9 +2211,9 @@ msgctxt "SettingsGeneral|"
 msgid "Autoplay last channel"
 msgstr "Автовідтворення останній канал"
 
-msgctxt "SettingsGeneral|"
-msgid "You are using Tano Editor version:"
-msgstr "Ви використовуєте версію Tano Редактора:"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "You are using Tano Editor version:"
+#~ msgstr "Ви використовуєте версію Tano Редактора:"
 
 msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
@@ -1863,6 +2237,10 @@ msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
 "changes, before they will take effect.</i>"
 msgstr ""
+
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Tano Editor"
+#~ msgstr "Tano Редактор"
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
@@ -1921,10 +2299,33 @@ msgctxt "SettingsPlaylist|"
 msgid "Default radio category:"
 msgstr ""
 
+#, fuzzy
 msgctxt "SettingsPlaylist|"
-msgid ""
-"<i>Updating will not change your playlist order. Any other information will "
-"be updated.</i>"
+msgid "UDPXY support"
+msgstr "UDPXY підтримка"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Enable UDPXY support"
+msgstr "Увімкнути UDPXY підтримку"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Router IP or name:"
+msgstr "IP роутера чи ім’я:"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Router port:"
+msgstr "Порт роутера:"
+
+#, qt-format
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr "<i>Це сконвертує посилання URL в переілку каналів з %1 по %2.</i>"
+
+msgctxt "SettingsPlaylist|"
+msgid "<i>Updating will not change your playlist order.</i>"
 msgstr ""
 
 msgctxt "SettingsRecorder|"
@@ -1991,133 +2392,129 @@ msgctxt "SettingsSchedule|"
 msgid "<i>Grabber running is not available yet.</i>"
 msgstr ""
 
-msgctxt "SettingsShortcuts|"
-msgid "Action"
-msgstr "Дія"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Action"
+#~ msgstr "Дія"
 
-msgctxt "SettingsShortcuts|"
-msgid "Key"
-msgstr "Кнопка"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Key"
+#~ msgstr "Кнопка"
 
-msgctxt "SettingsShortcuts|"
-msgid "Stop"
-msgstr "Зупинити"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Stop"
+#~ msgstr "Зупинити"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next channel"
-msgstr "Наступний канал"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next channel"
+#~ msgstr "Наступний канал"
 
-msgctxt "SettingsShortcuts|"
-msgid "Previous channel"
-msgstr "Попередній канал"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Previous channel"
+#~ msgstr "Попередній канал"
 
-msgctxt "SettingsShortcuts|"
-msgid "Fullscreen"
-msgstr "На повний екран"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Fullscreen"
+#~ msgstr "На повний екран"
 
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Info Widget"
-msgstr "Перемикач інформаційної панелі"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Toggle Info Widget"
+#~ msgstr "Перемикач інформаційної панелі"
 
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Controls Widget"
-msgstr "Перемикач контрольної панелі"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Toggle Controls Widget"
+#~ msgstr "Перемикач контрольної панелі"
 
-msgctxt "SettingsShortcuts|"
-msgid "Mute"
-msgstr "Вимкнути звук"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Mute"
+#~ msgstr "Вимкнути звук"
 
-msgctxt "SettingsShortcuts|"
-msgid "Volume up"
-msgstr "Збільшити гучність"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Volume up"
+#~ msgstr "Збільшити гучність"
 
-msgctxt "SettingsShortcuts|"
-msgid "Volume down"
-msgstr "Зменшити гучність"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Volume down"
+#~ msgstr "Зменшити гучність"
 
-msgctxt "SettingsShortcuts|"
-msgid "Recorder"
-msgstr "Записувач"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Recorder"
+#~ msgstr "Записувач"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open File"
-msgstr "Відкрити файл"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open File"
+#~ msgstr "Відкрити файл"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open URL"
-msgstr "Відкрити посилання URL"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open URL"
+#~ msgstr "Відкрити посилання URL"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open Channel list"
-msgstr "Відкрити перелік каналів"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open Channel list"
+#~ msgstr "Відкрити перелік каналів"
 
-msgctxt "SettingsShortcuts|"
-msgid "Edit Channel list"
-msgstr "Редагувати перелік каналів"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Edit Channel list"
+#~ msgstr "Редагувати перелік каналів"
 
-msgctxt "SettingsShortcuts|"
-msgid "Settings"
-msgstr "Налаштування"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Settings"
+#~ msgstr "Налаштування"
 
-msgctxt "SettingsShortcuts|"
-msgid "Always on top"
-msgstr "Завжди поверх інших вікон"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Always on top"
+#~ msgstr "Завжди поверх інших вікон"
 
-msgctxt "SettingsShortcuts|"
-msgid "Simple Mode"
-msgstr "Простий режим"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Simple Mode"
+#~ msgstr "Простий режим"
 
-msgctxt "SettingsShortcuts|"
-msgid "Hide to tray"
-msgstr "Сховати до трею"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Hide to tray"
+#~ msgstr "Сховати до трею"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next audio track"
-msgstr "Наступна аудіо доріжка"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next audio track"
+#~ msgstr "Наступна аудіо доріжка"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next video track"
-msgstr "Наступна відео доріжка"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next video track"
+#~ msgstr "Наступна відео доріжка"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next subtitle track"
-msgstr "Наступна доріжка субтитрів"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next subtitle track"
+#~ msgstr "Наступна доріжка субтитрів"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next aspect ratio mode"
-msgstr "Наступний режим співвідношення сторін"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next aspect ratio mode"
+#~ msgstr "Наступний режим співвідношення сторін"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next crop mode"
-msgstr "Наступний режим обрізання зображення"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next crop mode"
+#~ msgstr "Наступний режим обрізання зображення"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next deinterlace mode"
-msgstr "Наступний режим деінтерлейсінгу"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next deinterlace mode"
+#~ msgstr "Наступний режим деінтерлейсінгу"
 
-msgctxt "SettingsShortcuts|"
-msgid "Set"
-msgstr "Встановити"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Set"
+#~ msgstr "Встановити"
 
-msgctxt "SettingsShortcuts|"
-msgid "Play / Pause"
-msgstr "Відтворити / Пауза"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Play / Pause"
+#~ msgstr "Відтворити / Пауза"
 
 #~ msgctxt "SettingsShortcuts|"
 #~ msgid "Enable Info OSD in Fullscreen mode"
 #~ msgstr "Увімкнути інформацію OSD у повноекранному режимі"
 
-msgctxt "SettingsShortcuts|"
-msgid "Teletext"
-msgstr "Телетекст"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Teletext"
+#~ msgstr "Телетекст"
 
-msgctxt "SettingsShortcuts|"
-msgid "Defaults"
-msgstr "За замовчуванням"
-
-msgctxt "SettingsShortcuts|"
-msgid "Keyboard shortcuts"
-msgstr ""
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Defaults"
+#~ msgstr "За замовчуванням"
 
 msgctxt "SettingsUi|"
 msgid "General Interface Settings"

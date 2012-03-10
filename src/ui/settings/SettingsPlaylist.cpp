@@ -84,3 +84,33 @@ void SettingsPlaylist::setRadioCategory(const QString &category)
 {
     ui->editRadio->setText(category);
 }
+
+bool SettingsPlaylist::udpxy() const
+{
+    return ui->checkUdpxy->isChecked();
+}
+
+void SettingsPlaylist::setUdpxy(const bool &enabled)
+{
+    ui->checkUdpxy->setChecked(enabled);
+}
+
+QString SettingsPlaylist::udpxyUrl() const
+{
+    return ui->editUdpxyUrl->text();
+}
+
+void SettingsPlaylist::setUdpxyUrl(const QString &url)
+{
+    ui->editUdpxyUrl->setText(url);
+}
+
+int SettingsPlaylist::udpxyPort() const
+{
+    return ui->editUdpxyPort->value();
+}
+
+void SettingsPlaylist::setUdpxyPort(const int &port)
+{
+    ui->editUdpxyPort->setValue(port);
+}

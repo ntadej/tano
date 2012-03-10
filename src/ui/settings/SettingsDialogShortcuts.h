@@ -27,16 +27,16 @@ class Shortcuts;
 
 namespace Ui
 {
-    class SettingsShortcuts;
+    class SettingsDialogShortcuts;
 }
 
-class SettingsShortcuts : public QDialog
+class SettingsDialogShortcuts : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsShortcuts(Shortcuts *shortcuts,
+    explicit SettingsDialogShortcuts(Shortcuts *shortcuts,
                                QWidget *parent = 0);
-    ~SettingsShortcuts();
+    ~SettingsDialogShortcuts();
 
 protected:
     void changeEvent(QEvent *e);
@@ -55,7 +55,7 @@ private:
     void createActions();
     void shortcutRead();
 
-    Ui::SettingsShortcuts *ui;
+    Ui::SettingsDialogShortcuts *ui;
 
     Shortcuts *_shortcuts;
 

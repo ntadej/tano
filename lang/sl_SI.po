@@ -2128,26 +2128,26 @@ msgctxt "SettingsBackend|"
 msgid "Other"
 msgstr "Drugo"
 
-msgctxt "SettingsBackend|"
-msgid "UDPXY support"
-msgstr "UDPXY podpora"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "UDPXY support"
+#~ msgstr "UDPXY podpora"
 
-msgctxt "SettingsBackend|"
-msgid "Enable UDPXY support"
-msgstr "Vključi podporo UDPXY"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Vključi podporo UDPXY"
 
-msgctxt "SettingsBackend|"
-msgid "Router IP or name:"
-msgstr "IP ali ime usmerjevalnika:"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Router IP or name:"
+#~ msgstr "IP ali ime usmerjevalnika:"
 
-msgctxt "SettingsBackend|"
-msgid "Router port:"
-msgstr "Vrata usmerjevalnika:"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Router port:"
+#~ msgstr "Vrata usmerjevalnika:"
 
 #, qt-format
-msgctxt "SettingsBackend|"
-msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
-msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
 
 msgctxt "SettingsBackend|"
 msgid "Default aspect ratio:"
@@ -2189,29 +2189,218 @@ msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "X"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Splošno"
+
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Playlist"
+msgstr "Programi"
+
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Interface"
+msgstr "Vmesnik"
+
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Playback"
+msgstr "Predvajanje"
+
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Schedule"
+msgstr "Spored"
+
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Recorder"
+msgstr "Snemalnik"
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Keyboard shortcuts"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Action"
+msgstr "Ukaz"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Key"
+msgstr "Tipke"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Play / Pause"
+msgstr "Predvajaj / Prekini"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Stop"
+msgstr "Ustavi"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next channel"
+msgstr "Naslednii kanal"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Previous channel"
+msgstr "Prejšnji kanal"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Fullscreen"
+msgstr "Celoten zaslon"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Info Widget"
+msgstr "Preklopi Info pult"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Controls Widget"
+msgstr "Preklopi upravljalni pult"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Mute"
+msgstr "Tiho"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Teletext"
+msgstr "Teletekst"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume up"
+msgstr "Povečaj glasnost"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume down"
+msgstr "Zmanjšaj glasnost"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Recorder"
+msgstr "Snemalnik"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open File"
+msgstr "Odpri Datoteko"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open URL"
+msgstr "Odpri URL"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open Channel list"
+msgstr "Odpri Seznam programov"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Edit Channel list"
+msgstr "Uredi Seznam programov"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Settings"
+msgstr "Nastavitve"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Always on top"
+msgstr "Vedno na vrhu"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Simple Mode"
+msgstr "Enostaven način"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Hide to tray"
+msgstr "Skrij v orodno vrstico"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next audio track"
+msgstr "Naslednja zvočna sled"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next video track"
+msgstr "Naslednja slikovna sled"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next subtitle track"
+msgstr "Naslednji podnapisi"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next aspect ratio mode"
+msgstr "Naslednje razmerje slike"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next crop mode"
+msgstr "Naslednja obrezava slike"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next deinterlace mode"
+msgstr "Naslenje razpletanje"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Set"
+msgstr "Nastavi"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Defaults"
+msgstr "Privzeto"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Settings"
+#~ msgstr "Nastavitve"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "General"
+#~ msgstr "Splošno"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Channels"
 #~ msgstr "Programi"
 
-msgctxt "SettingsEdit|"
-msgid "Interface"
-msgstr "Vmesnik"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Interface"
+#~ msgstr "Vmesnik"
 
-msgctxt "SettingsEdit|"
-msgid "Playback"
-msgstr "Predvajanje"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Playback"
+#~ msgstr "Predvajanje"
 
-msgctxt "SettingsEdit|"
-msgid "Recorder"
-msgstr "Snemalnik"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Recorder"
+#~ msgstr "Snemalnik"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Shortcuts"
@@ -2345,13 +2534,212 @@ msgstr "Snemalnik"
 #~ msgid "Open directory"
 #~ msgstr "Odpri imenik"
 
-msgctxt "SettingsEdit|"
-msgid "Schedule"
-msgstr "Spored"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Schedule"
+#~ msgstr "Spored"
 
-msgctxt "SettingsEdit|"
-msgid "Playlist"
-msgstr "Programi"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Playlist"
+#~ msgstr "Programi"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Radio"
+#~ msgstr "Radio"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Default radio category:"
+#~ msgstr "Privzeta kategorija za radio:"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "UDPXY support"
+#~ msgstr "UDPXY podpora"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Vključi podporo UDPXY"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Router IP or name:"
+#~ msgstr "IP ali ime usmerjevalnika:"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Router port:"
+#~ msgstr "Vrata usmerjevalnika:"
+
+#, qt-format
+#~ msgctxt "SettingsEditor|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Interface"
+#~ msgstr "Vmesnik"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Toolbar style:"
+#~ msgstr "Izgled orodnih vrstic:"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Icon only"
+#~ msgstr "Samo ikona"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text only"
+#~ msgstr "Samo besedilo"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text beside icon"
+#~ msgstr "Besedilo ob ikoni"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text under icon"
+#~ msgstr "Besedilo pod ikono"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "System default"
+#~ msgstr "Sistemsko privzeto"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Show splash screen"
+#~ msgstr "Prikaži pozdravni zaslon"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Radio"
+msgstr "Radio"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Default radio category:"
+msgstr "Privzeta kategorija za radio:"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "UDPXY support"
+msgstr "UDPXY podpora"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Enable UDPXY support"
+msgstr "Vključi podporo UDPXY"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Router IP or name:"
+msgstr "IP ali ime usmerjevalnika:"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Router port:"
+msgstr "Vrata usmerjevalnika:"
+
+#, qt-format
+#~ msgctxt "SettingsEditorCommon|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Interface"
+msgstr "Vmesnik"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Toolbar style:"
+msgstr "Izgled orodnih vrstic:"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Icon only"
+msgstr "Samo ikona"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text only"
+msgstr "Samo besedilo"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text beside icon"
+msgstr "Besedilo ob ikoni"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text under icon"
+msgstr "Besedilo pod ikono"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "System default"
+msgstr "Sistemsko privzeto"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Show splash screen"
+msgstr "Prikaži pozdravni zaslon"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "Settings"
+msgstr "Nastavitve"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "General"
+msgstr "Splošno"
+
+msgctxt "SettingsEditorDialog|"
+msgid "Editor"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Tano Editor"
+msgstr "Tano Urejevalnik"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+msgstr "<i>Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.</i>"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Language"
+msgstr "Jezik"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "System default language"
+msgstr "Sistemsko privzet jezik"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Custom language"
+msgstr "Poljuben jezik"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Defaults"
+msgstr "Privzeto"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Restore defaults"
+msgstr "Obnovi privzeto"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+"<i>To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo "
+"biti potrjene, preden bodo uveljavljene.</i>"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "You are using Tano Editor version:"
+msgstr "Uporabljate Tano Urejevalnik različice:"
 
 msgctxt "SettingsGeneral|"
 msgid "Tano"
@@ -2389,9 +2777,9 @@ msgctxt "SettingsGeneral|"
 msgid "Autoplay last channel"
 msgstr "Samodejno prični predvajanje zadnjega programa"
 
-msgctxt "SettingsGeneral|"
-msgid "You are using Tano Editor version:"
-msgstr "Uporabljate Tano Urejevalnik različice:"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "You are using Tano Editor version:"
+#~ msgstr "Uporabljate Tano Urejevalnik različice:"
 
 msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
@@ -2416,6 +2804,10 @@ msgid ""
 msgstr ""
 "<i>To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo "
 "biti potrjene, preden bodo uveljavljene.</i>"
+
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Tano Editor"
+#~ msgstr "Tano Urejevalnik"
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
@@ -2521,13 +2913,42 @@ msgctxt "SettingsPlaylist|"
 msgid "Default radio category:"
 msgstr "Privzeta kategorija za radio:"
 
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid ""
+#~ "<i>Updating will not change your playlist order. Any other information "
+#~ "will be updated.</i>"
+#~ msgstr ""
+#~ "<i>Osvežitev ne bo spremenila vašega zaporedja programov. Vse druge "
+#~ "informacije bodo posodobljene.</i>"
+
+#, fuzzy
 msgctxt "SettingsPlaylist|"
-msgid ""
-"<i>Updating will not change your playlist order. Any other information will "
-"be updated.</i>"
+msgid "UDPXY support"
+msgstr "UDPXY podpora"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Enable UDPXY support"
+msgstr "Vključi podporo UDPXY"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Router IP or name:"
+msgstr "IP ali ime usmerjevalnika:"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Router port:"
+msgstr "Vrata usmerjevalnika:"
+
+#, qt-format
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
+
+msgctxt "SettingsPlaylist|"
+msgid "<i>Updating will not change your playlist order.</i>"
 msgstr ""
-"<i>Osvežitev ne bo spremenila vašega zaporedja programov. Vse druge "
-"informacije bodo posodobljene.</i>"
 
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
@@ -2699,121 +3120,121 @@ msgctxt "SettingsSchedule|"
 msgid "<i>Grabber running is not available yet.</i>"
 msgstr ""
 
-msgctxt "SettingsShortcuts|"
-msgid "Action"
-msgstr "Ukaz"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Action"
+#~ msgstr "Ukaz"
 
-msgctxt "SettingsShortcuts|"
-msgid "Key"
-msgstr "Tipke"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Key"
+#~ msgstr "Tipke"
 
-msgctxt "SettingsShortcuts|"
-msgid "Play / Pause"
-msgstr "Predvajaj / Prekini"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Play / Pause"
+#~ msgstr "Predvajaj / Prekini"
 
-msgctxt "SettingsShortcuts|"
-msgid "Stop"
-msgstr "Ustavi"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Stop"
+#~ msgstr "Ustavi"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next channel"
-msgstr "Naslednii kanal"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next channel"
+#~ msgstr "Naslednii kanal"
 
-msgctxt "SettingsShortcuts|"
-msgid "Previous channel"
-msgstr "Prejšnji kanal"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Previous channel"
+#~ msgstr "Prejšnji kanal"
 
-msgctxt "SettingsShortcuts|"
-msgid "Fullscreen"
-msgstr "Celoten zaslon"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Fullscreen"
+#~ msgstr "Celoten zaslon"
 
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Info Widget"
-msgstr "Preklopi Info pult"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Toggle Info Widget"
+#~ msgstr "Preklopi Info pult"
 
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Controls Widget"
-msgstr "Preklopi upravljalni pult"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Toggle Controls Widget"
+#~ msgstr "Preklopi upravljalni pult"
 
-msgctxt "SettingsShortcuts|"
-msgid "Mute"
-msgstr "Tiho"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Mute"
+#~ msgstr "Tiho"
 
-msgctxt "SettingsShortcuts|"
-msgid "Teletext"
-msgstr "Teletekst"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Teletext"
+#~ msgstr "Teletekst"
 
-msgctxt "SettingsShortcuts|"
-msgid "Volume up"
-msgstr "Povečaj glasnost"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Volume up"
+#~ msgstr "Povečaj glasnost"
 
-msgctxt "SettingsShortcuts|"
-msgid "Volume down"
-msgstr "Zmanjšaj glasnost"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Volume down"
+#~ msgstr "Zmanjšaj glasnost"
 
-msgctxt "SettingsShortcuts|"
-msgid "Recorder"
-msgstr "Snemalnik"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Recorder"
+#~ msgstr "Snemalnik"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open File"
-msgstr "Odpri Datoteko"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open File"
+#~ msgstr "Odpri Datoteko"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open URL"
-msgstr "Odpri URL"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open URL"
+#~ msgstr "Odpri URL"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open Channel list"
-msgstr "Odpri Seznam programov"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open Channel list"
+#~ msgstr "Odpri Seznam programov"
 
-msgctxt "SettingsShortcuts|"
-msgid "Edit Channel list"
-msgstr "Uredi Seznam programov"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Edit Channel list"
+#~ msgstr "Uredi Seznam programov"
 
-msgctxt "SettingsShortcuts|"
-msgid "Settings"
-msgstr "Nastavitve"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Settings"
+#~ msgstr "Nastavitve"
 
-msgctxt "SettingsShortcuts|"
-msgid "Always on top"
-msgstr "Vedno na vrhu"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Always on top"
+#~ msgstr "Vedno na vrhu"
 
-msgctxt "SettingsShortcuts|"
-msgid "Simple Mode"
-msgstr "Enostaven način"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Simple Mode"
+#~ msgstr "Enostaven način"
 
-msgctxt "SettingsShortcuts|"
-msgid "Hide to tray"
-msgstr "Skrij v orodno vrstico"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Hide to tray"
+#~ msgstr "Skrij v orodno vrstico"
 
 #~ msgctxt "SettingsShortcuts|"
 #~ msgid "Enable Info OSD in Fullscreen mode"
 #~ msgstr "Vključi Info OSD v celozaslonskem načinu"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next audio track"
-msgstr "Naslednja zvočna sled"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next audio track"
+#~ msgstr "Naslednja zvočna sled"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next video track"
-msgstr "Naslednja slikovna sled"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next video track"
+#~ msgstr "Naslednja slikovna sled"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next subtitle track"
-msgstr "Naslednji podnapisi"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next subtitle track"
+#~ msgstr "Naslednji podnapisi"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next aspect ratio mode"
-msgstr "Naslednje razmerje slike"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next aspect ratio mode"
+#~ msgstr "Naslednje razmerje slike"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next crop mode"
-msgstr "Naslednja obrezava slike"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next crop mode"
+#~ msgstr "Naslednja obrezava slike"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next deinterlace mode"
-msgstr "Naslenje razpletanje"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next deinterlace mode"
+#~ msgstr "Naslenje razpletanje"
 
 #~ msgctxt "SettingsShortcuts|"
 #~ msgid "Clear Shortcut"
@@ -2823,17 +3244,13 @@ msgstr "Naslenje razpletanje"
 #~ msgid "Restore defaults"
 #~ msgstr "Obnovi privzeto"
 
-msgctxt "SettingsShortcuts|"
-msgid "Set"
-msgstr "Nastavi"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Set"
+#~ msgstr "Nastavi"
 
-msgctxt "SettingsShortcuts|"
-msgid "Defaults"
-msgstr "Privzeto"
-
-msgctxt "SettingsShortcuts|"
-msgid "Keyboard shortcuts"
-msgstr ""
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Defaults"
+#~ msgstr "Privzeto"
 
 msgctxt "SettingsUi|"
 msgid "General Interface Settings"

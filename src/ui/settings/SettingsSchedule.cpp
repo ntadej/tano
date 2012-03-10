@@ -17,10 +17,7 @@
 *****************************************************************************/
 
 #include "core/Settings.h"
-
-#if !EDITOR
-    #include "xmltv/XmltvSystem.h"
-#endif
+#include "xmltv/XmltvSystem.h"
 
 #include "SettingsSchedule.h"
 #include "ui_SettingsSchedule.h"
@@ -34,19 +31,15 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
     ui->location->setType(Tano::XmltvFile);
     ui->location->setResetValue(Settings::DEFAULT_XMLTV_LOCATION);
 
-#if !EDITOR
     _xmltv = new XmltvSystem();
     connect(_xmltv, SIGNAL(grabbers(QList<XmltvGrabber>)), this, SLOT(listGrabbers(QList<XmltvGrabber>)));
     _xmltv->requestGrabbers();
-#endif
 }
 
 SettingsSchedule::~SettingsSchedule()
 {
     delete ui;
-#if !EDITOR
     delete _xmltv;
-#endif
 }
 
 void SettingsSchedule::changeEvent(QEvent *e)
@@ -64,7 +57,6 @@ void SettingsSchedule::changeEvent(QEvent *e)
 
 void SettingsSchedule::listGrabbers(const QList<XmltvGrabber> &list)
 {
-#if !EDITOR
     ui->comboGrabber->clear();
 
     foreach (XmltvGrabber item, list) {
@@ -72,9 +64,6 @@ void SettingsSchedule::listGrabbers(const QList<XmltvGrabber> &list)
     }
 
     ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(_grabber));
-#else
-    Q_UNUSED(list)
-#endif
 }
 
 QString SettingsSchedule::location() const

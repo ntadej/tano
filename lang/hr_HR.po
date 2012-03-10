@@ -1342,27 +1342,6 @@ msgid "Other"
 msgstr ""
 
 msgctxt "SettingsBackend|"
-msgid "UDPXY support"
-msgstr ""
-
-msgctxt "SettingsBackend|"
-msgid "Enable UDPXY support"
-msgstr ""
-
-msgctxt "SettingsBackend|"
-msgid "Router IP or name:"
-msgstr ""
-
-msgctxt "SettingsBackend|"
-msgid "Router port:"
-msgstr ""
-
-#, qt-format
-msgctxt "SettingsBackend|"
-msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
-msgstr ""
-
-msgctxt "SettingsBackend|"
 msgid "Default aspect ratio:"
 msgstr ""
 
@@ -1402,32 +1381,262 @@ msgctxt "SettingsBackend|"
 msgid "X"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsDialog|"
 msgid "General"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsDialog|"
+msgid "Playlist"
+msgstr ""
+
+msgctxt "SettingsDialog|"
 msgid "Interface"
 msgstr ""
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsDialog|"
 msgid "Playback"
 msgstr ""
 
-msgctxt "SettingsEdit|"
-msgid "Recorder"
-msgstr ""
-
-msgctxt "SettingsEdit|"
+msgctxt "SettingsDialog|"
 msgid "Schedule"
 msgstr ""
 
-msgctxt "SettingsEdit|"
-msgid "Playlist"
+msgctxt "SettingsDialog|"
+msgid "Recorder"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Keyboard shortcuts"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Action"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Key"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Play / Pause"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Stop"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next channel"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Previous channel"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Fullscreen"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Info Widget"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Controls Widget"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Mute"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Teletext"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume up"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume down"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Recorder"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open File"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open URL"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open Channel list"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Edit Channel list"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Settings"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Always on top"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Simple Mode"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Hide to tray"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next audio track"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next video track"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next subtitle track"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next aspect ratio mode"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next crop mode"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next deinterlace mode"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Set"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Defaults"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Radio"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Default radio category:"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "UDPXY support"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Enable UDPXY support"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Router IP or name:"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Router port:"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Interface"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Toolbar style:"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Icon only"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Text only"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Text beside icon"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Text under icon"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "System default"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Show splash screen"
+msgstr ""
+
+msgctxt "SettingsEditorDialog|"
+msgid "Settings"
+msgstr ""
+
+msgctxt "SettingsEditorDialog|"
+msgid "General"
+msgstr ""
+
+msgctxt "SettingsEditorDialog|"
+msgid "Editor"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid "Tano Editor"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid "Language"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid "System default language"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid "Custom language"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid "Defaults"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid "Restore defaults"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid "You are using Tano Editor version:"
 msgstr ""
 
 msgctxt "SettingsGeneral|"
@@ -1464,10 +1673,6 @@ msgstr ""
 
 msgctxt "SettingsGeneral|"
 msgid "Autoplay last channel"
-msgstr ""
-
-msgctxt "SettingsGeneral|"
-msgid "You are using Tano Editor version:"
 msgstr ""
 
 msgctxt "SettingsGeneral|"
@@ -1537,9 +1742,23 @@ msgid "Default radio category:"
 msgstr ""
 
 msgctxt "SettingsPlaylist|"
-msgid ""
-"<i>Updating will not change your playlist order. Any other information will "
-"be updated.</i>"
+msgid "UDPXY support"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Enable UDPXY support"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Router IP or name:"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "Router port:"
+msgstr ""
+
+msgctxt "SettingsPlaylist|"
+msgid "<i>Updating will not change your playlist order.</i>"
 msgstr ""
 
 msgctxt "SettingsRecorder|"
@@ -1592,130 +1811,6 @@ msgstr ""
 
 msgctxt "SettingsSchedule|"
 msgid "<i>Grabber running is not available yet.</i>"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Action"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Key"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Stop"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Next channel"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Previous channel"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Fullscreen"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Info Widget"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Controls Widget"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Mute"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Volume up"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Volume down"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Recorder"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Open File"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Open URL"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Open Channel list"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Edit Channel list"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Settings"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Always on top"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Simple Mode"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Hide to tray"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Next audio track"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Next video track"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Next subtitle track"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Next aspect ratio mode"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Next crop mode"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Next deinterlace mode"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Set"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Play / Pause"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Teletext"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Defaults"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Keyboard shortcuts"
 msgstr ""
 
 msgctxt "SettingsUi|"

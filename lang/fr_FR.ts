@@ -1631,23 +1631,23 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>Support UDPXY</translation>
+        <translation type="obsolete">Support UDPXY</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Autoriser le support UDPXY</translation>
+        <translation type="obsolete">Autoriser le support UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>Nom ou IP du routeur :</translation>
+        <translation type="obsolete">Nom ou IP du routeur :</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Port du routeur :</translation>
+        <translation type="obsolete">Port du routeur :</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Ceci convertira les URLs dans le fichier de liste de %1 en %2.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Ceci convertira les URLs dans le fichier de liste de %1 en %2.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
@@ -1691,26 +1691,184 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
 </context>
 <context>
-    <name>SettingsEdit</name>
+    <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Préférences</translation>
+        <translation type="unfinished">Préférences</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Général</translation>
+        <translation type="unfinished">Général</translation>
+    </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Interface</translation>
+        <translation type="unfinished">Interface</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>Relecture</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Calendrier</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Enregistreur</translation>
+        <translation type="unfinished">Enregistreur</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialogShortcuts</name>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="unfinished">Action</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished">Raccourci</translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
+        <translation type="unfinished">Lire / pause</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next channel</source>
+        <translation type="unfinished">Chaîne suivante</translation>
+    </message>
+    <message>
+        <source>Previous channel</source>
+        <translation type="unfinished">Chaîne précédente</translation>
+    </message>
+    <message>
+        <source>Fullscreen</source>
+        <translation type="unfinished">Plein écran</translation>
+    </message>
+    <message>
+        <source>Toggle Info Widget</source>
+        <translation type="unfinished">Basculer vers l&apos;information du widget</translation>
+    </message>
+    <message>
+        <source>Toggle Controls Widget</source>
+        <translation type="unfinished">Basculer vers le contrôle du widget</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="unfinished">Augmenter le volume</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="unfinished">Diminuer le volume</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Enregistreur</translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation type="unfinished">Ouvrir le fichier</translation>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation type="unfinished">Ouvrir une URL</translation>
+    </message>
+    <message>
+        <source>Open Channel list</source>
+        <translation type="unfinished">Ouvrir une liste de chaînes</translation>
+    </message>
+    <message>
+        <source>Edit Channel list</source>
+        <translation type="unfinished">Modifier la liste de chaînes</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Préférences</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Toujours au premier plan</translation>
+    </message>
+    <message>
+        <source>Simple Mode</source>
+        <translation type="unfinished">Mode simplifié</translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="unfinished">Minimiser dans le tableau de bord</translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="unfinished">Piste audio suivante</translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="unfinished">Piste vidéo suivante</translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="unfinished">Piste de sous-titres suivante</translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished">Mode de proportion suivante</translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="unfinished">Mode de découpage suivant</translation>
+    </message>
+    <message>
+        <source>Next deinterlace mode</source>
+        <translation type="unfinished">Mode de désentrelacement suivant</translation>
+    </message>
+    <message>
+        <source>Set</source>
+        <translation type="unfinished">Positionner</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished">Defauts</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEdit</name>
+    <message>
+        <source>Settings</source>
+        <translation type="obsolete">Préférences</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="obsolete">Général</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="obsolete">Interface</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="obsolete">Relecture</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="obsolete">Enregistreur</translation>
     </message>
     <message>
         <source>Shortcuts</source>
@@ -1718,11 +1876,183 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Calendrier</translation>
+        <translation type="obsolete">Calendrier</translation>
     </message>
     <message>
-        <source>Playlist</source>
+        <source>Editor</source>
+        <translation type="obsolete">Éditeur</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditor</name>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="obsolete">Support UDPXY</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="obsolete">Autoriser le support UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="obsolete">Nom ou IP du routeur :</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="obsolete">Port du routeur :</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Ceci convertira les URLs dans le fichier de liste de %1 en %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="obsolete">Interface</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="obsolete">Style de la barre d&apos;outil :</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="obsolete">Icone seulement</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="obsolete">Texte seulement</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="obsolete">Texte à coté de l&apos;icone</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="obsolete">Texte sous l&apos;icone</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="obsolete">Par défaut</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="obsolete">Afficher le pré-écran</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorCommon</name>
+    <message>
+        <source>Radio</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished">Support UDPXY</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Autoriser le support UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">Nom ou IP du routeur :</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Port du routeur :</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Ceci convertira les URLs dans le fichier de liste de %1 en %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished">Interface</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished">Style de la barre d&apos;outil :</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished">Icone seulement</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished">Texte seulement</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished">Texte à coté de l&apos;icone</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished">Texte sous l&apos;icone</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished">Par défaut</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished">Afficher le pré-écran</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorDialog</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Préférences</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="unfinished">Général</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Éditeur</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorGeneral</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Éditeur de Tano</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Remarque : Ces préférences sont partagées avec toutes les applications Tano.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Langue</translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="unfinished">Langue du système</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="unfinished">langue personnalisée</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished">Defauts</translation>
+    </message>
+    <message>
+        <source>Restore defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using Tano Editor version:</source>
+        <translation type="unfinished">Vous utilisez la version de l&apos;éditeurt de Tano :</translation>
     </message>
 </context>
 <context>
@@ -1765,7 +2095,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
-        <translation>Vous utilisez la version de l&apos;éditeurt de Tano :</translation>
+        <translation type="obsolete">Vous utilisez la version de l&apos;éditeurt de Tano :</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
@@ -1786,6 +2116,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="obsolete">Éditeur de Tano</translation>
     </message>
 </context>
 <context>
@@ -1850,7 +2184,27 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;Updating will not change your playlist order. Any other information will be updated.&lt;/i&gt;</source>
+        <source>UDPXY support</source>
+        <translation type="unfinished">Support UDPXY</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Autoriser le support UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">Nom ou IP du routeur :</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Port du routeur :</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Ceci convertira les URLs dans le fichier de liste de %1 en %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1928,115 +2282,115 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <name>SettingsShortcuts</name>
     <message>
         <source>Action</source>
-        <translation>Action</translation>
+        <translation type="obsolete">Action</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Raccourci</translation>
+        <translation type="obsolete">Raccourci</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation type="obsolete">Stop</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>Chaîne suivante</translation>
+        <translation type="obsolete">Chaîne suivante</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>Chaîne précédente</translation>
+        <translation type="obsolete">Chaîne précédente</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>Plein écran</translation>
+        <translation type="obsolete">Plein écran</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation>Basculer vers l&apos;information du widget</translation>
+        <translation type="obsolete">Basculer vers l&apos;information du widget</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation>Basculer vers le contrôle du widget</translation>
+        <translation type="obsolete">Basculer vers le contrôle du widget</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Couper</translation>
+        <translation type="obsolete">Couper</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Augmenter le volume</translation>
+        <translation type="obsolete">Augmenter le volume</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Diminuer le volume</translation>
+        <translation type="obsolete">Diminuer le volume</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Enregistreur</translation>
+        <translation type="obsolete">Enregistreur</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>Ouvrir le fichier</translation>
+        <translation type="obsolete">Ouvrir le fichier</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Ouvrir une URL</translation>
+        <translation type="obsolete">Ouvrir une URL</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>Ouvrir une liste de chaînes</translation>
+        <translation type="obsolete">Ouvrir une liste de chaînes</translation>
     </message>
     <message>
         <source>Edit Channel list</source>
-        <translation>Modifier la liste de chaînes</translation>
+        <translation type="obsolete">Modifier la liste de chaînes</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Préférences</translation>
+        <translation type="obsolete">Préférences</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Toujours au premier plan</translation>
+        <translation type="obsolete">Toujours au premier plan</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Mode simplifié</translation>
+        <translation type="obsolete">Mode simplifié</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Minimiser dans le tableau de bord</translation>
+        <translation type="obsolete">Minimiser dans le tableau de bord</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>Piste audio suivante</translation>
+        <translation type="obsolete">Piste audio suivante</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>Piste vidéo suivante</translation>
+        <translation type="obsolete">Piste vidéo suivante</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>Piste de sous-titres suivante</translation>
+        <translation type="obsolete">Piste de sous-titres suivante</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>Mode de proportion suivante</translation>
+        <translation type="obsolete">Mode de proportion suivante</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation>Mode de découpage suivant</translation>
+        <translation type="obsolete">Mode de découpage suivant</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>Mode de désentrelacement suivant</translation>
+        <translation type="obsolete">Mode de désentrelacement suivant</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Positionner</translation>
+        <translation type="obsolete">Positionner</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation>Lire / pause</translation>
+        <translation type="obsolete">Lire / pause</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
@@ -2044,15 +2398,11 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletexte</translation>
+        <translation type="obsolete">Teletexte</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>Defauts</translation>
-    </message>
-    <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Defauts</translation>
     </message>
 </context>
 <context>

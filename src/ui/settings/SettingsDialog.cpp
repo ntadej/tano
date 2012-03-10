@@ -16,16 +16,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "SettingsEdit.h"
-#include "ui_SettingsEdit.h"
+#include "SettingsDialog.h"
+#include "ui_SettingsDialog.h"
 
 #include "core/Enums.h"
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
 
-SettingsEdit::SettingsEdit(QWidget *parent)
+SettingsDialog::SettingsDialog(QWidget *parent)
     : QDialog(parent),
-      ui(new Ui::SettingsEdit)
+      ui(new Ui::SettingsDialog)
 {
     ui->setupUi(this);
 
@@ -33,23 +33,17 @@ SettingsEdit::SettingsEdit(QWidget *parent)
 
     read();
 
-#if EDITOR
-    ui->setttingsListWidget->item(1)->setHidden(true);
-    ui->setttingsListWidget->item(4)->setHidden(true);
-    ui->setttingsListWidget->item(5)->setHidden(true);
-#endif
-
     connect(ui->general, SIGNAL(resetDefaults()), this, SLOT(defaults()));
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 }
 
-SettingsEdit::~SettingsEdit()
+SettingsDialog::~SettingsDialog()
 {
     delete ui;
     delete _settings;
 }
 
-void SettingsEdit::changeEvent(QEvent *e)
+void SettingsDialog::changeEvent(QEvent *e)
 {
     QDialog::changeEvent(e);
     switch (e->type())
@@ -62,7 +56,7 @@ void SettingsEdit::changeEvent(QEvent *e)
     }
 }
 
-void SettingsEdit::action(QAbstractButton *button)
+void SettingsDialog::action(QAbstractButton *button)
 {
     switch(ui->buttonBox->standardButton(button))
     {
@@ -77,7 +71,7 @@ void SettingsEdit::action(QAbstractButton *button)
     }
 }
 
-void SettingsEdit::apply()
+void SettingsDialog::apply()
 {
     // General
     _settings->setConfigured(!ui->general->wizard());
@@ -90,10 +84,12 @@ void SettingsEdit::apply()
     _settings->setPlaylistUpdate(ui->playlist->playlistUpdate());
     _settings->setPlaylistUpdateUrl(ui->playlist->playlistUpdateUrl());
     _settings->setRadioCategory(ui->playlist->radioCategory());
+    _settings->setUdpxy(ui->playlist->udpxy());
+    _settings->setUdpxyUrl(ui->playlist->udpxyUrl());
+    _settings->setUdpxyPort(ui->playlist->udpxyPort());
 
     // GUI
     _settings->setOsd(ui->gui->osd());
-    _settings->setOsdPlaylist(ui->gui->osdPlaylist());
     _settings->setTrayEnabled(ui->gui->tray());
     _settings->setHideToTray(ui->gui->trayHide());
     _settings->setMouseWheel(ui->gui->wheel());
@@ -111,9 +107,6 @@ void SettingsEdit::apply()
     _settings->setDeinterlacing(ui->backend->deinterlacing());
     _settings->setAudioLanguage(ui->backend->audio());
     _settings->setSubtitleLanguage(ui->backend->sub());
-    _settings->setUdpxy(ui->backend->udpxy());
-    _settings->setUdpxyUrl(ui->backend->udpxyUrl());
-    _settings->setUdpxyPort(ui->backend->udpxyPort());
 
     // Schedule
     _settings->setXmltvLocation(ui->schedule->location());
@@ -129,7 +122,7 @@ void SettingsEdit::apply()
     _settings->writeSettings();
 }
 
-void SettingsEdit::defaults()
+void SettingsDialog::defaults()
 {
     // General
     ui->general->setSessionVolume(Settings::DEFAULT_SESSION_VOLUME);
@@ -141,10 +134,12 @@ void SettingsEdit::defaults()
     ui->playlist->setPlaylistUpdate(Settings::DEFAULT_PLAYLIST_UPDATE);
     ui->playlist->setPlaylistUpdateUrl(Settings::DEFAULT_PLAYLIST_UPDATE_URL);
     ui->playlist->setRadioCategory(Settings::DEFAULT_RADIO_CATEGORY);
+    ui->playlist->setUdpxy(Settings::DEFAULT_UDPXY);
+    ui->playlist->setUdpxyUrl(Settings::DEFAULT_UDPXY_URL);
+    ui->playlist->setUdpxyPort(Settings::DEFAULT_UDPXY_PORT);
 
     // GUI
     ui->gui->setOsd(Settings::DEFAULT_OSD);
-    ui->gui->setOsdPlaylist(Settings::DEFAULT_OSD_PLAYLIST);
     ui->gui->setTray(Settings::DEFAULT_TRAY_ENABLED);
     ui->gui->setTrayHide(Settings::DEFAULT_HIDE_TO_TRAY);
     ui->gui->setWheel(Settings::DEFAULT_MOUSE_WHEEL);
@@ -162,9 +157,6 @@ void SettingsEdit::defaults()
     ui->backend->setDeinterlacing(Settings::DEFAULT_DEINTERLACING);
     ui->backend->setAudio(Settings::DEFAULT_AUDIO_LANGUAGE);
     ui->backend->setSub(Settings::DEFAULT_SUBTITLE_LANGUAGE);
-    ui->backend->setUdpxy(Settings::DEFAULT_UDPXY);
-    ui->backend->setUdpxyUrl(Settings::DEFAULT_UDPXY_URL);
-    ui->backend->setUdpxyPort(Settings::DEFAULT_UDPXY_PORT);
 
     // Schedule
     ui->schedule->setLocation(Settings::DEFAULT_XMLTV_LOCATION);
@@ -177,7 +169,7 @@ void SettingsEdit::defaults()
     ui->recorder->setDirectory(Settings::DEFAULT_RECORDER_DIRECTORY);
 }
 
-void SettingsEdit::read()
+void SettingsDialog::read()
 {
     // General
     ui->general->setWizard(!_settings->configured());
@@ -190,10 +182,12 @@ void SettingsEdit::read()
     ui->playlist->setPlaylistUpdate(_settings->playlistUpdate());
     ui->playlist->setPlaylistUpdateUrl(_settings->playlistUpdateUrl());
     ui->playlist->setRadioCategory(_settings->radioCategory());
+    ui->playlist->setUdpxy(_settings->udpxy());
+    ui->playlist->setUdpxyUrl(_settings->udpxyUrl());
+    ui->playlist->setUdpxyPort(_settings->udpxyPort());
 
     // GUI
     ui->gui->setOsd(_settings->osd());
-    ui->gui->setOsdPlaylist(_settings->osdPlaylist());
     ui->gui->setTray(_settings->trayEnabled());
     ui->gui->setTrayHide(_settings->hideToTray());
     ui->gui->setWheel(_settings->mouseWheel());
@@ -211,9 +205,6 @@ void SettingsEdit::read()
     ui->backend->setDeinterlacing(_settings->deinterlacing());
     ui->backend->setAudio(_settings->audioLanguage());
     ui->backend->setSub(_settings->subtitleLanguage());
-    ui->backend->setUdpxy(_settings->udpxy());
-    ui->backend->setUdpxyUrl(_settings->udpxyUrl());
-    ui->backend->setUdpxyPort(_settings->udpxyPort());
 
     // Schedule
     ui->schedule->setLocation(_settings->xmltvLocation());
@@ -226,7 +217,7 @@ void SettingsEdit::read()
     ui->recorder->setDirectory(_settings->recorderDirectory());
 }
 
-void SettingsEdit::save()
+void SettingsDialog::save()
 {
     apply();
     hide();

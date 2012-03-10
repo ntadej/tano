@@ -1986,23 +1986,23 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation type="unfinished">Podpora UDPXY</translation>
+        <translation type="obsolete">Podpora UDPXY</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation type="unfinished">Povolit podporu UDPXY</translation>
+        <translation type="obsolete">Povolit podporu UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation type="unfinished">IP nebo název směrovače:</translation>
+        <translation type="obsolete">IP nebo název směrovače:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation type="unfinished">Přípojka směrovače:</translation>
+        <translation type="obsolete">Přípojka směrovače:</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
@@ -2046,14 +2046,172 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
 </context>
 <context>
-    <name>SettingsEdit</name>
+    <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation type="unfinished">Nastavení</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Obecné</translation>
+        <translation type="unfinished">Obecné</translation>
+    </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished">Rozhraní</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="unfinished">Přehrávání</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Rozvrh</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialogShortcuts</name>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="unfinished">Činnost</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished">Klávesa</translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
+        <translation type="unfinished">Přehrát/Pozastavit</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Stop</translation>
+    </message>
+    <message>
+        <source>Next channel</source>
+        <translation type="unfinished">Další kanál</translation>
+    </message>
+    <message>
+        <source>Previous channel</source>
+        <translation type="unfinished">Předchozí kanál</translation>
+    </message>
+    <message>
+        <source>Fullscreen</source>
+        <translation type="unfinished">Na celou obrazovku</translation>
+    </message>
+    <message>
+        <source>Toggle Info Widget</source>
+        <translation type="unfinished">Přepnout informační prvek</translation>
+    </message>
+    <message>
+        <source>Toggle Controls Widget</source>
+        <translation type="unfinished">Přepnout ovládací prvek</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished">Ztlumit</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Teletext</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="unfinished">Zvýšit hlasitost</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="unfinished">Snížit hlasitost</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation type="unfinished">Otevřít soubor</translation>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation type="unfinished">Otevřít adresu (URL)</translation>
+    </message>
+    <message>
+        <source>Open Channel list</source>
+        <translation type="unfinished">Otevřít seznam programů</translation>
+    </message>
+    <message>
+        <source>Edit Channel list</source>
+        <translation type="unfinished">Upravit seznam programů</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavení</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Vždy nahoře</translation>
+    </message>
+    <message>
+        <source>Simple Mode</source>
+        <translation type="unfinished">Jednoduchý režim</translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="unfinished">Skrýt v oznamovací oblasti panelu</translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="unfinished">Další zvuková stopa</translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="unfinished">Další obrazová stopa</translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="unfinished">Další titulková stopa</translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished">Další režim pro poměr stran</translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="unfinished">Další režim pro ořez</translation>
+    </message>
+    <message>
+        <source>Next deinterlace mode</source>
+        <translation type="unfinished">Další režim pro zrušení prokládání</translation>
+    </message>
+    <message>
+        <source>Set</source>
+        <translation type="unfinished">Nastavit</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEdit</name>
+    <message>
+        <source>Settings</source>
+        <translation type="obsolete">Nastavení</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="obsolete">Obecné</translation>
     </message>
     <message>
         <source>Channels</source>
@@ -2061,15 +2219,15 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Rozhraní</translation>
+        <translation type="obsolete">Rozhraní</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>Přehrávání</translation>
+        <translation type="obsolete">Přehrávání</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávání</translation>
+        <translation type="obsolete">Nahrávání</translation>
     </message>
     <message>
         <source>Shortcuts</source>
@@ -2205,10 +2363,182 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Rozvrh</translation>
+        <translation type="obsolete">Rozvrh</translation>
     </message>
     <message>
-        <source>Playlist</source>
+        <source>Editor</source>
+        <translation type="obsolete">Editor</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditor</name>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="obsolete">Podpora UDPXY</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="obsolete">Povolit podporu UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="obsolete">IP nebo název směrovače:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="obsolete">Přípojka směrovače:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="obsolete">Rozhraní</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="obsolete">Styl nástrojového pruhu:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="obsolete">Pouze ikony</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="obsolete">Pouze text</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="obsolete">Text vedle ikon</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="obsolete">Text pod ikonami</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="obsolete">Výchozí nastavení</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="obsolete">Ukázat úvodní obrazovku</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorCommon</name>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished">Podpora UDPXY</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Povolit podporu UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">IP nebo název směrovače:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Přípojka směrovače:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished">Rozhraní</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished">Styl nástrojového pruhu:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished">Pouze ikony</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished">Pouze text</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished">Text vedle ikon</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished">Text pod ikonami</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished">Výchozí nastavení</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished">Ukázat úvodní obrazovku</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorDialog</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavení</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="unfinished">Obecné</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Editor</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorGeneral</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Editor Tano</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="unfinished">Výchozí jazyk systému</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="unfinished">Jazyk stanovený uživatelem</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore defaults</source>
+        <translation type="unfinished">Obnovit výchozí nastavení</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using Tano Editor version:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2251,10 +2581,6 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="unfinished">Automatické přehrávání posledního kanálu</translation>
     </message>
     <message>
-        <source>You are using Tano Editor version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>You are using Tano version:</source>
         <translation type="unfinished">Používáte verzi programu Tano:</translation>
     </message>
@@ -2273,6 +2599,10 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="obsolete">Editor Tano</translation>
     </message>
 </context>
 <context>
@@ -2377,7 +2707,27 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;Updating will not change your playlist order. Any other information will be updated.&lt;/i&gt;</source>
+        <source>UDPXY support</source>
+        <translation type="unfinished">Podpora UDPXY</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Povolit podporu UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">IP nebo název směrovače:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Přípojka směrovače:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2511,107 +2861,107 @@ Ztratíte všechny neuložené změny.</translation>
     <name>SettingsShortcuts</name>
     <message>
         <source>Action</source>
-        <translation>Činnost</translation>
+        <translation type="obsolete">Činnost</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Klávesa</translation>
+        <translation type="obsolete">Klávesa</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation type="obsolete">Stop</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>Další kanál</translation>
+        <translation type="obsolete">Další kanál</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>Předchozí kanál</translation>
+        <translation type="obsolete">Předchozí kanál</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>Na celou obrazovku</translation>
+        <translation type="obsolete">Na celou obrazovku</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation>Přepnout informační prvek</translation>
+        <translation type="obsolete">Přepnout informační prvek</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation>Přepnout ovládací prvek</translation>
+        <translation type="obsolete">Přepnout ovládací prvek</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Ztlumit</translation>
+        <translation type="obsolete">Ztlumit</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Zvýšit hlasitost</translation>
+        <translation type="obsolete">Zvýšit hlasitost</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Snížit hlasitost</translation>
+        <translation type="obsolete">Snížit hlasitost</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávač</translation>
+        <translation type="obsolete">Nahrávač</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>Otevřít soubor</translation>
+        <translation type="obsolete">Otevřít soubor</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Otevřít adresu (URL)</translation>
+        <translation type="obsolete">Otevřít adresu (URL)</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>Otevřít seznam programů</translation>
+        <translation type="obsolete">Otevřít seznam programů</translation>
     </message>
     <message>
         <source>Edit Channel list</source>
-        <translation>Upravit seznam programů</translation>
+        <translation type="obsolete">Upravit seznam programů</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation type="obsolete">Nastavení</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Vždy nahoře</translation>
+        <translation type="obsolete">Vždy nahoře</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Jednoduchý režim</translation>
+        <translation type="obsolete">Jednoduchý režim</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Skrýt v oznamovací oblasti panelu</translation>
+        <translation type="obsolete">Skrýt v oznamovací oblasti panelu</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>Další zvuková stopa</translation>
+        <translation type="obsolete">Další zvuková stopa</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>Další obrazová stopa</translation>
+        <translation type="obsolete">Další obrazová stopa</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>Další titulková stopa</translation>
+        <translation type="obsolete">Další titulková stopa</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>Další režim pro poměr stran</translation>
+        <translation type="obsolete">Další režim pro poměr stran</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation>Další režim pro ořez</translation>
+        <translation type="obsolete">Další režim pro ořez</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>Další režim pro zrušení prokládání</translation>
+        <translation type="obsolete">Další režim pro zrušení prokládání</translation>
     </message>
     <message>
         <source>Clear Shortcut</source>
@@ -2623,11 +2973,11 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Nastavit</translation>
+        <translation type="obsolete">Nastavit</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation>Přehrát/Pozastavit</translation>
+        <translation type="obsolete">Přehrát/Pozastavit</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
@@ -2635,15 +2985,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletext</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Teletext</translation>
     </message>
 </context>
 <context>

@@ -37,7 +37,7 @@
 
 #if EDITOR
     #include "core/LocaleManager.h"
-    #include "ui/settings/SettingsEdit.h"
+    #include "ui/settings-editor/SettingsEditorDialog.h"
 #if UPDATE
     #include "ui/dialogs/UpdateDialog.h"
 #endif
@@ -210,7 +210,7 @@ void PlaylistEditor::help()
 void PlaylistEditor::settings()
 {
 #if EDITOR
-    SettingsEdit s(this);
+    SettingsEditorDialog s(this);
     s.exec();
     _locale->setLocale();
     createSettings();

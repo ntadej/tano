@@ -47,12 +47,12 @@ SET(Tano_UIs
     ui/recorder/TimersDisplayWidget.ui
     ui/recorder/TimersEdit.ui
     ui/settings/SettingsBackend.ui
-    ui/settings/SettingsEdit.ui
+    ui/settings/SettingsDialog.ui
     ui/settings/SettingsGeneral.ui
     ui/settings/SettingsPlaylist.ui
     ui/settings/SettingsRecorder.ui
     ui/settings/SettingsSchedule.ui
-    ui/settings/SettingsShortcuts.ui
+    ui/settings/SettingsDialogShortcuts.ui
     ui/settings/SettingsUi.ui
     ui/wizard/ConclusionPage.ui
     ui/wizard/IntroPage.ui
@@ -110,12 +110,12 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/recorder/TimersDisplayWidget.h
     ui/recorder/TimersEdit.h
     ui/settings/SettingsBackend.h
-    ui/settings/SettingsEdit.h
+    ui/settings/SettingsDialog.h
     ui/settings/SettingsGeneral.h
     ui/settings/SettingsPlaylist.h
     ui/settings/SettingsRecorder.h
     ui/settings/SettingsSchedule.h
-    ui/settings/SettingsShortcuts.h
+    ui/settings/SettingsDialogShortcuts.h
     ui/settings/SettingsUi.h
     ui/wizard/ConclusionPage.h
     ui/wizard/FirstRunWizard.h
@@ -219,12 +219,12 @@ SET(Tano_UI_Srcs
     ui/recorder/TimersDisplayWidget.cpp
     ui/recorder/TimersEdit.cpp
     ui/settings/SettingsBackend.cpp
-    ui/settings/SettingsEdit.cpp
+    ui/settings/SettingsDialog.cpp
     ui/settings/SettingsGeneral.cpp
     ui/settings/SettingsPlaylist.cpp
     ui/settings/SettingsRecorder.cpp
     ui/settings/SettingsSchedule.cpp
-    ui/settings/SettingsShortcuts.cpp
+    ui/settings/SettingsDialogShortcuts.cpp
     ui/settings/SettingsUi.cpp
     ui/wizard/ConclusionPage.cpp
     ui/wizard/FirstRunWizard.cpp

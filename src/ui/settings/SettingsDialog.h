@@ -16,41 +16,41 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSBACKEND_H_
-#define TANO_SETTINGSBACKEND_H_
+#ifndef TANO_SETTINGSEDIT_H_
+#define TANO_SETTINGSEDIT_H_
 
-#include <QtGui/QWidget>
+#include <QtGui/QAbstractButton>
+#include <QtGui/QDialog>
+
+class Settings;
 
 namespace Ui
 {
-    class SettingsBackend;
+    class SettingsDialog;
 }
 
-class SettingsBackend : public QWidget
+class SettingsDialog : public QDialog
 {
 Q_OBJECT
 public:
-    SettingsBackend(QWidget *parent = 0);
-    ~SettingsBackend();
-
-    bool rememberChannelSettings() const;
-    void setRememberChannelSettings(const bool &remember);
-    int aspectRatio() const;
-    void setAspectRatio(const int &id);
-    int cropRatio() const;
-    void setCropRatio(const int &id);
-    int deinterlacing() const;
-    void setDeinterlacing(const int &id);
-    QString audio() const;
-    void setAudio(const QString &audio);
-    QString sub() const;
-    void setSub(const QString &sub);
+    explicit SettingsDialog(QWidget *parent = 0);
+    ~SettingsDialog();
 
 protected:
     void changeEvent(QEvent *e);
 
+private slots:
+    void action(QAbstractButton *button);
+    void apply();
+    void defaults();
+    void save();
+
 private:
-    Ui::SettingsBackend *ui;
+    void read();
+
+    Ui::SettingsDialog *ui;
+
+    Settings *_settings;
 };
 
-#endif // TANO_SETTINGSBACKEND_H_
+#endif // TANO_SETTINGSEDIT_H_

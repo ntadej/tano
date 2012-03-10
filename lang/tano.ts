@@ -1377,26 +1377,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Default aspect ratio:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1438,13 +1418,17 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>SettingsEdit</name>
+    <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1456,201 +1440,30 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Recorder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Playlist</source>
+        <source>Recorder</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SettingsGeneral</name>
+    <name>SettingsDialogShortcuts</name>
     <message>
-        <source>Tano</source>
+        <source>Keyboard shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Run First run wizard after restart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System default language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Session store</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember volume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Autoplay last channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You are using Tano Editor version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You are using Tano version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Restore defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsPage</name>
-    <message>
-        <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please select session, backend and other settings.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Session settings&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember volume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Autoplay last channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsPlaylist</name>
-    <message>
-        <source>Default playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Network refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh playlist on startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist URL:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default radio category:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Updating will not change your playlist order. Any other information will be updated.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsRecorder</name>
-    <message>
-        <source>Default recording directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsSchedule</name>
-    <message>
-        <source>Select desired XMLTV grabber from the list below:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>XMLTV settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>XMLTV file location:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh XMLTV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh XMLTV file on startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Run grabber</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>XMLTV source url:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Grabber</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsShortcuts</name>
     <message>
         <source>Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1679,6 +1492,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1754,11 +1571,104 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Play / Pause</source>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorCommon</name>
+    <message>
+        <source>Radio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Teletext</source>
+        <source>Default radio category:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorDialog</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorGeneral</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1766,7 +1676,202 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Keyboard shortcuts</source>
+        <source>Restore defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using Tano Editor version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsGeneral</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run First run wizard after restart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Session store</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autoplay last channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using Tano version:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPage</name>
+    <message>
+        <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select session, backend and other settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Session settings&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autoplay last channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPlaylist</name>
+    <message>
+        <source>Default playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network refresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh playlist on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist URL:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsRecorder</name>
+    <message>
+        <source>Default recording directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsSchedule</name>
+    <message>
+        <source>Select desired XMLTV grabber from the list below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV file location:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh XMLTV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh XMLTV file on startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV source url:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grabber</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

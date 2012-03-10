@@ -43,6 +43,9 @@ void Settings::writeSettings()
     setValue("channels/update", playlistUpdate());
     setValue("channels/updateurl", playlistUpdateUrl());
     setValue("channels/radio", radioCategory());
+    setValue("channels/udpxy", udpxy());
+    setValue("channels/udpxyurl", udpxyUrl());
+    setValue("channels/udpxyport", udpxyPort());
 
     setValue("start/splash", splash());
     setValue("start/lite", startLite());
@@ -51,7 +54,6 @@ void Settings::writeSettings()
     setValue("start/info", startInfo());
 
     setValue("gui/osd", osd());
-    setValue("gui/osdplaylist", osdPlaylist());
     setValue("gui/trayicon", trayEnabled());
     setValue("gui/hidetotray", hideToTray());
     setValue("gui/mousewheel", mouseWheel());
@@ -63,9 +65,6 @@ void Settings::writeSettings()
     setValue("backend/deinterlacing", deinterlacing());
     setValue("backend/audio", audioLanguage());
     setValue("backend/subtitles", subtitleLanguage());
-    setValue("backend/udpxy", udpxy());
-    setValue("backend/udpxyurl", udpxyUrl());
-    setValue("backend/udpxyport", udpxyPort());
 
     setValue("recorder/directory", recorderDirectory());
 
@@ -94,6 +93,9 @@ void Settings::readSettings()
     setPlaylistUpdate(value("channels/update", DEFAULT_PLAYLIST_UPDATE).toBool());
     setPlaylistUpdateUrl(value("channels/updateurl", DEFAULT_PLAYLIST_UPDATE_URL).toString());
     setRadioCategory(value("channels/radio", DEFAULT_RADIO_CATEGORY).toString());
+    setUdpxy(value("channels/udpxy", DEFAULT_UDPXY).toBool());
+    setUdpxyUrl(value("channels/udpxyurl", DEFAULT_UDPXY_URL).toString());
+    setUdpxyPort(value("channels/udpxyport", DEFAULT_UDPXY_PORT).toInt());
 
     setSplash(value("start/splash", DEFAULT_SPLASH).toBool());
     setStartLite(value("start/lite", DEFAULT_START_LITE).toBool());
@@ -102,7 +104,6 @@ void Settings::readSettings()
     setStartInfo(value("start/info", DEFAULT_START_INFO).toBool());
 
     setOsd(value("gui/osd", DEFAULT_OSD).toBool());
-    setOsdPlaylist(value("gui/osdplaylist", DEFAULT_OSD_PLAYLIST).toBool());
     setTrayEnabled(value("gui/trayicon", DEFAULT_TRAY_ENABLED).toBool());
     setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
     setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
@@ -114,9 +115,6 @@ void Settings::readSettings()
     setDeinterlacing(value("backend/deinterlacing", DEFAULT_DEINTERLACING).toInt());
     setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
     setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
-    setUdpxy(value("backend/udpxy", DEFAULT_UDPXY).toBool());
-    setUdpxyUrl(value("backend/udpxyurl", DEFAULT_UDPXY_URL).toString());
-    setUdpxyPort(value("backend/udpxyport", DEFAULT_UDPXY_PORT).toInt());
 
     setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
 

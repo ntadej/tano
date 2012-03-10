@@ -85,5 +85,6 @@
         <file>icons/24x24/shortcuts.png</file>
         <file>icons/16x16/go-next.png</file>
         <file>icons/16x16/go-previous.png</file>
+        <file>icons/48x48/editor.png</file>
     </qresource>
 </RCC>

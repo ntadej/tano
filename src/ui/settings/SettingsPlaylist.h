@@ -39,8 +39,16 @@ public:
     void setPlaylistUpdate(const bool &enabled);
     QString playlistUpdateUrl() const;
     void setPlaylistUpdateUrl(const QString &playlist);
+
     QString radioCategory() const;
     void setRadioCategory(const QString &category);
+
+    bool udpxy() const;
+    void setUdpxy(const bool &enabled);
+    QString udpxyUrl() const;
+    void setUdpxyUrl(const QString &url);
+    int udpxyPort() const;
+    void setUdpxyPort(const int &port);
 
 protected:
     void changeEvent(QEvent *e);

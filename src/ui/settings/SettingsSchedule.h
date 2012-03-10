@@ -22,9 +22,7 @@
 #include <QtGui/QWidget>
 
 struct XmltvGrabber;
-#if !EDITOR
 class XmltvSystem;
-#endif
 
 namespace Ui
 {
@@ -60,10 +58,7 @@ private:
     Ui::SettingsSchedule *ui;
 
     QString _grabber;
-
-#if !EDITOR
     XmltvSystem *_xmltv;
-#endif
 };
 
 #endif // TANO_SETTINGSSCHEDULE_H_

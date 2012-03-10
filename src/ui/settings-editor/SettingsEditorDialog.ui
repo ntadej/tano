@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsEditorDialog</class>
+ <widget class="QDialog" name="SettingsEditorDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Settings</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="layout">
+   <item row="0" column="0">
+    <widget class="QListWidget" name="setttingsListWidget">
+     <property name="minimumSize">
+      <size>
+       <width>85</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>85</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="textElideMode">
+      <enum>Qt::ElideNone</enum>
+     </property>
+     <property name="flow">
+      <enum>QListView::LeftToRight</enum>
+     </property>
+     <property name="layoutMode">
+      <enum>QListView::SinglePass</enum>
+     </property>
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="gridSize">
+      <size>
+       <width>80</width>
+       <height>60</height>
+      </size>
+     </property>
+     <property name="viewMode">
+      <enum>QListView::IconMode</enum>
+     </property>
+     <property name="selectionRectVisible">
+      <bool>true</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>General</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../data/icons.qrc">
+        <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Editor</string>
+      </property>
+      <property name="textAlignment">
+       <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../data/icons.qrc">
+        <normaloff>:/icons/48x48/editor.png</normaloff>:/icons/48x48/editor.png</iconset>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QStackedWidget" name="settingsWidget">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="pageGeneral">
+      <layout class="QVBoxLayout" name="layoutMain">
+       <item>
+        <widget class="SettingsEditorGeneral" name="general" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageEditor">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="SettingsEditorCommon" name="editor" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SettingsEditorGeneral</class>
+   <extends>QWidget</extends>
+   <header>ui/settings-editor/SettingsEditorGeneral.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsEditorCommon</class>
+   <extends>QWidget</extends>
+   <header>ui/settings-editor/SettingsEditorCommon.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../../data/icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>setttingsListWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>settingsWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>328</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>402</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

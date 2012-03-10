@@ -19,6 +19,14 @@
 PROJECT(tano-editor)
 cmake_minimum_required(VERSION 2.6)
 
+#################
+# Configuration #
+#################
+CONFIGURE_FILE(
+    "${CMAKE_SOURCE_DIR}/src/Config.h.in"
+    "${CMAKE_BINARY_DIR}/editor/Config.h"
+)
+
 ###################
 # List of sources #
 ###################
@@ -26,17 +34,14 @@ cmake_minimum_required(VERSION 2.6)
 SET(Tano_Editor_UIs
     ../src/ui/dialogs/AboutDialog.ui
     ../src/ui/dialogs/PrintDialog.ui
+    ../src/ui/playlist/PlaylistDisplayWidget.ui
     ../src/ui/playlist/PlaylistEditor.ui
     ../src/ui/playlist/PlaylistEditorHelp.ui
     ../src/ui/playlist/PlaylistExportTvheadend.ui
     ../src/ui/playlist/PlaylistImportCSV.ui
-    ../src/ui/settings/SettingsBackend.ui
-    ../src/ui/settings/SettingsEdit.ui
-    ../src/ui/settings/SettingsGeneral.ui
-    ../src/ui/settings/SettingsPlaylist.ui
-    ../src/ui/settings/SettingsRecorder.ui
-    ../src/ui/settings/SettingsSchedule.ui
-    ../src/ui/settings/SettingsUi.ui
+    ../src/ui/settings-editor/SettingsEditorCommon.ui
+    ../src/ui/settings-editor/SettingsEditorDialog.ui
+    ../src/ui/settings-editor/SettingsEditorGeneral.ui
 )
 
 # Define the MOC source files used by Tano Editor
@@ -57,13 +62,9 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/ui/playlist/PlaylistEditorHelp.h
     ../src/ui/playlist/PlaylistExportTvheadend.h
     ../src/ui/playlist/PlaylistImportCSV.h
-    ../src/ui/settings/SettingsBackend.h
-    ../src/ui/settings/SettingsEdit.h
-    ../src/ui/settings/SettingsGeneral.h
-    ../src/ui/settings/SettingsPlaylist.h
-    ../src/ui/settings/SettingsRecorder.h
-    ../src/ui/settings/SettingsSchedule.h
-    ../src/ui/settings/SettingsUi.h
+    ../src/ui/settings-editor/SettingsEditorCommon.h
+    ../src/ui/settings-editor/SettingsEditorDialog.h
+    ../src/ui/settings-editor/SettingsEditorGeneral.h
 )
 
 SET(Tano_Editor_Resrcs
@@ -113,13 +114,9 @@ SET(Tano_Editor_Srcs
     ../src/ui/playlist/PlaylistEditorHelp.cpp
     ../src/ui/playlist/PlaylistExportTvheadend.cpp
     ../src/ui/playlist/PlaylistImportCSV.cpp
-    ../src/ui/settings/SettingsBackend.cpp
-    ../src/ui/settings/SettingsEdit.cpp
-    ../src/ui/settings/SettingsGeneral.cpp
-    ../src/ui/settings/SettingsPlaylist.cpp
-    ../src/ui/settings/SettingsRecorder.cpp
-    ../src/ui/settings/SettingsSchedule.cpp
-    ../src/ui/settings/SettingsUi.cpp
+    ../src/ui/settings-editor/SettingsEditorCommon.cpp
+    ../src/ui/settings-editor/SettingsEditorDialog.cpp
+    ../src/ui/settings-editor/SettingsEditorGeneral.cpp
 )
 
 IF(UPDATE)
@@ -190,7 +187,7 @@ ENDIF(NOT MINGW)
 # Include paths and set up targets #
 ####################################
 # This needs to be added in order for #include to work inside .cpp files
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src")
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/editor" "${CMAKE_SOURCE_DIR}/src")
 
 # This line adds the include path of the Qt
 # directory to the compiler include path

@@ -1820,26 +1820,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished">Другой</translation>
     </message>
     <message>
-        <source>UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Default aspect ratio:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1881,14 +1861,172 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>SettingsEdit</name>
+    <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Настройка</translation>
+        <translation type="unfinished">Настройка</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Общие</translation>
+        <translation type="unfinished">Общие</translation>
+    </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished">Интерфейс</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="unfinished">Воспроизведение</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Программа</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Рекордер</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialogShortcuts</name>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="unfinished">Действие</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished">Кнопка</translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Стоп</translation>
+    </message>
+    <message>
+        <source>Next channel</source>
+        <translation type="unfinished">След. канал</translation>
+    </message>
+    <message>
+        <source>Previous channel</source>
+        <translation type="unfinished">Пред. канал</translation>
+    </message>
+    <message>
+        <source>Fullscreen</source>
+        <translation type="unfinished">Полноэкранный режим</translation>
+    </message>
+    <message>
+        <source>Toggle Info Widget</source>
+        <translation type="unfinished">Вкл./выкл. информационный виджет</translation>
+    </message>
+    <message>
+        <source>Toggle Controls Widget</source>
+        <translation type="unfinished">Вкл./выкл. виджет управления</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="unfinished">Громче</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="unfinished">Тише</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Рекордер</translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation type="unfinished">Открыть файл</translation>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation type="unfinished">Открыть URL</translation>
+    </message>
+    <message>
+        <source>Open Channel list</source>
+        <translation type="unfinished">Открыть список каналов</translation>
+    </message>
+    <message>
+        <source>Edit Channel list</source>
+        <translation type="unfinished">Редактировать список каналов</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Настройка</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Поверх всех окон</translation>
+    </message>
+    <message>
+        <source>Simple Mode</source>
+        <translation type="unfinished">&quot;Простой&quot; режим</translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="unfinished">Спрятать в трей</translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="unfinished">След. звуковая дорожка</translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="unfinished">След. видеодорожка</translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="unfinished">След. дорожка с субтитрами</translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished">След. соотношение сторон</translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="unfinished">След. кадрирование</translation>
+    </message>
+    <message>
+        <source>Next deinterlace mode</source>
+        <translation type="unfinished">След. режим устранения чересстрочности</translation>
+    </message>
+    <message>
+        <source>Set</source>
+        <translation type="unfinished">Задать</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEdit</name>
+    <message>
+        <source>Settings</source>
+        <translation type="obsolete">Настройка</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="obsolete">Общие</translation>
     </message>
     <message>
         <source>Channels</source>
@@ -1896,15 +2034,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Интерфейс</translation>
+        <translation type="obsolete">Интерфейс</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>Воспроизведение</translation>
+        <translation type="obsolete">Воспроизведение</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Рекордер</translation>
+        <translation type="obsolete">Рекордер</translation>
     </message>
     <message>
         <source>Shortcuts</source>
@@ -2032,10 +2170,158 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Программа</translation>
+        <translation type="obsolete">Программа</translation>
     </message>
     <message>
-        <source>Playlist</source>
+        <source>Editor</source>
+        <translation type="obsolete">Редактор</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditor</name>
+    <message>
+        <source>Interface</source>
+        <translation type="obsolete">Интерфейс</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="obsolete">Стиль панели инструментов:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="obsolete">Только значки</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="obsolete">Только текст</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="obsolete">Текст рядом со значками</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="obsolete">Текст под значками</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="obsolete">Как в системе</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="obsolete">Показать заставку</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorCommon</name>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished">Интерфейс</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished">Стиль панели инструментов:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished">Только значки</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished">Только текст</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished">Текст рядом со значками</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished">Текст под значками</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished">Как в системе</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished">Показать заставку</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorDialog</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Настройка</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="unfinished">Общие</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Редактор</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorGeneral</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Язык</translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="unfinished">Язык системы</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="unfinished">Выбрать язык</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore defaults</source>
+        <translation type="unfinished">Восстановить параметры по умолчанию</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using Tano Editor version:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2076,10 +2362,6 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Autoplay last channel</source>
         <translation type="unfinished">Автозапуск последнего канала</translation>
-    </message>
-    <message>
-        <source>You are using Tano Editor version:</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
@@ -2180,7 +2462,23 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;Updating will not change your playlist order. Any other information will be updated.&lt;/i&gt;</source>
+        <source>UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2294,107 +2592,107 @@ You will lose any unsaved changes.</source>
     <name>SettingsShortcuts</name>
     <message>
         <source>Action</source>
-        <translation>Действие</translation>
+        <translation type="obsolete">Действие</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Кнопка</translation>
+        <translation type="obsolete">Кнопка</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Стоп</translation>
+        <translation type="obsolete">Стоп</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>След. канал</translation>
+        <translation type="obsolete">След. канал</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>Пред. канал</translation>
+        <translation type="obsolete">Пред. канал</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>Полноэкранный режим</translation>
+        <translation type="obsolete">Полноэкранный режим</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation>Вкл./выкл. информационный виджет</translation>
+        <translation type="obsolete">Вкл./выкл. информационный виджет</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation>Вкл./выкл. виджет управления</translation>
+        <translation type="obsolete">Вкл./выкл. виджет управления</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Убрать звук</translation>
+        <translation type="obsolete">Убрать звук</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Громче</translation>
+        <translation type="obsolete">Громче</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Тише</translation>
+        <translation type="obsolete">Тише</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Рекордер</translation>
+        <translation type="obsolete">Рекордер</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>Открыть файл</translation>
+        <translation type="obsolete">Открыть файл</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Открыть URL</translation>
+        <translation type="obsolete">Открыть URL</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>Открыть список каналов</translation>
+        <translation type="obsolete">Открыть список каналов</translation>
     </message>
     <message>
         <source>Edit Channel list</source>
-        <translation>Редактировать список каналов</translation>
+        <translation type="obsolete">Редактировать список каналов</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Настройка</translation>
+        <translation type="obsolete">Настройка</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Поверх всех окон</translation>
+        <translation type="obsolete">Поверх всех окон</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>&quot;Простой&quot; режим</translation>
+        <translation type="obsolete">&quot;Простой&quot; режим</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Спрятать в трей</translation>
+        <translation type="obsolete">Спрятать в трей</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>След. звуковая дорожка</translation>
+        <translation type="obsolete">След. звуковая дорожка</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>След. видеодорожка</translation>
+        <translation type="obsolete">След. видеодорожка</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>След. дорожка с субтитрами</translation>
+        <translation type="obsolete">След. дорожка с субтитрами</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>След. соотношение сторон</translation>
+        <translation type="obsolete">След. соотношение сторон</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation>След. кадрирование</translation>
+        <translation type="obsolete">След. кадрирование</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>След. режим устранения чересстрочности</translation>
+        <translation type="obsolete">След. режим устранения чересстрочности</translation>
     </message>
     <message>
         <source>Clear Shortcut</source>
@@ -2406,23 +2704,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Set</source>
-        <translation>Задать</translation>
-    </message>
-    <message>
-        <source>Play / Pause</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Teletext</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Задать</translation>
     </message>
 </context>
 <context>

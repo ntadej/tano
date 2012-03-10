@@ -1691,26 +1691,27 @@ msgctxt "SettingsBackend|"
 msgid "Other"
 msgstr "Autre"
 
-msgctxt "SettingsBackend|"
-msgid "UDPXY support"
-msgstr "Support UDPXY"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "UDPXY support"
+#~ msgstr "Support UDPXY"
 
-msgctxt "SettingsBackend|"
-msgid "Enable UDPXY support"
-msgstr "Autoriser le support UDPXY"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Autoriser le support UDPXY"
 
-msgctxt "SettingsBackend|"
-msgid "Router IP or name:"
-msgstr "Nom ou IP du routeur :"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Router IP or name:"
+#~ msgstr "Nom ou IP du routeur :"
 
-msgctxt "SettingsBackend|"
-msgid "Router port:"
-msgstr "Port du routeur :"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Router port:"
+#~ msgstr "Port du routeur :"
 
 #, qt-format
-msgctxt "SettingsBackend|"
-msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
-msgstr "<i>Ceci convertira les URLs dans le fichier de liste de %1 en %2.</i>"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr ""
+#~ "<i>Ceci convertira les URLs dans le fichier de liste de %1 en %2.</i>"
 
 msgctxt "SettingsBackend|"
 msgid "Default aspect ratio:"
@@ -1759,37 +1760,411 @@ msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "X"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr "Préférences"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Général"
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsDialog|"
+msgid "Playlist"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "Interface"
 msgstr "Interface"
 
-msgctxt "SettingsEdit|"
+msgctxt "SettingsDialog|"
 msgid "Playback"
-msgstr "Relecture"
+msgstr ""
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Schedule"
+msgstr "Calendrier"
+
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "Recorder"
 msgstr "Enregistreur"
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Keyboard shortcuts"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Action"
+msgstr "Action"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Key"
+msgstr "Raccourci"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Play / Pause"
+msgstr "Lire / pause"
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Stop"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next channel"
+msgstr "Chaîne suivante"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Previous channel"
+msgstr "Chaîne précédente"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Info Widget"
+msgstr "Basculer vers l'information du widget"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Controls Widget"
+msgstr "Basculer vers le contrôle du widget"
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Mute"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Teletext"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume up"
+msgstr "Augmenter le volume"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume down"
+msgstr "Diminuer le volume"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Recorder"
+msgstr "Enregistreur"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open File"
+msgstr "Ouvrir le fichier"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open URL"
+msgstr "Ouvrir une URL"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open Channel list"
+msgstr "Ouvrir une liste de chaînes"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Edit Channel list"
+msgstr "Modifier la liste de chaînes"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Settings"
+msgstr "Préférences"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Always on top"
+msgstr "Toujours au premier plan"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Simple Mode"
+msgstr "Mode simplifié"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Hide to tray"
+msgstr "Minimiser dans le tableau de bord"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next audio track"
+msgstr "Piste audio suivante"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next video track"
+msgstr "Piste vidéo suivante"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next subtitle track"
+msgstr "Piste de sous-titres suivante"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next aspect ratio mode"
+msgstr "Mode de proportion suivante"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next crop mode"
+msgstr "Mode de découpage suivant"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next deinterlace mode"
+msgstr "Mode de désentrelacement suivant"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Set"
+msgstr "Positionner"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Defaults"
+msgstr "Defauts"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Settings"
+#~ msgstr "Préférences"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "General"
+#~ msgstr "Général"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Interface"
+#~ msgstr "Interface"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Playback"
+#~ msgstr "Relecture"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Recorder"
+#~ msgstr "Enregistreur"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Shortcuts"
 #~ msgstr "Raccourcis"
 
-msgctxt "SettingsEdit|"
-msgid "Schedule"
-msgstr "Calendrier"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Schedule"
+#~ msgstr "Calendrier"
 
-msgctxt "SettingsEdit|"
-msgid "Playlist"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Editor"
+#~ msgstr "Éditeur"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "UDPXY support"
+#~ msgstr "Support UDPXY"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Autoriser le support UDPXY"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Router IP or name:"
+#~ msgstr "Nom ou IP du routeur :"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Router port:"
+#~ msgstr "Port du routeur :"
+
+#, qt-format
+#~ msgctxt "SettingsEditor|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr ""
+#~ "<i>Ceci convertira les URLs dans le fichier de liste de %1 en %2.</i>"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Interface"
+#~ msgstr "Interface"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Toolbar style:"
+#~ msgstr "Style de la barre d'outil :"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Icon only"
+#~ msgstr "Icone seulement"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text only"
+#~ msgstr "Texte seulement"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text beside icon"
+#~ msgstr "Texte à coté de l'icone"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text under icon"
+#~ msgstr "Texte sous l'icone"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "System default"
+#~ msgstr "Par défaut"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Show splash screen"
+#~ msgstr "Afficher le pré-écran"
+
+msgctxt "SettingsEditorCommon|"
+msgid "Radio"
 msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Default radio category:"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "UDPXY support"
+msgstr "Support UDPXY"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Enable UDPXY support"
+msgstr "Autoriser le support UDPXY"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Router IP or name:"
+msgstr "Nom ou IP du routeur :"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Router port:"
+msgstr "Port du routeur :"
+
+#, qt-format
+#~ msgctxt "SettingsEditorCommon|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr ""
+#~ "<i>Ceci convertira les URLs dans le fichier de liste de %1 en %2.</i>"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Interface"
+msgstr "Interface"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Toolbar style:"
+msgstr "Style de la barre d'outil :"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Icon only"
+msgstr "Icone seulement"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text only"
+msgstr "Texte seulement"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text beside icon"
+msgstr "Texte à coté de l'icone"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text under icon"
+msgstr "Texte sous l'icone"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "System default"
+msgstr "Par défaut"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Show splash screen"
+msgstr "Afficher le pré-écran"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "Settings"
+msgstr "Préférences"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "General"
+msgstr "Général"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "Editor"
+msgstr "Éditeur"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Tano Editor"
+msgstr "Éditeur de Tano"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+msgstr ""
+"<i>Remarque : Ces préférences sont partagées avec toutes les applications "
+"Tano.</i>"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Language"
+msgstr "Langue"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "System default language"
+msgstr "Langue du système"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Custom language"
+msgstr "langue personnalisée"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Defaults"
+msgstr "Defauts"
+
+msgctxt "SettingsEditorGeneral|"
+msgid "Restore defaults"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "You are using Tano Editor version:"
+msgstr "Vous utilisez la version de l'éditeurt de Tano :"
 
 msgctxt "SettingsGeneral|"
 msgid "Tano"
@@ -1830,9 +2205,9 @@ msgctxt "SettingsGeneral|"
 msgid "Autoplay last channel"
 msgstr "Lire la dernière chaîne"
 
-msgctxt "SettingsGeneral|"
-msgid "You are using Tano Editor version:"
-msgstr "Vous utilisez la version de l'éditeurt de Tano :"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "You are using Tano Editor version:"
+#~ msgstr "Vous utilisez la version de l'éditeurt de Tano :"
 
 msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
@@ -1856,6 +2231,10 @@ msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
 "changes, before they will take effect.</i>"
 msgstr ""
+
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Tano Editor"
+#~ msgstr "Éditeur de Tano"
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
@@ -1914,10 +2293,34 @@ msgctxt "SettingsPlaylist|"
 msgid "Default radio category:"
 msgstr ""
 
+#, fuzzy
 msgctxt "SettingsPlaylist|"
-msgid ""
-"<i>Updating will not change your playlist order. Any other information will "
-"be updated.</i>"
+msgid "UDPXY support"
+msgstr "Support UDPXY"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Enable UDPXY support"
+msgstr "Autoriser le support UDPXY"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Router IP or name:"
+msgstr "Nom ou IP du routeur :"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Router port:"
+msgstr "Port du routeur :"
+
+#, qt-format
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr ""
+#~ "<i>Ceci convertira les URLs dans le fichier de liste de %1 en %2.</i>"
+
+msgctxt "SettingsPlaylist|"
+msgid "<i>Updating will not change your playlist order.</i>"
 msgstr ""
 
 msgctxt "SettingsRecorder|"
@@ -1984,133 +2387,129 @@ msgctxt "SettingsSchedule|"
 msgid "<i>Grabber running is not available yet.</i>"
 msgstr ""
 
-msgctxt "SettingsShortcuts|"
-msgid "Action"
-msgstr "Action"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Action"
+#~ msgstr "Action"
 
-msgctxt "SettingsShortcuts|"
-msgid "Key"
-msgstr "Raccourci"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Key"
+#~ msgstr "Raccourci"
 
-msgctxt "SettingsShortcuts|"
-msgid "Stop"
-msgstr "Stop"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Stop"
+#~ msgstr "Stop"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next channel"
-msgstr "Chaîne suivante"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next channel"
+#~ msgstr "Chaîne suivante"
 
-msgctxt "SettingsShortcuts|"
-msgid "Previous channel"
-msgstr "Chaîne précédente"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Previous channel"
+#~ msgstr "Chaîne précédente"
 
-msgctxt "SettingsShortcuts|"
-msgid "Fullscreen"
-msgstr "Plein écran"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Fullscreen"
+#~ msgstr "Plein écran"
 
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Info Widget"
-msgstr "Basculer vers l'information du widget"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Toggle Info Widget"
+#~ msgstr "Basculer vers l'information du widget"
 
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Controls Widget"
-msgstr "Basculer vers le contrôle du widget"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Toggle Controls Widget"
+#~ msgstr "Basculer vers le contrôle du widget"
 
-msgctxt "SettingsShortcuts|"
-msgid "Mute"
-msgstr "Couper"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Mute"
+#~ msgstr "Couper"
 
-msgctxt "SettingsShortcuts|"
-msgid "Volume up"
-msgstr "Augmenter le volume"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Volume up"
+#~ msgstr "Augmenter le volume"
 
-msgctxt "SettingsShortcuts|"
-msgid "Volume down"
-msgstr "Diminuer le volume"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Volume down"
+#~ msgstr "Diminuer le volume"
 
-msgctxt "SettingsShortcuts|"
-msgid "Recorder"
-msgstr "Enregistreur"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Recorder"
+#~ msgstr "Enregistreur"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open File"
-msgstr "Ouvrir le fichier"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open File"
+#~ msgstr "Ouvrir le fichier"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open URL"
-msgstr "Ouvrir une URL"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open URL"
+#~ msgstr "Ouvrir une URL"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open Channel list"
-msgstr "Ouvrir une liste de chaînes"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open Channel list"
+#~ msgstr "Ouvrir une liste de chaînes"
 
-msgctxt "SettingsShortcuts|"
-msgid "Edit Channel list"
-msgstr "Modifier la liste de chaînes"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Edit Channel list"
+#~ msgstr "Modifier la liste de chaînes"
 
-msgctxt "SettingsShortcuts|"
-msgid "Settings"
-msgstr "Préférences"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Settings"
+#~ msgstr "Préférences"
 
-msgctxt "SettingsShortcuts|"
-msgid "Always on top"
-msgstr "Toujours au premier plan"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Always on top"
+#~ msgstr "Toujours au premier plan"
 
-msgctxt "SettingsShortcuts|"
-msgid "Simple Mode"
-msgstr "Mode simplifié"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Simple Mode"
+#~ msgstr "Mode simplifié"
 
-msgctxt "SettingsShortcuts|"
-msgid "Hide to tray"
-msgstr "Minimiser dans le tableau de bord"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Hide to tray"
+#~ msgstr "Minimiser dans le tableau de bord"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next audio track"
-msgstr "Piste audio suivante"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next audio track"
+#~ msgstr "Piste audio suivante"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next video track"
-msgstr "Piste vidéo suivante"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next video track"
+#~ msgstr "Piste vidéo suivante"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next subtitle track"
-msgstr "Piste de sous-titres suivante"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next subtitle track"
+#~ msgstr "Piste de sous-titres suivante"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next aspect ratio mode"
-msgstr "Mode de proportion suivante"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next aspect ratio mode"
+#~ msgstr "Mode de proportion suivante"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next crop mode"
-msgstr "Mode de découpage suivant"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next crop mode"
+#~ msgstr "Mode de découpage suivant"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next deinterlace mode"
-msgstr "Mode de désentrelacement suivant"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next deinterlace mode"
+#~ msgstr "Mode de désentrelacement suivant"
 
-msgctxt "SettingsShortcuts|"
-msgid "Set"
-msgstr "Positionner"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Set"
+#~ msgstr "Positionner"
 
-msgctxt "SettingsShortcuts|"
-msgid "Play / Pause"
-msgstr "Lire / pause"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Play / Pause"
+#~ msgstr "Lire / pause"
 
 #~ msgctxt "SettingsShortcuts|"
 #~ msgid "Enable Info OSD in Fullscreen mode"
 #~ msgstr "Panneau d'information OSD en mode plein écran"
 
-msgctxt "SettingsShortcuts|"
-msgid "Teletext"
-msgstr "Teletexte"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Teletext"
+#~ msgstr "Teletexte"
 
-msgctxt "SettingsShortcuts|"
-msgid "Defaults"
-msgstr "Defauts"
-
-msgctxt "SettingsShortcuts|"
-msgid "Keyboard shortcuts"
-msgstr ""
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Defaults"
+#~ msgstr "Defauts"
 
 msgctxt "SettingsUi|"
 msgid "General Interface Settings"

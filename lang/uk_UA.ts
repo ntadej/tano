@@ -1637,23 +1637,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>UDPXY підтримка</translation>
+        <translation type="obsolete">UDPXY підтримка</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Увімкнути UDPXY підтримку</translation>
+        <translation type="obsolete">Увімкнути UDPXY підтримку</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>IP роутера чи ім’я:</translation>
+        <translation type="obsolete">IP роутера чи ім’я:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Порт роутера:</translation>
+        <translation type="obsolete">Порт роутера:</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Це сконвертує посилання URL в переілку каналів з %1 по %2.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Це сконвертує посилання URL в переілку каналів з %1 по %2.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
@@ -1697,26 +1697,184 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>SettingsEdit</name>
+    <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Налаштування</translation>
+        <translation type="unfinished">Налаштування</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Загальні</translation>
+        <translation type="unfinished">Загальні</translation>
+    </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Інтерфейс</translation>
+        <translation type="unfinished">Інтерфейс</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>Відтворення</translation>
+        <translation type="unfinished">Відтворення</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Розклад</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Записувач</translation>
+        <translation type="unfinished">Записувач</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialogShortcuts</name>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="unfinished">Дія</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished">Кнопка</translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
+        <translation type="unfinished">Відтворити / Пауза</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Зупинити</translation>
+    </message>
+    <message>
+        <source>Next channel</source>
+        <translation type="unfinished">Наступний канал</translation>
+    </message>
+    <message>
+        <source>Previous channel</source>
+        <translation type="unfinished">Попередній канал</translation>
+    </message>
+    <message>
+        <source>Fullscreen</source>
+        <translation type="unfinished">На повний екран</translation>
+    </message>
+    <message>
+        <source>Toggle Info Widget</source>
+        <translation type="unfinished">Перемикач інформаційної панелі</translation>
+    </message>
+    <message>
+        <source>Toggle Controls Widget</source>
+        <translation type="unfinished">Перемикач контрольної панелі</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished">Вимкнути звук</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Телетекст</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="unfinished">Збільшити гучність</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="unfinished">Зменшити гучність</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Записувач</translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation type="unfinished">Відкрити файл</translation>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation type="unfinished">Відкрити посилання URL</translation>
+    </message>
+    <message>
+        <source>Open Channel list</source>
+        <translation type="unfinished">Відкрити перелік каналів</translation>
+    </message>
+    <message>
+        <source>Edit Channel list</source>
+        <translation type="unfinished">Редагувати перелік каналів</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Налаштування</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Завжди поверх інших вікон</translation>
+    </message>
+    <message>
+        <source>Simple Mode</source>
+        <translation type="unfinished">Простий режим</translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="unfinished">Сховати до трею</translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="unfinished">Наступна відео доріжка</translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="unfinished">Наступна доріжка субтитрів</translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished">Наступний режим співвідношення сторін</translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="unfinished">Наступний режим обрізання зображення</translation>
+    </message>
+    <message>
+        <source>Next deinterlace mode</source>
+        <translation type="unfinished">Наступний режим деінтерлейсінгу</translation>
+    </message>
+    <message>
+        <source>Set</source>
+        <translation type="unfinished">Встановити</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished">За замовчуванням</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEdit</name>
+    <message>
+        <source>Settings</source>
+        <translation type="obsolete">Налаштування</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="obsolete">Загальні</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="obsolete">Інтерфейс</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="obsolete">Відтворення</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="obsolete">Записувач</translation>
     </message>
     <message>
         <source>Shortcuts</source>
@@ -1724,11 +1882,183 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Розклад</translation>
+        <translation type="obsolete">Розклад</translation>
     </message>
     <message>
-        <source>Playlist</source>
+        <source>Editor</source>
+        <translation type="obsolete">Редактор</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditor</name>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="obsolete">UDPXY підтримка</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="obsolete">Увімкнути UDPXY підтримку</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="obsolete">IP роутера чи ім’я:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="obsolete">Порт роутера:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Це сконвертує посилання URL в переілку каналів з %1 по %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="obsolete">Інтерфейс</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="obsolete">Стиль панелі:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="obsolete">Лише іконки</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="obsolete">Лише текст</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="obsolete">Текст рядом з іконками</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="obsolete">Текст під іконками</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="obsolete">За замовчуванням системи</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="obsolete">Показати заставку під час запуску</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorCommon</name>
+    <message>
+        <source>Radio</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished">UDPXY підтримка</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Увімкнути UDPXY підтримку</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">IP роутера чи ім’я:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Порт роутера:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Це сконвертує посилання URL в переілку каналів з %1 по %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished">Інтерфейс</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished">Стиль панелі:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished">Лише іконки</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished">Лише текст</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished">Текст рядом з іконками</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished">Текст під іконками</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished">За замовчуванням системи</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished">Показати заставку під час запуску</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorDialog</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Налаштування</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="unfinished">Загальні</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Редактор</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorGeneral</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Tano Редактор</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Інформація: Ці налаштування будуть застосовані в усіх програмах Tano.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Мова</translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="unfinished">Системна мова за замовчуванням</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="unfinished">Користувацька мова</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished">За замовчуванням</translation>
+    </message>
+    <message>
+        <source>Restore defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are using Tano Editor version:</source>
+        <translation type="unfinished">Ви використовуєте версію Tano Редактора:</translation>
     </message>
 </context>
 <context>
@@ -1771,7 +2101,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
-        <translation>Ви використовуєте версію Tano Редактора:</translation>
+        <translation type="obsolete">Ви використовуєте версію Tano Редактора:</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
@@ -1792,6 +2122,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="obsolete">Tano Редактор</translation>
     </message>
 </context>
 <context>
@@ -1856,7 +2190,27 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;Updating will not change your playlist order. Any other information will be updated.&lt;/i&gt;</source>
+        <source>UDPXY support</source>
+        <translation type="unfinished">UDPXY підтримка</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Увімкнути UDPXY підтримку</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">IP роутера чи ім’я:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Порт роутера:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;Це сконвертує посилання URL в переілку каналів з %1 по %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1934,115 +2288,115 @@ You will lose any unsaved changes.</source>
     <name>SettingsShortcuts</name>
     <message>
         <source>Action</source>
-        <translation>Дія</translation>
+        <translation type="obsolete">Дія</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Кнопка</translation>
+        <translation type="obsolete">Кнопка</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Зупинити</translation>
+        <translation type="obsolete">Зупинити</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>Наступний канал</translation>
+        <translation type="obsolete">Наступний канал</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>Попередній канал</translation>
+        <translation type="obsolete">Попередній канал</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>На повний екран</translation>
+        <translation type="obsolete">На повний екран</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation>Перемикач інформаційної панелі</translation>
+        <translation type="obsolete">Перемикач інформаційної панелі</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation>Перемикач контрольної панелі</translation>
+        <translation type="obsolete">Перемикач контрольної панелі</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Вимкнути звук</translation>
+        <translation type="obsolete">Вимкнути звук</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Збільшити гучність</translation>
+        <translation type="obsolete">Збільшити гучність</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Зменшити гучність</translation>
+        <translation type="obsolete">Зменшити гучність</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Записувач</translation>
+        <translation type="obsolete">Записувач</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>Відкрити файл</translation>
+        <translation type="obsolete">Відкрити файл</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Відкрити посилання URL</translation>
+        <translation type="obsolete">Відкрити посилання URL</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>Відкрити перелік каналів</translation>
+        <translation type="obsolete">Відкрити перелік каналів</translation>
     </message>
     <message>
         <source>Edit Channel list</source>
-        <translation>Редагувати перелік каналів</translation>
+        <translation type="obsolete">Редагувати перелік каналів</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Налаштування</translation>
+        <translation type="obsolete">Налаштування</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Завжди поверх інших вікон</translation>
+        <translation type="obsolete">Завжди поверх інших вікон</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Простий режим</translation>
+        <translation type="obsolete">Простий режим</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Сховати до трею</translation>
+        <translation type="obsolete">Сховати до трею</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>Наступна аудіо доріжка</translation>
+        <translation type="obsolete">Наступна аудіо доріжка</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>Наступна відео доріжка</translation>
+        <translation type="obsolete">Наступна відео доріжка</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>Наступна доріжка субтитрів</translation>
+        <translation type="obsolete">Наступна доріжка субтитрів</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>Наступний режим співвідношення сторін</translation>
+        <translation type="obsolete">Наступний режим співвідношення сторін</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation>Наступний режим обрізання зображення</translation>
+        <translation type="obsolete">Наступний режим обрізання зображення</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>Наступний режим деінтерлейсінгу</translation>
+        <translation type="obsolete">Наступний режим деінтерлейсінгу</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Встановити</translation>
+        <translation type="obsolete">Встановити</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation>Відтворити / Пауза</translation>
+        <translation type="obsolete">Відтворити / Пауза</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
@@ -2050,15 +2404,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Телетекст</translation>
+        <translation type="obsolete">Телетекст</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>За замовчуванням</translation>
-    </message>
-    <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">За замовчуванням</translation>
     </message>
 </context>
 <context>

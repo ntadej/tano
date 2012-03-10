@@ -16,41 +16,43 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#ifndef TANO_SETTINGSPLAYLIST_H_
+#define TANO_SETTINGSPLAYLIST_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
-class Settings;
+#include <QtGui/QWidget>
 
 namespace Ui
 {
-    class SettingsEdit;
+    class SettingsEditorCommon;
 }
 
-class SettingsEdit : public QDialog
+class SettingsEditorCommon : public QWidget
 {
 Q_OBJECT
 public:
-    explicit SettingsEdit(QWidget *parent = 0);
-    ~SettingsEdit();
+    SettingsEditorCommon(QWidget *parent = 0);
+    ~SettingsEditorCommon();
+
+    QString radioCategory() const;
+    void setRadioCategory(const QString &category);
+
+    bool udpxy() const;
+    void setUdpxy(const bool &enabled);
+    QString udpxyUrl() const;
+    void setUdpxyUrl(const QString &url);
+    int udpxyPort() const;
+    void setUdpxyPort(const int &port);
+
+    int toolbar() const;
+    void setToolbar(const int &id);
+    bool splash() const;
+    void setSplash(const bool &enabled);
 
 protected:
     void changeEvent(QEvent *e);
 
-private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void defaults();
-    void save();
-
 private:
-    void read();
-
-    Ui::SettingsEdit *ui;
-
-    Settings *_settings;
+    Ui::SettingsEditorCommon *ui;
 };
 
-#endif // TANO_SETTINGSEDIT_H_
+#endif // TANO_SETTINGSPLAYLIST_H_

@@ -57,8 +57,8 @@
 #include "ui/menu/MenuTrackSubtitles.h"
 #include "ui/menu/MenuTrackVideo.h"
 #include "ui/playlist/PlaylistEditor.h"
-#include "ui/settings/SettingsEdit.h"
-#include "ui/settings/SettingsShortcuts.h"
+#include "ui/settings/SettingsDialog.h"
+#include "ui/settings/SettingsDialogShortcuts.h"
 #include "xmltv/XmltvManager.h"
 
 #if UPDATE
@@ -719,7 +719,7 @@ void MainWindow::showSchedule()
 
 void MainWindow::showSettings()
 {
-    SettingsEdit s(this);
+    SettingsDialog s(this);
     s.exec();
     _locale->setLocale();
     createSettings();
@@ -727,7 +727,7 @@ void MainWindow::showSettings()
 
 void MainWindow::showSettingsShortcuts()
 {
-    SettingsShortcuts s(_shortcuts, this);
+    SettingsDialogShortcuts s(_shortcuts, this);
     s.exec();
 }
 

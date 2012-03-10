@@ -59,6 +59,15 @@ public:
     inline QString radioCategory() const { return _radioCategory; }
     inline void setRadioCategory(const QString &s) { _radioCategory = s; }
     static const QString DEFAULT_RADIO_CATEGORY;
+    inline bool udpxy() const { return _udpxy; }
+    inline void setUdpxy(const bool &b) { _udpxy = b; }
+    static const bool DEFAULT_UDPXY;
+    inline QString udpxyUrl() const { return _udpxyUrl; }
+    inline void setUdpxyUrl(const QString &s) { _udpxyUrl = s; }
+    static const QString DEFAULT_UDPXY_URL;
+    inline int udpxyPort() const { return _udpxyPort; }
+    inline void setUdpxyPort(const int &i) { _udpxyPort = i; }
+    static const int DEFAULT_UDPXY_PORT;
 
     // GUI - start
     inline bool splash() const { return _splash; }
@@ -81,9 +90,6 @@ public:
     inline bool osd() const { return _osd; }
     inline void setOsd(const bool &b) { _osd = b; }
     static const bool DEFAULT_OSD;
-    inline bool osdPlaylist() const { return _osdPlaylist; }
-    inline void setOsdPlaylist(const bool &b) { _osdPlaylist = b; }
-    static const bool DEFAULT_OSD_PLAYLIST;
     inline bool trayEnabled() const { return _trayEnabled; }
     inline void setTrayEnabled(const bool &b) { _trayEnabled = b; }
     static const bool DEFAULT_TRAY_ENABLED;
@@ -116,15 +122,6 @@ public:
     inline QString subtitleLanguage() const { return _subtitleLanguage; }
     inline void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
     static const QString DEFAULT_SUBTITLE_LANGUAGE;
-    inline bool udpxy() const { return _udpxy; }
-    inline void setUdpxy(const bool &b) { _udpxy = b; }
-    static const bool DEFAULT_UDPXY;
-    inline QString udpxyUrl() const { return _udpxyUrl; }
-    inline void setUdpxyUrl(const QString &s) { _udpxyUrl = s; }
-    static const QString DEFAULT_UDPXY_URL;
-    inline int udpxyPort() const { return _udpxyPort; }
-    inline void setUdpxyPort(const int &i) { _udpxyPort = i; }
-    static const int DEFAULT_UDPXY_PORT;
 
     // Recorder
     inline QString recorderDirectory() const { return _recorderDirectory; }

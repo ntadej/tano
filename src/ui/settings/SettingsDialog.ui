@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SettingsEdit</class>
- <widget class="QDialog" name="SettingsEdit">
+ <class>SettingsDialog</class>
+ <widget class="QDialog" name="SettingsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>500</height>
+    <height>450</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>600</width>
-    <height>500</height>
+    <height>450</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -171,38 +171,12 @@
        <item>
         <widget class="SettingsGeneral" name="general" native="true"/>
        </item>
-       <item>
-        <spacer name="spacerGeneral">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>156</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="pagePlaylist">
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="SettingsPlaylist" name="playlist" native="true"/>
-       </item>
-       <item>
-        <spacer name="spacerPlaylist">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>547</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </widget>
@@ -211,38 +185,12 @@
        <item>
         <widget class="SettingsUi" name="gui" native="true"/>
        </item>
-       <item>
-        <spacer name="spacerGui">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>209</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="pageBackend">
       <layout class="QVBoxLayout" name="layoutPlayback">
        <item>
         <widget class="SettingsBackend" name="backend" native="true"/>
-       </item>
-       <item>
-        <spacer name="spacerBackend">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </widget>
@@ -251,38 +199,12 @@
        <item>
         <widget class="SettingsSchedule" name="schedule" native="true"/>
        </item>
-       <item>
-        <spacer name="spacerSchedule">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="pageRecorder">
       <layout class="QVBoxLayout" name="layoutRecorder">
        <item>
         <widget class="SettingsRecorder" name="recorder" native="true"/>
-       </item>
-       <item>
-        <spacer name="spacerRecorder">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </widget>

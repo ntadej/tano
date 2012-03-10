@@ -2117,23 +2117,23 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>UDPXY podpora</translation>
+        <translation type="obsolete">UDPXY podpora</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Vključi podporo UDPXY</translation>
+        <translation type="obsolete">Vključi podporo UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>IP ali ime usmerjevalnika:</translation>
+        <translation type="obsolete">IP ali ime usmerjevalnika:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Vrata usmerjevalnika:</translation>
+        <translation type="obsolete">Vrata usmerjevalnika:</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
@@ -2177,14 +2177,172 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
 </context>
 <context>
-    <name>SettingsEdit</name>
+    <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Nastavitve</translation>
+        <translation type="unfinished">Nastavitve</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Splošno</translation>
+        <translation type="unfinished">Splošno</translation>
+    </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished">Programi</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished">Vmesnik</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="unfinished">Predvajanje</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Spored</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Snemalnik</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialogShortcuts</name>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="unfinished">Ukaz</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished">Tipke</translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
+        <translation type="unfinished">Predvajaj / Prekini</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Ustavi</translation>
+    </message>
+    <message>
+        <source>Next channel</source>
+        <translation type="unfinished">Naslednii kanal</translation>
+    </message>
+    <message>
+        <source>Previous channel</source>
+        <translation type="unfinished">Prejšnji kanal</translation>
+    </message>
+    <message>
+        <source>Fullscreen</source>
+        <translation type="unfinished">Celoten zaslon</translation>
+    </message>
+    <message>
+        <source>Toggle Info Widget</source>
+        <translation type="unfinished">Preklopi Info pult</translation>
+    </message>
+    <message>
+        <source>Toggle Controls Widget</source>
+        <translation type="unfinished">Preklopi upravljalni pult</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished">Tiho</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Teletekst</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="unfinished">Povečaj glasnost</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="unfinished">Zmanjšaj glasnost</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Snemalnik</translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation type="unfinished">Odpri Datoteko</translation>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation type="unfinished">Odpri URL</translation>
+    </message>
+    <message>
+        <source>Open Channel list</source>
+        <translation type="unfinished">Odpri Seznam programov</translation>
+    </message>
+    <message>
+        <source>Edit Channel list</source>
+        <translation type="unfinished">Uredi Seznam programov</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavitve</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Vedno na vrhu</translation>
+    </message>
+    <message>
+        <source>Simple Mode</source>
+        <translation type="unfinished">Enostaven način</translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="unfinished">Skrij v orodno vrstico</translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="unfinished">Naslednja zvočna sled</translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="unfinished">Naslednja slikovna sled</translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="unfinished">Naslednji podnapisi</translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished">Naslednje razmerje slike</translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="unfinished">Naslednja obrezava slike</translation>
+    </message>
+    <message>
+        <source>Next deinterlace mode</source>
+        <translation type="unfinished">Naslenje razpletanje</translation>
+    </message>
+    <message>
+        <source>Set</source>
+        <translation type="unfinished">Nastavi</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished">Privzeto</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEdit</name>
+    <message>
+        <source>Settings</source>
+        <translation type="obsolete">Nastavitve</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="obsolete">Splošno</translation>
     </message>
     <message>
         <source>Channels</source>
@@ -2192,15 +2350,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Vmesnik</translation>
+        <translation type="obsolete">Vmesnik</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>Predvajanje</translation>
+        <translation type="obsolete">Predvajanje</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Snemalnik</translation>
+        <translation type="obsolete">Snemalnik</translation>
     </message>
     <message>
         <source>Shortcuts</source>
@@ -2336,11 +2494,191 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Spored</translation>
+        <translation type="obsolete">Spored</translation>
     </message>
     <message>
         <source>Playlist</source>
-        <translation>Programi</translation>
+        <translation type="obsolete">Programi</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditor</name>
+    <message>
+        <source>Radio</source>
+        <translation type="obsolete">Radio</translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="obsolete">Privzeta kategorija za radio:</translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="obsolete">UDPXY podpora</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="obsolete">Vključi podporo UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="obsolete">IP ali ime usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="obsolete">Vrata usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="obsolete">Vmesnik</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="obsolete">Izgled orodnih vrstic:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="obsolete">Samo ikona</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="obsolete">Samo besedilo</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="obsolete">Besedilo ob ikoni</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="obsolete">Besedilo pod ikono</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="obsolete">Sistemsko privzeto</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="obsolete">Prikaži pozdravni zaslon</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorCommon</name>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Radio</translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished">Privzeta kategorija za radio:</translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished">UDPXY podpora</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Vključi podporo UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">IP ali ime usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Vrata usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation type="unfinished">Vmesnik</translation>
+    </message>
+    <message>
+        <source>Toolbar style:</source>
+        <translation type="unfinished">Izgled orodnih vrstic:</translation>
+    </message>
+    <message>
+        <source>Icon only</source>
+        <translation type="unfinished">Samo ikona</translation>
+    </message>
+    <message>
+        <source>Text only</source>
+        <translation type="unfinished">Samo besedilo</translation>
+    </message>
+    <message>
+        <source>Text beside icon</source>
+        <translation type="unfinished">Besedilo ob ikoni</translation>
+    </message>
+    <message>
+        <source>Text under icon</source>
+        <translation type="unfinished">Besedilo pod ikono</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished">Sistemsko privzeto</translation>
+    </message>
+    <message>
+        <source>Show splash screen</source>
+        <translation type="unfinished">Prikaži pozdravni zaslon</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorDialog</name>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Nastavitve</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation type="unfinished">Splošno</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsEditorGeneral</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Tano Urejevalnik</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Jezik</translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="unfinished">Sistemsko privzet jezik</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="unfinished">Poljuben jezik</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="unfinished">Privzeto</translation>
+    </message>
+    <message>
+        <source>Restore defaults</source>
+        <translation type="unfinished">Obnovi privzeto</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo biti potrjene, preden bodo uveljavljene.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>You are using Tano Editor version:</source>
+        <translation type="unfinished">Uporabljate Tano Urejevalnik različice:</translation>
     </message>
 </context>
 <context>
@@ -2383,7 +2721,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
-        <translation>Uporabljate Tano Urejevalnik različice:</translation>
+        <translation type="obsolete">Uporabljate Tano Urejevalnik različice:</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
@@ -2404,6 +2742,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
         <translation>&lt;i&gt;To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo biti potrjene, preden bodo uveljavljene.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="obsolete">Tano Urejevalnik</translation>
     </message>
 </context>
 <context>
@@ -2513,7 +2855,31 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order. Any other information will be updated.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Osvežitev ne bo spremenila vašega zaporedja programov. Vse druge informacije bodo posodobljene.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Osvežitev ne bo spremenila vašega zaporedja programov. Vse druge informacije bodo posodobljene.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>UDPXY support</source>
+        <translation type="unfinished">UDPXY podpora</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Vključi podporo UDPXY</translation>
+    </message>
+    <message>
+        <source>Router IP or name:</source>
+        <translation type="unfinished">IP ali ime usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>Router port:</source>
+        <translation type="unfinished">Vrata usmerjevalnika:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
+        <translation type="obsolete">&lt;i&gt;URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2692,91 +3058,91 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>SettingsShortcuts</name>
     <message>
         <source>Action</source>
-        <translation>Ukaz</translation>
+        <translation type="obsolete">Ukaz</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Tipke</translation>
+        <translation type="obsolete">Tipke</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation>Predvajaj / Prekini</translation>
+        <translation type="obsolete">Predvajaj / Prekini</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Ustavi</translation>
+        <translation type="obsolete">Ustavi</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>Naslednii kanal</translation>
+        <translation type="obsolete">Naslednii kanal</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>Prejšnji kanal</translation>
+        <translation type="obsolete">Prejšnji kanal</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>Celoten zaslon</translation>
+        <translation type="obsolete">Celoten zaslon</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation>Preklopi Info pult</translation>
+        <translation type="obsolete">Preklopi Info pult</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation>Preklopi upravljalni pult</translation>
+        <translation type="obsolete">Preklopi upravljalni pult</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Tiho</translation>
+        <translation type="obsolete">Tiho</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletekst</translation>
+        <translation type="obsolete">Teletekst</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Povečaj glasnost</translation>
+        <translation type="obsolete">Povečaj glasnost</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Zmanjšaj glasnost</translation>
+        <translation type="obsolete">Zmanjšaj glasnost</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Snemalnik</translation>
+        <translation type="obsolete">Snemalnik</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>Odpri Datoteko</translation>
+        <translation type="obsolete">Odpri Datoteko</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Odpri URL</translation>
+        <translation type="obsolete">Odpri URL</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>Odpri Seznam programov</translation>
+        <translation type="obsolete">Odpri Seznam programov</translation>
     </message>
     <message>
         <source>Edit Channel list</source>
-        <translation>Uredi Seznam programov</translation>
+        <translation type="obsolete">Uredi Seznam programov</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Nastavitve</translation>
+        <translation type="obsolete">Nastavitve</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Vedno na vrhu</translation>
+        <translation type="obsolete">Vedno na vrhu</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Enostaven način</translation>
+        <translation type="obsolete">Enostaven način</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Skrij v orodno vrstico</translation>
+        <translation type="obsolete">Skrij v orodno vrstico</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
@@ -2784,27 +3150,27 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>Naslednja zvočna sled</translation>
+        <translation type="obsolete">Naslednja zvočna sled</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>Naslednja slikovna sled</translation>
+        <translation type="obsolete">Naslednja slikovna sled</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>Naslednji podnapisi</translation>
+        <translation type="obsolete">Naslednji podnapisi</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>Naslednje razmerje slike</translation>
+        <translation type="obsolete">Naslednje razmerje slike</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation>Naslednja obrezava slike</translation>
+        <translation type="obsolete">Naslednja obrezava slike</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>Naslenje razpletanje</translation>
+        <translation type="obsolete">Naslenje razpletanje</translation>
     </message>
     <message>
         <source>Clear Shortcut</source>
@@ -2816,15 +3182,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Nastavi</translation>
+        <translation type="obsolete">Nastavi</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>Privzeto</translation>
-    </message>
-    <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Privzeto</translation>
     </message>
 </context>
 <context>

@@ -16,41 +16,37 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSBACKEND_H_
-#define TANO_SETTINGSBACKEND_H_
+#ifndef TANO_SETTINGSGENERAL_H_
+#define TANO_SETTINGSGENERAL_H_
 
 #include <QtGui/QWidget>
 
 namespace Ui
 {
-    class SettingsBackend;
+    class SettingsEditorGeneral;
 }
 
-class SettingsBackend : public QWidget
+class SettingsEditorGeneral : public QWidget
 {
 Q_OBJECT
 public:
-    SettingsBackend(QWidget *parent = 0);
-    ~SettingsBackend();
+    SettingsEditorGeneral(QWidget *parent = 0);
+    ~SettingsEditorGeneral();
 
-    bool rememberChannelSettings() const;
-    void setRememberChannelSettings(const bool &remember);
-    int aspectRatio() const;
-    void setAspectRatio(const int &id);
-    int cropRatio() const;
-    void setCropRatio(const int &id);
-    int deinterlacing() const;
-    void setDeinterlacing(const int &id);
-    QString audio() const;
-    void setAudio(const QString &audio);
-    QString sub() const;
-    void setSub(const QString &sub);
+    QString language() const;
+    void setLanguage(const QString &language);
 
 protected:
     void changeEvent(QEvent *e);
 
+signals:
+    void resetDefaults();
+
 private:
-    Ui::SettingsBackend *ui;
+    Ui::SettingsEditorGeneral *ui;
+
+    void loadLocale();
+    QStringList _locale;
 };
 
-#endif // TANO_SETTINGSBACKEND_H_
+#endif // TANO_SETTINGSGENERAL_H_

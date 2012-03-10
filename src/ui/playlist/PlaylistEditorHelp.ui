@@ -165,6 +165,9 @@
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
      <property name="centerButtons">
       <bool>true</bool>
      </property>

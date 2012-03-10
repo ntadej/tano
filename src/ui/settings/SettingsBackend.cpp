@@ -20,10 +20,8 @@
 #include "SettingsBackend.h"
 #include "ui_SettingsBackend.h"
 
-#if WITH_EDITOR_VLCQT
-    #include <vlc-qt/Enums.h>
-    #include <vlc-qt/Instance.h>
-#endif
+#include <vlc-qt/Enums.h>
+#include <vlc-qt/Instance.h>
 
 SettingsBackend::SettingsBackend(QWidget *parent)
     : QWidget(parent),
@@ -31,25 +29,13 @@ SettingsBackend::SettingsBackend(QWidget *parent)
 {
     ui->setupUi(this);
 
-#if EDITOR
-    ui->groupPlayback->hide();
-#endif
-
-#if WITH_EDITOR_VLCQT
     ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " <b>" + VlcInstance::libVersion() + "</b>");
     ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " <b>" + VlcInstance::version() + "</b>");
-#else
-    ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " /");
-    ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " /");
-#endif
-    ui->labelUdpxyInfo->setText(ui->labelUdpxyInfo->text().arg("</i>udp://@232.4.1.1:5002<i>", "</i>http://router:port/udp/232.4.1.1:5002<i>"));
 
-#if WITH_EDITOR_VLCQT
     for (int i = 1; i < Vlc::ratioHuman().size(); i++) {
         ui->comboAspectRatio->addItem(Vlc::ratioHuman()[i]);
         ui->comboCropRatio->addItem(Vlc::ratioHuman()[i]);
     }
-#endif
 }
 
 SettingsBackend::~SettingsBackend()
@@ -117,11 +103,11 @@ QString SettingsBackend::audio() const
 
 void SettingsBackend::setAudio(const QString &audio)
 {
-    for(int i = 0; i < ui->comboAudio->count(); i++) {
-        if(ui->comboAudio->itemText(i) == audio) {
+    for (int i = 0; i < ui->comboAudio->count(); i++) {
+        if (ui->comboAudio->itemText(i) == audio) {
             ui->comboAudio->setCurrentIndex(i);
             break;
-        } else if(i == ui->comboAudio->count() - 1) {
+        } else if (i == ui->comboAudio->count() - 1) {
             ui->comboAudio->setItemText(i, audio);
             ui->comboAudio->setCurrentIndex(i);
         }
@@ -135,43 +121,13 @@ QString SettingsBackend::sub() const
 
 void SettingsBackend::setSub(const QString &sub)
 {
-    for(int i = 0; i < ui->comboSub->count(); i++) {
-        if(ui->comboSub->itemText(i) == sub) {
+    for (int i = 0; i < ui->comboSub->count(); i++) {
+        if (ui->comboSub->itemText(i) == sub) {
             ui->comboSub->setCurrentIndex(i);
             break;
-        } else if(i == ui->comboSub->count() - 1) {
+        } else if (i == ui->comboSub->count() - 1) {
             ui->comboSub->setItemText(i, sub);
             ui->comboSub->setCurrentIndex(i);
         }
     }
-}
-
-bool SettingsBackend::udpxy() const
-{
-    return ui->checkUdpxy->isChecked();
-}
-
-void SettingsBackend::setUdpxy(const bool &enabled)
-{
-    ui->checkUdpxy->setChecked(enabled);
-}
-
-QString SettingsBackend::udpxyUrl() const
-{
-    return ui->editUdpxyUrl->text();
-}
-
-void SettingsBackend::setUdpxyUrl(const QString &url)
-{
-    ui->editUdpxyUrl->setText(url);
-}
-
-int SettingsBackend::udpxyPort() const
-{
-    return ui->editUdpxyPort->value();
-}
-
-void SettingsBackend::setUdpxyPort(const int &port)
-{
-    ui->editUdpxyPort->setValue(port);
 }

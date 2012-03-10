@@ -35,8 +35,6 @@ public:
 
     bool osd() const;
     void setOsd(const bool &enabled);
-    bool osdPlaylist() const;
-    void setOsdPlaylist(const bool &enabled);
     bool tray() const;
     void setTray(const bool &enabled);
     bool trayHide() const;

@@ -2025,30 +2025,27 @@ msgctxt "SettingsBackend|"
 msgid "Other"
 msgstr "Jiné"
 
-#, fuzzy
-msgctxt "SettingsBackend|"
-msgid "UDPXY support"
-msgstr "Podpora UDPXY"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "UDPXY support"
+#~ msgstr "Podpora UDPXY"
 
-#, fuzzy
-msgctxt "SettingsBackend|"
-msgid "Enable UDPXY support"
-msgstr "Povolit podporu UDPXY"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Povolit podporu UDPXY"
 
-#, fuzzy
-msgctxt "SettingsBackend|"
-msgid "Router IP or name:"
-msgstr "IP nebo název směrovače:"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Router IP or name:"
+#~ msgstr "IP nebo název směrovače:"
 
-#, fuzzy
-msgctxt "SettingsBackend|"
-msgid "Router port:"
-msgstr "Přípojka směrovače:"
+#~ msgctxt "SettingsBackend|"
+#~ msgid "Router port:"
+#~ msgstr "Přípojka směrovače:"
 
-#, fuzzy, qt-format
-msgctxt "SettingsBackend|"
-msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
-msgstr "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
+#, qt-format
+#~ msgctxt "SettingsBackend|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr ""
+#~ "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
 
 msgctxt "SettingsBackend|"
 msgid "Default aspect ratio:"
@@ -2097,29 +2094,214 @@ msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "X"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr "Nastavení"
 
-msgctxt "SettingsEdit|"
+#, fuzzy
+msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Obecné"
+
+msgctxt "SettingsDialog|"
+msgid "Playlist"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Interface"
+msgstr "Rozhraní"
+
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Playback"
+msgstr "Přehrávání"
+
+#, fuzzy
+msgctxt "SettingsDialog|"
+msgid "Schedule"
+msgstr "Rozvrh"
+
+msgctxt "SettingsDialog|"
+msgid "Recorder"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Keyboard shortcuts"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Action"
+msgstr "Činnost"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Key"
+msgstr "Klávesa"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Play / Pause"
+msgstr "Přehrát/Pozastavit"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Stop"
+msgstr "Stop"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next channel"
+msgstr "Další kanál"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Previous channel"
+msgstr "Předchozí kanál"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Fullscreen"
+msgstr "Na celou obrazovku"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Info Widget"
+msgstr "Přepnout informační prvek"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Toggle Controls Widget"
+msgstr "Přepnout ovládací prvek"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Mute"
+msgstr "Ztlumit"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Teletext"
+msgstr "Teletext"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume up"
+msgstr "Zvýšit hlasitost"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Volume down"
+msgstr "Snížit hlasitost"
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Recorder"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open File"
+msgstr "Otevřít soubor"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open URL"
+msgstr "Otevřít adresu (URL)"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Open Channel list"
+msgstr "Otevřít seznam programů"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Edit Channel list"
+msgstr "Upravit seznam programů"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Settings"
+msgstr "Nastavení"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Always on top"
+msgstr "Vždy nahoře"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Simple Mode"
+msgstr "Jednoduchý režim"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Hide to tray"
+msgstr "Skrýt v oznamovací oblasti panelu"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next audio track"
+msgstr "Další zvuková stopa"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next video track"
+msgstr "Další obrazová stopa"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next subtitle track"
+msgstr "Další titulková stopa"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next aspect ratio mode"
+msgstr "Další režim pro poměr stran"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next crop mode"
+msgstr "Další režim pro ořez"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Next deinterlace mode"
+msgstr "Další režim pro zrušení prokládání"
+
+#, fuzzy
+msgctxt "SettingsDialogShortcuts|"
+msgid "Set"
+msgstr "Nastavit"
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Defaults"
+msgstr ""
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Settings"
+#~ msgstr "Nastavení"
+
+#~ msgctxt "SettingsEdit|"
+#~ msgid "General"
+#~ msgstr "Obecné"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Channels"
 #~ msgstr "Programy"
 
-msgctxt "SettingsEdit|"
-msgid "Interface"
-msgstr "Rozhraní"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Interface"
+#~ msgstr "Rozhraní"
 
-msgctxt "SettingsEdit|"
-msgid "Playback"
-msgstr "Přehrávání"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Playback"
+#~ msgstr "Přehrávání"
 
-msgctxt "SettingsEdit|"
-msgid "Recorder"
-msgstr "Nahrávání"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Recorder"
+#~ msgstr "Nahrávání"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Shortcuts"
@@ -2253,13 +2435,198 @@ msgstr "Nahrávání"
 #~ msgid "Enable Info OSD in Fullscreen mode"
 #~ msgstr "Povolit informační OSD v režimu celé obrazovky"
 
-#, fuzzy
-msgctxt "SettingsEdit|"
-msgid "Schedule"
-msgstr "Rozvrh"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Schedule"
+#~ msgstr "Rozvrh"
 
-msgctxt "SettingsEdit|"
-msgid "Playlist"
+#~ msgctxt "SettingsEdit|"
+#~ msgid "Editor"
+#~ msgstr "Editor"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "UDPXY support"
+#~ msgstr "Podpora UDPXY"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Enable UDPXY support"
+#~ msgstr "Povolit podporu UDPXY"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Router IP or name:"
+#~ msgstr "IP nebo název směrovače:"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Router port:"
+#~ msgstr "Přípojka směrovače:"
+
+#, qt-format
+#~ msgctxt "SettingsEditor|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr ""
+#~ "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Interface"
+#~ msgstr "Rozhraní"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Toolbar style:"
+#~ msgstr "Styl nástrojového pruhu:"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Icon only"
+#~ msgstr "Pouze ikony"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text only"
+#~ msgstr "Pouze text"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text beside icon"
+#~ msgstr "Text vedle ikon"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Text under icon"
+#~ msgstr "Text pod ikonami"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "System default"
+#~ msgstr "Výchozí nastavení"
+
+#~ msgctxt "SettingsEditor|"
+#~ msgid "Show splash screen"
+#~ msgstr "Ukázat úvodní obrazovku"
+
+msgctxt "SettingsEditorCommon|"
+msgid "Radio"
+msgstr ""
+
+msgctxt "SettingsEditorCommon|"
+msgid "Default radio category:"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "UDPXY support"
+msgstr "Podpora UDPXY"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Enable UDPXY support"
+msgstr "Povolit podporu UDPXY"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Router IP or name:"
+msgstr "IP nebo název směrovače:"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Router port:"
+msgstr "Přípojka směrovače:"
+
+#, qt-format
+#~ msgctxt "SettingsEditorCommon|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr ""
+#~ "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Interface"
+msgstr "Rozhraní"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Toolbar style:"
+msgstr "Styl nástrojového pruhu:"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Icon only"
+msgstr "Pouze ikony"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text only"
+msgstr "Pouze text"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text beside icon"
+msgstr "Text vedle ikon"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Text under icon"
+msgstr "Text pod ikonami"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "System default"
+msgstr "Výchozí nastavení"
+
+#, fuzzy
+msgctxt "SettingsEditorCommon|"
+msgid "Show splash screen"
+msgstr "Ukázat úvodní obrazovku"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "Settings"
+msgstr "Nastavení"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "General"
+msgstr "Obecné"
+
+#, fuzzy
+msgctxt "SettingsEditorDialog|"
+msgid "Editor"
+msgstr "Editor"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Tano Editor"
+msgstr "Editor Tano"
+
+msgctxt "SettingsEditorGeneral|"
+msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Language"
+msgstr "Jazyk"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "System default language"
+msgstr "Výchozí jazyk systému"
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Custom language"
+msgstr "Jazyk stanovený uživatelem"
+
+msgctxt "SettingsEditorGeneral|"
+msgid "Defaults"
+msgstr ""
+
+#, fuzzy
+msgctxt "SettingsEditorGeneral|"
+msgid "Restore defaults"
+msgstr "Obnovit výchozí nastavení"
+
+msgctxt "SettingsEditorGeneral|"
+msgid ""
+"<i>This will restore all your settings to default. You need to apply the "
+"changes, before they will take effect.</i>"
+msgstr ""
+
+msgctxt "SettingsEditorGeneral|"
+msgid "You are using Tano Editor version:"
 msgstr ""
 
 #, fuzzy
@@ -2306,10 +2673,6 @@ msgctxt "SettingsGeneral|"
 msgid "Autoplay last channel"
 msgstr "Automatické přehrávání posledního kanálu"
 
-msgctxt "SettingsGeneral|"
-msgid "You are using Tano Editor version:"
-msgstr ""
-
 #, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
@@ -2333,6 +2696,10 @@ msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
 "changes, before they will take effect.</i>"
 msgstr ""
+
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Tano Editor"
+#~ msgstr "Editor Tano"
 
 msgctxt "SettingsPage|"
 msgid "Set <i>Tano</i>"
@@ -2434,10 +2801,34 @@ msgctxt "SettingsPlaylist|"
 msgid "Default radio category:"
 msgstr ""
 
+#, fuzzy
 msgctxt "SettingsPlaylist|"
-msgid ""
-"<i>Updating will not change your playlist order. Any other information will "
-"be updated.</i>"
+msgid "UDPXY support"
+msgstr "Podpora UDPXY"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Enable UDPXY support"
+msgstr "Povolit podporu UDPXY"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Router IP or name:"
+msgstr "IP nebo název směrovače:"
+
+#, fuzzy
+msgctxt "SettingsPlaylist|"
+msgid "Router port:"
+msgstr "Přípojka směrovače:"
+
+#, qt-format
+#~ msgctxt "SettingsPlaylist|"
+#~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
+#~ msgstr ""
+#~ "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
+
+msgctxt "SettingsPlaylist|"
+msgid "<i>Updating will not change your playlist order.</i>"
 msgstr ""
 
 #, fuzzy
@@ -2563,109 +2954,109 @@ msgctxt "SettingsSchedule|"
 msgid "<i>Grabber running is not available yet.</i>"
 msgstr ""
 
-msgctxt "SettingsShortcuts|"
-msgid "Action"
-msgstr "Činnost"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Action"
+#~ msgstr "Činnost"
 
-msgctxt "SettingsShortcuts|"
-msgid "Key"
-msgstr "Klávesa"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Key"
+#~ msgstr "Klávesa"
 
-msgctxt "SettingsShortcuts|"
-msgid "Stop"
-msgstr "Stop"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Stop"
+#~ msgstr "Stop"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next channel"
-msgstr "Další kanál"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next channel"
+#~ msgstr "Další kanál"
 
-msgctxt "SettingsShortcuts|"
-msgid "Previous channel"
-msgstr "Předchozí kanál"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Previous channel"
+#~ msgstr "Předchozí kanál"
 
-msgctxt "SettingsShortcuts|"
-msgid "Fullscreen"
-msgstr "Na celou obrazovku"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Fullscreen"
+#~ msgstr "Na celou obrazovku"
 
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Info Widget"
-msgstr "Přepnout informační prvek"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Toggle Info Widget"
+#~ msgstr "Přepnout informační prvek"
 
-msgctxt "SettingsShortcuts|"
-msgid "Toggle Controls Widget"
-msgstr "Přepnout ovládací prvek"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Toggle Controls Widget"
+#~ msgstr "Přepnout ovládací prvek"
 
-msgctxt "SettingsShortcuts|"
-msgid "Mute"
-msgstr "Ztlumit"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Mute"
+#~ msgstr "Ztlumit"
 
-msgctxt "SettingsShortcuts|"
-msgid "Volume up"
-msgstr "Zvýšit hlasitost"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Volume up"
+#~ msgstr "Zvýšit hlasitost"
 
-msgctxt "SettingsShortcuts|"
-msgid "Volume down"
-msgstr "Snížit hlasitost"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Volume down"
+#~ msgstr "Snížit hlasitost"
 
-msgctxt "SettingsShortcuts|"
-msgid "Recorder"
-msgstr "Nahrávač"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Recorder"
+#~ msgstr "Nahrávač"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open File"
-msgstr "Otevřít soubor"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open File"
+#~ msgstr "Otevřít soubor"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open URL"
-msgstr "Otevřít adresu (URL)"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open URL"
+#~ msgstr "Otevřít adresu (URL)"
 
-msgctxt "SettingsShortcuts|"
-msgid "Open Channel list"
-msgstr "Otevřít seznam programů"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Open Channel list"
+#~ msgstr "Otevřít seznam programů"
 
-msgctxt "SettingsShortcuts|"
-msgid "Edit Channel list"
-msgstr "Upravit seznam programů"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Edit Channel list"
+#~ msgstr "Upravit seznam programů"
 
-msgctxt "SettingsShortcuts|"
-msgid "Settings"
-msgstr "Nastavení"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Settings"
+#~ msgstr "Nastavení"
 
-msgctxt "SettingsShortcuts|"
-msgid "Always on top"
-msgstr "Vždy nahoře"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Always on top"
+#~ msgstr "Vždy nahoře"
 
-msgctxt "SettingsShortcuts|"
-msgid "Simple Mode"
-msgstr "Jednoduchý režim"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Simple Mode"
+#~ msgstr "Jednoduchý režim"
 
-msgctxt "SettingsShortcuts|"
-msgid "Hide to tray"
-msgstr "Skrýt v oznamovací oblasti panelu"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Hide to tray"
+#~ msgstr "Skrýt v oznamovací oblasti panelu"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next audio track"
-msgstr "Další zvuková stopa"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next audio track"
+#~ msgstr "Další zvuková stopa"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next video track"
-msgstr "Další obrazová stopa"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next video track"
+#~ msgstr "Další obrazová stopa"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next subtitle track"
-msgstr "Další titulková stopa"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next subtitle track"
+#~ msgstr "Další titulková stopa"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next aspect ratio mode"
-msgstr "Další režim pro poměr stran"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next aspect ratio mode"
+#~ msgstr "Další režim pro poměr stran"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next crop mode"
-msgstr "Další režim pro ořez"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next crop mode"
+#~ msgstr "Další režim pro ořez"
 
-msgctxt "SettingsShortcuts|"
-msgid "Next deinterlace mode"
-msgstr "Další režim pro zrušení prokládání"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Next deinterlace mode"
+#~ msgstr "Další režim pro zrušení prokládání"
 
 #~ msgctxt "SettingsShortcuts|"
 #~ msgid "Clear Shortcut"
@@ -2675,29 +3066,21 @@ msgstr "Další režim pro zrušení prokládání"
 #~ msgid "Restore defaults"
 #~ msgstr "Obnovit výchozí nastavení"
 
-msgctxt "SettingsShortcuts|"
-msgid "Set"
-msgstr "Nastavit"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Set"
+#~ msgstr "Nastavit"
 
-msgctxt "SettingsShortcuts|"
-msgid "Play / Pause"
-msgstr "Přehrát/Pozastavit"
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Play / Pause"
+#~ msgstr "Přehrát/Pozastavit"
 
 #~ msgctxt "SettingsShortcuts|"
 #~ msgid "Enable Info OSD in Fullscreen mode"
 #~ msgstr "Povolit informační OSD v režimu celé obrazovky"
 
-msgctxt "SettingsShortcuts|"
-msgid "Teletext"
-msgstr "Teletext"
-
-msgctxt "SettingsShortcuts|"
-msgid "Defaults"
-msgstr ""
-
-msgctxt "SettingsShortcuts|"
-msgid "Keyboard shortcuts"
-msgstr ""
+#~ msgctxt "SettingsShortcuts|"
+#~ msgid "Teletext"
+#~ msgstr "Teletext"
 
 #, fuzzy
 msgctxt "SettingsUi|"
