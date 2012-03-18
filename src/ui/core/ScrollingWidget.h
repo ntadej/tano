@@ -16,30 +16,36 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_INFOBARWIDGET_H_
-#define TANO_INFOBARWIDGET_H_
+#ifndef TANO_SCROLLINGWIDGET_H_
+#define TANO_SCROLLINGWIDGET_H_
 
-#include "ScrollingWidget.h"
+#include <QtCore/QTimer>
+#include <QtGui/QLabel>
+#include <QtGui/QScrollArea>
 
-class InfoBarWidget : public ScrollingWidget
+class ScrollingWidget : public QScrollArea
 {
 Q_OBJECT
 public:
-    InfoBarWidget(QWidget *parent = 0);
-    ~InfoBarWidget();
+    ScrollingWidget(QWidget *parent = 0);
+    ~ScrollingWidget();
+
+    void removeBorder();
 
 public slots:
-    void clear();
-    void setInfo(const QString &channel,
-                 const QString &language = 0);
-    void setEpg(const QString &now,
-                const QString &next);
+    void setText(const QString &text = "");
+
+signals:
+    void open(const QString);
+
+private slots:
+    void scroll();
 
 private:
-    QString _spacer;
+    bool _direction;
+    QTimer *_timer;
 
-    QString _info;
-    QString _epg;
+    QLabel *_label;
 };
 
-#endif // TANO_INFOBARWIDGET_H_
+#endif // TANO_SCROLLINGWIDGET_H_

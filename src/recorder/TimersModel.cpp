@@ -21,12 +21,16 @@
 #include <QtXml/QXmlInputSource>
 
 #include "container/core/Timer.h"
+#include "core/Common.h"
 #include "recorder/TimersGenerator.h"
 #include "recorder/TimersHandler.h"
 #include "recorder/TimersModel.h"
 
 TimersModel::TimersModel(QObject *parent)
-    : ListModel(new Timer, parent) { }
+    : ListModel(new Timer, parent)
+{
+    readTimers();
+}
 
 TimersModel::~TimersModel() { }
 
@@ -62,7 +66,7 @@ void TimersModel::deleteTimer(Timer *timer)
     removeRow(indexFromItem(timer).row());
 }
 
-void TimersModel::readTimers(const QString &file)
+void TimersModel::readTimers()
 {
     TimersHandler *handler = new TimersHandler();
 
@@ -70,7 +74,7 @@ void TimersModel::readTimers(const QString &file)
     reader.setContentHandler(handler);
     reader.setErrorHandler(handler);
 
-    QFile f(file);
+    QFile f(Tano::timersPath());
     if (!f.open(QFile::ReadOnly | QFile::Text))
         return;
 
@@ -86,13 +90,13 @@ void TimersModel::readTimers(const QString &file)
     delete handler;
 }
 
-void TimersModel::writeTimers(const QString &file)
+void TimersModel::writeTimers()
 {
-    QFile f(file);
+    QFile f(Tano::timersPath());
     if (!f.open(QFile::WriteOnly | QFile::Text))
         return;
 
-    TimersGenerator *generator = new TimersGenerator(file);
+    TimersGenerator *generator = new TimersGenerator(Tano::timersPath());
     generator->write(this);
     delete generator;
 }

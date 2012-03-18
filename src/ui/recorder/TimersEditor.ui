@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TimersEdit</class>
- <widget class="QMainWindow" name="TimersEdit">
+ <class>TimersEditor</class>
+ <widget class="QMainWindow" name="TimersEditor">
   <property name="geometry">
    <rect>
     <x>0</x>

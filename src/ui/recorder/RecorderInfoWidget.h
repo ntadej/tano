@@ -16,30 +16,38 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_INFOBARWIDGET_H_
-#define TANO_INFOBARWIDGET_H_
+#ifndef TANO_RECORDERINFOWIDGET_H_
+#define TANO_RECORDERINFOWIDGET_H_
 
-#include "ScrollingWidget.h"
+#include <QtGui/QWidget>
 
-class InfoBarWidget : public ScrollingWidget
+namespace Ui {
+    class RecorderInfoWidget;
+}
+
+class RecorderInfoWidget : public QWidget
 {
 Q_OBJECT
 public:
-    InfoBarWidget(QWidget *parent = 0);
-    ~InfoBarWidget();
+    explicit RecorderInfoWidget(QWidget *parent = 0);
+    ~RecorderInfoWidget();
+
+    void setAction(QAction *action);
+    void start(const QString &name,
+               const QString &output,
+               const QString &end = 0);
+    void stop();
+
+protected:
+    void changeEvent(QEvent *e);
 
 public slots:
-    void clear();
-    void setInfo(const QString &channel,
-                 const QString &language = 0);
-    void setEpg(const QString &now,
-                const QString &next);
+     void time(const int &time);
 
 private:
-    QString _spacer;
+    Ui::RecorderInfoWidget *ui;
 
-    QString _info;
-    QString _epg;
+    QAction *_actionRecord;
 };
 
-#endif // TANO_INFOBARWIDGET_H_
+#endif // TANO_RECORDERINFOWIDGET_H_

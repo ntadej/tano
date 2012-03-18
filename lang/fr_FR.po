@@ -197,19 +197,32 @@ msgid ""
 msgstr "Ne peut écrire le fichier %1 : %2."
 
 #, qt-format
-msgctxt "InfoBarWidget|"
-msgid "Language: %1"
-msgstr "Langue : %1"
+#~ msgctxt "InfoBarWidget|"
+#~ msgid "Language: %1"
+#~ msgstr "Langue : %1"
 
 #, qt-format
-msgctxt "InfoBarWidget|"
-msgid "Now: %1"
-msgstr "À présent : %1"
+#~ msgctxt "InfoBarWidget|"
+#~ msgid "Now: %1"
+#~ msgstr "À présent : %1"
 
 #, qt-format
+#~ msgctxt "InfoBarWidget|"
+#~ msgid "Next: %1"
+#~ msgstr "Prochain : %1"
+
 msgctxt "InfoBarWidget|"
-msgid "Next: %1"
-msgstr "Prochain : %1"
+msgid "Now:"
+msgstr ""
+
+msgctxt "InfoBarWidget|"
+msgid "Next:"
+msgstr ""
+
+#, fuzzy
+msgctxt "InfoBarWidget|"
+msgid "Language:"
+msgstr "Langue :"
 
 msgctxt "IntroPage|"
 msgid "Welcome"
@@ -367,9 +380,9 @@ msgctxt "MainWindow|"
 msgid "Recorder"
 msgstr "Enregistreur"
 
-msgctxt "MainWindow|"
-msgid "Record Current"
-msgstr "Enregistrer l'émission"
+#~ msgctxt "MainWindow|"
+#~ msgid "Record Current"
+#~ msgstr "Enregistrer l'émission"
 
 msgctxt "MainWindow|"
 msgid "Timers"
@@ -440,6 +453,18 @@ msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Keyboard shortcuts"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Recorder Toolbar"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Quick record"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Recorder information"
 msgstr ""
 
 msgctxt "MenuAspectRatio|"
@@ -1590,6 +1615,10 @@ msgctxt "QObject|"
 msgid "Weekdays"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Instant"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Effacer les raccourcis clavier"
@@ -1602,33 +1631,33 @@ msgctxt "Recorder|"
 msgid "Selected channel:"
 msgstr "Chaîne sélectionnée :"
 
-msgctxt "Recorder|"
-msgid "Directory:"
-msgstr "Répertoire :"
+#~ msgctxt "Recorder|"
+#~ msgid "Directory:"
+#~ msgstr "Répertoire :"
 
 msgctxt "Recorder|"
 msgid "Record"
 msgstr "Enregistrement"
 
-msgctxt "Recorder|"
-msgid "Status"
-msgstr "État"
+#~ msgctxt "Recorder|"
+#~ msgid "Status"
+#~ msgstr "État"
 
-msgctxt "Recorder|"
-msgid "Recording to file:"
-msgstr "Enregistrer dans :"
+#~ msgctxt "Recorder|"
+#~ msgid "Recording to file:"
+#~ msgstr "Enregistrer dans :"
 
-msgctxt "Recorder|"
-msgid "Currently recording:"
-msgstr "Enregistrement actuel :"
+#~ msgctxt "Recorder|"
+#~ msgid "Currently recording:"
+#~ msgstr "Enregistrement actuel :"
 
-msgctxt "Recorder|"
-msgid "Time elapsed:"
-msgstr "Temps passé :"
+#~ msgctxt "Recorder|"
+#~ msgid "Time elapsed:"
+#~ msgstr "Temps passé :"
 
-msgctxt "Recorder|"
-msgid "End time:"
-msgstr "Temps écoulé :"
+#~ msgctxt "Recorder|"
+#~ msgid "End time:"
+#~ msgstr "Temps écoulé :"
 
 #, qt-format
 msgctxt "Recorder|"
@@ -1639,13 +1668,80 @@ msgctxt "Recorder|"
 msgid "Channel is not selected!"
 msgstr "La chaîne n'est pas sélectionnée !"
 
+#~ msgctxt "Recorder|"
+#~ msgid "Stop recording"
+#~ msgstr "Arréter l'enregistrement"
+
+#~ msgctxt "Recorder|"
+#~ msgid "No timer - press button to stop."
+#~ msgstr "Pas de programmateur - appuyer sur un bouton pour arréter."
+
 msgctxt "Recorder|"
+msgid "Quick record"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Recording name:"
+msgstr ""
+
+#, fuzzy
+msgctxt "Recorder|"
+msgid "Back"
+msgstr "Arrière"
+
+msgctxt "RecorderInfoWidget|"
+msgid "Form"
+msgstr ""
+
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "Status"
+#~ msgstr "État"
+
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "Recording to file:"
+#~ msgstr "Enregistrer dans :"
+
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "Currently recording:"
+#~ msgstr "Enregistrement actuel :"
+
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "Time elapsed:"
+#~ msgstr "Temps passé :"
+
+msgctxt "RecorderInfoWidget|"
+msgid "End time:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Currently not recording."
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "No timer - stop manually."
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
 msgid "Stop recording"
 msgstr "Arréter l'enregistrement"
 
-msgctxt "Recorder|"
-msgid "No timer - press button to stop."
-msgstr "Pas de programmateur - appuyer sur un bouton pour arréter."
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Recording:"
+msgstr "Enregistrement :"
+
+msgctxt "RecorderInfoWidget|"
+msgid "Elapsed:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Output:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "<b>Status</b>"
+msgstr ""
 
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
@@ -2619,130 +2715,236 @@ msgctxt "TimersDisplayWidget|"
 msgid "Search:"
 msgstr "Rechercher :"
 
-msgctxt "TimersEdit|"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Timers"
+#~ msgstr "Programmateurs"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Create"
+#~ msgstr "Créé"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Name:"
+#~ msgstr "Nom :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Select a channel from the list below:"
+#~ msgstr "Sélectionnez une chaîne dans la liste ci-dessous :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Editor"
+#~ msgstr "Éditeur"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Channel:"
+#~ msgstr "Chaîne :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Playlist:"
+#~ msgstr "Liste de lecture :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Date:"
+#~ msgstr "Date :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Start time:"
+#~ msgstr "Début :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "End time:"
+#~ msgstr "Fin :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "dd.MM.yyyy"
+#~ msgstr "jj.MM.aaaa"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Disabled:"
+#~ msgstr "Dévalidé :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Url:"
+#~ msgstr "Url :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "New Task"
+#~ msgstr "Nouvelle tâche"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Delete Task"
+#~ msgstr "Supprimer la tâche"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Save and Close"
+#~ msgstr "Enregistrer et fermer"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Timers Editor"
+#~ msgstr "Éditeur de programmation"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid ""
+#~ "Do you want close the editor?\n"
+#~ "You changes will not be applied."
+#~ msgstr ""
+#~ "Voulez-vous fermer l'éditeur ?\n"
+#~ "Vos changements ne seront pas appliqués."
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Timer with this name already exists. Please select another name."
+#~ msgstr ""
+#~ "Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom."
+
+#, qt-format
+#~ msgctxt "TimersEdit|"
+#~ msgid ""
+#~ "Cannot read file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Ne peut lire le fichier %1 :\n"
+#~ "%2."
+
+#, qt-format
+#~ msgctxt "TimersEdit|"
+#~ msgid ""
+#~ "Cannot write file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Ne peut écrire le fichier %1 :\n"
+#~ "%2."
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Type:"
+#~ msgstr "Type :"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Once"
+#~ msgstr "Une fois"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Daily"
+#~ msgstr "Tous les jours"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Weekly"
+#~ msgstr "Toutes les semaines"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid ""
+#~ "<i>Timers must not overlap! This will be automatically checked in the "
+#~ "future.</i>"
+#~ msgstr ""
+#~ "<i>Les programmations ne doivent pas se chevaucher ! Ceci sera "
+#~ "automatiquement vérifié prochainement.</i>"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "hh:mm:ss"
+#~ msgstr "hh:mm:ss"
+
+#~ msgctxt "TimersEdit|"
+#~ msgid "Please enter a name and select a channel from the list."
+#~ msgstr "Veuillez donner un nom et sélectionner une chaîne de la liste."
+
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Timers"
 msgstr "Programmateurs"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Create"
 msgstr "Créé"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Name:"
 msgstr "Nom :"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Select a channel from the list below:"
 msgstr "Sélectionnez une chaîne dans la liste ci-dessous :"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Editor"
 msgstr "Éditeur"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Channel:"
 msgstr "Chaîne :"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Playlist:"
 msgstr "Liste de lecture :"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Date:"
 msgstr "Date :"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Start time:"
 msgstr "Début :"
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "End time:"
-msgstr "Fin :"
+msgstr ""
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "dd.MM.yyyy"
 msgstr "jj.MM.aaaa"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "hh:mm:ss"
+msgstr "hh:mm:ss"
+
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Disabled:"
 msgstr "Dévalidé :"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Url:"
 msgstr "Url :"
 
-msgctxt "TimersEdit|"
-msgid "New Task"
-msgstr "Nouvelle tâche"
-
-msgctxt "TimersEdit|"
-msgid "Delete Task"
-msgstr "Supprimer la tâche"
-
-msgctxt "TimersEdit|"
-msgid "Save and Close"
-msgstr "Enregistrer et fermer"
-
-msgctxt "TimersEdit|"
-msgid "Close"
-msgstr "Fermer"
-
-msgctxt "TimersEdit|"
-msgid "Timers Editor"
-msgstr "Éditeur de programmation"
-
-msgctxt "TimersEdit|"
-msgid ""
-"Do you want close the editor?\n"
-"You changes will not be applied."
-msgstr ""
-"Voulez-vous fermer l'éditeur ?\n"
-"Vos changements ne seront pas appliqués."
-
-msgctxt "TimersEdit|"
-msgid "Tano"
-msgstr "Tano"
-
-msgctxt "TimersEdit|"
-msgid "Timer with this name already exists. Please select another name."
-msgstr ""
-"Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom."
-
-#, qt-format
-msgctxt "TimersEdit|"
-msgid ""
-"Cannot read file %1:\n"
-"%2."
-msgstr ""
-"Ne peut lire le fichier %1 :\n"
-"%2."
-
-#, qt-format
-msgctxt "TimersEdit|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr ""
-"Ne peut écrire le fichier %1 :\n"
-"%2."
-
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Type:"
 msgstr "Type :"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Once"
 msgstr "Une fois"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Daily"
 msgstr "Tous les jours"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Weekly"
 msgstr "Toutes les semaines"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid ""
 "<i>Timers must not overlap! This will be automatically checked in the "
 "future.</i>"
@@ -2750,13 +2952,55 @@ msgstr ""
 "<i>Les programmations ne doivent pas se chevaucher ! Ceci sera "
 "automatiquement vérifié prochainement.</i>"
 
-msgctxt "TimersEdit|"
-msgid "hh:mm:ss"
-msgstr "hh:mm:ss"
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "New Task"
+msgstr "Nouvelle tâche"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Delete Task"
+msgstr "Supprimer la tâche"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Save and Close"
+msgstr "Enregistrer et fermer"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Close"
+msgstr "Fermer"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Timers Editor"
+msgstr "Éditeur de programmation"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid ""
+"Do you want close the editor?\n"
+"You changes will not be applied."
+msgstr ""
+"Voulez-vous fermer l'éditeur ?\n"
+"Vos changements ne seront pas appliqués."
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Tano"
+msgstr "Tano"
+
+#, fuzzy
+msgctxt "TimersEditor|"
 msgid "Please enter a name and select a channel from the list."
 msgstr "Veuillez donner un nom et sélectionner une chaîne de la liste."
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Timer with this name already exists. Please select another name."
+msgstr ""
+"Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom."
 
 msgctxt "TrayIcon|"
 msgid "Tano"

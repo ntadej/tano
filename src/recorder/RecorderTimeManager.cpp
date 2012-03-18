@@ -20,28 +20,19 @@
 #include <QtCore/QFileInfo>
 
 #include "container/core/Timer.h"
-#include "core/Common.h"
 #include "recorder/RecorderTimeManager.h"
 #include "recorder/TimersModel.h"
 
 RecorderTimeManager::RecorderTimeManager(QObject *parent)
     : QObject(parent)
 {
-    _path = Tano::settingsPath();
-
     _timer = new QTimer();
     connect(_timer, SIGNAL(timeout()), this, SLOT(check()));
-    _timer->start(3000);
-
-    _model = new TimersModel(this);
-
-    updateTimers();
 }
 
 RecorderTimeManager::~RecorderTimeManager()
 {
     delete _timer;
-    delete _model;
 }
 
 void RecorderTimeManager::check()
@@ -56,24 +47,9 @@ void RecorderTimeManager::check()
     }
 }
 
-void RecorderTimeManager::readTimers()
+void RecorderTimeManager::setTimersModel(TimersModel *model)
 {
-    QString fileName = _path + "timers.tano.xml";
+    _model = model;
 
-    QFile file(fileName);
-    if (!file.open(QFile::ReadOnly | QFile::Text))
-        return;
-    file.close();
-
-    _model->clear();
-    _model->readTimers(fileName);
-}
-
-void RecorderTimeManager::updateTimers()
-{
-    readTimers();
-
-    qDebug() << _model->rowCount() << "timers loaded";
-    for (int i = 0; i < _model->rowCount(); i++)
-        qDebug() << _model->row(i)->name();
+    _timer->start(3000);
 }

@@ -199,15 +199,27 @@ Your VLC-Qt version: %4
     <name>InfoBarWidget</name>
     <message>
         <source>Language: %1</source>
-        <translation>Мова: %1</translation>
+        <translation type="obsolete">Мова: %1</translation>
     </message>
     <message>
         <source>Now: %1</source>
-        <translation>Зараз: %1</translation>
+        <translation type="obsolete">Зараз: %1</translation>
     </message>
     <message>
         <source>Next: %1</source>
-        <translation>Наступний: %1</translation>
+        <translation type="obsolete">Наступний: %1</translation>
+    </message>
+    <message>
+        <source>Now:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Мова:</translation>
     </message>
 </context>
 <context>
@@ -370,7 +382,7 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Record Current</source>
-        <translation>Записати поточний</translation>
+        <translation type="obsolete">Записати поточний</translation>
     </message>
     <message>
         <source>Timers</source>
@@ -438,6 +450,18 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder information</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1526,6 +1550,10 @@ You will lose any unsaved changes.</source>
         <source>Weekdays</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Instant</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1546,7 +1574,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Directory:</source>
-        <translation>Тека:</translation>
+        <translation type="obsolete">Тека:</translation>
     </message>
     <message>
         <source>Record</source>
@@ -1554,23 +1582,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation>Статус</translation>
+        <translation type="obsolete">Статус</translation>
     </message>
     <message>
         <source>Recording to file:</source>
-        <translation>Запис в файл:</translation>
+        <translation type="obsolete">Запис в файл:</translation>
     </message>
     <message>
         <source>Currently recording:</source>
-        <translation>Зараз записується:</translation>
+        <translation type="obsolete">Зараз записується:</translation>
     </message>
     <message>
         <source>Time elapsed:</source>
-        <translation>Часу пройшло:</translation>
+        <translation type="obsolete">Часу пройшло:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Час закінчення:</translation>
+        <translation type="obsolete">Час закінчення:</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
@@ -1582,11 +1610,78 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Зупинити запис</translation>
+        <translation type="obsolete">Зупинити запис</translation>
     </message>
     <message>
         <source>No timer - press button to stop.</source>
-        <translation>Без таймера - натисність кнопку щоб зупинити.</translation>
+        <translation type="obsolete">Без таймера - натисність кнопку щоб зупинити.</translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Назад</translation>
+    </message>
+</context>
+<context>
+    <name>RecorderInfoWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="obsolete">Статус</translation>
+    </message>
+    <message>
+        <source>Recording to file:</source>
+        <translation type="obsolete">Запис в файл:</translation>
+    </message>
+    <message>
+        <source>Currently recording:</source>
+        <translation type="obsolete">Зараз записується:</translation>
+    </message>
+    <message>
+        <source>Time elapsed:</source>
+        <translation type="obsolete">Часу пройшло:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished">Час закінчення:</translation>
+    </message>
+    <message>
+        <source>Currently not recording.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No timer - stop manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation type="unfinished">Зупинити запис</translation>
+    </message>
+    <message>
+        <source>Recording:</source>
+        <translation type="unfinished">Записується:</translation>
+    </message>
+    <message>
+        <source>Elapsed:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Status&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2538,129 +2633,246 @@ You will lose any unsaved changes.</source>
     <name>TimersEdit</name>
     <message>
         <source>Timers</source>
-        <translation>Таймери</translation>
+        <translation type="obsolete">Таймери</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>Створити</translation>
+        <translation type="obsolete">Створити</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Назва:</translation>
+        <translation type="obsolete">Назва:</translation>
     </message>
     <message>
         <source>Select a channel from the list below:</source>
-        <translation>Обрати канал з переіліку нижче:</translation>
+        <translation type="obsolete">Обрати канал з переіліку нижче:</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Редактор</translation>
+        <translation type="obsolete">Редактор</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Канал:</translation>
+        <translation type="obsolete">Канал:</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation>Перелік каналів:</translation>
+        <translation type="obsolete">Перелік каналів:</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Дата:</translation>
+        <translation type="obsolete">Дата:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation>Час початку:</translation>
+        <translation type="obsolete">Час початку:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Час закінчення:</translation>
+        <translation type="obsolete">Час закінчення:</translation>
     </message>
     <message>
         <source>dd.MM.yyyy</source>
-        <translation>дд.ММ.рррр</translation>
+        <translation type="obsolete">дд.ММ.рррр</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation>Вимкнено:</translation>
+        <translation type="obsolete">Вимкнено:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Посилання Url:</translation>
+        <translation type="obsolete">Посилання Url:</translation>
     </message>
     <message>
         <source>New Task</source>
-        <translation>Нове завдання</translation>
+        <translation type="obsolete">Нове завдання</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation>Видалити завдання</translation>
+        <translation type="obsolete">Видалити завдання</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation>Зберігти та закрити</translation>
+        <translation type="obsolete">Зберігти та закрити</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Закрити</translation>
+        <translation type="obsolete">Закрити</translation>
     </message>
     <message>
         <source>Timers Editor</source>
-        <translation>Редактор таймерів</translation>
+        <translation type="obsolete">Редактор таймерів</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You changes will not be applied.</source>
-        <translation>Ви бажаєте закрити редактор?
+        <translation type="obsolete">Ви бажаєте закрити редактор?
 Ваші зміни не будуть застосовані.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
-        <translation>Таймер з такою назвою вже існує. Будь ласка оберіть іншу назву.</translation>
+        <translation type="obsolete">Таймер з такою назвою вже існує. Будь ласка оберіть іншу назву.</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Неможливо прочитати файл %1:
+        <translation type="obsolete">Неможливо прочитати файл %1:
 %2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Неможливо записати файл %1:
+        <translation type="obsolete">Неможливо записати файл %1:
 %2.</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation type="obsolete">Тип:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Одноразово</translation>
+        <translation type="obsolete">Одноразово</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Щоденно</translation>
+        <translation type="obsolete">Щоденно</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Щотижня</translation>
+        <translation type="obsolete">Щотижня</translation>
     </message>
     <message>
         <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Таймери не повинні перекривати один одного. Це буде автоматично перевірятися в майбутньому.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Таймери не повинні перекривати один одного. Це буде автоматично перевірятися в майбутньому.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>hh:mm:ss</source>
-        <translation>гг.мм.сс</translation>
+        <translation type="obsolete">гг.мм.сс</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation>Будь ласка введіть назву та оберіть канал з переліку.</translation>
+        <translation type="obsolete">Будь ласка введіть назву та оберіть канал з переліку.</translation>
+    </message>
+</context>
+<context>
+    <name>TimersEditor</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Таймери</translation>
+    </message>
+    <message>
+        <source>Create</source>
+        <translation type="unfinished">Створити</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Назва:</translation>
+    </message>
+    <message>
+        <source>Select a channel from the list below:</source>
+        <translation type="unfinished">Обрати канал з переіліку нижче:</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Редактор</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Канал:</translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Перелік каналів:</translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Дата:</translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Час початку:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished">Час закінчення:</translation>
+    </message>
+    <message>
+        <source>dd.MM.yyyy</source>
+        <translation type="unfinished">дд.ММ.рррр</translation>
+    </message>
+    <message>
+        <source>hh:mm:ss</source>
+        <translation type="unfinished">гг.мм.сс</translation>
+    </message>
+    <message>
+        <source>Disabled:</source>
+        <translation type="unfinished">Вимкнено:</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Тип:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Одноразово</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Щоденно</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Щотижня</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Таймери не повинні перекривати один одного. Це буде автоматично перевірятися в майбутньому.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>New Task</source>
+        <translation type="unfinished">Нове завдання</translation>
+    </message>
+    <message>
+        <source>Delete Task</source>
+        <translation type="unfinished">Видалити завдання</translation>
+    </message>
+    <message>
+        <source>Save and Close</source>
+        <translation type="unfinished">Зберігти та закрити</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Закрити</translation>
+    </message>
+    <message>
+        <source>Timers Editor</source>
+        <translation type="unfinished">Редактор таймерів</translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You changes will not be applied.</source>
+        <translation type="unfinished">Ви бажаєте закрити редактор?
+Ваші зміни не будуть застосовані.</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Please enter a name and select a channel from the list.</source>
+        <translation type="unfinished">Будь ласка введіть назву та оберіть канал з переліку.</translation>
+    </message>
+    <message>
+        <source>Timer with this name already exists. Please select another name.</source>
+        <translation type="unfinished">Таймер з такою назвою вже існує. Будь ласка оберіть іншу назву.</translation>
     </message>
 </context>
 <context>

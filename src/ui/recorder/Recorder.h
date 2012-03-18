@@ -20,13 +20,16 @@
 #define TANO_RECORDER_H_
 
 #include <QtCore/QTime>
-#include <QtGui/QWidget>
+#include <QtGui/QStackedWidget>
 
 class Channel;
 class PlaylistModel;
 class RecorderCore;
+class RecorderInfoWidget;
+class RecorderTimeManager;
 class TrayIcon;
-class TimersEdit;
+class TimersEditor;
+class TimersModel;
 class Udpxy;
 
 namespace Ui
@@ -34,34 +37,36 @@ namespace Ui
     class Recorder;
 }
 
-class Recorder : public QWidget
+class Recorder : public QStackedWidget
 {
 Q_OBJECT
 public:
-    Recorder(QWidget *parent = 0);
+    explicit Recorder(QWidget *parent = 0);
     ~Recorder();
 
     void createSettings();
     bool isRecording() const;
     void refreshPlaylistModel();
-    void setAction(QAction *action);
     void setPlaylistModel(PlaylistModel *model);
-    void setTrayIcon(TrayIcon *icon);
+    void setWidgets(QAction *action,
+                    RecorderInfoWidget *info,
+                    TrayIcon *icon);
 
 protected:
     void changeEvent(QEvent *e);
 
 public slots:
-
+    void quickRecord();
     void recordNow(const QString &name,
                    const QString &url);
+    void recordStart();
+    void recordStop();
     void showTimersEditor();
-    void stop();
 
 private slots:
     void playlist(Channel* channel);
-    void record(const bool &status);
-    void time(const int &time);
+    void quickRecordCancel();
+    void quickRecordStart();
     void timerStart(const QString &name,
                     const QString &url);
     void timerStop();
@@ -71,12 +76,18 @@ private:
 
     QAction *_actionRecord;
 
+    QString _directory;
     QString _name;
     QString _url;
 
+    Channel *_currentChannel;
+
     RecorderCore *_core;
-    TimersEdit *_editor;
-    PlaylistModel *_model;
+    TimersEditor *_editor;
+    RecorderInfoWidget *_info;
+    RecorderTimeManager *_manager;
+    TimersModel *_model;
+    PlaylistModel *_playlistModel;
     TrayIcon *_trayIcon;
     Udpxy *_udpxy;
 };

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,84 +16,43 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QScrollBar>
-
 #include "InfoBarWidget.h"
 
 InfoBarWidget::InfoBarWidget(QWidget *parent)
-    : QScrollArea(parent),
-      _direction(true)
+    : ScrollingWidget(parent)
 {
-    _timer = new QTimer(this);
-
-    QWidget *widget = new QWidget(this);
-    _labelChannel = new QLabel(widget);
-    _labelLanguage = new QLabel(widget);
-    _labelNext = new QLabel(widget);
-    _labelNow = new QLabel(widget);
-    QHBoxLayout *layout = new QHBoxLayout;
-    layout->setContentsMargins(4,0,4,0);
-    layout->setSpacing(10);
-    layout->addWidget(_labelChannel);
-    layout->addWidget(_labelLanguage);
-    layout->addWidget(_labelNow);
-    layout->addWidget(_labelNext);
-    layout->addSpacerItem(new QSpacerItem(10, 10, QSizePolicy::Expanding, QSizePolicy::Fixed));
-    widget->setLayout(layout);
-
-    setWidget(widget);
-    setWidgetResizable(true);
-    setMaximumHeight(35);
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-
-    connect(_labelNow, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
-    connect(_labelNext, SIGNAL(linkActivated(QString)), this, SIGNAL(open(QString)));
-    connect(_timer, SIGNAL(timeout()), this, SLOT(scroll()));
-
-    _timer->start(50);
+    _spacer = " &bull; ";
 }
 
-InfoBarWidget::~InfoBarWidget()
-{
-    delete _timer;
-}
-
-void InfoBarWidget::scroll()
-{
-    if(horizontalScrollBar()->maximum() != 0) {
-        if(_direction && horizontalScrollBar()->value() < horizontalScrollBar()->maximum()) {
-            horizontalScrollBar()->setValue(horizontalScrollBar()->value()+1);
-            if(horizontalScrollBar()->maximum() == horizontalScrollBar()->value())
-                _direction = false;
-        } else if(!_direction && horizontalScrollBar()->value() > horizontalScrollBar()->minimum()) {
-            horizontalScrollBar()->setValue(horizontalScrollBar()->value()-1);
-            if(horizontalScrollBar()->value() == 0)
-                _direction = true;
-        }
-    }
-}
+InfoBarWidget::~InfoBarWidget() { }
 
 void InfoBarWidget::clear()
 {
-    _labelNow->setText("");
-    _labelNext->setText("");
-    _labelChannel->setText("");
-    _labelLanguage->setText("");
+    _info = "";
+    _epg = "";
+
+    setText();
 }
 
 void InfoBarWidget::setInfo(const QString &channel,
                             const QString &language)
 {
-    _labelChannel->setText("<b>" + channel + "</b>");
-    if(!language.isEmpty() && !language.isNull())
-        _labelLanguage->setText(tr("Language: %1").arg(language));
+    if (!language.isEmpty()) {
+        _info = QString("<b>%1</b>" + _spacer + "<i>%2</i> %3").arg(channel, tr("Language:"), language);
+    } else {
+        _info = QString("<b>%1</b>").arg(channel);
+    }
+
+    if (!_epg.isEmpty())
+        setText(_info + _spacer + _epg);
+    else
+        setText(_info);
 }
 
 void InfoBarWidget::setEpg(const QString &now,
                            const QString &next)
 {
-    _labelNow->setText(tr("Now: %1").arg(now));
-    _labelNext->setText(tr("Next: %1").arg(next));
+    _epg = QString("<i>%1</i> %2" + _spacer + "<i>%3</i> %4").arg(tr("Now:"), now, tr("Next:"), next);
+
+    setText(_info + _spacer + _epg);
 }

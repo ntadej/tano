@@ -35,6 +35,7 @@ namespace Tano
     // Resources locators
     QString locateResource(const QString &file);
     QString settingsPath();
+    QString timersPath();
 
     // Backend settings
     QStringList vlcQtArgs();

@@ -179,19 +179,16 @@ msgid ""
 "%2."
 msgstr ""
 
-#, qt-format
 msgctxt "InfoBarWidget|"
-msgid "Language: %1"
+msgid "Now:"
 msgstr ""
 
-#, qt-format
 msgctxt "InfoBarWidget|"
-msgid "Now: %1"
+msgid "Next:"
 msgstr ""
 
-#, qt-format
 msgctxt "InfoBarWidget|"
-msgid "Next: %1"
+msgid "Language:"
 msgstr ""
 
 msgctxt "IntroPage|"
@@ -345,10 +342,6 @@ msgid "Recorder"
 msgstr ""
 
 msgctxt "MainWindow|"
-msgid "Record Current"
-msgstr ""
-
-msgctxt "MainWindow|"
 msgid "Timers"
 msgstr ""
 
@@ -415,6 +408,18 @@ msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Keyboard shortcuts"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Recorder Toolbar"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Quick record"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Recorder information"
 msgstr ""
 
 msgctxt "MenuAspectRatio|"
@@ -1246,6 +1251,10 @@ msgctxt "QObject|"
 msgid "Weekdays"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Instant"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr ""
@@ -1259,31 +1268,7 @@ msgid "Selected channel:"
 msgstr ""
 
 msgctxt "Recorder|"
-msgid "Directory:"
-msgstr ""
-
-msgctxt "Recorder|"
 msgid "Record"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Status"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Recording to file:"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Currently recording:"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Time elapsed:"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "End time:"
 msgstr ""
 
 #, qt-format
@@ -1296,11 +1281,51 @@ msgid "Channel is not selected!"
 msgstr ""
 
 msgctxt "Recorder|"
-msgid "Stop recording"
+msgid "Quick record"
 msgstr ""
 
 msgctxt "Recorder|"
-msgid "No timer - press button to stop."
+msgid "Recording name:"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Back"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Form"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "End time:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Currently not recording."
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "No timer - stop manually."
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Stop recording"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Recording:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Elapsed:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Output:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "<b>Status</b>"
 msgstr ""
 
 msgctxt "SettingsBackend|"
@@ -1895,134 +1920,120 @@ msgctxt "TimersDisplayWidget|"
 msgid "Search:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Timers"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Create"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Name:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Select a channel from the list below:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Editor"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Channel:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Playlist:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Date:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Start time:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "End time:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "dd.MM.yyyy"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
+msgid "hh:mm:ss"
+msgstr ""
+
+msgctxt "TimersEditor|"
 msgid "Disabled:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Url:"
 msgstr ""
 
-msgctxt "TimersEdit|"
-msgid "New Task"
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid "Delete Task"
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid "Save and Close"
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid "Close"
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid "Timers Editor"
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid ""
-"Do you want close the editor?\n"
-"You changes will not be applied."
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid "Tano"
-msgstr ""
-
-msgctxt "TimersEdit|"
-msgid "Timer with this name already exists. Please select another name."
-msgstr ""
-
-#, qt-format
-msgctxt "TimersEdit|"
-msgid ""
-"Cannot read file %1:\n"
-"%2."
-msgstr ""
-
-#, qt-format
-msgctxt "TimersEdit|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr ""
-
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Type:"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Once"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Daily"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid "Weekly"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
 msgid ""
 "<i>Timers must not overlap! This will be automatically checked in the "
 "future.</i>"
 msgstr ""
 
-msgctxt "TimersEdit|"
-msgid "hh:mm:ss"
+msgctxt "TimersEditor|"
+msgid "New Task"
 msgstr ""
 
-msgctxt "TimersEdit|"
+msgctxt "TimersEditor|"
+msgid "Delete Task"
+msgstr ""
+
+msgctxt "TimersEditor|"
+msgid "Save and Close"
+msgstr ""
+
+msgctxt "TimersEditor|"
+msgid "Close"
+msgstr ""
+
+msgctxt "TimersEditor|"
+msgid "Timers Editor"
+msgstr ""
+
+msgctxt "TimersEditor|"
+msgid ""
+"Do you want close the editor?\n"
+"You changes will not be applied."
+msgstr ""
+
+msgctxt "TimersEditor|"
+msgid "Tano"
+msgstr ""
+
+msgctxt "TimersEditor|"
 msgid "Please enter a name and select a channel from the list."
+msgstr ""
+
+msgctxt "TimersEditor|"
+msgid "Timer with this name already exists. Please select another name."
 msgstr ""
 
 msgctxt "TrayIcon|"

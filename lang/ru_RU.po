@@ -255,20 +255,20 @@ msgstr ""
 #~ msgid "Next:"
 #~ msgstr "След.:"
 
-#, qt-format
+#, fuzzy
 msgctxt "InfoBarWidget|"
-msgid "Language: %1"
-msgstr ""
+msgid "Now:"
+msgstr "Сейчас:"
 
-#, qt-format
+#, fuzzy
 msgctxt "InfoBarWidget|"
-msgid "Now: %1"
-msgstr ""
+msgid "Next:"
+msgstr "След.:"
 
-#, qt-format
+#, fuzzy
 msgctxt "InfoBarWidget|"
-msgid "Next: %1"
-msgstr ""
+msgid "Language:"
+msgstr "Язык:"
 
 msgctxt "IntroPage|"
 msgid "Welcome"
@@ -433,9 +433,9 @@ msgctxt "MainWindow|"
 msgid "Recorder"
 msgstr "Рекордер"
 
-msgctxt "MainWindow|"
-msgid "Record Current"
-msgstr "Записать текущую программу"
+#~ msgctxt "MainWindow|"
+#~ msgid "Record Current"
+#~ msgstr "Записать текущую программу"
 
 msgctxt "MainWindow|"
 msgid "Timers"
@@ -512,6 +512,18 @@ msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Keyboard shortcuts"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Recorder Toolbar"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Quick record"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Recorder information"
 msgstr ""
 
 msgctxt "MenuAspectRatio|"
@@ -1718,6 +1730,10 @@ msgctxt "QObject|"
 msgid "Weekdays"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "Instant"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Очистить ярлык"
@@ -1730,9 +1746,9 @@ msgctxt "Recorder|"
 msgid "Selected channel:"
 msgstr "Выбранный канал:"
 
-msgctxt "Recorder|"
-msgid "Directory:"
-msgstr "Каталог:"
+#~ msgctxt "Recorder|"
+#~ msgid "Directory:"
+#~ msgstr "Каталог:"
 
 #~ msgctxt "Recorder|"
 #~ msgid "..."
@@ -1742,25 +1758,25 @@ msgctxt "Recorder|"
 msgid "Record"
 msgstr "Запись"
 
-msgctxt "Recorder|"
-msgid "Status"
-msgstr "Состояние"
+#~ msgctxt "Recorder|"
+#~ msgid "Status"
+#~ msgstr "Состояние"
 
-msgctxt "Recorder|"
-msgid "Recording to file:"
-msgstr "Запись в файл:"
+#~ msgctxt "Recorder|"
+#~ msgid "Recording to file:"
+#~ msgstr "Запись в файл:"
 
-msgctxt "Recorder|"
-msgid "Currently recording:"
-msgstr "Идет запись:"
+#~ msgctxt "Recorder|"
+#~ msgid "Currently recording:"
+#~ msgstr "Идет запись:"
 
-msgctxt "Recorder|"
-msgid "Time elapsed:"
-msgstr "Прошло времени:"
+#~ msgctxt "Recorder|"
+#~ msgid "Time elapsed:"
+#~ msgstr "Прошло времени:"
 
-msgctxt "Recorder|"
-msgid "End time:"
-msgstr "Время окончания:"
+#~ msgctxt "Recorder|"
+#~ msgid "End time:"
+#~ msgstr "Время окончания:"
 
 #, qt-format
 msgctxt "Recorder|"
@@ -1771,13 +1787,80 @@ msgctxt "Recorder|"
 msgid "Channel is not selected!"
 msgstr "Не выбран канал!"
 
+#~ msgctxt "Recorder|"
+#~ msgid "Stop recording"
+#~ msgstr "Остановить запись"
+
+#~ msgctxt "Recorder|"
+#~ msgid "No timer - press button to stop."
+#~ msgstr "Таймер не определен - для останова нажмите кнопку"
+
 msgctxt "Recorder|"
+msgid "Quick record"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Recording name:"
+msgstr ""
+
+#, fuzzy
+msgctxt "Recorder|"
+msgid "Back"
+msgstr "Назад"
+
+msgctxt "RecorderInfoWidget|"
+msgid "Form"
+msgstr ""
+
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "Status"
+#~ msgstr "Состояние"
+
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "Recording to file:"
+#~ msgstr "Запись в файл:"
+
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "Currently recording:"
+#~ msgstr "Идет запись:"
+
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "Time elapsed:"
+#~ msgstr "Прошло времени:"
+
+msgctxt "RecorderInfoWidget|"
+msgid "End time:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Currently not recording."
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "No timer - stop manually."
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
 msgid "Stop recording"
 msgstr "Остановить запись"
 
-msgctxt "Recorder|"
-msgid "No timer - press button to stop."
-msgstr "Таймер не определен - для останова нажмите кнопку"
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Recording:"
+msgstr "Запись:"
+
+msgctxt "RecorderInfoWidget|"
+msgid "Elapsed:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Output:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "<b>Status</b>"
+msgstr ""
 
 #~ msgctxt "ScheduleListPage|"
 #~ msgid "Schedule"
@@ -2872,120 +2955,119 @@ msgctxt "TimersDisplayWidget|"
 msgid "Search:"
 msgstr "Поиск:"
 
-msgctxt "TimersEdit|"
-msgid "Timers"
-msgstr "Таймеры"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Timers"
+#~ msgstr "Таймеры"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Timer"
 #~ msgstr "Таймер"
 
-msgctxt "TimersEdit|"
-msgid "Create"
-msgstr "Создать"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Create"
+#~ msgstr "Создать"
 
-msgctxt "TimersEdit|"
-msgid "Name:"
-msgstr "Название:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Name:"
+#~ msgstr "Название:"
 
-msgctxt "TimersEdit|"
-msgid "Select a channel from the list below:"
-msgstr "Выберите канал из списка:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Select a channel from the list below:"
+#~ msgstr "Выберите канал из списка:"
 
-msgctxt "TimersEdit|"
-msgid "Editor"
-msgstr "Редактор"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Editor"
+#~ msgstr "Редактор"
 
-msgctxt "TimersEdit|"
-msgid "Channel:"
-msgstr "Канал:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Channel:"
+#~ msgstr "Канал:"
 
-msgctxt "TimersEdit|"
-msgid "Playlist:"
-msgstr "Список каналов:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Playlist:"
+#~ msgstr "Список каналов:"
 
-msgctxt "TimersEdit|"
-msgid "Date:"
-msgstr "Дата:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Date:"
+#~ msgstr "Дата:"
 
-msgctxt "TimersEdit|"
-msgid "Start time:"
-msgstr "Начало:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Start time:"
+#~ msgstr "Начало:"
 
-msgctxt "TimersEdit|"
-msgid "End time:"
-msgstr "Окончание:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "End time:"
+#~ msgstr "Окончание:"
 
-msgctxt "TimersEdit|"
-msgid "dd.MM.yyyy"
-msgstr "дд.ММ.гггг"
+#~ msgctxt "TimersEdit|"
+#~ msgid "dd.MM.yyyy"
+#~ msgstr "дд.ММ.гггг"
 
-msgctxt "TimersEdit|"
-msgid "Disabled:"
-msgstr "Откл.:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Disabled:"
+#~ msgstr "Откл.:"
 
-msgctxt "TimersEdit|"
-msgid "Url:"
-msgstr "Url:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Url:"
+#~ msgstr "Url:"
 
-msgctxt "TimersEdit|"
-msgid "New Task"
-msgstr "Новая задача"
+#~ msgctxt "TimersEdit|"
+#~ msgid "New Task"
+#~ msgstr "Новая задача"
 
-msgctxt "TimersEdit|"
-msgid "Delete Task"
-msgstr "Удалить задачу"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Delete Task"
+#~ msgstr "Удалить задачу"
 
-msgctxt "TimersEdit|"
-msgid "Save and Close"
-msgstr "Сохранить и закрыть"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Save and Close"
+#~ msgstr "Сохранить и закрыть"
 
-msgctxt "TimersEdit|"
-msgid "Close"
-msgstr "Закрыть"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Close"
+#~ msgstr "Закрыть"
 
-msgctxt "TimersEdit|"
-msgid "Timers Editor"
-msgstr "Редактор таймеров"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Timers Editor"
+#~ msgstr "Редактор таймеров"
 
-msgctxt "TimersEdit|"
-msgid ""
-"Do you want close the editor?\n"
-"You changes will not be applied."
-msgstr ""
-"Закрыть редактор?\n"
-"Изменения будут утеряны."
+#~ msgctxt "TimersEdit|"
+#~ msgid ""
+#~ "Do you want close the editor?\n"
+#~ "You changes will not be applied."
+#~ msgstr ""
+#~ "Закрыть редактор?\n"
+#~ "Изменения будут утеряны."
 
-msgctxt "TimersEdit|"
-msgid "Tano"
-msgstr "Tano"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
 
-#, fuzzy
-msgctxt "TimersEdit|"
-msgid "Please enter a name and select a channel from the list."
-msgstr "Введите имя и выберите канал из списка."
+#~ msgctxt "TimersEdit|"
+#~ msgid "Please enter a name and select a channel from the list."
+#~ msgstr "Введите имя и выберите канал из списка."
 
-msgctxt "TimersEdit|"
-msgid "Timer with this name already exists. Please select another name."
-msgstr "Таймер с таким именем уже существует. Выберите другое имя."
-
-#, qt-format
-msgctxt "TimersEdit|"
-msgid ""
-"Cannot read file %1:\n"
-"%2."
-msgstr ""
-"Невозможно прочитать файл %1:\n"
-"%2."
+#~ msgctxt "TimersEdit|"
+#~ msgid "Timer with this name already exists. Please select another name."
+#~ msgstr "Таймер с таким именем уже существует. Выберите другое имя."
 
 #, qt-format
-msgctxt "TimersEdit|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr ""
-"Невозможно записать файл %1:\n"
-"%2."
+#~ msgctxt "TimersEdit|"
+#~ msgid ""
+#~ "Cannot read file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Невозможно прочитать файл %1:\n"
+#~ "%2."
+
+#, qt-format
+#~ msgctxt "TimersEdit|"
+#~ msgid ""
+#~ "Cannot write file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Невозможно записать файл %1:\n"
+#~ "%2."
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Disabled or expired"
@@ -2995,35 +3077,168 @@ msgstr ""
 #~ msgid "Active"
 #~ msgstr "Активен"
 
-msgctxt "TimersEdit|"
-msgid "Type:"
-msgstr "Тип:"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Type:"
+#~ msgstr "Тип:"
 
-msgctxt "TimersEdit|"
-msgid "Once"
-msgstr "Однократно"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Once"
+#~ msgstr "Однократно"
 
-msgctxt "TimersEdit|"
-msgid "Daily"
-msgstr "Ежедневно"
+#~ msgctxt "TimersEdit|"
+#~ msgid "Daily"
+#~ msgstr "Ежедневно"
 
-msgctxt "TimersEdit|"
-msgid "Weekly"
-msgstr "Еженедельно"
-
-msgctxt "TimersEdit|"
-msgid ""
-"<i>Timers must not overlap! This will be automatically checked in the "
-"future.</i>"
-msgstr ""
+#~ msgctxt "TimersEdit|"
+#~ msgid "Weekly"
+#~ msgstr "Еженедельно"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Status"
 #~ msgstr "Состояние"
 
-msgctxt "TimersEdit|"
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Timers"
+msgstr "Таймеры"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Create"
+msgstr "Создать"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Name:"
+msgstr "Название:"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Select a channel from the list below:"
+msgstr "Выберите канал из списка:"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Editor"
+msgstr "Редактор"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Channel:"
+msgstr "Канал:"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Playlist:"
+msgstr "Список каналов:"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Date:"
+msgstr "Дата:"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Start time:"
+msgstr "Начало:"
+
+msgctxt "TimersEditor|"
+msgid "End time:"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "dd.MM.yyyy"
+msgstr "дд.ММ.гггг"
+
+msgctxt "TimersEditor|"
 msgid "hh:mm:ss"
 msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Disabled:"
+msgstr "Откл.:"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Url:"
+msgstr "Url:"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Type:"
+msgstr "Тип:"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Once"
+msgstr "Однократно"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Daily"
+msgstr "Ежедневно"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Weekly"
+msgstr "Еженедельно"
+
+msgctxt "TimersEditor|"
+msgid ""
+"<i>Timers must not overlap! This will be automatically checked in the "
+"future.</i>"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "New Task"
+msgstr "Новая задача"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Delete Task"
+msgstr "Удалить задачу"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Save and Close"
+msgstr "Сохранить и закрыть"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Close"
+msgstr "Закрыть"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Timers Editor"
+msgstr "Редактор таймеров"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid ""
+"Do you want close the editor?\n"
+"You changes will not be applied."
+msgstr ""
+"Закрыть редактор?\n"
+"Изменения будут утеряны."
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Tano"
+msgstr "Tano"
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Please enter a name and select a channel from the list."
+msgstr "Введите имя и выберите канал из списка."
+
+#, fuzzy
+msgctxt "TimersEditor|"
+msgid "Timer with this name already exists. Please select another name."
+msgstr "Таймер с таким именем уже существует. Выберите другое имя."
 
 msgctxt "TrayIcon|"
 msgid "Tano"

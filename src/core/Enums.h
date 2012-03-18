@@ -73,7 +73,8 @@ namespace Tano
         Once,
         Daily,
         Weekly,
-        Weekdays
+        Weekdays,
+        Instant
     };
 
     QStringList timerStates();

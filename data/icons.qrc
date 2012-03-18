@@ -86,5 +86,9 @@
         <file>icons/16x16/go-next.png</file>
         <file>icons/16x16/go-previous.png</file>
         <file>icons/48x48/editor.png</file>
+        <file>icons/16x16/media-playback-pause.png</file>
+        <file>icons/16x16/media-playback-start.png</file>
+        <file>icons/16x16/media-playback-stop.png</file>
+        <file>icons/16x16/media-record.png</file>
     </qresource>
 </RCC>

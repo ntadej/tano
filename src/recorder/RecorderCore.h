@@ -40,11 +40,9 @@ public:
     bool isRecording() const { return _isRecording; }
     bool isTimer() const { return _isTimer; }
     QString output() const;
-    void settings();
+    void setDefaultOutputPath(const QString &path) { _defaultPath = path; }
     void stop();
     QString timerEndTime() const { return _currentEndTime; }
-    void timerInfo();
-    void updateTimers();
 
 public slots:
     void record(const QString &channel,
@@ -69,10 +67,11 @@ private:
     QString _currentEndTime;
     QString _currentName;
     QString _currentUrl;
-    QString _defaultPath;
 
     bool _isRecording;
     bool _isTimer;
+
+    QString _defaultPath;
 
     QString _output;
     QString _outputName;
@@ -84,8 +83,6 @@ private:
 
     int _time;
     QTimer *_timer;
-
-    RecorderTimeManager *_manager;
 };
 
 #endif // TANO_RECORDERCORE_H_

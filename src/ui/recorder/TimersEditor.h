@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TIMERSEDIT_H_
-#define TANO_TIMERSEDIT_H_
+#ifndef TANO_TIMERSEDITOR_H_
+#define TANO_TIMERSEDITOR_H_
 
 #include <QtCore/QDate>
 #include <QtGui/QMainWindow>
@@ -29,16 +29,18 @@ class TimersModel;
 
 namespace Ui
 {
-    class TimersEdit;
+    class TimersEditor;
 }
 
-class TimersEdit : public QMainWindow
+class TimersEditor : public QMainWindow
 {
 Q_OBJECT
 public:
-    TimersEdit(PlaylistModel *playlist,
-               QWidget *parent = 0);
-    ~TimersEdit();
+    explicit TimersEditor(QWidget *parent = 0);
+    ~TimersEditor();
+
+    void setModels(TimersModel *timers,
+                   PlaylistModel *playlist);
 
 protected:
     void changeEvent(QEvent *e);
@@ -60,18 +62,14 @@ private slots:
     void editStartTime(const QTime &time);
     void editEndTime(const QTime &time);
 
-    void read();
     void write();
     void exit();
-
-signals:
-    void updateTimers();
 
 private:
     void createConnections();
     void createSettings();
 
-    Ui::TimersEdit *ui;
+    Ui::TimersEditor *ui;
 
     Channel *_channel;
 
@@ -79,9 +77,6 @@ private:
 
     TimersModel *_timersModel;
     PlaylistModel *_playlistModel;
-
-    QString _path;
-    QString _playlist;
 };
 
-#endif // TANO_TIMERSEDIT_H_
+#endif // TANO_TIMERSEDITOR_H_

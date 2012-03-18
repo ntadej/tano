@@ -283,16 +283,16 @@ Verze vašeho VLC-Qt: %4</translation>
 <context>
     <name>InfoBarWidget</name>
     <message>
-        <source>Language: %1</source>
-        <translation type="unfinished"></translation>
+        <source>Now:</source>
+        <translation type="unfinished">Nyní:</translation>
     </message>
     <message>
-        <source>Now: %1</source>
-        <translation type="unfinished"></translation>
+        <source>Next:</source>
+        <translation type="unfinished">Další:</translation>
     </message>
     <message>
-        <source>Next: %1</source>
-        <translation type="unfinished"></translation>
+        <source>Language:</source>
+        <translation type="unfinished">Jazyk:</translation>
     </message>
 </context>
 <context>
@@ -461,7 +461,7 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
     <message>
         <source>Record Current</source>
-        <translation>Nahrávat současný</translation>
+        <translation type="obsolete">Nahrávat současný</translation>
     </message>
     <message>
         <source>Timers</source>
@@ -533,6 +533,18 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder information</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1853,6 +1865,10 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Weekdays</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Instant</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1873,7 +1889,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Directory:</source>
-        <translation>Adresář:</translation>
+        <translation type="obsolete">Adresář:</translation>
     </message>
     <message>
         <source>...</source>
@@ -1885,23 +1901,23 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Stav</translation>
+        <translation type="obsolete">Stav</translation>
     </message>
     <message>
         <source>Recording to file:</source>
-        <translation>Nahrává se do souboru:</translation>
+        <translation type="obsolete">Nahrává se do souboru:</translation>
     </message>
     <message>
         <source>Currently recording:</source>
-        <translation>Nyní se nahrává:</translation>
+        <translation type="obsolete">Nyní se nahrává:</translation>
     </message>
     <message>
         <source>Time elapsed:</source>
-        <translation>Uplynulý čas:</translation>
+        <translation type="obsolete">Uplynulý čas:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Konec:</translation>
+        <translation type="obsolete">Konec:</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
@@ -1913,15 +1929,82 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Zastavit nahrávání</translation>
+        <translation type="obsolete">Zastavit nahrávání</translation>
     </message>
     <message>
         <source>No timer - press button to stop.</source>
-        <translation>Žádný časovač - stiskněte tlačítko pro zastavení.</translation>
+        <translation type="obsolete">Žádný časovač - stiskněte tlačítko pro zastavení.</translation>
     </message>
     <message>
         <source>Open directory</source>
         <translation type="obsolete">Otevřít adresář</translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Zpět</translation>
+    </message>
+</context>
+<context>
+    <name>RecorderInfoWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="obsolete">Stav</translation>
+    </message>
+    <message>
+        <source>Recording to file:</source>
+        <translation type="obsolete">Nahrává se do souboru:</translation>
+    </message>
+    <message>
+        <source>Currently recording:</source>
+        <translation type="obsolete">Nyní se nahrává:</translation>
+    </message>
+    <message>
+        <source>Time elapsed:</source>
+        <translation type="obsolete">Uplynulý čas:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished">Konec:</translation>
+    </message>
+    <message>
+        <source>Currently not recording.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No timer - stop manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation type="unfinished">Zastavit nahrávání</translation>
+    </message>
+    <message>
+        <source>Recording:</source>
+        <translation type="unfinished">Nahrává se:</translation>
+    </message>
+    <message>
+        <source>Elapsed:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Status&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3126,7 +3209,7 @@ Ztratíte všechny neuložené změny.</translation>
     <name>TimersEdit</name>
     <message>
         <source>Timers</source>
-        <translation>Časovače</translation>
+        <translation type="obsolete">Časovače</translation>
     </message>
     <message>
         <source>Timer</source>
@@ -3134,100 +3217,100 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>Vytvořit</translation>
+        <translation type="obsolete">Vytvořit</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Název:</translation>
+        <translation type="obsolete">Název:</translation>
     </message>
     <message>
         <source>Select a channel from the list below:</source>
-        <translation>Vyberte program ze seznamu níže:</translation>
+        <translation type="obsolete">Vyberte program ze seznamu níže:</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Editor</translation>
+        <translation type="obsolete">Editor</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Program:</translation>
+        <translation type="obsolete">Program:</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation>Seznam programů:</translation>
+        <translation type="obsolete">Seznam programů:</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Datum:</translation>
+        <translation type="obsolete">Datum:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation>Začátek:</translation>
+        <translation type="obsolete">Začátek:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Konec:</translation>
+        <translation type="obsolete">Konec:</translation>
     </message>
     <message>
         <source>dd.MM.yyyy</source>
-        <translation>dd.mm.rrrr</translation>
+        <translation type="obsolete">dd.mm.rrrr</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation>Zakázáno:</translation>
+        <translation type="obsolete">Zakázáno:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Adresa (URL):</translation>
+        <translation type="obsolete">Adresa (URL):</translation>
     </message>
     <message>
         <source>New Task</source>
-        <translation>Nový úkol</translation>
+        <translation type="obsolete">Nový úkol</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation>Smazat úkol</translation>
+        <translation type="obsolete">Smazat úkol</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation>Uložit a zavřít</translation>
+        <translation type="obsolete">Uložit a zavřít</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zavřít</translation>
+        <translation type="obsolete">Zavřít</translation>
     </message>
     <message>
         <source>Timers Editor</source>
-        <translation>Editor časovačů</translation>
+        <translation type="obsolete">Editor časovačů</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You changes will not be applied.</source>
-        <translation>Chcete zavřít editor?
+        <translation type="obsolete">Chcete zavřít editor?
 Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation type="unfinished">Zadejte, prosím, název a vyberte program ze seznamu.</translation>
+        <translation type="obsolete">Zadejte, prosím, název a vyberte program ze seznamu.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
-        <translation>Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název.</translation>
+        <translation type="obsolete">Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název.</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Nelze číst ze souboru %1:
+        <translation type="obsolete">Nelze číst ze souboru %1:
 %2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Nelze zapisovat soubor %1:
+        <translation type="obsolete">Nelze zapisovat soubor %1:
 %2.</translation>
     </message>
     <message>
@@ -3240,23 +3323,23 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation type="obsolete">Typ:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Jednou</translation>
+        <translation type="obsolete">Jednou</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Denně</translation>
+        <translation type="obsolete">Denně</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Týdně</translation>
+        <translation type="obsolete">Týdně</translation>
     </message>
     <message>
         <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Časovače se nesmí překrývat! Toto bude v budoucnu ověřeno automaticky.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Časovače se nesmí překrývat! Toto bude v budoucnu ověřeno automaticky.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Type</source>
@@ -3268,7 +3351,124 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>hh:mm:ss</source>
-        <translation>hh:mm:ss</translation>
+        <translation type="obsolete">hh:mm:ss</translation>
+    </message>
+</context>
+<context>
+    <name>TimersEditor</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Časovače</translation>
+    </message>
+    <message>
+        <source>Create</source>
+        <translation type="unfinished">Vytvořit</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Název:</translation>
+    </message>
+    <message>
+        <source>Select a channel from the list below:</source>
+        <translation type="unfinished">Vyberte program ze seznamu níže:</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Editor</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Program:</translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Seznam programů:</translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Datum:</translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Začátek:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished">Konec:</translation>
+    </message>
+    <message>
+        <source>dd.MM.yyyy</source>
+        <translation type="unfinished">dd.mm.rrrr</translation>
+    </message>
+    <message>
+        <source>hh:mm:ss</source>
+        <translation type="unfinished">hh:mm:ss</translation>
+    </message>
+    <message>
+        <source>Disabled:</source>
+        <translation type="unfinished">Zakázáno:</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Adresa (URL):</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Typ:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Jednou</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Denně</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Týdně</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Časovače se nesmí překrývat! Toto bude v budoucnu ověřeno automaticky.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>New Task</source>
+        <translation type="unfinished">Nový úkol</translation>
+    </message>
+    <message>
+        <source>Delete Task</source>
+        <translation type="unfinished">Smazat úkol</translation>
+    </message>
+    <message>
+        <source>Save and Close</source>
+        <translation type="unfinished">Uložit a zavřít</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zavřít</translation>
+    </message>
+    <message>
+        <source>Timers Editor</source>
+        <translation type="unfinished">Editor časovačů</translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You changes will not be applied.</source>
+        <translation type="unfinished">Chcete zavřít editor?
+Vaše změny nebudou použity.</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Please enter a name and select a channel from the list.</source>
+        <translation type="unfinished">Zadejte, prosím, název a vyberte program ze seznamu.</translation>
+    </message>
+    <message>
+        <source>Timer with this name already exists. Please select another name.</source>
+        <translation type="unfinished">Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název.</translation>
     </message>
 </context>
 <context>

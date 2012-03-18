@@ -32,7 +32,7 @@ public:
     RecorderTimeManager(QObject *parent = 0);
     ~RecorderTimeManager();
 
-    void updateTimers();
+    void setTimersModel(TimersModel *model);
 
 signals:
     void timer(Timer *);
@@ -41,10 +41,6 @@ private slots:
     void check();
 
 private:
-    void readTimers();
-
-    QString _path;
-
     QTimer *_timer;
     TimersModel *_model;
 };

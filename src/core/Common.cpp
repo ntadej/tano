@@ -129,6 +129,11 @@ QString Tano::settingsPath()
     return path;
 }
 
+QString Tano::timersPath()
+{
+    return settingsPath() + "recordings.xml";
+}
+
 QStringList Tano::vlcQtArgs()
 {
     QStringList args;

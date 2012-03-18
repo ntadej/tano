@@ -67,7 +67,6 @@
     <addaction name="actionRecorder"/>
     <addaction name="actionTimers"/>
     <addaction name="separator"/>
-    <addaction name="actionRecordNow"/>
     <addaction name="actionRecord"/>
    </widget>
    <widget class="QMenu" name="menuOptions">
@@ -167,7 +166,6 @@
    <addaction name="actionSchedule"/>
    <addaction name="separator"/>
    <addaction name="actionRecorder"/>
-   <addaction name="actionTimers"/>
    <addaction name="actionEditPlaylist"/>
    <addaction name="separator"/>
    <addaction name="actionSettings"/>
@@ -187,7 +185,7 @@
    <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
-   <widget class="QWidget" name="dockWidgetContents">
+   <widget class="QWidget" name="infoWidgetContents">
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <property name="spacing">
       <number>0</number>
@@ -215,7 +213,7 @@
           <x>0</x>
           <y>0</y>
           <width>240</width>
-          <height>260</height>
+          <height>193</height>
          </rect>
         </property>
         <attribute name="icon">
@@ -315,6 +313,46 @@
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBarRecorder">
+   <property name="windowTitle">
+    <string>Recorder Toolbar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionRecordQuick"/>
+   <addaction name="actionRecord"/>
+   <addaction name="separator"/>
+   <addaction name="actionTimers"/>
+  </widget>
+  <widget class="QDockWidget" name="recorderInfoWidget">
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/recorder.png</normaloff>:/icons/24x24/recorder.png</iconset>
+   </property>
+   <property name="windowTitle">
+    <string>Recorder information</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="recorderInfoWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="RecorderInfoWidget" name="recorderInfo" native="true"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
   <action name="actionAbout">
    <property name="icon">
     <iconset resource="../../data/logo.qrc">
@@ -531,16 +569,16 @@
     <string>Recorder</string>
    </property>
   </action>
-  <action name="actionRecordNow">
+  <action name="actionRecordQuick">
    <property name="icon">
     <iconset resource="../../data/icons.qrc">
      <normaloff>:/icons/24x24/media-record.png</normaloff>:/icons/24x24/media-record.png</iconset>
    </property>
    <property name="text">
-    <string>Record Current</string>
+    <string>Quick record</string>
    </property>
    <property name="toolTip">
-    <string>Record Current</string>
+    <string>Quick record</string>
    </property>
   </action>
   <action name="actionTimers">
@@ -567,7 +605,7 @@
    </property>
    <property name="icon">
     <iconset resource="../../data/icons.qrc">
-     <normaloff>:/icons/24x24/media-record.png</normaloff>:/icons/24x24/media-record.png</iconset>
+     <normaloff>:/icons/24x24/media-playback-stop.png</normaloff>:/icons/24x24/media-playback-stop.png</iconset>
    </property>
    <property name="text">
     <string>Stop recording</string>
@@ -654,6 +692,7 @@
     <string>Keyboard shortcuts</string>
    </property>
   </action>
+  <action name="actionRecordNow"/>
  </widget>
  <customwidgets>
   <customwidget>
@@ -688,6 +727,12 @@
    <class>CurrentTimeWidget</class>
    <extends>QWidget</extends>
    <header>ui/core/CurrentTimeWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RecorderInfoWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/recorder/RecorderInfoWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

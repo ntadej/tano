@@ -194,15 +194,15 @@ Your VLC-Qt version: %4
 <context>
     <name>InfoBarWidget</name>
     <message>
-        <source>Language: %1</source>
+        <source>Now:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Now: %1</source>
+        <source>Next:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Next: %1</source>
+        <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -360,10 +360,6 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Record Current</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Timers</source>
         <translation type="unfinished"></translation>
     </message>
@@ -427,6 +423,18 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder information</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1275,6 +1283,10 @@ You will lose any unsaved changes.</source>
         <source>Weekdays</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Instant</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1294,31 +1306,7 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Directory:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Record</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recording to file:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Currently recording:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Time elapsed:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>End time:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1330,11 +1318,54 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderInfoWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Currently not recording.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No timer - stop manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Stop recording</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>No timer - press button to stop.</source>
+        <source>Recording:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elapsed:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Status&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1966,7 +1997,7 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>TimersEdit</name>
+    <name>TimersEditor</name>
     <message>
         <source>Timers</source>
         <translation type="unfinished"></translation>
@@ -2012,11 +2043,35 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>hh:mm:ss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Disabled:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Url:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2049,45 +2104,11 @@ You changes will not be applied.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Timer with this name already exists. Please select another name.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cannot write file %1:
-%2.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Once</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Weekly</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>hh:mm:ss</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Please enter a name and select a channel from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timer with this name already exists. Please select another name.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

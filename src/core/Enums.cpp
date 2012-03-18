@@ -38,7 +38,8 @@ QStringList Tano::timerTypes()
     list << QObject::tr("Once")
          << QObject::tr("Daily")
          << QObject::tr("Weekly")
-         << QObject::tr("Weekdays");
+         << QObject::tr("Weekdays")
+         << QObject::tr("Instant");
 
     return list;
 }

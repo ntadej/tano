@@ -22,7 +22,6 @@
 
 #include "container/core/Timer.h"
 #include "core/Common.h"
-#include "core/Settings.h"
 #include "recorder/RecorderCore.h"
 #include "recorder/RecorderTimeManager.h"
 
@@ -34,11 +33,6 @@ RecorderCore::RecorderCore(QObject *parent)
       _media(0),
       _player(0)
 {
-    settings();
-
-    _manager = new RecorderTimeManager(this);
-    connect(_manager, SIGNAL(timer(Timer *)), this, SLOT(record(Timer *)));
-
     _timer = new QTimer(this);
     connect(_timer, SIGNAL(timeout()), this, SLOT(time()));
 }
@@ -131,13 +125,6 @@ void RecorderCore::recordBackend(const QString &url)
     _player->play();
 }
 
-void RecorderCore::settings()
-{
-    Settings *settings = new Settings(this);
-    _defaultPath = settings->recorderDirectory();
-    delete settings;
-}
-
 void RecorderCore::stop()
 {
     if (_player)
@@ -161,15 +148,4 @@ void RecorderCore::time()
     if (QTime::currentTime() >= QTime::fromString(_currentEndTime, "hh:mm") && isTimer()) {
         emit timerStop();
     }
-}
-
-void RecorderCore::timerInfo()
-{
-    if (!_currentName.isEmpty())
-        emit timer(_currentName, _currentUrl);
-}
-
-void RecorderCore::updateTimers()
-{
-    _manager->updateTimers();
 }

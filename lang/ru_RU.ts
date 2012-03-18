@@ -272,16 +272,16 @@ Your VLC-Qt version: %4
 <context>
     <name>InfoBarWidget</name>
     <message>
-        <source>Language: %1</source>
-        <translation type="unfinished"></translation>
+        <source>Now:</source>
+        <translation type="unfinished">Сейчас:</translation>
     </message>
     <message>
-        <source>Now: %1</source>
-        <translation type="unfinished"></translation>
+        <source>Next:</source>
+        <translation type="unfinished">След.:</translation>
     </message>
     <message>
-        <source>Next: %1</source>
-        <translation type="unfinished"></translation>
+        <source>Language:</source>
+        <translation type="unfinished">Язык:</translation>
     </message>
 </context>
 <context>
@@ -454,7 +454,7 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Record Current</source>
-        <translation>Записать текущую программу</translation>
+        <translation type="obsolete">Записать текущую программу</translation>
     </message>
     <message>
         <source>Timers</source>
@@ -526,6 +526,18 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder information</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1692,6 +1704,10 @@ You will lose any unsaved changes.</source>
         <source>Weekdays</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Instant</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1712,7 +1728,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Directory:</source>
-        <translation>Каталог:</translation>
+        <translation type="obsolete">Каталог:</translation>
     </message>
     <message>
         <source>...</source>
@@ -1724,23 +1740,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation>Состояние</translation>
+        <translation type="obsolete">Состояние</translation>
     </message>
     <message>
         <source>Recording to file:</source>
-        <translation>Запись в файл:</translation>
+        <translation type="obsolete">Запись в файл:</translation>
     </message>
     <message>
         <source>Currently recording:</source>
-        <translation>Идет запись:</translation>
+        <translation type="obsolete">Идет запись:</translation>
     </message>
     <message>
         <source>Time elapsed:</source>
-        <translation>Прошло времени:</translation>
+        <translation type="obsolete">Прошло времени:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Время окончания:</translation>
+        <translation type="obsolete">Время окончания:</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
@@ -1752,11 +1768,78 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Остановить запись</translation>
+        <translation type="obsolete">Остановить запись</translation>
     </message>
     <message>
         <source>No timer - press button to stop.</source>
-        <translation>Таймер не определен - для останова нажмите кнопку</translation>
+        <translation type="obsolete">Таймер не определен - для останова нажмите кнопку</translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Назад</translation>
+    </message>
+</context>
+<context>
+    <name>RecorderInfoWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="obsolete">Состояние</translation>
+    </message>
+    <message>
+        <source>Recording to file:</source>
+        <translation type="obsolete">Запись в файл:</translation>
+    </message>
+    <message>
+        <source>Currently recording:</source>
+        <translation type="obsolete">Идет запись:</translation>
+    </message>
+    <message>
+        <source>Time elapsed:</source>
+        <translation type="obsolete">Прошло времени:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Currently not recording.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No timer - stop manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation type="unfinished">Остановить запись</translation>
+    </message>
+    <message>
+        <source>Recording:</source>
+        <translation type="unfinished">Запись:</translation>
+    </message>
+    <message>
+        <source>Elapsed:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Status&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2819,7 +2902,7 @@ You will lose any unsaved changes.</source>
     <name>TimersEdit</name>
     <message>
         <source>Timers</source>
-        <translation>Таймеры</translation>
+        <translation type="obsolete">Таймеры</translation>
     </message>
     <message>
         <source>Timer</source>
@@ -2827,100 +2910,100 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Create</source>
-        <translation>Создать</translation>
+        <translation type="obsolete">Создать</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Название:</translation>
+        <translation type="obsolete">Название:</translation>
     </message>
     <message>
         <source>Select a channel from the list below:</source>
-        <translation>Выберите канал из списка:</translation>
+        <translation type="obsolete">Выберите канал из списка:</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Редактор</translation>
+        <translation type="obsolete">Редактор</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Канал:</translation>
+        <translation type="obsolete">Канал:</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation>Список каналов:</translation>
+        <translation type="obsolete">Список каналов:</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Дата:</translation>
+        <translation type="obsolete">Дата:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation>Начало:</translation>
+        <translation type="obsolete">Начало:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Окончание:</translation>
+        <translation type="obsolete">Окончание:</translation>
     </message>
     <message>
         <source>dd.MM.yyyy</source>
-        <translation>дд.ММ.гггг</translation>
+        <translation type="obsolete">дд.ММ.гггг</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation>Откл.:</translation>
+        <translation type="obsolete">Откл.:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Url:</translation>
+        <translation type="obsolete">Url:</translation>
     </message>
     <message>
         <source>New Task</source>
-        <translation>Новая задача</translation>
+        <translation type="obsolete">Новая задача</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation>Удалить задачу</translation>
+        <translation type="obsolete">Удалить задачу</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation>Сохранить и закрыть</translation>
+        <translation type="obsolete">Сохранить и закрыть</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Закрыть</translation>
+        <translation type="obsolete">Закрыть</translation>
     </message>
     <message>
         <source>Timers Editor</source>
-        <translation>Редактор таймеров</translation>
+        <translation type="obsolete">Редактор таймеров</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You changes will not be applied.</source>
-        <translation>Закрыть редактор?
+        <translation type="obsolete">Закрыть редактор?
 Изменения будут утеряны.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation type="unfinished">Введите имя и выберите канал из списка.</translation>
+        <translation type="obsolete">Введите имя и выберите канал из списка.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
-        <translation>Таймер с таким именем уже существует. Выберите другое имя.</translation>
+        <translation type="obsolete">Таймер с таким именем уже существует. Выберите другое имя.</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Невозможно прочитать файл %1:
+        <translation type="obsolete">Невозможно прочитать файл %1:
 %2.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Невозможно записать файл %1:
+        <translation type="obsolete">Невозможно записать файл %1:
 %2.</translation>
     </message>
     <message>
@@ -2933,31 +3016,140 @@ You changes will not be applied.</source>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation type="obsolete">Тип:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Однократно</translation>
+        <translation type="obsolete">Однократно</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Ежедневно</translation>
+        <translation type="obsolete">Ежедневно</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Еженедельно</translation>
+        <translation type="obsolete">Еженедельно</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="obsolete">Состояние</translation>
+    </message>
+</context>
+<context>
+    <name>TimersEditor</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Таймеры</translation>
+    </message>
+    <message>
+        <source>Create</source>
+        <translation type="unfinished">Создать</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Название:</translation>
+    </message>
+    <message>
+        <source>Select a channel from the list below:</source>
+        <translation type="unfinished">Выберите канал из списка:</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Редактор</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Канал:</translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Список каналов:</translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Дата:</translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Начало:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dd.MM.yyyy</source>
+        <translation type="unfinished">дд.ММ.гггг</translation>
+    </message>
+    <message>
+        <source>hh:mm:ss</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled:</source>
+        <translation type="unfinished">Откл.:</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Url:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Тип:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Однократно</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Ежедневно</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Еженедельно</translation>
     </message>
     <message>
         <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Status</source>
-        <translation type="obsolete">Состояние</translation>
+        <source>New Task</source>
+        <translation type="unfinished">Новая задача</translation>
     </message>
     <message>
-        <source>hh:mm:ss</source>
-        <translation type="unfinished"></translation>
+        <source>Delete Task</source>
+        <translation type="unfinished">Удалить задачу</translation>
+    </message>
+    <message>
+        <source>Save and Close</source>
+        <translation type="unfinished">Сохранить и закрыть</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Закрыть</translation>
+    </message>
+    <message>
+        <source>Timers Editor</source>
+        <translation type="unfinished">Редактор таймеров</translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You changes will not be applied.</source>
+        <translation type="unfinished">Закрыть редактор?
+Изменения будут утеряны.</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Please enter a name and select a channel from the list.</source>
+        <translation type="unfinished">Введите имя и выберите канал из списка.</translation>
+    </message>
+    <message>
+        <source>Timer with this name already exists. Please select another name.</source>
+        <translation type="unfinished">Таймер с таким именем уже существует. Выберите другое имя.</translation>
     </message>
 </context>
 <context>

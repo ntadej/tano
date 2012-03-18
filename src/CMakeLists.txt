@@ -44,8 +44,9 @@ SET(Tano_UIs
     ui/playlist/PlaylistExportTvheadend.ui
     ui/playlist/PlaylistImportCSV.ui
     ui/recorder/Recorder.ui
+    ui/recorder/RecorderInfoWidget.ui
     ui/recorder/TimersDisplayWidget.ui
-    ui/recorder/TimersEdit.ui
+    ui/recorder/TimersEditor.ui
     ui/settings/SettingsBackend.ui
     ui/settings/SettingsDialog.ui
     ui/settings/SettingsGeneral.ui
@@ -86,6 +87,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/core/LicenseWidget.h
     ui/core/OsdWidget.h
     ui/core/QtKeySequenceEdit.h
+    ui/core/ScrollingWidget.h
     ui/core/TrayIcon.h
     ui/dialogs/AboutDialog.h
     ui/dialogs/DonationDialog.h
@@ -107,8 +109,9 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/playlist/PlaylistExportTvheadend.h
     ui/playlist/PlaylistImportCSV.h
     ui/recorder/Recorder.h
+    ui/recorder/RecorderInfoWidget.h
     ui/recorder/TimersDisplayWidget.h
-    ui/recorder/TimersEdit.h
+    ui/recorder/TimersEditor.h
     ui/settings/SettingsBackend.h
     ui/settings/SettingsDialog.h
     ui/settings/SettingsGeneral.h
@@ -195,6 +198,7 @@ SET(Tano_UI_Srcs
     ui/core/LicenseWidget.cpp
     ui/core/OsdWidget.cpp
     ui/core/QtKeySequenceEdit.cpp
+    ui/core/ScrollingWidget.cpp
     ui/core/TrayIcon.cpp
     ui/dialogs/AboutDialog.cpp
     ui/dialogs/DonationDialog.cpp
@@ -216,8 +220,9 @@ SET(Tano_UI_Srcs
     ui/playlist/PlaylistExportTvheadend.cpp
     ui/playlist/PlaylistImportCSV.cpp
     ui/recorder/Recorder.cpp
+    ui/recorder/RecorderInfoWidget.cpp
     ui/recorder/TimersDisplayWidget.cpp
-    ui/recorder/TimersEdit.cpp
+    ui/recorder/TimersEditor.cpp
     ui/settings/SettingsBackend.cpp
     ui/settings/SettingsDialog.cpp
     ui/settings/SettingsGeneral.cpp

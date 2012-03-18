@@ -130,7 +130,7 @@ void MainWindow::exit()
     switch (ret)
     {
     case QMessageBox::Close:
-        ui->recorder->stop();
+        ui->recorder->recordStop();
         _trayIcon->hide();
         writeSession();
         qApp->quit();
@@ -191,14 +191,15 @@ void MainWindow::createGui()
     ui->playlistWidget->setModel(_model);
     _schedule->setPlaylistModel(_model);
     ui->recorder->setPlaylistModel(_model);
-    ui->recorder->setAction(ui->actionRecord);
-    ui->recorder->setTrayIcon(_trayIcon);
+    ui->recorder->setWidgets(ui->actionRecord, ui->recorderInfo, _trayIcon);
 
     openPlaylist(true);
     setPlayingState(Vlc::Idle);
     ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
     ui->statusBar->addPermanentWidget(ui->timeWidget);
     ui->statusBar->addPermanentWidget(ui->buttonUpdate);
+    ui->toolBarRecorder->hide();
+    ui->recorderInfoWidget->hide();
     ui->buttonUpdate->hide();
     ui->scheduleWidget->setIdentifier(Tano::Main);
 }
@@ -397,6 +398,7 @@ void MainWindow::createConnections()
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
     connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
+    connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
     connect(ui->actionTimers, SIGNAL(triggered()), ui->recorder, SLOT(showTimersEditor()));
 }
 
@@ -841,10 +843,14 @@ void MainWindow::recorder(const bool &enabled)
 {
     if (enabled) {
         ui->stackedWidget->setCurrentIndex(1);
+        ui->toolBarRecorder->setVisible(true);
+        ui->recorderInfoWidget->setVisible(true);
         ui->infoWidget->setVisible(false);
         ui->osdWidget->setVisible(false);
     } else {
         ui->stackedWidget->setCurrentIndex(0);
+        ui->toolBarRecorder->setVisible(false);
+        ui->recorderInfoWidget->setVisible(false);
         ui->infoWidget->setVisible(true);
         ui->osdWidget->setVisible(true);
     }

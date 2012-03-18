@@ -20,48 +20,46 @@
 #include <QtGui/QCloseEvent>
 #include <QtGui/QMessageBox>
 
-#include "TimersEdit.h"
-#include "ui_TimersEdit.h"
+#include "TimersEditor.h"
+#include "ui_TimersEditor.h"
 
 #include "container/core/Channel.h"
 #include "container/core/Timer.h"
-#include "core/Common.h"
 #include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "recorder/TimersModel.h"
 
-TimersEdit::TimersEdit(PlaylistModel *playlist,
-                       QWidget *parent)
+TimersEditor::TimersEditor(QWidget *parent)
     : QMainWindow(parent),
-      ui(new Ui::TimersEdit),
+      ui(new Ui::TimersEditor),
       _channel(0),
       _closeEnabled(false)
 {
     ui->setupUi(this);
 
-    _path = Tano::settingsPath();
-
     ui->dockWidgetContents->setDisabled(true);
-    _playlistModel = playlist;
-    ui->playlistWidget->setModel(playlist);
-    ui->playlistWidget->refreshModel();
 
     createSettings();
     createConnections();
+}
 
-    _timersModel = new TimersModel(this);
+void TimersEditor::setModels(TimersModel *timers,
+                           PlaylistModel *playlist)
+{
+    _timersModel = timers;
     ui->timersWidget->setModel(_timersModel);
 
-    read();
+    _playlistModel = playlist;
+    ui->playlistWidget->setModel(_playlistModel);
+    ui->playlistWidget->refreshModel();
 }
 
-TimersEdit::~TimersEdit()
+TimersEditor::~TimersEditor()
 {
     delete ui;
-    delete _timersModel;
 }
 
-void TimersEdit::changeEvent(QEvent *e)
+void TimersEditor::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
     switch (e->type())
@@ -74,20 +72,20 @@ void TimersEdit::changeEvent(QEvent *e)
     }
 }
 
-void TimersEdit::closeEvent(QCloseEvent *event)
+void TimersEditor::closeEvent(QCloseEvent *event)
 {
     event->ignore();
     exit();
 }
 
-void TimersEdit::createSettings()
+void TimersEditor::createSettings()
 {
     Settings *settings = new Settings(this);
     ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
     delete settings;
 }
 
-void TimersEdit::createConnections()
+void TimersEditor::createConnections()
 {
     connect(ui->timersWidget, SIGNAL(itemSelected(Timer *)), this, SLOT(edit(Timer *)));
     connect(ui->actionNew, SIGNAL(triggered()), this, SLOT(newItem()));
@@ -106,7 +104,7 @@ void TimersEdit::createConnections()
     connect(ui->checkBoxDisabled, SIGNAL(clicked()), this, SLOT(validate()));
 }
 
-void TimersEdit::exit()
+void TimersEditor::exit()
 {
     if (_closeEnabled) {
         hide();
@@ -134,60 +132,28 @@ void TimersEdit::exit()
     }
 }
 
-void TimersEdit::read()
+void TimersEditor::write()
 {
-    QString fileName = _path + "timers.tano.xml";
-
-    QFile file(fileName);
-    if (!file.exists())
-        return;
-
-    if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano"),
-                            tr("Cannot read file %1:\n%2.")
-                            .arg(fileName)
-                            .arg(file.errorString()));
-        return;
-    }
-    file.close();
-
-    _timersModel->readTimers(fileName);
-}
-
-void TimersEdit::write()
-{
-    QString fileName = _path + "timers.tano.xml";
-
-    QFile file(fileName);
-    if (!file.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano"),
-                            tr("Cannot write file %1:\n%2.")
-                            .arg(fileName)
-                            .arg(file.errorString()));
-        return;
-    }
-
-    _timersModel->writeTimers(fileName);
+    _timersModel->writeTimers();
 
     _closeEnabled = true;
-    emit updateTimers();
     exit();
 }
 
-void TimersEdit::newItem()
+void TimersEditor::newItem()
 {
     ui->toolBar->setDisabled(true);
     ui->dockWidgetContents->setDisabled(true);
     ui->mainWidget->setCurrentIndex(1);
 }
 
-void TimersEdit::deleteItem()
+void TimersEditor::deleteItem()
 {
     ui->dockWidgetContents->setDisabled(true);
     _timersModel->deleteTimer(ui->timersWidget->currentTimer());
 }
 
-void TimersEdit::addItem()
+void TimersEditor::addItem()
 {
     if (!_channel || ui->editNameNew->text().isEmpty()) {
         QMessageBox::warning(this, tr("Tano"),
@@ -210,12 +176,12 @@ void TimersEdit::addItem()
     ui->mainWidget->setCurrentIndex(0);
 }
 
-void TimersEdit::playlist(Channel *channel)
+void TimersEditor::playlist(Channel *channel)
 {
     _channel = channel;
 }
 
-void TimersEdit::edit(Timer *item)
+void TimersEditor::edit(Timer *item)
 {
     if (item == 0)
         return;
@@ -236,7 +202,7 @@ void TimersEdit::edit(Timer *item)
     ui->editEndTime->setTime(ui->timersWidget->currentTimer()->endTime().time());
 }
 
-void TimersEdit::editName(const QString &name)
+void TimersEditor::editName(const QString &name)
 {
     for (int i = 0; i < _timersModel->rowCount(); i++)
         if (_timersModel->row(i)->name() == name && _timersModel->row(i) != ui->timersWidget->currentTimer()) {
@@ -249,12 +215,12 @@ void TimersEdit::editName(const QString &name)
     ui->timersWidget->currentTimer()->setName(name);
 }
 
-void TimersEdit::editType(const int &type)
+void TimersEditor::editType(const int &type)
 {
     ui->timersWidget->currentTimer()->setType(Tano::TimerType(type));
 }
 
-void TimersEdit::editDate(const QDate &date)
+void TimersEditor::editDate(const QDate &date)
 {
     QDateTime start = ui->timersWidget->currentTimer()->startTime();
     QDateTime end = ui->timersWidget->currentTimer()->endTime();
@@ -264,7 +230,7 @@ void TimersEdit::editDate(const QDate &date)
     ui->timersWidget->currentTimer()->setEndTime(end);
 }
 
-void TimersEdit::editStartTime(const QTime &time)
+void TimersEditor::editStartTime(const QTime &time)
 {
     QDateTime start = ui->timersWidget->currentTimer()->startTime();
     start.setTime(time);
@@ -272,7 +238,7 @@ void TimersEdit::editStartTime(const QTime &time)
     validate();
 }
 
-void TimersEdit::editEndTime(const QTime &time)
+void TimersEditor::editEndTime(const QTime &time)
 {
     QDateTime end = ui->timersWidget->currentTimer()->endTime();
     end.setTime(time);
@@ -280,7 +246,7 @@ void TimersEdit::editEndTime(const QTime &time)
     validate();
 }
 
-void TimersEdit::validate()
+void TimersEditor::validate()
 {
     if (QDateTime(ui->editDate->date(), ui->editEndTime->time()) < QDateTime::currentDateTime()) {
         ui->timersWidget->currentTimer()->setState(Tano::Expired);

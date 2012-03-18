@@ -41,8 +41,8 @@ public:
                        const QString &url);
     void deleteTimer(Timer *timer);
 
-    void readTimers(const QString &file);
-    void writeTimers(const QString &file);
+    void readTimers();
+    void writeTimers();
 };
 
 #endif // TANO_TIMERSMODEL_H_
