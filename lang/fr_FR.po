@@ -1689,6 +1689,15 @@ msgctxt "Recorder|"
 msgid "Back"
 msgstr "Arrière"
 
+msgctxt "Recorder|"
+msgid "Recordings"
+msgstr ""
+
+#, fuzzy
+msgctxt "Recorder|"
+msgid "Timers"
+msgstr "Programmateurs"
+
 msgctxt "RecorderInfoWidget|"
 msgid "Form"
 msgstr ""
@@ -2707,6 +2716,10 @@ msgstr ""
 #~ msgid "Disabled or expired"
 #~ msgstr "Invalide ou expiré"
 
+msgctxt "Timer|"
+msgid "at"
+msgstr ""
+
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Éffacer"
@@ -3001,6 +3014,107 @@ msgctxt "TimersEditor|"
 msgid "Timer with this name already exists. Please select another name."
 msgstr ""
 "Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom."
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Timers"
+msgstr "Programmateurs"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Name:"
+msgstr "Nom :"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Channel:"
+msgstr "Chaîne :"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Playlist:"
+msgstr "Liste de lecture :"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Type:"
+msgstr "Type :"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Once"
+msgstr "Une fois"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Daily"
+msgstr "Tous les jours"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Weekly"
+msgstr "Toutes les semaines"
+
+msgctxt "TimersEditorWidget|"
+msgid "Weekdays"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Url:"
+msgstr "Url :"
+
+msgctxt "TimersEditorWidget|"
+msgid "dd. MM. yyyy"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Date:"
+msgstr "Date :"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Start time:"
+msgstr "Début :"
+
+msgctxt "TimersEditorWidget|"
+msgid "End time:"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Disabled:"
+msgstr "Dévalidé :"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "New Task"
+msgstr "Nouvelle tâche"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Delete Task"
+msgstr "Supprimer la tâche"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Save and Close"
+msgstr "Enregistrer et fermer"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Close"
+msgstr "Fermer"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Timer with this name already exists. Please select another name."
+#~ msgstr ""
+#~ "Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom."
 
 msgctxt "TrayIcon|"
 msgid "Tano"

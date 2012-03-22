@@ -1628,6 +1628,14 @@ You will lose any unsaved changes.</source>
         <source>Back</source>
         <translation type="unfinished">Назад</translation>
     </message>
+    <message>
+        <source>Recordings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Таймери</translation>
+    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
@@ -2617,6 +2625,10 @@ You will lose any unsaved changes.</source>
         <source>Disabled or expired</source>
         <translation type="obsolete">Вимкнений або минув</translation>
     </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TimersDisplayWidget</name>
@@ -2873,6 +2885,93 @@ You changes will not be applied.</source>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="unfinished">Таймер з такою назвою вже існує. Будь ласка оберіть іншу назву.</translation>
+    </message>
+</context>
+<context>
+    <name>TimersEditorWidget</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Таймери</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Назва:</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Канал:</translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Перелік каналів:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Тип:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Одноразово</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Щоденно</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Щотижня</translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dd. MM. yyyy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Дата:</translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Час початку:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished">Час закінчення:</translation>
+    </message>
+    <message>
+        <source>Disabled:</source>
+        <translation type="unfinished">Вимкнено:</translation>
+    </message>
+    <message>
+        <source>New Task</source>
+        <translation type="unfinished">Нове завдання</translation>
+    </message>
+    <message>
+        <source>Delete Task</source>
+        <translation type="unfinished">Видалити завдання</translation>
+    </message>
+    <message>
+        <source>Save and Close</source>
+        <translation type="unfinished">Зберігти та закрити</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Закрити</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="obsolete">Tano</translation>
+    </message>
+    <message>
+        <source>Timer with this name already exists. Please select another name.</source>
+        <translation type="obsolete">Таймер з такою назвою вже існує. Будь ласка оберіть іншу назву.</translation>
     </message>
 </context>
 <context>

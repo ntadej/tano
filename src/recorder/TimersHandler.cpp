@@ -78,6 +78,10 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
         if (_timer) {
             _timer->setUrl(_currentText);
         }
+    } else if (qName == "file") {
+        if (_timer) {
+            _timer->setFile(_currentText);
+        }
     } else if (qName == "starttime") {
         if (_timer) {
             _timer->setStartTime(QDateTime::fromString(_currentText, Qt::ISODate));

@@ -21,7 +21,11 @@
 #include "TimersFilterModel.h"
 
 TimersFilterModel::TimersFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent) { }
+    : QSortFilterProxyModel(parent)
+{
+    _finished = false;
+    _state = -1;
+}
 
 TimersFilterModel::~TimersFilterModel() { }
 
@@ -31,6 +35,20 @@ bool TimersFilterModel::filterAcceptsRow(int sourceRow,
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
     bool name = sourceModel()->data(index, Timer::NameRole).toString().contains(filterRegExp());
+    bool finished = (sourceModel()->data(index, Timer::StateRole).toInt() == Tano::Finished) == _finished;
+    bool state = sourceModel()->data(index, Timer::StateRole).toInt() == _state || _state == -1;
 
-    return name;
+    return name && finished && state;
+}
+
+void TimersFilterModel::setFinished(const bool &finished)
+{
+    _finished = finished;
+    invalidateFilter();
+}
+
+void TimersFilterModel::setTimerState(const int &state)
+{
+    _state = state;
+    invalidateFilter();
 }

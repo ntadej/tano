@@ -2094,6 +2094,14 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Back</source>
         <translation type="unfinished">Nazaj</translation>
     </message>
+    <message>
+        <source>Recordings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Časovniki</translation>
+    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
@@ -3406,6 +3414,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Disabled or expired</source>
         <translation type="obsolete">Izključen ali pretečen</translation>
     </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TimersDisplayWidget</name>
@@ -3682,6 +3694,93 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="unfinished">Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime.</translation>
+    </message>
+</context>
+<context>
+    <name>TimersEditorWidget</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Časovniki</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Ime:</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Program:</translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Seznam:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Tip:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Enkratno</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Dnevno</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Tedensko</translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Naslov:</translation>
+    </message>
+    <message>
+        <source>dd. MM. yyyy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Datum:</translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Začetek:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished">Konec:</translation>
+    </message>
+    <message>
+        <source>Disabled:</source>
+        <translation type="unfinished">Izključen:</translation>
+    </message>
+    <message>
+        <source>New Task</source>
+        <translation type="unfinished">Novo opravilo</translation>
+    </message>
+    <message>
+        <source>Delete Task</source>
+        <translation type="unfinished">Izbriši opravilo</translation>
+    </message>
+    <message>
+        <source>Save and Close</source>
+        <translation type="unfinished">Shrani in zapri</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zapri</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="obsolete">Tano</translation>
+    </message>
+    <message>
+        <source>Timer with this name already exists. Please select another name.</source>
+        <translation type="obsolete">Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime.</translation>
     </message>
 </context>
 <context>

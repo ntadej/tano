@@ -1697,6 +1697,15 @@ msgctxt "Recorder|"
 msgid "Back"
 msgstr "Назад"
 
+msgctxt "Recorder|"
+msgid "Recordings"
+msgstr ""
+
+#, fuzzy
+msgctxt "Recorder|"
+msgid "Timers"
+msgstr "Таймери"
+
 msgctxt "RecorderInfoWidget|"
 msgid "Form"
 msgstr ""
@@ -2713,6 +2722,10 @@ msgstr ""
 #~ msgid "Disabled or expired"
 #~ msgstr "Вимкнений або минув"
 
+msgctxt "Timer|"
+msgid "at"
+msgstr ""
+
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Спорожнити"
@@ -3005,6 +3018,106 @@ msgstr "Будь ласка введіть назву та оберіть кан
 msgctxt "TimersEditor|"
 msgid "Timer with this name already exists. Please select another name."
 msgstr "Таймер з такою назвою вже існує. Будь ласка оберіть іншу назву."
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Timers"
+msgstr "Таймери"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Name:"
+msgstr "Назва:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Channel:"
+msgstr "Канал:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Playlist:"
+msgstr "Перелік каналів:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Type:"
+msgstr "Тип:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Once"
+msgstr "Одноразово"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Daily"
+msgstr "Щоденно"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Weekly"
+msgstr "Щотижня"
+
+msgctxt "TimersEditorWidget|"
+msgid "Weekdays"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Url:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "dd. MM. yyyy"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Date:"
+msgstr "Дата:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Start time:"
+msgstr "Час початку:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "End time:"
+msgstr "Час закінчення:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Disabled:"
+msgstr "Вимкнено:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "New Task"
+msgstr "Нове завдання"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Delete Task"
+msgstr "Видалити завдання"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Save and Close"
+msgstr "Зберігти та закрити"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Close"
+msgstr "Закрити"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Timer with this name already exists. Please select another name."
+#~ msgstr "Таймер з такою назвою вже існує. Будь ласка оберіть іншу назву."
 
 msgctxt "TrayIcon|"
 msgid "Tano"

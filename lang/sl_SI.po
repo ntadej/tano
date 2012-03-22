@@ -2120,6 +2120,15 @@ msgctxt "Recorder|"
 msgid "Back"
 msgstr "Nazaj"
 
+msgctxt "Recorder|"
+msgid "Recordings"
+msgstr ""
+
+#, fuzzy
+msgctxt "Recorder|"
+msgid "Timers"
+msgstr "Časovniki"
+
 msgctxt "RecorderInfoWidget|"
 msgid "Form"
 msgstr ""
@@ -3458,6 +3467,10 @@ msgstr "Pokaži ikono v sistemski vrstici"
 #~ msgid "Disabled or expired"
 #~ msgstr "Izključen ali pretečen"
 
+msgctxt "Timer|"
+msgid "at"
+msgstr ""
+
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Počisti"
@@ -3770,6 +3783,107 @@ msgstr "Vnesite ime in izberite program s seznama."
 msgctxt "TimersEditor|"
 msgid "Timer with this name already exists. Please select another name."
 msgstr "Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime."
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Timers"
+msgstr "Časovniki"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Name:"
+msgstr "Ime:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Channel:"
+msgstr "Program:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Playlist:"
+msgstr "Seznam:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Type:"
+msgstr "Tip:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Once"
+msgstr "Enkratno"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Daily"
+msgstr "Dnevno"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Weekly"
+msgstr "Tedensko"
+
+msgctxt "TimersEditorWidget|"
+msgid "Weekdays"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Url:"
+msgstr "Naslov:"
+
+msgctxt "TimersEditorWidget|"
+msgid "dd. MM. yyyy"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Date:"
+msgstr "Datum:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Start time:"
+msgstr "Začetek:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "End time:"
+msgstr "Konec:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Disabled:"
+msgstr "Izključen:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "New Task"
+msgstr "Novo opravilo"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Delete Task"
+msgstr "Izbriši opravilo"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Save and Close"
+msgstr "Shrani in zapri"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Close"
+msgstr "Zapri"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Timer with this name already exists. Please select another name."
+#~ msgstr "Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime."
 
 msgctxt "TrayIcon|"
 msgid "Tano"

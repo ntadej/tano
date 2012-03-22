@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,30 +16,50 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TIMERSFILTERMODEL_H_
-#define TANO_TIMERSFILTERMODEL_H_
+#ifndef TANO_TIMERSEDITORWIDGET_H_
+#define TANO_TIMERSEDITORWIDGET_H_
 
-#include <QtGui/QSortFilterProxyModel>
+#include <QtCore/QDate>
+#include <QtGui/QWidget>
 
-class TimersFilterModel : public QSortFilterProxyModel
+class Timer;
+
+namespace Ui
+{
+    class TimersEditorWidget;
+}
+
+class TimersEditorWidget : public QWidget
 {
 Q_OBJECT
 public:
-    TimersFilterModel(QObject *parent = 0);
-    ~TimersFilterModel();
-
-    int timerState() const { return _state; }
-    void setTimerState(const int &state);
-
-    bool finished() const { return _finished; }
-    void setFinished(const bool &finished);
+    explicit TimersEditorWidget(QWidget *parent = 0);
+    ~TimersEditorWidget();
 
 protected:
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
+    void changeEvent(QEvent *e);
+
+private slots:
+    void edit(Timer *item);
+
+    void validate();
+
+    void editName(const QString &name);
+    void editType(const int &type);
+    void editDate(const QDate &date);
+    void editStartTime(const QTime &time);
+    void editEndTime(const QTime &time);
+
+    void cancel();
+    void deleteItem();
+    void write();
 
 private:
-    bool _finished;
-    int _state;
+    void createConnections();
+
+    Ui::TimersEditorWidget *ui;
+
+    Timer *_currentTimer;
 };
 
-#endif // TANO_TIMERSFILTERMODEL_H_
+#endif // TANO_TIMERSEDITORWIDGET_H_

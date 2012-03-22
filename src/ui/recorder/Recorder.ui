@@ -23,6 +23,30 @@
   <widget class="QWidget" name="pageMain">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
+     <widget class="QGroupBox" name="groupRecorgings">
+      <property name="title">
+       <string>Recordings</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="TimersDisplayWidget" name="listRecordings" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupTimers">
+      <property name="title">
+       <string>Timers</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="TimersDisplayWidget" name="listTimers" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -112,6 +136,12 @@
    <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
    <header>ui/playlist/PlaylistDisplayWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TimersDisplayWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/recorder/TimersDisplayWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

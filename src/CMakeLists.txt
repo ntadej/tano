@@ -47,6 +47,7 @@ SET(Tano_UIs
     ui/recorder/RecorderInfoWidget.ui
     ui/recorder/TimersDisplayWidget.ui
     ui/recorder/TimersEditor.ui
+    ui/recorder/TimersEditorWidget.ui
     ui/settings/SettingsBackend.ui
     ui/settings/SettingsDialog.ui
     ui/settings/SettingsGeneral.ui
@@ -112,6 +113,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/recorder/RecorderInfoWidget.h
     ui/recorder/TimersDisplayWidget.h
     ui/recorder/TimersEditor.h
+    ui/recorder/TimersEditorWidget.h
     ui/settings/SettingsBackend.h
     ui/settings/SettingsDialog.h
     ui/settings/SettingsGeneral.h
@@ -223,6 +225,7 @@ SET(Tano_UI_Srcs
     ui/recorder/RecorderInfoWidget.cpp
     ui/recorder/TimersDisplayWidget.cpp
     ui/recorder/TimersEditor.cpp
+    ui/recorder/TimersEditorWidget.cpp
     ui/settings/SettingsBackend.cpp
     ui/settings/SettingsDialog.cpp
     ui/settings/SettingsGeneral.cpp

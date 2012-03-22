@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/core/Timer.h"
+#include "Timer.h"
 
 Timer::Timer(QObject *parent)
     : ListItem(parent) { }
@@ -34,6 +34,7 @@ Timer::Timer(const QString &name,
      _num(num),
      _url(url)
 {
+    _file = "";
     _startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
     _endTime = _startTime.addSecs(3600);
     _type = Tano::Once;
@@ -51,6 +52,7 @@ QHash<int, QByteArray> Timer::roleNames() const
     names[ChannelRole] = "channel";
     names[PlaylistRole] = "playlist";
     names[UrlRole] = "url";
+    names[FileRole] = "file";
     names[NumRole] = "num";
     names[StartTimeRole] = "start";
     names[EndTimeRole] = "end";
@@ -92,12 +94,17 @@ QVariant Timer::data(int role) const
 
 QString Timer::display() const
 {
-    return QString("%1 (%2)").arg(name(), Tano::timerStates()[state()]);
+    return QString("%1 (%2) - %3 - %4 %5 %6")
+            .arg(name(), Tano::timerStates()[state()], channel(),
+                 startTime().date().toString("dd.M.yyyy"), tr("at"), startTime().time().toString("hh:mm"));
 }
 
 QIcon Timer::displayIcon() const
 {
-    return QIcon(":/icons/16x16/timer.png");
+    if (state() == Tano::Finished)
+        return QIcon(":/icons/16x16/video.png");
+    else
+        return QIcon(":/icons/16x16/timer.png");
 }
 
 void Timer::setName(const QString &name)
@@ -128,6 +135,14 @@ void Timer::setUrl(const QString &url)
 {
     if (_url != url) {
         _url = url;
+        emit dataChanged();
+    }
+}
+
+void Timer::setFile(const QString &file)
+{
+    if (_file != file) {
+        _file = file;
         emit dataChanged();
     }
 }

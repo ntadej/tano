@@ -1951,6 +1951,14 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Back</source>
         <translation type="unfinished">Zpět</translation>
     </message>
+    <message>
+        <source>Recordings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Časovače</translation>
+    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
@@ -3193,6 +3201,10 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Disabled or expired</source>
         <translation type="obsolete">Zakázáno nebo vypršelo</translation>
     </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TimersDisplayWidget</name>
@@ -3469,6 +3481,93 @@ Vaše změny nebudou použity.</translation>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="unfinished">Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název.</translation>
+    </message>
+</context>
+<context>
+    <name>TimersEditorWidget</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Časovače</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Název:</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Program:</translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Seznam programů:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Typ:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Jednou</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Denně</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Týdně</translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Adresa (URL):</translation>
+    </message>
+    <message>
+        <source>dd. MM. yyyy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Datum:</translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Začátek:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished">Konec:</translation>
+    </message>
+    <message>
+        <source>Disabled:</source>
+        <translation type="unfinished">Zakázáno:</translation>
+    </message>
+    <message>
+        <source>New Task</source>
+        <translation type="unfinished">Nový úkol</translation>
+    </message>
+    <message>
+        <source>Delete Task</source>
+        <translation type="unfinished">Smazat úkol</translation>
+    </message>
+    <message>
+        <source>Save and Close</source>
+        <translation type="unfinished">Uložit a zavřít</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zavřít</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="obsolete">Tano</translation>
+    </message>
+    <message>
+        <source>Timer with this name already exists. Please select another name.</source>
+        <translation type="obsolete">Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název.</translation>
     </message>
 </context>
 <context>

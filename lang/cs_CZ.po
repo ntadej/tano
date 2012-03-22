@@ -1993,6 +1993,15 @@ msgctxt "Recorder|"
 msgid "Back"
 msgstr "Zpět"
 
+msgctxt "Recorder|"
+msgid "Recordings"
+msgstr ""
+
+#, fuzzy
+msgctxt "Recorder|"
+msgid "Timers"
+msgstr "Časovače"
+
 msgctxt "RecorderInfoWidget|"
 msgid "Form"
 msgstr ""
@@ -3292,6 +3301,10 @@ msgstr ""
 #~ msgid "Disabled or expired"
 #~ msgstr "Zakázáno nebo vypršelo"
 
+msgctxt "Timer|"
+msgid "at"
+msgstr ""
+
 #, fuzzy
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
@@ -3606,6 +3619,107 @@ msgstr "Zadejte, prosím, název a vyberte program ze seznamu."
 msgctxt "TimersEditor|"
 msgid "Timer with this name already exists. Please select another name."
 msgstr "Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název."
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Timers"
+msgstr "Časovače"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Name:"
+msgstr "Název:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Channel:"
+msgstr "Program:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Playlist:"
+msgstr "Seznam programů:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Type:"
+msgstr "Typ:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Once"
+msgstr "Jednou"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Daily"
+msgstr "Denně"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Weekly"
+msgstr "Týdně"
+
+msgctxt "TimersEditorWidget|"
+msgid "Weekdays"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Url:"
+msgstr "Adresa (URL):"
+
+msgctxt "TimersEditorWidget|"
+msgid "dd. MM. yyyy"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Date:"
+msgstr "Datum:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Start time:"
+msgstr "Začátek:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "End time:"
+msgstr "Konec:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Disabled:"
+msgstr "Zakázáno:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "New Task"
+msgstr "Nový úkol"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Delete Task"
+msgstr "Smazat úkol"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Save and Close"
+msgstr "Uložit a zavřít"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Close"
+msgstr "Zavřít"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Timer with this name already exists. Please select another name."
+#~ msgstr "Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název."
 
 msgctxt "TrayIcon|"
 msgid "Tano"

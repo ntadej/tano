@@ -87,6 +87,7 @@ void TimersGenerator::generateItem(Timer *timer)
          << indent(depth + 1) << "<channelid>" << escapedText(QString().number(timer->num())) << "</channelid>\n"
          << indent(depth + 1) << "<channel>" << escapedText(timer->channel()) << "</channel>\n"
          << indent(depth + 1) << "<url>" << escapedText(timer->url()) << "</url>\n"
+         << indent(depth + 1) << "<file>" << escapedText(timer->file()) << "</file>\n"
          << indent(depth + 1) << "<starttime>" << escapedText(timer->startTime().toString(Qt::ISODate)) << "</starttime>\n"
          << indent(depth + 1) << "<endtime>" << escapedText(timer->endTime().toString(Qt::ISODate)) << "</endtime>\n"
          << indent(depth + 1) << "<type>" << escapedText(QString().number(timer->type())) << "</type>\n"

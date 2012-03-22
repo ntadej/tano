@@ -41,7 +41,8 @@ public:
     Timer *currentTimer() { return _current; }
     void setCurrentTimer(Timer *timer);
 
-    void setModel(TimersModel *model);
+    void setModel(TimersModel *model,
+                  const bool &finished = false);
 
 protected:
     void changeEvent(QEvent *e);

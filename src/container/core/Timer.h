@@ -36,6 +36,7 @@ public:
         ChannelRole,
         PlaylistRole,
         UrlRole,
+        FileRole,
         NumRole,
         StartTimeRole,
         EndTimeRole,
@@ -69,6 +70,8 @@ public:
     void setNum(const int &num);
     inline QString url() const { return _url; }
     void setUrl(const QString &url);
+    inline QString file() const { return _file; }
+    void setFile(const QString &file);
     inline QDateTime startTime() const { return _startTime; }
     void setStartTime(const QDateTime &startTime);
     inline QDateTime endTime() const { return _endTime; }
@@ -84,6 +87,7 @@ private:
     QString _playlist;
     int _num;
     QString _url;
+    QString _file;
     QDateTime _startTime;
     QDateTime _endTime;
     Tano::TimerType _type;

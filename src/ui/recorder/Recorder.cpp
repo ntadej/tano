@@ -53,6 +53,9 @@ Recorder::Recorder(QWidget *parent)
 
     _manager->setTimersModel(_model);
 
+    ui->listRecordings->setModel(_model, true);
+    ui->listTimers->setModel(_model);
+
     // Connections
     connect(ui->buttonQuickCancel, SIGNAL(clicked()), this, SLOT(quickRecordCancel()));
     connect(ui->buttonQuickRecord, SIGNAL(clicked()), this, SLOT(quickRecordStart()));

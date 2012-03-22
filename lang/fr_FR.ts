@@ -1622,6 +1622,14 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <source>Back</source>
         <translation type="unfinished">Arrière</translation>
     </message>
+    <message>
+        <source>Recordings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Programmateurs</translation>
+    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
@@ -2611,6 +2619,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <source>Disabled or expired</source>
         <translation type="obsolete">Invalide ou expiré</translation>
     </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TimersDisplayWidget</name>
@@ -2867,6 +2879,93 @@ Vos changements ne seront pas appliqués.</translation>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="unfinished">Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom.</translation>
+    </message>
+</context>
+<context>
+    <name>TimersEditorWidget</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Programmateurs</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nom :</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Chaîne :</translation>
+    </message>
+    <message>
+        <source>Playlist:</source>
+        <translation type="unfinished">Liste de lecture :</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Type :</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Une fois</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Tous les jours</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Toutes les semaines</translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Url :</translation>
+    </message>
+    <message>
+        <source>dd. MM. yyyy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Date :</translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Début :</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled:</source>
+        <translation type="unfinished">Dévalidé :</translation>
+    </message>
+    <message>
+        <source>New Task</source>
+        <translation type="unfinished">Nouvelle tâche</translation>
+    </message>
+    <message>
+        <source>Delete Task</source>
+        <translation type="unfinished">Supprimer la tâche</translation>
+    </message>
+    <message>
+        <source>Save and Close</source>
+        <translation type="unfinished">Enregistrer et fermer</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Fermer</translation>
+    </message>
+    <message>
+        <source>Tano</source>
+        <translation type="obsolete">Tano</translation>
+    </message>
+    <message>
+        <source>Timer with this name already exists. Please select another name.</source>
+        <translation type="obsolete">Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom.</translation>
     </message>
 </context>
 <context>

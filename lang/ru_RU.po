@@ -1808,6 +1808,15 @@ msgctxt "Recorder|"
 msgid "Back"
 msgstr "Назад"
 
+msgctxt "Recorder|"
+msgid "Recordings"
+msgstr ""
+
+#, fuzzy
+msgctxt "Recorder|"
+msgid "Timers"
+msgstr "Таймеры"
+
 msgctxt "RecorderInfoWidget|"
 msgid "Form"
 msgstr ""
@@ -2945,6 +2954,10 @@ msgstr ""
 #~ msgid "Disabled or expired"
 #~ msgstr "Отключен или устарел"
 
+msgctxt "Timer|"
+msgid "at"
+msgstr ""
+
 #, fuzzy
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
@@ -3239,6 +3252,106 @@ msgstr "Введите имя и выберите канал из списка."
 msgctxt "TimersEditor|"
 msgid "Timer with this name already exists. Please select another name."
 msgstr "Таймер с таким именем уже существует. Выберите другое имя."
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Timers"
+msgstr "Таймеры"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Name:"
+msgstr "Название:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Channel:"
+msgstr "Канал:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Playlist:"
+msgstr "Список каналов:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Type:"
+msgstr "Тип:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Once"
+msgstr "Однократно"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Daily"
+msgstr "Ежедневно"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Weekly"
+msgstr "Еженедельно"
+
+msgctxt "TimersEditorWidget|"
+msgid "Weekdays"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Url:"
+msgstr "Url:"
+
+msgctxt "TimersEditorWidget|"
+msgid "dd. MM. yyyy"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Date:"
+msgstr "Дата:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Start time:"
+msgstr "Начало:"
+
+msgctxt "TimersEditorWidget|"
+msgid "End time:"
+msgstr ""
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Disabled:"
+msgstr "Откл.:"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "New Task"
+msgstr "Новая задача"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Delete Task"
+msgstr "Удалить задачу"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Save and Close"
+msgstr "Сохранить и закрыть"
+
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Close"
+msgstr "Закрыть"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
+
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Timer with this name already exists. Please select another name."
+#~ msgstr "Таймер с таким именем уже существует. Выберите другое имя."
 
 msgctxt "TrayIcon|"
 msgid "Tano"

@@ -70,10 +70,12 @@ void TimersDisplayWidget::setCurrentTimer(Timer *timer)
     ui->timersView->setCurrentIndex(_model->indexFromItem(timer));
 }
 
-void TimersDisplayWidget::setModel(TimersModel *model)
+void TimersDisplayWidget::setModel(TimersModel *model,
+                                   const bool &finished)
 {
     _model = model;
     _filterModel->setSourceModel(model);
+    _filterModel->setFinished(finished);
 }
 
 void TimersDisplayWidget::timerClicked(const QModelIndex &index)

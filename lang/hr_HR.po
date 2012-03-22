@@ -1294,6 +1294,14 @@ msgctxt "Recorder|"
 msgid "Back"
 msgstr ""
 
+msgctxt "Recorder|"
+msgid "Recordings"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Timers"
+msgstr ""
+
 msgctxt "RecorderInfoWidget|"
 msgid "Form"
 msgstr ""
@@ -1914,6 +1922,10 @@ msgctxt "SettingsUi|"
 msgid "Show tray icon"
 msgstr ""
 
+msgctxt "Timer|"
+msgid "at"
+msgstr ""
+
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr ""
@@ -2036,6 +2048,82 @@ msgstr ""
 
 msgctxt "TimersEditor|"
 msgid "Timer with this name already exists. Please select another name."
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Timers"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Name:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Channel:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Playlist:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Type:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Once"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Daily"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Weekly"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Weekdays"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Url:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "dd. MM. yyyy"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Date:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Start time:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "End time:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Disabled:"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "New Task"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Delete Task"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Save and Close"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Close"
 msgstr ""
 
 msgctxt "TrayIcon|"
