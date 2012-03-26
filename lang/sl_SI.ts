@@ -1209,23 +1209,23 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>IP Range:</source>
-        <translation>Območje IP:</translation>
+        <translation type="obsolete">Območje IP:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>Čas iskanja:</translation>
+        <translation type="obsolete">Čas iskanja:</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Išči in posodobi</translation>
+        <translation type="obsolete">Išči in posodobi</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation>ms</translation>
+        <translation type="obsolete">ms</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Vrata:</translation>
+        <translation type="obsolete">Vrata:</translation>
     </message>
     <message>
         <source>Add channel</source>
@@ -1333,7 +1333,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>Nov najden program %1</translation>
+        <translation type="obsolete">Nov najden program %1</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
@@ -1397,6 +1397,37 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
         <translation>V nastavitvah lahko nastavite svoje ime kategorije za radio (privzeto je Radio), ki bo vidno pri izvažanju v Sagem JS in CSV. Samo prva kategorija bo izvožena v Sagem JS.</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditorScan</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Vrata:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">Čas iskanja:</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished">ms</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Išči in posodobi</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished">Nov najden program %1</translation>
     </message>
 </context>
 <context>

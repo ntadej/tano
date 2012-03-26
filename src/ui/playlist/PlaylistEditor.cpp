@@ -16,7 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
 #include <QtGui/QCloseEvent>
 #include <QtGui/QFileDialog>
 #include <QtGui/QMenu>
@@ -44,11 +43,7 @@
 #endif
 
 #if WITH_EDITOR_VLCQT
-    #include <vlc-qt/Instance.h>
-    #include <vlc-qt/Media.h>
-    #include <vlc-qt/MediaPlayer.h>
-
-    #include "core/Udpxy.h"
+    #include "ui/playlist/PlaylistEditorScan.h"
 #endif
 
 #include "PlaylistEditor.h"
@@ -79,13 +74,12 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
 	createConnections();
 
 #if WITH_EDITOR_VLCQT
-    _instance = new VlcInstance(Tano::vlcQtArgs(), this);
-    _media = 0;
-    _player = new VlcMediaPlayer(_instance);
-    _udpxy = new Udpxy();
-    _timer = new QTimer();
-    connect(_player, SIGNAL(playing(bool, bool)), this, SLOT(setState(bool)));
-    connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
+    _scan = new PlaylistEditorScan();
+    _scan->setModel(_model);
+    ui->updateContents->addWidget(_scan);
+
+    connect(_scan, SIGNAL(addItem(QString, QString)), this, SLOT(addItem(QString, QString)));
+    connect(_scan, SIGNAL(scan(bool)), this, SLOT(scan(bool)));
 #else
     ui->updateWidget->hide();
 #endif
@@ -102,14 +96,12 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
 
 PlaylistEditor::~PlaylistEditor()
 {
-    delete ui;
-
 #if WITH_EDITOR_VLCQT
-    delete _media;
-    delete _player;
-    delete _instance;
-    delete _timer;
+    ui->updateContents->removeWidget(_scan);
+    delete _scan;
 #endif
+
+    delete ui;
 }
 
 void PlaylistEditor::changeEvent(QEvent *e)
@@ -174,10 +166,6 @@ void PlaylistEditor::createConnections()
 #if EDITOR && UPDATE
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
     connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
-#endif
-
-#if WITH_EDITOR_VLCQT
-    connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));
 #endif
 }
 
@@ -440,103 +428,22 @@ void PlaylistEditor::print()
     dialog.exec();
 }
 
-void PlaylistEditor::refreshPlaylist(const bool &refresh)
+void PlaylistEditor::setMediaInstance(VlcInstance *instance)
 {
 #if WITH_EDITOR_VLCQT
-    if (!refresh) {
-        _timer->stop();
-        ui->progressBar->setValue(1);
-        ui->playlist->setEnabled(true);
+    _scan->setMediaInstance(instance);
+#else
+    Q_UNUSED(instance)
+#endif
+}
 
-        QFile::remove(QDir::tempPath() + "/tano-test.ts");
-    } else {
+void PlaylistEditor::scan(const bool &status)
+{
+    if (status) {
         ui->playlist->setEnabled(false);
-
-        qDebug() << "Scanning:" << ui->ipFrom->text() << ui->ipPort->value() << ui->ipTimeout->value();
-
-        QStringList ipFrom = ui->ipFrom->text().split(".");
-        _currentIp[0] = ipFrom[0].toInt();
-        _currentIp[1] = ipFrom[1].toInt();
-        _currentIp[2] = ipFrom[2].toInt();
-        _currentIp[3] = 1;
-
-        _currentPort = ui->ipPort->value();
-        _currentTimeout = ui->ipTimeout->value();
-
-        checkIp();
-    }
-#else
-    Q_UNUSED(refresh)
-#endif
-}
-
-void PlaylistEditor::checkIp()
-{
-#if WITH_EDITOR_VLCQT
-    ui->progressBar->setValue(_currentIp[3]);
-    if (_media)
-        delete _media;
-
-    _media = new VlcMedia(_udpxy->processUrl(currentIp()), _instance);
-    _media->record("test", QDir::tempPath());
-    _player->open(_media);
-
-    _timer->start(_currentTimeout);
-#endif
-}
-
-void PlaylistEditor::checkCurrentIp()
-{
-#if WITH_EDITOR_VLCQT
-    if (_currentIpPlaying) {
-        _player->stop();
-
-        bool newChannel = true;
-        for (int i = 0; i < _model->rowCount(); i++) {
-            if (_model->row(i)->url() == currentIp()) {
-                newChannel = false;
-                break;
-            }
-        }
-
-        if (newChannel) {
-            qDebug() << "Scanning:" << "Channel Found";
-            addItem(tr("New channel from scan %1").arg(currentIp()), currentIp());
-        }
-    }
-
-    if (_currentIp[3] != 255) {
-        _currentIp[3]++;
-        checkIp();
     } else {
-        ui->buttonUpdate->setChecked(false);
+        ui->playlist->setEnabled(true);
     }
-#endif
-}
-
-QString PlaylistEditor::currentIp()
-{
-#if WITH_EDITOR_VLCQT
-    QString ip = "udp://@";
-    ip.append(QString().number(_currentIp[0])+".");
-    ip.append(QString().number(_currentIp[1])+".");
-    ip.append(QString().number(_currentIp[2])+".");
-    ip.append(QString().number(_currentIp[3])+":");
-    ip.append(QString().number(_currentPort));
-
-    return ip;
-#else
-    return(0);
-#endif
-}
-
-void PlaylistEditor::setState(const bool &playing)
-{
-#if WITH_EDITOR_VLCQT
-    _currentIpPlaying = playing;
-#else
-    Q_UNUSED(playing)
-#endif
 }
 
 void PlaylistEditor::editItem(Channel *channel)

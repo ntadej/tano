@@ -19,7 +19,6 @@
 #ifndef TANO_PLAYLISTEDITOR_H_
 #define TANO_PLAYLISTEDITOR_H_
 
-#include <QtCore/QTimer>
 #include <QtGui/QMainWindow>
 
 #include "Config.h"
@@ -34,11 +33,9 @@ class UpdateDialog;
 #endif
 #endif
 
-#if WITH_EDITOR_VLCQT
 class VlcInstance;
-class VlcMedia;
-class VlcMediaPlayer;
-class Udpxy;
+#if WITH_EDITOR_VLCQT
+class PlaylistEditorScan;
 #endif
 
 namespace Ui
@@ -52,6 +49,8 @@ Q_OBJECT
 public:
     PlaylistEditor(QWidget *parent = 0);
     ~PlaylistEditor();
+
+    void setMediaInstance(VlcInstance *instance);
 
 public slots:
     void newPlaylist();
@@ -95,11 +94,7 @@ private slots:
     void moveUp();
     void moveDown();
 
-    void refreshPlaylist(const bool &refresh);
-    void checkIp();
-    void checkCurrentIp();
-    void setState(const bool &playing);
-
+    void scan(const bool &status);
     void updateAvailable();
 
 private:
@@ -121,20 +116,8 @@ private:
     UpdateDialog *_update;
 #endif
 
-	// Update playlist
-	QString currentIp();
-
 #if WITH_EDITOR_VLCQT
-    VlcInstance *_instance;
-    VlcMedia *_media;
-    VlcMediaPlayer *_player;
-    Udpxy  *_udpxy;
-    int _refresh;
-    int _currentIp[4];
-    int _currentPort;
-    int _currentTimeout;
-    bool _currentIpPlaying;
-    QTimer *_timer;
+    PlaylistEditorScan *_scan;
 #endif
 };
 

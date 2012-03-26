@@ -119,6 +119,24 @@ SET(Tano_Editor_Srcs
     ../src/ui/settings-editor/SettingsEditorGeneral.cpp
 )
 
+IF(EDITOR_VLCQT)
+    SET(Tano_Editor_UIs
+        ${Tano_Editor_UIs}
+
+        ../src/ui/playlist/PlaylistEditorScan.ui
+    )
+    SET(Tano_Editor_MOCs
+        ${Tano_Editor_MOCs}
+
+        ../src/ui/playlist/PlaylistEditorScan.h
+    )
+    SET(Tano_Editor_Srcs
+        ${Tano_Editor_Srcs}
+
+        ../src/ui/playlist/PlaylistEditorScan.cpp
+    )
+ENDIF(EDITOR_VLCQT)
+
 IF(UPDATE)
     SET(Tano_Editor_UIs
         ${Tano_Editor_UIs}

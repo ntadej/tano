@@ -974,30 +974,25 @@ msgstr ""
 #~ msgid "Update Playlist"
 #~ msgstr "Обновить список воспроизведения"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "IP Range:"
-msgstr "Диапазон IP:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "IP Range:"
+#~ msgstr "Диапазон IP:"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Timeout:"
-msgstr "Таймаут:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Timeout:"
+#~ msgstr "Таймаут:"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Scan and update"
-msgstr "Просканировать и обновить"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Scan and update"
+#~ msgstr "Просканировать и обновить"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid " ms"
-msgstr "мс"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid " ms"
+#~ msgstr "мс"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Port:"
-msgstr "Порт:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Port:"
+#~ msgstr "Порт:"
 
 msgctxt "PlaylistEditor|"
 msgid "Add channel"
@@ -1121,11 +1116,6 @@ msgid ""
 "You will lose any unsaved changes."
 msgstr ""
 
-#, qt-format
-msgctxt "PlaylistEditor|"
-msgid "New channel from scan %1"
-msgstr ""
-
 #, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "A channel with this number already exists!"
@@ -1201,6 +1191,40 @@ msgid ""
 "You can set custom radio category in settings (defaults to Radio) for "
 "exporting to Sagem JS and CSV. Only the first category or radio category "
 "will be exported to Sagem JS."
+msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "Form"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "IP Range:"
+msgstr "Диапазон IP:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Port:"
+msgstr "Порт:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Timeout:"
+msgstr "Таймаут:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid " ms"
+msgstr "мс"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Scan and update"
+msgstr "Просканировать и обновить"
+
+#, qt-format
+msgctxt "PlaylistEditorScan|"
+msgid "New channel from scan %1"
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"

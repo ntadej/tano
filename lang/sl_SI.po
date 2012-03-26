@@ -1201,25 +1201,25 @@ msgstr "Logo:"
 #~ msgid "Update Playlist"
 #~ msgstr "Posodobi seznam programov"
 
-msgctxt "PlaylistEditor|"
-msgid "IP Range:"
-msgstr "Območje IP:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "IP Range:"
+#~ msgstr "Območje IP:"
 
-msgctxt "PlaylistEditor|"
-msgid "Timeout:"
-msgstr "Čas iskanja:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Timeout:"
+#~ msgstr "Čas iskanja:"
 
-msgctxt "PlaylistEditor|"
-msgid "Scan and update"
-msgstr "Išči in posodobi"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Scan and update"
+#~ msgstr "Išči in posodobi"
 
-msgctxt "PlaylistEditor|"
-msgid " ms"
-msgstr "ms"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid " ms"
+#~ msgstr "ms"
 
-msgctxt "PlaylistEditor|"
-msgid "Port:"
-msgstr "Vrata:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Port:"
+#~ msgstr "Vrata:"
 
 msgctxt "PlaylistEditor|"
 msgid "Add channel"
@@ -1341,9 +1341,9 @@ msgstr ""
 "Neshranjene spremembe ne bodo uveljavljene."
 
 #, qt-format
-msgctxt "PlaylistEditor|"
-msgid "New channel from scan %1"
-msgstr "Nov najden program %1"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "New channel from scan %1"
+#~ msgstr "Nov najden program %1"
 
 msgctxt "PlaylistEditor|"
 msgid "A channel with this number already exists!"
@@ -1438,6 +1438,39 @@ msgstr ""
 "V nastavitvah lahko nastavite svoje ime kategorije za radio (privzeto je "
 "Radio), ki bo vidno pri izvažanju v Sagem JS in CSV. Samo prva kategorija bo "
 "izvožena v Sagem JS."
+
+msgctxt "PlaylistEditorScan|"
+msgid "Form"
+msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "IP Range:"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Port:"
+msgstr "Vrata:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Timeout:"
+msgstr "Čas iskanja:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid " ms"
+msgstr "ms"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Scan and update"
+msgstr "Išči in posodobi"
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEditorScan|"
+msgid "New channel from scan %1"
+msgstr "Nov najden program %1"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"

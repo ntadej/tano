@@ -41,6 +41,7 @@ SET(Tano_UIs
     ui/playlist/PlaylistDisplayWidget.ui
     ui/playlist/PlaylistEditor.ui
     ui/playlist/PlaylistEditorHelp.ui
+    ui/playlist/PlaylistEditorScan.ui
     ui/playlist/PlaylistExportTvheadend.ui
     ui/playlist/PlaylistImportCSV.ui
     ui/recorder/Recorder.ui
@@ -106,6 +107,7 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/playlist/PlaylistDisplayWidget.h
     ui/playlist/PlaylistEditor.h
     ui/playlist/PlaylistEditorHelp.h
+    ui/playlist/PlaylistEditorScan.h
     ui/playlist/PlaylistExportTvheadend.h
     ui/playlist/PlaylistImportCSV.h
     ui/recorder/Recorder.h
@@ -217,6 +219,7 @@ SET(Tano_UI_Srcs
     ui/playlist/PlaylistDisplayWidget.cpp
     ui/playlist/PlaylistEditor.cpp
     ui/playlist/PlaylistEditorHelp.cpp
+    ui/playlist/PlaylistEditorScan.cpp
     ui/playlist/PlaylistExportTvheadend.cpp
     ui/playlist/PlaylistImportCSV.cpp
     ui/recorder/Recorder.cpp

@@ -1086,30 +1086,25 @@ msgstr ""
 #~ msgid "Update Playlist"
 #~ msgstr "Obnovit seznam programů"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "IP Range:"
-msgstr "Rozsah IP:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "IP Range:"
+#~ msgstr "Rozsah IP:"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Timeout:"
-msgstr "Překročení času:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Timeout:"
+#~ msgstr "Překročení času:"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Scan and update"
-msgstr "Prohledat a obnovit"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Scan and update"
+#~ msgstr "Prohledat a obnovit"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid " ms"
-msgstr " ms"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid " ms"
+#~ msgstr " ms"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Port:"
-msgstr "Přípojka:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Port:"
+#~ msgstr "Přípojka:"
 
 #, fuzzy
 msgctxt "PlaylistEditor|"
@@ -1243,10 +1238,10 @@ msgstr ""
 "Chcete zavřít editor?\n"
 "Ztratíte všechny neuložené změny."
 
-#, fuzzy, qt-format
-msgctxt "PlaylistEditor|"
-msgid "New channel from scan %1"
-msgstr "Nový program z prohledání %1"
+#, qt-format
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "New channel from scan %1"
+#~ msgstr "Nový program z prohledání %1"
 
 #, fuzzy
 msgctxt "PlaylistEditor|"
@@ -1324,6 +1319,40 @@ msgid ""
 "exporting to Sagem JS and CSV. Only the first category or radio category "
 "will be exported to Sagem JS."
 msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "Form"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "IP Range:"
+msgstr "Rozsah IP:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Port:"
+msgstr "Přípojka:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Timeout:"
+msgstr "Překročení času:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid " ms"
+msgstr " ms"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Scan and update"
+msgstr "Prohledat a obnovit"
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEditorScan|"
+msgid "New channel from scan %1"
+msgstr "Nový program z prohledání %1"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"

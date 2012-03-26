@@ -1086,23 +1086,23 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>IP Range:</source>
-        <translation type="unfinished">Rozsah IP:</translation>
+        <translation type="obsolete">Rozsah IP:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation type="unfinished">Překročení času:</translation>
+        <translation type="obsolete">Překročení času:</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation type="unfinished">Prohledat a obnovit</translation>
+        <translation type="obsolete">Prohledat a obnovit</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation type="unfinished"> ms</translation>
+        <translation type="obsolete"> ms</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished">Přípojka:</translation>
+        <translation type="obsolete">Přípojka:</translation>
     </message>
     <message>
         <source>Add channel</source>
@@ -1210,7 +1210,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation type="unfinished">Nový program z prohledání %1</translation>
+        <translation type="obsolete">Nový program z prohledání %1</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
@@ -1274,6 +1274,37 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditorScan</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">Rozsah IP:</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Přípojka:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">Překročení času:</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished"> ms</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Prohledat a obnovit</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished">Nový program z prohledání %1</translation>
     </message>
 </context>
 <context>

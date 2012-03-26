@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,10 +21,16 @@
 #include <QtGui/QBitmap>
 #include <QtGui/QSplashScreen>
 
+#include "Config.h"
 #include "ui/playlist/PlaylistEditor.h"
 
 #ifdef Q_WS_X11
     #include <X11/Xlib.h>
+#endif
+
+#if WITH_EDITOR_VLCQT
+    #include <vlc-qt/Common.h>
+    #include <vlc-qt/Instance.h>
 #endif
 
 int main(int argc, char *argv[])
@@ -42,6 +48,10 @@ int main(int argc, char *argv[])
     splash->show();
 
     PlaylistEditor main;
+#if WITH_EDITOR_VLCQT
+    VlcInstance *instance = new VlcInstance(VlcCommon::args());
+    main.setMediaInstance(instance);
+#endif
     main.show();
 
     splash->hide();

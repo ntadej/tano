@@ -935,23 +935,23 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>IP Range:</source>
-        <translation type="unfinished">Plage des adresses IP :</translation>
+        <translation type="obsolete">Plage des adresses IP :</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation type="unfinished">Temporisation :</translation>
+        <translation type="obsolete">Temporisation :</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation type="unfinished">Scanner et actualiser</translation>
+        <translation type="obsolete">Scanner et actualiser</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation type="unfinished">ms</translation>
+        <translation type="obsolete">ms</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished">Port :</translation>
+        <translation type="obsolete">Port :</translation>
     </message>
     <message>
         <source>Add channel</source>
@@ -1057,7 +1057,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation type="unfinished">Nouvelle chaîne issue du scan %1</translation>
+        <translation type="obsolete">Nouvelle chaîne issue du scan %1</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
@@ -1121,6 +1121,37 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditorScan</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">Plage des adresses IP :</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Port :</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">Temporisation :</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished">ms</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Scanner et actualiser</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished">Nouvelle chaîne issue du scan %1</translation>
     </message>
 </context>
 <context>

@@ -965,30 +965,25 @@ msgstr "Логотип:"
 #~ msgid "Update Playlist"
 #~ msgstr "Оновити перелік каналів"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "IP Range:"
-msgstr "Діапазон IP:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "IP Range:"
+#~ msgstr "Діапазон IP:"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Timeout:"
-msgstr "Час що залишився:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Timeout:"
+#~ msgstr "Час що залишився:"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Scan and update"
-msgstr "Сканувати та оновити"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Scan and update"
+#~ msgstr "Сканувати та оновити"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid " ms"
-msgstr "мс"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid " ms"
+#~ msgstr "мс"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Port:"
-msgstr "Порт:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Port:"
+#~ msgstr "Порт:"
 
 #, fuzzy
 msgctxt "PlaylistEditor|"
@@ -1128,10 +1123,10 @@ msgstr ""
 "Ви бажаєте закрити редактор?\n"
 "Ви втратите усі незбережені зміни."
 
-#, fuzzy, qt-format
-msgctxt "PlaylistEditor|"
-msgid "New channel from scan %1"
-msgstr "Новий канал з відсканованого %1"
+#, qt-format
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "New channel from scan %1"
+#~ msgstr "Новий канал з відсканованого %1"
 
 #, fuzzy
 msgctxt "PlaylistEditor|"
@@ -1209,6 +1204,40 @@ msgid ""
 "exporting to Sagem JS and CSV. Only the first category or radio category "
 "will be exported to Sagem JS."
 msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "Form"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "IP Range:"
+msgstr "Діапазон IP:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Port:"
+msgstr "Порт:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Timeout:"
+msgstr "Час що залишився:"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid " ms"
+msgstr "мс"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Scan and update"
+msgstr "Сканувати та оновити"
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEditorScan|"
+msgid "New channel from scan %1"
+msgstr "Новий канал з відсканованого %1"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"

@@ -637,26 +637,6 @@ msgid "Logo:"
 msgstr ""
 
 msgctxt "PlaylistEditor|"
-msgid "IP Range:"
-msgstr ""
-
-msgctxt "PlaylistEditor|"
-msgid "Timeout:"
-msgstr ""
-
-msgctxt "PlaylistEditor|"
-msgid "Scan and update"
-msgstr ""
-
-msgctxt "PlaylistEditor|"
-msgid " ms"
-msgstr ""
-
-msgctxt "PlaylistEditor|"
-msgid "Port:"
-msgstr ""
-
-msgctxt "PlaylistEditor|"
 msgid "Add channel"
 msgstr ""
 
@@ -765,11 +745,6 @@ msgid ""
 "You will lose any unsaved changes."
 msgstr ""
 
-#, qt-format
-msgctxt "PlaylistEditor|"
-msgid "New channel from scan %1"
-msgstr ""
-
 msgctxt "PlaylistEditor|"
 msgid "A channel with this number already exists!"
 msgstr ""
@@ -844,6 +819,35 @@ msgid ""
 "You can set custom radio category in settings (defaults to Radio) for "
 "exporting to Sagem JS and CSV. Only the first category or radio category "
 "will be exported to Sagem JS."
+msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "Form"
+msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "IP Range:"
+msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "Port:"
+msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "Timeout:"
+msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid " ms"
+msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "Scan and update"
+msgstr ""
+
+#, qt-format
+msgctxt "PlaylistEditorScan|"
+msgid "New channel from scan %1"
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"

@@ -742,11 +742,13 @@ void MainWindow::showPlaylistEditor()
         } else {
             delete _playlistEditor;
             _playlistEditor = new PlaylistEditor(this);
+            _playlistEditor->setMediaInstance(_mediaInstance);
             _playlistEditor->open(_playlistName);
             _playlistEditor->show();
         }
     } else {
         _playlistEditor = new PlaylistEditor(this);
+        _playlistEditor->setMediaInstance(_mediaInstance);
         _playlistEditor->open(_playlistName);
         _playlistEditor->show();
     }

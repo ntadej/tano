@@ -677,26 +677,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>IP Range:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Timeout:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan and update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> ms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Port:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Add channel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -797,10 +777,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New channel from scan %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>A channel with this number already exists!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -861,6 +837,37 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditorScan</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

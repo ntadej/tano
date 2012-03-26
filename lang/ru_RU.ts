@@ -987,23 +987,23 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>IP Range:</source>
-        <translation type="unfinished">Диапазон IP:</translation>
+        <translation type="obsolete">Диапазон IP:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation type="unfinished">Таймаут:</translation>
+        <translation type="obsolete">Таймаут:</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation type="unfinished">Просканировать и обновить</translation>
+        <translation type="obsolete">Просканировать и обновить</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation type="unfinished">мс</translation>
+        <translation type="obsolete">мс</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished">Порт:</translation>
+        <translation type="obsolete">Порт:</translation>
     </message>
     <message>
         <source>Add channel</source>
@@ -1108,10 +1108,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New channel from scan %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>A channel with this number already exists!</source>
         <translation type="unfinished">Канал с таким номером уже существует!</translation>
     </message>
@@ -1172,6 +1168,37 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistEditorScan</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">Диапазон IP:</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Порт:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">Таймаут:</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished">мс</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Просканировать и обновить</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

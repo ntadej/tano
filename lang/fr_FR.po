@@ -958,30 +958,25 @@ msgstr "Logo :"
 #~ msgid "Update Playlist"
 #~ msgstr "Mise à jour de la liste de lecture"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "IP Range:"
-msgstr "Plage des adresses IP :"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "IP Range:"
+#~ msgstr "Plage des adresses IP :"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Timeout:"
-msgstr "Temporisation :"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Timeout:"
+#~ msgstr "Temporisation :"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Scan and update"
-msgstr "Scanner et actualiser"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Scan and update"
+#~ msgstr "Scanner et actualiser"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid " ms"
-msgstr "ms"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid " ms"
+#~ msgstr "ms"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "Port:"
-msgstr "Port :"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "Port:"
+#~ msgstr "Port :"
 
 #, fuzzy
 msgctxt "PlaylistEditor|"
@@ -1119,10 +1114,10 @@ msgstr ""
 "Voulez-vous fermer l'éditeur ?\n"
 "Vous perdrez tous les changements non sauvegardés."
 
-#, fuzzy, qt-format
-msgctxt "PlaylistEditor|"
-msgid "New channel from scan %1"
-msgstr "Nouvelle chaîne issue du scan %1"
+#, qt-format
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "New channel from scan %1"
+#~ msgstr "Nouvelle chaîne issue du scan %1"
 
 #, fuzzy
 msgctxt "PlaylistEditor|"
@@ -1200,6 +1195,40 @@ msgid ""
 "exporting to Sagem JS and CSV. Only the first category or radio category "
 "will be exported to Sagem JS."
 msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "Form"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "IP Range:"
+msgstr "Plage des adresses IP :"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Port:"
+msgstr "Port :"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Timeout:"
+msgstr "Temporisation :"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid " ms"
+msgstr "ms"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Scan and update"
+msgstr "Scanner et actualiser"
+
+#, fuzzy, qt-format
+msgctxt "PlaylistEditorScan|"
+msgid "New channel from scan %1"
+msgstr "Nouvelle chaîne issue du scan %1"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
