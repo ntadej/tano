@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,6 +19,7 @@
 #ifndef TANO_TIMERSMODEL_H_
 #define TANO_TIMERSMODEL_H_
 
+#include "core/Enums.h"
 #include "core/ListModel.h"
 
 class Timer;
@@ -36,9 +37,8 @@ public:
 
     Timer *createTimer(const QString &name,
                        const QString &channel,
-                       const QString &playlist,
-                       const int &num,
-                       const QString &url);
+                       const QString &url,
+                       const Tano::TimerType &type = Tano::Once);
     void deleteTimer(Timer *timer);
 
     void readTimers();

@@ -62,14 +62,6 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
         if (_timer) {
             _timer->setName(_currentText);
         }
-    } else if (qName == "playlist") {
-        if (_timer) {
-            _timer->setPlaylist(_currentText);
-        }
-    } else if (qName == "channelid") {
-        if (_timer) {
-            _timer->setNum(_currentText.toInt());
-        }
     } else if (qName == "channel") {
         if (_timer) {
             _timer->setChannel(_currentText);

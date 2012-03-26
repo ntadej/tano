@@ -19,6 +19,7 @@
 #ifndef TANO_RECORDERCORE_H_
 #define TANO_RECORDERCORE_H_
 
+#include <QtCore/QDateTime>
 #include <QtCore/QObject>
 #include <QtCore/QTimer>
 
@@ -39,34 +40,24 @@ public:
 
     bool isRecording() const { return _isRecording; }
     bool isTimer() const { return _isTimer; }
-    QString output() const;
     void setDefaultOutputPath(const QString &path) { _defaultPath = path; }
+    void setMediaInstance(VlcInstance *instance);
     void stop();
-    QString timerEndTime() const { return _currentEndTime; }
 
 public slots:
-    void record(const QString &channel,
-                const QString &url,
-                const QString &path);
     void record(Timer *t);
 
 signals:
     void elapsed(const int &);
-    void timer(const QString &,
-               const QString &);
     void timerStop();
 
 private slots:
     void time();
 
 private:
-    void recordBackend(const QString &url);
-    QString fileName(const QString &channel,
-                     const QString &name = 0) const;
-
-    QString _currentEndTime;
-    QString _currentName;
-    QString _currentUrl;
+    QString fileName(const QString &name,
+                     const QString &channel,
+                     const QString &time) const;
 
     bool _isRecording;
     bool _isTimer;
@@ -76,6 +67,7 @@ private:
     QString _output;
     QString _outputName;
     QString _outputPath;
+    QString _currentEndTime;
 
     VlcInstance *_instance;
     VlcMedia *_media;

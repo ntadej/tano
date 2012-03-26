@@ -325,14 +325,12 @@
    </attribute>
    <addaction name="actionRecordQuick"/>
    <addaction name="actionRecord"/>
-   <addaction name="separator"/>
-   <addaction name="actionTimers"/>
   </widget>
   <widget class="QDockWidget" name="recorderInfoWidget">
    <property name="minimumSize">
     <size>
      <width>250</width>
-     <height>0</height>
+     <height>41</height>
     </size>
    </property>
    <property name="windowIcon">

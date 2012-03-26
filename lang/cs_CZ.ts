@@ -1925,7 +1925,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Channel is not selected!</source>
-        <translation>Není vybrán program!</translation>
+        <translation type="obsolete">Není vybrán program!</translation>
     </message>
     <message>
         <source>Stop recording</source>
@@ -1958,6 +1958,14 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Timers</source>
         <translation type="unfinished">Časovače</translation>
+    </message>
+    <message>
+        <source>Quick recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording not valid!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2013,6 +2021,10 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>&lt;b&gt;Status&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Program:</translation>
     </message>
 </context>
 <context>
@@ -3370,117 +3382,117 @@ Vaše změny nebudou použity.</translation>
     <name>TimersEditor</name>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Časovače</translation>
+        <translation type="obsolete">Časovače</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation type="unfinished">Vytvořit</translation>
+        <translation type="obsolete">Vytvořit</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Název:</translation>
+        <translation type="obsolete">Název:</translation>
     </message>
     <message>
         <source>Select a channel from the list below:</source>
-        <translation type="unfinished">Vyberte program ze seznamu níže:</translation>
+        <translation type="obsolete">Vyberte program ze seznamu níže:</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Editor</translation>
+        <translation type="obsolete">Editor</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="unfinished">Program:</translation>
+        <translation type="obsolete">Program:</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation type="unfinished">Seznam programů:</translation>
+        <translation type="obsolete">Seznam programů:</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="unfinished">Datum:</translation>
+        <translation type="obsolete">Datum:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished">Začátek:</translation>
+        <translation type="obsolete">Začátek:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished">Konec:</translation>
+        <translation type="obsolete">Konec:</translation>
     </message>
     <message>
         <source>dd.MM.yyyy</source>
-        <translation type="unfinished">dd.mm.rrrr</translation>
+        <translation type="obsolete">dd.mm.rrrr</translation>
     </message>
     <message>
         <source>hh:mm:ss</source>
-        <translation type="unfinished">hh:mm:ss</translation>
+        <translation type="obsolete">hh:mm:ss</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation type="unfinished">Zakázáno:</translation>
+        <translation type="obsolete">Zakázáno:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation type="unfinished">Adresa (URL):</translation>
+        <translation type="obsolete">Adresa (URL):</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Typ:</translation>
+        <translation type="obsolete">Typ:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="unfinished">Jednou</translation>
+        <translation type="obsolete">Jednou</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished">Denně</translation>
+        <translation type="obsolete">Denně</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished">Týdně</translation>
+        <translation type="obsolete">Týdně</translation>
     </message>
     <message>
         <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;Časovače se nesmí překrývat! Toto bude v budoucnu ověřeno automaticky.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Časovače se nesmí překrývat! Toto bude v budoucnu ověřeno automaticky.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>New Task</source>
-        <translation type="unfinished">Nový úkol</translation>
+        <translation type="obsolete">Nový úkol</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation type="unfinished">Smazat úkol</translation>
+        <translation type="obsolete">Smazat úkol</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation type="unfinished">Uložit a zavřít</translation>
+        <translation type="obsolete">Uložit a zavřít</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Zavřít</translation>
+        <translation type="obsolete">Zavřít</translation>
     </message>
     <message>
         <source>Timers Editor</source>
-        <translation type="unfinished">Editor časovačů</translation>
+        <translation type="obsolete">Editor časovačů</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You changes will not be applied.</source>
-        <translation type="unfinished">Chcete zavřít editor?
+        <translation type="obsolete">Chcete zavřít editor?
 Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation type="unfinished">Zadejte, prosím, název a vyberte program ze seznamu.</translation>
+        <translation type="obsolete">Zadejte, prosím, název a vyberte program ze seznamu.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
-        <translation type="unfinished">Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název.</translation>
+        <translation type="obsolete">Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název.</translation>
     </message>
 </context>
 <context>
@@ -3499,7 +3511,7 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation type="unfinished">Seznam programů:</translation>
+        <translation type="obsolete">Seznam programů:</translation>
     </message>
     <message>
         <source>Type:</source>

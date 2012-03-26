@@ -23,21 +23,18 @@ Timer::Timer(QObject *parent)
 
 Timer::Timer(const QString &name,
              const QString &channel,
-             const QString &playlist,
-             const int &num,
              const QString &url,
+             const Tano::TimerType &type,
              QObject *parent)
     : ListItem(parent),
       _name(name),
-     _channel(channel),
-     _playlist(playlist),
-     _num(num),
-     _url(url)
+      _channel(channel),
+      _url(url),
+      _type(type)
 {
     _file = "";
     _startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
     _endTime = _startTime.addSecs(3600);
-    _type = Tano::Once;
     _state = Tano::Enabled;
 }
 
@@ -50,10 +47,8 @@ QHash<int, QByteArray> Timer::roleNames() const
     names[DisplayIconRole] = "displayIcon";
     names[NameRole] = "name";
     names[ChannelRole] = "channel";
-    names[PlaylistRole] = "playlist";
     names[UrlRole] = "url";
     names[FileRole] = "file";
-    names[NumRole] = "num";
     names[StartTimeRole] = "start";
     names[EndTimeRole] = "end";
     names[TypeRole] = "type";
@@ -73,12 +68,8 @@ QVariant Timer::data(int role) const
         return name();
     case ChannelRole:
         return channel();
-    case PlaylistRole:
-        return playlist();
     case UrlRole:
         return url();
-    case NumRole:
-        return num();
     case StartTimeRole:
         return startTime();
     case EndTimeRole:
@@ -94,7 +85,12 @@ QVariant Timer::data(int role) const
 
 QString Timer::display() const
 {
-    return QString("%1 (%2) - %3 - %4 %5 %6")
+    if (state() == Tano::Finished)
+        return QString("%1 - %3 - %4 %5 %6")
+            .arg(name(), channel(),
+                 startTime().date().toString("dd.M.yyyy"), tr("at"), startTime().time().toString("hh:mm"));
+    else
+        return QString("%1 (%2) - %3 - %4 %5 %6")
             .arg(name(), Tano::timerStates()[state()], channel(),
                  startTime().date().toString("dd.M.yyyy"), tr("at"), startTime().time().toString("hh:mm"));
 }
@@ -103,6 +99,8 @@ QIcon Timer::displayIcon() const
 {
     if (state() == Tano::Finished)
         return QIcon(":/icons/16x16/video.png");
+    else if (state() == Tano::Recording)
+        return QIcon(":/icons/16x16/media-record.png");
     else
         return QIcon(":/icons/16x16/timer.png");
 }
@@ -123,14 +121,6 @@ void Timer::setChannel(const QString &channel)
     }
 }
 
-void Timer::setPlaylist(const QString &playlist)
-{
-    if (_playlist != playlist) {
-        _playlist = playlist;
-        emit dataChanged();
-    }
-}
-
 void Timer::setUrl(const QString &url)
 {
     if (_url != url) {
@@ -143,14 +133,6 @@ void Timer::setFile(const QString &file)
 {
     if (_file != file) {
         _file = file;
-        emit dataChanged();
-    }
-}
-
-void Timer::setNum(const int &num)
-{
-    if (_num != num) {
-        _num = num;
         emit dataChanged();
     }
 }

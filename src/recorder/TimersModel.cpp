@@ -51,11 +51,10 @@ Timer *TimersModel::takeRow(const int &row)
 
 Timer *TimersModel::createTimer(const QString &name,
                                 const QString &channel,
-                                const QString &playlist,
-                                const int &num,
-                                const QString &url)
+                                const QString &url,
+                                const Tano::TimerType &type)
 {
-    Timer *timer = new Timer(name, channel, playlist, num, url, this);
+    Timer *timer = new Timer(name, channel, url, type, this);
     appendRow(timer);
 
     return timer;

@@ -83,8 +83,6 @@ void TimersGenerator::generateItem(Timer *timer)
 
     _out << indent(depth) << "<timer>\n"
          << indent(depth + 1) << "<name>" << escapedText(timer->name()) << "</name>\n"
-         << indent(depth + 1) << "<playlist>" << escapedText(timer->playlist()) << "</playlist>\n"
-         << indent(depth + 1) << "<channelid>" << escapedText(QString().number(timer->num())) << "</channelid>\n"
          << indent(depth + 1) << "<channel>" << escapedText(timer->channel()) << "</channel>\n"
          << indent(depth + 1) << "<url>" << escapedText(timer->url()) << "</url>\n"
          << indent(depth + 1) << "<file>" << escapedText(timer->file()) << "</file>\n"

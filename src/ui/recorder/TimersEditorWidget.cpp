@@ -89,8 +89,6 @@ void TimersEditorWidget::edit(Timer *item)
     ui->checkBoxDisabled->setChecked(_currentTimer->state() == Tano::Disabled);
     ui->editName->setText(_currentTimer->name());
     ui->editChannel->setText(_currentTimer->channel());
-    ui->editNum->display(_currentTimer->num());
-    ui->editPlaylist->setText(_currentTimer->playlist());
     ui->editUrl->setText(_currentTimer->url());
     ui->editType->setCurrentIndex(_currentTimer->type());
     ui->editDate->setDate(_currentTimer->startTime().date());

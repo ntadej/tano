@@ -54,11 +54,13 @@ void RecorderInfoWidget::setAction(QAction *action)
 }
 
 void RecorderInfoWidget::start(const QString &name,
+                               const QString &channel,
                                const QString &output,
                                const QString &end)
 {
     QString bold("<b>%1</b>");
     ui->valueCurrent->setText(bold.arg(name));
+    ui->valueChannel->setText(bold.arg(channel));
     if (!end.isEmpty())
         ui->valueEndTime->setText(bold.arg(end));
     else
@@ -72,6 +74,7 @@ void RecorderInfoWidget::start(const QString &name,
 void RecorderInfoWidget::stop()
 {
     ui->valueCurrent->setText("");
+    ui->valueChannel->setText("");
     ui->valueTime->setText("");
     ui->valueEndTime->setText(tr(""));
     ui->valueFile->setText("");

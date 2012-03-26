@@ -41,88 +41,57 @@ RecorderCore::~RecorderCore()
 {
     stop();
 
+    delete _media;
     delete _player;
-    delete _instance;
     delete _timer;
 }
 
-QString RecorderCore::fileName(const QString &channel,
-                               const QString &name) const
+QString RecorderCore::fileName(const QString &name,
+                               const QString &channel,
+                               const QString &time) const
 {
     QString f;
-    if (!name.isEmpty()) {
-        f.append(QString(name).replace(" ", "_"));
-        f.append("-");
-    }
+    f.append(QString(name).replace(" ", "_"));
+    f.append("-");
     f.append(QString(channel).replace(" ", "_"));
-    f.append(QDateTime::currentDateTime().toString("-yyyyMMdd-hhmmss"));
-    f.append(".ts");
+    f.append(time);
 
     return f;
-}
-
-QString RecorderCore::output() const
-{
-    if (isRecording())
-        return _output;
-    else
-        return "error";
-}
-
-void RecorderCore::record(const QString &channel,
-                          const QString &url,
-                          const QString &path)
-{
-    _outputName = fileName(channel);
-    _outputPath = path;
-
-    recordBackend(url);
-
-    _isRecording = true;
-    _isTimer = false;
-
-    _time = 0;
-    _timer->start(500);
 }
 
 void RecorderCore::record(Timer *t)
 {
     stop();
 
-    _outputName = fileName(t->channel(), t->name());
+    _outputName = fileName(t->name(), t->channel(), t->startTime().toString("-yyyyMMdd-hhmmss"));
     _outputPath = _defaultPath;
+    _currentEndTime = t->endTime().toString("hh:mm");
 
-    recordBackend(t->url());
+    if (_media)
+        delete _media;
+
+    _media = new VlcMedia(t->url(), _instance);
+    _output = _media->record(_outputName, _outputPath);
+    t->setFile(_output);
+
+    _player->open(_media);
+    _player->play();
 
     _isRecording = true;
-    _isTimer = true;
-    _currentEndTime = t->endTime().time().toString("hh:mm");
-    _currentName = t->name() + QString(" (%1)").arg(t->channel());
-    _currentUrl = t->url();
+    _isTimer = (t->type() != Tano::Instant);
     t->setState(Tano::Recording);
 
     _time = 0;
     _timer->start(500);
-
-    emit timer(_currentName, _currentUrl);
 }
 
-void RecorderCore::recordBackend(const QString &url)
+void RecorderCore::setMediaInstance(VlcInstance *instance)
 {
-    if (_media)
-        delete _media;
+    _instance = instance;
+
     if (_player)
         delete _player;
-    if (_instance)
-        delete _instance;
-
-    _instance = new VlcInstance(Tano::vlcQtArgs(), this);
     _player = new VlcMediaPlayer(_instance);
-    _media = new VlcMedia(url, _instance);
-    _output = _media->record(_outputName, _outputPath);
-
-    _player->open(_media);
-    _player->play();
 }
 
 void RecorderCore::stop()
@@ -130,13 +99,11 @@ void RecorderCore::stop()
     if (_player)
         _player->stop();
 
-    _currentEndTime = "";
-    _currentName = "";
-    _currentUrl = "";
     _isRecording = false;
     _isTimer = false;
 
     _timer->stop();
+
     emit elapsed(0);
 }
 

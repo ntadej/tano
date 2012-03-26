@@ -34,7 +34,7 @@ bool TimersFilterModel::filterAcceptsRow(int sourceRow,
 {
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
-    bool name = sourceModel()->data(index, Timer::NameRole).toString().contains(filterRegExp());
+    bool name = sourceModel()->data(index, Timer::DisplayRole).toString().contains(filterRegExp());
     bool finished = (sourceModel()->data(index, Timer::StateRole).toInt() == Tano::Finished) == _finished;
     bool state = sourceModel()->data(index, Timer::StateRole).toInt() == _state || _state == -1;
 

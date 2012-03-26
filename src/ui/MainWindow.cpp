@@ -218,6 +218,7 @@ void MainWindow::createBackend()
 
     ui->videoWidget->setMediaPlayer(_mediaPlayer);
     ui->videoWidget->initDefaultSettings();
+    ui->recorder->setMediaInstance(_mediaInstance);
 }
 
 void MainWindow::createSettings()
@@ -227,6 +228,7 @@ void MainWindow::createSettings()
 
     //GUI Settings
     ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
+    ui->toolBarRecorder->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
 
     if (settings->trayEnabled())
         _trayIcon->show();
@@ -399,7 +401,6 @@ void MainWindow::createConnections()
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
     connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
     connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
-    connect(ui->actionTimers, SIGNAL(triggered()), ui->recorder, SLOT(showTimersEditor()));
 }
 
 void MainWindow::createMenus()

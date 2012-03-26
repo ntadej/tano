@@ -2044,7 +2044,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Channel is not selected!</source>
-        <translation>Program ni izbran!</translation>
+        <translation type="obsolete">Program ni izbran!</translation>
     </message>
     <message>
         <source>Recorder</source>
@@ -2102,6 +2102,14 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Timers</source>
         <translation type="unfinished">Časovniki</translation>
     </message>
+    <message>
+        <source>Quick recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording not valid!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
@@ -2156,6 +2164,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>&lt;b&gt;Status&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Program:</translation>
     </message>
 </context>
 <context>
@@ -3583,117 +3595,113 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>TimersEditor</name>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Časovniki</translation>
+        <translation type="obsolete">Časovniki</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation type="unfinished">Ustvari</translation>
+        <translation type="obsolete">Ustvari</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Ime:</translation>
+        <translation type="obsolete">Ime:</translation>
     </message>
     <message>
         <source>Select a channel from the list below:</source>
-        <translation type="unfinished">Izberi program s spodnjega seznama:</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Izberi program s spodnjega seznama:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="unfinished">Program:</translation>
+        <translation type="obsolete">Program:</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation type="unfinished">Seznam:</translation>
+        <translation type="obsolete">Seznam:</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="unfinished">Datum:</translation>
+        <translation type="obsolete">Datum:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished">Začetek:</translation>
+        <translation type="obsolete">Začetek:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished">Konec:</translation>
+        <translation type="obsolete">Konec:</translation>
     </message>
     <message>
         <source>dd.MM.yyyy</source>
-        <translation type="unfinished">dd.MM.yyyy</translation>
+        <translation type="obsolete">dd.MM.yyyy</translation>
     </message>
     <message>
         <source>hh:mm:ss</source>
-        <translation type="unfinished">hh:mm:ss</translation>
+        <translation type="obsolete">hh:mm:ss</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation type="unfinished">Izključen:</translation>
+        <translation type="obsolete">Izključen:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation type="unfinished">Naslov:</translation>
+        <translation type="obsolete">Naslov:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Tip:</translation>
+        <translation type="obsolete">Tip:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="unfinished">Enkratno</translation>
+        <translation type="obsolete">Enkratno</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished">Dnevno</translation>
+        <translation type="obsolete">Dnevno</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished">Tedensko</translation>
+        <translation type="obsolete">Tedensko</translation>
     </message>
     <message>
         <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;Časovniki se ne smejo časovno prekrivati! To bo avtomatsko preverjeno v naslednjih različicah.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Časovniki se ne smejo časovno prekrivati! To bo avtomatsko preverjeno v naslednjih različicah.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>New Task</source>
-        <translation type="unfinished">Novo opravilo</translation>
+        <translation type="obsolete">Novo opravilo</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation type="unfinished">Izbriši opravilo</translation>
+        <translation type="obsolete">Izbriši opravilo</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation type="unfinished">Shrani in zapri</translation>
+        <translation type="obsolete">Shrani in zapri</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Zapri</translation>
+        <translation type="obsolete">Zapri</translation>
     </message>
     <message>
         <source>Timers Editor</source>
-        <translation type="unfinished">Urejevalnik časovnikov</translation>
+        <translation type="obsolete">Urejevalnik časovnikov</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You changes will not be applied.</source>
-        <translation type="unfinished">Ali želiš zapreti urejevalnik?
+        <translation type="obsolete">Ali želiš zapreti urejevalnik?
 Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation type="unfinished">Vnesite ime in izberite program s seznama.</translation>
+        <translation type="obsolete">Vnesite ime in izberite program s seznama.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
-        <translation type="unfinished">Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime.</translation>
+        <translation type="obsolete">Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime.</translation>
     </message>
 </context>
 <context>
@@ -3712,7 +3720,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation type="unfinished">Seznam:</translation>
+        <translation type="obsolete">Seznam:</translation>
     </message>
     <message>
         <source>Type:</source>

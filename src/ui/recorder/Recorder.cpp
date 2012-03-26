@@ -20,6 +20,7 @@
 #include <QtGui/QMessageBox>
 
 #include "container/core/Channel.h"
+#include "container/core/Timer.h"
 #include "core/Enums.h"
 #include "core/Settings.h"
 #include "core/Udpxy.h"
@@ -29,7 +30,6 @@
 #include "recorder/TimersModel.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/recorder/RecorderInfoWidget.h"
-#include "ui/recorder/TimersEditor.h"
 
 #include "Recorder.h"
 #include "ui_Recorder.h"
@@ -38,9 +38,7 @@ Recorder::Recorder(QWidget *parent)
     : QStackedWidget(parent),
       ui(new Ui::Recorder),
       _actionRecord(0),
-      _name(""),
-      _url(""),
-      _editor(0),
+      _currentTimer(0),
       _info(0),
       _trayIcon(0)
 {
@@ -62,10 +60,9 @@ Recorder::Recorder(QWidget *parent)
 
 	connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
 
-    connect(_core, SIGNAL(timer(QString, QString)), this, SLOT(timerStart(QString, QString)));
     connect(_core, SIGNAL(timerStop()), this, SLOT(timerStop()));
 
-    connect(_manager, SIGNAL(timer(Timer *)), _core, SLOT(record(Timer *)));
+    connect(_manager, SIGNAL(timer(Timer *)), this, SLOT(recordStart(Timer *)));
 }
 
 Recorder::~Recorder()
@@ -122,58 +119,66 @@ void Recorder::quickRecordCancel()
 
 void Recorder::quickRecordStart()
 {
-    _name = _currentChannel->name();
-    _url = _udpxy->processUrl(_currentChannel->url());
+    Timer *timer = _model->createTimer(ui->editNameQuick->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Tano::Instant);
 
-    recordStart();
+    recordStart(timer);
 
     setCurrentIndex(0);
 }
 
-void Recorder::recordNow(const QString &name,
+void Recorder::recordNow(const QString &channel,
                          const QString &url)
 {
-	_name = name;
-    _url = _udpxy->processUrl(url);
+    Timer *timer = _model->createTimer(tr("Quick recording"), channel, _udpxy->processUrl(url), Tano::Instant);
 
-    ui->valueSelectedQuick->setText("<b>" + name + "</b>");
-
-    if (isRecording())
-        recordStart();
+    if (!isRecording())
+        recordStart(timer);
 }
 
-void Recorder::recordStart()
+void Recorder::recordStart(Timer *timer)
 {
     if (!QDir(_directory).exists()) {
         QMessageBox::critical(this, tr("Recorder"),
                     tr("Cannot write to %1.")
                     .arg(_directory));
         return;
-    } else if (ui->valueSelectedQuick->text().isEmpty() && !_core->isTimer()) {
+    } else if (timer->url().isEmpty() || timer->channel().isEmpty()) {
         QMessageBox::critical(this, tr("Recorder"),
-                    tr("Channel is not selected!"));
+                    tr("Recording not valid!"));
+        delete timer;
         return;
     }
 
-    if (!_core->isTimer())
-        _core->record(_name, _url, _directory);
+    _currentTimer = timer;
+    if (timer->type() == Tano::Instant)
+        timer->setStartTime(QDateTime::currentDateTime());
 
-    _info->start(_name, _core->output(), _core->timerEndTime());
+    _core->record(timer);
+
+    if (_core->isTimer())
+        _info->start(timer->name(), timer->channel(), timer->file(), timer->endTime().toString("hh:mm"));
+    else
+        _info->start(timer->name(), timer->channel(), timer->file());
+
     if (_actionRecord)
         _actionRecord->setEnabled(true);
 
     if (_trayIcon) {
-        _trayIcon->changeToolTip(Tano::Record, _name);
+        QString title = QString("%1 (%2)").arg(timer->name(), timer->channel());
+        _trayIcon->changeToolTip(Tano::Record, title);
         if (_core->isTimer())
-            _trayIcon->message(Tano::Record, QStringList() << _name << _core->output() << _core->timerEndTime());
+            _trayIcon->message(Tano::Record, QStringList() << title << timer->file() << timer->endTime().toString("hh:mm"));
         else
-            _trayIcon->message(Tano::Record, QStringList() << _name << _core->output());
+            _trayIcon->message(Tano::Record, QStringList() << title << timer->file());
     }
 }
 
 
 void Recorder::recordStop()
 {
+    if(!_core->isRecording())
+        return;
+
     _core->stop();
 
     _info->stop();
@@ -184,11 +189,20 @@ void Recorder::recordStop()
         _trayIcon->changeToolTip(Tano::Record);
         _trayIcon->message(Tano::Record, QStringList());
     }
+
+    _currentTimer->setState(Tano::Finished);
+    _model->writeTimers();
+    _currentTimer = 0;
 }
 
 void Recorder::refreshPlaylistModel()
 {
     ui->playlistWidget->refreshModel();
+}
+
+void Recorder::setMediaInstance(VlcInstance *instance)
+{
+    _core->setMediaInstance(instance);
 }
 
 void Recorder::setPlaylistModel(PlaylistModel *model)
@@ -209,37 +223,4 @@ void Recorder::setWidgets(QAction *action,
     connect(_core, SIGNAL(elapsed(int)), _info, SLOT(time(int)));
 
     _trayIcon = icon;
-}
-
-void Recorder::showTimersEditor()
-{
-    if (_editor) {
-        if (_editor->isVisible()) {
-            _editor->activateWindow();
-        } else {
-            delete _editor;
-            _editor = new TimersEditor(this);
-            _editor->setModels(_model, _playlistModel);
-            _editor->show();
-        }
-    } else {
-        _editor = new TimersEditor(this);
-        _editor->setModels(_model, _playlistModel);
-        _editor->show();
-    }
-}
-
-void Recorder::timerStart(const QString &name,
-                          const QString &url)
-{
-    _name = name;
-    _url = url;
-
-    recordStart();
-}
-
-void Recorder::timerStop()
-{
-    if (isRecording())
-        recordStop();
 }

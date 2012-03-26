@@ -34,6 +34,7 @@ public:
 
     void setAction(QAction *action);
     void start(const QString &name,
+               const QString &channel,
                const QString &output,
                const QString &end = 0);
     void stop();

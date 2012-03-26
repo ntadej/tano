@@ -28,9 +28,10 @@ class RecorderCore;
 class RecorderInfoWidget;
 class RecorderTimeManager;
 class TrayIcon;
-class TimersEditor;
+class Timer;
 class TimersModel;
 class Udpxy;
+class VlcInstance;
 
 namespace Ui
 {
@@ -47,6 +48,7 @@ public:
     void createSettings();
     bool isRecording() const;
     void refreshPlaylistModel();
+    void setMediaInstance(VlcInstance *instance);
     void setPlaylistModel(PlaylistModel *model);
     void setWidgets(QAction *action,
                     RecorderInfoWidget *info,
@@ -57,33 +59,27 @@ protected:
 
 public slots:
     void quickRecord();
-    void recordNow(const QString &name,
+    void recordNow(const QString &channel,
                    const QString &url);
-    void recordStart();
+    void recordStart(Timer *timer);
     void recordStop();
-    void showTimersEditor();
 
 private slots:
     void playlist(Channel* channel);
     void quickRecordCancel();
     void quickRecordStart();
-    void timerStart(const QString &name,
-                    const QString &url);
-    void timerStop();
 
 private:
     Ui::Recorder *ui;
 
     QAction *_actionRecord;
 
-    QString _directory;
-    QString _name;
-    QString _url;
-
     Channel *_currentChannel;
+    Timer *_currentTimer;
+
+    QString _directory;
 
     RecorderCore *_core;
-    TimersEditor *_editor;
     RecorderInfoWidget *_info;
     RecorderTimeManager *_manager;
     TimersModel *_model;

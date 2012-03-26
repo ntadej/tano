@@ -1600,7 +1600,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Channel is not selected!</source>
-        <translation>La chaîne n&apos;est pas sélectionnée !</translation>
+        <translation type="obsolete">La chaîne n&apos;est pas sélectionnée !</translation>
     </message>
     <message>
         <source>Stop recording</source>
@@ -1629,6 +1629,14 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>Timers</source>
         <translation type="unfinished">Programmateurs</translation>
+    </message>
+    <message>
+        <source>Quick recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording not valid!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1684,6 +1692,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>&lt;b&gt;Status&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Chaîne :</translation>
     </message>
 </context>
 <context>
@@ -2768,117 +2780,113 @@ Vos changements ne seront pas appliqués.</translation>
     <name>TimersEditor</name>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Programmateurs</translation>
+        <translation type="obsolete">Programmateurs</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation type="unfinished">Créé</translation>
+        <translation type="obsolete">Créé</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nom :</translation>
+        <translation type="obsolete">Nom :</translation>
     </message>
     <message>
         <source>Select a channel from the list below:</source>
-        <translation type="unfinished">Sélectionnez une chaîne dans la liste ci-dessous :</translation>
+        <translation type="obsolete">Sélectionnez une chaîne dans la liste ci-dessous :</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Éditeur</translation>
+        <translation type="obsolete">Éditeur</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="unfinished">Chaîne :</translation>
+        <translation type="obsolete">Chaîne :</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation type="unfinished">Liste de lecture :</translation>
+        <translation type="obsolete">Liste de lecture :</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="unfinished">Date :</translation>
+        <translation type="obsolete">Date :</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished">Début :</translation>
-    </message>
-    <message>
-        <source>End time:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Début :</translation>
     </message>
     <message>
         <source>dd.MM.yyyy</source>
-        <translation type="unfinished">jj.MM.aaaa</translation>
+        <translation type="obsolete">jj.MM.aaaa</translation>
     </message>
     <message>
         <source>hh:mm:ss</source>
-        <translation type="unfinished">hh:mm:ss</translation>
+        <translation type="obsolete">hh:mm:ss</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation type="unfinished">Dévalidé :</translation>
+        <translation type="obsolete">Dévalidé :</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation type="unfinished">Url :</translation>
+        <translation type="obsolete">Url :</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Type :</translation>
+        <translation type="obsolete">Type :</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="unfinished">Une fois</translation>
+        <translation type="obsolete">Une fois</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished">Tous les jours</translation>
+        <translation type="obsolete">Tous les jours</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished">Toutes les semaines</translation>
+        <translation type="obsolete">Toutes les semaines</translation>
     </message>
     <message>
         <source>&lt;i&gt;Timers must not overlap! This will be automatically checked in the future.&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;Les programmations ne doivent pas se chevaucher ! Ceci sera automatiquement vérifié prochainement.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Les programmations ne doivent pas se chevaucher ! Ceci sera automatiquement vérifié prochainement.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>New Task</source>
-        <translation type="unfinished">Nouvelle tâche</translation>
+        <translation type="obsolete">Nouvelle tâche</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation type="unfinished">Supprimer la tâche</translation>
+        <translation type="obsolete">Supprimer la tâche</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation type="unfinished">Enregistrer et fermer</translation>
+        <translation type="obsolete">Enregistrer et fermer</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Fermer</translation>
+        <translation type="obsolete">Fermer</translation>
     </message>
     <message>
         <source>Timers Editor</source>
-        <translation type="unfinished">Éditeur de programmation</translation>
+        <translation type="obsolete">Éditeur de programmation</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You changes will not be applied.</source>
-        <translation type="unfinished">Voulez-vous fermer l&apos;éditeur ?
+        <translation type="obsolete">Voulez-vous fermer l&apos;éditeur ?
 Vos changements ne seront pas appliqués.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Please enter a name and select a channel from the list.</source>
-        <translation type="unfinished">Veuillez donner un nom et sélectionner une chaîne de la liste.</translation>
+        <translation type="obsolete">Veuillez donner un nom et sélectionner une chaîne de la liste.</translation>
     </message>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
-        <translation type="unfinished">Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom.</translation>
+        <translation type="obsolete">Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom.</translation>
     </message>
 </context>
 <context>
@@ -2897,7 +2905,7 @@ Vos changements ne seront pas appliqués.</translation>
     </message>
     <message>
         <source>Playlist:</source>
-        <translation type="unfinished">Liste de lecture :</translation>
+        <translation type="obsolete">Liste de lecture :</translation>
     </message>
     <message>
         <source>Type:</source>

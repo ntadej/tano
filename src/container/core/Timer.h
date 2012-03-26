@@ -34,10 +34,8 @@ public:
         DisplayIconRole = Qt::DecorationRole,
         NameRole = Qt::UserRole + 1,
         ChannelRole,
-        PlaylistRole,
         UrlRole,
         FileRole,
-        NumRole,
         StartTimeRole,
         EndTimeRole,
         TypeRole,
@@ -47,9 +45,8 @@ public:
     explicit Timer(QObject *parent = 0);
     explicit Timer(const QString &name,
                    const QString &channel,
-                   const QString &playlist,
-                   const int &num,
                    const QString &url,
+                   const Tano::TimerType &type = Tano::Once,
                    QObject *parent = 0);
     ~Timer();
 
@@ -64,10 +61,6 @@ public:
     void setName(const QString &name);
     inline QString channel() const { return _channel; }
     void setChannel(const QString &channel);
-    inline QString playlist() const { return _playlist; }
-    void setPlaylist(const QString &playlist);
-    inline int num() const { return _num; }
-    void setNum(const int &num);
     inline QString url() const { return _url; }
     void setUrl(const QString &url);
     inline QString file() const { return _file; }
@@ -84,8 +77,6 @@ public:
 private:
     QString _name;
     QString _channel;
-    QString _playlist;
-    int _num;
     QString _url;
     QString _file;
     QDateTime _startTime;

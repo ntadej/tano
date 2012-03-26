@@ -1279,10 +1279,6 @@ msgid "Cannot write to %1."
 msgstr ""
 
 msgctxt "Recorder|"
-msgid "Channel is not selected!"
-msgstr ""
-
-msgctxt "Recorder|"
 msgid "Quick record"
 msgstr ""
 
@@ -1300,6 +1296,14 @@ msgstr ""
 
 msgctxt "Recorder|"
 msgid "Timers"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Quick recording"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Recording not valid!"
 msgstr ""
 
 msgctxt "RecorderInfoWidget|"
@@ -1336,6 +1340,10 @@ msgstr ""
 
 msgctxt "RecorderInfoWidget|"
 msgid "<b>Status</b>"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Channel:"
 msgstr ""
 
 msgctxt "SettingsBackend|"
@@ -1934,122 +1942,6 @@ msgctxt "TimersDisplayWidget|"
 msgid "Search:"
 msgstr ""
 
-msgctxt "TimersEditor|"
-msgid "Timers"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Create"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Name:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Select a channel from the list below:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Editor"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Channel:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Playlist:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Date:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Start time:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "End time:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "dd.MM.yyyy"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "hh:mm:ss"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Disabled:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Url:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Type:"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Once"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Daily"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Weekly"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid ""
-"<i>Timers must not overlap! This will be automatically checked in the "
-"future.</i>"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "New Task"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Delete Task"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Save and Close"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Close"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Timers Editor"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid ""
-"Do you want close the editor?\n"
-"You changes will not be applied."
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Tano"
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Please enter a name and select a channel from the list."
-msgstr ""
-
-msgctxt "TimersEditor|"
-msgid "Timer with this name already exists. Please select another name."
-msgstr ""
-
 msgctxt "TimersEditorWidget|"
 msgid "Timers"
 msgstr ""
@@ -2060,10 +1952,6 @@ msgstr ""
 
 msgctxt "TimersEditorWidget|"
 msgid "Channel:"
-msgstr ""
-
-msgctxt "TimersEditorWidget|"
-msgid "Playlist:"
 msgstr ""
 
 msgctxt "TimersEditorWidget|"
