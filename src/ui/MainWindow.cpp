@@ -199,7 +199,6 @@ void MainWindow::createGui()
     ui->statusBar->addPermanentWidget(ui->timeWidget);
     ui->statusBar->addPermanentWidget(ui->buttonUpdate);
     ui->toolBarRecorder->hide();
-    ui->recorderInfoWidget->hide();
     ui->buttonUpdate->hide();
     ui->scheduleWidget->setIdentifier(Tano::Main);
 }
@@ -839,7 +838,7 @@ void MainWindow::teletext(const int &page)
 // Recorder
 void MainWindow::recordNow()
 {
-    ui->recorder->recordNow(_channel->name(), _channel->url());
+    // TODO: Record now
 }
 
 void MainWindow::recorder(const bool &enabled)
@@ -847,14 +846,12 @@ void MainWindow::recorder(const bool &enabled)
     if (enabled) {
         ui->stackedWidget->setCurrentIndex(1);
         ui->toolBarRecorder->setVisible(true);
-        ui->recorderInfoWidget->setVisible(true);
-        ui->infoWidget->setVisible(false);
+        ui->infoContent->setCurrentIndex(1);
         ui->osdWidget->setVisible(false);
     } else {
         ui->stackedWidget->setCurrentIndex(0);
         ui->toolBarRecorder->setVisible(false);
-        ui->recorderInfoWidget->setVisible(false);
-        ui->infoWidget->setVisible(true);
+        ui->infoContent->setCurrentIndex(0);
         ui->osdWidget->setVisible(true);
     }
 }

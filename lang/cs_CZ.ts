@@ -543,10 +543,6 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Quick record</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Recorder information</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1991,20 +1987,12 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="unfinished">Časovače</translation>
     </message>
     <message>
-        <source>Quick recording</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Recording not valid!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Status</source>
         <translation type="obsolete">Stav</translation>
@@ -2056,6 +2044,18 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Channel:</source>
         <translation type="unfinished">Program:</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Přehrát</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Zpět</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

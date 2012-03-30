@@ -433,10 +433,6 @@ This will stop recording in progress.</source>
         <source>Quick record</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Recorder information</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1341,20 +1337,12 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Quick recording</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Recording not valid!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>End time:</source>
         <translation type="unfinished"></translation>
@@ -1389,6 +1377,18 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Channel:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

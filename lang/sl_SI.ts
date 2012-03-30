@@ -626,10 +626,6 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>Quick record</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Recorder information</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -2134,20 +2130,12 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation type="unfinished">Časovniki</translation>
     </message>
     <message>
-        <source>Quick recording</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Recording not valid!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Status</source>
         <translation type="obsolete">Status</translation>
@@ -2199,6 +2187,18 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Channel:</source>
         <translation type="unfinished">Program:</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Predvajaj</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Nazaj</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

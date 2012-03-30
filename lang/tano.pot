@@ -418,10 +418,6 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr ""
 
-msgctxt "MainWindow|"
-msgid "Recorder information"
-msgstr ""
-
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr ""
@@ -1301,15 +1297,7 @@ msgid "Timers"
 msgstr ""
 
 msgctxt "Recorder|"
-msgid "Quick recording"
-msgstr ""
-
-msgctxt "Recorder|"
 msgid "Recording not valid!"
-msgstr ""
-
-msgctxt "RecorderInfoWidget|"
-msgid "Form"
 msgstr ""
 
 msgctxt "RecorderInfoWidget|"
@@ -1346,6 +1334,18 @@ msgstr ""
 
 msgctxt "RecorderInfoWidget|"
 msgid "Channel:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Play"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Delete"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Back"
 msgstr ""
 
 msgctxt "SettingsBackend|"

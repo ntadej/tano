@@ -18,16 +18,21 @@
 
 #include <QtCore/QTime>
 
+#include "container/core/Timer.h"
+
 #include "RecorderInfoWidget.h"
 #include "ui_RecorderInfoWidget.h"
 
 RecorderInfoWidget::RecorderInfoWidget(QWidget *parent)
-    : QWidget(parent),
+    : QStackedWidget(parent),
       ui(new Ui::RecorderInfoWidget),
       _actionRecord(0)
 {
     ui->setupUi(this);
     ui->valueFile->removeBorder();
+
+    connect(ui->buttonRBack, SIGNAL(clicked()), this, SLOT(backToMain()));
+    connect(ui->buttonTBack, SIGNAL(clicked()), this, SLOT(backToMain()));
 }
 
 RecorderInfoWidget::~RecorderInfoWidget()
@@ -37,7 +42,7 @@ RecorderInfoWidget::~RecorderInfoWidget()
 
 void RecorderInfoWidget::changeEvent(QEvent *e)
 {
-    QWidget::changeEvent(e);
+    QStackedWidget::changeEvent(e);
     switch (e->type()) {
         case QEvent::LanguageChange:
             ui->retranslateUi(this);
@@ -45,6 +50,18 @@ void RecorderInfoWidget::changeEvent(QEvent *e)
         default:
             break;
     }
+}
+
+void RecorderInfoWidget::backToMain()
+{
+    setCurrentIndex(0);
+}
+
+void RecorderInfoWidget::recordingInfo(Timer *timer)
+{
+    setCurrentIndex(1);
+
+    //
 }
 
 void RecorderInfoWidget::setAction(QAction *action)
@@ -87,4 +104,11 @@ void RecorderInfoWidget::time(const int &time)
 {
     QString bold("<b>%1</b>");
     ui->valueTime->setText(bold.arg(QTime().addMSecs(time).toString("hh:mm:ss")));
+}
+
+void RecorderInfoWidget::timerInfo(Timer *timer)
+{
+    setCurrentIndex(2);
+
+    //
 }

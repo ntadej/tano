@@ -44,6 +44,10 @@ public:
     void setMediaInstance(VlcInstance *instance);
     void stop();
 
+    static QString fileName(const QString &name,
+                            const QString &channel,
+                            const QDateTime &time);
+
 public slots:
     void record(Timer *t);
 
@@ -55,10 +59,6 @@ private slots:
     void time();
 
 private:
-    QString fileName(const QString &name,
-                     const QString &channel,
-                     const QString &time) const;
-
     bool _isRecording;
     bool _isTimer;
 

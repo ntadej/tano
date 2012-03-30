@@ -2,14 +2,6 @@
 <ui version="4.0">
  <class>TimersDisplayWidget</class>
  <widget class="QWidget" name="TimersDisplayWidget">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>264</width>
-    <height>258</height>
-   </rect>
-  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <property name="margin">
     <number>0</number>

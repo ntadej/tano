@@ -47,14 +47,14 @@ RecorderCore::~RecorderCore()
 }
 
 QString RecorderCore::fileName(const QString &name,
-                               const QString &channel,
-                               const QString &time) const
+                                      const QString &channel,
+                                      const QDateTime &time)
 {
     QString f;
     f.append(QString(name).replace(" ", "_"));
     f.append("-");
     f.append(QString(channel).replace(" ", "_"));
-    f.append(time);
+    f.append(time.toString("-yyyyMMdd-hhmmss"));
 
     return f;
 }
@@ -63,7 +63,7 @@ void RecorderCore::record(Timer *t)
 {
     stop();
 
-    _outputName = fileName(t->name(), t->channel(), t->startTime().toString("-yyyyMMdd-hhmmss"));
+    _outputName = fileName(t->name(), t->channel(), t->startTime());
     _outputPath = _defaultPath;
     _currentEndTime = t->endTime().toString("hh:mm");
 

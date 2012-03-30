@@ -19,13 +19,15 @@
 #ifndef TANO_RECORDERINFOWIDGET_H_
 #define TANO_RECORDERINFOWIDGET_H_
 
-#include <QtGui/QWidget>
+#include <QtGui/QStackedWidget>
+
+class Timer;
 
 namespace Ui {
     class RecorderInfoWidget;
 }
 
-class RecorderInfoWidget : public QWidget
+class RecorderInfoWidget : public QStackedWidget
 {
 Q_OBJECT
 public:
@@ -44,6 +46,11 @@ protected:
 
 public slots:
      void time(const int &time);
+
+private slots:
+     void backToMain();
+     void recordingInfo(Timer *timer);
+     void timerInfo(Timer *timer);
 
 private:
     Ui::RecorderInfoWidget *ui;

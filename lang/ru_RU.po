@@ -522,10 +522,6 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr ""
 
-msgctxt "MainWindow|"
-msgid "Recorder information"
-msgstr ""
-
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Соотношение сторон"
@@ -1842,15 +1838,7 @@ msgid "Timers"
 msgstr "Таймеры"
 
 msgctxt "Recorder|"
-msgid "Quick recording"
-msgstr ""
-
-msgctxt "Recorder|"
 msgid "Recording not valid!"
-msgstr ""
-
-msgctxt "RecorderInfoWidget|"
-msgid "Form"
 msgstr ""
 
 #~ msgctxt "RecorderInfoWidget|"
@@ -1907,6 +1895,20 @@ msgstr ""
 msgctxt "RecorderInfoWidget|"
 msgid "Channel:"
 msgstr "Канал:"
+
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Play"
+msgstr "Воспроизведение"
+
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Back"
+msgstr "Назад"
+
+msgctxt "RecorderInfoWidget|"
+msgid "Delete"
+msgstr ""
 
 #~ msgctxt "ScheduleListPage|"
 #~ msgid "Schedule"

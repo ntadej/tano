@@ -463,10 +463,6 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr ""
 
-msgctxt "MainWindow|"
-msgid "Recorder information"
-msgstr ""
-
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Proportion de l'image"
@@ -1728,15 +1724,7 @@ msgid "Timers"
 msgstr "Programmateurs"
 
 msgctxt "Recorder|"
-msgid "Quick recording"
-msgstr ""
-
-msgctxt "Recorder|"
 msgid "Recording not valid!"
-msgstr ""
-
-msgctxt "RecorderInfoWidget|"
-msgid "Form"
 msgstr ""
 
 #~ msgctxt "RecorderInfoWidget|"
@@ -1793,6 +1781,20 @@ msgstr ""
 msgctxt "RecorderInfoWidget|"
 msgid "Channel:"
 msgstr "Chaîne :"
+
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Play"
+msgstr "Lire"
+
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Back"
+msgstr "Arrière"
+
+msgctxt "RecorderInfoWidget|"
+msgid "Delete"
+msgstr ""
 
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"

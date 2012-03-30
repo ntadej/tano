@@ -59,8 +59,6 @@ protected:
 
 public slots:
     void quickRecord();
-    void recordNow(const QString &channel,
-                   const QString &url);
     void recordStart(Timer *timer);
     void recordStop();
 

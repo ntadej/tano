@@ -60,7 +60,7 @@ Recorder::Recorder(QWidget *parent)
 
 	connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
 
-    connect(_core, SIGNAL(timerStop()), this, SLOT(timerStop()));
+    connect(_core, SIGNAL(timerStop()), this, SLOT(recordStop()));
 
     connect(_manager, SIGNAL(timer(Timer *)), this, SLOT(recordStart(Timer *)));
 }
@@ -124,15 +124,6 @@ void Recorder::quickRecordStart()
     recordStart(timer);
 
     setCurrentIndex(0);
-}
-
-void Recorder::recordNow(const QString &channel,
-                         const QString &url)
-{
-    Timer *timer = _model->createTimer(tr("Quick recording"), channel, _udpxy->processUrl(url), Tano::Instant);
-
-    if (!isRecording())
-        recordStart(timer);
 }
 
 void Recorder::recordStart(Timer *timer)
@@ -221,6 +212,8 @@ void Recorder::setWidgets(QAction *action,
     _info = info;
     _info->setAction(_actionRecord);
     connect(_core, SIGNAL(elapsed(int)), _info, SLOT(time(int)));
+    connect(ui->listRecordings, SIGNAL(itemSelected(Timer *)), _info, SLOT(recordingInfo(Timer *)));
+    connect(ui->listTimers, SIGNAL(itemSelected(Timer *)), _info, SLOT(timerInfo(Timer *)));
 
     _trayIcon = icon;
 }

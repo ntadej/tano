@@ -457,10 +457,6 @@ This will stop recording in progress.</source>
         <source>Quick record</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Recorder information</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1662,20 +1658,12 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <translation type="unfinished">Programmateurs</translation>
     </message>
     <message>
-        <source>Quick recording</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Recording not valid!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Status</source>
         <translation type="obsolete">État</translation>
@@ -1727,6 +1715,18 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>Channel:</source>
         <translation type="unfinished">Chaîne :</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Lire</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Arrière</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

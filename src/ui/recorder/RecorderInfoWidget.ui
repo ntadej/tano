@@ -1,150 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>RecorderInfoWidget</class>
- <widget class="QWidget" name="RecorderInfoWidget">
+ <widget class="QStackedWidget" name="RecorderInfoWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>221</width>
+    <height>180</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Form</string>
+  <property name="currentIndex">
+   <number>0</number>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2">
-   <item row="9" column="0" colspan="2">
-    <widget class="QPushButton" name="buttonRecordStop">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Currently not recording.</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/16x16/media-playback-stop.png</normaloff>:/icons/16x16/media-playback-stop.png</iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="0" colspan="2">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="labelStatus">
-     <property name="text">
-      <string>&lt;b&gt;Status&lt;/b&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="labelCurrent">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Recording:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="labelTime">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Elapsed:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="labelEndTime">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>End time:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0" colspan="2">
-    <widget class="QLabel" name="labelFile">
-     <property name="text">
-      <string>Output:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="valueCurrent">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QLabel" name="valueTime">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1">
-    <widget class="QLabel" name="valueEndTime">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0" colspan="2">
-    <widget class="ScrollingWidget" name="valueFile" native="true"/>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="labelChannel">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>Channel:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLabel" name="valueChannel">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <widget class="QWidget" name="pageMain">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="9" column="0" colspan="2">
+     <widget class="QPushButton" name="buttonRecordStop">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Currently not recording.</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../data/icons.qrc">
+        <normaloff>:/icons/16x16/media-playback-stop.png</normaloff>:/icons/16x16/media-playback-stop.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="labelStatus">
+      <property name="text">
+       <string>&lt;b&gt;Status&lt;/b&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelCurrent">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Recording:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="labelTime">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Elapsed:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="labelEndTime">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>End time:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QLabel" name="labelFile">
+      <property name="text">
+       <string>Output:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="valueCurrent">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="valueTime">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLabel" name="valueEndTime">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0" colspan="2">
+     <widget class="ScrollingWidget" name="valueFile" native="true"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelChannel">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Channel:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="valueChannel">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0" colspan="2">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="pageRecording">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="buttonRPlay">
+      <property name="text">
+       <string>Play</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="buttonRDelete">
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="buttonRBack">
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="3">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="pageTimer">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="TimersEditorWidget" name="editor" native="true"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonTBack">
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
    <class>ScrollingWidget</class>
    <extends>QWidget</extends>
    <header>ui/core/ScrollingWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TimersEditorWidget</class>
+   <extends>QWidget</extends>
+   <header>ui/recorder/TimersEditorWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
