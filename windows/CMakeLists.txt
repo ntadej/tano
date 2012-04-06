@@ -17,6 +17,40 @@
 #############################################################################
 # Windows Extra #
 #################
+
+MACRO(NSIS_FILE_OUTPUT outfiles path)
+    FOREACH(it ${ARGN})
+        STRING_SPLIT(list "/" ${it})
+        LIST(GET list -1 file)
+
+        SET(files "${files}\${File} \"${path}\" \"${file}\"\n")
+    ENDFOREACH(it)
+
+    SET(${outfiles} ${files})
+    SET(files "")
+ENDMACRO(NSIS_FILE_OUTPUT)
+
+MACRO(NSIS_VLC_PLUGINS outfiles)
+    FOREACH(type ${ARGN})
+        FILE(GLOB plugins ${LIBVLCQT_BIN_DIR}/plugins/${type}/*.dll)
+        NSIS_FILE_OUTPUT(fplugins "..\\\\plugins\\\\${type}" ${plugins})
+
+        SET(output "${output}\${SetOutPath} \"$INSTDIR\\plugins\\${type}\"\n")
+        SET(output "${output}${fplugins}\n")
+    ENDFOREACH(type)
+
+    SET(output "${output}\${SetOutPath} \"$INSTDIR\\plugins\"\n")
+    SET(output "${output}\${File} \"..\\plugins\" \"plugins.dat\"\n")
+    SET(${outfiles} ${output})
+ENDMACRO(NSIS_VLC_PLUGINS)
+
+MACRO(INSTALL_VLC_PLUGINS)
+    FOREACH(type ${ARGN})
+        FILE(GLOB Vlc_Plugins ${LIBVLCQT_BIN_DIR}/plugins/${type}/*.dll)
+        INSTALL(FILES ${Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/plugins/${type}")
+    ENDFOREACH(type)
+ENDMACRO(INSTALL_VLC_PLUGINS)
+
 SET(Tano_Vlc_Plugin_Types
     3dnow
     access
@@ -46,24 +80,18 @@ SET(Tano_Vlc_Plugin_Types
     visualization
 )
 
-MACRO(VLC_INSTALL_PLUGINS)
-    FOREACH(type ${ARGN})
-        FILE(GLOB Vlc_Plugins ${LIBVLCQT_BIN_DIR}/plugins/${type}/*.dll)
-        INSTALL(FILES ${Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/plugins/${type}")
-    ENDFOREACH(type)
-ENDMACRO(VLC_INSTALL_PLUGINS)
-
 IF(MINGW)
     SET(Tano_Installer
         LICENSE.GPL.TXT
-        tano.nsi
+
+        tano-player.nsi
         tano-editor.nsi
-        tano-install.nsh
-        tano-install-editor.nsh
-        tano-language.nsh
-        tano-ui.nsh
-        tano-uninstall.nsh
-        tano-uninstall-editor.nsh
+
+        InstallerLanguage.nsh
+        InstallerUI.nsh
+
+        UAC.nsh
+        UninstallLog.nsh
     )
     SET(Tano_Installer_Theme
         installer-theme/header.bmp
@@ -84,7 +112,6 @@ IF(MINGW)
         ${QT_BIN_DIR}/QtCore4.dll
         ${QT_BIN_DIR}/QtGui4.dll
         ${QT_BIN_DIR}/QtNetwork4.dll
-        ${QT_BIN_DIR}/QtSvg4.dll
         ${QT_BIN_DIR}/QtXml4.dll
         ${QT_BIN_DIR}/libgcc_s_dw2-1.dll
         ${QT_BIN_DIR}/mingwm10.dll
@@ -94,16 +121,57 @@ IF(MINGW)
         ${LIBVLCQT_BIN_DIR}/libvlc.dll
         ${LIBVLCQT_BIN_DIR}/libvlccore.dll
     )
+
+    FILE(GLOB Tano_Language ${CMAKE_BINARY_DIR}/lang/*.qm)
 ENDIF(MINGW)
 
+
+########################
+# Installer generation #
+########################
+IF(GIT_OUT)
+    SET(TANO_WIN_VERSION ${TANO_VERSION}-${PROJECT_VERSION_PATCH})
+ELSE(GIT_OUT)
+    SET(TANO_WIN_VERSION ${TANO_VERSION})
+ENDIF(GIT_OUT)
+
+NSIS_FILE_OUTPUT(NSIS_Qt ".." ${Tano_Qt_Lib})
+NSIS_FILE_OUTPUT(NSIS_Language "..\\\\lang" ${Tano_Language})
+NSIS_FILE_OUTPUT(NSIS_VLC ".." ${Tano_Vlc_Libs})
+NSIS_VLC_PLUGINS(NSIS_VLC_Plugins ${Tano_Vlc_Plugin_Types})
+
+CONFIGURE_FILE(
+    ${CMAKE_SOURCE_DIR}/windows/InstallerConfig.nsh.in
+    ${CMAKE_BINARY_DIR}/windows/InstallerConfig.nsh
+    @ONLY
+)
+
+CONFIGURE_FILE(
+    ${CMAKE_SOURCE_DIR}/windows/InstallerFiles.nsh.in
+    ${CMAKE_BINARY_DIR}/windows/InstallerFiles.nsh
+    @ONLY
+)
+
+CONFIGURE_FILE(
+    ${CMAKE_SOURCE_DIR}/windows/InstallerFilesEditor.nsh.in
+    ${CMAKE_BINARY_DIR}/windows/InstallerFilesEditor.nsh
+    @ONLY
+)
+
+SET(Tano_Installer_Generated
+    ${CMAKE_BINARY_DIR}/windows/InstallerConfig.nsh
+    ${CMAKE_BINARY_DIR}/windows/InstallerFiles.nsh
+    ${CMAKE_BINARY_DIR}/windows/InstallerFilesEditor.nsh
+)
 
 ################
 # Installation #
 ################
 IF(MINGW)
     INSTALL(FILES ${Tano_Installer} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows")
+    INSTALL(FILES ${Tano_Installer_Generated} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows")
     INSTALL(FILES ${Tano_Installer_Theme} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows/installer-theme")
     INSTALL(FILES ${Tano_Qt_Lib} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
     INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-    VLC_INSTALL_PLUGINS(${Tano_Vlc_Plugin_Types})
+    INSTALL_VLC_PLUGINS(${Tano_Vlc_Plugin_Types})
 ENDIF(MINGW)

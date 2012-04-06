@@ -41,16 +41,16 @@
 ; Config
     !include "InstallerConfig.nsh"
 
-    Name "Tano Editor ${VERSION}"
-    OutFile "tano_editor_${VERSION}_win32.exe"
-    InstallDir "$PROGRAMFILES\Tano Editor"
+    Name "Tano ${VERSION}"
+    OutFile "tano_${VERSION}_win32.exe"
+    InstallDir "$PROGRAMFILES\Tano"
 
     BrandingText "${COMPANY} | ${URL}"
 
     !define REG_APP HKCU
-    !define REG_APP_PATH "Software\Tano Editor"
+    !define REG_APP_PATH "Software\Tano Player"
     !define REG_UNINSTALL HKLM
-    !define REG_UNINSTALL_PATH "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Editor"
+    !define REG_UNINSTALL_PATH "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Player"
 
     InstType $(S_Minimum)
     InstType $(S_Full)
@@ -88,20 +88,20 @@
     !insertmacro MUI_PAGE_LICENSE "LICENSE.GPL.TXT"
     !insertmacro MUI_PAGE_COMPONENTS
     !insertmacro MUI_PAGE_DIRECTORY
-  
+
 ; Start Menu Folder Page Configuration
     !define MUI_STARTMENUPAGE_REGISTRY_ROOT "${REG_APP}"
     !define MUI_STARTMENUPAGE_REGISTRY_KEY "${REG_APP_PATH}"
     !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "StartMenu"
-    !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Tano Editor"
-  
+    !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Tano"
+
     !insertmacro MUI_PAGE_STARTMENU Application $STARTMENU_FOLDER
-  
+
     !insertmacro MUI_PAGE_INSTFILES
     !define MUI_FINISHPAGE_RUN
     !define MUI_FINISHPAGE_RUN_FUNCTION PageFinishRun
     !insertmacro MUI_PAGE_FINISH
-  
+
     !insertmacro MUI_UNPAGE_WELCOME
     !insertmacro MUI_UNPAGE_CONFIRM
     !insertmacro MUI_UNPAGE_INSTFILES
@@ -122,7 +122,7 @@
 ; If you are using solid compression, files that are required before
 ; the actual installation should be stored first in the data block,
 ; because this will make your installer start faster.
-  
+
     !insertmacro MUI_RESERVEFILE_LANGDLL
 
 ;--------------------------------
@@ -205,40 +205,40 @@ SectionEnd
 ; Installer Sections
 ;--------------------------------
 
-Section $(NAME_SecEditor) SecEditor
+Section $(NAME_SecMain) SecMain
     SectionIn 1 2 RO
 
-    !include "InstallerFilesEditor.nsh"
+    !include "InstallerFiles.nsh"
   
   
 ; Store installation folder
     ${WriteRegStr} ${REG_APP} "${REG_APP_PATH}" "" $INSTDIR
-  
+
 ; Create uninstaller
     ${WriteUninstaller} "$INSTDIR\Uninstall.exe"
-  
+
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     
 ; Create shortcuts
     ${CreateDirectory} "$SMPROGRAMS\$STARTMENU_FOLDER"
-    ${CreateShortCut} "$SMPROGRAMS\$STARTMENU_FOLDER\Tano Editor.lnk" "$INSTDIR\tano-editor.exe" "" "" ""
+    ${CreateShortCut} "$SMPROGRAMS\$STARTMENU_FOLDER\Tano.lnk" "$INSTDIR\tano.exe" "" "" ""
     ${CreateShortCut} "$SMPROGRAMS\$STARTMENU_FOLDER\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "" ""
-  
+
     !insertmacro MUI_STARTMENU_WRITE_END
   
-    ${WriteRegStr} ${REG_UNINSTALL} "${REG_UNINSTALL_PATH}" "DisplayName" "Tano Editor ${VERSION} (remove only)"
+    ${WriteRegStr} ${REG_UNINSTALL} "${REG_UNINSTALL_PATH}" "DisplayName" "Tano ${VERSION} (remove only)"
     ${WriteRegStr} ${REG_UNINSTALL} "${REG_UNINSTALL_PATH}" "UninstallString" "$INSTDIR\Uninstall.exe"
 
 SectionEnd
 
 Section $(NAME_SecDesk) SecDesk
     SectionIn 2
-    ${CreateShortCut} "$DESKTOP\Tano Editor.lnk" "$INSTDIR\tano-editor.exe" "" "" ""
+    ${CreateShortCut} "$DESKTOP\Tano.lnk" "$INSTDIR\tano.exe" "" "" ""
 SectionEnd
 
 Section $(NAME_SecQuick) SecQuick
     SectionIn 2
-    ${CreateShortCut} "$QUICKLAUNCH\Tano Editor.lnk" "$INSTDIR\tano-editor.exe" "" "" ""
+    ${CreateShortCut} "$QUICKLAUNCH\Tano.lnk" "$INSTDIR\tano.exe" "" "" ""
 SectionEnd
 
 ;--------------------------------
@@ -250,7 +250,7 @@ SectionEnd
 
 ; Assign language strings to sections
     !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-    !insertmacro MUI_DESCRIPTION_TEXT ${SecEditor} $(DESC_SecEditor)
+    !insertmacro MUI_DESCRIPTION_TEXT ${SecMain} $(DESC_SecMain)
     !insertmacro MUI_DESCRIPTION_TEXT ${SecDesk} $(DESC_SecDesk)
     !insertmacro MUI_DESCRIPTION_TEXT ${SecQuick} $(DESC_SecQuick)
     !insertmacro MUI_FUNCTION_DESCRIPTION_END
@@ -263,12 +263,12 @@ Function .onInit
     !insertmacro Init "installer"
 
     !insertmacro MUI_LANGDLL_DISPLAY
-  
+
     ReadRegStr $0 "${REG_UNINSTALL}" "${REG_UNINSTALL_PATH}" "UninstallString"
     StrCmp $0 "" done
- 
+
     MessageBox MB_YESNO|MB_ICONEXCLAMATION $(PRE_E) IDNO done
- 
+
 ; Run the uninstaller
 ;   uninst:
         ClearErrors
@@ -284,7 +284,7 @@ Function un.onInit
 FunctionEnd
 
 Function PageFinishRun
-    !insertmacro UAC_AsUser_ExecShell "" "$INSTDIR\tano-editor.exe" "" "" ""
+    !insertmacro UAC_AsUser_ExecShell "" "$INSTDIR\tano.exe" "" "" ""
 FunctionEnd
 
 ;--------------------------------

@@ -31,6 +31,8 @@ set(CMAKE_MODULE_PATH
     ${CMAKE_SOURCE_DIR}/cmake
 )
 
+INCLUDE(ManageString)
+
 # Set MingW bin dir, if MingW present
 IF(MINGW)
     STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" MINGW_BIN_DIR_TMP "${CMAKE_CXX_COMPILER}")
