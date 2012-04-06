@@ -1391,6 +1391,22 @@ You will lose any unsaved changes.</source>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsBackend</name>
@@ -2081,10 +2097,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Disabled:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>New Task</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2098,6 +2110,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

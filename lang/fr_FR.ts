@@ -1728,6 +1728,22 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsBackend</name>
@@ -2980,7 +2996,7 @@ Vos changements ne seront pas appliqués.</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation type="unfinished">Dévalidé :</translation>
+        <translation type="obsolete">Dévalidé :</translation>
     </message>
     <message>
         <source>New Task</source>
@@ -3005,6 +3021,10 @@ Vos changements ne seront pas appliqués.</translation>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="obsolete">Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom.</translation>
+    </message>
+    <message>
+        <source>Disable:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

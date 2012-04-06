@@ -175,7 +175,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Disabled:</string>
+      <string>Disable:</string>
      </property>
     </widget>
    </item>

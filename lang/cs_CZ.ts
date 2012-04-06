@@ -2057,6 +2057,22 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ScheduleListPage</name>
@@ -3586,7 +3602,7 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation type="unfinished">Zakázáno:</translation>
+        <translation type="obsolete">Zakázáno:</translation>
     </message>
     <message>
         <source>New Task</source>
@@ -3611,6 +3627,10 @@ Vaše změny nebudou použity.</translation>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="obsolete">Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název.</translation>
+    </message>
+    <message>
+        <source>Disable:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

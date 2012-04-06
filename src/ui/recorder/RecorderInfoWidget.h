@@ -56,6 +56,8 @@ private:
     Ui::RecorderInfoWidget *ui;
 
     QAction *_actionRecord;
+
+    Timer *_currentTimer;
 };
 
 #endif // TANO_RECORDERINFOWIDGET_H_

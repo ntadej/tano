@@ -19,8 +19,9 @@
 #ifndef TANO_TIMER_H_
 #define TANO_TIMER_H_
 
-#include <QtCore/QDateTime>
+#include <QtCore/QDate>
 #include <QtCore/QString>
+#include <QtCore/QTime>
 
 #include "core/Enums.h"
 #include "core/ListItem.h"
@@ -36,6 +37,7 @@ public:
         ChannelRole,
         UrlRole,
         FileRole,
+        DateRole,
         StartTimeRole,
         EndTimeRole,
         TypeRole,
@@ -65,10 +67,12 @@ public:
     void setUrl(const QString &url);
     inline QString file() const { return _file; }
     void setFile(const QString &file);
-    inline QDateTime startTime() const { return _startTime; }
-    void setStartTime(const QDateTime &startTime);
-    inline QDateTime endTime() const { return _endTime; }
-    void setEndTime(const QDateTime &endTime);
+    inline QDate date() const { return _date; }
+    void setDate(const QDate &date);
+    inline QTime startTime() const { return _startTime; }
+    void setStartTime(const QTime &startTime);
+    inline QTime endTime() const { return _endTime; }
+    void setEndTime(const QTime &endTime);
     inline Tano::TimerType type() const { return _type; }
     void setType(const Tano::TimerType &type);
     inline Tano::TimerState state() const { return _state; }
@@ -79,8 +83,9 @@ private:
     QString _channel;
     QString _url;
     QString _file;
-    QDateTime _startTime;
-    QDateTime _endTime;
+    QDate _date;
+    QTime _startTime;
+    QTime _endTime;
     Tano::TimerType _type;
     Tano::TimerState _state;
 };

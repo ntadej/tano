@@ -141,8 +141,10 @@ void Recorder::recordStart(Timer *timer)
     }
 
     _currentTimer = timer;
-    if (timer->type() == Tano::Instant)
-        timer->setStartTime(QDateTime::currentDateTime());
+    if (timer->type() == Tano::Instant) {
+        timer->setDate(QDate::currentDate());
+        timer->setStartTime(QTime::currentTime());
+    }
 
     _core->record(timer);
 
@@ -181,6 +183,8 @@ void Recorder::recordStop()
         _trayIcon->message(Tano::Record, QStringList());
     }
 
+    if (_currentTimer->type() == Tano::Instant)
+        _currentTimer->setEndTime(QTime::currentTime());
     _currentTimer->setState(Tano::Finished);
     _model->writeTimers();
     _currentTimer = 0;

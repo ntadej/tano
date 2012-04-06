@@ -2200,6 +2200,22 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ScheduleListPage</name>
@@ -3795,7 +3811,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation type="unfinished">Izključen:</translation>
+        <translation type="obsolete">Izključen:</translation>
     </message>
     <message>
         <source>New Task</source>
@@ -3820,6 +3836,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="obsolete">Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime.</translation>
+    </message>
+    <message>
+        <source>Disable:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

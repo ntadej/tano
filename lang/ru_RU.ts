@@ -1888,6 +1888,22 @@ You will lose any unsaved changes.</source>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ScheduleListPage</name>
@@ -3251,7 +3267,7 @@ You changes will not be applied.</source>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation type="unfinished">Откл.:</translation>
+        <translation type="obsolete">Откл.:</translation>
     </message>
     <message>
         <source>New Task</source>
@@ -3276,6 +3292,10 @@ You changes will not be applied.</source>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="obsolete">Таймер с таким именем уже существует. Выберите другое имя.</translation>
+    </message>
+    <message>
+        <source>Disable:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

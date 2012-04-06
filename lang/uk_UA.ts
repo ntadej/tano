@@ -1734,6 +1734,22 @@ You will lose any unsaved changes.</source>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duration:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsBackend</name>
@@ -2986,7 +3002,7 @@ You changes will not be applied.</source>
     </message>
     <message>
         <source>Disabled:</source>
-        <translation type="unfinished">Вимкнено:</translation>
+        <translation type="obsolete">Вимкнено:</translation>
     </message>
     <message>
         <source>New Task</source>
@@ -3011,6 +3027,10 @@ You changes will not be applied.</source>
     <message>
         <source>Timer with this name already exists. Please select another name.</source>
         <translation type="obsolete">Таймер з такою назвою вже існує. Будь ласка оберіть іншу назву.</translation>
+    </message>
+    <message>
+        <source>Disable:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

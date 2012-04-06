@@ -1348,6 +1348,22 @@ msgctxt "RecorderInfoWidget|"
 msgid "Back"
 msgstr ""
 
+msgctxt "RecorderInfoWidget|"
+msgid "Time:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Duration:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "File:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "at"
+msgstr ""
+
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr ""
@@ -1997,10 +2013,6 @@ msgid "End time:"
 msgstr ""
 
 msgctxt "TimersEditorWidget|"
-msgid "Disabled:"
-msgstr ""
-
-msgctxt "TimersEditorWidget|"
 msgid "New Task"
 msgstr ""
 
@@ -2014,6 +2026,10 @@ msgstr ""
 
 msgctxt "TimersEditorWidget|"
 msgid "Close"
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid "Disable:"
 msgstr ""
 
 msgctxt "TrayIcon|"

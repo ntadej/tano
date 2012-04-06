@@ -19,8 +19,9 @@
 #ifndef TANO_RECORDERCORE_H_
 #define TANO_RECORDERCORE_H_
 
-#include <QtCore/QDateTime>
+#include <QtCore/QDate>
 #include <QtCore/QObject>
+#include <QtCore/QTime>
 #include <QtCore/QTimer>
 
 // VLC-Qt
@@ -46,7 +47,8 @@ public:
 
     static QString fileName(const QString &name,
                             const QString &channel,
-                            const QDateTime &time);
+                            const QDate &date,
+                            const QTime &time);
 
 public slots:
     void record(Timer *t);

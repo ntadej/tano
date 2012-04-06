@@ -74,13 +74,17 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
         if (_timer) {
             _timer->setFile(_currentText);
         }
-    } else if (qName == "starttime") {
+    } else if (qName == "date") {
         if (_timer) {
-            _timer->setStartTime(QDateTime::fromString(_currentText, Qt::ISODate));
+            _timer->setDate(QDate::fromString(_currentText, Qt::ISODate));
         }
-    } else if (qName == "endtime") {
+    } else if (qName == "start") {
         if (_timer) {
-            _timer->setEndTime(QDateTime::fromString(_currentText, Qt::ISODate));
+            _timer->setStartTime(QTime::fromString(_currentText, Qt::ISODate));
+        }
+    } else if (qName == "end") {
+        if (_timer) {
+            _timer->setEndTime(QTime::fromString(_currentText, Qt::ISODate));
         }
     } else if (qName == "type") {
         if (_timer) {

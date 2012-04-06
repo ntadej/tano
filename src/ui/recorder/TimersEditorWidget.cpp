@@ -55,13 +55,6 @@ void TimersEditorWidget::createConnections()
     //connect(ui->buttonCancel, SIGNAL(clicked()), this, SLOT(cancel()));
     //connect(ui->buttonSave, SIGNAL(clicked()), this, SLOT(write()));
     //connect(ui->buttonDelete, SIGNAL(clicked()), this, SLOT(deleteItem()));
-
-    /*connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(editName(QString)));
-    connect(ui->editType, SIGNAL(currentIndexChanged(int)), this, SLOT(editType(int)));
-    connect(ui->editDate, SIGNAL(dateChanged(QDate)), this, SLOT(editDate(QDate)));
-    connect(ui->editStartTime, SIGNAL(timeChanged(QTime)), this, SLOT(editStartTime(QTime)));
-    connect(ui->editEndTime, SIGNAL(timeChanged(QTime)), this, SLOT(editEndTime(QTime)));
-    connect(ui->checkBoxDisabled, SIGNAL(clicked()), this, SLOT(validate()));*/
 }
 
 void TimersEditorWidget::write()
@@ -91,53 +84,9 @@ void TimersEditorWidget::edit(Timer *item)
     ui->editChannel->setText(_currentTimer->channel());
     ui->editUrl->setText(_currentTimer->url());
     ui->editType->setCurrentIndex(_currentTimer->type());
-    ui->editDate->setDate(_currentTimer->startTime().date());
-    ui->editStartTime->setTime(_currentTimer->startTime().time());
-    ui->editEndTime->setTime(_currentTimer->endTime().time());
-}
-
-void TimersEditorWidget::editName(const QString &name)
-{
-    /*for (int i = 0; i < _timersModel->rowCount(); i++)
-        if (_timersModel->row(i)->name() == name && _timersModel->row(i) != _currentTimer) {
-            QMessageBox::warning(this, tr("Tano"),
-                                tr("Timer with this name already exists. Please select another name."));
-            ui->editName->setText(_currentTimer->name());
-            return;
-        }*/
-
-    _currentTimer->setName(name);
-}
-
-void TimersEditorWidget::editType(const int &type)
-{
-    _currentTimer->setType(Tano::TimerType(type));
-}
-
-void TimersEditorWidget::editDate(const QDate &date)
-{
-    QDateTime start = _currentTimer->startTime();
-    QDateTime end = _currentTimer->endTime();
-    start.setDate(date);
-    end.setDate(date);
-    _currentTimer->setStartTime(start);
-    _currentTimer->setEndTime(end);
-}
-
-void TimersEditorWidget::editStartTime(const QTime &time)
-{
-    QDateTime start = _currentTimer->startTime();
-    start.setTime(time);
-    _currentTimer->setStartTime(start);
-    validate();
-}
-
-void TimersEditorWidget::editEndTime(const QTime &time)
-{
-    QDateTime end = _currentTimer->endTime();
-    end.setTime(time);
-    _currentTimer->setEndTime(end);
-    validate();
+    ui->editDate->setDate(_currentTimer->date());
+    ui->editStartTime->setTime(_currentTimer->startTime());
+    ui->editEndTime->setTime(_currentTimer->endTime());
 }
 
 void TimersEditorWidget::validate()

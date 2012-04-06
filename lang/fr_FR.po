@@ -1796,6 +1796,22 @@ msgctxt "RecorderInfoWidget|"
 msgid "Delete"
 msgstr ""
 
+msgctxt "RecorderInfoWidget|"
+msgid "Time:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Duration:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "File:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "at"
+msgstr ""
+
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr "Lecteur VLC-Qt"
@@ -3094,10 +3110,9 @@ msgctxt "TimersEditorWidget|"
 msgid "End time:"
 msgstr ""
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Disabled:"
-msgstr "Dévalidé :"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Disabled:"
+#~ msgstr "Dévalidé :"
 
 #, fuzzy
 msgctxt "TimersEditorWidget|"
@@ -3127,6 +3142,10 @@ msgstr "Fermer"
 #~ msgid "Timer with this name already exists. Please select another name."
 #~ msgstr ""
 #~ "Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom."
+
+msgctxt "TimersEditorWidget|"
+msgid "Disable:"
+msgstr ""
 
 msgctxt "TrayIcon|"
 msgid "Tano"

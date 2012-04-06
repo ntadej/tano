@@ -33,8 +33,9 @@ Timer::Timer(const QString &name,
       _type(type)
 {
     _file = "";
-    _startTime = QDateTime(QDate::currentDate(), QTime(QTime::currentTime().hour(), QTime::currentTime().minute() + 1, 0, 0));
-    _endTime = _startTime.addSecs(3600);
+    _date = QDate::currentDate();
+    _startTime = QTime(QTime::currentTime().hour(), 0);
+    _endTime = QTime(QTime::currentTime().hour() + 1, 0);
     _state = Tano::Enabled;
 }
 
@@ -49,6 +50,7 @@ QHash<int, QByteArray> Timer::roleNames() const
     names[ChannelRole] = "channel";
     names[UrlRole] = "url";
     names[FileRole] = "file";
+    names[DateRole] = "date";
     names[StartTimeRole] = "start";
     names[EndTimeRole] = "end";
     names[TypeRole] = "type";
@@ -70,6 +72,8 @@ QVariant Timer::data(int role) const
         return channel();
     case UrlRole:
         return url();
+    case DateRole:
+        return date();
     case StartTimeRole:
         return startTime();
     case EndTimeRole:
@@ -88,11 +92,11 @@ QString Timer::display() const
     if (state() == Tano::Finished)
         return QString("%1 - %3 - %4 %5 %6")
             .arg(name(), channel(),
-                 startTime().date().toString("dd.M.yyyy"), tr("at"), startTime().time().toString("hh:mm"));
+                 date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"));
     else
         return QString("%1 (%2) - %3 - %4 %5 %6")
             .arg(name(), Tano::timerStates()[state()], channel(),
-                 startTime().date().toString("dd.M.yyyy"), tr("at"), startTime().time().toString("hh:mm"));
+                 date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"));
 }
 
 QIcon Timer::displayIcon() const
@@ -137,7 +141,15 @@ void Timer::setFile(const QString &file)
     }
 }
 
-void Timer::setStartTime(const QDateTime &startTime)
+void Timer::setDate(const QDate &date)
+{
+    if (_date != date) {
+        _date = date;
+        emit dataChanged();
+    }
+}
+
+void Timer::setStartTime(const QTime &startTime)
 {
     if (_startTime != startTime) {
         _startTime = startTime;
@@ -145,7 +157,7 @@ void Timer::setStartTime(const QDateTime &startTime)
     }
 }
 
-void Timer::setEndTime(const QDateTime &endTime)
+void Timer::setEndTime(const QTime &endTime)
 {
     if (_endTime != endTime) {
         _endTime = endTime;

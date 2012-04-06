@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/qmath.h>
 #include <QtCore/QTime>
 
 #include "container/core/Timer.h"
@@ -30,6 +31,7 @@ RecorderInfoWidget::RecorderInfoWidget(QWidget *parent)
 {
     ui->setupUi(this);
     ui->valueFile->removeBorder();
+    ui->valueRFile->removeBorder();
 
     connect(ui->buttonRBack, SIGNAL(clicked()), this, SLOT(backToMain()));
     connect(ui->buttonTBack, SIGNAL(clicked()), this, SLOT(backToMain()));
@@ -54,6 +56,8 @@ void RecorderInfoWidget::changeEvent(QEvent *e)
 
 void RecorderInfoWidget::backToMain()
 {
+    _currentTimer = 0;
+
     setCurrentIndex(0);
 }
 
@@ -61,7 +65,15 @@ void RecorderInfoWidget::recordingInfo(Timer *timer)
 {
     setCurrentIndex(1);
 
-    //
+    _currentTimer = timer;
+
+    qreal duration = timer->startTime().secsTo(timer->endTime());
+
+    ui->valueRName->setText("<b>" + timer->name() + "</b>");
+    ui->valueRChannel->setText(timer->channel());
+    ui->valueRTime->setText(QString("%1 %2 %3").arg(timer->date().toString("dd.MM.yyyy"), tr("at"), timer->startTime().toString("hh:mm")));
+    ui->valueRDuration->setText(QTime(0, qCeil(duration/60)).toString("hh:mm"));
+    ui->valueRFile->setText(timer->file());
 }
 
 void RecorderInfoWidget::setAction(QAction *action)

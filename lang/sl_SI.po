@@ -2231,6 +2231,22 @@ msgctxt "RecorderInfoWidget|"
 msgid "Delete"
 msgstr ""
 
+msgctxt "RecorderInfoWidget|"
+msgid "Time:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Duration:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "File:"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "at"
+msgstr ""
+
 #~ msgctxt "ScheduleListPage|"
 #~ msgid "Schedule"
 #~ msgstr "Spored"
@@ -3868,10 +3884,9 @@ msgctxt "TimersEditorWidget|"
 msgid "End time:"
 msgstr "Konec:"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Disabled:"
-msgstr "Izključen:"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Disabled:"
+#~ msgstr "Izključen:"
 
 #, fuzzy
 msgctxt "TimersEditorWidget|"
@@ -3900,6 +3915,10 @@ msgstr "Zapri"
 #~ msgctxt "TimersEditorWidget|"
 #~ msgid "Timer with this name already exists. Please select another name."
 #~ msgstr "Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime."
+
+msgctxt "TimersEditorWidget|"
+msgid "Disable:"
+msgstr ""
 
 msgctxt "TrayIcon|"
 msgid "Tano"

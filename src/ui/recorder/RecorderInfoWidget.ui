@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>221</width>
-    <height>180</height>
+    <height>266</height>
    </rect>
   </property>
   <property name="currentIndex">
@@ -143,28 +143,116 @@
   </widget>
   <widget class="QWidget" name="pageRecording">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QPushButton" name="buttonRPlay">
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="valueRName"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelRChannel">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
-       <string>Play</string>
+       <string>Channel:</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QPushButton" name="buttonRDelete">
+    <item row="1" column="1">
+     <widget class="QLabel" name="valueRChannel">
       <property name="text">
-       <string>Delete</string>
+       <string/>
       </property>
      </widget>
     </item>
-    <item row="0" column="2">
-     <widget class="QPushButton" name="buttonRBack">
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelRTime">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
-       <string>Back</string>
+       <string>Time:</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0" colspan="3">
+    <item row="2" column="1">
+     <widget class="QLabel" name="valueRTime"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="labelRDuration">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Duration:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="valueRDuration"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="labelRFile">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>File:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="ScrollingWidget" name="valueRFile" native="true"/>
+    </item>
+    <item row="6" column="0" colspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="buttonRPlay">
+        <property name="text">
+         <string>Play</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../data/icons.qrc">
+          <normaloff>:/icons/24x24/media-playback-start.png</normaloff>:/icons/24x24/media-playback-start.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonRDelete">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../data/icons.qrc">
+          <normaloff>:/icons/24x24/remove.png</normaloff>:/icons/24x24/remove.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="7" column="0" colspan="2">
      <spacer name="verticalSpacer_2">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -176,6 +264,17 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item row="8" column="0" colspan="2">
+     <widget class="QPushButton" name="buttonRBack">
+      <property name="text">
+       <string>Back</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../../../data/icons.qrc">
+        <normaloff>:/icons/16x16/go-previous.png</normaloff>:/icons/16x16/go-previous.png</iconset>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

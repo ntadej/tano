@@ -44,12 +44,6 @@ private slots:
 
     void validate();
 
-    void editName(const QString &name);
-    void editType(const int &type);
-    void editDate(const QDate &date);
-    void editStartTime(const QTime &time);
-    void editEndTime(const QTime &time);
-
     void cancel();
     void deleteItem();
     void write();
