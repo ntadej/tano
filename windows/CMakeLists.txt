@@ -113,8 +113,6 @@ IF(MINGW)
         ${QT_BIN_DIR}/QtGui4.dll
         ${QT_BIN_DIR}/QtNetwork4.dll
         ${QT_BIN_DIR}/QtXml4.dll
-        ${QT_BIN_DIR}/libgcc_s_dw2-1.dll
-        ${QT_BIN_DIR}/mingwm10.dll
     )
     SET(Tano_Vlc_Libs
         ${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
