@@ -2031,6 +2031,10 @@ msgctxt "Recorder|"
 msgid "Recording not valid!"
 msgstr ""
 
+msgctxt "Recorder|"
+msgid "Cannot delete the recording"
+msgstr ""
+
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Status"
 #~ msgstr "Stav"
@@ -2115,6 +2119,16 @@ msgstr ""
 
 msgctxt "RecorderInfoWidget|"
 msgid "at"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Recorder"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid ""
+"Are you sure you want to delete the recording?\n"
+"This operation is ireversible."
 msgstr ""
 
 #~ msgctxt "ScheduleListPage|"

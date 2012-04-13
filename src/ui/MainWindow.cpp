@@ -34,6 +34,7 @@
 #include "ui_MainWindow.h"
 
 #include "container/core/Channel.h"
+#include "container/core/Timer.h"
 #include "core/ChannelSelect.h"
 #include "core/Common.h"
 #include "core/GetFile.h"
@@ -400,6 +401,7 @@ void MainWindow::createConnections()
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
     connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
     connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
+    connect(ui->recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
 }
 
 void MainWindow::createMenus()
@@ -606,6 +608,18 @@ void MainWindow::playLocal(const QString &path)
     tooltip(t);
 
     play();
+}
+
+void MainWindow::playRecording(Timer *recording)
+{
+    recorder(false);
+
+    playLocal(recording->file());
+
+    _osdMain->setRecording(recording->name(), recording->display().replace(recording->name() + " - ",""));
+    _osdFloat->setRecording(recording->name(), recording->display().replace(recording->name() + " - ",""));
+    tooltip(recording->name());
+    _trayIcon->changeToolTip(Tano::Main, recording->name());
 }
 
 void MainWindow::playUrl(const QString &url)

@@ -51,6 +51,7 @@ class OsdWidget;
 class PlaylistEditor;
 class PlaylistModel;
 class PlaylistUpdate;
+class Timer;
 class TrayIcon;
 class Udpxy;
 class XmltvManager;
@@ -89,6 +90,7 @@ private slots:
 
     void playChannel(Channel* channel);
     void playLocal(const QString &path);
+    void playRecording(Timer* recording);
     void playUrl(const QString &url);
     void stop();
     void setPlayingState(const Vlc::State &state);

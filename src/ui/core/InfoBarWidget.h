@@ -30,10 +30,12 @@ public:
 
 public slots:
     void clear();
-    void setInfo(const QString &channel,
-                 const QString &language = 0);
-    void setEpg(const QString &now,
-                const QString &next);
+    void setChannelEpg(const QString &now,
+                       const QString &next);
+    void setChannelInfo(const QString &name,
+                        const QString &language = 0);
+    void setRecordingInfo(const QString &name,
+                          const QString &info = 0);
 
 private:
     QString _spacer;

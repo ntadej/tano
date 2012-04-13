@@ -44,13 +44,19 @@ public:
 protected:
     void changeEvent(QEvent *e);
 
+signals:
+    void deleteRecording(Timer *);
+    void playRecording(Timer *);
+
 public slots:
-     void time(const int &time);
+    void time(const int &time);
 
 private slots:
-     void backToMain();
-     void recordingInfo(Timer *timer);
-     void timerInfo(Timer *timer);
+    void backToMain();
+    void recordingDelete();
+    void recordingInfo(Timer *timer);
+    void recordingPlay();
+    void timerInfo(Timer *timer);
 
 private:
     Ui::RecorderInfoWidget *ui;

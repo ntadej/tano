@@ -1735,6 +1735,10 @@ msgctxt "Recorder|"
 msgid "Recording not valid!"
 msgstr ""
 
+msgctxt "Recorder|"
+msgid "Cannot delete the recording"
+msgstr ""
+
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Status"
 #~ msgstr "Статус"
@@ -1819,6 +1823,17 @@ msgstr ""
 
 msgctxt "RecorderInfoWidget|"
 msgid "at"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Recorder"
+msgstr "Записувач"
+
+msgctxt "RecorderInfoWidget|"
+msgid ""
+"Are you sure you want to delete the recording?\n"
+"This operation is ireversible."
 msgstr ""
 
 msgctxt "SettingsBackend|"

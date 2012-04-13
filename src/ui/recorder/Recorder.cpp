@@ -190,6 +190,18 @@ void Recorder::recordStop()
     _currentTimer = 0;
 }
 
+void Recorder::recordingDelete(Timer *recording)
+{
+    if (!QFile::remove(recording->file())) {
+        QMessageBox::critical(this, tr("Recorder"),
+                    tr("Cannot delete the recording"));
+        return;
+    }
+
+    _model->deleteTimer(recording);
+    _model->writeTimers();
+}
+
 void Recorder::refreshPlaylistModel()
 {
     ui->playlistWidget->refreshModel();
@@ -218,6 +230,8 @@ void Recorder::setWidgets(QAction *action,
     connect(_core, SIGNAL(elapsed(int)), _info, SLOT(time(int)));
     connect(ui->listRecordings, SIGNAL(itemSelected(Timer *)), _info, SLOT(recordingInfo(Timer *)));
     connect(ui->listTimers, SIGNAL(itemSelected(Timer *)), _info, SLOT(timerInfo(Timer *)));
+    connect(_info, SIGNAL(deleteRecording(Timer *)), this, SLOT(recordingDelete(Timer *)));
+    connect(_info, SIGNAL(playRecording(Timer *)), this, SIGNAL(play(Timer *)));
 
     _trayIcon = icon;
 }

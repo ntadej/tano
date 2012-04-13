@@ -2133,6 +2133,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Recording not valid!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cannot delete the recording</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
@@ -2214,6 +2218,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Snemalnik</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete the recording?
+This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

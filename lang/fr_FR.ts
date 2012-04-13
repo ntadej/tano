@@ -1661,6 +1661,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <source>Recording not valid!</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cannot delete the recording</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
@@ -1742,6 +1746,15 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Enregistreur</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete the recording?
+This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

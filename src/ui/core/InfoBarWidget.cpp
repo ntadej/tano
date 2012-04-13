@@ -34,13 +34,21 @@ void InfoBarWidget::clear()
     setText();
 }
 
-void InfoBarWidget::setInfo(const QString &channel,
-                            const QString &language)
+void InfoBarWidget::setChannelEpg(const QString &now,
+                                  const QString &next)
+{
+    _epg = QString("<i>%1</i> %2" + _spacer + "<i>%3</i> %4").arg(tr("Now:"), now, tr("Next:"), next);
+
+    setText(_info + _spacer + _epg);
+}
+
+void InfoBarWidget::setChannelInfo(const QString &name,
+                                   const QString &language)
 {
     if (!language.isEmpty()) {
-        _info = QString("<b>%1</b>" + _spacer + "<i>%2</i> %3").arg(channel, tr("Language:"), language);
+        _info = QString("<b>%1</b>" + _spacer + "<i>%2</i> %3").arg(name, tr("Language:"), language);
     } else {
-        _info = QString("<b>%1</b>").arg(channel);
+        _info = QString("<b>%1</b>").arg(name);
     }
 
     if (!_epg.isEmpty())
@@ -49,10 +57,14 @@ void InfoBarWidget::setInfo(const QString &channel,
         setText(_info);
 }
 
-void InfoBarWidget::setEpg(const QString &now,
-                           const QString &next)
+void InfoBarWidget::setRecordingInfo(const QString &name,
+                                     const QString &info)
 {
-    _epg = QString("<i>%1</i> %2" + _spacer + "<i>%3</i> %4").arg(tr("Now:"), now, tr("Next:"), next);
+    if (!info.isEmpty()) {
+        _info = QString("<b>%1</b>" + _spacer + "%2").arg(name,  info);
+    } else {
+        _info = QString("<b>%1</b>").arg(name);
+    }
 
-    setText(_info + _spacer + _epg);
+    setText(_info);
 }

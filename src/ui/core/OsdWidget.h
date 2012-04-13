@@ -48,6 +48,8 @@ public:
                     const QString &name = 0,
                     const QString &language = 0);
     void setPlayingState(const Vlc::State &state);
+    void setRecording(const QString &name = 0,
+                      const QString &info = 0);
     VlcVolumeSlider *volumeSlider();
 
 protected:

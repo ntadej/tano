@@ -57,6 +57,9 @@ public:
 protected:
     void changeEvent(QEvent *e);
 
+signals:
+    void play(Timer *);
+
 public slots:
     void quickRecord();
     void recordStart(Timer *timer);
@@ -66,6 +69,7 @@ private slots:
     void playlist(Channel* channel);
     void quickRecordCancel();
     void quickRecordStart();
+    void recordingDelete(Timer *recording);
 
 private:
     Ui::Recorder *ui;

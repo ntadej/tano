@@ -18,6 +18,7 @@
 
 #include <QtCore/qmath.h>
 #include <QtCore/QTime>
+#include <QtGui/QMessageBox>
 
 #include "container/core/Timer.h"
 
@@ -35,6 +36,9 @@ RecorderInfoWidget::RecorderInfoWidget(QWidget *parent)
 
     connect(ui->buttonRBack, SIGNAL(clicked()), this, SLOT(backToMain()));
     connect(ui->buttonTBack, SIGNAL(clicked()), this, SLOT(backToMain()));
+
+    connect(ui->buttonRDelete, SIGNAL(clicked()), this, SLOT(recordingDelete()));
+    connect(ui->buttonRPlay, SIGNAL(clicked()), this, SLOT(recordingPlay()));
 }
 
 RecorderInfoWidget::~RecorderInfoWidget()
@@ -61,6 +65,26 @@ void RecorderInfoWidget::backToMain()
     setCurrentIndex(0);
 }
 
+void RecorderInfoWidget::recordingDelete()
+{
+    int r;
+    r = QMessageBox::warning(this, tr("Recorder"),
+                             tr("Are you sure you want to delete the recording?\nThis operation is ireversible."),
+                             QMessageBox::Ok | QMessageBox::Cancel,
+                             QMessageBox::Cancel);
+
+    switch (r)
+    {
+    case QMessageBox::Ok:
+        emit deleteRecording(_currentTimer);
+        backToMain();
+        break;
+    case QMessageBox::Cancel:
+    default:
+        break;
+    }
+}
+
 void RecorderInfoWidget::recordingInfo(Timer *timer)
 {
     setCurrentIndex(1);
@@ -74,6 +98,12 @@ void RecorderInfoWidget::recordingInfo(Timer *timer)
     ui->valueRTime->setText(QString("%1 %2 %3").arg(timer->date().toString("dd.MM.yyyy"), tr("at"), timer->startTime().toString("hh:mm")));
     ui->valueRDuration->setText(QTime(0, qCeil(duration/60)).toString("hh:mm"));
     ui->valueRFile->setText(timer->file());
+}
+
+void RecorderInfoWidget::recordingPlay()
+{
+    emit playRecording(_currentTimer);
+    backToMain();
 }
 
 void RecorderInfoWidget::setAction(QAction *action)
@@ -123,4 +153,5 @@ void RecorderInfoWidget::timerInfo(Timer *timer)
     setCurrentIndex(2);
 
     //
+    Q_UNUSED(timer)
 }

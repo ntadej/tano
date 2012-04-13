@@ -155,7 +155,7 @@ void OsdWidget::setChannel(const int &number,
                            const QString &language)
 {
     if (number) {
-        ui->info->setInfo(name, language);
+        ui->info->setChannelInfo(name, language);
         ui->number->display(number);
     } else {
         ui->info->clear();
@@ -166,7 +166,7 @@ void OsdWidget::setChannel(const int &number,
 void OsdWidget::setEpg(const QString &now,
                        const QString &next)
 {
-    ui->info->setEpg(now, next);
+    ui->info->setChannelEpg(now, next);
 }
 
 void OsdWidget::setLogo(const QString &logo)
@@ -193,6 +193,16 @@ void OsdWidget::setPlayingState(const Vlc::State &state)
         ui->buttonPlay->setStatusTip(tr("Play"));
         ui->buttonMute->setEnabled(false);
         ui->buttonTeletext->setEnabled(false);
+    }
+}
+
+void OsdWidget::setRecording(const QString &name,
+                             const QString &info)
+{
+    if (!name.isEmpty()) {
+        ui->info->setRecordingInfo(name, info);
+    } else {
+        ui->info->clear();
     }
 }
 
