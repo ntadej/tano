@@ -137,7 +137,9 @@ QLCDNumber *OsdWidget::lcd()
 
 void OsdWidget::mute(const bool &enabled)
 {
-    ui->volume->setMute(enabled);
+    if (!_float) {
+        ui->volume->setMute(enabled);
+    }
     ui->buttonMute->setChecked(enabled);
 }
 
