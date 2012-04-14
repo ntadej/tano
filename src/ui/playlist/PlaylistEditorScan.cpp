@@ -98,7 +98,7 @@ void PlaylistEditorScan::checkIp()
         delete _media;
 
     _media = new VlcMedia(_udpxy->processUrl(currentIp()), _instance);
-    _media->record("test", QDir::tempPath());
+    _media->record("test", QDir::tempPath(), Vlc::TS);
     _player->open(_media);
 
     _timer->start(_currentTimeout);

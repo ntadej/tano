@@ -100,6 +100,14 @@ bool Recorder::isRecording() const
     return _core->isRecording();
 }
 
+Timer *Recorder::newInstantTimer(const QString &channel,
+                                 const QString &url)
+{
+    Timer *timer = _model->createTimer(tr("Quick %1").arg(channel), channel, _udpxy->processUrl(url), Tano::Instant);
+
+    return timer;
+}
+
 void Recorder::playlist(Channel *channel)
 {
     _currentChannel = channel;
@@ -186,20 +194,32 @@ void Recorder::recordStop()
     if (_currentTimer->type() == Tano::Instant)
         _currentTimer->setEndTime(QTime::currentTime());
     _currentTimer->setState(Tano::Finished);
-    _model->writeTimers();
+    writeTimers();
     _currentTimer = 0;
 }
 
 void Recorder::recordingDelete(Timer *recording)
 {
     if (!QFile::remove(recording->file())) {
-        QMessageBox::critical(this, tr("Recorder"),
-                    tr("Cannot delete the recording"));
-        return;
+        int r;
+        r = QMessageBox::critical(this, tr("Recorder"),
+                                  tr("File cannot be removed.\nHave you already moved or deleted it?"),
+                                  QMessageBox::Yes | QMessageBox::No,
+                                  QMessageBox::No);
+
+        switch (r)
+        {
+        case QMessageBox::No:
+            return;
+            break;
+        case QMessageBox::Yes:
+        default:
+            break;
+        }
     }
 
     _model->deleteTimer(recording);
-    _model->writeTimers();
+    writeTimers();
 }
 
 void Recorder::refreshPlaylistModel()
@@ -234,4 +254,9 @@ void Recorder::setWidgets(QAction *action,
     connect(_info, SIGNAL(playRecording(Timer *)), this, SIGNAL(play(Timer *)));
 
     _trayIcon = icon;
+}
+
+void Recorder::writeTimers()
+{
+    _model->writeTimers();
 }

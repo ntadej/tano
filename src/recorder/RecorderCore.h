@@ -45,11 +45,6 @@ public:
     void setMediaInstance(VlcInstance *instance);
     void stop();
 
-    static QString fileName(const QString &name,
-                            const QString &channel,
-                            const QDate &date,
-                            const QTime &time);
-
 public slots:
     void record(Timer *t);
 

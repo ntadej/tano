@@ -46,13 +46,17 @@ public:
     ~Recorder();
 
     void createSettings();
+    QString directory() const { return _directory; }
     bool isRecording() const;
+    Timer *newInstantTimer(const QString &channel,
+                           const QString &url);
     void refreshPlaylistModel();
     void setMediaInstance(VlcInstance *instance);
     void setPlaylistModel(PlaylistModel *model);
     void setWidgets(QAction *action,
                     RecorderInfoWidget *info,
                     TrayIcon *icon);
+    void writeTimers();
 
 protected:
     void changeEvent(QEvent *e);

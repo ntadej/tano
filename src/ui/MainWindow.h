@@ -109,7 +109,7 @@ private slots:
     void teletext(const bool &enabled);
     void teletext(const int &page);
 
-    void recordNow();
+    void recordNow(const bool &start);
     void recorder(const bool &enabled);
 
 signals:
@@ -149,6 +149,7 @@ private:
     bool _infoWidgetVisible;
     bool _isLite;
     bool _osdEnabled;
+    bool _recordNow;
     int _sessionChannel;
     bool _sessionVolumeEnabled;
     bool _sessionAutoplayEnabled;
@@ -180,6 +181,7 @@ private:
     Channel *_channel;
     XmltvManager *_xmltv;
     QString _playlistName;
+    Timer *_recording;
     Udpxy *_udpxy;
 
     //GUI

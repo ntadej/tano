@@ -117,6 +117,23 @@ QString Tano::locateResource(const QString &file)
     return path;
 }
 
+QString Tano::recordingFileName(const QString &name,
+                                const QString &channel,
+                                const QDate &date,
+                                const QTime &time)
+{
+    QString f;
+    f.append(QString(name).replace(" ", "_"));
+    f.append("-");
+    f.append(QString(channel).replace(" ", "_"));
+    f.append("-");
+    f.append(date.toString("yyyyMMdd"));
+    f.append("-");
+    f.append(time.toString("hhmmss"));
+
+    return f;
+}
+
 QString Tano::settingsPath()
 {
     QSettings *settings = new QSettings(QSettings::IniFormat,

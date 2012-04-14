@@ -46,6 +46,9 @@ void MenuCore::addItem(QAction *action)
 
 void MenuCore::next()
 {
+    if (_group->actions().isEmpty())
+        return;
+
     if (_group->actions().indexOf(_group->checkedAction()) == _group->actions().size()-1) {
         _group->actions()[0]->trigger();
     } else {
@@ -59,7 +62,7 @@ void MenuCore::setActions(const QList<QAction *> &actions,
     if (type != _type)
         return;
 
-    if (actions.isEmpty()) {
+    if (actions.isEmpty() && type != Vlc::Subtitles) {
         setDisabled(true);
     } else {
         setEnabled(true);

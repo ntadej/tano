@@ -19,8 +19,10 @@
 #ifndef TANO_COMMON_H_
 #define TANO_COMMON_H_
 
+#include <QtCore/QDate>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
+#include <QtCore/QTime>
 
 namespace Tano
 {
@@ -36,6 +38,12 @@ namespace Tano
     QString locateResource(const QString &file);
     QString settingsPath();
     QString timersPath();
+
+    // Misc
+    QString recordingFileName(const QString &name,
+                              const QString &channel,
+                              const QDate &date,
+                              const QTime &time);
 
     // Backend settings
     QStringList vlcQtArgs();

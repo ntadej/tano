@@ -626,6 +626,10 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>Quick record</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Quick</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -2134,7 +2138,12 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cannot delete the recording</source>
+        <source>Quick %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File cannot be removed.
+Have you already moved or deleted it?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

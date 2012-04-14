@@ -53,7 +53,7 @@ public:
     ~Timer();
 
 
-    inline QString id() const { return _name; }
+    inline QString id() const { return _startTime.toString(); }
     QVariant data(int role) const;
     QString display() const;
     QIcon displayIcon() const;

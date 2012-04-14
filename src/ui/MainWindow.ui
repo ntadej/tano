@@ -222,7 +222,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>248</width>
+              <width>240</width>
               <height>260</height>
              </rect>
             </property>
@@ -247,8 +247,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>248</width>
-              <height>196</height>
+              <width>100</width>
+              <height>30</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -696,7 +696,11 @@
     <string>Keyboard shortcuts</string>
    </property>
   </action>
-  <action name="actionRecordNow"/>
+  <action name="actionRecordNow">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>

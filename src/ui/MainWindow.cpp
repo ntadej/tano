@@ -219,6 +219,7 @@ void MainWindow::createBackend()
     ui->videoWidget->setMediaPlayer(_mediaPlayer);
     ui->videoWidget->initDefaultSettings();
     ui->recorder->setMediaInstance(_mediaInstance);
+    _recordNow = false;
 }
 
 void MainWindow::createSettings()
@@ -320,7 +321,6 @@ void MainWindow::createConnections()
     connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
     connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(pause()));
-    connect(ui->actionStop, SIGNAL(triggered()), _mediaPlayer, SLOT(stop()));
     connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 
     connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playChannel(Channel *)));
@@ -354,14 +354,14 @@ void MainWindow::createConnections()
     connect(_osdMain, SIGNAL(muteClicked()), ui->actionMute, SLOT(trigger()));
     connect(_osdMain, SIGNAL(nextClicked()), ui->actionNext, SLOT(trigger()));
     connect(_osdMain, SIGNAL(playClicked()), ui->actionPlay, SLOT(trigger()));
-    connect(_osdMain, SIGNAL(recordNowClicked()), ui->actionRecordNow, SLOT(trigger()));
+    connect(_osdMain, SIGNAL(recordNowClicked(bool)), ui->actionRecordNow, SLOT(setChecked(bool)));
     connect(_osdMain, SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
     connect(_osdMain, SIGNAL(teletextClicked()), ui->actionTeletext, SLOT(trigger()));
     connect(_osdFloat, SIGNAL(backClicked()), ui->actionBack, SLOT(trigger()));
     connect(_osdFloat, SIGNAL(muteClicked()), ui->actionMute, SLOT(trigger()));
     connect(_osdFloat, SIGNAL(nextClicked()), ui->actionNext, SLOT(trigger()));
     connect(_osdFloat, SIGNAL(playClicked()), ui->actionPlay, SLOT(trigger()));
-    connect(_osdFloat, SIGNAL(recordNowClicked()), ui->actionRecordNow, SLOT(trigger()));
+    connect(_osdFloat, SIGNAL(recordNowClicked(bool)), ui->actionRecordNow, SLOT(setChecked(bool)));
     connect(_osdFloat, SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
     connect(_osdFloat, SIGNAL(teletextClicked()), ui->actionTeletext, SLOT(trigger()));
 
@@ -399,7 +399,7 @@ void MainWindow::createConnections()
     connect(_mediaPlayer, SIGNAL(hasVideo(bool)), ui->menuVideo, SLOT(setEnabled(bool)));
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
-    connect(ui->actionRecordNow, SIGNAL(triggered()), this, SLOT(recordNow()));
+    connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
     connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
     connect(ui->recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
 }
@@ -613,6 +613,7 @@ void MainWindow::playLocal(const QString &path)
 void MainWindow::playRecording(Timer *recording)
 {
     recorder(false);
+    ui->actionRecorder->setChecked(false);
 
     playLocal(recording->file());
 
@@ -634,11 +635,19 @@ void MainWindow::playUrl(const QString &url)
     _mediaItem = new VlcMedia(url, _mediaInstance);
     tooltip(url);
 
+    _osdMain->setQuickRecordEnabled(true);
+    _osdFloat->setQuickRecordEnabled(true);
+
     play();
 }
 
 void MainWindow::stop()
 {
+    if (_recordNow)
+        recordNow(false);
+
+    _mediaPlayer->stop();
+
     if (!_videoSettings) {
         _menuAspectRatio->setDefault(Vlc::Ratio(_defaultAspectRatio));
         _menuCropRatio->setDefault(Vlc::Ratio(_defaultCropRatio));
@@ -649,6 +658,8 @@ void MainWindow::stop()
 
     _osdMain->setChannel();
     _osdFloat->setChannel();
+    _osdMain->setQuickRecordEnabled(false);
+    _osdFloat->setQuickRecordEnabled(false);
     ui->actionTeletext->setChecked(false);
     ui->scheduleWidget->setPage(0);
 
@@ -850,9 +861,34 @@ void MainWindow::teletext(const int &page)
 }
 
 // Recorder
-void MainWindow::recordNow()
+void MainWindow::recordNow(const bool &start)
 {
-    // TODO: Record now
+    _osdMain->setQuickRecordChecked(start);
+    _osdFloat->setQuickRecordChecked(start);
+
+    if (!start) {
+        QString media = _mediaItem->currentLocation();
+        _recording->setEndTime(QTime::currentTime());
+        _recording->setState(Tano::Finished);
+        _mediaPlayer->stop();
+        ui->recorder->writeTimers();
+        _recording = 0;
+
+        if (_mediaItem)
+            delete _mediaItem;
+        _mediaItem = new VlcMedia(media, _mediaInstance);
+        play();
+    } else {
+        _recording = ui->recorder->newInstantTimer(_channel->name(), _channel->url());
+        _recording->setDate(QDate::currentDate());
+        _recording->setStartTime(QTime::currentTime());
+        _recording->setState(Tano::Recording);
+        _mediaPlayer->stop();
+        _recording->setFile(_mediaItem->duplicate(Tano::recordingFileName(tr("Quick"), _channel->name(), _recording->date(), _recording->startTime()), ui->recorder->directory(), Vlc::TS));
+        _mediaPlayer->play();
+    }
+
+    _recordNow = start;
 }
 
 void MainWindow::recorder(const bool &enabled)

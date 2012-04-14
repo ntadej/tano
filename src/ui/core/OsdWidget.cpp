@@ -48,7 +48,7 @@ OsdWidget::OsdWidget(QWidget *parent)
     connect(ui->buttonMute, SIGNAL(clicked()), this, SIGNAL(muteClicked()));
     connect(ui->buttonNext, SIGNAL(clicked()), this, SIGNAL(nextClicked()));
     connect(ui->buttonPlay, SIGNAL(clicked()), this, SIGNAL(playClicked()));
-    connect(ui->buttonRecordNow, SIGNAL(clicked()), this, SIGNAL(recordNowClicked()));
+    connect(ui->buttonRecordNow, SIGNAL(toggled(bool)), this, SIGNAL(recordNowClicked(bool)));
     connect(ui->buttonStop, SIGNAL(clicked()), this, SIGNAL(stopClicked()));
     connect(ui->buttonTeletext, SIGNAL(clicked()), this, SIGNAL(teletextClicked()));
 }
@@ -195,6 +195,18 @@ void OsdWidget::setPlayingState(const Vlc::State &state)
         ui->buttonTeletext->setEnabled(false);
     }
 }
+
+void OsdWidget::setQuickRecordChecked(const bool &enabled)
+{
+    ui->buttonRecordNow->setChecked(enabled);
+}
+
+void OsdWidget::setQuickRecordEnabled(const bool &enabled)
+{
+    ui->buttonRecordNow->setEnabled(enabled);
+    ui->buttonRecordNow->setChecked(false);
+}
+
 
 void OsdWidget::setRecording(const QString &name,
                              const QString &info)

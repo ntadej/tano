@@ -532,6 +532,10 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Quick"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Poměr stran"
@@ -2031,8 +2035,15 @@ msgctxt "Recorder|"
 msgid "Recording not valid!"
 msgstr ""
 
+#, qt-format
 msgctxt "Recorder|"
-msgid "Cannot delete the recording"
+msgid "Quick %1"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid ""
+"File cannot be removed.\n"
+"Have you already moved or deleted it?"
 msgstr ""
 
 #~ msgctxt "RecorderInfoWidget|"

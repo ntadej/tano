@@ -48,6 +48,8 @@ public:
                     const QString &name = 0,
                     const QString &language = 0);
     void setPlayingState(const Vlc::State &state);
+    void setQuickRecordChecked(const bool &enabled);
+    void setQuickRecordEnabled(const bool &enabled);
     void setRecording(const QString &name = 0,
                       const QString &info = 0);
     VlcVolumeSlider *volumeSlider();
@@ -63,7 +65,7 @@ signals:
     void muteClicked();
     void nextClicked();
     void playClicked();
-    void recordNowClicked();
+    void recordNowClicked(const bool &);
     void stopClicked();
     void teletextClicked();
 
