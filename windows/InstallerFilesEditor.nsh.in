@@ -23,6 +23,9 @@ ${File} ".." "tano-editor.exe"
 ${File} "." "LICENSE.GPL.TXT"
 @NSIS_Qt@
 
+${SetOutPath} "$INSTDIR\imageformats"
+@NSIS_Qt_Plugins@
+
 ${SetOutPath} "$INSTDIR\lang"
 @NSIS_Language@
 

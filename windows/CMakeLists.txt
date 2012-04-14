@@ -105,14 +105,27 @@ IF(MINGW)
         installer-theme/wizard.bmp
     )
 
+    STRING(REGEX REPLACE "bin/gcc.exe" "bin" MINGW_BIN_DIR "${CMAKE_C_COMPILER}")
+    STRING(REGEX REPLACE "bin" "plugins" QT_PLUGINS_DIR "${QT_BIN_DIR}")
     STRING(REGEX REPLACE "\\\\" "/" LIBVLCQT_INCLUDE_DIR "${LIBVLCQT_INCLUDE_DIR}")
     STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
 
     SET(Tano_Qt_Lib
+        ${MINGW_BIN_DIR}/libgcc_s_dw2-1.dll
+        ${MINGW_BIN_DIR}/mingwm10.dll
         ${QT_BIN_DIR}/QtCore4.dll
         ${QT_BIN_DIR}/QtGui4.dll
         ${QT_BIN_DIR}/QtNetwork4.dll
         ${QT_BIN_DIR}/QtXml4.dll
+    )
+    SET(Tano_Qt_Plugins
+        ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
+        ${QT_PLUGINS_DIR}/imageformats/qico4.dll
+        ${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll
+        ${QT_PLUGINS_DIR}/imageformats/qmng4.dll
+        ${QT_PLUGINS_DIR}/imageformats/qsvg4.dll
+        ${QT_PLUGINS_DIR}/imageformats/qtga4.dll
+        ${QT_PLUGINS_DIR}/imageformats/qtiff4.dll
     )
     SET(Tano_Vlc_Libs
         ${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
@@ -134,6 +147,7 @@ ELSE(GIT_OUT)
 ENDIF(GIT_OUT)
 
 NSIS_FILE_OUTPUT(NSIS_Qt ".." ${Tano_Qt_Lib})
+NSIS_FILE_OUTPUT(NSIS_Qt_Plugins "..\\\\imageformats" ${Tano_Qt_Plugins})
 NSIS_FILE_OUTPUT(NSIS_Language "..\\\\lang" ${Tano_Language})
 NSIS_FILE_OUTPUT(NSIS_VLC ".." ${Tano_Vlc_Libs})
 NSIS_VLC_PLUGINS(NSIS_VLC_Plugins ${Tano_Vlc_Plugin_Types})
@@ -170,6 +184,7 @@ IF(MINGW)
     INSTALL(FILES ${Tano_Installer_Generated} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows")
     INSTALL(FILES ${Tano_Installer_Theme} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows/installer-theme")
     INSTALL(FILES ${Tano_Qt_Lib} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+    INSTALL(FILES ${Tano_Qt_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
     INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
     INSTALL_VLC_PLUGINS(${Tano_Vlc_Plugin_Types})
 ENDIF(MINGW)
