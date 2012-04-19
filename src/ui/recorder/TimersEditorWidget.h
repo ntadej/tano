@@ -39,18 +39,14 @@ public:
 protected:
     void changeEvent(QEvent *e);
 
-private slots:
+public slots:
     void edit(Timer *item);
+    void save();
 
+private slots:
     void validate();
 
-    void cancel();
-    void deleteItem();
-    void write();
-
 private:
-    void createConnections();
-
     Ui::TimersEditorWidget *ui;
 
     Timer *_currentTimer;

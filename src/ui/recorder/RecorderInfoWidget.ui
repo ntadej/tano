@@ -25,7 +25,13 @@
       </property>
       <property name="icon">
        <iconset resource="../../../data/icons.qrc">
-        <normaloff>:/icons/16x16/media-playback-stop.png</normaloff>:/icons/16x16/media-playback-stop.png</iconset>
+        <normaloff>:/icons/24x24/media-playback-stop.png</normaloff>:/icons/24x24/media-playback-stop.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -284,11 +290,42 @@
      <widget class="TimersEditorWidget" name="editor" native="true"/>
     </item>
     <item>
-     <widget class="QPushButton" name="buttonTBack">
-      <property name="text">
-       <string>Back</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QPushButton" name="buttonTSave">
+        <property name="text">
+         <string>Save</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../data/icons.qrc">
+          <normaloff>:/icons/24x24/save.png</normaloff>:/icons/24x24/save.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="buttonTDelete">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../data/icons.qrc">
+          <normaloff>:/icons/24x24/remove.png</normaloff>:/icons/24x24/remove.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <spacer name="verticalSpacer_3">
@@ -302,6 +339,13 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonTBack">
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

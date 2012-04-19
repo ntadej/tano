@@ -461,6 +461,10 @@ This will stop recording in progress.</source>
         <source>Quick</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add timer</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1627,7 +1631,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
-        <translation>Ne peut pas écrire dans %1.</translation>
+        <translation type="unfinished">Ne peut pas écrire dans %1.</translation>
     </message>
     <message>
         <source>Channel is not selected!</source>
@@ -1662,11 +1666,27 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <translation type="unfinished">Programmateurs</translation>
     </message>
     <message>
-        <source>Recording not valid!</source>
+        <source>Quick %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Quick %1</source>
+        <source>Add timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timer name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, select a channel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording not valid!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1765,6 +1785,10 @@ Have you already moved or deleted it?</source>
         <source>Are you sure you want to delete the recording?
 This operation is ireversible.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Sauvegarder</translation>
     </message>
 </context>
 <context>

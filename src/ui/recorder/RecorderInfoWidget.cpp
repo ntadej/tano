@@ -39,6 +39,9 @@ RecorderInfoWidget::RecorderInfoWidget(QWidget *parent)
 
     connect(ui->buttonRDelete, SIGNAL(clicked()), this, SLOT(recordingDelete()));
     connect(ui->buttonRPlay, SIGNAL(clicked()), this, SLOT(recordingPlay()));
+
+    connect(ui->buttonTDelete, SIGNAL(clicked()), this, SLOT(timerDelete()));
+    connect(ui->buttonTSave, SIGNAL(clicked()), this, SLOT(timerSave()));
 }
 
 RecorderInfoWidget::~RecorderInfoWidget()
@@ -152,6 +155,21 @@ void RecorderInfoWidget::timerInfo(Timer *timer)
 {
     setCurrentIndex(2);
 
-    //
-    Q_UNUSED(timer)
+    _currentTimer = timer;
+
+    ui->editor->edit(timer);
+}
+
+void RecorderInfoWidget::timerDelete()
+{
+    emit deleteTimer(_currentTimer);
+
+    backToMain();
+}
+
+void RecorderInfoWidget::timerSave()
+{
+    emit saveTimer(_currentTimer);
+
+    backToMain();
 }

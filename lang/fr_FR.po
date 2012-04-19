@@ -467,6 +467,10 @@ msgctxt "MainWindow|"
 msgid "Quick"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Add timer"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Proportion de l'image"
@@ -1688,7 +1692,7 @@ msgstr "Enregistrement"
 #~ msgid "End time:"
 #~ msgstr "Temps écoulé :"
 
-#, qt-format
+#, fuzzy, qt-format
 msgctxt "Recorder|"
 msgid "Cannot write to %1."
 msgstr "Ne peut pas écrire dans %1."
@@ -1727,13 +1731,29 @@ msgctxt "Recorder|"
 msgid "Timers"
 msgstr "Programmateurs"
 
-msgctxt "Recorder|"
-msgid "Recording not valid!"
-msgstr ""
-
 #, qt-format
 msgctxt "Recorder|"
 msgid "Quick %1"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Add timer"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Timer name:"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Add new timer"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Please, select a channel."
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Recording not valid!"
 msgstr ""
 
 msgctxt "Recorder|"
@@ -1837,6 +1857,11 @@ msgid ""
 "Are you sure you want to delete the recording?\n"
 "This operation is ireversible."
 msgstr ""
+
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Save"
+msgstr "Sauvegarder"
 
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"

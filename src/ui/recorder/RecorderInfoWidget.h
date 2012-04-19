@@ -46,17 +46,21 @@ protected:
 
 signals:
     void deleteRecording(Timer *);
+    void deleteTimer(Timer *);
     void playRecording(Timer *);
+    void saveTimer(Timer *);
 
 public slots:
+    void recordingInfo(Timer *timer);
     void time(const int &time);
+    void timerInfo(Timer *timer);
 
 private slots:
     void backToMain();
     void recordingDelete();
-    void recordingInfo(Timer *timer);
     void recordingPlay();
-    void timerInfo(Timer *timer);
+    void timerDelete();
+    void timerSave();
 
 private:
     Ui::RecorderInfoWidget *ui;

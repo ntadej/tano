@@ -28,8 +28,6 @@ TimersEditorWidget::TimersEditorWidget(QWidget *parent)
       ui(new Ui::TimersEditorWidget)
 {
     ui->setupUi(this);
-
-    createConnections();
 }
 
 TimersEditorWidget::~TimersEditorWidget()
@@ -48,28 +46,6 @@ void TimersEditorWidget::changeEvent(QEvent *e)
     default:
         break;
     }
-}
-
-void TimersEditorWidget::createConnections()
-{
-    //connect(ui->buttonCancel, SIGNAL(clicked()), this, SLOT(cancel()));
-    //connect(ui->buttonSave, SIGNAL(clicked()), this, SLOT(write()));
-    //connect(ui->buttonDelete, SIGNAL(clicked()), this, SLOT(deleteItem()));
-}
-
-void TimersEditorWidget::write()
-{
-
-}
-
-void TimersEditorWidget::cancel()
-{
-
-}
-
-void TimersEditorWidget::deleteItem()
-{
-    //_timersModel->deleteTimer(_currentTimer);
 }
 
 void TimersEditorWidget::edit(Timer *item)
@@ -98,4 +74,13 @@ void TimersEditorWidget::validate()
     } else {
         _currentTimer->setState(Tano::Enabled);
     }
+}
+
+void TimersEditorWidget::save()
+{
+    _currentTimer->setName(ui->editName->text());
+    _currentTimer->setType(Tano::TimerType(ui->editType->currentIndex()));
+    _currentTimer->setDate(ui->editDate->date());
+    _currentTimer->setStartTime(ui->editStartTime->time());
+    _currentTimer->setEndTime(ui->editEndTime->time());
 }

@@ -348,6 +348,12 @@
    <property name="windowTitle">
     <string>Recorder Toolbar</string>
    </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -356,6 +362,8 @@
    </attribute>
    <addaction name="actionRecordQuick"/>
    <addaction name="actionRecord"/>
+   <addaction name="separator"/>
+   <addaction name="actionRecordTimer"/>
   </widget>
   <action name="actionAbout">
    <property name="icon">
@@ -699,6 +707,15 @@
   <action name="actionRecordNow">
    <property name="checkable">
     <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionRecordTimer">
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/add.png</normaloff>:/icons/24x24/add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add timer</string>
    </property>
   </action>
  </widget>

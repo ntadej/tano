@@ -401,6 +401,7 @@ void MainWindow::createConnections()
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
     connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
     connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
+    connect(ui->actionRecordTimer, SIGNAL(triggered()), ui->recorder, SLOT(newTimer()));
     connect(ui->recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
 }
 

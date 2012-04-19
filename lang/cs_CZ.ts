@@ -547,6 +547,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Quick</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add timer</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1952,7 +1956,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
-        <translation>Nelze zapisovat do %1.</translation>
+        <translation type="unfinished">Nelze zapisovat do %1.</translation>
     </message>
     <message>
         <source>Channel is not selected!</source>
@@ -1991,11 +1995,27 @@ Ztratíte všechny neuložené změny.</translation>
         <translation type="unfinished">Časovače</translation>
     </message>
     <message>
-        <source>Recording not valid!</source>
+        <source>Quick %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Quick %1</source>
+        <source>Add timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timer name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, select a channel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording not valid!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2093,6 +2113,10 @@ Have you already moved or deleted it?</source>
     <message>
         <source>Are you sure you want to delete the recording?
 This operation is ireversible.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

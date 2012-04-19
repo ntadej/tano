@@ -424,6 +424,10 @@ msgctxt "MainWindow|"
 msgid "Quick"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Add timer"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr ""
@@ -1277,11 +1281,6 @@ msgctxt "Recorder|"
 msgid "Record"
 msgstr ""
 
-#, qt-format
-msgctxt "Recorder|"
-msgid "Cannot write to %1."
-msgstr ""
-
 msgctxt "Recorder|"
 msgid "Quick record"
 msgstr ""
@@ -1302,13 +1301,34 @@ msgctxt "Recorder|"
 msgid "Timers"
 msgstr ""
 
+#, qt-format
 msgctxt "Recorder|"
-msgid "Recording not valid!"
+msgid "Quick %1"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Add timer"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Timer name:"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Add new timer"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Please, select a channel."
 msgstr ""
 
 #, qt-format
 msgctxt "Recorder|"
-msgid "Quick %1"
+msgid "Cannot write to %1."
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Recording not valid!"
 msgstr ""
 
 msgctxt "Recorder|"
@@ -1389,6 +1409,10 @@ msgctxt "RecorderInfoWidget|"
 msgid ""
 "Are you sure you want to delete the recording?\n"
 "This operation is ireversible."
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Save"
 msgstr ""
 
 msgctxt "SettingsBackend|"

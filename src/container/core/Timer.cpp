@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "QtCore/qmath.h"
+
 #include "Timer.h"
 
 Timer::Timer(QObject *parent)
@@ -34,8 +36,11 @@ Timer::Timer(const QString &name,
 {
     _file = "";
     _date = QDate::currentDate();
-    _startTime = QTime(QTime::currentTime().hour(), 0);
-    _endTime = QTime(QTime::currentTime().hour() + 1, 0);
+
+    float min = QTime::currentTime().minute();
+    min /= 15;
+    _startTime = QTime(QTime::currentTime().hour(), qCeil(min) * 15);
+    _endTime = QTime(QTime::currentTime().hour() + 1, qCeil(min) * 15);
     _state = Tano::Enabled;
 }
 

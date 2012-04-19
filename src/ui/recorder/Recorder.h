@@ -65,15 +65,19 @@ signals:
     void play(Timer *);
 
 public slots:
+    void newTimer();
     void quickRecord();
     void recordStart(Timer *timer);
     void recordStop();
 
 private slots:
+    void cancel();
     void playlist(Channel* channel);
-    void quickRecordCancel();
-    void quickRecordStart();
+    void processNewTimer();
+    void processQuickRecord();
     void recordingDelete(Timer *recording);
+    void timerDelete(Timer *timer);
+    void timerSave(Timer *timer);
 
 private:
     Ui::Recorder *ui;

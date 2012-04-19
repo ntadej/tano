@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>227</height>
+    <height>260</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -63,7 +63,7 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1" colspan="2">
+       <item row="0" column="1">
         <widget class="QLabel" name="valueSelectedQuick">
          <property name="text">
           <string/>
@@ -77,10 +77,10 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1" colspan="2">
+       <item row="1" column="1">
         <widget class="QLineEdit" name="editNameQuick"/>
        </item>
-       <item row="2" column="0" colspan="3">
+       <item row="2" column="0" colspan="2">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QPushButton" name="buttonQuickRecord">
@@ -98,6 +98,68 @@
          </item>
          <item>
           <widget class="QPushButton" name="buttonQuickCancel">
+           <property name="text">
+            <string>Back</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../../data/icons.qrc">
+             <normaloff>:/icons/16x16/refresh.png</normaloff>:/icons/16x16/refresh.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="timerBox">
+      <property name="title">
+       <string>Add timer</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelSelectedNew">
+         <property name="text">
+          <string>Selected channel:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="valueSelectedNew">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelNameNew">
+         <property name="text">
+          <string>Timer name:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="editNameNew"/>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="buttonNewTimer">
+           <property name="text">
+            <string>Add new timer</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../../../data/icons.qrc">
+             <normaloff>:/icons/16x16/timer.png</normaloff>:/icons/16x16/timer.png</iconset>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="buttonNewCancel">
            <property name="text">
             <string>Back</string>
            </property>

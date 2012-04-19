@@ -38,11 +38,14 @@ Recorder::Recorder(QWidget *parent)
     : QStackedWidget(parent),
       ui(new Ui::Recorder),
       _actionRecord(0),
+      _currentChannel(0),
       _currentTimer(0),
       _info(0),
       _trayIcon(0)
 {
     ui->setupUi(this);
+
+    cancel();
 
     _core = new RecorderCore(this);
     _manager = new RecorderTimeManager(this);
@@ -55,8 +58,10 @@ Recorder::Recorder(QWidget *parent)
     ui->listTimers->setModel(_model);
 
     // Connections
-    connect(ui->buttonQuickCancel, SIGNAL(clicked()), this, SLOT(quickRecordCancel()));
-    connect(ui->buttonQuickRecord, SIGNAL(clicked()), this, SLOT(quickRecordStart()));
+    connect(ui->buttonNewCancel, SIGNAL(clicked()), this, SLOT(cancel()));
+    connect(ui->buttonNewTimer, SIGNAL(clicked()), this, SLOT(processNewTimer()));
+    connect(ui->buttonQuickCancel, SIGNAL(clicked()), this, SLOT(cancel()));
+    connect(ui->buttonQuickRecord, SIGNAL(clicked()), this, SLOT(processQuickRecord()));
 
 	connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
 
@@ -85,6 +90,14 @@ void Recorder::changeEvent(QEvent *e)
     }
 }
 
+void Recorder::cancel()
+{
+    setCurrentIndex(0);
+
+    ui->quickBox->hide();
+    ui->timerBox->hide();
+}
+
 void Recorder::createSettings()
 {
     Settings *settings = new Settings(this);
@@ -108,30 +121,59 @@ Timer *Recorder::newInstantTimer(const QString &channel,
     return timer;
 }
 
+void Recorder::newTimer()
+{
+    ui->timerBox->show();
+
+    setCurrentIndex(1);
+}
+
+
 void Recorder::playlist(Channel *channel)
 {
     _currentChannel = channel;
 
+    ui->valueSelectedNew->setText("<b>" + channel->name() + "</b>");
     ui->valueSelectedQuick->setText("<b>" + channel->name() + "</b>");
 }
 
-void Recorder::quickRecord()
+void Recorder::processNewTimer()
 {
-    setCurrentIndex(1);
+    if (!_currentChannel) {
+        QMessageBox::critical(this, tr("Recorder"),
+                    tr("Please, select a channel."));
+        return;
+    }
+
+    Timer *timer = _model->createTimer(ui->editNameNew->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
+    timer->setState(Tano::Disabled);
+
+    _info->timerInfo(timer);
+
+    cancel();
 }
 
-void Recorder::quickRecordCancel()
+void Recorder::processQuickRecord()
 {
-    setCurrentIndex(0);
-}
+    if (!_currentChannel) {
+        QMessageBox::critical(this, tr("Recorder"),
+                    tr("Please, select a channel."));
+        return;
+    }
 
-void Recorder::quickRecordStart()
-{
     Timer *timer = _model->createTimer(ui->editNameQuick->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Tano::Instant);
 
     recordStart(timer);
 
-    setCurrentIndex(0);
+    cancel();
+}
+
+
+void Recorder::quickRecord()
+{
+    ui->quickBox->show();
+
+    setCurrentIndex(1);
 }
 
 void Recorder::recordStart(Timer *timer)
@@ -251,9 +293,22 @@ void Recorder::setWidgets(QAction *action,
     connect(ui->listRecordings, SIGNAL(itemSelected(Timer *)), _info, SLOT(recordingInfo(Timer *)));
     connect(ui->listTimers, SIGNAL(itemSelected(Timer *)), _info, SLOT(timerInfo(Timer *)));
     connect(_info, SIGNAL(deleteRecording(Timer *)), this, SLOT(recordingDelete(Timer *)));
+    connect(_info, SIGNAL(deleteTimer(Timer *)), this, SLOT(timerDelete(Timer *)));
     connect(_info, SIGNAL(playRecording(Timer *)), this, SIGNAL(play(Timer *)));
+    connect(_info, SIGNAL(saveTimer(Timer *)), this, SLOT(timerSave(Timer *)));
 
     _trayIcon = icon;
+}
+
+void Recorder::timerDelete(Timer *timer)
+{
+    _model->deleteTimer(timer);
+    writeTimers();
+}
+
+void Recorder::timerSave(Timer *timer)
+{
+
 }
 
 void Recorder::writeTimers()
