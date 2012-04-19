@@ -40,6 +40,7 @@ public:
         DateRole,
         StartTimeRole,
         EndTimeRole,
+        StartDateTimeRole,
         TypeRole,
         StateRole
     };

@@ -173,3 +173,8 @@ void RecorderInfoWidget::timerSave()
 
     backToMain();
 }
+
+void RecorderInfoWidget::timerSaveConfirm()
+{
+    ui->editor->save();
+}

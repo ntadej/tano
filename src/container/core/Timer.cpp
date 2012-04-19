@@ -58,6 +58,7 @@ QHash<int, QByteArray> Timer::roleNames() const
     names[DateRole] = "date";
     names[StartTimeRole] = "start";
     names[EndTimeRole] = "end";
+    names[StartDateTimeRole] = "startdate";
     names[TypeRole] = "type";
     names[StateRole] = "state";
     return names;
@@ -83,6 +84,8 @@ QVariant Timer::data(int role) const
         return startTime();
     case EndTimeRole:
         return endTime();
+    case StartDateTimeRole:
+        return QDateTime(date(), startTime());
     case TypeRole:
         return type();
     case StateRole:

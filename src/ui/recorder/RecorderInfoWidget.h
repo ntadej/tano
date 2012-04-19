@@ -54,6 +54,7 @@ public slots:
     void recordingInfo(Timer *timer);
     void time(const int &time);
     void timerInfo(Timer *timer);
+    void timerSaveConfirm();
 
 private slots:
     void backToMain();

@@ -29,7 +29,6 @@ class VlcInstance;
 class VlcMedia;
 class VlcMediaPlayer;
 
-class RecorderTimeManager;
 class Timer;
 
 class RecorderCore : public QObject

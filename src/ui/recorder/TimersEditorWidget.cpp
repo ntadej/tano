@@ -65,17 +65,6 @@ void TimersEditorWidget::edit(Timer *item)
     ui->editEndTime->setTime(_currentTimer->endTime());
 }
 
-void TimersEditorWidget::validate()
-{
-    if (QDateTime(ui->editDate->date(), ui->editEndTime->time()) < QDateTime::currentDateTime()) {
-        _currentTimer->setState(Tano::Expired);
-    } else if (ui->checkBoxDisabled->isChecked()) {
-        _currentTimer->setState(Tano::Disabled);
-    } else {
-        _currentTimer->setState(Tano::Enabled);
-    }
-}
-
 void TimersEditorWidget::save()
 {
     _currentTimer->setName(ui->editName->text());
@@ -83,4 +72,5 @@ void TimersEditorWidget::save()
     _currentTimer->setDate(ui->editDate->date());
     _currentTimer->setStartTime(ui->editStartTime->time());
     _currentTimer->setEndTime(ui->editEndTime->time());
+    _currentTimer->setState(ui->checkBoxDisabled->isChecked() ? Tano::Disabled : Tano::Enabled);
 }

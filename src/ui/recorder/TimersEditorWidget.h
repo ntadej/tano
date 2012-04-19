@@ -43,9 +43,6 @@ public slots:
     void edit(Timer *item);
     void save();
 
-private slots:
-    void validate();
-
 private:
     Ui::TimersEditorWidget *ui;
 

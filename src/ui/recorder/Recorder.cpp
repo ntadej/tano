@@ -308,7 +308,9 @@ void Recorder::timerDelete(Timer *timer)
 
 void Recorder::timerSave(Timer *timer)
 {
-
+    // validateTimer(timer);
+    _info->timerSaveConfirm();
+    writeTimers();
 }
 
 void Recorder::writeTimers()

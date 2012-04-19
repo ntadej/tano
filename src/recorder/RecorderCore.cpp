@@ -23,7 +23,6 @@
 #include "container/core/Timer.h"
 #include "core/Common.h"
 #include "recorder/RecorderCore.h"
-#include "recorder/RecorderTimeManager.h"
 
 RecorderCore::RecorderCore(QObject *parent)
     : QObject(parent),

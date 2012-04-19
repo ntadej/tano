@@ -24,6 +24,7 @@
 
 class Timer;
 class TimersModel;
+class TimersFilterModel;
 
 class RecorderTimeManager : public QObject
 {
@@ -42,7 +43,8 @@ private slots:
 
 private:
     QTimer *_timer;
-    TimersModel *_model;
+    TimersModel *_modelCore;
+    TimersFilterModel *_model;
 };
 
 #endif // TANO_RECORDERTIMEMANAGER_H_
