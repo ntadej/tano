@@ -2047,6 +2047,26 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Instant</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>repeats only once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats on weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -3906,7 +3926,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Tano is recording %1 to
 %2
 Stop manually!</source>
-        <translation>Tano snema %1 v
+        <translation type="obsolete">Tano snema %1 v
 %2
 Ročno ustavi!</translation>
     </message>
@@ -3914,7 +3934,7 @@ Ročno ustavi!</translation>
         <source>Tano is recording %1 to
 %2
 End time: %3</source>
-        <translation>Tano snema %1 v
+        <translation type="obsolete">Tano snema %1 v
 %2
 Končni čas: %3</translation>
     </message>
@@ -3925,6 +3945,16 @@ Končni čas: %3</translation>
     <message>
         <source>Recording:</source>
         <translation>Snemam:</translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to %2 
+Stop manually!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to %2 
+End time: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -16,12 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "QtCore/qmath.h"
+#include <QtCore/qmath.h>
 
 #include "Timer.h"
-
-Timer::Timer(QObject *parent)
-    : ListItem(parent) { }
 
 Timer::Timer(const QString &name,
              const QString &channel,
@@ -39,10 +36,28 @@ Timer::Timer(const QString &name,
 
     float min = QTime::currentTime().minute();
     min /= 15;
-    _startTime = QTime(QTime::currentTime().hour(), qCeil(min) * 15);
-    _endTime = QTime(QTime::currentTime().hour() + 1, qCeil(min) * 15);
+    _startTime = QTime(QTime::currentTime().hour() + qCeil(min)/4, (qCeil(min) * 15) % 60);
+    _endTime = QTime(QTime::currentTime().hour() + 1 + qCeil(min)/4, (qCeil(min) * 15) % 60);
     _state = Tano::Enabled;
 }
+
+Timer::Timer(Timer *timer)
+    : ListItem(timer->parent())
+{
+    _file = "";
+    _state = Tano::Enabled;
+
+    _name = timer->name();
+    _channel = timer->channel();
+    _url = timer->url();
+    _date = timer->date();
+    _startTime = timer->startTime();
+    _endTime = timer->endTime();
+    _type = timer->type();
+}
+
+Timer::Timer(QObject *parent)
+    : ListItem(parent) { }
 
 Timer::~Timer() { }
 
@@ -98,9 +113,13 @@ QVariant Timer::data(int role) const
 QString Timer::display() const
 {
     if (state() == Tano::Finished)
-        return QString("%1 - %3 - %4 %5 %6")
+        return QString("%1 - %2 - %3 %4 %5")
             .arg(name(), channel(),
                  date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"));
+    else if (type() != Tano::Once && type() != Tano::Instant)
+        return QString("%1 (%2) - %3 - %4 %5 %6, %7")
+            .arg(name(), Tano::timerStates()[state()], channel(),
+                 date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"), Tano::timerTypesLong()[type()]);
     else
         return QString("%1 (%2) - %3 - %4 %5 %6")
             .arg(name(), Tano::timerStates()[state()], channel(),

@@ -58,9 +58,9 @@ void TrayIcon::message(const Tano::Id &type,
         if (arg.size() == 0) {
             showMessage(tr("Recorder"), tr("Tano stopped recording"), QSystemTrayIcon::Information, 10000);
         } else if (arg.size() == 2) {
-            showMessage(tr("Recorder"), tr("Tano is recording %1 to\n%2\nStop manually!").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
+            showMessage(tr("Recorder"), tr("Tano is recording %1 to %2 \nStop manually!").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
         } else if (arg.size() == 3) {
-            showMessage(tr("Recorder"), tr("Tano is recording %1 to\n%2\nEnd time: %3").arg(arg[0], arg[1], arg[2]), QSystemTrayIcon::Information, 10000);
+            showMessage(tr("Recorder"), tr("Tano is recording %1 to %2 \nEnd time: %3").arg(arg[0], arg[1], arg[2]), QSystemTrayIcon::Information, 10000);
         }
     }
 }

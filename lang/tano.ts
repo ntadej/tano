@@ -1298,6 +1298,26 @@ You will lose any unsaved changes.</source>
         <source>Instant</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>repeats only once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats on weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -2186,14 +2206,12 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano is recording %1 to
-%2
+        <source>Tano is recording %1 to %2 
 Stop manually!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano is recording %1 to
-%2
+        <source>Tano is recording %1 to %2 
 End time: %3</source>
         <translation type="unfinished"></translation>
     </message>

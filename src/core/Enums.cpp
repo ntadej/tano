@@ -43,3 +43,15 @@ QStringList Tano::timerTypes()
 
     return list;
 }
+
+QStringList Tano::timerTypesLong()
+{
+    QStringList list;
+    list << QObject::tr("repeats only once")
+         << QObject::tr("repeats daily")
+         << QObject::tr("repeats weekly")
+         << QObject::tr("repeats on weekdays")
+         << QObject::tr("instant recording");
+
+    return list;
+}

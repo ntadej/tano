@@ -1583,6 +1583,26 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <source>Instant</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>repeats only once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats on weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -3099,7 +3119,7 @@ Vos changements ne seront pas appliqués.</translation>
         <source>Tano is recording %1 to
 %2
 Stop manually!</source>
-        <translation>Enregistrement de %1 vers
+        <translation type="obsolete">Enregistrement de %1 vers
 %2
 Arrétez manuellement !</translation>
     </message>
@@ -3107,9 +3127,19 @@ Arrétez manuellement !</translation>
         <source>Tano is recording %1 to
 %2
 End time: %3</source>
-        <translation>Enregistrement de %1 vers
+        <translation type="obsolete">Enregistrement de %1 vers
 %2
 Fin de l&apos;enregistrement : %3</translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to %2 
+Stop manually!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to %2 
+End time: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

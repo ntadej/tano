@@ -45,12 +45,13 @@ public:
         StateRole
     };
 
-    explicit Timer(QObject *parent = 0);
     explicit Timer(const QString &name,
                    const QString &channel,
                    const QString &url,
                    const Tano::TimerType &type = Tano::Once,
                    QObject *parent = 0);
+    explicit Timer(Timer *timer);
+    explicit Timer(QObject *parent = 0);
     ~Timer();
 
 

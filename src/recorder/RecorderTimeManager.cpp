@@ -48,7 +48,24 @@ void RecorderTimeManager::check()
     if(!_model->rowCount())
         return;
 
-    qDebug() << _modelCore->row(_model->mapToSource(_model->index(0, 0)).row())->name();
+    Timer *t = _modelCore->row(_model->mapToSource(_model->index(0, 0)).row());
+
+    if (t->date() < QDate::currentDate()) {
+        t->setState(Tano::Expired);
+        return;
+    } else if (t->date() > QDate::currentDate()) {
+        return;
+    }
+
+    if (t->endTime() < QTime::currentTime()) {
+        t->setState(Tano::Expired);
+        return;
+    } else if (t->startTime() > QTime::currentTime()) {
+        return;
+    } else if (t->startTime() <= QTime::currentTime()) {
+        qDebug() << "Start recording:" << t->name();
+        emit timer(t);
+    }
 }
 
 void RecorderTimeManager::setTimersModel(TimersModel *model)
@@ -56,5 +73,5 @@ void RecorderTimeManager::setTimersModel(TimersModel *model)
     _modelCore = model;
     _model->setSourceModel(model);
 
-    _timer->start(1000);
+    _timer->start(500);
 }

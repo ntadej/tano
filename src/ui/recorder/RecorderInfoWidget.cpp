@@ -96,11 +96,12 @@ void RecorderInfoWidget::recordingInfo(Timer *timer)
 
     qreal duration = timer->startTime().secsTo(timer->endTime());
 
-    ui->valueRName->setText("<b>" + timer->name() + "</b>");
-    ui->valueRChannel->setText(timer->channel());
-    ui->valueRTime->setText(QString("%1 %2 %3").arg(timer->date().toString("dd.MM.yyyy"), tr("at"), timer->startTime().toString("hh:mm")));
-    ui->valueRDuration->setText(QTime(0, qCeil(duration/60)).toString("hh:mm"));
-    ui->valueRFile->setText(timer->file());
+    QString bold("<b>%1</b>");
+    ui->valueRName->setText(bold.arg(timer->name()));
+    ui->valueRChannel->setText(bold.arg(timer->channel()));
+    ui->valueRTime->setText(bold.arg(QString("%1 %2 %3").arg(timer->date().toString("dd.MM.yyyy"), tr("at"), timer->startTime().toString("hh:mm"))));
+    ui->valueRDuration->setText(bold.arg(QTime(0, qCeil(duration/60)).toString("hh:mm")));
+    ui->valueRFile->setText(bold.arg(timer->file()));
 }
 
 void RecorderInfoWidget::recordingPlay()

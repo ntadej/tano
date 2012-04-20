@@ -40,6 +40,7 @@ public:
                        const QString &url,
                        const Tano::TimerType &type = Tano::Once);
     void deleteTimer(Timer *timer);
+    Timer *duplicateTimer(Timer *timer);
 
     void readTimers();
     void writeTimers();

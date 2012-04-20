@@ -233,8 +233,23 @@ void Recorder::recordStop()
         _trayIcon->message(Tano::Record, QStringList());
     }
 
-    if (_currentTimer->type() == Tano::Instant)
+    if (_currentTimer->type() == Tano::Instant) {
         _currentTimer->setEndTime(QTime::currentTime());
+    } else {
+        if (_currentTimer->type() == Tano::Daily) {
+            Timer *tmptimer = _model->duplicateTimer(_currentTimer);
+            tmptimer->setDate(_currentTimer->date().addDays(1));
+        } else if (_currentTimer->type() == Tano::Weekly) {
+            Timer *tmptimer = _model->duplicateTimer(_currentTimer);
+            tmptimer->setDate(_currentTimer->date().addDays(7));
+        }  else if (_currentTimer->type() == Tano::Weekdays) {
+            Timer *tmptimer = _model->duplicateTimer(_currentTimer);
+            if (_currentTimer->date().dayOfWeek() == Qt::Friday)
+                tmptimer->setDate(_currentTimer->date().addDays(3));
+            else
+                tmptimer->setDate(_currentTimer->date().addDays(1));
+        }
+    }
     _currentTimer->setState(Tano::Finished);
     writeTimers();
     _currentTimer = 0;

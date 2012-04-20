@@ -1589,6 +1589,26 @@ You will lose any unsaved changes.</source>
         <source>Instant</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>repeats only once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats on weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -3105,7 +3125,7 @@ You changes will not be applied.</source>
         <source>Tano is recording %1 to
 %2
 Stop manually!</source>
-        <translation>Tano записує %1 в
+        <translation type="obsolete">Tano записує %1 в
 %2
 Зупинить вручну!</translation>
     </message>
@@ -3113,9 +3133,19 @@ Stop manually!</source>
         <source>Tano is recording %1 to
 %2
 End time: %3</source>
-        <translation>Tano записує %1 в
+        <translation type="obsolete">Tano записує %1 в
 %2
 Час закінчення: %3</translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to %2 
+Stop manually!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to %2 
+End time: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

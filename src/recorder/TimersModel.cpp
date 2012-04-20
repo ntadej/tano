@@ -54,15 +54,23 @@ Timer *TimersModel::createTimer(const QString &name,
                                 const QString &url,
                                 const Tano::TimerType &type)
 {
-    Timer *timer = new Timer(name, channel, url, type, this);
-    appendRow(timer);
+    Timer *newTimer = new Timer(name, channel, url, type, this);
+    appendRow(newTimer);
 
-    return timer;
+    return newTimer;
 }
 
 void TimersModel::deleteTimer(Timer *timer)
 {
     removeRow(indexFromItem(timer).row());
+}
+
+Timer *TimersModel::duplicateTimer(Timer *timer)
+{
+    Timer *newTimer = new Timer(timer);
+    appendRow(newTimer);
+
+    return newTimer;
 }
 
 void TimersModel::readTimers()

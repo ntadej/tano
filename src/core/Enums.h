@@ -79,6 +79,7 @@ namespace Tano
 
     QStringList timerStates();
     QStringList timerTypes();
+    QStringList timerTypesLong();
 }
 
 #endif // TANO_ENUMS_H_

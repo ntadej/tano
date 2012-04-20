@@ -1904,6 +1904,26 @@ Ztratíte všechny neuložené změny.</translation>
         <source>Instant</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>repeats only once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repeats on weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -3705,7 +3725,7 @@ Vaše změny nebudou použity.</translation>
         <source>Tano is recording %1 to
 %2
 Stop manually!</source>
-        <translation>Tano nahrává %1 do
+        <translation type="obsolete">Tano nahrává %1 do
 %2
 Zastavit ručně!</translation>
     </message>
@@ -3713,9 +3733,19 @@ Zastavit ručně!</translation>
         <source>Tano is recording %1 to
 %2
 End time: %3</source>
-        <translation>Tano nahrává %1 do
+        <translation type="obsolete">Tano nahrává %1 do
 %2
 Konečný čas: %3</translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to %2 
+Stop manually!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano is recording %1 to %2 
+End time: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
