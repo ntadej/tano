@@ -49,6 +49,11 @@ namespace Tano
     QStringList vlcQtArgs();
     QString vlcQtVersionCore();
     QString vlcQtVersionLibrary();
+
+    // System specific
+#if defined(Q_WS_X11)
+    QString linuxVideoPath();
+#endif
 }
 
 #endif // TANO_COMMON_H_

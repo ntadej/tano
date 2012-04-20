@@ -20,6 +20,8 @@
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 #include <QtCore/QLocale>
+#include <QtCore/QTextCodec>
+#include <QtCore/QTextStream>
 
 #include "Config.h"
 #include "core/Common.h"
@@ -180,3 +182,29 @@ QString Tano::vlcQtVersionLibrary()
 
     return version;
 }
+
+#if defined(Q_WS_X11)
+QString Tano::linuxVideoPath()
+{
+    QFile file(QDir::homePath() + "/.config/user-dirs.dirs");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return QString();
+
+    QString path = "";
+    QTextStream in(&file);
+    in.setCodec(QTextCodec::codecForName("UTF-8"));
+    while (!in.atEnd()) {
+        QString tmp = in.readLine();
+        if (tmp.contains("XDG_VIDEOS_DIR")) {
+            tmp.replace("XDG_VIDEOS_DIR=", "");
+            tmp.replace("\"", "");
+            tmp.replace("$HOME/", "");
+
+            path = tmp;
+            break;
+        }
+    }
+
+    return path;
+}
+#endif
