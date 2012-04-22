@@ -10,6 +10,10 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/48x48/calendar.png</normaloff>:/icons/48x48/calendar.png</iconset>
+  </property>
   <property name="currentIndex">
    <number>0</number>
   </property>

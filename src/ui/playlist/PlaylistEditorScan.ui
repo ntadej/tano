@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/48x48/editor.png</normaloff>:/icons/48x48/editor.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="margin">
     <number>0</number>

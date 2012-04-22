@@ -10,6 +10,10 @@
     <height>223</height>
    </rect>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/24x24/file-m3u.png</normaloff>:/icons/24x24/file-m3u.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <property name="margin">
     <number>0</number>

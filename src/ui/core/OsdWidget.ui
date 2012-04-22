@@ -10,6 +10,10 @@
     <height>74</height>
    </rect>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/48x48/media-playback-start.png</normaloff>:/icons/48x48/media-playback-start.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="horizontalSpacing">
     <number>4</number>

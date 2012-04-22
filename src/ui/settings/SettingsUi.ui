@@ -7,8 +7,12 @@
     <x>0</x>
     <y>0</y>
     <width>443</width>
-    <height>329</height>
+    <height>333</height>
    </rect>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
@@ -181,7 +185,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../data/icons.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>checkTray</sender>
