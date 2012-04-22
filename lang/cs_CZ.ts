@@ -122,14 +122,14 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>EpgScheduleChannel</name>
     <message>
         <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation type="unfinished">&lt;h2&gt;Žádné EPG&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;Žádné EPG&lt;/h2&gt;</translation>
     </message>
 </context>
 <context>
     <name>EpgScheduleFull</name>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Rozvrh</translation>
+        <translation>Rozvrh</translation>
     </message>
 </context>
 <context>
@@ -144,55 +144,55 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
     <message>
         <source>&lt;b&gt;Crew&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Skupina&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Description&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Popis&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Crew members: All</source>
-        <translation type="unfinished"></translation>
+        <translation>Členové pracovní skupiny: Vše</translation>
     </message>
     <message>
         <source>Director</source>
-        <translation type="unfinished"></translation>
+        <translation>Ředitel</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation type="unfinished"></translation>
+        <translation>Herec</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation type="unfinished"></translation>
+        <translation>Autor</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Adaptér</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation type="unfinished"></translation>
+        <translation>Režisér</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation type="unfinished"></translation>
+        <translation>Skladatel</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Editor</translation>
+        <translation>Editor</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation type="unfinished"></translation>
+        <translation>Konferenciér</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentátor</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation type="unfinished"></translation>
+        <translation>Host</translation>
     </message>
 </context>
 <context>
@@ -284,15 +284,15 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>InfoBarWidget</name>
     <message>
         <source>Now:</source>
-        <translation type="unfinished">Nyní:</translation>
+        <translation>Nyní:</translation>
     </message>
     <message>
         <source>Next:</source>
-        <translation type="unfinished">Další:</translation>
+        <translation>Další:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished">Jazyk:</translation>
+        <translation>Jazyk:</translation>
     </message>
 </context>
 <context>
@@ -507,11 +507,11 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozastavit</translation>
     </message>
     <message>
         <source>Buffering...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukládá se do vyrovnávací paměti...</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
@@ -519,37 +519,37 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Nelze číst ze souboru %1:
+        <translation>Nelze číst ze souboru %1:
 %2.</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation type="unfinished"></translation>
+        <translation>Ovládání</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Klávesové zkratky</translation>
     </message>
     <message>
         <source>Recorder Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Nástrojový pruh pro nahrávání</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation type="unfinished"></translation>
+        <translation>Rychlý záznam</translation>
     </message>
     <message>
         <source>Quick</source>
-        <translation type="unfinished"></translation>
+        <translation>Rychlý</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat časovač</translation>
     </message>
 </context>
 <context>
@@ -586,15 +586,15 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <name>MenuCropRatio</name>
     <message>
         <source>Crop video</source>
-        <translation type="unfinished">Ořezat obraz</translation>
+        <translation>Ořezat obraz</translation>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation type="unfinished">Další volba pro ořez</translation>
+        <translation>Volba pro další ořez</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished">Původní</translation>
+        <translation>Původní</translation>
     </message>
 </context>
 <context>
@@ -685,82 +685,82 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
-        <translation type="unfinished">Přehrát</translation>
+        <translation>Přehrát</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Stop</translation>
+        <translation>Zastavit</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Zpět</translation>
+        <translation>Zpět</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished">Další</translation>
+        <translation>Další</translation>
     </message>
     <message>
         <source>Record Now</source>
-        <translation type="unfinished">Nahrávat nyní</translation>
+        <translation>Nahrávat nyní</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation type="unfinished">Ztlumit</translation>
+        <translation>Ztlumit</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozastavit</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation type="unfinished">Teletext</translation>
+        <translation>Teletext</translation>
     </message>
 </context>
 <context>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Smazat</translation>
+        <translation>Smazat</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="unfinished">Hledat:</translation>
+        <translation>Hledat:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation type="unfinished">Skupina:</translation>
+        <translation>Skupina:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished">Jazyk:</translation>
+        <translation>Jazyk:</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Všechny skupiny</translation>
+        <translation>Všechny skupiny</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Všechny jazyky</translation>
+        <translation>Všechny jazyky</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Typ:</translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation type="unfinished"></translation>
+        <translation>TV + Rádio</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouze TV</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation type="unfinished"></translation>
+        <translation>Pouze rádio</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledat a filtrovat</translation>
     </message>
 </context>
 <context>
@@ -1026,23 +1026,23 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistEditor</name>
     <message>
         <source>Tano Editor</source>
-        <translation type="unfinished">Editor Tano</translation>
+        <translation>Editor Tano</translation>
     </message>
     <message>
         <source>Playlist name:</source>
-        <translation type="unfinished">Název seznamu programů:</translation>
+        <translation>Název seznamu programů:</translation>
     </message>
     <message>
         <source>Number of channels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Počet programů:</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Nápověda</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation type="unfinished">Nástrojový pruh</translation>
+        <translation>Nástrojový pruh</translation>
     </message>
     <message>
         <source>Editor</source>
@@ -1050,27 +1050,27 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation type="unfinished">Číslo:</translation>
+        <translation>Číslo:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Název:</translation>
+        <translation>Název:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation type="unfinished">Skupiny:</translation>
+        <translation>Skupiny:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished">Jazyk:</translation>
+        <translation>Jazyk:</translation>
     </message>
     <message>
         <source>EPG:</source>
-        <translation type="unfinished">EPG:</translation>
+        <translation>EPG:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation type="unfinished">Adresa (URL):</translation>
+        <translation>Adresa (URL):</translation>
     </message>
     <message>
         <source>&lt;i&gt;You can separate categories with comma.&lt;br&gt;Only first one is saved when exporting to Sagem Js playlist format.&lt;/i&gt;</source>
@@ -1082,7 +1082,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation type="unfinished"></translation>
+        <translation>Logo:</translation>
     </message>
     <message>
         <source>Update Playlist</source>
@@ -1110,106 +1110,106 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation type="unfinished">Přidat program</translation>
+        <translation>Přidat program</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation type="unfinished">Smazat program</translation>
+        <translation>Smazat program</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Zavřít</translation>
+        <translation>Zavřít</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation type="unfinished">Posunout nahoru</translation>
+        <translation>Posunout nahoru</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation type="unfinished">Posunout dolů</translation>
+        <translation>Posunout dolů</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Tisk</translation>
+        <translation>Tisk</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation type="unfinished">Vyvést</translation>
+        <translation>Vyvést</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished">Otevřít</translation>
+        <translation>Otevřít</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>O programu</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation type="unfinished">Nový seznam programů</translation>
+        <translation>Nový seznam programů</translation>
     </message>
     <message>
         <source>Tvheadend</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvheadend</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation type="unfinished"></translation>
+        <translation>Identifikátory XMLTV</translation>
     </message>
     <message>
         <source>Update Information</source>
-        <translation type="unfinished">Informace o aktualizacích</translation>
+        <translation>Informace o aktualizacích</translation>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation type="unfinished">%1 - Editor Tano</translation>
+        <translation>%1 - Editor Tano</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Nelze číst ze souboru %1:
+        <translation>Nelze číst ze souboru %1:
 %2.</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation type="unfinished">Editor seznamu programů</translation>
+        <translation>Editor seznamu programů</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation type="unfinished">Chcete vytvořit nový seznam programů?
+        <translation>Chcete vytvořit nový seznam programů?
 Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Nelze zapisovat soubor %1:
+        <translation>Nelze zapisovat soubor %1:
 %2.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyvést do formátu M3U s adresami Udpxy (URL)</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation type="unfinished"></translation>
+        <translation>Musíte mít platná nastavení Udpxy, nebo bude vyvedený seznam skladeb obsahovat klasické adresy (URL).</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation type="unfinished">Chcete zavřít editor?
+        <translation>Chcete zavřít editor?
 Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
@@ -1218,62 +1218,66 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation type="unfinished">Program s tímto číslem již existuje!</translation>
+        <translation>Program s tímto číslem již existuje!</translation>
     </message>
     <message>
         <source>Edit channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Upravit program</translation>
     </message>
     <message>
         <source>Radio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rádio:</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Prohledat na nové programy</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
     <message>
         <source>Tano Editor - Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor Tano - Nápověda</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h2&gt;Editor Tano - Nápověda&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Můžete upravit svůj seznam programů IP TV, vytisknout jej nebo vyvést do požadovaného formátu.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Úpravy programů&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be sepparated by comma (,).</source>
+        <translation type="obsolete">Číslo programu je potřeba použít. Všechny ostatní hodnoty jsou automaticky změněny. Jakýkoli program můžete nastavit jako rádio. Skupiny lze oddělovat čárkou (,).</translation>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro logo programu je potřeba poskytnout celou adresu (URL). Velikost obrázků bude změněna tak, aby se vešly do rozhraní.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Formáty a vyvedení&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor Tano podporuje své vlastní upravené soubory M3U, CSV a Sagem JS. Kromě těchto formátů můžete také ukládat/vyvádět do M3U s adresami Udpxy a se soubory nastavení Tvheaden.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Hledání programů&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nové programy můžete hledat pomocí vestavěného prohledávače programů. Nastavte, prosím, platný rozsah IP (např. 232.4.1) a přípojku (např. 5000). Tano prohledá všech 255 IP v tomto rozsahu. Program je přidán, je-li zjištěn před vypršením času.</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation type="unfinished"></translation>
+        <translation>Můžete nastavit vlastní skupinu pro rádio v nastavení (výchozí pro rádio) pro vyvedení do Sagem JS a CSV. Pouze první skupina nebo skupina pro rádio bude vyvedena do Sagem JS.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
@@ -1284,69 +1288,69 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistEditorScan</name>
     <message>
         <source>IP Range:</source>
-        <translation type="unfinished">Rozsah IP:</translation>
+        <translation>Rozsah IP:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation type="unfinished">Přípojka:</translation>
+        <translation>Přípojka:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation type="unfinished">Překročení času:</translation>
+        <translation>Překročení času:</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation type="unfinished"> ms</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation type="unfinished">Prohledat a obnovit</translation>
+        <translation>Prohledat a obnovit</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation type="unfinished">Nový program z prohledání %1</translation>
+        <translation>Nový program z prohledání %1</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation type="unfinished">Editor seznamu programů</translation>
+        <translation>Editor seznamu programů</translation>
     </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
     <message>
         <source>Export to Tvheadend IP TV services</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyvést do služeb IP TV Tvheadend</translation>
     </message>
     <message>
         <source>Output location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstupní umístění:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Network interface:</source>
-        <translation type="unfinished"></translation>
+        <translation>Síťové rozhraní:</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation type="unfinished">Otevřít adresář</translation>
+        <translation>Otevřít adresář</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;&lt;b&gt;Varování: Toto smaže všechny stávající programy!&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Všechny skupiny</translation>
+        <translation>Všechny skupiny</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Všechny jazyky</translation>
+        <translation>Všechny jazyky</translation>
     </message>
 </context>
 <context>
@@ -1712,45 +1716,45 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>The file is not a valid XMLTV file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor není platným souborem XMLTV.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Nelze zapisovat soubor %1:
+        <translation>Nelze zapisovat soubor %1:
 %2.</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>sekund</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>minut(y)</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>hodin(y)</translation>
     </message>
     <message>
         <source>s</source>
-        <translation type="unfinished"></translation>
+        <translation>s</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>h</source>
-        <translation type="unfinished"></translation>
+        <translation>h</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation type="unfinished">Otevřít adresář</translation>
+        <translation>Otevřít adresář</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation type="unfinished">Otevřít seznam programů</translation>
+        <translation>Otevřít seznam programů</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
@@ -1758,11 +1762,11 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít adresu (URL) nebo datový proud</translation>
     </message>
     <message>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zadejte adresu (URL) multimediálního souboru nebo datového proudu, jejž chcete přehrávat:</translation>
     </message>
     <message>
         <source>M3U (original) list files (*.m3u)</source>
@@ -1778,151 +1782,151 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Tano M3U channel list files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory se seznamy programů M3U Tano</translation>
     </message>
     <message>
         <source>Comma-separated values files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory s hodnotami oddělenými čárkou</translation>
     </message>
     <message>
         <source>Multimedia files</source>
-        <translation type="unfinished"></translation>
+        <translation>Multimediální soubory</translation>
     </message>
     <message>
         <source>Subtitles files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory titulků</translation>
     </message>
     <message>
         <source>Plain text files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory prostého textu</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít soubor</translation>
     </message>
     <message>
         <source>Open subtitles</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít titulky</translation>
     </message>
     <message>
         <source>Export XMLTV IDs</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyvést identifikátory XMLTV</translation>
     </message>
     <message>
         <source>M3U (original) files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory M3U (původní)</translation>
     </message>
     <message>
         <source>M3U (Udpxy URL) files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory M3U (adresy (URL) Udpxy)</translation>
     </message>
     <message>
         <source>Tano TV old channel list files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory se starými seznamy programů TV Tano</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory se seznamy programů STB Sagem</translation>
     </message>
     <message>
         <source>CSV channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam programů CSV</translation>
     </message>
     <message>
         <source>Sagem STB channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam programů STB Sagem</translation>
     </message>
     <message>
         <source>XMLTV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor XMLTV</translation>
     </message>
     <message>
         <source>Open XMLTV</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřít XMLTV</translation>
     </message>
     <message>
         <source>Director</source>
-        <translation type="unfinished"></translation>
+        <translation>Ředitel</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation type="unfinished"></translation>
+        <translation>Herec</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation type="unfinished"></translation>
+        <translation>Autor</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation type="unfinished"></translation>
+        <translation>Adaptér</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation type="unfinished"></translation>
+        <translation>Režisér</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation type="unfinished"></translation>
+        <translation>Skladatel</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Editor</translation>
+        <translation>Editor</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation type="unfinished"></translation>
+        <translation>Konferenciér</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentátor</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation type="unfinished"></translation>
+        <translation>Host</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Povoleno</translation>
     </message>
     <message>
         <source>Recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávání</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Hotovo</translation>
     </message>
     <message>
         <source>Expired</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypršelo</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation type="unfinished"></translation>
+        <translation>Každý všední den</translation>
     </message>
     <message>
         <source>Instant</source>
-        <translation type="unfinished"></translation>
+        <translation>Okamžitý</translation>
     </message>
     <message>
         <source>repeats only once</source>
-        <translation type="unfinished"></translation>
+        <translation>Opakuje pouze jednou</translation>
     </message>
     <message>
         <source>repeats daily</source>
-        <translation type="unfinished"></translation>
+        <translation>Opakuje denně</translation>
     </message>
     <message>
         <source>repeats weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Opakuje týdně</translation>
     </message>
     <message>
         <source>repeats on weekdays</source>
-        <translation type="unfinished"></translation>
+        <translation>Opakuje kterýkoliv všední den</translation>
     </message>
     <message>
         <source>instant recording</source>
-        <translation type="unfinished"></translation>
+        <translation>Okamžitý záznam</translation>
     </message>
 </context>
 <context>
@@ -1976,7 +1980,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
-        <translation type="unfinished">Nelze zapisovat do %1.</translation>
+        <translation>Nelze zapisovat do %1.</translation>
     </message>
     <message>
         <source>Channel is not selected!</source>
@@ -1996,52 +2000,53 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation type="unfinished"></translation>
+        <translation>Rychlý záznam</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Název nahrávky:</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Zpět</translation>
+        <translation>Zpět</translation>
     </message>
     <message>
         <source>Recordings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávky</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Časovače</translation>
+        <translation>Časovače</translation>
     </message>
     <message>
         <source>Quick %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Rychlý %1</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat časovač</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Název časovače:</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat nový časovač</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte, prosím, program.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
-        <translation type="unfinished"></translation>
+        <translation>Záznam není platný!</translation>
     </message>
     <message>
         <source>File cannot be removed.
 Have you already moved or deleted it?</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor nelze odstranit.
+Již jste jej přesunul nebo smazal?</translation>
     </message>
 </context>
 <context>
@@ -2064,80 +2069,81 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished">Konec:</translation>
+        <translation>Konec:</translation>
     </message>
     <message>
         <source>Currently not recording.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyní se nenahrává.</translation>
     </message>
     <message>
         <source>No timer - stop manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádný časovač - zastavit ručně.</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished">Zastavit nahrávání</translation>
+        <translation>Zastavit nahrávání</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation type="unfinished">Nahrává se:</translation>
+        <translation>Nahrává se:</translation>
     </message>
     <message>
         <source>Elapsed:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uplynulý čas:</translation>
     </message>
     <message>
         <source>Output:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstup:</translation>
     </message>
     <message>
         <source>&lt;b&gt;Status&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Stav&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="unfinished">Program:</translation>
+        <translation>Program:</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation type="unfinished">Přehrát</translation>
+        <translation>Přehrát</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Zpět</translation>
+        <translation>Zpět</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Smazat</translation>
     </message>
     <message>
         <source>Time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Čas:</translation>
     </message>
     <message>
         <source>Duration:</source>
-        <translation type="unfinished"></translation>
+        <translation>Doba trvání:</translation>
     </message>
     <message>
         <source>File:</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor:</translation>
     </message>
     <message>
         <source>at</source>
-        <translation type="unfinished"></translation>
+        <translation>v</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávání</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the recording?
 This operation is ireversible.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jste si jistý, že chcete nahrávku smazat?
+Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit</translation>
     </message>
 </context>
 <context>
@@ -2158,7 +2164,7 @@ This operation is ireversible.</source>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
-        <translation type="unfinished">Jádro VLC-Qt</translation>
+        <translation>Jádro VLC-Qt</translation>
     </message>
     <message>
         <source>Curently using VLC-Qt Backend</source>
@@ -2166,7 +2172,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Version:</source>
-        <translation type="unfinished">Verze:</translation>
+        <translation>Verze:</translation>
     </message>
     <message>
         <source>Use global VLC settings (requires restart)</source>
@@ -2174,31 +2180,31 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
-        <translation type="unfinished">Používá se verze VLC Videolan:</translation>
+        <translation>Používá se verze VLC Videolan:</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation type="unfinished">Přehrávání</translation>
+        <translation>Přehrávání</translation>
     </message>
     <message>
         <source>Remember Video settings between media</source>
-        <translation type="unfinished">Zapamatovat si nastavení obrazu mezi médii</translation>
+        <translation>Zapamatovat si nastavení obrazu mezi médii</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
-        <translation type="unfinished">Výchozí jazyk titulků:</translation>
+        <translation>Výchozí jazyk titulků:</translation>
     </message>
     <message>
         <source>Default audio language:</source>
-        <translation type="unfinished">Výchozí jazyk pro zvuk:</translation>
+        <translation>Výchozí jazyk pro zvuk:</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished">Zakázáno</translation>
+        <translation>Zakázáno</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished">Jiné</translation>
+        <translation>Jiné</translation>
     </message>
     <message>
         <source>UDPXY support</source>
@@ -2222,201 +2228,201 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default aspect ratio:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí poměr stran:</translation>
     </message>
     <message>
         <source>Default crop:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí pro ořez:</translation>
     </message>
     <message>
         <source>Default deinterlacing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí pro zrušení prokládání:</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished">Původní</translation>
+        <translation>Původní</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation type="unfinished">Zrušit</translation>
+        <translation>Zrušit</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation type="unfinished">Prolínání</translation>
+        <translation>Prolínání</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation type="unfinished">Střed</translation>
+        <translation>Střed</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation type="unfinished">Trhání</translation>
+        <translation>Trhání</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation type="unfinished">Přímočarý</translation>
+        <translation>Přímočarý</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished">X</translation>
+        <translation>X</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished">Obecné</translation>
+        <translation>Obecné</translation>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam programů</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation type="unfinished">Rozhraní</translation>
+        <translation>Rozhraní</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation type="unfinished">Přehrávání</translation>
+        <translation>Přehrávání</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Rozvrh</translation>
+        <translation>Rozvrh</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávání</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialogShortcuts</name>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Klávesové zkratky</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation type="unfinished">Činnost</translation>
+        <translation>Činnost</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation type="unfinished">Klávesa</translation>
+        <translation>Klávesa</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation type="unfinished">Přehrát/Pozastavit</translation>
+        <translation>Přehrát/Pozastavit</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Stop</translation>
+        <translation>Zastavit</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation type="unfinished">Další kanál</translation>
+        <translation>Další program</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation type="unfinished">Předchozí kanál</translation>
+        <translation>Předchozí program</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished">Na celou obrazovku</translation>
+        <translation>Na celou obrazovku</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation type="unfinished">Přepnout informační prvek</translation>
+        <translation>Přepnout informační prvek</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation type="unfinished">Přepnout ovládací prvek</translation>
+        <translation>Přepnout ovládací prvek</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation type="unfinished">Ztlumit</translation>
+        <translation>Ztlumit</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation type="unfinished">Teletext</translation>
+        <translation>Teletext</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation type="unfinished">Zvýšit hlasitost</translation>
+        <translation>Zvýšit hlasitost</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation type="unfinished">Snížit hlasitost</translation>
+        <translation>Snížit hlasitost</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávání</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation type="unfinished">Otevřít soubor</translation>
+        <translation>Otevřít soubor</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation type="unfinished">Otevřít adresu (URL)</translation>
+        <translation>Otevřít adresu (URL)</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation type="unfinished">Otevřít seznam programů</translation>
+        <translation>Otevřít seznam programů</translation>
     </message>
     <message>
         <source>Edit Channel list</source>
-        <translation type="unfinished">Upravit seznam programů</translation>
+        <translation>Upravit seznam programů</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation type="unfinished">Vždy nahoře</translation>
+        <translation>Vždy nahoře</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation type="unfinished">Jednoduchý režim</translation>
+        <translation>Jednoduchý režim</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation type="unfinished">Skrýt v oznamovací oblasti panelu</translation>
+        <translation>Skrýt v oznamovací oblasti panelu</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation type="unfinished">Další zvuková stopa</translation>
+        <translation>Další zvuková stopa</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation type="unfinished">Další obrazová stopa</translation>
+        <translation>Další obrazová stopa</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation type="unfinished">Další titulková stopa</translation>
+        <translation>Další titulková stopa</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation type="unfinished">Další režim pro poměr stran</translation>
+        <translation>Další režim pro poměr stran</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation type="unfinished">Další režim pro ořez</translation>
+        <translation>Další režim pro ořez</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation type="unfinished">Další režim pro zrušení prokládání</translation>
+        <translation>Další režim pro zrušení prokládání</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation type="unfinished">Nastavit</translation>
+        <translation>Nastavit</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí</translation>
     </message>
 </context>
 <context>
@@ -2645,27 +2651,27 @@ This operation is ireversible.</source>
     <name>SettingsEditorCommon</name>
     <message>
         <source>Radio</source>
-        <translation type="unfinished"></translation>
+        <translation>Rádio</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí skupina pro rádio:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation type="unfinished">Podpora UDPXY</translation>
+        <translation>Podpora UDPXY</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation type="unfinished">Povolit podporu UDPXY</translation>
+        <translation>Povolit podporu UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation type="unfinished">IP nebo název směrovače:</translation>
+        <translation>IP nebo název směrovače:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation type="unfinished">Přípojka směrovače:</translation>
+        <translation>Přípojka směrovače:</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
@@ -2673,132 +2679,132 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Interface</source>
-        <translation type="unfinished">Rozhraní</translation>
+        <translation>Rozhraní</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation type="unfinished">Styl nástrojového pruhu:</translation>
+        <translation>Styl nástrojového pruhu:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation type="unfinished">Pouze ikony</translation>
+        <translation>Pouze ikony</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation type="unfinished">Pouze text</translation>
+        <translation>Pouze text</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation type="unfinished">Text vedle ikon</translation>
+        <translation>Text vedle ikon</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation type="unfinished">Text pod ikonami</translation>
+        <translation>Text pod ikonami</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation type="unfinished">Výchozí nastavení</translation>
+        <translation>Výchozí nastavení</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation type="unfinished">Ukázat úvodní obrazovku</translation>
+        <translation>Ukázat úvodní obrazovku</translation>
     </message>
 </context>
 <context>
     <name>SettingsEditorDialog</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Nastavení</translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished">Obecné</translation>
+        <translation>Obecné</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Editor</translation>
+        <translation>Editor</translation>
     </message>
 </context>
 <context>
     <name>SettingsEditorGeneral</name>
     <message>
         <source>Tano Editor</source>
-        <translation type="unfinished">Editor Tano</translation>
+        <translation>Editor Tano</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Jazyk</translation>
+        <translation>Jazyk</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation type="unfinished">Výchozí jazyk systému</translation>
+        <translation>Výchozí jazyk systému</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation type="unfinished">Jazyk stanovený uživatelem</translation>
+        <translation>Jazyk stanovený uživatelem</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation type="unfinished">Obnovit výchozí nastavení</translation>
+        <translation>Obnovit výchozí nastavení</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Toto obnoví všechna vaše nastavení na výchozí. Potřebujete změny použít, předtím než se projeví.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Používáte editor Tano verze:</translation>
     </message>
 </context>
 <context>
     <name>SettingsGeneral</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation type="unfinished">Po znovuspuštění spustit průvodce prvním spuštěním</translation>
+        <translation>Po znovuspuštění spustit průvodce prvním spuštěním</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Jazyk</translation>
+        <translation>Jazyk</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation type="unfinished">Výchozí jazyk systému</translation>
+        <translation>Výchozí jazyk systému</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation type="unfinished">Jazyk stanovený uživatelem</translation>
+        <translation>Jazyk stanovený uživatelem</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation type="unfinished">Ukládání sezení</translation>
+        <translation>Ukládání sezení</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation type="unfinished">Pamatovat si hlasitost</translation>
+        <translation>Pamatovat si hlasitost</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation type="unfinished">Automatické přehrávání posledního kanálu</translation>
+        <translation>Automatické přehrávání posledního programu</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation type="unfinished">Používáte verzi programu Tano:</translation>
+        <translation>Používáte verzi programu Tano:</translation>
     </message>
     <message>
         <source>Default channel list</source>
@@ -2806,15 +2812,15 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation type="unfinished">Obnovit výchozí nastavení</translation>
+        <translation>Obnovit výchozí nastavení</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Toto obnoví všechna vaše nastavení na výchozí. Potřebujete změny použít, předtím než se projeví.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Tano Editor</source>
@@ -2853,7 +2859,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Výchozí seznam programů&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -2900,43 +2906,43 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default playlist</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí seznam programů</translation>
     </message>
     <message>
         <source>Network refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovení sítě</translation>
     </message>
     <message>
         <source>Refresh playlist on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit seznam programů při spuštění</translation>
     </message>
     <message>
         <source>Playlist URL:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresa (URL) seznamu programů:</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished"></translation>
+        <translation>Rádio</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí skupina pro rádio:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation type="unfinished">Podpora UDPXY</translation>
+        <translation>Podpora UDPXY</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation type="unfinished">Povolit podporu UDPXY</translation>
+        <translation>Povolit podporu UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation type="unfinished">IP nebo název směrovače:</translation>
+        <translation>IP nebo název směrovače:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation type="unfinished">Přípojka směrovače:</translation>
+        <translation>Přípojka směrovače:</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
@@ -2944,14 +2950,14 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Aktualizace nezmění pořadí ve vašem seznamu programů.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
     <name>SettingsRecorder</name>
     <message>
         <source>Default recording directory</source>
-        <translation type="unfinished">Výchozí adresář pro nahrávání</translation>
+        <translation>Výchozí adresář pro nahrávání</translation>
     </message>
 </context>
 <context>
@@ -3022,11 +3028,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Select desired XMLTV grabber from the list below:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte požadovaný zachytávač XMLTV ze seznamu dole:</translation>
     </message>
     <message>
         <source>XMLTV settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení XMLTV</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -3034,43 +3040,43 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>XMLTV file location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Umístění souboru XMLTV:</translation>
     </message>
     <message>
         <source>Refresh XMLTV</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit XMLTV</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Obnovit soubor XMLTV při spuštění</translation>
     </message>
     <message>
         <source>Download file</source>
-        <translation type="unfinished"></translation>
+        <translation>Stáhnout soubor</translation>
     </message>
     <message>
         <source>Run grabber</source>
-        <translation type="unfinished"></translation>
+        <translation>Spustit zachytávač</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Síť</translation>
     </message>
     <message>
         <source>XMLTV source url:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresa zdroje XMLTV:</translation>
     </message>
     <message>
         <source>Grabber</source>
-        <translation type="unfinished"></translation>
+        <translation>Zachytávač</translation>
     </message>
     <message>
         <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Všechna nastavení pro XMLTV vyžadují opětovné spuštění.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Běžící zachytávání ještě není dostupné.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
@@ -3208,51 +3214,51 @@ This operation is ireversible.</source>
     <name>SettingsUi</name>
     <message>
         <source>General Interface Settings</source>
-        <translation type="unfinished">Obecná nastavení rozhraní</translation>
+        <translation>Obecná nastavení rozhraní</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation type="unfinished">Styl nástrojového pruhu:</translation>
+        <translation>Styl nástrojového pruhu:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation type="unfinished">Pouze ikony</translation>
+        <translation>Pouze ikony</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation type="unfinished">Pouze text</translation>
+        <translation>Pouze text</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation type="unfinished">Text vedle ikon</translation>
+        <translation>Text vedle ikon</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation type="unfinished">Text pod ikonami</translation>
+        <translation>Text pod ikonami</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation type="unfinished">Výchozí nastavení</translation>
+        <translation>Výchozí nastavení</translation>
     </message>
     <message>
         <source>Enable OSD in Fullscreen mode</source>
-        <translation type="unfinished">Povolit OSD v režimu celé obrazovky</translation>
+        <translation>Povolit OSD v režimu celé obrazovky</translation>
     </message>
     <message>
         <source>Mouse wheel function:</source>
-        <translation type="unfinished">Funkce kolečka myši:</translation>
+        <translation>Funkce kolečka myši:</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation type="unfinished">Změnit program</translation>
+        <translation>Změnit program</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation type="unfinished">Změnit hlasitost</translation>
+        <translation>Změnit hlasitost</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation type="unfinished">Zmenšit do oznamovací oblasti panelu</translation>
+        <translation>Zmenšit do oznamovací oblasti panelu</translation>
     </message>
     <message>
         <source>Enable Info OSD in Fullscreen mode</source>
@@ -3260,31 +3266,31 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default options for startup</source>
-        <translation type="unfinished">Výchozí volby pro začátek</translation>
+        <translation>Výchozí volby pro začátek</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation type="unfinished">Ukázat úvodní obrazovku</translation>
+        <translation>Ukázat úvodní obrazovku</translation>
     </message>
     <message>
         <source>Simple mode</source>
-        <translation type="unfinished">Jednoduchý režim</translation>
+        <translation>Jednoduchý režim</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation type="unfinished">Vždy nahoře</translation>
+        <translation>Vždy nahoře</translation>
     </message>
     <message>
         <source>Controls enabled</source>
-        <translation type="unfinished">Ovládací prvky povoleny</translation>
+        <translation>Ovládací prvky povoleny</translation>
     </message>
     <message>
         <source>Info panel enabled</source>
-        <translation type="unfinished">Panel s podrobnostmi povolen</translation>
+        <translation>Panel s podrobnostmi povolen</translation>
     </message>
     <message>
         <source>Show tray icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukázat ikonu v oznamovací oblasti</translation>
     </message>
 </context>
 <context>
@@ -3328,18 +3334,18 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>at</source>
-        <translation type="unfinished"></translation>
+        <translation>v</translation>
     </message>
 </context>
 <context>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Smazat</translation>
+        <translation>Smazat</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="unfinished">Hledat:</translation>
+        <translation>Hledat:</translation>
     </message>
 </context>
 <context>
@@ -3612,15 +3618,15 @@ Vaše změny nebudou použity.</translation>
     <name>TimersEditorWidget</name>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Časovače</translation>
+        <translation>Časovače</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Název:</translation>
+        <translation>Název:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="unfinished">Program:</translation>
+        <translation>Program:</translation>
     </message>
     <message>
         <source>Playlist:</source>
@@ -3628,43 +3634,43 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Typ:</translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="unfinished">Jednou</translation>
+        <translation>Jednou</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished">Denně</translation>
+        <translation>Denně</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished">Týdně</translation>
+        <translation>Týdně</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation type="unfinished"></translation>
+        <translation>Každý všední den</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation type="unfinished">Adresa (URL):</translation>
+        <translation>Adresa (URL):</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation type="unfinished"></translation>
+        <translation>dd.mm.rrrr</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="unfinished">Datum:</translation>
+        <translation>Datum:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished">Začátek:</translation>
+        <translation>Začátek:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished">Konec:</translation>
+        <translation>Konec:</translation>
     </message>
     <message>
         <source>Disabled:</source>
@@ -3696,21 +3702,23 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>Disable:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypnout:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávání</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Počáteční datum nahrávání je před dneškem.
+Vaše změny nebudou uloženy.</translation>
     </message>
     <message>
         <source>The recording is overlaping with others.
 Your changes will not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávání se překrývá s jiným.
+Vaše změny nebudou uloženy.</translation>
     </message>
 </context>
 <context>
@@ -3754,12 +3762,16 @@ Konečný čas: %3</translation>
     <message>
         <source>Tano is recording %1 to %2 
 Stop manually!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano nahrává %1 do
+%2
+Zastavit ručně!</translation>
     </message>
     <message>
         <source>Tano is recording %1 to %2 
 End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano nahrává %1 do
+%2
+Konečný čas: %3</translation>
     </message>
 </context>
 <context>

@@ -124,12 +124,10 @@ msgctxt "EpgList|"
 msgid "Record"
 msgstr "Nahrávat"
 
-#, fuzzy
 msgctxt "EpgScheduleChannel|"
 msgid "<h2>No EPG</h2>"
 msgstr "<h2>Žádné EPG</h2>"
 
-#, fuzzy
 msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Rozvrh"
@@ -144,56 +142,55 @@ msgstr "Další"
 
 msgctxt "EpgShow|"
 msgid "<b>Crew</b>"
-msgstr ""
+msgstr "<b>Skupina</b>"
 
 msgctxt "EpgShow|"
 msgid "<b>Description</b>"
-msgstr ""
+msgstr "<b>Popis</b>"
 
 msgctxt "EpgShow|"
 msgid "Crew members: All"
-msgstr ""
+msgstr "Členové pracovní skupiny: Vše"
 
 msgctxt "EpgShow|"
 msgid "Director"
-msgstr ""
+msgstr "Ředitel"
 
 msgctxt "EpgShow|"
 msgid "Actor"
-msgstr ""
+msgstr "Herec"
 
 msgctxt "EpgShow|"
 msgid "Writer"
-msgstr ""
+msgstr "Autor"
 
 msgctxt "EpgShow|"
 msgid "Adapter"
-msgstr ""
+msgstr "Adaptér"
 
 msgctxt "EpgShow|"
 msgid "Producer"
-msgstr ""
+msgstr "Režisér"
 
 msgctxt "EpgShow|"
 msgid "Composer"
-msgstr ""
+msgstr "Skladatel"
 
-#, fuzzy
 msgctxt "EpgShow|"
 msgid "Editor"
 msgstr "Editor"
 
 msgctxt "EpgShow|"
 msgid "Presenter"
-msgstr ""
+msgstr "Konferenciér"
 
 msgctxt "EpgShow|"
 msgid "Commentator"
-msgstr ""
+msgstr "Komentátor"
 
 msgctxt "EpgShow|"
 msgid "Guest"
-msgstr ""
+msgstr "Host"
 
 #~ msgctxt "FileDialogs|"
 #~ msgid "Open directory"
@@ -269,17 +266,14 @@ msgstr ""
 #~ msgid "Next:"
 #~ msgstr "Další:"
 
-#, fuzzy
 msgctxt "InfoBarWidget|"
 msgid "Now:"
 msgstr "Nyní:"
 
-#, fuzzy
 msgctxt "InfoBarWidget|"
 msgid "Next:"
 msgstr "Další:"
 
-#, fuzzy
 msgctxt "InfoBarWidget|"
 msgid "Language:"
 msgstr "Jazyk:"
@@ -493,11 +487,11 @@ msgstr "Teletext"
 
 msgctxt "MainWindow|"
 msgid "Pause"
-msgstr ""
+msgstr "Pozastavit"
 
 msgctxt "MainWindow|"
 msgid "Buffering..."
-msgstr ""
+msgstr "Ukládá se do vyrovnávací paměti..."
 
 #~ msgctxt "MainWindow|"
 #~ msgid "Tano TV channel list files(*.m3u)"
@@ -505,9 +499,9 @@ msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Restore"
-msgstr ""
+msgstr "Obnovit"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -518,27 +512,27 @@ msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Controls"
-msgstr ""
+msgstr "Ovládání"
 
 msgctxt "MainWindow|"
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Klávesové zkratky"
 
 msgctxt "MainWindow|"
 msgid "Recorder Toolbar"
-msgstr ""
+msgstr "Nástrojový pruh pro nahrávání"
 
 msgctxt "MainWindow|"
 msgid "Quick record"
-msgstr ""
+msgstr "Rychlý záznam"
 
 msgctxt "MainWindow|"
 msgid "Quick"
-msgstr ""
+msgstr "Rychlý"
 
 msgctxt "MainWindow|"
 msgid "Add timer"
-msgstr ""
+msgstr "Přidat časovač"
 
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
@@ -564,17 +558,14 @@ msgstr "Původní"
 #~ msgid "Original"
 #~ msgstr "Původní"
 
-#, fuzzy
 msgctxt "MenuCropRatio|"
 msgid "Crop video"
 msgstr "Ořezat obraz"
 
-#, fuzzy
 msgctxt "MenuCropRatio|"
 msgid "Next crop option"
-msgstr "Další volba pro ořez"
+msgstr "Volba pro další ořez"
 
-#, fuzzy
 msgctxt "MenuCropRatio|"
 msgid "Original"
 msgstr "Původní"
@@ -651,95 +642,81 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Další obrazová stopa"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Play"
 msgstr "Přehrát"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Stop"
-msgstr "Stop"
+msgstr "Zastavit"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Back"
 msgstr "Zpět"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Next"
 msgstr "Další"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Record Now"
 msgstr "Nahrávat nyní"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Mute"
 msgstr "Ztlumit"
 
 msgctxt "OsdWidget|"
 msgid "Pause"
-msgstr ""
+msgstr "Pozastavit"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Teletext"
 msgstr "Teletext"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Clear"
 msgstr "Smazat"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Search:"
 msgstr "Hledat:"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Category:"
 msgstr "Skupina:"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Language:"
 msgstr "Jazyk:"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "All categories"
 msgstr "Všechny skupiny"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "All languages"
 msgstr "Všechny jazyky"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Type:"
 msgstr "Typ:"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "TV + Radio"
-msgstr ""
+msgstr "TV + Rádio"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "TV only"
-msgstr ""
+msgstr "Pouze TV"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "Radio only"
-msgstr ""
+msgstr "Pouze rádio"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "Search and filter"
-msgstr ""
+msgstr "Hledat a filtrovat"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Playlist name:"
@@ -1013,25 +990,22 @@ msgstr ""
 #~ msgid "A channel with this number already exists!"
 #~ msgstr "Program s tímto číslem již existuje!"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Tano Editor"
 msgstr "Editor Tano"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Playlist name:"
 msgstr "Název seznamu programů:"
 
 msgctxt "PlaylistEditor|"
 msgid "Number of channels:"
-msgstr ""
+msgstr "Počet programů:"
 
 msgctxt "PlaylistEditor|"
 msgid "Help"
-msgstr ""
+msgstr "Nápověda"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Toolbar"
 msgstr "Nástrojový pruh"
@@ -1040,32 +1014,26 @@ msgstr "Nástrojový pruh"
 #~ msgid "Editor"
 #~ msgstr "Editor"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Number:"
 msgstr "Číslo:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Name:"
 msgstr "Název:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Categories:"
 msgstr "Skupiny:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Language:"
 msgstr "Jazyk:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "EPG:"
 msgstr "EPG:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Url:"
 msgstr "Adresa (URL):"
@@ -1084,7 +1052,7 @@ msgstr "Adresa (URL):"
 
 msgctxt "PlaylistEditor|"
 msgid "Logo:"
-msgstr ""
+msgstr "Logo:"
 
 #~ msgctxt "PlaylistEditor|"
 #~ msgid "Update Playlist"
@@ -1110,88 +1078,76 @@ msgstr ""
 #~ msgid "Port:"
 #~ msgstr "Přípojka:"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Add channel"
 msgstr "Přidat program"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Delete channel"
 msgstr "Smazat program"
 
 msgctxt "PlaylistEditor|"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Close"
 msgstr "Zavřít"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Move up"
 msgstr "Posunout nahoru"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Move down"
 msgstr "Posunout dolů"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Print"
 msgstr "Tisk"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Export"
 msgstr "Vyvést"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Open"
 msgstr "Otevřít"
 
 msgctxt "PlaylistEditor|"
 msgid "About"
-msgstr ""
+msgstr "O programu"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "New playlist"
 msgstr "Nový seznam programů"
 
 msgctxt "PlaylistEditor|"
 msgid "Tvheadend"
-msgstr ""
+msgstr "Tvheadend"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Settings"
 msgstr "Nastavení"
 
 msgctxt "PlaylistEditor|"
 msgid "XMLTV IDs"
-msgstr ""
+msgstr "Identifikátory XMLTV"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Update Information"
 msgstr "Informace o aktualizacích"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditor|"
 msgid "%1 - Tano Editor"
 msgstr "%1 - Editor Tano"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Tano"
 msgstr "Tano"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditor|"
 msgid ""
 "Cannot read file %1:\n"
@@ -1200,12 +1156,10 @@ msgstr ""
 "Nelze číst ze souboru %1:\n"
 "%2."
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Playlist Editor"
 msgstr "Editor seznamu programů"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid ""
 "Do you want to create new playlist?\n"
@@ -1214,7 +1168,7 @@ msgstr ""
 "Chcete vytvořit nový seznam programů?\n"
 "Ztratíte všechny neuložené změny."
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditor|"
 msgid ""
 "Cannot write file %1:\n"
@@ -1225,15 +1179,16 @@ msgstr ""
 
 msgctxt "PlaylistEditor|"
 msgid "Export to M3U format with Udpxy URLs"
-msgstr ""
+msgstr "Vyvést do formátu M3U s adresami Udpxy (URL)"
 
 msgctxt "PlaylistEditor|"
 msgid ""
 "You need to have valid Udpxy settings or the exported playlist will contain "
 "classic URLs."
 msgstr ""
+"Musíte mít platná nastavení Udpxy, nebo bude vyvedený seznam skladeb "
+"obsahovat klasické adresy (URL)."
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid ""
 "Do you want close the editor?\n"
@@ -1247,50 +1202,63 @@ msgstr ""
 #~ msgid "New channel from scan %1"
 #~ msgstr "Nový program z prohledání %1"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "A channel with this number already exists!"
 msgstr "Program s tímto číslem již existuje!"
 
 msgctxt "PlaylistEditor|"
 msgid "Edit channel"
-msgstr ""
+msgstr "Upravit program"
 
 msgctxt "PlaylistEditor|"
 msgid "Radio:"
-msgstr ""
+msgstr "Rádio:"
 
 msgctxt "PlaylistEditor|"
 msgid "Scan for new channels"
-msgstr ""
+msgstr "Prohledat na nové programy"
 
 msgctxt "PlaylistEditorHelp|"
 msgid "Tano Editor - Help"
-msgstr ""
+msgstr "Editor Tano - Nápověda"
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h2>Tano Editor - Help</h2>"
-msgstr ""
+msgstr "<h2>Editor Tano - Nápověda</h2>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
 "<b>You can edit your IP TV playlist, print it or export it to desired "
 "format.</b>"
 msgstr ""
+"<b>Můžete upravit svůj seznam programů IP TV, vytisknout jej nebo vyvést do "
+"požadovaného formátu.</b>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h3>Editing channels</h3>"
-msgstr ""
+msgstr "<h3>Úpravy programů</h3>"
+
+#~ msgctxt "PlaylistEditorHelp|"
+#~ msgid ""
+#~ "The number of a channel needs to be applied. All other values are "
+#~ "automatically changed. You can set any channel as radio. Categories can "
+#~ "be sepparated by comma (,)."
+#~ msgstr ""
+#~ "Číslo programu je potřeba použít. Všechny ostatní hodnoty jsou "
+#~ "automaticky změněny. Jakýkoli program můžete nastavit jako rádio. Skupiny "
+#~ "lze oddělovat čárkou (,)."
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
 "Full URL needs to be provided for the channel logo. Pictures will be scaled "
 "to fit the interface."
 msgstr ""
+"Pro logo programu je potřeba poskytnout celou adresu (URL). Velikost obrázků "
+"bude změněna tak, aby se vešly do rozhraní."
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h3>Formats and export</h3>"
-msgstr ""
+msgstr "<h3>Formáty a vyvedení</h3>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1298,10 +1266,13 @@ msgid ""
 "Sagem JS files. Beside these formats you can also save/export to M3U with "
 "Udpxy URLs and Tvheadend configuration files."
 msgstr ""
+"Editor Tano podporuje své vlastní upravené soubory M3U, CSV a Sagem JS. "
+"Kromě těchto formátů můžete také ukládat/vyvádět do M3U s adresami Udpxy a "
+"se soubory nastavení Tvheaden."
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h3>Scan for channels</h3>"
-msgstr ""
+msgstr "<h3>Hledání programů</h3>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1309,6 +1280,10 @@ msgid ""
 "valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 "
 "IPs in this range. A channel is added if it is detected before timeout."
 msgstr ""
+"Nové programy můžete hledat pomocí vestavěného prohledávače programů. "
+"Nastavte, prosím, platný rozsah IP (např. 232.4.1) a přípojku (např. 5000). "
+"Tano prohledá všech 255 IP v tomto rozsahu. Program je přidán, je-li zjištěn "
+"před vypršením času."
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1316,6 +1291,9 @@ msgid ""
 "exporting to Sagem JS and CSV. Only the first category or radio category "
 "will be exported to Sagem JS."
 msgstr ""
+"Můžete nastavit vlastní skupinu pro rádio v nastavení (výchozí pro rádio) "
+"pro vyvedení do Sagem JS a CSV. Pouze první skupina nebo skupina pro rádio "
+"bude vyvedena do Sagem JS."
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1324,73 +1302,63 @@ msgid ""
 "separated by comma (,)."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "IP Range:"
 msgstr "Rozsah IP:"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Port:"
 msgstr "Přípojka:"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Timeout:"
 msgstr "Překročení času:"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid " ms"
 msgstr " ms"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Scan and update"
 msgstr "Prohledat a obnovit"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditorScan|"
 msgid "New channel from scan %1"
 msgstr "Nový program z prohledání %1"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Playlist Editor"
 msgstr "Editor seznamu programů"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
-msgstr ""
+msgstr "Vyvést do služeb IP TV Tvheadend"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Output location:"
-msgstr ""
+msgstr "Výstupní umístění:"
 
-#, fuzzy
 msgctxt "PlaylistExportTvheadend|"
 msgid "..."
 msgstr "..."
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Network interface:"
-msgstr ""
+msgstr "Síťové rozhraní:"
 
-#, fuzzy
 msgctxt "PlaylistExportTvheadend|"
 msgid "Open directory"
 msgstr "Otevřít adresář"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
-msgstr ""
+msgstr "<i><b>Varování: Toto smaže všechny stávající programy!</b></a>"
 
-#, fuzzy
 msgctxt "PlaylistFilterModel|"
 msgid "All categories"
 msgstr "Všechny skupiny"
 
-#, fuzzy
 msgctxt "PlaylistFilterModel|"
 msgid "All languages"
 msgstr "Všechny jazyky"
@@ -1751,9 +1719,9 @@ msgstr "Číslo"
 
 msgctxt "QObject|"
 msgid "The file is not a valid XMLTV file."
-msgstr ""
+msgstr "Soubor není platným souborem XMLTV."
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "QObject|"
 msgid ""
 "Cannot write file %1:\n"
@@ -1764,34 +1732,32 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "seconds"
-msgstr ""
+msgstr "sekund"
 
 msgctxt "QObject|"
 msgid "minutes"
-msgstr ""
+msgstr "minut(y)"
 
 msgctxt "QObject|"
 msgid "hours"
-msgstr ""
+msgstr "hodin(y)"
 
 msgctxt "QObject|"
 msgid "s"
-msgstr ""
+msgstr "s"
 
 msgctxt "QObject|"
 msgid "min"
-msgstr ""
+msgstr "min"
 
 msgctxt "QObject|"
 msgid "h"
-msgstr ""
+msgstr "h"
 
-#, fuzzy
 msgctxt "QObject|"
 msgid "Open directory"
 msgstr "Otevřít adresář"
 
-#, fuzzy
 msgctxt "QObject|"
 msgid "Open channel list"
 msgstr "Otevřít seznam programů"
@@ -1802,11 +1768,13 @@ msgstr "Otevřít seznam programů"
 
 msgctxt "QObject|"
 msgid "Open URL or stream"
-msgstr ""
+msgstr "Otevřít adresu (URL) nebo datový proud"
 
 msgctxt "QObject|"
 msgid "Enter the URL of multimedia file or stream you want to play:"
 msgstr ""
+"Zadejte adresu (URL) multimediálního souboru nebo datového proudu, jejž "
+"chcete přehrávat:"
 
 #~ msgctxt "QObject|"
 #~ msgid "M3U (original) list files (*.m3u)"
@@ -1822,152 +1790,151 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "Tano M3U channel list files"
-msgstr ""
+msgstr "Soubory se seznamy programů M3U Tano"
 
 msgctxt "QObject|"
 msgid "Comma-separated values files"
-msgstr ""
+msgstr "Soubory s hodnotami oddělenými čárkou"
 
 msgctxt "QObject|"
 msgid "Multimedia files"
-msgstr ""
+msgstr "Multimediální soubory"
 
 msgctxt "QObject|"
 msgid "Subtitles files"
-msgstr ""
+msgstr "Soubory titulků"
 
 msgctxt "QObject|"
 msgid "Plain text files"
-msgstr ""
+msgstr "Soubory prostého textu"
 
 msgctxt "QObject|"
 msgid "Open file"
-msgstr ""
+msgstr "Otevřít soubor"
 
 msgctxt "QObject|"
 msgid "Open subtitles"
-msgstr ""
+msgstr "Otevřít titulky"
 
 msgctxt "QObject|"
 msgid "Export XMLTV IDs"
-msgstr ""
+msgstr "Vyvést identifikátory XMLTV"
 
 msgctxt "QObject|"
 msgid "M3U (original) files"
-msgstr ""
+msgstr "Soubory M3U (původní)"
 
 msgctxt "QObject|"
 msgid "M3U (Udpxy URL) files"
-msgstr ""
+msgstr "Soubory M3U (adresy (URL) Udpxy)"
 
 msgctxt "QObject|"
 msgid "Tano TV old channel list files"
-msgstr ""
+msgstr "Soubory se starými seznamy programů TV Tano"
 
 msgctxt "QObject|"
 msgid "Sagem STB channel list files"
-msgstr ""
+msgstr "Soubory se seznamy programů STB Sagem"
 
 msgctxt "QObject|"
 msgid "CSV channel list"
-msgstr ""
+msgstr "Seznam programů CSV"
 
 msgctxt "QObject|"
 msgid "Sagem STB channel list"
-msgstr ""
+msgstr "Seznam programů STB Sagem"
 
 msgctxt "QObject|"
 msgid "XMLTV file"
-msgstr ""
+msgstr "Soubor XMLTV"
 
 msgctxt "QObject|"
 msgid "Open XMLTV"
-msgstr ""
+msgstr "Otevřít XMLTV"
 
 msgctxt "QObject|"
 msgid "Director"
-msgstr ""
+msgstr "Ředitel"
 
 msgctxt "QObject|"
 msgid "Actor"
-msgstr ""
+msgstr "Herec"
 
 msgctxt "QObject|"
 msgid "Writer"
-msgstr ""
+msgstr "Autor"
 
 msgctxt "QObject|"
 msgid "Adapter"
-msgstr ""
+msgstr "Adaptér"
 
 msgctxt "QObject|"
 msgid "Producer"
-msgstr ""
+msgstr "Režisér"
 
 msgctxt "QObject|"
 msgid "Composer"
-msgstr ""
+msgstr "Skladatel"
 
-#, fuzzy
 msgctxt "QObject|"
 msgid "Editor"
 msgstr "Editor"
 
 msgctxt "QObject|"
 msgid "Presenter"
-msgstr ""
+msgstr "Konferenciér"
 
 msgctxt "QObject|"
 msgid "Commentator"
-msgstr ""
+msgstr "Komentátor"
 
 msgctxt "QObject|"
 msgid "Guest"
-msgstr ""
+msgstr "Host"
 
 msgctxt "QObject|"
 msgid "Enabled"
-msgstr ""
+msgstr "Povoleno"
 
 msgctxt "QObject|"
 msgid "Recording"
-msgstr ""
+msgstr "Nahrávání"
 
 msgctxt "QObject|"
 msgid "Finished"
-msgstr ""
+msgstr "Hotovo"
 
 msgctxt "QObject|"
 msgid "Expired"
-msgstr ""
+msgstr "Vypršelo"
 
 msgctxt "QObject|"
 msgid "Weekdays"
-msgstr ""
+msgstr "Každý všední den"
 
 msgctxt "QObject|"
 msgid "Instant"
-msgstr ""
+msgstr "Okamžitý"
 
 msgctxt "QObject|"
 msgid "repeats only once"
-msgstr ""
+msgstr "Opakuje pouze jednou"
 
 msgctxt "QObject|"
 msgid "repeats daily"
-msgstr ""
+msgstr "Opakuje denně"
 
 msgctxt "QObject|"
 msgid "repeats weekly"
-msgstr ""
+msgstr "Opakuje týdně"
 
 msgctxt "QObject|"
 msgid "repeats on weekdays"
-msgstr ""
+msgstr "Opakuje kterýkoliv všední den"
 
 msgctxt "QObject|"
 msgid "instant recording"
-msgstr ""
+msgstr "Okamžitý záznam"
 
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
@@ -2013,7 +1980,7 @@ msgstr "Nahrávat"
 #~ msgid "End time:"
 #~ msgstr "Konec:"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "Recorder|"
 msgid "Cannot write to %1."
 msgstr "Nelze zapisovat do %1."
@@ -2036,22 +2003,20 @@ msgstr "Nelze zapisovat do %1."
 
 msgctxt "Recorder|"
 msgid "Quick record"
-msgstr ""
+msgstr "Rychlý záznam"
 
 msgctxt "Recorder|"
 msgid "Recording name:"
-msgstr ""
+msgstr "Název nahrávky:"
 
-#, fuzzy
 msgctxt "Recorder|"
 msgid "Back"
 msgstr "Zpět"
 
 msgctxt "Recorder|"
 msgid "Recordings"
-msgstr ""
+msgstr "Nahrávky"
 
-#, fuzzy
 msgctxt "Recorder|"
 msgid "Timers"
 msgstr "Časovače"
@@ -2059,33 +2024,35 @@ msgstr "Časovače"
 #, qt-format
 msgctxt "Recorder|"
 msgid "Quick %1"
-msgstr ""
+msgstr "Rychlý %1"
 
 msgctxt "Recorder|"
 msgid "Add timer"
-msgstr ""
+msgstr "Přidat časovač"
 
 msgctxt "Recorder|"
 msgid "Timer name:"
-msgstr ""
+msgstr "Název časovače:"
 
 msgctxt "Recorder|"
 msgid "Add new timer"
-msgstr ""
+msgstr "Přidat nový časovač"
 
 msgctxt "Recorder|"
 msgid "Please, select a channel."
-msgstr ""
+msgstr "Vyberte, prosím, program."
 
 msgctxt "Recorder|"
 msgid "Recording not valid!"
-msgstr ""
+msgstr "Záznam není platný!"
 
 msgctxt "Recorder|"
 msgid ""
 "File cannot be removed.\n"
 "Have you already moved or deleted it?"
 msgstr ""
+"Soubor nelze odstranit.\n"
+"Již jste jej přesunul nebo smazal?"
 
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Status"
@@ -2103,89 +2070,85 @@ msgstr ""
 #~ msgid "Time elapsed:"
 #~ msgstr "Uplynulý čas:"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "End time:"
 msgstr "Konec:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Currently not recording."
-msgstr ""
+msgstr "Nyní se nenahrává."
 
 msgctxt "RecorderInfoWidget|"
 msgid "No timer - stop manually."
-msgstr ""
+msgstr "Žádný časovač - zastavit ručně."
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Stop recording"
 msgstr "Zastavit nahrávání"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Recording:"
 msgstr "Nahrává se:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Elapsed:"
-msgstr ""
+msgstr "Uplynulý čas:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Output:"
-msgstr ""
+msgstr "Výstup:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "<b>Status</b>"
-msgstr ""
+msgstr "<b>Stav</b>"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Channel:"
 msgstr "Program:"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Play"
 msgstr "Přehrát"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Back"
 msgstr "Zpět"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Time:"
-msgstr ""
+msgstr "Čas:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Duration:"
-msgstr ""
+msgstr "Doba trvání:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "File:"
-msgstr ""
+msgstr "Soubor:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "at"
-msgstr ""
+msgstr "v"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Recorder"
-msgstr ""
+msgstr "Nahrávání"
 
 msgctxt "RecorderInfoWidget|"
 msgid ""
 "Are you sure you want to delete the recording?\n"
 "This operation is ireversible."
 msgstr ""
+"Jste si jistý, že chcete nahrávku smazat?\n"
+"Tuto operaci nelze vrátit zpět."
 
 msgctxt "RecorderInfoWidget|"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #~ msgctxt "ScheduleListPage|"
 #~ msgid "Schedule"
@@ -2195,7 +2158,6 @@ msgstr ""
 #~ msgid "Schedule"
 #~ msgstr "Rozvrh"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
 msgstr "Jádro VLC-Qt"
@@ -2204,7 +2166,6 @@ msgstr "Jádro VLC-Qt"
 #~ msgid "Curently using VLC-Qt Backend"
 #~ msgstr "Nyní se používá jádro VLC-Qt"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Version:"
 msgstr "Verze:"
@@ -2213,37 +2174,30 @@ msgstr "Verze:"
 #~ msgid "Use global VLC settings (requires restart)"
 #~ msgstr "Použít všeobecná nastavení VLC (vyžaduje znovuspuštění)"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Using Videolan VLC version:"
 msgstr "Používá se verze VLC Videolan:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Playback"
 msgstr "Přehrávání"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Remember Video settings between media"
 msgstr "Zapamatovat si nastavení obrazu mezi médii"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Default subtitle language:"
 msgstr "Výchozí jazyk titulků:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Default audio language:"
 msgstr "Výchozí jazyk pro zvuk:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Disabled"
 msgstr "Zakázáno"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Other"
 msgstr "Jiné"
@@ -2272,235 +2226,195 @@ msgstr "Jiné"
 
 msgctxt "SettingsBackend|"
 msgid "Default aspect ratio:"
-msgstr ""
+msgstr "Výchozí poměr stran:"
 
 msgctxt "SettingsBackend|"
 msgid "Default crop:"
-msgstr ""
+msgstr "Výchozí pro ořez:"
 
 msgctxt "SettingsBackend|"
 msgid "Default deinterlacing:"
-msgstr ""
+msgstr "Výchozí pro zrušení prokládání:"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Original"
 msgstr "Původní"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Discard"
 msgstr "Zrušit"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Blend"
 msgstr "Prolínání"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Mean"
 msgstr "Střed"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Bob"
 msgstr "Trhání"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Linear"
 msgstr "Přímočarý"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "X"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr "Nastavení"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Obecné"
 
 msgctxt "SettingsDialog|"
 msgid "Playlist"
-msgstr ""
+msgstr "Seznam programů"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Interface"
 msgstr "Rozhraní"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Playback"
 msgstr "Přehrávání"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Schedule"
 msgstr "Rozvrh"
 
 msgctxt "SettingsDialog|"
 msgid "Recorder"
-msgstr ""
+msgstr "Nahrávání"
 
 msgctxt "SettingsDialogShortcuts|"
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Klávesové zkratky"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Action"
 msgstr "Činnost"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Key"
 msgstr "Klávesa"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Play / Pause"
 msgstr "Přehrát/Pozastavit"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Stop"
-msgstr "Stop"
+msgstr "Zastavit"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next channel"
-msgstr "Další kanál"
+msgstr "Další program"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Previous channel"
-msgstr "Předchozí kanál"
+msgstr "Předchozí program"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Fullscreen"
 msgstr "Na celou obrazovku"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Toggle Info Widget"
 msgstr "Přepnout informační prvek"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Toggle Controls Widget"
 msgstr "Přepnout ovládací prvek"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Mute"
 msgstr "Ztlumit"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Teletext"
 msgstr "Teletext"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Volume up"
 msgstr "Zvýšit hlasitost"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Volume down"
 msgstr "Snížit hlasitost"
 
 msgctxt "SettingsDialogShortcuts|"
 msgid "Recorder"
-msgstr ""
+msgstr "Nahrávání"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Open File"
 msgstr "Otevřít soubor"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Open URL"
 msgstr "Otevřít adresu (URL)"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Open Channel list"
 msgstr "Otevřít seznam programů"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Edit Channel list"
 msgstr "Upravit seznam programů"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Settings"
 msgstr "Nastavení"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Always on top"
 msgstr "Vždy nahoře"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Simple Mode"
 msgstr "Jednoduchý režim"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Hide to tray"
 msgstr "Skrýt v oznamovací oblasti panelu"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next audio track"
 msgstr "Další zvuková stopa"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next video track"
 msgstr "Další obrazová stopa"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next subtitle track"
 msgstr "Další titulková stopa"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next aspect ratio mode"
 msgstr "Další režim pro poměr stran"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next crop mode"
 msgstr "Další režim pro ořez"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next deinterlace mode"
 msgstr "Další režim pro zrušení prokládání"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Set"
 msgstr "Nastavit"
 
 msgctxt "SettingsDialogShortcuts|"
 msgid "Defaults"
-msgstr ""
+msgstr "Výchozí"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Settings"
@@ -2722,28 +2636,24 @@ msgstr ""
 
 msgctxt "SettingsEditorCommon|"
 msgid "Radio"
-msgstr ""
+msgstr "Rádio"
 
 msgctxt "SettingsEditorCommon|"
 msgid "Default radio category:"
-msgstr ""
+msgstr "Výchozí skupina pro rádio:"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "UDPXY support"
 msgstr "Podpora UDPXY"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Enable UDPXY support"
 msgstr "Povolit podporu UDPXY"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Router IP or name:"
 msgstr "IP nebo název směrovače:"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Router port:"
 msgstr "Přípojka směrovače:"
@@ -2754,90 +2664,74 @@ msgstr "Přípojka směrovače:"
 #~ msgstr ""
 #~ "<i>Tímto se převedou adresy (URL) v seznamu programů z %1 na %2.</i>"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Interface"
 msgstr "Rozhraní"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Toolbar style:"
 msgstr "Styl nástrojového pruhu:"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Icon only"
 msgstr "Pouze ikony"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Text only"
 msgstr "Pouze text"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Text beside icon"
 msgstr "Text vedle ikon"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Text under icon"
 msgstr "Text pod ikonami"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "System default"
 msgstr "Výchozí nastavení"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Show splash screen"
 msgstr "Ukázat úvodní obrazovku"
 
-#, fuzzy
 msgctxt "SettingsEditorDialog|"
 msgid "Settings"
 msgstr "Nastavení"
 
-#, fuzzy
 msgctxt "SettingsEditorDialog|"
 msgid "General"
 msgstr "Obecné"
 
-#, fuzzy
 msgctxt "SettingsEditorDialog|"
 msgid "Editor"
 msgstr "Editor"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Tano Editor"
 msgstr "Editor Tano"
 
 msgctxt "SettingsEditorGeneral|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr ""
+msgstr "<i>Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.</i>"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Language"
 msgstr "Jazyk"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "System default language"
 msgstr "Výchozí jazyk systému"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Custom language"
 msgstr "Jazyk stanovený uživatelem"
 
 msgctxt "SettingsEditorGeneral|"
 msgid "Defaults"
-msgstr ""
+msgstr "Výchozí"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Restore defaults"
 msgstr "Obnovit výchozí nastavení"
@@ -2847,56 +2741,49 @@ msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
 "changes, before they will take effect.</i>"
 msgstr ""
+"<i>Toto obnoví všechna vaše nastavení na výchozí. Potřebujete změny použít, "
+"předtím než se projeví.</i>"
 
 msgctxt "SettingsEditorGeneral|"
 msgid "You are using Tano Editor version:"
-msgstr ""
+msgstr "Používáte editor Tano verze:"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Run First run wizard after restart"
 msgstr "Po znovuspuštění spustit průvodce prvním spuštěním"
 
 msgctxt "SettingsGeneral|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr ""
+msgstr "<i>Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.</i>"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Language"
 msgstr "Jazyk"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "System default language"
 msgstr "Výchozí jazyk systému"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Custom language"
 msgstr "Jazyk stanovený uživatelem"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Session store"
 msgstr "Ukládání sezení"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Remember volume"
 msgstr "Pamatovat si hlasitost"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Autoplay last channel"
-msgstr "Automatické přehrávání posledního kanálu"
+msgstr "Automatické přehrávání posledního programu"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "You are using Tano version:"
 msgstr "Používáte verzi programu Tano:"
@@ -2907,9 +2794,8 @@ msgstr "Používáte verzi programu Tano:"
 
 msgctxt "SettingsGeneral|"
 msgid "Defaults"
-msgstr ""
+msgstr "Výchozí"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Restore defaults"
 msgstr "Obnovit výchozí nastavení"
@@ -2919,6 +2805,8 @@ msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
 "changes, before they will take effect.</i>"
 msgstr ""
+"<i>Toto obnoví všechna vaše nastavení na výchozí. Potřebujete změny použít, "
+"předtím než se projeví.</i>"
 
 #~ msgctxt "SettingsGeneral|"
 #~ msgid "Tano Editor"
@@ -2954,7 +2842,7 @@ msgstr "Automatické přehrávání posledního kanálu"
 
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
-msgstr ""
+msgstr "<b>Výchozí seznam programů</b>"
 
 #~ msgctxt "SettingsPlaylist|"
 #~ msgid "Preset"
@@ -3002,44 +2890,40 @@ msgstr ""
 
 msgctxt "SettingsPlaylist|"
 msgid "Default playlist"
-msgstr ""
+msgstr "Výchozí seznam programů"
 
 msgctxt "SettingsPlaylist|"
 msgid "Network refresh"
-msgstr ""
+msgstr "Obnovení sítě"
 
 msgctxt "SettingsPlaylist|"
 msgid "Refresh playlist on startup"
-msgstr ""
+msgstr "Obnovit seznam programů při spuštění"
 
 msgctxt "SettingsPlaylist|"
 msgid "Playlist URL:"
-msgstr ""
+msgstr "Adresa (URL) seznamu programů:"
 
 msgctxt "SettingsPlaylist|"
 msgid "Radio"
-msgstr ""
+msgstr "Rádio"
 
 msgctxt "SettingsPlaylist|"
 msgid "Default radio category:"
-msgstr ""
+msgstr "Výchozí skupina pro rádio:"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "UDPXY support"
 msgstr "Podpora UDPXY"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "Enable UDPXY support"
 msgstr "Povolit podporu UDPXY"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "Router IP or name:"
 msgstr "IP nebo název směrovače:"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "Router port:"
 msgstr "Přípojka směrovače:"
@@ -3052,9 +2936,8 @@ msgstr "Přípojka směrovače:"
 
 msgctxt "SettingsPlaylist|"
 msgid "<i>Updating will not change your playlist order.</i>"
-msgstr ""
+msgstr "<i>Aktualizace nezmění pořadí ve vašem seznamu programů.</i>"
 
-#, fuzzy
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
 msgstr "Výchozí adresář pro nahrávání"
@@ -3127,11 +3010,11 @@ msgstr "Výchozí adresář pro nahrávání"
 
 msgctxt "SettingsSchedule|"
 msgid "Select desired XMLTV grabber from the list below:"
-msgstr ""
+msgstr "Vyberte požadovaný zachytávač XMLTV ze seznamu dole:"
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV settings"
-msgstr ""
+msgstr "Nastavení XMLTV"
 
 #~ msgctxt "SettingsSchedule|"
 #~ msgid "Custom"
@@ -3139,43 +3022,43 @@ msgstr ""
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV file location:"
-msgstr ""
+msgstr "Umístění souboru XMLTV:"
 
 msgctxt "SettingsSchedule|"
 msgid "Refresh XMLTV"
-msgstr ""
+msgstr "Obnovit XMLTV"
 
 msgctxt "SettingsSchedule|"
 msgid "Refresh XMLTV file on startup"
-msgstr ""
+msgstr "Obnovit soubor XMLTV při spuštění"
 
 msgctxt "SettingsSchedule|"
 msgid "Download file"
-msgstr ""
+msgstr "Stáhnout soubor"
 
 msgctxt "SettingsSchedule|"
 msgid "Run grabber"
-msgstr ""
+msgstr "Spustit zachytávač"
 
 msgctxt "SettingsSchedule|"
 msgid "Network"
-msgstr ""
+msgstr "Síť"
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV source url:"
-msgstr ""
+msgstr "Adresa zdroje XMLTV:"
 
 msgctxt "SettingsSchedule|"
 msgid "Grabber"
-msgstr ""
+msgstr "Zachytávač"
 
 msgctxt "SettingsSchedule|"
 msgid "<i>All XMLTV settings require restart.</i>"
-msgstr ""
+msgstr "<i>Všechna nastavení pro XMLTV vyžadují opětovné spuštění.</i>"
 
 msgctxt "SettingsSchedule|"
 msgid "<i>Grabber running is not available yet.</i>"
-msgstr ""
+msgstr "<i>Běžící zachytávání ještě není dostupné.</i>"
 
 #~ msgctxt "SettingsShortcuts|"
 #~ msgid "Action"
@@ -3305,62 +3188,50 @@ msgstr ""
 #~ msgid "Teletext"
 #~ msgstr "Teletext"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "General Interface Settings"
 msgstr "Obecná nastavení rozhraní"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Toolbar style:"
 msgstr "Styl nástrojového pruhu:"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Icon only"
 msgstr "Pouze ikony"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Text only"
 msgstr "Pouze text"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Text beside icon"
 msgstr "Text vedle ikon"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Text under icon"
 msgstr "Text pod ikonami"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "System default"
 msgstr "Výchozí nastavení"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Enable OSD in Fullscreen mode"
 msgstr "Povolit OSD v režimu celé obrazovky"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Mouse wheel function:"
 msgstr "Funkce kolečka myši:"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Change channel"
 msgstr "Změnit program"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Change volume"
 msgstr "Změnit hlasitost"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Minimise to tray"
 msgstr "Zmenšit do oznamovací oblasti panelu"
@@ -3369,39 +3240,33 @@ msgstr "Zmenšit do oznamovací oblasti panelu"
 #~ msgid "Enable Info OSD in Fullscreen mode"
 #~ msgstr "Povolit informační OSD v režimu celé obrazovky"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Default options for startup"
 msgstr "Výchozí volby pro začátek"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Show splash screen"
 msgstr "Ukázat úvodní obrazovku"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Simple mode"
 msgstr "Jednoduchý režim"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Always on top"
 msgstr "Vždy nahoře"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Controls enabled"
 msgstr "Ovládací prvky povoleny"
 
-#, fuzzy
 msgctxt "SettingsUi|"
 msgid "Info panel enabled"
 msgstr "Panel s podrobnostmi povolen"
 
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
-msgstr ""
+msgstr "Ukázat ikonu v oznamovací oblasti"
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"
@@ -3433,14 +3298,12 @@ msgstr ""
 
 msgctxt "Timer|"
 msgid "at"
-msgstr ""
+msgstr "v"
 
-#, fuzzy
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Smazat"
 
-#, fuzzy
 msgctxt "TimersDisplayWidget|"
 msgid "Search:"
 msgstr "Hledat:"
@@ -3723,17 +3586,14 @@ msgstr "Hledat:"
 #~ msgid "Timer with this name already exists. Please select another name."
 #~ msgstr "Časovač s tímto názvem již existuje. Vyberte, prosím, jiný název."
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Timers"
 msgstr "Časovače"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Name:"
 msgstr "Název:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Channel:"
 msgstr "Program:"
@@ -3742,50 +3602,42 @@ msgstr "Program:"
 #~ msgid "Playlist:"
 #~ msgstr "Seznam programů:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Type:"
 msgstr "Typ:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Once"
 msgstr "Jednou"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Daily"
 msgstr "Denně"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Weekly"
 msgstr "Týdně"
 
 msgctxt "TimersEditorWidget|"
 msgid "Weekdays"
-msgstr ""
+msgstr "Každý všední den"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Url:"
 msgstr "Adresa (URL):"
 
 msgctxt "TimersEditorWidget|"
 msgid "dd. MM. yyyy"
-msgstr ""
+msgstr "dd.mm.rrrr"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Date:"
 msgstr "Datum:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Start time:"
 msgstr "Začátek:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "End time:"
 msgstr "Konec:"
@@ -3820,23 +3672,27 @@ msgstr "Konec:"
 
 msgctxt "TimersEditorWidget|"
 msgid "Disable:"
-msgstr ""
+msgstr "Vypnout:"
 
 msgctxt "TimersEditorWidget|"
 msgid "Recorder"
-msgstr ""
+msgstr "Nahrávání"
 
 msgctxt "TimersEditorWidget|"
 msgid ""
 "The recording start date is before today.\n"
 "Your changes will not be saved."
 msgstr ""
+"Počáteční datum nahrávání je před dneškem.\n"
+"Vaše změny nebudou uloženy."
 
 msgctxt "TimersEditorWidget|"
 msgid ""
 "The recording is overlaping with others.\n"
 "Your changes will not be saved."
 msgstr ""
+"Nahrávání se překrývá s jiným.\n"
+"Vaše změny nebudou uloženy."
 
 msgctxt "TrayIcon|"
 msgid "Tano"
@@ -3886,6 +3742,9 @@ msgid ""
 "Tano is recording %1 to %2 \n"
 "Stop manually!"
 msgstr ""
+"Tano nahrává %1 do\n"
+"%2\n"
+"Zastavit ručně!"
 
 #, qt-format
 msgctxt "TrayIcon|"
@@ -3893,6 +3752,9 @@ msgid ""
 "Tano is recording %1 to %2 \n"
 "End time: %3"
 msgstr ""
+"Tano nahrává %1 do\n"
+"%2\n"
+"Konečný čas: %3"
 
 msgctxt "UpdateDialog|"
 msgid "Update Information"
