@@ -1,14 +1,15 @@
-1.0.0 (git)
+1.0-beta1 (git)
   * Single instance support for Tano
   * Recorder (Daemon) merged with main application
   * XMLTV support (Issue #20)
   * Rewritten data models
+  * Rewritten recorder
   * Updated channels scan
   * Updated file dialogs
   * Copyright issues fix - Tano will no longer ship playlists and integrated EPG
-  * Croatian language
   * Overall fixes and improvements
-  * [WINDOWS] VLC 1.1.11 patched for Tano
+  * VLC 2.0 support
+  * Czech, French, Russian, Slovenian and Ukrainian translation
 
 0.8.1 (2011-06-27)
   * Teletext support
