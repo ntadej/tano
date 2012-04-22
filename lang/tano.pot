@@ -824,10 +824,6 @@ msgid ""
 msgstr ""
 
 msgctxt "PlaylistEditorScan|"
-msgid "Form"
-msgstr ""
-
-msgctxt "PlaylistEditorScan|"
 msgid "IP Range:"
 msgstr ""
 
@@ -850,6 +846,10 @@ msgstr ""
 #, qt-format
 msgctxt "PlaylistEditorScan|"
 msgid "New channel from scan %1"
+msgstr ""
+
+msgctxt "PlaylistEditorScan|"
+msgid "Playlist Editor"
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
@@ -2079,22 +2079,6 @@ msgstr ""
 
 msgctxt "TimersEditorWidget|"
 msgid "End time:"
-msgstr ""
-
-msgctxt "TimersEditorWidget|"
-msgid "New Task"
-msgstr ""
-
-msgctxt "TimersEditorWidget|"
-msgid "Delete Task"
-msgstr ""
-
-msgctxt "TimersEditorWidget|"
-msgid "Save and Close"
-msgstr ""
-
-msgctxt "TimersEditorWidget|"
-msgid "Close"
 msgstr ""
 
 msgctxt "TimersEditorWidget|"

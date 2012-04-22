@@ -1324,10 +1324,6 @@ msgid ""
 "will be exported to Sagem JS."
 msgstr ""
 
-msgctxt "PlaylistEditorScan|"
-msgid "Form"
-msgstr ""
-
 #, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "IP Range:"
@@ -1357,6 +1353,11 @@ msgstr "Prohledat a obnovit"
 msgctxt "PlaylistEditorScan|"
 msgid "New channel from scan %1"
 msgstr "Nový program z prohledání %1"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Playlist Editor"
+msgstr "Editor seznamu programů"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
@@ -3793,25 +3794,21 @@ msgstr "Konec:"
 #~ msgid "Disabled:"
 #~ msgstr "Zakázáno:"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "New Task"
-msgstr "Nový úkol"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "New Task"
+#~ msgstr "Nový úkol"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Delete Task"
-msgstr "Smazat úkol"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Delete Task"
+#~ msgstr "Smazat úkol"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Save and Close"
-msgstr "Uložit a zavřít"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Save and Close"
+#~ msgstr "Uložit a zavřít"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Close"
-msgstr "Zavřít"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Close"
+#~ msgstr "Zavřít"
 
 #~ msgctxt "TimersEditorWidget|"
 #~ msgid "Tano"

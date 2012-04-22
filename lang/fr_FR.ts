@@ -1130,10 +1130,6 @@ Vous perdrez tous les changements non sauvegardés.</translation>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>IP Range:</source>
         <translation type="unfinished">Plage des adresses IP :</translation>
     </message>
@@ -1156,6 +1152,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>New channel from scan %1</source>
         <translation type="unfinished">Nouvelle chaîne issue du scan %1</translation>
+    </message>
+    <message>
+        <source>Playlist Editor</source>
+        <translation type="unfinished">Éditeur de la liste</translation>
     </message>
 </context>
 <context>
@@ -3066,19 +3066,19 @@ Vos changements ne seront pas appliqués.</translation>
     </message>
     <message>
         <source>New Task</source>
-        <translation type="unfinished">Nouvelle tâche</translation>
+        <translation type="obsolete">Nouvelle tâche</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation type="unfinished">Supprimer la tâche</translation>
+        <translation type="obsolete">Supprimer la tâche</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation type="unfinished">Enregistrer et fermer</translation>
+        <translation type="obsolete">Enregistrer et fermer</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Fermer</translation>
+        <translation type="obsolete">Fermer</translation>
     </message>
     <message>
         <source>Tano</source>

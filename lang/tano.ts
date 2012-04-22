@@ -847,10 +847,6 @@ You will lose any unsaved changes.</source>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>IP Range:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -872,6 +868,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>New channel from scan %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist Editor</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2160,22 +2160,6 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New Task</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete Task</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save and Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

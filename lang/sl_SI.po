@@ -328,17 +328,14 @@ msgstr "Prenos ni uspel: %1."
 #~ msgid "Next: %1"
 #~ msgstr "Naslednje: %1"
 
-#, fuzzy
 msgctxt "InfoBarWidget|"
 msgid "Now:"
 msgstr "Trenutno:"
 
-#, fuzzy
 msgctxt "InfoBarWidget|"
 msgid "Next:"
 msgstr "Naslednje:"
 
-#, fuzzy
 msgctxt "InfoBarWidget|"
 msgid "Language:"
 msgstr "Jezik:"
@@ -611,23 +608,23 @@ msgstr "Upravljanje"
 
 msgctxt "MainWindow|"
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Bližnjice na tipkovnici"
 
 msgctxt "MainWindow|"
 msgid "Recorder Toolbar"
-msgstr ""
+msgstr "Orodna vrstica snemalnika"
 
 msgctxt "MainWindow|"
 msgid "Quick record"
-msgstr ""
+msgstr "Hitro snemanje"
 
 msgctxt "MainWindow|"
 msgid "Quick"
-msgstr ""
+msgstr "Hitro"
 
 msgctxt "MainWindow|"
 msgid "Add timer"
-msgstr ""
+msgstr "Dodaj časovnik"
 
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
@@ -1444,37 +1441,33 @@ msgstr ""
 "izvožena v Sagem JS."
 
 msgctxt "PlaylistEditorScan|"
-msgid "Form"
-msgstr ""
-
-msgctxt "PlaylistEditorScan|"
 msgid "IP Range:"
-msgstr ""
+msgstr "Območje IP:"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Port:"
 msgstr "Vrata:"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Timeout:"
 msgstr "Čas iskanja:"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid " ms"
 msgstr "ms"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Scan and update"
 msgstr "Išči in posodobi"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditorScan|"
 msgid "New channel from scan %1"
 msgstr "Nov najden program %1"
+
+msgctxt "PlaylistEditorScan|"
+msgid "Playlist Editor"
+msgstr "Urejevalnik seznama programov"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
@@ -2057,47 +2050,47 @@ msgstr "Gost"
 
 msgctxt "QObject|"
 msgid "Enabled"
-msgstr ""
+msgstr "Vključen"
 
 msgctxt "QObject|"
 msgid "Recording"
-msgstr ""
+msgstr "Snemanje"
 
 msgctxt "QObject|"
 msgid "Finished"
-msgstr ""
+msgstr "Zaključen"
 
 msgctxt "QObject|"
 msgid "Expired"
-msgstr ""
+msgstr "Pretečen"
 
 msgctxt "QObject|"
 msgid "Weekdays"
-msgstr ""
+msgstr "Med tednom"
 
 msgctxt "QObject|"
 msgid "Instant"
-msgstr ""
+msgstr "Instantno"
 
 msgctxt "QObject|"
 msgid "repeats only once"
-msgstr ""
+msgstr "ponovi se le enkrat"
 
 msgctxt "QObject|"
 msgid "repeats daily"
-msgstr ""
+msgstr "ponavlja se dnevno"
 
 msgctxt "QObject|"
 msgid "repeats weekly"
-msgstr ""
+msgstr "ponavlja se tedensko"
 
 msgctxt "QObject|"
 msgid "repeats on weekdays"
-msgstr ""
+msgstr "ponavlja se med tednom"
 
 msgctxt "QObject|"
 msgid "instant recording"
-msgstr ""
+msgstr "takojšnje snemanje"
 
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
@@ -2119,7 +2112,7 @@ msgctxt "Recorder|"
 msgid "Record"
 msgstr "Snemaj"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "Recorder|"
 msgid "Cannot write to %1."
 msgstr "Ne morem pisati v %1."
@@ -2166,22 +2159,20 @@ msgstr "Izbran kanal:"
 
 msgctxt "Recorder|"
 msgid "Quick record"
-msgstr ""
+msgstr "Hitro snemanje"
 
 msgctxt "Recorder|"
 msgid "Recording name:"
-msgstr ""
+msgstr "Ime posnetka:"
 
-#, fuzzy
 msgctxt "Recorder|"
 msgid "Back"
 msgstr "Nazaj"
 
 msgctxt "Recorder|"
 msgid "Recordings"
-msgstr ""
+msgstr "Posnetki"
 
-#, fuzzy
 msgctxt "Recorder|"
 msgid "Timers"
 msgstr "Časovniki"
@@ -2189,33 +2180,35 @@ msgstr "Časovniki"
 #, qt-format
 msgctxt "Recorder|"
 msgid "Quick %1"
-msgstr ""
+msgstr "Hitro %1"
 
 msgctxt "Recorder|"
 msgid "Add timer"
-msgstr ""
+msgstr "Dodaj časovnik"
 
 msgctxt "Recorder|"
 msgid "Timer name:"
-msgstr ""
+msgstr "Ime časovnika:"
 
 msgctxt "Recorder|"
 msgid "Add new timer"
-msgstr ""
+msgstr "Dodaj nov časovnik"
 
 msgctxt "Recorder|"
 msgid "Please, select a channel."
-msgstr ""
+msgstr "Prosim, izberite program."
 
 msgctxt "Recorder|"
 msgid "Recording not valid!"
-msgstr ""
+msgstr "Snemanje ni veljavno!"
 
 msgctxt "Recorder|"
 msgid ""
 "File cannot be removed.\n"
 "Have you already moved or deleted it?"
 msgstr ""
+"Datoteke ni mogoče odstraniti.\n"
+"Ste mogoče datoteko že premaknili ali izbrisali?"
 
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Status"
@@ -2233,76 +2226,70 @@ msgstr ""
 #~ msgid "Time elapsed:"
 #~ msgstr "Pretečen čas:"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "End time:"
 msgstr "Konec:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Currently not recording."
-msgstr ""
+msgstr "Trenutno ne snemam."
 
 msgctxt "RecorderInfoWidget|"
 msgid "No timer - stop manually."
-msgstr ""
+msgstr "Brez časovnika - ustavite ročno."
 
 msgctxt "RecorderInfoWidget|"
 msgid "Stop recording"
-msgstr ""
+msgstr "Ustavi snemanje"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Recording:"
 msgstr "Snemam:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Elapsed:"
-msgstr ""
+msgstr "Pretečeno:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Output:"
-msgstr ""
+msgstr "Izhod:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "<b>Status</b>"
-msgstr ""
+msgstr "<b>Status</b>"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Channel:"
 msgstr "Program:"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Play"
 msgstr "Predvajaj"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Back"
 msgstr "Nazaj"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Time:"
-msgstr ""
+msgstr "Čas:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Duration:"
-msgstr ""
+msgstr "Trajanje:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "File:"
-msgstr ""
+msgstr "Datoteka:"
 
 msgctxt "RecorderInfoWidget|"
 msgid "at"
-msgstr ""
+msgstr "ob"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Recorder"
 msgstr "Snemalnik"
@@ -2312,8 +2299,9 @@ msgid ""
 "Are you sure you want to delete the recording?\n"
 "This operation is ireversible."
 msgstr ""
+"Ste prepričani, da želite izbrisati ta posnetek?\n"
+"Te operacije ni mogoče razveljaviti."
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Save"
 msgstr "Shrani"
@@ -2431,191 +2419,154 @@ msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "X"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Splošno"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Playlist"
 msgstr "Programi"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Interface"
 msgstr "Vmesnik"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Playback"
 msgstr "Predvajanje"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Schedule"
 msgstr "Spored"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Recorder"
 msgstr "Snemalnik"
 
 msgctxt "SettingsDialogShortcuts|"
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Bližnjice na tipkovnici"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Action"
 msgstr "Ukaz"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Key"
 msgstr "Tipke"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Play / Pause"
 msgstr "Predvajaj / Prekini"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Stop"
 msgstr "Ustavi"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next channel"
 msgstr "Naslednii kanal"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Previous channel"
 msgstr "Prejšnji kanal"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Fullscreen"
 msgstr "Celoten zaslon"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Toggle Info Widget"
 msgstr "Preklopi Info pult"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Toggle Controls Widget"
 msgstr "Preklopi upravljalni pult"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Mute"
 msgstr "Tiho"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Teletext"
 msgstr "Teletekst"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Volume up"
 msgstr "Povečaj glasnost"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Volume down"
 msgstr "Zmanjšaj glasnost"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Recorder"
 msgstr "Snemalnik"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Open File"
 msgstr "Odpri Datoteko"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Open URL"
 msgstr "Odpri URL"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Open Channel list"
 msgstr "Odpri Seznam programov"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Edit Channel list"
 msgstr "Uredi Seznam programov"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Always on top"
 msgstr "Vedno na vrhu"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Simple Mode"
 msgstr "Enostaven način"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Hide to tray"
 msgstr "Skrij v orodno vrstico"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next audio track"
 msgstr "Naslednja zvočna sled"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next video track"
 msgstr "Naslednja slikovna sled"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next subtitle track"
 msgstr "Naslednji podnapisi"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next aspect ratio mode"
 msgstr "Naslednje razmerje slike"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next crop mode"
 msgstr "Naslednja obrezava slike"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next deinterlace mode"
 msgstr "Naslenje razpletanje"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Set"
 msgstr "Nastavi"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Defaults"
 msgstr "Privzeto"
@@ -2845,32 +2796,26 @@ msgstr "Privzeto"
 #~ msgid "Show splash screen"
 #~ msgstr "Prikaži pozdravni zaslon"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Radio"
 msgstr "Radio"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Default radio category:"
 msgstr "Privzeta kategorija za radio:"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "UDPXY support"
 msgstr "UDPXY podpora"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Enable UDPXY support"
 msgstr "Vključi podporo UDPXY"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Router IP or name:"
 msgstr "IP ali ime usmerjevalnika:"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Router port:"
 msgstr "Vrata usmerjevalnika:"
@@ -2880,96 +2825,78 @@ msgstr "Vrata usmerjevalnika:"
 #~ msgid "<i>This will convert the URLs in playlist from %1 to %2.</i>"
 #~ msgstr "<i>URL-ji v seznamu programov bodo pretvorjeni iz %1 v %2.</i>"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Interface"
 msgstr "Vmesnik"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Toolbar style:"
 msgstr "Izgled orodnih vrstic:"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Icon only"
 msgstr "Samo ikona"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Text only"
 msgstr "Samo besedilo"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Text beside icon"
 msgstr "Besedilo ob ikoni"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Text under icon"
 msgstr "Besedilo pod ikono"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "System default"
 msgstr "Sistemsko privzeto"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Show splash screen"
 msgstr "Prikaži pozdravni zaslon"
 
-#, fuzzy
 msgctxt "SettingsEditorDialog|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#, fuzzy
 msgctxt "SettingsEditorDialog|"
 msgid "General"
 msgstr "Splošno"
 
 msgctxt "SettingsEditorDialog|"
 msgid "Editor"
-msgstr ""
+msgstr "Urejevalnik"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Tano Editor"
 msgstr "Tano Urejevalnik"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
 msgstr "<i>Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.</i>"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Language"
 msgstr "Jezik"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "System default language"
 msgstr "Sistemsko privzet jezik"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Custom language"
 msgstr "Poljuben jezik"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Defaults"
 msgstr "Privzeto"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Restore defaults"
 msgstr "Obnovi privzeto"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
@@ -2978,7 +2905,6 @@ msgstr ""
 "<i>To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo "
 "biti potrjene, preden bodo uveljavljene.</i>"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "You are using Tano Editor version:"
 msgstr "Uporabljate Tano Urejevalnik različice:"
@@ -3163,22 +3089,18 @@ msgstr "Privzeta kategorija za radio:"
 #~ "<i>Osvežitev ne bo spremenila vašega zaporedja programov. Vse druge "
 #~ "informacije bodo posodobljene.</i>"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "UDPXY support"
 msgstr "UDPXY podpora"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "Enable UDPXY support"
 msgstr "Vključi podporo UDPXY"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "Router IP or name:"
 msgstr "IP ali ime usmerjevalnika:"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "Router port:"
 msgstr "Vrata usmerjevalnika:"
@@ -3190,7 +3112,7 @@ msgstr "Vrata usmerjevalnika:"
 
 msgctxt "SettingsPlaylist|"
 msgid "<i>Updating will not change your playlist order.</i>"
-msgstr ""
+msgstr "<i>Posodobitev ne bo spremenila vašega zaporedja programov.</i>"
 
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
@@ -3356,11 +3278,11 @@ msgstr "Grabber"
 
 msgctxt "SettingsSchedule|"
 msgid "<i>All XMLTV settings require restart.</i>"
-msgstr ""
+msgstr "<i>Vse nastavitve XMLTV zahtevajo ponovni zagon.</i>"
 
 msgctxt "SettingsSchedule|"
 msgid "<i>Grabber running is not available yet.</i>"
-msgstr ""
+msgstr "<i>Poganjanje grabberjev še ni na voljo.</i>"
 
 #~ msgctxt "SettingsShortcuts|"
 #~ msgid "Action"
@@ -3604,7 +3526,7 @@ msgstr "Pokaži ikono v sistemski vrstici"
 
 msgctxt "Timer|"
 msgid "at"
-msgstr ""
+msgstr "ob"
 
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
@@ -3888,17 +3810,14 @@ msgstr "Išči:"
 #~ msgid "Timer with this name already exists. Please select another name."
 #~ msgstr "Časovnik z enakim imenom že obstaja. Prosim izberi drugo ime."
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Timers"
 msgstr "Časovniki"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Name:"
 msgstr "Ime:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Channel:"
 msgstr "Program:"
@@ -3907,50 +3826,42 @@ msgstr "Program:"
 #~ msgid "Playlist:"
 #~ msgstr "Seznam:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Type:"
 msgstr "Tip:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Once"
 msgstr "Enkratno"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Daily"
 msgstr "Dnevno"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Weekly"
 msgstr "Tedensko"
 
 msgctxt "TimersEditorWidget|"
 msgid "Weekdays"
-msgstr ""
+msgstr "Med tednom"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Url:"
 msgstr "Naslov:"
 
 msgctxt "TimersEditorWidget|"
 msgid "dd. MM. yyyy"
-msgstr ""
+msgstr "dd. MM. yyyy"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Date:"
 msgstr "Datum:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Start time:"
 msgstr "Začetek:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "End time:"
 msgstr "Konec:"
@@ -3959,25 +3870,21 @@ msgstr "Konec:"
 #~ msgid "Disabled:"
 #~ msgstr "Izključen:"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "New Task"
-msgstr "Novo opravilo"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "New Task"
+#~ msgstr "Novo opravilo"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Delete Task"
-msgstr "Izbriši opravilo"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Delete Task"
+#~ msgstr "Izbriši opravilo"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Save and Close"
-msgstr "Shrani in zapri"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Save and Close"
+#~ msgstr "Shrani in zapri"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Close"
-msgstr "Zapri"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Close"
+#~ msgstr "Zapri"
 
 #~ msgctxt "TimersEditorWidget|"
 #~ msgid "Tano"
@@ -3989,9 +3896,8 @@ msgstr "Zapri"
 
 msgctxt "TimersEditorWidget|"
 msgid "Disable:"
-msgstr ""
+msgstr "Onemogoči:"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Recorder"
 msgstr "Snemalnik"
@@ -4001,12 +3907,16 @@ msgid ""
 "The recording start date is before today.\n"
 "Your changes will not be saved."
 msgstr ""
+"Datum snemanja je nastavljen pred današnjim dnem.\n"
+"Vaše nastavitve ne bodo shranjene."
 
 msgctxt "TimersEditorWidget|"
 msgid ""
 "The recording is overlaping with others.\n"
 "Your changes will not be saved."
 msgstr ""
+"Snemanje se prekriva z drugimi.\n"
+"Vaše nastavitve ne bodo shranjene."
 
 msgctxt "TrayIcon|"
 msgid "Tano"
@@ -4056,6 +3966,8 @@ msgid ""
 "Tano is recording %1 to %2 \n"
 "Stop manually!"
 msgstr ""
+"Tano snema %1 v %2 \n"
+"Ročno ustavite!"
 
 #, qt-format
 msgctxt "TrayIcon|"
@@ -4063,6 +3975,8 @@ msgid ""
 "Tano is recording %1 to %2 \n"
 "End time: %3"
 msgstr ""
+"Tano snema %1 v %2 \n"
+"Končni čas: %3"
 
 msgctxt "UpdateDialog|"
 msgid "Update Information"

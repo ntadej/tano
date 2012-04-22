@@ -1283,10 +1283,6 @@ Ztratíte všechny neuložené změny.</translation>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>IP Range:</source>
         <translation type="unfinished">Rozsah IP:</translation>
     </message>
@@ -1309,6 +1305,10 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>New channel from scan %1</source>
         <translation type="unfinished">Nový program z prohledání %1</translation>
+    </message>
+    <message>
+        <source>Playlist Editor</source>
+        <translation type="unfinished">Editor seznamu programů</translation>
     </message>
 </context>
 <context>
@@ -3672,19 +3672,19 @@ Vaše změny nebudou použity.</translation>
     </message>
     <message>
         <source>New Task</source>
-        <translation type="unfinished">Nový úkol</translation>
+        <translation type="obsolete">Nový úkol</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation type="unfinished">Smazat úkol</translation>
+        <translation type="obsolete">Smazat úkol</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation type="unfinished">Uložit a zavřít</translation>
+        <translation type="obsolete">Uložit a zavřít</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Zavřít</translation>
+        <translation type="obsolete">Zavřít</translation>
     </message>
     <message>
         <source>Tano</source>

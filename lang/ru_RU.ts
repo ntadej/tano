@@ -1178,10 +1178,6 @@ You will lose any unsaved changes.</source>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>IP Range:</source>
         <translation type="unfinished">Диапазон IP:</translation>
     </message>
@@ -1204,6 +1200,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>New channel from scan %1</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Playlist Editor</source>
+        <translation type="unfinished">Редактор списка воспроизведения</translation>
     </message>
 </context>
 <context>
@@ -3337,19 +3337,19 @@ You changes will not be applied.</source>
     </message>
     <message>
         <source>New Task</source>
-        <translation type="unfinished">Новая задача</translation>
+        <translation type="obsolete">Новая задача</translation>
     </message>
     <message>
         <source>Delete Task</source>
-        <translation type="unfinished">Удалить задачу</translation>
+        <translation type="obsolete">Удалить задачу</translation>
     </message>
     <message>
         <source>Save and Close</source>
-        <translation type="unfinished">Сохранить и закрыть</translation>
+        <translation type="obsolete">Сохранить и закрыть</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Закрыть</translation>
+        <translation type="obsolete">Закрыть</translation>
     </message>
     <message>
         <source>Tano</source>

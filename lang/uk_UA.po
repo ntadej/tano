@@ -1209,10 +1209,6 @@ msgid ""
 "will be exported to Sagem JS."
 msgstr ""
 
-msgctxt "PlaylistEditorScan|"
-msgid "Form"
-msgstr ""
-
 #, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "IP Range:"
@@ -1242,6 +1238,11 @@ msgstr "Сканувати та оновити"
 msgctxt "PlaylistEditorScan|"
 msgid "New channel from scan %1"
 msgstr "Новий канал з відсканованого %1"
+
+#, fuzzy
+msgctxt "PlaylistEditorScan|"
+msgid "Playlist Editor"
+msgstr "Редактор переліку каналів"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
@@ -3189,25 +3190,21 @@ msgstr "Час закінчення:"
 #~ msgid "Disabled:"
 #~ msgstr "Вимкнено:"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "New Task"
-msgstr "Нове завдання"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "New Task"
+#~ msgstr "Нове завдання"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Delete Task"
-msgstr "Видалити завдання"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Delete Task"
+#~ msgstr "Видалити завдання"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Save and Close"
-msgstr "Зберігти та закрити"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Save and Close"
+#~ msgstr "Зберігти та закрити"
 
-#, fuzzy
-msgctxt "TimersEditorWidget|"
-msgid "Close"
-msgstr "Закрити"
+#~ msgctxt "TimersEditorWidget|"
+#~ msgid "Close"
+#~ msgstr "Закрити"
 
 #~ msgctxt "TimersEditorWidget|"
 #~ msgid "Tano"
