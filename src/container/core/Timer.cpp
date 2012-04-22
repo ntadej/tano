@@ -74,6 +74,7 @@ QHash<int, QByteArray> Timer::roleNames() const
     names[StartTimeRole] = "start";
     names[EndTimeRole] = "end";
     names[StartDateTimeRole] = "startdate";
+    names[EndDateTimeRole] = "enddate";
     names[TypeRole] = "type";
     names[StateRole] = "state";
     return names;
@@ -100,7 +101,9 @@ QVariant Timer::data(int role) const
     case EndTimeRole:
         return endTime();
     case StartDateTimeRole:
-        return QDateTime(date(), startTime());
+        return startDateTime();
+    case EndDateTimeRole:
+        return endDateTime();
     case TypeRole:
         return type();
     case StateRole:
@@ -206,4 +209,17 @@ void Timer::setState(const Tano::TimerState &state)
         _state = state;
         emit dataChanged();
     }
+}
+
+QDateTime Timer::startDateTime() const
+{
+    return QDateTime(date(), startTime());
+}
+
+QDateTime Timer::endDateTime() const
+{
+    if (startTime() > endTime())
+        return QDateTime(date().addDays(1), endTime());
+    else
+        return QDateTime(date(), endTime());
 }

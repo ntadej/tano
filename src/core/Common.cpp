@@ -186,11 +186,11 @@ QString Tano::vlcQtVersionLibrary()
 #if defined(Q_WS_X11)
 QString Tano::linuxVideoPath()
 {
+    QString path = "Videos";
     QFile file(QDir::homePath() + "/.config/user-dirs.dirs");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return QString();
+        return path;
 
-    QString path = "";
     QTextStream in(&file);
     in.setCodec(QTextCodec::codecForName("UTF-8"));
     while (!in.atEnd()) {

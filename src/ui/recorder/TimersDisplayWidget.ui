@@ -2,6 +2,18 @@
 <ui version="4.0">
  <class>TimersDisplayWidget</class>
  <widget class="QWidget" name="TimersDisplayWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>256</width>
+    <height>221</height>
+   </rect>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/24x24/timer.png</normaloff>:/icons/24x24/timer.png</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <property name="margin">
     <number>0</number>

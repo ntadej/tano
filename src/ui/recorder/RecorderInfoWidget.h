@@ -22,6 +22,7 @@
 #include <QtGui/QStackedWidget>
 
 class Timer;
+class TimersModel;
 
 namespace Ui {
     class RecorderInfoWidget;
@@ -35,6 +36,7 @@ public:
     ~RecorderInfoWidget();
 
     void setAction(QAction *action);
+    void setModel(TimersModel *model);
     void start(const QString &name,
                const QString &channel,
                const QString &output,
@@ -54,7 +56,6 @@ public slots:
     void recordingInfo(Timer *timer);
     void time(const int &time);
     void timerInfo(Timer *timer);
-    void timerSaveConfirm();
 
 private slots:
     void backToMain();

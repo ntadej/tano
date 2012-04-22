@@ -41,6 +41,7 @@ public:
         StartTimeRole,
         EndTimeRole,
         StartDateTimeRole,
+        EndDateTimeRole,
         TypeRole,
         StateRole
     };
@@ -75,6 +76,8 @@ public:
     void setStartTime(const QTime &startTime);
     inline QTime endTime() const { return _endTime; }
     void setEndTime(const QTime &endTime);
+    QDateTime startDateTime() const;
+    QDateTime endDateTime() const;
     inline Tano::TimerType type() const { return _type; }
     void setType(const Tano::TimerType &type);
     inline Tano::TimerState state() const { return _state; }

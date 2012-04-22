@@ -304,6 +304,7 @@ void Recorder::setWidgets(QAction *action,
 
     _info = info;
     _info->setAction(_actionRecord);
+    _info->setModel(_model);
     connect(_core, SIGNAL(elapsed(int)), _info, SLOT(time(int)));
     connect(ui->listRecordings, SIGNAL(itemSelected(Timer *)), _info, SLOT(recordingInfo(Timer *)));
     connect(ui->listTimers, SIGNAL(itemSelected(Timer *)), _info, SLOT(timerInfo(Timer *)));
@@ -323,8 +324,8 @@ void Recorder::timerDelete(Timer *timer)
 
 void Recorder::timerSave(Timer *timer)
 {
-    // validateTimer(timer);
-    _info->timerSaveConfirm();
+    Q_UNUSED(timer)
+
     writeTimers();
 }
 

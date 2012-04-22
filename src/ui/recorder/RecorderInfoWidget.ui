@@ -10,6 +10,10 @@
     <height>266</height>
    </rect>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/24x24/recorder.png</normaloff>:/icons/24x24/recorder.png</iconset>
+  </property>
   <property name="currentIndex">
    <number>0</number>
   </property>

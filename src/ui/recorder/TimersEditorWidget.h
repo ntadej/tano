@@ -23,6 +23,8 @@
 #include <QtGui/QWidget>
 
 class Timer;
+class TimersFilterModel;
+class TimersModel;
 
 namespace Ui
 {
@@ -36,17 +38,21 @@ public:
     explicit TimersEditorWidget(QWidget *parent = 0);
     ~TimersEditorWidget();
 
+    void edit(Timer *item);
+    bool save();
+    void setModel(TimersModel *model);
+
 protected:
     void changeEvent(QEvent *e);
 
-public slots:
-    void edit(Timer *item);
-    void save();
-
 private:
+    bool validate();
+
     Ui::TimersEditorWidget *ui;
 
     Timer *_currentTimer;
+    TimersFilterModel *_validateModel;
+    TimersModel *_modelCore;
 };
 
 #endif // TANO_TIMERSEDITORWIDGET_H_

@@ -3098,6 +3098,20 @@ You changes will not be applied.</source>
         <source>Disable:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Записувач</translation>
+    </message>
+    <message>
+        <source>The recording start date is before today.
+Your changes will not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The recording is overlaping with others.
+Your changes will not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TrayIcon</name>

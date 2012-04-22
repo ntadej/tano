@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -25,6 +25,9 @@ TimersFilterModel::TimersFilterModel(QObject *parent)
 {
     _finished = false;
     _state = -1;
+    _timeFilter = false;
+    _startTime = QDateTime();
+    _endTime = QDateTime();
 }
 
 TimersFilterModel::~TimersFilterModel() { }
@@ -38,7 +41,14 @@ bool TimersFilterModel::filterAcceptsRow(int sourceRow,
     bool finished = (sourceModel()->data(index, Timer::StateRole).toInt() == Tano::Finished) == _finished;
     bool state = sourceModel()->data(index, Timer::StateRole).toInt() == _state || _state == -1;
 
-    return name && finished && state;
+    bool time = true;
+    if (_timeFilter) {
+        bool s = ((sourceModel()->data(index, Timer::StartDateTimeRole).toDateTime() <= startTime()) && (sourceModel()->data(index, Timer::EndDateTimeRole).toDateTime() >= startTime()));
+        bool e = ((sourceModel()->data(index, Timer::StartDateTimeRole).toDateTime() <= endTime()) && (sourceModel()->data(index, Timer::EndDateTimeRole).toDateTime() >= endTime()));
+        time = s || e;
+    }
+
+    return name && finished && state && time;
 }
 
 void TimersFilterModel::setFinished(const bool &finished)
@@ -50,5 +60,23 @@ void TimersFilterModel::setFinished(const bool &finished)
 void TimersFilterModel::setTimerState(const int &state)
 {
     _state = state;
+    invalidateFilter();
+}
+
+void TimersFilterModel::setTimeFilter(const bool &timeFilter)
+{
+    _timeFilter = timeFilter;
+    invalidateFilter();
+}
+
+void TimersFilterModel::setStartTime(const QDateTime &startTime)
+{
+    _startTime = startTime;
+    invalidateFilter();
+}
+
+void TimersFilterModel::setEndTime(const QDateTime &endTime)
+{
+    _endTime = endTime;
     invalidateFilter();
 }

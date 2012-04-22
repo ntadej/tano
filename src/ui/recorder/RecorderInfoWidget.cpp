@@ -116,6 +116,11 @@ void RecorderInfoWidget::setAction(QAction *action)
     connect(ui->buttonRecordStop, SIGNAL(clicked()), _actionRecord, SLOT(trigger()));
 }
 
+void RecorderInfoWidget::setModel(TimersModel *model)
+{
+    ui->editor->setModel(model);
+}
+
 void RecorderInfoWidget::start(const QString &name,
                                const QString &channel,
                                const QString &output,
@@ -170,12 +175,10 @@ void RecorderInfoWidget::timerDelete()
 
 void RecorderInfoWidget::timerSave()
 {
+    if (!ui->editor->save())
+        return;
+
     emit saveTimer(_currentTimer);
 
     backToMain();
-}
-
-void RecorderInfoWidget::timerSaveConfirm()
-{
-    ui->editor->save();
 }

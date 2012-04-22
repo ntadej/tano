@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,6 +19,7 @@
 #ifndef TANO_TIMERSFILTERMODEL_H_
 #define TANO_TIMERSFILTERMODEL_H_
 
+#include <QtCore/QDateTime>
 #include <QtGui/QSortFilterProxyModel>
 
 class TimersFilterModel : public QSortFilterProxyModel
@@ -28,11 +29,18 @@ public:
     TimersFilterModel(QObject *parent = 0);
     ~TimersFilterModel();
 
-    int timerState() const { return _state; }
+    inline int timerState() const { return _state; }
     void setTimerState(const int &state);
 
-    bool finished() const { return _finished; }
+    inline bool finished() const { return _finished; }
     void setFinished(const bool &finished);
+
+    inline bool timeFilter() const { return _timeFilter; }
+    void setTimeFilter(const bool &timeFilter);
+    inline QDateTime startTime() const { return _startTime; }
+    void setStartTime(const QDateTime &startTime);
+    inline QDateTime endTime() const { return _endTime; }
+    void setEndTime(const QDateTime &endTime);
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
@@ -40,6 +48,10 @@ protected:
 private:
     bool _finished;
     int _state;
+
+    bool _timeFilter;
+    QDateTime _startTime;
+    QDateTime _endTime;
 };
 
 #endif // TANO_TIMERSFILTERMODEL_H_

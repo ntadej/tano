@@ -3907,6 +3907,20 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Disable:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Snemalnik</translation>
+    </message>
+    <message>
+        <source>The recording start date is before today.
+Your changes will not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The recording is overlaping with others.
+Your changes will not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TrayIcon</name>

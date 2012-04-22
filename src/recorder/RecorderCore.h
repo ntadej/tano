@@ -63,7 +63,7 @@ private:
     QString _output;
     QString _outputName;
     QString _outputPath;
-    QString _currentEndTime;
+    QDateTime _currentEndTime;
 
     VlcInstance *_instance;
     VlcMedia *_media;

@@ -3221,6 +3221,23 @@ msgctxt "TimersEditorWidget|"
 msgid "Disable:"
 msgstr ""
 
+#, fuzzy
+msgctxt "TimersEditorWidget|"
+msgid "Recorder"
+msgstr "Записувач"
+
+msgctxt "TimersEditorWidget|"
+msgid ""
+"The recording start date is before today.\n"
+"Your changes will not be saved."
+msgstr ""
+
+msgctxt "TimersEditorWidget|"
+msgid ""
+"The recording is overlaping with others.\n"
+"Your changes will not be saved."
+msgstr ""
+
 msgctxt "TrayIcon|"
 msgid "Tano"
 msgstr "Tano"

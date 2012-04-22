@@ -51,7 +51,7 @@ void RecorderCore::record(Timer *t)
 
     _outputName = Tano::recordingFileName(t->name(), t->channel(), t->date(), t->startTime());
     _outputPath = _defaultPath;
-    _currentEndTime = t->endTime().toString("hh:mm");
+    _currentEndTime = t->endDateTime();
 
     if (_media)
         delete _media;
@@ -98,7 +98,7 @@ void RecorderCore::time()
     _time += 500;
     emit elapsed(_time);
 
-    if (isTimer() && QTime::currentTime() >= QTime::fromString(_currentEndTime, "hh:mm")) {
+    if (isTimer() && QDateTime::currentDateTime() >= _currentEndTime) {
         emit timerStop();
     }
 }

@@ -19,6 +19,8 @@
 #include <QtGui/QMessageBox>
 
 #include "container/core/Timer.h"
+#include "recorder/TimersFilterModel.h"
+#include "recorder/TimersModel.h"
 
 #include "TimersEditorWidget.h"
 #include "ui_TimersEditorWidget.h"
@@ -28,6 +30,13 @@ TimersEditorWidget::TimersEditorWidget(QWidget *parent)
       ui(new Ui::TimersEditorWidget)
 {
     ui->setupUi(this);
+
+    _validateModel = new TimersFilterModel(this);
+    _validateModel->setDynamicSortFilter(true);
+    _validateModel->setSortRole(Timer::StartDateTimeRole);
+    _validateModel->setTimerState(Tano::Enabled);
+    _validateModel->setTimeFilter(true);
+    _validateModel->sort(0);
 }
 
 TimersEditorWidget::~TimersEditorWidget()
@@ -65,12 +74,54 @@ void TimersEditorWidget::edit(Timer *item)
     ui->editEndTime->setTime(_currentTimer->endTime());
 }
 
-void TimersEditorWidget::save()
+bool TimersEditorWidget::save()
 {
+    if (!ui->checkBoxDisabled->isChecked() && !validate())
+        return false;
+
     _currentTimer->setName(ui->editName->text());
     _currentTimer->setType(Tano::TimerType(ui->editType->currentIndex()));
     _currentTimer->setDate(ui->editDate->date());
     _currentTimer->setStartTime(ui->editStartTime->time());
     _currentTimer->setEndTime(ui->editEndTime->time());
     _currentTimer->setState(ui->checkBoxDisabled->isChecked() ? Tano::Disabled : Tano::Enabled);
+
+    return true;
+}
+
+void TimersEditorWidget::setModel(TimersModel *model)
+{
+    _modelCore = model;
+    _validateModel->setSourceModel(model);
+}
+
+bool TimersEditorWidget::validate()
+{
+    if (ui->editDate->date() < QDate::currentDate()) {
+        QMessageBox::warning(this, tr("Recorder"),
+                    tr("The recording start date is before today.\nYour changes will not be saved."));
+        return false;
+    }
+
+    _validateModel->setStartTime(QDateTime(ui->editDate->date(), ui->editStartTime->time()));
+    if (ui->editStartTime->time() > ui->editEndTime->time())
+        _validateModel->setEndTime(QDateTime(ui->editDate->date().addDays(1), ui->editEndTime->time()));
+    else
+        _validateModel->setEndTime(QDateTime(ui->editDate->date(), ui->editEndTime->time()));
+
+    if (_validateModel->rowCount() == 0) {
+        return true;
+    } else if (_validateModel->rowCount() == 1) {
+        if (_modelCore->row(_validateModel->mapToSource(_validateModel->index(0, 0)).row()) == _currentTimer) {
+            return true;
+        } else {
+            QMessageBox::warning(this, tr("Recorder"),
+                        tr("The recording is overlaping with others.\nYour changes will not be saved."));
+            return false;
+        }
+    } else {
+        QMessageBox::warning(this, tr("Recorder"),
+                    tr("The recording is overlaping with others.\nYour changes will not be saved."));
+        return false;
+    }
 }

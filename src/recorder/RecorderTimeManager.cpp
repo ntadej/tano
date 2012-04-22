@@ -50,19 +50,16 @@ void RecorderTimeManager::check()
 
     Timer *t = _modelCore->row(_model->mapToSource(_model->index(0, 0)).row());
 
-    if (t->date() < QDate::currentDate()) {
+    if (t->endDateTime() < QDateTime::currentDateTime()) {
         t->setState(Tano::Expired);
         return;
     } else if (t->date() > QDate::currentDate()) {
         return;
     }
 
-    if (t->endTime() < QTime::currentTime()) {
-        t->setState(Tano::Expired);
+    if (t->startDateTime() > QDateTime::currentDateTime()) {
         return;
-    } else if (t->startTime() > QTime::currentTime()) {
-        return;
-    } else if (t->startTime() <= QTime::currentTime()) {
+    } else if (t->startDateTime() <= QDateTime::currentDateTime()) {
         qDebug() << "Start recording:" << t->name();
         emit timer(t);
     }
