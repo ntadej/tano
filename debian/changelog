@@ -1,11 +1,11 @@
-tano (1.0~gitDATE.REV-1~natty) natty; urgency=low
+tano (1.0~gitDATE.REV-1~precise) precise; urgency=low
 
   * Daily build from Git
 
- -- Tadej Novak <tadej@tano.si>  Thu, 15 Sep 2011 00:00:00 +0200
+ -- Tadej Novak <tadej@tano.si>  Sun, 22 Apr 2011 00:00:00 +0200
 
 
-tano (0.8.1-1~ppa1~natty) natty; urgency=low
+tano (0.8.1-1~ppa1~precise) precise; urgency=low
 
   * Teletext support
   * CSV playlist export/import
@@ -19,7 +19,7 @@ tano (0.8.1-1~ppa1~natty) natty; urgency=low
  -- Tadej Novak <tadej@tano.si>  Mon, 27 Jun 2011 10:56:27 +0200
 
 
-tano (0.8.0-1~ppa1~natty) natty; urgency=low
+tano (0.8.0-1~ppa1~precise) precise; urgency=low
 
   * Completely rewriten Recorder and Timers Manager
   * Language filter for playlists
