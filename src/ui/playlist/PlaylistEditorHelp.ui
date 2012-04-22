@@ -54,7 +54,7 @@
    <item>
     <widget class="QLabel" name="labelEditContent">
      <property name="text">
-      <string>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be sepparated by comma (,).</string>
+      <string>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

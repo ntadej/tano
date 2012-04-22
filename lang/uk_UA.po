@@ -1169,13 +1169,6 @@ msgstr ""
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
-"The number of a channel needs to be applied. All other values are "
-"automatically changed. You can set any channel as radio. Categories can be "
-"sepparated by comma (,)."
-msgstr ""
-
-msgctxt "PlaylistEditorHelp|"
-msgid ""
 "Full URL needs to be provided for the channel logo. Pictures will be scaled "
 "to fit the interface."
 msgstr ""
@@ -1207,6 +1200,13 @@ msgid ""
 "You can set custom radio category in settings (defaults to Radio) for "
 "exporting to Sagem JS and CSV. Only the first category or radio category "
 "will be exported to Sagem JS."
+msgstr ""
+
+msgctxt "PlaylistEditorHelp|"
+msgid ""
+"The number of a channel needs to be applied. All other values are "
+"automatically changed. You can set any channel as radio. Categories can be "
+"separated by comma (,)."
 msgstr ""
 
 #, fuzzy

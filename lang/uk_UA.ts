@@ -1105,10 +1105,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be sepparated by comma (,).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1130,6 +1126,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1376,7 +1376,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be sepparated by comma (,).</source>
-        <translation>Zaporedna številka programa mora biti potrjena. Vse druge vrednosti se samodejno spremenijo. Katerikoli program je lahko nastavljen kot radio. Kategorije se ločijo z vejico (,).</translation>
+        <translation type="obsolete">Zaporedna številka programa mora biti potrjena. Vse druge vrednosti se samodejno spremenijo. Katerikoli program je lahko nastavljen kot radio. Kategorije se ločijo z vejico (,).</translation>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
@@ -1401,6 +1401,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
         <translation>V nastavitvah lahko nastavite svoje ime kategorije za radio (privzeto je Radio), ki bo vidno pri izvažanju v Sagem JS in CSV. Samo prva kategorija bo izvožena v Sagem JS.</translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
