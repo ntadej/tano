@@ -141,20 +141,20 @@ IF(UPDATE)
     SET(Tano_Editor_UIs
         ${Tano_Editor_UIs}
 
-        ../src/ui/dialogs/UpdateDialog.ui
+        ../src/update/UpdateDialog.ui
     )
     SET(Tano_Editor_MOCs
         ${Tano_Editor_MOCs}
 
-        ../src/core/UpdateManager.h
-        ../src/ui/dialogs/UpdateDialog.h
+        ../src/update/UpdateDialog.h
+        ../src/update/UpdateManager.h
     )
     SET(Tano_Editor_Srcs
         ${Tano_Editor_Srcs}
 
-        ../src/core/UpdateHandler.cpp
-        ../src/core/UpdateManager.cpp
-        ../src/ui/dialogs/UpdateDialog.cpp
+        ../src/update/UpdateDialog.cpp
+        ../src/update/UpdateHandler.cpp
+        ../src/update/UpdateManager.cpp
     )
 ENDIF(UPDATE)
 

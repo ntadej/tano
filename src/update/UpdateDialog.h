@@ -22,7 +22,7 @@
 #include <QtGui/QAbstractButton>
 #include <QtGui/QDialog>
 
-#include "core/UpdateManager.h"
+#include "update/UpdateManager.h"
 
 namespace Ui {
     class UpdateDialog;

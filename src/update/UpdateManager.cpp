@@ -20,7 +20,7 @@
 #include <QtXml/QXmlSimpleReader>
 
 #include "core/Common.h"
-#include "core/UpdateManager.h"
+#include "update/UpdateManager.h"
 
 UpdateManager::UpdateManager(QObject *parent)
     : QHttp(parent),

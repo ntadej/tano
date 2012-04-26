@@ -38,7 +38,7 @@
     #include "core/LocaleManager.h"
     #include "ui/settings-editor/SettingsEditorDialog.h"
 #if UPDATE
-    #include "ui/dialogs/UpdateDialog.h"
+    #include "update/UpdateDialog.h"
 #endif
 #endif
 

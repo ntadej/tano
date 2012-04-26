@@ -63,7 +63,7 @@
 #include "xmltv/XmltvManager.h"
 
 #if UPDATE
-    #include "ui/dialogs/UpdateDialog.h"
+    #include "update/UpdateDialog.h"
 #endif
 
 MainWindow::MainWindow(QWidget *parent)
