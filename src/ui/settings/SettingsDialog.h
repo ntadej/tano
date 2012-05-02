@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSEDIT_H_
-#define TANO_SETTINGSEDIT_H_
+#ifndef TANO_SETTINGSDIALOG_H_
+#define TANO_SETTINGSDIALOG_H_
 
 #include <QtGui/QAbstractButton>
 #include <QtGui/QDialog>
@@ -53,4 +53,4 @@ private:
     Settings *_settings;
 };
 
-#endif // TANO_SETTINGSEDIT_H_
+#endif // TANO_SETTINGSDIALOG_H_

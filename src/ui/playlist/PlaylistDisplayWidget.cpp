@@ -67,6 +67,7 @@ void PlaylistDisplayWidget::changeEvent(QEvent *e)
         ui->retranslateUi(this);
         ui->comboCategory->setItemText(0, tr("All categories"));
         ui->comboLanguage->setItemText(0, tr("All languages"));
+        processFilters();
         break;
     default:
         break;

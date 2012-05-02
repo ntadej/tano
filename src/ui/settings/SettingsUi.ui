@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>443</width>
-    <height>333</height>
+    <width>454</width>
+    <height>376</height>
    </rect>
   </property>
   <property name="windowIcon">
@@ -24,14 +24,14 @@
       <string>General Interface Settings</string>
      </property>
      <layout class="QGridLayout" name="layoutMainGuiBox">
-      <item row="4" column="0">
+      <item row="5" column="0">
        <widget class="QLabel" name="labelToolbarStyle">
         <property name="text">
          <string>Toolbar style:</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1" colspan="2">
+      <item row="5" column="1" colspan="2">
        <widget class="QComboBox" name="comboToolbarLook">
         <property name="currentIndex">
          <number>4</number>
@@ -90,13 +90,6 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="2">
-       <widget class="QRadioButton" name="radioWheelVolume">
-        <property name="text">
-         <string>Change volume</string>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="0" colspan="3">
        <widget class="QCheckBox" name="checkTrayHide">
         <property name="enabled">
@@ -114,6 +107,13 @@
        <widget class="QCheckBox" name="checkTray">
         <property name="text">
          <string>Show tray icon</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QRadioButton" name="radioWheelVolume">
+        <property name="text">
+         <string>Change volume</string>
         </property>
        </widget>
       </item>

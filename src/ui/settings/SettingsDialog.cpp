@@ -21,7 +21,6 @@
 
 #include "core/Enums.h"
 #include "core/Settings.h"
-#include "core/Shortcuts.h"
 
 SettingsDialog::SettingsDialog(QWidget *parent)
     : QDialog(parent),

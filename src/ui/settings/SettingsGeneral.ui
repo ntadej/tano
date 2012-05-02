@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>417</width>
-    <height>420</height>
+    <height>445</height>
    </rect>
   </property>
   <property name="windowIcon">
@@ -111,18 +111,18 @@
      <property name="title">
       <string>Session store</string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QCheckBox" name="checkAutoplay">
-        <property name="text">
-         <string>Autoplay last channel</string>
-        </property>
-       </widget>
-      </item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
        <widget class="QCheckBox" name="checkVolume">
         <property name="text">
          <string>Remember volume</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkAutoplay">
+        <property name="text">
+         <string>Autoplay last channel</string>
         </property>
        </widget>
       </item>

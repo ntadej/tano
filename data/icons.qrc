@@ -90,5 +90,6 @@
         <file>icons/16x16/media-playback-start.png</file>
         <file>icons/16x16/media-playback-stop.png</file>
         <file>icons/16x16/media-record.png</file>
+        <file>icons/16x16/clear.png</file>
     </qresource>
 </RCC>

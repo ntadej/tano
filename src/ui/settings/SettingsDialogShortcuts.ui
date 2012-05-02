@@ -125,6 +125,11 @@
      </row>
      <row>
       <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
        <string notr="true"/>
       </property>
      </row>
@@ -395,10 +400,7 @@
      </item>
      <item row="17" column="0">
       <property name="text">
-       <string>Always on top</string>
-      </property>
-      <property name="flags">
-       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       <string>Keyboard shortcuts</string>
       </property>
      </item>
      <item row="17" column="1">
@@ -408,7 +410,7 @@
      </item>
      <item row="18" column="0">
       <property name="text">
-       <string>Simple Mode</string>
+       <string>Always on top</string>
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -421,7 +423,7 @@
      </item>
      <item row="19" column="0">
       <property name="text">
-       <string>Hide to tray</string>
+       <string>Simple Mode</string>
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -434,7 +436,10 @@
      </item>
      <item row="20" column="0">
       <property name="text">
-       <string>Next audio track</string>
+       <string>Hide to tray</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="20" column="1">
@@ -444,7 +449,7 @@
      </item>
      <item row="21" column="0">
       <property name="text">
-       <string>Next video track</string>
+       <string>Next audio track</string>
       </property>
      </item>
      <item row="21" column="1">
@@ -454,7 +459,7 @@
      </item>
      <item row="22" column="0">
       <property name="text">
-       <string>Next subtitle track</string>
+       <string>Next video track</string>
       </property>
      </item>
      <item row="22" column="1">
@@ -464,7 +469,7 @@
      </item>
      <item row="23" column="0">
       <property name="text">
-       <string>Next aspect ratio mode</string>
+       <string>Next subtitle track</string>
       </property>
      </item>
      <item row="23" column="1">
@@ -474,7 +479,7 @@
      </item>
      <item row="24" column="0">
       <property name="text">
-       <string>Next crop mode</string>
+       <string>Next aspect ratio mode</string>
       </property>
      </item>
      <item row="24" column="1">
@@ -484,10 +489,20 @@
      </item>
      <item row="25" column="0">
       <property name="text">
-       <string>Next deinterlace mode</string>
+       <string>Next crop mode</string>
       </property>
      </item>
      <item row="25" column="1">
+      <property name="text">
+       <string notr="true">-</string>
+      </property>
+     </item>
+     <item row="26" column="0">
+      <property name="text">
+       <string>Next deinterlace mode</string>
+      </property>
+     </item>
+     <item row="26" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
@@ -508,19 +523,13 @@
     <widget class="QPushButton" name="buttonClear">
      <property name="maximumSize">
       <size>
-       <width>24</width>
-       <height>24</height>
+       <width>26</width>
+       <height>26</height>
       </size>
      </property>
      <property name="icon">
       <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/24x24/clear.png</normaloff>:/icons/24x24/clear.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>24</width>
-       <height>24</height>
-      </size>
+       <normaloff>:/icons/16x16/clear.png</normaloff>:/icons/16x16/clear.png</iconset>
      </property>
     </widget>
    </item>

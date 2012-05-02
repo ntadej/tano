@@ -31,9 +31,9 @@ BrowseWidget::BrowseWidget(QWidget *parent)
     _browse = new QToolButton(this);
     _browse->setText("...");
     _reset = new QPushButton(this);
-    _reset->setIconSize(QSize(24, 24));
-    _reset->setIcon(QIcon(":/icons/24x24/refresh.png"));
-    _reset->setMaximumSize(24, 24);
+    _reset->setIcon(QIcon(":/icons/16x16/refresh.png"));
+    _reset->setMaximumSize(26, 26);
+    _reset->setMinimumSize(26, 26);
 
     QHBoxLayout *layout = new QHBoxLayout;
     layout->setMargin(0);

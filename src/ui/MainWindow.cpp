@@ -107,8 +107,8 @@ MainWindow::MainWindow(QWidget *parent)
     createBackend();
     createGui();
     createShortcuts();
-    createSession();
     createConnections();
+    createSession();
 
     splash->close();
     delete splash;
