@@ -112,8 +112,6 @@
 ;--------------------------------
 
     !insertmacro MUI_LANGUAGE "English" ;first language is the default language
-    !insertmacro MUI_LANGUAGE "Slovenian"
-    !insertmacro MUI_LANGUAGE "Czech"
 
 ;--------------------------------
 ; Reserve Files
@@ -246,7 +244,7 @@ SectionEnd
 ;--------------------------------
 
 ; Language strings
-    !include "InstallerLanguage.nsh"
+    !include "InstallerLanguageEnglish.nsh"
 
 ; Assign language strings to sections
     !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN

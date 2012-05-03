@@ -87,7 +87,7 @@ IF(MINGW)
         tano-player.nsi
         tano-editor.nsi
 
-        InstallerLanguage.nsh
+        InstallerLanguageEnglish.nsh
         InstallerUI.nsh
 
         UAC.nsh
