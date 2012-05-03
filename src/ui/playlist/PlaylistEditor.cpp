@@ -155,7 +155,7 @@ void PlaylistEditor::createConnections()
     connect(ui->editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
     connect(ui->editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
     connect(ui->editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
-    connect(ui->editEpg, SIGNAL(textChanged(QString)), this, SLOT(editChannelEpg(QString)));
+    connect(ui->editXmltvId, SIGNAL(textChanged(QString)), this, SLOT(editChannelXmltvId(QString)));
     connect(ui->editLogo, SIGNAL(textChanged(QString)), this, SLOT(editChannelLogo(QString)));
 
     connect(ui->actionUp, SIGNAL(triggered()), this, SLOT(moveUp()));
@@ -300,7 +300,7 @@ void PlaylistEditor::deleteItem()
     ui->editUrl->setText("");
     ui->editCategories->setText("");
     ui->editLanguage->setText("");
-    ui->editEpg->setText("");
+    ui->editXmltvId->setText("");
     ui->editLogo->setText("");
 
     ui->editWidget->setEnabled(false);
@@ -462,7 +462,7 @@ void PlaylistEditor::editItem(Channel *channel)
     ui->editUrl->setText(channel->url());
     ui->editCategories->setText(channel->categories().join(","));
     ui->editLanguage->setText(channel->language());
-    ui->editEpg->setText(channel->epg());
+    ui->editXmltvId->setText(channel->xmltvId());
     ui->editLogo->setText(channel->logo());
 }
 
@@ -502,9 +502,9 @@ void PlaylistEditor::editChannelLanguage(const QString &text)
     ui->playlist->currentChannel()->setLanguage(text);
 }
 
-void PlaylistEditor::editChannelEpg(const QString &text)
+void PlaylistEditor::editChannelXmltvId(const QString &text)
 {
-    ui->playlist->currentChannel()->setEpg(text);
+    ui->playlist->currentChannel()->setXmltvId(text);
 }
 
 void PlaylistEditor::editChannelLogo(const QString &text)

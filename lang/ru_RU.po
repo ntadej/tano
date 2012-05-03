@@ -188,6 +188,11 @@ msgctxt "EpgShow|"
 msgid "Guest"
 msgstr ""
 
+#, fuzzy
+msgctxt "EpgShow|"
+msgid "Record"
+msgstr "Запись"
+
 #~ msgctxt "FileDialogs|"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
@@ -948,10 +953,9 @@ msgctxt "PlaylistEditor|"
 msgid "Language:"
 msgstr "Язык:"
 
-#, fuzzy
-msgctxt "PlaylistEditor|"
-msgid "EPG:"
-msgstr "EPG:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "EPG:"
+#~ msgstr "EPG:"
 
 #, fuzzy
 msgctxt "PlaylistEditor|"
@@ -1135,6 +1139,10 @@ msgstr ""
 
 msgctxt "PlaylistEditor|"
 msgid "Scan for new channels"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "XMLTV ID:"
 msgstr ""
 
 msgctxt "PlaylistEditorHelp|"
@@ -1427,14 +1435,18 @@ msgctxt "Print|"
 msgid "Language"
 msgstr "Язык"
 
-msgctxt "Print|"
-msgid "EPG"
-msgstr "EPG"
+#~ msgctxt "Print|"
+#~ msgid "EPG"
+#~ msgstr "EPG"
 
 #, qt-format
 msgctxt "Print|"
 msgid "Exported with Tano on %1."
 msgstr "Экспортирован Tano на %1."
+
+msgctxt "Print|"
+msgid "XMLTV ID"
+msgstr ""
 
 msgctxt "PrintDialog|"
 msgid "Print"
@@ -1560,10 +1572,6 @@ msgstr "Категории"
 msgctxt "QObject|"
 msgid "Language"
 msgstr "Язык"
-
-msgctxt "QObject|"
-msgid "EPG ID"
-msgstr ""
 
 msgctxt "QObject|"
 msgid "Number"
@@ -1783,6 +1791,10 @@ msgctxt "QObject|"
 msgid "instant recording"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "XMLTV ID"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Очистить ярлык"
@@ -1895,6 +1907,10 @@ msgctxt "Recorder|"
 msgid ""
 "File cannot be removed.\n"
 "Have you already moved or deleted it?"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "You don't have this channel in your playlist."
 msgstr ""
 
 #~ msgctxt "RecorderInfoWidget|"

@@ -31,7 +31,9 @@
 #include "XmltvHandler.h"
 
 XmltvHandler::XmltvHandler()
-    : _metTag(false) { }
+    : _metTag(false),
+      _currentProgramme(0),
+      _previousProgramme(0) { }
 
 XmltvHandler::~XmltvHandler()
 {
@@ -76,6 +78,8 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
             _currentProgramme->setChannelDisplayName(_list->channels()->find(attributes.value("channel"))->displayName());
             _currentProgramme->setStart(QDateTime::fromString(start, Tano::Xmltv::dateFormat()));
             _currentProgramme->setStop(QDateTime::fromString(stop, Tano::Xmltv::dateFormat()));
+            if (_previousProgramme && !_previousProgramme->stop().isValid())
+                _previousProgramme->setStop(_currentProgramme->start());
             _list->channels()->find(attributes.value("channel"))->addProgramme(_currentProgramme);
         }
     } else if (qName == "lenght") {
@@ -107,6 +111,7 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
         }
     } else if(qName == "programme") { // Programme
         if(_list && _currentProgramme) {
+            _previousProgramme = _currentProgramme;
             _currentProgramme = 0;
         }
     } else if(qName == "title") {

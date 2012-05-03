@@ -170,6 +170,10 @@ Your VLC-Qt version: %4
         <source>Guest</source>
         <translation>Гість</translation>
     </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished">Запис</translation>
+    </message>
 </context>
 <context>
     <name>FirstRunWizard</name>
@@ -915,7 +919,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>EPG:</source>
-        <translation>EPG:</translation>
+        <translation type="obsolete">EPG:</translation>
     </message>
     <message>
         <source>Url:</source>
@@ -1084,6 +1088,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Scan for new channels</source>
         <translation>Сканувати для нових каналів</translation>
+    </message>
+    <message>
+        <source>XMLTV ID:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1285,11 +1293,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>EPG</source>
-        <translation>EPG</translation>
+        <translation type="obsolete">EPG</translation>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
         <translation>Експортовано з Tano на %1.</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1405,7 +1417,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>EPG ідентифікатор</translation>
+        <translation type="obsolete">EPG ідентифікатор</translation>
     </message>
     <message>
         <source>Number</source>
@@ -1609,6 +1621,10 @@ You will lose any unsaved changes.</source>
         <source>instant recording</source>
         <translation>миттєвий запис</translation>
     </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1720,6 +1736,10 @@ You will lose any unsaved changes.</source>
 Have you already moved or deleted it?</source>
         <translation>Файл не може бути видалений.
 Ви вже перемістили або видалили його?</translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

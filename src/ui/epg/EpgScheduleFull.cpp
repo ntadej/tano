@@ -55,7 +55,7 @@ void EpgScheduleFull::changeEvent(QEvent *e)
 void EpgScheduleFull::channel(Channel *channel)
 {
     ui->schedule->setPage(0);
-    emit requestEpg(channel->epg(), Tano::Schedule);
+    emit requestEpg(channel->xmltvId(), Tano::Schedule);
 }
 
 void EpgScheduleFull::refreshPlaylistModel()

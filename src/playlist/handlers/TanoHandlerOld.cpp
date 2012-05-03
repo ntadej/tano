@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This file was based on the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -79,7 +79,7 @@ bool TanoHandlerOld::endElement(const QString & /* namespaceURI */,
         }
     } else if (qName == "epg") {
         if (_channel) {
-            _channel->setEpg(_currentText);
+            _channel->setXmltvId(_currentText);
         }
     } else if (qName == "language") {
         if (_channel) {

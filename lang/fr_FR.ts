@@ -170,6 +170,10 @@ Votre version de VLC-Qt : %4</translation>
         <source>Guest</source>
         <translation>Invité</translation>
     </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FirstRunWizard</name>
@@ -911,7 +915,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>EPG:</source>
-        <translation>EPG :</translation>
+        <translation type="obsolete">EPG :</translation>
     </message>
     <message>
         <source>Url:</source>
@@ -1080,6 +1084,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>Scan for new channels</source>
         <translation>Chercher de nouvelles chaînes</translation>
+    </message>
+    <message>
+        <source>XMLTV ID:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1285,11 +1293,15 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>EPG</source>
-        <translation>Identifiant EPG</translation>
+        <translation type="obsolete">Identifiant EPG</translation>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
         <translation>Exporter avec Tano sur %1.</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1405,7 +1417,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>Identifiant EPG</translation>
+        <translation type="obsolete">Identifiant EPG</translation>
     </message>
     <message>
         <source>Number</source>
@@ -1609,6 +1621,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <source>instant recording</source>
         <translation>Enrgistrement immédiat</translation>
     </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1720,6 +1736,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
 Have you already moved or deleted it?</source>
         <translation>Le fichier ne peut pas être supprimer.
 L&apos;avez-vous déjà déplacé ou supprimer ?</translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

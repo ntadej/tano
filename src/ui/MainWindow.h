@@ -55,6 +55,7 @@ class Timer;
 class TrayIcon;
 class Udpxy;
 class XmltvManager;
+class XmltvProgramme;
 
 #if UPDATE
 class UpdateDialog;
@@ -110,6 +111,7 @@ private slots:
     void teletext(const int &page);
 
     void recordNow(const bool &start);
+    void recordProgramme(XmltvProgramme *programme);
     void recorder(const bool &enabled);
 
 signals:

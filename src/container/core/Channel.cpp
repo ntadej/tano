@@ -31,7 +31,7 @@ Channel::Channel(const QString &name,
     _radio = false;
     _language = "";
     _url = "";
-    _epg = "";
+    _xmltvId = "";
     _categories = QStringList();
     _logo = "";
 }
@@ -48,7 +48,7 @@ QHash<int, QByteArray> Channel::roleNames() const
     names[NumberRole] = "number";
     names[LanguageRole] = "language";
     names[UrlRole] = "url";
-    names[EpgRole] = "epg";
+    names[XmltvIdRole] = "xmltvid";
     names[CategoriesRole] = "categories";
     names[LogoRole] = "logo";
     return names;
@@ -72,8 +72,8 @@ QVariant Channel::data(int role) const
         return language();
     case UrlRole:
         return url();
-    case EpgRole:
-        return epg();
+    case XmltvIdRole:
+        return xmltvId();
     case CategoriesRole:
         return categories();
     case LogoRole:
@@ -136,10 +136,10 @@ void Channel::setUrl(const QString &url)
     }
 }
 
-void Channel::setEpg(const QString &epg)
+void Channel::setXmltvId(const QString &xmltvId)
 {
-    if (_epg != epg) {
-        _epg = epg;
+    if (_xmltvId != xmltvId) {
+        _xmltvId = xmltvId;
         emit dataChanged();
     }
 }

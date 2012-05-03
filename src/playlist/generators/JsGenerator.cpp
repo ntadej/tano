@@ -67,7 +67,7 @@ void JsGenerator::generateItem(const int &id,
     else
         _out << "\"" << channel->categories()[0] << "\"" << ",";
     _out << "\"" << channel->language() << "\"" << ","
-         << "\"" << channel->epg() << "\"" << ","
+         << "\"" << channel->xmltvId() << "\"" << ","
          << "\"" << "false" << "\""
          << "]";
 }

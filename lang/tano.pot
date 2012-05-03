@@ -159,6 +159,10 @@ msgctxt "EpgShow|"
 msgid "Guest"
 msgstr ""
 
+msgctxt "EpgShow|"
+msgid "Record"
+msgstr ""
+
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr ""
@@ -627,10 +631,6 @@ msgid "Language:"
 msgstr ""
 
 msgctxt "PlaylistEditor|"
-msgid "EPG:"
-msgstr ""
-
-msgctxt "PlaylistEditor|"
 msgid "Url:"
 msgstr ""
 
@@ -761,6 +761,10 @@ msgstr ""
 
 msgctxt "PlaylistEditor|"
 msgid "Scan for new channels"
+msgstr ""
+
+msgctxt "PlaylistEditor|"
+msgid "XMLTV ID:"
 msgstr ""
 
 msgctxt "PlaylistEditorHelp|"
@@ -960,13 +964,13 @@ msgctxt "Print|"
 msgid "Language"
 msgstr ""
 
-msgctxt "Print|"
-msgid "EPG"
-msgstr ""
-
 #, qt-format
 msgctxt "Print|"
 msgid "Exported with Tano on %1."
+msgstr ""
+
+msgctxt "Print|"
+msgid "XMLTV ID"
 msgstr ""
 
 msgctxt "PrintDialog|"
@@ -1074,10 +1078,6 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "Language"
-msgstr ""
-
-msgctxt "QObject|"
-msgid "EPG ID"
 msgstr ""
 
 msgctxt "QObject|"
@@ -1283,6 +1283,10 @@ msgctxt "QObject|"
 msgid "instant recording"
 msgstr ""
 
+msgctxt "QObject|"
+msgid "XMLTV ID"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr ""
@@ -1353,6 +1357,10 @@ msgctxt "Recorder|"
 msgid ""
 "File cannot be removed.\n"
 "Have you already moved or deleted it?"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "You don't have this channel in your playlist."
 msgstr ""
 
 msgctxt "RecorderInfoWidget|"

@@ -53,7 +53,7 @@ void CSVHandler::processChannel(const QStringList &list)
     _channel = new Channel(list[_name], list[_number].toInt());
     _channel->setUrl(list[_url]);
     _channel->setLanguage(list[_language]);
-    _channel->setEpg(list[_epg]);
+    _channel->setXmltvId(list[_xmltvId]);
 
     QStringList categories = list[_categories].split(",");
     if (categories.contains(_radio)) {
@@ -85,5 +85,5 @@ void CSVHandler::setParameters(const QString &separator,
     _url = columns[2];
     _categories = columns[3];
     _language = columns[4];
-    _epg = columns[5];
+    _xmltvId = columns[5];
 }

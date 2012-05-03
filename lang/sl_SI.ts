@@ -229,6 +229,10 @@ Vaša različica VLC-Qt: %4
         <source>Guest</source>
         <translation>Gost</translation>
     </message>
+    <message>
+        <source>Record</source>
+        <translation>Snemaj</translation>
+    </message>
 </context>
 <context>
     <name>FileDialogs</name>
@@ -1185,7 +1189,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>EPG:</source>
-        <translation>EPG:</translation>
+        <translation type="obsolete">EPG:</translation>
     </message>
     <message>
         <source>Url:</source>
@@ -1355,6 +1359,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Scan for new channels</source>
         <translation>Preišči za nove programe</translation>
     </message>
+    <message>
+        <source>XMLTV ID:</source>
+        <translation>XMLTV ID:</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
@@ -1404,7 +1412,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaporedna številka programa mora biti potrjena. Vse druge vrednosti se samodejno spremenijo. Katerikoli program je lahko nastavljen kot radio. Kategorije se ločijo z vejico (,).</translation>
     </message>
 </context>
 <context>
@@ -1703,11 +1711,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>EPG</source>
-        <translation>EPG</translation>
+        <translation type="obsolete">EPG</translation>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
         <translation>Izpisano s programom Tano dne %1.</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation>XMLTV ID</translation>
     </message>
 </context>
 <context>
@@ -1803,7 +1815,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Onemogočeno</translation>
+        <translation>Onemogočen</translation>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
@@ -1847,7 +1859,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>EPG ID</translation>
+        <translation type="obsolete">EPG ID</translation>
     </message>
     <message>
         <source>The file is not a valid XMLTV file.</source>
@@ -2071,6 +2083,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>instant recording</source>
         <translation>takojšnje snemanje</translation>
     </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation>XMLTV ID</translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -2190,6 +2206,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
 Have you already moved or deleted it?</source>
         <translation>Datoteke ni mogoče odstraniti.
 Ste mogoče datoteko že premaknili ali izbrisali?</translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
+        <translation>Tega programa nimate v vašem seznamu.</translation>
     </message>
 </context>
 <context>

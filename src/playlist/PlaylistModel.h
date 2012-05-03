@@ -45,6 +45,7 @@ public:
     Channel *deleteChannel(Channel *channel);
 
     Channel *number(const int &number);
+    Channel *xmltvId(const QString &xmltvId);
 
     void moveDown(Channel *channel);
     void moveUp(Channel *channel);
@@ -52,7 +53,7 @@ public:
                        const int &number);
 
     QStringList categories() const { return _categoryList; }
-    QStringList epg() const { return _epgList; }
+    QStringList xmltvId() const { return _xmltvIdList; }
     QString fileName() const { return _fileName; }
     QStringList languages() const { return _languageList; }
     QString name() const { return _name; }
@@ -79,7 +80,7 @@ private:
 
     QList<int> _channelNumbers;
     QStringList _categoryList;
-    QStringList _epgList;
+    QStringList _xmltvIdList;
     QStringList _languageList;
     QMap<int, Channel *> _numbers;
 

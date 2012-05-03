@@ -36,7 +36,7 @@ public:
         RadioRole,
         LanguageRole,
         UrlRole,
-        EpgRole,
+        XmltvIdRole,
         CategoriesRole,
         LogoRole
     };
@@ -64,8 +64,8 @@ public:
     void setLanguage(const QString &language);
     inline QString url() const { return _url; }
     void setUrl(const QString &url);
-    inline QString epg() const { return _epg; }
-    void setEpg(const QString &epg);
+    inline QString xmltvId() const { return _xmltvId; }
+    void setXmltvId(const QString &xmltvId);
     inline QStringList categories() const { return _categories; }
     void setCategories(const QStringList &categories);
     inline QString logo() const { return _logo; }
@@ -77,7 +77,7 @@ private:
     bool _radio;
     QString _language;
     QString _url;
-    QString _epg;
+    QString _xmltvId;
     QStringList _categories;
     QString _logo;
 };

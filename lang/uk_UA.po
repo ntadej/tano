@@ -176,6 +176,11 @@ msgctxt "EpgShow|"
 msgid "Guest"
 msgstr "Гість"
 
+#, fuzzy
+msgctxt "EpgShow|"
+msgid "Record"
+msgstr "Запис"
+
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Перший запуск Майстра налаштувань"
@@ -911,9 +916,9 @@ msgctxt "PlaylistEditor|"
 msgid "Language:"
 msgstr "Мова:"
 
-msgctxt "PlaylistEditor|"
-msgid "EPG:"
-msgstr "EPG:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "EPG:"
+#~ msgstr "EPG:"
 
 msgctxt "PlaylistEditor|"
 msgid "Url:"
@@ -1106,6 +1111,10 @@ msgstr "Радіо:"
 msgctxt "PlaylistEditor|"
 msgid "Scan for new channels"
 msgstr "Сканувати для нових каналів"
+
+msgctxt "PlaylistEditor|"
+msgid "XMLTV ID:"
+msgstr ""
 
 msgctxt "PlaylistEditorHelp|"
 msgid "Tano Editor - Help"
@@ -1322,14 +1331,18 @@ msgctxt "Print|"
 msgid "Language"
 msgstr "Мова"
 
-msgctxt "Print|"
-msgid "EPG"
-msgstr "EPG"
+#~ msgctxt "Print|"
+#~ msgid "EPG"
+#~ msgstr "EPG"
 
 #, qt-format
 msgctxt "Print|"
 msgid "Exported with Tano on %1."
 msgstr "Експортовано з Tano на %1."
+
+msgctxt "Print|"
+msgid "XMLTV ID"
+msgstr ""
 
 msgctxt "PrintDialog|"
 msgid "Print"
@@ -1440,9 +1453,9 @@ msgctxt "QObject|"
 msgid "Language"
 msgstr "Мова"
 
-msgctxt "QObject|"
-msgid "EPG ID"
-msgstr "EPG ідентифікатор"
+#~ msgctxt "QObject|"
+#~ msgid "EPG ID"
+#~ msgstr "EPG ідентифікатор"
 
 msgctxt "QObject|"
 msgid "Number"
@@ -1650,6 +1663,10 @@ msgctxt "QObject|"
 msgid "instant recording"
 msgstr "миттєвий запис"
 
+msgctxt "QObject|"
+msgid "XMLTV ID"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Спорожнити скорочення"
@@ -1759,6 +1776,10 @@ msgid ""
 msgstr ""
 "Файл не може бути видалений.\n"
 "Ви вже перемістили або видалили його?"
+
+msgctxt "Recorder|"
+msgid "You don't have this channel in your playlist."
+msgstr ""
 
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Status"

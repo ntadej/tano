@@ -39,6 +39,7 @@ EpgShow::EpgShow(QWidget *parent)
 
     connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
     connect(ui->buttonNext, SIGNAL(clicked()), this, SLOT(next()));
+    connect(ui->buttonRecord, SIGNAL(clicked()), this, SLOT(record()));
 
     connect(ui->comboCrewType, SIGNAL(currentIndexChanged(int)), this, SLOT(processFilters(int)));
 }
@@ -103,4 +104,9 @@ void EpgShow::previous()
 void EpgShow::processFilters(const int &type)
 {
     _crew->setType(Tano::Xmltv::CrewMemberType(type));
+}
+
+void EpgShow::record()
+{
+    emit requestRecord(_current);
 }

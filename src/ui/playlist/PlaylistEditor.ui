@@ -107,7 +107,7 @@
    <property name="minimumSize">
     <size>
      <width>300</width>
-     <height>234</height>
+     <height>253</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -163,9 +163,9 @@
       </widget>
      </item>
      <item row="7" column="0">
-      <widget class="QLabel" name="labelEpg">
+      <widget class="QLabel" name="labelXmltvId">
        <property name="text">
-        <string>EPG:</string>
+        <string>XMLTV ID:</string>
        </property>
       </widget>
      </item>
@@ -201,7 +201,7 @@
       <widget class="QLineEdit" name="editLanguage"/>
      </item>
      <item row="7" column="1" colspan="5">
-      <widget class="QLineEdit" name="editEpg"/>
+      <widget class="QLineEdit" name="editXmltvId"/>
      </item>
      <item row="10" column="0" colspan="6">
       <spacer name="verticalSpacer">

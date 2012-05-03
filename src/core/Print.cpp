@@ -77,7 +77,7 @@ void Print::channelList(const QString &name,
     }
     if(list[5] >= 0) {
         cursor = channelsTable->cellAt(0, list[5]).firstCursorPosition();
-        cursor.insertText(tr("EPG"), _boldFormat);
+        cursor.insertText(tr("XMLTV ID"), _boldFormat);
     }
 
     for (int i = 0; i < model->rowCount(); ++i) {
@@ -106,7 +106,7 @@ void Print::channelList(const QString &name,
         }
         if(list[5] >= 0) {
             cursor = channelsTable->cellAt(row, list[5]).firstCursorPosition();
-            cursor.insertText(model->row(i)->epg(), _textFormat);
+            cursor.insertText(model->row(i)->xmltvId(), _textFormat);
         }
     }
 

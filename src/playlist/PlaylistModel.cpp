@@ -56,7 +56,7 @@ void PlaylistModel::clear()
 {
     _channelNumbers.clear();
     _categoryList.clear();
-    _epgList.clear();
+    _xmltvIdList.clear();
     _languageList.clear();
     _numbers.clear();
 
@@ -172,6 +172,17 @@ Channel *PlaylistModel::number(const int &number)
     return 0;
 }
 
+Channel *PlaylistModel::xmltvId(const QString &xmltvId)
+{
+    for (int i = 0; i < rowCount(); i++) {
+        if (row(i)->xmltvId() == xmltvId) {
+            return row(i);
+        }
+    }
+
+    return 0;
+}
+
 void PlaylistModel::open(const QString &file,
                          const bool &refresh,
                          const Tano::FileType &type,
@@ -221,7 +232,7 @@ void PlaylistModel::processChannel(Channel *channel)
         }
     } else {
         exists->setCategories(channel->categories());
-        exists->setEpg(channel->epg());
+        exists->setXmltvId(channel->xmltvId());
         exists->setLanguage(channel->language());
         exists->setLogo(channel->logo());
         exists->setName(channel->name());
@@ -251,8 +262,8 @@ void PlaylistModel::processChannel(Channel *channel)
     }
     if (!_languageList.contains(channel->language()))
         _languageList << channel->language();
-    if (!_epgList.contains(channel->epg()) && !channel->epg().isEmpty())
-        _epgList << channel->epg();
+    if (!_xmltvIdList.contains(channel->xmltvId()) && !channel->xmltvId().isEmpty())
+        _xmltvIdList << channel->xmltvId();
 
     _numbers.insert(channel->number(), channel);
     appendRow(channel);

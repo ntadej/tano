@@ -194,6 +194,10 @@ Verze vašeho VLC-Qt: %4</translation>
         <source>Guest</source>
         <translation>Host</translation>
     </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished">Nahrávat</translation>
+    </message>
 </context>
 <context>
     <name>FileDialogs</name>
@@ -1066,7 +1070,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>EPG:</source>
-        <translation>EPG:</translation>
+        <translation type="obsolete">EPG:</translation>
     </message>
     <message>
         <source>Url:</source>
@@ -1231,6 +1235,10 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Scan for new channels</source>
         <translation>Prohledat na nové programy</translation>
+    </message>
+    <message>
+        <source>XMLTV ID:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1568,11 +1576,15 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>EPG</source>
-        <translation>EPG</translation>
+        <translation type="obsolete">EPG</translation>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
         <translation>Vyvedeno programem Tano na %1.</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1704,7 +1716,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>ID EPG</translation>
+        <translation type="obsolete">ID EPG</translation>
     </message>
     <message>
         <source>CSV Imported Playlist</source>
@@ -1928,6 +1940,10 @@ Ztratíte všechny neuložené změny.</translation>
         <source>instant recording</source>
         <translation>Okamžitý záznam</translation>
     </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -2047,6 +2063,10 @@ Ztratíte všechny neuložené změny.</translation>
 Have you already moved or deleted it?</source>
         <translation>Soubor nelze odstranit.
 Již jste jej přesunul nebo smazal?</translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

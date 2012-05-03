@@ -87,7 +87,7 @@ void M3UGenerator::generateItemNormal(Channel *channel)
     }
     _out << channel->categories().join(",") << ";";
     _out << channel->language() << ";"
-         << channel->epg();
+         << channel->xmltvId();
     _out << "\n";
 
     if(!channel->logo().isEmpty()) {
@@ -125,7 +125,7 @@ void M3UGenerator::generateItemUdpxy(Channel *channel)
     }
     _out << channel->categories().join(",") << ";";
     _out << channel->language() << ";"
-         << channel->epg();
+         << channel->xmltvId();
     _out << "\n";
 
 

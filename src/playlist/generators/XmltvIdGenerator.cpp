@@ -46,6 +46,6 @@ bool XmltvIdGenerator::write(PlaylistModel *model)
 
 void XmltvIdGenerator::generateItem(Channel *channel)
 {
-    if(!channel->epg().isEmpty())
-        _out << channel->name() << "=" << channel->epg() << "\n";
+    if(!channel->xmltvId().isEmpty())
+        _out << channel->name() << "=" << channel->xmltvId() << "\n";
 }

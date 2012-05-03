@@ -53,6 +53,7 @@ signals:
 public slots:
     void channelSelected(Channel *channel);
     void channelSelected(const int &channel);
+    void channelSelected(const QString &xmltvId);
 
 private slots:
     void channelSelected(const QModelIndex &index);

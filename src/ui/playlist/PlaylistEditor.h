@@ -88,7 +88,7 @@ private slots:
     void editChannelUrl(const QString &text);
     void editChannelCategories(const QString &text);
     void editChannelLanguage(const QString &text);
-    void editChannelEpg(const QString &text);
+    void editChannelXmltvId(const QString &text);
     void editChannelLogo(const QString &text);
 
     void moveUp();

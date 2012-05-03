@@ -74,7 +74,7 @@ void JsHandler::processList()
         else
             channel->setCategories(QStringList() << currentChannel[5]);
         channel->setLanguage(currentChannel[6]);
-        channel->setEpg(currentChannel[7]);
+        channel->setXmltvId(currentChannel[7]);
 
         _channelList << channel;
     }

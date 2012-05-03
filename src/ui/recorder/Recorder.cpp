@@ -21,6 +21,7 @@
 
 #include "container/core/Channel.h"
 #include "container/core/Timer.h"
+#include "container/xmltv/XmltvProgramme.h"
 #include "core/Enums.h"
 #include "core/Settings.h"
 #include "core/Udpxy.h"
@@ -128,6 +129,26 @@ void Recorder::newTimer()
     setCurrentIndex(1);
 }
 
+void Recorder::newTimerFromSchedule(XmltvProgramme *programme)
+{
+    ui->playlistWidget->channelSelected(programme->channel());
+
+    if (!_currentChannel) {
+        QMessageBox::critical(this, tr("Recorder"),
+                    tr("You don't have this channel in your playlist."));
+        return;
+    }
+
+    Timer *timer = _model->createTimer(programme->title(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
+    timer->setState(Tano::Disabled);
+    timer->setDate(programme->start().date());
+    timer->setStartTime(programme->start().time());
+    timer->setEndTime(programme->stop().time());
+
+    _info->timerInfo(timer);
+
+    cancel();
+}
 
 void Recorder::playlist(Channel *channel)
 {

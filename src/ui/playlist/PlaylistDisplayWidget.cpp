@@ -92,6 +92,12 @@ void PlaylistDisplayWidget::channelSelected(const int &channel)
     emit itemSelected(_current);
 }
 
+void PlaylistDisplayWidget::channelSelected(const QString &xmltvId)
+{
+    _current = _model->xmltvId(xmltvId);
+    emit itemSelected(_current);
+}
+
 void PlaylistDisplayWidget::editMode()
 {
     ui->buttonSearch->hide();

@@ -122,7 +122,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
     QTextStream outC(&fChannel);
     outC << "{" << "\n"
          << indent(1) << "\"name\": \"" << channel->name() << "\"," << "\n"
-         << indent(1) << "\"xmltv-channel\": \"" << channel->epg() << "\"," << "\n"
+         << indent(1) << "\"xmltv-channel\": \"" << channel->xmltvId() << "\"," << "\n"
          << indent(1) << "\"icon\": \"" << channel->logo() << "\"," << "\n"
          << indent(1) << "\"tags\": [" << "\n";
     foreach (QString category, channel->categories()) {

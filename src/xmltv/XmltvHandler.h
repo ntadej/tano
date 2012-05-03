@@ -55,6 +55,7 @@ private:
 
     XmltvChannel *_currentChannel;
     XmltvProgramme *_currentProgramme;
+    XmltvProgramme *_previousProgramme;
     XmltvList *_list;
 };
 

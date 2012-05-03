@@ -32,6 +32,7 @@ class Timer;
 class TimersModel;
 class Udpxy;
 class VlcInstance;
+class XmltvProgramme;
 
 namespace Ui
 {
@@ -66,6 +67,7 @@ signals:
 
 public slots:
     void newTimer();
+    void newTimerFromSchedule(XmltvProgramme *programme);
     void quickRecord();
     void recordStart(Timer *timer);
     void recordStop();

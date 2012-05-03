@@ -46,12 +46,14 @@ public slots:
 signals:
 	void requestNext(XmltvProgramme *);
 	void requestPrevious(XmltvProgramme *);
+	void requestRecord(XmltvProgramme *);
 
 private slots:
 	void image(const QString &image);
 	void next();
 	void previous();
 	void processFilters(const int &type);
+	void record();
 
 private:
 	Ui::EpgShow *ui;

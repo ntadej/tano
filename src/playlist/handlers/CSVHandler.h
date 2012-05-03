@@ -62,7 +62,7 @@ private:
     int _url;
     int _categories;
     int _language;
-    int _epg;
+    int _xmltvId;
 };
 
 #endif // TANO_CSVHANDLER_H_

@@ -47,7 +47,7 @@ bool CSVGenerator::write(PlaylistModel *model)
          << QObject::tr("URL") << ";"
          << QObject::tr("Categories") << ";"
          << QObject::tr("Language") << ";"
-         << QObject::tr("EPG ID") << "\n";
+         << QObject::tr("XMLTV ID") << "\n";
 
     for (int i = 0; i < model->rowCount(); i++) {
         generateItem(model->row(i));
@@ -67,6 +67,6 @@ void CSVGenerator::generateItem(Channel *channel)
     }
     _out << channel->categories().join(",") << ";"
          << channel->language() << ";"
-         << channel->epg();
+         << channel->xmltvId();
     _out << "\n";
 }

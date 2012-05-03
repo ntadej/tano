@@ -403,6 +403,7 @@ void MainWindow::createConnections()
     connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
     connect(ui->actionRecordTimer, SIGNAL(triggered()), ui->recorder, SLOT(newTimer()));
     connect(ui->recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
+    connect(_epgShow, SIGNAL(requestRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
 }
 
 void MainWindow::createMenus()
@@ -584,7 +585,7 @@ void MainWindow::playChannel(Channel *channel)
         _osdFloat->setLogo(_channel->logo());
     }
 
-    _xmltv->request(_channel->epg(), Tano::Main);
+    _xmltv->request(_channel->xmltvId(), Tano::Main);
     _osdMain->setChannel(_channel->number(), _channel->name(), _channel->language());
     _osdFloat->setChannel(_channel->number(), _channel->name(), _channel->language());
     tooltip(_channel->name());
@@ -614,7 +615,6 @@ void MainWindow::playLocal(const QString &path)
 void MainWindow::playRecording(Timer *recording)
 {
     recorder(false);
-    ui->actionRecorder->setChecked(false);
 
     playLocal(recording->file());
 
@@ -895,14 +895,23 @@ void MainWindow::recordNow(const bool &start)
 void MainWindow::recorder(const bool &enabled)
 {
     if (enabled) {
+        ui->actionRecorder->setChecked(true);
         ui->stackedWidget->setCurrentIndex(1);
         ui->toolBarRecorder->setVisible(true);
         ui->infoContent->setCurrentIndex(1);
         ui->osdWidget->setVisible(false);
     } else {
+        ui->actionRecorder->setChecked(false);
         ui->stackedWidget->setCurrentIndex(0);
         ui->toolBarRecorder->setVisible(false);
         ui->infoContent->setCurrentIndex(0);
         ui->osdWidget->setVisible(true);
     }
+}
+
+void MainWindow::recordProgramme(XmltvProgramme *programme)
+{
+    recorder(true);
+
+    ui->recorder->newTimerFromSchedule(programme);
 }

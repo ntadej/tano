@@ -192,6 +192,11 @@ msgctxt "EpgShow|"
 msgid "Guest"
 msgstr "Host"
 
+#, fuzzy
+msgctxt "EpgShow|"
+msgid "Record"
+msgstr "Nahrávat"
+
 #~ msgctxt "FileDialogs|"
 #~ msgid "Open directory"
 #~ msgstr "Otevřít adresář"
@@ -1030,9 +1035,9 @@ msgctxt "PlaylistEditor|"
 msgid "Language:"
 msgstr "Jazyk:"
 
-msgctxt "PlaylistEditor|"
-msgid "EPG:"
-msgstr "EPG:"
+#~ msgctxt "PlaylistEditor|"
+#~ msgid "EPG:"
+#~ msgstr "EPG:"
 
 msgctxt "PlaylistEditor|"
 msgid "Url:"
@@ -1217,6 +1222,10 @@ msgstr "Rádio:"
 msgctxt "PlaylistEditor|"
 msgid "Scan for new channels"
 msgstr "Prohledat na nové programy"
+
+msgctxt "PlaylistEditor|"
+msgid "XMLTV ID:"
+msgstr ""
 
 msgctxt "PlaylistEditorHelp|"
 msgid "Tano Editor - Help"
@@ -1571,14 +1580,18 @@ msgctxt "Print|"
 msgid "Language"
 msgstr "Jazyk"
 
-msgctxt "Print|"
-msgid "EPG"
-msgstr "EPG"
+#~ msgctxt "Print|"
+#~ msgid "EPG"
+#~ msgstr "EPG"
 
 #, qt-format
 msgctxt "Print|"
 msgid "Exported with Tano on %1."
 msgstr "Vyvedeno programem Tano na %1."
+
+msgctxt "Print|"
+msgid "XMLTV ID"
+msgstr ""
 
 msgctxt "PrintDialog|"
 msgid "Print"
@@ -1705,9 +1718,9 @@ msgctxt "QObject|"
 msgid "Language"
 msgstr "Jazyk"
 
-msgctxt "QObject|"
-msgid "EPG ID"
-msgstr "ID EPG"
+#~ msgctxt "QObject|"
+#~ msgid "EPG ID"
+#~ msgstr "ID EPG"
 
 #~ msgctxt "QObject|"
 #~ msgid "CSV Imported Playlist"
@@ -1936,6 +1949,10 @@ msgctxt "QObject|"
 msgid "instant recording"
 msgstr "Okamžitý záznam"
 
+msgctxt "QObject|"
+msgid "XMLTV ID"
+msgstr ""
+
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
 msgstr "Smazat klávesovou zkratku"
@@ -2053,6 +2070,10 @@ msgid ""
 msgstr ""
 "Soubor nelze odstranit.\n"
 "Již jste jej přesunul nebo smazal?"
+
+msgctxt "Recorder|"
+msgid "You don't have this channel in your playlist."
+msgstr ""
 
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Status"

@@ -191,6 +191,10 @@ Your VLC-Qt version: %4
         <source>Guest</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished">Запись</translation>
+    </message>
 </context>
 <context>
     <name>FileDialogs</name>
@@ -967,7 +971,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>EPG:</source>
-        <translation type="unfinished">EPG:</translation>
+        <translation type="obsolete">EPG:</translation>
     </message>
     <message>
         <source>Url:</source>
@@ -1125,6 +1129,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Scan for new channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV ID:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1411,11 +1419,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>EPG</source>
-        <translation>EPG</translation>
+        <translation type="obsolete">EPG</translation>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
         <translation>Экспортирован Tano на %1.</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1540,10 +1552,6 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Language</source>
         <translation type="unfinished">Язык</translation>
-    </message>
-    <message>
-        <source>EPG ID</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Number</source>
@@ -1759,6 +1767,10 @@ You will lose any unsaved changes.</source>
         <source>instant recording</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1872,6 +1884,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>File cannot be removed.
 Have you already moved or deleted it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

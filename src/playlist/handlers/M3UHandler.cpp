@@ -86,7 +86,7 @@ void M3UHandler::processList()
                 }
                 _channel->setCategories(tmpCList);
                 _channel->setLanguage(tmpList[1]);
-                _channel->setEpg(tmpList[2]);
+                _channel->setXmltvId(tmpList[2]);
             }
         } else if (_m3uLineList[i].contains("#EXTLOGO")) {
             tmp = _m3uLineList[i];
