@@ -125,56 +125,55 @@ msgstr "Suivant"
 
 msgctxt "EpgShow|"
 msgid "<b>Crew</b>"
-msgstr ""
+msgstr "Équipe"
 
 msgctxt "EpgShow|"
 msgid "<b>Description</b>"
-msgstr ""
+msgstr "<b>Description</b>"
 
 msgctxt "EpgShow|"
 msgid "Crew members: All"
-msgstr ""
+msgstr "Membres de l'équipe : tous"
 
 msgctxt "EpgShow|"
 msgid "Director"
-msgstr ""
+msgstr "Directeur"
 
 msgctxt "EpgShow|"
 msgid "Actor"
-msgstr ""
+msgstr "Acteur"
 
 msgctxt "EpgShow|"
 msgid "Writer"
-msgstr ""
+msgstr "Rédacteur"
 
 msgctxt "EpgShow|"
 msgid "Adapter"
-msgstr ""
+msgstr "Adaptateur"
 
 msgctxt "EpgShow|"
 msgid "Producer"
-msgstr ""
+msgstr "Producteur"
 
 msgctxt "EpgShow|"
 msgid "Composer"
-msgstr ""
+msgstr "Compositeur"
 
-#, fuzzy
 msgctxt "EpgShow|"
 msgid "Editor"
 msgstr "Éditeur"
 
 msgctxt "EpgShow|"
 msgid "Presenter"
-msgstr ""
+msgstr "Présentateur"
 
 msgctxt "EpgShow|"
 msgid "Commentator"
-msgstr ""
+msgstr "Commentateur"
 
 msgctxt "EpgShow|"
 msgid "Guest"
-msgstr ""
+msgstr "Invité"
 
 msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
@@ -213,13 +212,12 @@ msgstr "Ne peut écrire le fichier %1 : %2."
 
 msgctxt "InfoBarWidget|"
 msgid "Now:"
-msgstr ""
+msgstr "Maintenant :"
 
 msgctxt "InfoBarWidget|"
 msgid "Next:"
-msgstr ""
+msgstr "Suivant :"
 
-#, fuzzy
 msgctxt "InfoBarWidget|"
 msgid "Language:"
 msgstr "Langue :"
@@ -449,27 +447,27 @@ msgstr ""
 
 msgctxt "MainWindow|"
 msgid "Controls"
-msgstr ""
+msgstr "Contrôles"
 
 msgctxt "MainWindow|"
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Raccouris"
 
 msgctxt "MainWindow|"
 msgid "Recorder Toolbar"
-msgstr ""
+msgstr "Barre d'outil d'enregistrement"
 
 msgctxt "MainWindow|"
 msgid "Quick record"
-msgstr ""
+msgstr "Enregistrement rapide"
 
 msgctxt "MainWindow|"
 msgid "Quick"
-msgstr ""
+msgstr "Rapide"
 
 msgctxt "MainWindow|"
 msgid "Add timer"
-msgstr ""
+msgstr "Ajouter un programmateur"
 
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
@@ -495,17 +493,14 @@ msgstr "Original"
 #~ msgid "Original"
 #~ msgstr "Original"
 
-#, fuzzy
 msgctxt "MenuCropRatio|"
 msgid "Crop video"
 msgstr "Découpage vidéo"
 
-#, fuzzy
 msgctxt "MenuCropRatio|"
 msgid "Next crop option"
 msgstr "Option de découpage suivante"
 
-#, fuzzy
 msgctxt "MenuCropRatio|"
 msgid "Original"
 msgstr "Original"
@@ -574,42 +569,37 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Piste vidéo suivante"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Play"
 msgstr "Lire"
 
 msgctxt "OsdWidget|"
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Back"
 msgstr "Arrière"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Next"
 msgstr "Suivant"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Record Now"
 msgstr "Enregistrer maintenant"
 
 msgctxt "OsdWidget|"
 msgid "Mute"
-msgstr ""
+msgstr "Muet"
 
-#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Pause"
 msgstr "Pause"
 
 msgctxt "OsdWidget|"
 msgid "Teletext"
-msgstr ""
+msgstr "Sous-titre"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "Clear"
@@ -635,26 +625,25 @@ msgctxt "PlaylistDisplayWidget|"
 msgid "All languages"
 msgstr "Toutes les langues"
 
-#, fuzzy
 msgctxt "PlaylistDisplayWidget|"
 msgid "Type:"
 msgstr "Type :"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "TV + Radio"
-msgstr ""
+msgstr "TV + Radio"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "TV only"
-msgstr ""
+msgstr "TV seule"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "Radio only"
-msgstr ""
+msgstr "Radio seule"
 
 msgctxt "PlaylistDisplayWidget|"
 msgid "Search and filter"
-msgstr ""
+msgstr "Chercher et filtrer"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Playlist name:"
@@ -875,25 +864,22 @@ msgstr ""
 #~ msgid "A channel with this number already exists!"
 #~ msgstr "Une chaîne avec ce numéro existe déjà !"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Tano Editor"
 msgstr "Éditeur de Tano"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Playlist name:"
 msgstr "Nom de la liste :"
 
 msgctxt "PlaylistEditor|"
 msgid "Number of channels:"
-msgstr ""
+msgstr "Nombre de chaînes :"
 
 msgctxt "PlaylistEditor|"
 msgid "Help"
-msgstr ""
+msgstr "Aide"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Toolbar"
 msgstr "Barre d'outils"
@@ -902,32 +888,26 @@ msgstr "Barre d'outils"
 #~ msgid "Editor"
 #~ msgstr "Éditeur"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Number:"
 msgstr "Numéro :"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Name:"
 msgstr "Nom :"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Categories:"
 msgstr "Catégories :"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Language:"
 msgstr "Langue :"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "EPG:"
 msgstr "EPG :"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Url:"
 msgstr "Url :"
@@ -953,7 +933,6 @@ msgstr "Url :"
 #~ msgid "<b><i>Instructions:</i></b>"
 #~ msgstr "<b><i>instructions :</i></b>"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Logo:"
 msgstr "Logo :"
@@ -982,87 +961,71 @@ msgstr "Logo :"
 #~ msgid "Port:"
 #~ msgstr "Port :"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Add channel"
 msgstr "Ajouter une chaîne"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Delete channel"
 msgstr "Supprimer une chaîne"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Save"
 msgstr "Sauvegarder"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Close"
 msgstr "Fermer"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Move up"
 msgstr "Vers le haut"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Move down"
 msgstr "Vers le bas"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Print"
 msgstr "Imprimer"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Export"
 msgstr "Export"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Open"
 msgstr "Ouvrir"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "About"
 msgstr "À propos"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "New playlist"
 msgstr "Nouvelle liste"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Tvheadend"
 msgstr "Tvheadend"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Settings"
 msgstr "Préférences"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "XMLTV IDs"
 msgstr "Identifiants XMLTV"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Update Information"
 msgstr "Mise à jour des informations"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditor|"
 msgid "%1 - Tano Editor"
 msgstr "%1 - Éditeur de Tano"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Tano"
 msgstr "Tano"
@@ -1073,13 +1036,13 @@ msgid ""
 "Cannot read file %1:\n"
 "%2."
 msgstr ""
+"Ne peut pas lire le fichier %1 :\n"
+"%2."
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Playlist Editor"
 msgstr "Éditeur de la liste"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid ""
 "Do you want to create new playlist?\n"
@@ -1094,22 +1057,21 @@ msgid ""
 "Cannot write file %1:\n"
 "%2."
 msgstr ""
+"Ne peut pas écrire le fichier %1 :\n"
+"%2."
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "Export to M3U format with Udpxy URLs"
 msgstr "Export vers le format M3U avec des Urls Udpxy"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid ""
 "You need to have valid Udpxy settings or the exported playlist will contain "
 "classic URLs."
 msgstr ""
-"Vous devez avoir des options Udpxy valides ou alors, la liste exportée "
+"Vous devez avoir des options Udpxy valides autrement, la liste exportée "
 "contiendra des URLs classiques."
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid ""
 "Do you want close the editor?\n"
@@ -1123,50 +1085,64 @@ msgstr ""
 #~ msgid "New channel from scan %1"
 #~ msgstr "Nouvelle chaîne issue du scan %1"
 
-#, fuzzy
 msgctxt "PlaylistEditor|"
 msgid "A channel with this number already exists!"
 msgstr "Une chaîne avec ce numéro existe déjà !"
 
 msgctxt "PlaylistEditor|"
 msgid "Edit channel"
-msgstr ""
+msgstr "Modifier la chaîne"
 
 msgctxt "PlaylistEditor|"
 msgid "Radio:"
-msgstr ""
+msgstr "Radio :"
 
 msgctxt "PlaylistEditor|"
 msgid "Scan for new channels"
-msgstr ""
+msgstr "Chercher de nouvelles chaînes"
 
 msgctxt "PlaylistEditorHelp|"
 msgid "Tano Editor - Help"
-msgstr ""
+msgstr "Éditeur de Tano - Aide"
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h2>Tano Editor - Help</h2>"
-msgstr ""
+msgstr "<h2>Éditeur de Tano - Aide</h2>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
 "<b>You can edit your IP TV playlist, print it or export it to desired "
 "format.</b>"
 msgstr ""
+"<b>Vous pouvez éditer votre liste de télévision, l'imprimer ou l'exporter au "
+"format désiré.</b>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h3>Editing channels</h3>"
-msgstr ""
+msgstr "<h3>Modifier les chaînes</h3>"
+
+#~ msgctxt "PlaylistEditorHelp|"
+#~ msgid ""
+#~ "The number of a channel needs to be applied. All other values are "
+#~ "automatically changed. You can set any channel as radio. Categories can "
+#~ "be sepparated by comma (,)."
+#~ msgstr ""
+#~ "Le numéro de la chaîne doit être appliqué. Toutes les autres valeurs "
+#~ "seront automatiquement modifées. Vous pouvez fixer n'importe quelle "
+#~ "chaîne comme radio. les catégories peuvent être séparées par une virgule "
+#~ "(,)."
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
 "Full URL needs to be provided for the channel logo. Pictures will be scaled "
 "to fit the interface."
 msgstr ""
+"Les adresses URL doivent être complètes pour être associées au logo. Les "
+"images seront mises à l'échelle de l'interface."
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h3>Formats and export</h3>"
-msgstr ""
+msgstr "<h3>Formats et export</h3>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1174,10 +1150,13 @@ msgid ""
 "Sagem JS files. Beside these formats you can also save/export to M3U with "
 "Udpxy URLs and Tvheadend configuration files."
 msgstr ""
+"L'éditeur Tano dispose de son propre format M3U ainsi que les format natifs "
+"M3U, CSV et les fichiers Sagem JS. Vous pouvez aussi sauvegarder et exporter "
+"en M3U avec les URL Udpxy etvers les fichiers de configurations Tvheadend."
 
 msgctxt "PlaylistEditorHelp|"
 msgid "<h3>Scan for channels</h3>"
-msgstr ""
+msgstr "<h3>Recherche de chaînes</h3>"
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1185,6 +1164,10 @@ msgid ""
 "valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 "
 "IPs in this range. A channel is added if it is detected before timeout."
 msgstr ""
+"Vous pouvez rechercher de nouvelles chaînes en utisant le scanner interne. "
+"Veuillez donner une plage d'adresses IP valident (ex. 232.4.1) et le port "
+"(ex. 5001). Tano recherchera dans les 255 adresses de cette plage. Une "
+"chaîne est ajoutée e cas de détection avant le timeout."
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1192,6 +1175,9 @@ msgid ""
 "exporting to Sagem JS and CSV. Only the first category or radio category "
 "will be exported to Sagem JS."
 msgstr ""
+"Vous pouvez donner une catégorie de radio personnalisée (par défaut pour les "
+"radios) pour l'exportation vers les formats Sagem JS et CSV. Seule la "
+"première catégorie ou la catégorie Radio seront exportées au format Sagem JS."
 
 msgctxt "PlaylistEditorHelp|"
 msgid ""
@@ -1200,40 +1186,34 @@ msgid ""
 "separated by comma (,)."
 msgstr ""
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "IP Range:"
 msgstr "Plage des adresses IP :"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Port:"
 msgstr "Port :"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Timeout:"
 msgstr "Temporisation :"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid " ms"
 msgstr "ms"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Scan and update"
-msgstr "Scanner et actualiser"
+msgstr "Rechercher et actualiser"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "PlaylistEditorScan|"
 msgid "New channel from scan %1"
 msgstr "Nouvelle chaîne issue du scan %1"
 
-#, fuzzy
 msgctxt "PlaylistEditorScan|"
 msgid "Playlist Editor"
-msgstr "Éditeur de la liste"
+msgstr "Éditeur de liste"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "Export to Tvheadend IP TV services"
@@ -1590,88 +1570,87 @@ msgstr "Ouvrir XMLTV"
 
 msgctxt "QObject|"
 msgid "Director"
-msgstr ""
+msgstr "Directeur"
 
 msgctxt "QObject|"
 msgid "Actor"
-msgstr ""
+msgstr "Acteur"
 
 msgctxt "QObject|"
 msgid "Writer"
-msgstr ""
+msgstr "Scénariste"
 
 msgctxt "QObject|"
 msgid "Adapter"
-msgstr ""
+msgstr "Adaptateur"
 
 msgctxt "QObject|"
 msgid "Producer"
-msgstr ""
+msgstr "Producteur"
 
 msgctxt "QObject|"
 msgid "Composer"
-msgstr ""
+msgstr "Compositeur"
 
-#, fuzzy
 msgctxt "QObject|"
 msgid "Editor"
 msgstr "Éditeur"
 
 msgctxt "QObject|"
 msgid "Presenter"
-msgstr ""
+msgstr "Présentateur"
 
 msgctxt "QObject|"
 msgid "Commentator"
-msgstr ""
+msgstr "Commentateur"
 
 msgctxt "QObject|"
 msgid "Guest"
-msgstr ""
+msgstr "Invité"
 
 msgctxt "QObject|"
 msgid "Enabled"
-msgstr ""
+msgstr "Validé"
 
 msgctxt "QObject|"
 msgid "Recording"
-msgstr ""
+msgstr "Enregistrement"
 
 msgctxt "QObject|"
 msgid "Finished"
-msgstr ""
+msgstr "Terminé"
 
 msgctxt "QObject|"
 msgid "Expired"
-msgstr ""
+msgstr "Expiré"
 
 msgctxt "QObject|"
 msgid "Weekdays"
-msgstr ""
+msgstr "Jours de la semaine"
 
 msgctxt "QObject|"
 msgid "Instant"
-msgstr ""
+msgstr "Immédiat"
 
 msgctxt "QObject|"
 msgid "repeats only once"
-msgstr ""
+msgstr "Répéter une seule fois"
 
 msgctxt "QObject|"
 msgid "repeats daily"
-msgstr ""
+msgstr "Répéter quotidiennement"
 
 msgctxt "QObject|"
 msgid "repeats weekly"
-msgstr ""
+msgstr "Répéter hebdomadairement"
 
 msgctxt "QObject|"
 msgid "repeats on weekdays"
-msgstr ""
+msgstr "Répéter toutes les semaines"
 
 msgctxt "QObject|"
 msgid "instant recording"
-msgstr ""
+msgstr "Enrgistrement immédiat"
 
 msgctxt "QtKeySequenceEdit|"
 msgid "Clear Shortcut"
@@ -1713,7 +1692,7 @@ msgstr "Enregistrement"
 #~ msgid "End time:"
 #~ msgstr "Temps écoulé :"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "Recorder|"
 msgid "Cannot write to %1."
 msgstr "Ne peut pas écrire dans %1."
@@ -1732,22 +1711,20 @@ msgstr "Ne peut pas écrire dans %1."
 
 msgctxt "Recorder|"
 msgid "Quick record"
-msgstr ""
+msgstr "Enregistrement rapide"
 
 msgctxt "Recorder|"
 msgid "Recording name:"
-msgstr ""
+msgstr "Nom de l'enregistrement :"
 
-#, fuzzy
 msgctxt "Recorder|"
 msgid "Back"
 msgstr "Arrière"
 
 msgctxt "Recorder|"
 msgid "Recordings"
-msgstr ""
+msgstr "Enregistrements"
 
-#, fuzzy
 msgctxt "Recorder|"
 msgid "Timers"
 msgstr "Programmateurs"
@@ -1755,33 +1732,35 @@ msgstr "Programmateurs"
 #, qt-format
 msgctxt "Recorder|"
 msgid "Quick %1"
-msgstr ""
+msgstr "Rapide %1"
 
 msgctxt "Recorder|"
 msgid "Add timer"
-msgstr ""
+msgstr "Ajouter une programmation"
 
 msgctxt "Recorder|"
 msgid "Timer name:"
-msgstr ""
+msgstr "Nom de la programmation :"
 
 msgctxt "Recorder|"
 msgid "Add new timer"
-msgstr ""
+msgstr "AJouter une nouvelle programmation"
 
 msgctxt "Recorder|"
 msgid "Please, select a channel."
-msgstr ""
+msgstr "Veuillez sélectionner une chaîne."
 
 msgctxt "Recorder|"
 msgid "Recording not valid!"
-msgstr ""
+msgstr "L'enregistrement n'est pas valide !"
 
 msgctxt "Recorder|"
 msgid ""
 "File cannot be removed.\n"
 "Have you already moved or deleted it?"
 msgstr ""
+"Le fichier ne peut pas être supprimer.\n"
+"L'avez-vous déjà déplacé ou supprimer ?"
 
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Status"
@@ -1801,85 +1780,81 @@ msgstr ""
 
 msgctxt "RecorderInfoWidget|"
 msgid "End time:"
-msgstr ""
+msgstr "Temps écoulé :"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Currently not recording."
-msgstr ""
+msgstr "N'enregistre pas actuellement."
 
 msgctxt "RecorderInfoWidget|"
 msgid "No timer - stop manually."
-msgstr ""
+msgstr "Pas de programmation - Arrêt manuel."
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Stop recording"
 msgstr "Arréter l'enregistrement"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Recording:"
 msgstr "Enregistrement :"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Elapsed:"
-msgstr ""
+msgstr "écoulé :"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Output:"
-msgstr ""
+msgstr "Sortie :"
 
 msgctxt "RecorderInfoWidget|"
 msgid "<b>Status</b>"
-msgstr ""
+msgstr "<b>État</b>"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Channel:"
 msgstr "Chaîne :"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Play"
 msgstr "Lire"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Back"
 msgstr "Arrière"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Delete"
-msgstr ""
+msgstr "Effacer"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Time:"
-msgstr ""
+msgstr "Heure :"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Duration:"
-msgstr ""
+msgstr "Durée :"
 
 msgctxt "RecorderInfoWidget|"
 msgid "File:"
-msgstr ""
+msgstr "Fichier :"
 
 msgctxt "RecorderInfoWidget|"
 msgid "at"
-msgstr ""
+msgstr "à"
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Recorder"
 msgstr "Enregistreur"
 
+# English word is "irresversible" !
 msgctxt "RecorderInfoWidget|"
 msgid ""
 "Are you sure you want to delete the recording?\n"
 "This operation is ireversible."
 msgstr ""
+"Êtes-vous sur de vouloir supprimer l'enregistrement ? Cette opératino est "
+"irréversible."
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Save"
 msgstr "Sauvegarder"
@@ -1952,234 +1927,195 @@ msgstr "Autre"
 
 msgctxt "SettingsBackend|"
 msgid "Default aspect ratio:"
-msgstr ""
+msgstr "Rapport de proportionnalité par défaut :"
 
 msgctxt "SettingsBackend|"
 msgid "Default crop:"
-msgstr ""
+msgstr "Découpe par défaut :"
 
 msgctxt "SettingsBackend|"
 msgid "Default deinterlacing:"
-msgstr ""
+msgstr "Désentrelacement par défaut :"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Original"
 msgstr "Original"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Discard"
 msgstr "Ignorer"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Blend"
 msgstr "Fondu"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Mean"
 msgstr "Moyenne"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Bob"
 msgstr "Bob"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "Linear"
 msgstr "Linéaire"
 
-#, fuzzy
 msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "X"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr "Préférences"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Général"
 
 msgctxt "SettingsDialog|"
 msgid "Playlist"
-msgstr ""
+msgstr "Liste de lecture"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Interface"
 msgstr "Interface"
 
 msgctxt "SettingsDialog|"
 msgid "Playback"
-msgstr ""
+msgstr "Relecture"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Schedule"
 msgstr "Calendrier"
 
-#, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Recorder"
 msgstr "Enregistreur"
 
 msgctxt "SettingsDialogShortcuts|"
 msgid "Keyboard shortcuts"
-msgstr ""
+msgstr "Raccouris"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Action"
 msgstr "Action"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Key"
 msgstr "Raccourci"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Play / Pause"
 msgstr "Lire / pause"
 
 msgctxt "SettingsDialogShortcuts|"
 msgid "Stop"
-msgstr ""
+msgstr "Arreter"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next channel"
 msgstr "Chaîne suivante"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Previous channel"
 msgstr "Chaîne précédente"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Fullscreen"
 msgstr "Plein écran"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Toggle Info Widget"
 msgstr "Basculer vers l'information du widget"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Toggle Controls Widget"
 msgstr "Basculer vers le contrôle du widget"
 
 msgctxt "SettingsDialogShortcuts|"
 msgid "Mute"
-msgstr ""
+msgstr "Couper le son"
 
 msgctxt "SettingsDialogShortcuts|"
 msgid "Teletext"
-msgstr ""
+msgstr "Sous-titre"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Volume up"
 msgstr "Augmenter le volume"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Volume down"
 msgstr "Diminuer le volume"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Recorder"
 msgstr "Enregistreur"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Open File"
 msgstr "Ouvrir le fichier"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Open URL"
 msgstr "Ouvrir une URL"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Open Channel list"
 msgstr "Ouvrir une liste de chaînes"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Edit Channel list"
 msgstr "Modifier la liste de chaînes"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Settings"
 msgstr "Préférences"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Always on top"
 msgstr "Toujours au premier plan"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Simple Mode"
 msgstr "Mode simplifié"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Hide to tray"
 msgstr "Minimiser dans le tableau de bord"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next audio track"
 msgstr "Piste audio suivante"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next video track"
 msgstr "Piste vidéo suivante"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next subtitle track"
 msgstr "Piste de sous-titres suivante"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next aspect ratio mode"
 msgstr "Mode de proportion suivante"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next crop mode"
-msgstr "Mode de découpage suivant"
+msgstr "Mode de découpe suivant"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Next deinterlace mode"
 msgstr "Mode de désentrelacement suivant"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Set"
 msgstr "Positionner"
 
-#, fuzzy
 msgctxt "SettingsDialogShortcuts|"
 msgid "Defaults"
-msgstr "Defauts"
+msgstr "Par défaut"
 
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Settings"
@@ -2269,28 +2205,24 @@ msgstr "Defauts"
 
 msgctxt "SettingsEditorCommon|"
 msgid "Radio"
-msgstr ""
+msgstr "Radio"
 
 msgctxt "SettingsEditorCommon|"
 msgid "Default radio category:"
-msgstr ""
+msgstr "Catégorie radio par défaut :"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "UDPXY support"
 msgstr "Support UDPXY"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Enable UDPXY support"
 msgstr "Autoriser le support UDPXY"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Router IP or name:"
 msgstr "Nom ou IP du routeur :"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Router port:"
 msgstr "Port du routeur :"
@@ -2301,107 +2233,91 @@ msgstr "Port du routeur :"
 #~ msgstr ""
 #~ "<i>Ceci convertira les URLs dans le fichier de liste de %1 en %2.</i>"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Interface"
 msgstr "Interface"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Toolbar style:"
-msgstr "Style de la barre d'outil :"
+msgstr "Style de la barre d'outils :"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Icon only"
-msgstr "Icone seulement"
+msgstr "Icône seulement"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Text only"
 msgstr "Texte seulement"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Text beside icon"
-msgstr "Texte à coté de l'icone"
+msgstr "Texte à coté de l'icône"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Text under icon"
 msgstr "Texte sous l'icone"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "System default"
 msgstr "Par défaut"
 
-#, fuzzy
 msgctxt "SettingsEditorCommon|"
 msgid "Show splash screen"
 msgstr "Afficher le pré-écran"
 
-#, fuzzy
 msgctxt "SettingsEditorDialog|"
 msgid "Settings"
 msgstr "Préférences"
 
-#, fuzzy
 msgctxt "SettingsEditorDialog|"
 msgid "General"
 msgstr "Général"
 
-#, fuzzy
 msgctxt "SettingsEditorDialog|"
 msgid "Editor"
 msgstr "Éditeur"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Tano Editor"
-msgstr "Éditeur de Tano"
+msgstr "Éditeur Tano"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "<i>Note: These settings are shared with all Tano applications.</i>"
 msgstr ""
 "<i>Remarque : Ces préférences sont partagées avec toutes les applications "
 "Tano.</i>"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Language"
 msgstr "Langue"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "System default language"
 msgstr "Langue du système"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Custom language"
 msgstr "langue personnalisée"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "Defaults"
-msgstr "Defauts"
+msgstr "Par défaut"
 
 msgctxt "SettingsEditorGeneral|"
 msgid "Restore defaults"
-msgstr ""
+msgstr "Restaurer"
 
 msgctxt "SettingsEditorGeneral|"
 msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
 "changes, before they will take effect.</i>"
 msgstr ""
+"<i>Ceci restaurera toutes vos préférences aux valeurs par défaut. Vous devez "
+"appliquer les changements avant qu'ils ne prennent effet.<i>"
 
-#, fuzzy
 msgctxt "SettingsEditorGeneral|"
 msgid "You are using Tano Editor version:"
-msgstr "Vous utilisez la version de l'éditeurt de Tano :"
+msgstr "Vous utilisez la version de l'éditeur de Tano :"
 
 msgctxt "SettingsGeneral|"
 msgid "Tano"
@@ -2429,7 +2345,6 @@ msgctxt "SettingsGeneral|"
 msgid "Custom language"
 msgstr "langue personnalisée"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Session store"
 msgstr "Pour la prochaine session"
@@ -2454,20 +2369,21 @@ msgstr "Vous utilisez la version de Tano :"
 #~ msgid "Default channel list"
 #~ msgstr "Liste de chaînes par défaut"
 
-#, fuzzy
 msgctxt "SettingsGeneral|"
 msgid "Defaults"
-msgstr "Defauts"
+msgstr "Par défaut"
 
 msgctxt "SettingsGeneral|"
 msgid "Restore defaults"
-msgstr ""
+msgstr "Restaurer"
 
 msgctxt "SettingsGeneral|"
 msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
 "changes, before they will take effect.</i>"
 msgstr ""
+"<i>Ceci restaurera toutes vos préférences aux valeurs par défaut. Vous devez "
+"appliquer les changements avant qu'ils ne prennent effet.<i>"
 
 #~ msgctxt "SettingsGeneral|"
 #~ msgid "Tano Editor"
@@ -2497,7 +2413,6 @@ msgstr "Lire la dernière chaîne"
 #~ msgid "Use global VLC settings"
 #~ msgstr "Utiliser les préférences globales VLC"
 
-#, fuzzy
 msgctxt "SettingsPage|"
 msgid "<b>Default channel list</b>"
 msgstr "<b>Liste de chaînes par défaut</b>"
@@ -2508,44 +2423,40 @@ msgstr "<b>Liste de chaînes par défaut</b>"
 
 msgctxt "SettingsPlaylist|"
 msgid "Default playlist"
-msgstr ""
+msgstr "Liste de lecture par défaut"
 
 msgctxt "SettingsPlaylist|"
 msgid "Network refresh"
-msgstr ""
+msgstr "Rafraichissement réseau"
 
 msgctxt "SettingsPlaylist|"
 msgid "Refresh playlist on startup"
-msgstr ""
+msgstr "Rafraichir la liste de lecture au démarage"
 
 msgctxt "SettingsPlaylist|"
 msgid "Playlist URL:"
-msgstr ""
+msgstr "Liste de lecture en URL :"
 
 msgctxt "SettingsPlaylist|"
 msgid "Radio"
-msgstr ""
+msgstr "Radio"
 
 msgctxt "SettingsPlaylist|"
 msgid "Default radio category:"
-msgstr ""
+msgstr "Catégorie radio par défaut :"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "UDPXY support"
 msgstr "Support UDPXY"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "Enable UDPXY support"
 msgstr "Autoriser le support UDPXY"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "Router IP or name:"
 msgstr "Nom ou IP du routeur :"
 
-#, fuzzy
 msgctxt "SettingsPlaylist|"
 msgid "Router port:"
 msgstr "Port du routeur :"
@@ -2559,6 +2470,7 @@ msgstr "Port du routeur :"
 msgctxt "SettingsPlaylist|"
 msgid "<i>Updating will not change your playlist order.</i>"
 msgstr ""
+"<i>Mettre à jour ne modifiera pas l'ordre de votre liste de lecture.</i>"
 
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
@@ -2586,43 +2498,43 @@ msgstr "Préférences XMLTV"
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV file location:"
-msgstr ""
+msgstr "Emplacement du fichier XMLTV :"
 
 msgctxt "SettingsSchedule|"
 msgid "Refresh XMLTV"
-msgstr ""
+msgstr "Rafraichir l'XMLTV"
 
 msgctxt "SettingsSchedule|"
 msgid "Refresh XMLTV file on startup"
-msgstr ""
+msgstr "Rafraichir le fichier XMLTV au démarage"
 
 msgctxt "SettingsSchedule|"
 msgid "Download file"
-msgstr ""
+msgstr "Télécharger"
 
 msgctxt "SettingsSchedule|"
 msgid "Run grabber"
-msgstr ""
+msgstr "Lancer la saisie d'images"
 
 msgctxt "SettingsSchedule|"
 msgid "Network"
-msgstr ""
+msgstr "Réseau"
 
 msgctxt "SettingsSchedule|"
 msgid "XMLTV source url:"
-msgstr ""
+msgstr "Source URL de l'XMLTV :"
 
 msgctxt "SettingsSchedule|"
 msgid "Grabber"
-msgstr ""
+msgstr "Saisie d'images"
 
 msgctxt "SettingsSchedule|"
 msgid "<i>All XMLTV settings require restart.</i>"
-msgstr ""
+msgstr "<i>Tous les changements XMLTV nécessitent un redémarrage.</i>"
 
 msgctxt "SettingsSchedule|"
 msgid "<i>Grabber running is not available yet.</i>"
-msgstr ""
+msgstr "<i>La saisie d'images n'est pas encore disponible.</i>"
 
 #~ msgctxt "SettingsShortcuts|"
 #~ msgid "Action"
@@ -2826,7 +2738,7 @@ msgstr "Panneau d'information"
 
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
-msgstr ""
+msgstr "Montrer la barre des tâches"
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"
@@ -2850,7 +2762,7 @@ msgstr ""
 
 msgctxt "Timer|"
 msgid "at"
-msgstr ""
+msgstr "à"
 
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
@@ -3116,17 +3028,14 @@ msgstr "Rechercher :"
 #~ msgstr ""
 #~ "Un programmateur avec ce nom existe déjà. Veuillez choisir un autre nom."
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Timers"
 msgstr "Programmateurs"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Name:"
 msgstr "Nom :"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Channel:"
 msgstr "Chaîne :"
@@ -3135,52 +3044,45 @@ msgstr "Chaîne :"
 #~ msgid "Playlist:"
 #~ msgstr "Liste de lecture :"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Type:"
 msgstr "Type :"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Once"
 msgstr "Une fois"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Daily"
 msgstr "Tous les jours"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Weekly"
 msgstr "Toutes les semaines"
 
 msgctxt "TimersEditorWidget|"
 msgid "Weekdays"
-msgstr ""
+msgstr "Jours de la semaine"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Url:"
 msgstr "Url :"
 
 msgctxt "TimersEditorWidget|"
 msgid "dd. MM. yyyy"
-msgstr ""
+msgstr "jj. MM. yyyy"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Date:"
 msgstr "Date :"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Start time:"
 msgstr "Début :"
 
 msgctxt "TimersEditorWidget|"
 msgid "End time:"
-msgstr ""
+msgstr "Fin :"
 
 #~ msgctxt "TimersEditorWidget|"
 #~ msgid "Disabled:"
@@ -3213,9 +3115,8 @@ msgstr ""
 
 msgctxt "TimersEditorWidget|"
 msgid "Disable:"
-msgstr ""
+msgstr "Indisponible :"
 
-#, fuzzy
 msgctxt "TimersEditorWidget|"
 msgid "Recorder"
 msgstr "Enregistreur"
@@ -3225,12 +3126,16 @@ msgid ""
 "The recording start date is before today.\n"
 "Your changes will not be saved."
 msgstr ""
+"La date de l'enregistrement est antérieure à aujourd'hui. Vos modifications "
+"ne seront pas sauvegardées."
 
 msgctxt "TimersEditorWidget|"
 msgid ""
 "The recording is overlaping with others.\n"
 "Your changes will not be saved."
 msgstr ""
+"L'enregistrement en superpose d'autres. Vos modifications ne seront pas "
+"sauvegardées."
 
 msgctxt "TrayIcon|"
 msgid "Tano"
@@ -3280,6 +3185,8 @@ msgid ""
 "Tano is recording %1 to %2 \n"
 "Stop manually!"
 msgstr ""
+"Enregistrement de %1 vers %2 \n"
+"Arrètez manuellement !"
 
 #, qt-format
 msgctxt "TrayIcon|"
@@ -3287,6 +3194,8 @@ msgid ""
 "Tano is recording %1 to %2 \n"
 "End time: %3"
 msgstr ""
+"Enregistrement de %1 vers %2 \n"
+"Fin de l'enregistrement : %3"
 
 msgctxt "UpdateDialog|"
 msgid "Update Information"

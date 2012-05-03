@@ -302,28 +302,6 @@ QT4_WRAP_UI(Tano_UIC_Srcs ${Tano_UIs})
 QT4_WRAP_CPP(Tano_MOC_Srcs ${Tano_MOCs})
 
 
-#########################
-# Compiler Define flags #
-#########################
-# Define default data dir, if under POSIX systems.
-IF(NOT MINGW)
-    IF (NOT DEFAULT_DATA_DIR)
-        ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-    ELSE (NOT DEFAULT_DATA_DIR)
-        ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${DEFAULT_DATA_DIR}")
-    ENDIF (NOT DEFAULT_DATA_DIR)
-ENDIF(NOT MINGW)
-
-# Define default plugin dir, if under POSIX systems.
-IF(NOT MINGW)
-    IF (NOT DEFAULT_PLUGIN_DIR)
-        ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR}")
-    ELSE (NOT DEFAULT_PLUGIN_DIR)
-        ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${DEFAULT_PLUGIN_DIR}")
-    ENDIF (NOT DEFAULT_PLUGIN_DIR)
-ENDIF(NOT MINGW)
-
-
 ####################################
 # Include paths and set up targets #
 ####################################
