@@ -1,4 +1,4 @@
-1.0-beta1 (git)
+1.0-beta1 (2012-05-03)
   * Single instance support for Tano
   * Recorder (Daemon) merged with main application
   * XMLTV support (Issue #20)
