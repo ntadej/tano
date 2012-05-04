@@ -16,9 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QBitmap>
 #include <QtGui/QMessageBox>
-#include <QtGui/QSplashScreen>
 
 #include <vlc-qt/Common.h>
 #include <vlc-qt/Config.h>
@@ -84,14 +82,6 @@ MainWindow::MainWindow(QWidget *parent)
       _osdFloat(0),
       _playlistEditor(0)
 {
-    QPixmap pixmap(":/images/splash.png");
-    Settings *settings = new Settings(this);
-    QSplashScreen *splash = new QSplashScreen(pixmap);
-    splash->setMask(pixmap.mask());
-    if (settings->splash())
-        splash->show();
-    delete settings;
-
     ui->setupUi(this);
 
 #if UPDATE
@@ -109,9 +99,6 @@ MainWindow::MainWindow(QWidget *parent)
     createShortcuts();
     createConnections();
     createSession();
-
-    splash->close();
-    delete splash;
 }
 
 MainWindow::~MainWindow() { }

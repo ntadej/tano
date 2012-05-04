@@ -22,6 +22,7 @@
 #include <QtGui/QSplashScreen>
 
 #include "Config.h"
+#include "core/Settings.h"
 #include "ui/playlist/PlaylistEditor.h"
 
 #ifdef Q_WS_X11
@@ -42,10 +43,15 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QCoreApplication::setApplicationName("Tano Editor");
 
+	Settings *settings = new Settings();
+	bool splashShow = settings->splash();
+	delete settings;
+
     QPixmap pixmap(":/images/splash-editor.png");
     QSplashScreen *splash = new QSplashScreen(pixmap);
     splash->setMask(pixmap.mask());
-    splash->show();
+    if  (splashShow)
+        splash->show();
 
     PlaylistEditor main;
 #if WITH_EDITOR_VLCQT

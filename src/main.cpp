@@ -18,6 +18,9 @@
 
 #include <QtSingleApplication>
 
+#include <QtGui/QBitmap>
+#include <QtGui/QSplashScreen>
+
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "ui/MainWindow.h"
@@ -40,6 +43,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("Tano");
 
 	Settings *settings = new Settings();
+	bool splashShow = settings->splash();
 	if(!settings->configured() || settings->configurationVersion() != Tano::version()) {
 		FirstRunWizard *wizard = new FirstRunWizard();
 		wizard->exec();
@@ -47,10 +51,19 @@ int main(int argc, char *argv[])
 	}
 	delete settings;
 
+    QPixmap pixmap(":/images/splash.png");
+    QSplashScreen *splash = new QSplashScreen(pixmap);
+    splash->setMask(pixmap.mask());
+    if  (splashShow)
+        splash->show();
+
 	MainWindow mainWindow;
 	instance.setActivationWindow(&mainWindow);
 
 	mainWindow.show();
+
+    splash->hide();
+    delete splash;
 
 	return instance.exec();
 }
