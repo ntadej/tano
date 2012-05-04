@@ -198,7 +198,7 @@ void MainWindow::createBackend()
     _mediaInstance = new VlcInstance(Tano::vlcQtArgs(), this);
     _mediaItem = 0;
     _mediaPlayer = new VlcMediaPlayer(_mediaInstance);
-    _mediaPlayer->setVideoWidgetId(ui->videoWidget->widgetId());
+    _mediaPlayer->setVideoWidget(ui->videoWidget);
 
     _audioController = new VlcAudioControl(_mediaPlayer, _defaultAudioLanguage, this);
     _videoController = new VlcVideoControl(_mediaPlayer, _defaultSubtitleLanguage, this);
