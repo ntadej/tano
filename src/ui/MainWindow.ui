@@ -18,16 +18,19 @@
     <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <property name="margin">
      <number>0</number>
     </property>
-    <item row="0" column="0">
+    <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
        <number>0</number>
       </property>
       <widget class="QWidget" name="pageMain">
+       <layout class="QVBoxLayout" name="verticalLayout_6"/>
+      </widget>
+      <widget class="QWidget" name="pagePlayback">
        <layout class="QVBoxLayout" name="verticalLayout_12">
         <property name="margin">
          <number>0</number>
@@ -57,7 +60,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuRecorder">
@@ -222,8 +225,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>240</width>
-              <height>260</height>
+              <width>250</width>
+              <height>240</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -247,8 +250,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
-              <height>30</height>
+              <width>96</width>
+              <height>26</height>
              </rect>
             </property>
             <attribute name="icon">

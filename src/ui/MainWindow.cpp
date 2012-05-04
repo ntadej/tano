@@ -384,6 +384,7 @@ void MainWindow::createConnections()
     connect(_mediaPlayer, SIGNAL(currentState(Vlc::State)), this, SLOT(setPlayingState(Vlc::State)));
     connect(_mediaPlayer, SIGNAL(hasAudio(bool)), ui->menuAudio, SLOT(setEnabled(bool)));
     connect(_mediaPlayer, SIGNAL(hasVideo(bool)), ui->menuVideo, SLOT(setEnabled(bool)));
+    connect(_mediaPlayer, SIGNAL(hasVideo(bool)), this, SLOT(showVideo(bool)));
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
     connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
@@ -830,6 +831,18 @@ void MainWindow::showOsd(const QPoint &pos)
     }
 }
 
+void MainWindow::showVideo(const bool &enabled)
+{
+    if (ui->actionRecorder->isChecked())
+        return;
+
+    if (enabled) {
+        ui->stackedWidget->setCurrentIndex(1);
+    } else {
+        ui->stackedWidget->setCurrentIndex(0);
+    }
+}
+
 void MainWindow::teletext(const bool &enabled)
 {
     if (enabled) {
@@ -883,7 +896,7 @@ void MainWindow::recorder(const bool &enabled)
 {
     if (enabled) {
         ui->actionRecorder->setChecked(true);
-        ui->stackedWidget->setCurrentIndex(1);
+        ui->stackedWidget->setCurrentIndex(2);
         ui->toolBarRecorder->setVisible(true);
         ui->infoContent->setCurrentIndex(1);
         ui->osdWidget->setVisible(false);

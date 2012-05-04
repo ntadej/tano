@@ -107,6 +107,7 @@ private slots:
     void lite();
     void tray();
     void showOsd(const QPoint &pos);
+    void showVideo(const bool &enabled);
     void teletext(const bool &enabled);
     void teletext(const int &page);
 
