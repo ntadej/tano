@@ -26,7 +26,7 @@ Go to Tano root directory and run:
 (this will create a build directory and compile Tano)
 	$ mkdir build
 	$ cd build
-	$ cmake . -DCMAKE_INSTALL_PREFIX=prefix
+	$ cmake .. -DCMAKE_INSTALL_PREFIX=prefix
 	$ make
 
 

@@ -312,6 +312,9 @@ INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURC
 # directory to the compiler include path
 INCLUDE(${QT_USE_FILE})
 INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 IF(MINGW)
     # CMake currently doesn't support windres yet. Add command manually
@@ -335,8 +338,11 @@ ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs
 ADD_DEPENDENCIES(tano qtsingleapplication)
 
 # Here the needed Qt Libraries are added to the link command.
-TARGET_LINK_LIBRARIES(tano ${QT_SINGLE_APPLICATION} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
-
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    TARGET_LINK_LIBRARIES(tano ${QT_SINGLE_APPLICATION} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES})
+ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    TARGET_LINK_LIBRARIES(tano ${QT_SINGLE_APPLICATION} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 ################
 # Installation #

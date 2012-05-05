@@ -36,11 +36,11 @@ int main(int argc, char *argv[])
 	XInitThreads();
 #endif
 
+    QCoreApplication::setApplicationName("Tano");
+
     QtSingleApplication instance(argc, argv);
     if(instance.sendMessage(""))
         return 0;
-
-    QCoreApplication::setApplicationName("Tano");
 
 	Settings *settings = new Settings();
 	bool splashShow = settings->splash();
