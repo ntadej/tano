@@ -337,6 +337,12 @@ ADD_DEPENDENCIES(tano qtsingleapplication)
 # Here the needed Qt Libraries are added to the link command.
 TARGET_LINK_LIBRARIES(tano ${QT_SINGLE_APPLICATION} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
 
+IF(Q_WS_X11)
+    FIND_PACKAGE(X11 REQUIRED)
+    INCLUDE_DIRECTORIES(INCLUDE_DIRECTORIES ${X11_INCLUDE_DIR})
+    TARGET_LINK_LIBRARIES(tano-editor ${TARGET_LINK_LIBRARIES} ${X11_LIBRARIES})
+ENDIF(Q_WS_X11)
+
 
 ################
 # Installation #
