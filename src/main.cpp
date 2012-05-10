@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,30 +19,42 @@
 #include <QtSingleApplication>
 
 #include <QtGui/QBitmap>
-#include <QtGui/QSplashScreen>
+
+#if defined(Qt5)
+    #include <QtWidgets/QSplashScreen>
+#elif defined(Qt4)
+    #include <QtGui/QSplashScreen>
+#endif
 
 #include "core/Common.h"
 #include "core/Settings.h"
 #include "ui/MainWindow.h"
 #include "ui/wizard/FirstRunWizard.h"
 
+#if defined(Qt4)
 #ifdef Q_WS_X11
-	#include <X11/Xlib.h>
+    #include <X11/Xlib.h>
+#endif
 #endif
 
 int main(int argc, char *argv[])
 {
+#if defined(Qt4)
 #ifdef Q_WS_X11
-	XInitThreads();
+    XInitThreads();
 #endif
-
+#else
+    QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
+#endif
     QCoreApplication::setApplicationName("Tano");
+    QCoreApplication::setApplicationVersion(Tano::version());
 
     QtSingleApplication instance(argc, argv);
     if(instance.sendMessage(""))
         return 0;
 
 	Settings *settings = new Settings();
+	settings->readSettings();
 	bool splashShow = settings->splash();
 	if(!settings->configured() || settings->configurationVersion() != Tano::version()) {
 		FirstRunWizard *wizard = new FirstRunWizard();

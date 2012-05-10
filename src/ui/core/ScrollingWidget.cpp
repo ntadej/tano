@@ -16,8 +16,15 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QScrollBar>
+#if defined(Qt5)
+    #include <QtWidgets/QHBoxLayout>
+    #include <QtWidgets/QLabel>
+    #include <QtWidgets/QScrollBar>
+#elif defined(Qt4)
+    #include <QtGui/QHBoxLayout>
+    #include <QtGui/QLabel>
+    #include <QtGui/QScrollBar>
+#endif
 
 #include "ScrollingWidget.h"
 

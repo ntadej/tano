@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,11 +19,16 @@
 #ifndef TANO_TRAYICON_H_
 #define TANO_TRAYICON_H_
 
-#include <QtGui/QAction>
-#include <QtGui/QMenu>
-#include <QtGui/QSystemTrayIcon>
+#if defined(Qt5)
+    #include <QtWidgets/QSystemTrayIcon>
+#elif defined(Qt4)
+    #include <QtGui/QSystemTrayIcon>
+#endif
 
 #include "core/Enums.h"
+
+class QAction;
+class QMenu;
 
 class TrayIcon : public QSystemTrayIcon
 {

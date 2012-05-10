@@ -17,7 +17,8 @@
 *****************************************************************************/
 
 #include <QtCore/QDir>
-#include <QtGui/QFileDialog>
+
+#include "ui/core/FileDialogs.h"
 
 #include "PlaylistExportTvheadend.h"
 #include "ui_PlaylistExportTvheadend.h"
@@ -74,8 +75,7 @@ void PlaylistExportTvheadend::browse()
         dir = QDir::homePath();
     else
         dir = ui->editLocation->text();
-    QString file = QFileDialog::getExistingDirectory(this, tr("Open directory"),
-                                                    dir, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    QString file = FileDialogs::openDirectory(dir);
     ui->editLocation->setText(file);
 }
 

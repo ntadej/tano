@@ -16,6 +16,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QMouseEvent>
+
+#if defined(Qt5)
+    #include <QtWidgets/QAction>
+    #include <QtWidgets/QMenu>
+#elif defined(Qt4)
+    #include <QtGui/QAction>
+    #include <QtGui/QMenu>
+#endif
+
 #include "container/xmltv/XmltvProgramme.h"
 #include "EpgList.h"
 

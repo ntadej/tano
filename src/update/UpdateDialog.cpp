@@ -111,13 +111,13 @@ QString UpdateDialog::generateUrl(const QString &version)
     url.append(version);
     url.append("/");
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN32)
     url.append("windows");
-#elif defined(Q_WS_MAC)
+#elif defined(Q_OS_MAC)
     url.append("mac");
-#else // Q_WS_X11
+#else
     url.append("linux");
-#endif // Q_WS_*
+#endif
 
     url.append("/");
 

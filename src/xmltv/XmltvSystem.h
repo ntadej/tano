@@ -19,7 +19,13 @@
 #ifndef TANO_XMLTVSYSTEM_H_
 #define TANO_XMLTVSYSTEM_H_
 
-#include <QtCore/QFutureWatcher>
+#include <QtCore/QString>
+
+#if defined(Qt5)
+    #include <QtConcurrent/QFutureWatcher>
+#elif defined(Qt4)
+    #include <QtCore/QFutureWatcher>
+#endif
 
 struct XmltvGrabber
 {

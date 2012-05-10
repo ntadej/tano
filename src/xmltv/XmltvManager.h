@@ -19,9 +19,14 @@
 #ifndef TANO_XMLTVMANAGER_H_
 #define TANO_XMLTVMANAGER_H_
 
-#include <QtCore/QFutureWatcher>
 #include <QtCore/QObject>
 #include <QtCore/QTimer>
+
+#if defined(Qt5)
+    #include <QtConcurrent/QFutureWatcher>
+#elif defined(Qt4)
+    #include <QtCore/QFutureWatcher>
+#endif
 
 #include "core/Enums.h"
 #include "xmltv/XmltvHandler.h"

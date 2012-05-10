@@ -33,7 +33,7 @@ FirstRunWizard::FirstRunWizard(QWidget *parent)
 
     setStartId(Intro);
 
-#ifndef Q_WS_MAC
+#ifndef Q_OS_MAC
     setWizardStyle(ModernStyle);
 #endif
 

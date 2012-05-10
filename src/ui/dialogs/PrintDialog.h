@@ -19,14 +19,19 @@
 #ifndef TANO_PRINTDIALOG_H_
 #define TANO_PRINTDIALOG_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
+#if defined(Qt5)
+    #include <QtWidgets/QDialog>
+#elif defined(Qt4)
+    #include <QtGui/QDialog>
+#endif
 
 #include "core/Print.h"
 
 namespace Ui {
     class PrintDialog;
 }
+
+class QAbstractButton;
 
 class PrintDialog : public QDialog
 {

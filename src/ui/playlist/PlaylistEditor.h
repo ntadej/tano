@@ -19,7 +19,11 @@
 #ifndef TANO_PLAYLISTEDITOR_H_
 #define TANO_PLAYLISTEDITOR_H_
 
-#include <QtGui/QMainWindow>
+#if defined(Qt5)
+    #include <QtWidgets/QMainWindow>
+#elif defined(Qt4)
+    #include <QtGui/QMainWindow>
+#endif
 
 #include "Config.h"
 

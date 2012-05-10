@@ -18,7 +18,12 @@
 
 #include <QtCore/qmath.h>
 #include <QtCore/QTime>
-#include <QtGui/QMessageBox>
+
+#if defined(Qt5)
+    #include <QtWidgets/QMessageBox>
+#elif defined(Qt4)
+    #include <QtGui/QMessageBox>
+#endif
 
 #include "container/core/Timer.h"
 

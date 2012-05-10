@@ -50,18 +50,59 @@ IF(MINGW)
     SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
 ENDIF(MINGW)
 
-# Search for Qt4 and other libraries
-SET(QT_MIN_VERSION "4.6.0")
+# Qt5 support
+OPTION(WITH_QT5 "Build with Qt5" OFF)
+MESSAGE("\nTano: Build with Qt5: ${WITH_QT5}\n")
 
-FIND_PACKAGE(Qt4 REQUIRED)
+IF(WITH_QT5)
+    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+
+    # Qt5 dirs
+    INCLUDE(Qt5)
+    QT5_FIND_LIBRARY_DIR(QT_LIBRARY_DIR)
+
+    SET(Qt5Concurrent_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Concurrent")
+    SET(Qt5Core_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Core")
+    SET(Qt5Gui_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Gui")
+    SET(Qt5Network_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Network")
+    SET(Qt5PrintSupport_DIR "${QT_LIBRARY_DIR}/cmake/Qt5PrintSupport")
+    SET(Qt5Widgets_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Widgets")
+    SET(Qt5Xml_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Xml")
+ENDIF(WITH_QT5)
+
+# Search for Qt and other libraries
+IF(WITH_QT5)
+    SET(QT_MIN_VERSION "5.0.0")
+    ADD_DEFINITIONS(-DQt5)
+ELSE(WITH_QT5)
+    SET(QT_MIN_VERSION "4.6.0")
+    ADD_DEFINITIONS(-DQt4)
+ENDIF(WITH_QT5)
+
+# Qt
+IF(WITH_QT5)
+    FIND_PACKAGE(Qt5Concurrent REQUIRED)
+    FIND_PACKAGE(Qt5Core REQUIRED)
+    FIND_PACKAGE(Qt5Gui REQUIRED)
+    FIND_PACKAGE(Qt5Network REQUIRED)
+    FIND_PACKAGE(Qt5PrintSupport REQUIRED)
+    FIND_PACKAGE(Qt5Widgets REQUIRED)
+    FIND_PACKAGE(Qt5Xml REQUIRED)
+ELSE(WITH_QT5)
+    FIND_PACKAGE(Qt4 REQUIRED)
+ENDIF(WITH_QT5)
+
 FIND_PACKAGE(LIBVLCQT REQUIRED)
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     FIND_PACKAGE(X11 REQUIRED)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
-# Set Qt4 bin dir to find QtCore4.dll and other libs to install
-STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
-STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back slashes to slashes
+# Set Qt bin dir to find QtCoreX.dll and other libs to install
+IF(MINGW)
+    STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
+    STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back slashes to slashes
+ENDIF(MINGW)
 
 # Set default install path:
 # In *nix environments this is /usr/local 
@@ -94,7 +135,7 @@ ENDIF(MINGW)
 # Tano version number.
 FILE(READ VERSION TANO_VERSION)
 STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
-MESSAGE("You are compiling Tano ${TANO_VERSION}")
+MESSAGE("\nTano: You are compiling Tano ${TANO_VERSION}\n")
 
 # System Information
 SITE_NAME(HOSTNAME)
@@ -109,7 +150,7 @@ IF(GIT)
         OUTPUT_VARIABLE GIT_OUT OUTPUT_STRIP_TRAILING_WHITESPACE
     )
     SET(PROJECT_VERSION_PATCH "${GIT_OUT}")
-    MESSAGE(STATUS "Git Version Patch: ${GIT_OUT}")
+    MESSAGE(STATUS "\nTano: Git Version Patch: ${GIT_OUT}\n")
 ELSE(GIT)
     IF(GITBUILD)
         SET(PROJECT_VERSION_PATCH "${GITBUILD}")
@@ -118,15 +159,16 @@ ELSE(GIT)
     ENDIF(GITBUILD)
 ENDIF(GIT)
 
+
 #################
 # Configuration #
 #################
 OPTION(EDITOR_WITH_VLCQT "Compile Tano Editor with VLC-Qt" OFF)
-MESSAGE("Compile Tano Editor with VLC-Qt: ${EDITOR_WITH_VLCQT}")
+MESSAGE("\nTano: Compile Tano Editor with VLC-Qt: ${EDITOR_WITH_VLCQT}\n")
 OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile" OFF)
-MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
+MESSAGE("\nTano: Refresh translations on compile: ${REFRESH_TRANSLATIONS}\n")
 OPTION(DISABLE_UPDATE_CHECK "Disable update checking" OFF)
-MESSAGE("Disable update checking: ${DISABLE_UPDATE_CHECK}")
+MESSAGE("\nTano: Disable update checking: ${DISABLE_UPDATE_CHECK}\n")
 
 IF(EDITOR_WITH_VLCQT)
     SET(EDITOR_VLCQT 1)
@@ -141,6 +183,7 @@ ELSE(DISABLE_UPDATE_CHECK)
 ENDIF(DISABLE_UPDATE_CHECK)
 
 SET(QT_SINGLE_APPLICATION "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/libqtsingleapplication.a")
+
 
 ###################
 # Compile and set #
@@ -158,6 +201,7 @@ SET(Tano_Files
     data/logo/64x64/logo.png
     data/logo/64x64/logo-editor.png
 )
+
 
 ################
 # Installation #

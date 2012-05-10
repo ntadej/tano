@@ -16,10 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QDesktopWidget>
+#if defined(Qt5)
+    #include <QtWidgets/QDesktopWidget>
+#elif defined(Qt4)
+    #include <QtGui/QDesktopWidget>
+#endif
 
 #ifdef Q_WS_X11
- #include <QX11Info>
+    #include <QX11Info>
 #endif
 
 #include "OsdWidget.h"

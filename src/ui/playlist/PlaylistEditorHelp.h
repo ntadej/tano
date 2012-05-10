@@ -19,7 +19,11 @@
 #ifndef TANO_PLAYLISTEDITORHELP_H_
 #define TANO_PLAYLISTEDITORHELP_H_
 
-#include <QtGui/QDialog>
+#if defined(Qt5)
+    #include <QtWidgets/QDialog>
+#elif defined(Qt4)
+    #include <QtGui/QDialog>
+#endif
 
 namespace Ui
 {

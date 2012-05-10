@@ -20,7 +20,12 @@
 #define TANO_TIMERSDISPLAYWIDGET_H_
 
 #include <QtCore/QModelIndex>
-#include <QtGui/QWidget>
+
+#if defined(Qt5)
+    #include <QtWidgets/QWidget>
+#elif defined(Qt4)
+    #include <QtGui/QWidget>
+#endif
 
 class Timer;
 class TimersFilterModel;

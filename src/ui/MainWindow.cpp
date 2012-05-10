@@ -16,7 +16,13 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QMessageBox>
+#if defined(Qt5)
+    #include <QtWidgets/QLCDNumber>
+    #include <QtWidgets/QMessageBox>
+#elif defined(Qt4)
+    #include <QtGui/QLCDNumber>
+    #include <QtGui/QMessageBox>
+#endif
 
 #include <vlc-qt/Common.h>
 #include <vlc-qt/Config.h>
@@ -587,7 +593,7 @@ void MainWindow::playLocal(const QString &path)
     _mediaItem = new VlcMedia(path, true, _mediaInstance);
 
     QString t = path;
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN32)
     t.replace("/", "\\");
 #endif
     tooltip(t);

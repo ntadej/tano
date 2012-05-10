@@ -19,15 +19,20 @@
 #ifndef TANO_OSDWIDGET_H_
 #define TANO_OSDWIDGET_H_
 
-#include <QtGui/QFrame>
-#include <QtGui/QLabel>
-#include <QtGui/QLCDNumber>
+#if defined(Qt5)
+    #include <QtWidgets/QFrame>
+#elif defined(Qt4)
+    #include <QtGui/QFrame>
+#endif
 
 #include <vlc-qt/Enums.h>
 
 namespace Ui {
     class OsdWidget;
 }
+
+class QLabel;
+class QLCDNumber;
 
 class VlcMediaPlayer;
 class VlcVolumeSlider;

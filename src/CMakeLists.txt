@@ -62,25 +62,37 @@ SET(Tano_UIs
 )
 
 # Define the MOC source files used by Tano
-SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
+SET(Tano_Container_MOCs
     container/core/Channel.h
     container/core/Timer.h
     container/xmltv/XmltvChannel.h
     container/xmltv/XmltvCrewMember.h
     container/xmltv/XmltvList.h
     container/xmltv/XmltvProgramme.h
+)
+
+SET(Tano_Core_MOCs
     core/ChannelSelect.h
     core/GetFile.h
     core/ListItem.h
     core/ListModel.h
     core/Print.h
+)
+
+SET(Tano_Playlist_MOCs
     playlist/PlaylistFilterModel.h
     playlist/PlaylistModel.h
     playlist/PlaylistUpdate.h
+)
+
+SET(Tano_Recorder_MOCs
     recorder/RecorderCore.h
     recorder/RecorderTimeManager.h
     recorder/TimersFilterModel.h
     recorder/TimersModel.h
+)
+
+SET(Tano_UI_MOCs
     ui/MainWindow.h
     ui/core/BrowseWidget.h
     ui/core/CurrentTimeWidget.h
@@ -126,6 +138,9 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     ui/wizard/FirstRunWizard.h
     ui/wizard/IntroPage.h
     ui/wizard/SettingsPage.h
+)
+
+SET(Tano_Xmltv_MOCs
     xmltv/XmltvChannelsFilterModel.h
     xmltv/XmltvChannelsModel.h
     xmltv/XmltvCrewFilterModel.h
@@ -136,6 +151,16 @@ SET(Tano_MOCs    # List of classes which Qt needs to produce MOCs for them (in o
     xmltv/XmltvSystem.h
 )
 
+SET(Tano_MOCs
+    ${Tano_Container_MOCs}
+    ${Tano_Core_MOCs}
+    ${Tano_Playlist_MOCs}
+    ${Tano_Recorder_MOCs}
+    ${Tano_UI_MOCs}
+    ${Tano_Xmltv_MOCs}
+)
+
+# Define the QRC source files used by Tano
 SET(Tano_Resrcs
     ../info.qrc
     ../data/icons.qrc
@@ -285,32 +310,55 @@ IF(UPDATE)
     )
 ENDIF(UPDATE)
 
-################
-# Qt4 settings #
-################
-# This line adds the QtXML and QtNETWORK libraries to the Qt libraries
-SET(QT_USE_QTXML True)
-SET(QT_USE_QTNETWORK True)
 
-# This scripts runs the resource compiler rcc.
-QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
-
-# This scripts runs the user interface compiler uic.
-QT4_WRAP_UI(Tano_UIC_Srcs ${Tano_UIs})
-
-# This script runs the meta object compiler moc.
-QT4_WRAP_CPP(Tano_MOC_Srcs ${Tano_MOCs})
-
-
-####################################
-# Include paths and set up targets #
-####################################
-# This needs to be added in order for #include to work inside .cpp files
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/src" "${CMAKE_SOURCE_DIR}/src" "${CMAKE_SOURCE_DIR}/lib/qtsingleapplication/src")
+###############
+# Qt settings #
+###############
+# This scripts run the resource compiler rcc, the user interface compiler uic
+# and the meta object compiler moc.
+IF(WITH_QT5)
+    QT5_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
+    QT5_WRAP_UI(Tano_UIC_Srcs ${Tano_UIs})
+    QT5_WRAP_CPP(Tano_MOC_Srcs ${Tano_MOCs})
+ELSE(WITH_QT5)
+    QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
+    QT4_WRAP_UI(Tano_UIC_Srcs ${Tano_UIs})
+    QT4_WRAP_CPP(Tano_MOC_Srcs ${Tano_MOCs})
+ENDIF(WITH_QT5)
 
 # This line adds the include path of the Qt
 # directory to the compiler include path
-INCLUDE(${QT_USE_FILE})
+IF(WITH_QT5)
+    INCLUDE_DIRECTORIES(
+        ${Qt5Concurrent_INCLUDE_DIRS}
+        ${Qt5Core_INCLUDE_DIRS}
+        ${Qt5Gui_INCLUDE_DIRS}
+        ${Qt5Network_INCLUDE_DIRS}
+        ${Qt5PrintSupport_INCLUDE_DIRS}
+        ${Qt5Widgets_INCLUDE_DIRS}
+        ${Qt5Xml_INCLUDE_DIRS}
+    )
+ELSE(WITH_QT5)
+    # This line adds the QtNETWORK and QtXML libraries to the Qt4 libraries
+    SET(QT_USE_QTNETWORK True)
+    SET(QT_USE_QTXML True)
+
+    INCLUDE(${QT_USE_FILE})
+ENDIF(WITH_QT5)
+
+
+#####################
+# Compiler settings #
+#####################
+# This needs to be added in order for #include to work inside .cpp files
+INCLUDE_DIRECTORIES(
+    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/lib/qtsingleapplication/src
+    ${CMAKE_BINARY_DIR}/src
+)
+
+# Include additional libraries
 INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
@@ -337,12 +385,37 @@ ENDIF(MINGW)
 ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs_Srcs})
 ADD_DEPENDENCIES(tano qtsingleapplication)
 
-# Here the needed Qt Libraries are added to the link command.
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    TARGET_LINK_LIBRARIES(tano ${QT_SINGLE_APPLICATION} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES})
-ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    TARGET_LINK_LIBRARIES(tano ${QT_SINGLE_APPLICATION} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+# Here the needed Libraries are added to the link command.
+IF(WITH_QT5)
+    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+        TARGET_LINK_LIBRARIES(tano
+                             ${QT_SINGLE_APPLICATION}
+                             ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
+                             ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES}
+        )
+    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+        TARGET_LINK_LIBRARIES(tano
+                             ${QT_SINGLE_APPLICATION}
+                             ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
+                             ${LIBVLCQT_LIBRARY}
+        )
+    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ELSE(WITH_QT5)
+    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+        TARGET_LINK_LIBRARIES(tano
+                             ${QT_SINGLE_APPLICATION}
+                             ${QT_LIBRARIES}
+                             ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES}
+        )
+    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+        TARGET_LINK_LIBRARIES(tano
+                             ${QT_SINGLE_APPLICATION}
+                             ${QT_LIBRARIES}
+                             ${LIBVLCQT_LIBRARY}
+        )
+    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ENDIF(WITH_QT5)
+
 
 ################
 # Installation #

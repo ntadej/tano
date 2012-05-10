@@ -16,8 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QFileDialog>
-#include <QtGui/QMessageBox>
+#include <QtCore/QDir>
+#include <QtCore/QFile>
+
+#if defined(Qt5)
+    #include <QtWidgets/QMessageBox>
+#elif defined(Qt4)
+    #include <QtGui/QMessageBox>
+#endif
 
 #include "container/core/Channel.h"
 #include "container/core/Timer.h"

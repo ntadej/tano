@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,11 @@
 #ifndef TANO_LICENSEWIDGET_H_
 #define TANO_LICENSEWIDGET_H_
 
-#include <QtGui/QTextBrowser>
+#if defined(Qt5)
+    #include <QtWidgets/QTextBrowser>
+#elif defined(Qt4)
+    #include <QtGui/QTextBrowser>
+#endif
 
 class LicenseWidget : public QTextBrowser
 {

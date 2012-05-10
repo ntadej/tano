@@ -20,7 +20,12 @@
 #define TANO_RECORDER_H_
 
 #include <QtCore/QTime>
-#include <QtGui/QStackedWidget>
+
+#if defined(Qt5)
+    #include <QtWidgets/QStackedWidget>
+#elif defined(Qt4)
+    #include <QtGui/QStackedWidget>
+#endif
 
 class Channel;
 class PlaylistModel;

@@ -19,7 +19,11 @@
 #ifndef TANO_SETTINGSUI_H_
 #define TANO_SETTINGSUI_H_
 
-#include <QtGui/QWidget>
+#if defined(Qt5)
+    #include <QtWidgets/QWidget>
+#elif defined(Qt4)
+    #include <QtGui/QWidget>
+#endif
 
 namespace Ui
 {

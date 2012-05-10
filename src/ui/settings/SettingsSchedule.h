@@ -19,7 +19,11 @@
 #ifndef TANO_SETTINGSSCHEDULE_H_
 #define TANO_SETTINGSSCHEDULE_H_
 
-#include <QtGui/QWidget>
+#if defined(Qt5)
+    #include <QtWidgets/QWidget>
+#elif defined(Qt4)
+    #include <QtGui/QWidget>
+#endif
 
 struct XmltvGrabber;
 class XmltvSystem;

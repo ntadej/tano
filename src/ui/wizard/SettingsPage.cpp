@@ -16,6 +16,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#if defined(Qt5)
+    #include <QtWidgets/QLineEdit>
+#elif defined(Qt4)
+    #include <QtGui/QLineEdit>
+#endif
+
 #include "SettingsPage.h"
 #include "ui_SettingsPage.h"
 

@@ -19,7 +19,13 @@
 #ifndef TANO_PRINT_H_
 #define TANO_PRINT_H_
 
-#include <QtGui/QTextEdit>
+#if defined(Qt5)
+    #include <QtWidgets/QTextEdit>
+#elif defined(Qt4)
+    #include <QtGui/QTextEdit>
+#endif
+
+class QPrinter;
 
 class PlaylistModel;
 

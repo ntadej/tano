@@ -51,7 +51,7 @@ namespace Tano
     QString vlcQtVersionLibrary();
 
     // System specific
-#if defined(Q_WS_X11)
+#if defined(Q_OS_LINUX)
     QString linuxVideoPath();
 #endif
 }

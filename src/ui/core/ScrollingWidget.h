@@ -20,8 +20,14 @@
 #define TANO_SCROLLINGWIDGET_H_
 
 #include <QtCore/QTimer>
-#include <QtGui/QLabel>
-#include <QtGui/QScrollArea>
+
+#if defined(Qt5)
+    #include <QtWidgets/QScrollArea>
+#elif defined(Qt4)
+    #include <QtGui/QScrollArea>
+#endif
+
+class QLabel;
 
 class ScrollingWidget : public QScrollArea
 {

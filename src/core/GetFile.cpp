@@ -19,7 +19,13 @@
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 #include <QtCore/QVariant>
-#include <QtGui/QMessageBox>
+#include <QtNetwork/QNetworkReply>
+
+#if defined(Qt5)
+    #include <QtWidgets/QMessageBox>
+#elif defined(Qt4)
+    #include <QtGui/QMessageBox>
+#endif
 
 #include "GetFile.h"
 

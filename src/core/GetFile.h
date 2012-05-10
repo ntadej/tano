@@ -23,7 +23,8 @@
 #include <QtCore/QPointer>
 #include <QtCore/QUrl>
 #include <QtNetwork/QNetworkAccessManager>
-#include <QtNetwork/QNetworkReply>
+
+class QNetworkReply;
 
 class GetFile : public QObject
 {
@@ -46,10 +47,8 @@ private:
     void startRequest(const QUrl &url);
 
     QPointer<QFile> _file;
-
-	QNetworkAccessManager _nam;
+    QNetworkAccessManager _nam;
 	QNetworkReply *_nreply;
-
 	QUrl _url;
 };
 

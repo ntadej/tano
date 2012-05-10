@@ -16,7 +16,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QtConcurrentRun>
+#if defined(Qt5)
+    #include <QtConcurrent/QtConcurrentRun>
+#elif defined(Qt4)
+    #include <QtCore/QtConcurrentRun>
+#endif
+
 #include <QtCore/QProcess>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>

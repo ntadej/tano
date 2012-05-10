@@ -19,9 +19,14 @@
 #ifndef TANO_SETTINGSSHORTCUTS_H_
 #define TANO_SETTINGSSHORTCUTS_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-#include <QtGui/QTableWidgetItem>
+#if defined(Qt5)
+    #include <QtWidgets/QDialog>
+#elif defined(Qt4)
+    #include <QtGui/QDialog>
+#endif
+
+class QAbstractButton;
+class QTableWidgetItem;
 
 class Shortcuts;
 

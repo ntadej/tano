@@ -19,7 +19,11 @@
 #ifndef TANO_PLAYLISTFILTERMODEL_H_
 #define TANO_PLAYLISTFILTERMODEL_H_
 
-#include <QtGui/QSortFilterProxyModel>
+#if defined(Qt5)
+    #include <QtCore/QSortFilterProxyModel>
+#elif defined(Qt4)
+    #include <QtGui/QSortFilterProxyModel>
+#endif
 
 #include "core/Enums.h"
 

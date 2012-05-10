@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This file is also part of the tools applications of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -20,12 +20,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QAction>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLineEdit>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QMenu>
-#include <QtGui/QWidget>
+#if defined(Qt5)
+    #include <QtWidgets/QWidget>
+#elif defined(Qt4)
+    #include <QtGui/QWidget>
+#endif
+
+class QLineEdit;
+class QKeyEvent;
 
 class QtKeySequenceEdit : public QWidget
 {

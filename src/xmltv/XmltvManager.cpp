@@ -16,7 +16,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QtConcurrentRun>
+#if defined(Qt5)
+    #include <QtConcurrent/QtConcurrentRun>
+#elif defined(Qt4)
+    #include <QtCore/QtConcurrentRun>
+#endif
 
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"

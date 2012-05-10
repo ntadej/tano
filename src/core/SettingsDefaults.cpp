@@ -59,13 +59,15 @@ const QString Settings::DEFAULT_AUDIO_LANGUAGE = QObject::tr("Disabled");
 const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
 
 // Recorder
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN32)
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos";
-#elif defined(Q_WS_MAC)
+#elif defined(Q_OS_MAC)
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos"; // Need to confirm
-#else // Q_WS_X11
+#elif defined(Q_OS_LINUX)
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/" + Tano::linuxVideoPath();
-#endif // Q_WS_*
+#else
+const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos";
+#endif
 
 // Session
 const int Settings::DEFAULT_CHANNEL = 1;

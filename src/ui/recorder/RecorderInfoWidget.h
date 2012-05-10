@@ -19,7 +19,11 @@
 #ifndef TANO_RECORDERINFOWIDGET_H_
 #define TANO_RECORDERINFOWIDGET_H_
 
-#include <QtGui/QStackedWidget>
+#if defined(Qt5)
+    #include <QtWidgets/QStackedWidget>
+#elif defined(Qt4)
+    #include <QtGui/QStackedWidget>
+#endif
 
 class Timer;
 class TimersModel;

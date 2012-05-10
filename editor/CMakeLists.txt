@@ -45,7 +45,7 @@ SET(Tano_Editor_UIs
 )
 
 # Define the MOC source files used by Tano Editor
-SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for them (in order for events, signals, slots and other macros to work
+SET(Tano_Editor_MOCs
     ../src/container/core/Channel.h
     ../src/core/ListItem.h
     ../src/core/ListModel.h
@@ -67,6 +67,7 @@ SET(Tano_Editor_MOCs    # List of classes which Qt needs to produce MOCs for the
     ../src/ui/settings-editor/SettingsEditorGeneral.h
 )
 
+# Define the QRC source files used by Tano Editor
 SET(Tano_Editor_Resrcs
     ../info.qrc
     ../data/icons.qrc
@@ -158,63 +159,60 @@ IF(UPDATE)
     )
 ENDIF(UPDATE)
 
+
 ################
 # Qt4 settings #
 ################
-# This line adds the QtXML and QtNETWORK libraries to the Qt libraries
-# loaded when linking Tano Editor
-SET(QT_USE_QTXML True)
-SET(QT_USE_QTNETWORK True)
-
-# This scripts runs the resource compiler rcc.
-QT4_ADD_RESOURCES(Tano_Editor_Resrcs_Srcs ${Tano_Editor_Resrcs})
-
-# This scripts runs the user interface compiler uic.
-QT4_WRAP_UI(Tano_Editor_UIC_Srcs ${Tano_Editor_UIs})
-
-# This script runs the meta object compiler moc.
-QT4_WRAP_CPP(Tano_Editor_MOC_Srcs ${Tano_Editor_MOCs})
-
-
-#########################
-# Compiler Define flags #
-#########################
-# Define we are compiling editor
-ADD_DEFINITIONS(-DEDITOR=1)
-
-# Define default data dir, if under POSIX systems.
-IF(NOT MINGW)
-    IF (NOT DEFAULT_DATA_DIR)
-        ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-    ELSE (NOT DEFAULT_DATA_DIR)
-        ADD_DEFINITIONS(-DDEFAULT_DATA_DIR="${DEFAULT_DATA_DIR}")
-    ENDIF (NOT DEFAULT_DATA_DIR)
-ENDIF(NOT MINGW)
-
-# Define default plugin dir, if under POSIX systems.
-IF(NOT MINGW)
-    IF (NOT DEFAULT_PLUGIN_DIR)
-        ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_PLUGIN_DIR}")
-    ELSE (NOT DEFAULT_PLUGIN_DIR)
-        ADD_DEFINITIONS(-DDEFAULT_PLUGIN_DIR="${DEFAULT_PLUGIN_DIR}")
-    ENDIF (NOT DEFAULT_PLUGIN_DIR)
-ENDIF(NOT MINGW)
-
-
-####################################
-# Include paths and set up targets #
-####################################
-# This needs to be added in order for #include to work inside .cpp files
-INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR} "${CMAKE_BINARY_DIR}/editor" "${CMAKE_SOURCE_DIR}/src")
+# This scripts run the resource compiler rcc, the user interface compiler uic
+# and the meta object compiler moc.
+IF(WITH_QT5)
+    QT5_ADD_RESOURCES(Tano_Editor_Resrcs_Srcs ${Tano_Editor_Resrcs})
+    QT5_WRAP_UI(Tano_Editor_UIC_Srcs ${Tano_Editor_UIs})
+    QT5_WRAP_CPP(Tano_Editor_MOC_Srcs ${Tano_Editor_MOCs})
+ELSE(WITH_QT5)
+    QT4_ADD_RESOURCES(Tano_Editor_Resrcs_Srcs ${Tano_Editor_Resrcs})
+    QT4_WRAP_UI(Tano_Editor_UIC_Srcs ${Tano_Editor_UIs})
+    QT4_WRAP_CPP(Tano_Editor_MOC_Srcs ${Tano_Editor_MOCs})
+ENDIF(WITH_QT5)
 
 # This line adds the include path of the Qt
 # directory to the compiler include path
-INCLUDE(${QT_USE_FILE})
+IF(WITH_QT5)
+    INCLUDE_DIRECTORIES(
+        ${Qt5Concurrent_INCLUDE_DIRS}
+        ${Qt5Core_INCLUDE_DIRS}
+        ${Qt5Gui_INCLUDE_DIRS}
+        ${Qt5Network_INCLUDE_DIRS}
+        ${Qt5PrintSupport_INCLUDE_DIRS}
+        ${Qt5Widgets_INCLUDE_DIRS}
+        ${Qt5Xml_INCLUDE_DIRS}
+    )
+ELSE(WITH_QT5)
+    # This line adds the QtNETWORK and QtXML libraries to the Qt4 libraries
+    SET(QT_USE_QTNETWORK True)
+    SET(QT_USE_QTXML True)
 
+    INCLUDE(${QT_USE_FILE})
+ENDIF(WITH_QT5)
+
+
+#####################
+# Compiler settings #
+#####################
+# Define we are compiling editor
+ADD_DEFINITIONS(-DEDITOR=1)
+
+# This needs to be added in order for #include to work inside .cpp files
+INCLUDE_DIRECTORIES(
+    ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_BINARY_DIR}/editor
+)
+
+# Include additional libraries
 IF(EDITOR_WITH_VLCQT)
     INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
 ENDIF(EDITOR_WITH_VLCQT)
-
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
@@ -236,24 +234,61 @@ IF(MINGW)
     SET(Tano_Editor_Srcs ${Tano_Editor_Srcs} ${CMAKE_BINARY_DIR}/editor/windows.obj)
 ENDIF(MINGW)
 
-
 # This line tells cmake to create the Tano Editor program.
 ADD_EXECUTABLE(tano-editor ${Tano_Editor_UIC_Srcs} ${Tano_Editor_Srcs} ${Tano_Editor_MOC_Srcs} ${Tano_Editor_Resrcs_Srcs})
 
-# Here the needed Qt Libraries are added to the link command.
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    IF(EDITOR_WITH_VLCQT)
-        TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES})
-    ELSE(EDITOR_WITH_VLCQT)
-        TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES} ${X11_LIBRARIES})
-    ENDIF(EDITOR_WITH_VLCQT)
-ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    IF(EDITOR_WITH_VLCQT)
-        TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
-    ELSE(EDITOR_WITH_VLCQT)
-        TARGET_LINK_LIBRARIES(tano-editor ${QT_LIBRARIES})
-    ENDIF(EDITOR_WITH_VLCQT)
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+# Here the needed Libraries are added to the link command.
+IF(WITH_QT5)
+    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+        IF(EDITOR_WITH_VLCQT)
+            TARGET_LINK_LIBRARIES(tano-editor
+                                 ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
+                                 ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES}
+            )
+         ELSE(EDITOR_WITH_VLCQT)
+            TARGET_LINK_LIBRARIES(tano-editor
+                                 ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
+                                 ${X11_LIBRARIES}
+            )
+         ENDIF(EDITOR_WITH_VLCQT)
+    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+        IF(EDITOR_WITH_VLCQT)
+            TARGET_LINK_LIBRARIES(tano-editor
+                                 ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
+                                 ${LIBVLCQT_LIBRARY}
+            )
+         ELSE(EDITOR_WITH_VLCQT)
+            TARGET_LINK_LIBRARIES(tano-editor
+                                 ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
+            )
+         ENDIF(EDITOR_WITH_VLCQT)
+    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ELSE(WITH_QT5)
+    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+        IF(EDITOR_WITH_VLCQT)
+            TARGET_LINK_LIBRARIES(tano-editor
+                                 ${QT_LIBRARIES}
+                                 ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES}
+            )
+         ELSE(EDITOR_WITH_VLCQT)
+            TARGET_LINK_LIBRARIES(tano-editor
+                                 ${QT_LIBRARIES}
+                                 ${X11_LIBRARIES}
+            )
+         ENDIF(EDITOR_WITH_VLCQT)
+    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+        IF(EDITOR_WITH_VLCQT)
+            TARGET_LINK_LIBRARIES(tano-editor
+                                 ${QT_LIBRARIES}
+                                 ${LIBVLCQT_LIBRARY}
+            )
+         ELSE(EDITOR_WITH_VLCQT)
+            TARGET_LINK_LIBRARIES(tano-editor
+                                 ${QT_LIBRARIES}
+            )
+         ENDIF(EDITOR_WITH_VLCQT)
+    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ENDIF(WITH_QT5)
 
 
 ################
@@ -263,4 +298,3 @@ ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 INSTALL(TARGETS tano-editor
     RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
 )
-

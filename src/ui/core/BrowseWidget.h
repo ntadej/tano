@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,12 +19,17 @@
 #ifndef TANO_BROWSEWIDGET_H_
 #define TANO_BROWSEWIDGET_H_
 
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QToolButton>
-#include <QtGui/QWidget>
+#if defined(Qt5)
+    #include <QtWidgets/QWidget>
+#elif defined(Qt4)
+    #include <QtGui/QWidget>
+#endif
 
 #include "core/Enums.h"
+
+class QLineEdit;
+class QPushButton;
+class QToolButton;
 
 class BrowseWidget : public QWidget
 {

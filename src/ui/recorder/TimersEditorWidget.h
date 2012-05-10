@@ -20,7 +20,12 @@
 #define TANO_TIMERSEDITORWIDGET_H_
 
 #include <QtCore/QDate>
-#include <QtGui/QWidget>
+
+#if defined(Qt5)
+    #include <QtWidgets/QWidget>
+#elif defined(Qt4)
+    #include <QtGui/QWidget>
+#endif
 
 class Timer;
 class TimersFilterModel;

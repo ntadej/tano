@@ -23,7 +23,8 @@
 
 PlaylistUpdate::PlaylistUpdate(PlaylistModel *model)
     : QObject(model),
-      _model(model) { }
+      _model(model),
+      _downloader(0) { }
 
 PlaylistUpdate::~PlaylistUpdate()
 {

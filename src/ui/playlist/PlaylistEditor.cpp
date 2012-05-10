@@ -17,9 +17,14 @@
 *****************************************************************************/
 
 #include <QtGui/QCloseEvent>
-#include <QtGui/QFileDialog>
-#include <QtGui/QMenu>
-#include <QtGui/QMessageBox>
+
+#if defined(Qt5)
+    #include <QtWidgets/QMenu>
+    #include <QtWidgets/QMessageBox>
+#elif defined(Qt4)
+    #include <QtGui/QMenu>
+    #include <QtGui/QMessageBox>
+#endif
 
 #include "Config.h"
 #include "container/core/Channel.h"

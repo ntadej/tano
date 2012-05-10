@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,10 +20,16 @@
 #define TANO_EPGLIST_H_
 
 #include <QtCore/QMap>
-#include <QtGui/QAction>
-#include <QtGui/QListWidget>
-#include <QtGui/QMenu>
-#include <QtGui/QMouseEvent>
+
+#if defined(Qt5)
+    #include <QtWidgets/QListWidget>
+#elif defined(Qt4)
+    #include <QtGui/QListWidget>
+#endif
+
+class QAction;
+class QMenu;
+class QMouseEvent;
 
 class XmltvProgramme;
 

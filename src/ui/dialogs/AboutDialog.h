@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * The UI layout was based on the VLMC About dialog
 * Copyright (C) 2008-2010 VideoLAN
@@ -22,9 +22,11 @@
 #ifndef TANO_ABOUTDIALOG_H_
 #define TANO_ABOUTDIALOG_H_
 
-#include <QtCore/QDir>
-#include <QtGui/QDialog>
-#include <QtGui/QTreeWidgetItem>
+#if defined(Qt5)
+    #include <QtWidgets/QDialog>
+#elif defined(Qt4)
+    #include <QtGui/QDialog>
+#endif
 
 namespace Ui
 {

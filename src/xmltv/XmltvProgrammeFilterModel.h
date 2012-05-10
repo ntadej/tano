@@ -20,7 +20,12 @@
 #define TANO_XMLTVPROGRAMMEFILTERMODEL_H_
 
 #include <QtCore/QDate>
-#include <QtGui/QSortFilterProxyModel>
+
+#if defined(Qt5)
+    #include <QtCore/QSortFilterProxyModel>
+#elif defined(Qt4)
+    #include <QtGui/QSortFilterProxyModel>
+#endif
 
 class XmltvProgrammeFilterModel : public QSortFilterProxyModel
 {

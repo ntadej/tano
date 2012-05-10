@@ -106,7 +106,7 @@ QString Tano::locateResource(const QString &file)
     else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).exists())
         path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).absoluteFilePath();
 
-#ifdef Q_WS_X11
+#if defined(Q_OS_UNIX)
     else if (QFileInfo("/usr/bin/" + file).exists())
         path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
 #endif
@@ -183,7 +183,7 @@ QString Tano::vlcQtVersionLibrary()
     return version;
 }
 
-#if defined(Q_WS_X11)
+#if defined(Q_OS_LINUX)
 QString Tano::linuxVideoPath()
 {
     QString path = "Videos";

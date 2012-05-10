@@ -17,16 +17,25 @@
 *****************************************************************************/
 
 #include <QtCore/QCoreApplication>
-#include <QtGui/QApplication>
 #include <QtGui/QBitmap>
-#include <QtGui/QSplashScreen>
+
+#if defined(Qt5)
+    #include <QtWidgets/QApplication>
+    #include <QtWidgets/QSplashScreen>
+#elif defined(Qt4)
+    #include <QtGui/QApplication>
+    #include <QtGui/QSplashScreen>
+#endif
 
 #include "Config.h"
+#include "core/Common.h"
 #include "core/Settings.h"
 #include "ui/playlist/PlaylistEditor.h"
 
+#if defined(Qt4)
 #ifdef Q_WS_X11
     #include <X11/Xlib.h>
+#endif
 #endif
 
 #if WITH_EDITOR_VLCQT
@@ -36,12 +45,17 @@
 
 int main(int argc, char *argv[])
 {
+#if defined(Qt4)
 #ifdef Q_WS_X11
     XInitThreads();
 #endif
+#else
+    QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
+#endif
+    QCoreApplication::setApplicationName("Tano Editor");
+    QCoreApplication::setApplicationVersion(Tano::version());
 
     QApplication app(argc, argv);
-    QCoreApplication::setApplicationName("Tano Editor");
 
 	Settings *settings = new Settings();
 	bool splashShow = settings->splash();

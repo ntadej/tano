@@ -22,7 +22,8 @@
 #include <QtCore/QList>
 #include <QtCore/QSettings>
 #include <QtCore/QStringList>
-#include <QtGui/QAction>
+
+class QAction;
 
 class Shortcuts : public QSettings
 {

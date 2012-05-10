@@ -22,7 +22,12 @@
 #include <QtGui/QCloseEvent>
 #include <QtGui/QHideEvent>
 #include <QtGui/QShowEvent>
-#include <QtGui/QMainWindow>
+
+#if defined(Qt5)
+    #include <QtWidgets/QMainWindow>
+#elif defined(Qt4)
+    #include <QtGui/QMainWindow>
+#endif
 
 #include <vlc-qt/Enums.h>
 

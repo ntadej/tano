@@ -19,8 +19,13 @@
 #ifndef TANO_SETTINGSDIALOG_H_
 #define TANO_SETTINGSDIALOG_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
+#if defined(Qt5)
+    #include <QtWidgets/QDialog>
+#elif defined(Qt4)
+    #include <QtGui/QDialog>
+#endif
+
+class QAbstractButton;
 
 class Settings;
 

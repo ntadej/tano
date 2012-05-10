@@ -19,14 +19,18 @@
 #ifndef TANO_UPDATEDIALOG_H_
 #define TANO_UPDATEDIALOG_H_
 
-#include <QtGui/QAbstractButton>
-#include <QtGui/QDialog>
-
+#if defined(Qt5)
+    #include <QtWidgets/QDialog>
+#elif defined(Qt4)
+    #include <QtGui/QDialog>
+#endif
 #include "update/UpdateManager.h"
 
 namespace Ui {
     class UpdateDialog;
 }
+
+class QAbstractButton;
 
 class UpdateDialog : public QDialog
 {

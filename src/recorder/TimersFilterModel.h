@@ -20,7 +20,12 @@
 #define TANO_TIMERSFILTERMODEL_H_
 
 #include <QtCore/QDateTime>
-#include <QtGui/QSortFilterProxyModel>
+
+#if defined(Qt5)
+    #include <QtCore/QSortFilterProxyModel>
+#elif defined(Qt4)
+    #include <QtGui/QSortFilterProxyModel>
+#endif
 
 class TimersFilterModel : public QSortFilterProxyModel
 {

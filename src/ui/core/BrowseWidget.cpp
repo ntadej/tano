@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,9 +16,17 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDir>
-#include <QtGui/QFileDialog>
-#include <QtGui/QHBoxLayout>
+#if defined(Qt5)
+    #include <QtWidgets/QHBoxLayout>
+    #include <QtWidgets/QLineEdit>
+    #include <QtWidgets/QPushButton>
+    #include <QtWidgets/QToolButton>
+#elif defined(Qt4)
+    #include <QtGui/QHBoxLayout>
+    #include <QtGui/QLineEdit>
+    #include <QtGui/QPushButton>
+    #include <QtGui/QToolButton>
+#endif
 
 #include "BrowseWidget.h"
 #include "ui/core/FileDialogs.h"

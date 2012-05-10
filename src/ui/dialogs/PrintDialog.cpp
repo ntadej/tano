@@ -16,7 +16,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QDialogButtonBox>
+#if defined(Qt5)
+    #include <QtWidgets/QDialogButtonBox>
+#elif defined(Qt4)
+    #include <QtGui/QDialogButtonBox>
+#endif
 
 #include "PrintDialog.h"
 #include "ui_PrintDialog.h"

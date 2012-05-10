@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 * Based on ListModel by Christophe Dumez <dchris@gmail.com>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -23,7 +23,12 @@
 #include <QtCore/QHash>
 #include <QtCore/QObject>
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
+
+#if defined(Qt5)
+    #include <QtWidgets/QIcon>
+#elif defined(Qt4)
+    #include <QtGui/QIcon>
+#endif
 
 class ListItem : public QObject
 {
