@@ -29,12 +29,11 @@ SettingsPage::SettingsPage(QWidget *parent)
 {
     ui->setupUi(this);
 
-    Settings *settings = new Settings();
+    QScopedPointer<Settings> settings(new Settings(this));
     ui->sessionVolumeCheckBox->setChecked(settings->sessionVolume());
     ui->sessionAutoplayCheckBox->setChecked(settings->sessionAutoplay());
     ui->playlist->setType(Tano::M3U);
     ui->playlist->setValue(settings->playlist());
-    delete settings;
 
     registerField("sessionvolume", ui->sessionVolumeCheckBox);
     registerField("sessionplay", ui->sessionAutoplayCheckBox);

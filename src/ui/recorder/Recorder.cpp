@@ -101,9 +101,8 @@ void Recorder::cancel()
 
 void Recorder::createSettings()
 {
-    Settings *settings = new Settings(this);
+    QScopedPointer<Settings> settings(new Settings(this));
     _directory = settings->recorderDirectory();
-    delete settings;
 
     _core->setDefaultOutputPath(_directory);
     _udpxy->createSettings();

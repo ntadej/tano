@@ -44,11 +44,10 @@ void PlaylistUpdate::update(const QString &playlist)
     _playlist = playlist;
     _model->open(_playlist);
 
-    Settings *settings = new Settings(this);
+    QScopedPointer<Settings> settings(new Settings(this));
     if (settings->playlistUpdate()) {
         _downloader = new GetFile(this);
         connect(_downloader, SIGNAL(file(QString)), this, SLOT(processPlaylist(QString)));
         _downloader->getFile(settings->playlistUpdateUrl());
     }
-    delete settings;
 }

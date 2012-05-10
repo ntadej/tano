@@ -28,9 +28,8 @@ M3UHandler::M3UHandler()
 {
     _name = QObject::tr("Channel list");
 
-    Settings *settings = new Settings();
+    QScopedPointer<Settings> settings(new Settings());
     _radio = settings->radioCategory();
-    delete settings;
 }
 
 M3UHandler::~M3UHandler() { }

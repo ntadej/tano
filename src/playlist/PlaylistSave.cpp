@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -30,37 +30,32 @@ PlaylistSave::~PlaylistSave() { }
 
 void PlaylistSave::saveCSVFile(const QString &file)
 {
-    CSVGenerator *generator = new CSVGenerator(file);
+    QScopedPointer<CSVGenerator> generator(new CSVGenerator(file));
     generator->write(_model);
-    delete generator;
 }
 
 void PlaylistSave::saveJsFile(const QString &file)
 {
-    JsGenerator *generator = new JsGenerator(file);
+    QScopedPointer<JsGenerator> generator(new JsGenerator(file));
     generator->write(_model);
-    delete generator;
 }
 
 void PlaylistSave::saveM3UFile(const QString &file,
                                const Tano::FileType &type)
 {
-    M3UGenerator *generator = new M3UGenerator(file, type);
+    QScopedPointer<M3UGenerator> generator(new M3UGenerator(file, type));
     generator->write(_model);
-    delete generator;
 }
 
 void PlaylistSave::saveTvheadend(const QString &location,
                                  const QString &interface)
 {
-    TvheadendGenerator *generator = new TvheadendGenerator(location, interface);
+    QScopedPointer<TvheadendGenerator> generator(new TvheadendGenerator(location, interface));
     generator->write(_model);
-    delete generator;
 }
 
 void PlaylistSave::saveXmltvId(const QString &file)
 {
-    XmltvIdGenerator *generator = new XmltvIdGenerator(file);
+    QScopedPointer<XmltvIdGenerator> generator(new XmltvIdGenerator(file));
     generator->write(_model);
-    delete generator;
 }

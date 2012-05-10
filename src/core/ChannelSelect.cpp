@@ -43,8 +43,7 @@ ChannelSelect::ChannelSelect(QWidget *parent,
 ChannelSelect::~ChannelSelect()
 {
     delete _timer;
-    for(int i = 0; i < 10; i++)
-        delete _key[i];
+    qDeleteAll(_key);
 }
 
 void ChannelSelect::process(const int &key)

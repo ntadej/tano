@@ -31,14 +31,13 @@ IntroPage::IntroPage(QWidget *parent)
 
     setPixmap(QWizard::WatermarkPixmap, QPixmap(":/images/wizard.png"));
 
-    Settings *settings = new Settings();
+    QScopedPointer<Settings> settings(new Settings(this));
     if(settings->configurationVersion() != Tano::version())
         ui->labelVersion->setText(tr("You previously used version %1 of <i>Tano</i>.")
                                   .arg(settings->configurationVersion()) +"<br>"+
                                   tr("Please re-set your settings."));
     else
         ui->labelVersion->clear();
-    delete settings;
 }
 
 IntroPage::~IntroPage()

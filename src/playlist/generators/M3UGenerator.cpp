@@ -29,9 +29,8 @@ M3UGenerator::M3UGenerator(const QString &file,
     _file = new QFile(file);
     _udpxy = new Udpxy();
 
-    Settings *settings = new Settings();
+    QScopedPointer<Settings> settings(new Settings());
     _radio = settings->radioCategory();
-    delete settings;
 }
 
 M3UGenerator::~M3UGenerator()

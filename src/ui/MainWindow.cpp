@@ -211,7 +211,7 @@ void MainWindow::createBackend()
 
 void MainWindow::createSettings()
 {
-    Settings *settings = new Settings(this);
+    QScopedPointer<Settings> settings(new Settings(this));
     _hideToTray = settings->trayEnabled() ? settings->hideToTray() : false;
 
     //GUI Settings
@@ -251,13 +251,11 @@ void MainWindow::createSettings()
     _sessionAutoplayEnabled = settings->sessionAutoplay();
 
     ui->recorder->createSettings();
-
-    delete settings;
 }
 
 void MainWindow::createSettingsStartup()
 {
-    Settings *settings = new Settings(this);
+    QScopedPointer<Settings> settings(new Settings(this));
     _defaultPlaylist = settings->playlist();
 
     //Session
@@ -283,8 +281,6 @@ void MainWindow::createSettingsStartup()
 
     _controlsVisible = settings->startControls();
     _infoWidgetVisible = settings->startInfo();
-
-    delete settings;
 }
 
 void MainWindow::createConnections()
@@ -481,7 +477,7 @@ void MainWindow::createSession()
 
 void MainWindow::writeSession()
 {
-    Settings *settings = new Settings(this);
+    QScopedPointer<Settings> settings(new Settings(this));
     if (_sessionVolumeEnabled)
         settings->setVolume(_osdMain->volumeSlider()->volume());
     else
@@ -489,7 +485,6 @@ void MainWindow::writeSession()
     if (_sessionAutoplayEnabled)
         settings->setChannel(_osdMain->lcd()->value());
     settings->writeSettings();
-    delete settings;
 }
 
 void MainWindow::mouseWheel()

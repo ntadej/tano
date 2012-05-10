@@ -20,6 +20,7 @@
 #define TANO_GETFILE_H_
 
 #include <QtCore/QFile>
+#include <QtCore/QPointer>
 #include <QtCore/QUrl>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
@@ -44,7 +45,7 @@ private slots:
 private:
     void startRequest(const QUrl &url);
 
-	QFile *_file;
+    QPointer<QFile> _file;
 
 	QNetworkAccessManager _nam;
 	QNetworkReply *_nreply;

@@ -75,11 +75,11 @@ Timer *TimersModel::duplicateTimer(Timer *timer)
 
 void TimersModel::readTimers()
 {
-    TimersHandler *handler = new TimersHandler();
+    QScopedPointer<TimersHandler> handler(new TimersHandler());
 
     QXmlSimpleReader reader;
-    reader.setContentHandler(handler);
-    reader.setErrorHandler(handler);
+    reader.setContentHandler(handler.data());
+    reader.setErrorHandler(handler.data());
 
     QFile f(Tano::timersPath());
     if (!f.open(QFile::ReadOnly | QFile::Text))
@@ -93,8 +93,6 @@ void TimersModel::readTimers()
     foreach (Timer* timer, timers) {
         appendRow(timer);
     }
-
-    delete handler;
 }
 
 void TimersModel::writeTimers()
@@ -103,7 +101,6 @@ void TimersModel::writeTimers()
     if (!f.open(QFile::WriteOnly | QFile::Text))
         return;
 
-    TimersGenerator *generator = new TimersGenerator(Tano::timersPath());
+    QScopedPointer<TimersGenerator> generator(new TimersGenerator(Tano::timersPath()));
     generator->write(this);
-    delete generator;
 }

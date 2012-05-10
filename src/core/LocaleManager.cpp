@@ -67,12 +67,11 @@ QStringList LocaleManager::loadTranslations()
 void LocaleManager::setLocale()
 {
     QString locale;
-    Settings *settings = new Settings();
+    QScopedPointer<Settings> settings(new Settings());
     if(settings->language().isEmpty())
         locale = QLocale::system().name();
     else
         locale = QLocale(settings->language()).name();
-    delete settings;
 
     QString langPath = Tano::locateResource("/lang/" + locale + ".qm").replace("/" + locale + ".qm", "");
     _translator->load(QString(locale), langPath);

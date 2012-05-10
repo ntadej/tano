@@ -73,7 +73,7 @@ void XmltvManager::current()
 
 void XmltvManager::loadXmltv()
 {
-    Settings *settings = new Settings(this);
+    QScopedPointer<Settings> settings(new Settings(this));
     _location = settings->xmltvLocation();
 
     if (settings->xmltvUpdate()) {
@@ -81,8 +81,6 @@ void XmltvManager::loadXmltv()
     } else {
         loadXmltvInit();
     }
-
-    delete settings;
 }
 
 void XmltvManager::loadXmltvInit()

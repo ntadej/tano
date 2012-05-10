@@ -29,45 +29,39 @@ PlaylistOpen::~PlaylistOpen() { }
 void PlaylistOpen::openCSVFile(const QString &file,
                                const CSVInfo &info)
 {
-    CSVHandler *open = new CSVHandler();
+    QScopedPointer<CSVHandler> open(new CSVHandler());
     open->setParameters(info.separator, info.header, info.columns);
     open->processFile(file);
 
     _list = open->channelList();
     _name = QObject::tr("CSV channel list");
-
-    delete open;
 }
 
 void PlaylistOpen::openJsFile(const QString &file)
 {
-    JsHandler *open = new JsHandler();
+    QScopedPointer<JsHandler> open(new JsHandler());
     open->processFile(file);
 
     _list = open->channelList();
     _name = QObject::tr("Sagem STB channel list");
-
-    delete open;
 }
 
 void PlaylistOpen::openM3UFile(const QString &file)
 {
-    M3UHandler *open = new M3UHandler();
+    QScopedPointer<M3UHandler> open(new M3UHandler());
     open->processFile(file);
 
     _list = open->channelList();
     _name = open->name();
-
-    delete open;
 }
 
 void PlaylistOpen::openTanoOldFile(const QString &file)
 {
-    TanoHandlerOld *open = new TanoHandlerOld();
+    QScopedPointer<TanoHandlerOld> open(new TanoHandlerOld());
 
     QXmlSimpleReader reader;
-    reader.setContentHandler(open);
-    reader.setErrorHandler(open);
+    reader.setContentHandler(open.data());
+    reader.setErrorHandler(open.data());
 
     QFile f(file);
     if (!f.open(QFile::ReadOnly | QFile::Text))
@@ -79,6 +73,4 @@ void PlaylistOpen::openTanoOldFile(const QString &file)
 
     _list = open->channelList();
     _name = open->name();
-
-    delete open;
 }

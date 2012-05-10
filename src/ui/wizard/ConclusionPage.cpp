@@ -50,7 +50,7 @@ void ConclusionPage::changeEvent(QEvent *e)
 
 int ConclusionPage::nextId() const
 {
-    Settings *settings = new Settings();
+    QScopedPointer<Settings> settings(new Settings());
     settings->setConfigurationVersion(Tano::version());
     settings->setConfigured(true);
     settings->setPlaylist(field("playlist").toString());
@@ -58,8 +58,6 @@ int ConclusionPage::nextId() const
     settings->setSessionAutoplay(field("sessionplay").toBool());
 
     settings->writeSettings();
-
-    delete settings;
 
     return -1;
 }

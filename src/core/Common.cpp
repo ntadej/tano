@@ -138,12 +138,12 @@ QString Tano::recordingFileName(const QString &name,
 
 QString Tano::settingsPath()
 {
-    QSettings *settings = new QSettings(QSettings::IniFormat,
-                                        QSettings::UserScope,
-                                        "Tano",
-                                        "Main");
+    QScopedPointer<QSettings> settings(
+            new QSettings(QSettings::IniFormat,
+                          QSettings::UserScope,
+                          "Tano",
+                          "Main"));
     QString path = settings->fileName().replace("Main.ini", "");
-    delete settings;
 
     return path;
 }

@@ -25,9 +25,8 @@ CSVGenerator::CSVGenerator(const QString &file)
 {
     _file = new QFile(file);
 
-    Settings *settings = new Settings();
+    QScopedPointer<Settings> settings(new Settings());
     _radio = settings->radioCategory();
-    delete settings;
 }
 
 CSVGenerator::~CSVGenerator()

@@ -125,9 +125,8 @@ void PlaylistEditor::closeEvent(QCloseEvent *event)
 
 void PlaylistEditor::createSettings()
 {
-    Settings *settings = new Settings(this);
+    QScopedPointer<Settings> settings(new Settings(this));
     ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
-    delete settings;
 }
 
 void PlaylistEditor::createConnections()

@@ -26,9 +26,8 @@
 
 CSVHandler::CSVHandler()
 {
-    Settings *settings = new Settings();
+    QScopedPointer<Settings> settings(new Settings());
     _radio = settings->radioCategory();
-    delete settings;
 }
 
 CSVHandler::~CSVHandler() { }

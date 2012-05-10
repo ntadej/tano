@@ -55,7 +55,6 @@ void GetFile::getFile(const QString &fileUrl,
                                  tr("Cannot write file %1:\n%2.")
                                  .arg(fileName, _file->errorString()));
         delete _file;
-        _file = 0;
         return;
     }
 
@@ -93,9 +92,7 @@ void GetFile::httpRequestFinished()
     disconnect(_nreply, SIGNAL(readyRead()), this, SLOT(httpReadyRead()));
     disconnect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
     _nreply->deleteLater();
-    _nreply = 0;
     delete _file;
-    _file = 0;
 }
 
 void GetFile::startRequest(const QUrl &url)

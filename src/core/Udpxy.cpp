@@ -29,11 +29,10 @@ Udpxy::~Udpxy() { }
 
 void Udpxy::createSettings()
 {
-    Settings *settings = new Settings();
+    QScopedPointer<Settings> settings(new Settings());
     _enabled = settings->udpxy();
     _url = settings->udpxyUrl();
     _port = QString::number(settings->udpxyPort());
-    delete settings;
 }
 
 QString Udpxy::processUrl(const QString &url) const
