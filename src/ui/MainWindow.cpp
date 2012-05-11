@@ -176,6 +176,7 @@ void MainWindow::createGui()
     _osdMain = new OsdWidget(this);
     _osdMain->setBackend(_mediaPlayer);
     ui->osdContents->layout()->addWidget(_osdMain);
+    ui->infoWidget->setTitleBarWidget(ui->blank);
     ui->osdWidget->setTitleBarWidget(_osdMain->blank());
     _osdFloat = new OsdWidget();
     _osdFloat->resize(_osdFloat->width(), _osdMain->height());

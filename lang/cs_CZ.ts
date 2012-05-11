@@ -256,16 +256,16 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>GetFile</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Download failed: %1.</source>
-        <translation>Stažení se nezdařilo: %1.</translation>
+        <translation type="obsolete">Stažení se nezdařilo: %1.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Nelze zapisovat soubor %1:
+        <translation type="obsolete">Nelze zapisovat soubor %1:
 %2.</translation>
     </message>
 </context>
@@ -515,7 +515,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Buffering...</source>
-        <translation>Ukládá se do vyrovnávací paměti...</translation>
+        <translation type="obsolete">Ukládá se do vyrovnávací paměti...</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
@@ -686,6 +686,19 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
 </context>
 <context>
+    <name>NetworkDownload</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished">Nelze zapisovat soubor %1:
+%2.</translation>
+    </message>
+</context>
+<context>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
@@ -724,47 +737,47 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Smazat</translation>
+        <translation type="obsolete">Smazat</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Hledat:</translation>
+        <translation type="obsolete">Hledat:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation>Skupina:</translation>
+        <translation type="obsolete">Skupina:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Jazyk:</translation>
+        <translation type="obsolete">Jazyk:</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Všechny skupiny</translation>
+        <translation type="obsolete">Všechny skupiny</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Všechny jazyky</translation>
+        <translation type="obsolete">Všechny jazyky</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation type="obsolete">Typ:</translation>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation>TV + Rádio</translation>
+        <translation type="obsolete">TV + Rádio</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation>Pouze TV</translation>
+        <translation type="obsolete">Pouze TV</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation>Pouze rádio</translation>
+        <translation type="obsolete">Pouze rádio</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Hledat a filtrovat</translation>
+        <translation type="obsolete">Hledat a filtrovat</translation>
     </message>
 </context>
 <context>
@@ -1343,7 +1356,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>Otevřít adresář</translation>
+        <translation type="obsolete">Otevřít adresář</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
@@ -1359,6 +1372,53 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>All languages</source>
         <translation>Všechny jazyky</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistFilterWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Smazat</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="obsolete">Hledat:</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation type="obsolete">Skupina:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="obsolete">Jazyk:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">Typ:</translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation type="unfinished">TV + Rádio</translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation type="unfinished">Pouze TV</translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation type="unfinished">Pouze rádio</translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished">Hledat a filtrovat</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Všechny skupiny</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Všechny jazyky</translation>
     </message>
 </context>
 <context>
@@ -1654,7 +1714,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation>Neznámý název</translation>
+        <translation type="obsolete">Neznámý název</translation>
     </message>
     <message>
         <source>Active</source>
@@ -1672,11 +1732,11 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list file.</source>
-        <translation>Soubor není souborem Tano seznam programů TV.</translation>
+        <translation type="obsolete">Soubor není souborem Tano seznam programů TV.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
-        <translation>Soubor není Tano seznam programů TV 1.1 nebo pozdější.</translation>
+        <translation type="obsolete">Soubor není Tano seznam programů TV 1.1 nebo pozdější.</translation>
     </message>
     <message>
         <source>Once</source>
@@ -1834,7 +1894,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Tano TV old channel list files</source>
-        <translation>Soubory se starými seznamy programů TV Tano</translation>
+        <translation type="obsolete">Soubory se starými seznamy programů TV Tano</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>

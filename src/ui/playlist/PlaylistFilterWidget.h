@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTDISPLAYWIDGET_H_
-#define TANO_PLAYLISTDISPLAYWIDGET_H_
+#ifndef TANO_PLAYLISTFILTERWIDGET_H_
+#define TANO_PLAYLISTFILTERWIDGET_H_
 
 #include <QtCore/QModelIndex>
 
@@ -27,52 +27,36 @@
     #include <QtGui/QWidget>
 #endif
 
-class Channel;
-class PlaylistFilterModel;
-class PlaylistModel;
-
 namespace Ui
 {
-    class PlaylistDisplayWidget;
+    class PlaylistFilterWidget;
 }
 
-class PlaylistDisplayWidget : public QWidget
+class PlaylistFilterWidget : public QWidget
 {
 Q_OBJECT
 public:
-    PlaylistDisplayWidget(QWidget *parent = 0);
-    ~PlaylistDisplayWidget();
-
-    Channel *currentChannel() { return _current; }
+    PlaylistFilterWidget(QWidget *parent = 0);
+    ~PlaylistFilterWidget();
 
     void editMode();
-    void refreshModel();
-    void setModel(PlaylistModel *model);
+    void refreshModel(const QStringList &categories,
+                      const QStringList &languages);
 
 protected:
     void changeEvent(QEvent *e);
 
 signals:
-    void itemSelected(Channel *);
-
-public slots:
-    void channelSelected(Channel *channel);
-    void channelSelected(const int &channel);
-    void channelSelected(const QString &xmltvId);
+    void filters(const QString &,
+                 const QString &,
+                 const QString &,
+                 const int &);
 
 private slots:
-    void channelSelected(const QModelIndex &index);
-    void processFilters(const QString &search,
-                        const QString &category,
-                        const QString &language,
-                        const int &type);
+    void processFilters();
 
 private:
-    Ui::PlaylistDisplayWidget *ui;
-
-    Channel *_current;
-    PlaylistModel *_model;
-    PlaylistFilterModel *_filterModel;
+    Ui::PlaylistFilterWidget *ui;
 };
 
-#endif // TANO_PLAYLISTDISPLAYWIDGET_H_
+#endif // TANO_PLAYLISTFILTERWIDGET_H_

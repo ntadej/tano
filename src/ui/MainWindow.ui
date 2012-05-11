@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>500</height>
+    <width>700</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,7 +28,11 @@
        <number>0</number>
       </property>
       <widget class="QWidget" name="pageMain">
-       <layout class="QVBoxLayout" name="verticalLayout_6"/>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QWidget" name="blank" native="true"/>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="pagePlayback">
        <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -59,7 +63,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>700</width>
      <height>27</height>
     </rect>
    </property>
@@ -179,6 +183,9 @@
     <iconset resource="../../data/icons.qrc">
      <normaloff>:/icons/24x24/information.png</normaloff>:/icons/24x24/information.png</iconset>
    </property>
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
    <property name="allowedAreas">
     <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
@@ -226,7 +233,7 @@
               <x>0</x>
               <y>0</y>
               <width>250</width>
-              <height>297</height>
+              <height>197</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -250,8 +257,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>96</width>
-              <height>26</height>
+              <width>250</width>
+              <height>197</height>
              </rect>
             </property>
             <attribute name="icon">

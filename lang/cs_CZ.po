@@ -241,23 +241,23 @@ msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Průvodce prvním spuštěním"
 
-msgctxt "GetFile|"
-msgid "Tano"
-msgstr "Tano"
+#~ msgctxt "GetFile|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
 
 #, qt-format
-msgctxt "GetFile|"
-msgid "Download failed: %1."
-msgstr "Stažení se nezdařilo: %1."
+#~ msgctxt "GetFile|"
+#~ msgid "Download failed: %1."
+#~ msgstr "Stažení se nezdařilo: %1."
 
 #, qt-format
-msgctxt "GetFile|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr ""
-"Nelze zapisovat soubor %1:\n"
-"%2."
+#~ msgctxt "GetFile|"
+#~ msgid ""
+#~ "Cannot write file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Nelze zapisovat soubor %1:\n"
+#~ "%2."
 
 #~ msgctxt "InfoBar|"
 #~ msgid "Language:"
@@ -494,9 +494,9 @@ msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Pozastavit"
 
-msgctxt "MainWindow|"
-msgid "Buffering..."
-msgstr "Ukládá se do vyrovnávací paměti..."
+#~ msgctxt "MainWindow|"
+#~ msgid "Buffering..."
+#~ msgstr "Ukládá se do vyrovnávací paměti..."
 
 #~ msgctxt "MainWindow|"
 #~ msgid "Tano TV channel list files(*.m3u)"
@@ -647,6 +647,20 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Další obrazová stopa"
 
+#, fuzzy
+msgctxt "NetworkDownload|"
+msgid "Tano"
+msgstr "Tano"
+
+#, fuzzy, qt-format
+msgctxt "NetworkDownload|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+"Nelze zapisovat soubor %1:\n"
+"%2."
+
 msgctxt "OsdWidget|"
 msgid "Play"
 msgstr "Přehrát"
@@ -679,49 +693,49 @@ msgctxt "OsdWidget|"
 msgid "Teletext"
 msgstr "Teletext"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Clear"
-msgstr "Smazat"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Clear"
+#~ msgstr "Smazat"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search:"
-msgstr "Hledat:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Search:"
+#~ msgstr "Hledat:"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Category:"
-msgstr "Skupina:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Category:"
+#~ msgstr "Skupina:"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Language:"
-msgstr "Jazyk:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Language:"
+#~ msgstr "Jazyk:"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "All categories"
-msgstr "Všechny skupiny"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "All categories"
+#~ msgstr "Všechny skupiny"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "All languages"
-msgstr "Všechny jazyky"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "All languages"
+#~ msgstr "Všechny jazyky"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Type:"
-msgstr "Typ:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Type:"
+#~ msgstr "Typ:"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV + Radio"
-msgstr "TV + Rádio"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "TV + Radio"
+#~ msgstr "TV + Rádio"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV only"
-msgstr "Pouze TV"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "TV only"
+#~ msgstr "Pouze TV"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Radio only"
-msgstr "Pouze rádio"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Radio only"
+#~ msgstr "Pouze rádio"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search and filter"
-msgstr "Hledat a filtrovat"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Search and filter"
+#~ msgstr "Hledat a filtrovat"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Playlist name:"
@@ -1356,9 +1370,9 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "Network interface:"
 msgstr "Síťové rozhraní:"
 
-msgctxt "PlaylistExportTvheadend|"
-msgid "Open directory"
-msgstr "Otevřít adresář"
+#~ msgctxt "PlaylistExportTvheadend|"
+#~ msgid "Open directory"
+#~ msgstr "Otevřít adresář"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
@@ -1369,6 +1383,57 @@ msgid "All categories"
 msgstr "Všechny skupiny"
 
 msgctxt "PlaylistFilterModel|"
+msgid "All languages"
+msgstr "Všechny jazyky"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Clear"
+msgstr "Smazat"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Search:"
+#~ msgstr "Hledat:"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Category:"
+#~ msgstr "Skupina:"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Language:"
+#~ msgstr "Jazyk:"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Type:"
+#~ msgstr "Typ:"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "TV + Radio"
+msgstr "TV + Rádio"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "TV only"
+msgstr "Pouze TV"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Radio only"
+msgstr "Pouze rádio"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Search and filter"
+msgstr "Hledat a filtrovat"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "All categories"
+msgstr "Všechny skupiny"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
 msgid "All languages"
 msgstr "Všechny jazyky"
 
@@ -1653,9 +1718,9 @@ msgctxt "QObject|"
 msgid "The file is not a Tano Timers list."
 msgstr "Soubor není seznam časovačů Tano."
 
-msgctxt "QObject|"
-msgid "Unknown title"
-msgstr "Neznámý název"
+#~ msgctxt "QObject|"
+#~ msgid "Unknown title"
+#~ msgstr "Neznámý název"
 
 #~ msgctxt "QObject|"
 #~ msgid "Active"
@@ -1674,13 +1739,13 @@ msgctxt "QObject|"
 msgid "The file is not a Tano updates file."
 msgstr "Soubor není aktualizačním souborem Tano."
 
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list file."
-msgstr "Soubor není souborem Tano seznam programů TV."
+#~ msgctxt "QObject|"
+#~ msgid "The file is not a Tano TV channel list file."
+#~ msgstr "Soubor není souborem Tano seznam programů TV."
 
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list 1.1 or later."
-msgstr "Soubor není Tano seznam programů TV 1.1 nebo pozdější."
+#~ msgctxt "QObject|"
+#~ msgid "The file is not a Tano TV channel list 1.1 or later."
+#~ msgstr "Soubor není Tano seznam programů TV 1.1 nebo pozdější."
 
 msgctxt "QObject|"
 msgid "Once"
@@ -1841,9 +1906,9 @@ msgctxt "QObject|"
 msgid "M3U (Udpxy URL) files"
 msgstr "Soubory M3U (adresy (URL) Udpxy)"
 
-msgctxt "QObject|"
-msgid "Tano TV old channel list files"
-msgstr "Soubory se starými seznamy programů TV Tano"
+#~ msgctxt "QObject|"
+#~ msgid "Tano TV old channel list files"
+#~ msgstr "Soubory se starými seznamy programů TV Tano"
 
 msgctxt "QObject|"
 msgid "Sagem STB channel list files"

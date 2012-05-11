@@ -185,23 +185,23 @@ msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Перший запуск Майстра налаштувань"
 
-msgctxt "GetFile|"
-msgid "Tano"
-msgstr "Tano"
+#~ msgctxt "GetFile|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
 
 #, qt-format
-msgctxt "GetFile|"
-msgid "Download failed: %1."
-msgstr "Помилка завантаження: %1."
+#~ msgctxt "GetFile|"
+#~ msgid "Download failed: %1."
+#~ msgstr "Помилка завантаження: %1."
 
 #, qt-format
-msgctxt "GetFile|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr ""
-"Неможливо записати файл %1:\n"
-"%2."
+#~ msgctxt "GetFile|"
+#~ msgid ""
+#~ "Cannot write file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Неможливо записати файл %1:\n"
+#~ "%2."
 
 #, qt-format
 #~ msgctxt "InfoBarWidget|"
@@ -439,9 +439,9 @@ msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Пауза"
 
-msgctxt "MainWindow|"
-msgid "Buffering..."
-msgstr "Буферізація..."
+#~ msgctxt "MainWindow|"
+#~ msgid "Buffering..."
+#~ msgstr "Буферізація..."
 
 msgctxt "MainWindow|"
 msgid "Restore"
@@ -580,6 +580,20 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Наступна відео доріжка"
 
+#, fuzzy
+msgctxt "NetworkDownload|"
+msgid "Tano"
+msgstr "Tano"
+
+#, fuzzy, qt-format
+msgctxt "NetworkDownload|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+"Неможливо записати файл %1:\n"
+"%2."
+
 msgctxt "OsdWidget|"
 msgid "Play"
 msgstr "Відтворити"
@@ -612,49 +626,49 @@ msgctxt "OsdWidget|"
 msgid "Teletext"
 msgstr "Телетекст"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Clear"
-msgstr "Спорожнити"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Clear"
+#~ msgstr "Спорожнити"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search:"
-msgstr "Пошук:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Search:"
+#~ msgstr "Пошук:"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Category:"
-msgstr "Категорія:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Category:"
+#~ msgstr "Категорія:"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Language:"
-msgstr "Мова:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Language:"
+#~ msgstr "Мова:"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "All categories"
-msgstr "Усі категорії"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "All categories"
+#~ msgstr "Усі категорії"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "All languages"
-msgstr "Усі мови"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "All languages"
+#~ msgstr "Усі мови"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Type:"
-msgstr "Тип:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Type:"
+#~ msgstr "Тип:"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV + Radio"
-msgstr "ТВ + Радіо"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "TV + Radio"
+#~ msgstr "ТВ + Радіо"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV only"
-msgstr "Лише ТВ"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "TV only"
+#~ msgstr "Лише ТВ"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Radio only"
-msgstr "Лише Радіо"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Radio only"
+#~ msgstr "Лише Радіо"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search and filter"
-msgstr "Шукати та відфільтрувати"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Search and filter"
+#~ msgstr "Шукати та відфільтрувати"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Playlist name:"
@@ -1239,9 +1253,9 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "Network interface:"
 msgstr "Мережевий інтерфейс:"
 
-msgctxt "PlaylistExportTvheadend|"
-msgid "Open directory"
-msgstr "Відкрити теку"
+#~ msgctxt "PlaylistExportTvheadend|"
+#~ msgid "Open directory"
+#~ msgstr "Відкрити теку"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
@@ -1252,6 +1266,57 @@ msgid "All categories"
 msgstr "Усі категорії"
 
 msgctxt "PlaylistFilterModel|"
+msgid "All languages"
+msgstr "Усі мови"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Clear"
+msgstr "Спорожнити"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Search:"
+#~ msgstr "Пошук:"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Category:"
+#~ msgstr "Категорія:"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Language:"
+#~ msgstr "Мова:"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Type:"
+#~ msgstr "Тип:"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "TV + Radio"
+msgstr "ТВ + Радіо"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "TV only"
+msgstr "Лише ТВ"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Radio only"
+msgstr "Лише Радіо"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Search and filter"
+msgstr "Шукати та відфільтрувати"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "All categories"
+msgstr "Усі категорії"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
 msgid "All languages"
 msgstr "Усі мови"
 
@@ -1400,9 +1465,9 @@ msgctxt "QObject|"
 msgid "The file is not a Tano Timers list."
 msgstr "Цей файл не є переліком таймерів Tano."
 
-msgctxt "QObject|"
-msgid "Unknown title"
-msgstr "Невідома назва"
+#~ msgctxt "QObject|"
+#~ msgid "Unknown title"
+#~ msgstr "Невідома назва"
 
 #, qt-format
 msgctxt "QObject|"
@@ -1417,13 +1482,13 @@ msgctxt "QObject|"
 msgid "The file is not a Tano updates file."
 msgstr "Це не файл оновлень Tano."
 
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list file."
-msgstr "Це не файл переліку каналів Tano TV."
+#~ msgctxt "QObject|"
+#~ msgid "The file is not a Tano TV channel list file."
+#~ msgstr "Це не файл переліку каналів Tano TV."
 
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list 1.1 or later."
-msgstr "Це не файл переліків каналів Tano TV версії 1.1 чи пізніше."
+#~ msgctxt "QObject|"
+#~ msgid "The file is not a Tano TV channel list 1.1 or later."
+#~ msgstr "Це не файл переліків каналів Tano TV версії 1.1 чи пізніше."
 
 msgctxt "QObject|"
 msgid "Once"
@@ -1555,9 +1620,9 @@ msgctxt "QObject|"
 msgid "M3U (Udpxy URL) files"
 msgstr "M3U (Udpxy посилання URL) файли"
 
-msgctxt "QObject|"
-msgid "Tano TV old channel list files"
-msgstr "Старі файли Tano TV переліків каналів"
+#~ msgctxt "QObject|"
+#~ msgid "Tano TV old channel list files"
+#~ msgstr "Старі файли Tano TV переліків каналів"
 
 msgctxt "QObject|"
 msgid "Sagem STB channel list files"

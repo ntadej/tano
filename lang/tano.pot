@@ -167,22 +167,6 @@ msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr ""
 
-msgctxt "GetFile|"
-msgid "Tano"
-msgstr ""
-
-#, qt-format
-msgctxt "GetFile|"
-msgid "Download failed: %1."
-msgstr ""
-
-#, qt-format
-msgctxt "GetFile|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr ""
-
 msgctxt "InfoBarWidget|"
 msgid "Now:"
 msgstr ""
@@ -392,10 +376,6 @@ msgid "Pause"
 msgstr ""
 
 msgctxt "MainWindow|"
-msgid "Buffering..."
-msgstr ""
-
-msgctxt "MainWindow|"
 msgid "Restore"
 msgstr ""
 
@@ -518,6 +498,17 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr ""
 
+msgctxt "NetworkDownload|"
+msgid "Tano"
+msgstr ""
+
+#, qt-format
+msgctxt "NetworkDownload|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+
 msgctxt "OsdWidget|"
 msgid "Play"
 msgstr ""
@@ -548,50 +539,6 @@ msgstr ""
 
 msgctxt "OsdWidget|"
 msgid "Teletext"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "Clear"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search:"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "Category:"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "Language:"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "All categories"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "All languages"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "Type:"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV + Radio"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV only"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "Radio only"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search and filter"
 msgstr ""
 
 msgctxt "PlaylistEditor|"
@@ -873,10 +820,6 @@ msgid "Network interface:"
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
-msgid "Open directory"
-msgstr ""
-
-msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
 msgstr ""
 
@@ -885,6 +828,34 @@ msgid "All categories"
 msgstr ""
 
 msgctxt "PlaylistFilterModel|"
+msgid "All languages"
+msgstr ""
+
+msgctxt "PlaylistFilterWidget|"
+msgid "Clear"
+msgstr ""
+
+msgctxt "PlaylistFilterWidget|"
+msgid "Search and filter"
+msgstr ""
+
+msgctxt "PlaylistFilterWidget|"
+msgid "TV + Radio"
+msgstr ""
+
+msgctxt "PlaylistFilterWidget|"
+msgid "TV only"
+msgstr ""
+
+msgctxt "PlaylistFilterWidget|"
+msgid "Radio only"
+msgstr ""
+
+msgctxt "PlaylistFilterWidget|"
+msgid "All categories"
+msgstr ""
+
+msgctxt "PlaylistFilterWidget|"
 msgid "All languages"
 msgstr ""
 
@@ -1029,10 +1000,6 @@ msgctxt "QObject|"
 msgid "The file is not a Tano Timers list."
 msgstr ""
 
-msgctxt "QObject|"
-msgid "Unknown title"
-msgstr ""
-
 #, qt-format
 msgctxt "QObject|"
 msgid ""
@@ -1042,14 +1009,6 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "The file is not a Tano updates file."
-msgstr ""
-
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list file."
-msgstr ""
-
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list 1.1 or later."
 msgstr ""
 
 msgctxt "QObject|"
@@ -1173,10 +1132,6 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "M3U (Udpxy URL) files"
-msgstr ""
-
-msgctxt "QObject|"
-msgid "Tano TV old channel list files"
 msgstr ""
 
 msgctxt "QObject|"

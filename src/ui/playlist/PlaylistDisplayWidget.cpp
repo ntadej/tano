@@ -30,26 +30,13 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->labelSearch->hide();
-    ui->editSearch->hide();
-    ui->buttonClear->hide();
-    ui->comboType->hide();
-    ui->labelType->hide();
-    ui->comboCategory->hide();
-    ui->labelCategory->hide();
-    ui->comboLanguage->hide();
-    ui->labelLanguage->hide();
-
     _filterModel = new PlaylistFilterModel(this);
     _filterModel->setDynamicSortFilter(true);
 
     ui->playlistView->setModel(_filterModel);
 
     connect(ui->playlistView, SIGNAL(activated(QModelIndex)), this, SLOT(channelSelected(QModelIndex)));
-    connect(ui->comboCategory, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
-    connect(ui->comboLanguage, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
-    connect(ui->comboType, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
-    connect(ui->editSearch, SIGNAL(textChanged(QString)), this, SLOT(processFilters()));
+    connect(ui->filters, SIGNAL(filters(QString, QString, QString, int)), this, SLOT(processFilters(QString, QString, QString, int)));
 }
 
 PlaylistDisplayWidget::~PlaylistDisplayWidget()
@@ -65,9 +52,6 @@ void PlaylistDisplayWidget::changeEvent(QEvent *e)
     {
     case QEvent::LanguageChange:
         ui->retranslateUi(this);
-        ui->comboCategory->setItemText(0, tr("All categories"));
-        ui->comboLanguage->setItemText(0, tr("All languages"));
-        processFilters();
         break;
     default:
         break;
@@ -100,31 +84,24 @@ void PlaylistDisplayWidget::channelSelected(const QString &xmltvId)
 
 void PlaylistDisplayWidget::editMode()
 {
-    ui->buttonSearch->hide();
-
-    ui->labelSearch->show();
-    ui->editSearch->show();
-    ui->buttonClear->show();
+    ui->filters->editMode();
 }
 
-void PlaylistDisplayWidget::processFilters()
+void PlaylistDisplayWidget::processFilters(const QString &search,
+                                           const QString &category,
+                                           const QString &language,
+                                           const int &type)
 {
-    QRegExp regExp(ui->editSearch->text(), Qt::CaseInsensitive);
+    QRegExp regExp(search, Qt::CaseInsensitive);
     _filterModel->setFilterRegExp(regExp);
-    _filterModel->setCategory(ui->comboCategory->currentText());
-    _filterModel->setLanguage(ui->comboLanguage->currentText());
-    _filterModel->setType(Tano::ChannelType(ui->comboType->currentIndex()));
+    _filterModel->setCategory(category);
+    _filterModel->setLanguage(language);
+    _filterModel->setType(Tano::ChannelType(type));
 }
 
 void PlaylistDisplayWidget::refreshModel()
 {
-    ui->comboCategory->clear();
-    ui->comboCategory->insertItem(0, tr("All categories"));
-    ui->comboCategory->insertItems(1, _model->categories());
-
-    ui->comboLanguage->clear();
-    ui->comboLanguage->insertItem(0, tr("All languages"));
-    ui->comboLanguage->insertItems(1, _model->languages());
+    ui->filters->refreshModel(_model->categories(), _model->languages());
 }
 
 void PlaylistDisplayWidget::setModel(PlaylistModel *model)

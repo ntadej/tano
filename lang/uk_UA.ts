@@ -186,16 +186,16 @@ Your VLC-Qt version: %4
     <name>GetFile</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Download failed: %1.</source>
-        <translation>Помилка завантаження: %1.</translation>
+        <translation type="obsolete">Помилка завантаження: %1.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Неможливо записати файл %1:
+        <translation type="obsolete">Неможливо записати файл %1:
 %2.</translation>
     </message>
 </context>
@@ -436,7 +436,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Buffering...</source>
-        <translation>Буферізація...</translation>
+        <translation type="obsolete">Буферізація...</translation>
     </message>
     <message>
         <source>Restore</source>
@@ -595,6 +595,19 @@ This will stop recording in progress.</source>
     </message>
 </context>
 <context>
+    <name>NetworkDownload</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished">Неможливо записати файл %1:
+%2.</translation>
+    </message>
+</context>
+<context>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
@@ -633,47 +646,47 @@ This will stop recording in progress.</source>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Спорожнити</translation>
+        <translation type="obsolete">Спорожнити</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Пошук:</translation>
+        <translation type="obsolete">Пошук:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation>Категорія:</translation>
+        <translation type="obsolete">Категорія:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Мова:</translation>
+        <translation type="obsolete">Мова:</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Усі категорії</translation>
+        <translation type="obsolete">Усі категорії</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Усі мови</translation>
+        <translation type="obsolete">Усі мови</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation type="obsolete">Тип:</translation>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation>ТВ + Радіо</translation>
+        <translation type="obsolete">ТВ + Радіо</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation>Лише ТВ</translation>
+        <translation type="obsolete">Лише ТВ</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation>Лише Радіо</translation>
+        <translation type="obsolete">Лише Радіо</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Шукати та відфільтрувати</translation>
+        <translation type="obsolete">Шукати та відфільтрувати</translation>
     </message>
 </context>
 <context>
@@ -1192,7 +1205,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>Відкрити теку</translation>
+        <translation type="obsolete">Відкрити теку</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
@@ -1208,6 +1221,53 @@ You will lose any unsaved changes.</source>
     <message>
         <source>All languages</source>
         <translation>Усі мови</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistFilterWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Спорожнити</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="obsolete">Пошук:</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation type="obsolete">Категорія:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="obsolete">Мова:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">Тип:</translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation type="unfinished">ТВ + Радіо</translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation type="unfinished">Лише ТВ</translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation type="unfinished">Лише Радіо</translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished">Шукати та відфільтрувати</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Усі категорії</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Усі мови</translation>
     </message>
 </context>
 <context>
@@ -1367,7 +1427,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation>Невідома назва</translation>
+        <translation type="obsolete">Невідома назва</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2:
@@ -1381,11 +1441,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>The file is not a Tano TV channel list file.</source>
-        <translation>Це не файл переліку каналів Tano TV.</translation>
+        <translation type="obsolete">Це не файл переліку каналів Tano TV.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
-        <translation>Це не файл переліків каналів Tano TV версії 1.1 чи пізніше.</translation>
+        <translation type="obsolete">Це не файл переліків каналів Tano TV версії 1.1 чи пізніше.</translation>
     </message>
     <message>
         <source>Once</source>
@@ -1515,7 +1575,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano TV old channel list files</source>
-        <translation>Старі файли Tano TV переліків каналів</translation>
+        <translation type="obsolete">Старі файли Tano TV переліків каналів</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>

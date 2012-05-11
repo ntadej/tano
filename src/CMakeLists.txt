@@ -43,6 +43,7 @@ SET(Tano_UIs
     ui/playlist/PlaylistEditorHelp.ui
     ui/playlist/PlaylistEditorScan.ui
     ui/playlist/PlaylistExportTvheadend.ui
+    ui/playlist/PlaylistFilterWidget.ui
     ui/playlist/PlaylistImportCSV.ui
     ui/recorder/Recorder.ui
     ui/recorder/RecorderInfoWidget.ui
@@ -121,6 +122,7 @@ SET(Tano_UI_MOCs
     ui/playlist/PlaylistEditorHelp.h
     ui/playlist/PlaylistEditorScan.h
     ui/playlist/PlaylistExportTvheadend.h
+    ui/playlist/PlaylistFilterWidget.h
     ui/playlist/PlaylistImportCSV.h
     ui/recorder/Recorder.h
     ui/recorder/RecorderInfoWidget.h
@@ -245,6 +247,7 @@ SET(Tano_UI_Srcs
     ui/playlist/PlaylistEditorHelp.cpp
     ui/playlist/PlaylistEditorScan.cpp
     ui/playlist/PlaylistExportTvheadend.cpp
+    ui/playlist/PlaylistFilterWidget.cpp
     ui/playlist/PlaylistImportCSV.cpp
     ui/recorder/Recorder.cpp
     ui/recorder/RecorderInfoWidget.cpp

@@ -229,24 +229,18 @@ msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Мастер начальной настройки"
 
-#, fuzzy
-msgctxt "GetFile|"
-msgid "Tano"
-msgstr "Tano"
-
-#, fuzzy, qt-format
-msgctxt "GetFile|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr ""
-"Невозможно записать файл %1:\n"
-"%2."
+#~ msgctxt "GetFile|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
 
 #, qt-format
-msgctxt "GetFile|"
-msgid "Download failed: %1."
-msgstr ""
+#~ msgctxt "GetFile|"
+#~ msgid ""
+#~ "Cannot write file %1:\n"
+#~ "%2."
+#~ msgstr ""
+#~ "Невозможно записать файл %1:\n"
+#~ "%2."
 
 #~ msgctxt "InfoBar|"
 #~ msgid "Language:"
@@ -490,10 +484,6 @@ msgctxt "MainWindow|"
 msgid "Pause"
 msgstr ""
 
-msgctxt "MainWindow|"
-msgid "Buffering..."
-msgstr ""
-
 #~ msgctxt "MainWindow|"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
@@ -647,6 +637,20 @@ msgid "Next video track"
 msgstr "След. видеодорожка"
 
 #, fuzzy
+msgctxt "NetworkDownload|"
+msgid "Tano"
+msgstr "Tano"
+
+#, fuzzy, qt-format
+msgctxt "NetworkDownload|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+"Невозможно записать файл %1:\n"
+"%2."
+
+#, fuzzy
 msgctxt "OsdWidget|"
 msgid "Play"
 msgstr "Воспроизведение"
@@ -682,56 +686,33 @@ msgctxt "OsdWidget|"
 msgid "Teletext"
 msgstr ""
 
-#, fuzzy
-msgctxt "PlaylistDisplayWidget|"
-msgid "Clear"
-msgstr "Закрыть"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Clear"
+#~ msgstr "Закрыть"
 
-#, fuzzy
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search:"
-msgstr "Поиск:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Search:"
+#~ msgstr "Поиск:"
 
-#, fuzzy
-msgctxt "PlaylistDisplayWidget|"
-msgid "Category:"
-msgstr "Категория:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Category:"
+#~ msgstr "Категория:"
 
-#, fuzzy
-msgctxt "PlaylistDisplayWidget|"
-msgid "Language:"
-msgstr "Язык:"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Language:"
+#~ msgstr "Язык:"
 
-#, fuzzy
-msgctxt "PlaylistDisplayWidget|"
-msgid "All categories"
-msgstr "Все категории"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "All categories"
+#~ msgstr "Все категории"
 
-#, fuzzy
-msgctxt "PlaylistDisplayWidget|"
-msgid "All languages"
-msgstr "Все языки"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "All languages"
+#~ msgstr "Все языки"
 
-#, fuzzy
-msgctxt "PlaylistDisplayWidget|"
-msgid "Type:"
-msgstr "Тип:"
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV + Radio"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV only"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "Radio only"
-msgstr ""
-
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search and filter"
-msgstr ""
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Type:"
+#~ msgstr "Тип:"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Playlist name:"
@@ -1258,10 +1239,6 @@ msgid "Network interface:"
 msgstr ""
 
 msgctxt "PlaylistExportTvheadend|"
-msgid "Open directory"
-msgstr ""
-
-msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
 msgstr ""
 
@@ -1274,6 +1251,53 @@ msgstr "Все категории"
 msgctxt "PlaylistFilterModel|"
 msgid "All languages"
 msgstr "Все языки"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Clear"
+msgstr "Закрыть"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Search:"
+#~ msgstr "Поиск:"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Category:"
+#~ msgstr "Категория:"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Language:"
+#~ msgstr "Язык:"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Type:"
+#~ msgstr "Тип:"
+
+msgctxt "PlaylistFilterWidget|"
+msgid "Search and filter"
+msgstr ""
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "All categories"
+msgstr "Все категории"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "All languages"
+msgstr "Все языки"
+
+msgctxt "PlaylistFilterWidget|"
+msgid "TV + Radio"
+msgstr ""
+
+msgctxt "PlaylistFilterWidget|"
+msgid "TV only"
+msgstr ""
+
+msgctxt "PlaylistFilterWidget|"
+msgid "Radio only"
+msgstr ""
 
 msgctxt "PlaylistImportCSV|"
 msgid "CSV file structure"
@@ -1508,9 +1532,9 @@ msgctxt "QObject|"
 msgid "The file is not a Tano Timers list."
 msgstr "Этот файл не является списком таймеров Tano."
 
-msgctxt "QObject|"
-msgid "Unknown title"
-msgstr "Неизв."
+#~ msgctxt "QObject|"
+#~ msgid "Unknown title"
+#~ msgstr "Неизв."
 
 #~ msgctxt "QObject|"
 #~ msgid "Active"
@@ -1529,13 +1553,13 @@ msgctxt "QObject|"
 msgid "The file is not a Tano updates file."
 msgstr "Этот файл не является обновлением Tano."
 
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list file."
-msgstr "Этот файл не является списком ТВ каналов Tano."
+#~ msgctxt "QObject|"
+#~ msgid "The file is not a Tano TV channel list file."
+#~ msgstr "Этот файл не является списком ТВ каналов Tano."
 
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list 1.1 or later."
-msgstr "Этот файл не является списком ТВ каналов Tano вер. 1.1 или выше."
+#~ msgctxt "QObject|"
+#~ msgid "The file is not a Tano TV channel list 1.1 or later."
+#~ msgstr "Этот файл не является списком ТВ каналов Tano вер. 1.1 или выше."
 
 msgctxt "QObject|"
 msgid "Once"
@@ -1680,10 +1704,6 @@ msgstr ""
 
 msgctxt "QObject|"
 msgid "M3U (Udpxy URL) files"
-msgstr ""
-
-msgctxt "QObject|"
-msgid "Tano TV old channel list files"
 msgstr ""
 
 msgctxt "QObject|"

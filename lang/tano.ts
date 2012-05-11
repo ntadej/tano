@@ -180,22 +180,6 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
-    <name>GetFile</name>
-    <message>
-        <source>Tano</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download failed: %1.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cannot write file %1:
-%2.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>InfoBarWidget</name>
     <message>
         <source>Now:</source>
@@ -409,10 +393,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Buffering...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
@@ -553,6 +533,18 @@ This will stop recording in progress.</source>
     </message>
 </context>
 <context>
+    <name>NetworkDownload</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
@@ -584,53 +576,6 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Teletext</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistDisplayWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Category:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TV + Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TV only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search and filter</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -898,16 +843,43 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
         <translation></translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistFilterWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>All categories</source>
         <translation type="unfinished"></translation>
@@ -1069,24 +1041,12 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown title</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Parse error at line %1, column %2:
 %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The file is not a Tano TV channel list file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The file is not a Tano TV channel list 1.1 or later.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1208,10 +1168,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>M3U (Udpxy URL) files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV old channel list files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

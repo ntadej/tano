@@ -299,17 +299,17 @@ Vaša različica VLC-Qt: %4
     <name>GetFile</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Ne morem pisati datoteke %1:
+        <translation type="obsolete">Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
     <message>
         <source>Download failed: %1.</source>
-        <translation>Prenos ni uspel: %1.</translation>
+        <translation type="obsolete">Prenos ni uspel: %1.</translation>
     </message>
 </context>
 <context>
@@ -542,7 +542,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Buffering...</source>
-        <translation>Nalagam...</translation>
+        <translation type="obsolete">Nalagam...</translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
@@ -769,6 +769,19 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
 </context>
 <context>
+    <name>NetworkDownload</name>
+    <message>
+        <source>Tano</source>
+        <translation>Tano</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation>Ne morem pisati datoteke %1:
+%2.</translation>
+    </message>
+</context>
+<context>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
@@ -807,47 +820,47 @@ To bo ustavilo trenutno snemanje.</translation>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Počisti</translation>
+        <translation type="obsolete">Počisti</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Išči:</translation>
+        <translation type="obsolete">Išči:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation>Kategorija:</translation>
+        <translation type="obsolete">Kategorija:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Jezik:</translation>
+        <translation type="obsolete">Jezik:</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Vse kategorije</translation>
+        <translation type="obsolete">Vse kategorije</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Vsi jeziki</translation>
+        <translation type="obsolete">Vsi jeziki</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tip:</translation>
+        <translation type="obsolete">Tip:</translation>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation>TV + Radio</translation>
+        <translation type="obsolete">TV + Radio</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation>Samo TV</translation>
+        <translation type="obsolete">Samo TV</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation>Samo radio</translation>
+        <translation type="obsolete">Samo radio</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Išči in filtriraj</translation>
+        <translation type="obsolete">Išči in filtriraj</translation>
     </message>
 </context>
 <context>
@@ -1474,11 +1487,58 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>Odpri imenik</translation>
+        <translation type="obsolete">Odpri imenik</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
+    <message>
+        <source>All categories</source>
+        <translation>Vse kategorije</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation>Vsi jeziki</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistFilterWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation>Počisti</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="obsolete">Išči:</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation type="obsolete">Kategorija:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="obsolete">Jezik:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">Tip:</translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation>TV + Radio</translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation>Samo TV</translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation>Samo radio</translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation>Išči in filtriraj</translation>
+    </message>
     <message>
         <source>All categories</source>
         <translation>Vse kategorije</translation>
@@ -1785,11 +1845,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
-        <translation>Datoteka ni Tano TV Seznam programov 1.1 ali novejša.</translation>
+        <translation type="obsolete">Datoteka ni Tano TV Seznam programov 1.1 ali novejša.</translation>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation>Neznan naslov</translation>
+        <translation type="obsolete">Neznan naslov</translation>
     </message>
     <message>
         <source>Tano</source>
@@ -1803,7 +1863,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list file.</source>
-        <translation>Datoteka ni Tano TV Seznam programov.</translation>
+        <translation type="obsolete">Datoteka ni Tano TV Seznam programov.</translation>
     </message>
     <message>
         <source>The file is not a Tano Timers list.</source>
@@ -1977,7 +2037,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Tano TV old channel list files</source>
-        <translation>Tano TV stari seznami programov</translation>
+        <translation type="obsolete">Tano TV stari seznami programov</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>

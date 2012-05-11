@@ -245,17 +245,13 @@ Your VLC-Qt version: %4
     <name>GetFile</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Невозможно записать файл %1:
+        <translation type="obsolete">Невозможно записать файл %1:
 %2.</translation>
-    </message>
-    <message>
-        <source>Download failed: %1.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -507,10 +503,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Buffering...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="obsolete">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
     </message>
@@ -679,6 +671,19 @@ This will stop recording in progress.</source>
     </message>
 </context>
 <context>
+    <name>NetworkDownload</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished">Невозможно записать файл %1:
+%2.</translation>
+    </message>
+</context>
+<context>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
@@ -717,47 +722,31 @@ This will stop recording in progress.</source>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Закрыть</translation>
+        <translation type="obsolete">Закрыть</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="unfinished">Поиск:</translation>
+        <translation type="obsolete">Поиск:</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation type="unfinished">Категория:</translation>
+        <translation type="obsolete">Категория:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished">Язык:</translation>
+        <translation type="obsolete">Язык:</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Все категории</translation>
+        <translation type="obsolete">Все категории</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Все языки</translation>
+        <translation type="obsolete">Все языки</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Тип:</translation>
-    </message>
-    <message>
-        <source>TV + Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TV only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search and filter</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Тип:</translation>
     </message>
 </context>
 <context>
@@ -1233,10 +1222,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1250,6 +1235,53 @@ You will lose any unsaved changes.</source>
     <message>
         <source>All languages</source>
         <translation type="unfinished">Все языки</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistFilterWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Закрыть</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="obsolete">Поиск:</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation type="obsolete">Категория:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="obsolete">Язык:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">Тип:</translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Все категории</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Все языки</translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1497,7 +1529,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation>Неизв.</translation>
+        <translation type="obsolete">Неизв.</translation>
     </message>
     <message>
         <source>Active</source>
@@ -1515,11 +1547,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>The file is not a Tano TV channel list file.</source>
-        <translation>Этот файл не является списком ТВ каналов Tano.</translation>
+        <translation type="obsolete">Этот файл не является списком ТВ каналов Tano.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
-        <translation>Этот файл не является списком ТВ каналов Tano вер. 1.1 или выше.</translation>
+        <translation type="obsolete">Этот файл не является списком ТВ каналов Tano вер. 1.1 или выше.</translation>
     </message>
     <message>
         <source>Once</source>
@@ -1657,10 +1689,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>M3U (Udpxy URL) files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano TV old channel list files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

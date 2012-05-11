@@ -183,21 +183,21 @@ msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Relancer l'assistant"
 
-msgctxt "GetFile|"
-msgid "Tano"
-msgstr "Tano"
+#~ msgctxt "GetFile|"
+#~ msgid "Tano"
+#~ msgstr "Tano"
 
 #, qt-format
-msgctxt "GetFile|"
-msgid "Download failed: %1."
-msgstr "Téléchargement en échec : %1."
+#~ msgctxt "GetFile|"
+#~ msgid "Download failed: %1."
+#~ msgstr "Téléchargement en échec : %1."
 
 #, qt-format
-msgctxt "GetFile|"
-msgid ""
-"Cannot write file %1:\n"
-"%2."
-msgstr "Ne peut écrire le fichier %1 : %2."
+#~ msgctxt "GetFile|"
+#~ msgid ""
+#~ "Cannot write file %1:\n"
+#~ "%2."
+#~ msgstr "Ne peut écrire le fichier %1 : %2."
 
 #, qt-format
 #~ msgctxt "InfoBarWidget|"
@@ -432,9 +432,9 @@ msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Pause"
 
-msgctxt "MainWindow|"
-msgid "Buffering..."
-msgstr "Mémorisation..."
+#~ msgctxt "MainWindow|"
+#~ msgid "Buffering..."
+#~ msgstr "Mémorisation..."
 
 msgctxt "MainWindow|"
 msgid "Restore"
@@ -573,6 +573,18 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Piste vidéo suivante"
 
+#, fuzzy
+msgctxt "NetworkDownload|"
+msgid "Tano"
+msgstr "Tano"
+
+#, qt-format
+msgctxt "NetworkDownload|"
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+
 msgctxt "OsdWidget|"
 msgid "Play"
 msgstr "Lire"
@@ -605,49 +617,49 @@ msgctxt "OsdWidget|"
 msgid "Teletext"
 msgstr "Sous-titre"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Clear"
-msgstr "Éffacer"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Clear"
+#~ msgstr "Éffacer"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search:"
-msgstr "Rechercher :"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Search:"
+#~ msgstr "Rechercher :"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Category:"
-msgstr "Catégorie :"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Category:"
+#~ msgstr "Catégorie :"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Language:"
-msgstr "Langue :"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Language:"
+#~ msgstr "Langue :"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "All categories"
-msgstr "Toutes catégories"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "All categories"
+#~ msgstr "Toutes catégories"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "All languages"
-msgstr "Toutes les langues"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "All languages"
+#~ msgstr "Toutes les langues"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Type:"
-msgstr "Type :"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Type:"
+#~ msgstr "Type :"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV + Radio"
-msgstr "TV + Radio"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "TV + Radio"
+#~ msgstr "TV + Radio"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "TV only"
-msgstr "TV seule"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "TV only"
+#~ msgstr "TV seule"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Radio only"
-msgstr "Radio seule"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Radio only"
+#~ msgstr "Radio seule"
 
-msgctxt "PlaylistDisplayWidget|"
-msgid "Search and filter"
-msgstr "Chercher et filtrer"
+#~ msgctxt "PlaylistDisplayWidget|"
+#~ msgid "Search and filter"
+#~ msgstr "Chercher et filtrer"
 
 #~ msgctxt "PlaylistEdit|"
 #~ msgid "Playlist name:"
@@ -1239,9 +1251,9 @@ msgctxt "PlaylistExportTvheadend|"
 msgid "Network interface:"
 msgstr "Interface réseau :"
 
-msgctxt "PlaylistExportTvheadend|"
-msgid "Open directory"
-msgstr "Ouvrir le répertoire"
+#~ msgctxt "PlaylistExportTvheadend|"
+#~ msgid "Open directory"
+#~ msgstr "Ouvrir le répertoire"
 
 msgctxt "PlaylistExportTvheadend|"
 msgid "<i><b>Warning: This will delete all existing channels!</b></a>"
@@ -1253,6 +1265,57 @@ msgid "All categories"
 msgstr "Toutes catégories"
 
 msgctxt "PlaylistFilterModel|"
+msgid "All languages"
+msgstr "Toutes les langues"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Clear"
+msgstr "Éffacer"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Search:"
+#~ msgstr "Rechercher :"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Category:"
+#~ msgstr "Catégorie :"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Language:"
+#~ msgstr "Langue :"
+
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Type:"
+#~ msgstr "Type :"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "TV + Radio"
+msgstr "TV + Radio"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "TV only"
+msgstr "TV seule"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Radio only"
+msgstr "Radio seule"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "Search and filter"
+msgstr "Chercher et filtrer"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
+msgid "All categories"
+msgstr "Toutes catégories"
+
+#, fuzzy
+msgctxt "PlaylistFilterWidget|"
 msgid "All languages"
 msgstr "Toutes les langues"
 
@@ -1401,9 +1464,9 @@ msgctxt "QObject|"
 msgid "The file is not a Tano Timers list."
 msgstr "Ce fichier n'est pas une liste de programmations Tano."
 
-msgctxt "QObject|"
-msgid "Unknown title"
-msgstr "Titre inconnu"
+#~ msgctxt "QObject|"
+#~ msgid "Unknown title"
+#~ msgstr "Titre inconnu"
 
 #, qt-format
 msgctxt "QObject|"
@@ -1418,13 +1481,14 @@ msgctxt "QObject|"
 msgid "The file is not a Tano updates file."
 msgstr "Ce fichier n'est pas un fichier de mis-à-jours Tano."
 
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list file."
-msgstr "Ce fichier n'est pas un fichier de liste de chaînes Tano."
+#~ msgctxt "QObject|"
+#~ msgid "The file is not a Tano TV channel list file."
+#~ msgstr "Ce fichier n'est pas un fichier de liste de chaînes Tano."
 
-msgctxt "QObject|"
-msgid "The file is not a Tano TV channel list 1.1 or later."
-msgstr "Ce fichier n'est pas un fichier de liste de chaînes 1.1 ou supérieur."
+#~ msgctxt "QObject|"
+#~ msgid "The file is not a Tano TV channel list 1.1 or later."
+#~ msgstr ""
+#~ "Ce fichier n'est pas un fichier de liste de chaînes 1.1 ou supérieur."
 
 msgctxt "QObject|"
 msgid "Once"
@@ -1556,9 +1620,9 @@ msgctxt "QObject|"
 msgid "M3U (Udpxy URL) files"
 msgstr "Fichier M3U (udpxy URL)"
 
-msgctxt "QObject|"
-msgid "Tano TV old channel list files"
-msgstr "Anciens fichier de listes de chaînes Tano TV"
+#~ msgctxt "QObject|"
+#~ msgid "Tano TV old channel list files"
+#~ msgstr "Anciens fichier de listes de chaînes Tano TV"
 
 msgctxt "QObject|"
 msgid "Sagem STB channel list files"

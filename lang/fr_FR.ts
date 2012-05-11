@@ -186,16 +186,16 @@ Votre version de VLC-Qt : %4</translation>
     <name>GetFile</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Download failed: %1.</source>
-        <translation>Téléchargement en échec : %1.</translation>
+        <translation type="obsolete">Téléchargement en échec : %1.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Ne peut écrire le fichier %1 : %2.</translation>
+        <translation type="obsolete">Ne peut écrire le fichier %1 : %2.</translation>
     </message>
 </context>
 <context>
@@ -433,7 +433,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Buffering...</source>
-        <translation>Mémorisation...</translation>
+        <translation type="obsolete">Mémorisation...</translation>
     </message>
     <message>
         <source>Restore</source>
@@ -592,6 +592,18 @@ This will stop recording in progress.</source>
     </message>
 </context>
 <context>
+    <name>NetworkDownload</name>
+    <message>
+        <source>Tano</source>
+        <translation type="unfinished">Tano</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
@@ -630,47 +642,47 @@ This will stop recording in progress.</source>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Éffacer</translation>
+        <translation type="obsolete">Éffacer</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Rechercher :</translation>
+        <translation type="obsolete">Rechercher :</translation>
     </message>
     <message>
         <source>Category:</source>
-        <translation>Catégorie :</translation>
+        <translation type="obsolete">Catégorie :</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Langue :</translation>
+        <translation type="obsolete">Langue :</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Toutes catégories</translation>
+        <translation type="obsolete">Toutes catégories</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Toutes les langues</translation>
+        <translation type="obsolete">Toutes les langues</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Type :</translation>
+        <translation type="obsolete">Type :</translation>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation>TV + Radio</translation>
+        <translation type="obsolete">TV + Radio</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation>TV seule</translation>
+        <translation type="obsolete">TV seule</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation>Radio seule</translation>
+        <translation type="obsolete">Radio seule</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Chercher et filtrer</translation>
+        <translation type="obsolete">Chercher et filtrer</translation>
     </message>
 </context>
 <context>
@@ -1192,7 +1204,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>Ouvrir le répertoire</translation>
+        <translation type="obsolete">Ouvrir le répertoire</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
@@ -1208,6 +1220,53 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>All languages</source>
         <translation>Toutes les langues</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistFilterWidget</name>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished">Éffacer</translation>
+    </message>
+    <message>
+        <source>Search:</source>
+        <translation type="obsolete">Rechercher :</translation>
+    </message>
+    <message>
+        <source>Category:</source>
+        <translation type="obsolete">Catégorie :</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="obsolete">Langue :</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="obsolete">Type :</translation>
+    </message>
+    <message>
+        <source>TV + Radio</source>
+        <translation type="unfinished">TV + Radio</translation>
+    </message>
+    <message>
+        <source>TV only</source>
+        <translation type="unfinished">TV seule</translation>
+    </message>
+    <message>
+        <source>Radio only</source>
+        <translation type="unfinished">Radio seule</translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished">Chercher et filtrer</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Toutes catégories</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Toutes les langues</translation>
     </message>
 </context>
 <context>
@@ -1367,7 +1426,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation>Titre inconnu</translation>
+        <translation type="obsolete">Titre inconnu</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2:
@@ -1381,11 +1440,11 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list file.</source>
-        <translation>Ce fichier n&apos;est pas un fichier de liste de chaînes Tano.</translation>
+        <translation type="obsolete">Ce fichier n&apos;est pas un fichier de liste de chaînes Tano.</translation>
     </message>
     <message>
         <source>The file is not a Tano TV channel list 1.1 or later.</source>
-        <translation>Ce fichier n&apos;est pas un fichier de liste de chaînes 1.1 ou supérieur.</translation>
+        <translation type="obsolete">Ce fichier n&apos;est pas un fichier de liste de chaînes 1.1 ou supérieur.</translation>
     </message>
     <message>
         <source>Once</source>
@@ -1515,7 +1574,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Tano TV old channel list files</source>
-        <translation>Anciens fichier de listes de chaînes Tano TV</translation>
+        <translation type="obsolete">Anciens fichier de listes de chaînes Tano TV</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>

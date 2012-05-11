@@ -38,6 +38,7 @@ SET(Tano_Editor_UIs
     ../src/ui/playlist/PlaylistEditor.ui
     ../src/ui/playlist/PlaylistEditorHelp.ui
     ../src/ui/playlist/PlaylistExportTvheadend.ui
+    ../src/ui/playlist/PlaylistFilterWidget.ui
     ../src/ui/playlist/PlaylistImportCSV.ui
     ../src/ui/settings-editor/SettingsEditorCommon.ui
     ../src/ui/settings-editor/SettingsEditorDialog.ui
@@ -62,6 +63,7 @@ SET(Tano_Editor_MOCs
     ../src/ui/playlist/PlaylistEditor.h
     ../src/ui/playlist/PlaylistEditorHelp.h
     ../src/ui/playlist/PlaylistExportTvheadend.h
+    ../src/ui/playlist/PlaylistFilterWidget.h
     ../src/ui/playlist/PlaylistImportCSV.h
     ../src/ui/settings-editor/SettingsEditorCommon.h
     ../src/ui/settings-editor/SettingsEditorDialog.h
@@ -115,6 +117,7 @@ SET(Tano_Editor_Srcs
     ../src/ui/playlist/PlaylistEditor.cpp
     ../src/ui/playlist/PlaylistEditorHelp.cpp
     ../src/ui/playlist/PlaylistExportTvheadend.cpp
+    ../src/ui/playlist/PlaylistFilterWidget.cpp
     ../src/ui/playlist/PlaylistImportCSV.cpp
     ../src/ui/settings-editor/SettingsEditorCommon.cpp
     ../src/ui/settings-editor/SettingsEditorDialog.cpp
