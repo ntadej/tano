@@ -50,8 +50,6 @@ QString FileDialogs::filterByType(const Tano::FileType &type)
         return QObject::tr("XMLTV file") + "(*.xml)";
     case Tano::XmltvId:
         return QObject::tr("Plain text files") + "(*.txt)";
-    case Tano::TanoOld:
-        return QObject::tr("Tano TV old channel list files") + "(*.tano *.xml)";
     default:
         return QString();
     }
@@ -92,8 +90,7 @@ File FileDialogs::openPlaylist()
     QStringList filters;
     filters << filterByType(Tano::M3U)
             << filterByType(Tano::CSV)
-            << filterByType(Tano::JS)
-            << filterByType(Tano::TanoOld);
+            << filterByType(Tano::JS);
 
     QFileDialog dialog;
     dialog.setAcceptMode(QFileDialog::AcceptOpen);

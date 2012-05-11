@@ -73,7 +73,8 @@ SET(Tano_Container_MOCs
 
 SET(Tano_Core_MOCs
     core/ChannelSelect.h
-    core/GetFile.h
+    core/NetworkDownload.h
+    core/NetworkRequest.h
     core/ListItem.h
     core/ListModel.h
     core/Print.h
@@ -95,7 +96,6 @@ SET(Tano_Recorder_MOCs
 SET(Tano_UI_MOCs
     ui/MainWindow.h
     ui/core/BrowseWidget.h
-    ui/core/CurrentTimeWidget.h
     ui/core/InfoBarWidget.h
     ui/core/LicenseWidget.h
     ui/core/OsdWidget.h
@@ -182,7 +182,8 @@ SET(Tano_Core_Srcs
     core/ChannelSelect.cpp
     core/Common.cpp
     core/Enums.cpp
-    core/GetFile.cpp
+    core/NetworkDownload.cpp
+    core/NetworkRequest.cpp
     core/ListItem.h
     core/ListModel.cpp
     core/LocaleManager.cpp
@@ -206,7 +207,6 @@ SET(Tano_Playlist_Srcs
     playlist/handlers/CSVHandler.cpp
     playlist/handlers/JsHandler.cpp
     playlist/handlers/M3UHandler.cpp
-    playlist/handlers/TanoHandlerOld.cpp
 )
 SET(Tano_Recorder_Srcs
     recorder/RecorderCore.cpp
@@ -219,7 +219,6 @@ SET(Tano_Recorder_Srcs
 SET(Tano_UI_Srcs
     ui/MainWindow.cpp
     ui/core/BrowseWidget.cpp
-    ui/core/CurrentTimeWidget.cpp
     ui/core/FileDialogs.cpp
     ui/core/InfoBarWidget.cpp
     ui/core/LicenseWidget.cpp
@@ -299,14 +298,12 @@ IF(UPDATE)
         ${Tano_MOCs}
 
         update/UpdateDialog.h
-        update/UpdateManager.h
     )
     SET(Tano_Srcs
         ${Tano_Srcs}
 
         update/UpdateDialog.cpp
         update/UpdateHandler.cpp
-        update/UpdateManager.cpp
     )
 ENDIF(UPDATE)
 

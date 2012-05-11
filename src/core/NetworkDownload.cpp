@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -27,23 +27,28 @@
     #include <QtGui/QMessageBox>
 #endif
 
-#include "GetFile.h"
+#include "NetworkDownload.h"
+#include "core/NetworkRequest.h"
 
-GetFile::GetFile(QObject *parent)
+NetworkDownload::NetworkDownload(QObject *parent)
     : QObject(parent),
-      _file(0) { }
+      _file(0),
+      _request(new NetworkRequest(this))
+{
+    connect(_request, SIGNAL(result(QByteArray)), this, SLOT(write(QByteArray)));
+}
 
-GetFile::~GetFile() { }
+NetworkDownload::~NetworkDownload() { }
 
-void GetFile::getFile(const QString &fileUrl,
+void NetworkDownload::getFile(const QString &fileUrl,
                       const QString &location)
 {
     if(fileUrl.isEmpty())
         return;
 
-    _url = fileUrl;
+    QUrl url = fileUrl;
 
-    QFileInfo fileInfo(_url.path());
+    QFileInfo fileInfo(url.path());
     QString fileName;
     QString path;
     if(!location.isNull()) {
@@ -64,46 +69,18 @@ void GetFile::getFile(const QString &fileUrl,
         return;
     }
 
-    startRequest(_url);
+    _request->getRequest(url);
 }
 
-void GetFile::httpReadyRead()
+void NetworkDownload::write(const QByteArray &data)
 {
-    if (_file)
-        _file->write(_nreply->readAll());
-}
+    if (!_file)
+        return;
 
-void GetFile::httpRequestFinished()
-{
+    _file->write(data);
     _file->flush();
     _file->close();
 
-    QVariant redirectionTarget = _nreply->attribute(QNetworkRequest::RedirectionTargetAttribute);
-    if (_nreply->error()) {
-        _file->remove();
-        QMessageBox::information(0, tr("Tano"),
-                                 tr("Download failed: %1.")
-                                 .arg(_nreply->errorString()));
-    } else if (!redirectionTarget.isNull()) {
-        _url = _url.resolved(redirectionTarget.toUrl());
-        _nreply->deleteLater();
-        _file->open(QIODevice::WriteOnly);
-        _file->resize(0);
-        startRequest(_url);
-        return;
-    } else {
-        emit file(_file->fileName());
-    }
-
-    disconnect(_nreply, SIGNAL(readyRead()), this, SLOT(httpReadyRead()));
-    disconnect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
-    _nreply->deleteLater();
+    emit file(_file->fileName());
     delete _file;
-}
-
-void GetFile::startRequest(const QUrl &url)
-{
-    _nreply = _nam.get(QNetworkRequest(url));
-    connect(_nreply, SIGNAL(readyRead()), this, SLOT(httpReadyRead()));
-    connect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
 }

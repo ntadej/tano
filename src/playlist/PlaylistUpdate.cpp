@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/GetFile.h"
+#include "core/NetworkDownload.h"
 #include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "playlist/PlaylistUpdate.h"
@@ -47,7 +47,7 @@ void PlaylistUpdate::update(const QString &playlist)
 
     QScopedPointer<Settings> settings(new Settings(this));
     if (settings->playlistUpdate()) {
-        _downloader = new GetFile(this);
+        _downloader = new NetworkDownload(this);
         connect(_downloader, SIGNAL(file(QString)), this, SLOT(processPlaylist(QString)));
         _downloader->getFile(settings->playlistUpdateUrl());
     }

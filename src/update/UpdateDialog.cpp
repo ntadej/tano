@@ -16,23 +16,29 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtGui/QDialogButtonBox>
+#include <QtCore/QTextCodec>
+#include <QtXml/QXmlInputSource>
+#include <QtXml/QXmlSimpleReader>
 
 #include "core/Common.h"
+#include "core/NetworkRequest.h"
 
 #include "UpdateDialog.h"
 #include "ui_UpdateDialog.h"
 
 UpdateDialog::UpdateDialog(QWidget *parent)
     : QDialog(parent),
-    ui(new Ui::UpdateDialog),
-    _update(new UpdateManager(this)),
-    _silent(true)
+      ui(new Ui::UpdateDialog),
+      _codec(QTextCodec::codecForName("UTF-8")),
+      _handler(new UpdateHandler()),
+      _request(new NetworkRequest(this)),
+      _silent(true)
 {
     ui->setupUi(this);
 
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton *)), this, SLOT(action(QAbstractButton *)));
-    connect(_update, SIGNAL(updateInfo(QStringList, UpdateInfo)), this, SLOT(processUpdate(QStringList, UpdateInfo)));
+
+    connect(_request, SIGNAL(result(QByteArray)), this, SLOT(readUpdates(QByteArray)));
 }
 
 UpdateDialog::~UpdateDialog()
@@ -71,13 +77,13 @@ void UpdateDialog::action(QAbstractButton *button)
 void UpdateDialog::check()
 {
     _silent = false;
-    _update->getUpdates();
+    _request->getRequest(QUrl("http://update.tano.si/player/update.xml"));
 }
 
 void UpdateDialog::checkSilent()
 {
     _silent = true;
-    _update->getUpdates();
+    _request->getRequest(QUrl("http://update.tano.si/player/update.xml"));
 }
 
 void UpdateDialog::processUpdate(const QStringList &update,
@@ -103,6 +109,45 @@ void UpdateDialog::processUpdate(const QStringList &update,
 
     if(!_silent)
         exec();
+}
+
+void UpdateDialog::readUpdates(const QByteArray &data)
+{
+    QString string = _codec->toUnicode(data);
+
+    QXmlSimpleReader reader;
+    reader.setContentHandler(_handler);
+    reader.setErrorHandler(_handler);
+
+    QXmlInputSource xmlInputSource;
+    xmlInputSource.setData(string);
+    if (!reader.parse(xmlInputSource))
+        return;
+
+    QStringList updatesList;
+    QList<UpdateInfo> list = _handler->updateInfo();
+    UpdateInfo info;
+
+    foreach (UpdateInfo item, list) {
+        if(Tano::version() == item.version && item.development) {
+            updatesList << "development" << item.version;
+            continue;
+        } else if(Tano::version() == item.version && !item.development) {
+            updatesList << "latest";
+            break;
+        } else if(Tano::version() != item.version && item.development) {
+            continue;
+        } else if(Tano::version() != item.version && !item.development) {
+            if(!updatesList.isEmpty()) {
+                updatesList << item.version;
+            } else {
+                updatesList << "update" << item.version;
+                info = item;
+            }
+        }
+    }
+
+    processUpdate(updatesList, info);
 }
 
 QString UpdateDialog::generateUrl(const QString &version)

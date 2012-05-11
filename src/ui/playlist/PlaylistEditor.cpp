@@ -248,7 +248,6 @@ void PlaylistEditor::open(const QString &playlist,
     {
     case Tano::M3U:
     case Tano::JS:
-    case Tano::TanoOld:
         _model->open(file.path, refresh, file.type);
         break;
     case Tano::CSV:

@@ -49,6 +49,7 @@ SET(Tano_Editor_MOCs
     ../src/container/core/Channel.h
     ../src/core/ListItem.h
     ../src/core/ListModel.h
+    ../src/core/NetworkRequest.h
     ../src/core/Print.h
     ../src/playlist/PlaylistFilterModel.h
     ../src/playlist/PlaylistModel.h
@@ -85,6 +86,7 @@ SET(Tano_Editor_Srcs
     ../src/core/Enums.cpp
     ../src/core/ListModel.cpp
     ../src/core/LocaleManager.cpp
+    ../src/core/NetworkRequest.cpp
     ../src/core/Print.cpp
     ../src/core/Settings.cpp
     ../src/core/SettingsDefaults.cpp
@@ -102,7 +104,6 @@ SET(Tano_Editor_Srcs
     ../src/playlist/handlers/CSVHandler.cpp
     ../src/playlist/handlers/JsHandler.cpp
     ../src/playlist/handlers/M3UHandler.cpp
-    ../src/playlist/handlers/TanoHandlerOld.cpp
 
     ../src/ui/core/BrowseWidget.cpp
     ../src/ui/core/FileDialogs.cpp
@@ -148,14 +149,12 @@ IF(UPDATE)
         ${Tano_Editor_MOCs}
 
         ../src/update/UpdateDialog.h
-        ../src/update/UpdateManager.h
     )
     SET(Tano_Editor_Srcs
         ${Tano_Editor_Srcs}
 
         ../src/update/UpdateDialog.cpp
         ../src/update/UpdateHandler.cpp
-        ../src/update/UpdateManager.cpp
     )
 ENDIF(UPDATE)
 

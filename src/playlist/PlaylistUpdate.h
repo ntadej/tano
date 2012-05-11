@@ -22,7 +22,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
-class GetFile;
+class NetworkDownload;
 class PlaylistModel;
 
 class PlaylistUpdate : public QObject
@@ -41,7 +41,7 @@ private:
     PlaylistModel *_model;
     QString _playlist;
 
-    GetFile *_downloader;
+    NetworkDownload *_downloader;
 };
 
 #endif // TANO_PLAYLISTUPDATE_H_

@@ -41,7 +41,7 @@
 #include "container/core/Timer.h"
 #include "core/ChannelSelect.h"
 #include "core/Common.h"
-#include "core/GetFile.h"
+#include "core/NetworkDownload.h"
 #include "core/LocaleManager.h"
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
@@ -74,7 +74,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::MainWindow),
       _select(0),
-      _file(new GetFile()),
+      _file(new NetworkDownload()),
       _locale(new LocaleManager()),
       _model(new PlaylistModel(this)),
       _modelUpdate(new PlaylistUpdate(_model)),
@@ -190,10 +190,7 @@ void MainWindow::createGui()
     openPlaylist(true);
     setPlayingState(Vlc::Idle);
     ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
-    ui->statusBar->addPermanentWidget(ui->timeWidget);
-    ui->statusBar->addPermanentWidget(ui->buttonUpdate);
     ui->toolBarRecorder->hide();
-    ui->buttonUpdate->hide();
     ui->scheduleWidget->setIdentifier(Tano::Main);
 }
 
@@ -368,9 +365,8 @@ void MainWindow::createConnections()
     connect(_epgShow, SIGNAL(requestPrevious(XmltvProgramme *)), _xmltv, SLOT(requestProgrammePrevious(XmltvProgramme*)));
 
 #if UPDATE
+    connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
     connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
-    connect(_update, SIGNAL(newUpdate()), ui->buttonUpdate, SLOT(show()));
-    connect(ui->buttonUpdate, SIGNAL(clicked()), _update, SLOT(check()));
 #endif
 
     connect(_file, SIGNAL(file(QString)), _osdMain, SLOT(setLogo(QString)));
@@ -542,12 +538,6 @@ void MainWindow::setPlayingState(const Vlc::State &state)
         ui->actionPlay->setToolTip(tr("Play"));
         ui->actionMute->setEnabled(false);
         ui->actionTeletext->setEnabled(false);
-    }
-
-    if (state == Vlc::Buffering) {
-        ui->statusBar->showMessage(tr("Buffering..."));
-    } else {
-        ui->statusBar->clearMessage();
     }
 }
 
@@ -842,6 +832,8 @@ void MainWindow::showVideo(const bool &enabled)
     } else {
         ui->stackedWidget->setCurrentIndex(0);
     }
+
+    ui->actionFullscreen->setEnabled(enabled);
 }
 
 void MainWindow::teletext(const bool &enabled)
@@ -915,4 +907,9 @@ void MainWindow::recordProgramme(XmltvProgramme *programme)
     recorder(true);
 
     ui->recorder->newTimerFromSchedule(programme);
+}
+
+void MainWindow::updateAvailable()
+{
+    ui->toolBar->insertAction(ui->actionExit, ui->actionUpdate);
 }

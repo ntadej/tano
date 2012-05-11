@@ -20,7 +20,6 @@
 #include "playlist/handlers/CSVHandler.h"
 #include "playlist/handlers/JsHandler.h"
 #include "playlist/handlers/M3UHandler.h"
-#include "playlist/handlers/TanoHandlerOld.h"
 
 PlaylistOpen::PlaylistOpen() { }
 
@@ -50,26 +49,6 @@ void PlaylistOpen::openM3UFile(const QString &file)
 {
     QScopedPointer<M3UHandler> open(new M3UHandler());
     open->processFile(file);
-
-    _list = open->channelList();
-    _name = open->name();
-}
-
-void PlaylistOpen::openTanoOldFile(const QString &file)
-{
-    QScopedPointer<TanoHandlerOld> open(new TanoHandlerOld());
-
-    QXmlSimpleReader reader;
-    reader.setContentHandler(open.data());
-    reader.setErrorHandler(open.data());
-
-    QFile f(file);
-    if (!f.open(QFile::ReadOnly | QFile::Text))
-        return;
-
-    QXmlInputSource xmlInputSource(&f);
-    if (!reader.parse(xmlInputSource))
-        return;
 
     _list = open->channelList();
     _name = open->name();

@@ -16,42 +16,34 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDateTime>
+#ifndef TANO_NETWORKDOWNLOAD_H_
+#define TANO_NETWORKDOWNLOAD_H_
 
-#if defined(Qt5)
-    #include <QtWidgets/QHBoxLayout>
-    #include <QtWidgets/QLabel>
-#elif defined(Qt4)
-    #include <QtGui/QHBoxLayout>
-    #include <QtGui/QLabel>
-#endif
+#include <QtCore/QFile>
+#include <QtCore/QPointer>
 
-#include "ui/core/CurrentTimeWidget.h"
+class NetworkRequest;
 
-CurrentTimeWidget::CurrentTimeWidget(QWidget *parent)
-     : QWidget(parent)
+class NetworkDownload : public QObject
 {
-     _time = new QLabel(this);
+Q_OBJECT
+public:
+	NetworkDownload(QObject *parent = 0);
+	~NetworkDownload();
 
-     QHBoxLayout *layout = new QHBoxLayout;
-     layout->addWidget(_time);
-     layout->setSpacing(0);
-     layout->setMargin(0);
-     setLayout(layout);
+	void getFile(const QString &fileUrl,
+				 const QString &location = 0);
 
-     _timer = new QTimer(this);
-     connect(_timer, SIGNAL(timeout()), this, SLOT(updateTime()));
+signals:
+	void file(const QString &);
 
-     _timer->start(500);
-}
+private slots:
+	void write(const QByteArray &data);
 
-CurrentTimeWidget::~CurrentTimeWidget()
-{
-     delete _time;
-     delete _timer;
-}
+private:
+    QPointer<QFile> _file;
 
-void CurrentTimeWidget::updateTime()
-{
-     _time->setText("<b>" + QDateTime::currentDateTime().toString("dddd, d.M.yyyy, hh:mm:ss") + "</b>");
-}
+    NetworkRequest *_request;
+};
+
+#endif // TANO_NETWORKDOWNLOAD_H_

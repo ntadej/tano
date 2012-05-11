@@ -226,7 +226,7 @@
               <x>0</x>
               <y>0</y>
               <width>250</width>
-              <height>240</height>
+              <height>297</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -293,29 +293,6 @@
        </widget>
       </widget>
      </item>
-     <item>
-      <widget class="CurrentTimeWidget" name="timeWidget" native="true"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="buttonUpdate">
-       <property name="maximumSize">
-        <size>
-         <width>25</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="icon">
-        <iconset resource="../../data/icons.qrc">
-         <normaloff>:/icons/24x24/update_alert.png</normaloff>:/icons/24x24/update_alert.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>24</width>
-         <height>24</height>
-        </size>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
   </widget>
@@ -346,7 +323,6 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="toolBarRecorder">
    <property name="windowTitle">
     <string>Recorder Toolbar</string>
@@ -724,6 +700,16 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>VlcVideoWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">vlc-qt/VideoWidget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>fullscreen()</signal>
+    <slot>toggleFullscreen()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
    <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
    <header>ui/playlist/PlaylistDisplayWidget.h</header>
@@ -736,25 +722,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>VlcVideoWidget</class>
-   <extends>QWidget</extends>
-   <header location="global">vlc-qt/VideoWidget.h</header>
-   <container>1</container>
-   <slots>
-    <signal>fullscreen()</signal>
-    <slot>toggleFullscreen()</slot>
-   </slots>
-  </customwidget>
-  <customwidget>
    <class>Recorder</class>
    <extends>QWidget</extends>
    <header>ui/recorder/Recorder.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>CurrentTimeWidget</class>
-   <extends>QWidget</extends>
-   <header>ui/core/CurrentTimeWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

@@ -43,7 +43,6 @@ namespace Tano
         M3UClean = 11,
         M3UUdpxy = 12,
         Subtitles = 3,
-        TanoOld = 40,
         Url = 2,
         XmltvFile = 30,
         XmltvId = 31

@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 #include "container/xmltv/XmltvProgramme.h"
-#include "core/GetFile.h"
+#include "core/NetworkDownload.h"
 #include "xmltv/XmltvCrewFilterModel.h"
 #include "xmltv/XmltvCrewModel.h"
 
@@ -27,7 +27,7 @@
 EpgShow::EpgShow(QWidget *parent)
     : QWidget(parent),
     ui(new Ui::EpgShow),
-    _image(new GetFile())
+    _image(new NetworkDownload())
 {
     ui->setupUi(this);
 

@@ -43,7 +43,7 @@ class Channel;
 class ChannelSelect;
 class EpgScheduleFull;
 class EpgShow;
-class GetFile;
+class NetworkDownload;
 class LocaleManager;
 class MenuAspectRatio;
 class MenuCropRatio;
@@ -88,6 +88,7 @@ private slots:
     void exit();
     void aboutTano();
     void donate();
+    void updateAvailable();
 
     void showSchedule();
     void showSettings();
@@ -168,7 +169,7 @@ private:
 
     //Main
     ChannelSelect *_select;
-    GetFile *_file;
+    NetworkDownload *_file;
     LocaleManager *_locale;
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;

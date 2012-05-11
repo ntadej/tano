@@ -34,7 +34,7 @@
 extern bool loadXmltvStart(XmltvHandler *handler,
                            const QString &location);
 
-class GetFile;
+class NetworkDownload;
 
 class XmltvChannel;
 class XmltvChannelsModel;
@@ -84,7 +84,7 @@ private:
     Tano::Id _currentIdentifier;
     QString _currentXmltvId;
 
-    GetFile *_downloader;
+    NetworkDownload *_downloader;
     XmltvHandler *_handler;
     QTimer *_timer;
     QFutureWatcher<bool> *_watcher;

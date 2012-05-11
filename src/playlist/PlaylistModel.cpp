@@ -205,9 +205,6 @@ void PlaylistModel::open(const QString &file,
     case Tano::M3U:
         _open->openM3UFile(file);
         break;
-    case Tano::TanoOld:
-        _open->openTanoOldFile(file);
-        break;
     default:
         break;
     }

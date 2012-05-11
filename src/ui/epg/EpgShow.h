@@ -30,7 +30,7 @@ namespace Ui
 	class EpgShow;
 }
 
-class GetFile;
+class NetworkDownload;
 class XmltvCrewFilterModel;
 class XmltvProgramme;
 
@@ -65,7 +65,7 @@ private:
 	XmltvProgramme *_current;
 	XmltvCrewFilterModel *_crew;
 
-	GetFile *_image;
+	NetworkDownload *_image;
 };
 
 #endif // TANO_EPGSHOW_H_

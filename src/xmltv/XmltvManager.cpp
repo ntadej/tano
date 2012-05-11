@@ -26,7 +26,7 @@
 #include "container/xmltv/XmltvList.h"
 #include "container/xmltv/XmltvProgramme.h"
 #include "core/Common.h"
-#include "core/GetFile.h"
+#include "core/NetworkDownload.h"
 #include "core/Settings.h"
 #include "xmltv/XmltvCommon.h"
 #include "xmltv/XmltvChannelsModel.h"
@@ -195,7 +195,7 @@ void XmltvManager::updateWeb(const QString &location,
     if (file.exists())
         file.remove();
 
-    _downloader = new GetFile(this);
+    _downloader = new NetworkDownload(this);
     connect(_downloader, SIGNAL(file(QString)), this, SLOT(loadXmltvInit()));
     _downloader->getFile(url, location);
 }

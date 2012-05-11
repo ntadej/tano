@@ -16,40 +16,45 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_GETFILE_H_
-#define TANO_GETFILE_H_
+#ifndef TANO_NETWORKREQUEST_H_
+#define TANO_NETWORKREQUEST_H_
 
-#include <QtCore/QFile>
-#include <QtCore/QPointer>
 #include <QtCore/QUrl>
 #include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkReply>
 
-class QNetworkReply;
-
-class GetFile : public QObject
+class NetworkRequest : public QObject
 {
 Q_OBJECT
 public:
-	GetFile(QObject *parent = 0);
-	~GetFile();
+	NetworkRequest(QObject *parent = 0);
+	~NetworkRequest();
 
-	void getFile(const QString &fileUrl,
-				 const QString &location = 0);
+	void getRequest(const QNetworkRequest &request);
+	void getRequest(const QUrl &url);
+	void postRequest(const QNetworkRequest &request,
+					 const QByteArray &data);
 
 signals:
-	void file(const QString &);
+	void error(const int &);
+	void result(const QByteArray &);
 
 private slots:
-	void httpReadyRead();
+	void httpError(const QNetworkReply::NetworkError &err);
 	void httpRequestFinished();
 
 private:
-    void startRequest(const QUrl &url);
+	void startRequest(const QNetworkRequest &request,
+					  const QByteArray &data = 0);
 
-    QPointer<QFile> _file;
-    QNetworkAccessManager _nam;
+	QNetworkAccessManager _nam;
 	QNetworkReply *_nreply;
+
+	QByteArray _currentData;
+	QNetworkRequest _currentRequest;
+	QByteArray _currentResult;
+
 	QUrl _url;
 };
 
-#endif // TANO_GETFILE_H_
+#endif // MEEPLUS_NETWORKREQUEST_H_

@@ -24,13 +24,16 @@
 #elif defined(Qt4)
     #include <QtGui/QDialog>
 #endif
-#include "update/UpdateManager.h"
+
+#include "update/UpdateHandler.h"
+
+class QAbstractButton;
+
+class NetworkRequest;
 
 namespace Ui {
     class UpdateDialog;
 }
-
-class QAbstractButton;
 
 class UpdateDialog : public QDialog
 {
@@ -53,13 +56,16 @@ private slots:
     void action(QAbstractButton *button);
     void processUpdate(const QStringList &update,
                        const UpdateInfo &info);
+    void readUpdates(const QByteArray &data);
 
 private:
-    Ui::UpdateDialog *ui;
-
     QString generateUrl(const QString &version);
 
-    UpdateManager *_update;
+    Ui::UpdateDialog *ui;
+
+    QTextCodec *_codec;
+    UpdateHandler *_handler;
+    NetworkRequest *_request;
 
     bool _silent;
 };

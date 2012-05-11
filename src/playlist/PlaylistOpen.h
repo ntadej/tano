@@ -37,7 +37,6 @@ public:
                      const CSVInfo &info);
     void openJsFile(const QString &file);
     void openM3UFile(const QString &file);
-    void openTanoOldFile(const QString &file);
 
 private:
     QList<Channel *> _list;
