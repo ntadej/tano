@@ -102,7 +102,7 @@ void RecorderInfoWidget::recordingInfo(Timer *timer)
     qreal duration = timer->startTime().secsTo(timer->endTime());
 
     QString bold("<b>%1</b>");
-    ui->valueRName->setText(bold.arg(timer->name()));
+    ui->groupRecording->setTitle(timer->name());
     ui->valueRChannel->setText(bold.arg(timer->channel()));
     ui->valueRTime->setText(bold.arg(QString("%1 %2 %3").arg(timer->date().toString("dd.MM.yyyy"), tr("at"), timer->startTime().toString("hh:mm"))));
     ui->valueRDuration->setText(bold.arg(QTime(0, qCeil(duration/60)).toString("hh:mm")));

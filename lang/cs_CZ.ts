@@ -253,6 +253,17 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
 </context>
 <context>
+    <name>Form</name>
+    <message>
+        <source>Recordings</source>
+        <translation type="obsolete">Nahrávky</translation>
+    </message>
+    <message>
+        <source>Timers</source>
+        <translation type="obsolete">Časovače</translation>
+    </message>
+</context>
+<context>
     <name>GetFile</name>
     <message>
         <source>Tano</source>
@@ -1410,7 +1421,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Hledat a filtrovat</translation>
+        <translation type="obsolete">Hledat a filtrovat</translation>
     </message>
     <message>
         <source>All categories</source>
@@ -2020,7 +2031,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation>Vybraný kanál:</translation>
+        <translation type="obsolete">Vybraný kanál:</translation>
     </message>
     <message>
         <source>Directory:</source>
@@ -2032,7 +2043,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Nahrávat</translation>
+        <translation type="obsolete">Nahrávat</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2076,23 +2087,23 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>Rychlý záznam</translation>
+        <translation type="obsolete">Rychlý záznam</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation>Název nahrávky:</translation>
+        <translation type="obsolete">Název nahrávky:</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Zpět</translation>
+        <translation type="obsolete">Zpět</translation>
     </message>
     <message>
         <source>Recordings</source>
-        <translation>Nahrávky</translation>
+        <translation type="unfinished">Nahrávky</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation>Časovače</translation>
+        <translation type="unfinished">Časovače</translation>
     </message>
     <message>
         <source>Quick %1</source>
@@ -2100,19 +2111,19 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Přidat časovač</translation>
+        <translation type="obsolete">Přidat časovač</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation>Název časovače:</translation>
+        <translation type="obsolete">Název časovače:</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation>Přidat nový časovač</translation>
+        <translation type="obsolete">Přidat nový časovač</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation>Vyberte, prosím, program.</translation>
+        <translation type="obsolete">Vyberte, prosím, program.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
@@ -2124,16 +2135,12 @@ Have you already moved or deleted it?</source>
         <translation>Soubor nelze odstranit.
 Již jste jej přesunul nebo smazal?</translation>
     </message>
-    <message>
-        <source>You don&apos;t have this channel in your playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
     <message>
         <source>Status</source>
-        <translation type="obsolete">Stav</translation>
+        <translation type="unfinished">Stav</translation>
     </message>
     <message>
         <source>Recording to file:</source>
@@ -2177,7 +2184,7 @@ Již jste jej přesunul nebo smazal?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Status&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Stav&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Stav&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Channel:</source>
@@ -2224,6 +2231,61 @@ Tuto operaci nelze vrátit zpět.</translation>
     <message>
         <source>Save</source>
         <translation>Uložit</translation>
+    </message>
+    <message>
+        <source>Edit timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderNewDialog</name>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished">Rychlý záznam</translation>
+    </message>
+    <message>
+        <source>Selected channel:</source>
+        <translation type="unfinished">Vybraný kanál:</translation>
+    </message>
+    <message>
+        <source>Recording name:</source>
+        <translation type="unfinished">Název nahrávky:</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished">Nahrávat</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Zpět</translation>
+    </message>
+    <message>
+        <source>Add timer</source>
+        <translation type="unfinished">Přidat časovač</translation>
+    </message>
+    <message>
+        <source>Timer name:</source>
+        <translation type="unfinished">Název časovače:</translation>
+    </message>
+    <message>
+        <source>Add new timer</source>
+        <translation type="unfinished">Přidat nový časovač</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please, select a channel.</source>
+        <translation type="unfinished">Vyberte, prosím, program.</translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New recording</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3425,7 +3487,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Hledat:</translation>
+        <translation type="obsolete">Hledat:</translation>
     </message>
 </context>
 <context>

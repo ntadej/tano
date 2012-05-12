@@ -296,6 +296,21 @@ Vaša različica VLC-Qt: %4
     </message>
 </context>
 <context>
+    <name>Form</name>
+    <message>
+        <source>Recorder</source>
+        <translation type="obsolete">Snemalnik</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation type="obsolete">Posnetki</translation>
+    </message>
+    <message>
+        <source>Timers</source>
+        <translation type="obsolete">Časovniki</translation>
+    </message>
+</context>
+<context>
     <name>GetFile</name>
     <message>
         <source>Tano</source>
@@ -1537,7 +1552,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Išči in filtriraj</translation>
+        <translation type="obsolete">Išči in filtriraj</translation>
     </message>
     <message>
         <source>All categories</source>
@@ -2171,7 +2186,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Snemaj</translation>
+        <translation type="obsolete">Snemaj</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
@@ -2187,7 +2202,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation>Izbran kanal:</translation>
+        <translation type="obsolete">Izbran kanal:</translation>
     </message>
     <message>
         <source>Directory:</source>
@@ -2219,15 +2234,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>Hitro snemanje</translation>
+        <translation type="obsolete">Hitro snemanje</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation>Ime posnetka:</translation>
+        <translation type="obsolete">Ime posnetka:</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Nazaj</translation>
+        <translation type="obsolete">Nazaj</translation>
     </message>
     <message>
         <source>Recordings</source>
@@ -2243,19 +2258,19 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Dodaj časovnik</translation>
+        <translation type="obsolete">Dodaj časovnik</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation>Ime časovnika:</translation>
+        <translation type="obsolete">Ime časovnika:</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation>Dodaj nov časovnik</translation>
+        <translation type="obsolete">Dodaj nov časovnik</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation>Prosim, izberite program.</translation>
+        <translation type="obsolete">Prosim, izberite program.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
@@ -2269,14 +2284,14 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
-        <translation>Tega programa nimate v vašem seznamu.</translation>
+        <translation type="obsolete">Tega programa nimate v vašem seznamu.</translation>
     </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
     <message>
         <source>Status</source>
-        <translation type="obsolete">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <source>Recording to file:</source>
@@ -2320,7 +2335,7 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Status&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Status&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Status&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Channel:</source>
@@ -2367,6 +2382,61 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>Save</source>
         <translation>Shrani</translation>
+    </message>
+    <message>
+        <source>Edit timer</source>
+        <translation>Uredi časovnik</translation>
+    </message>
+</context>
+<context>
+    <name>RecorderNewDialog</name>
+    <message>
+        <source>Quick record</source>
+        <translation>Hitro snemanje</translation>
+    </message>
+    <message>
+        <source>Selected channel:</source>
+        <translation>Izbran kanal:</translation>
+    </message>
+    <message>
+        <source>Recording name:</source>
+        <translation>Ime posnetka:</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Snemaj</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Nazaj</translation>
+    </message>
+    <message>
+        <source>Add timer</source>
+        <translation>Dodaj časovnik</translation>
+    </message>
+    <message>
+        <source>Timer name:</source>
+        <translation>Ime časovnika:</translation>
+    </message>
+    <message>
+        <source>Add new timer</source>
+        <translation>Dodaj nov časovnik</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation>Snemalnik</translation>
+    </message>
+    <message>
+        <source>Please, select a channel.</source>
+        <translation>Prosim, izberite program.</translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
+        <translation>Tega programa nimate v vašem seznamu.</translation>
+    </message>
+    <message>
+        <source>New recording</source>
+        <translation>Novo snemanje</translation>
     </message>
 </context>
 <context>
@@ -3638,7 +3708,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Išči:</translation>
+        <translation type="obsolete">Išči:</translation>
     </message>
 </context>
 <context>

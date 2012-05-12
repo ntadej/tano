@@ -92,5 +92,9 @@
         <file>icons/16x16/media-record.png</file>
         <file>icons/16x16/clear.png</file>
         <file>icons/16x16/search.png</file>
+        <file>icons/16x16/close.png</file>
+        <file>icons/16x16/dock.png</file>
+        <file>icons/16x16/undock.png</file>
+        <file>icons/16x16/save.png</file>
     </qresource>
 </RCC>

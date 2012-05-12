@@ -185,6 +185,18 @@ msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Перший запуск Майстра налаштувань"
 
+#~ msgctxt "Form|"
+#~ msgid "Recorder"
+#~ msgstr "Записувач"
+
+#~ msgctxt "Form|"
+#~ msgid "Recordings"
+#~ msgstr "Записи"
+
+#~ msgctxt "Form|"
+#~ msgid "Timers"
+#~ msgstr "Таймери"
+
 #~ msgctxt "GetFile|"
 #~ msgid "Tano"
 #~ msgstr "Tano"
@@ -1305,10 +1317,9 @@ msgctxt "PlaylistFilterWidget|"
 msgid "Radio only"
 msgstr "Лише Радіо"
 
-#, fuzzy
-msgctxt "PlaylistFilterWidget|"
-msgid "Search and filter"
-msgstr "Шукати та відфільтрувати"
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Search and filter"
+#~ msgstr "Шукати та відфільтрувати"
 
 #, fuzzy
 msgctxt "PlaylistFilterWidget|"
@@ -1740,17 +1751,17 @@ msgctxt "Recorder|"
 msgid "Recorder"
 msgstr "Записувач"
 
-msgctxt "Recorder|"
-msgid "Selected channel:"
-msgstr "Обраний канал:"
+#~ msgctxt "Recorder|"
+#~ msgid "Selected channel:"
+#~ msgstr "Обраний канал:"
 
 #~ msgctxt "Recorder|"
 #~ msgid "Directory:"
 #~ msgstr "Тека:"
 
-msgctxt "Recorder|"
-msgid "Record"
-msgstr "Запис"
+#~ msgctxt "Recorder|"
+#~ msgid "Record"
+#~ msgstr "Запис"
 
 #~ msgctxt "Recorder|"
 #~ msgid "Status"
@@ -1789,22 +1800,24 @@ msgstr "Неможливо записати в %1."
 #~ msgid "No timer - press button to stop."
 #~ msgstr "Без таймера - натисність кнопку щоб зупинити."
 
-msgctxt "Recorder|"
-msgid "Quick record"
-msgstr "Швидкий запис"
+#~ msgctxt "Recorder|"
+#~ msgid "Quick record"
+#~ msgstr "Швидкий запис"
 
-msgctxt "Recorder|"
-msgid "Recording name:"
-msgstr "Назва запису:"
+#~ msgctxt "Recorder|"
+#~ msgid "Recording name:"
+#~ msgstr "Назва запису:"
 
-msgctxt "Recorder|"
-msgid "Back"
-msgstr "Назад"
+#~ msgctxt "Recorder|"
+#~ msgid "Back"
+#~ msgstr "Назад"
 
+#, fuzzy
 msgctxt "Recorder|"
 msgid "Recordings"
 msgstr "Записи"
 
+#, fuzzy
 msgctxt "Recorder|"
 msgid "Timers"
 msgstr "Таймери"
@@ -1814,21 +1827,21 @@ msgctxt "Recorder|"
 msgid "Quick %1"
 msgstr "Швидко %1"
 
-msgctxt "Recorder|"
-msgid "Add timer"
-msgstr "Додати таймер"
+#~ msgctxt "Recorder|"
+#~ msgid "Add timer"
+#~ msgstr "Додати таймер"
 
-msgctxt "Recorder|"
-msgid "Timer name:"
-msgstr "Назва таймеру:"
+#~ msgctxt "Recorder|"
+#~ msgid "Timer name:"
+#~ msgstr "Назва таймеру:"
 
-msgctxt "Recorder|"
-msgid "Add new timer"
-msgstr "Додати новий таймер"
+#~ msgctxt "Recorder|"
+#~ msgid "Add new timer"
+#~ msgstr "Додати новий таймер"
 
-msgctxt "Recorder|"
-msgid "Please, select a channel."
-msgstr "Будь ласка, оберіть канал."
+#~ msgctxt "Recorder|"
+#~ msgid "Please, select a channel."
+#~ msgstr "Будь ласка, оберіть канал."
 
 msgctxt "Recorder|"
 msgid "Recording not valid!"
@@ -1842,13 +1855,10 @@ msgstr ""
 "Файл не може бути видалений.\n"
 "Ви вже перемістили або видалили його?"
 
-msgctxt "Recorder|"
-msgid "You don't have this channel in your playlist."
-msgstr ""
-
-#~ msgctxt "RecorderInfoWidget|"
-#~ msgid "Status"
-#~ msgstr "Статус"
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Status"
+msgstr "Статус"
 
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Recording to file:"
@@ -1890,9 +1900,9 @@ msgctxt "RecorderInfoWidget|"
 msgid "Output:"
 msgstr "На виході:"
 
-msgctxt "RecorderInfoWidget|"
-msgid "<b>Status</b>"
-msgstr "<b>Статус</b>"
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "<b>Status</b>"
+#~ msgstr "<b>Статус</b>"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Channel:"
@@ -1941,6 +1951,68 @@ msgstr ""
 msgctxt "RecorderInfoWidget|"
 msgid "Save"
 msgstr "Зберігти"
+
+msgctxt "RecorderInfoWidget|"
+msgid "Edit timer"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Quick record"
+msgstr "Швидкий запис"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Selected channel:"
+msgstr "Обраний канал:"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Recording name:"
+msgstr "Назва запису:"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Record"
+msgstr "Запис"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Back"
+msgstr "Назад"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Add timer"
+msgstr "Додати таймер"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Timer name:"
+msgstr "Назва таймеру:"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Add new timer"
+msgstr "Додати новий таймер"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Recorder"
+msgstr "Записувач"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Please, select a channel."
+msgstr "Будь ласка, оберіть канал."
+
+msgctxt "RecorderNewDialog|"
+msgid "You don't have this channel in your playlist."
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "New recording"
+msgstr ""
 
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
@@ -2845,9 +2917,9 @@ msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Спорожнити"
 
-msgctxt "TimersDisplayWidget|"
-msgid "Search:"
-msgstr "Пошук:"
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Search:"
+#~ msgstr "Пошук:"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Timers"

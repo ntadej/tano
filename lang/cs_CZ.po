@@ -241,6 +241,14 @@ msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Průvodce prvním spuštěním"
 
+#~ msgctxt "Form|"
+#~ msgid "Recordings"
+#~ msgstr "Nahrávky"
+
+#~ msgctxt "Form|"
+#~ msgid "Timers"
+#~ msgstr "Časovače"
+
 #~ msgctxt "GetFile|"
 #~ msgid "Tano"
 #~ msgstr "Tano"
@@ -1422,10 +1430,9 @@ msgctxt "PlaylistFilterWidget|"
 msgid "Radio only"
 msgstr "Pouze rádio"
 
-#, fuzzy
-msgctxt "PlaylistFilterWidget|"
-msgid "Search and filter"
-msgstr "Hledat a filtrovat"
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Search and filter"
+#~ msgstr "Hledat a filtrovat"
 
 #, fuzzy
 msgctxt "PlaylistFilterWidget|"
@@ -2026,9 +2033,9 @@ msgctxt "Recorder|"
 msgid "Recorder"
 msgstr "Nahrávání"
 
-msgctxt "Recorder|"
-msgid "Selected channel:"
-msgstr "Vybraný kanál:"
+#~ msgctxt "Recorder|"
+#~ msgid "Selected channel:"
+#~ msgstr "Vybraný kanál:"
 
 #~ msgctxt "Recorder|"
 #~ msgid "Directory:"
@@ -2038,9 +2045,9 @@ msgstr "Vybraný kanál:"
 #~ msgid "..."
 #~ msgstr "..."
 
-msgctxt "Recorder|"
-msgid "Record"
-msgstr "Nahrávat"
+#~ msgctxt "Recorder|"
+#~ msgid "Record"
+#~ msgstr "Nahrávat"
 
 #~ msgctxt "Recorder|"
 #~ msgid "Status"
@@ -2083,22 +2090,24 @@ msgstr "Nelze zapisovat do %1."
 #~ msgid "Open directory"
 #~ msgstr "Otevřít adresář"
 
-msgctxt "Recorder|"
-msgid "Quick record"
-msgstr "Rychlý záznam"
+#~ msgctxt "Recorder|"
+#~ msgid "Quick record"
+#~ msgstr "Rychlý záznam"
 
-msgctxt "Recorder|"
-msgid "Recording name:"
-msgstr "Název nahrávky:"
+#~ msgctxt "Recorder|"
+#~ msgid "Recording name:"
+#~ msgstr "Název nahrávky:"
 
-msgctxt "Recorder|"
-msgid "Back"
-msgstr "Zpět"
+#~ msgctxt "Recorder|"
+#~ msgid "Back"
+#~ msgstr "Zpět"
 
+#, fuzzy
 msgctxt "Recorder|"
 msgid "Recordings"
 msgstr "Nahrávky"
 
+#, fuzzy
 msgctxt "Recorder|"
 msgid "Timers"
 msgstr "Časovače"
@@ -2108,21 +2117,21 @@ msgctxt "Recorder|"
 msgid "Quick %1"
 msgstr "Rychlý %1"
 
-msgctxt "Recorder|"
-msgid "Add timer"
-msgstr "Přidat časovač"
+#~ msgctxt "Recorder|"
+#~ msgid "Add timer"
+#~ msgstr "Přidat časovač"
 
-msgctxt "Recorder|"
-msgid "Timer name:"
-msgstr "Název časovače:"
+#~ msgctxt "Recorder|"
+#~ msgid "Timer name:"
+#~ msgstr "Název časovače:"
 
-msgctxt "Recorder|"
-msgid "Add new timer"
-msgstr "Přidat nový časovač"
+#~ msgctxt "Recorder|"
+#~ msgid "Add new timer"
+#~ msgstr "Přidat nový časovač"
 
-msgctxt "Recorder|"
-msgid "Please, select a channel."
-msgstr "Vyberte, prosím, program."
+#~ msgctxt "Recorder|"
+#~ msgid "Please, select a channel."
+#~ msgstr "Vyberte, prosím, program."
 
 msgctxt "Recorder|"
 msgid "Recording not valid!"
@@ -2136,13 +2145,10 @@ msgstr ""
 "Soubor nelze odstranit.\n"
 "Již jste jej přesunul nebo smazal?"
 
-msgctxt "Recorder|"
-msgid "You don't have this channel in your playlist."
-msgstr ""
-
-#~ msgctxt "RecorderInfoWidget|"
-#~ msgid "Status"
-#~ msgstr "Stav"
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Status"
+msgstr "Stav"
 
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Recording to file:"
@@ -2184,9 +2190,9 @@ msgctxt "RecorderInfoWidget|"
 msgid "Output:"
 msgstr "Výstup:"
 
-msgctxt "RecorderInfoWidget|"
-msgid "<b>Status</b>"
-msgstr "<b>Stav</b>"
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "<b>Status</b>"
+#~ msgstr "<b>Stav</b>"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Channel:"
@@ -2235,6 +2241,67 @@ msgstr ""
 msgctxt "RecorderInfoWidget|"
 msgid "Save"
 msgstr "Uložit"
+
+msgctxt "RecorderInfoWidget|"
+msgid "Edit timer"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Quick record"
+msgstr "Rychlý záznam"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Selected channel:"
+msgstr "Vybraný kanál:"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Recording name:"
+msgstr "Název nahrávky:"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Record"
+msgstr "Nahrávat"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Back"
+msgstr "Zpět"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Add timer"
+msgstr "Přidat časovač"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Timer name:"
+msgstr "Název časovače:"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Add new timer"
+msgstr "Přidat nový časovač"
+
+msgctxt "RecorderNewDialog|"
+msgid "Recorder"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Please, select a channel."
+msgstr "Vyberte, prosím, program."
+
+msgctxt "RecorderNewDialog|"
+msgid "You don't have this channel in your playlist."
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "New recording"
+msgstr ""
 
 #~ msgctxt "ScheduleListPage|"
 #~ msgid "Schedule"
@@ -3390,9 +3457,9 @@ msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Smazat"
 
-msgctxt "TimersDisplayWidget|"
-msgid "Search:"
-msgstr "Hledat:"
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Search:"
+#~ msgstr "Hledat:"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Timers"

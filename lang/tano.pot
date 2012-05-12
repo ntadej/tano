@@ -836,10 +836,6 @@ msgid "Clear"
 msgstr ""
 
 msgctxt "PlaylistFilterWidget|"
-msgid "Search and filter"
-msgstr ""
-
-msgctxt "PlaylistFilterWidget|"
 msgid "TV + Radio"
 msgstr ""
 
@@ -1250,53 +1246,9 @@ msgctxt "Recorder|"
 msgid "Recorder"
 msgstr ""
 
-msgctxt "Recorder|"
-msgid "Selected channel:"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Record"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Quick record"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Recording name:"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Back"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Recordings"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Timers"
-msgstr ""
-
 #, qt-format
 msgctxt "Recorder|"
 msgid "Quick %1"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Add timer"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Timer name:"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Add new timer"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Please, select a channel."
 msgstr ""
 
 #, qt-format
@@ -1315,7 +1267,11 @@ msgid ""
 msgstr ""
 
 msgctxt "Recorder|"
-msgid "You don't have this channel in your playlist."
+msgid "Recordings"
+msgstr ""
+
+msgctxt "Recorder|"
+msgid "Timers"
 msgstr ""
 
 msgctxt "RecorderInfoWidget|"
@@ -1344,10 +1300,6 @@ msgstr ""
 
 msgctxt "RecorderInfoWidget|"
 msgid "Output:"
-msgstr ""
-
-msgctxt "RecorderInfoWidget|"
-msgid "<b>Status</b>"
 msgstr ""
 
 msgctxt "RecorderInfoWidget|"
@@ -1394,6 +1346,62 @@ msgstr ""
 
 msgctxt "RecorderInfoWidget|"
 msgid "Save"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Status"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Edit timer"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Quick record"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Selected channel:"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Recording name:"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Record"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Back"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Add timer"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Timer name:"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Add new timer"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Recorder"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Please, select a channel."
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "You don't have this channel in your playlist."
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "New recording"
 msgstr ""
 
 msgctxt "SettingsBackend|"
@@ -1986,10 +1994,6 @@ msgstr ""
 
 msgctxt "TimersDisplayWidget|"
 msgid "Clear"
-msgstr ""
-
-msgctxt "TimersDisplayWidget|"
-msgid "Search:"
 msgstr ""
 
 msgctxt "TimersEditorWidget|"

@@ -25,56 +25,53 @@
     #include <QtGui/QMessageBox>
 #endif
 
-#include "container/core/Channel.h"
 #include "container/core/Timer.h"
 #include "container/xmltv/XmltvProgramme.h"
 #include "core/Enums.h"
 #include "core/Settings.h"
-#include "core/Udpxy.h"
-#include "playlist/PlaylistModel.h"
 #include "recorder/RecorderCore.h"
 #include "recorder/RecorderTimeManager.h"
 #include "recorder/TimersModel.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/recorder/RecorderInfoWidget.h"
+#include "ui/recorder/RecorderNewDialog.h"
 
 #include "Recorder.h"
 #include "ui_Recorder.h"
 
 Recorder::Recorder(QWidget *parent)
-    : QStackedWidget(parent),
+    : QWidget(parent),
       ui(new Ui::Recorder),
       _actionRecord(0),
-      _currentChannel(0),
       _currentTimer(0),
-      _info(0),
       _trayIcon(0)
 {
     ui->setupUi(this);
 
-    cancel();
-
     _core = new RecorderCore(this);
+    _new = new RecorderNewDialog(this);
     _manager = new RecorderTimeManager(this);
     _model = new TimersModel(this);
-    _udpxy = new Udpxy();
 
     _manager->setTimersModel(_model);
+    _new->setTimersModel(_model);
 
     ui->listRecordings->setModel(_model, true);
     ui->listTimers->setModel(_model);
+    ui->recorderInfo->setModel(_model);
 
     // Connections
-    connect(ui->buttonNewCancel, SIGNAL(clicked()), this, SLOT(cancel()));
-    connect(ui->buttonNewTimer, SIGNAL(clicked()), this, SLOT(processNewTimer()));
-    connect(ui->buttonQuickCancel, SIGNAL(clicked()), this, SLOT(cancel()));
-    connect(ui->buttonQuickRecord, SIGNAL(clicked()), this, SLOT(processQuickRecord()));
-
-	connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
-
     connect(_core, SIGNAL(timerStop()), this, SLOT(recordStop()));
 
     connect(_manager, SIGNAL(timer(Timer *)), this, SLOT(recordStart(Timer *)));
+
+    connect(_core, SIGNAL(elapsed(int)), ui->recorderInfo, SLOT(time(int)));
+    connect(ui->listRecordings, SIGNAL(itemSelected(Timer *)), ui->recorderInfo, SLOT(recordingInfo(Timer *)));
+    connect(ui->listTimers, SIGNAL(itemSelected(Timer *)), ui->recorderInfo, SLOT(timerInfo(Timer *)));
+    connect(ui->recorderInfo, SIGNAL(deleteRecording(Timer *)), this, SLOT(recordingDelete(Timer *)));
+    connect(ui->recorderInfo, SIGNAL(deleteTimer(Timer *)), this, SLOT(timerDelete(Timer *)));
+    connect(ui->recorderInfo, SIGNAL(playRecording(Timer *)), this, SIGNAL(play(Timer *)));
+    connect(ui->recorderInfo, SIGNAL(saveTimer(Timer *)), this, SLOT(timerSave(Timer *)));
 }
 
 Recorder::~Recorder()
@@ -87,7 +84,7 @@ Recorder::~Recorder()
 
 void Recorder::changeEvent(QEvent *e)
 {
-    QStackedWidget::changeEvent(e);
+    QWidget::changeEvent(e);
     switch (e->type()) {
         case QEvent::LanguageChange:
             ui->retranslateUi(this);
@@ -97,21 +94,12 @@ void Recorder::changeEvent(QEvent *e)
     }
 }
 
-void Recorder::cancel()
-{
-    setCurrentIndex(0);
-
-    ui->quickBox->hide();
-    ui->timerBox->hide();
-}
-
 void Recorder::createSettings()
 {
     QScopedPointer<Settings> settings(new Settings(this));
     _directory = settings->recorderDirectory();
 
     _core->setDefaultOutputPath(_directory);
-    _udpxy->createSettings();
 }
 
 bool Recorder::isRecording() const
@@ -122,84 +110,29 @@ bool Recorder::isRecording() const
 Timer *Recorder::newInstantTimer(const QString &channel,
                                  const QString &url)
 {
-    Timer *timer = _model->createTimer(tr("Quick %1").arg(channel), channel, _udpxy->processUrl(url), Tano::Instant);
+    Timer *timer = _model->createTimer(tr("Quick %1").arg(channel), channel, url, Tano::Instant);
 
     return timer;
 }
 
 void Recorder::newTimer()
 {
-    ui->timerBox->show();
-
-    setCurrentIndex(1);
+    _new->newTimer();
+    if (_new->exec())
+        ui->recorderInfo->timerInfo(_new->timer());
 }
 
 void Recorder::newTimerFromSchedule(XmltvProgramme *programme)
 {
-    ui->playlistWidget->channelSelected(programme->channel());
-
-    if (!_currentChannel) {
-        QMessageBox::critical(this, tr("Recorder"),
-                    tr("You don't have this channel in your playlist."));
-        return;
-    }
-
-    Timer *timer = _model->createTimer(programme->title(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
-    timer->setState(Tano::Disabled);
-    timer->setDate(programme->start().date());
-    timer->setStartTime(programme->start().time());
-    timer->setEndTime(programme->stop().time());
-
-    _info->timerInfo(timer);
-
-    cancel();
+    _new->newTimerFromSchedule(programme);
+    ui->recorderInfo->timerInfo(_new->timer());
 }
-
-void Recorder::playlist(Channel *channel)
-{
-    _currentChannel = channel;
-
-    ui->valueSelectedNew->setText("<b>" + channel->name() + "</b>");
-    ui->valueSelectedQuick->setText("<b>" + channel->name() + "</b>");
-}
-
-void Recorder::processNewTimer()
-{
-    if (!_currentChannel) {
-        QMessageBox::critical(this, tr("Recorder"),
-                    tr("Please, select a channel."));
-        return;
-    }
-
-    Timer *timer = _model->createTimer(ui->editNameNew->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
-    timer->setState(Tano::Disabled);
-
-    _info->timerInfo(timer);
-
-    cancel();
-}
-
-void Recorder::processQuickRecord()
-{
-    if (!_currentChannel) {
-        QMessageBox::critical(this, tr("Recorder"),
-                    tr("Please, select a channel."));
-        return;
-    }
-
-    Timer *timer = _model->createTimer(ui->editNameQuick->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Tano::Instant);
-
-    recordStart(timer);
-
-    cancel();
-}
-
 
 void Recorder::quickRecord()
 {
-    ui->quickBox->show();
-
-    setCurrentIndex(1);
+    _new->newQuick();
+    if (_new->exec())
+        recordStart(_new->timer());
 }
 
 void Recorder::recordStart(Timer *timer)
@@ -225,9 +158,9 @@ void Recorder::recordStart(Timer *timer)
     _core->record(timer);
 
     if (_core->isTimer())
-        _info->start(timer->name(), timer->channel(), timer->file(), timer->endTime().toString("hh:mm"));
+        ui->recorderInfo->start(timer->name(), timer->channel(), timer->file(), timer->endTime().toString("hh:mm"));
     else
-        _info->start(timer->name(), timer->channel(), timer->file());
+        ui->recorderInfo->start(timer->name(), timer->channel(), timer->file());
 
     if (_actionRecord)
         _actionRecord->setEnabled(true);
@@ -250,7 +183,7 @@ void Recorder::recordStop()
 
     _core->stop();
 
-    _info->stop();
+    ui->recorderInfo->stop();
     if (_actionRecord)
         _actionRecord->setEnabled(false);
 
@@ -307,7 +240,7 @@ void Recorder::recordingDelete(Timer *recording)
 
 void Recorder::refreshPlaylistModel()
 {
-    ui->playlistWidget->refreshModel();
+    _new->refreshPlaylistModel();
 }
 
 void Recorder::setMediaInstance(VlcInstance *instance)
@@ -317,27 +250,15 @@ void Recorder::setMediaInstance(VlcInstance *instance)
 
 void Recorder::setPlaylistModel(PlaylistModel *model)
 {
-    _playlistModel = model;
-    ui->playlistWidget->setModel(_playlistModel);
+    _new->setPlaylistModel(model);
 }
 
 void Recorder::setWidgets(QAction *action,
-                          RecorderInfoWidget *info,
                           TrayIcon *icon)
 {
     _actionRecord = action;
     connect(_actionRecord, SIGNAL(triggered()), this, SLOT(recordStop()));
-
-    _info = info;
-    _info->setAction(_actionRecord);
-    _info->setModel(_model);
-    connect(_core, SIGNAL(elapsed(int)), _info, SLOT(time(int)));
-    connect(ui->listRecordings, SIGNAL(itemSelected(Timer *)), _info, SLOT(recordingInfo(Timer *)));
-    connect(ui->listTimers, SIGNAL(itemSelected(Timer *)), _info, SLOT(timerInfo(Timer *)));
-    connect(_info, SIGNAL(deleteRecording(Timer *)), this, SLOT(recordingDelete(Timer *)));
-    connect(_info, SIGNAL(deleteTimer(Timer *)), this, SLOT(timerDelete(Timer *)));
-    connect(_info, SIGNAL(playRecording(Timer *)), this, SIGNAL(play(Timer *)));
-    connect(_info, SIGNAL(saveTimer(Timer *)), this, SLOT(timerSave(Timer *)));
+    ui->recorderInfo->setAction(_actionRecord);
 
     _trayIcon = icon;
 }

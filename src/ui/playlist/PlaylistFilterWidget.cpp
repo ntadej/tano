@@ -25,12 +25,6 @@ PlaylistFilterWidget::PlaylistFilterWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->editSearch->hide();
-    ui->buttonClear->hide();
-    ui->comboType->hide();
-    ui->comboCategory->hide();
-    ui->comboLanguage->hide();
-
     connect(ui->comboCategory, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
     connect(ui->comboLanguage, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
     connect(ui->comboType, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
@@ -60,7 +54,8 @@ void PlaylistFilterWidget::changeEvent(QEvent *e)
 
 void PlaylistFilterWidget::editMode()
 {
-    ui->buttonSearch->hide();
+    ui->comboCategory->hide();
+    ui->comboLanguage->hide();
 
     ui->editSearch->show();
     ui->buttonClear->show();

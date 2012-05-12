@@ -183,6 +183,21 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
+    <name>Form</name>
+    <message>
+        <source>Recorder</source>
+        <translation type="obsolete">Записувач</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation type="obsolete">Записи</translation>
+    </message>
+    <message>
+        <source>Timers</source>
+        <translation type="obsolete">Таймери</translation>
+    </message>
+</context>
+<context>
     <name>GetFile</name>
     <message>
         <source>Tano</source>
@@ -1259,7 +1274,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Шукати та відфільтрувати</translation>
+        <translation type="obsolete">Шукати та відфільтрувати</translation>
     </message>
     <message>
         <source>All categories</source>
@@ -1701,7 +1716,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation>Обраний канал:</translation>
+        <translation type="obsolete">Обраний канал:</translation>
     </message>
     <message>
         <source>Directory:</source>
@@ -1709,7 +1724,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Record</source>
-        <translation>Запис</translation>
+        <translation type="obsolete">Запис</translation>
     </message>
     <message>
         <source>Status</source>
@@ -1749,23 +1764,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>Швидкий запис</translation>
+        <translation type="obsolete">Швидкий запис</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation>Назва запису:</translation>
+        <translation type="obsolete">Назва запису:</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation type="obsolete">Назад</translation>
     </message>
     <message>
         <source>Recordings</source>
-        <translation>Записи</translation>
+        <translation type="unfinished">Записи</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation>Таймери</translation>
+        <translation type="unfinished">Таймери</translation>
     </message>
     <message>
         <source>Quick %1</source>
@@ -1773,19 +1788,19 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Додати таймер</translation>
+        <translation type="obsolete">Додати таймер</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation>Назва таймеру:</translation>
+        <translation type="obsolete">Назва таймеру:</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation>Додати новий таймер</translation>
+        <translation type="obsolete">Додати новий таймер</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation>Будь ласка, оберіть канал.</translation>
+        <translation type="obsolete">Будь ласка, оберіть канал.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
@@ -1797,16 +1812,12 @@ Have you already moved or deleted it?</source>
         <translation>Файл не може бути видалений.
 Ви вже перемістили або видалили його?</translation>
     </message>
-    <message>
-        <source>You don&apos;t have this channel in your playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
     <message>
         <source>Status</source>
-        <translation type="obsolete">Статус</translation>
+        <translation type="unfinished">Статус</translation>
     </message>
     <message>
         <source>Recording to file:</source>
@@ -1850,7 +1861,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>&lt;b&gt;Status&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Статус&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Статус&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Channel:</source>
@@ -1897,6 +1908,61 @@ This operation is ireversible.</source>
     <message>
         <source>Save</source>
         <translation>Зберігти</translation>
+    </message>
+    <message>
+        <source>Edit timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderNewDialog</name>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished">Швидкий запис</translation>
+    </message>
+    <message>
+        <source>Selected channel:</source>
+        <translation type="unfinished">Обраний канал:</translation>
+    </message>
+    <message>
+        <source>Recording name:</source>
+        <translation type="unfinished">Назва запису:</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished">Запис</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Назад</translation>
+    </message>
+    <message>
+        <source>Add timer</source>
+        <translation type="unfinished">Додати таймер</translation>
+    </message>
+    <message>
+        <source>Timer name:</source>
+        <translation type="unfinished">Назва таймеру:</translation>
+    </message>
+    <message>
+        <source>Add new timer</source>
+        <translation type="unfinished">Додати новий таймер</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Записувач</translation>
+    </message>
+    <message>
+        <source>Please, select a channel.</source>
+        <translation type="unfinished">Будь ласка, оберіть канал.</translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New recording</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2845,7 +2911,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Пошук:</translation>
+        <translation type="obsolete">Пошук:</translation>
     </message>
 </context>
 <context>

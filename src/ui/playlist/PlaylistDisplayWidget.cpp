@@ -29,6 +29,7 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
       _current(0)
 {
     ui->setupUi(this);
+    ui->filters->hide();
 
     _filterModel = new PlaylistFilterModel(this);
     _filterModel->setDynamicSortFilter(true);
@@ -85,6 +86,12 @@ void PlaylistDisplayWidget::channelSelected(const QString &xmltvId)
 void PlaylistDisplayWidget::editMode()
 {
     ui->filters->editMode();
+    ui->filters->show();
+}
+
+PlaylistFilterWidget *PlaylistDisplayWidget::filter()
+{
+    return ui->filters;
 }
 
 void PlaylistDisplayWidget::processFilters(const QString &search,

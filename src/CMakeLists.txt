@@ -47,6 +47,7 @@ SET(Tano_UIs
     ui/playlist/PlaylistImportCSV.ui
     ui/recorder/Recorder.ui
     ui/recorder/RecorderInfoWidget.ui
+    ui/recorder/RecorderNewDialog.ui
     ui/recorder/TimersDisplayWidget.ui
     ui/recorder/TimersEditorWidget.ui
     ui/settings/SettingsBackend.ui
@@ -126,6 +127,7 @@ SET(Tano_UI_MOCs
     ui/playlist/PlaylistImportCSV.h
     ui/recorder/Recorder.h
     ui/recorder/RecorderInfoWidget.h
+    ui/recorder/RecorderNewDialog.h
     ui/recorder/TimersDisplayWidget.h
     ui/recorder/TimersEditorWidget.h
     ui/settings/SettingsBackend.h
@@ -251,6 +253,7 @@ SET(Tano_UI_Srcs
     ui/playlist/PlaylistImportCSV.cpp
     ui/recorder/Recorder.cpp
     ui/recorder/RecorderInfoWidget.cpp
+    ui/recorder/RecorderNewDialog.cpp
     ui/recorder/TimersDisplayWidget.cpp
     ui/recorder/TimersEditorWidget.cpp
     ui/settings/SettingsBackend.cpp

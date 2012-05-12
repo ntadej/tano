@@ -242,6 +242,17 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
+    <name>Form</name>
+    <message>
+        <source>Recorder</source>
+        <translation type="obsolete">Рекордер</translation>
+    </message>
+    <message>
+        <source>Timers</source>
+        <translation type="obsolete">Таймеры</translation>
+    </message>
+</context>
+<context>
     <name>GetFile</name>
     <message>
         <source>Tano</source>
@@ -1260,10 +1271,6 @@ You will lose any unsaved changes.</source>
         <translation type="obsolete">Тип:</translation>
     </message>
     <message>
-        <source>Search and filter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>All categories</source>
         <translation type="unfinished">Все категории</translation>
     </message>
@@ -1815,7 +1822,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation>Выбранный канал:</translation>
+        <translation type="obsolete">Выбранный канал:</translation>
     </message>
     <message>
         <source>Directory:</source>
@@ -1827,7 +1834,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Record</source>
-        <translation>Запись</translation>
+        <translation type="obsolete">Запись</translation>
     </message>
     <message>
         <source>Status</source>
@@ -1866,20 +1873,8 @@ You will lose any unsaved changes.</source>
         <translation type="obsolete">Таймер не определен - для останова нажмите кнопку</translation>
     </message>
     <message>
-        <source>Quick record</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recording name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Back</source>
-        <translation type="unfinished">Назад</translation>
-    </message>
-    <message>
-        <source>Recordings</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Назад</translation>
     </message>
     <message>
         <source>Timers</source>
@@ -1887,22 +1882,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Quick %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add timer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Timer name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add new timer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, select a channel.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1915,7 +1894,7 @@ Have you already moved or deleted it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You don&apos;t have this channel in your playlist.</source>
+        <source>Recordings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1923,7 +1902,7 @@ Have you already moved or deleted it?</source>
     <name>RecorderInfoWidget</name>
     <message>
         <source>Status</source>
-        <translation type="obsolete">Состояние</translation>
+        <translation type="unfinished">Состояние</translation>
     </message>
     <message>
         <source>Recording to file:</source>
@@ -1963,10 +1942,6 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Status&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2012,6 +1987,61 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderNewDialog</name>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selected channel:</source>
+        <translation type="unfinished">Выбранный канал:</translation>
+    </message>
+    <message>
+        <source>Recording name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished">Запись</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Назад</translation>
+    </message>
+    <message>
+        <source>Add timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timer name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Рекордер</translation>
+    </message>
+    <message>
+        <source>Please, select a channel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New recording</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3072,7 +3102,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Search:</source>
-        <translation type="unfinished">Поиск:</translation>
+        <translation type="obsolete">Поиск:</translation>
     </message>
 </context>
 <context>

@@ -229,6 +229,14 @@ msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Мастер начальной настройки"
 
+#~ msgctxt "Form|"
+#~ msgid "Recorder"
+#~ msgstr "Рекордер"
+
+#~ msgctxt "Form|"
+#~ msgid "Timers"
+#~ msgstr "Таймеры"
+
 #~ msgctxt "GetFile|"
 #~ msgid "Tano"
 #~ msgstr "Tano"
@@ -1273,10 +1281,6 @@ msgstr "Закрыть"
 #~ msgid "Type:"
 #~ msgstr "Тип:"
 
-msgctxt "PlaylistFilterWidget|"
-msgid "Search and filter"
-msgstr ""
-
 #, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "All categories"
@@ -1823,9 +1827,9 @@ msgctxt "Recorder|"
 msgid "Recorder"
 msgstr "Рекордер"
 
-msgctxt "Recorder|"
-msgid "Selected channel:"
-msgstr "Выбранный канал:"
+#~ msgctxt "Recorder|"
+#~ msgid "Selected channel:"
+#~ msgstr "Выбранный канал:"
 
 #~ msgctxt "Recorder|"
 #~ msgid "Directory:"
@@ -1835,9 +1839,9 @@ msgstr "Выбранный канал:"
 #~ msgid "..."
 #~ msgstr "..."
 
-msgctxt "Recorder|"
-msgid "Record"
-msgstr "Запись"
+#~ msgctxt "Recorder|"
+#~ msgid "Record"
+#~ msgstr "Запись"
 
 #~ msgctxt "Recorder|"
 #~ msgid "Status"
@@ -1876,22 +1880,9 @@ msgstr "Невозможно записать в %1."
 #~ msgid "No timer - press button to stop."
 #~ msgstr "Таймер не определен - для останова нажмите кнопку"
 
-msgctxt "Recorder|"
-msgid "Quick record"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Recording name:"
-msgstr ""
-
-#, fuzzy
-msgctxt "Recorder|"
-msgid "Back"
-msgstr "Назад"
-
-msgctxt "Recorder|"
-msgid "Recordings"
-msgstr ""
+#~ msgctxt "Recorder|"
+#~ msgid "Back"
+#~ msgstr "Назад"
 
 #, fuzzy
 msgctxt "Recorder|"
@@ -1901,22 +1892,6 @@ msgstr "Таймеры"
 #, qt-format
 msgctxt "Recorder|"
 msgid "Quick %1"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Add timer"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Timer name:"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Add new timer"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Please, select a channel."
 msgstr ""
 
 msgctxt "Recorder|"
@@ -1930,12 +1905,13 @@ msgid ""
 msgstr ""
 
 msgctxt "Recorder|"
-msgid "You don't have this channel in your playlist."
+msgid "Recordings"
 msgstr ""
 
-#~ msgctxt "RecorderInfoWidget|"
-#~ msgid "Status"
-#~ msgstr "Состояние"
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Status"
+msgstr "Состояние"
 
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Recording to file:"
@@ -1977,10 +1953,6 @@ msgstr ""
 
 msgctxt "RecorderInfoWidget|"
 msgid "Output:"
-msgstr ""
-
-msgctxt "RecorderInfoWidget|"
-msgid "<b>Status</b>"
 msgstr ""
 
 #, fuzzy
@@ -2031,6 +2003,62 @@ msgstr ""
 
 msgctxt "RecorderInfoWidget|"
 msgid "Save"
+msgstr ""
+
+msgctxt "RecorderInfoWidget|"
+msgid "Edit timer"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Quick record"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Selected channel:"
+msgstr "Выбранный канал:"
+
+msgctxt "RecorderNewDialog|"
+msgid "Recording name:"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Record"
+msgstr "Запись"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Back"
+msgstr "Назад"
+
+msgctxt "RecorderNewDialog|"
+msgid "Add timer"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Timer name:"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Add new timer"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Recorder"
+msgstr "Рекордер"
+
+msgctxt "RecorderNewDialog|"
+msgid "Please, select a channel."
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "You don't have this channel in your playlist."
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "New recording"
 msgstr ""
 
 #~ msgctxt "ScheduleListPage|"
@@ -3125,10 +3153,9 @@ msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Закрыть"
 
-#, fuzzy
-msgctxt "TimersDisplayWidget|"
-msgid "Search:"
-msgstr "Поиск:"
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Search:"
+#~ msgstr "Поиск:"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Timers"

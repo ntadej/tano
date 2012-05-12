@@ -29,6 +29,7 @@
 
 class Channel;
 class PlaylistFilterModel;
+class PlaylistFilterWidget;
 class PlaylistModel;
 
 namespace Ui
@@ -44,6 +45,7 @@ public:
     ~PlaylistDisplayWidget();
 
     Channel *currentChannel() { return _current; }
+    PlaylistFilterWidget *filter();
 
     void editMode();
     void refreshModel();

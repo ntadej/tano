@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Recorder</class>
- <widget class="QStackedWidget" name="Recorder">
+ <widget class="QWidget" name="Recorder">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>260</height>
+    <width>400</width>
+    <height>127</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,176 +15,50 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/24x24/recorder.png</normaloff>:/icons/24x24/recorder.png</iconset>
+    <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
   </property>
-  <property name="currentIndex">
-   <number>0</number>
-  </property>
-  <widget class="QWidget" name="pageMain">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QGroupBox" name="groupRecorgings">
-      <property name="title">
-       <string>Recordings</string>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="TimersDisplayWidget" name="listRecordings" native="true"/>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QGroupBox" name="groupTimers">
-      <property name="title">
-       <string>Timers</string>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="TimersDisplayWidget" name="listTimers" native="true"/>
-       </item>
-      </layout>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="pageQuick">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QGroupBox" name="quickBox">
-      <property name="title">
-       <string>Quick record</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QLabel" name="labelSelectedQuick">
-         <property name="text">
-          <string>Selected channel:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="valueSelectedQuick">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="labelNameQuick">
-         <property name="text">
-          <string>Recording name:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="editNameQuick"/>
-       </item>
-       <item row="2" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QPushButton" name="buttonQuickRecord">
-           <property name="text">
-            <string>Record</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../../../data/icons.qrc">
-             <normaloff>:/icons/16x16/media-record.png</normaloff>:/icons/16x16/media-record.png</iconset>
-           </property>
-           <property name="checked">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttonQuickCancel">
-           <property name="text">
-            <string>Back</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../../../data/icons.qrc">
-             <normaloff>:/icons/16x16/refresh.png</normaloff>:/icons/16x16/refresh.png</iconset>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="QGroupBox" name="timerBox">
-      <property name="title">
-       <string>Add timer</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="0">
-        <widget class="QLabel" name="labelSelectedNew">
-         <property name="text">
-          <string>Selected channel:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="valueSelectedNew">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="labelNameNew">
-         <property name="text">
-          <string>Timer name:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="editNameNew"/>
-       </item>
-       <item row="3" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QPushButton" name="buttonNewTimer">
-           <property name="text">
-            <string>Add new timer</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../../../data/icons.qrc">
-             <normaloff>:/icons/16x16/timer.png</normaloff>:/icons/16x16/timer.png</iconset>
-           </property>
-           <property name="checked">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttonNewCancel">
-           <property name="text">
-            <string>Back</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../../../data/icons.qrc">
-             <normaloff>:/icons/16x16/refresh.png</normaloff>:/icons/16x16/refresh.png</iconset>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item>
-     <widget class="PlaylistDisplayWidget" name="playlistWidget" native="true"/>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="1" rowspan="2">
+    <widget class="RecorderInfoWidget" name="recorderInfo" native="true">
+     <property name="maximumSize">
+      <size>
+       <width>250</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupRecorgings">
+     <property name="title">
+      <string>Recordings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="TimersDisplayWidget" name="listRecordings" native="true"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="groupTimers">
+     <property name="title">
+      <string>Timers</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="TimersDisplayWidget" name="listTimers" native="true"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PlaylistDisplayWidget</class>
+   <class>RecorderInfoWidget</class>
    <extends>QWidget</extends>
-   <header>ui/playlist/PlaylistDisplayWidget.h</header>
+   <header>ui/recorder/RecorderInfoWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

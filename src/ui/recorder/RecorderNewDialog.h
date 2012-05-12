@@ -16,83 +16,60 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDER_H_
-#define TANO_RECORDER_H_
-
-#include <QtCore/QTime>
+#ifndef TANO_RECORDERNEWDIALOG_H_
+#define TANO_RECORDERNEWDIALOG_H_
 
 #if defined(Qt5)
-    #include <QtWidgets/QWidget>
+    #include <QtWidgets/QDialog>
 #elif defined(Qt4)
-    #include <QtGui/QWidget>
+    #include <QtGui/QDialog>
 #endif
 
+class Channel;
 class PlaylistModel;
-class RecorderCore;
-class RecorderNewDialog;
-class RecorderTimeManager;
-class TrayIcon;
 class Timer;
 class TimersModel;
-class VlcInstance;
+class Udpxy;
 class XmltvProgramme;
 
-namespace Ui
-{
-    class Recorder;
+namespace Ui {
+    class RecorderNewDialog;
 }
 
-class Recorder : public QWidget
+class RecorderNewDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit Recorder(QWidget *parent = 0);
-    ~Recorder();
+    explicit RecorderNewDialog(QWidget *parent = 0);
+    ~RecorderNewDialog();
 
-    void createSettings();
-    QString directory() const { return _directory; }
-    bool isRecording() const;
-    Timer *newInstantTimer(const QString &channel,
-                           const QString &url);
     void refreshPlaylistModel();
-    void setMediaInstance(VlcInstance *instance);
     void setPlaylistModel(PlaylistModel *model);
-    void setWidgets(QAction *action,
-                    TrayIcon *icon);
-    void writeTimers();
+    void setTimersModel(TimersModel *model);
 
+    Timer *timer() { return _currentTimer; }
+
+public slots:
+    void newQuick();
+    void newTimer();
+    void newTimerFromSchedule(XmltvProgramme *programme);
+    
 protected:
     void changeEvent(QEvent *e);
 
-signals:
-    void play(Timer *);
-
-public slots:
-    void newTimer();
-    void newTimerFromSchedule(XmltvProgramme *programme);
-    void quickRecord();
-    void recordStart(Timer *timer);
-    void recordStop();
-
 private slots:
-    void recordingDelete(Timer *recording);
-    void timerDelete(Timer *timer);
-    void timerSave(Timer *timer);
+    void playlist(Channel* channel);
+    void processNewTimer();
+    void processQuickRecord();
 
 private:
-    Ui::Recorder *ui;
+    Ui::RecorderNewDialog *ui;
 
-    QAction *_actionRecord;
-
+    Channel *_currentChannel;
     Timer *_currentTimer;
 
-    QString _directory;
-
-    RecorderCore *_core;
-    RecorderNewDialog *_new;
-    RecorderTimeManager *_manager;
     TimersModel *_model;
-    TrayIcon *_trayIcon;
+    Udpxy *_udpxy;
 };
 
-#endif // TANO_RECORDER_H_
+#endif // TANO_RECORDERNEWDIALOG_H_

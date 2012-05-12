@@ -183,6 +183,21 @@ Votre version de VLC-Qt : %4</translation>
     </message>
 </context>
 <context>
+    <name>Form</name>
+    <message>
+        <source>Recorder</source>
+        <translation type="obsolete">Enregistreur</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation type="obsolete">Enregistrements</translation>
+    </message>
+    <message>
+        <source>Timers</source>
+        <translation type="obsolete">Programmateurs</translation>
+    </message>
+</context>
+<context>
     <name>GetFile</name>
     <message>
         <source>Tano</source>
@@ -1258,7 +1273,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Chercher et filtrer</translation>
+        <translation type="obsolete">Chercher et filtrer</translation>
     </message>
     <message>
         <source>All categories</source>
@@ -1700,7 +1715,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation>Chaîne sélectionnée :</translation>
+        <translation type="obsolete">Chaîne sélectionnée :</translation>
     </message>
     <message>
         <source>Directory:</source>
@@ -1708,7 +1723,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Enregistrement</translation>
+        <translation type="obsolete">Enregistrement</translation>
     </message>
     <message>
         <source>Status</source>
@@ -1748,23 +1763,23 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>Enregistrement rapide</translation>
+        <translation type="obsolete">Enregistrement rapide</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation>Nom de l&apos;enregistrement :</translation>
+        <translation type="obsolete">Nom de l&apos;enregistrement :</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Arrière</translation>
+        <translation type="obsolete">Arrière</translation>
     </message>
     <message>
         <source>Recordings</source>
-        <translation>Enregistrements</translation>
+        <translation type="unfinished">Enregistrements</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation>Programmateurs</translation>
+        <translation type="unfinished">Programmateurs</translation>
     </message>
     <message>
         <source>Quick %1</source>
@@ -1772,19 +1787,19 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Ajouter une programmation</translation>
+        <translation type="obsolete">Ajouter une programmation</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation>Nom de la programmation :</translation>
+        <translation type="obsolete">Nom de la programmation :</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation>AJouter une nouvelle programmation</translation>
+        <translation type="obsolete">AJouter une nouvelle programmation</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation>Veuillez sélectionner une chaîne.</translation>
+        <translation type="obsolete">Veuillez sélectionner une chaîne.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
@@ -1796,16 +1811,12 @@ Have you already moved or deleted it?</source>
         <translation>Le fichier ne peut pas être supprimer.
 L&apos;avez-vous déjà déplacé ou supprimer ?</translation>
     </message>
-    <message>
-        <source>You don&apos;t have this channel in your playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
     <message>
         <source>Status</source>
-        <translation type="obsolete">État</translation>
+        <translation type="unfinished">État</translation>
     </message>
     <message>
         <source>Recording to file:</source>
@@ -1849,7 +1860,7 @@ L&apos;avez-vous déjà déplacé ou supprimer ?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Status&lt;/b&gt;</source>
-        <translation>&lt;b&gt;État&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;État&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Channel:</source>
@@ -1896,6 +1907,61 @@ This operation is ireversible.</source>
     <message>
         <source>Save</source>
         <translation>Sauvegarder</translation>
+    </message>
+    <message>
+        <source>Edit timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderNewDialog</name>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished">Enregistrement rapide</translation>
+    </message>
+    <message>
+        <source>Selected channel:</source>
+        <translation type="unfinished">Chaîne sélectionnée :</translation>
+    </message>
+    <message>
+        <source>Recording name:</source>
+        <translation type="unfinished">Nom de l&apos;enregistrement :</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Arrière</translation>
+    </message>
+    <message>
+        <source>Add timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timer name:</source>
+        <translation type="unfinished">Nom de la programmation :</translation>
+    </message>
+    <message>
+        <source>Add new timer</source>
+        <translation type="unfinished">AJouter une nouvelle programmation</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Enregistreur</translation>
+    </message>
+    <message>
+        <source>Please, select a channel.</source>
+        <translation type="unfinished">Veuillez sélectionner une chaîne.</translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your playlist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New recording</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2844,7 +2910,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Search:</source>
-        <translation>Rechercher :</translation>
+        <translation type="obsolete">Rechercher :</translation>
     </message>
 </context>
 <context>

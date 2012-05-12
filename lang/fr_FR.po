@@ -183,6 +183,18 @@ msgctxt "FirstRunWizard|"
 msgid "First Run Wizard"
 msgstr "Relancer l'assistant"
 
+#~ msgctxt "Form|"
+#~ msgid "Recorder"
+#~ msgstr "Enregistreur"
+
+#~ msgctxt "Form|"
+#~ msgid "Recordings"
+#~ msgstr "Enregistrements"
+
+#~ msgctxt "Form|"
+#~ msgid "Timers"
+#~ msgstr "Programmateurs"
+
 #~ msgctxt "GetFile|"
 #~ msgid "Tano"
 #~ msgstr "Tano"
@@ -1304,10 +1316,9 @@ msgctxt "PlaylistFilterWidget|"
 msgid "Radio only"
 msgstr "Radio seule"
 
-#, fuzzy
-msgctxt "PlaylistFilterWidget|"
-msgid "Search and filter"
-msgstr "Chercher et filtrer"
+#~ msgctxt "PlaylistFilterWidget|"
+#~ msgid "Search and filter"
+#~ msgstr "Chercher et filtrer"
 
 #, fuzzy
 msgctxt "PlaylistFilterWidget|"
@@ -1740,17 +1751,17 @@ msgctxt "Recorder|"
 msgid "Recorder"
 msgstr "Enregistreur"
 
-msgctxt "Recorder|"
-msgid "Selected channel:"
-msgstr "Chaîne sélectionnée :"
+#~ msgctxt "Recorder|"
+#~ msgid "Selected channel:"
+#~ msgstr "Chaîne sélectionnée :"
 
 #~ msgctxt "Recorder|"
 #~ msgid "Directory:"
 #~ msgstr "Répertoire :"
 
-msgctxt "Recorder|"
-msgid "Record"
-msgstr "Enregistrement"
+#~ msgctxt "Recorder|"
+#~ msgid "Record"
+#~ msgstr "Enregistrement"
 
 #~ msgctxt "Recorder|"
 #~ msgid "Status"
@@ -1789,22 +1800,24 @@ msgstr "Ne peut pas écrire dans %1."
 #~ msgid "No timer - press button to stop."
 #~ msgstr "Pas de programmateur - appuyer sur un bouton pour arréter."
 
-msgctxt "Recorder|"
-msgid "Quick record"
-msgstr "Enregistrement rapide"
+#~ msgctxt "Recorder|"
+#~ msgid "Quick record"
+#~ msgstr "Enregistrement rapide"
 
-msgctxt "Recorder|"
-msgid "Recording name:"
-msgstr "Nom de l'enregistrement :"
+#~ msgctxt "Recorder|"
+#~ msgid "Recording name:"
+#~ msgstr "Nom de l'enregistrement :"
 
-msgctxt "Recorder|"
-msgid "Back"
-msgstr "Arrière"
+#~ msgctxt "Recorder|"
+#~ msgid "Back"
+#~ msgstr "Arrière"
 
+#, fuzzy
 msgctxt "Recorder|"
 msgid "Recordings"
 msgstr "Enregistrements"
 
+#, fuzzy
 msgctxt "Recorder|"
 msgid "Timers"
 msgstr "Programmateurs"
@@ -1814,21 +1827,21 @@ msgctxt "Recorder|"
 msgid "Quick %1"
 msgstr "Rapide %1"
 
-msgctxt "Recorder|"
-msgid "Add timer"
-msgstr "Ajouter une programmation"
+#~ msgctxt "Recorder|"
+#~ msgid "Add timer"
+#~ msgstr "Ajouter une programmation"
 
-msgctxt "Recorder|"
-msgid "Timer name:"
-msgstr "Nom de la programmation :"
+#~ msgctxt "Recorder|"
+#~ msgid "Timer name:"
+#~ msgstr "Nom de la programmation :"
 
-msgctxt "Recorder|"
-msgid "Add new timer"
-msgstr "AJouter une nouvelle programmation"
+#~ msgctxt "Recorder|"
+#~ msgid "Add new timer"
+#~ msgstr "AJouter une nouvelle programmation"
 
-msgctxt "Recorder|"
-msgid "Please, select a channel."
-msgstr "Veuillez sélectionner une chaîne."
+#~ msgctxt "Recorder|"
+#~ msgid "Please, select a channel."
+#~ msgstr "Veuillez sélectionner une chaîne."
 
 msgctxt "Recorder|"
 msgid "Recording not valid!"
@@ -1842,13 +1855,10 @@ msgstr ""
 "Le fichier ne peut pas être supprimer.\n"
 "L'avez-vous déjà déplacé ou supprimer ?"
 
-msgctxt "Recorder|"
-msgid "You don't have this channel in your playlist."
-msgstr ""
-
-#~ msgctxt "RecorderInfoWidget|"
-#~ msgid "Status"
-#~ msgstr "État"
+#, fuzzy
+msgctxt "RecorderInfoWidget|"
+msgid "Status"
+msgstr "État"
 
 #~ msgctxt "RecorderInfoWidget|"
 #~ msgid "Recording to file:"
@@ -1890,9 +1900,9 @@ msgctxt "RecorderInfoWidget|"
 msgid "Output:"
 msgstr "Sortie :"
 
-msgctxt "RecorderInfoWidget|"
-msgid "<b>Status</b>"
-msgstr "<b>État</b>"
+#~ msgctxt "RecorderInfoWidget|"
+#~ msgid "<b>Status</b>"
+#~ msgstr "<b>État</b>"
 
 msgctxt "RecorderInfoWidget|"
 msgid "Channel:"
@@ -1942,6 +1952,66 @@ msgstr ""
 msgctxt "RecorderInfoWidget|"
 msgid "Save"
 msgstr "Sauvegarder"
+
+msgctxt "RecorderInfoWidget|"
+msgid "Edit timer"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Quick record"
+msgstr "Enregistrement rapide"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Selected channel:"
+msgstr "Chaîne sélectionnée :"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Recording name:"
+msgstr "Nom de l'enregistrement :"
+
+msgctxt "RecorderNewDialog|"
+msgid "Record"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Back"
+msgstr "Arrière"
+
+msgctxt "RecorderNewDialog|"
+msgid "Add timer"
+msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Timer name:"
+msgstr "Nom de la programmation :"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Add new timer"
+msgstr "AJouter une nouvelle programmation"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Recorder"
+msgstr "Enregistreur"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Please, select a channel."
+msgstr "Veuillez sélectionner une chaîne."
+
+msgctxt "RecorderNewDialog|"
+msgid "You don't have this channel in your playlist."
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "New recording"
+msgstr ""
 
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
@@ -2852,9 +2922,9 @@ msgctxt "TimersDisplayWidget|"
 msgid "Clear"
 msgstr "Éffacer"
 
-msgctxt "TimersDisplayWidget|"
-msgid "Search:"
-msgstr "Rechercher :"
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Search:"
+#~ msgstr "Rechercher :"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Timers"

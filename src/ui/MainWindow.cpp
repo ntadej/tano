@@ -19,9 +19,11 @@
 #if defined(Qt5)
     #include <QtWidgets/QLCDNumber>
     #include <QtWidgets/QMessageBox>
+    #include <QtWidgets/QWidgetAction>
 #elif defined(Qt4)
     #include <QtGui/QLCDNumber>
     #include <QtGui/QMessageBox>
+    #include <QtGui/QWidgetAction>
 #endif
 
 #include <vlc-qt/Common.h>
@@ -62,6 +64,7 @@
 #include "ui/menu/MenuTrackSubtitles.h"
 #include "ui/menu/MenuTrackVideo.h"
 #include "ui/playlist/PlaylistEditor.h"
+#include "ui/playlist/PlaylistFilterWidget.h"
 #include "ui/settings/SettingsDialog.h"
 #include "ui/settings/SettingsDialogShortcuts.h"
 #include "xmltv/XmltvManager.h"
@@ -159,15 +162,15 @@ void MainWindow::hideEvent(QHideEvent *event)
 {
     Q_UNUSED(event)
 
-    _controlsVisible = ui->osdWidget->isVisible();
-    _infoWidgetVisible = ui->infoWidget->isVisible();
+    _dockControlsVisible = ui->dockControls->isVisible();
+    _dockInfoVisible = ui->dockInfo->isVisible();
 }
 void MainWindow::showEvent(QShowEvent *event)
 {
     Q_UNUSED(event)
 
-    ui->osdWidget->setVisible(_controlsVisible);
-    ui->infoWidget->setVisible(_infoWidgetVisible);
+    ui->dockControls->setVisible(_dockControlsVisible);
+    ui->dockInfo->setVisible(_dockInfoVisible);
 }
 
 // Init functions
@@ -175,18 +178,26 @@ void MainWindow::createGui()
 {
     _osdMain = new OsdWidget(this);
     _osdMain->setBackend(_mediaPlayer);
-    ui->osdContents->layout()->addWidget(_osdMain);
-    ui->infoWidget->setTitleBarWidget(ui->blank);
-    ui->osdWidget->setTitleBarWidget(_osdMain->blank());
     _osdFloat = new OsdWidget();
     _osdFloat->resize(_osdFloat->width(), _osdMain->height());
     _osdFloat->enableFloat();
     _osdFloat->setBackend(_mediaPlayer);
 
+    ui->dockInfo->setTitleBarWidget(ui->dockTitlePlaylist);
+    ui->dockControlsContents->layout()->addWidget(_osdMain);
+    ui->dockControls->setTitleBarWidget(_osdMain->blank());
+
+    QWidgetAction *waction = new QWidgetAction(this);
+    ui->playlistWidget->filter()->show();
+    waction->setDefaultWidget(ui->playlistWidget->filter());
+    _playlistMenu->addAction(waction);
+    ui->buttonPlaylistSearch->setMenu(_playlistMenu);
+
     ui->playlistWidget->setModel(_model);
     _schedule->setPlaylistModel(_model);
     ui->recorder->setPlaylistModel(_model);
-    ui->recorder->setWidgets(ui->actionRecord, ui->recorderInfo, _trayIcon);
+    ui->recorder->setVisible(false);
+    ui->recorder->setWidgets(ui->actionRecord, _trayIcon);
 
     openPlaylist(true);
     setPlayingState(Vlc::Idle);
@@ -280,11 +291,11 @@ void MainWindow::createSettingsStartup()
         top();
     }
 
-    ui->osdWidget->setVisible(settings->startControls());
-    ui->infoWidget->setVisible(settings->startInfo());
+    ui->dockControls->setVisible(settings->startControls());
+    ui->dockInfo->setVisible(settings->startInfo());
 
-    _controlsVisible = settings->startControls();
-    _infoWidgetVisible = settings->startInfo();
+    _dockControlsVisible = settings->startControls();
+    _dockInfoVisible = settings->startInfo();
 }
 
 void MainWindow::createConnections()
@@ -351,6 +362,11 @@ void MainWindow::createConnections()
     connect(_osdFloat, SIGNAL(recordNowClicked(bool)), ui->actionRecordNow, SLOT(setChecked(bool)));
     connect(_osdFloat, SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
     connect(_osdFloat, SIGNAL(teletextClicked()), ui->actionTeletext, SLOT(trigger()));
+
+    connect(ui->buttonSchedule, SIGNAL(clicked()), this, SLOT(infoToggleSchedule()));
+    connect(ui->buttonScheduleBack, SIGNAL(clicked()), this, SLOT(infoToggleSchedule()));
+    connect(ui->buttonPlaylistClose, SIGNAL(clicked()), this, SLOT(infoClose()));
+    connect(ui->buttonPlaylistUndock, SIGNAL(clicked()), this, SLOT(infoToggleDock()));
 
     connect(_xmltv, SIGNAL(current(QString, QString)), _osdMain, SLOT(setEpg(QString, QString)));
     connect(_xmltv, SIGNAL(current(QString, QString)), _osdFloat, SLOT(setEpg(QString, QString)));
@@ -430,6 +446,8 @@ void MainWindow::createMenus()
     ui->menuVideo->addMenu(_menuCropRatio);
     _menuDeinterlacing = new MenuDeinterlacing(ui->videoWidget, ui->menuVideo);
     ui->menuVideo->addMenu(_menuDeinterlacing);
+
+    _playlistMenu = new QMenu();
 }
 
 void MainWindow::createShortcuts()
@@ -694,7 +712,7 @@ void MainWindow::openPlaylist(const bool &start)
     connect(_select, SIGNAL(channelSelect(int)), ui->playlistWidget, SLOT(channelSelected(int)));
     mouseWheel();
 
-    ui->channelToolBox->setItemText(0, _model->name());
+    ui->labelPlaylistName->setText("<b>" + _model->name() + "</b>");
 
     ui->playlistWidget->refreshModel();
     _schedule->refreshPlaylistModel();
@@ -791,9 +809,9 @@ void MainWindow::top()
 
 void MainWindow::lite()
 {
-    ui->infoWidget->setVisible(_isLite);
+    ui->dockInfo->setVisible(_isLite);
     ui->toolBar->setVisible(_isLite);
-    ui->osdWidget->setVisible(_isLite);
+    ui->dockControls->setVisible(_isLite);
     _isLite = !_isLite;
 }
 
@@ -855,6 +873,26 @@ void MainWindow::teletext(const int &page)
     _mediaPlayer->video()->setTeletextPage(page);
 }
 
+// Dock
+void MainWindow::infoClose()
+{
+    ui->dockInfo->close();
+}
+
+void MainWindow::infoToggleDock()
+{
+    ui->dockInfo->setFloating(!ui->dockInfo->isFloating());
+    ui->buttonPlaylistUndock->setIcon(ui->dockInfo->isFloating() ? QIcon(":/icons/16x16/dock.png") : QIcon(":/icons/16x16/undock.png"));
+}
+
+void MainWindow::infoToggleSchedule()
+{
+    if (ui->stackedWidgetDock->currentIndex())
+        ui->stackedWidgetDock->setCurrentIndex(0);
+    else
+        ui->stackedWidgetDock->setCurrentIndex(1);
+}
+
 // Recorder
 void MainWindow::recordNow(const bool &start)
 {
@@ -889,18 +927,17 @@ void MainWindow::recordNow(const bool &start)
 void MainWindow::recorder(const bool &enabled)
 {
     if (enabled) {
-        ui->actionRecorder->setChecked(true);
+        ui->recorder->setVisible(true);
         ui->stackedWidget->setCurrentIndex(2);
-        ui->toolBarRecorder->setVisible(true);
-        ui->infoContent->setCurrentIndex(1);
-        ui->osdWidget->setVisible(false);
     } else {
-        ui->actionRecorder->setChecked(false);
+        ui->recorder->setVisible(false);
         ui->stackedWidget->setCurrentIndex(0);
-        ui->toolBarRecorder->setVisible(false);
-        ui->infoContent->setCurrentIndex(0);
-        ui->osdWidget->setVisible(true);
     }
+
+    ui->actionRecorder->setChecked(enabled);
+    ui->toolBarRecorder->setVisible(enabled);
+    ui->dockInfo->setVisible(!enabled);
+    ui->dockControls->setVisible(!enabled);
 }
 
 void MainWindow::recordProgramme(XmltvProgramme *programme)

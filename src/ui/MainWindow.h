@@ -117,6 +117,10 @@ private slots:
     void teletext(const bool &enabled);
     void teletext(const int &page);
 
+    void infoClose();
+    void infoToggleDock();
+    void infoToggleSchedule();
+
     void recordNow(const bool &start);
     void recordProgramme(XmltvProgramme *programme);
     void recorder(const bool &enabled);
@@ -144,7 +148,7 @@ private:
     void play();
 
     //Settings
-    bool _controlsVisible;
+    bool _dockControlsVisible;
     int _defaultAspectRatio;
     QString _defaultAudioLanguage;
     int _defaultCropRatio;
@@ -155,7 +159,7 @@ private:
     int _desktopHeight;
     bool _hasPlaylist;
     bool _hideToTray;
-    bool _infoWidgetVisible;
+    bool _dockInfoVisible;
     bool _isLite;
     bool _osdEnabled;
     bool _recordNow;
@@ -210,6 +214,7 @@ private:
     MenuTrackVideo *_menuTrackVideo;
     QMenu *_rightMenu;
     QMenu *_openMenu;
+    QMenu *_playlistMenu;
     QList<QAction*> _actions;
 };
 
