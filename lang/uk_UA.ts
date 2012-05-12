@@ -1776,11 +1776,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Recordings</source>
-        <translation type="unfinished">Записи</translation>
+        <translation type="obsolete">Записи</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Таймери</translation>
+        <translation type="obsolete">Таймери</translation>
     </message>
     <message>
         <source>Quick %1</source>
@@ -1811,6 +1811,10 @@ You will lose any unsaved changes.</source>
 Have you already moved or deleted it?</source>
         <translation>Файл не може бути видалений.
 Ви вже перемістили або видалили його?</translation>
+    </message>
+    <message>
+        <source>Recordings and timers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2912,6 +2916,14 @@ This operation is ireversible.</source>
     <message>
         <source>Search:</source>
         <translation type="obsolete">Пошук:</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="obsolete">Запис</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="obsolete">Закінчено</translation>
     </message>
 </context>
 <context>

@@ -1267,11 +1267,7 @@ msgid ""
 msgstr ""
 
 msgctxt "Recorder|"
-msgid "Recordings"
-msgstr ""
-
-msgctxt "Recorder|"
-msgid "Timers"
+msgid "Recordings and timers"
 msgstr ""
 
 msgctxt "RecorderInfoWidget|"

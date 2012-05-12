@@ -1812,15 +1812,13 @@ msgstr "Неможливо записати в %1."
 #~ msgid "Back"
 #~ msgstr "Назад"
 
-#, fuzzy
-msgctxt "Recorder|"
-msgid "Recordings"
-msgstr "Записи"
+#~ msgctxt "Recorder|"
+#~ msgid "Recordings"
+#~ msgstr "Записи"
 
-#, fuzzy
-msgctxt "Recorder|"
-msgid "Timers"
-msgstr "Таймери"
+#~ msgctxt "Recorder|"
+#~ msgid "Timers"
+#~ msgstr "Таймери"
 
 #, qt-format
 msgctxt "Recorder|"
@@ -1854,6 +1852,10 @@ msgid ""
 msgstr ""
 "Файл не може бути видалений.\n"
 "Ви вже перемістили або видалили його?"
+
+msgctxt "Recorder|"
+msgid "Recordings and timers"
+msgstr ""
 
 #, fuzzy
 msgctxt "RecorderInfoWidget|"
@@ -2920,6 +2922,14 @@ msgstr "Спорожнити"
 #~ msgctxt "TimersDisplayWidget|"
 #~ msgid "Search:"
 #~ msgstr "Пошук:"
+
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Recording"
+#~ msgstr "Запис"
+
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Finished"
+#~ msgstr "Закінчено"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Timers"

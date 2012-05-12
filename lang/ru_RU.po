@@ -1884,10 +1884,9 @@ msgstr "Невозможно записать в %1."
 #~ msgid "Back"
 #~ msgstr "Назад"
 
-#, fuzzy
-msgctxt "Recorder|"
-msgid "Timers"
-msgstr "Таймеры"
+#~ msgctxt "Recorder|"
+#~ msgid "Timers"
+#~ msgstr "Таймеры"
 
 #, qt-format
 msgctxt "Recorder|"
@@ -1905,7 +1904,7 @@ msgid ""
 msgstr ""
 
 msgctxt "Recorder|"
-msgid "Recordings"
+msgid "Recordings and timers"
 msgstr ""
 
 #, fuzzy
@@ -3156,6 +3155,10 @@ msgstr "Закрыть"
 #~ msgctxt "TimersDisplayWidget|"
 #~ msgid "Search:"
 #~ msgstr "Поиск:"
+
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Timer"
+#~ msgstr "Таймер"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Timers"

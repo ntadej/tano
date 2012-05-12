@@ -1306,11 +1306,7 @@ Have you already moved or deleted it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Recordings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Timers</source>
+        <source>Recordings and timers</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

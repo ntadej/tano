@@ -37,9 +37,6 @@ public:
     inline int timerState() const { return _state; }
     void setTimerState(const int &state);
 
-    inline bool finished() const { return _finished; }
-    void setFinished(const bool &finished);
-
     inline bool timeFilter() const { return _timeFilter; }
     void setTimeFilter(const bool &timeFilter);
     inline QDateTime startTime() const { return _startTime; }
@@ -51,7 +48,6 @@ protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
 
 private:
-    bool _finished;
     int _state;
 
     bool _timeFilter;

@@ -115,11 +115,7 @@ QVariant Timer::data(int role) const
 
 QString Timer::display() const
 {
-    if (state() == Tano::Finished)
-        return QString("%1 - %2 - %3 %4 %5")
-            .arg(name(), channel(),
-                 date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"));
-    else if (type() != Tano::Once && type() != Tano::Instant)
+    if (type() != Tano::Once && type() != Tano::Instant)
         return QString("%1 (%2) - %3 - %4 %5 %6, %7")
             .arg(name(), Tano::timerStates()[state()], channel(),
                  date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"), Tano::timerTypesLong()[type()]);

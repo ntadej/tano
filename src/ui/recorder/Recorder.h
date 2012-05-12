@@ -63,6 +63,7 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+    QSize sizeHint() const;
 
 signals:
     void play(Timer *);

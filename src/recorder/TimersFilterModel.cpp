@@ -23,7 +23,6 @@
 TimersFilterModel::TimersFilterModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
-    _finished = false;
     _state = -1;
     _timeFilter = false;
     _startTime = QDateTime();
@@ -38,7 +37,6 @@ bool TimersFilterModel::filterAcceptsRow(int sourceRow,
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
     bool name = sourceModel()->data(index, Timer::DisplayRole).toString().contains(filterRegExp());
-    bool finished = (sourceModel()->data(index, Timer::StateRole).toInt() == Tano::Finished) == _finished;
     bool state = sourceModel()->data(index, Timer::StateRole).toInt() == _state || _state == -1;
 
     bool time = true;
@@ -48,13 +46,7 @@ bool TimersFilterModel::filterAcceptsRow(int sourceRow,
         time = s || e;
     }
 
-    return name && finished && state && time;
-}
-
-void TimersFilterModel::setFinished(const bool &finished)
-{
-    _finished = finished;
-    invalidateFilter();
+    return name && state && time;
 }
 
 void TimersFilterModel::setTimerState(const int &state)

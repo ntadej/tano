@@ -70,16 +70,18 @@ void TimersDisplayWidget::setCurrentTimer(Timer *timer)
     ui->timersView->setCurrentIndex(_model->indexFromItem(timer));
 }
 
-void TimersDisplayWidget::setModel(TimersModel *model,
-                                   const bool &finished)
+void TimersDisplayWidget::setModel(TimersModel *model)
 {
     _model = model;
     _filterModel->setSourceModel(model);
-    _filterModel->setFinished(finished);
 }
 
 void TimersDisplayWidget::timerClicked(const QModelIndex &index)
 {
     _current = _model->row(_filterModel->mapToSource(index).row());
-    emit itemSelected(_current);
+
+    if (_current->state() == Tano::Finished)
+        emit recordingSelected(_current);
+    else if (_current->state() != Tano::Recording)
+        emit timerSelected(_current);
 }

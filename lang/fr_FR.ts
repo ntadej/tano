@@ -1775,11 +1775,11 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Recordings</source>
-        <translation type="unfinished">Enregistrements</translation>
+        <translation type="obsolete">Enregistrements</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Programmateurs</translation>
+        <translation type="obsolete">Programmateurs</translation>
     </message>
     <message>
         <source>Quick %1</source>
@@ -1810,6 +1810,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
 Have you already moved or deleted it?</source>
         <translation>Le fichier ne peut pas être supprimer.
 L&apos;avez-vous déjà déplacé ou supprimer ?</translation>
+    </message>
+    <message>
+        <source>Recordings and timers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2911,6 +2915,14 @@ This operation is ireversible.</source>
     <message>
         <source>Search:</source>
         <translation type="obsolete">Rechercher :</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="obsolete">Enregistrement</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="obsolete">Terminé</translation>
     </message>
 </context>
 <context>

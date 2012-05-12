@@ -1878,7 +1878,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Таймеры</translation>
+        <translation type="obsolete">Таймеры</translation>
     </message>
     <message>
         <source>Quick %1</source>
@@ -1894,7 +1894,7 @@ Have you already moved or deleted it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Recordings</source>
+        <source>Recordings and timers</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3103,6 +3103,10 @@ This operation is ireversible.</source>
     <message>
         <source>Search:</source>
         <translation type="obsolete">Поиск:</translation>
+    </message>
+    <message>
+        <source>Timer</source>
+        <translation type="obsolete">Таймер</translation>
     </message>
 </context>
 <context>

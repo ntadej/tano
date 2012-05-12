@@ -2102,15 +2102,13 @@ msgstr "Nelze zapisovat do %1."
 #~ msgid "Back"
 #~ msgstr "Zpět"
 
-#, fuzzy
-msgctxt "Recorder|"
-msgid "Recordings"
-msgstr "Nahrávky"
+#~ msgctxt "Recorder|"
+#~ msgid "Recordings"
+#~ msgstr "Nahrávky"
 
-#, fuzzy
-msgctxt "Recorder|"
-msgid "Timers"
-msgstr "Časovače"
+#~ msgctxt "Recorder|"
+#~ msgid "Timers"
+#~ msgstr "Časovače"
 
 #, qt-format
 msgctxt "Recorder|"
@@ -2144,6 +2142,10 @@ msgid ""
 msgstr ""
 "Soubor nelze odstranit.\n"
 "Již jste jej přesunul nebo smazal?"
+
+msgctxt "Recorder|"
+msgid "Recordings and timers"
+msgstr ""
 
 #, fuzzy
 msgctxt "RecorderInfoWidget|"
@@ -3460,6 +3462,18 @@ msgstr "Smazat"
 #~ msgctxt "TimersDisplayWidget|"
 #~ msgid "Search:"
 #~ msgstr "Hledat:"
+
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Timer"
+#~ msgstr "Časovač"
+
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Recording"
+#~ msgstr "Nahrávání"
+
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Finished"
+#~ msgstr "Hotovo"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Timers"

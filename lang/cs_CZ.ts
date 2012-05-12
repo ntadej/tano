@@ -2099,11 +2099,11 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Recordings</source>
-        <translation type="unfinished">Nahrávky</translation>
+        <translation type="obsolete">Nahrávky</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Časovače</translation>
+        <translation type="obsolete">Časovače</translation>
     </message>
     <message>
         <source>Quick %1</source>
@@ -2134,6 +2134,10 @@ Ztratíte všechny neuložené změny.</translation>
 Have you already moved or deleted it?</source>
         <translation>Soubor nelze odstranit.
 Již jste jej přesunul nebo smazal?</translation>
+    </message>
+    <message>
+        <source>Recordings and timers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3488,6 +3492,18 @@ Tuto operaci nelze vrátit zpět.</translation>
     <message>
         <source>Search:</source>
         <translation type="obsolete">Hledat:</translation>
+    </message>
+    <message>
+        <source>Timer</source>
+        <translation type="obsolete">Časovač</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="obsolete">Nahrávání</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="obsolete">Hotovo</translation>
     </message>
 </context>
 <context>

@@ -56,8 +56,7 @@ Recorder::Recorder(QWidget *parent)
     _manager->setTimersModel(_model);
     _new->setTimersModel(_model);
 
-    ui->listRecordings->setModel(_model, true);
-    ui->listTimers->setModel(_model);
+    ui->listRecordings->setModel(_model);
     ui->recorderInfo->setModel(_model);
 
     // Connections
@@ -66,8 +65,8 @@ Recorder::Recorder(QWidget *parent)
     connect(_manager, SIGNAL(timer(Timer *)), this, SLOT(recordStart(Timer *)));
 
     connect(_core, SIGNAL(elapsed(int)), ui->recorderInfo, SLOT(time(int)));
-    connect(ui->listRecordings, SIGNAL(itemSelected(Timer *)), ui->recorderInfo, SLOT(recordingInfo(Timer *)));
-    connect(ui->listTimers, SIGNAL(itemSelected(Timer *)), ui->recorderInfo, SLOT(timerInfo(Timer *)));
+    connect(ui->listRecordings, SIGNAL(recordingSelected(Timer *)), ui->recorderInfo, SLOT(recordingInfo(Timer *)));
+    connect(ui->listRecordings, SIGNAL(timerSelected(Timer *)), ui->recorderInfo, SLOT(timerInfo(Timer *)));
     connect(ui->recorderInfo, SIGNAL(deleteRecording(Timer *)), this, SLOT(recordingDelete(Timer *)));
     connect(ui->recorderInfo, SIGNAL(deleteTimer(Timer *)), this, SLOT(timerDelete(Timer *)));
     connect(ui->recorderInfo, SIGNAL(playRecording(Timer *)), this, SIGNAL(play(Timer *)));
@@ -92,6 +91,11 @@ void Recorder::changeEvent(QEvent *e)
         default:
             break;
     }
+}
+
+QSize Recorder::sizeHint() const
+{
+    return QSize(100, 100);
 }
 
 void Recorder::createSettings()

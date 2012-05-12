@@ -36,6 +36,7 @@ RecorderInfoWidget::RecorderInfoWidget(QWidget *parent)
       _actionRecord(0)
 {
     ui->setupUi(this);
+    ui->editor->hide();
     ui->valueFile->removeBorder();
     ui->valueRFile->removeBorder();
 
@@ -70,6 +71,7 @@ void RecorderInfoWidget::backToMain()
 {
     _currentTimer = 0;
 
+    ui->editor->hide();
     setCurrentIndex(0);
 }
 
@@ -168,6 +170,7 @@ void RecorderInfoWidget::timerInfo(Timer *timer)
 
     _currentTimer = timer;
 
+    ui->editor->show();
     ui->editor->edit(timer);
 }
 

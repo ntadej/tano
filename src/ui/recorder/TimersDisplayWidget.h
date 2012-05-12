@@ -46,14 +46,14 @@ public:
     Timer *currentTimer() { return _current; }
     void setCurrentTimer(Timer *timer);
 
-    void setModel(TimersModel *model,
-                  const bool &finished = false);
+    void setModel(TimersModel *model);
 
 protected:
     void changeEvent(QEvent *e);
 
 signals:
-    void itemSelected(Timer *);
+    void recordingSelected(Timer *);
+    void timerSelected(Timer *);
 
 private slots:
     void processFilters();

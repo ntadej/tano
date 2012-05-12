@@ -2246,11 +2246,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Recordings</source>
-        <translation>Posnetki</translation>
+        <translation type="obsolete">Posnetki</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation>Časovniki</translation>
+        <translation type="obsolete">Časovniki</translation>
     </message>
     <message>
         <source>Quick %1</source>
@@ -2285,6 +2285,10 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
         <translation type="obsolete">Tega programa nimate v vašem seznamu.</translation>
+    </message>
+    <message>
+        <source>Recordings and timers</source>
+        <translation>Posnetki in časovniki</translation>
     </message>
 </context>
 <context>
@@ -3709,6 +3713,18 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>Search:</source>
         <translation type="obsolete">Išči:</translation>
+    </message>
+    <message>
+        <source>Timer</source>
+        <translation type="obsolete">Časovnik</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="obsolete">Snemanje</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="obsolete">Zaključen</translation>
     </message>
 </context>
 <context>

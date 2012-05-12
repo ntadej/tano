@@ -1812,15 +1812,13 @@ msgstr "Ne peut pas écrire dans %1."
 #~ msgid "Back"
 #~ msgstr "Arrière"
 
-#, fuzzy
-msgctxt "Recorder|"
-msgid "Recordings"
-msgstr "Enregistrements"
+#~ msgctxt "Recorder|"
+#~ msgid "Recordings"
+#~ msgstr "Enregistrements"
 
-#, fuzzy
-msgctxt "Recorder|"
-msgid "Timers"
-msgstr "Programmateurs"
+#~ msgctxt "Recorder|"
+#~ msgid "Timers"
+#~ msgstr "Programmateurs"
 
 #, qt-format
 msgctxt "Recorder|"
@@ -1854,6 +1852,10 @@ msgid ""
 msgstr ""
 "Le fichier ne peut pas être supprimer.\n"
 "L'avez-vous déjà déplacé ou supprimer ?"
+
+msgctxt "Recorder|"
+msgid "Recordings and timers"
+msgstr ""
 
 #, fuzzy
 msgctxt "RecorderInfoWidget|"
@@ -2925,6 +2927,14 @@ msgstr "Éffacer"
 #~ msgctxt "TimersDisplayWidget|"
 #~ msgid "Search:"
 #~ msgstr "Rechercher :"
+
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Recording"
+#~ msgstr "Enregistrement"
+
+#~ msgctxt "TimersDisplayWidget|"
+#~ msgid "Finished"
+#~ msgstr "Terminé"
 
 #~ msgctxt "TimersEdit|"
 #~ msgid "Timers"

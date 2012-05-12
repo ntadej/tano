@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>127</height>
+    <width>211</width>
+    <height>107</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,21 +17,11 @@
    <iconset resource="../../../data/icons.qrc">
     <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="1" rowspan="2">
-    <widget class="RecorderInfoWidget" name="recorderInfo" native="true">
-     <property name="maximumSize">
-      <size>
-       <width>250</width>
-       <height>16777215</height>
-      </size>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
     <widget class="QGroupBox" name="groupRecorgings">
      <property name="title">
-      <string>Recordings</string>
+      <string>Recordings and timers</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -40,16 +30,14 @@
      </layout>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QGroupBox" name="groupTimers">
-     <property name="title">
-      <string>Timers</string>
+   <item>
+    <widget class="RecorderInfoWidget" name="recorderInfo" native="true">
+     <property name="maximumSize">
+      <size>
+       <width>250</width>
+       <height>16777215</height>
+      </size>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="TimersDisplayWidget" name="listTimers" native="true"/>
-      </item>
-     </layout>
     </widget>
    </item>
   </layout>
