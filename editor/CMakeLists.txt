@@ -202,7 +202,7 @@ ENDIF(WITH_QT5)
 # Compiler settings #
 #####################
 # Define we are compiling editor
-ADD_DEFINITIONS(-DEDITOR=1)
+ADD_DEFINITIONS(-DEDITOR)
 
 # This needs to be added in order for #include to work inside .cpp files
 INCLUDE_DIRECTORIES(

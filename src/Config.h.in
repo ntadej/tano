@@ -24,10 +24,11 @@
 #define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
 
 // Settings
+#define TELETEXT @TELETEXT@
 #define UPDATE @UPDATE@
 
 // Editor VLC-Qt support
-#if EDITOR
+#ifdef EDITOR
     #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
 #else
     #define WITH_EDITOR_VLCQT 1

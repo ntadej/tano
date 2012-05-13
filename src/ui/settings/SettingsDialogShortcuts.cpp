@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "Config.h"
 #include "core/Shortcuts.h"
 
 #include "SettingsDialogShortcuts.h"
@@ -30,6 +31,10 @@ SettingsDialogShortcuts::SettingsDialogShortcuts(Shortcuts *shortcuts,
     createActions();
 
     ui->shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+
+#if !TELETEXT
+    ui->shortcutsWidget->removeRow(8);
+#endif
 
     _shortcuts = shortcuts;
 

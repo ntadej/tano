@@ -33,6 +33,41 @@ set(CMAKE_MODULE_PATH
 
 INCLUDE(ManageString)
 
+###########
+# Version #
+###########
+# Tano version number.
+FILE(READ VERSION TANO_VERSION)
+STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
+MESSAGE("You are compiling Tano ${TANO_VERSION}")
+
+# System Information
+SITE_NAME(HOSTNAME)
+SET(SYSNAME ${CMAKE_SYSTEM}-${CMAKE_SYSTEM_PROCESSOR})
+
+# Find Git Version Patch
+FIND_PROGRAM(GIT git)
+IF(GIT)
+    EXECUTE_PROCESS(
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        COMMAND ${GIT} rev-parse --short HEAD
+        OUTPUT_VARIABLE GIT_OUT OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+    SET(PROJECT_VERSION_PATCH "${GIT_OUT}")
+    MESSAGE("Git Version Patch: ${GIT_OUT}")
+ELSE(GIT)
+    IF(GITBUILD)
+        SET(PROJECT_VERSION_PATCH "${GITBUILD}")
+    ELSE(GITBUILD)
+        SET(GIT_OUT 0)
+    ENDIF(GITBUILD)
+ENDIF(GIT)
+
+MESSAGE("\n")
+
+####################
+# Compiler options #
+####################
 # Set MingW bin dir, if MingW present
 IF(MINGW)
     STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" MINGW_BIN_DIR_TMP "${CMAKE_CXX_COMPILER}")
@@ -52,7 +87,7 @@ ENDIF(MINGW)
 
 # Qt5 support
 OPTION(WITH_QT5 "Build with Qt5" OFF)
-MESSAGE("\nTano: Build with Qt5: ${WITH_QT5}\n")
+MESSAGE("Build with Qt5: ${WITH_QT5}")
 
 IF(WITH_QT5)
     SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
@@ -129,46 +164,20 @@ ELSE(MINGW)
 ENDIF(MINGW)
 
 
-###########
-# Version #
-###########
-# Tano version number.
-FILE(READ VERSION TANO_VERSION)
-STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
-MESSAGE("\nTano: You are compiling Tano ${TANO_VERSION}\n")
-
-# System Information
-SITE_NAME(HOSTNAME)
-SET(SYSNAME ${CMAKE_SYSTEM}-${CMAKE_SYSTEM_PROCESSOR})
-
-# Find Git Version Patch
-FIND_PROGRAM(GIT git)
-IF(GIT)
-    EXECUTE_PROCESS(
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        COMMAND ${GIT} rev-parse --short HEAD
-        OUTPUT_VARIABLE GIT_OUT OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
-    SET(PROJECT_VERSION_PATCH "${GIT_OUT}")
-    MESSAGE(STATUS "\nTano: Git Version Patch: ${GIT_OUT}\n")
-ELSE(GIT)
-    IF(GITBUILD)
-        SET(PROJECT_VERSION_PATCH "${GITBUILD}")
-    ELSE(GITBUILD)
-        SET(GIT_OUT 0)
-    ENDIF(GITBUILD)
-ENDIF(GIT)
-
-
 #################
 # Configuration #
 #################
 OPTION(EDITOR_WITH_VLCQT "Compile Tano Editor with VLC-Qt" OFF)
-MESSAGE("\nTano: Compile Tano Editor with VLC-Qt: ${EDITOR_WITH_VLCQT}\n")
+MESSAGE("Compile Tano Editor with VLC-Qt: ${EDITOR_WITH_VLCQT}")
 OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile" OFF)
-MESSAGE("\nTano: Refresh translations on compile: ${REFRESH_TRANSLATIONS}\n")
+MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
 OPTION(DISABLE_UPDATE_CHECK "Disable update checking" OFF)
-MESSAGE("\nTano: Disable update checking: ${DISABLE_UPDATE_CHECK}\n")
+MESSAGE("Disable update checking: ${DISABLE_UPDATE_CHECK}")
+OPTION(DISABLE_TELETEXT "Disable teletext" OFF)
+MESSAGE("Disable teletext: ${DISABLE_TELETEXT}")
+OPTION(CUSTOM_SETTINGS "Custom settings" OFF)
+MESSAGE("Custom settings: ${CUSTOM_SETTINGS}")
+MESSAGE("\n")
 
 IF(EDITOR_WITH_VLCQT)
     SET(EDITOR_VLCQT 1)
@@ -181,6 +190,12 @@ IF(DISABLE_UPDATE_CHECK)
 ELSE(DISABLE_UPDATE_CHECK)
     SET(UPDATE 1)
 ENDIF(DISABLE_UPDATE_CHECK)
+
+IF(DISABLE_TELETEXT)
+    SET(TELETEXT 0)
+ELSE(DISABLE_TELETEXT)
+    SET(TELETEXT 1)
+ENDIF(DISABLE_TELETEXT)
 
 SET(QT_SINGLE_APPLICATION "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/libqtsingleapplication.a")
 

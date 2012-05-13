@@ -30,7 +30,7 @@
 class Channel;
 class PlaylistModel;
 
-#if EDITOR
+#ifdef EDITOR
 class LocaleManager;
 #if UPDATE
 class UpdateDialog;
@@ -109,14 +109,14 @@ private:
 
     PlaylistModel *_model;
 
-#if EDITOR
+#ifdef EDITOR
     LocaleManager *_locale;
 #endif
 
     bool _closeEnabled;
     QMenu *_menuExport;
 
-#if EDITOR && UPDATE
+#if defined(EDITOR) && UPDATE
     UpdateDialog *_update;
 #endif
 

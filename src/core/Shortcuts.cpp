@@ -22,6 +22,7 @@
     #include <QtGui/QAction>
 #endif
 
+#include "Config.h"
 #include "core/Shortcuts.h"
 
 Shortcuts::Shortcuts(const QList<QAction *> &list,
@@ -37,7 +38,9 @@ Shortcuts::Shortcuts(const QList<QAction *> &list,
                  << "I"
                  << "C"
                  << "M"
+#if TELETEXT
                  << "T"
+#endif
                  << "Ctrl+Up"
                  << "Ctrl+Down"
                  << "Ctrl+R"
@@ -65,7 +68,9 @@ Shortcuts::Shortcuts(const QList<QAction *> &list,
                  << "ToggleInfo"
                  << "ToggleControls"
                  << "Mute"
+#if TELETEXT
                  << "Teletext"
+#endif
                  << "VolumeUp"
                  << "VolumeDown"
                  << "Recorder"

@@ -64,6 +64,12 @@ QWidget *OsdWidget::blank()
     return ui->blank;
 }
 
+void OsdWidget::disableTeletext()
+{
+    ui->buttonTeletext->hide();
+    ui->teletext->hide();
+}
+
 QLCDNumber *OsdWidget::lcd()
 {
     return ui->number;

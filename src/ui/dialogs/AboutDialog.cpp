@@ -34,7 +34,7 @@ AboutDialog::AboutDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
-#if EDITOR
+#ifdef EDITOR
     ui->labelIcon->setPixmap(QPixmap(":/logo/64x64/logo-editor.png"));
     ui->labelTitle->setText(ui->labelTitle->text().arg(tr("Editor"), Tano::version(), Tano::changeset()));
 #else

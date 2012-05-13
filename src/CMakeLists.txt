@@ -194,7 +194,6 @@ SET(Tano_Core_Srcs
     core/LocaleManager.cpp
     core/Print.cpp
     core/Settings.cpp
-    core/SettingsDefaults.cpp
     core/Shortcuts.cpp
     core/Udpxy.cpp
 )
@@ -314,6 +313,20 @@ IF(UPDATE)
         update/UpdateHandler.cpp
     )
 ENDIF(UPDATE)
+
+IF(CUSTOM_SETTINGS)
+    SET(Tano_Srcs
+        ${Tano_Srcs}
+
+        custom/SettingsDefaults.cpp
+    )
+ELSE(CUSTOM_SETTINGS)
+    SET(Tano_Srcs
+        ${Tano_Srcs}
+
+        core/SettingsDefaults.cpp
+    )
+ENDIF(CUSTOM_SETTINGS)
 
 
 ###############

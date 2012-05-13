@@ -209,6 +209,11 @@ void MainWindow::createGui()
     ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
     ui->toolBarRecorder->hide();
     ui->scheduleWidget->setIdentifier(Tano::Main);
+
+#if !TELETEXT
+    _osdMain->disableTeletext();
+    ui->menuMedia->removeAction(ui->actionTeletext);
+#endif
 }
 
 void MainWindow::createBackend()
@@ -338,10 +343,14 @@ void MainWindow::createConnections()
     connect(ui->actionFullscreen, SIGNAL(triggered(bool)), this, SLOT(toggleFullscreen(bool)));
 
     connect(ui->actionMute, SIGNAL(triggered(bool)), _osdMain, SLOT(mute(bool)));
-    connect(ui->actionTeletext, SIGNAL(triggered(bool)), _osdMain, SLOT(teletext(bool)));
     connect(ui->actionVolumeDown, SIGNAL(triggered()), _osdMain, SLOT(volumeDown()));
     connect(ui->actionVolumeUp, SIGNAL(triggered()), _osdMain, SLOT(volumeUp()));
+
+#if TELETEXT
+    connect(ui->actionTeletext, SIGNAL(triggered(bool)), _osdMain, SLOT(teletext(bool)));
     connect(ui->actionTeletext, SIGNAL(triggered(bool)), this, SLOT(teletext(bool)));
+    connect(_osdMain, SIGNAL(teletextClicked()), ui->actionTeletext, SLOT(trigger()));
+#endif
 
     connect(_osdMain, SIGNAL(teletextPage(int)), this, SLOT(teletext(int)));
     connect(_osdMain, SIGNAL(backClicked()), ui->actionBack, SLOT(trigger()));
@@ -350,7 +359,6 @@ void MainWindow::createConnections()
     connect(_osdMain, SIGNAL(playClicked()), ui->actionPlay, SLOT(trigger()));
     connect(_osdMain, SIGNAL(recordNowClicked(bool)), ui->actionRecordNow, SLOT(setChecked(bool)));
     connect(_osdMain, SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
-    connect(_osdMain, SIGNAL(teletextClicked()), ui->actionTeletext, SLOT(trigger()));
 
     connect(ui->actionControls, SIGNAL(triggered(bool)), this, SLOT(toggleOsdControls(bool)));
     connect(ui->dockControls, SIGNAL(visibilityChanged(bool)), this, SLOT(toggleOsdControls(bool)));
@@ -456,7 +464,9 @@ void MainWindow::createShortcuts()
              << ui->actionInfoPanel
              << ui->actionControls
              << ui->actionMute
+#if TELETEXT
              << ui->actionTeletext
+#endif
              << ui->actionVolumeUp
              << ui->actionVolumeDown
              << ui->actionRecorder
@@ -543,14 +553,18 @@ void MainWindow::setPlayingState(const Vlc::State &state)
         ui->actionPlay->setText(tr("Pause"));
         ui->actionPlay->setToolTip(tr("Pause"));
         ui->actionMute->setEnabled(true);
+#if TELETEXT
         ui->actionTeletext->setEnabled(true);
+#endif
         break;
     default:
         ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
         ui->actionPlay->setText(tr("Play"));
         ui->actionPlay->setToolTip(tr("Play"));
         ui->actionMute->setEnabled(false);
+#if TELETEXT
         ui->actionTeletext->setEnabled(false);
+#endif
     }
 }
 
@@ -647,7 +661,10 @@ void MainWindow::stop()
 
     _osdMain->setChannel();
     _osdMain->setQuickRecordEnabled(false);
+
+#if TELETEXT
     ui->actionTeletext->setChecked(false);
+#endif
     ui->scheduleWidget->setPage(0);
 
     tooltip();

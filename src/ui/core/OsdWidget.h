@@ -46,6 +46,7 @@ public:
 
     QWidget *blank();
     QLCDNumber *lcd();
+    void disableTeletext();
     void setBackend(VlcMediaPlayer *player);
     void setChannel(const int &number = 0,
                     const QString &name = 0,

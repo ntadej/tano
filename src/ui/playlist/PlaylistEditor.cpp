@@ -39,7 +39,7 @@
 #include "ui/playlist/PlaylistExportTvheadend.h"
 #include "ui/playlist/PlaylistImportCSV.h"
 
-#if EDITOR
+#ifdef EDITOR
     #include "core/LocaleManager.h"
     #include "ui/settings-editor/SettingsEditorDialog.h"
 #if UPDATE
@@ -59,7 +59,7 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
       ui(new Ui::PlaylistEditor),
       _closeEnabled(false)
 {
-#if EDITOR
+#ifdef EDITOR
     _locale = new LocaleManager();
 #endif
 
@@ -70,7 +70,7 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
     _model = new PlaylistModel(this);
     ui->playlist->setModel(_model);
 
-#if EDITOR && UPDATE
+#if defined(EDITOR) && UPDATE
     _update = new UpdateDialog();
     _update->checkSilent();
 #endif
@@ -93,7 +93,7 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
     _menuExport->addAction(ui->actionExportTvheadend);
     _menuExport->addAction(ui->actionExportXmltvId);
 
-#if EDITOR
+#ifdef EDITOR
     ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
     ui->toolBar->insertAction(ui->actionHelp, ui->actionSettings);
 #endif
@@ -167,7 +167,7 @@ void PlaylistEditor::createConnections()
 
     connect(ui->playlist, SIGNAL(itemSelected(Channel *)), this, SLOT(editItem(Channel *)));
 
-#if EDITOR && UPDATE
+#if defined(EDITOR) && UPDATE
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
     connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
 #endif
@@ -201,7 +201,7 @@ void PlaylistEditor::help()
 
 void PlaylistEditor::settings()
 {
-#if EDITOR
+#ifdef EDITOR
     SettingsEditorDialog s(this);
     s.exec();
     _locale->setLocale();
@@ -211,7 +211,7 @@ void PlaylistEditor::settings()
 
 void PlaylistEditor::updateAvailable()
 {
-#if EDITOR && UPDATE
+#if defined(EDITOR) && UPDATE
     ui->toolBar->insertAction(ui->actionAbout, ui->actionUpdate);
 #endif
 }
@@ -398,7 +398,7 @@ void PlaylistEditor::exit()
 {
     if (_closeEnabled) {
         hide();
-#if EDITOR
+#ifdef EDITOR
         qApp->quit();
 #endif
         return;
