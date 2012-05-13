@@ -440,6 +440,7 @@ msgctxt "MainWindow|"
 msgid "Always on top"
 msgstr "Vedno na vrhu"
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Restore"
 msgstr "Obnovi"
@@ -536,6 +537,7 @@ msgstr ""
 "Ali želite zapreti Tano?\n"
 "To bo ustavilo trenutno snemanje."
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Prekini"
@@ -609,7 +611,7 @@ msgctxt "MainWindow|"
 msgid "&Video"
 msgstr "&Slika"
 
-#, qt-format
+#, fuzzy, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -634,6 +636,7 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr "Hitro snemanje"
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick"
 msgstr "Hitro"
@@ -645,6 +648,14 @@ msgstr "Dodaj časovnik"
 msgctxt "MainWindow|"
 msgid "<b>Schedule</b>"
 msgstr "<b>Spored</b>"
+
+msgctxt "MainWindow|"
+msgid "Support"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Tano Support"
+msgstr ""
 
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"

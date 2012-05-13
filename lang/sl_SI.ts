@@ -459,7 +459,7 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <source>Restore</source>
-        <translation>Obnovi</translation>
+        <translation type="unfinished">Obnovi</translation>
     </message>
     <message>
         <source>Simple Mode</source>
@@ -553,7 +553,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Prekini</translation>
+        <translation type="unfinished">Prekini</translation>
     </message>
     <message>
         <source>Buffering...</source>
@@ -626,7 +626,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Ne morem prebrati %1:
+        <translation type="unfinished">Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
@@ -647,7 +647,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Quick</source>
-        <translation>Hitro</translation>
+        <translation type="unfinished">Hitro</translation>
     </message>
     <message>
         <source>Add timer</source>
@@ -656,6 +656,14 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
         <translation>&lt;b&gt;Spored&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Support</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

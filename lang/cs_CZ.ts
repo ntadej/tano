@@ -522,7 +522,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Pozastavit</translation>
+        <translation type="unfinished">Pozastavit</translation>
     </message>
     <message>
         <source>Buffering...</source>
@@ -534,12 +534,12 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Restore</source>
-        <translation>Obnovit</translation>
+        <translation type="unfinished">Obnovit</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Nelze číst ze souboru %1:
+        <translation type="unfinished">Nelze číst ze souboru %1:
 %2.</translation>
     </message>
     <message>
@@ -560,7 +560,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Quick</source>
-        <translation>Rychlý</translation>
+        <translation type="unfinished">Rychlý</translation>
     </message>
     <message>
         <source>Add timer</source>
@@ -568,6 +568,14 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Support</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

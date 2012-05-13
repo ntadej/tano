@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QDesktopServices>
+
 #if defined(Qt5)
     #include <QtWidgets/QDesktopWidget>
     #include <QtWidgets/QLCDNumber>
@@ -312,6 +314,7 @@ void MainWindow::createSettingsStartup()
 void MainWindow::createConnections()
 {
     connect(ui->actionDonate, SIGNAL(triggered()), this, SLOT(donate()));
+    connect(ui->actionSupport, SIGNAL(triggered()), this, SLOT(support()));
     connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
     connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
     connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(exit()));
@@ -538,6 +541,13 @@ void MainWindow::donate()
 {
     DonationDialog d(this);
     d.exec();
+}
+
+void MainWindow::support()
+{
+    QString subject = tr("Tano Support");
+    subject = subject.replace(" ", "%20");
+    QDesktopServices::openUrl(QUrl("mailto:" + Settings::SUPPORT_ADDRESS + "?subject=" + subject));
 }
 
 

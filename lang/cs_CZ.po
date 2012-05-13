@@ -498,6 +498,7 @@ msgctxt "MainWindow|"
 msgid "Teletext"
 msgstr "Teletext"
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Pozastavit"
@@ -510,11 +511,12 @@ msgstr "Pozastavit"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Soubory se seznamy programů Tano TV (*.m3u)"
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Restore"
 msgstr "Obnovit"
 
-#, qt-format
+#, fuzzy, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -539,6 +541,7 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr "Rychlý záznam"
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick"
 msgstr "Rychlý"
@@ -549,6 +552,14 @@ msgstr "Přidat časovač"
 
 msgctxt "MainWindow|"
 msgid "<b>Schedule</b>"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Support"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Tano Support"
 msgstr ""
 
 msgctxt "MenuAspectRatio|"

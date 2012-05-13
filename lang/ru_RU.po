@@ -488,17 +488,9 @@ msgctxt "MainWindow|"
 msgid "Teletext"
 msgstr ""
 
-msgctxt "MainWindow|"
-msgid "Pause"
-msgstr ""
-
 #~ msgctxt "MainWindow|"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Файлы со списком ТВ каналов Tano(*.m3u)"
-
-msgctxt "MainWindow|"
-msgid "Restore"
-msgstr ""
 
 #, fuzzy, qt-format
 msgctxt "MainWindow|"
@@ -526,15 +518,31 @@ msgid "Quick record"
 msgstr ""
 
 msgctxt "MainWindow|"
-msgid "Quick"
-msgstr ""
-
-msgctxt "MainWindow|"
 msgid "Add timer"
 msgstr ""
 
 msgctxt "MainWindow|"
 msgid "<b>Schedule</b>"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Support"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Tano Support"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Pause"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Restore"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Quick"
 msgstr ""
 
 msgctxt "MenuAspectRatio|"

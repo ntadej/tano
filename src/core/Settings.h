@@ -159,6 +159,9 @@ public:
     inline void setXmltvGrabberPath(const QString &s) { _xmltvGrabberPath = s; }
     static const QString DEFAULT_XMLTV_GRABBER_PATH;
 
+    // Constants
+    static const QString SUPPORT_ADDRESS;
+
 private:
     // General variables
     QString _configurationVersion;

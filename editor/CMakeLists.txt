@@ -91,7 +91,6 @@ SET(Tano_Editor_Srcs
     ../src/core/NetworkRequest.cpp
     ../src/core/Print.cpp
     ../src/core/Settings.cpp
-    ../src/core/SettingsDefaults.cpp
     ../src/core/Udpxy.cpp
 
     ../src/playlist/PlaylistFilterModel.cpp
@@ -160,6 +159,20 @@ IF(UPDATE)
         ../src/update/UpdateHandler.cpp
     )
 ENDIF(UPDATE)
+
+IF(CUSTOM_SETTINGS)
+    SET(Tano_Editor_Srcs
+        ${Tano_Editor_Srcs}
+
+        ../src/custom/SettingsDefaults.cpp
+    )
+ELSE(CUSTOM_SETTINGS)
+    SET(Tano_Editor_Srcs
+        ${Tano_Editor_Srcs}
+
+        ../src/core/SettingsDefaults.cpp
+    )
+ENDIF(CUSTOM_SETTINGS)
 
 
 ################

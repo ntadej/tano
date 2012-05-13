@@ -447,6 +447,7 @@ msgctxt "MainWindow|"
 msgid "Teletext"
 msgstr "Телетекст"
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Пауза"
@@ -455,11 +456,12 @@ msgstr "Пауза"
 #~ msgid "Buffering..."
 #~ msgstr "Буферізація..."
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Restore"
 msgstr "Відновити"
 
-#, qt-format
+#, fuzzy, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -484,6 +486,7 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr "Швидкий запис"
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick"
 msgstr "Швидко"
@@ -494,6 +497,14 @@ msgstr "Додати таймер"
 
 msgctxt "MainWindow|"
 msgid "<b>Schedule</b>"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Support"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Tano Support"
 msgstr ""
 
 msgctxt "MenuAspectRatio|"

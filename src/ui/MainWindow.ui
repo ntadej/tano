@@ -85,6 +85,7 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="actionUpdate"/>
+    <addaction name="actionSupport"/>
     <addaction name="actionDonate"/>
     <addaction name="actionAbout"/>
     <addaction name="actionAboutQt"/>
@@ -745,6 +746,15 @@
    </property>
    <property name="text">
     <string>Add timer</string>
+   </property>
+  </action>
+  <action name="actionSupport">
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/help.png</normaloff>:/icons/24x24/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>Support</string>
    </property>
   </action>
  </widget>

@@ -510,16 +510,8 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Pause</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tano TV channel list files(*.m3u)</source>
         <translation type="obsolete">Файлы со списком ТВ каналов Tano(*.m3u)</translation>
-    </message>
-    <message>
-        <source>Restore</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Cannot read file %1:
@@ -544,15 +536,31 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Quick</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Add timer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

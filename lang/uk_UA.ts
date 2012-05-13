@@ -447,7 +447,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Пауза</translation>
+        <translation type="unfinished">Пауза</translation>
     </message>
     <message>
         <source>Buffering...</source>
@@ -455,12 +455,12 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Restore</source>
-        <translation>Відновити</translation>
+        <translation type="unfinished">Відновити</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Неможливо прочитати файл %1:
+        <translation type="unfinished">Неможливо прочитати файл %1:
 %2.</translation>
     </message>
     <message>
@@ -481,7 +481,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Quick</source>
-        <translation>Швидко</translation>
+        <translation type="unfinished">Швидко</translation>
     </message>
     <message>
         <source>Add timer</source>
@@ -489,6 +489,14 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano Support</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

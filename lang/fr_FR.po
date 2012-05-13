@@ -440,6 +440,7 @@ msgctxt "MainWindow|"
 msgid "Teletext"
 msgstr "Teletexte"
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Pause"
@@ -448,11 +449,12 @@ msgstr "Pause"
 #~ msgid "Buffering..."
 #~ msgstr "Mémorisation..."
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Restore"
 msgstr "Restituer"
 
-#, qt-format
+#, fuzzy, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -477,6 +479,7 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr "Enregistrement rapide"
 
+#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick"
 msgstr "Rapide"
@@ -487,6 +490,14 @@ msgstr "Ajouter un programmateur"
 
 msgctxt "MainWindow|"
 msgid "<b>Schedule</b>"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Support"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Tano Support"
 msgstr ""
 
 msgctxt "MenuAspectRatio|"

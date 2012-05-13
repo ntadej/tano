@@ -372,21 +372,6 @@ msgid "Teletext"
 msgstr ""
 
 msgctxt "MainWindow|"
-msgid "Pause"
-msgstr ""
-
-msgctxt "MainWindow|"
-msgid "Restore"
-msgstr ""
-
-#, qt-format
-msgctxt "MainWindow|"
-msgid ""
-"Cannot read file %1:\n"
-"%2."
-msgstr ""
-
-msgctxt "MainWindow|"
 msgid "Controls"
 msgstr ""
 
@@ -403,15 +388,38 @@ msgid "Quick record"
 msgstr ""
 
 msgctxt "MainWindow|"
-msgid "Quick"
-msgstr ""
-
-msgctxt "MainWindow|"
 msgid "Add timer"
 msgstr ""
 
 msgctxt "MainWindow|"
 msgid "<b>Schedule</b>"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Support"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Tano Support"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Pause"
+msgstr ""
+
+#, qt-format
+msgctxt "MainWindow|"
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Restore"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Quick"
 msgstr ""
 
 msgctxt "MenuAspectRatio|"
