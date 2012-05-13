@@ -410,6 +410,10 @@ msgctxt "MainWindow|"
 msgid "Add timer"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "<b>Schedule</b>"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr ""
@@ -1937,14 +1941,6 @@ msgid "System default"
 msgstr ""
 
 msgctxt "SettingsUi|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr ""
-
-msgctxt "SettingsUi|"
-msgid "Mouse wheel function:"
-msgstr ""
-
-msgctxt "SettingsUi|"
 msgid "Change channel"
 msgstr ""
 
@@ -1982,6 +1978,26 @@ msgstr ""
 
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Mouse wheel:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Controls:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Tray icon:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Show on mouse move"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Info panel:"
 msgstr ""
 
 msgctxt "Timer|"

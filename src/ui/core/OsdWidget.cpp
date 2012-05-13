@@ -16,23 +16,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
-    #include <QtWidgets/QDesktopWidget>
-#elif defined(Qt4)
-    #include <QtGui/QDesktopWidget>
-#endif
-
-#ifdef Q_WS_X11
-    #include <QX11Info>
-#endif
-
 #include "OsdWidget.h"
 #include "ui_OsdWidget.h"
 
 OsdWidget::OsdWidget(QWidget *parent)
     : QFrame(parent),
-      ui(new Ui::OsdWidget),
-      _float(false)
+      ui(new Ui::OsdWidget)
 {
     ui->setupUi(this);
 
@@ -40,11 +29,6 @@ OsdWidget::OsdWidget(QWidget *parent)
     ui->blank->hide();
     ui->teletext->hide();
 
-    _slowHideTimer = new QTimer(this);
-    _slowShowTimer = new QTimer(this);
-
-    connect(_slowHideTimer, SIGNAL(timeout()), this, SLOT(slowHide()));
-    connect(_slowShowTimer, SIGNAL(timeout()), this, SLOT(slowShow()));
     connect(ui->info, SIGNAL(open(QString)), this, SIGNAL(openLink(QString)));
     connect(ui->teletext, SIGNAL(valueChanged(int)), this, SIGNAL(teletextPage(int)));
 
@@ -60,8 +44,6 @@ OsdWidget::OsdWidget(QWidget *parent)
 OsdWidget::~OsdWidget()
 {
     delete ui;
-    delete _slowHideTimer;
-    delete _slowShowTimer;
 }
 
 void OsdWidget::changeEvent(QEvent *e)
@@ -82,58 +64,6 @@ QWidget *OsdWidget::blank()
     return ui->blank;
 }
 
-void OsdWidget::enableFloat()
-{
-    _float = true;
-
-    _defaultHeight = height();
-    _desktopWidth = QApplication::desktop()->width();
-    _desktopHeight = QApplication::desktop()->height();
-
-    setWindowFlags(Qt::ToolTip);
-    if (_desktopWidth > 1366)
-        resize(2*1366/3, height());
-    else
-        resize(2*_desktopWidth/3, height());
-    move((_desktopWidth-width())/2, _desktopHeight-height());
-}
-
-void OsdWidget::floatHide()
-{
-#if defined(Q_WS_X11)
-    if (QX11Info::isCompositingManagerRunning())
-        _slowHideTimer->start(5);
-    else
-        hide();
-#elif defined(Q_WS_WIN)
-    _slowHideTimer->start(5);
-#else
-    hide();
-#endif
-}
-
-void OsdWidget::floatShow()
-{
-    _slowHideTimer->stop();
-
-    if (_desktopWidth > 1366)
-        resize(2*1366/3, height());
-    else
-        resize(2*_desktopWidth/3, height());
-    move((_desktopWidth-width())/2, _desktopHeight-height());
-
-#if defined(Q_WS_X11)
-    if (QX11Info::isCompositingManagerRunning())
-        _slowShowTimer->start(5);
-    else
-        show();
-#elif defined(Q_WS_WIN)
-    _slowShowTimer->start(5);
-#else
-    show();
-#endif
-}
-
 QLCDNumber *OsdWidget::lcd()
 {
     return ui->number;
@@ -141,17 +71,13 @@ QLCDNumber *OsdWidget::lcd()
 
 void OsdWidget::mute(const bool &enabled)
 {
-    if (!_float) {
-        ui->volume->setMute(enabled);
-    }
+    ui->volume->setMute(enabled);
     ui->buttonMute->setChecked(enabled);
 }
 
 void OsdWidget::setBackend(VlcMediaPlayer *player)
 {
-    if (!_float) {
-        ui->volume->setMediaPlayer(player);
-    }
+    ui->volume->setMediaPlayer(player);
     ui->seek->setMediaPlayer(player);
     ui->seek->setAutoHide(true);
 }
@@ -213,7 +139,6 @@ void OsdWidget::setQuickRecordEnabled(const bool &enabled)
     ui->buttonRecordNow->setChecked(false);
 }
 
-
 void OsdWidget::setRecording(const QString &name,
                              const QString &info)
 {
@@ -228,24 +153,6 @@ void OsdWidget::setTeletextPage(const int &page)
 {
     if (page != ui->teletext->value())
         ui->teletext->setValue(page);
-}
-
-void OsdWidget::slowHide()
-{
-    setWindowOpacity(windowOpacity() - 0.04);
-
-    if (windowOpacity() <= 0) {
-        _slowHideTimer->stop();
-    }
-}
-
-void OsdWidget::slowShow()
-{
-    setWindowOpacity(windowOpacity() + 0.08);
-
-    if (windowOpacity() == 1) {
-        _slowShowTimer->stop();
-    }
 }
 
 void OsdWidget::teletext(const bool &enabled)

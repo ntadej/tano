@@ -425,6 +425,10 @@ This will stop recording in progress.</source>
         <source>Add timer</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -2013,14 +2017,6 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enable OSD in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mouse wheel function:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Change channel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2058,6 +2054,26 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Show tray icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mouse wheel:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controls:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tray icon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show on mouse move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info panel:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

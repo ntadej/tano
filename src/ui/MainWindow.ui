@@ -25,14 +25,10 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="pageMain">
-       <layout class="QVBoxLayout" name="verticalLayout_6">
-        <item>
-         <widget class="QWidget" name="blank" native="true"/>
-        </item>
-       </layout>
+       <layout class="QVBoxLayout" name="verticalLayout_6"/>
       </widget>
       <widget class="QWidget" name="pagePlayback">
        <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -227,11 +223,14 @@
    <addaction name="actionRecordTimer"/>
   </widget>
   <widget class="QDockWidget" name="dockInfo">
+   <property name="features">
+    <set>QDockWidget::DockWidgetClosable</set>
+   </property>
    <attribute name="dockWidgetArea">
     <number>2</number>
    </attribute>
    <widget class="QWidget" name="dockContents">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <layout class="QVBoxLayout" name="dockLayout">
      <property name="margin">
       <number>0</number>
      </property>
@@ -243,134 +242,73 @@
        <widget class="QWidget" name="pagePlaylist">
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="labelPlaylistIcon">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../../data/icons.qrc">:/icons/16x16/video.png</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelPlaylistName"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonPlaylistSearch">
+             <property name="minimumSize">
+              <size>
+               <width>50</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="icon">
+              <iconset resource="../../data/icons.qrc">
+               <normaloff>:/icons/16x16/search.png</normaloff>:/icons/16x16/search.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonPlaylistClose">
+             <property name="maximumSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="icon">
+              <iconset resource="../../data/icons.qrc">
+               <normaloff>:/icons/16x16/close.png</normaloff>:/icons/16x16/close.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
           <widget class="PlaylistDisplayWidget" name="playlistWidget" native="true"/>
          </item>
          <item>
-          <widget class="QWidget" name="dockTitlePlaylist" native="true">
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <item>
-             <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Fixed</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>5</width>
-                <height>0</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="labelPlaylistIcon">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../../data/icons.qrc">:/icons/16x16/video.png</pixmap>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="labelPlaylistName"/>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>0</width>
-                <height>0</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="buttonPlaylistSearch">
-              <property name="minimumSize">
-               <size>
-                <width>50</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>50</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="icon">
-               <iconset resource="../../data/icons.qrc">
-                <normaloff>:/icons/16x16/search.png</normaloff>:/icons/16x16/search.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Fixed</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>5</width>
-                <height>0</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_2">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QPushButton" name="buttonPlaylistUndock">
-                <property name="maximumSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="icon">
-                 <iconset resource="../../data/icons.qrc">
-                  <normaloff>:/icons/16x16/undock.png</normaloff>:/icons/16x16/undock.png</iconset>
-                </property>
-                <property name="flat">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="buttonPlaylistClose">
-                <property name="maximumSize">
-                 <size>
-                  <width>20</width>
-                  <height>20</height>
-                 </size>
-                </property>
-                <property name="icon">
-                 <iconset resource="../../data/icons.qrc">
-                  <normaloff>:/icons/16x16/close.png</normaloff>:/icons/16x16/close.png</iconset>
-                </property>
-                <property name="flat">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
+          <widget class="QWidget" name="blank" native="true">
+           <property name="maximumSize">
+            <size>
+             <width>1</width>
+             <height>1</height>
+            </size>
+           </property>
           </widget>
          </item>
          <item>
@@ -382,15 +320,59 @@
             <iconset resource="../../data/icons.qrc">
              <normaloff>:/icons/16x16/calendar.png</normaloff>:/icons/16x16/calendar.png</iconset>
            </property>
-           <property name="flat">
-            <bool>true</bool>
-           </property>
           </widget>
          </item>
         </layout>
        </widget>
        <widget class="QWidget" name="pageSchedule">
-        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="labelScheduleIcon">
+             <property name="minimumSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../../data/icons.qrc">:/icons/16x16/calendar.png</pixmap>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelScheduleName">
+             <property name="text">
+              <string>&lt;b&gt;Schedule&lt;/b&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonScheduleClose">
+             <property name="maximumSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="icon">
+              <iconset resource="../../data/icons.qrc">
+               <normaloff>:/icons/16x16/close.png</normaloff>:/icons/16x16/close.png</iconset>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
          <item>
           <widget class="EpgScheduleChannel" name="scheduleWidget" native="true"/>
          </item>
@@ -830,70 +812,6 @@
     <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionControls</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>dockControls</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>499</x>
-     <y>544</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>dockControls</sender>
-   <signal>visibilityChanged(bool)</signal>
-   <receiver>actionControls</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>499</x>
-     <y>544</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>dockInfo</sender>
-   <signal>visibilityChanged(bool)</signal>
-   <receiver>actionInfoPanel</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>564</x>
-     <y>135</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionInfoPanel</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>dockInfo</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>564</x>
-     <y>135</y>
     </hint>
    </hints>
   </connection>

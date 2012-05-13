@@ -642,6 +642,10 @@ msgctxt "MainWindow|"
 msgid "Add timer"
 msgstr "Dodaj časovnik"
 
+msgctxt "MainWindow|"
+msgid "<b>Schedule</b>"
+msgstr "<b>Spored</b>"
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Razmerje slike"
@@ -3599,13 +3603,13 @@ msgctxt "SettingsUi|"
 msgid "System default"
 msgstr "Sistemsko privzeto"
 
-msgctxt "SettingsUi|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr "Vključi OSD v celozaslonskem načinu"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Enable OSD in Fullscreen mode"
+#~ msgstr "Vključi OSD v celozaslonskem načinu"
 
-msgctxt "SettingsUi|"
-msgid "Mouse wheel function:"
-msgstr "Funkcija miškinega koleščka:"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Mouse wheel function:"
+#~ msgstr "Funkcija miškinega koleščka:"
 
 msgctxt "SettingsUi|"
 msgid "Change channel"
@@ -3650,6 +3654,30 @@ msgstr "Vključen info pult"
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
 msgstr "Pokaži ikono v sistemski vrstici"
+
+msgctxt "SettingsUi|"
+msgid "Mouse wheel:"
+msgstr "Miškin kolešček:"
+
+msgctxt "SettingsUi|"
+msgid "Controls:"
+msgstr "Upravljanje:"
+
+msgctxt "SettingsUi|"
+msgid "Tray icon:"
+msgstr "Ikona v sistemski vrstici:"
+
+#~ msgctxt "SettingsUi|"
+#~ msgid "Info widget:"
+#~ msgstr "Info pult:"
+
+msgctxt "SettingsUi|"
+msgid "Show on mouse move"
+msgstr "Prikaži ob premiku miške"
+
+msgctxt "SettingsUi|"
+msgid "Info panel:"
+msgstr "Info pult:"
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"

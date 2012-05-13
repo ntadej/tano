@@ -653,6 +653,10 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>Add timer</source>
         <translation>Dodaj časovnik</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Spored&lt;/b&gt;</translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -3609,11 +3613,11 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Enable OSD in Fullscreen mode</source>
-        <translation>Vključi OSD v celozaslonskem načinu</translation>
+        <translation type="obsolete">Vključi OSD v celozaslonskem načinu</translation>
     </message>
     <message>
         <source>Mouse wheel function:</source>
-        <translation>Funkcija miškinega koleščka:</translation>
+        <translation type="obsolete">Funkcija miškinega koleščka:</translation>
     </message>
     <message>
         <source>Change channel</source>
@@ -3658,6 +3662,30 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>Show tray icon</source>
         <translation>Pokaži ikono v sistemski vrstici</translation>
+    </message>
+    <message>
+        <source>Mouse wheel:</source>
+        <translation>Miškin kolešček:</translation>
+    </message>
+    <message>
+        <source>Controls:</source>
+        <translation>Upravljanje:</translation>
+    </message>
+    <message>
+        <source>Tray icon:</source>
+        <translation>Ikona v sistemski vrstici:</translation>
+    </message>
+    <message>
+        <source>Info widget:</source>
+        <translation type="obsolete">Info pult:</translation>
+    </message>
+    <message>
+        <source>Show on mouse move</source>
+        <translation>Prikaži ob premiku miške</translation>
+    </message>
+    <message>
+        <source>Info panel:</source>
+        <translation>Info pult:</translation>
     </message>
 </context>
 <context>

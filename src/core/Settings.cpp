@@ -54,6 +54,7 @@ void Settings::writeSettings()
     setValue("start/info", startInfo());
 
     setValue("gui/osd", osd());
+    setValue("gui/info", info());
     setValue("gui/trayicon", trayEnabled());
     setValue("gui/hidetotray", hideToTray());
     setValue("gui/mousewheel", mouseWheel());
@@ -104,6 +105,7 @@ void Settings::readSettings()
     setStartInfo(value("start/info", DEFAULT_START_INFO).toBool());
 
     setOsd(value("gui/osd", DEFAULT_OSD).toBool());
+    setInfo(value("gui/info", DEFAULT_INFO).toBool());
     setTrayEnabled(value("gui/trayicon", DEFAULT_TRAY_ENABLED).toBool());
     setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
     setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());

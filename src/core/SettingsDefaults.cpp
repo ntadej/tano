@@ -45,6 +45,7 @@ const bool Settings::DEFAULT_START_INFO = true;
 
 // GUI
 const bool Settings::DEFAULT_OSD = true;
+const bool Settings::DEFAULT_INFO = true;
 const bool Settings::DEFAULT_TRAY_ENABLED = true;
 const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
 const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";

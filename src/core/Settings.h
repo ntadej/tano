@@ -90,6 +90,9 @@ public:
     inline bool osd() const { return _osd; }
     inline void setOsd(const bool &b) { _osd = b; }
     static const bool DEFAULT_OSD;
+    inline bool info() const { return _info; }
+    inline void setInfo(const bool &b) { _info = b; }
+    static const bool DEFAULT_INFO;
     inline bool trayEnabled() const { return _trayEnabled; }
     inline void setTrayEnabled(const bool &b) { _trayEnabled = b; }
     static const bool DEFAULT_TRAY_ENABLED;
@@ -180,7 +183,7 @@ private:
 
     // GUI
     bool _osd;
-    bool _osdPlaylist;
+    bool _info;
     bool _trayEnabled;
     bool _hideToTray;
     QString _mouseWheel;

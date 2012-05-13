@@ -39,6 +39,8 @@ public:
 
     bool osd() const;
     void setOsd(const bool &enabled);
+    bool info() const;
+    void setInfo(const bool &enabled);
     bool tray() const;
     void setTray(const bool &enabled);
     bool trayHide() const;
@@ -54,10 +56,10 @@ public:
     void setLite(const bool &enabled);
     bool top() const;
     void setTop(const bool &enabled);
-    bool controls() const;
-    void setControls(const bool &enabled);
-    bool info() const;
-    void setInfo(const bool &enabled);
+    bool osdStart() const;
+    void setOsdStart(const bool &enabled);
+    bool infoStart() const;
+    void setInfoStart(const bool &enabled);
 
 protected:
     void changeEvent(QEvent *e);

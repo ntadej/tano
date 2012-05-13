@@ -547,6 +547,10 @@ msgctxt "MainWindow|"
 msgid "Add timer"
 msgstr "Přidat časovač"
 
+msgctxt "MainWindow|"
+msgid "<b>Schedule</b>"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Poměr stran"
@@ -3371,13 +3375,13 @@ msgctxt "SettingsUi|"
 msgid "System default"
 msgstr "Výchozí nastavení"
 
-msgctxt "SettingsUi|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr "Povolit OSD v režimu celé obrazovky"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Enable OSD in Fullscreen mode"
+#~ msgstr "Povolit OSD v režimu celé obrazovky"
 
-msgctxt "SettingsUi|"
-msgid "Mouse wheel function:"
-msgstr "Funkce kolečka myši:"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Mouse wheel function:"
+#~ msgstr "Funkce kolečka myši:"
 
 msgctxt "SettingsUi|"
 msgid "Change channel"
@@ -3422,6 +3426,26 @@ msgstr "Panel s podrobnostmi povolen"
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
 msgstr "Ukázat ikonu v oznamovací oblasti"
+
+msgctxt "SettingsUi|"
+msgid "Mouse wheel:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Controls:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Tray icon:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Show on mouse move"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Info panel:"
+msgstr ""
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"

@@ -492,6 +492,10 @@ msgctxt "MainWindow|"
 msgid "Add timer"
 msgstr "Додати таймер"
 
+msgctxt "MainWindow|"
+msgid "<b>Schedule</b>"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Співвідношення сторін"
@@ -2839,13 +2843,13 @@ msgctxt "SettingsUi|"
 msgid "System default"
 msgstr "За замовчуванням системи"
 
-msgctxt "SettingsUi|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr "Увімкнути OSD в повноекранному режимі"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Enable OSD in Fullscreen mode"
+#~ msgstr "Увімкнути OSD в повноекранному режимі"
 
-msgctxt "SettingsUi|"
-msgid "Mouse wheel function:"
-msgstr "Функції колеса миші:"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Mouse wheel function:"
+#~ msgstr "Функції колеса миші:"
 
 msgctxt "SettingsUi|"
 msgid "Change channel"
@@ -2890,6 +2894,26 @@ msgstr "Інформаційна панель увімкнена"
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
 msgstr "Показати іконку в треї"
+
+msgctxt "SettingsUi|"
+msgid "Mouse wheel:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Controls:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Tray icon:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Show on mouse move"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Info panel:"
+msgstr ""
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"

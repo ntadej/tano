@@ -533,6 +533,10 @@ msgctxt "MainWindow|"
 msgid "Add timer"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "<b>Schedule</b>"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Соотношение сторон"
@@ -3072,15 +3076,13 @@ msgctxt "SettingsUi|"
 msgid "System default"
 msgstr "Как в системе"
 
-#, fuzzy
-msgctxt "SettingsUi|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr "Включить OSD в полноэкранном режиме"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Enable OSD in Fullscreen mode"
+#~ msgstr "Включить OSD в полноэкранном режиме"
 
-#, fuzzy
-msgctxt "SettingsUi|"
-msgid "Mouse wheel function:"
-msgstr "Колесо мыши:"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Mouse wheel function:"
+#~ msgstr "Колесо мыши:"
 
 #, fuzzy
 msgctxt "SettingsUi|"
@@ -3129,6 +3131,26 @@ msgstr "Панель информации вкл."
 
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Mouse wheel:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Controls:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Tray icon:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Show on mouse move"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Info panel:"
 msgstr ""
 
 #~ msgctxt "Tano::Xmltv|"

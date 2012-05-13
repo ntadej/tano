@@ -89,6 +89,7 @@ void SettingsDialog::apply()
 
     // GUI
     _settings->setOsd(ui->gui->osd());
+    _settings->setInfo(ui->gui->info());
     _settings->setTrayEnabled(ui->gui->tray());
     _settings->setHideToTray(ui->gui->trayHide());
     _settings->setMouseWheel(ui->gui->wheel());
@@ -96,8 +97,8 @@ void SettingsDialog::apply()
     _settings->setSplash(ui->gui->splash());
     _settings->setStartLite(ui->gui->lite());
     _settings->setStartOnTop(ui->gui->top());
-    _settings->setStartControls(ui->gui->controls());
-    _settings->setStartInfo(ui->gui->info());
+    _settings->setStartControls(ui->gui->osdStart());
+    _settings->setStartInfo(ui->gui->infoStart());
 
     // Playback
     _settings->setRememberVideoSettings(ui->backend->rememberChannelSettings());
@@ -139,6 +140,7 @@ void SettingsDialog::defaults()
 
     // GUI
     ui->gui->setOsd(Settings::DEFAULT_OSD);
+    ui->gui->setInfo(Settings::DEFAULT_INFO);
     ui->gui->setTray(Settings::DEFAULT_TRAY_ENABLED);
     ui->gui->setTrayHide(Settings::DEFAULT_HIDE_TO_TRAY);
     ui->gui->setWheel(Settings::DEFAULT_MOUSE_WHEEL);
@@ -146,8 +148,8 @@ void SettingsDialog::defaults()
     ui->gui->setSplash(Settings::DEFAULT_SPLASH);
     ui->gui->setLite(Settings::DEFAULT_START_LITE);
     ui->gui->setTop(Settings::DEFAULT_START_ON_TOP);
-    ui->gui->setControls(Settings::DEFAULT_START_CONTROLS);
-    ui->gui->setInfo(Settings::DEFAULT_START_INFO);
+    ui->gui->setOsdStart(Settings::DEFAULT_START_CONTROLS);
+    ui->gui->setInfoStart(Settings::DEFAULT_START_INFO);
 
     // Playback
     ui->backend->setRememberChannelSettings(Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS);
@@ -187,6 +189,7 @@ void SettingsDialog::read()
 
     // GUI
     ui->gui->setOsd(_settings->osd());
+    ui->gui->setInfo(_settings->info());
     ui->gui->setTray(_settings->trayEnabled());
     ui->gui->setTrayHide(_settings->hideToTray());
     ui->gui->setWheel(_settings->mouseWheel());
@@ -194,8 +197,8 @@ void SettingsDialog::read()
     ui->gui->setSplash(_settings->splash());
     ui->gui->setLite(_settings->startLite());
     ui->gui->setTop(_settings->startOnTop());
-    ui->gui->setControls(_settings->startControls());
-    ui->gui->setInfo(_settings->startInfo());
+    ui->gui->setOsdStart(_settings->startControls());
+    ui->gui->setInfoStart(_settings->startInfo());
 
     // Playback
     ui->backend->setRememberChannelSettings(_settings->rememberVideoSettings());

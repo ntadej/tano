@@ -485,6 +485,10 @@ msgctxt "MainWindow|"
 msgid "Add timer"
 msgstr "Ajouter un programmateur"
 
+msgctxt "MainWindow|"
+msgid "<b>Schedule</b>"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Proportion de l'image"
@@ -2844,13 +2848,13 @@ msgctxt "SettingsUi|"
 msgid "System default"
 msgstr "Par défaut"
 
-msgctxt "SettingsUi|"
-msgid "Enable OSD in Fullscreen mode"
-msgstr "Permettre l'OSD en mode plein écran"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Enable OSD in Fullscreen mode"
+#~ msgstr "Permettre l'OSD en mode plein écran"
 
-msgctxt "SettingsUi|"
-msgid "Mouse wheel function:"
-msgstr "Fonction de la molette :"
+#~ msgctxt "SettingsUi|"
+#~ msgid "Mouse wheel function:"
+#~ msgstr "Fonction de la molette :"
 
 msgctxt "SettingsUi|"
 msgid "Change channel"
@@ -2895,6 +2899,26 @@ msgstr "Panneau d'information"
 msgctxt "SettingsUi|"
 msgid "Show tray icon"
 msgstr "Montrer la barre des tâches"
+
+msgctxt "SettingsUi|"
+msgid "Mouse wheel:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Controls:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Tray icon:"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Show on mouse move"
+msgstr ""
+
+msgctxt "SettingsUi|"
+msgid "Info panel:"
+msgstr ""
 
 #~ msgctxt "Tano::Xmltv|"
 #~ msgid "Editor"

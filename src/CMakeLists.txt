@@ -100,6 +100,7 @@ SET(Tano_UI_MOCs
     ui/core/BrowseWidget.h
     ui/core/InfoBarWidget.h
     ui/core/LicenseWidget.h
+    ui/core/OsdFloat.h
     ui/core/OsdWidget.h
     ui/core/QtKeySequenceEdit.h
     ui/core/ScrollingWidget.h
@@ -226,6 +227,7 @@ SET(Tano_UI_Srcs
     ui/core/FileDialogs.cpp
     ui/core/InfoBarWidget.cpp
     ui/core/LicenseWidget.cpp
+    ui/core/OsdFloat.cpp
     ui/core/OsdWidget.cpp
     ui/core/QtKeySequenceEdit.cpp
     ui/core/ScrollingWidget.cpp

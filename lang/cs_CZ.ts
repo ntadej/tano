@@ -566,6 +566,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Add timer</source>
         <translation>Přidat časovač</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -3388,11 +3392,11 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Enable OSD in Fullscreen mode</source>
-        <translation>Povolit OSD v režimu celé obrazovky</translation>
+        <translation type="obsolete">Povolit OSD v režimu celé obrazovky</translation>
     </message>
     <message>
         <source>Mouse wheel function:</source>
-        <translation>Funkce kolečka myši:</translation>
+        <translation type="obsolete">Funkce kolečka myši:</translation>
     </message>
     <message>
         <source>Change channel</source>
@@ -3437,6 +3441,26 @@ Tuto operaci nelze vrátit zpět.</translation>
     <message>
         <source>Show tray icon</source>
         <translation>Ukázat ikonu v oznamovací oblasti</translation>
+    </message>
+    <message>
+        <source>Mouse wheel:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controls:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tray icon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show on mouse move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info panel:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

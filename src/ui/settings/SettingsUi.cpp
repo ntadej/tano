@@ -54,6 +54,16 @@ void SettingsUi::setOsd(const bool &enabled)
     ui->checkOsd->setChecked(enabled);
 }
 
+bool SettingsUi::info() const
+{
+    return ui->checkInfo->isChecked();
+}
+
+void SettingsUi::setInfo(const bool &enabled)
+{
+    ui->checkInfo->setChecked(enabled);
+}
+
 bool SettingsUi::tray() const
 {
     return ui->checkTray->isChecked();
@@ -132,22 +142,22 @@ void SettingsUi::setTop(const bool &enabled)
     ui->checkTop->setChecked(enabled);
 }
 
-bool SettingsUi::controls() const
+bool SettingsUi::osdStart() const
 {
-    return ui->checkControls->isChecked();
+    return ui->checkOsdS->isChecked();
 }
 
-void SettingsUi::setControls(const bool &enabled)
+void SettingsUi::setOsdStart(const bool &enabled)
 {
-    ui->checkControls->setChecked(enabled);
+    ui->checkOsdS->setChecked(enabled);
 }
 
-bool SettingsUi::info() const
+bool SettingsUi::infoStart() const
 {
-    return ui->checkInfo->isChecked();
+    return ui->checkInfoS->isChecked();
 }
 
-void SettingsUi::setInfo(const bool &enabled)
+void SettingsUi::setInfoStart(const bool &enabled)
 {
-    ui->checkInfo->setChecked(enabled);
+    ui->checkInfoS->setChecked(enabled);
 }

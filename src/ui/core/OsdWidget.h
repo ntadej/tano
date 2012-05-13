@@ -44,8 +44,6 @@ public:
     explicit OsdWidget(QWidget *parent = 0);
     ~OsdWidget();
 
-    void enableFloat();
-
     QWidget *blank();
     QLCDNumber *lcd();
     void setBackend(VlcMediaPlayer *player);
@@ -75,8 +73,6 @@ signals:
     void teletextClicked();
 
 public slots:
-    void floatHide();
-    void floatShow();
     void mute(const bool &enabled);
     void setEpg(const QString &now,
                 const QString &next);
@@ -86,22 +82,8 @@ public slots:
     void volumeDown();
     void volumeUp();
 
-private slots:
-    void slowHide();
-    void slowShow();
-
 private:
     Ui::OsdWidget *ui;
-
-    bool _float;
-
-    int _desktopHeight;
-    int _desktopWidth;
-
-    int _defaultHeight;
-
-    QTimer *_slowHideTimer;
-    QTimer *_slowShowTimer;
 };
 
 #endif // OSDWIDGET_H

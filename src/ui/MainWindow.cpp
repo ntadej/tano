@@ -17,10 +17,12 @@
 *****************************************************************************/
 
 #if defined(Qt5)
+    #include <QtWidgets/QDesktopWidget>
     #include <QtWidgets/QLCDNumber>
     #include <QtWidgets/QMessageBox>
     #include <QtWidgets/QWidgetAction>
 #elif defined(Qt4)
+    #include <QtGui/QDesktopWidget>
     #include <QtGui/QLCDNumber>
     #include <QtGui/QMessageBox>
     #include <QtGui/QWidgetAction>
@@ -51,6 +53,7 @@
 #include "playlist/PlaylistModel.h"
 #include "playlist/PlaylistUpdate.h"
 #include "ui/core/FileDialogs.h"
+#include "ui/core/OsdFloat.h"
 #include "ui/core/OsdWidget.h"
 #include "ui/core/TrayIcon.h"
 #include "ui/dialogs/AboutDialog.h"
@@ -87,8 +90,9 @@ MainWindow::MainWindow(QWidget *parent)
       _udpxy(new Udpxy()),
       _schedule(new EpgScheduleFull()),
       _epgShow(new EpgShow()),
-      _osdMain(0),
       _osdFloat(0),
+      _osdInfo(0),
+      _osdMain(0),
       _playlistEditor(0)
 {
     ui->setupUi(this);
@@ -178,12 +182,13 @@ void MainWindow::createGui()
 {
     _osdMain = new OsdWidget(this);
     _osdMain->setBackend(_mediaPlayer);
-    _osdFloat = new OsdWidget();
+    _osdInfo = new OsdFloat(this);
+    _osdInfo->setInfo();
+    _osdFloat = new OsdFloat(this);
     _osdFloat->resize(_osdFloat->width(), _osdMain->height());
-    _osdFloat->enableFloat();
-    _osdFloat->setBackend(_mediaPlayer);
+    _osdFloat->setControls();
 
-    ui->dockInfo->setTitleBarWidget(ui->dockTitlePlaylist);
+    ui->dockInfo->setTitleBarWidget(ui->blank);
     ui->dockControlsContents->layout()->addWidget(_osdMain);
     ui->dockControls->setTitleBarWidget(_osdMain->blank());
 
@@ -239,6 +244,7 @@ void MainWindow::createSettings()
         _trayIcon->hide();
 
     _osdEnabled = settings->osd();
+    _infoEnabled = settings->info();
     _wheelType = settings->mouseWheel();
     mouseWheel();
 
@@ -308,7 +314,6 @@ void MainWindow::createConnections()
     connect(ui->actionTop, SIGNAL(triggered()), this, SLOT(top()));
     connect(ui->actionLite, SIGNAL(triggered()), this, SLOT(lite()));
 
-    connect(ui->actionOpenToolbar, SIGNAL(triggered()), this, SLOT(menuOpen()));
     connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
     connect(ui->actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
     connect(ui->actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
@@ -328,26 +333,17 @@ void MainWindow::createConnections()
 
     connect(ui->videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
     connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), this, SLOT(showOsd(QPoint)));
-    connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), _osdFloat, SLOT(floatShow()));
-    connect(ui->videoWidget, SIGNAL(mouseHide()), _osdFloat, SLOT(floatHide()));
-    connect(ui->actionFullscreen, SIGNAL(triggered(bool)), _osdFloat, SLOT(setVisible(bool)));
+    connect(ui->videoWidget, SIGNAL(mouseHide()), this, SLOT(toggleOsdControls()));
+    connect(ui->videoWidget, SIGNAL(mouseHide()), this, SLOT(toggleOsdInfo()));
+    connect(ui->actionFullscreen, SIGNAL(triggered(bool)), this, SLOT(toggleFullscreen(bool)));
 
     connect(ui->actionMute, SIGNAL(triggered(bool)), _osdMain, SLOT(mute(bool)));
     connect(ui->actionTeletext, SIGNAL(triggered(bool)), _osdMain, SLOT(teletext(bool)));
     connect(ui->actionVolumeDown, SIGNAL(triggered()), _osdMain, SLOT(volumeDown()));
     connect(ui->actionVolumeUp, SIGNAL(triggered()), _osdMain, SLOT(volumeUp()));
-
-    connect(ui->actionMute, SIGNAL(triggered(bool)), _osdFloat, SLOT(mute(bool)));
-    connect(ui->actionTeletext, SIGNAL(triggered(bool)), _osdFloat, SLOT(teletext(bool)));
     connect(ui->actionTeletext, SIGNAL(triggered(bool)), this, SLOT(teletext(bool)));
 
-    connect(_osdMain->volumeSlider(), SIGNAL(newVolume(int)), _osdFloat->volumeSlider(), SLOT(setVolume(int)));
-    connect(_osdFloat->volumeSlider(), SIGNAL(newVolume(int)), _osdMain->volumeSlider(), SLOT(setVolume(int)));
-    connect(_osdMain, SIGNAL(teletextPage(int)), _osdFloat, SLOT(setTeletextPage(int)));
-    connect(_osdFloat, SIGNAL(teletextPage(int)), _osdMain, SLOT(setTeletextPage(int)));
     connect(_osdMain, SIGNAL(teletextPage(int)), this, SLOT(teletext(int)));
-    connect(_osdFloat, SIGNAL(teletextPage(int)), this, SLOT(teletext(int)));
-
     connect(_osdMain, SIGNAL(backClicked()), ui->actionBack, SLOT(trigger()));
     connect(_osdMain, SIGNAL(muteClicked()), ui->actionMute, SLOT(trigger()));
     connect(_osdMain, SIGNAL(nextClicked()), ui->actionNext, SLOT(trigger()));
@@ -355,21 +351,18 @@ void MainWindow::createConnections()
     connect(_osdMain, SIGNAL(recordNowClicked(bool)), ui->actionRecordNow, SLOT(setChecked(bool)));
     connect(_osdMain, SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
     connect(_osdMain, SIGNAL(teletextClicked()), ui->actionTeletext, SLOT(trigger()));
-    connect(_osdFloat, SIGNAL(backClicked()), ui->actionBack, SLOT(trigger()));
-    connect(_osdFloat, SIGNAL(muteClicked()), ui->actionMute, SLOT(trigger()));
-    connect(_osdFloat, SIGNAL(nextClicked()), ui->actionNext, SLOT(trigger()));
-    connect(_osdFloat, SIGNAL(playClicked()), ui->actionPlay, SLOT(trigger()));
-    connect(_osdFloat, SIGNAL(recordNowClicked(bool)), ui->actionRecordNow, SLOT(setChecked(bool)));
-    connect(_osdFloat, SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
-    connect(_osdFloat, SIGNAL(teletextClicked()), ui->actionTeletext, SLOT(trigger()));
+
+    connect(ui->actionControls, SIGNAL(triggered(bool)), this, SLOT(toggleOsdControls(bool)));
+    connect(ui->dockControls, SIGNAL(visibilityChanged(bool)), this, SLOT(toggleOsdControls(bool)));
+    connect(ui->actionInfoPanel, SIGNAL(triggered(bool)), this, SLOT(toggleOsdInfo(bool)));
+    connect(ui->dockInfo, SIGNAL(visibilityChanged(bool)), this, SLOT(toggleOsdInfo(bool)));
 
     connect(ui->buttonSchedule, SIGNAL(clicked()), this, SLOT(infoToggleSchedule()));
     connect(ui->buttonScheduleBack, SIGNAL(clicked()), this, SLOT(infoToggleSchedule()));
     connect(ui->buttonPlaylistClose, SIGNAL(clicked()), this, SLOT(infoClose()));
-    connect(ui->buttonPlaylistUndock, SIGNAL(clicked()), this, SLOT(infoToggleDock()));
+    connect(ui->buttonScheduleClose, SIGNAL(clicked()), this, SLOT(infoClose()));
 
     connect(_xmltv, SIGNAL(current(QString, QString)), _osdMain, SLOT(setEpg(QString, QString)));
-    connect(_xmltv, SIGNAL(current(QString, QString)), _osdFloat, SLOT(setEpg(QString, QString)));
     connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
     connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
     connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _xmltv, SLOT(request(QString, Tano::Id)));
@@ -377,7 +370,6 @@ void MainWindow::createConnections()
     connect(_xmltv, SIGNAL(programme(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
     connect(ui->scheduleWidget, SIGNAL(itemSelected(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
     connect(_osdMain, SIGNAL(openLink(QString)), _xmltv, SLOT(requestProgramme(QString)));
-    connect(_osdFloat, SIGNAL(openLink(QString)), _xmltv, SLOT(requestProgramme(QString)));
     connect(_epgShow, SIGNAL(requestNext(XmltvProgramme *)), _xmltv, SLOT(requestProgrammeNext(XmltvProgramme*)));
     connect(_epgShow, SIGNAL(requestPrevious(XmltvProgramme *)), _xmltv, SLOT(requestProgrammePrevious(XmltvProgramme*)));
 
@@ -387,7 +379,6 @@ void MainWindow::createConnections()
 #endif
 
     connect(_file, SIGNAL(file(QString)), _osdMain, SLOT(setLogo(QString)));
-    connect(_file, SIGNAL(file(QString)), _osdFloat, SLOT(setLogo(QString)));
 
     connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMouseHide()));
     connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMouseHide()));
@@ -402,7 +393,7 @@ void MainWindow::createConnections()
     connect(_mediaPlayer, SIGNAL(hasVideo(bool)), this, SLOT(showVideo(bool)));
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
-    connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
+    connect(ui->actionRecordNow, SIGNAL(triggered(bool)), this, SLOT(recordNow(bool)));
     connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
     connect(ui->actionRecordTimer, SIGNAL(triggered()), ui->recorder, SLOT(newTimer()));
     connect(ui->recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
@@ -421,6 +412,9 @@ void MainWindow::createMenus()
     _rightMenu->addAction(ui->actionLite);
     _rightMenu->addAction(ui->actionFullscreen);
     _rightMenu->addSeparator();
+    _rightMenu->addAction(ui->actionInfoPanel);
+    _rightMenu->addAction(ui->actionControls);
+    _rightMenu->addSeparator();
     _rightMenu->addMenu(ui->menuAudio);
     _rightMenu->addMenu(ui->menuVideo);
     _rightMenu->addSeparator();
@@ -431,6 +425,8 @@ void MainWindow::createMenus()
     _openMenu->addAction(ui->actionOpenFile);
     _openMenu->addAction(ui->actionOpenUrl);
     _openMenu->addAction(ui->actionOpen);
+
+    ui->actionOpenToolbar->setMenu(_openMenu);
 
     _trayIcon = new TrayIcon(_rightMenu);
 
@@ -486,7 +482,6 @@ void MainWindow::createShortcuts()
 void MainWindow::createSession()
 {
     _osdMain->volumeSlider()->setVolume(_sessionVolume);
-    _osdFloat->volumeSlider()->setVolume(_sessionVolume);
 
     if (_sessionAutoplayEnabled && _hasPlaylist && _model->validate())
         ui->playlistWidget->channelSelected(_sessionChannel);
@@ -540,7 +535,6 @@ void MainWindow::donate()
 void MainWindow::setPlayingState(const Vlc::State &state)
 {
     _osdMain->setPlayingState(state);
-    _osdFloat->setPlayingState(state);
 
     switch (state)
     {
@@ -580,12 +574,10 @@ void MainWindow::playChannel(Channel *channel)
         _file->getFile(_channel->logo());
     } else if (!_channel->logo().isEmpty()) {
         _osdMain->setLogo(_channel->logo());
-        _osdFloat->setLogo(_channel->logo());
     }
 
     _xmltv->request(_channel->xmltvId(), Tano::Main);
     _osdMain->setChannel(_channel->number(), _channel->name(), _channel->language());
-    _osdFloat->setChannel(_channel->number(), _channel->name(), _channel->language());
     tooltip(_channel->name());
     _trayIcon->changeToolTip(Tano::Main, _channel->name());
 }
@@ -617,7 +609,6 @@ void MainWindow::playRecording(Timer *recording)
     playLocal(recording->file());
 
     _osdMain->setRecording(recording->name(), recording->display().replace(recording->name() + " - ",""));
-    _osdFloat->setRecording(recording->name(), recording->display().replace(recording->name() + " - ",""));
     tooltip(recording->name());
     _trayIcon->changeToolTip(Tano::Main, recording->name());
 }
@@ -635,7 +626,6 @@ void MainWindow::playUrl(const QString &url)
     tooltip(url);
 
     _osdMain->setQuickRecordEnabled(true);
-    _osdFloat->setQuickRecordEnabled(true);
 
     play();
 }
@@ -656,9 +646,7 @@ void MainWindow::stop()
     _xmltv->stop();
 
     _osdMain->setChannel();
-    _osdFloat->setChannel();
     _osdMain->setQuickRecordEnabled(false);
-    _osdFloat->setQuickRecordEnabled(false);
     ui->actionTeletext->setChecked(false);
     ui->scheduleWidget->setPage(0);
 
@@ -790,11 +778,6 @@ void MainWindow::showRightMenu(const QPoint &pos)
     _rightMenu->exec(pos);
 }
 
-void MainWindow::menuOpen()
-{
-    _openMenu->exec(QCursor::pos());
-}
-
 void MainWindow::top()
 {
     Qt::WindowFlags top = _flags;
@@ -831,12 +814,25 @@ void MainWindow::tray()
 
 void MainWindow::showOsd(const QPoint &pos)
 {
+    if (_osdEnabled && pos.y() > QApplication::desktop()->height()-200) {
+        toggleOsdControls(true);
+    }
+
+    if (_infoEnabled && pos.x() > QApplication::desktop()->width()-_osdInfo->width()-50) {
+        toggleOsdInfo(true);
+    }
+
     if ((pos.x() < _osdFloat->pos().x()+_osdFloat->width()) &&
        (pos.x() > _osdFloat->pos().x()) &&
        (pos.y() < _osdFloat->pos().y()+_osdFloat->height()) &&
-       (pos.y() > _osdFloat->pos().y())) {
+       (pos.y() > _osdFloat->pos().y()) && _osdFloat->isVisible() && _osdFloat->windowOpacity()) {
         ui->videoWidget->disableMouseHide();
-    } else {
+    } else if ((pos.x() < _osdInfo->pos().x()+_osdInfo->width()) &&
+               (pos.x() > _osdInfo->pos().x()) &&
+               (pos.y() < _osdInfo->pos().y()+_osdInfo->height()) &&
+               (pos.y() > _osdInfo->pos().y()) && _osdInfo->isVisible() && _osdFloat->windowOpacity()) {
+        ui->videoWidget->disableMouseHide();
+    }else {
         ui->videoWidget->enableMouseHide();
     }
 }
@@ -879,25 +875,81 @@ void MainWindow::infoClose()
     ui->dockInfo->close();
 }
 
-void MainWindow::infoToggleDock()
-{
-    ui->dockInfo->setFloating(!ui->dockInfo->isFloating());
-    ui->buttonPlaylistUndock->setIcon(ui->dockInfo->isFloating() ? QIcon(":/icons/16x16/dock.png") : QIcon(":/icons/16x16/undock.png"));
-}
-
 void MainWindow::infoToggleSchedule()
 {
-    if (ui->stackedWidgetDock->currentIndex())
+    if (ui->stackedWidgetDock->currentIndex()) {
         ui->stackedWidgetDock->setCurrentIndex(0);
-    else
+    } else {
         ui->stackedWidgetDock->setCurrentIndex(1);
+    }
+}
+
+void MainWindow::toggleFullscreen(const bool &enabled)
+{
+    _osdInfo->setVisible(enabled);
+    _osdFloat->setVisible(enabled);
+
+    if (enabled) {
+        ui->buttonPlaylistClose->hide();
+        ui->buttonScheduleClose->hide();
+
+        _osdInfo->setWidget(ui->stackedWidgetDock);
+        _osdFloat->setWidget(_osdMain);
+        _osdFloat->resize(_osdFloat->width(), _osdMain->height());
+        _osdFloat->setControls();
+    } else {
+        ui->buttonPlaylistClose->show();
+        ui->buttonScheduleClose->show();
+
+        ui->dockContents->layout()->addWidget(ui->stackedWidgetDock);
+        ui->dockControlsContents->layout()->addWidget(_osdMain);
+    }
+}
+
+void MainWindow::toggleOsdControls()
+{
+    toggleOsdControls(false);
+}
+
+void MainWindow::toggleOsdControls(const bool &enabled)
+{
+    if (ui->actionFullscreen->isChecked()) {
+        if (enabled) {
+            _osdFloat->floatShow();
+        } else {
+            _osdFloat->floatHide();
+        }
+    } else {
+        ui->dockControls->setVisible(enabled);
+    }
+
+    ui->actionControls->setChecked(enabled);
+}
+
+void MainWindow::toggleOsdInfo()
+{
+    toggleOsdInfo(false);
+}
+
+void MainWindow::toggleOsdInfo(const bool &enabled)
+{
+    if (ui->actionFullscreen->isChecked()) {
+        if (enabled) {
+            _osdInfo->floatShow();
+        } else {
+            _osdInfo->floatHide();
+        }
+    } else {
+        ui->dockInfo->setVisible(enabled);
+    }
+
+    ui->actionInfoPanel->setChecked(enabled);
 }
 
 // Recorder
 void MainWindow::recordNow(const bool &start)
 {
     _osdMain->setQuickRecordChecked(start);
-    _osdFloat->setQuickRecordChecked(start);
 
     if (!start) {
         QString media = _mediaItem->currentLocation();
