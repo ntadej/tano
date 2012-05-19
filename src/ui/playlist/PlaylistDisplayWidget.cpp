@@ -63,6 +63,7 @@ void PlaylistDisplayWidget::channelSelected(Channel *channel)
 {
     _current = channel;
     emit itemSelected(_current);
+    updateSelection(_current);
 }
 
 void PlaylistDisplayWidget::channelSelected(const QModelIndex &index)
@@ -75,12 +76,14 @@ void PlaylistDisplayWidget::channelSelected(const int &channel)
 {
     _current = _model->number(channel);
     emit itemSelected(_current);
+    updateSelection(_current);
 }
 
 void PlaylistDisplayWidget::channelSelected(const QString &xmltvId)
 {
     _current = _model->xmltvId(xmltvId);
     emit itemSelected(_current);
+    updateSelection(_current);
 }
 
 void PlaylistDisplayWidget::editMode()
@@ -115,4 +118,10 @@ void PlaylistDisplayWidget::setModel(PlaylistModel *model)
 {
     _model = model;
     _filterModel->setSourceModel(model);
+}
+
+void PlaylistDisplayWidget::updateSelection(Channel *channel)
+{
+    ui->playlistView->selectionModel()->select(_model->indexFromItem(channel), QItemSelectionModel::SelectCurrent);
+    ui->playlistView->scrollTo(_model->indexFromItem(channel), QAbstractItemView::PositionAtTop);
 }

@@ -68,6 +68,7 @@ private slots:
                         const QString &category,
                         const QString &language,
                         const int &type);
+    void updateSelection(Channel *channel);
 
 private:
     Ui::PlaylistDisplayWidget *ui;
