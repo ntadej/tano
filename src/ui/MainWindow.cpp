@@ -81,6 +81,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::MainWindow),
+      _hasPlaylist(false),
       _select(0),
       _file(new NetworkDownload()),
       _locale(new LocaleManager()),
