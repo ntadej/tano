@@ -82,7 +82,11 @@ SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Windows compatibility
 IF(MINGW)
-    SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
+    OPTION(WINDOWS_CONSOLE_OUTPUT "Enable Windows console output" OFF)
+    MESSAGE("Enable Windows console output: ${WINDOWS_CONSOLE_OUTPUT}")
+    IF(NOT WINDOWS_CONSOLE_OUTPUT)
+        SET(CMAKE_EXE_LINKER_FLAGS "-enable-stdcall-fixup -Wl,-enable-auto-import -Wl,-enable-runtime-pseudo-reloc -Wl,-s -mthreads -Wl -Wl,-subsystem,windows")
+    ENDIF(NOT WINDOWS_CONSOLE_OUTPUT)
 ENDIF(MINGW)
 
 # Qt5 support
