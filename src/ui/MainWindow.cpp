@@ -103,7 +103,6 @@ MainWindow::MainWindow(QWidget *parent)
     _update = new UpdateDialog(this);
 #else
     ui->menuAbout->removeAction(ui->actionUpdate);
-    ui->buttonUpdate->hide();
 #endif
 
     createMenus();
