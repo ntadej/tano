@@ -131,6 +131,10 @@ Verze vašeho VLC-Qt: %4</translation>
         <source>Schedule</source>
         <translation>Rozvrh</translation>
     </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished">Hledat a filtrovat</translation>
+    </message>
 </context>
 <context>
     <name>EpgShow</name>
@@ -2302,6 +2306,10 @@ Tuto operaci nelze vrátit zpět.</translation>
     <message>
         <source>New recording</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished">Hledat a filtrovat</translation>
     </message>
 </context>
 <context>

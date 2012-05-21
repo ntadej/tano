@@ -166,6 +166,10 @@ Vaša različica VLC-Qt: %4
         <source>Schedule</source>
         <translation>Spored</translation>
     </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished">Išči in filtriraj</translation>
+    </message>
 </context>
 <context>
     <name>EpgShow</name>
@@ -2453,6 +2457,10 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>New recording</source>
         <translation>Novo snemanje</translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished">Išči in filtriraj</translation>
     </message>
 </context>
 <context>

@@ -127,6 +127,10 @@ msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Программа"
 
+msgctxt "EpgScheduleFull|"
+msgid "Search and filter"
+msgstr ""
+
 msgctxt "EpgShow|"
 msgid "Previous"
 msgstr "Пред."
@@ -2070,6 +2074,10 @@ msgstr ""
 
 msgctxt "RecorderNewDialog|"
 msgid "New recording"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Search and filter"
 msgstr ""
 
 #~ msgctxt "ScheduleListPage|"

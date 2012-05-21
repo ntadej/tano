@@ -69,7 +69,8 @@ void EpgShow::display(XmltvProgramme *programme)
 
     setWindowTitle(programme->channelDisplayName() + ": " + programme->title());
     ui->labelTitle->setText("<h1>" + programme->title() + "</h1>");
-    ui->labelTime->setText("<h2>" + programme->channelDisplayName()+ ", " + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</h2>");
+    ui->labelChannel->setText("<h3>" + programme->channelDisplayName() + "</h3>");
+    ui->labelTime->setText("<h3>" + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</h3>");
     ui->labelInfo->setText("<h3>" + programme->categories().join(" / ") + "</h3>");
     ui->labelDescription->setText(programme->desc());
     ui->labelPhoto->setPixmap(QPixmap(":/icons/48x48/image.png"));

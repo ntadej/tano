@@ -171,6 +171,11 @@ msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Spored"
 
+#, fuzzy
+msgctxt "EpgScheduleFull|"
+msgid "Search and filter"
+msgstr "Išči in filtriraj"
+
 msgctxt "EpgShow|"
 msgid "Previous"
 msgstr "Prejšnja oddaja"
@@ -2475,6 +2480,11 @@ msgstr "Tega programa nimate v vašem seznamu."
 msgctxt "RecorderNewDialog|"
 msgid "New recording"
 msgstr "Novo snemanje"
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Search and filter"
+msgstr "Išči in filtriraj"
 
 #~ msgctxt "ScheduleListPage|"
 #~ msgid "Schedule"

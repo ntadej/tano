@@ -132,6 +132,11 @@ msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Rozvrh"
 
+#, fuzzy
+msgctxt "EpgScheduleFull|"
+msgid "Search and filter"
+msgstr "Hledat a filtrovat"
+
 msgctxt "EpgShow|"
 msgid "Previous"
 msgstr "Předchozí"
@@ -2319,6 +2324,11 @@ msgstr ""
 msgctxt "RecorderNewDialog|"
 msgid "New recording"
 msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Search and filter"
+msgstr "Hledat a filtrovat"
 
 #~ msgctxt "ScheduleListPage|"
 #~ msgid "Schedule"

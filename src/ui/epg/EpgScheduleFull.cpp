@@ -16,6 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#if defined(Qt5)
+    #include <QtWidgets/QMenu>
+    #include <QtWidgets/QWidgetAction>
+#elif defined(Qt4)
+    #include <QtGui/QMenu>
+    #include <QtGui/QWidgetAction>
+#endif
+
 #include "EpgScheduleFull.h"
 #include "ui_EpgScheduleFull.h"
 
@@ -23,6 +31,7 @@
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvProgramme.h"
 #include "playlist/PlaylistModel.h"
+#include "ui/playlist/PlaylistFilterWidget.h"
 
 EpgScheduleFull::EpgScheduleFull(QWidget *parent)
     : QWidget(parent),
@@ -30,6 +39,13 @@ EpgScheduleFull::EpgScheduleFull(QWidget *parent)
 {
     ui->setupUi(this);
     ui->schedule->setIdentifier(Tano::Schedule);
+
+    _menu = new QMenu(this);
+    _action = new QWidgetAction(this);
+    ui->playlist->filter()->show();
+    _action->setDefaultWidget(ui->playlist->filter());
+    _menu->addAction(_action);
+    ui->buttonFilter->setMenu(_menu);
 
     connect(ui->playlist, SIGNAL(itemSelected(Channel *)), this, SLOT(channel(Channel *)));
     connect(ui->schedule, SIGNAL(itemSelected(XmltvProgramme *)), this, SIGNAL(itemSelected(XmltvProgramme *)));

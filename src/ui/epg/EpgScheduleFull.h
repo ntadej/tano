@@ -32,6 +32,9 @@ namespace Ui
     class EpgScheduleFull;
 }
 
+class QMenu;
+class QWidgetAction;
+
 class Channel;
 class EpgScheduleChannel;
 class PlaylistModel;
@@ -61,6 +64,9 @@ private slots:
 
 private:
     Ui::EpgScheduleFull *ui;
+
+    QMenu *_menu;
+    QWidgetAction *_action;
 };
 
 #endif // TANO_EPGSCHEDULEFULL_H_

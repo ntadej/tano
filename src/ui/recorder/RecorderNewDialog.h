@@ -25,6 +25,9 @@
     #include <QtGui/QDialog>
 #endif
 
+class QMenu;
+class QWidgetAction;
+
 class Channel;
 class PlaylistModel;
 class Timer;
@@ -70,6 +73,9 @@ private:
 
     TimersModel *_model;
     Udpxy *_udpxy;
+
+    QMenu *_menu;
+    QWidgetAction *_action;
 };
 
 #endif // TANO_RECORDERNEWDIALOG_H_

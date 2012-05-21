@@ -99,6 +99,10 @@ msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr ""
 
+msgctxt "EpgScheduleFull|"
+msgid "Search and filter"
+msgstr ""
+
 msgctxt "EpgShow|"
 msgid "Previous"
 msgstr ""
@@ -1410,6 +1414,10 @@ msgstr ""
 
 msgctxt "RecorderNewDialog|"
 msgid "New recording"
+msgstr ""
+
+msgctxt "RecorderNewDialog|"
+msgid "Search and filter"
 msgstr ""
 
 msgctxt "SettingsBackend|"

@@ -107,6 +107,10 @@ Votre version de VLC-Qt : %4</translation>
         <source>Schedule</source>
         <translation>Calendrier</translation>
     </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished">Chercher et filtrer</translation>
+    </message>
 </context>
 <context>
     <name>EpgShow</name>
@@ -1978,6 +1982,10 @@ This operation is ireversible.</source>
     <message>
         <source>New recording</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search and filter</source>
+        <translation type="unfinished">Chercher et filtrer</translation>
     </message>
 </context>
 <context>

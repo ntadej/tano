@@ -17,9 +17,13 @@
 *****************************************************************************/
 
 #if defined(Qt5)
+    #include <QtWidgets/QMenu>
     #include <QtWidgets/QMessageBox>
+    #include <QtWidgets/QWidgetAction>
 #elif defined(Qt4)
+    #include <QtGui/QMenu>
     #include <QtGui/QMessageBox>
+    #include <QtGui/QWidgetAction>
 #endif
 
 #include "container/core/Channel.h"
@@ -43,7 +47,13 @@ RecorderNewDialog::RecorderNewDialog(QWidget *parent)
 
     ui->quickBox->hide();
     ui->timerBox->hide();
+
+    _menu = new QMenu(this);
+    _action = new QWidgetAction(this);
     ui->playlistWidget->filter()->show();
+    _action->setDefaultWidget(ui->playlistWidget->filter());
+    _menu->addAction(_action);
+    ui->buttonFilter->setMenu(_menu);
 
     _udpxy = new Udpxy();
     _udpxy->createSettings();

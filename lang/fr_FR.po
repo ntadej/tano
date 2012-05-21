@@ -115,6 +115,11 @@ msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Calendrier"
 
+#, fuzzy
+msgctxt "EpgScheduleFull|"
+msgid "Search and filter"
+msgstr "Chercher et filtrer"
+
 msgctxt "EpgShow|"
 msgid "Previous"
 msgstr "Précédent"
@@ -2029,6 +2034,11 @@ msgstr ""
 msgctxt "RecorderNewDialog|"
 msgid "New recording"
 msgstr ""
+
+#, fuzzy
+msgctxt "RecorderNewDialog|"
+msgid "Search and filter"
+msgstr "Chercher et filtrer"
 
 msgctxt "SettingsBackend|"
 msgid "VLC-Qt Backend"
