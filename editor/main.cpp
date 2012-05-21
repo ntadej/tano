@@ -29,6 +29,7 @@
 
 #include "Config.h"
 #include "core/Common.h"
+#include "core/Log.h"
 #include "core/Settings.h"
 #include "ui/playlist/PlaylistEditor.h"
 
@@ -52,8 +53,10 @@ int main(int argc, char *argv[])
 #else
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
 #endif
-    QCoreApplication::setApplicationName("Tano Editor");
+    QCoreApplication::setApplicationName(Tano::application());
     QCoreApplication::setApplicationVersion(Tano::version());
+
+    Tano::setupLog();
 
     QApplication app(argc, argv);
 

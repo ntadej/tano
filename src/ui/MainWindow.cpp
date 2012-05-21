@@ -215,6 +215,8 @@ void MainWindow::createGui()
     _osdMain->disableTeletext();
     ui->menuMedia->removeAction(ui->actionTeletext);
 #endif
+
+    qDebug() << "Initialised: GUI";
 }
 
 void MainWindow::createBackend()
@@ -233,6 +235,8 @@ void MainWindow::createBackend()
     ui->videoWidget->initDefaultSettings();
     ui->recorder->setMediaInstance(_mediaInstance);
     _recordNow = false;
+
+    qDebug() << "Initialised: Backend";
 }
 
 void MainWindow::createSettings()
@@ -278,6 +282,8 @@ void MainWindow::createSettings()
     _sessionAutoplayEnabled = settings->sessionAutoplay();
 
     ui->recorder->createSettings();
+
+    qDebug() << "Initialised: Settings";
 }
 
 void MainWindow::createSettingsStartup()
@@ -308,6 +314,8 @@ void MainWindow::createSettingsStartup()
 
     _dockControlsVisible = settings->startControls();
     _dockInfoVisible = settings->startInfo();
+
+    qDebug() << "Initialised: Startup settings";
 }
 
 void MainWindow::createConnections()
@@ -408,6 +416,8 @@ void MainWindow::createConnections()
     connect(ui->actionRecordTimer, SIGNAL(triggered()), ui->recorder, SLOT(newTimer()));
     connect(ui->recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
     connect(_epgShow, SIGNAL(requestRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
+
+    qDebug() << "Initialised: Event connections";
 }
 
 void MainWindow::createMenus()
@@ -454,6 +464,8 @@ void MainWindow::createMenus()
     ui->menuVideo->addMenu(_menuDeinterlacing);
 
     _playlistMenu = new QMenu();
+
+    qDebug() << "Initialised: Menus";
 }
 
 void MainWindow::createShortcuts()
@@ -489,6 +501,8 @@ void MainWindow::createShortcuts()
              << _menuDeinterlacing->actionNext();
 
     _shortcuts = new Shortcuts(_actions, this);
+
+    qDebug() << "Initialised: Shortcuts";
 }
 
 void MainWindow::createSession()
@@ -501,6 +515,8 @@ void MainWindow::createSession()
 #if UPDATE
     _update->checkSilent();
 #endif
+
+    qDebug() << "Initialised: Session";
 }
 
 void MainWindow::writeSession()
@@ -513,6 +529,8 @@ void MainWindow::writeSession()
     if (_sessionAutoplayEnabled)
         settings->setChannel(_osdMain->lcd()->value());
     settings->writeSettings();
+
+    qDebug() << "Session written";
 }
 
 void MainWindow::mouseWheel()

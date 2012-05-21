@@ -32,6 +32,24 @@
     #include <vlc-qt/Instance.h>
 #endif
 
+QString Tano::application()
+{
+#if EDITOR
+    return "Tano Editor";
+#else
+    return "Tano";
+#endif
+}
+
+QString Tano::executable()
+{
+#if EDITOR
+    return "tano-editor";
+#else
+    return "tano";
+#endif
+}
+
 QString Tano::version()
 {
     QString version;

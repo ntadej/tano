@@ -26,6 +26,9 @@
 
 namespace Tano
 {
+    QString application();
+    QString executable();
+
     // Version
     QString version();
     QString changeset();

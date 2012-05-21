@@ -27,6 +27,7 @@
 #endif
 
 #include "core/Common.h"
+#include "core/Log.h"
 #include "core/Settings.h"
 #include "ui/MainWindow.h"
 #include "ui/wizard/FirstRunWizard.h"
@@ -46,8 +47,10 @@ int main(int argc, char *argv[])
 #else
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
 #endif
-    QCoreApplication::setApplicationName("Tano");
+    QCoreApplication::setApplicationName(Tano::application());
     QCoreApplication::setApplicationVersion(Tano::version());
+
+    Tano::setupLog();
 
     QtSingleApplication instance(argc, argv);
     if(instance.sendMessage(""))

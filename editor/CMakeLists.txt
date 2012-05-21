@@ -88,6 +88,7 @@ SET(Tano_Editor_Srcs
     ../src/core/Enums.cpp
     ../src/core/ListModel.cpp
     ../src/core/LocaleManager.cpp
+    ../src/core/Log.cpp
     ../src/core/NetworkRequest.cpp
     ../src/core/Print.cpp
     ../src/core/Settings.cpp

@@ -192,6 +192,7 @@ SET(Tano_Core_Srcs
     core/ListItem.h
     core/ListModel.cpp
     core/LocaleManager.cpp
+    core/Log.cpp
     core/Print.cpp
     core/Settings.cpp
     core/Shortcuts.cpp
