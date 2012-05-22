@@ -412,7 +412,7 @@ void MainWindow::createConnections()
     connect(_mediaPlayer, SIGNAL(hasVideo(bool)), this, SLOT(showVideo(bool)));
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
-    connect(ui->actionRecordNow, SIGNAL(triggered(bool)), this, SLOT(recordNow(bool)));
+    connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
     connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
     connect(ui->actionRecordTimer, SIGNAL(triggered()), ui->recorder, SLOT(newTimer()));
     connect(ui->recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
