@@ -109,7 +109,7 @@ Votre version de VLC-Qt : %4</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Chercher et filtrer</translation>
+        <translation>Chercher et filtrer</translation>
     </message>
 </context>
 <context>
@@ -448,7 +448,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished">Pause</translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <source>Buffering...</source>
@@ -456,12 +456,12 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Restore</source>
-        <translation type="unfinished">Restituer</translation>
+        <translation>Restituer</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Ne peut pas lire le fichier %1 :
+        <translation>Ne peut pas lire le fichier %1 :
 %2.</translation>
     </message>
     <message>
@@ -482,7 +482,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Quick</source>
-        <translation type="unfinished">Rapide</translation>
+        <translation>Rapide</translation>
     </message>
     <message>
         <source>Add timer</source>
@@ -626,12 +626,13 @@ This will stop recording in progress.</source>
     <name>NetworkDownload</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ne peut écrire le fichier %1:
+%2.</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1258,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <name>PlaylistFilterWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Éffacer</translation>
+        <translation>Éffacer</translation>
     </message>
     <message>
         <source>Search:</source>
@@ -1277,15 +1278,15 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation type="unfinished">TV + Radio</translation>
+        <translation>TV + Radio</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation type="unfinished">TV seule</translation>
+        <translation>TV seule</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation type="unfinished">Radio seule</translation>
+        <translation>Radio seule</translation>
     </message>
     <message>
         <source>Search and filter</source>
@@ -1293,11 +1294,11 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Toutes catégories</translation>
+        <translation>Toutes catégories</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Toutes les langues</translation>
+        <translation>Toutes les langues</translation>
     </message>
 </context>
 <context>
@@ -1836,7 +1837,7 @@ L&apos;avez-vous déjà déplacé ou supprimer ?</translation>
     <name>RecorderInfoWidget</name>
     <message>
         <source>Status</source>
-        <translation type="unfinished">État</translation>
+        <translation>État</translation>
     </message>
     <message>
         <source>Recording to file:</source>
@@ -1937,15 +1938,15 @@ This operation is ireversible.</source>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation type="unfinished">Enregistrement rapide</translation>
+        <translation>Enregistrement rapide</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation type="unfinished">Chaîne sélectionnée :</translation>
+        <translation>Chaîne sélectionnée :</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation type="unfinished">Nom de l&apos;enregistrement :</translation>
+        <translation>Nom de l&apos;enregistrement :</translation>
     </message>
     <message>
         <source>Record</source>
@@ -1953,7 +1954,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Arrière</translation>
+        <translation>Arrière</translation>
     </message>
     <message>
         <source>Add timer</source>
@@ -1961,19 +1962,19 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation type="unfinished">Nom de la programmation :</translation>
+        <translation>Nom de la programmation :</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation type="unfinished">AJouter une nouvelle programmation</translation>
+        <translation>AJouter une nouvelle programmation</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished">Enregistreur</translation>
+        <translation>Enregistreur</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation type="unfinished">Veuillez sélectionner une chaîne.</translation>
+        <translation>Veuillez sélectionner une chaîne.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
@@ -1985,7 +1986,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Chercher et filtrer</translation>
+        <translation>Chercher et filtrer</translation>
     </message>
 </context>
 <context>
@@ -2107,6 +2108,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Playlist</source>
+        <extracomment>Please make manual line breaks if text too long!</extracomment>
         <translation>Liste de lecture</translation>
     </message>
     <message>
@@ -2429,7 +2431,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Remarque : Ces préférences sont partagées avec toutes les applications Tano.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Remarque : Ces préférences sont partagées avec toutes les applications Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>
@@ -2468,11 +2470,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation>Relancer l&apos;assistant après le redémarrage</translation>
+        <translation type="obsolete">Relancer l&apos;assistant après le redémarrage</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Remarque : Ces préférences sont partagées avec toutes les applications Tano.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Remarque : Ces préférences sont partagées avec toutes les applications Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>

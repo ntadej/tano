@@ -116,7 +116,6 @@ msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Розклад"
 
-#, fuzzy
 msgctxt "EpgScheduleFull|"
 msgid "Search and filter"
 msgstr "Шукати та відфільтрувати"
@@ -181,7 +180,6 @@ msgctxt "EpgShow|"
 msgid "Guest"
 msgstr "Гість"
 
-#, fuzzy
 msgctxt "EpgShow|"
 msgid "Record"
 msgstr "Запис"
@@ -452,7 +450,6 @@ msgctxt "MainWindow|"
 msgid "Teletext"
 msgstr "Телетекст"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Пауза"
@@ -461,12 +458,11 @@ msgstr "Пауза"
 #~ msgid "Buffering..."
 #~ msgstr "Буферізація..."
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Restore"
 msgstr "Відновити"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -491,7 +487,6 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr "Швидкий запис"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick"
 msgstr "Швидко"
@@ -612,12 +607,11 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Наступна відео доріжка"
 
-#, fuzzy
 msgctxt "NetworkDownload|"
 msgid "Tano"
 msgstr "Tano"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "NetworkDownload|"
 msgid ""
 "Cannot write file %1:\n"
@@ -1301,7 +1295,6 @@ msgctxt "PlaylistFilterModel|"
 msgid "All languages"
 msgstr "Усі мови"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "Clear"
 msgstr "Спорожнити"
@@ -1322,17 +1315,14 @@ msgstr "Спорожнити"
 #~ msgid "Type:"
 #~ msgstr "Тип:"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "TV + Radio"
 msgstr "ТВ + Радіо"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "TV only"
 msgstr "Лише ТВ"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "Radio only"
 msgstr "Лише Радіо"
@@ -1341,12 +1331,10 @@ msgstr "Лише Радіо"
 #~ msgid "Search and filter"
 #~ msgstr "Шукати та відфільтрувати"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "All categories"
 msgstr "Усі категорії"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "All languages"
 msgstr "Усі мови"
@@ -1877,7 +1865,6 @@ msgctxt "Recorder|"
 msgid "Recordings and timers"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Status"
 msgstr "Статус"
@@ -1978,52 +1965,42 @@ msgctxt "RecorderInfoWidget|"
 msgid "Edit timer"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Quick record"
 msgstr "Швидкий запис"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Selected channel:"
 msgstr "Обраний канал:"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Recording name:"
 msgstr "Назва запису:"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Record"
 msgstr "Запис"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Back"
 msgstr "Назад"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Add timer"
 msgstr "Додати таймер"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Timer name:"
 msgstr "Назва таймеру:"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Add new timer"
 msgstr "Додати новий таймер"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Recorder"
 msgstr "Записувач"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Please, select a channel."
 msgstr "Будь ласка, оберіть канал."
@@ -2036,7 +2013,6 @@ msgctxt "RecorderNewDialog|"
 msgid "New recording"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Search and filter"
 msgstr "Шукати та відфільтрувати"
@@ -2155,6 +2131,7 @@ msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Загальні"
 
+#. Please make manual line breaks if text too long!
 msgctxt "SettingsDialog|"
 msgid "Playlist"
 msgstr "Перелік відтворення"
@@ -2461,10 +2438,11 @@ msgctxt "SettingsEditorGeneral|"
 msgid "Tano Editor"
 msgstr "Tano Редактор"
 
-msgctxt "SettingsEditorGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr ""
-"<i>Інформація: Ці налаштування будуть застосовані в усіх програмах Tano.</i>"
+#~ msgctxt "SettingsEditorGeneral|"
+#~ msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+#~ msgstr ""
+#~ "<i>Інформація: Ці налаштування будуть застосовані в усіх програмах "
+#~ "Tano.</i>"
 
 msgctxt "SettingsEditorGeneral|"
 msgid "Language"
@@ -2502,14 +2480,15 @@ msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
 
-msgctxt "SettingsGeneral|"
-msgid "Run First run wizard after restart"
-msgstr "Запустити Майстер налаштувань після перезапуску"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Run First run wizard after restart"
+#~ msgstr "Запустити Майстер налаштувань після перезапуску"
 
-msgctxt "SettingsGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr ""
-"<i>Інформація: Ці налаштування будуть застосовані в усіх програмах Tano.</i>"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+#~ msgstr ""
+#~ "<i>Інформація: Ці налаштування будуть застосовані в усіх програмах "
+#~ "Tano.</i>"
 
 msgctxt "SettingsGeneral|"
 msgid "Language"

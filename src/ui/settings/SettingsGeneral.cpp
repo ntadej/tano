@@ -53,16 +53,6 @@ void SettingsGeneral::changeEvent(QEvent *e)
     }
 }
 
-bool SettingsGeneral::wizard() const
-{
-    return ui->checkWizard->isChecked();
-}
-
-void SettingsGeneral::setWizard(const bool &enabled)
-{
-    ui->checkWizard->setChecked(enabled);
-}
-
 QString SettingsGeneral::language() const
 {
     if (ui->radioCustom->isChecked())

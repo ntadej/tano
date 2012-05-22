@@ -37,8 +37,6 @@ public:
     SettingsGeneral(QWidget *parent = 0);
     ~SettingsGeneral();
 
-    bool wizard() const;
-    void setWizard(const bool &enabled);
     QString language() const;
     void setLanguage(const QString &language);
     bool sessionAutoplay() const;

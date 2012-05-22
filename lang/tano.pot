@@ -1504,6 +1504,7 @@ msgctxt "SettingsDialog|"
 msgid "General"
 msgstr ""
 
+#. Please make manual line breaks if text too long!
 msgctxt "SettingsDialog|"
 msgid "Playlist"
 msgstr ""
@@ -1721,10 +1722,6 @@ msgid "Tano Editor"
 msgstr ""
 
 msgctxt "SettingsEditorGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr ""
-
-msgctxt "SettingsEditorGeneral|"
 msgid "Language"
 msgstr ""
 
@@ -1756,14 +1753,6 @@ msgstr ""
 
 msgctxt "SettingsGeneral|"
 msgid "Tano"
-msgstr ""
-
-msgctxt "SettingsGeneral|"
-msgid "Run First run wizard after restart"
-msgstr ""
-
-msgctxt "SettingsGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
 msgstr ""
 
 msgctxt "SettingsGeneral|"

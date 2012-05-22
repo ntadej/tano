@@ -133,7 +133,7 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Hledat a filtrovat</translation>
+        <translation>Hledat a filtrovat</translation>
     </message>
 </context>
 <context>
@@ -200,7 +200,7 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">Nahrávat</translation>
+        <translation>Nahrávat</translation>
     </message>
 </context>
 <context>
@@ -526,7 +526,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished">Pozastavit</translation>
+        <translation>Pozastavit</translation>
     </message>
     <message>
         <source>Buffering...</source>
@@ -538,12 +538,12 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Restore</source>
-        <translation type="unfinished">Obnovit</translation>
+        <translation>Obnovit</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Nelze číst ze souboru %1:
+        <translation>Nelze číst ze souboru %1:
 %2.</translation>
     </message>
     <message>
@@ -564,7 +564,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Quick</source>
-        <translation type="unfinished">Rychlý</translation>
+        <translation>Rychlý</translation>
     </message>
     <message>
         <source>Add timer</source>
@@ -716,12 +716,12 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <name>NetworkDownload</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Nelze zapisovat soubor %1:
+        <translation>Nelze zapisovat soubor %1:
 %2.</translation>
     </message>
 </context>
@@ -1405,7 +1405,7 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistFilterWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Smazat</translation>
+        <translation>Smazat</translation>
     </message>
     <message>
         <source>Search:</source>
@@ -1425,15 +1425,15 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation type="unfinished">TV + Rádio</translation>
+        <translation>TV + Rádio</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation type="unfinished">Pouze TV</translation>
+        <translation>Pouze TV</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation type="unfinished">Pouze rádio</translation>
+        <translation>Pouze rádio</translation>
     </message>
     <message>
         <source>Search and filter</source>
@@ -1441,11 +1441,11 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Všechny skupiny</translation>
+        <translation>Všechny skupiny</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Všechny jazyky</translation>
+        <translation>Všechny jazyky</translation>
     </message>
 </context>
 <context>
@@ -2160,7 +2160,7 @@ Již jste jej přesunul nebo smazal?</translation>
     <name>RecorderInfoWidget</name>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Stav</translation>
+        <translation>Stav</translation>
     </message>
     <message>
         <source>Recording to file:</source>
@@ -2261,43 +2261,43 @@ Tuto operaci nelze vrátit zpět.</translation>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation type="unfinished">Rychlý záznam</translation>
+        <translation>Rychlý záznam</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation type="unfinished">Vybraný kanál:</translation>
+        <translation>Vybraný kanál:</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation type="unfinished">Název nahrávky:</translation>
+        <translation>Název nahrávky:</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">Nahrávat</translation>
+        <translation>Nahrávat</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Zpět</translation>
+        <translation>Zpět</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation type="unfinished">Přidat časovač</translation>
+        <translation>Přidat časovač</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation type="unfinished">Název časovače:</translation>
+        <translation>Název časovače:</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation type="unfinished">Přidat nový časovač</translation>
+        <translation>Přidat nový časovač</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nahrávač</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation type="unfinished">Vyberte, prosím, program.</translation>
+        <translation>Vyberte, prosím, program.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
@@ -2309,7 +2309,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Hledat a filtrovat</translation>
+        <translation>Hledat a filtrovat</translation>
     </message>
 </context>
 <context>
@@ -2445,6 +2445,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Playlist</source>
+        <extracomment>Please make manual line breaks if text too long!</extracomment>
         <translation>Seznam programů</translation>
     </message>
     <message>
@@ -2899,7 +2900,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>
@@ -2938,11 +2939,11 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation>Po znovuspuštění spustit průvodce prvním spuštěním</translation>
+        <translation type="obsolete">Po znovuspuštění spustit průvodce prvním spuštěním</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>

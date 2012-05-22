@@ -26,6 +26,7 @@
 #endif
 
 class QAbstractButton;
+class QButtonGroup;
 
 class Settings;
 
@@ -56,6 +57,8 @@ private:
     Ui::SettingsDialog *ui;
 
     Settings *_settings;
+
+    QButtonGroup *_buttonGroup;
 };
 
 #endif // TANO_SETTINGSDIALOG_H_

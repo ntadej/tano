@@ -168,7 +168,7 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Išči in filtriraj</translation>
+        <translation>Išči in filtriraj</translation>
     </message>
 </context>
 <context>
@@ -463,7 +463,7 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <source>Restore</source>
-        <translation type="unfinished">Obnovi</translation>
+        <translation>Obnovi</translation>
     </message>
     <message>
         <source>Simple Mode</source>
@@ -557,7 +557,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished">Prekini</translation>
+        <translation>Prekini</translation>
     </message>
     <message>
         <source>Buffering...</source>
@@ -630,7 +630,7 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Ne morem prebrati %1:
+        <translation>Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
@@ -651,7 +651,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Quick</source>
-        <translation type="unfinished">Hitro</translation>
+        <translation>Hitro</translation>
     </message>
     <message>
         <source>Add timer</source>
@@ -663,11 +663,11 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpora</translation>
     </message>
     <message>
         <source>Tano Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano Podpora</translation>
     </message>
 </context>
 <context>
@@ -2460,7 +2460,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Išči in filtriraj</translation>
+        <translation>Išči in filtriraj</translation>
     </message>
 </context>
 <context>
@@ -2596,6 +2596,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Playlist</source>
+        <extracomment>Please make manual line breaks if text too long!</extracomment>
         <translation>Programi</translation>
     </message>
     <message>
@@ -3058,7 +3059,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>
@@ -3097,11 +3098,11 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation>Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
+        <translation type="obsolete">Zaženi &apos;Čarovnik ob prvem zagonu&apos; ob novem zagonu</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>

@@ -30,8 +30,19 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 
     _settings = new Settings(this);
 
+    _buttonGroup = new QButtonGroup(this);
+    _buttonGroup->setExclusive(true);
+
+    _buttonGroup->addButton(ui->buttonGeneral, 0);
+    _buttonGroup->addButton(ui->buttonPlaylist, 1);
+    _buttonGroup->addButton(ui->buttonInterface, 2);
+    _buttonGroup->addButton(ui->buttonPlayback, 3);
+    _buttonGroup->addButton(ui->buttonSchedule, 4);
+    _buttonGroup->addButton(ui->buttonRecorder, 5);
+
     read();
 
+    connect(_buttonGroup, SIGNAL(buttonClicked(int)), ui->settingsWidget, SLOT(setCurrentIndex(int)));
     connect(ui->general, SIGNAL(resetDefaults()), this, SLOT(defaults()));
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 }
@@ -39,6 +50,7 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 SettingsDialog::~SettingsDialog()
 {
     delete ui;
+    delete _buttonGroup;
     delete _settings;
 }
 
@@ -73,7 +85,6 @@ void SettingsDialog::action(QAbstractButton *button)
 void SettingsDialog::apply()
 {
     // General
-    _settings->setConfigured(!ui->general->wizard());
     _settings->setSessionVolume(ui->general->sessionVolume());
     _settings->setSessionAutoplay(ui->general->sessionAutoplay());
     _settings->setLanguage(ui->general->language());
@@ -173,7 +184,6 @@ void SettingsDialog::defaults()
 void SettingsDialog::read()
 {
     // General
-    ui->general->setWizard(!_settings->configured());
     ui->general->setSessionVolume(_settings->sessionVolume());
     ui->general->setSessionAutoplay(_settings->sessionAutoplay());
     ui->general->setLanguage(_settings->language());

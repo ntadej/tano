@@ -132,7 +132,6 @@ msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Rozvrh"
 
-#, fuzzy
 msgctxt "EpgScheduleFull|"
 msgid "Search and filter"
 msgstr "Hledat a filtrovat"
@@ -197,7 +196,6 @@ msgctxt "EpgShow|"
 msgid "Guest"
 msgstr "Host"
 
-#, fuzzy
 msgctxt "EpgShow|"
 msgid "Record"
 msgstr "Nahrávat"
@@ -503,7 +501,6 @@ msgctxt "MainWindow|"
 msgid "Teletext"
 msgstr "Teletext"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Pozastavit"
@@ -516,12 +513,11 @@ msgstr "Pozastavit"
 #~ msgid "Tano TV channel list files(*.m3u)"
 #~ msgstr "Soubory se seznamy programů Tano TV (*.m3u)"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Restore"
 msgstr "Obnovit"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -546,7 +542,6 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr "Rychlý záznam"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick"
 msgstr "Rychlý"
@@ -675,12 +670,11 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Další obrazová stopa"
 
-#, fuzzy
 msgctxt "NetworkDownload|"
 msgid "Tano"
 msgstr "Tano"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "NetworkDownload|"
 msgid ""
 "Cannot write file %1:\n"
@@ -1414,7 +1408,6 @@ msgctxt "PlaylistFilterModel|"
 msgid "All languages"
 msgstr "Všechny jazyky"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "Clear"
 msgstr "Smazat"
@@ -1435,17 +1428,14 @@ msgstr "Smazat"
 #~ msgid "Type:"
 #~ msgstr "Typ:"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "TV + Radio"
 msgstr "TV + Rádio"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "TV only"
 msgstr "Pouze TV"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "Radio only"
 msgstr "Pouze rádio"
@@ -1454,12 +1444,10 @@ msgstr "Pouze rádio"
 #~ msgid "Search and filter"
 #~ msgstr "Hledat a filtrovat"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "All categories"
 msgstr "Všechny skupiny"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "All languages"
 msgstr "Všechny jazyky"
@@ -2167,7 +2155,6 @@ msgctxt "Recorder|"
 msgid "Recordings and timers"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Status"
 msgstr "Stav"
@@ -2268,51 +2255,42 @@ msgctxt "RecorderInfoWidget|"
 msgid "Edit timer"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Quick record"
 msgstr "Rychlý záznam"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Selected channel:"
 msgstr "Vybraný kanál:"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Recording name:"
 msgstr "Název nahrávky:"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Record"
 msgstr "Nahrávat"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Back"
 msgstr "Zpět"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Add timer"
 msgstr "Přidat časovač"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Timer name:"
 msgstr "Název časovače:"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Add new timer"
 msgstr "Přidat nový časovač"
 
 msgctxt "RecorderNewDialog|"
 msgid "Recorder"
-msgstr ""
+msgstr "Nahrávač"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Please, select a channel."
 msgstr "Vyberte, prosím, program."
@@ -2325,7 +2303,6 @@ msgctxt "RecorderNewDialog|"
 msgid "New recording"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Search and filter"
 msgstr "Hledat a filtrovat"
@@ -2452,6 +2429,7 @@ msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Obecné"
 
+#. Please make manual line breaks if text too long!
 msgctxt "SettingsDialog|"
 msgid "Playlist"
 msgstr "Seznam programů"
@@ -2892,9 +2870,10 @@ msgctxt "SettingsEditorGeneral|"
 msgid "Tano Editor"
 msgstr "Editor Tano"
 
-msgctxt "SettingsEditorGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr "<i>Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.</i>"
+#~ msgctxt "SettingsEditorGeneral|"
+#~ msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+#~ msgstr ""
+#~ "<i>Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.</i>"
 
 msgctxt "SettingsEditorGeneral|"
 msgid "Language"
@@ -2932,13 +2911,14 @@ msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
 
-msgctxt "SettingsGeneral|"
-msgid "Run First run wizard after restart"
-msgstr "Po znovuspuštění spustit průvodce prvním spuštěním"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Run First run wizard after restart"
+#~ msgstr "Po znovuspuštění spustit průvodce prvním spuštěním"
 
-msgctxt "SettingsGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr "<i>Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.</i>"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+#~ msgstr ""
+#~ "<i>Poznámka: Tato nastavení jsou sdílena se všemi programy Tano.</i>"
 
 msgctxt "SettingsGeneral|"
 msgid "Language"

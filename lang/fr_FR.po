@@ -115,7 +115,6 @@ msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Calendrier"
 
-#, fuzzy
 msgctxt "EpgScheduleFull|"
 msgid "Search and filter"
 msgstr "Chercher et filtrer"
@@ -445,7 +444,6 @@ msgctxt "MainWindow|"
 msgid "Teletext"
 msgstr "Teletexte"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Pause"
@@ -454,12 +452,11 @@ msgstr "Pause"
 #~ msgid "Buffering..."
 #~ msgstr "Mémorisation..."
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Restore"
 msgstr "Restituer"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -484,7 +481,6 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr "Enregistrement rapide"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick"
 msgstr "Rapide"
@@ -605,7 +601,6 @@ msgctxt "MenuTrackVideo|"
 msgid "Next video track"
 msgstr "Piste vidéo suivante"
 
-#, fuzzy
 msgctxt "NetworkDownload|"
 msgid "Tano"
 msgstr "Tano"
@@ -616,6 +611,8 @@ msgid ""
 "Cannot write file %1:\n"
 "%2."
 msgstr ""
+"Ne peut écrire le fichier %1:\n"
+"%2."
 
 msgctxt "OsdWidget|"
 msgid "Play"
@@ -1300,7 +1297,6 @@ msgctxt "PlaylistFilterModel|"
 msgid "All languages"
 msgstr "Toutes les langues"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "Clear"
 msgstr "Éffacer"
@@ -1321,17 +1317,14 @@ msgstr "Éffacer"
 #~ msgid "Type:"
 #~ msgstr "Type :"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "TV + Radio"
 msgstr "TV + Radio"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "TV only"
 msgstr "TV seule"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "Radio only"
 msgstr "Radio seule"
@@ -1340,12 +1333,10 @@ msgstr "Radio seule"
 #~ msgid "Search and filter"
 #~ msgstr "Chercher et filtrer"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "All categories"
 msgstr "Toutes catégories"
 
-#, fuzzy
 msgctxt "PlaylistFilterWidget|"
 msgid "All languages"
 msgstr "Toutes les langues"
@@ -1877,7 +1868,6 @@ msgctxt "Recorder|"
 msgid "Recordings and timers"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderInfoWidget|"
 msgid "Status"
 msgstr "État"
@@ -1979,17 +1969,14 @@ msgctxt "RecorderInfoWidget|"
 msgid "Edit timer"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Quick record"
 msgstr "Enregistrement rapide"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Selected channel:"
 msgstr "Chaîne sélectionnée :"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Recording name:"
 msgstr "Nom de l'enregistrement :"
@@ -1998,7 +1985,6 @@ msgctxt "RecorderNewDialog|"
 msgid "Record"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Back"
 msgstr "Arrière"
@@ -2007,22 +1993,18 @@ msgctxt "RecorderNewDialog|"
 msgid "Add timer"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Timer name:"
 msgstr "Nom de la programmation :"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Add new timer"
 msgstr "AJouter une nouvelle programmation"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Recorder"
 msgstr "Enregistreur"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Please, select a channel."
 msgstr "Veuillez sélectionner une chaîne."
@@ -2035,7 +2017,6 @@ msgctxt "RecorderNewDialog|"
 msgid "New recording"
 msgstr ""
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Search and filter"
 msgstr "Chercher et filtrer"
@@ -2154,6 +2135,7 @@ msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Général"
 
+#. Please make manual line breaks if text too long!
 msgctxt "SettingsDialog|"
 msgid "Playlist"
 msgstr "Liste de lecture"
@@ -2462,11 +2444,11 @@ msgctxt "SettingsEditorGeneral|"
 msgid "Tano Editor"
 msgstr "Éditeur Tano"
 
-msgctxt "SettingsEditorGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr ""
-"<i>Remarque : Ces préférences sont partagées avec toutes les applications "
-"Tano.</i>"
+#~ msgctxt "SettingsEditorGeneral|"
+#~ msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+#~ msgstr ""
+#~ "<i>Remarque : Ces préférences sont partagées avec toutes les applications "
+#~ "Tano.</i>"
 
 msgctxt "SettingsEditorGeneral|"
 msgid "Language"
@@ -2504,15 +2486,15 @@ msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
 
-msgctxt "SettingsGeneral|"
-msgid "Run First run wizard after restart"
-msgstr "Relancer l'assistant après le redémarrage"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Run First run wizard after restart"
+#~ msgstr "Relancer l'assistant après le redémarrage"
 
-msgctxt "SettingsGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr ""
-"<i>Remarque : Ces préférences sont partagées avec toutes les applications "
-"Tano.</i>"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+#~ msgstr ""
+#~ "<i>Remarque : Ces préférences sont partagées avec toutes les applications "
+#~ "Tano.</i>"
 
 msgctxt "SettingsGeneral|"
 msgid "Language"

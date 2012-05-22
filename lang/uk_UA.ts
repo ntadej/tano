@@ -109,7 +109,7 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Шукати та відфільтрувати</translation>
+        <translation>Шукати та відфільтрувати</translation>
     </message>
 </context>
 <context>
@@ -176,7 +176,7 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">Запис</translation>
+        <translation>Запис</translation>
     </message>
 </context>
 <context>
@@ -451,7 +451,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Pause</source>
-        <translation type="unfinished">Пауза</translation>
+        <translation>Пауза</translation>
     </message>
     <message>
         <source>Buffering...</source>
@@ -459,12 +459,12 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Restore</source>
-        <translation type="unfinished">Відновити</translation>
+        <translation>Відновити</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Неможливо прочитати файл %1:
+        <translation>Неможливо прочитати файл %1:
 %2.</translation>
     </message>
     <message>
@@ -485,7 +485,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Quick</source>
-        <translation type="unfinished">Швидко</translation>
+        <translation>Швидко</translation>
     </message>
     <message>
         <source>Add timer</source>
@@ -629,12 +629,12 @@ This will stop recording in progress.</source>
     <name>NetworkDownload</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished">Tano</translation>
+        <translation>Tano</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Неможливо записати файл %1:
+        <translation>Неможливо записати файл %1:
 %2.</translation>
     </message>
 </context>
@@ -1258,7 +1258,7 @@ You will lose any unsaved changes.</source>
     <name>PlaylistFilterWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Спорожнити</translation>
+        <translation>Спорожнити</translation>
     </message>
     <message>
         <source>Search:</source>
@@ -1278,15 +1278,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation type="unfinished">ТВ + Радіо</translation>
+        <translation>ТВ + Радіо</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation type="unfinished">Лише ТВ</translation>
+        <translation>Лише ТВ</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation type="unfinished">Лише Радіо</translation>
+        <translation>Лише Радіо</translation>
     </message>
     <message>
         <source>Search and filter</source>
@@ -1294,11 +1294,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Усі категорії</translation>
+        <translation>Усі категорії</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Усі мови</translation>
+        <translation>Усі мови</translation>
     </message>
 </context>
 <context>
@@ -1837,7 +1837,7 @@ Have you already moved or deleted it?</source>
     <name>RecorderInfoWidget</name>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Статус</translation>
+        <translation>Статус</translation>
     </message>
     <message>
         <source>Recording to file:</source>
@@ -1938,43 +1938,43 @@ This operation is ireversible.</source>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation type="unfinished">Швидкий запис</translation>
+        <translation>Швидкий запис</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation type="unfinished">Обраний канал:</translation>
+        <translation>Обраний канал:</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation type="unfinished">Назва запису:</translation>
+        <translation>Назва запису:</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">Запис</translation>
+        <translation>Запис</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Назад</translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation type="unfinished">Додати таймер</translation>
+        <translation>Додати таймер</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation type="unfinished">Назва таймеру:</translation>
+        <translation>Назва таймеру:</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation type="unfinished">Додати новий таймер</translation>
+        <translation>Додати новий таймер</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished">Записувач</translation>
+        <translation>Записувач</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation type="unfinished">Будь ласка, оберіть канал.</translation>
+        <translation>Будь ласка, оберіть канал.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
@@ -1986,7 +1986,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="unfinished">Шукати та відфільтрувати</translation>
+        <translation>Шукати та відфільтрувати</translation>
     </message>
 </context>
 <context>
@@ -2108,6 +2108,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Playlist</source>
+        <extracomment>Please make manual line breaks if text too long!</extracomment>
         <translation>Перелік відтворення</translation>
     </message>
     <message>
@@ -2430,7 +2431,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Інформація: Ці налаштування будуть застосовані в усіх програмах Tano.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Інформація: Ці налаштування будуть застосовані в усіх програмах Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>
@@ -2469,11 +2470,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
-        <translation>Запустити Майстер налаштувань після перезапуску</translation>
+        <translation type="obsolete">Запустити Майстер налаштувань після перезапуску</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Інформація: Ці налаштування будуть застосовані в усіх програмах Tano.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Інформація: Ці налаштування будуть застосовані в усіх програмах Tano.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Language</source>

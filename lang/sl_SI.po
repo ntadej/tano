@@ -171,7 +171,6 @@ msgctxt "EpgScheduleFull|"
 msgid "Schedule"
 msgstr "Spored"
 
-#, fuzzy
 msgctxt "EpgScheduleFull|"
 msgid "Search and filter"
 msgstr "Išči in filtriraj"
@@ -445,7 +444,6 @@ msgctxt "MainWindow|"
 msgid "Always on top"
 msgstr "Vedno na vrhu"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Restore"
 msgstr "Obnovi"
@@ -542,7 +540,6 @@ msgstr ""
 "Ali želite zapreti Tano?\n"
 "To bo ustavilo trenutno snemanje."
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Pause"
 msgstr "Prekini"
@@ -616,7 +613,7 @@ msgctxt "MainWindow|"
 msgid "&Video"
 msgstr "&Slika"
 
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Cannot read file %1:\n"
@@ -641,7 +638,6 @@ msgctxt "MainWindow|"
 msgid "Quick record"
 msgstr "Hitro snemanje"
 
-#, fuzzy
 msgctxt "MainWindow|"
 msgid "Quick"
 msgstr "Hitro"
@@ -656,11 +652,11 @@ msgstr "<b>Spored</b>"
 
 msgctxt "MainWindow|"
 msgid "Support"
-msgstr ""
+msgstr "Podpora"
 
 msgctxt "MainWindow|"
 msgid "Tano Support"
-msgstr ""
+msgstr "Tano Podpora"
 
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
@@ -2481,7 +2477,6 @@ msgctxt "RecorderNewDialog|"
 msgid "New recording"
 msgstr "Novo snemanje"
 
-#, fuzzy
 msgctxt "RecorderNewDialog|"
 msgid "Search and filter"
 msgstr "Išči in filtriraj"
@@ -2607,6 +2602,7 @@ msgctxt "SettingsDialog|"
 msgid "General"
 msgstr "Splošno"
 
+#. Please make manual line breaks if text too long!
 msgctxt "SettingsDialog|"
 msgid "Playlist"
 msgstr "Programi"
@@ -3053,9 +3049,9 @@ msgctxt "SettingsEditorGeneral|"
 msgid "Tano Editor"
 msgstr "Tano Urejevalnik"
 
-msgctxt "SettingsEditorGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr "<i>Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.</i>"
+#~ msgctxt "SettingsEditorGeneral|"
+#~ msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+#~ msgstr "<i>Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.</i>"
 
 msgctxt "SettingsEditorGeneral|"
 msgid "Language"
@@ -3093,13 +3089,13 @@ msgctxt "SettingsGeneral|"
 msgid "Tano"
 msgstr "Tano"
 
-msgctxt "SettingsGeneral|"
-msgid "Run First run wizard after restart"
-msgstr "Zaženi 'Čarovnik ob prvem zagonu' ob novem zagonu"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "Run First run wizard after restart"
+#~ msgstr "Zaženi 'Čarovnik ob prvem zagonu' ob novem zagonu"
 
-msgctxt "SettingsGeneral|"
-msgid "<i>Note: These settings are shared with all Tano applications.</i>"
-msgstr "<i>Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.</i>"
+#~ msgctxt "SettingsGeneral|"
+#~ msgid "<i>Note: These settings are shared with all Tano applications.</i>"
+#~ msgstr "<i>Opomba: Te nastavitve so deljene z vsemi aplikacijami Tano.</i>"
 
 msgctxt "SettingsGeneral|"
 msgid "Language"

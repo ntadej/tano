@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>393</width>
-    <height>305</height>
+    <width>510</width>
+    <height>516</height>
    </rect>
   </property>
   <property name="windowIcon">
@@ -19,244 +19,292 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QGroupBox" name="groupBackend">
-     <property name="title">
-      <string>VLC-Qt Backend</string>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
      </property>
-     <layout class="QGridLayout" name="layoutVlcqtBox">
-      <item row="0" column="0" rowspan="2">
-       <widget class="QLabel" name="labelVlcqtVersion">
-        <property name="text">
-         <string>Version:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1" rowspan="5">
-       <widget class="QLabel" name="labelVlcqtIcon">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="../../../data/icons.qrc">:/icons/48x48/vlc-qt.png</pixmap>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" rowspan="2">
-       <widget class="QLabel" name="labelVlcVersion">
-        <property name="text">
-         <string>Using Videolan VLC version:</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>510</width>
+        <height>516</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QGroupBox" name="groupBackend">
+         <property name="title">
+          <string>VLC-Qt Backend</string>
+         </property>
+         <layout class="QGridLayout" name="layoutVlcqtBox">
+          <item row="0" column="0" rowspan="2">
+           <widget class="QLabel" name="labelVlcqtVersion">
+            <property name="text">
+             <string>Version:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" rowspan="5">
+           <widget class="QLabel" name="labelVlcqtIcon">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../../../data/icons.qrc">:/icons/48x48/vlc-qt.png</pixmap>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" rowspan="2">
+           <widget class="QLabel" name="labelVlcVersion">
+            <property name="text">
+             <string>Using Videolan VLC version:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="labelVlcVersionValue">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupPlayback">
+         <property name="title">
+          <string>Playback</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0" colspan="2">
+           <widget class="QCheckBox" name="checkVideoSettings">
+            <property name="text">
+             <string>Remember Video settings between media</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QLabel" name="labelAspectRatio">
+            <property name="text">
+             <string>Default aspect ratio:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QComboBox" name="comboAspectRatio">
+            <property name="maxVisibleItems">
+             <number>15</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Original</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QLabel" name="labelCrop">
+            <property name="text">
+             <string>Default crop:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="comboCropRatio">
+            <property name="maxVisibleItems">
+             <number>15</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Original</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QLabel" name="labelDeinterlacing">
+            <property name="text">
+             <string>Default deinterlacing:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QComboBox" name="comboDeinterlacing">
+            <item>
+             <property name="text">
+              <string>Disabled</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Discard</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blend</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Mean</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bob</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Linear</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>X</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="0" colspan="2">
+           <widget class="QLabel" name="labelAudio">
+            <property name="text">
+             <string>Default audio language:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QComboBox" name="comboAudio">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Disabled</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">English</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Slovenščina / Slovenian </string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Deutsch / German</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Hrvatski / Croatian</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Other</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="0" colspan="2">
+           <widget class="QLabel" name="labelSub">
+            <property name="text">
+             <string>Default subtitle language:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="1">
+           <widget class="QComboBox" name="comboSub">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Disabled</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">English</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Slovenščina / Slovenian </string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Deutsch / German</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">Hrvatski / Croatian</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Other</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="spacer">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
     </widget>
-   </item>
-   <item>
-    <widget class="QGroupBox" name="groupPlayback">
-     <property name="title">
-      <string>Playback</string>
-     </property>
-     <layout class="QGridLayout" name="layoutPlaybackBox">
-      <item row="0" column="0" colspan="2">
-       <widget class="QCheckBox" name="checkVideoSettings">
-        <property name="text">
-         <string>Remember Video settings between media</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="labelSub">
-        <property name="text">
-         <string>Default subtitle language:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="labelAudio">
-        <property name="text">
-         <string>Default audio language:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QComboBox" name="comboSub">
-        <property name="editable">
-         <bool>true</bool>
-        </property>
-        <item>
-         <property name="text">
-          <string>Disabled</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">English</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">Slovenščina / Slovenian </string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">Deutsch / German</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">Hrvatski / Croatian</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Other</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QComboBox" name="comboAudio">
-        <property name="editable">
-         <bool>true</bool>
-        </property>
-        <item>
-         <property name="text">
-          <string>Disabled</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">English</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">Slovenščina / Slovenian </string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">Deutsch / German</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string notr="true">Hrvatski / Croatian</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Other</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="labelAspectRatio">
-        <property name="text">
-         <string>Default aspect ratio:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="labelCrop">
-        <property name="text">
-         <string>Default crop:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="labelDeinterlacing">
-        <property name="text">
-         <string>Default deinterlacing:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="comboAspectRatio">
-        <property name="maxVisibleItems">
-         <number>15</number>
-        </property>
-        <item>
-         <property name="text">
-          <string>Original</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QComboBox" name="comboCropRatio">
-        <property name="maxVisibleItems">
-         <number>15</number>
-        </property>
-        <item>
-         <property name="text">
-          <string>Original</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QComboBox" name="comboDeinterlacing">
-        <item>
-         <property name="text">
-          <string>Disabled</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Discard</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Blend</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Mean</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Bob</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Linear</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>X</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>

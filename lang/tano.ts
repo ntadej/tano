@@ -1556,6 +1556,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Playlist</source>
+        <extracomment>Please make manual line breaks if text too long!</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1783,10 +1784,6 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1819,14 +1816,6 @@ This operation is ireversible.</source>
     <name>SettingsGeneral</name>
     <message>
         <source>Tano</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Run First run wizard after restart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

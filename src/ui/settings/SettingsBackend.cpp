@@ -30,7 +30,7 @@ SettingsBackend::SettingsBackend(QWidget *parent)
     ui->setupUi(this);
 
     ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " <b>" + VlcInstance::libVersion() + "</b>");
-    ui->labelVlcVersion->setText(ui->labelVlcVersion->text() + " <b>" + VlcInstance::version() + "</b>");
+    ui->labelVlcVersionValue->setText("<b>" + VlcInstance::version() + "</b>");
 
     for (int i = 1; i < Vlc::ratioHuman().size(); i++) {
         ui->comboAspectRatio->addItem(Vlc::ratioHuman()[i]);

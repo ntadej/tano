@@ -31,8 +31,15 @@ SettingsEditorDialog::SettingsEditorDialog(QWidget *parent)
 
     _settings = new Settings(this);
 
+    _buttonGroup = new QButtonGroup(this);
+    _buttonGroup->setExclusive(true);
+
+    _buttonGroup->addButton(ui->buttonGeneral, 0);
+    _buttonGroup->addButton(ui->buttonEditor, 1);
+
     read();
 
+    connect(_buttonGroup, SIGNAL(buttonClicked(int)), ui->settingsWidget, SLOT(setCurrentIndex(int)));
     connect(ui->general, SIGNAL(resetDefaults()), this, SLOT(defaults()));
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 }
@@ -40,6 +47,7 @@ SettingsEditorDialog::SettingsEditorDialog(QWidget *parent)
 SettingsEditorDialog::~SettingsEditorDialog()
 {
     delete ui;
+    delete _buttonGroup;
     delete _settings;
 }
 
