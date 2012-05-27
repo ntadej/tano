@@ -1,3 +1,11 @@
+1.0-beta2 (2012-05-27)
+  * Some video playback updates
+  * OSD improvements
+  * GUI optimizations for small screens
+  * Fix compilation issues on X11
+  * Fixed Issue #30 - sync channel changes
+  * Basic Qt5 support
+
 1.0-beta1 (2012-05-03)
   * Single instance support for Tano
   * Recorder (Daemon) merged with main application

@@ -5,6 +5,35 @@ tano (1.0~gitDATE.REV-1~precise) precise; urgency=low
  -- Tadej Novak <tadej@tano.si>  Sun, 22 Apr 2011 00:00:00 +0200
 
 
+tano (1.0~git20120527~beta2-1~precise) precise; urgency=low
+
+  * Some video playback updates
+  * OSD improvements
+  * GUI optimizations for small screens
+  * Fix compilation issues on X11
+  * Fixed Issue #30 - sync channel changes
+  * Basic Qt5 support
+
+ -- Tadej Novak <tadej@tano.si>  Sun, 27 May 2012 19:03:08 +0200
+
+
+tano (1.0~git20120503~beta1-1~precise) precise; urgency=low
+
+  * Single instance support for Tano
+  * Recorder (Daemon) merged with main application
+  * XMLTV support (Issue #20)
+  * Rewritten data models
+  * Rewritten recorder
+  * Updated channels scan
+  * Updated file dialogs
+  * Copyright issues fix - Tano will no longer ship playlists and integrated EPG
+  * Overall fixes and improvements
+  * VLC 2.0 support
+  * Czech, French, Russian, Slovenian and Ukrainian translation
+
+ -- Tadej Novak <tadej@tano.si>  Thu, 03 May 2012 20:37:46 +0200
+
+
 tano (0.8.1-1~ppa1~precise) precise; urgency=low
 
   * Teletext support

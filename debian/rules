@@ -31,7 +31,7 @@ builddir/Makefile:
 	dh_testdir
 
 	mkdir -p builddir
-	cd builddir && cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_C_FLAGS="$(CFLAGS)" -DCMAKE_LD_FLAGS="-Wl,-z,defs" -DCMAKE_CXX_FLAGS="$(CXXFLAGS)" -DCMAKE_SKIP_RPATH=ON -DCMAKE_VERBOSE_MAKEFILE=ON -DDEFAULT_DATA_DIR="/usr/share/tano" -DGITBUILD=VCS
+	cd builddir && cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_C_FLAGS="$(CFLAGS)" -DCMAKE_LD_FLAGS="-Wl,-z,defs" -DCMAKE_CXX_FLAGS="$(CXXFLAGS)" -DCMAKE_SKIP_RPATH=ON -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -DDEFAULT_DATA_DIR="/usr/share/tano" -DGITBUILD=VCS
 
 
 build: build-stamp
@@ -81,7 +81,7 @@ binary-arch: install
 	dh_install --sourcedir=debian/tmp/
 	dh_installman
 	dh_link
-	dh_strip
+	dh_strip --dbg-package=tano-dbg
 	dh_compress
 	dh_fixperms
 #	dh_shlibdeps
