@@ -23,12 +23,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QObject>
 #include <QtCore/QVariant>
-
-#if defined(Qt5)
-    #include <QtWidgets/QIcon>
-#elif defined(Qt4)
-    #include <QtGui/QIcon>
-#endif
+#include <QtGui/QIcon>
 
 class ListItem : public QObject
 {
