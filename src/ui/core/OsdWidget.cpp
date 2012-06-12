@@ -37,6 +37,7 @@ OsdWidget::OsdWidget(QWidget *parent)
     connect(ui->buttonNext, SIGNAL(clicked()), this, SIGNAL(nextClicked()));
     connect(ui->buttonPlay, SIGNAL(clicked()), this, SIGNAL(playClicked()));
     connect(ui->buttonRecordNow, SIGNAL(toggled(bool)), this, SIGNAL(recordNowClicked(bool)));
+    connect(ui->buttonSnapshot, SIGNAL(clicked()), this, SIGNAL(snapshotClicked()));
     connect(ui->buttonStop, SIGNAL(clicked()), this, SIGNAL(stopClicked()));
     connect(ui->buttonTeletext, SIGNAL(clicked()), this, SIGNAL(teletextClicked()));
 }
@@ -159,6 +160,11 @@ void OsdWidget::setTeletextPage(const int &page)
 {
     if (page != ui->teletext->value())
         ui->teletext->setValue(page);
+}
+
+void OsdWidget::setVideoState(const bool &enabled)
+{
+    ui->buttonSnapshot->setEnabled(enabled);
 }
 
 void OsdWidget::teletext(const bool &enabled)

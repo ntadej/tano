@@ -62,12 +62,16 @@ const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
 // Recorder
 #if defined(Q_OS_WIN32)
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos";
+const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/Pictures";
 #elif defined(Q_OS_MAC)
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos"; // Need to confirm
+const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/Pictures";
 #elif defined(Q_OS_LINUX)
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/" + Tano::linuxVideoPath();
+const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/" + Tano::linuxPicturesPath();
 #else
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos";
+const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/Pictures";
 #endif
 
 // Session

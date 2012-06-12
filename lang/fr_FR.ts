@@ -500,6 +500,14 @@ This will stop recording in progress.</source>
         <source>Tano Support</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -668,6 +676,10 @@ This will stop recording in progress.</source>
     <message>
         <source>Teletext</source>
         <translation>Sous-titre</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2254,6 +2266,14 @@ This operation is ireversible.</source>
         <source>Defaults</source>
         <translation>Par défaut</translation>
     </message>
+    <message>
+        <source>Instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsEdit</name>
@@ -2624,6 +2644,10 @@ This operation is ireversible.</source>
     <message>
         <source>Recorder</source>
         <translation type="obsolete">Enregistreur</translation>
+    </message>
+    <message>
+        <source>Default snapshots directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

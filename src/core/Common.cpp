@@ -202,6 +202,30 @@ QString Tano::vlcQtVersionLibrary()
 }
 
 #if defined(Q_OS_LINUX)
+QString Tano::linuxPicturesPath()
+{
+    QString path = "Pictures";
+    QFile file(QDir::homePath() + "/.config/user-dirs.dirs");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return path;
+
+    QTextStream in(&file);
+    in.setCodec(QTextCodec::codecForName("UTF-8"));
+    while (!in.atEnd()) {
+        QString tmp = in.readLine();
+        if (tmp.contains("XDG_PICTURES_DIR")) {
+            tmp.replace("XDG_PICTURES_DIR=", "");
+            tmp.replace("\"", "");
+            tmp.replace("$HOME/", "");
+
+            path = tmp;
+            break;
+        }
+    }
+
+    return path;
+}
+
 QString Tano::linuxVideoPath()
 {
     QString path = "Videos";

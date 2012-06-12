@@ -68,6 +68,7 @@ void Settings::writeSettings()
     setValue("backend/subtitles", subtitleLanguage());
 
     setValue("recorder/directory", recorderDirectory());
+    setValue("recorder/snapshots", snapshotsDirectory());
 
     setValue("session/channel", channel());
     setValue("session/volume", volume());
@@ -119,6 +120,7 @@ void Settings::readSettings()
     setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
 
     setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
+    setSnapshotsDirectory(value("recorder/snapshots", DEFAULT_SNAPSHOTS_DIRECTORY).toString());
 
     setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());
     setVolume(value("session/volume", DEFAULT_VOLUME).toInt());

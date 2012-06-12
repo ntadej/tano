@@ -55,6 +55,7 @@ namespace Tano
 
     // System specific
 #if defined(Q_OS_LINUX)
+    QString linuxPicturesPath();
     QString linuxVideoPath();
 #endif
 }

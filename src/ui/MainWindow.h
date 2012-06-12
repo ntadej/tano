@@ -129,6 +129,7 @@ private slots:
     void recordNow(const bool &start);
     void recordProgramme(XmltvProgramme *programme);
     void recorder(const bool &enabled);
+    void takeSnapshot();
 
 signals:
     void setVolume(int);
@@ -159,6 +160,7 @@ private:
     int _defaultCropRatio;
     int _defaultDeinterlacing;
     QString _defaultPlaylist;
+    QString _defaultSnapshot;
     QString _defaultSubtitleLanguage;
     int _desktopWidth;
     int _desktopHeight;

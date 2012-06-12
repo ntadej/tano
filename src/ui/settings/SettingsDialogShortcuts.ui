@@ -145,6 +145,16 @@
      </row>
      <row>
       <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
        <string notr="true"/>
       </property>
      </row>
@@ -449,7 +459,7 @@
      </item>
      <item row="21" column="0">
       <property name="text">
-       <string>Next audio track</string>
+       <string>Instant recording</string>
       </property>
      </item>
      <item row="21" column="1">
@@ -459,7 +469,7 @@
      </item>
      <item row="22" column="0">
       <property name="text">
-       <string>Next video track</string>
+       <string>Take snapshot</string>
       </property>
      </item>
      <item row="22" column="1">
@@ -469,7 +479,7 @@
      </item>
      <item row="23" column="0">
       <property name="text">
-       <string>Next subtitle track</string>
+       <string>Next audio track</string>
       </property>
      </item>
      <item row="23" column="1">
@@ -479,7 +489,7 @@
      </item>
      <item row="24" column="0">
       <property name="text">
-       <string>Next aspect ratio mode</string>
+       <string>Next video track</string>
       </property>
      </item>
      <item row="24" column="1">
@@ -489,7 +499,7 @@
      </item>
      <item row="25" column="0">
       <property name="text">
-       <string>Next crop mode</string>
+       <string>Next subtitle track</string>
       </property>
      </item>
      <item row="25" column="1">
@@ -499,10 +509,30 @@
      </item>
      <item row="26" column="0">
       <property name="text">
-       <string>Next deinterlace mode</string>
+       <string>Next aspect ratio mode</string>
       </property>
      </item>
      <item row="26" column="1">
+      <property name="text">
+       <string notr="true">-</string>
+      </property>
+     </item>
+     <item row="27" column="0">
+      <property name="text">
+       <string>Next crop mode</string>
+      </property>
+     </item>
+     <item row="27" column="1">
+      <property name="text">
+       <string notr="true">-</string>
+      </property>
+     </item>
+     <item row="28" column="0">
+      <property name="text">
+       <string>Next deinterlace mode</string>
+      </property>
+     </item>
+     <item row="28" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>

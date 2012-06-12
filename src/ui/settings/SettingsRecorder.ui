@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>383</width>
-    <height>115</height>
+    <width>385</width>
+    <height>184</height>
    </rect>
   </property>
   <property name="windowIcon">
@@ -31,8 +31,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>383</width>
-        <height>115</height>
+        <width>385</width>
+        <height>184</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -44,6 +44,18 @@
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="BrowseWidget" name="edit" native="true"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupSnapshot">
+         <property name="title">
+          <string>Default snapshots directory</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="BrowseWidget" name="editS" native="true"/>
           </item>
          </layout>
         </widget>

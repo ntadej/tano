@@ -669,6 +669,14 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>Tano Support</source>
         <translation>Tano Podpora</translation>
     </message>
+    <message>
+        <source>Instant recording</source>
+        <translation>Takojšnje snemanje</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation>Zajemi sliko</translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -845,6 +853,10 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Teletext</source>
         <translation>Teletekst</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation>Zajemi sliko</translation>
     </message>
 </context>
 <context>
@@ -2742,6 +2754,14 @@ Te operacije ni mogoče razveljaviti.</translation>
         <source>Defaults</source>
         <translation>Privzeto</translation>
     </message>
+    <message>
+        <source>Instant recording</source>
+        <translation>Takojšnje snemanje</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation>Zajemi sliko</translation>
+    </message>
 </context>
 <context>
     <name>SettingsEdit</name>
@@ -3300,6 +3320,10 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>Recorder</source>
         <translation type="obsolete">Snemalnik</translation>
+    </message>
+    <message>
+        <source>Default snapshots directory</source>
+        <translation>Privzet imenik za zajete slike</translation>
     </message>
 </context>
 <context>

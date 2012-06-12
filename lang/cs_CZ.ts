@@ -582,6 +582,14 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Tano Support</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -758,6 +766,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <source>Teletext</source>
         <translation>Teletext</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2591,6 +2603,14 @@ Tuto operaci nelze vrátit zpět.</translation>
         <source>Defaults</source>
         <translation>Výchozí</translation>
     </message>
+    <message>
+        <source>Instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsEdit</name>
@@ -3125,6 +3145,10 @@ Tuto operaci nelze vrátit zpět.</translation>
     <message>
         <source>Default recording directory</source>
         <translation>Výchozí adresář pro nahrávání</translation>
+    </message>
+    <message>
+        <source>Default snapshots directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

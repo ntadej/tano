@@ -71,6 +71,9 @@
     <addaction name="actionTimers"/>
     <addaction name="separator"/>
     <addaction name="actionRecord"/>
+    <addaction name="separator"/>
+    <addaction name="actionRecordNow"/>
+    <addaction name="actionSnapshot"/>
    </widget>
    <widget class="QMenu" name="menuOptions">
     <property name="title">
@@ -738,6 +741,16 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/media-record.png</normaloff>:/icons/24x24/media-record.png</iconset>
+   </property>
+   <property name="text">
+    <string>Instant recording</string>
+   </property>
   </action>
   <action name="actionRecordTimer">
    <property name="icon">
@@ -755,6 +768,18 @@
    </property>
    <property name="text">
     <string>Support</string>
+   </property>
+  </action>
+  <action name="actionSnapshot">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../data/icons.qrc">
+     <normaloff>:/icons/24x24/image.png</normaloff>:/icons/24x24/image.png</iconset>
+   </property>
+   <property name="text">
+    <string>Take snapshot</string>
    </property>
   </action>
  </widget>

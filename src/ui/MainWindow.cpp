@@ -283,6 +283,7 @@ void MainWindow::createSettings()
     _sessionAutoplayEnabled = settings->sessionAutoplay();
 
     ui->recorder->createSettings();
+    _defaultSnapshot = settings->snapshotsDirectory();
 
     qDebug() << "Initialised: Settings";
 }
@@ -369,6 +370,7 @@ void MainWindow::createConnections()
     connect(_osdMain, SIGNAL(nextClicked()), ui->actionNext, SLOT(trigger()));
     connect(_osdMain, SIGNAL(playClicked()), ui->actionPlay, SLOT(trigger()));
     connect(_osdMain, SIGNAL(recordNowClicked(bool)), ui->actionRecordNow, SLOT(setChecked(bool)));
+    connect(_osdMain, SIGNAL(snapshotClicked()), ui->actionSnapshot, SLOT(trigger()));
     connect(_osdMain, SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
 
     connect(ui->actionControls, SIGNAL(triggered(bool)), this, SLOT(toggleOsdControls(bool)));
@@ -413,6 +415,7 @@ void MainWindow::createConnections()
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
     connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
+    connect(ui->actionSnapshot, SIGNAL(triggered()), this, SLOT(takeSnapshot()));
     connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
     connect(ui->actionRecordTimer, SIGNAL(triggered()), ui->recorder, SLOT(newTimer()));
     connect(ui->recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
@@ -494,6 +497,8 @@ void MainWindow::createShortcuts()
              << ui->actionTop
              << ui->actionLite
              << ui->actionTray
+             << ui->actionRecordNow
+             << ui->actionSnapshot
              << _menuTrackAudio->actionNext()
              << _menuTrackVideo->actionNext()
              << _menuTrackSubtitles->actionNext()
@@ -584,6 +589,7 @@ void MainWindow::setPlayingState(const Vlc::State &state)
 #if TELETEXT
         ui->actionTeletext->setEnabled(true);
 #endif
+        ui->actionRecordNow->setEnabled(true);
         break;
     default:
         ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
@@ -593,6 +599,7 @@ void MainWindow::setPlayingState(const Vlc::State &state)
 #if TELETEXT
         ui->actionTeletext->setEnabled(false);
 #endif
+        ui->actionRecordNow->setEnabled(false);
     }
 }
 
@@ -894,6 +901,9 @@ void MainWindow::showVideo(const bool &enabled)
     }
 
     ui->actionFullscreen->setEnabled(enabled);
+    ui->actionSnapshot->setEnabled(enabled);
+
+    _osdMain->setVideoState(enabled);
 }
 
 void MainWindow::teletext(const bool &enabled)
@@ -1019,6 +1029,11 @@ void MainWindow::recordNow(const bool &start)
     }
 
     _recordNow = start;
+}
+
+void MainWindow::takeSnapshot()
+{
+    _mediaPlayer->video()->takeSnapshot(_defaultSnapshot);
 }
 
 void MainWindow::recorder(const bool &enabled)

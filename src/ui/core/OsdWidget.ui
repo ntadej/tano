@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>619</width>
+    <width>667</width>
     <height>74</height>
    </rect>
   </property>
@@ -230,6 +230,41 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="buttonSnapshot">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Take snapshot</string>
+       </property>
+       <property name="statusTip">
+        <string>Take snapshot</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../data/icons.qrc">
+         <normaloff>:/icons/24x24/image.png</normaloff>:/icons/24x24/image.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="buttonTeletext">
        <property name="minimumSize">
         <size>
@@ -287,11 +322,30 @@
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="VlcVolumeSlider" name="volume" native="true">
        <property name="minimumSize">
         <size>
          <width>150</width>
          <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
         </size>
        </property>
       </widget>

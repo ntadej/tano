@@ -426,6 +426,14 @@ msgctxt "MainWindow|"
 msgid "Quick"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Instant recording"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Take snapshot"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr ""
@@ -555,6 +563,10 @@ msgstr ""
 
 msgctxt "OsdWidget|"
 msgid "Teletext"
+msgstr ""
+
+msgctxt "OsdWidget|"
+msgid "Take snapshot"
 msgstr ""
 
 msgctxt "PlaylistEditor|"
@@ -1649,6 +1661,14 @@ msgctxt "SettingsDialogShortcuts|"
 msgid "Defaults"
 msgstr ""
 
+msgctxt "SettingsDialogShortcuts|"
+msgid "Instant recording"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Take snapshot"
+msgstr ""
+
 msgctxt "SettingsEditorCommon|"
 msgid "Radio"
 msgstr ""
@@ -1867,6 +1887,10 @@ msgstr ""
 
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
+msgstr ""
+
+msgctxt "SettingsRecorder|"
+msgid "Default snapshots directory"
 msgstr ""
 
 msgctxt "SettingsSchedule|"

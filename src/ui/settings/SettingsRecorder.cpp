@@ -58,3 +58,14 @@ void SettingsRecorder::setDirectory(const QString &value)
 {
     ui->edit->setValue(value);
 }
+
+
+QString SettingsRecorder::snapshot() const
+{
+    return ui->editS->value();
+}
+
+void SettingsRecorder::setSnapshot(const QString &value)
+{
+    ui->editS->setValue(value);
+}

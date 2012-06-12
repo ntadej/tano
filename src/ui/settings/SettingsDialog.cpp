@@ -129,6 +129,7 @@ void SettingsDialog::apply()
 
     // Recorder
     _settings->setRecorderDirectory(ui->recorder->directory());
+    _settings->setSnapshotsDirectory(ui->recorder->snapshot());
 
     _settings->writeSettings();
 }
@@ -179,6 +180,7 @@ void SettingsDialog::defaults()
 
     // Recorder
     ui->recorder->setDirectory(Settings::DEFAULT_RECORDER_DIRECTORY);
+    ui->recorder->setSnapshot(Settings::DEFAULT_SNAPSHOTS_DIRECTORY);
 }
 
 void SettingsDialog::read()
@@ -227,6 +229,7 @@ void SettingsDialog::read()
 
     // Recorder
     ui->recorder->setDirectory(_settings->recorderDirectory());
+    ui->recorder->setSnapshot(_settings->snapshotsDirectory());
 }
 
 void SettingsDialog::save()

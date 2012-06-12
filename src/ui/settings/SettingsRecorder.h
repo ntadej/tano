@@ -39,6 +39,9 @@ public:
 
     QString directory() const;
     void setDirectory(const QString &value);
+    QString snapshot() const;
+    void setSnapshot(const QString &value);
+
 
 protected:
     void changeEvent(QEvent *e);

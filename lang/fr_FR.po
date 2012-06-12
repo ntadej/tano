@@ -501,6 +501,14 @@ msgctxt "MainWindow|"
 msgid "Tano Support"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Instant recording"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Take snapshot"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Proportion de l'image"
@@ -645,6 +653,10 @@ msgstr "Pause"
 msgctxt "OsdWidget|"
 msgid "Teletext"
 msgstr "Sous-titre"
+
+msgctxt "OsdWidget|"
+msgid "Take snapshot"
+msgstr ""
 
 #~ msgctxt "PlaylistDisplayWidget|"
 #~ msgid "Clear"
@@ -2280,6 +2292,14 @@ msgctxt "SettingsDialogShortcuts|"
 msgid "Defaults"
 msgstr "Par défaut"
 
+msgctxt "SettingsDialogShortcuts|"
+msgid "Instant recording"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Take snapshot"
+msgstr ""
+
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Settings"
 #~ msgstr "Préférences"
@@ -2642,6 +2662,10 @@ msgstr "Répertoire des enregistrments par défaut"
 #~ msgctxt "SettingsRecorder|"
 #~ msgid "Recorder"
 #~ msgstr "Enregistreur"
+
+msgctxt "SettingsRecorder|"
+msgid "Default snapshots directory"
+msgstr ""
 
 msgctxt "SettingsSchedule|"
 msgid "Select desired XMLTV grabber from the list below:"

@@ -96,5 +96,6 @@
         <file>icons/16x16/dock.png</file>
         <file>icons/16x16/undock.png</file>
         <file>icons/16x16/save.png</file>
+        <file>icons/24x24/image.png</file>
     </qresource>
 </RCC>

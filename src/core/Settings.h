@@ -130,6 +130,9 @@ public:
     inline QString recorderDirectory() const { return _recorderDirectory; }
     inline void setRecorderDirectory(const QString &s) { _recorderDirectory = s; }
     static const QString DEFAULT_RECORDER_DIRECTORY;
+    inline QString snapshotsDirectory() const { return _snapshotsDirectory; }
+    inline void setSnapshotsDirectory(const QString &s) { _snapshotsDirectory = s; }
+    static const QString DEFAULT_SNAPSHOTS_DIRECTORY;
 
     // Session
     inline int channel() const { return _channel; }
@@ -205,6 +208,7 @@ private:
 
     // Recorder
     QString _recorderDirectory;
+    QString _snapshotsDirectory;
 
     // Session
     int _channel;

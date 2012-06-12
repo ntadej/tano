@@ -562,6 +562,14 @@ msgctxt "MainWindow|"
 msgid "Tano Support"
 msgstr ""
 
+msgctxt "MainWindow|"
+msgid "Instant recording"
+msgstr ""
+
+msgctxt "MainWindow|"
+msgid "Take snapshot"
+msgstr ""
+
 msgctxt "MenuAspectRatio|"
 msgid "Aspect ratio"
 msgstr "Poměr stran"
@@ -714,6 +722,10 @@ msgstr "Pozastavit"
 msgctxt "OsdWidget|"
 msgid "Teletext"
 msgstr "Teletext"
+
+msgctxt "OsdWidget|"
+msgid "Take snapshot"
+msgstr ""
 
 #~ msgctxt "PlaylistDisplayWidget|"
 #~ msgid "Clear"
@@ -2574,6 +2586,14 @@ msgctxt "SettingsDialogShortcuts|"
 msgid "Defaults"
 msgstr "Výchozí"
 
+msgctxt "SettingsDialogShortcuts|"
+msgid "Instant recording"
+msgstr ""
+
+msgctxt "SettingsDialogShortcuts|"
+msgid "Take snapshot"
+msgstr ""
+
 #~ msgctxt "SettingsEdit|"
 #~ msgid "Settings"
 #~ msgstr "Nastavení"
@@ -3101,6 +3121,10 @@ msgstr "<i>Aktualizace nezmění pořadí ve vašem seznamu programů.</i>"
 msgctxt "SettingsRecorder|"
 msgid "Default recording directory"
 msgstr "Výchozí adresář pro nahrávání"
+
+msgctxt "SettingsRecorder|"
+msgid "Default snapshots directory"
+msgstr ""
 
 #~ msgctxt "SettingsSchedule|"
 #~ msgid "VLC-Qt Backend"

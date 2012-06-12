@@ -56,6 +56,7 @@ public:
     void setQuickRecordEnabled(const bool &enabled);
     void setRecording(const QString &name = 0,
                       const QString &info = 0);
+    void setVideoState(const bool &enabled);
     VlcVolumeSlider *volumeSlider();
 
 protected:
@@ -70,6 +71,7 @@ signals:
     void nextClicked();
     void playClicked();
     void recordNowClicked(const bool &);
+    void snapshotClicked();
     void stopClicked();
     void teletextClicked();
 
