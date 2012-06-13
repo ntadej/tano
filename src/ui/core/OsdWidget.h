@@ -46,7 +46,6 @@ public:
 
     QWidget *blank();
     QLCDNumber *lcd();
-    void disableTeletext();
     void setBackend(VlcMediaPlayer *player);
     void setChannel(const int &number = 0,
                     const QString &name = 0,
@@ -57,6 +56,7 @@ public:
     void setRecording(const QString &name = 0,
                       const QString &info = 0);
     void setVideoState(const bool &enabled);
+    void toggleTeletext(const bool &enabled);
     VlcVolumeSlider *volumeSlider();
 
 protected:

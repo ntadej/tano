@@ -2595,6 +2595,14 @@ Te operacije ni mogoče razveljaviti.</translation>
         <source>X</source>
         <translation>X</translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation>Teletekst</translation>
+    </message>
+    <message>
+        <source>Enable teletext (requires restart)</source>
+        <translation>Vključi teletekst (zahteva ponovni zagon)</translation>
+    </message>
 </context>
 <context>
     <name>SettingsDialog</name>

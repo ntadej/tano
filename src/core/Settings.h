@@ -125,6 +125,9 @@ public:
     inline QString subtitleLanguage() const { return _subtitleLanguage; }
     inline void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
     static const QString DEFAULT_SUBTITLE_LANGUAGE;
+    inline bool teletext() const { return _teletext; }
+    inline void setTeletext(const bool &b) { _teletext = b; }
+    static const bool DEFAULT_TELETEXT;
 
     // Recorder
     inline QString recorderDirectory() const { return _recorderDirectory; }
@@ -179,6 +182,9 @@ private:
     bool _playlistUpdate;
     QString _playlistUpdateUrl;
     QString _radioCategory;
+    bool _udpxy;
+    QString _udpxyUrl;
+    int _udpxyPort;
 
     // GUI - start
     bool _splash;
@@ -202,9 +208,7 @@ private:
     int _deinterlacing;
     QString _audioLanguage;
     QString _subtitleLanguage;
-    bool _udpxy;
-    QString _udpxyUrl;
-    int _udpxyPort;
+    bool _teletext;
 
     // Recorder
     QString _recorderDirectory;

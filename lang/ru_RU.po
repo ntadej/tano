@@ -2199,6 +2199,14 @@ msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "X"
 
+msgctxt "SettingsBackend|"
+msgid "Teletext"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Enable teletext (requires restart)"
+msgstr ""
+
 #, fuzzy
 msgctxt "SettingsDialog|"
 msgid "Settings"

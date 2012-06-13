@@ -184,6 +184,8 @@ void MainWindow::createGui()
 {
     _osdMain = new OsdWidget(this);
     _osdMain->setBackend(_mediaPlayer);
+    _osdMain->toggleTeletext(_teletext);
+    if (!_teletext) ui->menuMedia->removeAction(ui->actionTeletext);
     _osdInfo = new OsdFloat(this);
     _osdInfo->setInfo();
     _osdFloat = new OsdFloat(this);
@@ -213,7 +215,7 @@ void MainWindow::createGui()
     ui->scheduleWidget->setIdentifier(Tano::Main);
 
 #if !TELETEXT
-    _osdMain->disableTeletext();
+    _osdMain->toggleTeletext(false);
     ui->menuMedia->removeAction(ui->actionTeletext);
 #endif
 
@@ -299,6 +301,8 @@ void MainWindow::createSettingsStartup()
     _sessionVolume = settings->volume();
     _sessionChannel = settings->channel();
 
+    _teletext = settings->teletext();
+
     // GUI
     if (settings->startLite()) {
         ui->actionLite->setChecked(true);
@@ -359,9 +363,11 @@ void MainWindow::createConnections()
     connect(ui->actionVolumeUp, SIGNAL(triggered()), _osdMain, SLOT(volumeUp()));
 
 #if TELETEXT
-    connect(ui->actionTeletext, SIGNAL(triggered(bool)), _osdMain, SLOT(teletext(bool)));
-    connect(ui->actionTeletext, SIGNAL(triggered(bool)), this, SLOT(teletext(bool)));
-    connect(_osdMain, SIGNAL(teletextClicked()), ui->actionTeletext, SLOT(trigger()));
+    if (_teletext) {
+        connect(ui->actionTeletext, SIGNAL(triggered(bool)), _osdMain, SLOT(teletext(bool)));
+        connect(ui->actionTeletext, SIGNAL(triggered(bool)), this, SLOT(teletext(bool)));
+        connect(_osdMain, SIGNAL(teletextClicked()), ui->actionTeletext, SLOT(trigger()));
+    }
 #endif
 
     connect(_osdMain, SIGNAL(teletextPage(int)), this, SLOT(teletext(int)));
@@ -587,7 +593,8 @@ void MainWindow::setPlayingState(const Vlc::State &state)
         ui->actionPlay->setToolTip(tr("Pause"));
         ui->actionMute->setEnabled(true);
 #if TELETEXT
-        ui->actionTeletext->setEnabled(true);
+        if (_teletext)
+            ui->actionTeletext->setEnabled(true);
 #endif
         ui->actionRecordNow->setEnabled(true);
         break;
@@ -698,7 +705,8 @@ void MainWindow::stop()
     _osdMain->setQuickRecordEnabled(false);
 
 #if TELETEXT
-    ui->actionTeletext->setChecked(false);
+    if (_teletext)
+        ui->actionTeletext->setChecked(false);
 #endif
     ui->scheduleWidget->setPage(0);
 

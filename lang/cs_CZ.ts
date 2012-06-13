@@ -2444,6 +2444,14 @@ Tuto operaci nelze vrátit zpět.</translation>
         <source>X</source>
         <translation>X</translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Teletext</translation>
+    </message>
+    <message>
+        <source>Enable teletext (requires restart)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsDialog</name>

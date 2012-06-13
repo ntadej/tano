@@ -36,6 +36,10 @@ SettingsBackend::SettingsBackend(QWidget *parent)
         ui->comboAspectRatio->addItem(Vlc::ratioHuman()[i]);
         ui->comboCropRatio->addItem(Vlc::ratioHuman()[i]);
     }
+
+#if !TELETEXT
+    ui->groupTeletext->hide();
+#endif
 }
 
 SettingsBackend::~SettingsBackend()
@@ -59,6 +63,11 @@ void SettingsBackend::changeEvent(QEvent *e)
 bool SettingsBackend::rememberChannelSettings() const
 {
     return ui->checkVideoSettings->isChecked();
+}
+
+void SettingsBackend::setRememberChannelSettings(const bool &remember)
+{
+    ui->checkVideoSettings->setChecked(remember);
 }
 
 int SettingsBackend::aspectRatio() const
@@ -89,11 +98,6 @@ int SettingsBackend::deinterlacing() const
 void SettingsBackend::setDeinterlacing(const int &id)
 {
     ui->comboDeinterlacing->setCurrentIndex(id);
-}
-
-void SettingsBackend::setRememberChannelSettings(const bool &remember)
-{
-    ui->checkVideoSettings->setChecked(remember);
 }
 
 QString SettingsBackend::audio() const
@@ -130,4 +134,14 @@ void SettingsBackend::setSub(const QString &sub)
             ui->comboSub->setCurrentIndex(i);
         }
     }
+}
+
+bool SettingsBackend::teletext() const
+{
+    return ui->checkTeletext->isChecked();
+}
+
+void SettingsBackend::setTeletext(const bool &enabled)
+{
+    ui->checkTeletext->setChecked(enabled);
 }

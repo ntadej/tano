@@ -2606,6 +2606,14 @@ msgctxt "SettingsBackend|"
 msgid "X"
 msgstr "X"
 
+msgctxt "SettingsBackend|"
+msgid "Teletext"
+msgstr "Teletekst"
+
+msgctxt "SettingsBackend|"
+msgid "Enable teletext (requires restart)"
+msgstr "Vključi teletekst (zahteva ponovni zagon)"
+
 msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr "Nastavitve"

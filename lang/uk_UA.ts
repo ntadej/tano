@@ -2107,6 +2107,14 @@ This operation is ireversible.</source>
         <source>X</source>
         <translation>Х</translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Телетекст</translation>
+    </message>
+    <message>
+        <source>Enable teletext (requires restart)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsDialog</name>

@@ -65,12 +65,6 @@ QWidget *OsdWidget::blank()
     return ui->blank;
 }
 
-void OsdWidget::disableTeletext()
-{
-    ui->buttonTeletext->hide();
-    ui->teletext->hide();
-}
-
 QLCDNumber *OsdWidget::lcd()
 {
     return ui->number;
@@ -170,6 +164,11 @@ void OsdWidget::setVideoState(const bool &enabled)
 void OsdWidget::teletext(const bool &enabled)
 {
     ui->buttonTeletext->setChecked(enabled);
+}
+
+void OsdWidget::toggleTeletext(const bool &enabled)
+{
+    ui->buttonTeletext->setVisible(enabled);
 }
 
 void OsdWidget::volumeDown()

@@ -49,6 +49,8 @@ public:
     void setAudio(const QString &audio);
     QString sub() const;
     void setSub(const QString &sub);
+    bool teletext() const;
+    void setTeletext(const bool &enabled);
 
 protected:
     void changeEvent(QEvent *e);

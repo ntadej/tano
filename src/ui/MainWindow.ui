@@ -720,6 +720,9 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../../data/icons.qrc">
      <normaloff>:/icons/24x24/teletext.png</normaloff>:/icons/24x24/teletext.png</iconset>

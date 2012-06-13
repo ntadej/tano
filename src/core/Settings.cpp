@@ -66,6 +66,7 @@ void Settings::writeSettings()
     setValue("backend/deinterlacing", deinterlacing());
     setValue("backend/audio", audioLanguage());
     setValue("backend/subtitles", subtitleLanguage());
+    setValue("backend/teletext", teletext());
 
     setValue("recorder/directory", recorderDirectory());
     setValue("recorder/snapshots", snapshotsDirectory());
@@ -118,6 +119,7 @@ void Settings::readSettings()
     setDeinterlacing(value("backend/deinterlacing", DEFAULT_DEINTERLACING).toInt());
     setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
     setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
+    setTeletext(value("backend/teletext", DEFAULT_TELETEXT).toBool());
 
     setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
     setSnapshotsDirectory(value("recorder/snapshots", DEFAULT_SNAPSHOTS_DIRECTORY).toString());

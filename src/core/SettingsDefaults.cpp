@@ -58,6 +58,7 @@ const int Settings::DEFAULT_CROP_RATIO = 0;
 const int Settings::DEFAULT_DEINTERLACING = 0;
 const QString Settings::DEFAULT_AUDIO_LANGUAGE = QObject::tr("Disabled");
 const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
+const bool Settings::DEFAULT_TELETEXT = false;
 
 // Recorder
 #if defined(Q_OS_WIN32)

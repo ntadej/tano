@@ -1508,6 +1508,14 @@ msgctxt "SettingsBackend|"
 msgid "X"
 msgstr ""
 
+msgctxt "SettingsBackend|"
+msgid "Teletext"
+msgstr ""
+
+msgctxt "SettingsBackend|"
+msgid "Enable teletext (requires restart)"
+msgstr ""
+
 msgctxt "SettingsDialog|"
 msgid "Settings"
 msgstr ""

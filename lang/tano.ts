@@ -1555,6 +1555,14 @@ This operation is ireversible.</source>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable teletext (requires restart)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsDialog</name>

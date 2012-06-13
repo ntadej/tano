@@ -118,6 +118,7 @@ void SettingsDialog::apply()
     _settings->setDeinterlacing(ui->backend->deinterlacing());
     _settings->setAudioLanguage(ui->backend->audio());
     _settings->setSubtitleLanguage(ui->backend->sub());
+    _settings->setTeletext(ui->backend->teletext());
 
     // Schedule
     _settings->setXmltvLocation(ui->schedule->location());
@@ -170,6 +171,7 @@ void SettingsDialog::defaults()
     ui->backend->setDeinterlacing(Settings::DEFAULT_DEINTERLACING);
     ui->backend->setAudio(Settings::DEFAULT_AUDIO_LANGUAGE);
     ui->backend->setSub(Settings::DEFAULT_SUBTITLE_LANGUAGE);
+    ui->backend->setTeletext(Settings::DEFAULT_TELETEXT);
 
     // Schedule
     ui->schedule->setLocation(Settings::DEFAULT_XMLTV_LOCATION);
@@ -219,6 +221,7 @@ void SettingsDialog::read()
     ui->backend->setDeinterlacing(_settings->deinterlacing());
     ui->backend->setAudio(_settings->audioLanguage());
     ui->backend->setSub(_settings->subtitleLanguage());
+    ui->backend->setTeletext(_settings->teletext());
 
     // Schedule
     ui->schedule->setLocation(_settings->xmltvLocation());

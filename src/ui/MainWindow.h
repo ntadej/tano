@@ -175,6 +175,7 @@ private:
     bool _sessionVolumeEnabled;
     bool _sessionAutoplayEnabled;
     int _sessionVolume;
+    bool _teletext;
     bool _udpxyEnabled;
     bool _videoSettings;
     QString _wheelType;
