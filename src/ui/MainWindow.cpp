@@ -890,7 +890,7 @@ void MainWindow::showOsd(const QPoint &pos)
     } else if ((pos.x() < _osdInfo->pos().x()+_osdInfo->width()) &&
                (pos.x() > _osdInfo->pos().x()) &&
                (pos.y() < _osdInfo->pos().y()+_osdInfo->height()) &&
-               (pos.y() > _osdInfo->pos().y()) && _osdInfo->isVisible() && _osdFloat->windowOpacity()) {
+               (pos.y() > _osdInfo->pos().y()) && _osdInfo->isVisible() && _osdInfo->windowOpacity()) {
         ui->videoWidget->disableMouseHide();
     }else {
         ui->videoWidget->enableMouseHide();

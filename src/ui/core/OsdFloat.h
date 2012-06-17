@@ -57,6 +57,9 @@ private:
     int _defaultHeight;
     int _defaultWidth;
 
+    int _defaultX;
+    int _defaultY;
+
     QTimer *_slowHideTimer;
     QTimer *_slowShowTimer;
 };

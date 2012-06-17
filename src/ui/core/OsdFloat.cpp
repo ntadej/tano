@@ -97,7 +97,11 @@ void OsdFloat::setControls()
     }
 
     resize(_defaultWidth, _defaultHeight);
-    move((_desktopWidth-width())/2, _desktopHeight-height());
+
+    _defaultX = (_desktopWidth - width())/2;
+    _defaultY = _desktopHeight - height();
+
+    move(_defaultX, _defaultY);
 }
 
 void OsdFloat::setInfo()
@@ -106,7 +110,15 @@ void OsdFloat::setInfo()
     _defaultWidth = 300;
 
     resize(_defaultWidth, _defaultHeight);
-    move(_desktopWidth-width(), (_desktopHeight-height())/2);
+
+    _defaultX = _desktopWidth - width();
+    if (_desktopHeight > 800) {
+        _defaultY = (_desktopHeight - height())/2;
+    } else {
+        _defaultY = 0;
+    }
+
+    move(_defaultX, _defaultY);
 }
 
 void OsdFloat::setWidget(QWidget *widget)
