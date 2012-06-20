@@ -181,6 +181,10 @@ OPTION(DISABLE_TELETEXT "Disable teletext" OFF)
 MESSAGE("Disable teletext: ${DISABLE_TELETEXT}")
 OPTION(CUSTOM_SETTINGS "Custom settings" OFF)
 MESSAGE("Custom settings: ${CUSTOM_SETTINGS}")
+IF(MINGW)
+    OPTION(WINDOWS_INSTALLER "Enable Windows installer" ON)
+    MESSAGE("Enable Windows installer: ${WINDOWS_INSTALLER}")
+ENDIF(MINGW)
 MESSAGE("\n")
 
 IF(EDITOR_WITH_VLCQT)
@@ -226,4 +230,6 @@ SET(Tano_Files
 # Installation #
 ################
 # Install data
-INSTALL(FILES ${Tano_Files} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+IF(NOT MINGW)
+    INSTALL(FILES ${Tano_Files} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+ENDIF(NOT MINGW)
