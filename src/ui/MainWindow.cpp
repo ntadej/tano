@@ -882,17 +882,17 @@ void MainWindow::showOsd(const QPoint &pos)
         toggleOsdInfo(true);
     }
 
-    if ((pos.x() < _osdFloat->pos().x()+_osdFloat->width()) &&
-       (pos.x() > _osdFloat->pos().x()) &&
-       (pos.y() < _osdFloat->pos().y()+_osdFloat->height()) &&
-       (pos.y() > _osdFloat->pos().y()) && _osdFloat->isVisible() && _osdFloat->windowOpacity()) {
+    if ((pos.x()-25 < _osdFloat->pos().x()+_osdFloat->width()) &&
+       (pos.x()+25 > _osdFloat->pos().x()) &&
+       (pos.y()-25 < _osdFloat->pos().y()+_osdFloat->height()) &&
+       (pos.y()+25 > _osdFloat->pos().y()) && _osdFloat->isVisible() && _osdFloat->windowOpacity()) {
         ui->videoWidget->disableMouseHide();
-    } else if ((pos.x() < _osdInfo->pos().x()+_osdInfo->width()) &&
-               (pos.x() > _osdInfo->pos().x()) &&
-               (pos.y() < _osdInfo->pos().y()+_osdInfo->height()) &&
-               (pos.y() > _osdInfo->pos().y()) && _osdInfo->isVisible() && _osdInfo->windowOpacity()) {
+    } else if ((pos.x()-25 < _osdInfo->pos().x()+_osdInfo->width()) &&
+               (pos.x()+25 > _osdInfo->pos().x()) &&
+               (pos.y()-25 < _osdInfo->pos().y()+_osdInfo->height()) &&
+               (pos.y()+25 > _osdInfo->pos().y()) && _osdInfo->isVisible() && _osdInfo->windowOpacity()) {
         ui->videoWidget->disableMouseHide();
-    }else {
+    } else {
         ui->videoWidget->enableMouseHide();
     }
 }
