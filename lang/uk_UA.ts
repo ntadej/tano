@@ -57,15 +57,15 @@ Your VLC-Qt version: %4
     <name>ConclusionPage</name>
     <message>
         <source>Complete Wizard</source>
-        <translation>Закінчить налаштування</translation>
+        <translation type="obsolete">Закінчить налаштування</translation>
     </message>
     <message>
         <source>Thank you for using &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Дякуємо за використання &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Дякуємо за використання &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>I agree to the terms of the GNU General Public License</source>
-        <translation>Я згодний з вимогами ліцензії GNU General Public License</translation>
+        <translation type="obsolete">Я згодний з вимогами ліцензії GNU General Public License</translation>
     </message>
 </context>
 <context>
@@ -183,7 +183,7 @@ Your VLC-Qt version: %4
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
-        <translation>Перший запуск Майстра налаштувань</translation>
+        <translation type="obsolete">Перший запуск Майстра налаштувань</translation>
     </message>
 </context>
 <context>
@@ -249,19 +249,19 @@ Your VLC-Qt version: %4
     <name>IntroPage</name>
     <message>
         <source>Welcome</source>
-        <translation>Вітаємо</translation>
+        <translation type="obsolete">Вітаємо</translation>
     </message>
     <message>
         <source>This wizard will help you set basic settings for your copy of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Майстер налаштувань допоможе Вам встановити основні налаштування Вашої копії &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Майстер налаштувань допоможе Вам встановити основні налаштування Вашої копії &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Ви раніше використовували версію %1 &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Ви раніше використовували версію %1 &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>Please re-set your settings.</source>
-        <translation>Будь ласка перевстановіть Ваші налаштування.</translation>
+        <translation type="obsolete">Будь ласка перевстановіть Ваші налаштування.</translation>
     </message>
 </context>
 <context>
@@ -2455,7 +2455,7 @@ This operation is ireversible.</source>
     <name>SettingsEditorGeneral</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Tano Редактор</translation>
+        <translation type="obsolete">Tano Редактор</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
@@ -2494,7 +2494,7 @@ This operation is ireversible.</source>
     <name>SettingsGeneral</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
@@ -2561,23 +2561,23 @@ This operation is ireversible.</source>
     <name>SettingsPage</name>
     <message>
         <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
-        <translation>Встановити &lt;i&gt;Tano&lt;/i&gt;</translation>
+        <translation type="obsolete">Встановити &lt;i&gt;Tano&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Please select session, backend and other settings.</source>
-        <translation>Будь ласка оберіть сесію, backend та інші налаштування.</translation>
+        <translation type="obsolete">Будь ласка оберіть сесію, backend та інші налаштування.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Session settings&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Налаштування сесії&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Налаштування сесії&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Запам’ятати гучність</translation>
+        <translation type="obsolete">Запам’ятати гучність</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Автовідтворення останнього каналу</translation>
+        <translation type="obsolete">Автовідтворення останнього каналу</translation>
     </message>
     <message>
         <source>Use global VLC settings</source>
@@ -2585,7 +2585,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Перелік каналів за замовчуванням&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Перелік каналів за замовчуванням&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Playback&lt;/b&gt;</source>

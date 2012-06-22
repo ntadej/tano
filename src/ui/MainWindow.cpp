@@ -296,10 +296,10 @@ void MainWindow::createSettingsStartup()
     _defaultPlaylist = settings->playlist();
 
     //Session
-    _sessionVolumeEnabled = settings->sessionVolume();
+    _sessionVolumeEnabled = settings->sessionRememberVolume();
     _sessionAutoplayEnabled = settings->sessionAutoplay();
-    _sessionVolume = settings->volume();
-    _sessionChannel = settings->channel();
+    _sessionVolume = settings->sessionVolume();
+    _sessionChannel = settings->sessionChannel();
 
     _teletext = settings->teletext();
 
@@ -535,11 +535,11 @@ void MainWindow::writeSession()
 {
     QScopedPointer<Settings> settings(new Settings(this));
     if (_sessionVolumeEnabled)
-        settings->setVolume(_osdMain->volumeSlider()->volume());
+        settings->setSessionVolume(_osdMain->volumeSlider()->volume());
     else
-        settings->setVolume(Settings::DEFAULT_VOLUME);
+        settings->setSessionVolume(Settings::DEFAULT_SESSION_VOLUME);
     if (_sessionAutoplayEnabled)
-        settings->setChannel(_osdMain->lcd()->value());
+        settings->setSessionChannel(_osdMain->lcd()->value());
     settings->writeSettings();
 
     qDebug() << "Session written";

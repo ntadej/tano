@@ -31,17 +31,6 @@ public:
     void writeSettings();
 
     // General
-    inline QString configurationVersion() { return _configurationVersion; }
-    inline void setConfigurationVersion(const QString &s) { _configurationVersion = s; }
-    inline bool configured() const { return _configured; }
-    inline void setConfigured(const bool &b) { _configured = b; }
-    static const bool DEFAULT_CONFIGURED;
-    inline bool sessionVolume() const { return _sessionVolume; }
-    inline void setSessionVolume(const bool &b) { _sessionVolume = b; }
-    static const bool DEFAULT_SESSION_VOLUME;
-    inline bool sessionAutoplay() const { return _sessionAutoplay; }
-    inline void setSessionAutoplay(const bool &b) { _sessionAutoplay = b; }
-    static const bool DEFAULT_SESSION_AUTOPLAY;
     inline QString language() const { return _language; }
     inline void setLanguage(const QString &s) { _language = s; }
     static const QString DEFAULT_LANGUAGE;
@@ -138,12 +127,18 @@ public:
     static const QString DEFAULT_SNAPSHOTS_DIRECTORY;
 
     // Session
-    inline int channel() const { return _channel; }
-    inline void setChannel(const int &i) { _channel = i; }
-    static const int DEFAULT_CHANNEL;
-    inline int volume() const { return _volume; }
-    inline void setVolume(const int &i) { _volume = i; }
-    static const int DEFAULT_VOLUME;
+    inline bool sessionAutoplay() const { return _sessionAutoplay; }
+    inline void setSessionAutoplay(const bool &b) { _sessionAutoplay = b; }
+    static const bool DEFAULT_SESSION_AUTOPLAY;
+    inline int sessionChannel() const { return _sessionChannel; }
+    inline void setSessionChannel(const int &i) { _sessionChannel = i; }
+    static const int DEFAULT_SESSION_CHANNEL;
+    inline bool sessionRememberVolume() const { return _sessionRememberVolume; }
+    inline void setSessionRememberVolume(const bool &b) { _sessionRememberVolume = b; }
+    static const bool DEFAULT_SESSION_REMEMBER_VOLUME;
+    inline int sessionVolume() const { return _sessionVolume; }
+    inline void setSessionVolume(const int &i) { _sessionVolume = i; }
+    static const int DEFAULT_SESSION_VOLUME;
 
     // Schedule
     inline QString xmltvLocation() const { return _xmltvLocation; }
@@ -170,11 +165,6 @@ public:
 
 private:
     // General variables
-    QString _configurationVersion;
-    bool _configured;
-    bool _updatesCheck;
-    bool _sessionVolume;
-    bool _sessionAutoplay;
     QString _language;
 
     // Channels
@@ -215,8 +205,10 @@ private:
     QString _snapshotsDirectory;
 
     // Session
-    int _channel;
-    int _volume;
+    bool _sessionAutoplay;
+    int _sessionChannel;
+    bool _sessionRememberVolume;
+    int _sessionVolume;
 
     // Schedule
     QString _xmltvLocation;

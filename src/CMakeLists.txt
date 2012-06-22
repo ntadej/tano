@@ -58,9 +58,6 @@ SET(Tano_UIs
     ui/settings/SettingsSchedule.ui
     ui/settings/SettingsDialogShortcuts.ui
     ui/settings/SettingsUi.ui
-    ui/wizard/ConclusionPage.ui
-    ui/wizard/IntroPage.ui
-    ui/wizard/SettingsPage.ui
 )
 
 # Define the MOC source files used by Tano
@@ -139,10 +136,6 @@ SET(Tano_UI_MOCs
     ui/settings/SettingsSchedule.h
     ui/settings/SettingsDialogShortcuts.h
     ui/settings/SettingsUi.h
-    ui/wizard/ConclusionPage.h
-    ui/wizard/FirstRunWizard.h
-    ui/wizard/IntroPage.h
-    ui/wizard/SettingsPage.h
 )
 
 SET(Tano_Xmltv_MOCs
@@ -266,10 +259,6 @@ SET(Tano_UI_Srcs
     ui/settings/SettingsSchedule.cpp
     ui/settings/SettingsDialogShortcuts.cpp
     ui/settings/SettingsUi.cpp
-    ui/wizard/ConclusionPage.cpp
-    ui/wizard/FirstRunWizard.cpp
-    ui/wizard/IntroPage.cpp
-    ui/wizard/SettingsPage.cpp
 )
 SET(Tano_Xmltv_Srcs
     xmltv/XmltvChannelsFilterModel.cpp

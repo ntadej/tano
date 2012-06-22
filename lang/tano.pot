@@ -56,18 +56,6 @@ msgctxt "AboutDialog|"
 msgid "Player"
 msgstr ""
 
-msgctxt "ConclusionPage|"
-msgid "Complete Wizard"
-msgstr ""
-
-msgctxt "ConclusionPage|"
-msgid "Thank you for using <i>Tano</i>."
-msgstr ""
-
-msgctxt "ConclusionPage|"
-msgid "I agree to the terms of the GNU General Public License"
-msgstr ""
-
 msgctxt "DonationDialog|"
 msgid "Donate"
 msgstr ""
@@ -167,10 +155,6 @@ msgctxt "EpgShow|"
 msgid "Record"
 msgstr ""
 
-msgctxt "FirstRunWizard|"
-msgid "First Run Wizard"
-msgstr ""
-
 msgctxt "InfoBarWidget|"
 msgid "Now:"
 msgstr ""
@@ -181,24 +165,6 @@ msgstr ""
 
 msgctxt "InfoBarWidget|"
 msgid "Language:"
-msgstr ""
-
-msgctxt "IntroPage|"
-msgid "Welcome"
-msgstr ""
-
-msgctxt "IntroPage|"
-msgid ""
-"This wizard will help you set basic settings for your copy of <i>Tano</i>."
-msgstr ""
-
-#, qt-format
-msgctxt "IntroPage|"
-msgid "You previously used version %1 of <i>Tano</i>."
-msgstr ""
-
-msgctxt "IntroPage|"
-msgid "Please re-set your settings."
 msgstr ""
 
 msgctxt "MainWindow|"
@@ -1746,10 +1712,6 @@ msgid "Editor"
 msgstr ""
 
 msgctxt "SettingsEditorGeneral|"
-msgid "Tano Editor"
-msgstr ""
-
-msgctxt "SettingsEditorGeneral|"
 msgid "Language"
 msgstr ""
 
@@ -1777,10 +1739,6 @@ msgstr ""
 
 msgctxt "SettingsEditorGeneral|"
 msgid "You are using Tano Editor version:"
-msgstr ""
-
-msgctxt "SettingsGeneral|"
-msgid "Tano"
 msgstr ""
 
 msgctxt "SettingsGeneral|"
@@ -1823,30 +1781,6 @@ msgctxt "SettingsGeneral|"
 msgid ""
 "<i>This will restore all your settings to default. You need to apply the "
 "changes, before they will take effect.</i>"
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "Set <i>Tano</i>"
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "Please select session, backend and other settings."
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "<b>Session settings</b>"
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "Remember volume"
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "Autoplay last channel"
-msgstr ""
-
-msgctxt "SettingsPage|"
-msgid "<b>Default channel list</b>"
 msgstr ""
 
 msgctxt "SettingsPlaylist|"

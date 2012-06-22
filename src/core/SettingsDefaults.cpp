@@ -22,9 +22,6 @@
 #include "core/Settings.h"
 
 // Define defaults - General
-const bool Settings::DEFAULT_CONFIGURED = false;
-const bool Settings::DEFAULT_SESSION_VOLUME = true;
-const bool Settings::DEFAULT_SESSION_AUTOPLAY = true;
 const QString Settings::DEFAULT_LANGUAGE = "";
 
 // Playlist
@@ -49,7 +46,7 @@ const bool Settings::DEFAULT_INFO = true;
 const bool Settings::DEFAULT_TRAY_ENABLED = true;
 const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
 const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
-const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonFollowStyle;
+const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonIconOnly;
 
 // Backend
 const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;
@@ -76,8 +73,10 @@ const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/Pictu
 #endif
 
 // Session
-const int Settings::DEFAULT_CHANNEL = 1;
-const int Settings::DEFAULT_VOLUME = 50;
+const bool Settings::DEFAULT_SESSION_AUTOPLAY = false;
+const int Settings::DEFAULT_SESSION_CHANNEL = 1;
+const bool Settings::DEFAULT_SESSION_REMEMBER_VOLUME = true;
+const int Settings::DEFAULT_SESSION_VOLUME = 50;
 
 // Schedule
 const QString Settings::DEFAULT_XMLTV_LOCATION = Tano::settingsPath() + "xmltv.xml";

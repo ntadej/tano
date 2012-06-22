@@ -81,15 +81,15 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>ConclusionPage</name>
     <message>
         <source>Complete Wizard</source>
-        <translation>Dokončit průvodce</translation>
+        <translation type="obsolete">Dokončit průvodce</translation>
     </message>
     <message>
         <source>Thank you for using &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Děkujeme vám za používání programu &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Děkujeme vám za používání programu &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>I agree to the terms of the GNU General Public License</source>
-        <translation>Souhlasím s podmínkami povolení GNU General Public License</translation>
+        <translation type="obsolete">Souhlasím s podmínkami povolení GNU General Public License</translation>
     </message>
 </context>
 <context>
@@ -253,7 +253,7 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
-        <translation>Průvodce prvním spuštěním</translation>
+        <translation type="obsolete">Průvodce prvním spuštěním</translation>
     </message>
 </context>
 <context>
@@ -318,19 +318,19 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>IntroPage</name>
     <message>
         <source>Welcome</source>
-        <translation>Vítejte</translation>
+        <translation type="obsolete">Vítejte</translation>
     </message>
     <message>
         <source>This wizard will help you set basic settings for your copy of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Tento průvodce vám pomůže se základním nastavením programu &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Tento průvodce vám pomůže se základním nastavením programu &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Předtím jste používal verzi %1 &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Předtím jste používal verzi %1 &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>Please re-set your settings.</source>
-        <translation>Nastavte, prosím, svá nastavení znovu.</translation>
+        <translation type="obsolete">Nastavte, prosím, svá nastavení znovu.</translation>
     </message>
 </context>
 <context>
@@ -2924,7 +2924,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     <name>SettingsEditorGeneral</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Editor Tano</translation>
+        <translation type="obsolete">Editor Tano</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
@@ -2963,7 +2963,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     <name>SettingsGeneral</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
@@ -3026,23 +3026,23 @@ Tuto operaci nelze vrátit zpět.</translation>
     <name>SettingsPage</name>
     <message>
         <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
-        <translation>Nastavit &lt;i&gt;Tano&lt;/i&gt;</translation>
+        <translation type="obsolete">Nastavit &lt;i&gt;Tano&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Please select session, backend and other settings.</source>
-        <translation>Vyberte, prosím, sezení, jádro a další nastavení.</translation>
+        <translation type="obsolete">Vyberte, prosím, sezení, jádro a další nastavení.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Session settings&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Nastavení sezení&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Nastavení sezení&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Pamatovat si hlasitost</translation>
+        <translation type="obsolete">Pamatovat si hlasitost</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Automatické přehrávání posledního kanálu</translation>
+        <translation type="obsolete">Automatické přehrávání posledního kanálu</translation>
     </message>
     <message>
         <source>Use global VLC settings</source>
@@ -3054,7 +3054,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Výchozí seznam programů&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Výchozí seznam programů&lt;/b&gt;</translation>
     </message>
 </context>
 <context>

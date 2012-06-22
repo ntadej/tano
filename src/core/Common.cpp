@@ -41,6 +41,21 @@ QString Tano::application()
 #endif
 }
 
+QString Tano::applicationGroup()
+{
+    return "Tano";
+}
+
+QString Tano::applicationShort()
+{
+#if EDITOR
+    return "Editor";
+#else
+    return "Player";
+#endif
+}
+
+
 QString Tano::executable()
 {
 #if EDITOR

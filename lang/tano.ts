@@ -51,21 +51,6 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
-    <name>ConclusionPage</name>
-    <message>
-        <source>Complete Wizard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Thank you for using &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I agree to the terms of the GNU General Public License</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DonationDialog</name>
     <message>
         <source>Donate</source>
@@ -177,13 +162,6 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
-    <name>FirstRunWizard</name>
-    <message>
-        <source>First Run Wizard</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>InfoBarWidget</name>
     <message>
         <source>Now:</source>
@@ -195,25 +173,6 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>IntroPage</name>
-    <message>
-        <source>Welcome</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This wizard will help you set basic settings for your copy of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please re-set your settings.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1808,10 +1767,6 @@ This operation is ireversible.</source>
 <context>
     <name>SettingsEditorGeneral</name>
     <message>
-        <source>Tano Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1842,10 +1797,6 @@ This operation is ireversible.</source>
 </context>
 <context>
     <name>SettingsGeneral</name>
-    <message>
-        <source>Tano</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Language</source>
         <translation type="unfinished"></translation>
@@ -1884,33 +1835,6 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsPage</name>
-    <message>
-        <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please select session, backend and other settings.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Session settings&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember volume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Autoplay last channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

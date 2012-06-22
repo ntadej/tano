@@ -57,15 +57,15 @@ Votre version de VLC-Qt : %4</translation>
     <name>ConclusionPage</name>
     <message>
         <source>Complete Wizard</source>
-        <translation>Assistant complet</translation>
+        <translation type="obsolete">Assistant complet</translation>
     </message>
     <message>
         <source>Thank you for using &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Merci d&apos;utiliser &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Merci d&apos;utiliser &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>I agree to the terms of the GNU General Public License</source>
-        <translation>J&apos;accepte les termes de la Licence GNU General Public License</translation>
+        <translation type="obsolete">J&apos;accepte les termes de la Licence GNU General Public License</translation>
     </message>
 </context>
 <context>
@@ -183,7 +183,7 @@ Votre version de VLC-Qt : %4</translation>
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
-        <translation>Relancer l&apos;assistant</translation>
+        <translation type="obsolete">Relancer l&apos;assistant</translation>
     </message>
 </context>
 <context>
@@ -248,19 +248,19 @@ Votre version de VLC-Qt : %4</translation>
     <name>IntroPage</name>
     <message>
         <source>Welcome</source>
-        <translation>Bienvenue</translation>
+        <translation type="obsolete">Bienvenue</translation>
     </message>
     <message>
         <source>This wizard will help you set basic settings for your copy of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Cet assistant vous aidera à choisir les préférences de votre copie de &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Cet assistant vous aidera à choisir les préférences de votre copie de &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Vous avez utilisé précédemment la version %1 de &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Vous avez utilisé précédemment la version %1 de &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>Please re-set your settings.</source>
-        <translation>Veuillez repositionner vos options.</translation>
+        <translation type="obsolete">Veuillez repositionner vos options.</translation>
     </message>
 </context>
 <context>
@@ -2455,7 +2455,7 @@ This operation is ireversible.</source>
     <name>SettingsEditorGeneral</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Éditeur Tano</translation>
+        <translation type="obsolete">Éditeur Tano</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
@@ -2494,7 +2494,7 @@ This operation is ireversible.</source>
     <name>SettingsGeneral</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
@@ -2561,23 +2561,23 @@ This operation is ireversible.</source>
     <name>SettingsPage</name>
     <message>
         <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
-        <translation>Positionner &lt;i&gt;Tano&lt;/i&gt;</translation>
+        <translation type="obsolete">Positionner &lt;i&gt;Tano&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Please select session, backend and other settings.</source>
-        <translation>Veuillez sélectionner la session, le lecteur et d&apos;autres préférences.</translation>
+        <translation type="obsolete">Veuillez sélectionner la session, le lecteur et d&apos;autres préférences.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Session settings&lt;/b&gt;</source>
-        <translation>Préférences de session&lt;/b&gt;</translation>
+        <translation type="obsolete">Préférences de session&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Mémoriser le volume</translation>
+        <translation type="obsolete">Mémoriser le volume</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Lire la dernière chaîne</translation>
+        <translation type="obsolete">Lire la dernière chaîne</translation>
     </message>
     <message>
         <source>Use global VLC settings</source>
@@ -2585,7 +2585,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Liste de chaînes par défaut&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Liste de chaînes par défaut&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Playback&lt;/b&gt;</source>

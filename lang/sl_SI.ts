@@ -116,15 +116,15 @@ Vaša različica VLC-Qt: %4
     <name>ConclusionPage</name>
     <message>
         <source>I agree to the terms of the GNU General Public License</source>
-        <translation>Strinjam se s pogoji GNU General Public License</translation>
+        <translation type="obsolete">Strinjam se s pogoji GNU General Public License</translation>
     </message>
     <message>
         <source>Complete Wizard</source>
-        <translation>Zaključite čarovnika</translation>
+        <translation type="obsolete">Zaključite čarovnika</translation>
     </message>
     <message>
         <source>Thank you for using &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Hvala, da uporabljate &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Hvala, da uporabljate &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
 </context>
 <context>
@@ -296,7 +296,7 @@ Vaša različica VLC-Qt: %4
     <name>FirstRunWizard</name>
     <message>
         <source>First Run Wizard</source>
-        <translation>Čarovnik ob prvem zagonu</translation>
+        <translation type="obsolete">Čarovnik ob prvem zagonu</translation>
     </message>
 </context>
 <context>
@@ -377,19 +377,19 @@ Vaša različica VLC-Qt: %4
     <name>IntroPage</name>
     <message>
         <source>Welcome</source>
-        <translation>Pozdravljeni</translation>
+        <translation type="obsolete">Pozdravljeni</translation>
     </message>
     <message>
         <source>This wizard will help you set basic settings for your copy of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Ta čarovnik vam bo pomagal določiti osnovne nastavitve za program &lt;i&gt;Tano&lt;/i&gt;.</translation>
+        <translation type="obsolete">Ta čarovnik vam bo pomagal določiti osnovne nastavitve za program &lt;i&gt;Tano&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>You previously used version %1 of &lt;i&gt;Tano&lt;/i&gt;.</source>
-        <translation>Uporabljali ste &lt;i&gt;Tano&lt;/i&gt; različice %1.</translation>
+        <translation type="obsolete">Uporabljali ste &lt;i&gt;Tano&lt;/i&gt; različice %1.</translation>
     </message>
     <message>
         <source>Please re-set your settings.</source>
-        <translation>Prosim, ponovno nastavite aplikacijo.</translation>
+        <translation type="obsolete">Prosim, ponovno nastavite aplikacijo.</translation>
     </message>
 </context>
 <context>
@@ -3083,7 +3083,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     <name>SettingsEditorGeneral</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Tano Urejevalnik</translation>
+        <translation type="obsolete">Tano Urejevalnik</translation>
     </message>
     <message>
         <source>&lt;i&gt;Note: These settings are shared with all Tano applications.&lt;/i&gt;</source>
@@ -3122,7 +3122,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     <name>SettingsGeneral</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Run First run wizard after restart</source>
@@ -3189,23 +3189,23 @@ Te operacije ni mogoče razveljaviti.</translation>
     <name>SettingsPage</name>
     <message>
         <source>Set &lt;i&gt;Tano&lt;/i&gt;</source>
-        <translation>Nastavi &lt;i&gt;Tano&lt;/i&gt;</translation>
+        <translation type="obsolete">Nastavi &lt;i&gt;Tano&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Please select session, backend and other settings.</source>
-        <translation>Prosim, izberite nastavitve seje, hrbtenice in drugo.</translation>
+        <translation type="obsolete">Prosim, izberite nastavitve seje, hrbtenice in drugo.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Session settings&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Nastavitve seje&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Nastavitve seje&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Zapomni si glasnost</translation>
+        <translation type="obsolete">Zapomni si glasnost</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Samodejno prični predvajanje zadnjega programa</translation>
+        <translation type="obsolete">Samodejno prični predvajanje zadnjega programa</translation>
     </message>
     <message>
         <source>Use global VLC settings</source>
@@ -3217,7 +3217,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Default channel list&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Privzet seznam programov&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Privzet seznam programov&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Playback&lt;/b&gt;</source>

@@ -30,7 +30,6 @@
 #include "core/Log.h"
 #include "core/Settings.h"
 #include "ui/MainWindow.h"
-#include "ui/wizard/FirstRunWizard.h"
 
 #if defined(Qt4)
 #ifdef Q_WS_X11
@@ -57,19 +56,13 @@ int main(int argc, char *argv[])
         return 0;
 
 	Settings *settings = new Settings();
-	settings->readSettings();
 	bool splashShow = settings->splash();
-	if(!settings->configured() || settings->configurationVersion() != Tano::version()) {
-		FirstRunWizard *wizard = new FirstRunWizard();
-		wizard->exec();
-		delete wizard;
-	}
 	delete settings;
 
     QPixmap pixmap(":/images/splash.png");
     QSplashScreen *splash = new QSplashScreen(pixmap);
     splash->setMask(pixmap.mask());
-    if  (splashShow)
+    if (splashShow)
         splash->show();
 
 	MainWindow mainWindow;

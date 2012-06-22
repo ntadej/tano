@@ -22,8 +22,8 @@
 Settings::Settings(QObject *parent)
     : QSettings(QSettings::IniFormat,
                 QSettings::UserScope,
-                "Tano",
-                "Main",
+                Tano::applicationGroup(),
+                Tano::applicationShort(),
                 parent)
 {
     readSettings();
@@ -33,21 +33,20 @@ Settings::~Settings() { }
 
 void Settings::writeSettings()
 {
-    setValue("general/version", configurationVersion());
-    setValue("general/configured", configured());
-    setValue("general/sessionvolume", sessionVolume());
-    setValue("general/sessionplay", sessionAutoplay());
     setValue("general/language", language());
 
+#if !EDITOR
     setValue("channels/playlist", playlist());
     setValue("channels/update", playlistUpdate());
     setValue("channels/updateurl", playlistUpdateUrl());
+#endif
     setValue("channels/radio", radioCategory());
     setValue("channels/udpxy", udpxy());
     setValue("channels/udpxyurl", udpxyUrl());
     setValue("channels/udpxyport", udpxyPort());
 
     setValue("start/splash", splash());
+#if !EDITOR
     setValue("start/lite", startLite());
     setValue("start/ontop", startOnTop());
     setValue("start/controls", startControls());
@@ -58,8 +57,10 @@ void Settings::writeSettings()
     setValue("gui/trayicon", trayEnabled());
     setValue("gui/hidetotray", hideToTray());
     setValue("gui/mousewheel", mouseWheel());
+#endif
     setValue("gui/toolbarlook", toolbarLook());
 
+#if !EDITOR
     setValue("backend/videosettings", rememberVideoSettings());
     setValue("backend/aspectratio", aspectRatio());
     setValue("backend/cropratio", cropRatio());
@@ -71,8 +72,10 @@ void Settings::writeSettings()
     setValue("recorder/directory", recorderDirectory());
     setValue("recorder/snapshots", snapshotsDirectory());
 
-    setValue("session/channel", channel());
-    setValue("session/volume", volume());
+    setValue("session/autoplay", sessionAutoplay());
+    setValue("session/channel", sessionChannel());
+    setValue("session/remembervolume", sessionRememberVolume());
+    setValue("session/volume", sessionVolume());
 
     setValue("xmltv/location", xmltvLocation());
     setValue("xmltv/update", xmltvUpdate());
@@ -80,27 +83,27 @@ void Settings::writeSettings()
     setValue("xmltv/updateurl", xmltvUpdateUrl());
     setValue("xmltv/grabber", xmltvGrabber());
     setValue("xmltv/path", xmltvGrabberPath());
+#endif
 
     sync();
 }
 
 void Settings::readSettings()
 {
-    setConfigurationVersion(value("general/version", Tano::version()).toString());
-    setConfigured(value("general/configured", DEFAULT_CONFIGURED).toBool());
-    setSessionVolume(value("general/sessionvolume", DEFAULT_SESSION_VOLUME).toBool());
-    setSessionAutoplay(value("general/sessionplay", DEFAULT_SESSION_AUTOPLAY).toBool());
     setLanguage(value("general/language", DEFAULT_LANGUAGE).toString());
 
+#if !EDITOR
     setPlaylist(value("channels/playlist", DEFAULT_PLAYLIST).toString());
     setPlaylistUpdate(value("channels/update", DEFAULT_PLAYLIST_UPDATE).toBool());
     setPlaylistUpdateUrl(value("channels/updateurl", DEFAULT_PLAYLIST_UPDATE_URL).toString());
+#endif
     setRadioCategory(value("channels/radio", DEFAULT_RADIO_CATEGORY).toString());
     setUdpxy(value("channels/udpxy", DEFAULT_UDPXY).toBool());
     setUdpxyUrl(value("channels/udpxyurl", DEFAULT_UDPXY_URL).toString());
     setUdpxyPort(value("channels/udpxyport", DEFAULT_UDPXY_PORT).toInt());
 
     setSplash(value("start/splash", DEFAULT_SPLASH).toBool());
+#if !EDITOR
     setStartLite(value("start/lite", DEFAULT_START_LITE).toBool());
     setStartOnTop(value("start/ontop", DEFAULT_START_ON_TOP).toBool());
     setStartControls(value("start/controls", DEFAULT_START_CONTROLS).toBool());
@@ -111,8 +114,10 @@ void Settings::readSettings()
     setTrayEnabled(value("gui/trayicon", DEFAULT_TRAY_ENABLED).toBool());
     setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
     setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
+#endif
     setToolbarLook(value("gui/toolbarlook", DEFAULT_TOOLBAR_LOOK).toInt());
 
+#if !EDITOR
     setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
     setAspectRatio(value("backend/aspectratio", DEFAULT_ASPECT_RATIO).toInt());
     setCropRatio(value("backend/cropratio", DEFAULT_CROP_RATIO).toInt());
@@ -124,8 +129,10 @@ void Settings::readSettings()
     setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
     setSnapshotsDirectory(value("recorder/snapshots", DEFAULT_SNAPSHOTS_DIRECTORY).toString());
 
-    setChannel(value("session/channel", DEFAULT_CHANNEL).toInt());
-    setVolume(value("session/volume", DEFAULT_VOLUME).toInt());
+    setSessionAutoplay(value("session/autoplay", DEFAULT_SESSION_AUTOPLAY).toBool());
+    setSessionChannel(value("session/channel", DEFAULT_SESSION_CHANNEL).toInt());
+    setSessionRememberVolume(value("session/remembervolume", DEFAULT_SESSION_REMEMBER_VOLUME).toBool());
+    setSessionVolume(value("session/volume", DEFAULT_SESSION_VOLUME).toInt());
 
     setXmltvLocation(value("xmltv/location", DEFAULT_XMLTV_LOCATION).toString());
     setXmltvUpdate(value("xmltv/update", DEFAULT_XMLTV_UPDATE).toBool());
@@ -133,4 +140,5 @@ void Settings::readSettings()
     setXmltvUpdateUrl(value("xmltv/updateurl", DEFAULT_XMLTV_UPDATE_URL).toString());
     setXmltvGrabber(value("xmltv/grabber", DEFAULT_XMLTV_GRABBER).toString());
     setXmltvGrabberPath(value("xmltv/path", DEFAULT_XMLTV_GRABBER_PATH).toString());
+#endif
 }
