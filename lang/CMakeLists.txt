@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-SET(TEMPLATE "tano")
+SET(TEMPLATE "source")
 
 IF(NOT QT_LUPDATE_EXECUTABLE)
     MESSAGE(WARNING "Tano could not find lupdate. You won't be able to update translations.")
@@ -25,38 +25,6 @@ ENDIF(NOT QT_LUPDATE_EXECUTABLE)
 IF(NOT QT_LRELEASE_EXECUTABLE)
     MESSAGE(WARNING "Tano could not find lrelease. Your build won't contain translations.")
 ENDIF(NOT QT_LRELEASE_EXECUTABLE)
-
-STRING(REGEX REPLACE "lupdate" "lconvert" QT_LCONVERT_EXECUTABLE "${QT_LUPDATE_EXECUTABLE}")
-STRING(REGEX REPLACE "-qt4" "" QT_LCONVERT_EXECUTABLE "${QT_LCONVERT_EXECUTABLE}")
-
-## Wraps the supplied .ts files in lconvert commands
-MACRO(QT4_CREATE_PO outfiles)
-    FOREACH (it ${ARGN})
-        GET_FILENAME_COMPONENT(it ${it} ABSOLUTE)
-        GET_FILENAME_COMPONENT(outfile ${it} NAME_WE)
-        IF(${outfile} STREQUAL ${TEMPLATE})
-            SET(outfile ${CMAKE_SOURCE_DIR}/lang/${outfile}.pot)
-
-            ADD_CUSTOM_COMMAND(
-                OUTPUT ${outfile}
-                COMMAND ${QT_LCONVERT_EXECUTABLE}
-                ARGS -if ts -i ${it} -of pot -o ${outfile}
-                MAIN_DEPENDENCY ${it}
-            )
-        ELSE(${outfile} STREQUAL ${TEMPLATE})
-            SET(outfile ${CMAKE_SOURCE_DIR}/lang/${outfile}.po)
-
-            ADD_CUSTOM_COMMAND(
-                OUTPUT ${outfile}
-                COMMAND ${QT_LCONVERT_EXECUTABLE}
-                ARGS -if ts -i ${it} -of po -o ${outfile}
-                MAIN_DEPENDENCY ${it}
-            )
-        ENDIF(${outfile} STREQUAL ${TEMPLATE})
-
-        SET(${outfiles} ${${outfiles}} ${outfile})
-    ENDFOREACH(it)
-ENDMACRO(QT4_CREATE_PO)
 
 ## Wraps the supplied .ts files in lrelease commands
 MACRO(QT4_ADD_TRANSLATIONS outfiles)
@@ -102,8 +70,6 @@ IF(QT_LUPDATE_EXECUTABLE)
     ## Create a target that runs lupdate for all the sources and UI files
     IF(REFRESH_TRANSLATIONS)
         ADD_CUSTOM_TARGET(lupdate ALL COMMAND ${QT_LUPDATE_EXECUTABLE} -locations none ${translate_SRCS} -ts ${Tano_TS} )
-        QT4_CREATE_PO(Tano_POS ${Tano_TS})
-        ADD_CUSTOM_TARGET(pos ALL DEPENDS ${Tano_POS})
     ENDIF(REFRESH_TRANSLATIONS)
 ENDIF(QT_LUPDATE_EXECUTABLE)
 
