@@ -4,6 +4,7 @@ qt5-build*
 
 # Project files
 CMakeLists.txt.user
+.tx/*
 
 # Other
 src/custom/SettingsDefaults.cpp
