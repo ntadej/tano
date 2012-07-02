@@ -1,8 +1,14 @@
-tano (1.0~gitDATE.REV-1~precise) precise; urgency=low
+tano (1.0-1~precise) precise; urgency=low
 
-  * Daily build from Git
+  * Ability to take snapshots
+  * Separated settings for player and editor
+  * Removed first-run wizard
+  * Fullscreen OSD improvements
+  * Teletext is disabled by default
+  * Updated translations
+  * [WINDOWS] VLC 2.0.2
 
- -- Tadej Novak <tadej@tano.si>  Sun, 22 Apr 2011 00:00:00 +0200
+ -- Tadej Novak <tadej@tano.si>  Mon, 2 Jul 2012 11:47:28 +0200
 
 
 tano (1.0~git20120527~beta2-1~precise) precise; urgency=low

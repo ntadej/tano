@@ -1,3 +1,12 @@
+1.0 (2012-07-02)
+  * Ability to take snapshots
+  * Separated settings for player and editor
+  * Removed first-run wizard
+  * Fullscreen OSD improvements
+  * Teletext is disabled by default
+  * Updated translations
+  * [WINDOWS] VLC 2.0.2
+
 1.0-beta2 (2012-05-27)
   * Some video playback updates
   * OSD improvements
