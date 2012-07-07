@@ -49,30 +49,45 @@ QString LocaleManager::language(const QString &locale)
 
 QStringList LocaleManager::loadTranslations()
 {
-    QDir dir(Tano::locateResource("/lang/sl.qm").replace("/sl.qm", ""));
+    QDir dir(Tano::resourcePath("/lang/sl.qm"));
     QStringList list;
-    QLocale locale = QLocale::English;
-    list << QLocale::languageToString(locale.language());
+    list << QLocale::languageToString(QLocale(QLocale::English).language());
 
     foreach (QString fileName, dir.entryList(QDir::Files)) {
         if(fileName.contains(".qm") && !fileName.contains("source")) {
-            locale = QLocale(fileName);
-            list << locale.name();
+            list << localeName(fileName);
         }
     }
 
     return list;
 }
 
+QString LocaleManager::localeName(const QString &file)
+{
+    QLocale locale = QLocale(file);
+    QString name = locale.name();
+    QString f = file;
+    f = f.replace(".qm", "");
+
+    if (name != f)
+        name = f;
+
+    return name;
+}
+
 void LocaleManager::setLocale()
 {
     QString locale;
     QScopedPointer<Settings> settings(new Settings());
-    if(settings->language().isEmpty())
+    if(settings->language().isEmpty()) {
         locale = QLocale::system().name();
-    else
-        locale = QLocale(settings->language()).name();
 
-    QString langPath = Tano::locateResource("/lang/" + locale + ".qm").replace("/" + locale + ".qm", "");
-    _translator->load(QString(locale), langPath);
+        if (Tano::resource("/lang/" + locale + ".qm").isEmpty())
+            locale = locale.split("_")[0];
+    } else {
+        locale = settings->language();
+    }
+
+    QString langPath = Tano::resourcePath("/lang/" + locale + ".qm");
+    _translator->load(locale, langPath);
 }

@@ -103,7 +103,7 @@ bool loadXmltvStart(XmltvHandler *handler,
     reader.setContentHandler(handler);
     reader.setErrorHandler(handler);
 
-    QFile file(Tano::locateResource(location));
+    QFile file(Tano::resource(location));
     if (!file.exists())
         return false;
     if (!file.open(QFile::ReadOnly | QFile::Text))

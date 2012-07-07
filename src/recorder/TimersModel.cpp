@@ -81,7 +81,7 @@ void TimersModel::readTimers()
     reader.setContentHandler(handler.data());
     reader.setErrorHandler(handler.data());
 
-    QFile f(Tano::timersPath());
+    QFile f(Tano::recordings());
     if (!f.open(QFile::ReadOnly | QFile::Text))
         return;
 
@@ -97,10 +97,10 @@ void TimersModel::readTimers()
 
 void TimersModel::writeTimers()
 {
-    QFile f(Tano::timersPath());
+    QFile f(Tano::recordings());
     if (!f.open(QFile::WriteOnly | QFile::Text))
         return;
 
-    QScopedPointer<TimersGenerator> generator(new TimersGenerator(Tano::timersPath()));
+    QScopedPointer<TimersGenerator> generator(new TimersGenerator(Tano::recordings()));
     generator->write(this);
 }

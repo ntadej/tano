@@ -117,7 +117,12 @@ QString Tano::buildSystem()
     return system;
 }
 
-QString Tano::locateResource(const QString &file)
+QString Tano::recordings()
+{
+    return settingsPath() + "recordings.xml";
+}
+
+QString Tano::resource(const QString &file)
 {
     QString path;
 
@@ -152,6 +157,17 @@ QString Tano::locateResource(const QString &file)
     return path;
 }
 
+QString Tano::resourcePath(const QString &file)
+{
+    QString path;
+    if (resource(file).isEmpty())
+        path = QFileInfo(file).absolutePath();
+    else
+        path = QFileInfo(resource(file)).absolutePath();
+
+    return path;
+}
+
 QString Tano::recordingFileName(const QString &name,
                                 const QString &channel,
                                 const QDate &date,
@@ -174,16 +190,11 @@ QString Tano::settingsPath()
     QScopedPointer<QSettings> settings(
             new QSettings(QSettings::IniFormat,
                           QSettings::UserScope,
-                          "Tano",
-                          "Main"));
-    QString path = settings->fileName().replace("Main.ini", "");
+                          applicationGroup(),
+                          applicationShort()));
+    QString path = settings->fileName().replace(applicationShort() + ".ini", "");
 
     return path;
-}
-
-QString Tano::timersPath()
-{
-    return settingsPath() + "recordings.xml";
 }
 
 QStringList Tano::vlcQtArgs()

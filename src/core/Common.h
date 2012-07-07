@@ -40,9 +40,10 @@ namespace Tano
     QString buildSystem();
 
     // Resources locators
-    QString locateResource(const QString &file);
+    QString recordings();
+    QString resource(const QString &file);
+    QString resourcePath(const QString &file);
     QString settingsPath();
-    QString timersPath();
 
     // Misc
     QString recordingFileName(const QString &name,
