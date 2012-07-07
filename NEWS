@@ -1,3 +1,6 @@
+1.0.1 (git)
+  * Fix language detection
+
 1.0 (2012-07-02)
   * Ability to take snapshots
   * Separated settings for player and editor
