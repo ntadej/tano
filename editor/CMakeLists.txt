@@ -229,9 +229,6 @@ INCLUDE_DIRECTORIES(
 IF(EDITOR_WITH_VLCQT)
     INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
 ENDIF(EDITOR_WITH_VLCQT)
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 IF(MINGW)
     # CMake currently doesn't support windres yet. Add command manually
@@ -255,55 +252,27 @@ ADD_EXECUTABLE(tano-editor ${Tano_Editor_UIC_Srcs} ${Tano_Editor_Srcs} ${Tano_Ed
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        IF(EDITOR_WITH_VLCQT)
-            TARGET_LINK_LIBRARIES(tano-editor
-                                 ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
-                                 ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES}
-            )
-         ELSE(EDITOR_WITH_VLCQT)
-            TARGET_LINK_LIBRARIES(tano-editor
-                                 ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
-                                 ${X11_LIBRARIES}
-            )
-         ENDIF(EDITOR_WITH_VLCQT)
-    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        IF(EDITOR_WITH_VLCQT)
-            TARGET_LINK_LIBRARIES(tano-editor
-                                 ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
-                                 ${LIBVLCQT_LIBRARY}
-            )
-         ELSE(EDITOR_WITH_VLCQT)
-            TARGET_LINK_LIBRARIES(tano-editor
-                                 ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
-            )
-         ENDIF(EDITOR_WITH_VLCQT)
-    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    IF(EDITOR_WITH_VLCQT)
+        TARGET_LINK_LIBRARIES(tano-editor
+                             ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
+                             ${LIBVLCQT_LIBRARY}
+        )
+     ELSE(EDITOR_WITH_VLCQT)
+        TARGET_LINK_LIBRARIES(tano-editor
+                             ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
+        )
+     ENDIF(EDITOR_WITH_VLCQT)
 ELSE(WITH_QT5)
-    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        IF(EDITOR_WITH_VLCQT)
-            TARGET_LINK_LIBRARIES(tano-editor
-                                 ${QT_LIBRARIES}
-                                 ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES}
-            )
-         ELSE(EDITOR_WITH_VLCQT)
-            TARGET_LINK_LIBRARIES(tano-editor
-                                 ${QT_LIBRARIES}
-                                 ${X11_LIBRARIES}
-            )
-         ENDIF(EDITOR_WITH_VLCQT)
-    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        IF(EDITOR_WITH_VLCQT)
-            TARGET_LINK_LIBRARIES(tano-editor
-                                 ${QT_LIBRARIES}
-                                 ${LIBVLCQT_LIBRARY}
-            )
-         ELSE(EDITOR_WITH_VLCQT)
-            TARGET_LINK_LIBRARIES(tano-editor
-                                 ${QT_LIBRARIES}
-            )
-         ENDIF(EDITOR_WITH_VLCQT)
-    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    IF(EDITOR_WITH_VLCQT)
+        TARGET_LINK_LIBRARIES(tano-editor
+                             ${QT_LIBRARIES}
+                             ${LIBVLCQT_LIBRARY}
+        )
+    ELSE(EDITOR_WITH_VLCQT)
+        TARGET_LINK_LIBRARIES(tano-editor
+                             ${QT_LIBRARIES}
+        )
+    ENDIF(EDITOR_WITH_VLCQT)
 ENDIF(WITH_QT5)
 
 

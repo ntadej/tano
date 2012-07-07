@@ -368,9 +368,6 @@ INCLUDE_DIRECTORIES(
 
 # Include additional libraries
 INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 IF(MINGW)
     # CMake currently doesn't support windres yet. Add command manually
@@ -395,33 +392,17 @@ ADD_DEPENDENCIES(tano qtsingleapplication)
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        TARGET_LINK_LIBRARIES(tano
-                             ${QT_SINGLE_APPLICATION}
-                             ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
-                             ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES}
+    TARGET_LINK_LIBRARIES(tano
+                         ${QT_SINGLE_APPLICATION}
+                         ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
+                         ${LIBVLCQT_LIBRARY}
         )
-    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        TARGET_LINK_LIBRARIES(tano
-                             ${QT_SINGLE_APPLICATION}
-                             ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
-                             ${LIBVLCQT_LIBRARY}
-        )
-    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 ELSE(WITH_QT5)
-    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        TARGET_LINK_LIBRARIES(tano
-                             ${QT_SINGLE_APPLICATION}
-                             ${QT_LIBRARIES}
-                             ${LIBVLCQT_LIBRARY} ${X11_LIBRARIES}
-        )
-    ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        TARGET_LINK_LIBRARIES(tano
-                             ${QT_SINGLE_APPLICATION}
-                             ${QT_LIBRARIES}
-                             ${LIBVLCQT_LIBRARY}
-        )
-    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    TARGET_LINK_LIBRARIES(tano
+                         ${QT_SINGLE_APPLICATION}
+                         ${QT_LIBRARIES}
+                         ${LIBVLCQT_LIBRARY}
+    )
 ENDIF(WITH_QT5)
 
 

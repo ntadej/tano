@@ -31,23 +31,12 @@
 #include "core/Settings.h"
 #include "ui/MainWindow.h"
 
-#if defined(Qt4)
-#ifdef Q_WS_X11
-    #include <X11/Xlib.h>
-#endif
-#endif
-
 int main(int argc, char *argv[])
 {
-#if defined(Qt4)
-#ifdef Q_WS_X11
-    XInitThreads();
-#endif
-#else
-    QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
-#endif
     QCoreApplication::setApplicationName(Tano::application());
     QCoreApplication::setApplicationVersion(Tano::version());
+
+    QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
 
     Tano::setupLog();
 
