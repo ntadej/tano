@@ -60,6 +60,7 @@ Shortcuts::Shortcuts(const QList<QAction *> &list,
                  << "Ctrl+Shift+S"
                  << "Ctrl+Shift+R"
                  << "Ctrl+Shift+C"
+                 << "Ctrl+Shift+Z"
                  << "Ctrl+Shift+D";
 
     _actionsName << "Play"
@@ -92,6 +93,7 @@ Shortcuts::Shortcuts(const QList<QAction *> &list,
                  << "NextSubtitleTrack"
                  << "NextRatio"
                  << "NextCrop"
+                 << "NextScale"
                  << "NextDeinterlace";
 
     apply();

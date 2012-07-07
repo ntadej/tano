@@ -65,6 +65,7 @@
 #include "ui/menu/MenuAspectRatio.h"
 #include "ui/menu/MenuCropRatio.h"
 #include "ui/menu/MenuDeinterlacing.h"
+#include "ui/menu/MenuScale.h"
 #include "ui/menu/MenuTrackAudio.h"
 #include "ui/menu/MenuTrackSubtitles.h"
 #include "ui/menu/MenuTrackVideo.h"
@@ -470,6 +471,8 @@ void MainWindow::createMenus()
     ui->menuVideo->addMenu(_menuAspectRatio);
     _menuCropRatio = new MenuCropRatio(ui->videoWidget, ui->menuVideo);
     ui->menuVideo->addMenu(_menuCropRatio);
+    _menuScale = new MenuScale(ui->videoWidget, ui->menuVideo);
+    ui->menuVideo->addMenu(_menuScale);
     _menuDeinterlacing = new MenuDeinterlacing(ui->videoWidget, ui->menuVideo);
     ui->menuVideo->addMenu(_menuDeinterlacing);
 
@@ -510,6 +513,7 @@ void MainWindow::createShortcuts()
              << _menuTrackSubtitles->actionNext()
              << _menuAspectRatio->actionNext()
              << _menuCropRatio->actionNext()
+             << _menuScale->actionNext()
              << _menuDeinterlacing->actionNext();
 
     _shortcuts = new Shortcuts(_actions, this);

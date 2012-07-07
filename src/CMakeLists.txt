@@ -113,6 +113,7 @@ SET(Tano_UI_MOCs
     ui/menu/MenuCore.h
     ui/menu/MenuCropRatio.h
     ui/menu/MenuDeinterlacing.h
+    ui/menu/MenuScale.h
     ui/menu/MenuTrackAudio.h
     ui/menu/MenuTrackSubtitles.h
     ui/menu/MenuTrackVideo.h
@@ -236,6 +237,7 @@ SET(Tano_UI_Srcs
     ui/menu/MenuCore.cpp
     ui/menu/MenuCropRatio.cpp
     ui/menu/MenuDeinterlacing.cpp
+    ui/menu/MenuScale.cpp
     ui/menu/MenuTrackAudio.cpp
     ui/menu/MenuTrackSubtitles.cpp
     ui/menu/MenuTrackVideo.cpp

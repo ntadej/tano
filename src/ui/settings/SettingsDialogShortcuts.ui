@@ -180,6 +180,11 @@
      </row>
      <row>
       <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
        <string notr="true"/>
       </property>
      </row>
@@ -529,10 +534,20 @@
      </item>
      <item row="28" column="0">
       <property name="text">
-       <string>Next deinterlace mode</string>
+       <string>Next scale/zoom mode</string>
       </property>
      </item>
      <item row="28" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="29" column="0">
+      <property name="text">
+       <string>Next deinterlace mode</string>
+      </property>
+     </item>
+     <item row="29" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>

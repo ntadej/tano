@@ -486,6 +486,21 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
 </context>
 <context>
+    <name>MenuScale</name>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished">Původní</translation>
+    </message>
+    <message>
+        <source>Scale/Zoom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next scale/zoom option</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MenuTrackAudio</name>
     <message>
         <source>Audio track</source>
@@ -1704,6 +1719,14 @@ Tuto operaci nelze vrátit zpět.</translation>
     <message>
         <source>Take snapshot</source>
         <translation>Udělat snímek</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next scale/zoom mode</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

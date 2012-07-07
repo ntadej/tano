@@ -48,6 +48,7 @@ class LocaleManager;
 class MenuAspectRatio;
 class MenuCropRatio;
 class MenuDeinterlacing;
+class MenuScale;
 class MenuTrackAudio;
 class MenuTrackSubtitles;
 class MenuTrackVideo;
@@ -219,6 +220,7 @@ private:
     MenuAspectRatio *_menuAspectRatio;
     MenuCropRatio *_menuCropRatio;
     MenuDeinterlacing *_menuDeinterlacing;
+    MenuScale *_menuScale;
     MenuTrackAudio *_menuTrackAudio;
     MenuTrackSubtitles *_menuTrackSubtitles;
     MenuTrackVideo *_menuTrackVideo;
