@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QResizeEvent>
+
 #if defined(Qt5)
     #include <QtWidgets/QHBoxLayout>
     #include <QtWidgets/QLabel>
@@ -58,6 +60,14 @@ ScrollingWidget::ScrollingWidget(QWidget *parent)
 ScrollingWidget::~ScrollingWidget()
 {
     delete _timer;
+}
+
+void ScrollingWidget::resizeEvent(QResizeEvent *event)
+{
+    Q_UNUSED(event)
+
+    horizontalScrollBar()->setValue(0);
+    _direction = true;
 }
 
 void ScrollingWidget::removeBorder()
