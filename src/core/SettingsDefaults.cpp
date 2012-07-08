@@ -47,14 +47,29 @@ const bool Settings::DEFAULT_TRAY_ENABLED = true;
 const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
 const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
 const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonIconOnly;
+const bool Settings::DEFAULT_REMEMBER_MAIN_SIZE = true;
+const int Settings::DEFAULT_MAIN_WIDTH = 650;
+const int Settings::DEFAULT_MAIN_HEIGHT = 300;
 
-// Backend
+// Backend - core
+const int Settings::DEFAULT_VOUT = 0;
+const int Settings::DEFAULT_AOUT = 0;
+#if defined(Q_OS_WIN32)
+const bool Settings::DEFAULT_YUV_TO_RGB = true;
+#endif
+const bool Settings::DEFAULT_SPDIF = false;
+const int Settings::DEFAULT_INTERFACE_INDEX = 0;
+
+// Backend - video settings
 const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;
 const int Settings::DEFAULT_ASPECT_RATIO = 0;
 const int Settings::DEFAULT_CROP_RATIO = 0;
 const int Settings::DEFAULT_DEINTERLACING = 0;
 const QString Settings::DEFAULT_AUDIO_LANGUAGE = QObject::tr("Disabled");
 const QString Settings::DEFAULT_SUBTITLE_LANGUAGE = QObject::tr("Disabled");
+
+// Backend - misc
+const bool Settings::DEFAULT_MUTE_ON_MINIMIZE = false;
 const bool Settings::DEFAULT_TELETEXT = false;
 
 // Recorder

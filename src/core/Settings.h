@@ -94,8 +94,36 @@ public:
     inline int toolbarLook() const { return _toolbarLook; }
     inline void setToolbarLook(const int &i) { _toolbarLook = i; }
     static const int DEFAULT_TOOLBAR_LOOK;
+    inline bool rememberMainSize() const { return _rememberMainSize; }
+    inline void setRememberMainSize(const bool &b) { _rememberMainSize = b; }
+    static const bool DEFAULT_REMEMBER_MAIN_SIZE;
+    inline int mainWidth() const { return _mainWidth; }
+    inline void setMainWidth(const int &i) { _mainWidth = i; }
+    static const int DEFAULT_MAIN_WIDTH;
+    inline int mainHeight() const { return _mainHeight; }
+    inline void setMainHeight(const int &i) { _mainHeight = i; }
+    static const int DEFAULT_MAIN_HEIGHT;
 
-    // Backend
+    // Backend - core
+    inline int vout() const { return _vout; }
+    inline void setVout(const int &i) { _vout = i; }
+    static const int DEFAULT_VOUT;
+    inline int aout() const { return _aout; }
+    inline void setAout(const int &i) { _aout = i; }
+    static const int DEFAULT_AOUT;
+#if defined(Q_OS_WIN32)
+    inline bool yuvToRgb() const { return _yuvToRgb; }
+    inline void setYuvToRgb(const bool &b) { _yuvToRgb = b; }
+    static const bool DEFAULT_YUV_TO_RGB;
+#endif
+    inline bool spdif() const { return _spdif; }
+    inline void setSpdif(const bool &b) { _spdif = b; }
+    static const bool DEFAULT_SPDIF;
+    inline int interfaceIndex() const { return _interfaceIndex; }
+    inline void setInterfaceIndex(const int &i) { _interfaceIndex = i; }
+    static const int DEFAULT_INTERFACE_INDEX;
+
+    // Backend - video settings
     inline bool rememberVideoSettings() const { return _rememberVideoSettings; }
     inline void setRememberVideoSettings(const bool &b) { _rememberVideoSettings = b; }
     static const bool DEFAULT_REMEMBER_VIDEO_SETTINGS;
@@ -114,6 +142,11 @@ public:
     inline QString subtitleLanguage() const { return _subtitleLanguage; }
     inline void setSubtitleLanguage(const QString &s) { _subtitleLanguage = s; }
     static const QString DEFAULT_SUBTITLE_LANGUAGE;
+
+    // Backend - misc
+    inline bool muteOnMinimize() const { return _muteOnMinimize; }
+    inline void setMuteOnMinimize(const bool &b) { _muteOnMinimize = b; }
+    static const bool DEFAULT_MUTE_ON_MINIMIZE;
     inline bool teletext() const { return _teletext; }
     inline void setTeletext(const bool &b) { _teletext = b; }
     static const bool DEFAULT_TELETEXT;
@@ -190,14 +223,29 @@ private:
     bool _hideToTray;
     QString _mouseWheel;
     int _toolbarLook;
+    bool _rememberMainSize;
+    int _mainWidth;
+    int _mainHeight;
 
-    // Backend
+    // Backend - core
+    int _vout;
+    int _aout;
+#if defined(Q_OS_WIN32)
+    bool _yuvToRgb;
+#endif
+    bool _spdif;
+    int _interfaceIndex;
+
+    // Backend - video settings
     bool _rememberVideoSettings;
     int _aspectRatio;
     int _cropRatio;
     int _deinterlacing;
     QString _audioLanguage;
     QString _subtitleLanguage;
+
+    // Backend - misc
+    bool _muteOnMinimize;
     bool _teletext;
 
     // Recorder

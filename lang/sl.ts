@@ -1548,11 +1548,55 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletekst</translation>
+        <translation type="obsolete">Teletekst</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
         <translation>Vključi teletekst (zahteva ponovni zagon)</translation>
+    </message>
+    <message>
+        <source>Core</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable YUV-&gt;RGB hardware decoding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable S/PDIF output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation type="unfinished">Omrežje</translation>
+    </message>
+    <message>
+        <source>Select network interface:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Misc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute on minimize</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2076,6 +2120,10 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>Info panel:</source>
         <translation>Info pult:</translation>
+    </message>
+    <message>
+        <source>Remember main window size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -37,8 +37,12 @@ SettingsBackend::SettingsBackend(QWidget *parent)
         ui->comboCropRatio->addItem(Vlc::ratioHuman()[i]);
     }
 
+#if !defined(Q_OS_WIN)
+    ui->checkYTR->hide();
+#endif
+
 #if !TELETEXT
-    ui->groupTeletext->hide();
+    ui->checkTeletext->hide();
 #endif
 }
 
@@ -58,6 +62,64 @@ void SettingsBackend::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+int SettingsBackend::vout() const
+{
+    return ui->comboVout->currentIndex() - 1;
+}
+
+void SettingsBackend::setVout(const int &id)
+{
+    if (id)
+        ui->comboVout->setCurrentIndex(id + 1);
+    else
+        ui->comboVout->setCurrentIndex(0);
+}
+
+int SettingsBackend::aout() const
+{
+    return ui->comboAout->currentIndex() - 1;
+}
+
+void SettingsBackend::setAout(const int &id)
+{
+    if (id)
+        ui->comboAout->setCurrentIndex(id + 1);
+    else
+        ui->comboAout->setCurrentIndex(0);
+}
+
+#if defined(Q_OS_WIN32)
+bool SettingsBackend::yuvToRgb() const
+{
+    return ui->checkYTR->isChecked();
+}
+
+void SettingsBackend::setYuvToRgb(const bool &enabled)
+{
+    ui->checkYTR->setChecked(enabled);
+}
+#endif
+
+bool SettingsBackend::spdif() const
+{
+    return ui->checkSpdif->isChecked();
+}
+
+void SettingsBackend::setSpdif(const bool &enabled)
+{
+    ui->checkSpdif->setChecked(enabled);
+}
+
+int SettingsBackend::interface() const
+{
+    return ui->comboNetwork->currentIndex();
+}
+
+void SettingsBackend::setInterface(const int &index)
+{
+    ui->comboNetwork->setCurrentIndex(index);
 }
 
 bool SettingsBackend::rememberChannelSettings() const
@@ -134,6 +196,16 @@ void SettingsBackend::setSub(const QString &sub)
             ui->comboSub->setCurrentIndex(i);
         }
     }
+}
+
+bool SettingsBackend::mute() const
+{
+    return ui->checkMute->isChecked();
+}
+
+void SettingsBackend::setMute(const bool &enabled)
+{
+    ui->checkMute->setChecked(enabled);
 }
 
 bool SettingsBackend::teletext() const

@@ -105,6 +105,7 @@ void SettingsDialog::apply()
     _settings->setHideToTray(ui->gui->trayHide());
     _settings->setMouseWheel(ui->gui->wheel());
     _settings->setToolbarLook(ui->gui->toolbar());
+    _settings->setRememberMainSize(ui->gui->rememberSize());
     _settings->setSplash(ui->gui->splash());
     _settings->setStartLite(ui->gui->lite());
     _settings->setStartOnTop(ui->gui->top());
@@ -112,12 +113,22 @@ void SettingsDialog::apply()
     _settings->setStartInfo(ui->gui->infoStart());
 
     // Playback
+    _settings->setVout(ui->backend->vout());
+    _settings->setAout(ui->backend->aout());
+#if defined(Q_OS_WIN32)
+    _settings->setYuvToRgb(ui->backend->yuvToRgb());
+#endif
+    _settings->setSpdif(ui->backend->spdif());
+    _settings->setInterfaceIndex(ui->backend->interface());
+
     _settings->setRememberVideoSettings(ui->backend->rememberChannelSettings());
     _settings->setAspectRatio(ui->backend->aspectRatio());
     _settings->setCropRatio(ui->backend->cropRatio());
     _settings->setDeinterlacing(ui->backend->deinterlacing());
     _settings->setAudioLanguage(ui->backend->audio());
     _settings->setSubtitleLanguage(ui->backend->sub());
+
+    _settings->setMuteOnMinimize(ui->backend->mute());
     _settings->setTeletext(ui->backend->teletext());
 
     // Schedule
@@ -158,6 +169,7 @@ void SettingsDialog::defaults()
     ui->gui->setTrayHide(Settings::DEFAULT_HIDE_TO_TRAY);
     ui->gui->setWheel(Settings::DEFAULT_MOUSE_WHEEL);
     ui->gui->setToolbar(Settings::DEFAULT_TOOLBAR_LOOK);
+    ui->gui->setRememberSize(Settings::DEFAULT_REMEMBER_MAIN_SIZE);
     ui->gui->setSplash(Settings::DEFAULT_SPLASH);
     ui->gui->setLite(Settings::DEFAULT_START_LITE);
     ui->gui->setTop(Settings::DEFAULT_START_ON_TOP);
@@ -165,12 +177,22 @@ void SettingsDialog::defaults()
     ui->gui->setInfoStart(Settings::DEFAULT_START_INFO);
 
     // Playback
+    ui->backend->setVout(Settings::DEFAULT_VOUT);
+    ui->backend->setAout(Settings::DEFAULT_AOUT);
+#if defined(Q_OS_WIN32)
+    ui->backend->setYuvToRgb(Settings::DEFAULT_YUV_TO_RGB);
+#endif
+    ui->backend->setSpdif(Settings::DEFAULT_SPDIF);
+    ui->backend->setInterface(Settings::DEFAULT_INTERFACE_INDEX);
+
     ui->backend->setRememberChannelSettings(Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS);
     ui->backend->setAspectRatio(Settings::DEFAULT_ASPECT_RATIO);
     ui->backend->setCropRatio(Settings::DEFAULT_CROP_RATIO);
     ui->backend->setDeinterlacing(Settings::DEFAULT_DEINTERLACING);
     ui->backend->setAudio(Settings::DEFAULT_AUDIO_LANGUAGE);
     ui->backend->setSub(Settings::DEFAULT_SUBTITLE_LANGUAGE);
+
+    ui->backend->setMute(Settings::DEFAULT_MUTE_ON_MINIMIZE);
     ui->backend->setTeletext(Settings::DEFAULT_TELETEXT);
 
     // Schedule
@@ -208,6 +230,7 @@ void SettingsDialog::read()
     ui->gui->setTrayHide(_settings->hideToTray());
     ui->gui->setWheel(_settings->mouseWheel());
     ui->gui->setToolbar(_settings->toolbarLook());
+    ui->gui->setRememberSize(_settings->rememberMainSize());
     ui->gui->setSplash(_settings->splash());
     ui->gui->setLite(_settings->startLite());
     ui->gui->setTop(_settings->startOnTop());
@@ -215,12 +238,22 @@ void SettingsDialog::read()
     ui->gui->setInfoStart(_settings->startInfo());
 
     // Playback
+    ui->backend->setVout(_settings->vout());
+    ui->backend->setAout(_settings->aout());
+#if defined(Q_OS_WIN32)
+    ui->backend->setYuvToRgb(_settings->yuvToRgb());
+#endif
+    ui->backend->setSpdif(_settings->spdif());
+    ui->backend->setInterface(_settings->interfaceIndex());
+
     ui->backend->setRememberChannelSettings(_settings->rememberVideoSettings());
     ui->backend->setAspectRatio(_settings->aspectRatio());
     ui->backend->setCropRatio(_settings->cropRatio());
     ui->backend->setDeinterlacing(_settings->deinterlacing());
     ui->backend->setAudio(_settings->audioLanguage());
     ui->backend->setSub(_settings->subtitleLanguage());
+
+    ui->backend->setMute(_settings->muteOnMinimize());
     ui->backend->setTeletext(_settings->teletext());
 
     // Schedule

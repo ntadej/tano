@@ -37,6 +37,19 @@ public:
     SettingsBackend(QWidget *parent = 0);
     ~SettingsBackend();
 
+    int vout() const;
+    void setVout(const int &id);
+    int aout() const;
+    void setAout(const int &id);
+#if defined(Q_OS_WIN32)
+    bool yuvToRgb() const;
+    void setYuvToRgb(const bool &enabled);
+#endif
+    bool spdif() const;
+    void setSpdif(const bool &enabled);
+    int interface() const;
+    void setInterface(const int &index);
+
     bool rememberChannelSettings() const;
     void setRememberChannelSettings(const bool &remember);
     int aspectRatio() const;
@@ -49,6 +62,9 @@ public:
     void setAudio(const QString &audio);
     QString sub() const;
     void setSub(const QString &sub);
+
+    bool mute() const;
+    void setMute(const bool &enabled);
     bool teletext() const;
     void setTeletext(const bool &enabled);
 

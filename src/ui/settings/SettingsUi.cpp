@@ -112,6 +112,16 @@ void SettingsUi::setToolbar(const int &id)
     ui->comboToolbarLook->setCurrentIndex(id);
 }
 
+bool SettingsUi::rememberSize() const
+{
+    return ui->checkRememberSize->isChecked();
+}
+
+void SettingsUi::setRememberSize(const bool &enabled)
+{
+    ui->checkRememberSize->setChecked(enabled);
+}
+
 bool SettingsUi::splash() const
 {
     return ui->checkSplash->isChecked();

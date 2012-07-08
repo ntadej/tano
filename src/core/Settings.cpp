@@ -59,14 +59,27 @@ void Settings::writeSettings()
     setValue("gui/mousewheel", mouseWheel());
 #endif
     setValue("gui/toolbarlook", toolbarLook());
-
 #if !EDITOR
+    setValue("gui/rememberMainSize", rememberMainSize());
+    setValue("gui/rememberWidth", mainWidth());
+    setValue("gui/rememberHeight", mainHeight());
+
+    setValue("backend/vout", vout());
+    setValue("backend/aout", aout());
+#if defined(Q_OS_WIN32)
+    setValue("backend/yuvToRgb", yuvToRgb());
+#endif
+    setValue("backend/spdif", spdif());
+    setValue("backend/interfaceIndex", interfaceIndex());
+
     setValue("backend/videosettings", rememberVideoSettings());
     setValue("backend/aspectratio", aspectRatio());
     setValue("backend/cropratio", cropRatio());
     setValue("backend/deinterlacing", deinterlacing());
     setValue("backend/audio", audioLanguage());
     setValue("backend/subtitles", subtitleLanguage());
+
+    setValue("backend/muteOnMinimize", muteOnMinimize());
     setValue("backend/teletext", teletext());
 
     setValue("recorder/directory", recorderDirectory());
@@ -116,14 +129,27 @@ void Settings::readSettings()
     setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
 #endif
     setToolbarLook(value("gui/toolbarlook", DEFAULT_TOOLBAR_LOOK).toInt());
-
 #if !EDITOR
+    setRememberMainSize(value("gui/rememberMainSize", DEFAULT_REMEMBER_MAIN_SIZE).toBool());
+    setMainWidth(value("gui/mainWidth", DEFAULT_MAIN_WIDTH).toInt());
+    setMainHeight(value("gui/mainHeight", DEFAULT_MAIN_HEIGHT).toInt());
+
+    setVout(value("backend/vout", DEFAULT_VOUT).toInt());
+    setAout(value("backend/aout", DEFAULT_AOUT).toInt());
+#if defined(Q_OS_WIN32)
+    setYuvToRgb(value("backend/muteOnMinimize", DEFAULT_MUTE_ON_MINIMIZE).toBool());
+#endif
+    setSpdif(value("backend/spdif", DEFAULT_SPDIF).toBool());
+    setInterfaceIndex(value("backend/interfaceIndex", DEFAULT_INTERFACE_INDEX).toInt());
+
     setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
     setAspectRatio(value("backend/aspectratio", DEFAULT_ASPECT_RATIO).toInt());
     setCropRatio(value("backend/cropratio", DEFAULT_CROP_RATIO).toInt());
     setDeinterlacing(value("backend/deinterlacing", DEFAULT_DEINTERLACING).toInt());
     setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
     setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
+
+    setMuteOnMinimize(value("backend/muteOnMinimize", DEFAULT_MUTE_ON_MINIMIZE).toBool());
     setTeletext(value("backend/teletext", DEFAULT_TELETEXT).toBool());
 
     setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());

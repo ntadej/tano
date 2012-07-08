@@ -49,6 +49,8 @@ public:
     void setWheel(const QString &wheel);
     int toolbar() const;
     void setToolbar(const int &id);
+    bool rememberSize() const;
+    void setRememberSize(const bool &enabled);
 
     bool splash() const;
     void setSplash(const bool &enabled);

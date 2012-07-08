@@ -1547,11 +1547,55 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletext</translation>
+        <translation type="obsolete">Teletext</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
         <translation>Povolit teletext (vyžaduje opětovné spuštění)</translation>
+    </message>
+    <message>
+        <source>Core</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Video output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Audio output:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable YUV-&gt;RGB hardware decoding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable S/PDIF output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network</source>
+        <translation type="unfinished">Síť</translation>
+    </message>
+    <message>
+        <source>Select network interface:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Misc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute on minimize</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2075,6 +2119,10 @@ Tuto operaci nelze vrátit zpět.</translation>
     <message>
         <source>Info panel:</source>
         <translation>Informační panel:</translation>
+    </message>
+    <message>
+        <source>Remember main window size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
