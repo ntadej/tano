@@ -16,34 +16,21 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_LINUX_H_
+#define TANO_LINUX_H_
 
-#include <QtCore/QDate>
 #include <QtCore/QString>
-#include <QtCore/QTime>
 
 namespace Tano
 {
-    // Tano name and executable
-    QString name();
-    QString nameShort();
-    QString nameGroup();
-    QString executable();
-
-    // Version
-    QString version();
-    QString changeset();
-
-    // Build system information
-    QString buildHostname();
-    QString buildSystem();
-
-    // Misc
-    QString recordingFileName(const QString &name,
-                              const QString &channel,
-                              const QDate &date,
-                              const QTime &time);
+    namespace Linux
+    {
+        // Linux specific
+#if defined(Q_OS_LINUX)
+        QString picturesPath();
+        QString videoPath();
+#endif
+    }
 }
 
-#endif // TANO_COMMON_H_
+#endif // TANO_LINUX_H_

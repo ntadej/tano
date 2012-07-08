@@ -45,10 +45,12 @@
 
 #include "container/core/Channel.h"
 #include "container/core/Timer.h"
+#include "core/Backend.h"
 #include "core/ChannelSelect.h"
 #include "core/Common.h"
 #include "core/NetworkDownload.h"
 #include "core/LocaleManager.h"
+#include "core/Resources.h"
 #include "core/Settings.h"
 #include "core/Shortcuts.h"
 #include "core/Udpxy.h"
@@ -236,7 +238,7 @@ void MainWindow::createBackend()
 {
     _xmltv->loadXmltv();
 
-    _mediaInstance = new VlcInstance(Tano::vlcQtArgs(), this);
+    _mediaInstance = new VlcInstance(Tano::Backend::args(), this);
     _mediaItem = 0;
     _mediaPlayer = new VlcMediaPlayer(_mediaInstance);
     _mediaPlayer->setVideoWidget(ui->videoWidget);
@@ -757,7 +759,7 @@ void MainWindow::openPlaylist(const bool &start)
         _playlistName = FileDialogs::openPlaylistSimple();
     } else {
         if (!_defaultPlaylist.isEmpty())
-            _playlistName = Tano::resource(_defaultPlaylist);
+            _playlistName = Tano::Resources::resource(_defaultPlaylist);
     }
 
     if (_playlistName.isEmpty())

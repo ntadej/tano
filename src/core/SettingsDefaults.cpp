@@ -18,8 +18,12 @@
 
 #include <QtCore/QDir>
 
-#include "core/Common.h"
+#include "core/Resources.h"
 #include "core/Settings.h"
+
+#if defined (Q_OS_LINUX)
+    #include "core/Linux.h"
+#endif
 
 // Define defaults - General
 const QString Settings::DEFAULT_LANGUAGE = "";
@@ -80,8 +84,8 @@ const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/Pictu
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos"; // Need to confirm
 const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/Pictures";
 #elif defined(Q_OS_LINUX)
-const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/" + Tano::linuxVideoPath();
-const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/" + Tano::linuxPicturesPath();
+const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/" + Tano::Linux::videoPath();
+const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/" + Tano::Linux::picturesPath();
 #else
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos";
 const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/Pictures";
@@ -94,7 +98,7 @@ const bool Settings::DEFAULT_SESSION_REMEMBER_VOLUME = true;
 const int Settings::DEFAULT_SESSION_VOLUME = 50;
 
 // Schedule
-const QString Settings::DEFAULT_XMLTV_LOCATION = Tano::settingsPath() + "xmltv.xml";
+const QString Settings::DEFAULT_XMLTV_LOCATION = Tano::Resources::settingsPath() + "xmltv.xml";
 const bool Settings::DEFAULT_XMLTV_UPDATE = false;
 const bool Settings::DEFAULT_XMLTV_UPDATE_GRABBER = false;
 const QString Settings::DEFAULT_XMLTV_UPDATE_URL = "";

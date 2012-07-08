@@ -26,6 +26,7 @@
 #include "ui_AboutDialog.h"
 
 #include "Config.h"
+#include "core/Backend.h"
 #include "core/Common.h"
 
 AboutDialog::AboutDialog(QWidget *parent)
@@ -41,10 +42,10 @@ AboutDialog::AboutDialog(QWidget *parent)
     ui->labelTitle->setText(ui->labelTitle->text().arg(tr("Player"), Tano::version(), Tano::changeset()));
 #endif
 
-    ui->labelBuild->setText(ui->labelBuild->text().arg(Tano::buildHostname(), Tano::buildSystem(), qVersion(), Tano::vlcQtVersionLibrary()));
+    ui->labelBuild->setText(ui->labelBuild->text().arg(Tano::buildHostname(), Tano::buildSystem(), qVersion(), Tano::Backend::versionLibrary()));
     ui->labelCopyright->setText(ui->labelCopyright->text().arg(QDate::currentDate().toString("yyyy")));
-    ui->labelBackendInfo->setText(ui->labelBackendInfo->text().arg(Tano::vlcQtVersionCore()));
-    ui->labelBackendVersion->setText(ui->labelBackendVersion->text().arg(Tano::vlcQtVersionLibrary()));
+    ui->labelBackendInfo->setText(ui->labelBackendInfo->text().arg(Tano::Backend::versionCore()));
+    ui->labelBackendVersion->setText(ui->labelBackendVersion->text().arg(Tano::Backend::versionLibrary()));
 
     QFile file(":/info/AUTHORS");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))

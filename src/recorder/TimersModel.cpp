@@ -21,7 +21,7 @@
 #include <QtXml/QXmlInputSource>
 
 #include "container/core/Timer.h"
-#include "core/Common.h"
+#include "core/Resources.h"
 #include "recorder/TimersGenerator.h"
 #include "recorder/TimersHandler.h"
 #include "recorder/TimersModel.h"
@@ -81,7 +81,7 @@ void TimersModel::readTimers()
     reader.setContentHandler(handler.data());
     reader.setErrorHandler(handler.data());
 
-    QFile f(Tano::recordings());
+    QFile f(Tano::Resources::recordings());
     if (!f.open(QFile::ReadOnly | QFile::Text))
         return;
 
@@ -97,10 +97,10 @@ void TimersModel::readTimers()
 
 void TimersModel::writeTimers()
 {
-    QFile f(Tano::recordings());
+    QFile f(Tano::Resources::recordings());
     if (!f.open(QFile::WriteOnly | QFile::Text))
         return;
 
-    QScopedPointer<TimersGenerator> generator(new TimersGenerator(Tano::recordings()));
+    QScopedPointer<TimersGenerator> generator(new TimersGenerator(Tano::Resources::recordings()));
     generator->write(this);
 }

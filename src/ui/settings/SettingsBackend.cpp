@@ -17,11 +17,12 @@
 *****************************************************************************/
 
 #include "Config.h"
+#include "core/Backend.h"
+
 #include "SettingsBackend.h"
 #include "ui_SettingsBackend.h"
 
 #include <vlc-qt/Enums.h>
-#include <vlc-qt/Instance.h>
 
 SettingsBackend::SettingsBackend(QWidget *parent)
     : QWidget(parent),
@@ -29,15 +30,15 @@ SettingsBackend::SettingsBackend(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " <b>" + VlcInstance::libVersion() + "</b>");
-    ui->labelVlcVersionValue->setText("<b>" + VlcInstance::version() + "</b>");
+    ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " <b>" + Tano::Backend::versionLibrary() + "</b>");
+    ui->labelVlcVersionValue->setText("<b>" + Tano::Backend::versionCore() + "</b>");
 
     for (int i = 1; i < Vlc::ratioHuman().size(); i++) {
         ui->comboAspectRatio->addItem(Vlc::ratioHuman()[i]);
         ui->comboCropRatio->addItem(Vlc::ratioHuman()[i]);
     }
 
-#if !defined(Q_OS_WIN)
+#if !defined(Q_OS_WIN32)
     ui->checkYTR->hide();
 #endif
 

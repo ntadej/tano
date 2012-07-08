@@ -16,34 +16,40 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#include "Config.h"
+#include "core/Backend.h"
 
-#include <QtCore/QDate>
-#include <QtCore/QString>
-#include <QtCore/QTime>
+#if WITH_EDITOR_VLCQT
+    #include <vlc-qt/Common.h>
+    #include <vlc-qt/Instance.h>
+#endif
 
-namespace Tano
+QStringList Tano::Backend::args()
 {
-    // Tano name and executable
-    QString name();
-    QString nameShort();
-    QString nameGroup();
-    QString executable();
+    QStringList args;
+#if WITH_EDITOR_VLCQT
+    args = VlcCommon::args();
+#endif
 
-    // Version
-    QString version();
-    QString changeset();
-
-    // Build system information
-    QString buildHostname();
-    QString buildSystem();
-
-    // Misc
-    QString recordingFileName(const QString &name,
-                              const QString &channel,
-                              const QDate &date,
-                              const QTime &time);
+    return args;
 }
 
-#endif // TANO_COMMON_H_
+QString Tano::Backend::versionCore()
+{
+    QString version = "/";
+#if WITH_EDITOR_VLCQT
+    version = VlcInstance::version();
+#endif
+
+    return version;
+}
+
+QString Tano::Backend::versionLibrary()
+{
+    QString version = "/";
+#if WITH_EDITOR_VLCQT
+    version = VlcInstance::libVersion();
+#endif
+
+    return version;
+}

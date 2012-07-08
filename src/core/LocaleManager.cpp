@@ -20,8 +20,8 @@
 #include <QtCore/QDir>
 #include <QtCore/QLocale>
 
-#include "core/Common.h"
 #include "core/LocaleManager.h"
+#include "core/Resources.h"
 #include "core/Settings.h"
 
 LocaleManager::LocaleManager()
@@ -49,7 +49,7 @@ QString LocaleManager::language(const QString &locale)
 
 QStringList LocaleManager::loadTranslations()
 {
-    QDir dir(Tano::resourcePath("/lang/sl.qm"));
+    QDir dir(Tano::Resources::path("/lang/sl.qm"));
     QStringList list;
     list << QLocale::languageToString(QLocale(QLocale::English).language());
 
@@ -82,12 +82,12 @@ void LocaleManager::setLocale()
     if(settings->language().isEmpty()) {
         locale = QLocale::system().name();
 
-        if (Tano::resource("/lang/" + locale + ".qm").isEmpty())
+        if (Tano::Resources::resource("/lang/" + locale + ".qm").isEmpty())
             locale = locale.split("_")[0];
     } else {
         locale = settings->language();
     }
 
-    QString langPath = Tano::resourcePath("/lang/" + locale + ".qm");
+    QString langPath = Tano::Resources::path("/lang/" + locale + ".qm");
     _translator->load(locale, langPath);
 }

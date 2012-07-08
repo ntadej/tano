@@ -22,8 +22,8 @@
 Settings::Settings(QObject *parent)
     : QSettings(QSettings::IniFormat,
                 QSettings::UserScope,
-                Tano::applicationGroup(),
-                Tano::applicationShort(),
+                Tano::nameGroup(),
+                Tano::nameShort(),
                 parent)
 {
     readSettings();

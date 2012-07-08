@@ -84,6 +84,7 @@ SET(Tano_Editor_Srcs
 
     ../src/container/core/Channel.cpp
 
+    ../src/core/Backend.cpp
     ../src/core/Common.cpp
     ../src/core/Enums.cpp
     ../src/core/ListModel.cpp
@@ -91,6 +92,7 @@ SET(Tano_Editor_Srcs
     ../src/core/Log.cpp
     ../src/core/NetworkRequest.cpp
     ../src/core/Print.cpp
+    ../src/core/Resources.cpp
     ../src/core/Settings.cpp
     ../src/core/Udpxy.cpp
 
@@ -123,6 +125,14 @@ SET(Tano_Editor_Srcs
     ../src/ui/settings-editor/SettingsEditorDialog.cpp
     ../src/ui/settings-editor/SettingsEditorGeneral.cpp
 )
+
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    SET(Tano_Editor_Srcs
+        ${Tano_Editor_Srcs}
+
+        ../src/core/Linux.cpp
+    )
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 IF(EDITOR_VLCQT)
     SET(Tano_Editor_UIs

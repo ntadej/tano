@@ -40,12 +40,12 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setApplicationName(Tano::application());
+    QCoreApplication::setApplicationName(Tano::name());
     QCoreApplication::setApplicationVersion(Tano::version());
 
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
 
-    Tano::setupLog();
+    Tano::Log::setup();
 
     QApplication app(argc, argv);
 

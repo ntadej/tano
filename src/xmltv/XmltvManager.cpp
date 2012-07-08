@@ -25,8 +25,8 @@
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvList.h"
 #include "container/xmltv/XmltvProgramme.h"
-#include "core/Common.h"
 #include "core/NetworkDownload.h"
+#include "core/Resources.h"
 #include "core/Settings.h"
 #include "xmltv/XmltvCommon.h"
 #include "xmltv/XmltvChannelsModel.h"
@@ -103,7 +103,7 @@ bool loadXmltvStart(XmltvHandler *handler,
     reader.setContentHandler(handler);
     reader.setErrorHandler(handler);
 
-    QFile file(Tano::resource(location));
+    QFile file(Tano::Resources::resource(location));
     if (!file.exists())
         return false;
     if (!file.open(QFile::ReadOnly | QFile::Text))

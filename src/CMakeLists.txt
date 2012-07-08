@@ -178,6 +178,7 @@ SET(Tano_Container_Srcs
 )
 SET(Tano_Core_Srcs
     core/Arguments.cpp
+    core/Backend.cpp
     core/ChannelSelect.cpp
     core/Common.cpp
     core/Enums.cpp
@@ -188,6 +189,7 @@ SET(Tano_Core_Srcs
     core/LocaleManager.cpp
     core/Log.cpp
     core/Print.cpp
+    core/Resources.cpp
     core/Settings.cpp
     core/Shortcuts.cpp
     core/Udpxy.cpp
@@ -286,6 +288,14 @@ SET(Tano_Srcs
     ${Tano_UI_Srcs}
     ${Tano_Xmltv_Srcs}
 )
+
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    SET(Tano_Srcs
+        ${Tano_Srcs}
+
+        core/Linux.cpp
+    )
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 IF(UPDATE)
     SET(Tano_UIs

@@ -23,10 +23,11 @@
 
 #include "core/Common.h"
 #include "core/Log.h"
+#include "core/Resources.h"
 
 QTextStream *out;
 
-void Tano::logOutput(QtMsgType type, const char *msg)
+void Tano::Log::output(QtMsgType type, const char *msg)
 {
     QString debugdate = QDateTime::currentDateTime().toString("yyyy.MM.dd hh:mm:ss");
     switch (type)
@@ -54,13 +55,13 @@ void Tano::logOutput(QtMsgType type, const char *msg)
     }
 }
 
-void Tano::setupLog()
+void Tano::Log::setup()
 {
-    QString fileName = Tano::settingsPath() + "/" + Tano::executable() + ".log";
+    QString fileName = Tano::Resources::settingsPath() + "/" + Tano::executable() + ".log";
     QFile *log = new QFile(fileName);
     if (log->open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text)) {
         out = new QTextStream(log);
-        qInstallMsgHandler(logOutput);
+        qInstallMsgHandler(output);
     } else {
         qDebug() << "Error opening log file '" << fileName << "'. All debug output redirected to console.";
     }

@@ -23,8 +23,11 @@
 
 namespace Tano
 {
-    void logOutput(QtMsgType type, const char *msg);
-    void setupLog();
+    namespace Log
+    {
+        void output(QtMsgType type, const char *msg);
+        void setup();
+    }
 }
 
 #endif // TANO_LOG_H_
