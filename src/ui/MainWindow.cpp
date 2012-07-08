@@ -171,6 +171,9 @@ void MainWindow::hideEvent(QHideEvent *event)
 
     _dockControlsVisible = ui->dockControls->isVisible();
     _dockInfoVisible = ui->dockInfo->isVisible();
+
+    if (_muteOnMinimize && !ui->actionMute->isChecked())
+        ui->actionMute->trigger();
 }
 void MainWindow::showEvent(QShowEvent *event)
 {
@@ -178,11 +181,17 @@ void MainWindow::showEvent(QShowEvent *event)
 
     ui->dockControls->setVisible(_dockControlsVisible);
     ui->dockInfo->setVisible(_dockInfoVisible);
+
+    if (_muteOnMinimize)
+        ui->actionMute->trigger();
 }
 
 // Init functions
 void MainWindow::createGui()
 {
+    if (_rememberSize)
+        resize(_mainWidth, _mainHeight);
+
     _osdMain = new OsdWidget(this);
     _osdMain->setBackend(_mediaPlayer);
     _osdMain->toggleTeletext(_teletext);
@@ -261,6 +270,7 @@ void MainWindow::createSettings()
     _infoEnabled = settings->info();
     _wheelType = settings->mouseWheel();
     mouseWheel();
+    _rememberSize = settings->rememberMainSize();
 
     //Playback settings
     _defaultAspectRatio = settings->aspectRatio();
@@ -281,6 +291,7 @@ void MainWindow::createSettings()
     if (_videoController)
         _videoController->setDefaultSubtitleLanguage(_defaultSubtitleLanguage);
     _udpxy->createSettings();
+    _muteOnMinimize = settings->muteOnMinimize();
 
     _sessionVolumeEnabled = settings->sessionVolume();
     _sessionAutoplayEnabled = settings->sessionAutoplay();
@@ -303,6 +314,9 @@ void MainWindow::createSettingsStartup()
     _sessionChannel = settings->sessionChannel();
 
     _teletext = settings->teletext();
+
+    _mainWidth = settings->mainWidth();
+    _mainHeight = settings->mainHeight();
 
     // GUI
     if (settings->startLite()) {
@@ -538,12 +552,20 @@ void MainWindow::createSession()
 void MainWindow::writeSession()
 {
     QScopedPointer<Settings> settings(new Settings(this));
+
     if (_sessionVolumeEnabled)
         settings->setSessionVolume(_osdMain->volumeSlider()->volume());
     else
         settings->setSessionVolume(Settings::DEFAULT_SESSION_VOLUME);
+
     if (_sessionAutoplayEnabled)
         settings->setSessionChannel(_osdMain->lcd()->value());
+
+    if (_rememberSize) {
+        settings->setMainWidth(size().width());
+        settings->setMainHeight(size().height());
+    }
+
     settings->writeSettings();
 
     qDebug() << "Session written";

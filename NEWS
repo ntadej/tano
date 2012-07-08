@@ -1,4 +1,6 @@
 1.1 (git)
+  * Ability to mute on minimize
+  * Save main window size on exit
   * Drop support for older versions of Qt and VLC
     Supported are Qt 4.8 or later and VLC 2.0 or later.
 

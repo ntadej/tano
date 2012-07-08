@@ -171,7 +171,11 @@ private:
     bool _isLite;
     bool _osdEnabled;
     bool _infoEnabled;
+    bool _muteOnMinimize;
     bool _recordNow;
+    bool _rememberSize;
+    int _mainWidth;
+    int _mainHeight;
     int _sessionChannel;
     bool _sessionVolumeEnabled;
     bool _sessionAutoplayEnabled;

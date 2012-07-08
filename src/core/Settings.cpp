@@ -61,8 +61,8 @@ void Settings::writeSettings()
     setValue("gui/toolbarlook", toolbarLook());
 #if !EDITOR
     setValue("gui/rememberMainSize", rememberMainSize());
-    setValue("gui/rememberWidth", mainWidth());
-    setValue("gui/rememberHeight", mainHeight());
+    setValue("gui/mainWidth", mainWidth());
+    setValue("gui/mainHeight", mainHeight());
 
     setValue("backend/vout", vout());
     setValue("backend/aout", aout());
