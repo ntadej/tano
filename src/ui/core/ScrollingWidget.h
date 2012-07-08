@@ -28,6 +28,7 @@
 #endif
 
 class QLabel;
+class QResizeEvent;
 
 class ScrollingWidget : public QScrollArea
 {
@@ -37,6 +38,9 @@ public:
     ~ScrollingWidget();
 
     void removeBorder();
+
+protected:
+    void resizeEvent(QResizeEvent *event);
 
 public slots:
     void setText(const QString &text = "");
