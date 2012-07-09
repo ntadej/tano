@@ -41,6 +41,7 @@ QHash<int, QByteArray> XmltvProgramme::roleNames() const
     QHash<int, QByteArray> names;
     names[DisplayRole] = "display";
     names[DisplayIconRole] = "displayIcon";
+    names[DisplayFontRole] = "displayFont";
     names[TitleRole] = "title";
     names[ChannelRole] = "channel";
     names[StartRole] = "start";
@@ -66,6 +67,8 @@ QVariant XmltvProgramme::data(int role) const
         return display();
     case DisplayIconRole:
         return displayIcon();
+    case DisplayFontRole:
+        return displayFont();
     case TitleRole:
         return title();
     case ChannelRole:
@@ -107,6 +110,15 @@ QString XmltvProgramme::display() const
 QIcon XmltvProgramme::displayIcon() const
 {
     return QIcon(":/icons/16x16/calendar.png");
+}
+
+QFont XmltvProgramme::displayFont() const
+{
+    QFont f;
+    if (QDateTime::currentDateTime() > start() && QDateTime::currentDateTime() < stop())
+        f.setBold(true);
+
+    return f;
 }
 
 void XmltvProgramme::setChannelDisplayName(const QString &s)

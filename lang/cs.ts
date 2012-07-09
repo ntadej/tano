@@ -74,11 +74,11 @@ Verze vašeho VLC-Qt: %4</translation>
     <name>EpgList</name>
     <message>
         <source>Show information</source>
-        <translation>Ukázat podrobnosti</translation>
+        <translation type="obsolete">Ukázat podrobnosti</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Nahrávat</translation>
+        <translation type="obsolete">Nahrávat</translation>
     </message>
 </context>
 <context>
@@ -86,6 +86,14 @@ Verze vašeho VLC-Qt: %4</translation>
     <message>
         <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;Žádné EPG&lt;/h2&gt;</translation>
+    </message>
+    <message>
+        <source>Show information</source>
+        <translation>Ukázat podrobnosti</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Nahrávat</translation>
     </message>
 </context>
 <context>
@@ -572,6 +580,17 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <source>Take snapshot</source>
         <translation>Udělat snímek</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistDisplayWidget</name>
+    <message>
+        <source>Play</source>
+        <translation>Přehrát</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Rozvrh</translation>
     </message>
 </context>
 <context>

@@ -84,7 +84,10 @@ void EpgShow::display(XmltvProgramme *programme)
 
     _image->getFile(programme->icon());
 
-    show();
+    if (isVisible())
+        activateWindow();
+    else
+        show();
 }
 
 void EpgShow::image(const QString &image)

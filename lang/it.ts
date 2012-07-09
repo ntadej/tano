@@ -66,20 +66,17 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
-    <name>EpgList</name>
+    <name>EpgScheduleChannel</name>
+    <message>
+        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message>
         <source>Show information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleChannel</name>
-    <message>
-        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -563,6 +560,17 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistDisplayWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

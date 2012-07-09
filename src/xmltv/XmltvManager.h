@@ -60,7 +60,6 @@ public slots:
     void stop();
 
 signals:
-    void channels(XmltvChannelsModel *);
     void current(const QString,
                  const QString);
     void schedule(XmltvProgrammeModel *,

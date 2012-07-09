@@ -30,6 +30,9 @@
 
 #include "core/Enums.h"
 
+class QAction;
+class QMenu;
+
 namespace Ui
 {
 	class EpgScheduleChannel;
@@ -57,10 +60,14 @@ protected:
 
 signals:
 	void itemSelected(XmltvProgramme *);
+	void requestRecord(XmltvProgramme *);
 
 private slots:
+    void info();
     void programmeClicked(const QModelIndex &index);
     void processFilters();
+    void record();
+    void showMenu(const QPoint &pos);
 
 private:
 	Ui::EpgScheduleChannel *ui;
@@ -68,6 +75,11 @@ private:
 	Tano::Id _id;
     XmltvProgrammeModel *_model;
     XmltvProgrammeFilterModel *_filterModel;
+
+	QAction *_info;
+	QAction *_record;
+	QMenu *_rightMenu;
+	QPoint _currentPos;
 };
 
 #endif // EPGSCHEDULECHANNEL_H_

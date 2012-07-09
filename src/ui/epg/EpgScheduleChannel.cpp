@@ -18,6 +18,14 @@
 
 #include <QtCore/QDate>
 
+#if defined(Qt5)
+    #include <QtWidgets/QAction>
+    #include <QtWidgets/QMenu>
+#elif defined(Qt4)
+    #include <QtGui/QAction>
+    #include <QtGui/QMenu>
+#endif
+
 #include "container/xmltv/XmltvChannel.h"
 #include "container/xmltv/XmltvProgramme.h"
 #include "xmltv/XmltvCommon.h"
@@ -36,9 +44,19 @@ EpgScheduleChannel::EpgScheduleChannel(QWidget *parent)
     _filterModel = new XmltvProgrammeFilterModel(this);
     _filterModel->setDynamicSortFilter(true);
     ui->view->setModel(_filterModel);
+    ui->view->setContextMenuPolicy(Qt::CustomContextMenu);
 
-    connect(ui->view, SIGNAL(clicked(QModelIndex)), this, SLOT(programmeClicked(QModelIndex)));
+	_rightMenu = new QMenu(ui->view);
+	_info = new QAction(QIcon(":/icons/24x24/calendar.png"), tr("Show information"), this);
+	_record = new QAction(QIcon(":/icons/24x24/media-record.png"), tr("Record"), this);
+	_rightMenu->addAction(_info);
+	_rightMenu->addAction(_record);
+
+    connect(ui->view, SIGNAL(activated(QModelIndex)), this, SLOT(programmeClicked(QModelIndex)));
+    connect(ui->view, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showMenu(QPoint)));
     connect(ui->comboDate, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
+    connect(_info, SIGNAL(triggered()), this, SLOT(info()));
+    connect(_record, SIGNAL(triggered()), this, SLOT(record()));
 }
 
 EpgScheduleChannel::~EpgScheduleChannel()
@@ -59,6 +77,11 @@ void EpgScheduleChannel::changeEvent(QEvent *e)
 	}
 }
 
+void EpgScheduleChannel::info()
+{
+	programmeClicked(ui->view->indexAt(_currentPos));
+}
+
 void EpgScheduleChannel::processFilters()
 {
     _filterModel->setDate(QDate::fromString(ui->comboDate->currentText(), Tano::Xmltv::dateFormatDisplay()));
@@ -67,6 +90,11 @@ void EpgScheduleChannel::processFilters()
 void EpgScheduleChannel::programmeClicked(const QModelIndex &index)
 {
     emit itemSelected(_model->row(_filterModel->mapToSource(index).row()));
+}
+
+void EpgScheduleChannel::record()
+{
+    emit requestRecord(_model->row(_filterModel->mapToSource(ui->view->indexAt(_currentPos)).row()));
 }
 
 void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
@@ -99,4 +127,11 @@ void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
 void EpgScheduleChannel::setPage(const int &id)
 {
 	setCurrentIndex(id);
+}
+
+void EpgScheduleChannel::showMenu(const QPoint &pos)
+{
+	_currentPos = pos;
+
+	_rightMenu->exec(QCursor::pos());
 }

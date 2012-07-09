@@ -122,7 +122,7 @@ void XmltvManager::loadXmltvFinish()
     _xmltv = _handler->list();
     _loading = false;
 
-    emit channels(_xmltv->channels());
+    request(_currentXmltvId, _currentIdentifier);
 }
 
 QString XmltvManager::processCurrentString(XmltvProgramme *programme) const
@@ -138,8 +138,11 @@ void XmltvManager::request(const QString &id,
     if (id.isEmpty())
         return;
 
-    if (!_xmltv)
+    if (!_xmltv) {
+        _currentIdentifier = identifier;
+        _currentXmltvId = id;
         return;
+    }
 
     XmltvProgrammeModel *currentProgramme;
     if (_xmltv->channels()->find(id))
