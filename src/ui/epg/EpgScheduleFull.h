@@ -58,6 +58,10 @@ signals:
     void itemSelected(XmltvProgramme *);
     void requestEpg(QString,
                     Tano::Id);
+    void requestRecord(XmltvProgramme *);
+
+public slots:
+    void openSchedule(Channel *channel);
 
 private slots:
     void channel(Channel *channel);

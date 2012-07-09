@@ -27,6 +27,9 @@
     #include <QtGui/QWidget>
 #endif
 
+class QAction;
+class QMenu;
+
 class Channel;
 class PlaylistFilterModel;
 class PlaylistFilterWidget;
@@ -48,6 +51,7 @@ public:
     PlaylistFilterWidget *filter();
 
     void editMode();
+    void playMode();
     void refreshModel();
     void setModel(PlaylistModel *model);
 
@@ -56,6 +60,7 @@ protected:
 
 signals:
     void itemSelected(Channel *);
+    void scheduleRequested(Channel *);
 
 public slots:
     void channelSelected(Channel *channel);
@@ -64,10 +69,13 @@ public slots:
 
 private slots:
     void channelSelected(const QModelIndex &index);
+    void play();
     void processFilters(const QString &search,
                         const QString &category,
                         const QString &language,
                         const int &type);
+    void schedule();
+    void showMenu(const QPoint &pos);
     void updateSelection(Channel *channel);
 
 private:
@@ -76,6 +84,11 @@ private:
     Channel *_current;
     PlaylistModel *_model;
     PlaylistFilterModel *_filterModel;
+
+	QAction *_play;
+	QAction *_schedule;
+	QMenu *_rightMenu;
+	QPoint _currentPos;
 };
 
 #endif // TANO_PLAYLISTDISPLAYWIDGET_H_

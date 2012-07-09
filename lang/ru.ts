@@ -108,11 +108,11 @@ Your VLC-Qt version: %4
     <name>EpgList</name>
     <message>
         <source>Show information</source>
-        <translation>Показать информацию</translation>
+        <translation type="obsolete">Показать информацию</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Запись</translation>
+        <translation type="obsolete">Запись</translation>
     </message>
 </context>
 <context>
@@ -120,6 +120,14 @@ Your VLC-Qt version: %4
     <message>
         <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
         <translation type="unfinished">&lt;h2&gt;EPG отсутствует&lt;/h2&gt;</translation>
+    </message>
+    <message>
+        <source>Show information</source>
+        <translation type="unfinished">Показать информацию</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished">Запись</translation>
     </message>
 </context>
 <context>
@@ -801,6 +809,14 @@ This will stop recording in progress.</source>
     <message>
         <source>Type:</source>
         <translation type="obsolete">Тип:</translation>
+    </message>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Воспроизведение</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Программа</translation>
     </message>
 </context>
 <context>

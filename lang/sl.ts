@@ -75,11 +75,11 @@ Vaša različica VLC-Qt: %4
     <name>EpgList</name>
     <message>
         <source>Show information</source>
-        <translation>Pokaži podrobnosti</translation>
+        <translation type="obsolete">Pokaži podrobnosti</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Snemaj</translation>
+        <translation type="obsolete">Snemaj</translation>
     </message>
 </context>
 <context>
@@ -87,6 +87,14 @@ Vaša različica VLC-Qt: %4
     <message>
         <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;EPG ni na voljo&lt;/h2&gt;</translation>
+    </message>
+    <message>
+        <source>Show information</source>
+        <translation>Pokaži podrobnosti</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Snemaj</translation>
     </message>
 </context>
 <context>
@@ -588,6 +596,17 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Take snapshot</source>
         <translation>Zajemi sliko</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistDisplayWidget</name>
+    <message>
+        <source>Play</source>
+        <translation>Predvajaj</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Spored</translation>
     </message>
 </context>
 <context>

@@ -16,6 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#if defined(Qt5)
+    #include <QtWidgets/QAction>
+    #include <QtWidgets/QMenu>
+#elif defined(Qt4)
+    #include <QtGui/QAction>
+    #include <QtGui/QMenu>
+#endif
+
 #include "PlaylistDisplayWidget.h"
 #include "ui_PlaylistDisplayWidget.h"
 
@@ -35,9 +43,18 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
     _filterModel->setDynamicSortFilter(true);
 
     ui->playlistView->setModel(_filterModel);
+    ui->playlistView->setContextMenuPolicy(Qt::CustomContextMenu);
+
+	_rightMenu = new QMenu(ui->playlistView);
+	_play = new QAction(QIcon(":/icons/24x24/media-playback-start.png"), tr("Play"), this);
+	_schedule = new QAction(QIcon(":/icons/24x24/calendar.png"), tr("Schedule"), this);
+	_rightMenu->addAction(_play);
+	_rightMenu->addAction(_schedule);
 
     connect(ui->playlistView, SIGNAL(activated(QModelIndex)), this, SLOT(channelSelected(QModelIndex)));
     connect(ui->filters, SIGNAL(filters(QString, QString, QString, int)), this, SLOT(processFilters(QString, QString, QString, int)));
+    connect(_play, SIGNAL(triggered()), this, SLOT(play()));
+    connect(_schedule, SIGNAL(triggered()), this, SLOT(schedule()));
 }
 
 PlaylistDisplayWidget::~PlaylistDisplayWidget()
@@ -70,6 +87,7 @@ void PlaylistDisplayWidget::channelSelected(const QModelIndex &index)
 {
     _current = _model->row(_filterModel->mapToSource(index).row());
     emit itemSelected(_current);
+    updateSelection(_current);
 }
 
 void PlaylistDisplayWidget::channelSelected(const int &channel)
@@ -97,6 +115,16 @@ PlaylistFilterWidget *PlaylistDisplayWidget::filter()
     return ui->filters;
 }
 
+void PlaylistDisplayWidget::play()
+{
+    channelSelected(ui->playlistView->indexAt(_currentPos));
+}
+
+void PlaylistDisplayWidget::playMode()
+{
+    connect(ui->playlistView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showMenu(QPoint)));
+}
+
 void PlaylistDisplayWidget::processFilters(const QString &search,
                                            const QString &category,
                                            const QString &language,
@@ -114,10 +142,22 @@ void PlaylistDisplayWidget::refreshModel()
     ui->filters->refreshModel(_model->categories(), _model->languages());
 }
 
+void PlaylistDisplayWidget::schedule()
+{
+    emit scheduleRequested(_model->row(_filterModel->mapToSource(ui->playlistView->indexAt(_currentPos)).row()));
+}
+
 void PlaylistDisplayWidget::setModel(PlaylistModel *model)
 {
     _model = model;
     _filterModel->setSourceModel(model);
+}
+
+void PlaylistDisplayWidget::showMenu(const QPoint &pos)
+{
+	_currentPos = pos;
+
+	_rightMenu->exec(QCursor::pos());
 }
 
 void PlaylistDisplayWidget::updateSelection(Channel *channel)

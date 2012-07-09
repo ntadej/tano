@@ -72,11 +72,11 @@ Your VLC-Qt version: %4
     <name>EpgList</name>
     <message>
         <source>Show information</source>
-        <translation>Показати інформацію</translation>
+        <translation type="obsolete">Показати інформацію</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Запис</translation>
+        <translation type="obsolete">Запис</translation>
     </message>
 </context>
 <context>
@@ -84,6 +84,14 @@ Your VLC-Qt version: %4
     <message>
         <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
         <translation>&lt;h2&gt;Без EPG&lt;/h2&gt;</translation>
+    </message>
+    <message>
+        <source>Show information</source>
+        <translation>Показати інформацію</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Запис</translation>
     </message>
 </context>
 <context>
@@ -585,6 +593,17 @@ This will stop recording in progress.</source>
     <message>
         <source>Take snapshot</source>
         <translation>Зробити знімок</translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistDisplayWidget</name>
+    <message>
+        <source>Play</source>
+        <translation>Відтворити</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Розклад</translation>
     </message>
 </context>
 <context>

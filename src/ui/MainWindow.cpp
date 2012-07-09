@@ -214,6 +214,7 @@ void MainWindow::createGui()
     _playlistMenu->addAction(waction);
     ui->buttonPlaylistSearch->setMenu(_playlistMenu);
 
+    ui->playlistWidget->playMode();
     ui->playlistWidget->setModel(_model);
     _schedule->setPlaylistModel(_model);
     ui->recorder->setPlaylistModel(_model);
@@ -416,6 +417,7 @@ void MainWindow::createConnections()
     connect(_osdMain, SIGNAL(openLink(QString)), _xmltv, SLOT(requestProgramme(QString)));
     connect(_epgShow, SIGNAL(requestNext(XmltvProgramme *)), _xmltv, SLOT(requestProgrammeNext(XmltvProgramme*)));
     connect(_epgShow, SIGNAL(requestPrevious(XmltvProgramme *)), _xmltv, SLOT(requestProgrammePrevious(XmltvProgramme*)));
+    connect(ui->playlistWidget, SIGNAL(scheduleRequested(Channel *)), _schedule, SLOT(openSchedule(Channel *)));
 
 #if UPDATE
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
@@ -442,7 +444,10 @@ void MainWindow::createConnections()
     connect(ui->actionRecordQuick, SIGNAL(triggered()), ui->recorder, SLOT(quickRecord()));
     connect(ui->actionRecordTimer, SIGNAL(triggered()), ui->recorder, SLOT(newTimer()));
     connect(ui->recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
+
     connect(_epgShow, SIGNAL(requestRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
+    connect(_schedule, SIGNAL(requestRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
+    connect(ui->scheduleWidget, SIGNAL(requestRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
 
     qDebug() << "Initialised: Event connections";
 }
@@ -816,7 +821,10 @@ void MainWindow::openUrl()
 //GUI
 void MainWindow::showSchedule()
 {
-    _schedule->show();
+    if (_schedule->isVisible())
+        _schedule->activateWindow();
+    else
+        _schedule->show();
 }
 
 void MainWindow::showSettings()

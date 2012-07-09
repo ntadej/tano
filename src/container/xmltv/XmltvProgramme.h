@@ -23,6 +23,7 @@
 #include <QtCore/QSize>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
+#include <QtGui/QFont>
 
 #include "core/ListItem.h"
 #include "xmltv/XmltvEnums.h"
@@ -36,6 +37,7 @@ public:
     enum Roles {
         DisplayRole = Qt::DisplayRole,
         DisplayIconRole = Qt::DecorationRole,
+        DisplayFontRole = Qt::FontRole,
         TitleRole = Qt::UserRole + 1,
         ChannelRole,
         StartRole,
@@ -62,6 +64,8 @@ public:
     QString display() const;
     QIcon displayIcon() const;
     QHash<int, QByteArray> roleNames() const;
+
+    QFont displayFont() const;
 
     inline QString channel() const { return _channel; }
     inline QString channelDisplayName() const { return _channelDisplayName; }

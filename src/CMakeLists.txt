@@ -105,7 +105,6 @@ SET(Tano_UI_MOCs
     ui/dialogs/AboutDialog.h
     ui/dialogs/DonationDialog.h
     ui/dialogs/PrintDialog.h
-    ui/epg/EpgList.h
     ui/epg/EpgScheduleChannel.h
     ui/epg/EpgScheduleFull.h
     ui/epg/EpgShow.h
@@ -231,7 +230,6 @@ SET(Tano_UI_Srcs
     ui/dialogs/AboutDialog.cpp
     ui/dialogs/DonationDialog.cpp
     ui/dialogs/PrintDialog.cpp
-    ui/epg/EpgList.cpp
     ui/epg/EpgScheduleChannel.cpp
     ui/epg/EpgScheduleFull.cpp
     ui/epg/EpgShow.cpp
