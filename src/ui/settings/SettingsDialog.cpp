@@ -106,7 +106,6 @@ void SettingsDialog::apply()
     _settings->setMouseWheel(ui->gui->wheel());
     _settings->setToolbarLook(ui->gui->toolbar());
     _settings->setRememberMainSize(ui->gui->rememberSize());
-    _settings->setSplash(ui->gui->splash());
     _settings->setStartLite(ui->gui->lite());
     _settings->setStartOnTop(ui->gui->top());
     _settings->setStartControls(ui->gui->osdStart());
@@ -170,7 +169,6 @@ void SettingsDialog::defaults()
     ui->gui->setWheel(Settings::DEFAULT_MOUSE_WHEEL);
     ui->gui->setToolbar(Settings::DEFAULT_TOOLBAR_LOOK);
     ui->gui->setRememberSize(Settings::DEFAULT_REMEMBER_MAIN_SIZE);
-    ui->gui->setSplash(Settings::DEFAULT_SPLASH);
     ui->gui->setLite(Settings::DEFAULT_START_LITE);
     ui->gui->setTop(Settings::DEFAULT_START_ON_TOP);
     ui->gui->setOsdStart(Settings::DEFAULT_START_CONTROLS);
@@ -230,8 +228,7 @@ void SettingsDialog::read()
     ui->gui->setTrayHide(_settings->hideToTray());
     ui->gui->setWheel(_settings->mouseWheel());
     ui->gui->setToolbar(_settings->toolbarLook());
-    ui->gui->setRememberSize(_settings->rememberMainSize());
-    ui->gui->setSplash(_settings->splash());
+    ui->gui->setRememberSize(_settings->rememberMainSize());;
     ui->gui->setLite(_settings->startLite());
     ui->gui->setTop(_settings->startOnTop());
     ui->gui->setOsdStart(_settings->startControls());

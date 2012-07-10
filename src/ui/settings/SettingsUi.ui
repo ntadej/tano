@@ -32,7 +32,7 @@
         <x>0</x>
         <y>0</y>
         <width>423</width>
-        <height>566</height>
+        <height>542</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -204,13 +204,6 @@
           <string>Default options for startup</string>
          </property>
          <layout class="QVBoxLayout" name="layoutStartupGuiBox">
-          <item>
-           <widget class="QCheckBox" name="checkSplash">
-            <property name="text">
-             <string>Show splash screen</string>
-            </property>
-           </widget>
-          </item>
           <item>
            <widget class="QCheckBox" name="checkLite">
             <property name="text">

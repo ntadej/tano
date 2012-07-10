@@ -162,7 +162,6 @@ SET(Tano_MOCs
 SET(Tano_Resrcs
     ../info.qrc
     ../data/icons.qrc
-    ../data/images.qrc
     ../data/logo.qrc
 )
 

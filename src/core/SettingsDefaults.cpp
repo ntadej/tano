@@ -38,7 +38,6 @@ const QString Settings::DEFAULT_UDPXY_URL = "";
 const int Settings::DEFAULT_UDPXY_PORT = 1234;
 
 // GUI - start
-const bool Settings::DEFAULT_SPLASH = true;
 const bool Settings::DEFAULT_START_LITE = false;
 const bool Settings::DEFAULT_START_ON_TOP = false;
 const bool Settings::DEFAULT_START_CONTROLS = true;

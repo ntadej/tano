@@ -59,9 +59,6 @@ public:
     static const int DEFAULT_UDPXY_PORT;
 
     // GUI - start
-    inline bool splash() const { return _splash; }
-    inline void setSplash(const bool &b) { _splash = b; }
-    static const bool DEFAULT_SPLASH;
     inline bool startLite() const { return _startLite; }
     inline void setStartLite(const bool &b) { _startLite = b; }
     static const bool DEFAULT_START_LITE;

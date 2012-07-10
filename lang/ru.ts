@@ -2682,7 +2682,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation type="unfinished">Показать заставку</translation>
+        <translation type="obsolete">Показать заставку</translation>
     </message>
 </context>
 <context>
@@ -3165,7 +3165,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation type="unfinished">Показать заставку</translation>
+        <translation type="obsolete">Показать заставку</translation>
     </message>
     <message>
         <source>Simple mode</source>

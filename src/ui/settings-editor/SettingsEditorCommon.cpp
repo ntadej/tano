@@ -93,13 +93,3 @@ void SettingsEditorCommon::setToolbar(const int &id)
 {
     ui->comboToolbarLook->setCurrentIndex(id);
 }
-
-bool SettingsEditorCommon::splash() const
-{
-    return ui->checkSplash->isChecked();
-}
-
-void SettingsEditorCommon::setSplash(const bool &enabled)
-{
-    ui->checkSplash->setChecked(enabled);
-}

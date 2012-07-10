@@ -1848,7 +1848,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Ukázat úvodní obrazovku</translation>
+        <translation type="obsolete">Ukázat úvodní obrazovku</translation>
     </message>
 </context>
 <context>
@@ -2097,7 +2097,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Ukázat úvodní obrazovku</translation>
+        <translation type="obsolete">Ukázat úvodní obrazovku</translation>
     </message>
     <message>
         <source>Simple mode</source>

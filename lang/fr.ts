@@ -2512,7 +2512,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Afficher le pré-écran</translation>
+        <translation type="obsolete">Afficher le pré-écran</translation>
     </message>
 </context>
 <context>
@@ -2983,7 +2983,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Afficher le pré-écran</translation>
+        <translation type="obsolete">Afficher le pré-écran</translation>
     </message>
     <message>
         <source>Simple mode</source>

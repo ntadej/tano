@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>images/paypal_donate_global.gif</file>
-        <file>images/splash.png</file>
-        <file>images/splash-editor.png</file>
-        <file>images/wizard.png</file>
-    </qresource>
-</RCC>

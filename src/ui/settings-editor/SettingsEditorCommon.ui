@@ -124,13 +124,6 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="QCheckBox" name="checkSplash">
-            <property name="text">
-             <string>Show splash screen</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QLabel" name="labelToolbarStyle">
             <property name="text">
              <string>Toolbar style:</string>

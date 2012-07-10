@@ -45,7 +45,6 @@ void Settings::writeSettings()
     setValue("channels/udpxyurl", udpxyUrl());
     setValue("channels/udpxyport", udpxyPort());
 
-    setValue("start/splash", splash());
 #if !EDITOR
     setValue("start/lite", startLite());
     setValue("start/ontop", startOnTop());
@@ -115,7 +114,6 @@ void Settings::readSettings()
     setUdpxyUrl(value("channels/udpxyurl", DEFAULT_UDPXY_URL).toString());
     setUdpxyPort(value("channels/udpxyport", DEFAULT_UDPXY_PORT).toInt());
 
-    setSplash(value("start/splash", DEFAULT_SPLASH).toBool());
 #if !EDITOR
     setStartLite(value("start/lite", DEFAULT_START_LITE).toBool());
     setStartOnTop(value("start/ontop", DEFAULT_START_ON_TOP).toBool());

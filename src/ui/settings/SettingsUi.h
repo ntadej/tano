@@ -52,8 +52,6 @@ public:
     bool rememberSize() const;
     void setRememberSize(const bool &enabled);
 
-    bool splash() const;
-    void setSplash(const bool &enabled);
     bool lite() const;
     void setLite(const bool &enabled);
     bool top() const;

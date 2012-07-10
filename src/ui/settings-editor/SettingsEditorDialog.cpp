@@ -90,7 +90,6 @@ void SettingsEditorDialog::apply()
     _settings->setUdpxyUrl(ui->editor->udpxyUrl());
     _settings->setUdpxyPort(ui->editor->udpxyPort());
     _settings->setToolbarLook(ui->editor->toolbar());
-    _settings->setSplash(ui->editor->splash());
 
     _settings->writeSettings();
 }
@@ -106,7 +105,6 @@ void SettingsEditorDialog::defaults()
     ui->editor->setUdpxyUrl(Settings::DEFAULT_UDPXY_URL);
     ui->editor->setUdpxyPort(Settings::DEFAULT_UDPXY_PORT);
     ui->editor->setToolbar(Settings::DEFAULT_TOOLBAR_LOOK);
-    ui->editor->setSplash(Settings::DEFAULT_SPLASH);
 }
 
 void SettingsEditorDialog::read()
@@ -120,7 +118,6 @@ void SettingsEditorDialog::read()
     ui->editor->setUdpxyUrl(_settings->udpxyUrl());
     ui->editor->setUdpxyPort(_settings->udpxyPort());
     ui->editor->setToolbar(_settings->toolbarLook());
-    ui->editor->setSplash(_settings->splash());
 }
 
 void SettingsEditorDialog::save()

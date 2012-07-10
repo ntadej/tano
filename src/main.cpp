@@ -18,17 +18,8 @@
 
 #include <QtSingleApplication>
 
-#include <QtGui/QBitmap>
-
-#if defined(Qt5)
-    #include <QtWidgets/QSplashScreen>
-#elif defined(Qt4)
-    #include <QtGui/QSplashScreen>
-#endif
-
 #include "core/Common.h"
 #include "core/Log.h"
-#include "core/Settings.h"
 #include "ui/MainWindow.h"
 
 int main(int argc, char *argv[])
@@ -44,23 +35,10 @@ int main(int argc, char *argv[])
     if(instance.sendMessage(""))
         return 0;
 
-	Settings *settings = new Settings();
-	bool splashShow = settings->splash();
-	delete settings;
-
-    QPixmap pixmap(":/images/splash.png");
-    QSplashScreen *splash = new QSplashScreen(pixmap);
-    splash->setMask(pixmap.mask());
-    if (splashShow)
-        splash->show();
-
 	MainWindow mainWindow;
 	instance.setActivationWindow(&mainWindow);
 
 	mainWindow.show();
-
-    splash->hide();
-    delete splash;
 
 	return instance.exec();
 }

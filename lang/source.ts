@@ -1815,10 +1815,6 @@ This operation is ireversible.</source>
         <source>System default</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Show splash screen</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SettingsEditorDialog</name>
@@ -2062,10 +2058,6 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default options for startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show splash screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

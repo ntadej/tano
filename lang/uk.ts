@@ -1846,7 +1846,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Показати заставку під час запуску</translation>
+        <translation type="obsolete">Показати заставку під час запуску</translation>
     </message>
 </context>
 <context>
@@ -2095,7 +2095,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Показати заставку під час запуску</translation>
+        <translation type="obsolete">Показати заставку під час запуску</translation>
     </message>
     <message>
         <source>Simple mode</source>

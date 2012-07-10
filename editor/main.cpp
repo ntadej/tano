@@ -17,20 +17,16 @@
 *****************************************************************************/
 
 #include <QtCore/QCoreApplication>
-#include <QtGui/QBitmap>
 
 #if defined(Qt5)
     #include <QtWidgets/QApplication>
-    #include <QtWidgets/QSplashScreen>
 #elif defined(Qt4)
     #include <QtGui/QApplication>
-    #include <QtGui/QSplashScreen>
 #endif
 
 #include "Config.h"
 #include "core/Common.h"
 #include "core/Log.h"
-#include "core/Settings.h"
 #include "ui/playlist/PlaylistEditor.h"
 
 #if WITH_EDITOR_VLCQT
@@ -49,25 +45,12 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
 
-	Settings *settings = new Settings();
-	bool splashShow = settings->splash();
-	delete settings;
-
-    QPixmap pixmap(":/images/splash-editor.png");
-    QSplashScreen *splash = new QSplashScreen(pixmap);
-    splash->setMask(pixmap.mask());
-    if  (splashShow)
-        splash->show();
-
     PlaylistEditor main;
 #if WITH_EDITOR_VLCQT
     VlcInstance *instance = new VlcInstance(VlcCommon::args());
     main.setMediaInstance(instance);
 #endif
     main.show();
-
-    splash->hide();
-    delete splash;
 
     return app.exec();
 }

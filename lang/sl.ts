@@ -1849,7 +1849,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Prikaži pozdravni zaslon</translation>
+        <translation type="obsolete">Prikaži pozdravni zaslon</translation>
     </message>
 </context>
 <context>
@@ -2098,7 +2098,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Show splash screen</source>
-        <translation>Prikaži pozdravni zaslon</translation>
+        <translation type="obsolete">Prikaži pozdravni zaslon</translation>
     </message>
     <message>
         <source>Simple mode</source>

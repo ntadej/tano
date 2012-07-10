@@ -49,8 +49,6 @@ public:
 
     int toolbar() const;
     void setToolbar(const int &id);
-    bool splash() const;
-    void setSplash(const bool &enabled);
 
 protected:
     void changeEvent(QEvent *e);

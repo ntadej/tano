@@ -122,16 +122,6 @@ void SettingsUi::setRememberSize(const bool &enabled)
     ui->checkRememberSize->setChecked(enabled);
 }
 
-bool SettingsUi::splash() const
-{
-    return ui->checkSplash->isChecked();
-}
-
-void SettingsUi::setSplash(const bool &enabled)
-{
-    ui->checkSplash->setChecked(enabled);
-}
-
 bool SettingsUi::lite() const
 {
     return ui->checkLite->isChecked();

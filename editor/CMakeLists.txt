@@ -74,7 +74,6 @@ SET(Tano_Editor_MOCs
 SET(Tano_Editor_Resrcs
     ../info.qrc
     ../data/icons.qrc
-    ../data/images.qrc
     ../data/logo.qrc
 )
 
