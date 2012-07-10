@@ -33,6 +33,14 @@ SettingsBackend::SettingsBackend(QWidget *parent)
     ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " <b>" + Tano::Backend::versionLibrary() + "</b>");
     ui->labelVlcVersionValue->setText("<b>" + Tano::Backend::versionCore() + "</b>");
 
+    for (int i = 0; i < Vlc::audioOutputHuman().size() - 1; i++) {
+        ui->comboAout->addItem(Vlc::audioOutputHuman()[i]);
+    }
+
+    for (int i = 0; i < Vlc::videoOutputHuman().size() - 1; i++) {
+        ui->comboVout->addItem(Vlc::videoOutputHuman()[i]);
+    }
+
     for (int i = 1; i < Vlc::ratioHuman().size(); i++) {
         ui->comboAspectRatio->addItem(Vlc::ratioHuman()[i]);
         ui->comboCropRatio->addItem(Vlc::ratioHuman()[i]);
@@ -72,10 +80,7 @@ int SettingsBackend::vout() const
 
 void SettingsBackend::setVout(const int &id)
 {
-    if (id)
-        ui->comboVout->setCurrentIndex(id + 1);
-    else
-        ui->comboVout->setCurrentIndex(0);
+    ui->comboVout->setCurrentIndex(id + 1);
 }
 
 int SettingsBackend::aout() const
@@ -85,10 +90,7 @@ int SettingsBackend::aout() const
 
 void SettingsBackend::setAout(const int &id)
 {
-    if (id)
-        ui->comboAout->setCurrentIndex(id + 1);
-    else
-        ui->comboAout->setCurrentIndex(0);
+    ui->comboAout->setCurrentIndex(id + 1);
 }
 
 #if defined(Q_OS_WIN32)

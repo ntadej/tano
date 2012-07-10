@@ -16,11 +16,15 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
+
 #include "Config.h"
 #include "core/Backend.h"
+#include "core/Settings.h"
 
 #if WITH_EDITOR_VLCQT
     #include <vlc-qt/Common.h>
+    #include <vlc-qt/Enums.h>
     #include <vlc-qt/Instance.h>
 #endif
 
@@ -29,6 +33,29 @@ QStringList Tano::Backend::args()
     QStringList args;
 #if WITH_EDITOR_VLCQT
     args = VlcCommon::args();
+#endif
+
+#if !EDITOR
+    QScopedPointer<Settings> settings(new Settings());
+    if (settings->aout() != -1) {
+        args << QString("--aout=" + Vlc::audioOutput()[settings->aout()]);
+        qDebug() << "Using aout:" << Vlc::audioOutput()[settings->aout()];
+    }
+
+    if (settings->vout() != -1) {
+        args << QString("--vout=" + Vlc::videoOutput()[settings->vout()]);
+        qDebug() << "Using vout:" << Vlc::videoOutput()[settings->vout()];
+    }
+
+#if defined(Q_OS_WIN32)
+    if (settings->yuvToRgb())
+        args << "--directx-hw-yuv";
+    else
+        args << "--no-directx-hw-yuv";
+#endif
+
+    if (settings->spdif())
+        args << "--spdif";
 #endif
 
     return args;
