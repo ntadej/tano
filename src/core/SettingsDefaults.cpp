@@ -56,13 +56,13 @@ const int Settings::DEFAULT_MAIN_WIDTH = 650;
 const int Settings::DEFAULT_MAIN_HEIGHT = 300;
 
 // Backend - core
-const int Settings::DEFAULT_VOUT = 0;
-const int Settings::DEFAULT_AOUT = 0;
+const int Settings::DEFAULT_VOUT = -1;
+const int Settings::DEFAULT_AOUT = -1;
 #if defined(Q_OS_WIN32)
 const bool Settings::DEFAULT_YUV_TO_RGB = true;
 #endif
 const bool Settings::DEFAULT_SPDIF = false;
-const int Settings::DEFAULT_INTERFACE_INDEX = 0;
+const int Settings::DEFAULT_INTERFACE_INDEX = -1;
 
 // Backend - video settings
 const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;

@@ -56,6 +56,9 @@ QStringList Tano::Backend::args()
 
     if (settings->spdif())
         args << "--spdif";
+
+    if (settings->interfaceIndex() != -1)
+        args << QString("--miface=" + QString::number(settings->interfaceIndex()));
 #endif
 
     return args;

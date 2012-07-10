@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtNetwork/QNetworkInterface>
+
 #include "Config.h"
 #include "core/Backend.h"
 
@@ -44,6 +46,12 @@ SettingsBackend::SettingsBackend(QWidget *parent)
     for (int i = 1; i < Vlc::ratioHuman().size(); i++) {
         ui->comboAspectRatio->addItem(Vlc::ratioHuman()[i]);
         ui->comboCropRatio->addItem(Vlc::ratioHuman()[i]);
+    }
+
+    ui->comboNetwork->addItem(tr("Automatic"), -1);
+    for (int i = 0; i < QNetworkInterface::allInterfaces().size(); i++) {
+        ui->comboNetwork->addItem(QNetworkInterface::allInterfaces()[i].humanReadableName(),
+                                  QNetworkInterface::allInterfaces()[i].index());
     }
 
 #if !defined(Q_OS_WIN32)
@@ -117,12 +125,12 @@ void SettingsBackend::setSpdif(const bool &enabled)
 
 int SettingsBackend::interface() const
 {
-    return ui->comboNetwork->currentIndex();
+    return ui->comboNetwork->itemData(ui->comboNetwork->currentIndex()).toInt();
 }
 
 void SettingsBackend::setInterface(const int &index)
 {
-    ui->comboNetwork->setCurrentIndex(index);
+    ui->comboNetwork->setCurrentIndex(ui->comboNetwork->findData(index));
 }
 
 bool SettingsBackend::rememberChannelSettings() const
