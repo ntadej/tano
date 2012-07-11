@@ -95,6 +95,7 @@ IF(MINGW)
     )
     SET(Tano_Installer_Theme
         installer-theme/header.bmp
+        installer-theme/header-un.bmp
         installer-theme/installer.ico
         installer-theme/installer-nopng.ico
         installer-theme/installer.png
@@ -103,6 +104,7 @@ IF(MINGW)
         installer-theme/uninstaller-nopng.ico
         installer-theme/uninstaller.png
         installer-theme/wizard.bmp
+        installer-theme/wizard-un.bmp
     )
 
     STRING(REGEX REPLACE "bin/gcc.exe" "bin" MINGW_BIN_DIR "${CMAKE_C_COMPILER}")
@@ -114,9 +116,13 @@ IF(MINGW)
         ${MINGW_BIN_DIR}/libgcc_s_dw2-1.dll
         ${MINGW_BIN_DIR}/mingwm10.dll
         ${QT_BIN_DIR}/QtCore4.dll
+        ${QT_BIN_DIR}/QtDeclarative4.dll
         ${QT_BIN_DIR}/QtGui4.dll
         ${QT_BIN_DIR}/QtNetwork4.dll
+        ${QT_BIN_DIR}/QtScript4.dll
+        ${QT_BIN_DIR}/QtSql4.dll
         ${QT_BIN_DIR}/QtXml4.dll
+        ${QT_BIN_DIR}/QtXmlPatterns4.dll
     )
     SET(Tano_Qt_Plugins
         ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
