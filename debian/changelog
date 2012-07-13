@@ -1,3 +1,14 @@
+tano (1.0.1-1~precise) precise; urgency=low
+
+  * Various XMLTV improvements and fixes
+  * Fix: Language detection
+  * Fix: Scrolling widgets don't get stuck on resize
+  * Fix: Don't autoplay before main window is visible
+  * Fix: Open action in main toolbar
+
+ -- Tadej Novak <tadej@tano.si>  Fri, 13 Jul 2012 19:29:00 +0200
+
+
 tano (1.0-1~precise) precise; urgency=low
 
   * Ability to take snapshots

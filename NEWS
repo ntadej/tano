@@ -1,8 +1,21 @@
 1.1 (git)
+  * Add scale/zoom options
+  * Audio and video output selection
+  * S/PDIF output
+  * YUV -> RGB hardware accelerated convertion on Windows (turn on/off)
+  * Select network interface
   * Ability to mute on minimize
   * Save main window size on exit
   * Drop support for older versions of Qt and VLC
     Supported are Qt 4.8 or later and VLC 2.0 or later.
+  * Removed splash screen and Windows installer branding.
+
+1.0.1 (2012-07-13)
+  * Various XMLTV improvements and fixes
+  * Fix: Language detection
+  * Fix: Scrolling widgets don't get stuck on resize
+  * Fix: Don't autoplay before main window is visible
+  * Fix: Open action in main toolbar
 
 1.0 (2012-07-02)
   * Ability to take snapshots
