@@ -1,5 +1,9 @@
-1.0.1 (git)
-  * Fix language detection
+1.0.1 (2012-07-13)
+  * Various XMLTV improvements and fixes
+  * Fix: Language detection
+  * Fix: Scrolling widgets don't get stuck on resize
+  * Fix: Don't autoplay before main window is visible
+  * Fix: Open action in main toolbar
 
 1.0 (2012-07-02)
   * Ability to take snapshots

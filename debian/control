@@ -8,7 +8,7 @@ Homepage: http://projects.tano.si
 
 Package: tano
 Architecture: any
-Depends: ${misc:Depends}, tano-data (= ${source:Version}), libvlc-qt0 (>=0.6.0~), libqt4-core (>=4.6.0), libqt4-gui (>=4.6.0), libqt4-xml (>=4.6.0), libqt4-network (>=4.6.0)
+Depends: ${misc:Depends}, tano-data (= ${source:Version}), libvlc-qt0 (>=0.6.1~), libqt4-core (>=4.6.0), libqt4-gui (>=4.6.0), libqt4-xml (>=4.6.0), libqt4-network (>=4.6.0)
 Replaces: tano-daemon, tano-recorder
 Description: Tano - an open-source cross-platform IP TV player
  Tano is an open-source cross-platform IP TV player. It features
