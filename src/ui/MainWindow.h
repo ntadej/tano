@@ -19,6 +19,7 @@
 #ifndef TANO_MAINWINDOW_H_
 #define TANO_MAINWINDOW_H_
 
+#include <QtCore/QTimer>
 #include <QtGui/QCloseEvent>
 #include <QtGui/QHideEvent>
 #include <QtGui/QShowEvent>
@@ -103,6 +104,7 @@ private slots:
     void playUrl(const QString &url);
     void stop();
     void setPlayingState(const Vlc::State &state);
+    void startSession();
 
     void openPlaylist(const bool &start = false);
     void openFile();
@@ -204,6 +206,7 @@ private:
     XmltvManager *_xmltv;
     QString _playlistName;
     Timer *_recording;
+    QTimer *_startTimer;
     Udpxy *_udpxy;
 
     //GUI

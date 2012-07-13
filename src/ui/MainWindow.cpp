@@ -90,6 +90,7 @@ MainWindow::MainWindow(QWidget *parent)
       _audioController(0),
       _videoController(0),
       _xmltv(new XmltvManager()),
+      _startTimer(new QTimer(this)),
       _udpxy(new Udpxy()),
       _schedule(new EpgScheduleFull()),
       _epgShow(new EpgShow()),
@@ -349,6 +350,7 @@ void MainWindow::createConnections()
     connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
 
     connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playChannel(Channel *)));
+    connect(_startTimer, SIGNAL(timeout()), this, SLOT(startSession()));
 
     connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
     connect(ui->actionTray, SIGNAL(triggered()), this, SLOT(tray()));
@@ -527,13 +529,23 @@ void MainWindow::createSession()
     _osdMain->volumeSlider()->setVolume(_sessionVolume);
 
     if (_sessionAutoplayEnabled && _hasPlaylist && _model->validate())
-        ui->playlistWidget->channelSelected(_sessionChannel);
+        _startTimer->start(100);
 
 #if UPDATE
     _update->checkSilent();
 #endif
 
     qDebug() << "Initialised: Session";
+}
+
+void MainWindow::startSession()
+{
+    if (!isVisible())
+        return;
+
+    ui->playlistWidget->channelSelected(_sessionChannel);
+
+    _startTimer->stop();
 }
 
 void MainWindow::writeSession()
