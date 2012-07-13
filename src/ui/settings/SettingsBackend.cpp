@@ -49,9 +49,21 @@ SettingsBackend::SettingsBackend(QWidget *parent)
     }
 
     ui->comboNetwork->addItem(tr("Automatic"), -1);
-    for (int i = 0; i < QNetworkInterface::allInterfaces().size(); i++) {
-        ui->comboNetwork->addItem(QNetworkInterface::allInterfaces()[i].humanReadableName(),
-                                  QNetworkInterface::allInterfaces()[i].index());
+    QList<QNetworkInterface> list = QNetworkInterface::allInterfaces();
+    for (int i = 0; i < list.size(); i++) {
+        if (!list[i].flags().testFlag(QNetworkInterface::IsLoopBack)
+            && !list[i].flags().testFlag(QNetworkInterface::IsPointToPoint)
+#if defined(Q_OS_WIN32) // Force remove some interfaces
+            && !list[i].humanReadableName().contains("*", Qt::CaseInsensitive)
+            && !list[i].humanReadableName().contains("0000", Qt::CaseInsensitive)
+            && !list[i].humanReadableName().contains("isatap", Qt::CaseInsensitive)
+            && !list[i].humanReadableName().contains("6to4", Qt::CaseInsensitive)
+            && !list[i].humanReadableName().contains("tunnel", Qt::CaseInsensitive)
+            && !list[i].humanReadableName().contains("tunel", Qt::CaseInsensitive)
+#endif
+            )
+            ui->comboNetwork->addItem(list[i].humanReadableName(),
+                                      list[i].index());
     }
 
 #if !defined(Q_OS_WIN32)
