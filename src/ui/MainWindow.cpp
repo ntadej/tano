@@ -340,6 +340,7 @@ void MainWindow::createConnections()
     connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
     connect(ui->actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
     connect(ui->actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
+    connect(ui->actionOpenToolbar, SIGNAL(triggered()), this, SLOT(showOpenMenu()));
 
     connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
     connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
@@ -851,6 +852,11 @@ void MainWindow::tooltip(const QString &channelNow)
         setWindowTitle(channelNow + " - " + tr("Tano"));
     else
         setWindowTitle(tr("Tano"));
+}
+
+void MainWindow::showOpenMenu()
+{
+    ui->actionOpenToolbar->menu()->exec(QCursor::pos());
 }
 
 void MainWindow::showRightMenu(const QPoint &pos)

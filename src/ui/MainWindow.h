@@ -111,6 +111,7 @@ private slots:
     void openUrl();
 
     void tooltip(const QString &channelNow = "stop");
+    void showOpenMenu();
     void showRightMenu(const QPoint &pos);
     void top();
     void lite();
