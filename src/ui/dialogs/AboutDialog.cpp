@@ -25,7 +25,6 @@
 #include "AboutDialog.h"
 #include "ui_AboutDialog.h"
 
-#include "Config.h"
 #include "core/Backend.h"
 #include "core/Common.h"
 
@@ -35,13 +34,7 @@ AboutDialog::AboutDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
-#ifdef EDITOR
-    ui->labelIcon->setPixmap(QPixmap(":/logo/64x64/logo-editor.png"));
-    ui->labelTitle->setText(ui->labelTitle->text().arg(tr("Editor"), Tano::version(), Tano::changeset()));
-#else
-    ui->labelTitle->setText(ui->labelTitle->text().arg(tr("Player"), Tano::version(), Tano::changeset()));
-#endif
-
+    ui->labelTitle->setText(ui->labelTitle->text().arg(Tano::version(), Tano::changeset()));
     ui->labelBuild->setText(ui->labelBuild->text().arg(Tano::buildHostname(), Tano::buildSystem(), qVersion(), Tano::Backend::versionLibrary()));
     ui->labelCopyright->setText(ui->labelCopyright->text().arg(QDate::currentDate().toString("yyyy")));
     ui->labelBackendInfo->setText(ui->labelBackendInfo->text().arg(Tano::Backend::versionCore()));
@@ -52,10 +45,6 @@ AboutDialog::AboutDialog(QWidget *parent)
         return;
 
     ui->authors->setPlainText(QString::fromUtf8(file.readAll()));
-
-#if !WITH_EDITOR_VLCQT
-    ui->tabWidget->removeTab(1);
-#endif
 }
 
 AboutDialog::~AboutDialog()

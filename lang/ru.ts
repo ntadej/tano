@@ -49,11 +49,11 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Редактор</translation>
+        <translation type="obsolete">Редактор</translation>
     </message>
     <message>
         <source>Player</source>
-        <translation type="unfinished">Проигрыватель</translation>
+        <translation type="obsolete">Проигрыватель</translation>
     </message>
     <message>
         <source>Close</source>
@@ -2629,56 +2629,32 @@ This operation is ireversible.</source>
 <context>
     <name>SettingsEditorCommon</name>
     <message>
-        <source>Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default radio category:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Interface</source>
-        <translation type="unfinished">Интерфейс</translation>
+        <translation type="obsolete">Интерфейс</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation type="unfinished">Стиль панели инструментов:</translation>
+        <translation type="obsolete">Стиль панели инструментов:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation type="unfinished">Только значки</translation>
+        <translation type="obsolete">Только значки</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation type="unfinished">Только текст</translation>
+        <translation type="obsolete">Только текст</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation type="unfinished">Текст рядом со значками</translation>
+        <translation type="obsolete">Текст рядом со значками</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation type="unfinished">Текст под значками</translation>
+        <translation type="obsolete">Текст под значками</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation type="unfinished">Как в системе</translation>
+        <translation type="obsolete">Как в системе</translation>
     </message>
     <message>
         <source>Show splash screen</source>
@@ -2689,46 +2665,34 @@ This operation is ireversible.</source>
     <name>SettingsEditorDialog</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Настройка</translation>
+        <translation type="obsolete">Настройка</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished">Общие</translation>
+        <translation type="obsolete">Общие</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Редактор</translation>
+        <translation type="obsolete">Редактор</translation>
     </message>
 </context>
 <context>
     <name>SettingsEditorGeneral</name>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Язык</translation>
+        <translation type="obsolete">Язык</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation type="unfinished">Язык системы</translation>
+        <translation type="obsolete">Язык системы</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation type="unfinished">Выбрать язык</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Выбрать язык</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation type="unfinished">Восстановить параметры по умолчанию</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You are using Tano Editor version:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Восстановить параметры по умолчанию</translation>
     </message>
 </context>
 <context>

@@ -48,11 +48,11 @@ Verze vašeho VLC-Qt: %4</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Editor</translation>
+        <translation type="obsolete">Editor</translation>
     </message>
     <message>
         <source>Player</source>
-        <translation>Přehrávač</translation>
+        <translation type="obsolete">Přehrávač</translation>
     </message>
 </context>
 <context>
@@ -1796,55 +1796,55 @@ Tuto operaci nelze vrátit zpět.</translation>
     <name>SettingsEditorCommon</name>
     <message>
         <source>Radio</source>
-        <translation>Rádio</translation>
+        <translation type="obsolete">Rádio</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>Výchozí skupina pro rádio:</translation>
+        <translation type="obsolete">Výchozí skupina pro rádio:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>Podpora UDPXY</translation>
+        <translation type="obsolete">Podpora UDPXY</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Povolit podporu UDPXY</translation>
+        <translation type="obsolete">Povolit podporu UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>IP nebo název směrovače:</translation>
+        <translation type="obsolete">IP nebo název směrovače:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Přípojka směrovače:</translation>
+        <translation type="obsolete">Přípojka směrovače:</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Rozhraní</translation>
+        <translation type="obsolete">Rozhraní</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation>Styl nástrojového pruhu:</translation>
+        <translation type="obsolete">Styl nástrojového pruhu:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation>Pouze ikony</translation>
+        <translation type="obsolete">Pouze ikony</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation>Pouze text</translation>
+        <translation type="obsolete">Pouze text</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation>Text vedle ikon</translation>
+        <translation type="obsolete">Text vedle ikon</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation>Text pod ikonami</translation>
+        <translation type="obsolete">Text pod ikonami</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation>Výchozí nastavení</translation>
+        <translation type="obsolete">Výchozí nastavení</translation>
     </message>
     <message>
         <source>Show splash screen</source>
@@ -1855,46 +1855,46 @@ Tuto operaci nelze vrátit zpět.</translation>
     <name>SettingsEditorDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation type="obsolete">Nastavení</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Obecné</translation>
+        <translation type="obsolete">Obecné</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Editor</translation>
+        <translation type="obsolete">Editor</translation>
     </message>
 </context>
 <context>
     <name>SettingsEditorGeneral</name>
     <message>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation type="obsolete">Jazyk</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Výchozí jazyk systému</translation>
+        <translation type="obsolete">Výchozí jazyk systému</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>Jazyk stanovený uživatelem</translation>
+        <translation type="obsolete">Jazyk stanovený uživatelem</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>Výchozí</translation>
+        <translation type="obsolete">Výchozí</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Obnovit výchozí nastavení</translation>
+        <translation type="obsolete">Obnovit výchozí nastavení</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Toto obnoví všechna vaše nastavení na výchozí. Potřebujete změny použít, předtím než se projeví.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Toto obnoví všechna vaše nastavení na výchozí. Potřebujete změny použít, předtím než se projeví.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
-        <translation>Používáte editor Tano verze:</translation>
+        <translation type="obsolete">Používáte editor Tano verze:</translation>
     </message>
 </context>
 <context>

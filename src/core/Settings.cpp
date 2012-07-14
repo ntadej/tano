@@ -35,17 +35,14 @@ void Settings::writeSettings()
 {
     setValue("general/language", language());
 
-#if !EDITOR
     setValue("channels/playlist", playlist());
     setValue("channels/update", playlistUpdate());
     setValue("channels/updateurl", playlistUpdateUrl());
-#endif
     setValue("channels/radio", radioCategory());
     setValue("channels/udpxy", udpxy());
     setValue("channels/udpxyurl", udpxyUrl());
     setValue("channels/udpxyport", udpxyPort());
 
-#if !EDITOR
     setValue("start/lite", startLite());
     setValue("start/ontop", startOnTop());
     setValue("start/controls", startControls());
@@ -56,9 +53,7 @@ void Settings::writeSettings()
     setValue("gui/trayicon", trayEnabled());
     setValue("gui/hidetotray", hideToTray());
     setValue("gui/mousewheel", mouseWheel());
-#endif
     setValue("gui/toolbarlook", toolbarLook());
-#if !EDITOR
     setValue("gui/rememberMainSize", rememberMainSize());
     setValue("gui/mainWidth", mainWidth());
     setValue("gui/mainHeight", mainHeight());
@@ -95,7 +90,6 @@ void Settings::writeSettings()
     setValue("xmltv/updateurl", xmltvUpdateUrl());
     setValue("xmltv/grabber", xmltvGrabber());
     setValue("xmltv/path", xmltvGrabberPath());
-#endif
 
     sync();
 }
@@ -104,17 +98,14 @@ void Settings::readSettings()
 {
     setLanguage(value("general/language", DEFAULT_LANGUAGE).toString());
 
-#if !EDITOR
     setPlaylist(value("channels/playlist", DEFAULT_PLAYLIST).toString());
     setPlaylistUpdate(value("channels/update", DEFAULT_PLAYLIST_UPDATE).toBool());
     setPlaylistUpdateUrl(value("channels/updateurl", DEFAULT_PLAYLIST_UPDATE_URL).toString());
-#endif
     setRadioCategory(value("channels/radio", DEFAULT_RADIO_CATEGORY).toString());
     setUdpxy(value("channels/udpxy", DEFAULT_UDPXY).toBool());
     setUdpxyUrl(value("channels/udpxyurl", DEFAULT_UDPXY_URL).toString());
     setUdpxyPort(value("channels/udpxyport", DEFAULT_UDPXY_PORT).toInt());
 
-#if !EDITOR
     setStartLite(value("start/lite", DEFAULT_START_LITE).toBool());
     setStartOnTop(value("start/ontop", DEFAULT_START_ON_TOP).toBool());
     setStartControls(value("start/controls", DEFAULT_START_CONTROLS).toBool());
@@ -125,9 +116,7 @@ void Settings::readSettings()
     setTrayEnabled(value("gui/trayicon", DEFAULT_TRAY_ENABLED).toBool());
     setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
     setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
-#endif
     setToolbarLook(value("gui/toolbarlook", DEFAULT_TOOLBAR_LOOK).toInt());
-#if !EDITOR
     setRememberMainSize(value("gui/rememberMainSize", DEFAULT_REMEMBER_MAIN_SIZE).toBool());
     setMainWidth(value("gui/mainWidth", DEFAULT_MAIN_WIDTH).toInt());
     setMainHeight(value("gui/mainHeight", DEFAULT_MAIN_HEIGHT).toInt());
@@ -164,5 +153,4 @@ void Settings::readSettings()
     setXmltvUpdateUrl(value("xmltv/updateurl", DEFAULT_XMLTV_UPDATE_URL).toString());
     setXmltvGrabber(value("xmltv/grabber", DEFAULT_XMLTV_GRABBER).toString());
     setXmltvGrabberPath(value("xmltv/path", DEFAULT_XMLTV_GRABBER_PATH).toString());
-#endif
 }

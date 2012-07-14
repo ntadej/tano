@@ -55,10 +55,7 @@ QString Tano::Resources::resource(const QString &file)
     else if (QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).exists())
         path = QFileInfo(QCoreApplication::applicationDirPath() + "/" + file).absoluteFilePath();
 
-    // Try application exe directory without editor or src for development
-    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).exists())
-        path = QFileInfo(QCoreApplication::applicationDirPath().replace("/editor", "") + "/" + file).absoluteFilePath();
-
+    // Try application exe directory without src for development
     else if (QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).exists())
         path = QFileInfo(QCoreApplication::applicationDirPath().replace("/src", "") + "/" + file).absoluteFilePath();
 

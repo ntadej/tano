@@ -16,7 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Config.h"
 #include "core/Common.h"
 #include "core/Enums.h"
 #include "core/LocaleManager.h"

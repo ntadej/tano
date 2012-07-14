@@ -16,7 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Config.h"
 #include "PlaylistEditorHelp.h"
 #include "ui_PlaylistEditorHelp.h"
 
@@ -25,11 +24,6 @@ PlaylistEditorHelp::PlaylistEditorHelp(QWidget *parent)
       ui(new Ui::PlaylistEditorHelp)
 {
     ui->setupUi(this);
-
-#if !WITH_EDITOR_VLCQT
-    ui->labelScan->hide();
-    ui->labelScanContent->hide();
-#endif
 }
 
 PlaylistEditorHelp::~PlaylistEditorHelp()

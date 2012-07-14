@@ -25,22 +25,10 @@
     #include <QtGui/QMainWindow>
 #endif
 
-#include "Config.h"
-
 class Channel;
 class PlaylistModel;
 
-#ifdef EDITOR
-class LocaleManager;
-#if UPDATE
-class UpdateDialog;
-#endif
-#endif
-
 class VlcInstance;
-#if WITH_EDITOR_VLCQT
-class PlaylistEditorScan;
-#endif
 
 namespace Ui
 {
@@ -99,7 +87,6 @@ private slots:
     void moveDown();
 
     void scan(const bool &status);
-    void updateAvailable();
 
 private:
     void createConnections();
@@ -109,20 +96,8 @@ private:
 
     PlaylistModel *_model;
 
-#ifdef EDITOR
-    LocaleManager *_locale;
-#endif
-
     bool _closeEnabled;
     QMenu *_menuExport;
-
-#if defined(EDITOR) && UPDATE
-    UpdateDialog *_update;
-#endif
-
-#if WITH_EDITOR_VLCQT
-    PlaylistEditorScan *_scan;
-#endif
 };
 
 #endif // TANO_PLAYLISTEDITOR_H_

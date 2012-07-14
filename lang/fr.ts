@@ -46,11 +46,11 @@ Votre version de VLC-Qt : %4</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Éditeur</translation>
+        <translation type="obsolete">Éditeur</translation>
     </message>
     <message>
         <source>Player</source>
-        <translation>Lecteur</translation>
+        <translation type="obsolete">Lecteur</translation>
     </message>
 </context>
 <context>
@@ -2456,27 +2456,27 @@ This operation is ireversible.</source>
     <name>SettingsEditorCommon</name>
     <message>
         <source>Radio</source>
-        <translation>Radio</translation>
+        <translation type="obsolete">Radio</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>Catégorie radio par défaut :</translation>
+        <translation type="obsolete">Catégorie radio par défaut :</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>Support UDPXY</translation>
+        <translation type="obsolete">Support UDPXY</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Autoriser le support UDPXY</translation>
+        <translation type="obsolete">Autoriser le support UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>Nom ou IP du routeur :</translation>
+        <translation type="obsolete">Nom ou IP du routeur :</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Port du routeur :</translation>
+        <translation type="obsolete">Port du routeur :</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will convert the URLs in playlist from %1 to %2.&lt;/i&gt;</source>
@@ -2484,31 +2484,31 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Interface</translation>
+        <translation type="obsolete">Interface</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation>Style de la barre d&apos;outils :</translation>
+        <translation type="obsolete">Style de la barre d&apos;outils :</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation>Icône seulement</translation>
+        <translation type="obsolete">Icône seulement</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation>Texte seulement</translation>
+        <translation type="obsolete">Texte seulement</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation>Texte à coté de l&apos;icône</translation>
+        <translation type="obsolete">Texte à coté de l&apos;icône</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation>Texte sous l&apos;icone</translation>
+        <translation type="obsolete">Texte sous l&apos;icone</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation>Par défaut</translation>
+        <translation type="obsolete">Par défaut</translation>
     </message>
     <message>
         <source>Show splash screen</source>
@@ -2519,15 +2519,15 @@ This operation is ireversible.</source>
     <name>SettingsEditorDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Préférences</translation>
+        <translation type="obsolete">Préférences</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Général</translation>
+        <translation type="obsolete">Général</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Éditeur</translation>
+        <translation type="obsolete">Éditeur</translation>
     </message>
 </context>
 <context>
@@ -2542,31 +2542,31 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Language</source>
-        <translation>Langue</translation>
+        <translation type="obsolete">Langue</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Langue du système</translation>
+        <translation type="obsolete">Langue du système</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>langue personnalisée</translation>
+        <translation type="obsolete">langue personnalisée</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>Par défaut</translation>
+        <translation type="obsolete">Par défaut</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Restaurer</translation>
+        <translation type="obsolete">Restaurer</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Ceci restaurera toutes vos préférences aux valeurs par défaut. Vous devez appliquer les changements avant qu&apos;ils ne prennent effet.&lt;i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Ceci restaurera toutes vos préférences aux valeurs par défaut. Vous devez appliquer les changements avant qu&apos;ils ne prennent effet.&lt;i&gt;</translation>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
-        <translation>Vous utilisez la version de l&apos;éditeur de Tano :</translation>
+        <translation type="obsolete">Vous utilisez la version de l&apos;éditeur de Tano :</translation>
     </message>
 </context>
 <context>

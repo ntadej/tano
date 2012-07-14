@@ -310,7 +310,11 @@
     <number>2</number>
    </attribute>
    <widget class="QWidget" name="updateWidgetContents">
-    <layout class="QGridLayout" name="updateContents"/>
+    <layout class="QGridLayout" name="updateContents">
+     <item row="0" column="0">
+      <widget class="PlaylistEditorScan" name="scan" native="true"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <action name="actionAdd">
@@ -485,6 +489,12 @@
    <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
    <header>ui/playlist/PlaylistDisplayWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PlaylistEditorScan</class>
+   <extends>QWidget</extends>
+   <header>ui/playlist/PlaylistEditorScan.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

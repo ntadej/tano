@@ -168,8 +168,6 @@ ENDIF(MINGW)
 #################
 # Configuration #
 #################
-OPTION(EDITOR_WITH_VLCQT "Compile Tano Editor with VLC-Qt" OFF)
-MESSAGE("Compile Tano Editor with VLC-Qt: ${EDITOR_WITH_VLCQT}")
 OPTION(REFRESH_TRANSLATIONS "Refresh translations on compile" OFF)
 MESSAGE("Refresh translations on compile: ${REFRESH_TRANSLATIONS}")
 OPTION(DISABLE_UPDATE_CHECK "Disable update checking" OFF)
@@ -183,12 +181,6 @@ IF(MINGW)
     MESSAGE("Enable Windows installer: ${WINDOWS_INSTALLER}")
 ENDIF(MINGW)
 MESSAGE("\n")
-
-IF(EDITOR_WITH_VLCQT)
-    SET(EDITOR_VLCQT 1)
-ELSE(EDITOR_WITH_VLCQT)
-    SET(EDITOR_VLCQT 0)
-ENDIF(EDITOR_WITH_VLCQT)
 
 IF(DISABLE_UPDATE_CHECK)
     SET(UPDATE 0)
@@ -211,7 +203,6 @@ SET(QT_SINGLE_APPLICATION "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/libqtsing
 ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(editor)
 IF(MINGW)
     ADD_SUBDIRECTORY(windows)
 ENDIF(MINGW)

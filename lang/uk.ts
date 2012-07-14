@@ -46,11 +46,11 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Editor</source>
-        <translation>Редактор</translation>
+        <translation type="obsolete">Редактор</translation>
     </message>
     <message>
         <source>Player</source>
-        <translation>Програвач</translation>
+        <translation type="obsolete">Програвач</translation>
     </message>
 </context>
 <context>
@@ -1794,55 +1794,55 @@ This operation is ireversible.</source>
     <name>SettingsEditorCommon</name>
     <message>
         <source>Radio</source>
-        <translation>Радіо</translation>
+        <translation type="obsolete">Радіо</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>Категорія радіо за замовчуванням:</translation>
+        <translation type="obsolete">Категорія радіо за замовчуванням:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>UDPXY підтримка</translation>
+        <translation type="obsolete">UDPXY підтримка</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Увімкнути UDPXY підтримку</translation>
+        <translation type="obsolete">Увімкнути UDPXY підтримку</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>IP роутера чи ім’я:</translation>
+        <translation type="obsolete">IP роутера чи ім’я:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Порт роутера:</translation>
+        <translation type="obsolete">Порт роутера:</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Інтерфейс</translation>
+        <translation type="obsolete">Інтерфейс</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation>Стиль панелі:</translation>
+        <translation type="obsolete">Стиль панелі:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation>Лише іконки</translation>
+        <translation type="obsolete">Лише іконки</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation>Лише текст</translation>
+        <translation type="obsolete">Лише текст</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation>Текст рядом з іконками</translation>
+        <translation type="obsolete">Текст рядом з іконками</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation>Текст під іконками</translation>
+        <translation type="obsolete">Текст під іконками</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation>За замовчуванням системи</translation>
+        <translation type="obsolete">За замовчуванням системи</translation>
     </message>
     <message>
         <source>Show splash screen</source>
@@ -1853,46 +1853,46 @@ This operation is ireversible.</source>
     <name>SettingsEditorDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Налаштування</translation>
+        <translation type="obsolete">Налаштування</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Загальні</translation>
+        <translation type="obsolete">Загальні</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Редактор</translation>
+        <translation type="obsolete">Редактор</translation>
     </message>
 </context>
 <context>
     <name>SettingsEditorGeneral</name>
     <message>
         <source>Language</source>
-        <translation>Мова</translation>
+        <translation type="obsolete">Мова</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Системна мова за замовчуванням</translation>
+        <translation type="obsolete">Системна мова за замовчуванням</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>Мова користувача</translation>
+        <translation type="obsolete">Мова користувача</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>За замовчуванням</translation>
+        <translation type="obsolete">За замовчуванням</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Відновити налаштування за замовчуванням</translation>
+        <translation type="obsolete">Відновити налаштування за замовчуванням</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Це відновить усі налаштуваня за замовчуванням. Вам потрібно застосувати зміни, перед тим як вони будуть застосовані.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Це відновить усі налаштуваня за замовчуванням. Вам потрібно застосувати зміни, перед тим як вони будуть застосовані.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
-        <translation>Ви використовуєте версію Tano Редактора:</translation>
+        <translation type="obsolete">Ви використовуєте версію Tano Редактора:</translation>
     </message>
 </context>
 <context>

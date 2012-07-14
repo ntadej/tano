@@ -49,11 +49,11 @@ Vaša različica VLC-Qt: %4
     </message>
     <message>
         <source>Editor</source>
-        <translation>Urejevalnik</translation>
+        <translation type="obsolete">Urejevalnik</translation>
     </message>
     <message>
         <source>Player</source>
-        <translation>Predvajalnik</translation>
+        <translation type="obsolete">Predvajalnik</translation>
     </message>
 </context>
 <context>
@@ -1797,55 +1797,55 @@ Te operacije ni mogoče razveljaviti.</translation>
     <name>SettingsEditorCommon</name>
     <message>
         <source>Radio</source>
-        <translation>Radio</translation>
+        <translation type="obsolete">Radio</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>Privzeta kategorija za radio:</translation>
+        <translation type="obsolete">Privzeta kategorija za radio:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>UDPXY podpora</translation>
+        <translation type="obsolete">UDPXY podpora</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Vključi podporo UDPXY</translation>
+        <translation type="obsolete">Vključi podporo UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>IP ali ime usmerjevalnika:</translation>
+        <translation type="obsolete">IP ali ime usmerjevalnika:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Vrata usmerjevalnika:</translation>
+        <translation type="obsolete">Vrata usmerjevalnika:</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Vmesnik</translation>
+        <translation type="obsolete">Vmesnik</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation>Izgled orodnih vrstic:</translation>
+        <translation type="obsolete">Izgled orodnih vrstic:</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation>Samo ikona</translation>
+        <translation type="obsolete">Samo ikona</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation>Samo besedilo</translation>
+        <translation type="obsolete">Samo besedilo</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation>Besedilo ob ikoni</translation>
+        <translation type="obsolete">Besedilo ob ikoni</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation>Besedilo pod ikono</translation>
+        <translation type="obsolete">Besedilo pod ikono</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation>Sistemsko privzeto</translation>
+        <translation type="obsolete">Sistemsko privzeto</translation>
     </message>
     <message>
         <source>Show splash screen</source>
@@ -1856,46 +1856,46 @@ Te operacije ni mogoče razveljaviti.</translation>
     <name>SettingsEditorDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Nastavitve</translation>
+        <translation type="obsolete">Nastavitve</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Splošno</translation>
+        <translation type="obsolete">Splošno</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Urejevalnik</translation>
+        <translation type="obsolete">Urejevalnik</translation>
     </message>
 </context>
 <context>
     <name>SettingsEditorGeneral</name>
     <message>
         <source>Language</source>
-        <translation>Jezik</translation>
+        <translation type="obsolete">Jezik</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Sistemsko privzet jezik</translation>
+        <translation type="obsolete">Sistemsko privzet jezik</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>Poljuben jezik</translation>
+        <translation type="obsolete">Poljuben jezik</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>Privzeto</translation>
+        <translation type="obsolete">Privzeto</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Obnovi privzeto</translation>
+        <translation type="obsolete">Obnovi privzeto</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo biti potrjene, preden bodo uveljavljene.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo biti potrjene, preden bodo uveljavljene.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>You are using Tano Editor version:</source>
-        <translation>Uporabljate Tano Urejevalnik različice:</translation>
+        <translation type="obsolete">Uporabljate Tano Urejevalnik različice:</translation>
     </message>
 </context>
 <context>

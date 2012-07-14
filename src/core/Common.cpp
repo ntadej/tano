@@ -21,11 +21,7 @@
 
 QString Tano::name()
 {
-#if EDITOR
-    return "Tano Editor";
-#else
-    return "Tano";
-#endif
+    return "Tano Player";
 }
 
 QString Tano::nameGroup()
@@ -35,21 +31,13 @@ QString Tano::nameGroup()
 
 QString Tano::nameShort()
 {
-#if EDITOR
-    return "Editor";
-#else
     return "Player";
-#endif
 }
 
 
 QString Tano::executable()
 {
-#if EDITOR
-    return "tano-editor";
-#else
     return "tano";
-#endif
 }
 
 QString Tano::version()

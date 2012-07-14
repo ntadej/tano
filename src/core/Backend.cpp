@@ -18,24 +18,17 @@
 
 #include <QtCore/QDebug>
 
-#include "Config.h"
 #include "core/Backend.h"
 #include "core/Settings.h"
 
-#if WITH_EDITOR_VLCQT
-    #include <vlc-qt/Common.h>
-    #include <vlc-qt/Enums.h>
-    #include <vlc-qt/Instance.h>
-#endif
+#include <vlc-qt/Common.h>
+#include <vlc-qt/Enums.h>
+#include <vlc-qt/Instance.h>
 
 QStringList Tano::Backend::args()
 {
-    QStringList args;
-#if WITH_EDITOR_VLCQT
-    args = VlcCommon::args();
-#endif
+    QStringList args = VlcCommon::args();
 
-#if !EDITOR
     QScopedPointer<Settings> settings(new Settings());
     if (settings->aout() != -1) {
         args << QString("--aout=" + Vlc::audioOutput()[settings->aout()]);
@@ -59,27 +52,20 @@ QStringList Tano::Backend::args()
 
     if (settings->interfaceIndex() != -1)
         args << QString("--miface=" + QString::number(settings->interfaceIndex()));
-#endif
 
     return args;
 }
 
 QString Tano::Backend::versionCore()
 {
-    QString version = "/";
-#if WITH_EDITOR_VLCQT
-    version = VlcInstance::version();
-#endif
+    QString version = VlcInstance::version();
 
     return version;
 }
 
 QString Tano::Backend::versionLibrary()
 {
-    QString version = "/";
-#if WITH_EDITOR_VLCQT
-    version = VlcInstance::libVersion();
-#endif
+    QString version = VlcInstance::libVersion();
 
     return version;
 }

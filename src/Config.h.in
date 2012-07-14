@@ -27,13 +27,6 @@
 #define TELETEXT @TELETEXT@
 #define UPDATE @UPDATE@
 
-// Editor VLC-Qt support
-#ifdef EDITOR
-    #define WITH_EDITOR_VLCQT @EDITOR_VLCQT@
-#else
-    #define WITH_EDITOR_VLCQT 1
-#endif
-
 // System information
 #define HOSTNAME "@HOSTNAME@"
 #define SYSTEM "@SYSNAME@"

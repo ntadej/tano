@@ -26,7 +26,6 @@
     #include <QtGui/QMessageBox>
 #endif
 
-#include "Config.h"
 #include "container/core/Channel.h"
 #include "core/Common.h"
 #include "core/Settings.h"
@@ -36,20 +35,9 @@
 #include "ui/dialogs/AboutDialog.h"
 #include "ui/dialogs/PrintDialog.h"
 #include "ui/playlist/PlaylistEditorHelp.h"
+#include "ui/playlist/PlaylistEditorScan.h"
 #include "ui/playlist/PlaylistExportTvheadend.h"
 #include "ui/playlist/PlaylistImportCSV.h"
-
-#ifdef EDITOR
-    #include "core/LocaleManager.h"
-    #include "ui/settings-editor/SettingsEditorDialog.h"
-#if UPDATE
-    #include "update/UpdateDialog.h"
-#endif
-#endif
-
-#if WITH_EDITOR_VLCQT
-    #include "ui/playlist/PlaylistEditorScan.h"
-#endif
 
 #include "PlaylistEditor.h"
 #include "ui_PlaylistEditor.h"
@@ -59,10 +47,6 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
       ui(new Ui::PlaylistEditor),
       _closeEnabled(false)
 {
-#ifdef EDITOR
-    _locale = new LocaleManager();
-#endif
-
     ui->setupUi(this);
     ui->editWidget->setEnabled(false);
     ui->playlist->editMode();
@@ -70,42 +54,24 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
     _model = new PlaylistModel(this);
     ui->playlist->setModel(_model);
 
-#if defined(EDITOR) && UPDATE
-    _update = new UpdateDialog();
-    _update->checkSilent();
-#endif
-
 	createSettings();
 	createConnections();
 
-#if WITH_EDITOR_VLCQT
-    _scan = new PlaylistEditorScan();
-    _scan->setModel(_model);
-    ui->updateContents->addWidget(_scan);
+	ui->scan->setModel(_model);
 
-    connect(_scan, SIGNAL(addItem(QString, QString)), this, SLOT(addItem(QString, QString)));
-    connect(_scan, SIGNAL(scan(bool)), this, SLOT(scan(bool)));
-#else
-    ui->updateWidget->hide();
-#endif
+    connect(ui->scan, SIGNAL(addItem(QString, QString)), this, SLOT(addItem(QString, QString)));
+    connect(ui->scan, SIGNAL(scan(bool)), this, SLOT(scan(bool)));
 
     _menuExport = new QMenu();
     _menuExport->addAction(ui->actionExportTvheadend);
     _menuExport->addAction(ui->actionExportXmltvId);
 
-#ifdef EDITOR
-    ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
-    ui->toolBar->insertAction(ui->actionHelp, ui->actionSettings);
-#endif
+    //ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
+    //ui->toolBar->insertAction(ui->actionHelp, ui->actionSettings);
 }
 
 PlaylistEditor::~PlaylistEditor()
 {
-#if WITH_EDITOR_VLCQT
-    ui->updateContents->removeWidget(_scan);
-    delete _scan;
-#endif
-
     delete ui;
 }
 
@@ -166,11 +132,6 @@ void PlaylistEditor::createConnections()
     connect(ui->actionDown, SIGNAL(triggered()), this, SLOT(moveDown()));
 
     connect(ui->playlist, SIGNAL(itemSelected(Channel *)), this, SLOT(editItem(Channel *)));
-
-#if defined(EDITOR) && UPDATE
-    connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
-    connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
-#endif
 }
 
 void PlaylistEditor::menuOpenExport()
@@ -201,19 +162,9 @@ void PlaylistEditor::help()
 
 void PlaylistEditor::settings()
 {
-#ifdef EDITOR
-    SettingsEditorDialog s(this);
-    s.exec();
-    _locale->setLocale();
-    createSettings();
-#endif
-}
-
-void PlaylistEditor::updateAvailable()
-{
-#if defined(EDITOR) && UPDATE
-    ui->toolBar->insertAction(ui->actionAbout, ui->actionUpdate);
-#endif
+    //SettingsEditorDialog s(this);
+    //s.exec();
+    //createSettings();
 }
 
 void PlaylistEditor::open(const QString &playlist,
@@ -398,9 +349,7 @@ void PlaylistEditor::exit()
 {
     if (_closeEnabled) {
         hide();
-#ifdef EDITOR
-        qApp->quit();
-#endif
+        //qApp->quit();
         return;
     }
 
@@ -433,11 +382,7 @@ void PlaylistEditor::print()
 
 void PlaylistEditor::setMediaInstance(VlcInstance *instance)
 {
-#if WITH_EDITOR_VLCQT
-    _scan->setMediaInstance(instance);
-#else
-    Q_UNUSED(instance)
-#endif
+    ui->scan->setMediaInstance(instance);
 }
 
 void PlaylistEditor::scan(const bool &status)
