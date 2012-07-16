@@ -191,6 +191,7 @@ SET(Tano_Core_Srcs
     core/Settings.cpp
     core/Shortcuts.cpp
     core/Udpxy.cpp
+    core/Unicode.cpp
 )
 SET(Tano_Playlist_Srcs
     playlist/PlaylistFilterModel.cpp
@@ -290,9 +291,17 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     SET(Tano_Srcs
         ${Tano_Srcs}
 
-        core/Linux.cpp
+        platform/Linux.cpp
     )
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+
+IF(MINGW)
+    SET(Tano_Srcs
+        ${Tano_Srcs}
+
+        platform/Windows.cpp
+    )
+ENDIF(MINGW)
 
 IF(UPDATE)
     SET(Tano_UIs

@@ -16,21 +16,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#ifndef TANO_WINDOWS_H_
+#define TANO_WINDOWS_H_
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+namespace Tano
+{
+    namespace Windows
+    {
+        // Windows specific
+#if defined(Q_OS_WIN32)
+        void pauseConsole();
+        void showConsole();
+#endif
+    }
+}
 
-// Settings
-#define TELETEXT @TELETEXT@
-#define UPDATE @UPDATE@
-
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
-
-#define ASSUME_UTF8 @UTF@
-
-#endif // TANO_CONFIG_H_
+#endif // TANO_WINDOWS_H_

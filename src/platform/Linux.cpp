@@ -21,7 +21,7 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 
-#include "core/Linux.h"
+#include "platform/Linux.h"
 
 #if defined(Q_OS_LINUX)
 QString Tano::Linux::picturesPath()

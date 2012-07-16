@@ -1,6 +1,8 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
 * Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2005-2010 Rémi Denis-Courmont
+* Copyright (C) 2005-2006 VLC authors and VideoLAN
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,21 +18,18 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+/**
+ * Formats an UTF-8 string as vfprintf(), then print it, with
+ * appropriate conversion to local encoding.
+ */
+int utf8_vfprintf(FILE *stream, const char *fmt, va_list ap);
 
-// Settings
-#define TELETEXT @TELETEXT@
-#define UPDATE @UPDATE@
-
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
-
-#define ASSUME_UTF8 @UTF@
-
-#endif // TANO_CONFIG_H_
+/**
+ * Formats an UTF-8 string as fprintf(), then print it, with
+ * appropriate conversion to local encoding.
+ */
+int utf8_fprintf(FILE *stream, const char *fmt, ...);

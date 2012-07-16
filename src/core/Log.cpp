@@ -19,17 +19,21 @@
 #include <QtCore/QDateTime>
 #include <QtCore/QDebug>
 #include <QtCore/QFile>
+#include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 
 #include "core/Common.h"
 #include "core/Log.h"
 #include "core/Resources.h"
+#include "core/Unicode.h"
 
 QTextStream *out;
 
 void Tano::Log::output(QtMsgType type, const char *msg)
 {
     QString debugdate = QDateTime::currentDateTime().toString("yyyy.MM.dd hh:mm:ss");
+    QTextCodec *codec = QTextCodec::codecForName("UTF-8");
+    QString msgstr = codec->toUnicode(codec->toUnicode(msg).toAscii());
     switch (type)
     {
     case QtDebugMsg:
@@ -44,10 +48,10 @@ void Tano::Log::output(QtMsgType type, const char *msg)
     case QtFatalMsg:
         debugdate += " [F]";
     }
-    (*out) << debugdate << " " << msg << endl;
+    (*out) << debugdate << " " << msgstr << endl;
 
 #ifdef QT_DEBUG
-    fprintf(stderr, "%s %s\n", debugdate.toStdString().c_str(), msg);
+    utf8_fprintf(stderr, "%s %s\n", debugdate.toUtf8().constData(), msgstr.toUtf8().constData());
 #endif
 
     if (QtFatalMsg == type) {

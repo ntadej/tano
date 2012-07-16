@@ -16,21 +16,34 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#include "core/Unicode.h"
+#include "platform/Windows.h"
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+#if defined(Q_OS_WIN32)
+void Tano::Windows::pauseConsole()
+{
+    if(getenv("PWD")) return; /* Cygwin shell or Wine */
 
-// Settings
-#define TELETEXT @TELETEXT@
-#define UPDATE @UPDATE@
+    utf8_fprintf(stderr, _("\nPress the RETURN key to continue...\n"));
+    getchar();
+    fclose(stdout);
+}
+#endif
 
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
+#if defined(Q_OS_WIN32)
+void Tano::Windows::showConsole()
+{
+    FILE *f_help = NULL;
 
-#define ASSUME_UTF8 @UTF@
+    if(getenv( "PWD" )) return; /* Cygwin shell or Wine */
 
-#endif // TANO_CONFIG_H_
+    AllocConsole();
+
+    SetConsoleOutputCP(GetACP());
+    SetConsoleTitle("Tano "PACKAGE_VERSION);
+
+    freopen("CONOUT$", "w", stderr);
+    freopen("CONIN$", "r", stdin);
+    freopen("CONOUT$", "w", stdout);
+}
+#endif

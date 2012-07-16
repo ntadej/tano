@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2008-2010 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -9,20 +9,29 @@
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
 *
 * You should have received a copy of the GNU General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
 #ifndef TANO_ARGUMENTS_H_
 #define TANO_ARGUMENTS_H_
 
+#include <QtCore/QString>
+#include <QtCore/QStringList>
+
 class Arguments
 {
 public:
-	Arguments();
+    Arguments(int argc,
+              char *argv[]);
+    Arguments(const QStringList &args);
+    ~Arguments();
+
+private:
+    void processArguments(const QStringList &args);
 };
 
 #endif // TANO_ARGUMENTS_H_
