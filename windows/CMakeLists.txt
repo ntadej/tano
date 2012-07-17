@@ -84,8 +84,7 @@ IF(MINGW)
     SET(Tano_Installer
         LICENSE.GPL.TXT
 
-        tano-player.nsi
-        tano-editor.nsi
+        tano.nsi
 
         InstallerLanguageEnglish.nsh
         InstallerUI.nsh
@@ -170,16 +169,9 @@ CONFIGURE_FILE(
     @ONLY
 )
 
-CONFIGURE_FILE(
-    ${CMAKE_SOURCE_DIR}/windows/InstallerFilesEditor.nsh.in
-    ${CMAKE_BINARY_DIR}/windows/InstallerFilesEditor.nsh
-    @ONLY
-)
-
 SET(Tano_Installer_Generated
     ${CMAKE_BINARY_DIR}/windows/InstallerConfig.nsh
     ${CMAKE_BINARY_DIR}/windows/InstallerFiles.nsh
-    ${CMAKE_BINARY_DIR}/windows/InstallerFilesEditor.nsh
 )
 
 ################
