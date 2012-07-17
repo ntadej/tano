@@ -33,3 +33,10 @@ int utf8_vfprintf(FILE *stream, const char *fmt, va_list ap);
  * appropriate conversion to local encoding.
  */
 int utf8_fprintf(FILE *stream, const char *fmt, ...);
+
+char *FromWide(const wchar_t *wide);
+wchar_t *ToWide(const char *utf8);
+char *ToCodePage(unsigned cp, const char *utf8);
+char *FromCodePage(unsigned cp, const char *mb);
+char *FromANSI(const char *ansi);
+char *ToANSI(const char *utf8);

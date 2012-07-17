@@ -31,6 +31,4 @@
 #define HOSTNAME "@HOSTNAME@"
 #define SYSTEM "@SYSNAME@"
 
-#define ASSUME_UTF8 @UTF@
-
 #endif // TANO_CONFIG_H_

@@ -16,34 +16,26 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Unicode.h"
-#include "platform/Windows.h"
+#ifndef TANO_WINDOWS_H_
+#define TANO_WINDOWS_H_
 
-#if defined(Q_OS_WIN32)
-void Tano::Windows::pauseConsole()
+#include <QtGlobal>
+
+namespace Tano
 {
-    if(getenv("PWD")) return; /* Cygwin shell or Wine */
-
-    utf8_fprintf(stderr, _("\nPress the RETURN key to continue...\n"));
-    getchar();
-    fclose(stdout);
-}
-#endif
-
+    namespace Windows
+    {
+        // Windows specific
 #if defined(Q_OS_WIN32)
-void Tano::Windows::showConsole()
-{
-    FILE *f_help = NULL;
-
-    if(getenv( "PWD" )) return; /* Cygwin shell or Wine */
-
-    AllocConsole();
-
-    SetConsoleOutputCP(GetACP());
-    SetConsoleTitle("Tano "PACKAGE_VERSION);
-
-    freopen("CONOUT$", "w", stderr);
-    freopen("CONIN$", "r", stdin);
-    freopen("CONOUT$", "w", stdout);
-}
+        void pauseConsole();
+        void showConsole();
 #endif
+    }
+}
+
+char *make_utf8_string(const wchar_t *unicode);
+wchar_t *make_unicode_string(const unsigned char *utf8);
+int utf8_encode(const char *from, char **to);
+int utf8_decode(const char *from, char **to);
+
+#endif // TANO_WINDOWS_H_

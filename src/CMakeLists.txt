@@ -299,7 +299,8 @@ IF(MINGW)
     SET(Tano_Srcs
         ${Tano_Srcs}
 
-        platform/Windows.cpp
+        platform/windows/Windows.cpp
+        platform/windows/vasprintf.cpp
     )
 ENDIF(MINGW)
 

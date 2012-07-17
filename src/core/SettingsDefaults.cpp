@@ -22,7 +22,7 @@
 #include "core/Settings.h"
 
 #if defined (Q_OS_LINUX)
-    #include "platform/Linux.h"
+    #include "platform/linux/Linux.h"
 #endif
 
 // Define defaults - General

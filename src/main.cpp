@@ -17,11 +17,14 @@
 *****************************************************************************/
 
 #include <QtSingleApplication>
-
+#include <QDebug>
 #include "core/Arguments.h"
 #include "core/Common.h"
 #include "core/Log.h"
 #include "ui/MainWindow.h"
+
+#include "core/Unicode.h"
+#include "platform/windows/Windows.h"
 
 int main(int argc, char *argv[])
 {
@@ -32,16 +35,25 @@ int main(int argc, char *argv[])
 
     Tano::Log::setup();
 
+    char *test = "test ððšæèž";
+    char *out;
+    utf8_decode(test, &out);
+
+    Tano::Windows::showConsole();
+    utf8_fprintf(stdout, out);
+    fprintf(stdout, out);
+    Tano::Windows::pauseConsole();
+
     QtSingleApplication instance(argc, argv);
     if(instance.sendMessage(""))
         return 0;
 
     Arguments arguments(argc, argv);
 
-	MainWindow mainWindow;
-	instance.setActivationWindow(&mainWindow);
+    //MainWindow mainWindow;
+    //instance.setActivationWindow(&mainWindow);
 
-	mainWindow.show();
+    //mainWindow.show();
 
 	return instance.exec();
 }
