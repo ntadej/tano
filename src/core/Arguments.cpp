@@ -19,7 +19,6 @@
 #include <QtCore/QDebug>
 
 #include "core/Arguments.h"
-#include "core/Unicode.h"
 
 Arguments::Arguments(int argc, char *argv[])
 {

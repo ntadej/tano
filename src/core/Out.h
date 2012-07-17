@@ -16,21 +16,18 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_LINUX_H_
-#define TANO_LINUX_H_
+#ifndef TANO_OUT_H_
+#define TANO_OUT_H_
 
-#include <QtCore/QString>
+#include <QtCore/QTextStream>
 
-namespace Tano
+class Out : public QTextStream
 {
-    namespace Linux
-    {
-        // Linux specific
-#if defined(Q_OS_LINUX)
-        QString picturesPath();
-        QString videoPath();
-#endif
-    }
-}
+public:
+    Out(const bool &error = false);
+    ~Out();
 
-#endif // TANO_LINUX_H_
+    Out& operator<<(const QString &string);
+};
+
+#endif // TANO_OUT_H_

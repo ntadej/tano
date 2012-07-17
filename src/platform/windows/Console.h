@@ -16,26 +16,21 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_WINDOWS_H_
-#define TANO_WINDOWS_H_
+#ifndef TANO_CONSOLE_H_
+#define TANO_CONSOLE_H_
 
 #include <QtGlobal>
 
 namespace Tano
 {
+#if defined(Q_OS_WIN32)
     namespace Windows
     {
         // Windows specific
-#if defined(Q_OS_WIN32)
         void pauseConsole();
         void showConsole();
-#endif
     }
+#endif
 }
 
-char *make_utf8_string(const wchar_t *unicode);
-wchar_t *make_unicode_string(const unsigned char *utf8);
-int utf8_encode(const char *from, char **to);
-int utf8_decode(const char *from, char **to);
-
-#endif // TANO_WINDOWS_H_
+#endif // TANO_CONSOLE_H_

@@ -16,35 +16,33 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtSingleApplication>
+#include <QtCore/QTextCodec>
 
-#include "core/Arguments.h"
-#include "core/Common.h"
-#include "core/Log.h"
+#ifdef Q_OS_WIN32
+#   include <windows.h>
+#   include <iostream>
+#endif
+
 #include "core/Out.h"
-#include "ui/MainWindow.h"
 
-int main(int argc, char *argv[])
+Out::Out(const bool &error)
+    : QTextStream(error ? stderr : stdout, QIODevice::WriteOnly)
 {
-    QCoreApplication::setApplicationName(Tano::name());
-    QCoreApplication::setApplicationVersion(Tano::version());
+    setCodec(QTextCodec::codecForName("UTF-8"));
+}
 
-    QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
+Out::~Out() { }
 
-    Tano::Log::setup();
+Out& Out::operator<<(const QString &string)
+{
+#ifdef Q_OS_WIN32
+    WriteConsoleW(GetStdHandle(STD_OUTPUT_HANDLE), string.utf16(), string.size(), NULL, NULL);
+#else
+    QString msgstr = codec()->toUnicode(string.toAscii());
+    QTextStream::operator<<(msgstr);
 
-    Out() << "šđžćč\n";
+    flush();
+#endif
 
-    QtSingleApplication instance(argc, argv);
-    if(instance.sendMessage(""))
-        return 0;
-
-    Arguments arguments(argc, argv);
-
-    MainWindow mainWindow;
-    instance.setActivationWindow(&mainWindow);
-
-    mainWindow.show();
-
-	return instance.exec();
+    return *this;
 }

@@ -16,35 +16,21 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtSingleApplication>
+#ifndef TANO_LINUX_H_
+#define TANO_LINUX_H_
 
-#include "core/Arguments.h"
-#include "core/Common.h"
-#include "core/Log.h"
-#include "core/Out.h"
-#include "ui/MainWindow.h"
+#include <QtCore/QString>
 
-int main(int argc, char *argv[])
+namespace Tano
 {
-    QCoreApplication::setApplicationName(Tano::name());
-    QCoreApplication::setApplicationVersion(Tano::version());
-
-    QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
-
-    Tano::Log::setup();
-
-    Out() << "šđžćč\n";
-
-    QtSingleApplication instance(argc, argv);
-    if(instance.sendMessage(""))
-        return 0;
-
-    Arguments arguments(argc, argv);
-
-    MainWindow mainWindow;
-    instance.setActivationWindow(&mainWindow);
-
-    mainWindow.show();
-
-	return instance.exec();
+#if defined(Q_OS_LINUX)
+    namespace Linux
+    {
+        // Linux specific
+        QString picturesPath();
+        QString videoPath();
+    }
+#endif
 }
+
+#endif // TANO_LINUX_H_

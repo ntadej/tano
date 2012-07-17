@@ -1,8 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
 * Copyright (C) 2012 Tadej Novak <tadej@tano.si>
-* Copyright (C) 2005-2010 Rémi Denis-Courmont
-* Copyright (C) 2005-2006 VLC authors and VideoLAN
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -18,25 +16,35 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
+#include "core/Out.h"
+#include "platform/windows/Console.h"
 
-/**
- * Formats an UTF-8 string as vfprintf(), then print it, with
- * appropriate conversion to local encoding.
- */
-int utf8_vfprintf(FILE *stream, const char *fmt, va_list ap);
+#if defined(Q_OS_WIN32)
+#   include <windows.h>
+#endif
 
-/**
- * Formats an UTF-8 string as fprintf(), then print it, with
- * appropriate conversion to local encoding.
- */
-int utf8_fprintf(FILE *stream, const char *fmt, ...);
+#if defined(Q_OS_WIN32)
+void Tano::Windows::pauseConsole()
+{
+    if(getenv("PWD")) return; /* Cygwin shell or Wine */
 
-char *FromWide(const wchar_t *wide);
-wchar_t *ToWide(const char *utf8);
-char *ToCodePage(unsigned cp, const char *utf8);
-char *FromCodePage(unsigned cp, const char *mb);
-char *FromANSI(const char *ansi);
-char *ToANSI(const char *utf8);
+    Out() << "\nPress the RETURN key to continue...\n";
+
+    getchar();
+    fclose(stdout);
+}
+
+void Tano::Windows::showConsole()
+{
+    if(getenv("PWD")) return; /* Cygwin shell or Wine */
+
+    AllocConsole();
+
+    SetConsoleOutputCP(GetACP());
+    SetConsoleTitle("Tano");
+
+    freopen("CONOUT$", "w", stderr);
+    freopen("CONIN$", "r", stdin);
+    freopen("CONOUT$", "w", stdout);
+}
+#endif

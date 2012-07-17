@@ -179,6 +179,7 @@ SET(Tano_Core_Srcs
     core/Backend.cpp
     core/ChannelSelect.cpp
     core/Common.cpp
+    core/Out.cpp
     core/Enums.cpp
     core/NetworkDownload.cpp
     core/NetworkRequest.cpp
@@ -191,7 +192,6 @@ SET(Tano_Core_Srcs
     core/Settings.cpp
     core/Shortcuts.cpp
     core/Udpxy.cpp
-    core/Unicode.cpp
 )
 SET(Tano_Playlist_Srcs
     playlist/PlaylistFilterModel.cpp
@@ -291,7 +291,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     SET(Tano_Srcs
         ${Tano_Srcs}
 
-        platform/Linux.cpp
+        platform/linux/Locations.cpp
     )
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 

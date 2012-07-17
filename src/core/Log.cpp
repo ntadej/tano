@@ -24,8 +24,8 @@
 
 #include "core/Common.h"
 #include "core/Log.h"
+#include "core/Out.h"
 #include "core/Resources.h"
-#include "core/Unicode.h"
 
 QTextStream *out;
 
@@ -51,7 +51,7 @@ void Tano::Log::output(QtMsgType type, const char *msg)
     (*out) << debugdate << " " << msgstr << endl;
 
 #ifdef QT_DEBUG
-    utf8_fprintf(stderr, "%s %s\n", debugdate.toUtf8().constData(), msgstr.toUtf8().constData());
+    Out(true) << debugdate << " " << msgstr << endl;
 #endif
 
     if (QtFatalMsg == type) {
