@@ -18,11 +18,6 @@
 
 #include <QtCore/QTextCodec>
 
-#ifdef Q_OS_WIN32
-#   include <windows.h>
-#   include <iostream>
-#endif
-
 #include "core/Out.h"
 
 Out::Out(const bool &error)
@@ -35,14 +30,10 @@ Out::~Out() { }
 
 Out& Out::operator<<(const QString &string)
 {
-#ifdef Q_OS_WIN32
-    WriteConsoleW(GetStdHandle(STD_OUTPUT_HANDLE), string.utf16(), string.size(), NULL, NULL);
-#else
-    QString msgstr = codec()->toUnicode(string.toAscii());
+    QString msgstr = codec()->toUnicode(string.toLocal8Bit());
     QTextStream::operator<<(msgstr);
 
     flush();
-#endif
 
     return *this;
 }

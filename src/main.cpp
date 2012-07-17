@@ -21,7 +21,6 @@
 #include "core/Arguments.h"
 #include "core/Common.h"
 #include "core/Log.h"
-#include "core/Out.h"
 #include "ui/MainWindow.h"
 
 int main(int argc, char *argv[])
@@ -32,8 +31,6 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
 
     Tano::Log::setup();
-
-    Out() << "šđžćč\n";
 
     QtSingleApplication instance(argc, argv);
     if(instance.sendMessage(""))
