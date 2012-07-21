@@ -115,13 +115,9 @@ IF(MINGW)
         ${MINGW_BIN_DIR}/libgcc_s_dw2-1.dll
         ${MINGW_BIN_DIR}/mingwm10.dll
         ${QT_BIN_DIR}/QtCore4.dll
-        ${QT_BIN_DIR}/QtDeclarative4.dll
         ${QT_BIN_DIR}/QtGui4.dll
         ${QT_BIN_DIR}/QtNetwork4.dll
-        ${QT_BIN_DIR}/QtScript4.dll
-        ${QT_BIN_DIR}/QtSql4.dll
         ${QT_BIN_DIR}/QtXml4.dll
-        ${QT_BIN_DIR}/QtXmlPatterns4.dll
     )
     SET(Tano_Qt_Plugins
         ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
