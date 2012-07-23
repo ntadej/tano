@@ -1,3 +1,6 @@
+1.0.2 (git)
+  * Fix: Encoding issues
+
 1.0.1 (2012-07-13)
   * Various XMLTV improvements and fixes
   * Fix: Language detection
