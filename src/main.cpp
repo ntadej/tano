@@ -18,6 +18,7 @@
 
 #include <QtSingleApplication>
 
+#include <QtCore/QTextCodec>
 #include <QtGui/QBitmap>
 
 #if defined(Qt5)
@@ -48,6 +49,8 @@ int main(int argc, char *argv[])
 #endif
     QCoreApplication::setApplicationName(Tano::application());
     QCoreApplication::setApplicationVersion(Tano::version());
+
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 
     Tano::setupLog();
 
