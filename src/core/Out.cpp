@@ -21,17 +21,13 @@
 #include "core/Out.h"
 
 Out::Out(const bool &error)
-    : QTextStream(error ? stderr : stdout, QIODevice::WriteOnly)
-{
-    setCodec(QTextCodec::codecForName("UTF-8"));
-}
+    : QTextStream(error ? stderr : stdout, QIODevice::WriteOnly) { }
 
 Out::~Out() { }
 
 Out& Out::operator<<(const QString &string)
 {
-    QString msgstr = codec()->toUnicode(string.toLocal8Bit());
-    QTextStream::operator<<(msgstr);
+    QTextStream::operator<<(string);
 
     flush();
 

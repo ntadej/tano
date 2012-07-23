@@ -18,6 +18,8 @@
 
 #include <QtSingleApplication>
 
+#include <QtCore/QTextCodec>
+
 #include "core/Arguments.h"
 #include "core/Common.h"
 #include "core/Log.h"
@@ -29,6 +31,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationVersion(Tano::version());
 
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
+
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 
     Tano::Log::setup();
 

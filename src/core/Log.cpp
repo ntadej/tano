@@ -32,8 +32,6 @@ QTextStream *out;
 void Tano::Log::output(QtMsgType type, const char *msg)
 {
     QString debugdate = QDateTime::currentDateTime().toString("yyyy.MM.dd hh:mm:ss");
-    QTextCodec *codec = QTextCodec::codecForName("UTF-8");
-    QString msgstr = codec->toUnicode(codec->toUnicode(msg).toAscii());
     switch (type)
     {
     case QtDebugMsg:
@@ -48,10 +46,10 @@ void Tano::Log::output(QtMsgType type, const char *msg)
     case QtFatalMsg:
         debugdate += " [F]";
     }
-    (*out) << debugdate << " " << msgstr << endl;
+    (*out) << debugdate << " " << msg << endl;
 
 #ifdef QT_DEBUG
-    Out(true) << debugdate << " " << msgstr << endl;
+    Out(true) << debugdate << " " << msg << endl;
 #endif
 
     if (QtFatalMsg == type) {
