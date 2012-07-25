@@ -66,7 +66,7 @@ void CSVHandler::processChannel(const QStringList &list)
 
 void CSVHandler::processList()
 {
-    foreach (QString line, _csvLineList) {
+    foreach (const QString &line, _csvLineList) {
         if (!(_header && (line == _csvLineList.first())))
             processChannel(line.split(_separator));
     }

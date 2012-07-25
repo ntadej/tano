@@ -253,7 +253,7 @@ void PlaylistModel::processChannel(Channel *channel)
     }
     _channelNumbers << channel->number();
 
-    foreach (QString category, channel->categories()) {
+    foreach (const QString &category, channel->categories()) {
         if (!_categoryList.contains(category))
             _categoryList << category;
     }

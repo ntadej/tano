@@ -53,7 +53,7 @@ QStringList LocaleManager::loadTranslations()
     QStringList list;
     list << QLocale::languageToString(QLocale(QLocale::English).language());
 
-    foreach (QString fileName, dir.entryList(QDir::Files)) {
+    foreach (const QString &fileName, dir.entryList(QDir::Files)) {
         if(fileName.contains(".qm") && !fileName.contains("source")) {
             list << localeName(fileName);
         }

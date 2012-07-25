@@ -59,7 +59,7 @@ void SettingsSchedule::listGrabbers(const QList<XmltvGrabber> &list)
 {
     ui->comboGrabber->clear();
 
-    foreach (XmltvGrabber item, list) {
+    foreach (const XmltvGrabber &item, list) {
         ui->comboGrabber->addItem(item.name, item.path);
     }
 

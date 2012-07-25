@@ -34,8 +34,11 @@ Arguments::Arguments(int argc, char *argv[])
 
     createArguments();
 
-    foreach (Argument arg, _arguments)
+    foreach (const Argument &arg, _arguments) {
+        Q_UNUSED(arg)
+
         _values << QString();
+    }
 
     _valid = processArguments(args);
 }
@@ -81,7 +84,7 @@ bool Arguments::processArguments(const QStringList &args)
                 return false;
             } else {
                 bool done = false;
-                foreach (Argument arg, _arguments) {
+                foreach (const Argument &arg, _arguments) {
                     if (args[i] == QString("-" + arg.shortArg) ||
                         args[i] == QString("--" + arg.longArg) ||
                         args[i].startsWith("--" + arg.longArg + "="))

@@ -50,7 +50,7 @@ void JsHandler::processFile(const QString &jsFile)
 void JsHandler::processList()
 {
     QString line;
-    foreach (QString l, _lineList) {
+    foreach (const QString &l, _lineList) {
         if (l.contains("la=")) {
             line = l;
             break;
@@ -63,7 +63,7 @@ void JsHandler::processList()
 
     QStringList channels = line.split("],[");
     QStringList currentChannel;
-    foreach (QString c, channels) {
+    foreach (const QString &c, channels) {
         currentChannel = c.split(",");
 
         Channel *channel = new Channel(currentChannel[1], currentChannel[2].toInt());

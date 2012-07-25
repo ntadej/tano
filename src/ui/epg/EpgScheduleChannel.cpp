@@ -117,7 +117,7 @@ void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
     }
 
     ui->comboDate->clear();
-    foreach (QDate d, date) {
+    foreach (const QDate &d, date) {
         ui->comboDate->addItem(d.toString(Tano::Xmltv::dateFormatDisplay()));
     }
 

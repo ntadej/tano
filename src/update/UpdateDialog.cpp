@@ -128,7 +128,7 @@ void UpdateDialog::readUpdates(const QByteArray &data)
     QList<UpdateInfo> list = _handler->updateInfo();
     UpdateInfo info;
 
-    foreach (UpdateInfo item, list) {
+    foreach (const UpdateInfo &item, list) {
         if(Tano::version() == item.version && item.development) {
             updatesList << "development" << item.version;
             continue;

@@ -62,7 +62,7 @@ bool TvheadendGenerator::write(PlaylistModel *model)
 
     int id = 1;
     for (int i = 0; i < model->rowCount(); i++) {
-        foreach (QString category, model->row(i)->categories()) {
+        foreach (const QString &category, model->row(i)->categories()) {
             if (!_tags.contains(category)) {
                 _tags.insert(category, id);
                 _tagsName.insert(id, category);
@@ -130,7 +130,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
          << indent(1) << "\"xmltv-channel\": \"" << channel->xmltvId() << "\"," << "\n"
          << indent(1) << "\"icon\": \"" << channel->logo() << "\"," << "\n"
          << indent(1) << "\"tags\": [" << "\n";
-    foreach (QString category, channel->categories()) {
+    foreach (const QString &category, channel->categories()) {
         outC << indent(2) << _tags[category];
         if (category != channel->categories().last())
             outC << ",";

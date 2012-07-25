@@ -98,6 +98,6 @@ void SettingsGeneral::loadLocale()
 {
     _locale = LocaleManager::loadTranslations();
 
-    foreach (QString language, _locale)
+    foreach (const QString &language, _locale)
         ui->comboLanguage->addItem(LocaleManager::language(language));
 }
