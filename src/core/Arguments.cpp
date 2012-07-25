@@ -16,9 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
+#if defined(Qt5)
+    #include <QtWidgets/QApplication>
+#elif defined(Qt4)
+    #include <QtGui/QApplication>
+#endif
 
 #include "core/Arguments.h"
+#include "core/Out.h"
 
 Arguments::Arguments(int argc, char *argv[])
 {
@@ -27,7 +32,12 @@ Arguments::Arguments(int argc, char *argv[])
         args << QString(argv[i]);
     }
 
-    processArguments(args);
+    createArguments();
+
+    foreach (Argument arg, _arguments)
+        _values << QString();
+
+    _valid = processArguments(args);
 }
 
 Arguments::Arguments(const QStringList &args)
@@ -37,9 +47,84 @@ Arguments::Arguments(const QStringList &args)
 
 Arguments::~Arguments() { }
 
-void Arguments::processArguments(const QStringList &args)
+Argument Arguments::create(const Tano::Argument &arg,
+                           const QString &shortArg,
+                           const QString &longArg) const
 {
-    for (int i = 0; i < args.size(); i++) {
+    Argument a;
+    a.type = arg;
+    a.shortArg = shortArg;
+    a.longArg = longArg;
 
+    return a;
+}
+
+void Arguments::createArguments()
+{
+    _arguments << create(Tano::AEditor, "e", "editor")
+               << create(Tano::AChannel, "c", "channel")
+               << create(Tano::APlaylist, "p", "playlist")
+               << create(Tano::ARecord, "r", "record")
+               << create(Tano::AXmltv, "x", "xmltv")
+               << create(Tano::AAout, "a", "aout")
+               << create(Tano::AVout, "v", "vout")
+               << create(Tano::AFile, "f", "file");
+}
+
+bool Arguments::processArguments(const QStringList &args)
+{
+    int i = 1;
+    while (i < args.size()) {
+        if (args[i].startsWith("-")) {
+            if (args[i] == "-h" || args[i] == "--help") {
+                // display help
+                return false;
+            } else {
+                bool done = false;
+                foreach (Argument arg, _arguments) {
+                    if (args[i] == QString("-" + arg.shortArg) ||
+                        args[i] == QString("--" + arg.longArg) ||
+                        args[i].startsWith("--" + arg.longArg + "="))
+                    {
+                        if (arg.type == Tano::AEditor) {
+                            setValue(arg.type, "true");
+                            i++;
+
+                            done = true;
+                            break;
+                        } else if (args[i].startsWith("--" + arg.longArg + "=")) {
+                            QString exp = "--" + arg.longArg + "=";
+                            QString item = args[i];
+                            QString value = item.replace(exp , "");
+                            setValue(arg.type, value);
+                            i++;
+
+                            done = true;
+                            break;
+                        } else {
+                            if (i == (args.size() - 1)) {
+                                // invalid
+                                return false;
+                            }
+
+                            setValue(arg.type, args[i + 1]);
+                            i+=2;
+
+                            done = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (!done) {
+                    // invalid
+                    return false;
+                }
+            }
+        } else {
+            // open file
+        }
     }
+
+    return true;
 }

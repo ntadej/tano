@@ -22,6 +22,15 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
+#include "core/Enums.h"
+
+struct Argument
+{
+    Tano::Argument type;
+    QString shortArg;
+    QString longArg;
+};
+
 class Arguments
 {
 public:
@@ -30,8 +39,22 @@ public:
     Arguments(const QStringList &args);
     ~Arguments();
 
+    bool isValid() const { return _valid; }
+    QString value(const Tano::Argument &arg) const { return _values[arg]; }
+
 private:
-    void processArguments(const QStringList &args);
+    Argument create(const Tano::Argument &arg,
+                    const QString &shortArg,
+                    const QString &longArg) const;
+    void createArguments();
+    bool processArguments(const QStringList &args);
+    void setValue(const Tano::Argument &arg,
+                  const QString &value) { _values[arg] = value; }
+
+    QList<Argument> _arguments;
+    QStringList _values;
+
+    bool _valid;
 };
 
 #endif // TANO_ARGUMENTS_H_

@@ -31,6 +31,27 @@ namespace Tano
         Schedule
     };
 
+    // Argument types
+    enum Argument
+    {
+        AEditor,
+        AChannel,
+        APlaylist,
+        ARecord,
+        AXmltv,
+        AAout,
+        AVout,
+        AFile
+    };
+
+    // Channel types
+    enum ChannelType
+    {
+        All,
+        TV,
+        Radio
+    };
+
     // FileTypes
     enum FileType
     {
@@ -46,14 +67,6 @@ namespace Tano
         Url = 2,
         XmltvFile = 30,
         XmltvId = 31
-    };
-
-    // Channel types
-    enum ChannelType
-    {
-        All,
-        TV,
-        Radio
     };
 
     // Timer states

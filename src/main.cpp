@@ -40,12 +40,16 @@ int main(int argc, char *argv[])
     if(instance.sendMessage(""))
         return 0;
 
-    Arguments arguments(argc, argv);
+    Arguments *args = new Arguments(argc, argv);
 
-    MainWindow mainWindow;
-    instance.setActivationWindow(&mainWindow);
+    if (args->isValid()) {
+        MainWindow mainWindow(args);
+        instance.setActivationWindow(&mainWindow);
 
-    mainWindow.show();
+        mainWindow.show();
 
-	return instance.exec();
+        return instance.exec();
+    } else {
+        return -100;
+    }
 }

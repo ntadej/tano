@@ -45,6 +45,7 @@
 
 #include "container/core/Channel.h"
 #include "container/core/Timer.h"
+#include "core/Arguments.h"
 #include "core/Backend.h"
 #include "core/ChannelSelect.h"
 #include "core/Common.h"
@@ -81,8 +82,8 @@
     #include "update/UpdateDialog.h"
 #endif
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent),
+MainWindow::MainWindow(Arguments *args)
+    : QMainWindow(),
       ui(new Ui::MainWindow),
       _hasPlaylist(false),
       _select(0),
@@ -102,6 +103,9 @@ MainWindow::MainWindow(QWidget *parent)
       _osdMain(0),
       _playlistEditor(0)
 {
+    _arguments = args;
+    createArguments();
+
     ui->setupUi(this);
 
 #if UPDATE
@@ -190,6 +194,11 @@ void MainWindow::showEvent(QShowEvent *event)
 }
 
 // Init functions
+void MainWindow::createArguments()
+{
+
+}
+
 void MainWindow::createGui()
 {
     if (_rememberSize)

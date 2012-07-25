@@ -40,6 +40,7 @@ class VlcMedia;
 class VlcMediaPlayer;
 class VlcVideoControl;
 
+class Arguments;
 class Channel;
 class ChannelSelect;
 class EpgScheduleFull;
@@ -78,7 +79,7 @@ class MainWindow : public QMainWindow
 {
 Q_OBJECT
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(Arguments *args);
     ~MainWindow();
 
 protected:
@@ -143,6 +144,7 @@ private:
     Qt::WindowFlags _flags;
 
     //Initialising functions
+    void createArguments();
     void createBackend();
     void createConnections();
     void createGui();
@@ -189,6 +191,7 @@ private:
     QString _wheelType;
 
     //Main
+    Arguments *_arguments;
     ChannelSelect *_select;
     NetworkDownload *_file;
     LocaleManager *_locale;
