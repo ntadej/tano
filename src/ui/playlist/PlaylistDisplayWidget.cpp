@@ -179,6 +179,8 @@ QList<Channel *> PlaylistDisplayWidget::visibleChannels()
 
     while (ui->playlistView->viewport()->rect().contains(QPoint(0, ui->playlistView->visualRect(index).y() + ui->playlistView->visualRect(index).height() + 1))) {
         index = ui->playlistView->indexAt(QPoint(0, ui->playlistView->visualRect(index).y() + ui->playlistView->visualRect(index).height() + 1));
+        if (!index.isValid())
+            continue;
         list << _model->row(_filterModel->mapToSource(index).row());;
     }
 
