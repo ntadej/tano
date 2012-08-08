@@ -50,9 +50,8 @@ public:
     void setChannel(const int &number = 0,
                     const QString &name = 0,
                     const QString &language = 0);
-    void setPlayingState(const Vlc::State &state);
+    void setPlaying(const bool &playing);
     void setQuickRecordChecked(const bool &enabled);
-    void setQuickRecordEnabled(const bool &enabled);
     void setRecording(const QString &name = 0,
                       const QString &info = 0);
     void setVideoState(const bool &enabled);

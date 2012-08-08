@@ -105,7 +105,8 @@ private slots:
     void playRecording(Timer* recording);
     void playUrl(const QString &url);
     void stop();
-    void setPlayingState(const Vlc::State &state);
+    void setPlaying();
+    void setStopped();
     void startSession();
 
     void openPlaylist(const bool &start = false);
@@ -119,7 +120,7 @@ private slots:
     void lite();
     void tray();
     void showOsd(const QPoint &pos);
-    void showVideo(const bool &enabled);
+    void showVideo(const int &count = 0);
     void teletext(const bool &enabled);
     void teletext(const int &page);
     void toggleFullscreen(const bool &enabled);

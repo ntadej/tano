@@ -109,18 +109,15 @@ void OsdWidget::setLogo(const QString &logo)
     ui->logo->show();
 }
 
-void OsdWidget::setPlayingState(const Vlc::State &state)
+void OsdWidget::setPlaying(const bool &playing)
 {
-    switch (state)
-    {
-    case Vlc::Playing:
+    if (playing) {
         ui->buttonPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
         ui->buttonPlay->setToolTip(tr("Pause"));
         ui->buttonPlay->setStatusTip(tr("Pause"));
         ui->buttonMute->setEnabled(true);
         ui->buttonTeletext->setEnabled(true);
-        break;
-    default:
+    } else {
         ui->buttonPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
         ui->buttonPlay->setToolTip(tr("Play"));
         ui->buttonPlay->setStatusTip(tr("Play"));
@@ -132,12 +129,6 @@ void OsdWidget::setPlayingState(const Vlc::State &state)
 void OsdWidget::setQuickRecordChecked(const bool &enabled)
 {
     ui->buttonRecordNow->setChecked(enabled);
-}
-
-void OsdWidget::setQuickRecordEnabled(const bool &enabled)
-{
-    ui->buttonRecordNow->setEnabled(enabled);
-    ui->buttonRecordNow->setChecked(false);
 }
 
 void OsdWidget::setRecording(const QString &name,
@@ -159,6 +150,8 @@ void OsdWidget::setTeletextPage(const int &page)
 void OsdWidget::setVideoState(const bool &enabled)
 {
     ui->buttonSnapshot->setEnabled(enabled);
+    ui->buttonRecordNow->setEnabled(enabled);
+    ui->buttonRecordNow->setChecked(false);
 }
 
 void OsdWidget::teletext(const bool &enabled)

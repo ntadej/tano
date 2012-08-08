@@ -232,7 +232,7 @@ void MainWindow::createGui()
     ui->recorder->setWidgets(ui->actionRecord, _trayIcon);
 
     openPlaylist(true);
-    setPlayingState(Vlc::Idle);
+    setStopped();
     ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
     ui->toolBarRecorder->hide();
     ui->scheduleWidget->setIdentifier(Tano::Main);
@@ -295,6 +295,7 @@ void MainWindow::createSettings()
     _menuAspectRatio->setDefault(Vlc::Ratio(_defaultAspectRatio));
     _menuCropRatio->setDefault(Vlc::Ratio(_defaultCropRatio));
     _menuDeinterlacing->setDefault(Vlc::Deinterlacing(_defaultDeinterlacing));
+    _menuScale->setDefault(Vlc::Scale(0));
 
     _defaultAudioLanguage = settings->audioLanguage();
     _defaultSubtitleLanguage = settings->subtitleLanguage();
@@ -445,10 +446,12 @@ void MainWindow::createConnections()
     connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackSubtitles, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
     connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackVideo, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
     connect(_menuTrackSubtitles, SIGNAL(subtitles(QString)), _videoController, SLOT(loadSubtitle(QString)));
-    connect(_mediaPlayer, SIGNAL(currentState(Vlc::State)), this, SLOT(setPlayingState(Vlc::State)));
-    connect(_mediaPlayer, SIGNAL(hasAudio(bool)), ui->menuAudio, SLOT(setEnabled(bool)));
-    connect(_mediaPlayer, SIGNAL(hasVideo(bool)), ui->menuVideo, SLOT(setEnabled(bool)));
-    connect(_mediaPlayer, SIGNAL(hasVideo(bool)), this, SLOT(showVideo(bool)));
+    connect(_mediaPlayer, SIGNAL(playing()), this, SLOT(setPlaying()));
+    connect(_mediaPlayer, SIGNAL(paused()), this, SLOT(setStopped()));
+    connect(_mediaPlayer, SIGNAL(stopped()), this, SLOT(setStopped()));
+    connect(_mediaPlayer, SIGNAL(end()), this, SLOT(setStopped()));
+    connect(_mediaPlayer, SIGNAL(vout(int)), this, SLOT(showVideo(int)));
+    connect(_mediaPlayer, SIGNAL(stopped()), this, SLOT(showVideo()));
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
     connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
@@ -636,33 +639,31 @@ void MainWindow::support()
 
 
 //Media controls
-void MainWindow::setPlayingState(const Vlc::State &state)
+void MainWindow::setPlaying()
 {
-    _osdMain->setPlayingState(state);
+    _osdMain->setPlaying(true);
 
-    switch (state)
-    {
-    case Vlc::Playing:
-        ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
-        ui->actionPlay->setText(tr("Pause"));
-        ui->actionPlay->setToolTip(tr("Pause"));
-        ui->actionMute->setEnabled(true);
+    ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
+    ui->actionPlay->setText(tr("Pause"));
+    ui->actionPlay->setToolTip(tr("Pause"));
+    ui->actionMute->setEnabled(true);
 #if TELETEXT
-        if (_teletext)
-            ui->actionTeletext->setEnabled(true);
+    if (_teletext)
+        ui->actionTeletext->setEnabled(true);
 #endif
-        ui->actionRecordNow->setEnabled(true);
-        break;
-    default:
-        ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
-        ui->actionPlay->setText(tr("Play"));
-        ui->actionPlay->setToolTip(tr("Play"));
-        ui->actionMute->setEnabled(false);
+}
+
+void MainWindow::setStopped()
+{
+    _osdMain->setPlaying(false);
+
+    ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
+    ui->actionPlay->setText(tr("Play"));
+    ui->actionPlay->setToolTip(tr("Play"));
+    ui->actionMute->setEnabled(false);
 #if TELETEXT
-        ui->actionTeletext->setEnabled(false);
+    ui->actionTeletext->setEnabled(false);
 #endif
-        ui->actionRecordNow->setEnabled(false);
-    }
 }
 
 void MainWindow::play()
@@ -736,8 +737,6 @@ void MainWindow::playUrl(const QString &url)
     _mediaItem = new VlcMedia(url, _mediaInstance);
     tooltip(url);
 
-    _osdMain->setQuickRecordEnabled(true);
-
     play();
 }
 
@@ -752,12 +751,12 @@ void MainWindow::stop()
         _menuAspectRatio->setDefault(Vlc::Ratio(_defaultAspectRatio));
         _menuCropRatio->setDefault(Vlc::Ratio(_defaultCropRatio));
         _menuDeinterlacing->setDefault(Vlc::Deinterlacing(_defaultDeinterlacing));
+        _menuScale->setDefault(Vlc::Scale(0));
     }
 
     _xmltv->stop();
 
     _osdMain->setChannel();
-    _osdMain->setQuickRecordEnabled(false);
 
 #if TELETEXT
     if (_teletext)
@@ -960,21 +959,22 @@ void MainWindow::showOsd(const QPoint &pos)
     }
 }
 
-void MainWindow::showVideo(const bool &enabled)
+void MainWindow::showVideo(const int &count)
 {
     if (ui->actionRecorder->isChecked())
         return;
 
-    if (enabled) {
+    if (count) {
         ui->stackedWidget->setCurrentIndex(1);
     } else {
         ui->stackedWidget->setCurrentIndex(0);
     }
 
-    ui->actionFullscreen->setEnabled(enabled);
-    ui->actionSnapshot->setEnabled(enabled);
+    ui->actionFullscreen->setEnabled(count);
+    ui->actionRecordNow->setEnabled(count);
+    ui->actionSnapshot->setEnabled(count);
 
-    _osdMain->setVideoState(enabled);
+    _osdMain->setVideoState(count);
 }
 
 void MainWindow::teletext(const bool &enabled)
