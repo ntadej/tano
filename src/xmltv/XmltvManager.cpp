@@ -87,6 +87,13 @@ void XmltvManager::loadXmltv()
     }
 }
 
+void XmltvManager::loadXmltv(const QString &file)
+{
+    _location = file;
+
+    loadXmltvInit();
+}
+
 void XmltvManager::loadXmltvInit()
 {
     if (_downloader)

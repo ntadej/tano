@@ -145,7 +145,6 @@ private:
     Qt::WindowFlags _flags;
 
     //Initialising functions
-    void createArguments();
     void createBackend();
     void createConnections();
     void createGui();

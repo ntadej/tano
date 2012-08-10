@@ -27,7 +27,8 @@ namespace Tano
     namespace Backend
     {
         // Backend settings
-        QStringList args();
+        QStringList args(const QString &aout = "",
+                         const QString &vout = "");
         QString versionCore();
         QString versionLibrary();
     }

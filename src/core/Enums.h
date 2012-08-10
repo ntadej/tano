@@ -34,14 +34,13 @@ namespace Tano
     // Argument types
     enum Argument
     {
-        AEditor,
         AChannel,
         APlaylist,
-        ARecord,
         AXmltv,
         AAout,
         AVout,
-        AFile
+        AFile,
+        AUrl
     };
 
     // Channel types

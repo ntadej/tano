@@ -23,6 +23,7 @@
 #include "core/Arguments.h"
 #include "core/Common.h"
 #include "core/Log.h"
+#include "core/Out.h"
 #include "ui/MainWindow.h"
 
 int main(int argc, char *argv[])
@@ -41,6 +42,8 @@ int main(int argc, char *argv[])
     QtSingleApplication instance(argc, argv);
     if(instance.sendMessage(""))
         return 0;
+
+    Out::welcome();
 
     Arguments *args = new Arguments(argc, argv);
 

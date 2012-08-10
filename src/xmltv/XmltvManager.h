@@ -50,6 +50,7 @@ public:
     ~XmltvManager();
 
     void loadXmltv();
+    void loadXmltv(const QString &file);
 
 public slots:
     void request(const QString &id,

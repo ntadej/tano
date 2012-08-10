@@ -104,7 +104,6 @@ MainWindow::MainWindow(Arguments *args)
       _playlistEditor(0)
 {
     _arguments = args;
-    createArguments();
 
     ui->setupUi(this);
 
@@ -194,11 +193,6 @@ void MainWindow::showEvent(QShowEvent *event)
 }
 
 // Init functions
-void MainWindow::createArguments()
-{
-
-}
-
 void MainWindow::createGui()
 {
     if (_rememberSize)
@@ -247,9 +241,12 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
-    _xmltv->loadXmltv();
+    if (!_arguments->value(Tano::AXmltv).isEmpty())
+        _xmltv->loadXmltv(_arguments->value(Tano::AXmltv));
+    else
+        _xmltv->loadXmltv();
 
-    _mediaInstance = new VlcInstance(Tano::Backend::args(), this);
+    _mediaInstance = new VlcInstance(Tano::Backend::args(_arguments->value(Tano::AAout), _arguments->value(Tano::AVout)), this);
     _mediaItem = 0;
     _mediaPlayer = new VlcMediaPlayer(_mediaInstance);
     _mediaPlayer->setVideoWidget(ui->videoWidget);
@@ -320,6 +317,8 @@ void MainWindow::createSettingsStartup()
 {
     QScopedPointer<Settings> settings(new Settings(this));
     _defaultPlaylist = settings->playlist();
+    if (!_arguments->value(Tano::APlaylist).isEmpty())
+        _defaultPlaylist = _arguments->value(Tano::APlaylist);
 
     //Session
     _sessionVolumeEnabled = settings->sessionRememberVolume();
@@ -561,7 +560,11 @@ void MainWindow::createSession()
 {
     _osdMain->volumeSlider()->setVolume(_sessionVolume);
 
-    if (_sessionAutoplayEnabled && _hasPlaylist && _model->validate())
+    if ((_sessionAutoplayEnabled ||
+         !_arguments->value(Tano::AChannel).isEmpty() ||
+         !_arguments->value(Tano::AFile).isEmpty() ||
+         !_arguments->value(Tano::AUrl).isEmpty()) &&
+         _hasPlaylist && _model->validate())
         _startTimer->start(100);
 
 #if UPDATE
@@ -576,7 +579,14 @@ void MainWindow::startSession()
     if (!isVisible())
         return;
 
-    ui->playlistWidget->channelSelected(_sessionChannel);
+    if (!_arguments->value(Tano::AFile).isEmpty())
+        playLocal(_arguments->value(Tano::AFile));
+    else if (!_arguments->value(Tano::AFile).isEmpty())
+        playUrl(_arguments->value(Tano::AUrl));
+    else if (!_arguments->value(Tano::AChannel).isEmpty())
+        ui->playlistWidget->channelSelected(_arguments->value(Tano::AChannel).toInt());
+    else
+        ui->playlistWidget->channelSelected(_sessionChannel);
 
     _startTimer->stop();
 }

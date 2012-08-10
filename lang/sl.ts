@@ -1310,6 +1310,58 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>XMLTV ID</source>
         <translation>XMLTV ID</translation>
     </message>
+    <message>
+        <source>Try &apos;%1&apos; for more information.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Missing mandatory argument for &apos;%1&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown option &apos;%1&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Usage: %1 [options]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP TV playback:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play channel by number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use playlist file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use XMLTV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation type="unfinished">Odpri URL</translation>
+    </message>
+    <message>
+        <source>Playback options:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set audio output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set video output</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>

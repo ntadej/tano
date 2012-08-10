@@ -28,6 +28,14 @@ public:
     ~Out();
 
     Out& operator<<(const QString &string);
+
+    static void welcome();
+
+    static void help();
+
+    static void errorGeneric();
+    static void errorMissing(const QString &arg);
+    static void errorUnknown(const QString &arg);
 };
 
 #endif // TANO_OUT_H_
