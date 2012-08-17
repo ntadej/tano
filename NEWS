@@ -10,6 +10,10 @@
     Supported are Qt 4.8 or later and VLC 2.0 or later.
   * Removed splash screen and Windows installer branding.
 
+1.0.2 (2012-08-10)
+  * Fix: Encoding issues
+  * Fix: Don't move playlist widget, if item is visible
+
 1.0.1 (2012-07-13)
   * Various XMLTV improvements and fixes
   * Fix: Language detection
