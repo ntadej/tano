@@ -85,7 +85,7 @@ void SettingsDialog::action(QAbstractButton *button)
 void SettingsDialog::apply()
 {
     // General
-    _settings->setSessionVolume(ui->general->sessionVolume());
+    _settings->setSessionRememberVolume(ui->general->sessionVolume());
     _settings->setSessionAutoplay(ui->general->sessionAutoplay());
     _settings->setLanguage(ui->general->language());
 
@@ -148,7 +148,7 @@ void SettingsDialog::apply()
 void SettingsDialog::defaults()
 {
     // General
-    ui->general->setSessionVolume(Settings::DEFAULT_SESSION_VOLUME);
+    ui->general->setSessionVolume(Settings::DEFAULT_SESSION_REMEMBER_VOLUME);
     ui->general->setSessionAutoplay(Settings::DEFAULT_SESSION_AUTOPLAY);
     ui->general->setLanguage(Settings::DEFAULT_LANGUAGE);
 
@@ -208,7 +208,7 @@ void SettingsDialog::defaults()
 void SettingsDialog::read()
 {
     // General
-    ui->general->setSessionVolume(_settings->sessionVolume());
+    ui->general->setSessionVolume(_settings->sessionRememberVolume());
     ui->general->setSessionAutoplay(_settings->sessionAutoplay());
     ui->general->setLanguage(_settings->language());
 
