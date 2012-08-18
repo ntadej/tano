@@ -171,6 +171,9 @@ private:
     bool _hideToTray;
     bool _dockInfoVisible;
     bool _isLite;
+    bool _litePlaylist;
+    bool _liteOsd;
+    bool _liteToolbar;
     bool _osdEnabled;
     bool _infoEnabled;
     bool _recordNow;
