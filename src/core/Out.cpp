@@ -21,6 +21,10 @@
 #include "core/Common.h"
 #include "Out.h"
 
+#if defined(Q_OS_WIN32)
+#   include "platform/windows/Console.h"
+#endif
+
 Out::Out(const bool &error)
     : QTextStream(error ? stderr : stdout, QIODevice::WriteOnly) { }
 
@@ -43,6 +47,10 @@ void Out::welcome()
 
 void Out::help()
 {
+#if defined(Q_OS_WIN32)
+    Tano::Windows::showConsole();
+#endif
+
     Out() << QObject::tr("Usage: %1 [options]").arg(Tano::executable()) << endl << endl;
 
     Out() << QObject::tr("IP TV playback:") << endl
@@ -60,6 +68,10 @@ void Out::help()
           << "  " << "-a, --aout <name>" << "\t\t" << QObject::tr("Set audio output") << endl
           << "  " << "-v, --vout <name>" << "\t\t" << QObject::tr("Set video output") << endl
           << endl;
+
+#if defined(Q_OS_WIN32)
+    Tano::Windows::pauseConsole();
+#endif
 }
 
 void Out::errorGeneric()
@@ -69,12 +81,28 @@ void Out::errorGeneric()
 
 void Out::errorMissing(const QString &arg)
 {
+#if defined(Q_OS_WIN32)
+    Tano::Windows::showConsole();
+#endif
+
     Out() << QObject::tr("Missing mandatory argument for '%1'.").arg(arg) << endl;
     Out::errorGeneric();
+
+#if defined(Q_OS_WIN32)
+    Tano::Windows::pauseConsole();
+#endif
 }
 
 void Out::errorUnknown(const QString &arg)
 {
+#if defined(Q_OS_WIN32)
+    Tano::Windows::showConsole();
+#endif
+
     Out() << QObject::tr("Unknown option '%1'.").arg(arg) << endl;
     Out::errorGeneric();
+
+#if defined(Q_OS_WIN32)
+    Tano::Windows::pauseConsole();
+#endif
 }
