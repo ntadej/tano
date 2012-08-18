@@ -924,9 +924,19 @@ void MainWindow::top()
 
 void MainWindow::lite()
 {
-    ui->dockInfo->setVisible(_isLite);
-    ui->toolBar->setVisible(_isLite);
-    ui->dockControls->setVisible(_isLite);
+    if (_isLite) {
+        ui->dockInfo->setVisible(_litePlaylist);
+        ui->toolBar->setVisible(_liteToolbar);
+        ui->dockControls->setVisible(_liteOsd);
+    } else {
+        _litePlaylist = ui->dockInfo->isVisible();
+        _liteToolbar = ui->toolBar->isVisible();
+        _liteOsd = ui->dockControls->isVisible();
+
+        ui->dockInfo->setVisible(false);
+        ui->toolBar->setVisible(false);
+        ui->dockControls->setVisible(false);
+    }
     _isLite = !_isLite;
 }
 
@@ -1131,6 +1141,7 @@ void MainWindow::recorder(const bool &enabled)
     ui->toolBarRecorder->setVisible(enabled);
     ui->dockInfo->setVisible(!enabled);
     ui->dockControls->setVisible(!enabled);
+    ui->actionLite->setEnabled(!enabled);
 }
 
 void MainWindow::recordProgramme(XmltvProgramme *programme)
