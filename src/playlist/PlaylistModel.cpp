@@ -305,7 +305,9 @@ void PlaylistModel::save(const QString &file,
         _save->saveJsFile(file);
         break;
     case Tano::M3U:
-        _save->saveM3UFile(file);
+    case Tano::M3UClean:
+    case Tano::M3UUdpxy:
+        _save->saveM3UFile(file, type);
         break;
     case Tano::XmltvId:
         _save->saveXmltvId(file);
