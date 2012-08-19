@@ -52,6 +52,8 @@ public:
 
     bool rememberChannelSettings() const;
     void setRememberChannelSettings(const bool &remember);
+    bool rememberPerChannel() const;
+    void setRememberPerChannel(const bool &remember);
     int aspectRatio() const;
     void setAspectRatio(const int &id);
     int cropRatio() const;

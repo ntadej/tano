@@ -2112,7 +2112,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Remember Video settings between media</source>
-        <translation>Mémoriser les préférences vidéo des média</translation>
+        <translation type="obsolete">Mémoriser les préférences vidéo des média</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
@@ -2236,6 +2236,22 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Mute on minimize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember video settings:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2743,7 +2759,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Radio</source>
-        <translation>Radio</translation>
+        <translation type="obsolete">Radio</translation>
     </message>
     <message>
         <source>Default radio category:</source>
@@ -2772,6 +2788,14 @@ This operation is ireversible.</source>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Mettre à jour ne modifiera pas l&apos;ordre de votre liste de lecture.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Channel types categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default HD category:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3047,11 +3071,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Controls enabled</source>
-        <translation>Contrôles</translation>
+        <translation type="obsolete">Contrôles</translation>
     </message>
     <message>
         <source>Info panel enabled</source>
-        <translation>Panneau d&apos;information</translation>
+        <translation type="obsolete">Panneau d&apos;information</translation>
     </message>
     <message>
         <source>Show tray icon</source>
@@ -3078,7 +3102,7 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remember main window size</source>
+        <source>Remember main window size, position and open panels</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

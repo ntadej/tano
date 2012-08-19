@@ -181,7 +181,7 @@ private:
     bool _infoEnabled;
     bool _muteOnMinimize;
     bool _recordNow;
-    bool _rememberSize;
+    bool _rememberGui;
     int _mainWidth;
     int _mainHeight;
     int _sessionChannel;

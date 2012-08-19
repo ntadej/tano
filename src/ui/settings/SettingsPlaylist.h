@@ -46,6 +46,8 @@ public:
 
     QString radioCategory() const;
     void setRadioCategory(const QString &category);
+    QString hdCategory() const;
+    void setHdCategory(const QString &category);
 
     bool udpxy() const;
     void setUdpxy(const bool &enabled);

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>439</width>
-    <height>276</height>
+    <width>454</width>
+    <height>363</height>
    </rect>
   </property>
   <property name="windowIcon">
@@ -31,8 +31,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>423</width>
-        <height>542</height>
+        <width>437</width>
+        <height>446</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -191,7 +191,7 @@
           <item row="0" column="0" colspan="3">
            <widget class="QCheckBox" name="checkRememberSize">
             <property name="text">
-             <string>Remember main window size</string>
+             <string>Remember main window size, position and open panels</string>
             </property>
            </widget>
           </item>
@@ -215,26 +215,6 @@
            <widget class="QCheckBox" name="checkTop">
             <property name="text">
              <string>Always on top</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkOsdS">
-            <property name="text">
-             <string>Controls enabled</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkInfoS">
-            <property name="text">
-             <string>Info panel enabled</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
             </property>
            </widget>
           </item>

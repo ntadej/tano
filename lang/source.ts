@@ -1522,10 +1522,6 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remember Video settings between media</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Default subtitle language:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1627,6 +1623,22 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Mute on minimize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember video settings:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1867,10 +1879,6 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Default radio category:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1892,6 +1900,14 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel types categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default HD category:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2012,14 +2028,6 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Controls enabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Info panel enabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show tray icon</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2044,7 +2052,7 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remember main window size</source>
+        <source>Remember main window size, position and open panels</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -94,6 +94,7 @@ void SettingsDialog::apply()
     _settings->setPlaylistUpdate(ui->playlist->playlistUpdate());
     _settings->setPlaylistUpdateUrl(ui->playlist->playlistUpdateUrl());
     _settings->setRadioCategory(ui->playlist->radioCategory());
+    _settings->setHdCategory(ui->playlist->hdCategory());
     _settings->setUdpxy(ui->playlist->udpxy());
     _settings->setUdpxyUrl(ui->playlist->udpxyUrl());
     _settings->setUdpxyPort(ui->playlist->udpxyPort());
@@ -105,11 +106,9 @@ void SettingsDialog::apply()
     _settings->setHideToTray(ui->gui->trayHide());
     _settings->setMouseWheel(ui->gui->wheel());
     _settings->setToolbarLook(ui->gui->toolbar());
-    _settings->setRememberMainSize(ui->gui->rememberSize());
+    _settings->setRememberGuiSession(ui->gui->rememberSize());
     _settings->setStartLite(ui->gui->lite());
     _settings->setStartOnTop(ui->gui->top());
-    _settings->setStartControls(ui->gui->osdStart());
-    _settings->setStartInfo(ui->gui->infoStart());
 
     // Playback
     _settings->setVout(ui->backend->vout());
@@ -121,6 +120,7 @@ void SettingsDialog::apply()
     _settings->setInterfaceIndex(ui->backend->interface());
 
     _settings->setRememberVideoSettings(ui->backend->rememberChannelSettings());
+    _settings->setRememberVideoPerChannel(ui->backend->rememberPerChannel());
     _settings->setAspectRatio(ui->backend->aspectRatio());
     _settings->setCropRatio(ui->backend->cropRatio());
     _settings->setDeinterlacing(ui->backend->deinterlacing());
@@ -157,6 +157,7 @@ void SettingsDialog::defaults()
     ui->playlist->setPlaylistUpdate(Settings::DEFAULT_PLAYLIST_UPDATE);
     ui->playlist->setPlaylistUpdateUrl(Settings::DEFAULT_PLAYLIST_UPDATE_URL);
     ui->playlist->setRadioCategory(Settings::DEFAULT_RADIO_CATEGORY);
+    ui->playlist->setHdCategory(Settings::DEFAULT_HD_CATEGORY);
     ui->playlist->setUdpxy(Settings::DEFAULT_UDPXY);
     ui->playlist->setUdpxyUrl(Settings::DEFAULT_UDPXY_URL);
     ui->playlist->setUdpxyPort(Settings::DEFAULT_UDPXY_PORT);
@@ -168,11 +169,9 @@ void SettingsDialog::defaults()
     ui->gui->setTrayHide(Settings::DEFAULT_HIDE_TO_TRAY);
     ui->gui->setWheel(Settings::DEFAULT_MOUSE_WHEEL);
     ui->gui->setToolbar(Settings::DEFAULT_TOOLBAR_LOOK);
-    ui->gui->setRememberSize(Settings::DEFAULT_REMEMBER_MAIN_SIZE);
+    ui->gui->setRememberSize(Settings::DEFAULT_REMEMBER_GUI_SESSION);
     ui->gui->setLite(Settings::DEFAULT_START_LITE);
     ui->gui->setTop(Settings::DEFAULT_START_ON_TOP);
-    ui->gui->setOsdStart(Settings::DEFAULT_START_CONTROLS);
-    ui->gui->setInfoStart(Settings::DEFAULT_START_INFO);
 
     // Playback
     ui->backend->setVout(Settings::DEFAULT_VOUT);
@@ -184,6 +183,7 @@ void SettingsDialog::defaults()
     ui->backend->setInterface(Settings::DEFAULT_INTERFACE_INDEX);
 
     ui->backend->setRememberChannelSettings(Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS);
+    ui->backend->setRememberPerChannel(Settings::DEFAULT_REMEMBER_VIDEO_PER_CHANNEL);
     ui->backend->setAspectRatio(Settings::DEFAULT_ASPECT_RATIO);
     ui->backend->setCropRatio(Settings::DEFAULT_CROP_RATIO);
     ui->backend->setDeinterlacing(Settings::DEFAULT_DEINTERLACING);
@@ -217,6 +217,7 @@ void SettingsDialog::read()
     ui->playlist->setPlaylistUpdate(_settings->playlistUpdate());
     ui->playlist->setPlaylistUpdateUrl(_settings->playlistUpdateUrl());
     ui->playlist->setRadioCategory(_settings->radioCategory());
+    ui->playlist->setHdCategory(_settings->hdCategory());
     ui->playlist->setUdpxy(_settings->udpxy());
     ui->playlist->setUdpxyUrl(_settings->udpxyUrl());
     ui->playlist->setUdpxyPort(_settings->udpxyPort());
@@ -228,11 +229,9 @@ void SettingsDialog::read()
     ui->gui->setTrayHide(_settings->hideToTray());
     ui->gui->setWheel(_settings->mouseWheel());
     ui->gui->setToolbar(_settings->toolbarLook());
-    ui->gui->setRememberSize(_settings->rememberMainSize());;
+    ui->gui->setRememberSize(_settings->rememberGuiSession());
     ui->gui->setLite(_settings->startLite());
     ui->gui->setTop(_settings->startOnTop());
-    ui->gui->setOsdStart(_settings->startControls());
-    ui->gui->setInfoStart(_settings->startInfo());
 
     // Playback
     ui->backend->setVout(_settings->vout());
@@ -244,6 +243,7 @@ void SettingsDialog::read()
     ui->backend->setInterface(_settings->interfaceIndex());
 
     ui->backend->setRememberChannelSettings(_settings->rememberVideoSettings());
+    ui->backend->setRememberPerChannel(_settings->rememberVideoPerChannel());
     ui->backend->setAspectRatio(_settings->aspectRatio());
     ui->backend->setCropRatio(_settings->cropRatio());
     ui->backend->setDeinterlacing(_settings->deinterlacing());

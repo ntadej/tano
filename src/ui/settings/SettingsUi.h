@@ -56,10 +56,6 @@ public:
     void setLite(const bool &enabled);
     bool top() const;
     void setTop(const bool &enabled);
-    bool osdStart() const;
-    void setOsdStart(const bool &enabled);
-    bool infoStart() const;
-    void setInfoStart(const bool &enabled);
 
 protected:
     void changeEvent(QEvent *e);

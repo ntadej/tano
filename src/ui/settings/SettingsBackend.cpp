@@ -155,6 +155,16 @@ void SettingsBackend::setRememberChannelSettings(const bool &remember)
     ui->checkVideoSettings->setChecked(remember);
 }
 
+bool SettingsBackend::rememberPerChannel() const
+{
+    return ui->radioChannel->isChecked();
+}
+
+void SettingsBackend::setRememberPerChannel(const bool &remember)
+{
+    ui->radioChannel->setChecked(remember);
+}
+
 int SettingsBackend::aspectRatio() const
 {
     return ui->comboAspectRatio->currentIndex();

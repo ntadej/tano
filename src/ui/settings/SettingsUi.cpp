@@ -141,23 +141,3 @@ void SettingsUi::setTop(const bool &enabled)
 {
     ui->checkTop->setChecked(enabled);
 }
-
-bool SettingsUi::osdStart() const
-{
-    return ui->checkOsdS->isChecked();
-}
-
-void SettingsUi::setOsdStart(const bool &enabled)
-{
-    ui->checkOsdS->setChecked(enabled);
-}
-
-bool SettingsUi::infoStart() const
-{
-    return ui->checkInfoS->isChecked();
-}
-
-void SettingsUi::setInfoStart(const bool &enabled)
-{
-    ui->checkInfoS->setChecked(enabled);
-}

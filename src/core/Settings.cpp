@@ -39,6 +39,7 @@ void Settings::writeSettings()
     setValue("channels/update", playlistUpdate());
     setValue("channels/updateurl", playlistUpdateUrl());
     setValue("channels/radio", radioCategory());
+    setValue("channels/hd", hdCategory());
     setValue("channels/udpxy", udpxy());
     setValue("channels/udpxyurl", udpxyUrl());
     setValue("channels/udpxyport", udpxyPort());
@@ -47,6 +48,10 @@ void Settings::writeSettings()
     setValue("start/ontop", startOnTop());
     setValue("start/controls", startControls());
     setValue("start/info", startInfo());
+    setValue("start/width", width());
+    setValue("start/height", height());
+    setValue("start/posx", posX());
+    setValue("start/posy", posY());
 
     setValue("gui/osd", osd());
     setValue("gui/info", info());
@@ -54,9 +59,7 @@ void Settings::writeSettings()
     setValue("gui/hidetotray", hideToTray());
     setValue("gui/mousewheel", mouseWheel());
     setValue("gui/toolbarlook", toolbarLook());
-    setValue("gui/rememberMainSize", rememberMainSize());
-    setValue("gui/mainWidth", mainWidth());
-    setValue("gui/mainHeight", mainHeight());
+    setValue("gui/session", rememberGuiSession());
 
     setValue("backend/vout", vout());
     setValue("backend/aout", aout());
@@ -67,6 +70,7 @@ void Settings::writeSettings()
     setValue("backend/interfaceIndex", interfaceIndex());
 
     setValue("backend/videosettings", rememberVideoSettings());
+    setValue("backend/perchannel", rememberVideoPerChannel());
     setValue("backend/aspectratio", aspectRatio());
     setValue("backend/cropratio", cropRatio());
     setValue("backend/deinterlacing", deinterlacing());
@@ -102,6 +106,7 @@ void Settings::readSettings()
     setPlaylistUpdate(value("channels/update", DEFAULT_PLAYLIST_UPDATE).toBool());
     setPlaylistUpdateUrl(value("channels/updateurl", DEFAULT_PLAYLIST_UPDATE_URL).toString());
     setRadioCategory(value("channels/radio", DEFAULT_RADIO_CATEGORY).toString());
+    setHdCategory(value("channels/hd", DEFAULT_HD_CATEGORY).toString());
     setUdpxy(value("channels/udpxy", DEFAULT_UDPXY).toBool());
     setUdpxyUrl(value("channels/udpxyurl", DEFAULT_UDPXY_URL).toString());
     setUdpxyPort(value("channels/udpxyport", DEFAULT_UDPXY_PORT).toInt());
@@ -110,6 +115,10 @@ void Settings::readSettings()
     setStartOnTop(value("start/ontop", DEFAULT_START_ON_TOP).toBool());
     setStartControls(value("start/controls", DEFAULT_START_CONTROLS).toBool());
     setStartInfo(value("start/info", DEFAULT_START_INFO).toBool());
+    setWidth(value("start/width", DEFAULT_WIDTH).toInt());
+    setHeight(value("start/height", DEFAULT_HEIGHT).toInt());
+    setPosX(value("start/posx", DEFAULT_POS_X).toInt());
+    setPosY(value("start/posy", DEFAULT_POS_Y).toInt());
 
     setOsd(value("gui/osd", DEFAULT_OSD).toBool());
     setInfo(value("gui/info", DEFAULT_INFO).toBool());
@@ -117,9 +126,7 @@ void Settings::readSettings()
     setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
     setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
     setToolbarLook(value("gui/toolbarlook", DEFAULT_TOOLBAR_LOOK).toInt());
-    setRememberMainSize(value("gui/rememberMainSize", DEFAULT_REMEMBER_MAIN_SIZE).toBool());
-    setMainWidth(value("gui/mainWidth", DEFAULT_MAIN_WIDTH).toInt());
-    setMainHeight(value("gui/mainHeight", DEFAULT_MAIN_HEIGHT).toInt());
+    setRememberGuiSession(value("gui/session", DEFAULT_REMEMBER_GUI_SESSION).toBool());
 
     setVout(value("backend/vout", DEFAULT_VOUT).toInt());
     setAout(value("backend/aout", DEFAULT_AOUT).toInt());
@@ -130,6 +137,7 @@ void Settings::readSettings()
     setInterfaceIndex(value("backend/interfaceIndex", DEFAULT_INTERFACE_INDEX).toInt());
 
     setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
+    setRememberVideoPerChannel(value("backend/perchannel", DEFAULT_REMEMBER_VIDEO_PER_CHANNEL).toBool());
     setAspectRatio(value("backend/aspectratio", DEFAULT_ASPECT_RATIO).toInt());
     setCropRatio(value("backend/cropratio", DEFAULT_CROP_RATIO).toInt());
     setDeinterlacing(value("backend/deinterlacing", DEFAULT_DEINTERLACING).toInt());

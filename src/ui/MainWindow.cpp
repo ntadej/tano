@@ -195,7 +195,7 @@ void MainWindow::showEvent(QShowEvent *event)
 // Init functions
 void MainWindow::createGui()
 {
-    if (_rememberSize)
+    if (_rememberGui)
         resize(_mainWidth, _mainHeight);
 
     _osdMain = new OsdWidget(this);
@@ -280,7 +280,7 @@ void MainWindow::createSettings()
     _infoEnabled = settings->info();
     _wheelType = settings->mouseWheel();
     mouseWheel();
-    _rememberSize = settings->rememberMainSize();
+    _rememberGui = settings->rememberGuiSession();
 
     //Playback settings
     _defaultAspectRatio = settings->aspectRatio();
@@ -328,8 +328,8 @@ void MainWindow::createSettingsStartup()
 
     _teletext = settings->teletext();
 
-    _mainWidth = settings->mainWidth();
-    _mainHeight = settings->mainHeight();
+    _mainWidth = settings->width();
+    _mainHeight = settings->height();
 
     // GUI
     if (settings->startLite()) {
@@ -603,9 +603,9 @@ void MainWindow::writeSession()
     if (_sessionAutoplayEnabled)
         settings->setSessionChannel(_osdMain->lcd()->value());
 
-    if (_rememberSize) {
-        settings->setMainWidth(size().width());
-        settings->setMainHeight(size().height());
+    if (_rememberGui) {
+        settings->setWidth(size().width());
+        settings->setHeight(size().height());
     }
 
     settings->writeSettings();

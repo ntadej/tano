@@ -85,6 +85,16 @@ void SettingsPlaylist::setRadioCategory(const QString &category)
     ui->editRadio->setText(category);
 }
 
+QString SettingsPlaylist::hdCategory() const
+{
+    return ui->editHd->text();
+}
+
+void SettingsPlaylist::setHdCategory(const QString &category)
+{
+    ui->editHd->setText(category);
+}
+
 bool SettingsPlaylist::udpxy() const
 {
     return ui->checkUdpxy->isChecked();

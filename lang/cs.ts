@@ -1558,7 +1558,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Remember Video settings between media</source>
-        <translation>Zapamatovat si nastavení obrazu mezi médii</translation>
+        <translation type="obsolete">Zapamatovat si nastavení obrazu mezi médii</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
@@ -1666,6 +1666,22 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Mute on minimize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember video settings:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2012,7 +2028,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation>Rádio</translation>
+        <translation type="obsolete">Rádio</translation>
     </message>
     <message>
         <source>Default radio category:</source>
@@ -2037,6 +2053,14 @@ Tuto operaci nelze vrátit zpět.</translation>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Aktualizace nezmění pořadí ve vašem seznamu programů.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Channel types categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default HD category:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2161,11 +2185,11 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Controls enabled</source>
-        <translation>Ovládací prvky povoleny</translation>
+        <translation type="obsolete">Ovládací prvky povoleny</translation>
     </message>
     <message>
         <source>Info panel enabled</source>
-        <translation>Panel s podrobnostmi povolen</translation>
+        <translation type="obsolete">Panel s podrobnostmi povolen</translation>
     </message>
     <message>
         <source>Show tray icon</source>
@@ -2192,7 +2216,7 @@ Tuto operaci nelze vrátit zpět.</translation>
         <translation>Informační panel:</translation>
     </message>
     <message>
-        <source>Remember main window size</source>
+        <source>Remember main window size, position and open panels</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

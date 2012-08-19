@@ -48,6 +48,9 @@ public:
     inline QString radioCategory() const { return _radioCategory; }
     inline void setRadioCategory(const QString &s) { _radioCategory = s; }
     static const QString DEFAULT_RADIO_CATEGORY;
+    inline QString hdCategory() const { return _hdCategory; }
+    inline void setHdCategory(const QString &s) { _hdCategory = s; }
+    static const QString DEFAULT_HD_CATEGORY;
     inline bool udpxy() const { return _udpxy; }
     inline void setUdpxy(const bool &b) { _udpxy = b; }
     static const bool DEFAULT_UDPXY;
@@ -65,12 +68,6 @@ public:
     inline bool startOnTop() const { return _startOnTop; }
     inline void setStartOnTop(const bool &b) { _startOnTop = b; }
     static const bool DEFAULT_START_ON_TOP;
-    inline bool startControls() const { return _startControls; }
-    inline void setStartControls(const bool &b) { _startControls = b; }
-    static const bool DEFAULT_START_CONTROLS;
-    inline bool startInfo() const { return _startInfo; }
-    inline void setStartInfo(const bool &b) { _startInfo = b; }
-    static const bool DEFAULT_START_INFO;
 
     // GUI
     inline bool osd() const { return _osd; }
@@ -91,15 +88,29 @@ public:
     inline int toolbarLook() const { return _toolbarLook; }
     inline void setToolbarLook(const int &i) { _toolbarLook = i; }
     static const int DEFAULT_TOOLBAR_LOOK;
-    inline bool rememberMainSize() const { return _rememberMainSize; }
-    inline void setRememberMainSize(const bool &b) { _rememberMainSize = b; }
-    static const bool DEFAULT_REMEMBER_MAIN_SIZE;
-    inline int mainWidth() const { return _mainWidth; }
-    inline void setMainWidth(const int &i) { _mainWidth = i; }
-    static const int DEFAULT_MAIN_WIDTH;
-    inline int mainHeight() const { return _mainHeight; }
-    inline void setMainHeight(const int &i) { _mainHeight = i; }
-    static const int DEFAULT_MAIN_HEIGHT;
+    inline bool rememberGuiSession() const { return _rememberGuiSession; }
+    inline void setRememberGuiSession(const bool &b) { _rememberGuiSession = b; }
+    static const bool DEFAULT_REMEMBER_GUI_SESSION;
+
+    // GUI - session
+    inline int width() const { return _width; }
+    inline void setWidth(const int &i) { _width = i; }
+    static const int DEFAULT_WIDTH;
+    inline int height() const { return _height; }
+    inline void setHeight(const int &i) { _height = i; }
+    static const int DEFAULT_HEIGHT;
+    inline int posX() const { return _posX; }
+    inline void setPosX(const int &i) { _posX = i; }
+    static const int DEFAULT_POS_X;
+    inline int posY() const { return _posY; }
+    inline void setPosY(const int &i) { _posY = i; }
+    static const int DEFAULT_POS_Y;
+    inline bool startControls() const { return _startControls; }
+    inline void setStartControls(const bool &b) { _startControls = b; }
+    static const bool DEFAULT_START_CONTROLS;
+    inline bool startInfo() const { return _startInfo; }
+    inline void setStartInfo(const bool &b) { _startInfo = b; }
+    static const bool DEFAULT_START_INFO;
 
     // Backend - core
     inline int vout() const { return _vout; }
@@ -124,6 +135,9 @@ public:
     inline bool rememberVideoSettings() const { return _rememberVideoSettings; }
     inline void setRememberVideoSettings(const bool &b) { _rememberVideoSettings = b; }
     static const bool DEFAULT_REMEMBER_VIDEO_SETTINGS;
+    inline bool rememberVideoPerChannel() const { return _rememberVideoPerChannel; }
+    inline void setRememberVideoPerChannel(const bool &b) { _rememberVideoPerChannel = b; }
+    static const bool DEFAULT_REMEMBER_VIDEO_PER_CHANNEL;
     inline int aspectRatio() const { return _aspectRatio; }
     inline void setAspectRatio(const int &i) { _aspectRatio = i; }
     static const int DEFAULT_ASPECT_RATIO;
@@ -202,6 +216,7 @@ private:
     bool _playlistUpdate;
     QString _playlistUpdateUrl;
     QString _radioCategory;
+    QString _hdCategory;
     bool _udpxy;
     QString _udpxyUrl;
     int _udpxyPort;
@@ -210,8 +225,6 @@ private:
     bool _splash;
     bool _startLite;
     bool _startOnTop;
-    bool _startControls;
-    bool _startInfo;
 
     // GUI
     bool _osd;
@@ -220,9 +233,15 @@ private:
     bool _hideToTray;
     QString _mouseWheel;
     int _toolbarLook;
-    bool _rememberMainSize;
-    int _mainWidth;
-    int _mainHeight;
+    bool _rememberGuiSession;
+
+    // GUI - session
+    int _width;
+    int _height;
+    int _posX;
+    int _posY;
+    bool _startControls;
+    bool _startInfo;
 
     // Backend - core
     int _vout;
@@ -235,6 +254,7 @@ private:
 
     // Backend - video settings
     bool _rememberVideoSettings;
+    bool _rememberVideoPerChannel;
     int _aspectRatio;
     int _cropRatio;
     int _deinterlacing;

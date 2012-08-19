@@ -33,6 +33,7 @@ const QString Settings::DEFAULT_PLAYLIST = "";
 const bool Settings::DEFAULT_PLAYLIST_UPDATE = false;
 const QString Settings::DEFAULT_PLAYLIST_UPDATE_URL = "";
 const QString Settings::DEFAULT_RADIO_CATEGORY = "Radio";
+const QString Settings::DEFAULT_HD_CATEGORY = "HD";
 const bool Settings::DEFAULT_UDPXY = false;
 const QString Settings::DEFAULT_UDPXY_URL = "";
 const int Settings::DEFAULT_UDPXY_PORT = 1234;
@@ -42,6 +43,10 @@ const bool Settings::DEFAULT_START_LITE = false;
 const bool Settings::DEFAULT_START_ON_TOP = false;
 const bool Settings::DEFAULT_START_CONTROLS = true;
 const bool Settings::DEFAULT_START_INFO = true;
+const int Settings::DEFAULT_WIDTH = 650;
+const int Settings::DEFAULT_HEIGHT = 300;
+const int Settings::DEFAULT_POS_X = 0;
+const int Settings::DEFAULT_POS_Y = 0;
 
 // GUI
 const bool Settings::DEFAULT_OSD = true;
@@ -50,9 +55,7 @@ const bool Settings::DEFAULT_TRAY_ENABLED = true;
 const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
 const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
 const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonIconOnly;
-const bool Settings::DEFAULT_REMEMBER_MAIN_SIZE = true;
-const int Settings::DEFAULT_MAIN_WIDTH = 650;
-const int Settings::DEFAULT_MAIN_HEIGHT = 300;
+const bool Settings::DEFAULT_REMEMBER_GUI_SESSION = true;
 
 // Backend - core
 const int Settings::DEFAULT_VOUT = -1;
@@ -65,6 +68,7 @@ const int Settings::DEFAULT_INTERFACE_INDEX = -1;
 
 // Backend - video settings
 const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;
+const bool Settings::DEFAULT_REMEMBER_VIDEO_PER_CHANNEL = false;
 const int Settings::DEFAULT_ASPECT_RATIO = 0;
 const int Settings::DEFAULT_CROP_RATIO = 0;
 const int Settings::DEFAULT_DEINTERLACING = 0;
