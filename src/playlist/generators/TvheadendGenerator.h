@@ -38,7 +38,6 @@ private:
     void clean();
     QString fileChannel(const int &number) const;
     QString fileIpService(const int &number) const;
-    QString fileIpTransport(const int &number) const;
     QString fileTag(const int &number) const;
 	void generateItem(Channel *channel);
     void generateTag(const int &id,

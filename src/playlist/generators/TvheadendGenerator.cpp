@@ -50,10 +50,6 @@ void TvheadendGenerator::clean()
     if (!QDir(_location + "/iptvservices/").exists()) {
         QDir(_location).rmdir("iptvservices");
     }
-
-    if (!QDir(_location + "/iptvtransports/").exists()) {
-        QDir(_location).rmdir("iptvtransports");
-    }
 }
 
 bool TvheadendGenerator::write(PlaylistModel *model)
@@ -97,14 +93,6 @@ QString TvheadendGenerator::fileIpService(const int &number) const
     return QString(_location + "/iptvservices/" + "iptv_" + QString::number(number));
 }
 
-QString TvheadendGenerator::fileIpTransport(const int &number) const
-{
-    if (!QDir(_location + "/iptvtransports/").exists()) {
-        QDir(_location).mkdir("iptvtransports");
-    }
-    return QString(_location + "/iptvtransports/" + "iptv_" + QString::number(number));
-}
-
 QString TvheadendGenerator::fileTag(const int &number) const
 {
     if (!QDir(_location + "/channeltags/").exists()) {
@@ -127,7 +115,6 @@ void TvheadendGenerator::generateItem(Channel *channel)
     QTextStream outC(&fChannel);
     outC << "{" << "\n"
          << indent(1) << "\"name\": \"" << channel->name() << "\"," << "\n"
-         << indent(1) << "\"xmltv-channel\": \"" << channel->xmltvId() << "\"," << "\n"
          << indent(1) << "\"icon\": \"" << channel->logo() << "\"," << "\n"
          << indent(1) << "\"tags\": [" << "\n";
     foreach (const QString &category, channel->categories()) {
@@ -152,38 +139,30 @@ void TvheadendGenerator::generateItem(Channel *channel)
         return;
     }
 
+    int type = 1;
+    switch (channel->type())
+    {
+    case Tano::Radio:
+        type = 2;
+        break;
+    case Tano::HD:
+        type = 17;
+        break;
+    case Tano::SD:
+    default:
+        type = 1;
+        break;
+    }
+
     QTextStream outIS(&fIpService);
     outIS << "{" << "\n"
           << indent(1) << "\"pmt\": 0," << "\n"
+          << indent(1) << "\"stype\": " << type << "," << "\n"
           << indent(1) << "\"port\": " << channel->url().replace(QRegExp("udp://@.*:"), "") << "," << "\n"
           << indent(1) << "\"interface\": \"" << _interface << "\"," << "\n"
           << indent(1) << "\"group\": \"" << channel->url().replace(QRegExp("udp://@"), "").replace(QRegExp(":.*"), "") << "\"," << "\n"
           << indent(1) << "\"channelname\": \"" << channel->name() << "\"," << "\n"
           << indent(1) << "\"mapped\": 1," << "\n"
- //         << indent(1) << "\"radio\": " << channel->radio() << "," << "\n"
-          << indent(1) << "\"pcr\": 0," << "\n"
-          << indent(1) << "\"disabled\": 0" << "\n"
-          << "}" << "\n";
-
-
-    QFile fIpTransport(fileIpTransport(channel->number()));
-    if (!fIpTransport.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(0, QObject::tr("Tano"),
-                            QObject::tr("Cannot write file %1:\n%2.")
-                            .arg(fileIpTransport(channel->number()))
-                            .arg(fIpTransport.errorString()));
-        return;
-    }
-
-    QTextStream outIT(&fIpTransport);
-    outIT << "{" << "\n"
-          << indent(1) << "\"pmt\": 0," << "\n"
-          << indent(1) << "\"port\": " << channel->url().replace(QRegExp("udp://@.*:"), "") << "," << "\n"
-          << indent(1) << "\"interface\": \"" << _interface << "\"," << "\n"
-          << indent(1) << "\"group\": \"" << channel->url().replace(QRegExp("udp://@"), "").replace(QRegExp(":.*"), "") << "\"," << "\n"
-          << indent(1) << "\"channelname\": \"" << channel->name() << "\"," << "\n"
-          << indent(1) << "\"mapped\": 1," << "\n"
- //         << indent(1) << "\"radio\": " << channel->radio() << "," << "\n"
           << indent(1) << "\"pcr\": 0," << "\n"
           << indent(1) << "\"disabled\": 0" << "\n"
           << "}" << "\n";
