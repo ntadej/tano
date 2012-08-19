@@ -454,6 +454,7 @@ void MainWindow::createConnections()
     connect(_mediaPlayer, SIGNAL(paused()), this, SLOT(setStopped()));
     connect(_mediaPlayer, SIGNAL(stopped()), this, SLOT(setStopped()));
     connect(_mediaPlayer, SIGNAL(end()), this, SLOT(setStopped()));
+    connect(_mediaPlayer, SIGNAL(error()), this, SLOT(setStopped()));
     connect(_mediaPlayer, SIGNAL(vout(int)), this, SLOT(showVideo(int)));
     connect(_mediaPlayer, SIGNAL(stopped()), this, SLOT(showVideo()));
 
