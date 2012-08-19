@@ -63,10 +63,34 @@ void PlaylistFilterWidget::editMode()
 
 void PlaylistFilterWidget::processFilters()
 {
+    QList<Tano::ChannelType> list;
+    switch (ui->comboType->currentIndex())
+    {
+    case 1:
+        list << Tano::SD
+             << Tano::HD;
+        break;
+    case 2:
+        list << Tano::SD;
+        break;
+    case 3:
+        list << Tano::HD;
+        break;
+    case 4:
+        list << Tano::Radio;
+        break;
+    case 0:
+    default:
+        list << Tano::SD
+             << Tano::HD
+             << Tano::Radio;
+        break;
+    }
+
     emit filters(ui->editSearch->text(),
                  ui->comboCategory->currentText(),
                  ui->comboLanguage->currentText(),
-                 ui->comboType->currentIndex());
+                 list);
 }
 
 void PlaylistFilterWidget::refreshModel(const QStringList &categories,

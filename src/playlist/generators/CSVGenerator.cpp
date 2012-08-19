@@ -26,6 +26,7 @@ CSVGenerator::CSVGenerator(const QString &file)
     _file = new QFile(file);
 
     QScopedPointer<Settings> settings(new Settings());
+    _hd = settings->hdCategory();
     _radio = settings->radioCategory();
 }
 
@@ -56,13 +57,24 @@ bool CSVGenerator::write(PlaylistModel *model)
 
 void CSVGenerator::generateItem(Channel *channel)
 {
-    _out << channel->numberString() << ";"
+    _out << QString::number(channel->number()) << ";"
          << channel->name() << ";"
          << channel->url() << ";";
-    if (channel->radio()) {
+    switch (channel->type())
+    {
+    case Tano::Radio:
         _out << _radio;
         if (!channel->categories().isEmpty())
             _out << ",";
+        break;
+    case Tano::HD:
+        _out << _hd;
+        if (!channel->categories().isEmpty())
+            _out << ",";
+        break;
+    case Tano::SD:
+    default:
+        break;
     }
     _out << channel->categories().join(",") << ";"
          << channel->language() << ";"

@@ -75,7 +75,7 @@ private slots:
     void editItem(Channel *channel);
 
     void editChannelNumber();
-    void editChannelRadio(const bool &radio);
+    void editChannelType(const int &type);
     void editChannelName(const QString &text);
     void editChannelUrl(const QString &text);
     void editChannelCategories(const QString &text);

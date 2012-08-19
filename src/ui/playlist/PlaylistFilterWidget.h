@@ -27,6 +27,8 @@
     #include <QtGui/QWidget>
 #endif
 
+#include "core/Enums.h"
+
 namespace Ui
 {
     class PlaylistFilterWidget;
@@ -50,7 +52,7 @@ signals:
     void filters(const QString &,
                  const QString &,
                  const QString &,
-                 const int &);
+                 const QList<Tano::ChannelType> &);
 
 private slots:
     void processFilters();

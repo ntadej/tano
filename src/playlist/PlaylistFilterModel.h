@@ -40,8 +40,8 @@ public:
     inline QString language() const { return _language; }
     void setLanguage(const QString &language);
 
-    inline Tano::ChannelType type() const { return _type; }
-    void setType(const Tano::ChannelType &type);
+    inline QList<Tano::ChannelType> types() const { return _types; }
+    void setTypes(const QList<Tano::ChannelType> &types);
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
@@ -49,7 +49,7 @@ protected:
 private:
     QString _category;
     QString _language;
-    Tano::ChannelType _type;
+    QList<Tano::ChannelType> _types;
 };
 
 #endif // TANO_PLAYLISTFILTERMODEL_H_

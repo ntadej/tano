@@ -27,6 +27,7 @@
 JsHandler::JsHandler()
 {
     QScopedPointer<Settings> settings(new Settings());
+    _hd = settings->hdCategory();
     _radio = settings->radioCategory();
 }
 
@@ -68,10 +69,14 @@ void JsHandler::processList()
 
         Channel *channel = new Channel(currentChannel[1], currentChannel[2].toInt());
         channel->setUrl("udp://@" + currentChannel[3] + ":" + currentChannel[4]);
-        if (currentChannel[5] == _radio)
-            channel->setRadio(true);
-        else
+        if (currentChannel[5] == _radio) {
+            channel->setType(Tano::Radio);
+        } else if (currentChannel[5] == _hd) {
+            channel->setType(Tano::HD);
+        } else {
+            channel->setType(Tano::SD);
             channel->setCategories(QStringList() << currentChannel[5]);
+        }
         channel->setLanguage(currentChannel[6]);
         channel->setXmltvId(currentChannel[7]);
 

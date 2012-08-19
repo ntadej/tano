@@ -22,6 +22,7 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
+#include "core/Enums.h"
 #include "core/ListItem.h"
 
 class Channel : public ListItem
@@ -33,7 +34,7 @@ public:
         DisplayIconRole = Qt::DecorationRole,
         NameRole = Qt::UserRole + 1,
         NumberRole,
-        RadioRole,
+        TypeRole,
         LanguageRole,
         UrlRole,
         XmltvIdRole,
@@ -53,11 +54,10 @@ public:
     QIcon displayIcon() const;
     QHash<int, QByteArray> roleNames() const;
 
-    int number() const { return _number; }
-    inline QString numberString() const { return QString().number(_number); }
+    inline int number() const { return _number; }
     void setNumber(const int &number);
-    inline bool radio() const { return _radio; }
-    void setRadio(const bool &radio);
+    inline Tano::ChannelType type() const { return _type; }
+    void setType(const Tano::ChannelType &type);
     inline QString name() const { return _name; }
     void setName(const QString &name);
     inline QString language() const { return _language; }
@@ -74,7 +74,7 @@ public:
 private:
     QString _name;
     int _number;
-    bool _radio;
+    Tano::ChannelType _type;
     QString _language;
     QString _url;
     QString _xmltvId;

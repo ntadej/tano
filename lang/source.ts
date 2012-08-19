@@ -736,15 +736,27 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Radio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Scan for new channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -867,23 +879,31 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>TV + Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TV only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>All categories</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>All languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

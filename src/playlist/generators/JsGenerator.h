@@ -40,6 +40,7 @@ private:
     QFile *_file;
     QTextStream _out;
 
+    QString _hd;
     QString _radio;
 };
 

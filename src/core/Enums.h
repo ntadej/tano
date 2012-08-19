@@ -46,8 +46,8 @@ namespace Tano
     // Channel types
     enum ChannelType
     {
-        All,
-        TV,
+        SD,
+        HD,
         Radio
     };
 

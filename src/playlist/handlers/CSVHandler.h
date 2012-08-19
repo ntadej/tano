@@ -53,6 +53,7 @@ private:
     QStringList _csvLineList;
 
     // Parameters
+    QString _hd;
     QString _radio;
     QString _separator;
     bool _header;

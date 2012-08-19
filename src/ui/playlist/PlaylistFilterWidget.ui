@@ -42,17 +42,27 @@
     <widget class="QComboBox" name="comboType">
      <item>
       <property name="text">
-       <string>TV + Radio</string>
+       <string>All</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>TV only</string>
+       <string>TV</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Radio only</string>
+       <string>SD</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>HD</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Radio</string>
       </property>
      </item>
     </widget>

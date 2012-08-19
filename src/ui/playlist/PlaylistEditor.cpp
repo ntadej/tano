@@ -119,8 +119,7 @@ void PlaylistEditor::createConnections()
     connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(setTitle(QString)));
 
     connect(ui->buttonApplyNum, SIGNAL(clicked()), this, SLOT(editChannelNumber()));
-    connect(ui->editNumber, SIGNAL(returnPressed()), ui->buttonApplyNum, SLOT(click()));
-    connect(ui->editRadio, SIGNAL(toggled(bool)), this, SLOT(editChannelRadio(bool)));
+    connect(ui->editType, SIGNAL(currentIndexChanged(int)), this, SLOT(editChannelType(int)));
     connect(ui->editChannelName, SIGNAL(textChanged(QString)), this, SLOT(editChannelName(QString)));
     connect(ui->editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
     connect(ui->editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
@@ -248,8 +247,8 @@ void PlaylistEditor::newPlaylist()
 
 void PlaylistEditor::deleteItem()
 {
-    ui->editNumber->setText("");
-    ui->editRadio->setChecked(false);
+    ui->editNumber->setValue(1);
+    ui->editType->setCurrentIndex(0);
     ui->editChannelName->setText("");
     ui->editUrl->setText("");
     ui->editCategories->setText("");
@@ -404,8 +403,8 @@ void PlaylistEditor::editItem(Channel *channel)
     if (!ui->editWidget->isEnabled())
         ui->editWidget->setEnabled(true);
 
-    ui->editNumber->setText(channel->numberString());
-    ui->editRadio->setChecked(channel->radio());
+    ui->editNumber->setValue(channel->number());
+    ui->editType->setCurrentIndex(channel->type());
     ui->editChannelName->setText(channel->name());
     ui->editUrl->setText(channel->url());
     ui->editCategories->setText(channel->categories().join(","));
@@ -422,12 +421,12 @@ void PlaylistEditor::editChannelNumber()
     else
         QMessageBox::warning(this, tr("Tano"),
                             tr("A channel with this number already exists!"));
-    ui->editNumber->setText(QString().number(ui->playlist->currentChannel()->number()));
+    ui->editNumber->setValue(ui->playlist->currentChannel()->number());
 }
 
-void PlaylistEditor::editChannelRadio(const bool &radio)
+void PlaylistEditor::editChannelType(const int &type)
 {
-    ui->playlist->currentChannel()->setRadio(radio);
+    ui->playlist->currentChannel()->setType(Tano::ChannelType(type));
 }
 
 void PlaylistEditor::editChannelName(const QString &text)
@@ -463,11 +462,11 @@ void PlaylistEditor::editChannelLogo(const QString &text)
 void PlaylistEditor::moveUp()
 {
     _model->moveUp(ui->playlist->currentChannel());
-    ui->editNumber->setText(ui->playlist->currentChannel()->numberString());
+    ui->editNumber->setValue(ui->playlist->currentChannel()->number());
 }
 
 void PlaylistEditor::moveDown()
 {
     _model->moveDown(ui->playlist->currentChannel());
-    ui->editNumber->setText(ui->playlist->currentChannel()->numberString());
+    ui->editNumber->setValue(ui->playlist->currentChannel()->number());
 }

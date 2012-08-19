@@ -766,7 +766,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Radio:</source>
-        <translation>Радіо:</translation>
+        <translation type="obsolete">Радіо:</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
@@ -775,6 +775,22 @@ You will lose any unsaved changes.</source>
     <message>
         <source>XMLTV ID:</source>
         <translation>XMLTV ідентифікатор:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Тип:</translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Радіо</translation>
     </message>
 </context>
 <context>
@@ -897,15 +913,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation>ТВ + Радіо</translation>
+        <translation type="obsolete">ТВ + Радіо</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation>Лише ТВ</translation>
+        <translation type="obsolete">Лише ТВ</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation>Лише Радіо</translation>
+        <translation type="obsolete">Лише Радіо</translation>
     </message>
     <message>
         <source>All categories</source>
@@ -914,6 +930,26 @@ You will lose any unsaved changes.</source>
     <message>
         <source>All languages</source>
         <translation>Усі мови</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Радіо</translation>
     </message>
 </context>
 <context>

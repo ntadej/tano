@@ -28,7 +28,7 @@ Channel::Channel(const QString &name,
       _name(name),
       _number(number)
 {
-    _radio = false;
+    _type = Tano::SD;
     _language = "";
     _url = "";
     _xmltvId = "";
@@ -44,7 +44,7 @@ QHash<int, QByteArray> Channel::roleNames() const
     names[DisplayRole] = "display";
     names[DisplayIconRole] = "displayIcon";
     names[NameRole] = "name";
-    names[RadioRole] = "radio";
+    names[TypeRole] = "type";
     names[NumberRole] = "number";
     names[LanguageRole] = "language";
     names[UrlRole] = "url";
@@ -66,8 +66,8 @@ QVariant Channel::data(int role) const
         return name();
     case NumberRole:
         return number();
-    case RadioRole:
-        return radio();
+    case TypeRole:
+        return type();
     case LanguageRole:
         return language();
     case UrlRole:
@@ -85,15 +85,17 @@ QVariant Channel::data(int role) const
 
 QString Channel::display() const
 {
-    return QString("%1. %2").arg(numberString(), name());
+    return QString("%1. %2").arg(QString::number(number()), name());
 }
 
 QIcon Channel::displayIcon() const
 {
-    if (radio())
+    if (type() == Tano::Radio)
         return QIcon(":/icons/16x16/audio.png");
+    else if (type() == Tano::HD)
+        return QIcon(":/icons/16x16/hd.png");
     else
-        return QIcon(":/icons/16x16/video.png");
+        return QIcon(":/icons/16x16/sd.png");
 }
 
 void Channel::setNumber(const int &number)
@@ -104,10 +106,10 @@ void Channel::setNumber(const int &number)
     }
 }
 
-void Channel::setRadio(const bool &radio)
+void Channel::setType(const Tano::ChannelType &type)
 {
-    if (_radio != radio) {
-        _radio = radio;
+    if (_type != type) {
+        _type = type;
         emit dataChanged();
     }
 }

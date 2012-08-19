@@ -27,6 +27,7 @@
 CSVHandler::CSVHandler()
 {
     QScopedPointer<Settings> settings(new Settings());
+    _hd = settings->hdCategory();
     _radio = settings->radioCategory();
 }
 
@@ -57,7 +58,12 @@ void CSVHandler::processChannel(const QStringList &list)
     QStringList categories = list[_categories].split(",");
     if (categories.contains(_radio)) {
         categories.removeAll(_radio);
-        _channel->setRadio(true);
+        _channel->setType(Tano::Radio);
+    } else if (categories.contains(_hd)) {
+        categories.removeAll(_hd);
+        _channel->setType(Tano::HD);
+    } else {
+        _channel->setType(Tano::SD);
     }
     _channel->setCategories(categories);
 

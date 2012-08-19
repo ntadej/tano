@@ -92,7 +92,7 @@ void Print::channelList(const QString &name,
 
         if(list[0] >= 0) {
             cursor = channelsTable->cellAt(row, list[0]).firstCursorPosition();
-            cursor.insertText(model->row(i)->numberString(), _textFormat);
+            cursor.insertText(QString::number(model->row(i)->number()), _textFormat);
         }
         if(list[1] >= 0) {
             cursor = channelsTable->cellAt(row, list[1]).firstCursorPosition();

@@ -107,7 +107,7 @@
    <property name="minimumSize">
     <size>
      <width>300</width>
-     <height>253</height>
+     <height>264</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -134,34 +134,6 @@
    </attribute>
    <widget class="QWidget" name="editWidgetContents">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="labelNumber">
-       <property name="text">
-        <string>Number:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="labelChannelName">
-       <property name="text">
-        <string>Name:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="labelCategories">
-       <property name="text">
-        <string>Categories:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="labelLanguage">
-       <property name="text">
-        <string>Language:</string>
-       </property>
-      </widget>
-     </item>
      <item row="7" column="0">
       <widget class="QLabel" name="labelXmltvId">
        <property name="text">
@@ -169,52 +141,12 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="editNumber">
-       <property name="minimumSize">
-        <size>
-         <width>60</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>60</width>
-         <height>16777215</height>
-        </size>
-       </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelNumber">
        <property name="text">
-        <string notr="true"/>
-       </property>
-       <property name="maxLength">
-        <number>3</number>
+        <string>Number:</string>
        </property>
       </widget>
-     </item>
-     <item row="2" column="1" colspan="5">
-      <widget class="QLineEdit" name="editChannelName"/>
-     </item>
-     <item row="4" column="1" colspan="5">
-      <widget class="QLineEdit" name="editCategories"/>
-     </item>
-     <item row="6" column="1" colspan="5">
-      <widget class="QLineEdit" name="editLanguage"/>
-     </item>
-     <item row="7" column="1" colspan="5">
-      <widget class="QLineEdit" name="editXmltvId"/>
-     </item>
-     <item row="10" column="0" colspan="6">
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="labelUrl">
@@ -223,10 +155,20 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1" colspan="5">
-      <widget class="QLineEdit" name="editUrl"/>
+     <item row="4" column="1" colspan="6">
+      <widget class="QLineEdit" name="editCategories"/>
      </item>
-     <item row="0" column="2">
+     <item row="2" column="1" colspan="6">
+      <widget class="QLineEdit" name="editChannelName"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelChannelName">
+       <property name="text">
+        <string>Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
       <widget class="QPushButton" name="buttonApplyNum">
        <property name="minimumSize">
         <size>
@@ -252,31 +194,71 @@
        </property>
       </widget>
      </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="labelLogo">
+     <item row="7" column="1" colspan="6">
+      <widget class="QLineEdit" name="editXmltvId"/>
+     </item>
+     <item row="3" column="1" colspan="6">
+      <widget class="QLineEdit" name="editUrl"/>
+     </item>
+     <item row="6" column="1" colspan="6">
+      <widget class="QLineEdit" name="editLanguage"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="editType">
+       <property name="maxVisibleItems">
+        <number>3</number>
+       </property>
+       <property name="maxCount">
+        <number>3</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>SD</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>HD</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Radio</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="10" column="0" colspan="7">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="labelLanguage">
        <property name="text">
-        <string>Logo:</string>
+        <string>Language:</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="1" colspan="5">
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelType">
+       <property name="text">
+        <string>Type:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1" colspan="6">
       <widget class="QLineEdit" name="editLogo"/>
      </item>
      <item row="0" column="4">
-      <widget class="QLabel" name="labelRadio">
-       <property name="text">
-        <string>Radio:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="5">
-      <widget class="QCheckBox" name="editRadio">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -288,6 +270,30 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="labelCategories">
+       <property name="text">
+        <string>Categories:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="labelLogo">
+       <property name="text">
+        <string>Logo:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="editNumber">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>999</number>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

@@ -40,6 +40,7 @@ private:
     QList<Channel *> _channelList;
 
     QStringList _lineList;
+    QString _hd;
     QString _radio;
 };
 

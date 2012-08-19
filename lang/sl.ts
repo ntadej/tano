@@ -769,7 +769,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Radio:</source>
-        <translation>Radio:</translation>
+        <translation type="obsolete">Radio:</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
@@ -778,6 +778,22 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>XMLTV ID:</source>
         <translation>XMLTV ID:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Tip:</translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Radio</translation>
     </message>
 </context>
 <context>
@@ -900,15 +916,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>TV + Radio</source>
-        <translation>TV + Radio</translation>
+        <translation type="obsolete">TV + Radio</translation>
     </message>
     <message>
         <source>TV only</source>
-        <translation>Samo TV</translation>
+        <translation type="obsolete">Samo TV</translation>
     </message>
     <message>
         <source>Radio only</source>
-        <translation>Samo radio</translation>
+        <translation type="obsolete">Samo radio</translation>
     </message>
     <message>
         <source>All categories</source>
@@ -917,6 +933,26 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>All languages</source>
         <translation>Vsi jeziki</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Radio</translation>
     </message>
 </context>
 <context>

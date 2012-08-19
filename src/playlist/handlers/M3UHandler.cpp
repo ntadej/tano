@@ -29,6 +29,7 @@ M3UHandler::M3UHandler()
     _name = QObject::tr("Channel list");
 
     QScopedPointer<Settings> settings(new Settings());
+    _hd = settings->hdCategory();
     _radio = settings->radioCategory();
 }
 
@@ -80,8 +81,13 @@ void M3UHandler::processList()
             if (!tmpList.isEmpty()) {
                 tmpCList = tmpList[0].split(",");
                 if (tmpCList.contains(_radio)) {
-                    _channel->setRadio(true);
                     tmpCList.removeAll(_radio);
+                    _channel->setType(Tano::Radio);
+                } else if (tmpCList.contains(_hd)) {
+                    tmpCList.removeAll(_hd);
+                    _channel->setType(Tano::HD);
+                } else {
+                    _channel->setType(Tano::SD);
                 }
                 _channel->setCategories(tmpCList);
                 _channel->setLanguage(tmpList[1]);

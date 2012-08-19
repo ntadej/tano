@@ -21,7 +21,12 @@
 #include "PlaylistFilterModel.h"
 
 PlaylistFilterModel::PlaylistFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent) { }
+    : QSortFilterProxyModel(parent)
+{
+    _types << Tano::SD
+           << Tano::HD
+           << Tano::Radio;
+}
 
 PlaylistFilterModel::~PlaylistFilterModel() { }
 
@@ -43,9 +48,9 @@ void PlaylistFilterModel::setLanguage(const QString &language)
     invalidateFilter();
 }
 
-void PlaylistFilterModel::setType(const Tano::ChannelType &type)
+void PlaylistFilterModel::setTypes(const QList<Tano::ChannelType> &types)
 {
-    _type = type;
+    _types = types;
     invalidateFilter();
 }
 
@@ -57,16 +62,7 @@ bool PlaylistFilterModel::filterAcceptsRow(int sourceRow,
     bool name = sourceModel()->data(index, Channel::NameRole).toString().contains(filterRegExp());
     bool category = sourceModel()->data(index, Channel::CategoriesRole).toStringList().join("|").contains(_category, Qt::CaseInsensitive);
     bool language = sourceModel()->data(index, Channel::LanguageRole).toString().contains(_language, Qt::CaseInsensitive);
-    bool radio = sourceModel()->data(index, Channel::RadioRole).toBool();
+    bool type = _types.contains(Tano::ChannelType(sourceModel()->data(index, Channel::TypeRole).toInt()));
 
-    switch(_type)
-    {
-    case Tano::TV:
-        return (name && category && language && !radio);
-    case Tano::Radio:
-        return (name && category && language && radio);
-    case Tano::All:
-    default:
-        return (name && category && language);
-    }
+    return name && category && language && type;
 }

@@ -52,7 +52,7 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
 	_rightMenu->addAction(_schedule);
 
     connect(ui->playlistView, SIGNAL(activated(QModelIndex)), this, SLOT(channelSelected(QModelIndex)));
-    connect(ui->filters, SIGNAL(filters(QString, QString, QString, int)), this, SLOT(processFilters(QString, QString, QString, int)));
+    connect(ui->filters, SIGNAL(filters(QString, QString, QString, QList<Tano::ChannelType>)), this, SLOT(processFilters(QString, QString, QString, QList<Tano::ChannelType>)));
     connect(_play, SIGNAL(triggered()), this, SLOT(play()));
     connect(_schedule, SIGNAL(triggered()), this, SLOT(schedule()));
 }
@@ -128,13 +128,13 @@ void PlaylistDisplayWidget::playMode()
 void PlaylistDisplayWidget::processFilters(const QString &search,
                                            const QString &category,
                                            const QString &language,
-                                           const int &type)
+                                           const QList<Tano::ChannelType> &types)
 {
     QRegExp regExp(search, Qt::CaseInsensitive);
     _filterModel->setFilterRegExp(regExp);
     _filterModel->setCategory(category);
     _filterModel->setLanguage(language);
-    _filterModel->setType(Tano::ChannelType(type));
+    _filterModel->setTypes(types);
 }
 
 void PlaylistDisplayWidget::refreshModel()

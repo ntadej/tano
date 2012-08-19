@@ -26,6 +26,7 @@ JsGenerator::JsGenerator(const QString &file)
     _file = new QFile(file);
 
     QScopedPointer<Settings> settings(new Settings());
+    _hd = settings->hdCategory();
     _radio = settings->radioCategory();
 }
 
@@ -58,13 +59,22 @@ void JsGenerator::generateItem(const int &id,
     _out << "["
          << id << ","
          << "\"" << channel->name() << "\"" << ","
-         << "\"" << channel->numberString() << "\"" << ","
+         << "\"" << QString::number(channel->number()) << "\"" << ","
          << "\"" << channel->url().replace(QRegExp("udp://@"), "").replace(QRegExp(":.*"), "") << "\"" << ","
          << "\"" << channel->url().replace(QRegExp("udp://@.*:"), "") << "\"" << ",";
-    if (channel->radio())
+    switch (channel->type())
+    {
+    case Tano::Radio:
         _out << "\"" << _radio << "\"" << ",";
-    else
+        break;
+    case Tano::HD:
+        _out << "\"" << _hd << "\"" << ",";
+        break;
+    case Tano::SD:
+    default:
         _out << "\"" << channel->categories()[0] << "\"" << ",";
+        break;
+    }
     _out << "\"" << channel->language() << "\"" << ","
          << "\"" << channel->xmltvId() << "\"" << ","
          << "\"" << "false" << "\""

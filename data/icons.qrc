@@ -99,5 +99,7 @@
         <file>icons/24x24/image.png</file>
         <file>icons/16x16/image.png</file>
         <file>icons/misc/paypal_donate_global.gif</file>
+        <file>icons/16x16/hd.png</file>
+        <file>icons/16x16/sd.png</file>
     </qresource>
 </RCC>

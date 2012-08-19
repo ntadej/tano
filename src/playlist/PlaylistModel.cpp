@@ -233,7 +233,7 @@ void PlaylistModel::processChannel(Channel *channel)
         exists->setLanguage(channel->language());
         exists->setLogo(channel->logo());
         exists->setName(channel->name());
-        exists->setRadio(channel->radio());
+        exists->setType(channel->type());
         exists->setUrl(channel->url());
 
         return;

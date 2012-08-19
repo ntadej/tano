@@ -41,6 +41,7 @@ private:
     Channel *_channel;
 
     QString _name;
+    QString _hd;
     QString _radio;
     QStringList _m3uLineList;
 

@@ -49,6 +49,7 @@ private:
 
     Udpxy *_udpxy;
 
+    QString _hd;
     QString _radio;
 };
 

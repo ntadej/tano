@@ -30,6 +30,7 @@ M3UGenerator::M3UGenerator(const QString &file,
     _udpxy = new Udpxy();
 
     QScopedPointer<Settings> settings(new Settings());
+    _hd = settings->hdCategory();
     _radio = settings->radioCategory();
 }
 
@@ -74,15 +75,25 @@ bool M3UGenerator::write(PlaylistModel *model)
 void M3UGenerator::generateItemNormal(Channel *channel)
 {
     _out << "#EXTINF:"
-         << channel->numberString() << ","
+         << QString::number(channel->number()) << ","
          << channel->name() << "\n";
 
     _out << "#EXTTV:";
-    if (channel->radio()) {
+    switch (channel->type())
+    {
+    case Tano::Radio:
         _out << _radio;
-
         if (!channel->categories().isEmpty())
             _out << ",";
+        break;
+    case Tano::HD:
+        _out << _hd;
+        if (!channel->categories().isEmpty())
+            _out << ",";
+        break;
+    case Tano::SD:
+    default:
+        break;
     }
     _out << channel->categories().join(",") << ";";
     _out << channel->language() << ";"
@@ -102,7 +113,7 @@ void M3UGenerator::generateItemNormal(Channel *channel)
 void M3UGenerator::generateItemClean(Channel *channel)
 {
     _out << "#EXTINF:"
-         << channel->numberString() << ","
+         << QString::number(channel->number()) << ","
          << channel->name() << "\n";
 
     _out << channel->url();
@@ -112,15 +123,25 @@ void M3UGenerator::generateItemClean(Channel *channel)
 void M3UGenerator::generateItemUdpxy(Channel *channel)
 {
     _out << "#EXTINF:"
-         << channel->numberString() << ","
+         << QString::number(channel->number()) << ","
          << channel->name() << "\n";
 
     _out << "#EXTTV:";
-    if (channel->radio()) {
+    switch (channel->type())
+    {
+    case Tano::Radio:
         _out << _radio;
-
-        if (channel->categories().isEmpty())
+        if (!channel->categories().isEmpty())
             _out << ",";
+        break;
+    case Tano::HD:
+        _out << _hd;
+        if (!channel->categories().isEmpty())
+            _out << ",";
+        break;
+    case Tano::SD:
+    default:
+        break;
     }
     _out << channel->categories().join(",") << ";";
     _out << channel->language() << ";"
