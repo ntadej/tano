@@ -773,7 +773,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation>Preišči za nove programe</translation>
+        <translation type="obsolete">Preišči za nove programe</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
@@ -794,6 +794,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Radio</source>
         <translation type="unfinished">Radio</translation>
+    </message>
+    <message>
+        <source>Scan for new TV channels</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -772,7 +772,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation>Prohledat na nové programy</translation>
+        <translation type="obsolete">Prohledat na nové programy</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
@@ -793,6 +793,10 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Radio</source>
         <translation type="unfinished">Rádio</translation>
+    </message>
+    <message>
+        <source>Scan for new TV channels</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

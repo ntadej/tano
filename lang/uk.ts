@@ -770,7 +770,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation>Сканувати для нових каналів</translation>
+        <translation type="obsolete">Сканувати для нових каналів</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
@@ -791,6 +791,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Radio</source>
         <translation type="unfinished">Радіо</translation>
+    </message>
+    <message>
+        <source>Scan for new TV channels</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

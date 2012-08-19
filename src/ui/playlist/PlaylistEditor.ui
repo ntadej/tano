@@ -310,7 +310,7 @@
     <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
    </property>
    <property name="windowTitle">
-    <string>Scan for new channels</string>
+    <string>Scan for new TV channels</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>2</number>
