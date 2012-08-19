@@ -1045,6 +1045,14 @@ You will lose any unsaved changes.</source>
         <source>XMLTV ID</source>
         <translation>XMLTV ідентифікатор</translation>
     </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PrintDialog</name>
@@ -1078,11 +1086,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>EPG</source>
-        <translation>EPG</translation>
+        <translation type="obsolete">EPG</translation>
     </message>
     <message>
         <source>Print channel List</source>
         <translation>Надрукувати перелік каналів</translation>
+    </message>
+    <message>
+        <source>Channel type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished">XMLTV ідентифікатор</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1398,6 +1418,18 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Set video output</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Радіо</translation>
     </message>
 </context>
 <context>

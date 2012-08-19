@@ -59,7 +59,13 @@ void Print::channelList(const QString &name,
     cursor.insertText(name, _titleFormat);
     cursor.insertBlock();
 
-    QTextTable *channelsTable = cursor.insertTable(1, list[list.size()-1], _tableFormat);
+    int max = 0;
+    foreach(int i, list) {
+        if (i >= 0)
+            max++;
+    }
+
+    QTextTable *channelsTable = cursor.insertTable(1, max, _tableFormat);
 
     if(list[0] >= 0) {
         cursor = channelsTable->cellAt(0, list[0]).firstCursorPosition();
@@ -71,19 +77,27 @@ void Print::channelList(const QString &name,
     }
     if(list[2] >= 0) {
         cursor = channelsTable->cellAt(0, list[2]).firstCursorPosition();
-        cursor.insertText(tr("Url"), _boldFormat);
+        cursor.insertText(tr("Type"), _boldFormat);
     }
     if(list[3] >= 0) {
         cursor = channelsTable->cellAt(0, list[3]).firstCursorPosition();
-        cursor.insertText(tr("Categories"), _boldFormat);
+        cursor.insertText(tr("Url"), _boldFormat);
     }
     if(list[4] >= 0) {
         cursor = channelsTable->cellAt(0, list[4]).firstCursorPosition();
-        cursor.insertText(tr("Language"), _boldFormat);
+        cursor.insertText(tr("Categories"), _boldFormat);
     }
     if(list[5] >= 0) {
         cursor = channelsTable->cellAt(0, list[5]).firstCursorPosition();
+        cursor.insertText(tr("Language"), _boldFormat);
+    }
+    if(list[6] >= 0) {
+        cursor = channelsTable->cellAt(0, list[6]).firstCursorPosition();
         cursor.insertText(tr("XMLTV ID"), _boldFormat);
+    }
+    if(list[7] >= 0) {
+        cursor = channelsTable->cellAt(0, list[7]).firstCursorPosition();
+        cursor.insertText(tr("Logo"), _boldFormat);
     }
 
     for (int i = 0; i < model->rowCount(); ++i) {
@@ -100,19 +114,27 @@ void Print::channelList(const QString &name,
         }
         if(list[2] >= 0) {
             cursor = channelsTable->cellAt(row, list[2]).firstCursorPosition();
-            cursor.insertText(model->row(i)->url(), _textFormat);
+            cursor.insertText(Tano::channelTypes()[model->row(i)->type()], _textFormat);
         }
         if(list[3] >= 0) {
             cursor = channelsTable->cellAt(row, list[3]).firstCursorPosition();
-            cursor.insertText(model->row(i)->categories().join(", "), _textFormat);
+            cursor.insertText(model->row(i)->url(), _textFormat);
         }
         if(list[4] >= 0) {
             cursor = channelsTable->cellAt(row, list[4]).firstCursorPosition();
-            cursor.insertText(model->row(i)->language(), _textFormat);
+            cursor.insertText(model->row(i)->categories().join(", "), _textFormat);
         }
         if(list[5] >= 0) {
             cursor = channelsTable->cellAt(row, list[5]).firstCursorPosition();
+            cursor.insertText(model->row(i)->language(), _textFormat);
+        }
+        if(list[6] >= 0) {
+            cursor = channelsTable->cellAt(row, list[6]).firstCursorPosition();
             cursor.insertText(model->row(i)->xmltvId(), _textFormat);
+        }
+        if(list[7] >= 0) {
+            cursor = channelsTable->cellAt(row, list[7]).firstCursorPosition();
+            cursor.insertText(model->row(i)->logo(), _textFormat);
         }
     }
 

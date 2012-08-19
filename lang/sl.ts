@@ -1048,6 +1048,14 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>XMLTV ID</source>
         <translation>XMLTV ID</translation>
     </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PrintDialog</name>
@@ -1081,11 +1089,23 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>EPG</source>
-        <translation>EPG</translation>
+        <translation type="obsolete">EPG</translation>
     </message>
     <message>
         <source>Print channel List</source>
         <translation>Natisni seznam programov</translation>
+    </message>
+    <message>
+        <source>Channel type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished">XMLTV ID</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1401,6 +1421,18 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Set video output</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Radio</translation>
     </message>
 </context>
 <context>

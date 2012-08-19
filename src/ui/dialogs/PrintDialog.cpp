@@ -83,10 +83,12 @@ void PrintDialog::print()
 
     box << ui->checkNum
         << ui->checkName
+        << ui->checkType
         << ui->checkUrl
         << ui->checkCategories
         << ui->checkLanguage
-        << ui->checkEpg;
+        << ui->checkEpg
+        << ui->checkLogo;
 
     foreach (QCheckBox *check, box) {
         if (check->isChecked()) {
@@ -97,6 +99,5 @@ void PrintDialog::print()
         }
     }
 
-    list << k;
     _print->channelList(_name, _model, list);
 }

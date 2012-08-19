@@ -20,6 +20,16 @@
 
 #include "Enums.h"
 
+QStringList Tano::channelTypes()
+{
+    QStringList list;
+    list << QObject::tr("SD")
+         << QObject::tr("HD")
+         << QObject::tr("Radio");
+
+    return list;
+}
+
 QStringList Tano::timerStates()
 {
     QStringList list;

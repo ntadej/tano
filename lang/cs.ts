@@ -1047,6 +1047,14 @@ Ztratíte všechny neuložené změny.</translation>
         <source>XMLTV ID</source>
         <translation>ID XMLTV</translation>
     </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PrintDialog</name>
@@ -1080,11 +1088,23 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>EPG</source>
-        <translation>EPG</translation>
+        <translation type="obsolete">EPG</translation>
     </message>
     <message>
         <source>Print channel List</source>
         <translation>Vytisknout seznam programů</translation>
+    </message>
+    <message>
+        <source>Channel type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished">ID XMLTV</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1400,6 +1420,18 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Set video output</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Rádio</translation>
     </message>
 </context>
 <context>

@@ -1477,6 +1477,14 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <source>XMLTV ID</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PrintDialog</name>
@@ -1510,11 +1518,23 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>EPG</source>
-        <translation>EPG</translation>
+        <translation type="obsolete">EPG</translation>
     </message>
     <message>
         <source>Print channel List</source>
         <translation>Imprimer la liste des chaînes</translation>
+    </message>
+    <message>
+        <source>Channel type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1850,6 +1870,18 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>Set video output</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Radio</translation>
     </message>
 </context>
 <context>

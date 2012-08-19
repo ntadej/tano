@@ -996,6 +996,14 @@ You will lose any unsaved changes.</source>
         <source>XMLTV ID</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PrintDialog</name>
@@ -1028,11 +1036,19 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>EPG</source>
+        <source>Print channel List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Print channel List</source>
+        <source>Channel type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1346,6 +1362,18 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Set video output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

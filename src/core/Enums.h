@@ -88,6 +88,8 @@ namespace Tano
         Instant
     };
 
+    QStringList channelTypes();
+
     QStringList timerStates();
     QStringList timerTypes();
     QStringList timerTypesLong();

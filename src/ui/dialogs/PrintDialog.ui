@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>300</width>
-    <height>265</height>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -46,6 +46,13 @@
        </widget>
       </item>
       <item>
+       <widget class="QCheckBox" name="checkType">
+        <property name="text">
+         <string>Channel type</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QCheckBox" name="checkUrl">
         <property name="text">
          <string>URL</string>
@@ -69,7 +76,14 @@
       <item>
        <widget class="QCheckBox" name="checkEpg">
         <property name="text">
-         <string>EPG</string>
+         <string>XMLTV ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkLogo">
+        <property name="text">
+         <string>Logo</string>
         </property>
        </widget>
       </item>
