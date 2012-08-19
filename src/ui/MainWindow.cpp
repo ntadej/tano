@@ -185,6 +185,12 @@ void MainWindow::showEvent(QShowEvent *event)
 {
     Q_UNUSED(event)
 
+    if (_rememberGui && _posX && _posY) {
+        move(_posX, _posY);
+        _posX = 0;
+        _posY = 0;
+    }
+
     ui->dockControls->setVisible(_dockControlsVisible);
     ui->dockInfo->setVisible(_dockInfoVisible);
 
@@ -195,9 +201,6 @@ void MainWindow::showEvent(QShowEvent *event)
 // Init functions
 void MainWindow::createGui()
 {
-    if (_rememberGui)
-        resize(_mainWidth, _mainHeight);
-
     _osdMain = new OsdWidget(this);
     _osdMain->setBackend(_mediaPlayer);
     _osdMain->toggleTeletext(_teletext);
@@ -234,7 +237,7 @@ void MainWindow::createGui()
 #if !TELETEXT
     _osdMain->toggleTeletext(false);
     ui->menuMedia->removeAction(ui->actionTeletext);
-#endif
+#endif 
 
     qDebug() << "Initialised: GUI";
 }
@@ -328,8 +331,10 @@ void MainWindow::createSettingsStartup()
 
     _teletext = settings->teletext();
 
-    _mainWidth = settings->width();
-    _mainHeight = settings->height();
+    _width = settings->width();
+    _height = settings->height();
+    _posX = settings->posX();
+    _posY = settings->posY();
 
     // GUI
     if (settings->startLite()) {
@@ -571,6 +576,10 @@ void MainWindow::createSession()
     _update->checkSilent();
 #endif
 
+    if (_rememberGui) {
+        resize(_width, _height);
+    }
+
     qDebug() << "Initialised: Session";
 }
 
@@ -606,6 +615,10 @@ void MainWindow::writeSession()
     if (_rememberGui) {
         settings->setWidth(size().width());
         settings->setHeight(size().height());
+        settings->setPosX(x());
+        settings->setPosY(y());
+        settings->setStartControls(ui->dockControls->isVisible());
+        settings->setStartInfo(ui->dockInfo->isVisible());
     }
 
     settings->writeSettings();

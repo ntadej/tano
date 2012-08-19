@@ -182,8 +182,10 @@ private:
     bool _muteOnMinimize;
     bool _recordNow;
     bool _rememberGui;
-    int _mainWidth;
-    int _mainHeight;
+    int _width;
+    int _height;
+    int _posX;
+    int _posY;
     int _sessionChannel;
     bool _sessionVolumeEnabled;
     bool _sessionAutoplayEnabled;
@@ -191,6 +193,7 @@ private:
     bool _teletext;
     bool _udpxyEnabled;
     bool _videoSettings;
+    bool _videoSettingsChannel;
     QString _wheelType;
 
     //Main
