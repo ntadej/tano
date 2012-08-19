@@ -112,11 +112,7 @@ void OsdFloat::setInfo()
     resize(_defaultWidth, _defaultHeight);
 
     _defaultX = _desktopWidth - width();
-    if (_desktopHeight > 800) {
-        _defaultY = (_desktopHeight - height())/2;
-    } else {
-        _defaultY = 0;
-    }
+    _defaultY = (_desktopHeight - height() - 100)/2;
 
     move(_defaultX, _defaultY);
 }
