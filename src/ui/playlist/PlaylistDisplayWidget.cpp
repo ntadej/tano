@@ -92,8 +92,13 @@ void PlaylistDisplayWidget::channelSelected(const QModelIndex &index)
 
 void PlaylistDisplayWidget::channelSelected(const int &channel)
 {
+    if (!channel) {
+        _current = 0;
+        emit itemSelected(_current);
+        return;
+    }
+
     _current = _model->number(channel);
-    emit itemSelected(_current);
     updateSelection(_current);
 }
 

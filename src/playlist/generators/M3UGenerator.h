@@ -38,9 +38,9 @@ public:
     bool write(PlaylistModel *model);
 
 private:
-    void generateItemNormal(Channel *channel);
-    void generateItemClean(Channel *channel);
-    void generateItemUdpxy(Channel *channel);
+    void generateItem(Channel *channel,
+                      const bool &clean = false,
+                      const bool &udpxy = false);
 
     Tano::FileType _type;
 

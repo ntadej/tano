@@ -57,13 +57,13 @@ bool M3UGenerator::write(PlaylistModel *model)
         switch (_type)
         {
         case Tano::M3U:
-            generateItemNormal(model->row(i));
+            generateItem(model->row(i));
             break;
         case Tano::M3UClean:
-            generateItemClean(model->row(i));
+            generateItem(model->row(i), true, false);
             break;
         case Tano::M3UUdpxy:
-            generateItemUdpxy(model->row(i));
+            generateItem(model->row(i), false, true);
             break;
         default:
             break;
@@ -72,89 +72,46 @@ bool M3UGenerator::write(PlaylistModel *model)
     return true;
 }
 
-void M3UGenerator::generateItemNormal(Channel *channel)
+void M3UGenerator::generateItem(Channel *channel, const bool &clean, const bool &udpxy)
 {
     _out << "#EXTINF:"
          << QString::number(channel->number()) << ","
          << channel->name() << "\n";
 
-    _out << "#EXTTV:";
-    switch (channel->type())
-    {
-    case Tano::Radio:
-        _out << _radio;
-        if (!channel->categories().isEmpty())
-            _out << ",";
-        break;
-    case Tano::HD:
-        _out << _hd;
-        if (!channel->categories().isEmpty())
-            _out << ",";
-        break;
-    case Tano::SD:
-    default:
-        break;
-    }
-    _out << channel->categories().join(",") << ";";
-    _out << channel->language() << ";"
-         << channel->xmltvId();
-    _out << "\n";
-
-    if(!channel->logo().isEmpty()) {
-        _out << "#EXTLOGO:"
-             << channel->logo();
+    if (!clean) {
+        _out << "#EXTTV:";
+        switch (channel->type())
+        {
+        case Tano::Radio:
+            _out << _radio;
+            if (!channel->categories().isEmpty())
+                _out << ",";
+            break;
+        case Tano::HD:
+            _out << _hd;
+            if (!channel->categories().isEmpty())
+                _out << ",";
+            break;
+        case Tano::SD:
+        default:
+            break;
+        }
+        _out << channel->categories().join(",") << ";";
+        _out << channel->language() << ";"
+             << channel->xmltvId();
         _out << "\n";
+
+        if(!channel->logo().isEmpty()) {
+            _out << "#EXTLOGO:"
+                 << channel->logo();
+            _out << "\n";
+        }
     }
 
-    _out << channel->url();
-    _out << "\n\n";
-}
-
-void M3UGenerator::generateItemClean(Channel *channel)
-{
-    _out << "#EXTINF:"
-         << QString::number(channel->number()) << ","
-         << channel->name() << "\n";
-
-    _out << channel->url();
-    _out << "\n\n";
-}
-
-void M3UGenerator::generateItemUdpxy(Channel *channel)
-{
-    _out << "#EXTINF:"
-         << QString::number(channel->number()) << ","
-         << channel->name() << "\n";
-
-    _out << "#EXTTV:";
-    switch (channel->type())
-    {
-    case Tano::Radio:
-        _out << _radio;
-        if (!channel->categories().isEmpty())
-            _out << ",";
-        break;
-    case Tano::HD:
-        _out << _hd;
-        if (!channel->categories().isEmpty())
-            _out << ",";
-        break;
-    case Tano::SD:
-    default:
-        break;
+    if (udpxy) {
+        _out << _udpxy->processUrl(channel->url());
+    } else {
+        _out << channel->url();
     }
-    _out << channel->categories().join(",") << ";";
-    _out << channel->language() << ";"
-         << channel->xmltvId();
-    _out << "\n";
-
-
-    if(!channel->logo().isEmpty()) {
-        _out << "#EXTLOGO:"
-             << channel->logo();
-        _out << "\n";
-    }
-
-    _out << _udpxy->processUrl(channel->url());
     _out << "\n\n";
 }

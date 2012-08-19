@@ -247,6 +247,9 @@ void PlaylistEditor::newPlaylist()
 
 void PlaylistEditor::deleteItem()
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     ui->editNumber->setValue(1);
     ui->editType->setCurrentIndex(0);
     ui->editChannelName->setText("");
@@ -279,6 +282,8 @@ void PlaylistEditor::addItem(const QString &name,
 
 void PlaylistEditor::save()
 {
+    ui->playlist->channelSelected(0);
+
     File file = FileDialogs::savePlaylist();
 
     if (file.path.isEmpty() || file.type == Tano::Unknown)
@@ -415,6 +420,9 @@ void PlaylistEditor::editItem(Channel *channel)
 
 void PlaylistEditor::editChannelNumber()
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     QString text = ui->editNumber->text();
     if (text.toInt() != ui->playlist->currentChannel()->number())
         _model->processNumber(ui->playlist->currentChannel(), text.toInt());
@@ -426,47 +434,74 @@ void PlaylistEditor::editChannelNumber()
 
 void PlaylistEditor::editChannelType(const int &type)
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     ui->playlist->currentChannel()->setType(Tano::ChannelType(type));
 }
 
 void PlaylistEditor::editChannelName(const QString &text)
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     ui->playlist->currentChannel()->setName(text);
 }
 
 void PlaylistEditor::editChannelUrl(const QString &text)
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     ui->playlist->currentChannel()->setUrl(text);
 }
 
 void PlaylistEditor::editChannelCategories(const QString &text)
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     ui->playlist->currentChannel()->setCategories(text.split(","));
 }
 
 void PlaylistEditor::editChannelLanguage(const QString &text)
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     ui->playlist->currentChannel()->setLanguage(text);
 }
 
 void PlaylistEditor::editChannelXmltvId(const QString &text)
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     ui->playlist->currentChannel()->setXmltvId(text);
 }
 
 void PlaylistEditor::editChannelLogo(const QString &text)
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     ui->playlist->currentChannel()->setLogo(text);
 }
 
 void PlaylistEditor::moveUp()
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     _model->moveUp(ui->playlist->currentChannel());
     ui->editNumber->setValue(ui->playlist->currentChannel()->number());
 }
 
 void PlaylistEditor::moveDown()
 {
+    if (!ui->playlist->currentChannel())
+        return;
+
     _model->moveDown(ui->playlist->currentChannel());
     ui->editNumber->setValue(ui->playlist->currentChannel()->number());
 }
