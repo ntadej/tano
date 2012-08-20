@@ -1,3 +1,14 @@
+tano (1.0.3-1~precise) precise; urgency=low
+
+  * Update: Changed playlist OSD position in fullscreen
+  * Fix: Playlist selection crash
+  * Fix: Remember visible items after lite mode
+  * Fix: Session volume settings
+  * Fix: Save to all available formats
+
+ -- Tadej Novak <tadej@tano.si>  Mon, 20 Aug 2012 16:08:18 +0200
+
+
 tano (1.0.2-1~precise) precise; urgency=low
 
   * Fix: Encoding issues
