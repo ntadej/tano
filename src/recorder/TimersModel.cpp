@@ -20,7 +20,6 @@
 #include <QtXml/QXmlSimpleReader>
 #include <QtXml/QXmlInputSource>
 
-#include "container/core/Timer.h"
 #include "core/Resources.h"
 #include "recorder/TimersGenerator.h"
 #include "recorder/TimersHandler.h"
@@ -52,7 +51,7 @@ Timer *TimersModel::takeRow(const int &row)
 Timer *TimersModel::createTimer(const QString &name,
                                 const QString &channel,
                                 const QString &url,
-                                const Tano::TimerType &type)
+                                const Timer::Type &type)
 {
     Timer *newTimer = new Timer(name, channel, url, type, this);
     appendRow(newTimer);

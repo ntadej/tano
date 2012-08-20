@@ -25,7 +25,7 @@
     #include <QtGui/QSortFilterProxyModel>
 #endif
 
-#include "core/Enums.h"
+#include "container/core/Channel.h"
 
 class PlaylistFilterModel : public QSortFilterProxyModel
 {
@@ -40,8 +40,8 @@ public:
     inline QString language() const { return _language; }
     void setLanguage(const QString &language);
 
-    inline QList<Tano::ChannelType> types() const { return _types; }
-    void setTypes(const QList<Tano::ChannelType> &types);
+    inline QList<Channel::Type> types() const { return _types; }
+    void setTypes(const QList<Channel::Type> &types);
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
@@ -49,7 +49,7 @@ protected:
 private:
     QString _category;
     QString _language;
-    QList<Tano::ChannelType> _types;
+    QList<Channel::Type> _types;
 };
 
 #endif // TANO_PLAYLISTFILTERMODEL_H_

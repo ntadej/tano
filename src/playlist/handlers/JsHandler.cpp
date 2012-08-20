@@ -70,11 +70,11 @@ void JsHandler::processList()
         Channel *channel = new Channel(currentChannel[1], currentChannel[2].toInt());
         channel->setUrl("udp://@" + currentChannel[3] + ":" + currentChannel[4]);
         if (currentChannel[5] == _radio) {
-            channel->setType(Tano::Radio);
+            channel->setType(Channel::Radio);
         } else if (currentChannel[5] == _hd) {
-            channel->setType(Tano::HD);
+            channel->setType(Channel::HD);
         } else {
-            channel->setType(Tano::SD);
+            channel->setType(Channel::SD);
             channel->setCategories(QStringList() << currentChannel[5]);
         }
         channel->setLanguage(currentChannel[6]);

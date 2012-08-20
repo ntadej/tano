@@ -64,8 +64,8 @@ void RecorderCore::record(Timer *t)
     _player->play();
 
     _isRecording = true;
-    _isTimer = (t->type() != Tano::Instant);
-    t->setState(Tano::Recording);
+    _isTimer = (t->type() != Timer::Instant);
+    t->setState(Timer::Recording);
 
     _time = 0;
     _timer->start(500);

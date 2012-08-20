@@ -23,7 +23,7 @@
 #include "playlist/generators/M3UGenerator.h"
 
 M3UGenerator::M3UGenerator(const QString &file,
-                           const Tano::FileType &type)
+                           const File::Type &type)
     : _type(type)
 {
     _file = new QFile(file);
@@ -48,7 +48,7 @@ bool M3UGenerator::write(PlaylistModel *model)
     _out.setDevice(_file);
     _out.setCodec("UTF-8");
     _out << "#EXTM3U\n";
-    if(_type != Tano::M3UClean) {
+    if(_type != File::M3UClean) {
         _out << "#EXTNAME:"
              << model->name()
              << "\n\n";
@@ -56,13 +56,13 @@ bool M3UGenerator::write(PlaylistModel *model)
     for (int i = 0; i < model->rowCount(); i++) {
         switch (_type)
         {
-        case Tano::M3U:
+        case File::M3U:
             generateItem(model->row(i));
             break;
-        case Tano::M3UClean:
+        case File::M3UClean:
             generateItem(model->row(i), true, false);
             break;
-        case Tano::M3UUdpxy:
+        case File::M3UUdpxy:
             generateItem(model->row(i), false, true);
             break;
         default:
@@ -82,17 +82,17 @@ void M3UGenerator::generateItem(Channel *channel, const bool &clean, const bool 
         _out << "#EXTTV:";
         switch (channel->type())
         {
-        case Tano::Radio:
+        case Channel::Radio:
             _out << _radio;
             if (!channel->categories().isEmpty())
                 _out << ",";
             break;
-        case Tano::HD:
+        case Channel::HD:
             _out << _hd;
             if (!channel->categories().isEmpty())
                 _out << ",";
             break;
-        case Tano::SD:
+        case Channel::SD:
         default:
             break;
         }

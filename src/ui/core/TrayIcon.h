@@ -25,7 +25,7 @@
     #include <QtGui/QSystemTrayIcon>
 #endif
 
-#include "core/Enums.h"
+#include "core/Common.h"
 
 class QAction;
 class QMenu;

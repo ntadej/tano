@@ -54,6 +54,21 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
+    <name>Channel</name>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Радіо</translation>
+    </message>
+</context>
+<context>
     <name>DonationDialog</name>
     <message>
         <source>Donate</source>
@@ -1281,43 +1296,43 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Director</source>
-        <translation>Режисер</translation>
+        <translation type="obsolete">Режисер</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation>Актор</translation>
+        <translation type="obsolete">Актор</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation>Письменник</translation>
+        <translation type="obsolete">Письменник</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation>Адаптор</translation>
+        <translation type="obsolete">Адаптор</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation>Продюсер</translation>
+        <translation type="obsolete">Продюсер</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation>Композитор</translation>
+        <translation type="obsolete">Композитор</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Редактор</translation>
+        <translation type="obsolete">Редактор</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation>Представник</translation>
+        <translation type="obsolete">Представник</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation>Коментатор</translation>
+        <translation type="obsolete">Коментатор</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation>Гість</translation>
+        <translation type="obsolete">Гість</translation>
     </message>
     <message>
         <source>Enabled</source>
@@ -1420,16 +1435,8 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Radio</source>
-        <translation type="unfinished">Радіо</translation>
+        <translation type="obsolete">Радіо</translation>
     </message>
 </context>
 <context>
@@ -2451,6 +2458,49 @@ End time: %3</source>
     <message>
         <source>Download now!</source>
         <translation>Завантажити зараз!</translation>
+    </message>
+</context>
+<context>
+    <name>XmltvCrewMember</name>
+    <message>
+        <source>Director</source>
+        <translation type="unfinished">Режисер</translation>
+    </message>
+    <message>
+        <source>Actor</source>
+        <translation type="unfinished">Актор</translation>
+    </message>
+    <message>
+        <source>Writer</source>
+        <translation type="unfinished">Письменник</translation>
+    </message>
+    <message>
+        <source>Adapter</source>
+        <translation type="unfinished">Адаптор</translation>
+    </message>
+    <message>
+        <source>Producer</source>
+        <translation type="unfinished">Продюсер</translation>
+    </message>
+    <message>
+        <source>Composer</source>
+        <translation type="unfinished">Композитор</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Редактор</translation>
+    </message>
+    <message>
+        <source>Presenter</source>
+        <translation type="unfinished">Представник</translation>
+    </message>
+    <message>
+        <source>Commentator</source>
+        <translation type="unfinished">Коментатор</translation>
+    </message>
+    <message>
+        <source>Guest</source>
+        <translation type="unfinished">Гість</translation>
     </message>
 </context>
 </TS>

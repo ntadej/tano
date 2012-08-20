@@ -179,8 +179,8 @@ SET(Tano_Core_Srcs
     core/Backend.cpp
     core/ChannelSelect.cpp
     core/Common.cpp
+    core/File.h
     core/Out.cpp
-    core/Enums.cpp
     core/NetworkDownload.cpp
     core/NetworkRequest.cpp
     core/ListItem.h
@@ -268,7 +268,6 @@ SET(Tano_Xmltv_Srcs
     xmltv/XmltvCommon.cpp
     xmltv/XmltvCrewFilterModel.cpp
     xmltv/XmltvCrewModel.cpp
-    xmltv/XmltvEnums.cpp
     xmltv/XmltvHandler.cpp
     xmltv/XmltvManager.cpp
     xmltv/XmltvProgrammeFilterModel.cpp

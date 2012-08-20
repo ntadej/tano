@@ -19,7 +19,6 @@
 #include "SettingsDialog.h"
 #include "ui_SettingsDialog.h"
 
-#include "core/Enums.h"
 #include "core/Settings.h"
 
 SettingsDialog::SettingsDialog(QWidget *parent)

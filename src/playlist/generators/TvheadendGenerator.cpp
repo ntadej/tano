@@ -142,13 +142,13 @@ void TvheadendGenerator::generateItem(Channel *channel)
     int type = 1;
     switch (channel->type())
     {
-    case Tano::Radio:
+    case Channel::Radio:
         type = 2;
         break;
-    case Tano::HD:
+    case Channel::HD:
         type = 17;
         break;
-    case Tano::SD:
+    case Channel::SD:
     default:
         type = 1;
         break;

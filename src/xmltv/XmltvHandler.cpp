@@ -26,7 +26,6 @@
 #include "container/xmltv/XmltvList.h"
 #include "container/xmltv/XmltvProgramme.h"
 #include "xmltv/XmltvCommon.h"
-#include "xmltv/XmltvEnums.h"
 #include "xmltv/XmltvChannelsModel.h"
 #include "XmltvHandler.h"
 
@@ -84,7 +83,7 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
         }
     } else if (qName == "lenght") {
         if(_list && _currentProgramme) {
-            _currentProgramme->setLenghtUnits(Tano::Xmltv::lenghtUnits(attributes.value("units")));
+            _currentProgramme->setLenghtUnits(XmltvProgramme::lenghtUnits(attributes.value("units")));
         }
     }
 

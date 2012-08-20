@@ -82,12 +82,12 @@ void M3UHandler::processList()
                 tmpCList = tmpList[0].split(",");
                 if (tmpCList.contains(_radio)) {
                     tmpCList.removeAll(_radio);
-                    _channel->setType(Tano::Radio);
+                    _channel->setType(Channel::Radio);
                 } else if (tmpCList.contains(_hd)) {
                     tmpCList.removeAll(_hd);
-                    _channel->setType(Tano::HD);
+                    _channel->setType(Channel::HD);
                 } else {
-                    _channel->setType(Tano::SD);
+                    _channel->setType(Channel::SD);
                 }
                 _channel->setCategories(tmpCList);
                 _channel->setLanguage(tmpList[1]);

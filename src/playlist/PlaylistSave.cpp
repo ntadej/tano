@@ -41,7 +41,7 @@ void PlaylistSave::saveJsFile(const QString &file)
 }
 
 void PlaylistSave::saveM3UFile(const QString &file,
-                               const Tano::FileType &type)
+                               const File::Type &type)
 {
     QScopedPointer<M3UGenerator> generator(new M3UGenerator(file, type));
     generator->write(_model);

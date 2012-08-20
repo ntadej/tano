@@ -16,13 +16,13 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvCrewMember.h"
+#include "XmltvCrewMember.h"
 
 XmltvCrewMember::XmltvCrewMember(QObject *parent)
     : ListItem(parent) { }
 
 XmltvCrewMember::XmltvCrewMember(const QString &name,
-                                 const Tano::Xmltv::CrewMemberType &type,
+                                 const Type &type,
                                  QObject *parent)
     : ListItem(parent),
       _name(name),
@@ -59,10 +59,65 @@ QVariant XmltvCrewMember::data(int role) const
 
 QString XmltvCrewMember::display() const
 {
-    return QString("%1 (%2)").arg(name(), Tano::Xmltv::crewMemberType(type()));
+    return QString("%1 (%2)").arg(name(), stringFromType(type()));
 }
 
 QIcon XmltvCrewMember::displayIcon() const
 {
     return QIcon(":/icons/16x16/person.png");
+}
+
+XmltvCrewMember::Type XmltvCrewMember::typeFromString(const QString &type)
+{
+    if (type == tr("Director"))
+        return XmltvCrewMember::Director;
+    else if (type == tr("Actor"))
+        return XmltvCrewMember::Actor;
+    else if (type == tr("Writer"))
+        return XmltvCrewMember::Writer;
+    else if (type == tr("Adapter"))
+        return XmltvCrewMember::Adapter;
+    else if (type == tr("Producer"))
+        return XmltvCrewMember::Producer;
+    else if (type == tr("Composer"))
+        return XmltvCrewMember::Composer;
+    else if (type == tr("Editor"))
+        return XmltvCrewMember::Editor;
+    else if (type == tr("Presenter"))
+        return XmltvCrewMember::Presenter;
+    else if (type == tr("Commentator"))
+        return XmltvCrewMember::Commentator;
+    else if (type == tr("Guest"))
+        return XmltvCrewMember::Guest;
+    else
+        return XmltvCrewMember::All;
+}
+
+QString XmltvCrewMember::stringFromType(const Type &type)
+{
+    switch (type)
+    {
+    case XmltvCrewMember::Director:
+        return tr("Director");
+    case XmltvCrewMember::Actor:
+        return tr("Actor");
+    case XmltvCrewMember::Writer:
+        return tr("Writer");
+    case XmltvCrewMember::Adapter:
+        return tr("Adapter");
+    case XmltvCrewMember::Producer:
+        return tr("Producer");
+    case XmltvCrewMember::Composer:
+        return tr("Composer");
+    case XmltvCrewMember::Editor:
+        return tr("Editor");
+    case XmltvCrewMember::Presenter:
+        return tr("Presenter");
+    case XmltvCrewMember::Commentator:
+        return tr("Commentator");
+    case XmltvCrewMember::Guest:
+        return tr("Guest");
+    default:
+        return QString();
+    }
 }

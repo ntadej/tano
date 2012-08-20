@@ -114,7 +114,7 @@ void Print::channelList(const QString &name,
         }
         if(list[2] >= 0) {
             cursor = channelsTable->cellAt(row, list[2]).firstCursorPosition();
-            cursor.insertText(Tano::channelTypes()[model->row(i)->type()], _textFormat);
+            cursor.insertText(Channel::types()[model->row(i)->type()], _textFormat);
         }
         if(list[3] >= 0) {
             cursor = channelsTable->cellAt(row, list[3]).firstCursorPosition();

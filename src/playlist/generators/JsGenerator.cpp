@@ -64,13 +64,13 @@ void JsGenerator::generateItem(const int &id,
          << "\"" << channel->url().replace(QRegExp("udp://@.*:"), "") << "\"" << ",";
     switch (channel->type())
     {
-    case Tano::Radio:
+    case Channel::Radio:
         _out << "\"" << _radio << "\"" << ",";
         break;
-    case Tano::HD:
+    case Channel::HD:
         _out << "\"" << _hd << "\"" << ",";
         break;
-    case Tano::SD:
+    case Channel::SD:
     default:
         _out << "\"" << channel->categories()[0] << "\"" << ",";
         break;

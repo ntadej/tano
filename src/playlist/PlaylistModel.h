@@ -21,7 +21,7 @@
 
 #include <QtCore/QStringList>
 
-#include "core/Enums.h"
+#include "core/File.h"
 #include "core/ListModel.h"
 #include "playlist/handlers/CSVHandler.h"
 
@@ -62,11 +62,11 @@ public:
     void clear();
     void open(const QString &file,
               const bool &refresh = false,
-              const Tano::FileType &type = Tano::M3U,
+              const File::Type &type = File::M3U,
               const CSVInfo &info = CSVInfo());
     void save(const QString &file,
               const QString &name,
-              const Tano::FileType &type = Tano::M3U);
+              const File::Type &type = File::M3U);
     void exportTvheadend(const QString &location,
                          const QString &interface);
 

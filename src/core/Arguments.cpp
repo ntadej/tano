@@ -50,7 +50,7 @@ Arguments::Arguments(const QStringList &args)
 
 Arguments::~Arguments() { }
 
-Argument Arguments::create(const Tano::Argument &arg,
+Argument Arguments::create(const Argument::Type &arg,
                            const QString &shortArg,
                            const QString &longArg) const
 {
@@ -64,13 +64,14 @@ Argument Arguments::create(const Tano::Argument &arg,
 
 void Arguments::createArguments()
 {
-    _arguments << create(Tano::AChannel, "c", "channel")
-               << create(Tano::APlaylist, "p", "playlist")
-               << create(Tano::AXmltv, "x", "xmltv")
-               << create(Tano::AAout, "a", "aout")
-               << create(Tano::AVout, "v", "vout")
-               << create(Tano::AFile, "f", "file")
-               << create(Tano::AUrl, "u", "url");
+    _arguments << create(Argument::Channel, "c", "channel")
+               << create(Argument::Playlist, "p", "playlist")
+               << create(Argument::Xmltv, "x", "xmltv")
+               << create(Argument::Aout, "a", "aout")
+               << create(Argument::Vout, "v", "vout")
+               << create(Argument::File, "f", "file")
+               << create(Argument::Url, "u", "url")
+               << create(Argument::Editor, "e", "editor");
 }
 
 bool Arguments::processArguments(const QStringList &args)
@@ -81,6 +82,9 @@ bool Arguments::processArguments(const QStringList &args)
             if (args[i] == "-h" || args[i] == "--help") {
                 Out::help();
                 return false;
+            } else if (args[i] == "-e" || args[i] == "--editor") {
+                setValue(Argument::Editor, "true");
+                i++;
             } else {
                 bool done = false;
                 foreach (const Argument &arg, _arguments) {
@@ -118,7 +122,7 @@ bool Arguments::processArguments(const QStringList &args)
                 }
             }
         } else {
-            setValue(Tano::AFile, args[i]);
+            setValue(Argument::File, args[i]);
             i++;
         }
     }

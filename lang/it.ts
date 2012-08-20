@@ -43,6 +43,21 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
+    <name>Channel</name>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DonationDialog</name>
     <message>
         <source>Donate</source>
@@ -1225,46 +1240,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Director</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Actor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Writer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Adapter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Producer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Composer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Presenter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Commentator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Guest</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1362,18 +1337,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Set video output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2260,6 +2223,49 @@ End time: %3</source>
     </message>
     <message>
         <source>Download now!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>XmltvCrewMember</name>
+    <message>
+        <source>Director</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Writer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adapter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Producer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Composer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Presenter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Commentator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Guest</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

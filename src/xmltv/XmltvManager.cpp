@@ -30,7 +30,6 @@
 #include "core/Settings.h"
 #include "xmltv/XmltvCommon.h"
 #include "xmltv/XmltvChannelsModel.h"
-#include "xmltv/XmltvHandler.h"
 #include "xmltv/XmltvManager.h"
 #include "xmltv/XmltvProgrammeModel.h"
 

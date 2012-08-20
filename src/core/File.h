@@ -16,43 +16,15 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_ENUMS_H_
-#define TANO_ENUMS_H_
+#ifndef TANO_FILE_H_
+#define TANO_FILE_H_
 
-#include <QtCore/QStringList>
+#include <QtCore/QString>
 
-namespace Tano
+struct File
 {
-    // ID
-    enum Id
-    {
-        Main,
-        Record,
-        Schedule
-    };
-
-    // Argument types
-    enum Argument
-    {
-        AChannel,
-        APlaylist,
-        AXmltv,
-        AAout,
-        AVout,
-        AFile,
-        AUrl
-    };
-
-    // Channel types
-    enum ChannelType
-    {
-        SD,
-        HD,
-        Radio
-    };
-
     // FileTypes
-    enum FileType
+    enum Type
     {
         Unknown = -1,
         CSV = 20,
@@ -68,31 +40,8 @@ namespace Tano
         XmltvId = 31
     };
 
-    // Timer states
-    enum TimerState
-    {
-        Enabled,
-        Disabled,
-        Recording,
-        Finished,
-        Expired
-    };
+    QString path;
+    Type type;
+};
 
-    // Timer types
-    enum TimerType
-    {
-        Once,
-        Daily,
-        Weekly,
-        Weekdays,
-        Instant
-    };
-
-    QStringList channelTypes();
-
-    QStringList timerStates();
-    QStringList timerTypes();
-    QStringList timerTypesLong();
-}
-
-#endif // TANO_ENUMS_H_
+#endif // TANO_FILE_H_

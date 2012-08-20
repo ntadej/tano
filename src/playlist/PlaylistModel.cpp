@@ -185,7 +185,7 @@ Channel *PlaylistModel::xmltvId(const QString &xmltvId)
 
 void PlaylistModel::open(const QString &file,
                          const bool &refresh,
-                         const Tano::FileType &type,
+                         const File::Type &type,
                          const CSVInfo &info)
 {
     if (!refresh)
@@ -196,13 +196,13 @@ void PlaylistModel::open(const QString &file,
     QList<Channel *> channels;
     switch (type)
     {
-    case Tano::CSV:
+    case File::CSV:
         _open->openCSVFile(file, info);
         break;
-    case Tano::JS:
+    case File::JS:
         _open->openJsFile(file);
         break;
-    case Tano::M3U:
+    case File::M3U:
         _open->openM3UFile(file);
         break;
     default:
@@ -292,24 +292,24 @@ bool PlaylistModel::processNumber(Channel *channel,
 
 void PlaylistModel::save(const QString &file,
                          const QString &name,
-                         const Tano::FileType &type)
+                         const File::Type &type)
 {
     _name = name;
 
     switch (type)
     {
-    case Tano::CSV:
+    case File::CSV:
         _save->saveCSVFile(file);
         break;
-    case Tano::JS:
+    case File::JS:
         _save->saveJsFile(file);
         break;
-    case Tano::M3U:
-    case Tano::M3UClean:
-    case Tano::M3UUdpxy:
+    case File::M3U:
+    case File::M3UClean:
+    case File::M3UUdpxy:
         _save->saveM3UFile(file, type);
         break;
-    case Tano::XmltvId:
+    case File::XmltvId:
         _save->saveXmltvId(file);
         break;
     default:

@@ -27,7 +27,6 @@
 
 #include "container/core/Timer.h"
 #include "container/xmltv/XmltvProgramme.h"
-#include "core/Enums.h"
 #include "core/Settings.h"
 #include "recorder/RecorderCore.h"
 #include "recorder/RecorderTimeManager.h"
@@ -114,7 +113,7 @@ bool Recorder::isRecording() const
 Timer *Recorder::newInstantTimer(const QString &channel,
                                  const QString &url)
 {
-    Timer *timer = _model->createTimer(tr("Quick %1").arg(channel), channel, url, Tano::Instant);
+    Timer *timer = _model->createTimer(tr("Quick %1").arg(channel), channel, url, Timer::Instant);
 
     return timer;
 }
@@ -154,7 +153,7 @@ void Recorder::recordStart(Timer *timer)
     }
 
     _currentTimer = timer;
-    if (timer->type() == Tano::Instant) {
+    if (timer->type() == Timer::Instant) {
         timer->setDate(QDate::currentDate());
         timer->setStartTime(QTime::currentTime());
     }
@@ -196,16 +195,16 @@ void Recorder::recordStop()
         _trayIcon->message(Tano::Record, QStringList());
     }
 
-    if (_currentTimer->type() == Tano::Instant) {
+    if (_currentTimer->type() == Timer::Instant) {
         _currentTimer->setEndTime(QTime::currentTime());
     } else {
-        if (_currentTimer->type() == Tano::Daily) {
+        if (_currentTimer->type() == Timer::Daily) {
             Timer *tmptimer = _model->duplicateTimer(_currentTimer);
             tmptimer->setDate(_currentTimer->date().addDays(1));
-        } else if (_currentTimer->type() == Tano::Weekly) {
+        } else if (_currentTimer->type() == Timer::Weekly) {
             Timer *tmptimer = _model->duplicateTimer(_currentTimer);
             tmptimer->setDate(_currentTimer->date().addDays(7));
-        }  else if (_currentTimer->type() == Tano::Weekdays) {
+        }  else if (_currentTimer->type() == Timer::Weekdays) {
             Timer *tmptimer = _model->duplicateTimer(_currentTimer);
             if (_currentTimer->date().dayOfWeek() == Qt::Friday)
                 tmptimer->setDate(_currentTimer->date().addDays(3));
@@ -213,7 +212,7 @@ void Recorder::recordStop()
                 tmptimer->setDate(_currentTimer->date().addDays(1));
         }
     }
-    _currentTimer->setState(Tano::Finished);
+    _currentTimer->setState(Timer::Finished);
     writeTimers();
     _currentTimer = 0;
 }

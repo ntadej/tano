@@ -57,6 +57,21 @@ Vaša različica VLC-Qt: %4
     </message>
 </context>
 <context>
+    <name>Channel</name>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Radio</translation>
+    </message>
+</context>
+<context>
     <name>DonationDialog</name>
     <message>
         <source>Donate</source>
@@ -1284,43 +1299,43 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Director</source>
-        <translation>Režiser</translation>
+        <translation type="obsolete">Režiser</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation>Igralec</translation>
+        <translation type="obsolete">Igralec</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation>Scenarist</translation>
+        <translation type="obsolete">Scenarist</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation>Aranžer</translation>
+        <translation type="obsolete">Aranžer</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation>Producent</translation>
+        <translation type="obsolete">Producent</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation>Skladatelj</translation>
+        <translation type="obsolete">Skladatelj</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Montažer</translation>
+        <translation type="obsolete">Montažer</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation>Voditelj</translation>
+        <translation type="obsolete">Voditelj</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation>Komentator</translation>
+        <translation type="obsolete">Komentator</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation>Gost</translation>
+        <translation type="obsolete">Gost</translation>
     </message>
     <message>
         <source>Enabled</source>
@@ -1423,16 +1438,8 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Radio</source>
-        <translation type="unfinished">Radio</translation>
+        <translation type="obsolete">Radio</translation>
     </message>
 </context>
 <context>
@@ -2454,6 +2461,49 @@ Končni čas: %3</translation>
     <message>
         <source>Download now!</source>
         <translation>Prenesi zdaj!</translation>
+    </message>
+</context>
+<context>
+    <name>XmltvCrewMember</name>
+    <message>
+        <source>Director</source>
+        <translation type="unfinished">Režiser</translation>
+    </message>
+    <message>
+        <source>Actor</source>
+        <translation type="unfinished">Igralec</translation>
+    </message>
+    <message>
+        <source>Writer</source>
+        <translation type="unfinished">Scenarist</translation>
+    </message>
+    <message>
+        <source>Adapter</source>
+        <translation type="unfinished">Aranžer</translation>
+    </message>
+    <message>
+        <source>Producer</source>
+        <translation type="unfinished">Producent</translation>
+    </message>
+    <message>
+        <source>Composer</source>
+        <translation type="unfinished">Skladatelj</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Presenter</source>
+        <translation type="unfinished">Voditelj</translation>
+    </message>
+    <message>
+        <source>Commentator</source>
+        <translation type="unfinished">Komentator</translation>
+    </message>
+    <message>
+        <source>Guest</source>
+        <translation type="unfinished">Gost</translation>
     </message>
 </context>
 </TS>

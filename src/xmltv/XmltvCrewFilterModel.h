@@ -25,7 +25,7 @@
     #include <QtGui/QSortFilterProxyModel>
 #endif
 
-#include "xmltv/XmltvEnums.h"
+#include "container/xmltv/XmltvCrewMember.h"
 
 class XmltvCrewFilterModel : public QSortFilterProxyModel
 {
@@ -34,14 +34,14 @@ public:
     XmltvCrewFilterModel(QObject *parent = 0);
     ~XmltvCrewFilterModel();
 
-    inline Tano::Xmltv::CrewMemberType type() const { return _type; }
-    void setType(const Tano::Xmltv::CrewMemberType &type = Tano::Xmltv::All);
+    inline XmltvCrewMember::Type type() const { return _type; }
+    void setType(const XmltvCrewMember::Type &type = XmltvCrewMember::All);
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
 
 private:
-    Tano::Xmltv::CrewMemberType _type;
+    XmltvCrewMember::Type _type;
 };
 
 #endif // TANO_XMLTVCREWFILTERMODEL_H_

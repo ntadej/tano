@@ -27,7 +27,7 @@
 #endif
 
 #include "container/core/Channel.h"
-#include "core/Common.h"
+#include "core/File.h"
 #include "core/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "playlist/handlers/CSVHandler.h"
@@ -176,10 +176,10 @@ void PlaylistEditor::open(const QString &playlist,
         file = FileDialogs::openPlaylist();
     } else {
         file.path = playlist;
-        file.type = Tano::M3U;
+        file.type = File::M3U;
     }
 
-    if (file.path.isEmpty() || file.type == Tano::Unknown)
+    if (file.path.isEmpty() || file.type == File::Unknown)
         return;
 
     ui->editWidget->setEnabled(false);
@@ -196,11 +196,11 @@ void PlaylistEditor::open(const QString &playlist,
 
     switch (file.type)
     {
-    case Tano::M3U:
-    case Tano::JS:
+    case File::M3U:
+    case File::JS:
         _model->open(file.path, refresh, file.type);
         break;
-    case Tano::CSV:
+    case File::CSV:
         dialog.exec();
         if (!dialog.proceed())
             return;
@@ -286,7 +286,7 @@ void PlaylistEditor::save()
 
     File file = FileDialogs::savePlaylist();
 
-    if (file.path.isEmpty() || file.type == Tano::Unknown)
+    if (file.path.isEmpty() || file.type == File::Unknown)
         return;
 
     QFile f(file.path);
@@ -301,13 +301,13 @@ void PlaylistEditor::save()
 
     switch (file.type)
     {
-    case Tano::M3U:
-    case Tano::M3UClean:
-    case Tano::CSV:
-    case Tano::JS:
+    case File::M3U:
+    case File::M3UClean:
+    case File::CSV:
+    case File::JS:
         _model->save(file.path, ui->editName->text(), file.type);
         break;
-    case Tano::M3UUdpxy:
+    case File::M3UUdpxy:
         int s;
         s = QMessageBox::warning(this, tr("Export to M3U format with Udpxy URLs"),
                                  tr("You need to have valid Udpxy settings or the exported playlist will contain classic URLs."),
@@ -346,7 +346,7 @@ void PlaylistEditor::exportXmltvId()
     if (file.isEmpty())
         return;
 
-    _model->save(file, "", Tano::XmltvId);
+    _model->save(file, "", File::XmltvId);
 }
 
 void PlaylistEditor::exit()
@@ -437,7 +437,7 @@ void PlaylistEditor::editChannelType(const int &type)
     if (!ui->playlist->currentChannel())
         return;
 
-    ui->playlist->currentChannel()->setType(Tano::ChannelType(type));
+    ui->playlist->currentChannel()->setType(Channel::Type(type));
 }
 
 void PlaylistEditor::editChannelName(const QString &text)

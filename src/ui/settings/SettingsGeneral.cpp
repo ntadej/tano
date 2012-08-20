@@ -17,7 +17,6 @@
 *****************************************************************************/
 
 #include "core/Common.h"
-#include "core/Enums.h"
 #include "core/LocaleManager.h"
 #include "SettingsGeneral.h"
 #include "ui_SettingsGeneral.h"

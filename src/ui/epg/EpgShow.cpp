@@ -107,7 +107,7 @@ void EpgShow::previous()
 
 void EpgShow::processFilters(const int &type)
 {
-    _crew->setType(Tano::Xmltv::CrewMemberType(type));
+    _crew->setType(XmltvCrewMember::Type(type));
 }
 
 void EpgShow::record()

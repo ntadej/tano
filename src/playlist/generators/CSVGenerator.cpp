@@ -62,17 +62,17 @@ void CSVGenerator::generateItem(Channel *channel)
          << channel->url() << ";";
     switch (channel->type())
     {
-    case Tano::Radio:
+    case Channel::Radio:
         _out << _radio;
         if (!channel->categories().isEmpty())
             _out << ",";
         break;
-    case Tano::HD:
+    case Channel::HD:
         _out << _hd;
         if (!channel->categories().isEmpty())
             _out << ",";
         break;
-    case Tano::SD:
+    case Channel::SD:
     default:
         break;
     }

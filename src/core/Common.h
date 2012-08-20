@@ -39,6 +39,14 @@ namespace Tano
     QString buildHostname();
     QString buildSystem();
 
+    // Identifier
+    enum Id
+    {
+        Main,
+        Record,
+        Schedule
+    };
+
     // Misc
     QString recordingFileName(const QString &name,
                               const QString &channel,

@@ -54,6 +54,21 @@ Votre version de VLC-Qt : %4</translation>
     </message>
 </context>
 <context>
+    <name>Channel</name>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Radio</translation>
+    </message>
+</context>
+<context>
     <name>ConclusionPage</name>
     <message>
         <source>Complete Wizard</source>
@@ -1733,43 +1748,43 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Director</source>
-        <translation>Directeur</translation>
+        <translation type="obsolete">Directeur</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation>Acteur</translation>
+        <translation type="obsolete">Acteur</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation>Scénariste</translation>
+        <translation type="obsolete">Scénariste</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation>Adaptateur</translation>
+        <translation type="obsolete">Adaptateur</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation>Producteur</translation>
+        <translation type="obsolete">Producteur</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation>Compositeur</translation>
+        <translation type="obsolete">Compositeur</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Éditeur</translation>
+        <translation type="obsolete">Éditeur</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation>Présentateur</translation>
+        <translation type="obsolete">Présentateur</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation>Commentateur</translation>
+        <translation type="obsolete">Commentateur</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation>Invité</translation>
+        <translation type="obsolete">Invité</translation>
     </message>
     <message>
         <source>Enabled</source>
@@ -1872,16 +1887,8 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Radio</source>
-        <translation type="unfinished">Radio</translation>
+        <translation type="obsolete">Radio</translation>
     </message>
 </context>
 <context>
@@ -3665,6 +3672,49 @@ Fin de l&apos;enregistrement : %3</translation>
     <message>
         <source>Download now!</source>
         <translation>Téléchargement maintenant !</translation>
+    </message>
+</context>
+<context>
+    <name>XmltvCrewMember</name>
+    <message>
+        <source>Director</source>
+        <translation type="unfinished">Directeur</translation>
+    </message>
+    <message>
+        <source>Actor</source>
+        <translation type="unfinished">Acteur</translation>
+    </message>
+    <message>
+        <source>Writer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adapter</source>
+        <translation type="unfinished">Adaptateur</translation>
+    </message>
+    <message>
+        <source>Producer</source>
+        <translation type="unfinished">Producteur</translation>
+    </message>
+    <message>
+        <source>Composer</source>
+        <translation type="unfinished">Compositeur</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Éditeur</translation>
+    </message>
+    <message>
+        <source>Presenter</source>
+        <translation type="unfinished">Présentateur</translation>
+    </message>
+    <message>
+        <source>Commentator</source>
+        <translation type="unfinished">Commentateur</translation>
+    </message>
+    <message>
+        <source>Guest</source>
+        <translation type="unfinished">Invité</translation>
     </message>
 </context>
 </TS>

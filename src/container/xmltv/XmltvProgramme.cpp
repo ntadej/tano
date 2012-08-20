@@ -17,8 +17,8 @@
 *****************************************************************************/
 
 #include "container/xmltv/XmltvCrewMember.h"
-#include "container/xmltv/XmltvProgramme.h"
 #include "xmltv/XmltvCrewModel.h"
+#include "XmltvProgramme.h"
 
 XmltvProgramme::XmltvProgramme(QObject *parent)
     : ListItem(parent) { }
@@ -209,7 +209,7 @@ void XmltvProgramme::setLenght(const QString &s)
     }
 }
 
-void XmltvProgramme::setLenghtUnits(const Tano::Xmltv::LenghtUnits &e)
+void XmltvProgramme::setLenghtUnits(const XmltvProgramme::LenghtUnits &e)
 {
     if (_lenghtUnits != e) {
         _lenghtUnits = e;
@@ -235,60 +235,99 @@ void XmltvProgramme::setIconSize(const QSize &s)
 
 void XmltvProgramme::addDirector(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Director, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Director, this);
     _crew->appendRow(crew);
 }
 
 void XmltvProgramme::addActor(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Actor, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Actor, this);
     _crew->appendRow(crew);
 }
 
 void XmltvProgramme::addWriter(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Writer, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Writer, this);
     _crew->appendRow(crew);
 }
 
 void XmltvProgramme::addAdapter(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Adapter, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Adapter, this);
     _crew->appendRow(crew);
 }
 
 void XmltvProgramme::addProducer(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Producer, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Producer, this);
     _crew->appendRow(crew);
 }
 
 void XmltvProgramme::addComposer(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Composer, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Composer, this);
     _crew->appendRow(crew);
 }
 
 void XmltvProgramme::addEditor(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Editor, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Editor, this);
     _crew->appendRow(crew);
 }
 
 void XmltvProgramme::addPresenter(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Presenter, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Presenter, this);
     _crew->appendRow(crew);
 }
 
 void XmltvProgramme::addCommentator(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Commentator, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Commentator, this);
     _crew->appendRow(crew);
 }
 
 void XmltvProgramme::addGuest(const QString &s)
 {
-    XmltvCrewMember *crew = new XmltvCrewMember(s, Tano::Xmltv::Guest, this);
+    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Guest, this);
     _crew->appendRow(crew);
+}
+
+XmltvProgramme::LenghtUnits XmltvProgramme::lenghtUnits(const QString &type)
+{
+    if (type == "seconds")
+        return XmltvProgramme::Seconds;
+    else if (type == "minutes")
+        return XmltvProgramme::Minutes;
+    else if (type == "hours")
+        return XmltvProgramme::Hours;
+    else
+        return XmltvProgramme::Seconds;
+}
+
+QString XmltvProgramme::lenghtUnits(const LenghtUnits &type)
+{
+    switch (type)
+    {
+    case XmltvProgramme::Seconds:
+        return QObject::tr("seconds");
+    case XmltvProgramme::Minutes:
+        return QObject::tr("minutes");
+    case XmltvProgramme::Hours:
+        return QObject::tr("hours");
+    default:
+        return QString();
+    }
+}
+
+QString XmltvProgramme::lenghtUnitsShort(const LenghtUnits &type)
+{
+    if (type == XmltvProgramme::Seconds)
+        return QObject::tr("s");
+    else if (type == XmltvProgramme::Minutes)
+        return QObject::tr("min");
+    else if (type == XmltvProgramme::Hours)
+        return QObject::tr("h");
+    else
+        return QString();
 }

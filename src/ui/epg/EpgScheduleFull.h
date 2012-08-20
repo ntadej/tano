@@ -25,7 +25,7 @@
     #include <QtGui/QWidget>
 #endif
 
-#include "core/Enums.h"
+#include "core/Common.h"
 
 namespace Ui
 {

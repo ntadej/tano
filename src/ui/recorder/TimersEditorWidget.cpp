@@ -38,7 +38,7 @@ TimersEditorWidget::TimersEditorWidget(QWidget *parent)
     _validateModel = new TimersFilterModel(this);
     _validateModel->setDynamicSortFilter(true);
     _validateModel->setSortRole(Timer::StartDateTimeRole);
-    _validateModel->setTimerState(Tano::Enabled);
+    _validateModel->setTimerState(Timer::Enabled);
     _validateModel->setTimeFilter(true);
     _validateModel->sort(0);
 }
@@ -68,7 +68,7 @@ void TimersEditorWidget::edit(Timer *item)
 
     _currentTimer = item;
 
-    ui->checkBoxDisabled->setChecked(_currentTimer->state() == Tano::Disabled);
+    ui->checkBoxDisabled->setChecked(_currentTimer->state() == Timer::Disabled);
     ui->editName->setText(_currentTimer->name());
     ui->editChannel->setText(_currentTimer->channel());
     ui->editUrl->setText(_currentTimer->url());
@@ -84,11 +84,11 @@ bool TimersEditorWidget::save()
         return false;
 
     _currentTimer->setName(ui->editName->text());
-    _currentTimer->setType(Tano::TimerType(ui->editType->currentIndex()));
+    _currentTimer->setType(Timer::Type(ui->editType->currentIndex()));
     _currentTimer->setDate(ui->editDate->date());
     _currentTimer->setStartTime(ui->editStartTime->time());
     _currentTimer->setEndTime(ui->editEndTime->time());
-    _currentTimer->setState(ui->checkBoxDisabled->isChecked() ? Tano::Disabled : Tano::Enabled);
+    _currentTimer->setState(ui->checkBoxDisabled->isChecked() ? Timer::Disabled : Timer::Enabled);
 
     return true;
 }

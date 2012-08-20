@@ -28,7 +28,7 @@
     #include <QtCore/QFutureWatcher>
 #endif
 
-#include "core/Enums.h"
+#include "core/Common.h"
 #include "xmltv/XmltvHandler.h"
 
 extern bool loadXmltvStart(XmltvHandler *handler,

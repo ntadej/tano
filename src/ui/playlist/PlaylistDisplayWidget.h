@@ -27,7 +27,7 @@
     #include <QtGui/QWidget>
 #endif
 
-#include "core/Enums.h"
+#include "container/core/Channel.h"
 
 class QAction;
 class QMenu;
@@ -76,7 +76,7 @@ private slots:
     void processFilters(const QString &search,
                         const QString &category,
                         const QString &language,
-                        const QList<Tano::ChannelType> &types);
+                        const QList<Channel::Type> &types);
     void schedule();
     void showMenu(const QPoint &pos);
     void updateSelection(Channel *channel);

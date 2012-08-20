@@ -58,12 +58,12 @@ void CSVHandler::processChannel(const QStringList &list)
     QStringList categories = list[_categories].split(",");
     if (categories.contains(_radio)) {
         categories.removeAll(_radio);
-        _channel->setType(Tano::Radio);
+        _channel->setType(Channel::Radio);
     } else if (categories.contains(_hd)) {
         categories.removeAll(_hd);
-        _channel->setType(Tano::HD);
+        _channel->setType(Channel::HD);
     } else {
-        _channel->setType(Tano::SD);
+        _channel->setType(Channel::SD);
     }
     _channel->setCategories(categories);
 

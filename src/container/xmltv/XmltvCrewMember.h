@@ -23,7 +23,6 @@
 #include <QtCore/QString>
 
 #include "core/ListItem.h"
-#include "xmltv/XmltvEnums.h"
 
 class XmltvCrewMember : public ListItem
 {
@@ -36,9 +35,25 @@ public:
         TypeRole
     };
 
+    // Crew member types
+    enum Type
+    {
+        All,
+        Director,
+        Actor,
+        Writer,
+        Adapter,
+        Producer,
+        Composer,
+        Editor,
+        Presenter,
+        Commentator,
+        Guest
+    };
+
     explicit XmltvCrewMember(QObject *parent = 0);
     explicit XmltvCrewMember(const QString &name,
-                             const Tano::Xmltv::CrewMemberType &type,
+                             const Type &type,
                              QObject *parent = 0);
     ~XmltvCrewMember();
 
@@ -49,11 +64,14 @@ public:
     QHash<int, QByteArray> roleNames() const;
 
     inline QString name() const { return _name; }
-    inline Tano::Xmltv::CrewMemberType type() const { return _type; }
+    inline Type type() const { return _type; }
+
+    static Type typeFromString(const QString &type);
+    static QString stringFromType(const Type &type);
 
 private:
     QString _name;
-    Tano::Xmltv::CrewMemberType _type;
+    XmltvCrewMember::Type _type;
 };
 
 #endif // TANO_XMLTVCREWMEMBER_H_

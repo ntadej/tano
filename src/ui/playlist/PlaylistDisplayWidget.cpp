@@ -27,7 +27,6 @@
 #include "PlaylistDisplayWidget.h"
 #include "ui_PlaylistDisplayWidget.h"
 
-#include "container/core/Channel.h"
 #include "playlist/PlaylistFilterModel.h"
 #include "playlist/PlaylistModel.h"
 
@@ -133,7 +132,7 @@ void PlaylistDisplayWidget::playMode()
 void PlaylistDisplayWidget::processFilters(const QString &search,
                                            const QString &category,
                                            const QString &language,
-                                           const QList<Tano::ChannelType> &types)
+                                           const QList<Channel::Type> &types)
 {
     QRegExp regExp(search, Qt::CaseInsensitive);
     _filterModel->setFilterRegExp(regExp);

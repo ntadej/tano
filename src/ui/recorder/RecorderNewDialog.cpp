@@ -106,7 +106,7 @@ void RecorderNewDialog::newTimerFromSchedule(XmltvProgramme *programme)
     }
 
     Timer *timer = _model->createTimer(programme->title(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
-    timer->setState(Tano::Disabled);
+    timer->setState(Timer::Disabled);
     timer->setDate(programme->start().date());
     timer->setStartTime(programme->start().time());
     timer->setEndTime(programme->stop().time());
@@ -131,7 +131,7 @@ void RecorderNewDialog::processNewTimer()
     }
 
     Timer *timer = _model->createTimer(ui->editNameNew->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
-    timer->setState(Tano::Disabled);
+    timer->setState(Timer::Disabled);
 
     _currentTimer = timer;
 
@@ -146,7 +146,7 @@ void RecorderNewDialog::processQuickRecord()
         return;
     }
 
-    Timer *timer = _model->createTimer(ui->editNameQuick->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Tano::Instant);
+    Timer *timer = _model->createTimer(ui->editNameQuick->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Timer::Instant);
 
     _currentTimer = timer;
 

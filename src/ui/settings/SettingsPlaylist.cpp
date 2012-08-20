@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "core/File.h"
+
 #include "SettingsPlaylist.h"
 #include "ui_SettingsPlaylist.h"
 
@@ -24,7 +26,7 @@ SettingsPlaylist::SettingsPlaylist(QWidget *parent)
       ui(new Ui::SettingsPlaylist)
 {
     ui->setupUi(this);
-    ui->playlist->setType(Tano::M3U);
+    ui->playlist->setType(File::M3U);
 }
 
 SettingsPlaylist::~SettingsPlaylist()

@@ -22,7 +22,6 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
-#include "core/Enums.h"
 #include "core/ListItem.h"
 
 class Channel : public ListItem
@@ -42,6 +41,14 @@ public:
         LogoRole
     };
 
+    // Channel types
+    enum Type
+    {
+        SD,
+        HD,
+        Radio
+    };
+
     explicit Channel(QObject *parent = 0);
     explicit Channel(const QString &name,
                      const int &number,
@@ -56,8 +63,8 @@ public:
 
     inline int number() const { return _number; }
     void setNumber(const int &number);
-    inline Tano::ChannelType type() const { return _type; }
-    void setType(const Tano::ChannelType &type);
+    inline Type type() const { return _type; }
+    void setType(const Type &type);
     inline QString name() const { return _name; }
     void setName(const QString &name);
     inline QString language() const { return _language; }
@@ -71,10 +78,12 @@ public:
     inline QString logo() const { return _logo; }
     void setLogo(const QString &logo);
 
+    static QStringList types();
+
 private:
     QString _name;
     int _number;
-    Tano::ChannelType _type;
+    Type _type;
     QString _language;
     QString _url;
     QString _xmltvId;

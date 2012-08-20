@@ -244,12 +244,12 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
-    if (!_arguments->value(Tano::AXmltv).isEmpty())
-        _xmltv->loadXmltv(_arguments->value(Tano::AXmltv));
+    if (!_arguments->value(Argument::Xmltv).isEmpty())
+        _xmltv->loadXmltv(_arguments->value(Argument::Xmltv));
     else
         _xmltv->loadXmltv();
 
-    _mediaInstance = new VlcInstance(Tano::Backend::args(_arguments->value(Tano::AAout), _arguments->value(Tano::AVout)), this);
+    _mediaInstance = new VlcInstance(Tano::Backend::args(_arguments->value(Argument::Aout), _arguments->value(Argument::Vout)), this);
     _mediaItem = 0;
     _mediaPlayer = new VlcMediaPlayer(_mediaInstance);
     _mediaPlayer->setVideoWidget(ui->videoWidget);
@@ -320,8 +320,8 @@ void MainWindow::createSettingsStartup()
 {
     QScopedPointer<Settings> settings(new Settings(this));
     _defaultPlaylist = settings->playlist();
-    if (!_arguments->value(Tano::APlaylist).isEmpty())
-        _defaultPlaylist = _arguments->value(Tano::APlaylist);
+    if (!_arguments->value(Argument::Playlist).isEmpty())
+        _defaultPlaylist = _arguments->value(Argument::Playlist);
 
     //Session
     _sessionVolumeEnabled = settings->sessionRememberVolume();
@@ -567,9 +567,9 @@ void MainWindow::createSession()
     _osdMain->volumeSlider()->setVolume(_sessionVolume);
 
     if ((_sessionAutoplayEnabled ||
-         !_arguments->value(Tano::AChannel).isEmpty() ||
-         !_arguments->value(Tano::AFile).isEmpty() ||
-         !_arguments->value(Tano::AUrl).isEmpty()) &&
+         !_arguments->value(Argument::Channel).isEmpty() ||
+         !_arguments->value(Argument::File).isEmpty() ||
+         !_arguments->value(Argument::Url).isEmpty()) &&
          _hasPlaylist && _model->validate())
         _startTimer->start(100);
 
@@ -589,12 +589,12 @@ void MainWindow::startSession()
     if (!isVisible())
         return;
 
-    if (!_arguments->value(Tano::AFile).isEmpty())
-        playLocal(_arguments->value(Tano::AFile));
-    else if (!_arguments->value(Tano::AFile).isEmpty())
-        playUrl(_arguments->value(Tano::AUrl));
-    else if (!_arguments->value(Tano::AChannel).isEmpty())
-        ui->playlistWidget->channelSelected(_arguments->value(Tano::AChannel).toInt());
+    if (!_arguments->value(Argument::File).isEmpty())
+        playLocal(_arguments->value(Argument::File));
+    else if (!_arguments->value(Argument::File).isEmpty())
+        playUrl(_arguments->value(Argument::Url));
+    else if (!_arguments->value(Argument::Channel).isEmpty())
+        ui->playlistWidget->channelSelected(_arguments->value(Argument::Channel).toInt());
     else
         ui->playlistWidget->channelSelected(_sessionChannel);
 
@@ -1114,7 +1114,7 @@ void MainWindow::recordNow(const bool &start)
     if (!start) {
         QString media = _mediaItem->currentLocation();
         _recording->setEndTime(QTime::currentTime());
-        _recording->setState(Tano::Finished);
+        _recording->setState(Timer::Finished);
         _mediaPlayer->stop();
         ui->recorder->writeTimers();
         _recording = 0;
@@ -1127,7 +1127,7 @@ void MainWindow::recordNow(const bool &start)
         _recording = ui->recorder->newInstantTimer(_channel->name(), _channel->url());
         _recording->setDate(QDate::currentDate());
         _recording->setStartTime(QTime::currentTime());
-        _recording->setState(Tano::Recording);
+        _recording->setState(Timer::Recording);
         _mediaPlayer->stop();
         _recording->setFile(_mediaItem->duplicate(Tano::recordingFileName(tr("Quick"), _channel->name(), _recording->date(), _recording->startTime()), ui->recorder->directory(), Vlc::TS));
         _mediaPlayer->play();

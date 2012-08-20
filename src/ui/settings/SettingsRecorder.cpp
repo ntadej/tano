@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Enums.h"
+#include "core/File.h"
 #include "core/Settings.h"
 
 #include "SettingsRecorder.h"
@@ -27,7 +27,7 @@ SettingsRecorder::SettingsRecorder(QWidget *parent)
       ui(new Ui::SettingsRecorder)
 {
     ui->setupUi(this);
-    ui->edit->setType(Tano::Directory);
+    ui->edit->setType(File::Directory);
     ui->edit->setResetValue(Settings::DEFAULT_RECORDER_DIRECTORY);
 }
 

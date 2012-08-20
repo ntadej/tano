@@ -23,7 +23,6 @@
 #include <QtCore/QString>
 #include <QtCore/QTime>
 
-#include "core/Enums.h"
 #include "core/ListItem.h"
 
 class Timer : public ListItem
@@ -46,10 +45,30 @@ public:
         StateRole
     };
 
+    // Timer states
+    enum State
+    {
+        Enabled,
+        Disabled,
+        Recording,
+        Finished,
+        Expired
+    };
+
+    // Timer types
+    enum Type
+    {
+        Once,
+        Daily,
+        Weekly,
+        Weekdays,
+        Instant
+    };
+
     explicit Timer(const QString &name,
                    const QString &channel,
                    const QString &url,
-                   const Tano::TimerType &type = Tano::Once,
+                   const Type &type = Once,
                    QObject *parent = 0);
     explicit Timer(Timer *timer);
     explicit Timer(QObject *parent = 0);
@@ -78,10 +97,14 @@ public:
     void setEndTime(const QTime &endTime);
     QDateTime startDateTime() const;
     QDateTime endDateTime() const;
-    inline Tano::TimerType type() const { return _type; }
-    void setType(const Tano::TimerType &type);
-    inline Tano::TimerState state() const { return _state; }
-    void setState(const Tano::TimerState &state);
+    inline Type type() const { return _type; }
+    void setType(const Type &type);
+    inline State state() const { return _state; }
+    void setState(const State &state);
+
+    static QStringList states();
+    static QStringList types();
+    static QStringList typesLong();
 
 private:
     QString _name;
@@ -91,8 +114,8 @@ private:
     QDate _date;
     QTime _startTime;
     QTime _endTime;
-    Tano::TimerType _type;
-    Tano::TimerState _state;
+    Type _type;
+    State _state;
 };
 
 #endif // TANO_TIMER_H_

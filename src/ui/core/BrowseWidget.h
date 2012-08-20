@@ -25,7 +25,7 @@
     #include <QtGui/QWidget>
 #endif
 
-#include "core/Enums.h"
+#include "core/File.h"
 
 class QLineEdit;
 class QPushButton;
@@ -40,7 +40,7 @@ public:
 
     QLineEdit *edit() { return _edit; }
     void setResetValue(const QString &value) { _resetValue = value; }
-    void setType(const Tano::FileType &type) { _type = type; }
+    void setType(const File::Type &type) { _type = type; }
     void setValue(const QString &value);
     QString value() const;
 
@@ -57,7 +57,7 @@ private:
     QPushButton *_reset;
     QToolButton *_browse;
 
-    Tano::FileType _type;
+    File::Type _type;
 };
 
 #endif // TANO_BROWSEWIDGET_H_

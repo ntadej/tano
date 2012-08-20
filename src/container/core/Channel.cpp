@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/core/Channel.h"
+#include "Channel.h"
 
 Channel::Channel(QObject *parent)
     : ListItem(parent) { }
@@ -28,7 +28,7 @@ Channel::Channel(const QString &name,
       _name(name),
       _number(number)
 {
-    _type = Tano::SD;
+    _type = SD;
     _language = "";
     _url = "";
     _xmltvId = "";
@@ -90,9 +90,9 @@ QString Channel::display() const
 
 QIcon Channel::displayIcon() const
 {
-    if (type() == Tano::Radio)
+    if (type() == Radio)
         return QIcon(":/icons/16x16/audio.png");
-    else if (type() == Tano::HD)
+    else if (type() == HD)
         return QIcon(":/icons/16x16/hd.png");
     else
         return QIcon(":/icons/16x16/sd.png");
@@ -106,7 +106,7 @@ void Channel::setNumber(const int &number)
     }
 }
 
-void Channel::setType(const Tano::ChannelType &type)
+void Channel::setType(const Type &type)
 {
     if (_type != type) {
         _type = type;
@@ -160,4 +160,14 @@ void Channel::setLogo(const QString &logo)
         _logo = logo;
         emit dataChanged();
     }
+}
+
+QStringList Channel::types()
+{
+    QStringList list;
+    list << tr("SD")
+         << tr("HD")
+         << tr("Radio");
+
+    return list;
 }

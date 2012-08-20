@@ -63,27 +63,27 @@ void PlaylistFilterWidget::editMode()
 
 void PlaylistFilterWidget::processFilters()
 {
-    QList<Tano::ChannelType> list;
+    QList<Channel::Type> list;
     switch (ui->comboType->currentIndex())
     {
     case 1:
-        list << Tano::SD
-             << Tano::HD;
+        list << Channel::SD
+             << Channel::HD;
         break;
     case 2:
-        list << Tano::SD;
+        list << Channel::SD;
         break;
     case 3:
-        list << Tano::HD;
+        list << Channel::HD;
         break;
     case 4:
-        list << Tano::Radio;
+        list << Channel::Radio;
         break;
     case 0:
     default:
-        list << Tano::SD
-             << Tano::HD
-             << Tano::Radio;
+        list << Channel::SD
+             << Channel::HD
+             << Channel::Radio;
         break;
     }
 

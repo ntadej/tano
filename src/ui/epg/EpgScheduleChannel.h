@@ -28,7 +28,7 @@
     #include <QtGui/QStackedWidget>
 #endif
 
-#include "core/Enums.h"
+#include "core/Common.h"
 
 class QAction;
 class QMenu;

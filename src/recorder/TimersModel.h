@@ -19,7 +19,7 @@
 #ifndef TANO_TIMERSMODEL_H_
 #define TANO_TIMERSMODEL_H_
 
-#include "core/Enums.h"
+#include "container/core/Timer.h"
 #include "core/ListModel.h"
 
 class Timer;
@@ -38,7 +38,7 @@ public:
     Timer *createTimer(const QString &name,
                        const QString &channel,
                        const QString &url,
-                       const Tano::TimerType &type = Tano::Once);
+                       const Timer::Type &type = Timer::Once);
     void deleteTimer(Timer *timer);
     Timer *duplicateTimer(Timer *timer);
 

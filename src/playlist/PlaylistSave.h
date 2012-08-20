@@ -21,7 +21,7 @@
 
 #include <QtCore/QString>
 
-#include "core/Enums.h"
+#include "core/File.h"
 
 class PlaylistModel;
 
@@ -34,7 +34,7 @@ public:
     void saveCSVFile(const QString &file);
     void saveJsFile(const QString &file);
     void saveM3UFile(const QString &file,
-                     const Tano::FileType &type = Tano::M3U);
+                     const File::Type &type = File::M3U);
     void saveTvheadend(const QString &location,
                        const QString &interface);
     void saveXmltvId(const QString &file);

@@ -16,7 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/xmltv/XmltvCrewMember.h"
 #include "xmltv/XmltvCrewFilterModel.h"
 
 XmltvCrewFilterModel::XmltvCrewFilterModel(QObject *parent)
@@ -24,7 +23,7 @@ XmltvCrewFilterModel::XmltvCrewFilterModel(QObject *parent)
 
 XmltvCrewFilterModel::~XmltvCrewFilterModel() { }
 
-void XmltvCrewFilterModel::setType(const Tano::Xmltv::CrewMemberType &type)
+void XmltvCrewFilterModel::setType(const XmltvCrewMember::Type &type)
 {
     _type = type;
     invalidateFilter();

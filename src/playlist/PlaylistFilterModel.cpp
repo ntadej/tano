@@ -16,16 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "container/core/Channel.h"
-
 #include "PlaylistFilterModel.h"
 
 PlaylistFilterModel::PlaylistFilterModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
-    _types << Tano::SD
-           << Tano::HD
-           << Tano::Radio;
+    _types << Channel::SD
+           << Channel::HD
+           << Channel::Radio;
 }
 
 PlaylistFilterModel::~PlaylistFilterModel() { }
@@ -48,7 +46,7 @@ void PlaylistFilterModel::setLanguage(const QString &language)
     invalidateFilter();
 }
 
-void PlaylistFilterModel::setTypes(const QList<Tano::ChannelType> &types)
+void PlaylistFilterModel::setTypes(const QList<Channel::Type> &types)
 {
     _types = types;
     invalidateFilter();
@@ -62,7 +60,7 @@ bool PlaylistFilterModel::filterAcceptsRow(int sourceRow,
     bool name = sourceModel()->data(index, Channel::NameRole).toString().contains(filterRegExp());
     bool category = sourceModel()->data(index, Channel::CategoriesRole).toStringList().join("|").contains(_category, Qt::CaseInsensitive);
     bool language = sourceModel()->data(index, Channel::LanguageRole).toString().contains(_language, Qt::CaseInsensitive);
-    bool type = _types.contains(Tano::ChannelType(sourceModel()->data(index, Channel::TypeRole).toInt()));
+    bool type = _types.contains(Channel::Type(sourceModel()->data(index, Channel::TypeRole).toInt()));
 
     return name && category && language && type;
 }

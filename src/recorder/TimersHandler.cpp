@@ -92,11 +92,11 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
         }
     } else if (qName == "type") {
         if (_timer) {
-            _timer->setType(Tano::TimerType(_currentText.toInt()));
+            _timer->setType(Timer::Type(_currentText.toInt()));
         }
     } else if (qName == "state") {
         if (_timer) {
-            _timer->setState(Tano::TimerState(_currentText.toInt()));
+            _timer->setState(Timer::State(_currentText.toInt()));
         }
     }
 

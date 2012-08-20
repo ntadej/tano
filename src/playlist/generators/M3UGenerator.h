@@ -22,7 +22,7 @@
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
-#include "core/Enums.h"
+#include "core/File.h"
 
 class Channel;
 class PlaylistModel;
@@ -32,7 +32,7 @@ class M3UGenerator
 {
 public:
     M3UGenerator(const QString &file,
-                 const Tano::FileType &type = Tano::M3U);
+                 const File::Type &type = File::M3U);
     ~M3UGenerator();
 
     bool write(PlaylistModel *model);
@@ -42,7 +42,7 @@ private:
                       const bool &clean = false,
                       const bool &udpxy = false);
 
-    Tano::FileType _type;
+    File::Type _type;
 
     QFile *_file;
     QTextStream _out;

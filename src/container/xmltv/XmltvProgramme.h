@@ -26,7 +26,6 @@
 #include <QtGui/QFont>
 
 #include "core/ListItem.h"
-#include "xmltv/XmltvEnums.h"
 
 class XmltvCrewModel;
 
@@ -52,6 +51,14 @@ public:
         LenghtUnitsRole,
         IconRole,
         IconSizeRole
+    };
+
+    // Lenght units
+    enum LenghtUnits
+    {
+        Seconds,
+        Minutes,
+        Hours
     };
 
     explicit XmltvProgramme(QObject *parent = 0);
@@ -90,8 +97,8 @@ public:
     void setOriginalLanguage(const QString &s);
     inline QString lenght() const { return _lenght; }
     void setLenght(const QString &s);
-    inline Tano::Xmltv::LenghtUnits lenghtUnits() const { return _lenghtUnits; }
-    void setLenghtUnits(const Tano::Xmltv::LenghtUnits &e);
+    inline LenghtUnits lenghtUnits() const { return _lenghtUnits; }
+    void setLenghtUnits(const LenghtUnits &e);
     inline QString icon() const { return _icon; }
     void setIcon(const QString &s);
     inline QSize iconSize() const { return _iconSize; }
@@ -111,6 +118,10 @@ public:
 
     XmltvCrewModel *crew() { return _crew; }
 
+    static LenghtUnits lenghtUnits(const QString &type);
+    static QString lenghtUnits(const LenghtUnits &type);
+    static QString lenghtUnitsShort(const LenghtUnits &type);
+
 private:
     QString _channel;
     QString _channelDisplayName;
@@ -124,7 +135,7 @@ private:
     QString _language;
     QString _originalLanguage;
     QString _lenght;
-    Tano::Xmltv::LenghtUnits _lenghtUnits;
+    LenghtUnits _lenghtUnits;
     QString _icon;
     QSize _iconSize;
 

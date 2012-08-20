@@ -22,19 +22,13 @@
 #include <QtCore/QDir>
 #include <QtCore/QString>
 
-#include "core/Enums.h"
-
-struct File
-{
-    QString path;
-    Tano::FileType type;
-};
+#include "core/File.h"
 
 namespace FileDialogs
 {
-    QString filterByType(const Tano::FileType &type);
+    QString filterByType(const File::Type &type);
 
-    QString openByType(const Tano::FileType &type,
+    QString openByType(const File::Type &type,
                        const QString &arg = "");
     QString openDirectory(const QString &dir = QDir::homePath());
     QString openFile();
@@ -44,7 +38,7 @@ namespace FileDialogs
     QString openUrl();
     QString openXmltvFile(const QString &file = QDir::homePath() + "xmltv.xml");
 
-    QString saveByType(const Tano::FileType &type,
+    QString saveByType(const File::Type &type,
                        const QString &arg = "");
     File savePlaylist();
     QString saveXmltv();

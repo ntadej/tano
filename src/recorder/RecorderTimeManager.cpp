@@ -30,7 +30,7 @@ RecorderTimeManager::RecorderTimeManager(QObject *parent)
     _model = new TimersFilterModel(this);
     _model->setDynamicSortFilter(true);
     _model->setSortRole(Timer::StartDateTimeRole);
-    _model->setTimerState(Tano::Enabled);
+    _model->setTimerState(Timer::Enabled);
     _model->sort(0);
 
     _timer = new QTimer();
@@ -51,7 +51,7 @@ void RecorderTimeManager::check()
     Timer *t = _modelCore->row(_model->mapToSource(_model->index(0, 0)).row());
 
     if (t->endDateTime() < QDateTime::currentDateTime()) {
-        t->setState(Tano::Expired);
+        t->setState(Timer::Expired);
         return;
     } else if (t->date() > QDate::currentDate()) {
         return;

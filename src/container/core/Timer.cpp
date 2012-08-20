@@ -23,7 +23,7 @@
 Timer::Timer(const QString &name,
              const QString &channel,
              const QString &url,
-             const Tano::TimerType &type,
+             const Type &type,
              QObject *parent)
     : ListItem(parent),
       _name(name),
@@ -38,14 +38,14 @@ Timer::Timer(const QString &name,
     min /= 15;
     _startTime = QTime(QTime::currentTime().hour() + qCeil(min)/4, (qCeil(min) * 15) % 60);
     _endTime = QTime(QTime::currentTime().hour() + 1 + qCeil(min)/4, (qCeil(min) * 15) % 60);
-    _state = Tano::Enabled;
+    _state = Enabled;
 }
 
 Timer::Timer(Timer *timer)
     : ListItem(timer->parent())
 {
     _file = "";
-    _state = Tano::Enabled;
+    _state = Enabled;
 
     _name = timer->name();
     _channel = timer->channel();
@@ -115,21 +115,21 @@ QVariant Timer::data(int role) const
 
 QString Timer::display() const
 {
-    if (type() != Tano::Once && type() != Tano::Instant)
+    if (type() != Once && type() != Instant)
         return QString("%1 (%2) - %3 - %4 %5 %6, %7")
-            .arg(name(), Tano::timerStates()[state()], channel(),
-                 date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"), Tano::timerTypesLong()[type()]);
+            .arg(name(), states()[state()], channel(),
+                 date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"), typesLong()[type()]);
     else
         return QString("%1 (%2) - %3 - %4 %5 %6")
-            .arg(name(), Tano::timerStates()[state()], channel(),
+            .arg(name(), states()[state()], channel(),
                  date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"));
 }
 
 QIcon Timer::displayIcon() const
 {
-    if (state() == Tano::Finished)
+    if (state() == Finished)
         return QIcon(":/icons/16x16/video.png");
-    else if (state() == Tano::Recording)
+    else if (state() == Recording)
         return QIcon(":/icons/16x16/media-record.png");
     else
         return QIcon(":/icons/16x16/timer.png");
@@ -191,7 +191,7 @@ void Timer::setEndTime(const QTime &endTime)
     }
 }
 
-void Timer::setType(const Tano::TimerType &type)
+void Timer::setType(const Type &type)
 {
     if (_type != type) {
         _type = type;
@@ -199,7 +199,7 @@ void Timer::setType(const Tano::TimerType &type)
     }
 }
 
-void Timer::setState(const Tano::TimerState &state)
+void Timer::setState(const State &state)
 {
     if (_state != state) {
         _state = state;
@@ -218,4 +218,40 @@ QDateTime Timer::endDateTime() const
         return QDateTime(date().addDays(1), endTime());
     else
         return QDateTime(date(), endTime());
+}
+
+QStringList Timer::states()
+{
+    QStringList list;
+    list << QObject::tr("Enabled")
+         << QObject::tr("Disabled")
+         << QObject::tr("Recording")
+         << QObject::tr("Finished")
+         << QObject::tr("Expired");
+
+    return list;
+}
+
+QStringList Timer::types()
+{
+    QStringList list;
+    list << QObject::tr("Once")
+         << QObject::tr("Daily")
+         << QObject::tr("Weekly")
+         << QObject::tr("Weekdays")
+         << QObject::tr("Instant");
+
+    return list;
+}
+
+QStringList Timer::typesLong()
+{
+    QStringList list;
+    list << QObject::tr("repeats only once")
+         << QObject::tr("repeats daily")
+         << QObject::tr("repeats weekly")
+         << QObject::tr("repeats on weekdays")
+         << QObject::tr("instant recording");
+
+    return list;
 }

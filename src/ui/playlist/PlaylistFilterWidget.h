@@ -27,7 +27,7 @@
     #include <QtGui/QWidget>
 #endif
 
-#include "core/Enums.h"
+#include "container/core/Channel.h"
 
 namespace Ui
 {
@@ -52,7 +52,7 @@ signals:
     void filters(const QString &,
                  const QString &,
                  const QString &,
-                 const QList<Tano::ChannelType> &);
+                 const QList<Channel::Type> &);
 
 private slots:
     void processFilters();

@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "core/File.h"
 #include "core/Settings.h"
 #include "xmltv/XmltvSystem.h"
 
@@ -28,7 +29,7 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->location->setType(Tano::XmltvFile);
+    ui->location->setType(File::XmltvFile);
     ui->location->setResetValue(Settings::DEFAULT_XMLTV_LOCATION);
 
     _xmltv = new XmltvSystem();

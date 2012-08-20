@@ -80,8 +80,8 @@ void TimersDisplayWidget::timerClicked(const QModelIndex &index)
 {
     _current = _model->row(_filterModel->mapToSource(index).row());
 
-    if (_current->state() == Tano::Finished)
+    if (_current->state() == Timer::Finished)
         emit recordingSelected(_current);
-    else if (_current->state() != Tano::Recording)
+    else if (_current->state() != Timer::Recording)
         emit timerSelected(_current);
 }
