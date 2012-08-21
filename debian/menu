@@ -6,12 +6,3 @@
 	title="Tano"\
 	icon="/usr/share/icons/tano.png"\
 	command="/usr/bin/tano"
-
-?package(tano-editor):\
-	needs="X11"\
-	section="Apps/Video"\
-	longtitle="Tano playlist editor"\
-	hints="Video"\
-	title="Tano Editor"\
-	icon="/usr/share/icons/tano-editor.png"\
-	command="/usr/bin/tano-editor"

@@ -1,3 +1,29 @@
+tano (1.1~git20120821.rev-1~precise) precise; urgency=low
+
+  * Git build
+
+ -- Tadej Novak <tadej@tano.si>  Tue, 21 Aug 2012 00:00:00 +0200
+
+
+tano (1.0.3-1~precise) precise; urgency=low
+
+  * Update: Changed playlist OSD position in fullscreen
+  * Fix: Playlist selection crash
+  * Fix: Remember visible items after lite mode
+  * Fix: Session volume settings
+  * Fix: Save to all available formats
+
+ -- Tadej Novak <tadej@tano.si>  Mon, 20 Aug 2012 16:08:18 +0200
+
+
+tano (1.0.2-1~precise) precise; urgency=low
+
+  * Fix: Encoding issues
+  * Fix: Don't move playlist widget, if item is visible
+
+ -- Tadej Novak <tadej@tano.si>  Fri, 10 Aug 2012 15:45:02 +0200
+
+
 tano (1.0.1-1~precise) precise; urgency=low
 
   * Various XMLTV improvements and fixes

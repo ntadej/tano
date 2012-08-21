@@ -61,11 +61,9 @@ install: build
 
 	mkdir $(CURDIR)/debian/tmp/usr/share/applications/
 	cp tano.desktop $(CURDIR)/debian/tmp/usr/share/applications/tano.desktop
-	cp tano-editor.desktop $(CURDIR)/debian/tmp/usr/share/applications/tano-editor.desktop
 
 	mkdir $(CURDIR)/debian/tmp/usr/share/icons/
 	cp $(CURDIR)/debian/tmp/usr/share/tano/logo.png $(CURDIR)/debian/tmp/usr/share/icons/tano.png
-	cp $(CURDIR)/debian/tmp/usr/share/tano/logo-editor.png $(CURDIR)/debian/tmp/usr/share/icons/tano-editor.png
 
 
 # Build architecture-independent files
