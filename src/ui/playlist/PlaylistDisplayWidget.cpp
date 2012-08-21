@@ -51,7 +51,7 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
 	_rightMenu->addAction(_schedule);
 
     connect(ui->playlistView, SIGNAL(activated(QModelIndex)), this, SLOT(channelSelected(QModelIndex)));
-    connect(ui->filters, SIGNAL(filters(QString, QString, QString, QList<Tano::ChannelType>)), this, SLOT(processFilters(QString, QString, QString, QList<Tano::ChannelType>)));
+    connect(ui->filters, SIGNAL(filters(QString, QString, QString, QList<Channel::Type>)), this, SLOT(processFilters(QString, QString, QString, QList<Channel::Type>)));
     connect(_play, SIGNAL(triggered()), this, SLOT(play()));
     connect(_schedule, SIGNAL(triggered()), this, SLOT(schedule()));
 }

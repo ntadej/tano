@@ -618,8 +618,13 @@ void MainWindow::writeSession()
         settings->setHeight(size().height());
         settings->setPosX(x());
         settings->setPosY(y());
-        settings->setStartControls(ui->dockControls->isVisible());
-        settings->setStartInfo(ui->dockInfo->isVisible());
+        if (!isVisible() || _isLite || ui->actionRecorder->isChecked()) {
+            settings->setStartControls(_dockControlsVisible);
+            settings->setStartInfo(_dockInfoVisible);
+        } else {
+            settings->setStartControls(ui->dockControls->isVisible());
+            settings->setStartInfo(ui->dockInfo->isVisible());
+        }
     }
 
     settings->writeSettings();
@@ -939,13 +944,13 @@ void MainWindow::top()
 void MainWindow::lite()
 {
     if (_isLite) {
-        ui->dockInfo->setVisible(_litePlaylist);
         ui->toolBar->setVisible(_liteToolbar);
-        ui->dockControls->setVisible(_liteOsd);
+        ui->dockInfo->setVisible(_dockInfoVisible);
+        ui->dockControls->setVisible(_dockControlsVisible);
     } else {
-        _litePlaylist = ui->dockInfo->isVisible();
         _liteToolbar = ui->toolBar->isVisible();
-        _liteOsd = ui->dockControls->isVisible();
+        _dockInfoVisible = ui->dockInfo->isVisible();
+        _dockControlsVisible = ui->dockControls->isVisible();
 
         ui->dockInfo->setVisible(false);
         ui->toolBar->setVisible(false);
@@ -1146,15 +1151,20 @@ void MainWindow::recorder(const bool &enabled)
     if (enabled) {
         ui->recorder->setVisible(true);
         ui->stackedWidget->setCurrentIndex(2);
+
+        _dockControlsVisible = ui->dockControls->isVisible();
+        _dockInfoVisible = ui->dockInfo->isVisible();
+        ui->dockInfo->setVisible(false);
+        ui->dockControls->setVisible(false);
     } else {
         ui->recorder->setVisible(false);
         ui->stackedWidget->setCurrentIndex(0);
+        ui->dockInfo->setVisible(_dockInfoVisible);
+        ui->dockControls->setVisible(_dockControlsVisible);
     }
 
     ui->actionRecorder->setChecked(enabled);
     ui->toolBarRecorder->setVisible(enabled);
-    ui->dockInfo->setVisible(!enabled);
-    ui->dockControls->setVisible(!enabled);
     ui->actionLite->setEnabled(!enabled);
 }
 

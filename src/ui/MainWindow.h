@@ -160,7 +160,6 @@ private:
     void play();
 
     //Settings
-    bool _dockControlsVisible;
     int _defaultAspectRatio;
     QString _defaultAudioLanguage;
     int _defaultCropRatio;
@@ -172,10 +171,9 @@ private:
     int _desktopHeight;
     bool _hasPlaylist;
     bool _hideToTray;
+    bool _dockControlsVisible;
     bool _dockInfoVisible;
     bool _isLite;
-    bool _litePlaylist;
-    bool _liteOsd;
     bool _liteToolbar;
     bool _osdEnabled;
     bool _infoEnabled;
