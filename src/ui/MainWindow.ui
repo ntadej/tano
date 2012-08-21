@@ -60,7 +60,7 @@
      <x>0</x>
      <y>0</y>
      <width>650</width>
-     <height>27</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuRecorder">
@@ -121,6 +121,7 @@
     <addaction name="actionBack"/>
     <addaction name="actionNext"/>
     <addaction name="actionTeletext"/>
+    <addaction name="actionPreview"/>
    </widget>
    <widget class="QMenu" name="menuVideo">
     <property name="title">
@@ -783,6 +784,14 @@
    </property>
    <property name="text">
     <string>Take snapshot</string>
+   </property>
+  </action>
+  <action name="actionPreview">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Preview channels</string>
    </property>
   </action>
  </widget>

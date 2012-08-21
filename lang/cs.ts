@@ -438,6 +438,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Take snapshot</source>
         <translation>Udělat snímek</translation>
     </message>
+    <message>
+        <source>Preview channels</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1936,6 +1940,10 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview channels</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

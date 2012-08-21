@@ -412,6 +412,10 @@ This will stop recording in progress.</source>
         <source>Take snapshot</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Preview channels</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1825,6 +1829,10 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview channels</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -95,6 +95,7 @@ MainWindow::MainWindow(Arguments *args)
       _audioController(0),
       _videoController(0),
       _xmltv(new XmltvManager()),
+      _previewTimer(new QTimer(this)),
       _startTimer(new QTimer(this)),
       _udpxy(new Udpxy()),
       _schedule(new EpgScheduleFull()),
@@ -385,8 +386,10 @@ void MainWindow::createConnections()
 
     connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(pause()));
     connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
+    connect(ui->actionPreview, SIGNAL(triggered(bool)), this, SLOT(preview(bool)));
 
     connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playChannel(Channel *)));
+    connect(_previewTimer, SIGNAL(timeout()), ui->actionNext, SLOT(trigger()));
     connect(_startTimer, SIGNAL(timeout()), this, SLOT(startSession()));
 
     connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
@@ -554,6 +557,7 @@ void MainWindow::createShortcuts()
              << ui->actionTray
              << ui->actionRecordNow
              << ui->actionSnapshot
+             << ui->actionPreview
              << _menuTrackAudio->actionNext()
              << _menuTrackVideo->actionNext()
              << _menuTrackSubtitles->actionNext()
@@ -1121,6 +1125,16 @@ void MainWindow::toggleOsdInfo(const bool &enabled)
     }
 
     ui->actionInfoPanel->setChecked(enabled);
+}
+
+void MainWindow::preview(const bool &enabled)
+{
+    if (enabled) {
+        ui->actionNext->trigger();
+        _previewTimer->start(8000);
+    } else {
+        _previewTimer->stop();
+    }
 }
 
 // Recorder

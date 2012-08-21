@@ -439,6 +439,10 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>Take snapshot</source>
         <translation>Zajemi sliko</translation>
     </message>
+    <message>
+        <source>Preview channels</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -1937,6 +1941,10 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview channels</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -98,6 +98,7 @@ void PlaylistDisplayWidget::channelSelected(const int &channel)
     }
 
     _current = _model->number(channel);
+    emit itemSelected(_current);
     updateSelection(_current);
 }
 

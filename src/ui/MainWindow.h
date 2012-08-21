@@ -129,6 +129,7 @@ private slots:
     void toggleFullscreen(const bool &enabled);
     void toggleOsdControls(const bool &enabled = false);
     void toggleOsdInfo(const bool &enabled = false);
+    void preview(const bool &enabled = false);
 
     void infoClose();
     void infoToggleSchedule();
@@ -221,6 +222,7 @@ private:
     Channel *_channel;
     XmltvManager *_xmltv;
     QString _playlistName;
+    QTimer *_previewTimer;
     Timer *_recording;
     QTimer *_startTimer;
     Udpxy *_udpxy;
