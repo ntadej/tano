@@ -33,11 +33,18 @@ set(CMAKE_MODULE_PATH
 
 INCLUDE(ManageString)
 
+OPTION(CUSTOM_SETTINGS "Custom settings" OFF)
+MESSAGE("Custom settings: ${CUSTOM_SETTINGS}")
+
 ###########
 # Version #
 ###########
 # Tano version number.
-FILE(READ VERSION TANO_VERSION)
+IF(CUSTOM_SETTINGS)
+    FILE(READ src/custom/VERSION TANO_VERSION)
+ELSE(CUSTOM_SETTINGS)
+    FILE(READ VERSION TANO_VERSION)
+ENDIF(CUSTOM_SETTINGS)
 STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
 MESSAGE("You are compiling Tano ${TANO_VERSION}")
 
@@ -170,8 +177,6 @@ OPTION(DISABLE_UPDATE_CHECK "Disable update checking" OFF)
 MESSAGE("Disable update checking: ${DISABLE_UPDATE_CHECK}")
 OPTION(DISABLE_TELETEXT "Disable teletext" OFF)
 MESSAGE("Disable teletext: ${DISABLE_TELETEXT}")
-OPTION(CUSTOM_SETTINGS "Custom settings" OFF)
-MESSAGE("Custom settings: ${CUSTOM_SETTINGS}")
 IF(MINGW)
     OPTION(WINDOWS_INSTALLER "Enable Windows installer" ON)
     MESSAGE("Enable Windows installer: ${WINDOWS_INSTALLER}")
