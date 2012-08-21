@@ -122,6 +122,16 @@ void SettingsUi::setRememberSize(const bool &enabled)
     ui->checkRememberSize->setChecked(enabled);
 }
 
+bool SettingsUi::filter() const
+{
+    return ui->checkFilter->isChecked();
+}
+
+void SettingsUi::setFilter(const bool &enabled)
+{
+    ui->checkFilter->setChecked(enabled);
+}
+
 bool SettingsUi::lite() const
 {
     return ui->checkLite->isChecked();

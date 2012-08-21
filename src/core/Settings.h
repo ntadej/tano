@@ -91,6 +91,9 @@ public:
     inline bool rememberGuiSession() const { return _rememberGuiSession; }
     inline void setRememberGuiSession(const bool &b) { _rememberGuiSession = b; }
     static const bool DEFAULT_REMEMBER_GUI_SESSION;
+    inline bool filtersVisible() const { return _filtersVisible; }
+    inline void setFiltersVisible(const bool &b) { _filtersVisible = b; }
+    static const bool DEFAULT_FILTERS_VISIBLE;
 
     // GUI - session
     inline int width() const { return _width; }
@@ -234,6 +237,7 @@ private:
     QString _mouseWheel;
     int _toolbarLook;
     bool _rememberGuiSession;
+    bool _filtersVisible;
 
     // GUI - session
     int _width;

@@ -60,6 +60,7 @@ void Settings::writeSettings()
     setValue("gui/mousewheel", mouseWheel());
     setValue("gui/toolbarlook", toolbarLook());
     setValue("gui/session", rememberGuiSession());
+    setValue("gui/filters", filtersVisible());
 
     setValue("backend/vout", vout());
     setValue("backend/aout", aout());
@@ -127,6 +128,7 @@ void Settings::readSettings()
     setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
     setToolbarLook(value("gui/toolbarlook", DEFAULT_TOOLBAR_LOOK).toInt());
     setRememberGuiSession(value("gui/session", DEFAULT_REMEMBER_GUI_SESSION).toBool());
+    setFiltersVisible(value("gui/filters", DEFAULT_FILTERS_VISIBLE).toBool());
 
     setVout(value("backend/vout", DEFAULT_VOUT).toInt());
     setAout(value("backend/aout", DEFAULT_AOUT).toInt());

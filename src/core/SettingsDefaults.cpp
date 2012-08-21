@@ -56,6 +56,7 @@ const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
 const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
 const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonIconOnly;
 const bool Settings::DEFAULT_REMEMBER_GUI_SESSION = true;
+const bool Settings::DEFAULT_FILTERS_VISIBLE = false;
 
 // Backend - core
 const int Settings::DEFAULT_VOUT = -1;

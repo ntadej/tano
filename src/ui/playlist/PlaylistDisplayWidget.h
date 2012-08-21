@@ -51,6 +51,7 @@ public:
 
     Channel *currentChannel() { return _current; }
     PlaylistFilterWidget *filter();
+    void filterReset();
     QList<Channel *> visibleChannels();
 
     void editMode();

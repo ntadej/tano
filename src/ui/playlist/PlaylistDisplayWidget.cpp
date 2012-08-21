@@ -119,6 +119,12 @@ PlaylistFilterWidget *PlaylistDisplayWidget::filter()
     return ui->filters;
 }
 
+void PlaylistDisplayWidget::filterReset()
+{
+    ui->filters->show();
+    ui->verticalLayout->addWidget(ui->filters);
+}
+
 void PlaylistDisplayWidget::play()
 {
     channelSelected(ui->playlistView->indexAt(_currentPos));

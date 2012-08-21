@@ -2066,6 +2066,10 @@ This operation is ireversible.</source>
         <source>Remember main window size, position and open panels</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Filters always visible</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Timer</name>

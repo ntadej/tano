@@ -40,6 +40,8 @@ class VlcMedia;
 class VlcMediaPlayer;
 class VlcVideoControl;
 
+class QWidgetAction;
+
 class Arguments;
 class Channel;
 class ChannelSelect;
@@ -123,11 +125,10 @@ private slots:
     void showVideo(const int &count = 0);
     void teletext(const bool &enabled);
     void teletext(const int &page);
+    void toggleFilters(const bool &enabled = false);
     void toggleFullscreen(const bool &enabled);
-    void toggleOsdControls();
-    void toggleOsdControls(const bool &enabled);
-    void toggleOsdInfo();
-    void toggleOsdInfo(const bool &enabled);
+    void toggleOsdControls(const bool &enabled = false);
+    void toggleOsdInfo(const bool &enabled = false);
 
     void infoClose();
     void infoToggleSchedule();
@@ -160,6 +161,7 @@ private:
     void play();
 
     //Settings
+    bool _init;
     int _defaultAspectRatio;
     QString _defaultAudioLanguage;
     int _defaultCropRatio;
@@ -169,6 +171,7 @@ private:
     QString _defaultSubtitleLanguage;
     int _desktopWidth;
     int _desktopHeight;
+    bool _filter;
     bool _hasPlaylist;
     bool _hideToTray;
     bool _dockControlsVisible;
@@ -243,6 +246,7 @@ private:
     QMenu *_openMenu;
     QMenu *_playlistMenu;
     QList<QAction*> _actions;
+    QWidgetAction *_waction;
 };
 
 #endif // TANO_MAINWINDOW_H_

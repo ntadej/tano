@@ -85,6 +85,7 @@
 MainWindow::MainWindow(Arguments *args)
     : QMainWindow(),
       ui(new Ui::MainWindow),
+      _init(false),
       _hasPlaylist(false),
       _select(0),
       _file(new NetworkDownload()),
@@ -215,11 +216,9 @@ void MainWindow::createGui()
     ui->dockControlsContents->layout()->addWidget(_osdMain);
     ui->dockControls->setTitleBarWidget(_osdMain->blank());
 
-    QWidgetAction *waction = new QWidgetAction(this);
-    ui->playlistWidget->filter()->show();
-    waction->setDefaultWidget(ui->playlistWidget->filter());
-    _playlistMenu->addAction(waction);
-    ui->buttonPlaylistSearch->setMenu(_playlistMenu);
+    _waction = new QWidgetAction(this);
+    _playlistMenu->addAction(_waction);
+    toggleFilters();
 
     ui->playlistWidget->playMode();
     ui->playlistWidget->setModel(_model);
@@ -230,6 +229,7 @@ void MainWindow::createGui()
 
     openPlaylist(true);
     setStopped();
+    showVideo();
     ui->pageMain->setStyleSheet("background-color: rgb(0,0,0);");
     ui->toolBarRecorder->hide();
     ui->scheduleWidget->setIdentifier(Tano::Main);
@@ -284,6 +284,9 @@ void MainWindow::createSettings()
     _wheelType = settings->mouseWheel();
     mouseWheel();
     _rememberGui = settings->rememberGuiSession();
+    _filter = settings->filtersVisible();
+    if (_init)
+        toggleFilters();
 
     //Playback settings
     _defaultAspectRatio = settings->aspectRatio();
@@ -312,6 +315,8 @@ void MainWindow::createSettings()
 
     ui->recorder->createSettings();
     _defaultSnapshot = settings->snapshotsDirectory();
+
+    _init = true;
 
     qDebug() << "Initialised: Settings";
 }
@@ -1049,6 +1054,21 @@ void MainWindow::infoToggleSchedule()
     }
 }
 
+void MainWindow::toggleFilters(const bool &enabled)
+{
+    if (enabled || _filter) {
+        ui->buttonPlaylistSearch->hide();
+        ui->playlistWidget->filterReset();
+    } else if (!_filter) {
+        ui->buttonPlaylistSearch->show();
+        ui->playlistWidget->filter()->show();
+        _playlistMenu->removeAction(_waction);
+        _waction->setDefaultWidget(ui->playlistWidget->filter());
+        _playlistMenu->addAction(_waction);
+        ui->buttonPlaylistSearch->setMenu(_playlistMenu);
+    }
+}
+
 void MainWindow::toggleFullscreen(const bool &enabled)
 {
     _osdInfo->setVisible(enabled);
@@ -1069,11 +1089,8 @@ void MainWindow::toggleFullscreen(const bool &enabled)
         ui->dockContents->layout()->addWidget(ui->stackedWidgetDock);
         ui->dockControlsContents->layout()->addWidget(_osdMain);
     }
-}
 
-void MainWindow::toggleOsdControls()
-{
-    toggleOsdControls(false);
+    toggleFilters(enabled);
 }
 
 void MainWindow::toggleOsdControls(const bool &enabled)
@@ -1089,11 +1106,6 @@ void MainWindow::toggleOsdControls(const bool &enabled)
     }
 
     ui->actionControls->setChecked(enabled);
-}
-
-void MainWindow::toggleOsdInfo()
-{
-    toggleOsdInfo(false);
 }
 
 void MainWindow::toggleOsdInfo(const bool &enabled)

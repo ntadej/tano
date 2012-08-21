@@ -106,6 +106,7 @@ void SettingsDialog::apply()
     _settings->setMouseWheel(ui->gui->wheel());
     _settings->setToolbarLook(ui->gui->toolbar());
     _settings->setRememberGuiSession(ui->gui->rememberSize());
+    _settings->setFiltersVisible(ui->gui->filter());
     _settings->setStartLite(ui->gui->lite());
     _settings->setStartOnTop(ui->gui->top());
 
@@ -169,6 +170,7 @@ void SettingsDialog::defaults()
     ui->gui->setWheel(Settings::DEFAULT_MOUSE_WHEEL);
     ui->gui->setToolbar(Settings::DEFAULT_TOOLBAR_LOOK);
     ui->gui->setRememberSize(Settings::DEFAULT_REMEMBER_GUI_SESSION);
+    ui->gui->setFilter(Settings::DEFAULT_FILTERS_VISIBLE);
     ui->gui->setLite(Settings::DEFAULT_START_LITE);
     ui->gui->setTop(Settings::DEFAULT_START_ON_TOP);
 
@@ -229,6 +231,7 @@ void SettingsDialog::read()
     ui->gui->setWheel(_settings->mouseWheel());
     ui->gui->setToolbar(_settings->toolbarLook());
     ui->gui->setRememberSize(_settings->rememberGuiSession());
+    ui->gui->setFilter(_settings->filtersVisible());
     ui->gui->setLite(_settings->startLite());
     ui->gui->setTop(_settings->startOnTop());
 

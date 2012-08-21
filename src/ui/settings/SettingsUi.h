@@ -51,6 +51,8 @@ public:
     void setToolbar(const int &id);
     bool rememberSize() const;
     void setRememberSize(const bool &enabled);
+    bool filter() const;
+    void setFilter(const bool &enabled);
 
     bool lite() const;
     void setLite(const bool &enabled);
