@@ -211,7 +211,6 @@ ENDIF(MINGW)
 SET(Tano_Files
     LICENSE.GPL
     data/logo/64x64/logo.png
-    data/logo/64x64/logo-editor.png
 )
 
 
