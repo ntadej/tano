@@ -21,7 +21,7 @@
 #include <QtXml/QXmlSimpleReader>
 
 #include "core/Common.h"
-#include "core/NetworkRequest.h"
+#include "core/network/NetworkRequest.h"
 
 #include "UpdateDialog.h"
 #include "ui_UpdateDialog.h"

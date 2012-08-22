@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 #include "container/xmltv/XmltvProgramme.h"
-#include "core/NetworkDownload.h"
+#include "core/network/NetworkDownload.h"
 #include "xmltv/XmltvCrewFilterModel.h"
 #include "xmltv/XmltvCrewModel.h"
 

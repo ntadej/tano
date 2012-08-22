@@ -49,12 +49,12 @@
 #include "core/Backend.h"
 #include "core/ChannelSelect.h"
 #include "core/Common.h"
-#include "core/NetworkDownload.h"
 #include "core/LocaleManager.h"
 #include "core/Resources.h"
-#include "core/Settings.h"
-#include "core/Shortcuts.h"
-#include "core/Udpxy.h"
+#include "core/network/NetworkDownload.h"
+#include "core/network/NetworkUdpxy.h"
+#include "core/settings/Settings.h"
+#include "core/settings/SettingsShortcuts.h"
 #include "playlist/PlaylistModel.h"
 #include "playlist/PlaylistUpdate.h"
 #include "ui/core/FileDialogs.h"
@@ -97,7 +97,7 @@ MainWindow::MainWindow(Arguments *args)
       _xmltv(new XmltvManager()),
       _previewTimer(new QTimer(this)),
       _startTimer(new QTimer(this)),
-      _udpxy(new Udpxy()),
+      _udpxy(new NetworkUdpxy()),
       _schedule(new EpgScheduleFull()),
       _epgShow(new EpgShow()),
       _osdFloat(0),
@@ -566,7 +566,7 @@ void MainWindow::createShortcuts()
              << _menuScale->actionNext()
              << _menuDeinterlacing->actionNext();
 
-    _shortcuts = new Shortcuts(_actions, this);
+    _shortcuts = new SettingsShortcuts(_actions, this);
 
     qDebug() << "Initialised: Shortcuts";
 }

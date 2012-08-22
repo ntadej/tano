@@ -62,6 +62,8 @@ SET(Tano_UIs
 
 # Define the MOC source files used by Tano
 SET(Tano_Container_MOCs
+    container/ListItem.h
+    container/ListModel.h
     container/core/Channel.h
     container/core/Timer.h
     container/xmltv/XmltvChannel.h
@@ -72,11 +74,9 @@ SET(Tano_Container_MOCs
 
 SET(Tano_Core_MOCs
     core/ChannelSelect.h
-    core/NetworkDownload.h
-    core/NetworkRequest.h
-    core/ListItem.h
-    core/ListModel.h
     core/Print.h
+    core/network/NetworkDownload.h
+    core/network/NetworkRequest.h
 )
 
 SET(Tano_Playlist_MOCs
@@ -167,6 +167,8 @@ SET(Tano_Resrcs
 
 # Define the C++ source files used by Tano
 SET(Tano_Container_Srcs
+    container/ListItem.h
+    container/ListModel.cpp
     container/core/Channel.cpp
     container/core/Timer.cpp
     container/xmltv/XmltvChannel.cpp
@@ -181,17 +183,15 @@ SET(Tano_Core_Srcs
     core/Common.cpp
     core/File.h
     core/Out.cpp
-    core/NetworkDownload.cpp
-    core/NetworkRequest.cpp
-    core/ListItem.h
-    core/ListModel.cpp
     core/LocaleManager.cpp
     core/Log.cpp
     core/Print.cpp
     core/Resources.cpp
-    core/Settings.cpp
-    core/Shortcuts.cpp
-    core/Udpxy.cpp
+    core/network/NetworkDownload.cpp
+    core/network/NetworkRequest.cpp
+    core/network/NetworkUdpxy.cpp
+    core/settings/Settings.cpp
+    core/settings/SettingsShortcuts.cpp
 )
 SET(Tano_Playlist_Srcs
     playlist/PlaylistFilterModel.cpp
@@ -326,12 +326,14 @@ IF(CUSTOM_SETTINGS)
         ${Tano_Srcs}
 
         custom/SettingsDefaults.cpp
+        custom/SettingsShortcutsDefaults.cpp
     )
 ELSE(CUSTOM_SETTINGS)
     SET(Tano_Srcs
         ${Tano_Srcs}
 
-        core/SettingsDefaults.cpp
+        core/settings/SettingsDefaults.cpp
+        core/settings/SettingsShortcutsDefaults.cpp
     )
 ENDIF(CUSTOM_SETTINGS)
 

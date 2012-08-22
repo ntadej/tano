@@ -32,7 +32,7 @@ class Channel;
 class PlaylistModel;
 class Timer;
 class TimersModel;
-class Udpxy;
+class NetworkUdpxy;
 class XmltvProgramme;
 
 namespace Ui {
@@ -72,7 +72,7 @@ private:
     Timer *_currentTimer;
 
     TimersModel *_model;
-    Udpxy *_udpxy;
+    NetworkUdpxy *_udpxy;
 
     QMenu *_menu;
     QWidgetAction *_action;

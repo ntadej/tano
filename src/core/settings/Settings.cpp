@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 #include "core/Common.h"
-#include "core/Settings.h"
+#include "core/settings/Settings.h"
 
 Settings::Settings(QObject *parent)
     : QSettings(QSettings::IniFormat,

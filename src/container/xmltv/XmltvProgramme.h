@@ -25,7 +25,7 @@
 #include <QtCore/QStringList>
 #include <QtGui/QFont>
 
-#include "core/ListItem.h"
+#include "container/ListItem.h"
 
 class XmltvCrewModel;
 

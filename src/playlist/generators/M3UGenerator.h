@@ -26,7 +26,7 @@
 
 class Channel;
 class PlaylistModel;
-class Udpxy;
+class NetworkUdpxy;
 
 class M3UGenerator
 {
@@ -47,7 +47,7 @@ private:
     QFile *_file;
     QTextStream _out;
 
-    Udpxy *_udpxy;
+    NetworkUdpxy *_udpxy;
 
     QString _hd;
     QString _radio;

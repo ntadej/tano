@@ -19,7 +19,7 @@
 #ifndef TANO_XMLTVCREWMODEL_H_
 #define TANO_XMLTVCREWMODEL_H_
 
-#include "core/ListModel.h"
+#include "container/ListModel.h"
 
 class XmltvCrewMember;
 

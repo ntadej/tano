@@ -16,16 +16,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_UDPXY_H_
-#define TANO_UDPXY_H_
+#ifndef TANO_NETWORKUDPXY_H_
+#define TANO_NETWORKUDPXY_H_
 
 #include <QtCore/QObject>
 
-class Udpxy
+class NetworkUdpxy
 {
 public:
-    Udpxy(const bool &generate = false);
-    ~Udpxy();
+    NetworkUdpxy(const bool &generate = false);
+    ~NetworkUdpxy();
 
     void createSettings();
     QString processUrl(const QString &url) const;
@@ -37,4 +37,4 @@ private:
     QString _port;
 };
 
-#endif // TANO_UDPXY_H_
+#endif // TANO_NETWORKUDPXY_H_

@@ -19,8 +19,8 @@
 #ifndef TANO_TIMERSMODEL_H_
 #define TANO_TIMERSMODEL_H_
 
+#include "container/ListModel.h"
 #include "container/core/Timer.h"
-#include "core/ListModel.h"
 
 class Timer;
 

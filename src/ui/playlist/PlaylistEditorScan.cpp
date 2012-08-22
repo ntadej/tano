@@ -25,7 +25,7 @@
 #include <vlc-qt/MediaPlayer.h>
 
 #include "container/core/Channel.h"
-#include "core/Udpxy.h"
+#include "core/network/NetworkUdpxy.h"
 #include "playlist/PlaylistModel.h"
 
 #include "PlaylistEditorScan.h"
@@ -39,7 +39,7 @@ PlaylistEditorScan::PlaylistEditorScan(QWidget *parent)
 
     _media = 0;
     _player = 0;
-    _udpxy = new Udpxy();
+    _udpxy = new NetworkUdpxy();
     _timer = new QTimer();
     connect(_timer, SIGNAL(timeout()), this, SLOT(checkIp()));
     connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));

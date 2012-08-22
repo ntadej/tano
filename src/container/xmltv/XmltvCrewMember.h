@@ -22,7 +22,7 @@
 #include <QtCore/QList>
 #include <QtCore/QString>
 
-#include "core/ListItem.h"
+#include "container/ListItem.h"
 
 class XmltvCrewMember : public ListItem
 {

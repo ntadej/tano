@@ -17,8 +17,8 @@
 *****************************************************************************/
 
 #include "container/core/Channel.h"
-#include "core/Settings.h"
-#include "core/Udpxy.h"
+#include "core/network/NetworkUdpxy.h"
+#include "core/settings/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "playlist/generators/M3UGenerator.h"
 
@@ -27,7 +27,7 @@ M3UGenerator::M3UGenerator(const QString &file,
     : _type(type)
 {
     _file = new QFile(file);
-    _udpxy = new Udpxy();
+    _udpxy = new NetworkUdpxy();
 
     QScopedPointer<Settings> settings(new Settings());
     _hd = settings->hdCategory();

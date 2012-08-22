@@ -31,7 +31,7 @@ class PlaylistModel;
 class VlcInstance;
 class VlcMedia;
 class VlcMediaPlayer;
-class Udpxy;
+class NetworkUdpxy;
 
 namespace Ui {
     class PlaylistEditorScan;
@@ -71,7 +71,7 @@ private:
     VlcInstance *_instance;
     VlcMedia *_media;
     VlcMediaPlayer *_player;
-    Udpxy  *_udpxy;
+    NetworkUdpxy  *_udpxy;
     int _refresh;
     int _currentIp[4];
     int _currentPort;

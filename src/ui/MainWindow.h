@@ -56,7 +56,7 @@ class MenuScale;
 class MenuTrackAudio;
 class MenuTrackSubtitles;
 class MenuTrackVideo;
-class Shortcuts;
+class SettingsShortcuts;
 class OsdFloat;
 class OsdWidget;
 class PlaylistEditor;
@@ -64,7 +64,7 @@ class PlaylistModel;
 class PlaylistUpdate;
 class Timer;
 class TrayIcon;
-class Udpxy;
+class NetworkUdpxy;
 class XmltvManager;
 class XmltvProgramme;
 
@@ -205,7 +205,7 @@ private:
     LocaleManager *_locale;
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;
-    Shortcuts *_shortcuts;
+    SettingsShortcuts *_shortcuts;
 
 #if UPDATE
     UpdateDialog *_update;
@@ -225,7 +225,7 @@ private:
     QTimer *_previewTimer;
     Timer *_recording;
     QTimer *_startTimer;
-    Udpxy *_udpxy;
+    NetworkUdpxy *_udpxy;
 
     //GUI
     EpgScheduleFull *_schedule;

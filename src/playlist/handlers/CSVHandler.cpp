@@ -21,7 +21,7 @@
 #include <QtCore/QTextStream>
 
 #include "container/core/Channel.h"
-#include "core/Settings.h"
+#include "core/settings/Settings.h"
 #include "playlist/handlers/CSVHandler.h"
 
 CSVHandler::CSVHandler()

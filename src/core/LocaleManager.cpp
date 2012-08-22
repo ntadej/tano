@@ -22,7 +22,7 @@
 
 #include "core/LocaleManager.h"
 #include "core/Resources.h"
-#include "core/Settings.h"
+#include "core/settings/Settings.h"
 
 LocaleManager::LocaleManager()
 {

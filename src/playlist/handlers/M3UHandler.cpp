@@ -22,7 +22,7 @@
 
 #include "M3UHandler.h"
 #include "container/core/Channel.h"
-#include "core/Settings.h"
+#include "core/settings/Settings.h"
 
 M3UHandler::M3UHandler()
 {

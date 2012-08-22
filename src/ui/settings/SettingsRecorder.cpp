@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 #include "core/File.h"
-#include "core/Settings.h"
+#include "core/settings/Settings.h"
 
 #include "SettingsRecorder.h"
 #include "ui_SettingsRecorder.h"

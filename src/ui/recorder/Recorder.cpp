@@ -27,7 +27,7 @@
 
 #include "container/core/Timer.h"
 #include "container/xmltv/XmltvProgramme.h"
-#include "core/Settings.h"
+#include "core/settings/Settings.h"
 #include "recorder/RecorderCore.h"
 #include "recorder/RecorderTimeManager.h"
 #include "recorder/TimersModel.h"

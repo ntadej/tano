@@ -21,8 +21,8 @@
 
 #include <QtCore/QStringList>
 
+#include "container/ListModel.h"
 #include "core/File.h"
-#include "core/ListModel.h"
 #include "playlist/handlers/CSVHandler.h"
 
 class Channel;

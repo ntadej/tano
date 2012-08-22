@@ -19,7 +19,7 @@
 #ifndef TANO_XMLTVCHANNELSMODEL_H_
 #define TANO_XMLTVCHANNELSMODEL_H_
 
-#include "core/ListModel.h"
+#include "container/ListModel.h"
 
 class XmltvChannel;
 

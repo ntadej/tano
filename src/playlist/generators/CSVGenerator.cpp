@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 #include "container/core/Channel.h"
-#include "core/Settings.h"
+#include "core/settings/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "CSVGenerator.h"
 

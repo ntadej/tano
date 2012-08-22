@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/NetworkDownload.h"
-#include "core/Settings.h"
+#include "core/network/NetworkDownload.h"
+#include "core/settings/Settings.h"
 #include "playlist/PlaylistModel.h"
 #include "playlist/PlaylistUpdate.h"
 

@@ -16,8 +16,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSSHORTCUTS_H_
-#define TANO_SETTINGSSHORTCUTS_H_
+#ifndef TANO_SETTINGSDIALOGSHORTCUTS_H_
+#define TANO_SETTINGSDIALOGSHORTCUTS_H_
 
 #if defined(Qt5)
     #include <QtWidgets/QDialog>
@@ -28,7 +28,7 @@
 class QAbstractButton;
 class QTableWidgetItem;
 
-class Shortcuts;
+class SettingsShortcuts;
 
 namespace Ui
 {
@@ -39,8 +39,8 @@ class SettingsDialogShortcuts : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialogShortcuts(Shortcuts *shortcuts,
-                               QWidget *parent = 0);
+    explicit SettingsDialogShortcuts(SettingsShortcuts *shortcuts,
+                                     QWidget *parent = 0);
     ~SettingsDialogShortcuts();
 
 protected:
@@ -62,11 +62,11 @@ private:
 
     Ui::SettingsDialogShortcuts *ui;
 
-    Shortcuts *_shortcuts;
+    SettingsShortcuts *_shortcuts;
 
     QTableWidgetItem *_item;
     QKeySequence _sequence;
     bool _success;
 };
 
-#endif // TANO_SETTINGSSHORTCUTS_H_
+#endif // TANO_SETTINGSDIALOGSHORTCUTS_H_

@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SHORTCUTS_H_
-#define TANO_SHORTCUTS_H_
+#ifndef TANO_SETTINGSSHORTCUTS_H_
+#define TANO_SETTINGSSHORTCUTS_H_
 
 #include <QtCore/QList>
 #include <QtCore/QSettings>
@@ -25,24 +25,23 @@
 
 class QAction;
 
-class Shortcuts : public QSettings
+class SettingsShortcuts : public QSettings
 {
 public:
-    explicit Shortcuts(const QList<QAction *> &list,
-                       QObject *parent = 0);
-    ~Shortcuts();
+    explicit SettingsShortcuts(const QList<QAction *> &list,
+                               QObject *parent = 0);
+    ~SettingsShortcuts();
 
-    inline QStringList actionsNames() const { return _actionsName; }
     void apply();
-    inline QStringList defaultKeys() const { return _defaultList; }
     QStringList readKeys() const;
-    inline void restoreDefaults() { write(_defaultList); }
+    inline void restoreDefaults() { write(DEFAULT_SHORTCUTS_KEYS); }
     void write(const QStringList &keys);
+
+    static const QStringList DEFAULT_SHORTCUTS_ACTIONS;
+    static const QStringList DEFAULT_SHORTCUTS_KEYS;
 
 private:
     QList<QAction *> _actions;
-    QStringList _actionsName;
-    QStringList _defaultList;
 };
 
-#endif // TANO_SHORTCUTS_H_
+#endif // TANO_SETTINGSSHORTCUTS_H_

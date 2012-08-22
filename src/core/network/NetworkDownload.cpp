@@ -28,7 +28,7 @@
 #endif
 
 #include "NetworkDownload.h"
-#include "core/NetworkRequest.h"
+#include "core/network/NetworkRequest.h"
 
 NetworkDownload::NetworkDownload(QObject *parent)
     : QObject(parent),

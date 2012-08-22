@@ -19,7 +19,7 @@
 #include <QtCore/QDebug>
 
 #include "core/Backend.h"
-#include "core/Settings.h"
+#include "core/settings/Settings.h"
 
 #include <vlc-qt/Common.h>
 #include <vlc-qt/Enums.h>

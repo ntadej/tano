@@ -22,7 +22,7 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
-#include "core/ListItem.h"
+#include "container/ListItem.h"
 
 class Channel : public ListItem
 {

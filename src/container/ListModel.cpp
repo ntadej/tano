@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 * Based on ListModel by Christophe Dumez <dchris@gmail.com>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -17,8 +17,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/ListItem.h"
-#include "core/ListModel.h"
+#include "container/ListItem.h"
+#include "container/ListModel.h"
 
 ListModel::ListModel(ListItem *prototype,
                      QObject *parent)

@@ -29,7 +29,7 @@
 #include "container/core/Channel.h"
 #include "container/core/Timer.h"
 #include "container/xmltv/XmltvProgramme.h"
-#include "core/Udpxy.h"
+#include "core/network/NetworkUdpxy.h"
 #include "playlist/PlaylistModel.h"
 #include "recorder/TimersModel.h"
 #include "ui/playlist/PlaylistFilterWidget.h"
@@ -55,7 +55,7 @@ RecorderNewDialog::RecorderNewDialog(QWidget *parent)
     _menu->addAction(_action);
     ui->buttonFilter->setMenu(_menu);
 
-    _udpxy = new Udpxy();
+    _udpxy = new NetworkUdpxy();
     _udpxy->createSettings();
 
     connect(ui->buttonNewCancel, SIGNAL(clicked()), this, SLOT(reject()));

@@ -19,7 +19,7 @@
 #include "SettingsDialog.h"
 #include "ui_SettingsDialog.h"
 
-#include "core/Settings.h"
+#include "core/settings/Settings.h"
 
 SettingsDialog::SettingsDialog(QWidget *parent)
     : QDialog(parent),

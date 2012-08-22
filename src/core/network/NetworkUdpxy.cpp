@@ -16,18 +16,18 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Settings.h"
-#include "core/Udpxy.h"
+#include "core/network/NetworkUdpxy.h"
+#include "core/settings/Settings.h"
 
-Udpxy::Udpxy(const bool &generate)
+NetworkUdpxy::NetworkUdpxy(const bool &generate)
     : _generate(generate)
 {
     createSettings();
 }
 
-Udpxy::~Udpxy() { }
+NetworkUdpxy::~NetworkUdpxy() { }
 
-void Udpxy::createSettings()
+void NetworkUdpxy::createSettings()
 {
     QScopedPointer<Settings> settings(new Settings());
     _enabled = settings->udpxy();
@@ -35,7 +35,7 @@ void Udpxy::createSettings()
     _port = QString::number(settings->udpxyPort());
 }
 
-QString Udpxy::processUrl(const QString &url) const
+QString NetworkUdpxy::processUrl(const QString &url) const
 {
     QString u = url;
     if (_enabled || _generate) {

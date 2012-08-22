@@ -23,7 +23,7 @@
 #include <QtCore/QString>
 #include <QtCore/QTime>
 
-#include "core/ListItem.h"
+#include "container/ListItem.h"
 
 class Timer : public ListItem
 {
