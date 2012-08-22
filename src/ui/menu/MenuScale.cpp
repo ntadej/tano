@@ -49,8 +49,11 @@ void MenuScale::apply()
 {
     QAction *action = qobject_cast<QAction *>(sender());
 
-    if (action)
+    if (action) {
         _videoWidget->setScale(_map1[action]);
+
+        emit value(_map1[action]);
+    }
 }
 
 void MenuScale::setDefault(const Vlc::Scale &scale)

@@ -46,6 +46,10 @@ public slots:
 private slots:
     void next();
 
+signals:
+    void value(const int &);
+    void value(const QString &);
+
 private:
     QActionGroup *_group;
     QAction *_next;

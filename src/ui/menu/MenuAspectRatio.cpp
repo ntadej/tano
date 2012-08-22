@@ -49,8 +49,11 @@ void MenuAspectRatio::apply()
 {
     QAction *action = qobject_cast<QAction *>(sender());
 
-    if (action)
+    if (action) {
         _videoWidget->setAspectRatio(_map1[action]);
+
+        emit value(_map1[action]);
+    }
 }
 
 void MenuAspectRatio::setDefault(const Vlc::Ratio &ratio)

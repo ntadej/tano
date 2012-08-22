@@ -56,6 +56,8 @@ class MenuScale;
 class MenuTrackAudio;
 class MenuTrackSubtitles;
 class MenuTrackVideo;
+class NetworkUdpxy;
+class SettingsChannel;
 class SettingsShortcuts;
 class OsdFloat;
 class OsdWidget;
@@ -64,7 +66,6 @@ class PlaylistModel;
 class PlaylistUpdate;
 class Timer;
 class TrayIcon;
-class NetworkUdpxy;
 class XmltvManager;
 class XmltvProgramme;
 
@@ -130,6 +131,9 @@ private slots:
     void toggleOsdControls(const bool &enabled = false);
     void toggleOsdInfo(const bool &enabled = false);
     void preview(const bool &enabled = false);
+
+    void saveChannelSetting(const int &value);
+    void saveChannelSetting(const QString &value);
 
     void infoClose();
     void infoToggleSchedule();
@@ -205,6 +209,7 @@ private:
     LocaleManager *_locale;
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;
+    SettingsChannel *_settingsChannel;
     SettingsShortcuts *_shortcuts;
 
 #if UPDATE

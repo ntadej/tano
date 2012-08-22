@@ -48,8 +48,11 @@ void MenuCropRatio::apply()
 {
     QAction *action = qobject_cast<QAction *>(sender());
 
-    if (action)
+    if (action) {
         _videoWidget->setCropRatio(_map1[action]);
+
+        emit value(_map1[action]);
+    }
 }
 
 void MenuCropRatio::setDefault(const Vlc::Ratio &ratio)

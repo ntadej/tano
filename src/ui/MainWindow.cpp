@@ -54,6 +54,7 @@
 #include "core/network/NetworkDownload.h"
 #include "core/network/NetworkUdpxy.h"
 #include "core/settings/Settings.h"
+#include "core/settings/SettingsChannel.h"
 #include "core/settings/SettingsShortcuts.h"
 #include "playlist/PlaylistModel.h"
 #include "playlist/PlaylistUpdate.h"
@@ -92,6 +93,7 @@ MainWindow::MainWindow(Arguments *args)
       _locale(new LocaleManager()),
       _model(new PlaylistModel(this)),
       _modelUpdate(new PlaylistUpdate(_model)),
+      _settingsChannel(new SettingsChannel(this)),
       _audioController(0),
       _videoController(0),
       _xmltv(new XmltvManager()),
@@ -304,12 +306,15 @@ void MainWindow::createSettings()
     _defaultAudioLanguage = settings->audioLanguage();
     _defaultSubtitleLanguage = settings->subtitleLanguage();
     _videoSettings = settings->rememberVideoSettings();
+    _videoSettingsChannel = settings->rememberVideoPerChannel();
     if (_audioController)
         _audioController->setDefaultAudioLanguage(_defaultAudioLanguage);
     if (_videoController)
         _videoController->setDefaultSubtitleLanguage(_defaultSubtitleLanguage);
     _udpxy->createSettings();
     _muteOnMinimize = settings->muteOnMinimize();
+
+    _settingsChannel->setDefaults(_defaultAspectRatio, _defaultCropRatio, _defaultDeinterlacing, _defaultAudioLanguage, _defaultSubtitleLanguage);
 
     _sessionVolumeEnabled = settings->sessionVolume();
     _sessionAutoplayEnabled = settings->sessionAutoplay();
@@ -476,6 +481,10 @@ void MainWindow::createConnections()
     connect(_epgShow, SIGNAL(requestRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
     connect(_schedule, SIGNAL(requestRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
     connect(ui->scheduleWidget, SIGNAL(requestRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
+
+    connect(_menuAspectRatio, SIGNAL(value(int)), this, SLOT(saveChannelSetting(int)));
+    connect(_menuCropRatio, SIGNAL(value(int)), this, SLOT(saveChannelSetting(int)));
+    connect(_menuDeinterlacing, SIGNAL(value(int)), this, SLOT(saveChannelSetting(int)));
 
     qDebug() << "Initialised: Event connections";
 }
@@ -708,7 +717,20 @@ void MainWindow::play()
 {
     _mediaPlayer->open(_mediaItem);
 
-    if (_videoSettings)
+    if (_videoSettingsChannel) {
+        ui->videoWidget->setCurrentAspectRatio(Vlc::Ratio(_settingsChannel->aspectRatio(_channel->url())));
+        ui->videoWidget->setCurrentCropRatio(Vlc::Ratio(_settingsChannel->cropRatio(_channel->url())));
+        ui->videoWidget->setCurrentDeinterlacing(Vlc::Deinterlacing(_settingsChannel->deinterlacing(_channel->url())));
+
+        _menuAspectRatio->setDefault(Vlc::Ratio(_settingsChannel->aspectRatio(_channel->url())));
+        _menuCropRatio->setDefault(Vlc::Ratio(_settingsChannel->cropRatio(_channel->url())));
+        _menuDeinterlacing->setDefault(Vlc::Deinterlacing(_settingsChannel->deinterlacing(_channel->url())));
+        _menuScale->setDefault(Vlc::Scale(0));
+    }
+
+    if (_videoSettingsChannel)
+        ui->videoWidget->enablePreviousSettings();
+    else if (_videoSettings)
         ui->videoWidget->enablePreviousSettings();
     else
         ui->videoWidget->enableDefaultSettings();
@@ -785,7 +807,7 @@ void MainWindow::stop()
 
     _mediaPlayer->stop();
 
-    if (!_videoSettings) {
+    if (!_videoSettings || _videoSettingsChannel) {
         _menuAspectRatio->setDefault(Vlc::Ratio(_defaultAspectRatio));
         _menuCropRatio->setDefault(Vlc::Ratio(_defaultCropRatio));
         _menuDeinterlacing->setDefault(Vlc::Deinterlacing(_defaultDeinterlacing));
@@ -807,6 +829,28 @@ void MainWindow::stop()
 
     _audioController->reset();
     _videoController->reset();
+}
+
+void MainWindow::saveChannelSetting(const int &value)
+{
+    if (_mediaPlayer->state() != Vlc::Playing)
+        return;
+
+    MenuCore *menu = qobject_cast<MenuCore *>(sender());
+    if (!menu)
+        return;
+
+    if (menu == _menuAspectRatio)
+        _settingsChannel->setAspectRatio(_channel->url(), value);
+    else if (menu == _menuCropRatio)
+        _settingsChannel->setCropRatio(_channel->url(), value);
+    else if (menu == _menuDeinterlacing)
+        _settingsChannel->setDeinterlacing(_channel->url(), value);
+}
+
+void MainWindow::saveChannelSetting(const QString &value)
+{
+    Q_UNUSED(value)
 }
 
 // Open dialogs

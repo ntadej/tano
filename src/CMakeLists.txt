@@ -191,6 +191,7 @@ SET(Tano_Core_Srcs
     core/network/NetworkRequest.cpp
     core/network/NetworkUdpxy.cpp
     core/settings/Settings.cpp
+    core/settings/SettingsChannel.cpp
     core/settings/SettingsShortcuts.cpp
 )
 SET(Tano_Playlist_Srcs
