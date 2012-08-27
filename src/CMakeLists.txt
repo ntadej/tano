@@ -389,16 +389,11 @@ INCLUDE_DIRECTORIES(
 # Include additional libraries
 INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
 
+# Compile resources with windres
 IF(MINGW)
-    # CMake currently doesn't support windres yet. Add command manually
-    FIND_PROGRAM(
-        WINDRES_PROGRAM windres.exe PATHS
-        "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MinGW;InstallLocation]/bin"
-        c:/MinGW/bin /MinGW/bin
-    )
     ADD_CUSTOM_COMMAND(
         OUTPUT ${CMAKE_BINARY_DIR}/src/windows.obj
-        COMMAND ${WINDRES_PROGRAM}
+        COMMAND ${CMAKE_RC_COMPILER}
         -i ${CMAKE_SOURCE_DIR}/src/windows.rc
         -o ${CMAKE_BINARY_DIR}/src/windows.obj
         WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src"

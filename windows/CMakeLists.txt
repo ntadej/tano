@@ -59,15 +59,12 @@ SET(Tano_Vlc_Plugin_Types
     audio_mixer
     audio_output
     codec
-    control
     demux
-    media_library
     meta_engine
     misc
     mmx
     mmxext
     mux
-    notify
     packetizer
     services_discovery
     sse2
@@ -77,7 +74,6 @@ SET(Tano_Vlc_Plugin_Types
     video_chroma
     video_filter
     video_output
-    visualization
 )
 
 IF(MINGW)
@@ -107,17 +103,16 @@ IF(MINGW)
     )
 
     STRING(REGEX REPLACE "bin/gcc.exe" "bin" MINGW_BIN_DIR "${CMAKE_C_COMPILER}")
-    STRING(REGEX REPLACE "bin" "plugins" QT_PLUGINS_DIR "${QT_BIN_DIR}")
+    STRING(REGEX REPLACE "bin" "lib/qt4/plugins" QT_PLUGINS_DIR "${QT_BIN_DIR}")
     STRING(REGEX REPLACE "\\\\" "/" LIBVLCQT_INCLUDE_DIR "${LIBVLCQT_INCLUDE_DIR}")
     STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
 
     SET(Tano_Qt_Lib
-        ${MINGW_BIN_DIR}/libgcc_s_dw2-1.dll
-        ${MINGW_BIN_DIR}/mingwm10.dll
         ${QT_BIN_DIR}/QtCore4.dll
         ${QT_BIN_DIR}/QtGui4.dll
         ${QT_BIN_DIR}/QtNetwork4.dll
         ${QT_BIN_DIR}/QtXml4.dll
+        ${QT_BIN_DIR}/zlib1.dll
     )
     SET(Tano_Qt_Plugins
         ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
