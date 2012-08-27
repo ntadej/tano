@@ -41,7 +41,7 @@
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation>Tato verze Tana byla sestavena na
+        <translation type="obsolete">Tato verze Tana byla sestavena na
 %1 spuštěním %2.
 Verze vašeho Qt: %3
 Verze vašeho VLC-Qt: %4</translation>
@@ -53,6 +53,12 @@ Verze vašeho VLC-Qt: %4</translation>
     <message>
         <source>Player</source>
         <translation type="obsolete">Přehrávač</translation>
+    </message>
+    <message>
+        <source>Your Qt runtime version: %1
+Your VLC-Qt version: %2
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

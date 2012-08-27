@@ -66,32 +66,6 @@ QString Tano::changeset()
     return version;
 }
 
-QString Tano::buildHostname()
-{
-    QString hostname;
-
-#ifdef HOSTNAME
-    hostname.append(QString(HOSTNAME));
-#else
-    hostname.append("Unknown");
-#endif
-
-    return hostname;
-}
-
-QString Tano::buildSystem()
-{
-    QString system;
-
-#ifdef SYSTEM
-    system.append(QString(SYSTEM));
-#else
-    system.append("Unknown");
-#endif
-
-    return system;
-}
-
 QString Tano::recordingFileName(const QString &name,
                                 const QString &channel,
                                 const QDate &date,

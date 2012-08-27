@@ -39,7 +39,7 @@
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation>Cette version de Tano a été compilé sur
+        <translation type="obsolete">Cette version de Tano a été compilé sur
 %1 utilisant un noyau %2.
 Votre version de Qt-runtime : %3
 Votre version de VLC-Qt : %4</translation>
@@ -51,6 +51,12 @@ Votre version de VLC-Qt : %4</translation>
     <message>
         <source>Player</source>
         <translation type="obsolete">Lecteur</translation>
+    </message>
+    <message>
+        <source>Your Qt runtime version: %1
+Your VLC-Qt version: %2
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

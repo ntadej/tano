@@ -27,8 +27,4 @@
 #define TELETEXT @TELETEXT@
 #define UPDATE @UPDATE@
 
-// System information
-#define HOSTNAME "@HOSTNAME@"
-#define SYSTEM "@SYSNAME@"
-
 #endif // TANO_CONFIG_H_

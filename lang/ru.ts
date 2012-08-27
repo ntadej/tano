@@ -41,7 +41,7 @@
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation>Эта версия Tano скомпилирована на
+        <translation type="obsolete">Эта версия Tano скомпилирована на
 %1 под %2.
 Ваша версия среды Qt: %3
 Ваша версия VLC-Qt: %4
@@ -58,6 +58,12 @@ Your VLC-Qt version: %4
     <message>
         <source>Close</source>
         <translation type="obsolete">Закрыть</translation>
+    </message>
+    <message>
+        <source>Your Qt runtime version: %1
+Your VLC-Qt version: %2
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

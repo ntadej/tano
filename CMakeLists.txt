@@ -48,10 +48,6 @@ ENDIF(CUSTOM_SETTINGS)
 STRING(REGEX REPLACE "\n" "" TANO_VERSION "${TANO_VERSION}") # get rid of the newline at the end
 MESSAGE("You are compiling Tano ${TANO_VERSION}")
 
-# System Information
-SITE_NAME(HOSTNAME)
-SET(SYSNAME ${CMAKE_SYSTEM}-${CMAKE_SYSTEM_PROCESSOR})
-
 # Find Git Version Patch
 FIND_PROGRAM(GIT git)
 IF(GIT)

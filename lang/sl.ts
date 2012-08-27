@@ -41,7 +41,7 @@
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation>Ta različica programa Tano je bila kodno prevedena na
+        <translation type="obsolete">Ta različica programa Tano je bila kodno prevedena na
 %1 s sistemom %2 
 Vaša različica Qt: %3
 Vaša različica VLC-Qt: %4
@@ -54,6 +54,12 @@ Vaša različica VLC-Qt: %4
     <message>
         <source>Player</source>
         <translation type="obsolete">Predvajalnik</translation>
+    </message>
+    <message>
+        <source>Your Qt runtime version: %1
+Your VLC-Qt version: %2
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

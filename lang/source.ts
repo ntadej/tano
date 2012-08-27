@@ -34,10 +34,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This version of Tano was compiled on
-%1 running %2.
-Your Qt runtime version: %3
-Your VLC-Qt version: %4
+        <source>Your Qt runtime version: %1
+Your VLC-Qt version: %2
 </source>
         <translation type="unfinished"></translation>
     </message>

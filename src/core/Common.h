@@ -35,10 +35,6 @@ namespace Tano
     QString version();
     QString changeset();
 
-    // Build system information
-    QString buildHostname();
-    QString buildSystem();
-
     // Identifier
     enum Id
     {
