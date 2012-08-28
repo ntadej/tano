@@ -49,7 +49,8 @@ PlaylistEditorScan::~PlaylistEditorScan()
 {
     delete ui;
 
-    delete _media;
+    if (_media)
+        delete _media;
     delete _timer;
 }
 
@@ -94,11 +95,14 @@ void PlaylistEditorScan::refreshPlaylist(const bool &refresh)
 void PlaylistEditorScan::checkIp()
 {
     ui->progressBar->setValue(_currentIp[3]);
-    if (_media)
+    if (_media) {
+        disconnect(_media, SIGNAL(stateChanged(Vlc::State)), this, SLOT(setState(Vlc::State)));
         delete _media;
+    }
 
     _media = new VlcMedia(_udpxy->processUrl(currentIp()), _instance);
     _media->record("test", QDir::tempPath(), Vlc::TS);
+    connect(_media, SIGNAL(stateChanged(Vlc::State)), this, SLOT(setState(Vlc::State)));
     _player->open(_media);
 
     _timer->start(_currentTimeout);
@@ -150,7 +154,6 @@ void PlaylistEditorScan::setMediaInstance(VlcInstance *instance)
     if (_player)
         delete _player;
     _player = new VlcMediaPlayer(_instance);
-    connect(_player, SIGNAL(currentState(Vlc::State)), this, SLOT(setState(Vlc::State)));
 }
 
 void PlaylistEditorScan::setModel(PlaylistModel *model)
