@@ -28,6 +28,7 @@
     !include MUI2.nsh
     !include UAC.nsh
     !include UninstallLog.nsh
+    !include x64.nsh
 
 ;--------------------------------
 ; Variables
@@ -41,8 +42,8 @@
 ; Config
     !include "InstallerConfig.nsh"
 
-    Name "Tano ${VERSION}"
-    OutFile "tano_${VERSION}_win32.exe"
+    Name "Tano ${VERSION} ${WINBUILDSTR}"
+    OutFile "tano_${VERSION}_${WINBUILD}.exe"
     InstallDir "$PROGRAMFILES\Tano"
 
     BrandingText "${COMPANY} | ${URL}"
@@ -262,10 +263,18 @@ Function .onInit
 
     !insertmacro MUI_LANGDLL_DISPLAY
 
+    ${If} ${WIN64} == 1
+        ${If} ${RunningX64}
+        ${Else}
+            MessageBox MB_OK|MB_ICONSTOP $(WINERR)
+            Abort $(WINERR)
+        ${EndIf}
+    ${EndIf}
+
     ReadRegStr $0 "${REG_UNINSTALL}" "${REG_UNINSTALL_PATH}" "UninstallString"
     StrCmp $0 "" done
 
-    MessageBox MB_YESNO|MB_ICONEXCLAMATION $(PRE_E) IDNO done
+    MessageBox MB_YESNO|MB_ICONEXCLAMATION $(PRE) IDNO done
 
 ; Run the uninstaller
 ;   uninst:

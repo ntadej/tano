@@ -21,3 +21,6 @@
     !define VERSION @TANO_WIN_VERSION@
     !define COMPANY "Copyright (C) Tadej Novak 2008-2012"
     !define URL http://projects.tano.si
+    !define WIN64 @BITS@
+    !define WINBUILD @TANO_WIN_BUILD@
+    !define WINBUILDSTR @TANO_WIN_BUILDSTR@

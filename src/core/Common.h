@@ -34,6 +34,7 @@ namespace Tano
     // Version
     QString version();
     QString changeset();
+    bool is64bit();
 
     // Identifier
     enum Id

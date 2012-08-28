@@ -81,8 +81,9 @@ p, li { white-space: pre-wrap; }
        <item>
         <widget class="QLabel" name="labelBuild">
          <property name="text">
-          <string>Your Qt runtime version: %1
-Your VLC-Qt version: %2
+          <string>Your Tano version: %1
+Your Qt runtime version: %2
+Your VLC-Qt version: %3
 </string>
          </property>
          <property name="wordWrap">

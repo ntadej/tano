@@ -66,6 +66,17 @@ QString Tano::changeset()
     return version;
 }
 
+bool Tano::is64bit()
+{
+    bool bit = false;
+
+#if VERSION_X64
+    bit = true;
+#endif
+
+    return bit;
+}
+
 QString Tano::recordingFileName(const QString &name,
                                 const QString &channel,
                                 const QDate &date,

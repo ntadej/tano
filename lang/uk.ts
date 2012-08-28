@@ -53,8 +53,9 @@ Your VLC-Qt version: %4
         <translation type="obsolete">Програвач</translation>
     </message>
     <message>
-        <source>Your Qt runtime version: %1
-Your VLC-Qt version: %2
+        <source>Your Tano version: %1
+Your Qt runtime version: %2
+Your VLC-Qt version: %3
 </source>
         <translation type="unfinished"></translation>
     </message>

@@ -22,6 +22,7 @@
 // Tano version
 #define VERSION "@TANO_VERSION@"
 #define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
+#define VERSION_X64 @BITS@
 
 // Settings
 #define TELETEXT @TELETEXT@

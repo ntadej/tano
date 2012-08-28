@@ -68,6 +68,13 @@ ENDIF(GIT)
 
 MESSAGE("\n")
 
+# Find the architecture
+SET(BITS 0)
+IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
+    SET(BITS 1)
+ENDIF(CMAKE_SIZEOF_VOID_P EQUAL 8)
+
+
 ####################
 # Compiler options #
 ####################
