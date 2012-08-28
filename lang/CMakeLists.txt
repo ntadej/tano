@@ -18,9 +18,11 @@
 
 SET(TEMPLATE "source")
 
-IF(NOT QT_LUPDATE_EXECUTABLE)
-    MESSAGE(WARNING "Tano could not find lupdate. You won't be able to update translations.")
-ENDIF(NOT QT_LUPDATE_EXECUTABLE)
+IF(REFRESH_TRANSLATIONS)
+    IF(NOT QT_LUPDATE_EXECUTABLE)
+        MESSAGE(WARNING "Tano could not find lupdate. You won't be able to update translations.")
+    ENDIF(NOT QT_LUPDATE_EXECUTABLE)
+ENDIF(REFRESH_TRANSLATIONS)
 
 IF(NOT QT_LRELEASE_EXECUTABLE)
     MESSAGE(WARNING "Tano could not find lrelease. Your build won't contain translations.")
