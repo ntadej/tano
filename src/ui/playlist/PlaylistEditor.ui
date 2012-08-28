@@ -14,8 +14,8 @@
    <string>Tano Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/logo.qrc">
-    <normaloff>:/logo/48x48/logo-editor.png</normaloff>:/logo/48x48/logo-editor.png</iconset>
+   <iconset resource="../../../data/icons.qrc">
+    <normaloff>:/icons/48x48/editor.png</normaloff>:/icons/48x48/editor.png</iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -506,7 +506,6 @@
  </customwidgets>
  <resources>
   <include location="../../../data/icons.qrc"/>
-  <include location="../../../data/logo.qrc"/>
  </resources>
  <connections/>
 </ui>
