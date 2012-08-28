@@ -1195,7 +1195,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation type="obsolete">Chercher de nouvelles chaînes</translation>
+        <translation>Chercher de nouvelles chaînes</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
@@ -1216,10 +1216,6 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>Radio</source>
         <translation type="unfinished">Radio</translation>
-    </message>
-    <message>
-        <source>Scan for new TV channels</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

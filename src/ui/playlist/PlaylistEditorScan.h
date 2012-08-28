@@ -59,6 +59,7 @@ private slots:
     void refreshPlaylist(const bool &refresh);
     void checkIp();
     void checkCurrentIp();
+    void setState(const Vlc::State &state);
     
 private:
     Ui::PlaylistEditorScan *ui;
@@ -76,6 +77,7 @@ private:
     int _currentIp[4];
     int _currentPort;
     int _currentTimeout;
+    bool _currentIpPlaying;
     QTimer *_timer;
 };
 

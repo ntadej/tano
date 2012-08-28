@@ -1208,6 +1208,10 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Scan for new channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>XMLTV ID:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1225,10 +1229,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan for new TV channels</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

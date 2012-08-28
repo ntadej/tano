@@ -41,7 +41,7 @@ PlaylistEditorScan::PlaylistEditorScan(QWidget *parent)
     _player = 0;
     _udpxy = new NetworkUdpxy();
     _timer = new QTimer();
-    connect(_timer, SIGNAL(timeout()), this, SLOT(checkIp()));
+    connect(_timer, SIGNAL(timeout()), this, SLOT(checkCurrentIp()));
     connect(ui->buttonUpdate, SIGNAL(toggled(bool)), this, SLOT(refreshPlaylist(bool)));
 }
 
@@ -72,7 +72,6 @@ void PlaylistEditorScan::refreshPlaylist(const bool &refresh)
 
     if (!refresh) {
         _timer->stop();
-        _player->stop();
         ui->progressBar->setValue(1);
 
         QFile::remove(QDir::tempPath() + "/tano-test.ts");
@@ -83,7 +82,7 @@ void PlaylistEditorScan::refreshPlaylist(const bool &refresh)
         _currentIp[0] = ipFrom[0].toInt();
         _currentIp[1] = ipFrom[1].toInt();
         _currentIp[2] = ipFrom[2].toInt();
-        _currentIp[3] = 0;
+        _currentIp[3] = 1;
 
         _currentPort = ui->ipPort->value();
         _currentTimeout = ui->ipTimeout->value();
@@ -94,12 +93,6 @@ void PlaylistEditorScan::refreshPlaylist(const bool &refresh)
 
 void PlaylistEditorScan::checkIp()
 {
-    if (_currentIp[3] == 255) {
-        ui->buttonUpdate->setChecked(false);
-        return;
-    }
-
-    _currentIp[3]++;
     ui->progressBar->setValue(_currentIp[3]);
     if (_media)
         delete _media;
@@ -113,29 +106,29 @@ void PlaylistEditorScan::checkIp()
 
 void PlaylistEditorScan::checkCurrentIp()
 {
-    _timer->stop();
-
-    if (_player->state() != Vlc::Playing) {
+    if (_currentIpPlaying) {
         _player->stop();
-        checkIp();
-    }
 
-    _player->stop();
+        bool newChannel = true;
+        for (int i = 0; i < _model->rowCount(); i++) {
+            if (_model->row(i)->url() == currentIp()) {
+                newChannel = false;
+                break;
+            }
+        }
 
-    bool newChannel = true;
-    for (int i = 0; i < _model->rowCount(); i++) {
-        if (_model->row(i)->url() == currentIp()) {
-            newChannel = false;
-            break;
+        if (newChannel) {
+            qDebug() << "Scanning:" << "Channel Found";
+            addItem(tr("New channel from scan %1").arg(currentIp()), currentIp());
         }
     }
 
-    if (newChannel) {
-        qDebug() << "Scanning:" << "Channel Found";
-        addItem(tr("New channel from scan %1").arg(currentIp()), currentIp());
+    if (_currentIp[3] != 255) {
+        _currentIp[3]++;
+        checkIp();
+    } else {
+        ui->buttonUpdate->setChecked(false);
     }
-
-    checkIp();
 }
 
 QString PlaylistEditorScan::currentIp()
@@ -157,10 +150,18 @@ void PlaylistEditorScan::setMediaInstance(VlcInstance *instance)
     if (_player)
         delete _player;
     _player = new VlcMediaPlayer(_instance);
-    connect(_player, SIGNAL(vout(int)), this, SLOT(checkCurrentIp()));
+    connect(_player, SIGNAL(currentState(Vlc::State)), this, SLOT(setState(Vlc::State)));
 }
 
 void PlaylistEditorScan::setModel(PlaylistModel *model)
 {
     _model = model;
+}
+
+void PlaylistEditorScan::setState(const Vlc::State &state)
+{
+    if (state == Vlc::Playing)
+        _currentIpPlaying = true;
+    else
+        _currentIpPlaying = false;
 }
