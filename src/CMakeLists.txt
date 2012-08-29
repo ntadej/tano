@@ -161,8 +161,8 @@ SET(Tano_MOCs
 # Define the QRC source files used by Tano
 SET(Tano_Resrcs
     ../info.qrc
-    ../data/icons.qrc
-    ../data/logo.qrc
+    ../data/logo/logo.qrc
+    ../data/misc/misc.qrc
 )
 
 # Define the C++ source files used by Tano

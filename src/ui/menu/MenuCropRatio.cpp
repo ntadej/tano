@@ -24,7 +24,7 @@ MenuCropRatio::MenuCropRatio(VlcVideoWidget *videoWidget,
     _videoWidget(videoWidget)
 {
     setTitle(tr("Crop video"));
-    setIcon(QIcon(":/icons/24x24/interface.png"));
+    setIcon(QIcon::fromTheme("preferences-system-windows"));
     actionNext()->setText(tr("Next crop option"));
 
     QAction *original = new QAction(tr("Original"), this);

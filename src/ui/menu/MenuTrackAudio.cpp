@@ -22,7 +22,7 @@ MenuTrackAudio::MenuTrackAudio(QWidget *parent)
 	: MenuCore(parent)
 {
 	setTitle(tr("Audio track"));
-	setIcon(QIcon(":/icons/24x24/audio.png"));
+    setIcon(QIcon::fromTheme("audio-x-generic"));
 	actionNext()->setText(tr("Next audio track"));
 	setType(Vlc::AudioTrack);
 }

@@ -11,8 +11,7 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/calendar.png</normaloff>:/icons/48x48/calendar.png</iconset>
+   <iconset theme="x-office-calendar" />
   </property>
   <property name="currentIndex">
    <number>0</number>
@@ -36,9 +35,6 @@
      <widget class="QLabel" name="labelNoEpgIcon">
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="../../../data/icons.qrc">:/icons/24x24/remove.png</pixmap>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -94,8 +90,5 @@
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
  <connections/>
 </ui>

@@ -14,8 +14,7 @@
    <string>New recording</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
+   <iconset theme="media-record"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -56,8 +55,7 @@
            <string>Record</string>
           </property>
           <property name="icon">
-           <iconset resource="../../../data/icons.qrc">
-            <normaloff>:/icons/16x16/media-record.png</normaloff>:/icons/16x16/media-record.png</iconset>
+           <iconset theme="media-record"/>
           </property>
           <property name="checked">
            <bool>false</bool>
@@ -70,8 +68,7 @@
            <string>Back</string>
           </property>
           <property name="icon">
-           <iconset resource="../../../data/icons.qrc">
-            <normaloff>:/icons/16x16/refresh.png</normaloff>:/icons/16x16/refresh.png</iconset>
+           <iconset theme="go-previous"/>
           </property>
          </widget>
         </item>
@@ -118,8 +115,7 @@
            <string>Add new timer</string>
           </property>
           <property name="icon">
-           <iconset resource="../../../data/icons.qrc">
-            <normaloff>:/icons/16x16/timer.png</normaloff>:/icons/16x16/timer.png</iconset>
+           <iconset theme="time-admin"/>
           </property>
           <property name="checked">
            <bool>false</bool>
@@ -132,8 +128,7 @@
            <string>Back</string>
           </property>
           <property name="icon">
-           <iconset resource="../../../data/icons.qrc">
-            <normaloff>:/icons/16x16/refresh.png</normaloff>:/icons/16x16/refresh.png</iconset>
+           <iconset theme="go-previous"/>
           </property>
          </widget>
         </item>
@@ -151,8 +146,7 @@
       <string>Search and filter</string>
      </property>
      <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/16x16/search.png</normaloff>:/icons/16x16/search.png</iconset>
+      <iconset theme="edit-find-replace"/>
      </property>
     </widget>
    </item>
@@ -166,8 +160,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -76,7 +76,7 @@ QString XmltvChannel::display() const
 
 QIcon XmltvChannel::displayIcon() const
 {
-    return QIcon(":/icons/16x16/video.png");
+    return QIcon::fromTheme("video-x-generic");
 }
 
 void XmltvChannel::addProgramme(XmltvProgramme *p)

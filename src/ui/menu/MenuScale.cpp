@@ -24,7 +24,7 @@ MenuScale::MenuScale(VlcVideoWidget *videoWidget,
     _videoWidget(videoWidget)
 {
     setTitle(tr("Scale/Zoom"));
-    setIcon(QIcon(":/icons/24x24/interface.png"));
+    setIcon(QIcon::fromTheme("preferences-system-windows"));
     actionNext()->setText(tr("Next scale/zoom option"));
     setType(Vlc::Other);
 

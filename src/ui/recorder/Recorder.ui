@@ -14,8 +14,7 @@
    <string>Recorder</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
+   <iconset theme="media-record"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
@@ -56,8 +55,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

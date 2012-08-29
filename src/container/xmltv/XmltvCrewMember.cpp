@@ -64,7 +64,7 @@ QString XmltvCrewMember::display() const
 
 QIcon XmltvCrewMember::displayIcon() const
 {
-    return QIcon(":/icons/16x16/person.png");
+    return QIcon::fromTheme("config-users");
 }
 
 XmltvCrewMember::Type XmltvCrewMember::typeFromString(const QString &type)

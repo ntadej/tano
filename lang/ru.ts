@@ -403,11 +403,11 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Info panel</source>
-        <translation>Панель информации</translation>
+        <translation type="unfinished">Панель информации</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Программа</translation>
+        <translation type="unfinished">Программа</translation>
     </message>
     <message>
         <source>Play</source>
@@ -415,15 +415,15 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Stop</source>
-        <translation>Стоп</translation>
+        <translation type="unfinished">Стоп</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation type="unfinished">Назад</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Вперед</translation>
+        <translation type="unfinished">Вперед</translation>
     </message>
     <message>
         <source>Record Now</source>
@@ -431,51 +431,51 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Mute</source>
-        <translation>Выключить звук</translation>
+        <translation type="unfinished">Выключить звук</translation>
     </message>
     <message>
         <source>About Tano</source>
-        <translation>О Tano</translation>
+        <translation type="unfinished">О Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation>&amp;Выход</translation>
+        <translation type="unfinished">&amp;Выход</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Настройка</translation>
+        <translation type="unfinished">&amp;Настройка</translation>
     </message>
     <message>
         <source>&amp;Fullscreen</source>
-        <translation>&amp;Полноэкранный режим</translation>
+        <translation type="unfinished">&amp;Полноэкранный режим</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
-        <translation>&amp;Открыть файл</translation>
+        <translation type="unfinished">&amp;Открыть файл</translation>
     </message>
     <message>
         <source>Edit Channels</source>
-        <translation>Редактировать каналы</translation>
+        <translation type="unfinished">Редактировать каналы</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Открыть URL</translation>
+        <translation type="unfinished">Открыть URL</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>Проверить обновления</translation>
+        <translation type="unfinished">Проверить обновления</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Открыть</translation>
+        <translation type="unfinished">Открыть</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Поверх всех окон</translation>
+        <translation type="unfinished">Поверх всех окон</translation>
     </message>
     <message>
         <source>Hide to tray</source>
@@ -483,19 +483,19 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>&quot;Простой&quot; режим</translation>
+        <translation type="unfinished">&quot;Простой&quot; режим</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Громче</translation>
+        <translation type="unfinished">Громче</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Тише</translation>
+        <translation type="unfinished">Тише</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Рекордер</translation>
+        <translation type="unfinished">Рекордер</translation>
     </message>
     <message>
         <source>Record Current</source>
@@ -503,45 +503,25 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Timers</source>
-        <translation>Таймеры</translation>
+        <translation type="obsolete">Таймеры</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>О Qt</translation>
+        <translation type="unfinished">О Qt</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Остановить запись</translation>
+        <translation type="unfinished">Остановить запись</translation>
     </message>
     <message>
         <source>Controls panel</source>
-        <translation>Панель элементов управления</translation>
+        <translation type="unfinished">Панель элементов управления</translation>
     </message>
     <message>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
         <translation>Вы хотите закрыть Tano?
 Это прервет запись.</translation>
-    </message>
-    <message>
-        <source>&amp;Open channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable Info panel in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Teletext</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Tano TV channel list files(*.m3u)</source>
@@ -558,27 +538,7 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Recorder Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Quick record</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add timer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -598,7 +558,47 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable Info panel in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

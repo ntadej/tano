@@ -11,8 +11,9 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/calendar.png</normaloff>:/icons/48x48/calendar.png</iconset>
+   <iconset theme="x-office-calendar">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" rowspan="2" colspan="2">
@@ -50,21 +51,18 @@
       <widget class="QLabel" name="labelTimeIcon">
        <property name="minimumSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>22</width>
+         <height>22</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>22</width>
+         <height>22</height>
         </size>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../../../data/icons.qrc">:/icons/24x24/timer.png</pixmap>
        </property>
       </widget>
      </item>
@@ -83,21 +81,18 @@
       <widget class="QLabel" name="labelInfoIcon">
        <property name="minimumSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>22</width>
+         <height>22</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>22</width>
+         <height>22</height>
         </size>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../../../data/icons.qrc">:/icons/24x24/information.png</pixmap>
        </property>
       </widget>
      </item>
@@ -121,6 +116,12 @@
      <property name="sizeType">
       <enum>QSizePolicy::Minimum</enum>
      </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
     </spacer>
    </item>
    <item row="7" column="0" colspan="3">
@@ -131,18 +132,15 @@
         <widget class="QLabel" name="labelDescriptionIcon">
          <property name="minimumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/24x24/subtitle.png</pixmap>
          </property>
         </widget>
        </item>
@@ -156,8 +154,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>281</width>
-            <height>180</height>
+            <width>285</width>
+            <height>211</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -203,18 +201,15 @@
         <widget class="QLabel" name="labelCrewIcon">
          <property name="minimumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/24x24/crew.png</pixmap>
          </property>
         </widget>
        </item>
@@ -327,8 +322,9 @@
         <string>Previous</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/16x16/go-previous.png</normaloff>:/icons/16x16/go-previous.png</iconset>
+        <iconset theme="go-previous">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
@@ -363,8 +359,9 @@
         <string>Record</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/16x16/media-record.png</normaloff>:/icons/16x16/media-record.png</iconset>
+        <iconset theme="media-record">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
@@ -399,8 +396,9 @@
         <string>Next</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/16x16/go-next.png</normaloff>:/icons/16x16/go-next.png</iconset>
+        <iconset theme="go-next">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
@@ -412,21 +410,18 @@
       <widget class="QLabel" name="labelChannelIcon">
        <property name="minimumSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>22</width>
+         <height>22</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>22</width>
+         <height>22</height>
         </size>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../../../data/icons.qrc">:/icons/24x24/video.png</pixmap>
        </property>
       </widget>
      </item>
@@ -455,8 +450,6 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

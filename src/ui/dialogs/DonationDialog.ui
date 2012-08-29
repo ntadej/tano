@@ -26,8 +26,8 @@
    <string>Donate</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/24x24/donate.png</normaloff>:/icons/24x24/donate.png</iconset>
+   <iconset resource="../../../data/logo/logo.qrc">
+    <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="3">
@@ -58,8 +58,8 @@
       <string notr="true"/>
      </property>
      <property name="icon">
-      <iconset resource="../../../data/images.qrc">
-       <normaloff>:/images/paypal_donate_global.gif</normaloff>:/images/paypal_donate_global.gif</iconset>
+      <iconset resource="../../../data/misc/misc.qrc">
+       <normaloff>:/misc/paypal_donate_global.gif</normaloff>:/misc/paypal_donate_global.gif</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -134,8 +134,8 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../data/icons.qrc"/>
-  <include location="../../../data/images.qrc"/>
+  <include location="../../../data/logo/logo.qrc"/>
+  <include location="../../../data/misc/misc.qrc"/>
  </resources>
  <connections>
   <connection>

@@ -30,6 +30,10 @@ namespace Tano
         QString recordings();
         QString resource(const QString &file);
         QString settingsPath();
+
+    // Icons
+        void setIconName();
+        void setIconPaths();
     }
 }
 

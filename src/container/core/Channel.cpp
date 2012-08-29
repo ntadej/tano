@@ -91,11 +91,11 @@ QString Channel::display() const
 QIcon Channel::displayIcon() const
 {
     if (type() == Radio)
-        return QIcon(":/icons/16x16/audio.png");
+        return QIcon::fromTheme("audio-x-generic");
     else if (type() == HD)
-        return QIcon(":/icons/16x16/hd.png");
+        return QIcon::fromTheme("video-x-generic");
     else
-        return QIcon(":/icons/16x16/sd.png");
+        return QIcon::fromTheme("video-x-generic");
 }
 
 void Channel::setNumber(const int &number)

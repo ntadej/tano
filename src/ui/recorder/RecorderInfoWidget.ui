@@ -6,13 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>217</width>
+    <width>226</width>
     <height>208</height>
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/24x24/recorder.png</normaloff>:/icons/24x24/recorder.png</iconset>
+   <iconset theme="media-record"/>
   </property>
   <property name="currentIndex">
    <number>0</number>
@@ -127,8 +126,7 @@
           <string>Currently not recording.</string>
          </property>
          <property name="icon">
-          <iconset resource="../../../data/icons.qrc">
-           <normaloff>:/icons/16x16/media-playback-stop.png</normaloff>:/icons/16x16/media-playback-stop.png</iconset>
+          <iconset theme="media-playback-stop"/>
          </property>
         </widget>
        </item>
@@ -230,8 +228,7 @@
             <string>Play</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../data/icons.qrc">
-             <normaloff>:/icons/16x16/media-playback-start.png</normaloff>:/icons/16x16/media-playback-start.png</iconset>
+            <iconset theme="media-playback-start"/>
            </property>
           </widget>
          </item>
@@ -241,8 +238,7 @@
             <string>Delete</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../data/icons.qrc">
-             <normaloff>:/icons/16x16/close.png</normaloff>:/icons/16x16/close.png</iconset>
+            <iconset theme="list-remove"/>
            </property>
           </widget>
          </item>
@@ -261,8 +257,7 @@
           <string>Back</string>
          </property>
          <property name="icon">
-          <iconset resource="../../../data/icons.qrc">
-           <normaloff>:/icons/16x16/go-previous.png</normaloff>:/icons/16x16/go-previous.png</iconset>
+          <iconset theme="go-previous"/>
          </property>
         </widget>
        </item>
@@ -306,8 +301,7 @@
             <string>Save</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../data/icons.qrc">
-             <normaloff>:/icons/16x16/save.png</normaloff>:/icons/16x16/save.png</iconset>
+            <iconset theme="document-save"/>
            </property>
           </widget>
          </item>
@@ -317,8 +311,7 @@
             <string>Delete</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../data/icons.qrc">
-             <normaloff>:/icons/16x16/close.png</normaloff>:/icons/16x16/close.png</iconset>
+            <iconset theme="list-remove"/>
            </property>
           </widget>
          </item>
@@ -343,8 +336,7 @@
           <string>Back</string>
          </property>
          <property name="icon">
-          <iconset resource="../../../data/icons.qrc">
-           <normaloff>:/icons/16x16/go-previous.png</normaloff>:/icons/16x16/go-previous.png</iconset>
+          <iconset theme="go-previous"/>
          </property>
         </widget>
        </item>
@@ -368,8 +360,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

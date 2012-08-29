@@ -24,6 +24,7 @@
 #include "core/Common.h"
 #include "core/Log.h"
 #include "core/Out.h"
+#include "core/Resources.h"
 #include "ui/MainWindow.h"
 
 int main(int argc, char *argv[])
@@ -46,6 +47,9 @@ int main(int argc, char *argv[])
     Out::welcome();
 
     Arguments *args = new Arguments(argc, argv);
+
+    Tano::Resources::setIconPaths();
+    Tano::Resources::setIconName();
 
     if (args->isValid()) {
         MainWindow mainWindow(args);

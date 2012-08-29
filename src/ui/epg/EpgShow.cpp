@@ -35,6 +35,12 @@ EpgShow::EpgShow(QWidget *parent)
     _crew->setDynamicSortFilter(true);
     ui->crew->setModel(_crew);
 
+    ui->labelChannelIcon->setPixmap(QIcon::fromTheme("video-x-generic").pixmap(22));
+    ui->labelDescriptionIcon->setPixmap(QIcon::fromTheme("text-x-generic").pixmap(22));
+    ui->labelCrewIcon->setPixmap(QIcon::fromTheme("config-users").pixmap(22));
+    ui->labelInfoIcon->setPixmap(QIcon::fromTheme("dialog-information").pixmap(22));
+    ui->labelTimeIcon->setPixmap(QIcon::fromTheme("time-admin").pixmap(22));
+
     connect(_image, SIGNAL(file(QString)), this, SLOT(image(QString)));
 
     connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
@@ -73,7 +79,7 @@ void EpgShow::display(XmltvProgramme *programme)
     ui->labelTime->setText("<h3>" + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</h3>");
     ui->labelInfo->setText("<h3>" + programme->categories().join(" / ") + "</h3>");
     ui->labelDescription->setText(programme->desc());
-    ui->labelPhoto->setPixmap(QPixmap(":/icons/48x48/image.png"));
+    ui->labelPhoto->setPixmap(QIcon::fromTheme("image-x-generic").pixmap(48));
 
     _crew->setSourceModel(programme->crew());
 

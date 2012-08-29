@@ -36,6 +36,14 @@ UpdateDialog::UpdateDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->labelIconDate->setPixmap(QIcon::fromTheme("x-office-calendar").pixmap(22));
+    ui->labelIconDev->setPixmap(QIcon::fromTheme("applications-development").pixmap(22));
+    ui->labelIconInfo->setPixmap(QIcon::fromTheme("dialog-information").pixmap(22));
+    ui->labelIconLatest->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(22));
+    ui->labelIconNew->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(22));
+    ui->labelIconOld->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(22));
+    ui->labelIconStable->setPixmap(QIcon::fromTheme("dialog-ok").pixmap(22));
+
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton *)), this, SLOT(action(QAbstractButton *)));
 
     connect(_request, SIGNAL(result(QByteArray)), this, SLOT(readUpdates(QByteArray)));

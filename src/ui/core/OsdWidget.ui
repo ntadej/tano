@@ -6,13 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>717</width>
-    <height>74</height>
+    <width>744</width>
+    <height>76</height>
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/media-playback-start.png</normaloff>:/icons/48x48/media-playback-start.png</iconset>
+   <iconset theme="media-playback-start">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="horizontalSpacing">
@@ -68,13 +69,13 @@
        <property name="minimumSize">
         <size>
          <width>70</width>
-         <height>40</height>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>70</width>
-         <height>40</height>
+         <height>42</height>
         </size>
        </property>
        <property name="frameShape">
@@ -95,14 +96,14 @@
       <widget class="QPushButton" name="buttonPlay">
        <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="toolTip">
@@ -112,13 +113,14 @@
         <string>Play</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/24x24/media-playback-start.png</normaloff>:/icons/24x24/media-playback-start.png</iconset>
+        <iconset theme="media-playback-start">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -127,14 +129,14 @@
       <widget class="QPushButton" name="buttonStop">
        <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="toolTip">
@@ -144,13 +146,14 @@
         <string>Stop</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/24x24/media-playback-stop.png</normaloff>:/icons/24x24/media-playback-stop.png</iconset>
+        <iconset theme="media-playback-stop">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -159,14 +162,14 @@
       <widget class="QPushButton" name="buttonBack">
        <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="toolTip">
@@ -176,13 +179,14 @@
         <string>Back</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/24x24/media-skip-backward.png</normaloff>:/icons/24x24/media-skip-backward.png</iconset>
+        <iconset theme="media-skip-backward">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -191,14 +195,14 @@
       <widget class="QPushButton" name="buttonNext">
        <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="toolTip">
@@ -208,13 +212,14 @@
         <string>Next</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/24x24/media-skip-forward.png</normaloff>:/icons/24x24/media-skip-forward.png</iconset>
+        <iconset theme="media-skip-forward">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -226,14 +231,14 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="toolTip">
@@ -243,13 +248,14 @@
         <string>Record Now</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/24x24/media-record.png</normaloff>:/icons/24x24/media-record.png</iconset>
+        <iconset theme="media-record">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
        <property name="checkable">
@@ -264,14 +270,14 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="toolTip">
@@ -281,13 +287,14 @@
         <string>Take snapshot</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/24x24/image.png</normaloff>:/icons/24x24/image.png</iconset>
+        <iconset theme="image-x-generic">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
       </widget>
@@ -296,14 +303,14 @@
       <widget class="QPushButton" name="buttonTeletext">
        <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="toolTip">
@@ -313,13 +320,14 @@
         <string>Teletext</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/24x24/teletext.png</normaloff>:/icons/24x24/teletext.png</iconset>
+        <iconset theme="text-x-generic-template">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
        <property name="checkable">
@@ -332,13 +340,13 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>40</height>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>40</height>
+         <height>42</height>
         </size>
        </property>
        <property name="minimum">
@@ -382,14 +390,14 @@
       <widget class="QPushButton" name="buttonMute">
        <property name="minimumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>42</width>
+         <height>42</height>
         </size>
        </property>
        <property name="toolTip">
@@ -399,13 +407,14 @@
         <string>Mute</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/24x24/volume-muted.png</normaloff>:/icons/24x24/volume-muted.png</iconset>
+        <iconset theme="audio-volume-muted">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>32</width>
+         <height>32</height>
         </size>
        </property>
        <property name="checkable">
@@ -442,9 +451,7 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonTeletext</sender>

@@ -14,8 +14,7 @@
    <string>Schedule</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/calendar.png</normaloff>:/icons/48x48/calendar.png</iconset>
+   <iconset theme="x-office-calendar"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -43,8 +42,7 @@
       <string>Search and filter</string>
      </property>
      <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/16x16/search.png</normaloff>:/icons/16x16/search.png</iconset>
+      <iconset theme="edit-find-replace"/>
      </property>
     </widget>
    </item>
@@ -64,8 +62,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

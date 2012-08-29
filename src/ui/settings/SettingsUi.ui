@@ -11,8 +11,7 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
+   <iconset theme="preferences-desktop"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
@@ -247,9 +246,7 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>checkTray</sender>

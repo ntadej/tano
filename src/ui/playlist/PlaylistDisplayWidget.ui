@@ -11,8 +11,7 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/24x24/file-m3u.png</normaloff>:/icons/24x24/file-m3u.png</iconset>
+   <iconset theme="text-richtext"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
@@ -41,8 +40,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

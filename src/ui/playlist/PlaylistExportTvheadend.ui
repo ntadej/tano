@@ -14,8 +14,7 @@
    <string>Export to Tvheadend IP TV services</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/24x24/export.png</normaloff>:/icons/24x24/export.png</iconset>
+   <iconset theme="document-export"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -125,9 +124,7 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>

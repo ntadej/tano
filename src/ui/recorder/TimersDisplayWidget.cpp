@@ -35,6 +35,8 @@ TimersDisplayWidget::TimersDisplayWidget(QWidget *parent)
 
     ui->timersView->setModel(_filterModel);
 
+    ui->labelIconSearch->setPixmap(QIcon::fromTheme("edit-find").pixmap(16));
+
     connect(ui->timersView, SIGNAL(activated(QModelIndex)), this, SLOT(timerClicked(QModelIndex)));
     connect(ui->editSearch, SIGNAL(textChanged(QString)), this, SLOT(processFilters()));
 }

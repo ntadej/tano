@@ -17,9 +17,11 @@
 *****************************************************************************/
 
 #include <QtCore/QCoreApplication>
+#include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 #include <QtCore/QSettings>
+#include <QtGui/QIcon>
 
 #include "core/Common.h"
 #include "core/Resources.h"
@@ -64,7 +66,7 @@ QString Tano::Resources::resource(const QString &file)
         path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
 #endif
 
-#if defined( DEFAULT_DATA_DIR)
+#if defined(DEFAULT_DATA_DIR)
     else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
         path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
 #endif
@@ -82,4 +84,24 @@ QString Tano::Resources::settingsPath()
     QString path = settings->fileName().replace(Tano::nameShort() + ".ini", "");
 
     return path;
+}
+
+void Tano::Resources::setIconName()
+{
+    QIcon::setThemeName("TanoFaenza");
+
+    qDebug() << "Icon theme:" << QIcon::themeName();
+}
+
+void Tano::Resources::setIconPaths()
+{
+    QStringList paths = QIcon::themeSearchPaths();
+    paths.prepend(QCoreApplication::applicationDirPath() + "/" + "icons");
+#if defined(DEFAULT_DATA_DIR)
+    paths.prepend(QString(DEFAULT_DATA_DIR) + "/" + "icons");
+#endif
+
+    QIcon::setThemeSearchPaths(paths);
+
+    qDebug() << "Icon theme search paths:" << QIcon::themeSearchPaths();
 }

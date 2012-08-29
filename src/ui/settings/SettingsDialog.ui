@@ -20,8 +20,7 @@
    <string>Settings</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
+   <iconset theme="preferences-desktop"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -41,8 +40,7 @@
         <string>General</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
+        <iconset theme="preferences-desktop"/>
        </property>
        <property name="iconSize">
         <size>
@@ -76,8 +74,7 @@
         <string extracomment="Please make manual line breaks if text too long!">Playlist</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/video.png</normaloff>:/icons/48x48/video.png</iconset>
+        <iconset theme="video-x-generic"/>
        </property>
        <property name="iconSize">
         <size>
@@ -108,8 +105,7 @@
         <string>Interface</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/interface.png</normaloff>:/icons/48x48/interface.png</iconset>
+        <iconset theme="preferences-system-windows"/>
        </property>
        <property name="iconSize">
         <size>
@@ -140,8 +136,7 @@
         <string>Playback</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/playback.png</normaloff>:/icons/48x48/playback.png</iconset>
+        <iconset theme="media-playback-start"/>
        </property>
        <property name="iconSize">
         <size>
@@ -172,8 +167,7 @@
         <string>Schedule</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/calendar.png</normaloff>:/icons/48x48/calendar.png</iconset>
+        <iconset theme="x-office-calendar"/>
        </property>
        <property name="iconSize">
         <size>
@@ -204,8 +198,7 @@
         <string>Recorder</string>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/48x48/recorder.png</normaloff>:/icons/48x48/recorder.png</iconset>
+        <iconset theme="media-record"/>
        </property>
        <property name="iconSize">
         <size>
@@ -343,8 +336,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

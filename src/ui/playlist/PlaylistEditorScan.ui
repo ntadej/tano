@@ -14,8 +14,9 @@
    <string>Playlist Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/editor.png</normaloff>:/icons/48x48/editor.png</iconset>
+   <iconset theme="accessories-text-editor">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="margin">
@@ -87,13 +88,14 @@
       <string>Scan and update</string>
      </property>
      <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/24x24/refresh.png</normaloff>:/icons/24x24/refresh.png</iconset>
+      <iconset theme="view-refresh">
+       <normaloff/>
+      </iconset>
      </property>
      <property name="iconSize">
       <size>
-       <width>24</width>
-       <height>24</height>
+       <width>22</width>
+       <height>22</height>
       </size>
      </property>
      <property name="checkable">
@@ -129,8 +131,6 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

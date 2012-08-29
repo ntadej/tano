@@ -18,6 +18,8 @@
 
 #include <QtGui/QDesktopServices>
 
+#include <QDebug>
+
 #if defined(Qt5)
     #include <QtWidgets/QDesktopWidget>
     #include <QtWidgets/QLCDNumber>
@@ -247,6 +249,9 @@ void MainWindow::createGui()
     _osdMain->toggleTeletext(false);
     ui->menuMedia->removeAction(ui->actionTeletext);
 #endif 
+
+    ui->labelPlaylistIcon->setPixmap(QIcon::fromTheme("video-x-generic").pixmap(16));
+    ui->labelScheduleIcon->setPixmap(QIcon::fromTheme("x-office-calendar").pixmap(16));
 
     qDebug() << "Initialised: GUI";
 }
@@ -696,7 +701,7 @@ void MainWindow::setPlaying()
 {
     _osdMain->setPlaying(true);
 
-    ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
+    ui->actionPlay->setIcon(QIcon::fromTheme("media-playback-pause"));
     ui->actionPlay->setText(tr("Pause"));
     ui->actionPlay->setToolTip(tr("Pause"));
     ui->actionMute->setEnabled(true);
@@ -710,7 +715,7 @@ void MainWindow::setStopped()
 {
     _osdMain->setPlaying(false);
 
-    ui->actionPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
+    ui->actionPlay->setIcon(QIcon::fromTheme("media-playback-start"));
     ui->actionPlay->setText(tr("Play"));
     ui->actionPlay->setToolTip(tr("Play"));
     ui->actionMute->setEnabled(false);

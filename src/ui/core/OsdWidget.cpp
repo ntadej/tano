@@ -112,13 +112,13 @@ void OsdWidget::setLogo(const QString &logo)
 void OsdWidget::setPlaying(const bool &playing)
 {
     if (playing) {
-        ui->buttonPlay->setIcon(QIcon(":/icons/24x24/media-playback-pause.png"));
+        ui->buttonPlay->setIcon(QIcon::fromTheme("media-playback-pause"));
         ui->buttonPlay->setToolTip(tr("Pause"));
         ui->buttonPlay->setStatusTip(tr("Pause"));
         ui->buttonMute->setEnabled(true);
         ui->buttonTeletext->setEnabled(true);
     } else {
-        ui->buttonPlay->setIcon(QIcon(":/icons/24x24/media-playback-start.png"));
+        ui->buttonPlay->setIcon(QIcon::fromTheme("media-playback-start"));
         ui->buttonPlay->setToolTip(tr("Play"));
         ui->buttonPlay->setStatusTip(tr("Play"));
         ui->buttonMute->setEnabled(false);

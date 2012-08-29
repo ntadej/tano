@@ -255,11 +255,11 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Info panel</source>
-        <translation>Panel s podrobnostmi</translation>
+        <translation type="unfinished">Panel s podrobnostmi</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Rozvrh</translation>
+        <translation type="unfinished">Rozvrh</translation>
     </message>
     <message>
         <source>Play</source>
@@ -267,63 +267,63 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation type="unfinished">Stop</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Zpět</translation>
+        <translation type="unfinished">Zpět</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Další</translation>
+        <translation type="unfinished">Další</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Ztlumit</translation>
+        <translation type="unfinished">Ztlumit</translation>
     </message>
     <message>
         <source>About Tano</source>
-        <translation>O programu Tano</translation>
+        <translation type="unfinished">O programu Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation>&amp;Ukončit</translation>
+        <translation type="unfinished">&amp;Ukončit</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Nastavení</translation>
+        <translation type="unfinished">&amp;Nastavení</translation>
     </message>
     <message>
         <source>&amp;Fullscreen</source>
-        <translation>&amp;Na celou obrazovku</translation>
+        <translation type="unfinished">&amp;Na celou obrazovku</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
-        <translation>Otevřít &amp;soubor</translation>
+        <translation type="unfinished">Otevřít &amp;soubor</translation>
     </message>
     <message>
         <source>Edit Channels</source>
-        <translation>Upravit programy</translation>
+        <translation type="unfinished">Upravit programy</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Otevřít adresu (URL)</translation>
+        <translation type="unfinished">Otevřít adresu (URL)</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>Prověřit aktualizace</translation>
+        <translation type="unfinished">Prověřit aktualizace</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otevřít</translation>
+        <translation type="unfinished">Otevřít</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Vždy nahoře</translation>
+        <translation type="unfinished">Vždy nahoře</translation>
     </message>
     <message>
         <source>Hide to tray</source>
@@ -331,35 +331,35 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Jednoduchý režim</translation>
+        <translation type="unfinished">Jednoduchý režim</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Zvýšit hlasitost</translation>
+        <translation type="unfinished">Zvýšit hlasitost</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Snížit hlasitost</translation>
+        <translation type="unfinished">Snížit hlasitost</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávání</translation>
+        <translation type="unfinished">Nahrávání</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation>Časovače</translation>
+        <translation type="obsolete">Časovače</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>O Qt</translation>
+        <translation type="unfinished">O Qt</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Zastavit nahrávání</translation>
+        <translation type="unfinished">Zastavit nahrávání</translation>
     </message>
     <message>
         <source>Controls panel</source>
-        <translation>Ovládací panel</translation>
+        <translation type="unfinished">Ovládací panel</translation>
     </message>
     <message>
         <source>Do you want to exit Tano?
@@ -369,23 +369,23 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;Otevřít seznam programů</translation>
+        <translation type="unfinished">&amp;Otevřít seznam programů</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Otevřít seznam programů</translation>
+        <translation type="unfinished">Otevřít seznam programů</translation>
     </message>
     <message>
         <source>Enable Info panel in Fullscreen mode</source>
-        <translation>Povolit informační panel v režimu celé obrazovky</translation>
+        <translation type="unfinished">Povolit informační panel v režimu celé obrazovky</translation>
     </message>
     <message>
         <source>Donate</source>
-        <translation>Darovat</translation>
+        <translation type="unfinished">Darovat</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletext</translation>
+        <translation type="unfinished">Teletext</translation>
     </message>
     <message>
         <source>Controls</source>
@@ -393,7 +393,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Klávesové zkratky</translation>
+        <translation type="unfinished">Klávesové zkratky</translation>
     </message>
     <message>
         <source>Recorder Toolbar</source>
@@ -401,19 +401,19 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>Rychlý záznam</translation>
+        <translation type="unfinished">Rychlý záznam</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Přidat časovač</translation>
+        <translation type="unfinished">Přidat časovač</translation>
     </message>
     <message>
         <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Rozvrh&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Rozvrh&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation>Podpora</translation>
+        <translation type="unfinished">Podpora</translation>
     </message>
     <message>
         <source>Tano Support</source>
@@ -439,11 +439,11 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>Okamžité nahrávání</translation>
+        <translation type="unfinished">Okamžité nahrávání</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Udělat snímek</translation>
+        <translation type="unfinished">Udělat snímek</translation>
     </message>
     <message>
         <source>Preview channels</source>

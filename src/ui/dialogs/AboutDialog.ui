@@ -35,7 +35,7 @@
       </sizepolicy>
      </property>
      <property name="pixmap">
-      <pixmap resource="../../../data/logo.qrc">:/logo/64x64/logo.png</pixmap>
+      <pixmap resource="../../../data/logo/logo.qrc">:/logo/64x64/logo.png</pixmap>
      </property>
     </widget>
    </item>
@@ -60,7 +60,7 @@ p, li { white-space: pre-wrap; }
    <item row="2" column="0" colspan="2">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="pageAbout">
       <attribute name="title">
@@ -185,7 +185,7 @@ Your VLC-Qt version: %3
           </size>
          </property>
          <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/48x48/vlc-qt.png</pixmap>
+          <pixmap resource="../../../data/logo/logo.qrc">:/logo/48x48/vlc-qt.png</pixmap>
          </property>
         </widget>
        </item>
@@ -264,8 +264,7 @@ Your VLC-Qt version: %3
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../../data/icons.qrc"/>
-  <include location="../../../data/logo.qrc"/>
+  <include location="../../../data/logo/logo.qrc"/>
  </resources>
  <connections>
   <connection>

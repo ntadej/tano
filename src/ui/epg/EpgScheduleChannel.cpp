@@ -47,10 +47,12 @@ EpgScheduleChannel::EpgScheduleChannel(QWidget *parent)
     ui->view->setContextMenuPolicy(Qt::CustomContextMenu);
 
 	_rightMenu = new QMenu(ui->view);
-	_info = new QAction(QIcon(":/icons/24x24/calendar.png"), tr("Show information"), this);
-	_record = new QAction(QIcon(":/icons/24x24/media-record.png"), tr("Record"), this);
+    _info = new QAction(QIcon::fromTheme("x-office-calendar"), tr("Show information"), this);
+    _record = new QAction(QIcon::fromTheme("media-record"), tr("Record"), this);
 	_rightMenu->addAction(_info);
 	_rightMenu->addAction(_record);
+
+    ui->labelNoEpgIcon->setPixmap(QIcon::fromTheme("list-remove").pixmap(32));
 
     connect(ui->view, SIGNAL(activated(QModelIndex)), this, SLOT(programmeClicked(QModelIndex)));
     connect(ui->view, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showMenu(QPoint)));

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/misc">
+        <file>paypal_donate_global.gif</file>
+    </qresource>
+</RCC>

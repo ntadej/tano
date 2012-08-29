@@ -22,7 +22,7 @@ MenuTrackVideo::MenuTrackVideo(QWidget *parent)
 	: MenuCore(parent)
 {
 	setTitle(tr("Video track"));
-	setIcon(QIcon(":/icons/24x24/video.png"));
+    setIcon(QIcon::fromTheme("video-x-generic"));
 	actionNext()->setText(tr("Next video track"));
 	setType(Vlc::VideoTrack);
 }

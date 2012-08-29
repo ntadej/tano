@@ -45,8 +45,8 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
     ui->playlistView->setContextMenuPolicy(Qt::CustomContextMenu);
 
 	_rightMenu = new QMenu(ui->playlistView);
-	_play = new QAction(QIcon(":/icons/24x24/media-playback-start.png"), tr("Play"), this);
-	_schedule = new QAction(QIcon(":/icons/24x24/calendar.png"), tr("Schedule"), this);
+    _play = new QAction(QIcon::fromTheme("media-playback-start"), tr("Play"), this);
+    _schedule = new QAction(QIcon::fromTheme("x-office-calendar"), tr("Schedule"), this);
 	_rightMenu->addAction(_play);
 	_rightMenu->addAction(_schedule);
 

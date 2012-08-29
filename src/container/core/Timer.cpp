@@ -128,11 +128,11 @@ QString Timer::display() const
 QIcon Timer::displayIcon() const
 {
     if (state() == Finished)
-        return QIcon(":/icons/16x16/video.png");
+        return QIcon::fromTheme("video-x-generic");
     else if (state() == Recording)
-        return QIcon(":/icons/16x16/media-record.png");
+        return QIcon::fromTheme("media-record");
     else
-        return QIcon(":/icons/16x16/timer.png");
+        return QIcon::fromTheme("time-admin");
 }
 
 void Timer::setName(const QString &name)

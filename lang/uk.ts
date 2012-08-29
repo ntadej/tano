@@ -253,11 +253,11 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Info panel</source>
-        <translation>Інформаційна панель</translation>
+        <translation type="unfinished">Інформаційна панель</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Розклад</translation>
+        <translation type="unfinished">Розклад</translation>
     </message>
     <message>
         <source>Play</source>
@@ -265,63 +265,63 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Stop</source>
-        <translation>Зупинити</translation>
+        <translation type="unfinished">Зупинити</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation type="unfinished">Назад</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Далі</translation>
+        <translation type="unfinished">Далі</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Вимкнути звук</translation>
+        <translation type="unfinished">Вимкнути звук</translation>
     </message>
     <message>
         <source>About Tano</source>
-        <translation>Про Tano</translation>
+        <translation type="unfinished">Про Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation>&amp;Вихід</translation>
+        <translation type="unfinished">&amp;Вихід</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Налаштування</translation>
+        <translation type="unfinished">&amp;Налаштування</translation>
     </message>
     <message>
         <source>&amp;Fullscreen</source>
-        <translation>&amp;На весь екран</translation>
+        <translation type="unfinished">&amp;На весь екран</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
-        <translation>Відкрити &amp;Файл</translation>
+        <translation type="unfinished">Відкрити &amp;Файл</translation>
     </message>
     <message>
         <source>Edit Channels</source>
-        <translation>Редагувати канали</translation>
+        <translation type="unfinished">Редагувати канали</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Відкрити посилання URL</translation>
+        <translation type="unfinished">Відкрити посилання URL</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>Перевірити оновлення</translation>
+        <translation type="unfinished">Перевірити оновлення</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Відкрити</translation>
+        <translation type="unfinished">Відкрити</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Завжди поверх інших вікон</translation>
+        <translation type="unfinished">Завжди поверх інших вікон</translation>
     </message>
     <message>
         <source>Hide to tray</source>
@@ -329,35 +329,35 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Простий режим</translation>
+        <translation type="unfinished">Простий режим</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Збільшити гучність</translation>
+        <translation type="unfinished">Збільшити гучність</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Зменшити гучність</translation>
+        <translation type="unfinished">Зменшити гучність</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Записувач</translation>
+        <translation type="unfinished">Записувач</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation>Таймери</translation>
+        <translation type="obsolete">Таймери</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>Про Qt</translation>
+        <translation type="unfinished">Про Qt</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Зупинити запис</translation>
+        <translation type="unfinished">Зупинити запис</translation>
     </message>
     <message>
         <source>Controls panel</source>
-        <translation>Панель контролю</translation>
+        <translation type="unfinished">Панель контролю</translation>
     </message>
     <message>
         <source>Do you want to exit Tano?
@@ -367,23 +367,23 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;Відкрити список каналів</translation>
+        <translation type="unfinished">&amp;Відкрити список каналів</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Відкрити список каналів</translation>
+        <translation type="unfinished">Відкрити список каналів</translation>
     </message>
     <message>
         <source>Enable Info panel in Fullscreen mode</source>
-        <translation>Увімкнути інформаційну панель в повноекранному режимі</translation>
+        <translation type="unfinished">Увімкнути інформаційну панель в повноекранному режимі</translation>
     </message>
     <message>
         <source>Donate</source>
-        <translation>Пожертвування</translation>
+        <translation type="unfinished">Пожертвування</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Телетекст</translation>
+        <translation type="unfinished">Телетекст</translation>
     </message>
     <message>
         <source>Controls</source>
@@ -391,7 +391,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Скорочення клавіатури</translation>
+        <translation type="unfinished">Скорочення клавіатури</translation>
     </message>
     <message>
         <source>Recorder Toolbar</source>
@@ -399,19 +399,19 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>Швидкий запис</translation>
+        <translation type="unfinished">Швидкий запис</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Додати таймер</translation>
+        <translation type="unfinished">Додати таймер</translation>
     </message>
     <message>
         <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Розклад&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Розклад&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation>Підтримка</translation>
+        <translation type="unfinished">Підтримка</translation>
     </message>
     <message>
         <source>Tano Support</source>
@@ -437,11 +437,11 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>Негайний запис</translation>
+        <translation type="unfinished">Негайний запис</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Зробити знімок</translation>
+        <translation type="unfinished">Зробити знімок</translation>
     </message>
     <message>
         <source>Preview channels</source>

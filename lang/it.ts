@@ -222,111 +222,11 @@ Your VLC-Qt version: %3
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Info panel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Stop</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mute</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About Tano</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Fullscreen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open &amp;File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit Channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Check for updates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Hide to tray</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Simple Mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Volume up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Volume down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Timers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About Qt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop recording</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Controls panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -335,51 +235,11 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Open channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable Info panel in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Teletext</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Controls</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Recorder Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Quick record</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add timer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -404,7 +264,143 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Tano</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Fullscreen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open &amp;File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check for updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Simple Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About Qt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Controls panel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info panel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable Info panel in Fullscreen mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Instant recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

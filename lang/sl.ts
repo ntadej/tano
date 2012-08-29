@@ -256,11 +256,11 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Info panel</source>
-        <translation>Info pult</translation>
+        <translation type="unfinished">Info pult</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Spored</translation>
+        <translation type="unfinished">Spored</translation>
     </message>
     <message>
         <source>Play</source>
@@ -268,63 +268,63 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Stop</source>
-        <translation>Ustavi</translation>
+        <translation type="unfinished">Ustavi</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Nazaj</translation>
+        <translation type="unfinished">Nazaj</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Naslednji</translation>
+        <translation type="unfinished">Naslednji</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Tiho</translation>
+        <translation type="unfinished">Tiho</translation>
     </message>
     <message>
         <source>About Tano</source>
-        <translation>O programu Tano</translation>
+        <translation type="unfinished">O programu Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation>&amp;Izhod</translation>
+        <translation type="unfinished">&amp;Izhod</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Nastavitve</translation>
+        <translation type="unfinished">&amp;Nastavitve</translation>
     </message>
     <message>
         <source>&amp;Fullscreen</source>
-        <translation>&amp;Celoten zaslon</translation>
+        <translation type="unfinished">&amp;Celoten zaslon</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
-        <translation>Odpri &amp;Datoteko</translation>
+        <translation type="unfinished">Odpri &amp;Datoteko</translation>
     </message>
     <message>
         <source>Edit Channels</source>
-        <translation>Uredi programe</translation>
+        <translation type="unfinished">Uredi programe</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Odpri URL</translation>
+        <translation type="unfinished">Odpri URL</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>Preveri za posodobitve</translation>
+        <translation type="unfinished">Preveri za posodobitve</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Odpri</translation>
+        <translation type="unfinished">Odpri</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Vedno na vrhu</translation>
+        <translation type="unfinished">Vedno na vrhu</translation>
     </message>
     <message>
         <source>Hide to tray</source>
@@ -332,35 +332,35 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Enostaven način</translation>
+        <translation type="unfinished">Enostaven način</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Povečaj glasnost</translation>
+        <translation type="unfinished">Povečaj glasnost</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Zmanjšaj glasnost</translation>
+        <translation type="unfinished">Zmanjšaj glasnost</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Snemalnik</translation>
+        <translation type="unfinished">Snemalnik</translation>
     </message>
     <message>
         <source>Timers</source>
-        <translation>Časovniki</translation>
+        <translation type="obsolete">Časovniki</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>O Qt</translation>
+        <translation type="unfinished">O Qt</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Prenehaj s snemanjem</translation>
+        <translation type="unfinished">Prenehaj s snemanjem</translation>
     </message>
     <message>
         <source>Controls panel</source>
-        <translation>Upravljalni pult</translation>
+        <translation type="unfinished">Upravljalni pult</translation>
     </message>
     <message>
         <source>Do you want to exit Tano?
@@ -370,23 +370,23 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;Odpri seznam programov</translation>
+        <translation type="unfinished">&amp;Odpri seznam programov</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Odpri seznam programov</translation>
+        <translation type="unfinished">Odpri seznam programov</translation>
     </message>
     <message>
         <source>Enable Info panel in Fullscreen mode</source>
-        <translation>Vključi Info pult v celozaslonskem načinu</translation>
+        <translation type="unfinished">Vključi Info pult v celozaslonskem načinu</translation>
     </message>
     <message>
         <source>Donate</source>
-        <translation>Doniraj</translation>
+        <translation type="unfinished">Doniraj</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletekst</translation>
+        <translation type="unfinished">Teletekst</translation>
     </message>
     <message>
         <source>Controls</source>
@@ -394,7 +394,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Bližnjice na tipkovnici</translation>
+        <translation type="unfinished">Bližnjice na tipkovnici</translation>
     </message>
     <message>
         <source>Recorder Toolbar</source>
@@ -402,19 +402,19 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>Hitro snemanje</translation>
+        <translation type="unfinished">Hitro snemanje</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Dodaj časovnik</translation>
+        <translation type="unfinished">Dodaj časovnik</translation>
     </message>
     <message>
         <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Spored&lt;/b&gt;</translation>
+        <translation type="unfinished">&lt;b&gt;Spored&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation>Podpora</translation>
+        <translation type="unfinished">Podpora</translation>
     </message>
     <message>
         <source>Tano Support</source>
@@ -440,11 +440,11 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>Takojšnje snemanje</translation>
+        <translation type="unfinished">Takojšnje snemanje</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Zajemi sliko</translation>
+        <translation type="unfinished">Zajemi sliko</translation>
     </message>
     <message>
         <source>Preview channels</source>

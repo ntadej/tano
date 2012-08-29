@@ -109,7 +109,7 @@ QString XmltvProgramme::display() const
 
 QIcon XmltvProgramme::displayIcon() const
 {
-    return QIcon(":/icons/16x16/calendar.png");
+    return QIcon::fromTheme("x-office-calendar");
 }
 
 QFont XmltvProgramme::displayFont() const

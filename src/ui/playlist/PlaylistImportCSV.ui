@@ -14,8 +14,7 @@
    <string>CSV file structure</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/24x24/file-csv.png</normaloff>:/icons/24x24/file-csv.png</iconset>
+   <iconset theme="text-x-generic"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -137,9 +136,7 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>

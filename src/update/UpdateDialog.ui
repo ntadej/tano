@@ -14,14 +14,15 @@
    <string>Update Information</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/24x24/update.png</normaloff>:/icons/24x24/update.png</iconset>
+   <iconset theme="system-software-update">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="labelIconTano">
      <property name="pixmap">
-      <pixmap resource="../../../data/logo.qrc">:/logo/64x64/logo.png</pixmap>
+      <pixmap resource="../../data/logo/logo.qrc">:/logo/64x64/logo.png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -72,12 +73,9 @@
         <widget class="QLabel" name="labelIconLatest">
          <property name="maximumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/24x24/apply.png</pixmap>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -142,15 +140,12 @@
         <widget class="QLabel" name="labelIconDev">
          <property name="maximumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
          </property>
          <property name="text">
           <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/24x24/development.png</pixmap>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -161,12 +156,9 @@
         <widget class="QLabel" name="labelIconStable">
          <property name="maximumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/24x24/apply.png</pixmap>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -258,8 +250,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>382</width>
-            <height>143</height>
+            <width>71</width>
+            <height>25</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -281,15 +273,12 @@
         <widget class="QLabel" name="labelIconOld">
          <property name="maximumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
          </property>
          <property name="text">
           <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/24x24/warning.png</pixmap>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -300,12 +289,9 @@
         <widget class="QLabel" name="labelIconNew">
          <property name="maximumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/24x24/apply.png</pixmap>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -316,12 +302,9 @@
         <widget class="QLabel" name="labelIconDate">
          <property name="maximumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/24x24/calendar.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -332,12 +315,9 @@
         <widget class="QLabel" name="labelIconInfo">
          <property name="maximumSize">
           <size>
-           <width>24</width>
-           <height>24</height>
+           <width>22</width>
+           <height>22</height>
           </size>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="../../../data/icons.qrc">:/icons/24x24/information.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -361,8 +341,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../data/icons.qrc"/>
-  <include location="../../../data/logo.qrc"/>
+  <include location="../../data/logo/logo.qrc"/>
  </resources>
  <connections/>
 </ui>

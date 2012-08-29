@@ -20,8 +20,7 @@
    <string>Keyboard shortcuts</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/shortcuts.png</normaloff>:/icons/48x48/shortcuts.png</iconset>
+   <iconset theme="preferences-desktop-keyboard-shortcuts"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="5">
@@ -588,8 +587,7 @@
       </size>
      </property>
      <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/16x16/clear.png</normaloff>:/icons/16x16/clear.png</iconset>
+      <iconset theme="edit-clear"/>
      </property>
     </widget>
    </item>
@@ -599,8 +597,7 @@
       <string>Set</string>
      </property>
      <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/16x16/apply.png</normaloff>:/icons/16x16/apply.png</iconset>
+      <iconset theme="dialog-ok"/>
      </property>
     </widget>
    </item>
@@ -623,8 +620,7 @@
       <string>Defaults</string>
      </property>
      <property name="icon">
-      <iconset resource="../../../data/icons.qrc">
-       <normaloff>:/icons/16x16/refresh.png</normaloff>:/icons/16x16/refresh.png</iconset>
+      <iconset theme="view-refresh"/>
      </property>
     </widget>
    </item>
@@ -648,8 +644,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

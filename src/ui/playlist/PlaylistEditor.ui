@@ -14,8 +14,9 @@
    <string>Tano Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/editor.png</normaloff>:/icons/48x48/editor.png</iconset>
+   <iconset theme="accessories-text-editor">
+    <normaloff/>
+   </iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -69,8 +70,8 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>24</width>
-     <height>24</height>
+     <width>22</width>
+     <height>22</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -117,8 +118,9 @@
     </size>
    </property>
    <property name="windowIcon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/edit.png</normaloff>:/icons/24x24/edit.png</iconset>
+    <iconset theme="accessories-text-editor">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="features">
     <set>QDockWidget::NoDockWidgetFeatures</set>
@@ -183,13 +185,14 @@
         </size>
        </property>
        <property name="icon">
-        <iconset resource="../../../data/icons.qrc">
-         <normaloff>:/icons/24x24/apply.png</normaloff>:/icons/24x24/apply.png</iconset>
+        <iconset theme="dialog-apply">
+         <normaloff/>
+        </iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>24</width>
-         <height>24</height>
+         <width>22</width>
+         <height>22</height>
         </size>
        </property>
       </widget>
@@ -300,8 +303,9 @@
   </widget>
   <widget class="QDockWidget" name="updateWidget">
    <property name="windowIcon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/refresh.png</normaloff>:/icons/24x24/refresh.png</iconset>
+    <iconset theme="view-refresh">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="features">
     <set>QDockWidget::NoDockWidgetFeatures</set>
@@ -325,8 +329,9 @@
   </widget>
   <action name="actionAdd">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/add.png</normaloff>:/icons/24x24/add.png</iconset>
+    <iconset theme="list-add">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Add channel</string>
@@ -337,8 +342,9 @@
   </action>
   <action name="actionDelete">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/remove.png</normaloff>:/icons/24x24/remove.png</iconset>
+    <iconset theme="list-remove">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Delete channel</string>
@@ -349,8 +355,9 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/save.png</normaloff>:/icons/24x24/save.png</iconset>
+    <iconset theme="document-save">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -361,8 +368,9 @@
   </action>
   <action name="actionClose">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/close.png</normaloff>:/icons/24x24/close.png</iconset>
+    <iconset theme="window-close">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Close</string>
@@ -370,8 +378,9 @@
   </action>
   <action name="actionUp">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/go-up.png</normaloff>:/icons/24x24/go-up.png</iconset>
+    <iconset theme="go-up">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Move up</string>
@@ -382,8 +391,9 @@
   </action>
   <action name="actionDown">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/go-down.png</normaloff>:/icons/24x24/go-down.png</iconset>
+    <iconset theme="go-down">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Move down</string>
@@ -394,8 +404,9 @@
   </action>
   <action name="actionPrint">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/print.png</normaloff>:/icons/24x24/print.png</iconset>
+    <iconset theme="document-print">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Print</string>
@@ -403,8 +414,9 @@
   </action>
   <action name="actionExport">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/export.png</normaloff>:/icons/24x24/export.png</iconset>
+    <iconset theme="document-export">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Export</string>
@@ -412,8 +424,9 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/open.png</normaloff>:/icons/24x24/open.png</iconset>
+    <iconset theme="document-open">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -421,8 +434,9 @@
   </action>
   <action name="actionAbout">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/information.png</normaloff>:/icons/24x24/information.png</iconset>
+    <iconset theme="dialog-information">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>About</string>
@@ -430,8 +444,9 @@
   </action>
   <action name="actionNew">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/new.png</normaloff>:/icons/24x24/new.png</iconset>
+    <iconset theme="document-new">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>New playlist</string>
@@ -439,8 +454,9 @@
   </action>
   <action name="actionExportTvheadend">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/export.png</normaloff>:/icons/24x24/export.png</iconset>
+    <iconset theme="document-export">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Tvheadend</string>
@@ -448,8 +464,9 @@
   </action>
   <action name="actionSettings">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/settings.png</normaloff>:/icons/24x24/settings.png</iconset>
+    <iconset theme="preferences-desktop">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Settings</string>
@@ -457,8 +474,9 @@
   </action>
   <action name="actionExportXmltvId">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/export.png</normaloff>:/icons/24x24/export.png</iconset>
+    <iconset theme="document-export">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>XMLTV IDs</string>
@@ -469,8 +487,9 @@
   </action>
   <action name="actionUpdate">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/update_alert.png</normaloff>:/icons/24x24/update_alert.png</iconset>
+    <iconset theme="system-software-install">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Update Information</string>
@@ -481,8 +500,9 @@
   </action>
   <action name="actionHelp">
    <property name="icon">
-    <iconset resource="../../../data/icons.qrc">
-     <normaloff>:/icons/24x24/help.png</normaloff>:/icons/24x24/help.png</iconset>
+    <iconset theme="help-browser">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Help</string>
@@ -504,8 +524,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../../../data/icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

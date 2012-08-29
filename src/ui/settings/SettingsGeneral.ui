@@ -11,8 +11,7 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../data/icons.qrc">
-    <normaloff>:/icons/48x48/settings.png</normaloff>:/icons/48x48/settings.png</iconset>
+   <iconset theme="preferences-desktop"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
@@ -50,7 +49,7 @@
             </sizepolicy>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../../data/logo.qrc">:/logo/48x48/logo.png</pixmap>
+            <pixmap resource="../../../data/logo/logo.qrc">:/logo/48x48/logo.png</pixmap>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -140,8 +139,7 @@
              <string>Restore defaults</string>
             </property>
             <property name="icon">
-             <iconset resource="../../../data/icons.qrc">
-              <normaloff>:/icons/16x16/refresh.png</normaloff>:/icons/16x16/refresh.png</iconset>
+             <iconset theme="view-refresh"/>
             </property>
            </widget>
           </item>
@@ -178,8 +176,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../data/icons.qrc"/>
-  <include location="../../../data/logo.qrc"/>
+  <include location="../../../data/logo/logo.qrc"/>
  </resources>
  <connections>
   <connection>
