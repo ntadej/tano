@@ -127,7 +127,13 @@ MainWindow::MainWindow(Arguments *args)
     createSession();
 }
 
-MainWindow::~MainWindow() { }
+MainWindow::~MainWindow()
+{
+    if (_playlistEditor)
+        delete _playlistEditor;
+
+    delete ui;
+}
 
 void MainWindow::exit()
 {

@@ -47,11 +47,13 @@ PlaylistEditorScan::PlaylistEditorScan(QWidget *parent)
 
 PlaylistEditorScan::~PlaylistEditorScan()
 {
-    delete ui;
-
     if (_media)
         delete _media;
+    if (_player)
+        delete _player;
     delete _timer;
+
+    delete ui;
 }
 
 void PlaylistEditorScan::changeEvent(QEvent *e)
