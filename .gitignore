@@ -8,5 +8,7 @@ CMakeLists.txt.user
 
 # Other
 src/custom/SettingsDefaults.cpp
+src/custom/SettingsShortcutsDefaults.cpp
 src/custom/VERSION
 
+tt*
