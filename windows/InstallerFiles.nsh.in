@@ -23,6 +23,9 @@ ${File} ".." "tano.exe"
 ${File} "." "LICENSE.GPL.TXT"
 @NSIS_Qt@
 
+${SetOutPath} "$INSTDIR\icons"
+@NSIS_Icons@
+
 ${SetOutPath} "$INSTDIR\imageformats"
 @NSIS_Qt_Plugins@
 

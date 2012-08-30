@@ -48,11 +48,6 @@
 
     BrandingText "${COMPANY} | ${URL}"
 
-    !define REG_APP HKCU
-    !define REG_APP_PATH "Software\Tano Player"
-    !define REG_UNINSTALL HKLM
-    !define REG_UNINSTALL_PATH "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tano Player"
-
     InstType $(S_Minimum)
     InstType $(S_Full)
 

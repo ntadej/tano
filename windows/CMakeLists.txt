@@ -30,6 +30,37 @@ MACRO(NSIS_FILE_OUTPUT outfiles path)
     SET(files "")
 ENDMACRO(NSIS_FILE_OUTPUT)
 
+MACRO(NSIS_ICONS outfiles)
+        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\"\n")
+        NSIS_FILE_OUTPUT(ficons "..\\\\icons\\\\tano-default" "index.theme" "AUTHORS")
+        SET(out "${out}${ficons}\n")
+
+    FOREACH(type ${ARGN})
+        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\"\n")
+
+        FILE(GLOB icons16 ${CMAKE_SOURCE_DIR}/data/icons/tano-default/${type}/16/*.png)
+        NSIS_FILE_OUTPUT(ficons16 "..\\\\icons\\\\tano-default\\\\${type}\\\\16" ${icons16})
+        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\\16\"\n")
+        SET(out "${out}${ficons16}\n")
+
+        FILE(GLOB icons22 ${CMAKE_SOURCE_DIR}/data/icons/tano-default/${type}/22/*.png)
+        NSIS_FILE_OUTPUT(ficons22 "..\\\\icons\\\\tano-default\\\\${type}\\\\22" ${icons22})
+        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\\22\"\n")
+        SET(out "${out}${ficons22}\n")
+
+        FILE(GLOB icons32 ${CMAKE_SOURCE_DIR}/data/icons/tano-default/${type}/32/*.png)
+        NSIS_FILE_OUTPUT(ficons32 "..\\\\icons\\\\tano-default\\\\${type}\\\\32" ${icons32})
+        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\\32\"\n")
+        SET(out "${out}${ficons32}\n")
+
+        FILE(GLOB icons48 ${CMAKE_SOURCE_DIR}/data/icons/tano-default/${type}/48/*.png)
+        NSIS_FILE_OUTPUT(ficons48 "..\\\\icons\\\\tano-default\\\\${type}\\\\48" ${icons48})
+        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\\48\"\n")
+        SET(out "${out}${ficons48}\n")
+    ENDFOREACH(type)
+    SET(${outfiles} ${out})
+ENDMACRO(NSIS_ICONS)
+
 MACRO(NSIS_VLC_PLUGINS outfiles)
     FOREACH(type ${ARGN})
         FILE(GLOB plugins ${LIBVLCQT_BIN_DIR}/plugins/${type}/*.dll)
@@ -47,6 +78,14 @@ MACRO(INSTALL_VLC_PLUGINS)
         INSTALL(FILES ${Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/plugins/${type}")
     ENDFOREACH(type)
 ENDMACRO(INSTALL_VLC_PLUGINS)
+
+SET(Tano_Icon_Types
+    actions
+    apps
+    categories
+    mimetypes
+    status
+)
 
 SET(Tano_Vlc_Plugin_Types
     3dnow
@@ -133,42 +172,47 @@ ENDIF(MINGW)
 ########################
 # Installer generation #
 ########################
-IF(GIT_OUT)
-    SET(TANO_WIN_VERSION ${TANO_VERSION}-${PROJECT_VERSION_PATCH})
-ELSE(GIT_OUT)
-    SET(TANO_WIN_VERSION ${TANO_VERSION})
-ENDIF(GIT_OUT)
+IF(WINDOWS_INSTALLER)
+    MESSAGE("Generating Windows installer. Please, wait ...")
 
-IF(BITS)
-    SET(TANO_WIN_BUILD win64)
-    SET(TANO_WIN_BUILDSTR "(64-bit)")
-ELSE(BITS)
-    SET(TANO_WIN_BUILD win32)
-    SET(TANO_WIN_BUILDSTR "(32-bit)")
-ENDIF(BITS)
+    IF(GIT_OUT)
+        SET(TANO_WIN_VERSION ${TANO_VERSION}-${PROJECT_VERSION_PATCH})
+    ELSE(GIT_OUT)
+        SET(TANO_WIN_VERSION ${TANO_VERSION})
+    ENDIF(GIT_OUT)
 
-NSIS_FILE_OUTPUT(NSIS_Qt ".." ${Tano_Qt_Lib})
-NSIS_FILE_OUTPUT(NSIS_Qt_Plugins "..\\\\imageformats" ${Tano_Qt_Plugins})
-NSIS_FILE_OUTPUT(NSIS_Language "..\\\\lang" ${Tano_Language})
-NSIS_FILE_OUTPUT(NSIS_VLC ".." ${Tano_Vlc_Libs})
-NSIS_VLC_PLUGINS(NSIS_VLC_Plugins ${Tano_Vlc_Plugin_Types})
+    IF(BITS)
+        SET(TANO_WIN_BUILD win64)
+        SET(TANO_WIN_BUILDSTR "(64-bit)")
+    ELSE(BITS)
+        SET(TANO_WIN_BUILD win32)
+        SET(TANO_WIN_BUILDSTR "(32-bit)")
+    ENDIF(BITS)
 
-CONFIGURE_FILE(
-    ${CMAKE_SOURCE_DIR}/windows/InstallerConfig.nsh.in
-    ${CMAKE_BINARY_DIR}/windows/InstallerConfig.nsh
-    @ONLY
-)
+    NSIS_FILE_OUTPUT(NSIS_Qt ".." ${Tano_Qt_Lib})
+    NSIS_FILE_OUTPUT(NSIS_Qt_Plugins "..\\\\imageformats" ${Tano_Qt_Plugins})
+    NSIS_FILE_OUTPUT(NSIS_Language "..\\\\lang" ${Tano_Language})
+    NSIS_ICONS(NSIS_Icons ${Tano_Icon_Sizes} ${Tano_Icon_Types})
+    NSIS_FILE_OUTPUT(NSIS_VLC ".." ${Tano_Vlc_Libs})
+    NSIS_VLC_PLUGINS(NSIS_VLC_Plugins ${Tano_Vlc_Plugin_Types})
 
-CONFIGURE_FILE(
-    ${CMAKE_SOURCE_DIR}/windows/InstallerFiles.nsh.in
-    ${CMAKE_BINARY_DIR}/windows/InstallerFiles.nsh
-    @ONLY
-)
+    CONFIGURE_FILE(
+        ${CMAKE_SOURCE_DIR}/windows/InstallerConfig.nsh.in
+        ${CMAKE_BINARY_DIR}/windows/InstallerConfig.nsh
+        @ONLY
+    )
 
-SET(Tano_Installer_Generated
-    ${CMAKE_BINARY_DIR}/windows/InstallerConfig.nsh
-    ${CMAKE_BINARY_DIR}/windows/InstallerFiles.nsh
-)
+    CONFIGURE_FILE(
+        ${CMAKE_SOURCE_DIR}/windows/InstallerFiles.nsh.in
+        ${CMAKE_BINARY_DIR}/windows/InstallerFiles.nsh
+        @ONLY
+    )
+
+    SET(Tano_Installer_Generated
+        ${CMAKE_BINARY_DIR}/windows/InstallerConfig.nsh
+        ${CMAKE_BINARY_DIR}/windows/InstallerFiles.nsh
+    )
+ENDIF(WINDOWS_INSTALLER)
 
 ################
 # Installation #
