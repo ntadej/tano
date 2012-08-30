@@ -2,15 +2,9 @@
     <qresource prefix="/logo">
         <file>48x48/logo.png</file>
         <file>48x48/vlc-qt.png</file>
-        <file>48x48/vlc.png</file>
         <file>64x64/logo.png</file>
         <file>64x64/vlc-qt.png</file>
-        <file>64x64/vlc.png</file>
         <file>128x128/logo.png</file>
         <file>128x128/vlc-qt.png</file>
-        <file>128x128/vlc.png</file>
-        <file>256x256/logo.png</file>
-        <file>256x256/vlc-qt.png</file>
-        <file>256x256/vlc.png</file>
     </qresource>
 </RCC>
