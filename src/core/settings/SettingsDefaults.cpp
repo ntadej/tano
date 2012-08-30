@@ -57,6 +57,15 @@ const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
 const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonIconOnly;
 const bool Settings::DEFAULT_REMEMBER_GUI_SESSION = true;
 const bool Settings::DEFAULT_FILTERS_VISIBLE = false;
+#if defined(Q_OS_WIN32)
+const QString Settings::DEFAULT_ICONS = "tano-default";
+#elif defined(Q_OS_MAC)
+const QString Settings::DEFAULT_ICONS = "tano-default";
+#elif defined(Q_OS_LINUX)
+const QString Settings::DEFAULT_ICONS = "";
+#else
+const QString Settings::DEFAULT_ICONS = "tano-default";
+#endif
 
 // Backend - core
 const int Settings::DEFAULT_VOUT = -1;

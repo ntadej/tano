@@ -3199,6 +3199,22 @@ This operation is ireversible.</source>
         <source>Filters always visible</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Icon theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Desktop theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Tano::Xmltv</name>

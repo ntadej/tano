@@ -94,6 +94,9 @@ public:
     inline bool filtersVisible() const { return _filtersVisible; }
     inline void setFiltersVisible(const bool &b) { _filtersVisible = b; }
     static const bool DEFAULT_FILTERS_VISIBLE;
+    inline QString icons() const { return _icons; }
+    inline void setIcons(const QString &s) { _icons = s; }
+    static const QString DEFAULT_ICONS;
 
     // GUI - session
     inline int width() const { return _width; }
@@ -238,6 +241,7 @@ private:
     int _toolbarLook;
     bool _rememberGuiSession;
     bool _filtersVisible;
+    QString _icons;
 
     // GUI - session
     int _width;

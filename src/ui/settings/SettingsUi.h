@@ -54,6 +54,9 @@ public:
     bool filter() const;
     void setFilter(const bool &enabled);
 
+    QString icons() const;
+    void setIcons(const QString &icons);
+
     bool lite() const;
     void setLite(const bool &enabled);
     bool top() const;

@@ -219,7 +219,7 @@ SET(Tano_Files
 )
 
 SET(Tano_Icons
-    data/icons/TanoFaenza
+    data/icons/tano-default
 )
 
 ################

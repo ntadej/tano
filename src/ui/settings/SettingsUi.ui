@@ -11,7 +11,9 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset theme="preferences-desktop"/>
+   <iconset theme="preferences-desktop">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
@@ -29,9 +31,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-177</y>
         <width>437</width>
-        <height>471</height>
+        <height>561</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -198,6 +200,36 @@
            <widget class="QCheckBox" name="checkFilter">
             <property name="text">
              <string>Filters always visible</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupIcons">
+         <property name="title">
+          <string>Icon theme</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QComboBox" name="comboIcons">
+            <item>
+             <property name="text">
+              <string>Tano default</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Desktop theme</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>&lt;i&gt;This option requires restart.&lt;/i&gt;</string>
             </property>
            </widget>
           </item>

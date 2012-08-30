@@ -20,11 +20,11 @@
 #include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
-#include <QtCore/QSettings>
 #include <QtGui/QIcon>
 
 #include "core/Common.h"
 #include "core/Resources.h"
+#include "core/settings/Settings.h"
 
 QString Tano::Resources::path(const QString &file)
 {
@@ -88,7 +88,9 @@ QString Tano::Resources::settingsPath()
 
 void Tano::Resources::setIconName()
 {
-    QIcon::setThemeName("TanoFaenza");
+    QScopedPointer<Settings> settings(new Settings());
+    if (!settings->icons().isEmpty())
+        QIcon::setThemeName(settings->icons());
 
     qDebug() << "Icon theme:" << QIcon::themeName();
 }

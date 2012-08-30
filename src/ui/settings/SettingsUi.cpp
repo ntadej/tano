@@ -24,6 +24,10 @@ SettingsUi::SettingsUi(QWidget *parent)
       ui(new Ui::SettingsUi)
 {
     ui->setupUi(this);
+
+#if !defined(Q_OS_LINUX)
+    ui->comboIcons->removeItem(1);
+#endif
 }
 
 SettingsUi::~SettingsUi()
@@ -130,6 +134,30 @@ bool SettingsUi::filter() const
 void SettingsUi::setFilter(const bool &enabled)
 {
     ui->checkFilter->setChecked(enabled);
+}
+
+QString SettingsUi::icons() const
+{
+    if(ui->comboIcons->currentIndex() == 0)
+        return("tano-default");
+#if defined(Q_OS_LINUX)
+    else if(ui->comboIcons->currentIndex() == 1)
+        return("");
+#endif
+    else
+        return("tano-default");
+}
+
+void SettingsUi::setIcons(const QString &icons)
+{
+    if (icons == "tano-default")
+        ui->comboIcons->setCurrentIndex(0);
+#if defined(Q_OS_LINUX)
+    else if (icons.isEmpty())
+        ui->comboIcons->setCurrentIndex(1);
+#endif
+    else
+        ui->comboIcons->setCurrentIndex(0);
 }
 
 bool SettingsUi::lite() const

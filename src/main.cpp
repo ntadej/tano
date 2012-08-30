@@ -48,10 +48,10 @@ int main(int argc, char *argv[])
 
     Arguments *args = new Arguments(argc, argv);
 
-    Tano::Resources::setIconPaths();
-    Tano::Resources::setIconName();
-
     if (args->isValid()) {
+        Tano::Resources::setIconPaths();
+        Tano::Resources::setIconName();
+
         MainWindow mainWindow(args);
         instance.setActivationWindow(&mainWindow);
 

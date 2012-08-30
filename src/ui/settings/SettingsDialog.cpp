@@ -109,6 +109,7 @@ void SettingsDialog::apply()
     _settings->setFiltersVisible(ui->gui->filter());
     _settings->setStartLite(ui->gui->lite());
     _settings->setStartOnTop(ui->gui->top());
+    _settings->setIcons(ui->gui->icons());
 
     // Playback
     _settings->setVout(ui->backend->vout());
@@ -173,6 +174,7 @@ void SettingsDialog::defaults()
     ui->gui->setFilter(Settings::DEFAULT_FILTERS_VISIBLE);
     ui->gui->setLite(Settings::DEFAULT_START_LITE);
     ui->gui->setTop(Settings::DEFAULT_START_ON_TOP);
+    ui->gui->setIcons(Settings::DEFAULT_ICONS);
 
     // Playback
     ui->backend->setVout(Settings::DEFAULT_VOUT);
@@ -234,6 +236,7 @@ void SettingsDialog::read()
     ui->gui->setFilter(_settings->filtersVisible());
     ui->gui->setLite(_settings->startLite());
     ui->gui->setTop(_settings->startOnTop());
+    ui->gui->setIcons(_settings->icons());
 
     // Playback
     ui->backend->setVout(_settings->vout());
