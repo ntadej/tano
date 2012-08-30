@@ -1239,9 +1239,14 @@ void MainWindow::recorder(const bool &enabled)
         ui->dockControls->setVisible(false);
     } else {
         ui->recorder->setVisible(false);
-        ui->stackedWidget->setCurrentIndex(0);
         ui->dockInfo->setVisible(_dockInfoVisible);
         ui->dockControls->setVisible(_dockControlsVisible);
+
+        if (_mediaPlayer->hasVout()) {
+            ui->stackedWidget->setCurrentIndex(1);
+        } else {
+            ui->stackedWidget->setCurrentIndex(0);
+        }
     }
 
     ui->actionRecorder->setChecked(enabled);
