@@ -25,6 +25,7 @@
 #define VERSION_X64 @BITS@
 
 // Settings
+#define DATA_DIR "@DEFAULT_DATA_DIR@"
 #define TELETEXT @TELETEXT@
 #define UPDATE @UPDATE@
 

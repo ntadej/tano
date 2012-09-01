@@ -22,6 +22,7 @@
 #include <QtCore/QFileInfo>
 #include <QtGui/QIcon>
 
+#include "Config.h"
 #include "core/Common.h"
 #include "core/Resources.h"
 #include "core/settings/Settings.h"
@@ -66,9 +67,9 @@ QString Tano::Resources::resource(const QString &file)
         path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
 #endif
 
-#if defined(DEFAULT_DATA_DIR)
-    else if (QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).exists())
-        path = QFileInfo(QString(DEFAULT_DATA_DIR) + "/" + file).absoluteFilePath();
+#if defined(DATA_DIR)
+    else if (QFileInfo(QString(DATA_DIR) + "/" + file).exists())
+        path = QFileInfo(QString(DATA_DIR) + "/" + file).absoluteFilePath();
 #endif
 
     return path;
@@ -99,8 +100,8 @@ void Tano::Resources::setIconPaths()
 {
     QStringList paths = QIcon::themeSearchPaths();
     paths.prepend(QCoreApplication::applicationDirPath() + "/" + "icons");
-#if defined(DEFAULT_DATA_DIR)
-    paths.prepend(QString(DEFAULT_DATA_DIR) + "/" + "icons");
+#if defined(DATA_DIR)
+    paths.prepend(QString(DATA_DIR) + "/" + "icons");
 #endif
 
     QIcon::setThemeSearchPaths(paths);
