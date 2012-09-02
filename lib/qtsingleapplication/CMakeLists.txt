@@ -18,13 +18,6 @@
 
 PROJECT(qtsingleapplication)
 
-# Define the MOC source files used by QtSingleApplication
-SET(QtSA_MOCs
-    src/qtlocalpeer.h
-    src/qtsingleapplication.h
-    src/qtsinglecoreapplication.h
-)
-
 # Define the C++ source files used by QtSingleApplication
 SET(QtSA_Srcs
     src/qtlocalpeer.cpp
@@ -32,29 +25,14 @@ SET(QtSA_Srcs
     src/qtsinglecoreapplication.cpp
 )
 
-# This scripts run the meta object compiler moc.
-IF(WITH_QT5)
-    QT5_WRAP_CPP(QtSA_MOCs_Srcs ${QtSA_MOCs})
-ELSE(WITH_QT5)
-    QT4_WRAP_CPP(QtSA_MOCs_Srcs ${QtSA_MOCs})
-ENDIF(WITH_QT5)
-
-# This line adds the include path of the Qt
-# directory to the compiler include path
-IF(WITH_QT5)
-    INCLUDE_DIRECTORIES(
-        ${Qt5Core_INCLUDE_DIRS}
-        ${Qt5Gui_INCLUDE_DIRS}
-    )
-ELSE(WITH_QT5)
-    INCLUDE(${QT_USE_FILE})
-ENDIF(WITH_QT5)
-
 # Qt definitions
-ADD_DEFINITIONS(${QT_DEFINITIONS})
 ADD_DEFINITIONS(-DQT_STATIC)
 
 # Create library
 ADD_LIBRARY(qtsingleapplication STATIC ${QtSA_Srcs} ${QtSA_MOCs_Srcs})
 
-TARGET_LINK_LIBRARIES(qtsingleapplication)
+IF(WITH_QT5)
+    QT5_USE_MODULES(qtsingleapplication Network Widgets)
+ELSE(WITH_QT5)
+    TARGET_LINK_LIBRARIES(qtsingleapplication)
+ENDIF(WITH_QT5)

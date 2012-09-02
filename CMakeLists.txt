@@ -17,7 +17,12 @@
 #############################################################################
 
 PROJECT(tano)
-cmake_minimum_required(VERSION 2.6)
+
+IF(WITH_QT5)
+    CMAKE_MINIMUM_REQUIRED(VERSION 2.8.9)
+ELSE(WITH_QT5)
+    CMAKE_MINIMUM_REQUIRED(VERSION 2.8.6)
+ENDIF(WITH_QT5)
 
 CONFIGURE_FILE(
     "${CMAKE_SOURCE_DIR}/cmake_uninstall.cmake.in"
@@ -27,7 +32,7 @@ CONFIGURE_FILE(
 ADD_CUSTOM_TARGET(uninstall
     "${CMAKE_COMMAND}" -P "${CMAKE_BINARY_DIR}/cmake_uninstall.cmake")
 
-set(CMAKE_MODULE_PATH
+SET(CMAKE_MODULE_PATH
     ${CMAKE_SOURCE_DIR}/cmake
 )
 
@@ -78,11 +83,10 @@ ENDIF(CMAKE_SIZEOF_VOID_P EQUAL 8)
 ####################
 # Compiler options #
 ####################
-# Set MingW bin dir, if MingW present
-IF(MINGW)
-    STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" MINGW_BIN_DIR_TMP "${CMAKE_CXX_COMPILER}")
-    STRING(REGEX REPLACE "\\\\" "/" MINGW_BIN_DIR "${MINGW_BIN_DIR_TMP}") # Replace back slashes to slashes
-ENDIF(MINGW)
+# Automatically run moc, if required
+SET(CMAKE_AUTOMOC ON)
+# Verbose makefile
+SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Show all warnings
 SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall")
@@ -93,8 +97,6 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
     SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -s")
 ENDIF(CMAKE_COMPILER_IS_GNUCXX)
 
-SET(CMAKE_VERBOSE_MAKEFILE ON)
-
 IF(MINGW)
 # Windows compatibility
     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-subsystem,windows")
@@ -102,25 +104,23 @@ IF(MINGW)
     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++")
 ENDIF(MINGW)
 
+# Set MingW bin dir, if MingW present
+IF(MINGW)
+    STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" MINGW_BIN_DIR_TMP "${CMAKE_CXX_COMPILER}")
+    STRING(REGEX REPLACE "\\\\" "/" MINGW_BIN_DIR "${MINGW_BIN_DIR_TMP}") # Replace back slashes to slashes
+ENDIF(MINGW)
+
 # Qt5 support
 OPTION(WITH_QT5 "Build with Qt5" OFF)
 MESSAGE("Build with Qt5: ${WITH_QT5}")
 
 IF(WITH_QT5)
-    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-
     # Qt5 dirs
     INCLUDE(Qt5)
     QT5_FIND_LIBRARY_DIR(QT_LIBRARY_DIR)
 
-    SET(Qt5Concurrent_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Concurrent")
-    SET(Qt5Core_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Core")
-    SET(Qt5Gui_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Gui")
-    SET(Qt5Network_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Network")
-    SET(Qt5PrintSupport_DIR "${QT_LIBRARY_DIR}/cmake/Qt5PrintSupport")
+    SET(Qt5LinguistTools_DIR "${QT_LIBRARY_DIR}/cmake/Qt5LinguistTools")
     SET(Qt5Widgets_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Widgets")
-    SET(Qt5Xml_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Xml")
 ENDIF(WITH_QT5)
 
 # Search for Qt and other libraries
@@ -134,15 +134,22 @@ ENDIF(WITH_QT5)
 
 # Qt
 IF(WITH_QT5)
-    FIND_PACKAGE(Qt5Concurrent REQUIRED)
-    FIND_PACKAGE(Qt5Core REQUIRED)
-    FIND_PACKAGE(Qt5Gui REQUIRED)
-    FIND_PACKAGE(Qt5Network REQUIRED)
-    FIND_PACKAGE(Qt5PrintSupport REQUIRED)
+    FIND_PACKAGE(Qt5LinguistTools REQUIRED)
     FIND_PACKAGE(Qt5Widgets REQUIRED)
-    FIND_PACKAGE(Qt5Xml REQUIRED)
+
+    IF(Qt5_POSITION_INDEPENDENT_CODE)
+        SET(CMAKE_POSITION_INDEPENDENT_CODE ON)
+    ENDIF(Qt5_POSITION_INDEPENDENT_CODE)
+
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 ELSE(WITH_QT5)
     FIND_PACKAGE(Qt4 REQUIRED)
+
+    SET(QT_USE_QTNETWORK True)
+    SET(QT_USE_QTXML True)
+
+    ADD_DEFINITIONS(${QT_DEFINITIONS})
+    INCLUDE(${QT_USE_FILE})
 ENDIF(WITH_QT5)
 
 FIND_PACKAGE(LIBVLCQT REQUIRED)

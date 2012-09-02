@@ -60,104 +60,6 @@ SET(Tano_UIs
     ui/settings/SettingsUi.ui
 )
 
-# Define the MOC source files used by Tano
-SET(Tano_Container_MOCs
-    container/ListItem.h
-    container/ListModel.h
-    container/core/Channel.h
-    container/core/Timer.h
-    container/xmltv/XmltvChannel.h
-    container/xmltv/XmltvCrewMember.h
-    container/xmltv/XmltvList.h
-    container/xmltv/XmltvProgramme.h
-)
-
-SET(Tano_Core_MOCs
-    core/ChannelSelect.h
-    core/Print.h
-    core/network/NetworkDownload.h
-    core/network/NetworkRequest.h
-)
-
-SET(Tano_Playlist_MOCs
-    playlist/PlaylistFilterModel.h
-    playlist/PlaylistModel.h
-    playlist/PlaylistUpdate.h
-)
-
-SET(Tano_Recorder_MOCs
-    recorder/RecorderCore.h
-    recorder/RecorderTimeManager.h
-    recorder/TimersFilterModel.h
-    recorder/TimersModel.h
-)
-
-SET(Tano_UI_MOCs
-    ui/MainWindow.h
-    ui/core/BrowseWidget.h
-    ui/core/InfoBarWidget.h
-    ui/core/LicenseWidget.h
-    ui/core/OsdFloat.h
-    ui/core/OsdWidget.h
-    ui/core/QtKeySequenceEdit.h
-    ui/core/ScrollingWidget.h
-    ui/core/TrayIcon.h
-    ui/dialogs/AboutDialog.h
-    ui/dialogs/DonationDialog.h
-    ui/dialogs/PrintDialog.h
-    ui/epg/EpgScheduleChannel.h
-    ui/epg/EpgScheduleFull.h
-    ui/epg/EpgShow.h
-    ui/menu/MenuAspectRatio.h
-    ui/menu/MenuCore.h
-    ui/menu/MenuCropRatio.h
-    ui/menu/MenuDeinterlacing.h
-    ui/menu/MenuScale.h
-    ui/menu/MenuTrackAudio.h
-    ui/menu/MenuTrackSubtitles.h
-    ui/menu/MenuTrackVideo.h
-    ui/playlist/PlaylistDisplayWidget.h
-    ui/playlist/PlaylistEditor.h
-    ui/playlist/PlaylistEditorHelp.h
-    ui/playlist/PlaylistEditorScan.h
-    ui/playlist/PlaylistExportTvheadend.h
-    ui/playlist/PlaylistFilterWidget.h
-    ui/playlist/PlaylistImportCSV.h
-    ui/recorder/Recorder.h
-    ui/recorder/RecorderInfoWidget.h
-    ui/recorder/RecorderNewDialog.h
-    ui/recorder/TimersDisplayWidget.h
-    ui/recorder/TimersEditorWidget.h
-    ui/settings/SettingsBackend.h
-    ui/settings/SettingsDialog.h
-    ui/settings/SettingsGeneral.h
-    ui/settings/SettingsPlaylist.h
-    ui/settings/SettingsRecorder.h
-    ui/settings/SettingsSchedule.h
-    ui/settings/SettingsDialogShortcuts.h
-    ui/settings/SettingsUi.h
-)
-
-SET(Tano_Xmltv_MOCs
-    xmltv/XmltvChannelsFilterModel.h
-    xmltv/XmltvChannelsModel.h
-    xmltv/XmltvCrewFilterModel.h
-    xmltv/XmltvCrewModel.h
-    xmltv/XmltvManager.h
-    xmltv/XmltvProgrammeFilterModel.h
-    xmltv/XmltvProgrammeModel.h
-    xmltv/XmltvSystem.h
-)
-
-SET(Tano_MOCs
-    ${Tano_Container_MOCs}
-    ${Tano_Core_MOCs}
-    ${Tano_Playlist_MOCs}
-    ${Tano_Recorder_MOCs}
-    ${Tano_UI_MOCs}
-    ${Tano_Xmltv_MOCs}
-)
-
 # Define the QRC source files used by Tano
 SET(Tano_Resrcs
     ../info.qrc
@@ -309,11 +211,6 @@ IF(UPDATE)
 
         update/UpdateDialog.ui
     )
-    SET(Tano_MOCs
-        ${Tano_MOCs}
-
-        update/UpdateDialog.h
-    )
     SET(Tano_Srcs
         ${Tano_Srcs}
 
@@ -342,36 +239,13 @@ ENDIF(CUSTOM_SETTINGS)
 ###############
 # Qt settings #
 ###############
-# This scripts run the resource compiler rcc, the user interface compiler uic
-# and the meta object compiler moc.
+# This scripts run the resource compiler rcc and the user interface compiler uic
 IF(WITH_QT5)
     QT5_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
     QT5_WRAP_UI(Tano_UIC_Srcs ${Tano_UIs})
-    QT5_WRAP_CPP(Tano_MOC_Srcs ${Tano_MOCs})
 ELSE(WITH_QT5)
     QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
     QT4_WRAP_UI(Tano_UIC_Srcs ${Tano_UIs})
-    QT4_WRAP_CPP(Tano_MOC_Srcs ${Tano_MOCs})
-ENDIF(WITH_QT5)
-
-# This line adds the include path of the Qt
-# directory to the compiler include path
-IF(WITH_QT5)
-    INCLUDE_DIRECTORIES(
-        ${Qt5Concurrent_INCLUDE_DIRS}
-        ${Qt5Core_INCLUDE_DIRS}
-        ${Qt5Gui_INCLUDE_DIRS}
-        ${Qt5Network_INCLUDE_DIRS}
-        ${Qt5PrintSupport_INCLUDE_DIRS}
-        ${Qt5Widgets_INCLUDE_DIRS}
-        ${Qt5Xml_INCLUDE_DIRS}
-    )
-ELSE(WITH_QT5)
-    # This line adds the QtNETWORK and QtXML libraries to the Qt4 libraries
-    SET(QT_USE_QTNETWORK True)
-    SET(QT_USE_QTXML True)
-
-    INCLUDE(${QT_USE_FILE})
 ENDIF(WITH_QT5)
 
 
@@ -402,16 +276,13 @@ IF(MINGW)
 ENDIF(MINGW)
 
 # This line tells cmake to create the Tano program.
-ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_MOC_Srcs} ${Tano_Resrcs_Srcs})
+ADD_EXECUTABLE(tano ${Tano_UIC_Srcs} ${Tano_Srcs} ${Tano_Resrcs_Srcs})
 ADD_DEPENDENCIES(tano qtsingleapplication)
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    TARGET_LINK_LIBRARIES(tano
-                         ${QT_SINGLE_APPLICATION}
-                         ${Qt5Concurrent_LIBRARIES} ${Qt5Core_LIBRARIES} ${Qt5Gui_LIBRARIES} ${Qt5Network_LIBRARIES} ${Qt5PrintSupport_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${Qt5Xml_LIBRARIES}
-                         ${LIBVLCQT_LIBRARY}
-        )
+    QT5_USE_MODULES(tano Concurrent Network PrintSupport Widgets Xml)
+    TARGET_LINK_LIBRARIES(tano ${QT_SINGLE_APPLICATION} ${LIBVLCQT_LIBRARY})
 ELSE(WITH_QT5)
     TARGET_LINK_LIBRARIES(tano
                          ${QT_SINGLE_APPLICATION}
