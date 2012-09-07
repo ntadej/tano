@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-SET(TEMPLATE "source")
+SET(TEMPLATE ${CMAKE_SOURCE_DIR}/lang/source.ts)
 
 IF(REFRESH_TRANSLATIONS)
     IF(NOT QT_LUPDATE_EXECUTABLE)
@@ -30,6 +30,7 @@ ENDIF(NOT QT_LRELEASE_EXECUTABLE)
 
 ## Collect all translations files
 FILE(GLOB Tano_TS ${CMAKE_SOURCE_DIR}/lang/*.ts)
+LIST(REMOVE_ITEM Tano_TS ${TEMPLATE})
 
 IF(QT_LRELEASE_EXECUTABLE)
     IF(REFRESH_TRANSLATIONS)
@@ -41,18 +42,23 @@ IF(QT_LRELEASE_EXECUTABLE)
     IF(WITH_QT5)
         IF(REFRESH_TRANSLATIONS)
             QT5_CREATE_TRANSLATION(Tano_QMS ${translate_SRCS} ${Tano_TS})
+            QT5_CREATE_TRANSLATION(Tano_QMS_SRC ${translate_SRCS} ${TEMPLATE})
         ELSE(REFRESH_TRANSLATIONS)
             QT5_ADD_TRANSLATION(Tano_QMS ${Tano_TS})
         ENDIF(REFRESH_TRANSLATIONS)
     ELSE(WITH_QT5)
         IF(REFRESH_TRANSLATIONS)
             QT4_CREATE_TRANSLATION(Tano_QMS ${translate_SRCS} ${Tano_TS})
+            QT4_CREATE_TRANSLATION(Tano_QMS_SRC ${translate_SRCS} ${TEMPLATE})
         ELSE(REFRESH_TRANSLATIONS)
             QT4_ADD_TRANSLATION(Tano_QMS ${Tano_TS})
         ENDIF(REFRESH_TRANSLATIONS)
     ENDIF(WITH_QT5)
 
     ADD_CUSTOM_TARGET(translations ALL DEPENDS ${Tano_QMS})
+    IF(REFRESH_TRANSLATIONS)
+        ADD_CUSTOM_TARGET(translations_src ALL DEPENDS ${Tano_QMS_SRC})
+    ENDIF(REFRESH_TRANSLATIONS)
 ENDIF(QT_LRELEASE_EXECUTABLE)
 
 

@@ -60,22 +60,24 @@ Vaša različica VLC-Qt: %4
 Your Qt runtime version: %2
 Your VLC-Qt version: %3
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Vaša različica programa Tano: %1
+Vaša različica Qt: %2
+Vaša različica knjižnice VLC-Qt: %3</translation>
     </message>
 </context>
 <context>
     <name>Channel</name>
     <message>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation>SD</translation>
     </message>
     <message>
         <source>HD</source>
-        <translation type="unfinished"></translation>
+        <translation>HD</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished">Radio</translation>
+        <translation>Radio</translation>
     </message>
 </context>
 <context>
@@ -256,11 +258,11 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Info panel</source>
-        <translation type="unfinished">Info pult</translation>
+        <translation>Info pult</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Spored</translation>
+        <translation>Spored</translation>
     </message>
     <message>
         <source>Play</source>
@@ -268,63 +270,63 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Stop</source>
-        <translation type="unfinished">Ustavi</translation>
+        <translation>Ustavi</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Nazaj</translation>
+        <translation>Nazaj</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished">Naslednji</translation>
+        <translation>Naslednji</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation type="unfinished">Tiho</translation>
+        <translation>Tiho</translation>
     </message>
     <message>
         <source>About Tano</source>
-        <translation type="unfinished">O programu Tano</translation>
+        <translation>O programu Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation type="unfinished">&amp;Izhod</translation>
+        <translation>&amp;Izhod</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation type="unfinished">&amp;Nastavitve</translation>
+        <translation>&amp;Nastavitve</translation>
     </message>
     <message>
         <source>&amp;Fullscreen</source>
-        <translation type="unfinished">&amp;Celoten zaslon</translation>
+        <translation>&amp;Celoten zaslon</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
-        <translation type="unfinished">Odpri &amp;Datoteko</translation>
+        <translation>Odpri &amp;Datoteko</translation>
     </message>
     <message>
         <source>Edit Channels</source>
-        <translation type="unfinished">Uredi programe</translation>
+        <translation>Uredi programe</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation type="unfinished">Odpri URL</translation>
+        <translation>Odpri URL</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation type="unfinished">Preveri za posodobitve</translation>
+        <translation>Preveri za posodobitve</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished">Odpri</translation>
+        <translation>Odpri</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation type="unfinished">Vedno na vrhu</translation>
+        <translation>Vedno na vrhu</translation>
     </message>
     <message>
         <source>Hide to tray</source>
@@ -332,19 +334,19 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation type="unfinished">Enostaven način</translation>
+        <translation>Enostaven način</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation type="unfinished">Povečaj glasnost</translation>
+        <translation>Povečaj glasnost</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation type="unfinished">Zmanjšaj glasnost</translation>
+        <translation>Zmanjšaj glasnost</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished">Snemalnik</translation>
+        <translation>Snemalnik</translation>
     </message>
     <message>
         <source>Timers</source>
@@ -352,15 +354,15 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>About Qt</source>
-        <translation type="unfinished">O Qt</translation>
+        <translation>O Qt</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation type="unfinished">Prenehaj s snemanjem</translation>
+        <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
         <source>Controls panel</source>
-        <translation type="unfinished">Upravljalni pult</translation>
+        <translation>Upravljalni pult</translation>
     </message>
     <message>
         <source>Do you want to exit Tano?
@@ -370,23 +372,23 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation type="unfinished">&amp;Odpri seznam programov</translation>
+        <translation>&amp;Odpri seznam programov</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation type="unfinished">Odpri seznam programov</translation>
+        <translation>Odpri seznam programov</translation>
     </message>
     <message>
         <source>Enable Info panel in Fullscreen mode</source>
-        <translation type="unfinished">Vključi Info pult v celozaslonskem načinu</translation>
+        <translation>Vključi Info pult v celozaslonskem načinu</translation>
     </message>
     <message>
         <source>Donate</source>
-        <translation type="unfinished">Doniraj</translation>
+        <translation>Doniraj</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation type="unfinished">Teletekst</translation>
+        <translation>Teletekst</translation>
     </message>
     <message>
         <source>Controls</source>
@@ -394,7 +396,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation type="unfinished">Bližnjice na tipkovnici</translation>
+        <translation>Bližnjice na tipkovnici</translation>
     </message>
     <message>
         <source>Recorder Toolbar</source>
@@ -402,19 +404,19 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation type="unfinished">Hitro snemanje</translation>
+        <translation>Hitro snemanje</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation type="unfinished">Dodaj časovnik</translation>
+        <translation>Dodaj časovnik</translation>
     </message>
     <message>
         <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Spored&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Spored&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation type="unfinished">Podpora</translation>
+        <translation>Podpora</translation>
     </message>
     <message>
         <source>Tano Support</source>
@@ -440,15 +442,15 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation type="unfinished">Takojšnje snemanje</translation>
+        <translation>Takojšnje snemanje</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation type="unfinished">Zajemi sliko</translation>
+        <translation>Zajemi sliko</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Predogled programov</translation>
     </message>
 </context>
 <context>
@@ -524,15 +526,15 @@ To bo ustavilo trenutno snemanje.</translation>
     <name>MenuScale</name>
     <message>
         <source>Original</source>
-        <translation type="unfinished">Originalno</translation>
+        <translation>Originalno</translation>
     </message>
     <message>
         <source>Scale/Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Povečava/Zoom</translation>
     </message>
     <message>
         <source>Next scale/zoom option</source>
-        <translation type="unfinished"></translation>
+        <translation>Naslednja možnost povečave</translation>
     </message>
 </context>
 <context>
@@ -807,19 +809,19 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Tip:</translation>
+        <translation>Tip:</translation>
     </message>
     <message>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation>SD</translation>
     </message>
     <message>
         <source>HD</source>
-        <translation type="unfinished"></translation>
+        <translation>HD</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished">Radio</translation>
+        <translation>Radio</translation>
     </message>
 </context>
 <context>
@@ -962,23 +964,23 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Vse</translation>
     </message>
     <message>
         <source>TV</source>
-        <translation type="unfinished"></translation>
+        <translation>TV</translation>
     </message>
     <message>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation>SD</translation>
     </message>
     <message>
         <source>HD</source>
-        <translation type="unfinished"></translation>
+        <translation>HD</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished">Radio</translation>
+        <translation>Radio</translation>
     </message>
 </context>
 <context>
@@ -1072,11 +1074,11 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation type="unfinished"></translation>
+        <translation>Logo</translation>
     </message>
 </context>
 <context>
@@ -1119,15 +1121,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Channel type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tip programa</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation type="unfinished">XMLTV ID</translation>
+        <translation>XMLTV ID</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation type="unfinished"></translation>
+        <translation>Logo</translation>
     </message>
 </context>
 <context>
@@ -1394,55 +1396,55 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Try &apos;%1&apos; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poskusite &apos;%1&apos; za več informacij.</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Manjkajoč obvezen argument možnosti &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neznana možnost &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Usage: %1 [options]</source>
-        <translation type="unfinished"></translation>
+        <translation>Uporaba: %1 [možnosti]</translation>
     </message>
     <message>
         <source>IP TV playback:</source>
-        <translation type="unfinished"></translation>
+        <translation>Predvajanje IP TV:</translation>
     </message>
     <message>
         <source>Play channel by number</source>
-        <translation type="unfinished"></translation>
+        <translation>Predvajaj program pod to številko</translation>
     </message>
     <message>
         <source>Use playlist file</source>
-        <translation type="unfinished"></translation>
+        <translation>Uporabi seznam programov</translation>
     </message>
     <message>
         <source>Use XMLTV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Uporabi datoteko XMLTV</translation>
     </message>
     <message>
         <source>Open:</source>
-        <translation type="unfinished"></translation>
+        <translation>Odpri:</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation type="unfinished">Odpri URL</translation>
+        <translation>Odpri URL</translation>
     </message>
     <message>
         <source>Playback options:</source>
-        <translation type="unfinished"></translation>
+        <translation>Možnosti predvajanja:</translation>
     </message>
     <message>
         <source>Set audio output</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberi zvočni izhod</translation>
     </message>
     <message>
         <source>Set video output</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberi video izhod</translation>
     </message>
     <message>
         <source>Radio</source>
@@ -1713,63 +1715,63 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Core</source>
-        <translation type="unfinished"></translation>
+        <translation>Jedro</translation>
     </message>
     <message>
         <source>Video output:</source>
-        <translation type="unfinished"></translation>
+        <translation>Video izhod:</translation>
     </message>
     <message>
         <source>Audio output:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvočni izhod:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Privzeto</translation>
     </message>
     <message>
         <source>Enable YUV-&gt;RGB hardware decoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Omogoči strojno dekodiranje YUV-&gt;RGB</translation>
     </message>
     <message>
         <source>Enable S/PDIF output</source>
-        <translation type="unfinished"></translation>
+        <translation>Omogoči S/PDIF izhod</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation type="unfinished">Omrežje</translation>
+        <translation>Omrežje</translation>
     </message>
     <message>
         <source>Select network interface:</source>
-        <translation type="unfinished"></translation>
+        <translation>Izberi omrežno povezavo:</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>Samodejno</translation>
     </message>
     <message>
         <source>Misc</source>
-        <translation type="unfinished"></translation>
+        <translation>Razno</translation>
     </message>
     <message>
         <source>Mute on minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>Utišaj ob minimiranju</translation>
     </message>
     <message>
         <source>Remember video settings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapomni si nastavitve slike:</translation>
     </message>
     <message>
         <source>For all channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Za vse programe</translation>
     </message>
     <message>
         <source>Per channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Ločeno po programu</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation>Omogoči</translation>
     </message>
 </context>
 <context>
@@ -1940,15 +1942,15 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Naslednja možnost povečave</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Predogled programov</translation>
     </message>
 </context>
 <context>
@@ -2147,11 +2149,11 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Channel types categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorije tipov programov</translation>
     </message>
     <message>
         <source>Default HD category:</source>
-        <translation type="unfinished"></translation>
+        <translation>Privzeta kategorija za HD:</translation>
     </message>
 </context>
 <context>
@@ -2308,27 +2310,27 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Remember main window size, position and open panels</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapomno si velikost, položaj in lastnosti glavnega okna</translation>
     </message>
     <message>
         <source>Filters always visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Filtri vedno vidni</translation>
     </message>
     <message>
         <source>Icon theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema ikon</translation>
     </message>
     <message>
         <source>Tano default</source>
-        <translation type="unfinished"></translation>
+        <translation>Privzeta Tano</translation>
     </message>
     <message>
         <source>Desktop theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema namizja</translation>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Ta možnost zahteva ponovni zagon.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
@@ -2498,43 +2500,43 @@ Končni čas: %3</translation>
     <name>XmltvCrewMember</name>
     <message>
         <source>Director</source>
-        <translation type="unfinished">Režiser</translation>
+        <translation>Režiser</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation type="unfinished">Igralec</translation>
+        <translation>Igralec</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation type="unfinished">Scenarist</translation>
+        <translation>Scenarist</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation type="unfinished">Aranžer</translation>
+        <translation>Aranžer</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation type="unfinished">Producent</translation>
+        <translation>Producent</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation type="unfinished">Skladatelj</translation>
+        <translation>Skladatelj</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Montažer</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation type="unfinished">Voditelj</translation>
+        <translation>Voditelj</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation type="unfinished">Komentator</translation>
+        <translation>Komentator</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation type="unfinished">Gost</translation>
+        <translation>Gost</translation>
     </message>
 </context>
 </TS>
