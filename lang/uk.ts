@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="uk" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -34,45 +32,29 @@
         <translation>&lt;b&gt;Ви використовуєте VideoLAN VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>This version of Tano was compiled on
-%1 running %2.
-Your Qt runtime version: %3
-Your VLC-Qt version: %4
-</source>
-        <translation type="obsolete">Ця версія Tano була скомпільована на
-%1 використавши %2.
-Ваша версія Qt: %3
-Ваша версія VLC-Qt: %4</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="obsolete">Редактор</translation>
-    </message>
-    <message>
-        <source>Player</source>
-        <translation type="obsolete">Програвач</translation>
-    </message>
-    <message>
         <source>Your Tano version: %1
 Your Qt runtime version: %2
 Your VLC-Qt version: %3
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Ваша версія Tano: %1
+Ваша версія Qt: %2
+Ваша версія VLC-Qt: %3
+</translation>
     </message>
 </context>
 <context>
     <name>Channel</name>
     <message>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation>SD</translation>
     </message>
     <message>
         <source>HD</source>
-        <translation type="unfinished"></translation>
+        <translation>HD</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished">Радіо</translation>
+        <translation>Радіо</translation>
     </message>
 </context>
 <context>
@@ -88,17 +70,6 @@ Your VLC-Qt version: %3
     <message>
         <source>You can read additional terms and information on Tano Player homepage.</source>
         <translation>Ви можете прочитати додаткові вимоги та інформацію на домашній веб-сторінці Tano Player.</translation>
-    </message>
-</context>
-<context>
-    <name>EpgList</name>
-    <message>
-        <source>Show information</source>
-        <translation type="obsolete">Показати інформацію</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation type="obsolete">Запис</translation>
     </message>
 </context>
 <context>
@@ -252,112 +223,12 @@ Your VLC-Qt version: %3
         <translation>Головна панель</translation>
     </message>
     <message>
-        <source>Info panel</source>
-        <translation type="unfinished">Інформаційна панель</translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished">Розклад</translation>
-    </message>
-    <message>
         <source>Play</source>
         <translation>Відтворити</translation>
     </message>
     <message>
-        <source>Stop</source>
-        <translation type="unfinished">Зупинити</translation>
-    </message>
-    <message>
-        <source>Back</source>
-        <translation type="unfinished">Назад</translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation type="unfinished">Далі</translation>
-    </message>
-    <message>
-        <source>Mute</source>
-        <translation type="unfinished">Вимкнути звук</translation>
-    </message>
-    <message>
-        <source>About Tano</source>
-        <translation type="unfinished">Про Tano</translation>
-    </message>
-    <message>
-        <source>&amp;Exit</source>
-        <translation type="unfinished">&amp;Вихід</translation>
-    </message>
-    <message>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished">Ctrl+Q</translation>
-    </message>
-    <message>
-        <source>&amp;Settings</source>
-        <translation type="unfinished">&amp;Налаштування</translation>
-    </message>
-    <message>
-        <source>&amp;Fullscreen</source>
-        <translation type="unfinished">&amp;На весь екран</translation>
-    </message>
-    <message>
-        <source>Open &amp;File</source>
-        <translation type="unfinished">Відкрити &amp;Файл</translation>
-    </message>
-    <message>
-        <source>Edit Channels</source>
-        <translation type="unfinished">Редагувати канали</translation>
-    </message>
-    <message>
-        <source>Open URL</source>
-        <translation type="unfinished">Відкрити посилання URL</translation>
-    </message>
-    <message>
-        <source>Check for updates</source>
-        <translation type="unfinished">Перевірити оновлення</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="unfinished">Відкрити</translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation type="unfinished">Завжди поверх інших вікон</translation>
-    </message>
-    <message>
         <source>Hide to tray</source>
         <translation>Сховати до трею</translation>
-    </message>
-    <message>
-        <source>Simple Mode</source>
-        <translation type="unfinished">Простий режим</translation>
-    </message>
-    <message>
-        <source>Volume up</source>
-        <translation type="unfinished">Збільшити гучність</translation>
-    </message>
-    <message>
-        <source>Volume down</source>
-        <translation type="unfinished">Зменшити гучність</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="unfinished">Записувач</translation>
-    </message>
-    <message>
-        <source>Timers</source>
-        <translation type="obsolete">Таймери</translation>
-    </message>
-    <message>
-        <source>About Qt</source>
-        <translation type="unfinished">Про Qt</translation>
-    </message>
-    <message>
-        <source>Stop recording</source>
-        <translation type="unfinished">Зупинити запис</translation>
-    </message>
-    <message>
-        <source>Controls panel</source>
-        <translation type="unfinished">Панель контролю</translation>
     </message>
     <message>
         <source>Do you want to exit Tano?
@@ -366,52 +237,12 @@ This will stop recording in progress.</source>
 Це зупинить процес запису.</translation>
     </message>
     <message>
-        <source>&amp;Open channel list</source>
-        <translation type="unfinished">&amp;Відкрити список каналів</translation>
-    </message>
-    <message>
-        <source>Open channel list</source>
-        <translation type="unfinished">Відкрити список каналів</translation>
-    </message>
-    <message>
-        <source>Enable Info panel in Fullscreen mode</source>
-        <translation type="unfinished">Увімкнути інформаційну панель в повноекранному режимі</translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation type="unfinished">Пожертвування</translation>
-    </message>
-    <message>
-        <source>Teletext</source>
-        <translation type="unfinished">Телетекст</translation>
-    </message>
-    <message>
         <source>Controls</source>
         <translation>Управління</translation>
     </message>
     <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished">Скорочення клавіатури</translation>
-    </message>
-    <message>
         <source>Recorder Toolbar</source>
         <translation>Панель запису</translation>
-    </message>
-    <message>
-        <source>Quick record</source>
-        <translation type="unfinished">Швидкий запис</translation>
-    </message>
-    <message>
-        <source>Add timer</source>
-        <translation type="unfinished">Додати таймер</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation type="unfinished">&lt;b&gt;Розклад&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Support</source>
-        <translation type="unfinished">Підтримка</translation>
     </message>
     <message>
         <source>Tano Support</source>
@@ -436,16 +267,152 @@ This will stop recording in progress.</source>
         <translation>Швидко</translation>
     </message>
     <message>
+        <source>Schedule</source>
+        <translation>Розклад</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Розклад&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>About Tano</source>
+        <translation>Про Tano</translation>
+    </message>
+    <message>
+        <source>&amp;Exit</source>
+        <translation>&amp;Вихід</translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation>Ctrl+Q</translation>
+    </message>
+    <message>
+        <source>&amp;Settings</source>
+        <translation>&amp;Налаштування</translation>
+    </message>
+    <message>
+        <source>&amp;Fullscreen</source>
+        <translation>&amp;На весь екран</translation>
+    </message>
+    <message>
+        <source>&amp;Open channel list</source>
+        <translation>&amp;Відкрити список каналів</translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation>Відкрити список каналів</translation>
+    </message>
+    <message>
+        <source>Open &amp;File</source>
+        <translation>Відкрити &amp;Файл</translation>
+    </message>
+    <message>
+        <source>Edit Channels</source>
+        <translation>Редагувати канали</translation>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation>Відкрити посилання URL</translation>
+    </message>
+    <message>
+        <source>Check for updates</source>
+        <translation>Перевірити оновлення</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Відкрити</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Зупинити</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation>Завжди поверх інших вікон</translation>
+    </message>
+    <message>
+        <source>Simple Mode</source>
+        <translation>Простий режим</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Далі</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation>Вимкнути звук</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation>Збільшити гучність</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation>Зменшити гучність</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation>Записувач</translation>
+    </message>
+    <message>
+        <source>Quick record</source>
+        <translation>Швидкий запис</translation>
+    </message>
+    <message>
+        <source>About Qt</source>
+        <translation>Про Qt</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Зупинити запис</translation>
+    </message>
+    <message>
+        <source>Controls panel</source>
+        <translation>Панель контролю</translation>
+    </message>
+    <message>
+        <source>Info panel</source>
+        <translation>Інформаційна панель</translation>
+    </message>
+    <message>
+        <source>Enable Info panel in Fullscreen mode</source>
+        <translation>Увімкнути інформаційну панель в повноекранному режимі</translation>
+    </message>
+    <message>
+        <source>Donate</source>
+        <translation>Пожертвування</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation>Телетекст</translation>
+    </message>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation>Скорочення клавіатури</translation>
+    </message>
+    <message>
         <source>Instant recording</source>
-        <translation type="unfinished">Негайний запис</translation>
+        <translation>Негайний запис</translation>
+    </message>
+    <message>
+        <source>Add timer</source>
+        <translation>Додати таймер</translation>
+    </message>
+    <message>
+        <source>Support</source>
+        <translation>Підтримка</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation type="unfinished">Зробити знімок</translation>
+        <translation>Зробити знімок</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Попередній перегляд каналів</translation>
     </message>
 </context>
 <context>
@@ -456,7 +423,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Next aspect ratio option</source>
-        <translation>Наступна опція співвідношення сторін</translation>
+        <translation>Наступний параметр співвідношення сторін</translation>
     </message>
     <message>
         <source>Original</source>
@@ -471,7 +438,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation>Наступна опція обрізання відео</translation>
+        <translation>Наступний параметр обрізання відео</translation>
     </message>
     <message>
         <source>Original</source>
@@ -486,7 +453,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Next deinterlacing option</source>
-        <translation>Наступна опція деінтерлейсінгу</translation>
+        <translation>Наступний параметр деінтерлейсінгу</translation>
     </message>
     <message>
         <source>Disabled</source>
@@ -521,15 +488,15 @@ This will stop recording in progress.</source>
     <name>MenuScale</name>
     <message>
         <source>Original</source>
-        <translation type="unfinished">Оригінал</translation>
+        <translation>Оригінальне</translation>
     </message>
     <message>
         <source>Scale/Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Шкала/Масштаб</translation>
     </message>
     <message>
         <source>Next scale/zoom option</source>
-        <translation type="unfinished"></translation>
+        <translation>Наступний параметр шкала/масштаб</translation>
     </message>
 </context>
 <context>
@@ -791,10 +758,6 @@ You will lose any unsaved changes.</source>
         <translation>Редагувати канал</translation>
     </message>
     <message>
-        <source>Radio:</source>
-        <translation type="obsolete">Радіо:</translation>
-    </message>
-    <message>
         <source>Scan for new channels</source>
         <translation>Сканувати для нових каналів</translation>
     </message>
@@ -804,19 +767,19 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Тип:</translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation>SD</translation>
     </message>
     <message>
         <source>HD</source>
-        <translation type="unfinished"></translation>
+        <translation>HD</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished">Радіо</translation>
+        <translation>Радіо</translation>
     </message>
 </context>
 <context>
@@ -938,18 +901,6 @@ You will lose any unsaved changes.</source>
         <translation>Спорожнити</translation>
     </message>
     <message>
-        <source>TV + Radio</source>
-        <translation type="obsolete">ТВ + Радіо</translation>
-    </message>
-    <message>
-        <source>TV only</source>
-        <translation type="obsolete">Лише ТВ</translation>
-    </message>
-    <message>
-        <source>Radio only</source>
-        <translation type="obsolete">Лише Радіо</translation>
-    </message>
-    <message>
         <source>All categories</source>
         <translation>Усі категорії</translation>
     </message>
@@ -959,23 +910,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Усі</translation>
     </message>
     <message>
         <source>TV</source>
-        <translation type="unfinished"></translation>
+        <translation>TV</translation>
     </message>
     <message>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation>SD</translation>
     </message>
     <message>
         <source>HD</source>
-        <translation type="unfinished"></translation>
+        <translation>HD</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished">Радіо</translation>
+        <translation>Радіо</translation>
     </message>
 </context>
 <context>
@@ -1069,11 +1020,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation type="unfinished"></translation>
+        <translation>Логотип</translation>
     </message>
 </context>
 <context>
@@ -1107,24 +1058,20 @@ You will lose any unsaved changes.</source>
         <translation>Мова</translation>
     </message>
     <message>
-        <source>EPG</source>
-        <translation type="obsolete">EPG</translation>
-    </message>
-    <message>
         <source>Print channel List</source>
         <translation>Надрукувати перелік каналів</translation>
     </message>
     <message>
         <source>Channel type</source>
-        <translation type="unfinished"></translation>
+        <translation>Тип каналу</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation type="unfinished">XMLTV ідентифікатор</translation>
+        <translation>XMLTV ідентифікатор</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation type="unfinished"></translation>
+        <translation>Логотип</translation>
     </message>
 </context>
 <context>
@@ -1302,46 +1249,6 @@ You will lose any unsaved changes.</source>
         <translation>Відкрити XMLTV</translation>
     </message>
     <message>
-        <source>Director</source>
-        <translation type="obsolete">Режисер</translation>
-    </message>
-    <message>
-        <source>Actor</source>
-        <translation type="obsolete">Актор</translation>
-    </message>
-    <message>
-        <source>Writer</source>
-        <translation type="obsolete">Письменник</translation>
-    </message>
-    <message>
-        <source>Adapter</source>
-        <translation type="obsolete">Адаптор</translation>
-    </message>
-    <message>
-        <source>Producer</source>
-        <translation type="obsolete">Продюсер</translation>
-    </message>
-    <message>
-        <source>Composer</source>
-        <translation type="obsolete">Композитор</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="obsolete">Редактор</translation>
-    </message>
-    <message>
-        <source>Presenter</source>
-        <translation type="obsolete">Представник</translation>
-    </message>
-    <message>
-        <source>Commentator</source>
-        <translation type="obsolete">Коментатор</translation>
-    </message>
-    <message>
-        <source>Guest</source>
-        <translation type="obsolete">Гість</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>Увімкнено</translation>
     </message>
@@ -1391,59 +1298,55 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Try &apos;%1&apos; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Спробувати &apos;%1&apos; для додаткової інформації.</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Відсутній обов&apos;язковий аргумент для &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невідомий параметр &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Usage: %1 [options]</source>
-        <translation type="unfinished"></translation>
+        <translation>Використання: %1 [параметри]</translation>
     </message>
     <message>
         <source>IP TV playback:</source>
-        <translation type="unfinished"></translation>
+        <translation>Відтворення IP TV:</translation>
     </message>
     <message>
         <source>Play channel by number</source>
-        <translation type="unfinished"></translation>
+        <translation>Відтворювати канали за номерами</translation>
     </message>
     <message>
         <source>Use playlist file</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати файл переліку каналів</translation>
     </message>
     <message>
         <source>Use XMLTV file</source>
-        <translation type="unfinished"></translation>
+        <translation>Використовувати файл XMLTV</translation>
     </message>
     <message>
         <source>Open:</source>
-        <translation type="unfinished"></translation>
+        <translation>Відкрити:</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation type="unfinished">Відкрити посилання URL</translation>
+        <translation>Відкрити посилання URL</translation>
     </message>
     <message>
         <source>Playback options:</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметри відтворення:</translation>
     </message>
     <message>
         <source>Set audio output</source>
-        <translation type="unfinished"></translation>
+        <translation>Визначити аудіо вихід</translation>
     </message>
     <message>
         <source>Set video output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation type="obsolete">Радіо</translation>
+        <translation>Визначити відео вихід</translation>
     </message>
 </context>
 <context>
@@ -1641,10 +1544,6 @@ This operation is ireversible.</source>
         <translation>Відтворення</translation>
     </message>
     <message>
-        <source>Remember Video settings between media</source>
-        <translation type="obsolete">Запам’ятати налаштування Відео між медіа</translation>
-    </message>
-    <message>
         <source>Default subtitle language:</source>
         <translation>Мова субтитрів за замовчуванням:</translation>
     </message>
@@ -1701,72 +1600,68 @@ This operation is ireversible.</source>
         <translation>Х</translation>
     </message>
     <message>
-        <source>Teletext</source>
-        <translation type="obsolete">Телетекст</translation>
-    </message>
-    <message>
         <source>Enable teletext (requires restart)</source>
         <translation>Увімкнути телетекст (необхідно перезапустити програму)</translation>
     </message>
     <message>
         <source>Core</source>
-        <translation type="unfinished"></translation>
+        <translation>Ядро</translation>
     </message>
     <message>
         <source>Video output:</source>
-        <translation type="unfinished"></translation>
+        <translation>Відео вихід</translation>
     </message>
     <message>
         <source>Audio output:</source>
-        <translation type="unfinished"></translation>
+        <translation>Аудіо вихід</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>За замовчуванням</translation>
     </message>
     <message>
         <source>Enable YUV-&gt;RGB hardware decoding</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнути YUV-&gt;RGB апаратне кодування</translation>
     </message>
     <message>
         <source>Enable S/PDIF output</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнути S/PDIF вихід</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation type="unfinished">Мережа</translation>
+        <translation>Мережа</translation>
     </message>
     <message>
         <source>Select network interface:</source>
-        <translation type="unfinished"></translation>
+        <translation>Обрати мережевий інтерфейс:</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>Автоматично</translation>
     </message>
     <message>
         <source>Misc</source>
-        <translation type="unfinished"></translation>
+        <translation>Різне</translation>
     </message>
     <message>
         <source>Mute on minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимкнути звук під час згортання</translation>
     </message>
     <message>
         <source>Remember video settings:</source>
-        <translation type="unfinished"></translation>
+        <translation>Запам’ятати відео налаштування:</translation>
     </message>
     <message>
         <source>For all channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Для усіх каналів</translation>
     </message>
     <message>
         <source>Per channel</source>
-        <translation type="unfinished"></translation>
+        <translation>На кожен канал</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнути</translation>
     </message>
 </context>
 <context>
@@ -1937,120 +1832,15 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Наступний режим шкала/масштаб</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsEditorCommon</name>
-    <message>
-        <source>Radio</source>
-        <translation type="obsolete">Радіо</translation>
-    </message>
-    <message>
-        <source>Default radio category:</source>
-        <translation type="obsolete">Категорія радіо за замовчуванням:</translation>
-    </message>
-    <message>
-        <source>UDPXY support</source>
-        <translation type="obsolete">UDPXY підтримка</translation>
-    </message>
-    <message>
-        <source>Enable UDPXY support</source>
-        <translation type="obsolete">Увімкнути UDPXY підтримку</translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation type="obsolete">IP роутера чи ім’я:</translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation type="obsolete">Порт роутера:</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation type="obsolete">Інтерфейс</translation>
-    </message>
-    <message>
-        <source>Toolbar style:</source>
-        <translation type="obsolete">Стиль панелі:</translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation type="obsolete">Лише іконки</translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation type="obsolete">Лише текст</translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation type="obsolete">Текст рядом з іконками</translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation type="obsolete">Текст під іконками</translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation type="obsolete">За замовчуванням системи</translation>
-    </message>
-    <message>
-        <source>Show splash screen</source>
-        <translation type="obsolete">Показати заставку під час запуску</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsEditorDialog</name>
-    <message>
-        <source>Settings</source>
-        <translation type="obsolete">Налаштування</translation>
-    </message>
-    <message>
-        <source>General</source>
-        <translation type="obsolete">Загальні</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="obsolete">Редактор</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsEditorGeneral</name>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Мова</translation>
-    </message>
-    <message>
-        <source>System default language</source>
-        <translation type="obsolete">Системна мова за замовчуванням</translation>
-    </message>
-    <message>
-        <source>Custom language</source>
-        <translation type="obsolete">Мова користувача</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="obsolete">За замовчуванням</translation>
-    </message>
-    <message>
-        <source>Restore defaults</source>
-        <translation type="obsolete">Відновити налаштування за замовчуванням</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="obsolete">&lt;i&gt;Це відновить усі налаштуваня за замовчуванням. Вам потрібно застосувати зміни, перед тим як вони будуть застосовані.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>You are using Tano Editor version:</source>
-        <translation type="obsolete">Ви використовуєте версію Tano Редактора:</translation>
+        <translation>Попередній перегляд каналів</translation>
     </message>
 </context>
 <context>
@@ -2115,10 +1905,6 @@ This operation is ireversible.</source>
         <translation>Посилання URL переліку відтворення:</translation>
     </message>
     <message>
-        <source>Radio</source>
-        <translation type="obsolete">Радіо</translation>
-    </message>
-    <message>
         <source>Default radio category:</source>
         <translation>Категорія радіо за замовчуванням:</translation>
     </message>
@@ -2144,11 +1930,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Channel types categories</source>
-        <translation type="unfinished"></translation>
+        <translation>Категорії типів каналів</translation>
     </message>
     <message>
         <source>Default HD category:</source>
-        <translation type="unfinished"></translation>
+        <translation>Категорія HD за замовчуванням:</translation>
     </message>
 </context>
 <context>
@@ -2257,11 +2043,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default options for startup</source>
-        <translation>Опції за замовчуванням для запуску</translation>
-    </message>
-    <message>
-        <source>Show splash screen</source>
-        <translation type="obsolete">Показати заставку під час запуску</translation>
+        <translation>Параметри за замовчуванням для запуску</translation>
     </message>
     <message>
         <source>Simple mode</source>
@@ -2270,14 +2052,6 @@ This operation is ireversible.</source>
     <message>
         <source>Always on top</source>
         <translation>Завжди поверх інших вікон</translation>
-    </message>
-    <message>
-        <source>Controls enabled</source>
-        <translation type="obsolete">Контрольна панель увімкнена</translation>
-    </message>
-    <message>
-        <source>Info panel enabled</source>
-        <translation type="obsolete">Інформаційна панель увімкнена</translation>
     </message>
     <message>
         <source>Show tray icon</source>
@@ -2305,27 +2079,27 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Remember main window size, position and open panels</source>
-        <translation type="unfinished"></translation>
+        <translation>Запам’ятати розмір головного вікна, позицію та відкриті панелі</translation>
     </message>
     <message>
         <source>Filters always visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Завжди бачити фільтри</translation>
     </message>
     <message>
         <source>Icon theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Тема іконок</translation>
     </message>
     <message>
         <source>Tano default</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano за замовчуванням</translation>
     </message>
     <message>
         <source>Desktop theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Тема робочого столу</translation>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Цей параметр вимагає перезапуску.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
@@ -2495,43 +2269,43 @@ End time: %3</source>
     <name>XmltvCrewMember</name>
     <message>
         <source>Director</source>
-        <translation type="unfinished">Режисер</translation>
+        <translation>Режисер</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation type="unfinished">Актор</translation>
+        <translation>Актор</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation type="unfinished">Письменник</translation>
+        <translation>Автор</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation type="unfinished">Адаптор</translation>
+        <translation>Адаптер</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation type="unfinished">Продюсер</translation>
+        <translation>Продюсер</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation type="unfinished">Композитор</translation>
+        <translation>Композитор</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Редактор</translation>
+        <translation>Редактор</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation type="unfinished">Представник</translation>
+        <translation>Представник</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation type="unfinished">Коментатор</translation>
+        <translation>Коментатор</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation type="unfinished">Гість</translation>
+        <translation>Гість</translation>
     </message>
 </context>
 </TS>
