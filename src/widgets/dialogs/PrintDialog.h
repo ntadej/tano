@@ -25,7 +25,7 @@
     #include <QtGui/QDialog>
 #endif
 
-#include "core/Print.h"
+#include "common/Print.h"
 
 namespace Ui {
     class PrintDialog;

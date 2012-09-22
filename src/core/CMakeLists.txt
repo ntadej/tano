@@ -97,7 +97,6 @@ ENDIF(MINGW)
 
 SET(Tano_Core_Srcs
     Arguments.cpp
-    ChannelSelect.cpp
     Common.cpp
     File.h
     Out.cpp
@@ -105,7 +104,6 @@ SET(Tano_Core_Srcs
     ListModel.cpp
     LocaleManager.cpp
     Log.cpp
-    Print.cpp
     Resources.cpp
     UpdateHandler.cpp
 
@@ -167,7 +165,7 @@ ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    QT5_USE_MODULES(${TANO_CORE} Concurrent Network PrintSupport Widgets Xml)
+    QT5_USE_MODULES(${TANO_CORE} Concurrent Network Xml)
 ELSE(WITH_QT5)
     TARGET_LINK_LIBRARIES(${TANO_CORE} ${QT_LIBRARIES})
 ENDIF(WITH_QT5)

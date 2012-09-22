@@ -18,12 +18,12 @@
 
 #include "Config.h"
 
-#include "core/settings/SettingsShortcuts.h"
+#include "common/DesktopShortcuts.h"
 
 #include "SettingsDialogShortcuts.h"
 #include "ui_SettingsDialogShortcuts.h"
 
-SettingsDialogShortcuts::SettingsDialogShortcuts(SettingsShortcuts *shortcuts,
+SettingsDialogShortcuts::SettingsDialogShortcuts(DesktopShortcuts *shortcuts,
                                                  QWidget *parent)
     : QDialog(parent),
       ui(new Ui::SettingsDialogShortcuts)

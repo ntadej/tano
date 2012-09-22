@@ -16,31 +16,24 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Common.h"
-#include "settings/SettingsShortcuts.h"
+#ifndef TANO_DESKTOPSHORTCUTS_H_
+#define TANO_DESKTOPSHORTCUTS_H_
 
-SettingsShortcuts::SettingsShortcuts(QObject *parent)
-    : QSettings(QSettings::IniFormat,
-                QSettings::UserScope,
-                Tano::nameGroup(),
-                "Shortcuts",
-                parent) { }
+#include "core/settings/SettingsShortcuts.h"
 
-SettingsShortcuts::~SettingsShortcuts() { }
+class QAction;
 
-QStringList SettingsShortcuts::readKeys() const
+class DesktopShortcuts : public SettingsShortcuts
 {
-    QStringList list;
-    for (int i = 0; i < DEFAULT_SHORTCUTS_ACTIONS.size(); i++)
-        list << value(DEFAULT_SHORTCUTS_ACTIONS[i], DEFAULT_SHORTCUTS_KEYS[i]).toString();
+public:
+    explicit DesktopShortcuts(const QList<QAction *> &list,
+                              QObject *parent = 0);
+    ~DesktopShortcuts();
 
-    return list;
-}
+    void apply();
 
-void SettingsShortcuts::write(const QStringList &keys)
-{
-    for (int i = 0; i < DEFAULT_SHORTCUTS_ACTIONS.size(); i++)
-        setValue(DEFAULT_SHORTCUTS_ACTIONS[i], keys[i]);
+private:
+    QList<QAction *> _actions;
+};
 
-    sync();
-}
+#endif // TANO_DESKTOPSHORTCUTS_H_

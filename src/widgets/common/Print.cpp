@@ -28,9 +28,10 @@
     #include <QtGui/QPrintPreviewDialog>
 #endif
 
+#include "core/playlist/PlaylistModel.h"
+#include "core/playlist/containers/Channel.h"
+
 #include "Print.h"
-#include "playlist/PlaylistModel.h"
-#include "playlist/containers/Channel.h"
 
 Print::Print(QWidget *parent)
     : QTextEdit(parent)

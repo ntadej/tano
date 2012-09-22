@@ -45,7 +45,6 @@
 #include "Config.h"
 
 #include "core/Arguments.h"
-#include "core/ChannelSelect.h"
 #include "core/Common.h"
 #include "core/LocaleManager.h"
 #include "core/Resources.h"
@@ -56,11 +55,12 @@
 #include "core/playlist/containers/Channel.h"
 #include "core/settings/Settings.h"
 #include "core/settings/SettingsChannel.h"
-#include "core/settings/SettingsShortcuts.h"
 #include "core/timers/containers/Timer.h"
 #include "core/xmltv/XmltvManager.h"
 
 #include "common/Backend.h"
+#include "common/ChannelSelect.h"
+#include "common/DesktopShortcuts.h"
 #include "common/FileDialogs.h"
 #include "common/OsdFloat.h"
 #include "common/OsdWidget.h"
@@ -120,7 +120,7 @@ MainWindow::MainWindow(Arguments *args)
 #endif
 
     createMenus();
-    createSettingsStartup();
+    createDesktopStartup();
     createSettings();
     createBackend();
     createGui();
@@ -338,7 +338,7 @@ void MainWindow::createSettings()
     qDebug() << "Initialised: Settings";
 }
 
-void MainWindow::createSettingsStartup()
+void MainWindow::createDesktopStartup()
 {
     QScopedPointer<Settings> settings(new Settings(this));
     _defaultPlaylist = settings->playlist();
@@ -586,7 +586,7 @@ void MainWindow::createShortcuts()
              << _menuScale->actionNext()
              << _menuDeinterlacing->actionNext();
 
-    _shortcuts = new SettingsShortcuts(_actions, this);
+    _shortcuts = new DesktopShortcuts(_actions, this);
 
     qDebug() << "Initialised: Shortcuts";
 }

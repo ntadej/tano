@@ -41,6 +41,7 @@ class QWidgetAction;
 class Arguments;
 class Channel;
 class ChannelSelect;
+class DesktopShortcuts;
 class EpgScheduleFull;
 class EpgShow;
 class NetworkDownload;
@@ -54,7 +55,6 @@ class MenuTrackSubtitles;
 class MenuTrackVideo;
 class NetworkUdpxy;
 class SettingsChannel;
-class SettingsShortcuts;
 class OsdFloat;
 class OsdWidget;
 class PlaylistEditor;
@@ -149,7 +149,7 @@ private:
     void createGui();
     void createMenus();
     void createSettings();
-    void createSettingsStartup();
+    void createDesktopStartup();
     void createSession();
     void createShortcuts();
     void mouseWheel();
@@ -203,7 +203,7 @@ private:
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;
     SettingsChannel *_settingsChannel;
-    SettingsShortcuts *_shortcuts;
+    DesktopShortcuts *_shortcuts;
     UpdateDialog *_update;
 
     //Backend

@@ -16,15 +16,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
-
-#if defined(Qt5)
-    #include <QtWidgets/QMessageBox>
-#elif defined(Qt4)
-    #include <QtGui/QMessageBox>
-#endif
 
 #include "playlist/PlaylistModel.h"
 #include "playlist/containers/Channel.h"
@@ -106,10 +101,9 @@ void TvheadendGenerator::generateItem(Channel *channel)
 {
     QFile fChannel(fileChannel(channel->number()));
     if (!fChannel.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(0, QObject::tr("Tano"),
-                            QObject::tr("Cannot write file %1:\n%2.")
-                            .arg(fileChannel(channel->number()))
-                            .arg(fChannel.errorString()));
+        qDebug() << QObject::tr("Error:") << QObject::tr("Cannot write file %1:\n%2.")
+                                                         .arg(fileChannel(channel->number()))
+                                                         .arg(fChannel.errorString());
         return;
     }
 
@@ -133,10 +127,9 @@ void TvheadendGenerator::generateItem(Channel *channel)
 
     QFile fIpService(fileIpService(channel->number()));
     if (!fIpService.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(0, QObject::tr("Tano"),
-                            QObject::tr("Cannot write file %1:\n%2.")
-                            .arg(fileIpService(channel->number()))
-                            .arg(fIpService.errorString()));
+        qDebug() << QObject::tr("Error:") << QObject::tr("Cannot write file %1:\n%2.")
+                                                         .arg(fileIpService(channel->number()))
+                                                         .arg(fIpService.errorString());
         return;
     }
 
@@ -174,10 +167,9 @@ void TvheadendGenerator::generateTag(const int &id,
 {
     QFile fTag(fileTag(id));
     if (!fTag.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(0, QObject::tr("Tano"),
-                            QObject::tr("Cannot write file %1:\n%2.")
-                            .arg(fileTag(id))
-                            .arg(fTag.errorString()));
+        qDebug() << QObject::tr("Error:") << QObject::tr("Cannot write file %1:\n%2.")
+                                                         .arg(fileTag(id))
+                                                         .arg(fTag.errorString());
         return;
     }
 

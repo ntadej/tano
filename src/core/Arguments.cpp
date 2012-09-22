@@ -16,12 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
-    #include <QtWidgets/QApplication>
-#elif defined(Qt4)
-    #include <QtGui/QApplication>
-#endif
-
 #include "Arguments.h"
 #include "Out.h"
 

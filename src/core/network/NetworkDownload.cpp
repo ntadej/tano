@@ -16,16 +16,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
 #include <QtCore/QVariant>
 #include <QtNetwork/QNetworkReply>
-
-#if defined(Qt5)
-    #include <QtWidgets/QMessageBox>
-#elif defined(Qt4)
-    #include <QtGui/QMessageBox>
-#endif
 
 #include "network/NetworkRequest.h"
 
@@ -63,9 +58,8 @@ void NetworkDownload::getFile(const QString &fileUrl,
 
     _file = new QFile(fileName);
     if (!_file->open(QIODevice::WriteOnly)) {
-        QMessageBox::information(0, tr("Tano"),
-                                 tr("Cannot write file %1:\n%2.")
-                                 .arg(fileName, _file->errorString()));
+        qDebug() << tr("Error:") << tr("Cannot write file %1:\n%2.")
+                                       .arg(fileName, _file->errorString());
         delete _file;
         return;
     }

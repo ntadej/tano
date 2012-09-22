@@ -20,11 +20,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
-    #include <QtWidgets/QMessageBox>
-#elif defined(Qt4)
-    #include <QtGui/QMessageBox>
-#endif
+#include <QtCore/QDebug>
 
 #include "timers/containers/Timer.h"
 
@@ -112,11 +108,9 @@ bool TimersHandler::characters(const QString &str)
 
 bool TimersHandler::fatalError(const QXmlParseException &exception)
 {
-    QMessageBox::information(0, QObject::tr("Tano"),
-                             QObject::tr("Parse error at line %1, column %2:\n"
-                                         "%3")
-                             .arg(exception.lineNumber())
-                             .arg(exception.columnNumber())
-                             .arg(exception.message()));
+    qDebug() << QObject::tr("Error:") << QObject::tr("Parse error at line %1, column %2:\n%3")
+                                                     .arg(exception.lineNumber())
+                                                     .arg(exception.columnNumber())
+                                                     .arg(exception.message());
     return false;
 }

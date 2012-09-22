@@ -201,9 +201,9 @@ bool XmltvHandler::characters(const QString &str)
 
 bool XmltvHandler::fatalError(const QXmlParseException &exception)
 {
-    qDebug() << QString("Parse error at line %1, column %2: %3")
-                        .arg(exception.lineNumber())
-                        .arg(exception.columnNumber())
-                        .arg(exception.message());
+    qDebug() << QObject::tr("Error:") << QObject::tr("Parse error at line %1, column %2: %3")
+                                                     .arg(exception.lineNumber())
+                                                     .arg(exception.columnNumber())
+                                                     .arg(exception.message());
     return false;
 }

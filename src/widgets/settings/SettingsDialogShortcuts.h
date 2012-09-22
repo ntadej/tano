@@ -28,7 +28,7 @@
 class QAbstractButton;
 class QTableWidgetItem;
 
-class SettingsShortcuts;
+class DesktopShortcuts;
 
 namespace Ui
 {
@@ -39,7 +39,7 @@ class SettingsDialogShortcuts : public QDialog
 {
 Q_OBJECT
 public:
-    explicit SettingsDialogShortcuts(SettingsShortcuts *shortcuts,
+    explicit SettingsDialogShortcuts(DesktopShortcuts *shortcuts,
                                      QWidget *parent = 0);
     ~SettingsDialogShortcuts();
 
@@ -62,7 +62,7 @@ private:
 
     Ui::SettingsDialogShortcuts *ui;
 
-    SettingsShortcuts *_shortcuts;
+    DesktopShortcuts *_shortcuts;
 
     QTableWidgetItem *_item;
     QKeySequence _sequence;

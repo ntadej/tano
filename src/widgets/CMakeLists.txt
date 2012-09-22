@@ -62,11 +62,14 @@ SET(Tano_Widgets_Srcs
     MainWindow.cpp
     common/Backend.cpp
     common/BrowseWidget.cpp
+    common/ChannelSelect.cpp
+    common/DesktopShortcuts.cpp
     common/FileDialogs.cpp
     common/InfoBarWidget.cpp
     common/LicenseWidget.cpp
     common/OsdFloat.cpp
     common/OsdWidget.cpp
+    common/Print.cpp
     common/QtKeySequenceEdit.cpp
     common/ScrollingWidget.cpp
     common/TrayIcon.cpp
@@ -147,7 +150,7 @@ ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    QT5_USE_MODULES(${TANO_WIDGETS} Concurrent Network PrintSupport Widgets Xml)
+    QT5_USE_MODULES(${TANO_WIDGETS} PrintSupport Widgets)
     TARGET_LINK_LIBRARIES(tano ${LIBVLCQT_LIBRARY})
 ELSE(WITH_QT5)
     TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})

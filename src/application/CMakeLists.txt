@@ -48,7 +48,6 @@ ADD_DEPENDENCIES(tano qtsingleapplication ${TANO_CORE} ${TANO_WIDGETS})
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    QT5_USE_MODULES(tano Concurrent Network PrintSupport Widgets Xml)
     TARGET_LINK_LIBRARIES(tano ${QT_SINGLE_APPLICATION} ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB})
 ELSE(WITH_QT5)
     TARGET_LINK_LIBRARIES(tano
