@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 #include "Config.h"
-#include "core/settings/SettingsShortcuts.h"
+#include "settings/SettingsShortcuts.h"
 
 const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_KEYS =
         QStringList() << "Space"

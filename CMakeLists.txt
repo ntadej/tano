@@ -210,7 +210,20 @@ ELSE(DISABLE_TELETEXT)
     SET(TELETEXT 1)
 ENDIF(DISABLE_TELETEXT)
 
+IF(MINGW)
+    SET(LIBEND dll.a)
+ELSEIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    SET(LIBEND dylib)
+ELSE(MINGW)
+    SET(LIBEND so)
+ENDIF(MINGW)
+
 SET(QT_SINGLE_APPLICATION "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/libqtsingleapplication.a")
+
+SET(TANO_CORE tanocore)
+SET(TANO_CORE_LIB "${CMAKE_BINARY_DIR}/src/core/lib${TANO_CORE}.${LIBEND}")
+SET(TANO_WIDGETS tanowidgets)
+SET(TANO_WIDGETS_LIB "${CMAKE_BINARY_DIR}/src/widgets/lib${TANO_WIDGETS}.${LIBEND}")
 
 
 ###################

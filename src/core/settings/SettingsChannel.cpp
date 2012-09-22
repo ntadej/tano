@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Common.h"
-#include "core/settings/SettingsChannel.h"
+#include "Common.h"
+#include "settings/SettingsChannel.h"
 
 SettingsChannel::SettingsChannel(QObject *parent)
     : QSettings(QSettings::IniFormat,

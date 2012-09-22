@@ -22,8 +22,8 @@
     #include <QtGui/QAction>
 #endif
 
-#include "core/Common.h"
-#include "core/settings/SettingsShortcuts.h"
+#include "Common.h"
+#include "settings/SettingsShortcuts.h"
 
 SettingsShortcuts::SettingsShortcuts(const QList<QAction *> &list,
                                      QObject *parent)

@@ -22,8 +22,8 @@
     #include <QtGui/QApplication>
 #endif
 
-#include "core/Arguments.h"
-#include "core/Out.h"
+#include "Arguments.h"
+#include "Out.h"
 
 Arguments::Arguments(int argc, char *argv[])
 {

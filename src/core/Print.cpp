@@ -29,8 +29,8 @@
 #endif
 
 #include "Print.h"
-#include "container/core/Channel.h"
 #include "playlist/PlaylistModel.h"
+#include "playlist/containers/Channel.h"
 
 Print::Print(QWidget *parent)
     : QTextEdit(parent)

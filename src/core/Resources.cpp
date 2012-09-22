@@ -23,9 +23,10 @@
 #include <QtGui/QIcon>
 
 #include "Config.h"
-#include "core/Common.h"
-#include "core/Resources.h"
-#include "core/settings/Settings.h"
+
+#include "Common.h"
+#include "Resources.h"
+#include "settings/Settings.h"
 
 QString Tano::Resources::path(const QString &file)
 {

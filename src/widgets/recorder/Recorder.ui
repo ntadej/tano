@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Recorder</class>
+ <widget class="QWidget" name="Recorder">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>211</width>
+    <height>107</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Recorder</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="media-record"/>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupRecorgings">
+     <property name="title">
+      <string>Recordings and timers</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="TimersDisplayWidget" name="listRecordings" native="true"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="RecorderInfoWidget" name="recorderInfo" native="true">
+     <property name="maximumSize">
+      <size>
+       <width>250</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>RecorderInfoWidget</class>
+   <extends>QWidget</extends>
+   <header>recorder/RecorderInfoWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TimersDisplayWidget</class>
+   <extends>QWidget</extends>
+   <header>timers/TimersDisplayWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

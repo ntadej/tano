@@ -18,7 +18,7 @@
 
 #include <QtCore/QTextCodec>
 
-#include "core/Common.h"
+#include "Common.h"
 #include "Out.h"
 
 #if defined(Q_OS_WIN32)

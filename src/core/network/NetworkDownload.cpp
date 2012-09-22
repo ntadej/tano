@@ -27,8 +27,9 @@
     #include <QtGui/QMessageBox>
 #endif
 
+#include "network/NetworkRequest.h"
+
 #include "NetworkDownload.h"
-#include "core/network/NetworkRequest.h"
 
 NetworkDownload::NetworkDownload(QObject *parent)
     : QObject(parent),

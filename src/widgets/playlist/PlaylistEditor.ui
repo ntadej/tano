@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlaylistEditor</class>
+ <widget class="QMainWindow" name="PlaylistEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tano Editor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="accessories-text-editor">
+    <normaloff/>
+   </iconset>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelName">
+      <property name="text">
+       <string>Playlist name:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="2">
+     <widget class="QLineEdit" name="editName"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelCount">
+      <property name="text">
+       <string>Number of channels:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLCDNumber" name="number">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>60</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="digitCount">
+       <number>3</number>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="3">
+     <widget class="PlaylistDisplayWidget" name="playlist" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>Toolbar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionExport"/>
+   <addaction name="actionPrint"/>
+   <addaction name="separator"/>
+   <addaction name="actionAdd"/>
+   <addaction name="actionDelete"/>
+   <addaction name="separator"/>
+   <addaction name="actionUp"/>
+   <addaction name="actionDown"/>
+   <addaction name="separator"/>
+   <addaction name="actionHelp"/>
+   <addaction name="actionClose"/>
+  </widget>
+  <widget class="QDockWidget" name="editWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>264</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>300</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="windowIcon">
+    <iconset theme="accessories-text-editor">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Edit channel</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="editWidgetContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="7" column="0">
+      <widget class="QLabel" name="labelXmltvId">
+       <property name="text">
+        <string>XMLTV ID:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelNumber">
+       <property name="text">
+        <string>Number:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="labelUrl">
+       <property name="text">
+        <string>Url:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" colspan="6">
+      <widget class="QLineEdit" name="editCategories"/>
+     </item>
+     <item row="2" column="1" colspan="6">
+      <widget class="QLineEdit" name="editChannelName"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelChannelName">
+       <property name="text">
+        <string>Name:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="buttonApplyNum">
+       <property name="minimumSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>25</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="icon">
+        <iconset theme="dialog-apply">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>22</width>
+         <height>22</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1" colspan="6">
+      <widget class="QLineEdit" name="editXmltvId"/>
+     </item>
+     <item row="3" column="1" colspan="6">
+      <widget class="QLineEdit" name="editUrl"/>
+     </item>
+     <item row="6" column="1" colspan="6">
+      <widget class="QLineEdit" name="editLanguage"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="editType">
+       <property name="maxVisibleItems">
+        <number>3</number>
+       </property>
+       <property name="maxCount">
+        <number>3</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>SD</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>HD</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Radio</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="10" column="0" colspan="7">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="labelLanguage">
+       <property name="text">
+        <string>Language:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelType">
+       <property name="text">
+        <string>Type:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1" colspan="6">
+      <widget class="QLineEdit" name="editLogo"/>
+     </item>
+     <item row="0" column="4">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="labelCategories">
+       <property name="text">
+        <string>Categories:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="labelLogo">
+       <property name="text">
+        <string>Logo:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="editNumber">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>999</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="updateWidget">
+   <property name="windowIcon">
+    <iconset theme="view-refresh">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Scan for new channels</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="updateWidgetContents">
+    <layout class="QGridLayout" name="updateContents">
+     <item row="0" column="0">
+      <widget class="PlaylistEditorScan" name="scan" native="true"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionAdd">
+   <property name="icon">
+    <iconset theme="list-add">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Add channel</string>
+   </property>
+   <property name="toolTip">
+    <string>Add channel</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="icon">
+    <iconset theme="list-remove">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Delete channel</string>
+   </property>
+   <property name="toolTip">
+    <string>Delete channel</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset theme="document-save">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset theme="window-close">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionUp">
+   <property name="icon">
+    <iconset theme="go-up">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Move up</string>
+   </property>
+   <property name="toolTip">
+    <string>Move up</string>
+   </property>
+  </action>
+  <action name="actionDown">
+   <property name="icon">
+    <iconset theme="go-down">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Move down</string>
+   </property>
+   <property name="toolTip">
+    <string>Move down</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="icon">
+    <iconset theme="document-print">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="icon">
+    <iconset theme="document-export">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Export</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset theme="document-open">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset theme="dialog-information">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset theme="document-new">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>New playlist</string>
+   </property>
+  </action>
+  <action name="actionExportTvheadend">
+   <property name="icon">
+    <iconset theme="document-export">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Tvheadend</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset theme="preferences-desktop">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionExportXmltvId">
+   <property name="icon">
+    <iconset theme="document-export">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>XMLTV IDs</string>
+   </property>
+   <property name="toolTip">
+    <string>XMLTV IDs</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="icon">
+    <iconset theme="system-software-install">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Update Information</string>
+   </property>
+   <property name="toolTip">
+    <string>Update Information</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="icon">
+    <iconset theme="help-browser">
+     <normaloff/>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>PlaylistDisplayWidget</class>
+   <extends>QWidget</extends>
+   <header>playlist/PlaylistDisplayWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PlaylistEditorScan</class>
+   <extends>QWidget</extends>
+   <header>playlist/PlaylistEditorScan.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

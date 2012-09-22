@@ -24,7 +24,7 @@
     #include <QtGui/QShortcut>
 #endif
 
-#include "core/ChannelSelect.h"
+#include "ChannelSelect.h"
 
 ChannelSelect::ChannelSelect(QWidget *parent,
                              QLCDNumber *number,

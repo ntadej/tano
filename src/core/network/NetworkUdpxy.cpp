@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/network/NetworkUdpxy.h"
-#include "core/settings/Settings.h"
+#include "network/NetworkUdpxy.h"
+#include "settings/Settings.h"
 
 NetworkUdpxy::NetworkUdpxy(const bool &generate)
     : _generate(generate)

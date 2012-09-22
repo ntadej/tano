@@ -17,7 +17,8 @@
 *****************************************************************************/
 
 #include "Config.h"
-#include "core/Common.h"
+
+#include "Common.h"
 
 QString Tano::name()
 {

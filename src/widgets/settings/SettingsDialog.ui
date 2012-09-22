@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsDialog</class>
+ <widget class="QDialog" name="SettingsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Settings</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="preferences-desktop"/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="layout">
+     <property name="spacing">
+      <number>1</number>
+     </property>
+     <item>
+      <widget class="QToolButton" name="buttonGeneral">
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>65</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>General</string>
+       </property>
+       <property name="icon">
+        <iconset theme="preferences-desktop"/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextUnderIcon</enum>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="buttonPlaylist">
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>65</height>
+        </size>
+       </property>
+       <property name="text">
+        <string extracomment="Please make manual line breaks if text too long!">Playlist</string>
+       </property>
+       <property name="icon">
+        <iconset theme="video-x-generic"/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextUnderIcon</enum>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="buttonInterface">
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>65</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Interface</string>
+       </property>
+       <property name="icon">
+        <iconset theme="preferences-system-windows"/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextUnderIcon</enum>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="buttonPlayback">
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>65</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Playback</string>
+       </property>
+       <property name="icon">
+        <iconset theme="media-playback-start"/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextUnderIcon</enum>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="buttonSchedule">
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>65</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Schedule</string>
+       </property>
+       <property name="icon">
+        <iconset theme="x-office-calendar"/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextUnderIcon</enum>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="buttonRecorder">
+       <property name="minimumSize">
+        <size>
+         <width>125</width>
+         <height>65</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Recorder</string>
+       </property>
+       <property name="icon">
+        <iconset theme="media-record"/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextUnderIcon</enum>
+       </property>
+       <property name="autoRaise">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="1">
+    <widget class="QStackedWidget" name="settingsWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="pageGeneral">
+      <layout class="QVBoxLayout" name="layoutMain">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="SettingsGeneral" name="general" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pagePlaylist">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="SettingsPlaylist" name="playlist" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageGui">
+      <layout class="QVBoxLayout" name="layoutInterface">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="SettingsUi" name="gui" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageBackend">
+      <layout class="QVBoxLayout" name="layoutPlayback">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="SettingsBackend" name="backend" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageSchedule">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="SettingsSchedule" name="schedule" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pageRecorder">
+      <layout class="QVBoxLayout" name="layoutRecorder">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="SettingsRecorder" name="recorder" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Save</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SettingsBackend</class>
+   <extends>QWidget</extends>
+   <header>settings/SettingsBackend.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsUi</class>
+   <extends>QWidget</extends>
+   <header>settings/SettingsUi.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsGeneral</class>
+   <extends>QWidget</extends>
+   <header>settings/SettingsGeneral.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsRecorder</class>
+   <extends>QWidget</extends>
+   <header>settings/SettingsRecorder.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsSchedule</class>
+   <extends>QWidget</extends>
+   <header>settings/SettingsSchedule.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsPlaylist</class>
+   <extends>QWidget</extends>
+   <header>settings/SettingsPlaylist.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

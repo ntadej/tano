@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Common.h"
-#include "core/settings/Settings.h"
+#include "Common.h"
+#include "settings/Settings.h"
 
 Settings::Settings(QObject *parent)
     : QSettings(QSettings::IniFormat,
