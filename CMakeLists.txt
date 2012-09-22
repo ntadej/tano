@@ -221,8 +221,6 @@ ELSE(MINGW)
     SET(LIBEND so)
 ENDIF(MINGW)
 
-SET(QT_SINGLE_APPLICATION "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/libqtsingleapplication.a")
-
 SET(TANO_CORE tanocore)
 SET(TANO_CORE_LIB "${CMAKE_BINARY_DIR}/src/core/lib${TANO_CORE}.${LIBEND}")
 SET(TANO_WIDGETS tanowidgets)
@@ -232,7 +230,6 @@ SET(TANO_WIDGETS_LIB "${CMAKE_BINARY_DIR}/src/widgets/lib${TANO_WIDGETS}.${LIBEN
 ###################
 # Compile and set #
 ###################
-ADD_SUBDIRECTORY(lib)
 ADD_SUBDIRECTORY(lang)
 ADD_SUBDIRECTORY(src)
 IF(MINGW)
