@@ -46,6 +46,10 @@ void TvheadendGenerator::clean()
     if (!QDir(_location + "/iptvservices/").exists()) {
         QDir(_location).rmdir("iptvservices");
     }
+
+    if (!QDir(_location + "/epggrab/xmltv/channels/").exists()) {
+        QDir(_location + "/epggrab/xmltv/").rmdir("channels");
+    }
 }
 
 bool TvheadendGenerator::write(PlaylistModel *model)
@@ -95,6 +99,16 @@ QString TvheadendGenerator::fileTag(const int &number) const
         QDir(_location).mkdir("channeltags");
     }
     return QString(_location + "/channeltags/" + QString::number(number));
+}
+
+QString TvheadendGenerator::fileXmltv(const QString &name) const
+{
+    if (!QDir(_location + "/epggrab/xmltv/channels/").exists()) {
+        QDir(_location).mkdir("epggrab");
+        QDir(_location + "/epggrab").mkdir("xmltv");
+        QDir(_location + "/epggrab/xmltv").mkdir("channels");
+    }
+    return QString(_location + "/epggrab/xmltv/channels/" + name);
 }
 
 void TvheadendGenerator::generateItem(Channel *channel)
@@ -160,6 +174,25 @@ void TvheadendGenerator::generateItem(Channel *channel)
           << indent(1) << "\"pcr\": 0," << "\n"
           << indent(1) << "\"disabled\": 0" << "\n"
           << "}" << "\n";
+
+    if (channel->xmltvId().isEmpty())
+        return;
+
+    QFile fXmltv(fileXmltv(channel->xmltvId()));
+    if (!fXmltv.open(QFile::WriteOnly | QFile::Text)) {
+        qDebug() << QObject::tr("Error:") << QObject::tr("Cannot write file %1:\n%2.")
+                                                         .arg(fileXmltv(channel->xmltvId()))
+                                                         .arg(fXmltv.errorString());
+        return;
+    }
+
+    QTextStream outX(&fXmltv);
+    outX << "{" << "\n"
+         << indent(1) << "\"name\": \"" << channel->name() << "\"," << "\n"
+         << indent(1) << "\"channels\": [" << "\n"
+         << indent(2) << channel->number() << "\n"
+         << indent(1) << "]" << "\n"
+         << "}" << "\n";
 }
 
 void TvheadendGenerator::generateTag(const int &id,
