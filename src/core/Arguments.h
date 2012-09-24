@@ -33,8 +33,7 @@ struct Argument
         Aout,
         Vout,
         File,
-        Url,
-        Editor
+        Url
     };
 
     Type type;

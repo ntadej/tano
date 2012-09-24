@@ -70,8 +70,7 @@ void Arguments::createArguments()
                << create(Argument::Aout, "a", "aout")
                << create(Argument::Vout, "v", "vout")
                << create(Argument::File, "f", "file")
-               << create(Argument::Url, "u", "url")
-               << create(Argument::Editor, "e", "editor");
+               << create(Argument::Url, "u", "url");
 }
 
 bool Arguments::processArguments(const QStringList &args)
@@ -82,9 +81,6 @@ bool Arguments::processArguments(const QStringList &args)
             if (args[i] == "-h" || args[i] == "--help") {
                 Out::help();
                 return false;
-            } else if (args[i] == "-e" || args[i] == "--editor") {
-                setValue(Argument::Editor, "true");
-                i++;
             } else {
                 bool done = false;
                 foreach (const Argument &arg, _arguments) {
