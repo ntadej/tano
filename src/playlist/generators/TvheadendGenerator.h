@@ -39,6 +39,7 @@ private:
     QString fileChannel(const int &number) const;
     QString fileIpService(const int &number) const;
     QString fileTag(const int &number) const;
+    QString fileXmltv(const QString &name) const;
 	void generateItem(Channel *channel);
     void generateTag(const int &id,
                      const QString &name);
