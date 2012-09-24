@@ -644,6 +644,10 @@
    </property>
   </action>
   <action name="actionAboutQt">
+   <property name="icon">
+    <iconset resource="../../data/misc/misc.qrc">
+     <normaloff>:/misc/Qt-logo.svg</normaloff>:/misc/Qt-logo.svg</iconset>
+   </property>
    <property name="text">
     <string>About Qt</string>
    </property>
@@ -702,6 +706,10 @@
    </property>
   </action>
   <action name="actionDonate">
+   <property name="icon">
+    <iconset resource="../../data/misc/misc.qrc">
+     <normaloff>:/misc/paypal_small.gif</normaloff>:/misc/paypal_small.gif</iconset>
+   </property>
    <property name="text">
     <string>Donate</string>
    </property>
@@ -822,6 +830,7 @@
  </customwidgets>
  <resources>
   <include location="../../data/logo/logo.qrc"/>
+  <include location="../../data/misc/misc.qrc"/>
  </resources>
  <connections>
   <connection>
