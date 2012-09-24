@@ -22,10 +22,10 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 
-#include "core/Common.h"
-#include "core/Log.h"
-#include "core/Out.h"
-#include "core/Resources.h"
+#include "Common.h"
+#include "Log.h"
+#include "Out.h"
+#include "Resources.h"
 
 QTextStream *out;
 

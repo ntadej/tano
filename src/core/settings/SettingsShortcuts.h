@@ -19,29 +19,21 @@
 #ifndef TANO_SETTINGSSHORTCUTS_H_
 #define TANO_SETTINGSSHORTCUTS_H_
 
-#include <QtCore/QList>
 #include <QtCore/QSettings>
 #include <QtCore/QStringList>
-
-class QAction;
 
 class SettingsShortcuts : public QSettings
 {
 public:
-    explicit SettingsShortcuts(const QList<QAction *> &list,
-                               QObject *parent = 0);
+    explicit SettingsShortcuts(QObject *parent = 0);
     ~SettingsShortcuts();
 
-    void apply();
     QStringList readKeys() const;
     inline void restoreDefaults() { write(DEFAULT_SHORTCUTS_KEYS); }
     void write(const QStringList &keys);
 
     static const QStringList DEFAULT_SHORTCUTS_ACTIONS;
     static const QStringList DEFAULT_SHORTCUTS_KEYS;
-
-private:
-    QList<QAction *> _actions;
 };
 
 #endif // TANO_SETTINGSSHORTCUTS_H_

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OsdWidget</class>
+ <widget class="QFrame" name="OsdWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>744</width>
+    <height>76</height>
+   </rect>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="media-playback-start">
+    <normaloff/>
+   </iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="horizontalSpacing">
+    <number>4</number>
+   </property>
+   <property name="verticalSpacing">
+    <number>2</number>
+   </property>
+   <property name="margin">
+    <number>4</number>
+   </property>
+   <item row="2" column="3">
+    <widget class="VlcSeekWidget" name="seek" native="true"/>
+   </item>
+   <item row="3" column="3">
+    <widget class="InfoBarWidget" name="info" native="true"/>
+   </item>
+   <item row="1" column="0" rowspan="3">
+    <widget class="QWidget" name="blank" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="blankLabel">
+        <property name="minimumSize">
+         <size>
+          <width>2</width>
+          <height>2</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>2</width>
+          <height>2</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="1" rowspan="3">
+    <widget class="QLabel" name="logo"/>
+   </item>
+   <item row="1" column="3">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>4</number>
+     </property>
+     <item>
+      <widget class="QLCDNumber" name="number">
+       <property name="minimumSize">
+        <size>
+         <width>70</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>70</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="digitCount">
+        <number>3</number>
+       </property>
+       <property name="segmentStyle">
+        <enum>QLCDNumber::Flat</enum>
+       </property>
+       <property name="value" stdset="0">
+        <double>1.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonPlay">
+       <property name="minimumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Play</string>
+       </property>
+       <property name="statusTip">
+        <string>Play</string>
+       </property>
+       <property name="icon">
+        <iconset theme="media-playback-start">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonStop">
+       <property name="minimumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Stop</string>
+       </property>
+       <property name="statusTip">
+        <string>Stop</string>
+       </property>
+       <property name="icon">
+        <iconset theme="media-playback-stop">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonBack">
+       <property name="minimumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Back</string>
+       </property>
+       <property name="statusTip">
+        <string>Back</string>
+       </property>
+       <property name="icon">
+        <iconset theme="media-skip-backward">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonNext">
+       <property name="minimumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Next</string>
+       </property>
+       <property name="statusTip">
+        <string>Next</string>
+       </property>
+       <property name="icon">
+        <iconset theme="media-skip-forward">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonRecordNow">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Record Now</string>
+       </property>
+       <property name="statusTip">
+        <string>Record Now</string>
+       </property>
+       <property name="icon">
+        <iconset theme="media-record">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonSnapshot">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Take snapshot</string>
+       </property>
+       <property name="statusTip">
+        <string>Take snapshot</string>
+       </property>
+       <property name="icon">
+        <iconset theme="image-x-generic">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonTeletext">
+       <property name="minimumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Teletext</string>
+       </property>
+       <property name="statusTip">
+        <string>Teletext</string>
+       </property>
+       <property name="icon">
+        <iconset theme="text-x-generic-template">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="teletext">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="minimum">
+        <number>100</number>
+       </property>
+       <property name="maximum">
+        <number>888</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="VlcVolumeSlider" name="volume" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="buttonMute">
+       <property name="minimumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>42</width>
+         <height>42</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Mute</string>
+       </property>
+       <property name="statusTip">
+        <string>Mute</string>
+       </property>
+       <property name="icon">
+        <iconset theme="audio-volume-muted">
+         <normaloff/>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>VlcVolumeSlider</class>
+   <extends>QWidget</extends>
+   <header location="global">vlc-qt/VolumeSlider.h</header>
+   <container>1</container>
+   <slots>
+    <slot>mute()</slot>
+    <slot>volumeUp()</slot>
+    <slot>volumeDown()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>VlcSeekWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">vlc-qt/SeekWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>InfoBarWidget</class>
+   <extends>QWidget</extends>
+   <header>common/InfoBarWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonTeletext</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>teletext</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>460</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>513</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

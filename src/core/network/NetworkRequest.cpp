@@ -18,7 +18,7 @@
 
 #include <QtCore/QDebug>
 
-#include "core/network/NetworkRequest.h"
+#include "network/NetworkRequest.h"
 
 NetworkRequest::NetworkRequest(QObject *parent)
     : QObject(parent),

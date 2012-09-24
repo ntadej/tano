@@ -18,8 +18,8 @@
 
 #include <QtCore/QDir>
 
-#include "core/Resources.h"
-#include "core/settings/Settings.h"
+#include "Resources.h"
+#include "settings/Settings.h"
 
 #if defined (Q_OS_LINUX)
     #include "platform/linux/Locations.h"
