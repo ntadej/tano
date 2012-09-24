@@ -173,10 +173,10 @@ void PlaylistDisplayWidget::showMenu(const QPoint &pos)
 
 void PlaylistDisplayWidget::updateSelection(Channel *channel)
 {
-    ui->playlistView->selectionModel()->select(_model->indexFromItem(channel), QItemSelectionModel::SelectCurrent);
+    ui->playlistView->selectionModel()->select(_filterModel->mapFromSource(_model->indexFromItem(channel)), QItemSelectionModel::SelectCurrent);
 
     if (!visibleChannels().contains(channel))
-        ui->playlistView->scrollTo(_model->indexFromItem(channel), QAbstractItemView::PositionAtTop);
+        ui->playlistView->scrollTo(_filterModel->mapFromSource(_model->indexFromItem(channel)), QAbstractItemView::PositionAtTop);
 }
 
 QList<Channel *> PlaylistDisplayWidget::visibleChannels()
