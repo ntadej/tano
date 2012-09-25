@@ -22,13 +22,15 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
+#include "CoreSharedExport.h"
+
 namespace Tano
 {
     namespace Xmltv
     {
-        QString dateFormat();
-        QString dateFormatDisplay();
-        QRegExp dateRegExp();
+        TANO_CORE_EXPORT QString dateFormat();
+        TANO_CORE_EXPORT QString dateFormatDisplay();
+        TANO_CORE_EXPORT QRegExp dateRegExp();
     }
 }
 

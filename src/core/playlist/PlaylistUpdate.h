@@ -22,10 +22,12 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
+#include "CoreSharedExport.h"
+
 class NetworkDownload;
 class PlaylistModel;
 
-class PlaylistUpdate : public QObject
+class TANO_CORE_EXPORT PlaylistUpdate : public QObject
 {
 Q_OBJECT
 public:

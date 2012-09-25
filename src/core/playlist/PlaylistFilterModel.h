@@ -25,9 +25,11 @@
     #include <QtGui/QSortFilterProxyModel>
 #endif
 
+#include "CoreSharedExport.h"
+
 #include "playlist/containers/Channel.h"
 
-class PlaylistFilterModel : public QSortFilterProxyModel
+class TANO_CORE_EXPORT PlaylistFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 public:

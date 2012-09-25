@@ -19,14 +19,16 @@
 #ifndef TANO_LOG_H_
 #define TANO_LOG_H_
 
-#include <QtGlobal>
+#include <QtCore/QtGlobal>
+
+#include "CoreSharedExport.h"
 
 namespace Tano
 {
     namespace Log
     {
-        void output(QtMsgType type, const char *msg);
-        void setup();
+        TANO_CORE_EXPORT void output(QtMsgType type, const char *msg);
+        TANO_CORE_EXPORT void setup();
     }
 }
 

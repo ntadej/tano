@@ -28,6 +28,8 @@
     #include <QtCore/QFutureWatcher>
 #endif
 
+#include "CoreSharedExport.h"
+
 #include "Common.h"
 #include "xmltv/XmltvHandler.h"
 
@@ -42,7 +44,7 @@ class XmltvList;
 class XmltvProgramme;
 class XmltvProgrammeModel;
 
-class XmltvManager : public QObject
+class TANO_CORE_EXPORT XmltvManager : public QObject
 {
 Q_OBJECT
 public:

@@ -23,9 +23,11 @@
 #include <QtCore/QString>
 #include <QtCore/QTime>
 
+#include "CoreSharedExport.h"
+
 #include "ListItem.h"
 
-class Timer : public ListItem
+class TANO_CORE_EXPORT Timer : public ListItem
 {
 Q_OBJECT
 public:

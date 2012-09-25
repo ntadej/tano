@@ -21,7 +21,9 @@
 
 #include <QtCore/QSettings>
 
-class Settings : public QSettings
+#include "CoreSharedExport.h"
+
+class TANO_CORE_EXPORT Settings : public QSettings
 {
 public:
     Settings(QObject *parent = 0);

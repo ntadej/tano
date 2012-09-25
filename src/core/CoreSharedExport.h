@@ -16,28 +16,15 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_LOCALEMANAGER_H_
-#define TANO_LOCALEMANAGER_H_
+#ifndef TANO_CORE_SHARED_EXPORT_H_
+#define TANO_CORE_SHARED_EXPORT_H_
 
-#include <QtCore/QString>
-#include <QtCore/QTranslator>
+#include <QtCore/QtGlobal>
 
-#include "CoreSharedExport.h"
+#if defined(TANO_CORE_LIBRARY)
+#  define TANO_CORE_EXPORT Q_DECL_EXPORT
+#else
+#  define TANO_CORE_EXPORT Q_DECL_IMPORT
+#endif
 
-class TANO_CORE_EXPORT  LocaleManager
-{
-public:
-	LocaleManager();
-	~LocaleManager();
-
-	static QString language(const QString &locale);
-	static QStringList loadTranslations();
-	static QString localeName(const QString &file);
-
-	void setLocale();
-
-private:
-	QTranslator *_translator;
-};
-
-#endif // TANO_LOCALEMANAGER_H_
+#endif // TANO_CORE_SHARED_EXPORT_H_

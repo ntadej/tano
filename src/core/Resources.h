@@ -21,19 +21,21 @@
 
 #include <QtCore/QString>
 
+#include "CoreSharedExport.h"
+
 namespace Tano
 {
     namespace Resources
     {
     // Resources locators
-        QString path(const QString &file);
-        QString recordings();
-        QString resource(const QString &file);
-        QString settingsPath();
+        TANO_CORE_EXPORT QString path(const QString &file);
+        TANO_CORE_EXPORT QString recordings();
+        TANO_CORE_EXPORT QString resource(const QString &file);
+        TANO_CORE_EXPORT QString settingsPath();
 
     // Icons
-        void setIconName();
-        void setIconPaths();
+        TANO_CORE_EXPORT void setIconName();
+        TANO_CORE_EXPORT void setIconPaths();
     }
 }
 

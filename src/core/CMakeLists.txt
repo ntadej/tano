@@ -18,6 +18,9 @@
 
 PROJECT(${TANO_CORE})
 
+# Add definition for exporting symbols
+ADD_DEFINITIONS(-DTANO_CORE_LIBRARY)
+
 # Add definitions for shared library
 ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 
@@ -67,20 +70,20 @@ SET(Tano_Core_Timers_Srcs
     timers/models/TimersModel.cpp
 )
 SET(Tano_Core_Xmltv_Srcs
-    xmltv/models/XmltvChannelsFilterModel.cpp
-    xmltv/models/XmltvChannelsModel.cpp
     xmltv/XmltvCommon.cpp
-    xmltv/models/XmltvCrewFilterModel.cpp
-    xmltv/models/XmltvCrewModel.cpp
     xmltv/XmltvHandler.cpp
     xmltv/XmltvManager.cpp
-    xmltv/models/XmltvProgrammeFilterModel.cpp
-    xmltv/models/XmltvProgrammeModel.cpp
     xmltv/XmltvSystem.cpp
     xmltv/containers/XmltvChannel.cpp
     xmltv/containers/XmltvCrewMember.cpp
     xmltv/containers/XmltvList.cpp
     xmltv/containers/XmltvProgramme.cpp
+    xmltv/models/XmltvChannelsFilterModel.cpp
+    xmltv/models/XmltvChannelsModel.cpp
+    xmltv/models/XmltvCrewFilterModel.cpp
+    xmltv/models/XmltvCrewModel.cpp
+    xmltv/models/XmltvProgrammeFilterModel.cpp
+    xmltv/models/XmltvProgrammeModel.cpp
 )
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
@@ -106,6 +109,8 @@ SET(Tano_Core_Srcs
     Log.cpp
     Resources.cpp
     UpdateHandler.cpp
+
+    CoreSharedExport.h
 
     ${Tano_Core_Network_Srcs}
     ${Tano_Core_Playlist_Srcs}

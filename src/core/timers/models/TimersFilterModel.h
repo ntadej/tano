@@ -27,7 +27,9 @@
     #include <QtGui/QSortFilterProxyModel>
 #endif
 
-class TimersFilterModel : public QSortFilterProxyModel
+#include "CoreSharedExport.h"
+
+class TANO_CORE_EXPORT TimersFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 public:

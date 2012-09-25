@@ -19,12 +19,14 @@
 #ifndef TANO_TIMERSMODEL_H_
 #define TANO_TIMERSMODEL_H_
 
+#include "CoreSharedExport.h"
+
 #include "ListModel.h"
 #include "timers/containers/Timer.h"
 
 class Timer;
 
-class TimersModel : public ListModel
+class TANO_CORE_EXPORT TimersModel : public ListModel
 {
 Q_OBJECT
 public:

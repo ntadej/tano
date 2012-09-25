@@ -23,18 +23,20 @@
 #include <QtCore/QString>
 #include <QtCore/QTime>
 
+#include "CoreSharedExport.h"
+
 namespace Tano
 {
     // Tano name and executable
-    QString name();
-    QString nameShort();
-    QString nameGroup();
-    QString executable();
+    TANO_CORE_EXPORT QString name();
+    TANO_CORE_EXPORT QString nameShort();
+    TANO_CORE_EXPORT QString nameGroup();
+    TANO_CORE_EXPORT QString executable();
 
     // Version
-    QString version();
-    QString changeset();
-    bool is64bit();
+    TANO_CORE_EXPORT QString version();
+    TANO_CORE_EXPORT QString changeset();
+    TANO_CORE_EXPORT bool is64bit();
 
     // Identifier
     enum Id
@@ -45,10 +47,10 @@ namespace Tano
     };
 
     // Misc
-    QString recordingFileName(const QString &name,
-                              const QString &channel,
-                              const QDate &date,
-                              const QTime &time);
+    TANO_CORE_EXPORT QString recordingFileName(const QString &name,
+                                               const QString &channel,
+                                               const QDate &date,
+                                               const QTime &time);
 }
 
 #endif // TANO_COMMON_H_

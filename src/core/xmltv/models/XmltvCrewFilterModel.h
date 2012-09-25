@@ -25,9 +25,11 @@
     #include <QtGui/QSortFilterProxyModel>
 #endif
 
+#include "CoreSharedExport.h"
+
 #include "xmltv/containers/XmltvCrewMember.h"
 
-class XmltvCrewFilterModel : public QSortFilterProxyModel
+class TANO_CORE_EXPORT XmltvCrewFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 public:

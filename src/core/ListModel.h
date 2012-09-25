@@ -24,9 +24,11 @@
 #include <QtCore/QList>
 #include <QtCore/QVariant>
 
+#include "CoreSharedExport.h"
+
 class ListItem;
 
-class ListModel : public QAbstractListModel
+class TANO_CORE_EXPORT ListModel : public QAbstractListModel
 {
 Q_OBJECT
 public:

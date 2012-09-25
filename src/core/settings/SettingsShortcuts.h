@@ -22,7 +22,9 @@
 #include <QtCore/QSettings>
 #include <QtCore/QStringList>
 
-class SettingsShortcuts : public QSettings
+#include "CoreSharedExport.h"
+
+class TANO_CORE_EXPORT SettingsShortcuts : public QSettings
 {
 public:
     explicit SettingsShortcuts(QObject *parent = 0);

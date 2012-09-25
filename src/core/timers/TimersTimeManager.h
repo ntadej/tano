@@ -22,11 +22,13 @@
 #include <QtCore/QList>
 #include <QtCore/QTimer>
 
+#include "CoreSharedExport.h"
+
 class Timer;
 class TimersModel;
 class TimersFilterModel;
 
-class TimersTimeManager : public QObject
+class TANO_CORE_EXPORT TimersTimeManager : public QObject
 {
 Q_OBJECT
 public:

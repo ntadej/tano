@@ -27,6 +27,8 @@
     #include <QtCore/QFutureWatcher>
 #endif
 
+#include "CoreSharedExport.h"
+
 struct XmltvGrabber
 {
     QString name;
@@ -35,7 +37,7 @@ struct XmltvGrabber
 
 extern QList<XmltvGrabber> loadGrabbers();
 
-class XmltvSystem : public QObject
+class TANO_CORE_EXPORT XmltvSystem : public QObject
 {
 Q_OBJECT
 public:

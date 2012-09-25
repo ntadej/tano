@@ -27,7 +27,9 @@
     #include <QtGui/QSortFilterProxyModel>
 #endif
 
-class XmltvProgrammeFilterModel : public QSortFilterProxyModel
+#include "CoreSharedExport.h"
+
+class TANO_CORE_EXPORT XmltvProgrammeFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 public:

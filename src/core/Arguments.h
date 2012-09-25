@@ -22,6 +22,8 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
+#include "CoreSharedExport.h"
+
 struct Argument
 {
     // Argument types
@@ -41,7 +43,7 @@ struct Argument
     QString longArg;
 };
 
-class Arguments
+class TANO_CORE_EXPORT Arguments
 {
 public:
     Arguments(int argc,

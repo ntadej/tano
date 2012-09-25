@@ -21,6 +21,8 @@
 
 #include <QtCore/QStringList>
 
+#include "CoreSharedExport.h"
+
 #include "File.h"
 #include "ListModel.h"
 #include "playlist/handlers/CSVHandler.h"
@@ -29,7 +31,7 @@ class Channel;
 class PlaylistOpen;
 class PlaylistSave;
 
-class PlaylistModel : public ListModel
+class TANO_CORE_EXPORT PlaylistModel : public ListModel
 {
 Q_OBJECT
 public:

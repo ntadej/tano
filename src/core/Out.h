@@ -21,7 +21,9 @@
 
 #include <QtCore/QTextStream>
 
-class Out : public QTextStream
+#include "CoreSharedExport.h"
+
+class TANO_CORE_EXPORT Out : public QTextStream
 {
 public:
     Out(const bool &error = false);

@@ -19,11 +19,13 @@
 #ifndef TANO_XMLTVPROGRAMMEMODEL_H_
 #define TANO_XMLTVPROGRAMMEMODEL_H_
 
+#include "CoreSharedExport.h"
+
 #include "ListModel.h"
 
 class XmltvProgramme;
 
-class XmltvProgrammeModel : public ListModel
+class TANO_CORE_EXPORT XmltvProgrammeModel : public ListModel
 {
 Q_OBJECT
 public:

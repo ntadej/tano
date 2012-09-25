@@ -25,6 +25,8 @@
 
 #include <QtXml/QXmlDefaultHandler>
 
+#include "CoreSharedExport.h"
+
 struct UpdateInfo
 {
     QString name;
@@ -34,7 +36,7 @@ struct UpdateInfo
     bool development;
 };
 
-class UpdateHandler : public QXmlDefaultHandler
+class TANO_CORE_EXPORT UpdateHandler : public QXmlDefaultHandler
 {
 public:
     UpdateHandler();

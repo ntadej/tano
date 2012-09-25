@@ -21,7 +21,9 @@
 
 #include <QtCore/QObject>
 
-class NetworkUdpxy
+#include "CoreSharedExport.h"
+
+class TANO_CORE_EXPORT NetworkUdpxy
 {
 public:
     NetworkUdpxy(const bool &generate = false);

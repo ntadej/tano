@@ -23,7 +23,9 @@
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 
-class NetworkRequest : public QObject
+#include "CoreSharedExport.h"
+
+class TANO_CORE_EXPORT NetworkRequest : public QObject
 {
 Q_OBJECT
 public:

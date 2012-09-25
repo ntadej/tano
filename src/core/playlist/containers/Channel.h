@@ -22,9 +22,11 @@
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 
+#include "CoreSharedExport.h"
+
 #include "ListItem.h"
 
-class Channel : public ListItem
+class TANO_CORE_EXPORT Channel : public ListItem
 {
 Q_OBJECT
 public:

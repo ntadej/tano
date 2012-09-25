@@ -22,9 +22,11 @@
 #include <QtCore/QFile>
 #include <QtCore/QPointer>
 
+#include "CoreSharedExport.h"
+
 class NetworkRequest;
 
-class NetworkDownload : public QObject
+class TANO_CORE_EXPORT NetworkDownload : public QObject
 {
 Q_OBJECT
 public:

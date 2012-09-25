@@ -18,6 +18,9 @@
 
 PROJECT(${TANO_WIDGETS})
 
+# Add definition for exporting symbols
+ADD_DEFINITIONS(-DTANO_WIDGETS_LIBRARY)
+
 # Add definitions for shared library
 ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 
@@ -58,8 +61,7 @@ SET(Tano_Widgets_UIs
 )
 
 # Define the C++ source files used by Tano Widgets
-SET(Tano_Widgets_Srcs
-    MainWindow.cpp
+SET(Tano_Widgets_Common_Srcs
     common/Backend.cpp
     common/BrowseWidget.cpp
     common/ChannelSelect.cpp
@@ -73,13 +75,19 @@ SET(Tano_Widgets_Srcs
     common/QtKeySequenceEdit.cpp
     common/ScrollingWidget.cpp
     common/TrayIcon.cpp
+)
+SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
     dialogs/DonationDialog.cpp
     dialogs/PrintDialog.cpp
     dialogs/UpdateDialog.cpp
+)
+SET(Tano_Widgets_Epg_Srcs
     epg/EpgScheduleChannel.cpp
     epg/EpgScheduleFull.cpp
     epg/EpgShow.cpp
+)
+SET(Tano_Widgets_Menu_Srcs
     menu/MenuAspectRatio.cpp
     menu/MenuCore.cpp
     menu/MenuCropRatio.cpp
@@ -88,6 +96,8 @@ SET(Tano_Widgets_Srcs
     menu/MenuTrackAudio.cpp
     menu/MenuTrackSubtitles.cpp
     menu/MenuTrackVideo.cpp
+)
+SET(Tano_Widgets_Playlist_Srcs
     playlist/PlaylistDisplayWidget.cpp
     playlist/PlaylistEditor.cpp
     playlist/PlaylistEditorHelp.cpp
@@ -95,20 +105,41 @@ SET(Tano_Widgets_Srcs
     playlist/PlaylistExportTvheadend.cpp
     playlist/PlaylistFilterWidget.cpp
     playlist/PlaylistImportCSV.cpp
+)
+SET(Tano_Widgets_Recorder_Srcs
     recorder/Recorder.cpp
     recorder/RecorderCore.cpp
     recorder/RecorderInfoWidget.cpp
     recorder/RecorderNewDialog.cpp
+)
+SET(Tano_Widgets_Settings_Srcs
     settings/SettingsBackend.cpp
     settings/SettingsDialog.cpp
+    settings/SettingsDialogShortcuts.cpp
     settings/SettingsGeneral.cpp
     settings/SettingsPlaylist.cpp
     settings/SettingsRecorder.cpp
     settings/SettingsSchedule.cpp
-    settings/SettingsDialogShortcuts.cpp
     settings/SettingsUi.cpp
+)
+SET(Tano_Widgets_Timers_Srcs
     timers/TimersDisplayWidget.cpp
     timers/TimersEditorWidget.cpp
+)
+
+SET(Tano_Widgets_Srcs
+    MainWindow.cpp
+
+    WidgetsSharedExport.h
+
+    ${Tano_Widgets_Common_Srcs}
+    ${Tano_Widgets_Dialogs_Srcs}
+    ${Tano_Widgets_Epg_Srcs}
+    ${Tano_Widgets_Menu_Srcs}
+    ${Tano_Widgets_Playlist_Srcs}
+    ${Tano_Widgets_Recorder_Srcs}
+    ${Tano_Widgets_Settings_Srcs}
+    ${Tano_Widgets_Timers_Srcs}
 )
 
 
@@ -151,9 +182,9 @@ ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
     QT5_USE_MODULES(${TANO_WIDGETS} PrintSupport Widgets)
-    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${LIBVLCQT_LIBRARY})
+    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY})
 ELSE(WITH_QT5)
-    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
+    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${QT_LIBRARIES} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY})
 ENDIF(WITH_QT5)
 
 
