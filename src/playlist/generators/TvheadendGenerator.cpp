@@ -186,9 +186,10 @@ void TvheadendGenerator::generateItem(Channel *channel)
 
     QFile fXmltv(fileXmltv(channel->xmltvId()));
     if (!fXmltv.open(QFile::WriteOnly | QFile::Text)) {
-        qDebug() << QObject::tr("Error:") << QObject::tr("Cannot write file %1:\n%2.")
-                                                         .arg(fileXmltv(channel->xmltvId()))
-                                                         .arg(fXmltv.errorString());
+        QMessageBox::warning(0, QObject::tr("Tano"),
+                            QObject::tr("Cannot write file %1:\n%2.")
+                            .arg(fileXmltv(channel->xmltvId()))
+                            .arg(fXmltv.errorString()));
         return;
     }
 
