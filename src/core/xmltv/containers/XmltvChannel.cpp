@@ -21,7 +21,8 @@
 #include "xmltv/models/XmltvProgrammeModel.h"
 
 XmltvChannel::XmltvChannel(QObject *parent)
-    : ListItem(parent) { }
+    : ListItem(parent),
+      _programme(0) { }
 
 XmltvChannel::XmltvChannel(const QString &id,
                            QObject *parent)
@@ -33,7 +34,8 @@ XmltvChannel::XmltvChannel(const QString &id,
 
 XmltvChannel::~XmltvChannel()
 {
-    delete _programme;
+    if (_programme)
+        delete _programme;
 }
 
 QHash<int, QByteArray> XmltvChannel::roleNames() const

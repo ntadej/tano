@@ -22,7 +22,8 @@
 #include "XmltvProgramme.h"
 
 XmltvProgramme::XmltvProgramme(QObject *parent)
-    : ListItem(parent) { }
+    : ListItem(parent),
+      _crew(0) { }
 
 XmltvProgramme::XmltvProgramme(const QString &channel,
                                QObject *parent)
@@ -34,7 +35,8 @@ XmltvProgramme::XmltvProgramme(const QString &channel,
 
 XmltvProgramme::~XmltvProgramme()
 {
-    delete _crew;
+    if (_crew)
+        delete _crew;
 }
 
 QHash<int, QByteArray> XmltvProgramme::roleNames() const

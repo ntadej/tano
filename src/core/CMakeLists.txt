@@ -71,6 +71,7 @@ SET(Tano_Core_Timers_Srcs
 )
 SET(Tano_Core_Xmltv_Srcs
     xmltv/XmltvCommon.cpp
+    xmltv/XmltvGenerator.cpp
     xmltv/XmltvHandler.cpp
     xmltv/XmltvManager.cpp
     xmltv/XmltvSystem.cpp

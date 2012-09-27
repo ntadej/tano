@@ -68,6 +68,7 @@ public:
 
     static Type typeFromString(const QString &type);
     static QString stringFromType(const Type &type);
+    static QString stringFromTypeOutput(const Type &type);
 
 private:
     QString _name;

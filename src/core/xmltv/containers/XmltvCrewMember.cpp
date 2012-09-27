@@ -121,3 +121,32 @@ QString XmltvCrewMember::stringFromType(const Type &type)
         return QString();
     }
 }
+
+QString XmltvCrewMember::stringFromTypeOutput(const Type &type)
+{
+    switch (type)
+    {
+    case XmltvCrewMember::Director:
+        return QString("director");
+    case XmltvCrewMember::Actor:
+        return QString("actor");
+    case XmltvCrewMember::Writer:
+        return QString("writer");
+    case XmltvCrewMember::Adapter:
+        return QString("adapter");
+    case XmltvCrewMember::Producer:
+        return QString("producer");
+    case XmltvCrewMember::Composer:
+        return QString("composer");
+    case XmltvCrewMember::Editor:
+        return QString("editor");
+    case XmltvCrewMember::Presenter:
+        return QString("presenter");
+    case XmltvCrewMember::Commentator:
+        return QString("commentator");
+    case XmltvCrewMember::Guest:
+        return QString("guest");
+    default:
+        return QString();
+    }
+}
