@@ -49,23 +49,47 @@ XmltvGenerator::~XmltvGenerator()
     delete _file;
 }
 
-bool XmltvGenerator::write(XmltvList *xmltv)
+bool XmltvGenerator::openFile()
 {
     if (!_file->open(QFile::WriteOnly | QFile::Text))
         return false;
 
     _out.setDevice(_file);
     _out.setCodec("UTF-8");
+
+    return true;
+}
+
+bool XmltvGenerator::writeHeader(XmltvList *xmltv)
+{
     _out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
          << QString("<tv source-info-name=\"%1\" source-info-url=\"%2\" generator-info-name=\"%3\" generator-info-url=\"%4\">\n")
             .arg(xmltv->sourceInfoName(), xmltv->sourceInfoUrl(), xmltv->generatorInfoName(), xmltv->generatorInfoUrl());
+
+    return true;
+}
+
+bool XmltvGenerator::writeChannels(XmltvList *xmltv)
+{
     for (int i = 0; i < xmltv->channels()->rowCount(); ++i)
         generateChannel(xmltv->channels()->row(i));
+
+    return true;
+}
+
+bool XmltvGenerator::writeProgrammes(XmltvList *xmltv)
+{
     for (int i = 0; i < xmltv->channels()->rowCount(); ++i) {
         for (int j = 0; j < xmltv->channels()->row(i)->programme()->rowCount(); ++j) {
             generateProgramme(xmltv->channels()->row(i)->programme()->row(j));
         }
     }
+
+    return true;
+}
+
+bool XmltvGenerator::closeFile()
+{
     _out << "</tv>\n";
 
     _file->flush();
@@ -120,7 +144,7 @@ void XmltvGenerator::generateProgramme(XmltvProgramme *programme)
         _out << indent(depth + 1) << "<desc>" << escapedText(programme->desc()) << "</desc>\n";
 
     if (!programme->icon().isEmpty())
-        _out << indent(depth + 1) << "<icon>" << escapedText(programme->icon()) << "</icon>\n";
+        _out << indent(depth + 1) << "<icon src=" << escapedAttribute(programme->icon()) << " />\n";
 
     if (programme->crew()->rowCount()) {
         _out << indent(depth + 1) << "<credits>\n";

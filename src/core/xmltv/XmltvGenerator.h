@@ -38,7 +38,11 @@ public:
     XmltvGenerator(const QString &file);
     ~XmltvGenerator();
 
-    bool write(XmltvList *xmltv);
+    bool openFile();
+    bool writeHeader(XmltvList *xmltv);
+    bool writeChannels(XmltvList *xmltv);
+    bool writeProgrammes(XmltvList *xmltv);
+    bool closeFile();
 
 private:
     static QString indent(const int &indentLevel);
