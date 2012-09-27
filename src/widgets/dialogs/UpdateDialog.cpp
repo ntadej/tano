@@ -46,7 +46,7 @@ UpdateDialog::UpdateDialog(QWidget *parent)
 
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton *)), this, SLOT(action(QAbstractButton *)));
 
-    connect(_request, SIGNAL(result(QByteArray)), this, SLOT(readUpdates(QByteArray)));
+    connect(_request, SIGNAL(result(QByteArray, QNetworkReply *)), this, SLOT(readUpdates(QByteArray, QNetworkReply *)));
 }
 
 UpdateDialog::~UpdateDialog()
@@ -85,13 +85,13 @@ void UpdateDialog::action(QAbstractButton *button)
 void UpdateDialog::check()
 {
     _silent = false;
-    _request->getRequest(QUrl("http://update.tano.si/player/update.xml"));
+    _currentReply = _request->getRequest(QNetworkRequest(QUrl("http://update.tano.si/player/update.xml")));
 }
 
 void UpdateDialog::checkSilent()
 {
     _silent = true;
-    _request->getRequest(QUrl("http://update.tano.si/player/update.xml"));
+    _currentReply = _request->getRequest(QNetworkRequest(QUrl("http://update.tano.si/player/update.xml")));
 }
 
 void UpdateDialog::processUpdate(const QStringList &update,
@@ -119,8 +119,12 @@ void UpdateDialog::processUpdate(const QStringList &update,
         exec();
 }
 
-void UpdateDialog::readUpdates(const QByteArray &data)
+void UpdateDialog::readUpdates(const QByteArray &data,
+                               QNetworkReply *reply)
 {
+    if (reply != _currentReply)
+        return;
+
     QString string = _codec->toUnicode(data);
 
     QXmlSimpleReader reader;

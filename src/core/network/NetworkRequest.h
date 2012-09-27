@@ -32,27 +32,22 @@ public:
 	NetworkRequest(QObject *parent = 0);
 	~NetworkRequest();
 
-	void getRequest(const QNetworkRequest &request);
-	void getRequest(const QUrl &url);
-	void postRequest(const QNetworkRequest &request,
-					 const QByteArray &data);
+    QNetworkReply *getRequest(const QNetworkRequest &request);
+    QNetworkReply *postRequest(const QNetworkRequest &request,
+                               const QByteArray &data);
 
 signals:
 	void error(const int &);
-	void result(const QByteArray &);
+    void result(const QByteArray &,
+                QNetworkReply *);
 
 private slots:
-	void httpError(const QNetworkReply::NetworkError &err);
-	void httpRequestFinished();
+    void requestFinished(QNetworkReply *reply);
 
 private:
-	void startRequest(const QNetworkRequest &request,
-					  const QByteArray &data = 0);
+    QNetworkAccessManager *_nam;
 
-	QNetworkAccessManager _nam;
-	QNetworkReply *_nreply;
-
-	QByteArray _currentData;
+    QByteArray _currentData;
 	QNetworkRequest _currentRequest;
 	QByteArray _currentResult;
 

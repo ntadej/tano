@@ -24,6 +24,8 @@
 
 #include "CoreSharedExport.h"
 
+class QNetworkReply;
+
 class NetworkRequest;
 
 class TANO_CORE_EXPORT NetworkDownload : public QObject
@@ -40,12 +42,14 @@ signals:
 	void file(const QString &);
 
 private slots:
-	void write(const QByteArray &data);
+    void write(const QByteArray &data,
+               QNetworkReply *reply);
 
 private:
     QPointer<QFile> _file;
 
     NetworkRequest *_request;
+    QNetworkReply *_currentReply;
 };
 
 #endif // TANO_NETWORKDOWNLOAD_H_

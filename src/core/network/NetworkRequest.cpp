@@ -16,47 +16,39 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
-
-#include "network/NetworkRequest.h"
+#include "NetworkRequest.h"
 
 NetworkRequest::NetworkRequest(QObject *parent)
     : QObject(parent),
+      _nam(new QNetworkAccessManager(this)),
       _currentData(""),
       _currentRequest(QNetworkRequest()),
-      _currentResult("") { }
+      _currentResult("")
+{
+    connect(_nam, SIGNAL(finished(QNetworkReply *)), this, SLOT(requestFinished(QNetworkReply *)));
+}
 
-NetworkRequest::~NetworkRequest() { }
+NetworkRequest::~NetworkRequest()
+{
+    delete _nam;
+}
 
-void NetworkRequest::getRequest(const QNetworkRequest &request)
+QNetworkReply *NetworkRequest::getRequest(const QNetworkRequest &request)
 {
     _currentRequest = request;
 
-    _nreply = _nam.get(request);
-    connect(_nreply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(httpError(QNetworkReply::NetworkError)));
-    connect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
+    return _nam->get(request);
 }
 
-void NetworkRequest::getRequest(const QUrl &url)
+void NetworkRequest::requestFinished(QNetworkReply *reply)
 {
-    getRequest(QNetworkRequest(url));
-}
-
-void NetworkRequest::httpError(const QNetworkReply::NetworkError &err)
-{
-    qDebug() << "NetworkRequest Error" << err;
-
-    emit error(err);
-}
-
-void NetworkRequest::httpRequestFinished()
-{
-    QVariant redirectionTarget = _nreply->attribute(QNetworkRequest::RedirectionTargetAttribute);
-    if (_nreply->error()) {
+    QVariant redirectionTarget = reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+    if (reply->error()) {
+        emit error(reply->error());
         return;
     } else if (!redirectionTarget.isNull()) {
         _url = _url.resolved(redirectionTarget.toUrl());
-        _nreply->deleteLater();
+        reply->deleteLater();
 
         _currentRequest.setUrl(_url);
         if(_currentData == "") {
@@ -67,26 +59,22 @@ void NetworkRequest::httpRequestFinished()
 
         return;
     } else {
-        _currentResult = _nreply->readAll();
-        emit result(_currentResult);
+        _currentResult = reply->readAll();
+        emit result(_currentResult, reply);
     }
 
-    disconnect(_nreply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(httpError(QNetworkReply::NetworkError)));
-    disconnect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
-    _nreply->deleteLater();
+    reply->deleteLater();
 
     _currentData = "";
     _currentRequest = QNetworkRequest();
     _currentResult = "";
 }
 
-void NetworkRequest::postRequest(const QNetworkRequest &request,
-                                   const QByteArray &data)
+QNetworkReply *NetworkRequest::postRequest(const QNetworkRequest &request,
+                                           const QByteArray &data)
 {
     _currentData = data;
     _currentRequest = request;
 
-    _nreply = _nam.post(request, data);
-    connect(_nreply, SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(httpError(QNetworkReply::NetworkError)));
-    connect(_nreply, SIGNAL(finished()), this, SLOT(httpRequestFinished()));
+    return _nam->post(request, data);
 }

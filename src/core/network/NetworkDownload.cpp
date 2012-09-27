@@ -31,7 +31,7 @@ NetworkDownload::NetworkDownload(QObject *parent)
       _file(0),
       _request(new NetworkRequest(this))
 {
-    connect(_request, SIGNAL(result(QByteArray)), this, SLOT(write(QByteArray)));
+    connect(_request, SIGNAL(result(QByteArray, QNetworkReply *)), this, SLOT(write(QByteArray, QNetworkReply *)));
 }
 
 NetworkDownload::~NetworkDownload() { }
@@ -64,12 +64,13 @@ void NetworkDownload::getFile(const QString &fileUrl,
         return;
     }
 
-    _request->getRequest(url);
+    _currentReply = _request->getRequest(QNetworkRequest(url));
 }
 
-void NetworkDownload::write(const QByteArray &data)
+void NetworkDownload::write(const QByteArray &data,
+                            QNetworkReply *reply)
 {
-    if (!_file)
+    if (!_file || reply != _currentReply)
         return;
 
     _file->write(data);

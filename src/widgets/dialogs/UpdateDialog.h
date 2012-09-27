@@ -28,6 +28,7 @@
 #include "core/UpdateHandler.h"
 
 class QAbstractButton;
+class QNetworkReply;
 
 class NetworkRequest;
 
@@ -56,7 +57,8 @@ private slots:
     void action(QAbstractButton *button);
     void processUpdate(const QStringList &update,
                        const UpdateInfo &info);
-    void readUpdates(const QByteArray &data);
+    void readUpdates(const QByteArray &data,
+                     QNetworkReply *reply);
 
 private:
     QString generateUrl(const QString &version);
@@ -66,6 +68,7 @@ private:
     QTextCodec *_codec;
     UpdateHandler *_handler;
     NetworkRequest *_request;
+    QNetworkReply *_currentReply;
 
     bool _silent;
 };
