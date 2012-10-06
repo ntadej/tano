@@ -27,6 +27,9 @@ Q_OBJECT
 public:
 	MenuTrackAudio(QWidget *parent = 0);
 	~MenuTrackAudio();
+
+protected:
+    void changeEvent(QEvent *e);
 };
 
 #endif // TANO_MENUTRACKAUDIO_H_

@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QEvent>
+
 #include "MenuCropRatio.h"
 
 MenuCropRatio::MenuCropRatio(VlcVideoWidget *videoWidget,
@@ -43,6 +45,21 @@ MenuCropRatio::MenuCropRatio(VlcVideoWidget *videoWidget,
 }
 
 MenuCropRatio::~MenuCropRatio() { }
+
+void MenuCropRatio::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        setTitle(tr("Crop video"));
+        actionNext()->setText(tr("Next crop option"));
+        _map2[Vlc::Original]->setText(tr("Original"));
+        break;
+    default:
+        break;
+    }
+}
 
 void MenuCropRatio::apply()
 {

@@ -16,6 +16,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QEvent>
+
 #include "MenuDeinterlacing.h"
 
 MenuDeinterlacing::MenuDeinterlacing(VlcVideoWidget *videoWidget,
@@ -71,6 +73,21 @@ MenuDeinterlacing::MenuDeinterlacing(VlcVideoWidget *videoWidget,
 }
 
 MenuDeinterlacing::~MenuDeinterlacing() { }
+
+void MenuDeinterlacing::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        setTitle(tr("Deinterlacing"));
+        actionNext()->setText(tr("Next deinterlacing option"));
+        _map2[Vlc::Disabled]->setText(tr("Disabled"));
+        break;
+    default:
+        break;
+    }
+}
 
 void MenuDeinterlacing::apply()
 {

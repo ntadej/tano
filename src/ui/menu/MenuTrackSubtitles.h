@@ -28,6 +28,9 @@ public:
 	MenuTrackSubtitles(QWidget *parent = 0);
 	~MenuTrackSubtitles();
 
+protected:
+    void changeEvent(QEvent *e);
+
 private slots:
 	void openSubtitles();
 

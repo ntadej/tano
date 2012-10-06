@@ -27,6 +27,9 @@ Q_OBJECT
 public:
 	MenuTrackVideo(QWidget *parent = 0);
 	~MenuTrackVideo();
+
+protected:
+    void changeEvent(QEvent *e);
 };
 
 #endif // TANO_MENUTRACKVIDEO_H_

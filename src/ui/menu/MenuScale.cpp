@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QEvent>
+
 #include "MenuScale.h"
 
 MenuScale::MenuScale(VlcVideoWidget *videoWidget,
@@ -44,6 +46,21 @@ MenuScale::MenuScale(VlcVideoWidget *videoWidget,
 }
 
 MenuScale::~MenuScale() { }
+
+void MenuScale::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        setTitle(tr("Scale/Zoom"));
+        actionNext()->setText(tr("Next scale/zoom option"));
+        _map2[Vlc::NoScale]->setText(tr("Original"));
+        break;
+    default:
+        break;
+    }
+}
 
 void MenuScale::apply()
 {

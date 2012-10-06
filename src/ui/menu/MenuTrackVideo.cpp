@@ -16,6 +16,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QEvent>
+
 #include "MenuTrackVideo.h"
 
 MenuTrackVideo::MenuTrackVideo(QWidget *parent)
@@ -28,3 +30,17 @@ MenuTrackVideo::MenuTrackVideo(QWidget *parent)
 }
 
 MenuTrackVideo::~MenuTrackVideo() { }
+
+void MenuTrackVideo::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        setTitle(tr("Video track"));
+        actionNext()->setText(tr("Next video track"));
+        break;
+    default:
+        break;
+    }
+}

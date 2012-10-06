@@ -16,6 +16,8 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QEvent>
+
 #include "MenuTrackAudio.h"
 
 MenuTrackAudio::MenuTrackAudio(QWidget *parent)
@@ -28,3 +30,17 @@ MenuTrackAudio::MenuTrackAudio(QWidget *parent)
 }
 
 MenuTrackAudio::~MenuTrackAudio() { }
+
+void MenuTrackAudio::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        setTitle(tr("Audio track"));
+        actionNext()->setText(tr("Next audio track"));
+        break;
+    default:
+        break;
+    }
+}

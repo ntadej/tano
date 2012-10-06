@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QEvent>
+
 #include "MenuAspectRatio.h"
 
 MenuAspectRatio::MenuAspectRatio(VlcVideoWidget *videoWidget,
@@ -44,6 +46,21 @@ MenuAspectRatio::MenuAspectRatio(VlcVideoWidget *videoWidget,
 }
 
 MenuAspectRatio::~MenuAspectRatio() { }
+
+void MenuAspectRatio::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        setTitle(tr("Aspect ratio"));
+        actionNext()->setText(tr("Next aspect ratio option"));
+        _map2[Vlc::Original]->setText(tr("Original"));
+        break;
+    default:
+        break;
+    }
+}
 
 void MenuAspectRatio::apply()
 {
