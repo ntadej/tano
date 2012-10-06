@@ -1,10 +1,19 @@
 # Possible build dirs:
-build*
-qt5-build*
+build/
 
 # Project files
 CMakeLists.txt.user
 .tx/*
+
+# Debian/build
+obj*
+debian/*debhelper*
+debian/*substvars*
+debian/files
+debian/tmp/
+debian/tano/
+debian/tano-data/
+debian/tano-dbg/
 
 # Other
 src/custom/SettingsDefaults.cpp
