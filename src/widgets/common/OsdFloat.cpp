@@ -81,6 +81,7 @@ void OsdFloat::floatShow()
     else
         show();
 #elif defined(Q_WS_WIN)
+    show();
     _slowShowTimer->start(5);
 #else
     show();
@@ -128,6 +129,10 @@ void OsdFloat::slowHide()
 
     if (windowOpacity() <= 0) {
         _slowHideTimer->stop();
+
+#if defined(Q_WS_WIN)
+        hide();
+#endif
     }
 }
 
