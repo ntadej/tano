@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -36,46 +34,26 @@
         <translation>&lt;b&gt;Вы используете VideoLAN VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>This version of Tano was compiled on
-%1 running %2.
-Your Qt runtime version: %3
-Your VLC-Qt version: %4
-</source>
-        <translation type="obsolete">Эта версия Tano скомпилирована на
-%1 под %2.
-Ваша версия среды Qt: %3
-Ваша версия VLC-Qt: %4
-</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="obsolete">Редактор</translation>
-    </message>
-    <message>
-        <source>Player</source>
-        <translation type="obsolete">Проигрыватель</translation>
-    </message>
-    <message>
         <source>Your Tano version: %1
 Your Qt runtime version: %2
 Your VLC-Qt version: %3
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>Channel</name>
     <message>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>HD</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -244,32 +222,60 @@ Your VLC-Qt version: %3
         <translation>Основная панель инструментов</translation>
     </message>
     <message>
-        <source>Info panel</source>
-        <translation>Панель информации</translation>
+        <source>Play</source>
+        <translation>Воспроизведение</translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation>Спрятать в трей</translation>
+    </message>
+    <message>
+        <source>Do you want to exit Tano?
+This will stop recording in progress.</source>
+        <translation>Вы хотите закрыть Tano?
+Это прервет запись.</translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation>Управление</translation>
+    </message>
+    <message>
+        <source>Recorder Toolbar</source>
+        <translation>Панель записи</translation>
+    </message>
+    <message>
+        <source>Tano Support</source>
+        <translation>Tano Support</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>Пауза</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation>Невозможно прочитать файл %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Восстановить</translation>
+    </message>
+    <message>
+        <source>Quick</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Schedule</source>
         <translation>Телепрограмма</translation>
     </message>
     <message>
-        <source>Play</source>
-        <translation>Воспроизведение</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Стоп</translation>
+        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Телепрограмма&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Back</source>
         <translation>Предыдущий</translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation>Следующий</translation>
-    </message>
-    <message>
-        <source>Mute</source>
-        <translation>Выключить звук</translation>
     </message>
     <message>
         <source>About Tano</source>
@@ -292,6 +298,14 @@ Your VLC-Qt version: %3
         <translation>&amp;Полноэкранный режим</translation>
     </message>
     <message>
+        <source>&amp;Open channel list</source>
+        <translation>&amp;Открыть список каналов</translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation>Открыть список каналов</translation>
+    </message>
+    <message>
         <source>Open &amp;File</source>
         <translation>&amp;Открыть файл</translation>
     </message>
@@ -312,16 +326,24 @@ Your VLC-Qt version: %3
         <translation>Открыть</translation>
     </message>
     <message>
+        <source>Stop</source>
+        <translation>Стоп</translation>
+    </message>
+    <message>
         <source>Always on top</source>
         <translation>Поверх всех окон</translation>
     </message>
     <message>
-        <source>Hide to tray</source>
-        <translation>Спрятать в трей</translation>
-    </message>
-    <message>
         <source>Simple Mode</source>
         <translation>&quot;Простой&quot; режим</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Следующий</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation>Выключить звук</translation>
     </message>
     <message>
         <source>Volume up</source>
@@ -336,8 +358,8 @@ Your VLC-Qt version: %3
         <translation>Управление записями</translation>
     </message>
     <message>
-        <source>Timers</source>
-        <translation type="obsolete">Таймеры</translation>
+        <source>Quick record</source>
+        <translation>Быстрая запись</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -352,18 +374,8 @@ Your VLC-Qt version: %3
         <translation>Панель элементов управления</translation>
     </message>
     <message>
-        <source>Do you want to exit Tano?
-This will stop recording in progress.</source>
-        <translation>Вы хотите закрыть Tano?
-Это прервет запись.</translation>
-    </message>
-    <message>
-        <source>&amp;Open channel list</source>
-        <translation>&amp;Открыть список каналов</translation>
-    </message>
-    <message>
-        <source>Open channel list</source>
-        <translation>Открыть список каналов</translation>
+        <source>Info panel</source>
+        <translation>Панель информации</translation>
     </message>
     <message>
         <source>Enable Info panel in Fullscreen mode</source>
@@ -378,58 +390,20 @@ This will stop recording in progress.</source>
         <translation>Телетекст</translation>
     </message>
     <message>
-        <source>Controls</source>
-        <translation>Управление</translation>
-    </message>
-    <message>
         <source>Keyboard shortcuts</source>
         <translation>Горячие клавиши</translation>
     </message>
     <message>
-        <source>Recorder Toolbar</source>
-        <translation>Панель записи</translation>
-    </message>
-    <message>
-        <source>Quick record</source>
-        <translation>Быстрая запись</translation>
+        <source>Instant recording</source>
+        <translation>Начать запись</translation>
     </message>
     <message>
         <source>Add timer</source>
         <translation>Добавить таймер</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Телепрограмма&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Support</source>
         <translation>Поддержка</translation>
-    </message>
-    <message>
-        <source>Tano Support</source>
-        <translation>Tano Support</translation>
-    </message>
-    <message>
-        <source>Pause</source>
-        <translation>Пауза</translation>
-    </message>
-    <message>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation>Невозможно прочитать файл %1:
-%2.</translation>
-    </message>
-    <message>
-        <source>Restore</source>
-        <translation>Восстановить</translation>
-    </message>
-    <message>
-        <source>Quick</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Instant recording</source>
-        <translation>Начать запись</translation>
     </message>
     <message>
         <source>Take snapshot</source>
@@ -437,7 +411,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -512,16 +486,16 @@ This will stop recording in progress.</source>
 <context>
     <name>MenuScale</name>
     <message>
+        <source>Original</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>Scale/Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Next scale/zoom option</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="unfinished">Оригинал</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -783,10 +757,6 @@ You will lose any unsaved changes.</source>
         <translation>Редактировать канал</translation>
     </message>
     <message>
-        <source>Radio:</source>
-        <translation type="obsolete">Радио:</translation>
-    </message>
-    <message>
         <source>Scan for new channels</source>
         <translation>Поиск новых каналов</translation>
     </message>
@@ -795,20 +765,20 @@ You will lose any unsaved changes.</source>
         <translation>XMLTV ID:</translation>
     </message>
     <message>
+        <source>Type:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>HD</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="unfinished">Тип:</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -851,11 +821,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -882,7 +852,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Playlist Editor</source>
@@ -930,18 +900,6 @@ You will lose any unsaved changes.</source>
         <translation>Сбросить</translation>
     </message>
     <message>
-        <source>TV + Radio</source>
-        <translation type="obsolete">ТВ + Радио</translation>
-    </message>
-    <message>
-        <source>TV only</source>
-        <translation type="obsolete">Только ТВ</translation>
-    </message>
-    <message>
-        <source>Radio only</source>
-        <translation type="obsolete">Только Радио</translation>
-    </message>
-    <message>
         <source>All categories</source>
         <translation>Все категории</translation>
     </message>
@@ -951,23 +909,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>TV</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>HD</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Radio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1061,11 +1019,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Logo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1099,24 +1057,20 @@ You will lose any unsaved changes.</source>
         <translation>Язык</translation>
     </message>
     <message>
-        <source>EPG</source>
-        <translation type="obsolete">Телепрограмма</translation>
-    </message>
-    <message>
         <source>Print channel List</source>
         <translation>Печать списка канлов</translation>
     </message>
     <message>
         <source>Channel type</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation type="unfinished">XMLTV ID</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Logo</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1181,7 +1135,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Number</source>
-        <translation type="unfinished">Номер</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>The file is not a valid XMLTV file.</source>
@@ -1195,15 +1149,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>s</source>
@@ -1219,7 +1173,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Open directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Open channel list</source>
@@ -1294,46 +1248,6 @@ You will lose any unsaved changes.</source>
         <translation>Открыть XMLTV</translation>
     </message>
     <message>
-        <source>Director</source>
-        <translation type="obsolete">Режиссер</translation>
-    </message>
-    <message>
-        <source>Actor</source>
-        <translation type="obsolete">Актер</translation>
-    </message>
-    <message>
-        <source>Writer</source>
-        <translation type="obsolete">Автор</translation>
-    </message>
-    <message>
-        <source>Adapter</source>
-        <translation type="obsolete">Сценарист</translation>
-    </message>
-    <message>
-        <source>Producer</source>
-        <translation type="obsolete">Продюсер</translation>
-    </message>
-    <message>
-        <source>Composer</source>
-        <translation type="obsolete">Композитор</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="obsolete">Редактор</translation>
-    </message>
-    <message>
-        <source>Presenter</source>
-        <translation type="obsolete">Ведущий</translation>
-    </message>
-    <message>
-        <source>Commentator</source>
-        <translation type="obsolete">Комментатор</translation>
-    </message>
-    <message>
-        <source>Guest</source>
-        <translation type="obsolete">Гость</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>Вкл.</translation>
     </message>
@@ -1355,7 +1269,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Instant</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>repeats only once</source>
@@ -1375,63 +1289,63 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>instant recording</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>XMLTV ID</source>
         <translation>XMLTV ID</translation>
     </message>
     <message>
-        <source>Usage: %1 [options]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>IP TV playback:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Play channel by number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use playlist file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use XMLTV file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open URL</source>
-        <translation type="unfinished">Открыть URL</translation>
-    </message>
-    <message>
-        <source>Playback options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set audio output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set video output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Try &apos;%1&apos; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Usage: %1 [options]</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>IP TV playback:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Play channel by number</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Use playlist file</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Use XMLTV file</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Open:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Playback options:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Set audio output</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Set video output</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1449,7 +1363,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Quick %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Cannot write to %1.</source>
@@ -1457,7 +1371,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Recording not valid!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>File cannot be removed.
@@ -1498,7 +1412,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Output:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Channel:</source>
@@ -1530,7 +1444,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>at</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recorder</source>
@@ -1571,7 +1485,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">Запись</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Back</source>
@@ -1685,72 +1599,68 @@ This operation is ireversible.</source>
         <translation>X</translation>
     </message>
     <message>
-        <source>Teletext</source>
-        <translation type="obsolete">Телетекст</translation>
-    </message>
-    <message>
         <source>Enable teletext (requires restart)</source>
         <translation>Включить телетекст (требуется перезапуск)</translation>
     </message>
     <message>
         <source>Core</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Video output:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Audio output:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Enable YUV-&gt;RGB hardware decoding</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Enable S/PDIF output</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Select network interface:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember video settings:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For all channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Per channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Misc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mute on minimize</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Automatic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Misc</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Mute on minimize</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Remember video settings:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Per channel</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Enable</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1913,116 +1823,23 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation type="unfinished">Начать запись</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Take snapshot</source>
         <translation>Сделать снимок</translation>
     </message>
     <message>
-        <source>Preview channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsEditorCommon</name>
-    <message>
-        <source>UDPXY support</source>
-        <translation type="obsolete">Поддержка UDPXY</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <source>Enable UDPXY support</source>
-        <translation type="obsolete">Включить поддержку UDPXY</translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation type="obsolete">Имя или IP адрес роутера:</translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation type="obsolete">Порт роутера:</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation type="obsolete">Интерфейс</translation>
-    </message>
-    <message>
-        <source>Toolbar style:</source>
-        <translation type="obsolete">Стиль панели инструментов:</translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation type="obsolete">Только значки</translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation type="obsolete">Только текст</translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation type="obsolete">Текст рядом со значками</translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation type="obsolete">Текст под значками</translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation type="obsolete">Как в системе</translation>
-    </message>
-    <message>
-        <source>Show splash screen</source>
-        <translation type="obsolete">Показать заставку</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsEditorDialog</name>
-    <message>
-        <source>Settings</source>
-        <translation type="obsolete">Настройка</translation>
-    </message>
-    <message>
-        <source>General</source>
-        <translation type="obsolete">Общие</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="obsolete">Редактор</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsEditorGeneral</name>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Язык</translation>
-    </message>
-    <message>
-        <source>System default language</source>
-        <translation type="obsolete">Язык системы</translation>
-    </message>
-    <message>
-        <source>Custom language</source>
-        <translation type="obsolete">Выбрать язык</translation>
-    </message>
-    <message>
-        <source>Restore defaults</source>
-        <translation type="obsolete">Восстановить параметры по умолчанию</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="obsolete">&lt;i&gt;Это сбросит все настройки на значения по умолчанию. Вы должны применить изменения чтобы они вступили в силу.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>You are using Tano Editor version:</source>
-        <translation type="obsolete">Вы используете Tano версии:</translation>
+        <source>Preview channels</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2041,7 +1858,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Session store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Remember volume</source>
@@ -2057,7 +1874,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Defaults</source>
-        <translation type="unfinished">По умолчанию</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Restore defaults</source>
@@ -2088,7 +1905,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>UDPXY support</source>
@@ -2112,11 +1929,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Channel types categories</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Default HD category:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2154,15 +1971,15 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Download file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Run grabber</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>XMLTV source url:</source>
@@ -2170,7 +1987,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Grabber</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
@@ -2178,7 +1995,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2228,24 +2045,12 @@ This operation is ireversible.</source>
         <translation>Опции запуска</translation>
     </message>
     <message>
-        <source>Show splash screen</source>
-        <translation type="obsolete">Показать заставку</translation>
-    </message>
-    <message>
         <source>Simple mode</source>
         <translation>&quot;Простой&quot; режим</translation>
     </message>
     <message>
         <source>Always on top</source>
         <translation>Поверх всех окон</translation>
-    </message>
-    <message>
-        <source>Controls enabled</source>
-        <translation type="obsolete">Включить панель управления</translation>
-    </message>
-    <message>
-        <source>Info panel enabled</source>
-        <translation type="obsolete">Включить панель информации</translation>
     </message>
     <message>
         <source>Show tray icon</source>
@@ -2273,41 +2078,41 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Remember main window size, position and open panels</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Filters always visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Icon theme</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tano default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Desktop theme</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>Timer</name>
     <message>
         <source>at</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="unfinished">Сбросить</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2370,7 +2175,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>The recording start date is before today.
@@ -2401,21 +2206,21 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tano stopped recording</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tano is recording %1 to %2 
 Stop manually!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tano is recording %1 to %2 
 End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2461,43 +2266,43 @@ End time: %3</source>
     <name>XmltvCrewMember</name>
     <message>
         <source>Director</source>
-        <translation type="unfinished">Режиссер</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Actor</source>
-        <translation type="unfinished">Актер</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Writer</source>
-        <translation type="unfinished">Автор</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Adapter</source>
-        <translation type="unfinished">Сценарист</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Producer</source>
-        <translation type="unfinished">Продюсер</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Composer</source>
-        <translation type="unfinished">Композитор</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Редактор</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Presenter</source>
-        <translation type="unfinished">Ведущий</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Commentator</source>
-        <translation type="unfinished">Комментатор</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Guest</source>
-        <translation type="unfinished">Гость</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>
