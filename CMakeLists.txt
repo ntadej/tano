@@ -223,13 +223,16 @@ IF(MINGW)
     ADD_SUBDIRECTORY(windows)
 ENDIF(MINGW)
 
-SET(Tano_Files
-    LICENSE.GPL
-    data/logo/64x64/logo.png
-)
-
 SET(Tano_Icons
     data/icons/tano-default
+)
+
+SET(Tano_Desktop
+    tano.desktop
+)
+
+SET(Tano_Logo
+    tano.png
 )
 
 ################
@@ -237,6 +240,8 @@ SET(Tano_Icons
 ################
 # Install data
 INSTALL(DIRECTORY ${Tano_Icons} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/icons")
-IF(NOT MINGW)
-    INSTALL(FILES ${Tano_Files} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-ENDIF(NOT MINGW)
+
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    INSTALL(FILES ${Tano_Desktop} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
+    INSTALL(FILES ${Tano_Logo} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons")
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
