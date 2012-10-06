@@ -30,7 +30,7 @@ PlaylistFilterModel::~PlaylistFilterModel() { }
 
 void PlaylistFilterModel::setCategory(const QString &category)
 {
-    if(category != tr("All categories"))
+    if(!category.isEmpty() || category != tr("All categories"))
         _category = category;
     else
         _category = "";
@@ -39,7 +39,7 @@ void PlaylistFilterModel::setCategory(const QString &category)
 
 void PlaylistFilterModel::setLanguage(const QString &language)
 {
-    if(language != tr("All languages"))
+    if(!language.isEmpty() || language != tr("All languages"))
         _language = language;
     else
         _language = "";

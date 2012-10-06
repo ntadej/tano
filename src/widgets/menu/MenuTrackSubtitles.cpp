@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QEvent>
+
 #include "common/FileDialogs.h"
 
 #include "MenuTrackSubtitles.h"
@@ -34,6 +36,21 @@ MenuTrackSubtitles::MenuTrackSubtitles(QWidget *parent)
 }
 
 MenuTrackSubtitles::~MenuTrackSubtitles() { }
+
+void MenuTrackSubtitles::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type())
+    {
+    case QEvent::LanguageChange:
+        setTitle(tr("Subtitles"));
+        actionNext()->setText(tr("Next subtitles"));
+        actions()[0]->setText(tr("Open subtitle file"));
+        break;
+    default:
+        break;
+    }
+}
 
 void MenuTrackSubtitles::openSubtitles()
 {

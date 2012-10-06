@@ -33,6 +33,9 @@ public:
 
     void setDefault(const Vlc::Scale &scale);
 
+protected:
+    void changeEvent(QEvent *e);
+
 private slots:
     void apply();
 

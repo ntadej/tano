@@ -88,8 +88,8 @@ void PlaylistFilterWidget::processFilters()
     }
 
     emit filters(ui->editSearch->text(),
-                 ui->comboCategory->currentText(),
-                 ui->comboLanguage->currentText(),
+                 ui->comboCategory->currentIndex() == 0 ? "" : ui->comboCategory->currentText(),
+                 ui->comboLanguage->currentIndex() == 0 ? "" : ui->comboLanguage->currentText(),
                  list);
 }
 
