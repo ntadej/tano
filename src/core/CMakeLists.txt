@@ -24,6 +24,7 @@ ADD_DEFINITIONS(-DTANO_CORE_LIBRARY)
 # Add definitions for shared library
 ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 
+
 ###################
 # List of sources #
 ###################

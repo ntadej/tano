@@ -18,11 +18,9 @@
 
 PROJECT(${TANO_WIDGETS})
 
-# Add definition for exporting symbols
-ADD_DEFINITIONS(-DTANO_WIDGETS_LIBRARY)
+# Add definitions for static library
+ADD_DEFINITIONS(-DQT_STATIC -D_REENTRANT)
 
-# Add definitions for shared library
-ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 
 ###################
 # List of sources #
@@ -130,8 +128,6 @@ SET(Tano_Widgets_Timers_Srcs
 SET(Tano_Widgets_Srcs
     MainWindow.cpp
 
-    WidgetsSharedExport.h
-
     ${Tano_Widgets_Common_Srcs}
     ${Tano_Widgets_Dialogs_Srcs}
     ${Tano_Widgets_Epg_Srcs}
@@ -171,27 +167,9 @@ INCLUDE_DIRECTORIES(
 INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
 
 # This line tells cmake to create the library.
-ADD_LIBRARY(${TANO_WIDGETS} SHARED ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
-
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    SET_TARGET_PROPERTIES(${TANO_WIDGETS} PROPERTIES VERSION ${TANO_VERSION_MAJOR}
-                                          SOVERSION "${TANO_VERSION_MAJOR}.${TANO_VERSION_MINOR}"
-    )
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ADD_LIBRARY(${TANO_WIDGETS} STATIC ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
     QT5_USE_MODULES(${TANO_WIDGETS} PrintSupport Widgets)
-    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY})
-ELSE(WITH_QT5)
-    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${QT_LIBRARIES} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY})
 ENDIF(WITH_QT5)
-
-
-################
-# Installation #
-################
-INSTALL(TARGETS ${TANO_WIDGETS} RUNTIME DESTINATION bin
-        LIBRARY DESTINATION lib${LIB_SUFFIX}
-        ARCHIVE DESTINATION lib${LIB_SUFFIX}
-)

@@ -16,8 +16,20 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-SET(Tano_Srcs
-    main.cpp
+PROJECT(${TANO_SINGLEAPP})
+
+# Add definitions for static library
+ADD_DEFINITIONS(-DQT_STATIC -D_REENTRANT)
+
+
+###################
+# List of sources #
+###################
+# Define the C++ source files used by Tano SingleApplication
+SET(Tano_SingleApplication_Srcs
+    src/qtlocalpeer.cpp
+    src/qtsingleapplication.cpp
+    src/qtsinglecoreapplication.cpp
 )
 
 
@@ -27,39 +39,13 @@ SET(Tano_Srcs
 # This needs to be added in order for #include to work inside .cpp files
 INCLUDE_DIRECTORIES(
     ${CMAKE_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/lib/qtsingleapplication/src
+    ${CMAKE_SOURCE_DIR}/lib/qtsingleapplication
 )
 
-# Compile resources with windres
-IF(MINGW)
-    ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/windows.obj
-        COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_SOURCE_DIR}/src/windows.rc
-        -o ${CMAKE_BINARY_DIR}/src/windows.obj
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src"
-    )
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/windows.obj)
-ENDIF(MINGW)
-
-# This line tells cmake to create the Tano program.
-ADD_EXECUTABLE(tano ${Tano_Srcs})
-ADD_DEPENDENCIES(tano ${TANO_CORE} ${TANO_WIDGETS})
+# This line tells cmake to create the library.
+ADD_LIBRARY(${TANO_SINGLEAPP} STATIC ${Tano_SingleApplication_Srcs})
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    QT5_USE_MODULES(tano)
-    TARGET_LINK_LIBRARIES(tano ${TANO_CORE_LIB} ${TANO_SINGLEAPP_LIB} ${TANO_WIDGETS_LIB})
-ELSE(WITH_QT5)
-    TARGET_LINK_LIBRARIES(tano ${TANO_CORE_LIB} ${TANO_SINGLEAPP_LIB} ${TANO_WIDGETS_LIB} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY})
+    QT5_USE_MODULES(${TANO_SINGLEAPP} Network Widgets)
 ENDIF(WITH_QT5)
-
-
-################
-# Installation #
-################
-# Install tano exe
-INSTALL(TARGETS tano
-    RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
-)
