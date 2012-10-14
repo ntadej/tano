@@ -6,18 +6,15 @@ Build dependencies:
 The latest version of Qt4, libvlc-qt, libvlc and CMake is prefered.
 
 - g++ >=4, make (http://gcc.gnu.org, http://www.mingw.org)
-- cmake >=2.6 (http://www.cmake.org)
-- Qt development package >=4.6 (http://qt.nokia.com)
-- dbus >=1.4 (http://www.freedesktop.org/wiki/Software/dbus)
-- libvlc-qt-dev >=0.6.1 (http://projects.tano.si/en/library) and its dependencies
-- libvlc-dev >=1.1 (http://www.videolan.org)
+- cmake >=2.8.6 (http://www.cmake.org)
+- Qt development package >=4.8 (http://qt.nokia.com)
+- libvlc-qt-dev >=0.7.0 (http://projects.tano.si/en/library) and its dependencies
 
 
 Runtime dependencies:
 =====================
 - Qt library, same version
 - libvlc-qt library, same version
-- libvlc library and plugins, same version
 
 
 Compilation:

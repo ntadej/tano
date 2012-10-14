@@ -40,6 +40,7 @@ do
   esac
 done
 
+
 if [[ -z $TARGET ]]; then
     echo "Target (-t) not specified"
     exit 1

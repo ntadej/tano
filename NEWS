@@ -1,4 +1,4 @@
-1.1 (git)
+1.1 (2012-10-14)
   * Command line arguments (see tano --help)
   * New channel types
   * Scale/zoom options
@@ -10,6 +10,7 @@
   * Ability to preview channels
   * Option for filters to be always visible
   * Save main window size, position and visible elements
+  * Icon theme support
   * Drop support for older versions of Qt and VLC
     Supported are Qt 4.8 or later and VLC 2.0 or later.
   * Removed splash screen and Windows installer branding.
