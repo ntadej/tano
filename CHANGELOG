@@ -1,5 +1,6 @@
 1.2 (git)
   * Separated Tano Core library
+  * Experimental QML UI - Qt5 only (in a git submodule)
 
 1.1 (2012-10-14)
   * Command line arguments (see tano --help)
