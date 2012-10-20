@@ -15,9 +15,11 @@ Get Tano
 --------
 You can download Tano from the official web page
 (http://projects.tano.si) or using Git:
+
     $ git clone git://github.com/ntadej/tano.git
 
 If you want to build with QML UI (Qt5 only) run
+
     $ git submodule init
     $ git submodule update
 
