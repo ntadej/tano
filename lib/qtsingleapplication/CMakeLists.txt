@@ -47,5 +47,5 @@ ADD_LIBRARY(${TANO_SINGLEAPP} STATIC ${Tano_SingleApplication_Srcs})
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    QT5_USE_MODULES(${TANO_SINGLEAPP} Network Widgets)
+    QT5_USE_MODULES(${TANO_SINGLEAPP} Widgets)
 ENDIF(WITH_QT5)

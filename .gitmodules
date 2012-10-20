@@ -1,0 +1,3 @@
+[submodule "src/qml"]
+	path = src/qml
+	url = git://github.com/ntadej/tano-qml.git

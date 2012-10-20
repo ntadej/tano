@@ -23,14 +23,16 @@
 
 #include "CoreSharedExport.h"
 
-class TANO_CORE_EXPORT NetworkUdpxy
+class TANO_CORE_EXPORT NetworkUdpxy : public QObject
 {
+Q_OBJECT
 public:
-    NetworkUdpxy(const bool &generate = false);
+    NetworkUdpxy(const bool &generate = false,
+                 QObject *parent = 0);
     ~NetworkUdpxy();
 
     void createSettings();
-    QString processUrl(const QString &url) const;
+    Q_INVOKABLE QString processUrl(const QString &url) const;
 
 private:
     bool _enabled;

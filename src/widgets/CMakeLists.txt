@@ -171,5 +171,5 @@ ADD_LIBRARY(${TANO_WIDGETS} STATIC ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs}
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    QT5_USE_MODULES(${TANO_WIDGETS} PrintSupport Widgets)
+    QT5_USE_MODULES(${TANO_WIDGETS} Network PrintSupport Widgets)
 ENDIF(WITH_QT5)

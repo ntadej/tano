@@ -192,6 +192,16 @@ void XmltvManager::requestProgrammePrevious(XmltvProgramme *current)
     }
 }
 
+void XmltvManager::requestQml(const QString &id)
+{
+    request(id, Tano::Schedule);
+}
+
+void XmltvManager::requestQmlCurrent(const QString &id)
+{
+    request(id, Tano::Main);
+}
+
 void XmltvManager::stop()
 {
     _timer->stop();

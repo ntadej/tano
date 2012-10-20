@@ -60,11 +60,13 @@ public slots:
     void requestProgramme(const QString &id);
     void requestProgrammeNext(XmltvProgramme *current);
     void requestProgrammePrevious(XmltvProgramme *current);
+    Q_INVOKABLE void requestQml(const QString &id);
+    Q_INVOKABLE void requestQmlCurrent(const QString &id);
     void stop();
 
 signals:
-    void current(const QString,
-                 const QString);
+    void current(const QString &current,
+                 const QString &next);
     void schedule(XmltvProgrammeModel *,
                   const Tano::Id);
     void programme(XmltvProgramme *);

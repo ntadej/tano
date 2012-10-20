@@ -27,5 +27,11 @@ ADD_SUBDIRECTORY(core)
 
 IF(NOT CORE_ONLY)
     ADD_SUBDIRECTORY(widgets)
-    ADD_SUBDIRECTORY(application)
+    ADD_SUBDIRECTORY(desktop)
+
+    IF(WITH_QT5)
+        IF(EXISTS ${CMAKE_SOURCE_DIR}/src/qml/ui)
+            ADD_SUBDIRECTORY(qml)
+        ENDIF(EXISTS ${CMAKE_SOURCE_DIR}/src/qml/ui)
+    ENDIF(WITH_QT5)
 ENDIF(NOT CORE_ONLY)

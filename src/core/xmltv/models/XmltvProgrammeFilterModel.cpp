@@ -18,10 +18,12 @@
 
 #include "xmltv/containers/XmltvProgramme.h"
 #include "xmltv/models/XmltvProgrammeFilterModel.h"
+#include "xmltv/models/XmltvProgrammeModel.h"
 
 XmltvProgrammeFilterModel::XmltvProgrammeFilterModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
+    _id = Tano::Main;
     _date = QDate::currentDate();
 }
 
@@ -42,4 +44,13 @@ bool XmltvProgrammeFilterModel::filterAcceptsRow(int sourceRow,
     bool start = (sourceModel()->data(index, XmltvProgramme::StartRole).toDateTime().date() == _date);
 
     return (name && start);
+}
+
+void XmltvProgrammeFilterModel::setProgrammeModel(XmltvProgrammeModel *model,
+                                                  const Tano::Id &id)
+{
+    if (id == _id) {
+        setSourceModel(model);
+        invalidateFilter();
+    }
 }

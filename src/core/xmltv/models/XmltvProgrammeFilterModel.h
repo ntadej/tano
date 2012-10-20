@@ -29,6 +29,10 @@
 
 #include "CoreSharedExport.h"
 
+#include "Common.h"
+
+class XmltvProgrammeModel;
+
 class TANO_CORE_EXPORT XmltvProgrammeFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
@@ -36,13 +40,21 @@ public:
     XmltvProgrammeFilterModel(QObject *parent = 0);
     ~XmltvProgrammeFilterModel();
 
+    inline void setId(const Tano::Id &id) { _id = id; }
+
     inline QDate date() const { return _date; }
     void setDate(const QDate &date);
 
 protected:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
 
+public slots:
+    void setProgrammeModel(XmltvProgrammeModel *model,
+                           const Tano::Id &id);
+
 private:
+    Tano::Id _id;
+
     QDate _date;
 };
 
