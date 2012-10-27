@@ -1,10 +1,9 @@
 <RCC>
     <qresource prefix="/info">
         <file>AUTHORS</file>
-        <file>INSTALL</file>
-        <file alias="LICENSE">LICENSE.GPL</file>
-        <file>NEWS</file>
-        <file>README</file>
+        <file>CHANGELOG</file>
+        <file>LICENSE.GPL</file>
         <file>VERSION</file>
+        <file>README.md</file>
     </qresource>
 </RCC>
