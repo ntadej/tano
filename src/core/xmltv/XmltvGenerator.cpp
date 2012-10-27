@@ -137,6 +137,9 @@ void XmltvGenerator::generateProgramme(XmltvProgramme *programme)
     _out << indent(depth) << "<programme start=" << escapedAttribute(programme->start().toString(Tano::Xmltv::dateFormat()) + _timeOffset) << " stop=" << escapedAttribute(programme->stop().toString(Tano::Xmltv::dateFormat()) + _timeOffset) << " channel=" << escapedAttribute(programme->channel()) << ">\n"
          << indent(depth + 1) << "<title>" << escapedText(programme->title()) << "</title>\n";
 
+    if (!programme->subTitle().isEmpty())
+        _out << indent(depth + 1) << "<sub-title>" << escapedText(programme->subTitle()) << "</sub-title>\n";
+
     foreach (QString cat, programme->categories())
         _out << indent(depth + 1) << "<category>" << escapedText(cat) << "</category>\n";
 
