@@ -110,6 +110,7 @@ void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
 
     _model = epg;
     _filterModel->setSourceModel(_model);
+    _filterModel->sort(0);
 
     QList<QDate> date;
     for (int i = 0; i < _model->rowCount(); i++) {
