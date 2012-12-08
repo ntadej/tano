@@ -19,7 +19,7 @@
 #ifndef TANO_MENUASPECTRATIO_H_
 #define TANO_MENUASPECTRATIO_H_
 
-#include <vlc-qt/VideoWidget.h>
+#include <vlc-qt/WidgetVideo.h>
 
 #include "menu/MenuCore.h"
 
@@ -27,7 +27,7 @@ class MenuAspectRatio : public MenuCore
 {
 Q_OBJECT
 public:
-    MenuAspectRatio(VlcVideoWidget *videoWidget,
+    MenuAspectRatio(VlcWidgetVideo *videoWidget,
                     QWidget *parent = 0);
     ~MenuAspectRatio();
 
@@ -40,7 +40,7 @@ private slots:
     void apply();
 
 private:
-    VlcVideoWidget *_videoWidget;
+    VlcWidgetVideo *_videoWidget;
 
     QMap<QAction *, Vlc::Ratio> _map1;
     QMap<Vlc::Ratio, QAction *> _map2;

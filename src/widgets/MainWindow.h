@@ -30,11 +30,12 @@
     #include <QtGui/QMainWindow>
 #endif
 
-class VlcAudioControl;
 class VlcInstance;
 class VlcMedia;
 class VlcMediaPlayer;
-class VlcVideoControl;
+
+class VlcControlAudio;
+class VlcControlVideo;
 
 class QWidgetAction;
 
@@ -208,11 +209,11 @@ private:
     UpdateDialog *_update;
 
     //Backend
-    VlcAudioControl *_audioController;
+    VlcControlAudio *_audioController;
     VlcInstance *_mediaInstance;
     VlcMedia *_mediaItem;
     VlcMediaPlayer *_mediaPlayer;
-    VlcVideoControl *_videoController;
+    VlcControlVideo *_videoController;
 
     //Playback and channels
     Channel *_channel;

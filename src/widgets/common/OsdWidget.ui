@@ -26,7 +26,7 @@
     <number>4</number>
    </property>
    <item row="2" column="3">
-    <widget class="VlcSeekWidget" name="seek" native="true"/>
+    <widget class="VlcWidgetSeek" name="seek" native="true"/>
    </item>
    <item row="3" column="3">
     <widget class="InfoBarWidget" name="info" native="true"/>
@@ -371,7 +371,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="VlcVolumeSlider" name="volume" native="true">
+      <widget class="VlcWidgetVolumeSlider" name="volume" native="true">
        <property name="minimumSize">
         <size>
          <width>200</width>
@@ -428,9 +428,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>VlcVolumeSlider</class>
+   <class>VlcWidgetVolumeSlider</class>
    <extends>QWidget</extends>
-   <header location="global">vlc-qt/VolumeSlider.h</header>
+   <header location="global">vlc-qt/WidgetVolumeSlider.h</header>
    <container>1</container>
    <slots>
     <slot>mute()</slot>
@@ -439,9 +439,9 @@
    </slots>
   </customwidget>
   <customwidget>
-   <class>VlcSeekWidget</class>
+   <class>VlcWidgetSeek</class>
    <extends>QWidget</extends>
-   <header location="global">vlc-qt/SeekWidget.h</header>
+   <header location="global">vlc-qt/WidgetSeek.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

@@ -19,7 +19,7 @@
 #ifndef TANO_MENUDEINTERLACING_H_
 #define TANO_MENUDEINTERLACING_H_
 
-#include <vlc-qt/VideoWidget.h>
+#include <vlc-qt/WidgetVideo.h>
 
 #include "menu/MenuCore.h"
 
@@ -27,7 +27,7 @@ class MenuDeinterlacing : public MenuCore
 {
 Q_OBJECT
 public:
-    MenuDeinterlacing(VlcVideoWidget *videoWidget,
+    MenuDeinterlacing(VlcWidgetVideo *videoWidget,
                       QWidget *parent = 0);
     ~MenuDeinterlacing();
 
@@ -40,7 +40,7 @@ private slots:
     void apply();
 
 private:
-    VlcVideoWidget *_videoWidget;
+    VlcWidgetVideo *_videoWidget;
 
     QMap<QAction *, Vlc::Deinterlacing> _map1;
     QMap<Vlc::Deinterlacing, QAction *> _map2;

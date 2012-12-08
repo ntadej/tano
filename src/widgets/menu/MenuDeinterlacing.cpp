@@ -20,7 +20,7 @@
 
 #include "MenuDeinterlacing.h"
 
-MenuDeinterlacing::MenuDeinterlacing(VlcVideoWidget *videoWidget,
+MenuDeinterlacing::MenuDeinterlacing(VlcWidgetVideo *videoWidget,
                                      QWidget *parent)
     : MenuCore(parent),
     _videoWidget(videoWidget)

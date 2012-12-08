@@ -20,7 +20,7 @@
 
 #include "MenuCropRatio.h"
 
-MenuCropRatio::MenuCropRatio(VlcVideoWidget *videoWidget,
+MenuCropRatio::MenuCropRatio(VlcWidgetVideo *videoWidget,
                    QWidget *parent)
     : MenuCore(parent),
     _videoWidget(videoWidget)

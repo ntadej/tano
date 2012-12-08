@@ -19,7 +19,7 @@
 #ifndef TANO_MENUSCALE_H_
 #define TANO_MENUSCALE_H_
 
-#include <vlc-qt/VideoWidget.h>
+#include <vlc-qt/WidgetVideo.h>
 
 #include "menu/MenuCore.h"
 
@@ -27,8 +27,8 @@ class MenuScale : public MenuCore
 {
 Q_OBJECT
 public:
-    MenuScale(VlcVideoWidget *videoWidget,
-                    QWidget *parent = 0);
+    MenuScale(VlcWidgetVideo *videoWidget,
+              QWidget *parent = 0);
     ~MenuScale();
 
     void setDefault(const Vlc::Scale &scale);
@@ -40,7 +40,7 @@ private slots:
     void apply();
 
 private:
-    VlcVideoWidget *_videoWidget;
+    VlcWidgetVideo *_videoWidget;
 
     QMap<QAction *, Vlc::Scale> _map1;
     QMap<Vlc::Scale, QAction *> _map2;

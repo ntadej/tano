@@ -35,7 +35,8 @@ class QLabel;
 class QLCDNumber;
 
 class VlcMediaPlayer;
-class VlcVolumeSlider;
+
+class VlcWidgetVolumeSlider;
 
 class OsdWidget : public QFrame
 {
@@ -56,7 +57,7 @@ public:
                       const QString &info = 0);
     void setVideoState(const bool &enabled);
     void toggleTeletext(const bool &enabled);
-    VlcVolumeSlider *volumeSlider();
+    VlcWidgetVolumeSlider *volumeSlider();
 
 protected:
     void changeEvent(QEvent *e);

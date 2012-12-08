@@ -20,7 +20,7 @@
 
 #include "MenuScale.h"
 
-MenuScale::MenuScale(VlcVideoWidget *videoWidget,
+MenuScale::MenuScale(VlcWidgetVideo *videoWidget,
                                  QWidget *parent)
     : MenuCore(parent),
     _videoWidget(videoWidget)

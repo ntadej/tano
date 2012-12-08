@@ -20,7 +20,7 @@
 
 #include "MenuAspectRatio.h"
 
-MenuAspectRatio::MenuAspectRatio(VlcVideoWidget *videoWidget,
+MenuAspectRatio::MenuAspectRatio(VlcWidgetVideo *videoWidget,
                                  QWidget *parent)
     : MenuCore(parent),
     _videoWidget(videoWidget)

@@ -34,13 +34,14 @@
 
 #include <vlc-qt/Common.h>
 #include <vlc-qt/Config.h>
-#include <vlc-qt/AudioControl.h>
 #include <vlc-qt/Instance.h>
 #include <vlc-qt/Media.h>
 #include <vlc-qt/MediaPlayer.h>
 #include <vlc-qt/Video.h>
-#include <vlc-qt/VideoControl.h>
-#include <vlc-qt/VolumeSlider.h>
+
+#include <vlc-qt/ControlAudio.h>
+#include <vlc-qt/ControlVideo.h>
+#include <vlc-qt/WidgetVolumeSlider.h>
 
 #include "Config.h"
 
@@ -268,8 +269,8 @@ void MainWindow::createBackend()
     _mediaPlayer = new VlcMediaPlayer(_mediaInstance);
     _mediaPlayer->setVideoWidget(ui->videoWidget);
 
-    _audioController = new VlcAudioControl(_mediaPlayer, _defaultAudioLanguage, this);
-    _videoController = new VlcVideoControl(_mediaPlayer, _defaultSubtitleLanguage, this);
+    _audioController = new VlcControlAudio(_mediaPlayer, _defaultAudioLanguage, this);
+    _videoController = new VlcControlVideo(_mediaPlayer, _defaultSubtitleLanguage, this);
 
     ui->videoWidget->setMediaPlayer(_mediaPlayer);
     ui->videoWidget->initDefaultSettings();

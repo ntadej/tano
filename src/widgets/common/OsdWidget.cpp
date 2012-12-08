@@ -169,7 +169,7 @@ void OsdWidget::volumeDown()
     ui->volume->volumeDown();
 }
 
-VlcVolumeSlider *OsdWidget::volumeSlider()
+VlcWidgetVolumeSlider *OsdWidget::volumeSlider()
 {
     return ui->volume;
 }
