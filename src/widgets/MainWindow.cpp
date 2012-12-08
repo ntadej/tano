@@ -400,7 +400,7 @@ void MainWindow::createConnections()
     connect(ui->actionSettingsShortcuts, SIGNAL(triggered()), this, SLOT(showSettingsShortcuts()));
     connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
-    connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(pause()));
+    connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(togglePause()));
     connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
     connect(ui->actionPreview, SIGNAL(triggered(bool)), this, SLOT(preview(bool)));
 
