@@ -160,6 +160,7 @@ private:
 
     //Settings
     bool _init;
+    bool _channelPlayback;
     int _defaultAspectRatio;
     QString _defaultAudioLanguage;
     int _defaultCropRatio;

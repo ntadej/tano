@@ -728,7 +728,7 @@ void MainWindow::play()
 {
     _mediaPlayer->open(_mediaItem);
 
-    if (_videoSettingsChannel) {
+    if (_channelPlayback && _videoSettingsChannel) {
         ui->videoWidget->setCurrentAspectRatio(Vlc::Ratio(_settingsChannel->aspectRatio(_channel->url())));
         ui->videoWidget->setCurrentCropRatio(Vlc::Ratio(_settingsChannel->cropRatio(_channel->url())));
         ui->videoWidget->setCurrentDeinterlacing(Vlc::Deinterlacing(_settingsChannel->deinterlacing(_channel->url())));
@@ -749,6 +749,7 @@ void MainWindow::play()
 
 void MainWindow::playChannel(Channel *channel)
 {
+    _channelPlayback = true;
     _channel = channel;
 
     playUrl(_udpxy->processUrl(_channel->url()));
@@ -813,6 +814,8 @@ void MainWindow::playUrl(const QString &url)
 
 void MainWindow::stop()
 {
+    _channelPlayback = false;
+
     if (_recordNow)
         recordNow(false);
 
