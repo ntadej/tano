@@ -23,10 +23,7 @@
 ListModel::ListModel(ListItem *prototype,
                      QObject *parent)
     : QAbstractListModel(parent),
-      _prototype(prototype)
-{
-    setRoleNames(_prototype->roleNames());
-}
+      _prototype(prototype) { }
 
 ListModel::~ListModel() {
     delete _prototype;
@@ -45,6 +42,11 @@ QVariant ListModel::data(const QModelIndex &index,
     if(index.row() < 0 || index.row() >= _list.size())
         return QVariant();
     return _list[index.row()]->data(role);
+}
+
+QHash<int, QByteArray> ListModel::roleNames() const
+{
+    return _prototype->roleNames();
 }
 
 void ListModel::appendRow(ListItem *item)

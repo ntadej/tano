@@ -31,7 +31,9 @@ SettingsDialogShortcuts::SettingsDialogShortcuts(DesktopShortcuts *shortcuts,
     ui->setupUi(this);
     createActions();
 
+#if defined(Qt4)
     ui->shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+#endif
 
 #if !TELETEXT
     ui->shortcutsWidget->removeRow(8);

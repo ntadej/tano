@@ -27,7 +27,15 @@ namespace Tano
 {
     namespace Log
     {
-        TANO_CORE_EXPORT void output(QtMsgType type, const char *msg);
+#if defined(Qt5)
+        TANO_CORE_EXPORT void output(QtMsgType type,
+                                     const QMessageLogContext &context,
+                                     const QString &msg);
+#elif defined(Qt4)
+        TANO_CORE_EXPORT void output(QtMsgType type,
+                                     const char *msg);
+#endif
+
         TANO_CORE_EXPORT void setup();
     }
 }

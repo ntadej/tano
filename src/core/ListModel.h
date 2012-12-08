@@ -36,6 +36,7 @@ public:
     ~ListModel();
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+    QHash<int, QByteArray> roleNames() const;
     void appendRow(ListItem *item);
     void appendRows(const QList<ListItem *> &items);
     void insertRow(const int &row, ListItem *item);
