@@ -17,75 +17,12 @@
 #############################################################################
 # Windows Extra #
 #################
-
-MACRO(NSIS_FILE_OUTPUT outfiles path)
-    FOREACH(it ${ARGN})
-        STRING_SPLIT(list "/" ${it})
-        LIST(GET list -1 file)
-
-        SET(files "${files}\${File} \"${path}\" \"${file}\"\n")
-    ENDFOREACH(it)
-
-    SET(${outfiles} ${files})
-    SET(files "")
-ENDMACRO(NSIS_FILE_OUTPUT)
-
-MACRO(NSIS_ICONS outfiles)
-        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\"\n")
-        NSIS_FILE_OUTPUT(ficons "..\\\\icons\\\\tano-default" "index.theme" "AUTHORS")
-        SET(out "${out}${ficons}\n")
-
-    FOREACH(type ${ARGN})
-        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\"\n")
-
-        FILE(GLOB icons16 ${CMAKE_SOURCE_DIR}/data/icons/tano-default/${type}/16/*.png)
-        NSIS_FILE_OUTPUT(ficons16 "..\\\\icons\\\\tano-default\\\\${type}\\\\16" ${icons16})
-        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\\16\"\n")
-        SET(out "${out}${ficons16}\n")
-
-        FILE(GLOB icons22 ${CMAKE_SOURCE_DIR}/data/icons/tano-default/${type}/22/*.png)
-        NSIS_FILE_OUTPUT(ficons22 "..\\\\icons\\\\tano-default\\\\${type}\\\\22" ${icons22})
-        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\\22\"\n")
-        SET(out "${out}${ficons22}\n")
-
-        FILE(GLOB icons32 ${CMAKE_SOURCE_DIR}/data/icons/tano-default/${type}/32/*.png)
-        NSIS_FILE_OUTPUT(ficons32 "..\\\\icons\\\\tano-default\\\\${type}\\\\32" ${icons32})
-        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\\32\"\n")
-        SET(out "${out}${ficons32}\n")
-
-        FILE(GLOB icons48 ${CMAKE_SOURCE_DIR}/data/icons/tano-default/${type}/48/*.png)
-        NSIS_FILE_OUTPUT(ficons48 "..\\\\icons\\\\tano-default\\\\${type}\\\\48" ${icons48})
-        SET(out "${out}\${SetOutPath} \"$INSTDIR\\icons\\tano-default\\${type}\\48\"\n")
-        SET(out "${out}${ficons48}\n")
-    ENDFOREACH(type)
-    SET(${outfiles} ${out})
-ENDMACRO(NSIS_ICONS)
-
-MACRO(NSIS_VLC_PLUGINS outfiles)
-    FOREACH(type ${ARGN})
-        FILE(GLOB plugins ${LIBVLCQT_BIN_DIR}/plugins/${type}/*.dll)
-        NSIS_FILE_OUTPUT(fplugins "..\\\\plugins\\\\${type}" ${plugins})
-
-        SET(output "${output}\${SetOutPath} \"$INSTDIR\\plugins\\${type}\"\n")
-        SET(output "${output}${fplugins}\n")
-    ENDFOREACH(type)
-    SET(${outfiles} ${output})
-ENDMACRO(NSIS_VLC_PLUGINS)
-
 MACRO(INSTALL_VLC_PLUGINS)
     FOREACH(type ${ARGN})
         FILE(GLOB Vlc_Plugins ${LIBVLCQT_BIN_DIR}/plugins/${type}/*.dll)
         INSTALL(FILES ${Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/plugins/${type}")
     ENDFOREACH(type)
 ENDMACRO(INSTALL_VLC_PLUGINS)
-
-SET(Tano_Icon_Types
-    actions
-    apps
-    categories
-    mimetypes
-    status
-)
 
 SET(Tano_Vlc_Plugin_Types
     3dnow
@@ -113,118 +50,94 @@ SET(Tano_Vlc_Plugin_Types
 )
 
 IF(MINGW)
-    SET(Tano_Installer
-        LICENSE.GPL.TXT
-
-        tano.nsi
-
-        InstallerLanguageEnglish.nsh
-        InstallerUI.nsh
-
-        UAC.nsh
-        UninstallLog.nsh
-    )
-    SET(Tano_Installer_Theme
-        installer-theme/header.bmp
-        installer-theme/header-un.bmp
-        installer-theme/installer.ico
-        installer-theme/installer-nopng.ico
-        installer-theme/installer.png
-        installer-theme/License.txt
-        installer-theme/uninstaller.ico
-        installer-theme/uninstaller-nopng.ico
-        installer-theme/uninstaller.png
-        installer-theme/wizard.bmp
-        installer-theme/wizard-un.bmp
-    )
-
     STRING(REGEX REPLACE "bin/gcc.exe" "bin" MINGW_BIN_DIR "${CMAKE_C_COMPILER}")
-    STRING(REGEX REPLACE "bin" "lib/qt4/plugins" QT_PLUGINS_DIR "${QT_BIN_DIR}")
-    STRING(REGEX REPLACE "\\\\" "/" LIBVLCQT_INCLUDE_DIR "${LIBVLCQT_INCLUDE_DIR}")
-    STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
-
-    SET(Tano_Qt_Lib
-        ${QT_BIN_DIR}/QtCore4.dll
-        ${QT_BIN_DIR}/QtGui4.dll
-        ${QT_BIN_DIR}/QtNetwork4.dll
-        ${QT_BIN_DIR}/QtXml4.dll
-        ${QT_BIN_DIR}/zlib1.dll
-    )
-    SET(Tano_Qt_Plugins
-        ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
-        ${QT_PLUGINS_DIR}/imageformats/qico4.dll
-        ${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll
-        ${QT_PLUGINS_DIR}/imageformats/qmng4.dll
-        ${QT_PLUGINS_DIR}/imageformats/qsvg4.dll
-        ${QT_PLUGINS_DIR}/imageformats/qtga4.dll
-        ${QT_PLUGINS_DIR}/imageformats/qtiff4.dll
-    )
-    SET(Tano_Vlc_Libs
-        ${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
-        ${LIBVLCQT_BIN_DIR}/libvlc.dll
-        ${LIBVLCQT_BIN_DIR}/libvlccore.dll
-    )
-
-    FILE(GLOB Tano_Language ${CMAKE_BINARY_DIR}/lang/*.qm)
 ENDIF(MINGW)
 
+STRING(REGEX REPLACE "bin" "plugins" QT_PLUGINS_DIR "${QT_BIN_DIR}")
+STRING(REGEX REPLACE "\\\\" "/" LIBVLCQT_INCLUDE_DIR "${LIBVLCQT_INCLUDE_DIR}")
+STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
 
-########################
-# Installer generation #
-########################
-IF(WINDOWS_INSTALLER)
-    MESSAGE("Generating Windows installer. Please, wait ...")
+SET(Tano_Qt4_Libs
+    ${QT_BIN_DIR}/QtCore4.dll
+    ${QT_BIN_DIR}/QtGui4.dll
+    ${QT_BIN_DIR}/QtNetwork4.dll
+    ${QT_BIN_DIR}/QtXml4.dll
+    ${QT_BIN_DIR}/zlib1.dll
+)
 
-    IF(GIT_OUT)
-        SET(TANO_WIN_VERSION ${TANO_VERSION}-${PROJECT_VERSION_PATCH})
-    ELSE(GIT_OUT)
-        SET(TANO_WIN_VERSION ${TANO_VERSION})
-    ENDIF(GIT_OUT)
+SET(Tano_Qt5_Libs
+    ${QT_BIN_DIR}/Qt5Core.dll
+    ${QT_BIN_DIR}/Qt5Gui.dll
+    ${QT_BIN_DIR}/Qt5Network.dll
+    ${QT_BIN_DIR}/Qt5PrintSupport.dll
+    ${QT_BIN_DIR}/Qt5Widgets.dll
+    ${QT_BIN_DIR}/Qt5Xml.dll
+    ${QT_BIN_DIR}/icudt49.dll
+    ${QT_BIN_DIR}/icuin49.dll
+    ${QT_BIN_DIR}/icuuc49.dll
+    ${QT_BIN_DIR}/libEGL.dll
+    ${QT_BIN_DIR}/libGLESv2.dll
+)
 
-    IF(BITS)
-        SET(TANO_WIN_BUILD win64)
-        SET(TANO_WIN_BUILDSTR "(64-bit)")
-    ELSE(BITS)
-        SET(TANO_WIN_BUILD win32)
-        SET(TANO_WIN_BUILDSTR "(32-bit)")
-    ENDIF(BITS)
+SET(Tano_Qt5_Platforms
+    ${QT_PLUGINS_DIR}/platforms/qminimal.dll
+    ${QT_PLUGINS_DIR}/platforms/windows.dll
+)
 
-    NSIS_FILE_OUTPUT(NSIS_Qt ".." ${Tano_Qt_Lib})
-    NSIS_FILE_OUTPUT(NSIS_Qt_Plugins "..\\\\imageformats" ${Tano_Qt_Plugins})
-    NSIS_FILE_OUTPUT(NSIS_Language "..\\\\lang" ${Tano_Language})
-    NSIS_ICONS(NSIS_Icons ${Tano_Icon_Sizes} ${Tano_Icon_Types})
-    NSIS_FILE_OUTPUT(NSIS_VLC ".." ${Tano_Vlc_Libs})
-    NSIS_VLC_PLUGINS(NSIS_VLC_Plugins ${Tano_Vlc_Plugin_Types})
+SET(Tano_Qt4_ImageFormats
+    ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
+    ${QT_PLUGINS_DIR}/imageformats/qico4.dll
+    ${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll
+    ${QT_PLUGINS_DIR}/imageformats/qmng4.dll
+    ${QT_PLUGINS_DIR}/imageformats/qsvg4.dll
+    ${QT_PLUGINS_DIR}/imageformats/qtga4.dll
+    ${QT_PLUGINS_DIR}/imageformats/qtiff4.dll
+)
 
-    CONFIGURE_FILE(
-        ${CMAKE_SOURCE_DIR}/windows/InstallerConfig.nsh.in
-        ${CMAKE_BINARY_DIR}/windows/InstallerConfig.nsh
-        @ONLY
+SET(Tano_Qt5_ImageFormats
+    ${QT_PLUGINS_DIR}/imageformats/qgif.dll
+    ${QT_PLUGINS_DIR}/imageformats/qico.dll
+    ${QT_PLUGINS_DIR}/imageformats/qjpeg.dll
+    ${QT_PLUGINS_DIR}/imageformats/qmng.dll
+    ${QT_PLUGINS_DIR}/imageformats/qsvg.dll
+    ${QT_PLUGINS_DIR}/imageformats/qtga.dll
+    ${QT_PLUGINS_DIR}/imageformats/qtiff.dll
+    ${QT_PLUGINS_DIR}/imageformats/qwbmp.dll
+)
+
+IF(MSVC)
+    SET(Tano_VlcQt_Libs
+        ${LIBVLCQT_BIN_DIR}/vlc-qt.dll
+        ${LIBVLCQT_BIN_DIR}/vlc-qt-widgets.dll
     )
-
-    CONFIGURE_FILE(
-        ${CMAKE_SOURCE_DIR}/windows/InstallerFiles.nsh.in
-        ${CMAKE_BINARY_DIR}/windows/InstallerFiles.nsh
-        @ONLY
+ELSE(MSVC)
+    SET(Tano_VlcQt_Libs
+        ${LIBVLCQT_BIN_DIR}/vlc-qt.dll
+        ${LIBVLCQT_BIN_DIR}/vlc-qt-widgets.dll
     )
+ENDIF(MSVC)
 
-    SET(Tano_Installer_Generated
-        ${CMAKE_BINARY_DIR}/windows/InstallerConfig.nsh
-        ${CMAKE_BINARY_DIR}/windows/InstallerFiles.nsh
-    )
-ENDIF(WINDOWS_INSTALLER)
+SET(Tano_Vlc_Libs
+    ${LIBVLCQT_BIN_DIR}/libvlc.dll
+    ${LIBVLCQT_BIN_DIR}/libvlccore.dll
+)
+
+FILE(GLOB Tano_Language ${CMAKE_BINARY_DIR}/lang/*.qm)
+
 
 ################
 # Installation #
 ################
-IF(MINGW)
-    IF(WINDOWS_INSTALLER)
-        INSTALL(FILES ${Tano_Installer} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows")
-        INSTALL(FILES ${Tano_Installer_Generated} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows")
-        INSTALL(FILES ${Tano_Installer_Theme} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/windows/installer-theme")
-    ENDIF(WINDOWS_INSTALLER)
-    INSTALL(FILES ${Tano_Qt_Lib} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-    INSTALL(FILES ${Tano_Qt_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
-    INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-    INSTALL_VLC_PLUGINS(${Tano_Vlc_Plugin_Types})
-ENDIF(MINGW)
+IF(WITH_QT5)
+    INSTALL(FILES ${Tano_Qt5_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+    INSTALL(FILES ${Tano_Qt5_ImageFormats} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
+    INSTALL(FILES ${Tano_Qt5_Platforms} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/platforms")
+ELSE(WITH_QT5)
+    INSTALL(FILES ${Tano_Qt4_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+    INSTALL(FILES ${Tano_Qt4_ImageFormats} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
+ENDIF(WITH_QT5)
+
+INSTALL(FILES ${Tano_VlcQt_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+
+INSTALL_VLC_PLUGINS(${Tano_Vlc_Plugin_Types})

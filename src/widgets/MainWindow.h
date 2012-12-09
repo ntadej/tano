@@ -30,6 +30,8 @@
     #include <QtGui/QMainWindow>
 #endif
 
+#include "WidgetsSharedExport.h"
+
 class VlcInstance;
 class VlcMedia;
 class VlcMediaPlayer;
@@ -72,7 +74,7 @@ namespace Ui
     class MainWindow;
 }
 
-class MainWindow : public QMainWindow
+class TANO_WIDGETS_EXPORT MainWindow : public QMainWindow
 {
 Q_OBJECT
 public:

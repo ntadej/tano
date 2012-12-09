@@ -94,8 +94,10 @@ SET(CMAKE_AUTOMOC ON)
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Show all warnings
-SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall")
-SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+IF(NOT MSVC)
+    SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall")
+    SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+ENDIF(NOT MSVC)
 
 # Make final release build smaller
 IF(CMAKE_COMPILER_IS_GNUCXX)
@@ -162,22 +164,22 @@ IF(NOT CORE_ONLY)
 ENDIF(NOT CORE_ONLY)
 
 # Set Qt bin dir to find QtCoreX.dll and other libs to install
-IF(MINGW)
+IF(MINGW OR MSVC)
     STRING(REGEX REPLACE "([^ ]+)[/\\].*" "\\1" QT_BIN_DIR_TMP "${QT_QMAKE_EXECUTABLE}")
     STRING(REGEX REPLACE "\\\\" "/" QT_BIN_DIR "${QT_BIN_DIR_TMP}")  # Replace back slashes to slashes
-ENDIF(MINGW)
+ENDIF(MINGW OR MSVC)
 
 # Set default install path:
 # In *nix environments this is /usr/local 
 # Under M$ Windows this is C:\Program files\Tano
 # WARNING: Leading slash should be added - this is for easier concatenation of the strings due to slash/backslash issues
-IF(MINGW)
+IF(MINGW OR MSVC)
     IF(NOT CMAKE_INSTALL_PREFIX)
         SET(CMAKE_INSTALL_PREFIX "C:/Program files/Tano")
     ENDIF(NOT CMAKE_INSTALL_PREFIX)
     SET(TANO_INSTALL_DATA_DIR "")
     SET(TANO_INSTALL_BIN_DIR "")
-ELSE(MINGW)
+ELSE(MINGW OR MSVC)
     IF (NOT CMAKE_INSTALL_PREFIX)
         SET(CMAKE_INSTALL_PREFIX "/usr/local")
     ENDIF (NOT CMAKE_INSTALL_PREFIX)
@@ -187,7 +189,7 @@ ELSE(MINGW)
     IF(NOT DEFAULT_DATA_DIR)
         SET(DEFAULT_DATA_DIR "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
     ENDIF(NOT DEFAULT_DATA_DIR)
-ENDIF(MINGW)
+ENDIF(MINGW OR MSVC)
 
 
 #################
@@ -199,10 +201,6 @@ OPTION(DISABLE_UPDATE_CHECK "Disable update checking" OFF)
 MESSAGE("Disable update checking: ${DISABLE_UPDATE_CHECK}")
 OPTION(DISABLE_TELETEXT "Disable teletext" OFF)
 MESSAGE("Disable teletext: ${DISABLE_TELETEXT}")
-IF(MINGW)
-    OPTION(WINDOWS_INSTALLER "Enable Windows installer" ON)
-    MESSAGE("Enable Windows installer: ${WINDOWS_INSTALLER}")
-ENDIF(MINGW)
 MESSAGE("\n")
 
 IF(DISABLE_UPDATE_CHECK)
@@ -217,20 +215,26 @@ ELSE(DISABLE_TELETEXT)
     SET(TELETEXT 1)
 ENDIF(DISABLE_TELETEXT)
 
+IF(MSVC)
+    SET(LIBSTART "")
+ELSE(MSVC)
+    SET(LIBSTART lib)
+ENDIF(MSVC)
+
 IF(MINGW)
     SET(LIBEND dll.a)
 ELSEIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET(LIBEND dylib)
+ELSEIF(MSVC)
+    SET(LIBEND lib)
 ELSE(MINGW)
     SET(LIBEND so)
 ENDIF(MINGW)
 
 SET(TANO_CORE tanocore)
-SET(TANO_CORE_LIB "${CMAKE_BINARY_DIR}/src/core/lib${TANO_CORE}.${LIBEND}")
-SET(TANO_SINGLEAPP tanowidgets-single)
-SET(TANO_SINGLEAPP_LIB "${CMAKE_BINARY_DIR}/lib/qtsingleapplication/lib${TANO_SINGLEAPP}.a")
+SET(TANO_CORE_LIB "${CMAKE_BINARY_DIR}/src/core/${LIBSTART}${TANO_CORE}.${LIBEND}")
 SET(TANO_WIDGETS tanowidgets)
-SET(TANO_WIDGETS_LIB "${CMAKE_BINARY_DIR}/src/widgets/lib${TANO_WIDGETS}.a")
+SET(TANO_WIDGETS_LIB "${CMAKE_BINARY_DIR}/src/widgets/${LIBSTART}${TANO_WIDGETS}.${LIBEND}")
 
 
 ###################
@@ -238,14 +242,13 @@ SET(TANO_WIDGETS_LIB "${CMAKE_BINARY_DIR}/src/widgets/lib${TANO_WIDGETS}.a")
 ###################
 IF(NOT CORE_ONLY)
     ADD_SUBDIRECTORY(lang)
-    ADD_SUBDIRECTORY(lib/qtsingleapplication)
 ENDIF(NOT CORE_ONLY)
 
 ADD_SUBDIRECTORY(src)
 
-IF(MINGW)
+IF(MINGW OR MSVC)
     ADD_SUBDIRECTORY(windows)
-ENDIF(MINGW)
+ENDIF(MINGW OR MSVC)
 
 SET(Tano_Icons
     data/icons/tano-default

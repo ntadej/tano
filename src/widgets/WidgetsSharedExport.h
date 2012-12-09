@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,31 +16,15 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTOPEN_H_
-#define TANO_PLAYLISTOPEN_H_
+#ifndef TANO_WIDGETS_SHARED_EXPORT_H_
+#define TANO_WIDGETS_SHARED_EXPORT_H_
 
-#include <QtCore/QList>
-#include <QtCore/QString>
+#include <QtCore/QtGlobal>
 
-class Channel;
-struct CSVInfo;
+#if defined(TANO_WIDGETS_LIBRARY)
+#  define TANO_WIDGETS_EXPORT Q_DECL_EXPORT
+#else
+#  define TANO_WIDGETS_EXPORT Q_DECL_IMPORT
+#endif
 
-class PlaylistOpen
-{
-public:
-    PlaylistOpen();
-    ~PlaylistOpen();
-
-    inline QString name() const { return _name; }
-    inline QList<Channel *> list() const { return _list; }
-    void openCSVFile(const QString &file,
-                     const CSVInfo &info);
-    void openJsFile(const QString &file);
-    void openM3UFile(const QString &file);
-
-private:
-    QList<Channel *> _list;
-    QString _name;
-};
-
-#endif // PLAYLISTOPEN_H
+#endif // TANO_WIDGETS_SHARED_EXPORT_H_

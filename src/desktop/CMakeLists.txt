@@ -20,6 +20,11 @@ SET(Tano_Srcs
     main.cpp
 )
 
+SET(Tano_SingleApplication_Srcs
+    ../../lib/qtsingleapplication/src/qtlocalpeer.cpp
+    ../../lib/qtsingleapplication/src/qtsingleapplication.cpp
+    ../../lib/qtsingleapplication/src/qtsinglecoreapplication.cpp
+)
 
 #####################
 # Compiler settings #
@@ -44,15 +49,25 @@ IF(MINGW)
 ENDIF(MINGW)
 
 # This line tells cmake to create the Tano program.
-ADD_EXECUTABLE(tano ${Tano_Srcs})
+ADD_EXECUTABLE(tano ${Tano_Srcs} ${Tano_SingleApplication_Srcs})
 ADD_DEPENDENCIES(tano ${TANO_CORE} ${TANO_WIDGETS})
+
+# MSVC: Avoid Debug/Release/... subfolders
+IF(MSVC)
+    SET_TARGET_PROPERTIES(tano PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ".")
+    SET_TARGET_PROPERTIES(tano PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_DEBUG ".")
+    SET_TARGET_PROPERTIES(tano PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELEASE ".")
+    SET_TARGET_PROPERTIES(tano PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELWITHDUBUGINFO ".")
+    SET_TARGET_PROPERTIES(tano PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_MINSIZEREL ".")
+    SET_TARGET_PROPERTIES(tano PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_PROFILE ".")
+ENDIF(MSVC)
 
 # Here the needed Libraries are added to the link command.
 IF(WITH_QT5)
-    TARGET_LINK_LIBRARIES(tano ${TANO_CORE_LIB} ${TANO_SINGLEAPP_LIB} ${TANO_WIDGETS_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
-    QT5_USE_MODULES(tano Network PrintSupport Widgets Xml)
+    QT5_USE_MODULES(tano Network Widgets)
+    TARGET_LINK_LIBRARIES(tano ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB})
 ELSE(WITH_QT5)
-    TARGET_LINK_LIBRARIES(tano ${TANO_CORE_LIB} ${TANO_SINGLEAPP_LIB} ${TANO_WIDGETS_LIB} ${QT_LIBRARIES} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
+    TARGET_LINK_LIBRARIES(tano ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB} ${QT_LIBRARIES})
 ENDIF(WITH_QT5)
 
 
