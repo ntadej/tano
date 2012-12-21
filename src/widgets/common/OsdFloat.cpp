@@ -26,7 +26,7 @@
     #include <QtGui/QHBoxLayout>
 #endif
 
-#ifdef Q_WS_X11
+#if defined(Qt4) && defined(Q_WS_X11)
     #include <QX11Info>
 #endif
 
@@ -59,12 +59,12 @@ OsdFloat::~OsdFloat()
 
 void OsdFloat::floatHide()
 {
-#if defined(Q_WS_X11)
+#if defined(Qt4) && defined(Q_WS_X11)
     if (QX11Info::isCompositingManagerRunning())
         _slowHideTimer->start(5);
     else
         hide();
-#elif defined(Q_WS_WIN)
+#elif defined(Q_OS_WIN32)
     _slowHideTimer->start(5);
 #else
     hide();
@@ -75,12 +75,12 @@ void OsdFloat::floatShow()
 {
     _slowHideTimer->stop();
 
-#if defined(Q_WS_X11)
+#if defined(Qt4) && defined(Q_WS_X11)
     if (QX11Info::isCompositingManagerRunning())
         _slowShowTimer->start(5);
     else
         show();
-#elif defined(Q_WS_WIN)
+#elif defined(Q_OS_WIN32)
     show();
     _slowShowTimer->start(5);
 #else
