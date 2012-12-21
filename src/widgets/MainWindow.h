@@ -183,6 +183,7 @@ private:
     bool _osdEnabled;
     bool _infoEnabled;
     bool _muteOnMinimize;
+    bool _muteOnMinimizeCurrent;
     bool _recordNow;
     bool _rememberGui;
     int _width;

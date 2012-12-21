@@ -191,8 +191,10 @@ void MainWindow::hideEvent(QHideEvent *event)
     _dockControlsVisible = ui->dockControls->isVisible();
     _dockInfoVisible = ui->dockInfo->isVisible();
 
-    if (_muteOnMinimize && !ui->actionMute->isChecked())
-        ui->actionMute->trigger();
+    if (_muteOnMinimize) {
+        _muteOnMinimizeCurrent = ui->actionMute->isChecked();
+        ui->actionMute->setChecked(true);
+    }
 }
 void MainWindow::showEvent(QShowEvent *event)
 {
@@ -207,8 +209,9 @@ void MainWindow::showEvent(QShowEvent *event)
     ui->dockControls->setVisible(_dockControlsVisible);
     ui->dockInfo->setVisible(_dockInfoVisible);
 
-    if (_muteOnMinimize)
-        ui->actionMute->trigger();
+    if (_muteOnMinimize) {
+        ui->actionMute->setChecked(_muteOnMinimizeCurrent);
+    }
 }
 
 // Init functions
@@ -418,7 +421,7 @@ void MainWindow::createConnections()
     connect(ui->videoWidget, SIGNAL(mouseHide()), this, SLOT(toggleOsdInfo()));
     connect(ui->actionFullscreen, SIGNAL(triggered(bool)), this, SLOT(toggleFullscreen(bool)));
 
-    connect(ui->actionMute, SIGNAL(triggered(bool)), _osdMain, SLOT(mute(bool)));
+    connect(ui->actionMute, SIGNAL(toggled(bool)), _osdMain, SLOT(mute(bool)));
     connect(ui->actionVolumeDown, SIGNAL(triggered()), _osdMain, SLOT(volumeDown()));
     connect(ui->actionVolumeUp, SIGNAL(triggered()), _osdMain, SLOT(volumeUp()));
 
@@ -432,7 +435,7 @@ void MainWindow::createConnections()
 
     connect(_osdMain, SIGNAL(teletextPage(int)), this, SLOT(teletext(int)));
     connect(_osdMain, SIGNAL(backClicked()), ui->actionBack, SLOT(trigger()));
-    connect(_osdMain, SIGNAL(muteClicked()), ui->actionMute, SLOT(trigger()));
+    connect(_osdMain, SIGNAL(muteClicked()), ui->actionMute, SLOT(toggle()));
     connect(_osdMain, SIGNAL(nextClicked()), ui->actionNext, SLOT(trigger()));
     connect(_osdMain, SIGNAL(playClicked()), ui->actionPlay, SLOT(trigger()));
     connect(_osdMain, SIGNAL(recordNowClicked(bool)), ui->actionRecordNow, SLOT(setChecked(bool)));
