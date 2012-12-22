@@ -42,6 +42,8 @@ OPTION(CUSTOM_SETTINGS "Custom settings" OFF)
 MESSAGE("Custom settings: ${CUSTOM_SETTINGS}")
 OPTION(CORE_ONLY "Build only Tano Core" OFF)
 MESSAGE("Build only Tano Core: ${CORE_ONLY}")
+OPTION(BUILD_QML "Build Tano QML" OFF)
+MESSAGE("Build Tano QML: ${BUILD_QML}")
 
 ###########
 # Version #
@@ -109,6 +111,10 @@ IF(MINGW)
     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-subsystem,windows")
 # Statically link with libgcc
     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++")
+ELSEIF(MSVC)
+    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nologo -Zc:wchar_t")
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -nologo -Zc:wchar_t -w34100 -w34189")
+    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /NOLOGO /DYNAMICBASE /NXCOMPAT /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
 ENDIF(MINGW)
 
 # Set MingW bin dir, if MingW present

@@ -81,7 +81,7 @@ SET(Tano_Qt5_Libs
 
 SET(Tano_Qt5_Platforms
     ${QT_PLUGINS_DIR}/platforms/qminimal.dll
-    ${QT_PLUGINS_DIR}/platforms/windows.dll
+    ${QT_PLUGINS_DIR}/platforms/qwindows.dll
 )
 
 SET(Tano_Qt4_ImageFormats

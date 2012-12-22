@@ -39,17 +39,25 @@ INCLUDE_DIRECTORIES(
 # Compile resources with windres
 IF(MINGW)
     ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/windows.obj
+        OUTPUT ${CMAKE_BINARY_DIR}/src/platform/windows/tano.obj
         COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_SOURCE_DIR}/src/windows.rc
-        -o ${CMAKE_BINARY_DIR}/src/windows.obj
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src"
+        -i ${CMAKE_SOURCE_DIR}/src/platform/windows/tano.rc
+        -o ${CMAKE_BINARY_DIR}/src/platform/windows/tano.obj
+        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src/platform/windows"
     )
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/windows.obj)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano.obj)
 ENDIF(MINGW)
 
+IF(MSVC)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_SOURCE_DIR}/src/platform/windows/tano.rc)
+ENDIF(MSVC)
+
 # This line tells cmake to create the Tano program.
-ADD_EXECUTABLE(tano ${Tano_Srcs} ${Tano_SingleApplication_Srcs})
+IF(MINGW OR MSVC)
+    ADD_EXECUTABLE(tano WIN32 ${Tano_Srcs} ${Tano_SingleApplication_Srcs})
+ELSE(MINGW OR MSVC)
+    ADD_EXECUTABLE(tano ${Tano_Srcs} ${Tano_SingleApplication_Srcs})
+ENDIF(MINGW OR MSVC)
 ADD_DEPENDENCIES(tano ${TANO_CORE} ${TANO_WIDGETS})
 
 # MSVC: Avoid Debug/Release/... subfolders

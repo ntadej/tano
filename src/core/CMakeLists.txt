@@ -90,13 +90,13 @@ SET(Tano_Core_Xmltv_Srcs
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     SET(Tano_Core_Platform_Srcs
-        platform/linux/Locations.cpp
+        ../platform/linux/Locations.cpp
     )
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 IF(MINGW OR MSVC)
     SET(Tano_Core_Platform_Srcs
-        platform/windows/Console.cpp
+        ../platform/windows/Console.cpp
     )
 ENDIF(MINGW OR MSVC)
 
@@ -157,9 +157,26 @@ ENDIF(WITH_QT5)
 # This needs to be added in order for #include to work inside .cpp files
 INCLUDE_DIRECTORIES(
     ${CMAKE_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/src/core
     ${CMAKE_BINARY_DIR}/src
 )
+
+# Compile resources with windres
+IF(MINGW)
+    ADD_CUSTOM_COMMAND(
+        OUTPUT ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.obj
+        COMMAND ${CMAKE_RC_COMPILER}
+        -i ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-core.rc
+        -o ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.obj
+        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src/platform/windows"
+    )
+    SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.obj)
+ENDIF(MINGW)
+
+IF(MSVC)
+    SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-core.rc)
+ENDIF(MSVC)
 
 # This line tells cmake to create the Tano program.
 ADD_LIBRARY(${TANO_CORE} SHARED ${Tano_Core_Srcs} ${Tano_Core_Resrcs_Srcs})

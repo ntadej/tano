@@ -169,6 +169,22 @@ INCLUDE_DIRECTORIES(
 # Include additional libraries
 INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
 
+# Compile resources with windres
+IF(MINGW)
+    ADD_CUSTOM_COMMAND(
+        OUTPUT ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.obj
+        COMMAND ${CMAKE_RC_COMPILER}
+        -i ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-widgets.rc
+        -o ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.obj
+        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src/platform/windows"
+    )
+    SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.obj)
+ENDIF(MINGW)
+
+IF(MSVC)
+    SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-widgets.rc)
+ENDIF(MSVC)
+
 # This line tells cmake to create the library.
 ADD_LIBRARY(${TANO_WIDGETS} SHARED ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
 

@@ -39,6 +39,10 @@ Compilation
     $ cmake .. -DCMAKE_INSTALL_PREFIX=prefix
     $ make
 
+To build with QML UI (Qt5 only) replace cmake command with
+
+    $ cmake .. -DCMAKE_INSTALL_PREFIX=prefix -DBUILD_QML=ON
+
 
 Installation
 ------------
