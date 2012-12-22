@@ -42,8 +42,7 @@ OPTION(CUSTOM_SETTINGS "Custom settings" OFF)
 MESSAGE("Custom settings: ${CUSTOM_SETTINGS}")
 OPTION(CORE_ONLY "Build only Tano Core" OFF)
 MESSAGE("Build only Tano Core: ${CORE_ONLY}")
-OPTION(BUILD_QML "Build Tano QML" OFF)
-MESSAGE("Build Tano QML: ${BUILD_QML}")
+
 
 ###########
 # Version #
@@ -126,14 +125,13 @@ ENDIF(MINGW)
 # Qt5 support
 OPTION(WITH_QT5 "Build with Qt5" OFF)
 MESSAGE("Build with Qt5: ${WITH_QT5}")
-
 IF(WITH_QT5)
-    # Qt5 dirs
-    INCLUDE(Qt5)
-    QT5_FIND_LIBRARY_DIR(QT_LIBRARY_DIR)
-
-    SET(Qt5LinguistTools_DIR "${QT_LIBRARY_DIR}/cmake/Qt5LinguistTools")
-    SET(Qt5Widgets_DIR "${QT_LIBRARY_DIR}/cmake/Qt5Widgets")
+    OPTION(WITH_QT_DUAL "System has Qt4 and Qt5 installed" OFF)
+    MESSAGE("System has Qt4 and Qt5 installed: ${WITH_QT_DUAL}")
+    IF(NOT CORE_ONLY)
+        OPTION(BUILD_QML "Build Tano QML" OFF)
+        MESSAGE("Build Tano QML: ${BUILD_QML}")
+    ENDIF(NOT CORE_ONLY)
 ENDIF(WITH_QT5)
 
 # Search for Qt and other libraries
@@ -155,6 +153,11 @@ IF(WITH_QT5)
     ENDIF(Qt5_POSITION_INDEPENDENT_CODE)
 
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
+
+    IF(WITH_QT_DUAL)
+        SET(QT_MOC_EXECUTABLE "${QT_MOC_EXECUTABLE}-qt5")
+        STRING(REGEX REPLACE "moc" "uic" Qt5Widgets_UIC_EXECUTABLE "${QT_MOC_EXECUTABLE}")
+    ENDIF(WITH_QT_DUAL)
 ELSE(WITH_QT5)
     FIND_PACKAGE(Qt4 REQUIRED)
 

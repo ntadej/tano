@@ -42,12 +42,12 @@ ENDIF(NOT Qt5_LUPDATE_EXECUTABLE)
 IF(REFRESH_TRANSLATIONS)
     IF(LUPDATE_Qt4 AND LUPDATE_Qt5)
         MESSAGE(WARNING "Tano could not find lupdate. You won't be able to update translations.")
-    ENDIF(NOT QT_LUPDATE_EXECUTABLE)
+    ENDIF(LUPDATE_Qt4 AND LUPDATE_Qt5)
 ENDIF(REFRESH_TRANSLATIONS)
 
 IF(LRELEASE_Qt4 AND LRELEASE_Qt5)
     MESSAGE(WARNING "Tano could not find lrelease. Your build won't contain translations.")
-ENDIF()
+ENDIF(LRELEASE_Qt4 AND LRELEASE_Qt5)
 
 ## Collect all translations files
 FILE(GLOB Tano_TS ${CMAKE_SOURCE_DIR}/lang/*.ts)

@@ -683,13 +683,17 @@ This will stop recording in progress.</source>
     <name>NetworkDownload</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne peut écrire le fichier %1:
 %2.</translation>
+    </message>
+    <message>
+        <source>Error:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1571,7 +1575,7 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>New channel</source>
@@ -1896,6 +1900,14 @@ Vous perdrez tous les changements non sauvegardés.</translation>
     <message>
         <source>Radio</source>
         <translation type="obsolete">Radio</translation>
+    </message>
+    <message>
+        <source>Error:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parse error at line %1, column %2: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

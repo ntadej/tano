@@ -536,12 +536,12 @@ This will stop recording in progress.</source>
 <context>
     <name>NetworkDownload</name>
     <message>
-        <source>Tano</source>
+        <source>Cannot write file %1:
+%2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cannot write file %1:
-%2.</source>
+        <source>Error:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1077,10 +1077,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>New channel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1336,6 +1332,14 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Set video output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parse error at line %1, column %2: %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

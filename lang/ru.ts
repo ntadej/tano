@@ -565,13 +565,17 @@ This will stop recording in progress.</source>
     <name>NetworkDownload</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Невозможно записать файл %1:
 %2.</translation>
+    </message>
+    <message>
+        <source>Error:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1131,7 +1135,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>New channel</source>
@@ -1431,6 +1435,14 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parse error at line %1, column %2: %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
