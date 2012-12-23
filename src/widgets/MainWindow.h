@@ -175,6 +175,7 @@ private:
     bool _dockControlsVisible;
     bool _dockInfoVisible;
     bool _isLite;
+    bool _liteMenu;
     bool _liteToolbar;
     bool _osdEnabled;
     bool _infoEnabled;

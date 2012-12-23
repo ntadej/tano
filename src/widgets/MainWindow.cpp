@@ -616,6 +616,8 @@ void MainWindow::createShortcuts()
              << _menuScale->actionNext()
              << _menuDeinterlacing->actionNext();
 
+    addActions(_actions);
+
     _shortcuts = new DesktopShortcuts(_actions, this);
 
     qDebug() << "Initialised: Shortcuts";
@@ -1020,14 +1022,17 @@ void MainWindow::top()
 void MainWindow::lite()
 {
     if (_isLite) {
+        ui->menubar->setVisible(_liteMenu);
         ui->toolBar->setVisible(_liteToolbar);
         ui->dockInfo->setVisible(_dockInfoVisible);
         ui->dockControls->setVisible(_dockControlsVisible);
     } else {
+        _liteMenu = ui->menubar->isVisible();
         _liteToolbar = ui->toolBar->isVisible();
         _dockInfoVisible = ui->dockInfo->isVisible();
         _dockControlsVisible = ui->dockControls->isVisible();
 
+        ui->menubar->setVisible(false);
         ui->dockInfo->setVisible(false);
         ui->toolBar->setVisible(false);
         ui->dockControls->setVisible(false);
