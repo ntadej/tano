@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include <QtGui/QDesktopServices>
+#include <QtGui/QMouseEvent>
 
 #include <QDebug>
 
@@ -128,6 +129,8 @@ MainWindow::MainWindow(Arguments *args)
     createShortcuts();
     createConnections();
     createSession();
+
+    qApp->installEventFilter(this);
 }
 
 MainWindow::~MainWindow()
@@ -165,6 +168,65 @@ void MainWindow::exit()
     }
 }
 
+bool MainWindow::eventFilter(QObject *obj,
+                             QEvent *event)
+{
+    if (obj == this && event->type() == QEvent::Hide) {
+        qDebug() << "Event:" << "Hide";
+        _dockControlsVisible = ui->dockControls->isVisible();
+        _dockInfoVisible = ui->dockInfo->isVisible();
+
+        if (_muteOnMinimize) {
+            _muteOnMinimizeCurrent = ui->actionMute->isChecked();
+            ui->actionMute->setChecked(true);
+        }
+    } else if (obj == this && event->type() == QEvent::Show) {
+        qDebug() << "Event:" << "Show";
+        if (_rememberGui && _posX && _posY) {
+            move(_posX, _posY);
+            _posX = 0;
+            _posY = 0;
+        }
+
+        ui->dockControls->setVisible(_dockControlsVisible);
+        ui->dockInfo->setVisible(_dockInfoVisible);
+
+        if (_muteOnMinimize) {
+            ui->actionMute->setChecked(_muteOnMinimizeCurrent);
+        }
+    } else if (event->type() == QEvent::MouseMove && ui->actionFullscreen->isChecked()) {
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+        showOsd(mouseEvent->globalPos());
+    } else if (obj == ui->videoWidget && event->type() == QEvent::MouseButtonDblClick) {
+        qDebug() << "Event:" << "Double click";
+        ui->actionFullscreen->trigger();
+    } else if (obj == ui->videoWidget && event->type() == QEvent::MouseButtonPress) {
+        qDebug() << "Event:" << "Click";
+        QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+        switch (mouseEvent->button())
+        {
+        case Qt::RightButton:
+            _rightMenu->exec(mouseEvent->globalPos());
+            break;
+        case Qt::LeftButton:
+        case Qt::NoButton:
+        default:
+            break;
+        }
+    } else if (obj == ui->videoWidget && event->type() == QEvent::Wheel) {
+        qDebug() << "Event:" << "Wheel";
+        QWheelEvent *wheelEvent = static_cast<QWheelEvent*>(event);
+        bool wheel = wheelEvent->delta() > 0;
+        if (_wheelType == "volume") {
+            _osdMain->volumeSlider()->volumeControl(wheel);
+        } else {
+            _select->channel(wheel);
+        }
+    }
+
+    return false;
+}
+
 void MainWindow::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
@@ -180,37 +242,9 @@ void MainWindow::changeEvent(QEvent *e)
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     if (_hideToTray) {
+        qDebug() << "Event:" << "Close";
         tray();
         event->ignore();
-    }
-}
-void MainWindow::hideEvent(QHideEvent *event)
-{
-    Q_UNUSED(event)
-
-    _dockControlsVisible = ui->dockControls->isVisible();
-    _dockInfoVisible = ui->dockInfo->isVisible();
-
-    if (_muteOnMinimize) {
-        _muteOnMinimizeCurrent = ui->actionMute->isChecked();
-        ui->actionMute->setChecked(true);
-    }
-}
-void MainWindow::showEvent(QShowEvent *event)
-{
-    Q_UNUSED(event)
-
-    if (_rememberGui && _posX && _posY) {
-        move(_posX, _posY);
-        _posX = 0;
-        _posY = 0;
-    }
-
-    ui->dockControls->setVisible(_dockControlsVisible);
-    ui->dockInfo->setVisible(_dockInfoVisible);
-
-    if (_muteOnMinimize) {
-        ui->actionMute->setChecked(_muteOnMinimizeCurrent);
     }
 }
 
@@ -300,7 +334,6 @@ void MainWindow::createSettings()
     _osdEnabled = settings->osd();
     _infoEnabled = settings->info();
     _wheelType = settings->mouseWheel();
-    mouseWheel();
     _rememberGui = settings->rememberGuiSession();
     _filter = settings->filtersVisible();
     if (_init)
@@ -415,10 +448,6 @@ void MainWindow::createConnections()
     connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
     connect(ui->actionTray, SIGNAL(triggered()), this, SLOT(tray()));
 
-    connect(ui->videoWidget, SIGNAL(rightClick(QPoint)), this, SLOT(showRightMenu(QPoint)));
-    connect(ui->videoWidget, SIGNAL(mouseShow(QPoint)), this, SLOT(showOsd(QPoint)));
-    connect(ui->videoWidget, SIGNAL(mouseHide()), this, SLOT(toggleOsdControls()));
-    connect(ui->videoWidget, SIGNAL(mouseHide()), this, SLOT(toggleOsdInfo()));
     connect(ui->actionFullscreen, SIGNAL(triggered(bool)), this, SLOT(toggleFullscreen(bool)));
 
     connect(ui->actionMute, SIGNAL(toggled(bool)), _osdMain, SLOT(mute(bool)));
@@ -470,9 +499,6 @@ void MainWindow::createConnections()
 #endif
 
     connect(_file, SIGNAL(file(QString)), _osdMain, SLOT(setLogo(QString)));
-
-    connect(_rightMenu, SIGNAL(aboutToHide()), ui->videoWidget, SLOT(enableMouseHide()));
-    connect(_rightMenu, SIGNAL(aboutToShow()), ui->videoWidget, SLOT(disableMouseHide()));
 
     connect(_audioController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackAudio, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
     connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackSubtitles, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
@@ -663,21 +689,6 @@ void MainWindow::writeSession()
     settings->writeSettings();
 
     qDebug() << "Session written";
-}
-
-void MainWindow::mouseWheel()
-{
-    if (_wheelType == "volume") {
-        if (_select)
-            disconnect(ui->videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
-        if (_osdMain)
-            connect(ui->videoWidget, SIGNAL(wheel(bool)), _osdMain->volumeSlider(), SLOT(volumeControl(bool)));
-    } else {
-        if (_osdMain)
-            disconnect(ui->videoWidget, SIGNAL(wheel(bool)), _osdMain->volumeSlider(), SLOT(volumeControl(bool)));
-        if (_select)
-            connect(ui->videoWidget, SIGNAL(wheel(bool)), _select, SLOT(channel(bool)));
-    }
 }
 
 void MainWindow::aboutTano()
@@ -912,7 +923,6 @@ void MainWindow::openPlaylist(const bool &start)
     connect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
     connect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
     connect(_select, SIGNAL(channelSelect(int)), ui->playlistWidget, SLOT(channelSelected(int)));
-    mouseWheel();
 
     ui->labelPlaylistName->setText("<b>" + _model->name() + "</b>");
 
@@ -995,11 +1005,6 @@ void MainWindow::showOpenMenu()
     ui->actionOpenToolbar->menu()->exec(QCursor::pos());
 }
 
-void MainWindow::showRightMenu(const QPoint &pos)
-{
-    _rightMenu->exec(pos);
-}
-
 void MainWindow::top()
 {
     Qt::WindowFlags top = _flags;
@@ -1046,26 +1051,16 @@ void MainWindow::tray()
 
 void MainWindow::showOsd(const QPoint &pos)
 {
-    if (_osdEnabled && pos.y() > QApplication::desktop()->height()-200) {
+    if (_osdEnabled && pos.y() > QApplication::desktop()->height()-100) {
         toggleOsdControls(true);
+    } else {
+        toggleOsdControls(false);
     }
 
     if (_infoEnabled && pos.x() > QApplication::desktop()->width()-_osdInfo->width()-50) {
         toggleOsdInfo(true);
-    }
-
-    if ((pos.x()-25 < _osdFloat->pos().x()+_osdFloat->width()) &&
-       (pos.x()+25 > _osdFloat->pos().x()) &&
-       (pos.y()-25 < _osdFloat->pos().y()+_osdFloat->height()) &&
-       (pos.y()+25 > _osdFloat->pos().y()) && _osdFloat->isVisible() && _osdFloat->windowOpacity()) {
-        ui->videoWidget->disableMouseHide();
-    } else if ((pos.x()-25 < _osdInfo->pos().x()+_osdInfo->width()) &&
-               (pos.x()+25 > _osdInfo->pos().x()) &&
-               (pos.y()-25 < _osdInfo->pos().y()+_osdInfo->height()) &&
-               (pos.y()+25 > _osdInfo->pos().y()) && _osdInfo->isVisible() && _osdInfo->windowOpacity()) {
-        ui->videoWidget->disableMouseHide();
     } else {
-        ui->videoWidget->enableMouseHide();
+        toggleOsdInfo(false);
     }
 }
 
@@ -1139,8 +1134,15 @@ void MainWindow::toggleFullscreen(const bool &enabled)
 {
     _osdInfo->setVisible(enabled);
     _osdFloat->setVisible(enabled);
+    ui->actionLite->setDisabled(enabled);
+    ui->actionTop->setDisabled(enabled);
 
     if (enabled) {
+        if (!ui->actionLite->isChecked())
+            lite();
+
+        setWindowState(windowState() | Qt::WindowFullScreen);
+
         ui->buttonPlaylistClose->hide();
         ui->buttonScheduleClose->hide();
 
@@ -1154,6 +1156,11 @@ void MainWindow::toggleFullscreen(const bool &enabled)
 
         ui->dockContents->layout()->addWidget(ui->stackedWidgetDock);
         ui->dockControlsContents->layout()->addWidget(_osdMain);
+
+        setWindowState(windowState() & ~Qt::WindowFullScreen);
+
+        if (!ui->actionLite->isChecked())
+            lite();
     }
 
     toggleFilters(enabled);

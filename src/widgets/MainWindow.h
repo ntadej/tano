@@ -21,8 +21,6 @@
 
 #include <QtCore/QTimer>
 #include <QtGui/QCloseEvent>
-#include <QtGui/QHideEvent>
-#include <QtGui/QShowEvent>
 
 #if defined(Qt5)
     #include <QtWidgets/QMainWindow>
@@ -84,8 +82,8 @@ public:
 protected:
     void changeEvent(QEvent *e);
     void closeEvent(QCloseEvent *event);
-    void hideEvent(QHideEvent *event);
-    void showEvent(QShowEvent *event);
+    bool eventFilter(QObject *obj,
+                     QEvent *event);
 
 private slots:
     void exit();
@@ -114,7 +112,6 @@ private slots:
 
     void tooltip(const QString &channelNow = "stop");
     void showOpenMenu();
-    void showRightMenu(const QPoint &pos);
     void top();
     void lite();
     void tray();
@@ -155,7 +152,6 @@ private:
     void createDesktopStartup();
     void createSession();
     void createShortcuts();
-    void mouseWheel();
     void writeSession();
 
     // Functions

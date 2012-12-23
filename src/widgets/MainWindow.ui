@@ -832,38 +832,5 @@
   <include location="../../data/logo/logo.qrc"/>
   <include location="../../data/misc/misc.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>actionFullscreen</sender>
-   <signal>triggered()</signal>
-   <receiver>videoWidget</receiver>
-   <slot>toggleFullscreen()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>318</x>
-     <y>283</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>videoWidget</sender>
-   <signal>fullscreen()</signal>
-   <receiver>actionFullscreen</receiver>
-   <slot>trigger()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>318</x>
-     <y>283</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
