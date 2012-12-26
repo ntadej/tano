@@ -36,7 +36,7 @@ OsdWidget::OsdWidget(QWidget *parent)
     connect(ui->buttonMute, SIGNAL(clicked()), this, SIGNAL(muteClicked()));
     connect(ui->buttonNext, SIGNAL(clicked()), this, SIGNAL(nextClicked()));
     connect(ui->buttonPlay, SIGNAL(clicked()), this, SIGNAL(playClicked()));
-    connect(ui->buttonRecordNow, SIGNAL(toggled(bool)), this, SIGNAL(recordNowClicked(bool)));
+    connect(ui->buttonRecordNow, SIGNAL(clicked()), this, SIGNAL(recordNowClicked()));
     connect(ui->buttonSnapshot, SIGNAL(clicked()), this, SIGNAL(snapshotClicked()));
     connect(ui->buttonStop, SIGNAL(clicked()), this, SIGNAL(stopClicked()));
     connect(ui->buttonTeletext, SIGNAL(clicked()), this, SIGNAL(teletextClicked()));

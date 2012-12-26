@@ -467,7 +467,7 @@ void MainWindow::createConnections()
     connect(_osdMain, SIGNAL(muteClicked()), ui->actionMute, SLOT(toggle()));
     connect(_osdMain, SIGNAL(nextClicked()), ui->actionNext, SLOT(trigger()));
     connect(_osdMain, SIGNAL(playClicked()), ui->actionPlay, SLOT(trigger()));
-    connect(_osdMain, SIGNAL(recordNowClicked(bool)), ui->actionRecordNow, SLOT(setChecked(bool)));
+    connect(_osdMain, SIGNAL(recordNowClicked()), ui->actionRecordNow, SLOT(trigger()));
     connect(_osdMain, SIGNAL(snapshotClicked()), ui->actionSnapshot, SLOT(trigger()));
     connect(_osdMain, SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
 
@@ -1089,6 +1089,7 @@ void MainWindow::showVideo(const int &count)
     ui->actionSnapshot->setEnabled(count);
 
     _osdMain->setVideoState(count);
+    _osdMain->setQuickRecordChecked(ui->actionRecordNow->isChecked());
 }
 
 void MainWindow::teletext(const bool &enabled)
@@ -1218,8 +1219,6 @@ void MainWindow::preview(const bool &enabled)
 // Recorder
 void MainWindow::recordNow(const bool &start)
 {
-    _osdMain->setQuickRecordChecked(start);
-
     if (!start) {
         QString media = _mediaItem->currentLocation();
         _recording->setEndTime(QTime::currentTime());
@@ -1238,8 +1237,9 @@ void MainWindow::recordNow(const bool &start)
         _recording->setStartTime(QTime::currentTime());
         _recording->setState(Timer::Recording);
         _mediaPlayer->stop();
-        _recording->setFile(_mediaItem->duplicate(Tano::recordingFileName(tr("Quick"), _channel->name(), _recording->date(), _recording->startTime()), ui->recorder->directory(), Vlc::TS));
+        _recording->setFile(_mediaItem->duplicate(Tano::recordingFileName(tr("Instant"), _channel->name(), _recording->date(), _recording->startTime()), ui->recorder->directory(), Vlc::TS));
         _mediaPlayer->play();
+        showVideo(1);
     }
 
     _recordNow = start;

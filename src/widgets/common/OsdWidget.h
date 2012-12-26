@@ -70,7 +70,7 @@ signals:
     void muteClicked();
     void nextClicked();
     void playClicked();
-    void recordNowClicked(const bool &);
+    void recordNowClicked();
     void snapshotClicked();
     void stopClicked();
     void teletextClicked();

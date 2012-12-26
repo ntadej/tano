@@ -115,7 +115,7 @@ bool Recorder::isRecording() const
 Timer *Recorder::newInstantTimer(const QString &channel,
                                  const QString &url)
 {
-    Timer *timer = _model->createTimer(tr("Quick %1").arg(channel), channel, url, Timer::Instant);
+    Timer *timer = _model->createTimer(tr("Instant %1").arg(channel), channel, url, Timer::Instant);
 
     return timer;
 }
