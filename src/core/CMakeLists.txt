@@ -75,6 +75,7 @@ SET(Tano_Core_Xmltv_Srcs
     xmltv/XmltvGenerator.cpp
     xmltv/XmltvHandler.cpp
     xmltv/XmltvManager.cpp
+    xmltv/XmltvMapCategories.cpp
     xmltv/XmltvSystem.cpp
     xmltv/containers/XmltvChannel.cpp
     xmltv/containers/XmltvCrewMember.cpp

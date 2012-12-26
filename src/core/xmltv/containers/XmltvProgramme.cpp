@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "xmltv/XmltvMapCategories.h"
 #include "xmltv/containers/XmltvCrewMember.h"
 #include "xmltv/models/XmltvCrewModel.h"
 
@@ -182,8 +183,14 @@ void XmltvProgramme::setDate(const QDateTime &d)
 
 void XmltvProgramme::addCategory(const QString &s)
 {
-    if (!_categories.contains(s)) {
-        _categories << s;
+    QString cat;
+    if (!Tano::Xmltv::mapCategory(s).isEmpty())
+        cat = Tano::Xmltv::mapCategory(s);
+    else
+        cat = s;
+
+    if (!_categories.contains(cat)) {
+        _categories << cat;
         emit dataChanged();
     }
 }
