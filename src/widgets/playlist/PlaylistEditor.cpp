@@ -189,7 +189,7 @@ void PlaylistEditor::open(const QString &playlist,
 
     QFile f(file.path);
     if (!f.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano"),
+        QMessageBox::warning(this, tr("Editor"),
                             tr("Cannot read file %1:\n%2.")
                             .arg(file.path)
                             .arg(f.errorString()));
@@ -294,7 +294,7 @@ void PlaylistEditor::save()
 
     QFile f(file.path);
     if (!f.open(QFile::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano"),
+        QMessageBox::warning(this, tr("Editor"),
                             tr("Cannot write file %1:\n%2.")
                             .arg(file.path)
                             .arg(f.errorString()));
@@ -451,7 +451,7 @@ void PlaylistEditor::mapXmltv()
 void PlaylistEditor::autoMapXmltv()
 {
     if (_map.keys().isEmpty()) {
-        QMessageBox::warning(this, tr("Tano"),
+        QMessageBox::warning(this, tr("Editor"),
                             tr("Please wait for XMLTV file to parse."));
         return;
     }
@@ -493,7 +493,7 @@ void PlaylistEditor::editChannelNumber()
     if (text.toInt() != ui->playlist->currentChannel()->number())
         _model->processNumber(ui->playlist->currentChannel(), text.toInt());
     else
-        QMessageBox::warning(this, tr("Tano"),
+        QMessageBox::warning(this, tr("Editor"),
                             tr("A channel with this number already exists!"));
     ui->editNumber->setValue(ui->playlist->currentChannel()->number());
 }

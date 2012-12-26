@@ -76,6 +76,7 @@ bool SettingsUi::tray() const
 void SettingsUi::setTray(const bool &enabled)
 {
     ui->checkTray->setChecked(enabled);
+    ui->checkTrayHide->setEnabled(enabled);
 }
 
 bool SettingsUi::trayHide() const
