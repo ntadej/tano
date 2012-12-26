@@ -48,6 +48,7 @@ public slots:
     void newPlaylist();
     void open(const QString &playlist = 0,
               const bool &refresh = false);
+    void setXmltvMap(const QHash<QString, QString> &map);
 
 protected:
     void changeEvent(QEvent *e);
@@ -88,9 +89,13 @@ private slots:
 
     void scan(const bool &status);
 
+    void autoMapXmltv();
+
 private:
     void createConnections();
     void createSettings();
+
+    void mapXmltv();
 
     Ui::PlaylistEditor *ui;
 
@@ -98,6 +103,8 @@ private:
 
     bool _closeEnabled;
     QMenu *_menuExport;
+
+    QHash<QString, QString> _map;
 };
 
 #endif // TANO_PLAYLISTEDITOR_H_

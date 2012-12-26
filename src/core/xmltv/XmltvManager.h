@@ -48,6 +48,7 @@ public:
 
     void loadXmltv();
     void loadXmltv(const QString &file);
+    QHash<QString, QString> channels() const;
 
 public slots:
     void request(const QString &id,
@@ -60,6 +61,7 @@ public slots:
     void stop();
 
 signals:
+    void channelsChanged(const QHash<QString, QString> &);
     void current(const QString &current,
                  const QString &next);
     void schedule(XmltvProgrammeModel *,

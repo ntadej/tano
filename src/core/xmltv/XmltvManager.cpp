@@ -58,6 +58,14 @@ XmltvManager::~XmltvManager()
     delete _watcher;
 }
 
+QHash<QString, QString> XmltvManager::channels() const
+{
+    if (_xmltv)
+        return _xmltv->channels()->map();
+    else
+        return QHash<QString, QString>();
+}
+
 void XmltvManager::current()
 {
     if (_xmltv->channels()->find(_currentXmltvId)->programme()->rowCount() < 2)
@@ -127,6 +135,8 @@ void XmltvManager::loadXmltvFinish()
 
     _xmltv = _handler->list();
     _loading = false;
+
+    emit channelsChanged(channels());
 
     request(_currentXmltvId, _currentIdentifier);
 }

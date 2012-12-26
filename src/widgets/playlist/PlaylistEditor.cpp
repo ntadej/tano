@@ -46,7 +46,8 @@
 PlaylistEditor::PlaylistEditor(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::PlaylistEditor),
-      _closeEnabled(false)
+      _closeEnabled(false),
+      _map(QHash<QString, QString>())
 {
     ui->setupUi(this);
     ui->editWidget->setEnabled(false);
@@ -116,6 +117,7 @@ void PlaylistEditor::createConnections()
     connect(ui->actionExportTvheadend, SIGNAL(triggered()), this, SLOT(exportTvheadend()));
     connect(ui->actionExportXmltvId, SIGNAL(triggered()), this, SLOT(exportXmltvId()));
     connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
+    connect(ui->actionAutoXmltv, SIGNAL(triggered()), this, SLOT(autoMapXmltv()));
 
     connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(setTitle(QString)));
 
@@ -257,7 +259,7 @@ void PlaylistEditor::deleteItem()
     ui->editUrl->setText("");
     ui->editCategories->setText("");
     ui->editLanguage->setText("");
-    ui->editXmltvId->setText("");
+    ui->editXmltvId->setCurrentIndex(0);
     ui->editLogo->setText("");
 
     ui->editWidget->setEnabled(false);
@@ -390,12 +392,72 @@ void PlaylistEditor::setMediaInstance(VlcInstance *instance)
     ui->scan->setMediaInstance(instance);
 }
 
+void PlaylistEditor::setXmltvMap(const QHash<QString, QString> &map)
+{
+    ui->editXmltvId->clear();
+
+    QStringList values = map.values();
+    values.sort();
+
+    ui->editXmltvId->addItem("");
+    ui->editXmltvId->addItems(values);
+    ui->editXmltvId->addItem(tr("Other"));
+
+    _map = map;
+}
+
 void PlaylistEditor::scan(const bool &status)
 {
     if (status) {
         ui->playlist->setEnabled(false);
     } else {
         ui->playlist->setEnabled(true);
+    }
+}
+
+void PlaylistEditor::mapXmltv()
+{
+    ui->editXmltvId->setItemText(ui->editXmltvId->count() - 1, tr("Other"));
+
+    QString newId;
+    QString id = ui->playlist->currentChannel()->xmltvId();
+    QString name = ui->playlist->currentChannel()->name();
+
+    if (!id.isEmpty() && _map.values().contains(id)) {
+        newId = id;
+    } else if (!id.isEmpty() && _map.values().isEmpty()) {
+        newId = id;
+    } else {
+        QStringList keys = _map.keys();
+        keys = keys.filter(name, Qt::CaseInsensitive);
+        if (!keys.isEmpty()) {
+            newId = _map[keys[0]];
+        } else {
+            newId = id;
+        }
+    }
+
+    for (int i = 0; i < ui->editXmltvId->count(); i++) {
+        if (ui->editXmltvId->itemText(i) == newId) {
+            ui->editXmltvId->setCurrentIndex(i);
+            break;
+        } else if (i == ui->editXmltvId->count() - 1) {
+            ui->editXmltvId->setItemText(i, newId);
+            ui->editXmltvId->setCurrentIndex(i);
+        }
+    }
+}
+
+void PlaylistEditor::autoMapXmltv()
+{
+    if (_map.keys().isEmpty()) {
+        QMessageBox::warning(this, tr("Tano"),
+                            tr("Please wait for XMLTV file to parse."));
+        return;
+    }
+
+    for (int i = 0; i < _model->rowCount(); i++) {
+        editItem(_model->row(i));
     }
 }
 
@@ -406,6 +468,9 @@ void PlaylistEditor::editItem(Channel *channel)
         return;
     }
 
+    if (ui->playlist->currentChannel() != channel)
+        ui->playlist->channelSelected(channel);
+
     if (!ui->editWidget->isEnabled())
         ui->editWidget->setEnabled(true);
 
@@ -415,8 +480,8 @@ void PlaylistEditor::editItem(Channel *channel)
     ui->editUrl->setText(channel->url());
     ui->editCategories->setText(channel->categories().join(","));
     ui->editLanguage->setText(channel->language());
-    ui->editXmltvId->setText(channel->xmltvId());
     ui->editLogo->setText(channel->logo());
+    mapXmltv();
 }
 
 void PlaylistEditor::editChannelNumber()

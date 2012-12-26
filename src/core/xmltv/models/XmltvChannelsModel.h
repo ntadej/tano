@@ -33,6 +33,13 @@ public:
     XmltvChannel *find(const QString &id) const;
     XmltvChannel *row(const int &row);
     XmltvChannel *takeRow(const int &row);
+
+    void addMap(const QString &id,
+                const QString &displayName);
+    inline QHash<QString, QString> map() const { return _map; }
+
+private:
+    QHash<QString, QString> _map;
 };
 
 #endif // TANO_XMLTVCHANNELSMODEL_H_

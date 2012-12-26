@@ -95,6 +95,7 @@
    <addaction name="actionUp"/>
    <addaction name="actionDown"/>
    <addaction name="separator"/>
+   <addaction name="actionAutoXmltv"/>
    <addaction name="actionHelp"/>
    <addaction name="actionClose"/>
   </widget>
@@ -108,7 +109,7 @@
    <property name="minimumSize">
     <size>
      <width>300</width>
-     <height>264</height>
+     <height>286</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -136,41 +137,7 @@
    </attribute>
    <widget class="QWidget" name="editWidgetContents">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="7" column="0">
-      <widget class="QLabel" name="labelXmltvId">
-       <property name="text">
-        <string>XMLTV ID:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="labelNumber">
-       <property name="text">
-        <string>Number:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="labelUrl">
-       <property name="text">
-        <string>Url:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1" colspan="6">
-      <widget class="QLineEdit" name="editCategories"/>
-     </item>
-     <item row="2" column="1" colspan="6">
-      <widget class="QLineEdit" name="editChannelName"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="labelChannelName">
-       <property name="text">
-        <string>Name:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
+     <item row="0" column="2">
       <widget class="QPushButton" name="buttonApplyNum">
        <property name="minimumSize">
         <size>
@@ -197,15 +164,6 @@
        </property>
       </widget>
      </item>
-     <item row="7" column="1" colspan="6">
-      <widget class="QLineEdit" name="editXmltvId"/>
-     </item>
-     <item row="3" column="1" colspan="6">
-      <widget class="QLineEdit" name="editUrl"/>
-     </item>
-     <item row="6" column="1" colspan="6">
-      <widget class="QLineEdit" name="editLanguage"/>
-     </item>
      <item row="1" column="1">
       <widget class="QComboBox" name="editType">
        <property name="maxVisibleItems">
@@ -231,23 +189,43 @@
        </item>
       </widget>
      </item>
-     <item row="10" column="0" colspan="7">
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="labelLanguage">
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelNumber">
        <property name="text">
-        <string>Language:</string>
+        <string>Number:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1" colspan="4">
+      <widget class="QLineEdit" name="editLogo"/>
+     </item>
+     <item row="6" column="1" colspan="4">
+      <widget class="QLineEdit" name="editLanguage"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="editNumber">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>999</number>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="labelCategories">
+       <property name="text">
+        <string>Categories:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" colspan="4">
+      <widget class="QLineEdit" name="editUrl"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelChannelName">
+       <property name="text">
+        <string>Name:</string>
        </property>
       </widget>
      </item>
@@ -258,10 +236,31 @@
        </property>
       </widget>
      </item>
-     <item row="8" column="1" colspan="6">
-      <widget class="QLineEdit" name="editLogo"/>
+     <item row="2" column="1" colspan="4">
+      <widget class="QLineEdit" name="editChannelName"/>
      </item>
-     <item row="0" column="4">
+     <item row="7" column="0">
+      <widget class="QLabel" name="labelXmltvId">
+       <property name="text">
+        <string>XMLTV ID:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="labelUrl">
+       <property name="text">
+        <string>Url:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="labelLanguage">
+       <property name="text">
+        <string>Language:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -274,13 +273,6 @@
        </property>
       </spacer>
      </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="labelCategories">
-       <property name="text">
-        <string>Categories:</string>
-       </property>
-      </widget>
-     </item>
      <item row="8" column="0">
       <widget class="QLabel" name="labelLogo">
        <property name="text">
@@ -288,14 +280,37 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QSpinBox" name="editNumber">
-       <property name="minimum">
-        <number>1</number>
+     <item row="10" column="0" colspan="5">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
-       <property name="maximum">
-        <number>999</number>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
        </property>
+      </spacer>
+     </item>
+     <item row="4" column="1" colspan="4">
+      <widget class="QLineEdit" name="editCategories"/>
+     </item>
+     <item row="7" column="1" colspan="4">
+      <widget class="QComboBox" name="editXmltvId">
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string notr="true"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Other</string>
+        </property>
+       </item>
       </widget>
      </item>
     </layout>
@@ -506,6 +521,14 @@
    </property>
    <property name="text">
     <string>Help</string>
+   </property>
+  </action>
+  <action name="actionAutoXmltv">
+   <property name="icon">
+    <iconset theme="x-office-calendar"/>
+   </property>
+   <property name="text">
+    <string>Auto XMLTV map</string>
    </property>
   </action>
  </widget>

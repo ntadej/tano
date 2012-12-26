@@ -980,15 +980,19 @@ void MainWindow::showPlaylistEditor()
         if (_playlistEditor->isVisible()) {
             _playlistEditor->activateWindow();
         } else {
+            disconnect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _playlistEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
             delete _playlistEditor;
             _playlistEditor = new PlaylistEditor(this);
             _playlistEditor->setMediaInstance(_mediaInstance);
+            _playlistEditor->setXmltvMap(_xmltv->channels());
             _playlistEditor->open(_playlistName);
             _playlistEditor->show();
         }
     } else {
         _playlistEditor = new PlaylistEditor(this);
         _playlistEditor->setMediaInstance(_mediaInstance);
+        connect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _playlistEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
+        _playlistEditor->setXmltvMap(_xmltv->channels());
         _playlistEditor->open(_playlistName);
         _playlistEditor->show();
     }

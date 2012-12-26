@@ -38,3 +38,9 @@ XmltvChannel *XmltvChannelsModel::takeRow(const int &row)
 {
     return qobject_cast<XmltvChannel *>(ListModel::takeRow(row));
 }
+
+void XmltvChannelsModel::addMap(const QString &id,
+                                const QString &displayName)
+{
+    _map[id] = displayName;
+}

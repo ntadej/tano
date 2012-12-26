@@ -104,6 +104,7 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
     } else if(qName == "display-name") {
         if(_list && _currentChannel) {
             _currentChannel->setDisplayName(_currentText);
+            _list->channels()->addMap(_currentText, _currentChannel->id());
         }
     } else if(qName == "url") {
         if(_list && _currentChannel) {
