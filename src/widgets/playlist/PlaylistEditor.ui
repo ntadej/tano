@@ -524,6 +524,18 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>editName</tabstop>
+  <tabstop>editNumber</tabstop>
+  <tabstop>buttonApplyNum</tabstop>
+  <tabstop>editType</tabstop>
+  <tabstop>editChannelName</tabstop>
+  <tabstop>editUrl</tabstop>
+  <tabstop>editCategories</tabstop>
+  <tabstop>editLanguage</tabstop>
+  <tabstop>editXmltvId</tabstop>
+  <tabstop>editLogo</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

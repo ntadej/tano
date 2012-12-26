@@ -14,7 +14,9 @@
    <string>Print</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="document-print"/>
+   <iconset theme="document-print">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -114,6 +116,17 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>checkNum</tabstop>
+  <tabstop>checkName</tabstop>
+  <tabstop>checkType</tabstop>
+  <tabstop>checkUrl</tabstop>
+  <tabstop>checkCategories</tabstop>
+  <tabstop>checkLanguage</tabstop>
+  <tabstop>checkEpg</tabstop>
+  <tabstop>checkLogo</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

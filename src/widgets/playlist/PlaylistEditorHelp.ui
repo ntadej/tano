@@ -14,7 +14,9 @@
    <string>Tano Editor - Help</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="help-browser"/>
+   <iconset theme="help-browser">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -34,7 +36,7 @@
         <x>0</x>
         <y>0</y>
         <width>575</width>
-        <height>419</height>
+        <height>457</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -98,6 +100,16 @@
         <widget class="QLabel" name="labelEditContent2">
          <property name="text">
           <string>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelEditContent3">
+         <property name="text">
+          <string>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>

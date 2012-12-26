@@ -14,7 +14,9 @@
    <string>New recording</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="media-record"/>
+   <iconset theme="media-record">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -55,7 +57,9 @@
            <string>Record</string>
           </property>
           <property name="icon">
-           <iconset theme="media-record"/>
+           <iconset theme="media-record">
+            <normaloff/>
+           </iconset>
           </property>
           <property name="checked">
            <bool>false</bool>
@@ -68,7 +72,9 @@
            <string>Back</string>
           </property>
           <property name="icon">
-           <iconset theme="go-previous"/>
+           <iconset theme="go-previous">
+            <normaloff/>
+           </iconset>
           </property>
          </widget>
         </item>
@@ -115,7 +121,9 @@
            <string>Add new timer</string>
           </property>
           <property name="icon">
-           <iconset theme="time-admin"/>
+           <iconset theme="time-admin">
+            <normaloff/>
+           </iconset>
           </property>
           <property name="checked">
            <bool>false</bool>
@@ -128,7 +136,9 @@
            <string>Back</string>
           </property>
           <property name="icon">
-           <iconset theme="go-previous"/>
+           <iconset theme="go-previous">
+            <normaloff/>
+           </iconset>
           </property>
          </widget>
         </item>
@@ -146,7 +156,9 @@
       <string>Search and filter</string>
      </property>
      <property name="icon">
-      <iconset theme="edit-find-replace"/>
+      <iconset theme="edit-find-replace">
+       <normaloff/>
+      </iconset>
      </property>
     </widget>
    </item>
@@ -160,6 +172,15 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>editNameQuick</tabstop>
+  <tabstop>buttonQuickRecord</tabstop>
+  <tabstop>buttonQuickCancel</tabstop>
+  <tabstop>editNameNew</tabstop>
+  <tabstop>buttonNewTimer</tabstop>
+  <tabstop>buttonNewCancel</tabstop>
+  <tabstop>buttonFilter</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

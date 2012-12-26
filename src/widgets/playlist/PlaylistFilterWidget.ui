@@ -11,7 +11,9 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset theme="text-richtext"/>
+   <iconset theme="text-richtext">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <property name="margin">
@@ -29,7 +31,9 @@
       <string>Clear</string>
      </property>
      <property name="icon">
-      <iconset theme="edit-clear"/>
+      <iconset theme="edit-clear">
+       <normaloff/>
+      </iconset>
      </property>
     </widget>
    </item>
@@ -81,6 +85,13 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>editSearch</tabstop>
+  <tabstop>buttonClear</tabstop>
+  <tabstop>comboType</tabstop>
+  <tabstop>comboCategory</tabstop>
+  <tabstop>comboLanguage</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

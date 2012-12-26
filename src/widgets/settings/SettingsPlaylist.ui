@@ -11,7 +11,9 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset theme="preferences-desktop"/>
+   <iconset theme="preferences-desktop">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="margin">
@@ -29,7 +31,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-79</y>
         <width>408</width>
         <height>415</height>
        </rect>
@@ -214,6 +216,16 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>checkRefresh</tabstop>
+  <tabstop>editUrl</tabstop>
+  <tabstop>editHd</tabstop>
+  <tabstop>editRadio</tabstop>
+  <tabstop>checkUdpxy</tabstop>
+  <tabstop>editUdpxyUrl</tabstop>
+  <tabstop>editUdpxyPort</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

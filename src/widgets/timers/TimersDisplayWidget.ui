@@ -11,7 +11,9 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset theme="time-admin"/>
+   <iconset theme="time-admin">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <property name="margin">
@@ -32,7 +34,9 @@
       <string>Clear</string>
      </property>
      <property name="icon">
-      <iconset theme="edit-clear"/>
+      <iconset theme="edit-clear">
+       <normaloff/>
+      </iconset>
      </property>
     </widget>
    </item>
@@ -51,6 +55,11 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>timersView</tabstop>
+  <tabstop>editSearch</tabstop>
+  <tabstop>buttonClear</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

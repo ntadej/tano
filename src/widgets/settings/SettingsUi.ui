@@ -31,7 +31,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-177</y>
+        <y>-198</y>
         <width>437</width>
         <height>561</height>
        </rect>
@@ -278,6 +278,21 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>checkRememberSize</tabstop>
+  <tabstop>checkTray</tabstop>
+  <tabstop>checkTrayHide</tabstop>
+  <tabstop>checkOsd</tabstop>
+  <tabstop>checkInfo</tabstop>
+  <tabstop>checkFilter</tabstop>
+  <tabstop>radioWheelChannel</tabstop>
+  <tabstop>radioWheelVolume</tabstop>
+  <tabstop>comboToolbarLook</tabstop>
+  <tabstop>comboIcons</tabstop>
+  <tabstop>checkLite</tabstop>
+  <tabstop>checkTop</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

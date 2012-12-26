@@ -14,7 +14,9 @@
    <string>CSV file structure</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="text-x-generic"/>
+   <iconset theme="text-x-generic">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -136,6 +138,13 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>editSeparator</tabstop>
+  <tabstop>radioFirstHeader</tabstop>
+  <tabstop>radioFirstContent</tabstop>
+  <tabstop>columns</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

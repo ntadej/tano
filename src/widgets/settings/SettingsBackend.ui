@@ -31,7 +31,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-287</y>
         <width>493</width>
         <height>803</height>
        </rect>
@@ -462,6 +462,24 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>comboVout</tabstop>
+  <tabstop>comboAout</tabstop>
+  <tabstop>checkYTR</tabstop>
+  <tabstop>checkSpdif</tabstop>
+  <tabstop>comboNetwork</tabstop>
+  <tabstop>checkVideoSettings</tabstop>
+  <tabstop>radioAll</tabstop>
+  <tabstop>radioChannel</tabstop>
+  <tabstop>comboAspectRatio</tabstop>
+  <tabstop>comboCropRatio</tabstop>
+  <tabstop>comboDeinterlacing</tabstop>
+  <tabstop>comboAudio</tabstop>
+  <tabstop>comboSub</tabstop>
+  <tabstop>checkMute</tabstop>
+  <tabstop>checkTeletext</tabstop>
+ </tabstops>
  <resources>
   <include location="../../../data/logo/logo.qrc"/>
  </resources>
