@@ -37,6 +37,7 @@ class QWidgetAction;
 
 class Channel;
 class EpgScheduleChannel;
+class OsdFloat;
 class PlaylistModel;
 class XmltvProgramme;
 
@@ -48,6 +49,8 @@ public:
     ~EpgScheduleFull();
 
     void refreshPlaylistModel();
+    void setFullscreen(const bool &enabled,
+                       OsdFloat *widget = 0);
     void setPlaylistModel(PlaylistModel *model);
     EpgScheduleChannel *schedule();
 
@@ -65,12 +68,16 @@ public slots:
 
 private slots:
     void channel(Channel *channel);
+    void closeOsd();
 
 private:
     Ui::EpgScheduleFull *ui;
 
     QMenu *_menu;
     QWidgetAction *_action;
+
+    bool _fullscreen;
+    OsdFloat *_osd;
 };
 
 #endif // TANO_EPGSCHEDULEFULL_H_

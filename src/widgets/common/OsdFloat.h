@@ -40,6 +40,8 @@ public:
 
     void setControls();
     void setInfo();
+    void setSchedule();
+
     void setWidget(QWidget *widget);
 
 public slots:
@@ -62,6 +64,8 @@ private:
 
     QTimer *_slowHideTimer;
     QTimer *_slowShowTimer;
+
+    bool _alwaysHide;
 };
 
 #endif // OSDFLOAT_H

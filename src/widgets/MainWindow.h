@@ -229,6 +229,8 @@ private:
     EpgShow *_epgShow;
     OsdFloat *_osdFloat;
     OsdFloat *_osdInfo;
+    OsdFloat *_osdSchedule;
+    OsdFloat *_osdShow;
     OsdWidget *_osdMain;
     PlaylistEditor *_playlistEditor;
 

@@ -14,36 +14,85 @@
    <string>Schedule</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="x-office-calendar"/>
+   <iconset theme="x-office-calendar">
+    <normaloff/>
+   </iconset>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="PlaylistDisplayWidget" name="playlist" native="true">
-     <property name="minimumSize">
-      <size>
-       <width>250</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>250</width>
-       <height>16777215</height>
-      </size>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1" rowspan="2">
-    <widget class="EpgScheduleChannel" name="schedule" native="true"/>
-   </item>
-   <item row="1" column="0">
-    <widget class="QPushButton" name="buttonFilter">
-     <property name="text">
-      <string>Search and filter</string>
-     </property>
-     <property name="icon">
-      <iconset theme="edit-find-replace"/>
-     </property>
+  <layout class="QVBoxLayout" name="layoutMain">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="main" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="2" column="0">
+       <widget class="QPushButton" name="buttonFilter">
+        <property name="text">
+         <string>Search and filter</string>
+        </property>
+        <property name="icon">
+         <iconset theme="edit-find-replace">
+          <normaloff/>
+         </iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="PlaylistDisplayWidget" name="playlist" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>250</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>250</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" rowspan="2">
+       <widget class="EpgScheduleChannel" name="schedule" native="true"/>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="full">
+        <item>
+         <widget class="QLabel" name="labelTitle">
+          <property name="text">
+           <string>&lt;h3&gt;Schedule&lt;/h3&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonClose">
+          <property name="maximumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset theme="window-close">
+            <normaloff/>
+           </iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

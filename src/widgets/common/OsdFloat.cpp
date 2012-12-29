@@ -32,7 +32,7 @@
 
 #include "OsdFloat.h"
 
-#define OSD_OPACITY 0.7
+#define OSD_OPACITY 0.8
 
 OsdFloat::OsdFloat(QWidget *parent)
     : QFrame(parent)
@@ -42,6 +42,8 @@ OsdFloat::OsdFloat(QWidget *parent)
 
     _desktopWidth = QApplication::desktop()->width();
     _desktopHeight = QApplication::desktop()->height();
+
+    _alwaysHide = false;
 
     setWindowFlags(Qt::ToolTip);
 
@@ -66,10 +68,8 @@ void OsdFloat::floatHide()
         _slowHideTimer->start(5);
     else
         hide();
-#elif defined(Q_OS_WIN32)
-    _slowHideTimer->start(5);
 #else
-    hide();
+    _slowHideTimer->start(5);
 #endif
 }
 
@@ -80,17 +80,8 @@ void OsdFloat::floatShow()
     if (isVisible() && windowOpacity() > OSD_OPACITY)
         return;
 
-#if defined(Qt4) && defined(Q_WS_X11)
-    if (QX11Info::isCompositingManagerRunning())
-        _slowShowTimer->start(5);
-    else
-        show();
-#elif defined(Q_OS_WIN32)
     show();
     _slowShowTimer->start(5);
-#else
-    show();
-#endif
 }
 
 void OsdFloat::setControls()
@@ -123,6 +114,21 @@ void OsdFloat::setInfo()
     move(_defaultX, _defaultY);
 }
 
+void OsdFloat::setSchedule()
+{
+    _defaultHeight = 480;
+    _defaultWidth = 640;
+
+    resize(_defaultWidth, _defaultHeight);
+
+    _defaultX = 100;
+    _defaultY = 100;
+
+    _alwaysHide = true;
+
+    move(_defaultX, _defaultY);
+}
+
 void OsdFloat::setWidget(QWidget *widget)
 {
     layout()->addWidget(widget);
@@ -135,8 +141,11 @@ void OsdFloat::slowHide()
     if (windowOpacity() <= 0) {
         _slowHideTimer->stop();
 
-#if defined(Q_OS_WIN32)
+#if !defined(Qt4) && !defined(Q_WS_X11)
         hide();
+#else
+        if (_alwaysHide)
+            hide();
 #endif
     }
 }

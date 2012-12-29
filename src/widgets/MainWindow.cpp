@@ -108,6 +108,8 @@ MainWindow::MainWindow(Arguments *args)
       _epgShow(new EpgShow()),
       _osdFloat(0),
       _osdInfo(0),
+      _osdSchedule(0),
+      _osdShow(0),
       _osdMain(0),
       _playlistEditor(0)
 {
@@ -260,6 +262,10 @@ void MainWindow::createGui()
     _osdFloat = new OsdFloat(this);
     _osdFloat->resize(_osdFloat->width(), _osdMain->height());
     _osdFloat->setControls();
+    _osdSchedule = new OsdFloat(this);
+    _osdSchedule->setSchedule();
+    _osdShow = new OsdFloat(this);
+    _osdShow->setSchedule();
 
     ui->dockInfo->setTitleBarWidget(ui->blank);
     ui->dockControlsContents->layout()->addWidget(_osdMain);
@@ -1144,8 +1150,15 @@ void MainWindow::toggleFullscreen(const bool &enabled)
 {
     _osdInfo->setVisible(enabled);
     _osdFloat->setVisible(enabled);
+    _osdSchedule->setVisible(enabled);
+    _osdShow->setVisible(enabled);
     ui->actionLite->setDisabled(enabled);
     ui->actionTop->setDisabled(enabled);
+
+    _schedule->setFullscreen(enabled, _osdSchedule);
+    _osdSchedule->floatHide();
+    _epgShow->setFullscreen(enabled, _osdShow);
+    _osdShow->floatHide();
 
     if (enabled) {
         if (!ui->actionLite->isChecked())

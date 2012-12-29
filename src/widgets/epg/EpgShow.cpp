@@ -21,13 +21,17 @@
 #include "core/xmltv/models/XmltvCrewFilterModel.h"
 #include "core/xmltv/models/XmltvCrewModel.h"
 
+#include "common/OsdFloat.h"
+
 #include "EpgShow.h"
 #include "ui_EpgShow.h"
 
 EpgShow::EpgShow(QWidget *parent)
     : QWidget(parent),
     ui(new Ui::EpgShow),
-    _image(new NetworkDownload())
+    _image(new NetworkDownload()),
+    _fullscreen(false),
+    _osd(0)
 {
     ui->setupUi(this);
 
@@ -41,6 +45,9 @@ EpgShow::EpgShow(QWidget *parent)
     ui->labelInfoIcon->setPixmap(QIcon::fromTheme("dialog-information").pixmap(22));
     ui->labelTimeIcon->setPixmap(QIcon::fromTheme("time-admin").pixmap(22));
 
+    ui->buttonClose->hide();
+    ui->labelBlank->hide();
+
     connect(_image, SIGNAL(file(QString)), this, SLOT(image(QString)));
 
     connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
@@ -48,6 +55,8 @@ EpgShow::EpgShow(QWidget *parent)
     connect(ui->buttonRecord, SIGNAL(clicked()), this, SLOT(record()));
 
     connect(ui->comboCrewType, SIGNAL(currentIndexChanged(int)), this, SLOT(processFilters(int)));
+
+    connect(ui->buttonClose, SIGNAL(clicked()), this, SLOT(closeOsd()));
 }
 
 EpgShow::~EpgShow()
@@ -67,6 +76,12 @@ void EpgShow::changeEvent(QEvent *e)
     default:
         break;
     }
+}
+
+void EpgShow::closeOsd()
+{
+    if (_fullscreen)
+        _osd->floatHide();
 }
 
 void EpgShow::display(XmltvProgramme *programme)
@@ -90,10 +105,14 @@ void EpgShow::display(XmltvProgramme *programme)
 
     _image->getFile(programme->icon());
 
-    if (isVisible())
-        activateWindow();
-    else
-        show();
+    if (_fullscreen) {
+        _osd->floatShow();
+    } else {
+        if (isVisible())
+            activateWindow();
+        else
+            show();
+    }
 }
 
 void EpgShow::image(const QString &image)
@@ -119,4 +138,21 @@ void EpgShow::processFilters(const int &type)
 void EpgShow::record()
 {
     emit requestRecord(_current);
+}
+
+void EpgShow::setFullscreen(const bool &enabled,
+                            OsdFloat *widget)
+{
+    ui->buttonClose->setVisible(enabled);
+    ui->labelBlank->setVisible(enabled);
+
+    _fullscreen = enabled;
+
+    if (enabled && widget) {
+        _osd = widget;
+        _osd->setWidget(ui->main);
+    } else {
+        _osd = 0;
+        ui->layoutMain->addWidget(ui->main);
+    }
 }

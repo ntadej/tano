@@ -22,6 +22,8 @@
     #include <QtCore/QtConcurrentRun>
 #endif
 
+#include <QtCore/QDebug>
+
 #include "Resources.h"
 #include "network/NetworkDownload.h"
 #include "settings/Settings.h"
@@ -139,6 +141,8 @@ void XmltvManager::loadXmltvFinish()
     emit channelsChanged(channels());
 
     request(_currentXmltvId, _currentIdentifier);
+
+    qDebug() << "XMLTV loaded!";
 }
 
 QString XmltvManager::processCurrentString(XmltvProgramme *programme) const

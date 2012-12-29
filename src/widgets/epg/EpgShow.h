@@ -31,6 +31,7 @@ namespace Ui
 }
 
 class NetworkDownload;
+class OsdFloat;
 class XmltvCrewFilterModel;
 class XmltvProgramme;
 
@@ -40,6 +41,9 @@ Q_OBJECT
 public:
 	EpgShow(QWidget *parent = 0);
 	~EpgShow();
+
+    void setFullscreen(const bool &enabled,
+                       OsdFloat *widget = 0);
 
 protected:
 	void changeEvent(QEvent *e);
@@ -53,6 +57,7 @@ signals:
 	void requestRecord(XmltvProgramme *);
 
 private slots:
+    void closeOsd();
 	void image(const QString &image);
 	void next();
 	void previous();
@@ -66,6 +71,9 @@ private:
 	XmltvCrewFilterModel *_crew;
 
 	NetworkDownload *_image;
+
+    bool _fullscreen;
+    OsdFloat *_osd;
 };
 
 #endif // TANO_EPGSHOW_H_

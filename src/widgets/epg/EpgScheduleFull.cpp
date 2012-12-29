@@ -32,11 +32,14 @@
 #include "core/xmltv/containers/XmltvChannel.h"
 #include "core/xmltv/containers/XmltvProgramme.h"
 
+#include "common/OsdFloat.h"
 #include "playlist/PlaylistFilterWidget.h"
 
 EpgScheduleFull::EpgScheduleFull(QWidget *parent)
     : QWidget(parent),
-      ui(new Ui::EpgScheduleFull)
+      ui(new Ui::EpgScheduleFull),
+      _fullscreen(false),
+      _osd(0)
 {
     ui->setupUi(this);
     ui->schedule->setIdentifier(Tano::Schedule);
@@ -47,10 +50,13 @@ EpgScheduleFull::EpgScheduleFull(QWidget *parent)
     _action->setDefaultWidget(ui->playlist->filter());
     _menu->addAction(_action);
     ui->buttonFilter->setMenu(_menu);
+    ui->buttonClose->hide();
+    ui->labelTitle->hide();
 
     connect(ui->playlist, SIGNAL(itemSelected(Channel *)), this, SLOT(channel(Channel *)));
     connect(ui->schedule, SIGNAL(itemSelected(XmltvProgramme *)), this, SIGNAL(itemSelected(XmltvProgramme *)));
     connect(ui->schedule, SIGNAL(requestRecord(XmltvProgramme *)), this, SIGNAL(requestRecord(XmltvProgramme *)));
+    connect(ui->buttonClose, SIGNAL(clicked()), this, SLOT(closeOsd()));
 }
 
 EpgScheduleFull::~EpgScheduleFull()
@@ -76,14 +82,24 @@ void EpgScheduleFull::channel(Channel *channel)
     emit requestEpg(channel->xmltvId(), Tano::Schedule);
 }
 
+void EpgScheduleFull::closeOsd()
+{
+    if (_fullscreen)
+        _osd->floatHide();
+}
+
 void EpgScheduleFull::openSchedule(Channel *channel)
 {
     ui->playlist->channelSelected(channel);
 
-    if (isVisible())
-        activateWindow();
-    else
-        show();
+    if (_fullscreen) {
+        _osd->floatShow();
+    } else {
+        if (isVisible())
+            activateWindow();
+        else
+            show();
+    }
 }
 
 void EpgScheduleFull::refreshPlaylistModel()
@@ -94,6 +110,23 @@ void EpgScheduleFull::refreshPlaylistModel()
 EpgScheduleChannel *EpgScheduleFull::schedule()
 {
     return ui->schedule;
+}
+
+void EpgScheduleFull::setFullscreen(const bool &enabled,
+                                    OsdFloat *widget)
+{
+    ui->buttonClose->setVisible(enabled);
+    ui->labelTitle->setVisible(enabled);
+
+    _fullscreen = enabled;
+
+    if (enabled && widget) {
+        _osd = widget;
+        _osd->setWidget(ui->main);
+    } else {
+        _osd = 0;
+        ui->layoutMain->addWidget(ui->main);
+    }
 }
 
 void EpgScheduleFull::setPlaylistModel(PlaylistModel *model)
