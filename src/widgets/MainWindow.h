@@ -136,6 +136,9 @@ private slots:
     void recorder(const bool &enabled);
     void takeSnapshot();
 
+    //Mouse double click hack
+    void resetClick();
+
 signals:
     void setVolume(int);
 
@@ -196,6 +199,10 @@ private:
     bool _videoSettings;
     bool _videoSettingsChannel;
     QString _wheelType;
+
+    //Mouse double click hack
+    bool _double;
+    QTimer *_timerDouble;
 
     //Main
     Arguments *_arguments;

@@ -123,6 +123,12 @@ MainWindow::MainWindow(Arguments *args)
     ui->menuAbout->removeAction(ui->actionUpdate);
 #endif
 
+    // Mouse double click hack
+#if defined(Qt5)
+    _double = false;
+    _timerDouble = new QTimer();
+#endif
+
     createMenus();
     createDesktopStartup();
     createSettings();
@@ -211,6 +217,15 @@ bool MainWindow::eventFilter(QObject *obj,
             _rightMenu->exec(mouseEvent->globalPos());
             break;
         case Qt::LeftButton:
+#if defined(Qt5)
+            if (_double) {
+                qDebug() << "Event:" << "Double click";
+                ui->actionFullscreen->trigger();
+            } else {
+                _double = true;
+                _timerDouble->start(500);
+            }
+#endif
         case Qt::NoButton:
         default:
             break;
@@ -248,6 +263,12 @@ void MainWindow::closeEvent(QCloseEvent *event)
         tray();
         event->ignore();
     }
+}
+
+// Mouse double click hack
+void MainWindow::resetClick()
+{
+    _double = false;
 }
 
 // Init functions
@@ -532,6 +553,11 @@ void MainWindow::createConnections()
     connect(_menuAspectRatio, SIGNAL(value(int)), this, SLOT(saveChannelSetting(int)));
     connect(_menuCropRatio, SIGNAL(value(int)), this, SLOT(saveChannelSetting(int)));
     connect(_menuDeinterlacing, SIGNAL(value(int)), this, SLOT(saveChannelSetting(int)));
+
+    // Mouse double click hack
+#if defined(Qt5)
+    connect(_timerDouble, SIGNAL(timeout()), this, SLOT(resetClick()));
+#endif
 
     qDebug() << "Initialised: Event connections";
 }
