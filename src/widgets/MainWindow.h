@@ -37,6 +37,7 @@ class VlcMediaPlayer;
 class VlcControlAudio;
 class VlcControlVideo;
 
+class QShortcut;
 class QWidgetAction;
 
 class Arguments;
@@ -93,6 +94,7 @@ private slots:
     void updateAvailable();
 
     void showSchedule();
+    void showScheduleCurrent();
     void showSettings();
     void showSettingsShortcuts();
     void showPlaylistEditor();
@@ -100,7 +102,8 @@ private slots:
     void playChannel(Channel* channel);
     void playLocal(const QString &path);
     void playRecording(Timer* recording);
-    void playUrl(const QString &url);
+    void playUrl(const QString &url,
+                 const bool &channel = false);
     void stop();
     void setPlaying();
     void setStopped();
@@ -115,6 +118,7 @@ private slots:
     void top();
     void lite();
     void tray();
+    void closeOsd();
     void showOsd(const QPoint &pos);
     void showVideo(const int &count = 0);
     void teletext(const bool &enabled);
@@ -212,6 +216,7 @@ private:
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;
     SettingsChannel *_settingsChannel;
+    QShortcut *_shortcut;
     DesktopShortcuts *_shortcuts;
     UpdateDialog *_update;
 
@@ -254,6 +259,7 @@ private:
     QMenu *_openMenu;
     QMenu *_playlistMenu;
     QList<QAction*> _actions;
+    QList<QAction*> _actionsFull;
     QWidgetAction *_waction;
 };
 

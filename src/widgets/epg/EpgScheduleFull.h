@@ -64,7 +64,7 @@ signals:
     void requestRecord(XmltvProgramme *);
 
 public slots:
-    void openSchedule(Channel *channel);
+    void openSchedule(Channel *channel = 0);
 
 private slots:
     void channel(Channel *channel);

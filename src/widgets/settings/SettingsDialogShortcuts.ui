@@ -20,7 +20,9 @@
    <string>Keyboard shortcuts</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="preferences-desktop-keyboard-shortcuts"/>
+   <iconset theme="preferences-desktop-keyboard-shortcuts">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="5">
@@ -100,6 +102,11 @@
      <row>
       <property name="text">
        <string notr="true"/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
       </property>
      </row>
      <row>
@@ -354,7 +361,7 @@
      </item>
      <item row="12" column="0">
       <property name="text">
-       <string>Open File</string>
+       <string>Schedule</string>
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -367,20 +374,17 @@
      </item>
      <item row="13" column="0">
       <property name="text">
-       <string>Open URL</string>
-      </property>
-      <property name="flags">
-       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       <string>Current show info</string>
       </property>
      </item>
      <item row="13" column="1">
       <property name="text">
-       <string notr="true">-</string>
+       <string>-</string>
       </property>
      </item>
      <item row="14" column="0">
       <property name="text">
-       <string>Open Channel list</string>
+       <string>Open File</string>
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -393,7 +397,7 @@
      </item>
      <item row="15" column="0">
       <property name="text">
-       <string>Edit Channel list</string>
+       <string>Open URL</string>
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -406,7 +410,7 @@
      </item>
      <item row="16" column="0">
       <property name="text">
-       <string>Settings</string>
+       <string>Open Channel list</string>
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -419,7 +423,10 @@
      </item>
      <item row="17" column="0">
       <property name="text">
-       <string>Keyboard shortcuts</string>
+       <string>Settings</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="17" column="1">
@@ -429,10 +436,7 @@
      </item>
      <item row="18" column="0">
       <property name="text">
-       <string>Always on top</string>
-      </property>
-      <property name="flags">
-       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+       <string>Keyboard shortcuts</string>
       </property>
      </item>
      <item row="18" column="1">
@@ -442,7 +446,7 @@
      </item>
      <item row="19" column="0">
       <property name="text">
-       <string>Simple Mode</string>
+       <string>Always on top</string>
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -455,7 +459,7 @@
      </item>
      <item row="20" column="0">
       <property name="text">
-       <string>Hide to tray</string>
+       <string>Simple Mode</string>
       </property>
       <property name="flags">
        <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
@@ -468,7 +472,10 @@
      </item>
      <item row="21" column="0">
       <property name="text">
-       <string>Instant recording</string>
+       <string>Hide to tray</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsDragEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
       </property>
      </item>
      <item row="21" column="1">
@@ -478,7 +485,7 @@
      </item>
      <item row="22" column="0">
       <property name="text">
-       <string>Take snapshot</string>
+       <string>Instant recording</string>
       </property>
      </item>
      <item row="22" column="1">
@@ -488,27 +495,27 @@
      </item>
      <item row="23" column="0">
       <property name="text">
-       <string>Preview channels</string>
+       <string>Take snapshot</string>
       </property>
      </item>
      <item row="23" column="1">
       <property name="text">
-       <string>-</string>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="24" column="0">
       <property name="text">
-       <string>Next audio track</string>
+       <string>Preview channels</string>
       </property>
      </item>
      <item row="24" column="1">
       <property name="text">
-       <string notr="true">-</string>
+       <string>-</string>
       </property>
      </item>
      <item row="25" column="0">
       <property name="text">
-       <string>Next video track</string>
+       <string>Next audio track</string>
       </property>
      </item>
      <item row="25" column="1">
@@ -518,7 +525,7 @@
      </item>
      <item row="26" column="0">
       <property name="text">
-       <string>Next subtitle track</string>
+       <string>Next video track</string>
       </property>
      </item>
      <item row="26" column="1">
@@ -528,7 +535,7 @@
      </item>
      <item row="27" column="0">
       <property name="text">
-       <string>Next aspect ratio mode</string>
+       <string>Next subtitle track</string>
       </property>
      </item>
      <item row="27" column="1">
@@ -538,7 +545,7 @@
      </item>
      <item row="28" column="0">
       <property name="text">
-       <string>Next crop mode</string>
+       <string>Next aspect ratio mode</string>
       </property>
      </item>
      <item row="28" column="1">
@@ -548,20 +555,30 @@
      </item>
      <item row="29" column="0">
       <property name="text">
-       <string>Next scale/zoom mode</string>
+       <string>Next crop mode</string>
       </property>
      </item>
      <item row="29" column="1">
       <property name="text">
-       <string>-</string>
+       <string notr="true">-</string>
       </property>
      </item>
      <item row="30" column="0">
       <property name="text">
-       <string>Next deinterlace mode</string>
+       <string>Next scale/zoom mode</string>
       </property>
      </item>
      <item row="30" column="1">
+      <property name="text">
+       <string>-</string>
+      </property>
+     </item>
+     <item row="31" column="0">
+      <property name="text">
+       <string>Next deinterlace mode</string>
+      </property>
+     </item>
+     <item row="31" column="1">
       <property name="text">
        <string notr="true">-</string>
       </property>
@@ -587,7 +604,9 @@
       </size>
      </property>
      <property name="icon">
-      <iconset theme="edit-clear"/>
+      <iconset theme="edit-clear">
+       <normaloff/>
+      </iconset>
      </property>
     </widget>
    </item>
@@ -597,7 +616,9 @@
       <string>Set</string>
      </property>
      <property name="icon">
-      <iconset theme="dialog-ok"/>
+      <iconset theme="dialog-ok">
+       <normaloff/>
+      </iconset>
      </property>
     </widget>
    </item>
@@ -620,7 +641,9 @@
       <string>Defaults</string>
      </property>
      <property name="icon">
-      <iconset theme="view-refresh"/>
+      <iconset theme="view-refresh">
+       <normaloff/>
+      </iconset>
      </property>
     </widget>
    </item>

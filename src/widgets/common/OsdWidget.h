@@ -46,6 +46,7 @@ public:
     ~OsdWidget();
 
     QWidget *blank();
+    inline QString currentProgramme() const { return _current; }
     QLCDNumber *lcd();
     void setBackend(VlcMediaPlayer *player);
     void setChannel(const int &number = 0,
@@ -87,6 +88,8 @@ public slots:
 
 private:
     Ui::OsdWidget *ui;
+
+    QString _current;
 };
 
 #endif // OSDWIDGET_H

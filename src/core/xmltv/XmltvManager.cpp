@@ -184,6 +184,9 @@ void XmltvManager::request(const QString &id,
 
 void XmltvManager::requestProgramme(const QString &id)
 {
+    if (id.isEmpty())
+        return;
+
     for (int i = 1; i < _xmltv->channels()->find(_currentXmltvId)->programme()->rowCount(); i++) {
         if (_xmltv->channels()->find(_currentXmltvId)->programme()->row(i)->start() == QDateTime::fromString(id, Tano::Xmltv::dateFormat())) {
             emit programme(_xmltv->channels()->find(_currentXmltvId)->programme()->row(i));

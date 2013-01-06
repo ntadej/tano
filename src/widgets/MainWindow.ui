@@ -136,6 +136,7 @@
     <addaction name="actionOpen"/>
     <addaction name="separator"/>
     <addaction name="actionSchedule"/>
+    <addaction name="actionScheduleCurrent"/>
     <addaction name="separator"/>
     <addaction name="actionTray"/>
     <addaction name="actionExit"/>
@@ -797,12 +798,26 @@
     <string>Preview channels</string>
    </property>
   </action>
+  <action name="actionScheduleCurrent">
+   <property name="icon">
+    <iconset theme="x-office-calendar"/>
+   </property>
+   <property name="text">
+    <string>Current show info</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
    <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
    <header>playlist/PlaylistDisplayWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>EpgScheduleChannel</class>
+   <extends>QWidget</extends>
+   <header>epg/EpgScheduleChannel.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -819,12 +834,6 @@
    <class>Recorder</class>
    <extends>QWidget</extends>
    <header>recorder/Recorder.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>EpgScheduleChannel</class>
-   <extends>QWidget</extends>
-   <header>epg/EpgScheduleChannel.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -25,11 +25,13 @@
     #include <QtWidgets/QDesktopWidget>
     #include <QtWidgets/QLCDNumber>
     #include <QtWidgets/QMessageBox>
+    #include <QtWidgets/QShortcut>
     #include <QtWidgets/QWidgetAction>
 #elif defined(Qt4)
     #include <QtGui/QDesktopWidget>
     #include <QtGui/QLCDNumber>
     #include <QtGui/QMessageBox>
+    #include <QtGui/QShortcut>
     #include <QtGui/QWidgetAction>
 #endif
 
@@ -100,6 +102,7 @@ MainWindow::MainWindow(Arguments *args)
       _settingsChannel(new SettingsChannel(this)),
       _audioController(0),
       _videoController(0),
+      _channel(0),
       _xmltv(new XmltvManager()),
       _previewTimer(new QTimer(this)),
       _startTimer(new QTimer(this)),
@@ -460,6 +463,7 @@ void MainWindow::createConnections()
     connect(ui->actionOpenToolbar, SIGNAL(triggered()), this, SLOT(showOpenMenu()));
 
     connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
+    connect(ui->actionScheduleCurrent, SIGNAL(triggered()), this, SLOT(showScheduleCurrent()));
     connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
     connect(ui->actionSettingsShortcuts, SIGNAL(triggered()), this, SLOT(showSettingsShortcuts()));
     connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
@@ -554,6 +558,8 @@ void MainWindow::createConnections()
     connect(_menuCropRatio, SIGNAL(value(int)), this, SLOT(saveChannelSetting(int)));
     connect(_menuDeinterlacing, SIGNAL(value(int)), this, SLOT(saveChannelSetting(int)));
 
+    connect(_shortcut, SIGNAL(activated()), this, SLOT(closeOsd()));
+
     // Mouse double click hack
 #if defined(Qt5)
     connect(_timerDouble, SIGNAL(timeout()), this, SLOT(resetClick()));
@@ -628,10 +634,11 @@ void MainWindow::createShortcuts()
              << ui->actionVolumeUp
              << ui->actionVolumeDown
              << ui->actionRecorder
+             << ui->actionSchedule
+             << ui->actionScheduleCurrent
              << ui->actionOpenFile
              << ui->actionOpenUrl
              << ui->actionOpen
-             << ui->actionEditPlaylist
              << ui->actionSettings
              << ui->actionSettingsShortcuts
              << ui->actionTop
@@ -648,8 +655,19 @@ void MainWindow::createShortcuts()
              << _menuScale->actionNext()
              << _menuDeinterlacing->actionNext();
 
+    _actionsFull << ui->actionRecorder
+                 << ui->actionOpenFile
+                 << ui->actionOpenUrl
+                 << ui->actionOpen
+                 << ui->actionSettings
+                 << ui->actionSettingsShortcuts
+                 << ui->actionTop
+                 << ui->actionLite
+                 << ui->actionTray;
+
     addActions(_actions);
 
+    _shortcut = new QShortcut(QKeySequence("Esc"), this, 0, 0, Qt::ApplicationShortcut);
     _shortcuts = new DesktopShortcuts(_actions, this);
 
     qDebug() << "Initialised: Shortcuts";
@@ -801,7 +819,7 @@ void MainWindow::playChannel(Channel *channel)
     _channelPlayback = true;
     _channel = channel;
 
-    playUrl(_udpxy->processUrl(_channel->url()));
+    playUrl(_udpxy->processUrl(_channel->url()), true);
 
     if (_channel->logo().contains("http")) {
         _file->getFile(_channel->logo());
@@ -846,12 +864,15 @@ void MainWindow::playRecording(Timer *recording)
     _trayIcon->changeToolTip(Tano::Main, recording->name());
 }
 
-void MainWindow::playUrl(const QString &url)
+void MainWindow::playUrl(const QString &url,
+                         const bool &channel)
 {
     if (url.isEmpty())
         return;
 
     stop();
+
+    _channelPlayback = channel;
 
     if (_mediaItem)
         delete _mediaItem;
@@ -986,10 +1007,20 @@ void MainWindow::openUrl()
 //GUI
 void MainWindow::showSchedule()
 {
-    if (_schedule->isVisible())
-        _schedule->activateWindow();
+    if (ui->actionFullscreen->isChecked() && _osdSchedule->isVisible())
+        _osdSchedule->floatHide();
+    else if (_channelPlayback)
+        _schedule->openSchedule(_channel);
     else
-        _schedule->show();
+        _schedule->openSchedule();
+}
+
+void MainWindow::showScheduleCurrent()
+{
+    if (ui->actionFullscreen->isChecked() && _osdShow->isVisible())
+        _osdShow->floatHide();
+    else if (_channelPlayback)
+        _xmltv->requestProgramme(_osdMain->currentProgramme());
 }
 
 void MainWindow::showSettings()
@@ -1090,6 +1121,16 @@ void MainWindow::tray()
     }
 }
 
+void MainWindow::closeOsd()
+{
+    if (ui->actionFullscreen->isChecked()) {
+        if (_osdShow->isVisible())
+            _osdShow->floatHide();
+        else if (_osdSchedule->isVisible())
+            _osdSchedule->floatHide();
+    }
+}
+
 void MainWindow::showOsd(const QPoint &pos)
 {
     if (_osdEnabled && pos.y() > QApplication::desktop()->height()-100) {
@@ -1178,8 +1219,9 @@ void MainWindow::toggleFullscreen(const bool &enabled)
     _osdFloat->setVisible(enabled);
     _osdSchedule->setVisible(enabled);
     _osdShow->setVisible(enabled);
-    ui->actionLite->setDisabled(enabled);
-    ui->actionTop->setDisabled(enabled);
+
+    foreach (QAction *action, _actionsFull)
+        action->setDisabled(enabled);
 
     _schedule->setFullscreen(enabled, _osdSchedule);
     _osdSchedule->floatHide();

@@ -56,7 +56,7 @@ EpgScheduleFull::EpgScheduleFull(QWidget *parent)
     connect(ui->playlist, SIGNAL(itemSelected(Channel *)), this, SLOT(channel(Channel *)));
     connect(ui->schedule, SIGNAL(itemSelected(XmltvProgramme *)), this, SIGNAL(itemSelected(XmltvProgramme *)));
     connect(ui->schedule, SIGNAL(requestRecord(XmltvProgramme *)), this, SIGNAL(requestRecord(XmltvProgramme *)));
-    connect(ui->buttonClose, SIGNAL(clicked()), this, SLOT(closeOsd()));
+    connect(ui->buttonClose, SIGNAL(clicked()), this, SLOT(closeOsd()));;
 }
 
 EpgScheduleFull::~EpgScheduleFull()
@@ -90,7 +90,8 @@ void EpgScheduleFull::closeOsd()
 
 void EpgScheduleFull::openSchedule(Channel *channel)
 {
-    ui->playlist->channelSelected(channel);
+    if (channel)
+        ui->playlist->channelSelected(channel);
 
     if (_fullscreen) {
         _osd->floatShow();

@@ -116,13 +116,17 @@ void OsdFloat::setInfo()
 
 void OsdFloat::setSchedule()
 {
-    _defaultHeight = 480;
-    _defaultWidth = 640;
+    _defaultHeight = 500 + (_desktopHeight - 600) * 0.5;
+
+    _defaultY = (_desktopHeight - _defaultHeight - 100)/2;
+    _defaultX = _defaultY;
+
+    if (_desktopWidth - 400 - _defaultX > 700)
+        _defaultWidth = 700;
+    else
+        _defaultWidth = _desktopWidth - 400 - _defaultX;
 
     resize(_defaultWidth, _defaultHeight);
-
-    _defaultX = 100;
-    _defaultY = 100;
 
     _alwaysHide = true;
 

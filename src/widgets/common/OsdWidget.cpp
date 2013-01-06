@@ -21,7 +21,8 @@
 
 OsdWidget::OsdWidget(QWidget *parent)
     : QFrame(parent),
-      ui(new Ui::OsdWidget)
+      ui(new Ui::OsdWidget),
+      _current("")
 {
     ui->setupUi(this);
 
@@ -94,12 +95,18 @@ void OsdWidget::setChannel(const int &number,
         ui->info->clear();
         ui->logo->hide();
     }
+
+    _current = "";
 }
 
 void OsdWidget::setEpg(const QString &now,
                        const QString &next)
 {
     ui->info->setChannelEpg(now, next);
+
+    QRegExp n("href=\"([^\"]*)");
+    n.indexIn(now);
+    _current = n.cap(1);
 }
 
 void OsdWidget::setLogo(const QString &logo)
