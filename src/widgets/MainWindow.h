@@ -125,6 +125,7 @@ private slots:
     void teletext(const int &page);
     void toggleFilters(const bool &enabled = false);
     void toggleFullscreen(const bool &enabled);
+    void toggleMouse(const bool &enabled = false);
     void toggleOsdControls(const bool &enabled = false);
     void toggleOsdInfo(const bool &enabled = false);
     void preview(const bool &enabled = false);
@@ -245,6 +246,7 @@ private:
     OsdFloat *_osdShow;
     OsdWidget *_osdMain;
     PlaylistEditor *_playlistEditor;
+    QTimer *_mouseTimer;
 
     //Menus and actions
     TrayIcon *_trayIcon;

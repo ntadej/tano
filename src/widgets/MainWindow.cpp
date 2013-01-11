@@ -205,13 +205,23 @@ bool MainWindow::eventFilter(QObject *obj,
         if (_muteOnMinimize) {
             ui->actionMute->setChecked(_muteOnMinimizeCurrent);
         }
-    } else if (event->type() == QEvent::MouseMove && ui->actionFullscreen->isChecked()) {
-        QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
-        showOsd(mouseEvent->globalPos());
+    } else if (event->type() == QEvent::MouseMove) {
+        toggleMouse(true);
+
+        if (ui->actionFullscreen->isChecked()) {
+            QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
+            showOsd(mouseEvent->globalPos());
+        }
+
+        if (obj == ui->videoWidget) {
+            _mouseTimer->start(2000);
+        }
     } else if (obj == ui->videoWidget && event->type() == QEvent::MouseButtonDblClick) {
+        toggleMouse(true);
         qDebug() << "Event:" << "Double click";
         ui->actionFullscreen->trigger();
     } else if (obj == ui->videoWidget && event->type() == QEvent::MouseButtonPress) {
+        toggleMouse(true);
         qDebug() << "Event:" << "Click";
         QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(event);
         switch (mouseEvent->button())
@@ -234,6 +244,7 @@ bool MainWindow::eventFilter(QObject *obj,
             break;
         }
     } else if (obj == ui->videoWidget && event->type() == QEvent::Wheel) {
+        toggleMouse(true);
         qDebug() << "Event:" << "Wheel";
         QWheelEvent *wheelEvent = static_cast<QWheelEvent*>(event);
         bool wheel = wheelEvent->delta() > 0;
@@ -277,6 +288,8 @@ void MainWindow::resetClick()
 // Init functions
 void MainWindow::createGui()
 {
+    _mouseTimer = new QTimer(this);
+
     _osdMain = new OsdWidget(this);
     _osdMain->setBackend(_mediaPlayer);
     _osdMain->toggleTeletext(_teletext);
@@ -559,6 +572,7 @@ void MainWindow::createConnections()
     connect(_menuDeinterlacing, SIGNAL(value(int)), this, SLOT(saveChannelSetting(int)));
 
     connect(_shortcut, SIGNAL(activated()), this, SLOT(closeOsd()));
+    connect(_mouseTimer, SIGNAL(timeout()), this, SLOT(toggleMouse()));
 
     // Mouse double click hack
 #if defined(Qt5)
@@ -1255,6 +1269,16 @@ void MainWindow::toggleFullscreen(const bool &enabled)
     }
 
     toggleFilters(enabled);
+}
+
+void MainWindow::toggleMouse(const bool &enabled)
+{
+    if (enabled) {
+        qApp->restoreOverrideCursor();
+        _mouseTimer->stop();
+    } else {
+        qApp->setOverrideCursor(Qt::BlankCursor);
+    }
 }
 
 void MainWindow::toggleOsdControls(const bool &enabled)
