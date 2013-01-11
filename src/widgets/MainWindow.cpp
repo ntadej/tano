@@ -214,7 +214,7 @@ bool MainWindow::eventFilter(QObject *obj,
         }
 
         if (obj == ui->videoWidget) {
-            _mouseTimer->start(2000);
+            _mouseTimer->start(1000);
         }
     } else if (obj == ui->videoWidget && event->type() == QEvent::MouseButtonDblClick) {
         toggleMouse(true);

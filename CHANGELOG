@@ -1,6 +1,13 @@
 1.2 (git)
-  * Separated Tano Core library
+  * Separated Tano Core and Tano Widgets library
+  * Updated and improved OSD and fullscreen handling
+  * Automatically map XMLTV IDs to channels in editor
+  * Map standard XMLTV categories to translations
+  * Full MSVC and Qt5 support
   * Experimental QML UI - Qt5 only (in a git submodule)
+  * Fix: Don't use channel-based settings for other media
+  * Fix: Use correct Tab order in all UI files
+  * Fix: Instant recording works again (issue #39)
 
 1.1 (2012-10-14)
   * Command line arguments (see tano --help)

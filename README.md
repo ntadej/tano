@@ -29,7 +29,7 @@ Dependencies
 - g++, make
 - cmake >= 2.8.6
 - Qt >= 4.8
-- libvlc-qt >= 0.7.0
+- libvlc-qt >= 0.8.0
 
 
 Compilation
@@ -51,7 +51,7 @@ Installation
 
 Copyright info
 --------------
-Copyright (C) 2008-2012 Tadej Novak
+Copyright (C) 2008-2013 Tadej Novak
 
 Tano is free (libre) software. This means that the application
 source code is available to public, anyone is welcome to research
