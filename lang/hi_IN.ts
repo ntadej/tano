@@ -1,48 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="cs">
+<TS version="2.0" language="hi_IN">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About</source>
-        <translation>O programu</translation>
+        <translation>विषय में</translation>
     </message>
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
 </source>
-        <translation>Tano je svobodný multiplatformní přehrávač IP TV, jehož vlastností je plné přehrávání IP TV s EPG a nahrávání. Je založen na VLC-Qt.
-</translation>
+        <translation>Tano एक खुला स्रोत पार मंच आईपी टीवी प्लेयर है जो पूर्ण EPG और रिकॉर्ड के साथ आईपी टीवी प्लेबैक है. यह वीएलसी क्यूटी पर आधारित है.</translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation>Autoři</translation>
+        <translation>लेखक</translation>
     </message>
     <message>
         <source>License</source>
-        <translation>Povolení</translation>
+        <translation>अनुज्ञा</translation>
     </message>
     <message>
         <source>Backend</source>
-        <translation>Jádro</translation>
+        <translation>पीछे के अंत</translation>
     </message>
     <message>
         <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
 </source>
-        <translation>VLC-Qt je svobodná knihovna používaná ke spojení knihoven Qt a libvlc. Obsahuje základní třídy pro přehrávání hlavních multimédií a také některé třídy obrazového uživatelského rozhraní pro rychlejší vývoj multimediálního přehrávače.
+        <translation>वीएलसी क्यूटी एक मुफ्त पुस्तकालय हैं क्यूटी और libvlc पुस्तकालयों को कनेक्ट करने के लिए प्रयोग किया जाता है.यह मुख्य मीडिया प्लेबैक और भी तेजी से मीडिया प्लेयर के विकास के लिए कुछ जीयूआई वर्गों के लिए मुख्य वर्ग शामिल हैं.
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Používáte VideoLAN VLC %1&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;आप उपयोग कर रहे हैं VideoLAN VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Your Tano version: %1
 Your Qt runtime version: %2
 Your VLC-Qt version: %3
 </source>
-        <translation>Verze Tana: %1
-Běhová verze Qt: %2
-Verze VLC-Qt: %3
+        <translation>आपका Tano संस्करण: %1
+आपका Qt क्रम संस्करण: %2
+आपका VLC-Qt संस्करण: %3
 </translation>
     </message>
 </context>
@@ -58,48 +57,48 @@ Verze VLC-Qt: %3
     </message>
     <message>
         <source>Radio</source>
-        <translation>Rádio</translation>
+        <translation>रेडियो</translation>
     </message>
 </context>
 <context>
     <name>DonationDialog</name>
     <message>
         <source>Donate</source>
-        <translation>Darovat</translation>
+        <translation>दान करें</translation>
     </message>
     <message>
         <source>Tano Player project requires a lot of work and devotion. You can also support the development by donating some money. This money will be spent to cover all expenses and hosting costs.</source>
-        <translation>Projekt přehrávače Tano vyžaduje hodně práce a péče. Vývoj můžete podpořit i tak, že darujete nějaké peníze. Tyto peníze budou použity na pokrytí všech výdajů a poplatků za hostování programu.</translation>
+        <translation>Tano प्लेयर परियोजना में काम और भक्ति का  बहुत आवश्यकता है. तुम भी कुछ पैसे दान करके विकास का समर्थन कर सकते हैं. यह पैसे सभी खर्च और होस्टिंग लागत को कवर करने के लिए खर्च किया जाएगा.</translation>
     </message>
     <message>
         <source>You can read additional terms and information on Tano Player homepage.</source>
-        <translation>Doplňkové informace a podmínky si můžete přečíst na domovských stránkách přehrávače Tano.</translation>
+        <translation>आप अतिरिक्त शर्तें और जानकारी Tano प्लेयर होमपेज पर पढ़ सकते हैं.</translation>
     </message>
 </context>
 <context>
     <name>EpgScheduleChannel</name>
     <message>
         <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Žádné EPG&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;EPG नहीं है&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>Show information</source>
-        <translation>Ukázat podrobnosti</translation>
+        <translation>जानकारी दिखाएं</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Nahrávat</translation>
+        <translation>रिकॉर्ड</translation>
     </message>
 </context>
 <context>
     <name>EpgScheduleFull</name>
     <message>
         <source>Schedule</source>
-        <translation>Rozvrh</translation>
+        <translation>कार्यक्रम</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Hledat a filtrovat</translation>
+        <translation>खोज और फिल्टर</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
@@ -110,82 +109,82 @@ Verze VLC-Qt: %3
     <name>EpgShow</name>
     <message>
         <source>Previous</source>
-        <translation>Předchozí</translation>
+        <translation>पिछला</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Další</translation>
+        <translation>अगला</translation>
     </message>
     <message>
         <source>&lt;b&gt;Crew&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Skupina&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;कर्मीदल&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Description&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Popis&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;विवरण&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Crew members: All</source>
-        <translation>Členové pracovní skupiny: Vše</translation>
+        <translation>कर्मीदल के सदस्य: सभी</translation>
     </message>
     <message>
         <source>Director</source>
-        <translation>Ředitel</translation>
+        <translation>निदेशक</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation>Herec</translation>
+        <translation>अभिनेता</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation>Autor</translation>
+        <translation>लेखक</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation>Adaptér</translation>
+        <translation>अनुकूलक</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation>Režisér</translation>
+        <translation>निर्माता</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation>Skladatel</translation>
+        <translation>संगीतकार</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Editor</translation>
+        <translation>संपादक</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation>Konferenciér</translation>
+        <translation>प्रस्तुतकर्ता</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation>Komentátor</translation>
+        <translation>विवरणकार</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation>Host</translation>
+        <translation>अतिथि</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Nahrávat</translation>
+        <translation>अभिलेख</translation>
     </message>
 </context>
 <context>
     <name>InfoBarWidget</name>
     <message>
         <source>Now:</source>
-        <translation>Nyní:</translation>
+        <translation>अभी:</translation>
     </message>
     <message>
         <source>Next:</source>
-        <translation>Další:</translation>
+        <translation>अगला:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Jazyk:</translation>
+        <translation>भाषा:</translation>
     </message>
 </context>
 <context>
@@ -196,99 +195,99 @@ Verze VLC-Qt: %3
     </message>
     <message>
         <source>&amp;Recorder</source>
-        <translation>Nah&amp;rávání</translation>
+        <translation>&amp;रिकॉर्डर</translation>
     </message>
     <message>
         <source>&amp;Options</source>
-        <translation>&amp;Volby</translation>
+        <translation>&amp;विकल्प</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Nápověda</translation>
+        <translation>&amp;सहायता</translation>
     </message>
     <message>
         <source>Vie&amp;w</source>
-        <translation>&amp;Pohled</translation>
+        <translation>Vie&amp;w</translation>
     </message>
     <message>
         <source>&amp;Audio</source>
-        <translation>&amp;Zvuk</translation>
+        <translation>&amp;ऑडियो</translation>
     </message>
     <message>
         <source>&amp;Playback</source>
-        <translation>&amp;Přehrávání</translation>
+        <translation>&amp;पुनर्चलन</translation>
     </message>
     <message>
         <source>&amp;Video</source>
-        <translation>&amp;Obraz</translation>
+        <translation>&amp;वीडियो</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Soubor</translation>
+        <translation>&amp;फ़ाइल</translation>
     </message>
     <message>
         <source>Main Toolbar</source>
-        <translation>Hlavní pruh s nástroji</translation>
+        <translation>मुख्य औज़ारपट्टी</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>Přehrát</translation>
+        <translation>चलाना</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Skrýt v oznamovací oblasti panelu</translation>
+        <translation>ट्रे में छुपाएँ</translation>
     </message>
     <message>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
-        <translation>Chcete ukončit program Tano?
-Tím se zastaví i právě probíhající nahrávání.</translation>
+        <translation>क्या आप Tano से बाहर निकलना चाहते हैं?
+इस प्रगति में रिकॉर्डिंग बंद हो जाएगा.</translation>
     </message>
     <message>
         <source>Controls</source>
-        <translation>Ovládání</translation>
+        <translation>नियंत्रण</translation>
     </message>
     <message>
         <source>Recorder Toolbar</source>
-        <translation>Nástrojový pruh pro nahrávání</translation>
+        <translation>Recorder Toolbar</translation>
     </message>
     <message>
         <source>Tano Support</source>
-        <translation>Podpora pro Tano</translation>
+        <translation>Tano सहारा</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Pozastavit</translation>
+        <translation>विराम</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Nelze číst ze souboru %1:
+        <translation>फ़ाइल नहीं पढ़ सकते %1:
 %2.</translation>
     </message>
     <message>
         <source>Restore</source>
-        <translation>Obnovit</translation>
+        <translation>पुनर्स्थापित</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Rozvrh</translation>
+        <translation>कार्यक्रम</translation>
     </message>
     <message>
         <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Rozvrh&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;कार्यक्रम&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Zpět</translation>
+        <translation>वापस</translation>
     </message>
     <message>
         <source>About Tano</source>
-        <translation>O programu Tano</translation>
+        <translation>Tano के विषय में</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation>&amp;Ukončit</translation>
+        <translation>&amp;निकास</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -296,127 +295,127 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Nastavení</translation>
+        <translation>&amp;सेटिंग्स</translation>
     </message>
     <message>
         <source>&amp;Fullscreen</source>
-        <translation>&amp;Na celou obrazovku</translation>
+        <translation>&amp;पूर्ण स्क्रीन</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;Otevřít seznam programů</translation>
+        <translation>&amp;चैनल की सूची खोलें</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Otevřít seznam programů</translation>
+        <translation>चैनल की सूची खोलें</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
-        <translation>Otevřít &amp;soubor</translation>
+        <translation>खोलें &amp;फ़ाइल</translation>
     </message>
     <message>
         <source>Edit Channels</source>
-        <translation>Upravit programy</translation>
+        <translation>चैनल संपादित करें</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Otevřít adresu (URL)</translation>
+        <translation>URL खोलें</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>Prověřit aktualizace</translation>
+        <translation>अद्यतनों के लिए जाँचें</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otevřít</translation>
+        <translation>खोलें</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Stop</translation>
+        <translation>विराम</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Vždy nahoře</translation>
+        <translation>हमेशा शीर्ष पर</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Jednoduchý režim</translation>
+        <translation>सरल मोड</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Další</translation>
+        <translation>अगला</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Ztlumit</translation>
+        <translation>मौन</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Zvýšit hlasitost</translation>
+        <translation>वॉल्यूम ऊपर</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Snížit hlasitost</translation>
+        <translation>वॉल्यूम नीचे</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávání</translation>
+        <translation>रिकॉर्डर</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>Rychlý záznam</translation>
+        <translation>तुरंत रिकॉर्ड</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>O Qt</translation>
+        <translation>Qt के विषय में</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Zastavit nahrávání</translation>
+        <translation>रिकॉर्डिंग रोकें</translation>
     </message>
     <message>
         <source>Controls panel</source>
-        <translation>Ovládací panel</translation>
+        <translation>नियंत्रण कक्ष</translation>
     </message>
     <message>
         <source>Info panel</source>
-        <translation>Panel s podrobnostmi</translation>
+        <translation>जानकारी पैनल</translation>
     </message>
     <message>
         <source>Enable Info panel in Fullscreen mode</source>
-        <translation>Povolit informační panel v režimu celé obrazovky</translation>
+        <translation>फ़ुलस्क्रीन मोड में जानकारी पैनल सक्षम करें</translation>
     </message>
     <message>
         <source>Donate</source>
-        <translation>Darovat</translation>
+        <translation>दान करें</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletext</translation>
+        <translation>टेलीटेक्स्ट</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Klávesové zkratky</translation>
+        <translation>कीबोर्ड शॉर्टकर्ट</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>Okamžité nahrávání</translation>
+        <translation>तत्काल रिकॉर्डिंग</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Přidat časovač</translation>
+        <translation>टाइमर जोड़ें</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation>Podpora</translation>
+        <translation>सहारा</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Udělat snímek</translation>
+        <translation>स्नैपशॉट ले</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation>Náhled programů</translation>
+        <translation>चैनलों को पूर्वावलोकन करें </translation>
     </message>
     <message>
         <source>Current show info</source>
@@ -424,72 +423,72 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Instant</source>
-        <translation type="unfinished">Okamžitý</translation>
+        <translation type="unfinished">तत्काल</translation>
     </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
     <message>
         <source>Aspect ratio</source>
-        <translation>Poměr stran</translation>
+        <translation>पहलू अनुपात</translation>
     </message>
     <message>
         <source>Next aspect ratio option</source>
-        <translation>Další volba pro poměr stran</translation>
+        <translation>अगला पहलू अनुपात विकल्प</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Původní</translation>
+        <translation>मूल</translation>
     </message>
 </context>
 <context>
     <name>MenuCropRatio</name>
     <message>
         <source>Crop video</source>
-        <translation>Ořezat obraz</translation>
+        <translation>क्रॉप वीडियो</translation>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation>Volba pro další ořez</translation>
+        <translation>अगली क्रॉप विकल्प</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Původní</translation>
+        <translation>मूल</translation>
     </message>
 </context>
 <context>
     <name>MenuDeinterlacing</name>
     <message>
         <source>Deinterlacing</source>
-        <translation>Zrušení prokládání</translation>
+        <translation>Deinterlacing</translation>
     </message>
     <message>
         <source>Next deinterlacing option</source>
-        <translation>Další volba pro zrušení prokládání</translation>
+        <translation>अगले deinterlacing के  विकल्प</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Zakázáno</translation>
+        <translation>बलहीन</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Zrušit</translation>
+        <translation>ठुकराना</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation>Prolínání</translation>
+        <translation>मिश्रण</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation>Střed</translation>
+        <translation>माध्य</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation>Trhání</translation>
+        <translation>बॉब</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation>Přímočarý</translation>
+        <translation>रैखिक</translation>
     </message>
     <message>
         <source>X</source>
@@ -500,52 +499,52 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <name>MenuScale</name>
     <message>
         <source>Original</source>
-        <translation>Původní</translation>
+        <translation>वास्तविक</translation>
     </message>
     <message>
         <source>Scale/Zoom</source>
-        <translation>Měřítko/Zvětšení</translation>
+        <translation>मापक/ज़ूम</translation>
     </message>
     <message>
         <source>Next scale/zoom option</source>
-        <translation>Další volba měřítko/zvětšení</translation>
+        <translation>अगले मापक/ ज़ूम के विकल्प</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackAudio</name>
     <message>
         <source>Audio track</source>
-        <translation>Zvuková stopa</translation>
+        <translation>ऑडियो ट्रैक</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>Další zvuková stopa</translation>
+        <translation>अगला ऑडियो ट्रैक</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackSubtitles</name>
     <message>
         <source>Subtitles</source>
-        <translation>Titulky</translation>
+        <translation>उपशीर्षक</translation>
     </message>
     <message>
         <source>Next subtitles</source>
-        <translation>Další titulky</translation>
+        <translation>अगला उपशीर्षक</translation>
     </message>
     <message>
         <source>Open subtitle file</source>
-        <translation>Otevřít soubor s titulky</translation>
+        <translation>उपशीर्षक फ़ाइल खोलें</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackVideo</name>
     <message>
         <source>Video track</source>
-        <translation>Obrazová stopa</translation>
+        <translation>वीडियो ट्रैक</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>Další obrazová stopa</translation>
+        <translation>अगले वीडियो ट्रैक</translation>
     </message>
 </context>
 <context>
@@ -553,7 +552,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Nelze zapisovat soubor %1:
+        <translation>फ़ाइल नहीं लिख सकता %1:
 %2.</translation>
     </message>
     <message>
@@ -565,141 +564,141 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
-        <translation>Přehrát</translation>
+        <translation>चलाना</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Zastavit</translation>
+        <translation>विराम</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Zpět</translation>
+        <translation>वापस</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Další</translation>
+        <translation>अगला</translation>
     </message>
     <message>
         <source>Record Now</source>
-        <translation>Nahrávat nyní</translation>
+        <translation>अब रिकार्ड करें</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Ztlumit</translation>
+        <translation>मौन</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Pozastavit</translation>
+        <translation>विराम</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletext</translation>
+        <translation>टेलीटेक्स्ट</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Udělat snímek</translation>
+        <translation>Take स्नैपशॉट</translation>
     </message>
 </context>
 <context>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Play</source>
-        <translation>Přehrát</translation>
+        <translation>चलाना</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Rozvrh</translation>
+        <translation>कार्यक्रम</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditor</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Editor Tano</translation>
+        <translation>Tano संपादक</translation>
     </message>
     <message>
         <source>Playlist name:</source>
-        <translation>Název seznamu programů:</translation>
+        <translation>प्लेलिस्ट का नाम:</translation>
     </message>
     <message>
         <source>Number of channels:</source>
-        <translation>Počet programů:</translation>
+        <translation>चैनलों की संख्या:</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Nápověda</translation>
+        <translation>सहायता</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Nástrojový pruh</translation>
+        <translation>टूलबार</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>Číslo:</translation>
+        <translation>संख्या:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Název:</translation>
+        <translation>नाम:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Skupiny:</translation>
+        <translation>श्रेणियाँ:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Jazyk:</translation>
+        <translation>भाषा:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Adresa (URL):</translation>
+        <translation>Url:</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>Logo:</translation>
+        <translation>लोगो:</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>Přidat program</translation>
+        <translation>चैनल जोड़ें</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>Smazat program</translation>
+        <translation>चैनल हटाएँ</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Uložit</translation>
+        <translation>सुरक्षित करें</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zavřít</translation>
+        <translation>बंद करें</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Posunout nahoru</translation>
+        <translation>ऊपर ले जाएँ</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Posunout dolů</translation>
+        <translation>नीचे ले जाएँ</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Tisk</translation>
+        <translation>प्रिंट</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Vyvést</translation>
+        <translation>निर्यात</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otevřít</translation>
+        <translation>खोलें</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>O programu</translation>
+        <translation>बारे में</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>Nový seznam programů</translation>
+        <translation>नई प्लेलिस्ट</translation>
     </message>
     <message>
         <source>Tvheadend</source>
@@ -707,75 +706,75 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation>सेटिंग्स</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>Identifikátory XMLTV</translation>
+        <translation>XMLTV IDs</translation>
     </message>
     <message>
         <source>Update Information</source>
-        <translation>Informace o aktualizacích</translation>
+        <translation>जानकारी अपडेट करें</translation>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation>%1 - Editor Tano</translation>
+        <translation>%1 - Tano संपादक</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Nelze číst ze souboru %1:
+        <translation>फ़ाइल नहीं पढ़ सकते %1:
 %2.</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Editor seznamu programů</translation>
+        <translation>प्लेलिस्ट संपादक</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>Chcete vytvořit nový seznam programů?
-Ztratíte všechny neuložené změny.</translation>
+        <translation>क्या आप Tano से बाहर निकलना चाहते हैं?
+इस प्रगति में रिकॉर्डिंग बंद हो जाएगा.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Nelze zapisovat soubor %1:
+        <translation>फ़ाइल नहीं लिख सकता %1:
 %2.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation>Vyvést do formátu M3U s adresami Udpxy (URL)</translation>
+        <translation> Udpxy URL के साथ M3U प्रारूप निर्यात करें</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>Musíte mít platná nastavení Udpxy, nebo bude vyvedený seznam programů obsahovat klasické adresy (URL).</translation>
+        <translation>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>Chcete zavřít editor?
-Ztratíte všechny neuložené změny.</translation>
+        <translation>क्या आप संपादक बंद करना चाहते हैं?
+आप किसी भी न सहेजे गए परिवर्तन खो देंगे.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Program s tímto číslem již existuje!</translation>
+        <translation>इस नंबर के साथ एक चैनल पहले से ही मौजूद है!</translation>
     </message>
     <message>
         <source>Edit channel</source>
-        <translation>Upravit program</translation>
+        <translation>चैनल संपादित करें</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation>Prohledat na nové programy</translation>
+        <translation>नए चैनलों के लिए स्कैन करें</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
-        <translation>ID XMLTV:</translation>
+        <translation>XMLTV ID:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation>प्रकार:</translation>
     </message>
     <message>
         <source>SD</source>
@@ -787,11 +786,11 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation>Rádio</translation>
+        <translation>रेडियो</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished">Jiné</translation>
+        <translation type="unfinished">अन्य</translation>
     </message>
     <message>
         <source>Auto XMLTV map</source>
@@ -799,7 +798,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">संपादक</translation>
     </message>
     <message>
         <source>Please wait for XMLTV file to parse.</source>
@@ -810,47 +809,48 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistEditorHelp</name>
     <message>
         <source>Tano Editor - Help</source>
-        <translation>Editor Tano - Nápověda</translation>
+        <translation>Tano संपादक - सहायता</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Editor Tano - Nápověda&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;Tano संपादक - सहायता&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Můžete upravit svůj seznam programů IP TV, vytisknout jej nebo vyvést do požadovaného formátu.&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;आप अपने IP TV प्लेलिस्ट को संपादित करने के लिए, इसे प्रिंट या इच्छित प्रारूप में निर्यात कर सकते हैं.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Úpravy programů&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;चैनलों को संपादित करना&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
-        <translation>Pro logo programu je potřeba poskytnout celou adresu (URL). Velikost obrázků bude změněna tak, aby se vešly do rozhraní.</translation>
+        <translation>चैनल लोगो के लिए पूर्ण URL  प्रदान करने की जरूरत है.
+चित्र इंटरफ़ेस फिट करने के लिए बढ़ाया जाएगा.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Formáty a vyvedení&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;प्रारूप और निर्यात&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation>Editor Tano podporuje své vlastní upravené soubory M3U, CSV a Sagem JS. Kromě těchto formátů můžete také ukládat/vyvádět do M3U s adresami Udpxy a se soubory nastavení Tvheaden.</translation>
+        <translation>Tano संपादक अपनी ही संशोधित M3U तथा असंशोधित M3U, CSV और Sagem JS फ़ाइलों का समर्थन करता है.इन स्वरूपों के अलावा आप भी बचाने / निर्यात कर सकते हैं M3U को Udpxy URL और Tvheadend विन्यास फाइलों के साथ.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Hledání programů&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;चैनलों के लिए स्कैन&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
-        <translation>Nové programy můžete hledat pomocí vestavěného prohledávače programů. Nastavte, prosím, platný rozsah IP (např. 232.4.1) a přípojku (např. 5000). Tano prohledá všech 255 IP v tomto rozsahu. Program je přidán, je-li zjištěn před vypršením času.</translation>
+        <translation>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation>Můžete nastavit vlastní skupinu pro rádio v nastavení (výchozí pro rádio) pro vyvedení do Sagem JS a CSV. Pouze první skupina nebo skupina pro rádio bude vyvedena do Sagem JS.</translation>
+        <translation>आप सेटिंग्स (रेडियो के डिफ़ॉल्ट्स) में Sagem JS और CSV निर्यात करने के लिए कस्टम रेडियो श्रेणी निर्धारित कर सकते हैं. केवल प्रथम श्रेणी या रेडियो श्रेणी Sagem JS को निर्यात किया जाएगा.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation>Je třeba použít číslo programu. Všechny ostatní hodnoty jsou změněny automaticky. Jakýkoli program můžete nastavit jako rádio. Skupiny lze oddělit čárkou (,).</translation>
+        <translation>एक चैनल की संख्या को लागू किया जाना चाहिए. अन्य सभी मान स्वचालित रूप बदल दिए जाते हैं. आप रेडियो के रूप में किसी भी चैनल को निर्धारित कर सकते हैं. श्रेणियाँ अल्पविराम (,) द्वारा अलग हो सकते हैं है.</translation>
     </message>
     <message>
         <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
@@ -861,15 +861,15 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistEditorScan</name>
     <message>
         <source>IP Range:</source>
-        <translation>Rozsah IP:</translation>
+        <translation>IP सीमा:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Přípojka:</translation>
+        <translation>पोर्ट:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>Překročení času:</translation>
+        <translation>समय समाप्ति:</translation>
     </message>
     <message>
         <source> ms</source>
@@ -877,26 +877,26 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Prohledat a obnovit</translation>
+        <translation>स्कैन और अद्यतन</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>Nový program z prohledání %1</translation>
+        <translation>स्कैन %1 से नया चैनल</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Editor seznamu programů</translation>
+        <translation>Playlist संपादक</translation>
     </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
     <message>
         <source>Export to Tvheadend IP TV services</source>
-        <translation>Vyvést do služeb IP TV Tvheadend</translation>
+        <translation>Tvheadend IP TV  सेवाओं के लिए निर्यात</translation>
     </message>
     <message>
         <source>Output location:</source>
-        <translation>Výstupní umístění:</translation>
+        <translation>उत्पादन स्थान:</translation>
     </message>
     <message>
         <source>...</source>
@@ -904,41 +904,41 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Network interface:</source>
-        <translation>Síťové rozhraní:</translation>
+        <translation>संजाल अंतरफलक:</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>&lt;i&gt;&lt;b&gt;Varování: Toto smaže všechny stávající programy!&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>&lt;i&gt;&lt;b&gt;चेतावनी: यह सभी मौजूदा चैनलों को नष्ट करेगा!&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
     <message>
         <source>All categories</source>
-        <translation>Všechny skupiny</translation>
+        <translation>सभी श्रेणियाँ</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Všechny jazyky</translation>
+        <translation> सभी भाषाएँ</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Smazat</translation>
+        <translation>साफ़</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Všechny skupiny</translation>
+        <translation>सभी श्रेणियाँ</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Všechny jazyky</translation>
+        <translation>सभी भाषाएँ</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Vše</translation>
+        <translation>सब</translation>
     </message>
     <message>
         <source>TV</source>
@@ -954,18 +954,18 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation>Rádio</translation>
+        <translation>रेडियो</translation>
     </message>
 </context>
 <context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
-        <translation>Stavba souboru s hodnotami oddělenými čárkou (CSV)</translation>
+        <translation>CSV फ़ाइल की संरचना</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation>Oddělovač:</translation>
+        <translation>विभाजक:</translation>
     </message>
     <message>
         <source>;</source>
@@ -973,47 +973,47 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>First line:</source>
-        <translation>První řádek:</translation>
+        <translation>पहली पंक्ति:</translation>
     </message>
     <message>
         <source>First line contains column names</source>
-        <translation>První řádek obsahuje názvy sloupců</translation>
+        <translation>पहली पंक्ति में स्तंभ नाम हैं</translation>
     </message>
     <message>
         <source>First line does not contain column names</source>
-        <translation>První řádek neobsahuje názvy sloupců</translation>
+        <translation>पहली पंक्ति में स्तंभ नाम नहीं हैं</translation>
     </message>
     <message>
         <source>Column list:</source>
-        <translation>Seznam sloupců:</translation>
+        <translation>स्तंभ की सूची:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Řaďte, prosím, své sloupce od prvního po poslední.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Číslo</translation>
+        <translation>संख्या</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Program</translation>
+        <translation>चैनल </translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Skupiny</translation>
+        <translation> श्रेणियाँ</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation>भाषा</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>ID EPG</translation>
+        <translation>EPG ID</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>Adresa (URL)</translation>
+        <translation>URL</translation>
     </message>
 </context>
 <context>
@@ -1024,74 +1024,74 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Program</translation>
+        <translation>चैनल </translation>
     </message>
     <message>
         <source>Url</source>
-        <translation>Adresa (URL)</translation>
+        <translation>Url</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Skupiny</translation>
+        <translation>श्रेणियाँ</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation>भाषा</translation>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
-        <translation>Vyvedeno programem Tano na %1.</translation>
+        <translation>%1 पर Tano के साथ निर्यात करें.</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>ID XMLTV</translation>
+        <translation>XMLTV ID</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation>प्रकार</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>Logo</translation>
+        <translation>लोगो</translation>
     </message>
 </context>
 <context>
     <name>PrintDialog</name>
     <message>
         <source>Print</source>
-        <translation>Tisk</translation>
+        <translation>प्रिंट</translation>
     </message>
     <message>
         <source>Select information for printing:</source>
-        <translation>Vybrat podrobnosti, které se mají tisknout:</translation>
+        <translation>प्रिंटिंग के लिए जानकारी चुनें:</translation>
     </message>
     <message>
         <source>Channel number</source>
-        <translation>Číslo programu</translation>
+        <translation>चैनल संख्या</translation>
     </message>
     <message>
         <source>Channel name</source>
-        <translation>Název programu</translation>
+        <translation>चैनल नाम</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>Adresa (URL)</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Skupiny</translation>
+        <translation>श्रेणियाँ</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation>भाषा</translation>
     </message>
     <message>
         <source>Print channel List</source>
-        <translation>Vytisknout seznam programů</translation>
+        <translation>चैनल सूची प्रिंट करें</translation>
     </message>
     <message>
         <source>Channel type</source>
-        <translation>Typ programu</translation>
+        <translation>चैनल के प्रकार</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
@@ -1099,90 +1099,88 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>Logo</translation>
+        <translation>लोगो</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Disabled</source>
-        <translation>Zakázáno</translation>
+        <translation>बलहीन</translation>
     </message>
     <message>
         <source>Channel list</source>
-        <translation>Seznam programů</translation>
+        <translation>चैनल की सूची</translation>
     </message>
     <message>
         <source>New channel</source>
-        <translation>Nový program</translation>
+        <translation>नया चैनल</translation>
     </message>
     <message>
         <source>The file is not a Tano Timers list.</source>
-        <translation>Soubor není seznam časovačů Tano.</translation>
+        <translation>यह फ़ाइल एक Tano टाइमर सूची नहीं है.</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2:
 %3</source>
-        <translation>Chyba při zpracování na řádku %1, sloupec %2:
-%3</translation>
+        <translation>पंक्ति %1, स्तंभ %2: %3  पर त्रुटि पार्स करें</translation>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
-        <translation>Soubor není aktualizačním souborem Tano.</translation>
+        <translation>यह फ़ाइल एक Tano अद्यतन फ़ाइल नहीं है.</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Jednou</translation>
+        <translation>एक बार</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Denně</translation>
+        <translation>प्रतिदिन</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Týdně</translation>
+        <translation>साप्ताहिक</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Program</translation>
+        <translation>चैनल</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>Adresa (URL)</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Skupiny</translation>
+        <translation>श्रेणियाँ</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation>भाषा</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Číslo</translation>
+        <translation>संख्या</translation>
     </message>
     <message>
         <source>The file is not a valid XMLTV file.</source>
-        <translation>Soubor není platným souborem XMLTV.</translation>
+        <translation>XMLTV फ़ाइल एक वैध फ़ाइल नहीं है .</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Nelze zapisovat soubor %1:
-%2.</translation>
+        <translation>फ़ाइल नहीं पढ़ सकते %1:⏎ %2.</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>sekund</translation>
+        <translation>सेकंड्स</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minut(y)</translation>
+        <translation>मिनट</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>hodin(y)</translation>
+        <translation>घंटे</translation>
     </message>
     <message>
         <source>s</source>
@@ -1190,7 +1188,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation>मिनट</translation>
     </message>
     <message>
         <source>h</source>
@@ -1198,179 +1196,179 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>Otevřít adresář</translation>
+        <translation>निर्देशिका खोलें</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Otevřít seznam programů</translation>
+        <translation>खोलें चैनल की सूची</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
-        <translation>Otevřít adresu (URL) nebo datový proud</translation>
+        <translation>खोलें URL या स्ट्रीम</translation>
     </message>
     <message>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation>Zadejte adresu (URL) multimediálního souboru nebo datového proudu, jejž chcete přehrávat:</translation>
+        <translation>मल्टीमीडिया फाइल या स्ट्रीम का URL दर्ज करें जो तुम खेलना चाहते:</translation>
     </message>
     <message>
         <source>Tano M3U channel list files</source>
-        <translation>Soubory se seznamy programů M3U Tano</translation>
+        <translation>Tano M3U ​​चैनल सूची फ़ाइलें</translation>
     </message>
     <message>
         <source>Comma-separated values files</source>
-        <translation>Soubory s hodnotami oddělenými čárkou</translation>
+        <translation>Comma-separated values files</translation>
     </message>
     <message>
         <source>Multimedia files</source>
-        <translation>Multimediální soubory</translation>
+        <translation>मल्टीमीडिया फ़ाइलें</translation>
     </message>
     <message>
         <source>Subtitles files</source>
-        <translation>Soubory titulků</translation>
+        <translation>उपशीर्षक फ़ाइलें</translation>
     </message>
     <message>
         <source>Plain text files</source>
-        <translation>Soubory prostého textu</translation>
+        <translation>सादा टेक्स्ट फ़ाइलें</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation>Otevřít soubor</translation>
+        <translation>फाइल खोलें</translation>
     </message>
     <message>
         <source>Open subtitles</source>
-        <translation>Otevřít titulky</translation>
+        <translation>खोलें उपशीर्षक</translation>
     </message>
     <message>
         <source>Export XMLTV IDs</source>
-        <translation>Vyvést identifikátory XMLTV</translation>
+        <translation>निर्यात XMLTV IDs</translation>
     </message>
     <message>
         <source>M3U (original) files</source>
-        <translation>Soubory M3U (původní)</translation>
+        <translation>M3U फ़ाइलें (मूल)</translation>
     </message>
     <message>
         <source>M3U (Udpxy URL) files</source>
-        <translation>Soubory M3U (adresy (URL) Udpxy)</translation>
+        <translation>M3U (Udpxy URL) फ़ाइलें</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>
-        <translation>Soubory se seznamy programů STB Sagem</translation>
+        <translation>Sagem STB चैनल सूची फ़ाइलें</translation>
     </message>
     <message>
         <source>CSV channel list</source>
-        <translation>Seznam programů CSV</translation>
+        <translation>CSV चैनल सूची</translation>
     </message>
     <message>
         <source>Sagem STB channel list</source>
-        <translation>Seznam programů STB Sagem</translation>
+        <translation>Sagem STB चैनल सूची</translation>
     </message>
     <message>
         <source>XMLTV file</source>
-        <translation>Soubor XMLTV</translation>
+        <translation>XMLTV फ़ाइल</translation>
     </message>
     <message>
         <source>Open XMLTV</source>
-        <translation>Otevřít XMLTV</translation>
+        <translation>XMLTV को खोलें</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Povoleno</translation>
+        <translation>सक्षम</translation>
     </message>
     <message>
         <source>Recording</source>
-        <translation>Nahrávání</translation>
+        <translation>रिकॉर्डिंग</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation>Hotovo</translation>
+        <translation>समाप्त</translation>
     </message>
     <message>
         <source>Expired</source>
-        <translation>Vypršelo</translation>
+        <translation>निश्वासित</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation>Každý všední den</translation>
+        <translation>कार्यदिवस</translation>
     </message>
     <message>
         <source>Instant</source>
-        <translation>Okamžitý</translation>
+        <translation>तत्काल</translation>
     </message>
     <message>
         <source>repeats only once</source>
-        <translation>Opakuje pouze jednou</translation>
+        <translation>केवल एक बार दोहराता </translation>
     </message>
     <message>
         <source>repeats daily</source>
-        <translation>Opakuje denně</translation>
+        <translation>प्रतिदिन दोहराता</translation>
     </message>
     <message>
         <source>repeats weekly</source>
-        <translation>Opakuje týdně</translation>
+        <translation>साप्ताहिक दोहराता</translation>
     </message>
     <message>
         <source>repeats on weekdays</source>
-        <translation>Opakuje kterýkoliv všední den</translation>
+        <translation>कार्यदिवस पर दोहराता</translation>
     </message>
     <message>
         <source>instant recording</source>
-        <translation>Okamžitý záznam</translation>
+        <translation>तत्काल रिकॉर्डिंग</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>ID XMLTV</translation>
+        <translation>XMLTV ID</translation>
     </message>
     <message>
         <source>Try &apos;%1&apos; for more information.</source>
-        <translation>Zkuste &apos;%1&apos; pro více informací.</translation>
+        <translation>अधिक जानकारी के लिए &apos;%1&apos; की कोशिश करें.</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation>Chybí povinný argument pro &apos;%1&apos;.</translation>
+        <translation>&apos;%1&apos; के लिए अनिवार्य तर्क लापता.</translation>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
-        <translation>Neznámá volba &apos;%1&apos;.</translation>
+        <translation>अज्ञात विकल्प &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Usage: %1 [options]</source>
-        <translation>Použití: %1 [volby]</translation>
+        <translation>उपयोग: %1 [विकल्प]</translation>
     </message>
     <message>
         <source>IP TV playback:</source>
-        <translation>Přehrávání IP TV:</translation>
+        <translation>IP TV का पुनर्चलन:</translation>
     </message>
     <message>
         <source>Play channel by number</source>
-        <translation>Přehrávat program podle čísla</translation>
+        <translation>संख्या से चैनल चलायें</translation>
     </message>
     <message>
         <source>Use playlist file</source>
-        <translation>Použít soubor se seznamem programů</translation>
+        <translation>प्लेलिस्ट फ़ाइल का उपयोग करें</translation>
     </message>
     <message>
         <source>Use XMLTV file</source>
-        <translation>Použít soubor XMLTV</translation>
+        <translation>XMLTV फ़ाइल का उपयोग करें</translation>
     </message>
     <message>
         <source>Open:</source>
-        <translation>Otevřít:</translation>
+        <translation>खोलें:</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Otevřít adresu (URL)</translation>
+        <translation>URL खोलें</translation>
     </message>
     <message>
         <source>Playback options:</source>
-        <translation>Volby pro přehrávání:</translation>
+        <translation>पुनर्चलन के विकल्प:</translation>
     </message>
     <message>
         <source>Set audio output</source>
-        <translation>Nastavit zvukový výstup</translation>
+        <translation>ऑडियो आउटपुट निर्धारित करें</translation>
     </message>
     <message>
         <source>Set video output</source>
-        <translation>Nastavit obrazový výstup</translation>
+        <translation>वीडियो आउटपुट निर्धारित करें</translation>
     </message>
     <message>
         <source>Error:</source>
@@ -1657,32 +1655,32 @@ Ztratíte všechny neuložené změny.</translation>
     <name>QtKeySequenceEdit</name>
     <message>
         <source>Clear Shortcut</source>
-        <translation>Smazat klávesovou zkratku</translation>
+        <translation>स्पष्ट सरल तरीका</translation>
     </message>
 </context>
 <context>
     <name>Recorder</name>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávání</translation>
+        <translation>रिकॉर्डर</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
-        <translation>Nelze zapisovat do %1.</translation>
+        <translation> %1 के लिए नहीं लिख सकता.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
-        <translation>Záznam není platný!</translation>
+        <translation>रिकॉर्डिंग वैध नहीं है</translation>
     </message>
     <message>
         <source>File cannot be removed.
 Have you already moved or deleted it?</source>
-        <translation>Soubor nelze odstranit.
-Již jste jej přesunul nebo smazal?</translation>
+        <translation>फ़ाइल हटाया नहीं जा सकता.
+क्या आप पहले से ही चले गए या इसे नष्ट कर दिया है?</translation>
     </message>
     <message>
         <source>Recordings and timers</source>
-        <translation>Nahrávky a časovače</translation>
+        <translation>रिकॉर्डिंग और टाइमर</translation>
     </message>
     <message>
         <source>Instant %1</source>
@@ -1693,211 +1691,211 @@ Již jste jej přesunul nebo smazal?</translation>
     <name>RecorderInfoWidget</name>
     <message>
         <source>End time:</source>
-        <translation>Konec:</translation>
+        <translation>अंत समय:</translation>
     </message>
     <message>
         <source>Currently not recording.</source>
-        <translation>Nyní se nenahrává.</translation>
+        <translation>फिलहाल रिकॉर्डिंग नहीं है.</translation>
     </message>
     <message>
         <source>No timer - stop manually.</source>
-        <translation>Žádný časovač - zastavit ručně.</translation>
+        <translation>कोई टाइमर नहीं है- मैन्युअल रूप से बंद करो.</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Zastavit nahrávání</translation>
+        <translation>रिकॉर्डिंग रोकें</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation>Nahrává se:</translation>
+        <translation>रिकॉर्डिंग:</translation>
     </message>
     <message>
         <source>Elapsed:</source>
-        <translation>Uplynulý čas:</translation>
+        <translation>बीत:</translation>
     </message>
     <message>
         <source>Output:</source>
-        <translation>Výstup:</translation>
+        <translation>आउटपुट:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Program:</translation>
+        <translation>Channel:</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>Přehrát</translation>
+        <translation>चलायें</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Smazat</translation>
+        <translation>हटाना</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Zpět</translation>
+        <translation>पीछे</translation>
     </message>
     <message>
         <source>Time:</source>
-        <translation>Čas:</translation>
+        <translation>समय:</translation>
     </message>
     <message>
         <source>Duration:</source>
-        <translation>Doba trvání:</translation>
+        <translation>अवधि:</translation>
     </message>
     <message>
         <source>File:</source>
-        <translation>Soubor:</translation>
+        <translation>फ़ाइल:</translation>
     </message>
     <message>
         <source>at</source>
-        <translation>v</translation>
+        <translation>में</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávání</translation>
+        <translation>रिकॉर्डर</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the recording?
 This operation is ireversible.</source>
-        <translation>Jste si jistý, že chcete nahrávku smazat?
-Tuto operaci nelze vrátit zpět.</translation>
+        <translation>क्या आप सुनिश्चित हैं कि आप रिकॉर्डिंग हटाना चाहते हैं?
+यह आपरेशन अपरिवर्तनीय है.</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Uložit</translation>
+        <translation>सुरक्षित करना</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Stav</translation>
+        <translation>स्थिति</translation>
     </message>
     <message>
         <source>Edit timer</source>
-        <translation>Upravit časovač</translation>
+        <translation>टाइमर संपादित करें</translation>
     </message>
 </context>
 <context>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation>Rychlý záznam</translation>
+        <translation>त्वरित रिकॉर्ड</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation>Vybraný kanál:</translation>
+        <translation>चयनित चैनल:</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation>Název nahrávky:</translation>
+        <translation>रिकॉर्डिंग का  नाम:</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Nahrávat</translation>
+        <translation>रिकॉर्ड</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Zpět</translation>
+        <translation>वापस</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Přidat časovač</translation>
+        <translation>टाइमर जोड़ें</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation>Název časovače:</translation>
+        <translation>टाइमर का नाम:</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation>Přidat nový časovač</translation>
+        <translation>नई टाइमर जोड़ें</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávač</translation>
+        <translation>रिकॉर्डर</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation>Vyberte, prosím, program.</translation>
+        <translation>कृपया, एक चैनल का चयन करें.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
-        <translation>Tento program nemáte v seznamu programů.</translation>
+        <translation>आपकी प्लेलिस्ट में यह चैनल नहीं है.</translation>
     </message>
     <message>
         <source>New recording</source>
-        <translation>Nová nahrávka</translation>
+        <translation>नई रिकॉर्डिंग</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Hledat a filtrovat</translation>
+        <translation>खोज और साफ़ करना</translation>
     </message>
 </context>
 <context>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
-        <translation>Jádro VLC-Qt</translation>
+        <translation>VLC-Qt बैकेंड</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation>Verze:</translation>
+        <translation>संस्करण:</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
-        <translation>Používá se verze VLC Videolan:</translation>
+        <translation>VideoLAN VLC संस्करण का उपयोग:</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>Přehrávání</translation>
+        <translation>पुनर्चलन</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
-        <translation>Výchozí jazyk titulků:</translation>
+        <translation>डिफ़ॉल्ट उपशीर्षक भाषा:</translation>
     </message>
     <message>
         <source>Default audio language:</source>
-        <translation>Výchozí jazyk pro zvuk:</translation>
+        <translation>डिफ़ॉल्ट ऑडियो भाषा:</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Zakázáno</translation>
+        <translation>अक्षम</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Jiné</translation>
+        <translation>अन्य</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
-        <translation>Výchozí poměr stran:</translation>
+        <translation>डिफ़ॉल्ट पहलू अनुपात:</translation>
     </message>
     <message>
         <source>Default crop:</source>
-        <translation>Výchozí pro ořez:</translation>
+        <translation>डिफ़ॉल्ट फसल:</translation>
     </message>
     <message>
         <source>Default deinterlacing:</source>
-        <translation>Výchozí pro zrušení prokládání:</translation>
+        <translation>डिफ़ॉल्ट deinterlacing:</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Původní</translation>
+        <translation>वास्तविक</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Zrušit</translation>
+        <translation>छोड़ना</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation>Prolínání</translation>
+        <translation>मिश्रण</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation>Střed</translation>
+        <translation>माध्य</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation>Trhání</translation>
+        <translation>बॉब</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation>Přímočarý</translation>
+        <translation>रैखिक</translation>
     </message>
     <message>
         <source>X</source>
@@ -1905,230 +1903,231 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
-        <translation>Povolit teletext (vyžaduje opětovné spuštění)</translation>
+        <translation>सक्षम टेलीटेक्स्ट (पुनरारंभ आवश्यक)</translation>
     </message>
     <message>
         <source>Core</source>
-        <translation>Hlavní</translation>
+        <translation>मूल</translation>
     </message>
     <message>
         <source>Video output:</source>
-        <translation>Obrazový výstup:</translation>
+        <translation>वीडियो आउटपुट:</translation>
     </message>
     <message>
         <source>Audio output:</source>
-        <translation>Zvukový výstup:</translation>
+        <translation>ऑडियो आउटपुट:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Výchozí</translation>
+        <translation>डिफ़ॉल्ट</translation>
     </message>
     <message>
         <source>Enable YUV-&gt;RGB hardware decoding</source>
-        <translation>Povolit hardwarové dekódování YUV-&gt;RGB</translation>
+        <translation> YUV-&gt;RGB हार्डवेयर decoding सक्षम करें</translation>
     </message>
     <message>
         <source>Enable S/PDIF output</source>
-        <translation>Povolit výstup S/PDIF</translation>
+        <translation>S/PDIF आउटपुट सक्षम करें</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>Síť</translation>
+        <translation>संजाल</translation>
     </message>
     <message>
         <source>Select network interface:</source>
-        <translation>Vybrat síťové rozhraní</translation>
+        <translation>संजाल अंतरफलक चुनें:</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automaticky</translation>
+        <translation>स्वचालित</translation>
     </message>
     <message>
         <source>Misc</source>
-        <translation>Různé</translation>
+        <translation>Misc</translation>
     </message>
     <message>
         <source>Mute on minimize</source>
-        <translation>Ztlumit při zmenšení do panelu</translation>
+        <translation>कम से कम पर मौन</translation>
     </message>
     <message>
         <source>Remember video settings:</source>
-        <translation>Zapamatovat si nastavení obrazu:</translation>
+        <translation>वीडियो सेटिंग्स याद रखें:</translation>
     </message>
     <message>
         <source>For all channels</source>
-        <translation>Pro všechny programy</translation>
+        <translation>सभी चैनलों के लिए</translation>
     </message>
     <message>
         <source>Per channel</source>
-        <translation>Pro program</translation>
+        <translation>प्रति चैनल</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation>Povolit</translation>
+        <translation>सक्षम</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation>सेटिंग</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Obecné</translation>
+        <translation>सामान्य</translation>
     </message>
     <message>
         <source>Playlist</source>
         <extracomment>Please make manual line breaks if text too long!</extracomment>
-        <translation>Seznam programů</translation>
+        <translation>प्लेलिस्ट</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Rozhraní</translation>
+        <translation>अंतरफलक</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>Přehrávání</translation>
+        <translation>पुनर्चलन</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Rozvrh</translation>
+        <translation>अनुसूची</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávání</translation>
+        <translation>रिकॉर्डर</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialogShortcuts</name>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Klávesové zkratky</translation>
+        <translation>कीबोर्ड शॉर्टकट</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation>Činnost</translation>
+        <translation>क्रिया</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Klávesa</translation>
+        <translation>Key</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation>Přehrát/Pozastavit</translation>
+        <translation>चलायें/ रोकें</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Zastavit</translation>
+        <translation>रोको</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>Další program</translation>
+        <translation>अगला चैनल</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>Předchozí program</translation>
+        <translation>पिछला चैनल</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>Na celou obrazovku</translation>
+        <translation>पूर्णस्क्रीन</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation>Přepnout informační prvek</translation>
+        <translation>टॉगल इन्फो विजेट</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation>Přepnout ovládací prvek</translation>
+        <translation>टॉगल नियंत्रण विजेट</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Ztlumit</translation>
+        <translation>मूक</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletext</translation>
+        <translation>टेलीटेक्स्ट</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Zvýšit hlasitost</translation>
+        <translation>	
+वॉल्यूम ऊपर</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Snížit hlasitost</translation>
+        <translation>वॉल्यूम नीचे</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávání</translation>
+        <translation>रिकॉर्डर</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>Otevřít soubor</translation>
+        <translation>फ़ाइल खोलें</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Otevřít adresu (URL)</translation>
+        <translation>URL खोलें</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>Otevřít seznam programů</translation>
+        <translation>चैनल की सूची खोलें</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation>सेटिंग्स</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Vždy nahoře</translation>
+        <translation>हमेशा शीर्ष पर</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Jednoduchý režim</translation>
+        <translation>सरल मोड</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Skrýt v oznamovací oblasti panelu</translation>
+        <translation>ट्रे में छुपाएँ</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>Další zvuková stopa</translation>
+        <translation>अगला ऑडियो ट्रैक</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>Další obrazová stopa</translation>
+        <translation>अगला वीडियो ट्रैक</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>Další titulková stopa</translation>
+        <translation>अगला उपशीर्षक ट्रैक</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>Další režim pro poměr stran</translation>
+        <translation>अगला पहलू अनुपात मोड</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation>Další režim pro ořez</translation>
+        <translation>अगला  क्रॉप त मोड</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>Další režim pro zrušení prokládání</translation>
+        <translation>अगला deinterlace मोड</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Nastavit</translation>
+        <translation>स्थित</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>Výchozí</translation>
+        <translation>चूक</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>Okamžité nahrávání</translation>
+        <translation>तत्काल रिकॉर्डिंग</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Udělat snímek</translation>
+        <translation>स्नैपशॉट लें</translation>
     </message>
     <message>
         <source>-</source>
@@ -2136,15 +2135,15 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
-        <translation>Režim další měřítko/zvětšení</translation>
+        <translation>अगले मापक/ ज़ूम के मोड</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation>Náhled programů</translation>
+        <translation>चैनलों को पूर्वावलोकन करें </translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Rozvrh</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Current show info</source>
@@ -2155,348 +2154,348 @@ Tuto operaci nelze vrátit zpět.</translation>
     <name>SettingsGeneral</name>
     <message>
         <source>Language</source>
-        <translation>Jazyk</translation>
+        <translation>भाषा</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Výchozí jazyk systému</translation>
+        <translation>सिस्टम की डिफ़ॉल्ट भाषा</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>Jazyk stanovený uživatelem</translation>
+        <translation>प्रचलन की भाषा</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation>Ukládání sezení</translation>
+        <translation>सेशन संग्रह करना</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Pamatovat si hlasitost</translation>
+        <translation>मात्रा याद रखें</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Automatické přehrávání posledního programu</translation>
+        <translation>पिछले चैनल को ऑटोप्ले करो</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation>Používáte verzi programu Tano:</translation>
+        <translation>आप Tano संस्करण का उपयोग कर रहे हैं:</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>Výchozí</translation>
+        <translation>चूक</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Obnovit výchozí nastavení</translation>
+        <translation>डिफ़ॉल्ट पुनर्स्थापित करना</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Toto obnoví všechna vaše nastavení na výchozí. Potřebujete změny použít, předtím než se projeví.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt; यह आपके सभी सेटिंग्स डिफ़ॉल्ट को बहाल करेंगे. आपको परिवर्तनों को लागू करने की जरूरत है, इससे पहले कि वे प्रभाव में आये जाए.&lt;/ i&gt;</translation>
     </message>
 </context>
 <context>
     <name>SettingsPlaylist</name>
     <message>
         <source>Default playlist</source>
-        <translation>Výchozí seznam programů</translation>
+        <translation>डिफ़ॉल्ट प्लेलिस्ट</translation>
     </message>
     <message>
         <source>Network refresh</source>
-        <translation>Obnovení sítě</translation>
+        <translation>नेटवर्क ताज़ा करे</translation>
     </message>
     <message>
         <source>Refresh playlist on startup</source>
-        <translation>Obnovit seznam programů při spuštění</translation>
+        <translation>स्टार्टअप पर ताज़ा प्लेलिस्ट</translation>
     </message>
     <message>
         <source>Playlist URL:</source>
-        <translation>Adresa (URL) seznamu programů:</translation>
+        <translation>प्लेलिस्ट में URL:</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>Výchozí skupina pro rádio:</translation>
+        <translation>डिफ़ॉल्ट रेडियो श्रेणी:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>Podpora UDPXY</translation>
+        <translation>UDPXY समर्थन</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Povolit podporu UDPXY</translation>
+        <translation>UDPXY समर्थन सक्षम करें</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>IP nebo název směrovače:</translation>
+        <translation>रूटर IP या नाम:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Přípojka směrovače:</translation>
+        <translation>रूटर बंदरगाह:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Aktualizace nezmění pořadí ve vašem seznamu programů.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;अद्यतन से आपका प्लेलिस्ट क्रम नहीं बदल जाएगा.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Channel types categories</source>
-        <translation>Skupiny typů programů</translation>
+        <translation>चैनल के प्रकार की श्रेणियां</translation>
     </message>
     <message>
         <source>Default HD category:</source>
-        <translation>Výchozí skupina HD</translation>
+        <translation>डिफ़ॉल्ट HD श्रेणी:</translation>
     </message>
 </context>
 <context>
     <name>SettingsRecorder</name>
     <message>
         <source>Default recording directory</source>
-        <translation>Výchozí adresář pro nahrávání</translation>
+        <translation>डिफ़ॉल्ट रिकॉर्डिंग निर्देशिका</translation>
     </message>
     <message>
         <source>Default snapshots directory</source>
-        <translation>Výchozí adresář pro snímek</translation>
+        <translation>डिफ़ॉल्ट फोटो निर्देशिका</translation>
     </message>
 </context>
 <context>
     <name>SettingsSchedule</name>
     <message>
         <source>Select desired XMLTV grabber from the list below:</source>
-        <translation>Vyberte požadovaný zachytávač XMLTV ze seznamu dole:</translation>
+        <translation>नीचे दी गई सूची में से इच्छित XMLTV धरनेवाला का चयन करें:</translation>
     </message>
     <message>
         <source>XMLTV settings</source>
-        <translation>Nastavení XMLTV</translation>
+        <translation>XMLTV सेटिंग्स</translation>
     </message>
     <message>
         <source>XMLTV file location:</source>
-        <translation>Umístění souboru XMLTV:</translation>
+        <translation>XMLTV फ़ाइल के स्थान:</translation>
     </message>
     <message>
         <source>Refresh XMLTV</source>
-        <translation>Obnovit XMLTV</translation>
+        <translation>XMLTV को ताज़ा करें</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
-        <translation>Obnovit soubor XMLTV při spuštění</translation>
+        <translation>प्रारंभ होने पर XMLTV को ताज़ा करें</translation>
     </message>
     <message>
         <source>Download file</source>
-        <translation>Stáhnout soubor</translation>
+        <translation>फ़ाइल डाउनलोड करें</translation>
     </message>
     <message>
         <source>Run grabber</source>
-        <translation>Spustit zachytávač</translation>
+        <translation>Run grabber</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>Síť</translation>
+        <translation>संजाल</translation>
     </message>
     <message>
         <source>XMLTV source url:</source>
-        <translation>Adresa zdroje XMLTV:</translation>
+        <translation>XMLTV स्रोत url:</translation>
     </message>
     <message>
         <source>Grabber</source>
-        <translation>Zachytávač</translation>
+        <translation>धरनेवाला</translation>
     </message>
     <message>
         <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Všechna nastavení pro XMLTV vyžadují opětovné spuštění.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;सभी XMLTV सेटिंग्स को पुनः आरंभ करने की आवश्यकता है.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Běžící zachytávání ještě není dostupné.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt; चल रहा धरनेवाला अभी तक उपलब्ध नहीं है.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
     <name>SettingsUi</name>
     <message>
         <source>General Interface Settings</source>
-        <translation>Obecná nastavení rozhraní</translation>
+        <translation>सामान्य अंतरफलक सेटिंग्स</translation>
     </message>
     <message>
         <source>Toolbar style:</source>
-        <translation>Styl nástrojového pruhu:</translation>
+        <translation>टूलबार शैली</translation>
     </message>
     <message>
         <source>Icon only</source>
-        <translation>Pouze ikony</translation>
+        <translation>केवल चिह्न</translation>
     </message>
     <message>
         <source>Text only</source>
-        <translation>Pouze text</translation>
+        <translation>केवल पाठ</translation>
     </message>
     <message>
         <source>Text beside icon</source>
-        <translation>Text vedle ikon</translation>
+        <translation>आइकन के बगल में पाठ</translation>
     </message>
     <message>
         <source>Text under icon</source>
-        <translation>Text pod ikonami</translation>
+        <translation>Text under icon</translation>
     </message>
     <message>
         <source>System default</source>
-        <translation>Výchozí nastavení</translation>
+        <translation>सिस्टम डिफ़ॉल्ट</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation>Změnit program</translation>
+        <translation>चैनल बदलें</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation>Změnit hlasitost</translation>
+        <translation>वॉल्यूम बदलें</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation>Zmenšit do oznamovací oblasti panelu</translation>
+        <translation>ट्रे को छोटा करें</translation>
     </message>
     <message>
         <source>Default options for startup</source>
-        <translation>Výchozí volby pro začátek</translation>
+        <translation>स्टार्टअप के लिए डिफ़ॉल्ट विकल्प</translation>
     </message>
     <message>
         <source>Simple mode</source>
-        <translation>Jednoduchý režim</translation>
+        <translation>सरल मोड</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Vždy nahoře</translation>
+        <translation>हमेशा शीर्ष पर</translation>
     </message>
     <message>
         <source>Show tray icon</source>
-        <translation>Ukázat ikonu v oznamovací oblasti</translation>
+        <translation>ट्रे चिह्न दिखाएँ</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
-        <translation>Kolečko myši:</translation>
+        <translation>माउस व्हील:</translation>
     </message>
     <message>
         <source>Controls:</source>
-        <translation>Ovládání:</translation>
+        <translation>नियंत्रण:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
-        <translation>Ikona pro panel:</translation>
+        <translation>ट्रे चिह्न:</translation>
     </message>
     <message>
         <source>Show on mouse move</source>
-        <translation>Ukázat při pohybu myši</translation>
+        <translation>माउस के चाल पर दिखाएं</translation>
     </message>
     <message>
         <source>Info panel:</source>
-        <translation>Informační panel:</translation>
+        <translation>जानकारी पैनल:</translation>
     </message>
     <message>
         <source>Remember main window size, position and open panels</source>
-        <translation>Zapamatovat si velikost hlavního okna, umístění a otevřené panely</translation>
+        <translation>मुख्य विंडो का आकार,स्थिति, और खुले पैनल याद रखें</translation>
     </message>
     <message>
         <source>Filters always visible</source>
-        <translation>Filtry vždy viditelné</translation>
+        <translation>फ़िल्टर हमेशा दिखाई देता है</translation>
     </message>
     <message>
         <source>Icon theme</source>
-        <translation>Podoba ikon</translation>
+        <translation>चिह्न प्रसंग</translation>
     </message>
     <message>
         <source>Tano default</source>
-        <translation>Výchozí Tano</translation>
+        <translation>Tano डिफ़ॉल्ट</translation>
     </message>
     <message>
         <source>Desktop theme</source>
-        <translation>Vzhled plochy</translation>
+        <translation>डेस्कटॉप का विषय</translation>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Tato volba vyžaduje opětovné spuštění.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;यह विकल्प को पुनः आरंभ करने की आवश्यकता है.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
     <name>Timer</name>
     <message>
         <source>at</source>
-        <translation>v</translation>
+        <translation>में</translation>
     </message>
 </context>
 <context>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Smazat</translation>
+        <translation>साफ़</translation>
     </message>
 </context>
 <context>
     <name>TimersEditorWidget</name>
     <message>
         <source>Timers</source>
-        <translation>Časovače</translation>
+        <translation>टाइमर</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Název:</translation>
+        <translation>नाम:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Program:</translation>
+        <translation>चैनल:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation>प्रकार:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Jednou</translation>
+        <translation>एक बार</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Denně</translation>
+        <translation>दैनिक</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Týdně</translation>
+        <translation>साप्ताहिक</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation>Každý všední den</translation>
+        <translation>कार्यदिवस</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Adresa (URL):</translation>
+        <translation>Url:</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation>dd.mm.rrrr</translation>
+        <translation>dd. MM. yyyy</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Datum:</translation>
+        <translation>तिथि:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation>Začátek:</translation>
+        <translation>प्रारंभ समय:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Konec:</translation>
+        <translation>अंत समय:</translation>
     </message>
     <message>
         <source>Disable:</source>
-        <translation>Vypnout:</translation>
+        <translation>अक्षम</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávání</translation>
+        <translation>रिकॉर्डर</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation>Počáteční datum nahrávání je před dneškem.
-Vaše změny nebudou uloženy.</translation>
+        <translation>रिकॉर्डिंग शुरू होने की तिथि आज से पहले है.
+आपके परिवर्तनों को सहेजा नहीं किया जाएगा.</translation>
     </message>
     <message>
         <source>The recording is overlaping with others.
 Your changes will not be saved.</source>
-        <translation>Nahrávání se překrývá s jiným.
-Vaše změny nebudou uloženy.</translation>
+        <translation>रिकॉर्डिंग दूसरों के साथ अतिव्यापी है.
+आपके परिवर्तनों को सहेजा नहीं किया जाएगा.</translation>
     </message>
 </context>
 <context>
@@ -2507,115 +2506,113 @@ Vaše změny nebudou uloženy.</translation>
     </message>
     <message>
         <source>Playing:</source>
-        <translation>Přehrává se:</translation>
+        <translation>बजाना:</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation>Nahrává se:</translation>
+        <translation>रिकॉर्डिंग:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávač</translation>
+        <translation>रिकॉर्डर</translation>
     </message>
     <message>
         <source>Tano stopped recording</source>
-        <translation>Tano zastavilo nahrávání</translation>
+        <translation>Tano रिकॉर्डिंग बंद कर दिया है&gt;</translation>
     </message>
     <message>
         <source>Tano is recording %1 to %2 
 Stop manually!</source>
-        <translation>Tano nahrává %1 do
-%2
-Zastavit ručně!</translation>
+        <translation>Tano %1 से %2 रिकॉर्डिंग कर रहा है.
+मैन्युअल रूप से बंद करो!</translation>
     </message>
     <message>
         <source>Tano is recording %1 to %2 
 End time: %3</source>
-        <translation>Tano nahrává %1 do
-%2
-Konečný čas: %3</translation>
+        <translation>Tano %1 से %2 रिकॉर्डिंग कर रहा है.
+अंत समय: %3 है</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
         <source>Update Information</source>
-        <translation>Informace o aktualizacích</translation>
+        <translation>अद्यतन जानकारी</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Používáte poslední verzi programu Tano!&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt; आप Tano के नवीनतम संस्करण का उपयोग कर रहे हैं &lt;/ h3&gt;</translation>
     </message>
     <message>
         <source>Current version:</source>
-        <translation>Současná verze:</translation>
+        <translation>वर्तमान संस्करण:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Používáte vývojářskou verzi programu Tano!&lt;/h3&gt;</translation>
+        <translation>आप &lt;h3&gt; Tano के विकास संस्करण का उपयोग कर रहे हैं &lt;/ h3&gt;!</translation>
     </message>
     <message>
         <source>Stable version:</source>
-        <translation>Stálá verze:</translation>
+        <translation>स्थिर संस्करण:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Vaši verzi programu Tano je potřeba zaktualizovat!&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Tano के आपके संस्करण को अद्यतन करना आवश्यक हैं!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Date released:</source>
-        <translation>Datum vydání:</translation>
+        <translation>तिथि जारी</translation>
     </message>
     <message>
         <source>Information:</source>
-        <translation>Informace:</translation>
+        <translation>जानकारी:</translation>
     </message>
     <message>
         <source>Download now!</source>
-        <translation>Stáhnout teď!</translation>
+        <translation>अभी डाउनलोड करें!</translation>
     </message>
 </context>
 <context>
     <name>XmltvCrewMember</name>
     <message>
         <source>Director</source>
-        <translation>Režisér</translation>
+        <translation>निर्देशक</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation>Herec</translation>
+        <translation>अभिनेता</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation>Autor</translation>
+        <translation>लेखक</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation>Adaptér</translation>
+        <translation>अनुकूलक</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation>Producent</translation>
+        <translation>निर्माता</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation>Skladatel</translation>
+        <translation>संगीतकार</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Vedoucí střihu</translation>
+        <translation>संपादक</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation>Hlasatel</translation>
+        <translation>प्रस्तुतकर्ता</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation>Komentátor</translation>
+        <translation>समालोचक</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation>Host</translation>
+        <translation>अतिथि</translation>
     </message>
 </context>
 </TS>

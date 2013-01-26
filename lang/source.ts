@@ -96,6 +96,10 @@ Your VLC-Qt version: %3
         <source>Search and filter</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>EpgShow</name>
@@ -260,10 +264,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Quick</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
@@ -409,6 +409,14 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Preview channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current show info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instant</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -706,10 +714,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cannot read file %1:
 %2.</source>
         <translation type="unfinished"></translation>
@@ -773,6 +777,22 @@ You will lose any unsaved changes.</source>
         <source>Radio</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto XMLTV map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please wait for XMLTV file to parse.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
@@ -818,6 +838,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1342,6 +1366,278 @@ You will lose any unsaved changes.</source>
         <source>Parse error at line %1, column %2: %3</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Movie/Drama</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Detective/Thriller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adventure/Western/War</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Science Fiction/Fantasy/Horror</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comedy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Soap/Melodrama/Folkloric</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Romance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serious/Classical/Religious/Historical Movie/Drama</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adult Movie/Drama</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>News/Current affairs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>News/Weather report</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>News magazine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documentary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Discussion/Interview/Debate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show/Game show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Game show/Quiz/Contest</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variety show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Talk show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Special events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sports magazines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Football/Soccer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tennis/Squash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Team sports</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Athletics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Motor sport</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Water sport</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Children&apos;s/Youth programmes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pre-school children&apos;s programmes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Entertainment programmes for 6 to 14</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Entertainment programmes for 10 to 16</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Informational/Educational/School programmes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cartoons/Puppets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Music/Ballet/Dance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rock/Pop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Serious music/Classical music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Folk/Traditional music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jazz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Musical/Opera</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arts/Culture</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Performing arts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fine arts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Religion</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Popular culture/Traditional arts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Literature</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Film/Cinema</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Experimental film/video</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Broadcasting/Press</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Social/Political issues/Economics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Magazines/Reports/Documentary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Economics/Social advisory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remarkable people</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Education/Science/Factual topics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nature/Animals/Environment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Technology/Natural sciences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Medicine/Physiology/Psychology</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Foreign countries/Expeditions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Social/Spiritual sciences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Further education</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Leisure hobbies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tourism/Travel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Handicraft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Motoring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fitness and Health</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cooking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Advertisement/Shopping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gardening</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1354,10 +1650,6 @@ You will lose any unsaved changes.</source>
     <name>Recorder</name>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Quick %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1375,6 +1667,10 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Recordings and timers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instant %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1763,10 +2059,6 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit Channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1832,6 +2124,14 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Preview channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current show info</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

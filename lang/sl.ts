@@ -36,26 +36,6 @@
         <translation>&lt;b&gt;Uporabljate Videolan VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>This version of Tano was compiled on
-%1 running %2.
-Your Qt runtime version: %3
-Your VLC-Qt version: %4
-</source>
-        <translation type="obsolete">Ta različica programa Tano je bila kodno prevedena na
-%1 s sistemom %2 
-Vaša različica Qt: %3
-Vaša različica VLC-Qt: %4
-</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="obsolete">Urejevalnik</translation>
-    </message>
-    <message>
-        <source>Player</source>
-        <translation type="obsolete">Predvajalnik</translation>
-    </message>
-    <message>
         <source>Your Tano version: %1
 Your Qt runtime version: %2
 Your VLC-Qt version: %3
@@ -96,17 +76,6 @@ Vaša različica knjižnice VLC-Qt: %3</translation>
     </message>
 </context>
 <context>
-    <name>EpgList</name>
-    <message>
-        <source>Show information</source>
-        <translation type="obsolete">Pokaži podrobnosti</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation type="obsolete">Snemaj</translation>
-    </message>
-</context>
-<context>
     <name>EpgScheduleChannel</name>
     <message>
         <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
@@ -130,6 +99,10 @@ Vaša različica knjižnice VLC-Qt: %3</translation>
     <message>
         <source>Search and filter</source>
         <translation>Išči in filtriraj</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Spored&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>
@@ -257,32 +230,56 @@ Vaša različica knjižnice VLC-Qt: %3</translation>
         <translation>Glavna orodna vrstica</translation>
     </message>
     <message>
-        <source>Info panel</source>
-        <translation>Info pult</translation>
+        <source>Play</source>
+        <translation>Predvajaj</translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation>Skrij v orodno vrstico</translation>
+    </message>
+    <message>
+        <source>Do you want to exit Tano?
+This will stop recording in progress.</source>
+        <translation>Ali želite zapreti Tano?
+To bo ustavilo trenutno snemanje.</translation>
+    </message>
+    <message>
+        <source>Controls</source>
+        <translation>Upravljanje</translation>
+    </message>
+    <message>
+        <source>Recorder Toolbar</source>
+        <translation>Orodna vrstica snemalnika</translation>
+    </message>
+    <message>
+        <source>Tano Support</source>
+        <translation>Tano Podpora</translation>
+    </message>
+    <message>
+        <source>Pause</source>
+        <translation>Prekini</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation>Ne morem prebrati %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Restore</source>
+        <translation>Obnovi</translation>
     </message>
     <message>
         <source>Schedule</source>
         <translation>Spored</translation>
     </message>
     <message>
-        <source>Play</source>
-        <translation>Predvajaj</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Ustavi</translation>
+        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Spored&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Back</source>
         <translation>Nazaj</translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation>Naslednji</translation>
-    </message>
-    <message>
-        <source>Mute</source>
-        <translation>Tiho</translation>
     </message>
     <message>
         <source>About Tano</source>
@@ -305,6 +302,14 @@ Vaša različica knjižnice VLC-Qt: %3</translation>
         <translation>&amp;Celoten zaslon</translation>
     </message>
     <message>
+        <source>&amp;Open channel list</source>
+        <translation>&amp;Odpri seznam programov</translation>
+    </message>
+    <message>
+        <source>Open channel list</source>
+        <translation>Odpri seznam programov</translation>
+    </message>
+    <message>
         <source>Open &amp;File</source>
         <translation>Odpri &amp;Datoteko</translation>
     </message>
@@ -325,16 +330,24 @@ Vaša različica knjižnice VLC-Qt: %3</translation>
         <translation>Odpri</translation>
     </message>
     <message>
+        <source>Stop</source>
+        <translation>Ustavi</translation>
+    </message>
+    <message>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
     </message>
     <message>
-        <source>Hide to tray</source>
-        <translation>Skrij v orodno vrstico</translation>
-    </message>
-    <message>
         <source>Simple Mode</source>
         <translation>Enostaven način</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Naslednji</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation>Tiho</translation>
     </message>
     <message>
         <source>Volume up</source>
@@ -349,8 +362,8 @@ Vaša različica knjižnice VLC-Qt: %3</translation>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <source>Timers</source>
-        <translation type="obsolete">Časovniki</translation>
+        <source>Quick record</source>
+        <translation>Hitro snemanje</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -365,18 +378,8 @@ Vaša različica knjižnice VLC-Qt: %3</translation>
         <translation>Upravljalni pult</translation>
     </message>
     <message>
-        <source>Do you want to exit Tano?
-This will stop recording in progress.</source>
-        <translation>Ali želite zapreti Tano?
-To bo ustavilo trenutno snemanje.</translation>
-    </message>
-    <message>
-        <source>&amp;Open channel list</source>
-        <translation>&amp;Odpri seznam programov</translation>
-    </message>
-    <message>
-        <source>Open channel list</source>
-        <translation>Odpri seznam programov</translation>
+        <source>Info panel</source>
+        <translation>Info pult</translation>
     </message>
     <message>
         <source>Enable Info panel in Fullscreen mode</source>
@@ -391,58 +394,20 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Teletekst</translation>
     </message>
     <message>
-        <source>Controls</source>
-        <translation>Upravljanje</translation>
-    </message>
-    <message>
         <source>Keyboard shortcuts</source>
         <translation>Bližnjice na tipkovnici</translation>
     </message>
     <message>
-        <source>Recorder Toolbar</source>
-        <translation>Orodna vrstica snemalnika</translation>
-    </message>
-    <message>
-        <source>Quick record</source>
-        <translation>Hitro snemanje</translation>
+        <source>Instant recording</source>
+        <translation>Takojšnje snemanje</translation>
     </message>
     <message>
         <source>Add timer</source>
         <translation>Dodaj časovnik</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Spored&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Support</source>
         <translation>Podpora</translation>
-    </message>
-    <message>
-        <source>Tano Support</source>
-        <translation>Tano Podpora</translation>
-    </message>
-    <message>
-        <source>Pause</source>
-        <translation>Prekini</translation>
-    </message>
-    <message>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation>Ne morem prebrati %1:
-%2.</translation>
-    </message>
-    <message>
-        <source>Restore</source>
-        <translation>Obnovi</translation>
-    </message>
-    <message>
-        <source>Quick</source>
-        <translation>Hitro</translation>
-    </message>
-    <message>
-        <source>Instant recording</source>
-        <translation>Takojšnje snemanje</translation>
     </message>
     <message>
         <source>Take snapshot</source>
@@ -451,6 +416,14 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Preview channels</source>
         <translation>Predogled programov</translation>
+    </message>
+    <message>
+        <source>Current show info</source>
+        <translation>Informacije o trenutni oddaji</translation>
+    </message>
+    <message>
+        <source>Instant</source>
+        <translation>Instantno</translation>
     </message>
 </context>
 <context>
@@ -577,10 +550,6 @@ To bo ustavilo trenutno snemanje.</translation>
 <context>
     <name>NetworkDownload</name>
     <message>
-        <source>Tano</source>
-        <translation type="obsolete">Tano</translation>
-    </message>
-    <message>
         <source>Cannot write file %1:
 %2.</source>
         <translation>Ne morem pisati datoteke %1:
@@ -588,7 +557,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka:</translation>
     </message>
 </context>
 <context>
@@ -752,10 +721,6 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>%1 - Tano Urejevalnik</translation>
     </message>
     <message>
-        <source>Tano</source>
-        <translation>Tano</translation>
-    </message>
-    <message>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
@@ -800,10 +765,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Uredi program</translation>
     </message>
     <message>
-        <source>Radio:</source>
-        <translation type="obsolete">Radio:</translation>
-    </message>
-    <message>
         <source>Scan for new channels</source>
         <translation>Preišči za nove programe</translation>
     </message>
@@ -826,6 +787,22 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Radio</source>
         <translation>Radio</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Drugo</translation>
+    </message>
+    <message>
+        <source>Auto XMLTV map</source>
+        <translation>Samodejno poveži z XMLTV</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Urejevalnik</translation>
+    </message>
+    <message>
+        <source>Please wait for XMLTV file to parse.</source>
+        <translation>Počakajte, da se datoteka XMLTV prebere do konca.</translation>
     </message>
 </context>
 <context>
@@ -873,6 +850,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
         <translation>Zaporedna številka programa mora biti potrjena. Vse druge vrednosti se samodejno spremenijo. Katerikoli program je lahko nastavljen kot radio. Kategorije se ločijo z vejico (,).</translation>
+    </message>
+    <message>
+        <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
+        <translation>Tano bo samodejno poskušal povezati programe z XMLTV. Še vedno pa priporočamo, da preverite za možne napake.</translation>
     </message>
 </context>
 <context>
@@ -945,18 +926,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Clear</source>
         <translation>Počisti</translation>
-    </message>
-    <message>
-        <source>TV + Radio</source>
-        <translation type="obsolete">TV + Radio</translation>
-    </message>
-    <message>
-        <source>TV only</source>
-        <translation type="obsolete">Samo TV</translation>
-    </message>
-    <message>
-        <source>Radio only</source>
-        <translation type="obsolete">Samo radio</translation>
     </message>
     <message>
         <source>All categories</source>
@@ -1116,10 +1085,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Jezik</translation>
     </message>
     <message>
-        <source>EPG</source>
-        <translation type="obsolete">EPG</translation>
-    </message>
-    <message>
         <source>Print channel List</source>
         <translation>Natisni seznam programov</translation>
     </message>
@@ -1145,10 +1110,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Channel list</source>
         <translation>Seznam programov</translation>
-    </message>
-    <message>
-        <source>Tano</source>
-        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>New channel</source>
@@ -1311,46 +1272,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Odpri XMLTV</translation>
     </message>
     <message>
-        <source>Director</source>
-        <translation type="obsolete">Režiser</translation>
-    </message>
-    <message>
-        <source>Actor</source>
-        <translation type="obsolete">Igralec</translation>
-    </message>
-    <message>
-        <source>Writer</source>
-        <translation type="obsolete">Scenarist</translation>
-    </message>
-    <message>
-        <source>Adapter</source>
-        <translation type="obsolete">Aranžer</translation>
-    </message>
-    <message>
-        <source>Producer</source>
-        <translation type="obsolete">Producent</translation>
-    </message>
-    <message>
-        <source>Composer</source>
-        <translation type="obsolete">Skladatelj</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="obsolete">Montažer</translation>
-    </message>
-    <message>
-        <source>Presenter</source>
-        <translation type="obsolete">Voditelj</translation>
-    </message>
-    <message>
-        <source>Commentator</source>
-        <translation type="obsolete">Komentator</translation>
-    </message>
-    <message>
-        <source>Guest</source>
-        <translation type="obsolete">Gost</translation>
-    </message>
-    <message>
         <source>Enabled</source>
         <translation>Vključen</translation>
     </message>
@@ -1451,16 +1372,284 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Izberi video izhod</translation>
     </message>
     <message>
-        <source>Radio</source>
-        <translation type="obsolete">Radio</translation>
-    </message>
-    <message>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka:</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Napaka branja na vrstici %1, stolpec %2: %3</translation>
+    </message>
+    <message>
+        <source>Movie/Drama</source>
+        <translation>Film/Serija</translation>
+    </message>
+    <message>
+        <source>Detective/Thriller</source>
+        <translation>Detektivka/Triler</translation>
+    </message>
+    <message>
+        <source>Adventure/Western/War</source>
+        <translation>Pustolovščina/Vestern/Vojni</translation>
+    </message>
+    <message>
+        <source>Science Fiction/Fantasy/Horror</source>
+        <translation>Znanstvena fantastika/Fantazija/Grozljivka</translation>
+    </message>
+    <message>
+        <source>Comedy</source>
+        <translation>Komedija</translation>
+    </message>
+    <message>
+        <source>Soap/Melodrama/Folkloric</source>
+        <translation>Telenovela/Melodrama/Folklora</translation>
+    </message>
+    <message>
+        <source>Romance</source>
+        <translation>Romanca</translation>
+    </message>
+    <message>
+        <source>Serious/Classical/Religious/Historical Movie/Drama</source>
+        <translation>Resen/Klasičen/Verski/Zgodovinski film/serija</translation>
+    </message>
+    <message>
+        <source>Adult Movie/Drama</source>
+        <translation>Film/serija za odrasle</translation>
+    </message>
+    <message>
+        <source>News/Current affairs</source>
+        <translation>Novice/Trenutni dogodki</translation>
+    </message>
+    <message>
+        <source>News/Weather report</source>
+        <translation>Novice/Vremenska napoved</translation>
+    </message>
+    <message>
+        <source>News magazine</source>
+        <translation>Informativna oddaja</translation>
+    </message>
+    <message>
+        <source>Documentary</source>
+        <translation>Dokumentarec</translation>
+    </message>
+    <message>
+        <source>Discussion/Interview/Debate</source>
+        <translation>Pogovor/Intervju/Debata</translation>
+    </message>
+    <message>
+        <source>Show/Game show</source>
+        <translation>Zabavna oddaja/igra</translation>
+    </message>
+    <message>
+        <source>Game show/Quiz/Contest</source>
+        <translation>Igra/Kviz/Tekmovanje</translation>
+    </message>
+    <message>
+        <source>Variety show</source>
+        <translation>Zabavna oddaja</translation>
+    </message>
+    <message>
+        <source>Talk show</source>
+        <translation>Pogovorna oddaja</translation>
+    </message>
+    <message>
+        <source>Sports</source>
+        <translation>Šport</translation>
+    </message>
+    <message>
+        <source>Special events</source>
+        <translation>Posebni dogodki</translation>
+    </message>
+    <message>
+        <source>Sports magazines</source>
+        <translation>Oddaje o športu</translation>
+    </message>
+    <message>
+        <source>Football/Soccer</source>
+        <translation>Nogomet</translation>
+    </message>
+    <message>
+        <source>Tennis/Squash</source>
+        <translation>Tenis/Squash</translation>
+    </message>
+    <message>
+        <source>Team sports</source>
+        <translation>Ekipni športi</translation>
+    </message>
+    <message>
+        <source>Athletics</source>
+        <translation>Atletika</translation>
+    </message>
+    <message>
+        <source>Motor sport</source>
+        <translation>Avtomobilistični športi</translation>
+    </message>
+    <message>
+        <source>Water sport</source>
+        <translation>Vodni športi</translation>
+    </message>
+    <message>
+        <source>Children&apos;s/Youth programmes</source>
+        <translation>Otroški/Mladinski program</translation>
+    </message>
+    <message>
+        <source>Pre-school children&apos;s programmes</source>
+        <translation>Program za predšolsko mladino</translation>
+    </message>
+    <message>
+        <source>Entertainment programmes for 6 to 14</source>
+        <translation>Zabavni program od 6 do 14 let</translation>
+    </message>
+    <message>
+        <source>Entertainment programmes for 10 to 16</source>
+        <translation>Zabavni program od 10 do 16 let</translation>
+    </message>
+    <message>
+        <source>Informational/Educational/School programmes</source>
+        <translation>Informativni/Izobraževalni/Šolski program</translation>
+    </message>
+    <message>
+        <source>Cartoons/Puppets</source>
+        <translation>Risanke/Lutke</translation>
+    </message>
+    <message>
+        <source>Music/Ballet/Dance</source>
+        <translation>Glasba/Balet/Ples</translation>
+    </message>
+    <message>
+        <source>Rock/Pop</source>
+        <translation>Rock/Pop</translation>
+    </message>
+    <message>
+        <source>Serious music/Classical music</source>
+        <translation>Resna glasba/Klasična glasba</translation>
+    </message>
+    <message>
+        <source>Folk/Traditional music</source>
+        <translation>Ljudska/Tradicionalna glasba</translation>
+    </message>
+    <message>
+        <source>Jazz</source>
+        <translation>Jazz</translation>
+    </message>
+    <message>
+        <source>Musical/Opera</source>
+        <translation>Musical/Opera</translation>
+    </message>
+    <message>
+        <source>Arts/Culture</source>
+        <translation>Umetnost/Kultura</translation>
+    </message>
+    <message>
+        <source>Performing arts</source>
+        <translation>Nastop</translation>
+    </message>
+    <message>
+        <source>Fine arts</source>
+        <translation>Umetnost</translation>
+    </message>
+    <message>
+        <source>Religion</source>
+        <translation>Vera</translation>
+    </message>
+    <message>
+        <source>Popular culture/Traditional arts</source>
+        <translation>Popularna kultura/Tradicionalne umetnosti</translation>
+    </message>
+    <message>
+        <source>Literature</source>
+        <translation>Literatura</translation>
+    </message>
+    <message>
+        <source>Film/Cinema</source>
+        <translation>Film/Kino</translation>
+    </message>
+    <message>
+        <source>Experimental film/video</source>
+        <translation>Eksperimentalni film/video</translation>
+    </message>
+    <message>
+        <source>Broadcasting/Press</source>
+        <translation>Prenos/Novinarstvo</translation>
+    </message>
+    <message>
+        <source>Social/Political issues/Economics</source>
+        <translation>Družbene/Politične zadeve/Ekonomija</translation>
+    </message>
+    <message>
+        <source>Magazines/Reports/Documentary</source>
+        <translation>Oddaje/Poročila/Dokumentarec</translation>
+    </message>
+    <message>
+        <source>Economics/Social advisory</source>
+        <translation>Ekonomija/Družbeni nasveti</translation>
+    </message>
+    <message>
+        <source>Remarkable people</source>
+        <translation>Pomembne osebnosti</translation>
+    </message>
+    <message>
+        <source>Education/Science/Factual topics</source>
+        <translation>Izobraževanje/Znanost/Dejstva</translation>
+    </message>
+    <message>
+        <source>Nature/Animals/Environment</source>
+        <translation>Narava/Živali/Okolje</translation>
+    </message>
+    <message>
+        <source>Technology/Natural sciences</source>
+        <translation>Tehnologija/Naravoslovje</translation>
+    </message>
+    <message>
+        <source>Medicine/Physiology/Psychology</source>
+        <translation>Medicina/Fiziologija/Psihologija</translation>
+    </message>
+    <message>
+        <source>Foreign countries/Expeditions</source>
+        <translation>Tujina/Ekspedicije</translation>
+    </message>
+    <message>
+        <source>Social/Spiritual sciences</source>
+        <translation>Družba/Duhovnost</translation>
+    </message>
+    <message>
+        <source>Further education</source>
+        <translation>Nadaljnje izobraževanje</translation>
+    </message>
+    <message>
+        <source>Languages</source>
+        <translation>Jeziki</translation>
+    </message>
+    <message>
+        <source>Leisure hobbies</source>
+        <translation>Sprostitveni hobiji</translation>
+    </message>
+    <message>
+        <source>Tourism/Travel</source>
+        <translation>Turizem/Potovanja</translation>
+    </message>
+    <message>
+        <source>Handicraft</source>
+        <translation>Ročne spretnosti</translation>
+    </message>
+    <message>
+        <source>Motoring</source>
+        <translation>Avtomobilizem</translation>
+    </message>
+    <message>
+        <source>Fitness and Health</source>
+        <translation>Zdravje in kondicija</translation>
+    </message>
+    <message>
+        <source>Cooking</source>
+        <translation>Kuhanje</translation>
+    </message>
+    <message>
+        <source>Advertisement/Shopping</source>
+        <translation>Oglaševanje/Nakupovanje</translation>
+    </message>
+    <message>
+        <source>Gardening</source>
+        <translation>Vrtnarjenje</translation>
     </message>
 </context>
 <context>
@@ -1475,10 +1664,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
-    </message>
-    <message>
-        <source>Quick %1</source>
-        <translation>Hitro %1</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
@@ -1497,6 +1682,10 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
     <message>
         <source>Recordings and timers</source>
         <translation>Posnetki in časovniki</translation>
+    </message>
+    <message>
+        <source>Instant %1</source>
+        <translation>Instantno %1</translation>
     </message>
 </context>
 <context>
@@ -1658,10 +1847,6 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Predvajanje</translation>
     </message>
     <message>
-        <source>Remember Video settings between media</source>
-        <translation type="obsolete">Zapomni si nastavitve slike med preklapljanjem</translation>
-    </message>
-    <message>
         <source>Default subtitle language:</source>
         <translation>Privzet jezik podnapisov:</translation>
     </message>
@@ -1716,10 +1901,6 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>X</source>
         <translation>X</translation>
-    </message>
-    <message>
-        <source>Teletext</source>
-        <translation type="obsolete">Teletekst</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
@@ -1893,10 +2074,6 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Odpri Seznam programov</translation>
     </message>
     <message>
-        <source>Edit Channel list</source>
-        <translation>Uredi Seznam programov</translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation>Nastavitve</translation>
     </message>
@@ -1964,110 +2141,13 @@ Te operacije ni mogoče razveljaviti.</translation>
         <source>Preview channels</source>
         <translation>Predogled programov</translation>
     </message>
-</context>
-<context>
-    <name>SettingsEditorCommon</name>
     <message>
-        <source>Radio</source>
-        <translation type="obsolete">Radio</translation>
+        <source>Schedule</source>
+        <translation>Spored</translation>
     </message>
     <message>
-        <source>Default radio category:</source>
-        <translation type="obsolete">Privzeta kategorija za radio:</translation>
-    </message>
-    <message>
-        <source>UDPXY support</source>
-        <translation type="obsolete">UDPXY podpora</translation>
-    </message>
-    <message>
-        <source>Enable UDPXY support</source>
-        <translation type="obsolete">Vključi podporo UDPXY</translation>
-    </message>
-    <message>
-        <source>Router IP or name:</source>
-        <translation type="obsolete">IP ali ime usmerjevalnika:</translation>
-    </message>
-    <message>
-        <source>Router port:</source>
-        <translation type="obsolete">Vrata usmerjevalnika:</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation type="obsolete">Vmesnik</translation>
-    </message>
-    <message>
-        <source>Toolbar style:</source>
-        <translation type="obsolete">Izgled orodnih vrstic:</translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation type="obsolete">Samo ikona</translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation type="obsolete">Samo besedilo</translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation type="obsolete">Besedilo ob ikoni</translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation type="obsolete">Besedilo pod ikono</translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation type="obsolete">Sistemsko privzeto</translation>
-    </message>
-    <message>
-        <source>Show splash screen</source>
-        <translation type="obsolete">Prikaži pozdravni zaslon</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsEditorDialog</name>
-    <message>
-        <source>Settings</source>
-        <translation type="obsolete">Nastavitve</translation>
-    </message>
-    <message>
-        <source>General</source>
-        <translation type="obsolete">Splošno</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="obsolete">Urejevalnik</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsEditorGeneral</name>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Jezik</translation>
-    </message>
-    <message>
-        <source>System default language</source>
-        <translation type="obsolete">Sistemsko privzet jezik</translation>
-    </message>
-    <message>
-        <source>Custom language</source>
-        <translation type="obsolete">Poljuben jezik</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="obsolete">Privzeto</translation>
-    </message>
-    <message>
-        <source>Restore defaults</source>
-        <translation type="obsolete">Obnovi privzeto</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="obsolete">&lt;i&gt;To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo biti potrjene, preden bodo uveljavljene.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>You are using Tano Editor version:</source>
-        <translation type="obsolete">Uporabljate Tano Urejevalnik različice:</translation>
+        <source>Current show info</source>
+        <translation>Informacije o trenutni oddaji</translation>
     </message>
 </context>
 <context>
@@ -2130,10 +2210,6 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>Playlist URL:</source>
         <translation>URL seznama:</translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation type="obsolete">Radio</translation>
     </message>
     <message>
         <source>Default radio category:</source>
@@ -2277,24 +2353,12 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Privzete nastavitve ob zagonu</translation>
     </message>
     <message>
-        <source>Show splash screen</source>
-        <translation type="obsolete">Prikaži pozdravni zaslon</translation>
-    </message>
-    <message>
         <source>Simple mode</source>
         <translation>Enostaven način</translation>
     </message>
     <message>
         <source>Always on top</source>
         <translation>Vedno na vrhu</translation>
-    </message>
-    <message>
-        <source>Controls enabled</source>
-        <translation type="obsolete">Vključen upravljalni pult</translation>
-    </message>
-    <message>
-        <source>Info panel enabled</source>
-        <translation type="obsolete">Vključen info pult</translation>
     </message>
     <message>
         <source>Show tray icon</source>
