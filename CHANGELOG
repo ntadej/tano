@@ -1,4 +1,4 @@
-1.2 (git)
+1.2 (2013-01-26)
   * Separated Tano Core and Tano Widgets library
   * Updated and improved OSD and fullscreen handling
   * Automatically map XMLTV IDs to channels in editor
