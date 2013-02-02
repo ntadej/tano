@@ -77,6 +77,7 @@ SET(Tano_Qt5_Libs
     ${QT_BIN_DIR}/icuuc49.dll
     ${QT_BIN_DIR}/libEGL.dll
     ${QT_BIN_DIR}/libGLESv2.dll
+    ${QT_BIN_DIR}/D3DCompiler_43.dll
 )
 
 SET(Tano_Qt5_Platforms
