@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -103,7 +101,7 @@ Verze VLC-Qt: %3
     </message>
     <message>
         <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Rozvrh&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>
@@ -420,11 +418,11 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation>Informace o nynějším pořadu</translation>
     </message>
     <message>
         <source>Instant</source>
-        <translation type="unfinished">Okamžitý</translation>
+        <translation>Okamžitý</translation>
     </message>
 </context>
 <context>
@@ -558,7 +556,7 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba:</translation>
     </message>
 </context>
 <context>
@@ -791,19 +789,19 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished">Jiné</translation>
+        <translation>Jiné</translation>
     </message>
     <message>
         <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaticky přiřadit XMLTV</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor</translation>
     </message>
     <message>
         <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
+        <translation>Počkejte, prosím, na zpracování souboru XMLTV.</translation>
     </message>
 </context>
 <context>
@@ -854,7 +852,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano se automaticky pokusí o přiřazení nynějších ID XMLTV k programům v seznamu programů. Stále ještě může být potřeba provést kontrolu kvůli možným chybám.</translation>
     </message>
 </context>
 <context>
@@ -1374,283 +1372,284 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba:</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba ve zpracování na řádku %1, sloupec %2:
+%3</translation>
     </message>
     <message>
         <source>Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>Film/Drama</translation>
     </message>
     <message>
         <source>Detective/Thriller</source>
-        <translation type="unfinished"></translation>
+        <translation>Detektivka/Napínavý film</translation>
     </message>
     <message>
         <source>Adventure/Western/War</source>
-        <translation type="unfinished"></translation>
+        <translation>Dobrodružství/Kovbojka/Válka</translation>
     </message>
     <message>
         <source>Science Fiction/Fantasy/Horror</source>
-        <translation type="unfinished"></translation>
+        <translation>Vědecká fantastika/Fantazie/Hrůzyplný film</translation>
     </message>
     <message>
         <source>Comedy</source>
-        <translation type="unfinished"></translation>
+        <translation>Veselohra</translation>
     </message>
     <message>
         <source>Soap/Melodrama/Folkloric</source>
-        <translation type="unfinished"></translation>
+        <translation>Mýdlová opera/Napínavá hra/Folklór</translation>
     </message>
     <message>
         <source>Romance</source>
-        <translation type="unfinished"></translation>
+        <translation>Romantika</translation>
     </message>
     <message>
         <source>Serious/Classical/Religious/Historical Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>Vážný/Klasický/Náboženský/Historický film/Drama</translation>
     </message>
     <message>
         <source>Adult Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>Film pro dospělé/Drama</translation>
     </message>
     <message>
         <source>News/Current affairs</source>
-        <translation type="unfinished"></translation>
+        <translation>Zprávy/Události</translation>
     </message>
     <message>
         <source>News/Weather report</source>
-        <translation type="unfinished"></translation>
+        <translation>Zprávy(Zprávy o počasí</translation>
     </message>
     <message>
         <source>News magazine</source>
-        <translation type="unfinished"></translation>
+        <translation>Zpravodajský magazín</translation>
     </message>
     <message>
         <source>Documentary</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokumentární film</translation>
     </message>
     <message>
         <source>Discussion/Interview/Debate</source>
-        <translation type="unfinished"></translation>
+        <translation>Diskuze/Rozhovor/Rozprava</translation>
     </message>
     <message>
         <source>Show/Game show</source>
-        <translation type="unfinished"></translation>
+        <translation>Pořad/Zábavné představení</translation>
     </message>
     <message>
         <source>Game show/Quiz/Contest</source>
-        <translation type="unfinished"></translation>
+        <translation>Kvíz/Kladení otázek/Soutěž</translation>
     </message>
     <message>
         <source>Variety show</source>
-        <translation type="unfinished"></translation>
+        <translation>Varietní představení</translation>
     </message>
     <message>
         <source>Talk show</source>
-        <translation type="unfinished"></translation>
+        <translation>Pořad</translation>
     </message>
     <message>
         <source>Sports</source>
-        <translation type="unfinished"></translation>
+        <translation>Sporty</translation>
     </message>
     <message>
         <source>Special events</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvláštní události</translation>
     </message>
     <message>
         <source>Sports magazines</source>
-        <translation type="unfinished"></translation>
+        <translation>Sportovní magazíny</translation>
     </message>
     <message>
         <source>Football/Soccer</source>
-        <translation type="unfinished"></translation>
+        <translation>Fotbal</translation>
     </message>
     <message>
         <source>Tennis/Squash</source>
-        <translation type="unfinished"></translation>
+        <translation>Tenis/Hra s míčem proti zdi</translation>
     </message>
     <message>
         <source>Team sports</source>
-        <translation type="unfinished"></translation>
+        <translation>Skupinové sporty</translation>
     </message>
     <message>
         <source>Athletics</source>
-        <translation type="unfinished"></translation>
+        <translation>Atletika</translation>
     </message>
     <message>
         <source>Motor sport</source>
-        <translation type="unfinished"></translation>
+        <translation>Automobilové sporty</translation>
     </message>
     <message>
         <source>Water sport</source>
-        <translation type="unfinished"></translation>
+        <translation>Vodní sporty</translation>
     </message>
     <message>
         <source>Children&apos;s/Youth programmes</source>
-        <translation type="unfinished"></translation>
+        <translation>Programy pro děti/mládež</translation>
     </message>
     <message>
         <source>Pre-school children&apos;s programmes</source>
-        <translation type="unfinished"></translation>
+        <translation>Programy pro předškolní děti</translation>
     </message>
     <message>
         <source>Entertainment programmes for 6 to 14</source>
-        <translation type="unfinished"></translation>
+        <translation>Zábavní programy pro děti ve věku od 6 do 14</translation>
     </message>
     <message>
         <source>Entertainment programmes for 10 to 16</source>
-        <translation type="unfinished"></translation>
+        <translation>Zábavní programy pro děti ve věku od 10 do 16</translation>
     </message>
     <message>
         <source>Informational/Educational/School programmes</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdělávací/Výchovné/Školní programy</translation>
     </message>
     <message>
         <source>Cartoons/Puppets</source>
-        <translation type="unfinished"></translation>
+        <translation>Kreslené/Loutkové filmy</translation>
     </message>
     <message>
         <source>Music/Ballet/Dance</source>
-        <translation type="unfinished"></translation>
+        <translation>Hudba/Balet/Tanec</translation>
     </message>
     <message>
         <source>Rock/Pop</source>
-        <translation type="unfinished"></translation>
+        <translation>Rock/Populární hudba</translation>
     </message>
     <message>
         <source>Serious music/Classical music</source>
-        <translation type="unfinished"></translation>
+        <translation>Vážná hudba/Klasická hudba</translation>
     </message>
     <message>
         <source>Folk/Traditional music</source>
-        <translation type="unfinished"></translation>
+        <translation>Folk/Lidová hudba</translation>
     </message>
     <message>
         <source>Jazz</source>
-        <translation type="unfinished"></translation>
+        <translation>Džez</translation>
     </message>
     <message>
         <source>Musical/Opera</source>
-        <translation type="unfinished"></translation>
+        <translation>Muzikál/Opera</translation>
     </message>
     <message>
         <source>Arts/Culture</source>
-        <translation type="unfinished"></translation>
+        <translation>Umění/Kultura</translation>
     </message>
     <message>
         <source>Performing arts</source>
-        <translation type="unfinished"></translation>
+        <translation>Herecké umění</translation>
     </message>
     <message>
         <source>Fine arts</source>
-        <translation type="unfinished"></translation>
+        <translation>Hudba a umění</translation>
     </message>
     <message>
         <source>Religion</source>
-        <translation type="unfinished"></translation>
+        <translation>Náboženství</translation>
     </message>
     <message>
         <source>Popular culture/Traditional arts</source>
-        <translation type="unfinished"></translation>
+        <translation>Lidová kultura/Lidové umění</translation>
     </message>
     <message>
         <source>Literature</source>
-        <translation type="unfinished"></translation>
+        <translation>Literatura</translation>
     </message>
     <message>
         <source>Film/Cinema</source>
-        <translation type="unfinished"></translation>
+        <translation>Film/Kino</translation>
     </message>
     <message>
         <source>Experimental film/video</source>
-        <translation type="unfinished"></translation>
+        <translation>Experimentální film</translation>
     </message>
     <message>
         <source>Broadcasting/Press</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozhlas/Tisk</translation>
     </message>
     <message>
         <source>Social/Political issues/Economics</source>
-        <translation type="unfinished"></translation>
+        <translation>Společenské věci/Politické záležitosti/Ekonomika</translation>
     </message>
     <message>
         <source>Magazines/Reports/Documentary</source>
-        <translation type="unfinished"></translation>
+        <translation>Magazíny/Zprávodajství/Dokumentární pořady</translation>
     </message>
     <message>
         <source>Economics/Social advisory</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekonomika/Společenské poradenství</translation>
     </message>
     <message>
         <source>Remarkable people</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozoruhodní lidé</translation>
     </message>
     <message>
         <source>Education/Science/Factual topics</source>
-        <translation type="unfinished"></translation>
+        <translation>Vzdělávání/Věda/Fakta</translation>
     </message>
     <message>
         <source>Nature/Animals/Environment</source>
-        <translation type="unfinished"></translation>
+        <translation>Příroda/Zvířata/Prostředí</translation>
     </message>
     <message>
         <source>Technology/Natural sciences</source>
-        <translation type="unfinished"></translation>
+        <translation>Technologie/Přírodní vědy</translation>
     </message>
     <message>
         <source>Medicine/Physiology/Psychology</source>
-        <translation type="unfinished"></translation>
+        <translation>Lékařství/Fyziologie/Psychologie</translation>
     </message>
     <message>
         <source>Foreign countries/Expeditions</source>
-        <translation type="unfinished"></translation>
+        <translation>Cizí země/Výpravy</translation>
     </message>
     <message>
         <source>Social/Spiritual sciences</source>
-        <translation type="unfinished"></translation>
+        <translation>Společenské/Duchovní vědy</translation>
     </message>
     <message>
         <source>Further education</source>
-        <translation type="unfinished"></translation>
+        <translation>Další vzdělávání</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Jazyky</translation>
     </message>
     <message>
         <source>Leisure hobbies</source>
-        <translation type="unfinished"></translation>
+        <translation>Koníčky pro volný čas</translation>
     </message>
     <message>
         <source>Tourism/Travel</source>
-        <translation type="unfinished"></translation>
+        <translation>Turistika/Cestování</translation>
     </message>
     <message>
         <source>Handicraft</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruční práce</translation>
     </message>
     <message>
         <source>Motoring</source>
-        <translation type="unfinished"></translation>
+        <translation>Jízda autem</translation>
     </message>
     <message>
         <source>Fitness and Health</source>
-        <translation type="unfinished"></translation>
+        <translation>Cvičení a zdraví</translation>
     </message>
     <message>
         <source>Cooking</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaření</translation>
     </message>
     <message>
         <source>Advertisement/Shopping</source>
-        <translation type="unfinished"></translation>
+        <translation>Reklama/Nakupování</translation>
     </message>
     <message>
         <source>Gardening</source>
-        <translation type="unfinished"></translation>
+        <translation>Zahrádkářství</translation>
     </message>
 </context>
 <context>
@@ -1686,7 +1685,7 @@ Již jste jej přesunul nebo smazal?</translation>
     </message>
     <message>
         <source>Instant %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Okamžitý %1</translation>
     </message>
 </context>
 <context>
@@ -2144,11 +2143,11 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Rozvrh</translation>
+        <translation>Rozvrh</translation>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation>Informace o nynějším pořadu</translation>
     </message>
 </context>
 <context>
