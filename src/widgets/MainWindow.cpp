@@ -168,6 +168,8 @@ void MainWindow::exit()
     {
     case QMessageBox::Close:
         ui->recorder->recordStop();
+        if (ui->actionMute->isChecked())
+            ui->actionMute->toggle();
         _trayIcon->hide();
         writeSession();
         qApp->quit();
