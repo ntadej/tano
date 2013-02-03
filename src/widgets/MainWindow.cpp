@@ -1268,6 +1268,7 @@ void MainWindow::toggleFullscreen(const bool &enabled)
             lite();
     }
 
+    toggleMouse(!enabled);
     toggleFilters(enabled);
 }
 
