@@ -1,3 +1,9 @@
+1.2.1 (2013-02-08)
+  * Updated Czech and Ukrainian translation
+  * Fix: Consistently show/hide mouse cursor
+  * Fix: Fix mute on exit
+  * Fix: Install missing DLL in Windows
+
 1.2 (2013-01-26)
   * Separated Tano Core and Tano Widgets library
   * Updated and improved OSD and fullscreen handling
