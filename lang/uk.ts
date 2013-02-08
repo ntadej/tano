@@ -101,7 +101,7 @@ Your VLC-Qt version: %3
     </message>
     <message>
         <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Графік&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>
@@ -418,11 +418,11 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation>Переглянути поточну інформацію</translation>
     </message>
     <message>
         <source>Instant</source>
-        <translation type="unfinished">Мить</translation>
+        <translation>Мить</translation>
     </message>
 </context>
 <context>
@@ -556,7 +556,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка:</translation>
     </message>
 </context>
 <context>
@@ -789,19 +789,19 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished">Інші</translation>
+        <translation>Інше</translation>
     </message>
     <message>
         <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
+        <translation>Авто карта XMLTV</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">Редактор</translation>
+        <translation>Редактор</translation>
     </message>
     <message>
         <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, зачекайте XMLTV файл аналізується.</translation>
     </message>
 </context>
 <context>
@@ -852,7 +852,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano буде автоматично намагатися зіставити поточні ідентифікатори XMLTV до каналів в плейлисті. Ви можете перевірити наявність можливих помилок.</translation>
     </message>
 </context>
 <context>
@@ -1372,283 +1372,284 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка:</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Проаналізуйте помилку в рядку %1, колонка %2: %3</translation>
     </message>
     <message>
         <source>Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>Фільм/драма</translation>
     </message>
     <message>
         <source>Detective/Thriller</source>
-        <translation type="unfinished"></translation>
+        <translation>Детектив/Триллер</translation>
     </message>
     <message>
         <source>Adventure/Western/War</source>
-        <translation type="unfinished"></translation>
+        <translation>Пригоди/Вестерни/Військові</translation>
     </message>
     <message>
         <source>Science Fiction/Fantasy/Horror</source>
-        <translation type="unfinished"></translation>
+        <translation>Фантастика/Фентезі/Жахи</translation>
     </message>
     <message>
         <source>Comedy</source>
-        <translation type="unfinished"></translation>
+        <translation>Комедія</translation>
     </message>
     <message>
         <source>Soap/Melodrama/Folkloric</source>
-        <translation type="unfinished"></translation>
+        <translation>Мелодрама/Фолькльор</translation>
     </message>
     <message>
         <source>Romance</source>
-        <translation type="unfinished"></translation>
+        <translation>Романтика</translation>
     </message>
     <message>
         <source>Serious/Classical/Religious/Historical Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>Змістовні/Класичні/Релігійні/Історичні фільми/Драми</translation>
     </message>
     <message>
         <source>Adult Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>Дорослі фільми/Драма</translation>
     </message>
     <message>
         <source>News/Current affairs</source>
-        <translation type="unfinished"></translation>
+        <translation>Новини/Наукові заняття</translation>
     </message>
     <message>
         <source>News/Weather report</source>
-        <translation type="unfinished"></translation>
+        <translation>Новини/Погода</translation>
     </message>
     <message>
         <source>News magazine</source>
-        <translation type="unfinished"></translation>
+        <translation>Новини часопису</translation>
     </message>
     <message>
         <source>Documentary</source>
-        <translation type="unfinished"></translation>
+        <translation>Документальний</translation>
     </message>
     <message>
         <source>Discussion/Interview/Debate</source>
-        <translation type="unfinished"></translation>
+        <translation>Обговорення/Інтерв&apos;ю/Дебати</translation>
     </message>
     <message>
         <source>Show/Game show</source>
-        <translation type="unfinished"></translation>
+        <translation>Огляди/Огляди ігор</translation>
     </message>
     <message>
         <source>Game show/Quiz/Contest</source>
-        <translation type="unfinished"></translation>
+        <translation>Огляди ігор/Вікторини/Конкурси</translation>
     </message>
     <message>
         <source>Variety show</source>
-        <translation type="unfinished"></translation>
+        <translation>Різне</translation>
     </message>
     <message>
         <source>Talk show</source>
-        <translation type="unfinished"></translation>
+        <translation>Перегляд бесід</translation>
     </message>
     <message>
         <source>Sports</source>
-        <translation type="unfinished"></translation>
+        <translation>Спортивний</translation>
     </message>
     <message>
         <source>Special events</source>
-        <translation type="unfinished"></translation>
+        <translation>Екстранні події</translation>
     </message>
     <message>
         <source>Sports magazines</source>
-        <translation type="unfinished"></translation>
+        <translation>Спортивні часописи</translation>
     </message>
     <message>
         <source>Football/Soccer</source>
-        <translation type="unfinished"></translation>
+        <translation>Футбол</translation>
     </message>
     <message>
         <source>Tennis/Squash</source>
-        <translation type="unfinished"></translation>
+        <translation>Теніс/Сквош</translation>
     </message>
     <message>
         <source>Team sports</source>
-        <translation type="unfinished"></translation>
+        <translation>Командні види спорту</translation>
     </message>
     <message>
         <source>Athletics</source>
-        <translation type="unfinished"></translation>
+        <translation>Атлетика</translation>
     </message>
     <message>
         <source>Motor sport</source>
-        <translation type="unfinished"></translation>
+        <translation>Мотоспорт</translation>
     </message>
     <message>
         <source>Water sport</source>
-        <translation type="unfinished"></translation>
+        <translation>Водяний спорт</translation>
     </message>
     <message>
         <source>Children&apos;s/Youth programmes</source>
-        <translation type="unfinished"></translation>
+        <translation>Дитячі/Молодіжні програми</translation>
     </message>
     <message>
         <source>Pre-school children&apos;s programmes</source>
-        <translation type="unfinished"></translation>
+        <translation>Дошкільні дитячі програми</translation>
     </message>
     <message>
         <source>Entertainment programmes for 6 to 14</source>
-        <translation type="unfinished"></translation>
+        <translation>Розважальні програми з 6 до 14</translation>
     </message>
     <message>
         <source>Entertainment programmes for 10 to 16</source>
-        <translation type="unfinished"></translation>
+        <translation>Розважальні програми з 10 до 16</translation>
     </message>
     <message>
         <source>Informational/Educational/School programmes</source>
-        <translation type="unfinished"></translation>
+        <translation>Інформаційні/Освітні/Шкільні програми</translation>
     </message>
     <message>
         <source>Cartoons/Puppets</source>
-        <translation type="unfinished"></translation>
+        <translation>Мультфільми/Дитячі</translation>
     </message>
     <message>
         <source>Music/Ballet/Dance</source>
-        <translation type="unfinished"></translation>
+        <translation>Музика/Балет/Танець</translation>
     </message>
     <message>
         <source>Rock/Pop</source>
-        <translation type="unfinished"></translation>
+        <translation>Рок/Поп</translation>
     </message>
     <message>
         <source>Serious music/Classical music</source>
-        <translation type="unfinished"></translation>
+        <translation>Серйозна музика/Класична музика</translation>
     </message>
     <message>
         <source>Folk/Traditional music</source>
-        <translation type="unfinished"></translation>
+        <translation>Фольклор/Традиційна музика</translation>
     </message>
     <message>
         <source>Jazz</source>
-        <translation type="unfinished"></translation>
+        <translation>Джас</translation>
     </message>
     <message>
         <source>Musical/Opera</source>
-        <translation type="unfinished"></translation>
+        <translation>Музичний/Опера</translation>
     </message>
     <message>
         <source>Arts/Culture</source>
-        <translation type="unfinished"></translation>
+        <translation>Мистецтво/Культура</translation>
     </message>
     <message>
         <source>Performing arts</source>
-        <translation type="unfinished"></translation>
+        <translation>Дійове мистецтво</translation>
     </message>
     <message>
         <source>Fine arts</source>
-        <translation type="unfinished"></translation>
+        <translation>	
+Образотворче мистецтво</translation>
     </message>
     <message>
         <source>Religion</source>
-        <translation type="unfinished"></translation>
+        <translation>Релігія</translation>
     </message>
     <message>
         <source>Popular culture/Traditional arts</source>
-        <translation type="unfinished"></translation>
+        <translation>Популярна культура/Традиційне мистецтво</translation>
     </message>
     <message>
         <source>Literature</source>
-        <translation type="unfinished"></translation>
+        <translation>Література</translation>
     </message>
     <message>
         <source>Film/Cinema</source>
-        <translation type="unfinished"></translation>
+        <translation>Фільм/Кіноматограф</translation>
     </message>
     <message>
         <source>Experimental film/video</source>
-        <translation type="unfinished"></translation>
+        <translation>Експериментальне кіно/відео</translation>
     </message>
     <message>
         <source>Broadcasting/Press</source>
-        <translation type="unfinished"></translation>
+        <translation>Трансляція/Преса</translation>
     </message>
     <message>
         <source>Social/Political issues/Economics</source>
-        <translation type="unfinished"></translation>
+        <translation>Соціальні/Політичні питання/Економіка</translation>
     </message>
     <message>
         <source>Magazines/Reports/Documentary</source>
-        <translation type="unfinished"></translation>
+        <translation>Часописи/Звіти/Документальні</translation>
     </message>
     <message>
         <source>Economics/Social advisory</source>
-        <translation type="unfinished"></translation>
+        <translation>Економіка/Соціальна консультація</translation>
     </message>
     <message>
         <source>Remarkable people</source>
-        <translation type="unfinished"></translation>
+        <translation>Видатні люди</translation>
     </message>
     <message>
         <source>Education/Science/Factual topics</source>
-        <translation type="unfinished"></translation>
+        <translation>Освіта/Наука/Фактичні теми</translation>
     </message>
     <message>
         <source>Nature/Animals/Environment</source>
-        <translation type="unfinished"></translation>
+        <translation>Природа/Тварини/Довкілля</translation>
     </message>
     <message>
         <source>Technology/Natural sciences</source>
-        <translation type="unfinished"></translation>
+        <translation>Технології/Природничі науки</translation>
     </message>
     <message>
         <source>Medicine/Physiology/Psychology</source>
-        <translation type="unfinished"></translation>
+        <translation>Медицина/Фізіологія/Психологія</translation>
     </message>
     <message>
         <source>Foreign countries/Expeditions</source>
-        <translation type="unfinished"></translation>
+        <translation>Закордонніі країни/Експедиції</translation>
     </message>
     <message>
         <source>Social/Spiritual sciences</source>
-        <translation type="unfinished"></translation>
+        <translation>Соціальне/Духовні науки</translation>
     </message>
     <message>
         <source>Further education</source>
-        <translation type="unfinished"></translation>
+        <translation>Подальше навчання</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Мови</translation>
     </message>
     <message>
         <source>Leisure hobbies</source>
-        <translation type="unfinished"></translation>
+        <translation>Дозвілля хобі</translation>
     </message>
     <message>
         <source>Tourism/Travel</source>
-        <translation type="unfinished"></translation>
+        <translation>Туризм/Подорожі</translation>
     </message>
     <message>
         <source>Handicraft</source>
-        <translation type="unfinished"></translation>
+        <translation>Ремесло</translation>
     </message>
     <message>
         <source>Motoring</source>
-        <translation type="unfinished"></translation>
+        <translation>Автомобілі</translation>
     </message>
     <message>
         <source>Fitness and Health</source>
-        <translation type="unfinished"></translation>
+        <translation>Фітнес і здоров&apos;я</translation>
     </message>
     <message>
         <source>Cooking</source>
-        <translation type="unfinished"></translation>
+        <translation>Кулінарія</translation>
     </message>
     <message>
         <source>Advertisement/Shopping</source>
-        <translation type="unfinished"></translation>
+        <translation>Реклама/Покупки</translation>
     </message>
     <message>
         <source>Gardening</source>
-        <translation type="unfinished"></translation>
+        <translation>Садівництво</translation>
     </message>
 </context>
 <context>
@@ -1684,7 +1685,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Instant %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Мить %1</translation>
     </message>
 </context>
 <context>
@@ -2142,11 +2143,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Розклад</translation>
+        <translation>Розклад</translation>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation>Переглянути поточну інформацію</translation>
     </message>
 </context>
 <context>
