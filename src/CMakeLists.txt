@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,9 +29,9 @@ IF(NOT CORE_ONLY)
     ADD_SUBDIRECTORY(widgets)
     ADD_SUBDIRECTORY(desktop)
 
-    IF(WITH_QT5)
+    IF(QT5)
         IF(EXISTS ${CMAKE_SOURCE_DIR}/src/qml/ui AND BUILD_QML)
             ADD_SUBDIRECTORY(qml)
         ENDIF(EXISTS ${CMAKE_SOURCE_DIR}/src/qml/ui AND BUILD_QML)
-    ENDIF(WITH_QT5)
+    ENDIF(QT5)
 ENDIF(NOT CORE_ONLY)

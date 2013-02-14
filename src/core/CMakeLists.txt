@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -145,11 +145,11 @@ ENDIF(CUSTOM_SETTINGS)
 # Qt settings #
 ###############
 # This script runs the resource compiler rcc
-IF(WITH_QT5)
+IF(QT5)
     QT5_ADD_RESOURCES(Tano_Core_Resrcs_Srcs ${Tano_Core_Resrcs})
-ELSE(WITH_QT5)
+ELSE(QT5)
     QT4_ADD_RESOURCES(Tano_Core_Resrcs_Srcs ${Tano_Core_Resrcs})
-ENDIF(WITH_QT5)
+ENDIF(QT5)
 
 
 #####################
@@ -199,11 +199,11 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 # Here the needed Libraries are added to the link command.
-IF(WITH_QT5)
+IF(QT5)
     QT5_USE_MODULES(${TANO_CORE} Concurrent Gui Network Xml)
-ELSE(WITH_QT5)
+ELSE(QT5)
     TARGET_LINK_LIBRARIES(${TANO_CORE} ${QT_LIBRARIES})
-ENDIF(WITH_QT5)
+ENDIF(QT5)
 
 
 ################

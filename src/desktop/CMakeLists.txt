@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -71,12 +71,12 @@ IF(MSVC)
 ENDIF(MSVC)
 
 # Here the needed Libraries are added to the link command.
-IF(WITH_QT5)
+IF(QT5)
     QT5_USE_MODULES(tano Network Widgets)
     TARGET_LINK_LIBRARIES(tano ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB})
-ELSE(WITH_QT5)
+ELSE(QT5)
     TARGET_LINK_LIBRARIES(tano ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB} ${QT_LIBRARIES})
-ENDIF(WITH_QT5)
+ENDIF(QT5)
 
 
 ################

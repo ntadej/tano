@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,11 +18,7 @@
 
 PROJECT(tano)
 
-IF(WITH_QT5)
-    CMAKE_MINIMUM_REQUIRED(VERSION 2.8.9)
-ELSE(WITH_QT5)
-    CMAKE_MINIMUM_REQUIRED(VERSION 2.8.6)
-ENDIF(WITH_QT5)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8.9)
 
 CONFIGURE_FILE(
     "${CMAKE_SOURCE_DIR}/cmake_uninstall.cmake.in"
@@ -122,44 +118,41 @@ IF(MINGW)
     STRING(REGEX REPLACE "\\\\" "/" MINGW_BIN_DIR "${MINGW_BIN_DIR_TMP}") # Replace back slashes to slashes
 ENDIF(MINGW)
 
-# Qt5 support
-OPTION(WITH_QT5 "Build with Qt5" OFF)
-MESSAGE("Build with Qt5: ${WITH_QT5}")
-IF(WITH_QT5)
-    IF(NOT CORE_ONLY)
-        OPTION(BUILD_QML "Build Tano QML" OFF)
-        MESSAGE("Build Tano QML: ${BUILD_QML}")
-    ENDIF(NOT CORE_ONLY)
-ENDIF(WITH_QT5)
-
 # Search for Qt and other libraries
-IF(WITH_QT5)
-    SET(QT_MIN_VERSION "5.0.0")
-    ADD_DEFINITIONS(-DQt5)
-ELSE(WITH_QT5)
-    SET(QT_MIN_VERSION "4.8.0")
-    ADD_DEFINITIONS(-DQt4)
-ENDIF(WITH_QT5)
-
 # Qt
-IF(WITH_QT5)
+SET(QT_MIN_VERSION "4.8.0")
+FIND_PACKAGE(Qt4)
+IF(NOT QT4_FOUND OR QT_VERSION_MAJOR MATCHES 5)
     FIND_PACKAGE(Qt5LinguistTools REQUIRED)
     FIND_PACKAGE(Qt5Widgets REQUIRED)
+    SET(QT5 1)
+    ADD_DEFINITIONS(-DQt5)
+    MESSAGE("VLC-Qt: Build with Qt5")
+ELSE(NOT QT4_FOUND OR QT_VERSION_MAJOR MATCHES 5)
+    SET(QT5 0)
+    ADD_DEFINITIONS(-DQt4)
+    MESSAGE("VLC-Qt: Build with Qt4")
+ENDIF(NOT QT4_FOUND OR QT_VERSION_MAJOR MATCHES 5)
+
+IF(QT5)
+#   Add compiler flags for building executables (-fPIE)
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 
     IF(Qt5_POSITION_INDEPENDENT_CODE)
         SET(CMAKE_POSITION_INDEPENDENT_CODE ON)
     ENDIF(Qt5_POSITION_INDEPENDENT_CODE)
 
-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
-ELSE(WITH_QT5)
-    FIND_PACKAGE(Qt4 REQUIRED)
-
+    IF(NOT CORE_ONLY)
+        OPTION(BUILD_QML "Build Tano QML" OFF)
+        MESSAGE("Build Tano QML: ${BUILD_QML}")
+    ENDIF(NOT CORE_ONLY)
+ELSE(QT5)
     SET(QT_USE_QTNETWORK True)
     SET(QT_USE_QTXML True)
 
     ADD_DEFINITIONS(${QT_DEFINITIONS})
     INCLUDE(${QT_USE_FILE})
-ENDIF(WITH_QT5)
+ENDIF(QT5)
 
 IF(NOT CORE_ONLY)
     FIND_PACKAGE(LIBVLCQT REQUIRED)

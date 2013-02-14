@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -39,21 +39,21 @@ IF(QT_LRELEASE_EXECUTABLE OR Qt5_LRELEASE_EXECUTABLE)
         SET(translate_SRCS ${translate_SRCS} ${translate_UIS})
     ENDIF(REFRESH_TRANSLATIONS)
 
-    IF(WITH_QT5)
+    IF(QT5)
         IF(REFRESH_TRANSLATIONS)
             QT5_CREATE_TRANSLATION(Tano_QMS ${translate_SRCS} ${Tano_TS})
             QT5_CREATE_TRANSLATION(Tano_QMS_SRC ${translate_SRCS} ${TEMPLATE})
         ELSE(REFRESH_TRANSLATIONS)
             QT5_ADD_TRANSLATION(Tano_QMS ${Tano_TS})
         ENDIF(REFRESH_TRANSLATIONS)
-    ELSE(WITH_QT5)
+    ELSE(QT5)
         IF(REFRESH_TRANSLATIONS)
             QT4_CREATE_TRANSLATION(Tano_QMS ${translate_SRCS} ${Tano_TS})
             QT4_CREATE_TRANSLATION(Tano_QMS_SRC ${translate_SRCS} ${TEMPLATE})
         ELSE(REFRESH_TRANSLATIONS)
             QT4_ADD_TRANSLATION(Tano_QMS ${Tano_TS})
         ENDIF(REFRESH_TRANSLATIONS)
-    ENDIF(WITH_QT5)
+    ENDIF(QT5)
 
     ADD_CUSTOM_TARGET(translations ALL DEPENDS ${Tano_QMS})
     IF(REFRESH_TRANSLATIONS)

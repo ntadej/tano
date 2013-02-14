@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -146,11 +146,11 @@ SET(Tano_Widgets_Srcs
 # Qt settings #
 ###############
 # This script runs the user interface compiler uic
-IF(WITH_QT5)
+IF(QT5)
     QT5_WRAP_UI(Tano_Widgets_UIC_Srcs ${Tano_Widgets_UIs})
-ELSE(WITH_QT5)
+ELSE(QT5)
     QT4_WRAP_UI(Tano_Widgets_UIC_Srcs ${Tano_Widgets_UIs})
-ENDIF(WITH_QT5)
+ENDIF(QT5)
 
 
 #####################
@@ -205,12 +205,12 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 # Here the needed Libraries are added to the link command.
-IF(WITH_QT5)
+IF(QT5)
     QT5_USE_MODULES(${TANO_WIDGETS} Network PrintSupport Widgets Xml)
     TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
-ELSE(WITH_QT5)
+ELSE(QT5)
     TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${QT_LIBRARIES} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
-ENDIF(WITH_QT5)
+ENDIF(QT5)
 
 
 ################
