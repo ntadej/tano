@@ -44,7 +44,7 @@ void NetworkRequest::requestFinished(QNetworkReply *reply)
 {
     QVariant redirectionTarget = reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
     if (reply->error()) {
-        emit error(reply->error());
+        emit error(reply->error(), reply);
         return;
     } else if (!redirectionTarget.isNull()) {
         _url = _url.resolved(redirectionTarget.toUrl());

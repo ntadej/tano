@@ -37,7 +37,8 @@ public:
                                const QByteArray &data);
 
 signals:
-	void error(const int &);
+    void error(const int &,
+               QNetworkReply *);
     void result(const QByteArray &,
                 QNetworkReply *);
 
