@@ -77,6 +77,16 @@ bool XmltvGenerator::writeChannels(XmltvList *xmltv)
     return true;
 }
 
+bool XmltvGenerator::writeProgramme(XmltvList *xmltv,
+                                    const int &id)
+{
+    for (int j = 0; j < xmltv->channels()->row(id)->programme()->rowCount(); ++j) {
+        generateProgramme(xmltv->channels()->row(id)->programme()->row(j));
+    }
+
+    return true;
+}
+
 bool XmltvGenerator::writeProgrammes(XmltvList *xmltv)
 {
     for (int i = 0; i < xmltv->channels()->rowCount(); ++i) {

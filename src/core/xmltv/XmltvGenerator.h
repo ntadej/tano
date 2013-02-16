@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This file was based on the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -41,6 +41,8 @@ public:
     bool openFile();
     bool writeHeader(XmltvList *xmltv);
     bool writeChannels(XmltvList *xmltv);
+    bool writeProgramme(XmltvList *xmltv,
+                        const int &id);
     bool writeProgrammes(XmltvList *xmltv);
     bool closeFile();
 
