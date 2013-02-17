@@ -62,7 +62,6 @@ SET(Tano_Qt4_Libs
     ${QT_BIN_DIR}/QtGui4.dll
     ${QT_BIN_DIR}/QtNetwork4.dll
     ${QT_BIN_DIR}/QtXml4.dll
-    ${QT_BIN_DIR}/zlib1.dll
 )
 
 SET(Tano_Qt5_Libs
