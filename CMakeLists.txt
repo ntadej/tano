@@ -249,6 +249,10 @@ SET(Tano_Icons
     data/icons/tano-default
 )
 
+SET(Tano_QMLUI
+    src/qml/ui
+)
+
 SET(Tano_Desktop
     tano.desktop
 )
@@ -263,6 +267,9 @@ SET(Tano_Logo
 # Install data
 IF(NOT CORE_ONLY)
     INSTALL(DIRECTORY ${Tano_Icons} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/icons")
+    IF(BUILD_QML)
+        INSTALL(DIRECTORY ${Tano_QMLUI} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
+    ENDIF(BUILD_QML)
 
     IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
         INSTALL(FILES ${Tano_Desktop} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
