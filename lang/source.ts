@@ -909,6 +909,10 @@ You will lose any unsaved changes.</source>
         <source>All languages</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistFilterWidget</name>

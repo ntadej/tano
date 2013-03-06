@@ -919,6 +919,10 @@ You will lose any unsaved changes.</source>
         <source>All languages</source>
         <translation>Усі мови</translation>
     </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished">Перелік відтворення</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistFilterWidget</name>

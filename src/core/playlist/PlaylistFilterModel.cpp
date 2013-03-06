@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "PlaylistModel.h"
 #include "PlaylistFilterModel.h"
 
 PlaylistFilterModel::PlaylistFilterModel(QObject *parent)
@@ -27,6 +28,15 @@ PlaylistFilterModel::PlaylistFilterModel(QObject *parent)
 }
 
 PlaylistFilterModel::~PlaylistFilterModel() { }
+
+QString PlaylistFilterModel::name() const
+{
+    PlaylistModel *model = qobject_cast<PlaylistModel *>(sourceModel());
+    if (model)
+        return model->name();
+    else
+        return tr("Playlist");
+}
 
 void PlaylistFilterModel::setCategory(const QString &category)
 {

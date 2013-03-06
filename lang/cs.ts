@@ -921,6 +921,10 @@ Ztratíte všechny neuložené změny.</translation>
         <source>All languages</source>
         <translation>Všechny jazyky</translation>
     </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished">Seznam programů</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistFilterWidget</name>

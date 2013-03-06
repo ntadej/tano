@@ -918,6 +918,10 @@ You will lose any unsaved changes.</source>
         <source>All languages</source>
         <translation>Все языки</translation>
     </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished">Плейлист</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistFilterWidget</name>

@@ -915,6 +915,10 @@ Vous perdrez tous les changements non sauvegardés.</translation>
         <source>All languages</source>
         <translation>Toutes les langues</translation>
     </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished">Liste de lecture</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistFilterWidget</name>

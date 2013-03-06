@@ -920,6 +920,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>All languages</source>
         <translation>Vsi jeziki</translation>
     </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished">Programi</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistFilterWidget</name>

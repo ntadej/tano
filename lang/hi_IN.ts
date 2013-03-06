@@ -921,6 +921,10 @@ You will lose any unsaved changes.</source>
         <source>All languages</source>
         <translation> सभी भाषाएँ</translation>
     </message>
+    <message>
+        <source>Playlist</source>
+        <translation type="unfinished">प्लेलिस्ट</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistFilterWidget</name>
