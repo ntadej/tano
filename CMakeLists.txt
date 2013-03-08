@@ -92,8 +92,8 @@ SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Show all warnings
 IF(NOT MSVC)
-    SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall")
-    SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+    SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall -Wextra")
+    SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -Wextra")
 ENDIF(NOT MSVC)
 
 # Make final release build smaller
@@ -244,6 +244,8 @@ ADD_SUBDIRECTORY(src)
 IF(MINGW OR MSVC)
     ADD_SUBDIRECTORY(windows)
 ENDIF(MINGW OR MSVC)
+
+ADD_SUBDIRECTORY(doc)
 
 SET(Tano_Icons
     data/icons/tano-default

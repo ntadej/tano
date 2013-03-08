@@ -33,7 +33,7 @@ Q_OBJECT
 public:
     enum Roles {
         DisplayRole = Qt::DisplayRole,
-        DisplayIconRole = Qt::DecorationRole,
+        DecorationRole = Qt::DecorationRole,
         NameRole = Qt::UserRole + 1,
         ChannelRole,
         UrlRole,
@@ -78,9 +78,9 @@ public:
 
 
     inline QString id() const { return _startTime.toString(); }
-    QVariant data(int role) const;
+    QVariant data(const int &role) const;
     QString display() const;
-    QIcon displayIcon() const;
+    QIcon decoration() const;
     QHash<int, QByteArray> roleNames() const;
 
     inline QString name() const { return _name; }

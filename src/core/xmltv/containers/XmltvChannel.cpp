@@ -42,7 +42,7 @@ QHash<int, QByteArray> XmltvChannel::roleNames() const
 {
     QHash<int, QByteArray> names;
     names[DisplayRole] = "display";
-    names[DisplayIconRole] = "displayIcon";
+    names[DecorationRole] = "decoration";
     names[IdRole] = "id";
     names[DisplayNameRole] = "displayName";
     names[IconRole] = "icon";
@@ -50,14 +50,14 @@ QHash<int, QByteArray> XmltvChannel::roleNames() const
     return names;
 }
 
-QVariant XmltvChannel::data(int role) const
+QVariant XmltvChannel::data(const int &role) const
 {
     switch (role)
     {
     case DisplayRole:
         return display();
-    case DisplayIconRole:
-        return displayIcon();
+    case DecorationRole:
+        return decoration();
     case IdRole:
         return id();
     case DisplayNameRole:
@@ -76,7 +76,7 @@ QString XmltvChannel::display() const
     return displayName();
 }
 
-QIcon XmltvChannel::displayIcon() const
+QIcon XmltvChannel::decoration() const
 {
     return QIcon::fromTheme("video-x-generic");
 }

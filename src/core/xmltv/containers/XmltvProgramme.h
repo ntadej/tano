@@ -35,7 +35,7 @@ Q_OBJECT
 public:
     enum Roles {
         DisplayRole = Qt::DisplayRole,
-        DisplayIconRole = Qt::DecorationRole,
+        DecorationRole = Qt::DecorationRole,
         DisplayFontRole = Qt::FontRole,
         TitleRole = Qt::UserRole + 1,
         ChannelRole,
@@ -67,9 +67,9 @@ public:
     ~XmltvProgramme();
 
     inline QString id() const { return _start.toString(); }
-    QVariant data(int role) const;
+    QVariant data(const int &role) const;
     QString display() const;
-    QIcon displayIcon() const;
+    QIcon decoration() const;
     QHash<int, QByteArray> roleNames() const;
 
     QFont displayFont() const;

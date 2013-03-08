@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 * Based on ListModel by Christophe Dumez <dchris@gmail.com>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -28,6 +28,12 @@
 
 class ListItem;
 
+/*!
+    \class ListModel
+    \brief List model
+
+    An abstract representation of a list model with basic properties
+*/
 class TANO_CORE_EXPORT ListModel : public QAbstractListModel
 {
 Q_OBJECT

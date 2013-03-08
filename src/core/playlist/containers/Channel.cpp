@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ QHash<int, QByteArray> Channel::roleNames() const
 {
     QHash<int, QByteArray> names;
     names[DisplayRole] = "display";
-    names[DisplayIconRole] = "displayIcon";
+    names[DecorationRole] = "decoration";
     names[NameRole] = "name";
     names[TypeRole] = "type";
     names[NumberRole] = "number";
@@ -54,14 +54,14 @@ QHash<int, QByteArray> Channel::roleNames() const
     return names;
 }
 
-QVariant Channel::data(int role) const
+QVariant Channel::data(const int &role) const
 {
     switch (role)
     {
     case DisplayRole:
         return display();
-    case DisplayIconRole:
-        return displayIcon();
+    case DecorationRole:
+        return decoration();
     case NameRole:
         return name();
     case NumberRole:
@@ -88,13 +88,13 @@ QString Channel::display() const
     return QString("%1. %2").arg(QString::number(number()), name());
 }
 
-QIcon Channel::displayIcon() const
+QIcon Channel::decoration() const
 {
     if (type() == Radio)
         return QIcon::fromTheme("audio-x-generic");
     else if (type() == HD)
         return QIcon::fromTheme("video-x-generic");
-    else
+    else // type() == SD
         return QIcon::fromTheme("video-x-generic");
 }
 

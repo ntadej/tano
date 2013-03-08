@@ -44,7 +44,7 @@ QHash<int, QByteArray> XmltvProgramme::roleNames() const
 {
     QHash<int, QByteArray> names;
     names[DisplayRole] = "display";
-    names[DisplayIconRole] = "displayIcon";
+    names[DecorationRole] = "decoration";
     names[DisplayFontRole] = "displayFont";
     names[TitleRole] = "title";
     names[ChannelRole] = "channel";
@@ -63,14 +63,14 @@ QHash<int, QByteArray> XmltvProgramme::roleNames() const
     return names;
 }
 
-QVariant XmltvProgramme::data(int role) const
+QVariant XmltvProgramme::data(const int &role) const
 {
     switch (role)
     {
     case DisplayRole:
         return display();
-    case DisplayIconRole:
-        return displayIcon();
+    case DecorationRole:
+        return decoration();
     case DisplayFontRole:
         return displayFont();
     case TitleRole:
@@ -111,7 +111,7 @@ QString XmltvProgramme::display() const
     return QString("%1 - %2").arg(start().toString("hh:mm"), title());
 }
 
-QIcon XmltvProgramme::displayIcon() const
+QIcon XmltvProgramme::decoration() const
 {
     return QIcon::fromTheme("x-office-calendar");
 }

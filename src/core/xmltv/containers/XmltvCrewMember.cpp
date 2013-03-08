@@ -34,20 +34,20 @@ QHash<int, QByteArray> XmltvCrewMember::roleNames() const
 {
     QHash<int, QByteArray> names;
     names[DisplayRole] = "display";
-    names[DisplayIconRole] = "displayIcon";
+    names[DecorationRole] = "decoration";
     names[NameRole] = "name";
     names[TypeRole] = "type";
     return names;
 }
 
-QVariant XmltvCrewMember::data(int role) const
+QVariant XmltvCrewMember::data(const int &role) const
 {
     switch (role)
     {
     case DisplayRole:
         return display();
-    case DisplayIconRole:
-        return displayIcon();
+    case DecorationRole:
+        return decoration();
     case NameRole:
         return name();
     case TypeRole:
@@ -62,7 +62,7 @@ QString XmltvCrewMember::display() const
     return QString("%1 (%2)").arg(name(), stringFromType(type()));
 }
 
-QIcon XmltvCrewMember::displayIcon() const
+QIcon XmltvCrewMember::decoration() const
 {
     return QIcon::fromTheme("config-users");
 }

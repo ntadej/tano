@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 * Based on ListModel by Christophe Dumez <dchris@gmail.com>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -25,19 +25,58 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 
+/*!
+    \class ListItem ListItem.h core/ListItem.h
+    \brief List item
+
+    An abstract representation of a list item with basic properties
+*/
 class ListItem : public QObject
 {
 Q_OBJECT
 public:
-    ListItem(QObject* parent = 0) : QObject(parent) {}
-    virtual ~ListItem() {}
+    /*!
+        \brief Empty constructor
+        \param parent parent object (QObject *)
+    */
+    ListItem(QObject *parent = 0) : QObject(parent) { }
+    virtual ~ListItem() { }
+
+    /*!
+        \brief Item id
+        \return unique item id (QString)
+    */
     virtual QString id() const = 0;
-    virtual QVariant data(int role) const = 0;
+
+    /*!
+        \brief Get item data
+        \param role selected data role name (int)
+        \return data for specific role (QVariant)
+    */
+    virtual QVariant data(const int &role) const = 0;
+
+    /*!
+        \brief Convenience function for Qt::DisplayRole
+        \return item display text (QString)
+    */
     virtual QString display() const = 0;
-    virtual QIcon displayIcon() const = 0;
+
+    /*!
+        \brief Convenience function for Qt::DecorationRole
+        \return item decoration/icon (QIcon)
+    */
+    virtual QIcon decoration() const = 0;
+
+    /*!
+        \brief Supported item's role names
+        \return item's supported role names (QHash<int, QByteArray>)
+    */
     virtual QHash<int, QByteArray> roleNames() const = 0;
 
 signals:
+    /*!
+        \brief Signal sent on data change
+    */
     void dataChanged();
 };
 

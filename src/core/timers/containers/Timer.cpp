@@ -65,7 +65,7 @@ QHash<int, QByteArray> Timer::roleNames() const
 {
     QHash<int, QByteArray> names;
     names[DisplayRole] = "display";
-    names[DisplayIconRole] = "displayIcon";
+    names[DecorationRole] = "decoration";
     names[NameRole] = "name";
     names[ChannelRole] = "channel";
     names[UrlRole] = "url";
@@ -80,14 +80,14 @@ QHash<int, QByteArray> Timer::roleNames() const
     return names;
 }
 
-QVariant Timer::data(int role) const
+QVariant Timer::data(const int &role) const
 {
     switch (role)
     {
     case DisplayRole:
         return display();
-    case DisplayIconRole:
-        return displayIcon();
+    case DecorationRole:
+        return decoration();
     case NameRole:
         return name();
     case ChannelRole:
@@ -125,7 +125,7 @@ QString Timer::display() const
                  date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"));
 }
 
-QIcon Timer::displayIcon() const
+QIcon Timer::decoration() const
 {
     if (state() == Finished)
         return QIcon::fromTheme("video-x-generic");

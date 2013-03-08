@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 * Based on ListModel by Christophe Dumez <dchris@gmail.com>
 *
 * This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,8 @@ ListModel::ListModel(ListItem *prototype,
     : QAbstractListModel(parent),
       _prototype(prototype) { }
 
-ListModel::~ListModel() {
+ListModel::~ListModel()
+{
     delete _prototype;
     clear();
 }
@@ -114,7 +115,7 @@ bool ListModel::moveRow(const int &oldRow, const int &newRow, const QModelIndex 
 
 bool ListModel::removeRow(const int &row, const QModelIndex &parent)
 {
-    Q_UNUSED(parent);
+    //Q_UNUSED(parent);
     if(row < 0 || row >= _list.size()) return false;
     beginRemoveRows(QModelIndex(), row, row);
     delete _list.takeAt(row);
@@ -124,7 +125,7 @@ bool ListModel::removeRow(const int &row, const QModelIndex &parent)
 
 bool ListModel::removeRows(const int &row, const int &count, const QModelIndex &parent)
 {
-    Q_UNUSED(parent);
+    //Q_UNUSED(parent);
     if(row < 0 || (row+count) > _list.size()) return false;
     beginRemoveRows(QModelIndex(), row, row+count-1);
     for(int i = 0; i < count; ++i) {
