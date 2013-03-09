@@ -18,7 +18,6 @@
 
 #include "core/File.h"
 #include "core/settings/Settings.h"
-#include "core/xmltv/XmltvSystem.h"
 
 #include "SettingsSchedule.h"
 #include "ui_SettingsSchedule.h"
@@ -30,17 +29,12 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
     ui->setupUi(this);
 
     ui->location->setType(File::XmltvFile);
-    ui->location->setResetValue(Settings::DEFAULT_XMLTV_LOCATION);
-
-    _xmltv = new XmltvSystem();
-    connect(_xmltv, SIGNAL(grabbers(QList<XmltvGrabber>)), this, SLOT(listGrabbers(QList<XmltvGrabber>)));
-    _xmltv->requestGrabbers();
+    ui->location->setResetValue(Settings::DEFAULT_XMLTV_UPDATE_LOCATION);
 }
 
 SettingsSchedule::~SettingsSchedule()
 {
     delete ui;
-    delete _xmltv;
 }
 
 void SettingsSchedule::changeEvent(QEvent *e)
@@ -54,17 +48,6 @@ void SettingsSchedule::changeEvent(QEvent *e)
     default:
         break;
     }
-}
-
-void SettingsSchedule::listGrabbers(const QList<XmltvGrabber> &list)
-{
-    ui->comboGrabber->clear();
-
-    foreach (const XmltvGrabber &item, list) {
-        ui->comboGrabber->addItem(item.name, item.path);
-    }
-
-    ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(_grabber));
 }
 
 QString SettingsSchedule::location() const
@@ -87,39 +70,13 @@ void SettingsSchedule::setUpdate(const bool &enabled)
     ui->checkRefresh->setChecked(enabled);
 }
 
-bool SettingsSchedule::updateGrabber() const
+bool SettingsSchedule::remote() const
 {
-    return ui->radioGrabber->isChecked();
+    return ui->radioNetwork->isChecked();
 }
 
-void SettingsSchedule::setUpdateGrabber(const bool &enabled)
+void SettingsSchedule::setRemote(const bool &enabled)
 {
-    ui->radioGrabber->setChecked(enabled);
-    ui->radioNetwork->setChecked(!enabled);
-}
-
-QString SettingsSchedule::updateUrl() const
-{
-    return ui->editUrl->text();
-}
-
-void SettingsSchedule::setUpdateUrl(const QString &url)
-{
-    ui->editUrl->setText(url);
-}
-
-QString SettingsSchedule::grabber() const
-{
-    return ui->comboGrabber->currentText();
-}
-
-QString SettingsSchedule::grabberPath() const
-{
-    return ui->comboGrabber->itemData(ui->comboGrabber->currentIndex()).toString();
-}
-
-void SettingsSchedule::setGrabber(const QString &grabber)
-{
-    _grabber = grabber;
-    ui->comboGrabber->setCurrentIndex(ui->comboGrabber->findData(_grabber));
+    ui->radioFile->setChecked(!enabled);
+    ui->radioNetwork->setChecked(enabled);
 }

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,25 +16,50 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "xmltv/containers/XmltvProgramme.h"
+#include <QtCore/QDateTime>
+#include <QtGui/QFont>
+#include <QtGui/QIcon>
+#include <QtSql/QSqlRecord>
+
+#include "xmltv/XmltvCommon.h"
+#include "xmltv/XmltvSql.h"
 #include "xmltv/models/XmltvProgrammeModel.h"
 
-XmltvProgrammeModel::XmltvProgrammeModel(QObject *parent)
-    : ListModel(new XmltvProgramme, parent) { }
+XmltvProgrammeModel::XmltvProgrammeModel(const QString &id,
+                                         XmltvSql *db,
+                                         QObject *parent)
+    : QSqlQueryModel(parent)
+{
+    setQuery("SELECT `id`, `title`, `start`, `stop` FROM `programmes` WHERE `channel` = '" + id + "' ORDER BY `start`", db->database());
+}
 
 XmltvProgrammeModel::~XmltvProgrammeModel() { }
 
-XmltvProgramme *XmltvProgrammeModel::find(const QString &id) const
+QVariant XmltvProgrammeModel::data(const QModelIndex &index,
+                                   int role) const
 {
-    return qobject_cast<XmltvProgramme *>(ListModel::find(id));
+    QVariant v = QSqlQueryModel::data(index, role);
+    if (v.isValid() && role == Qt::DisplayRole) {
+        QDateTime start = QDateTime::fromString(value(index.row(), 2).toString(), Tano::Xmltv::dateFormat());
+        QString title = value(index.row(), 1).toString();
+
+        return QString("%1 - %2").arg(start.toString(Tano::Xmltv::timeFormatDisplay()), title);
+    } else if (role == Qt::DecorationRole) {
+        return QIcon::fromTheme("x-office-calendar");
+    } else if (role == Qt::FontRole) {
+        QDateTime start = QDateTime::fromString(value(index.row(), 2).toString(), Tano::Xmltv::dateFormat());
+        QDateTime stop = QDateTime::fromString(value(index.row(), 3).toString(), Tano::Xmltv::dateFormat());
+
+        QFont font;
+        if (QDateTime::currentDateTime() > start && QDateTime::currentDateTime() < stop)
+            font.setBold(true);
+        return font;
+    }
+    return QVariant();
 }
 
-XmltvProgramme *XmltvProgrammeModel::row(const int &row)
+QVariant XmltvProgrammeModel::value(const int &row,
+                                    const int &type) const
 {
-    return qobject_cast<XmltvProgramme *>(ListModel::row(row));
-}
-
-XmltvProgramme *XmltvProgrammeModel::takeRow(const int &row)
-{
-    return qobject_cast<XmltvProgramme *>(ListModel::takeRow(row));
+    return QSqlQueryModel::data(QSqlQueryModel::index(row, type), Qt::DisplayRole);
 }

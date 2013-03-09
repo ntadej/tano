@@ -111,12 +111,9 @@ const bool Settings::DEFAULT_SESSION_REMEMBER_VOLUME = true;
 const int Settings::DEFAULT_SESSION_VOLUME = 50;
 
 // Schedule
-const QString Settings::DEFAULT_XMLTV_LOCATION = Tano::Resources::settingsPath() + "xmltv.xml";
 const bool Settings::DEFAULT_XMLTV_UPDATE = false;
-const bool Settings::DEFAULT_XMLTV_UPDATE_GRABBER = false;
-const QString Settings::DEFAULT_XMLTV_UPDATE_URL = "";
-const QString Settings::DEFAULT_XMLTV_GRABBER = "";
-const QString Settings::DEFAULT_XMLTV_GRABBER_PATH = "";
+const QString Settings::DEFAULT_XMLTV_UPDATE_LOCATION = Tano::Resources::settingsPath() + "xmltv.xml";
+const bool Settings::DEFAULT_XMLTV_UPDATE_REMOTE = false;
 
 // Constants
 const QString Settings::SUPPORT_ADDRESS = "info@tano.si";

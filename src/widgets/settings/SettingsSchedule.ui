@@ -11,10 +11,21 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset theme="preferences-desktop"/>
+   <iconset theme="preferences-desktop">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -40,33 +51,17 @@
          <property name="title">
           <string>XMLTV settings</string>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QLabel" name="labelLocation">
-            <property name="text">
-             <string>XMLTV file location:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="BrowseWidget" name="location" native="true"/>
-          </item>
-          <item>
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupRefresh">
-         <property name="title">
-          <string>Refresh XMLTV</string>
-         </property>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="0">
+           <widget class="QRadioButton" name="radioFile">
+            <property name="text">
+             <string>Local file</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0" colspan="2">
            <widget class="QCheckBox" name="checkRefresh">
             <property name="text">
@@ -74,7 +69,17 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
+          <item row="2" column="0" colspan="2">
+           <widget class="BrowseWidget" name="location" native="true"/>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
            <widget class="QRadioButton" name="radioNetwork">
             <property name="enabled">
              <bool>false</bool>
@@ -83,73 +88,9 @@
              <string>Download file</string>
             </property>
             <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QRadioButton" name="radioGrabber">
-            <property name="enabled">
              <bool>false</bool>
             </property>
-            <property name="text">
-             <string>Run grabber</string>
-            </property>
            </widget>
-          </item>
-          <item row="2" column="0" colspan="2">
-           <widget class="QLabel" name="labelRefresh">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupUrl">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="title">
-          <string>Network</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <item>
-           <widget class="QLabel" name="labelUrl">
-            <property name="text">
-             <string>XMLTV source url:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="editUrl"/>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupGrabber">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="title">
-          <string>Grabber</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <widget class="QLabel" name="labelSelect">
-            <property name="text">
-             <string>Select desired XMLTV grabber from the list below:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="comboGrabber"/>
           </item>
          </layout>
         </widget>
@@ -196,22 +137,6 @@
     <hint type="destinationlabel">
      <x>88</x>
      <y>172</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkRefresh</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>groupUrl</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>240</x>
-     <y>145</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>246</x>
-     <y>223</y>
     </hint>
    </hints>
   </connection>

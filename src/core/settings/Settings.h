@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -193,24 +193,15 @@ public:
     static const int DEFAULT_SESSION_VOLUME;
 
     // Schedule
-    inline QString xmltvLocation() const { return _xmltvLocation; }
-    inline void setXmltvLocation(const QString &s) { _xmltvLocation = s; }
-    static const QString DEFAULT_XMLTV_LOCATION;
     inline bool xmltvUpdate() const { return _xmltvUpdate; }
     inline void setXmltvUpdate(const bool &b) { _xmltvUpdate = b; }
     static const bool DEFAULT_XMLTV_UPDATE;
-    inline bool xmltvUpdateGrabber() const { return _xmltvUpdateGrabber; }
-    inline void setXmltvUpdateGrabber(const bool &b) { _xmltvUpdateGrabber = b; }
-    static const bool DEFAULT_XMLTV_UPDATE_GRABBER;
-    inline QString xmltvUpdateUrl() const { return _xmltvUpdateUrl; }
-    inline void setXmltvUpdateUrl(const QString &s) { _xmltvUpdateUrl = s; }
-    static const QString DEFAULT_XMLTV_UPDATE_URL;
-    inline QString xmltvGrabber() const { return _xmltvGrabber; }
-    inline void setXmltvGrabber(const QString &s) { _xmltvGrabber = s; }
-    static const QString DEFAULT_XMLTV_GRABBER;
-    inline QString xmltvGrabberPath() const { return _xmltvGrabberPath; }
-    inline void setXmltvGrabberPath(const QString &s) { _xmltvGrabberPath = s; }
-    static const QString DEFAULT_XMLTV_GRABBER_PATH;
+    inline QString xmltvUpdateLocation() const { return _xmltvUpdateLocation; }
+    inline void setXmltvUpdateLocation(const QString &s) { _xmltvUpdateLocation = s; }
+    static const QString DEFAULT_XMLTV_UPDATE_LOCATION;
+    inline bool xmltvUpdateRemote() const { return _xmltvUpdateRemote; }
+    inline void setXmltvUpdateRemote(const bool &b) { _xmltvUpdateRemote = b; }
+    static const bool DEFAULT_XMLTV_UPDATE_REMOTE;
 
     // Constants
     static const QString SUPPORT_ADDRESS;
@@ -286,12 +277,9 @@ private:
     int _sessionVolume;
 
     // Schedule
-    QString _xmltvLocation;
     bool _xmltvUpdate;
-    bool _xmltvUpdateGrabber;
-    QString _xmltvUpdateUrl;
-    QString _xmltvGrabber;
-    QString _xmltvGrabberPath;
+    QString _xmltvUpdateLocation;
+    bool _xmltvUpdateRemote;
 };
 
 #endif // TANO_SETTINGS_H_

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -26,11 +26,50 @@
 
 namespace Tano
 {
+    /*!
+        \namespace Xmltv
+        \brief Common static functions for XMLTV
+    */
     namespace Xmltv
     {
+        /*!
+            \brief Comma separator
+            \return separator (QString)
+        */
+        TANO_CORE_EXPORT QString commaSeparator();
+
+        /*!
+            \brief Date format for storage
+            \return format (QString)
+        */
         TANO_CORE_EXPORT QString dateFormat();
+        /*!
+            \brief Date format for display
+            \return format (QString)
+        */
         TANO_CORE_EXPORT QString dateFormatDisplay();
+        /*!
+            \brief Date regular expression
+            \return expression (QRegExp)
+        */
         TANO_CORE_EXPORT QRegExp dateRegExp();
+        /*!
+            \brief Time format for display
+            \return format (QString)
+        */
+        TANO_CORE_EXPORT QString timeFormatDisplay();
+
+        /*!
+            \brief Common category-translation map
+            \return category map (QMap<QString, QString>)
+        */
+        TANO_CORE_EXPORT QMap<QString, QString> categoryMap();
+        /*!
+            \brief Map category to translation
+            \param cat category to map (QString)
+            \return mapped category (QString)
+        */
+        TANO_CORE_EXPORT QString mapCategory(const QString &cat);
     }
 }
 

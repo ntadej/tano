@@ -16,16 +16,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "xmltv/containers/XmltvProgramme.h"
+#include <QtCore/QDebug>
+#include <QtGui/QFont>
+#include <QtGui/QIcon>
+
+#include "xmltv/XmltvCommon.h"
 #include "xmltv/models/XmltvProgrammeFilterModel.h"
 #include "xmltv/models/XmltvProgrammeModel.h"
 
 XmltvProgrammeFilterModel::XmltvProgrammeFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent)
-{
-    _id = Tano::Main;
-    _date = QDate::currentDate();
-}
+    : QSortFilterProxyModel(parent),
+      _id(Tano::Main),
+      _model(0),
+      _date(QDate::currentDate()) { }
 
 XmltvProgrammeFilterModel::~XmltvProgrammeFilterModel() { }
 
@@ -36,21 +39,22 @@ void XmltvProgrammeFilterModel::setDate(const QDate &date)
 }
 
 bool XmltvProgrammeFilterModel::filterAcceptsRow(int sourceRow,
-                                           const QModelIndex &sourceParent) const
+                                                 const QModelIndex &sourceParent) const
 {
-    QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
+    //QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
-    bool name = sourceModel()->data(index, XmltvProgramme::TitleRole).toString().contains(filterRegExp());
-    bool start = (sourceModel()->data(index, XmltvProgramme::StartRole).toDateTime().date() == _date);
+   // bool name = sourceModel()->data(index, XmltvProgramme::TitleRole).toString().contains(filterRegExp());
+   // bool start = (sourceModel()->data(index, XmltvProgramme::StartRole).toDateTime().date() == _date);
 
-    return (name && start);
+    return true; //(name && start);
 }
 
 void XmltvProgrammeFilterModel::setProgrammeModel(XmltvProgrammeModel *model,
                                                   const Tano::Id &id)
 {
     if (id == _id) {
-        setSourceModel(model);
+        _model = model;
+        setSourceModel(_model);
         invalidateFilter();
     }
 }

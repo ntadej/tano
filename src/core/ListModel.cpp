@@ -115,7 +115,7 @@ bool ListModel::moveRow(const int &oldRow, const int &newRow, const QModelIndex 
 
 bool ListModel::removeRow(const int &row, const QModelIndex &parent)
 {
-    //Q_UNUSED(parent);
+    Q_UNUSED(parent);
     if(row < 0 || row >= _list.size()) return false;
     beginRemoveRows(QModelIndex(), row, row);
     delete _list.takeAt(row);
@@ -125,7 +125,7 @@ bool ListModel::removeRow(const int &row, const QModelIndex &parent)
 
 bool ListModel::removeRows(const int &row, const int &count, const QModelIndex &parent)
 {
-    //Q_UNUSED(parent);
+    Q_UNUSED(parent);
     if(row < 0 || (row+count) > _list.size()) return false;
     beginRemoveRows(QModelIndex(), row, row+count-1);
     for(int i = 0; i < count; ++i) {

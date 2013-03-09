@@ -24,9 +24,6 @@
 
 #include "ListItem.h"
 
-class XmltvProgramme;
-class XmltvProgrammeModel;
-
 class XmltvChannel : public ListItem
 {
 Q_OBJECT
@@ -58,16 +55,11 @@ public:
     inline QString url() const { return _url; }
     void setUrl(const QString &s);
 
-    XmltvProgrammeModel *programme() const { return _programme; }
-    void addProgramme(XmltvProgramme *p);
-
 private:
     QString _id;
     QString _displayName;
     QString _icon;
     QString _url;
-
-    XmltvProgrammeModel *_programme;
 };
 
 #endif // TANO_XMLTVCHANNEL_H_

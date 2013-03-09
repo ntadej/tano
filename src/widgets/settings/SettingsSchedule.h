@@ -25,9 +25,6 @@
     #include <QtGui/QWidget>
 #endif
 
-struct XmltvGrabber;
-class XmltvSystem;
-
 namespace Ui
 {
     class SettingsSchedule;
@@ -44,25 +41,14 @@ public:
     void setLocation(const QString &location);
     bool update() const;
     void setUpdate(const bool &enabled);
-    bool updateGrabber() const;
-    void setUpdateGrabber(const bool &enabled);
-    QString updateUrl() const;
-    void setUpdateUrl(const QString &url);
-    QString grabber() const;
-    QString grabberPath() const;
-    void setGrabber(const QString &grabber);
+    bool remote() const;
+    void setRemote(const bool &enabled);
 
 protected:
     void changeEvent(QEvent *e);
 
-private slots:
-    void listGrabbers(const QList<XmltvGrabber> &list);
-
 private:
     Ui::SettingsSchedule *ui;
-
-    QString _grabber;
-    XmltvSystem *_xmltv;
 };
 
 #endif // TANO_SETTINGSSCHEDULE_H_

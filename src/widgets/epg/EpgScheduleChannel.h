@@ -52,15 +52,15 @@ public:
 public slots:
     void setEpg(XmltvProgrammeModel *epg,
 				const Tano::Id &id);
-	void setIdentifier(const Tano::Id &identifier) { _id = identifier; }
+    void setIdentifier(const Tano::Id &identifier);
 	void setPage(const int &id);
 
 protected:
 	void changeEvent(QEvent *e);
 
 signals:
-	void itemSelected(XmltvProgramme *);
-	void requestRecord(XmltvProgramme *);
+    void itemSelected(const QString &);
+    void requestRecord(const QString &);
 
 private slots:
     void info();

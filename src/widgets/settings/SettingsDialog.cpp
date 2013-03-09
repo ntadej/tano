@@ -132,12 +132,9 @@ void SettingsDialog::apply()
     _settings->setTeletext(ui->backend->teletext());
 
     // Schedule
-    _settings->setXmltvLocation(ui->schedule->location());
     _settings->setXmltvUpdate(ui->schedule->update());
-    _settings->setXmltvUpdateGrabber(ui->schedule->updateGrabber());
-    _settings->setXmltvUpdateUrl(ui->schedule->updateUrl());
-    _settings->setXmltvGrabber(ui->schedule->grabber());
-    _settings->setXmltvGrabberPath(ui->schedule->grabberPath());
+    _settings->setXmltvUpdateLocation(ui->schedule->location());
+    _settings->setXmltvUpdateRemote(ui->schedule->remote());
 
     // Recorder
     _settings->setRecorderDirectory(ui->recorder->directory());
@@ -197,11 +194,9 @@ void SettingsDialog::defaults()
     ui->backend->setTeletext(Settings::DEFAULT_TELETEXT);
 
     // Schedule
-    ui->schedule->setLocation(Settings::DEFAULT_XMLTV_LOCATION);
     ui->schedule->setUpdate(Settings::DEFAULT_XMLTV_UPDATE);
-    ui->schedule->setUpdateGrabber(Settings::DEFAULT_XMLTV_UPDATE_GRABBER);
-    ui->schedule->setUpdateUrl(Settings::DEFAULT_XMLTV_UPDATE_URL);
-    ui->schedule->setGrabber(Settings::DEFAULT_XMLTV_GRABBER_PATH);
+    ui->schedule->setLocation(Settings::DEFAULT_XMLTV_UPDATE_LOCATION);
+    ui->schedule->setRemote(Settings::DEFAULT_XMLTV_UPDATE_REMOTE);
 
     // Recorder
     ui->recorder->setDirectory(Settings::DEFAULT_RECORDER_DIRECTORY);
@@ -259,11 +254,9 @@ void SettingsDialog::read()
     ui->backend->setTeletext(_settings->teletext());
 
     // Schedule
-    ui->schedule->setLocation(_settings->xmltvLocation());
     ui->schedule->setUpdate(_settings->xmltvUpdate());
-    ui->schedule->setUpdateGrabber(_settings->xmltvUpdateGrabber());
-    ui->schedule->setUpdateUrl(_settings->xmltvUpdateUrl());
-    ui->schedule->setGrabber(_settings->xmltvGrabberPath());
+    ui->schedule->setLocation(_settings->xmltvUpdateLocation());
+    ui->schedule->setRemote(_settings->xmltvUpdateRemote());
 
     // Recorder
     ui->recorder->setDirectory(_settings->recorderDirectory());

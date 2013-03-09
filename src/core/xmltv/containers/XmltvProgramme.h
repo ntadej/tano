@@ -47,26 +47,28 @@ public:
         CategoriesRole,
         LanguageRole,
         OriginalLanguageRole,
-        LenghtRole,
-        LenghtUnitsRole,
+        LengthRole,
+        LengthUnitsRole,
         IconRole,
         IconSizeRole
     };
 
-    // Lenght units
-    enum LenghtUnits
+    // Length units
+    enum LengthUnits
     {
         Seconds,
         Minutes,
         Hours
     };
 
-    explicit XmltvProgramme(QObject *parent = 0);
-    explicit XmltvProgramme(const QString &channel,
+    explicit XmltvProgramme(const QString &id,
+                            QObject *parent = 0);
+    explicit XmltvProgramme(const QString &id,
+                            const QString &channel,
                             QObject *parent = 0);
     ~XmltvProgramme();
 
-    inline QString id() const { return _start.toString(); }
+    inline QString id() const { return _id; }
     QVariant data(const int &role) const;
     QString display() const;
     QIcon decoration() const;
@@ -75,6 +77,7 @@ public:
     QFont displayFont() const;
 
     inline QString channel() const { return _channel; }
+    void setChannel(const QString &s);
     inline QString channelDisplayName() const { return _channelDisplayName; }
     void setChannelDisplayName(const QString &s);
     inline QString title() const { return _title; }
@@ -91,14 +94,15 @@ public:
     void setDate(const QDateTime &d);
     inline QStringList categories() const { return _categories; }
     void addCategory(const QString &s);
+    void setCategories(const QStringList &s);
     inline QString language() const { return _language; }
     void setLanguage(const QString &s);
     inline QString originalLanguage() const { return _originalLanguage; }
     void setOriginalLanguage(const QString &s);
-    inline QString lenght() const { return _lenght; }
-    void setLenght(const QString &s);
-    inline LenghtUnits lenghtUnits() const { return _lenghtUnits; }
-    void setLenghtUnits(const LenghtUnits &e);
+    inline QString length() const { return _length; }
+    void setLength(const QString &s);
+    inline LengthUnits lengthUnits() const { return _lengthUnits; }
+    void setLengthUnits(const LengthUnits &e);
     inline QString icon() const { return _icon; }
     void setIcon(const QString &s);
     inline QSize iconSize() const { return _iconSize; }
@@ -118,11 +122,12 @@ public:
 
     XmltvCrewModel *crew() { return _crew; }
 
-    static LenghtUnits lenghtUnits(const QString &type);
-    static QString lenghtUnits(const LenghtUnits &type);
-    static QString lenghtUnitsShort(const LenghtUnits &type);
+    static LengthUnits lengthUnits(const QString &type);
+    static QString lengthUnits(const LengthUnits &type);
+    static QString lengthUnitsShort(const LengthUnits &type);
 
 private:
+    QString _id;
     QString _channel;
     QString _channelDisplayName;
     QString _title;
@@ -134,8 +139,8 @@ private:
     QStringList _categories;
     QString _language;
     QString _originalLanguage;
-    QString _lenght;
-    LenghtUnits _lenghtUnits;
+    QString _length;
+    LengthUnits _lengthUnits;
     QString _icon;
     QSize _iconSize;
 

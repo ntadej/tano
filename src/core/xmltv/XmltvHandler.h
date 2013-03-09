@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This file was based on the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -26,13 +26,19 @@
 #include <QtXml/QXmlDefaultHandler>
 
 class XmltvChannel;
-class XmltvList;
 class XmltvProgramme;
+class XmltvSql;
 
+/*!
+    \class XmltvHandler XmltvHandler.h core/xmltv/XmltvHandler.h
+    \brief XMLTV parser
+
+    A basic parser that parses XMLTV files and stores data in a database
+*/
 class XmltvHandler : public QXmlDefaultHandler
 {
 public:
-    XmltvHandler();
+    XmltvHandler(XmltvSql *db);
     ~XmltvHandler();
 
     bool startElement(const QString &namespaceURI,
@@ -45,18 +51,17 @@ public:
     bool characters(const QString &str);
     bool fatalError(const QXmlParseException &exception);
 
-    QString errorString() const { return _errorStr; }
-    XmltvList *list() { return _list; }
+    inline QString errorString() const { return _errorStr; }
 
 private:
     QString _currentText;
     QString _errorStr;
     bool _metTag;
 
+    XmltvSql *_db;
+
     XmltvChannel *_currentChannel;
     XmltvProgramme *_currentProgramme;
-    XmltvProgramme *_previousProgramme;
-    XmltvList *_list;
 };
 
 #endif // TANO_XMLTVHANDLER_H_

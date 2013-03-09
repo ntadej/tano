@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -18,6 +18,12 @@
 
 #include "xmltv/XmltvCommon.h"
 
+QString Tano::Xmltv::commaSeparator()
+{
+    QString s = ";";
+    return s;
+}
+
 QString Tano::Xmltv::dateFormat()
 {
     QString format = "yyyyMMddHHmmss";
@@ -34,4 +40,10 @@ QRegExp Tano::Xmltv::dateRegExp()
 {
     QRegExp exp = QRegExp(" .[0-9][0-9][0-9][0-9]");
     return exp;
+}
+
+QString Tano::Xmltv::timeFormatDisplay()
+{
+    QString format = "HH:mm";
+    return format;
 }

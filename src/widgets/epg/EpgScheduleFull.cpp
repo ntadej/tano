@@ -54,8 +54,8 @@ EpgScheduleFull::EpgScheduleFull(QWidget *parent)
     ui->labelTitle->hide();
 
     connect(ui->playlist, SIGNAL(itemSelected(Channel *)), this, SLOT(channel(Channel *)));
-    connect(ui->schedule, SIGNAL(itemSelected(XmltvProgramme *)), this, SIGNAL(itemSelected(XmltvProgramme *)));
-    connect(ui->schedule, SIGNAL(requestRecord(XmltvProgramme *)), this, SIGNAL(requestRecord(XmltvProgramme *)));
+    connect(ui->schedule, SIGNAL(itemSelected(QString)), this, SIGNAL(itemSelected(QString)));
+    connect(ui->schedule, SIGNAL(requestRecord(QString)), this, SIGNAL(requestRecord(QString)));
     connect(ui->buttonClose, SIGNAL(clicked()), this, SLOT(closeOsd()));;
 }
 

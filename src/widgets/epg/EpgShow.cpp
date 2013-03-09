@@ -29,6 +29,7 @@
 EpgShow::EpgShow(QWidget *parent)
     : QWidget(parent),
     ui(new Ui::EpgShow),
+    _current(0),
     _image(new NetworkDownload()),
     _fullscreen(false),
     _osd(0)
@@ -62,6 +63,8 @@ EpgShow::EpgShow(QWidget *parent)
 EpgShow::~EpgShow()
 {
     delete ui;
+    if (_current)
+        delete _current;
     delete _image;
 }
 
@@ -86,6 +89,8 @@ void EpgShow::closeOsd()
 
 void EpgShow::display(XmltvProgramme *programme)
 {
+    if (_current)
+        delete _current;
     _current = programme;
 
     setWindowTitle(programme->channelDisplayName() + ": " + programme->title());
@@ -122,12 +127,12 @@ void EpgShow::image(const QString &image)
 
 void EpgShow::next()
 {
-    emit requestNext(_current);
+    emit requestNext(_current->id());
 }
 
 void EpgShow::previous()
 {
-    emit requestPrevious(_current);
+    emit requestPrevious(_current->id());
 }
 
 void EpgShow::processFilters(const int &type)
@@ -137,7 +142,7 @@ void EpgShow::processFilters(const int &type)
 
 void EpgShow::record()
 {
-    emit requestRecord(_current);
+    emit requestRecord(_current->id());
 }
 
 void EpgShow::setFullscreen(const bool &enabled,

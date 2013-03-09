@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,9 +21,9 @@
 
 #include <QtCore/QDate>
 
-#if defined(Qt5)
+#if QT_VERSION >= 0x050000
     #include <QtCore/QSortFilterProxyModel>
-#elif defined(Qt4)
+#else
     #include <QtGui/QSortFilterProxyModel>
 #endif
 
@@ -33,6 +33,12 @@
 
 class XmltvProgrammeModel;
 
+/*!
+    \class XmltvProgrammeFilterModel XmltvProgrammeFilterModel.h core/xmltv/models/XmltvProgrammeFilterModel.h
+    \brief XMLTV Programme Filter model
+
+    Reimplemented QSortFilterProxyModel to be able to filter XMLTV Programmes
+*/
 class TANO_CORE_EXPORT XmltvProgrammeFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
@@ -40,20 +46,46 @@ public:
     XmltvProgrammeFilterModel(QObject *parent = 0);
     ~XmltvProgrammeFilterModel();
 
+    /*!
+        \brief Set internal identifier for signals
+        \param id internal identifier for signals (Tano::Id)
+    */
     inline void setId(const Tano::Id &id) { _id = id; }
 
+    /*!
+        \brief Get current filtered date
+        \return current date (QDate)
+    */
     inline QDate date() const { return _date; }
+
+    /*!
+        \brief Set current filtered date
+        \return date desired date (QDate)
+    */
     void setDate(const QDate &date);
 
 protected:
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
+    /*!
+        \brief Reimplemented filter function
+        \param sourceRow row to process (int)
+        \param sourceParent parent index (QModelIndex)
+        \return true, if item to be displayed (bool)
+    */
+    bool filterAcceptsRow(int sourceRow,
+                          const QModelIndex &sourceParent) const;
 
 public slots:
+    /*!
+        \brief Set Programme model to filter
+        \param model Programme model (XmltvProgrammeModel)
+        \param id internal identifier for signals (Tano::Id)
+    */
     void setProgrammeModel(XmltvProgrammeModel *model,
                            const Tano::Id &id);
 
 private:
     Tano::Id _id;
+    XmltvProgrammeModel *_model;
 
     QDate _date;
 };

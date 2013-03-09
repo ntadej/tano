@@ -17,26 +17,16 @@
 *****************************************************************************/
 
 #include "xmltv/containers/XmltvChannel.h"
-#include "xmltv/containers/XmltvProgramme.h"
-#include "xmltv/models/XmltvProgrammeModel.h"
 
 XmltvChannel::XmltvChannel(QObject *parent)
-    : ListItem(parent),
-      _programme(0) { }
+    : ListItem(parent) { }
 
 XmltvChannel::XmltvChannel(const QString &id,
                            QObject *parent)
     : ListItem(parent),
-      _id(id)
-{
-    _programme = new XmltvProgrammeModel(this);
-}
+      _id(id) { }
 
-XmltvChannel::~XmltvChannel()
-{
-    if (_programme)
-        delete _programme;
-}
+XmltvChannel::~XmltvChannel() { }
 
 QHash<int, QByteArray> XmltvChannel::roleNames() const
 {
@@ -81,20 +71,11 @@ QIcon XmltvChannel::decoration() const
     return QIcon::fromTheme("video-x-generic");
 }
 
-void XmltvChannel::addProgramme(XmltvProgramme *p)
-{
-    _programme->appendRow(p);
-}
-
 void XmltvChannel::setDisplayName(const QString &s)
 {
     if (_displayName != s) {
         _displayName = s;
         emit dataChanged();
-
-        for(int i = 0; i < _programme->rowCount(); i++) {
-            _programme->row(i)->setChannelDisplayName(s);
-        }
     }
 }
 

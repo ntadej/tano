@@ -38,6 +38,10 @@ void Tano::Log::output(QtMsgType type,
                        const char *msg)
 #endif
 {
+#if defined(Qt5)
+    Q_UNUSED(context)
+#endif
+
     QString debugdate = QDateTime::currentDateTime().toString("yyyy.MM.dd hh:mm:ss");
     switch (type)
     {

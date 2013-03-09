@@ -58,10 +58,10 @@ protected:
     void changeEvent(QEvent *e);
 
 signals:
-    void itemSelected(XmltvProgramme *);
-    void requestEpg(QString,
-                    Tano::Id);
-    void requestRecord(XmltvProgramme *);
+    void itemSelected(const QString &);
+    void requestEpg(const QString &,
+                    const Tano::Id &);
+    void requestRecord(const QString &);
 
 public slots:
     void openSchedule(Channel *channel = 0);

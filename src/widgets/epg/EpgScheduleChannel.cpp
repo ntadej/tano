@@ -37,7 +37,8 @@
 
 EpgScheduleChannel::EpgScheduleChannel(QWidget *parent)
 	: QStackedWidget(parent),
-	ui(new Ui::EpgScheduleChannel)
+    ui(new Ui::EpgScheduleChannel),
+    _model(0)
 {
 	ui->setupUi(this);
 
@@ -91,12 +92,12 @@ void EpgScheduleChannel::processFilters()
 
 void EpgScheduleChannel::programmeClicked(const QModelIndex &index)
 {
-    emit itemSelected(_model->row(_filterModel->mapToSource(index).row()));
+    emit itemSelected(_model->value(_filterModel->mapToSource(index).row(), 0).toString());
 }
 
 void EpgScheduleChannel::record()
 {
-    emit requestRecord(_model->row(_filterModel->mapToSource(ui->view->indexAt(_currentPos)).row()));
+    emit requestRecord(_model->value(_filterModel->mapToSource(ui->view->indexAt(_currentPos)).row(), 0).toString());
 }
 
 void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
@@ -105,17 +106,17 @@ void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
 	if (id != _id)
 		return;
 
-    if (epg->rowCount() == 0)
-        return;
+    if (_model)
+        delete _model;
 
     _model = epg;
-    _filterModel->setSourceModel(_model);
-    _filterModel->sort(0);
+    _filterModel->setProgrammeModel(_model, id);
 
     QList<QDate> date;
     for (int i = 0; i < _model->rowCount(); i++) {
-        if (!date.contains(_model->row(i)->start().date()) && _model->row(i)->start().date() >= QDate::currentDate()) {
-            date << _model->row(i)->start().date();
+        QDate d = QDateTime::fromString(_model->value(i, 2).toString(), Tano::Xmltv::dateFormat()).date();
+        if (!date.contains(d) && d >= QDate::currentDate()) {
+            date << d;
         }
     }
 
@@ -125,6 +126,12 @@ void EpgScheduleChannel::setEpg(XmltvProgrammeModel *epg,
     }
 
     setPage(1);
+}
+
+void EpgScheduleChannel::setIdentifier(const Tano::Id &identifier)
+{
+    _id = identifier;
+    _filterModel->setId(_id);
 }
 
 void EpgScheduleChannel::setPage(const int &id)

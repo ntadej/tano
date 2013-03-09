@@ -16,19 +16,25 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "xmltv/XmltvMapCategories.h"
+#include "xmltv/XmltvCommon.h"
 #include "xmltv/containers/XmltvCrewMember.h"
 #include "xmltv/models/XmltvCrewModel.h"
 
 #include "XmltvProgramme.h"
 
-XmltvProgramme::XmltvProgramme(QObject *parent)
-    : ListItem(parent),
-      _crew(0) { }
-
-XmltvProgramme::XmltvProgramme(const QString &channel,
+XmltvProgramme::XmltvProgramme(const QString &id,
                                QObject *parent)
     : ListItem(parent),
+      _id(id)
+{
+    _crew = new XmltvCrewModel(this);
+}
+
+XmltvProgramme::XmltvProgramme(const QString &id,
+                               const QString &channel,
+                               QObject *parent)
+    : ListItem(parent),
+      _id(id),
       _channel(channel)
 {
     _crew = new XmltvCrewModel(this);
@@ -56,8 +62,8 @@ QHash<int, QByteArray> XmltvProgramme::roleNames() const
     names[CategoriesRole] = "categories";
     names[LanguageRole] = "language";
     names[OriginalLanguageRole] = "originallanguage";
-    names[LenghtRole] = "lenght";
-    names[LenghtUnitsRole] = "lenghtunits";
+    names[LengthRole] = "length";
+    names[LengthUnitsRole] = "lengthunits";
     names[IconRole] = "icon";
     names[IconSizeRole] = "iconsize";
     return names;
@@ -93,10 +99,10 @@ QVariant XmltvProgramme::data(const int &role) const
         return language();
     case OriginalLanguageRole:
         return originalLanguage();
-    case LenghtRole:
-        return lenght();
-    case LenghtUnitsRole:
-        return lenghtUnits();
+    case LengthRole:
+        return length();
+    case LengthUnitsRole:
+        return lengthUnits();
     case IconRole:
         return icon();
     case IconSizeRole:
@@ -108,7 +114,7 @@ QVariant XmltvProgramme::data(const int &role) const
 
 QString XmltvProgramme::display() const
 {
-    return QString("%1 - %2").arg(start().toString("hh:mm"), title());
+    return QString("%1 - %2").arg(start().toString(Tano::Xmltv::timeFormatDisplay()), title());
 }
 
 QIcon XmltvProgramme::decoration() const
@@ -123,6 +129,14 @@ QFont XmltvProgramme::displayFont() const
         f.setBold(true);
 
     return f;
+}
+
+void XmltvProgramme::setChannel(const QString &s)
+{
+    if (_channel != s) {
+        _channel = s;
+        emit dataChanged();
+    }
 }
 
 void XmltvProgramme::setChannelDisplayName(const QString &s)
@@ -195,6 +209,14 @@ void XmltvProgramme::addCategory(const QString &s)
     }
 }
 
+void XmltvProgramme::setCategories(const QStringList &s)
+{
+    if (_categories != s) {
+        _categories = s;
+        emit dataChanged();
+    }
+}
+
 void XmltvProgramme::setLanguage(const QString &s)
 {
     if (_language != s) {
@@ -211,18 +233,18 @@ void XmltvProgramme::setOriginalLanguage(const QString &s)
     }
 }
 
-void XmltvProgramme::setLenght(const QString &s)
+void XmltvProgramme::setLength(const QString &s)
 {
-    if (_lenght != s) {
-        _lenght = s;
+    if (_length != s) {
+        _length = s;
         emit dataChanged();
     }
 }
 
-void XmltvProgramme::setLenghtUnits(const XmltvProgramme::LenghtUnits &e)
+void XmltvProgramme::setLengthUnits(const XmltvProgramme::LengthUnits &e)
 {
-    if (_lenghtUnits != e) {
-        _lenghtUnits = e;
+    if (_lengthUnits != e) {
+        _lengthUnits = e;
         emit dataChanged();
     }
 }
@@ -303,7 +325,7 @@ void XmltvProgramme::addGuest(const QString &s)
     _crew->appendRow(crew);
 }
 
-XmltvProgramme::LenghtUnits XmltvProgramme::lenghtUnits(const QString &type)
+XmltvProgramme::LengthUnits XmltvProgramme::lengthUnits(const QString &type)
 {
     if (type == "seconds")
         return XmltvProgramme::Seconds;
@@ -315,7 +337,7 @@ XmltvProgramme::LenghtUnits XmltvProgramme::lenghtUnits(const QString &type)
         return XmltvProgramme::Seconds;
 }
 
-QString XmltvProgramme::lenghtUnits(const LenghtUnits &type)
+QString XmltvProgramme::lengthUnits(const LengthUnits &type)
 {
     switch (type)
     {
@@ -330,7 +352,7 @@ QString XmltvProgramme::lenghtUnits(const LenghtUnits &type)
     }
 }
 
-QString XmltvProgramme::lenghtUnitsShort(const LenghtUnits &type)
+QString XmltvProgramme::lengthUnitsShort(const LengthUnits &type)
 {
     if (type == XmltvProgramme::Seconds)
         return QObject::tr("s");

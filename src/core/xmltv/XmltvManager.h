@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -33,11 +33,9 @@ extern bool loadXmltvStart(XmltvHandler *handler,
 
 class NetworkDownload;
 
-class XmltvChannel;
-class XmltvChannelsModel;
-class XmltvList;
 class XmltvProgramme;
 class XmltvProgrammeModel;
+class XmltvSql;
 
 class TANO_CORE_EXPORT XmltvManager : public QObject
 {
@@ -54,8 +52,9 @@ public slots:
     void request(const QString &id,
                  const Tano::Id &identifier);
     void requestProgramme(const QString &id);
-    void requestProgrammeNext(XmltvProgramme *current);
-    void requestProgrammePrevious(XmltvProgramme *current);
+    void requestProgrammeNext(const QString &id);
+    void requestProgrammePrevious(const QString &id);
+    void requestProgrammeRecord(const QString &id);
     Q_INVOKABLE void requestQml(const QString &id);
     Q_INVOKABLE void requestQmlCurrent(const QString &id);
     void stop();
@@ -67,6 +66,7 @@ signals:
     void schedule(XmltvProgrammeModel *,
                   const Tano::Id);
     void programme(XmltvProgramme *);
+    void programmeRecord(XmltvProgramme *);
 
 private slots:
     void current();
@@ -85,11 +85,11 @@ private:
     Tano::Id _currentIdentifier;
     QString _currentXmltvId;
 
+    XmltvSql *_db;
     NetworkDownload *_downloader;
     XmltvHandler *_handler;
     QTimer *_timer;
     QFutureWatcher<bool> *_watcher;
-    XmltvList *_xmltv;
 };
 
 #endif // TANO_XMLTVMANAGER_H_

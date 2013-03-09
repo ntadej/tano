@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,22 +19,53 @@
 #ifndef TANO_XMLTVPROGRAMMEMODEL_H_
 #define TANO_XMLTVPROGRAMMEMODEL_H_
 
+#include <QtSql/QSqlQueryModel>
+
 #include "CoreSharedExport.h"
 
-#include "ListModel.h"
+class XmltvSql;
 
-class XmltvProgramme;
+/*!
+    \class XmltvProgrammeModel XmltvProgrammeModel.h core/xmltv/models/XmltvProgrammeModel.h
+    \brief XMLTV Programme SQL query model
 
-class TANO_CORE_EXPORT XmltvProgrammeModel : public ListModel
+    Reimplemented QSqlQueryModel to be able to display programmes in a QListView
+*/
+class TANO_CORE_EXPORT XmltvProgrammeModel : public QSqlQueryModel
 {
 Q_OBJECT
 public:
-    XmltvProgrammeModel(QObject *parent = 0);
+    /*!
+        \brief Model constructor
+
+        This sets channel ID and database to read from.
+
+        \param id channel ID (QString)
+        \param db database (XmltvSql)
+        \param parent parent object (QObject)
+    */
+    XmltvProgrammeModel(const QString &id,
+                        XmltvSql *db,
+                        QObject *parent = 0);
     ~XmltvProgrammeModel();
 
-    XmltvProgramme *find(const QString &id) const;
-    XmltvProgramme *row(const int &row);
-    XmltvProgramme *takeRow(const int &row);
+    /*!
+        \brief Reimplemented data access function
+        \param item an index to item (QModelIndex)
+        \param role data role (int)
+        \return value of the requested data (QVariant)
+    */
+    QVariant data(const QModelIndex &item,
+                  int role) const;
+
+    /*!
+        \brief Convenience function to read data
+        \param row model row (int)
+        \param type data type (int)
+        \return value of the requested data (QVariant)
+    */
+    QVariant value(const int &row,
+                   const int &type) const;
 };
 
 #endif // TANO_XMLTVPROGRAMMEMODEL_H_

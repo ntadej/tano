@@ -72,17 +72,14 @@ SET(Tano_Core_Timers_Srcs
 )
 SET(Tano_Core_Xmltv_Srcs
     xmltv/XmltvCommon.cpp
-    xmltv/XmltvGenerator.cpp
+    xmltv/XmltvCommonCategories.cpp
+#    xmltv/XmltvGenerator.cpp
     xmltv/XmltvHandler.cpp
     xmltv/XmltvManager.cpp
-    xmltv/XmltvMapCategories.cpp
-    xmltv/XmltvSystem.cpp
+    xmltv/XmltvSql.cpp
     xmltv/containers/XmltvChannel.cpp
     xmltv/containers/XmltvCrewMember.cpp
-    xmltv/containers/XmltvList.cpp
     xmltv/containers/XmltvProgramme.cpp
-    xmltv/models/XmltvChannelsFilterModel.cpp
-    xmltv/models/XmltvChannelsModel.cpp
     xmltv/models/XmltvCrewFilterModel.cpp
     xmltv/models/XmltvCrewModel.cpp
     xmltv/models/XmltvProgrammeFilterModel.cpp
@@ -200,7 +197,7 @@ ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 # Here the needed Libraries are added to the link command.
 IF(QT5)
-    QT5_USE_MODULES(${TANO_CORE} Concurrent Gui Network Xml)
+    QT5_USE_MODULES(${TANO_CORE} Concurrent Gui Network Sql Xml)
 ELSE(QT5)
     TARGET_LINK_LIBRARIES(${TANO_CORE} ${QT_LIBRARIES})
 ENDIF(QT5)

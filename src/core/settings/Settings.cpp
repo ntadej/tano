@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -90,12 +90,9 @@ void Settings::writeSettings()
     setValue("session/remembervolume", sessionRememberVolume());
     setValue("session/volume", sessionVolume());
 
-    setValue("xmltv/location", xmltvLocation());
     setValue("xmltv/update", xmltvUpdate());
-    setValue("xmltv/updategrabber", xmltvUpdateGrabber());
-    setValue("xmltv/updateurl", xmltvUpdateUrl());
-    setValue("xmltv/grabber", xmltvGrabber());
-    setValue("xmltv/path", xmltvGrabberPath());
+    setValue("xmltv/updatelocation", xmltvUpdateLocation());
+    setValue("xmltv/updateremote", xmltvUpdateRemote());
 
     sync();
 }
@@ -159,10 +156,7 @@ void Settings::readSettings()
     setSessionRememberVolume(value("session/remembervolume", DEFAULT_SESSION_REMEMBER_VOLUME).toBool());
     setSessionVolume(value("session/volume", DEFAULT_SESSION_VOLUME).toInt());
 
-    setXmltvLocation(value("xmltv/location", DEFAULT_XMLTV_LOCATION).toString());
     setXmltvUpdate(value("xmltv/update", DEFAULT_XMLTV_UPDATE).toBool());
-    setXmltvUpdateGrabber(value("xmltv/updategrabber", DEFAULT_XMLTV_UPDATE_GRABBER).toBool());
-    setXmltvUpdateUrl(value("xmltv/updateurl", DEFAULT_XMLTV_UPDATE_URL).toString());
-    setXmltvGrabber(value("xmltv/grabber", DEFAULT_XMLTV_GRABBER).toString());
-    setXmltvGrabberPath(value("xmltv/path", DEFAULT_XMLTV_GRABBER_PATH).toString());
+    setXmltvUpdateLocation(value("xmltv/updatelocation", DEFAULT_XMLTV_UPDATE_LOCATION).toString());
+    setXmltvUpdateRemote(value("xmltv/updategrabber", DEFAULT_XMLTV_UPDATE_REMOTE).toBool());
 }
