@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -32,12 +32,14 @@ PlaylistUpdate::~PlaylistUpdate()
         delete _downloader;
 }
 
-void PlaylistUpdate::processPlaylist(const QString &playlist)
+void PlaylistUpdate::processPlaylist(QFile *file)
 {
-    disconnect(_downloader, SIGNAL(file(QString)), this, SLOT(processPlaylist(QString)));
+    disconnect(_downloader, SIGNAL(file(QFile *)), this, SLOT(processPlaylist(QFile *)));
 
-    _model->open(playlist, true);
+    _model->open(file->fileName(), true);
     _model->save(_playlist, _model->name());
+
+    delete file;
 }
 
 void PlaylistUpdate::update(const QString &playlist)
@@ -48,7 +50,7 @@ void PlaylistUpdate::update(const QString &playlist)
     QScopedPointer<Settings> settings(new Settings(this));
     if (settings->playlistUpdate()) {
         _downloader = new NetworkDownload(this);
-        connect(_downloader, SIGNAL(file(QString)), this, SLOT(processPlaylist(QString)));
+        connect(_downloader, SIGNAL(file(QFile *)), this, SLOT(processPlaylist(QFile *)));
         _downloader->getFile(settings->playlistUpdateUrl());
     }
 }

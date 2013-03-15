@@ -109,11 +109,17 @@ void OsdWidget::setEpg(const QString &now,
     _current = n.cap(1);
 }
 
-void OsdWidget::setLogo(const QString &logo)
+void OsdWidget::setLogo(const QString &file)
 {
-    QPixmap pixmap(logo);
+    QPixmap pixmap(file);
     ui->logo->setPixmap(pixmap.scaledToHeight(height(), Qt::SmoothTransformation));
     ui->logo->show();
+}
+
+void OsdWidget::setLogo(QFile *file)
+{
+    setLogo(file->fileName());
+    delete file;
 }
 
 void OsdWidget::setPlaying(const bool &playing)

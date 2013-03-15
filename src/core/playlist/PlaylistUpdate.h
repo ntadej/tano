@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,6 +19,7 @@
 #ifndef TANO_PLAYLISTUPDATE_H_
 #define TANO_PLAYLISTUPDATE_H_
 
+#include <QtCore/QFile>
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
@@ -27,17 +28,31 @@
 class NetworkDownload;
 class PlaylistModel;
 
+/*!
+    \class PlaylistUpdate PlaylistUpdate.h core/playlist/PlaylistUpdate.h
+    \brief Update playlist from network
+
+    A simple class to download and update playlist from network
+*/
 class TANO_CORE_EXPORT PlaylistUpdate : public QObject
 {
 Q_OBJECT
 public:
+    /*!
+        \brief PlaylistUpdate constructor
+        \param model playlist model to use (PlaylistModel *)
+    */
     explicit PlaylistUpdate(PlaylistModel *model);
     ~PlaylistUpdate();
 
+    /*!
+        \brief Update the playlist
+        \param playlist current playlist location (QString)
+    */
     void update(const QString &playlist);
 
 private slots:
-    void processPlaylist(const QString &playlist);
+    void processPlaylist(QFile *file);
 
 private:
     PlaylistModel *_model;

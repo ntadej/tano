@@ -544,7 +544,7 @@ void MainWindow::createConnections()
     connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
 #endif
 
-    connect(_file, SIGNAL(file(QString)), _osdMain, SLOT(setLogo(QString)));
+    connect(_file, SIGNAL(file(QFile *)), _osdMain, SLOT(setLogo(QFile *)));
 
     connect(_audioController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackAudio, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
     connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackSubtitles, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));

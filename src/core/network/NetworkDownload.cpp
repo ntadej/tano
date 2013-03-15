@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,11 +17,10 @@
 *****************************************************************************/
 
 #include <QtCore/QDebug>
-#include <QtCore/QDir>
-#include <QtCore/QFileInfo>
-#include <QtCore/QVariant>
+#include <QtCore/QTemporaryFile>
 #include <QtNetwork/QNetworkReply>
 
+#include "core/Common.h"
 #include "network/NetworkRequest.h"
 
 #include "NetworkDownload.h"
@@ -37,29 +36,22 @@ NetworkDownload::NetworkDownload(QObject *parent)
 NetworkDownload::~NetworkDownload() { }
 
 void NetworkDownload::getFile(const QString &fileUrl,
-                      const QString &location)
+                              const QString &location)
 {
     if(fileUrl.isEmpty())
         return;
 
     QUrl url = fileUrl;
 
-    QFileInfo fileInfo(url.path());
-    QString fileName;
-    QString path;
     if(!location.isNull()) {
-        fileName = location;
+        _file = new QFile(location);
     } else {
-        QDir dir(QDir::tempPath());
-        dir.mkdir("tano");
-        path = QDir::tempPath() + "/tano/";
-        fileName = path + fileInfo.fileName();
+        _file = new QTemporaryFile(Tano::executable());
     }
 
-    _file = new QFile(fileName);
     if (!_file->open(QIODevice::WriteOnly)) {
-        qDebug() << tr("Error:") << tr("Cannot write file %1:\n%2.")
-                                       .arg(fileName, _file->errorString());
+        qCritical() << tr("Error:") << tr("Cannot write file %1:\n%2.")
+                                       .arg(_file->fileName(), _file->errorString());
         delete _file;
         return;
     }
@@ -77,6 +69,5 @@ void NetworkDownload::write(const QByteArray &data,
     _file->flush();
     _file->close();
 
-    emit file(_file->fileName());
-    delete _file;
+    emit file(_file);
 }

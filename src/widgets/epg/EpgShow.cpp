@@ -49,7 +49,7 @@ EpgShow::EpgShow(QWidget *parent)
     ui->buttonClose->hide();
     ui->labelBlank->hide();
 
-    connect(_image, SIGNAL(file(QString)), this, SLOT(image(QString)));
+    connect(_image, SIGNAL(file(QFile *)), this, SLOT(image(QFile *)));
 
     connect(ui->buttonPrevious, SIGNAL(clicked()), this, SLOT(previous()));
     connect(ui->buttonNext, SIGNAL(clicked()), this, SLOT(next()));
@@ -120,9 +120,10 @@ void EpgShow::display(XmltvProgramme *programme)
     }
 }
 
-void EpgShow::image(const QString &image)
+void EpgShow::image(QFile *file)
 {
-    ui->labelPhoto->setPixmap(QPixmap(image));
+    ui->labelPhoto->setPixmap(QPixmap(file->fileName()));
+    delete file;
 }
 
 void EpgShow::next()

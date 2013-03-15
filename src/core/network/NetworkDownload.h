@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -28,6 +28,12 @@ class QNetworkReply;
 
 class NetworkRequest;
 
+/*!
+    \class NetworkDownload NetworkDownload.h core/network/NetworkDownload.h
+    \brief Download files from network
+
+    A convenience class to download files from network
+*/
 class TANO_CORE_EXPORT NetworkDownload : public QObject
 {
 Q_OBJECT
@@ -35,11 +41,20 @@ public:
 	NetworkDownload(QObject *parent = 0);
 	~NetworkDownload();
 
+    /*!
+        \brief Request a file download
+        \param fileUrl url of the file to be downloaded (QString)
+        \param location location of the downloaded file - tmp, if not defined (QString)
+    */
 	void getFile(const QString &fileUrl,
 				 const QString &location = 0);
 
 signals:
-	void file(const QString &);
+    /*!
+        \brief Signal emited when file succesfully downloaded
+        \param file downloaded file object (QFile *)
+    */
+    void file(QFile *);
 
 private slots:
     void write(const QByteArray &data,

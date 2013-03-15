@@ -19,6 +19,8 @@
 #ifndef TANO_EPGSHOW_H_
 #define TANO_EPGSHOW_H_
 
+#include <QtCore/QFile>
+
 #if defined(Qt5)
     #include <QtWidgets/QWidget>
 #elif defined(Qt4)
@@ -58,7 +60,7 @@ signals:
 
 private slots:
     void closeOsd();
-	void image(const QString &image);
+    void image(QFile *file);
 	void next();
 	void previous();
 	void processFilters(const int &type);

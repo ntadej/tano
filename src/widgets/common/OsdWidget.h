@@ -19,6 +19,8 @@
 #ifndef TANO_OSDWIDGET_H_
 #define TANO_OSDWIDGET_H_
 
+#include <QtCore/QFile>
+
 #if defined(Qt5)
     #include <QtWidgets/QFrame>
 #elif defined(Qt4)
@@ -80,7 +82,8 @@ public slots:
     void mute(const bool &enabled);
     void setEpg(const QString &now,
                 const QString &next);
-    void setLogo(const QString &logo);
+    void setLogo(const QString &file);
+    void setLogo(QFile *file);
     void setTeletextPage(const int &page);
     void teletext(const bool &enabled);
     void volumeDown();
