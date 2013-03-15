@@ -24,7 +24,9 @@
 #include "core/Resources.h"
 #include "xmltv/XmltvCommon.h"
 #include "xmltv/containers/XmltvChannel.h"
+#include "xmltv/containers/XmltvCrewMember.h"
 #include "xmltv/containers/XmltvProgramme.h"
+#include "xmltv/models/XmltvCrewModel.h"
 
 XmltvSql::XmltvSql()
 {
@@ -35,6 +37,17 @@ XmltvSql::XmltvSql()
 XmltvSql::~XmltvSql()
 {
     close();
+}
+
+void XmltvSql::clean()
+{
+    QDateTime time(QDate::currentDate(), QTime(0, 0));
+
+    QSqlQuery q = query();
+    q.exec("DELETE FROM `programmes`"
+           "WHERE `start` < " + time.toString(Tano::Xmltv::dateFormat()));
+    q.exec("DELETE FROM `crew`"
+           "WHERE `start` < " + time.toString(Tano::Xmltv::dateFormat()));
 }
 
 void XmltvSql::close()
@@ -77,7 +90,15 @@ bool XmltvSql::open()
            "`iconsize` varchar(50)"
            ")");
 
-    qDebug() << _db.tables();
+    q.exec("CREATE TABLE IF NOT EXISTS `crew` ("
+           "`id` varchar(50) PRIMARY KEY, "
+           "`name` varchar(100), "
+           "`type` int, "
+           "`programme` varchar(50), "
+           "`start` varchar(20)"
+           ")");
+
+    qDebug() << "Available tables:" << _db.tables();
 
     return true;
 }
@@ -106,7 +127,7 @@ void XmltvSql::addProgramme(XmltvProgramme *programme)
               "VALUES (:id, :title, :subtitle, :channel, :start, :stop, "
               ":desc, :date, :categories, :language, :originalLanguage, "
               ":length, :lengthunits, :icon, :iconsize)");
-    q.bindValue(":id", programme->channel() + "_" + programme->start().toString(Tano::Xmltv::dateFormat()));
+    q.bindValue(":id", programme->id());
     q.bindValue(":title", programme->title());
     q.bindValue(":subtitle", programme->subTitle());
     q.bindValue(":channel", programme->channel());
@@ -124,12 +145,27 @@ void XmltvSql::addProgramme(XmltvProgramme *programme)
     q.exec();
 }
 
+void XmltvSql::addCrewMember(XmltvCrewMember *member)
+{
+    QSqlQuery q = query();
+    q.prepare("INSERT INTO `crew`"
+              "VALUES (:id, :name, :type, :programme, :start)");
+    q.bindValue(":id", member->id());
+    q.bindValue(":name", member->name());
+    q.bindValue(":type", member->type());
+    q.bindValue(":programme", member->programme());
+    q.bindValue(":start", member->start().toString(Tano::Xmltv::dateFormat()));
+    q.exec();
+
+    delete member;
+}
+
 XmltvProgramme *XmltvSql::programme(const QString &id)
 {
     QSqlQuery q = query();
     q.exec("SELECT * FROM `programmes` AS p LEFT OUTER JOIN `channels` AS c ON p.channel = c.id WHERE p.`id` = '" + id + "'");
     if (q.next()) {
-        XmltvProgramme *programme = new XmltvProgramme(q.value(0).toString());
+        XmltvProgramme *programme = new XmltvProgramme();
         programme->setTitle(q.value(1).toString());
         programme->setSubTitle(q.value(2).toString());
         programme->setChannel(q.value(3).toString());
@@ -146,8 +182,20 @@ XmltvProgramme *XmltvSql::programme(const QString &id)
         programme->setIconSize(q.value(14).toSize());
         programme->setChannelDisplayName(q.value(16).toString());
 
+        programme->setCrew(new XmltvCrewModel(programme->id(), this, programme));
+
         return programme;
     }
 
     return new XmltvProgramme("");
+}
+
+bool XmltvSql::startTransaction()
+{
+    return _db.transaction();
+}
+
+bool XmltvSql::endTransaction()
+{
+    return _db.commit();
 }

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,9 +17,11 @@
 *****************************************************************************/
 
 #include "xmltv/models/XmltvCrewFilterModel.h"
+#include "xmltv/models/XmltvCrewModel.h"
 
 XmltvCrewFilterModel::XmltvCrewFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent) { }
+    : QSortFilterProxyModel(parent),
+      _model(0) { }
 
 XmltvCrewFilterModel::~XmltvCrewFilterModel() { }
 
@@ -32,10 +34,17 @@ void XmltvCrewFilterModel::setType(const XmltvCrewMember::Type &type)
 bool XmltvCrewFilterModel::filterAcceptsRow(int sourceRow,
                                             const QModelIndex &sourceParent) const
 {
-    QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
+    Q_UNUSED(sourceParent)
 
-    bool name = sourceModel()->data(index, XmltvCrewMember::NameRole).toString().contains(filterRegExp());
-    bool type = (sourceModel()->data(index, XmltvCrewMember::TypeRole).toInt() == _type) || !_type;
+    bool name = _model->value(sourceRow, 1).toString().contains(filterRegExp());
+    bool type = (_model->value(sourceRow, 2).toInt() == _type) || !_type;
 
     return name && type;
+}
+
+void XmltvCrewFilterModel::setCrewModel(XmltvCrewModel *model)
+{
+    _model = model;
+    setSourceModel(_model);
+    invalidateFilter();
 }

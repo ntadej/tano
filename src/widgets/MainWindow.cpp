@@ -341,11 +341,6 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
-    if (!_arguments->value(Argument::Xmltv).isEmpty())
-        _xmltv->loadXmltv(_arguments->value(Argument::Xmltv));
-    else
-        _xmltv->loadXmltv();
-
     _mediaInstance = new VlcInstance(Tano::Backend::args(_arguments->value(Argument::Aout), _arguments->value(Argument::Vout)), this);
     _mediaItem = 0;
     _mediaPlayer = new VlcMediaPlayer(_mediaInstance);

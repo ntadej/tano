@@ -16,7 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
 #include <QtGui/QFont>
 #include <QtGui/QIcon>
 
@@ -41,12 +40,12 @@ void XmltvProgrammeFilterModel::setDate(const QDate &date)
 bool XmltvProgrammeFilterModel::filterAcceptsRow(int sourceRow,
                                                  const QModelIndex &sourceParent) const
 {
-    //QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
+    Q_UNUSED(sourceParent)
 
-   // bool name = sourceModel()->data(index, XmltvProgramme::TitleRole).toString().contains(filterRegExp());
-   // bool start = (sourceModel()->data(index, XmltvProgramme::StartRole).toDateTime().date() == _date);
+    bool name = _model->value(sourceRow, 1).toString().contains(filterRegExp());
+    bool start = (QDateTime::fromString(_model->value(sourceRow, 2).toString(), Tano::Xmltv::dateFormat()).date() == _date);
 
-    return true; //(name && start);
+    return (name && start);
 }
 
 void XmltvProgrammeFilterModel::setProgrammeModel(XmltvProgrammeModel *model,

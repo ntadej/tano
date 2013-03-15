@@ -22,23 +22,15 @@
 
 #include "XmltvProgramme.h"
 
-XmltvProgramme::XmltvProgramme(const QString &id,
-                               QObject *parent)
+XmltvProgramme::XmltvProgramme(QObject *parent)
     : ListItem(parent),
-      _id(id)
-{
-    _crew = new XmltvCrewModel(this);
-}
+      _crew(0) { }
 
-XmltvProgramme::XmltvProgramme(const QString &id,
-                               const QString &channel,
+XmltvProgramme::XmltvProgramme(const QString &channel,
                                QObject *parent)
     : ListItem(parent),
-      _id(id),
-      _channel(channel)
-{
-    _crew = new XmltvCrewModel(this);
-}
+      _channel(channel),
+      _crew(0) { }
 
 XmltvProgramme::~XmltvProgramme()
 {
@@ -67,6 +59,11 @@ QHash<int, QByteArray> XmltvProgramme::roleNames() const
     names[IconRole] = "icon";
     names[IconSizeRole] = "iconsize";
     return names;
+}
+
+QString XmltvProgramme::id() const
+{
+    return channel() + "_" + start().toString(Tano::Xmltv::dateFormat());
 }
 
 QVariant XmltvProgramme::data(const int &role) const
@@ -263,66 +260,6 @@ void XmltvProgramme::setIconSize(const QSize &s)
         _iconSize = s;
         emit dataChanged();
     }
-}
-
-void XmltvProgramme::addDirector(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Director, this);
-    _crew->appendRow(crew);
-}
-
-void XmltvProgramme::addActor(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Actor, this);
-    _crew->appendRow(crew);
-}
-
-void XmltvProgramme::addWriter(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Writer, this);
-    _crew->appendRow(crew);
-}
-
-void XmltvProgramme::addAdapter(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Adapter, this);
-    _crew->appendRow(crew);
-}
-
-void XmltvProgramme::addProducer(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Producer, this);
-    _crew->appendRow(crew);
-}
-
-void XmltvProgramme::addComposer(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Composer, this);
-    _crew->appendRow(crew);
-}
-
-void XmltvProgramme::addEditor(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Editor, this);
-    _crew->appendRow(crew);
-}
-
-void XmltvProgramme::addPresenter(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Presenter, this);
-    _crew->appendRow(crew);
-}
-
-void XmltvProgramme::addCommentator(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Commentator, this);
-    _crew->appendRow(crew);
-}
-
-void XmltvProgramme::addGuest(const QString &s)
-{
-    XmltvCrewMember *crew = new XmltvCrewMember(s, XmltvCrewMember::Guest, this);
-    _crew->appendRow(crew);
 }
 
 XmltvProgramme::LengthUnits XmltvProgramme::lengthUnits(const QString &type)

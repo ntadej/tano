@@ -158,5 +158,5 @@ void Settings::readSettings()
 
     setXmltvUpdate(value("xmltv/update", DEFAULT_XMLTV_UPDATE).toBool());
     setXmltvUpdateLocation(value("xmltv/updatelocation", DEFAULT_XMLTV_UPDATE_LOCATION).toString());
-    setXmltvUpdateRemote(value("xmltv/updategrabber", DEFAULT_XMLTV_UPDATE_REMOTE).toBool());
+    setXmltvUpdateRemote(value("xmltv/updateremote", DEFAULT_XMLTV_UPDATE_REMOTE).toBool());
 }

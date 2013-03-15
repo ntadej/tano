@@ -101,12 +101,14 @@ void EpgShow::display(XmltvProgramme *programme)
     ui->labelDescription->setText(programme->desc());
     ui->labelPhoto->setPixmap(QIcon::fromTheme("image-x-generic").pixmap(48));
 
-    _crew->setSourceModel(programme->crew());
+    if (programme->crew()) {
+        _crew->setCrewModel(programme->crew());
 
-    ui->crew->setVisible(programme->crew()->rowCount());
-    ui->labelCrew->setVisible(programme->crew()->rowCount());
-    ui->labelCrewIcon->setVisible(programme->crew()->rowCount());
-    ui->comboCrewType->setVisible(programme->crew()->rowCount());
+        ui->crew->setVisible(programme->crew()->rowCount());
+        ui->labelCrew->setVisible(programme->crew()->rowCount());
+        ui->labelCrewIcon->setVisible(programme->crew()->rowCount());
+        ui->comboCrewType->setVisible(programme->crew()->rowCount());
+    }
 
     _image->getFile(programme->icon());
 

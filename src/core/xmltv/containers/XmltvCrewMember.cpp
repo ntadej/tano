@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,16 +17,30 @@
 *****************************************************************************/
 
 #include "XmltvCrewMember.h"
+#include "XmltvProgramme.h"
 
 XmltvCrewMember::XmltvCrewMember(QObject *parent)
     : ListItem(parent) { }
 
 XmltvCrewMember::XmltvCrewMember(const QString &name,
                                  const Type &type,
+                                 const QString &programme,
+                                 const QDateTime &start,
                                  QObject *parent)
     : ListItem(parent),
       _name(name),
-      _type(type) { }
+      _type(type),
+      _programme(programme),
+      _start(start) { }
+
+XmltvCrewMember::XmltvCrewMember(const QString &name,
+                                 const Type &type,
+                                 XmltvProgramme *programme)
+    : ListItem(programme),
+      _name(name),
+      _type(type),
+      _programme(programme->id()),
+      _start(programme->start()) { }
 
 XmltvCrewMember::~XmltvCrewMember() { }
 
@@ -37,6 +51,8 @@ QHash<int, QByteArray> XmltvCrewMember::roleNames() const
     names[DecorationRole] = "decoration";
     names[NameRole] = "name";
     names[TypeRole] = "type";
+    names[ProgrammeRole] = "programme";
+    names[StartRole] = "start";
     return names;
 }
 
@@ -52,6 +68,10 @@ QVariant XmltvCrewMember::data(const int &role) const
         return name();
     case TypeRole:
         return type();
+    case ProgrammeRole:
+        return programme();
+    case StartRole:
+        return start();
     default:
         return QVariant();
     }

@@ -19,6 +19,7 @@
 #ifndef TANO_XMLTVMANAGER_H_
 #define TANO_XMLTVMANAGER_H_
 
+#include <QtCore/QFile>
 #include <QtCore/QFutureWatcher>
 #include <QtCore/QObject>
 #include <QtCore/QTimer>
@@ -26,12 +27,11 @@
 #include "CoreSharedExport.h"
 
 #include "Common.h"
+#include "network/NetworkDownload.h"
 #include "xmltv/XmltvHandler.h"
 
 extern bool loadXmltvStart(XmltvHandler *handler,
-                           const QString &location);
-
-class NetworkDownload;
+                           QFile *file);
 
 class XmltvProgramme;
 class XmltvProgrammeModel;
@@ -44,8 +44,6 @@ public:
     explicit XmltvManager(QObject *parent = 0);
     ~XmltvManager();
 
-    void loadXmltv();
-    void loadXmltv(const QString &file);
     QHash<QString, QString> channels() const;
 
 public slots:
@@ -70,23 +68,20 @@ signals:
 
 private slots:
     void current();
-    void loadXmltvInit();
+    void loadXmltv();
+    void loadXmltvInit(QFile *file);
     void loadXmltvFinish();
 
 private:
     QString processCurrentString(XmltvProgramme *programme) const;
-    void updateWeb(const QString &location,
-                   const QString &url);
-
-    QString _location;
-
-    bool _loading;
+    void loadXmltvWeb(const QString &url);
 
     Tano::Id _currentIdentifier;
     QString _currentXmltvId;
 
     XmltvSql *_db;
-    NetworkDownload *_downloader;
+    QPointer<NetworkDownload> _downloader;
+    QPointer<QFile> _file;
     XmltvHandler *_handler;
     QTimer *_timer;
     QFutureWatcher<bool> *_watcher;

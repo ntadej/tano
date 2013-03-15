@@ -23,10 +23,12 @@
 #ifndef TANO_XMLTVHANDLER_H_
 #define TANO_XMLTVHANDLER_H_
 
+#include <QtCore/QPointer>
 #include <QtXml/QXmlDefaultHandler>
 
-class XmltvChannel;
-class XmltvProgramme;
+#include "xmltv/containers/XmltvChannel.h"
+#include "xmltv/containers/XmltvProgramme.h"
+
 class XmltvSql;
 
 /*!
@@ -60,8 +62,8 @@ private:
 
     XmltvSql *_db;
 
-    XmltvChannel *_currentChannel;
-    XmltvProgramme *_currentProgramme;
+    QPointer<XmltvChannel> _currentChannel;
+    QPointer<XmltvProgramme> _currentProgramme;
 };
 
 #endif // TANO_XMLTVHANDLER_H_

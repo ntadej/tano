@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,16 +19,24 @@
 #ifndef TANO_XMLTVCREWFILTERMODEL_H_
 #define TANO_XMLTVCREWFILTERMODEL_H_
 
-#if defined(Qt5)
+#include "CoreSharedExport.h"
+
+#if QT_VERSION >= 0x050000
     #include <QtCore/QSortFilterProxyModel>
-#elif defined(Qt4)
+#else
     #include <QtGui/QSortFilterProxyModel>
 #endif
 
-#include "CoreSharedExport.h"
-
 #include "xmltv/containers/XmltvCrewMember.h"
 
+class XmltvCrewModel;
+
+/*!
+    \class XmltvCrewFilterModel XmltvCrewFilterModel.h core/xmltv/models/XmltvCrewFilterModel.h
+    \brief XMLTV Crew Filter model
+
+    Reimplemented QSortFilterProxyModel to be able to filter XMLTV Crew Members
+*/
 class TANO_CORE_EXPORT XmltvCrewFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
@@ -36,13 +44,38 @@ public:
     XmltvCrewFilterModel(QObject *parent = 0);
     ~XmltvCrewFilterModel();
 
+    /*!
+        \brief Get current crew member type
+        \return current crew member type (XmltvCrewMember::Type)
+    */
     inline XmltvCrewMember::Type type() const { return _type; }
+
+    /*!
+        \brief Set crew member type
+        \param type crew member type (XmltvCrewMember::Type)
+    */
     void setType(const XmltvCrewMember::Type &type = XmltvCrewMember::All);
 
 protected:
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
+    /*!
+        \brief Reimplemented filter function
+        \param sourceRow row to process (int)
+        \param sourceParent parent index (QModelIndex)
+        \return true, if item to be displayed (bool)
+    */
+    bool filterAcceptsRow(int sourceRow,
+                          const QModelIndex &sourceParent) const;
+
+public slots:
+    /*!
+        \brief Set Crew model to filter
+        \param model Crew model (XmltvCrewModel)
+    */
+    void setCrewModel(XmltvCrewModel *model);
 
 private:
+    XmltvCrewModel *_model;
+
     XmltvCrewMember::Type _type;
 };
 

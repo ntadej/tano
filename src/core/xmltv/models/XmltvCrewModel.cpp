@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,25 +16,40 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QIcon>
+#include <QtSql/QSqlRecord>
+
+#include "xmltv/XmltvSql.h"
 #include "xmltv/containers/XmltvCrewMember.h"
 #include "xmltv/models/XmltvCrewModel.h"
 
-XmltvCrewModel::XmltvCrewModel(QObject *parent)
-    : ListModel(new XmltvCrewMember, parent) { }
+XmltvCrewModel::XmltvCrewModel(const QString &id,
+                               XmltvSql *db,
+                               QObject *parent)
+    : QSqlQueryModel(parent)
+{
+    setQuery("SELECT `id`, `name`, `type` FROM `crew` WHERE `programme` = '" + id + "' ORDER BY `name`", db->database());
+}
 
 XmltvCrewModel::~XmltvCrewModel() { }
 
-XmltvCrewMember *XmltvCrewModel::find(const QString &id) const
+QVariant XmltvCrewModel::data(const QModelIndex &index,
+                              int role) const
 {
-    return qobject_cast<XmltvCrewMember *>(ListModel::find(id));
+    QVariant v = QSqlQueryModel::data(index, role);
+    if (v.isValid() && role == Qt::DisplayRole) {
+        QString name = value(index.row(), 1).toString();
+        XmltvCrewMember::Type type = XmltvCrewMember::Type(value(index.row(), 2).toInt());
+
+        return QString("%1 (%2)").arg(name, XmltvCrewMember::stringFromType(type));
+    } else if (role == Qt::DecorationRole) {
+        return QIcon::fromTheme("config-users");
+    }
+    return QVariant();
 }
 
-XmltvCrewMember *XmltvCrewModel::row(const int &row)
+QVariant XmltvCrewModel::value(const int &row,
+                                    const int &type) const
 {
-    return qobject_cast<XmltvCrewMember *>(ListModel::row(row));
-}
-
-XmltvCrewMember *XmltvCrewModel::takeRow(const int &row)
-{
-    return qobject_cast<XmltvCrewMember *>(ListModel::takeRow(row));
+    return QSqlQueryModel::data(QSqlQueryModel::index(row, type), Qt::DisplayRole);
 }

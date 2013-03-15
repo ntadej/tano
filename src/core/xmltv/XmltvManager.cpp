@@ -36,12 +36,11 @@
 
 XmltvManager::XmltvManager(QObject *parent)
     : QObject(parent),
-      _loading(true),
-      _currentXmltvId(""),
-      _downloader(0)
+      _currentXmltvId("")
 {
     _db = new XmltvSql();
     _db->open();
+    _db->clean();
     _handler = new XmltvHandler(_db);
 
     _timer = new QTimer(this);
@@ -49,6 +48,8 @@ XmltvManager::XmltvManager(QObject *parent)
 
     _watcher = new QFutureWatcher<bool>(this);
     connect(_watcher, SIGNAL(finished()), this, SLOT(loadXmltvFinish()));
+
+    loadXmltv();
 }
 
 XmltvManager::~XmltvManager()
@@ -89,55 +90,50 @@ void XmltvManager::current()
 void XmltvManager::loadXmltv()
 {
     QScopedPointer<Settings> settings(new Settings(this));
-    _location = settings->xmltvUpdateLocation();
-
     if (!settings->xmltvUpdate())
         return;
 
     if (settings->xmltvUpdateRemote()) {
-        // TODO: Remote update
-        //updateWeb(settings->xmltvLocation(), settings->xmltvUpdateUrl());
+        loadXmltvWeb(settings->xmltvUpdateLocation());
     } else {
-        loadXmltvInit();
+        loadXmltvInit(new QFile(Tano::Resources::resource(settings->xmltvUpdateLocation())));
     }
 }
 
-void XmltvManager::loadXmltv(const QString &file)
-{
-    _location = file;
-
-    loadXmltvInit();
-}
-
-void XmltvManager::loadXmltvInit()
+void XmltvManager::loadXmltvInit(QFile *file)
 {
     if (_downloader)
-        disconnect(_downloader, SIGNAL(file(QString)), this, SLOT(loadXmltvInit()));
+        disconnect(_downloader, SIGNAL(file(QFile *)), this, SLOT(loadXmltvInit(QFile *)));
 
-    //QFuture<bool> future = QtConcurrent::run(loadXmltvStart, _handler, _location);
-   // _watcher->setFuture(future);
+    _file = file;
+    _db->startTransaction();
+
+    QFuture<bool> future = QtConcurrent::run(loadXmltvStart, _handler, _file);
+    _watcher->setFuture(future);
 }
 
 bool loadXmltvStart(XmltvHandler *handler,
-                    const QString &location)
+                    QFile *file)
 {
     QXmlSimpleReader reader;
     reader.setContentHandler(handler);
     reader.setErrorHandler(handler);
 
-    QFile file(Tano::Resources::resource(location));
-    if (!file.exists())
+    if (!file->exists())
         return false;
-    if (!file.open(QFile::ReadOnly | QFile::Text))
+    if (!file->open(QFile::ReadOnly | QFile::Text))
         return false;
 
-    QXmlInputSource xmlInputSource(&file);
+    QXmlInputSource xmlInputSource(file);
 
     return reader.parse(xmlInputSource);
 }
 
 void XmltvManager::loadXmltvFinish()
 {
+    delete _file;
+    _db->endTransaction();
+
     if (!_watcher->result())
         return;
 
@@ -145,11 +141,17 @@ void XmltvManager::loadXmltvFinish()
 
     return;
 
-    _loading = false;
-
     emit channelsChanged(channels());
 
     request(_currentXmltvId, _currentIdentifier);
+}
+
+void XmltvManager::loadXmltvWeb(const QString &url)
+{
+    if (!_downloader)
+        _downloader = new NetworkDownload(this);
+    connect(_downloader, SIGNAL(file(QFile *)), this, SLOT(loadXmltvInit(QFile *)));
+    _downloader->getFile(url);
 }
 
 QString XmltvManager::processCurrentString(XmltvProgramme *programme) const
@@ -228,16 +230,4 @@ void XmltvManager::requestQmlCurrent(const QString &id)
 void XmltvManager::stop()
 {
     _timer->stop();
-}
-
-void XmltvManager::updateWeb(const QString &location,
-                             const QString &url)
-{
-    QFile file(location);
-    if (file.exists())
-        file.remove();
-
-    _downloader = new NetworkDownload(this);
-    connect(_downloader, SIGNAL(file(QString)), this, SLOT(loadXmltvInit()));
-    _downloader->getFile(url, location);
 }

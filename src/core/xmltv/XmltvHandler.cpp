@@ -25,6 +25,7 @@
 #include "xmltv/XmltvCommon.h"
 #include "xmltv/XmltvSql.h"
 #include "xmltv/containers/XmltvChannel.h"
+#include "xmltv/containers/XmltvCrewMember.h"
 #include "xmltv/containers/XmltvProgramme.h"
 
 #include "XmltvHandler.h"
@@ -60,7 +61,7 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
     } else if (qName == "programme") { // Programme
         QString start = attributes.value("start").replace(Tano::Xmltv::dateRegExp(), "");
         QString stop = attributes.value("stop").replace(Tano::Xmltv::dateRegExp(), "");
-        _currentProgramme = new XmltvProgramme(attributes.value("channel"), _currentChannel);
+        _currentProgramme = new XmltvProgramme(attributes.value("channel"));
         _currentProgramme->setStart(QDateTime::fromString(start, Tano::Xmltv::dateFormat()));
         _currentProgramme->setStop(QDateTime::fromString(stop, Tano::Xmltv::dateFormat()));
         // TODO: Fix previous programme stop
@@ -86,7 +87,6 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
             _db->addChannel(_currentChannel);
 
             delete _currentChannel;
-            _currentChannel = 0;
         }
     } else if(qName == "display-name") {
         if(_currentChannel) {
@@ -101,7 +101,6 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
             _db->addProgramme(_currentProgramme);
 
             delete _currentProgramme;
-            _currentProgramme = 0;
         }
     } else if(qName == "title") {
         if(_currentProgramme) {
@@ -117,43 +116,43 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
         }
     } else if(qName == "director") { // Programme credits
         if(_currentProgramme) {
-            _currentProgramme->addDirector(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Director, _currentProgramme));
         }
     } else if(qName == "actor") {
         if(_currentProgramme) {
-            _currentProgramme->addActor(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Actor, _currentProgramme));
         }
     } else if(qName == "writer") {
         if(_currentProgramme) {
-            _currentProgramme->addWriter(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Writer, _currentProgramme));
         }
     } else if(qName == "adapter") {
         if(_currentProgramme) {
-            _currentProgramme->addAdapter(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Adapter, _currentProgramme));
         }
     } else if(qName == "producer") {
         if(_currentProgramme) {
-            _currentProgramme->addProducer(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Producer, _currentProgramme));
         }
     } else if(qName == "composer") {
         if(_currentProgramme) {
-            _currentProgramme->addComposer(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Composer, _currentProgramme));
         }
     } else if(qName == "editor") {
         if(_currentProgramme) {
-            _currentProgramme->addEditor(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Editor, _currentProgramme));
         }
     } else if(qName == "presenter") {
         if(_currentProgramme) {
-            _currentProgramme->addPresenter(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Presenter, _currentProgramme));
         }
     } else if(qName == "commentator") {
         if(_currentProgramme) {
-            _currentProgramme->addCommentator(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Commentator, _currentProgramme));
         }
     } else if(qName == "guest") {
         if(_currentProgramme) {
-            _currentProgramme->addGuest(_currentText);
+            _db->addCrewMember(new XmltvCrewMember(_currentText, XmltvCrewMember::Guest, _currentProgramme));
         }
     } else if(qName == "date") { // Programme - continuation
         if(_currentProgramme) {

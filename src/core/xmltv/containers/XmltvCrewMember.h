@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,10 +19,13 @@
 #ifndef TANO_XMLTVCREWMEMBER_H_
 #define TANO_XMLTVCREWMEMBER_H_
 
+#include <QtCore/QDateTime>
 #include <QtCore/QList>
 #include <QtCore/QString>
 
 #include "ListItem.h"
+
+class XmltvProgramme;
 
 class XmltvCrewMember : public ListItem
 {
@@ -32,7 +35,9 @@ public:
         DisplayRole = Qt::DisplayRole,
         DecorationRole = Qt::DecorationRole,
         NameRole = Qt::UserRole + 1,
-        TypeRole
+        TypeRole,
+        ProgrammeRole,
+        StartRole
     };
 
     // Crew member types
@@ -54,10 +59,15 @@ public:
     explicit XmltvCrewMember(QObject *parent = 0);
     explicit XmltvCrewMember(const QString &name,
                              const Type &type,
+                             const QString &programme,
+                             const QDateTime &start,
                              QObject *parent = 0);
+    explicit XmltvCrewMember(const QString &name,
+                             const Type &type,
+                             XmltvProgramme *programme);
     ~XmltvCrewMember();
 
-    inline QString id() const { return _name; }
+    inline QString id() const { return _programme + "_" + _name; }
     QVariant data(const int &role) const;
     QString display() const;
     QIcon decoration() const;
@@ -65,6 +75,8 @@ public:
 
     inline QString name() const { return _name; }
     inline Type type() const { return _type; }
+    inline QString programme() const { return _programme; }
+    inline QDateTime start() const { return _start; }
 
     static Type typeFromString(const QString &type);
     static QString stringFromType(const Type &type);
@@ -73,6 +85,8 @@ public:
 private:
     QString _name;
     XmltvCrewMember::Type _type;
+    QString _programme;
+    QDateTime _start;
 };
 
 #endif // TANO_XMLTVCREWMEMBER_H_

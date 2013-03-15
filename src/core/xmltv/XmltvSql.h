@@ -23,6 +23,7 @@
 #include <QtSql/QSqlQuery>
 
 class XmltvChannel;
+class XmltvCrewMember;
 class XmltvProgramme;
 
 /*!
@@ -36,6 +37,11 @@ class XmltvSql
 public:
     XmltvSql();
     ~XmltvSql();
+
+    /*!
+        \brief Remove old entries
+    */
+    void clean();
 
     /*!
         \brief Close connection to the database
@@ -59,6 +65,16 @@ public:
     */
     QSqlQuery query();
 
+    /*!
+        \brief Start transaction
+    */
+    bool startTransaction();
+
+    /*!
+        \brief End transaction
+    */
+    bool endTransaction();
+
 
     /*!
         \brief Add channel to the database
@@ -71,6 +87,12 @@ public:
         \param programme programme to add (XmltvProgramme)
     */
     void addProgramme(XmltvProgramme *programme);
+
+    /*!
+        \brief Add crew member to the database
+        \param member crew member to add (XmltvCrewMember)
+    */
+    void addCrewMember(XmltvCrewMember *member);
 
     /*!
         \brief Read programme from the database

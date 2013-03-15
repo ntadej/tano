@@ -70,7 +70,7 @@ private:
 	Ui::EpgShow *ui;
 
 	XmltvProgramme *_current;
-	XmltvCrewFilterModel *_crew;
+    XmltvCrewFilterModel *_crew;
 
 	NetworkDownload *_image;
 

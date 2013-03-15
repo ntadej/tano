@@ -61,14 +61,12 @@ public:
         Hours
     };
 
-    explicit XmltvProgramme(const QString &id,
-                            QObject *parent = 0);
-    explicit XmltvProgramme(const QString &id,
-                            const QString &channel,
+    explicit XmltvProgramme(QObject *parent = 0);
+    explicit XmltvProgramme(const QString &channel,
                             QObject *parent = 0);
     ~XmltvProgramme();
 
-    inline QString id() const { return _id; }
+    QString id() const;
     QVariant data(const int &role) const;
     QString display() const;
     QIcon decoration() const;
@@ -108,19 +106,8 @@ public:
     inline QSize iconSize() const { return _iconSize; }
     void setIconSize(const QSize &s);
 
-    // Credits
-    void addDirector(const QString &s);
-    void addActor(const QString &s);
-    void addWriter(const QString &s);
-    void addAdapter(const QString &s);
-    void addProducer(const QString &s);
-    void addComposer(const QString &s);
-    void addEditor(const QString &s);
-    void addPresenter(const QString &s);
-    void addCommentator(const QString &s);
-    void addGuest(const QString &s);
-
-    XmltvCrewModel *crew() { return _crew; }
+    inline XmltvCrewModel *crew() { return _crew; }
+    void setCrew(XmltvCrewModel *c) { _crew = c; }
 
     static LengthUnits lengthUnits(const QString &type);
     static QString lengthUnits(const LengthUnits &type);
