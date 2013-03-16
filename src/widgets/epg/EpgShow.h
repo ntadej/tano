@@ -54,9 +54,11 @@ public slots:
 	void display(XmltvProgramme *programme);
 
 signals:
-    void requestNext(const QString &);
-    void requestPrevious(const QString &);
-    void requestRecord(const QString &);
+    void requestNext(const QString &id,
+                     const QString &channel);
+    void requestPrevious(const QString &id,
+                         const QString &channel);
+    void requestRecord(const QString &id);
 
 private slots:
     void closeOsd();

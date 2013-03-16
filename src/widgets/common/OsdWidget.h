@@ -80,8 +80,7 @@ signals:
 
 public slots:
     void mute(const bool &enabled);
-    void setEpg(const QString &now,
-                const QString &next);
+    void setEpg(const QStringList &epg);
     void setLogo(const QString &file);
     void setLogo(QFile *file);
     void setTeletextPage(const int &page);

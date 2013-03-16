@@ -32,8 +32,7 @@
 
 XmltvHandler::XmltvHandler(XmltvSql *db)
     : _metTag(false),
-      _db(db),
-      _currentProgramme(0) { }
+      _db(db) { }
 
 XmltvHandler::~XmltvHandler() { }
 
@@ -64,9 +63,10 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
         _currentProgramme = new XmltvProgramme(attributes.value("channel"));
         _currentProgramme->setStart(QDateTime::fromString(start, Tano::Xmltv::dateFormat()));
         _currentProgramme->setStop(QDateTime::fromString(stop, Tano::Xmltv::dateFormat()));
-        // TODO: Fix previous programme stop
-        //if (_previousProgramme && !_previousProgramme->stop().isValid())
-        //    _previousProgramme->setStop(_currentProgramme->start());
+        if (_previousProgramme && !_previousProgramme->stop().isValid()) {
+            _db->updateProgramme(_previousProgramme->id(), "stop", _currentProgramme->start().toString(Tano::Xmltv::dateFormat()));
+            delete _previousProgramme;
+        }
     } else if (qName == "lenght") {
         if(_currentProgramme) {
             _currentProgramme->setLengthUnits(XmltvProgramme::lengthUnits(attributes.value("units")));
@@ -100,7 +100,8 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
         if(_currentProgramme) {
             _db->addProgramme(_currentProgramme);
 
-            delete _currentProgramme;
+            _previousProgramme = _currentProgramme;
+            _currentProgramme = 0;
         }
     } else if(qName == "title") {
         if(_currentProgramme) {

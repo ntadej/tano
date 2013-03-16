@@ -19,6 +19,7 @@
 #ifndef TANO_SQLDATABASEXMLTV_H_
 #define TANO_SQLDATABASEXMLTV_H_
 
+#include <QtCore/QHash>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 
@@ -83,10 +84,30 @@ public:
     void addChannel(XmltvChannel *channel);
 
     /*!
+        \brief Update channel
+        \param id channel id (QString)
+        \param column column to change (QString)
+        \param data new data (QString)
+    */
+    void updateChannel(const QString &id,
+                       const QString &column,
+                       const QString &data);
+
+    /*!
         \brief Add programme to the database
         \param programme programme to add (XmltvProgramme)
     */
     void addProgramme(XmltvProgramme *programme);
+
+    /*!
+        \brief Update programme
+        \param id programme id (QString)
+        \param column column to change (QString)
+        \param data new data (QString)
+    */
+    void updateProgramme(const QString &id,
+                         const QString &column,
+                         const QString &data);
 
     /*!
         \brief Add crew member to the database
@@ -95,11 +116,42 @@ public:
     void addCrewMember(XmltvCrewMember *member);
 
     /*!
+        \brief Channel mapping to IDs
+        \return mapping (QHash<QString, QString>)
+    */
+    QHash<QString, QString> channels();
+
+    /*!
         \brief Read programme from the database
         \param id programme id (QString)
         \return programme (XmltvProgramme)
     */
     XmltvProgramme *programme(const QString &id);
+
+    /*!
+        \brief Read current programme for current channel
+        \param id channel id (QString)
+        \return programme (QStringList)
+    */
+    QStringList programmeCurrent(const QString &id);
+
+    /*!
+        \brief Read next programme from the database
+        \param id programme id (QString)
+        \param channel channel id (QString)
+        \return programme (XmltvProgramme)
+    */
+    XmltvProgramme *programmeNext(const QString &id,
+                                  const QString &channel);
+
+    /*!
+        \brief Read previous programme from the database
+        \param id programme id (QString)
+        \param channel channel id (QString)
+        \return programme (XmltvProgramme)
+    */
+    XmltvProgramme *programmePrevious(const QString &id,
+                                      const QString &channel);
 
 private:
     QSqlDatabase _db;

@@ -522,7 +522,7 @@ void MainWindow::createConnections()
     connect(ui->buttonPlaylistClose, SIGNAL(clicked()), this, SLOT(infoClose()));
     connect(ui->buttonScheduleClose, SIGNAL(clicked()), this, SLOT(infoClose()));
 
-    connect(_xmltv, SIGNAL(current(QString, QString)), _osdMain, SLOT(setEpg(QString, QString)));
+    connect(_xmltv, SIGNAL(current(QStringList)), _osdMain, SLOT(setEpg(QStringList)));
     connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
     connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
     connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _xmltv, SLOT(request(QString, Tano::Id)));
@@ -530,8 +530,8 @@ void MainWindow::createConnections()
     connect(ui->scheduleWidget, SIGNAL(itemSelected(QString)), _xmltv, SLOT(requestProgramme(QString)));
     connect(_xmltv, SIGNAL(programme(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
     connect(_osdMain, SIGNAL(openLink(QString)), _xmltv, SLOT(requestProgramme(QString)));
-    connect(_epgShow, SIGNAL(requestNext(QString)), _xmltv, SLOT(requestProgrammeNext(QString)));
-    connect(_epgShow, SIGNAL(requestPrevious(QString)), _xmltv, SLOT(requestProgrammePrevious(QString)));
+    connect(_epgShow, SIGNAL(requestNext(QString, QString)), _xmltv, SLOT(requestProgrammeNext(QString, QString)));
+    connect(_epgShow, SIGNAL(requestPrevious(QString, QString)), _xmltv, SLOT(requestProgrammePrevious(QString, QString)));
     connect(ui->playlistWidget, SIGNAL(scheduleRequested(Channel *)), _schedule, SLOT(openSchedule(Channel *)));
 
 #if UPDATE

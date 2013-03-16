@@ -63,28 +63,14 @@ XmltvManager::~XmltvManager()
 
 QHash<QString, QString> XmltvManager::channels() const
 {
-    // TODO: Channel maping
-    //if (_xmltv)
-    //    return _xmltv->channels()->map();
-    //else
-        return QHash<QString, QString>();
+    return _db->channels();
 }
 
 void XmltvManager::current()
 {
-    // TODO: Current
-    /*if (_xmltv->channels()->find(_currentXmltvId)->programme()->rowCount() < 2)
-        return;
+    emit current(_db->programmeCurrent(_currentXmltvId));
 
-    for (int i = 1; i < _xmltv->channels()->find(_currentXmltvId)->programme()->rowCount(); i++) {
-        if (QDateTime::currentDateTime() < _xmltv->channels()->find(_currentXmltvId)->programme()->row(i)->start()) {
-            emit current(processCurrentString(_xmltv->channels()->find(_currentXmltvId)->programme()->row(i-1)),
-                         processCurrentString(_xmltv->channels()->find(_currentXmltvId)->programme()->row(i)));
-            break;
-        }
-    }
-
-    _timer->start(60000);*/
+    _timer->start(60000);
 }
 
 void XmltvManager::loadXmltv()
@@ -139,8 +125,6 @@ void XmltvManager::loadXmltvFinish()
 
     qDebug() << "XMLTV loaded!";
 
-    return;
-
     emit channelsChanged(channels());
 
     request(_currentXmltvId, _currentIdentifier);
@@ -152,13 +136,6 @@ void XmltvManager::loadXmltvWeb(const QString &url)
         _downloader = new NetworkDownload(this);
     connect(_downloader, SIGNAL(file(QFile *)), this, SLOT(loadXmltvInit(QFile *)));
     _downloader->getFile(url);
-}
-
-QString XmltvManager::processCurrentString(XmltvProgramme *programme) const
-{
-    QString output = "<a href=\"%1\">%2 - %3</a>";
-    output = output.arg(programme->start().toString(Tano::Xmltv::dateFormat()), programme->start().toString("HH:mm"), programme->title());
-    return output;
 }
 
 void XmltvManager::request(const QString &id,
@@ -195,14 +172,30 @@ void XmltvManager::requestProgramme(const QString &id)
         delete p;
 }
 
-void XmltvManager::requestProgrammeNext(const QString &id)
+void XmltvManager::requestProgrammeNext(const QString &id,
+                                        const QString &channel)
 {
-    // TODO: Request next programme
+    if (id.isEmpty() || channel.isEmpty())
+        return;
+
+    XmltvProgramme *p = _db->programmeNext(id, channel);
+    if (!p->id().isEmpty())
+        emit programme(p);
+    else
+        delete p;
 }
 
-void XmltvManager::requestProgrammePrevious(const QString &id)
+void XmltvManager::requestProgrammePrevious(const QString &id,
+                                            const QString &channel)
 {
-    // TODO: Request previous programme
+    if (id.isEmpty() || channel.isEmpty())
+        return;
+
+    XmltvProgramme *p = _db->programmePrevious(id, channel);
+    if (!p->id().isEmpty())
+        emit programme(p);
+    else
+        delete p;
 }
 
 void XmltvManager::requestProgrammeRecord(const QString &id)

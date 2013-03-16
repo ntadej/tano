@@ -99,13 +99,15 @@ void OsdWidget::setChannel(const int &number,
     _current = "";
 }
 
-void OsdWidget::setEpg(const QString &now,
-                       const QString &next)
+void OsdWidget::setEpg(const QStringList &epg)
 {
-    ui->info->setChannelEpg(now, next);
+    if (epg.size() < 2)
+        return;
+
+    ui->info->setChannelEpg(epg[0], epg[1]);
 
     QRegExp n("href=\"([^\"]*)");
-    n.indexIn(now);
+    n.indexIn(epg[0]);
     _current = n.cap(1);
 }
 

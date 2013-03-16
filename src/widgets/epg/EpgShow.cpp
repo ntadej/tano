@@ -130,12 +130,12 @@ void EpgShow::image(QFile *file)
 
 void EpgShow::next()
 {
-    emit requestNext(_current->id());
+    emit requestNext(_current->id(), _current->channel());
 }
 
 void EpgShow::previous()
 {
-    emit requestPrevious(_current->id());
+    emit requestPrevious(_current->id(), _current->channel());
 }
 
 void EpgShow::processFilters(const int &type)

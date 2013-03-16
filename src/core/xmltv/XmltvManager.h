@@ -50,8 +50,10 @@ public slots:
     void request(const QString &id,
                  const Tano::Id &identifier);
     void requestProgramme(const QString &id);
-    void requestProgrammeNext(const QString &id);
-    void requestProgrammePrevious(const QString &id);
+    void requestProgrammeNext(const QString &id,
+                              const QString &channel);
+    void requestProgrammePrevious(const QString &id,
+                                  const QString &channel);
     void requestProgrammeRecord(const QString &id);
     Q_INVOKABLE void requestQml(const QString &id);
     Q_INVOKABLE void requestQmlCurrent(const QString &id);
@@ -59,8 +61,7 @@ public slots:
 
 signals:
     void channelsChanged(const QHash<QString, QString> &);
-    void current(const QString &current,
-                 const QString &next);
+    void current(const QStringList &epg);
     void schedule(XmltvProgrammeModel *,
                   const Tano::Id);
     void programme(XmltvProgramme *);
@@ -73,7 +74,6 @@ private slots:
     void loadXmltvFinish();
 
 private:
-    QString processCurrentString(XmltvProgramme *programme) const;
     void loadXmltvWeb(const QString &url);
 
     Tano::Id _currentIdentifier;

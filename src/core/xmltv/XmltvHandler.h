@@ -64,6 +64,7 @@ private:
 
     QPointer<XmltvChannel> _currentChannel;
     QPointer<XmltvProgramme> _currentProgramme;
+    QPointer<XmltvProgramme> _previousProgramme;
 };
 
 #endif // TANO_XMLTVHANDLER_H_
