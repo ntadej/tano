@@ -21,8 +21,12 @@ PROJECT(${TANO_WIDGETS})
 # Add definition for exporting symbols
 ADD_DEFINITIONS(-DTANO_WIDGETS_LIBRARY)
 
-# Add definitions for shared library
-ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
+# Add definitions for static/shared library
+IF(STATIC)
+    ADD_DEFINITIONS(-DQT_STATIC -D_REENTRANT)
+ELSE(STATIC)
+    ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
+ENDIF(STATIC)
 
 
 ###################
@@ -185,8 +189,12 @@ IF(MSVC)
     SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-widgets.rc)
 ENDIF(MSVC)
 
-# This line tells cmake to create the library.
-ADD_LIBRARY(${TANO_WIDGETS} SHARED ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
+# This line tells cmake to create the Tano Widgets library.
+IF(STATIC)
+    ADD_LIBRARY(${TANO_WIDGETS} STATIC ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
+ELSE(STATIC)
+    ADD_LIBRARY(${TANO_WIDGETS} SHARED ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
+ENDIF(STATIC)
 
 # MSVC: Avoid Debug/Release/... subfolders
 IF(MSVC)

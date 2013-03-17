@@ -21,8 +21,12 @@ PROJECT(${TANO_CORE})
 # Add definition for exporting symbols
 ADD_DEFINITIONS(-DTANO_CORE_LIBRARY)
 
-# Add definitions for shared library
-ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
+# Add definitions for static/shared library
+IF(STATIC)
+    ADD_DEFINITIONS(-DQT_STATIC -D_REENTRANT)
+ELSE(STATIC)
+    ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
+ENDIF(STATIC)
 
 
 ###################
@@ -176,8 +180,12 @@ IF(MSVC)
     SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-core.rc)
 ENDIF(MSVC)
 
-# This line tells cmake to create the Tano program.
-ADD_LIBRARY(${TANO_CORE} SHARED ${Tano_Core_Srcs} ${Tano_Core_Resrcs_Srcs})
+# This line tells cmake to create the Tano Core library.
+IF(STATIC)
+    ADD_LIBRARY(${TANO_CORE} STATIC ${Tano_Core_Srcs} ${Tano_Core_Resrcs_Srcs})
+ELSE(STATIC)
+    ADD_LIBRARY(${TANO_CORE} SHARED ${Tano_Core_Srcs} ${Tano_Core_Resrcs_Srcs})
+ENDIF(STATIC)
 
 # MSVC: Avoid Debug/Release/... subfolders
 IF(MSVC)
