@@ -1,3 +1,7 @@
+2.0 (git)
+  * Initial Raspberry Pi (QML) support
+  * Store XMLTV information in a database
+
 1.2.1 (2013-02-08)
   * Updated Czech and Ukrainian translation
   * Fix: Consistently show/hide mouse cursor
