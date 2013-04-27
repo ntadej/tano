@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,11 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
+#include "RecorderNewDialog.h"
+#include "ui_RecorderNewDialog.h"
+
+#if QT_VERSION >= 0x050000
     #include <QtWidgets/QMenu>
     #include <QtWidgets/QMessageBox>
     #include <QtWidgets/QWidgetAction>
-#elif defined(Qt4)
+#else
     #include <QtGui/QMenu>
     #include <QtGui/QMessageBox>
     #include <QtGui/QWidgetAction>
@@ -29,20 +32,19 @@
 #include "core/network/NetworkUdpxy.h"
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/containers/Channel.h"
+#include "core/timers/TimersSql.h"
 #include "core/timers/containers/Timer.h"
-#include "core/timers/models/TimersModel.h"
 #include "core/xmltv/containers/XmltvProgramme.h"
 
 #include "playlist/PlaylistFilterWidget.h"
 
-#include "RecorderNewDialog.h"
-#include "ui_RecorderNewDialog.h"
-
-RecorderNewDialog::RecorderNewDialog(QWidget *parent)
+RecorderNewDialog::RecorderNewDialog(TimersSql *db,
+                                     QWidget *parent)
     : QDialog(parent),
       ui(new Ui::RecorderNewDialog),
       _currentChannel(0),
-      _currentTimer(0)
+      _currentTimer(0),
+      _db(db)
 {
     ui->setupUi(this);
 
@@ -106,11 +108,12 @@ void RecorderNewDialog::newTimerFromSchedule(XmltvProgramme *programme)
         return;
     }
 
-    Timer *timer = _model->createTimer(programme->title(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
+    Timer *timer = _db->createTimer(programme->title(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
     timer->setState(Timer::Disabled);
     timer->setDate(programme->start().date());
     timer->setStartTime(programme->start().time());
     timer->setEndTime(programme->stop().time());
+    _db->updateTimer(timer);
 
     _currentTimer = timer;
 }
@@ -131,10 +134,7 @@ void RecorderNewDialog::processNewTimer()
         return;
     }
 
-    Timer *timer = _model->createTimer(ui->editNameNew->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
-    timer->setState(Timer::Disabled);
-
-    _currentTimer = timer;
+    _currentTimer = _db->createTimer(ui->editNameNew->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
 
     accept();
 }
@@ -147,9 +147,7 @@ void RecorderNewDialog::processQuickRecord()
         return;
     }
 
-    Timer *timer = _model->createTimer(ui->editNameQuick->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Timer::Instant);
-
-    _currentTimer = timer;
+    _currentTimer = _db->createTimer(ui->editNameQuick->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Timer::Instant);
 
     accept();
 }
@@ -162,9 +160,4 @@ void RecorderNewDialog::refreshPlaylistModel()
 void RecorderNewDialog::setPlaylistModel(PlaylistModel *model)
 {
     ui->playlistWidget->setModel(model);
-}
-
-void RecorderNewDialog::setTimersModel(TimersModel *model)
-{
-    _model = model;
 }

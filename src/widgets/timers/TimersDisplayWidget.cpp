@@ -16,9 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "core/timers/TimersSql.h"
 #include "core/timers/containers/Timer.h"
 #include "core/timers/models/TimersFilterModel.h"
-#include "core/timers/models/TimersModel.h"
 
 #include "TimersDisplayWidget.h"
 #include "ui_TimersDisplayWidget.h"
@@ -26,7 +26,7 @@
 TimersDisplayWidget::TimersDisplayWidget(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::TimersDisplayWidget),
-      _current(0)
+      _model(0)
 {
     ui->setupUi(this);
 
@@ -66,24 +66,22 @@ void TimersDisplayWidget::processFilters()
     _filterModel->setFilterRegExp(regExp);
 }
 
-void TimersDisplayWidget::setCurrentTimer(Timer *timer)
+void TimersDisplayWidget::setDatabase(TimersSql *db)
 {
-    _current = timer;
-    ui->timersView->setCurrentIndex(_model->indexFromItem(timer));
-}
+    _db = db;
 
-void TimersDisplayWidget::setModel(TimersModel *model)
-{
-    _model = model;
-    _filterModel->setSourceModel(model);
+    if (_model)
+        delete _model;
+    _model = new TimersModel(_db, this);
+    _filterModel->setTimersModel(_model);
 }
 
 void TimersDisplayWidget::timerClicked(const QModelIndex &index)
 {
-    _current = _model->row(_filterModel->mapToSource(index).row());
+    Timer *t = _db->timer(_model->value(_filterModel->mapToSource(index).row(), 0).toString());
 
-    if (_current->state() == Timer::Finished)
-        emit recordingSelected(_current);
-    else if (_current->state() != Timer::Recording)
-        emit timerSelected(_current);
+    if (t->state() == Timer::Finished)
+        emit recordingSelected(t);
+    else if (t->state() != Timer::Recording)
+        emit timerSelected(t);
 }

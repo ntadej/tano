@@ -67,10 +67,10 @@ SET(Tano_Core_Settings_Srcs
     settings/SettingsShortcuts.cpp
 )
 SET(Tano_Core_Timers_Srcs
-    timers/TimersGenerator.cpp
-    timers/TimersHandler.cpp
+    timers/TimersSql.cpp
     timers/TimersTimeManager.cpp
     timers/containers/Timer.cpp
+    timers/old/TimersHandler.cpp
     timers/models/TimersFilterModel.cpp
     timers/models/TimersModel.cpp
 )

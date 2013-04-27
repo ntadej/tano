@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,31 +16,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
+#include "TimersEditorWidget.h"
+#include "ui_TimersEditorWidget.h"
+
+#if QT_VERSION >= 0x050000
     #include <QtWidgets/QMessageBox>
-#elif defined(Qt4)
+#else
     #include <QtGui/QMessageBox>
 #endif
 
+#include "core/timers/TimersSql.h"
 #include "core/timers/containers/Timer.h"
-#include "core/timers/models/TimersFilterModel.h"
-#include "core/timers/models/TimersModel.h"
-
-#include "TimersEditorWidget.h"
-#include "ui_TimersEditorWidget.h"
 
 TimersEditorWidget::TimersEditorWidget(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::TimersEditorWidget)
 {
     ui->setupUi(this);
-
-    _validateModel = new TimersFilterModel(this);
-    _validateModel->setDynamicSortFilter(true);
-    _validateModel->setSortRole(Timer::StartDateTimeRole);
-    _validateModel->setTimerState(Timer::Enabled);
-    _validateModel->setTimeFilter(true);
-    _validateModel->sort(0);
 }
 
 TimersEditorWidget::~TimersEditorWidget()
@@ -93,12 +85,6 @@ bool TimersEditorWidget::save()
     return true;
 }
 
-void TimersEditorWidget::setModel(TimersModel *model)
-{
-    _modelCore = model;
-    _validateModel->setSourceModel(model);
-}
-
 bool TimersEditorWidget::validate()
 {
     if (ui->editDate->date() < QDate::currentDate()) {
@@ -107,7 +93,8 @@ bool TimersEditorWidget::validate()
         return false;
     }
 
-    _validateModel->setStartTime(QDateTime(ui->editDate->date(), ui->editStartTime->time()));
+    // TODO: Validate
+    /*_validateModel->setStartTime(QDateTime(ui->editDate->date(), ui->editStartTime->time()));
     if (ui->editStartTime->time() > ui->editEndTime->time())
         _validateModel->setEndTime(QDateTime(ui->editDate->date().addDays(1), ui->editEndTime->time()));
     else
@@ -127,5 +114,5 @@ bool TimersEditorWidget::validate()
         QMessageBox::warning(this, tr("Recorder"),
                     tr("The recording is overlaping with others.\nYour changes will not be saved."));
         return false;
-    }
+    }*/
 }

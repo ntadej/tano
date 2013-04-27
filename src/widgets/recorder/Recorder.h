@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,21 +19,23 @@
 #ifndef TANO_RECORDER_H_
 #define TANO_RECORDER_H_
 
+#include <QtCore/QPointer>
 #include <QtCore/QTime>
 
-#if defined(Qt5)
+#if QT_VERSION >= 0x050000
     #include <QtWidgets/QWidget>
-#elif defined(Qt4)
+#else
     #include <QtGui/QWidget>
 #endif
+
+#include "timers/containers/Timer.h"
 
 class PlaylistModel;
 class RecorderCore;
 class RecorderNewDialog;
 class TimersTimeManager;
 class TrayIcon;
-class Timer;
-class TimersModel;
+class TimersSql;
 class VlcInstance;
 class XmltvProgramme;
 
@@ -50,16 +52,14 @@ public:
     ~Recorder();
 
     void createSettings();
-    QString directory() const { return _directory; }
+    inline TimersSql *database() {return _db; }
+    inline QString directory() const { return _directory; }
     bool isRecording() const;
-    Timer *newInstantTimer(const QString &channel,
-                           const QString &url);
     void refreshPlaylistModel();
     void setMediaInstance(VlcInstance *instance);
     void setPlaylistModel(PlaylistModel *model);
     void setWidgets(QAction *action,
                     TrayIcon *icon);
-    void writeTimers();
 
 protected:
     void changeEvent(QEvent *e);
@@ -83,16 +83,16 @@ private slots:
 private:
     Ui::Recorder *ui;
 
-    QAction *_actionRecord;
-
-    Timer *_currentTimer;
+    TimersSql *_db;
+    QPointer<Timer> _currentTimer;
+    TimersTimeManager *_manager;
 
     QString _directory;
 
     RecorderCore *_core;
     RecorderNewDialog *_new;
-    TimersTimeManager *_manager;
-    TimersModel *_model;
+
+    QAction *_actionRecord;
     TrayIcon *_trayIcon;
 };
 

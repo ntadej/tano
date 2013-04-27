@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,21 +19,20 @@
 #include <QtCore/QDir>
 #include <QtCore/QFile>
 
-#if defined(Qt5)
+#if QT_VERSION >= 0x050000
     #include <QtWidgets/QMessageBox>
-#elif defined(Qt4)
+#else
     #include <QtGui/QMessageBox>
 #endif
 
 #include "core/settings/Settings.h"
+#include "core/timers/TimersSql.h"
 #include "core/timers/TimersTimeManager.h"
 #include "core/timers/containers/Timer.h"
-#include "core/timers/models/TimersModel.h"
 #include "core/xmltv/containers/XmltvProgramme.h"
 
-#include "recorder/RecorderCore.h"
-
 #include "common/TrayIcon.h"
+#include "recorder/RecorderCore.h"
 #include "recorder/RecorderInfoWidget.h"
 #include "recorder/RecorderNewDialog.h"
 
@@ -43,22 +42,21 @@
 Recorder::Recorder(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::Recorder),
-      _actionRecord(0),
       _currentTimer(0),
+      _actionRecord(0),
       _trayIcon(0)
 {
     ui->setupUi(this);
 
+    _db = new TimersSql();
+    _db->open();
+    _manager = new TimersTimeManager(_db, this);
+
     _core = new RecorderCore(this);
-    _new = new RecorderNewDialog(this);
-    _manager = new TimersTimeManager(this);
-    _model = new TimersModel(this);
+    _new = new RecorderNewDialog(_db, this);
 
-    _manager->setTimersModel(_model);
-    _new->setTimersModel(_model);
-
-    ui->listRecordings->setModel(_model);
-    ui->recorderInfo->setModel(_model);
+    ui->listRecordings->setDatabase(_db);
+    ui->recorderInfo->setDatabase(_db);
 
     // Connections
     connect(_core, SIGNAL(timerStop()), this, SLOT(recordStop()));
@@ -78,8 +76,8 @@ Recorder::~Recorder()
 {
     delete ui;
 
+    delete _db;
     delete _core;
-    delete _model;
 }
 
 void Recorder::changeEvent(QEvent *e)
@@ -110,14 +108,6 @@ void Recorder::createSettings()
 bool Recorder::isRecording() const
 {
     return _core->isRecording();
-}
-
-Timer *Recorder::newInstantTimer(const QString &channel,
-                                 const QString &url)
-{
-    Timer *timer = _model->createTimer(tr("Instant %1").arg(channel), channel, url, Timer::Instant);
-
-    return timer;
 }
 
 void Recorder::newTimer()
@@ -200,7 +190,8 @@ void Recorder::recordStop()
     if (_currentTimer->type() == Timer::Instant) {
         _currentTimer->setEndTime(QTime::currentTime());
     } else {
-        if (_currentTimer->type() == Timer::Daily) {
+        // TODO: Special timers
+        /*if (_currentTimer->type() == Timer::Daily) {
             Timer *tmptimer = _model->duplicateTimer(_currentTimer);
             tmptimer->setDate(_currentTimer->date().addDays(1));
         } else if (_currentTimer->type() == Timer::Weekly) {
@@ -212,11 +203,11 @@ void Recorder::recordStop()
                 tmptimer->setDate(_currentTimer->date().addDays(3));
             else
                 tmptimer->setDate(_currentTimer->date().addDays(1));
-        }
+        }*/
     }
     _currentTimer->setState(Timer::Finished);
-    writeTimers();
-    _currentTimer = 0;
+    _db->updateTimer(_currentTimer);
+    delete _currentTimer;
 }
 
 void Recorder::recordingDelete(Timer *recording)
@@ -239,8 +230,7 @@ void Recorder::recordingDelete(Timer *recording)
         }
     }
 
-    _model->deleteTimer(recording);
-    writeTimers();
+    _db->deleteTimer(recording);
 }
 
 void Recorder::refreshPlaylistModel()
@@ -270,18 +260,12 @@ void Recorder::setWidgets(QAction *action,
 
 void Recorder::timerDelete(Timer *timer)
 {
-    _model->deleteTimer(timer);
-    writeTimers();
+    _db->deleteTimer(timer);
 }
 
 void Recorder::timerSave(Timer *timer)
 {
-    Q_UNUSED(timer)
+    _db->updateTimer(timer);
 
-    writeTimers();
-}
-
-void Recorder::writeTimers()
-{
-    _model->writeTimers();
+    delete timer;
 }

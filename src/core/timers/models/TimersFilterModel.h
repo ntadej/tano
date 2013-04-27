@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,16 +19,24 @@
 #ifndef TANO_TIMERSFILTERMODEL_H_
 #define TANO_TIMERSFILTERMODEL_H_
 
-#include <QtCore/QDateTime>
+#include <QtCore/QtGlobal>
 
-#if defined(Qt5)
+#if QT_VERSION >= 0x050000
     #include <QtCore/QSortFilterProxyModel>
-#elif defined(Qt4)
+#else
     #include <QtGui/QSortFilterProxyModel>
 #endif
 
 #include "CoreSharedExport.h"
 
+class TimersModel;
+
+/*!
+    \class TimersFilterModel TimersFilterModel.h core/timers/models/TimersFilterModel.h
+    \brief Timers Filter model
+
+    Reimplemented QSortFilterProxyModel to be able to filter Timers
+*/
 class TANO_CORE_EXPORT TimersFilterModel : public QSortFilterProxyModel
 {
 Q_OBJECT
@@ -36,25 +44,25 @@ public:
     TimersFilterModel(QObject *parent = 0);
     ~TimersFilterModel();
 
-    inline int timerState() const { return _state; }
-    void setTimerState(const int &state);
-
-    inline bool timeFilter() const { return _timeFilter; }
-    void setTimeFilter(const bool &timeFilter);
-    inline QDateTime startTime() const { return _startTime; }
-    void setStartTime(const QDateTime &startTime);
-    inline QDateTime endTime() const { return _endTime; }
-    void setEndTime(const QDateTime &endTime);
-
 protected:
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
+    /*!
+        \brief Reimplemented filter function
+        \param sourceRow row to process (int)
+        \param sourceParent parent index (QModelIndex)
+        \return true, if item to be displayed (bool)
+    */
+    bool filterAcceptsRow(int sourceRow,
+                          const QModelIndex &sourceParent) const;
+
+public slots:
+    /*!
+        \brief Set Timers model to filter
+        \param model Timers model (TimersModel)
+    */
+    void setTimersModel(TimersModel *model);
 
 private:
-    int _state;
-
-    bool _timeFilter;
-    QDateTime _startTime;
-    QDateTime _endTime;
+    TimersModel *_model;
 };
 
 #endif // TANO_TIMERSFILTERMODEL_H_

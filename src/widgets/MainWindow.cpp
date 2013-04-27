@@ -59,6 +59,7 @@
 #include "core/playlist/containers/Channel.h"
 #include "core/settings/Settings.h"
 #include "core/settings/SettingsChannel.h"
+#include "core/timers/TimersSql.h"
 #include "core/timers/containers/Timer.h"
 #include "core/xmltv/XmltvManager.h"
 
@@ -874,6 +875,8 @@ void MainWindow::playRecording(Timer *recording)
     _osdMain->setRecording(recording->name(), recording->display().replace(recording->name() + " - ",""));
     tooltip(recording->name());
     _trayIcon->changeToolTip(Tano::Main, recording->name());
+
+    delete recording;
 }
 
 void MainWindow::playUrl(const QString &url,
@@ -1328,21 +1331,22 @@ void MainWindow::recordNow(const bool &start)
         _recording->setEndTime(QTime::currentTime());
         _recording->setState(Timer::Finished);
         _mediaPlayer->stop();
-        ui->recorder->writeTimers();
-        _recording = 0;
+        ui->recorder->database()->updateTimer(_recording);
+        delete _recording;
 
         if (_mediaItem)
             delete _mediaItem;
         _mediaItem = new VlcMedia(media, _mediaInstance);
         play();
     } else {
-        _recording = ui->recorder->newInstantTimer(_channel->name(), _channel->url());
+        _recording = ui->recorder->database()->createTimer(tr("Instant %1").arg(_channel->name()), _channel->name(), _channel->url(), Timer::Instant);
         _recording->setDate(QDate::currentDate());
         _recording->setStartTime(QTime::currentTime());
         _recording->setState(Timer::Recording);
         _mediaPlayer->stop();
         _recording->setFile(_mediaItem->duplicate(Tano::recordingFileName(tr("Instant"), _channel->name(), _recording->date(), _recording->startTime()), ui->recorder->directory(), Vlc::TS));
         _mediaPlayer->play();
+        ui->recorder->database()->updateTimer(_recording);
         showVideo(1);
     }
 

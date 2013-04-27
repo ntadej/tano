@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,9 +19,11 @@
 #ifndef TANO_RECORDERNEWDIALOG_H_
 #define TANO_RECORDERNEWDIALOG_H_
 
-#if defined(Qt5)
+#include <QtCore/QtGlobal>
+
+#if QT_VERSION >= 0x050000
     #include <QtWidgets/QDialog>
-#elif defined(Qt4)
+#else
     #include <QtGui/QDialog>
 #endif
 
@@ -31,7 +33,7 @@ class QWidgetAction;
 class Channel;
 class PlaylistModel;
 class Timer;
-class TimersModel;
+class TimersSql;
 class NetworkUdpxy;
 class XmltvProgramme;
 
@@ -43,12 +45,12 @@ class RecorderNewDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit RecorderNewDialog(QWidget *parent = 0);
+    explicit RecorderNewDialog(TimersSql *db,
+                               QWidget *parent = 0);
     ~RecorderNewDialog();
 
     void refreshPlaylistModel();
     void setPlaylistModel(PlaylistModel *model);
-    void setTimersModel(TimersModel *model);
 
     Timer *timer() { return _currentTimer; }
 
@@ -71,7 +73,7 @@ private:
     Channel *_currentChannel;
     Timer *_currentTimer;
 
-    TimersModel *_model;
+    TimersSql *_db;
     NetworkUdpxy *_udpxy;
 
     QMenu *_menu;

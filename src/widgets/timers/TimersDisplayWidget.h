@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,16 +20,19 @@
 #define TANO_TIMERSDISPLAYWIDGET_H_
 
 #include <QtCore/QModelIndex>
+#include <QtCore/QPointer>
 
-#if defined(Qt5)
+#if QT_VERSION >= 0x050000
     #include <QtWidgets/QWidget>
-#elif defined(Qt4)
+#else
     #include <QtGui/QWidget>
 #endif
 
+#include "timers/models/TimersModel.h"
+
 class Timer;
 class TimersFilterModel;
-class TimersModel;
+class TimersSql;
 
 namespace Ui
 {
@@ -43,10 +46,7 @@ public:
     TimersDisplayWidget(QWidget *parent = 0);
     ~TimersDisplayWidget();
 
-    Timer *currentTimer() { return _current; }
-    void setCurrentTimer(Timer *timer);
-
-    void setModel(TimersModel *model);
+    void setDatabase(TimersSql *db);
 
 protected:
     void changeEvent(QEvent *e);
@@ -62,8 +62,8 @@ private slots:
 private:
     Ui::TimersDisplayWidget *ui;
 
-    Timer *_current;
-    TimersModel *_model;
+    TimersSql *_db;
+    QPointer<TimersModel> _model;
     TimersFilterModel *_filterModel;
 };
 

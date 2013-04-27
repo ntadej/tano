@@ -19,33 +19,51 @@
 #ifndef TANO_TIMERSMODEL_H_
 #define TANO_TIMERSMODEL_H_
 
+#include <QtSql/QSqlQueryModel>
+
 #include "CoreSharedExport.h"
 
-#include "ListModel.h"
-#include "timers/containers/Timer.h"
+class TimersSql;
 
-class Timer;
+/*!
+    \class TimersModel TimersModel.h core/timers/models/TimersModel.h
+    \brief Timers SQL query model
 
-class TANO_CORE_EXPORT TimersModel : public ListModel
+    Reimplemented QSqlQueryModel to be able to display timers in a QListView
+*/
+class TANO_CORE_EXPORT TimersModel : public QSqlQueryModel
 {
 Q_OBJECT
 public:
-    TimersModel(QObject *parent = 0);
+    /*!
+        \brief Model constructor
+
+        This sets database to read from.
+
+        \param db database (XmltvSql)
+        \param parent parent object (QObject)
+    */
+    TimersModel(TimersSql *db,
+                QObject *parent = 0);
     ~TimersModel();
 
-    Timer *find(const QString &id) const;
-    Timer *row(const int &row);
-    Timer *takeRow(const int &row);
+    /*!
+        \brief Reimplemented data access function
+        \param item an index to item (QModelIndex)
+        \param role data role (int)
+        \return value of the requested data (QVariant)
+    */
+    QVariant data(const QModelIndex &item,
+                  int role) const;
 
-    Timer *createTimer(const QString &name,
-                       const QString &channel,
-                       const QString &url,
-                       const Timer::Type &type = Timer::Once);
-    void deleteTimer(Timer *timer);
-    Timer *duplicateTimer(Timer *timer);
-
-    void readTimers();
-    void writeTimers();
+    /*!
+        \brief Convenience function to read data
+        \param row model row (int)
+        \param type data type (int)
+        \return value of the requested data (QVariant)
+    */
+    QVariant value(const int &row,
+                   const int &type) const;
 };
 
 #endif // TANO_TIMERSMODEL_H_

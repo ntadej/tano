@@ -26,7 +26,7 @@
 #endif
 
 class Timer;
-class TimersModel;
+class TimersSql;
 
 namespace Ui {
     class RecorderInfoWidget;
@@ -40,7 +40,7 @@ public:
     ~RecorderInfoWidget();
 
     void setAction(QAction *action);
-    void setModel(TimersModel *model);
+    void setDatabase(TimersSql *db);
     void start(const QString &name,
                const QString &channel,
                const QString &output,

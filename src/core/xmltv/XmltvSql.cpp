@@ -30,7 +30,7 @@
 
 XmltvSql::XmltvSql()
 {
-    _db = QSqlDatabase::addDatabase("QSQLITE");
+    _db = QSqlDatabase::addDatabase("QSQLITE", "XMLTV");
     _db.setDatabaseName(Tano::Resources::settingsPath() + "/xmltv.db");
 }
 

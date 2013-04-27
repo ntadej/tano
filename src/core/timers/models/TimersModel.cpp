@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,90 +16,52 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QFile>
-#include <QtXml/QXmlSimpleReader>
-#include <QtXml/QXmlInputSource>
+#include "timers/TimersSql.h"
+#include "timers/containers/Timer.h"
 
-#include "Resources.h"
-#include "timers/TimersGenerator.h"
-#include "timers/TimersHandler.h"
-#include "timers/models/TimersModel.h"
+#include "TimersModel.h"
 
-TimersModel::TimersModel(QObject *parent)
-    : ListModel(new Timer, parent)
+TimersModel::TimersModel(TimersSql *db,
+                         QObject *parent)
+    : QSqlQueryModel(parent)
 {
-    readTimers();
+    setQuery("SELECT * FROM `timers` ORDER BY `name`", db->database());
 }
 
 TimersModel::~TimersModel() { }
 
-Timer *TimersModel::find(const QString &id) const
+QVariant TimersModel::data(const QModelIndex &index,
+                           int role) const
 {
-    return qobject_cast<Timer *>(ListModel::find(id));
-}
+    QVariant v = QSqlQueryModel::data(index, role);
+    if (v.isValid() && role == Qt::DisplayRole) {
+        Timer::Type type = Timer::Type(value(index.row(), 8).toInt());
+        Timer::State state = Timer::State(value(index.row(), 9).toInt());
 
-Timer *TimersModel::row(const int &row)
-{
-    return qobject_cast<Timer *>(ListModel::row(row));
-}
+        if (type != Timer::Once && type != Timer::Instant)
+            return QString("%1 (%2) - %3 - %4 %5 %6, %7")
+                    .arg(value(index.row(), 1).toString(), Timer::states()[state], value(index.row(), 2).toString(),
+                         QDate::fromString(value(index.row(), 5).toString()).toString("dd.M.yyyy"), tr("at"), QTime::fromString(value(index.row(), 6).toString()).toString("hh:mm"),
+                         Timer::typesLong()[type]);
+        else
+            return QString("%1 (%2) - %3 - %4 %5 %6")
+                    .arg(value(index.row(), 1).toString(), Timer::states()[state], value(index.row(), 2).toString(),
+                         QDate::fromString(value(index.row(), 5).toString()).toString("dd.M.yyyy"), tr("at"), QTime::fromString(value(index.row(), 6).toString()).toString("hh:mm"));
+    } else if (role == Qt::DecorationRole) {
+        Timer::State state = Timer::State(value(index.row(), 9).toInt());
 
-Timer *TimersModel::takeRow(const int &row)
-{
-    return qobject_cast<Timer *>(ListModel::takeRow(row));
-}
-
-Timer *TimersModel::createTimer(const QString &name,
-                                const QString &channel,
-                                const QString &url,
-                                const Timer::Type &type)
-{
-    Timer *newTimer = new Timer(name, channel, url, type, this);
-    appendRow(newTimer);
-
-    return newTimer;
-}
-
-void TimersModel::deleteTimer(Timer *timer)
-{
-    removeRow(indexFromItem(timer).row());
-}
-
-Timer *TimersModel::duplicateTimer(Timer *timer)
-{
-    Timer *newTimer = new Timer(timer);
-    appendRow(newTimer);
-
-    return newTimer;
-}
-
-void TimersModel::readTimers()
-{
-    QScopedPointer<TimersHandler> handler(new TimersHandler());
-
-    QXmlSimpleReader reader;
-    reader.setContentHandler(handler.data());
-    reader.setErrorHandler(handler.data());
-
-    QFile f(Tano::Resources::recordings());
-    if (!f.open(QFile::ReadOnly | QFile::Text))
-        return;
-
-    QXmlInputSource xmlInputSource(&f);
-    if (!reader.parse(xmlInputSource))
-        return;
-
-    QList<Timer *> timers = handler->timersList();
-    foreach (Timer* timer, timers) {
-        appendRow(timer);
+        if (state == Timer::Finished)
+            return QIcon::fromTheme("video-x-generic");
+        else if (state == Timer::Recording)
+            return QIcon::fromTheme("media-record");
+        else
+            return QIcon::fromTheme("time-admin");
     }
+    return QVariant();
 }
 
-void TimersModel::writeTimers()
+QVariant TimersModel::value(const int &row,
+                                    const int &type) const
 {
-    QFile f(Tano::Resources::recordings());
-    if (!f.open(QFile::WriteOnly | QFile::Text))
-        return;
-
-    QScopedPointer<TimersGenerator> generator(new TimersGenerator(Tano::Resources::recordings()));
-    generator->write(this);
+    return QSqlQueryModel::data(QSqlQueryModel::index(row, type), Qt::DisplayRole);
 }

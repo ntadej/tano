@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This file was based on the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -108,9 +108,9 @@ bool TimersHandler::characters(const QString &str)
 
 bool TimersHandler::fatalError(const QXmlParseException &exception)
 {
-    qDebug() << QObject::tr("Error:") << QObject::tr("Parse error at line %1, column %2:\n%3")
-                                                     .arg(exception.lineNumber())
-                                                     .arg(exception.columnNumber())
-                                                     .arg(exception.message());
+    qCritical() << QObject::tr("Error:") << QObject::tr("Parse error at line %1, column %2:\n%3")
+                                                       .arg(exception.lineNumber())
+                                                       .arg(exception.columnNumber())
+                                                       .arg(exception.message());
     return false;
 }

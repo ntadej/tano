@@ -123,9 +123,9 @@ void RecorderInfoWidget::setAction(QAction *action)
     connect(ui->buttonRecordStop, SIGNAL(clicked()), _actionRecord, SLOT(trigger()));
 }
 
-void RecorderInfoWidget::setModel(TimersModel *model)
+void RecorderInfoWidget::setDatabase(TimersSql *db)
 {
-    ui->editor->setModel(model);
+    ui->editor->setDatabase(db);
 }
 
 void RecorderInfoWidget::start(const QString &name,
