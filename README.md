@@ -18,16 +18,11 @@ You can download Tano from the official web page
 
     $ git clone git://github.com/ntadej/tano.git
 
-If you want to build with QML UI (Qt5 only) run
-
-    $ git submodule init
-    $ git submodule update
-
 
 Dependencies
 ------------
 - g++, make
-- cmake >= 2.8.6
+- cmake >= 2.8.9
 - Qt >= 4.8
 - libvlc-qt >= 0.8.0
 
@@ -38,10 +33,6 @@ Compilation
     $ cd build
     $ cmake .. -DCMAKE_INSTALL_PREFIX=prefix
     $ make
-
-To build with QML UI (Qt5 only) replace cmake command with
-
-    $ cmake .. -DCMAKE_INSTALL_PREFIX=prefix -DBUILD_QML=ON
 
 
 Installation

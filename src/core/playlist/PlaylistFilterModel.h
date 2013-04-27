@@ -36,13 +36,13 @@ public:
     PlaylistFilterModel(QObject *parent = 0);
     ~PlaylistFilterModel();
 
-    Q_INVOKABLE QString name() const;
+    QString name() const;
 
-    Q_INVOKABLE inline QString category() const { return _category; }
-    Q_INVOKABLE void setCategory(const QString &category);
+    inline QString category() const { return _category; }
+    void setCategory(const QString &category);
 
-    Q_INVOKABLE inline QString language() const { return _language; }
-    Q_INVOKABLE void setLanguage(const QString &language);
+    inline QString language() const { return _language; }
+    void setLanguage(const QString &language);
 
     inline QList<Channel::Type> types() const { return _types; }
     void setTypes(const QList<Channel::Type> &types);

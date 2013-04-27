@@ -55,8 +55,6 @@ public slots:
     void requestProgrammePrevious(const QString &id,
                                   const QString &channel);
     void requestProgrammeRecord(const QString &id);
-    Q_INVOKABLE void requestQml(const QString &id);
-    Q_INVOKABLE void requestQmlCurrent(const QString &id);
     void stop();
 
 signals:

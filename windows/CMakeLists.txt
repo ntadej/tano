@@ -117,23 +117,11 @@ IF(MSVC)
         ${LIBVLCQT_BIN_DIR}/vlc-qt.dll
         ${LIBVLCQT_BIN_DIR}/vlc-qt-widgets.dll
     )
-    IF(BUILD_QML)
-        SET(Tano_VlcQt_Libs
-            ${Tano_VlcQt_Libs}
-            ${LIBVLCQT_BIN_DIR}/vlc-qt-qml.dll
-        )
-    ENDIF(BUILD_QML)
 ELSE(MSVC)
     SET(Tano_VlcQt_Libs
         ${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
         ${LIBVLCQT_BIN_DIR}/libvlc-qt-widgets.dll
     )
-    IF(BUILD_QML)
-        SET(Tano_VlcQt_Libs
-            ${Tano_VlcQt_Libs}
-            ${LIBVLCQT_BIN_DIR}/libvlc-qt-qml.dll
-        )
-    ENDIF(BUILD_QML)
 ENDIF(MSVC)
 
 SET(Tano_Vlc_Libs
@@ -149,9 +137,6 @@ FILE(GLOB Tano_Language ${CMAKE_BINARY_DIR}/lang/*.qm)
 ################
 IF(QT5)
     INSTALL(FILES ${Tano_Qt5_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-    IF(BUILD_QML)
-        INSTALL(FILES ${Tano_Qt5_Libs_Qml} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
-    ENDIF(BUILD_QML)
     INSTALL(FILES ${Tano_Qt5_ImageFormats} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
     INSTALL(FILES ${Tano_Qt5_Platforms} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/platforms")
 ELSE(QT5)

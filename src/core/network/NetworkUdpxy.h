@@ -32,7 +32,7 @@ public:
     ~NetworkUdpxy();
 
     void createSettings();
-    Q_INVOKABLE QString processUrl(const QString &url) const;
+    QString processUrl(const QString &url) const;
 
 private:
     bool _enabled;
