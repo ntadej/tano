@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,23 +16,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
-
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
-#define VERSION_X64 @BITS@
+#ifndef TANO_EXTRACONFIG_H_
+#define TANO_EXTRACONFIG_H_
 
 // Settings
-#define BRANDING @BRANDING_SET@
-#define DATA_DIR "@DEFAULT_DATA_DIR@"
+#define ENCRIPTION_KEY @ENCRIPTION_KEY@
+#define UPDATE_URL "update url"
 
-#if BRANDING
-    #include "branding/ExtraConfig.h"
-#else
-    #define ENCRIPTION_KEY @ENCRIPTION_KEY@
-    #define UPDATE_URL "update url"
-#endif
-
-#endif // TANO_CONFIG_H_
+#endif // TANO_EXTRACONFIG_H_

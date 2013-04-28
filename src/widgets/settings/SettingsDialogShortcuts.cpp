@@ -16,9 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Config.h"
-
 #include "common/DesktopShortcuts.h"
+#include "platform/Features.h"
 
 #include "SettingsDialogShortcuts.h"
 #include "ui_SettingsDialogShortcuts.h"
@@ -35,7 +34,7 @@ SettingsDialogShortcuts::SettingsDialogShortcuts(DesktopShortcuts *shortcuts,
     ui->shortcutsWidget->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
 #endif
 
-#if !TELETEXT
+#if !FEATURE_TELETEXT
     ui->shortcutsWidget->removeRow(8);
 #endif
 

@@ -1,4 +1,0 @@
-Custom settins
-===================================
-Add here VERSION and SettingsDefaults.cpp with your settings
-and enable custom settings when configuring with cmake.

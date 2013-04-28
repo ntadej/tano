@@ -127,21 +127,21 @@ SET(Tano_Core_Srcs
     ../../lib/simplecrypt/simplecrypt.cpp
 )
 
-IF(CUSTOM_SETTINGS)
+IF(BRANDING)
     SET(Tano_Core_Srcs
         ${Tano_Core_Srcs}
 
-        ../custom/SettingsDefaults.cpp
-        ../custom/SettingsShortcutsDefaults.cpp
+        ../../branding/SettingsDefaults.cpp
+        ../../branding/SettingsShortcutsDefaults.cpp
     )
-ELSE(CUSTOM_SETTINGS)
+ELSE(BRANDING)
     SET(Tano_Core_Srcs
         ${Tano_Core_Srcs}
 
         settings/SettingsDefaults.cpp
         settings/SettingsShortcutsDefaults.cpp
     )
-ENDIF(CUSTOM_SETTINGS)
+ENDIF(BRANDING)
 
 
 ###############
@@ -163,6 +163,7 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/src/core
+    ${CMAKE_BINARY_DIR}
     ${CMAKE_BINARY_DIR}/src
 )
 

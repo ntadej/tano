@@ -15,9 +15,11 @@ debian/tano/
 debian/tano-data/
 debian/tano-dbg/
 
-# Other
-src/custom/SettingsDefaults.cpp
-src/custom/SettingsShortcutsDefaults.cpp
-src/custom/VERSION
+# Branding 
+branding/ExtraConfig.h.in
+branding/FEATURES
+branding/SettingsDefaults.cpp
+branding/SettingsShortcutsDefaults.cpp
+branding/VERSION
 
 tt*

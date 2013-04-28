@@ -1,0 +1,6 @@
+Branding and custom settings
+===================================
+You can find necessary files to edit in examples folder. Copy them
+to this folder and edit them to your needs then enable BRANDING in
+CMake configuration. Build system will autodetect your changed
+files and use them.

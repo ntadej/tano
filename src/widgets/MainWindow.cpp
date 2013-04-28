@@ -47,6 +47,7 @@
 #include <vlc-qt/WidgetVolumeSlider.h>
 
 #include "Config.h"
+#include "platform/Features.h"
 
 #include "core/Arguments.h"
 #include "core/Common.h"
@@ -121,7 +122,7 @@ MainWindow::MainWindow(Arguments *args)
 
     ui->setupUi(this);
 
-#if UPDATE
+#if FEATURE_UPDATE
     _update = new UpdateDialog(this);
 #else
     ui->menuAbout->removeAction(ui->actionUpdate);
@@ -329,7 +330,7 @@ void MainWindow::createGui()
     ui->toolBarRecorder->hide();
     ui->scheduleWidget->setIdentifier(Tano::Main);
 
-#if !TELETEXT
+#if !FEATURE_TELETEXT
     _osdMain->toggleTeletext(false);
     ui->menuMedia->removeAction(ui->actionTeletext);
 #endif 
@@ -496,7 +497,7 @@ void MainWindow::createConnections()
     connect(ui->actionVolumeDown, SIGNAL(triggered()), _osdMain, SLOT(volumeDown()));
     connect(ui->actionVolumeUp, SIGNAL(triggered()), _osdMain, SLOT(volumeUp()));
 
-#if TELETEXT
+#if FEATURE_TELETEXT
     if (_teletext) {
         connect(ui->actionTeletext, SIGNAL(triggered(bool)), _osdMain, SLOT(teletext(bool)));
         connect(ui->actionTeletext, SIGNAL(triggered(bool)), this, SLOT(teletext(bool)));
@@ -535,7 +536,7 @@ void MainWindow::createConnections()
     connect(_epgShow, SIGNAL(requestPrevious(QString, QString)), _xmltv, SLOT(requestProgrammePrevious(QString, QString)));
     connect(ui->playlistWidget, SIGNAL(scheduleRequested(Channel *)), _schedule, SLOT(openSchedule(Channel *)));
 
-#if UPDATE
+#if FEATURE_UPDATE
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
     connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
 #endif
@@ -641,7 +642,7 @@ void MainWindow::createShortcuts()
              << ui->actionInfoPanel
              << ui->actionControls
              << ui->actionMute
-#if TELETEXT
+#if FEATURE_TELETEXT
              << ui->actionTeletext
 #endif
              << ui->actionVolumeUp
@@ -697,7 +698,7 @@ void MainWindow::createSession()
          _hasPlaylist && _model->validate())
         _startTimer->start(100);
 
-#if UPDATE
+#if FEATURE_UPDATE
     _update->checkSilent();
 #endif
 
@@ -785,7 +786,7 @@ void MainWindow::setPlaying()
     ui->actionPlay->setText(tr("Pause"));
     ui->actionPlay->setToolTip(tr("Pause"));
     ui->actionMute->setEnabled(true);
-#if TELETEXT
+#if FEATURE_TELETEXT
     if (_teletext)
         ui->actionTeletext->setEnabled(true);
 #endif
@@ -799,7 +800,7 @@ void MainWindow::setStopped()
     ui->actionPlay->setText(tr("Play"));
     ui->actionPlay->setToolTip(tr("Play"));
     ui->actionMute->setEnabled(false);
-#if TELETEXT
+#if FEATURE_TELETEXT
     ui->actionTeletext->setEnabled(false);
 #endif
 }
@@ -917,7 +918,7 @@ void MainWindow::stop()
 
     _osdMain->setChannel();
 
-#if TELETEXT
+#if FEATURE_TELETEXT
     if (_teletext)
         ui->actionTeletext->setChecked(false);
 #endif

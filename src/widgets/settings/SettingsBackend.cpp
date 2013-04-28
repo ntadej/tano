@@ -18,9 +18,8 @@
 
 #include <QtNetwork/QNetworkInterface>
 
-#include "Config.h"
-
 #include "common/Backend.h"
+#include "platform/Features.h"
 
 #include "SettingsBackend.h"
 #include "ui_SettingsBackend.h"
@@ -71,7 +70,7 @@ SettingsBackend::SettingsBackend(QWidget *parent)
     ui->checkYTR->hide();
 #endif
 
-#if !TELETEXT
+#if !FEATURE_TELETEXT
     ui->checkTeletext->hide();
 #endif
 }
