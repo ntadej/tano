@@ -21,6 +21,8 @@
 #include "core/xmltv/models/XmltvCrewFilterModel.h"
 #include "core/xmltv/models/XmltvCrewModel.h"
 
+#include "platform/Features.h"
+
 #include "common/OsdFloat.h"
 
 #include "EpgShow.h"
@@ -58,6 +60,10 @@ EpgShow::EpgShow(QWidget *parent)
     connect(ui->comboCrewType, SIGNAL(currentIndexChanged(int)), this, SLOT(processFilters(int)));
 
     connect(ui->buttonClose, SIGNAL(clicked()), this, SLOT(closeOsd()));
+
+#if !FEATURE_RECORDER
+    ui->buttonRecord->hide();
+#endif
 }
 
 EpgShow::~EpgShow()

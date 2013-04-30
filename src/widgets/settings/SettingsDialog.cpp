@@ -18,6 +18,8 @@
 
 #include "core/settings/Settings.h"
 
+#include "platform/Features.h"
+
 #include "SettingsDialog.h"
 #include "ui_SettingsDialog.h"
 
@@ -44,6 +46,10 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     connect(_buttonGroup, SIGNAL(buttonClicked(int)), ui->settingsWidget, SLOT(setCurrentIndex(int)));
     connect(ui->general, SIGNAL(resetDefaults()), this, SLOT(defaults()));
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
+
+#if !FEATURE_RECORDER
+    ui->buttonRecorder->hide();
+#endif
 }
 
 SettingsDialog::~SettingsDialog()

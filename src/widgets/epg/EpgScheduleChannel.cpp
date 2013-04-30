@@ -32,6 +32,8 @@
 #include "core/xmltv/models/XmltvProgrammeFilterModel.h"
 #include "core/xmltv/models/XmltvProgrammeModel.h"
 
+#include "platform/Features.h"
+
 #include "EpgScheduleChannel.h"
 #include "ui_EpgScheduleChannel.h"
 
@@ -51,7 +53,9 @@ EpgScheduleChannel::EpgScheduleChannel(QWidget *parent)
     _info = new QAction(QIcon::fromTheme("x-office-calendar"), tr("Show information"), this);
     _record = new QAction(QIcon::fromTheme("media-record"), tr("Record"), this);
 	_rightMenu->addAction(_info);
+#if FEATURE_RECORDER
 	_rightMenu->addAction(_record);
+#endif
 
     ui->labelNoEpgIcon->setPixmap(QIcon::fromTheme("list-remove").pixmap(32));
 

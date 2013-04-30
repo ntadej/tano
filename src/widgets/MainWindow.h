@@ -62,6 +62,7 @@ class OsdWidget;
 class PlaylistEditor;
 class PlaylistModel;
 class PlaylistUpdate;
+class Recorder;
 class Timer;
 class TrayIcon;
 class UpdateDialog;
@@ -158,6 +159,7 @@ private:
     void createMenus();
     void createSettings();
     void createDesktopStartup();
+    void createRecorder();
     void createSession();
     void createShortcuts();
     void writeSession();
@@ -216,6 +218,7 @@ private:
     LocaleManager *_locale;
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;
+    Recorder *_recorder;
     SettingsChannel *_settingsChannel;
     QShortcut *_shortcut;
     DesktopShortcuts *_shortcuts;

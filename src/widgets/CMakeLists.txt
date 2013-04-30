@@ -50,9 +50,6 @@ SET(Tano_Widgets_UIs
     playlist/PlaylistExportTvheadend.ui
     playlist/PlaylistFilterWidget.ui
     playlist/PlaylistImportCSV.ui
-    recorder/Recorder.ui
-    recorder/RecorderInfoWidget.ui
-    recorder/RecorderNewDialog.ui
     settings/SettingsBackend.ui
     settings/SettingsDialog.ui
     settings/SettingsGeneral.ui
@@ -61,9 +58,20 @@ SET(Tano_Widgets_UIs
     settings/SettingsSchedule.ui
     settings/SettingsDialogShortcuts.ui
     settings/SettingsUi.ui
+)
+SET(Tano_Widgets_Recorder_UIs
+    recorder/Recorder.ui
+    recorder/RecorderInfoWidget.ui
+    recorder/RecorderNewDialog.ui
     timers/TimersDisplayWidget.ui
     timers/TimersEditorWidget.ui
 )
+IF(FEATURE_RECORDER)
+    SET(Tano_Widgets_UIs
+        ${Tano_Widgets_UIs}
+        ${Tano_Widgets_Recorder_UIs}
+    )
+ENDIF(FEATURE_RECORDER)
 
 # Define the C++ source files used by Tano Widgets
 SET(Tano_Widgets_Common_Srcs
@@ -140,10 +148,16 @@ SET(Tano_Widgets_Srcs
     ${Tano_Widgets_Epg_Srcs}
     ${Tano_Widgets_Menu_Srcs}
     ${Tano_Widgets_Playlist_Srcs}
-    ${Tano_Widgets_Recorder_Srcs}
     ${Tano_Widgets_Settings_Srcs}
-    ${Tano_Widgets_Timers_Srcs}
 )
+
+IF(FEATURE_RECORDER)
+    SET(Tano_Widgets_Srcs
+        ${Tano_Widgets_Srcs}
+        ${Tano_Widgets_Recorder_Srcs}
+        ${Tano_Widgets_Timers_Srcs}
+    )
+ENDIF(FEATURE_RECORDER)
 
 
 ###############

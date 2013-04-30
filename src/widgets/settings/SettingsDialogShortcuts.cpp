@@ -38,6 +38,12 @@ SettingsDialogShortcuts::SettingsDialogShortcuts(DesktopShortcuts *shortcuts,
     ui->shortcutsWidget->removeRow(8);
 #endif
 
+#if !FEATURE_RECORDER
+    ui->shortcutsWidget->removeRow(10);
+    ui->shortcutsWidget->removeRow(20);
+    ui->shortcutsWidget->removeRow(20);
+#endif
+
     _shortcuts = shortcuts;
 
     shortcutRead();

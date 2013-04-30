@@ -119,13 +119,19 @@ SET(Tano_Core_Srcs
     ${Tano_Core_Network_Srcs}
     ${Tano_Core_Playlist_Srcs}
     ${Tano_Core_Settings_Srcs}
-    ${Tano_Core_Timers_Srcs}
     ${Tano_Core_Xmltv_Srcs}
 
     ${Tano_Core_Platform_Srcs}
 
     ../../lib/simplecrypt/simplecrypt.cpp
 )
+
+IF(FEATURE_RECORDER)
+    SET(Tano_Core_Srcs
+        ${Tano_Core_Srcs}
+        ${Tano_Core_Timers_Srcs}
+    )
+ENDIF(FEATURE_RECORDER)
 
 IF(BRANDING)
     SET(Tano_Core_Srcs

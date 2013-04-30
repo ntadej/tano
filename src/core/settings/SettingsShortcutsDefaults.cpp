@@ -33,7 +33,9 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_KEYS =
 #endif
                       << "Ctrl+Up"
                       << "Ctrl+Down"
+#if FEATURE_RECORDER
                       << "Ctrl+R"
+#endif
                       << "Ctrl+E"
                       << "Ctrl+Shift+E"
                       << "Ctrl+O"
@@ -44,8 +46,10 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_KEYS =
                       << "Ctrl+T"
                       << "Ctrl+L"
                       << "Ctrl+H"
+#if FEATURE_RECORDER
                       << "Ctrl+I"
                       << "Ctrl+Shift+I"
+#endif
                       << "Ctrl+P"
                       << "Ctrl+Shift+A"
                       << "Ctrl+Shift+V"
@@ -69,7 +73,9 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_ACTIONS =
 #endif
                       << "VolumeUp"
                       << "VolumeDown"
+#if FEATURE_RECORDER
                       << "Recorder"
+#endif
                       << "Schedule"
                       << "ScheduleCurrent"
                       << "OpenFile"
@@ -80,8 +86,10 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_ACTIONS =
                       << "Top"
                       << "Lite"
                       << "Tray"
+#if FEATURE_RECORDER
                       << "RecordNow"
                       << "Snapshot"
+#endif
                       << "Preview"
                       << "NextAudioTrack"
                       << "NextVideoTrack"

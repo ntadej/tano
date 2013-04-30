@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "platform/Features.h"
+
 #include "OsdWidget.h"
 #include "ui_OsdWidget.h"
 
@@ -41,6 +43,11 @@ OsdWidget::OsdWidget(QWidget *parent)
     connect(ui->buttonSnapshot, SIGNAL(clicked()), this, SIGNAL(snapshotClicked()));
     connect(ui->buttonStop, SIGNAL(clicked()), this, SIGNAL(stopClicked()));
     connect(ui->buttonTeletext, SIGNAL(clicked()), this, SIGNAL(teletextClicked()));
+
+#if !FEATURE_RECORDER
+    ui->buttonRecordNow->hide();
+    ui->buttonSnapshot->hide();
+#endif
 }
 
 OsdWidget::~OsdWidget()
