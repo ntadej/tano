@@ -16,12 +16,17 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "Config.h"
 #include "core/settings/Settings.h"
 
 #include "platform/Features.h"
 
 #include "SettingsDialog.h"
 #include "ui_SettingsDialog.h"
+
+#if BRANDING
+    #include "branding/Branding.h"
+#endif
 
 SettingsDialog::SettingsDialog(QWidget *parent)
     : QDialog(parent),
@@ -48,7 +53,12 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 
 #if !FEATURE_RECORDER
+    ui->buttonRecorder->setDisabled(true);
     ui->buttonRecorder->hide();
+#endif
+
+#if BRANDING
+    Tano::Branding::processSettings(ui);
 #endif
 }
 

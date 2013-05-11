@@ -159,6 +159,14 @@ IF(FEATURE_RECORDER)
     )
 ENDIF(FEATURE_RECORDER)
 
+IF(BRANDING)
+    SET(Tano_Widgets_Srcs
+        ${Tano_Widgets_Srcs}
+
+        ../../branding/Branding.cpp
+    )
+ENDIF(BRANDING)
+
 
 ###############
 # Qt settings #

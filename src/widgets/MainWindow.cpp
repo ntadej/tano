@@ -93,6 +93,10 @@
     #include "recorder/Recorder.h"
 #endif
 
+#if BRANDING
+    #include "branding/Branding.h"
+#endif
+
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
@@ -655,6 +659,10 @@ void MainWindow::createMenus()
     ui->menuVideo->addMenu(_menuDeinterlacing);
 
     _playlistMenu = new QMenu();
+
+#if BRANDING
+    Tano::Branding::processMenus(ui, _rightMenu);
+#endif
 
     qDebug() << "Initialised: Menus";
 }

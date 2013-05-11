@@ -16,6 +16,7 @@ debian/tano-data/
 debian/tano-dbg/
 
 # Branding 
+branding/Branding*
 branding/ExtraConfig.h.in
 branding/FEATURES
 branding/SettingsDefaults.cpp
