@@ -105,56 +105,76 @@ void SettingsDialog::apply()
     _settings->setLanguage(ui->general->language());
 
     // Playlist
-    _settings->setPlaylist(ui->playlist->playlist());
-    _settings->setPlaylistUpdate(ui->playlist->playlistUpdate());
-    _settings->setPlaylistUpdateUrl(ui->playlist->playlistUpdateUrl());
-    _settings->setRadioCategory(ui->playlist->radioCategory());
-    _settings->setHdCategory(ui->playlist->hdCategory());
-    _settings->setUdpxy(ui->playlist->udpxy());
-    _settings->setUdpxyUrl(ui->playlist->udpxyUrl());
-    _settings->setUdpxyPort(ui->playlist->udpxyPort());
+    if (ui->buttonPlaylist->isEnabled()) {
+        _settings->setPlaylist(ui->playlist->playlist());
+        _settings->setPlaylistUpdate(ui->playlist->playlistUpdate());
+        _settings->setPlaylistUpdateUrl(ui->playlist->playlistUpdateUrl());
+        _settings->setRadioCategory(ui->playlist->radioCategory());
+        _settings->setHdCategory(ui->playlist->hdCategory());
+        _settings->setUdpxy(ui->playlist->udpxy());
+        _settings->setUdpxyUrl(ui->playlist->udpxyUrl());
+        _settings->setUdpxyPort(ui->playlist->udpxyPort());
+    } else {
+        _settings->disablePlaylist();
+    }
 
     // GUI
-    _settings->setOsd(ui->gui->osd());
-    _settings->setInfo(ui->gui->info());
-    _settings->setTrayEnabled(ui->gui->tray());
-    _settings->setHideToTray(ui->gui->trayHide());
-    _settings->setMouseWheel(ui->gui->wheel());
-    _settings->setToolbarLook(ui->gui->toolbar());
-    _settings->setRememberGuiSession(ui->gui->rememberSize());
-    _settings->setFiltersVisible(ui->gui->filter());
-    _settings->setStartLite(ui->gui->lite());
-    _settings->setStartOnTop(ui->gui->top());
-    _settings->setIcons(ui->gui->icons());
+    if (ui->buttonInterface->isEnabled()) {
+        _settings->setOsd(ui->gui->osd());
+        _settings->setInfo(ui->gui->info());
+        _settings->setTrayEnabled(ui->gui->tray());
+        _settings->setHideToTray(ui->gui->trayHide());
+        _settings->setMouseWheel(ui->gui->wheel());
+        _settings->setToolbarLook(ui->gui->toolbar());
+        _settings->setRememberGuiSession(ui->gui->rememberSize());
+        _settings->setFiltersVisible(ui->gui->filter());
+        _settings->setStartLite(ui->gui->lite());
+        _settings->setStartOnTop(ui->gui->top());
+        _settings->setIcons(ui->gui->icons());
+    } else {
+        _settings->disableInterface();
+    }
 
     // Playback
-    _settings->setVout(ui->backend->vout());
-    _settings->setAout(ui->backend->aout());
+    if (ui->buttonPlayback->isEnabled()) {
+        _settings->setVout(ui->backend->vout());
+        _settings->setAout(ui->backend->aout());
 #if defined(Q_OS_WIN32)
-    _settings->setYuvToRgb(ui->backend->yuvToRgb());
+        _settings->setYuvToRgb(ui->backend->yuvToRgb());
 #endif
-    _settings->setSpdif(ui->backend->spdif());
-    _settings->setInterfaceIndex(ui->backend->interface());
+        _settings->setSpdif(ui->backend->spdif());
+        _settings->setInterfaceIndex(ui->backend->interface());
 
-    _settings->setRememberVideoSettings(ui->backend->rememberChannelSettings());
-    _settings->setRememberVideoPerChannel(ui->backend->rememberPerChannel());
-    _settings->setAspectRatio(ui->backend->aspectRatio());
-    _settings->setCropRatio(ui->backend->cropRatio());
-    _settings->setDeinterlacing(ui->backend->deinterlacing());
-    _settings->setAudioLanguage(ui->backend->audio());
-    _settings->setSubtitleLanguage(ui->backend->sub());
+        _settings->setRememberVideoSettings(ui->backend->rememberChannelSettings());
+        _settings->setRememberVideoPerChannel(ui->backend->rememberPerChannel());
+        _settings->setAspectRatio(ui->backend->aspectRatio());
+        _settings->setCropRatio(ui->backend->cropRatio());
+        _settings->setDeinterlacing(ui->backend->deinterlacing());
+        _settings->setAudioLanguage(ui->backend->audio());
+        _settings->setSubtitleLanguage(ui->backend->sub());
 
-    _settings->setMuteOnMinimize(ui->backend->mute());
-    _settings->setTeletext(ui->backend->teletext());
+        _settings->setMuteOnMinimize(ui->backend->mute());
+        _settings->setTeletext(ui->backend->teletext());
+    } else {
+        _settings->disablePlayback();
+    }
 
     // Schedule
-    _settings->setXmltvUpdate(ui->schedule->update());
-    _settings->setXmltvUpdateLocation(ui->schedule->location());
-    _settings->setXmltvUpdateRemote(ui->schedule->remote());
+    if (ui->buttonSchedule->isEnabled()) {
+        _settings->setXmltvUpdate(ui->schedule->update());
+        _settings->setXmltvUpdateLocation(ui->schedule->location());
+        _settings->setXmltvUpdateRemote(ui->schedule->remote());
+    } else {
+        _settings->disableSchedule();
+    }
 
     // Recorder
-    _settings->setRecorderDirectory(ui->recorder->directory());
-    _settings->setSnapshotsDirectory(ui->recorder->snapshot());
+    if (ui->buttonRecorder->isEnabled()) {
+        _settings->setRecorderDirectory(ui->recorder->directory());
+        _settings->setSnapshotsDirectory(ui->recorder->snapshot());
+    } else {
+        _settings->disableRecorder();
+    }
 
     _settings->writeSettings();
 }

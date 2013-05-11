@@ -24,7 +24,12 @@ Settings::Settings(QObject *parent)
                 QSettings::UserScope,
                 Tano::nameGroup(),
                 Tano::nameShort(),
-                parent)
+                parent),
+      _disableInterface(false),
+      _disablePlayback(false),
+      _disablePlaylist(false),
+      _disableRecorder(false),
+      _disableSchedule(false)
 {
     readSettings();
 }
@@ -35,64 +40,85 @@ void Settings::writeSettings()
 {
     setValue("general/language", language());
 
-    setValue("channels/playlist", playlist());
-    setValue("channels/update", playlistUpdate());
-    setValue("channels/updateurl", playlistUpdateUrl());
-    setValue("channels/radio", radioCategory());
-    setValue("channels/hd", hdCategory());
-    setValue("channels/udpxy", udpxy());
-    setValue("channels/udpxyurl", udpxyUrl());
-    setValue("channels/udpxyport", udpxyPort());
-
-    setValue("start/lite", startLite());
-    setValue("start/ontop", startOnTop());
-    setValue("start/controls", startControls());
-    setValue("start/info", startInfo());
-    setValue("start/width", width());
-    setValue("start/height", height());
-    setValue("start/posx", posX());
-    setValue("start/posy", posY());
-
-    setValue("gui/osd", osd());
-    setValue("gui/info", info());
-    setValue("gui/trayicon", trayEnabled());
-    setValue("gui/hidetotray", hideToTray());
-    setValue("gui/mousewheel", mouseWheel());
-    setValue("gui/toolbarlook", toolbarLook());
-    setValue("gui/session", rememberGuiSession());
-    setValue("gui/filters", filtersVisible());
-    setValue("gui/icons", icons());
-
-    setValue("backend/vout", vout());
-    setValue("backend/aout", aout());
-#if defined(Q_OS_WIN32)
-    setValue("backend/yuvToRgb", yuvToRgb());
-#endif
-    setValue("backend/spdif", spdif());
-    setValue("backend/interfaceIndex", interfaceIndex());
-
-    setValue("backend/videosettings", rememberVideoSettings());
-    setValue("backend/perchannel", rememberVideoPerChannel());
-    setValue("backend/aspectratio", aspectRatio());
-    setValue("backend/cropratio", cropRatio());
-    setValue("backend/deinterlacing", deinterlacing());
-    setValue("backend/audio", audioLanguage());
-    setValue("backend/subtitles", subtitleLanguage());
-
-    setValue("backend/muteOnMinimize", muteOnMinimize());
-    setValue("backend/teletext", teletext());
-
-    setValue("recorder/directory", recorderDirectory());
-    setValue("recorder/snapshots", snapshotsDirectory());
-
     setValue("session/autoplay", sessionAutoplay());
     setValue("session/channel", sessionChannel());
     setValue("session/remembervolume", sessionRememberVolume());
     setValue("session/volume", sessionVolume());
 
-    setValue("xmltv/update", xmltvUpdate());
-    setValue("xmltv/updatelocation", xmltvUpdateLocation());
-    setValue("xmltv/updateremote", xmltvUpdateRemote());
+    if (!_disablePlaylist) {
+        setValue("channels/playlist", playlist());
+        setValue("channels/update", playlistUpdate());
+        setValue("channels/updateurl", playlistUpdateUrl());
+        setValue("channels/radio", radioCategory());
+        setValue("channels/hd", hdCategory());
+        setValue("channels/udpxy", udpxy());
+        setValue("channels/udpxyurl", udpxyUrl());
+        setValue("channels/udpxyport", udpxyPort());
+    } else {
+        remove("channels");
+    }
+
+    if (!_disableInterface) {
+        setValue("start/lite", startLite());
+        setValue("start/ontop", startOnTop());
+        setValue("start/controls", startControls());
+        setValue("start/info", startInfo());
+        setValue("start/width", width());
+        setValue("start/height", height());
+        setValue("start/posx", posX());
+        setValue("start/posy", posY());
+
+        setValue("gui/osd", osd());
+        setValue("gui/info", info());
+        setValue("gui/trayicon", trayEnabled());
+        setValue("gui/hidetotray", hideToTray());
+        setValue("gui/mousewheel", mouseWheel());
+        setValue("gui/toolbarlook", toolbarLook());
+        setValue("gui/session", rememberGuiSession());
+        setValue("gui/filters", filtersVisible());
+        setValue("gui/icons", icons());
+    } else {
+        remove("start");
+        remove("gui");
+    }
+
+    if (!_disablePlayback) {
+        setValue("backend/vout", vout());
+        setValue("backend/aout", aout());
+#if defined(Q_OS_WIN32)
+        setValue("backend/yuvToRgb", yuvToRgb());
+#endif
+        setValue("backend/spdif", spdif());
+        setValue("backend/interfaceIndex", interfaceIndex());
+
+        setValue("backend/videosettings", rememberVideoSettings());
+        setValue("backend/perchannel", rememberVideoPerChannel());
+        setValue("backend/aspectratio", aspectRatio());
+        setValue("backend/cropratio", cropRatio());
+        setValue("backend/deinterlacing", deinterlacing());
+        setValue("backend/audio", audioLanguage());
+        setValue("backend/subtitles", subtitleLanguage());
+
+        setValue("backend/muteOnMinimize", muteOnMinimize());
+        setValue("backend/teletext", teletext());
+    } else {
+        remove("backend");
+    }
+
+    if (!_disableRecorder) {
+        setValue("recorder/directory", recorderDirectory());
+        setValue("recorder/snapshots", snapshotsDirectory());
+    } else {
+        remove("recorder");
+    }
+
+    if (!_disableSchedule) {
+        setValue("xmltv/update", xmltvUpdate());
+        setValue("xmltv/updatelocation", xmltvUpdateLocation());
+        setValue("xmltv/updateremote", xmltvUpdateRemote());
+    } else {
+        remove("schedule");
+    }
 
     sync();
 }

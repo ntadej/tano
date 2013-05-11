@@ -206,6 +206,13 @@ public:
     // Constants
     static const QString SUPPORT_ADDRESS;
 
+    // Disable settings categories saving
+    void disableInterface() { _disableInterface = true; }
+    void disablePlayback() { _disablePlayback = true; }
+    void disablePlaylist() { _disablePlaylist = true; }
+    void disableRecorder() { _disableRecorder = true; }
+    void disableSchedule() { _disableSchedule = true; }
+
 private:
     // General variables
     QString _language;
@@ -280,6 +287,13 @@ private:
     bool _xmltvUpdate;
     QString _xmltvUpdateLocation;
     bool _xmltvUpdateRemote;
+
+    // Disables
+    bool _disableInterface;
+    bool _disablePlayback;
+    bool _disablePlaylist;
+    bool _disableRecorder;
+    bool _disableSchedule;
 };
 
 #endif // TANO_SETTINGS_H_
