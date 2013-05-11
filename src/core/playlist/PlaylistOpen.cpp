@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include "playlist/handlers/CSVHandler.h"
+#include "playlist/handlers/GoTVHandler.h"
 #include "playlist/handlers/JsHandler.h"
 #include "playlist/handlers/M3UHandler.h"
 
@@ -35,6 +36,26 @@ void PlaylistOpen::openCSVFile(const QString &file,
 
     _list = open->channelList();
     _name = QObject::tr("CSV channel list");
+}
+
+void PlaylistOpen::openGoTVFile(const QString &file)
+{
+    QScopedPointer<GoTVHandler> open(new GoTVHandler());
+
+    QXmlSimpleReader reader;
+    reader.setContentHandler(open.data());
+    reader.setErrorHandler(open.data());
+
+    QFile f(file);
+    if (!f.open(QFile::ReadOnly | QFile::Text))
+        return;
+
+    QXmlInputSource xmlInputSource(&f);
+    if (!reader.parse(xmlInputSource))
+        return;
+
+    _list = open->channelList();
+    _name = QObject::tr("GoTV channel list");
 }
 
 void PlaylistOpen::openJsFile(const QString &file)

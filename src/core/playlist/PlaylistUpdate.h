@@ -24,6 +24,7 @@
 #include <QtCore/QString>
 
 #include "CoreSharedExport.h"
+#include "File.h"
 
 class NetworkDownload;
 class PlaylistModel;
@@ -55,8 +56,10 @@ private slots:
     void processPlaylist(QFile *file);
 
 private:
+    File::Type _type;
     PlaylistModel *_model;
     QString _playlist;
+    bool _save;
 
     NetworkDownload *_downloader;
 };

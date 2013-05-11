@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -35,6 +35,7 @@ public:
     inline QList<Channel *> list() const { return _list; }
     void openCSVFile(const QString &file,
                      const CSVInfo &info);
+    void openGoTVFile(const QString &file);
     void openJsFile(const QString &file);
     void openM3UFile(const QString &file);
 

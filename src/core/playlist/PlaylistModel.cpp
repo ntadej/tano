@@ -199,6 +199,9 @@ void PlaylistModel::open(const QString &file,
     case File::CSV:
         _open->openCSVFile(file, info);
         break;
+    case File::GoTV:
+        _open->openGoTVFile(file);
+        break;
     case File::JS:
         _open->openJsFile(file);
         break;

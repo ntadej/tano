@@ -250,7 +250,7 @@ bool MainWindow::eventFilter(QObject *obj,
             _rightMenu->exec(mouseEvent->globalPos());
             break;
         case Qt::LeftButton:
-#if defined(Qt5)
+/*#if defined(Qt5)
             if (_double) {
                 qDebug() << "Event:" << "Double click";
                 ui->actionFullscreen->trigger();
@@ -258,7 +258,7 @@ bool MainWindow::eventFilter(QObject *obj,
                 _double = true;
                 _timerDouble->start(500);
             }
-#endif
+#endif*/
         case Qt::NoButton:
         default:
             break;
@@ -1008,28 +1008,24 @@ void MainWindow::openPlaylist(const bool &start)
 
     if (!start) {
         _playlistName = FileDialogs::openPlaylistSimple();
-    } else {
-        if (!_defaultPlaylist.isEmpty())
-            _playlistName = Tano::Resources::resource(_defaultPlaylist);
-    }
+_playlistName = Tano::Resources::resource(_defaultPlaylist);
+        if (_playlistName.isEmpty())
+            return;
 
-    if (_playlistName.isEmpty())
-        return;
+        QFile f(_playlistName);
+        if (!f.open(QFile::ReadOnly | QFile::Text)) {
+            QMessageBox::warning(this, tr("Tano"),
+                                tr("Cannot read file %1:\n%2.")
+                                .arg(_playlistName)
+                                .arg(f.errorString()));
+            return;
+        }
+        f.close();
 
-    QFile f(_playlistName);
-    if (!f.open(QFile::ReadOnly | QFile::Text)) {
-        QMessageBox::warning(this, tr("Tano"),
-                            tr("Cannot read file %1:\n%2.")
-                            .arg(_playlistName)
-                            .arg(f.errorString()));
-        return;
-    }
-    f.close();
-
-    if (start)
-        _modelUpdate->update(_playlistName);
-    else
         _model->open(_playlistName);
+    } else {
+        _modelUpdate->update(_defaultPlaylist);
+    }
 
     _hasPlaylist = true;
 

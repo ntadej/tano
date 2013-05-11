@@ -58,6 +58,7 @@ SET(Tano_Core_Playlist_Srcs
     playlist/generators/TvheadendGenerator.cpp
     playlist/generators/XmltvIdGenerator.cpp
     playlist/handlers/CSVHandler.cpp
+    playlist/handlers/GoTVHandler.cpp
     playlist/handlers/JsHandler.cpp
     playlist/handlers/M3UHandler.cpp
 )
