@@ -32,7 +32,11 @@ QString Tano::nameGroup()
 
 QString Tano::nameShort()
 {
+#if BRANDING && defined(BRAND_NAME)
+    return QString(BRAND_NAME);
+#else
     return "Player";
+#endif
 }
 
 

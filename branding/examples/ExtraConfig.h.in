@@ -20,6 +20,7 @@
 #define TANO_EXTRACONFIG_H_
 
 // Settings
+#define BRAND_NAME "GoTV"
 #define ENCRIPTION_KEY @ENCRIPTION_KEY@
 #define UPDATE_URL "update url"
 
