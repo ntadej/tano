@@ -61,6 +61,7 @@ SET(Tano_Qt4_Libs
     ${QT_BIN_DIR}/QtCore4.dll
     ${QT_BIN_DIR}/QtGui4.dll
     ${QT_BIN_DIR}/QtNetwork4.dll
+    ${QT_BIN_DIR}/QtSql4.dll
     ${QT_BIN_DIR}/QtXml4.dll
 )
 
@@ -69,6 +70,7 @@ SET(Tano_Qt5_Libs
     ${QT_BIN_DIR}/Qt5Gui.dll
     ${QT_BIN_DIR}/Qt5Network.dll
     ${QT_BIN_DIR}/Qt5PrintSupport.dll
+    ${QT_BIN_DIR}/Qt5Sql.dll
     ${QT_BIN_DIR}/Qt5Widgets.dll
     ${QT_BIN_DIR}/Qt5Xml.dll
     ${QT_BIN_DIR}/icudt49.dll
@@ -112,6 +114,16 @@ SET(Tano_Qt5_ImageFormats
     ${QT_PLUGINS_DIR}/imageformats/qwbmp.dll
 )
 
+SET(Tano_Qt4_Sql
+    ${QT_PLUGINS_DIR}/sqldrivers/qsqlite4.dll
+    ${QT_PLUGINS_DIR}/sqldrivers/qsqlodbc4.dll
+)
+
+SET(Tano_Qt5_Sql
+    ${QT_PLUGINS_DIR}/sqldrivers/qsqlite.dll
+    ${QT_PLUGINS_DIR}/sqldrivers/qsqlodbc.dll
+)
+
 IF(MSVC)
     SET(Tano_VlcQt_Libs
         ${LIBVLCQT_BIN_DIR}/vlc-qt.dll
@@ -139,9 +151,11 @@ IF(QT5)
     INSTALL(FILES ${Tano_Qt5_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
     INSTALL(FILES ${Tano_Qt5_ImageFormats} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
     INSTALL(FILES ${Tano_Qt5_Platforms} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/platforms")
+    INSTALL(FILES ${Tano_Qt5_Sql} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/sqldrivers")
 ELSE(QT5)
     INSTALL(FILES ${Tano_Qt4_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
     INSTALL(FILES ${Tano_Qt4_ImageFormats} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/imageformats")
+    INSTALL(FILES ${Tano_Qt4_Sql} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/sqldrivers")
 ENDIF(QT5)
 
 INSTALL(FILES ${Tano_VlcQt_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")

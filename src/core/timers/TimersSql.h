@@ -22,6 +22,8 @@
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 
+#include "CoreSharedExport.h"
+
 #include "core/timers/containers/Timer.h"
 
 /*!
@@ -30,7 +32,7 @@
 
     Connect, read and write to Timers SQLite database
 */
-class TimersSql
+class TANO_CORE_EXPORT TimersSql
 {
 public:
     TimersSql();
