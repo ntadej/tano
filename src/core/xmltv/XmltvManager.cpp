@@ -56,6 +56,8 @@ XmltvManager::~XmltvManager()
 {
     if (_downloader)
         delete _downloader;
+    if (_file)
+        delete _file;
     delete _handler;
     delete _timer;
     delete _watcher;

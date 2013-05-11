@@ -46,7 +46,7 @@ void NetworkDownload::getFile(const QString &fileUrl,
     if(!location.isNull()) {
         _file = new QFile(location);
     } else {
-        _file = new QTemporaryFile(Tano::executable());
+        _file = new QTemporaryFile();
     }
 
     if (!_file->open(QIODevice::WriteOnly)) {
