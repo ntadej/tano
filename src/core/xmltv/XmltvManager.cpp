@@ -168,10 +168,8 @@ void XmltvManager::requestProgramme(const QString &id)
         return;
 
     XmltvProgramme *p = _db->programme(id);
-    if (!p->id().isEmpty())
+    if (p)
         emit programme(p);
-    else
-        delete p;
 }
 
 void XmltvManager::requestProgrammeNext(const QString &id,
@@ -181,10 +179,8 @@ void XmltvManager::requestProgrammeNext(const QString &id,
         return;
 
     XmltvProgramme *p = _db->programmeNext(id, channel);
-    if (!p->id().isEmpty())
+    if (p)
         emit programme(p);
-    else
-        delete p;
 }
 
 void XmltvManager::requestProgrammePrevious(const QString &id,
@@ -194,10 +190,8 @@ void XmltvManager::requestProgrammePrevious(const QString &id,
         return;
 
     XmltvProgramme *p = _db->programmePrevious(id, channel);
-    if (!p->id().isEmpty())
+    if (p)
         emit programme(p);
-    else
-        delete p;
 }
 
 void XmltvManager::requestProgrammeRecord(const QString &id)

@@ -26,16 +26,15 @@
 
 #include "xmltv/XmltvCommon.h"
 #include "xmltv/XmltvGenerator.h"
+#include "xmltv/XmltvSql.h"
 #include "xmltv/containers/XmltvChannel.h"
 #include "xmltv/containers/XmltvCrewMember.h"
-#include "xmltv/containers/XmltvList.h"
 #include "xmltv/containers/XmltvProgramme.h"
-#include "xmltv/models/XmltvChannelsModel.h"
-#include "xmltv/models/XmltvCrewModel.h"
-#include "xmltv/models/XmltvProgrammeModel.h"
 
-XmltvGenerator::XmltvGenerator(const QString &file)
+XmltvGenerator::XmltvGenerator(XmltvSql *xmltv,
+                               const QString &file)
 {
+    _xmltv = xmltv;
     _file = new QFile(file);
 
     int offset = QDateTime::currentDateTime().time().hour() - QDateTime::currentDateTimeUtc().time().hour();
@@ -56,43 +55,35 @@ bool XmltvGenerator::openFile()
 
     _out.setDevice(_file);
     _out.setCodec("UTF-8");
-
-    return true;
-}
-
-bool XmltvGenerator::writeHeader(XmltvList *xmltv)
-{
     _out << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-         << QString("<tv source-info-name=\"%1\" source-info-url=\"%2\" generator-info-name=\"%3\" generator-info-url=\"%4\">\n")
-            .arg(xmltv->sourceInfoName(), xmltv->sourceInfoUrl(), xmltv->generatorInfoName(), xmltv->generatorInfoUrl());
+         << QString("<tv>\n");
 
     return true;
 }
 
-bool XmltvGenerator::writeChannels(XmltvList *xmltv)
+bool XmltvGenerator::writeChannels()
 {
-    for (int i = 0; i < xmltv->channels()->rowCount(); ++i)
-        generateChannel(xmltv->channels()->row(i));
+    for (int i = 0; i < _xmltv->channels().count(); ++i)
+        generateChannel(_xmltv->channel(_xmltv->channels().values()[i]));
 
     return true;
 }
 
-bool XmltvGenerator::writeProgramme(XmltvList *xmltv,
-                                    const int &id)
+bool XmltvGenerator::writeProgramme(const int &id)
 {
-    for (int j = 0; j < xmltv->channels()->row(id)->programme()->rowCount(); ++j) {
-        generateProgramme(xmltv->channels()->row(id)->programme()->row(j));
+    QList<XmltvProgramme *> list = _xmltv->programmes(_xmltv->channels().values()[id]);
+    for (int i = 0; i < list.size(); ++i) {
+        generateProgramme(list[i]);
     }
 
     return true;
 }
 
-bool XmltvGenerator::writeProgrammes(XmltvList *xmltv)
+bool XmltvGenerator::writeProgrammes()
 {
-    for (int i = 0; i < xmltv->channels()->rowCount(); ++i) {
-        for (int j = 0; j < xmltv->channels()->row(i)->programme()->rowCount(); ++j) {
-            generateProgramme(xmltv->channels()->row(i)->programme()->row(j));
-        }
+    for (int i = 0; i < _xmltv->channels().count(); ++i) {
+        if (!writeProgramme(i))
+            return false;
     }
 
     return true;
@@ -133,15 +124,23 @@ QString XmltvGenerator::escapedAttribute(const QString &str)
 
 void XmltvGenerator::generateChannel(XmltvChannel *channel)
 {
+    if (!channel)
+        return;
+
     int depth = 1;
 
     _out << indent(depth) << "<channel id=" << escapedAttribute(channel->id()) << ">\n"
          << indent(depth + 1) << "<display-name>" << escapedText(channel->displayName()) << "</display-name>\n"
          << indent(depth) << "</channel>\n";
+
+    delete channel;
 }
 
 void XmltvGenerator::generateProgramme(XmltvProgramme *programme)
 {
+    if (!programme)
+        return;
+
     int depth = 1;
 
     _out << indent(depth) << "<programme start=" << escapedAttribute(programme->start().toString(Tano::Xmltv::dateFormat()) + _timeOffset) << " stop=" << escapedAttribute(programme->stop().toString(Tano::Xmltv::dateFormat()) + _timeOffset) << " channel=" << escapedAttribute(programme->channel()) << ">\n"
@@ -159,15 +158,19 @@ void XmltvGenerator::generateProgramme(XmltvProgramme *programme)
     if (!programme->icon().isEmpty())
         _out << indent(depth + 1) << "<icon src=" << escapedAttribute(programme->icon()) << " />\n";
 
-    if (programme->crew()->rowCount()) {
+    QList<XmltvCrewMember *> crew = _xmltv->crew(programme->id());
+    if (crew.size()) {
         _out << indent(depth + 1) << "<credits>\n";
-        for (int i = 0; i < programme->crew()->rowCount(); ++i) {
-            QString type = XmltvCrewMember::stringFromTypeOutput(programme->crew()->row(i)->type());
-            QString name = programme->crew()->row(i)->name();
+        for (int i = 0; i < crew.size(); ++i) {
+            QString type = XmltvCrewMember::stringFromTypeOutput(crew[i]->type());
+            QString name = crew[i]->name();
             _out << indent(depth + 2) << "<" << type << ">" << name << "</" << type << ">\n";
+            delete crew[i];
         }
         _out << indent(depth + 1) << "</credits>\n";
     }
 
     _out << indent(depth) << "</programme>\n";
+
+    delete programme;
 }

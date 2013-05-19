@@ -34,6 +34,13 @@ XmltvSql::XmltvSql()
     _db.setDatabaseName(Tano::Resources::settingsPath() + "/xmltv.db");
 }
 
+XmltvSql::XmltvSql(const QString &name,
+                   const QString &location)
+{
+    _db = QSqlDatabase::addDatabase("QSQLITE", name);
+    _db.setDatabaseName(location + "/" + name + ".db");
+}
+
 XmltvSql::~XmltvSql()
 {
     close();
@@ -118,6 +125,8 @@ void XmltvSql::addChannel(XmltvChannel *channel)
     q.bindValue(":icon", channel->icon());
     q.bindValue(":url", channel->url());
     q.exec();
+
+    delete channel;
 }
 
 void XmltvSql::updateChannel(const QString &id,
@@ -176,6 +185,21 @@ void XmltvSql::addCrewMember(XmltvCrewMember *member)
     delete member;
 }
 
+XmltvChannel *XmltvSql::channel(const QString &id)
+{
+    QSqlQuery q = query();
+    q.exec("SELECT * FROM `channels` WHERE `id` = '" + id + "'");
+    if (q.next()) {
+        XmltvChannel *channel = new XmltvChannel(id);
+        channel->setDisplayName(q.value(1).toString());
+        channel->setIcon(q.value(2).toString());
+        channel->setUrl(q.value(3).toString());
+        return channel;
+    }
+
+    return 0;
+}
+
 QHash<QString, QString> XmltvSql::channels()
 {
     QHash<QString, QString> hash;
@@ -187,6 +211,23 @@ QHash<QString, QString> XmltvSql::channels()
     }
 
     return hash;
+}
+
+QList<XmltvCrewMember *> XmltvSql::crew(const QString &programme)
+{
+    QSqlQuery q = query();
+    q.exec("SELECT * FROM `crew` WHERE `programme` = '" + programme + "'");
+    QList<XmltvCrewMember *> list;
+    while (q.next()) {
+        XmltvCrewMember *member = new XmltvCrewMember(
+                    q.value(1).toString(),
+                    XmltvCrewMember::Type(q.value(2).toInt()),
+                    q.value(3).toString(),
+                    q.value(4).toDateTime());
+        list << member;
+    }
+
+    return list;
 }
 
 XmltvProgramme *XmltvSql::programme(const QString &id)
@@ -216,7 +257,19 @@ XmltvProgramme *XmltvSql::programme(const QString &id)
         return programme;
     }
 
-    return new XmltvProgramme("");
+    return 0;
+}
+
+QList<XmltvProgramme *> XmltvSql::programmes(const QString &channel)
+{
+    QSqlQuery q = query();
+    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + channel + "'");
+    QList<XmltvProgramme *> list;
+    while (q.next()) {
+        list << programme(q.value(0).toString());
+    }
+
+    return list;
 }
 
 QStringList XmltvSql::programmeCurrent(const QString &id)
@@ -244,7 +297,7 @@ XmltvProgramme *XmltvSql::programmeNext(const QString &id,
         return programme(q.value(0).toString());
     }
 
-    return new XmltvProgramme("");
+    return 0;
 }
 
 XmltvProgramme *XmltvSql::programmePrevious(const QString &id,
@@ -256,7 +309,7 @@ XmltvProgramme *XmltvSql::programmePrevious(const QString &id,
         return programme(q.value(0).toString());
     }
 
-    return new XmltvProgramme("");
+    return 0;
 }
 
 bool XmltvSql::startTransaction()

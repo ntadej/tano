@@ -85,8 +85,6 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
     if(qName == "channel") {
         if(_currentChannel) {
             _db->addChannel(_currentChannel);
-
-            delete _currentChannel;
         }
     } else if(qName == "display-name") {
         if(_currentChannel) {

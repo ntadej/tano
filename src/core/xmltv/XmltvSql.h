@@ -36,7 +36,19 @@ class XmltvProgramme;
 class XmltvSql
 {
 public:
+    /*!
+        \brief XmltvSql constructor
+        Constructor with default values
+    */
     XmltvSql();
+
+    /*!
+        \brief XmltvSql constructor
+        \param name database name (QString)
+        \param location database location (QString)
+    */
+    XmltvSql(const QString &name,
+             const QString &location);
     ~XmltvSql();
 
     /*!
@@ -116,10 +128,24 @@ public:
     void addCrewMember(XmltvCrewMember *member);
 
     /*!
+        \brief Read channel from the database
+        \param id channel id (QString)
+        \return channel (XmltvChannel)
+    */
+    XmltvChannel *channel(const QString &id);
+
+    /*!
         \brief Channel mapping to IDs
         \return mapping (QHash<QString, QString>)
     */
     QHash<QString, QString> channels();
+
+    /*!
+        \brief Read crew from the database for the desired programme
+        \param programme programme id (QString)
+        \return crew list (QList<XmltvCrewMember *>)
+    */
+    QList<XmltvCrewMember *> crew(const QString &programme);
 
     /*!
         \brief Read programme from the database
@@ -127,6 +153,13 @@ public:
         \return programme (XmltvProgramme)
     */
     XmltvProgramme *programme(const QString &id);
+
+    /*!
+        \brief Read programmes from the database for the desired channel
+        \param channel channel id (QString)
+        \return programmes list (QList<XmltvProgramme *>)
+    */
+    QList<XmltvProgramme *> programmes(const QString &channel);
 
     /*!
         \brief Read current programme for current channel

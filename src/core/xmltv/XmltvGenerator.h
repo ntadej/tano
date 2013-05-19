@@ -29,21 +29,20 @@
 #include "CoreSharedExport.h"
 
 class XmltvChannel;
-class XmltvList;
+class XmltvSql;
 class XmltvProgramme;
 
 class TANO_CORE_EXPORT XmltvGenerator
 {
 public:
-    XmltvGenerator(const QString &file);
+    XmltvGenerator(XmltvSql *xmltv,
+                   const QString &file);
     ~XmltvGenerator();
 
     bool openFile();
-    bool writeHeader(XmltvList *xmltv);
-    bool writeChannels(XmltvList *xmltv);
-    bool writeProgramme(XmltvList *xmltv,
-                        const int &id);
-    bool writeProgrammes(XmltvList *xmltv);
+    bool writeChannels();
+    bool writeProgramme(const int &id);
+    bool writeProgrammes();
     bool closeFile();
 
 private:
@@ -52,6 +51,8 @@ private:
     static QString escapedAttribute(const QString &str);
     void generateChannel(XmltvChannel *channel);
     void generateProgramme(XmltvProgramme *programme);
+
+    XmltvSql *_xmltv;
 
     QFile *_file;
     QTextStream _out;
