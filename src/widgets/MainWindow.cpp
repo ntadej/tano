@@ -1008,7 +1008,6 @@ void MainWindow::openPlaylist(const bool &start)
 
     if (!start) {
         _playlistName = FileDialogs::openPlaylistSimple();
-_playlistName = Tano::Resources::resource(_defaultPlaylist);
         if (_playlistName.isEmpty())
             return;
 
@@ -1024,6 +1023,7 @@ _playlistName = Tano::Resources::resource(_defaultPlaylist);
 
         _model->open(_playlistName);
     } else {
+        _playlistName = Tano::Resources::resource(_defaultPlaylist);
         _modelUpdate->update(_defaultPlaylist);
     }
 
