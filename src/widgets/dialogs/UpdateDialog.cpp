@@ -20,6 +20,7 @@
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
+#include "Config.h"
 #include "core/Common.h"
 #include "core/network/NetworkRequest.h"
 
@@ -85,13 +86,13 @@ void UpdateDialog::action(QAbstractButton *button)
 void UpdateDialog::check()
 {
     _silent = false;
-    _currentReply = _request->getRequest(QNetworkRequest(QUrl("http://update.tano.si/player/update.xml")));
+    _currentReply = _request->getRequest(QNetworkRequest(QUrl(QString(UPDATE_URL) + "/update.xml")));
 }
 
 void UpdateDialog::checkSilent()
 {
     _silent = true;
-    _currentReply = _request->getRequest(QNetworkRequest(QUrl("http://update.tano.si/player/update.xml")));
+    _currentReply = _request->getRequest(QNetworkRequest(QUrl(QString(UPDATE_URL) + "/update.xml")));
 }
 
 void UpdateDialog::processUpdate(const QStringList &update,
@@ -164,7 +165,7 @@ void UpdateDialog::readUpdates(const QByteArray &data,
 
 QString UpdateDialog::generateUrl(const QString &version)
 {
-    QString url("http://update.tano.si/player/");
+    QString url(QString(UPDATE_URL));
     url.append(version);
     url.append("/");
 

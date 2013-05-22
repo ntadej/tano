@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,12 +20,14 @@
 
 #include <QtCore/QTextCodec>
 
+#include "Config.h"
 #include "core/Arguments.h"
 #include "core/Common.h"
 #include "core/Log.h"
 #include "core/Out.h"
 #include "core/Resources.h"
 #include "widgets/MainWindow.h"
+#include "widgets/dialogs/PasswordDialog.h"
 
 int main(int argc, char *argv[])
 {
@@ -34,7 +36,7 @@ int main(int argc, char *argv[])
 
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
 
-#if defined(Qt4)
+#if QT_VERSION < 0x050000
     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 #endif
 
@@ -52,7 +54,23 @@ int main(int argc, char *argv[])
         Tano::Resources::setIconPaths();
         Tano::Resources::setIconName();
 
+#if PASSWORD
+        QString password;
+        PasswordDialog dialog;
+        switch (dialog.exec())
+        {
+        case QDialog::Accepted:
+            password = dialog.password();
+            break;
+        default:
+            return -10;
+        }
+
+        MainWindow mainWindow(args, password);
+#else
         MainWindow mainWindow(args);
+#endif
+
         instance.setActivationWindow(&mainWindow);
 
         mainWindow.show();

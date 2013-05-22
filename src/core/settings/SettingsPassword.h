@@ -16,16 +16,35 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_EXTRACONFIG_H_
-#define TANO_EXTRACONFIG_H_
+#ifndef TANO_SETTINGSPASSWORD_H_
+#define TANO_SETTINGSPASSWORD_H_
 
-// Settings
-#define BRAND_NAME "Brand"
-#define ENCRYPTION_KEY @ENCRYPTION_KEY@
-#define UPDATE_URL "http://update.tano.si/player"
+#include <QtCore/QSettings>
 
-#define PASSWORD 1
-#define PASSWORD_VALIDATE "http://yourdomain.com/passcheck/"
-#define PASSWORD_KEY "ok"
+#include "CoreSharedExport.h"
 
-#endif // TANO_EXTRACONFIG_H_
+class SimpleCrypt;
+
+class TANO_CORE_EXPORT SettingsPassword : public QSettings
+{
+public:
+    SettingsPassword(QObject *parent = 0);
+    ~SettingsPassword();
+
+    void readSettings();
+    void writeSettings();
+
+    inline QString username() const { return _username; }
+    inline void setUsername(const QString &s) { _username = s; }
+
+    inline QString password() const { return _password; }
+    inline void setPassword(const QString &s) { _password = s; }
+
+private:
+    QString _username;
+    QString _password;
+
+    SimpleCrypt *_crypt;
+};
+
+#endif // TANO_SETTINGS_H_

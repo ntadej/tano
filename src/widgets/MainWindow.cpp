@@ -100,7 +100,8 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
-MainWindow::MainWindow(Arguments *args)
+MainWindow::MainWindow(Arguments *args,
+                       const QString &password)
     : QMainWindow(),
       ui(new Ui::MainWindow),
       _init(false),
@@ -110,6 +111,7 @@ MainWindow::MainWindow(Arguments *args)
       _locale(new LocaleManager()),
       _model(new PlaylistModel(this)),
       _modelUpdate(new PlaylistUpdate(_model)),
+      _password(password),
       _settingsChannel(new SettingsChannel(this)),
       _audioController(0),
       _videoController(0),

@@ -65,6 +65,7 @@ SET(Tano_Core_Playlist_Srcs
 SET(Tano_Core_Settings_Srcs
     settings/Settings.cpp
     settings/SettingsChannel.cpp
+    settings/SettingsPassword.cpp
     settings/SettingsShortcuts.cpp
 )
 SET(Tano_Core_Timers_Srcs

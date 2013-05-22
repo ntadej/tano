@@ -78,7 +78,8 @@ class TANO_WIDGETS_EXPORT MainWindow : public QMainWindow
 {
 Q_OBJECT
 public:
-    explicit MainWindow(Arguments *args);
+    explicit MainWindow(Arguments *args,
+                        const QString &password = "");
     ~MainWindow();
 
 protected:
@@ -218,6 +219,7 @@ private:
     LocaleManager *_locale;
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;
+    QString _password;
     Recorder *_recorder;
     SettingsChannel *_settingsChannel;
     QShortcut *_shortcut;

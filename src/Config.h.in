@@ -31,8 +31,9 @@
 #if BRANDING
     #include "branding/ExtraConfig.h"
 #else
-    #define ENCRIPTION_KEY @ENCRIPTION_KEY@
-    #define UPDATE_URL "update url"
+    #define ENCRYPTION_KEY @ENCRYPTION_KEY@
+    #define UPDATE_URL "http://update.tano.si/player"
+    #define PASSWORD 0
 #endif
 
 #endif // TANO_CONFIG_H_

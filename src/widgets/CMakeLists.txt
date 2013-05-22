@@ -38,6 +38,7 @@ SET(Tano_Widgets_UIs
     common/OsdWidget.ui
     dialogs/AboutDialog.ui
     dialogs/DonationDialog.ui
+    dialogs/PasswordDialog.ui
     dialogs/PrintDialog.ui
     dialogs/UpdateDialog.ui
     epg/EpgShow.ui
@@ -92,6 +93,7 @@ SET(Tano_Widgets_Common_Srcs
 SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
     dialogs/DonationDialog.cpp
+    dialogs/PasswordDialog.cpp
     dialogs/PrintDialog.cpp
     dialogs/UpdateDialog.cpp
 )
