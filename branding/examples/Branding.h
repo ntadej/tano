@@ -23,6 +23,8 @@
 
 #include "WidgetsSharedExport.h"
 
+class MainWindow;
+
 namespace Ui
 {
     class MainWindow;
@@ -35,7 +37,8 @@ namespace Tano
 {
     namespace Branding
     {
-        TANO_WIDGETS_EXPORT void processMenus(Ui::MainWindow *ui,
+        TANO_WIDGETS_EXPORT void processMenus(MainWindow *main,
+                                              Ui::MainWindow *ui,
                                               QMenu *right);
         TANO_WIDGETS_EXPORT void processSettings(Ui::SettingsDialog *ui);
     }

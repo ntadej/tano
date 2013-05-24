@@ -17,10 +17,12 @@
 *****************************************************************************/
 
 #include "Branding.h"
+#include "MainWindow.h"
 #include "ui_MainWindow.h"
 #include "ui_SettingsDialog.h"
 
-void Tano::Branding::processMenus(Ui::MainWindow *ui,
+void Tano::Branding::processMenus(MainWindow *main,
+                                  Ui::MainWindow *ui,
                                   QMenu *right)
 {
     ui->actionOpen->setDisabled(true);
@@ -47,9 +49,8 @@ void Tano::Branding::processMenus(Ui::MainWindow *ui,
     ui->menuFile->insertAction(ui->actionExit, ui->actionSettings);
     ui->menuAbout->removeAction(ui->actionDonate);
 
-    ui->toolBar->removeAction(ui->actionOpenToolbar);
-    ui->toolBar->removeAction(ui->actionEditPlaylist);
     ui->toolBar->hide();
+    ui->toolBarRecorder->hide();
 
     right->removeAction(ui->actionInfoPanel);
     right->removeAction(ui->actionControls);

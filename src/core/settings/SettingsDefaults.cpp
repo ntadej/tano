@@ -114,6 +114,3 @@ const int Settings::DEFAULT_SESSION_VOLUME = 50;
 const bool Settings::DEFAULT_XMLTV_UPDATE = false;
 const QString Settings::DEFAULT_XMLTV_UPDATE_LOCATION = Tano::Resources::settingsPath() + "xmltv.xml";
 const bool Settings::DEFAULT_XMLTV_UPDATE_REMOTE = false;
-
-// Constants
-const QString Settings::SUPPORT_ADDRESS = "info@tano.si";

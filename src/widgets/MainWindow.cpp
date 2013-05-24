@@ -172,7 +172,7 @@ void MainWindow::exit()
     int ret;
 #if FEATURE_RECORDER
     if (_recorder->isRecording()) {
-        ret = QMessageBox::warning(this, Tano::name()),
+        ret = QMessageBox::warning(this, Tano::name(),
                       tr("Are you sure you want to exit?\nThis will stop recording in progress."),
                       QMessageBox::Close | QMessageBox::Cancel,
                       QMessageBox::Close);
@@ -492,6 +492,7 @@ void MainWindow::createRecorder()
 #else
     ui->menubar->removeAction(ui->menuRecorder->menuAction());
     ui->toolBar->removeAction(ui->actionRecorder);
+    removeToolBar(ui->toolBarRecorder);
 #endif
 }
 
@@ -664,7 +665,7 @@ void MainWindow::createMenus()
     _playlistMenu = new QMenu();
 
 #if BRANDING
-    Tano::Branding::processMenus(ui, _rightMenu);
+    Tano::Branding::processMenus(this, ui, _rightMenu);
 #endif
 
     qDebug() << "Initialised: Menus";
@@ -1452,5 +1453,6 @@ void MainWindow::recordProgramme(XmltvProgramme *programme)
 
 void MainWindow::updateAvailable()
 {
+    ui->actionUpdate->setText(tr("An update is available!"));
     ui->toolBar->insertAction(ui->actionExit, ui->actionUpdate);
 }
