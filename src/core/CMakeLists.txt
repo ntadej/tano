@@ -40,6 +40,7 @@ SET(Tano_Core_Resrcs
 # Define the C++ source files used by Tano Core
 SET(Tano_Core_Network_Srcs
     network/NetworkDownload.cpp
+    network/NetworkHttpAuth.cpp
     network/NetworkRequest.cpp
     network/NetworkUdpxy.cpp
 )

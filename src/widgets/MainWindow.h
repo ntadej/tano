@@ -55,6 +55,7 @@ class MenuScale;
 class MenuTrackAudio;
 class MenuTrackSubtitles;
 class MenuTrackVideo;
+class NetworkHttpAuth;
 class NetworkUdpxy;
 class SettingsChannel;
 class OsdFloat;
@@ -219,7 +220,6 @@ private:
     LocaleManager *_locale;
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;
-    QString _password;
     Recorder *_recorder;
     SettingsChannel *_settingsChannel;
     QShortcut *_shortcut;
@@ -240,6 +240,7 @@ private:
     QTimer *_previewTimer;
     Timer *_recording;
     QTimer *_startTimer;
+    NetworkHttpAuth *_httpAuth;
     NetworkUdpxy *_udpxy;
 
     //GUI

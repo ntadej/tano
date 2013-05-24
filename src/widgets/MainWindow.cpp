@@ -54,6 +54,7 @@
 #include "core/LocaleManager.h"
 #include "core/Resources.h"
 #include "core/network/NetworkDownload.h"
+#include "core/network/NetworkHttpAuth.h"
 #include "core/network/NetworkUdpxy.h"
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/PlaylistUpdate.h"
@@ -111,7 +112,6 @@ MainWindow::MainWindow(Arguments *args,
       _locale(new LocaleManager()),
       _model(new PlaylistModel(this)),
       _modelUpdate(new PlaylistUpdate(_model)),
-      _password(password),
       _settingsChannel(new SettingsChannel(this)),
       _audioController(0),
       _videoController(0),
@@ -119,6 +119,7 @@ MainWindow::MainWindow(Arguments *args,
       _xmltv(new XmltvManager()),
       _previewTimer(new QTimer(this)),
       _startTimer(new QTimer(this)),
+      _httpAuth(new NetworkHttpAuth(password)),
       _udpxy(new NetworkUdpxy()),
       _schedule(new EpgScheduleFull()),
       _epgShow(new EpgShow()),
@@ -874,7 +875,11 @@ void MainWindow::playChannel(Channel *channel)
     _channelPlayback = true;
     _channel = channel;
 
-    playUrl(_udpxy->processUrl(_channel->url()), true);
+    QString url = _udpxy->processUrl(_channel->url());
+    if (channel->passwordProtected())
+        url = _httpAuth->processUrl(url);
+
+    playUrl(url, true);
 
     if (_channel->logo().contains("http")) {
         _file->getFile(_channel->logo());
