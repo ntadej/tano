@@ -42,7 +42,7 @@ void Tano::Windows::showConsole()
     AllocConsole();
 
     SetConsoleOutputCP(GetACP());
-    SetConsoleTitle(Tano::name());
+    SetConsoleTitle(Tano::name().toLocal8Bit().data());
 
     freopen("CONOUT$", "w", stderr);
     freopen("CONIN$", "r", stdin);

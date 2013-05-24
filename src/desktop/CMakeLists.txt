@@ -33,6 +33,8 @@ SET(Tano_SingleApplication_Srcs
 INCLUDE_DIRECTORIES(
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/core
+    ${CMAKE_SOURCE_DIR}/src/widgets
     ${CMAKE_SOURCE_DIR}/lib/qtsingleapplication/src
     ${CMAKE_BINARY_DIR}
     ${CMAKE_BINARY_DIR}/src

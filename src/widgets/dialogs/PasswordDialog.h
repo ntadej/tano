@@ -27,13 +27,15 @@
     #include <QtGui/QDialog>
 #endif
 
+#include "WidgetsSharedExport.h"
+
 class NetworkRequest;
 
 namespace Ui {
     class PasswordDialog;
 }
 
-class PasswordDialog : public QDialog
+class TANO_WIDGETS_EXPORT PasswordDialog : public QDialog
 {
 Q_OBJECT
 
