@@ -50,7 +50,8 @@ public:
         UrlRole,
         XmltvIdRole,
         CategoriesRole,
-        LogoRole
+        LogoRole,
+        ProtectedRole
     };
 
     /*!
@@ -106,7 +107,7 @@ public:
     inline Type type() const { return _type; }
     /*!
         \brief Set channel type
-        \return type new channel type (Channel::Type)
+        \param type new channel type (Channel::Type)
     */
     void setType(const Type &type);
 
@@ -117,7 +118,7 @@ public:
     inline QString name() const { return _name; }
     /*!
         \brief Set channel name
-        \return name new channel name (QString)
+        \param name new channel name (QString)
     */
     void setName(const QString &name);
 
@@ -128,7 +129,7 @@ public:
     inline QString language() const { return _language; }
     /*!
         \brief Set channel language
-        \return language new channel language (QString)
+        \param language new channel language (QString)
     */
     void setLanguage(const QString &language);
 
@@ -139,7 +140,7 @@ public:
     inline QString url() const { return _url; }
     /*!
         \brief Set channel url
-        \return url new channel url (QString)
+        \param url new channel url (QString)
     */
     void setUrl(const QString &url);
 
@@ -150,7 +151,7 @@ public:
     inline QString xmltvId() const { return _xmltvId; }
     /*!
         \brief Set channel XMLTV ID
-        \return xmltvId new channel XMLTV ID (QString)
+        \param xmltvId new channel XMLTV ID (QString)
     */
     void setXmltvId(const QString &xmltvId);
 
@@ -161,7 +162,7 @@ public:
     inline QStringList categories() const { return _categories; }
     /*!
         \brief Set channel categories
-        \return categories new channel categories (QStringList)
+        \param categories new channel categories (QStringList)
     */
     void setCategories(const QStringList &categories);
 
@@ -172,9 +173,20 @@ public:
     inline QString logo() const { return _logo; }
     /*!
         \brief Set channel logo
-        \return logo new channel logo (QString)
+        \param logo new channel logo (QString)
     */
     void setLogo(const QString &logo);
+
+    /*!
+        \brief Get password protected status
+        \return password protected status (bool)
+    */
+    inline bool passwordProtected() const { return _passwordProtected; }
+    /*!
+        \brief Set password protected status
+        \param pprotected new password protected status (bool)
+    */
+    void setPasswordProtected(const bool &pprotected);
 
     /*!
         \brief Channel type strings
@@ -191,6 +203,7 @@ private:
     QString _xmltvId;
     QStringList _categories;
     QString _logo;
+    bool _passwordProtected;
 };
 
 #endif // TANO_CHANNEL_H_

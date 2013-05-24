@@ -35,8 +35,6 @@ bool GoTVHandler::startElement(const QString & /* namespaceURI */,
                                const QString &qName,
                                const QXmlAttributes &attributes)
 {
-    Q_UNUSED(attributes)
-
     if(qName == "channels")
         _metTanoTag = true;
 
@@ -47,6 +45,8 @@ bool GoTVHandler::startElement(const QString & /* namespaceURI */,
 
     if (qName == "channel") {
         _channel = new Channel(QObject::tr("Unknown title"), 0);
+        _channel->setNumber(attributes.value("order").toInt());
+        _channel->setXmltvId(attributes.value("id"));
         _channelList << _channel;
     }
 
@@ -76,7 +76,7 @@ bool GoTVHandler::endElement(const QString & /* namespaceURI */,
         }
     } else if (qName == "passwordprotected") {
         if (_channel) {
-            //_channel->setPasswordProtected((_currentText == "yes") ? true : false);
+            _channel->setPasswordProtected((_currentText == "yes") ? true : false);
         }
     }
     return true;

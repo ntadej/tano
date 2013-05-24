@@ -34,6 +34,7 @@ Channel::Channel(const QString &name,
     _xmltvId = "";
     _categories = QStringList();
     _logo = "";
+    _passwordProtected = false;
 }
 
 Channel::~Channel() { }
@@ -51,6 +52,7 @@ QHash<int, QByteArray> Channel::roleNames() const
     names[XmltvIdRole] = "xmltvid";
     names[CategoriesRole] = "categories";
     names[LogoRole] = "logo";
+    names[ProtectedRole] = "protected";
     return names;
 }
 
@@ -78,6 +80,8 @@ QVariant Channel::data(const int &role) const
         return categories();
     case LogoRole:
         return logo();
+    case ProtectedRole:
+        return passwordProtected();
     default:
         return QVariant();
     }
@@ -158,6 +162,14 @@ void Channel::setLogo(const QString &logo)
 {
     if (_logo != logo) {
         _logo = logo;
+        emit dataChanged();
+    }
+}
+
+void Channel::setPasswordProtected(const bool &pprotected)
+{
+    if (_passwordProtected != pprotected) {
+        _passwordProtected = pprotected;
         emit dataChanged();
     }
 }
