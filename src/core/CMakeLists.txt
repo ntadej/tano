@@ -35,8 +35,6 @@ ENDIF(STATIC)
 # Define the QRC source files used by Tano
 SET(Tano_Core_Resrcs
     ../../info.qrc
-    ../../data/logo/logo.qrc
-    ../../data/misc/misc.qrc
 )
 
 # Define the C++ source files used by Tano Core

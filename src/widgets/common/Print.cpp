@@ -28,6 +28,7 @@
     #include <QtGui/QPrintPreviewDialog>
 #endif
 
+#include "core/Common.h"
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/containers/Channel.h"
 
@@ -143,7 +144,7 @@ void Print::channelList(const QString &name,
     cursor.insertBlock();
     cursor.insertBlock();
 
-    cursor.insertText(tr("Exported with Tano on %1.").arg(QDate::currentDate().toString("d MMMM yyyy")), _textFormat);
+    cursor.insertText(tr("Exported with %1 on %2.").arg(Tano::name(), QDate::currentDate().toString("d MMMM yyyy")), _textFormat);
     cursor.insertBlock();
 
     start();

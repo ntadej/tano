@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "Common.h"
 #include "Out.h"
 #include "platform/windows/Console.h"
 
@@ -41,7 +42,7 @@ void Tano::Windows::showConsole()
     AllocConsole();
 
     SetConsoleOutputCP(GetACP());
-    SetConsoleTitle("Tano");
+    SetConsoleTitle(Tano::name());
 
     freopen("CONOUT$", "w", stderr);
     freopen("CONIN$", "r", stdin);

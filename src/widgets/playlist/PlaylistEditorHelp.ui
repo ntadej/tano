@@ -34,9 +34,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
-        <width>575</width>
-        <height>457</height>
+        <y>-172</y>
+        <width>564</width>
+        <height>514</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -109,7 +109,7 @@
        <item>
         <widget class="QLabel" name="labelEditContent3">
          <property name="text">
-          <string>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</string>
+          <string>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -142,7 +142,7 @@
        <item>
         <widget class="QLabel" name="labelExportContent">
          <property name="text">
-          <string>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</string>
+          <string>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -185,7 +185,7 @@
        <item>
         <widget class="QLabel" name="labelScanContent">
          <property name="text">
-          <string>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</string>
+          <string>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>

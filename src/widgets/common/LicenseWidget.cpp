@@ -23,7 +23,7 @@
 LicenseWidget::LicenseWidget(QWidget *parent)
     : QTextBrowser(parent)
 {
-    QFile file(":/info/LICENSE");
+    QFile file(":/info/LICENSE.GPL");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
 

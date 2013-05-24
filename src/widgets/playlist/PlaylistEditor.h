@@ -58,7 +58,7 @@ private slots:
     void aboutTano();
     void help();
     void settings();
-    void setTitle(const QString &title);
+    void setTitle(const QString &title = "");
 
     void deleteItem();
     void addItem();

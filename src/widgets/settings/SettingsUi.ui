@@ -16,7 +16,16 @@
    </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -31,9 +40,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-198</y>
-        <width>437</width>
-        <height>561</height>
+        <y>-325</y>
+        <width>451</width>
+        <height>674</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -216,7 +225,7 @@
            <widget class="QComboBox" name="comboIcons">
             <item>
              <property name="text">
-              <string>Tano default</string>
+              <string>Default</string>
              </property>
             </item>
             <item>

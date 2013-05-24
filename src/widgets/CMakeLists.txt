@@ -32,6 +32,19 @@ ENDIF(STATIC)
 ###################
 # List of sources #
 ###################
+# Define the QRC source files used by Tano
+IF(BRANDING)
+    SET(Tano_Widgets_Resrcs
+        ../../branding/logo/logo.qrc
+        ../../data/misc/misc.qrc
+    )
+ELSE(BRANDING)
+    SET(Tano_Widgets_Resrcs
+        ../../data/logo/logo.qrc
+        ../../data/misc/misc.qrc
+    )
+ENDIF(BRANDING)
+
 # Define the UI source files used by Tano Widgets
 SET(Tano_Widgets_UIs
     MainWindow.ui
@@ -176,8 +189,10 @@ ENDIF(BRANDING)
 # This script runs the user interface compiler uic
 IF(QT5)
     QT5_WRAP_UI(Tano_Widgets_UIC_Srcs ${Tano_Widgets_UIs})
+    QT5_ADD_RESOURCES(Tano_Widgets_Resrcs_Srcs ${Tano_Widgets_Resrcs})
 ELSE(QT5)
     QT4_WRAP_UI(Tano_Widgets_UIC_Srcs ${Tano_Widgets_UIs})
+    QT4_ADD_RESOURCES(Tano_Widgets_Resrcs_Srcs ${Tano_Widgets_Resrcs})
 ENDIF(QT5)
 
 
@@ -216,9 +231,9 @@ ENDIF(MSVC)
 
 # This line tells cmake to create the Tano Widgets library.
 IF(STATIC)
-    ADD_LIBRARY(${TANO_WIDGETS} STATIC ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
+    ADD_LIBRARY(${TANO_WIDGETS} STATIC ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs} ${Tano_Widgets_Resrcs_Srcs})
 ELSE(STATIC)
-    ADD_LIBRARY(${TANO_WIDGETS} SHARED ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
+    ADD_LIBRARY(${TANO_WIDGETS} SHARED ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs} ${Tano_Widgets_Resrcs_Srcs})
 ENDIF(STATIC)
 
 # MSVC: Avoid Debug/Release/... subfolders

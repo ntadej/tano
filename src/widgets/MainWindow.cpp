@@ -171,8 +171,8 @@ void MainWindow::exit()
     int ret;
 #if FEATURE_RECORDER
     if (_recorder->isRecording()) {
-        ret = QMessageBox::warning(this, tr("Tano"),
-                      tr("Do you want to exit Tano?\nThis will stop recording in progress."),
+        ret = QMessageBox::warning(this, Tano::name()),
+                      tr("Are you sure you want to exit?\nThis will stop recording in progress."),
                       QMessageBox::Close | QMessageBox::Cancel,
                       QMessageBox::Close);
     } else {
@@ -812,9 +812,9 @@ void MainWindow::donate()
 
 void MainWindow::support()
 {
-    QString subject = tr("Tano Support");
+    QString subject = Tano::name() + " " + tr("Support");
     subject = subject.replace(" ", "%20");
-    QDesktopServices::openUrl(QUrl("mailto:" + Settings::SUPPORT_ADDRESS + "?subject=" + subject));
+    QDesktopServices::openUrl(QUrl("mailto:" + Tano::email() + "?subject=" + subject));
 }
 
 
@@ -1015,7 +1015,7 @@ void MainWindow::openPlaylist(const bool &start)
 
         QFile f(_playlistName);
         if (!f.open(QFile::ReadOnly | QFile::Text)) {
-            QMessageBox::warning(this, tr("Tano"),
+            QMessageBox::warning(this, Tano::name(),
                                 tr("Cannot read file %1:\n%2.")
                                 .arg(_playlistName)
                                 .arg(f.errorString()));
@@ -1120,9 +1120,9 @@ void MainWindow::showPlaylistEditor()
 void MainWindow::tooltip(const QString &channelNow)
 {
     if (channelNow != "stop")
-        setWindowTitle(channelNow + " - " + tr("Tano"));
+        setWindowTitle(channelNow + " - " + Tano::name());
     else
-        setWindowTitle(tr("Tano"));
+        setWindowTitle(Tano::name());
 }
 
 void MainWindow::showOpenMenu()

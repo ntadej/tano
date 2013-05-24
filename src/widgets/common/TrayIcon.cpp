@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "core/Common.h"
+
 #include "TrayIcon.h"
 
 TrayIcon::TrayIcon(QMenu *menu,
@@ -26,7 +28,7 @@ TrayIcon::TrayIcon(QMenu *menu,
 {
     setContextMenu(menu);
     setIcon(QIcon(":/logo/48x48/logo.png"));
-    setToolTip(tr("Tano"));
+    setToolTip(Tano::name());
 
     connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
@@ -56,11 +58,11 @@ void TrayIcon::message(const Tano::Id &type,
 
     if (type == Tano::Record) {
         if (arg.size() == 0) {
-            showMessage(tr("Recorder"), tr("Tano stopped recording"), QSystemTrayIcon::Information, 10000);
+            showMessage(tr("Recorder"), tr("Recording stopped."), QSystemTrayIcon::Information, 10000);
         } else if (arg.size() == 2) {
-            showMessage(tr("Recorder"), tr("Tano is recording %1 to %2 \nStop manually!").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
+            showMessage(tr("Recorder"), tr("Recording %1 to %2 \nStop manually!").arg(arg[0], arg[1]), QSystemTrayIcon::Information, 10000);
         } else if (arg.size() == 3) {
-            showMessage(tr("Recorder"), tr("Tano is recording %1 to %2 \nEnd time: %3").arg(arg[0], arg[1], arg[2]), QSystemTrayIcon::Information, 10000);
+            showMessage(tr("Recorder"), tr("Recording %1 to %2 \nEnd time: %3").arg(arg[0], arg[1], arg[2]), QSystemTrayIcon::Information, 10000);
         }
     }
 }
@@ -83,11 +85,11 @@ void TrayIcon::changeToolTip(const Tano::Id &type,
     }
 
     if (_currentlyPlaying.isEmpty() && _currentlyRecording.isEmpty())
-        setToolTip(tr("Tano"));
+        setToolTip(Tano::name());
     else if (!_currentlyPlaying.isEmpty() && _currentlyRecording.isEmpty())
-        setToolTip(tr("Tano") + "\n" + _currentlyPlaying);
+        setToolTip(Tano::name() + "\n" + _currentlyPlaying);
     else if (_currentlyPlaying.isEmpty() && !_currentlyRecording.isEmpty())
-        setToolTip(tr("Tano") + "\n" + _currentlyRecording);
+        setToolTip(Tano::name() + "\n" + _currentlyRecording);
     else
-        setToolTip(tr("Tano") + "\n" + _currentlyPlaying + "\n" + _currentlyRecording);
+        setToolTip(Tano::name() + "\n" + _currentlyPlaying + "\n" + _currentlyRecording);
 }

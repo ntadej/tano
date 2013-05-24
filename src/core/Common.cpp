@@ -22,27 +22,20 @@
 
 QString Tano::name()
 {
-    return "Tano Player";
-}
-
-QString Tano::nameGroup()
-{
-    return "Tano";
-}
-
-QString Tano::nameShort()
-{
 #if BRANDING && defined(BRAND_NAME)
     return QString(BRAND_NAME);
 #else
-    return "Player";
+    return "Tano";
 #endif
 }
 
-
 QString Tano::executable()
 {
+#if BRANDING && defined(BRAND_NAME)
+    return QString(BRAND_NAME).toLower();
+#else
     return "tano";
+#endif
 }
 
 QString Tano::version()
@@ -56,6 +49,24 @@ QString Tano::version()
 #endif
 
     return version;
+}
+
+QString Tano::email()
+{
+#ifdef APP_URL
+    return QString(APP_EMAIL);
+#else
+    return "info@tano.si";
+#endif
+}
+
+QString Tano::url()
+{
+#ifdef APP_URL
+    return QString(APP_URL);
+#else
+    return "http://projects.tano.si";
+#endif
 }
 
 QString Tano::changeset()

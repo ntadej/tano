@@ -81,9 +81,9 @@ QString Tano::Resources::settingsPath()
     QScopedPointer<QSettings> settings(
             new QSettings(QSettings::IniFormat,
                           QSettings::UserScope,
-                          Tano::nameGroup(),
-                          Tano::nameShort()));
-    QString path = settings->fileName().replace(Tano::nameShort() + ".ini", "");
+                          Tano::name(),
+                          Tano::name()));
+    QString path = settings->fileName().replace(Tano::name() + ".ini", "");
 
     return path;
 }

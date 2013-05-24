@@ -29,14 +29,16 @@ namespace Tano
 {
     // Tano name and executable
     TANO_CORE_EXPORT QString name();
-    TANO_CORE_EXPORT QString nameShort();
-    TANO_CORE_EXPORT QString nameGroup();
     TANO_CORE_EXPORT QString executable();
 
     // Version
     TANO_CORE_EXPORT QString version();
     TANO_CORE_EXPORT QString changeset();
     TANO_CORE_EXPORT bool is64bit();
+
+    // Info
+    TANO_CORE_EXPORT QString email();
+    TANO_CORE_EXPORT QString url();
 
     // Identifier
     enum Id

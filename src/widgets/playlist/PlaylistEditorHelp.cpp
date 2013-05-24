@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "core/Common.h"
+
 #include "PlaylistEditorHelp.h"
 #include "ui_PlaylistEditorHelp.h"
 
@@ -24,6 +26,9 @@ PlaylistEditorHelp::PlaylistEditorHelp(QWidget *parent)
       ui(new Ui::PlaylistEditorHelp)
 {
     ui->setupUi(this);
+
+    setWindowTitle(windowTitle().replace("Tano", Tano::name()));
+    ui->labelInfo->setText(ui->labelInfo->text().replace("Tano", Tano::name()));
 }
 
 PlaylistEditorHelp::~PlaylistEditorHelp()

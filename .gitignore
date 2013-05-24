@@ -19,6 +19,7 @@ debian/tano-dbg/
 branding/Branding*
 branding/ExtraConfig.h.in
 branding/FEATURES
+branding/logo
 branding/SettingsDefaults.cpp
 branding/SettingsShortcutsDefaults.cpp
 branding/VERSION

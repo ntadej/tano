@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>404</width>
+    <width>433</width>
     <height>400</height>
    </rect>
   </property>
@@ -22,7 +22,7 @@
    <item>
     <widget class="QLabel" name="labelIconTano">
      <property name="pixmap">
-      <pixmap resource="../../data/logo/logo.qrc">:/logo/64x64/logo.png</pixmap>
+      <pixmap resource="../../../data/logo/logo.qrc">:/logo/64x64/logo.png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -39,7 +39,7 @@
        <item row="1" column="0" colspan="3">
         <widget class="QLabel" name="labelLatest">
          <property name="text">
-          <string>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</string>
+          <string>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -89,7 +89,7 @@
        <item row="0" column="0" colspan="4">
         <widget class="QLabel" name="labelDev">
          <property name="text">
-          <string>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</string>
+          <string>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -172,7 +172,7 @@
        <item row="0" column="0" colspan="3">
         <widget class="QLabel" name="labelUpdate">
          <property name="text">
-          <string>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</string>
+          <string>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -250,8 +250,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>71</width>
-            <height>25</height>
+            <width>387</width>
+            <height>126</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -341,7 +341,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../data/logo/logo.qrc"/>
+  <include location="../../../data/logo/logo.qrc"/>
  </resources>
  <connections/>
 </ui>

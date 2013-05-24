@@ -26,6 +26,7 @@
     #include <QtGui/QMessageBox>
 #endif
 
+#include "core/Common.h"
 #include "core/File.h"
 #include "core/playlist/containers/Channel.h"
 #include "core/playlist/PlaylistModel.h"
@@ -52,6 +53,7 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
     ui->setupUi(this);
     ui->editWidget->setEnabled(false);
     ui->playlist->editMode();
+    setTitle();
 
     _model = new PlaylistModel(this);
     ui->playlist->setModel(_model);
@@ -144,9 +146,9 @@ void PlaylistEditor::menuOpenExport()
 void PlaylistEditor::setTitle(const QString &title)
 {
     if (title.isEmpty())
-        setWindowTitle(tr("Tano Editor"));
+        setWindowTitle(Tano::name() + tr("Editor"));
     else
-        setWindowTitle(tr("%1 - Tano Editor").arg(title));
+        setWindowTitle(tr("%1 - %2 Editor").arg(title, Tano::name()));
 }
 
 

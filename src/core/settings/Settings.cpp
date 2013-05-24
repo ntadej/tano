@@ -22,8 +22,8 @@
 Settings::Settings(QObject *parent)
     : QSettings(QSettings::IniFormat,
                 QSettings::UserScope,
-                Tano::nameGroup(),
-                Tano::nameShort(),
+                Tano::name(),
+                Tano::name(),
                 parent),
       _disableInterface(false),
       _disablePlayback(false),

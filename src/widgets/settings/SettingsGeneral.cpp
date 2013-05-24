@@ -31,7 +31,7 @@ SettingsGeneral::SettingsGeneral(QWidget *parent)
 
     connect(ui->buttonDefaults, SIGNAL(clicked()), this, SIGNAL(resetDefaults()));
 
-    ui->labelVersion->setText(tr("You are using Tano version:") + " <b>" + Tano::version() + "</b>");
+    ui->labelVersion->setText(tr("You are using %1 version:").arg(Tano::name()) + " <b>" + Tano::version() + "</b>");
 }
 
 SettingsGeneral::~SettingsGeneral()

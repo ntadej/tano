@@ -203,9 +203,6 @@ public:
     inline void setXmltvUpdateRemote(const bool &b) { _xmltvUpdateRemote = b; }
     static const bool DEFAULT_XMLTV_UPDATE_REMOTE;
 
-    // Constants
-    static const QString SUPPORT_ADDRESS;
-
     // Disable settings categories saving
     void disableInterface() { _disableInterface = true; }
     void disablePlayback() { _disablePlayback = true; }

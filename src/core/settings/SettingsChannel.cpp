@@ -22,7 +22,7 @@
 SettingsChannel::SettingsChannel(QObject *parent)
     : QSettings(QSettings::IniFormat,
                 QSettings::UserScope,
-                Tano::nameGroup(),
+                Tano::name(),
                 "Channels",
                 parent) { }
 

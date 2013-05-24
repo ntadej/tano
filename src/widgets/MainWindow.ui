@@ -10,9 +10,6 @@
     <height>300</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Tano</string>
-  </property>
   <property name="windowIcon">
    <iconset resource="../../data/logo/logo.qrc">
     <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
@@ -446,7 +443,10 @@
      <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
    </property>
    <property name="text">
-    <string>About Tano</string>
+    <string>About</string>
+   </property>
+   <property name="toolTip">
+    <string>About</string>
    </property>
   </action>
   <action name="actionExit">

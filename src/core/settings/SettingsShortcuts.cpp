@@ -22,7 +22,7 @@
 SettingsShortcuts::SettingsShortcuts(QObject *parent)
     : QSettings(QSettings::IniFormat,
                 QSettings::UserScope,
-                Tano::nameGroup(),
+                Tano::name(),
                 "Shortcuts",
                 parent) { }
 
