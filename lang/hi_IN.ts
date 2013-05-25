@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="hi_IN">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="hi_IN" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -35,25 +33,15 @@
         <translation>&lt;b&gt;आप उपयोग कर रहे हैं VideoLAN VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Your Tano version: %1
-Your Qt runtime version: %2
-Your VLC-Qt version: %3
-</source>
-        <translation type="obsolete">आपका Tano संस्करण: %1
-आपका Qt क्रम संस्करण: %2
-आपका VLC-Qt संस्करण: %3
-</translation>
-    </message>
-    <message>
         <source>Your %1 version: %2
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>This application is based on Tano.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -113,7 +101,7 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -201,10 +189,6 @@ Your VLC-Qt version: %4
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Tano</source>
-        <translation type="obsolete">Tano</translation>
-    </message>
-    <message>
         <source>&amp;Recorder</source>
         <translation>&amp;रिकॉर्डर</translation>
     </message>
@@ -249,22 +233,12 @@ Your VLC-Qt version: %4
         <translation>ट्रे में छुपाएँ</translation>
     </message>
     <message>
-        <source>Do you want to exit Tano?
-This will stop recording in progress.</source>
-        <translation type="obsolete">क्या आप Tano से बाहर निकलना चाहते हैं?
-इस प्रगति में रिकॉर्डिंग बंद हो जाएगा.</translation>
-    </message>
-    <message>
         <source>Controls</source>
         <translation>नियंत्रण</translation>
     </message>
     <message>
         <source>Recorder Toolbar</source>
         <translation>Recorder Toolbar</translation>
-    </message>
-    <message>
-        <source>Tano Support</source>
-        <translation type="obsolete">Tano सहारा</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -291,10 +265,6 @@ This will stop recording in progress.</source>
     <message>
         <source>Back</source>
         <translation>वापस</translation>
-    </message>
-    <message>
-        <source>About Tano</source>
-        <translation type="obsolete">Tano के विषय में</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
@@ -430,32 +400,32 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Instant</source>
-        <translation type="unfinished">तत्काल</translation>
+        <translation>तुरंत</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Instant %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>An update is available!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -589,7 +559,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि:</translation>
     </message>
 </context>
 <context>
@@ -635,33 +605,33 @@ This will stop recording in progress.</source>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Remember password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -782,10 +752,6 @@ Please, try again.&lt;/b&gt;</source>
         <translation>जानकारी अपडेट करें</translation>
     </message>
     <message>
-        <source>%1 - Tano Editor</source>
-        <translation type="obsolete">%1 - Tano संपादक</translation>
-    </message>
-    <message>
         <source>Cannot read file %1:
 %2.</source>
         <translation>फ़ाइल नहीं पढ़ सकते %1:
@@ -855,23 +821,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Other</source>
-        <translation type="unfinished">अन्य</translation>
+        <translation>अन्य</translation>
     </message>
     <message>
         <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor</source>
-        <translation type="unfinished">संपादक</translation>
+        <translation>संपादक</translation>
     </message>
     <message>
         <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -902,16 +868,8 @@ You will lose any unsaved changes.</source>
         <translation>&lt;h3&gt;प्रारूप और निर्यात&lt;/h3&gt;</translation>
     </message>
     <message>
-        <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="obsolete">Tano संपादक अपनी ही संशोधित M3U तथा असंशोधित M3U, CSV और Sagem JS फ़ाइलों का समर्थन करता है.इन स्वरूपों के अलावा आप भी बचाने / निर्यात कर सकते हैं M3U को Udpxy URL और Tvheadend विन्यास फाइलों के साथ.</translation>
-    </message>
-    <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
         <translation>&lt;h3&gt;चैनलों के लिए स्कैन&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
-        <translation type="obsolete">You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
@@ -923,15 +881,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1000,7 +958,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished">प्लेलिस्ट</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1102,8 +1060,7 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">फ़ाइल नहीं पढ़ सकते %1:
-%2.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1129,10 +1086,6 @@ You will lose any unsaved changes.</source>
         <translation>भाषा</translation>
     </message>
     <message>
-        <source>Exported with Tano on %1.</source>
-        <translation type="obsolete">%1 पर Tano के साथ निर्यात करें.</translation>
-    </message>
-    <message>
         <source>XMLTV ID</source>
         <translation>XMLTV ID</translation>
     </message>
@@ -1146,7 +1099,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1413,10 +1366,6 @@ You will lose any unsaved changes.</source>
         <translation>XMLTV ID</translation>
     </message>
     <message>
-        <source>Try &apos;%1&apos; for more information.</source>
-        <translation type="obsolete">अधिक जानकारी के लिए &apos;%1&apos; की कोशिश करें.</translation>
-    </message>
-    <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
         <translation>&apos;%1&apos; के लिए अनिवार्य तर्क लापता.</translation>
     </message>
@@ -1466,299 +1415,299 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Error:</source>
-        <translation type="unfinished"></translation>
+        <translation>त्रुटि:</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Detective/Thriller</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Adventure/Western/War</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Science Fiction/Fantasy/Horror</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Comedy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Soap/Melodrama/Folkloric</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Romance</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रणय</translation>
     </message>
     <message>
         <source>Serious/Classical/Religious/Historical Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Adult Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>News/Current affairs</source>
-        <translation type="unfinished"></translation>
+        <translation>समाचार/वर्तमान मामले</translation>
     </message>
     <message>
         <source>News/Weather report</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>News magazine</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Documentary</source>
-        <translation type="unfinished"></translation>
+        <translation>वृत्तचित्र</translation>
     </message>
     <message>
         <source>Discussion/Interview/Debate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Show/Game show</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Game show/Quiz/Contest</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Variety show</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Talk show</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Sports</source>
-        <translation type="unfinished"></translation>
+        <translation>खेल-कूद</translation>
     </message>
     <message>
         <source>Special events</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Sports magazines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Football/Soccer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tennis/Squash</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Team sports</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Athletics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Motor sport</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Water sport</source>
-        <translation type="unfinished"></translation>
+        <translation>जलक्रीड़ा</translation>
     </message>
     <message>
         <source>Children&apos;s/Youth programmes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Pre-school children&apos;s programmes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Entertainment programmes for 6 to 14</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Entertainment programmes for 10 to 16</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Informational/Educational/School programmes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Cartoons/Puppets</source>
-        <translation type="unfinished"></translation>
+        <translation>हास्यचित्र/कठपुतली</translation>
     </message>
     <message>
         <source>Music/Ballet/Dance</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Rock/Pop</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Serious music/Classical music</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Folk/Traditional music</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Jazz</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Musical/Opera</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Arts/Culture</source>
-        <translation type="unfinished"></translation>
+        <translation>कला/संस्कृति</translation>
     </message>
     <message>
         <source>Performing arts</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रदर्शन कला</translation>
     </message>
     <message>
         <source>Fine arts</source>
-        <translation type="unfinished"></translation>
+        <translation>ललित कला</translation>
     </message>
     <message>
         <source>Religion</source>
-        <translation type="unfinished"></translation>
+        <translation>धर्म</translation>
     </message>
     <message>
         <source>Popular culture/Traditional arts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Literature</source>
-        <translation type="unfinished"></translation>
+        <translation>साहित्य</translation>
     </message>
     <message>
         <source>Film/Cinema</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Experimental film/video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Broadcasting/Press</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Social/Political issues/Economics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Magazines/Reports/Documentary</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Economics/Social advisory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Remarkable people</source>
-        <translation type="unfinished"></translation>
+        <translation>उल्लेखनीय व्यक्ति</translation>
     </message>
     <message>
         <source>Education/Science/Factual topics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Nature/Animals/Environment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Technology/Natural sciences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Medicine/Physiology/Psychology</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Foreign countries/Expeditions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Social/Spiritual sciences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Further education</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>भाषाएँ</translation>
     </message>
     <message>
         <source>Leisure hobbies</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tourism/Travel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Handicraft</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Motoring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Fitness and Health</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Cooking</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Advertisement/Shopping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Gardening</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished">अधिक जानकारी के लिए &apos;%1&apos; की कोशिश करें. {1 %2&apos;?}</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2249,11 +2198,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2283,10 +2232,6 @@ This operation is ireversible.</source>
         <translation>पिछले चैनल को ऑटोप्ले करो</translation>
     </message>
     <message>
-        <source>You are using Tano version:</source>
-        <translation type="obsolete">आप Tano संस्करण का उपयोग कर रहे हैं:</translation>
-    </message>
-    <message>
         <source>Defaults</source>
         <translation>चूक</translation>
     </message>
@@ -2300,7 +2245,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2368,20 +2313,8 @@ This operation is ireversible.</source>
 <context>
     <name>SettingsSchedule</name>
     <message>
-        <source>Select desired XMLTV grabber from the list below:</source>
-        <translation type="obsolete">नीचे दी गई सूची में से इच्छित XMLTV धरनेवाला का चयन करें:</translation>
-    </message>
-    <message>
         <source>XMLTV settings</source>
         <translation>XMLTV सेटिंग्स</translation>
-    </message>
-    <message>
-        <source>XMLTV file location:</source>
-        <translation type="obsolete">XMLTV फ़ाइल के स्थान:</translation>
-    </message>
-    <message>
-        <source>Refresh XMLTV</source>
-        <translation type="obsolete">XMLTV को ताज़ा करें</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
@@ -2392,36 +2325,12 @@ This operation is ireversible.</source>
         <translation>फ़ाइल डाउनलोड करें</translation>
     </message>
     <message>
-        <source>Run grabber</source>
-        <translation type="obsolete">Run grabber</translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation type="obsolete">संजाल</translation>
-    </message>
-    <message>
-        <source>XMLTV source url:</source>
-        <translation type="obsolete">XMLTV स्रोत url:</translation>
-    </message>
-    <message>
-        <source>Grabber</source>
-        <translation type="obsolete">धरनेवाला</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="obsolete">&lt;i&gt;सभी XMLTV सेटिंग्स को पुनः आरंभ करने की आवश्यकता है.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
-        <translation type="obsolete">&lt;i&gt; चल रहा धरनेवाला अभी तक उपलब्ध नहीं है.&lt;/i&gt;</translation>
-    </message>
-    <message>
         <source>Local file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2515,10 +2424,6 @@ This operation is ireversible.</source>
         <translation>चिह्न प्रसंग</translation>
     </message>
     <message>
-        <source>Tano default</source>
-        <translation type="obsolete">Tano डिफ़ॉल्ट</translation>
-    </message>
-    <message>
         <source>Desktop theme</source>
         <translation>डेस्कटॉप का विषय</translation>
     </message>
@@ -2528,7 +2433,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">डिफ़ॉल्ट</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2613,26 +2518,16 @@ Your changes will not be saved.</source>
         <translation>रिकॉर्डिंग शुरू होने की तिथि आज से पहले है.
 आपके परिवर्तनों को सहेजा नहीं किया जाएगा.</translation>
     </message>
-    <message>
-        <source>The recording is overlaping with others.
-Your changes will not be saved.</source>
-        <translation type="obsolete">रिकॉर्डिंग दूसरों के साथ अतिव्यापी है.
-आपके परिवर्तनों को सहेजा नहीं किया जाएगा.</translation>
-    </message>
 </context>
 <context>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="unfinished">में</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
-    <message>
-        <source>Tano</source>
-        <translation type="obsolete">Tano</translation>
-    </message>
     <message>
         <source>Playing:</source>
         <translation>बजाना:</translation>
@@ -2646,34 +2541,18 @@ Your changes will not be saved.</source>
         <translation>रिकॉर्डर</translation>
     </message>
     <message>
-        <source>Tano stopped recording</source>
-        <translation type="obsolete">Tano रिकॉर्डिंग बंद कर दिया है&gt;</translation>
-    </message>
-    <message>
-        <source>Tano is recording %1 to %2 
-Stop manually!</source>
-        <translation type="obsolete">Tano %1 से %2 रिकॉर्डिंग कर रहा है.
-मैन्युअल रूप से बंद करो!</translation>
-    </message>
-    <message>
-        <source>Tano is recording %1 to %2 
-End time: %3</source>
-        <translation type="obsolete">Tano %1 से %2 रिकॉर्डिंग कर रहा है.
-अंत समय: %3 है</translation>
-    </message>
-    <message>
         <source>Recording stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2683,24 +2562,12 @@ End time: %3</source>
         <translation>अद्यतन जानकारी</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</source>
-        <translation type="obsolete">&lt;h3&gt; आप Tano के नवीनतम संस्करण का उपयोग कर रहे हैं &lt;/ h3&gt;</translation>
-    </message>
-    <message>
         <source>Current version:</source>
         <translation>वर्तमान संस्करण:</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</source>
-        <translation type="obsolete">आप &lt;h3&gt; Tano के विकास संस्करण का उपयोग कर रहे हैं &lt;/ h3&gt;!</translation>
-    </message>
-    <message>
         <source>Stable version:</source>
         <translation>स्थिर संस्करण:</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Tano के आपके संस्करण को अद्यतन करना आवश्यक हैं!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Date released:</source>
@@ -2716,15 +2583,15 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

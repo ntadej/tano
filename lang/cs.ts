@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -36,25 +34,15 @@
         <translation>&lt;b&gt;Používáte VideoLAN VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Your Tano version: %1
-Your Qt runtime version: %2
-Your VLC-Qt version: %3
-</source>
-        <translation type="obsolete">Verze Tana: %1
-Běhová verze Qt: %2
-Verze VLC-Qt: %3
-</translation>
-    </message>
-    <message>
         <source>Your %1 version: %2
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>This application is based on Tano.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -202,10 +190,6 @@ Your VLC-Qt version: %4
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Tano</source>
-        <translation type="obsolete">Tano</translation>
-    </message>
-    <message>
         <source>&amp;Recorder</source>
         <translation>Nah&amp;rávání</translation>
     </message>
@@ -250,22 +234,12 @@ Your VLC-Qt version: %4
         <translation>Skrýt v oznamovací oblasti panelu</translation>
     </message>
     <message>
-        <source>Do you want to exit Tano?
-This will stop recording in progress.</source>
-        <translation type="obsolete">Chcete ukončit program Tano?
-Tím se zastaví i právě probíhající nahrávání.</translation>
-    </message>
-    <message>
         <source>Controls</source>
         <translation>Ovládání</translation>
     </message>
     <message>
         <source>Recorder Toolbar</source>
         <translation>Nástrojový pruh pro nahrávání</translation>
-    </message>
-    <message>
-        <source>Tano Support</source>
-        <translation type="obsolete">Podpora pro Tano</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -292,10 +266,6 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <source>Back</source>
         <translation>Zpět</translation>
-    </message>
-    <message>
-        <source>About Tano</source>
-        <translation type="obsolete">O programu Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
@@ -439,24 +409,24 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">O programu</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Instant %1</source>
-        <translation type="unfinished">Okamžitý %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>An update is available!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -636,33 +606,33 @@ This will stop recording in progress.</source>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Remember password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -783,10 +753,6 @@ Please, try again.&lt;/b&gt;</source>
         <translation>Informace o aktualizacích</translation>
     </message>
     <message>
-        <source>%1 - Tano Editor</source>
-        <translation type="obsolete">%1 - Editor Tano</translation>
-    </message>
-    <message>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Nelze číst ze souboru %1:
@@ -872,7 +838,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -902,16 +868,8 @@ Ztratíte všechny neuložené změny.</translation>
         <translation>&lt;h3&gt;Formáty a vyvedení&lt;/h3&gt;</translation>
     </message>
     <message>
-        <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="obsolete">Editor Tano podporuje své vlastní upravené soubory M3U, CSV a Sagem JS. Kromě těchto formátů můžete také ukládat/vyvádět do M3U s adresami Udpxy a se soubory nastavení Tvheaden.</translation>
-    </message>
-    <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Hledání programů&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
-        <translation type="obsolete">Nové programy můžete hledat pomocí vestavěného prohledávače programů. Nastavte, prosím, platný rozsah IP (např. 232.4.1) a přípojku (např. 5000). Tano prohledá všech 255 IP v tomto rozsahu. Program je přidán, je-li zjištěn před vypršením času.</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
@@ -922,20 +880,16 @@ Ztratíte všechny neuložené změny.</translation>
         <translation>Je třeba použít číslo programu. Všechny ostatní hodnoty jsou změněny automaticky. Jakýkoli program můžete nastavit jako rádio. Skupiny lze oddělit čárkou (,).</translation>
     </message>
     <message>
-        <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="obsolete">Tano se automaticky pokusí o přiřazení nynějších ID XMLTV k programům v seznamu programů. Stále ještě může být potřeba provést kontrolu kvůli možným chybám.</translation>
-    </message>
-    <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1004,7 +958,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished">Seznam programů</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1106,8 +1060,7 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Nelze číst ze souboru %1:
-%2.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1133,10 +1086,6 @@ Ztratíte všechny neuložené změny.</translation>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <source>Exported with Tano on %1.</source>
-        <translation type="obsolete">Vyvedeno programem Tano na %1.</translation>
-    </message>
-    <message>
         <source>XMLTV ID</source>
         <translation>ID XMLTV</translation>
     </message>
@@ -1150,7 +1099,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1417,10 +1366,6 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>XMLTV ID</source>
         <translation>ID XMLTV</translation>
-    </message>
-    <message>
-        <source>Try &apos;%1&apos; for more information.</source>
-        <translation type="obsolete">Zkuste &apos;%1&apos; pro více informací.</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
@@ -1753,19 +1698,19 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished">Zkuste &apos;%1&apos; pro více informací. {1 %2&apos;?}</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1798,10 +1743,6 @@ Již jste jej přesunul nebo smazal?</translation>
     <message>
         <source>Recordings and timers</source>
         <translation>Nahrávky a časovače</translation>
-    </message>
-    <message>
-        <source>Instant %1</source>
-        <translation type="obsolete">Okamžitý %1</translation>
     </message>
 </context>
 <context>
@@ -2293,10 +2234,6 @@ Tuto operaci nelze vrátit zpět.</translation>
         <translation>Automatické přehrávání posledního programu</translation>
     </message>
     <message>
-        <source>You are using Tano version:</source>
-        <translation type="obsolete">Používáte verzi programu Tano:</translation>
-    </message>
-    <message>
         <source>Defaults</source>
         <translation>Výchozí</translation>
     </message>
@@ -2310,7 +2247,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2378,20 +2315,8 @@ Tuto operaci nelze vrátit zpět.</translation>
 <context>
     <name>SettingsSchedule</name>
     <message>
-        <source>Select desired XMLTV grabber from the list below:</source>
-        <translation type="obsolete">Vyberte požadovaný zachytávač XMLTV ze seznamu dole:</translation>
-    </message>
-    <message>
         <source>XMLTV settings</source>
         <translation>Nastavení XMLTV</translation>
-    </message>
-    <message>
-        <source>XMLTV file location:</source>
-        <translation type="obsolete">Umístění souboru XMLTV:</translation>
-    </message>
-    <message>
-        <source>Refresh XMLTV</source>
-        <translation type="obsolete">Obnovit XMLTV</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
@@ -2402,36 +2327,12 @@ Tuto operaci nelze vrátit zpět.</translation>
         <translation>Stáhnout soubor</translation>
     </message>
     <message>
-        <source>Run grabber</source>
-        <translation type="obsolete">Spustit zachytávač</translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation type="obsolete">Síť</translation>
-    </message>
-    <message>
-        <source>XMLTV source url:</source>
-        <translation type="obsolete">Adresa zdroje XMLTV:</translation>
-    </message>
-    <message>
-        <source>Grabber</source>
-        <translation type="obsolete">Zachytávač</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="obsolete">&lt;i&gt;Všechna nastavení pro XMLTV vyžadují opětovné spuštění.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
-        <translation type="obsolete">&lt;i&gt;Běžící zachytávání ještě není dostupné.&lt;/i&gt;</translation>
-    </message>
-    <message>
         <source>Local file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2525,10 +2426,6 @@ Tuto operaci nelze vrátit zpět.</translation>
         <translation>Podoba ikon</translation>
     </message>
     <message>
-        <source>Tano default</source>
-        <translation type="obsolete">Výchozí Tano</translation>
-    </message>
-    <message>
         <source>Desktop theme</source>
         <translation>Vzhled plochy</translation>
     </message>
@@ -2538,7 +2435,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Výchozí</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2623,26 +2520,16 @@ Your changes will not be saved.</source>
         <translation>Počáteční datum nahrávání je před dneškem.
 Vaše změny nebudou uloženy.</translation>
     </message>
-    <message>
-        <source>The recording is overlaping with others.
-Your changes will not be saved.</source>
-        <translation type="obsolete">Nahrávání se překrývá s jiným.
-Vaše změny nebudou uloženy.</translation>
-    </message>
 </context>
 <context>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="unfinished">v</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
-    <message>
-        <source>Tano</source>
-        <translation type="obsolete">Tano</translation>
-    </message>
     <message>
         <source>Playing:</source>
         <translation>Přehrává se:</translation>
@@ -2656,36 +2543,18 @@ Vaše změny nebudou uloženy.</translation>
         <translation>Nahrávač</translation>
     </message>
     <message>
-        <source>Tano stopped recording</source>
-        <translation type="obsolete">Tano zastavilo nahrávání</translation>
-    </message>
-    <message>
-        <source>Tano is recording %1 to %2 
-Stop manually!</source>
-        <translation type="obsolete">Tano nahrává %1 do
-%2
-Zastavit ručně!</translation>
-    </message>
-    <message>
-        <source>Tano is recording %1 to %2 
-End time: %3</source>
-        <translation type="obsolete">Tano nahrává %1 do
-%2
-Konečný čas: %3</translation>
-    </message>
-    <message>
         <source>Recording stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2695,24 +2564,12 @@ End time: %3</source>
         <translation>Informace o aktualizacích</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Používáte poslední verzi programu Tano!&lt;/h3&gt;</translation>
-    </message>
-    <message>
         <source>Current version:</source>
         <translation>Současná verze:</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Používáte vývojářskou verzi programu Tano!&lt;/h3&gt;</translation>
-    </message>
-    <message>
         <source>Stable version:</source>
         <translation>Stálá verze:</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Vaši verzi programu Tano je potřeba zaktualizovat!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Date released:</source>
@@ -2728,15 +2585,15 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
