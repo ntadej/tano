@@ -26,6 +26,7 @@
 
 // Settings
 #define BRANDING @BRANDING_SET@
+#define LOGGING @LOGGING_SET@
 #define DATA_DIR "@DEFAULT_DATA_DIR@"
 
 #if BRANDING
