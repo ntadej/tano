@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -18,13 +18,15 @@
 
 #include <windows.h>
 
+IDI_ICON1		ICON		DISCARDABLE	"@CMAKE_SOURCE_DIR@/src/platform/windows/tano.ico"
+
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,2,0,0
- PRODUCTVERSION 1,2,0,0
+ FILEVERSION @TANO_VERSION_MAJOR@,@TANO_VERSION_MINOR@,@TANO_VERSION_BUGFIX@,0
+ PRODUCTVERSION @TANO_VERSION_MAJOR@,@TANO_VERSION_MINOR@,@TANO_VERSION_BUGFIX@,0
  FILEFLAGS 0x0L
  FILEFLAGSMASK 0x3fL
  FILEOS 0x00040004L
- FILETYPE 0x2L
+ FILETYPE 0x1L
  FILESUBTYPE 0x0L
 BEGIN
     BLOCK "StringFileInfo"
@@ -33,12 +35,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Tadej Novak"
             VALUE "FileDescription", "An open IP TV player"
-            VALUE "FileVersion", "1.2.0.0"
-            VALUE "LegalCopyright", "Copyright (C) 2012 Tadej Novak."
-            VALUE "InternalName", "tanowidgets"
-            VALUE "OriginalFilename", "tanowidgets.dll"
-            VALUE "ProductName", "Tano Player"
-            VALUE "ProductVersion", "1.2.0.0"
+            VALUE "FileVersion", "@TANO_VERSION@"
+            VALUE "LegalCopyright", "Copyright (C) 2013 Tadej Novak."
+            VALUE "InternalName", "tano"
+            VALUE "OriginalFilename", "tano.exe"
+            VALUE "ProductName", "Tano"
+            VALUE "ProductVersion", "@TANO_VERSION@"
         END
     END
     BLOCK "VarFileInfo"

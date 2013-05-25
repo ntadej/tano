@@ -16,6 +16,20 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
+IF(MINGW OR MSVC)
+    IF(BRANDING)
+        CONFIGURE_FILE(
+            ${CMAKE_SOURCE_DIR}/branding/windows/tano.rc.in
+            ${CMAKE_BINARY_DIR}/src/platform/windows/tano.rc
+        )
+    ELSE(BRANDING)
+        CONFIGURE_FILE(
+            ${CMAKE_SOURCE_DIR}/src/platform/windows/tano.rc.in
+            ${CMAKE_BINARY_DIR}/src/platform/windows/tano.rc
+        )
+    ENDIF(BRANDING)
+ENDIF(MINGW OR MSVC)
+
 SET(Tano_Srcs
     main.cpp
 )
@@ -45,15 +59,15 @@ IF(MINGW)
     ADD_CUSTOM_COMMAND(
         OUTPUT ${CMAKE_BINARY_DIR}/src/platform/windows/tano.obj
         COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_SOURCE_DIR}/src/platform/windows/tano.rc
+        -i ${CMAKE_BINARY_DIR}/src/platform/windows/tano.rc
         -o ${CMAKE_BINARY_DIR}/src/platform/windows/tano.obj
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src/platform/windows"
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/platform/windows"
     )
     SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano.obj)
 ENDIF(MINGW)
 
 IF(MSVC)
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_SOURCE_DIR}/src/platform/windows/tano.rc)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano.rc)
 ENDIF(MSVC)
 
 # This line tells cmake to create the Tano program.

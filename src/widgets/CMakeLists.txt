@@ -28,6 +28,13 @@ ELSE(STATIC)
     ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 ENDIF(STATIC)
 
+IF(MINGW OR MSVC)
+    CONFIGURE_FILE(
+        ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-widgets.rc.in
+        ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.rc
+    )
+ENDIF(MINGW OR MSVC)
+
 
 ###################
 # List of sources #
@@ -218,15 +225,15 @@ IF(MINGW)
     ADD_CUSTOM_COMMAND(
         OUTPUT ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.obj
         COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-widgets.rc
+        -i ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.rc
         -o ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.obj
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src/platform/windows"
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/platform/windows"
     )
     SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.obj)
 ENDIF(MINGW)
 
 IF(MSVC)
-    SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-widgets.rc)
+    SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.rc)
 ENDIF(MSVC)
 
 # This line tells cmake to create the Tano Widgets library.

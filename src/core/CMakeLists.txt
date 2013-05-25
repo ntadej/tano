@@ -28,6 +28,13 @@ ELSE(STATIC)
     ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 ENDIF(STATIC)
 
+IF(MINGW OR MSVC)
+    CONFIGURE_FILE(
+        ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-core.rc.in
+        ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.rc
+    )
+ENDIF(MINGW OR MSVC)
+
 
 ###################
 # List of sources #
@@ -179,15 +186,15 @@ IF(MINGW)
     ADD_CUSTOM_COMMAND(
         OUTPUT ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.obj
         COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-core.rc
+        -i ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.rc
         -o ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.obj
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src/platform/windows"
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/platform/windows"
     )
     SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.obj)
 ENDIF(MINGW)
 
 IF(MSVC)
-    SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-core.rc)
+    SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.rc)
 ENDIF(MSVC)
 
 # This line tells cmake to create the Tano Core library.

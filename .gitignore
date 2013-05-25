@@ -23,5 +23,6 @@ branding/logo
 branding/SettingsDefaults.cpp
 branding/SettingsShortcutsDefaults.cpp
 branding/VERSION
+branding/windows
 
 tt*
