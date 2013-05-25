@@ -40,9 +40,22 @@
 Your Qt runtime version: %2
 Your VLC-Qt version: %3
 </source>
-        <translation>Vaša različica programa Tano: %1
+        <translation type="obsolete">Vaša različica programa Tano: %1
 Vaša različica Qt: %2
 Vaša različica knjižnice VLC-Qt: %3</translation>
+    </message>
+    <message>
+        <source>Your %1 version: %2
+Your Qt runtime version: %3
+Your VLC-Qt version: %4
+</source>
+        <translation>Vaša različica programa %1: %2
+Vaša različica Qt: %3
+Vaša različica knjižnice VLC-Qt: %4</translation>
+    </message>
+    <message>
+        <source>This application is based on Tano.</source>
+        <translation>Ta aplikacija temelji na programu Tano.</translation>
     </message>
 </context>
 <context>
@@ -191,7 +204,7 @@ Vaša različica knjižnice VLC-Qt: %3</translation>
     <name>MainWindow</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>&amp;Recorder</source>
@@ -240,7 +253,7 @@ Vaša različica knjižnice VLC-Qt: %3</translation>
     <message>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
-        <translation>Ali želite zapreti Tano?
+        <translation type="obsolete">Ali želite zapreti Tano?
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
@@ -253,7 +266,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Tano Support</source>
-        <translation>Tano Podpora</translation>
+        <translation type="obsolete">Tano Podpora</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -283,7 +296,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>About Tano</source>
-        <translation>O programu Tano</translation>
+        <translation type="obsolete">O programu Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
@@ -424,6 +437,28 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Instant</source>
         <translation>Instantno</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>O programu</translation>
+    </message>
+    <message>
+        <source>Logout and Exit</source>
+        <translation>Odjava in izhod</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to exit?
+This will stop recording in progress.</source>
+        <translation>Ste prepričani, da želite zapreti aplikacijo?
+To bo ustavilo trenutno snemanje.</translation>
+    </message>
+    <message>
+        <source>Instant %1</source>
+        <translation>Instantno %1</translation>
+    </message>
+    <message>
+        <source>An update is available!</source>
+        <translation>Na voljo je posodobitev!</translation>
     </message>
 </context>
 <context>
@@ -600,6 +635,41 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
 </context>
 <context>
+    <name>PasswordDialog</name>
+    <message>
+        <source>Login required</source>
+        <translation>Obvezna prijava</translation>
+    </message>
+    <message>
+        <source>Username:</source>
+        <translation>Uporabniško ime:</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation>Geslo:</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Za uporabo aplikacije se morate prijaviti.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Remember password</source>
+        <translation>Zapomni si geslo</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Your username or password is incorrect.
+Please, try again.&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Vaše uporabniško ime ali geslo ni pravilno.
+Poskusite znova.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;An unknown error has occured.
+Please, try again.&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Zgodila se je neznana napaka.
+Poskusite znova.&lt;/b&gt;</translation>
+    </message>
+</context>
+<context>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Play</source>
@@ -718,7 +788,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation>%1 - Tano Urejevalnik</translation>
+        <translation type="obsolete">%1 - Tano Urejevalnik</translation>
     </message>
     <message>
         <source>Cannot read file %1:
@@ -804,6 +874,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Please wait for XMLTV file to parse.</source>
         <translation>Počakajte, da se datoteka XMLTV prebere do konca.</translation>
     </message>
+    <message>
+        <source>%1 - %2 Editor</source>
+        <translation>%1 - %2 Urejevalnik</translation>
+    </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
@@ -833,7 +907,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation>Tano Urejevalnik podpira svoj lasten, prilagojen format M3U, poleg tega pa še običajen M3U, CSV in datoteke Sagem JS. Seznam programov lahko shranite/izvozite še kot M3U z naslovi Udpxy in kot nastavitvene datoteke za Tvheadend.</translation>
+        <translation type="obsolete">Tano Urejevalnik podpira svoj lasten, prilagojen format M3U, poleg tega pa še običajen M3U, CSV in datoteke Sagem JS. Seznam programov lahko shranite/izvozite še kot M3U z naslovi Udpxy in kot nastavitvene datoteke za Tvheadend.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
@@ -841,7 +915,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
-        <translation>Nove programe lahko poiščete z vgrajenim iskalnikom programov. Nastavite veljavno območje IP (npr. 232.4.1) in vrata (npr. 5000). Tano bo samodejno preiskal vseh 255 IP-jev v tem območju. Program bo dodan, če bo zaznan v nastavljenem času.</translation>
+        <translation type="obsolete">Nove programe lahko poiščete z vgrajenim iskalnikom programov. Nastavite veljavno območje IP (npr. 232.4.1) in vrata (npr. 5000). Tano bo samodejno preiskal vseh 255 IP-jev v tem območju. Program bo dodan, če bo zaznan v nastavljenem času.</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
@@ -853,7 +927,19 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation>Tano bo samodejno poskušal povezati programe z XMLTV. Še vedno pa priporočamo, da preverite za možne napake.</translation>
+        <translation type="obsolete">Tano bo samodejno poskušal povezati programe z XMLTV. Še vedno pa priporočamo, da preverite za možne napake.</translation>
+    </message>
+    <message>
+        <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
+        <translation>Urejevalnik bo samodejno poskušal povezati programe z XMLTV. Še vedno pa priporočamo, da preverite za možne napake.</translation>
+    </message>
+    <message>
+        <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
+        <translation>Urejevalnik podpira svoj lasten, prilagojen format M3U, poleg tega pa še običajen M3U, CSV in datoteke Sagem JS. Seznam programov lahko shranite/izvozite še kot M3U z naslovi Udpxy in kot nastavitvene datoteke za Tvheadend.</translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
+        <translation>Nove programe lahko poiščete z vgrajenim iskalnikom programov. Nastavite veljavno območje IP (npr. 232.4.1) in vrata (npr. 5000). Vseh 255 IP-jev v tem območju bo samodejno preiskanih. Program bo dodan, če bo zaznan v nastavljenem času.</translation>
     </message>
 </context>
 <context>
@@ -922,7 +1008,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished">Programi</translation>
+        <translation>Programi</translation>
     </message>
 </context>
 <context>
@@ -1020,6 +1106,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
 </context>
 <context>
+    <name>PlaylistUpdate</name>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation>Ne morem prebrati %1:
+%2.</translation>
+    </message>
+</context>
+<context>
     <name>Print</name>
     <message>
         <source>#</source>
@@ -1043,7 +1138,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
-        <translation>Izpisano s programom Tano dne %1.</translation>
+        <translation type="obsolete">Izpisano s programom Tano dne %1.</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
@@ -1056,6 +1151,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Logo</source>
         <translation>Logo</translation>
+    </message>
+    <message>
+        <source>Exported with %1 on %2.</source>
+        <translation>Izpisano s programom %1 dne %2.</translation>
     </message>
 </context>
 <context>
@@ -1325,7 +1424,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Try &apos;%1&apos; for more information.</source>
-        <translation>Poskusite &apos;%1&apos; za več informacij.</translation>
+        <translation type="obsolete">Poskusite &apos;%1&apos; za več informacij.</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
@@ -1655,6 +1754,22 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <source>Gardening</source>
         <translation>Vrtnarjenje</translation>
     </message>
+    <message>
+        <source>Try &apos;%1 %2&apos; for more information.</source>
+        <translation>Poskusite &apos;%1 %2&apos; za več informacij.</translation>
+    </message>
+    <message>
+        <source>GoTV channel list</source>
+        <translation>GoTV seznam programov</translation>
+    </message>
+    <message>
+        <source>The file is not a GoTV channel list file.</source>
+        <translation>Datoteka ni veljaven GoTV seznam programov.</translation>
+    </message>
+    <message>
+        <source>Unknown title</source>
+        <translation>Neznan naslov</translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1689,7 +1804,7 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
     </message>
     <message>
         <source>Instant %1</source>
-        <translation>Instantno %1</translation>
+        <translation type="obsolete">Instantno %1</translation>
     </message>
 </context>
 <context>
@@ -2182,7 +2297,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation>Uporabljate Tano različice:</translation>
+        <translation type="obsolete">Uporabljate Tano različice:</translation>
     </message>
     <message>
         <source>Defaults</source>
@@ -2195,6 +2310,10 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
         <translation>&lt;i&gt;To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo biti potrjene, preden bodo uveljavljene.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>You are using %1 version:</source>
+        <translation>Uporabljate %1 različice:</translation>
     </message>
 </context>
 <context>
@@ -2263,7 +2382,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     <name>SettingsSchedule</name>
     <message>
         <source>Select desired XMLTV grabber from the list below:</source>
-        <translation>Izberite željen odjemalec XMLTV s spodnjega seznama:</translation>
+        <translation type="obsolete">Izberite željen odjemalec XMLTV s spodnjega seznama:</translation>
     </message>
     <message>
         <source>XMLTV settings</source>
@@ -2271,11 +2390,11 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>XMLTV file location:</source>
-        <translation>Lokacija datoteke XMLTV:</translation>
+        <translation type="obsolete">Lokacija datoteke XMLTV:</translation>
     </message>
     <message>
         <source>Refresh XMLTV</source>
-        <translation>Osveži XMLTV</translation>
+        <translation type="obsolete">Osveži XMLTV</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
@@ -2287,27 +2406,35 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Run grabber</source>
-        <translation>Zaženi grabber</translation>
+        <translation type="obsolete">Zaženi grabber</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>Omrežje</translation>
+        <translation type="obsolete">Omrežje</translation>
     </message>
     <message>
         <source>XMLTV source url:</source>
-        <translation>XMLTV vir:</translation>
+        <translation type="obsolete">XMLTV vir:</translation>
     </message>
     <message>
         <source>Grabber</source>
-        <translation>Grabber</translation>
+        <translation type="obsolete">Grabber</translation>
     </message>
     <message>
         <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Vse nastavitve XMLTV zahtevajo ponovni zagon.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Vse nastavitve XMLTV zahtevajo ponovni zagon.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Poganjanje grabberjev še ni na voljo.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Poganjanje grabberjev še ni na voljo.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Local file</source>
+        <translation>Krajevna datoteka</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
+        <translation>&lt;i&gt;Nastavitve XMLTV zahtevajo ponovni zagon.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
@@ -2402,7 +2529,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Tano default</source>
-        <translation>Privzeta Tano</translation>
+        <translation type="obsolete">Privzeta Tano</translation>
     </message>
     <message>
         <source>Desktop theme</source>
@@ -2411,6 +2538,10 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Ta možnost zahteva ponovni zagon.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Privzeto</translation>
     </message>
 </context>
 <context>
@@ -2498,15 +2629,22 @@ Vaše nastavitve ne bodo shranjene.</translation>
     <message>
         <source>The recording is overlaping with others.
 Your changes will not be saved.</source>
-        <translation>Snemanje se prekriva z drugimi.
+        <translation type="obsolete">Snemanje se prekriva z drugimi.
 Vaše nastavitve ne bodo shranjene.</translation>
+    </message>
+</context>
+<context>
+    <name>TimersModel</name>
+    <message>
+        <source>at</source>
+        <translation>ob</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Playing:</source>
@@ -2522,18 +2660,34 @@ Vaše nastavitve ne bodo shranjene.</translation>
     </message>
     <message>
         <source>Tano stopped recording</source>
-        <translation>Tano je končal s snemanjem</translation>
+        <translation type="obsolete">Tano je končal s snemanjem</translation>
     </message>
     <message>
         <source>Tano is recording %1 to %2 
 Stop manually!</source>
-        <translation>Tano snema %1 v %2 
+        <translation type="obsolete">Tano snema %1 v %2 
 Ročno ustavite!</translation>
     </message>
     <message>
         <source>Tano is recording %1 to %2 
 End time: %3</source>
-        <translation>Tano snema %1 v %2 
+        <translation type="obsolete">Tano snema %1 v %2 
+Končni čas: %3</translation>
+    </message>
+    <message>
+        <source>Recording stopped.</source>
+        <translation>Snemanje zaključeno.</translation>
+    </message>
+    <message>
+        <source>Recording %1 to %2 
+Stop manually!</source>
+        <translation>Snemanje %1 v %2 
+Ročno ustavite!</translation>
+    </message>
+    <message>
+        <source>Recording %1 to %2 
+End time: %3</source>
+        <translation>Snemanje %1 v %2 
 Končni čas: %3</translation>
     </message>
 </context>
@@ -2545,7 +2699,7 @@ Končni čas: %3</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Uporabljate zadnjo različico programa Tano!&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Uporabljate zadnjo različico programa Tano!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Current version:</source>
@@ -2553,7 +2707,7 @@ Končni čas: %3</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Uporabljate razvojno različico programa Tano!&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Uporabljate razvojno različico programa Tano!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Stable version:</source>
@@ -2561,7 +2715,7 @@ Končni čas: %3</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Vaša različica programa Tano mora biti posodobljena!&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Vaša različica programa Tano mora biti posodobljena!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Date released:</source>
@@ -2574,6 +2728,18 @@ Končni čas: %3</translation>
     <message>
         <source>Download now!</source>
         <translation>Prenesi zdaj!</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Uporabljate zadnjo različico!&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Uporabljate razvojno različico!&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Aplikacija mora biti posodobljena!&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>

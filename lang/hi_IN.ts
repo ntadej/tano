@@ -39,10 +39,21 @@
 Your Qt runtime version: %2
 Your VLC-Qt version: %3
 </source>
-        <translation>आपका Tano संस्करण: %1
+        <translation type="obsolete">आपका Tano संस्करण: %1
 आपका Qt क्रम संस्करण: %2
 आपका VLC-Qt संस्करण: %3
 </translation>
+    </message>
+    <message>
+        <source>Your %1 version: %2
+Your Qt runtime version: %3
+Your VLC-Qt version: %4
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This application is based on Tano.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -191,7 +202,7 @@ Your VLC-Qt version: %3
     <name>MainWindow</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>&amp;Recorder</source>
@@ -240,7 +251,7 @@ Your VLC-Qt version: %3
     <message>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
-        <translation>क्या आप Tano से बाहर निकलना चाहते हैं?
+        <translation type="obsolete">क्या आप Tano से बाहर निकलना चाहते हैं?
 इस प्रगति में रिकॉर्डिंग बंद हो जाएगा.</translation>
     </message>
     <message>
@@ -253,7 +264,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Tano Support</source>
-        <translation>Tano सहारा</translation>
+        <translation type="obsolete">Tano सहारा</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -283,7 +294,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>About Tano</source>
-        <translation>Tano के विषय में</translation>
+        <translation type="obsolete">Tano के विषय में</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
@@ -424,6 +435,27 @@ This will stop recording in progress.</source>
     <message>
         <source>Instant</source>
         <translation type="unfinished">तत्काल</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logout and Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to exit?
+This will stop recording in progress.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instant %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An update is available!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -600,6 +632,39 @@ This will stop recording in progress.</source>
     </message>
 </context>
 <context>
+    <name>PasswordDialog</name>
+    <message>
+        <source>Login required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Your username or password is incorrect.
+Please, try again.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;An unknown error has occured.
+Please, try again.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Play</source>
@@ -718,7 +783,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation>%1 - Tano संपादक</translation>
+        <translation type="obsolete">%1 - Tano संपादक</translation>
     </message>
     <message>
         <source>Cannot read file %1:
@@ -804,6 +869,10 @@ You will lose any unsaved changes.</source>
         <source>Please wait for XMLTV file to parse.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1 - %2 Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
@@ -834,7 +903,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation>Tano संपादक अपनी ही संशोधित M3U तथा असंशोधित M3U, CSV और Sagem JS फ़ाइलों का समर्थन करता है.इन स्वरूपों के अलावा आप भी बचाने / निर्यात कर सकते हैं M3U को Udpxy URL और Tvheadend विन्यास फाइलों के साथ.</translation>
+        <translation type="obsolete">Tano संपादक अपनी ही संशोधित M3U तथा असंशोधित M3U, CSV और Sagem JS फ़ाइलों का समर्थन करता है.इन स्वरूपों के अलावा आप भी बचाने / निर्यात कर सकते हैं M3U को Udpxy URL और Tvheadend विन्यास फाइलों के साथ.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
@@ -842,7 +911,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
-        <translation>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</translation>
+        <translation type="obsolete">You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
@@ -853,7 +922,15 @@ You will lose any unsaved changes.</source>
         <translation>एक चैनल की संख्या को लागू किया जाना चाहिए. अन्य सभी मान स्वचालित रूप बदल दिए जाते हैं. आप रेडियो के रूप में किसी भी चैनल को निर्धारित कर सकते हैं. श्रेणियाँ अल्पविराम (,) द्वारा अलग हो सकते हैं है.</translation>
     </message>
     <message>
-        <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
+        <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1021,6 +1098,15 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>PlaylistUpdate</name>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">फ़ाइल नहीं पढ़ सकते %1:
+%2.</translation>
+    </message>
+</context>
+<context>
     <name>Print</name>
     <message>
         <source>#</source>
@@ -1044,7 +1130,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
-        <translation>%1 पर Tano के साथ निर्यात करें.</translation>
+        <translation type="obsolete">%1 पर Tano के साथ निर्यात करें.</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
@@ -1057,6 +1143,10 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Logo</source>
         <translation>लोगो</translation>
+    </message>
+    <message>
+        <source>Exported with %1 on %2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1324,7 +1414,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Try &apos;%1&apos; for more information.</source>
-        <translation>अधिक जानकारी के लिए &apos;%1&apos; की कोशिश करें.</translation>
+        <translation type="obsolete">अधिक जानकारी के लिए &apos;%1&apos; की कोशिश करें.</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
@@ -1654,6 +1744,22 @@ You will lose any unsaved changes.</source>
         <source>Gardening</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Try &apos;%1 %2&apos; for more information.</source>
+        <translation type="unfinished">अधिक जानकारी के लिए &apos;%1&apos; की कोशिश करें. {1 %2&apos;?}</translation>
+    </message>
+    <message>
+        <source>GoTV channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is not a GoTV channel list file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown title</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1685,10 +1791,6 @@ Have you already moved or deleted it?</source>
     <message>
         <source>Recordings and timers</source>
         <translation>रिकॉर्डिंग और टाइमर</translation>
-    </message>
-    <message>
-        <source>Instant %1</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2182,7 +2284,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation>आप Tano संस्करण का उपयोग कर रहे हैं:</translation>
+        <translation type="obsolete">आप Tano संस्करण का उपयोग कर रहे हैं:</translation>
     </message>
     <message>
         <source>Defaults</source>
@@ -2195,6 +2297,10 @@ This operation is ireversible.</source>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
         <translation>&lt;i&gt; यह आपके सभी सेटिंग्स डिफ़ॉल्ट को बहाल करेंगे. आपको परिवर्तनों को लागू करने की जरूरत है, इससे पहले कि वे प्रभाव में आये जाए.&lt;/ i&gt;</translation>
+    </message>
+    <message>
+        <source>You are using %1 version:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2263,7 +2369,7 @@ This operation is ireversible.</source>
     <name>SettingsSchedule</name>
     <message>
         <source>Select desired XMLTV grabber from the list below:</source>
-        <translation>नीचे दी गई सूची में से इच्छित XMLTV धरनेवाला का चयन करें:</translation>
+        <translation type="obsolete">नीचे दी गई सूची में से इच्छित XMLTV धरनेवाला का चयन करें:</translation>
     </message>
     <message>
         <source>XMLTV settings</source>
@@ -2271,11 +2377,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>XMLTV file location:</source>
-        <translation>XMLTV फ़ाइल के स्थान:</translation>
+        <translation type="obsolete">XMLTV फ़ाइल के स्थान:</translation>
     </message>
     <message>
         <source>Refresh XMLTV</source>
-        <translation>XMLTV को ताज़ा करें</translation>
+        <translation type="obsolete">XMLTV को ताज़ा करें</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
@@ -2287,27 +2393,35 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Run grabber</source>
-        <translation>Run grabber</translation>
+        <translation type="obsolete">Run grabber</translation>
     </message>
     <message>
         <source>Network</source>
-        <translation>संजाल</translation>
+        <translation type="obsolete">संजाल</translation>
     </message>
     <message>
         <source>XMLTV source url:</source>
-        <translation>XMLTV स्रोत url:</translation>
+        <translation type="obsolete">XMLTV स्रोत url:</translation>
     </message>
     <message>
         <source>Grabber</source>
-        <translation>धरनेवाला</translation>
+        <translation type="obsolete">धरनेवाला</translation>
     </message>
     <message>
         <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;सभी XMLTV सेटिंग्स को पुनः आरंभ करने की आवश्यकता है.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;सभी XMLTV सेटिंग्स को पुनः आरंभ करने की आवश्यकता है.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
-        <translation>&lt;i&gt; चल रहा धरनेवाला अभी तक उपलब्ध नहीं है.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt; चल रहा धरनेवाला अभी तक उपलब्ध नहीं है.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Local file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2402,7 +2516,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Tano default</source>
-        <translation>Tano डिफ़ॉल्ट</translation>
+        <translation type="obsolete">Tano डिफ़ॉल्ट</translation>
     </message>
     <message>
         <source>Desktop theme</source>
@@ -2411,6 +2525,10 @@ This operation is ireversible.</source>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
         <translation>&lt;i&gt;यह विकल्प को पुनः आरंभ करने की आवश्यकता है.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">डिफ़ॉल्ट</translation>
     </message>
 </context>
 <context>
@@ -2498,15 +2616,22 @@ Your changes will not be saved.</source>
     <message>
         <source>The recording is overlaping with others.
 Your changes will not be saved.</source>
-        <translation>रिकॉर्डिंग दूसरों के साथ अतिव्यापी है.
+        <translation type="obsolete">रिकॉर्डिंग दूसरों के साथ अतिव्यापी है.
 आपके परिवर्तनों को सहेजा नहीं किया जाएगा.</translation>
+    </message>
+</context>
+<context>
+    <name>TimersModel</name>
+    <message>
+        <source>at</source>
+        <translation type="unfinished">में</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Playing:</source>
@@ -2522,19 +2647,33 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Tano stopped recording</source>
-        <translation>Tano रिकॉर्डिंग बंद कर दिया है&gt;</translation>
+        <translation type="obsolete">Tano रिकॉर्डिंग बंद कर दिया है&gt;</translation>
     </message>
     <message>
         <source>Tano is recording %1 to %2 
 Stop manually!</source>
-        <translation>Tano %1 से %2 रिकॉर्डिंग कर रहा है.
+        <translation type="obsolete">Tano %1 से %2 रिकॉर्डिंग कर रहा है.
 मैन्युअल रूप से बंद करो!</translation>
     </message>
     <message>
         <source>Tano is recording %1 to %2 
 End time: %3</source>
-        <translation>Tano %1 से %2 रिकॉर्डिंग कर रहा है.
+        <translation type="obsolete">Tano %1 से %2 रिकॉर्डिंग कर रहा है.
 अंत समय: %3 है</translation>
+    </message>
+    <message>
+        <source>Recording stopped.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording %1 to %2 
+Stop manually!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording %1 to %2 
+End time: %3</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2545,7 +2684,7 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt; आप Tano के नवीनतम संस्करण का उपयोग कर रहे हैं &lt;/ h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt; आप Tano के नवीनतम संस्करण का उपयोग कर रहे हैं &lt;/ h3&gt;</translation>
     </message>
     <message>
         <source>Current version:</source>
@@ -2553,7 +2692,7 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</source>
-        <translation>आप &lt;h3&gt; Tano के विकास संस्करण का उपयोग कर रहे हैं &lt;/ h3&gt;!</translation>
+        <translation type="obsolete">आप &lt;h3&gt; Tano के विकास संस्करण का उपयोग कर रहे हैं &lt;/ h3&gt;!</translation>
     </message>
     <message>
         <source>Stable version:</source>
@@ -2561,7 +2700,7 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Tano के आपके संस्करण को अद्यतन करना आवश्यक हैं!&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Tano के आपके संस्करण को अद्यतन करना आवश्यक हैं!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Date released:</source>
@@ -2574,6 +2713,18 @@ End time: %3</source>
     <message>
         <source>Download now!</source>
         <translation>अभी डाउनलोड करें!</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

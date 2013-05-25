@@ -21,8 +21,9 @@
 #include "Resources.h"
 #include "network/NetworkDownload.h"
 #include "playlist/PlaylistModel.h"
-#include "playlist/PlaylistUpdate.h"
 #include "settings/Settings.h"
+
+#include "PlaylistUpdate.h"
 
 PlaylistUpdate::PlaylistUpdate(PlaylistModel *model)
     : QObject(model),

@@ -36,10 +36,14 @@
         <translation>&lt;b&gt;Вы используете VideoLAN VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Your Tano version: %1
-Your Qt runtime version: %2
-Your VLC-Qt version: %3
+        <source>Your %1 version: %2
+Your Qt runtime version: %3
+Your VLC-Qt version: %4
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This application is based on Tano.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -189,7 +193,7 @@ Your VLC-Qt version: %3
     <name>MainWindow</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>&amp;Recorder</source>
@@ -238,7 +242,7 @@ Your VLC-Qt version: %3
     <message>
         <source>Do you want to exit Tano?
 This will stop recording in progress.</source>
-        <translation>Вы хотите закрыть Tano?
+        <translation type="obsolete">Вы хотите закрыть Tano?
 Это прервет запись.</translation>
     </message>
     <message>
@@ -251,7 +255,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Tano Support</source>
-        <translation>Tano Support</translation>
+        <translation type="obsolete">Tano Support</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -281,7 +285,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>About Tano</source>
-        <translation>О Tano</translation>
+        <translation type="obsolete">О Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
@@ -421,6 +425,27 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Instant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished">О программе</translation>
+    </message>
+    <message>
+        <source>Logout and Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to exit?
+This will stop recording in progress.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instant %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An update is available!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -598,6 +623,39 @@ This will stop recording in progress.</source>
     </message>
 </context>
 <context>
+    <name>PasswordDialog</name>
+    <message>
+        <source>Login required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Your username or password is incorrect.
+Please, try again.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;An unknown error has occured.
+Please, try again.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Play</source>
@@ -716,7 +774,7 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>%1 - Tano Editor</source>
-        <translation>%1 - Редактор Tano</translation>
+        <translation type="obsolete">%1 - Редактор Tano</translation>
     </message>
     <message>
         <source>Cannot read file %1:
@@ -802,6 +860,10 @@ You will lose any unsaved changes.</source>
         <source>Please wait for XMLTV file to parse.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1 - %2 Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
@@ -831,7 +893,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation>Редактор Tano поддерживает свой формат M3U плейлистов наряду с обычными M3U, CSV и Sagem JS файлами. Кроме этих форматов вы также можете экспортировать в M3U c адресами Udpxy и в файлы настроек Tvheadend.</translation>
+        <translation type="obsolete">Редактор Tano поддерживает свой формат M3U плейлистов наряду с обычными M3U, CSV и Sagem JS файлами. Кроме этих форматов вы также можете экспортировать в M3U c адресами Udpxy и в файлы настроек Tvheadend.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
@@ -839,7 +901,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
-        <translation>Вы можете искать каналы используя встроенный сканнер каналов. Пожалуйста, задайте диапазон IP (например 232.4.1) и порт (например 5000). Tano будет сканировать все 255 IP в этом диапазоне. Канал добавляется, если он обнаружен до таймаута.</translation>
+        <translation type="obsolete">Вы можете искать каналы используя встроенный сканнер каналов. Пожалуйста, задайте диапазон IP (например 232.4.1) и порт (например 5000). Tano будет сканировать все 255 IP в этом диапазоне. Канал добавляется, если он обнаружен до таймаута.</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
@@ -850,7 +912,15 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
+        <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1018,6 +1088,15 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>PlaylistUpdate</name>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Невозможно прочитать файл %1:
+%2.</translation>
+    </message>
+</context>
+<context>
     <name>Print</name>
     <message>
         <source>#</source>
@@ -1041,7 +1120,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Exported with Tano on %1.</source>
-        <translation>Экспортирован Tano %1.</translation>
+        <translation type="obsolete">Экспортирован Tano %1.</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
@@ -1053,6 +1132,10 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exported with %1 on %2.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1320,10 +1403,6 @@ You will lose any unsaved changes.</source>
     <message>
         <source>XMLTV ID</source>
         <translation>XMLTV ID</translation>
-    </message>
-    <message>
-        <source>Try &apos;%1&apos; for more information.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
@@ -1653,6 +1732,22 @@ You will lose any unsaved changes.</source>
         <source>Gardening</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Try &apos;%1 %2&apos; for more information.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GoTV channel list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file is not a GoTV channel list file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown title</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1684,10 +1779,6 @@ Have you already moved or deleted it?</source>
     <message>
         <source>Recordings and timers</source>
         <translation>Записи и таймеры</translation>
-    </message>
-    <message>
-        <source>Instant %1</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2180,7 +2271,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>You are using Tano version:</source>
-        <translation>Вы используете Tano версии:</translation>
+        <translation type="obsolete">Вы используете Tano версии:</translation>
     </message>
     <message>
         <source>Defaults</source>
@@ -2193,6 +2284,10 @@ This operation is ireversible.</source>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Это сбросит все настройки на значения по умолчанию. Вы должны применить изменения чтобы они вступили в силу.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>You are using %1 version:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2261,7 +2356,7 @@ This operation is ireversible.</source>
     <name>SettingsSchedule</name>
     <message>
         <source>Select desired XMLTV grabber from the list below:</source>
-        <translation>Выберите XMLTV граббер из списка:</translation>
+        <translation type="obsolete">Выберите XMLTV граббер из списка:</translation>
     </message>
     <message>
         <source>XMLTV settings</source>
@@ -2269,11 +2364,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>XMLTV file location:</source>
-        <translation>Расположение файла XMLTV:</translation>
+        <translation type="obsolete">Расположение файла XMLTV:</translation>
     </message>
     <message>
         <source>Refresh XMLTV</source>
-        <translation>Обновление XMLTV</translation>
+        <translation type="obsolete">Обновление XMLTV</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
@@ -2284,27 +2379,19 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Run grabber</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>XMLTV source url:</source>
-        <translation>URL источника XMLTV:</translation>
-    </message>
-    <message>
-        <source>Grabber</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">URL источника XMLTV:</translation>
     </message>
     <message>
         <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Все изменения настроек XMLTV требуют перезапуск.&lt;/i&gt;</translation>
+        <translation type="obsolete">&lt;i&gt;Все изменения настроек XMLTV требуют перезапуск.&lt;/i&gt;</translation>
     </message>
     <message>
-        <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
+        <source>Local file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2399,15 +2486,15 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Desktop theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2496,15 +2583,22 @@ Your changes will not be saved.</source>
     <message>
         <source>The recording is overlaping with others.
 Your changes will not be saved.</source>
-        <translation>Запись перекрывается с другими.
+        <translation type="obsolete">Запись перекрывается с другими.
 Изменения не будут сохранены.</translation>
+    </message>
+</context>
+<context>
+    <name>TimersModel</name>
+    <message>
+        <source>at</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Tano</source>
-        <translation>Tano</translation>
+        <translation type="obsolete">Tano</translation>
     </message>
     <message>
         <source>Playing:</source>
@@ -2519,16 +2613,16 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano stopped recording</source>
+        <source>Recording stopped.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano is recording %1 to %2 
+        <source>Recording %1 to %2 
 Stop manually!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano is recording %1 to %2 
+        <source>Recording %1 to %2 
 End time: %3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2541,7 +2635,7 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Вы используете последнюю версию Tano!&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Вы используете последнюю версию Tano!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Current version:</source>
@@ -2549,7 +2643,7 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Вы используете опытную версию Tano!&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Вы используете опытную версию Tano!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Stable version:</source>
@@ -2557,7 +2651,7 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Вашу версию Tano необходимо обновить!&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Вашу версию Tano необходимо обновить!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Date released:</source>
@@ -2570,6 +2664,18 @@ End time: %3</source>
     <message>
         <source>Download now!</source>
         <translation>Загрузить сейчас!</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
