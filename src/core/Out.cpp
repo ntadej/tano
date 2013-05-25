@@ -41,8 +41,8 @@ Out& Out::operator<<(const QString &string)
 
 void Out::welcome()
 {
-    Out() << QString("Tano %1 - An Open IP TV Player").arg(Tano::version()) << endl
-          << "Copyright (C) 2012 Tadej Novak" << endl << endl;
+    Out() << QString("%1 %2").arg(Tano::name(), Tano::version()) << endl
+          << QString("Copyright (C) %1 Tadej Novak").arg(QDate::currentDate().year()) << endl << endl;
 }
 
 void Out::help()
@@ -76,7 +76,7 @@ void Out::help()
 
 void Out::errorGeneric()
 {
-    Out() << QObject::tr("Try '%1' for more information.").arg("tano --help") << endl;
+    Out() << QObject::tr("Try '%1 %2' for more information.").arg(Tano::executable(), "--help") << endl;
 }
 
 void Out::errorMissing(const QString &arg)
