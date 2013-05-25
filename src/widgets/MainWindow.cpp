@@ -202,6 +202,12 @@ void MainWindow::exit()
     }
 }
 
+void MainWindow::exitLogout()
+{
+    _httpAuth->logout();
+    exit();
+}
+
 bool MainWindow::eventFilter(QObject *obj,
                              QEvent *event)
 {
@@ -502,6 +508,7 @@ void MainWindow::createConnections()
     connect(ui->actionSupport, SIGNAL(triggered()), this, SLOT(support()));
     connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
     connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+    connect(ui->actionLogoutExit, SIGNAL(triggered()), this, SLOT(exitLogout()));
     connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(exit()));
 
     connect(ui->actionTop, SIGNAL(triggered()), this, SLOT(top()));
@@ -666,6 +673,10 @@ void MainWindow::createMenus()
 
 #if BRANDING
     Tano::Branding::processMenus(this, ui, _rightMenu);
+#endif
+
+#if PASSWORD
+    ui->menuFile->insertAction(ui->actionExit, ui->actionLogoutExit);
 #endif
 
     qDebug() << "Initialised: Menus";

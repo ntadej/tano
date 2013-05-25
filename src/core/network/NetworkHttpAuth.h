@@ -32,6 +32,7 @@ public:
     ~NetworkHttpAuth();
 
     void createSettings();
+    void logout();
     QString processUrl(const QString &url) const;
 
 private:

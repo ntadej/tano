@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../data/logo/logo.qrc">
+   <iconset resource="../../branding/logo/logo.qrc">
     <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -439,7 +439,7 @@
   </widget>
   <action name="actionAbout">
    <property name="icon">
-    <iconset resource="../../data/logo/logo.qrc">
+    <iconset resource="../../branding/logo/logo.qrc">
      <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
    </property>
    <property name="text">
@@ -850,6 +850,14 @@
     <string>Current show info</string>
    </property>
   </action>
+  <action name="actionLogoutExit">
+   <property name="icon">
+    <iconset theme="application-exit"/>
+   </property>
+   <property name="text">
+    <string>Logout and Exit</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -877,7 +885,7 @@
  </customwidgets>
  <resources>
   <include location="../../data/misc/misc.qrc"/>
-  <include location="../../data/logo/logo.qrc"/>
+  <include location="../../branding/logo/logo.qrc"/>
  </resources>
  <connections/>
 </ui>

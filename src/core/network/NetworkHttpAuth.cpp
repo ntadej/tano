@@ -35,6 +35,14 @@ void NetworkHttpAuth::createSettings()
     _username = settings->username();
 }
 
+void NetworkHttpAuth::logout()
+{
+    QScopedPointer<SettingsPassword> settings(new SettingsPassword());
+    settings->setUsername("");
+    settings->setPassword("");
+    settings->writeSettings();
+}
+
 QString NetworkHttpAuth::processUrl(const QString &url) const
 {
     QString u = url;
