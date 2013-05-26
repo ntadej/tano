@@ -40,7 +40,7 @@ DOXYFILE_ENCODING      = UTF-8
 
 PROJECT_NAME           = Tano
 
-PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/doc/logo.png
+PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/data/logo/64x64/logo.png
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number.
 # This could be handy for archiving the generated documentation or

@@ -6,5 +6,13 @@
         <file>64x64/vlc-qt.png</file>
         <file>128x128/logo.png</file>
         <file>128x128/vlc-qt.png</file>
+        <file>16x16/logo.png</file>
+        <file>16x16/vlc-qt.png</file>
+        <file>24x24/logo.png</file>
+        <file>24x24/vlc-qt.png</file>
+        <file>32x32/logo.png</file>
+        <file>32x32/vlc-qt.png</file>
+        <file>256x256/logo.png</file>
+        <file>256x256/vlc-qt.png</file>
     </qresource>
 </RCC>

@@ -271,11 +271,11 @@ SET(Tano_Icons
 )
 
 SET(Tano_Desktop
-    tano.desktop
+    src/platform/linux/tano.desktop
 )
 
 SET(Tano_Logo
-    tano.png
+    data/logo/64x64/logo.png
 )
 
 ################
