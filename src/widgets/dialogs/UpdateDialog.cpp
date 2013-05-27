@@ -110,7 +110,6 @@ void UpdateDialog::processUpdate(const QStringList &update,
         ui->labelVersionNew->setText("<b>" + update[1] + "</b>");
         ui->labelDate->setText("<b>" + info.date + "</b>");
         ui->labelInfo->setText(info.description);
-        ui->labelDownload->setText(QString("<a href=\"%1\"><b>%2</b></a>").arg(generateUrl(info.version), tr("Download now!")));
         ui->main->setCurrentIndex(2);
 
         emit newUpdate();
@@ -161,23 +160,4 @@ void UpdateDialog::readUpdates(const QByteArray &data,
     }
 
     processUpdate(updatesList, info);
-}
-
-QString UpdateDialog::generateUrl(const QString &version)
-{
-    QString url(QString(UPDATE_URL));
-    url.append(version);
-    url.append("/");
-
-#if defined(Q_OS_WIN32)
-    url.append("windows");
-#elif defined(Q_OS_MAC)
-    url.append("mac");
-#else
-    url.append("linux");
-#endif
-
-    url.append("/");
-
-    return url;
 }

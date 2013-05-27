@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="cs">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -38,11 +40,11 @@
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>This application is based on Tano.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -409,24 +411,24 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">O programu</translation>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Instant %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>An update is available!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -606,33 +608,33 @@ This will stop recording in progress.</source>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remember password</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -838,7 +840,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>%1 - %2 Editor</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -881,15 +883,15 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -958,7 +960,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Seznam programů</translation>
     </message>
 </context>
 <context>
@@ -1060,7 +1062,8 @@ Ztratíte všechny neuložené změny.</translation>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Nelze číst ze souboru %1:
+%2.</translation>
     </message>
 </context>
 <context>
@@ -1099,7 +1102,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1698,19 +1701,19 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2247,7 +2250,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>You are using %1 version:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2328,11 +2331,11 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Local file</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2435,7 +2438,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Výchozí</translation>
     </message>
 </context>
 <context>
@@ -2525,7 +2528,7 @@ Vaše změny nebudou uloženy.</translation>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">v</translation>
     </message>
 </context>
 <context>
@@ -2544,17 +2547,17 @@ Vaše změny nebudou uloženy.</translation>
     </message>
     <message>
         <source>Recording stopped.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2581,19 +2584,19 @@ End time: %3</source>
     </message>
     <message>
         <source>Download now!</source>
-        <translation>Stáhnout teď!</translation>
+        <translation type="obsolete">Stáhnout teď!</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

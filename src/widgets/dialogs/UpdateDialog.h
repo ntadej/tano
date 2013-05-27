@@ -61,8 +61,6 @@ private slots:
                      QNetworkReply *reply);
 
 private:
-    QString generateUrl(const QString &version);
-
     Ui::UpdateDialog *ui;
 
     QTextCodec *_codec;

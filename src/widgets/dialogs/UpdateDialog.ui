@@ -22,7 +22,7 @@
    <item>
     <widget class="QLabel" name="labelIconTano">
      <property name="pixmap">
-      <pixmap resource="../../../data/logo/logo.qrc">:/logo/64x64/logo.png</pixmap>
+      <pixmap resource="../../../branding/logo/logo.qrc">:/logo/64x64/logo.png</pixmap>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -213,30 +213,10 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QLabel" name="labelUpdateInfo">
-         <property name="text">
-          <string>Information:</string>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="2">
         <widget class="QLabel" name="labelDate">
          <property name="text">
           <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QLabel" name="labelDownload">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="openExternalLinks">
-          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -251,7 +231,7 @@
             <x>0</x>
             <y>0</y>
             <width>387</width>
-            <height>126</height>
+            <height>106</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -324,6 +304,13 @@
          </property>
         </widget>
        </item>
+       <item row="5" column="1" colspan="2">
+        <widget class="QLabel" name="labelUpdateInfo">
+         <property name="text">
+          <string>Information:</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
@@ -341,7 +328,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../data/logo/logo.qrc"/>
+  <include location="../../../branding/logo/logo.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -2568,10 +2568,6 @@ End time: %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Download now!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>

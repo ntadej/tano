@@ -2727,7 +2727,7 @@ Končni čas: %3</translation>
     </message>
     <message>
         <source>Download now!</source>
-        <translation>Prenesi zdaj!</translation>
+        <translation type="obsolete">Prenesi zdaj!</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
