@@ -217,8 +217,6 @@ bool MainWindow::eventFilter(QObject *obj,
 {
     if (obj == this && event->type() == QEvent::Hide) {
         qDebug() << "Event:" << "Hide";
-        _dockControlsVisible = ui->dockControls->isVisible();
-        _dockInfoVisible = ui->dockInfo->isVisible();
 
         if (_muteOnMinimize) {
             _muteOnMinimizeCurrent = ui->actionMute->isChecked();
@@ -231,9 +229,6 @@ bool MainWindow::eventFilter(QObject *obj,
             _posX = 0;
             _posY = 0;
         }
-
-        ui->dockControls->setVisible(_dockControlsVisible);
-        ui->dockInfo->setVisible(_dockInfoVisible);
 
         if (_muteOnMinimize) {
             ui->actionMute->setChecked(_muteOnMinimizeCurrent);
@@ -338,8 +333,7 @@ void MainWindow::createGui()
     _osdShow->setSchedule();
 
     ui->dockInfo->setTitleBarWidget(ui->blank);
-    ui->dockControlsContents->layout()->addWidget(_osdMain);
-    ui->dockControls->setTitleBarWidget(_osdMain->blank());
+    ui->pagePlayback->layout()->addWidget(_osdMain);
 
     _waction = new QWidgetAction(this);
     _playlistMenu->addAction(_waction);
@@ -397,8 +391,6 @@ void MainWindow::createSettings()
     else
         _trayIcon->hide();
 
-    _osdEnabled = settings->osd();
-    _infoEnabled = settings->info();
     _wheelType = settings->mouseWheel();
     _rememberGui = settings->rememberGuiSession();
     _filter = settings->filtersVisible();
@@ -471,12 +463,6 @@ void MainWindow::createDesktopStartup()
         ui->actionTop->setChecked(true);;
         top();
     }
-
-    ui->dockControls->setVisible(settings->startControls());
-    ui->dockInfo->setVisible(settings->startInfo());
-
-    _dockControlsVisible = settings->startControls();
-    _dockInfoVisible = settings->startInfo();
 
     qDebug() << "Initialised: Startup settings";
 }
@@ -563,11 +549,6 @@ void MainWindow::createConnections()
     connect(_osdMain, SIGNAL(snapshotClicked()), ui->actionSnapshot, SLOT(trigger()));
     connect(_osdMain, SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
 
-    connect(ui->actionControls, SIGNAL(triggered(bool)), this, SLOT(toggleOsdControls(bool)));
-    connect(ui->dockControls, SIGNAL(visibilityChanged(bool)), this, SLOT(toggleOsdControls(bool)));
-    connect(ui->actionInfoPanel, SIGNAL(triggered(bool)), this, SLOT(toggleOsdInfo(bool)));
-    connect(ui->dockInfo, SIGNAL(visibilityChanged(bool)), this, SLOT(toggleOsdInfo(bool)));
-
     connect(ui->buttonSchedule, SIGNAL(clicked()), this, SLOT(infoToggleSchedule()));
     connect(ui->buttonScheduleBack, SIGNAL(clicked()), this, SLOT(infoToggleSchedule()));
     connect(ui->buttonPlaylistClose, SIGNAL(clicked()), this, SLOT(infoClose()));
@@ -640,9 +621,6 @@ void MainWindow::createMenus()
     _rightMenu->addAction(ui->actionLite);
     _rightMenu->addAction(ui->actionFullscreen);
     _rightMenu->addSeparator();
-    _rightMenu->addAction(ui->actionInfoPanel);
-    _rightMenu->addAction(ui->actionControls);
-    _rightMenu->addSeparator();
     _rightMenu->addMenu(ui->menuAudio);
     _rightMenu->addMenu(ui->menuVideo);
     _rightMenu->addSeparator();
@@ -693,8 +671,6 @@ void MainWindow::createShortcuts()
              << ui->actionNext
              << ui->actionBack
              << ui->actionFullscreen
-             << ui->actionInfoPanel
-             << ui->actionControls
              << ui->actionMute
 #if FEATURE_TELETEXT
              << ui->actionTeletext
@@ -801,13 +777,6 @@ void MainWindow::writeSession()
         settings->setHeight(size().height());
         settings->setPosX(x());
         settings->setPosY(y());
-        if (!isVisible() || _isLite || ui->actionRecorder->isChecked()) {
-            settings->setStartControls(_dockControlsVisible);
-            settings->setStartInfo(_dockInfoVisible);
-        } else {
-            settings->setStartControls(ui->dockControls->isVisible());
-            settings->setStartInfo(ui->dockInfo->isVisible());
-        }
     }
 
     settings->writeSettings();
@@ -1172,18 +1141,12 @@ void MainWindow::lite()
     if (_isLite) {
         ui->menubar->setVisible(_liteMenu);
         ui->toolBar->setVisible(_liteToolbar);
-        ui->dockInfo->setVisible(_dockInfoVisible);
-        ui->dockControls->setVisible(_dockControlsVisible);
     } else {
         _liteMenu = ui->menubar->isVisible();
         _liteToolbar = ui->toolBar->isVisible();
-        _dockInfoVisible = ui->dockInfo->isVisible();
-        _dockControlsVisible = ui->dockControls->isVisible();
 
         ui->menubar->setVisible(false);
-        ui->dockInfo->setVisible(false);
         ui->toolBar->setVisible(false);
-        ui->dockControls->setVisible(false);
     }
     _isLite = !_isLite;
 }
@@ -1214,17 +1177,18 @@ void MainWindow::closeOsd()
 
 void MainWindow::showOsd(const QPoint &pos)
 {
-    if (_osdEnabled && pos.y() > QApplication::desktop()->height()-100) {
+    // TODO: Fix fullscreen osd
+    /*if (pos.y() > QApplication::desktop()->height()-100) {
         toggleOsdControls(true);
     } else {
         toggleOsdControls(false);
     }
 
-    if (_infoEnabled && pos.x() > QApplication::desktop()->width()-_osdInfo->width()-50) {
+    if (pos.x() > QApplication::desktop()->width()-_osdInfo->width()-50) {
         toggleOsdInfo(true);
     } else {
         toggleOsdInfo(false);
-    }
+    }*/
 }
 
 void MainWindow::showVideo(const int &count)
@@ -1327,7 +1291,7 @@ void MainWindow::toggleFullscreen(const bool &enabled)
         ui->buttonScheduleClose->show();
 
         ui->dockContents->layout()->addWidget(ui->stackedWidgetDock);
-        ui->dockControlsContents->layout()->addWidget(_osdMain);
+        ui->pagePlayback->layout()->addWidget(_osdMain);
 
         setWindowState(windowState() & ~Qt::WindowFullScreen);
 
@@ -1357,11 +1321,7 @@ void MainWindow::toggleOsdControls(const bool &enabled)
         } else {
             _osdFloat->floatHide();
         }
-    } else {
-        ui->dockControls->setVisible(enabled);
     }
-
-    ui->actionControls->setChecked(enabled);
 }
 
 void MainWindow::toggleOsdInfo(const bool &enabled)
@@ -1372,11 +1332,7 @@ void MainWindow::toggleOsdInfo(const bool &enabled)
         } else {
             _osdInfo->floatHide();
         }
-    } else {
-        ui->dockInfo->setVisible(enabled);
     }
-
-    ui->actionInfoPanel->setChecked(enabled);
 }
 
 void MainWindow::preview(const bool &enabled)
@@ -1435,14 +1391,10 @@ void MainWindow::recorder(const bool &enabled)
         _recorder->setVisible(true);
         ui->stackedWidget->setCurrentIndex(2);
 
-        _dockControlsVisible = ui->dockControls->isVisible();
-        _dockInfoVisible = ui->dockInfo->isVisible();
         ui->dockInfo->setVisible(false);
-        ui->dockControls->setVisible(false);
     } else {
         _recorder->setVisible(false);
-        ui->dockInfo->setVisible(_dockInfoVisible);
-        ui->dockControls->setVisible(_dockControlsVisible);
+        ui->dockInfo->setVisible(true);
 
         if (_mediaPlayer->hasVout()) {
             ui->stackedWidget->setCurrentIndex(1);

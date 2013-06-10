@@ -21,7 +21,7 @@ PROJECT(${TANO_WIDGETS})
 # Add definition for exporting symbols
 ADD_DEFINITIONS(-DTANO_WIDGETS_LIBRARY)
 
-# Add definitions for static/shared library
+# Add definitions for static/style library
 IF(STATIC)
     ADD_DEFINITIONS(-DQT_STATIC -D_REENTRANT)
 ELSE(STATIC)
@@ -109,6 +109,12 @@ SET(Tano_Widgets_Common_Srcs
     common/QtKeySequenceEdit.cpp
     common/ScrollingWidget.cpp
     common/TrayIcon.cpp
+
+    style/FancyTabWidget.cpp
+    style/ManhattanStyle.cpp
+    style/StyleAnimator.cpp
+    style/StyleHelper.cpp
+    style/StyledBar.cpp
 )
 SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
@@ -157,6 +163,13 @@ SET(Tano_Widgets_Settings_Srcs
     settings/SettingsSchedule.cpp
     settings/SettingsUi.cpp
 )
+SET(Tano_Widgets_Style_Srcs
+    style/FancyTabWidget.cpp
+    style/ManhattanStyle.cpp
+    style/StyleAnimator.cpp
+    style/StyleHelper.cpp
+    style/StyledBar.cpp
+)
 SET(Tano_Widgets_Timers_Srcs
     timers/TimersDisplayWidget.cpp
     timers/TimersEditorWidget.cpp
@@ -171,6 +184,7 @@ SET(Tano_Widgets_Srcs
     ${Tano_Widgets_Menu_Srcs}
     ${Tano_Widgets_Playlist_Srcs}
     ${Tano_Widgets_Settings_Srcs}
+    ${Tano_Widgets_Style_Srcs}
 )
 
 IF(FEATURE_RECORDER)

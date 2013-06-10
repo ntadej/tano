@@ -25,8 +25,6 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_KEYS =
                       << "N"
                       << "B"
                       << "F"
-                      << "I"
-                      << "C"
                       << "M"
 #if FEATURE_TELETEXT
                       << "T"
@@ -65,8 +63,6 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_ACTIONS =
                       << "Next"
                       << "Back"
                       << "Fullscreen"
-                      << "ToggleInfo"
-                      << "ToggleControls"
                       << "Mute"
 #if FEATURE_TELETEXT
                       << "Teletext"

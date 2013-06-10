@@ -6,28 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>650</width>
-    <height>300</height>
+    <width>1043</width>
+    <height>572</height>
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../branding/logo/logo.qrc">
+   <iconset resource="../../data/logo/logo.qrc">
     <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="FancyTabWidget" name="tabs" native="true"/>
+    </item>
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
@@ -37,7 +28,7 @@
        <layout class="QVBoxLayout" name="verticalLayout_6"/>
       </widget>
       <widget class="QWidget" name="pagePlayback">
-       <layout class="QVBoxLayout" name="verticalLayout_12">
+       <layout class="QVBoxLayout" name="pagePlaybackLayout">
         <property name="leftMargin">
          <number>0</number>
         </property>
@@ -80,8 +71,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>650</width>
-     <height>22</height>
+     <width>1043</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuRecorder">
@@ -121,8 +112,6 @@
     <addaction name="actionLite"/>
     <addaction name="actionFullscreen"/>
     <addaction name="separator"/>
-    <addaction name="actionControls"/>
-    <addaction name="actionInfoPanel"/>
    </widget>
    <widget class="QMenu" name="menuAudio">
     <property name="title">
@@ -199,42 +188,6 @@
    <addaction name="separator"/>
    <addaction name="actionSettings"/>
    <addaction name="actionExit"/>
-  </widget>
-  <widget class="QDockWidget" name="dockControls">
-   <property name="features">
-    <set>QDockWidget::DockWidgetClosable|QDockWidget::DockWidgetVerticalTitleBar</set>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::BottomDockWidgetArea|Qt::TopDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>Controls</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>8</number>
-   </attribute>
-   <widget class="QWidget" name="dockControlsContents">
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <layout class="QVBoxLayout" name="osdLayout">
-     <property name="leftMargin">
-      <number>0</number>
-     </property>
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <property name="rightMargin">
-      <number>0</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-    </layout>
-   </widget>
   </widget>
   <widget class="QToolBar" name="toolBarRecorder">
    <property name="windowTitle">
@@ -439,7 +392,7 @@
   </widget>
   <action name="actionAbout">
    <property name="icon">
-    <iconset resource="../../branding/logo/logo.qrc">
+    <iconset resource="../../data/logo/logo.qrc">
      <normaloff>:/logo/48x48/logo.png</normaloff>:/logo/48x48/logo.png</iconset>
    </property>
    <property name="text">
@@ -711,14 +664,6 @@
     <string>Stop recording</string>
    </property>
   </action>
-  <action name="actionControls">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Controls panel</string>
-   </property>
-  </action>
   <action name="actionSchedule">
    <property name="icon">
     <iconset theme="x-office-calendar">
@@ -727,17 +672,6 @@
    </property>
    <property name="text">
     <string>Schedule</string>
-   </property>
-  </action>
-  <action name="actionInfoPanel">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Info panel</string>
    </property>
   </action>
   <action name="actionPlaylistFullscreen">
@@ -852,7 +786,9 @@
   </action>
   <action name="actionLogoutExit">
    <property name="icon">
-    <iconset theme="application-exit"/>
+    <iconset theme="application-exit">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>Logout and Exit</string>
@@ -882,10 +818,16 @@
     <slot>toggleFullscreen()</slot>
    </slots>
   </customwidget>
+  <customwidget>
+   <class>FancyTabWidget</class>
+   <extends>QWidget</extends>
+   <header>style/FancyTabWidget.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <resources>
   <include location="../../data/misc/misc.qrc"/>
-  <include location="../../branding/logo/logo.qrc"/>
+  <include location="../../data/logo/logo.qrc"/>
  </resources>
  <connections/>
 </ui>

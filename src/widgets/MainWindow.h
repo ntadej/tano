@@ -185,13 +185,9 @@ private:
     bool _filter;
     bool _hasPlaylist;
     bool _hideToTray;
-    bool _dockControlsVisible;
-    bool _dockInfoVisible;
     bool _isLite;
     bool _liteMenu;
     bool _liteToolbar;
-    bool _osdEnabled;
-    bool _infoEnabled;
     bool _muteOnMinimize;
     bool _muteOnMinimizeCurrent;
     bool _recordNow;

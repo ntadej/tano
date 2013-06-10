@@ -29,6 +29,10 @@
 #include "widgets/MainWindow.h"
 #include "widgets/dialogs/PasswordDialog.h"
 
+#include <QStyleFactory>
+#include "widgets/style/ManhattanStyle.h"
+#include "widgets/style/StyleHelper.h"
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setApplicationName(Tano::name());
@@ -53,6 +57,27 @@ int main(int argc, char *argv[])
     if (args->isValid()) {
         Tano::Resources::setIconPaths();
         Tano::Resources::setIconName();
+
+        // TODO: Move somewhere clean
+        QString baseName = QApplication::style()->objectName();
+#ifdef Q_OS_LINUX
+            if (baseName == QLatin1String("windows")) {
+                // Sometimes we get the standard windows 95 style as a fallback
+                if (QStyleFactory::keys().contains(QLatin1String("Fusion")))
+                    baseName = QLatin1String("fusion"); // Qt5
+                else { // Qt4
+                    // e.g. if we are running on a KDE4 desktop
+                    QByteArray desktopEnvironment = qgetenv("DESKTOP_SESSION");
+                    if (desktopEnvironment == "kde")
+                        baseName = QLatin1String("plastique");
+                    else
+                        baseName = QLatin1String("cleanlooks");
+                }
+            }
+#endif
+        qApp->setStyle(new ManhattanStyle(baseName));
+
+        Utils::StyleHelper::setBaseColor(QColor(Utils::StyleHelper::DEFAULT_BASE_COLOR));
 
 #if PASSWORD
         QString password;
