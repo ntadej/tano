@@ -22,11 +22,13 @@
 #include "ui_OsdWidget.h"
 
 OsdWidget::OsdWidget(QWidget *parent)
-    : QFrame(parent),
+    : StyledBar(parent),
       ui(new Ui::OsdWidget),
       _current("")
 {
     ui->setupUi(this);
+
+    setSingleRow(false);
 
     ui->logo->hide();
     ui->blank->hide();

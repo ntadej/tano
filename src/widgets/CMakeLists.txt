@@ -177,6 +177,7 @@ SET(Tano_Widgets_Timers_Srcs
 
 SET(Tano_Widgets_Srcs
     MainWindow.cpp
+    MediaPlayer.cpp
 
     ${Tano_Widgets_Common_Srcs}
     ${Tano_Widgets_Dialogs_Srcs}

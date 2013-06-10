@@ -30,13 +30,6 @@
 
 #include "WidgetsSharedExport.h"
 
-class VlcInstance;
-class VlcMedia;
-class VlcMediaPlayer;
-
-class VlcControlAudio;
-class VlcControlVideo;
-
 class QShortcut;
 class QWidgetAction;
 
@@ -48,18 +41,11 @@ class EpgScheduleFull;
 class EpgShow;
 class NetworkDownload;
 class LocaleManager;
-class MenuAspectRatio;
-class MenuCropRatio;
-class MenuDeinterlacing;
-class MenuScale;
-class MenuTrackAudio;
-class MenuTrackSubtitles;
-class MenuTrackVideo;
+class MediaPlayer;
 class NetworkHttpAuth;
 class NetworkUdpxy;
 class SettingsChannel;
 class OsdFloat;
-class OsdWidget;
 class PlaylistEditor;
 class PlaylistModel;
 class PlaylistUpdate;
@@ -104,18 +90,13 @@ private slots:
     void showPlaylistEditor();
 
     void playChannel(Channel* channel);
-    void playLocal(const QString &path);
     void playRecording(Timer* recording);
-    void playUrl(const QString &url,
-                 const bool &channel = false);
+
     void stop();
     void setPlaying();
     void setStopped();
-    void startSession();
 
     void openPlaylist(const bool &start = false);
-    void openFile();
-    void openUrl();
 
     void tooltip(const QString &channelNow = "stop");
     void showOpenMenu();
@@ -125,8 +106,6 @@ private slots:
     void closeOsd();
     void showOsd(const QPoint &pos);
     void showVideo(const int &count = 0);
-    void teletext(const bool &enabled);
-    void teletext(const int &page);
     void toggleFilters(const bool &enabled = false);
     void toggleFullscreen(const bool &enabled);
     void toggleMouse(const bool &enabled = false);
@@ -134,19 +113,12 @@ private slots:
     void toggleOsdInfo(const bool &enabled = false);
     void preview(const bool &enabled = false);
 
-    void saveChannelSetting(const int &value);
-    void saveChannelSetting(const QString &value);
-
     void infoClose();
     void infoToggleSchedule();
 
     void recordNow(const bool &start);
     void recordProgramme(XmltvProgramme *programme);
     void recorder(const bool &enabled);
-    void takeSnapshot();
-
-    //Mouse double click hack
-    void resetClick();
 
 signals:
     void setVolume(int);
@@ -163,23 +135,12 @@ private:
     void createSettings();
     void createDesktopStartup();
     void createRecorder();
-    void createSession();
     void createShortcuts();
-    void writeSession();
-
-    // Functions
-    void play();
 
     //Settings
     bool _init;
     bool _channelPlayback;
-    int _defaultAspectRatio;
-    QString _defaultAudioLanguage;
-    int _defaultCropRatio;
-    int _defaultDeinterlacing;
     QString _defaultPlaylist;
-    QString _defaultSnapshot;
-    QString _defaultSubtitleLanguage;
     int _desktopWidth;
     int _desktopHeight;
     bool _filter;
@@ -196,39 +157,21 @@ private:
     int _height;
     int _posX;
     int _posY;
-    int _sessionChannel;
-    bool _sessionVolumeEnabled;
-    bool _sessionAutoplayEnabled;
-    int _sessionVolume;
-    bool _teletext;
     bool _udpxyEnabled;
-    bool _videoSettings;
-    bool _videoSettingsChannel;
     QString _wheelType;
-
-    //Mouse double click hack
-    bool _double;
-    QTimer *_timerDouble;
 
     //Main
     Arguments *_arguments;
     ChannelSelect *_select;
     NetworkDownload *_file;
     LocaleManager *_locale;
+    MediaPlayer *_mediaPlayer;
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;
     Recorder *_recorder;
-    SettingsChannel *_settingsChannel;
     QShortcut *_shortcut;
     DesktopShortcuts *_shortcuts;
     UpdateDialog *_update;
-
-    //Backend
-    VlcControlAudio *_audioController;
-    VlcInstance *_mediaInstance;
-    VlcMedia *_mediaItem;
-    VlcMediaPlayer *_mediaPlayer;
-    VlcControlVideo *_videoController;
 
     //Playback and channels
     Channel *_channel;
@@ -236,7 +179,6 @@ private:
     QString _playlistName;
     QTimer *_previewTimer;
     Timer *_recording;
-    QTimer *_startTimer;
     NetworkHttpAuth *_httpAuth;
     NetworkUdpxy *_udpxy;
 
@@ -247,19 +189,11 @@ private:
     OsdFloat *_osdInfo;
     OsdFloat *_osdSchedule;
     OsdFloat *_osdShow;
-    OsdWidget *_osdMain;
     PlaylistEditor *_playlistEditor;
     QTimer *_mouseTimer;
 
     //Menus and actions
     TrayIcon *_trayIcon;
-    MenuAspectRatio *_menuAspectRatio;
-    MenuCropRatio *_menuCropRatio;
-    MenuDeinterlacing *_menuDeinterlacing;
-    MenuScale *_menuScale;
-    MenuTrackAudio *_menuTrackAudio;
-    MenuTrackSubtitles *_menuTrackSubtitles;
-    MenuTrackVideo *_menuTrackVideo;
     QMenu *_rightMenu;
     QMenu *_openMenu;
     QMenu *_playlistMenu;

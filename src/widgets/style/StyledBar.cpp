@@ -28,11 +28,10 @@
 ****************************************************************************/
 
 #include "StyledBar.h"
+#include "StyleHelper.h"
 
 #include <QPainter>
 #include <QStyleOption>
-
-using namespace Utils;
 
 StyledBar::StyledBar(QWidget *parent)
     : QWidget(parent)

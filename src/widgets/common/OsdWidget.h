@@ -21,13 +21,9 @@
 
 #include <QtCore/QFile>
 
-#if defined(Qt5)
-    #include <QtWidgets/QFrame>
-#elif defined(Qt4)
-    #include <QtGui/QFrame>
-#endif
-
 #include <vlc-qt/Enums.h>
+
+#include "style/StyledBar.h"
 
 namespace Ui {
     class OsdWidget;
@@ -40,7 +36,7 @@ class VlcMediaPlayer;
 
 class VlcWidgetVolumeSlider;
 
-class OsdWidget : public QFrame
+class OsdWidget : public StyledBar
 {
 Q_OBJECT
 public:

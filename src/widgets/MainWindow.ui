@@ -16,53 +16,20 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="FancyTabWidget" name="tabs" native="true"/>
-    </item>
-    <item>
-     <widget class="QStackedWidget" name="stackedWidget">
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="pageMain">
-       <layout class="QVBoxLayout" name="verticalLayout_6"/>
-      </widget>
-      <widget class="QWidget" name="pagePlayback">
-       <layout class="QVBoxLayout" name="pagePlaybackLayout">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="VlcWidgetVideo" name="videoWidget" native="true"/>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="pageRecorder">
-       <layout class="QVBoxLayout" name="layoutRecorder">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-       </layout>
-      </widget>
-     </widget>
     </item>
    </layout>
   </widget>
@@ -807,16 +774,6 @@
    <extends>QWidget</extends>
    <header>epg/EpgScheduleChannel.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>VlcWidgetVideo</class>
-   <extends>QWidget</extends>
-   <header location="global">vlc-qt/WidgetVideo.h</header>
-   <container>1</container>
-   <slots>
-    <signal>fullscreen()</signal>
-    <slot>toggleFullscreen()</slot>
-   </slots>
   </customwidget>
   <customwidget>
    <class>FancyTabWidget</class>

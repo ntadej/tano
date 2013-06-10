@@ -42,6 +42,7 @@
 #include <QStackedLayout>
 #include <QStatusBar>
 #include <QToolTip>
+#include <QSplitter>
 
 const int FancyTabBar::m_rounding = 22;
 const int FancyTabBar::m_textPadding = 4;
@@ -93,7 +94,7 @@ FancyTabBar::~FancyTabBar()
 QSize FancyTabBar::tabSizeHint(bool minimum) const
 {
     QFont boldFont(font());
-    boldFont.setPointSizeF(Utils::StyleHelper::sidebarFontSize());
+    boldFont.setPointSizeF(StyleHelper::sidebarFontSize());
     boldFont.setBold(true);
     QFontMetrics fm(boldFont);
     int spacing = 8;
@@ -271,19 +272,19 @@ void FancyTabBar::paintTab(QPainter *painter, int tabIndex) const
     QRect tabIconRect(tabTextRect);
     tabTextRect.translate(0, drawIcon ? -2 : 1);
     QFont boldFont(painter->font());
-    boldFont.setPointSizeF(Utils::StyleHelper::sidebarFontSize());
+    boldFont.setPointSizeF(StyleHelper::sidebarFontSize());
     boldFont.setBold(true);
     painter->setFont(boldFont);
     painter->setPen(selected ? QColor(255, 255, 255, 160) : QColor(0, 0, 0, 110));
     const int textFlags = Qt::AlignCenter | (drawIcon ? Qt::AlignBottom : Qt::AlignVCenter) | Qt::TextWordWrap;
     if (enabled) {
         painter->drawText(tabTextRect, textFlags, tabText);
-        painter->setPen(selected ? QColor(60, 60, 60) : Utils::StyleHelper::panelTextColor());
+        painter->setPen(selected ? QColor(60, 60, 60) : StyleHelper::panelTextColor());
     } else {
-        painter->setPen(selected ? Utils::StyleHelper::panelTextColor() : QColor(255, 255, 255, 120));
+        painter->setPen(selected ? StyleHelper::panelTextColor() : QColor(255, 255, 255, 120));
     }
     // TODO: HOST!!!
-    /*if (!Utils::HostOsInfo::isMacHost() && !selected && enabled) {
+    /*if (!HostOsInfo::isMacHost() && !selected && enabled) {
         painter->save();
         int fader = int(m_tabs[tabIndex]->fader());
         QLinearGradient grad(rect.topLeft(), rect.topRight());
@@ -303,7 +304,7 @@ void FancyTabBar::paintTab(QPainter *painter, int tabIndex) const
     if (drawIcon) {
         int textHeight = painter->fontMetrics().boundingRect(QRect(0, 0, width(), height()), Qt::TextWordWrap, tabText).height();
         tabIconRect.adjust(0, 4, 0, -textHeight);
-        Utils::StyleHelper::drawIconWithShadow(tabIcon(tabIndex), tabIconRect, painter, enabled ? QIcon::Normal : QIcon::Disabled);
+        StyleHelper::drawIconWithShadow(tabIcon(tabIndex), tabIconRect, painter, enabled ? QIcon::Normal : QIcon::Disabled);
     }
 
     painter->translate(0, -1);
@@ -358,9 +359,9 @@ public:
     void mousePressEvent(QMouseEvent *ev)
     {
         if (ev->modifiers() & Qt::ShiftModifier) {
-            QColor color = QColorDialog::getColor(Utils::StyleHelper::requestedBaseColor(), m_parent);
+            QColor color = QColorDialog::getColor(StyleHelper::requestedBaseColor(), m_parent);
             if (color.isValid())
-                Utils::StyleHelper::setBaseColor(color);
+                StyleHelper::setBaseColor(color);
         }
     }
 private:
@@ -381,7 +382,7 @@ FancyTabWidget::FancyTabWidget(QWidget *parent)
     selectionLayout->setSpacing(0);
     selectionLayout->setMargin(0);
 
-    Utils::StyledBar *bar = new Utils::StyledBar;
+    StyledBar *bar = new StyledBar;
     QHBoxLayout *layout = new QHBoxLayout(bar);
     layout->setMargin(0);
     layout->setSpacing(0);
@@ -404,14 +405,19 @@ FancyTabWidget::FancyTabWidget(QWidget *parent)
 
     selectionLayout->addWidget(m_cornerWidgetContainer, 0);
 
+    m_containerWidget = new QWidget(this);
     m_modesStack = new QStackedLayout;
+    m_splitterWidget = new QSplitter(this);
     m_statusBar = new QStatusBar;
     m_statusBar->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
+
+    m_containerWidget->setLayout(m_modesStack);
+    m_splitterWidget->addWidget(m_containerWidget);
 
     QVBoxLayout *vlayout = new QVBoxLayout;
     vlayout->setMargin(0);
     vlayout->setSpacing(0);
-    vlayout->addLayout(m_modesStack);
+    vlayout->addWidget(m_splitterWidget);
     vlayout->addWidget(m_statusBar);
 
     QHBoxLayout *mainLayout = new QHBoxLayout;
@@ -422,6 +428,11 @@ FancyTabWidget::FancyTabWidget(QWidget *parent)
     setLayout(mainLayout);
 
     connect(m_tabBar, SIGNAL(currentChanged(int)), this, SLOT(showWidget(int)));
+}
+
+void FancyTabWidget::addStaticWidget(QWidget *widget)
+{
+    m_splitterWidget->addWidget(widget);
 }
 
 void FancyTabWidget::setSelectionWidgetVisible(bool visible)
@@ -464,11 +475,11 @@ void FancyTabWidget::paintEvent(QPaintEvent *event)
 
         QRect rect = m_selectionWidget->rect().adjusted(0, 0, 1, 0);
         rect = style()->visualRect(layoutDirection(), geometry(), rect);
-        Utils::StyleHelper::verticalGradient(&painter, rect, rect);
-        painter.setPen(Utils::StyleHelper::borderColor());
+        StyleHelper::verticalGradient(&painter, rect, rect);
+        painter.setPen(StyleHelper::borderColor());
         painter.drawLine(rect.topRight(), rect.bottomRight());
 
-        QColor light = Utils::StyleHelper::sidebarHighlight();
+        QColor light = StyleHelper::sidebarHighlight();
         painter.setPen(light);
         painter.drawLine(rect.bottomLeft(), rect.bottomRight());
     }

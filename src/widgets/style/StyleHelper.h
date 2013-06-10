@@ -42,8 +42,6 @@ void qt_blurImage(QPainter *p, QImage &blurImage, qreal radius, bool quality, bo
 QT_END_NAMESPACE
 
 // Helper class holding all custom color values
-
-namespace Utils {
 class StyleHelper
 {
 public:
@@ -94,5 +92,4 @@ private:
     static QColor m_requestedBaseColor;
 };
 
-} // namespace Utils
 #endif // STYLEHELPER_H

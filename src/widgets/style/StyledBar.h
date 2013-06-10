@@ -32,8 +32,6 @@
 
 #include <QWidget>
 
-namespace Utils {
-
 class StyledBar : public QWidget
 {
     Q_OBJECT
@@ -57,7 +55,5 @@ public:
 protected:
     void paintEvent(QPaintEvent *event);
 };
-
-} // Utils
 
 #endif // STYLEDBAR_H

@@ -38,6 +38,7 @@
 
 QT_BEGIN_NAMESPACE
 class QPainter;
+class QSplitter;
 class QStackedLayout;
 class QStatusBar;
 QT_END_NAMESPACE
@@ -140,6 +141,7 @@ class FancyTabWidget : public QWidget
 public:
     FancyTabWidget(QWidget *parent = 0);
 
+    void addStaticWidget(QWidget *widget);
     void insertTab(int index, QWidget *tab, const QIcon &icon, const QString &label);
     void removeTab(int index);
     void setBackgroundBrush(const QBrush &brush);
@@ -171,9 +173,11 @@ private slots:
 
 private:
     FancyTabBar *m_tabBar;
+    QWidget *m_containerWidget;
     QWidget *m_cornerWidgetContainer;
     QStackedLayout *m_modesStack;
     QWidget *m_selectionWidget;
+    QSplitter *m_splitterWidget;
     QStatusBar *m_statusBar;
 };
 

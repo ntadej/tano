@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 #endif
         qApp->setStyle(new ManhattanStyle(baseName));
 
-        Utils::StyleHelper::setBaseColor(QColor(Utils::StyleHelper::DEFAULT_BASE_COLOR));
+        StyleHelper::setBaseColor(QColor(StyleHelper::DEFAULT_BASE_COLOR));
 
 #if PASSWORD
         QString password;
