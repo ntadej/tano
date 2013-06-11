@@ -41,12 +41,12 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
                                 const QString &qName,
                                 const QXmlAttributes &attributes)
 {
-    if (!_metTag && qName != "tv") {
+    if (!_metTag && !(qName == "tv" || qName == "channels")) {
         _errorStr = QObject::tr("The file is not a valid XMLTV file.");
         return false;
     }
 
-    if (qName == "tv") { // Main
+    if (qName == "tv" || qName == "channels") { // Main
         _metTag = true;
     } else if (qName == "channel") { // Channel
         _currentChannel = new XmltvChannel(attributes.value("id"));

@@ -24,5 +24,8 @@ branding/SettingsDefaults.cpp
 branding/SettingsShortcutsDefaults.cpp
 branding/VERSION
 branding/windows
+branding/update.xml
+branding/tano.ico
+branding/*.jpg
 
 tt*

@@ -28,4 +28,10 @@
 #define PASSWORD_VALIDATE "http://yourdomain.com/passcheck/"
 #define PASSWORD_KEY "ok"
 
+#define SETTINGS_INTERFACE 1
+#define SETTINGS_PLAYBACK 1
+#define SETTINGS_PLAYLIST 0
+#define SETTINGS_RECORDER 0
+#define SETTINGS_SCHEDULE 0
+
 #endif // TANO_EXTRACONFIG_H_

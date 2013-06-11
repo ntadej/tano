@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "Config.h"
+
 #include "Common.h"
 #include "settings/Settings.h"
 
@@ -32,6 +34,14 @@ Settings::Settings(QObject *parent)
       _disableSchedule(false)
 {
     readSettings();
+
+#if BRANDING
+    _disableInterface = !bool(SETTINGS_INTERFACE);
+    _disablePlayback = !bool(SETTINGS_PLAYBACK);
+    _disablePlaylist = !bool(SETTINGS_PLAYLIST);
+    _disableRecorder = !bool(SETTINGS_RECORDER);
+    _disableSchedule = !bool(SETTINGS_SCHEDULE);
+#endif
 }
 
 Settings::~Settings() { }

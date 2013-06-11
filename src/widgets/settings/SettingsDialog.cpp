@@ -114,8 +114,6 @@ void SettingsDialog::apply()
         _settings->setUdpxy(ui->playlist->udpxy());
         _settings->setUdpxyUrl(ui->playlist->udpxyUrl());
         _settings->setUdpxyPort(ui->playlist->udpxyPort());
-    } else {
-        _settings->disablePlaylist();
     }
 
     // GUI
@@ -131,8 +129,6 @@ void SettingsDialog::apply()
         _settings->setStartLite(ui->gui->lite());
         _settings->setStartOnTop(ui->gui->top());
         _settings->setIcons(ui->gui->icons());
-    } else {
-        _settings->disableInterface();
     }
 
     // Playback
@@ -155,8 +151,6 @@ void SettingsDialog::apply()
 
         _settings->setMuteOnMinimize(ui->backend->mute());
         _settings->setTeletext(ui->backend->teletext());
-    } else {
-        _settings->disablePlayback();
     }
 
     // Schedule
@@ -164,16 +158,12 @@ void SettingsDialog::apply()
         _settings->setXmltvUpdate(ui->schedule->update());
         _settings->setXmltvUpdateLocation(ui->schedule->location());
         _settings->setXmltvUpdateRemote(ui->schedule->remote());
-    } else {
-        _settings->disableSchedule();
     }
 
     // Recorder
     if (ui->buttonRecorder->isEnabled()) {
         _settings->setRecorderDirectory(ui->recorder->directory());
         _settings->setSnapshotsDirectory(ui->recorder->snapshot());
-    } else {
-        _settings->disableRecorder();
     }
 
     _settings->writeSettings();

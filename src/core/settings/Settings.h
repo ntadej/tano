@@ -203,13 +203,6 @@ public:
     inline void setXmltvUpdateRemote(const bool &b) { _xmltvUpdateRemote = b; }
     static const bool DEFAULT_XMLTV_UPDATE_REMOTE;
 
-    // Disable settings categories saving
-    void disableInterface() { _disableInterface = true; }
-    void disablePlayback() { _disablePlayback = true; }
-    void disablePlaylist() { _disablePlaylist = true; }
-    void disableRecorder() { _disableRecorder = true; }
-    void disableSchedule() { _disableSchedule = true; }
-
 private:
     // General variables
     QString _language;
