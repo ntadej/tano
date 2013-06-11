@@ -52,6 +52,7 @@
 #include "core/Arguments.h"
 #include "core/Common.h"
 #include "core/LocaleManager.h"
+#include "core/Log.h"
 #include "core/Resources.h"
 #include "core/network/NetworkDownload.h"
 #include "core/network/NetworkHttpAuth.h"
@@ -193,6 +194,9 @@ void MainWindow::exit()
             ui->actionMute->toggle();
         _trayIcon->hide();
         writeSession();
+#if PASSWORD
+        Tano::Log::logout();
+#endif
         qApp->quit();
         break;
     case QMessageBox::Cancel:
@@ -893,6 +897,8 @@ void MainWindow::playChannel(Channel *channel)
 
     playUrl(url, true);
 
+    Tano::Log::playingChannel(channel->number());
+
     if (_channel->logo().contains("http")) {
         _file->getFile(_channel->logo());
     } else if (!_channel->logo().isEmpty()) {
@@ -991,6 +997,8 @@ void MainWindow::stop()
 
     _audioController->reset();
     _videoController->reset();
+
+    Tano::Log::stopped();
 }
 
 void MainWindow::saveChannelSetting(const int &value)

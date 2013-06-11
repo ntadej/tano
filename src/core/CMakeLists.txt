@@ -145,6 +145,7 @@ IF(BRANDING)
     SET(Tano_Core_Srcs
         ${Tano_Core_Srcs}
 
+        ../../branding/Log.cpp
         ../../branding/SettingsDefaults.cpp
         ../../branding/SettingsShortcutsDefaults.cpp
     )

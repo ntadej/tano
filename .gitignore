@@ -20,6 +20,7 @@ branding/Branding*
 branding/ExtraConfig.h.in
 branding/FEATURES
 branding/logo
+branding/Log.*
 branding/SettingsDefaults.cpp
 branding/SettingsShortcutsDefaults.cpp
 branding/VERSION

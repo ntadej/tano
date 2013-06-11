@@ -40,9 +40,7 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 #endif
 
-#if LOGGING
     Tano::Log::setup();
-#endif
 
     QtSingleApplication instance(argc, argv);
     if(instance.sendMessage(""))

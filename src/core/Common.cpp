@@ -16,6 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
+
 #include "Config.h"
 
 #include "Common.h"
@@ -91,6 +94,19 @@ bool Tano::is64bit()
 #endif
 
     return bit;
+}
+
+QString Tano::uid()
+{
+#if defined(Q_OS_LINUX)
+    QFile file("/var/lib/dbus/machine-id");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return QString("error");
+
+    QTextStream in(&file);
+    QString uid = in.readLine();
+    return uid;
+#endif
 }
 
 QString Tano::recordingFileName(const QString &name,

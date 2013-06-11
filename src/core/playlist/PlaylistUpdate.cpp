@@ -18,6 +18,7 @@
 
 #include <QtCore/QDebug>
 
+#include "Log.h"
 #include "Resources.h"
 #include "network/NetworkDownload.h"
 #include "playlist/PlaylistModel.h"
@@ -49,6 +50,8 @@ void PlaylistUpdate::processPlaylist(QFile *file)
 
     if (_save)
         _model->save(_playlist, _model->name());
+
+    Tano::Log::playlistLoaded();
 
     delete file;
 }

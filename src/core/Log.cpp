@@ -22,10 +22,21 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 
+#include "Config.h"
+
 #include "Common.h"
 #include "Log.h"
 #include "Out.h"
 #include "Resources.h"
+
+#if BRANDING && BRANDING_LOG
+    #include <QtNetwork/QNetworkAccessManager>
+    #include <QtNetwork/QNetworkRequest>
+
+    #include "branding/Log.h"
+
+    QNetworkAccessManager *nam;
+#endif
 
 QTextStream *out;
 
@@ -70,6 +81,7 @@ void Tano::Log::output(QtMsgType type,
 
 void Tano::Log::setup()
 {
+#if LOGGING
     QString fileName = Tano::Resources::settingsPath() + "/" + Tano::executable() + ".log";
     QFile *log = new QFile(fileName);
     if (log->open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text)) {
@@ -82,4 +94,54 @@ void Tano::Log::setup()
     } else {
         qDebug() << "Error opening log file '" << fileName << "'. All debug output redirected to console.";
     }
+#endif
+
+#if BRANDING && BRANDING_LOG
+    nam = new QNetworkAccessManager();
+#endif
+}
+
+void Tano::Log::login()
+{
+    qDebug() << "Login successful!";
+
+#if BRANDING && BRANDING_LOG
+    nam->get(QNetworkRequest(QUrl(Tano::BrandingLog::login())));
+#endif
+}
+
+void Tano::Log::logout()
+{
+    qDebug() << "Logout";
+
+#if BRANDING && BRANDING_LOG
+    nam->get(QNetworkRequest(QUrl(Tano::BrandingLog::logout())));
+#endif
+}
+
+void Tano::Log::playingChannel(const int &id)
+{
+    qDebug() << "Playing channel #" << id;
+
+#if BRANDING && BRANDING_LOG
+    nam->get(QNetworkRequest(QUrl(Tano::BrandingLog::playingChannel(id))));
+#endif
+}
+
+void Tano::Log::playlistLoaded()
+{
+    qDebug() << "Playlist loaded from network";
+
+#if BRANDING && BRANDING_LOG
+    nam->get(QNetworkRequest(QUrl(Tano::BrandingLog::playlistLoaded())));
+#endif
+}
+
+void Tano::Log::stopped()
+{
+    qDebug() << "Stopped";
+
+#if BRANDING && BRANDING_LOG
+   // nam->get(QNetworkRequest(QUrl(Tano::BrandingLog::stopped())));
+#endif
 }

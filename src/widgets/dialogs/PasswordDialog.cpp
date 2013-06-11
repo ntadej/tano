@@ -16,9 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QDebug>
-
 #include "Config.h"
+#include "core/Common.h"
+#include "core/Log.h"
 #include "core/network/NetworkRequest.h"
 #include "core/settings/SettingsPassword.h"
 
@@ -34,6 +34,9 @@ PasswordDialog::PasswordDialog(QWidget *parent)
     ui->setupUi(this);
 
     QScopedPointer<SettingsPassword> settings(new SettingsPassword(this));
+    settings->setUid(Tano::uid());
+    settings->writeSettings();
+
     ui->editUsername->setText(settings->username());
     if (!settings->password().isEmpty()) {
         ui->editPassword->setText(settings->password());
@@ -104,14 +107,14 @@ void PasswordDialog::validatePasswordResponse(const QByteArray &response,
 
 #if PASSWORD
     if (QString(response).contains(QString(PASSWORD_KEY))) {
-        qDebug() << "Authentication successful!";
-
         QScopedPointer<SettingsPassword> settings(new SettingsPassword(this));
         settings->setUsername(ui->editUsername->text());
         settings->setPassword(ui->remember->isChecked() ? ui->editPassword->text() : "");
         settings->writeSettings();
 
         _password = ui->editPassword->text();
+
+        Tano::Log::login();
 
         if (!_edit)
             accept();

@@ -37,6 +37,13 @@ namespace Tano
 #endif
 
         TANO_CORE_EXPORT void setup();
+
+        // Common messages
+        TANO_CORE_EXPORT void login();
+        TANO_CORE_EXPORT void logout();
+        TANO_CORE_EXPORT void playingChannel(const int &id);
+        TANO_CORE_EXPORT void playlistLoaded();
+        TANO_CORE_EXPORT void stopped();
     }
 }
 
