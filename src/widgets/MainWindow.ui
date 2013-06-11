@@ -146,7 +146,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionOpenToolbar"/>
    <addaction name="separator"/>
    <addaction name="actionSchedule"/>
    <addaction name="separator"/>
@@ -176,186 +175,6 @@
    <addaction name="actionRecord"/>
    <addaction name="separator"/>
    <addaction name="actionRecordTimer"/>
-  </widget>
-  <widget class="QDockWidget" name="dockInfo">
-   <property name="features">
-    <set>QDockWidget::DockWidgetClosable</set>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>2</number>
-   </attribute>
-   <widget class="QWidget" name="dockContents">
-    <layout class="QVBoxLayout" name="dockLayout">
-     <property name="leftMargin">
-      <number>0</number>
-     </property>
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <property name="rightMargin">
-      <number>0</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <item>
-      <widget class="QStackedWidget" name="stackedWidgetDock">
-       <property name="currentIndex">
-        <number>0</number>
-       </property>
-       <widget class="QWidget" name="pagePlaylist">
-        <layout class="QVBoxLayout" name="verticalLayout_4">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_4">
-           <item>
-            <widget class="QLabel" name="labelPlaylistIcon">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="labelPlaylistName"/>
-           </item>
-           <item>
-            <widget class="QPushButton" name="buttonPlaylistSearch">
-             <property name="minimumSize">
-              <size>
-               <width>50</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>50</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="icon">
-              <iconset theme="edit-find-replace">
-               <normaloff/>
-              </iconset>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="buttonPlaylistClose">
-             <property name="maximumSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-             <property name="icon">
-              <iconset theme="window-close">
-               <normaloff/>
-              </iconset>
-             </property>
-             <property name="flat">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="PlaylistDisplayWidget" name="playlistWidget" native="true"/>
-         </item>
-         <item>
-          <widget class="QWidget" name="blank" native="true">
-           <property name="maximumSize">
-            <size>
-             <width>1</width>
-             <height>1</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttonSchedule">
-           <property name="text">
-            <string>Schedule</string>
-           </property>
-           <property name="icon">
-            <iconset theme="x-office-calendar">
-             <normaloff/>
-            </iconset>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QWidget" name="pageSchedule">
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QLabel" name="labelScheduleIcon">
-             <property name="minimumSize">
-              <size>
-               <width>16</width>
-               <height>16</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16</width>
-               <height>16</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="labelScheduleName">
-             <property name="text">
-              <string>&lt;b&gt;Schedule&lt;/b&gt;</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="buttonScheduleClose">
-             <property name="maximumSize">
-              <size>
-               <width>20</width>
-               <height>20</height>
-              </size>
-             </property>
-             <property name="icon">
-              <iconset theme="window-close">
-               <normaloff/>
-              </iconset>
-             </property>
-             <property name="flat">
-              <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="EpgScheduleChannel" name="scheduleWidget" native="true"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="buttonScheduleBack">
-           <property name="text">
-            <string>Back</string>
-           </property>
-           <property name="icon">
-            <iconset theme="go-previous">
-             <normaloff/>
-            </iconset>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-     </item>
-    </layout>
-   </widget>
   </widget>
   <action name="actionAbout">
    <property name="icon">
@@ -459,16 +278,6 @@
    </property>
    <property name="text">
     <string>Check for updates</string>
-   </property>
-  </action>
-  <action name="actionOpenToolbar">
-   <property name="icon">
-    <iconset theme="document-open">
-     <normaloff/>
-    </iconset>
-   </property>
-   <property name="text">
-    <string>Open</string>
    </property>
   </action>
   <action name="actionPlay">
@@ -763,18 +572,6 @@
   </action>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>PlaylistDisplayWidget</class>
-   <extends>QWidget</extends>
-   <header>playlist/PlaylistDisplayWidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>EpgScheduleChannel</class>
-   <extends>QWidget</extends>
-   <header>epg/EpgScheduleChannel.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>FancyTabWidget</class>
    <extends>QWidget</extends>

@@ -124,12 +124,11 @@ public:
     StyleAnimator animator;
 };
 
-// TODO: Icons
 ManhattanStylePrivate::ManhattanStylePrivate() :
-    lineeditImage(QLatin1String(":/core/images/inputfield.png")),
-    lineeditImage_disabled(QLatin1String(":/core/images/inputfield_disabled.png")),
-    extButtonPixmap(QLatin1String(":/core/images/extension.png")),
-    closeButtonPixmap(QLatin1String(":/core/images/extension.png"))
+    lineeditImage(QLatin1String(":/style/inputfield.png")),
+    lineeditImage_disabled(QLatin1String(":/style/inputfield_disabled.png")),
+    extButtonPixmap(QLatin1String(":/style/extension.png")),
+    closeButtonPixmap(QLatin1String(":/style/closebutton.png"))
 {
 }
 
@@ -911,17 +910,22 @@ void ManhattanStyle::drawComplexControl(ComplexControl control, const QStyleOpti
             bool isEmpty = cb->currentText.isEmpty() && cb->currentIcon.isNull();
             bool reverse = option->direction == Qt::RightToLeft;
             bool drawborder = !(widget && widget->property("hideborder").toBool());
+            bool inverse = (widget && widget->property("inverse").toBool());
             bool alignarrow = !(widget && widget->property("alignarrow").toBool());
 
             if (drawborder)
-                drawButtonSeparator(painter, rect, reverse);
+                drawButtonSeparator(painter, rect, reverse || inverse);
 
             QStyleOption toolbutton = *option;
             if (isEmpty)
                 toolbutton.state &= ~(State_Enabled | State_Sunken);
             painter->save();
-            if (drawborder)
-                painter->setClipRect(toolbutton.rect.adjusted(0, 0, -2, 0));
+            if (drawborder) {
+                if(inverse)
+                    painter->setClipRect(toolbutton.rect.adjusted(2, 0, 0, 0));
+                else
+                    painter->setClipRect(toolbutton.rect.adjusted(0, 0, -2, 0));
+            }
             drawPrimitive(PE_PanelButtonTool, &toolbutton, painter, widget);
             painter->restore();
             // Draw arrow
@@ -973,7 +977,10 @@ void ManhattanStyle::drawButtonSeparator(QPainter *painter, const QRect &rect, b
     grad.setColorAt(0.7, QColor(255, 255, 255, 50));
     grad.setColorAt(1, QColor(255, 255, 255, 40));
     painter->setPen(QPen(grad, 0));
-    painter->drawLine(rect.topRight(), rect.bottomRight());
+    if (!reverse)
+       painter->drawLine(rect.topRight(), rect.bottomRight());
+    else
+       painter->drawLine(rect.topLeft() + QPoint(1,0), rect.bottomLeft() + QPoint(1,0));
     grad.setColorAt(0, QColor(0, 0, 0, 30));
     grad.setColorAt(0.4, QColor(0, 0, 0, 70));
     grad.setColorAt(0.7, QColor(0, 0, 0, 70));

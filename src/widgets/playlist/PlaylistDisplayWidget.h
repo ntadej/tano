@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,10 +21,10 @@
 
 #include <QtCore/QModelIndex>
 
-#if defined(Qt5)
-    #include <QtWidgets/QWidget>
-#elif defined(Qt4)
-    #include <QtGui/QWidget>
+#if QT_VERSION >= 0x050000
+    #include <QtWidgets/QListView>
+#else
+    #include <QtGui/QListView>
 #endif
 
 #include "core/playlist/containers/Channel.h"
@@ -34,15 +34,9 @@ class QMenu;
 
 class Channel;
 class PlaylistFilterModel;
-class PlaylistFilterWidget;
 class PlaylistModel;
 
-namespace Ui
-{
-    class PlaylistDisplayWidget;
-}
-
-class PlaylistDisplayWidget : public QWidget
+class PlaylistDisplayWidget : public QListView
 {
 Q_OBJECT
 public:
@@ -50,17 +44,10 @@ public:
     ~PlaylistDisplayWidget();
 
     Channel *currentChannel() { return _current; }
-    PlaylistFilterWidget *filter();
-    void filterReset();
     QList<Channel *> visibleChannels();
 
-    void editMode();
     void playMode();
-    void refreshModel();
     void setModel(PlaylistModel *model);
-
-protected:
-    void changeEvent(QEvent *e);
 
 signals:
     void itemSelected(Channel *);
@@ -70,21 +57,19 @@ public slots:
     void channelSelected(Channel *channel);
     void channelSelected(const int &channel);
     void channelSelected(const QString &xmltvId);
+    void setFilters(const QString &search,
+                    const QString &category,
+                    const QString &language,
+                    const QList<Channel::Type> &types);
 
 private slots:
     void channelSelected(const QModelIndex &index);
     void play();
-    void processFilters(const QString &search,
-                        const QString &category,
-                        const QString &language,
-                        const QList<Channel::Type> &types);
     void schedule();
     void showMenu(const QPoint &pos);
     void updateSelection(Channel *channel);
 
 private:
-    Ui::PlaylistDisplayWidget *ui;
-
     Channel *_current;
     PlaylistModel *_model;
     PlaylistFilterModel *_filterModel;

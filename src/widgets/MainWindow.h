@@ -37,6 +37,7 @@ class Arguments;
 class Channel;
 class ChannelSelect;
 class DesktopShortcuts;
+class EpgScheduleChannel;
 class EpgScheduleFull;
 class EpgShow;
 class NetworkDownload;
@@ -48,13 +49,17 @@ class SettingsChannel;
 class OsdFloat;
 class PlaylistEditor;
 class PlaylistModel;
+class PlaylistTab;
 class PlaylistUpdate;
+class PlaylistDisplayWidget;
 class Recorder;
 class Timer;
 class TrayIcon;
 class UpdateDialog;
 class XmltvManager;
 class XmltvProgramme;
+
+class TestMain;
 
 namespace Ui
 {
@@ -99,22 +104,17 @@ private slots:
     void openPlaylist(const bool &start = false);
 
     void tooltip(const QString &channelNow = "stop");
-    void showOpenMenu();
     void top();
     void lite();
     void tray();
     void closeOsd();
     void showOsd(const QPoint &pos);
     void showVideo(const int &count = 0);
-    void toggleFilters(const bool &enabled = false);
     void toggleFullscreen(const bool &enabled);
     void toggleMouse(const bool &enabled = false);
     void toggleOsdControls(const bool &enabled = false);
     void toggleOsdInfo(const bool &enabled = false);
     void preview(const bool &enabled = false);
-
-    void infoClose();
-    void infoToggleSchedule();
 
     void recordNow(const bool &start);
     void recordProgramme(XmltvProgramme *programme);
@@ -143,7 +143,6 @@ private:
     QString _defaultPlaylist;
     int _desktopWidth;
     int _desktopHeight;
-    bool _filter;
     bool _hasPlaylist;
     bool _hideToTray;
     bool _isLite;
@@ -183,6 +182,10 @@ private:
     NetworkUdpxy *_udpxy;
 
     //GUI
+    PlaylistTab *_playlistTab;
+    EpgScheduleChannel *_scheduleWidget;
+    TestMain *_test;
+
     EpgScheduleFull *_schedule;
     EpgShow *_epgShow;
     OsdFloat *_osdFloat;
@@ -195,11 +198,8 @@ private:
     //Menus and actions
     TrayIcon *_trayIcon;
     QMenu *_rightMenu;
-    QMenu *_openMenu;
-    QMenu *_playlistMenu;
     QList<QAction*> _actions;
     QList<QAction*> _actionsFull;
-    QWidgetAction *_waction;
 };
 
 #endif // TANO_MAINWINDOW_H_

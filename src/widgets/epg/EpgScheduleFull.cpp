@@ -33,7 +33,6 @@
 #include "core/xmltv/containers/XmltvProgramme.h"
 
 #include "common/OsdFloat.h"
-#include "playlist/PlaylistFilterWidget.h"
 
 EpgScheduleFull::EpgScheduleFull(QWidget *parent)
     : QWidget(parent),
@@ -44,12 +43,6 @@ EpgScheduleFull::EpgScheduleFull(QWidget *parent)
     ui->setupUi(this);
     ui->schedule->setIdentifier(Tano::Schedule);
 
-    _menu = new QMenu(this);
-    _action = new QWidgetAction(this);
-    ui->playlist->filter()->show();
-    _action->setDefaultWidget(ui->playlist->filter());
-    _menu->addAction(_action);
-    ui->buttonFilter->setMenu(_menu);
     ui->buttonClose->hide();
     ui->labelTitle->hide();
 
@@ -105,7 +98,7 @@ void EpgScheduleFull::openSchedule(Channel *channel)
 
 void EpgScheduleFull::refreshPlaylistModel()
 {
-    ui->playlist->refreshModel();
+    //ui->playlist->refreshModel();
 }
 
 EpgScheduleChannel *EpgScheduleFull::schedule()

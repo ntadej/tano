@@ -28,6 +28,7 @@
 ****************************************************************************/
 
 #include "FancyTabWidget.h"
+#include "MiniSplitter.h"
 #include "StyleHelper.h"
 #include "StyledBar.h"
 
@@ -42,7 +43,6 @@
 #include <QStackedLayout>
 #include <QStatusBar>
 #include <QToolTip>
-#include <QSplitter>
 
 const int FancyTabBar::m_rounding = 22;
 const int FancyTabBar::m_textPadding = 4;
@@ -283,8 +283,8 @@ void FancyTabBar::paintTab(QPainter *painter, int tabIndex) const
     } else {
         painter->setPen(selected ? StyleHelper::panelTextColor() : QColor(255, 255, 255, 120));
     }
-    // TODO: HOST!!!
-    /*if (!HostOsInfo::isMacHost() && !selected && enabled) {
+
+    if (!selected && enabled) {
         painter->save();
         int fader = int(m_tabs[tabIndex]->fader());
         QLinearGradient grad(rect.topLeft(), rect.topRight());
@@ -296,7 +296,7 @@ void FancyTabBar::paintTab(QPainter *painter, int tabIndex) const
         painter->drawLine(rect.topLeft(), rect.topRight());
         painter->drawLine(rect.bottomLeft(), rect.bottomRight());
         painter->restore();
-    }*/
+    }
 
     if (!enabled)
         painter->setOpacity(0.7);
@@ -407,7 +407,7 @@ FancyTabWidget::FancyTabWidget(QWidget *parent)
 
     m_containerWidget = new QWidget(this);
     m_modesStack = new QStackedLayout;
-    m_splitterWidget = new QSplitter(this);
+    m_splitterWidget = new MiniSplitter(this);
     m_statusBar = new QStatusBar;
     m_statusBar->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
 

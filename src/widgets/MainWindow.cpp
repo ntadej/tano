@@ -67,11 +67,14 @@
 #include "dialogs/AboutDialog.h"
 #include "dialogs/DonationDialog.h"
 #include "dialogs/UpdateDialog.h"
+#include "epg/EpgScheduleChannel.h"
 #include "epg/EpgScheduleFull.h"
 #include "epg/EpgShow.h"
+#include "main/MediaPlayer.h"
+#include "main/PlaylistTab.h"
 #include "menu/MenuCore.h"
+#include "playlist/PlaylistDisplayWidget.h"
 #include "playlist/PlaylistEditor.h"
-#include "playlist/PlaylistFilterWidget.h"
 #include "settings/SettingsDialog.h"
 #include "settings/SettingsDialogShortcuts.h"
 
@@ -87,7 +90,6 @@
 #endif
 
 #include "MainWindow.h"
-#include "MediaPlayer.h"
 #include "ui_MainWindow.h"
 
 MainWindow::MainWindow(Arguments *args,
@@ -250,7 +252,7 @@ bool MainWindow::eventFilter(QObject *obj,
         }
     }
 
-    return false;
+    return QMainWindow::eventFilter(obj, event);
 }
 
 void MainWindow::changeEvent(QEvent *e)
@@ -279,6 +281,20 @@ void MainWindow::createGui()
 {
     _mouseTimer = new QTimer(this);
 
+    _playlistTab = new PlaylistTab(this);
+    _playlistTab->playlist()->setModel(_model);
+    ui->tabs->insertTab(0, _playlistTab, QIcon::fromTheme("video-x-generic"), tr("Channels"));
+    ui->tabs->setTabEnabled(0, true);
+
+    _scheduleWidget = new EpgScheduleChannel(this);
+    _scheduleWidget->setIdentifier(Tano::Main);
+    ui->tabs->insertTab(1, _scheduleWidget, QIcon::fromTheme("x-office-calendar"), tr("Schedule"));
+    ui->tabs->setTabEnabled(1, true);
+
+    ui->tabs->setCurrentIndex(0);
+
+    //ui->tabs->addCornerWidget(new FancyColorButton(this));
+
     _osdInfo = new OsdFloat(this);
     _osdInfo->setInfo();
     _osdFloat = new OsdFloat(this);
@@ -289,28 +305,16 @@ void MainWindow::createGui()
     _osdShow = new OsdFloat(this);
     _osdShow->setSchedule();
 
-    ui->dockInfo->setTitleBarWidget(ui->blank);
-
-    _waction = new QWidgetAction(this);
-    _playlistMenu->addAction(_waction);
-    toggleFilters();
-
-    ui->playlistWidget->playMode();
-    ui->playlistWidget->setModel(_model);
     _schedule->setPlaylistModel(_model);
 
     openPlaylist(true);
     setStopped();
     showVideo();
     ui->toolBarRecorder->hide();
-    ui->scheduleWidget->setIdentifier(Tano::Main);
 
 #if !FEATURE_TELETEXT
     ui->menuMedia->removeAction(ui->actionTeletext);
 #endif 
-
-    ui->labelPlaylistIcon->setPixmap(QIcon::fromTheme("video-x-generic").pixmap(16));
-    ui->labelScheduleIcon->setPixmap(QIcon::fromTheme("x-office-calendar").pixmap(16));
 
     qDebug() << "Initialised: GUI";
 }
@@ -339,9 +343,6 @@ void MainWindow::createSettings()
 
     _wheelType = settings->mouseWheel();
     _rememberGui = settings->rememberGuiSession();
-    _filter = settings->filtersVisible();
-    if (_init)
-        toggleFilters();
 
     //Playback settings
     _mediaPlayer->createSettings();
@@ -429,7 +430,6 @@ void MainWindow::createConnections()
     connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
     connect(ui->actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
     connect(ui->actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
-    connect(ui->actionOpenToolbar, SIGNAL(triggered()), this, SLOT(showOpenMenu()));
 
     connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
     connect(ui->actionScheduleCurrent, SIGNAL(triggered()), this, SLOT(showScheduleCurrent()));
@@ -441,7 +441,7 @@ void MainWindow::createConnections()
     connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
     connect(ui->actionPreview, SIGNAL(triggered(bool)), this, SLOT(preview(bool)));
 
-    connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playChannel(Channel *)));
+    connect(_playlistTab->playlist(), SIGNAL(itemSelected(Channel *)), this, SLOT(playChannel(Channel *)));
     connect(_previewTimer, SIGNAL(timeout()), ui->actionNext, SLOT(trigger()));
 
     connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
@@ -470,22 +470,17 @@ void MainWindow::createConnections()
     connect(_mediaPlayer->osd(), SIGNAL(snapshotClicked()), ui->actionSnapshot, SLOT(trigger()));
     connect(_mediaPlayer->osd(), SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
 
-    connect(ui->buttonSchedule, SIGNAL(clicked()), this, SLOT(infoToggleSchedule()));
-    connect(ui->buttonScheduleBack, SIGNAL(clicked()), this, SLOT(infoToggleSchedule()));
-    connect(ui->buttonPlaylistClose, SIGNAL(clicked()), this, SLOT(infoClose()));
-    connect(ui->buttonScheduleClose, SIGNAL(clicked()), this, SLOT(infoClose()));
-
     connect(_xmltv, SIGNAL(current(QStringList)), _mediaPlayer->osd(), SLOT(setEpg(QStringList)));
-    connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), ui->scheduleWidget, SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
+    connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), _scheduleWidget, SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
     connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
     connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _xmltv, SLOT(request(QString, Tano::Id)));
     connect(_schedule, SIGNAL(itemSelected(QString)), _xmltv, SLOT(requestProgramme(QString)));
-    connect(ui->scheduleWidget, SIGNAL(itemSelected(QString)), _xmltv, SLOT(requestProgramme(QString)));
+    connect(_scheduleWidget, SIGNAL(itemSelected(QString)), _xmltv, SLOT(requestProgramme(QString)));
     connect(_xmltv, SIGNAL(programme(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
     connect(_mediaPlayer->osd(), SIGNAL(openLink(QString)), _xmltv, SLOT(requestProgramme(QString)));
     connect(_epgShow, SIGNAL(requestNext(QString, QString)), _xmltv, SLOT(requestProgrammeNext(QString, QString)));
     connect(_epgShow, SIGNAL(requestPrevious(QString, QString)), _xmltv, SLOT(requestProgrammePrevious(QString, QString)));
-    connect(ui->playlistWidget, SIGNAL(scheduleRequested(Channel *)), _schedule, SLOT(openSchedule(Channel *)));
+    connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _schedule, SLOT(openSchedule(Channel *)));
 
 #if FEATURE_UPDATE
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
@@ -508,7 +503,7 @@ void MainWindow::createConnections()
 
     connect(_epgShow, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
     connect(_schedule, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
-    connect(ui->scheduleWidget, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
+    connect(_scheduleWidget, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
     connect(_xmltv, SIGNAL(programmeRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
 
     connect(_shortcut, SIGNAL(activated()), this, SLOT(closeOsd()));
@@ -535,21 +530,12 @@ void MainWindow::createMenus()
     _rightMenu->addAction(ui->actionTray);
     _rightMenu->addAction(ui->actionExit);
 
-    _openMenu = new QMenu();
-    _openMenu->addAction(ui->actionOpenFile);
-    _openMenu->addAction(ui->actionOpenUrl);
-    _openMenu->addAction(ui->actionOpen);
-
-    ui->actionOpenToolbar->setMenu(_openMenu);
-
     _trayIcon = new TrayIcon(_rightMenu);
 
     ui->menuAudio->addMenu(_mediaPlayer->menus()[0]);
     foreach(MenuCore *menu, _mediaPlayer->menus())
         ui->menuVideo->addMenu(menu);
     ui->menuVideo->removeAction(_mediaPlayer->menus()[0]->menuAction());
-
-    _playlistMenu = new QMenu();
 
 #if BRANDING
     Tano::Branding::processMenus(this, ui, _rightMenu);
@@ -714,7 +700,7 @@ void MainWindow::stop()
 
     _mediaPlayer->stop();
     _xmltv->stop();
-    ui->scheduleWidget->setPage(0);
+    _scheduleWidget->setPage(0);
 
     tooltip();
     _trayIcon->changeToolTip(Tano::Main);
@@ -728,7 +714,7 @@ void MainWindow::openPlaylist(const bool &start)
     if (_select != 0) {
         disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
         disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-        disconnect(_select, SIGNAL(channelSelect(int)), ui->playlistWidget, SLOT(channelSelected(int)));
+        disconnect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
         delete _select;
     }
 
@@ -758,11 +744,12 @@ void MainWindow::openPlaylist(const bool &start)
     _select = new ChannelSelect(this, _mediaPlayer->osd()->lcd(), _model->numbers());
     connect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
     connect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-    connect(_select, SIGNAL(channelSelect(int)), ui->playlistWidget, SLOT(channelSelected(int)));
+    connect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
 
-    ui->labelPlaylistName->setText("<b>" + _model->name() + "</b>");
-
-    ui->playlistWidget->refreshModel();
+    _playlistTab->setPlaylistName(_model->name());
+    _playlistTab->setFilters(_model->categories(), _model->languages());
+    // TODO: refresh filters
+    //_playlistWidget->refreshModel();
     _schedule->refreshPlaylistModel();
 }
 
@@ -831,11 +818,6 @@ void MainWindow::tooltip(const QString &channelNow)
         setWindowTitle(channelNow + " - " + Tano::name());
     else
         setWindowTitle(Tano::name());
-}
-
-void MainWindow::showOpenMenu()
-{
-    ui->actionOpenToolbar->menu()->exec(QCursor::pos());
 }
 
 void MainWindow::top()
@@ -920,35 +902,6 @@ void MainWindow::showVideo(const int &count)
 }
 
 // Dock
-void MainWindow::infoClose()
-{
-    ui->dockInfo->close();
-}
-
-void MainWindow::infoToggleSchedule()
-{
-    if (ui->stackedWidgetDock->currentIndex()) {
-        ui->stackedWidgetDock->setCurrentIndex(0);
-    } else {
-        ui->stackedWidgetDock->setCurrentIndex(1);
-    }
-}
-
-void MainWindow::toggleFilters(const bool &enabled)
-{
-    if (enabled || _filter) {
-        ui->buttonPlaylistSearch->hide();
-        ui->playlistWidget->filterReset();
-    } else if (!_filter) {
-        ui->buttonPlaylistSearch->show();
-        ui->playlistWidget->filter()->show();
-        _playlistMenu->removeAction(_waction);
-        _waction->setDefaultWidget(ui->playlistWidget->filter());
-        _playlistMenu->addAction(_waction);
-        ui->buttonPlaylistSearch->setMenu(_playlistMenu);
-    }
-}
-
 void MainWindow::toggleFullscreen(const bool &enabled)
 {
     _osdInfo->setVisible(enabled);
@@ -970,18 +923,10 @@ void MainWindow::toggleFullscreen(const bool &enabled)
 
         setWindowState(windowState() | Qt::WindowFullScreen);
 
-        ui->buttonPlaylistClose->hide();
-        ui->buttonScheduleClose->hide();
-
-        _osdInfo->setWidget(ui->stackedWidgetDock);
         //_osdFloat->setWidget(_osdMain);
         //_osdFloat->resize(_osdFloat->width(), _osdMain->height());
         _osdFloat->setControls();
     } else {
-        ui->buttonPlaylistClose->show();
-        ui->buttonScheduleClose->show();
-
-        ui->dockContents->layout()->addWidget(ui->stackedWidgetDock);
         // TODO: OSD
         //ui->pagePlayback->layout()->addWidget(_osdMain);
 
@@ -992,7 +937,6 @@ void MainWindow::toggleFullscreen(const bool &enabled)
     }
 
     toggleMouse(!enabled);
-    toggleFilters(enabled);
 }
 
 void MainWindow::toggleMouse(const bool &enabled)
@@ -1079,11 +1023,8 @@ void MainWindow::recorder(const bool &enabled)
         _recorder->setVisible(true);
         // TODO: recorder
         //ui->stackedWidget->setCurrentIndex(2);
-
-        ui->dockInfo->setVisible(false);
     } else {
         _recorder->setVisible(false);
-        ui->dockInfo->setVisible(true);
 
         /*if (_mediaPlayer->hasVout()) {
             ui->stackedWidget->setCurrentIndex(1);

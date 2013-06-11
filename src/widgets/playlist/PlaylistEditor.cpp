@@ -52,7 +52,6 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
 {
     ui->setupUi(this);
     ui->editWidget->setEnabled(false);
-    ui->playlist->editMode();
     setTitle();
 
     _model = new PlaylistModel(this);

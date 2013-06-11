@@ -38,10 +38,11 @@
 
 QT_BEGIN_NAMESPACE
 class QPainter;
-class QSplitter;
 class QStackedLayout;
 class QStatusBar;
 QT_END_NAMESPACE
+
+class MiniSplitter;
 
 class FancyTab : public QObject
 {
@@ -177,7 +178,7 @@ private:
     QWidget *m_cornerWidgetContainer;
     QStackedLayout *m_modesStack;
     QWidget *m_selectionWidget;
-    QSplitter *m_splitterWidget;
+    MiniSplitter *m_splitterWidget;
     QStatusBar *m_statusBar;
 };
 

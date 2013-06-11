@@ -66,6 +66,7 @@ MediaPlayer::MediaPlayer(Arguments *arguments,
 
     _osd = new OsdWidget(this);
     _osd->setBackend(_mediaPlayer);
+    _osd->setProperty("topBorder", true);
 
     QVBoxLayout *layout = new QVBoxLayout;
     layout->setSpacing(0);

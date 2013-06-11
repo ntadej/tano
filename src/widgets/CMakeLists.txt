@@ -44,11 +44,13 @@ IF(BRANDING)
     SET(Tano_Widgets_Resrcs
         ../../branding/logo/logo.qrc
         ../../data/misc/misc.qrc
+        ../../data/style/style.qrc
     )
 ELSE(BRANDING)
     SET(Tano_Widgets_Resrcs
         ../../data/logo/logo.qrc
         ../../data/misc/misc.qrc
+        ../../data/style/style.qrc
     )
 ENDIF(BRANDING)
 
@@ -64,12 +66,10 @@ SET(Tano_Widgets_UIs
     epg/EpgShow.ui
     epg/EpgScheduleChannel.ui
     epg/EpgScheduleFull.ui
-    playlist/PlaylistDisplayWidget.ui
     playlist/PlaylistEditor.ui
     playlist/PlaylistEditorHelp.ui
     playlist/PlaylistEditorScan.ui
     playlist/PlaylistExportTvheadend.ui
-    playlist/PlaylistFilterWidget.ui
     playlist/PlaylistImportCSV.ui
     settings/SettingsBackend.ui
     settings/SettingsDialog.ui
@@ -109,12 +109,6 @@ SET(Tano_Widgets_Common_Srcs
     common/QtKeySequenceEdit.cpp
     common/ScrollingWidget.cpp
     common/TrayIcon.cpp
-
-    style/FancyTabWidget.cpp
-    style/ManhattanStyle.cpp
-    style/StyleAnimator.cpp
-    style/StyleHelper.cpp
-    style/StyledBar.cpp
 )
 SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
@@ -127,6 +121,10 @@ SET(Tano_Widgets_Epg_Srcs
     epg/EpgScheduleChannel.cpp
     epg/EpgScheduleFull.cpp
     epg/EpgShow.cpp
+)
+SET(Tano_Widgets_Main_Srcs
+    main/MediaPlayer.cpp
+    main/PlaylistTab.cpp
 )
 SET(Tano_Widgets_Menu_Srcs
     menu/MenuAspectRatio.cpp
@@ -144,7 +142,6 @@ SET(Tano_Widgets_Playlist_Srcs
     playlist/PlaylistEditorHelp.cpp
     playlist/PlaylistEditorScan.cpp
     playlist/PlaylistExportTvheadend.cpp
-    playlist/PlaylistFilterWidget.cpp
     playlist/PlaylistImportCSV.cpp
 )
 SET(Tano_Widgets_Recorder_Srcs
@@ -164,8 +161,10 @@ SET(Tano_Widgets_Settings_Srcs
     settings/SettingsUi.cpp
 )
 SET(Tano_Widgets_Style_Srcs
+    style/FancyLineEdit.cpp
     style/FancyTabWidget.cpp
     style/ManhattanStyle.cpp
+    style/MiniSplitter.cpp
     style/StyleAnimator.cpp
     style/StyleHelper.cpp
     style/StyledBar.cpp
@@ -177,11 +176,11 @@ SET(Tano_Widgets_Timers_Srcs
 
 SET(Tano_Widgets_Srcs
     MainWindow.cpp
-    MediaPlayer.cpp
 
     ${Tano_Widgets_Common_Srcs}
     ${Tano_Widgets_Dialogs_Srcs}
     ${Tano_Widgets_Epg_Srcs}
+    ${Tano_Widgets_Main_Srcs}
     ${Tano_Widgets_Menu_Srcs}
     ${Tano_Widgets_Playlist_Srcs}
     ${Tano_Widgets_Settings_Srcs}

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,49 +16,50 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_PLAYLISTFILTERWIDGET_H_
-#define TANO_PLAYLISTFILTERWIDGET_H_
+#ifndef TANO_PLAYLISTTAB_H_
+#define TANO_PLAYLISTTAB_H_
 
-#include <QtCore/QModelIndex>
+#include <QMainWindow>
 
-#if defined(Qt5)
-    #include <QtWidgets/QWidget>
-#elif defined(Qt4)
-    #include <QtGui/QWidget>
-#endif
+class QComboBox;
+class QLabel;
+class QToolBar;
 
-#include "core/playlist/containers/Channel.h"
+class FancyLineEdit;
+class PlaylistDisplayWidget;
 
-namespace Ui
-{
-    class PlaylistFilterWidget;
-}
-
-class PlaylistFilterWidget : public QWidget
+class PlaylistTab : public QMainWindow
 {
 Q_OBJECT
 public:
-    PlaylistFilterWidget(QWidget *parent = 0);
-    ~PlaylistFilterWidget();
+    explicit PlaylistTab(QWidget *parent = 0);
+    ~PlaylistTab();
 
-    void editMode();
-    void refreshModel(const QStringList &categories,
-                      const QStringList &languages);
+    inline PlaylistDisplayWidget *playlist() { return _playlistWidget; }
+    void setFilters(const QStringList &categories,
+                    const QStringList &languages);
+    void setPlaylistName(const QString &name);
 
 protected:
     void changeEvent(QEvent *e);
-
-signals:
-    void filters(const QString &,
-                 const QString &,
-                 const QString &,
-                 const QList<Channel::Type> &);
-
+    
 private slots:
     void processFilters();
 
 private:
-    Ui::PlaylistFilterWidget *ui;
+    PlaylistDisplayWidget *_playlistWidget;
+
+    QToolBar *_toolbarTop;
+    QToolBar *_toolbarBottomType;
+    QToolBar *_toolbarBottomSearch;
+
+    QLabel *_labelPlaylist;
+
+    QComboBox *_selectType;
+    QComboBox *_selectCategory;
+    QComboBox *_selectLanguage;
+
+    FancyLineEdit *_search;
 };
 
-#endif // TANO_PLAYLISTFILTERWIDGET_H_
+#endif // TANO_PLAYLISTTAB_H_

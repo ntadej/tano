@@ -73,9 +73,6 @@ private slots:
 private:
     Ui::EpgScheduleFull *ui;
 
-    QMenu *_menu;
-    QWidgetAction *_action;
-
     bool _fullscreen;
     OsdFloat *_osd;
 };

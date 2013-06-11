@@ -36,8 +36,6 @@
 #include "core/timers/containers/Timer.h"
 #include "core/xmltv/containers/XmltvProgramme.h"
 
-#include "playlist/PlaylistFilterWidget.h"
-
 RecorderNewDialog::RecorderNewDialog(TimersSql *db,
                                      QWidget *parent)
     : QDialog(parent),
@@ -51,12 +49,13 @@ RecorderNewDialog::RecorderNewDialog(TimersSql *db,
     ui->quickBox->hide();
     ui->timerBox->hide();
 
-    _menu = new QMenu(this);
+    // TODO: filter
+    /*_menu = new QMenu(this);
     _action = new QWidgetAction(this);
     ui->playlistWidget->filter()->show();
     _action->setDefaultWidget(ui->playlistWidget->filter());
     _menu->addAction(_action);
-    ui->buttonFilter->setMenu(_menu);
+    ui->buttonFilter->setMenu(_menu);*/
 
     _udpxy = new NetworkUdpxy();
     _udpxy->createSettings();
@@ -154,7 +153,7 @@ void RecorderNewDialog::processQuickRecord()
 
 void RecorderNewDialog::refreshPlaylistModel()
 {
-    ui->playlistWidget->refreshModel();
+    //ui->playlistWidget->refreshModel();
 }
 
 void RecorderNewDialog::setPlaylistModel(PlaylistModel *model)

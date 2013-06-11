@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,10 +16,12 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
+#include "PlaylistDisplayWidget.h"
+
+#if QT_VERSION >= 0x050000
     #include <QtWidgets/QAction>
     #include <QtWidgets/QMenu>
-#elif defined(Qt4)
+#else
     #include <QtGui/QAction>
     #include <QtGui/QMenu>
 #endif
@@ -27,52 +29,33 @@
 #include "core/playlist/PlaylistFilterModel.h"
 #include "core/playlist/PlaylistModel.h"
 
-#include "PlaylistDisplayWidget.h"
-#include "ui_PlaylistDisplayWidget.h"
-
 PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::PlaylistDisplayWidget),
+    : QListView(parent),
       _current(0)
 {
-    ui->setupUi(this);
-    ui->filters->hide();
+    setAlternatingRowColors(true);
+    setEditTriggers(NoEditTriggers);
 
     _filterModel = new PlaylistFilterModel(this);
     _filterModel->setDynamicSortFilter(true);
 
-    ui->playlistView->setModel(_filterModel);
-    ui->playlistView->setContextMenuPolicy(Qt::CustomContextMenu);
+    QListView::setModel(_filterModel);
+    setContextMenuPolicy(Qt::CustomContextMenu);
 
-	_rightMenu = new QMenu(ui->playlistView);
+    _rightMenu = new QMenu(this);
     _play = new QAction(QIcon::fromTheme("media-playback-start"), tr("Play"), this);
     _schedule = new QAction(QIcon::fromTheme("x-office-calendar"), tr("Schedule"), this);
 	_rightMenu->addAction(_play);
 	_rightMenu->addAction(_schedule);
 
-    connect(ui->playlistView, SIGNAL(activated(QModelIndex)), this, SLOT(channelSelected(QModelIndex)));
-    connect(ui->filters, SIGNAL(filters(QString, QString, QString, QList<Channel::Type>)), this, SLOT(processFilters(QString, QString, QString, QList<Channel::Type>)));
+    connect(this, SIGNAL(activated(QModelIndex)), this, SLOT(channelSelected(QModelIndex)));
     connect(_play, SIGNAL(triggered()), this, SLOT(play()));
     connect(_schedule, SIGNAL(triggered()), this, SLOT(schedule()));
 }
 
 PlaylistDisplayWidget::~PlaylistDisplayWidget()
 {
-    delete ui;
     delete _filterModel;
-}
-
-void PlaylistDisplayWidget::changeEvent(QEvent *e)
-{
-    QWidget::changeEvent(e);
-    switch (e->type())
-    {
-    case QEvent::LanguageChange:
-        ui->retranslateUi(this);
-        break;
-    default:
-        break;
-    }
 }
 
 void PlaylistDisplayWidget::channelSelected(Channel *channel)
@@ -109,37 +92,20 @@ void PlaylistDisplayWidget::channelSelected(const QString &xmltvId)
     updateSelection(_current);
 }
 
-void PlaylistDisplayWidget::editMode()
-{
-    ui->filters->editMode();
-    ui->filters->show();
-}
-
-PlaylistFilterWidget *PlaylistDisplayWidget::filter()
-{
-    return ui->filters;
-}
-
-void PlaylistDisplayWidget::filterReset()
-{
-    ui->filters->show();
-    ui->verticalLayout->addWidget(ui->filters);
-}
-
 void PlaylistDisplayWidget::play()
 {
-    channelSelected(ui->playlistView->indexAt(_currentPos));
+    channelSelected(indexAt(_currentPos));
 }
 
 void PlaylistDisplayWidget::playMode()
 {
-    connect(ui->playlistView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showMenu(QPoint)));
+    connect(this, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showMenu(QPoint)));
 }
 
-void PlaylistDisplayWidget::processFilters(const QString &search,
-                                           const QString &category,
-                                           const QString &language,
-                                           const QList<Channel::Type> &types)
+void PlaylistDisplayWidget::setFilters(const QString &search,
+                                       const QString &category,
+                                       const QString &language,
+                                       const QList<Channel::Type> &types)
 {
     QRegExp regExp(search, Qt::CaseInsensitive);
     _filterModel->setFilterRegExp(regExp);
@@ -148,14 +114,9 @@ void PlaylistDisplayWidget::processFilters(const QString &search,
     _filterModel->setTypes(types);
 }
 
-void PlaylistDisplayWidget::refreshModel()
-{
-    ui->filters->refreshModel(_model->categories(), _model->languages());
-}
-
 void PlaylistDisplayWidget::schedule()
 {
-    emit scheduleRequested(_model->row(_filterModel->mapToSource(ui->playlistView->indexAt(_currentPos)).row()));
+    emit scheduleRequested(_model->row(_filterModel->mapToSource(indexAt(_currentPos)).row()));
 }
 
 void PlaylistDisplayWidget::setModel(PlaylistModel *model)
@@ -173,23 +134,23 @@ void PlaylistDisplayWidget::showMenu(const QPoint &pos)
 
 void PlaylistDisplayWidget::updateSelection(Channel *channel)
 {
-    ui->playlistView->selectionModel()->select(_filterModel->mapFromSource(_model->indexFromItem(channel)), QItemSelectionModel::SelectCurrent);
+    selectionModel()->select(_filterModel->mapFromSource(_model->indexFromItem(channel)), QItemSelectionModel::SelectCurrent);
 
     if (!visibleChannels().contains(channel))
-        ui->playlistView->scrollTo(_filterModel->mapFromSource(_model->indexFromItem(channel)), QAbstractItemView::PositionAtTop);
+        scrollTo(_filterModel->mapFromSource(_model->indexFromItem(channel)), QAbstractItemView::PositionAtTop);
 }
 
 QList<Channel *> PlaylistDisplayWidget::visibleChannels()
 {
     QList<Channel *> list;
 
-    QModelIndex index = ui->playlistView->indexAt(QPoint(0, 0));
+    QModelIndex index = indexAt(QPoint(0, 0));
     if (index.isValid()) {
         list << _model->row(_filterModel->mapToSource(index).row());
     }
 
-    while (ui->playlistView->viewport()->rect().contains(QPoint(0, ui->playlistView->visualRect(index).y() + ui->playlistView->visualRect(index).height() + 1))) {
-        index = ui->playlistView->indexAt(QPoint(0, ui->playlistView->visualRect(index).y() + ui->playlistView->visualRect(index).height() + 1));
+    while (viewport()->rect().contains(QPoint(0, visualRect(index).y() + visualRect(index).height() + 1))) {
+        index = indexAt(QPoint(0, visualRect(index).y() + visualRect(index).height() + 1));
         if (!index.isValid())
             break;
         list << _model->row(_filterModel->mapToSource(index).row());

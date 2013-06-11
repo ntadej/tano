@@ -75,9 +75,6 @@ private:
 
     TimersSql *_db;
     NetworkUdpxy *_udpxy;
-
-    QMenu *_menu;
-    QWidgetAction *_action;
 };
 
 #endif // TANO_RECORDERNEWDIALOG_H_
