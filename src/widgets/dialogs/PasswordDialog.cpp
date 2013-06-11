@@ -73,6 +73,7 @@ void PasswordDialog::validatePassword(const bool &edit)
     QUrl validator = QUrl(QString(PASSWORD_VALIDATE));
     _edit = edit;
 
+    ui->labelInfo->setText(tr("<b>Logging in ...</b>"));
     QNetworkRequest nr(validator);
     nr.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(ui->editUsername->text()).arg(ui->editPassword->text()).toLocal8Bit()).toBase64());
     _request->getRequest(nr);

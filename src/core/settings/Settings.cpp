@@ -127,7 +127,7 @@ void Settings::writeSettings()
         setValue("xmltv/updatelocation", xmltvUpdateLocation());
         setValue("xmltv/updateremote", xmltvUpdateRemote());
     } else {
-        remove("schedule");
+        remove("xmltv");
     }
 
     sync();
