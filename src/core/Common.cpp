@@ -18,6 +18,7 @@
 
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
+#include <QtNetwork/QNetworkInterface>
 
 #include "Config.h"
 
@@ -106,6 +107,13 @@ QString Tano::uid()
     QTextStream in(&file);
     QString uid = in.readLine();
     return uid;
+#else
+    foreach (QNetworkInterface netInterface, QNetworkInterface::allInterfaces()) {
+        // Return only the first non-loopback MAC Address
+        if (!(netInterface.flags() & QNetworkInterface::IsLoopBack))
+            return netInterface.hardwareAddress();
+    }
+    return QString("error");
 #endif
 }
 
