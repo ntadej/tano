@@ -20,21 +20,32 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MINISPLITTER_H_
-#define TANO_MINISPLITTER_H_
+#ifndef TANO_ICONBUTTON_H_
+#define TANO_ICONBUTTON_H_
 
-#include <QSplitter>
+#include <QAbstractButton>
 
-class QSplitterHandle;
-
-class MiniSplitter : public QSplitter
+class IconButton: public QAbstractButton
 {
+Q_OBJECT
+Q_PROPERTY(float iconOpacity READ iconOpacity WRITE setIconOpacity)
+Q_PROPERTY(bool autoHide READ hasAutoHide WRITE setAutoHide)
+Q_PROPERTY(QPixmap pixmap READ pixmap WRITE setPixmap)
 public:
-    MiniSplitter(QWidget *parent = 0);
-    MiniSplitter(Qt::Orientation orientation);
+    explicit IconButton(QWidget *parent = 0);
+    void paintEvent(QPaintEvent *event);
+    void setPixmap(const QPixmap &pixmap) { _pixmap = pixmap; update(); }
+    QPixmap pixmap() const { return _pixmap; }
+    float iconOpacity() { return _iconOpacity; }
+    void setIconOpacity(float value) { _iconOpacity = value; update(); }
+    void animateShow(bool visible);
 
-protected:
-    QSplitterHandle *createHandle();
+    void setAutoHide(bool hide) { _autoHide = hide; }
+    bool hasAutoHide() const { return _autoHide; }
+private:
+    float _iconOpacity;
+    bool _autoHide;
+    QPixmap _pixmap;
 };
 
-#endif // TANO_MINISPLITTER_H_
+#endif // TANO_ICONBUTTON_H_

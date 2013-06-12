@@ -158,6 +158,7 @@ SET(Tano_Widgets_Settings_Srcs
 SET(Tano_Widgets_Style_Srcs
     style/FancyLineEdit.cpp
     style/FancyTabWidget.cpp
+    style/IconButton.cpp
     style/ManhattanStyle.cpp
     style/MiniSplitter.cpp
     style/StyleAnimator.cpp

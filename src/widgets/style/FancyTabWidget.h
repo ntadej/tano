@@ -1,60 +1,49 @@
 /****************************************************************************
-**
-** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
-**
-** This file is part of Qt Creator.
-**
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and Digia.  For licensing terms and
-** conditions see http://qt.digia.com/licensing.  For further information
-** use the contact form at http://qt.digia.com/contact-us.
-**
-** GNU Lesser General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU Lesser
-** General Public License version 2.1 as published by the Free Software
-** Foundation and appearing in the file LICENSE.LGPL included in the
-** packaging of this file.  Please review the following information to
-** ensure the GNU Lesser General Public License version 2.1 requirements
-** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
-**
-** In addition, as a special exception, Digia gives you certain additional
-** rights.  These rights are described in the Digia Qt LGPL Exception
-** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
-**
-****************************************************************************/
+* Tano - An Open IP TV Player
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+*
+* This file is part of Qt Creator.
+* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+* Contact: http://www.qt-project.org/legal
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************/
 
-#ifndef FANCYTABWIDGET_H
-#define FANCYTABWIDGET_H
+#ifndef TANO_FANCYTABWIDGET_H_
+#define TANO_FANCYTABWIDGET_H_
 
 #include <QIcon>
-#include <QWidget>
-
 #include <QTimer>
 #include <QPropertyAnimation>
+#include <QWidget>
 
-QT_BEGIN_NAMESPACE
 class QPainter;
 class QStackedLayout;
 class QStatusBar;
-QT_END_NAMESPACE
 
 class MiniSplitter;
 
 class FancyTab : public QObject
 {
-    Q_OBJECT
-
-    Q_PROPERTY(float fader READ fader WRITE setFader)
+Q_OBJECT
+Q_PROPERTY(float fader READ fader WRITE setFader)
 public:
-    FancyTab(QWidget *tabbar) : enabled(false), tabbar(tabbar), m_fader(0) {
+    FancyTab(QWidget *tabbar) : enabled(false), tabbar(tabbar), _fader(0) {
         animator.setPropertyName("fader");
         animator.setTargetObject(this);
     }
-    float fader() { return m_fader; }
+    float fader() { return _fader; }
     void setFader(float value);
 
     void fadeIn();
@@ -68,13 +57,12 @@ public:
 private:
     QPropertyAnimation animator;
     QWidget *tabbar;
-    float m_fader;
+    float _fader;
 };
 
 class FancyTabBar : public QWidget
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
     FancyTabBar(QWidget *parent = 0);
     ~FancyTabBar();
@@ -82,39 +70,43 @@ public:
     bool event(QEvent *event);
 
     void paintEvent(QPaintEvent *event);
-    void paintTab(QPainter *painter, int tabIndex) const;
+    void paintTab(QPainter *painter,
+                  int tabIndex) const;
     void mousePressEvent(QMouseEvent *);
     void mouseMoveEvent(QMouseEvent *);
     void enterEvent(QEvent *);
     void leaveEvent(QEvent *);
-    bool validIndex(int index) const { return index >= 0 && index < m_tabs.count(); }
+    bool validIndex(int index) const { return index >= 0 && index < _tabs.count(); }
 
     QSize sizeHint() const;
     QSize minimumSizeHint() const;
 
-    void setTabEnabled(int index, bool enable);
+    void setTabEnabled(int index,
+                       bool enable);
     bool isTabEnabled(int index) const;
 
-    void insertTab(int index, const QIcon &icon, const QString &label) {
+    void insertTab(int index,
+                   const QIcon &icon,
+                   const QString &label) {
         FancyTab *tab = new FancyTab(this);
         tab->icon = icon;
         tab->text = label;
-        m_tabs.insert(index, tab);
+        _tabs.insert(index, tab);
     }
     void setEnabled(int index, bool enabled);
     void removeTab(int index) {
-        FancyTab *tab = m_tabs.takeAt(index);
+        FancyTab *tab = _tabs.takeAt(index);
         delete tab;
     }
     void setCurrentIndex(int index);
-    int currentIndex() const { return m_currentIndex; }
+    int currentIndex() const { return _currentIndex; }
 
-    void setTabToolTip(int index, QString toolTip) { m_tabs[index]->toolTip = toolTip; }
-    QString tabToolTip(int index) const { return m_tabs.at(index)->toolTip; }
+    void setTabToolTip(int index, QString toolTip) { _tabs[index]->toolTip = toolTip; }
+    QString tabToolTip(int index) const { return _tabs.at(index)->toolTip; }
 
-    QIcon tabIcon(int index) const { return m_tabs.at(index)->icon; }
-    QString tabText(int index) const { return m_tabs.at(index)->text; }
-    int count() const {return m_tabs.count(); }
+    QIcon tabIcon(int index) const { return _tabs.at(index)->icon; }
+    QString tabText(int index) const { return _tabs.at(index)->text; }
+    int count() const {return _tabs.count(); }
     QRect tabRect(int index) const;
 
 signals:
@@ -124,39 +116,43 @@ public slots:
     void emitCurrentIndex();
 
 private:
-    static const int m_rounding;
-    static const int m_textPadding;
-    QRect m_hoverRect;
-    int m_hoverIndex;
-    int m_currentIndex;
-    QList<FancyTab*> m_tabs;
-    QTimer m_triggerTimer;
+    static const int _rounding;
+    static const int _textPadding;
+    QRect _hoverRect;
+    int _hoverIndex;
+    int _currentIndex;
+    QList<FancyTab*> _tabs;
+    QTimer _triggerTimer;
     QSize tabSizeHint(bool minimum = false) const;
 
 };
 
 class FancyTabWidget : public QWidget
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
     FancyTabWidget(QWidget *parent = 0);
 
     void addStaticWidget(QWidget *widget);
-    void insertTab(int index, QWidget *tab, const QIcon &icon, const QString &label);
+    void insertTab(int index, QWidget *tab,
+                   const QIcon &icon,
+                   const QString &label);
     void removeTab(int index);
     void setBackgroundBrush(const QBrush &brush);
     void addCornerWidget(QWidget *widget);
-    void insertCornerWidget(int pos, QWidget *widget);
+    void insertCornerWidget(int pos,
+                            QWidget *widget);
     int cornerWidgetCount() const;
-    void setTabToolTip(int index, const QString &toolTip);
+    void setTabToolTip(int index,
+                       const QString &toolTip);
 
     void paintEvent(QPaintEvent *event);
 
     int currentIndex() const;
     QStatusBar *statusBar() const;
 
-    void setTabEnabled(int index, bool enable);
+    void setTabEnabled(int index,
+                       bool enable);
     bool isTabEnabled(int index) const;
 
     bool isSelectionWidgetVisible() const;
@@ -173,13 +169,13 @@ private slots:
     void showWidget(int index);
 
 private:
-    FancyTabBar *m_tabBar;
-    QWidget *m_containerWidget;
-    QWidget *m_cornerWidgetContainer;
-    QStackedLayout *m_modesStack;
-    QWidget *m_selectionWidget;
-    MiniSplitter *m_splitterWidget;
-    QStatusBar *m_statusBar;
+    FancyTabBar *_tabBar;
+    QWidget *_containerWidget;
+    QWidget *_cornerWidgetContainer;
+    QStackedLayout *_modesStack;
+    QWidget *_selectionWidget;
+    MiniSplitter *_splitterWidget;
+    QStatusBar *_statusBar;
 };
 
-#endif // FANCYTABWIDGET_H
+#endif // TANO_FANCYTABWIDGET_H_

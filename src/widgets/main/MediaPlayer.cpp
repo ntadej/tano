@@ -54,6 +54,7 @@ MediaPlayer::MediaPlayer(Arguments *arguments,
     _videoController = new VlcControlVideo(_mediaPlayer, "", this); //_defaultSubtitleLanguage, this);
 
     _videoWidget->setMediaPlayer(_mediaPlayer);
+    _videoWidget->setStyleSheet("background-color: rgb(0,0,0);");
     _videoWidget->initDefaultSettings();
 
     _menuTrackAudio = new MenuTrackAudio();

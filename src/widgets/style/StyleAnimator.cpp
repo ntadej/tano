@@ -1,72 +1,68 @@
 /****************************************************************************
-**
-** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
-**
-** This file is part of Qt Creator.
-**
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and Digia.  For licensing terms and
-** conditions see http://qt.digia.com/licensing.  For further information
-** use the contact form at http://qt.digia.com/contact-us.
-**
-** GNU Lesser General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU Lesser
-** General Public License version 2.1 as published by the Free Software
-** Foundation and appearing in the file LICENSE.LGPL included in the
-** packaging of this file.  Please review the following information to
-** ensure the GNU Lesser General Public License version 2.1 requirements
-** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
-**
-** In addition, as a special exception, Digia gives you certain additional
-** rights.  These rights are described in the Digia Qt LGPL Exception
-** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
-**
-****************************************************************************/
+* Tano - An Open IP TV Player
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+*
+* This file is part of Qt Creator.
+* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+* Contact: http://www.qt-project.org/legal
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************/
 
 #include "StyleAnimator.h"
 
 #include <QStyleOption>
 
-Animation * StyleAnimator::widgetAnimation(const QWidget *widget) const
+Animation *StyleAnimator::widgetAnimation(const QWidget *widget) const
 {
     if (!widget)
         return 0;
-    foreach (Animation *a, animations) {
+    foreach (Animation *a, _animations) {
         if (a->widget() == widget)
             return a;
     }
     return 0;
 }
 
-void Animation::paint(QPainter *painter, const QStyleOption *option)
+void Animation::paint(QPainter *painter,
+                      const QStyleOption *option)
 {
     Q_UNUSED(option)
     Q_UNUSED(painter)
 }
 
-void Animation::drawBlendedImage(QPainter *painter, QRect rect, float alpha)
+void Animation::drawBlendedImage(QPainter *painter,
+                                 QRect rect,
+                                 float alpha)
 {
-    if (m_secondaryImage.isNull() || m_primaryImage.isNull())
+    if (_secondaryImage.isNull() || _primaryImage.isNull())
         return;
 
-    if (m_tempImage.isNull())
-        m_tempImage = m_secondaryImage;
+    if (_tempImage.isNull())
+        _tempImage = _secondaryImage;
 
     const int a = qRound(alpha*256);
     const int ia = 256 - a;
-    const int sw = m_primaryImage.width();
-    const int sh = m_primaryImage.height();
-    const int bpl = m_primaryImage.bytesPerLine();
-    switch (m_primaryImage.depth()) {
+    const int sw = _primaryImage.width();
+    const int sh = _primaryImage.height();
+    const int bpl = _primaryImage.bytesPerLine();
+    switch (_primaryImage.depth()) {
     case 32:
         {
-            uchar *mixed_data = m_tempImage.bits();
-            const uchar *back_data = m_primaryImage.bits();
-            const uchar *front_data = m_secondaryImage.bits();
+            uchar *mixed_data = _tempImage.bits();
+            const uchar *back_data = _primaryImage.bits();
+            const uchar *front_data = _secondaryImage.bits();
             for (int sy = 0; sy < sh; sy++) {
                 quint32 *mixed = (quint32*)mixed_data;
                 const quint32* back = (const quint32*)back_data;
@@ -87,56 +83,57 @@ void Animation::drawBlendedImage(QPainter *painter, QRect rect, float alpha)
     default:
         break;
     }
-    painter->drawImage(rect, m_tempImage);
+    painter->drawImage(rect, _tempImage);
 }
 
-void Transition::paint(QPainter *painter, const QStyleOption *option)
+void Transition::paint(QPainter *painter,
+                       const QStyleOption *option)
 {
     float alpha = 1.0;
-    if (m_duration > 0) {
+    if (_duration > 0) {
         QTime current = QTime::currentTime();
 
-        if (m_startTime > current)
-            m_startTime = current;
+        if (_startTime > current)
+            _startTime = current;
 
-        int timeDiff = m_startTime.msecsTo(current);
-        alpha = timeDiff/(float)m_duration;
-        if (timeDiff > m_duration) {
-            m_running = false;
+        int timeDiff = _startTime.msecsTo(current);
+        alpha = timeDiff/(float)_duration;
+        if (timeDiff > _duration) {
+            _running = false;
             alpha = 1.0;
         }
     }
     else {
-        m_running = false;
+        _running = false;
     }
     drawBlendedImage(painter, option->rect, alpha);
 }
 
 void StyleAnimator::timerEvent(QTimerEvent *)
 {
-    for (int i = animations.size() - 1 ; i >= 0 ; --i) {
-        if (animations[i]->widget())
-            animations[i]->widget()->update();
+    for (int i = _animations.size() - 1 ; i >= 0 ; --i) {
+        if (_animations[i]->widget())
+            _animations[i]->widget()->update();
 
-        if (!animations[i]->widget() ||
-            !animations[i]->widget()->isEnabled() ||
-            !animations[i]->widget()->isVisible() ||
-            animations[i]->widget()->window()->isMinimized() ||
-            !animations[i]->running())
+        if (!_animations[i]->widget() ||
+            !_animations[i]->widget()->isEnabled() ||
+            !_animations[i]->widget()->isVisible() ||
+            _animations[i]->widget()->window()->isMinimized() ||
+            !_animations[i]->running())
         {
-            Animation *a = animations.takeAt(i);
+            Animation *a = _animations.takeAt(i);
             delete a;
         }
     }
-    if (animations.size() == 0 && animationTimer.isActive())
-        animationTimer.stop();
+    if (_animations.size() == 0 && _animationTimer.isActive())
+        _animationTimer.stop();
 }
 
 void StyleAnimator::stopAnimation(const QWidget *w)
 {
-    for (int i = animations.size() - 1 ; i >= 0 ; --i) {
-        if (animations[i]->widget() == w) {
-            Animation *a = animations.takeAt(i);
+    for (int i = _animations.size() - 1 ; i >= 0 ; --i) {
+        if (_animations[i]->widget() == w) {
+            Animation *a = _animations.takeAt(i);
             delete a;
             break;
         }
@@ -146,7 +143,7 @@ void StyleAnimator::stopAnimation(const QWidget *w)
 void StyleAnimator::startAnimation(Animation *t)
 {
     stopAnimation(t->widget());
-    animations.append(t);
-    if (animations.size() > 0 && !animationTimer.isActive())
-        animationTimer.start(35, this);
+    _animations.append(t);
+    if (_animations.size() > 0 && !_animationTimer.isActive())
+        _animationTimer.start(35, this);
 }

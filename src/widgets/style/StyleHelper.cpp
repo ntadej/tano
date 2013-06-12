@@ -1,37 +1,30 @@
 /****************************************************************************
-**
-** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
-**
-** This file is part of Qt Creator.
-**
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and Digia.  For licensing terms and
-** conditions see http://qt.digia.com/licensing.  For further information
-** use the contact form at http://qt.digia.com/contact-us.
-**
-** GNU Lesser General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU Lesser
-** General Public License version 2.1 as published by the Free Software
-** Foundation and appearing in the file LICENSE.LGPL included in the
-** packaging of this file.  Please review the following information to
-** ensure the GNU Lesser General Public License version 2.1 requirements
-** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
-**
-** In addition, as a special exception, Digia gives you certain additional
-** rights.  These rights are described in the Digia Qt LGPL Exception
-** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
-**
-****************************************************************************/
+* Tano - An Open IP TV Player
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+*
+* This file is part of Qt Creator.
+* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+* Contact: http://www.qt-project.org/legal
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************/
 
 #include "StyleHelper.h"
 
-#include <QPixmapCache>
-#include <QPainter>
 #include <QApplication>
+#include <QPainter>
+#include <QPixmapCache>
 #include <QStyleOption>
 #include <qmath.h>
 
@@ -42,16 +35,9 @@ static int clamp(float x)
     return val < 0 ? 0 : val;
 }
 
-// Clamps float color values within (0, 255)
-/*
-static int range(float x, int min, int max)
-{
-    int val = x > max ? max : x;
-    return val < min ? min : val;
-}
-*/
-
-QColor StyleHelper::mergedColors(const QColor &colorA, const QColor &colorB, int factor)
+QColor StyleHelper::mergedColors(const QColor &colorA,
+                                 const QColor &colorB,
+                                 int factor)
 {
     const int maxFactor = 100;
     QColor tmp = colorA;
@@ -63,8 +49,11 @@ QColor StyleHelper::mergedColors(const QColor &colorA, const QColor &colorB, int
 
 qreal StyleHelper::sidebarFontSize()
 {
-    // TODO: OSX
-    return 7.5; //HostOsInfo::isMacHost() ? 10 : 7.5;
+#if defined(Q_OS_MAC)
+    return 10;
+#else
+    return 7.5;
+#endif
 }
 
 QPalette StyleHelper::sidebarFontPalette(const QPalette &original)
@@ -149,7 +138,10 @@ void StyleHelper::setBaseColor(const QColor &newcolor)
     }
 }
 
-static void verticalGradientHelper(QPainter *p, const QRect &spanRect, const QRect &rect, bool lightColored)
+static void verticalGradientHelper(QPainter *p,
+                                   const QRect &spanRect,
+                                   const QRect &rect,
+                                   bool lightColored)
 {
     QColor highlight = StyleHelper::highlightColor(lightColored);
     QColor shadow = StyleHelper::shadowColor(lightColored);
@@ -166,7 +158,10 @@ static void verticalGradientHelper(QPainter *p, const QRect &spanRect, const QRe
     p->drawLine(rect.topLeft(), rect.bottomLeft());
 }
 
-void StyleHelper::verticalGradient(QPainter *painter, const QRect &spanRect, const QRect &clipRect, bool lightColored)
+void StyleHelper::verticalGradient(QPainter *painter,
+                                   const QRect &spanRect,
+                                   const QRect &clipRect,
+                                   bool lightColored)
 {
     if (StyleHelper::usePixmapCache()) {
         QString key;
@@ -191,8 +186,10 @@ void StyleHelper::verticalGradient(QPainter *painter, const QRect &spanRect, con
     }
 }
 
-static void horizontalGradientHelper(QPainter *p, const QRect &spanRect, const
-QRect &rect, bool lightColored)
+static void horizontalGradientHelper(QPainter *p,
+                                     const QRect &spanRect,
+                                     const QRect &rect,
+                                     bool lightColored)
 {
     if (lightColored) {
         QLinearGradient shadowGradient(rect.topLeft(), rect.bottomLeft());
@@ -224,7 +221,10 @@ QRect &rect, bool lightColored)
     p->fillRect(rect, shadowGradient);
 }
 
-void StyleHelper::horizontalGradient(QPainter *painter, const QRect &spanRect, const QRect &clipRect, bool lightColored)
+void StyleHelper::horizontalGradient(QPainter *painter,
+                                     const QRect &spanRect,
+                                     const QRect &clipRect,
+                                     bool lightColored)
 {
     if (StyleHelper::usePixmapCache()) {
         QString key;
@@ -250,7 +250,9 @@ void StyleHelper::horizontalGradient(QPainter *painter, const QRect &spanRect, c
     }
 }
 
-static void menuGradientHelper(QPainter *p, const QRect &spanRect, const QRect &rect)
+static void menuGradientHelper(QPainter *p,
+                               const QRect &spanRect,
+                               const QRect &rect)
 {
     QLinearGradient grad(spanRect.topLeft(), spanRect.bottomLeft());
     QColor menuColor = StyleHelper::mergedColors(StyleHelper::baseColor(), QColor(244, 244, 244), 25);
@@ -259,7 +261,9 @@ static void menuGradientHelper(QPainter *p, const QRect &spanRect, const QRect &
     p->fillRect(rect, grad);
 }
 
-void StyleHelper::drawArrow(QStyle::PrimitiveElement element, QPainter *painter, const QStyleOption *option)
+void StyleHelper::drawArrow(QStyle::PrimitiveElement element,
+                            QPainter *painter,
+                            const QStyleOption *option)
 {
     // From windowsstyle but modified to enable AA
     if (option->rect.width() <= 1 || option->rect.height() <= 1)
@@ -337,7 +341,9 @@ void StyleHelper::drawArrow(QStyle::PrimitiveElement element, QPainter *painter,
     painter->drawPixmap(xOffset, yOffset, pixmap);
 }
 
-void StyleHelper::menuGradient(QPainter *painter, const QRect &spanRect, const QRect &clipRect)
+void StyleHelper::menuGradient(QPainter *painter,
+                               const QRect &spanRect,
+                               const QRect &clipRect)
 {
     if (StyleHelper::usePixmapCache()) {
         QString key;
@@ -366,13 +372,20 @@ static qreal pixmapDevicePixelRatio(const QPixmap &pixmap)
 #if QT_VERSION > 0x050000
     return pixmap.devicePixelRatio();
 #else
+    Q_UNUSED(pixmap)
+
     return 1.0;
 #endif
 }
 
 // Draws a cached pixmap with shadow
-void StyleHelper::drawIconWithShadow(const QIcon &icon, const QRect &rect,
-                                     QPainter *p, QIcon::Mode iconMode, int dipRadius, const QColor &color, const QPoint &dipOffset)
+void StyleHelper::drawIconWithShadow(const QIcon &icon,
+                                     const QRect &rect,
+                                     QPainter *p,
+                                     QIcon::Mode iconMode,
+                                     int dipRadius,
+                                     const QColor &color,
+                                     const QPoint &dipOffset)
 {
     QPixmap cache;
     QString pixmapName = QString::fromLatin1("icon %0 %1 %2").arg(icon.cacheKey()).arg(iconMode).arg(rect.height());
@@ -452,8 +465,13 @@ void StyleHelper::drawIconWithShadow(const QIcon &icon, const QRect &rect,
 }
 
 // Draws a CSS-like border image where the defined borders are not stretched
-void StyleHelper::drawCornerImage(const QImage &img, QPainter *painter, QRect rect,
-                                  int left, int top, int right, int bottom)
+void StyleHelper::drawCornerImage(const QImage &img,
+                                  QPainter *painter,
+                                  QRect rect,
+                                  int left,
+                                  int top,
+                                  int right,
+                                  int bottom)
 {
     QSize size = img.size();
     if (top > 0) { //top
@@ -493,7 +511,8 @@ void StyleHelper::drawCornerImage(const QImage &img, QPainter *painter, QRect re
 }
 
 // Tints an image with tintColor, while preserving alpha and lightness
-void StyleHelper::tintImage(QImage &img, const QColor &tintColor)
+void StyleHelper::tintImage(QImage &img,
+                            const QColor &tintColor)
 {
     QPainter p(&img);
     p.setCompositionMode(QPainter::CompositionMode_Screen);

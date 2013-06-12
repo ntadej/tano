@@ -1,70 +1,59 @@
 /****************************************************************************
-**
-** Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-** Contact: http://www.qt-project.org/legal
-**
-** This file is part of Qt Creator.
-**
-** Commercial License Usage
-** Licensees holding valid commercial Qt licenses may use this file in
-** accordance with the commercial license agreement provided with the
-** Software or, alternatively, in accordance with the terms contained in
-** a written agreement between you and Digia.  For licensing terms and
-** conditions see http://qt.digia.com/licensing.  For further information
-** use the contact form at http://qt.digia.com/contact-us.
-**
-** GNU Lesser General Public License Usage
-** Alternatively, this file may be used under the terms of the GNU Lesser
-** General Public License version 2.1 as published by the Free Software
-** Foundation and appearing in the file LICENSE.LGPL included in the
-** packaging of this file.  Please review the following information to
-** ensure the GNU Lesser General Public License version 2.1 requirements
-** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
-**
-** In addition, as a special exception, Digia gives you certain additional
-** rights.  These rights are described in the Digia Qt LGPL Exception
-** version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
-**
-****************************************************************************/
+* Tano - An Open IP TV Player
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+*
+* This file is part of Qt Creator.
+* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
+* Contact: http://www.qt-project.org/legal
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
+*****************************************************************************/
 
-#ifndef STYLEANIMATOR_H
-#define STYLEANIMATOR_H
+#ifndef TANO_STYLEANIMATOR_H_
+#define TANO_STYLEANIMATOR_H_
 
-#include <QPointer>
-#include <QTime>
 #include <QBasicTimer>
-#include <QStyle>
 #include <QPainter>
+#include <QPointer>
+#include <QStyle>
+#include <QTime>
 #include <QWidget>
-
-/*
- * This is a set of helper classes to allow for widget animations in
- * the style. Its mostly taken from Vista style so it should be fully documented
- * there.
- *
- */
 
 class Animation
 {
 public :
-    Animation() : m_running(true) { }
+    Animation() : _running(true) { }
     virtual ~Animation() { }
-    QWidget * widget() const { return m_widget; }
-    bool running() const { return m_running; }
-    const QTime &startTime() const { return m_startTime; }
-    void setRunning(bool val) { m_running = val; }
-    void setWidget(QWidget *widget) { m_widget = widget; }
-    void setStartTime(const QTime &startTime) { m_startTime = startTime; }
-    virtual void paint(QPainter *painter, const QStyleOption *option);
+    QWidget * widget() const { return _widget; }
+    bool running() const { return _running; }
+    const QTime &startTime() const { return _startTime; }
+    void setRunning(bool val) { _running = val; }
+    void setWidget(QWidget *widget) { _widget = widget; }
+    void setStartTime(const QTime &startTime) { _startTime = startTime; }
+    virtual void paint(QPainter *painter,
+                       const QStyleOption *option);
 
 protected:
-    void drawBlendedImage(QPainter *painter, QRect rect, float value);
-    QTime m_startTime;
-    QPointer<QWidget> m_widget;
-    QImage m_primaryImage;
-    QImage m_secondaryImage;
-    QImage m_tempImage;
-    bool m_running;
+    void drawBlendedImage(QPainter *painter,
+                          QRect rect,
+                          float value);
+    QTime _startTime;
+    QPointer<QWidget> _widget;
+    QImage _primaryImage;
+    QImage _secondaryImage;
+    QImage _tempImage;
+    bool _running;
 };
 
 // Handles state transition animations
@@ -73,18 +62,20 @@ class Transition : public Animation
 public :
     Transition() : Animation() {}
     virtual ~Transition() {}
-    void setDuration(int duration) { m_duration = duration; }
-    void setStartImage(const QImage &image) { m_primaryImage = image; }
-    void setEndImage(const QImage &image) { m_secondaryImage = image; }
-    virtual void paint(QPainter *painter, const QStyleOption *option);
-    int duration() const { return m_duration; }
-    int m_duration; //set time in ms to complete a state transition
+    void setDuration(int duration) { _duration = duration; }
+    void setStartImage(const QImage &image) { _primaryImage = image; }
+    void setEndImage(const QImage &image) { _secondaryImage = image; }
+    virtual void paint(QPainter *painter,
+                       const QStyleOption *option);
+    int duration() const { return _duration; }
+
+private:
+    int _duration; //set time in ms to complete a state transition
 };
 
 class StyleAnimator : public QObject
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
     StyleAnimator(QObject *parent = 0) : QObject(parent) {}
 
@@ -94,8 +85,8 @@ public:
     Animation* widgetAnimation(const QWidget *) const;
 
 private:
-    QBasicTimer animationTimer;
-    QList <Animation*> animations;
+    QBasicTimer _animationTimer;
+    QList <Animation*> _animations;
 };
 
-#endif // STYLEANIMATOR_H
+#endif // TANO_STYLEANIMATOR_H_
