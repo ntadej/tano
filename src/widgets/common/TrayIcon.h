@@ -39,9 +39,9 @@ public:
     ~TrayIcon();
 
 public slots:
-    void message(const Tano::Id &type,
+    void message(const int &type,
                  const QStringList &arg);
-    void changeToolTip(const Tano::Id &type,
+    void changeToolTip(const int &type,
                        const QString &text = 0);
 
 signals:

@@ -56,4 +56,11 @@ protected:
     void paintEvent(QPaintEvent *event);
 };
 
+class SimpleSeparator : public QWidget
+{
+    Q_OBJECT
+public:
+    SimpleSeparator(QWidget *parent = 0);
+};
+
 #endif // STYLEDBAR_H

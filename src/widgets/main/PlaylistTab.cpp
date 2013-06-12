@@ -48,12 +48,14 @@ PlaylistTab::PlaylistTab(QWidget *parent)
     _toolbarBottomSearch = new QToolBar(this);
     _toolbarBottomSearch->setMovable(false);
     _toolbarBottomSearch->setFloatable(false);
+    _toolbarBottomSearch->setProperty("topBorder", true);
     addToolBar(Qt::BottomToolBarArea, _toolbarBottomSearch);
     insertToolBarBreak(_toolbarBottomSearch);
 
     _toolbarBottomType = new QToolBar(this);
     _toolbarBottomType->setMovable(false);
     _toolbarBottomType->setFloatable(false);
+    _toolbarBottomType->setProperty("topBorder", true);
     addToolBar(Qt::BottomToolBarArea, _toolbarBottomType);
     insertToolBarBreak(_toolbarBottomType);
 
@@ -73,6 +75,7 @@ PlaylistTab::PlaylistTab(QWidget *parent)
     _selectCategory->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _selectLanguage = new QComboBox(this);
     _selectLanguage->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    _selectLanguage->setProperty("hideborder", true);
     _toolbarBottomType->addWidget(_selectCategory);
     _toolbarBottomType->addWidget(_selectLanguage);
 

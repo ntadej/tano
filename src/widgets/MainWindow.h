@@ -37,15 +37,14 @@ class Arguments;
 class Channel;
 class ChannelSelect;
 class DesktopShortcuts;
-class EpgScheduleChannel;
-class EpgScheduleFull;
-class EpgShow;
 class NetworkDownload;
 class LocaleManager;
 class MediaPlayer;
 class NetworkHttpAuth;
 class NetworkUdpxy;
+class ScheduleTab;
 class SettingsChannel;
+class ShowInfoTab;
 class OsdFloat;
 class PlaylistEditor;
 class PlaylistModel;
@@ -107,13 +106,11 @@ private slots:
     void top();
     void lite();
     void tray();
-    void closeOsd();
     void showOsd(const QPoint &pos);
     void showVideo(const int &count = 0);
     void toggleFullscreen(const bool &enabled);
     void toggleMouse(const bool &enabled = false);
     void toggleOsdControls(const bool &enabled = false);
-    void toggleOsdInfo(const bool &enabled = false);
     void preview(const bool &enabled = false);
 
     void recordNow(const bool &start);
@@ -183,15 +180,10 @@ private:
 
     //GUI
     PlaylistTab *_playlistTab;
-    EpgScheduleChannel *_scheduleWidget;
-    TestMain *_test;
+    ScheduleTab *_scheduleTab;
+    ShowInfoTab *_showInfoTab;
 
-    EpgScheduleFull *_schedule;
-    EpgShow *_epgShow;
     OsdFloat *_osdFloat;
-    OsdFloat *_osdInfo;
-    OsdFloat *_osdSchedule;
-    OsdFloat *_osdShow;
     PlaylistEditor *_playlistEditor;
     QTimer *_mouseTimer;
 

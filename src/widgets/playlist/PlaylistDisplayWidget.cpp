@@ -102,6 +102,12 @@ void PlaylistDisplayWidget::playMode()
     connect(this, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(showMenu(QPoint)));
 }
 
+void PlaylistDisplayWidget::setFilters(const QString &search)
+{
+    QRegExp regExp(search, Qt::CaseInsensitive);
+    _filterModel->setFilterRegExp(regExp);
+}
+
 void PlaylistDisplayWidget::setFilters(const QString &search,
                                        const QString &category,
                                        const QString &language,

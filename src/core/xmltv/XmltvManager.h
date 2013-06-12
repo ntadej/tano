@@ -26,7 +26,6 @@
 
 #include "CoreSharedExport.h"
 
-#include "Common.h"
 #include "network/NetworkDownload.h"
 #include "xmltv/XmltvHandler.h"
 
@@ -48,7 +47,7 @@ public:
 
 public slots:
     void request(const QString &id,
-                 const Tano::Id &identifier);
+                 const bool &current = false);
     void requestProgramme(const QString &id);
     void requestProgrammeNext(const QString &id,
                               const QString &channel);
@@ -60,8 +59,8 @@ public slots:
 signals:
     void channelsChanged(const QHash<QString, QString> &);
     void current(const QStringList &epg);
-    void schedule(XmltvProgrammeModel *,
-                  const Tano::Id);
+    void schedule(const QString &,
+                  XmltvProgrammeModel *);
     void programme(XmltvProgramme *);
     void programmeRecord(XmltvProgramme *);
 
@@ -74,7 +73,6 @@ private slots:
 private:
     void loadXmltvWeb(const QString &url);
 
-    Tano::Id _currentIdentifier;
     QString _currentXmltvId;
 
     XmltvSql *_db;

@@ -63,9 +63,7 @@ SET(Tano_Widgets_UIs
     dialogs/PasswordDialog.ui
     dialogs/PrintDialog.ui
     dialogs/UpdateDialog.ui
-    epg/EpgShow.ui
-    epg/EpgScheduleChannel.ui
-    epg/EpgScheduleFull.ui
+    main/ShowInfoTab.ui
     playlist/PlaylistEditor.ui
     playlist/PlaylistEditorHelp.ui
     playlist/PlaylistEditorScan.ui
@@ -117,14 +115,11 @@ SET(Tano_Widgets_Dialogs_Srcs
     dialogs/PrintDialog.cpp
     dialogs/UpdateDialog.cpp
 )
-SET(Tano_Widgets_Epg_Srcs
-    epg/EpgScheduleChannel.cpp
-    epg/EpgScheduleFull.cpp
-    epg/EpgShow.cpp
-)
 SET(Tano_Widgets_Main_Srcs
     main/MediaPlayer.cpp
     main/PlaylistTab.cpp
+    main/ScheduleTab.cpp
+    main/ShowInfoTab.cpp
 )
 SET(Tano_Widgets_Menu_Srcs
     menu/MenuAspectRatio.cpp
@@ -179,7 +174,6 @@ SET(Tano_Widgets_Srcs
 
     ${Tano_Widgets_Common_Srcs}
     ${Tano_Widgets_Dialogs_Srcs}
-    ${Tano_Widgets_Epg_Srcs}
     ${Tano_Widgets_Main_Srcs}
     ${Tano_Widgets_Menu_Srcs}
     ${Tano_Widgets_Playlist_Srcs}

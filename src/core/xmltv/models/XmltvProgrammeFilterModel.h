@@ -29,8 +29,6 @@
 
 #include "CoreSharedExport.h"
 
-#include "Common.h"
-
 class XmltvProgrammeModel;
 
 /*!
@@ -45,12 +43,6 @@ Q_OBJECT
 public:
     XmltvProgrammeFilterModel(QObject *parent = 0);
     ~XmltvProgrammeFilterModel();
-
-    /*!
-        \brief Set internal identifier for signals
-        \param id internal identifier for signals (Tano::Id)
-    */
-    inline void setId(const Tano::Id &id) { _id = id; }
 
     /*!
         \brief Get current filtered date
@@ -78,13 +70,10 @@ public slots:
     /*!
         \brief Set Programme model to filter
         \param model Programme model (XmltvProgrammeModel)
-        \param id internal identifier for signals (Tano::Id)
     */
-    void setProgrammeModel(XmltvProgrammeModel *model,
-                           const Tano::Id &id);
+    void setProgrammeModel(XmltvProgrammeModel *model);
 
 private:
-    Tano::Id _id;
     XmltvProgrammeModel *_model;
 
     QDate _date;

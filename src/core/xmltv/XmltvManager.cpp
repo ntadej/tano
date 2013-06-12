@@ -129,7 +129,7 @@ void XmltvManager::loadXmltvFinish()
 
     emit channelsChanged(channels());
 
-    request(_currentXmltvId, _currentIdentifier);
+    request(_currentXmltvId);
 }
 
 void XmltvManager::loadXmltvWeb(const QString &url)
@@ -141,11 +141,8 @@ void XmltvManager::loadXmltvWeb(const QString &url)
 }
 
 void XmltvManager::request(const QString &id,
-                           const Tano::Id &identifier)
+                           const bool &current)
 {
-    if (id.isEmpty())
-        return;
-
     XmltvProgrammeModel *currentProgramme = new XmltvProgrammeModel(id, _db);
 
     if (!currentProgramme->rowCount()) {
@@ -153,12 +150,13 @@ void XmltvManager::request(const QString &id,
         return;
     }
 
-    emit schedule(currentProgramme, identifier);
+    XmltvChannel *tmp = _db->channel(id);
+    emit schedule(tmp->displayName(), currentProgramme);
+    delete tmp;
 
-    _currentIdentifier = identifier;
-    if (_currentIdentifier == Tano::Main) {
+    if (current) {
         _currentXmltvId = id;
-        current();
+        this->current();
     }
 }
 

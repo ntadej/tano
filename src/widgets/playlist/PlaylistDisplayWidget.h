@@ -57,6 +57,7 @@ public slots:
     void channelSelected(Channel *channel);
     void channelSelected(const int &channel);
     void channelSelected(const QString &xmltvId);
+    void setFilters(const QString &search);
     void setFilters(const QString &search,
                     const QString &category,
                     const QString &language,

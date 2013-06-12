@@ -67,11 +67,10 @@
 #include "dialogs/AboutDialog.h"
 #include "dialogs/DonationDialog.h"
 #include "dialogs/UpdateDialog.h"
-#include "epg/EpgScheduleChannel.h"
-#include "epg/EpgScheduleFull.h"
-#include "epg/EpgShow.h"
 #include "main/MediaPlayer.h"
 #include "main/PlaylistTab.h"
+#include "main/ScheduleTab.h"
+#include "main/ShowInfoTab.h"
 #include "menu/MenuCore.h"
 #include "playlist/PlaylistDisplayWidget.h"
 #include "playlist/PlaylistEditor.h"
@@ -108,12 +107,7 @@ MainWindow::MainWindow(Arguments *args,
       _previewTimer(new QTimer(this)),
       _httpAuth(new NetworkHttpAuth(password)),
       _udpxy(new NetworkUdpxy()),
-      _schedule(new EpgScheduleFull()),
-      _epgShow(new EpgShow()),
       _osdFloat(0),
-      _osdInfo(0),
-      _osdSchedule(0),
-      _osdShow(0),
       _playlistEditor(0)
 {
     _arguments = args;
@@ -286,26 +280,22 @@ void MainWindow::createGui()
     ui->tabs->insertTab(0, _playlistTab, QIcon::fromTheme("video-x-generic"), tr("Channels"));
     ui->tabs->setTabEnabled(0, true);
 
-    _scheduleWidget = new EpgScheduleChannel(this);
-    _scheduleWidget->setIdentifier(Tano::Main);
-    ui->tabs->insertTab(1, _scheduleWidget, QIcon::fromTheme("x-office-calendar"), tr("Schedule"));
+    _scheduleTab = new ScheduleTab(this);
+    _scheduleTab->playlist()->setModel(_model);
+    ui->tabs->insertTab(1, _scheduleTab, QIcon::fromTheme("x-office-calendar"), tr("Schedule"));
     ui->tabs->setTabEnabled(1, true);
+
+    _showInfoTab = new ShowInfoTab(this);
+    ui->tabs->insertTab(2, _showInfoTab, QIcon::fromTheme("x-office-calendar"), tr("Show Info"));
+    ui->tabs->setTabEnabled(2, true);
 
     ui->tabs->setCurrentIndex(0);
 
     //ui->tabs->addCornerWidget(new FancyColorButton(this));
 
-    _osdInfo = new OsdFloat(this);
-    _osdInfo->setInfo();
     _osdFloat = new OsdFloat(this);
     _osdFloat->resize(_osdFloat->width(), _mediaPlayer->osd()->height());
     _osdFloat->setControls();
-    _osdSchedule = new OsdFloat(this);
-    _osdSchedule->setSchedule();
-    _osdShow = new OsdFloat(this);
-    _osdShow->setSchedule();
-
-    _schedule->setPlaylistModel(_model);
 
     openPlaylist(true);
     setStopped();
@@ -471,16 +461,14 @@ void MainWindow::createConnections()
     connect(_mediaPlayer->osd(), SIGNAL(stopClicked()), ui->actionStop, SLOT(trigger()));
 
     connect(_xmltv, SIGNAL(current(QStringList)), _mediaPlayer->osd(), SLOT(setEpg(QStringList)));
-    connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), _scheduleWidget, SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
-    connect(_xmltv, SIGNAL(schedule(XmltvProgrammeModel *, Tano::Id)), _schedule->schedule(), SLOT(setEpg(XmltvProgrammeModel *, Tano::Id)));
-    connect(_schedule, SIGNAL(requestEpg(QString, Tano::Id)), _xmltv, SLOT(request(QString, Tano::Id)));
-    connect(_schedule, SIGNAL(itemSelected(QString)), _xmltv, SLOT(requestProgramme(QString)));
-    connect(_scheduleWidget, SIGNAL(itemSelected(QString)), _xmltv, SLOT(requestProgramme(QString)));
-    connect(_xmltv, SIGNAL(programme(XmltvProgramme *)), _epgShow, SLOT(display(XmltvProgramme *)));
+    connect(_xmltv, SIGNAL(schedule(QString, XmltvProgrammeModel *)), _scheduleTab, SLOT(setEpg(QString, XmltvProgrammeModel *)));
+    connect(_scheduleTab, SIGNAL(requestEpg(QString)), _xmltv, SLOT(request(QString)));
+    connect(_scheduleTab, SIGNAL(itemSelected(QString)), _xmltv, SLOT(requestProgramme(QString)));
+    connect(_xmltv, SIGNAL(programme(XmltvProgramme *)), _showInfoTab, SLOT(display(XmltvProgramme *)));
     connect(_mediaPlayer->osd(), SIGNAL(openLink(QString)), _xmltv, SLOT(requestProgramme(QString)));
-    connect(_epgShow, SIGNAL(requestNext(QString, QString)), _xmltv, SLOT(requestProgrammeNext(QString, QString)));
-    connect(_epgShow, SIGNAL(requestPrevious(QString, QString)), _xmltv, SLOT(requestProgrammePrevious(QString, QString)));
-    connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _schedule, SLOT(openSchedule(Channel *)));
+    connect(_showInfoTab, SIGNAL(requestNext(QString, QString)), _xmltv, SLOT(requestProgrammeNext(QString, QString)));
+    connect(_showInfoTab, SIGNAL(requestPrevious(QString, QString)), _xmltv, SLOT(requestProgrammePrevious(QString, QString)));
+    connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _scheduleTab, SLOT(openSchedule(Channel *)));
 
 #if FEATURE_UPDATE
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
@@ -501,9 +489,8 @@ void MainWindow::createConnections()
     connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
     connect(ui->actionSnapshot, SIGNAL(triggered()), this, SLOT(takeSnapshot()));
 
-    connect(_epgShow, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
-    connect(_schedule, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
-    connect(_scheduleWidget, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
+    connect(_showInfoTab, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
+    connect(_scheduleTab, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
     connect(_xmltv, SIGNAL(programmeRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
 
     connect(_shortcut, SIGNAL(activated()), this, SLOT(closeOsd()));
@@ -668,10 +655,10 @@ void MainWindow::playChannel(Channel *channel)
         _mediaPlayer->osd()->setLogo(_channel->logo());
     }
 
-    _xmltv->request(_channel->xmltvId(), Tano::Main);
+    _xmltv->request(_channel->xmltvId(), true);
     _mediaPlayer->osd()->setChannel(_channel->number(), _channel->name(), _channel->language());
     tooltip(_channel->name());
-    _trayIcon->changeToolTip(Tano::Main, _channel->name());
+    _trayIcon->changeToolTip(0, _channel->name());
 }
 
 void MainWindow::playRecording(Timer *recording)
@@ -683,7 +670,7 @@ void MainWindow::playRecording(Timer *recording)
 
     _mediaPlayer->osd()->setRecording(recording->name(), recording->display().replace(recording->name() + " - ",""));
     tooltip(recording->name());
-    _trayIcon->changeToolTip(Tano::Main, recording->name());
+    _trayIcon->changeToolTip(0, recording->name());
 
     delete recording;
 #else
@@ -700,10 +687,11 @@ void MainWindow::stop()
 
     _mediaPlayer->stop();
     _xmltv->stop();
-    _scheduleWidget->setPage(0);
+    // TODO: Stacking
+    //_scheduleWidget->setPage(0);
 
     tooltip();
-    _trayIcon->changeToolTip(Tano::Main);
+    _trayIcon->changeToolTip(0);
 
     Tano::Log::stopped();
 }
@@ -748,29 +736,18 @@ void MainWindow::openPlaylist(const bool &start)
 
     _playlistTab->setPlaylistName(_model->name());
     _playlistTab->setFilters(_model->categories(), _model->languages());
-    // TODO: refresh filters
-    //_playlistWidget->refreshModel();
-    _schedule->refreshPlaylistModel();
 }
 
 
 //GUI
 void MainWindow::showSchedule()
 {
-    if (ui->actionFullscreen->isChecked() && _osdSchedule->isVisible())
-        _osdSchedule->floatHide();
-    else if (_channelPlayback)
-        _schedule->openSchedule(_channel);
-    else
-        _schedule->openSchedule();
+    // TODO: Show schedule
 }
 
 void MainWindow::showScheduleCurrent()
 {
-    if (ui->actionFullscreen->isChecked() && _osdShow->isVisible())
-        _osdShow->floatHide();
-    else if (_channelPlayback)
-        _xmltv->requestProgramme(_mediaPlayer->osd()->currentProgramme());
+    // TODO: Show schedule current
 }
 
 void MainWindow::showSettings()
@@ -861,16 +838,6 @@ void MainWindow::tray()
     }
 }
 
-void MainWindow::closeOsd()
-{
-    if (ui->actionFullscreen->isChecked()) {
-        if (_osdShow->isVisible())
-            _osdShow->floatHide();
-        else if (_osdSchedule->isVisible())
-            _osdSchedule->floatHide();
-    }
-}
-
 void MainWindow::showOsd(const QPoint &pos)
 {
     // TODO: Fix fullscreen osd
@@ -878,12 +845,6 @@ void MainWindow::showOsd(const QPoint &pos)
         toggleOsdControls(true);
     } else {
         toggleOsdControls(false);
-    }
-
-    if (pos.x() > QApplication::desktop()->width()-_osdInfo->width()-50) {
-        toggleOsdInfo(true);
-    } else {
-        toggleOsdInfo(false);
     }*/
 }
 
@@ -904,18 +865,10 @@ void MainWindow::showVideo(const int &count)
 // Dock
 void MainWindow::toggleFullscreen(const bool &enabled)
 {
-    _osdInfo->setVisible(enabled);
     _osdFloat->setVisible(enabled);
-    _osdSchedule->setVisible(enabled);
-    _osdShow->setVisible(enabled);
 
     foreach (QAction *action, _actionsFull)
         action->setDisabled(enabled);
-
-    _schedule->setFullscreen(enabled, _osdSchedule);
-    _osdSchedule->floatHide();
-    _epgShow->setFullscreen(enabled, _osdShow);
-    _osdShow->floatHide();
 
     if (enabled) {
         if (!ui->actionLite->isChecked())
@@ -956,17 +909,6 @@ void MainWindow::toggleOsdControls(const bool &enabled)
             _osdFloat->floatShow();
         } else {
             _osdFloat->floatHide();
-        }
-    }
-}
-
-void MainWindow::toggleOsdInfo(const bool &enabled)
-{
-    if (ui->actionFullscreen->isChecked()) {
-        if (enabled) {
-            _osdInfo->floatShow();
-        } else {
-            _osdInfo->floatHide();
         }
     }
 }

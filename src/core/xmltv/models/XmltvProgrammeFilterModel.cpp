@@ -25,7 +25,6 @@
 
 XmltvProgrammeFilterModel::XmltvProgrammeFilterModel(QObject *parent)
     : QSortFilterProxyModel(parent),
-      _id(Tano::Main),
       _model(0),
       _date(QDate::currentDate()) { }
 
@@ -48,12 +47,9 @@ bool XmltvProgrammeFilterModel::filterAcceptsRow(int sourceRow,
     return (name && start);
 }
 
-void XmltvProgrammeFilterModel::setProgrammeModel(XmltvProgrammeModel *model,
-                                                  const Tano::Id &id)
+void XmltvProgrammeFilterModel::setProgrammeModel(XmltvProgrammeModel *model)
 {
-    if (id == _id) {
-        _model = model;
-        setSourceModel(_model);
-        invalidateFilter();
-    }
+    _model = model;
+    setSourceModel(_model);
+    invalidateFilter();
 }

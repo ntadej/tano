@@ -41,14 +41,6 @@ namespace Tano
     TANO_CORE_EXPORT QString email();
     TANO_CORE_EXPORT QString url();
 
-    // Identifier
-    enum Id
-    {
-        Main,
-        Record,
-        Schedule
-    };
-
     // Misc
     TANO_CORE_EXPORT QString recordingFileName(const QString &name,
                                                const QString &channel,

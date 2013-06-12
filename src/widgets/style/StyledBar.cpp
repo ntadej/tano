@@ -87,3 +87,9 @@ void StyledSeparator::paintEvent(QPaintEvent *event)
     option.palette = palette();
     style()->drawPrimitive(QStyle::PE_IndicatorToolBarSeparator, &option, &painter, this);
 }
+
+SimpleSeparator::SimpleSeparator(QWidget *parent)
+    : QWidget(parent)
+{
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+}

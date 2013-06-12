@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,36 +16,32 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_EPGSHOW_H_
-#define TANO_EPGSHOW_H_
+#ifndef TANO_SHOWINFOTAB_H_
+#define TANO_SHOWINFOTAB_H_
 
 #include <QtCore/QFile>
 
-#if defined(Qt5)
-    #include <QtWidgets/QWidget>
-#elif defined(Qt4)
-    #include <QtGui/QWidget>
+#if QT_VERSION >= 0x050000
+    #include <QtWidgets/QMainWindow>
+#else
+    #include <QtGui/QMainWindow>
 #endif
 
 namespace Ui
 {
-	class EpgShow;
+    class ShowInfoTab;
 }
 
 class NetworkDownload;
-class OsdFloat;
 class XmltvCrewFilterModel;
 class XmltvProgramme;
 
-class EpgShow : public QWidget
+class ShowInfoTab : public QMainWindow
 {
 Q_OBJECT
 public:
-	EpgShow(QWidget *parent = 0);
-	~EpgShow();
-
-    void setFullscreen(const bool &enabled,
-                       OsdFloat *widget = 0);
+    ShowInfoTab(QWidget *parent = 0);
+    ~ShowInfoTab();
 
 protected:
 	void changeEvent(QEvent *e);
@@ -61,23 +57,18 @@ signals:
     void requestRecord(const QString &id);
 
 private slots:
-    void closeOsd();
     void image(QFile *file);
 	void next();
 	void previous();
-	void processFilters(const int &type);
 	void record();
 
 private:
-	Ui::EpgShow *ui;
+    Ui::ShowInfoTab *ui;
 
 	XmltvProgramme *_current;
     XmltvCrewFilterModel *_crew;
 
 	NetworkDownload *_image;
-
-    bool _fullscreen;
-    OsdFloat *_osd;
 };
 
-#endif // TANO_EPGSHOW_H_
+#endif // TANO_SHOWINFOTAB_H_

@@ -50,13 +50,14 @@ void TrayIcon::iconActivated(const QSystemTrayIcon::ActivationReason reason)
     }
 }
 
-void TrayIcon::message(const Tano::Id &type,
+void TrayIcon::message(const int &type,
                        const QStringList &arg)
 {
+     // TODO: Tooltip
     if (arg.isEmpty())
         return;
 
-    if (type == Tano::Record) {
+    if (type == 1) {
         if (arg.size() == 0) {
             showMessage(tr("Recorder"), tr("Recording stopped."), QSystemTrayIcon::Information, 10000);
         } else if (arg.size() == 2) {
@@ -67,16 +68,17 @@ void TrayIcon::message(const Tano::Id &type,
     }
 }
 
-void TrayIcon::changeToolTip(const Tano::Id &type,
+void TrayIcon::changeToolTip(const int &type,
                              const QString &text)
 {
-    if (type == Tano::Main) {
+    // TODO: Tooltip
+    if (type == 0) {
         if (!text.isEmpty()) {
             _currentlyPlaying = tr("Playing:") + " " + text;
         } else {
             _currentlyPlaying = text;
         }
-    } else if (type == Tano::Record) {
+    } else if (type == 1) {
         if (!text.isEmpty()) {
             _currentlyRecording = tr("Recording:") + " " + text;
         } else {

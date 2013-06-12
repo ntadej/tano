@@ -162,11 +162,11 @@ void Recorder::recordStart(Timer *timer)
 
     if (_trayIcon) {
         QString title = QString("%1 (%2)").arg(timer->name(), timer->channel());
-        _trayIcon->changeToolTip(Tano::Record, title);
+        _trayIcon->changeToolTip(1, title);
         if (_core->isTimer())
-            _trayIcon->message(Tano::Record, QStringList() << title << timer->file() << timer->endTime().toString("hh:mm"));
+            _trayIcon->message(1, QStringList() << title << timer->file() << timer->endTime().toString("hh:mm"));
         else
-            _trayIcon->message(Tano::Record, QStringList() << title << timer->file());
+            _trayIcon->message(1, QStringList() << title << timer->file());
     }
 }
 
@@ -183,8 +183,8 @@ void Recorder::recordStop()
         _actionRecord->setEnabled(false);
 
     if (_trayIcon) {
-        _trayIcon->changeToolTip(Tano::Record);
-        _trayIcon->message(Tano::Record, QStringList());
+        _trayIcon->changeToolTip(1);
+        _trayIcon->message(1, QStringList());
     }
 
     if (_currentTimer->type() == Timer::Instant) {
