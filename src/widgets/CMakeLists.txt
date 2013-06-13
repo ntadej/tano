@@ -30,8 +30,8 @@ ENDIF(STATIC)
 
 IF(MINGW OR MSVC)
     CONFIGURE_FILE(
-        ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-widgets.rc.in
-        ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.rc
+        ${CMAKE_SOURCE_DIR}/src/widgets/tano-widgets.rc.in
+        ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.rc
     )
 ENDIF(MINGW OR MSVC)
 
@@ -61,14 +61,8 @@ SET(Tano_Widgets_UIs
     dialogs/AboutDialog.ui
     dialogs/DonationDialog.ui
     dialogs/PasswordDialog.ui
-    dialogs/PrintDialog.ui
     dialogs/UpdateDialog.ui
     main/ShowInfoTab.ui
-    playlist/PlaylistEditor.ui
-    playlist/PlaylistEditorHelp.ui
-    playlist/PlaylistEditorScan.ui
-    playlist/PlaylistExportTvheadend.ui
-    playlist/PlaylistImportCSV.ui
     settings/SettingsBackend.ui
     settings/SettingsDialog.ui
     settings/SettingsGeneral.ui
@@ -103,7 +97,7 @@ SET(Tano_Widgets_Common_Srcs
     common/LicenseWidget.cpp
     common/OsdFloat.cpp
     common/OsdWidget.cpp
-    common/Print.cpp
+    common/PlaylistDisplayWidget.cpp
     common/QtKeySequenceEdit.cpp
     common/ScrollingWidget.cpp
     common/TrayIcon.cpp
@@ -112,7 +106,6 @@ SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
     dialogs/DonationDialog.cpp
     dialogs/PasswordDialog.cpp
-    dialogs/PrintDialog.cpp
     dialogs/UpdateDialog.cpp
 )
 SET(Tano_Widgets_Main_Srcs
@@ -130,14 +123,6 @@ SET(Tano_Widgets_Menu_Srcs
     menu/MenuTrackAudio.cpp
     menu/MenuTrackSubtitles.cpp
     menu/MenuTrackVideo.cpp
-)
-SET(Tano_Widgets_Playlist_Srcs
-    playlist/PlaylistDisplayWidget.cpp
-    playlist/PlaylistEditor.cpp
-    playlist/PlaylistEditorHelp.cpp
-    playlist/PlaylistEditorScan.cpp
-    playlist/PlaylistExportTvheadend.cpp
-    playlist/PlaylistImportCSV.cpp
 )
 SET(Tano_Widgets_Recorder_Srcs
     recorder/Recorder.cpp
@@ -177,7 +162,6 @@ SET(Tano_Widgets_Srcs
     ${Tano_Widgets_Dialogs_Srcs}
     ${Tano_Widgets_Main_Srcs}
     ${Tano_Widgets_Menu_Srcs}
-    ${Tano_Widgets_Playlist_Srcs}
     ${Tano_Widgets_Settings_Srcs}
     ${Tano_Widgets_Style_Srcs}
 )
@@ -232,17 +216,17 @@ INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
 # Compile resources with windres
 IF(MINGW)
     ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.obj
+        OUTPUT ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.obj
         COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.rc
-        -o ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.obj
-        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/platform/windows"
+        -i ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.rc
+        -o ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.obj
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/widgets"
     )
-    SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.obj)
+    SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.obj)
 ENDIF(MINGW)
 
 IF(MSVC)
-    SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-widgets.rc)
+    SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.rc)
 ENDIF(MSVC)
 
 # This line tells cmake to create the Tano Widgets library.
@@ -270,7 +254,7 @@ ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 # Here the needed Libraries are added to the link command.
 IF(QT5)
-    QT5_USE_MODULES(${TANO_WIDGETS} Network PrintSupport Sql Widgets Xml)
+    QT5_USE_MODULES(${TANO_WIDGETS} Network Sql Widgets Xml)
     TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
 ELSE(QT5)
     TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${QT_LIBRARIES} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})

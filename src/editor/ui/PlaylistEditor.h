@@ -19,6 +19,8 @@
 #ifndef TANO_PLAYLISTEDITOR_H_
 #define TANO_PLAYLISTEDITOR_H_
 
+#include <QtCore/QHash>
+
 #if defined(Qt5)
     #include <QtWidgets/QMainWindow>
 #elif defined(Qt4)

@@ -39,15 +39,14 @@
     #include <QtGui/QVBoxLayout>
 #endif
 
+#include "core/platform/Features.h"
 #include "core/xmltv/XmltvCommon.h"
 #include "core/xmltv/containers/XmltvChannel.h"
 #include "core/xmltv/containers/XmltvProgramme.h"
 #include "core/xmltv/models/XmltvProgrammeFilterModel.h"
 #include "core/xmltv/models/XmltvProgrammeModel.h"
 
-#include "platform/Features.h"
-
-#include "playlist/PlaylistDisplayWidget.h"
+#include "common/PlaylistDisplayWidget.h"
 #include "style/FancyLineEdit.h"
 #include "style/StyledBar.h"
 

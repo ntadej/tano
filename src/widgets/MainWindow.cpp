@@ -40,7 +40,6 @@
 #include <vlc-qt/WidgetVolumeSlider.h>
 
 #include "Config.h"
-#include "platform/Features.h"
 
 #include "core/Arguments.h"
 #include "core/Common.h"
@@ -53,6 +52,7 @@
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/PlaylistUpdate.h"
 #include "core/playlist/containers/Channel.h"
+#include "core/platform/Features.h"
 #include "core/settings/Settings.h"
 #include "core/settings/SettingsChannel.h"
 #include "core/xmltv/XmltvManager.h"
@@ -63,6 +63,7 @@
 #include "common/FileDialogs.h"
 #include "common/OsdFloat.h"
 #include "common/OsdWidget.h"
+#include "common/PlaylistDisplayWidget.h"
 #include "common/TrayIcon.h"
 #include "dialogs/AboutDialog.h"
 #include "dialogs/DonationDialog.h"
@@ -72,8 +73,6 @@
 #include "main/ScheduleTab.h"
 #include "main/ShowInfoTab.h"
 #include "menu/MenuCore.h"
-#include "playlist/PlaylistDisplayWidget.h"
-#include "playlist/PlaylistEditor.h"
 #include "settings/SettingsDialog.h"
 #include "settings/SettingsDialogShortcuts.h"
 
@@ -107,8 +106,7 @@ MainWindow::MainWindow(Arguments *args,
       _previewTimer(new QTimer(this)),
       _httpAuth(new NetworkHttpAuth(password)),
       _udpxy(new NetworkUdpxy()),
-      _osdFloat(0),
-      _playlistEditor(0)
+      _osdFloat(0)
 {
     _arguments = args;
 
@@ -135,9 +133,6 @@ MainWindow::MainWindow(Arguments *args,
 
 MainWindow::~MainWindow()
 {
-    if (_playlistEditor)
-        delete _playlistEditor;
-
     delete ui;
 }
 
@@ -425,7 +420,6 @@ void MainWindow::createConnections()
     connect(ui->actionScheduleCurrent, SIGNAL(triggered()), this, SLOT(showScheduleCurrent()));
     connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
     connect(ui->actionSettingsShortcuts, SIGNAL(triggered()), this, SLOT(showSettingsShortcuts()));
-    connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
     connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(togglePause()));
     connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
@@ -762,31 +756,6 @@ void MainWindow::showSettingsShortcuts()
 {
     SettingsDialogShortcuts s(_shortcuts, this);
     s.exec();
-}
-
-void MainWindow::showPlaylistEditor()
-{
-    // TODO: Playlist editor
-    /*if (_playlistEditor) {
-        if (_playlistEditor->isVisible()) {
-            _playlistEditor->activateWindow();
-        } else {
-            disconnect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _playlistEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
-            delete _playlistEditor;
-            _playlistEditor = new PlaylistEditor(this);
-            _playlistEditor->setMediaInstance(_mediaInstance);
-            _playlistEditor->setXmltvMap(_xmltv->channels());
-            _playlistEditor->open(_playlistName);
-            _playlistEditor->show();
-        }
-    } else {
-        _playlistEditor = new PlaylistEditor(this);
-        _playlistEditor->setMediaInstance(_mediaInstance);
-        connect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _playlistEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
-        _playlistEditor->setXmltvMap(_xmltv->channels());
-        _playlistEditor->open(_playlistName);
-        _playlistEditor->show();
-    }*/
 }
 
 void MainWindow::tooltip(const QString &channelNow)

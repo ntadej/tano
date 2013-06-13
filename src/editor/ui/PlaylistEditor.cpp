@@ -33,13 +33,14 @@
 #include "core/playlist/handlers/CSVHandler.h"
 #include "core/settings/Settings.h"
 
-#include "common/FileDialogs.h"
-#include "dialogs/AboutDialog.h"
-#include "dialogs/PrintDialog.h"
-#include "playlist/PlaylistEditorHelp.h"
-#include "playlist/PlaylistEditorScan.h"
-#include "playlist/PlaylistExportTvheadend.h"
-#include "playlist/PlaylistImportCSV.h"
+#include "widgets/common/FileDialogs.h"
+#include "widgets/dialogs/AboutDialog.h"
+
+#include "ui/PrintDialog.h"
+#include "ui/PlaylistEditorHelp.h"
+#include "ui/PlaylistEditorScan.h"
+#include "ui/PlaylistExportTvheadend.h"
+#include "ui/PlaylistImportCSV.h"
 
 #include "PlaylistEditor.h"
 #include "ui_PlaylistEditor.h"

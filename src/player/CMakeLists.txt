@@ -20,12 +20,12 @@ IF(MINGW OR MSVC)
     IF(BRANDING)
         CONFIGURE_FILE(
             ${CMAKE_SOURCE_DIR}/branding/windows/tano.rc.in
-            ${CMAKE_BINARY_DIR}/src/platform/windows/tano.rc
+            ${CMAKE_BINARY_DIR}/src/player/tano.rc
         )
     ELSE(BRANDING)
         CONFIGURE_FILE(
-            ${CMAKE_SOURCE_DIR}/src/platform/windows/tano.rc.in
-            ${CMAKE_BINARY_DIR}/src/platform/windows/tano.rc
+            ${CMAKE_SOURCE_DIR}/src/player/tano.rc.in
+            ${CMAKE_BINARY_DIR}/src/player/tano.rc
         )
     ENDIF(BRANDING)
 ENDIF(MINGW OR MSVC)
@@ -57,17 +57,17 @@ INCLUDE_DIRECTORIES(
 # Compile resources with windres
 IF(MINGW)
     ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/platform/windows/tano.obj
+        OUTPUT ${CMAKE_BINARY_DIR}/src/player/tano.obj
         COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_BINARY_DIR}/src/platform/windows/tano.rc
-        -o ${CMAKE_BINARY_DIR}/src/platform/windows/tano.obj
-        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/platform/windows"
+        -i ${CMAKE_BINARY_DIR}/src/player/tano.rc
+        -o ${CMAKE_BINARY_DIR}/src/player/tano.obj
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/player"
     )
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano.obj)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/player/tano.obj)
 ENDIF(MINGW)
 
 IF(MSVC)
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano.rc)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/player/tano.rc)
 ENDIF(MSVC)
 
 # This line tells cmake to create the Tano program.

@@ -537,13 +537,13 @@
   <customwidget>
    <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
-   <header>playlist/PlaylistDisplayWidget.h</header>
+   <header>widgets/common/PlaylistDisplayWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>PlaylistEditorScan</class>
    <extends>QWidget</extends>
-   <header>playlist/PlaylistEditorScan.h</header>
+   <header>ui/PlaylistEditorScan.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

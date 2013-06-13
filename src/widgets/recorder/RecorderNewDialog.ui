@@ -168,7 +168,7 @@
   <customwidget>
    <class>PlaylistDisplayWidget</class>
    <extends>QWidget</extends>
-   <header>playlist/PlaylistDisplayWidget.h</header>
+   <header>common/PlaylistDisplayWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

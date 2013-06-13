@@ -15,9 +15,8 @@
 #include <vlc-qt/WidgetVideo.h>
 #include <vlc-qt/WidgetVolumeSlider.h>
 
-#include "platform/Features.h"
-
 #include "core/Arguments.h"
+#include "core/platform/Features.h"
 #include "core/settings/Settings.h"
 #include "core/settings/SettingsChannel.h"
 

@@ -25,14 +25,13 @@
     #include <QtGui/QDialog>
 #endif
 
-#include "common/Print.h"
-
 namespace Ui {
     class PrintDialog;
 }
 
 class QAbstractButton;
 
+class Print;
 class PrintDialog : public QDialog
 {
 Q_OBJECT

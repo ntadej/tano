@@ -22,6 +22,8 @@
     #include <QtGui/QDialogButtonBox>
 #endif
 
+#include "Print.h"
+
 #include "PrintDialog.h"
 #include "ui_PrintDialog.h"
 

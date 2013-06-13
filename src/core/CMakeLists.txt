@@ -28,10 +28,15 @@ ELSE(STATIC)
     ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 ENDIF(STATIC)
 
+CONFIGURE_FILE(
+    ${CMAKE_SOURCE_DIR}/src/core/platform/Features.h.in
+    ${CMAKE_BINARY_DIR}/src/core/platform/Features.h
+)
+
 IF(MINGW OR MSVC)
     CONFIGURE_FILE(
-        ${CMAKE_SOURCE_DIR}/src/platform/windows/tano-core.rc.in
-        ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.rc
+        ${CMAKE_SOURCE_DIR}/src/core/tano-core.rc.in
+        ${CMAKE_BINARY_DIR}/src/core/tano-core.rc
     )
 ENDIF(MINGW OR MSVC)
 
@@ -100,13 +105,13 @@ SET(Tano_Core_Xmltv_Srcs
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     SET(Tano_Core_Platform_Srcs
-        ../platform/linux/Locations.cpp
+        platform/linux/Locations.cpp
     )
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 IF(MINGW OR MSVC)
     SET(Tano_Core_Platform_Srcs
-        ../platform/windows/Console.cpp
+        platform/windows/Console.cpp
     )
 ENDIF(MINGW OR MSVC)
 
@@ -185,17 +190,17 @@ INCLUDE_DIRECTORIES(
 # Compile resources with windres
 IF(MINGW)
     ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.obj
+        OUTPUT ${CMAKE_BINARY_DIR}/src/core/tano-core.obj
         COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.rc
-        -o ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.obj
-        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/platform/windows"
+        -i ${CMAKE_BINARY_DIR}/src/core/tano-core.rc
+        -o ${CMAKE_BINARY_DIR}/src/core/tano-core.obj
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/core"
     )
-    SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.obj)
+    SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/core/tano-core.obj)
 ENDIF(MINGW)
 
 IF(MSVC)
-    SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/platform/windows/tano-core.rc)
+    SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/core/tano-core.rc)
 ENDIF(MSVC)
 
 # This line tells cmake to create the Tano Core library.

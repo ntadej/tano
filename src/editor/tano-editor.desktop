@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Tano Editor
+GenericName=Tano Editor
+GenericName[sl]=Tano Urejevalnik
+Comment=Channel list editor
+Comment[sl]=Urejevalnik seznamov programov
+Exec=tano-editor
+Icon=tano-editor
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;
+StartupNotify=true

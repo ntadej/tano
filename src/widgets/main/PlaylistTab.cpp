@@ -27,7 +27,7 @@
     #include <QtGui/QToolBar>
 #endif
 
-#include "playlist/PlaylistDisplayWidget.h"
+#include "common/PlaylistDisplayWidget.h"
 #include "style/FancyLineEdit.h"
 #include "style/StyledBar.h"
 
