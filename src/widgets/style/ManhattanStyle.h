@@ -65,6 +65,7 @@ protected slots:
     QIcon standardIconImplementation(StandardPixmap standardIcon, const QStyleOption *option, const QWidget *widget) const;
 
 private:
+    void drawButtonFrame(QPainter *painter, const QRect &rect) const;
     void drawButtonSeparator(QPainter *painter, const QRect &rect, bool reverse) const;
 
     ManhattanStylePrivate *d;

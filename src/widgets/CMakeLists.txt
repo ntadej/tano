@@ -149,6 +149,7 @@ SET(Tano_Widgets_Style_Srcs
     style/StyleAnimator.cpp
     style/StyleHelper.cpp
     style/StyledBar.cpp
+    style/VolumeSlider.cpp
 )
 SET(Tano_Widgets_Timers_Srcs
     timers/TimersDisplayWidget.cpp

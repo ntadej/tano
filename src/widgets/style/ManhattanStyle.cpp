@@ -252,7 +252,8 @@ void ManhattanStyle::polish(QWidget *widget)
         widget->setAttribute(Qt::WA_LayoutUsesWidgetRect, true);
         if (qobject_cast<QToolButton*>(widget)) {
             widget->setAttribute(Qt::WA_Hover);
-            widget->setMaximumHeight(StyleHelper::navigationWidgetHeight() - 2);
+            if (!widget->property("extraframe").toBool())
+                widget->setMaximumHeight(StyleHelper::navigationWidgetHeight() - 2);
         }
         else if (qobject_cast<QLineEdit*>(widget)) {
             widget->setAttribute(Qt::WA_Hover);
@@ -448,6 +449,7 @@ void ManhattanStyle::drawPrimitive(PrimitiveElement element, const QStyleOption 
 
     case PE_PanelButtonTool: {
             Animation *anim = d->animator.widgetAnimation(widget);
+            bool frame = (widget && widget->property("extraframe").toBool());
             if (!animating && anim) {
                 anim->paint(painter, option);
             } else {
@@ -456,18 +458,33 @@ void ManhattanStyle::drawPrimitive(PrimitiveElement element, const QStyleOption 
                 painter->setPen(shadow);
                 if (pressed) {
                     QColor shade(0, 0, 0, 40);
-                    painter->fillRect(rect, shade);
-                    painter->drawLine(rect.topLeft() + QPoint(1, 0), rect.topRight() - QPoint(1, 0));
-                    painter->drawLine(rect.topLeft(), rect.bottomLeft());
-                    painter->drawLine(rect.topRight(), rect.bottomRight());
-                   // painter->drawLine(rect.bottomLeft()  + QPoint(1, 0), rect.bottomRight()  - QPoint(1, 0));
+                    if (frame) {
+                        painter->fillRect(rect.adjusted(1, 1, -2, -2), shade);
+                    } else {
+                        painter->fillRect(rect, shade);
+                        painter->drawLine(rect.topLeft() + QPoint(1, 0), rect.topRight() - QPoint(1, 0));
+                        painter->drawLine(rect.topLeft(), rect.bottomLeft());
+                        painter->drawLine(rect.topRight(), rect.bottomRight());
+                    }
+
                     QColor highlight(255, 255, 255, 30);
                     painter->setPen(highlight);
                 }
                 else if (option->state & State_Enabled &&
                          option->state & State_MouseOver) {
-                    QColor lighter(255, 255, 255, 37);
-                    painter->fillRect(rect, lighter);
+                    if (lightColored(widget)) {
+                        QColor lighter(0, 0, 0, 27);
+                        if (frame)
+                            painter->fillRect(rect.adjusted(1, 1, -2, -2), lighter);
+                        else
+                            painter->fillRect(rect, lighter);
+                    } else {
+                        QColor lighter(255, 255, 255, 37);
+                        if (frame)
+                            painter->fillRect(rect.adjusted(1, 1, -2, -2), lighter);
+                        else
+                            painter->fillRect(rect, lighter);
+                    }
                 }
                 if (option->state & State_HasFocus && (option->state & State_KeyboardFocusChange)) {
                     QColor highlight = option->palette.highlight().color();
@@ -821,8 +838,11 @@ void ManhattanStyle::drawComplexControl(ComplexControl control, const QStyleOpti
         if (const QStyleOptionToolButton *toolbutton = qstyleoption_cast<const QStyleOptionToolButton *>(option)) {
             bool reverse = option->direction == Qt::RightToLeft;
             bool drawborder = (widget && widget->property("showborder").toBool());
+            bool frame = (widget && widget->property("extraframe").toBool());
 
-            if (drawborder)
+            if (frame)
+                drawButtonFrame(painter, rect);
+            else if (drawborder)
                 drawButtonSeparator(painter, rect, reverse);
 
             QRect button, menuarea;
@@ -953,6 +973,31 @@ void ManhattanStyle::drawComplexControl(ComplexControl control, const QStyleOpti
     }
 }
 
+void ManhattanStyle::drawButtonFrame(QPainter *painter, const QRect &rect) const
+{
+    QLinearGradient grad(rect.topRight(), rect.bottomRight());
+    grad.setColorAt(0, QColor(255, 255, 255, 20));
+    grad.setColorAt(0.4, QColor(255, 255, 255, 60));
+    grad.setColorAt(0.7, QColor(255, 255, 255, 50));
+    grad.setColorAt(1, QColor(255, 255, 255, 40));
+    painter->setPen(QPen(grad, 0));
+    painter->drawLine(rect.topRight(), rect.bottomRight());
+    painter->drawLine(rect.topLeft() + QPoint(1,1), rect.bottomLeft() + QPoint(1,0) - QPoint(0,2));
+    painter->drawLine(rect.topLeft() + QPoint(2,1), rect.topRight() + QPoint(0,1) - QPoint(2,0));
+    painter->drawLine(rect.bottomLeft(), rect.bottomRight() - QPoint(1,0));
+
+    grad.setColorAt(0, QColor(0, 0, 0, 30));
+    grad.setColorAt(0.4, QColor(0, 0, 0, 70));
+    grad.setColorAt(0.7, QColor(0, 0, 0, 70));
+    grad.setColorAt(1, QColor(0, 0, 0, 40));
+    painter->setPen(QPen(grad, 0));
+    painter->drawLine(rect.topRight() - QPoint(1,0) + QPoint(0, 1), rect.bottomRight() - QPoint(1,1));
+    painter->drawLine(rect.topLeft(), rect.bottomLeft() - QPoint(0,1));
+    painter->drawLine(rect.topLeft() + QPoint(1,0), rect.topRight() - QPoint(1,0));
+    painter->drawLine(rect.bottomLeft() + QPoint(1,0) - QPoint(0,1), rect.bottomRight() - QPoint(2,1));
+}
+
+
 void ManhattanStyle::drawButtonSeparator(QPainter *painter, const QRect &rect, bool reverse) const
 {
     QLinearGradient grad(rect.topRight(), rect.bottomRight());
@@ -974,4 +1019,4 @@ void ManhattanStyle::drawButtonSeparator(QPainter *painter, const QRect &rect, b
        painter->drawLine(rect.topRight() - QPoint(1,0), rect.bottomRight() - QPoint(1,0));
     else
        painter->drawLine(rect.topLeft(), rect.bottomLeft());
- }
+}

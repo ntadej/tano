@@ -13,7 +13,6 @@
 #include <vlc-qt/ControlAudio.h>
 #include <vlc-qt/ControlVideo.h>
 #include <vlc-qt/WidgetVideo.h>
-#include <vlc-qt/WidgetVolumeSlider.h>
 
 #include "core/Arguments.h"
 #include "core/platform/Features.h"
@@ -30,6 +29,7 @@
 #include "menu/MenuTrackAudio.h"
 #include "menu/MenuTrackSubtitles.h"
 #include "menu/MenuTrackVideo.h"
+#include "style/VolumeSlider.h"
 
 #include "MediaPlayer.h"
 

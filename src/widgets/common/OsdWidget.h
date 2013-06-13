@@ -33,8 +33,7 @@ class QLabel;
 class QLCDNumber;
 
 class VlcMediaPlayer;
-
-class VlcWidgetVolumeSlider;
+class VolumeSlider;
 
 class OsdWidget : public StyledBar
 {
@@ -43,7 +42,6 @@ public:
     explicit OsdWidget(QWidget *parent = 0);
     ~OsdWidget();
 
-    QWidget *blank();
     inline QString currentProgramme() const { return _current; }
     QLCDNumber *lcd();
     void setBackend(VlcMediaPlayer *player);
@@ -56,7 +54,7 @@ public:
                       const QString &info = 0);
     void setVideoState(const bool &enabled);
     void toggleTeletext(const bool &enabled);
-    VlcWidgetVolumeSlider *volumeSlider();
+    VolumeSlider *volumeSlider();
 
 protected:
     void changeEvent(QEvent *e);

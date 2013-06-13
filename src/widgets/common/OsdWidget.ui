@@ -117,17 +117,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonPlay">
+      <widget class="QToolButton" name="buttonPlay">
        <property name="minimumSize">
         <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -150,17 +144,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonStop">
+      <widget class="QToolButton" name="buttonStop">
        <property name="minimumSize">
         <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -183,17 +171,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonBack">
+      <widget class="QToolButton" name="buttonBack">
        <property name="minimumSize">
         <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -216,17 +198,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonNext">
+      <widget class="QToolButton" name="buttonNext">
        <property name="minimumSize">
         <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
        <property name="toolTip">
@@ -249,21 +225,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonRecordNow">
+      <widget class="QToolButton" name="buttonRecordNow">
        <property name="enabled">
         <bool>false</bool>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
        </property>
        <property name="toolTip">
         <string>Record Now</string>
@@ -288,21 +252,9 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonSnapshot">
+      <widget class="QToolButton" name="buttonSnapshot">
        <property name="enabled">
         <bool>false</bool>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
        </property>
        <property name="toolTip">
         <string>Take snapshot</string>
@@ -324,19 +276,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonTeletext">
-       <property name="minimumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
+      <widget class="QToolButton" name="buttonTeletext">
        <property name="toolTip">
         <string>Teletext</string>
        </property>
@@ -395,35 +335,14 @@
       </spacer>
      </item>
      <item>
-      <widget class="VlcWidgetVolumeSlider" name="volume" native="true">
-       <property name="minimumSize">
-        <size>
-         <width>200</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>16777215</height>
-        </size>
+      <widget class="VolumeSlider" name="volume">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="buttonMute">
-       <property name="minimumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>42</width>
-         <height>42</height>
-        </size>
-       </property>
+      <widget class="QToolButton" name="buttonMute">
        <property name="toolTip">
         <string>Mute</string>
        </property>
@@ -452,17 +371,6 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>VlcWidgetVolumeSlider</class>
-   <extends>QWidget</extends>
-   <header location="global">vlc-qt/WidgetVolumeSlider.h</header>
-   <container>1</container>
-   <slots>
-    <slot>mute()</slot>
-    <slot>volumeUp()</slot>
-    <slot>volumeDown()</slot>
-   </slots>
-  </customwidget>
-  <customwidget>
    <class>VlcWidgetSeek</class>
    <extends>QWidget</extends>
    <header location="global">vlc-qt/WidgetSeek.h</header>
@@ -474,24 +382,12 @@
    <header>common/InfoBarWidget.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>VolumeSlider</class>
+   <extends>QSlider</extends>
+   <header>style/VolumeSlider.h</header>
+  </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>buttonTeletext</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>teletext</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>460</x>
-     <y>30</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>513</x>
-     <y>30</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

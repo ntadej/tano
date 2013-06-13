@@ -37,7 +37,6 @@
 #endif
 
 #include <vlc-qt/WidgetVideo.h>
-#include <vlc-qt/WidgetVolumeSlider.h>
 
 #include "Config.h"
 
@@ -235,7 +234,8 @@ bool MainWindow::eventFilter(QObject *obj,
         QWheelEvent *wheelEvent = static_cast<QWheelEvent*>(event);
         bool wheel = wheelEvent->delta() > 0;
         if (_wheelType == "volume") {
-            _mediaPlayer->osd()->volumeSlider()->volumeControl(wheel);
+            // TODO: volume
+            //_mediaPlayer->osd()->volumeSlider()->volumeControl(wheel);
         } else {
             _select->channel(wheel);
         }
@@ -295,7 +295,6 @@ void MainWindow::createGui()
     openPlaylist(true);
     setStopped();
     showVideo();
-    ui->toolBarRecorder->hide();
 
 #if !FEATURE_TELETEXT
     ui->menuMedia->removeAction(ui->actionTeletext);
@@ -318,9 +317,6 @@ void MainWindow::createSettings()
     _hideToTray = settings->trayEnabled() ? settings->hideToTray() : false;
 
     //GUI Settings
-    ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
-    ui->toolBarRecorder->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
-
     if (settings->trayEnabled())
         _trayIcon->show();
     else
@@ -782,13 +778,10 @@ void MainWindow::lite()
 {
     if (_isLite) {
         ui->menubar->setVisible(_liteMenu);
-        ui->toolBar->setVisible(_liteToolbar);
     } else {
         _liteMenu = ui->menubar->isVisible();
-        _liteToolbar = ui->toolBar->isVisible();
 
         ui->menubar->setVisible(false);
-        ui->toolBar->setVisible(false);
     }
     _isLite = !_isLite;
 }
@@ -945,7 +938,6 @@ void MainWindow::recorder(const bool &enabled)
     }
 
     ui->actionRecorder->setChecked(enabled);
-    ui->toolBarRecorder->setVisible(enabled);
     ui->actionLite->setEnabled(!enabled);
 #else
     Q_UNUSED(enabled)
@@ -966,5 +958,6 @@ void MainWindow::recordProgramme(XmltvProgramme *programme)
 void MainWindow::updateAvailable()
 {
     ui->actionUpdate->setText(tr("An update is available!"));
-    ui->toolBar->insertAction(ui->actionExit, ui->actionUpdate);
+
+    // TODO: Update notification
 }

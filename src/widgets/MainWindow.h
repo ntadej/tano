@@ -141,7 +141,6 @@ private:
     bool _hideToTray;
     bool _isLite;
     bool _liteMenu;
-    bool _liteToolbar;
     bool _muteOnMinimize;
     bool _muteOnMinimizeCurrent;
     bool _recordNow;

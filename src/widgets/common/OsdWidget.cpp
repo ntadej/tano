@@ -28,11 +28,22 @@ OsdWidget::OsdWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setLightColored(true);
     setSingleRow(false);
 
+    setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
+
     ui->logo->hide();
-    ui->blank->hide();
     ui->teletext->hide();
+
+    ui->buttonBack->setProperty("extraframe", true);
+    ui->buttonMute->setProperty("extraframe", true);
+    ui->buttonNext->setProperty("extraframe", true);
+    ui->buttonPlay->setProperty("extraframe", true);
+    ui->buttonRecordNow->setProperty("extraframe", true);
+    ui->buttonSnapshot->setProperty("extraframe", true);
+    ui->buttonStop->setProperty("extraframe", true);
+    ui->buttonTeletext->setProperty("extraframe", true);
 
     connect(ui->info, SIGNAL(open(QString)), this, SIGNAL(openLink(QString)));
     connect(ui->teletext, SIGNAL(valueChanged(int)), this, SIGNAL(teletextPage(int)));
@@ -68,11 +79,6 @@ void OsdWidget::changeEvent(QEvent *e)
     default:
         break;
     }
-}
-
-QWidget *OsdWidget::blank()
-{
-    return ui->blank;
 }
 
 QLCDNumber *OsdWidget::lcd()
@@ -193,7 +199,7 @@ void OsdWidget::volumeDown()
     ui->volume->volumeDown();
 }
 
-VlcWidgetVolumeSlider *OsdWidget::volumeSlider()
+VolumeSlider *OsdWidget::volumeSlider()
 {
     return ui->volume;
 }
