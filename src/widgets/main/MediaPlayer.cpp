@@ -91,6 +91,9 @@ void MediaPlayer::createConnections()
 {
     connect(_startTimer, SIGNAL(timeout()), this, SLOT(startSession()));
 
+    connect(_mediaPlayer, SIGNAL(stateChanged()), this, SLOT(stateUpdate()));
+    connect(_mediaPlayer, SIGNAL(vout(int)), this, SLOT(stateUpdateVideo(int)));
+
     connect(_audioController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackAudio, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
     connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackSubtitles, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
     connect(_videoController, SIGNAL(actions(QList<QAction*>, Vlc::ActionsType)), _menuTrackVideo, SLOT(setActions(QList<QAction*>, Vlc::ActionsType)));
@@ -99,6 +102,8 @@ void MediaPlayer::createConnections()
     connect(_menuAspectRatio, SIGNAL(value(int)), this, SLOT(saveChannelSettings(int)));
     connect(_menuCropRatio, SIGNAL(value(int)), this, SLOT(saveChannelSettings(int)));
     connect(_menuDeinterlacing, SIGNAL(value(int)), this, SLOT(saveChannelSettings(int)));
+
+    connect(_osd, SIGNAL(teletextPage(int)), this, SLOT(teletext(int)));
 }
 
 void MediaPlayer::createSettings()
@@ -269,6 +274,40 @@ void MediaPlayer::playUrl(const QString &url,
     play();
 }
 
+void MediaPlayer::restoreOsd()
+{
+    layout()->addWidget(_osd);
+}
+
+void MediaPlayer::stateUpdate()
+{
+    switch(_mediaPlayer->state())
+    {
+    case Vlc::Playing:
+        _osd->setPlaying(true);
+        break;
+    case Vlc::Idle:
+    case Vlc::Opening:
+    case Vlc::Buffering:
+    case Vlc::Paused:
+    case Vlc::Stopped:
+    case Vlc::Ended:
+    case Vlc::Error:
+        _osd->setPlaying(false);
+    default:
+        break;
+    }
+
+    emit stateChanged(_mediaPlayer->state());
+}
+
+void MediaPlayer::stateUpdateVideo(const int &count)
+{
+    _osd->setVideoState(count);
+
+    emit vout(count);
+}
+
 void MediaPlayer::stop()
 {
     _channelPlayback = false;
@@ -352,4 +391,9 @@ void MediaPlayer::teletext(const int &page)
         return;
 
     _mediaPlayer->video()->setTeletextPage(page);
+}
+
+void MediaPlayer::togglePause()
+{
+    _mediaPlayer->togglePause();
 }

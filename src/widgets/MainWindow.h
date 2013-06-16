@@ -28,6 +28,8 @@
     #include <QtGui/QMainWindow>
 #endif
 
+#include <vlc-qt/Enums.h>
+
 #include "WidgetsSharedExport.h"
 
 class QShortcut;
@@ -94,8 +96,7 @@ private slots:
     void playRecording(Timer* recording);
 
     void stop();
-    void setPlaying();
-    void setStopped();
+    void setState(const Vlc::State &state);
 
     void openPlaylist(const bool &start = false);
 
@@ -114,9 +115,6 @@ private slots:
     void recordProgramme(XmltvProgramme *programme);
     void recorder(const bool &enabled);
 
-signals:
-    void setVolume(int);
-
 private:
     Ui::MainWindow *ui;
     Qt::WindowFlags _flags;
@@ -132,7 +130,6 @@ private:
     void createShortcuts();
 
     //Settings
-    bool _init;
     bool _channelPlayback;
     QString _defaultPlaylist;
     int _desktopWidth;
@@ -155,13 +152,11 @@ private:
     //Main
     Arguments *_arguments;
     ChannelSelect *_select;
-    NetworkDownload *_file;
     LocaleManager *_locale;
     MediaPlayer *_mediaPlayer;
     PlaylistModel *_model;
     PlaylistUpdate *_modelUpdate;
     Recorder *_recorder;
-    QShortcut *_shortcut;
     DesktopShortcuts *_shortcuts;
     UpdateDialog *_update;
 

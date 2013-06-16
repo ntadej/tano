@@ -163,6 +163,7 @@ signals:
 
 public slots:
     void setCurrentIndex(int index);
+    void setLiteMode(bool enabled);
     void setSelectionWidgetVisible(bool visible);
 
 private slots:

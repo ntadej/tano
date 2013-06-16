@@ -506,6 +506,13 @@ void FancyTabWidget::setCurrentIndex(int index)
         _tabBar->setCurrentIndex(index);
 }
 
+void FancyTabWidget::setLiteMode(bool enabled)
+{
+    _selectionWidget->setHidden(enabled);
+    _containerWidget->setHidden(enabled);
+    _statusBar->setHidden(enabled);
+}
+
 void FancyTabWidget::showWidget(int index)
 {
     emit currentAboutToShow(index);

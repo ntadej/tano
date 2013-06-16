@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "core/network/NetworkDownload.h"
 #include "core/platform/Features.h"
 
 #include "OsdWidget.h"
@@ -24,7 +25,8 @@
 OsdWidget::OsdWidget(QWidget *parent)
     : StyledBar(parent),
       ui(new Ui::OsdWidget),
-      _current("")
+      _current(""),
+      _file(new NetworkDownload())
 {
     ui->setupUi(this);
 
@@ -56,6 +58,8 @@ OsdWidget::OsdWidget(QWidget *parent)
     connect(ui->buttonSnapshot, SIGNAL(clicked()), this, SIGNAL(snapshotClicked()));
     connect(ui->buttonStop, SIGNAL(clicked()), this, SIGNAL(stopClicked()));
     connect(ui->buttonTeletext, SIGNAL(clicked()), this, SIGNAL(teletextClicked()));
+
+    connect(_file, SIGNAL(file(QFile *)), this, SLOT(setLogo(QFile *)));
 
 #if !FEATURE_RECORDER
     ui->buttonRecordNow->hide();
@@ -128,9 +132,13 @@ void OsdWidget::setEpg(const QStringList &epg)
 
 void OsdWidget::setLogo(const QString &file)
 {
-    QPixmap pixmap(file);
-    ui->logo->setPixmap(pixmap.scaledToHeight(height(), Qt::SmoothTransformation));
-    ui->logo->show();
+    if (file.contains("http")) {
+        _file->getFile(file);
+    } else if (!file.isEmpty()) {
+        QPixmap pixmap(file);
+        ui->logo->setPixmap(pixmap.scaledToHeight(height(), Qt::SmoothTransformation));
+        ui->logo->show();
+    }
 }
 
 void OsdWidget::setLogo(QFile *file)

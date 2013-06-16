@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include <vlc-qt/Enums.h>
+
 class QLCDNumber;
 
 class VlcInstance;
@@ -38,11 +40,14 @@ public:
     inline OsdWidget *osd() { return _osd; }
     inline VlcInstance *mediaInstance() { return _mediaInstance; }
     QList<MenuCore *> menus() const;
+    void restoreOsd();
     inline bool teletextEnabled() const { return _teletext; }
     inline VlcWidgetVideo *video() { return _videoWidget; }
     void writeSession();
 
 signals:
+    void stateChanged(const Vlc::State &);
+    void vout(const int &count);
     
 public slots:
     void openFile();
@@ -55,11 +60,14 @@ public slots:
     void takeSnapshot();
     void teletext(const bool &enabled);
     void teletext(const int &page);
+    void togglePause();
 
 private slots:
     void saveChannelSettings(const int &value);
     void saveChannelSettings(const QString &value);
     void startSession();
+    void stateUpdate();
+    void stateUpdateVideo(const int &count);
 
 private:
     void createConnections();

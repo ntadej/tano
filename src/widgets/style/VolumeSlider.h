@@ -39,10 +39,6 @@ public:
                      uint max = 100);
 
     virtual void setValue(int);
-
-    //WARNING non-virtual - and thus only really intended for internal use
-    //this is a major flaw in the class presently, however it suits our
-    //current needs fine
     int value() const { return adjustValue(QSlider::value()); }
 
 signals:

@@ -33,6 +33,7 @@
     #include <QtGui/QLCDNumber>
     #include <QtGui/QMessageBox>
     #include <QtGui/QShortcut>
+    #include <QtGui/QStatusBar>
     #include <QtGui/QWidgetAction>
 #endif
 
@@ -74,6 +75,7 @@
 #include "menu/MenuCore.h"
 #include "settings/SettingsDialog.h"
 #include "settings/SettingsDialogShortcuts.h"
+#include "style/VolumeSlider.h"
 
 #if FEATURE_RECORDER
     #include "core/timers/TimersSql.h"
@@ -93,10 +95,8 @@ MainWindow::MainWindow(Arguments *args,
                        const QString &password)
     : QMainWindow(),
       ui(new Ui::MainWindow),
-      _init(false),
       _hasPlaylist(false),
       _select(0),
-      _file(new NetworkDownload()),
       _locale(new LocaleManager()),
       _model(new PlaylistModel(this)),
       _modelUpdate(new PlaylistUpdate(_model)),
@@ -234,8 +234,7 @@ bool MainWindow::eventFilter(QObject *obj,
         QWheelEvent *wheelEvent = static_cast<QWheelEvent*>(event);
         bool wheel = wheelEvent->delta() > 0;
         if (_wheelType == "volume") {
-            // TODO: volume
-            //_mediaPlayer->osd()->volumeSlider()->volumeControl(wheel);
+            _mediaPlayer->osd()->volumeSlider()->volumeControl(wheel);
         } else {
             _select->channel(wheel);
         }
@@ -293,8 +292,7 @@ void MainWindow::createGui()
     _osdFloat->setControls();
 
     openPlaylist(true);
-    setStopped();
-    showVideo();
+    setState(Vlc::Idle);
 
 #if !FEATURE_TELETEXT
     ui->menuMedia->removeAction(ui->actionTeletext);
@@ -329,8 +327,6 @@ void MainWindow::createSettings()
     _mediaPlayer->createSettings();
     _udpxy->createSettings();
     _muteOnMinimize = settings->muteOnMinimize();
-
-    _init = true;
 
     qDebug() << "Initialised: Settings";
 }
@@ -409,8 +405,8 @@ void MainWindow::createConnections()
     connect(ui->actionLite, SIGNAL(triggered()), this, SLOT(lite()));
 
     connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
-    connect(ui->actionOpenFile, SIGNAL(triggered()), this, SLOT(openFile()));
-    connect(ui->actionOpenUrl, SIGNAL(triggered()), this, SLOT(openUrl()));
+    connect(ui->actionOpenFile, SIGNAL(triggered()), _mediaPlayer, SLOT(openFile()));
+    connect(ui->actionOpenUrl, SIGNAL(triggered()), _mediaPlayer, SLOT(openUrl()));
 
     connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
     connect(ui->actionScheduleCurrent, SIGNAL(triggered()), this, SLOT(showScheduleCurrent()));
@@ -441,7 +437,6 @@ void MainWindow::createConnections()
     }
 #endif
 
-    connect(_mediaPlayer->osd(), SIGNAL(teletextPage(int)), this, SLOT(teletext(int)));
     connect(_mediaPlayer->osd(), SIGNAL(backClicked()), ui->actionBack, SLOT(trigger()));
     connect(_mediaPlayer->osd(), SIGNAL(muteClicked()), ui->actionMute, SLOT(toggle()));
     connect(_mediaPlayer->osd(), SIGNAL(nextClicked()), ui->actionNext, SLOT(trigger()));
@@ -465,25 +460,17 @@ void MainWindow::createConnections()
     connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
 #endif
 
-    connect(_file, SIGNAL(file(QFile *)), _mediaPlayer->osd(), SLOT(setLogo(QFile *)));
-
-    connect(_mediaPlayer, SIGNAL(playing()), this, SLOT(setPlaying()));
-    connect(_mediaPlayer, SIGNAL(paused()), this, SLOT(setStopped()));
-    connect(_mediaPlayer, SIGNAL(stopped()), this, SLOT(setStopped()));
-    connect(_mediaPlayer, SIGNAL(end()), this, SLOT(setStopped()));
-    connect(_mediaPlayer, SIGNAL(error()), this, SLOT(setStopped()));
+    connect(_mediaPlayer, SIGNAL(stateChanged(Vlc::State)), this, SLOT(setState(Vlc::State)));
     connect(_mediaPlayer, SIGNAL(vout(int)), this, SLOT(showVideo(int)));
-    connect(_mediaPlayer, SIGNAL(stopped()), this, SLOT(showVideo()));
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
     connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
-    connect(ui->actionSnapshot, SIGNAL(triggered()), this, SLOT(takeSnapshot()));
+    connect(ui->actionSnapshot, SIGNAL(triggered()), _mediaPlayer, SLOT(takeSnapshot()));
 
     connect(_showInfoTab, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
     connect(_scheduleTab, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
     connect(_xmltv, SIGNAL(programmeRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
 
-    connect(_shortcut, SIGNAL(activated()), this, SLOT(closeOsd()));
     connect(_mouseTimer, SIGNAL(timeout()), this, SLOT(toggleMouse()));
 
     qDebug() << "Initialised: Event connections";
@@ -572,7 +559,6 @@ void MainWindow::createShortcuts()
 
     addActions(_actions);
 
-    _shortcut = new QShortcut(QKeySequence("Esc"), this, 0, 0, Qt::ApplicationShortcut);
     _shortcuts = new DesktopShortcuts(_actions, this);
 
     qDebug() << "Initialised: Shortcuts";
@@ -599,31 +585,47 @@ void MainWindow::support()
 
 
 //Media controls
-void MainWindow::setPlaying()
+void MainWindow::setState(const Vlc::State &state)
 {
-    // TODO: _osdMain->setPlaying(true);
-
-    ui->actionPlay->setIcon(QIcon::fromTheme("media-playback-pause"));
-    ui->actionPlay->setText(tr("Pause"));
-    ui->actionPlay->setToolTip(tr("Pause"));
-    ui->actionMute->setEnabled(true);
+    switch(state)
+    {
+    case Vlc::Playing:
+        ui->actionPlay->setIcon(QIcon::fromTheme("media-playback-pause"));
+        ui->actionPlay->setText(tr("Pause"));
+        ui->actionPlay->setToolTip(tr("Pause"));
+        ui->actionMute->setEnabled(true);
 #if FEATURE_TELETEXT
-    if (_mediaPlayer->teletextEnabled())
-        ui->actionTeletext->setEnabled(true);
+        if (_mediaPlayer->teletextEnabled())
+            ui->actionTeletext->setEnabled(true);
 #endif
+        break;
+    case Vlc::Idle:
+    case Vlc::Opening:
+    case Vlc::Buffering:
+    case Vlc::Paused:
+    case Vlc::Stopped:
+    case Vlc::Ended:
+    case Vlc::Error:
+        showVideo();
+        ui->actionPlay->setIcon(QIcon::fromTheme("media-playback-start"));
+        ui->actionPlay->setText(tr("Play"));
+        ui->actionPlay->setToolTip(tr("Play"));
+        ui->actionMute->setEnabled(false);
+#if FEATURE_TELETEXT
+        ui->actionTeletext->setEnabled(false);
+#endif
+    default:
+        break;
+    }
 }
 
-void MainWindow::setStopped()
+void MainWindow::showVideo(const int &count)
 {
-    // TODO: _osdMain->setPlaying(false);
+    ui->actionFullscreen->setEnabled(count);
+    ui->actionRecordNow->setEnabled(count);
+    ui->actionSnapshot->setEnabled(count);
 
-    ui->actionPlay->setIcon(QIcon::fromTheme("media-playback-start"));
-    ui->actionPlay->setText(tr("Play"));
-    ui->actionPlay->setToolTip(tr("Play"));
-    ui->actionMute->setEnabled(false);
-#if FEATURE_TELETEXT
-    ui->actionTeletext->setEnabled(false);
-#endif
+    _mediaPlayer->osd()->setQuickRecordChecked(ui->actionRecordNow->isChecked());
 }
 
 void MainWindow::playChannel(Channel *channel)
@@ -639,14 +641,9 @@ void MainWindow::playChannel(Channel *channel)
 
     Tano::Log::playingChannel(channel->number());
 
-    if (_channel->logo().contains("http")) {
-        _file->getFile(_channel->logo());
-    } else if (!_channel->logo().isEmpty()) {
-        _mediaPlayer->osd()->setLogo(_channel->logo());
-    }
-
     _xmltv->request(_channel->xmltvId(), true);
     _mediaPlayer->osd()->setChannel(_channel->number(), _channel->name(), _channel->language());
+    _mediaPlayer->osd()->setLogo(_channel->logo());
     tooltip(_channel->name());
     _trayIcon->changeToolTip(0, _channel->name());
 }
@@ -677,8 +674,6 @@ void MainWindow::stop()
 
     _mediaPlayer->stop();
     _xmltv->stop();
-    // TODO: Stacking
-    //_scheduleWidget->setPage(0);
 
     tooltip();
     _trayIcon->changeToolTip(0);
@@ -778,10 +773,12 @@ void MainWindow::lite()
 {
     if (_isLite) {
         ui->menubar->setVisible(_liteMenu);
+        ui->tabs->setLiteMode(false);
     } else {
         _liteMenu = ui->menubar->isVisible();
 
         ui->menubar->setVisible(false);
+        ui->tabs->setLiteMode(true);
     }
     _isLite = !_isLite;
 }
@@ -802,26 +799,11 @@ void MainWindow::tray()
 
 void MainWindow::showOsd(const QPoint &pos)
 {
-    // TODO: Fix fullscreen osd
-    /*if (pos.y() > QApplication::desktop()->height()-100) {
+    if (pos.y() > QApplication::desktop()->height()-100) {
         toggleOsdControls(true);
     } else {
         toggleOsdControls(false);
-    }*/
-}
-
-void MainWindow::showVideo(const int &count)
-{
-    if (ui->actionRecorder->isChecked())
-        return;
-
-    ui->actionFullscreen->setEnabled(count);
-    ui->actionRecordNow->setEnabled(count);
-    ui->actionSnapshot->setEnabled(count);
-
-    // TODO: osd
-    /*_osdMain->setVideoState(count);
-    _osdMain->setQuickRecordChecked(ui->actionRecordNow->isChecked());*/
+    }
 }
 
 // Dock
@@ -838,12 +820,11 @@ void MainWindow::toggleFullscreen(const bool &enabled)
 
         setWindowState(windowState() | Qt::WindowFullScreen);
 
-        //_osdFloat->setWidget(_osdMain);
-        //_osdFloat->resize(_osdFloat->width(), _osdMain->height());
+        _osdFloat->setWidget(_mediaPlayer->osd());
+        _osdFloat->resize(_osdFloat->width(), _mediaPlayer->osd()->height());
         _osdFloat->setControls();
     } else {
-        // TODO: OSD
-        //ui->pagePlayback->layout()->addWidget(_osdMain);
+        _mediaPlayer->restoreOsd();
 
         setWindowState(windowState() & ~Qt::WindowFullScreen);
 
@@ -958,6 +939,5 @@ void MainWindow::recordProgramme(XmltvProgramme *programme)
 void MainWindow::updateAvailable()
 {
     ui->actionUpdate->setText(tr("An update is available!"));
-
-    // TODO: Update notification
+    ui->tabs->statusBar()->showMessage(tr("An update is available!"));
 }

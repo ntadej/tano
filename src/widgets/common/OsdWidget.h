@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -32,6 +32,7 @@ namespace Ui {
 class QLabel;
 class QLCDNumber;
 
+class NetworkDownload;
 class VlcMediaPlayer;
 class VolumeSlider;
 
@@ -76,16 +77,19 @@ public slots:
     void mute(const bool &enabled);
     void setEpg(const QStringList &epg);
     void setLogo(const QString &file);
-    void setLogo(QFile *file);
     void setTeletextPage(const int &page);
     void teletext(const bool &enabled);
     void volumeDown();
     void volumeUp();
 
+private slots:
+    void setLogo(QFile *file);
+
 private:
     Ui::OsdWidget *ui;
 
     QString _current;
+    NetworkDownload *_file;
 };
 
 #endif // OSDWIDGET_H

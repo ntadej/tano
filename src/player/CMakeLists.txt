@@ -54,6 +54,9 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_BINARY_DIR}/src
 )
 
+# Include additional libraries
+INCLUDE_DIRECTORIES(${LIBVLCQT_INCLUDE_DIR})
+
 # Compile resources with windres
 IF(MINGW)
     ADD_CUSTOM_COMMAND(
