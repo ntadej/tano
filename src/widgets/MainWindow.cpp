@@ -27,6 +27,7 @@
     #include <QtWidgets/QLCDNumber>
     #include <QtWidgets/QMessageBox>
     #include <QtWidgets/QShortcut>
+    #include <QtWidgets/QStatusBar>
     #include <QtWidgets/QWidgetAction>
 #elif defined(Qt4)
     #include <QtGui/QDesktopWidget>
