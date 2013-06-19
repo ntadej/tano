@@ -149,6 +149,7 @@ public:
     void paintEvent(QPaintEvent *event);
 
     int currentIndex() const;
+    QWidget *currentWidget() const;
     QStatusBar *statusBar() const;
 
     void setTabEnabled(int index,
@@ -163,6 +164,7 @@ signals:
 
 public slots:
     void setCurrentIndex(int index);
+    void setCurrentWidget(QWidget *widget);
     void setLiteMode(bool enabled);
     void setSelectionWidgetVisible(bool visible);
 

@@ -103,7 +103,7 @@ void ShowInfoTab::display(XmltvProgramme *programme)
 
     _image->getFile(programme->icon());
 
-    // TODO: show!
+    emit changeTo(this);
 }
 
 void ShowInfoTab::image(QFile *file)

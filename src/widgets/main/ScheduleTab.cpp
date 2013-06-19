@@ -177,6 +177,7 @@ void ScheduleTab::channel(Channel *channel)
     reset();
 
     emit requestEpg(channel->xmltvId());
+    emit changeTo(this);
 }
 
 void ScheduleTab::info()

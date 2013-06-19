@@ -280,7 +280,7 @@ void MainWindow::createGui()
     ui->tabs->setTabEnabled(1, true);
 
     _showInfoTab = new ShowInfoTab(this);
-    ui->tabs->insertTab(2, _showInfoTab, QIcon::fromTheme("x-office-calendar"), tr("Show Info"));
+    ui->tabs->insertTab(2, _showInfoTab, QIcon::fromTheme("dialog-info"), tr("Show Info"));
     ui->tabs->setTabEnabled(2, true);
 
     ui->tabs->setCurrentIndex(0);
@@ -394,6 +394,10 @@ void MainWindow::createRecorder()
 
 void MainWindow::createConnections()
 {
+    connect(_playlistTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
+    connect(_scheduleTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
+    connect(_showInfoTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
+
     connect(ui->actionDonate, SIGNAL(triggered()), this, SLOT(donate()));
     connect(ui->actionSupport, SIGNAL(triggered()), this, SLOT(support()));
     connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
@@ -453,7 +457,7 @@ void MainWindow::createConnections()
     connect(_mediaPlayer->osd(), SIGNAL(openLink(QString)), _xmltv, SLOT(requestProgramme(QString)));
     connect(_showInfoTab, SIGNAL(requestNext(QString, QString)), _xmltv, SLOT(requestProgrammeNext(QString, QString)));
     connect(_showInfoTab, SIGNAL(requestPrevious(QString, QString)), _xmltv, SLOT(requestProgrammePrevious(QString, QString)));
-    connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _scheduleTab, SLOT(openSchedule(Channel *)));
+    connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _scheduleTab, SLOT(channel(Channel *)));
 
 #if FEATURE_UPDATE
     connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
@@ -727,12 +731,12 @@ void MainWindow::openPlaylist(const bool &start)
 //GUI
 void MainWindow::showSchedule()
 {
-    // TODO: Show schedule
+    ui->tabs->setCurrentWidget(_scheduleTab);
 }
 
 void MainWindow::showScheduleCurrent()
 {
-    // TODO: Show schedule current
+    _xmltv->requestProgramme(_mediaPlayer->osd()->currentProgramme());
 }
 
 void MainWindow::showSettings()

@@ -54,19 +54,20 @@ protected:
     void changeEvent(QEvent *e);
 
 public slots:
+    void channel(Channel *channel);
     void reset();
     void setEpg(const QString &channel,
                 XmltvProgrammeModel *epg);
     void setPage(const int &id);
 
 signals:
+    void changeTo(QWidget *);
     void itemSelected(const QString &);
     void requestEpg(const QString &);
     void requestRecord(const QString &);
     
 private slots:
     void change();
-    void channel(Channel *channel);
     void info();
     void programmeClicked(const QModelIndex &index);
     void processFilters();

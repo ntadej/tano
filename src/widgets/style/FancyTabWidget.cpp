@@ -495,6 +495,11 @@ int FancyTabWidget::currentIndex() const
     return _tabBar->currentIndex();
 }
 
+QWidget *FancyTabWidget::currentWidget() const
+{
+    return _modesStack->currentWidget();
+}
+
 QStatusBar *FancyTabWidget::statusBar() const
 {
     return _statusBar;
@@ -502,6 +507,19 @@ QStatusBar *FancyTabWidget::statusBar() const
 
 void FancyTabWidget::setCurrentIndex(int index)
 {
+    if (_tabBar->isTabEnabled(index))
+        _tabBar->setCurrentIndex(index);
+}
+
+void FancyTabWidget::setCurrentWidget(QWidget *widget)
+{
+    int index = -1;
+    for (int i = 0; i < _modesStack->count(); i++) {
+        if (_modesStack->widget(i) == widget) {
+            index = i;
+        }
+    }
+
     if (_tabBar->isTabEnabled(index))
         _tabBar->setCurrentIndex(index);
 }

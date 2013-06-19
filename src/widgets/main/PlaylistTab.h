@@ -42,6 +42,9 @@ public:
 
 protected:
     void changeEvent(QEvent *e);
+
+signals:
+    void changeTo(QWidget *);
     
 private slots:
     void processFilters();

@@ -50,6 +50,7 @@ public slots:
 	void display(XmltvProgramme *programme);
 
 signals:
+    void changeTo(QWidget *);
     void requestNext(const QString &id,
                      const QString &channel);
     void requestPrevious(const QString &id,
