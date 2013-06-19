@@ -49,6 +49,7 @@ public slots:
     void request(const QString &id,
                  const bool &current = false);
     void requestProgramme(const QString &id);
+    void requestProgrammeCurrent(const QString &channel);
     void requestProgrammeNext(const QString &id,
                               const QString &channel);
     void requestProgrammePrevious(const QString &id,

@@ -70,7 +70,7 @@ QHash<QString, QString> XmltvManager::channels() const
 
 void XmltvManager::current()
 {
-    emit current(_db->programmeCurrent(_currentXmltvId));
+    emit current(_db->programmeCurrentDisplay(_currentXmltvId));
 
     _timer->start(60000);
 }
@@ -166,6 +166,16 @@ void XmltvManager::requestProgramme(const QString &id)
         return;
 
     XmltvProgramme *p = _db->programme(id);
+    if (p)
+        emit programme(p);
+}
+
+void XmltvManager::requestProgrammeCurrent(const QString &channel)
+{
+    if (channel.isEmpty())
+        return;
+
+    XmltvProgramme *p = _db->programmeCurrent(channel);
     if (p)
         emit programme(p);
 }

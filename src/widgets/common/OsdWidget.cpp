@@ -19,6 +19,8 @@
 #include "core/network/NetworkDownload.h"
 #include "core/platform/Features.h"
 
+#include "common/InfoBarWidget.h"
+
 #include "OsdWidget.h"
 #include "ui_OsdWidget.h"
 
@@ -35,6 +37,9 @@ OsdWidget::OsdWidget(QWidget *parent)
 
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Maximum);
 
+    _info = new InfoBarWidget(this);
+    ui->controls->addWidget(_info);
+
     ui->logo->hide();
     ui->teletext->hide();
 
@@ -47,7 +52,7 @@ OsdWidget::OsdWidget(QWidget *parent)
     ui->buttonStop->setProperty("extraframe", true);
     ui->buttonTeletext->setProperty("extraframe", true);
 
-    connect(ui->info, SIGNAL(open(QString)), this, SIGNAL(openLink(QString)));
+    connect(_info, SIGNAL(open(QString)), this, SIGNAL(openLink(QString)));
     connect(ui->teletext, SIGNAL(valueChanged(int)), this, SIGNAL(teletextPage(int)));
 
     connect(ui->buttonBack, SIGNAL(clicked()), this, SIGNAL(backClicked()));
@@ -108,10 +113,10 @@ void OsdWidget::setChannel(const int &number,
                            const QString &language)
 {
     if (number) {
-        ui->info->setChannelInfo(name, language);
+        _info->setChannelInfo(name, language);
         ui->number->display(number);
     } else {
-        ui->info->clear();
+        _info->clear();
         ui->logo->hide();
     }
 
@@ -123,7 +128,7 @@ void OsdWidget::setEpg(const QStringList &epg)
     if (epg.size() < 2)
         return;
 
-    ui->info->setChannelEpg(epg[0], epg[1]);
+    _info->setChannelEpg(epg[0], epg[1]);
 
     QRegExp n("href=\"([^\"]*)");
     n.indexIn(epg[0]);
@@ -173,9 +178,9 @@ void OsdWidget::setRecording(const QString &name,
                              const QString &info)
 {
     if (!name.isEmpty()) {
-        ui->info->setRecordingInfo(name, info);
+        _info->setRecordingInfo(name, info);
     } else {
-        ui->info->clear();
+        _info->clear();
     }
 }
 

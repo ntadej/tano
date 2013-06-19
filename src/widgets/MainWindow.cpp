@@ -646,8 +646,10 @@ void MainWindow::playChannel(Channel *channel)
     Tano::Log::playingChannel(channel->number());
 
     _xmltv->request(_channel->xmltvId(), true);
+
     _mediaPlayer->osd()->setChannel(_channel->number(), _channel->name(), _channel->language());
     _mediaPlayer->osd()->setLogo(_channel->logo());
+
     tooltip(_channel->name());
     _trayIcon->changeToolTip(0, _channel->name());
 }

@@ -162,11 +162,18 @@ public:
     QList<XmltvProgramme *> programmes(const QString &channel);
 
     /*!
-        \brief Read current programme for current channel
+        \brief Read current and next programme id for channel
+        \param id channel id (QString)
+        \return programme (XmltvProgramme *)
+    */
+    XmltvProgramme *programmeCurrent(const QString &id);
+
+    /*!
+        \brief Read current and next programme for channel to be displayed
         \param id channel id (QString)
         \return programme (QStringList)
     */
-    QStringList programmeCurrent(const QString &id);
+    QStringList programmeCurrentDisplay(const QString &id);
 
     /*!
         \brief Read next programme from the database

@@ -32,6 +32,8 @@ namespace Ui
     class ShowInfoTab;
 }
 
+class QLabel;
+
 class NetworkDownload;
 class XmltvCrewFilterModel;
 class XmltvProgramme;
@@ -47,6 +49,7 @@ protected:
 	void changeEvent(QEvent *e);
 
 public slots:
+    void clear();
 	void display(XmltvProgramme *programme);
 
 signals:
@@ -70,6 +73,8 @@ private:
     XmltvCrewFilterModel *_crew;
 
 	NetworkDownload *_image;
+
+    QLabel *_labelTitle;
 };
 
 #endif // TANO_SHOWINFOTAB_H_

@@ -32,6 +32,7 @@ namespace Ui {
 class QLabel;
 class QLCDNumber;
 
+class InfoBarWidget;
 class NetworkDownload;
 class VlcMediaPlayer;
 class VolumeSlider;
@@ -90,6 +91,7 @@ private:
 
     QString _current;
     NetworkDownload *_file;
+    InfoBarWidget *_info;
 };
 
 #endif // OSDWIDGET_H

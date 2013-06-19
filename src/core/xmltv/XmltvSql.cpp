@@ -272,14 +272,25 @@ QList<XmltvProgramme *> XmltvSql::programmes(const QString &channel)
     return list;
 }
 
-QStringList XmltvSql::programmeCurrent(const QString &id)
+XmltvProgramme *XmltvSql::programmeCurrent(const QString &id)
+{
+    QSqlQuery q = query();
+    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + id + "' AND `stop` > '" + QDateTime::currentDateTime().toString(Tano::Xmltv::dateFormat()) + "' ORDER BY `start`");
+    if (q.next()) {
+        return programme(q.value(0).toString());
+    }
+
+    return 0;
+}
+
+QStringList XmltvSql::programmeCurrentDisplay(const QString &id)
 {
     QString output = "<a href=\"%1\">%2 - %3</a>";
     QStringList epg;
     int c = 0;
 
     QSqlQuery q = query();
-    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + id + "' AND `stop` > '" + QDateTime::currentDateTime().toString(Tano::Xmltv::dateFormat()) + "'");
+    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + id + "' AND `stop` > '" + QDateTime::currentDateTime().toString(Tano::Xmltv::dateFormat()) + "' ORDER BY `start`");
     while (q.next() && c < 2) {
         epg << output.arg(q.value(0).toString(), QDateTime::fromString(q.value(4).toString(), Tano::Xmltv::dateFormat()).toString(Tano::Xmltv::timeFormatDisplay()), q.value(1).toString());
         c++;

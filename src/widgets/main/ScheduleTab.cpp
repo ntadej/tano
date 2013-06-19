@@ -243,9 +243,6 @@ void ScheduleTab::setEpg(const QString &channel,
     foreach (const QDate &d, date) {
         _selectDate->addItem(d.toString(Tano::Xmltv::dateFormatDisplay()));
     }
-
-    // TODO: stacked
-    //setPage(1);
 }
 
 void ScheduleTab::setPage(const int &id)

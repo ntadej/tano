@@ -42,8 +42,12 @@ ShowInfoTab::ShowInfoTab(QWidget *parent)
     ui->labelChannelIcon->setPixmap(QIcon::fromTheme("video-x-generic").pixmap(22));
     ui->labelInfoIcon->setPixmap(QIcon::fromTheme("dialog-information").pixmap(22));
     ui->labelTimeIcon->setPixmap(QIcon::fromTheme("time-admin").pixmap(22));
+    ui->labelEmptyLogo->setPixmap(QIcon::fromTheme("list-remove").pixmap(32));
 
-    ui->toolBarTop->addWidget(ui->labelTitle);
+    _labelTitle = new QLabel(this);
+    _labelTitle->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    _labelTitle->setAlignment(Qt::AlignCenter);
+    ui->toolBarTop->insertWidget(ui->actionRecord, _labelTitle);
 
     ui->toolBarBottom->insertWidget(ui->actionPrevious, new SimpleSeparator(this));
     ui->toolBarBottom->addWidget(new SimpleSeparator(this));
@@ -55,8 +59,10 @@ ShowInfoTab::ShowInfoTab(QWidget *parent)
     connect(ui->actionRecord, SIGNAL(triggered()), this, SLOT(record()));
 
 #if !FEATURE_RECORDER
-    ui->toolBarBottom->removeAction(ui->actionRecord);
+    ui->toolBarTop->removeAction(ui->actionRecord);
 #endif
+
+    clear();
 }
 
 ShowInfoTab::~ShowInfoTab()
@@ -80,13 +86,21 @@ void ShowInfoTab::changeEvent(QEvent *e)
     }
 }
 
+void ShowInfoTab::clear()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+    _labelTitle->setText(tr("No information"));
+
+    ui->toolBarTop->removeAction(ui->actionRecord);
+}
+
 void ShowInfoTab::display(XmltvProgramme *programme)
 {
     if (_current)
         delete _current;
     _current = programme;
 
-    ui->labelTitle->setText(programme->title());
+    _labelTitle->setText(programme->title());
     ui->labelChannel->setText("<b>" + programme->channelDisplayName() + "</b>");
     ui->labelTime->setText("<b>" + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</b>");
     ui->labelInfo->setText("<b>" + programme->categories().join(" / ") + "</b>");
@@ -102,6 +116,9 @@ void ShowInfoTab::display(XmltvProgramme *programme)
     }
 
     _image->getFile(programme->icon());
+
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->toolBarTop->addAction(ui->actionRecord);
 
     emit changeTo(this);
 }
