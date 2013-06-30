@@ -276,6 +276,7 @@ void FancyTabBar::paintTab(QPainter *painter,
         painter->setPen(selected ? StyleHelper::panelTextColor() : QColor(255, 255, 255, 120));
     }
 
+#if !defined(Q_OS_MAC)
     if (!selected && enabled) {
         painter->save();
         int fader = int(_tabs[tabIndex]->fader());
@@ -289,6 +290,7 @@ void FancyTabBar::paintTab(QPainter *painter,
         painter->drawLine(rect.bottomLeft(), rect.bottomRight());
         painter->restore();
     }
+#endif
 
     if (!enabled)
         painter->setOpacity(0.7);
