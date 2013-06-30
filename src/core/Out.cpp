@@ -25,7 +25,7 @@
 #   include "platform/windows/Console.h"
 #endif
 
-Out::Out(const bool &error)
+Out::Out(bool error)
     : QTextStream(error ? stderr : stdout, QIODevice::WriteOnly) { }
 
 Out::~Out() { }

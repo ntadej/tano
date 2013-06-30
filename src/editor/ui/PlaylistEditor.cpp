@@ -56,12 +56,12 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
     setTitle();
 
     _model = new PlaylistModel(this);
-    ui->playlist->setModel(_model);
+    ui->playlist->setPlaylistModel(_model);
 
 	createSettings();
 	createConnections();
 
-	ui->scan->setModel(_model);
+    ui->scan->setPlaylistModel(_model);
 
     connect(ui->scan, SIGNAL(addItem(QString, QString)), this, SLOT(addItem(QString, QString)));
     connect(ui->scan, SIGNAL(scan(bool)), this, SLOT(scan(bool)));
@@ -172,7 +172,7 @@ void PlaylistEditor::settings()
 }
 
 void PlaylistEditor::open(const QString &playlist,
-                          const bool &refresh)
+                          bool refresh)
 {
     File file;
     CSVInfo info;
@@ -408,7 +408,7 @@ void PlaylistEditor::setXmltvMap(const QHash<QString, QString> &map)
     _map = map;
 }
 
-void PlaylistEditor::scan(const bool &status)
+void PlaylistEditor::scan(bool status)
 {
     if (status) {
         ui->playlist->setEnabled(false);
@@ -500,7 +500,7 @@ void PlaylistEditor::editChannelNumber()
     ui->editNumber->setValue(ui->playlist->currentChannel()->number());
 }
 
-void PlaylistEditor::editChannelType(const int &type)
+void PlaylistEditor::editChannelType(int type)
 {
     if (!ui->playlist->currentChannel())
         return;

@@ -22,7 +22,7 @@ Channel::Channel(QObject *parent)
     : ListItem(parent) { }
 
 Channel::Channel(const QString &name,
-                 const int &number,
+                 int number,
                  QObject *parent)
     : ListItem(parent),
       _name(name),
@@ -56,7 +56,7 @@ QHash<int, QByteArray> Channel::roleNames() const
     return names;
 }
 
-QVariant Channel::data(const int &role) const
+QVariant Channel::data(int role) const
 {
     switch (role)
     {
@@ -102,7 +102,7 @@ QIcon Channel::decoration() const
         return QIcon::fromTheme("video-x-generic");
 }
 
-void Channel::setNumber(const int &number)
+void Channel::setNumber(int number)
 {
     if (_number != number) {
         _number = number;
@@ -166,7 +166,7 @@ void Channel::setLogo(const QString &logo)
     }
 }
 
-void Channel::setPasswordProtected(const bool &pprotected)
+void Channel::setPasswordProtected(bool pprotected)
 {
     if (_passwordProtected != pprotected) {
         _passwordProtected = pprotected;

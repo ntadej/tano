@@ -40,9 +40,9 @@ public:
     QString location() const;
     void setLocation(const QString &location);
     bool update() const;
-    void setUpdate(const bool &enabled);
+    void setUpdate(bool enabled);
     bool remote() const;
-    void setRemote(const bool &enabled);
+    void setRemote(bool enabled);
 
 protected:
     void changeEvent(QEvent *e);

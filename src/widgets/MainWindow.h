@@ -98,22 +98,22 @@ private slots:
     void stop();
     void setState(const Vlc::State &state);
 
-    void openPlaylist(const bool &start = false);
+    void openPlaylist(bool start = false);
 
     void tooltip(const QString &channelNow = "stop");
     void top();
     void lite();
     void tray();
     void showOsd(const QPoint &pos);
-    void showVideo(const int &count = 0);
-    void toggleFullscreen(const bool &enabled);
-    void toggleMouse(const bool &enabled = false);
-    void toggleOsdControls(const bool &enabled = false);
-    void preview(const bool &enabled = false);
+    void showVideo(int count = 0);
+    void toggleFullscreen(bool enabled);
+    void toggleMouse(bool enabled = false);
+    void toggleOsdControls(bool enabled = false);
+    void preview(bool enabled = false);
 
-    void recordNow(const bool &start);
+    void recordNow(bool start);
     void recordProgramme(XmltvProgramme *programme);
-    void recorder(const bool &enabled);
+    void recorder(bool enabled);
 
 private:
     Ui::MainWindow *ui;

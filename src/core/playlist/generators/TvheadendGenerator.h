@@ -36,14 +36,14 @@ public:
 
 private:
     void clean();
-    QString fileChannel(const int &number) const;
-    QString fileIpService(const int &number) const;
-    QString fileTag(const int &number) const;
+    QString fileChannel(int number) const;
+    QString fileIpService(int number) const;
+    QString fileTag(int number) const;
     QString fileXmltv(const QString &name) const;
 	void generateItem(Channel *channel);
-    void generateTag(const int &id,
+    void generateTag(int id,
                      const QString &name);
-    QString indent(const int &indentLevel) const;
+    QString indent(int indentLevel) const;
     void processTags(PlaylistModel *model);
     int tag(const QString &name) const;
 

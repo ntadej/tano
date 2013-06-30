@@ -48,7 +48,7 @@ public slots:
     void record(Timer *t);
 
 signals:
-    void elapsed(const int &);
+    void elapsed(int );
     void timerStop();
 
 private slots:

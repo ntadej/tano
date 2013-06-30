@@ -47,7 +47,7 @@ private slots:
     void next();
 
 signals:
-    void value(const int &);
+    void value(int );
     void value(const QString &);
 
 private:

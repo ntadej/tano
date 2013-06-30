@@ -65,7 +65,7 @@ bool SettingsSchedule::update() const
     return ui->checkRefresh->isChecked();
 }
 
-void SettingsSchedule::setUpdate(const bool &enabled)
+void SettingsSchedule::setUpdate(bool enabled)
 {
     ui->checkRefresh->setChecked(enabled);
 }
@@ -75,7 +75,7 @@ bool SettingsSchedule::remote() const
     return ui->radioNetwork->isChecked();
 }
 
-void SettingsSchedule::setRemote(const bool &enabled)
+void SettingsSchedule::setRemote(bool enabled)
 {
     ui->radioFile->setChecked(!enabled);
     ui->radioNetwork->setChecked(enabled);

@@ -119,7 +119,7 @@ void Tano::Log::logout()
 #endif
 }
 
-void Tano::Log::playingChannel(const int &id)
+void Tano::Log::playingChannel(int id)
 {
     qDebug() << "Playing channel #" << id;
 

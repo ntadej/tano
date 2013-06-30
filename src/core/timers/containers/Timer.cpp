@@ -65,7 +65,7 @@ QHash<int, QByteArray> Timer::roleNames() const
     return names;
 }
 
-QVariant Timer::data(const int &role) const
+QVariant Timer::data(int role) const
 {
     switch (role)
     {
@@ -120,7 +120,7 @@ QIcon Timer::decoration() const
         return QIcon::fromTheme("time-admin");
 }
 
-void Timer::setId(const int &id)
+void Timer::setId(int id)
 {
     if (_id != id) {
         _id = id;

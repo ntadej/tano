@@ -53,7 +53,7 @@ bool SettingsUi::osd() const
     return ui->checkOsd->isChecked();
 }
 
-void SettingsUi::setOsd(const bool &enabled)
+void SettingsUi::setOsd(bool enabled)
 {
     ui->checkOsd->setChecked(enabled);
 }
@@ -63,7 +63,7 @@ bool SettingsUi::info() const
     return ui->checkInfo->isChecked();
 }
 
-void SettingsUi::setInfo(const bool &enabled)
+void SettingsUi::setInfo(bool enabled)
 {
     ui->checkInfo->setChecked(enabled);
 }
@@ -73,7 +73,7 @@ bool SettingsUi::tray() const
     return ui->checkTray->isChecked();
 }
 
-void SettingsUi::setTray(const bool &enabled)
+void SettingsUi::setTray(bool enabled)
 {
     ui->checkTray->setChecked(enabled);
     ui->checkTrayHide->setEnabled(enabled);
@@ -84,7 +84,7 @@ bool SettingsUi::trayHide() const
     return ui->checkTrayHide->isChecked();
 }
 
-void SettingsUi::setTrayHide(const bool &enabled)
+void SettingsUi::setTrayHide(bool enabled)
 {
     ui->checkTrayHide->setChecked(enabled);
 }
@@ -112,7 +112,7 @@ int SettingsUi::toolbar() const
     return ui->comboToolbarLook->currentIndex();
 }
 
-void SettingsUi::setToolbar(const int &id)
+void SettingsUi::setToolbar(int id)
 {
     ui->comboToolbarLook->setCurrentIndex(id);
 }
@@ -122,7 +122,7 @@ bool SettingsUi::rememberSize() const
     return ui->checkRememberSize->isChecked();
 }
 
-void SettingsUi::setRememberSize(const bool &enabled)
+void SettingsUi::setRememberSize(bool enabled)
 {
     ui->checkRememberSize->setChecked(enabled);
 }
@@ -132,7 +132,7 @@ bool SettingsUi::filter() const
     return ui->checkFilter->isChecked();
 }
 
-void SettingsUi::setFilter(const bool &enabled)
+void SettingsUi::setFilter(bool enabled)
 {
     ui->checkFilter->setChecked(enabled);
 }
@@ -166,7 +166,7 @@ bool SettingsUi::lite() const
     return ui->checkLite->isChecked();
 }
 
-void SettingsUi::setLite(const bool &enabled)
+void SettingsUi::setLite(bool enabled)
 {
     ui->checkLite->setChecked(enabled);
 }
@@ -176,7 +176,7 @@ bool SettingsUi::top() const
     return ui->checkTop->isChecked();
 }
 
-void SettingsUi::setTop(const bool &enabled)
+void SettingsUi::setTop(bool enabled)
 {
     ui->checkTop->setChecked(enabled);
 }

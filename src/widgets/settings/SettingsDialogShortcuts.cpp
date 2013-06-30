@@ -16,8 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "core/platform/Features.h"
+
 #include "common/DesktopShortcuts.h"
-#include "platform/Features.h"
 
 #include "SettingsDialogShortcuts.h"
 #include "ui_SettingsDialogShortcuts.h"

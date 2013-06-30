@@ -77,12 +77,12 @@ public:
 
 
     inline QString id() const { return QString::number(_id); }
-    QVariant data(const int &role) const;
+    QVariant data(int role) const;
     QString display() const;
     QIcon decoration() const;
     QHash<int, QByteArray> roleNames() const;
 
-    void setId(const int &id);
+    void setId(int id);
     inline QString name() const { return _name; }
     void setName(const QString &name);
     inline QString channel() const { return _channel; }

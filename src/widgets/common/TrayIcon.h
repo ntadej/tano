@@ -39,9 +39,9 @@ public:
     ~TrayIcon();
 
 public slots:
-    void message(const int &type,
+    void message(int type,
                  const QStringList &arg);
-    void changeToolTip(const int &type,
+    void changeToolTip(int type,
                        const QString &text = 0);
 
 signals:

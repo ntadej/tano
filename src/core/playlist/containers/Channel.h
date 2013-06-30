@@ -78,13 +78,13 @@ public:
         \param parent parent object (QObject *)
     */
     explicit Channel(const QString &name,
-                     const int &number,
+                     int number,
                      QObject *parent = 0);
     ~Channel();
 
     // Implemented virtual functions
     inline QString id() const { return _url; }
-    QVariant data(const int &role) const;
+    QVariant data(int role) const;
     QString display() const;
     QIcon decoration() const;
     QHash<int, QByteArray> roleNames() const;
@@ -98,7 +98,7 @@ public:
         \brief Set chanel number
         \param number new channel number (int)
     */
-    void setNumber(const int &number);
+    void setNumber(int number);
 
     /*!
         \brief Get channel type
@@ -186,7 +186,7 @@ public:
         \brief Set password protected status
         \param pprotected new password protected status (bool)
     */
-    void setPasswordProtected(const bool &pprotected);
+    void setPasswordProtected(bool pprotected);
 
     /*!
         \brief Channel type strings

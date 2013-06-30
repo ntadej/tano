@@ -47,7 +47,7 @@ public:
     QList<Channel *> visibleChannels();
 
     void playMode();
-    void setModel(PlaylistModel *model);
+    void setPlaylistModel(PlaylistModel *model);
 
 signals:
     void itemSelected(Channel *);
@@ -55,7 +55,7 @@ signals:
 
 public slots:
     void channelSelected(Channel *channel);
-    void channelSelected(const int &channel);
+    void channelSelected(int channel);
     void channelSelected(const QString &xmltvId);
     void setFilters(const QString &search);
     void setFilters(const QString &search,

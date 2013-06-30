@@ -66,7 +66,7 @@ QString XmltvProgramme::id() const
     return channel() + "_" + start().toString(Tano::Xmltv::dateFormat());
 }
 
-QVariant XmltvProgramme::data(const int &role) const
+QVariant XmltvProgramme::data(int role) const
 {
     switch (role)
     {

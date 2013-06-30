@@ -67,7 +67,7 @@ void PasswordDialog::changeEvent(QEvent *e)
     }
 }
 
-void PasswordDialog::validatePassword(const bool &edit)
+void PasswordDialog::validatePassword(bool edit)
 {
 #if PASSWORD
     QUrl validator = QUrl(QString(PASSWORD_VALIDATE));
@@ -82,7 +82,7 @@ void PasswordDialog::validatePassword(const bool &edit)
 #endif
 }
 
-void PasswordDialog::validatePasswordResponse(const int &error,
+void PasswordDialog::validatePasswordResponse(int error,
                                               QNetworkReply *reply)
 {
     Q_UNUSED(reply)

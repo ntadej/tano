@@ -50,7 +50,7 @@ void TrayIcon::iconActivated(const QSystemTrayIcon::ActivationReason reason)
     }
 }
 
-void TrayIcon::message(const int &type,
+void TrayIcon::message(int type,
                        const QStringList &arg)
 {
      // TODO: Tooltip
@@ -68,7 +68,7 @@ void TrayIcon::message(const int &type,
     }
 }
 
-void TrayIcon::changeToolTip(const int &type,
+void TrayIcon::changeToolTip(int type,
                              const QString &text)
 {
     // TODO: Tooltip

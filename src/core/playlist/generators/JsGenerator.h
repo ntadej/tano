@@ -34,7 +34,7 @@ public:
     bool write(PlaylistModel *model);
 
 private:
-    void generateItem(const int &id,
+    void generateItem(int id,
                       Channel *channel);
 
     QFile *_file;

@@ -58,7 +58,7 @@ signals:
 
 public slots:
     void recordingInfo(Timer *timer);
-    void time(const int &time);
+    void time(int time);
     void timerInfo(Timer *timer);
 
 private slots:

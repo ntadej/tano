@@ -28,9 +28,9 @@ SettingsChannel::SettingsChannel(QObject *parent)
 
 SettingsChannel::~SettingsChannel() { }
 
-void SettingsChannel::setDefaults(const int &aspectRatio,
-                                  const int &cropRatio,
-                                  const int &deinterlacing,
+void SettingsChannel::setDefaults(int aspectRatio,
+                                  int cropRatio,
+                                  int deinterlacing,
                                   const QString &audioLanguage,
                                   const QString &subtitleLanguage)
 {
@@ -56,7 +56,7 @@ int SettingsChannel::aspectRatio(const QString &id) const
 }
 
 void SettingsChannel::setAspectRatio(const QString &id,
-                                     const int &i)
+                                     int i)
 {
     setValue(process(id) + "/aspectratio", i);
     sync();
@@ -68,7 +68,7 @@ int SettingsChannel::cropRatio(const QString &id) const
 }
 
 void SettingsChannel::setCropRatio(const QString &id,
-                                   const int &i)
+                                   int i)
 {
     setValue(process(id) + "/cropratio", i);
     sync();
@@ -80,7 +80,7 @@ int SettingsChannel::deinterlacing(const QString &id) const
 }
 
 void SettingsChannel::setDeinterlacing(const QString &id,
-                                       const int &i)
+                                       int i)
 {
     setValue(process(id) + "/deinterlacing", i);
     sync();

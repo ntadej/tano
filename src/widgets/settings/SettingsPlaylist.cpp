@@ -62,7 +62,7 @@ bool SettingsPlaylist::playlistUpdate() const
     return ui->checkRefresh->isChecked();
 }
 
-void SettingsPlaylist::setPlaylistUpdate(const bool &enabled)
+void SettingsPlaylist::setPlaylistUpdate(bool enabled)
 {
     ui->checkRefresh->setChecked(enabled);
 }
@@ -102,7 +102,7 @@ bool SettingsPlaylist::udpxy() const
     return ui->checkUdpxy->isChecked();
 }
 
-void SettingsPlaylist::setUdpxy(const bool &enabled)
+void SettingsPlaylist::setUdpxy(bool enabled)
 {
     ui->checkUdpxy->setChecked(enabled);
 }
@@ -122,7 +122,7 @@ int SettingsPlaylist::udpxyPort() const
     return ui->editUdpxyPort->value();
 }
 
-void SettingsPlaylist::setUdpxyPort(const int &port)
+void SettingsPlaylist::setUdpxyPort(int port)
 {
     ui->editUdpxyPort->setValue(port);
 }

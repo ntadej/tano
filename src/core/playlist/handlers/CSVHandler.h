@@ -39,7 +39,7 @@ public:
 
     void processFile(const QString &csvFile);
     void setParameters(const QString &separator,
-                       const bool &header,
+                       bool header,
                        const QList<int> &columns);
 
     QList<Channel *> channelList() const { return _channels; }

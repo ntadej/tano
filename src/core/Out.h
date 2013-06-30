@@ -26,7 +26,7 @@
 class TANO_CORE_EXPORT Out : public QTextStream
 {
 public:
-    Out(const bool &error = false);
+    Out(bool error = false);
     ~Out();
 
     Out& operator<<(const QString &string);

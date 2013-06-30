@@ -39,8 +39,8 @@ public:
 
 private:
     void generateItem(Channel *channel,
-                      const bool &clean = false,
-                      const bool &udpxy = false);
+                      bool clean = false,
+                      bool udpxy = false);
 
     File::Type _type;
 

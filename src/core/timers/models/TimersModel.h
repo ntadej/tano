@@ -62,8 +62,8 @@ public:
         \param type data type (int)
         \return value of the requested data (QVariant)
     */
-    QVariant value(const int &row,
-                   const int &type) const;
+    QVariant value(int row,
+                   int type) const;
 };
 
 #endif // TANO_TIMERSMODEL_H_

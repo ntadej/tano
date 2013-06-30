@@ -40,7 +40,7 @@ QHash<int, QByteArray> XmltvChannel::roleNames() const
     return names;
 }
 
-QVariant XmltvChannel::data(const int &role) const
+QVariant XmltvChannel::data(int role) const
 {
     switch (role)
     {

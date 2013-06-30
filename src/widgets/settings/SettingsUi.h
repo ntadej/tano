@@ -38,29 +38,29 @@ public:
     ~SettingsUi();
 
     bool osd() const;
-    void setOsd(const bool &enabled);
+    void setOsd(bool enabled);
     bool info() const;
-    void setInfo(const bool &enabled);
+    void setInfo(bool enabled);
     bool tray() const;
-    void setTray(const bool &enabled);
+    void setTray(bool enabled);
     bool trayHide() const;
-    void setTrayHide(const bool &enabled);
+    void setTrayHide(bool enabled);
     QString wheel() const;
     void setWheel(const QString &wheel);
     int toolbar() const;
-    void setToolbar(const int &id);
+    void setToolbar(int id);
     bool rememberSize() const;
-    void setRememberSize(const bool &enabled);
+    void setRememberSize(bool enabled);
     bool filter() const;
-    void setFilter(const bool &enabled);
+    void setFilter(bool enabled);
 
     QString icons() const;
     void setIcons(const QString &icons);
 
     bool lite() const;
-    void setLite(const bool &enabled);
+    void setLite(bool enabled);
     bool top() const;
-    void setTop(const bool &enabled);
+    void setTop(bool enabled);
 
 protected:
     void changeEvent(QEvent *e);

@@ -29,9 +29,9 @@ public:
     SettingsChannel(QObject *parent = 0);
     ~SettingsChannel();
 
-    void setDefaults(const int &aspectRatio,
-                     const int &cropRatio,
-                     const int &deinterlacing,
+    void setDefaults(int aspectRatio,
+                     int cropRatio,
+                     int deinterlacing,
                      const QString &audioLanguage,
                      const QString &subtitleLanguage);
 
@@ -43,11 +43,11 @@ public:
 
 public slots:
     void setAspectRatio(const QString &id,
-                        const int &i);
+                        int i);
     void setCropRatio(const QString &id,
-                      const int &i);
+                      int i);
     void setDeinterlacing(const QString &id,
-                          const int &i);
+                          int i);
     void setAudioLanguage(const QString &id,
                           const QString &s);
     void setSubtitleLanguage(const QString &id,

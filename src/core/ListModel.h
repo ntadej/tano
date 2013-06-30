@@ -45,12 +45,12 @@ public:
     QHash<int, QByteArray> roleNames() const;
     void appendRow(ListItem *item);
     void appendRows(const QList<ListItem *> &items);
-    void insertRow(const int &row, ListItem *item);
-    bool moveRow(const int &oldRow, const int &newRow, const QModelIndex &parent = QModelIndex());
-    bool removeRow(const int &row, const QModelIndex &parent = QModelIndex());
-    bool removeRows(const int &row, const int &count, const QModelIndex &parent = QModelIndex());
-    ListItem *row(const int &row);
-    ListItem *takeRow(const int &row);
+    void insertRow(int row, ListItem *item);
+    bool moveRow(int oldRow, int newRow, const QModelIndex &parent = QModelIndex());
+    bool removeRow(int row, const QModelIndex &parent = QModelIndex());
+    bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex());
+    ListItem *row(int row);
+    ListItem *takeRow(int row);
     ListItem *find(const QString &id) const;
     QModelIndex indexFromItem(const ListItem *item) const;
     void clear();

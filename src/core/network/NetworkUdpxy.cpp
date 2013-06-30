@@ -19,7 +19,7 @@
 #include "network/NetworkUdpxy.h"
 #include "settings/Settings.h"
 
-NetworkUdpxy::NetworkUdpxy(const bool &generate, QObject *parent)
+NetworkUdpxy::NetworkUdpxy(bool generate, QObject *parent)
     : QObject(parent),
       _generate(generate)
 {

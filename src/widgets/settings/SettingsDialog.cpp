@@ -17,9 +17,8 @@
 *****************************************************************************/
 
 #include "Config.h"
+#include "core/platform/Features.h"
 #include "core/settings/Settings.h"
-
-#include "platform/Features.h"
 
 #include "SettingsDialog.h"
 #include "ui_SettingsDialog.h"

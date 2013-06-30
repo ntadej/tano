@@ -158,5 +158,5 @@ void RecorderNewDialog::refreshPlaylistModel()
 
 void RecorderNewDialog::setPlaylistModel(PlaylistModel *model)
 {
-    ui->playlistWidget->setModel(model);
+    ui->playlistWidget->setPlaylistModel(model);
 }

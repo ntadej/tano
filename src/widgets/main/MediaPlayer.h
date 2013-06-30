@@ -35,7 +35,7 @@ public:
                          QWidget *parent = 0);
     ~MediaPlayer();
 
-    void createSession(const bool &valid);
+    void createSession(bool valid);
     void createSettings();
     inline OsdWidget *osd() { return _osd; }
     inline VlcInstance *mediaInstance() { return _mediaInstance; }
@@ -47,7 +47,7 @@ public:
 
 signals:
     void stateChanged(const Vlc::State &);
-    void vout(const int &count);
+    void vout(int count);
     
 public slots:
     void openFile();
@@ -55,19 +55,19 @@ public slots:
     void play();
     void playLocal(const QString &path);
     void playUrl(const QString &url,
-                 const bool &channel = false);
+                 bool channel = false);
     void stop();
     void takeSnapshot();
-    void teletext(const bool &enabled);
-    void teletext(const int &page);
+    void teletext(bool enabled);
+    void teletext(int page);
     void togglePause();
 
 private slots:
-    void saveChannelSettings(const int &value);
+    void saveChannelSettings(int value);
     void saveChannelSettings(const QString &value);
     void startSession();
     void stateUpdate();
-    void stateUpdateVideo(const int &count);
+    void stateUpdateVideo(int count);
 
 private:
     void createConnections();

@@ -245,7 +245,7 @@ void ScheduleTab::setEpg(const QString &channel,
     }
 }
 
-void ScheduleTab::setPage(const int &id)
+void ScheduleTab::setPage(int id)
 {
     _main->setCurrentIndex(id);
 }

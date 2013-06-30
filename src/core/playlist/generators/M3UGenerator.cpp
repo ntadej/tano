@@ -72,7 +72,7 @@ bool M3UGenerator::write(PlaylistModel *model)
     return true;
 }
 
-void M3UGenerator::generateItem(Channel *channel, const bool &clean, const bool &udpxy)
+void M3UGenerator::generateItem(Channel *channel, bool clean, bool udpxy)
 {
     _out << "#EXTINF:"
          << QString::number(channel->number()) << ","

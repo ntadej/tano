@@ -41,12 +41,12 @@ public:
 
     bool openFile();
     bool writeChannels();
-    bool writeProgramme(const int &id);
+    bool writeProgramme(int id);
     bool writeProgrammes();
     bool closeFile();
 
 private:
-    static QString indent(const int &indentLevel);
+    static QString indent(int indentLevel);
     static QString escapedText(const QString &str);
     static QString escapedAttribute(const QString &str);
     void generateChannel(XmltvChannel *channel);

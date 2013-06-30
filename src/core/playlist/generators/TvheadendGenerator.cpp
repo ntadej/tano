@@ -77,7 +77,7 @@ bool TvheadendGenerator::write(PlaylistModel *model)
 	return true;
 }
 
-QString TvheadendGenerator::fileChannel(const int &number) const
+QString TvheadendGenerator::fileChannel(int number) const
 {
     if (!QDir(_location + "/channels/").exists()) {
         QDir(_location).mkdir("channels");
@@ -85,7 +85,7 @@ QString TvheadendGenerator::fileChannel(const int &number) const
     return QString(_location + "/channels/" + QString::number(number));
 }
 
-QString TvheadendGenerator::fileIpService(const int &number) const
+QString TvheadendGenerator::fileIpService(int number) const
 {
     if (!QDir(_location + "/iptvservices/").exists()) {
         QDir(_location).mkdir("iptvservices");
@@ -93,7 +93,7 @@ QString TvheadendGenerator::fileIpService(const int &number) const
     return QString(_location + "/iptvservices/" + "iptv_" + QString::number(number));
 }
 
-QString TvheadendGenerator::fileTag(const int &number) const
+QString TvheadendGenerator::fileTag(int number) const
 {
     if (!QDir(_location + "/channeltags/").exists()) {
         QDir(_location).mkdir("channeltags");
@@ -195,7 +195,7 @@ void TvheadendGenerator::generateItem(Channel *channel)
          << "}" << "\n";
 }
 
-void TvheadendGenerator::generateTag(const int &id,
+void TvheadendGenerator::generateTag(int id,
                                      const QString &name)
 {
     QFile fTag(fileTag(id));
@@ -218,7 +218,7 @@ void TvheadendGenerator::generateTag(const int &id,
          << "}" << "\n";
 }
 
-QString TvheadendGenerator::indent(const int &indentLevel) const
+QString TvheadendGenerator::indent(int indentLevel) const
 {
     return QString(indentLevel, '\t');
 }

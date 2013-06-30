@@ -95,7 +95,7 @@ QLCDNumber *OsdWidget::lcd()
     return ui->number;
 }
 
-void OsdWidget::mute(const bool &enabled)
+void OsdWidget::mute(bool enabled)
 {
     ui->volume->setMute(enabled);
     ui->buttonMute->setChecked(enabled);
@@ -108,7 +108,7 @@ void OsdWidget::setBackend(VlcMediaPlayer *player)
     ui->seek->setAutoHide(true);
 }
 
-void OsdWidget::setChannel(const int &number,
+void OsdWidget::setChannel(int number,
                            const QString &name,
                            const QString &language)
 {
@@ -152,7 +152,7 @@ void OsdWidget::setLogo(QFile *file)
     delete file;
 }
 
-void OsdWidget::setPlaying(const bool &playing)
+void OsdWidget::setPlaying(bool playing)
 {
     if (playing) {
         ui->buttonPlay->setIcon(QIcon::fromTheme("media-playback-pause"));
@@ -169,7 +169,7 @@ void OsdWidget::setPlaying(const bool &playing)
     }
 }
 
-void OsdWidget::setQuickRecordChecked(const bool &enabled)
+void OsdWidget::setQuickRecordChecked(bool enabled)
 {
     ui->buttonRecordNow->setChecked(enabled);
 }
@@ -184,25 +184,25 @@ void OsdWidget::setRecording(const QString &name,
     }
 }
 
-void OsdWidget::setTeletextPage(const int &page)
+void OsdWidget::setTeletextPage(int page)
 {
     if (page != ui->teletext->value())
         ui->teletext->setValue(page);
 }
 
-void OsdWidget::setVideoState(const bool &enabled)
+void OsdWidget::setVideoState(bool enabled)
 {
     ui->buttonSnapshot->setEnabled(enabled);
     ui->buttonRecordNow->setEnabled(enabled);
     ui->buttonRecordNow->setChecked(false);
 }
 
-void OsdWidget::teletext(const bool &enabled)
+void OsdWidget::teletext(bool enabled)
 {
     ui->buttonTeletext->setChecked(enabled);
 }
 
-void OsdWidget::toggleTeletext(const bool &enabled)
+void OsdWidget::toggleTeletext(bool enabled)
 {
     ui->buttonTeletext->setVisible(enabled);
 }

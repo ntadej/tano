@@ -27,7 +27,7 @@ class TANO_CORE_EXPORT NetworkUdpxy : public QObject
 {
 Q_OBJECT
 public:
-    NetworkUdpxy(const bool &generate = false,
+    NetworkUdpxy(bool generate = false,
                  QObject *parent = 0);
     ~NetworkUdpxy();
 

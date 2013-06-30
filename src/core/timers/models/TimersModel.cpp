@@ -60,8 +60,8 @@ QVariant TimersModel::data(const QModelIndex &index,
     return QVariant();
 }
 
-QVariant TimersModel::value(const int &row,
-                                    const int &type) const
+QVariant TimersModel::value(int row,
+                                    int type) const
 {
     return QSqlQueryModel::data(QSqlQueryModel::index(row, type), Qt::DisplayRole);
 }

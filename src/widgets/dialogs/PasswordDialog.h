@@ -49,8 +49,8 @@ protected:
     void changeEvent(QEvent *e);
 
 private slots:
-    void validatePassword(const bool &edit = false);
-    void validatePasswordResponse(const int &error,
+    void validatePassword(bool edit = false);
+    void validatePasswordResponse(int error,
                                   QNetworkReply *reply = 0);
     void validatePasswordResponse(const QByteArray &response,
                                   QNetworkReply *reply = 0);

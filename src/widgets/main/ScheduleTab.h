@@ -58,7 +58,7 @@ public slots:
     void reset();
     void setEpg(const QString &channel,
                 XmltvProgrammeModel *epg);
-    void setPage(const int &id);
+    void setPage(int id);
 
 signals:
     void changeTo(QWidget *);

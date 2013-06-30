@@ -39,20 +39,20 @@ public:
     ~PlaylistModel();
 
     Channel *find(const QString &id) const;
-    Channel *row(const int &row);
-    Channel *takeRow(const int &row);
+    Channel *row(int row);
+    Channel *takeRow(int row);
 
     Channel *createChannel(const QString &name = 0,
                            const QString &url = 0);
     Channel *deleteChannel(Channel *channel);
 
-    Channel *number(const int &number);
+    Channel *number(int number);
     Channel *xmltvId(const QString &xmltvId);
 
     void moveDown(Channel *channel);
     void moveUp(Channel *channel);
     bool processNumber(Channel *channel,
-                       const int &number);
+                       int number);
 
     QStringList categories() const { return _categoryList; }
     QStringList xmltvId() const { return _xmltvIdList; }
@@ -63,7 +63,7 @@ public:
 
     void clear();
     void open(const QString &file,
-              const bool &refresh = false,
+              bool refresh = false,
               const File::Type &type = File::M3U,
               const CSVInfo &info = CSVInfo());
     void save(const QString &file,

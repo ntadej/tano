@@ -38,37 +38,37 @@ public:
     ~SettingsBackend();
 
     int vout() const;
-    void setVout(const int &id);
+    void setVout(int id);
     int aout() const;
-    void setAout(const int &id);
+    void setAout(int id);
 #if defined(Q_OS_WIN32)
     bool yuvToRgb() const;
-    void setYuvToRgb(const bool &enabled);
+    void setYuvToRgb(bool enabled);
 #endif
     bool spdif() const;
-    void setSpdif(const bool &enabled);
+    void setSpdif(bool enabled);
     int interface() const;
-    void setInterface(const int &index);
+    void setInterface(int index);
 
     bool rememberChannelSettings() const;
-    void setRememberChannelSettings(const bool &remember);
+    void setRememberChannelSettings(bool remember);
     bool rememberPerChannel() const;
-    void setRememberPerChannel(const bool &remember);
+    void setRememberPerChannel(bool remember);
     int aspectRatio() const;
-    void setAspectRatio(const int &id);
+    void setAspectRatio(int id);
     int cropRatio() const;
-    void setCropRatio(const int &id);
+    void setCropRatio(int id);
     int deinterlacing() const;
-    void setDeinterlacing(const int &id);
+    void setDeinterlacing(int id);
     QString audio() const;
     void setAudio(const QString &audio);
     QString sub() const;
     void setSub(const QString &sub);
 
     bool mute() const;
-    void setMute(const bool &enabled);
+    void setMute(bool enabled);
     bool teletext() const;
-    void setTeletext(const bool &enabled);
+    void setTeletext(bool enabled);
 
 protected:
     void changeEvent(QEvent *e);

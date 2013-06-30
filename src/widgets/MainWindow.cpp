@@ -271,12 +271,12 @@ void MainWindow::createGui()
     _mouseTimer = new QTimer(this);
 
     _playlistTab = new PlaylistTab(this);
-    _playlistTab->playlist()->setModel(_model);
+    _playlistTab->playlist()->setPlaylistModel(_model);
     ui->tabs->insertTab(0, _playlistTab, QIcon::fromTheme("video-x-generic"), tr("Channels"));
     ui->tabs->setTabEnabled(0, true);
 
     _scheduleTab = new ScheduleTab(this);
-    _scheduleTab->playlist()->setModel(_model);
+    _scheduleTab->playlist()->setPlaylistModel(_model);
     ui->tabs->insertTab(1, _scheduleTab, QIcon::fromTheme("x-office-calendar"), tr("Schedule"));
     ui->tabs->setTabEnabled(1, true);
 
@@ -624,7 +624,7 @@ void MainWindow::setState(const Vlc::State &state)
     }
 }
 
-void MainWindow::showVideo(const int &count)
+void MainWindow::showVideo(int count)
 {
     ui->actionFullscreen->setEnabled(count);
     ui->actionRecordNow->setEnabled(count);
@@ -689,7 +689,7 @@ void MainWindow::stop()
 }
 
 // Open dialogs
-void MainWindow::openPlaylist(const bool &start)
+void MainWindow::openPlaylist(bool start)
 {
     if (_select != 0) {
         disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
@@ -814,7 +814,7 @@ void MainWindow::showOsd(const QPoint &pos)
 }
 
 // Dock
-void MainWindow::toggleFullscreen(const bool &enabled)
+void MainWindow::toggleFullscreen(bool enabled)
 {
     _osdFloat->setVisible(enabled);
 
@@ -842,7 +842,7 @@ void MainWindow::toggleFullscreen(const bool &enabled)
     toggleMouse(!enabled);
 }
 
-void MainWindow::toggleMouse(const bool &enabled)
+void MainWindow::toggleMouse(bool enabled)
 {
     if (enabled) {
         qApp->restoreOverrideCursor();
@@ -852,7 +852,7 @@ void MainWindow::toggleMouse(const bool &enabled)
     }
 }
 
-void MainWindow::toggleOsdControls(const bool &enabled)
+void MainWindow::toggleOsdControls(bool enabled)
 {
     if (ui->actionFullscreen->isChecked()) {
         if (enabled) {
@@ -863,7 +863,7 @@ void MainWindow::toggleOsdControls(const bool &enabled)
     }
 }
 
-void MainWindow::preview(const bool &enabled)
+void MainWindow::preview(bool enabled)
 {
     if (enabled) {
         ui->actionNext->trigger();
@@ -874,7 +874,7 @@ void MainWindow::preview(const bool &enabled)
 }
 
 // Recorder
-void MainWindow::recordNow(const bool &start)
+void MainWindow::recordNow(bool start)
 {
     //TODO: quick record
 /*#if FEATURE_RECORDER
@@ -908,7 +908,7 @@ void MainWindow::recordNow(const bool &start)
 #endif*/
 }
 
-void MainWindow::recorder(const bool &enabled)
+void MainWindow::recorder(bool enabled)
 {
 #if FEATURE_RECORDER
     if (enabled) {

@@ -185,6 +185,7 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_SOURCE_DIR}/src/core
     ${CMAKE_BINARY_DIR}
     ${CMAKE_BINARY_DIR}/src
+    ${CMAKE_BINARY_DIR}/src/core
 )
 
 # Compile resources with windres

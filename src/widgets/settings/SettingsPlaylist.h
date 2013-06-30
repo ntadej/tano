@@ -40,7 +40,7 @@ public:
     QString playlist() const;
     void setPlaylist(const QString &playlist);
     bool playlistUpdate() const;
-    void setPlaylistUpdate(const bool &enabled);
+    void setPlaylistUpdate(bool enabled);
     QString playlistUpdateUrl() const;
     void setPlaylistUpdateUrl(const QString &playlist);
 
@@ -50,11 +50,11 @@ public:
     void setHdCategory(const QString &category);
 
     bool udpxy() const;
-    void setUdpxy(const bool &enabled);
+    void setUdpxy(bool enabled);
     QString udpxyUrl() const;
     void setUdpxyUrl(const QString &url);
     int udpxyPort() const;
-    void setUdpxyPort(const int &port);
+    void setUdpxyPort(int port);
 
 protected:
     void changeEvent(QEvent *e);

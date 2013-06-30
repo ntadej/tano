@@ -79,7 +79,7 @@ void CSVHandler::processList()
 }
 
 void CSVHandler::setParameters(const QString &separator,
-                               const bool &header,
+                               bool header,
                                const QList<int> &columns)
 {
     _separator = separator;

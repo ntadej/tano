@@ -49,7 +49,7 @@ public:
 public slots:
     void newPlaylist();
     void open(const QString &playlist = 0,
-              const bool &refresh = false);
+              bool refresh = false);
     void setXmltvMap(const QHash<QString, QString> &map);
 
 protected:
@@ -78,7 +78,7 @@ private slots:
     void editItem(Channel *channel);
 
     void editChannelNumber();
-    void editChannelType(const int &type);
+    void editChannelType(int type);
     void editChannelName(const QString &text);
     void editChannelUrl(const QString &text);
     void editChannelCategories(const QString &text);
@@ -89,7 +89,7 @@ private slots:
     void moveUp();
     void moveDown();
 
-    void scan(const bool &status);
+    void scan(bool status);
 
     void autoMapXmltv();
 

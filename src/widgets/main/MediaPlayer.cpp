@@ -151,7 +151,7 @@ void MediaPlayer::createSettingsStartup()
     _teletext = settings->teletext();
 }
 
-void MediaPlayer::createSession(const bool &valid)
+void MediaPlayer::createSession(bool valid)
 {
     _osd->volumeSlider()->setVolume(_sessionVolume);
 
@@ -258,7 +258,7 @@ void MediaPlayer::playLocal(const QString &path)
 }
 
 void MediaPlayer::playUrl(const QString &url,
-                          const bool &channel)
+                          bool channel)
 {
     if (url.isEmpty())
         return;
@@ -301,7 +301,7 @@ void MediaPlayer::stateUpdate()
     emit stateChanged(_mediaPlayer->state());
 }
 
-void MediaPlayer::stateUpdateVideo(const int &count)
+void MediaPlayer::stateUpdateVideo(int count)
 {
     _osd->setVideoState(count);
 
@@ -346,7 +346,7 @@ void MediaPlayer::openUrl()
     playUrl(url);
 }
 
-void MediaPlayer::saveChannelSettings(const int &value)
+void MediaPlayer::saveChannelSettings(int value)
 {
     if (_mediaPlayer->state() != Vlc::Playing)
         return;
@@ -375,7 +375,7 @@ void MediaPlayer::takeSnapshot()
     _mediaPlayer->video()->takeSnapshot(_defaultSnapshot);
 }
 
-void MediaPlayer::teletext(const bool &enabled)
+void MediaPlayer::teletext(bool enabled)
 {
     if (enabled) {
         _mediaPlayer->video()->setTeletextPage(100);
@@ -385,7 +385,7 @@ void MediaPlayer::teletext(const bool &enabled)
     }
 }
 
-void MediaPlayer::teletext(const int &page)
+void MediaPlayer::teletext(int page)
 {
     if (page == _mediaPlayer->video()->teletextPage())
         return;

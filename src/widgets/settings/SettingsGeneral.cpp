@@ -79,7 +79,7 @@ bool SettingsGeneral::sessionAutoplay() const
     return ui->checkAutoplay->isChecked();
 }
 
-void SettingsGeneral::setSessionAutoplay(const bool &enabled)
+void SettingsGeneral::setSessionAutoplay(bool enabled)
 {
     ui->checkAutoplay->setChecked(enabled);
 }
@@ -89,7 +89,7 @@ bool SettingsGeneral::sessionVolume() const
     return ui->checkVolume->isChecked();
 }
 
-void SettingsGeneral::setSessionVolume(const bool &enabled)
+void SettingsGeneral::setSessionVolume(bool enabled)
 {
     ui->checkVolume->setChecked(enabled);
 }

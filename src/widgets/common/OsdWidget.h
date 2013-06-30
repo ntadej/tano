@@ -47,15 +47,15 @@ public:
     inline QString currentProgramme() const { return _current; }
     QLCDNumber *lcd();
     void setBackend(VlcMediaPlayer *player);
-    void setChannel(const int &number = 0,
+    void setChannel(int number = 0,
                     const QString &name = 0,
                     const QString &language = 0);
-    void setPlaying(const bool &playing);
-    void setQuickRecordChecked(const bool &enabled);
+    void setPlaying(bool playing);
+    void setQuickRecordChecked(bool enabled);
     void setRecording(const QString &name = 0,
                       const QString &info = 0);
-    void setVideoState(const bool &enabled);
-    void toggleTeletext(const bool &enabled);
+    void setVideoState(bool enabled);
+    void toggleTeletext(bool enabled);
     VolumeSlider *volumeSlider();
 
 protected:
@@ -63,7 +63,7 @@ protected:
 
 signals:
     void openLink(const QString &);
-    void teletextPage(const int &);
+    void teletextPage(int );
 
     void backClicked();
     void muteClicked();
@@ -75,11 +75,11 @@ signals:
     void teletextClicked();
 
 public slots:
-    void mute(const bool &enabled);
+    void mute(bool enabled);
     void setEpg(const QStringList &epg);
     void setLogo(const QString &file);
-    void setTeletextPage(const int &page);
-    void teletext(const bool &enabled);
+    void setTeletextPage(int page);
+    void teletext(bool enabled);
     void volumeDown();
     void volumeUp();
 

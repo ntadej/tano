@@ -42,12 +42,12 @@ Channel *PlaylistModel::find(const QString &id) const
     return qobject_cast<Channel *>(ListModel::find(id));
 }
 
-Channel *PlaylistModel::row(const int &row)
+Channel *PlaylistModel::row(int row)
 {
     return qobject_cast<Channel *>(ListModel::row(row));
 }
 
-Channel *PlaylistModel::takeRow(const int &row)
+Channel *PlaylistModel::takeRow(int row)
 {
     return qobject_cast<Channel *>(ListModel::takeRow(row));
 }
@@ -66,7 +66,7 @@ void PlaylistModel::clear()
 Channel *PlaylistModel::createChannel(const QString &name,
                                       const QString &url)
 {
-    int tmpNum, previous = 0;
+    int tmpNum = 1, previous = 0;
     for (int i = 1; i < 1000; i++) {
         if (!_channelNumbers.contains(i)) {
             tmpNum = i;
@@ -161,7 +161,7 @@ void PlaylistModel::moveUp(Channel *channel)
     }
 }
 
-Channel *PlaylistModel::number(const int &number)
+Channel *PlaylistModel::number(int number)
 {
     for (int i = 0; i < rowCount(); i++) {
         if (row(i)->number() == number) {
@@ -184,7 +184,7 @@ Channel *PlaylistModel::xmltvId(const QString &xmltvId)
 }
 
 void PlaylistModel::open(const QString &file,
-                         const bool &refresh,
+                         bool refresh,
                          const File::Type &type,
                          const CSVInfo &info)
 {
@@ -270,7 +270,7 @@ void PlaylistModel::processChannel(Channel *channel)
 }
 
 bool PlaylistModel::processNumber(Channel *channel,
-                                  const int &number)
+                                  int number)
 {
     if (_channelNumbers.contains(number))
         return false;

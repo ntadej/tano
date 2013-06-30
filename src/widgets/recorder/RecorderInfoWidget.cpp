@@ -158,7 +158,7 @@ void RecorderInfoWidget::stop()
     ui->buttonRecordStop->setText(tr("Currently not recording."));
 }
 
-void RecorderInfoWidget::time(const int &time)
+void RecorderInfoWidget::time(int time)
 {
     QString bold("<b>%1</b>");
     ui->valueTime->setText(bold.arg(QTime().addMSecs(time).toString("hh:mm:ss")));

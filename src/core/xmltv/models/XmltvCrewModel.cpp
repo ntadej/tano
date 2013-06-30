@@ -48,8 +48,8 @@ QVariant XmltvCrewModel::data(const QModelIndex &index,
     return QVariant();
 }
 
-QVariant XmltvCrewModel::value(const int &row,
-                                    const int &type) const
+QVariant XmltvCrewModel::value(int row,
+                                    int type) const
 {
     return QSqlQueryModel::data(QSqlQueryModel::index(row, type), Qt::DisplayRole);
 }

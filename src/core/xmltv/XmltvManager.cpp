@@ -141,7 +141,7 @@ void XmltvManager::loadXmltvWeb(const QString &url)
 }
 
 void XmltvManager::request(const QString &id,
-                           const bool &current)
+                           bool current)
 {
     XmltvProgrammeModel *currentProgramme = new XmltvProgrammeModel(id, _db);
 

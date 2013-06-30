@@ -53,7 +53,7 @@ bool JsGenerator::write(PlaylistModel *model)
     return true;
 }
 
-void JsGenerator::generateItem(const int &id,
+void JsGenerator::generateItem(int id,
                                Channel *channel)
 {
     _out << "["

@@ -18,8 +18,9 @@
 
 #include <QtNetwork/QNetworkInterface>
 
+#include "core/platform/Features.h"
+
 #include "common/Backend.h"
-#include "platform/Features.h"
 
 #include "SettingsBackend.h"
 #include "ui_SettingsBackend.h"
@@ -98,7 +99,7 @@ int SettingsBackend::vout() const
     return ui->comboVout->currentIndex() - 1;
 }
 
-void SettingsBackend::setVout(const int &id)
+void SettingsBackend::setVout(int id)
 {
     ui->comboVout->setCurrentIndex(id + 1);
 }
@@ -108,7 +109,7 @@ int SettingsBackend::aout() const
     return ui->comboAout->currentIndex() - 1;
 }
 
-void SettingsBackend::setAout(const int &id)
+void SettingsBackend::setAout(int id)
 {
     ui->comboAout->setCurrentIndex(id + 1);
 }
@@ -119,7 +120,7 @@ bool SettingsBackend::yuvToRgb() const
     return ui->checkYTR->isChecked();
 }
 
-void SettingsBackend::setYuvToRgb(const bool &enabled)
+void SettingsBackend::setYuvToRgb(bool enabled)
 {
     ui->checkYTR->setChecked(enabled);
 }
@@ -130,7 +131,7 @@ bool SettingsBackend::spdif() const
     return ui->checkSpdif->isChecked();
 }
 
-void SettingsBackend::setSpdif(const bool &enabled)
+void SettingsBackend::setSpdif(bool enabled)
 {
     ui->checkSpdif->setChecked(enabled);
 }
@@ -140,7 +141,7 @@ int SettingsBackend::interface() const
     return ui->comboNetwork->itemData(ui->comboNetwork->currentIndex()).toInt();
 }
 
-void SettingsBackend::setInterface(const int &index)
+void SettingsBackend::setInterface(int index)
 {
     ui->comboNetwork->setCurrentIndex(ui->comboNetwork->findData(index));
 }
@@ -150,7 +151,7 @@ bool SettingsBackend::rememberChannelSettings() const
     return ui->checkVideoSettings->isChecked();
 }
 
-void SettingsBackend::setRememberChannelSettings(const bool &remember)
+void SettingsBackend::setRememberChannelSettings(bool remember)
 {
     ui->checkVideoSettings->setChecked(remember);
 }
@@ -160,7 +161,7 @@ bool SettingsBackend::rememberPerChannel() const
     return ui->radioChannel->isChecked();
 }
 
-void SettingsBackend::setRememberPerChannel(const bool &remember)
+void SettingsBackend::setRememberPerChannel(bool remember)
 {
     ui->radioChannel->setChecked(remember);
 }
@@ -170,7 +171,7 @@ int SettingsBackend::aspectRatio() const
     return ui->comboAspectRatio->currentIndex();
 }
 
-void SettingsBackend::setAspectRatio(const int &id)
+void SettingsBackend::setAspectRatio(int id)
 {
     ui->comboAspectRatio->setCurrentIndex(id);
 }
@@ -180,7 +181,7 @@ int SettingsBackend::cropRatio() const
     return ui->comboCropRatio->currentIndex();
 }
 
-void SettingsBackend::setCropRatio(const int &id)
+void SettingsBackend::setCropRatio(int id)
 {
     ui->comboCropRatio->setCurrentIndex(id);
 }
@@ -190,7 +191,7 @@ int SettingsBackend::deinterlacing() const
     return ui->comboDeinterlacing->currentIndex();
 }
 
-void SettingsBackend::setDeinterlacing(const int &id)
+void SettingsBackend::setDeinterlacing(int id)
 {
     ui->comboDeinterlacing->setCurrentIndex(id);
 }
@@ -236,7 +237,7 @@ bool SettingsBackend::mute() const
     return ui->checkMute->isChecked();
 }
 
-void SettingsBackend::setMute(const bool &enabled)
+void SettingsBackend::setMute(bool enabled)
 {
     ui->checkMute->setChecked(enabled);
 }
@@ -246,7 +247,7 @@ bool SettingsBackend::teletext() const
     return ui->checkTeletext->isChecked();
 }
 
-void SettingsBackend::setTeletext(const bool &enabled)
+void SettingsBackend::setTeletext(bool enabled)
 {
     ui->checkTeletext->setChecked(enabled);
 }

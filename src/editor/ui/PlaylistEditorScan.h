@@ -45,7 +45,7 @@ public:
     ~PlaylistEditorScan();
 
     void setMediaInstance(VlcInstance *instance);
-    void setModel(PlaylistModel *model);
+    void setPlaylistModel(PlaylistModel *model);
 
 protected:
     void changeEvent(QEvent *e);
@@ -53,10 +53,10 @@ protected:
 signals:
     void addItem(const QString &,
                  const QString &);
-    void scan(const bool &);
+    void scan(bool );
 
 private slots:
-    void refreshPlaylist(const bool &refresh);
+    void refreshPlaylist(bool refresh);
     void checkIp();
     void checkCurrentIp();
     void setState(const Vlc::State &state);

@@ -40,9 +40,9 @@ public:
     QString language() const;
     void setLanguage(const QString &language);
     bool sessionAutoplay() const;
-    void setSessionAutoplay(const bool &enabled);
+    void setSessionAutoplay(bool enabled);
     bool sessionVolume() const;
-    void setSessionVolume(const bool &enabled);
+    void setSessionVolume(bool enabled);
 
 protected:
     void changeEvent(QEvent *e);

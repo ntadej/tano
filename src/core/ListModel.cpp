@@ -65,7 +65,7 @@ void ListModel::appendRows(const QList<ListItem *> &items)
     endInsertRows();
 }
 
-void ListModel::insertRow(const int &row, ListItem *item)
+void ListModel::insertRow(int row, ListItem *item)
 {
     beginInsertRows(QModelIndex(), row, row);
     connect(item, SIGNAL(dataChanged()), SLOT(handleItemChange()));
@@ -103,7 +103,7 @@ void ListModel::clear()
     removeRows(0, rowCount());
 }
 
-bool ListModel::moveRow(const int &oldRow, const int &newRow, const QModelIndex &parent)
+bool ListModel::moveRow(int oldRow, int newRow, const QModelIndex &parent)
 {
     Q_UNUSED(parent);
     if(oldRow < 0 || oldRow >= _list.size() || newRow < 0 || newRow >= _list.size()) return false;
@@ -113,7 +113,7 @@ bool ListModel::moveRow(const int &oldRow, const int &newRow, const QModelIndex 
     return true;
 }
 
-bool ListModel::removeRow(const int &row, const QModelIndex &parent)
+bool ListModel::removeRow(int row, const QModelIndex &parent)
 {
     Q_UNUSED(parent);
     if(row < 0 || row >= _list.size()) return false;
@@ -123,7 +123,7 @@ bool ListModel::removeRow(const int &row, const QModelIndex &parent)
     return true;
 }
 
-bool ListModel::removeRows(const int &row, const int &count, const QModelIndex &parent)
+bool ListModel::removeRows(int row, int count, const QModelIndex &parent)
 {
     Q_UNUSED(parent);
     if(row < 0 || (row+count) > _list.size()) return false;
@@ -135,13 +135,13 @@ bool ListModel::removeRows(const int &row, const int &count, const QModelIndex &
     return true;
 }
 
-ListItem *ListModel::row(const int &row)
+ListItem *ListModel::row(int row)
 {
     ListItem* item = _list[row];
     return item;
 }
 
-ListItem *ListModel::takeRow(const int &row)
+ListItem *ListModel::takeRow(int row)
 {
     beginRemoveRows(QModelIndex(), row, row);
     ListItem* item = _list.takeAt(row);

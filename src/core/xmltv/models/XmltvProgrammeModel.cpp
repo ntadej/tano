@@ -58,8 +58,8 @@ QVariant XmltvProgrammeModel::data(const QModelIndex &index,
     return QVariant();
 }
 
-QVariant XmltvProgrammeModel::value(const int &row,
-                                    const int &type) const
+QVariant XmltvProgrammeModel::value(int row,
+                                    int type) const
 {
     return QSqlQueryModel::data(QSqlQueryModel::index(row, type), Qt::DisplayRole);
 }

@@ -69,7 +69,7 @@ bool XmltvGenerator::writeChannels()
     return true;
 }
 
-bool XmltvGenerator::writeProgramme(const int &id)
+bool XmltvGenerator::writeProgramme(int id)
 {
     QList<XmltvProgramme *> list = _xmltv->programmes(_xmltv->channels().values()[id]);
     for (int i = 0; i < list.size(); ++i) {
@@ -98,7 +98,7 @@ bool XmltvGenerator::closeFile()
     return true;
 }
 
-QString XmltvGenerator::indent(const int &indentLevel)
+QString XmltvGenerator::indent(int indentLevel)
 {
     const int IndentSize = 4;
     return QString(IndentSize * indentLevel, ' ');

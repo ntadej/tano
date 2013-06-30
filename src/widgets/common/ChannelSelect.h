@@ -35,7 +35,7 @@ public:
 
 public slots:
     inline void back() { channel(false); }
-    void channel(const bool &direction);
+    void channel(bool direction);
     inline void next() { channel(true); }
 
 private slots:
@@ -46,7 +46,7 @@ signals:
     void channelSelect(const int);
 
 private:
-    void process(const int &key);
+    void process(int key);
 
     QList<int> _channels;
     QList<QShortcut *> _key;

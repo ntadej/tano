@@ -69,7 +69,7 @@ void PlaylistEditorScan::changeEvent(QEvent *e)
     }
 }
 
-void PlaylistEditorScan::refreshPlaylist(const bool &refresh)
+void PlaylistEditorScan::refreshPlaylist(bool refresh)
 {
     emit scan(refresh);
 
@@ -158,7 +158,7 @@ void PlaylistEditorScan::setMediaInstance(VlcInstance *instance)
     _player = new VlcMediaPlayer(_instance);
 }
 
-void PlaylistEditorScan::setModel(PlaylistModel *model)
+void PlaylistEditorScan::setPlaylistModel(PlaylistModel *model)
 {
     _model = model;
 }

@@ -53,7 +53,7 @@ public:
         \param role selected data role name (int)
         \return data for specific role (QVariant)
     */
-    virtual QVariant data(const int &role) const = 0;
+    virtual QVariant data(int role) const = 0;
 
     /*!
         \brief Convenience function for Qt::DisplayRole

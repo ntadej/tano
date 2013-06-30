@@ -43,7 +43,7 @@ public:
     ~XmltvChannel();
 
     inline QString id() const { return _id; }
-    QVariant data(const int &role) const;
+    QVariant data(int role) const;
     QString display() const;
     QIcon decoration() const;
     QHash<int, QByteArray> roleNames() const;

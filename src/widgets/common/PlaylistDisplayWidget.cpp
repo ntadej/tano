@@ -39,7 +39,7 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
     _filterModel = new PlaylistFilterModel(this);
     _filterModel->setDynamicSortFilter(true);
 
-    QListView::setModel(_filterModel);
+    setModel(_filterModel);
     setContextMenuPolicy(Qt::CustomContextMenu);
 
     _rightMenu = new QMenu(this);
@@ -72,7 +72,7 @@ void PlaylistDisplayWidget::channelSelected(const QModelIndex &index)
     updateSelection(_current);
 }
 
-void PlaylistDisplayWidget::channelSelected(const int &channel)
+void PlaylistDisplayWidget::channelSelected(int channel)
 {
     if (!channel) {
         _current = 0;
@@ -125,7 +125,7 @@ void PlaylistDisplayWidget::schedule()
     emit scheduleRequested(_model->row(_filterModel->mapToSource(indexAt(_currentPos)).row()));
 }
 
-void PlaylistDisplayWidget::setModel(PlaylistModel *model)
+void PlaylistDisplayWidget::setPlaylistModel(PlaylistModel *model)
 {
     _model = model;
     _filterModel->setSourceModel(model);

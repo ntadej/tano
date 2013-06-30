@@ -54,7 +54,7 @@ ChannelSelect::~ChannelSelect()
     qDeleteAll(_key);
 }
 
-void ChannelSelect::process(const int &key)
+void ChannelSelect::process(int key)
 {
     if(_digit == 1) {
         _old = _lcd->intValue();
@@ -93,7 +93,7 @@ void ChannelSelect::display()
     _timer->stop();
 }
 
-void ChannelSelect::channel(const bool &direction)
+void ChannelSelect::channel(bool direction)
 {
     int i = 0;
 
