@@ -84,6 +84,12 @@ QString Tano::Resources::settingsPath()
                           Tano::name(),
                           Tano::name()));
     QString path = settings->fileName().replace(Tano::name() + ".ini", "");
+    QDir dir = QDir(path);
+
+    if (!dir.exists()) {
+        dir.mkpath(path);
+        qDebug() << "Creating settings path:" << path;
+    }
 
     return path;
 }
