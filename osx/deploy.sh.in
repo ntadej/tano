@@ -1,0 +1,1 @@
+@QT_BIN_DIR@/macdeployqt Tano.app/ -dmg

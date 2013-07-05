@@ -501,10 +501,10 @@ void MainWindow::createMenus()
 
     _trayIcon = new TrayIcon(_rightMenu);
 
-    ui->menuAudio->addMenu(_mediaPlayer->menus()[0]);
+    //ui->menuAudio->addMenu(_mediaPlayer->menus()[0]);
     foreach(MenuCore *menu, _mediaPlayer->menus())
         ui->menuVideo->addMenu(menu);
-    ui->menuVideo->removeAction(_mediaPlayer->menus()[0]->menuAction());
+    //ui->menuVideo->removeAction(_mediaPlayer->menus()[0]->menuAction());
 
 #if BRANDING
     Tano::Branding::processMenus(this, ui, _rightMenu);
