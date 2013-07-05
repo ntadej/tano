@@ -40,6 +40,17 @@ SET(Tano_SingleApplication_Srcs
     ../../lib/qtsingleapplication/src/qtsinglecoreapplication.cpp
 )
 
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    FIND_PROGRAM(ICONUTIL_EXECUTABLE NAMES iconutil)
+    ADD_CUSTOM_COMMAND(
+        OUTPUT ${CMAKE_BINARY_DIR}/osx/Tano.icns
+        COMMAND ${ICONUTIL_EXECUTABLE} --convert icns --output ${CMAKE_BINARY_DIR}/osx/Tano.icns
+        ${CMAKE_SOURCE_DIR}/osx/Tano.iconset
+    )
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/osx/Tano.icns)
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+
+
 #####################
 # Compiler settings #
 #####################
@@ -86,6 +97,10 @@ IF(MSVC)
     SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_MINSIZEREL ".")
     SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_PROFILE ".")
 ENDIF(MSVC)
+
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+   SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST "${CMAKE_BINARY_DIR}/osx/Info.plist")
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 # Here the needed Libraries are added to the link command.
 IF(STATIC)

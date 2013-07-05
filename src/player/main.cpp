@@ -58,6 +58,10 @@ int main(int argc, char *argv[])
         Tano::Resources::setIconPaths();
         Tano::Resources::setIconName();
 
+#ifdef Q_OS_MAC
+        instance.setAttribute(Qt::AA_DontShowIconsInMenus);
+#endif
+
         // TODO: Move somewhere clean
         QString baseName = QApplication::style()->objectName();
 #ifdef Q_OS_LINUX

@@ -22,6 +22,10 @@
 #include <QDebug>
 #include <QUrl>
 
+#ifdef Q_OS_MAC
+    #include <qmacfunctions.h>
+#endif
+
 #if defined(Qt5)
     #include <QtWidgets/QDesktopWidget>
     #include <QtWidgets/QLCDNumber>
@@ -208,7 +212,7 @@ bool MainWindow::eventFilter(QObject *obj,
             showOsd(mouseEvent->globalPos());
         }
 
-        if (obj == _mediaPlayer->video()) {
+        if (obj == _mediaPlayer->video() && ui->actionFullscreen->isChecked()) {
             _mouseTimer->start(1000);
         }
     } else if (obj == _mediaPlayer->video() && event->type() == QEvent::MouseButtonDblClick) {
@@ -479,18 +483,27 @@ void MainWindow::createMenus()
     _rightMenu->addAction(ui->actionLite);
     _rightMenu->addAction(ui->actionFullscreen);
     _rightMenu->addSeparator();
-    _rightMenu->addMenu(ui->menuAudio);
-    _rightMenu->addMenu(ui->menuVideo);
-    _rightMenu->addSeparator();
     _rightMenu->addAction(ui->actionTray);
     _rightMenu->addAction(ui->actionExit);
 
-    _trayIcon = new TrayIcon(_rightMenu);
+#ifdef Q_OS_MAC
+    QtMacExtras::setDockMenu(_rightMenu);
 
-    //ui->menuAudio->addMenu(_mediaPlayer->menus()[0]);
-    foreach(MenuCore *menu, _mediaPlayer->menus())
-        ui->menuVideo->addMenu(menu);
-    //ui->menuVideo->removeAction(_mediaPlayer->menus()[0]->menuAction());
+    ui->actionAbout->setMenuRole(QAction::ApplicationSpecificRole);
+    ui->actionAboutQt->setMenuRole(QAction::ApplicationSpecificRole);
+    ui->actionSettings->setMenuRole(QAction::PreferencesRole);
+
+    _macMenu = new QMenu();
+    _trayIcon = new TrayIcon(_macMenu);
+#else
+    _trayIcon = new TrayIcon(_rightMenu);
+#endif
+
+    ui->menuAudio->addMenu(_mediaPlayer->menus()[0]);
+    foreach(MenuCore *menu, _mediaPlayer->menus()) {
+        if (menu != _mediaPlayer->menus()[0])
+            ui->menuVideo->addMenu(menu);
+    }
 
 #if BRANDING
     Tano::Branding::processMenus(this, ui, _rightMenu);

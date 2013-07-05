@@ -179,6 +179,9 @@ private:
     //Menus and actions
     TrayIcon *_trayIcon;
     QMenu *_rightMenu;
+#ifdef Q_OS_MAC
+    QMenu *_macMenu;
+#endif
     QList<QAction*> _actions;
     QList<QAction*> _actionsFull;
 };

@@ -48,7 +48,7 @@ Settings::~Settings() { }
 
 void Settings::writeSettings()
 {
-    setValue("general/language", language());
+    setValue("session/language", language());
 
     setValue("session/autoplay", sessionAutoplay());
     setValue("session/channel", sessionChannel());
@@ -127,7 +127,7 @@ void Settings::writeSettings()
 
 void Settings::readSettings()
 {
-    setLanguage(value("general/language", DEFAULT_LANGUAGE).toString());
+    setLanguage(value("session/language", DEFAULT_LANGUAGE).toString());
 
     setPlaylist(value("channels/playlist", DEFAULT_PLAYLIST).toString());
     setPlaylistUpdate(value("channels/update", DEFAULT_PLAYLIST_UPDATE).toBool());
