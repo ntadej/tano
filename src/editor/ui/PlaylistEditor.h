@@ -95,7 +95,6 @@ private slots:
 
 private:
     void createConnections();
-    void createSettings();
 
     void mapXmltv();
 

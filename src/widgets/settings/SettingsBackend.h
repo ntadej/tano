@@ -47,8 +47,6 @@ public:
 #endif
     bool spdif() const;
     void setSpdif(bool enabled);
-    int interface() const;
-    void setInterface(int index);
 
     bool rememberChannelSettings() const;
     void setRememberChannelSettings(bool remember);

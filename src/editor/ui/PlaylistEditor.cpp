@@ -31,7 +31,6 @@
 #include "core/playlist/containers/Channel.h"
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/handlers/CSVHandler.h"
-#include "core/settings/Settings.h"
 
 #include "widgets/common/FileDialogs.h"
 #include "widgets/dialogs/AboutDialog.h"
@@ -58,7 +57,6 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
     _model = new PlaylistModel(this);
     ui->playlist->setPlaylistModel(_model);
 
-	createSettings();
 	createConnections();
 
     ui->scan->setPlaylistModel(_model);
@@ -96,12 +94,6 @@ void PlaylistEditor::closeEvent(QCloseEvent *event)
 {
     event->ignore();
     exit();
-}
-
-void PlaylistEditor::createSettings()
-{
-    QScopedPointer<Settings> settings(new Settings(this));
-    ui->toolBar->setToolButtonStyle(Qt::ToolButtonStyle(settings->toolbarLook()));
 }
 
 void PlaylistEditor::createConnections()

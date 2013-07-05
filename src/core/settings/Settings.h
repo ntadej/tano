@@ -63,21 +63,10 @@ public:
     inline void setUdpxyPort(int i) { _udpxyPort = i; }
     static const int DEFAULT_UDPXY_PORT;
 
-    // GUI - start
-    inline bool startLite() const { return _startLite; }
-    inline void setStartLite(bool b) { _startLite = b; }
-    static const bool DEFAULT_START_LITE;
-    inline bool startOnTop() const { return _startOnTop; }
-    inline void setStartOnTop(bool b) { _startOnTop = b; }
-    static const bool DEFAULT_START_ON_TOP;
-
     // GUI
     inline bool osd() const { return _osd; }
     inline void setOsd(bool b) { _osd = b; }
     static const bool DEFAULT_OSD;
-    inline bool info() const { return _info; }
-    inline void setInfo(bool b) { _info = b; }
-    static const bool DEFAULT_INFO;
     inline bool trayEnabled() const { return _trayEnabled; }
     inline void setTrayEnabled(bool b) { _trayEnabled = b; }
     static const bool DEFAULT_TRAY_ENABLED;
@@ -87,15 +76,9 @@ public:
     inline QString mouseWheel() const { return _mouseWheel; }
     inline void setMouseWheel(const QString &s) { _mouseWheel = s; }
     static const QString DEFAULT_MOUSE_WHEEL;
-    inline int toolbarLook() const { return _toolbarLook; }
-    inline void setToolbarLook(int i) { _toolbarLook = i; }
-    static const int DEFAULT_TOOLBAR_LOOK;
     inline bool rememberGuiSession() const { return _rememberGuiSession; }
     inline void setRememberGuiSession(bool b) { _rememberGuiSession = b; }
     static const bool DEFAULT_REMEMBER_GUI_SESSION;
-    inline bool filtersVisible() const { return _filtersVisible; }
-    inline void setFiltersVisible(bool b) { _filtersVisible = b; }
-    static const bool DEFAULT_FILTERS_VISIBLE;
     inline QString icons() const { return _icons; }
     inline void setIcons(const QString &s) { _icons = s; }
     static const QString DEFAULT_ICONS;
@@ -113,12 +96,6 @@ public:
     inline int posY() const { return _posY; }
     inline void setPosY(int i) { _posY = i; }
     static const int DEFAULT_POS_Y;
-    inline bool startControls() const { return _startControls; }
-    inline void setStartControls(bool b) { _startControls = b; }
-    static const bool DEFAULT_START_CONTROLS;
-    inline bool startInfo() const { return _startInfo; }
-    inline void setStartInfo(bool b) { _startInfo = b; }
-    static const bool DEFAULT_START_INFO;
 
     // Backend - core
     inline int vout() const { return _vout; }
@@ -135,9 +112,6 @@ public:
     inline bool spdif() const { return _spdif; }
     inline void setSpdif(bool b) { _spdif = b; }
     static const bool DEFAULT_SPDIF;
-    inline int interfaceIndex() const { return _interfaceIndex; }
-    inline void setInterfaceIndex(int i) { _interfaceIndex = i; }
-    static const int DEFAULT_INTERFACE_INDEX;
 
     // Backend - video settings
     inline bool rememberVideoSettings() const { return _rememberVideoSettings; }
@@ -217,20 +191,12 @@ private:
     QString _udpxyUrl;
     int _udpxyPort;
 
-    // GUI - start
-    bool _splash;
-    bool _startLite;
-    bool _startOnTop;
-
     // GUI
     bool _osd;
-    bool _info;
     bool _trayEnabled;
     bool _hideToTray;
     QString _mouseWheel;
-    int _toolbarLook;
     bool _rememberGuiSession;
-    bool _filtersVisible;
     QString _icons;
 
     // GUI - session
@@ -238,8 +204,6 @@ private:
     int _height;
     int _posX;
     int _posY;
-    bool _startControls;
-    bool _startInfo;
 
     // Backend - core
     int _vout;
@@ -248,7 +212,6 @@ private:
     bool _yuvToRgb;
 #endif
     bool _spdif;
-    int _interfaceIndex;
 
     // Backend - video settings
     bool _rememberVideoSettings;

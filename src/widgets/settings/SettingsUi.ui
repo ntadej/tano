@@ -40,9 +40,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-325</y>
-        <width>451</width>
-        <height>674</height>
+        <y>0</y>
+        <width>439</width>
+        <height>374</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -52,6 +52,63 @@
           <string>General Interface Settings</string>
          </property>
          <layout class="QGridLayout" name="layoutMainGuiBox">
+          <item row="5" column="1" colspan="2">
+           <widget class="QCheckBox" name="checkTray">
+            <property name="text">
+             <string>Show tray icon</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1" colspan="2">
+           <widget class="QCheckBox" name="checkOsd">
+            <property name="text">
+             <string>Show on mouse move</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0" colspan="3">
+           <widget class="QLabel" name="labelMouseWheel">
+            <property name="text">
+             <string>Mouse wheel:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1" colspan="2">
+           <widget class="QCheckBox" name="checkTrayHide">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Minimise to tray</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="1" colspan="2">
+           <widget class="QRadioButton" name="radioWheelChannel">
+            <property name="text">
+             <string>Change channel</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="1" colspan="2">
+           <widget class="QRadioButton" name="radioWheelVolume">
+            <property name="text">
+             <string>Change volume</string>
+            </property>
+           </widget>
+          </item>
           <item row="5" column="0">
            <widget class="QLabel" name="spacer">
             <property name="minimumSize">
@@ -71,60 +128,6 @@
             </property>
            </widget>
           </item>
-          <item row="8" column="1" colspan="2">
-           <widget class="QCheckBox" name="checkOsd">
-            <property name="text">
-             <string>Show on mouse move</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="0" colspan="3">
-           <widget class="QLabel" name="labelMouseWheel">
-            <property name="text">
-             <string>Mouse wheel:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="16" column="0" colspan="3">
-           <widget class="QLabel" name="labelToolbarStyle">
-            <property name="text">
-             <string>Toolbar style:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="1" colspan="2">
-           <widget class="QCheckBox" name="checkTrayHide">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>Minimise to tray</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="1" colspan="2">
-           <widget class="QRadioButton" name="radioWheelChannel">
-            <property name="text">
-             <string>Change channel</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="15" column="1" colspan="2">
-           <widget class="QRadioButton" name="radioWheelVolume">
-            <property name="text">
-             <string>Change volume</string>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="0" colspan="3">
            <widget class="QLabel" name="labelTray">
             <property name="text">
@@ -132,59 +135,10 @@
             </property>
            </widget>
           </item>
-          <item row="9" column="0" colspan="3">
-           <widget class="QLabel" name="labelInfo">
-            <property name="text">
-             <string>Info panel:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="17" column="1" colspan="2">
-           <widget class="QComboBox" name="comboToolbarLook">
-            <property name="currentIndex">
-             <number>4</number>
-            </property>
-            <item>
-             <property name="text">
-              <string>Icon only</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Text only</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Text beside icon</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Text under icon</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>System default</string>
-             </property>
-            </item>
-           </widget>
-          </item>
           <item row="7" column="0" colspan="3">
            <widget class="QLabel" name="labelOsdControls">
             <property name="text">
-             <string>Controls:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="1" colspan="2">
-           <widget class="QCheckBox" name="checkInfo">
-            <property name="text">
-             <string>Show on mouse move</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
+             <string>OSD in fullscreen:</string>
             </property>
            </widget>
           </item>
@@ -192,23 +146,6 @@
            <widget class="QCheckBox" name="checkRememberSize">
             <property name="text">
              <string>Remember main window size, position and open panels</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1" colspan="2">
-           <widget class="QCheckBox" name="checkTray">
-            <property name="text">
-             <string>Show tray icon</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="1" colspan="2">
-           <widget class="QCheckBox" name="checkFilter">
-            <property name="text">
-             <string>Filters always visible</string>
             </property>
            </widget>
           </item>
@@ -246,29 +183,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="startupGuiBox">
-         <property name="title">
-          <string>Default options for startup</string>
-         </property>
-         <layout class="QVBoxLayout" name="layoutStartupGuiBox">
-          <item>
-           <widget class="QCheckBox" name="checkLite">
-            <property name="text">
-             <string>Simple mode</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkTop">
-            <property name="text">
-             <string>Always on top</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -293,14 +207,9 @@
   <tabstop>checkTray</tabstop>
   <tabstop>checkTrayHide</tabstop>
   <tabstop>checkOsd</tabstop>
-  <tabstop>checkInfo</tabstop>
-  <tabstop>checkFilter</tabstop>
   <tabstop>radioWheelChannel</tabstop>
   <tabstop>radioWheelVolume</tabstop>
-  <tabstop>comboToolbarLook</tabstop>
   <tabstop>comboIcons</tabstop>
-  <tabstop>checkLite</tabstop>
-  <tabstop>checkTop</tabstop>
  </tabstops>
  <resources/>
  <connections>

@@ -58,16 +58,6 @@ void SettingsUi::setOsd(bool enabled)
     ui->checkOsd->setChecked(enabled);
 }
 
-bool SettingsUi::info() const
-{
-    return ui->checkInfo->isChecked();
-}
-
-void SettingsUi::setInfo(bool enabled)
-{
-    ui->checkInfo->setChecked(enabled);
-}
-
 bool SettingsUi::tray() const
 {
     return ui->checkTray->isChecked();
@@ -107,16 +97,6 @@ void SettingsUi::setWheel(const QString &wheel)
         ui->radioWheelVolume->setChecked(true);
 }
 
-int SettingsUi::toolbar() const
-{
-    return ui->comboToolbarLook->currentIndex();
-}
-
-void SettingsUi::setToolbar(int id)
-{
-    ui->comboToolbarLook->setCurrentIndex(id);
-}
-
 bool SettingsUi::rememberSize() const
 {
     return ui->checkRememberSize->isChecked();
@@ -125,16 +105,6 @@ bool SettingsUi::rememberSize() const
 void SettingsUi::setRememberSize(bool enabled)
 {
     ui->checkRememberSize->setChecked(enabled);
-}
-
-bool SettingsUi::filter() const
-{
-    return ui->checkFilter->isChecked();
-}
-
-void SettingsUi::setFilter(bool enabled)
-{
-    ui->checkFilter->setChecked(enabled);
 }
 
 QString SettingsUi::icons() const
@@ -159,24 +129,4 @@ void SettingsUi::setIcons(const QString &icons)
 #endif
     else
         ui->comboIcons->setCurrentIndex(0);
-}
-
-bool SettingsUi::lite() const
-{
-    return ui->checkLite->isChecked();
-}
-
-void SettingsUi::setLite(bool enabled)
-{
-    ui->checkLite->setChecked(enabled);
-}
-
-bool SettingsUi::top() const
-{
-    return ui->checkTop->isChecked();
-}
-
-void SettingsUi::setTop(bool enabled)
-{
-    ui->checkTop->setChecked(enabled);
 }

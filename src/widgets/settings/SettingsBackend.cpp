@@ -16,8 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtNetwork/QNetworkInterface>
-
 #include "core/platform/Features.h"
 
 #include "common/Backend.h"
@@ -47,24 +45,6 @@ SettingsBackend::SettingsBackend(QWidget *parent)
     for (int i = 1; i < Vlc::ratioHuman().size(); i++) {
         ui->comboAspectRatio->addItem(Vlc::ratioHuman()[i]);
         ui->comboCropRatio->addItem(Vlc::ratioHuman()[i]);
-    }
-
-    ui->comboNetwork->addItem(tr("Automatic"), -1);
-    QList<QNetworkInterface> list = QNetworkInterface::allInterfaces();
-    for (int i = 0; i < list.size(); i++) {
-        if (!list[i].flags().testFlag(QNetworkInterface::IsLoopBack)
-            && !list[i].flags().testFlag(QNetworkInterface::IsPointToPoint)
-#if defined(Q_OS_WIN32) // Force remove some interfaces
-            && !list[i].humanReadableName().contains("*", Qt::CaseInsensitive)
-            && !list[i].humanReadableName().contains("0000", Qt::CaseInsensitive)
-            && !list[i].humanReadableName().contains("isatap", Qt::CaseInsensitive)
-            && !list[i].humanReadableName().contains("6to4", Qt::CaseInsensitive)
-            && !list[i].humanReadableName().contains("tunnel", Qt::CaseInsensitive)
-            && !list[i].humanReadableName().contains("tunel", Qt::CaseInsensitive)
-#endif
-            )
-            ui->comboNetwork->addItem(list[i].humanReadableName(),
-                                      list[i].index());
     }
 
 #if !defined(Q_OS_WIN32)
@@ -134,16 +114,6 @@ bool SettingsBackend::spdif() const
 void SettingsBackend::setSpdif(bool enabled)
 {
     ui->checkSpdif->setChecked(enabled);
-}
-
-int SettingsBackend::interface() const
-{
-    return ui->comboNetwork->itemData(ui->comboNetwork->currentIndex()).toInt();
-}
-
-void SettingsBackend::setInterface(int index)
-{
-    ui->comboNetwork->setCurrentIndex(ui->comboNetwork->findData(index));
 }
 
 bool SettingsBackend::rememberChannelSettings() const

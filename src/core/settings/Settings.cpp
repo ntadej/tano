@@ -69,23 +69,16 @@ void Settings::writeSettings()
     }
 
     if (!_disableInterface) {
-        setValue("start/lite", startLite());
-        setValue("start/ontop", startOnTop());
-        setValue("start/controls", startControls());
-        setValue("start/info", startInfo());
         setValue("start/width", width());
         setValue("start/height", height());
         setValue("start/posx", posX());
         setValue("start/posy", posY());
 
         setValue("gui/osd", osd());
-        setValue("gui/info", info());
         setValue("gui/trayicon", trayEnabled());
         setValue("gui/hidetotray", hideToTray());
         setValue("gui/mousewheel", mouseWheel());
-        setValue("gui/toolbarlook", toolbarLook());
         setValue("gui/session", rememberGuiSession());
-        setValue("gui/filters", filtersVisible());
         setValue("gui/icons", icons());
     } else {
         remove("start");
@@ -99,7 +92,6 @@ void Settings::writeSettings()
         setValue("backend/yuvToRgb", yuvToRgb());
 #endif
         setValue("backend/spdif", spdif());
-        setValue("backend/interfaceIndex", interfaceIndex());
 
         setValue("backend/videosettings", rememberVideoSettings());
         setValue("backend/perchannel", rememberVideoPerChannel());
@@ -146,23 +138,16 @@ void Settings::readSettings()
     setUdpxyUrl(value("channels/udpxyurl", DEFAULT_UDPXY_URL).toString());
     setUdpxyPort(value("channels/udpxyport", DEFAULT_UDPXY_PORT).toInt());
 
-    setStartLite(value("start/lite", DEFAULT_START_LITE).toBool());
-    setStartOnTop(value("start/ontop", DEFAULT_START_ON_TOP).toBool());
-    setStartControls(value("start/controls", DEFAULT_START_CONTROLS).toBool());
-    setStartInfo(value("start/info", DEFAULT_START_INFO).toBool());
     setWidth(value("start/width", DEFAULT_WIDTH).toInt());
     setHeight(value("start/height", DEFAULT_HEIGHT).toInt());
     setPosX(value("start/posx", DEFAULT_POS_X).toInt());
     setPosY(value("start/posy", DEFAULT_POS_Y).toInt());
 
     setOsd(value("gui/osd", DEFAULT_OSD).toBool());
-    setInfo(value("gui/info", DEFAULT_INFO).toBool());
     setTrayEnabled(value("gui/trayicon", DEFAULT_TRAY_ENABLED).toBool());
     setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
     setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
-    setToolbarLook(value("gui/toolbarlook", DEFAULT_TOOLBAR_LOOK).toInt());
     setRememberGuiSession(value("gui/session", DEFAULT_REMEMBER_GUI_SESSION).toBool());
-    setFiltersVisible(value("gui/filters", DEFAULT_FILTERS_VISIBLE).toBool());
     setIcons(value("gui/icons", DEFAULT_ICONS).toString());
 
     setVout(value("backend/vout", DEFAULT_VOUT).toInt());
@@ -171,7 +156,6 @@ void Settings::readSettings()
     setYuvToRgb(value("backend/muteOnMinimize", DEFAULT_MUTE_ON_MINIMIZE).toBool());
 #endif
     setSpdif(value("backend/spdif", DEFAULT_SPDIF).toBool());
-    setInterfaceIndex(value("backend/interfaceIndex", DEFAULT_INTERFACE_INDEX).toInt());
 
     setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
     setRememberVideoPerChannel(value("backend/perchannel", DEFAULT_REMEMBER_VIDEO_PER_CHANNEL).toBool());

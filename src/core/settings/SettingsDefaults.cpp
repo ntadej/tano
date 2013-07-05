@@ -39,10 +39,6 @@ const QString Settings::DEFAULT_UDPXY_URL = "";
 const int Settings::DEFAULT_UDPXY_PORT = 1234;
 
 // GUI - start
-const bool Settings::DEFAULT_START_LITE = false;
-const bool Settings::DEFAULT_START_ON_TOP = false;
-const bool Settings::DEFAULT_START_CONTROLS = true;
-const bool Settings::DEFAULT_START_INFO = true;
 const int Settings::DEFAULT_WIDTH = 650;
 const int Settings::DEFAULT_HEIGHT = 300;
 const int Settings::DEFAULT_POS_X = 0;
@@ -50,13 +46,10 @@ const int Settings::DEFAULT_POS_Y = 0;
 
 // GUI
 const bool Settings::DEFAULT_OSD = true;
-const bool Settings::DEFAULT_INFO = true;
 const bool Settings::DEFAULT_TRAY_ENABLED = true;
 const bool Settings::DEFAULT_HIDE_TO_TRAY = true;
 const QString Settings::DEFAULT_MOUSE_WHEEL = "volume";
-const int Settings::DEFAULT_TOOLBAR_LOOK = Qt::ToolButtonIconOnly;
 const bool Settings::DEFAULT_REMEMBER_GUI_SESSION = true;
-const bool Settings::DEFAULT_FILTERS_VISIBLE = false;
 #if defined(Q_OS_WIN32)
 const QString Settings::DEFAULT_ICONS = "tano-default";
 #elif defined(Q_OS_MAC)
@@ -74,7 +67,6 @@ const int Settings::DEFAULT_AOUT = -1;
 const bool Settings::DEFAULT_YUV_TO_RGB = true;
 #endif
 const bool Settings::DEFAULT_SPDIF = false;
-const int Settings::DEFAULT_INTERFACE_INDEX = -1;
 
 // Backend - video settings
 const bool Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS = false;

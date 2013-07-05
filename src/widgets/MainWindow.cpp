@@ -344,18 +344,6 @@ void MainWindow::createDesktopStartup()
     _posX = settings->posX();
     _posY = settings->posY();
 
-    // GUI
-    if (settings->startLite()) {
-        ui->actionLite->setChecked(true);
-        lite();
-    } else
-        _isLite = false;
-
-    if (settings->startOnTop()) {
-        ui->actionTop->setChecked(true);;
-        top();
-    }
-
 #if FEATURE_UPDATE
     _update->checkSilent();
 #endif

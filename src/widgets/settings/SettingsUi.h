@@ -39,28 +39,16 @@ public:
 
     bool osd() const;
     void setOsd(bool enabled);
-    bool info() const;
-    void setInfo(bool enabled);
     bool tray() const;
     void setTray(bool enabled);
     bool trayHide() const;
     void setTrayHide(bool enabled);
     QString wheel() const;
     void setWheel(const QString &wheel);
-    int toolbar() const;
-    void setToolbar(int id);
     bool rememberSize() const;
     void setRememberSize(bool enabled);
-    bool filter() const;
-    void setFilter(bool enabled);
-
     QString icons() const;
     void setIcons(const QString &icons);
-
-    bool lite() const;
-    void setLite(bool enabled);
-    bool top() const;
-    void setTop(bool enabled);
 
 protected:
     void changeEvent(QEvent *e);

@@ -16,7 +16,16 @@
    </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -31,9 +40,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-287</y>
-        <width>493</width>
-        <height>803</height>
+        <y>-243</y>
+        <width>495</width>
+        <height>759</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -137,44 +146,6 @@
              <string>Enable S/PDIF output</string>
             </property>
            </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox">
-         <property name="title">
-          <string>Network</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_3">
-          <item row="0" column="0" colspan="2">
-           <widget class="QLabel" name="labelNetwork">
-            <property name="text">
-             <string>Select network interface:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="spacer_2">
-            <property name="minimumSize">
-             <size>
-              <width>50</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>50</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QComboBox" name="comboNetwork"/>
           </item>
          </layout>
         </widget>
@@ -468,7 +439,6 @@
   <tabstop>comboAout</tabstop>
   <tabstop>checkYTR</tabstop>
   <tabstop>checkSpdif</tabstop>
-  <tabstop>comboNetwork</tabstop>
   <tabstop>checkVideoSettings</tabstop>
   <tabstop>radioAll</tabstop>
   <tabstop>radioChannel</tabstop>

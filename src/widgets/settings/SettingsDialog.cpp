@@ -118,15 +118,10 @@ void SettingsDialog::apply()
     // GUI
     if (ui->buttonInterface->isEnabled()) {
         _settings->setOsd(ui->gui->osd());
-        _settings->setInfo(ui->gui->info());
         _settings->setTrayEnabled(ui->gui->tray());
         _settings->setHideToTray(ui->gui->trayHide());
         _settings->setMouseWheel(ui->gui->wheel());
-        _settings->setToolbarLook(ui->gui->toolbar());
         _settings->setRememberGuiSession(ui->gui->rememberSize());
-        _settings->setFiltersVisible(ui->gui->filter());
-        _settings->setStartLite(ui->gui->lite());
-        _settings->setStartOnTop(ui->gui->top());
         _settings->setIcons(ui->gui->icons());
     }
 
@@ -138,7 +133,6 @@ void SettingsDialog::apply()
         _settings->setYuvToRgb(ui->backend->yuvToRgb());
 #endif
         _settings->setSpdif(ui->backend->spdif());
-        _settings->setInterfaceIndex(ui->backend->interface());
 
         _settings->setRememberVideoSettings(ui->backend->rememberChannelSettings());
         _settings->setRememberVideoPerChannel(ui->backend->rememberPerChannel());
@@ -187,15 +181,10 @@ void SettingsDialog::defaults()
 
     // GUI
     ui->gui->setOsd(Settings::DEFAULT_OSD);
-    ui->gui->setInfo(Settings::DEFAULT_INFO);
     ui->gui->setTray(Settings::DEFAULT_TRAY_ENABLED);
     ui->gui->setTrayHide(Settings::DEFAULT_HIDE_TO_TRAY);
     ui->gui->setWheel(Settings::DEFAULT_MOUSE_WHEEL);
-    ui->gui->setToolbar(Settings::DEFAULT_TOOLBAR_LOOK);
     ui->gui->setRememberSize(Settings::DEFAULT_REMEMBER_GUI_SESSION);
-    ui->gui->setFilter(Settings::DEFAULT_FILTERS_VISIBLE);
-    ui->gui->setLite(Settings::DEFAULT_START_LITE);
-    ui->gui->setTop(Settings::DEFAULT_START_ON_TOP);
     ui->gui->setIcons(Settings::DEFAULT_ICONS);
 
     // Playback
@@ -205,7 +194,6 @@ void SettingsDialog::defaults()
     ui->backend->setYuvToRgb(Settings::DEFAULT_YUV_TO_RGB);
 #endif
     ui->backend->setSpdif(Settings::DEFAULT_SPDIF);
-    ui->backend->setInterface(Settings::DEFAULT_INTERFACE_INDEX);
 
     ui->backend->setRememberChannelSettings(Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS);
     ui->backend->setRememberPerChannel(Settings::DEFAULT_REMEMBER_VIDEO_PER_CHANNEL);
@@ -247,15 +235,10 @@ void SettingsDialog::read()
 
     // GUI
     ui->gui->setOsd(_settings->osd());
-    ui->gui->setInfo(_settings->info());
     ui->gui->setTray(_settings->trayEnabled());
     ui->gui->setTrayHide(_settings->hideToTray());
     ui->gui->setWheel(_settings->mouseWheel());
-    ui->gui->setToolbar(_settings->toolbarLook());
     ui->gui->setRememberSize(_settings->rememberGuiSession());
-    ui->gui->setFilter(_settings->filtersVisible());
-    ui->gui->setLite(_settings->startLite());
-    ui->gui->setTop(_settings->startOnTop());
     ui->gui->setIcons(_settings->icons());
 
     // Playback
@@ -265,7 +248,6 @@ void SettingsDialog::read()
     ui->backend->setYuvToRgb(_settings->yuvToRgb());
 #endif
     ui->backend->setSpdif(_settings->spdif());
-    ui->backend->setInterface(_settings->interfaceIndex());
 
     ui->backend->setRememberChannelSettings(_settings->rememberVideoSettings());
     ui->backend->setRememberPerChannel(_settings->rememberVideoPerChannel());
