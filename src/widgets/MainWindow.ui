@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>1043</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuRecorder">
@@ -66,7 +66,6 @@
     </property>
     <addaction name="actionUpdate"/>
     <addaction name="actionSupport"/>
-    <addaction name="actionDonate"/>
     <addaction name="actionAbout"/>
     <addaction name="actionAboutQt"/>
    </widget>
@@ -387,15 +386,6 @@
     <string>Schedule</string>
    </property>
   </action>
-  <action name="actionDonate">
-   <property name="icon">
-    <iconset resource="../../data/misc/misc.qrc">
-     <normaloff>:/misc/paypal_small.gif</normaloff>:/misc/paypal_small.gif</iconset>
-   </property>
-   <property name="text">
-    <string>Donate</string>
-   </property>
-  </action>
   <action name="actionTeletext">
    <property name="checkable">
     <bool>true</bool>
@@ -509,8 +499,8 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../data/misc/misc.qrc"/>
   <include location="../../data/logo/logo.qrc"/>
+  <include location="../../data/misc/misc.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -83,7 +83,6 @@ private slots:
     void exit();
     void exitLogout();
     void aboutTano();
-    void donate();
     void support();
     void updateAvailable();
 

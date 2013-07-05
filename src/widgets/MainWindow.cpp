@@ -67,7 +67,6 @@
 #include "common/PlaylistDisplayWidget.h"
 #include "common/TrayIcon.h"
 #include "dialogs/AboutDialog.h"
-#include "dialogs/DonationDialog.h"
 #include "dialogs/UpdateDialog.h"
 #include "main/MediaPlayer.h"
 #include "main/PlaylistTab.h"
@@ -387,7 +386,6 @@ void MainWindow::createConnections()
     connect(_scheduleTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
     connect(_showInfoTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
 
-    connect(ui->actionDonate, SIGNAL(triggered()), this, SLOT(donate()));
     connect(ui->actionSupport, SIGNAL(triggered()), this, SLOT(support()));
     connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
     connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
@@ -561,12 +559,6 @@ void MainWindow::aboutTano()
 {
     AboutDialog about(this);
     about.exec();
-}
-
-void MainWindow::donate()
-{
-    DonationDialog d(this);
-    d.exec();
 }
 
 void MainWindow::support()
