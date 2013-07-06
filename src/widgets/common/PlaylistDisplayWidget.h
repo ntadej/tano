@@ -29,6 +29,8 @@
 
 #include "core/playlist/containers/Channel.h"
 
+#include "WidgetsSharedExport.h"
+
 class QAction;
 class QMenu;
 
@@ -36,7 +38,7 @@ class Channel;
 class PlaylistFilterModel;
 class PlaylistModel;
 
-class PlaylistDisplayWidget : public QListView
+class TANO_WIDGETS_EXPORT PlaylistDisplayWidget : public QListView
 {
 Q_OBJECT
 public:

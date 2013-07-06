@@ -19,7 +19,7 @@
 IF(MINGW OR MSVC)
     IF(BRANDING)
         CONFIGURE_FILE(
-            ${CMAKE_SOURCE_DIR}/branding/windows/tano.rc.in
+            ${CMAKE_SOURCE_DIR}/branding/tano.rc.in
             ${CMAKE_BINARY_DIR}/src/player/tano.rc
         )
     ELSE(BRANDING)

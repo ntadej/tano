@@ -25,6 +25,8 @@
 
 #include <QStyle>
 
+#include "WidgetsSharedExport.h"
+
 class QPalette;
 class QPainter;
 class QRect;
@@ -38,7 +40,7 @@ void qt_blurImage(QPainter *p,
                   int transposed = 0);
 
 // Helper class holding all custom color values
-class StyleHelper
+class TANO_WIDGETS_EXPORT StyleHelper
 {
 public:
     static const unsigned int DEFAULT_BASE_COLOR = 0x666666;

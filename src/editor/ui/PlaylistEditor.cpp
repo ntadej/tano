@@ -33,7 +33,6 @@
 #include "core/playlist/handlers/CSVHandler.h"
 
 #include "widgets/common/FileDialogs.h"
-#include "widgets/dialogs/AboutDialog.h"
 
 #include "ui/PrintDialog.h"
 #include "ui/PlaylistEditorHelp.h"
@@ -146,8 +145,7 @@ void PlaylistEditor::setTitle(const QString &title)
 
 void PlaylistEditor::aboutTano()
 {
-    AboutDialog about(this);
-    about.exec();
+
 }
 
 void PlaylistEditor::help()

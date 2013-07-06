@@ -31,6 +31,7 @@ branding/windows
 branding/update.xml
 branding/tano.ico
 branding/Tano.iconset
+branding/tano.rc*
 branding/*.jpg
 
 tt*

@@ -25,9 +25,11 @@
 
 #include <QProxyStyle>
 
+#include "WidgetsSharedExport.h"
+
 class ManhattanStylePrivate;
 
-class ManhattanStyle : public QProxyStyle
+class TANO_WIDGETS_EXPORT ManhattanStyle : public QProxyStyle
 {
     Q_OBJECT
 

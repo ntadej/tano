@@ -73,13 +73,12 @@ SET(Tano_Qt5_Libs
     ${QT_BIN_DIR}/Qt5Sql.dll
     ${QT_BIN_DIR}/Qt5Widgets.dll
     ${QT_BIN_DIR}/Qt5Xml.dll
-    ${QT_BIN_DIR}/icudt49.dll
-    ${QT_BIN_DIR}/icuin49.dll
-    ${QT_BIN_DIR}/icuuc49.dll
     ${QT_BIN_DIR}/libEGL.dll
     ${QT_BIN_DIR}/libGLESv2.dll
-    ${QT_BIN_DIR}/D3DCompiler_43.dll
 )
+
+FILE(GLOB Tano_Qt5_Libs_Icu ${QT_BIN_DIR}/icu*.dll)
+FILE(GLOB Tano_Qt5_Libs_D3D ${QT_BIN_DIR}/D3DCompiler_*.dll)
 
 SET(Tano_Qt5_Libs_Qml
     ${QT_BIN_DIR}/Qt5OpenGL.dll
@@ -147,6 +146,8 @@ SET(Tano_Vlc_Libs
 ################
 IF(QT5)
     INSTALL(FILES ${Tano_Qt5_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}")
+    INSTALL(FILES ${Tano_Qt5_Libs_Icu} DESTINATION "${CMAKE_INSTALL_PREFIX}")
+    INSTALL(FILES ${Tano_Qt5_Libs_D3D} DESTINATION "${CMAKE_INSTALL_PREFIX}")
     INSTALL(FILES ${Tano_Qt5_ImageFormats} DESTINATION "${CMAKE_INSTALL_PREFIX}/imageformats")
     INSTALL(FILES ${Tano_Qt5_Platforms} DESTINATION "${CMAKE_INSTALL_PREFIX}/platforms")
     INSTALL(FILES ${Tano_Qt5_Sql} DESTINATION "${CMAKE_INSTALL_PREFIX}/sqldrivers")
