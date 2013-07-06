@@ -35,7 +35,7 @@ SET(Tano_Deploy
 )
 
 SET(Tano_Icns
-    ${CMAKE_BINARY_DIR}/osx/Tano.icns
+    ${CMAKE_BINARY_DIR}/osx/${PROJECT_NAME}.icns
 )
 
 SET(Tano_VlcQt_Libs

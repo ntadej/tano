@@ -16,11 +16,13 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+IF(BRANDING_NAME AND BRANDING)
+    PROJECT(${BRANDING_NAME})
+ELSEIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     PROJECT(tano)
-ELSE(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ELSE(BRANDING_NAME AND BRANDING)
     PROJECT(Tano)
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ENDIF(BRANDING_NAME AND BRANDING)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.9)
 
@@ -82,7 +84,7 @@ IF(TANO_VERSION_SIZE EQUAL 3)
 ELSE(TANO_VERSION_SIZE EQUAL 3)
     SET(TANO_VERSION_BUGFIX 0)
 ENDIF(TANO_VERSION_SIZE EQUAL 3)
-MESSAGE("You are compiling Tano ${TANO_VERSION}")
+MESSAGE("You are compiling ${PROJECT_NAME} ${TANO_VERSION}")
 
 STRING(REGEX REPLACE "\n" "" TANO_CORE_VERSION "${TANO_CORE_VERSION}") # get rid of the newline at the end
 STRING_SPLIT(TANO_CORE_VERSION_LIST "." ${TANO_CORE_VERSION})
@@ -239,7 +241,7 @@ ENDIF(MINGW OR MSVC)
 # Set the OS X Bundle specific CMake variables which will be used to populate the plist for
 # the application bundle
 SET(MACOSX_BUNDLE_COPYRIGHT "2013 Tadej Novak")
-SET(MACOSX_BUNDLE_ICON_FILE "Tano.icns")
+SET(MACOSX_BUNDLE_ICON_FILE "${PROJECT_NAME}.icns")
 SET(MACOSX_BUNDLE_GUI_IDENTIFIER "si.tano.player")
 
 

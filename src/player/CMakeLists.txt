@@ -41,13 +41,19 @@ SET(Tano_SingleApplication_Srcs
 )
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    IF(BRANDING)
+        SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/branding/Tano.iconset)
+    ELSE(BRANDING)
+        SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/osx/Tano.iconset)
+    ENDIF(BRANDING)
+
     FIND_PROGRAM(ICONUTIL_EXECUTABLE NAMES iconutil)
     ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/osx/Tano.icns
-        COMMAND ${ICONUTIL_EXECUTABLE} --convert icns --output ${CMAKE_BINARY_DIR}/osx/Tano.icns
-        ${CMAKE_SOURCE_DIR}/osx/Tano.iconset
+        OUTPUT ${CMAKE_BINARY_DIR}/osx/${PROJECT_NAME}.icns
+        COMMAND ${ICONUTIL_EXECUTABLE} --convert icns --output ${CMAKE_BINARY_DIR}/osx/${PROJECT_NAME}.icns
+        ${Tano_Iconset}
     )
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/osx/Tano.icns)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/osx/${PROJECT_NAME}.icns)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 
