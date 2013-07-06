@@ -70,7 +70,8 @@ public:
     // Draws a shaded anti-aliased arrow
     static void drawArrow(QStyle::PrimitiveElement element,
                           QPainter *painter,
-                          const QStyleOption *option);
+                          const QStyleOption *option,
+                          qreal devicePixelRatio);
 
     // Gradients used for panels
     static void horizontalGradient(QPainter *painter,

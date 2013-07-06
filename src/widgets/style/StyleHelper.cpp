@@ -262,14 +262,15 @@ static void menuGradientHelper(QPainter *p,
 
 void StyleHelper::drawArrow(QStyle::PrimitiveElement element,
                             QPainter *painter,
-                            const QStyleOption *option)
+                            const QStyleOption *option,
+                            qreal devicePixelRatio)
 {
     // From windowsstyle but modified to enable AA
     if (option->rect.width() <= 1 || option->rect.height() <= 1)
         return;
 
     QRect r = option->rect;
-    int size = qMin(r.height(), r.width());
+    int size = qMin(r.height() * devicePixelRatio, r.width() * devicePixelRatio);
     QPixmap pixmap;
     QString pixmapName;
     pixmapName.sprintf("arrow-%s-%d-%d-%d-%lld",
@@ -333,10 +334,11 @@ void StyleHelper::drawArrow(QStyle::PrimitiveElement element,
         imagePainter.drawPolygon(a);
         imagePainter.end();
         pixmap = QPixmap::fromImage(image);
+        pixmap.setDevicePixelRatio(devicePixelRatio);
         QPixmapCache::insert(pixmapName, pixmap);
     }
-    int xOffset = r.x() + (r.width() - size)/2;
-    int yOffset = r.y() + (r.height() - size)/2;
+    int xOffset = r.x() + (r.width() * devicePixelRatio - size)/2;
+    int yOffset = r.y() + (r.height() * devicePixelRatio - size)/2;
     painter->drawPixmap(xOffset, yOffset, pixmap);
 }
 
