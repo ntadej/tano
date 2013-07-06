@@ -35,6 +35,8 @@ AboutDialog::AboutDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->labelIcon->setPixmap(QIcon(":/logo/64x64/logo.png").pixmap(64));
+
     ui->labelTitle->setText(ui->labelTitle->text().arg(Tano::name(), Tano::version(), Tano::changeset(), Tano::url()));
     ui->labelBuild->setText(ui->labelBuild->text().arg(Tano::name(), QString("%1 %2 %3").arg(Tano::version(), Tano::is64bit() ? "64-bit" : "32-bit", Tano::changeset()), qVersion(), Tano::Backend::versionLibrary()));
     ui->labelCopyright->setText(ui->labelCopyright->text().arg(QDate::currentDate().toString("yyyy")));

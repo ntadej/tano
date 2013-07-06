@@ -37,6 +37,8 @@ UpdateDialog::UpdateDialog(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->labelIconTano->setPixmap(QIcon(":/logo/64x64/logo.png").pixmap(64));
+
     ui->labelIconDate->setPixmap(QIcon::fromTheme("x-office-calendar").pixmap(22));
     ui->labelIconDev->setPixmap(QIcon::fromTheme("applications-development").pixmap(22));
     ui->labelIconInfo->setPixmap(QIcon::fromTheme("dialog-information").pixmap(22));

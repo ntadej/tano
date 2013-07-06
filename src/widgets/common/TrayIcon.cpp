@@ -27,7 +27,11 @@ TrayIcon::TrayIcon(QMenu *menu,
       _currentlyRecording("")
 {
     setContextMenu(menu);
+#ifdef Q_OS_MAC
+    setIcon(QIcon(":/logo/16x16/logo.png"));
+#else
     setIcon(QIcon(":/logo/48x48/logo.png"));
+#endif
     setToolTip(Tano::name());
 
     connect(this, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),

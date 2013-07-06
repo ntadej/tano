@@ -31,6 +31,7 @@ SettingsBackend::SettingsBackend(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->labelVlcqtIcon->setPixmap(QIcon(":/logo/48x48/vlc-qt.png").pixmap(48));
     ui->labelVlcqtVersion->setText(ui->labelVlcqtVersion->text() + " <b>" + Tano::Backend::versionLibrary() + "</b>");
     ui->labelVlcVersionValue->setText("<b>" + Tano::Backend::versionCore() + "</b>");
 

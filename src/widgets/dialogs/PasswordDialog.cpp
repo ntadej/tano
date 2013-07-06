@@ -37,6 +37,8 @@ PasswordDialog::PasswordDialog(QWidget *parent)
     settings->setUid(Tano::uid());
     settings->writeSettings();
 
+    ui->labelIcon->setPixmap(QIcon(":/logo/128x128/logo.png").pixmap(128));
+
     ui->editUsername->setText(settings->username());
     if (!settings->password().isEmpty()) {
         ui->editPassword->setText(settings->password());

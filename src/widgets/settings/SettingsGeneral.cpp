@@ -31,6 +31,7 @@ SettingsGeneral::SettingsGeneral(QWidget *parent)
 
     connect(ui->buttonDefaults, SIGNAL(clicked()), this, SIGNAL(resetDefaults()));
 
+    ui->labelLogoPlayer->setPixmap(QIcon(":/logo/48x48/logo.png").pixmap(48));
     ui->labelVersion->setText(tr("You are using %1 version:").arg(Tano::name()) + " <b>" + Tano::version() + "</b>");
 }
 

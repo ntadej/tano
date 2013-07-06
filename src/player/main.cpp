@@ -60,6 +60,7 @@ int main(int argc, char *argv[])
 
 #ifdef Q_OS_MAC
         instance.setAttribute(Qt::AA_DontShowIconsInMenus);
+        instance.setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
 
         // TODO: Move somewhere clean

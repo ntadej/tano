@@ -11,10 +11,21 @@
    </rect>
   </property>
   <property name="windowIcon">
-   <iconset theme="preferences-desktop"/>
+   <iconset theme="preferences-desktop">
+    <normaloff/>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -47,9 +58,6 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="../../../data/logo/logo.qrc">:/logo/48x48/logo.png</pixmap>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -139,7 +147,9 @@
              <string>Restore defaults</string>
             </property>
             <property name="icon">
-             <iconset theme="view-refresh"/>
+             <iconset theme="view-refresh">
+              <normaloff/>
+             </iconset>
             </property>
            </widget>
           </item>
@@ -175,9 +185,7 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../../data/logo/logo.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>radioCustom</sender>

@@ -12,7 +12,17 @@
         <file>24x24/vlc-qt.png</file>
         <file>32x32/logo.png</file>
         <file>32x32/vlc-qt.png</file>
-        <file>256x256/logo.png</file>
-        <file>256x256/vlc-qt.png</file>
+        <file>24x24/logo@2x.png</file>
+        <file>24x24/vlc-qt@2x.png</file>
+        <file>32x32/logo@2x.png</file>
+        <file>32x32/vlc-qt@2x.png</file>
+        <file>64x64/logo@2x.png</file>
+        <file>64x64/vlc-qt@2x.png</file>
+        <file>128x128/logo@2x.png</file>
+        <file>128x128/vlc-qt@2x.png</file>
+        <file>16x16/logo@2x.png</file>
+        <file>16x16/vlc-qt@2x.png</file>
+        <file>48x48/logo@2x.png</file>
+        <file>48x48/vlc-qt@2x.png</file>
     </qresource>
 </RCC>

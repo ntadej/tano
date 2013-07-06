@@ -40,7 +40,7 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-243</y>
+        <y>0</y>
         <width>495</width>
         <height>759</height>
        </rect>
@@ -66,9 +66,6 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../../data/logo/logo.qrc">:/logo/48x48/vlc-qt.png</pixmap>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -450,9 +447,7 @@
   <tabstop>checkMute</tabstop>
   <tabstop>checkTeletext</tabstop>
  </tabstops>
- <resources>
-  <include location="../../../data/logo/logo.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>checkVideoSettings</sender>
