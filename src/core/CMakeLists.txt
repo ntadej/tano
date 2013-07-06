@@ -105,13 +105,19 @@ SET(Tano_Core_Xmltv_Srcs
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     SET(Tano_Core_Platform_Srcs
-        platform/linux/Locations.cpp
+        platform/Linux.cpp
     )
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    SET(Tano_Core_Platform_Srcs
+        platform/OSX.cpp
+    )
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+
 IF(MINGW OR MSVC)
     SET(Tano_Core_Platform_Srcs
-        platform/windows/Console.cpp
+        platform/Windows.cpp
     )
 ENDIF(MINGW OR MSVC)
 
@@ -178,6 +184,16 @@ ENDIF(QT5)
 #####################
 # Compiler settings #
 #####################
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    FIND_PATH(COREFOUNDATION_INCLUDE_DIR CoreFoundation/CoreFoundation.h)
+    FIND_LIBRARY(COREFOUNDATION_LIBRARY CoreFoundation)
+    FIND_PATH(IOKIT_INCLUDE_DIR IOKit/IOKitLib.h)
+    FIND_LIBRARY(IOKIT_LIBRARY IOKit)
+
+    INCLUDE_DIRECTORIES(${COREFOUNDATION_INCLUDE_DIR}/Headers)
+    SET_SOURCE_FILES_PROPERTIES(platform/OSX.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+
 # This needs to be added in order for #include to work inside .cpp files
 INCLUDE_DIRECTORIES(
     ${CMAKE_SOURCE_DIR}
@@ -233,6 +249,10 @@ IF(QT5)
 ELSE(QT5)
     TARGET_LINK_LIBRARIES(${TANO_CORE} ${QT_LIBRARIES})
 ENDIF(QT5)
+
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    TARGET_LINK_LIBRARIES(${TANO_CORE} ${COREFOUNDATION_LIBRARY} ${IOKIT_LIBRARY})
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 
 ################

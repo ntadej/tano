@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,36 +16,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Common.h"
-#include "Out.h"
-#include "platform/windows/Console.h"
+#ifndef TANO_WINDOWS_H_
+#define TANO_WINDOWS_H_
 
-#if defined(Q_OS_WIN32)
-#   include <windows.h>
-#endif
+#include <QtGlobal>
 
-#if defined(Q_OS_WIN32)
-void Tano::Windows::pauseConsole()
+namespace Tano
 {
-    if(getenv("PWD")) return; /* Cygwin shell or Wine */
-
-    Out() << "\nPress the RETURN key to continue...\n";
-
-    getchar();
-    fclose(stdout);
+    namespace Windows
+    {
+        // Windows specific
+        void pauseConsole();
+        void showConsole();
+    }
 }
 
-void Tano::Windows::showConsole()
-{
-    if(getenv("PWD")) return; /* Cygwin shell or Wine */
-
-    AllocConsole();
-
-    SetConsoleOutputCP(GetACP());
-    SetConsoleTitle(Tano::name().toLocal8Bit().data());
-
-    freopen("CONOUT$", "w", stderr);
-    freopen("CONIN$", "r", stdin);
-    freopen("CONOUT$", "w", stdout);
-}
-#endif
+#endif // TANO_WINDOWS_H_

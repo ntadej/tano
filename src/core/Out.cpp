@@ -22,7 +22,7 @@
 #include "Out.h"
 
 #if defined(Q_OS_WIN32)
-#   include "platform/windows/Console.h"
+#   include "platform/Windows.h"
 #endif
 
 Out::Out(bool error)

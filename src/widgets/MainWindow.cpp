@@ -379,8 +379,6 @@ void MainWindow::createRecorder()
     connect(_recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
 #else
     ui->menubar->removeAction(ui->menuRecorder->menuAction());
-    ui->toolBar->removeAction(ui->actionRecorder);
-    removeToolBar(ui->toolBarRecorder);
 #endif
 }
 

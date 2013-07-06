@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -21,9 +21,8 @@
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 
-#include "platform/linux/Locations.h"
+#include "platform/Linux.h"
 
-#if defined(Q_OS_LINUX)
 QString Tano::Linux::picturesPath()
 {
     QString path = "Pictures";
@@ -47,9 +46,7 @@ QString Tano::Linux::picturesPath()
 
     return path;
 }
-#endif
 
-#if defined(Q_OS_LINUX)
 QString Tano::Linux::videoPath()
 {
     QString path = "Videos";
@@ -73,4 +70,3 @@ QString Tano::Linux::videoPath()
 
     return path;
 }
-#endif

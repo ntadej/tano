@@ -16,12 +16,16 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QCryptographicHash>
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 #include <QtNetwork/QNetworkInterface>
 
-#include "Config.h"
+#if defined(Q_OS_MAC)
+    #include "platform/OSX.h"
+#endif
 
+#include "Config.h"
 #include "Common.h"
 
 QString Tano::name()
@@ -106,15 +110,18 @@ QString Tano::uid()
 
     QTextStream in(&file);
     QString uid = in.readLine();
-    return uid;
+#elif defined(Q_OS_MAC)
+    QString uid = Tano::OSX::uuid();
 #else
+    QString uid("error");
     foreach (QNetworkInterface netInterface, QNetworkInterface::allInterfaces()) {
         // Return only the first non-loopback MAC Address
         if (!(netInterface.flags() & QNetworkInterface::IsLoopBack))
-            return netInterface.hardwareAddress();
+            uid = netInterface.hardwareAddress();
     }
-    return QString("error");
 #endif
+
+    return QString(QCryptographicHash::hash(uid.toLocal8Bit(), QCryptographicHash::Md5).toHex());
 }
 
 QString Tano::recordingFileName(const QString &name,

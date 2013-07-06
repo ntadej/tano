@@ -22,7 +22,7 @@
 #include "settings/Settings.h"
 
 #if defined (Q_OS_LINUX)
-    #include "platform/linux/Locations.h"
+    #include "platform/Linux.h"
 #endif
 
 // Define defaults - General
