@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>662</width>
-    <height>353</height>
+    <height>373</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -140,8 +140,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>100</width>
-             <height>49</height>
+             <width>98</width>
+             <height>48</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -267,6 +267,12 @@
    <property name="movable">
     <bool>false</bool>
    </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
    <property name="floatable">
     <bool>false</bool>
    </property>
@@ -287,8 +293,8 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>8</width>
-     <height>8</height>
+     <width>16</width>
+     <height>16</height>
     </size>
    </property>
    <property name="toolButtonStyle">

@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QIcon>
+
 #include "Channel.h"
 
 Channel::Channel(QObject *parent)
@@ -92,14 +94,14 @@ QString Channel::display() const
     return QString("%1. %2").arg(QString::number(number()), name());
 }
 
-QIcon Channel::decoration() const
+QPixmap Channel::decoration() const
 {
     if (type() == Radio)
-        return QIcon::fromTheme("audio-x-generic");
+        return QIcon::fromTheme("audio-x-generic").pixmap(16);
     else if (type() == HD)
-        return QIcon::fromTheme("video-x-generic");
+        return QIcon::fromTheme("video-x-generic").pixmap(16);
     else // type() == SD
-        return QIcon::fromTheme("video-x-generic");
+        return QIcon::fromTheme("video-x-generic").pixmap(16);
 }
 
 void Channel::setNumber(int number)

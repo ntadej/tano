@@ -79,7 +79,7 @@ public:
     inline QString id() const { return QString::number(_id); }
     QVariant data(int role) const;
     QString display() const;
-    QIcon decoration() const;
+    QPixmap decoration() const;
     QHash<int, QByteArray> roleNames() const;
 
     void setId(int id);

@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include <QtCore/qmath.h>
+#include <QtGui/QIcon>
 
 #include "Timer.h"
 
@@ -110,14 +111,14 @@ QString Timer::display() const
                  date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"));
 }
 
-QIcon Timer::decoration() const
+QPixmap Timer::decoration() const
 {
     if (state() == Finished)
-        return QIcon::fromTheme("video-x-generic");
+        return QIcon::fromTheme("video-x-generic").pixmap(16);
     else if (state() == Recording)
-        return QIcon::fromTheme("media-record");
+        return QIcon::fromTheme("media-record").pixmap(16);
     else
-        return QIcon::fromTheme("time-admin");
+        return QIcon::fromTheme("time-admin").pixmap(16);
 }
 
 void Timer::setId(int id)

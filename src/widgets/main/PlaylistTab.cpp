@@ -43,6 +43,7 @@ PlaylistTab::PlaylistTab(QWidget *parent)
     _toolbarTop = new QToolBar(this);
     _toolbarTop->setMovable(false);
     _toolbarTop->setFloatable(false);
+    _toolbarTop->setIconSize(QSize(16, 16));
     addToolBar(Qt::TopToolBarArea, _toolbarTop);
 
     _toolbarBottomSearch = new QToolBar(this);

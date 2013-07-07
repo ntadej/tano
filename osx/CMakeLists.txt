@@ -52,6 +52,10 @@ SET(Tano_Vlc_Libs
 
 FILE(GLOB Tano_Vlc_Plugins ${LIBVLCQT_DIR}/plugins/*.dylib)
 
+SET(Tano_Retina_Icons
+    ${CMAKE_SOURCE_DIR}/data/icons/tano-default@2x
+)
+
 
 ################
 # Installation #
@@ -62,3 +66,5 @@ INSTALL(FILES ${Tano_VlcQt_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INS
 INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}")
 
 INSTALL(FILES ${Tano_Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/plugins")
+
+INSTALL(DIRECTORY ${Tano_Retina_Icons} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/icons")

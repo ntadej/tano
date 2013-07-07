@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QIcon>
+
 #include "timers/TimersSql.h"
 #include "timers/containers/Timer.h"
 
@@ -51,11 +53,11 @@ QVariant TimersModel::data(const QModelIndex &index,
         Timer::State state = Timer::State(value(index.row(), 9).toInt());
 
         if (state == Timer::Finished)
-            return QIcon::fromTheme("video-x-generic");
+            return QIcon::fromTheme("video-x-generic").pixmap(16);
         else if (state == Timer::Recording)
-            return QIcon::fromTheme("media-record");
+            return QIcon::fromTheme("media-record").pixmap(16);
         else
-            return QIcon::fromTheme("time-admin");
+            return QIcon::fromTheme("time-admin").pixmap(16);
     }
     return QVariant();
 }

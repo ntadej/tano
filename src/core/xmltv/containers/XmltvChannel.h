@@ -45,7 +45,7 @@ public:
     inline QString id() const { return _id; }
     QVariant data(int role) const;
     QString display() const;
-    QIcon decoration() const;
+    QPixmap decoration() const;
     QHash<int, QByteArray> roleNames() const;
 
     inline QString displayName() const { return _displayName; }

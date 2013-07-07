@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QIcon>
+
 #include "xmltv/XmltvCommon.h"
 #include "xmltv/containers/XmltvCrewMember.h"
 #include "xmltv/models/XmltvCrewModel.h"
@@ -114,9 +116,9 @@ QString XmltvProgramme::display() const
     return QString("%1 - %2").arg(start().toString(Tano::Xmltv::timeFormatDisplay()), title());
 }
 
-QIcon XmltvProgramme::decoration() const
+QPixmap XmltvProgramme::decoration() const
 {
-    return QIcon::fromTheme("x-office-calendar");
+    return QIcon::fromTheme("x-office-calendar").pixmap(16);
 }
 
 QFont XmltvProgramme::displayFont() const

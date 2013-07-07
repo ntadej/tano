@@ -23,7 +23,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QObject>
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
+#include <QtGui/QPixmap>
 
 /*!
     \class ListItem ListItem.h core/ListItem.h
@@ -63,9 +63,9 @@ public:
 
     /*!
         \brief Convenience function for Qt::DecorationRole
-        \return item decoration/icon (QIcon)
+        \return item decoration/icon (QPixmap)
     */
-    virtual QIcon decoration() const = 0;
+    virtual QPixmap decoration() const = 0;
 
     /*!
         \brief Supported item's role names

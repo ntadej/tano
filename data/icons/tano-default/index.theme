@@ -2,7 +2,7 @@
 Name=tano-default
 Inherits=Faenza,KFaenza,Humanity,ubuntu-mono-light,gnome,Oxygen
 Comment=Icon theme project with tilish style, by Tiheum
-Directories=actions/16,apps/16,categories/16,mimetypes/16,status/16,actions/22,apps/22,categories/22,mimetypes/22,status/22,actions/32,apps/32,categories/32,mimetypes/32,status/32,actions/48,apps/48,categories/48,mimetypes/48,status/48
+Directories=actions/16,apps/16,categories/16,mimetypes/16,status/16,actions/22,apps/22,categories/22,mimetypes/22,status/22,actions/24,apps/24,categories/24,mimetypes/24,status/24,actions/32,apps/32,categories/32,mimetypes/32,status/32,actions/48,apps/48,categories/48,mimetypes/48,status/48
 
 [actions/16]
 Size=16
@@ -51,6 +51,31 @@ Type=fixed
 
 [status/22]
 Size=22
+Context=Status
+Type=fixed
+
+[actions/24]
+Size=24
+Context=Actions
+Type=fixed
+
+[apps/24]
+Size=24
+Context=Apps
+Type=fixed
+
+[categories/24]
+Size=24
+Context=Categories
+Type=fixed
+
+[mimetypes/24]
+Size=24
+Context=Mimetypes
+Type=fixed
+
+[status/24]
+Size=24
 Context=Status
 Type=fixed
 

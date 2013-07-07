@@ -70,7 +70,7 @@ public:
     inline QString id() const { return _programme + "_" + _name; }
     QVariant data(int role) const;
     QString display() const;
-    QIcon decoration() const;
+    QPixmap decoration() const;
     QHash<int, QByteArray> roleNames() const;
 
     inline QString name() const { return _name; }

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,6 @@
 #include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
-#include <QtGui/QIcon>
 
 #include "Config.h"
 
@@ -92,26 +91,4 @@ QString Tano::Resources::settingsPath()
     }
 
     return path;
-}
-
-void Tano::Resources::setIconName()
-{
-    QScopedPointer<Settings> settings(new Settings());
-    if (!settings->icons().isEmpty())
-        QIcon::setThemeName(settings->icons());
-
-    qDebug() << "Icon theme:" << QIcon::themeName();
-}
-
-void Tano::Resources::setIconPaths()
-{
-    QStringList paths = QIcon::themeSearchPaths();
-    paths.prepend(QCoreApplication::applicationDirPath() + "/" + "icons");
-#if defined(DATA_DIR)
-    paths.prepend(QString(DATA_DIR) + "/" + "icons");
-#endif
-
-    QIcon::setThemeSearchPaths(paths);
-
-    qDebug() << "Icon theme search paths:" << QIcon::themeSearchPaths();
 }

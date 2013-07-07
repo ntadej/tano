@@ -19,7 +19,6 @@
 #include <QtSingleApplication>
 
 #include <QtCore/QTextCodec>
-#include <QStyleFactory>
 
 #include "Config.h"
 #include "core/Arguments.h"
@@ -30,8 +29,7 @@
 
 #include "widgets/MainWindow.h"
 #include "widgets/dialogs/PasswordDialog.h"
-#include "widgets/style/ManhattanStyle.h"
-#include "widgets/style/StyleHelper.h"
+#include "widgets/style/Common.h"
 
 int main(int argc, char *argv[])
 {
@@ -55,33 +53,9 @@ int main(int argc, char *argv[])
     Arguments *args = new Arguments(argc, argv);
 
     if (args->isValid()) {
-        Tano::Resources::setIconPaths();
-        Tano::Resources::setIconName();
-
-#ifdef Q_OS_MAC
-        instance.setAttribute(Qt::AA_DontShowIconsInMenus);
-        instance.setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
-
-        QString baseName = QApplication::style()->objectName();
-#ifdef Q_OS_LINUX
-            if (baseName == QLatin1String("windows")) {
-                // Sometimes we get the standard windows 95 style as a fallback
-                if (QStyleFactory::keys().contains(QLatin1String("Fusion")))
-                    baseName = QLatin1String("fusion"); // Qt5
-                else { // Qt4
-                    // e.g. if we are running on a KDE4 desktop
-                    QByteArray desktopEnvironment = qgetenv("DESKTOP_SESSION");
-                    if (desktopEnvironment == "kde")
-                        baseName = QLatin1String("plastique");
-                    else
-                        baseName = QLatin1String("cleanlooks");
-                }
-            }
-#endif
-        instance.setStyle(new ManhattanStyle(baseName));
-
-        StyleHelper::setBaseColor(instance.palette().color(QPalette::Highlight));
+        Tano::Style::setMainStyle();
+        Tano::Style::setIconPaths();
+        Tano::Style::setIconName();
 
 #if PASSWORD
         QString password;

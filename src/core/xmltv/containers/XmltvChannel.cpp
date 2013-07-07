@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QIcon>
+
 #include "xmltv/containers/XmltvChannel.h"
 
 XmltvChannel::XmltvChannel(QObject *parent)
@@ -66,9 +68,9 @@ QString XmltvChannel::display() const
     return displayName();
 }
 
-QIcon XmltvChannel::decoration() const
+QPixmap XmltvChannel::decoration() const
 {
-    return QIcon::fromTheme("video-x-generic");
+    return QIcon::fromTheme("video-x-generic").pixmap(16);
 }
 
 void XmltvChannel::setDisplayName(const QString &s)

@@ -139,6 +139,7 @@ SET(Tano_Widgets_Settings_Srcs
     settings/SettingsUi.cpp
 )
 SET(Tano_Widgets_Style_Srcs
+    style/Common.cpp
     style/FancyLineEdit.cpp
     style/FancyTabWidget.cpp
     style/IconButton.cpp

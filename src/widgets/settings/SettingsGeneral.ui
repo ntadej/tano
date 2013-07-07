@@ -147,9 +147,7 @@
              <string>Restore defaults</string>
             </property>
             <property name="icon">
-             <iconset theme="view-refresh">
-              <normaloff/>
-             </iconset>
+             <iconset theme="view-refresh"/>
             </property>
            </widget>
           </item>

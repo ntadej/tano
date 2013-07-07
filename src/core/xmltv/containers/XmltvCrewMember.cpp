@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QIcon>
+
 #include "XmltvCrewMember.h"
 #include "XmltvProgramme.h"
 
@@ -82,9 +84,9 @@ QString XmltvCrewMember::display() const
     return QString("%1 (%2)").arg(name(), stringFromType(type()));
 }
 
-QIcon XmltvCrewMember::decoration() const
+QPixmap XmltvCrewMember::decoration() const
 {
-    return QIcon::fromTheme("config-users");
+    return QIcon::fromTheme("config-users").pixmap(16);
 }
 
 XmltvCrewMember::Type XmltvCrewMember::typeFromString(const QString &type)
