@@ -19,6 +19,7 @@
 #include <QtSingleApplication>
 
 #include <QtCore/QTextCodec>
+#include <QStyleFactory>
 
 #include "Config.h"
 #include "core/Arguments.h"
@@ -26,10 +27,9 @@
 #include "core/Log.h"
 #include "core/Out.h"
 #include "core/Resources.h"
+
 #include "widgets/MainWindow.h"
 #include "widgets/dialogs/PasswordDialog.h"
-
-#include <QStyleFactory>
 #include "widgets/style/ManhattanStyle.h"
 #include "widgets/style/StyleHelper.h"
 
@@ -63,7 +63,6 @@ int main(int argc, char *argv[])
         instance.setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
 
-        // TODO: Move somewhere clean
         QString baseName = QApplication::style()->objectName();
 #ifdef Q_OS_LINUX
             if (baseName == QLatin1String("windows")) {
@@ -80,9 +79,9 @@ int main(int argc, char *argv[])
                 }
             }
 #endif
-        qApp->setStyle(new ManhattanStyle(baseName));
+        instance.setStyle(new ManhattanStyle(baseName));
 
-        StyleHelper::setBaseColor(QColor(StyleHelper::DEFAULT_BASE_COLOR));
+        StyleHelper::setBaseColor(instance.palette().color(QPalette::Highlight));
 
 #if PASSWORD
         QString password;
