@@ -334,7 +334,9 @@ void StyleHelper::drawArrow(QStyle::PrimitiveElement element,
         imagePainter.drawPolygon(a);
         imagePainter.end();
         pixmap = QPixmap::fromImage(image);
+#if QT_VERSION >= 0x050000
         pixmap.setDevicePixelRatio(devicePixelRatio);
+#endif
         QPixmapCache::insert(pixmapName, pixmap);
     }
     int xOffset = r.x() + (r.width() * devicePixelRatio - size)/2;
