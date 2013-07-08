@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="ast">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ast" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -23,7 +21,7 @@
     </message>
     <message>
         <source>Backend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
@@ -40,11 +38,11 @@
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>This application is based on Tano.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -60,118 +58,6 @@ Your VLC-Qt version: %4
     <message>
         <source>Radio</source>
         <translation>Radio</translation>
-    </message>
-</context>
-<context>
-    <name>DonationDialog</name>
-    <message>
-        <source>Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano Player project requires a lot of work and devotion. You can also support the development by donating some money. This money will be spent to cover all expenses and hosting costs.</source>
-        <translation>El proyeutu Tano requier trabayu ya enfotu asgaya. Pues tamén sofitar el desendolcu ufriendo daqué de dineru. Esti dineru gastarase pa caltener tolos costosto d&apos;agospiu web y demás.</translation>
-    </message>
-    <message>
-        <source>You can read additional terms and information on Tano Player homepage.</source>
-        <translation>Pues lleer los terminos ya información adicionales na páxina web de Tano.</translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleChannel</name>
-    <message>
-        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Nun hai EPG&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <source>Show information</source>
-        <translation>Amosar información</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Grabar</translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleFull</name>
-    <message>
-        <source>Schedule</source>
-        <translation>Programar</translation>
-    </message>
-    <message>
-        <source>Search and filter</source>
-        <translation>Guetar ya filtrar</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>EpgShow</name>
-    <message>
-        <source>Previous</source>
-        <translation>Postreru</translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation>Siguiente</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Crew&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Equipu&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Description&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Descripción&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Crew members: All</source>
-        <translation>Miembros l&apos;equipu: Toos</translation>
-    </message>
-    <message>
-        <source>Director</source>
-        <translation>Direutor</translation>
-    </message>
-    <message>
-        <source>Actor</source>
-        <translation>Actor</translation>
-    </message>
-    <message>
-        <source>Writer</source>
-        <translation>Escritor</translation>
-    </message>
-    <message>
-        <source>Adapter</source>
-        <translation>Adaptador</translation>
-    </message>
-    <message>
-        <source>Producer</source>
-        <translation>Productor</translation>
-    </message>
-    <message>
-        <source>Composer</source>
-        <translation>Compositor</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation>Editor</translation>
-    </message>
-    <message>
-        <source>Presenter</source>
-        <translation>Presentador</translation>
-    </message>
-    <message>
-        <source>Commentator</source>
-        <translation>Comentarista</translation>
-    </message>
-    <message>
-        <source>Guest</source>
-        <translation>Convidáu</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Grabación</translation>
     </message>
 </context>
 <context>
@@ -213,7 +99,7 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>&amp;Playback</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&amp;Video</source>
@@ -224,24 +110,12 @@ Your VLC-Qt version: %4
         <translation>&amp;Ficheru</translation>
     </message>
     <message>
-        <source>Main Toolbar</source>
-        <translation>Barra de ferramientes principal</translation>
-    </message>
-    <message>
         <source>Play</source>
         <translation>Entamar</translation>
     </message>
     <message>
         <source>Hide to tray</source>
         <translation>Anubrir a la bandexa</translation>
-    </message>
-    <message>
-        <source>Controls</source>
-        <translation>Controles</translation>
-    </message>
-    <message>
-        <source>Recorder Toolbar</source>
-        <translation>Barra de grabación</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -259,11 +133,7 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Programar</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Back</source>
@@ -298,20 +168,12 @@ Your VLC-Qt version: %4
         <translation>Abrir &amp;ficheru</translation>
     </message>
     <message>
-        <source>Edit Channels</source>
-        <translation>Editar canales</translation>
-    </message>
-    <message>
         <source>Open URL</source>
         <translation>Abrir enllaz</translation>
     </message>
     <message>
         <source>Check for updates</source>
         <translation>Comprobar anovaciones</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Abrir</translation>
     </message>
     <message>
         <source>Stop</source>
@@ -358,22 +220,6 @@ Your VLC-Qt version: %4
         <translation>Aparar grabación</translation>
     </message>
     <message>
-        <source>Controls panel</source>
-        <translation>Panel de controles</translation>
-    </message>
-    <message>
-        <source>Info panel</source>
-        <translation>Panel d&apos;información</translation>
-    </message>
-    <message>
-        <source>Enable Info panel in Fullscreen mode</source>
-        <translation>Habilitar panel d&apos;información nel mou pantalla completa</translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Teletext</source>
         <translation>Teletestu</translation>
     </message>
@@ -406,29 +252,29 @@ Your VLC-Qt version: %4
         <translation>Amosar información d&apos;anguaño</translation>
     </message>
     <message>
-        <source>Instant</source>
-        <translation>Nel intre</translation>
-    </message>
-    <message>
         <source>About</source>
-        <translation type="unfinished">Alrodiu</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Instant %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>An update is available!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Show Info</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -450,11 +296,11 @@ This will stop recording in progress.</source>
     <name>MenuCropRatio</name>
     <message>
         <source>Crop video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Original</source>
@@ -481,19 +327,19 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Blend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Mean</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Bob</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>X</source>
@@ -508,11 +354,11 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Scale/Zoom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Next scale/zoom option</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -608,33 +454,37 @@ This will stop recording in progress.</source>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Remember password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -645,7 +495,7 @@ Please, try again.&lt;/b&gt;</source>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Programar</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -828,7 +678,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor</source>
@@ -836,11 +686,11 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -859,7 +709,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
@@ -879,19 +729,19 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -906,7 +756,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source> ms</source>
@@ -960,42 +810,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished">Llista</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistFilterWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation>Llimpiar</translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation>Toles categories</translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation>Toles llingues</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>Too</translation>
-    </message>
-    <message>
-        <source>TV</source>
-        <translation>TV</translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation>SD</translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation>HD</translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation>Radio</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1058,12 +873,30 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
 </context>
 <context>
+    <name>PlaylistTab</name>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>PlaylistUpdate</name>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Nun pue lleese&apos;l ficheru %1:
-%2.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1102,7 +935,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1173,7 +1006,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     <message>
         <source>Parse error at line %1, column %2:
 %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
@@ -1371,7 +1204,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
@@ -1383,7 +1216,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>IP TV playback:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Play channel by number</source>
@@ -1423,7 +1256,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Movie/Drama</source>
@@ -1455,7 +1288,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Serious/Classical/Religious/Historical Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Adult Movie/Drama</source>
@@ -1479,7 +1312,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Discussion/Interview/Debate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Show/Game show</source>
@@ -1551,167 +1384,167 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Informational/Educational/School programmes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Cartoons/Puppets</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Music/Ballet/Dance</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Rock/Pop</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Serious music/Classical music</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Folk/Traditional music</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Jazz</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Musical/Opera</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Arts/Culture</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Performing arts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Fine arts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Religion</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Popular culture/Traditional arts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Literature</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Film/Cinema</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Experimental film/video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Broadcasting/Press</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Social/Political issues/Economics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Magazines/Reports/Documentary</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Economics/Social advisory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Remarkable people</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Education/Science/Factual topics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Nature/Animals/Environment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Technology/Natural sciences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Medicine/Physiology/Psychology</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Foreign countries/Expeditions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Social/Spiritual sciences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Further education</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Leisure hobbies</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tourism/Travel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Handicraft</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Motoring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Fitness and Health</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Cooking</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Advertisement/Shopping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Gardening</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1887,10 +1720,37 @@ Esta operación nun pue desfacese.</translation>
     </message>
 </context>
 <context>
+    <name>ScheduleTab</name>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Show information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Current channel selected doesn&apos;t have any schedule information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Select channel</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Version:</source>
@@ -1902,7 +1762,7 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Default subtitle language:</source>
@@ -1926,7 +1786,7 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Default crop:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Default deinterlacing:</source>
@@ -1942,19 +1802,19 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Mean</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Bob</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>X</source>
@@ -1987,18 +1847,6 @@ Esta operación nun pue desfacese.</translation>
     <message>
         <source>Enable S/PDIF output</source>
         <translation>Habilitar salida S/PDIF</translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation>Rede</translation>
-    </message>
-    <message>
-        <source>Select network interface:</source>
-        <translation>Esbillar interfaz de rede:</translation>
-    </message>
-    <message>
-        <source>Automatic</source>
-        <translation>Automático</translation>
     </message>
     <message>
         <source>Misc</source>
@@ -2046,11 +1894,11 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Programar</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recorder</source>
@@ -2093,11 +1941,11 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Mute</source>
@@ -2165,7 +2013,7 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Next deinterlace mode</source>
@@ -2173,7 +2021,7 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Defaults</source>
@@ -2193,7 +2041,7 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Preview channels</source>
@@ -2201,11 +2049,11 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Programar</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished">Amosar información d&apos;anguaño</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2248,7 +2096,7 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2329,11 +2177,11 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Local file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2341,30 +2189,6 @@ Esta operación nun pue desfacese.</translation>
     <message>
         <source>General Interface Settings</source>
         <translation>Axustes xenerales d&apos;interfaz</translation>
-    </message>
-    <message>
-        <source>Toolbar style:</source>
-        <translation>Estilu la barra:</translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation>Solo iconos</translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation>Solo testu</translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation>Testu baxo iconu</translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation>Per defeutu&apos;l sistema</translation>
     </message>
     <message>
         <source>Change channel</source>
@@ -2379,28 +2203,12 @@ Esta operación nun pue desfacese.</translation>
         <translation>Minimizar a la bandexa</translation>
     </message>
     <message>
-        <source>Default options for startup</source>
-        <translation>Opciones per defeutu nel aniciu</translation>
-    </message>
-    <message>
-        <source>Simple mode</source>
-        <translation>Mou simple</translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation>Siempres enriba</translation>
-    </message>
-    <message>
         <source>Show tray icon</source>
         <translation>Amosar iconu la bandexa</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
         <translation>Rueda&apos;l mur:</translation>
-    </message>
-    <message>
-        <source>Controls:</source>
-        <translation>Controles:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
@@ -2411,16 +2219,8 @@ Esta operación nun pue desfacese.</translation>
         <translation>Amosar col movimientu&apos;l mur</translation>
     </message>
     <message>
-        <source>Info panel:</source>
-        <translation>Panel d&apos;información:</translation>
-    </message>
-    <message>
         <source>Remember main window size, position and open panels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Filters always visible</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Icon theme</source>
@@ -2436,14 +2236,49 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Per defeutu</translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>OSD in fullscreen:</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>ShowInfoTab</name>
+    <message>
+        <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>toolBar</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>toolBar_2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>Timer</name>
     <message>
         <source>at</source>
-        <translation type="unfinished">a les</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2526,7 +2361,7 @@ Les tos camudancies nun sedrán atroxaes.</translation>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="unfinished">a les</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2545,17 +2380,17 @@ Les tos camudancies nun sedrán atroxaes.</translation>
     </message>
     <message>
         <source>Recording stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2581,20 +2416,16 @@ End time: %3</source>
         <translation>Información:</translation>
     </message>
     <message>
-        <source>Download now!</source>
-        <translation type="obsolete">¡Baxar agora!</translation>
-    </message>
-    <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

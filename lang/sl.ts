@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="sl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sl" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -36,15 +34,6 @@
         <translation>&lt;b&gt;Uporabljate Videolan VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>Your Tano version: %1
-Your Qt runtime version: %2
-Your VLC-Qt version: %3
-</source>
-        <translation type="obsolete">Vaša različica programa Tano: %1
-Vaša različica Qt: %2
-Vaša različica knjižnice VLC-Qt: %3</translation>
-    </message>
-    <message>
         <source>Your %1 version: %2
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
@@ -74,118 +63,6 @@ Vaša različica knjižnice VLC-Qt: %4</translation>
     </message>
 </context>
 <context>
-    <name>DonationDialog</name>
-    <message>
-        <source>Donate</source>
-        <translation>Doniraj</translation>
-    </message>
-    <message>
-        <source>Tano Player project requires a lot of work and devotion. You can also support the development by donating some money. This money will be spent to cover all expenses and hosting costs.</source>
-        <translation>Projekt Tano Player zahteva veliko dela. Njegovemu razvoju lahko pripomorete tudi z doniranjem denarja. Ta denar bo porabljen za kritje vseh stroškov in cene gostovanja.</translation>
-    </message>
-    <message>
-        <source>You can read additional terms and information on Tano Player homepage.</source>
-        <translation>Dodatne pogoje in informacije si lahko preberete na spletni strani predvajalnika Tano.</translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleChannel</name>
-    <message>
-        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;EPG ni na voljo&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <source>Show information</source>
-        <translation>Pokaži podrobnosti</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Snemaj</translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleFull</name>
-    <message>
-        <source>Schedule</source>
-        <translation>Spored</translation>
-    </message>
-    <message>
-        <source>Search and filter</source>
-        <translation>Išči in filtriraj</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Spored&lt;/h3&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>EpgShow</name>
-    <message>
-        <source>Previous</source>
-        <translation>Prejšnja oddaja</translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation>Naslednja oddaja</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Crew&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Ekipa&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Description&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Opis&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Crew members: All</source>
-        <translation>Člani ekipe: Vsi</translation>
-    </message>
-    <message>
-        <source>Director</source>
-        <translation>Režiser</translation>
-    </message>
-    <message>
-        <source>Actor</source>
-        <translation>Igralec</translation>
-    </message>
-    <message>
-        <source>Writer</source>
-        <translation>Scenarist</translation>
-    </message>
-    <message>
-        <source>Adapter</source>
-        <translation>Aranžer</translation>
-    </message>
-    <message>
-        <source>Producer</source>
-        <translation>Producent</translation>
-    </message>
-    <message>
-        <source>Composer</source>
-        <translation>Skladatelj</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation>Montažer</translation>
-    </message>
-    <message>
-        <source>Presenter</source>
-        <translation>Voditelj</translation>
-    </message>
-    <message>
-        <source>Commentator</source>
-        <translation>Komentator</translation>
-    </message>
-    <message>
-        <source>Guest</source>
-        <translation>Gost</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Snemaj</translation>
-    </message>
-</context>
-<context>
     <name>InfoBarWidget</name>
     <message>
         <source>Now:</source>
@@ -202,10 +79,6 @@ Vaša različica knjižnice VLC-Qt: %4</translation>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <source>Tano</source>
-        <translation type="obsolete">Tano</translation>
-    </message>
     <message>
         <source>&amp;Recorder</source>
         <translation>Sne&amp;malnik</translation>
@@ -239,34 +112,12 @@ Vaša različica knjižnice VLC-Qt: %4</translation>
         <translation>&amp;Datoteka</translation>
     </message>
     <message>
-        <source>Main Toolbar</source>
-        <translation>Glavna orodna vrstica</translation>
-    </message>
-    <message>
         <source>Play</source>
         <translation>Predvajaj</translation>
     </message>
     <message>
         <source>Hide to tray</source>
         <translation>Skrij v orodno vrstico</translation>
-    </message>
-    <message>
-        <source>Do you want to exit Tano?
-This will stop recording in progress.</source>
-        <translation type="obsolete">Ali želite zapreti Tano?
-To bo ustavilo trenutno snemanje.</translation>
-    </message>
-    <message>
-        <source>Controls</source>
-        <translation>Upravljanje</translation>
-    </message>
-    <message>
-        <source>Recorder Toolbar</source>
-        <translation>Orodna vrstica snemalnika</translation>
-    </message>
-    <message>
-        <source>Tano Support</source>
-        <translation type="obsolete">Tano Podpora</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -287,16 +138,8 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Spored</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Spored&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Back</source>
         <translation>Nazaj</translation>
-    </message>
-    <message>
-        <source>About Tano</source>
-        <translation type="obsolete">O programu Tano</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
@@ -327,20 +170,12 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Odpri &amp;Datoteko</translation>
     </message>
     <message>
-        <source>Edit Channels</source>
-        <translation>Uredi programe</translation>
-    </message>
-    <message>
         <source>Open URL</source>
         <translation>Odpri URL</translation>
     </message>
     <message>
         <source>Check for updates</source>
         <translation>Preveri za posodobitve</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Odpri</translation>
     </message>
     <message>
         <source>Stop</source>
@@ -387,22 +222,6 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Prenehaj s snemanjem</translation>
     </message>
     <message>
-        <source>Controls panel</source>
-        <translation>Upravljalni pult</translation>
-    </message>
-    <message>
-        <source>Info panel</source>
-        <translation>Info pult</translation>
-    </message>
-    <message>
-        <source>Enable Info panel in Fullscreen mode</source>
-        <translation>Vključi Info pult v celozaslonskem načinu</translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation>Doniraj</translation>
-    </message>
-    <message>
         <source>Teletext</source>
         <translation>Teletekst</translation>
     </message>
@@ -435,10 +254,6 @@ To bo ustavilo trenutno snemanje.</translation>
         <translation>Informacije o trenutni oddaji</translation>
     </message>
     <message>
-        <source>Instant</source>
-        <translation>Instantno</translation>
-    </message>
-    <message>
         <source>About</source>
         <translation>O programu</translation>
     </message>
@@ -453,12 +268,16 @@ This will stop recording in progress.</source>
 To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
-        <source>Instant %1</source>
-        <translation>Instantno %1</translation>
-    </message>
-    <message>
         <source>An update is available!</source>
         <translation>Na voljo je posodobitev!</translation>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Show Info</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -668,6 +487,10 @@ Please, try again.&lt;/b&gt;</source>
         <translation>&lt;b&gt;Zgodila se je neznana napaka.
 Poskusite znova.&lt;/b&gt;</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
+        <translation type="unfinished"/>
+    </message>
 </context>
 <context>
     <name>PlaylistDisplayWidget</name>
@@ -787,10 +610,6 @@ Poskusite znova.&lt;/b&gt;</translation>
         <translation>Informacije o posodobitvah</translation>
     </message>
     <message>
-        <source>%1 - Tano Editor</source>
-        <translation type="obsolete">%1 - Tano Urejevalnik</translation>
-    </message>
-    <message>
         <source>Cannot read file %1:
 %2.</source>
         <translation>Ne morem prebrati %1:
@@ -906,16 +725,8 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>&lt;h3&gt;Formati in izvoz&lt;/h3&gt;</translation>
     </message>
     <message>
-        <source>Tano Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="obsolete">Tano Urejevalnik podpira svoj lasten, prilagojen format M3U, poleg tega pa še običajen M3U, CSV in datoteke Sagem JS. Seznam programov lahko shranite/izvozite še kot M3U z naslovi Udpxy in kot nastavitvene datoteke za Tvheadend.</translation>
-    </message>
-    <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
         <translation>&lt;h3&gt;Iskanje novih programov&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). Tano will scan all 255 IPs in this range. A channel is added if it is detected before timeout.</source>
-        <translation type="obsolete">Nove programe lahko poiščete z vgrajenim iskalnikom programov. Nastavite veljavno območje IP (npr. 232.4.1) in vrata (npr. 5000). Tano bo samodejno preiskal vseh 255 IP-jev v tem območju. Program bo dodan, če bo zaznan v nastavljenem času.</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
@@ -924,10 +735,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
         <translation>Zaporedna številka programa mora biti potrjena. Vse druge vrednosti se samodejno spremenijo. Katerikoli program je lahko nastavljen kot radio. Kategorije se ločijo z vejico (,).</translation>
-    </message>
-    <message>
-        <source>Tano will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="obsolete">Tano bo samodejno poskušal povezati programe z XMLTV. Še vedno pa priporočamo, da preverite za možne napake.</translation>
     </message>
     <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
@@ -1012,41 +819,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
 </context>
 <context>
-    <name>PlaylistFilterWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation>Počisti</translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation>Vse kategorije</translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation>Vsi jeziki</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>Vse</translation>
-    </message>
-    <message>
-        <source>TV</source>
-        <translation>TV</translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation>SD</translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation>HD</translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation>Radio</translation>
-    </message>
-</context>
-<context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
@@ -1106,6 +878,25 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
 </context>
 <context>
+    <name>PlaylistTab</name>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>PlaylistUpdate</name>
     <message>
         <source>Cannot read file %1:
@@ -1135,10 +926,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Language</source>
         <translation>Jezik</translation>
-    </message>
-    <message>
-        <source>Exported with Tano on %1.</source>
-        <translation type="obsolete">Izpisano s programom Tano dne %1.</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
@@ -1421,10 +1208,6 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>XMLTV ID</source>
         <translation>XMLTV ID</translation>
-    </message>
-    <message>
-        <source>Try &apos;%1&apos; for more information.</source>
-        <translation type="obsolete">Poskusite &apos;%1&apos; za več informacij.</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
@@ -1802,10 +1585,6 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
         <source>Recordings and timers</source>
         <translation>Posnetki in časovniki</translation>
     </message>
-    <message>
-        <source>Instant %1</source>
-        <translation type="obsolete">Instantno %1</translation>
-    </message>
 </context>
 <context>
     <name>RecorderInfoWidget</name>
@@ -1948,6 +1727,33 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
 </context>
 <context>
+    <name>ScheduleTab</name>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Show information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Current channel selected doesn&apos;t have any schedule information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Select channel</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
@@ -2048,18 +1854,6 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>Enable S/PDIF output</source>
         <translation>Omogoči S/PDIF izhod</translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation>Omrežje</translation>
-    </message>
-    <message>
-        <source>Select network interface:</source>
-        <translation>Izberi omrežno povezavo:</translation>
-    </message>
-    <message>
-        <source>Automatic</source>
-        <translation>Samodejno</translation>
     </message>
     <message>
         <source>Misc</source>
@@ -2296,10 +2090,6 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Samodejno prični predvajanje zadnjega programa</translation>
     </message>
     <message>
-        <source>You are using Tano version:</source>
-        <translation type="obsolete">Uporabljate Tano različice:</translation>
-    </message>
-    <message>
         <source>Defaults</source>
         <translation>Privzeto</translation>
     </message>
@@ -2381,20 +2171,8 @@ Te operacije ni mogoče razveljaviti.</translation>
 <context>
     <name>SettingsSchedule</name>
     <message>
-        <source>Select desired XMLTV grabber from the list below:</source>
-        <translation type="obsolete">Izberite željen odjemalec XMLTV s spodnjega seznama:</translation>
-    </message>
-    <message>
         <source>XMLTV settings</source>
         <translation>Nastavitve XMLTV</translation>
-    </message>
-    <message>
-        <source>XMLTV file location:</source>
-        <translation type="obsolete">Lokacija datoteke XMLTV:</translation>
-    </message>
-    <message>
-        <source>Refresh XMLTV</source>
-        <translation type="obsolete">Osveži XMLTV</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
@@ -2403,30 +2181,6 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>Download file</source>
         <translation>Prenesi datoteko</translation>
-    </message>
-    <message>
-        <source>Run grabber</source>
-        <translation type="obsolete">Zaženi grabber</translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation type="obsolete">Omrežje</translation>
-    </message>
-    <message>
-        <source>XMLTV source url:</source>
-        <translation type="obsolete">XMLTV vir:</translation>
-    </message>
-    <message>
-        <source>Grabber</source>
-        <translation type="obsolete">Grabber</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;All XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="obsolete">&lt;i&gt;Vse nastavitve XMLTV zahtevajo ponovni zagon.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Grabber running is not available yet.&lt;/i&gt;</source>
-        <translation type="obsolete">&lt;i&gt;Poganjanje grabberjev še ni na voljo.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Local file</source>
@@ -2444,30 +2198,6 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Splošne nastavitve vmesnika</translation>
     </message>
     <message>
-        <source>Toolbar style:</source>
-        <translation>Izgled orodnih vrstic:</translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation>Samo ikona</translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation>Samo besedilo</translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation>Besedilo ob ikoni</translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation>Besedilo pod ikono</translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation>Sistemsko privzeto</translation>
-    </message>
-    <message>
         <source>Change channel</source>
         <translation>Spremeni program</translation>
     </message>
@@ -2480,28 +2210,12 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Skrij v sistemsko vrstico</translation>
     </message>
     <message>
-        <source>Default options for startup</source>
-        <translation>Privzete nastavitve ob zagonu</translation>
-    </message>
-    <message>
-        <source>Simple mode</source>
-        <translation>Enostaven način</translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation>Vedno na vrhu</translation>
-    </message>
-    <message>
         <source>Show tray icon</source>
         <translation>Pokaži ikono v sistemski vrstici</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
         <translation>Miškin kolešček:</translation>
-    </message>
-    <message>
-        <source>Controls:</source>
-        <translation>Upravljanje:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
@@ -2512,24 +2226,12 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Prikaži ob premiku miške</translation>
     </message>
     <message>
-        <source>Info panel:</source>
-        <translation>Info pult:</translation>
-    </message>
-    <message>
         <source>Remember main window size, position and open panels</source>
         <translation>Zapomno si velikost, položaj in lastnosti glavnega okna</translation>
     </message>
     <message>
-        <source>Filters always visible</source>
-        <translation>Filtri vedno vidni</translation>
-    </message>
-    <message>
         <source>Icon theme</source>
         <translation>Tema ikon</translation>
-    </message>
-    <message>
-        <source>Tano default</source>
-        <translation type="obsolete">Privzeta Tano</translation>
     </message>
     <message>
         <source>Desktop theme</source>
@@ -2542,6 +2244,41 @@ Te operacije ni mogoče razveljaviti.</translation>
     <message>
         <source>Default</source>
         <translation>Privzeto</translation>
+    </message>
+    <message>
+        <source>OSD in fullscreen:</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>ShowInfoTab</name>
+    <message>
+        <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>toolBar</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>toolBar_2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2626,12 +2363,6 @@ Your changes will not be saved.</source>
         <translation>Datum snemanja je nastavljen pred današnjim dnem.
 Vaše nastavitve ne bodo shranjene.</translation>
     </message>
-    <message>
-        <source>The recording is overlaping with others.
-Your changes will not be saved.</source>
-        <translation type="obsolete">Snemanje se prekriva z drugimi.
-Vaše nastavitve ne bodo shranjene.</translation>
-    </message>
 </context>
 <context>
     <name>TimersModel</name>
@@ -2643,10 +2374,6 @@ Vaše nastavitve ne bodo shranjene.</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <source>Tano</source>
-        <translation type="obsolete">Tano</translation>
-    </message>
-    <message>
         <source>Playing:</source>
         <translation>Predvajam:</translation>
     </message>
@@ -2657,22 +2384,6 @@ Vaše nastavitve ne bodo shranjene.</translation>
     <message>
         <source>Recorder</source>
         <translation>Snemalnik</translation>
-    </message>
-    <message>
-        <source>Tano stopped recording</source>
-        <translation type="obsolete">Tano je končal s snemanjem</translation>
-    </message>
-    <message>
-        <source>Tano is recording %1 to %2 
-Stop manually!</source>
-        <translation type="obsolete">Tano snema %1 v %2 
-Ročno ustavite!</translation>
-    </message>
-    <message>
-        <source>Tano is recording %1 to %2 
-End time: %3</source>
-        <translation type="obsolete">Tano snema %1 v %2 
-Končni čas: %3</translation>
     </message>
     <message>
         <source>Recording stopped.</source>
@@ -2698,24 +2409,12 @@ Končni čas: %3</translation>
         <translation>Informacije o posodobitvah</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;You are using latest version of Tano!&lt;/h3&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Uporabljate zadnjo različico programa Tano!&lt;/h3&gt;</translation>
-    </message>
-    <message>
         <source>Current version:</source>
         <translation>Trenutna različica:</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;You are using development version of Tano!&lt;/h3&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Uporabljate razvojno različico programa Tano!&lt;/h3&gt;</translation>
-    </message>
-    <message>
         <source>Stable version:</source>
         <translation>Stabilna različica:</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Your version of Tano needs to be updated!&lt;/h3&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Vaša različica programa Tano mora biti posodobljena!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Date released:</source>
@@ -2724,10 +2423,6 @@ Končni čas: %3</translation>
     <message>
         <source>Information:</source>
         <translation>Informacije:</translation>
-    </message>
-    <message>
-        <source>Download now!</source>
-        <translation type="obsolete">Prenesi zdaj!</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>

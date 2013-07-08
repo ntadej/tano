@@ -61,118 +61,6 @@ Your VLC-Qt version: %4
     </message>
 </context>
 <context>
-    <name>DonationDialog</name>
-    <message>
-        <source>Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano Player project requires a lot of work and devotion. You can also support the development by donating some money. This money will be spent to cover all expenses and hosting costs.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You can read additional terms and information on Tano Player homepage.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleChannel</name>
-    <message>
-        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleFull</name>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search and filter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>EpgShow</name>
-    <message>
-        <source>Previous</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Crew&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Description&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Crew members: All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Director</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Actor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Writer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Adapter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Producer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Composer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Presenter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Commentator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Guest</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>InfoBarWidget</name>
     <message>
         <source>Now:</source>
@@ -222,23 +110,11 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Main Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Controls</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recorder Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -256,10 +132,6 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -295,19 +167,11 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit Channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -355,22 +219,6 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Controls panel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Info panel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable Info panel in Fullscreen mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Teletext</source>
         <translation type="unfinished"></translation>
     </message>
@@ -403,10 +251,6 @@ Your VLC-Qt version: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Instant</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
@@ -420,11 +264,15 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Instant %1</source>
+        <source>An update is available!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>An update is available!</source>
+        <source>Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Info</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -630,6 +478,10 @@ Please, try again.&lt;/b&gt;</source>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -956,41 +808,6 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
-    <name>PlaylistFilterWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
@@ -1046,6 +863,25 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PlaylistTab</name>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All languages</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1875,6 +1711,33 @@ This operation is ireversible.</source>
     </message>
 </context>
 <context>
+    <name>ScheduleTab</name>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current channel selected doesn&apos;t have any schedule information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
@@ -1974,18 +1837,6 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Enable S/PDIF output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select network interface:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Automatic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2331,30 +2182,6 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Toolbar style:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Change channel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2367,27 +2194,11 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Default options for startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Simple mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show tray icon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Controls:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2399,15 +2210,7 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Info panel:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Remember main window size, position and open panels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Filters always visible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2424,6 +2227,41 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OSD in fullscreen:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ShowInfoTab</name>
+    <message>
+        <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>toolBar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>toolBar_2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No information</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

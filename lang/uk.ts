@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="uk">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="uk" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -38,11 +36,11 @@
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>This application is based on Tano.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -58,118 +56,6 @@ Your VLC-Qt version: %4
     <message>
         <source>Radio</source>
         <translation>Радіо</translation>
-    </message>
-</context>
-<context>
-    <name>DonationDialog</name>
-    <message>
-        <source>Donate</source>
-        <translation>Пожертвування</translation>
-    </message>
-    <message>
-        <source>Tano Player project requires a lot of work and devotion. You can also support the development by donating some money. This money will be spent to cover all expenses and hosting costs.</source>
-        <translation>Проект Tano Player вимагає багато роботи та відданості. Ви також можете підтримати розвиток проекту пожертвував гроші. Ці гроші будуть витрачені на оплату усіх витрат та оплату хостінгу проекту.</translation>
-    </message>
-    <message>
-        <source>You can read additional terms and information on Tano Player homepage.</source>
-        <translation>Ви можете прочитати додаткові вимоги та інформацію на домашній веб-сторінці Tano Player.</translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleChannel</name>
-    <message>
-        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Без EPG&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <source>Show information</source>
-        <translation>Показати інформацію</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Запис</translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleFull</name>
-    <message>
-        <source>Schedule</source>
-        <translation>Розклад</translation>
-    </message>
-    <message>
-        <source>Search and filter</source>
-        <translation>Шукати та відфільтрувати</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Графік&lt;/h3&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>EpgShow</name>
-    <message>
-        <source>Previous</source>
-        <translation>Попередній</translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation>Наступний</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Crew&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Бригада&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Description&lt;/b&gt;</source>
-        <translation>Опис</translation>
-    </message>
-    <message>
-        <source>Crew members: All</source>
-        <translation>Члени бригади: Усі</translation>
-    </message>
-    <message>
-        <source>Director</source>
-        <translation>Режисер</translation>
-    </message>
-    <message>
-        <source>Actor</source>
-        <translation>Актор</translation>
-    </message>
-    <message>
-        <source>Writer</source>
-        <translation>Письменник</translation>
-    </message>
-    <message>
-        <source>Adapter</source>
-        <translation>Адаптор</translation>
-    </message>
-    <message>
-        <source>Producer</source>
-        <translation>Продюсер</translation>
-    </message>
-    <message>
-        <source>Composer</source>
-        <translation>Композитор</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation>Редактор</translation>
-    </message>
-    <message>
-        <source>Presenter</source>
-        <translation>Представник</translation>
-    </message>
-    <message>
-        <source>Commentator</source>
-        <translation>Коментатор</translation>
-    </message>
-    <message>
-        <source>Guest</source>
-        <translation>Гість</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>Запис</translation>
     </message>
 </context>
 <context>
@@ -222,24 +108,12 @@ Your VLC-Qt version: %4
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <source>Main Toolbar</source>
-        <translation>Головна панель</translation>
-    </message>
-    <message>
         <source>Play</source>
         <translation>Відтворити</translation>
     </message>
     <message>
         <source>Hide to tray</source>
         <translation>Сховати до трею</translation>
-    </message>
-    <message>
-        <source>Controls</source>
-        <translation>Управління</translation>
-    </message>
-    <message>
-        <source>Recorder Toolbar</source>
-        <translation>Панель запису</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -258,10 +132,6 @@ Your VLC-Qt version: %4
     <message>
         <source>Schedule</source>
         <translation>Розклад</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Розклад&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Back</source>
@@ -296,20 +166,12 @@ Your VLC-Qt version: %4
         <translation>Відкрити &amp;Файл</translation>
     </message>
     <message>
-        <source>Edit Channels</source>
-        <translation>Редагувати канали</translation>
-    </message>
-    <message>
         <source>Open URL</source>
         <translation>Відкрити посилання URL</translation>
     </message>
     <message>
         <source>Check for updates</source>
         <translation>Перевірити оновлення</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Відкрити</translation>
     </message>
     <message>
         <source>Stop</source>
@@ -356,22 +218,6 @@ Your VLC-Qt version: %4
         <translation>Зупинити запис</translation>
     </message>
     <message>
-        <source>Controls panel</source>
-        <translation>Панель контролю</translation>
-    </message>
-    <message>
-        <source>Info panel</source>
-        <translation>Інформаційна панель</translation>
-    </message>
-    <message>
-        <source>Enable Info panel in Fullscreen mode</source>
-        <translation>Увімкнути інформаційну панель в повноекранному режимі</translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation>Пожертвування</translation>
-    </message>
-    <message>
         <source>Teletext</source>
         <translation>Телетекст</translation>
     </message>
@@ -404,29 +250,29 @@ Your VLC-Qt version: %4
         <translation>Переглянути поточну інформацію</translation>
     </message>
     <message>
-        <source>Instant</source>
-        <translation>Мить</translation>
-    </message>
-    <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Instant %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>An update is available!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Show Info</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -606,33 +452,37 @@ This will stop recording in progress.</source>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Remember password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -838,7 +688,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -881,15 +731,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -958,42 +808,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished">Перелік відтворення</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistFilterWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation>Спорожнити</translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation>Усі категорії</translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation>Усі мови</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>Усі</translation>
-    </message>
-    <message>
-        <source>TV</source>
-        <translation>TV</translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation>SD</translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation>HD</translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation>Радіо</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1056,12 +871,30 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>PlaylistTab</name>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>PlaylistUpdate</name>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Неможливо прочитати файл %1:
-%2.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1100,7 +933,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1699,19 +1532,19 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1887,6 +1720,33 @@ This operation is ireversible.</source>
     </message>
 </context>
 <context>
+    <name>ScheduleTab</name>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Show information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Current channel selected doesn&apos;t have any schedule information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Select channel</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
@@ -1987,18 +1847,6 @@ This operation is ireversible.</source>
     <message>
         <source>Enable S/PDIF output</source>
         <translation>Увімкнути S/PDIF вихід</translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation>Мережа</translation>
-    </message>
-    <message>
-        <source>Select network interface:</source>
-        <translation>Обрати мережевий інтерфейс:</translation>
-    </message>
-    <message>
-        <source>Automatic</source>
-        <translation>Автоматично</translation>
     </message>
     <message>
         <source>Misc</source>
@@ -2248,7 +2096,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2329,11 +2177,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Local file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2341,30 +2189,6 @@ This operation is ireversible.</source>
     <message>
         <source>General Interface Settings</source>
         <translation>Загальні налаштування інтерфейсу</translation>
-    </message>
-    <message>
-        <source>Toolbar style:</source>
-        <translation>Стиль панелі:</translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation>Лише іконки</translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation>Лише текст</translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation>Текст рядом з іконками</translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation>Текст під іконками</translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation>За замовчуванням системи</translation>
     </message>
     <message>
         <source>Change channel</source>
@@ -2379,28 +2203,12 @@ This operation is ireversible.</source>
         <translation>Мінімізувати в трей</translation>
     </message>
     <message>
-        <source>Default options for startup</source>
-        <translation>Параметри за замовчуванням для запуску</translation>
-    </message>
-    <message>
-        <source>Simple mode</source>
-        <translation>Простий режим</translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation>Завжди поверх інших вікон</translation>
-    </message>
-    <message>
         <source>Show tray icon</source>
         <translation>Показати іконку в треї</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
         <translation>Колесо миші:</translation>
-    </message>
-    <message>
-        <source>Controls:</source>
-        <translation>Управління:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
@@ -2411,16 +2219,8 @@ This operation is ireversible.</source>
         <translation>Показувати під час переміщення миші</translation>
     </message>
     <message>
-        <source>Info panel:</source>
-        <translation>Інформаційна панель:</translation>
-    </message>
-    <message>
         <source>Remember main window size, position and open panels</source>
         <translation>Запам’ятати розмір головного вікна, позицію та відкриті панелі</translation>
-    </message>
-    <message>
-        <source>Filters always visible</source>
-        <translation>Завжди бачити фільтри</translation>
     </message>
     <message>
         <source>Icon theme</source>
@@ -2436,7 +2236,42 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">За замовчуванням</translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>OSD in fullscreen:</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>ShowInfoTab</name>
+    <message>
+        <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>toolBar</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>toolBar_2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2526,7 +2361,7 @@ Your changes will not be saved.</source>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="unfinished">в</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2545,17 +2380,17 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Recording stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2581,20 +2416,16 @@ End time: %3</source>
         <translation>Інформація:</translation>
     </message>
     <message>
-        <source>Download now!</source>
-        <translation type="obsolete">Завантажити зараз!</translation>
-    </message>
-    <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

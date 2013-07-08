@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="hi_IN">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="hi_IN" version="2.0">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -39,11 +37,11 @@
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>This application is based on Tano.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -59,118 +57,6 @@ Your VLC-Qt version: %4
     <message>
         <source>Radio</source>
         <translation>रेडियो</translation>
-    </message>
-</context>
-<context>
-    <name>DonationDialog</name>
-    <message>
-        <source>Donate</source>
-        <translation>दान करें</translation>
-    </message>
-    <message>
-        <source>Tano Player project requires a lot of work and devotion. You can also support the development by donating some money. This money will be spent to cover all expenses and hosting costs.</source>
-        <translation>Tano प्लेयर परियोजना में काम और भक्ति का  बहुत आवश्यकता है. तुम भी कुछ पैसे दान करके विकास का समर्थन कर सकते हैं. यह पैसे सभी खर्च और होस्टिंग लागत को कवर करने के लिए खर्च किया जाएगा.</translation>
-    </message>
-    <message>
-        <source>You can read additional terms and information on Tano Player homepage.</source>
-        <translation>आप अतिरिक्त शर्तें और जानकारी Tano प्लेयर होमपेज पर पढ़ सकते हैं.</translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleChannel</name>
-    <message>
-        <source>&lt;h2&gt;No EPG&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;EPG नहीं है&lt;/h2&gt;</translation>
-    </message>
-    <message>
-        <source>Show information</source>
-        <translation>जानकारी दिखाएं</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>रिकॉर्ड</translation>
-    </message>
-</context>
-<context>
-    <name>EpgScheduleFull</name>
-    <message>
-        <source>Schedule</source>
-        <translation>कार्यक्रम</translation>
-    </message>
-    <message>
-        <source>Search and filter</source>
-        <translation>खोज और फिल्टर</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Schedule&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>EpgShow</name>
-    <message>
-        <source>Previous</source>
-        <translation>पिछला</translation>
-    </message>
-    <message>
-        <source>Next</source>
-        <translation>अगला</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Crew&lt;/b&gt;</source>
-        <translation>&lt;b&gt;कर्मीदल&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Description&lt;/b&gt;</source>
-        <translation>&lt;b&gt;विवरण&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Crew members: All</source>
-        <translation>कर्मीदल के सदस्य: सभी</translation>
-    </message>
-    <message>
-        <source>Director</source>
-        <translation>निदेशक</translation>
-    </message>
-    <message>
-        <source>Actor</source>
-        <translation>अभिनेता</translation>
-    </message>
-    <message>
-        <source>Writer</source>
-        <translation>लेखक</translation>
-    </message>
-    <message>
-        <source>Adapter</source>
-        <translation>अनुकूलक</translation>
-    </message>
-    <message>
-        <source>Producer</source>
-        <translation>निर्माता</translation>
-    </message>
-    <message>
-        <source>Composer</source>
-        <translation>संगीतकार</translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation>संपादक</translation>
-    </message>
-    <message>
-        <source>Presenter</source>
-        <translation>प्रस्तुतकर्ता</translation>
-    </message>
-    <message>
-        <source>Commentator</source>
-        <translation>विवरणकार</translation>
-    </message>
-    <message>
-        <source>Guest</source>
-        <translation>अतिथि</translation>
-    </message>
-    <message>
-        <source>Record</source>
-        <translation>अभिलेख</translation>
     </message>
 </context>
 <context>
@@ -223,24 +109,12 @@ Your VLC-Qt version: %4
         <translation>&amp;फ़ाइल</translation>
     </message>
     <message>
-        <source>Main Toolbar</source>
-        <translation>मुख्य औज़ारपट्टी</translation>
-    </message>
-    <message>
         <source>Play</source>
         <translation>चलाना</translation>
     </message>
     <message>
         <source>Hide to tray</source>
         <translation>ट्रे में छुपाएँ</translation>
-    </message>
-    <message>
-        <source>Controls</source>
-        <translation>नियंत्रण</translation>
-    </message>
-    <message>
-        <source>Recorder Toolbar</source>
-        <translation>Recorder Toolbar</translation>
     </message>
     <message>
         <source>Pause</source>
@@ -259,10 +133,6 @@ Your VLC-Qt version: %4
     <message>
         <source>Schedule</source>
         <translation>कार्यक्रम</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Schedule&lt;/b&gt;</source>
-        <translation>&lt;b&gt;कार्यक्रम&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Back</source>
@@ -297,20 +167,12 @@ Your VLC-Qt version: %4
         <translation>खोलें &amp;फ़ाइल</translation>
     </message>
     <message>
-        <source>Edit Channels</source>
-        <translation>चैनल संपादित करें</translation>
-    </message>
-    <message>
         <source>Open URL</source>
         <translation>URL खोलें</translation>
     </message>
     <message>
         <source>Check for updates</source>
         <translation>अद्यतनों के लिए जाँचें</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>खोलें</translation>
     </message>
     <message>
         <source>Stop</source>
@@ -357,22 +219,6 @@ Your VLC-Qt version: %4
         <translation>रिकॉर्डिंग रोकें</translation>
     </message>
     <message>
-        <source>Controls panel</source>
-        <translation>नियंत्रण कक्ष</translation>
-    </message>
-    <message>
-        <source>Info panel</source>
-        <translation>जानकारी पैनल</translation>
-    </message>
-    <message>
-        <source>Enable Info panel in Fullscreen mode</source>
-        <translation>फ़ुलस्क्रीन मोड में जानकारी पैनल सक्षम करें</translation>
-    </message>
-    <message>
-        <source>Donate</source>
-        <translation>दान करें</translation>
-    </message>
-    <message>
         <source>Teletext</source>
         <translation>टेलीटेक्स्ट</translation>
     </message>
@@ -402,32 +248,32 @@ Your VLC-Qt version: %4
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Instant</source>
-        <translation>तुरंत</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Instant %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>An update is available!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Channels</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Show Info</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -607,33 +453,37 @@ This will stop recording in progress.</source>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Remember password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -827,7 +677,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor</source>
@@ -835,11 +685,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -883,15 +733,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -960,42 +810,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished">प्लेलिस्ट</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistFilterWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation>साफ़</translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation>सभी श्रेणियाँ</translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation>सभी भाषाएँ</translation>
-    </message>
-    <message>
-        <source>All</source>
-        <translation>सब</translation>
-    </message>
-    <message>
-        <source>TV</source>
-        <translation>TV</translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation>SD</translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation>HD</translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation>रेडियो</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1058,12 +873,30 @@ You will lose any unsaved changes.</source>
     </message>
 </context>
 <context>
+    <name>PlaylistTab</name>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>PlaylistUpdate</name>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">फ़ाइल नहीं पढ़ सकते %1:
-%2.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1102,7 +935,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1422,31 +1255,31 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Parse error at line %1, column %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Detective/Thriller</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Adventure/Western/War</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Science Fiction/Fantasy/Horror</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Comedy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Soap/Melodrama/Folkloric</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Romance</source>
@@ -1454,11 +1287,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Serious/Classical/Religious/Historical Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Adult Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>News/Current affairs</source>
@@ -1466,11 +1299,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>News/Weather report</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>News magazine</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Documentary</source>
@@ -1478,23 +1311,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Discussion/Interview/Debate</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Show/Game show</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Game show/Quiz/Contest</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Variety show</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Talk show</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Sports</source>
@@ -1502,31 +1335,31 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Special events</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Sports magazines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Football/Soccer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tennis/Squash</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Team sports</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Athletics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Motor sport</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Water sport</source>
@@ -1534,23 +1367,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Children&apos;s/Youth programmes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Pre-school children&apos;s programmes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Entertainment programmes for 6 to 14</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Entertainment programmes for 10 to 16</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Informational/Educational/School programmes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Cartoons/Puppets</source>
@@ -1558,27 +1391,27 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Music/Ballet/Dance</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Rock/Pop</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Serious music/Classical music</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Folk/Traditional music</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Jazz</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Musical/Opera</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Arts/Culture</source>
@@ -1598,7 +1431,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Popular culture/Traditional arts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Literature</source>
@@ -1606,27 +1439,27 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Film/Cinema</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Experimental film/video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Broadcasting/Press</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Social/Political issues/Economics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Magazines/Reports/Documentary</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Economics/Social advisory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Remarkable people</source>
@@ -1634,31 +1467,31 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Education/Science/Factual topics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Nature/Animals/Environment</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Technology/Natural sciences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Medicine/Physiology/Psychology</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Foreign countries/Expeditions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Social/Spiritual sciences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Further education</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Languages</source>
@@ -1666,51 +1499,51 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Leisure hobbies</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Tourism/Travel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Handicraft</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Motoring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Fitness and Health</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Cooking</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Advertisement/Shopping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Gardening</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1886,6 +1719,33 @@ This operation is ireversible.</source>
     </message>
 </context>
 <context>
+    <name>ScheduleTab</name>
+    <message>
+        <source>Change</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Show information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Current channel selected doesn&apos;t have any schedule information</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Select channel</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
@@ -1986,18 +1846,6 @@ This operation is ireversible.</source>
     <message>
         <source>Enable S/PDIF output</source>
         <translation>S/PDIF आउटपुट सक्षम करें</translation>
-    </message>
-    <message>
-        <source>Network</source>
-        <translation>संजाल</translation>
-    </message>
-    <message>
-        <source>Select network interface:</source>
-        <translation>संजाल अंतरफलक चुनें:</translation>
-    </message>
-    <message>
-        <source>Automatic</source>
-        <translation>स्वचालित</translation>
     </message>
     <message>
         <source>Misc</source>
@@ -2201,11 +2049,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2248,7 +2096,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2329,11 +2177,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Local file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2341,30 +2189,6 @@ This operation is ireversible.</source>
     <message>
         <source>General Interface Settings</source>
         <translation>सामान्य अंतरफलक सेटिंग्स</translation>
-    </message>
-    <message>
-        <source>Toolbar style:</source>
-        <translation>टूलबार शैली</translation>
-    </message>
-    <message>
-        <source>Icon only</source>
-        <translation>केवल चिह्न</translation>
-    </message>
-    <message>
-        <source>Text only</source>
-        <translation>केवल पाठ</translation>
-    </message>
-    <message>
-        <source>Text beside icon</source>
-        <translation>आइकन के बगल में पाठ</translation>
-    </message>
-    <message>
-        <source>Text under icon</source>
-        <translation>Text under icon</translation>
-    </message>
-    <message>
-        <source>System default</source>
-        <translation>सिस्टम डिफ़ॉल्ट</translation>
     </message>
     <message>
         <source>Change channel</source>
@@ -2379,28 +2203,12 @@ This operation is ireversible.</source>
         <translation>ट्रे को छोटा करें</translation>
     </message>
     <message>
-        <source>Default options for startup</source>
-        <translation>स्टार्टअप के लिए डिफ़ॉल्ट विकल्प</translation>
-    </message>
-    <message>
-        <source>Simple mode</source>
-        <translation>सरल मोड</translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation>हमेशा शीर्ष पर</translation>
-    </message>
-    <message>
         <source>Show tray icon</source>
         <translation>ट्रे चिह्न दिखाएँ</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
         <translation>माउस व्हील:</translation>
-    </message>
-    <message>
-        <source>Controls:</source>
-        <translation>नियंत्रण:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
@@ -2411,16 +2219,8 @@ This operation is ireversible.</source>
         <translation>माउस के चाल पर दिखाएं</translation>
     </message>
     <message>
-        <source>Info panel:</source>
-        <translation>जानकारी पैनल:</translation>
-    </message>
-    <message>
         <source>Remember main window size, position and open panels</source>
         <translation>मुख्य विंडो का आकार,स्थिति, और खुले पैनल याद रखें</translation>
-    </message>
-    <message>
-        <source>Filters always visible</source>
-        <translation>फ़िल्टर हमेशा दिखाई देता है</translation>
     </message>
     <message>
         <source>Icon theme</source>
@@ -2436,7 +2236,42 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">डिफ़ॉल्ट</translation>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>OSD in fullscreen:</source>
+        <translation type="unfinished"/>
+    </message>
+</context>
+<context>
+    <name>ShowInfoTab</name>
+    <message>
+        <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>toolBar</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>toolBar_2</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <source>No information</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2526,7 +2361,7 @@ Your changes will not be saved.</source>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="unfinished">में</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2545,17 +2380,17 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Recording stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2581,20 +2416,16 @@ End time: %3</source>
         <translation>जानकारी:</translation>
     </message>
     <message>
-        <source>Download now!</source>
-        <translation type="obsolete">अभी डाउनलोड करें!</translation>
-    </message>
-    <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
