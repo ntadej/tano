@@ -8,40 +8,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
-</source>
+        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Authors</source>
+        <source>Multimedia backend powered by VLC-Qt %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Backend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Your %1 version: %2
-Your Qt runtime version: %3
-Your VLC-Qt version: %4
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This application is based on Tano.</source>
+        <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -261,10 +236,6 @@ Your VLC-Qt version: %4
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>An update is available!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2241,14 +2212,6 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>toolBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>toolBar_2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Previous</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2402,10 +2365,6 @@ End time: %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Information:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2414,7 +2373,27 @@ End time: %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changelog:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

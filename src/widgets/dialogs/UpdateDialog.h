@@ -50,11 +50,10 @@ public slots:
 protected:
     void changeEvent(QEvent *e);
 
-signals:
-    void newUpdate();
-
 private slots:
-    void action(QAbstractButton *button);
+    void download();
+    void changelog();
+    void changelogBack();
     void processUpdate(const QStringList &update,
                        const UpdateInfo &info);
     void readUpdates(const QByteArray &data,

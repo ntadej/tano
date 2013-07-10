@@ -261,9 +261,6 @@
    </layout>
   </widget>
   <widget class="QToolBar" name="toolBarTop">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
    <property name="movable">
     <bool>false</bool>
    </property>
@@ -285,9 +282,6 @@
    <addaction name="actionRecord"/>
   </widget>
   <widget class="QToolBar" name="toolBarBottom">
-   <property name="windowTitle">
-    <string>toolBar_2</string>
-   </property>
    <property name="movable">
     <bool>false</bool>
    </property>

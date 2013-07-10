@@ -447,6 +447,12 @@ void FancyTabWidget::removeTab(int index)
     _tabBar->removeTab(index);
 }
 
+void FancyTabWidget::renameTab(int index,
+                               const QString &name)
+{
+    _tabBar->setTabText(index, name);
+}
+
 void FancyTabWidget::setBackgroundBrush(const QBrush &brush)
 {
     QPalette pal = _tabBar->palette();

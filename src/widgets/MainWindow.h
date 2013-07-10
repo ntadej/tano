@@ -84,7 +84,6 @@ private slots:
     void exitLogout();
     void aboutTano();
     void support();
-    void updateAvailable();
 
     void showSchedule();
     void showScheduleCurrent();

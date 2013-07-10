@@ -20,7 +20,6 @@
 *****************************************************************************/
 
 #include <QtCore/QDate>
-#include <QtCore/QFile>
 
 #include "core/Common.h"
 
@@ -36,21 +35,16 @@ AboutDialog::AboutDialog(QWidget *parent)
     ui->setupUi(this);
 
     ui->labelIcon->setPixmap(QIcon(":/logo/64x64/logo.png").pixmap(64));
+    ui->labelIconBackend->setPixmap(QIcon(":/logo/24x24/vlc-qt.png").pixmap(24));
 
-    ui->labelTitle->setText(ui->labelTitle->text().arg(Tano::name(), Tano::version(), Tano::changeset(), Tano::url()));
-    ui->labelBuild->setText(ui->labelBuild->text().arg(Tano::name(), QString("%1 %2 %3").arg(Tano::version(), Tano::is64bit() ? "64-bit" : "32-bit", Tano::changeset()), qVersion(), Tano::Backend::versionLibrary()));
+    ui->labelTitle->setText(ui->labelTitle->text().arg(Tano::name(), Tano::version(), Tano::changeset(), Tano::is64bit() ? "64-bit" : "32-bit", Tano::url()));
+    ui->labelTano->setText(ui->labelTano->text().arg(Tano::versionCore()));
+    ui->labelBackend->setText(ui->labelBackend->text().arg(Tano::Backend::versionLibrary()));
     ui->labelCopyright->setText(ui->labelCopyright->text().arg(QDate::currentDate().toString("yyyy")));
-    ui->labelBackendInfo->setText(ui->labelBackendInfo->text().arg(Tano::Backend::versionCore()));
-    ui->labelBackendVersion->setText(ui->labelBackendVersion->text().arg(Tano::Backend::versionLibrary()));
 
-    if (Tano::name() != "Tano")
-        ui->labelAbout->setText("<b>" + tr("This application is based on Tano.") + "</b><br><br>" + ui->labelAbout->text());
-
-    QFile file(":/info/AUTHORS");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return;
-
-    ui->authors->setPlainText(QString::fromUtf8(file.readAll()));
+    if (Tano::name() == "Tano") {
+        ui->labelTano->hide();
+    }
 }
 
 AboutDialog::~AboutDialog()

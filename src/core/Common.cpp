@@ -48,15 +48,20 @@ QString Tano::executable()
 
 QString Tano::version()
 {
-    QString version;
-
 #ifdef VERSION
-    version.append(QString(VERSION));
+    return QString(VERSION);
 #else
-    version.append("Unknown");
+    return "Unknown";
 #endif
+}
 
-    return version;
+QString Tano::versionCore()
+{
+#ifdef VERSION_CORE
+    return QString(VERSION_CORE);
+#else
+    return version();
+#endif
 }
 
 QString Tano::email()

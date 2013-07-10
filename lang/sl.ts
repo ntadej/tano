@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sl" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="sl">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -8,43 +10,55 @@
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
 </source>
-        <translation>Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom. Temelji na knjižnici VLC-Qt.
+        <translation type="obsolete">Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom. Temelji na knjižnici VLC-Qt.
 </translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation>Avtorji</translation>
+        <translation type="obsolete">Avtorji</translation>
     </message>
     <message>
         <source>License</source>
-        <translation>Licenca</translation>
+        <translation type="obsolete">Licenca</translation>
     </message>
     <message>
         <source>Backend</source>
-        <translation>Hrbtenica</translation>
+        <translation type="obsolete">Hrbtenica</translation>
     </message>
     <message>
         <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
 </source>
-        <translation>VLC-Qt je brezplačna programska knjižnica, ki služi povezavi med knjižnicami Qt in libvlc. Vsebuje osnovne razrede za multimedijsko predvajanje in tudi nekaj razredov uporabniškega vmesnika za hitrejši razvoj multimedijskega predvajalnika.
+        <translation type="obsolete">VLC-Qt je brezplačna programska knjižnica, ki služi povezavi med knjižnicami Qt in libvlc. Vsebuje osnovne razrede za multimedijsko predvajanje in tudi nekaj razredov uporabniškega vmesnika za hitrejši razvoj multimedijskega predvajalnika.
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Uporabljate Videolan VLC %1&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Uporabljate Videolan VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Your %1 version: %2
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation>Vaša različica programa %1: %2
+        <translation type="obsolete">Vaša različica programa %1: %2
 Vaša različica Qt: %3
 Vaša različica knjižnice VLC-Qt: %4</translation>
     </message>
     <message>
         <source>This application is based on Tano.</source>
-        <translation>Ta aplikacija temelji na programu Tano.</translation>
+        <translation type="obsolete">Ta aplikacija temelji na programu Tano.</translation>
+    </message>
+    <message>
+        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
+        <translation>Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom.</translation>
+    </message>
+    <message>
+        <source>Multimedia backend powered by VLC-Qt %1.</source>
+        <translation>Multimedijsko hrbtenico poganja VLC-Qt %1.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Ta aplikacija temelji na programu Tano %1.&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -269,15 +283,15 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>An update is available!</source>
-        <translation>Na voljo je posodobitev!</translation>
+        <translation type="obsolete">Na voljo je posodobitev!</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation type="unfinished"/>
+        <translation>Programi</translation>
     </message>
     <message>
         <source>Show Info</source>
-        <translation type="unfinished"/>
+        <translation>Info o oddaji</translation>
     </message>
 </context>
 <context>
@@ -489,7 +503,7 @@ Poskusite znova.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation>&lt;b&gt;Prijava ...&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -881,19 +895,19 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>PlaylistTab</name>
     <message>
         <source>All</source>
-        <translation type="unfinished"/>
+        <translation>Vse</translation>
     </message>
     <message>
         <source>TV</source>
-        <translation type="unfinished"/>
+        <translation>TV</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished"/>
+        <translation>Vse kategorije</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished"/>
+        <translation>Vsi jeziki</translation>
     </message>
 </context>
 <context>
@@ -1730,27 +1744,27 @@ Te operacije ni mogoče razveljaviti.</translation>
     <name>ScheduleTab</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"/>
+        <translation>Zamenjaj</translation>
     </message>
     <message>
         <source>Show information</source>
-        <translation type="unfinished"/>
+        <translation>Prikaži informacije</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation>Snemaj</translation>
     </message>
     <message>
         <source>Current channel selected doesn&apos;t have any schedule information</source>
-        <translation type="unfinished"/>
+        <translation>Trenuten izbran program nima informacij o sporedu</translation>
     </message>
     <message>
         <source>Select channel</source>
-        <translation type="unfinished"/>
+        <translation>Izberite program</translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"/>
+        <translation>Ni informacij</translation>
     </message>
 </context>
 <context>
@@ -2247,38 +2261,30 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>OSD in fullscreen:</source>
-        <translation type="unfinished"/>
+        <translation>OSD v celozaslonskem načinu:</translation>
     </message>
 </context>
 <context>
     <name>ShowInfoTab</name>
     <message>
         <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>toolBar</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>toolBar_2</source>
-        <translation type="unfinished"/>
+        <translation>&lt;h3&gt;Nobene oddaje ni izbrane.&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"/>
+        <translation>Prejšnja</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation>Snemaj</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"/>
+        <translation>Naslednja</translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"/>
+        <translation>Ni informacij</translation>
     </message>
 </context>
 <context>
@@ -2422,7 +2428,7 @@ Končni čas: %3</translation>
     </message>
     <message>
         <source>Information:</source>
-        <translation>Informacije:</translation>
+        <translation type="obsolete">Informacije:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
@@ -2434,7 +2440,31 @@ Končni čas: %3</translation>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Aplikacija mora biti posodobljena!&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Aplikacija mora biti posodobljena!&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Zapri</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation>Prenesi</translation>
+    </message>
+    <message>
+        <source>Changelog:</source>
+        <translation>Spremembe:</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation>Oglej</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Spremembe v %1&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Na voljo je nova posodobitev!&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>

@@ -122,9 +122,7 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     _noEpgLabel = new QLabel(_noEpg);
     _noEpgLabel->setWordWrap(true);
     _noEpgLabel->setAlignment(Qt::AlignCenter);
-    _noEpgLabel->setText("<h3>" + tr("Current channel selected doesn't have any schedule information") + "</h3>");
     _noEpgButton = new QPushButton(_noEpg);
-    _noEpgButton->setText(tr("Select channel"));
     _noEpgButton->setIcon(QIcon::fromTheme("video-x-generic"));
     _noEpgButton->setIconSize(QSize(24, 24));
 
@@ -157,7 +155,11 @@ void ScheduleTab::changeEvent(QEvent *e)
     switch (e->type())
     {
     case QEvent::LanguageChange:
-
+        _change->setText(tr("Change"));
+        _info->setText(tr("Show information"));
+        _record ->setText(tr("Record"));
+        _noEpgLabel->setText("<h3>" + tr("Current channel selected doesn't have any schedule information") + "</h3>");
+        _noEpgButton->setText(tr("Select channel"));
         break;
     default:
         break;

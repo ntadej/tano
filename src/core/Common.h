@@ -33,6 +33,7 @@ namespace Tano
 
     // Version
     TANO_CORE_EXPORT QString version();
+    TANO_CORE_EXPORT QString versionCore();
     TANO_CORE_EXPORT QString changeset();
     TANO_CORE_EXPORT bool is64bit();
     TANO_CORE_EXPORT QString uid();

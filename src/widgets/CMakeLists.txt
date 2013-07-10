@@ -93,7 +93,6 @@ SET(Tano_Widgets_Common_Srcs
     common/DesktopShortcuts.cpp
     common/FileDialogs.cpp
     common/InfoBarWidget.cpp
-    common/LicenseWidget.cpp
     common/OsdFloat.cpp
     common/OsdWidget.cpp
     common/PlaylistDisplayWidget.cpp

@@ -132,6 +132,10 @@ MainWindow::MainWindow(Arguments *args,
     _mediaPlayer->createSession(_hasPlaylist && _model->validate());
 
     qApp->installEventFilter(this);
+
+#if FEATURE_UPDATE
+    _update->checkSilent();
+#endif
 }
 
 MainWindow::~MainWindow()
@@ -253,6 +257,10 @@ void MainWindow::changeEvent(QEvent *e)
     switch (e->type()) {
         case QEvent::LanguageChange:
             ui->retranslateUi(this);
+
+            ui->tabs->renameTab(0, tr("Channels"));
+            ui->tabs->renameTab(1, tr("Schedule"));
+            ui->tabs->renameTab(2, tr("Show Info"));
             break;
         default:
             break;
@@ -284,7 +292,7 @@ void MainWindow::createGui()
     ui->tabs->setTabEnabled(1, true);
 
     _showInfoTab = new ShowInfoTab(this);
-    ui->tabs->insertTab(2, _showInfoTab, QIcon::fromTheme("dialog-info"), tr("Show Info"));
+    ui->tabs->insertTab(2, _showInfoTab, QIcon::fromTheme("dialog-information"), tr("Show Info"));
     ui->tabs->setTabEnabled(2, true);
 
     ui->tabs->setCurrentIndex(0);
@@ -346,10 +354,6 @@ void MainWindow::createDesktopStartup()
     _height = settings->height();
     _posX = settings->posX();
     _posY = settings->posY();
-
-#if FEATURE_UPDATE
-    _update->checkSilent();
-#endif
 
     if (_rememberGui) {
         resize(_width, _height);
@@ -449,7 +453,6 @@ void MainWindow::createConnections()
     connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _scheduleTab, SLOT(channel(Channel *)));
 
 #if FEATURE_UPDATE
-    connect(_update, SIGNAL(newUpdate()), this, SLOT(updateAvailable()));
     connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
 #endif
 
@@ -932,10 +935,4 @@ void MainWindow::recordProgramme(XmltvProgramme *programme)
 #else
     Q_UNUSED(programme)
 #endif
-}
-
-void MainWindow::updateAvailable()
-{
-    ui->actionUpdate->setText(tr("An update is available!"));
-    ui->tabs->statusBar()->showMessage(tr("An update is available!"));
 }

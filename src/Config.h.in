@@ -30,6 +30,7 @@
 #define DATA_DIR "@DEFAULT_DATA_DIR@"
 
 #if BRANDING
+    #define VERSION_CORE "@TANO_CORE_VERSION@"
     #include "branding/ExtraConfig.h"
 #else
     #define ENCRYPTION_KEY @ENCRYPTION_KEY@

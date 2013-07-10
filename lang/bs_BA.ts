@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="bs_BA" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="bs_BA">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -8,43 +10,55 @@
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
 </source>
-        <translation>Tano je open-source IPTV player koji ima sve mogućnosti punog IPTV playbacka sa EPG i snimačem. Baziran je na VLC-Qt.</translation>
+        <translation type="obsolete">Tano je open-source IPTV player koji ima sve mogućnosti punog IPTV playbacka sa EPG i snimačem. Baziran je na VLC-Qt.</translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation>Autori</translation>
+        <translation type="obsolete">Autori</translation>
     </message>
     <message>
         <source>License</source>
-        <translation>Licenca</translation>
+        <translation type="obsolete">Licenca</translation>
     </message>
     <message>
         <source>Backend</source>
-        <translation>Backend</translation>
+        <translation type="obsolete">Backend</translation>
     </message>
     <message>
         <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
 </source>
-        <translation>VLC-Qt je besplatna biblioteta koja se koristi za spajanje sa Qt i libvlc biblioteka. Sadrži sve klase za media playback i neke od GUI klasa za brži razvoj media playera.
+        <translation type="obsolete">VLC-Qt je besplatna biblioteta koja se koristi za spajanje sa Qt i libvlc biblioteka. Sadrži sve klase za media playback i neke od GUI klasa za brži razvoj media playera.
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Koristite VideoLAN VLC %1&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Koristite VideoLAN VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Your %1 version: %2
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation>Vaša %1 verzija: %2
+        <translation type="obsolete">Vaša %1 verzija: %2
 Vaša Qt runtime verzija: %3
 Vaša VLC-Qt verzija: %4
 </translation>
     </message>
     <message>
         <source>This application is based on Tano.</source>
-        <translation>Ova aplikacija se bazira na Tano-u.</translation>
+        <translation type="obsolete">Ova aplikacija se bazira na Tano-u.</translation>
+    </message>
+    <message>
+        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
+        <translation>Tano je open-source IPTV player koji ima sve mogućnosti punog IPTV playbacka sa EPG i snimačem.</translation>
+    </message>
+    <message>
+        <source>Multimedia backend powered by VLC-Qt %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Ova aplikacija se bazira na Tano-u %1.&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -269,15 +283,15 @@ Ova će radnja prekinuti snimanje u toku.</translation>
     </message>
     <message>
         <source>An update is available!</source>
-        <translation>Obnavljanje je dostupno</translation>
+        <translation type="obsolete">Obnavljanje je dostupno</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show Info</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -489,7 +503,7 @@ Molimo, pokušajte ponovo.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -628,7 +642,7 @@ Izgubit ćete sve nespašene promjene.</translation>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Ne mogu pisati u file %:
+        <translation>Ne mogu pisati u file %1:
 %2.</translation>
     </message>
     <message>
@@ -882,19 +896,19 @@ Sagem JS datoteke. Pored ovih formata također možete spasiti/eksportovati u M3
     <name>PlaylistTab</name>
     <message>
         <source>All</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>TV</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished"/>
+        <translation>Sve kategorije</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished"/>
+        <translation>Svi jezici</translation>
     </message>
 </context>
 <context>
@@ -1731,27 +1745,27 @@ Ova radnja je nepovratna.</translation>
     <name>ScheduleTab</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show information</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation>Snimanje</translation>
     </message>
     <message>
         <source>Current channel selected doesn&apos;t have any schedule information</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select channel</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1838,7 +1852,7 @@ Ova radnja je nepovratna.</translation>
     </message>
     <message>
         <source>Video output:</source>
-        <translation>Video izlaz</translation>
+        <translation>Video izlaz:</translation>
     </message>
     <message>
         <source>Audio output:</source>
@@ -2248,38 +2262,30 @@ Ova radnja je nepovratna.</translation>
     </message>
     <message>
         <source>OSD in fullscreen:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ShowInfoTab</name>
     <message>
         <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>toolBar</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>toolBar_2</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation>Snimanje</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Naprijed</translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2308,7 +2314,7 @@ Ova radnja je nepovratna.</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Kanal</translation>
+        <translation>Kanal:</translation>
     </message>
     <message>
         <source>Type:</source>
@@ -2423,7 +2429,7 @@ Vrijeme kraja: %3</translation>
     </message>
     <message>
         <source>Information:</source>
-        <translation>Informacija:</translation>
+        <translation type="obsolete">Informacija:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
@@ -2435,7 +2441,31 @@ Vrijeme kraja: %3</translation>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Ova aplikacije se treba obnoviti!&lt;/h3&gt; </translation>
+        <translation type="obsolete">&lt;h3&gt;Ova aplikacije se treba obnoviti!&lt;/h3&gt; </translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Zatvori</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changelog:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

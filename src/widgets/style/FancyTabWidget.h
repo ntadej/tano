@@ -106,6 +106,7 @@ public:
 
     QIcon tabIcon(int index) const { return _tabs.at(index)->icon; }
     QString tabText(int index) const { return _tabs.at(index)->text; }
+    void setTabText(int index, const QString &text) const { _tabs.at(index)->text = text; }
     int count() const {return _tabs.count(); }
     QRect tabRect(int index) const;
 
@@ -138,6 +139,7 @@ public:
                    const QIcon &icon,
                    const QString &label);
     void removeTab(int index);
+    void renameTab(int index, const QString &name);
     void setBackgroundBrush(const QBrush &brush);
     void addCornerWidget(QWidget *widget);
     void insertCornerWidget(int pos,

@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="cs">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -8,44 +10,56 @@
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
 </source>
-        <translation>Tano je svobodný multiplatformní přehrávač IP TV, jehož vlastností je plné přehrávání IP TV s EPG a nahrávání. Je založen na VLC-Qt.
+        <translation type="obsolete">Tano je svobodný multiplatformní přehrávač IP TV, jehož vlastností je plné přehrávání IP TV s EPG a nahrávání. Je založen na VLC-Qt.
 </translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation>Autoři</translation>
+        <translation type="obsolete">Autoři</translation>
     </message>
     <message>
         <source>License</source>
-        <translation>Povolení</translation>
+        <translation type="obsolete">Povolení</translation>
     </message>
     <message>
         <source>Backend</source>
-        <translation>Jádro</translation>
+        <translation type="obsolete">Jádro</translation>
     </message>
     <message>
         <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
 </source>
-        <translation>VLC-Qt je svobodná knihovna používaná ke spojení knihoven Qt a libvlc. Obsahuje základní třídy pro přehrávání hlavních multimédií a také některé třídy obrazového uživatelského rozhraní pro rychlejší vývoj multimediálního přehrávače.
+        <translation type="obsolete">VLC-Qt je svobodná knihovna používaná ke spojení knihoven Qt a libvlc. Obsahuje základní třídy pro přehrávání hlavních multimédií a také některé třídy obrazového uživatelského rozhraní pro rychlejší vývoj multimediálního přehrávače.
 </translation>
     </message>
     <message>
         <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Používáte VideoLAN VLC %1&lt;/b&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Používáte VideoLAN VLC %1&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Your %1 version: %2
 Your Qt runtime version: %3
 Your VLC-Qt version: %4
 </source>
-        <translation>Verze Tana: %2
+        <translation type="obsolete">Verze Tana: %2
 Běhová verze Qt: %3
 Verze VLC-Qt: %4
 </translation>
     </message>
     <message>
         <source>This application is based on Tano.</source>
-        <translation>Tento program je založen na Tano</translation>
+        <translation type="obsolete">Tento program je založen na Tano</translation>
+    </message>
+    <message>
+        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multimedia backend powered by VLC-Qt %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -270,15 +284,15 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     </message>
     <message>
         <source>An update is available!</source>
-        <translation>Je dostupná aktualizace!</translation>
+        <translation type="obsolete">Je dostupná aktualizace!</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show Info</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -490,7 +504,7 @@ Zkuste to, prosím, znovu.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -882,19 +896,19 @@ Ztratíte všechny neuložené změny.</translation>
     <name>PlaylistTab</name>
     <message>
         <source>All</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>TV</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Všechny skupiny</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Všechny jazyky</translation>
     </message>
 </context>
 <context>
@@ -1732,27 +1746,27 @@ Tuto operaci nelze vrátit zpět.</translation>
     <name>ScheduleTab</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show information</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Nahrávat</translation>
     </message>
     <message>
         <source>Current channel selected doesn&apos;t have any schedule information</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select channel</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2249,38 +2263,30 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>OSD in fullscreen:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ShowInfoTab</name>
     <message>
         <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>toolBar</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>toolBar_2</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Nahrávat</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Další</translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2426,7 +2432,7 @@ End time: %3</source>
     </message>
     <message>
         <source>Information:</source>
-        <translation>Informace:</translation>
+        <translation type="obsolete">Informace:</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
@@ -2438,7 +2444,31 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Tento program je potřeba zaktualizovat!&lt;/h3&gt;</translation>
+        <translation type="obsolete">&lt;h3&gt;Tento program je potřeba zaktualizovat!&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zavřít</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changelog:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
