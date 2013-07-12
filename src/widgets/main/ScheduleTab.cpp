@@ -173,6 +173,7 @@ void ScheduleTab::change()
     _search->clear();
 
     _main->setCurrentWidget(_playlistWidget);
+    _labelTitle->setText(tr("Select channel"));
 }
 
 void ScheduleTab::channel(Channel *channel)
