@@ -640,6 +640,7 @@ void MainWindow::playChannel(Channel *channel)
 
     Tano::Log::playingChannel(channel->number());
 
+    _scheduleTab->reset();
     _xmltv->request(_channel->xmltvId(), true);
 
     _mediaPlayer->osd()->setChannel(_channel->number(), _channel->name(), _channel->language());

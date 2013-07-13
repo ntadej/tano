@@ -243,7 +243,13 @@ XmltvProgramme *XmltvSql::programme(const QString &id)
         programme->setStop(QDateTime::fromString(q.value(5).toString(), Tano::Xmltv::dateFormat()));
         programme->setDesc(q.value(6).toString());
         programme->setDate(QDateTime::fromString(q.value(7).toString(), Tano::Xmltv::dateFormat()));
-        programme->setCategories(q.value(8).toString().split(Tano::Xmltv::commaSeparator()));
+
+        QString categories = q.value(8).toString();
+        if (categories.isEmpty())
+            programme->setCategories(QStringList());
+        else
+            programme->setCategories(categories.split(Tano::Xmltv::commaSeparator()));
+
         programme->setLanguage(q.value(9).toString());
         programme->setOriginalLanguage(q.value(10).toString());
         programme->setLength(q.value(11).toString());

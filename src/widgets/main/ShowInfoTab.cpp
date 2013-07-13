@@ -103,7 +103,16 @@ void ShowInfoTab::display(XmltvProgramme *programme)
     _labelTitle->setText(programme->title());
     ui->labelChannel->setText("<b>" + programme->channelDisplayName() + "</b>");
     ui->labelTime->setText("<b>" + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</b>");
-    ui->labelInfo->setText("<b>" + programme->categories().join(" / ") + "</b>");
+
+    if (programme->categories().length()) {
+        ui->labelInfo->setText("<b>" + programme->categories().join(" / ") + "</b>");
+        ui->labelInfo->show();
+        ui->labelInfoIcon->show();
+    } else {
+        ui->labelInfo->hide();
+        ui->labelInfoIcon->hide();
+    }
+
     ui->labelDescription->setText(programme->desc());
 
     if (programme->icon().isEmpty())
