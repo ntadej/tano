@@ -34,6 +34,11 @@
 
 int main(int argc, char *argv[])
 {
+    Q_INIT_RESOURCE(logo);
+    Q_INIT_RESOURCE(info);
+    Q_INIT_RESOURCE(misc);
+    Q_INIT_RESOURCE(style);
+
 #if defined(Q_OS_MAC) && defined(QT_NO_DEBUG) // Fix plugin detection
     QDir dir(argv[0]);  // e.g. appdir/Contents/MacOS/appname
     dir.cdUp();
