@@ -67,6 +67,8 @@ private:
     NetworkRequest *_request;
     QNetworkReply *_currentReply;
 
+    QString _versionNew;
+
     bool _silent;
 };
 

@@ -34,7 +34,8 @@
     #include "branding/ExtraConfig.h"
 #else
     #define ENCRYPTION_KEY @ENCRYPTION_KEY@
-    #define UPDATE_URL "http://update.tano.si/player"
+    #define UPDATE_URL "http://update.tano.si/"
+    #define DOWNLOAD_URL "http://update.tano.si/"
     #define PASSWORD 0
 #endif
 

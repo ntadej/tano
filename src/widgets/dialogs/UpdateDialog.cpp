@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include <QtCore/QTextCodec>
+#include <QtGui/QDesktopServices>
 #include <QtXml/QXmlInputSource>
 #include <QtXml/QXmlSimpleReader>
 
@@ -78,7 +79,20 @@ void UpdateDialog::changeEvent(QEvent *e)
 
 void UpdateDialog::download()
 {
+#if defined(DOWNLOAD_URL)
+    QString url(DOWNLOAD_URL);
+#else
+    return;
+#endif
 
+#if defined(Q_OS_WIN)
+    QString platform = QString("windows/%1_%2_win%3.exe").arg(Tano::name(), _versionNew, Tano::is64bit() ? "64" : "32");
+#elif defined(Q_OS_MAC)
+    QString platform = QString("osx/%1_%2.dmg").arg(Tano::name(), _versionNew);
+#else
+    QString platform = QString("src/%1_%2_src.tar.gz").arg(Tano::name(), _versionNew);
+#endif
+    QDesktopServices::openUrl(url + platform);
 }
 
 void UpdateDialog::changelog()
@@ -130,6 +144,8 @@ void UpdateDialog::processUpdate(const QStringList &update,
         ui->labelChangelog->setText(tr("<h3>Changes in %1</h3>").arg(update[1]));
         ui->main->setCurrentIndex(2);
         ui->buttonDownload->show();
+
+        _versionNew = update[1];
     }
 
     if(!_silent || update[0] == "update")
