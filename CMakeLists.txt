@@ -50,6 +50,8 @@ OPTION(BRANDING "Enable branding" OFF)
 MESSAGE("Enable branding: ${BRANDING}")
 OPTION(LOGGING "Enable logging" ON)
 MESSAGE("Enable logging: ${LOGGING}")
+OPTION(STATIC "Build statically" ON)
+MESSAGE("Build statically: ${STATIC}")
 IF(BRANDING)
     SET(BRANDING_SET 1)
 ELSE(BRANDING)
@@ -205,6 +207,9 @@ ENDIF(QT5)
 
 IF(BUILD_PLAYER OR BUILD_EDITOR)
     FIND_PACKAGE(LIBVLCQT REQUIRED)
+    IF(STATIC)
+        FIND_PACKAGE(LIBVLC REQUIRED)
+    ENDIF(STATIC)
 ENDIF(BUILD_PLAYER OR BUILD_EDITOR)
 
 # Set Qt bin dir to find QtCoreX.dll and other libs to install
