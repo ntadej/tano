@@ -18,6 +18,7 @@
 
 #include <QtSingleApplication>
 
+#include <QtCore/QDir>
 #include <QtCore/QTextCodec>
 
 #include "Config.h"
@@ -33,6 +34,14 @@
 
 int main(int argc, char *argv[])
 {
+#if defined(Q_OS_MAC) && defined(QT_NO_DEBUG) // Fix plugin detection
+    QDir dir(argv[0]);  // e.g. appdir/Contents/MacOS/appname
+    dir.cdUp();
+    dir.cdUp();
+    dir.cd("PlugIns");  // e.g. appdir/Contents/PlugIns
+    QCoreApplication::setLibraryPaths(QStringList(dir.absolutePath()));
+#endif
+
     QCoreApplication::setApplicationName(Tano::name());
     QCoreApplication::setApplicationVersion(Tano::version());
 
