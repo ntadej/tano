@@ -495,7 +495,7 @@ void MainWindow::createMenus()
     ui->actionSettings->setMenuRole(QAction::PreferencesRole);
 
     _macMenu = new QMenu();
-    _trayIcon = new TrayIcon(_macMenu);
+    _trayIcon = new TrayIcon(_rightMenu);
 #else
     _trayIcon = new TrayIcon(_rightMenu);
 #endif
@@ -775,11 +775,13 @@ void MainWindow::lite()
     if (_isLite) {
         ui->menubar->setVisible(_liteMenu);
         ui->tabs->setLiteMode(false);
+        _mediaPlayer->osd()->setVisible(true);
     } else {
         _liteMenu = ui->menubar->isVisible();
 
         ui->menubar->setVisible(false);
         ui->tabs->setLiteMode(true);
+        _mediaPlayer->osd()->setVisible(false);
     }
     _isLite = !_isLite;
 }
@@ -824,6 +826,7 @@ void MainWindow::toggleFullscreen(bool enabled)
         _osdFloat->setWidget(_mediaPlayer->osd());
         _osdFloat->resize(_osdFloat->width(), _mediaPlayer->osd()->height());
         _osdFloat->setControls();
+        _mediaPlayer->osd()->setVisible(true);
     } else {
         _mediaPlayer->restoreOsd();
 
