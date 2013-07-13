@@ -168,6 +168,9 @@ VolumeSlider::VolumeSlider(QWidget *parent,
     setMinimumWidth(_pixmapInset.width());
     setMinimumHeight(_pixmapInset.height());
 
+    setMaximumWidth(_pixmapInset.width());
+    setMaximumHeight(_pixmapInset.height());
+
     connect(_animTimer, SIGNAL(timeout()), this, SLOT(slotAnimTimer()));
 }
 

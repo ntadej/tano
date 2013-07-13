@@ -708,10 +708,18 @@ void MainWindow::openPlaylist(bool start)
         f.close();
 
         _model->open(_playlistName);
+        openPlaylistComplete();
     } else {
+         connect(_modelUpdate, SIGNAL(done()), this, SLOT(openPlaylistComplete()));
+
         _playlistName = Tano::Resources::resource(_defaultPlaylist);
         _modelUpdate->update(_defaultPlaylist);
     }
+}
+
+void MainWindow::openPlaylistComplete()
+{
+    disconnect(_modelUpdate, SIGNAL(done()), this, SLOT(openPlaylistComplete()));
 
     _hasPlaylist = true;
 

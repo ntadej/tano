@@ -53,6 +53,8 @@ void PlaylistUpdate::processPlaylist(QFile *file)
 
     Tano::Log::playlistLoaded();
 
+    emit done();
+
     delete file;
 }
 
@@ -82,5 +84,7 @@ void PlaylistUpdate::update(const QString &playlist)
         if (settings->playlistUpdateUrl().endsWith(".xml"))
             _type = File::GoTV;
         _downloader->getFile(settings->playlistUpdateUrl());
+    } else {
+        emit done();
     }
 }

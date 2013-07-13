@@ -52,6 +52,12 @@ public:
     */
     void update(const QString &playlist);
 
+signals:
+    /*!
+        \brief Loading finished
+    */
+    void done();
+
 private slots:
     void processPlaylist(QFile *file);
 

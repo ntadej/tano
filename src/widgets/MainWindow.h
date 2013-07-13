@@ -97,6 +97,7 @@ private slots:
     void setState(const Vlc::State &state);
 
     void openPlaylist(bool start = false);
+    void openPlaylistComplete();
 
     void tooltip(const QString &channelNow = "stop");
     void top();
