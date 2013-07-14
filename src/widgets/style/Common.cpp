@@ -18,6 +18,7 @@
 
 #include <QtCore/QCoreApplication>
 #include <QtCore/QDebug>
+#include <QtCore/QDir>
 #include <QtGui/QIcon>
 #if QT_VERSION >= 0x050000
     #include <QtWidgets/QApplication>
@@ -85,6 +86,11 @@ void Tano::Style::setIconPaths()
     paths.prepend(QCoreApplication::applicationDirPath() + "/" + "icons");
 #if defined(DATA_DIR)
     paths.prepend(QString(DATA_DIR) + "/" + "icons");
+#endif
+#if defined(Q_OS_MAC)
+    QDir i = QCoreApplication::applicationDirPath();
+    i.cdUp();
+    paths.prepend(i.absolutePath() + "/Resources/icons");
 #endif
 
     QIcon::setThemeSearchPaths(paths);
