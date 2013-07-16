@@ -32,8 +32,6 @@
 
 #include "OsdFloat.h"
 
-#define OSD_OPACITY 0.8
-
 OsdFloat::OsdFloat(QWidget *parent)
     : QFrame(parent)
 {
@@ -68,6 +66,8 @@ void OsdFloat::floatHide()
         _slowHideTimer->start(5);
     else
         hide();
+#elif defined(Q_OS_WIN32)
+    hide();
 #else
     _slowHideTimer->start(5);
 #endif
@@ -75,13 +75,15 @@ void OsdFloat::floatHide()
 
 void OsdFloat::floatShow()
 {
+#if !defined(Q_OS_WIN32)
     _slowHideTimer->stop();
 
-    if (isVisible() && windowOpacity() > OSD_OPACITY)
+    if (isVisible() && windowOpacity() >= 1)
         return;
 
-    show();
     _slowShowTimer->start(5);
+#endif
+    show();
 }
 
 void OsdFloat::setControls()
@@ -158,7 +160,7 @@ void OsdFloat::slowShow()
 {
     setWindowOpacity(windowOpacity() + 0.08);
 
-    if (windowOpacity() > OSD_OPACITY) {
+    if (windowOpacity() >= 1) {
         _slowShowTimer->stop();
     }
 }
